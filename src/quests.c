@@ -142,7 +142,7 @@ static const u8 sText_QuestMenu_Reward[] = _("Reward");
 static const u8 sText_QuestMenu_Unk[] = _("{COLOR}{LIGHT_GREY}?????????");
 static const u8 sText_QuestMenu_Active[] = _("{COLOR}{GREEN}Active");
 static const u8 sText_QuestMenu_Complete[] = _("{COLOR}{BLUE}Done");
-static const u8 sText_QuestMenu_Exit[] = _("Return to the Start Menu");
+static const u8 sText_QuestMenu_Exit[] = _("Exit the Quest Menu");
 static const u8 sText_QuestMenu_SelectedQuest[] = _("Do what with\nthis quest?");
 static const u8 sText_QuestMenu_DisplayDetails[] = _("POC: {STR_VAR_1}\nMap: {STR_VAR_2}");
 static const u8 sText_QuestMenu_DisplayReward[] = _("Reward:\n{STR_VAR_1}");
@@ -748,7 +748,7 @@ static void QuestMenu_BuildListMenuTemplate(void)
     gMultiuseListMenuTemplate.item_X = 9;
     gMultiuseListMenuTemplate.cursor_X = 1;
     gMultiuseListMenuTemplate.lettersSpacing = 1;
-    gMultiuseListMenuTemplate.itemVerticalPadding = 1;  //2 in FR
+    gMultiuseListMenuTemplate.itemVerticalPadding = 2;
     gMultiuseListMenuTemplate.upText_Y = 2;
     gMultiuseListMenuTemplate.maxShowed = sStateDataPtr->maxShowed;
     gMultiuseListMenuTemplate.fontId = 2;
