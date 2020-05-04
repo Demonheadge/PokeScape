@@ -2327,8 +2327,11 @@ bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
     case QUEST_MENU_RESET_ACTIVE:
         ResetActiveQuest();
         break;
-    case QUEST_MENU_BUFFER_ACTIVE_NAME:
-        CopyQuestName(gStringVar1, questId);
+    case QUEST_MENU_BUFFER_QUEST_NAME:
+            CopyQuestName(gStringVar1, questId);
+        break;
+    case QUEST_MENU_GET_ACTIVE_QUEST:
+        gSpecialVar_Result = GetActiveQuestIndex();
         break;
     case QUEST_MENU_CHECK_UNLOCKED:
         if (GetSetQuestFlag(questId, FLAG_GET_UNLOCKED))

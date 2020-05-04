@@ -7,9 +7,10 @@
 #define QUEST_MENU_COMPLETE_QUEST       2   //questId = SIDE_QUEST_X (0-indexed)
 #define QUEST_MENU_SET_ACTIVE           3   //questId = SIDE_QUEST_X (0-indexed)
 #define QUEST_MENU_RESET_ACTIVE         4   //remove current quest from being 'active'
-#define QUEST_MENU_BUFFER_ACTIVE_NAME   5   //buffers active quest name to gStringVar1
-#define QUEST_MENU_CHECK_UNLOCKED       6   //checks if questId has been unlocked. Returns result to gSpecialVar_Result
-#define QUEST_MENU_CHECK_COMPLETE       7   //checks if questId has been completed. Returns result to gSpecialVar_Result
+#define QUEST_MENU_BUFFER_QUEST_NAME    5   //buffers a quest name to gStringVar1
+#define QUEST_MENU_GET_ACTIVE_QUEST     6   //returns the active quest index (-1, or 0xFF for none)
+#define QUEST_MENU_CHECK_UNLOCKED       7   //checks if questId has been unlocked. Returns result to gSpecialVar_Result
+#define QUEST_MENU_CHECK_COMPLETE       8   //checks if questId has been completed. Returns result to gSpecialVar_Result
 
 // quest number defines
 #define SIDE_QUEST_1          0
