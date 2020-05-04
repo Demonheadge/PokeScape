@@ -1,6 +1,17 @@
 #ifndef GUARD_CONSTANTS_QUESTS_H
 #define GUARD_CONSTANTS_QUESTS_H
 
+//questmenu scripting command params
+#define QUEST_MENU_OPEN                 0   //opens the quest menu (questId = 0)
+#define QUEST_MENU_UNLOCK_QUEST         1   //questId = SIDE_QUEST_X (0-indexed)
+#define QUEST_MENU_COMPLETE_QUEST       2   //questId = SIDE_QUEST_X (0-indexed)
+#define QUEST_MENU_SET_ACTIVE           3   //questId = SIDE_QUEST_X (0-indexed)
+#define QUEST_MENU_RESET_ACTIVE         4   //remove current quest from being 'active'
+#define QUEST_MENU_BUFFER_ACTIVE_NAME   5   //buffers active quest name to gStringVar1
+#define QUEST_MENU_CHECK_UNLOCKED       6   //checks if questId has been unlocked. Returns result to gSpecialVar_Result
+#define QUEST_MENU_CHECK_COMPLETE       7   //checks if questId has been completed. Returns result to gSpecialVar_Result
+
+// quest number defines
 #define SIDE_QUEST_1          0
 #define SIDE_QUEST_2          1
 #define SIDE_QUEST_3          2

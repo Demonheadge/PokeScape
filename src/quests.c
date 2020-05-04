@@ -118,7 +118,6 @@ static u8 QuestMenu_GetOrCreateSubwindow(u8 idx);
 static void QuestMenu_DestroySubwindow(u8 idx);
 static void QuestMenu_SetInitializedFlag(u8 a0);
 static bool8 IsActiveQuest(u8 questId);
-static void ResetActiveQuest(void);
 
 // Data
 // graphics
@@ -1462,7 +1461,7 @@ void SetActiveQuest(u8 questId)
     gSaveBlock2Ptr->activeQuest = questId + 1;  // 1-indexed
 }
 
-static void ResetActiveQuest(void)
+void ResetActiveQuest(void)
 {
     gSaveBlock2Ptr->activeQuest = 0;
 }
@@ -1482,6 +1481,11 @@ static void DebugQuestMenu(void)
 void SetQuestMenuActive(void)
 {
     FlagSet(FLAG_QUEST_MENU_ACTIVE);
+}
+
+void CopyQuestName(u8 *dst, u8 questId)
+{
+    StringCopy(dst, sSideQuests[questId].name);
 }
 
 #undef tBldYBak
