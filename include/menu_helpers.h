@@ -40,5 +40,9 @@ void sub_8122344(u8 *spriteIds, u8 count);
 void sub_81223B0(u8 *spriteIds, u8 count);
 void sub_81223FC(u8 *spriteIds, u8 count, bool8 invisible);
 void sub_8122448(u8 *spriteIds, u8 count, s16 x, u16 y);
+void ResetAllBgsCoordinatesAndBgCntRegs(void);
+
+extern const struct CompressedSpriteSheet gBagSwapSpriteSheet;
+extern const struct CompressedSpritePalette gBagSwapSpritePalette;
 
 #endif //GUARD_MENU_HELPERS_H

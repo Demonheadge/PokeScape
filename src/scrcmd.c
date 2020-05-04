@@ -48,6 +48,7 @@
 #include "trainer_see.h"
 #include "tv.h"
 #include "window.h"
+#include "quests.h"
 #include "constants/event_objects.h"
 
 typedef u16 (*SpecialFunc)(void);
@@ -2299,3 +2300,13 @@ bool8 ScrCmd_warpsootopolislegend(struct ScriptContext *ctx)
     ResetInitialPlayerAvatarState();
     return TRUE;
 }
+
+bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
+{
+    SetQuestMenuActive();
+    BeginNormalPaletteFade(0xFFFFFFFF, 2, 16, 0, 0);
+    QuestMenu_Init(0, CB2_ReturnToFieldContinueScriptPlayMapMusic);
+    ScriptContext1_Stop();
+    return TRUE;
+}
+

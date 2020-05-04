@@ -72,12 +72,12 @@ static const union AnimCmd *const sSpriteAnimTable_859F508[] =
     sSpriteAnim_859F500
 };
 
-static const struct CompressedSpriteSheet gUnknown_0859F514 =
+const struct CompressedSpriteSheet gBagSwapSpriteSheet =
 {
     gBagSwapLineGfx, 0x100, 109
 };
 
-static const struct CompressedSpritePalette gUnknown_0859F51C =
+const struct CompressedSpritePalette gBagSwapSpritePalette =
 {
     gBagSwapLinePal, 109
 };
@@ -94,6 +94,23 @@ static const struct SpriteTemplate gUnknown_0859F524 =
 };
 
 // code
+void ResetAllBgsCoordinatesAndBgCntRegs(void)
+{
+    SetGpuReg(REG_OFFSET_DISPCNT, 0);
+    SetGpuReg(REG_OFFSET_BG3CNT, 0);
+    SetGpuReg(REG_OFFSET_BG2CNT, 0);
+    SetGpuReg(REG_OFFSET_BG1CNT, 0);
+    SetGpuReg(REG_OFFSET_BG0CNT, 0);
+    ChangeBgX(0, 0, 0);
+    ChangeBgY(0, 0, 0);
+    ChangeBgX(1, 0, 0);
+    ChangeBgY(1, 0, 0);
+    ChangeBgX(2, 0, 0);
+    ChangeBgY(2, 0, 0);
+    ChangeBgX(3, 0, 0);
+    ChangeBgY(3, 0, 0);
+}
+
 void ResetVramOamAndBgCntRegs(void)
 {
     SetGpuReg(REG_OFFSET_DISPCNT, 0);
@@ -392,8 +409,8 @@ void sub_8122298(u16 *arg0, u16 *arg1, u8 arg2, u8 arg3, u8 arg4)
 
 void LoadListMenuArrowsGfx(void)
 {
-    LoadCompressedSpriteSheet(&gUnknown_0859F514);
-    LoadCompressedSpritePalette(&gUnknown_0859F51C);
+    LoadCompressedSpriteSheet(&gBagSwapSpriteSheet);
+    LoadCompressedSpritePalette(&gBagSwapSpritePalette);
 }
 
 void sub_8122344(u8 *spriteIds, u8 count)

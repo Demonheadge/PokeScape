@@ -1559,6 +1559,10 @@
 	.2byte \quantity
 	.endm
 
+    .macro questmenu
+    .byte 0xe3
+    .endm
+
 
 @ Supplementary
 
