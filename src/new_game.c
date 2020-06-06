@@ -206,6 +206,10 @@ void NewGameInitData(void)
     WipeTrainerNameRecords();
     ResetTrainerHillResults();
     ResetContestLinkResults();
+    
+    memset(gSaveblock2Ptr->unlockedQuests, 0, sizeof(gSaveblock2Ptr->unlockedQuests));
+    memset(gSaveblock2Ptr->completedQuests, 0, sizeof(gSaveBlock2Ptr->completedQuests));
+    gSaveBlock2Ptr->activeQuest = 0;
 }
 
 static void ResetMiniGamesResults(void)
