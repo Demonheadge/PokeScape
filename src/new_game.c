@@ -207,8 +207,8 @@ void NewGameInitData(void)
     ResetTrainerHillResults();
     ResetContestLinkResults();
     
-    memset(gSaveblock2Ptr->unlockedQuests, 0, sizeof(gSaveblock2Ptr->unlockedQuests));
-    memset(gSaveblock2Ptr->completedQuests, 0, sizeof(gSaveBlock2Ptr->completedQuests));
+    memset(&gSaveBlock2Ptr->unlockedQuests, 0, sizeof(gSaveBlock2Ptr->unlockedQuests));
+    memset(&gSaveBlock2Ptr->completedQuests, 0, sizeof(gSaveBlock2Ptr->completedQuests));
     gSaveBlock2Ptr->activeQuest = 0;
 }
 
