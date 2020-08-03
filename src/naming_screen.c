@@ -13,7 +13,6 @@
 #include "field_player_avatar.h"
 #include "event_object_movement.h"
 #include "event_data.h"
-#include "constants/vars.h"
 #include "constants/songs.h"
 #include "pokemon_storage_system.h"
 #include "graphics.h"
@@ -347,7 +346,7 @@ static void NamingScreen_InitBGs(void)
     ChangeBgY(3, 0, 0);
 
     InitStandardTextBoxWindows();
-    sub_8197200();
+    InitTextBoxGfxAndPrinters();
 
     for (i = 0; i < 5; i++)
         gNamingScreenData->windows[i] = AddWindow(&gUnknown_0858BE10[i]);

@@ -116,8 +116,8 @@ struct BerryBlenderData
     u16 field_116;
     u16 field_118;
     u16 field_11A;
-    u16 bg_X;
-    u16 bg_Y;
+    s16 bg_X;
+    s16 bg_Y;
     u8 field_120[3];
     u8 field_123;
     u16 scores[BLENDER_MAX_PLAYERS][BLENDER_SCORES_NO];
@@ -1246,7 +1246,7 @@ static void sub_8080018(void)
         if (++sBerryBlenderData->framesToWait > 20)
         {
             ClearDialogWindowAndFrameToTransparent(4, TRUE);
-            if (GetBlockReceivedStatus() == sub_800A9D8())
+            if (GetBlockReceivedStatus() == GetLinkPlayerCountAsBitFlags())
             {
                 for (i = 0; i < GetLinkPlayerCount(); i++)
                 {
@@ -1500,7 +1500,7 @@ static void sub_80808D4(void)
     switch (sBerryBlenderData->mainState)
     {
     case 0:
-        sub_800B4C0();
+        SetWirelessCommType0();
         sub_8080588();
         Blender_SetParticipantBerryData(0, gSpecialVar_ItemId);
         Blender_CopyBerryData(&sBerryBlenderData->blendedBerries[0], gSpecialVar_ItemId);
@@ -1664,7 +1664,7 @@ static void sub_80808D4(void)
 static void sub_8080DF8(void)
 {
     s32 i;
-    for (i = 0; i < 4; i++)
+    for (i = 0; i < CMD_LENGTH / 2; i++)
     {
         gSendCmd[0] = 0;
         gSendCmd[2] = 0;
@@ -2202,6 +2202,11 @@ static s16 sub_8081BD4(void)
     return sUnknown_03000E06;
 }
 
+#if MODERN
+// TODO remove this as soon as the code below is understood
+// add a UBFIX if required (code buggy?)
+__attribute__((optimize("no-aggressive-loop-optimizations")))
+#endif
 static void Blender_CalculatePokeblock(struct BlenderBerry *berries, struct Pokeblock *pokeblock, u8 playersNo, u8 *flavors, u16 maxRPM)
 {
     s32 i, j;
@@ -3161,13 +3166,13 @@ static void sub_80832E8(s16* a0)
 
 static void sub_808330C(void)
 {
-    sub_80832E8(&sBerryBlenderData->bg_X);
-    sub_80832E8(&sBerryBlenderData->bg_Y);
+    sub_80832E8((s16 *)&sBerryBlenderData->bg_X);
+    sub_80832E8((s16 *)&sBerryBlenderData->bg_Y);
 }
 
 static void sub_8083334(s16* a0, u16 a1)
 {
-    s32 var;
+    u8 var;
 
     if (a1 < 10)
         var = 16;

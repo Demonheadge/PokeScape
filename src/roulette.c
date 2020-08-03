@@ -633,7 +633,7 @@ static const struct UnkStruct1 gUnknown_085B6388[] =
         .var05 = 1,
         .var06 = 0xFF,
         .var07_0 = 8,
-        .var07_5 = 2,
+        .var07_5 = -2,
         .var07_7 = 0
     },
     {
@@ -643,7 +643,7 @@ static const struct UnkStruct1 gUnknown_085B6388[] =
         .var05 = 1,
         .var06 = 0xFF,
         .var07_0 = 8,
-        .var07_5 = 2,
+        .var07_5 = -2,
         .var07_7 = 0
     },
     {
@@ -653,7 +653,7 @@ static const struct UnkStruct1 gUnknown_085B6388[] =
         .var05 = 1,
         .var06 = 0xFF,
         .var07_0 = 8,
-        .var07_5 = 2,
+        .var07_5 = -2,
         .var07_7 = 0
     },
     {
@@ -663,7 +663,7 @@ static const struct UnkStruct1 gUnknown_085B6388[] =
         .var05 = 1,
         .var06 = 0xFF,
         .var07_0 = 8,
-        .var07_5 = 2,
+        .var07_5 = -2,
         .var07_7 = 0
     },
     {
@@ -673,7 +673,7 @@ static const struct UnkStruct1 gUnknown_085B6388[] =
         .var05 = 1,
         .var06 = 0xFF,
         .var07_0 = 8,
-        .var07_5 = 2,
+        .var07_5 = -2,
         .var07_7 = 0
     },
     {
@@ -683,7 +683,7 @@ static const struct UnkStruct1 gUnknown_085B6388[] =
         .var05 = 1,
         .var06 = 0xFF,
         .var07_0 = 8,
-        .var07_5 = 2,
+        .var07_5 = -2,
         .var07_7 = 0
     },
     {
@@ -693,7 +693,7 @@ static const struct UnkStruct1 gUnknown_085B6388[] =
         .var05 = 1,
         .var06 = 0xFF,
         .var07_0 = 8,
-        .var07_5 = 2,
+        .var07_5 = -2,
         .var07_7 = 0
     },
     {
@@ -703,7 +703,7 @@ static const struct UnkStruct1 gUnknown_085B6388[] =
         .var05 = 1,
         .var06 = 0xFF,
         .var07_0 = 8,
-        .var07_5 = 2,
+        .var07_5 = -2,
         .var07_7 = 0
     },
     {
@@ -713,7 +713,7 @@ static const struct UnkStruct1 gUnknown_085B6388[] =
         .var05 = 1,
         .var06 = 0xFF,
         .var07_0 = 8,
-        .var07_5 = 2,
+        .var07_5 = -2,
         .var07_7 = 0
     },
     {
@@ -723,7 +723,7 @@ static const struct UnkStruct1 gUnknown_085B6388[] =
         .var05 = 1,
         .var06 = 0xFF,
         .var07_0 = 8,
-        .var07_5 = 2,
+        .var07_5 = -2,
         .var07_7 = 0
     },
     {
@@ -733,7 +733,7 @@ static const struct UnkStruct1 gUnknown_085B6388[] =
         .var05 = 1,
         .var06 = 0xFF,
         .var07_0 = 8,
-        .var07_5 = 2,
+        .var07_5 = -2,
         .var07_7 = 0
     },
     {
@@ -743,7 +743,7 @@ static const struct UnkStruct1 gUnknown_085B6388[] =
         .var05 = 1,
         .var06 = 0xFF,
         .var07_0 = 8,
-        .var07_5 = 2,
+        .var07_5 = -2,
         .var07_7 = 0
     },
     {
@@ -753,7 +753,7 @@ static const struct UnkStruct1 gUnknown_085B6388[] =
         .var05 = 10,
         .var06 = 0xFF,
         .var07_0 = 14,
-        .var07_5 = 2,
+        .var07_5 = -2,
         .var07_7 = 0
     },
 };
@@ -767,7 +767,7 @@ static const struct UnkStruct1 gUnknown_085B63F0[] =
         .var05 = 30,
         .var06 = 0xFF,
         .var07_0 = 14,
-        .var07_5 = 2,
+        .var07_5 = -2,
         .var07_7 = 0
     },
     {
@@ -777,7 +777,7 @@ static const struct UnkStruct1 gUnknown_085B63F0[] =
         .var05 = 30,
         .var06 = 0xFF,
         .var07_0 = 14,
-        .var07_5 = 2,
+        .var07_5 = -2,
         .var07_7 = 0
     },
     {
@@ -787,7 +787,7 @@ static const struct UnkStruct1 gUnknown_085B63F0[] =
         .var05 = 30,
         .var06 = 0xFF,
         .var07_0 = 14,
-        .var07_5 = 2,
+        .var07_5 = -2,
         .var07_7 = 0
     }
 };
@@ -859,7 +859,7 @@ static void sub_8140388(void)
     SetBgTilemapBuffer(1, gUnknown_0203AB88->tilemapBuffers[2]);
     SetBgTilemapBuffer(2, gUnknown_0203AB88->tilemapBuffers[6]);
     InitWindows(gUnknown_085B614C);
-    sub_8197200();
+    InitTextBoxGfxAndPrinters();
     gUnknown_0203AB8C = 0;
     gUnknown_0203AB88->unk_397C = malloc_and_decompress(gUnknown_085B5DFC, &size);
 }
@@ -943,15 +943,15 @@ static void sub_81405CC(void)
         ResetPaletteFade();
         ResetSpriteData();
         ResetTasks();
-        reset_temp_tile_data_buffers();
+        ResetTempTileDataBuffers();
         break;
     case 3:
         LoadPalette(&gUnknown_085B5BFC, 0, 0x1C0);
-        decompress_and_copy_tile_data_to_vram(1, gRouletteMenuTiles, 0, 0, 0);
-        decompress_and_copy_tile_data_to_vram(2, gRouletteWheelTiles, 0, 0, 0);
+        DecompressAndCopyTileDataToVram(1, gRouletteMenuTiles, 0, 0, 0);
+        DecompressAndCopyTileDataToVram(2, gRouletteWheelTiles, 0, 0, 0);
         break;
     case 4:
-        if (free_temp_tile_data_buffers_if_possible())
+        if (FreeTempTileDataBuffersIfPossible())
             return;
 
         sub_8140470();
