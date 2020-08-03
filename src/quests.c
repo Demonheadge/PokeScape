@@ -403,7 +403,7 @@ static void QuestMenu_MainCB(void)
     RunTasks();
     AnimateSprites();
     BuildOamBuffer();
-    do_scheduled_bg_tilemap_copies_to_vram();
+    DoScheduledBgTilemapCopiesToVram();
     UpdatePaletteFade();
 }
 
@@ -515,7 +515,7 @@ static bool8 QuestMenu_DoGfxSetup(void)
     {
     case 0:
         SetVBlankHBlankCallbacksToNull();
-        clear_scheduled_bg_copies_to_vram();
+        ClearScheduledBgCopiesToVram();
         gMain.state++;
         break;
     case 1:
@@ -666,7 +666,7 @@ static bool8 QuestMenu_InitBgs(void)
     ResetBgsAndClearDma3BusyFlags(0);
     InitBgsFromTemplates(0, sQuestMenuBgTemplates, NELEMS(sQuestMenuBgTemplates));
     SetBgTilemapBuffer(1, sBg1TilemapBuffer);
-    schedule_bg_copy_tilemap_to_vram(1);
+    ScheduleBgCopyTilemapToVram(1);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_1D_MAP | DISPCNT_OBJ_ON);
     SetGpuReg(REG_OFFSET_BLDCNT , 0);
     ShowBg(0);
@@ -679,12 +679,12 @@ static bool8 QuestMenu_LoadGraphics(void)
     switch (sStateDataPtr->data[0])
     {
     case 0:
-        reset_temp_tile_data_buffers();
-        decompress_and_copy_tile_data_to_vram(1, sQuestMenuTiles, 0, 0, 0);
+        ResetTempTileDataBuffers();
+        DecompressAndCopyTileDataToVram(1, sQuestMenuTiles, 0, 0, 0);
         sStateDataPtr->data[0]++;
         break;
     case 1:
-        if (free_temp_tile_data_buffers_if_possible() != TRUE)
+        if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
             LZDecompressWram(sQuestMenuTilemap, sBg1TilemapBuffer);
             sStateDataPtr->data[0]++;
@@ -1065,7 +1065,7 @@ static void QuestMenu_SetMessageWindowPalette(int a0)
 {
     SetBgTilemapPalette(1, 0, 14, 30, 6, a0 + 1);
     //SetBgTilemapPalette(1, 0, 14, 30, 6, 15);
-    schedule_bg_copy_tilemap_to_vram(1);
+    ScheduleBgCopyTilemapToVram(1);
 }
 
 static void QuestMenu_SetInitializedFlag(u8 a0)
@@ -1201,7 +1201,7 @@ static void Task_QuestMenuSubmenuInit(u8 taskId)
     //StringExpandPlaceholders(gStringVar4, sText_QuestMenu_SelectedQuest);
     
     QuestMenu_AddTextPrinterParameterized(windowId, 2, gStringVar4, 0, 2, 1, 0, 0, 1);
-    schedule_bg_copy_tilemap_to_vram(0);
+    ScheduleBgCopyTilemapToVram(0);
     gTasks[taskId].func = Task_QuestMenuSubmenuRun;
 }
 
@@ -1238,7 +1238,7 @@ static void QuestMenuSubmenuSelectionMessage(u8 taskId)
     ClearWindowTilemap(4);
     data[8] = 1;
     PutWindowTilemap(0);
-    schedule_bg_copy_tilemap_to_vram(0);
+    ScheduleBgCopyTilemapToVram(0);
 }
 
 static void Task_QuestMenuDetails(u8 taskId)
@@ -1316,7 +1316,7 @@ static void Task_QuestMenuCleanUp(u8 taskId)
     QuestMenu_SetCursorPosition();
     QuestMenu_BuildListMenuTemplate();
     data[0] = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.scroll, sListMenuState.row);
-    schedule_bg_copy_tilemap_to_vram(0);
+    ScheduleBgCopyTilemapToVram(0);
     QuestMenu_ReturnFromSubmenu(taskId);
 }
 
@@ -1330,7 +1330,7 @@ static void Task_QuestMenuCancel(u8 taskId)
     PutWindowTilemap(0);
     PutWindowTilemap(1);
     QuestMenu_PrintOrRemoveCursor(data[0], 1);
-    schedule_bg_copy_tilemap_to_vram(0);
+    ScheduleBgCopyTilemapToVram(0);
     QuestMenu_ReturnFromSubmenu(taskId);
 }
 
@@ -1367,7 +1367,7 @@ static void QuestMenu_InitWindows(void)
         PutWindowTilemap(i);
     }
     
-    schedule_bg_copy_tilemap_to_vram(0);
+    ScheduleBgCopyTilemapToVram(0);
     for (i = 0; i < 3; i++)
         sSubmenuWindowIds[i] = 0xFF;
 }
