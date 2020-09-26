@@ -1447,7 +1447,7 @@ u8 GetFrontierOpponentClass(u16 trainerId)
     }
     else if (trainerId == TRAINER_FRONTIER_BRAIN)
     {
-        trainerClass = GetFrontierBrainTrainerClass();
+        return GetFrontierBrainTrainerClass(); // This sticks out like a sore thumb, but this is the only other way that matches. Maybe it SHOULD be assigned to ret, or all early returns. I don't know.
     }
     else if (trainerId == TRAINER_STEVEN_PARTNER)
     {
@@ -1466,7 +1466,6 @@ u8 GetFrontierOpponentClass(u16 trainerId)
         else
         {
             trainerClass = gFacilityClassToTrainerClass[gSaveBlock2Ptr->frontier.towerRecords[trainerId - TRAINER_RECORD_MIXING_FRIEND].facilityClass];
-            asm("");
         }
     }
     else
@@ -1478,7 +1477,6 @@ u8 GetFrontierOpponentClass(u16 trainerId)
         else
         {
             trainerClass = gFacilityClassToTrainerClass[gApprentices[gSaveBlock2Ptr->apprentices[trainerId - TRAINER_RECORD_MIXING_APPRENTICE].id].facilityClass];
-            asm("");
         }
     }
 
@@ -2627,7 +2625,7 @@ static void LoadLinkMultiOpponentsData(void)
         }
         break;
     case 4:
-        sub_800AC34();
+        SetCloseLinkCallback();
         gSpecialVar_Result = 5;
         break;
     case 5:
@@ -2644,7 +2642,7 @@ static void LoadLinkMultiOpponentsData(void)
 static void sub_8164DCC(void)
 {
     if (gWirelessCommType != 0)
-        sub_800AC34();
+        SetCloseLinkCallback();
 }
 
 static void SetMultiPartnerGfx(void)

@@ -1126,7 +1126,7 @@ static void Task_QuestMenuMain(u8 taskId)
             }
             else
             {
-                PlaySE(SE_HAZURE);
+                PlaySE(SE_FAILURE);
             }
             break;
         }
@@ -1338,12 +1338,12 @@ static void Task_QuestMenuCancel(u8 taskId)
 void TextWindow_SetStdFrame0_WithPal(u8 windowId, u16 destOffset, u8 palIdx)
 {
     LoadBgTiles(GetWindowAttribute(windowId, WINDOW_BG), sFR_StdFrame0, 0x120, destOffset);
-    LoadPalette(stdpal_get(3), palIdx, 32);
+    LoadPalette(GetTextWindowPalette(3), palIdx, 32);
 }
 void TextWindow_LoadResourcesStdFrame0(u8 windowId, u16 destOffset, u8 palIdx)
 {
     LoadBgTiles(GetWindowAttribute(windowId, WINDOW_BG), sFR_MessageBoxTiles, 0x280, destOffset);
-    LoadPalette(stdpal_get(0), palIdx, 32);
+    LoadPalette(GetTextWindowPalette(0), palIdx, 32);
 }
 
 static void QuestMenu_InitWindows(void)
@@ -1359,7 +1359,7 @@ static void QuestMenu_InitWindows(void)
     //LoadMessageBoxGfx(0, 0x3A3, 0xC0);
     //LoadMessageBoxGfx(0, 0x3AC, 0xB0);
     
-    LoadPalette(stdpal_get(2), 0xD0, 0x20);
+    LoadPalette(GetTextWindowPalette(2), 0xD0, 0x20);
     LoadPalette(sMainWindowPal, 0xF0, 0x20);
     for (i = 0; i < 3; i++)
     {
