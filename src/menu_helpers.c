@@ -200,7 +200,7 @@ bool8 AdjustQuantityAccordingToDPadInput(s16 *arg0, u16 arg1)
 {
     s16 valBefore = (*arg0);
 
-    if (JOY_REPEAT(DPAD_ANY) == DPAD_UP)
+    if ((JOY_REPEAT(DPAD_ANY)) == DPAD_UP)
     {
         (*arg0)++;
         if ((*arg0) > arg1)
@@ -216,7 +216,7 @@ bool8 AdjustQuantityAccordingToDPadInput(s16 *arg0, u16 arg1)
             return TRUE;
         }
     }
-    else if (JOY_REPEAT(DPAD_ANY) == DPAD_DOWN)
+    else if ((JOY_REPEAT(DPAD_ANY)) == DPAD_DOWN)
     {
         (*arg0)--;
         if ((*arg0) <= 0)
@@ -232,7 +232,7 @@ bool8 AdjustQuantityAccordingToDPadInput(s16 *arg0, u16 arg1)
             return TRUE;
         }
     }
-    else if (JOY_REPEAT(DPAD_ANY) == DPAD_RIGHT)
+    else if ((JOY_REPEAT(DPAD_ANY)) == DPAD_RIGHT)
     {
         (*arg0) += 10;
         if ((*arg0) > arg1)
@@ -248,7 +248,7 @@ bool8 AdjustQuantityAccordingToDPadInput(s16 *arg0, u16 arg1)
             return TRUE;
         }
     }
-    else if (JOY_REPEAT(DPAD_ANY) == DPAD_LEFT)
+    else if ((JOY_REPEAT(DPAD_ANY)) == DPAD_LEFT)
     {
         (*arg0) -= 10;
         if ((*arg0) <= 0)
