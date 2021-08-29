@@ -108,19 +108,19 @@ extern const u8 gTVPokemonTodaySuccessfulText08[];
 extern const u8 gTVPokemonTodaySuccessfulText09[];
 extern const u8 gTVPokemonTodaySuccessfulText10[];
 extern const u8 gTVPokemonTodaySuccessfulText11[];
-extern const u8 gTVTodaysSmartShopperText00[];
-extern const u8 gTVTodaysSmartShopperText01[];
-extern const u8 gTVTodaysSmartShopperText02[];
-extern const u8 gTVTodaysSmartShopperText03[];
-extern const u8 gTVTodaysSmartShopperText04[];
-extern const u8 gTVTodaysSmartShopperText05[];
-extern const u8 gTVTodaysSmartShopperText06[];
-extern const u8 gTVTodaysSmartShopperText07[];
-extern const u8 gTVTodaysSmartShopperText08[];
-extern const u8 gTVTodaysSmartShopperText09[];
-extern const u8 gTVTodaysSmartShopperText10[];
-extern const u8 gTVTodaysSmartShopperText11[];
-extern const u8 gTVTodaysSmartShopperText12[];
+extern const u8 SmartShopper_Text_Intro[];
+extern const u8 SmartShopper_Text_ClerkNormal[];
+extern const u8 SmartShopper_Text_RandomComment1[];
+extern const u8 SmartShopper_Text_RandomComment2[];
+extern const u8 SmartShopper_Text_RandomComment3[];
+extern const u8 SmartShopper_Text_RandomComment4[];
+extern const u8 SmartShopper_Text_SecondItem[];
+extern const u8 SmartShopper_Text_ThirdItem[];
+extern const u8 SmartShopper_Text_DuringSale[];
+extern const u8 SmartShopper_Text_OutroNormal[];
+extern const u8 SmartShopper_Text_IsVIP[];
+extern const u8 SmartShopper_Text_ClerkMax[];
+extern const u8 SmartShopper_Text_OutroMax[];
 extern const u8 gTVWorldOfMastersText00[];
 extern const u8 gTVWorldOfMastersText01[];
 extern const u8 gTVWorldOfMastersText02[];
@@ -344,10 +344,10 @@ extern const u8 gTVInSearchOfTrainersText05[];
 extern const u8 gTVInSearchOfTrainersText06[];
 extern const u8 gTVInSearchOfTrainersText07[];
 extern const u8 gTVInSearchOfTrainersText08[];
-extern const u8 gTVPokemonContestLiveUpdates2Text00[];
-extern const u8 gTVPokemonContestLiveUpdates2Text01[];
-extern const u8 gTVPokemonContestLiveUpdates2Text02[];
-extern const u8 gTVPokemonContestLiveUpdates2Text03[];
+extern const u8 ContestLadyShow_Text_Intro[];
+extern const u8 ContestLadyShow_Text_Won[];
+extern const u8 ContestLadyShow_Text_Lost[];
+extern const u8 ContestLadyShow_Text_LostBadly[];
 extern const u8 gPokeNewsTextSlateport_Upcoming[];
 extern const u8 gPokeNewsTextSlateport_Ongoing[];
 extern const u8 gPokeNewsTextSlateport_Ending[];
@@ -584,9 +584,11 @@ extern const u8 SecretBase_EventScript_ShrubUseSecretPower[];
 extern const u8 TrainerHill_EventScript_TrainerBattle[];
 
 // Item Use
-extern u8 BerryTree_EventScript_ItemUsePlantBerry[];
-extern u8 BerryTree_EventScript_ItemUseWailmerPail[];
-extern u8 BattleFrontier_OutsideEast_EventScript_WaterSudowoodo[];
+extern const u8 BerryTree_EventScript_ItemUsePlantBerry[];
+extern const u8 BerryTree_EventScript_ItemUseWailmerPail[];
+extern const u8 BattleFrontier_OutsideEast_EventScript_WaterSudowoodo[];
+
+extern const u8 EventScript_SelectWithoutRegisteredItem[];
 
 // overworld
 extern const u8 EventScript_WhiteOut[];
@@ -607,7 +609,7 @@ extern const u8 EventScript_BattleColosseum_2P_PlayerSpot0[];
 extern const u8 EventScript_BattleColosseum_2P_PlayerSpot1[];
 extern const u8 EventScript_TradeCenter_Chair1[];
 extern const u8 EventScript_TradeCenter_Chair0[];
-extern const u8 EventScript_ConfirmLeaveTradeRoom[];
+extern const u8 EventScript_ConfirmLeaveCableClubRoom[];
 extern const u8 EventScript_TerminateLink[];
 
 #endif // GUARD_EVENT_SCRIPTS_H

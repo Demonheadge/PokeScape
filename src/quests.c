@@ -89,7 +89,7 @@ static bool8 QuestMenu_LoadGraphics(void);
 static bool8 QuestMenu_AllocateResourcesForListMenu(void);
 static void QuestMenu_BuildListMenuTemplate(void);
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
-static void QuestMenu_ItemPrintFunc(u8 windowId, s32 itemId, u8 y);
+static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y);
 static void QuestMenu_PrintOrRemoveCursorAt(u8 y, u8 state);
 static void QuestMenu_PrintHeader(void);
 static void QuestMenu_PlaceTopMenuScrollIndicatorArrows(void);
@@ -138,7 +138,7 @@ static const u8 sText_QuestMenu_Begin[] = _("Begin");
 static const u8 sText_QuestMenu_End[] = _("End");
 static const u8 sText_QuestMenu_Details[] = _("Details");
 static const u8 sText_QuestMenu_Reward[] = _("Reward");
-static const u8 sText_QuestMenu_Unk[] = _("{COLOR}{LIGHT_GREY}?????????");
+static const u8 sText_QuestMenu_Unk[] = _("{COLOR}{LIGHT_GRAY}?????????");
 static const u8 sText_QuestMenu_Active[] = _("{COLOR}{GREEN}Active");
 static const u8 sText_QuestMenu_Complete[] = _("{COLOR}{BLUE}Done");
 static const u8 sText_QuestMenu_Exit[] = _("Exit the Quest Menu");
@@ -267,10 +267,10 @@ static const struct BgTemplate sQuestMenuBgTemplates[2] =
 
 static const u8 sQuestMenuWindowFontColors[][3] = 
 {
-    {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GREY},
-    {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_DARK_GREY,  TEXT_COLOR_LIGHT_GREY},
-    {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_LIGHT_GREY, TEXT_COLOR_DARK_GREY},
-    {TEXT_COLOR_TRANSPARENT,  TEXT_DYNAMIC_COLOR_1,  TEXT_COLOR_DARK_GREY}
+    {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
+    {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_DARK_GRAY,  TEXT_COLOR_LIGHT_GRAY},
+    {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_LIGHT_GRAY, TEXT_COLOR_DARK_GRAY},
+    {TEXT_COLOR_TRANSPARENT,  TEXT_DYNAMIC_COLOR_1,  TEXT_COLOR_DARK_GRAY}
 };
 
 static const struct WindowTemplate sQuestMenuHeaderWindowTemplates[] =
@@ -695,11 +695,11 @@ static bool8 QuestMenu_LoadGraphics(void)
         sStateDataPtr->data[0]++;
         break;
     case 3:
-        LoadCompressedSpriteSheet(&gBagSwapSpriteSheet);
+        //LoadCompressedSpriteSheet(&gBagSwapSpriteSheet);
         sStateDataPtr->data[0]++;
         break;
     default:
-        LoadCompressedSpritePalette(&gBagSwapSpritePalette);
+        //LoadCompressedSpritePalette(&gBagSwapSpritePalette);
         sStateDataPtr->data[0] = 0;
         return TRUE;
     }
@@ -773,8 +773,8 @@ void CreateItemMenuIcon(u16 itemId, u8 idx)
         if (spriteId != MAX_SPRITES)
         {
             ptr[idx] = spriteId;
-            gSprites[spriteId].pos2.x = 24;
-            gSprites[spriteId].pos2.y = 140;
+            gSprites[spriteId].x2 = 24;
+            gSprites[spriteId].y2 = 140;
         }
     }
 }
@@ -836,7 +836,7 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
     }
 }
 
-static void QuestMenu_ItemPrintFunc(u8 windowId, s32 itemId, u8 y)
+static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
 {
     if (sStateDataPtr->moveModeOrigPos != 0xFF)
     {
@@ -1160,8 +1160,8 @@ static void sub_80986A8(s16 x, u16 y)
 
     for (i = 0; i < 9; i++)
     {
-        gSprites[ptr[i]].pos2.x = x;
-        gSprites[ptr[i]].pos1.y = y + 7;
+        gSprites[ptr[i]].x2 = x;
+        gSprites[ptr[i]].y = y + 7;
     }
 }
 
