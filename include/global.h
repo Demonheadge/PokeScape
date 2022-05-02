@@ -503,8 +503,11 @@ struct SaveBlock2
     /*0x624*/ u16 contestLinkResults[CONTEST_CATEGORIES_COUNT][CONTESTANT_COUNT];
     /*0x64C*/ struct BattleFrontier frontier;
     /*0x0F2C*/ u8 unlockedQuests[SIDE_QUEST_FLAGS_COUNT];
+    /*0x????*/ u8 activeQuests[SIDE_QUEST_FLAGS_COUNT];
     /*0x????*/ u8 completedQuests[SIDE_QUEST_FLAGS_COUNT];
+    /*0x????*/ u8 doneQuests[SIDE_QUEST_FLAGS_COUNT];
     /*0x????*/ u8 activeQuest;
+
 }; 
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
