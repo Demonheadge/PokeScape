@@ -1435,15 +1435,15 @@ s8 GetSetQuestFlag(u8 quest, u8 caseId)
     case FLAG_SET_ACTIVE:
         gSaveBlock2Ptr->activeQuests[index] |= mask;
         return 1;
+    case FLAG_GET_REWARD:
+        return gSaveBlock2Ptr->rewardQuests[index] & mask;
+    case FLAG_SET_REWARD:
+        gSaveBlock2Ptr->rewardQuests[index] |= mask;
+        return 1;
     case FLAG_GET_COMPLETED:
         return gSaveBlock2Ptr->completedQuests[index] & mask;
     case FLAG_SET_COMPLETED:
         gSaveBlock2Ptr->completedQuests[index] |= mask;
-        return 1;
-    case FLAG_GET_DONE:
-        return gSaveBlock2Ptr->doneQuests[index] & mask;
-    case FLAG_SET_DONE:
-        gSaveBlock2Ptr->doneQuests[index] |= mask;
         return 1;
     }
     

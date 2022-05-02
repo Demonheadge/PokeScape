@@ -34,10 +34,10 @@ enum QuestCases
     FLAG_SET_UNLOCKED,      // mark unlocked quest
     FLAG_SET_ACTIVE,        // mark quest as active
     FLAG_GET_ACTIVE,        // check if quest is active
+    FLAG_GET_REWARD,     // check if quest is ready for reward
+    FLAG_SET_REWARD,     // mark quest ready for reward
     FLAG_GET_COMPLETED,     // check if quest is completed
     FLAG_SET_COMPLETED,     // mark completed quest
-    FLAG_GET_DONE,     // check if quest is completed
-    FLAG_SET_DONE,     // mark completed quest
 };
 
 // functions
