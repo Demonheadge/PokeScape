@@ -31,6 +31,8 @@
 #include "constants/songs.h"
 #include "constants/rgb.h"
 
+#include "mgba_printf/mgba.h"
+
 #define tCount          data[2]
 #define tPageItems      data[4]
 #define tItemPcParam    data[6]
@@ -849,7 +851,8 @@ static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
     {
         if (GetSetQuestFlag(itemId, FLAG_GET_COMPLETED))
             StringCopy(gStringVar4, sText_QuestMenu_Complete);
-        else if (IsActiveQuest(itemId))
+        //else if (IsActiveQuest(itemId))
+        if (GetSetQuestFlag(itemId, FLAG_GET_ACTIVE))
             StringCopy(gStringVar4, sText_QuestMenu_Active);
         else
             StringCopy(gStringVar4, sText_Empty);
@@ -1429,6 +1432,7 @@ s8 GetSetQuestFlag(u8 quest, u8 caseId)
         return gSaveBlock2Ptr->unlockedQuests[index] & mask;
     case FLAG_SET_UNLOCKED:
         gSaveBlock2Ptr->unlockedQuests[index] |= mask;
+        MgbaPrintf(MGBA_LOG_INFO,"%p\n", gSaveBlock2Ptr->unlockedQuests[index]);
         return 1;
     case FLAG_GET_ACTIVE:
         return gSaveBlock2Ptr->activeQuests[index] & mask;

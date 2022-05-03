@@ -37,10 +37,10 @@ LilycoveCity_PokemonCenter_1F_EventScript_Boy::
 	msgbox LilycoveCity_PokemonCenter_1F_Text_HowManyKindsOfPokemon, MSGBOX_NPC
     setflag FLAG_SYS_QUEST_MENU_GET
     questmenu QUEST_MENU_UNLOCK_QUEST,SIDE_QUEST_2
-    questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_2
+    //questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_2
     questmenu QUEST_MENU_UNLOCK_QUEST,SIDE_QUEST_3
-    questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_3
-    openquestmenu
+    //questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_3
+    //openquestmenu
 	end
 
 LilycoveCity_PokemonCenter_1F_EventScript_Maniac::
