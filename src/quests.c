@@ -1425,14 +1425,16 @@ s8 GetSetQuestFlag(u8 quest, u8 caseId)
     index = quest / 8; //8 bits per byte
     bit = quest % 8;
     mask = 1 << bit;
+    MgbaPrintf(MGBA_LOG_INFO,"index:%u\n", index);
     
     switch (caseId)
     {
     case FLAG_GET_UNLOCKED:
         return gSaveBlock2Ptr->unlockedQuests[index] & mask;
     case FLAG_SET_UNLOCKED:
+        MgbaPrintf(MGBA_LOG_INFO,"before %u\n", gSaveBlock2Ptr->unlockedQuests[index]);
         gSaveBlock2Ptr->unlockedQuests[index] |= mask;
-        MgbaPrintf(MGBA_LOG_INFO,"%p\n", gSaveBlock2Ptr->unlockedQuests[index]);
+        MgbaPrintf(MGBA_LOG_INFO,"after %u\n", gSaveBlock2Ptr->unlockedQuests[index]);
         return 1;
     case FLAG_GET_ACTIVE:
         return gSaveBlock2Ptr->activeQuests[index] & mask;

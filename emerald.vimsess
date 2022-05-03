@@ -50,7 +50,7 @@ endif
 set shortmess=aoO
 argglobal
 %argdel
-edit src/scrcmd.c
+edit include/global.h
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -64,10 +64,7 @@ wincmd _ | wincmd |
 split
 wincmd _ | wincmd |
 split
-wincmd _ | wincmd |
-split
-4wincmd k
-wincmd w
+3wincmd k
 wincmd w
 wincmd w
 wincmd w
@@ -81,16 +78,14 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe 'vert 1resize ' . ((&columns * 94 + 94) / 188)
-exe '2resize ' . ((&lines * 11 + 30) / 61)
+exe '2resize ' . ((&lines * 14 + 30) / 61)
 exe 'vert 2resize ' . ((&columns * 93 + 94) / 188)
-exe '3resize ' . ((&lines * 11 + 30) / 61)
+exe '3resize ' . ((&lines * 14 + 30) / 61)
 exe 'vert 3resize ' . ((&columns * 93 + 94) / 188)
-exe '4resize ' . ((&lines * 11 + 30) / 61)
+exe '4resize ' . ((&lines * 14 + 30) / 61)
 exe 'vert 4resize ' . ((&columns * 93 + 94) / 188)
-exe '5resize ' . ((&lines * 11 + 30) / 61)
+exe '5resize ' . ((&lines * 14 + 30) / 61)
 exe 'vert 5resize ' . ((&columns * 93 + 94) / 188)
-exe '6resize ' . ((&lines * 11 + 30) / 61)
-exe 'vert 6resize ' . ((&columns * 93 + 94) / 188)
 argglobal
 terminal ++curwin ++cols=94 ++rows=59 
 let s:term_buf_2 = bufnr()
@@ -221,152 +216,14 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 36 - ((35 * winheight(0) + 29) / 59)
+let s:l = 1 - ((0 * winheight(0) + 29) / 59)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 36
-normal! 010|
+keepjumps 1
+normal! 0
 wincmd w
 argglobal
-balt include/global.h
-setlocal keymap=
-setlocal noarabic
-setlocal noautoindent
-setlocal backupcopy=
-setlocal balloonexpr=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal cindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-set cursorline
-setlocal cursorline
-setlocal cursorlineopt=both
-setlocal define=^\\s*#\\s*define
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'c'
-setlocal filetype=c
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=croql
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=^\\s*#\\s*include
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal listchars=
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
-setlocal modifiable
-setlocal nrformats=bin,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=ccomplete#Complete
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal scrolloff=-1
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal showbreak=
-setlocal sidescrolloff=-1
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal spelloptions=
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'c'
-setlocal syntax=c
-endif
-setlocal tabstop=4
-setlocal tagcase=
-setlocal tagfunc=
-setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal varsofttabstop=
-setlocal vartabstop=
-setlocal virtualedit=
-setlocal wincolor=
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 2343 - ((5 * winheight(0) + 5) / 11)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 2343
-normal! 051|
-wincmd w
-argglobal
-if bufexists("include/global.h") | buffer include/global.h | else | edit include/global.h | endif
 balt src/scrcmd.c
 setlocal keymap=
 setlocal noarabic
@@ -496,11 +353,11 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 507 - ((4 * winheight(0) + 5) / 11)
+let s:l = 508 - ((5 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 507
+keepjumps 508
 normal! 0
 wincmd w
 argglobal
@@ -634,11 +491,11 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 39 - ((5 * winheight(0) + 5) / 11)
+let s:l = 38 - ((6 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 39
+keepjumps 38
 normal! 0
 wincmd w
 argglobal
@@ -772,16 +629,16 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 43 - ((5 * winheight(0) + 5) / 11)
+let s:l = 43 - ((6 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 43
-normal! 017|
+normal! 06|
 wincmd w
 argglobal
 if bufexists("src/quests.c") | buffer src/quests.c | else | edit src/quests.c | endif
-balt data/maps/LilycoveCity_PokemonCenter_1F/scripts.inc
+balt ~/.zshrc
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -910,33 +767,32 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1465 - ((5 * winheight(0) + 5) / 11)
+let s:l = 1437 - ((6 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1465
-normal! 0
+keepjumps 1437
+normal! 040|
 wincmd w
-6wincmd w
+4wincmd w
 exe 'vert 1resize ' . ((&columns * 94 + 94) / 188)
-exe '2resize ' . ((&lines * 11 + 30) / 61)
+exe '2resize ' . ((&lines * 14 + 30) / 61)
 exe 'vert 2resize ' . ((&columns * 93 + 94) / 188)
-exe '3resize ' . ((&lines * 11 + 30) / 61)
+exe '3resize ' . ((&lines * 14 + 30) / 61)
 exe 'vert 3resize ' . ((&columns * 93 + 94) / 188)
-exe '4resize ' . ((&lines * 11 + 30) / 61)
+exe '4resize ' . ((&lines * 14 + 30) / 61)
 exe 'vert 4resize ' . ((&columns * 93 + 94) / 188)
-exe '5resize ' . ((&lines * 11 + 30) / 61)
+exe '5resize ' . ((&lines * 14 + 30) / 61)
 exe 'vert 5resize ' . ((&columns * 93 + 94) / 188)
-exe '6resize ' . ((&lines * 11 + 30) / 61)
-exe 'vert 6resize ' . ((&columns * 93 + 94) / 188)
 tabnext 1
-badd +0 src/quests.c
-badd +0 .git/description
-badd +1 include/save.h
-badd +0 include/global.h
-badd +0 include/quests.h
+badd +2328 src/scrcmd.c
+badd +1 src/quests.c
+badd +1 include/global.h
+badd +1 include/quests.h
 badd +1 data/maps/LilycoveCity_PokemonCenter_1F/scripts.inc
-badd +0 src/scrcmd.c
+badd +1 .git/description
+badd +1 include/save.h
+badd +109 ~/.zshrc
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
