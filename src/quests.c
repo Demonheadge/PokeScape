@@ -30,7 +30,6 @@
 #include "constants/field_weather.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
-
 #include "mgba_printf/mgba.h"
 
 #define tCount          data[2]
@@ -851,8 +850,7 @@ static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
     {
         if (GetSetQuestFlag(itemId, FLAG_GET_COMPLETED))
             StringCopy(gStringVar4, sText_QuestMenu_Complete);
-        //else if (IsActiveQuest(itemId))
-        if (GetSetQuestFlag(itemId, FLAG_GET_ACTIVE))
+        else if (IsActiveQuest(itemId))
             StringCopy(gStringVar4, sText_QuestMenu_Active);
         else
             StringCopy(gStringVar4, sText_Empty);
@@ -1425,22 +1423,28 @@ s8 GetSetQuestFlag(u8 quest, u8 caseId)
     index = quest / 8; //8 bits per byte
     bit = quest % 8;
     mask = 1 << bit;
-    MgbaPrintf(MGBA_LOG_INFO,"index:%u\n", index);
     
     switch (caseId)
     {
     case FLAG_GET_UNLOCKED:
         return gSaveBlock2Ptr->unlockedQuests[index] & mask;
     case FLAG_SET_UNLOCKED:
-        MgbaPrintf(MGBA_LOG_INFO,"before %u\n", gSaveBlock2Ptr->unlockedQuests[index]);
+        MgbaPrintf(MGBA_LOG_INFO,"unlockedQuests before: %u",gSaveBlock2Ptr->unlockedQuests[index]);
         gSaveBlock2Ptr->unlockedQuests[index] |= mask;
-        MgbaPrintf(MGBA_LOG_INFO,"after %u\n", gSaveBlock2Ptr->unlockedQuests[index]);
+        MgbaPrintf(MGBA_LOG_INFO,"unlockedQuests after: %u",gSaveBlock2Ptr->unlockedQuests[index]);
         return 1;
+    /*
+     * UNBOUND QUEST MENU ADDITION
+     * cases added for get/set active
+     * cases added for get/set reward
+     */
     case FLAG_GET_ACTIVE:
         return gSaveBlock2Ptr->activeQuests[index] & mask;
     case FLAG_SET_ACTIVE:
+        MgbaPrintf(MGBA_LOG_INFO,"activeQuests before: %u",gSaveBlock2Ptr->activeQuests[index]);
         gSaveBlock2Ptr->activeQuests[index] |= mask;
         return 1;
+        MgbaPrintf(MGBA_LOG_INFO,"activeQuests before: %u",gSaveBlock2Ptr->activeQuests[index]);
     case FLAG_GET_REWARD:
         return gSaveBlock2Ptr->rewardQuests[index] & mask;
     case FLAG_SET_REWARD:
@@ -1456,18 +1460,15 @@ s8 GetSetQuestFlag(u8 quest, u8 caseId)
     return -1;  //failure
 }
 
-//s8 GetActiveQuestIndex(void)
-//{
-//    if (gSaveBlock2Ptr->activeQuest > 0)
-//        return (gSaveBlock2Ptr->activeQuest - 1);
-//    else
-//        return NO_ACTIVE_QUEST;
-//}
-
 s8 GetActiveQuestIndex(void)
 {
-    if (gSaveBlock2Ptr->activeQuest > 0)
-        return (gSaveBlock2Ptr->activeQuest - 1);
+    /*
+     * UNBOUND QUEST MENU ADDITION
+     * change activeQuest to activeQuests
+     */
+    //if (gSaveBlock2Ptr->activeQuest > 0)
+    if (gSaveBlock2Ptr->activeQuests > 0)
+        return (gSaveBlock2Ptr->activeQuests - 1);
     else
         return NO_ACTIVE_QUEST;
 }
