@@ -51,6 +51,7 @@ void SetActiveQuest(u8 questId);
 void TextWindow_SetStdFrame0_WithPal(u8 windowId, u16 destOffset, u8 palIdx);
 void QuestMenu_Init(u8 a0, MainCallback callback);
 void SetQuestMenuActive(void);
+//void ResetActiveQuest(void);
 void ResetActiveQuest(void);
 void CopyQuestName(u8 *dst, u8 questId);
 

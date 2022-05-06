@@ -41,9 +41,12 @@ LilycoveCity_PokemonCenter_1F_EventScript_Boy::
     //questmenu QUEST_MENU_COMPLETE_QUEST,SIDE_QUEST_4
     //questmenu QUEST_MENU_COMPLETE_QUEST,SIDE_QUEST_5
     questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_5
-    //questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_4
-    //questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_1
-    //openquestmenu
+    questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_4
+    questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_3
+    questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_2
+    questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_1
+    questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_6
+    openquestmenu
 	end
 
 LilycoveCity_PokemonCenter_1F_EventScript_Maniac::
