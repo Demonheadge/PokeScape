@@ -27,6 +27,7 @@
 #include "overworld.h"
 #include "event_data.h"
 #include "constants/items.h"
+#include "constants/event_objects.h"
 #include "constants/field_weather.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
@@ -101,8 +102,6 @@ static void QuestMenu_InitItems(void);
 static void QuestMenu_SetScrollPosition(void);
 static void Task_QuestMenuMain(u8 taskId);
 static void QuestMenu_InsertItemIntoNewSlot(u8 taskId, u32 pos);
-static void Task_QuestMenuSubmenuInit(u8 taskId);
-static void Task_QuestMenuSubmenuRun(u8 taskId);
 static void Task_QuestMenuDetails(u8 taskId);
 static void Task_QuestMenuReward(u8 taskId);
 static void Task_QuestMenuBeginQuest(u8 taskId);
@@ -186,7 +185,8 @@ static const struct SideQuest sSideQuests[SIDE_QUEST_COUNT] =
 
 static const u16 sSideQuestDifficultyItemIds[] = 
 {
-	ITEM_POKE_BALL,
+    OBJ_EVENT_GFX_NINJA_BOY,
+	//ITEM_POKE_BALL,
 	ITEM_GREAT_BALL,
 	ITEM_ULTRA_BALL,
 	ITEM_MASTER_BALL,
@@ -1121,7 +1121,11 @@ static void Task_QuestMenuMain(u8 taskId)
             QuestMenu_SetInitializedFlag(0);
             gTasks[taskId].func = Task_QuestMenuTurnOff1;
             break;
-            
+
+        //Unbound add
+        default:
+
+           /* 
         default:
             if (GetSetQuestFlag(input, FLAG_GET_UNLOCKED))
             {
@@ -1132,12 +1136,12 @@ static void Task_QuestMenuMain(u8 taskId)
                 //data[2] = QuestMenu_GetItemQuantityBySlotId(input);
                 data[2] = 0;
                 QuestMenu_PrintOrRemoveCursor(data[0], 2);            
-                gTasks[taskId].func = Task_QuestMenuSubmenuInit;
             }
             else
             {
                 PlaySE(SE_FAILURE);
             }
+            */
             break;
         }
     }
@@ -1172,70 +1176,6 @@ static void sub_80986A8(s16 x, u16 y)
     {
         gSprites[ptr[i]].x2 = x;
         gSprites[ptr[i]].y = y + 7;
-    }
-}
-
-
-
-static void Task_QuestMenuSubmenuInit(u8 taskId)
-{
-    s16 * data = gTasks[taskId].data;
-    u8 windowId;
-
-    QuestMenu_SetBorderStyleOnWindow(4);    //for sub menu list items
-    windowId = QuestMenu_GetOrCreateSubwindow(0);
-    
-    if (GetSetQuestFlag(data[1], FLAG_GET_COMPLETED))
-    {
-        // completed
-        PrintMenuActionTextsAtPos(4, 2, 8, 2, GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT) + 2, NELEMS(sCompletedQuestSubmenuOptions), sCompletedQuestSubmenuOptions);
-        InitMenuNormal(4, 2, 0, 2, GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT) + 2, NELEMS(sCompletedQuestSubmenuOptions), 0);
-
-    }
-    else if (IsActiveQuest(QuestMenu_GetCursorPosition()))
-    {
-        // active
-        PrintMenuActionTextsAtPos(4, 2, 8, 2, GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT) + 2, NELEMS(sActiveQuestSubmenuOptions), sActiveQuestSubmenuOptions);
-        InitMenuNormal(4, 2, 0, 2, GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT) + 2, NELEMS(sActiveQuestSubmenuOptions), 0);
-    }
-    else
-    {
-        // unlocked
-        PrintMenuActionTextsAtPos(4, 2, 8, 2, GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT) + 2, NELEMS(sQuestSubmenuOptions), sQuestSubmenuOptions);
-        InitMenuNormal(4, 2, 0, 2, GetFontAttribute(2, FONTATTR_MAX_LETTER_HEIGHT) + 2, NELEMS(sQuestSubmenuOptions), 0);
-    }    
-    //CopyItemName(QuestMenu_GetItemIdBySlotId(data[1]), gStringVar1);
-    //StringExpandPlaceholders(gStringVar4, gText_StrVar1);
-    
-    StringCopy(gStringVar4, sText_QuestMenu_SelectedQuest);
-    //StringExpandPlaceholders(gStringVar4, sText_QuestMenu_SelectedQuest);
-    
-    QuestMenu_AddTextPrinterParameterized(windowId, 2, gStringVar4, 0, 2, 1, 0, 0, 1);
-    ScheduleBgCopyTilemapToVram(0);
-    gTasks[taskId].func = Task_QuestMenuSubmenuRun;
-}
-
-static void Task_QuestMenuSubmenuRun(u8 taskId)
-{
-    u8 questIndex = QuestMenu_GetCursorPosition();
-    s8 input = Menu_ProcessInputNoWrapAround_other();
-    
-    switch (input)
-    {
-    case LIST_NOTHING_CHOSEN:
-        PlaySE(SE_SELECT);
-        Task_QuestMenuCancel(taskId);
-        break;
-    case LIST_CANCEL:
-        break;
-    default:
-        PlaySE(SE_SELECT);
-        if (GetSetQuestFlag(questIndex, FLAG_GET_COMPLETED))
-            sCompletedQuestSubmenuOptions[input].func.void_u8(taskId);
-        else if (IsActiveQuest(questIndex))
-            sActiveQuestSubmenuOptions[input].func.void_u8(taskId);
-        else       
-            sQuestSubmenuOptions[input].func.void_u8(taskId);
     }
 }
 
@@ -1544,4 +1484,5 @@ void CopyQuestName(u8 *dst, u8 questId)
 #undef tYSpeed
 #undef tXSpeed
 #undef tState
+
 
