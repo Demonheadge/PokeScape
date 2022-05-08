@@ -36,15 +36,21 @@ LilycoveCity_PokemonCenter_1F_EventScript_Nurse::
 LilycoveCity_PokemonCenter_1F_EventScript_Boy::
 	msgbox LilycoveCity_PokemonCenter_1F_Text_HowManyKindsOfPokemon, MSGBOX_NPC
     setflag FLAG_SYS_QUEST_MENU_GET
-    questmenu QUEST_MENU_UNLOCK_QUEST,SIDE_QUEST_5
-    questmenu QUEST_MENU_UNLOCK_QUEST,SIDE_QUEST_4
-    questmenu QUEST_MENU_UNLOCK_QUEST,SIDE_QUEST_6
-    //questmenu QUEST_MENU_COMPLETE_QUEST,SIDE_QUEST_4
-    //questmenu QUEST_MENU_COMPLETE_QUEST,SIDE_QUEST_5
-    questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_3
-    questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_2
+    questmenu QUEST_MENU_UNLOCK_QUEST,SIDE_QUEST_1
     questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_1
-    questmenu QUEST_MENU_COMPLETE_QUEST,SIDE_QUEST_6
+    
+    questmenu QUEST_MENU_UNLOCK_QUEST,SIDE_QUEST_2
+    questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_2
+    
+    questmenu QUEST_MENU_UNLOCK_QUEST,SIDE_QUEST_3
+    questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_3
+    
+    questmenu QUEST_MENU_UNLOCK_QUEST,SIDE_QUEST_4
+    questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_4
+    
+    questmenu QUEST_MENU_UNLOCK_QUEST,SIDE_QUEST_5
+    questmenu QUEST_MENU_COMPLETE_QUEST,SIDE_QUEST_5
+
     openquestmenu
 	end
 
@@ -76,5 +82,6 @@ LilycoveCity_PokemonCenter_1F_Text_HaventSeenRottenScoundrels:
 	.string "Those rotten scoundrels who steal\n"
 	.string "POKéMON and rip off METEORITES…\p"
 	.string "I haven't seen them around recently.$"
+
 
 

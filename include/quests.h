@@ -57,3 +57,4 @@ void CopyQuestName(u8 *dst, u8 questId);
 
 #endif // GUARD_QUESTS_H
 
+

@@ -6,10 +6,10 @@
 #include "gpu_regs.h"
 #include "graphics.h"
 #include "item.h"
+#include "item_icon.h"
 #include "item_menu.h"
 #include "item_menu_icons.h"
 #include "list_menu.h"
-#include "item_icon.h"
 #include "item_use.h"
 #include "main.h"
 #include "malloc.h"
@@ -27,11 +27,12 @@
 #include "overworld.h"
 #include "event_data.h"
 #include "constants/items.h"
-#include "constants/event_objects.h"
 #include "constants/field_weather.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
 #include "mgba_printf/mgba.h"
+#include "constants/event_objects.h"
+#include "event_object_movement.h"
 
 #define tCount          data[2]
 #define tPageItems      data[4]
@@ -185,8 +186,7 @@ static const struct SideQuest sSideQuests[SIDE_QUEST_COUNT] =
 
 static const u16 sSideQuestDifficultyItemIds[] = 
 {
-    OBJ_EVENT_GFX_NINJA_BOY,
-	//ITEM_POKE_BALL,
+	ITEM_POKE_BALL,
 	ITEM_GREAT_BALL,
 	ITEM_ULTRA_BALL,
 	ITEM_MASTER_BALL,
@@ -195,9 +195,9 @@ static const u16 sSideQuestDifficultyItemIds[] =
 static const u8 sSideQuestDifficulties[SIDE_QUEST_COUNT] = 
 {
     [SIDE_QUEST_1] = QUEST_DIFFICULTY_EASY,
-    [SIDE_QUEST_2] = QUEST_DIFFICULTY_EASY,
-    [SIDE_QUEST_3] = QUEST_DIFFICULTY_EASY,
-    [SIDE_QUEST_4] = QUEST_DIFFICULTY_EASY,
+    [SIDE_QUEST_2] = QUEST_DIFFICULTY_MEDIUM,
+    [SIDE_QUEST_3] = QUEST_DIFFICULTY_HARD,
+    [SIDE_QUEST_4] = QUEST_DIFFICULTY_EXTREME,
     [SIDE_QUEST_5] = QUEST_DIFFICULTY_EASY,
     [SIDE_QUEST_6] = QUEST_DIFFICULTY_EASY,
     [SIDE_QUEST_7] = QUEST_DIFFICULTY_EASY,
@@ -771,6 +771,12 @@ void CreateItemMenuIcon(u16 itemId, u8 idx)
         FreeSpriteTilesByTag(102 + idx);
         FreeSpritePaletteByTag(102 + idx);
         spriteId = AddItemIconSprite(102 + idx, 102 + idx, itemId);
+        MgbaPrintf(MGBA_LOG_INFO,"ItemIconSprite: %d",itemId);
+
+        //(tilesTag, paletteTag, itemID)
+        //spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 24,140, 0);
+        //MgbaPrintf(MGBA_LOG_INFO,"CreateObjectGraphicsSprite: %u \n",spriteId);
+        //graphicsID, struct Sprite *, x, y, subpriority)
         if (spriteId != MAX_SPRITES)
         {
             ptr[idx] = spriteId;
@@ -824,6 +830,7 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
             }
             
             CreateItemMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
+        
         }
         else
         {
@@ -856,11 +863,9 @@ static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
             StringCopy(gStringVar4, sText_QuestMenu_Complete);
         //else if (IsActiveQuest(itemId)){
             else if (GetSetQuestFlag(itemId, FLAG_GET_ACTIVE)){
-            MgbaPrintf(MGBA_LOG_INFO,"Success on itemId: %u",itemId);
             StringCopy(gStringVar4, sText_QuestMenu_Active);
         }
         else{
-            MgbaPrintf(MGBA_LOG_INFO,"FAILURE on itemId: %u",itemId);
             StringCopy(gStringVar4, sText_Empty);
         }
         
@@ -1390,10 +1395,8 @@ s8 GetSetQuestFlag(u8 quest, u8 caseId)
      * cases added for get/set reward
      */
     case FLAG_GET_ACTIVE:
-        MgbaPrintf(MGBA_LOG_INFO,"GSQF FLAG_GET_ACTIVE: %u",gSaveBlock2Ptr->activeQuests[index] & mask);
         return gSaveBlock2Ptr->activeQuests[index] & mask;
     case FLAG_SET_ACTIVE:
-        MgbaPrintf(MGBA_LOG_INFO,"GSQF FLAG_SET_ACTIVE: %u",gSaveBlock2Ptr->activeQuests[index] |= mask);
         gSaveBlock2Ptr->activeQuests[index] |= mask;
         return 1;
     case FLAG_GET_REWARD:
@@ -1432,10 +1435,6 @@ static bool8 IsActiveQuest(u8 questId){
     bit = questId % 8;
     mask = 1 << bit;
 
-    MgbaPrintf(MGBA_LOG_INFO,"questId: %u",questId);
-    MgbaPrintf(MGBA_LOG_INFO,"index: %u",index);
-    MgbaPrintf(MGBA_LOG_INFO,"bit: %u",bit);
-    MgbaPrintf(MGBA_LOG_INFO,"mask: %u",mask);
     //if (GetSetQuestFlag(questId,FLAG_GET_ACTIVE) == questId){
     if (GetSetQuestFlag(questId,FLAG_GET_ACTIVE) == mask){
         return TRUE;
@@ -1484,5 +1483,6 @@ void CopyQuestName(u8 *dst, u8 questId)
 #undef tYSpeed
 #undef tXSpeed
 #undef tState
+
 
 
