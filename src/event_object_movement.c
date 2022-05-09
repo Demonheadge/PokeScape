@@ -1538,9 +1538,10 @@ u8 CreateObjectGraphicsSprite(u16 graphicsId, void (*callback)(struct Sprite *),
     u8 spriteId;
 
     spriteTemplate = malloc(sizeof(struct SpriteTemplate));
-    CopyObjectGraphicsInfoToSpriteTemplate(graphicsId, callback, spriteTemplate, &subspriteTables);
+    CopyObjectGraphicsInfoToSpriteTemplate(OBJ_EVENT_GFX_WOMAN_2, callback, spriteTemplate, &subspriteTables);
     if (spriteTemplate->paletteTag != TAG_NONE)
         LoadObjectEventPalette(spriteTemplate->paletteTag);
+        
 
     spriteId = CreateSprite(spriteTemplate, x, y, subpriority);
     free(spriteTemplate);

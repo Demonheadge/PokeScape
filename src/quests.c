@@ -761,22 +761,38 @@ static void QuestMenu_BuildListMenuTemplate(void)
     gMultiuseListMenuTemplate.cursorKind = 0;
 }
 
+void CreateObjectMenuIcon(void)
+{
+    u8 spriteId;
+    u8 * ptr = &gUnknown_2039878[10];
+
+    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_MAN_1, SpriteCallbackDummy, 24, 140, 0);
+    gSprites[spriteId].oam.priority = 3;
+    if (spriteId != MAX_SPRITES)
+    {
+        ptr[1] = spriteId;
+        gSprites[spriteId].x2 = 24;
+        gSprites[spriteId].y2 = 140;
+    }
+    StartSpriteAnim(&gSprites[spriteId], ANIM_STD_GO_SOUTH);
+    MgbaPrintf(MGBA_LOG_INFO,"spriteId: %d",spriteId);
+}
+
 void CreateItemMenuIcon(u16 itemId, u8 idx)
 {
     u8 * ptr = &gUnknown_2039878[10];
     u8 spriteId;
+        struct SpriteSheet spriteSheet;
+        struct CompressedSpritePalette spritePalette;
+        struct SpriteTemplate *spriteTemplate;
 
     if (ptr[idx] == 0xFF)
     {
         FreeSpriteTilesByTag(102 + idx);
         FreeSpritePaletteByTag(102 + idx);
-        spriteId = AddItemIconSprite(102 + idx, 102 + idx, itemId);
-        MgbaPrintf(MGBA_LOG_INFO,"ItemIconSprite: %d",itemId);
 
-        //(tilesTag, paletteTag, itemID)
-        //spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 24,140, 0);
-        //MgbaPrintf(MGBA_LOG_INFO,"CreateObjectGraphicsSprite: %u \n",spriteId);
-        //graphicsID, struct Sprite *, x, y, subpriority)
+        spriteId = AddItemIconSprite(102 + idx, 102 + idx, itemId);
+
         if (spriteId != MAX_SPRITES)
         {
             ptr[idx] = spriteId;
@@ -829,7 +845,8 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
                 desc = sText_QuestMenu_Unk;
             }
             
-            CreateItemMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
+            //CreateItemMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
+            CreateObjectMenuIcon();
         
         }
         else
@@ -855,7 +872,6 @@ static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
     }
     /*
      * UNBOUND QUEST MENU ADDITION
-     * 
      */
     if (itemId != LIST_CANCEL)
     {

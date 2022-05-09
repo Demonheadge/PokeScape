@@ -41,6 +41,7 @@ enum QuestCases
 };
 
 // functions
+void CreateObjectMenuIcon(void);
 void CreateItemMenuIcon(u16, u8);
 void ResetItemMenuIconState(void);
 void DestroyItemMenuIcon(u8 idx);
