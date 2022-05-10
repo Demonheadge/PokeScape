@@ -41,10 +41,11 @@ enum QuestCases
 };
 
 // functions
-void CreateObjectMenuIcon(void);
+void CreateObjectMenuIcon(u16, u8);
 void CreateItemMenuIcon(u16, u8);
 void ResetItemMenuIconState(void);
 void DestroyItemMenuIcon(u8 idx);
+void DestroyObjectMenuIcon(u8 idx);
 void Task_OpenQuestMenuFromStartMenu(u8);
 s8 GetSetQuestFlag(u8 quest, u8 caseId);
 s8 GetActiveQuestIndex(void);

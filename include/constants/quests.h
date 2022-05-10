@@ -11,6 +11,8 @@
 #define QUEST_MENU_GET_ACTIVE_QUEST     6   //returns the active quest index (-1, or 0xFF for none)
 #define QUEST_MENU_CHECK_UNLOCKED       7   //checks if questId has been unlocked. Returns result to gSpecialVar_Result
 #define QUEST_MENU_CHECK_COMPLETE       8   //checks if questId has been completed. Returns result to gSpecialVar_Result
+#define QUEST_MENU_SET_REWARD           9   //questId = SIDE_QUEST_X (0-indexed)
+#define QUEST_MENU_CHECK_REWARD         10  //checks if questId is in Reward state. Returns result to gSpecialVar_Result
 
 // quest number defines
 #define SIDE_QUEST_1          0

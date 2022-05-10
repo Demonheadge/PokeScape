@@ -138,9 +138,9 @@ static const u8 sText_Quests[] = _("   Side\n Quests");
 static const u8 sText_QuestMenu_Begin[] = _("Begin");
 static const u8 sText_QuestMenu_End[] = _("End");
 static const u8 sText_QuestMenu_Details[] = _("Details");
-static const u8 sText_QuestMenu_Reward[] = _("Reward");
 static const u8 sText_QuestMenu_Unk[] = _("{COLOR}{LIGHT_GRAY}?????????");
 static const u8 sText_QuestMenu_Active[] = _("{COLOR}{GREEN}Active");
+static const u8 sText_QuestMenu_Reward[] = _("{COLOR}{RED}Reward");
 static const u8 sText_QuestMenu_Complete[] = _("{COLOR}{BLUE}Done");
 static const u8 sText_QuestMenu_Exit[] = _("Exit the Quest Menu");
 static const u8 sText_QuestMenu_SelectedQuest[] = _("Do what with\nthis quest?");
@@ -184,22 +184,14 @@ static const struct SideQuest sSideQuests[SIDE_QUEST_COUNT] =
     side_quest(gText_SideQuestName_30, gText_SideQuestDesc_30, gText_SideQuestPOC_30, gText_SideQuestMap_30, gText_SideQuestReward_30),
 };
 
-static const u16 sSideQuestDifficultyItemIds[] = 
-{
-	ITEM_POKE_BALL,
-	ITEM_GREAT_BALL,
-	ITEM_ULTRA_BALL,
-	ITEM_MASTER_BALL,
-};
-
 static const u8 sSideQuestDifficulties[SIDE_QUEST_COUNT] = 
 {
-    [SIDE_QUEST_1] = QUEST_DIFFICULTY_EASY,
-    [SIDE_QUEST_2] = QUEST_DIFFICULTY_MEDIUM,
-    [SIDE_QUEST_3] = QUEST_DIFFICULTY_HARD,
-    [SIDE_QUEST_4] = QUEST_DIFFICULTY_EXTREME,
-    [SIDE_QUEST_5] = QUEST_DIFFICULTY_EASY,
-    [SIDE_QUEST_6] = QUEST_DIFFICULTY_EASY,
+    [SIDE_QUEST_1] = OBJ_EVENT_GFX_RICH_BOY,
+    [SIDE_QUEST_2] = OBJ_EVENT_GFX_TEALA,
+    [SIDE_QUEST_3] = OBJ_EVENT_GFX_TUBER_F,
+    [SIDE_QUEST_4] = OBJ_EVENT_GFX_PSYCHIC_M,
+    [SIDE_QUEST_5] = OBJ_EVENT_GFX_CONTEST_JUDGE,
+    [SIDE_QUEST_6] = OBJ_EVENT_GFX_CONTEST_JUDGE,
     [SIDE_QUEST_7] = QUEST_DIFFICULTY_EASY,
     [SIDE_QUEST_8] = QUEST_DIFFICULTY_EASY,
     [SIDE_QUEST_9] = QUEST_DIFFICULTY_EASY,
@@ -761,21 +753,26 @@ static void QuestMenu_BuildListMenuTemplate(void)
     gMultiuseListMenuTemplate.cursorKind = 0;
 }
 
-void CreateObjectMenuIcon(void)
+void CreateObjectMenuIcon(u16 itemId, u8 idx)
 {
-    u8 spriteId;
     u8 * ptr = &gUnknown_2039878[10];
+    u8 spriteId;
 
-    spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_MAN_1, SpriteCallbackDummy, 24, 140, 0);
-    gSprites[spriteId].oam.priority = 3;
-    if (spriteId != MAX_SPRITES)
+    if (ptr[idx] == 0xFF)
     {
-        ptr[1] = spriteId;
-        gSprites[spriteId].x2 = 24;
-        gSprites[spriteId].y2 = 140;
+
+        FreeSpriteTilesByTag(102 + idx);
+        FreeSpritePaletteByTag(102 + idx);
+
+        spriteId = CreateObjectGraphicsSprite(itemId,SpriteCallbackDummy,20,132,0);
+        gSprites[spriteId].oam.priority = 0;
+        StartSpriteAnim(&gSprites[spriteId], ANIM_STD_GO_SOUTH);
+        if (spriteId != MAX_SPRITES)
+        {
+            ptr[idx] = spriteId;
+        }
+
     }
-    StartSpriteAnim(&gSprites[spriteId], ANIM_STD_GO_SOUTH);
-    MgbaPrintf(MGBA_LOG_INFO,"spriteId: %d",spriteId);
 }
 
 void CreateItemMenuIcon(u16 itemId, u8 idx)
@@ -791,6 +788,7 @@ void CreateItemMenuIcon(u16 itemId, u8 idx)
         FreeSpriteTilesByTag(102 + idx);
         FreeSpritePaletteByTag(102 + idx);
 
+        MgbaPrintf(MGBA_LOG_INFO, "create address: %d", &gSprites[ptr[idx]]); 
         spriteId = AddItemIconSprite(102 + idx, 102 + idx, itemId);
 
         if (spriteId != MAX_SPRITES)
@@ -816,6 +814,18 @@ void DestroyItemMenuIcon(u8 idx)
 
     if (ptr[idx] != 0xFF)
     {
+        MgbaPrintf(MGBA_LOG_INFO, "destroy address: %d", &gSprites[ptr[idx]]); 
+        DestroySpriteAndFreeResources(&gSprites[ptr[idx]]);
+        ptr[idx] = 0xFF;
+    }
+}
+
+void DestroyObjectMenuIcon(u8 idx)
+{
+    u8 * ptr = &gUnknown_2039878[10];
+
+    if (ptr[idx] != 0xFF)
+    {
         DestroySpriteAndFreeResources(&gSprites[ptr[idx]]);
         ptr[idx] = 0xFF;
     }
@@ -831,22 +841,24 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
 
     if (sStateDataPtr->moveModeOrigPos == 0xFF)
     {
-        DestroyItemMenuIcon(sStateDataPtr->itemMenuIconSlot ^ 1);
+        DestroyObjectMenuIcon(sStateDataPtr->itemMenuIconSlot ^ 1);
+        //DestroyItemMenuIcon(sStateDataPtr->itemMenuIconSlot ^ 1);
         if (itemIndex != LIST_CANCEL)
         {
             if (GetSetQuestFlag(itemIndex, FLAG_GET_UNLOCKED))
             {
-                itemId = sSideQuestDifficultyItemIds[sSideQuestDifficulties[itemIndex]];
+                itemId = sSideQuestDifficulties[itemIndex];
                 desc = sSideQuests[itemIndex].desc;
             }
             else
             {
-                itemId = ITEM_NONE;
+                //PSF TODO Make black shadow NPC
+                CreateItemMenuIcon(ITEM_NONE, sStateDataPtr->itemMenuIconSlot);
                 desc = sText_QuestMenu_Unk;
             }
             
             //CreateItemMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
-            CreateObjectMenuIcon();
+            CreateObjectMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
         
         }
         else
@@ -877,8 +889,10 @@ static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
     {
         if (GetSetQuestFlag(itemId, FLAG_GET_COMPLETED))
             StringCopy(gStringVar4, sText_QuestMenu_Complete);
-        //else if (IsActiveQuest(itemId)){
-            else if (GetSetQuestFlag(itemId, FLAG_GET_ACTIVE)){
+        else if (GetSetQuestFlag(itemId, FLAG_GET_REWARD)){
+            StringCopy(gStringVar4, sText_QuestMenu_Reward);
+        }
+        else if (GetSetQuestFlag(itemId, FLAG_GET_ACTIVE)){
             StringCopy(gStringVar4, sText_QuestMenu_Active);
         }
         else{

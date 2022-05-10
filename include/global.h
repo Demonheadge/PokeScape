@@ -1036,3 +1036,4 @@ struct MapPosition
 };
 
 #endif // GUARD_GLOBAL_H
+
