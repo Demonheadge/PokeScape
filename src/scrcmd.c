@@ -2334,7 +2334,7 @@ bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
         GetSetQuestFlag(questId, FLAG_SET_ACTIVE);
         break;
     case QUEST_MENU_SET_REWARD:
-        GetSetQuestFlag(questId, FLAG_SET_ACTIVE);
+        GetSetQuestFlag(questId, FLAG_SET_REWARD);
         break;
     case QUEST_MENU_RESET_ACTIVE:
         ResetActiveQuest();

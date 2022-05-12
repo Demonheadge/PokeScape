@@ -34,6 +34,8 @@
 #include "constants/event_objects.h"
 #include "event_object_movement.h"
 
+#include "random.h"
+
 #define tCount          data[2]
 #define tPageItems      data[4]
 #define tItemPcParam    data[6]
@@ -94,6 +96,10 @@ static void QuestMenu_BuildListMenuTemplate(void);
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
 static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y);
 static void QuestMenu_PrintOrRemoveCursorAt(u8 y, u8 state);
+s8 QuestMenu_CountUnlockedQuests(void);
+s8 QuestMenu_CountActiveQuests(void);
+s8 QuestMenu_CountRewardQuests(void);
+s8 QuestMenu_CountCompletedQuests(void);
 static void QuestMenu_PrintHeader(void);
 static void QuestMenu_PlaceTopMenuScrollIndicatorArrows(void);
 static void QuestMenu_SetCursorPosition(void);
@@ -134,7 +140,10 @@ static const u16 sFR_MessageBoxTiles[] = INCBIN_U16("graphics/text_window/fr_mes
 
 // strings
 static const u8 sText_Empty[] = _("");
-static const u8 sText_Quests[] = _("   Side\n Quests");
+//static const u8 sText_Quests[] = _("   Side\n Quests");
+static const u8 sText_Quests[] = _("Quests");
+static const u8 sText_VisibleNumQuests[] = _("{STR_VAR_1}");
+static const u8 sText_TotalNumQuests[] = _(" / {STR_VAR_2}");
 static const u8 sText_QuestMenu_Begin[] = _("Begin");
 static const u8 sText_QuestMenu_End[] = _("End");
 static const u8 sText_QuestMenu_Details[] = _("Details");
@@ -366,19 +375,19 @@ void QuestMenu_Init(u8 a0, MainCallback callback)
         SetMainCallback2(callback);
         return;
     }
-    
+
     if ((sStateDataPtr = Alloc(sizeof(struct QuestMenuResources))) == NULL)
     {
         SetMainCallback2(callback);
         return;
     }
-    
+
     if (a0 != 1)
     {
         sListMenuState.savedCallback = callback;
         sListMenuState.scroll = sListMenuState.row = 0;
     }
-    
+
     sStateDataPtr->moveModeOrigPos = 0xFF;
     sStateDataPtr->itemMenuIconSlot = 0;
     sStateDataPtr->scrollIndicatorArrowPairId = 0xFF;
@@ -387,7 +396,7 @@ void QuestMenu_Init(u8 a0, MainCallback callback)
     {
         sStateDataPtr->data[i] = 0;
     }
-    
+
     SetMainCallback2(QuestMenu_RunSetup);
 }
 
@@ -425,12 +434,12 @@ static void BeginPCScreenEffect(TaskFunc task, u16 a1, u16 a2, u16 priority)
         gTasks[taskId].data[1] = 16;
     else
         gTasks[taskId].data[1] = 0;
-    
+
     if (a1 == 0)
         gTasks[taskId].data[2] = 20;
     else
         gTasks[taskId].data[2] = 0;
-    
+
     gTasks[taskId].func(taskId);
 }
 
@@ -441,56 +450,56 @@ static void Task_PCScreenEffect_TurnOn(u8 taskId)
 
     switch (task->tState)
     {
-    case 0:
-        task->tWin0Left = 120;
-        task->tWin0Right = 120;
-        task->tWin0Top = 80;
-        task->tWin0Bottom = 81;
-        SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
-        SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(task->tWin0Left, task->tWin0Right));
-        SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(task->tWin0Top, task->tWin0Bottom));
-        SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN0_CLR);
-        SetGpuReg(REG_OFFSET_WINOUT, 0);
-        break;
-    case 1:
-        task->tBldCntBak = GetGpuReg(REG_OFFSET_BLDCNT);
-        task->tBldYBak = GetGpuReg(REG_OFFSET_BLDY);
-        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_TGT1_BG1 | BLDCNT_TGT1_BG2 | BLDCNT_TGT1_BG3 | BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BD | BLDCNT_EFFECT_LIGHTEN);
-        SetGpuReg(REG_OFFSET_BLDY, 16);
-        break;
-    case 2:
-        task->tWin0Left -= task->tXSpeed;
-        task->tWin0Right += task->tXSpeed;
-        if (task->tWin0Left <= 0 || task->tWin0Right >= DISPLAY_WIDTH)
-        {
-            task->tWin0Left = 0;
-            task->tWin0Right = DISPLAY_WIDTH;
-            SetGpuReg(REG_OFFSET_BLDY, 0);
+        case 0:
+            task->tWin0Left = 120;
+            task->tWin0Right = 120;
+            task->tWin0Top = 80;
+            task->tWin0Bottom = 81;
+            SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
+            SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(task->tWin0Left, task->tWin0Right));
+            SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(task->tWin0Top, task->tWin0Bottom));
+            SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN0_CLR);
+            SetGpuReg(REG_OFFSET_WINOUT, 0);
+            break;
+        case 1:
+            task->tBldCntBak = GetGpuReg(REG_OFFSET_BLDCNT);
+            task->tBldYBak = GetGpuReg(REG_OFFSET_BLDY);
+            SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_TGT1_BG1 | BLDCNT_TGT1_BG2 | BLDCNT_TGT1_BG3 | BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BD | BLDCNT_EFFECT_LIGHTEN);
+            SetGpuReg(REG_OFFSET_BLDY, 16);
+            break;
+        case 2:
+            task->tWin0Left -= task->tXSpeed;
+            task->tWin0Right += task->tXSpeed;
+            if (task->tWin0Left <= 0 || task->tWin0Right >= DISPLAY_WIDTH)
+            {
+                task->tWin0Left = 0;
+                task->tWin0Right = DISPLAY_WIDTH;
+                SetGpuReg(REG_OFFSET_BLDY, 0);
+                SetGpuReg(REG_OFFSET_BLDCNT, task->tBldCntBak);
+                BlendPalettes(0xFFFFFFFF, 0, RGB_BLACK);
+                gPlttBufferFaded[0] = 0;
+            }
+            SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(task->tWin0Left, task->tWin0Right));
+            if (task->tWin0Left)
+                return;
+            break;
+        case 3:
+            task->tWin0Top -= task->tYSpeed;
+            task->tWin0Bottom += task->tYSpeed;
+            if (task->tWin0Top <= 0 || task->tWin0Bottom >= DISPLAY_HEIGHT)
+            {
+                task->tWin0Top = 0;
+                task->tWin0Bottom = DISPLAY_HEIGHT;
+                ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
+            }
+            SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(task->tWin0Top, task->tWin0Bottom));
+            if (task->tWin0Top)
+                return;
+            break;
+        default:
             SetGpuReg(REG_OFFSET_BLDCNT, task->tBldCntBak);
-            BlendPalettes(0xFFFFFFFF, 0, RGB_BLACK);
-            gPlttBufferFaded[0] = 0;
-        }
-        SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(task->tWin0Left, task->tWin0Right));
-        if (task->tWin0Left)
+            DestroyTask(taskId);
             return;
-        break;
-    case 3:
-        task->tWin0Top -= task->tYSpeed;
-        task->tWin0Bottom += task->tYSpeed;
-        if (task->tWin0Top <= 0 || task->tWin0Bottom >= DISPLAY_HEIGHT)
-        {
-            task->tWin0Top = 0;
-            task->tWin0Bottom = DISPLAY_HEIGHT;
-            ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
-        }
-        SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(task->tWin0Top, task->tWin0Bottom));
-        if (task->tWin0Top)
-            return;
-        break;
-    default:
-        SetGpuReg(REG_OFFSET_BLDCNT, task->tBldCntBak);
-        DestroyTask(taskId);
-        return;
     }
     ++task->tState;
 }
@@ -506,126 +515,126 @@ static bool8 QuestMenu_DoGfxSetup(void)
     u8 taskId;
     switch (gMain.state)
     {
-    case 0:
-        SetVBlankHBlankCallbacksToNull();
-        ClearScheduledBgCopiesToVram();
-        gMain.state++;
-        break;
-    case 1:
-        ScanlineEffect_Stop();
-        gMain.state++;
-        break;
-    case 2:
-        FreeAllSpritePalettes();
-        gMain.state++;
-        break;
-    case 3:
-        ResetPaletteFade();
-        gMain.state++;
-        break;
-    case 4:
-        ResetSpriteData();
-        gMain.state++;
-        break;
-    case 5:
-        ResetItemMenuIconState();
-        gMain.state++;
-        break;
-    case 6:
-        ResetTasks();
-        gMain.state++;
-        break;
-    case 7:
-        if (QuestMenu_InitBgs())
-        {
-            sStateDataPtr->data[0] = 0;
+        case 0:
+            SetVBlankHBlankCallbacksToNull();
+            ClearScheduledBgCopiesToVram();
             gMain.state++;
-        }
-        else
-        {
-            QuestMenu_FadeAndBail();
-            return TRUE;
-        }
-        break;
-    case 8:
-        if (QuestMenu_LoadGraphics() == TRUE)
+            break;
+        case 1:
+            ScanlineEffect_Stop();
             gMain.state++;
-        break;
-    case 9:
-        QuestMenu_InitWindows();
-        gMain.state++;
-        break;
-    case 10:
-        QuestMenu_InitItems();
-        QuestMenu_SetCursorPosition();
-        QuestMenu_SetScrollPosition();
-        gMain.state++;
-        break;
-    case 11:
-        if (QuestMenu_AllocateResourcesForListMenu())
-        {
+            break;
+        case 2:
+            FreeAllSpritePalettes();
             gMain.state++;
-        }
-        else
-        {
-            QuestMenu_FadeAndBail();
-            return TRUE;
-        }
-        break;
-    case 12:
-        QuestMenu_BuildListMenuTemplate();
-        gMain.state++;
-        break;
-    case 13:
-        QuestMenu_PrintHeader();
-        gMain.state++;
-        break;
-    case 14:
-        //sub_80985E4();
-        gMain.state++;
-        break;
-    case 15:
-        taskId = CreateTask(Task_QuestMenuMain, 0);
-        gTasks[taskId].data[0] = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.scroll, sListMenuState.row);
-        gMain.state++;
-        break;
-    case 16:
-        QuestMenu_PlaceTopMenuScrollIndicatorArrows();
-        gMain.state++;
-        break;
-    case 17:
-        //HelpSystem_SetSomeVariable2(29);
-        gMain.state++;
-        break;
-    case 18:
-        if (sListMenuState.initialized == 1)
-        {
-            BlendPalettes(0xFFFFFFFF, 16, RGB_BLACK);
-        }
-        gMain.state++;
-        break;
-    case 19:
-        if (sListMenuState.initialized == 1)
-        {
-            BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
-        }
-        else
-        {
-            BeginPCScreenEffect_TurnOn(0, 0, 0);
-            QuestMenu_SetInitializedFlag(1);
-            PlaySE(SE_PC_LOGIN);
-        }
-        gMain.state++;
-        break;
-    case 20:
-        //if ((u8)sub_80BF72C() != TRUE)
+            break;
+        case 3:
+            ResetPaletteFade();
+            gMain.state++;
+            break;
+        case 4:
+            ResetSpriteData();
+            gMain.state++;
+            break;
+        case 5:
+            ResetItemMenuIconState();
+            gMain.state++;
+            break;
+        case 6:
+            ResetTasks();
+            gMain.state++;
+            break;
+        case 7:
+            if (QuestMenu_InitBgs())
+            {
+                sStateDataPtr->data[0] = 0;
+                gMain.state++;
+            }
+            else
+            {
+                QuestMenu_FadeAndBail();
+                return TRUE;
+            }
+            break;
+        case 8:
+            if (QuestMenu_LoadGraphics() == TRUE)
+                gMain.state++;
+            break;
+        case 9:
+            QuestMenu_InitWindows();
+            gMain.state++;
+            break;
+        case 10:
+            QuestMenu_InitItems();
+            QuestMenu_SetCursorPosition();
+            QuestMenu_SetScrollPosition();
+            gMain.state++;
+            break;
+        case 11:
+            if (QuestMenu_AllocateResourcesForListMenu())
+            {
+                gMain.state++;
+            }
+            else
+            {
+                QuestMenu_FadeAndBail();
+                return TRUE;
+            }
+            break;
+        case 12:
+            QuestMenu_BuildListMenuTemplate();
+            gMain.state++;
+            break;
+        case 13:
+            QuestMenu_PrintHeader();
+            gMain.state++;
+            break;
+        case 14:
+            //sub_80985E4();
+            gMain.state++;
+            break;
+        case 15:
+            taskId = CreateTask(Task_QuestMenuMain, 0);
+            gTasks[taskId].data[0] = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.scroll, sListMenuState.row);
+            gMain.state++;
+            break;
+        case 16:
+            QuestMenu_PlaceTopMenuScrollIndicatorArrows();
+            gMain.state++;
+            break;
+        case 17:
+            //HelpSystem_SetSomeVariable2(29);
+            gMain.state++;
+            break;
+        case 18:
+            if (sListMenuState.initialized == 1)
+            {
+                BlendPalettes(0xFFFFFFFF, 16, RGB_BLACK);
+            }
+            gMain.state++;
+            break;
+        case 19:
+            if (sListMenuState.initialized == 1)
+            {
+                BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
+            }
+            else
+            {
+                BeginPCScreenEffect_TurnOn(0, 0, 0);
+                QuestMenu_SetInitializedFlag(1);
+                PlaySE(SE_PC_LOGIN);
+            }
+            gMain.state++;
+            break;
+        case 20:
+            //if ((u8)sub_80BF72C() != TRUE)
             //gMain.state++;
-        gMain.state++;
-        break;
-    default:
-        SetVBlankCallback(QuestMenu_VBlankCB);
-        SetMainCallback2(QuestMenu_MainCB);
-        return TRUE;
+            gMain.state++;
+            break;
+        default:
+            SetVBlankCallback(QuestMenu_VBlankCB);
+            SetMainCallback2(QuestMenu_MainCB);
+            return TRUE;
     }
     return FALSE;
 }
@@ -654,7 +663,7 @@ static bool8 QuestMenu_InitBgs(void)
     sBg1TilemapBuffer = Alloc(0x800);
     if (sBg1TilemapBuffer == NULL)
         return FALSE;
-    
+
     memset(sBg1TilemapBuffer, 0, 0x800);
     ResetBgsAndClearDma3BusyFlags(0);
     InitBgsFromTemplates(0, sQuestMenuBgTemplates, NELEMS(sQuestMenuBgTemplates));
@@ -671,44 +680,44 @@ static bool8 QuestMenu_LoadGraphics(void)
 {
     switch (sStateDataPtr->data[0])
     {
-    case 0:
-        ResetTempTileDataBuffers();
-        DecompressAndCopyTileDataToVram(1, sQuestMenuTiles, 0, 0, 0);
-        sStateDataPtr->data[0]++;
-        break;
-    case 1:
-        if (FreeTempTileDataBuffersIfPossible() != TRUE)
-        {
-            LZDecompressWram(sQuestMenuTilemap, sBg1TilemapBuffer);
+        case 0:
+            ResetTempTileDataBuffers();
+            DecompressAndCopyTileDataToVram(1, sQuestMenuTiles, 0, 0, 0);
             sStateDataPtr->data[0]++;
-        }
-        break;
-    case 2:
-        LoadCompressedPalette(sQuestMenuBgPals, 0x00, 0x60);
-        sStateDataPtr->data[0]++;
-        break;
-    case 3:
-        //LoadCompressedSpriteSheet(&gBagSwapSpriteSheet);
-        sStateDataPtr->data[0]++;
-        break;
-    default:
-        //LoadCompressedSpritePalette(&gBagSwapSpritePalette);
-        sStateDataPtr->data[0] = 0;
-        return TRUE;
+            break;
+        case 1:
+            if (FreeTempTileDataBuffersIfPossible() != TRUE)
+            {
+                LZDecompressWram(sQuestMenuTilemap, sBg1TilemapBuffer);
+                sStateDataPtr->data[0]++;
+            }
+            break;
+        case 2:
+            LoadCompressedPalette(sQuestMenuBgPals, 0x00, 0x60);
+            sStateDataPtr->data[0]++;
+            break;
+        case 3:
+            //LoadCompressedSpriteSheet(&gBagSwapSpriteSheet);
+            sStateDataPtr->data[0]++;
+            break;
+        default:
+            //LoadCompressedSpritePalette(&gBagSwapSpritePalette);
+            sStateDataPtr->data[0] = 0;
+            return TRUE;
     }
     return FALSE;
 }
 
 #define try_alloc(ptr__, size) ({ \
-    void ** ptr = (void **)&(ptr__);             \
-    *ptr = Alloc(size);                 \
-    if (*ptr == NULL)                   \
-    {                                   \
+        void ** ptr = (void **)&(ptr__);             \
+        *ptr = Alloc(size);                 \
+        if (*ptr == NULL)                   \
+        {                                   \
         QuestMenu_FreeResources();                  \
         QuestMenu_FadeAndBail();                  \
         return FALSE;                   \
-    }                                   \
-})
+        }                                   \
+        })
 
 static bool8 QuestMenu_AllocateResourcesForListMenu(void)
 {
@@ -727,7 +736,7 @@ static void QuestMenu_BuildListMenuTemplate(void)
             sListMenuItems[i].name = sSideQuests[i].name;
         else
             sListMenuItems[i].name = sText_QuestMenu_Unk;
-        
+
         sListMenuItems[i].id = i;
     }
     sListMenuItems[i].name = gText_Cancel;
@@ -779,16 +788,15 @@ void CreateItemMenuIcon(u16 itemId, u8 idx)
 {
     u8 * ptr = &gUnknown_2039878[10];
     u8 spriteId;
-        struct SpriteSheet spriteSheet;
-        struct CompressedSpritePalette spritePalette;
-        struct SpriteTemplate *spriteTemplate;
+    struct SpriteSheet spriteSheet;
+    struct CompressedSpritePalette spritePalette;
+    struct SpriteTemplate *spriteTemplate;
 
     if (ptr[idx] == 0xFF)
     {
         FreeSpriteTilesByTag(102 + idx);
         FreeSpritePaletteByTag(102 + idx);
 
-        MgbaPrintf(MGBA_LOG_INFO, "create address: %d", &gSprites[ptr[idx]]); 
         spriteId = AddItemIconSprite(102 + idx, 102 + idx, itemId);
 
         if (spriteId != MAX_SPRITES)
@@ -814,7 +822,6 @@ void DestroyItemMenuIcon(u8 idx)
 
     if (ptr[idx] != 0xFF)
     {
-        MgbaPrintf(MGBA_LOG_INFO, "destroy address: %d", &gSprites[ptr[idx]]); 
         DestroySpriteAndFreeResources(&gSprites[ptr[idx]]);
         ptr[idx] = 0xFF;
     }
@@ -835,7 +842,7 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
 {
     u16 itemId;
     const u8 * desc;
-    
+
     if (onInit != TRUE)
         PlaySE(SE_SELECT);
 
@@ -856,17 +863,17 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
                 CreateItemMenuIcon(ITEM_NONE, sStateDataPtr->itemMenuIconSlot);
                 desc = sText_QuestMenu_Unk;
             }
-            
+
             //CreateItemMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
             CreateObjectMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
-        
+
         }
         else
         {
             CreateItemMenuIcon(ITEM_NONE, sStateDataPtr->itemMenuIconSlot);
             desc = sText_QuestMenu_Exit;
         }
-        
+
         sStateDataPtr->itemMenuIconSlot ^= 1;
         FillWindowPixelBuffer(1, 0);
         QuestMenu_AddTextPrinterParameterized(1, 2, desc, 0, 3, 2, 0, 0, 3);
@@ -887,8 +894,9 @@ static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
      */
     if (itemId != LIST_CANCEL)
     {
-        if (GetSetQuestFlag(itemId, FLAG_GET_COMPLETED))
+        if (GetSetQuestFlag(itemId, FLAG_GET_COMPLETED)) {
             StringCopy(gStringVar4, sText_QuestMenu_Complete);
+        }
         else if (GetSetQuestFlag(itemId, FLAG_GET_REWARD)){
             StringCopy(gStringVar4, sText_QuestMenu_Reward);
         }
@@ -898,7 +906,7 @@ static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
         else{
             StringCopy(gStringVar4, sText_Empty);
         }
-        
+
         QuestMenu_AddTextPrinterParameterized(windowId, 0, gStringVar4, 110, y, 0, 0, 0xFF, 1);
     }
 }
@@ -922,9 +930,90 @@ static void QuestMenu_PrintOrRemoveCursorAt(u8 y, u8 colorIdx)
     }
 }
 
+s8 QuestMenu_CountUnlockedQuests(void)
+{
+    u8 i;
+    u8 q = 0;
+
+    for (i = 0; i < SIDE_QUEST_COUNT; i++){
+        if (GetSetQuestFlag(i,FLAG_GET_UNLOCKED)) {
+            q++;
+        }
+    }
+    MgbaPrintf(MGBA_LOG_INFO,"count unlocked: %u",q);
+    return q;
+}
+
+s8 QuestMenu_CountActiveQuests(void)
+{
+    u8 i;
+    u8 q = 0;
+
+    for (i = 0; i < SIDE_QUEST_COUNT; i++){
+        if (GetSetQuestFlag(i,FLAG_GET_ACTIVE)) {
+            q++;
+        }
+    }
+    MgbaPrintf(MGBA_LOG_INFO,"count active: %u",q);
+    return q;
+}
+
+s8 QuestMenu_CountRewardQuests(void)
+{
+    u8 i;
+    u8 q = 0;
+
+    for (i = 0; i < SIDE_QUEST_COUNT; i++){
+        if (GetSetQuestFlag(i,FLAG_GET_REWARD)) {
+            q++;
+        }
+    }
+    MgbaPrintf(MGBA_LOG_INFO,"count reward: %u",q);
+    return q;
+}
+
+s8 QuestMenu_CountCompletedQuests(void)
+{
+    u8 i;
+    u8 q = 0;
+
+    for (i = 0; i < SIDE_QUEST_COUNT; i++){
+        if (GetSetQuestFlag(i,FLAG_GET_COMPLETED)) {
+            q++;
+        }
+    }
+    MgbaPrintf(MGBA_LOG_INFO,"count completed: %u",q);
+    return q;
+}
+
 static void QuestMenu_PrintHeader(void)
 {
-    QuestMenu_AddTextPrinterParameterized(2, 0, sText_Quests, 0, 1, 0, 1, 0, 0);
+    u16 x = Random() % 4;
+
+    ConvertIntToDecimalStringN(gStringVar2, SIDE_QUEST_COUNT, STR_CONV_MODE_LEFT_ALIGN, 6);
+
+    switch(x){
+        case 1: 
+            ConvertIntToDecimalStringN(gStringVar1, QuestMenu_CountUnlockedQuests(), STR_CONV_MODE_LEFT_ALIGN, 6);
+            break;
+        case 2: 
+            ConvertIntToDecimalStringN(gStringVar1, QuestMenu_CountActiveQuests(), STR_CONV_MODE_LEFT_ALIGN, 6);
+            break;
+        case 3: 
+            ConvertIntToDecimalStringN(gStringVar1, QuestMenu_CountRewardQuests(), STR_CONV_MODE_LEFT_ALIGN, 6);
+            break;
+        case 4: 
+            ConvertIntToDecimalStringN(gStringVar1, QuestMenu_CountCompletedQuests(), STR_CONV_MODE_LEFT_ALIGN, 6);
+            break;
+    }
+
+    StringExpandPlaceholders(gStringVar3, sText_VisibleNumQuests);
+    StringExpandPlaceholders(gStringVar4, sText_TotalNumQuests);
+
+    QuestMenu_AddTextPrinterParameterized(2, 0, gStringVar3, 0, 2, 0, 1, 0, 0);
+    QuestMenu_AddTextPrinterParameterized(2, 0, gStringVar4, 15, 2, 0, 1, 0, 0);
+    QuestMenu_AddTextPrinterParameterized(2, 0, sText_Quests, 0, 20, 0, 1, 0, 0);
+
 }
 
 static void QuestMenu_PlaceTopMenuScrollIndicatorArrows(void)
@@ -961,10 +1050,10 @@ static void QuestMenu_SetCursorPosition(void)
 }
 
 #define try_free(ptr) ({        \
-    void ** ptr__ = (void **)&(ptr);   \
-    if (*ptr__ != NULL)                \
+        void ** ptr__ = (void **)&(ptr);   \
+        if (*ptr__ != NULL)                \
         Free(*ptr__);                  \
-})
+        })
 
 static void QuestMenu_FreeResources(void)
 {
@@ -982,54 +1071,54 @@ static void Task_PCScreenEffect_TurnOff(u8 taskId)
 
     switch (task->tState)
     {
-    case 0:
-        gPlttBufferFaded[0] = 0;
-        break;
-    case 1:
-        task->tWin0Left = 0;
-        task->tWin0Right = DISPLAY_WIDTH;
-        task->tWin0Top = 0;
-        task->tWin0Bottom = DISPLAY_HEIGHT;
-        SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
-        SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(task->tWin0Left, task->tWin0Right));
-        SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(task->tWin0Top, task->tWin0Bottom));
-        SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN0_CLR);
-        SetGpuReg(REG_OFFSET_WINOUT, 0);
-        break;
-    case 2:
-        task->tWin0Top += task->tYSpeed;
-        task->tWin0Bottom -= task->tYSpeed;
-        if (task->tWin0Top >= 80 || task->tWin0Bottom <= 81)
-        {
-            task->tWin0Top = 80;
-            task->tWin0Bottom = 81;
-            SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_TGT1_BG1 | BLDCNT_TGT1_BG2 | BLDCNT_TGT1_BG3 | BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BD | BLDCNT_EFFECT_LIGHTEN);
-            SetGpuReg(REG_OFFSET_BLDY, 16);
-        }
-        SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(task->tWin0Top, task->tWin0Bottom));
-        if (task->tWin0Top != 80)
-            return;
-        break;
-    case 3:
-        task->tWin0Left += task->tXSpeed;
-        task->tWin0Right -= task->tXSpeed;
-        if (task->tWin0Left >= 120 || task->tWin0Right <= 120)
-        {
-            task->tWin0Left = 120;
-            task->tWin0Right = 120;
-            BlendPalettes(0xFFFFFFFF, 0x10, RGB_BLACK);
+        case 0:
             gPlttBufferFaded[0] = 0;
-        }
-        SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(task->tWin0Left, task->tWin0Right));
-        if (task->tWin0Left != 120)
+            break;
+        case 1:
+            task->tWin0Left = 0;
+            task->tWin0Right = DISPLAY_WIDTH;
+            task->tWin0Top = 0;
+            task->tWin0Bottom = DISPLAY_HEIGHT;
+            SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
+            SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(task->tWin0Left, task->tWin0Right));
+            SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(task->tWin0Top, task->tWin0Bottom));
+            SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN0_CLR);
+            SetGpuReg(REG_OFFSET_WINOUT, 0);
+            break;
+        case 2:
+            task->tWin0Top += task->tYSpeed;
+            task->tWin0Bottom -= task->tYSpeed;
+            if (task->tWin0Top >= 80 || task->tWin0Bottom <= 81)
+            {
+                task->tWin0Top = 80;
+                task->tWin0Bottom = 81;
+                SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_TGT1_BG1 | BLDCNT_TGT1_BG2 | BLDCNT_TGT1_BG3 | BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BD | BLDCNT_EFFECT_LIGHTEN);
+                SetGpuReg(REG_OFFSET_BLDY, 16);
+            }
+            SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(task->tWin0Top, task->tWin0Bottom));
+            if (task->tWin0Top != 80)
+                return;
+            break;
+        case 3:
+            task->tWin0Left += task->tXSpeed;
+            task->tWin0Right -= task->tXSpeed;
+            if (task->tWin0Left >= 120 || task->tWin0Right <= 120)
+            {
+                task->tWin0Left = 120;
+                task->tWin0Right = 120;
+                BlendPalettes(0xFFFFFFFF, 0x10, RGB_BLACK);
+                gPlttBufferFaded[0] = 0;
+            }
+            SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(task->tWin0Left, task->tWin0Right));
+            if (task->tWin0Left != 120)
+                return;
+            break;
+        default:
+            ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
+            SetGpuReg(REG_OFFSET_BLDY, 0);
+            SetGpuReg(REG_OFFSET_BLDCNT, 0);
+            DestroyTask(taskId);
             return;
-        break;
-    default:
-        ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
-        SetGpuReg(REG_OFFSET_BLDY, 0);
-        SetGpuReg(REG_OFFSET_BLDCNT, 0);
-        DestroyTask(taskId);
-        return;
     }
     ++task->tState;
 }
@@ -1051,7 +1140,7 @@ static void Task_QuestMenuTurnOff1(u8 taskId)
         BeginPCScreenEffect_TurnOff(0, 0, 0);
         PlaySE(SE_PC_OFF);
     }
-    
+
     gTasks[taskId].func = Task_QuestMenuTurnOff2;
 }
 
@@ -1072,7 +1161,7 @@ static void Task_QuestMenuTurnOff2(u8 taskId)
             SetMainCallback2(sStateDataPtr->savedCallback);
         else
             SetMainCallback2(sListMenuState.savedCallback);
-        
+
         QuestMenu_RemoveScrollIndicatorArrowPair();
         QuestMenu_FreeResources();
         DestroyTask(taskId);
@@ -1133,51 +1222,51 @@ static void Task_QuestMenuMain(u8 taskId)
     if (!gPaletteFade.active && !IsPCScreenEffectRunning_TurnOn())
     {
         /*
-        if (JOY_NEW(SELECT_BUTTON))
-        {
-            ListMenuGetScrollAndRow(data[0], &scroll, &row);
-            if (scroll + row != sStateDataPtr->nItems)
-            {
-                PlaySE(SE_SELECT);
-                QuestMenu_MoveItemModeInit(taskId, scroll + row);
-                return;
-            }
-        }
-        */
+           if (JOY_NEW(SELECT_BUTTON))
+           {
+           ListMenuGetScrollAndRow(data[0], &scroll, &row);
+           if (scroll + row != sStateDataPtr->nItems)
+           {
+           PlaySE(SE_SELECT);
+           QuestMenu_MoveItemModeInit(taskId, scroll + row);
+           return;
+           }
+           }
+           */
         input = ListMenu_ProcessInput(data[0]);
         ListMenuGetScrollAndRow(data[0], &sListMenuState.scroll, &sListMenuState.row);
         switch (input)
         {
-        case LIST_NOTHING_CHOSEN:
-            break;
-            
-        case LIST_CANCEL:
-            PlaySE(SE_SELECT);
-            QuestMenu_SetInitializedFlag(0);
-            gTasks[taskId].func = Task_QuestMenuTurnOff1;
-            break;
+            case LIST_NOTHING_CHOSEN:
+                break;
 
-        //Unbound add
-        default:
-
-           /* 
-        default:
-            if (GetSetQuestFlag(input, FLAG_GET_UNLOCKED))
-            {
+            case LIST_CANCEL:
                 PlaySE(SE_SELECT);
-                QuestMenu_SetMessageWindowPalette(1);
-                QuestMenu_RemoveScrollIndicatorArrowPair();
-                data[1] = input;
+                QuestMenu_SetInitializedFlag(0);
+                gTasks[taskId].func = Task_QuestMenuTurnOff1;
+                break;
+
+                //Unbound add
+            default:
+
+                /* 
+                   default:
+                   if (GetSetQuestFlag(input, FLAG_GET_UNLOCKED))
+                   {
+                   PlaySE(SE_SELECT);
+                   QuestMenu_SetMessageWindowPalette(1);
+                   QuestMenu_RemoveScrollIndicatorArrowPair();
+                   data[1] = input;
                 //data[2] = QuestMenu_GetItemQuantityBySlotId(input);
                 data[2] = 0;
                 QuestMenu_PrintOrRemoveCursor(data[0], 2);            
-            }
-            else
-            {
+                }
+                else
+                {
                 PlaySE(SE_FAILURE);
-            }
-            */
-            break;
+                }
+                */
+                break;
         }
     }
 }
@@ -1229,7 +1318,7 @@ static void QuestMenuSubmenuSelectionMessage(u8 taskId)
 static void Task_QuestMenuDetails(u8 taskId)
 {
     u8 questIndex = QuestMenu_GetCursorPosition();
-    
+
     QuestMenuSubmenuSelectionMessage(taskId);
     StringCopy(gStringVar1, sSideQuests[questIndex].poc);
     StringCopy(gStringVar2, sSideQuests[questIndex].map);
@@ -1240,7 +1329,7 @@ static void Task_QuestMenuDetails(u8 taskId)
 static void Task_QuestMenuReward(u8 taskId)
 {
     u8 questIndex = QuestMenu_GetCursorPosition();
-    
+
     QuestMenuSubmenuSelectionMessage(taskId);
     StringCopy(gStringVar1, sSideQuests[questIndex].reward);
     StringExpandPlaceholders(gStringVar4, sText_QuestMenu_DisplayReward);
@@ -1250,7 +1339,7 @@ static void Task_QuestMenuReward(u8 taskId)
 static void Task_QuestMenuEndQuest(u8 taskId)
 {
     u8 questIndex = QuestMenu_GetCursorPosition();
-    
+
     ResetActiveQuest();
     QuestMenuSubmenuSelectionMessage(taskId);
     StringCopy(gStringVar1, sSideQuests[questIndex].name);
@@ -1261,7 +1350,7 @@ static void Task_QuestMenuEndQuest(u8 taskId)
 static void Task_QuestMenuBeginQuest(u8 taskId)
 {
     u8 questIndex = QuestMenu_GetCursorPosition();
-    
+
     //SetActiveQuest(questIndex);
     //UNBOUND ADD
     GetSetQuestFlag(questIndex, FLAG_SET_ACTIVE);
@@ -1275,7 +1364,7 @@ static void QuestMenu_DisplaySubMenuMessage(u8 taskId)
 {
     s16 * data = gTasks[taskId].data;
     u8 windowId;
-    
+
     windowId = QuestMenu_GetOrCreateSubwindow(2);
     AddTextPrinterParameterized(windowId, 2, gStringVar4, 0, 2, 0, NULL);
     gTasks[taskId].func = Task_QuestMenuRefreshAfterAcknowledgement;
@@ -1297,9 +1386,9 @@ static void Task_QuestMenuCleanUp(u8 taskId)
     QuestMenu_DestroySubwindow(2);
     PutWindowTilemap(1);
     DestroyListMenuTask(data[0], &sListMenuState.scroll, &sListMenuState.row);
-    
+
     QuestMenu_InitItems();
-    
+
     QuestMenu_SetCursorPosition();
     QuestMenu_BuildListMenuTemplate();
     data[0] = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.scroll, sListMenuState.row);
@@ -1340,12 +1429,12 @@ static void QuestMenu_InitWindows(void)
     InitWindows(sQuestMenuHeaderWindowTemplates);
     DeactivateAllTextPrinters();
     LoadUserWindowBorderGfx(0, 0x3C0, 0xE0);
-    
+
     TextWindow_SetStdFrame0_WithPal(0, 0x3A3, 0xC0); 
     TextWindow_LoadResourcesStdFrame0(0, 0x3AC, 0xB0);
     //LoadMessageBoxGfx(0, 0x3A3, 0xC0);
     //LoadMessageBoxGfx(0, 0x3AC, 0xB0);
-    
+
     LoadPalette(GetTextWindowPalette(2), 0xD0, 0x20);
     LoadPalette(sMainWindowPal, 0xF0, 0x20);
     for (i = 0; i < 3; i++)
@@ -1353,7 +1442,7 @@ static void QuestMenu_InitWindows(void)
         FillWindowPixelBuffer(i, 0x00);
         PutWindowTilemap(i);
     }
-    
+
     ScheduleBgCopyTilemapToVram(0);
     for (i = 0; i < 3; i++)
         sSubmenuWindowIds[i] = 0xFF;
@@ -1405,42 +1494,40 @@ s8 GetSetQuestFlag(u8 quest, u8 caseId)
     u8 index;
     u8 bit;
     u8 mask;
-    u8 unbound;
-    
+
     index = quest / 8; //8 bits per byte
     bit = quest % 8;
     mask = 1 << bit;
-    unbound = gSaveBlock2Ptr->activeQuests[index] & mask;
-   
+
     switch (caseId)
     {
-    case FLAG_GET_UNLOCKED:
-        return gSaveBlock2Ptr->unlockedQuests[index] & mask;
-    case FLAG_SET_UNLOCKED:
-        gSaveBlock2Ptr->unlockedQuests[index] |= mask;
-        return 1;
-    /*
-     * UNBOUND QUEST MENU ADDITION
-     * cases added for get/set active
-     * cases added for get/set reward
-     */
-    case FLAG_GET_ACTIVE:
-        return gSaveBlock2Ptr->activeQuests[index] & mask;
-    case FLAG_SET_ACTIVE:
-        gSaveBlock2Ptr->activeQuests[index] |= mask;
-        return 1;
-    case FLAG_GET_REWARD:
-        return gSaveBlock2Ptr->rewardQuests[index] & mask;
-    case FLAG_SET_REWARD:
-        gSaveBlock2Ptr->rewardQuests[index] |= mask;
-        return 1;
-    case FLAG_GET_COMPLETED:
-        return gSaveBlock2Ptr->completedQuests[index] & mask;
-    case FLAG_SET_COMPLETED:
-        gSaveBlock2Ptr->completedQuests[index] |= mask;
-        return 1;
+        case FLAG_GET_UNLOCKED:
+            return gSaveBlock2Ptr->unlockedQuests[index] & mask;
+        case FLAG_SET_UNLOCKED:
+            gSaveBlock2Ptr->unlockedQuests[index] |= mask;
+            return 1;
+            /*
+             * UNBOUND QUEST MENU ADDITION
+             * cases added for get/set active
+             * cases added for get/set reward
+             */
+        case FLAG_GET_ACTIVE:
+            return gSaveBlock2Ptr->activeQuests[index] & mask;
+        case FLAG_SET_ACTIVE:
+            gSaveBlock2Ptr->activeQuests[index] |= mask;
+            return 1;
+        case FLAG_GET_REWARD:
+            return gSaveBlock2Ptr->rewardQuests[index] & mask;
+        case FLAG_SET_REWARD:
+            gSaveBlock2Ptr->rewardQuests[index] |= mask;
+            return 1;
+        case FLAG_GET_COMPLETED:
+            return gSaveBlock2Ptr->completedQuests[index] & mask;
+        case FLAG_SET_COMPLETED:
+            gSaveBlock2Ptr->completedQuests[index] |= mask;
+            return 1;
     }
-    
+
     return -1;  //failure
 }
 
@@ -1460,7 +1547,7 @@ static bool8 IsActiveQuest(u8 questId){
     u8 index;
     u8 bit;
     u8 mask;
-    
+
     index = questId / 8; //8 bits per byte
     bit = questId % 8;
     mask = 1 << bit;
@@ -1483,16 +1570,16 @@ void ResetActiveQuest(void)
 }
 
 /*
-static void DebugQuestMenu(void)
-{
-    GetSetQuestFlag(SIDE_QUEST_1, FLAG_SET_UNLOCKED);
-    GetSetQuestFlag(SIDE_QUEST_2, FLAG_SET_UNLOCKED);
-    GetSetQuestFlag(SIDE_QUEST_3, FLAG_SET_UNLOCKED);
-    GetSetQuestFlag(SIDE_QUEST_5, FLAG_SET_UNLOCKED);
-    GetSetQuestFlag(SIDE_QUEST_5, FLAG_SET_COMPLETED);    
-    SetActiveQuest(SIDE_QUEST_2);
-}
-*/
+   static void DebugQuestMenu(void)
+   {
+   GetSetQuestFlag(SIDE_QUEST_1, FLAG_SET_UNLOCKED);
+   GetSetQuestFlag(SIDE_QUEST_2, FLAG_SET_UNLOCKED);
+   GetSetQuestFlag(SIDE_QUEST_3, FLAG_SET_UNLOCKED);
+   GetSetQuestFlag(SIDE_QUEST_5, FLAG_SET_UNLOCKED);
+   GetSetQuestFlag(SIDE_QUEST_5, FLAG_SET_COMPLETED);    
+   SetActiveQuest(SIDE_QUEST_2);
+   }
+   */
 
 void SetQuestMenuActive(void)
 {
