@@ -7,6 +7,12 @@
 
 #define NO_ACTIVE_QUEST             -1
 
+#define SORT_DEFAULT 0
+#define SORT_INACTIVE 1
+#define SORT_ACTIVE 2
+#define SORT_REWARD 3
+#define SORT_DONE 4
+
 struct SideQuest 
 {
 	/*0x00*/ const u8* name;

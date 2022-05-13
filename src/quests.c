@@ -107,6 +107,7 @@ static void QuestMenu_FreeResources(void);
 static void Task_QuestMenuTurnOff2(u8 taskId);
 static void QuestMenu_InitItems(void);
 static void QuestMenu_SetScrollPosition(void);
+static s8 QuestMenu_SetMode(u8 mode);
 static void Task_QuestMenuMain(u8 taskId);
 static void QuestMenu_InsertItemIntoNewSlot(u8 taskId, u32 pos);
 static void Task_QuestMenuDetails(u8 taskId);
@@ -1212,12 +1213,37 @@ static bool8 IsPCScreenEffectRunning_TurnOn(void)
     return FuncIsActiveTask(Task_PCScreenEffect_TurnOn);
 }
 
+static s8 QuestMenu_SetMode(u8 mode)
+{
+    mode++;
+
+    switch(mode){
+        case SORT_DEFAULT:
+            break;
+
+        case SORT_INACTIVE:
+            break;
+
+        case SORT_ACTIVE:
+            break;
+
+        case SORT_REWARD:
+            break;
+
+        case SORT_DONE:
+            break;
+    }
+
+    return mode;
+}
+
 static void Task_QuestMenuMain(u8 taskId)
 {
     s16 * data = gTasks[taskId].data;
     u16 scroll;
     u16 row;
     s32 input;
+    u8 mode = 0; 
 
     if (!gPaletteFade.active && !IsPCScreenEffectRunning_TurnOn())
     {
@@ -1238,6 +1264,12 @@ static void Task_QuestMenuMain(u8 taskId)
         switch (input)
         {
             case LIST_NOTHING_CHOSEN:
+                break;
+
+            case LIST_SORT:
+                PlaySE(SE_LOW_HEALTH);
+                QuestMenu_SetInitializedFlag(0);
+                gTasks[taskId].func = Task_QuestMenuTurnOff1;
                 break;
 
             case LIST_CANCEL:
