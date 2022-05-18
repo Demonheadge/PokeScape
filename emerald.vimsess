@@ -77,17 +77,17 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 94 + 94) / 189)
+exe 'vert 1resize ' . ((&columns * 93 + 94) / 188)
 exe '2resize ' . ((&lines * 14 + 30) / 61)
-exe 'vert 2resize ' . ((&columns * 94 + 94) / 189)
+exe 'vert 2resize ' . ((&columns * 94 + 94) / 188)
 exe '3resize ' . ((&lines * 14 + 30) / 61)
-exe 'vert 3resize ' . ((&columns * 94 + 94) / 189)
+exe 'vert 3resize ' . ((&columns * 94 + 94) / 188)
 exe '4resize ' . ((&lines * 14 + 30) / 61)
-exe 'vert 4resize ' . ((&columns * 94 + 94) / 189)
+exe 'vert 4resize ' . ((&columns * 94 + 94) / 188)
 exe '5resize ' . ((&lines * 14 + 30) / 61)
-exe 'vert 5resize ' . ((&columns * 94 + 94) / 189)
+exe 'vert 5resize ' . ((&columns * 94 + 94) / 188)
 argglobal
-terminal ++curwin ++cols=94 ++rows=59 
+terminal ++curwin ++cols=93 ++rows=59 
 let s:term_buf_2 = bufnr()
 balt src/quests.c
 setlocal keymap=
@@ -216,11 +216,11 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 9001 - ((38 * winheight(0) + 29) / 59)
+let s:l = 1 - ((0 * winheight(0) + 29) / 59)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 9001
+keepjumps 1
 normal! 0
 wincmd w
 argglobal
@@ -767,30 +767,30 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 991 - ((5 * winheight(0) + 7) / 14)
+let s:l = 1231 - ((5 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 991
+keepjumps 1231
 normal! 05|
 wincmd w
-5wincmd w
-exe 'vert 1resize ' . ((&columns * 94 + 94) / 189)
+4wincmd w
+exe 'vert 1resize ' . ((&columns * 93 + 94) / 188)
 exe '2resize ' . ((&lines * 14 + 30) / 61)
-exe 'vert 2resize ' . ((&columns * 94 + 94) / 189)
+exe 'vert 2resize ' . ((&columns * 94 + 94) / 188)
 exe '3resize ' . ((&lines * 14 + 30) / 61)
-exe 'vert 3resize ' . ((&columns * 94 + 94) / 189)
+exe 'vert 3resize ' . ((&columns * 94 + 94) / 188)
 exe '4resize ' . ((&lines * 14 + 30) / 61)
-exe 'vert 4resize ' . ((&columns * 94 + 94) / 189)
+exe 'vert 4resize ' . ((&columns * 94 + 94) / 188)
 exe '5resize ' . ((&lines * 14 + 30) / 61)
-exe 'vert 5resize ' . ((&columns * 94 + 94) / 189)
+exe 'vert 5resize ' . ((&columns * 94 + 94) / 188)
 tabnext 1
-badd +2362 src/scrcmd.c
+badd +1 include/constants/quests.h
 badd +1 src/quests.c
 badd +1 include/quests.h
+badd +2362 src/scrcmd.c
 badd +30 data/maps/LilycoveCity_PokemonCenter_1F/scripts.inc
 badd +1042 src/trainer_card.c
-badd +0 include/constants/quests.h
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

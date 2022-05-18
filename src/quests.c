@@ -93,6 +93,7 @@ static bool8 QuestMenu_InitBgs(void);
 static bool8 QuestMenu_LoadGraphics(void);
 static bool8 QuestMenu_AllocateResourcesForListMenu(void);
 static void QuestMenu_BuildListMenuTemplate(void);
+static void QuestMenu_BuildFilteredMenuTemplate(void);
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
 static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y);
 static void QuestMenu_PrintOrRemoveCursorAt(u8 y, u8 state);
@@ -583,7 +584,8 @@ static bool8 QuestMenu_DoGfxSetup(void)
             }
             break;
         case 12:
-            QuestMenu_BuildListMenuTemplate();
+            //QuestMenu_BuildListMenuTemplate();
+            QuestMenu_BuildFilteredMenuTemplate();
             gMain.state++;
             break;
         case 13:
@@ -725,6 +727,55 @@ static bool8 QuestMenu_AllocateResourcesForListMenu(void)
     try_alloc(sListMenuItems, sizeof(struct ListMenuItem) * (SIDE_QUEST_COUNT + 1));
     //try_alloc(sUnusedStringAllocation, 14 * (PC_ITEMS_COUNT + 1));
     return TRUE;
+}
+
+static void QuestMenu_BuildFilteredMenuTemplate(void)
+{
+    u16 COUNT_QUESTS;
+    u16 NUM_ROW;
+    u16 x;
+
+for (NUM_ROW = 0; NUM_ROW < QuestMenu_CountRewardQuests() ; NUM_ROW++)
+    {
+        for (COUNT_QUESTS = 0; COUNT_QUESTS < sStateDataPtr->nItems; COUNT_QUESTS++)
+        {
+            for (x = 0; x < COUNT_QUESTS; x++)
+            {
+                if (GetSetQuestFlag(COUNT_QUESTS, FLAG_GET_REWARD))
+                {
+                    if (sListMenuItems[x].name != sSideQuests[COUNT_QUESTS].name)
+                    {
+                        sListMenuItems[NUM_ROW].name = sSideQuests[COUNT_QUESTS].name;
+                        COUNT_QUESTS = sStateDataPtr->nItems;
+                        break;
+                    }
+                }
+
+            }
+        }
+        sListMenuItems[NUM_ROW].id = NUM_ROW;
+    }
+    sListMenuItems[NUM_ROW].name = gText_Cancel;
+    sListMenuItems[NUM_ROW].id = LIST_CANCEL;
+
+    gMultiuseListMenuTemplate.items = sListMenuItems;
+    gMultiuseListMenuTemplate.totalItems = QuestMenu_CountRewardQuests()+ 1;
+    gMultiuseListMenuTemplate.windowId = 0;
+    gMultiuseListMenuTemplate.header_X = 0;
+    gMultiuseListMenuTemplate.item_X = 9;
+    gMultiuseListMenuTemplate.cursor_X = 1;
+    gMultiuseListMenuTemplate.lettersSpacing = 1;
+    gMultiuseListMenuTemplate.itemVerticalPadding = 2;
+    gMultiuseListMenuTemplate.upText_Y = 2;
+    gMultiuseListMenuTemplate.maxShowed = sStateDataPtr->maxShowed;
+    gMultiuseListMenuTemplate.fontId = 2;
+    gMultiuseListMenuTemplate.cursorPal = 2;
+    gMultiuseListMenuTemplate.fillValue = 0;
+    gMultiuseListMenuTemplate.cursorShadowPal = 3;
+    gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_MoveCursorFunc;
+    gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_ItemPrintFunc;
+    gMultiuseListMenuTemplate.scrollMultiple = 0;
+    gMultiuseListMenuTemplate.cursorKind = 0;
 }
 
 static void QuestMenu_BuildListMenuTemplate(void)
@@ -941,7 +992,6 @@ s8 QuestMenu_CountUnlockedQuests(void)
             q++;
         }
     }
-    MgbaPrintf(MGBA_LOG_INFO,"count unlocked: %u",q);
     return q;
 }
 
@@ -955,7 +1005,6 @@ s8 QuestMenu_CountActiveQuests(void)
             q++;
         }
     }
-    MgbaPrintf(MGBA_LOG_INFO,"count active: %u",q);
     return q;
 }
 
@@ -969,7 +1018,6 @@ s8 QuestMenu_CountRewardQuests(void)
             q++;
         }
     }
-    MgbaPrintf(MGBA_LOG_INFO,"count reward: %u",q);
     return q;
 }
 
@@ -983,7 +1031,6 @@ s8 QuestMenu_CountCompletedQuests(void)
             q++;
         }
     }
-    MgbaPrintf(MGBA_LOG_INFO,"count completed: %u",q);
     return q;
 }
 
@@ -1259,6 +1306,7 @@ static void Task_QuestMenuMain(u8 taskId)
            }
            }
            */
+        QuestMenu_SetMode(mode);
         input = ListMenu_ProcessInput(data[0]);
         ListMenuGetScrollAndRow(data[0], &sListMenuState.scroll, &sListMenuState.row);
         switch (input)
@@ -1422,7 +1470,8 @@ static void Task_QuestMenuCleanUp(u8 taskId)
     QuestMenu_InitItems();
 
     QuestMenu_SetCursorPosition();
-    QuestMenu_BuildListMenuTemplate();
+    QuestMenu_BuildFilteredMenuTemplate();
+    //QuestMenu_BuildListMenuTemplate();
     data[0] = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.scroll, sListMenuState.row);
     ScheduleBgCopyTilemapToVram(0);
     QuestMenu_ReturnFromSubmenu(taskId);

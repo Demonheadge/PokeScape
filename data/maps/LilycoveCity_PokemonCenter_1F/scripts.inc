@@ -51,6 +51,8 @@ LilycoveCity_PokemonCenter_1F_EventScript_Boy::
     questmenu QUEST_MENU_UNLOCK_QUEST,SIDE_QUEST_5
     questmenu QUEST_MENU_COMPLETE_QUEST,SIDE_QUEST_5
 
+    questmenu QUEST_MENU_UNLOCK_QUEST,SIDE_QUEST_10
+    questmenu QUEST_MENU_SET_REWARD,SIDE_QUEST_10
 
     openquestmenu
 	end
