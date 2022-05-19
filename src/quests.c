@@ -735,19 +735,17 @@ static void QuestMenu_BuildFilteredMenuTemplate(void)
     u16 NUM_ROW;
     u16 x;
 
-for (NUM_ROW = 0; NUM_ROW < QuestMenu_CountRewardQuests() ; NUM_ROW++)
+    for (NUM_ROW = 0; NUM_ROW < QuestMenu_CountRewardQuests() ; NUM_ROW++)
     {
         for (COUNT_QUESTS = 0; COUNT_QUESTS < sStateDataPtr->nItems; COUNT_QUESTS++)
         {
-            for (x = 0; x < COUNT_QUESTS; x++)
+            if (GetSetQuestFlag(COUNT_QUESTS, FLAG_GET_REWARD))
             {
-                if (GetSetQuestFlag(COUNT_QUESTS, FLAG_GET_REWARD))
+                for (x = 0; x < QuestMenu_CountRewardQuests(); x++)
                 {
                     if (sListMenuItems[x].name != sSideQuests[COUNT_QUESTS].name)
                     {
                         sListMenuItems[NUM_ROW].name = sSideQuests[COUNT_QUESTS].name;
-                        COUNT_QUESTS = sStateDataPtr->nItems;
-                        break;
                     }
                 }
 
