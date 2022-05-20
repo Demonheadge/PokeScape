@@ -1,4 +1,7 @@
 make[1]: *** No targets specified and no makefile found.  Stop.
 make: *** [make_tools.mk:11: tools/poryscript-mac] Error 2
 tools/agbcc/bin/agbcc <flags> -o build/emerald/src/quests.o src/quests.c
-cd build/emerald && arm-none-eabi-ld -Map ../../pokeemerald.map -T ld_script.ld -o ../../pokeemerald.elf <objects> <lib>
+src/quests.c: In function `QuestMenu_BuildFilteredMenuTemplate':
+src/quests.c:743: structure has no member named `filteredList'
+make: *** [Makefile:337: build/emerald/src/quests.o] Error 1
+make: *** Deleting file 'build/emerald/src/quests.o'

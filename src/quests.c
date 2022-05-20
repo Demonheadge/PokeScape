@@ -197,14 +197,14 @@ static const struct SideQuest sSideQuests[SIDE_QUEST_COUNT] =
 
 static const u8 sSideQuestDifficulties[SIDE_QUEST_COUNT] = 
 {
-    [SIDE_QUEST_1] = OBJ_EVENT_GFX_RICH_BOY,
-    [SIDE_QUEST_2] = OBJ_EVENT_GFX_TEALA,
-    [SIDE_QUEST_3] = OBJ_EVENT_GFX_TUBER_F,
-    [SIDE_QUEST_4] = OBJ_EVENT_GFX_PSYCHIC_M,
-    [SIDE_QUEST_5] = OBJ_EVENT_GFX_CONTEST_JUDGE,
-    [SIDE_QUEST_6] = OBJ_EVENT_GFX_CONTEST_JUDGE,
-    [SIDE_QUEST_7] = QUEST_DIFFICULTY_EASY,
-    [SIDE_QUEST_8] = QUEST_DIFFICULTY_EASY,
+    [SIDE_QUEST_1] = OBJ_EVENT_GFX_ROXANNE,
+    [SIDE_QUEST_2] = OBJ_EVENT_GFX_BRAWLY,
+    [SIDE_QUEST_3] = OBJ_EVENT_GFX_WATTSON,
+    [SIDE_QUEST_4] = OBJ_EVENT_GFX_FLANNERY,
+    [SIDE_QUEST_5] = OBJ_EVENT_GFX_NORMAN,
+    [SIDE_QUEST_6] = OBJ_EVENT_GFX_WINONA,
+    [SIDE_QUEST_7] = OBJ_EVENT_GFX_TATE,
+    [SIDE_QUEST_8] = OBJ_EVENT_GFX_JUAN,
     [SIDE_QUEST_9] = QUEST_DIFFICULTY_EASY,
     [SIDE_QUEST_10] = QUEST_DIFFICULTY_EASY,
     [SIDE_QUEST_11] = QUEST_DIFFICULTY_EASY,
@@ -732,27 +732,19 @@ static bool8 QuestMenu_AllocateResourcesForListMenu(void)
 static void QuestMenu_BuildFilteredMenuTemplate(void)
 {
     u16 COUNT_QUESTS;
-    u16 NUM_ROW;
-    u16 x;
+    u16 NUM_ROW = 0;
 
-    for (NUM_ROW = 0; NUM_ROW < QuestMenu_CountRewardQuests() ; NUM_ROW++)
+    for (COUNT_QUESTS = 0; COUNT_QUESTS < sStateDataPtr->nItems; COUNT_QUESTS++)
     {
-        for (COUNT_QUESTS = 0; COUNT_QUESTS < sStateDataPtr->nItems; COUNT_QUESTS++)
+        if (GetSetQuestFlag(COUNT_QUESTS, FLAG_GET_REWARD))
         {
-            if (GetSetQuestFlag(COUNT_QUESTS, FLAG_GET_REWARD))
-            {
-                for (x = 0; x < QuestMenu_CountRewardQuests(); x++)
-                {
-                    if (sListMenuItems[x].name != sSideQuests[COUNT_QUESTS].name)
-                    {
-                        sListMenuItems[NUM_ROW].name = sSideQuests[COUNT_QUESTS].name;
-                    }
-                }
+            sListMenuItems[NUM_ROW].name = sSideQuests[COUNT_QUESTS].name;
+            sListMenuItems[NUM_ROW].id = NUM_ROW;
 
-            }
+            NUM_ROW++;
         }
-        sListMenuItems[NUM_ROW].id = NUM_ROW;
     }
+
     sListMenuItems[NUM_ROW].name = gText_Cancel;
     sListMenuItems[NUM_ROW].id = LIST_CANCEL;
 
@@ -899,7 +891,6 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
     if (sStateDataPtr->moveModeOrigPos == 0xFF)
     {
         DestroyObjectMenuIcon(sStateDataPtr->itemMenuIconSlot ^ 1);
-        //DestroyItemMenuIcon(sStateDataPtr->itemMenuIconSlot ^ 1);
         if (itemIndex != LIST_CANCEL)
         {
             if (GetSetQuestFlag(itemIndex, FLAG_GET_UNLOCKED))
@@ -914,7 +905,6 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
                 desc = sText_QuestMenu_Unk;
             }
 
-            //CreateItemMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
             CreateObjectMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
 
         }

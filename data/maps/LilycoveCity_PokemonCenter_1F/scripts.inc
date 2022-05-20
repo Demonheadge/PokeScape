@@ -36,7 +36,6 @@ LilycoveCity_PokemonCenter_1F_EventScript_Nurse::
 LilycoveCity_PokemonCenter_1F_EventScript_Boy::
 	//msgbox LilycoveCity_PokemonCenter_1F_Text_HowManyKindsOfPokemon, MSGBOX_NPC
     questmenu QUEST_MENU_UNLOCK_QUEST,SIDE_QUEST_1
-    //questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_1
     questmenu QUEST_MENU_SET_REWARD,SIDE_QUEST_1
     
     questmenu QUEST_MENU_UNLOCK_QUEST,SIDE_QUEST_2
@@ -51,8 +50,8 @@ LilycoveCity_PokemonCenter_1F_EventScript_Boy::
     questmenu QUEST_MENU_UNLOCK_QUEST,SIDE_QUEST_5
     questmenu QUEST_MENU_COMPLETE_QUEST,SIDE_QUEST_5
 
-    questmenu QUEST_MENU_UNLOCK_QUEST,SIDE_QUEST_10
-    questmenu QUEST_MENU_SET_REWARD,SIDE_QUEST_10
+    questmenu QUEST_MENU_UNLOCK_QUEST,SIDE_QUEST_8
+    questmenu QUEST_MENU_SET_REWARD,SIDE_QUEST_8
 
     openquestmenu
 	end
