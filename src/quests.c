@@ -93,9 +93,11 @@ static bool8 QuestMenu_InitBgs(void);
 static bool8 QuestMenu_LoadGraphics(void);
 static bool8 QuestMenu_AllocateResourcesForListMenu(void);
 static void QuestMenu_BuildListMenuTemplate(void);
-static void QuestMenu_BuildFilteredMenuTemplate(void);
+static u16 * QuestMenu_BuildFilteredMenuTemplate(void);
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
+static void QuestMenu_FilteredMoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
 static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y);
+static void QuestMenu_FilteredItemPrintFunc(u8 windowId, u32 itemId, u8 y);
 static void QuestMenu_PrintOrRemoveCursorAt(u8 y, u8 state);
 s8 QuestMenu_CountUnlockedQuests(void);
 s8 QuestMenu_CountActiveQuests(void);
@@ -729,10 +731,12 @@ static bool8 QuestMenu_AllocateResourcesForListMenu(void)
     return TRUE;
 }
 
-static void QuestMenu_BuildFilteredMenuTemplate(void)
+static u16 * QuestMenu_BuildFilteredMenuTemplate(void)
 {
     u16 COUNT_QUESTS;
     u16 NUM_ROW = 0;
+    
+    static u16 FILTER_MAP[300];
 
     for (COUNT_QUESTS = 0; COUNT_QUESTS < sStateDataPtr->nItems; COUNT_QUESTS++)
     {
@@ -740,6 +744,8 @@ static void QuestMenu_BuildFilteredMenuTemplate(void)
         {
             sListMenuItems[NUM_ROW].name = sSideQuests[COUNT_QUESTS].name;
             sListMenuItems[NUM_ROW].id = NUM_ROW;
+
+            FILTER_MAP[NUM_ROW] = COUNT_QUESTS;
 
             NUM_ROW++;
         }
@@ -762,10 +768,12 @@ static void QuestMenu_BuildFilteredMenuTemplate(void)
     gMultiuseListMenuTemplate.cursorPal = 2;
     gMultiuseListMenuTemplate.fillValue = 0;
     gMultiuseListMenuTemplate.cursorShadowPal = 3;
-    gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_MoveCursorFunc;
-    gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_ItemPrintFunc;
+    gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_FilteredMoveCursorFunc;
+    gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_FilteredItemPrintFunc;
     gMultiuseListMenuTemplate.scrollMultiple = 0;
     gMultiuseListMenuTemplate.cursorKind = 0;
+
+    return FILTER_MAP;
 }
 
 static void QuestMenu_BuildListMenuTemplate(void)
@@ -920,7 +928,82 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
     }
 }
 
+static void QuestMenu_FilteredMoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list)
+{
+    u16 itemId;
+    u16 questList;
+    const u8 * desc;
+    
+    questList = QuestMenu_BuildFilteredMenuTemplate();
+    itemIndex = questList[itemIndex];
+
+    if (onInit != TRUE)
+        PlaySE(SE_SELECT);
+
+    if (sStateDataPtr->moveModeOrigPos == 0xFF)
+    {
+        DestroyObjectMenuIcon(sStateDataPtr->itemMenuIconSlot ^ 1);
+        if (itemIndex != LIST_CANCEL)
+        {
+            if (GetSetQuestFlag(itemIndex, FLAG_GET_UNLOCKED))
+            {
+                itemId = sSideQuestDifficulties[itemIndex];
+                desc = sSideQuests[itemIndex].desc;
+            }
+            else
+            {
+                //PSF TODO Make black shadow NPC
+                CreateItemMenuIcon(ITEM_NONE, sStateDataPtr->itemMenuIconSlot);
+                desc = sText_QuestMenu_Unk;
+            }
+
+            CreateObjectMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
+
+        }
+        else
+        {
+            CreateItemMenuIcon(ITEM_NONE, sStateDataPtr->itemMenuIconSlot);
+            desc = sText_QuestMenu_Exit;
+        }
+
+        sStateDataPtr->itemMenuIconSlot ^= 1;
+        FillWindowPixelBuffer(1, 0);
+        QuestMenu_AddTextPrinterParameterized(1, 2, desc, 0, 3, 2, 0, 0, 3);
+    }
+}
+
 static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
+{
+    if (sStateDataPtr->moveModeOrigPos != 0xFF)
+    {
+        if (sStateDataPtr->moveModeOrigPos == (u8)itemId)
+            QuestMenu_PrintOrRemoveCursorAt(y, 2);
+        else
+            QuestMenu_PrintOrRemoveCursorAt(y, 0xFF);
+    }
+    /*
+     * UNBOUND QUEST MENU ADDITION
+     */
+    if (itemId != LIST_CANCEL)
+    {
+        if (GetSetQuestFlag(itemId, FLAG_GET_COMPLETED)) {
+            StringCopy(gStringVar4, sText_QuestMenu_Complete);
+        }
+        else if (GetSetQuestFlag(itemId, FLAG_GET_REWARD)){
+            StringCopy(gStringVar4, sText_QuestMenu_Reward);
+        }
+        else if (GetSetQuestFlag(itemId, FLAG_GET_ACTIVE)){
+            StringCopy(gStringVar4, sText_QuestMenu_Active);
+        }
+        else{
+            StringCopy(gStringVar4, sText_Empty);
+        }
+
+        QuestMenu_AddTextPrinterParameterized(windowId, 0, gStringVar4, 110, y, 0, 0, 0xFF, 1);
+    }
+}
+
+static void QuestMenu_FilteredItemPrintFunc(u8 windowId, u32 itemId, u8 y)
 {
     if (sStateDataPtr->moveModeOrigPos != 0xFF)
     {

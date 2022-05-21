@@ -1,7 +1,9 @@
-make[1]: *** No targets specified and no makefile found.  Stop.
-make: *** [make_tools.mk:11: tools/poryscript-mac] Error 2
+make[1]: *** tools/poryscript.zip: Not a directory.  Stop.
+make: *** [make_tools.mk:11: tools/poryscript.zip] Error 2
 tools/agbcc/bin/agbcc <flags> -o build/emerald/src/quests.o src/quests.c
-src/quests.c: In function `QuestMenu_BuildFilteredMenuTemplate':
-src/quests.c:743: structure has no member named `filteredList'
+agbcc: warnings being treated as errors
+src/quests.c: In function `QuestMenu_FilteredMoveCursorFunc':
+src/quests.c:937: warning: assignment makes integer from pointer without a cast
+src/quests.c:938: subscripted value is neither array nor pointer
 make: *** [Makefile:337: build/emerald/src/quests.o] Error 1
 make: *** Deleting file 'build/emerald/src/quests.o'
