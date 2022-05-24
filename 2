@@ -1014,7 +1014,7 @@ static void QuestMenu_FilteredItemPrintFunc(u8 windowId, u32 itemId, u8 y)
      */
     if (itemId != LIST_CANCEL)
     {
-        itemId = sStateDataPtr->filteredMapping[itemId];
+        itemId = sStateDataPtr->filteredMapping[itemIndex];
 
         if (GetSetQuestFlag(itemId, FLAG_GET_COMPLETED)) {
             StringCopy(gStringVar4, sText_QuestMenu_Complete);
