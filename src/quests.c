@@ -567,6 +567,7 @@ static bool8 QuestMenu_DoGfxSetup(void)
                 gMain.state++;
             break;
         case 9:
+            //Loads the background, text and sprites will still spawn
             QuestMenu_InitWindows();
             gMain.state++;
             break;
@@ -588,8 +589,12 @@ static bool8 QuestMenu_DoGfxSetup(void)
             }
             break;
         case 12:
-            //QuestMenu_BuildListMenuTemplate();
-            QuestMenu_BuildFilteredMenuTemplate();
+            if (sStateDataPtr->filterMode == 3){
+                QuestMenu_BuildFilteredMenuTemplate();
+            }
+            else {
+                QuestMenu_BuildListMenuTemplate();
+            }
             gMain.state++;
             break;
         case 13:
@@ -1388,9 +1393,8 @@ static void Task_QuestMenuMain(u8 taskId)
 
             case LIST_SORT:
                 PlaySE(SE_LOW_HEALTH);
-                QuestMenu_SetInitializedFlag(0);
-                QuestMenu_SetMode();
-                //gTasks[taskId].func = Task_QuestMenuTurnOff1;
+                sStateDataPtr->filterMode = SORT_REWARD;
+                Task_QuestMenuCleanUp(taskId);
                 break;
 
             case LIST_CANCEL:
@@ -1543,8 +1547,7 @@ static void Task_QuestMenuCleanUp(u8 taskId)
     QuestMenu_InitItems();
 
     QuestMenu_SetCursorPosition();
-    QuestMenu_BuildFilteredMenuTemplate();
-    //QuestMenu_BuildListMenuTemplate();
+    QuestMenu_BuildListMenuTemplate();
     data[0] = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.scroll, sListMenuState.row);
     ScheduleBgCopyTilemapToVram(0);
     QuestMenu_ReturnFromSubmenu(taskId);
