@@ -94,6 +94,7 @@ static void Task_QuestMenuWaitFadeAndBail(u8 taskId);
 static bool8 QuestMenu_InitBgs(void);
 static bool8 QuestMenu_LoadGraphics(void);
 static bool8 QuestMenu_AllocateResourcesForListMenu(void);
+static u16 QuestMenu_ClearMenuTemplate(void);
 static void QuestMenu_BuildListMenuTemplate(void);
 static u16 QuestMenu_BuildFilteredMenuTemplate(void);
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
@@ -572,12 +573,16 @@ static bool8 QuestMenu_DoGfxSetup(void)
             gMain.state++;
             break;
         case 10:
+            //When commented out, question marks loads for every slot and page does not scroll when going past number 6
             QuestMenu_InitItems();
+            //Doesn't seem to do anything?
             QuestMenu_SetCursorPosition();
+            //Doesn't seem to do anything?
             QuestMenu_SetScrollPosition();
             gMain.state++;
             break;
         case 11:
+            //If allocating resource for the itemsin quest menu works, then advance, otherwise quit the quest menu
             if (QuestMenu_AllocateResourcesForListMenu())
             {
                 gMain.state++;
@@ -589,15 +594,13 @@ static bool8 QuestMenu_DoGfxSetup(void)
             }
             break;
         case 12:
-            if (sStateDataPtr->filterMode == 3){
-                QuestMenu_BuildFilteredMenuTemplate();
-            }
-            else {
-                QuestMenu_BuildListMenuTemplate();
-            }
+            //print the quest titles, avatars, desc and status
+            //When this is gone, page does not seem to play nice
+            QuestMenu_BuildListMenuTemplate();
             gMain.state++;
             break;
         case 13:
+            //header does not print
             QuestMenu_PrintHeader();
             gMain.state++;
             break;
@@ -606,11 +609,14 @@ static bool8 QuestMenu_DoGfxSetup(void)
             gMain.state++;
             break;
         case 15:
+            //everything loads, but cannot scroll or quit the meun
             taskId = CreateTask(Task_QuestMenuMain, 0);
+            //background loads but interface is entirely glitched out
             gTasks[taskId].data[0] = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.scroll, sListMenuState.row);
             gMain.state++;
             break;
         case 16:
+            //arrows at the top and bottom don't appear without this
             QuestMenu_PlaceTopMenuScrollIndicatorArrows();
             gMain.state++;
             break;
@@ -619,6 +625,7 @@ static bool8 QuestMenu_DoGfxSetup(void)
             gMain.state++;
             break;
         case 18:
+            //unknown
             if (sListMenuState.initialized == 1)
             {
                 BlendPalettes(0xFFFFFFFF, 16, RGB_BLACK);
@@ -626,6 +633,7 @@ static bool8 QuestMenu_DoGfxSetup(void)
             gMain.state++;
             break;
         case 19:
+            //unknown
             if (sListMenuState.initialized == 1)
             {
                 BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
@@ -644,7 +652,9 @@ static bool8 QuestMenu_DoGfxSetup(void)
             gMain.state++;
             break;
         default:
+            //quest menu begins and loads, you can quit, but cannot see or interact
             SetVBlankCallback(QuestMenu_VBlankCB);
+            //screen goes to black, nothing else happens
             SetMainCallback2(QuestMenu_MainCB);
             return TRUE;
     }
@@ -739,14 +749,55 @@ static bool8 QuestMenu_AllocateResourcesForListMenu(void)
     return TRUE;
 }
 
-static u16 QuestMenu_BuildFilteredMenuTemplate(void)
+static u16 QuestMenu_ClearMenuTemplate(void)
 {
     u16 COUNT_QUESTS;
     u16 NUM_ROW = 0;
 
     for (COUNT_QUESTS = 0; COUNT_QUESTS < sStateDataPtr->nItems; COUNT_QUESTS++)
     {
-        if (GetSetQuestFlag(COUNT_QUESTS, FLAG_GET_REWARD))
+        sListMenuItems[NUM_ROW].name = sText_QuestMenu_Unk;
+        sListMenuItems[NUM_ROW].id = NUM_ROW;
+        NUM_ROW++;
+    }
+
+}
+
+static u16 QuestMenu_BuildFilteredMenuTemplate(void)
+{
+    u16 COUNT_QUESTS;
+    u16 NUM_ROW = 0;
+    u8 mode;
+
+    switch(sStateDataPtr->filterMode){
+        case SORT_DEFAULT:
+            QuestMenu_BuildListMenuTemplate();
+            break;
+
+        case SORT_INACTIVE:
+            mode = FLAG_GET_INACTIVE;
+            gMultiuseListMenuTemplate.totalItems = (QuestMenu_CountUnlockedQuests() - QuestMenu_CountActiveQuests())+ 1;
+            break;
+
+        case SORT_ACTIVE:
+            mode = FLAG_GET_ACTIVE;
+            gMultiuseListMenuTemplate.totalItems = QuestMenu_CountActiveQuests()+1;
+            break;
+
+        case SORT_REWARD:
+            mode = FLAG_GET_REWARD;
+            gMultiuseListMenuTemplate.totalItems = QuestMenu_CountRewardQuests()+ 1;
+            break;
+
+        case SORT_DONE:
+            mode = FLAG_GET_COMPLETED;
+            gMultiuseListMenuTemplate.totalItems = QuestMenu_CountCompletedQuests()+ 1;
+            break;
+    }
+
+    for (COUNT_QUESTS = 0; COUNT_QUESTS < sStateDataPtr->nItems; COUNT_QUESTS++)
+    {
+        if (GetSetQuestFlag(COUNT_QUESTS, mode))
         {
             sListMenuItems[NUM_ROW].name = sSideQuests[COUNT_QUESTS].name;
             sListMenuItems[NUM_ROW].id = NUM_ROW;
@@ -760,7 +811,7 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
     sListMenuItems[NUM_ROW].id = LIST_CANCEL;
 
     gMultiuseListMenuTemplate.items = sListMenuItems;
-    gMultiuseListMenuTemplate.totalItems = QuestMenu_CountRewardQuests()+ 1;
+    //gMultiuseListMenuTemplate.totalItems = QuestMenu_CountRewardQuests()+ 1;
     gMultiuseListMenuTemplate.windowId = 0;
     gMultiuseListMenuTemplate.header_X = 0;
     gMultiuseListMenuTemplate.item_X = 9;
@@ -936,8 +987,9 @@ static void QuestMenu_FilteredMoveCursorFunc(s32 itemIndex, bool8 onInit, struct
     u16 itemId;
     const u8 * desc;
 
-    itemIndex = sStateDataPtr->filteredMapping[itemIndex];
-    
+    if (itemIndex != -2)
+        itemIndex = sStateDataPtr->filteredMapping[itemIndex];
+
     if (onInit != TRUE)
         PlaySE(SE_SELECT);
 
@@ -1299,7 +1351,7 @@ static u8 QuestMenu_GetCursorPosition(void)
 static void QuestMenu_InitItems(void)
 {
     sStateDataPtr->nItems = SIDE_QUEST_COUNT;
-    sStateDataPtr->maxShowed = sStateDataPtr->nItems + 1 <= 6 ? sStateDataPtr->nItems + 1 : 6;
+    sStateDataPtr->maxShowed = sStateDataPtr->nItems + 1 <= 4 ? sStateDataPtr->nItems + 1 : 4;
     //DebugQuestMenu();
 }
 
@@ -1336,28 +1388,19 @@ static bool8 IsPCScreenEffectRunning_TurnOn(void)
 
 static s8 QuestMenu_SetMode(void)
 {
-    //u8 mode = sStateDataPtr->filterMode;
-    //mode++;
-    sStateDataPtr->filterMode++;
+    u8 mode = sStateDataPtr->filterMode;
 
-    switch(sStateDataPtr->filterMode){
-        case SORT_DEFAULT:
-            QuestMenu_BuildListMenuTemplate();
-            break;
-
-        case SORT_INACTIVE:
-            break;
-
-        case SORT_ACTIVE:
-            break;
-
-        case SORT_REWARD:
-            break;
-
-        case SORT_DONE:
-            break;
+    if (mode > 3){
+        mode = 0;
+    }else {
+        mode++;
     }
 
+    if (mode == 1)
+        mode++;
+
+
+    sStateDataPtr->filterMode = mode;
     return sStateDataPtr->filterMode;
 }
 
@@ -1392,9 +1435,12 @@ static void Task_QuestMenuMain(u8 taskId)
                 break;
 
             case LIST_SORT:
-                PlaySE(SE_LOW_HEALTH);
-                sStateDataPtr->filterMode = SORT_REWARD;
+                PlaySE(SE_SELECT);
+                QuestMenu_RemoveScrollIndicatorArrowPair();
+                taskId = CreateTask(Task_QuestMenuMain, 0); //moves cursor back to first slot
+                QuestMenu_SetMode();
                 Task_QuestMenuCleanUp(taskId);
+
                 break;
 
             case LIST_CANCEL:
@@ -1547,7 +1593,7 @@ static void Task_QuestMenuCleanUp(u8 taskId)
     QuestMenu_InitItems();
 
     QuestMenu_SetCursorPosition();
-    QuestMenu_BuildListMenuTemplate();
+    QuestMenu_BuildFilteredMenuTemplate();
     data[0] = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.scroll, sListMenuState.row);
     ScheduleBgCopyTilemapToVram(0);
     QuestMenu_ReturnFromSubmenu(taskId);

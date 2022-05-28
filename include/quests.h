@@ -44,6 +44,7 @@ enum QuestCases
     FLAG_SET_REWARD,     // mark quest ready for reward
     FLAG_GET_COMPLETED,     // check if quest is completed
     FLAG_SET_COMPLETED,     // mark completed quest
+    FLAG_GET_INACTIVE, //check if quest is unlocked but has no other state
 };
 
 // functions
