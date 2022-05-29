@@ -506,6 +506,7 @@ struct SaveBlock2
     /*0x????*/ u8 activeQuests[SIDE_QUEST_FLAGS_COUNT];
     /*0x????*/ u8 rewardQuests[SIDE_QUEST_FLAGS_COUNT];
     /*0x????*/ u8 completedQuests[SIDE_QUEST_FLAGS_COUNT];
+    /*0x????*/ u8 inactiveQuests[SIDE_QUEST_FLAGS_COUNT];
     /*0x????*/ u8 activeQuest;
 
 }; 
@@ -1036,4 +1037,5 @@ struct MapPosition
 };
 
 #endif // GUARD_GLOBAL_H
+
 

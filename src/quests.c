@@ -65,7 +65,7 @@ struct QuestMenuResources
     /*0x08*/ u8 scrollIndicatorArrowPairId;
     /*0x0A*/ u16 withdrawQuantitySubmenuCursorPos;
     /*0x0C*/ s16 data[3];
-    /*0x0E*/ u16 filteredMapping[300]; 
+    /*0x0E*/ u16 filteredMapping[SIDE_QUEST_FLAGS_COUNT]; 
     /*0x0F*/ u8 filterMode;
 }; /* size = 0x17 */
 
@@ -103,6 +103,7 @@ static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y);
 static void QuestMenu_FilteredItemPrintFunc(u8 windowId, u32 itemId, u8 y);
 static void QuestMenu_PrintOrRemoveCursorAt(u8 y, u8 state);
 s8 QuestMenu_CountUnlockedQuests(void);
+s8 QuestMenu_CountInactiveQuests(void);
 s8 QuestMenu_CountActiveQuests(void);
 s8 QuestMenu_CountRewardQuests(void);
 s8 QuestMenu_CountCompletedQuests(void);
@@ -525,6 +526,7 @@ static bool8 QuestMenu_DoGfxSetup(void)
         case 0:
             SetVBlankHBlankCallbacksToNull();
             ClearScheduledBgCopiesToVram();
+            sStateDataPtr->filterMode = 0; //set up filter mode to be zero
             gMain.state++;
             break;
         case 1:
@@ -776,7 +778,7 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 
         case SORT_INACTIVE:
             mode = FLAG_GET_INACTIVE;
-            gMultiuseListMenuTemplate.totalItems = (QuestMenu_CountUnlockedQuests() - QuestMenu_CountActiveQuests())+ 1;
+            gMultiuseListMenuTemplate.totalItems = QuestMenu_CountInactiveQuests()+1;
             break;
 
         case SORT_ACTIVE:
@@ -1121,6 +1123,19 @@ s8 QuestMenu_CountUnlockedQuests(void)
     return q;
 }
 
+s8 QuestMenu_CountInactiveQuests(void)
+{
+    u8 i;
+    u8 q = 0;
+
+    for (i = 0; i < SIDE_QUEST_COUNT; i++){
+        if (GetSetQuestFlag(i,FLAG_GET_INACTIVE)) {
+            q++;
+        }
+    }
+    return q;
+}
+
 s8 QuestMenu_CountActiveQuests(void)
 {
     u8 i;
@@ -1162,21 +1177,24 @@ s8 QuestMenu_CountCompletedQuests(void)
 
 static void QuestMenu_PrintHeader(void)
 {
-    u16 x = Random() % 4;
+    u8 x = sStateDataPtr->filterMode;
 
     ConvertIntToDecimalStringN(gStringVar2, SIDE_QUEST_COUNT, STR_CONV_MODE_LEFT_ALIGN, 6);
 
     switch(x){
-        case 1: 
+        case SORT_DEFAULT:
             ConvertIntToDecimalStringN(gStringVar1, QuestMenu_CountUnlockedQuests(), STR_CONV_MODE_LEFT_ALIGN, 6);
             break;
-        case 2: 
+        case SORT_INACTIVE:
+            ConvertIntToDecimalStringN(gStringVar1, QuestMenu_CountInactiveQuests(), STR_CONV_MODE_LEFT_ALIGN, 6);
+            break;
+        case SORT_ACTIVE:
             ConvertIntToDecimalStringN(gStringVar1, QuestMenu_CountActiveQuests(), STR_CONV_MODE_LEFT_ALIGN, 6);
             break;
-        case 3: 
+        case SORT_REWARD:
             ConvertIntToDecimalStringN(gStringVar1, QuestMenu_CountRewardQuests(), STR_CONV_MODE_LEFT_ALIGN, 6);
             break;
-        case 4: 
+        case SORT_DONE:
             ConvertIntToDecimalStringN(gStringVar1, QuestMenu_CountCompletedQuests(), STR_CONV_MODE_LEFT_ALIGN, 6);
             break;
     }
@@ -1388,20 +1406,14 @@ static bool8 IsPCScreenEffectRunning_TurnOn(void)
 
 static s8 QuestMenu_SetMode(void)
 {
-    u8 mode = sStateDataPtr->filterMode;
-
-    if (mode > 3){
-        mode = 0;
+    if (sStateDataPtr->filterMode == SORT_DONE){
+        sStateDataPtr->filterMode = SORT_DEFAULT;
     }else {
-        mode++;
+        sStateDataPtr->filterMode++;
     }
 
-    if (mode == 1)
-        mode++;
-
-
-    sStateDataPtr->filterMode = mode;
-    return sStateDataPtr->filterMode;
+    MgbaPrintf(MGBA_LOG_DEBUG,"mode: %u",sStateDataPtr->filterMode);
+    //return sStateDataPtr->filterMode;
 }
 
 static void Task_QuestMenuMain(u8 taskId)
@@ -1410,8 +1422,6 @@ static void Task_QuestMenuMain(u8 taskId)
     u16 scroll;
     u16 row;
     s32 input;
-
-    sStateDataPtr->filterMode = 0;
 
     if (!gPaletteFade.active && !IsPCScreenEffectRunning_TurnOn())
     {
@@ -1436,8 +1446,9 @@ static void Task_QuestMenuMain(u8 taskId)
 
             case LIST_SORT:
                 PlaySE(SE_SELECT);
+                MgbaPrintf(MGBA_LOG_DEBUG,"button press");
                 QuestMenu_RemoveScrollIndicatorArrowPair();
-                taskId = CreateTask(Task_QuestMenuMain, 0); //moves cursor back to first slot
+                //taskId = CreateTask(Task_QuestMenuMain, 0); //moves cursor back to first slot
                 QuestMenu_SetMode();
                 Task_QuestMenuCleanUp(taskId);
 
@@ -1586,17 +1597,20 @@ static void Task_QuestMenuCleanUp(u8 taskId)
 {
     s16 * data = gTasks[taskId].data;
 
-    QuestMenu_DestroySubwindow(2);
-    PutWindowTilemap(1);
+    //QuestMenu_DestroySubwindow(2);
+    //PutWindowTilemap(1);
     DestroyListMenuTask(data[0], &sListMenuState.scroll, &sListMenuState.row);
+    QuestMenu_PlaceTopMenuScrollIndicatorArrows();
 
-    QuestMenu_InitItems();
+    //QuestMenu_InitItems();
 
-    QuestMenu_SetCursorPosition();
+    //QuestMenu_SetCursorPosition();
+    QuestMenu_PrintHeader();
     QuestMenu_BuildFilteredMenuTemplate();
     data[0] = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.scroll, sListMenuState.row);
-    ScheduleBgCopyTilemapToVram(0);
-    QuestMenu_ReturnFromSubmenu(taskId);
+    //ScheduleBgCopyTilemapToVram(0);
+    //QuestMenu_ReturnFromSubmenu(taskId);
+    gTasks[taskId].func = Task_QuestMenuMain;
 }
 
 static void Task_QuestMenuCancel(u8 taskId)
@@ -1709,6 +1723,14 @@ s8 GetSetQuestFlag(u8 quest, u8 caseId)
         case FLAG_SET_UNLOCKED:
             gSaveBlock2Ptr->unlockedQuests[index] |= mask;
             return 1;
+        case FLAG_GET_INACTIVE:
+            return gSaveBlock2Ptr->inactiveQuests[index] & mask;
+        case FLAG_SET_INACTIVE:
+            gSaveBlock2Ptr->inactiveQuests[index] |= mask;
+            return 1;
+        case FLAG_REMOVE_INACTIVE:
+            gSaveBlock2Ptr->inactiveQuests[index] &= ~mask;
+            return 1;
             /*
              * UNBOUND QUEST MENU ADDITION
              * cases added for get/set active
@@ -1719,10 +1741,16 @@ s8 GetSetQuestFlag(u8 quest, u8 caseId)
         case FLAG_SET_ACTIVE:
             gSaveBlock2Ptr->activeQuests[index] |= mask;
             return 1;
+        case FLAG_REMOVE_ACTIVE:
+            gSaveBlock2Ptr->activeQuests[index] &= ~mask;
+            return 1;
         case FLAG_GET_REWARD:
             return gSaveBlock2Ptr->rewardQuests[index] & mask;
         case FLAG_SET_REWARD:
             gSaveBlock2Ptr->rewardQuests[index] |= mask;
+            return 1;
+        case FLAG_REMOVE_REWARD:
+            gSaveBlock2Ptr->rewardQuests[index] &= ~mask;
             return 1;
         case FLAG_GET_COMPLETED:
             return gSaveBlock2Ptr->completedQuests[index] & mask;
