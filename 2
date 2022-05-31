@@ -802,10 +802,8 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 
         for (NUM_ROW = 0; NUM_ROW < sStateDataPtr->nItems; NUM_ROW++)
         {
-            if (GetSetQuestFlag(NUM_ROW, FLAG_GET_UNLOCKED)){
+            if (GetSetQuestFlag(NUM_ROW, FLAG_GET_UNLOCKED))
                 sListMenuItems[NUM_ROW].name = sSideQuests[NUM_ROW].name;
-                //sStateDataPtr->filteredMapping[NUM_ROW] = NUM_ROW;
-            }
             else
                 sListMenuItems[NUM_ROW].name = sText_QuestMenu_Unk;
 
@@ -955,7 +953,20 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
 static void QuestMenu_FilteredMoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list)
 {
     u16 itemId;
+    u8 whatrow;
+    u8 whatquest;
     const u8 * desc;
+    
+    whatrow = itemIndex;
+    whatquest = sStateDataPtr->filteredMapping[whatrow];
+    MgbaPrintf(MGBA_LOG_ERROR,"whatrow: %u",whatrow);
+    MgbaPrintf(MGBA_LOG_ERROR,"whaquest: %u",whatquest);
+
+    //I can't remember why this was here.
+    /*
+       if (itemIndex != -2)
+       */
+       itemIndex = sStateDataPtr->filteredMapping[itemIndex];
 
     if (onInit != TRUE)
         PlaySE(SE_SELECT);
@@ -968,22 +979,17 @@ static void QuestMenu_FilteredMoveCursorFunc(s32 itemIndex, bool8 onInit, struct
         {
             if (GetSetQuestFlag(itemIndex, FLAG_GET_UNLOCKED))
             {
-                //If the quest is unlocked, AND we're not in normal mode, 
-                //don't use the position of the cursor, look at the filtermap 
-                //to look up the quest in that row
+                //itemId = sSideQuestDifficulties[itemIndex];
+                itemId = sSideQuestDifficulties[0];
+                
+                
 
-                if (sStateDataPtr->filterMode != SORT_DEFAULT)
-                    itemIndex = sStateDataPtr->filteredMapping[itemIndex];
-
-                //Look up the quest struct and get the NPC associated with this quest
-                itemId = sSideQuestDifficulties[itemIndex];
-                //Look up the quest struct and get the description with this quest
                 desc = sSideQuests[itemIndex].desc;
             }
             else
             {
-                //PSF TODO Make black shadow NPC to replace this questionmark
-                CreateItemMenuIcon(ITEM_NONE,sStateDataPtr->itemMenuIconSlot);
+                //PSF TODO Make black shadow NPC
+                CreateItemMenuIcon(ITEM_NONE, sStateDataPtr->itemMenuIconSlot);
                 desc = sText_QuestMenu_Unk;
             }
 
@@ -992,7 +998,6 @@ static void QuestMenu_FilteredMoveCursorFunc(s32 itemIndex, bool8 onInit, struct
         }
         else
         {
-            //PSF TODO make a "go back arrow" to replace this questionmark
             CreateItemMenuIcon(ITEM_NONE, sStateDataPtr->itemMenuIconSlot);
             desc = sText_QuestMenu_Exit;
         }
@@ -1001,6 +1006,11 @@ static void QuestMenu_FilteredMoveCursorFunc(s32 itemIndex, bool8 onInit, struct
         FillWindowPixelBuffer(1, 0);
         QuestMenu_AddTextPrinterParameterized(1, 2, desc, 0, 3, 2, 0, 0, 3);
 
+        //MgbaPrintf(MGBA_LOG_ERROR,"sListMenuState.scroll: %d",sListMenuState.scroll);
+        //MgbaPrintf(MGBA_LOG_ERROR,"sListMenuState.row: %d",sListMenuState.row);
+        //MgbaPrintf(MGBA_LOG_ERROR,"sStateDataPtr->moveModeOrigPos: %d",sStateDataPtr->moveModeOrigPos);
+
+    //return sListMenuState.scroll + sListMenuState.row;
     }
 }
 
@@ -1222,11 +1232,6 @@ static void QuestMenu_SetCursorPosition(void)
         else
             sListMenuState.row = sStateDataPtr->nItems;
     }
-
-    //When this function gets run, place cursor back in the first position, used for resetting the list when filtering
-        sListMenuState.row = 0;
-        sListMenuState.scroll = 0;
-
 }
 
 #define try_free(ptr) ({        \
@@ -1440,7 +1445,6 @@ static void Task_QuestMenuMain(u8 taskId)
                 //taskId = CreateTask(Task_QuestMenuMain, 0); //moves cursor back to first slot
                 QuestMenu_SetMode();
                 Task_QuestMenuCleanUp(taskId);
-                //QuestMenu_PrintOrRemoveCursor(data[0], 2);            
 
                 break;
 
@@ -1592,7 +1596,7 @@ static void Task_QuestMenuCleanUp(u8 taskId)
     DestroyListMenuTask(data[0], &sListMenuState.scroll, &sListMenuState.row);
     QuestMenu_PlaceTopMenuScrollIndicatorArrows();
 
-    QuestMenu_SetCursorPosition();
+    //QuestMenu_SetCursorPosition();
     ClearStdWindowAndFrameToTransparent(2, FALSE);
     //QuestMenu_DestroySubwindow(0);
 
