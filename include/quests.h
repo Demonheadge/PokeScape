@@ -51,6 +51,14 @@ enum QuestCases
     FLAG_SET_COMPLETED,     // mark completed quest
 };
 
+enum SubQuestTypes
+{
+    SUBQUEST_NONE,
+    SUBQUEST_CATCH,
+    SUBQUEST_FIND,
+    SUBQUEST_READ,
+};
+
 // functions
 void CreateObjectMenuIcon(u16, u8);
 void CreateItemMenuIcon(u16, u8);

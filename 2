@@ -94,7 +94,6 @@ static void Task_QuestMenuWaitFadeAndBail(u8 taskId);
 static bool8 QuestMenu_InitBgs(void);
 static bool8 QuestMenu_LoadGraphics(void);
 static bool8 QuestMenu_AllocateResourcesForListMenu(void);
-static void QuestMenu_PrintSubQuestButton(u16 itemId);
 static u16 QuestMenu_BuildFilteredMenuTemplate(void);
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
 static void QuestMenu_FilteredMoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
@@ -241,11 +240,11 @@ static const u8 sSideQuestDifficulties[SIDE_QUEST_COUNT] =
 
 static const u8 sSubQuestType[SIDE_QUEST_COUNT] =
 {
-    [SIDE_QUEST_1] = SUBQUEST_FIND,
+    [SIDE_QUEST_1] = SUBQUEST_NONE,
     [SIDE_QUEST_2] = SUBQUEST_CATCH,
     [SIDE_QUEST_3] = SUBQUEST_FIND,
     [SIDE_QUEST_4] = SUBQUEST_READ,
-    [SIDE_QUEST_5] = SUBQUEST_CATCH,
+    [SIDE_QUEST_5] = SUBQUEST_NONE,
     [SIDE_QUEST_6] = SUBQUEST_NONE,
     [SIDE_QUEST_7] = SUBQUEST_NONE,
     [SIDE_QUEST_8] = SUBQUEST_NONE,
@@ -254,7 +253,7 @@ static const u8 sSubQuestType[SIDE_QUEST_COUNT] =
     [SIDE_QUEST_11] = SUBQUEST_NONE,
     [SIDE_QUEST_12] = SUBQUEST_NONE,
     [SIDE_QUEST_13] = SUBQUEST_NONE,
-    [SIDE_QUEST_14] = SUBQUEST_CATCH,
+    [SIDE_QUEST_14] = SUBQUEST_NONE,
     [SIDE_QUEST_15] = SUBQUEST_NONE,
     [SIDE_QUEST_16] = SUBQUEST_NONE,
     [SIDE_QUEST_17] = SUBQUEST_NONE,
@@ -789,21 +788,11 @@ static bool8 QuestMenu_AllocateResourcesForListMenu(void)
     return TRUE;
 }
 
-static void QuestMenu_PrintSubQuestButton(u16 itemId){
-    if (sSubQuestType[itemId] > 0 && GetSetQuestFlag(itemId, FLAG_GET_UNLOCKED) && !GetSetQuestFlag(itemId,FLAG_GET_INACTIVE)){
-        StringCopy(gStringVar3, sText_QuestMenu_SubQuestButton);
-    }
-    else{
-        StringCopy(gStringVar3, sText_Empty);
-    } 
-}
-
 static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 {
     u16 COUNT_QUESTS;
     u16 NUM_ROW = 0;
     u8 mode;
-    u8 holder;
 
     switch(sStateDataPtr->filterMode){
         case SORT_DEFAULT:
@@ -838,10 +827,6 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
         {
             if (GetSetQuestFlag(COUNT_QUESTS, mode))
             {
-                QuestMenu_PrintSubQuestButton(COUNT_QUESTS);
-                //StringExpandPlaceholders(gStringVar1, sSideQuests[COUNT_QUESTS].name);
-                //StringExpandPlaceholders(sListMenuItems[NUM_ROW].name, sSideQuests[COUNT_QUESTS].name);
-                //sListMenuItems[NUM_ROW].name = gStringVar1;
                 sListMenuItems[NUM_ROW].name = sSideQuests[COUNT_QUESTS].name;
                 sListMenuItems[NUM_ROW].id = NUM_ROW;
                 sStateDataPtr->filteredMapping[NUM_ROW] = COUNT_QUESTS;
@@ -854,13 +839,6 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
         for (NUM_ROW = 0; NUM_ROW < sStateDataPtr->nItems; NUM_ROW++)
         {
             if (GetSetQuestFlag(NUM_ROW, FLAG_GET_UNLOCKED)){
-                /*
-                QuestMenu_PrintSubQuestButton(COUNT_QUESTS);
-                StringExpandPlaceholders(gStringVar1, sText_Empty);
-                StringCopy(gStringVar3, sText_Empty);
-                StringExpandPlaceholders(gStringVar1, sSideQuests[NUM_ROW].name);
-                sListMenuItems[NUM_ROW].name = gStringVar1;
-                */
                 sListMenuItems[NUM_ROW].name = sSideQuests[NUM_ROW].name;
             }
             else
@@ -890,10 +868,6 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
     gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_FilteredItemPrintFunc;
     gMultiuseListMenuTemplate.scrollMultiple = 1;
     gMultiuseListMenuTemplate.cursorKind = 0;
-
-    //StringCopy(gStringVar4, sText_QuestMenu_SubQuestButton);
-    //ConvertIntToDecimalStringN(gStringVar4, 10, STR_CONV_MODE_LEFT_ALIGN, 6);
-    //QuestMenu_AddTextPrinterParameterized(0, 0, gStringVar4, 100, 50, 0, 0, 0xFF, 1);
 }
 
 void CreateObjectMenuIcon(u16 itemId, u8 idx)
@@ -1127,11 +1101,15 @@ static void QuestMenu_FilteredItemPrintFunc(u8 windowId, u32 itemId, u8 y)
             StringCopy(gStringVar4, sText_Empty);
         }
 
-
-    //StringCopy(gStringVar1, sText_QuestMenu_SubQuestButton);
-    //QuestMenu_AddTextPrinterParameterized(0, 0, gStringVar1, 100, 50, 0, 0, 0xFF, 1);
+        if (sSubQuestType[itemId] > 0 && GetSetQuestFlag(itemId, FLAG_GET_UNLOCKED) && !GetSetQuestFlag(itemId,FLAG_GET_INACTIVE)){
+            StringCopy(gStringVar3, sText_QuestMenu_SubQuestButton);
+        }
+        else{
+            StringCopy(gStringVar3, sText_Empty);
+        }
 
         QuestMenu_AddTextPrinterParameterized(windowId, 0, gStringVar4, 110, y, 0, 0, 0xFF, 1);
+        QuestMenu_AddTextPrinterParameterized(windowId, 0, gStringVar3, 100, y, 0, 0, 0xFF, 1);
     }
 }
 
@@ -1601,7 +1579,7 @@ static void Task_QuestMenuReward(u8 taskId)
 
     QuestMenuSubmenuSelectionMessage(taskId);
     StringCopy(gStringVar1, sSideQuests[questIndex].reward);
-    StringExpandPlaceholders(gStringVar4, sText_QuestMenu_DisplayReward);
+    StringExpandPlaceholders(3StringVar4, sText_QuestMenu_DisplayReward);
     QuestMenu_DisplaySubMenuMessage(taskId);
 }
 
