@@ -12,6 +12,7 @@
 #define SORT_ACTIVE 2
 #define SORT_REWARD 3
 #define SORT_DONE 4
+#define SORT_SUBQUEST 5
 
 struct SideQuest 
 {
@@ -23,8 +24,19 @@ struct SideQuest
 	/*0x14*/ const u8* reward;
 }; /* size = 0x18 */
 
+struct SubQuest1
+{
+	/*0x00*/ const u8* name;
+	/*0x04*/ const u8* desc;
+	/*0x08*/ const u8* poc;
+	/*0x0C*/ const u8* map;
+	/*0x14*/ const u8* reward;
+    /*0x18*/ const u8 object;
+}; /* size = 0x22 */
+
 
 extern const struct SideQuest gSideQuests[SIDE_QUEST_COUNT];
+extern const struct SubQuest1 gSubQuests1[SUB_QUEST_1_COUNT];
 
 enum 
 {
