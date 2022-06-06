@@ -1822,11 +1822,11 @@ const u8 gText_Berries[] = _("BERRIES");
 
 //// side quest data
 //names
-const u8 gText_SideQuestName_1[] = _("Side Quest 1  {STR_VAR_3}");
-const u8 gText_SideQuestName_2[] = _("Side Quest 2  {STR_VAR_3}");
-const u8 gText_SideQuestName_3[] = _("Side Quest 3  {STR_VAR_3}");
-const u8 gText_SideQuestName_4[] = _("Side Quest 4  {STR_VAR_3}");
-const u8 gText_SideQuestName_5[] = _("Side Quest 5  {STR_VAR_3}");
+const u8 gText_SideQuestName_1[] = _("Side Quest 1 {A_BUTTON}");
+const u8 gText_SideQuestName_2[] = _("Side Quest 2  {A_BUTTON}");
+const u8 gText_SideQuestName_3[] = _("Side Quest 3  {A_BUTTON}");
+const u8 gText_SideQuestName_4[] = _("Side Quest 4  {A_BUTTON}");
+const u8 gText_SideQuestName_5[] = _("Side Quest 5  {A_BUTTON}");
 const u8 gText_SideQuestName_6[] = _("Side Quest 6  {STR_VAR_3}");
 const u8 gText_SideQuestName_7[] = _("Side Quest 7  {STR_VAR_3}");
 const u8 gText_SideQuestName_8[] = _("Side Quest 8  {STR_VAR_3}");
@@ -1852,6 +1852,7 @@ const u8 gText_SideQuestName_27[] = _("Side Quest 27  {STR_VAR_3}");
 const u8 gText_SideQuestName_28[] = _("Side Quest 28  {STR_VAR_3}");
 const u8 gText_SideQuestName_29[] = _("Side Quest 29  {STR_VAR_3}");
 const u8 gText_SideQuestName_30[] = _("Side Quest 30  {STR_VAR_3}");
+
 //descriptions
 const u8 gText_SideQuestDesc_1[] = _("Description 1");
 const u8 gText_SideQuestDesc_2[] = _("Description 2");
@@ -1915,7 +1916,7 @@ const u8 gText_SideQuestPOC_28[] = _("POC 28");
 const u8 gText_SideQuestPOC_29[] = _("POC 29");
 const u8 gText_SideQuestPOC_30[] = _("POC 30");
 //map
-const u8 gText_SideQuestMap_1[] = _("Map 1");
+const u8 gText_SideQuestMap_1[] = _("Salesforce Basement");
 const u8 gText_SideQuestMap_2[] = _("Map 2");
 const u8 gText_SideQuestMap_3[] = _("Map 3");
 const u8 gText_SideQuestMap_4[] = _("Map 4");
@@ -1945,35 +1946,26 @@ const u8 gText_SideQuestMap_27[] = _("Map 27");
 const u8 gText_SideQuestMap_28[] = _("Map 28");
 const u8 gText_SideQuestMap_29[] = _("Map 29");
 const u8 gText_SideQuestMap_30[] = _("Map 30");
-//rewards
-const u8 gText_SideQuestReward_1[] = _("Reward 1");
-const u8 gText_SideQuestReward_2[] = _("Reward 2");
-const u8 gText_SideQuestReward_3[] = _("Reward 3");
-const u8 gText_SideQuestReward_4[] = _("Reward 4");
-const u8 gText_SideQuestReward_5[] = _("Reward 5");
-const u8 gText_SideQuestReward_6[] = _("Reward 6");
-const u8 gText_SideQuestReward_7[] = _("Reward 7");
-const u8 gText_SideQuestReward_8[] = _("Reward 8");
-const u8 gText_SideQuestReward_9[] = _("Reward 9");
-const u8 gText_SideQuestReward_10[] = _("Reward 10");
-const u8 gText_SideQuestReward_11[] = _("Reward 11");
-const u8 gText_SideQuestReward_12[] = _("Reward 12");
-const u8 gText_SideQuestReward_13[] = _("Reward 13");
-const u8 gText_SideQuestReward_14[] = _("Reward 14");
-const u8 gText_SideQuestReward_15[] = _("Reward 15");
-const u8 gText_SideQuestReward_16[] = _("Reward 16");
-const u8 gText_SideQuestReward_17[] = _("Reward 17");
-const u8 gText_SideQuestReward_18[] = _("Reward 18");
-const u8 gText_SideQuestReward_19[] = _("Reward 19");
-const u8 gText_SideQuestReward_20[] = _("Reward 20");
-const u8 gText_SideQuestReward_21[] = _("Reward 21");
-const u8 gText_SideQuestReward_22[] = _("Reward 22");
-const u8 gText_SideQuestReward_23[] = _("Reward 23");
-const u8 gText_SideQuestReward_24[] = _("Reward 24");
-const u8 gText_SideQuestReward_25[] = _("Reward 25");
-const u8 gText_SideQuestReward_26[] = _("Reward 26");
-const u8 gText_SideQuestReward_27[] = _("Reward 27");
-const u8 gText_SideQuestReward_28[] = _("Reward 28");
-const u8 gText_SideQuestReward_29[] = _("Reward 29");
-const u8 gText_SideQuestReward_30[] = _("Reward 30");
 
+//subquests
+const u8 gText_SubQuest1_Name1[] = _("Part 1");
+const u8 gText_SubQuest1_Name2[] = _("Part 2");
+const u8 gText_SubQuest1_Name3[] = _("Part 3");
+const u8 gText_SubQuest1_Name4[] = _("Part 4");
+const u8 gText_SubQuest1_Name5[] = _("Part 5");
+const u8 gText_SubQuest1_Name6[] = _("Part 6");
+const u8 gText_SubQuest1_Name7[] = _("Part 7");
+const u8 gText_SubQuest1_Name8[] = _("Part 8");
+const u8 gText_SubQuest1_Name9[] = _("Part 9");
+const u8 gText_SubQuest1_Name10[] = _("Part 10");
+
+const u8 gText_SubQuest1_Desc1[] = _("Description Sub 1");
+const u8 gText_SubQuest1_Desc2[] = _("Description Sub 2");
+const u8 gText_SubQuest1_Desc3[] = _("Description Sub 3");
+const u8 gText_SubQuest1_Desc4[] = _("Description Sub 4");
+const u8 gText_SubQuest1_Desc5[] = _("Description Sub 5");
+const u8 gText_SubQuest1_Desc6[] = _("Description Sub 6");
+const u8 gText_SubQuest1_Desc7[] = _("Description Sub 7");
+const u8 gText_SubQuest1_Desc8[] = _("Description Sub 8");
+const u8 gText_SubQuest1_Desc9[] = _("Description Sub 9");
+const u8 gText_SubQuest1_Desc10[] = _("Description Sub 10");

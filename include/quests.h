@@ -14,29 +14,31 @@
 #define SORT_DONE 4
 #define SORT_SUBQUEST 5
 
+struct SubQuest
+{
+	/*0x00*/ const u8* name;
+	/*0x04*/ const u8* desc;
+	/*0x08*/ const u8* poc;
+	/*0x0C*/ const u8* map;
+    /*0x18*/ const u8 object;
+}; /* size = 0x22 */
+
 struct SideQuest 
 {
 	/*0x00*/ const u8* name;
 	/*0x04*/ const u8* desc;
 	/*0x08*/ const u8* poc;
 	/*0x0C*/ const u8* map;
-	///*0x10*/ const u8* hint;
-	/*0x14*/ const u8* reward;
+    u8 object;
+    const struct SubQuest* subquests;
+    const u8 childtype;
+    const u8 numSubquests;
+
 }; /* size = 0x18 */
 
-struct SubQuest1
-{
-	/*0x00*/ const u8* name;
-	/*0x04*/ const u8* desc;
-	/*0x08*/ const u8* poc;
-	/*0x0C*/ const u8* map;
-	/*0x14*/ const u8* reward;
-    /*0x18*/ const u8 object;
-}; /* size = 0x22 */
-
-
+extern const struct SubQuest gSubQuests1[SUB_QUEST_1_COUNT];
+extern const struct SubQuest gSubQuests2[SUB_QUEST_1_COUNT];
 extern const struct SideQuest gSideQuests[SIDE_QUEST_COUNT];
-extern const struct SubQuest1 gSubQuests1[SUB_QUEST_1_COUNT];
 
 enum 
 {

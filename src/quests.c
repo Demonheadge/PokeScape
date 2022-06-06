@@ -94,7 +94,7 @@ static void Task_QuestMenuWaitFadeAndBail(u8 taskId);
 static bool8 QuestMenu_InitBgs(void);
 static bool8 QuestMenu_LoadGraphics(void);
 static bool8 QuestMenu_AllocateResourcesForListMenu(void);
-static s8 QuestMenu_PrintSubQuestButton(u16 itemId);
+static s8 QuestMenu_CheckHasChildren(u16 itemId);
 static u16 QuestMenu_BuildFilteredMenuTemplate(void);
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
 static void QuestMenu_FilteredMoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
@@ -106,6 +106,7 @@ s8 QuestMenu_CountInactiveQuests(void);
 s8 QuestMenu_CountActiveQuests(void);
 s8 QuestMenu_CountRewardQuests(void);
 s8 QuestMenu_CountCompletedQuests(void);
+s8 QuestMenu_CountSubQuests(void);
 static void QuestMenu_PrintHeader(void);
 static void QuestMenu_PlaceTopMenuScrollIndicatorArrows(void);
 static void QuestMenu_SetCursorPosition(void);
@@ -170,55 +171,69 @@ static const u8 sText_QuestMenu_EndQuest[] = _("Cancelling Quest:\n{STR_VAR_1}")
 static const u8 sText_QuestMenu_SubQuestButton[] = _("{A_BUTTON}");
 static const u8 sText_QuestMenu_Type[] = _("{R_BUTTON}Type");
 
-#define side_quest(n, d, p, m, r) {.name = n, .desc = d, .poc = p, .map = m, .reward = r}
-static const struct SideQuest sSideQuests[SIDE_QUEST_COUNT] =
+#define sub_quest(n, d, p, m, o) {.name = n, .desc = d, .poc = p, .map = m, .object = o}
+static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
 {
-    side_quest(gText_SideQuestName_1,  gText_SideQuestDesc_1,  gText_SideQuestPOC_1,  gText_SideQuestMap_1,  gText_SideQuestReward_1),
-    side_quest(gText_SideQuestName_2,  gText_SideQuestDesc_2,  gText_SideQuestPOC_2,  gText_SideQuestMap_2,  gText_SideQuestReward_2),
-    side_quest(gText_SideQuestName_3,  gText_SideQuestDesc_3,  gText_SideQuestPOC_3,  gText_SideQuestMap_3,  gText_SideQuestReward_3),
-    side_quest(gText_SideQuestName_4,  gText_SideQuestDesc_4,  gText_SideQuestPOC_4,  gText_SideQuestMap_4,  gText_SideQuestReward_4),
-    side_quest(gText_SideQuestName_5,  gText_SideQuestDesc_5,  gText_SideQuestPOC_5,  gText_SideQuestMap_5,  gText_SideQuestReward_5),
-    side_quest(gText_SideQuestName_6,  gText_SideQuestDesc_6,  gText_SideQuestPOC_6,  gText_SideQuestMap_6,  gText_SideQuestReward_6),
-    side_quest(gText_SideQuestName_7,  gText_SideQuestDesc_7,  gText_SideQuestPOC_7,  gText_SideQuestMap_7,  gText_SideQuestReward_7),
-    side_quest(gText_SideQuestName_8,  gText_SideQuestDesc_8,  gText_SideQuestPOC_8,  gText_SideQuestMap_8,  gText_SideQuestReward_8),
-    side_quest(gText_SideQuestName_9,  gText_SideQuestDesc_9,  gText_SideQuestPOC_9,  gText_SideQuestMap_9,  gText_SideQuestReward_9),
-    side_quest(gText_SideQuestName_10, gText_SideQuestDesc_10, gText_SideQuestPOC_10, gText_SideQuestMap_10, gText_SideQuestReward_10),
-    side_quest(gText_SideQuestName_11, gText_SideQuestDesc_11, gText_SideQuestPOC_11, gText_SideQuestMap_11, gText_SideQuestReward_11),
-    side_quest(gText_SideQuestName_12, gText_SideQuestDesc_12, gText_SideQuestPOC_12, gText_SideQuestMap_12, gText_SideQuestReward_12),
-    side_quest(gText_SideQuestName_13, gText_SideQuestDesc_13, gText_SideQuestPOC_13, gText_SideQuestMap_13, gText_SideQuestReward_13),
-    side_quest(gText_SideQuestName_14, gText_SideQuestDesc_14, gText_SideQuestPOC_14, gText_SideQuestMap_14, gText_SideQuestReward_14),
-    side_quest(gText_SideQuestName_15, gText_SideQuestDesc_15, gText_SideQuestPOC_15, gText_SideQuestMap_15, gText_SideQuestReward_15),
-    side_quest(gText_SideQuestName_16, gText_SideQuestDesc_16, gText_SideQuestPOC_16, gText_SideQuestMap_16, gText_SideQuestReward_16),
-    side_quest(gText_SideQuestName_17, gText_SideQuestDesc_17, gText_SideQuestPOC_17, gText_SideQuestMap_17, gText_SideQuestReward_17),
-    side_quest(gText_SideQuestName_18, gText_SideQuestDesc_18, gText_SideQuestPOC_18, gText_SideQuestMap_18, gText_SideQuestReward_18),
-    side_quest(gText_SideQuestName_19, gText_SideQuestDesc_19, gText_SideQuestPOC_19, gText_SideQuestMap_19, gText_SideQuestReward_19),
-    side_quest(gText_SideQuestName_20, gText_SideQuestDesc_20, gText_SideQuestPOC_20, gText_SideQuestMap_20, gText_SideQuestReward_20),
-    side_quest(gText_SideQuestName_21, gText_SideQuestDesc_21, gText_SideQuestPOC_21, gText_SideQuestMap_21, gText_SideQuestReward_21),
-    side_quest(gText_SideQuestName_22, gText_SideQuestDesc_22, gText_SideQuestPOC_22, gText_SideQuestMap_22, gText_SideQuestReward_22),
-    side_quest(gText_SideQuestName_23, gText_SideQuestDesc_23, gText_SideQuestPOC_23, gText_SideQuestMap_23, gText_SideQuestReward_23),
-    side_quest(gText_SideQuestName_24, gText_SideQuestDesc_24, gText_SideQuestPOC_24, gText_SideQuestMap_24, gText_SideQuestReward_24),
-    side_quest(gText_SideQuestName_25, gText_SideQuestDesc_25, gText_SideQuestPOC_25, gText_SideQuestMap_25, gText_SideQuestReward_25),
-    side_quest(gText_SideQuestName_26, gText_SideQuestDesc_26, gText_SideQuestPOC_26, gText_SideQuestMap_26, gText_SideQuestReward_26),
-    side_quest(gText_SideQuestName_27, gText_SideQuestDesc_27, gText_SideQuestPOC_27, gText_SideQuestMap_27, gText_SideQuestReward_27),
-    side_quest(gText_SideQuestName_28, gText_SideQuestDesc_28, gText_SideQuestPOC_28, gText_SideQuestMap_28, gText_SideQuestReward_28),
-    side_quest(gText_SideQuestName_29, gText_SideQuestDesc_29, gText_SideQuestPOC_29, gText_SideQuestMap_29, gText_SideQuestReward_29),
-    side_quest(gText_SideQuestName_30, gText_SideQuestDesc_30, gText_SideQuestPOC_30, gText_SideQuestMap_30, gText_SideQuestReward_30),
+    sub_quest(gText_SubQuest1_Name1,  gText_SubQuest1_Desc1,  gText_SideQuestPOC_1,  gText_SideQuestMap_1, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name2,  gText_SubQuest1_Desc2,  gText_SideQuestPOC_2,  gText_SideQuestMap_2, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name3,  gText_SubQuest1_Desc3,  gText_SideQuestPOC_3,  gText_SideQuestMap_3, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name4,  gText_SubQuest1_Desc4,  gText_SideQuestPOC_4,  gText_SideQuestMap_4, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name5,  gText_SubQuest1_Desc5,  gText_SideQuestPOC_5,  gText_SideQuestMap_5, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name6,  gText_SubQuest1_Desc6,  gText_SideQuestPOC_6,  gText_SideQuestMap_6, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name7,  gText_SubQuest1_Desc7,  gText_SideQuestPOC_7,  gText_SideQuestMap_7, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name8,  gText_SubQuest1_Desc8,  gText_SideQuestPOC_8,  gText_SideQuestMap_8, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name9,  gText_SubQuest1_Desc9,  gText_SideQuestPOC_9,  gText_SideQuestMap_9, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name10, gText_SubQuest1_Desc10, gText_SideQuestPOC_10, gText_SideQuestMap_10, OBJ_EVENT_GFX_WALLY),
+
+};
+static const struct SubQuest sSubQuests2[SUB_QUEST_1_COUNT] =
+{
+    sub_quest(gText_SubQuest1_Name1,  gText_SubQuest1_Desc1,  gText_SideQuestPOC_1,  gText_SideQuestMap_1, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name2,  gText_SubQuest1_Desc2,  gText_SideQuestPOC_2,  gText_SideQuestMap_2, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name3,  gText_SubQuest1_Desc3,  gText_SideQuestPOC_3,  gText_SideQuestMap_3, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name4,  gText_SubQuest1_Desc4,  gText_SideQuestPOC_4,  gText_SideQuestMap_4, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name5,  gText_SubQuest1_Desc5,  gText_SideQuestPOC_5,  gText_SideQuestMap_5, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name6,  gText_SubQuest1_Desc6,  gText_SideQuestPOC_6,  gText_SideQuestMap_6, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name7,  gText_SubQuest1_Desc7,  gText_SideQuestPOC_7,  gText_SideQuestMap_7, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name8,  gText_SubQuest1_Desc8,  gText_SideQuestPOC_8,  gText_SideQuestMap_8, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name9,  gText_SubQuest1_Desc9,  gText_SideQuestPOC_9,  gText_SideQuestMap_9, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name10, gText_SubQuest1_Desc10, gText_SideQuestPOC_10, gText_SideQuestMap_10, OBJ_EVENT_GFX_WALLY),
+
 };
 
-#define sub_quest(n, d, p, m, r, o) {.name = n, .desc = d, .poc = p, .map = m, .reward = r, .object = o}
-//static const struct SideQuest sSideQuests[SIDE_QUEST_COUNT] =
-static const struct SubQuest1 sSubQuests1[SUB_QUEST_1_COUNT] =
+#define side_quest(n, d, p, m, o, sq, ct, ns) {.name = n, .desc = d, .poc = p, .map = m, .object = o, .subquests = sq, .childtype = ct, .numSubquests = ns}
+static const struct SideQuest sSideQuests[SIDE_QUEST_COUNT] =
 {
-    sub_quest(gText_SideQuestName_1,  gText_SideQuestDesc_1,  gText_SideQuestPOC_1,  gText_SideQuestMap_1,  gText_SideQuestReward_1, OBJ_EVENT_GFX_WALLY),
-    sub_quest(gText_SideQuestName_2,  gText_SideQuestDesc_2,  gText_SideQuestPOC_2,  gText_SideQuestMap_2,  gText_SideQuestReward_2, OBJ_EVENT_GFX_WALLY),
-    sub_quest(gText_SideQuestName_3,  gText_SideQuestDesc_3,  gText_SideQuestPOC_3,  gText_SideQuestMap_3,  gText_SideQuestReward_3, OBJ_EVENT_GFX_WALLY),
-    sub_quest(gText_SideQuestName_4,  gText_SideQuestDesc_4,  gText_SideQuestPOC_4,  gText_SideQuestMap_4,  gText_SideQuestReward_4, OBJ_EVENT_GFX_WALLY),
-    sub_quest(gText_SideQuestName_5,  gText_SideQuestDesc_5,  gText_SideQuestPOC_5,  gText_SideQuestMap_5,  gText_SideQuestReward_5, OBJ_EVENT_GFX_WALLY),
-    sub_quest(gText_SideQuestName_6,  gText_SideQuestDesc_6,  gText_SideQuestPOC_6,  gText_SideQuestMap_6,  gText_SideQuestReward_6, OBJ_EVENT_GFX_WALLY),
-    sub_quest(gText_SideQuestName_7,  gText_SideQuestDesc_7,  gText_SideQuestPOC_7,  gText_SideQuestMap_7,  gText_SideQuestReward_7, OBJ_EVENT_GFX_WALLY),
-    sub_quest(gText_SideQuestName_8,  gText_SideQuestDesc_8,  gText_SideQuestPOC_8,  gText_SideQuestMap_8,  gText_SideQuestReward_8, OBJ_EVENT_GFX_WALLY),
-    sub_quest(gText_SideQuestName_9,  gText_SideQuestDesc_9,  gText_SideQuestPOC_9,  gText_SideQuestMap_9,  gText_SideQuestReward_9, OBJ_EVENT_GFX_WALLY),
-    sub_quest(gText_SideQuestName_10, gText_SideQuestDesc_10, gText_SideQuestPOC_10, gText_SideQuestMap_10, gText_SideQuestReward_10, OBJ_EVENT_GFX_WALLY),
+    side_quest(gText_SideQuestName_1,  gText_SideQuestDesc_1,  gText_SideQuestPOC_1,  gText_SideQuestMap_1, OBJ_EVENT_GFX_WALLY, sSubQuests1, SUBQUEST_FIND, SUB_QUEST_1_COUNT), 
+    side_quest(gText_SideQuestName_2,  gText_SideQuestDesc_2,  gText_SideQuestPOC_2,  gText_SideQuestMap_2, OBJ_EVENT_GFX_WALLY, sSubQuests2, SUBQUEST_CATCH, SUB_QUEST_2_COUNT),
+    side_quest(gText_SideQuestName_3,  gText_SideQuestDesc_3,  gText_SideQuestPOC_3,  gText_SideQuestMap_3, OBJ_EVENT_GFX_WALLY,  NULL, 0, 0),
+    side_quest(gText_SideQuestName_4,  gText_SideQuestDesc_4,  gText_SideQuestPOC_4,  gText_SideQuestMap_4, OBJ_EVENT_GFX_WALLY,  NULL, 0, 0),
+    side_quest(gText_SideQuestName_5,  gText_SideQuestDesc_5,  gText_SideQuestPOC_5,  gText_SideQuestMap_5, OBJ_EVENT_GFX_WALLY,  NULL, 0, 0),
+    side_quest(gText_SideQuestName_6,  gText_SideQuestDesc_6,  gText_SideQuestPOC_6,  gText_SideQuestMap_6, OBJ_EVENT_GFX_WALLY,  NULL, 0, 0),
+    side_quest(gText_SideQuestName_7,  gText_SideQuestDesc_7,  gText_SideQuestPOC_7,  gText_SideQuestMap_7, OBJ_EVENT_GFX_WALLY,  NULL, 0, 0),
+    side_quest(gText_SideQuestName_8,  gText_SideQuestDesc_8,  gText_SideQuestPOC_8,  gText_SideQuestMap_8, OBJ_EVENT_GFX_WALLY,  NULL, 0, 0),
+    side_quest(gText_SideQuestName_9,  gText_SideQuestDesc_9,  gText_SideQuestPOC_9,  gText_SideQuestMap_9, OBJ_EVENT_GFX_WALLY,  NULL, 0, 0),
+    side_quest(gText_SideQuestName_10, gText_SideQuestDesc_10, gText_SideQuestPOC_10, gText_SideQuestMap_10, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_11, gText_SideQuestDesc_11, gText_SideQuestPOC_11, gText_SideQuestMap_11, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_12, gText_SideQuestDesc_12, gText_SideQuestPOC_12, gText_SideQuestMap_12, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_13, gText_SideQuestDesc_13, gText_SideQuestPOC_13, gText_SideQuestMap_13, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_14, gText_SideQuestDesc_14, gText_SideQuestPOC_14, gText_SideQuestMap_14, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_15, gText_SideQuestDesc_15, gText_SideQuestPOC_15, gText_SideQuestMap_15, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_16, gText_SideQuestDesc_16, gText_SideQuestPOC_16, gText_SideQuestMap_16, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_17, gText_SideQuestDesc_17, gText_SideQuestPOC_17, gText_SideQuestMap_17, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_18, gText_SideQuestDesc_18, gText_SideQuestPOC_18, gText_SideQuestMap_18, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_19, gText_SideQuestDesc_19, gText_SideQuestPOC_19, gText_SideQuestMap_19, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_20, gText_SideQuestDesc_20, gText_SideQuestPOC_20, gText_SideQuestMap_20, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_21, gText_SideQuestDesc_21, gText_SideQuestPOC_21, gText_SideQuestMap_21, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_22, gText_SideQuestDesc_22, gText_SideQuestPOC_22, gText_SideQuestMap_22, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_23, gText_SideQuestDesc_23, gText_SideQuestPOC_23, gText_SideQuestMap_23, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_24, gText_SideQuestDesc_24, gText_SideQuestPOC_24, gText_SideQuestMap_24, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_25, gText_SideQuestDesc_25, gText_SideQuestPOC_25, gText_SideQuestMap_25, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_26, gText_SideQuestDesc_26, gText_SideQuestPOC_26, gText_SideQuestMap_26, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_27, gText_SideQuestDesc_27, gText_SideQuestPOC_27, gText_SideQuestMap_27, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_28, gText_SideQuestDesc_28, gText_SideQuestPOC_28, gText_SideQuestMap_28, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_29, gText_SideQuestDesc_29, gText_SideQuestPOC_29, gText_SideQuestMap_29, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
+    side_quest(gText_SideQuestName_30, gText_SideQuestDesc_30, gText_SideQuestPOC_30, gText_SideQuestMap_30, OBJ_EVENT_GFX_WALLY, NULL, 0, 0),
 };
 
 static const u8 sSideQuestDifficulties[SIDE_QUEST_COUNT] = 
@@ -253,45 +268,6 @@ static const u8 sSideQuestDifficulties[SIDE_QUEST_COUNT] =
     [SIDE_QUEST_28] = QUEST_DIFFICULTY_EASY,
     [SIDE_QUEST_29] = QUEST_DIFFICULTY_EASY,
     [SIDE_QUEST_30] = QUEST_DIFFICULTY_EASY,
-};
-
-static const u8 sSubQuestObject[SIDE_QUEST_COUNT] = 
-{
-};
-
-
-static const u8 sSubQuestType[SIDE_QUEST_COUNT] =
-{
-    [SIDE_QUEST_1] = SUBQUEST_FIND,
-    [SIDE_QUEST_2] = SUBQUEST_CATCH,
-    [SIDE_QUEST_3] = SUBQUEST_FIND,
-    [SIDE_QUEST_4] = SUBQUEST_READ,
-    [SIDE_QUEST_5] = SUBQUEST_CATCH,
-    [SIDE_QUEST_6] = SUBQUEST_NONE,
-    [SIDE_QUEST_7] = SUBQUEST_NONE,
-    [SIDE_QUEST_8] = SUBQUEST_NONE,
-    [SIDE_QUEST_9] = SUBQUEST_NONE,
-    [SIDE_QUEST_10] = SUBQUEST_NONE,
-    [SIDE_QUEST_11] = SUBQUEST_NONE,
-    [SIDE_QUEST_12] = SUBQUEST_NONE,
-    [SIDE_QUEST_13] = SUBQUEST_NONE,
-    [SIDE_QUEST_14] = SUBQUEST_CATCH,
-    [SIDE_QUEST_15] = SUBQUEST_NONE,
-    [SIDE_QUEST_16] = SUBQUEST_NONE,
-    [SIDE_QUEST_17] = SUBQUEST_NONE,
-    [SIDE_QUEST_18] = SUBQUEST_NONE,
-    [SIDE_QUEST_19] = SUBQUEST_NONE,
-    [SIDE_QUEST_20] = SUBQUEST_NONE,
-    [SIDE_QUEST_21] = SUBQUEST_NONE,
-    [SIDE_QUEST_22] = SUBQUEST_NONE,
-    [SIDE_QUEST_23] = SUBQUEST_NONE,
-    [SIDE_QUEST_24] = SUBQUEST_NONE,
-    [SIDE_QUEST_25] = SUBQUEST_NONE,
-    [SIDE_QUEST_26] = SUBQUEST_NONE,
-    [SIDE_QUEST_27] = SUBQUEST_NONE,
-    [SIDE_QUEST_28] = SUBQUEST_NONE,
-    [SIDE_QUEST_29] = SUBQUEST_NONE,
-    [SIDE_QUEST_30] = SUBQUEST_NONE,
 };
 
 // Selected an incomplete quest
@@ -810,19 +786,26 @@ static bool8 QuestMenu_AllocateResourcesForListMenu(void)
     return TRUE;
 }
 
-static s8 QuestMenu_PrintSubQuestButton(u16 itemId){
-    if (sSubQuestType[itemId] > 0 && GetSetQuestFlag(itemId, FLAG_GET_UNLOCKED) && !GetSetQuestFlag(itemId,FLAG_GET_INACTIVE)){
-        StringCopy(gStringVar3, sText_QuestMenu_SubQuestButton);
+static s8 QuestMenu_CheckHasChildren(u16 itemId){
+    if (sSideQuests[itemId].childtype != 0 && GetSetQuestFlag(itemId, FLAG_GET_UNLOCKED) && !GetSetQuestFlag(itemId,FLAG_GET_INACTIVE)){
         return TRUE;
     }
     else{
-        StringCopy(gStringVar3, sText_Empty);
         return FALSE;
     } 
 }
 
-static u16 QuestMenu_SubQuestInit(void)
+static u16 QuestMenu_BuildSubQuestMenuTemplate(u16 PARENT_QUEST)
 {
+    u16 COUNT_QUESTS;
+    u16 NUM_ROW = 0;
+
+    for (NUM_ROW = 0; NUM_ROW > sSideQuests[PARENT_QUEST].numSubquests; NUM_ROW++)
+    {
+        //if (GetSetQuestFlag(NUM_
+        //PSF TODO how do I check the completion of subquests
+        return;
+    }
 }
 
 static u16 QuestMenu_BuildFilteredMenuTemplate(void)
@@ -858,22 +841,18 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
             gMultiuseListMenuTemplate.totalItems = QuestMenu_CountCompletedQuests()+ 1;
             break;
 
-        case SORT_SUBQUEST:
-            mode = SORT_SUBQUEST;
-
+        default:
+            mode = 100;
+            gMultiuseListMenuTemplate.totalItems = QuestMenu_CountSubQuests()+1;
             break;
     }
-
-    if (mode !=FLAG_GET_UNLOCKED){
+    if (mode !=FLAG_GET_UNLOCKED && mode != 100){
 
         for (COUNT_QUESTS = 0; COUNT_QUESTS < sStateDataPtr->nItems; COUNT_QUESTS++)
         {
             if (GetSetQuestFlag(COUNT_QUESTS, mode))
             {
-                QuestMenu_PrintSubQuestButton(COUNT_QUESTS);
-                //StringExpandPlaceholders(gStringVar1, sSideQuests[COUNT_QUESTS].name);
-                //StringExpandPlaceholders(sListMenuItems[NUM_ROW].name, sSideQuests[COUNT_QUESTS].name);
-                //sListMenuItems[NUM_ROW].name = gStringVar1;
+                QuestMenu_CheckHasChildren(COUNT_QUESTS);
                 sListMenuItems[NUM_ROW].name = sSideQuests[COUNT_QUESTS].name;
                 sListMenuItems[NUM_ROW].id = NUM_ROW;
                 sStateDataPtr->filteredMapping[NUM_ROW] = COUNT_QUESTS;
@@ -886,13 +865,6 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
         for (NUM_ROW = 0; NUM_ROW < sStateDataPtr->nItems; NUM_ROW++)
         {
             if (GetSetQuestFlag(NUM_ROW, FLAG_GET_UNLOCKED)){
-                /*
-                   QuestMenu_PrintSubQuestButton(COUNT_QUESTS);
-                   StringExpandPlaceholders(gStringVar1, sText_Empty);
-                   StringCopy(gStringVar3, sText_Empty);
-                   StringExpandPlaceholders(gStringVar1, sSideQuests[NUM_ROW].name);
-                   sListMenuItems[NUM_ROW].name = gStringVar1;
-                   */
                 sListMenuItems[NUM_ROW].name = sSideQuests[NUM_ROW].name;
             }
             else
@@ -1251,6 +1223,14 @@ s8 QuestMenu_CountCompletedQuests(void)
     return q;
 }
 
+s8 QuestMenu_CountSubQuests(void)
+{
+    u8 i;
+    u8 q = 10;
+
+    return q;
+}
+
 static void QuestMenu_PrintHeader(void)
 {
     u8 mode = sStateDataPtr->filterMode;
@@ -1494,21 +1474,16 @@ static s8 QuestMenu_SetMode(u8 subquest)
     u8 mode = sStateDataPtr->filterMode;
 
     if (subquest){
-        //mode = SORT_SUBQUEST;
+        mode += 100;
     }
     else {
-
-        switch(mode){
-            case SORT_DONE:
-                mode = SORT_DEFAULT;
-                break;
-            case SORT_SUBQUEST:
-                break;
-            default:
-                mode++;
-                break;
+        if (mode == SORT_DONE){
+            mode = SORT_DEFAULT;
+        } else if (mode > 100){
+            mode -= 100;
+        } else {
+            mode++;
         }
-
     }
     sStateDataPtr->filterMode = mode;
 }
@@ -1545,12 +1520,8 @@ static void Task_QuestMenuMain(u8 taskId)
             case LIST_SORT:
                 PlaySE(SE_SELECT);
                 QuestMenu_RemoveScrollIndicatorArrowPair();
-
-                //taskId = CreateTask(Task_QuestMenuMain, 0); //moves cursor back to first slot
                 QuestMenu_SetMode(subquest);
                 Task_QuestMenuCleanUp(taskId);
-                //QuestMenu_PrintOrRemoveCursor(data[0], 2);            
-
                 break;
 
             case LIST_CANCEL:
@@ -1559,12 +1530,12 @@ static void Task_QuestMenuMain(u8 taskId)
                 gTasks[taskId].func = Task_QuestMenuTurnOff1;
                 break;
 
-                //Unbound add
             default:
-                if(QuestMenu_PrintSubQuestButton(input)){
+                if(QuestMenu_CheckHasChildren(input)){
                     PlaySE(SE_SELECT);
                     QuestMenu_RemoveScrollIndicatorArrowPair();
                     subquest = TRUE;
+                    QuestMenu_SetMode(subquest);
                     Task_QuestMenuCleanUp(taskId);
                 }
 
@@ -1650,7 +1621,7 @@ static void Task_QuestMenuReward(u8 taskId)
     u8 questIndex = QuestMenu_GetCursorPosition();
 
     QuestMenuSubmenuSelectionMessage(taskId);
-    StringCopy(gStringVar1, sSideQuests[questIndex].reward);
+    //StringCopy(gStringVar1, sSideQuests[questIndex].reward);
     StringExpandPlaceholders(gStringVar4, sText_QuestMenu_DisplayReward);
     QuestMenu_DisplaySubMenuMessage(taskId);
 }
@@ -1810,6 +1781,18 @@ void Task_OpenQuestMenuFromStartMenu(u8 taskId)
         QuestMenu_Init(tItemPcParam, CB2_ReturnToFieldWithOpenMenu);
         DestroyTask(taskId);
     }
+}
+
+s8 ChangeSubQuestFlags(u8 parentQuest, u8 childQuest, u8 caseId)
+{
+    u8 index;
+    u8 bit;
+    u8 mask;
+
+    index = childQuest / 8; //8 bits per byte
+    bit = childQuest % 8;
+    mask = 1 << bit;
+
 }
 
 s8 GetSetQuestFlag(u8 quest, u8 caseId)

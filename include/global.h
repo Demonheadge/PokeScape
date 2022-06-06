@@ -508,7 +508,6 @@ struct SaveBlock2
     /*0x????*/ u8 completedQuests[SIDE_QUEST_FLAGS_COUNT];
     /*0x????*/ u8 inactiveQuests[SIDE_QUEST_FLAGS_COUNT];
     /*0x????*/ u8 activeQuest;
-
 }; 
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
