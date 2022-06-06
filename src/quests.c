@@ -801,19 +801,20 @@ static u16 QuestMenu_BuildSubQuestMenuTemplate(u16 PARENT_QUEST)
     u16 COUNT_QUESTS;
     u16 NUM_ROW = 0;
 
-    for (NUM_ROW = 0; NUM_ROW > sSideQuests[PARENT_QUEST].numSubquests; NUM_ROW++)
+    for (NUM_ROW = 0; NUM_ROW < sSideQuests[PARENT_QUEST].numSubquests; NUM_ROW++)
     {
-        //if (ChangeSubQuestFlags(PARENT_QUEST,FLAG_GET_COMPLETED,COUNT_QUESTS))
-        if (1 == 1)
+        if (ChangeSubQuestFlags(PARENT_QUEST,FLAG_GET_COMPLETED,COUNT_QUESTS))
             sListMenuItems[NUM_ROW].name = sSideQuests[PARENT_QUEST].subquests[COUNT_QUESTS].name;
         else
             sListMenuItems[NUM_ROW].name = sText_QuestMenu_Unk;
 
         sListMenuItems[NUM_ROW].id = NUM_ROW;
+        COUNT_QUESTS++;
     }
     sListMenuItems[NUM_ROW].name = gText_Cancel;
     sListMenuItems[NUM_ROW].id = LIST_CANCEL;
 
+    gMultiuseListMenuTemplate.totalItems = sSideQuests[PARENT_QUEST].numSubquests + 1;
     gMultiuseListMenuTemplate.items = sListMenuItems;
     gMultiuseListMenuTemplate.windowId = 0;
     gMultiuseListMenuTemplate.header_X = 0;
@@ -1121,6 +1122,40 @@ static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
             StringCopy(gStringVar4, sText_Empty);
         }
 
+        QuestMenu_AddTextPrinterParameterized(windowId, 0, gStringVar4, 110, y, 0, 0, 0xFF, 1);
+    }
+}
+
+static void QuestMenu_PrintSubQuestProgress(u8 windowId, u32 itemId, u8 y, u16 PARENT_QUEST)
+{
+
+    u8 questType;
+    questType = sSideQuests[PARENT_QUEST].childtype;
+
+    if (sStateDataPtr->moveModeOrigPos != 0xFF)
+    {
+        if (sStateDataPtr->moveModeOrigPos == (u8)itemId)
+            QuestMenu_PrintOrRemoveCursorAt(y, 2);
+        else
+            QuestMenu_PrintOrRemoveCursorAt(y, 0xFF);
+    }
+
+    if (ChangeSubQuestFlags(PARENT_QUEST,FLAG_GET_COMPLETED,itemId)){
+
+    if (itemId != LIST_CANCEL)
+    {
+        if (GetSetQuestFlag(itemId, FLAG_GET_COMPLETED)) {
+            StringCopy(gStringVar4, sText_QuestMenu_Complete);
+        }
+        else if (GetSetQuestFlag(itemId, FLAG_GET_REWARD)){
+            StringCopy(gStringVar4, sText_QuestMenu_Reward);
+        }
+        else if (GetSetQuestFlag(itemId, FLAG_GET_ACTIVE)){
+            StringCopy(gStringVar4, sText_QuestMenu_Active);
+        }
+        else{
+            StringCopy(gStringVar4, sText_Empty);
+        }
         QuestMenu_AddTextPrinterParameterized(windowId, 0, gStringVar4, 110, y, 0, 0, 0xFF, 1);
     }
 }
