@@ -1824,9 +1824,9 @@ const u8 gText_Berries[] = _("BERRIES");
 //names
 const u8 gText_SideQuestName_1[] = _("Side Quest 1 {A_BUTTON}");
 const u8 gText_SideQuestName_2[] = _("Side Quest 2  {A_BUTTON}");
-const u8 gText_SideQuestName_3[] = _("Side Quest 3  {A_BUTTON}");
-const u8 gText_SideQuestName_4[] = _("Side Quest 4  {A_BUTTON}");
-const u8 gText_SideQuestName_5[] = _("Side Quest 5  {A_BUTTON}");
+const u8 gText_SideQuestName_3[] = _("Side Quest 3");
+const u8 gText_SideQuestName_4[] = _("Side Quest 4");
+const u8 gText_SideQuestName_5[] = _("Side Quest 5");
 const u8 gText_SideQuestName_6[] = _("Side Quest 6  {STR_VAR_3}");
 const u8 gText_SideQuestName_7[] = _("Side Quest 7  {STR_VAR_3}");
 const u8 gText_SideQuestName_8[] = _("Side Quest 8  {STR_VAR_3}");

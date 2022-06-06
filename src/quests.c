@@ -96,6 +96,7 @@ static bool8 QuestMenu_LoadGraphics(void);
 static bool8 QuestMenu_AllocateResourcesForListMenu(void);
 static s8 QuestMenu_CheckHasChildren(u16 itemId);
 static u16 QuestMenu_BuildFilteredMenuTemplate(void);
+static u16 QuestMenu_BuildSubQuestMenuTemplate(u16 PARENT_QUEST);
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
 static void QuestMenu_FilteredMoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
 static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y);
@@ -802,10 +803,34 @@ static u16 QuestMenu_BuildSubQuestMenuTemplate(u16 PARENT_QUEST)
 
     for (NUM_ROW = 0; NUM_ROW > sSideQuests[PARENT_QUEST].numSubquests; NUM_ROW++)
     {
-        //if (GetSetQuestFlag(NUM_
-        //PSF TODO how do I check the completion of subquests
-        return;
+        //if (ChangeSubQuestFlags(PARENT_QUEST,FLAG_GET_COMPLETED,COUNT_QUESTS))
+        if (1 == 1)
+            sListMenuItems[NUM_ROW].name = sSideQuests[PARENT_QUEST].subquests[COUNT_QUESTS].name;
+        else
+            sListMenuItems[NUM_ROW].name = sText_QuestMenu_Unk;
+
+        sListMenuItems[NUM_ROW].id = NUM_ROW;
     }
+    sListMenuItems[NUM_ROW].name = gText_Cancel;
+    sListMenuItems[NUM_ROW].id = LIST_CANCEL;
+
+    gMultiuseListMenuTemplate.items = sListMenuItems;
+    gMultiuseListMenuTemplate.windowId = 0;
+    gMultiuseListMenuTemplate.header_X = 0;
+    gMultiuseListMenuTemplate.item_X = 9;
+    gMultiuseListMenuTemplate.cursor_X = 1;
+    gMultiuseListMenuTemplate.lettersSpacing = 1;
+    gMultiuseListMenuTemplate.itemVerticalPadding = 2;
+    gMultiuseListMenuTemplate.upText_Y = 2;
+    gMultiuseListMenuTemplate.maxShowed = sStateDataPtr->maxShowed;
+    gMultiuseListMenuTemplate.fontId = 2;
+    gMultiuseListMenuTemplate.cursorPal = 2;
+    gMultiuseListMenuTemplate.fillValue = 0;
+    gMultiuseListMenuTemplate.cursorShadowPal = 3;
+    gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_FilteredMoveCursorFunc;
+    gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_FilteredItemPrintFunc;
+    gMultiuseListMenuTemplate.scrollMultiple = 1;
+    gMultiuseListMenuTemplate.cursorKind = 0;
 }
 
 static u16 QuestMenu_BuildFilteredMenuTemplate(void)
@@ -1535,7 +1560,7 @@ static void Task_QuestMenuMain(u8 taskId)
                     PlaySE(SE_SELECT);
                     QuestMenu_RemoveScrollIndicatorArrowPair();
                     subquest = TRUE;
-                    QuestMenu_SetMode(subquest);
+                    //QuestMenu_SetMode(subquest);
                     Task_QuestMenuCleanUp(taskId);
                 }
 
@@ -1683,7 +1708,8 @@ static void Task_QuestMenuCleanUp(u8 taskId)
     //QuestMenu_DestroySubwindow(0);
 
     QuestMenu_PrintHeader();
-    QuestMenu_BuildFilteredMenuTemplate();
+    //QuestMenu_BuildFilteredMenuTemplate();
+    QuestMenu_BuildSubQuestMenuTemplate(SIDE_QUEST_1);
     data[0] = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.scroll, sListMenuState.row);
     //ScheduleBgCopyTilemapToVram(0);
     //QuestMenu_ReturnFromSubmenu(taskId);
@@ -1783,16 +1809,34 @@ void Task_OpenQuestMenuFromStartMenu(u8 taskId)
     }
 }
 
-s8 ChangeSubQuestFlags(u8 parentQuest, u8 childQuest, u8 caseId)
+s8 ChangeSubQuestFlags(u8 quest, u8 caseId, u8 childQuest)
 {
     u8 index;
     u8 bit;
     u8 mask;
 
-    index = childQuest / 8; //8 bits per byte
-    bit = childQuest % 8;
+    u8 childIndex;
+    u8 childBit;
+    u8 childMask;
+
+    index = quest / 8; //8 bits per byte
+    bit = quest % 8;
     mask = 1 << bit;
 
+    childIndex = childQuest / 8; //8 bits per byte
+    childBit = childQuest % 8;
+    childMask = 1 << childBit;
+
+    switch (caseId)
+    {
+        case FLAG_GET_COMPLETED:
+            return gSaveBlock2Ptr->subQuests[index][childIndex] & mask;
+        case FLAG_SET_COMPLETED:
+            gSaveBlock2Ptr->subQuests[index][childIndex] |= mask;
+            return 1;
+    }
+
+    return -1;
 }
 
 s8 GetSetQuestFlag(u8 quest, u8 caseId)
@@ -1847,7 +1891,6 @@ s8 GetSetQuestFlag(u8 quest, u8 caseId)
             gSaveBlock2Ptr->completedQuests[index] |= mask;
             return 1;
     }
-
     return -1;  //failure
 }
 
