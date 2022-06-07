@@ -1,8 +1,4 @@
 make[1]: *** No targets specified and no makefile found.  Stop.
-make: *** [tools/poryscript] Error 2
+make: *** [make_tools.mk:11: tools/poryscript-mac] Error 2
 tools/agbcc/bin/agbcc <flags> -o build/emerald/src/quests.o src/quests.c
-agbcc: warnings being treated as errors
-src/quests.c: In function `QuestMenu_BuildSubQuestMenuTemplate':
-src/quests.c:836: warning: assignment from incompatible pointer type
-make: *** [build/emerald/src/quests.o] Error 1
-make: *** Deleting file `build/emerald/src/quests.o'
+cd build/emerald && arm-none-eabi-ld -Map ../../pokeemerald.map -T ld_script.ld -o ../../pokeemerald.elf <objects> <lib>

@@ -67,6 +67,7 @@ struct QuestMenuResources
     /*0x0C*/ s16 data[3];
     /*0x0E*/ u16 filteredMapping[SIDE_QUEST_FLAGS_COUNT]; 
     /*0x0F*/ u8 filterMode;
+    /*?x??*/ u8 parentQuest;
 }; /* size = 0x17 */
 
 struct QuestMenuStaticResources
@@ -96,11 +97,12 @@ static bool8 QuestMenu_LoadGraphics(void);
 static bool8 QuestMenu_AllocateResourcesForListMenu(void);
 static s8 QuestMenu_CheckHasChildren(u16 itemId);
 static u16 QuestMenu_BuildFilteredMenuTemplate(void);
-static u16 QuestMenu_BuildSubQuestMenuTemplate(u16 PARENT_QUEST);
+static u16 QuestMenu_BuildSubQuestMenuTemplate(void);
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
 static void QuestMenu_FilteredMoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
+static void QuestMenu_SubquestMoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
 static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y);
-static void QuestMenu_PrintSubQuestProgressFunc(u8 windowId, u32 itemId, u8 y, u16 PARENT_QUEST);
+static void QuestMenu_PrintSubQuestProgressFunc(u8 windowId, u32 itemId, u8 y);
 static void QuestMenu_FilteredItemPrintFunc(u8 windowId, u32 itemId, u8 y);
 static void QuestMenu_PrintOrRemoveCursorAt(u8 y, u8 state);
 s8 QuestMenu_CountUnlockedQuests(void);
@@ -175,6 +177,7 @@ static const u8 sText_QuestMenu_Type[] = _("{R_BUTTON}Type");
 static const u8 sText_QuestMenu_Caught[] = _("Caught");
 static const u8 sText_QuestMenu_Found[] = _("Found");
 static const u8 sText_QuestMenu_Read[] = _("Read");
+static const u8 sText_QuestMenu_Back[] = _("Back");
 
 #define sub_quest(n, d, p, m, o) {.name = n, .desc = d, .poc = p, .map = m, .object = o}
 static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
@@ -800,15 +803,16 @@ static s8 QuestMenu_CheckHasChildren(u16 itemId){
     } 
 }
 
-static u16 QuestMenu_BuildSubQuestMenuTemplate(u16 PARENT_QUEST)
-{
+static u16 QuestMenu_BuildSubQuestMenuTemplate(void){
     u16 COUNT_QUESTS;
     u16 NUM_ROW = 0;
+    u16 PARENT_QUEST = sStateDataPtr->parentQuest;
 
     for (NUM_ROW = 0; NUM_ROW < sSideQuests[PARENT_QUEST].numSubquests; NUM_ROW++)
     {
-        if (ChangeSubQuestFlags(PARENT_QUEST,FLAG_GET_COMPLETED,COUNT_QUESTS))
+        if (ChangeSubQuestFlags(PARENT_QUEST,FLAG_GET_COMPLETED,COUNT_QUESTS)){
             sListMenuItems[NUM_ROW].name = sSideQuests[PARENT_QUEST].subquests[COUNT_QUESTS].name;
+        }
         else
             sListMenuItems[NUM_ROW].name = sText_QuestMenu_Unk;
 
@@ -832,9 +836,8 @@ static u16 QuestMenu_BuildSubQuestMenuTemplate(u16 PARENT_QUEST)
     gMultiuseListMenuTemplate.cursorPal = 2;
     gMultiuseListMenuTemplate.fillValue = 0;
     gMultiuseListMenuTemplate.cursorShadowPal = 3;
-    gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_FilteredMoveCursorFunc;
+    gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_SubquestMoveCursorFunc;
     gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_PrintSubQuestProgressFunc;
-    //gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_FilteredItemPrintFunc;
     gMultiuseListMenuTemplate.scrollMultiple = 1;
     gMultiuseListMenuTemplate.cursorKind = 0;
 }
@@ -1048,6 +1051,47 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
     }
 }
 
+static void QuestMenu_SubquestMoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list)
+{
+    u16 itemId;
+    u16 PARENT_QUEST = sStateDataPtr->parentQuest;
+    const u8 * desc;
+
+    if (onInit != TRUE)
+        PlaySE(SE_SELECT);
+
+    if (sStateDataPtr->moveModeOrigPos == 0xFF)
+    {
+        DestroyObjectMenuIcon(sStateDataPtr->itemMenuIconSlot ^ 1);
+        if (itemIndex != LIST_CANCEL)
+        {
+            if (ChangeSubQuestFlags(PARENT_QUEST,FLAG_GET_COMPLETED,itemIndex))
+                    {
+                        itemId = sSideQuests[PARENT_QUEST].subquests[itemIndex].object;
+                        desc = sSideQuests[PARENT_QUEST].subquests[itemIndex].desc;
+                    } 
+                    else
+                    {
+                    CreateItemMenuIcon(ITEM_NONE,sStateDataPtr->itemMenuIconSlot);
+                    desc = sText_QuestMenu_Unk;
+                    }
+
+                    CreateObjectMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
+
+                    }
+                    else
+                    {
+                    //PSF TODO make a "go back arrow" to replace this questionmark
+                    CreateItemMenuIcon(ITEM_NONE, sStateDataPtr->itemMenuIconSlot);
+                    desc = sText_Empty;
+                    }
+
+                    sStateDataPtr->itemMenuIconSlot ^= 1;
+                    FillWindowPixelBuffer(1, 0);
+                    QuestMenu_AddTextPrinterParameterized(1, 2, desc, 0, 3, 2, 0, 0, 3);
+    }
+}
+
 static void QuestMenu_FilteredMoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list)
 {
     u16 itemId;
@@ -1131,9 +1175,11 @@ static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
     }
 }
 
-static void QuestMenu_PrintSubQuestProgressFunc(u8 windowId, u32 itemId, u8 y, u16 PARENT_QUEST)
+static void QuestMenu_PrintSubQuestProgressFunc(u8 windowId, u32 itemId, u8 y)
 {
     u8 questType;
+    u16 PARENT_QUEST = sStateDataPtr->parentQuest;
+    questType = sSideQuests[sStateDataPtr->filterMode].childtype;
 
     if (sStateDataPtr->moveModeOrigPos != 0xFF)
     {
@@ -1143,22 +1189,20 @@ static void QuestMenu_PrintSubQuestProgressFunc(u8 windowId, u32 itemId, u8 y, u
             QuestMenu_PrintOrRemoveCursorAt(y, 0xFF);
     }
 
-    questType = sSideQuests[PARENT_QUEST].childtype;
-
     if (itemId != LIST_CANCEL)
     {
         if (ChangeSubQuestFlags(PARENT_QUEST,FLAG_GET_COMPLETED,itemId)){
-            switch (questType){
-                case SUBQUEST_CATCH:
-                    StringCopy(gStringVar4, sText_QuestMenu_Caught);
-                    break;
-                case SUBQUEST_FIND:
-                    StringCopy(gStringVar4, sText_QuestMenu_Found);
-                    break;
-                case SUBQUEST_READ:
-                    StringCopy(gStringVar4, sText_QuestMenu_Read);
-                    break;
-            }
+               switch (questType){
+               case SUBQUEST_CATCH:
+               StringCopy(gStringVar4, sText_QuestMenu_Caught);
+               break;
+               case SUBQUEST_FIND:
+               StringCopy(gStringVar4, sText_QuestMenu_Found);
+               break;
+               case SUBQUEST_READ:
+               StringCopy(gStringVar4, sText_QuestMenu_Read);
+               break;
+               }
         } else {
             StringCopy(gStringVar4, sText_Empty);
         }
@@ -1601,6 +1645,7 @@ static void Task_QuestMenuMain(u8 taskId)
                     PlaySE(SE_SELECT);
                     QuestMenu_RemoveScrollIndicatorArrowPair();
                     subquest = TRUE;
+                    sStateDataPtr->parentQuest = input;
                     //QuestMenu_SetMode(subquest);
                     Task_QuestMenuCleanUp(taskId);
                 }
@@ -1739,21 +1784,15 @@ static void Task_QuestMenuCleanUp(u8 taskId)
 {
     s16 * data = gTasks[taskId].data;
 
-    //QuestMenu_DestroySubwindow(2);
-    //PutWindowTilemap(1);
     DestroyListMenuTask(data[0], &sListMenuState.scroll, &sListMenuState.row);
     QuestMenu_PlaceTopMenuScrollIndicatorArrows();
-
     QuestMenu_SetCursorPosition();
     ClearStdWindowAndFrameToTransparent(2, FALSE);
-    //QuestMenu_DestroySubwindow(0);
-
     QuestMenu_PrintHeader();
+    ChangeSubQuestFlags(SIDE_QUEST_1,FLAG_SET_COMPLETED,2);
     //QuestMenu_BuildFilteredMenuTemplate();
-    QuestMenu_BuildSubQuestMenuTemplate(SIDE_QUEST_1);
+    QuestMenu_BuildSubQuestMenuTemplate();
     data[0] = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.scroll, sListMenuState.row);
-    //ScheduleBgCopyTilemapToVram(0);
-    //QuestMenu_ReturnFromSubmenu(taskId);
     gTasks[taskId].func = Task_QuestMenuMain;
 }
 
@@ -1871,9 +1910,9 @@ s8 ChangeSubQuestFlags(u8 quest, u8 caseId, u8 childQuest)
     switch (caseId)
     {
         case FLAG_GET_COMPLETED:
-            return gSaveBlock2Ptr->subQuests[index][childIndex] & mask;
+            return gSaveBlock2Ptr->subQuests[index][childIndex] & childMask;
         case FLAG_SET_COMPLETED:
-            gSaveBlock2Ptr->subQuests[index][childIndex] |= mask;
+            gSaveBlock2Ptr->subQuests[index][childIndex] |= childMask;
             return 1;
     }
 
