@@ -12,23 +12,23 @@
 #define SORT_ACTIVE 2
 #define SORT_REWARD 3
 #define SORT_DONE 4
-#define SORT_SUBQUEST 5
+#define SORT_SUBQUEST 100
 
 struct SubQuest
 {
-	/*0x00*/ const u8* name;
-	/*0x04*/ const u8* desc;
-	/*0x08*/ const u8* poc;
-	/*0x0C*/ const u8* map;
+    /*0x00*/ const u8* name;
+    /*0x04*/ const u8* desc;
+    /*0x08*/ const u8* poc;
+    /*0x0C*/ const u8* map;
     /*0x18*/ const u8 object;
 }; /* size = 0x22 */
 
 struct SideQuest 
 {
-	/*0x00*/ const u8* name;
-	/*0x04*/ const u8* desc;
-	/*0x08*/ const u8* poc;
-	/*0x0C*/ const u8* map;
+    /*0x00*/ const u8* name;
+    /*0x04*/ const u8* desc;
+    /*0x08*/ const u8* poc;
+    /*0x0C*/ const u8* map;
     u8 object;
     const struct SubQuest* subquests;
     const u8 childtype;
@@ -42,10 +42,10 @@ extern const struct SideQuest gSideQuests[SIDE_QUEST_COUNT];
 
 enum 
 {
-	QUEST_DIFFICULTY_EASY,
-	QUEST_DIFFICULTY_MEDIUM,
-	QUEST_DIFFICULTY_HARD,
-	QUEST_DIFFICULTY_EXTREME,
+    QUEST_DIFFICULTY_EASY,
+    QUEST_DIFFICULTY_MEDIUM,
+    QUEST_DIFFICULTY_HARD,
+    QUEST_DIFFICULTY_EXTREME,
 };
 
 enum QuestCases
