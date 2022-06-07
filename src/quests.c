@@ -100,6 +100,7 @@ static u16 QuestMenu_BuildSubQuestMenuTemplate(u16 PARENT_QUEST);
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
 static void QuestMenu_FilteredMoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
 static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y);
+static void QuestMenu_PrintSubQuestProgressFunc(u8 windowId, u32 itemId, u8 y, u16 PARENT_QUEST);
 static void QuestMenu_FilteredItemPrintFunc(u8 windowId, u32 itemId, u8 y);
 static void QuestMenu_PrintOrRemoveCursorAt(u8 y, u8 state);
 s8 QuestMenu_CountUnlockedQuests(void);
@@ -171,6 +172,9 @@ static const u8 sText_QuestMenu_BeginQuest[] = _("Initiating Quest:\n{STR_VAR_1}
 static const u8 sText_QuestMenu_EndQuest[] = _("Cancelling Quest:\n{STR_VAR_1}");
 static const u8 sText_QuestMenu_SubQuestButton[] = _("{A_BUTTON}");
 static const u8 sText_QuestMenu_Type[] = _("{R_BUTTON}Type");
+static const u8 sText_QuestMenu_Caught[] = _("Caught");
+static const u8 sText_QuestMenu_Found[] = _("Found");
+static const u8 sText_QuestMenu_Read[] = _("Read");
 
 #define sub_quest(n, d, p, m, o) {.name = n, .desc = d, .poc = p, .map = m, .object = o}
 static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
@@ -829,7 +833,8 @@ static u16 QuestMenu_BuildSubQuestMenuTemplate(u16 PARENT_QUEST)
     gMultiuseListMenuTemplate.fillValue = 0;
     gMultiuseListMenuTemplate.cursorShadowPal = 3;
     gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_FilteredMoveCursorFunc;
-    gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_FilteredItemPrintFunc;
+    gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_PrintSubQuestProgressFunc;
+    //gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_FilteredItemPrintFunc;
     gMultiuseListMenuTemplate.scrollMultiple = 1;
     gMultiuseListMenuTemplate.cursorKind = 0;
 }
@@ -1126,11 +1131,9 @@ static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
     }
 }
 
-static void QuestMenu_PrintSubQuestProgress(u8 windowId, u32 itemId, u8 y, u16 PARENT_QUEST)
+static void QuestMenu_PrintSubQuestProgressFunc(u8 windowId, u32 itemId, u8 y, u16 PARENT_QUEST)
 {
-
     u8 questType;
-    questType = sSideQuests[PARENT_QUEST].childtype;
 
     if (sStateDataPtr->moveModeOrigPos != 0xFF)
     {
@@ -1140,20 +1143,23 @@ static void QuestMenu_PrintSubQuestProgress(u8 windowId, u32 itemId, u8 y, u16 P
             QuestMenu_PrintOrRemoveCursorAt(y, 0xFF);
     }
 
-    if (ChangeSubQuestFlags(PARENT_QUEST,FLAG_GET_COMPLETED,itemId)){
+    questType = sSideQuests[PARENT_QUEST].childtype;
 
     if (itemId != LIST_CANCEL)
     {
-        if (GetSetQuestFlag(itemId, FLAG_GET_COMPLETED)) {
-            StringCopy(gStringVar4, sText_QuestMenu_Complete);
-        }
-        else if (GetSetQuestFlag(itemId, FLAG_GET_REWARD)){
-            StringCopy(gStringVar4, sText_QuestMenu_Reward);
-        }
-        else if (GetSetQuestFlag(itemId, FLAG_GET_ACTIVE)){
-            StringCopy(gStringVar4, sText_QuestMenu_Active);
-        }
-        else{
+        if (ChangeSubQuestFlags(PARENT_QUEST,FLAG_GET_COMPLETED,itemId)){
+            switch (questType){
+                case SUBQUEST_CATCH:
+                    StringCopy(gStringVar4, sText_QuestMenu_Caught);
+                    break;
+                case SUBQUEST_FIND:
+                    StringCopy(gStringVar4, sText_QuestMenu_Found);
+                    break;
+                case SUBQUEST_READ:
+                    StringCopy(gStringVar4, sText_QuestMenu_Read);
+                    break;
+            }
+        } else {
             StringCopy(gStringVar4, sText_Empty);
         }
         QuestMenu_AddTextPrinterParameterized(windowId, 0, gStringVar4, 110, y, 0, 0, 0xFF, 1);
