@@ -153,7 +153,6 @@ static const u16 sFR_MessageBoxTiles[] = INCBIN_U16("graphics/text_window/fr_mes
 
 // strings
 static const u8 sText_Empty[] = _("");
-static const u8 sText_ProgressSeperator[] = _("·");
 static const u8 sText_QuestMenu_AllHeader[] =_("All Missions");
 static const u8 sText_QuestMenu_InactiveHeader[] =_("Inactive Missions");
 static const u8 sText_QuestMenu_ActiveHeader[] =_("Active Missions");
@@ -171,9 +170,9 @@ static const u8 sText_QuestMenu_Complete[] = _("{COLOR}{BLUE}Done");
 static const u8 sText_QuestMenu_Exit[] = _("Exit the Quest Menu");
 static const u8 sText_QuestMenu_SelectedQuest[] = _("Do what with\nthis quest?");
 static const u8 sText_QuestMenu_DisplayDetails[] = _("POC: {STR_VAR_1}\nMap: {STR_VAR_2}");
-static const u8 sText_QuestMenu_ShowLocation[] =  _("Location: {STR_VAR_2}");
+static const u8 sText_QuestMenu_ShowLocation[] =  _("Location: {STR_VAR_2}\n       {STR_VAR_1}");
 static const u8 sText_QuestMenu_StartForMore[] = _("Start for more details.");
-static const u8 sText_QuestMenu_ReturnRecieveReward[] = _("Return to {STR_VAR_2} to recieve your reward!");
+static const u8 sText_QuestMenu_ReturnRecieveReward[] = _("Return to {STR_VAR_2} \n       to recieve your reward!");
 static const u8 sText_QuestMenu_DisplayReward[] = _("Reward:\n{STR_VAR_1}");
 static const u8 sText_QuestMenu_BeginQuest[] = _("Initiating Quest:\n{STR_VAR_1}");
 static const u8 sText_QuestMenu_EndQuest[] = _("Cancelling Quest:\n{STR_VAR_1}");
@@ -199,8 +198,18 @@ static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
     sub_quest(gText_SubQuest1_Name10, gText_SubQuest1_Desc10, gText_SideQuestPOC_10, gText_SideQuestMap_10, OBJ_EVENT_GFX_WALLY),
 
 };
-static const struct SubQuest sSubQuests2[SUB_QUEST_1_COUNT] =
+static const struct SubQuest sSubQuests2[SUB_QUEST_2_COUNT] =
 {
+    sub_quest(gText_SubQuest1_Name1,  gText_SubQuest1_Desc1,  gText_SideQuestPOC_1,  gText_SideQuestMap_1, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name2,  gText_SubQuest1_Desc2,  gText_SideQuestPOC_2,  gText_SideQuestMap_2, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name3,  gText_SubQuest1_Desc3,  gText_SideQuestPOC_3,  gText_SideQuestMap_3, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name4,  gText_SubQuest1_Desc4,  gText_SideQuestPOC_4,  gText_SideQuestMap_4, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name5,  gText_SubQuest1_Desc5,  gText_SideQuestPOC_5,  gText_SideQuestMap_5, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name6,  gText_SubQuest1_Desc6,  gText_SideQuestPOC_6,  gText_SideQuestMap_6, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name7,  gText_SubQuest1_Desc7,  gText_SideQuestPOC_7,  gText_SideQuestMap_7, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name8,  gText_SubQuest1_Desc8,  gText_SideQuestPOC_8,  gText_SideQuestMap_8, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name9,  gText_SubQuest1_Desc9,  gText_SideQuestPOC_9,  gText_SideQuestMap_9, OBJ_EVENT_GFX_WALLY),
+    sub_quest(gText_SubQuest1_Name10, gText_SubQuest1_Desc10, gText_SideQuestPOC_10, gText_SideQuestMap_10, OBJ_EVENT_GFX_WALLY),
     sub_quest(gText_SubQuest1_Name1,  gText_SubQuest1_Desc1,  gText_SideQuestPOC_1,  gText_SideQuestMap_1, OBJ_EVENT_GFX_WALLY),
     sub_quest(gText_SubQuest1_Name2,  gText_SubQuest1_Desc2,  gText_SideQuestPOC_2,  gText_SideQuestMap_2, OBJ_EVENT_GFX_WALLY),
     sub_quest(gText_SubQuest1_Name3,  gText_SubQuest1_Desc3,  gText_SideQuestPOC_3,  gText_SideQuestMap_3, OBJ_EVENT_GFX_WALLY),
@@ -944,7 +953,6 @@ void CreateObjectMenuIcon(u16 itemId, u8 idx)
 
         spriteId = CreateObjectGraphicsSprite(itemId,SpriteCallbackDummy,20,132,0);
         gSprites[spriteId].oam.priority = 0;
-        StartSpriteAnim(&gSprites[spriteId], ANIM_STD_GO_SOUTH);
         if (spriteId != MAX_SPRITES)
         {
             ptr[idx] = spriteId;
@@ -1024,13 +1032,16 @@ static void QuestMenu_SubquestMoveCursorFunc(s32 itemIndex, bool8 onInit, struct
             if (ChangeSubQuestFlags(PARENT_QUEST,FLAG_GET_COMPLETED,itemIndex))
             {
                 itemId = sSideQuests[PARENT_QUEST].subquests[itemIndex].object;
-                desc = sSideQuests[PARENT_QUEST].subquests[itemIndex].desc;
+                StringCopy(gStringVar1, sSideQuests[PARENT_QUEST].subquests[itemIndex].desc);
             } 
             else
             {
                 CreateItemMenuIcon(ITEM_NONE,sStateDataPtr->itemMenuIconSlot);
-                desc = sText_QuestMenu_Unk;
+                StringCopy(gStringVar1,  sText_Empty);
             }
+
+                StringCopy(gStringVar2, sSideQuests[PARENT_QUEST].subquests[itemIndex].map);
+                StringExpandPlaceholders(gStringVar4, sText_QuestMenu_ShowLocation);
 
             CreateObjectMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
 
@@ -1039,11 +1050,13 @@ static void QuestMenu_SubquestMoveCursorFunc(s32 itemIndex, bool8 onInit, struct
         {
             //PSF TODO make a "go back arrow" to replace this questionmark
             CreateItemMenuIcon(ITEM_NONE, sStateDataPtr->itemMenuIconSlot);
-            desc = sText_Empty;
+            StringCopy(gStringVar4,  sText_Empty);
         }
 
         sStateDataPtr->itemMenuIconSlot ^= 1;
         FillWindowPixelBuffer(1, 0);
+
+        desc = gStringVar4;
         QuestMenu_AddTextPrinterParameterized(1, 2, desc, 0, 3, 2, 0, 0, 3);
     }
 }
@@ -1074,27 +1087,35 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
                 //Look up the quest struct and get the NPC associated with this quest
                 itemId = sSideQuestDifficulties[itemIndex];
                 //Look up the quest struct and get the description with this quest
-                desc = sSideQuests[itemIndex].desc;
+
+            if (GetSetQuestFlag(itemIndex, FLAG_GET_REWARD))
+                StringCopy(gStringVar1, sText_QuestMenu_ReturnRecieveReward);
+            else
+                StringCopy(gStringVar1, sSideQuests[itemIndex].desc);
+
             }
             else
             {
                 //PSF TODO Make black shadow NPC to replace this questionmark
                 CreateItemMenuIcon(ITEM_NONE,sStateDataPtr->itemMenuIconSlot);
-                desc = sText_QuestMenu_Unk;
+                StringCopy(gStringVar1, sText_QuestMenu_StartForMore);
             }
+                StringCopy(gStringVar2, sSideQuests[itemIndex].map);
+                StringExpandPlaceholders(gStringVar4, sText_QuestMenu_ShowLocation);
 
             CreateObjectMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
-
         }
         else
         {
             //PSF TODO make a "go back arrow" to replace this questionmark
             CreateItemMenuIcon(ITEM_NONE, sStateDataPtr->itemMenuIconSlot);
-            desc = sText_QuestMenu_Exit;
+            StringCopy(gStringVar4, sText_QuestMenu_Exit);
         }
 
         sStateDataPtr->itemMenuIconSlot ^= 1;
         FillWindowPixelBuffer(1, 0);
+
+        desc = gStringVar4;
         QuestMenu_AddTextPrinterParameterized(1, 2, desc, 0, 3, 2, 0, 0, 3);
 
     }
@@ -1199,7 +1220,6 @@ static void QuestMenu_FilteredItemPrintFunc(u8 windowId, u32 itemId, u8 y)
 
         QuestMenu_AddTextPrinterParameterized(windowId, 0, gStringVar4, 110, y, 0, 0, 0xFF, 1);
     }
-    QuestMenu_AddTextPrinterParameterized(windowId, 0, sText_ProgressSeperator, 103, y, 0, 0, 0xFF, 1);
 }
 
 static void QuestMenu_PrintOrRemoveCursor(u8 listMenuId, u8 colorIdx)
@@ -1752,7 +1772,7 @@ static void QuestMenu_DisplaySubMenuMessage(u8 taskId)
 
     windowId = QuestMenu_GetOrCreateSubwindow(2);
     AddTextPrinterParameterized(windowId, 2, gStringVar4, 0, 2, 0, NULL);
-    //gTasks[taskId].func = Task_QuestMenuRefreshAfterAcknowledgement;
+    gTasks[taskId].func = Task_QuestMenuRefreshAfterAcknowledgement;
 }
 
 static void Task_QuestMenuRefreshAfterAcknowledgement(u8 taskId)
