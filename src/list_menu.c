@@ -418,10 +418,6 @@ s32 ListMenu_ProcessInput(u8 listTaskId)
     {
         return LIST_CANCEL;
     }
-    else if (JOY_NEW(SELECT_BUTTON))
-    {
-        return LIST_SORT;
-    }
     else if (JOY_REPEAT(DPAD_UP))
     {
         ListMenuChangeSelection(list, TRUE, 1, FALSE);
