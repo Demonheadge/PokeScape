@@ -343,22 +343,22 @@ static const struct WindowTemplate sQuestMenuHeaderWindowTemplates[] =
     {
         //0: List of items pane 
         .bg = 0,
-        .tilemapLeft = 1,
+        .tilemapLeft = 0,
         .tilemapTop = 2,
         .width = 30,
-        .height = 12,
+        .height = 8,
         .paletteNum = 15,
         .baseBlock = 1
     }, 
     {
         //1: Description / Location pane
         .bg = 0,
-        .tilemapLeft = 5,
-        .tilemapTop = 14,
-        .width = 25,
-        .height = 6,
+        .tilemapLeft = 0,
+        .tilemapTop = 12,
+        .width = 30,
+        .height = 12,
         .paletteNum = 13,
-        .baseBlock = 301 
+        .baseBlock = 361
     }, 
     {
         // 2: mission title or filter type header
@@ -368,7 +368,7 @@ static const struct WindowTemplate sQuestMenuHeaderWindowTemplates[] =
         .width = 30,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 451
+        .baseBlock = 721
     }, 
     {
         //3
@@ -378,7 +378,7 @@ static const struct WindowTemplate sQuestMenuHeaderWindowTemplates[] =
         .width = 1,
         .height = 1,
         .paletteNum = 15,
-        .baseBlock = 511
+        .baseBlock = 781
     }, 
     {   // 4 submenu cursor selection window
         .bg = 0,
@@ -387,7 +387,7 @@ static const struct WindowTemplate sQuestMenuHeaderWindowTemplates[] =
         .width = 7,
         .height = 6,     //+2 for 4 options
         .paletteNum = 15,
-        .baseBlock = 512
+        .baseBlock = 782
     }, 
     {
         // 5
@@ -397,7 +397,7 @@ static const struct WindowTemplate sQuestMenuHeaderWindowTemplates[] =
         .width = 26,
         .height = 4,
         .paletteNum = 11,
-        .baseBlock = 554
+        .baseBlock = 614
     }, 
     {
         // 6: show the number of quests in this view
@@ -407,7 +407,7 @@ static const struct WindowTemplate sQuestMenuHeaderWindowTemplates[] =
         .width = 5,
         .height = 2,
         .paletteNum = 11,
-        .baseBlock = 658
+        .baseBlock = 718
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -937,8 +937,8 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
     gMultiuseListMenuTemplate.items = sListMenuItems;
     gMultiuseListMenuTemplate.windowId = 0;
     gMultiuseListMenuTemplate.header_X = 0;
-    gMultiuseListMenuTemplate.item_X = 9;
-    gMultiuseListMenuTemplate.cursor_X = 1;
+    gMultiuseListMenuTemplate.cursor_X = 15;
+    gMultiuseListMenuTemplate.item_X = 23;
     gMultiuseListMenuTemplate.lettersSpacing = 1;
     gMultiuseListMenuTemplate.itemVerticalPadding = 2;
     gMultiuseListMenuTemplate.upText_Y = 2;
@@ -1129,7 +1129,7 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
         FillWindowPixelBuffer(1, 0);
 
         desc = gStringVar4;
-        QuestMenu_AddTextPrinterParameterized(1, 2, desc, 0, 3, 2, 0, 0, 3);
+        QuestMenu_AddTextPrinterParameterized(1, 2, desc, 0, 0, 2, 0, 0, 3);
 
     }
 }
@@ -1200,7 +1200,7 @@ static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
             StringCopy(gStringVar4, sText_Empty);
         }
 
-        QuestMenu_AddTextPrinterParameterized(windowId, 0, gStringVar4, 190, y, 0, 0, 0xFF, 1);
+        QuestMenu_AddTextPrinterParameterized(windowId, 0, gStringVar4, 200, y, 0, 0, 0xFF, 1);
     }
 }
 
@@ -1320,27 +1320,27 @@ static void QuestMenu_PrintHeader(void)
         case SORT_DEFAULT:
             ConvertIntToDecimalStringN(gStringVar1, QuestMenu_CountUnlockedQuests(), STR_CONV_MODE_LEFT_ALIGN, 6);
             StringCopy(gStringVar3,sText_QuestMenu_AllHeader);
-            QuestMenu_AddTextPrinterParameterized(2,0,sText_QuestMenu_Type,199,1,0,1,0,0);
+            QuestMenu_AddTextPrinterParameterized(2,0,sText_QuestMenu_Type,198,1,0,1,0,0);
             break;
         case SORT_INACTIVE:
             ConvertIntToDecimalStringN(gStringVar1, QuestMenu_CountInactiveQuests(), STR_CONV_MODE_LEFT_ALIGN, 6);
             StringCopy(gStringVar3,sText_QuestMenu_InactiveHeader);
-            QuestMenu_AddTextPrinterParameterized(2,0,sText_QuestMenu_Type,199,1,0,1,0,0);
+            QuestMenu_AddTextPrinterParameterized(2,0,sText_QuestMenu_Type,198,1,0,1,0,0);
             break;
         case SORT_ACTIVE:
             ConvertIntToDecimalStringN(gStringVar1, QuestMenu_CountActiveQuests(), STR_CONV_MODE_LEFT_ALIGN, 6);
             StringCopy(gStringVar3,sText_QuestMenu_ActiveHeader);
-            QuestMenu_AddTextPrinterParameterized(2,0,sText_QuestMenu_Type,199,1,0,1,0,0);
+            QuestMenu_AddTextPrinterParameterized(2,0,sText_QuestMenu_Type,198,1,0,1,0,0);
             break;
         case SORT_REWARD:
             ConvertIntToDecimalStringN(gStringVar1, QuestMenu_CountRewardQuests(), STR_CONV_MODE_LEFT_ALIGN, 6);
             StringCopy(gStringVar3,sText_QuestMenu_RewardHeader);
-            QuestMenu_AddTextPrinterParameterized(2,0,sText_QuestMenu_Type,199,1,0,1,0,0);
+            QuestMenu_AddTextPrinterParameterized(2,0,sText_QuestMenu_Type,198,1,0,1,0,0);
             break;
         case SORT_DONE:
             ConvertIntToDecimalStringN(gStringVar1, QuestMenu_CountCompletedQuests(), STR_CONV_MODE_LEFT_ALIGN, 6);
             StringCopy(gStringVar3,sText_QuestMenu_CompletedHeader);
-            QuestMenu_AddTextPrinterParameterized(2,0,sText_QuestMenu_Type,199,1,0,1,0,0);
+            QuestMenu_AddTextPrinterParameterized(2,0,sText_QuestMenu_Type,198,1,0,1,0,0);
             break;
         default:
             ConvertIntToDecimalStringN(gStringVar2,sSideQuests[PARENT_QUEST].numSubquests,STR_CONV_MODE_LEFT_ALIGN, 6);
@@ -1356,7 +1356,7 @@ static void QuestMenu_PrintHeader(void)
 
 static void QuestMenu_PlaceTopMenuScrollIndicatorArrows(void)
 {
-    sStateDataPtr->scrollIndicatorArrowPairId = AddScrollIndicatorArrowPairParameterized(2, 128, 8, 104, sStateDataPtr->nItems - sStateDataPtr->maxShowed + 1, 110, 110, &sListMenuState.scroll);
+    sStateDataPtr->scrollIndicatorArrowPairId = AddScrollIndicatorArrowPairParameterized(2, 94, 8, 90, sStateDataPtr->nItems - sStateDataPtr->maxShowed + 1, 110, 110, &sListMenuState.scroll);
 }
 
 static void QuestMenu_PlaceWithdrawQuantityScrollIndicatorArrows(void)
