@@ -84,6 +84,7 @@ void DestroyItemMenuIcon(u8 idx);
 void DestroyObjectMenuIcon(u8 idx);
 void Task_OpenQuestMenuFromStartMenu(u8);
 s8 ChangeSubQuestFlags(u8 quest, u8 caseId, u8 childQuest);
+s8 QuestMenu_ManageFavoriteQuests(u8 index);
 s8 GetSetQuestFlag(u8 quest, u8 caseId);
 s8 GetActiveQuestIndex(void);
 void SetActiveQuest(u8 questId);

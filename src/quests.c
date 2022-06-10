@@ -1166,7 +1166,7 @@ static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
             StringCopy(gStringVar4, sText_QuestMenu_Complete);
             colorIndex = 2;
         }
-        else if (GetSetQuestFlag(itemId, FLAG_GET_REWARD)){
+         else if (GetSetQuestFlag(itemId, FLAG_GET_REWARD)){
             StringCopy(gStringVar4, sText_QuestMenu_Reward);
             colorIndex = 1;
         }
@@ -1599,14 +1599,13 @@ static void Task_QuestMenuMain(u8 taskId)
                         //PSF TODO make sure this is the correct sound effect for sorting
                         PlaySE(SE_SELECT);
                         QuestMenu_RemoveScrollIndicatorArrowPair();
-                        QuestMenu_ManageFavoriteQuests(index);
+                        QuestMenu_ManageFavoriteQuests(input);
                         Task_QuestMenuCleanUp(taskId);
                         QuestMenu_ResetSavedRowScrollToTop(data);
                     }
                     break;
 
-                    case LIST_SORT:
-                    break;
+                    //PSF TODO figure out if we added LIST_SORT or not
 
                     case LIST_CANCEL:
                     if (mode > SORT_DONE){
@@ -1909,17 +1908,20 @@ s8 ChangeSubQuestFlags(u8 quest, u8 caseId, u8 childQuest)
     return -1;
 }
 
-s8 QuestMenu_ManageFavoriteQuests(u8 index)
+s8 QuestMenu_ManageFavoriteQuests(u8 input)
 {
     u8 mode = sStateDataPtr->filterMode;
 
     if (mode != SORT_DEFAULT)
-        index = sStateDataPtr->filteredMapping[index];
+        input = sStateDataPtr->filteredMapping[input];
 
-    if (GetSetQuestFlag(index,FLAG_GET_FAVORITE))
-        GetSetQuestFlag(index, FLAG_REMOVE_FAVORITE);
+    if (GetSetQuestFlag(input,FLAG_GET_FAVORITE))
+        GetSetQuestFlag(input, FLAG_REMOVE_FAVORITE);
     else
-        GetSetQUestFlag(index,FLAG_SET_FAVORITE);
+        GetSetQuestFlag(input,FLAG_SET_FAVORITE);
+
+    if (GetSetQuestFlag(input,FLAG_GET_FAVORITE))
+        MgbaPrintf(MGBA_LOG_DEBUG,"quest %u is favorite",input);
 }
 
 s8 GetSetQuestFlag(u8 quest, u8 caseId)
