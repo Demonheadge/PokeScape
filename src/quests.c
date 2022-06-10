@@ -1574,13 +1574,13 @@ static void Task_QuestMenuMain(u8 taskId)
     s32 input;
     bool8 subquest;
     u8 mode = sStateDataPtr->filterMode;
-    s32 yep;
 
     if (!gPaletteFade.active && !IsPCScreenEffectRunning_TurnOn())
     {
         input = ListMenu_ProcessInput(data[0]);
-        yep = sStateDataPtr->filteredMapping[input];
+
         ListMenuGetScrollAndRow(data[0], &sListMenuState.scroll, &sListMenuState.row);
+
         switch (input)
         {
             case LIST_NOTHING_CHOSEN:
@@ -1594,50 +1594,60 @@ static void Task_QuestMenuMain(u8 taskId)
                         QuestMenu_ResetSavedRowScrollToTop(data);
                     }
                 }
-                break;
-
-            case LIST_SORT:
-                break;
-
-            case LIST_CANCEL:
-                if (mode > SORT_DONE){
-                    QuestMenu_RemoveScrollIndicatorArrowPair();
-                    subquest = FALSE;
-                    QuestMenu_SetMode(subquest);
-                    Task_QuestMenuCleanUp(taskId);
-                    QuestMenu_RestoreSavedScrollAndRow(data);
-                } else {
-                    PlaySE(SE_SELECT);
-                    QuestMenu_SetInitializedFlag(0);
-                    gTasks[taskId].func = Task_QuestMenuTurnOff1;
-                }
-                break;
-
-            default:
-                if (mode != SORT_DEFAULT){
-                    if(QuestMenu_CheckHasChildren(sStateDataPtr->filteredMapping[input])){
+                if (JOY_NEW(SELECT_BUTTON)){
+                    if(mode < SORT_SUBQUEST){
+                        //PSF TODO make sure this is the correct sound effect for sorting
                         PlaySE(SE_SELECT);
                         QuestMenu_RemoveScrollIndicatorArrowPair();
-                        sStateDataPtr->parentQuest = sStateDataPtr->filteredMapping[input];
-                        subquest = TRUE;
-                        QuestMenu_SetMode(subquest);
-                        QuestMenu_SaveScrollAndRow(data);
+                        QuestMenu_ManageFavoriteQuests(index);
                         Task_QuestMenuCleanUp(taskId);
                         QuestMenu_ResetSavedRowScrollToTop(data);
                     }
-                } else {
-                    if(QuestMenu_CheckHasChildren(input)){
-                        PlaySE(SE_SELECT);
+                    break;
+
+                    case LIST_SORT:
+                    break;
+
+                    case LIST_CANCEL:
+                    if (mode > SORT_DONE){
                         QuestMenu_RemoveScrollIndicatorArrowPair();
-                        sStateDataPtr->parentQuest = input;
-                        subquest = TRUE;
+                        subquest = FALSE;
                         QuestMenu_SetMode(subquest);
-                        QuestMenu_SaveScrollAndRow(data);
                         Task_QuestMenuCleanUp(taskId);
-                        QuestMenu_ResetSavedRowScrollToTop(data);
+                        QuestMenu_RestoreSavedScrollAndRow(data);
+                    } else {
+                        PlaySE(SE_SELECT);
+                        QuestMenu_SetInitializedFlag(0);
+                        gTasks[taskId].func = Task_QuestMenuTurnOff1;
                     }
+                    break;
+
+                    default:
+                    if (mode != SORT_DEFAULT){
+                        if(QuestMenu_CheckHasChildren(sStateDataPtr->filteredMapping[input])){
+                            PlaySE(SE_SELECT);
+                            QuestMenu_RemoveScrollIndicatorArrowPair();
+                            sStateDataPtr->parentQuest = sStateDataPtr->filteredMapping[input];
+                            subquest = TRUE;
+                            QuestMenu_SetMode(subquest);
+                            QuestMenu_SaveScrollAndRow(data);
+                            Task_QuestMenuCleanUp(taskId);
+                            QuestMenu_ResetSavedRowScrollToTop(data);
+                        }
+                    } else {
+                        if(QuestMenu_CheckHasChildren(input)){
+                            PlaySE(SE_SELECT);
+                            QuestMenu_RemoveScrollIndicatorArrowPair();
+                            sStateDataPtr->parentQuest = input;
+                            subquest = TRUE;
+                            QuestMenu_SetMode(subquest);
+                            QuestMenu_SaveScrollAndRow(data);
+                            Task_QuestMenuCleanUp(taskId);
+                            QuestMenu_ResetSavedRowScrollToTop(data);
+                        }
+                    }
+                    break;
                 }
-                break;
         }
     }
 }
@@ -1711,7 +1721,6 @@ static void Task_QuestMenuEndQuest(u8 taskId)
 {
     u8 questIndex = QuestMenu_GetCursorPosition();
 
-    ResetActiveQuest();
     QuestMenuSubmenuSelectionMessage(taskId);
     StringCopy(gStringVar1, sSideQuests[questIndex].name);
     StringExpandPlaceholders(gStringVar4, sText_QuestMenu_EndQuest);
@@ -1867,6 +1876,7 @@ void Task_OpenQuestMenuFromStartMenu(u8 taskId)
     }
 }
 
+//PSF TODO add scrcmd for alerting subquests
 s8 ChangeSubQuestFlags(u8 quest, u8 caseId, u8 childQuest)
 {
     u8 index;
@@ -1897,6 +1907,19 @@ s8 ChangeSubQuestFlags(u8 quest, u8 caseId, u8 childQuest)
     }
 
     return -1;
+}
+
+s8 QuestMenu_ManageFavoriteQuests(u8 index)
+{
+    u8 mode = sStateDataPtr->filterMode;
+
+    if (mode != SORT_DEFAULT)
+        index = sStateDataPtr->filteredMapping[index];
+
+    if (GetSetQuestFlag(index,FLAG_GET_FAVORITE))
+        GetSetQuestFlag(index, FLAG_REMOVE_FAVORITE);
+    else
+        GetSetQUestFlag(index,FLAG_SET_FAVORITE);
 }
 
 s8 GetSetQuestFlag(u8 quest, u8 caseId)
@@ -1950,23 +1973,23 @@ s8 GetSetQuestFlag(u8 quest, u8 caseId)
         case FLAG_SET_COMPLETED:
             gSaveBlock2Ptr->completedQuests[index] |= mask;
             return 1;
+        case FLAG_GET_FAVORITE:
+            return gSaveBlock2Ptr->favoriteQuests[index] & mask;
+        case FLAG_SET_FAVORITE:
+            gSaveBlock2Ptr->favoriteQuests[index] |= mask;
+            return 1;
+        case FLAG_REMOVE_FAVORITE:
+            gSaveBlock2Ptr->favoriteQuests[index] &= ~mask;
+            return 1;
+
     }
     return -1;  //failure
-}
-
-s8 GetActiveQuestIndex(void)
-{
-    if (gSaveBlock2Ptr->activeQuest > 0)
-        return (gSaveBlock2Ptr->activeQuest - 1);
-    else
-        return NO_ACTIVE_QUEST;
 }
 
 static bool8 IsActiveQuest(u8 questId){
     /*
      * UNBOUND QUEST MENU ADDITION
      */
-    //if ((u8)GetActiveQuestIndex() == questId)
     u8 index;
     u8 bit;
     u8 mask;
@@ -1975,21 +1998,10 @@ static bool8 IsActiveQuest(u8 questId){
     bit = questId % 8;
     mask = 1 << bit;
 
-    //if (GetSetQuestFlag(questId,FLAG_GET_ACTIVE) == questId){
     if (GetSetQuestFlag(questId,FLAG_GET_ACTIVE) == mask){
         return TRUE;
     }
     return FALSE;
-}
-
-void SetActiveQuest(u8 questId)
-{
-    gSaveBlock2Ptr->activeQuest = questId + 1;  // 1-indexed
-}
-
-void ResetActiveQuest(void)
-{
-    gSaveBlock2Ptr->activeQuest = 0;
 }
 
 /*

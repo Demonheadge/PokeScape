@@ -63,6 +63,9 @@ enum QuestCases
     FLAG_REMOVE_REWARD, //remove reward flag from quest
     FLAG_GET_COMPLETED,     // check if quest is completed
     FLAG_SET_COMPLETED,     // mark completed quest
+    FLAG_GET_FAVORITE,     // check if quest is ready for favorite
+    FLAG_SET_FAVORITE,     // mark quest ready for favorite
+    FLAG_REMOVE_FAVORITE, //remove favorite flag from quest
 };
 
 enum SubQuestTypes
