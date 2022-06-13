@@ -52,9 +52,6 @@
 #define tBldCntBak      data[7]
 #define tBldYBak        data[8]
 
-// Defines
-#define NO_ACTIVE_QUEST -1
-
 struct QuestMenuResources
 {
     /*0x00*/ MainCallback savedCallback;
@@ -63,7 +60,6 @@ struct QuestMenuResources
     /*0x06*/ u8 maxShowed;
     /*0x07*/ u8 nItems;
     /*0x08*/ u8 scrollIndicatorArrowPairId;
-    /*0x0A*/ u16 withdrawQuantitySubmenuCursorPos;
     /*0x0C*/ s16 data[3];
     /*0x0E*/ u16 filteredMapping[SIDE_QUEST_FLAGS_COUNT]; 
     /*0x0F*/ u8 filterMode;
@@ -111,6 +107,7 @@ s8 QuestMenu_CountActiveQuests(void);
 s8 QuestMenu_CountRewardQuests(void);
 s8 QuestMenu_CountCompletedQuests(void);
 s8 QuestMenu_CountSubQuests(void);
+s8 QuestMenu_CountFavoriteQuests(void);
 static void QuestMenu_PrintHeader(void);
 static void QuestMenu_PlaceTopMenuScrollIndicatorArrows(void);
 static void QuestMenu_SetCursorPosition(void);
@@ -181,6 +178,7 @@ static const u8 sText_QuestMenu_Caught[] = _("Caught");
 static const u8 sText_QuestMenu_Found[] = _("Found");
 static const u8 sText_QuestMenu_Read[] = _("Read");
 static const u8 sText_QuestMenu_Back[] = _("Back");
+static const u8 sText_QuestMenu_DotSpace[] = _(". ");
 
 #define sub_quest(n, d, p, m, o) {.name = n, .desc = d, .poc = p, .map = m, .object = o}
 static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
@@ -810,7 +808,13 @@ static u16 QuestMenu_BuildSubQuestMenuTemplate(void){
 
     for (NUM_ROW = 0; NUM_ROW < sSideQuests[PARENT_QUEST].numSubquests; NUM_ROW++)
     {
+        //ConvertIntToDecimalStringN(sStateDataPtr->tempQuestName[NUM_ROW], NUM_ROW+1, STR_CONV_MODE_LEFT_ALIGN,2);
+
         if (ChangeSubQuestFlags(PARENT_QUEST,FLAG_GET_COMPLETED,COUNT_QUESTS)){
+
+            //StringAppend(sStateDataPtr->tempQuestName[NUM_ROW],sText_QuestMenu_DotSpace);
+            //StringAppend(sStateDataPtr->tempQuestName[NUM_ROW],sSideQuests[PARENT_QUEST].subquests[COUNT_QUESTS].name);
+            //sListMenuItems[NUM_ROW].name = sStateDataPtr->tempQuestName[NUM_ROW];
             sListMenuItems[NUM_ROW].name = sSideQuests[PARENT_QUEST].subquests[COUNT_QUESTS].name;
         }
         else
@@ -847,7 +851,6 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
     u16 COUNT_QUESTS;
     u16 NUM_ROW = 0;
     u8 mode;
-    u8 holder;
 
     switch(sStateDataPtr->filterMode){
         case SORT_DEFAULT:
@@ -895,6 +898,7 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
         for (NUM_ROW = 0; NUM_ROW < sStateDataPtr->nItems; NUM_ROW++)
         {
             if (GetSetQuestFlag(NUM_ROW, FLAG_GET_UNLOCKED)){
+                //if (GetSetQuestFlag(NUM_ROW, FLAG_GET_FAVORITE))
                 sListMenuItems[NUM_ROW].name = sSideQuests[NUM_ROW].name;
             }
             else
@@ -902,6 +906,7 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 
             sListMenuItems[NUM_ROW].id = NUM_ROW;
         }
+        MgbaPrintf(MGBA_LOG_DEBUG,"NUM_ROW %u",NUM_ROW);
     }
 
     sListMenuItems[NUM_ROW].name = gText_Cancel;
@@ -917,6 +922,7 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
     gMultiuseListMenuTemplate.upText_Y = 2;
     gMultiuseListMenuTemplate.maxShowed = sStateDataPtr->maxShowed;
     gMultiuseListMenuTemplate.fontId = 2;
+    gMultiuseListMenuTemplate.cursorPal = 1;
     gMultiuseListMenuTemplate.cursorPal = 1;
     gMultiuseListMenuTemplate.fillValue = 0;
     gMultiuseListMenuTemplate.cursorShadowPal = 0;
@@ -1166,7 +1172,7 @@ static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
             StringCopy(gStringVar4, sText_QuestMenu_Complete);
             colorIndex = 2;
         }
-         else if (GetSetQuestFlag(itemId, FLAG_GET_REWARD)){
+        else if (GetSetQuestFlag(itemId, FLAG_GET_REWARD)){
             StringCopy(gStringVar4, sText_QuestMenu_Reward);
             colorIndex = 1;
         }
@@ -1248,6 +1254,19 @@ s8 QuestMenu_CountRewardQuests(void)
 
     for (i = 0; i < SIDE_QUEST_COUNT; i++){
         if (GetSetQuestFlag(i,FLAG_GET_REWARD)) {
+            q++;
+        }
+    }
+    return q;
+}
+
+s8 QuestMenu_CountFavoriteQuests(void)
+{
+    u8 i;
+    u8 q = 0;
+
+    for (i = 0; i < SIDE_QUEST_COUNT; i++){
+        if (GetSetQuestFlag(i,FLAG_GET_FAVORITE)) {
             q++;
         }
     }
@@ -1339,12 +1358,6 @@ static void QuestMenu_PrintHeader(void)
 static void QuestMenu_PlaceTopMenuScrollIndicatorArrows(void)
 {
     sStateDataPtr->scrollIndicatorArrowPairId = AddScrollIndicatorArrowPairParameterized(2, 94, 8, 90, sStateDataPtr->nItems - sStateDataPtr->maxShowed + 1, 110, 110, &sListMenuState.scroll);
-}
-
-static void QuestMenu_PlaceWithdrawQuantityScrollIndicatorArrows(void)
-{
-    sStateDataPtr->withdrawQuantitySubmenuCursorPos = 1;
-    sStateDataPtr->scrollIndicatorArrowPairId = AddScrollIndicatorArrowPairParameterized(2, 212, 120, 152, 2, 110, 110, &sStateDataPtr->withdrawQuantitySubmenuCursorPos);
 }
 
 static void QuestMenu_RemoveScrollIndicatorArrowPair(void)
@@ -1574,6 +1587,7 @@ static void Task_QuestMenuMain(u8 taskId)
     s32 input;
     bool8 subquest;
     u8 mode = sStateDataPtr->filterMode;
+    u8 cursorPosition;
 
     if (!gPaletteFade.active && !IsPCScreenEffectRunning_TurnOn())
     {
@@ -1599,54 +1613,55 @@ static void Task_QuestMenuMain(u8 taskId)
                         //PSF TODO make sure this is the correct sound effect for sorting
                         PlaySE(SE_SELECT);
                         QuestMenu_RemoveScrollIndicatorArrowPair();
-                        QuestMenu_ManageFavoriteQuests(input);
+                        cursorPosition = sListMenuState.row + sListMenuState.scroll;
+                        QuestMenu_ManageFavoriteQuests(cursorPosition);
                         Task_QuestMenuCleanUp(taskId);
                         QuestMenu_ResetSavedRowScrollToTop(data);
                     }
-                    break;
-
-                    //PSF TODO figure out if we added LIST_SORT or not
-
-                    case LIST_CANCEL:
-                    if (mode > SORT_DONE){
-                        QuestMenu_RemoveScrollIndicatorArrowPair();
-                        subquest = FALSE;
-                        QuestMenu_SetMode(subquest);
-                        Task_QuestMenuCleanUp(taskId);
-                        QuestMenu_RestoreSavedScrollAndRow(data);
-                    } else {
-                        PlaySE(SE_SELECT);
-                        QuestMenu_SetInitializedFlag(0);
-                        gTasks[taskId].func = Task_QuestMenuTurnOff1;
-                    }
-                    break;
-
-                    default:
-                    if (mode != SORT_DEFAULT){
-                        if(QuestMenu_CheckHasChildren(sStateDataPtr->filteredMapping[input])){
-                            PlaySE(SE_SELECT);
-                            QuestMenu_RemoveScrollIndicatorArrowPair();
-                            sStateDataPtr->parentQuest = sStateDataPtr->filteredMapping[input];
-                            subquest = TRUE;
-                            QuestMenu_SetMode(subquest);
-                            QuestMenu_SaveScrollAndRow(data);
-                            Task_QuestMenuCleanUp(taskId);
-                            QuestMenu_ResetSavedRowScrollToTop(data);
-                        }
-                    } else {
-                        if(QuestMenu_CheckHasChildren(input)){
-                            PlaySE(SE_SELECT);
-                            QuestMenu_RemoveScrollIndicatorArrowPair();
-                            sStateDataPtr->parentQuest = input;
-                            subquest = TRUE;
-                            QuestMenu_SetMode(subquest);
-                            QuestMenu_SaveScrollAndRow(data);
-                            Task_QuestMenuCleanUp(taskId);
-                            QuestMenu_ResetSavedRowScrollToTop(data);
-                        }
-                    }
-                    break;
                 }
+                break;
+
+                //PSF TODO figure out if we added LIST_SORT or not
+
+            case LIST_CANCEL:
+                if (mode > SORT_DONE){
+                    QuestMenu_RemoveScrollIndicatorArrowPair();
+                    subquest = FALSE;
+                    QuestMenu_SetMode(subquest);
+                    Task_QuestMenuCleanUp(taskId);
+                    QuestMenu_RestoreSavedScrollAndRow(data);
+                } else {
+                    PlaySE(SE_SELECT);
+                    QuestMenu_SetInitializedFlag(0);
+                    gTasks[taskId].func = Task_QuestMenuTurnOff1;
+                }
+                break;
+
+            default:
+                if (mode != SORT_DEFAULT){
+                    if(QuestMenu_CheckHasChildren(sStateDataPtr->filteredMapping[input])){
+                        PlaySE(SE_SELECT);
+                        QuestMenu_RemoveScrollIndicatorArrowPair();
+                        sStateDataPtr->parentQuest = sStateDataPtr->filteredMapping[input];
+                        subquest = TRUE;
+                        QuestMenu_SetMode(subquest);
+                        QuestMenu_SaveScrollAndRow(data);
+                        Task_QuestMenuCleanUp(taskId);
+                        QuestMenu_ResetSavedRowScrollToTop(data);
+                    }
+                } else {
+                    if(QuestMenu_CheckHasChildren(input)){
+                        PlaySE(SE_SELECT);
+                        QuestMenu_RemoveScrollIndicatorArrowPair();
+                        sStateDataPtr->parentQuest = input;
+                        subquest = TRUE;
+                        QuestMenu_SetMode(subquest);
+                        QuestMenu_SaveScrollAndRow(data);
+                        Task_QuestMenuCleanUp(taskId);
+                        QuestMenu_ResetSavedRowScrollToTop(data);
+                    }
+                }
+                break;
         }
     }
 }
@@ -1919,9 +1934,6 @@ s8 QuestMenu_ManageFavoriteQuests(u8 input)
         GetSetQuestFlag(input, FLAG_REMOVE_FAVORITE);
     else
         GetSetQuestFlag(input,FLAG_SET_FAVORITE);
-
-    if (GetSetQuestFlag(input,FLAG_GET_FAVORITE))
-        MgbaPrintf(MGBA_LOG_DEBUG,"quest %u is favorite",input);
 }
 
 s8 GetSetQuestFlag(u8 quest, u8 caseId)
