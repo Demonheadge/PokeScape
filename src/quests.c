@@ -81,7 +81,6 @@ EWRAM_DATA static struct QuestMenuResources *sStateDataPtr = NULL;
 EWRAM_DATA static u8 *sBg1TilemapBuffer = NULL;
 EWRAM_DATA static struct ListMenuItem *sListMenuItems = NULL;
 EWRAM_DATA static struct QuestMenuStaticResources sListMenuState = {0};
-EWRAM_DATA static u8 sSubmenuWindowIds[3] = {0};
 EWRAM_DATA static u8 gUnknown_2039878[12] = {0};        // from pokefirered src/item_menu_icons.c
 
 // This File's Functions
@@ -118,11 +117,6 @@ static void QuestMenu_SetScrollPosition(void);
 static s8 QuestMenu_SetMode(bool8 subquest);
 static void Task_QuestMenuMain(u8 taskId);
 static void QuestMenu_InsertItemIntoNewSlot(u8 taskId, u32 pos);
-static void Task_QuestMenuDetails(u8 taskId);
-static void Task_QuestMenuReward(u8 taskId);
-static void Task_QuestMenuBeginQuest(u8 taskId);
-static void Task_QuestMenuEndQuest(u8 taskId);
-static void QuestMenu_DisplaySubMenuMessage(u8 taskId);
 static void Task_QuestMenuRefreshAfterAcknowledgement(u8 taskId);
 static void Task_QuestMenuCleanUp(u8 taskId);
 static void QuestMenu_WithdrawMultipleInitWindow(u16 slotId);
@@ -130,8 +124,6 @@ static void Task_QuestMenuCancel(u8 taskId);
 static void QuestMenu_InitWindows(void);
 static void QuestMenu_AddTextPrinterParameterized(u8 windowId, u8 fontId, const u8 * str, u8 x, u8 y, u8 letterSpacing, u8 lineSpacing, u8 speed, u8 colorIdx);
 static void QuestMenu_SetBorderStyleOnWindow(u8 windowId);
-static u8 QuestMenu_GetOrCreateSubwindow(u8 idx);
-static void QuestMenu_DestroySubwindow(u8 idx);
 static void QuestMenu_SetInitializedFlag(u8 a0);
 static bool8 IsActiveQuest(u8 questId);
 
@@ -141,13 +133,6 @@ static const u32 sQuestMenuTiles[] = INCBIN_U32("graphics/quest_menu/menu.4bpp.l
 static const u32 sQuestMenuBgPals[] = INCBIN_U32("graphics/quest_menu/menu_pal.gbapal.lz");
 static const u32 sQuestMenuTilemap[] = INCBIN_U32("graphics/quest_menu/tilemap.bin.lz");
 
-//static const u16 sMainWindowPal[] = INCBIN_U16("graphics/quest_menu/main_window.gbapal");
-
-// text window from firered
-//static const u16 sFR_StdFrame0[] = INCBIN_U16("graphics/text_window/fr_std0.4bpp");
-//static const u16 sFR_StdFrame1[] = INCBIN_U16("graphics/text_window/fr_std1.4bpp");
-//static const u16 sFR_MessageBoxTiles[] = INCBIN_U16("graphics/text_window/fr_message_box.4bpp");
-
 // strings
 static const u8 sText_Empty[] = _("");
 static const u8 sText_QuestMenu_AllHeader[] =_("All Missions");
@@ -156,22 +141,16 @@ static const u8 sText_QuestMenu_ActiveHeader[] =_("Active Missions");
 static const u8 sText_QuestMenu_RewardHeader[] =_("Reward Available");
 static const u8 sText_QuestMenu_CompletedHeader[] =_("Completed Missions");
 static const u8 sText_QuestMenu_QuestNumberDisplay[] = _("{STR_VAR_1}/{STR_VAR_2}");
-static const u8 sText_QuestMenu_Begin[] = _("Begin");
-static const u8 sText_QuestMenu_End[] = _("End");
-static const u8 sText_QuestMenu_Details[] = _("Details");
 static const u8 sText_QuestMenu_Unk[] = _("??????");
 static const u8 sText_QuestMenu_Active[] = _("Active");
 static const u8 sText_QuestMenu_Reward[] = _("Reward");
 static const u8 sText_QuestMenu_Complete[] = _("Done");
-static const u8 sText_QuestMenu_Exit[] = _("Exit the Quest Menu");
 static const u8 sText_QuestMenu_SelectedQuest[] = _("Do what with\nthis quest?");
 static const u8 sText_QuestMenu_DisplayDetails[] = _("POC: {STR_VAR_1}\nMap: {STR_VAR_2}");
 static const u8 sText_QuestMenu_ShowLocation[] =  _("Location: {STR_VAR_2}");
 static const u8 sText_QuestMenu_StartForMore[] = _("Start for more details.");
 static const u8 sText_QuestMenu_ReturnRecieveReward[] = _("Return to {STR_VAR_2}\nto recieve your reward!");
 static const u8 sText_QuestMenu_DisplayReward[] = _("Reward:\n{STR_VAR_1}");
-static const u8 sText_QuestMenu_BeginQuest[] = _("Initiating Quest:\n{STR_VAR_1}");
-static const u8 sText_QuestMenu_EndQuest[] = _("Cancelling Quest:\n{STR_VAR_1}");
 static const u8 sText_QuestMenu_SubQuestButton[] = _("{A_BUTTON}");
 static const u8 sText_QuestMenu_Type[] = _("{R_BUTTON}Type");
 static const u8 sText_QuestMenu_Caught[] = _("Caught");
@@ -179,6 +158,7 @@ static const u8 sText_QuestMenu_Found[] = _("Found");
 static const u8 sText_QuestMenu_Read[] = _("Read");
 static const u8 sText_QuestMenu_Back[] = _("Back");
 static const u8 sText_QuestMenu_DotSpace[] = _(". ");
+static const u8 sText_QuestMenu_Close[] = _("Close");
 
 #define sub_quest(n, d, p, m, o) {.name = n, .desc = d, .poc = p, .map = m, .object = o}
 static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
@@ -287,30 +267,6 @@ static const u8 sSideQuestDifficulties[SIDE_QUEST_COUNT] =
     [SIDE_QUEST_28] = QUEST_DIFFICULTY_EASY,
     [SIDE_QUEST_29] = QUEST_DIFFICULTY_EASY,
     [SIDE_QUEST_30] = QUEST_DIFFICULTY_EASY,
-};
-
-// Selected an incomplete quest
-static const struct MenuAction sQuestSubmenuOptions[] =
-{
-    {sText_QuestMenu_Begin,             {.void_u8 = Task_QuestMenuBeginQuest}},
-    {sText_QuestMenu_Details,           {.void_u8 = Task_QuestMenuDetails}},
-    {gText_Cancel,                      {.void_u8 = Task_QuestMenuCancel}},
-};
-
-// Selected the active quest
-static const struct MenuAction sActiveQuestSubmenuOptions[] =
-{
-    {sText_QuestMenu_End,               {.void_u8 = Task_QuestMenuEndQuest}},
-    {sText_QuestMenu_Details,           {.void_u8 = Task_QuestMenuDetails}},
-    {gText_Cancel,                      {.void_u8 = Task_QuestMenuCancel}},
-};
-
-// completed quest selection
-static const struct MenuAction sCompletedQuestSubmenuOptions[] =
-{
-    {sText_QuestMenu_Reward,            {.void_u8 = Task_QuestMenuReward}},
-    {sText_QuestMenu_Details,           {.void_u8 = Task_QuestMenuDetails}},
-    {gText_Cancel,                      {.void_u8 = Task_QuestMenuCancel}},
 };
 
 static const struct BgTemplate sQuestMenuBgTemplates[2] =
@@ -823,7 +779,7 @@ static u16 QuestMenu_BuildSubQuestMenuTemplate(void){
         sListMenuItems[NUM_ROW].id = NUM_ROW;
         COUNT_QUESTS++;
     }
-    sListMenuItems[NUM_ROW].name = gText_Cancel;
+    sListMenuItems[NUM_ROW].name = sText_QuestMenu_Back;
     sListMenuItems[NUM_ROW].id = LIST_CANCEL;
 
     gMultiuseListMenuTemplate.totalItems = sSideQuests[PARENT_QUEST].numSubquests + 1;
@@ -909,7 +865,7 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
         MgbaPrintf(MGBA_LOG_DEBUG,"NUM_ROW %u",NUM_ROW);
     }
 
-    sListMenuItems[NUM_ROW].name = gText_Cancel;
+    sListMenuItems[NUM_ROW].name = sText_QuestMenu_Close;
     sListMenuItems[NUM_ROW].id = LIST_CANCEL;
 
     gMultiuseListMenuTemplate.items = sListMenuItems;
@@ -1101,7 +1057,7 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
         {
             //PSF TODO figure out why go to field arrow doesn't print here
             CreateItemMenuIcon(ITEM_FIELD_ARROW, sStateDataPtr->itemMenuIconSlot);
-            StringCopy(gStringVar4, sText_QuestMenu_Exit);
+            StringCopy(gStringVar4, gText_EmptyString6);
         }
 
         sStateDataPtr->itemMenuIconSlot ^= 1;
@@ -1698,72 +1654,6 @@ static void sub_80986A8(s16 x, u16 y)
     }
 }
 
-static void QuestMenuSubmenuSelectionMessage(u8 taskId)
-{
-    s16 * data = gTasks[taskId].data;
-
-    ClearStdWindowAndFrameToTransparent(4, FALSE);
-    QuestMenu_DestroySubwindow(0);
-    ClearWindowTilemap(4);
-    data[8] = 1;
-    PutWindowTilemap(0);
-    ScheduleBgCopyTilemapToVram(0);
-}
-
-static void Task_QuestMenuDetails(u8 taskId)
-{
-    u8 questIndex = QuestMenu_GetCursorPosition();
-
-    QuestMenuSubmenuSelectionMessage(taskId);
-    StringCopy(gStringVar1, sSideQuests[questIndex].poc);
-    StringCopy(gStringVar2, sSideQuests[questIndex].map);
-    StringExpandPlaceholders(gStringVar4, sText_QuestMenu_DisplayDetails);
-    QuestMenu_DisplaySubMenuMessage(taskId);
-}
-
-static void Task_QuestMenuReward(u8 taskId)
-{
-    u8 questIndex = QuestMenu_GetCursorPosition();
-
-    QuestMenuSubmenuSelectionMessage(taskId);
-    //StringCopy(gStringVar1, sSideQuests[questIndex].reward);
-    StringExpandPlaceholders(gStringVar4, sText_QuestMenu_DisplayReward);
-    QuestMenu_DisplaySubMenuMessage(taskId);
-}
-
-static void Task_QuestMenuEndQuest(u8 taskId)
-{
-    u8 questIndex = QuestMenu_GetCursorPosition();
-
-    QuestMenuSubmenuSelectionMessage(taskId);
-    StringCopy(gStringVar1, sSideQuests[questIndex].name);
-    StringExpandPlaceholders(gStringVar4, sText_QuestMenu_EndQuest);
-    QuestMenu_DisplaySubMenuMessage(taskId);
-}
-
-static void Task_QuestMenuBeginQuest(u8 taskId)
-{
-    u8 questIndex = QuestMenu_GetCursorPosition();
-
-    //SetActiveQuest(questIndex);
-    //UNBOUND ADD
-    GetSetQuestFlag(questIndex, FLAG_SET_ACTIVE);
-    QuestMenuSubmenuSelectionMessage(taskId);
-    StringCopy(gStringVar1, sSideQuests[questIndex].name);
-    StringExpandPlaceholders(gStringVar4, sText_QuestMenu_BeginQuest);
-    QuestMenu_DisplaySubMenuMessage(taskId);
-}
-
-static void QuestMenu_DisplaySubMenuMessage(u8 taskId)
-{
-    s16 * data = gTasks[taskId].data;
-    u8 windowId;
-
-    windowId = QuestMenu_GetOrCreateSubwindow(2);
-    AddTextPrinterParameterized(windowId, 2, gStringVar4, 0, 2, 0, NULL);
-    gTasks[taskId].func = Task_QuestMenuRefreshAfterAcknowledgement;
-}
-
 static void Task_QuestMenuRefreshAfterAcknowledgement(u8 taskId)
 {
     if (JOY_NEW(A_BUTTON) || JOY_NEW(B_BUTTON))
@@ -1802,7 +1692,6 @@ static void Task_QuestMenuCancel(u8 taskId)
     s16 * data = gTasks[taskId].data;
 
     ClearStdWindowAndFrameToTransparent(4, FALSE);
-    QuestMenu_DestroySubwindow(0);
     ClearWindowTilemap(4);
     PutWindowTilemap(0);
     PutWindowTilemap(1);
@@ -1845,8 +1734,6 @@ static void QuestMenu_InitWindows(void)
     }
 
     ScheduleBgCopyTilemapToVram(0);
-    for (i = 0; i < 3; i++)
-        sSubmenuWindowIds[i] = 0xFF;
 }
 
 static void QuestMenu_AddTextPrinterParameterized(u8 windowId, u8 fontId, const u8 * str, u8 x, u8 y, u8 letterSpacing, u8 lineSpacing, u8 speed, u8 colorIdx)
@@ -1857,25 +1744,6 @@ static void QuestMenu_AddTextPrinterParameterized(u8 windowId, u8 fontId, const 
 static void QuestMenu_SetBorderStyleOnWindow(u8 windowId)
 {
     DrawStdFrameWithCustomTileAndPalette(windowId, FALSE, 0x3C0, 14);
-}
-
-static u8 QuestMenu_GetOrCreateSubwindow(u8 idx)
-{
-    if (sSubmenuWindowIds[idx] == 0xFF)
-    {
-        sSubmenuWindowIds[idx] = AddWindow(&sQuestMenuSubWindowTemplates[idx]);
-        DrawStdFrameWithCustomTileAndPalette(sSubmenuWindowIds[idx], TRUE, 0x3A3, 0x0C);
-    }
-
-    return sSubmenuWindowIds[idx];
-}
-
-static void QuestMenu_DestroySubwindow(u8 idx)
-{
-    ClearStdWindowAndFrameToTransparent(sSubmenuWindowIds[idx], FALSE);
-    ClearWindowTilemap(sSubmenuWindowIds[idx]); // redundant
-    RemoveWindow(sSubmenuWindowIds[idx]);
-    sSubmenuWindowIds[idx] = 0xFF;
 }
 
 // Start Menu Function
