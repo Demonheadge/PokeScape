@@ -5,8 +5,6 @@
 
 //#define FLAG_QUEST_MENU_ACTIVE    0x264 //added to constants/flags.h
 
-#define NO_ACTIVE_QUEST             -1
-
 #define SORT_DEFAULT 0
 #define SORT_INACTIVE 1
 #define SORT_ACTIVE 2
