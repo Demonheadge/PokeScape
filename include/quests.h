@@ -38,34 +38,25 @@ extern const struct SubQuest gSubQuests1[SUB_QUEST_1_COUNT];
 extern const struct SubQuest gSubQuests2[SUB_QUEST_1_COUNT];
 extern const struct SideQuest gSideQuests[SIDE_QUEST_COUNT];
 
-enum 
-{
-    QUEST_DIFFICULTY_EASY,
-    QUEST_DIFFICULTY_MEDIUM,
-    QUEST_DIFFICULTY_HARD,
-    QUEST_DIFFICULTY_EXTREME,
-};
-
 enum QuestCases
 {
     FLAG_GET_UNLOCKED,      // check if quest is unlocked
-    FLAG_SET_UNLOCKED,      // mark unlocked quest
     FLAG_GET_INACTIVE, //check if quest is unlocked but has no other state
-    FLAG_SET_INACTIVE, //mark quest as inactive
-    FLAG_REMOVE_INACTIVE, //remove inactive flag from quest
-    FLAG_SET_ACTIVE,        // mark quest as active
     FLAG_GET_ACTIVE,        // check if quest is active
-    FLAG_REMOVE_ACTIVE, //remove active flag from quest
     FLAG_GET_REWARD,     // check if quest is ready for reward
-    FLAG_SET_REWARD,     // mark quest ready for reward
-    FLAG_REMOVE_REWARD, //remove reward flag from quest
     FLAG_GET_COMPLETED,     // check if quest is completed
-    FLAG_SET_COMPLETED,     // mark completed quest
     FLAG_GET_FAVORITE,     // check if quest is ready for favorite
+    FLAG_SET_UNLOCKED,      // mark unlocked quest
+    FLAG_SET_INACTIVE, //mark quest as inactive
+    FLAG_SET_ACTIVE,        // mark quest as active
+    FLAG_SET_REWARD,     // mark quest ready for reward
+    FLAG_SET_COMPLETED,     // mark completed quest
     FLAG_SET_FAVORITE,     // mark quest ready for favorite
+    FLAG_REMOVE_INACTIVE, //remove inactive flag from quest
+    FLAG_REMOVE_ACTIVE, //remove active flag from quest
+    FLAG_REMOVE_REWARD, //remove reward flag from quest
     FLAG_REMOVE_FAVORITE, //remove favorite flag from quest
 };
-
 enum SubQuestTypes
 {
     SUBQUEST_NONE,

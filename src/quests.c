@@ -680,6 +680,96 @@ static s8 QuestMenu_CheckHasChildren(u16 itemId){
     } 
 }
 
+static u8 QuestMenu_GenerateTotalItems(mode)
+{
+    switch(mode){
+        case SORT_DEFAULT:
+            return sStateDataPtr->nItems + 1;
+        case SORT_INACTIVE:
+            return QuestMenu_CountInactiveQuests() + 1;
+        case SORT_ACTIVE:
+            return QuestMenu_CountActiveQuests() + 1;
+        case SORT_REWARD:
+            return QuestMenu_CountRewardQuests() + 1;
+        case SORT_DONE:
+            return QuestMenu_CountCompletedQuests() + 1;
+    }
+}
+
+
+static bool8 QuestMenu_CheckDefaultMode(void){
+    if (sStateDataPtr->filterMode == FLAG_GET_UNLOCKED)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+static bool8 QuestMenu_CheckSubquestMode(u8 mode){
+    if (mode > SORT_DONE)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+static u16 QuestMenu_BuildFilteredMenuTemplate(void)
+{
+    u16 countQuest = 0;
+    u16 numRow = 0;
+    u16 parentQuest = sStateDataPtr->parentQuest;
+
+    if (!QuestMenu_CheckDefaultMode())
+    {
+
+        for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
+        {
+            if (GetSetQuestFlag(countQuest, sStateDataPtr->filterMode))
+            {
+                QuestMenu_CheckHasChildren(countQuest);
+                sListMenuItems[numRow].name = sSideQuests[countQuest].name;
+                sListMenuItems[numRow].id = numRow;
+                sStateDataPtr->filteredMapping[numRow] = countQuest;
+
+                numRow++;
+            }
+        }
+    } else {
+
+        for (numRow = 0; numRow < sStateDataPtr->nItems; numRow++)
+        {
+            if (GetSetQuestFlag(numRow, FLAG_GET_UNLOCKED)){
+                sListMenuItems[numRow].name = sSideQuests[numRow].name;
+            }
+            else
+                sListMenuItems[numRow].name = sText_QuestMenu_Unk;
+
+            sListMenuItems[numRow].id = numRow;
+        }
+    }
+
+    sListMenuItems[numRow].name = sText_QuestMenu_Close;
+    sListMenuItems[numRow].id = LIST_CANCEL;
+
+    gMultiuseListMenuTemplate.items = sListMenuItems;
+    gMultiuseListMenuTemplate.totalItems = QuestMenu_GenerateTotalItems(sStateDataPtr->filterMode);
+    gMultiuseListMenuTemplate.windowId = 0;
+    gMultiuseListMenuTemplate.header_X = 0;
+    gMultiuseListMenuTemplate.cursor_X = 15;
+    gMultiuseListMenuTemplate.item_X = 23;
+    gMultiuseListMenuTemplate.lettersSpacing = 1;
+    gMultiuseListMenuTemplate.itemVerticalPadding = 2;
+    gMultiuseListMenuTemplate.upText_Y = 2;
+    gMultiuseListMenuTemplate.maxShowed = sStateDataPtr->maxShowed;
+    gMultiuseListMenuTemplate.fontId = 2;
+    gMultiuseListMenuTemplate.cursorPal = 1;
+    gMultiuseListMenuTemplate.cursorPal = 1;
+    gMultiuseListMenuTemplate.fillValue = 0;
+    gMultiuseListMenuTemplate.cursorShadowPal = 0;
+    gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_MoveCursorFunc;
+    gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_ItemPrintFunc;
+    gMultiuseListMenuTemplate.scrollMultiple = 1;
+    gMultiuseListMenuTemplate.cursorKind = 0;
+}
+
 static u16 QuestMenu_BuildSubquestMenuTemplate(void){
 
     u16 countQuest = 0;
@@ -722,106 +812,6 @@ static u16 QuestMenu_BuildSubquestMenuTemplate(void){
     gMultiuseListMenuTemplate.cursorShadowPal = 0;
     gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_SubquestMoveCursorFunc;
     gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_PrintSubQuestProgressFunc;
-    gMultiuseListMenuTemplate.scrollMultiple = 1;
-    gMultiuseListMenuTemplate.cursorKind = 0;
-}
-
-static bool8 QuestMenu_CheckDefaultMode(u8 mode){
-    if (mode == FLAG_GET_UNLOCKED)
-        return TRUE;
-    else
-        return FALSE;
-}
-
-static bool8 QuestMenu_CheckSubquestMode(u8 mode){
-    if (mode > SORT_DONE)
-        return TRUE;
-    else
-        return FALSE;
-}
-
-static u16 QuestMenu_BuildFilteredMenuTemplate(void)
-{
-    u16 countQuest;
-    u16 numRow = 0;
-    u8 mode;
-
-    switch(sStateDataPtr->filterMode){
-        case SORT_DEFAULT:
-            mode = FLAG_GET_UNLOCKED;
-            gMultiuseListMenuTemplate.totalItems = sStateDataPtr->nItems + 1;
-            break;
-
-        case SORT_INACTIVE:
-            mode = FLAG_GET_INACTIVE;
-            gMultiuseListMenuTemplate.totalItems = QuestMenu_CountInactiveQuests()+1;
-            break;
-
-        case SORT_ACTIVE:
-            mode = FLAG_GET_ACTIVE;
-            gMultiuseListMenuTemplate.totalItems = QuestMenu_CountActiveQuests()+1;
-            break;
-
-        case SORT_REWARD:
-            mode = FLAG_GET_REWARD;
-            gMultiuseListMenuTemplate.totalItems = QuestMenu_CountRewardQuests()+ 1;
-
-            break;
-
-        case SORT_DONE:
-            mode = FLAG_GET_COMPLETED;
-            gMultiuseListMenuTemplate.totalItems = QuestMenu_CountCompletedQuests()+ 1;
-            break;
-    }
-    if (mode !=FLAG_GET_UNLOCKED){
-
-        for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
-        {
-            if (GetSetQuestFlag(countQuest, mode))
-            {
-                QuestMenu_CheckHasChildren(countQuest);
-                sListMenuItems[numRow].name = sSideQuests[countQuest].name;
-                sListMenuItems[numRow].id = numRow;
-                sStateDataPtr->filteredMapping[numRow] = countQuest;
-
-                numRow++;
-            }
-        }
-    } else {
-
-        for (numRow = 0; numRow < sStateDataPtr->nItems; numRow++)
-        {
-            if (GetSetQuestFlag(numRow, FLAG_GET_UNLOCKED)){
-                //if (GetSetQuestFlag(numRow, FLAG_GET_FAVORITE))
-                sListMenuItems[numRow].name = sSideQuests[numRow].name;
-            }
-            else
-                sListMenuItems[numRow].name = sText_QuestMenu_Unk;
-
-            sListMenuItems[numRow].id = numRow;
-        }
-        MgbaPrintf(MGBA_LOG_DEBUG,"numRow %u",numRow);
-    }
-
-    sListMenuItems[numRow].name = sText_QuestMenu_Close;
-    sListMenuItems[numRow].id = LIST_CANCEL;
-
-    gMultiuseListMenuTemplate.items = sListMenuItems;
-    gMultiuseListMenuTemplate.windowId = 0;
-    gMultiuseListMenuTemplate.header_X = 0;
-    gMultiuseListMenuTemplate.cursor_X = 15;
-    gMultiuseListMenuTemplate.item_X = 23;
-    gMultiuseListMenuTemplate.lettersSpacing = 1;
-    gMultiuseListMenuTemplate.itemVerticalPadding = 2;
-    gMultiuseListMenuTemplate.upText_Y = 2;
-    gMultiuseListMenuTemplate.maxShowed = sStateDataPtr->maxShowed;
-    gMultiuseListMenuTemplate.fontId = 2;
-    gMultiuseListMenuTemplate.cursorPal = 1;
-    gMultiuseListMenuTemplate.cursorPal = 1;
-    gMultiuseListMenuTemplate.fillValue = 0;
-    gMultiuseListMenuTemplate.cursorShadowPal = 0;
-    gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_MoveCursorFunc;
-    gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_ItemPrintFunc;
     gMultiuseListMenuTemplate.scrollMultiple = 1;
     gMultiuseListMenuTemplate.cursorKind = 0;
 }
