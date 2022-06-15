@@ -155,6 +155,7 @@ static const u8 sText_QuestMenu_Read[] = _("Read");
 static const u8 sText_QuestMenu_Back[] = _("Back");
 static const u8 sText_QuestMenu_DotSpace[] = _(". ");
 static const u8 sText_QuestMenu_Close[] = _("Close");
+static const u8 sText_QuestMenu_Space[] = _(" ");
 
 #define sub_quest(n, d, p, m, o) {.name = n, .desc = d, .poc = p, .map = m, .object = o}
 static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
@@ -733,7 +734,8 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
     u16 numRow = 0;
     u16 parentQuest = sStateDataPtr->parentQuest;
 
-
+    u8 questNameArray[SIDE_QUEST_COUNT][32];
+    u8 *questNamePointer;
 
     if (QuestMenu_CheckSubquestMode())
     {
@@ -742,12 +744,16 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 
         for (numRow = 0; numRow < sSideQuests[parentQuest].numSubquests; numRow++)
         {
-            if (ChangeSubQuestFlags(parentQuest, FLAG_GET_COMPLETED, countQuest)){
-                sListMenuItems[numRow].name = sSideQuests[parentQuest].subquests[countQuest].name;
-            }
-            else
-                sListMenuItems[numRow].name = sText_QuestMenu_Unk;
+            questNamePointer = ConvertIntToDecimalStringN(questNameArray[countQuest], countQuest + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
 
+            questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_DotSpace);
+
+            if (ChangeSubQuestFlags(parentQuest, FLAG_GET_COMPLETED, countQuest))
+                questNamePointer = StringAppend(questNamePointer,sSideQuests[parentQuest].subquests[countQuest].name);
+            else
+                questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_Unk);
+
+            sListMenuItems[numRow].name = questNameArray[countQuest];
             sListMenuItems[numRow].id = numRow;
             countQuest++;
         }
@@ -758,8 +764,17 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
         {
             if (GetSetQuestFlag(countQuest, sStateDataPtr->filterMode))
             {
-                QuestMenu_CheckHasChildren(countQuest);
-                sListMenuItems[numRow].name = sSideQuests[countQuest].name;
+                questNamePointer = StringCopy(questNameArray[countQuest], sSideQuests[countQuest].name);
+
+                if (QuestMenu_CheckHasChildren(countQuest)){
+                    questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_SubQuestButton);
+                }
+                else {
+                    questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_Space);
+                }
+
+                sListMenuItems[numRow].name = questNameArray[countQuest];
+
                 sListMenuItems[numRow].id = numRow;
                 sStateDataPtr->filteredMapping[numRow] = countQuest;
 
@@ -772,7 +787,16 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
         for (numRow = 0; numRow < sStateDataPtr->nItems; numRow++)
         {
             if (GetSetQuestFlag(numRow, FLAG_GET_UNLOCKED)){
-                sListMenuItems[numRow].name = sSideQuests[numRow].name;
+                questNamePointer = StringCopy(questNameArray[numRow], sSideQuests[numRow].name);
+
+                if (QuestMenu_CheckHasChildren(numRow)){
+                    questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_SubQuestButton);
+                }
+                else {
+                    questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_Space);
+                }
+
+                sListMenuItems[numRow].name = questNameArray[numRow];
             }
             else
                 sListMenuItems[numRow].name = sText_QuestMenu_Unk;
@@ -797,8 +821,8 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
     gMultiuseListMenuTemplate.cursorPal = 1;
     gMultiuseListMenuTemplate.fillValue = 0;
     gMultiuseListMenuTemplate.cursorShadowPal = 0;
-        gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_MoveCursorFunc;
-        gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_PrintProgressFunc;
+    gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_MoveCursorFunc;
+    gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_PrintProgressFunc;
     gMultiuseListMenuTemplate.scrollMultiple = 1;
     gMultiuseListMenuTemplate.cursorKind = 0;
 }
