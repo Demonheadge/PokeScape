@@ -97,11 +97,8 @@ static bool8 QuestMenu_AllocateResourcesForListMenu(void);
 static s8 QuestMenu_CheckHasChildren(u16 itemId);
 static u16 QuestMenu_BuildFilteredMenuTemplate(void);
 static void QuestMenu_AssignCancelNameAndId(u8 numRow);
-static u16 QuestMenu_BuildSubquestMenuTemplate(void);
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
-static void QuestMenu_SubquestMoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
-static void QuestMenu_PrintSubQuestProgressFunc(u8 windowId, u32 itemId, u8 y);
-static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y);
+static void QuestMenu_PrintProgressFunc(u8 windowId, u32 itemId, u8 y);
 static void QuestMenu_PrintOrRemoveCursorAt(u8 y, u8 state);
 s8 QuestMenu_CountUnlockedQuests(void);
 s8 QuestMenu_CountInactiveQuests(void);
@@ -736,7 +733,26 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
     u16 numRow = 0;
     u16 parentQuest = sStateDataPtr->parentQuest;
 
-    if (!QuestMenu_CheckDefaultMode())
+
+
+    if (QuestMenu_CheckSubquestMode())
+    {
+        countQuest = 0;
+        parentQuest = sStateDataPtr->parentQuest;
+
+        for (numRow = 0; numRow < sSideQuests[parentQuest].numSubquests; numRow++)
+        {
+            if (ChangeSubQuestFlags(parentQuest, FLAG_GET_COMPLETED, countQuest)){
+                sListMenuItems[numRow].name = sSideQuests[parentQuest].subquests[countQuest].name;
+            }
+            else
+                sListMenuItems[numRow].name = sText_QuestMenu_Unk;
+
+            sListMenuItems[numRow].id = numRow;
+            countQuest++;
+        }
+    }
+    else if (!QuestMenu_CheckDefaultMode())
     {
         for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
         {
@@ -750,24 +766,9 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
                 numRow++;
             }
         }
-    } else if(QuestMenu_CheckSubquestMode())
-    {
+    } 
 
-    countQuest = 0;
-
-    for (numRow = 0; numRow < sSideQuests[parentQuest].numSubquests; numRow++)
-    {
-        if (ChangeSubQuestFlags(parentQuest, FLAG_GET_COMPLETED, countQuest)){
-            sListMenuItems[numRow].name = sSideQuests[parentQuest].subquests[countQuest].name;
-        }
-        else
-            sListMenuItems[numRow].name = sText_QuestMenu_Unk;
-
-        sListMenuItems[numRow].id = numRow;
-        countQuest++;
-    }
-    }  else {
-
+    else {
         for (numRow = 0; numRow < sStateDataPtr->nItems; numRow++)
         {
             if (GetSetQuestFlag(numRow, FLAG_GET_UNLOCKED)){
@@ -796,63 +797,8 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
     gMultiuseListMenuTemplate.cursorPal = 1;
     gMultiuseListMenuTemplate.fillValue = 0;
     gMultiuseListMenuTemplate.cursorShadowPal = 0;
-
-    if (QuestMenu_CheckSubquestMode()){
-        gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_SubquestMoveCursorFunc;
-        gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_PrintSubQuestProgressFunc;
-    }
-    else {
         gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_MoveCursorFunc;
-        gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_ItemPrintFunc;
-    }
-
-    gMultiuseListMenuTemplate.scrollMultiple = 1;
-    gMultiuseListMenuTemplate.cursorKind = 0;
-}
-
-
-static u16 QuestMenu_BuildSubquestMenuTemplate(void){
-
-    u16 countQuest = 0;
-    u16 numRow = 0;
-    u16 parentQuest = sStateDataPtr->parentQuest;
-
-    for (numRow = 0; numRow < sSideQuests[parentQuest].numSubquests; numRow++)
-    {
-        //ConvertIntToDecimalStringN(sStateDataPtr->tempQuestName[numRow], numRow+1, STR_CONV_MODE_LEFT_ALIGN,2);
-
-        if (ChangeSubQuestFlags(parentQuest,FLAG_GET_COMPLETED,countQuest)){
-
-            //StringAppend(sStateDataPtr->tempQuestName[numRow],sText_QuestMenu_DotSpace);
-            //StringAppend(sStateDataPtr->tempQuestName[numRow],sSideQuests[parentQuest].subquests[countQuest].name);
-            //sListMenuItems[numRow].name = sStateDataPtr->tempQuestName[numRow];
-            sListMenuItems[numRow].name = sSideQuests[parentQuest].subquests[countQuest].name;
-        }
-        else
-            sListMenuItems[numRow].name = sText_QuestMenu_Unk;
-
-        sListMenuItems[numRow].id = numRow;
-        countQuest++;
-    }
-
-    QuestMenu_AssignCancelNameAndId(numRow);
-
-    gMultiuseListMenuTemplate.totalItems = sSideQuests[parentQuest].numSubquests + 1;
-    gMultiuseListMenuTemplate.items = sListMenuItems;
-    gMultiuseListMenuTemplate.windowId = 0;
-    gMultiuseListMenuTemplate.header_X = 0;
-    gMultiuseListMenuTemplate.cursor_X = 15;
-    gMultiuseListMenuTemplate.item_X = 23;
-    gMultiuseListMenuTemplate.lettersSpacing = 1;
-    gMultiuseListMenuTemplate.itemVerticalPadding = 2;
-    gMultiuseListMenuTemplate.upText_Y = 2;
-    gMultiuseListMenuTemplate.maxShowed = sStateDataPtr->maxShowed;
-    gMultiuseListMenuTemplate.fontId = 2;
-    gMultiuseListMenuTemplate.cursorPal = 1;
-    gMultiuseListMenuTemplate.fillValue = 0;
-    gMultiuseListMenuTemplate.cursorShadowPal = 0;
-    gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_SubquestMoveCursorFunc;
-    gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_PrintSubQuestProgressFunc;
+        gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_PrintProgressFunc;
     gMultiuseListMenuTemplate.scrollMultiple = 1;
     gMultiuseListMenuTemplate.cursorKind = 0;
 }
@@ -932,7 +878,7 @@ void DestroyObjectMenuIcon(u8 idx)
     }
 }
 
-static void QuestMenu_SubquestMoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list)
+static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list)
 {
     u16 itemId;
     u16 parentQuest = sStateDataPtr->parentQuest;
@@ -944,78 +890,57 @@ static void QuestMenu_SubquestMoveCursorFunc(s32 itemIndex, bool8 onInit, struct
     if (sStateDataPtr->moveModeOrigPos == 0xFF)
     {
         DestroyObjectMenuIcon(sStateDataPtr->itemMenuIconSlot ^ 1);
-        if (itemIndex != LIST_CANCEL)
-        {
-            if (ChangeSubQuestFlags(parentQuest,FLAG_GET_COMPLETED,itemIndex))
-            {
-                itemId = sSideQuests[parentQuest].subquests[itemIndex].object;
-                StringCopy(gStringVar1, sSideQuests[parentQuest].subquests[itemIndex].desc);
-                //PSF TODO Create completed string variants for each quest, add to struct
-            } 
-            else
-            {
-                CreateItemMenuIcon(ITEM_NONE,sStateDataPtr->itemMenuIconSlot);
-                StringCopy(gStringVar1,  sText_Empty);
-            }
-
-            StringCopy(gStringVar2, sSideQuests[parentQuest].subquests[itemIndex].map);
-            StringExpandPlaceholders(gStringVar4, sText_QuestMenu_ShowLocation);
-            StringExpandPlaceholders(gStringVar3, gStringVar1);
-
-            CreateObjectMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
-
-        }
-        else
-        {
-            //PSF TODO figure out why go to field arrow doesn't print here
-            CreateItemMenuIcon(ITEM_FIELD_ARROW, sStateDataPtr->itemMenuIconSlot);
-            StringCopy(gStringVar4,  sText_Empty);
-        }
-
-        sStateDataPtr->itemMenuIconSlot ^= 1;
-        FillWindowPixelBuffer(1, 0);
-
-        QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar4, 2, 3, 2, 0, 0, 0);
-        QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar3, 40,19, 5, 0, 0, 0);
-    }
-}
-
-static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list)
-{
-    u16 itemId;
-    const u8 * desc;
-
-    if (onInit != TRUE)
-        PlaySE(SE_SELECT);
-
-    if (sStateDataPtr->moveModeOrigPos == 0xFF)
-    {
-        DestroyObjectMenuIcon(sStateDataPtr->itemMenuIconSlot ^ 1);
 
         if (itemIndex != LIST_CANCEL)
         {
-            if (GetSetQuestFlag(itemIndex, FLAG_GET_UNLOCKED))
-            {
-                //If the quest is unlocked, AND we're not in normal mode, 
-                //don't use the position of the cursor, look at the filtermap 
-                //to look up the quest in that row
 
-                if (sStateDataPtr->filterMode != SORT_DEFAULT)
-                    itemIndex = sStateDataPtr->filteredMapping[itemIndex];
 
-                //Look up the quest struct and get the NPC associated with this quest
+            if (!QuestMenu_CheckSubquestMode()){
 
-                //Look up the quest struct and get the description with this quest
-                if (GetSetQuestFlag(itemIndex, FLAG_GET_REWARD))
-                    StringCopy(gStringVar1, sText_QuestMenu_ReturnRecieveReward);
+                if (GetSetQuestFlag(itemIndex, FLAG_GET_UNLOCKED))
+                {
+                    //If the quest is unlocked, AND we're not in normal mode, 
+                    //don't use the position of the cursor, look at the filtermap 
+                    //to look up the quest in that row
+
+                    if (!QuestMenu_CheckDefaultMode())
+                        itemIndex = sStateDataPtr->filteredMapping[itemIndex];
+
+                    //Look up the quest struct and get the description with this quest
+                    if (GetSetQuestFlag(itemIndex, FLAG_GET_REWARD))
+                        StringCopy(gStringVar1, sText_QuestMenu_ReturnRecieveReward);
+                    else
+                        StringCopy(gStringVar1, sSideQuests[itemIndex].desc);
+                }
                 else
-                    StringCopy(gStringVar1, sSideQuests[itemIndex].desc);
+                {
+                    StringCopy(gStringVar1, sText_QuestMenu_StartForMore);
+                }
+                StringCopy(gStringVar2, sSideQuests[itemIndex].map);
             }
-            else
-            {
-                StringCopy(gStringVar1, sText_QuestMenu_StartForMore);
+            else {
+
+                if (ChangeSubQuestFlags(parentQuest,FLAG_GET_COMPLETED,itemIndex))
+                {
+                    itemId = sSideQuests[parentQuest].subquests[itemIndex].object;
+                    StringCopy(gStringVar1, sSideQuests[parentQuest].subquests[itemIndex].desc);
+                    //PSF TODO Create completed string variants for each quest, add to struct
+                } 
+                else
+                {
+                    CreateItemMenuIcon(ITEM_NONE,sStateDataPtr->itemMenuIconSlot);
+                    StringCopy(gStringVar1,  sText_Empty);
+                }
+
+                StringCopy(gStringVar2, sSideQuests[parentQuest].subquests[itemIndex].map);
+                StringExpandPlaceholders(gStringVar4, sText_QuestMenu_ShowLocation);
+                StringExpandPlaceholders(gStringVar3, gStringVar1);
+
+                CreateObjectMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
             }
-            StringCopy(gStringVar2, sSideQuests[itemIndex].map);
+
+
+
             StringExpandPlaceholders(gStringVar4, sText_QuestMenu_ShowLocation);
             StringExpandPlaceholders(gStringVar3, gStringVar1);
 
@@ -1026,7 +951,7 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
         {
             //PSF TODO figure out why go to field arrow doesn't print here
             CreateItemMenuIcon(ITEM_FIELD_ARROW, sStateDataPtr->itemMenuIconSlot);
-            StringCopy(gStringVar4, gText_EmptyString6);
+            StringCopy(gStringVar4, sText_Empty);
         }
 
         sStateDataPtr->itemMenuIconSlot ^= 1;
@@ -1037,8 +962,10 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
     }
 }
 
-static void QuestMenu_PrintSubQuestProgressFunc(u8 windowId, u32 itemId, u8 y)
+static void QuestMenu_PrintProgressFunc(u8 windowId, u32 itemId, u8 y)
 {
+
+    u8 colorIndex = 0;
     u8 questType;
     u16 parentQuest = sStateDataPtr->parentQuest;
     questType = sSideQuests[parentQuest].childtype;
@@ -1053,62 +980,45 @@ static void QuestMenu_PrintSubQuestProgressFunc(u8 windowId, u32 itemId, u8 y)
 
     if (itemId != LIST_CANCEL)
     {
-        if (ChangeSubQuestFlags(parentQuest,FLAG_GET_COMPLETED,itemId)){
-            switch (questType){
-                case SUBQUEST_CATCH:
-                    StringCopy(gStringVar4, sText_QuestMenu_Caught);
-                    break;
-                case SUBQUEST_FIND:
-                    StringCopy(gStringVar4, sText_QuestMenu_Found);
-                    break;
-                case SUBQUEST_READ:
-                    StringCopy(gStringVar4, sText_QuestMenu_Read);
-                    break;
+        if (QuestMenu_CheckSubquestMode()){
+            if (ChangeSubQuestFlags(parentQuest,FLAG_GET_COMPLETED,itemId)){
+                switch (questType){
+                    case SUBQUEST_CATCH:
+                        StringCopy(gStringVar4, sText_QuestMenu_Caught);
+                        break;
+                    case SUBQUEST_FIND:
+                        StringCopy(gStringVar4, sText_QuestMenu_Found);
+                        break;
+                    case SUBQUEST_READ:
+                        StringCopy(gStringVar4, sText_QuestMenu_Read);
+                        break;
+                }
+            } 
+            else {
+                StringCopy(gStringVar4, sText_Empty);
             }
-        } else {
-            StringCopy(gStringVar4, sText_Empty);
         }
-        QuestMenu_AddTextPrinterParameterized(windowId, 0, gStringVar4, 200, y, 0, 0, 0xFF, 2);
-    }
-}
+        else {
+            //If you're in the default view, use wherever the cursor is as "itemId" instead of the filtered map
+            if (sStateDataPtr->filterMode != SORT_DEFAULT)
+                itemId = sStateDataPtr->filteredMapping[itemId];
 
-static void QuestMenu_ItemPrintFunc(u8 windowId, u32 itemId, u8 y)
-{
-
-    u8 colorIndex = 0;
-
-    if (sStateDataPtr->moveModeOrigPos != 0xFF)
-    {
-        if (sStateDataPtr->moveModeOrigPos == (u8)itemId)
-            QuestMenu_PrintOrRemoveCursorAt(y, 2);
-        else
-            QuestMenu_PrintOrRemoveCursorAt(y, 0xFF);
-    }
-    /*
-     * UNBOUND QUEST MENU ADDITION
-     */
-    if (itemId != LIST_CANCEL)
-    {
-        //If you're in the default view, use wherever the cursor is as "itemId" instead of the filtered map
-        if (sStateDataPtr->filterMode != SORT_DEFAULT)
-            itemId = sStateDataPtr->filteredMapping[itemId];
-
-        if (GetSetQuestFlag(itemId, FLAG_GET_COMPLETED)) {
-            StringCopy(gStringVar4, sText_QuestMenu_Complete);
-            colorIndex = 2;
+            if (GetSetQuestFlag(itemId, FLAG_GET_COMPLETED)) {
+                StringCopy(gStringVar4, sText_QuestMenu_Complete);
+                colorIndex = 2;
+            }
+            else if (GetSetQuestFlag(itemId, FLAG_GET_REWARD)){
+                StringCopy(gStringVar4, sText_QuestMenu_Reward);
+                colorIndex = 1;
+            }
+            else if (GetSetQuestFlag(itemId, FLAG_GET_ACTIVE)){
+                StringCopy(gStringVar4, sText_QuestMenu_Active);
+                colorIndex = 3;
+            }
+            else{
+                StringCopy(gStringVar4, sText_Empty);
+            }
         }
-        else if (GetSetQuestFlag(itemId, FLAG_GET_REWARD)){
-            StringCopy(gStringVar4, sText_QuestMenu_Reward);
-            colorIndex = 1;
-        }
-        else if (GetSetQuestFlag(itemId, FLAG_GET_ACTIVE)){
-            StringCopy(gStringVar4, sText_QuestMenu_Active);
-            colorIndex = 3;
-        }
-        else{
-            StringCopy(gStringVar4, sText_Empty);
-        }
-
         //PSF TODO Figure out how to use TEXT_DYNAMIC_COLOR_1 to get better colors
         QuestMenu_AddTextPrinterParameterized(windowId, 0, gStringVar4, 200, y, 0, 0, 0xFF, colorIndex);
     }
@@ -1636,14 +1546,8 @@ static void Task_QuestMenuCleanUp(u8 taskId)
     ClearStdWindowAndFrameToTransparent(2, FALSE);
 
     QuestMenu_PrintHeader();
-    QuestMenu_BuildFilteredMenuTemplate();
 
-    /*
-    if (QuestMenu_CheckSubquestMode())
-        QuestMenu_BuildSubquestMenuTemplate();
-    else
-        QuestMenu_BuildFilteredMenuTemplate();
-        */
+    QuestMenu_BuildFilteredMenuTemplate();
 
     gTasks[taskId].func = Task_QuestMenuMain;
 }
