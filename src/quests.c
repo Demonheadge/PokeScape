@@ -745,7 +745,6 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
         for (numRow = 0; numRow < sSideQuests[parentQuest].numSubquests; numRow++)
         {
             questNamePointer = ConvertIntToDecimalStringN(questNameArray[countQuest], countQuest + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
-
             questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_DotSpace);
 
             if (ChangeSubQuestFlags(parentQuest, FLAG_GET_COMPLETED, countQuest))
@@ -976,6 +975,7 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
             //PSF TODO figure out why go to field arrow doesn't print here
             CreateItemMenuIcon(ITEM_FIELD_ARROW, sStateDataPtr->itemMenuIconSlot);
             StringCopy(gStringVar4, sText_Empty);
+            StringCopy(gStringVar3, sText_Empty);
         }
 
         sStateDataPtr->itemMenuIconSlot ^= 1;
@@ -1006,6 +1006,7 @@ static void QuestMenu_PrintProgressFunc(u8 windowId, u32 itemId, u8 y)
     {
         if (QuestMenu_CheckSubquestMode()){
             if (ChangeSubQuestFlags(parentQuest,FLAG_GET_COMPLETED,itemId)){
+                colorIndex = 2;
                 switch (questType){
                     case SUBQUEST_CATCH:
                         StringCopy(gStringVar4, sText_QuestMenu_Caught);
