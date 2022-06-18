@@ -1512,27 +1512,30 @@ static void Task_QuestMenuMain(u8 taskId)
                 break;
 
             default:
-                if (mode != SORT_DEFAULT){
-                    if(QuestMenu_CheckHasChildren(sStateDataPtr->filteredMapping[input])){
-                        PlaySE(SE_SELECT);
-                        QuestMenu_RemoveScrollIndicatorArrowPair();
-                        sStateDataPtr->parentQuest = sStateDataPtr->filteredMapping[input];
-                        subquest = TRUE;
-                        QuestMenu_SetMode(subquest);
-                        QuestMenu_SaveScrollAndRow(data);
-                        Task_QuestMenuCleanUp(taskId);
-                        QuestMenu_ResetSavedRowScrollToTop(data);
+                    if (!QuestMenu_CheckSubquestMode()){
+                    if (!QuestMenu_CheckDefaultMode()){
+                        if(QuestMenu_CheckHasChildren(sStateDataPtr->filteredMapping[input])){
+                            PlaySE(SE_SELECT);
+                            QuestMenu_RemoveScrollIndicatorArrowPair();
+                            sStateDataPtr->parentQuest = sStateDataPtr->filteredMapping[input];
+                            subquest = TRUE;
+                            QuestMenu_SetMode(subquest);
+                            QuestMenu_SaveScrollAndRow(data);
+                            Task_QuestMenuCleanUp(taskId);
+                            QuestMenu_ResetSavedRowScrollToTop(data);
+                        }
                     }
-                } else {
-                    if(QuestMenu_CheckHasChildren(input)){
-                        PlaySE(SE_SELECT);
-                        QuestMenu_RemoveScrollIndicatorArrowPair();
-                        sStateDataPtr->parentQuest = input;
-                        subquest = TRUE;
-                        QuestMenu_SetMode(subquest);
-                        QuestMenu_SaveScrollAndRow(data);
-                        Task_QuestMenuCleanUp(taskId);
-                        QuestMenu_ResetSavedRowScrollToTop(data);
+                    else {
+                        if(QuestMenu_CheckHasChildren(input)){
+                            PlaySE(SE_SELECT);
+                            QuestMenu_RemoveScrollIndicatorArrowPair();
+                            sStateDataPtr->parentQuest = input;
+                            subquest = TRUE;
+                            QuestMenu_SetMode(subquest);
+                            QuestMenu_SaveScrollAndRow(data);
+                            Task_QuestMenuCleanUp(taskId);
+                            QuestMenu_ResetSavedRowScrollToTop(data);
+                        }
                     }
                 }
                 break;
