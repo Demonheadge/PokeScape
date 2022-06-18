@@ -818,11 +818,11 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
                         questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_Space);
                     }
 
-                    sListMenuItems[numRow].name = questNameArray[numRow];
                 }
                 else
-                    sListMenuItems[numRow].name = sText_QuestMenu_Unk;
+                    questNamePointer = StringAppend(questNameArray[numRow], sText_QuestMenu_Unk);
 
+                sListMenuItems[numRow].name = questNameArray[numRow];
                 sListMenuItems[numRow].id = numRow;
             }
         }
