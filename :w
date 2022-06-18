@@ -739,7 +739,7 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
     u8 lastRow, newRow, offset = 0;
 
     u8 questNameArray[QuestMenu_GenerateTotalItems(sStateDataPtr->filterMode)][32];
-    u8 *questNamePointer = NULL;
+    u8 *questNamePointer;
     QuestMenu_AllocateResourcesForListMenu();
 
     if (QuestMenu_CheckSubquestMode())
@@ -792,7 +792,6 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
                     questNamePointer = StringAppend(questNameArray[countQuest], sText_QuestMenu_Unk);
                     */
                 sListMenuItems[newRow].name = sSideQuests[countQuest].name;
-                MgbaPrintf(MGBA_LOG_DEBUG,"newrow: %u, countquest: %u",newRow,countQuest);
                 sListMenuItems[newRow].id = countQuest;
                 sStateDataPtr->filteredMapping[newRow] = countQuest;
             }
@@ -802,12 +801,13 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
     else {
         for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
         {
-            questNamePointer = StringCopy(questNameArray[countQuest], sText_Empty);
-            //StringCopy(questNameArray[countQuest], sText_Empty);
+            //questNamePointer = StringCopy(questNameArray[countQuest], sText_Empty);
+            questNameArray[countQuest] = 0;
+            StringCopy(questNameArray[countQuest], sText_Empty);
 
             if (GetSetQuestFlag(countQuest, FLAG_GET_FAVORITE)){
-                questNamePointer = StringAppend(questNameArray[countQuest], sText_QuestMenu_GreenColor);
-                //StringAppend(questNameArray[countQuest], sText_QuestMenu_GreenColor);
+                //questNamePointer = StringAppend(questNameArray[countQuest], sText_QuestMenu_GreenColor);
+                StringAppend(questNameArray[countQuest], sText_QuestMenu_GreenColor);
                 newRow = numRow;
                 numRow++;
             }
@@ -817,12 +817,12 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
             }
 
             if (GetSetQuestFlag(countQuest, FLAG_GET_UNLOCKED)){
-                questNamePointer = StringAppend(questNameArray[countQuest], sSideQuests[countQuest].name);
-                //StringAppend(questNameArray[countQuest], sSideQuests[countQuest].name);
+                //questNamePointer = StringAppend(questNameArray[countQuest], sSideQuests[countQuest].name);
+                StringAppend(questNameArray[countQuest], sSideQuests[countQuest].name);
 
                 if (QuestMenu_CheckHasChildren(countQuest)){
-                    questNamePointer = StringAppend(questNameArray[countQuest],sText_QuestMenu_SubQuestButton);
-                    //StringAppend(questNameArray[countQuest],sText_QuestMenu_SubQuestButton);
+                    //questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_SubQuestButton);
+                    StringAppend(questNameArray[countQuest],sText_QuestMenu_SubQuestButton);
                 }
             }
             else
@@ -957,10 +957,8 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
                     //don't use the position of the cursor, look at the filtermap 
                     //to look up the quest in that row
 
-                    /*
                     if (!QuestMenu_CheckDefaultMode())
                         itemIndex = sStateDataPtr->filteredMapping[itemIndex];
-                        */
 
                     //Look up the quest struct and get the description with this quest
                     if (GetSetQuestFlag(itemIndex, FLAG_GET_REWARD))
@@ -1021,6 +1019,7 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
 
 static void QuestMenu_PrintProgressFunc(u8 windowId, u32 itemId, u8 y)
 {
+
     u8 colorIndex = 0;
     u8 questType;
     u16 parentQuest = sStateDataPtr->parentQuest;
@@ -1056,6 +1055,10 @@ static void QuestMenu_PrintProgressFunc(u8 windowId, u32 itemId, u8 y)
             }
         }
         else {
+            //If you're in the default view, use wherever the cursor is as "itemId" instead of the filtered map
+            if (sStateDataPtr->filterMode != SORT_DEFAULT)
+                itemId = sStateDataPtr->filteredMapping[itemId];
+
             if (GetSetQuestFlag(itemId, FLAG_GET_COMPLETED)) {
                 StringCopy(gStringVar4, sText_QuestMenu_Complete);
                 colorIndex = 2;
