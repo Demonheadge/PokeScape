@@ -734,8 +734,10 @@ static void QuestMenu_AssignCancelNameAndId(u8 numRow){
 static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 {
     u16 countQuest = 0;
-    u16 numRow = 0;
+    u16 numRow = -1;
     u16 parentQuest = sStateDataPtr->parentQuest;
+    u8 offset = 0;
+    u8 newRow = -1;
 
     u8 questNameArray[SIDE_QUEST_COUNT][32];
     u8 *questNamePointer;
@@ -801,33 +803,36 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
         } 
     }
         else {
-            for (numRow = 0; numRow < sStateDataPtr->nItems; numRow++)
+            for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
             {
-                questNamePointer = StringCopy(questNameArray[numRow], sText_Empty);
+                questNamePointer = StringCopy(questNameArray[countQuest], sText_Empty);
 
-                if (GetSetQuestFlag(numRow, FLAG_GET_FAVORITE))
-                    questNamePointer = StringAppend(questNameArray[numRow], sText_QuestMenu_GreenColor);
+                if (GetSetQuestFlag(countQuest, FLAG_GET_FAVORITE)){
+                    questNamePointer = StringAppend(questNameArray[countQuest], sText_QuestMenu_GreenColor);
+                    numRow++;
+                    newRow = numRow;
+                }
+                else {
+                    newRow = QuestMenu_CountFavoriteQuests() + offset;
+                    offset++;
+                }
 
-                if (GetSetQuestFlag(numRow, FLAG_GET_UNLOCKED)){
-                    questNamePointer = StringAppend(questNameArray[numRow], sSideQuests[numRow].name);
+                if (GetSetQuestFlag(countQuest, FLAG_GET_UNLOCKED)){
+                    questNamePointer = StringAppend(questNameArray[countQuest], sSideQuests[countQuest].name);
 
-                    if (QuestMenu_CheckHasChildren(numRow)){
+                    if (QuestMenu_CheckHasChildren(countQuest)){
                         questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_SubQuestButton);
                     }
-                    else {
-                        questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_Space);
-                    }
-
                 }
                 else
-                    questNamePointer = StringAppend(questNameArray[numRow], sText_QuestMenu_Unk);
+                    questNamePointer = StringAppend(questNameArray[countQuest], sText_QuestMenu_Unk);
 
-                sListMenuItems[numRow].name = questNameArray[numRow];
-                sListMenuItems[numRow].id = numRow;
+                sListMenuItems[newRow].name = questNameArray[countQuest];
+                sListMenuItems[newRow].id = countQuest;
             }
         }
 
-        QuestMenu_AssignCancelNameAndId(numRow);
+        QuestMenu_AssignCancelNameAndId(newRow);
 
         gMultiuseListMenuTemplate.totalItems = QuestMenu_GenerateTotalItems(sStateDataPtr->filterMode);
         gMultiuseListMenuTemplate.items = sListMenuItems;
