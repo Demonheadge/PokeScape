@@ -62,7 +62,6 @@ struct QuestMenuResources
     /*0x07*/ u8 nItems;
     /*0x08*/ u8 scrollIndicatorArrowPairId;
     /*0x0C*/ s16 data[3];
-    /*0x0E*/ u16 filteredMapping[SIDE_QUEST_FLAGS_COUNT]; 
     /*0x0F*/ u8 filterMode;
     /*?x??*/ u8 parentQuest;
 }; /* size = 0x17 */
@@ -768,7 +767,7 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
         {
             if (GetSetQuestFlag(countQuest,sStateDataPtr->filterMode))
             {
-                    numRow = numRow;
+                numRow = numRow;
                 //questNamePointer = StringCopy(questNameArray[countQuest], sText_Empty);
 
                 if (GetSetQuestFlag(countQuest, FLAG_GET_FAVORITE)){
@@ -781,20 +780,19 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
                 }
 
                 /*
-                if (GetSetQuestFlag(countQuest, FLAG_GET_UNLOCKED)){
-                    questNamePointer = StringAppend(questNameArray[countQuest], sSideQuests[countQuest].name);
+                   if (GetSetQuestFlag(countQuest, FLAG_GET_UNLOCKED)){
+                   questNamePointer = StringAppend(questNameArray[countQuest], sSideQuests[countQuest].name);
 
-                    if (QuestMenu_CheckHasChildren(countQuest)){
-                        questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_SubQuestButton);
-                    }
-                }
-                else
-                    questNamePointer = StringAppend(questNameArray[countQuest], sText_QuestMenu_Unk);
-                    */
+                   if (QuestMenu_CheckHasChildren(countQuest)){
+                   questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_SubQuestButton);
+                   }
+                   }
+                   else
+                   questNamePointer = StringAppend(questNameArray[countQuest], sText_QuestMenu_Unk);
+                   */
                 sListMenuItems[newRow].name = sSideQuests[countQuest].name;
                 MgbaPrintf(MGBA_LOG_DEBUG,"newrow: %u, countquest: %u",newRow,countQuest);
                 sListMenuItems[newRow].id = countQuest;
-                sStateDataPtr->filteredMapping[newRow] = countQuest;
             }
         }
         lastRow = numRow + offset;
@@ -947,20 +945,10 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
 
         if (itemIndex != LIST_CANCEL)
         {
-
-
             if (!QuestMenu_CheckSubquestMode()){
 
                 if (GetSetQuestFlag(itemIndex, FLAG_GET_UNLOCKED))
                 {
-                    //If the quest is unlocked, AND we're not in normal mode, 
-                    //don't use the position of the cursor, look at the filtermap 
-                    //to look up the quest in that row
-
-                    /*
-                    if (!QuestMenu_CheckDefaultMode())
-                        itemIndex = sStateDataPtr->filteredMapping[itemIndex];
-                        */
 
                     //Look up the quest struct and get the description with this quest
                     if (GetSetQuestFlag(itemIndex, FLAG_GET_REWARD))
@@ -1518,29 +1506,15 @@ static void Task_QuestMenuMain(u8 taskId)
 
             default:
                 if (!QuestMenu_CheckSubquestMode()){
-                    if (!QuestMenu_CheckDefaultMode()){
-                        if(QuestMenu_CheckHasChildren(sStateDataPtr->filteredMapping[input])){
-                            PlaySE(SE_SELECT);
-                            QuestMenu_RemoveScrollIndicatorArrowPair();
-                            sStateDataPtr->parentQuest = sStateDataPtr->filteredMapping[input];
-                            subquest = TRUE;
-                            QuestMenu_SetMode(subquest);
-                            QuestMenu_SaveScrollAndRow(data);
-                            Task_QuestMenuCleanUp(taskId);
-                            QuestMenu_ResetSavedRowScrollToTop(data);
-                        }
-                    }
-                    else {
-                        if(QuestMenu_CheckHasChildren(input)){
-                            PlaySE(SE_SELECT);
-                            QuestMenu_RemoveScrollIndicatorArrowPair();
-                            sStateDataPtr->parentQuest = input;
-                            subquest = TRUE;
-                            QuestMenu_SetMode(subquest);
-                            QuestMenu_SaveScrollAndRow(data);
-                            Task_QuestMenuCleanUp(taskId);
-                            QuestMenu_ResetSavedRowScrollToTop(data);
-                        }
+                    if(QuestMenu_CheckHasChildren(input)){
+                        PlaySE(SE_SELECT);
+                        QuestMenu_RemoveScrollIndicatorArrowPair();
+                        sStateDataPtr->parentQuest = sListMenuItems[input].id;
+                        subquest = TRUE;
+                        QuestMenu_SetMode(subquest);
+                        QuestMenu_SaveScrollAndRow(data);
+                        Task_QuestMenuCleanUp(taskId);
+                        QuestMenu_ResetSavedRowScrollToTop(data);
                     }
                 }
                 break;
@@ -1714,10 +1688,6 @@ s8 ChangeSubQuestFlags(u8 quest, u8 caseId, u8 childQuest)
 
 s8 QuestMenu_ManageFavoriteQuests(u8 selectedQuestId)
 {
-        MgbaPrintf(MGBA_LOG_DEBUG,"selectedQuestId %u",selectedQuestId);
-    if (!QuestMenu_CheckDefaultMode())
-        selectedQuestId = sStateDataPtr->filteredMapping[selectedQuestId];
-
     if (GetSetQuestFlag(selectedQuestId,FLAG_GET_FAVORITE))
         GetSetQuestFlag(selectedQuestId, FLAG_REMOVE_FAVORITE);
     else
