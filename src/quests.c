@@ -106,6 +106,7 @@ s8 QuestMenu_CountActiveQuests(void);
 s8 QuestMenu_CountRewardQuests(void);
 s8 QuestMenu_CountCompletedQuests(void);
 s8 QuestMenu_CountFavoriteQuests(void);
+s8 QuestMenu_CountFavoriteAndState(void);
 static void QuestMenu_PrintHeader(void);
 static void QuestMenu_PlaceTopMenuScrollIndicatorArrows(void);
 static void QuestMenu_SetCursorPosition(void);
@@ -775,7 +776,7 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
                     newRow = numRow;
                     numRow++;
                 } else {
-                    newRow = QuestMenu_CountFavoriteQuests() + offset;
+                    newRow = QuestMenu_CountFavoriteAndState() + offset;
                     offset++;
                 }
 
@@ -1143,6 +1144,19 @@ s8 QuestMenu_CountFavoriteQuests(void)
 
     for (i = 0; i < SIDE_QUEST_COUNT; i++){
         if (GetSetQuestFlag(i,FLAG_GET_FAVORITE)) {
+            q++;
+        }
+    }
+    return q;
+}
+
+s8 QuestMenu_CountFavoriteAndState(void)
+{
+    u8 i;
+    u8 q = 0;
+
+    for (i = 0; i < SIDE_QUEST_COUNT; i++){
+        if (GetSetQuestFlag(i,sStateDataPtr->filterMode) && GetSetQuestFlag(i,FLAG_GET_FAVORITE)){
             q++;
         }
     }
