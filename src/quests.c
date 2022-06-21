@@ -53,29 +53,27 @@
 #define tBldYBak        data[8]
 
 struct QuestMenuResources
-//PSF TODO proeprly account for size here
 {
-    /*0x00*/ MainCallback savedCallback;
-    /*0x04*/ u8 moveModeOrigPos;
-    /*0x05*/ u8 itemMenuIconSlot;
-    /*0x06*/ u8 maxShowed;
-    /*0x07*/ u8 nItems;
-    /*0x08*/ u8 scrollIndicatorArrowPairId;
-    /*0x0C*/ s16 data[3];
-    /*0x0F*/ u8 filterMode;
-    /*?x??*/ u8 parentQuest;
-}; /* size = 0x17 */
+    MainCallback savedCallback;
+    u8 moveModeOrigPos;
+    u8 itemMenuIconSlot;
+    u8 maxShowed;
+    u8 nItems;
+    u8 scrollIndicatorArrowPairId;
+    s16 data[3];
+    u8 filterMode;
+    u8 parentQuest;
+};
 
 struct QuestMenuStaticResources
-//PSF TODO proeprly account for size here
 {
-    /*0x00*/ MainCallback savedCallback;
-    /*0x04*/ u16 scroll;
-    /*0x06*/ u16 row;
-    /*0x08*/ u8 initialized;
-    /*?x??*/ u16 storedScrollOffset;
-    /*?x??*/ u16 storedRowPosition;
-};  /* size = 0xC */
+    MainCallback savedCallback;
+    u16 scroll;
+    u16 row;
+    u8 initialized;
+    u16 storedScrollOffset;
+    u16 storedRowPosition;
+};
 
 // RAM
 EWRAM_DATA static struct QuestMenuResources *sStateDataPtr = NULL;
@@ -681,7 +679,7 @@ static s8 QuestMenu_CheckHasChildren(u16 itemId){
 static u8 QuestMenu_GenerateTotalItems(u8 mode)
 {
 
-    u16 parentQuest = sStateDataPtr->parentQuest;
+    u8 parentQuest = sStateDataPtr->parentQuest;
 
     switch(mode){
         case SORT_DEFAULT:
@@ -731,15 +729,15 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 {
     //PSF TODO Inactive quests shows quests that are UNLOCKED but not active, should show both
     //PSF TODO Clicking on quest 2 while filtered goes to subquest3
-    u16 parentQuest = sStateDataPtr->parentQuest;
+    u8 parentQuest = sStateDataPtr->parentQuest;
     u16 countQuest, numRow = 0;
     u8 lastRow, newRow, offset = 0;
 
-    bool8 usePointer = TRUE;
+    bool8 usePointer = FALSE;
 
     u8 questNameArray[SIDE_QUEST_COUNT][32];
     //u8 *questNamePointer = Alloc(sizeof(u8) * SIDE_QUEST_COUNT);
-    void *questNamePointer = Alloc(sizeof(u8) * SIDE_QUEST_COUNT);
+    void *questNamePointer = AllocZeroed(sizeof(u8) * 3 * SIDE_QUEST_COUNT);
 
     if (usePointer){
 
@@ -785,8 +783,6 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
                         questNamePointer = StringAppend(questNameArray[countQuest], sSideQuests[countQuest].name);
 
                         if (QuestMenu_CheckHasChildren(countQuest)){
-                            *questNamePointer++ = CHAR_SPACE;
-                            *questNamePointer++ = CHAR_SPACE;
                             questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_SubQuestButton);
                         }
                     }
@@ -1019,7 +1015,7 @@ void DestroyObjectMenuIcon(u8 idx)
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list)
 {
     u16 itemId;
-    u16 parentQuest = sStateDataPtr->parentQuest;
+    u8 parentQuest = sStateDataPtr->parentQuest;
     const u8 * desc;
 
     if (onInit != TRUE)
@@ -1097,7 +1093,7 @@ static void QuestMenu_PrintProgressFunc(u8 windowId, u32 itemId, u8 y)
 {
     u8 colorIndex = 0;
     u8 questType;
-    u16 parentQuest = sStateDataPtr->parentQuest;
+    u8 parentQuest = sStateDataPtr->parentQuest;
     questType = sSideQuests[parentQuest].childtype;
 
     if (sStateDataPtr->moveModeOrigPos != 0xFF)
@@ -1254,7 +1250,7 @@ s8 QuestMenu_CountCompletedQuests(void)
     u8 q = 0;
 
     u8 mode = sStateDataPtr->filterMode;
-    u16 parentQuest = sStateDataPtr->parentQuest;
+    u8 parentQuest = sStateDataPtr->parentQuest;
 
     if (mode > SORT_DONE){
         for (i = 0; i < sSideQuests[parentQuest].numSubquests; i++){
@@ -1608,7 +1604,7 @@ static void Task_QuestMenuMain(u8 taskId)
                     if(QuestMenu_CheckHasChildren(input)){
                         PlaySE(SE_SELECT);
                         QuestMenu_RemoveScrollIndicatorArrowPair();
-                        sStateDataPtr->parentQuest = sListMenuItems[input].id;
+                        sStateDataPtr->parentQuest = input;
                         subquest = TRUE;
                         QuestMenu_SetMode(subquest);
                         QuestMenu_SaveScrollAndRow(data);
