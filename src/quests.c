@@ -728,7 +728,6 @@ static void QuestMenu_AssignCancelNameAndId(u8 numRow){
 static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 {
     //PSF TODO Inactive quests shows quests that are UNLOCKED but not active, should show both
-    //PSF TODO Clicking on quest 2 while filtered goes to subquest3
     u8 parentQuest = sStateDataPtr->parentQuest;
     u16 countQuest, numRow = 0;
     u8 lastRow, newRow, offset = 0;
@@ -1582,8 +1581,6 @@ static void Task_QuestMenuMain(u8 taskId)
                     }
                 }
                 break;
-
-                //PSF TODO figure out if we added LIST_SORT or not
 
             case LIST_CANCEL:
                 if (mode > SORT_DONE){
