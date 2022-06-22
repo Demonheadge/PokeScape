@@ -1741,7 +1741,6 @@ void Task_OpenQuestMenuFromStartMenu(u8 taskId)
     }
 }
 
-//PSF TODO add scrcmd for alerting subquests
 s8 ChangeSubQuestFlags(u8 quest, u8 caseId, u8 childQuest)
 {
     u8 index;

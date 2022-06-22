@@ -2370,23 +2370,21 @@ bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
 bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
 {
     u8 caseId = ScriptReadByte(ctx);
-    //u8 parentId = VarGet(ScriptReadByte(ctx));
-    //u8 childId = VarGet(ScriptReadByte(ctx));
-    u8 parentId = ScriptReadByte(ctx);
-    u8 childId= ScriptReadByte(ctx);
+    u8 parentId = VarGet(ScriptReadHalfword(ctx));
+    u8 childId = VarGet(ScriptReadHalfword(ctx));
 
     switch (caseId)
     {
         case QUEST_MENU_COMPLETE_QUEST:
-        ChangeSubQuestFlags(parentId ,FLAG_SET_COMPLETED,childId);
-        break;
-    case QUEST_MENU_CHECK_COMPLETE:
-        if (ChangeSubQuestFlags(parentId ,FLAG_GET_COMPLETED,childId))
-            gSpecialVar_Result = TRUE;
-        else
-            gSpecialVar_Result = FALSE;
-        break;
+            ChangeSubQuestFlags(parentId ,FLAG_SET_COMPLETED,childId);
+            break;
+        case QUEST_MENU_CHECK_COMPLETE:
+            if (ChangeSubQuestFlags(parentId ,FLAG_GET_COMPLETED,childId))
+                gSpecialVar_Result = TRUE;
+            else
+                gSpecialVar_Result = FALSE;
+            break;
     }
-    
+
     return TRUE;
 }

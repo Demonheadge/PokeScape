@@ -61,9 +61,11 @@ LilycoveCity_PokemonCenter_1F_EventScript_Boy::
     questmenu QUEST_MENU_SET_ACTIVE,SIDE_QUEST_8
     questmenu QUEST_MENU_SET_REWARD,SIDE_QUEST_8
 
-    //subquestmenu QUEST_MENU_COMPLETE_QUEST,SIDE_QUEST_1,2
-    //subquestmenu QUEST_MENU_COMPLETE_QUEST,SIDE_QUEST_1,3
-    //subquestmenu QUEST_MENU_COMPLETE_QUEST,SIDE_QUEST_2,9
+    subquestmenu QUEST_MENU_COMPLETE_QUEST,SIDE_QUEST_1,2
+    subquestmenu QUEST_MENU_COMPLETE_QUEST,SIDE_QUEST_1,3
+    subquestmenu QUEST_MENU_COMPLETE_QUEST,SIDE_QUEST_2,9
+
+    setflag FLAG_SYS_QUEST_MENU_GET
 
     openquestmenu
 	end

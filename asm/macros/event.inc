@@ -1738,8 +1738,8 @@
     .macro subquestmenu case:req, parentId:req, childId:req
     .byte 0xe4
     .byte \case
-    .byte \parentId
-    .byte \childId
+    .2byte \parentId
+    .2byte \childId
     .endm
     
     .macro openquestmenu
