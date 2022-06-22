@@ -562,7 +562,7 @@ static bool8 QuestMenu_DoGfxSetup(void)
             {
                 BeginPCScreenEffect_TurnOn(0, 0, 0);
                 QuestMenu_SetInitializedFlag(1);
-                PlaySE(SE_PC_LOGIN);
+                //PlaySE(SE_PC_LOGIN);
             }
             gMain.state++;
             break;
@@ -1767,10 +1767,8 @@ s8 ChangeSubQuestFlags(u8 quest, u8 caseId, u8 childQuest)
     switch (caseId)
     {
         case FLAG_GET_COMPLETED:
-            //return gSaveBlock2Ptr->subQuests[index][childIndex] & childMask;
             return gSaveBlock2Ptr->subQuests[quest][childIndex] & childMask;
         case FLAG_SET_COMPLETED:
-            //gSaveBlock2Ptr->subQuests[index][childIndex] |= childMask;
             gSaveBlock2Ptr->subQuests[quest][childIndex] |= childMask;
             return 1;
     }

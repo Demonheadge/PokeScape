@@ -13,6 +13,8 @@
 #define QUEST_MENU_CHECK_COMPLETE       8   //checks if questId has been completed. Returns result to gSpecialVar_Result
 #define QUEST_MENU_SET_REWARD           9   //questId = SIDE_QUEST_X (0-indexed)
 #define QUEST_MENU_CHECK_REWARD         10  //checks if questId is in Reward state. Returns result to gSpecialVar_Result
+#define QUEST_MENU_SUB_CHECK_COMPLETE 11 //checks is subquest belonging to questId is complete
+#define QUEST_MENU_SUB_COMPLETE_QUEST 12 //marks subquest belonging to questId as complete
 
 // quest number defines
 #define SIDE_QUEST_1          0
@@ -46,6 +48,37 @@
 #define SIDE_QUEST_29        28
 #define SIDE_QUEST_30        29
 #define SIDE_QUEST_COUNT     (SIDE_QUEST_30 + 1)
+
+#define SUB_QUEST_1          0
+#define SUB_QUEST_2          1
+#define SUB_QUEST_3          2
+#define SUB_QUEST_4          3
+#define SUB_QUEST_5          4
+#define SUB_QUEST_6          5
+#define SUB_QUEST_7          6
+#define SUB_QUEST_8          7
+#define SUB_QUEST_9          8
+#define SUB_QUEST_10         9
+#define SUB_QUEST_11        10
+#define SUB_QUEST_12        11
+#define SUB_QUEST_13        12
+#define SUB_QUEST_14        13
+#define SUB_QUEST_15        14
+#define SUB_QUEST_16        15
+#define SUB_QUEST_17        16
+#define SUB_QUEST_18        17
+#define SUB_QUEST_19        18
+#define SUB_QUEST_20        19
+#define SUB_QUEST_21        20
+#define SUB_QUEST_22        21
+#define SUB_QUEST_23        22
+#define SUB_QUEST_24        23
+#define SUB_QUEST_25        24
+#define SUB_QUEST_26        25
+#define SUB_QUEST_27        26
+#define SUB_QUEST_28        27
+#define SUB_QUEST_29        28
+#define SUB_QUEST_30        29
 
 #define SUB_QUEST_1_COUNT 10
 #define SUB_QUEST_2_COUNT 20
