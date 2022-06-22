@@ -13,8 +13,6 @@
 #define QUEST_MENU_CHECK_COMPLETE       8   //checks if questId has been completed. Returns result to gSpecialVar_Result
 #define QUEST_MENU_SET_REWARD           9   //questId = SIDE_QUEST_X (0-indexed)
 #define QUEST_MENU_CHECK_REWARD         10  //checks if questId is in Reward state. Returns result to gSpecialVar_Result
-#define QUEST_MENU_SUB_CHECK_COMPLETE 11 //checks is subquest belonging to questId is complete
-#define QUEST_MENU_SUB_COMPLETE_QUEST 12 //marks subquest belonging to questId as complete
 
 // quest number defines
 #define SIDE_QUEST_1          0

@@ -1734,11 +1734,17 @@
     .byte \case
     .byte \questId
     .endm
+
+    .macro subquestmenu case:req, parentId:req, childId:req
+    .byte 0xe4
+    .byte \case
+    .byte \parentId
+    .byte \childId
+    .endm
     
     .macro openquestmenu
     questmenu 0 0
     .endm
-
 
 @ Supplementary
 

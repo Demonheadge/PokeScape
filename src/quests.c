@@ -1659,10 +1659,6 @@ static void Task_QuestMenuCleanUp(u8 taskId)
 {
     s16 * data = gTasks[taskId].data;
 
-    ChangeSubQuestFlags(SIDE_QUEST_1,FLAG_SET_COMPLETED,2);
-    ChangeSubQuestFlags(SIDE_QUEST_1,FLAG_SET_COMPLETED,3);
-    ChangeSubQuestFlags(SIDE_QUEST_2,FLAG_SET_COMPLETED,9);
-
     DestroyListMenuTask(data[0], &sListMenuState.scroll, &sListMenuState.row);
     QuestMenu_PlaceTopMenuScrollIndicatorArrows();
     ClearStdWindowAndFrameToTransparent(2, FALSE);
