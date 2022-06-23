@@ -156,6 +156,7 @@ static const u8 sText_QuestMenu_DotSpace[] = _(". ");
 static const u8 sText_QuestMenu_Close[] = _("Close");
 static const u8 sText_QuestMenu_GreenColor[] = _("{COLOR}{GREEN}");
 
+//remove POC from structs
 #define sub_quest(n, d, p, m, o) {.name = n, .desc = d, .poc = p, .map = m, .object = o}
 static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
 {
