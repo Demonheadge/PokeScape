@@ -1884,6 +1884,39 @@ const u8 gText_SideQuestDesc_27[] = _("Description 27");
 const u8 gText_SideQuestDesc_28[] = _("Description 28");
 const u8 gText_SideQuestDesc_29[] = _("Description 29");
 const u8 gText_SideQuestDesc_30[] = _("Description 30");
+
+//completed quest description
+const u8 gText_SideQuestDoneDesc_1[] = _("Completed Quest 1");
+const u8 gText_SideQuestDoneDesc_2[] = _("Completed Quest 2");
+const u8 gText_SideQuestDoneDesc_3[] = _("Completed Quest 3");
+const u8 gText_SideQuestDoneDesc_4[] = _("Completed Quest 4");
+const u8 gText_SideQuestDoneDesc_5[] = _("Completed Quest 5");
+const u8 gText_SideQuestDoneDesc_6[] = _("Completed Quest 6");
+const u8 gText_SideQuestDoneDesc_7[] = _("Completed Quest 7");
+const u8 gText_SideQuestDoneDesc_8[] = _("Completed Quest 8");
+const u8 gText_SideQuestDoneDesc_9[] = _("Completed Quest 9");
+const u8 gText_SideQuestDoneDesc_10[] = _("Completed Quest 10");
+const u8 gText_SideQuestDoneDesc_11[] = _("Completed Quest 11");
+const u8 gText_SideQuestDoneDesc_12[] = _("Completed Quest 12");
+const u8 gText_SideQuestDoneDesc_13[] = _("Completed Quest 13");
+const u8 gText_SideQuestDoneDesc_14[] = _("Completed Quest 14");
+const u8 gText_SideQuestDoneDesc_15[] = _("Completed Quest 15");
+const u8 gText_SideQuestDoneDesc_16[] = _("Completed Quest 16");
+const u8 gText_SideQuestDoneDesc_17[] = _("Completed Quest 17");
+const u8 gText_SideQuestDoneDesc_18[] = _("Completed Quest 18");
+const u8 gText_SideQuestDoneDesc_19[] = _("Completed Quest 19");
+const u8 gText_SideQuestDoneDesc_20[] = _("Completed Quest 20");
+const u8 gText_SideQuestDoneDesc_21[] = _("Completed Quest 21");
+const u8 gText_SideQuestDoneDesc_22[] = _("Completed Quest 22");
+const u8 gText_SideQuestDoneDesc_23[] = _("Completed Quest 23");
+const u8 gText_SideQuestDoneDesc_24[] = _("Completed Quest 24");
+const u8 gText_SideQuestDoneDesc_25[] = _("Completed Quest 25");
+const u8 gText_SideQuestDoneDesc_26[] = _("Completed Quest 26");
+const u8 gText_SideQuestDoneDesc_27[] = _("Completed Quest 27");
+const u8 gText_SideQuestDoneDesc_28[] = _("Completed Quest 28");
+const u8 gText_SideQuestDoneDesc_29[] = _("Completed Quest 29");
+const u8 gText_SideQuestDoneDesc_30[] = _("Completed Quest 30");
+
 //point of contact
 const u8 gText_SideQuestPOC_1[] = _("POC 1");
 const u8 gText_SideQuestPOC_2[] = _("POC 2");

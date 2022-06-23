@@ -25,6 +25,7 @@ struct SideQuest
 {
     /*0x00*/ const u8* name;
     /*0x04*/ const u8* desc;
+    /*0x04*/ const u8* donedesc;
     /*0x08*/ const u8* poc;
     /*0x0C*/ const u8* map;
     u8 object;

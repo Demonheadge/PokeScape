@@ -3053,6 +3053,39 @@ extern const u8 gText_SideQuestDesc_27[];
 extern const u8 gText_SideQuestDesc_28[];
 extern const u8 gText_SideQuestDesc_29[];
 extern const u8 gText_SideQuestDesc_30[];
+
+//completed quest description
+extern const u8 gText_SideQuestDoneDesc_1[];
+extern const u8 gText_SideQuestDoneDesc_2[];
+extern const u8 gText_SideQuestDoneDesc_3[];
+extern const u8 gText_SideQuestDoneDesc_4[];
+extern const u8 gText_SideQuestDoneDesc_5[];
+extern const u8 gText_SideQuestDoneDesc_6[];
+extern const u8 gText_SideQuestDoneDesc_7[];
+extern const u8 gText_SideQuestDoneDesc_8[];
+extern const u8 gText_SideQuestDoneDesc_9[];
+extern const u8 gText_SideQuestDoneDesc_10[];
+extern const u8 gText_SideQuestDoneDesc_11[];
+extern const u8 gText_SideQuestDoneDesc_12[];
+extern const u8 gText_SideQuestDoneDesc_13[];
+extern const u8 gText_SideQuestDoneDesc_14[];
+extern const u8 gText_SideQuestDoneDesc_15[];
+extern const u8 gText_SideQuestDoneDesc_16[];
+extern const u8 gText_SideQuestDoneDesc_17[];
+extern const u8 gText_SideQuestDoneDesc_18[];
+extern const u8 gText_SideQuestDoneDesc_19[];
+extern const u8 gText_SideQuestDoneDesc_20[];
+extern const u8 gText_SideQuestDoneDesc_21[];
+extern const u8 gText_SideQuestDoneDesc_22[];
+extern const u8 gText_SideQuestDoneDesc_23[];
+extern const u8 gText_SideQuestDoneDesc_24[];
+extern const u8 gText_SideQuestDoneDesc_25[];
+extern const u8 gText_SideQuestDoneDesc_26[];
+extern const u8 gText_SideQuestDoneDesc_27[];
+extern const u8 gText_SideQuestDoneDesc_28[];
+extern const u8 gText_SideQuestDoneDesc_29[];
+extern const u8 gText_SideQuestDoneDesc_30[];
+
 //point of contact
 extern const u8 gText_SideQuestPOC_1[];
 extern const u8 gText_SideQuestPOC_2[];
