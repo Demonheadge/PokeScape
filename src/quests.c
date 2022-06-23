@@ -156,7 +156,7 @@ static const u8 sText_QuestMenu_DotSpace[] = _(". ");
 static const u8 sText_QuestMenu_Close[] = _("Close");
 static const u8 sText_QuestMenu_GreenColor[] = _("{COLOR}{GREEN}");
 
-//remove POC from structs
+//PSF TODO remove POC from structs
 #define sub_quest(n, d, p, m, o) {.name = n, .desc = d, .poc = p, .map = m, .object = o}
 static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
 {
@@ -979,8 +979,6 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
                 CreateObjectMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
             }
 
-
-
             StringExpandPlaceholders(gStringVar4, sText_QuestMenu_ShowLocation);
             StringExpandPlaceholders(gStringVar3, gStringVar1);
 
@@ -989,8 +987,7 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
         }
         else
         {
-            //PSF TODO figure out why go to field arrow doesn't print here
-            CreateItemMenuIcon(ITEM_FIELD_ARROW, sStateDataPtr->itemMenuIconSlot);
+            CreateItemMenuIcon(-1, sStateDataPtr->itemMenuIconSlot);
             StringCopy(gStringVar4, sText_Empty);
             StringCopy(gStringVar3, sText_Empty);
         }
