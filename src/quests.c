@@ -350,92 +350,6 @@ static void QuestMenu_RunSetup(void)
     }
 }
 
-// PSF TODO remove PC screen effect on boot
-// from pc_screen_effect
-static void BeginPCScreenEffect(TaskFunc task, u16 a1, u16 a2, u16 priority)
-{
-    u8 taskId = CreateTask(task, priority);
-    gTasks[taskId].data[0] = 0;
-    if (a1 == 0)
-        gTasks[taskId].data[1] = 16;
-    else
-        gTasks[taskId].data[1] = 0;
-
-    if (a1 == 0)
-        gTasks[taskId].data[2] = 20;
-    else
-        gTasks[taskId].data[2] = 0;
-
-    gTasks[taskId].func(taskId);
-}
-
-/// from pc_screen_effect
-static void Task_PCScreenEffect_TurnOn(u8 taskId)
-{
-    struct Task *task = &gTasks[taskId];
-
-    switch (task->tState)
-    {
-        case 0:
-            task->tWin0Left = 120;
-            task->tWin0Right = 120;
-            task->tWin0Top = 80;
-            task->tWin0Bottom = 81;
-            SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
-            SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(task->tWin0Left, task->tWin0Right));
-            SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(task->tWin0Top, task->tWin0Bottom));
-            SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN0_CLR);
-            SetGpuReg(REG_OFFSET_WINOUT, 0);
-            break;
-        case 1:
-            task->tBldCntBak = GetGpuReg(REG_OFFSET_BLDCNT);
-            task->tBldYBak = GetGpuReg(REG_OFFSET_BLDY);
-            SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_TGT1_BG1 | BLDCNT_TGT1_BG2 | BLDCNT_TGT1_BG3 | BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BD | BLDCNT_EFFECT_LIGHTEN);
-            SetGpuReg(REG_OFFSET_BLDY, 16);
-            break;
-        case 2:
-            task->tWin0Left -= task->tXSpeed;
-            task->tWin0Right += task->tXSpeed;
-            if (task->tWin0Left <= 0 || task->tWin0Right >= DISPLAY_WIDTH)
-            {
-                task->tWin0Left = 0;
-                task->tWin0Right = DISPLAY_WIDTH;
-                SetGpuReg(REG_OFFSET_BLDY, 0);
-                SetGpuReg(REG_OFFSET_BLDCNT, task->tBldCntBak);
-                BlendPalettes(0xFFFFFFFF, 0, RGB_BLACK);
-                gPlttBufferFaded[0] = 0;
-            }
-            SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(task->tWin0Left, task->tWin0Right));
-            if (task->tWin0Left)
-                return;
-            break;
-        case 3:
-            task->tWin0Top -= task->tYSpeed;
-            task->tWin0Bottom += task->tYSpeed;
-            if (task->tWin0Top <= 0 || task->tWin0Bottom >= DISPLAY_HEIGHT)
-            {
-                task->tWin0Top = 0;
-                task->tWin0Bottom = DISPLAY_HEIGHT;
-                ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
-            }
-            SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(task->tWin0Top, task->tWin0Bottom));
-            if (task->tWin0Top)
-                return;
-            break;
-        default:
-            SetGpuReg(REG_OFFSET_BLDCNT, task->tBldCntBak);
-            DestroyTask(taskId);
-            return;
-    }
-    ++task->tState;
-}
-
-// from pc_screen_effect
-static void BeginPCScreenEffect_TurnOn(u16 a0, u16 a1, u16 a2)
-{
-    BeginPCScreenEffect(Task_PCScreenEffect_TurnOn, a0, a1, a2);
-}
-
 static bool8 QuestMenu_DoGfxSetup(void)
 {
     u8 taskId;
@@ -560,9 +474,9 @@ static bool8 QuestMenu_DoGfxSetup(void)
             }
             else
             {
-                BeginPCScreenEffect_TurnOn(0, 0, 0);
+
+                BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
                 QuestMenu_SetInitializedFlag(1);
-                //PlaySE(SE_PC_LOGIN);
             }
             gMain.state++;
             break;
@@ -1358,71 +1272,6 @@ static void QuestMenu_FreeResources(void)
     FreeAllWindowBuffers();
 }
 
-// pc_screen_effect
-static void Task_PCScreenEffect_TurnOff(u8 taskId)
-{
-    struct Task *task = &gTasks[taskId];
-
-    switch (task->tState)
-    {
-        case 0:
-            gPlttBufferFaded[0] = 0;
-            break;
-        case 1:
-            task->tWin0Left = 0;
-            task->tWin0Right = DISPLAY_WIDTH;
-            task->tWin0Top = 0;
-            task->tWin0Bottom = DISPLAY_HEIGHT;
-            SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
-            SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(task->tWin0Left, task->tWin0Right));
-            SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(task->tWin0Top, task->tWin0Bottom));
-            SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_BG_ALL | WININ_WIN0_OBJ | WININ_WIN0_CLR);
-            SetGpuReg(REG_OFFSET_WINOUT, 0);
-            break;
-        case 2:
-            task->tWin0Top += task->tYSpeed;
-            task->tWin0Bottom -= task->tYSpeed;
-            if (task->tWin0Top >= 80 || task->tWin0Bottom <= 81)
-            {
-                task->tWin0Top = 80;
-                task->tWin0Bottom = 81;
-                SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_TGT1_BG1 | BLDCNT_TGT1_BG2 | BLDCNT_TGT1_BG3 | BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BD | BLDCNT_EFFECT_LIGHTEN);
-                SetGpuReg(REG_OFFSET_BLDY, 16);
-            }
-            SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(task->tWin0Top, task->tWin0Bottom));
-            if (task->tWin0Top != 80)
-                return;
-            break;
-        case 3:
-            task->tWin0Left += task->tXSpeed;
-            task->tWin0Right -= task->tXSpeed;
-            if (task->tWin0Left >= 120 || task->tWin0Right <= 120)
-            {
-                task->tWin0Left = 120;
-                task->tWin0Right = 120;
-                BlendPalettes(0xFFFFFFFF, 0x10, RGB_BLACK);
-                gPlttBufferFaded[0] = 0;
-            }
-            SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(task->tWin0Left, task->tWin0Right));
-            if (task->tWin0Left != 120)
-                return;
-            break;
-        default:
-            ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
-            SetGpuReg(REG_OFFSET_BLDY, 0);
-            SetGpuReg(REG_OFFSET_BLDCNT, 0);
-            DestroyTask(taskId);
-            return;
-    }
-    ++task->tState;
-}
-
-// pc_screen_effect
-static void BeginPCScreenEffect_TurnOff(u16 a0, u16 a1, u16 a2)
-{
-    BeginPCScreenEffect(Task_PCScreenEffect_TurnOff, a0, a1, a2);
-}
-
 static void Task_QuestMenuTurnOff1(u8 taskId)
 {
     if (sListMenuState.initialized == 1)
@@ -1431,24 +1280,17 @@ static void Task_QuestMenuTurnOff1(u8 taskId)
     }
     else
     {
-        BeginPCScreenEffect_TurnOff(0, 0, 0);
-        PlaySE(SE_PC_OFF);
+        BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
     }
 
     gTasks[taskId].func = Task_QuestMenuTurnOff2;
-}
-
-// pc_screen_effect
-static bool8 IsPCScreenEffectRunning_TurnOff(void)
-{
-    return FuncIsActiveTask(Task_PCScreenEffect_TurnOff);
 }
 
 static void Task_QuestMenuTurnOff2(u8 taskId)
 {
     s16 * data = gTasks[taskId].data;
 
-    if (!gPaletteFade.active && !IsPCScreenEffectRunning_TurnOff())
+    if (!gPaletteFade.active)
     {
         DestroyListMenuTask(data[0], &sListMenuState.scroll, &sListMenuState.row);
         if (sStateDataPtr->savedCallback != NULL)
@@ -1501,11 +1343,6 @@ static void QuestMenu_SetInitializedFlag(u8 a0)
     sListMenuState.initialized = a0;
 }
 
-static bool8 IsPCScreenEffectRunning_TurnOn(void)
-{
-    return FuncIsActiveTask(Task_PCScreenEffect_TurnOn);
-}
-
 static s8 QuestMenu_SetMode(bool8 subquest)
 {
     u8 mode = sStateDataPtr->filterMode;
@@ -1550,7 +1387,7 @@ static void Task_QuestMenuMain(u8 taskId)
     u8 mode = sStateDataPtr->filterMode;
     u8 selectedQuestId;
 
-    if (!gPaletteFade.active && !IsPCScreenEffectRunning_TurnOn())
+    if (!gPaletteFade.active)
     {
         input = ListMenu_ProcessInput(data[0]);
 
