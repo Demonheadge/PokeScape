@@ -648,7 +648,7 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
     u8 lastRow, newRow, offset = 0;
     u8 i;
 
-    bool8 usePointer = TRUE;
+    bool8 useNew = TRUE;
 
     questNameArray = Alloc(sizeof(void *) * SIDE_QUEST_COUNT);
 
@@ -656,32 +656,65 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
         questNameArray[i] = Alloc(sizeof(u8) * 32);
     }
 
-    if (QuestMenu_CheckSubquestMode())
-    {
-        countQuest = 0;
-        parentQuest = sStateDataPtr->parentQuest;
+    if (useNew){
 
-        for (numRow = 0; numRow < sSideQuests[parentQuest].numSubquests; numRow++)
+        //PSF TODO Need to implement a nice text fade here
+        if (QuestMenu_CheckSubquestMode())
         {
-            questNamePointer = ConvertIntToDecimalStringN(questNameArray[countQuest], countQuest + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
-            questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_DotSpace);
+            countQuest = 0;
+            parentQuest = sStateDataPtr->parentQuest;
 
-            if (ChangeSubQuestFlags(parentQuest, FLAG_GET_COMPLETED, countQuest))
-                questNamePointer = StringAppend(questNamePointer,sSideQuests[parentQuest].subquests[countQuest].name);
-            else
-                questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_Unk);
+            for (numRow = 0; numRow < sSideQuests[parentQuest].numSubquests; numRow++)
+            {
+                questNamePointer = ConvertIntToDecimalStringN(questNameArray[countQuest], countQuest + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
+                questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_DotSpace);
 
-            sListMenuItems[numRow].name = questNameArray[countQuest];
-            sListMenuItems[numRow].id = countQuest;
-            countQuest++;
-            lastRow = numRow+1;
+                if (ChangeSubQuestFlags(parentQuest, FLAG_GET_COMPLETED, countQuest))
+                    questNamePointer = StringAppend(questNamePointer,sSideQuests[parentQuest].subquests[countQuest].name);
+                else
+                    questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_Unk);
+
+                sListMenuItems[numRow].name = questNameArray[countQuest];
+                sListMenuItems[numRow].id = countQuest;
+                countQuest++;
+                lastRow = numRow+1;
+            }
         }
-    }
-    else if (!QuestMenu_CheckDefaultMode()){
+        else if (!QuestMenu_CheckDefaultMode()){
 
-        for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
-        {
-            if (GetSetQuestFlag(countQuest,sStateDataPtr->filterMode))
+            for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
+            {
+                if (GetSetQuestFlag(countQuest,sStateDataPtr->filterMode))
+                {
+                    questNamePointer = StringCopy(questNameArray[countQuest], sText_Empty);
+
+                    if (GetSetQuestFlag(countQuest, FLAG_GET_FAVORITE)){
+                        questNamePointer = StringAppend(questNameArray[countQuest], sText_QuestMenu_GreenColor);
+                        newRow = numRow;
+                        numRow++;
+                    } else {
+                        newRow = QuestMenu_CountFavoriteAndState() + offset;
+                        offset++;
+                    }
+
+                    if (GetSetQuestFlag(countQuest, FLAG_GET_UNLOCKED)){
+                        questNamePointer = StringAppend(questNameArray[countQuest], sSideQuests[countQuest].name);
+
+                        if (QuestMenu_CheckHasChildren(countQuest)){
+                            questNamePointer = StringAppend(questNameArray[countQuest],sText_QuestMenu_SubQuestButton);
+                        }
+                    }
+                    else
+                        StringAppend(questNameArray[countQuest], sText_QuestMenu_Unk);
+
+                    sListMenuItems[newRow].name = questNameArray[countQuest];
+                    sListMenuItems[newRow].id = countQuest;
+                }
+            }
+            lastRow = numRow + offset;
+        }
+        else {
+            for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
             {
                 questNamePointer = StringCopy(questNameArray[countQuest], sText_Empty);
 
@@ -689,8 +722,9 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
                     questNamePointer = StringAppend(questNameArray[countQuest], sText_QuestMenu_GreenColor);
                     newRow = numRow;
                     numRow++;
-                } else {
-                    newRow = QuestMenu_CountFavoriteAndState() + offset;
+                }
+                else {
+                    newRow = QuestMenu_CountFavoriteQuests() + offset;
                     offset++;
                 }
 
@@ -698,69 +732,147 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
                     questNamePointer = StringAppend(questNameArray[countQuest], sSideQuests[countQuest].name);
 
                     if (QuestMenu_CheckHasChildren(countQuest)){
-                        questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_SubQuestButton);
+                        questNamePointer = StringAppend(questNameArray[countQuest],sText_QuestMenu_SubQuestButton);
                     }
                 }
                 else
-                    questNamePointer = StringAppend(questNameArray[countQuest], sText_QuestMenu_Unk);
+                    StringAppend(questNameArray[countQuest], sText_QuestMenu_Unk);
 
-                sListMenuItems[newRow].name = sSideQuests[countQuest].name;
+                sListMenuItems[newRow].name = questNameArray[countQuest];
                 sListMenuItems[newRow].id = countQuest;
+                lastRow = numRow + offset;
             }
         }
-        lastRow = numRow + offset;
+
+        QuestMenu_AssignCancelNameAndId(lastRow);
+
+        gMultiuseListMenuTemplate.totalItems = QuestMenu_GenerateTotalItems(sStateDataPtr->filterMode);
+        gMultiuseListMenuTemplate.items = sListMenuItems;
+        gMultiuseListMenuTemplate.windowId = 0;
+        gMultiuseListMenuTemplate.header_X = 0;
+        gMultiuseListMenuTemplate.cursor_X = 15;
+        gMultiuseListMenuTemplate.item_X = 23;
+        gMultiuseListMenuTemplate.lettersSpacing = 1;
+        gMultiuseListMenuTemplate.itemVerticalPadding = 2;
+        gMultiuseListMenuTemplate.upText_Y = 2;
+        gMultiuseListMenuTemplate.maxShowed = sStateDataPtr->maxShowed;
+        gMultiuseListMenuTemplate.fontId = 2;
+        gMultiuseListMenuTemplate.cursorPal = 1;
+        gMultiuseListMenuTemplate.fillValue = 0;
+        gMultiuseListMenuTemplate.cursorShadowPal = 0;
+        gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_MoveCursorFunc;
+        gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_PrintProgressFunc;
+        gMultiuseListMenuTemplate.scrollMultiple = 1;
+        gMultiuseListMenuTemplate.cursorKind = 0;
     }
     else {
-        for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
+
+        if (QuestMenu_CheckSubquestMode())
         {
-            questNamePointer = StringCopy(questNameArray[countQuest], sText_Empty);
+            countQuest = 0;
+            parentQuest = sStateDataPtr->parentQuest;
 
-            if (GetSetQuestFlag(countQuest, FLAG_GET_FAVORITE)){
-                questNamePointer = StringAppend(questNameArray[countQuest], sText_QuestMenu_GreenColor);
-                newRow = numRow;
-                numRow++;
+            for (numRow = 0; numRow < sSideQuests[parentQuest].numSubquests; numRow++)
+            {
+                questNamePointer = ConvertIntToDecimalStringN(questNameArray[countQuest], countQuest + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
+                questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_DotSpace);
+
+                if (ChangeSubQuestFlags(parentQuest, FLAG_GET_COMPLETED, countQuest))
+                    questNamePointer = StringAppend(questNamePointer,sSideQuests[parentQuest].subquests[countQuest].name);
+                else
+                    questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_Unk);
+
+                sListMenuItems[numRow].name = questNameArray[countQuest];
+                sListMenuItems[numRow].id = countQuest;
+                countQuest++;
+                lastRow = numRow+1;
             }
-            else {
-                newRow = QuestMenu_CountFavoriteQuests() + offset;
-                offset++;
-            }
+        }
+        else if (!QuestMenu_CheckDefaultMode()){
 
-            if (GetSetQuestFlag(countQuest, FLAG_GET_UNLOCKED)){
-                questNamePointer = StringAppend(questNameArray[countQuest], sSideQuests[countQuest].name);
+            for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
+            {
+                if (GetSetQuestFlag(countQuest,sStateDataPtr->filterMode))
+                {
+                    questNamePointer = StringCopy(questNameArray[countQuest], sText_Empty);
 
-                if (QuestMenu_CheckHasChildren(countQuest)){
-                    questNamePointer = StringAppend(questNameArray[countQuest],sText_QuestMenu_SubQuestButton);
+                    if (GetSetQuestFlag(countQuest, FLAG_GET_FAVORITE)){
+                        questNamePointer = StringAppend(questNameArray[countQuest], sText_QuestMenu_GreenColor);
+                        newRow = numRow;
+                        numRow++;
+                    } else {
+                        newRow = QuestMenu_CountFavoriteAndState() + offset;
+                        offset++;
+                    }
+
+                    if (GetSetQuestFlag(countQuest, FLAG_GET_UNLOCKED)){
+                        questNamePointer = StringAppend(questNameArray[countQuest], sSideQuests[countQuest].name);
+
+                        if (QuestMenu_CheckHasChildren(countQuest)){
+                            questNamePointer = StringAppend(questNamePointer,sText_QuestMenu_SubQuestButton);
+                        }
+                    }
+                    else
+                        questNamePointer = StringAppend(questNameArray[countQuest], sText_QuestMenu_Unk);
+
+                    sListMenuItems[newRow].name = sSideQuests[countQuest].name;
+                    sListMenuItems[newRow].id = countQuest;
                 }
             }
-            else
-                StringAppend(questNameArray[countQuest], sText_QuestMenu_Unk);
-
-            sListMenuItems[newRow].name = questNameArray[countQuest];
-            sListMenuItems[newRow].id = countQuest;
             lastRow = numRow + offset;
         }
+        else {
+            for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
+            {
+                questNamePointer = StringCopy(questNameArray[countQuest], sText_Empty);
+
+                if (GetSetQuestFlag(countQuest, FLAG_GET_FAVORITE)){
+                    questNamePointer = StringAppend(questNameArray[countQuest], sText_QuestMenu_GreenColor);
+                    newRow = numRow;
+                    numRow++;
+                }
+                else {
+                    newRow = QuestMenu_CountFavoriteQuests() + offset;
+                    offset++;
+                }
+
+                if (GetSetQuestFlag(countQuest, FLAG_GET_UNLOCKED)){
+                    questNamePointer = StringAppend(questNameArray[countQuest], sSideQuests[countQuest].name);
+
+                    if (QuestMenu_CheckHasChildren(countQuest)){
+                        questNamePointer = StringAppend(questNameArray[countQuest],sText_QuestMenu_SubQuestButton);
+                    }
+                }
+                else
+                    StringAppend(questNameArray[countQuest], sText_QuestMenu_Unk);
+
+                sListMenuItems[newRow].name = questNameArray[countQuest];
+                sListMenuItems[newRow].id = countQuest;
+                lastRow = numRow + offset;
+            }
+        }
+
+        QuestMenu_AssignCancelNameAndId(lastRow);
+
+        gMultiuseListMenuTemplate.totalItems = QuestMenu_GenerateTotalItems(sStateDataPtr->filterMode);
+        gMultiuseListMenuTemplate.items = sListMenuItems;
+        gMultiuseListMenuTemplate.windowId = 0;
+        gMultiuseListMenuTemplate.header_X = 0;
+        gMultiuseListMenuTemplate.cursor_X = 15;
+        gMultiuseListMenuTemplate.item_X = 23;
+        gMultiuseListMenuTemplate.lettersSpacing = 1;
+        gMultiuseListMenuTemplate.itemVerticalPadding = 2;
+        gMultiuseListMenuTemplate.upText_Y = 2;
+        gMultiuseListMenuTemplate.maxShowed = sStateDataPtr->maxShowed;
+        gMultiuseListMenuTemplate.fontId = 2;
+        gMultiuseListMenuTemplate.cursorPal = 1;
+        gMultiuseListMenuTemplate.fillValue = 0;
+        gMultiuseListMenuTemplate.cursorShadowPal = 0;
+        gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_MoveCursorFunc;
+        gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_PrintProgressFunc;
+        gMultiuseListMenuTemplate.scrollMultiple = 1;
+        gMultiuseListMenuTemplate.cursorKind = 0;
     }
-
-    QuestMenu_AssignCancelNameAndId(lastRow);
-
-    gMultiuseListMenuTemplate.totalItems = QuestMenu_GenerateTotalItems(sStateDataPtr->filterMode);
-    gMultiuseListMenuTemplate.items = sListMenuItems;
-    gMultiuseListMenuTemplate.windowId = 0;
-    gMultiuseListMenuTemplate.header_X = 0;
-    gMultiuseListMenuTemplate.cursor_X = 15;
-    gMultiuseListMenuTemplate.item_X = 23;
-    gMultiuseListMenuTemplate.lettersSpacing = 1;
-    gMultiuseListMenuTemplate.itemVerticalPadding = 2;
-    gMultiuseListMenuTemplate.upText_Y = 2;
-    gMultiuseListMenuTemplate.maxShowed = sStateDataPtr->maxShowed;
-    gMultiuseListMenuTemplate.fontId = 2;
-    gMultiuseListMenuTemplate.cursorPal = 1;
-    gMultiuseListMenuTemplate.fillValue = 0;
-    gMultiuseListMenuTemplate.cursorShadowPal = 0;
-    gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_MoveCursorFunc;
-    gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_PrintProgressFunc;
-    gMultiuseListMenuTemplate.scrollMultiple = 1;
-    gMultiuseListMenuTemplate.cursorKind = 0;
 }
 
 void CreateObjectMenuIcon(u16 itemId, u8 idx)
@@ -1550,18 +1662,16 @@ s8 GetSetQuestFlag(u8 quest, u8 caseId)
             gSaveBlock2Ptr->unlockedQuests[index] |= mask;
             return 1;
         case FLAG_GET_INACTIVE:
-            //PSF TODO change to return if NOT in activeQuests
-            return gSaveBlock2Ptr->inactiveQuests[index] & mask;
+            return !(gSaveBlock2Ptr->activeQuests[index] & mask) && \
+                !(gSaveBlock2Ptr->rewardQuests[index] & mask) && \
+                !(gSaveBlock2Ptr->completedQuests[index] & mask);
+        /*
         case FLAG_SET_INACTIVE:
             gSaveBlock2Ptr->inactiveQuests[index] |= mask;
             return 1;
         case FLAG_REMOVE_INACTIVE:
             gSaveBlock2Ptr->inactiveQuests[index] &= ~mask;
             return 1;
-            /*
-             * UNBOUND QUEST MENU ADDITION
-             * cases added for get/set active
-             * cases added for get/set reward
              */
         case FLAG_GET_ACTIVE:
             return gSaveBlock2Ptr->activeQuests[index] & mask;
@@ -1635,6 +1745,16 @@ void SetQuestMenuActive(void)
 void CopyQuestName(u8 *dst, u8 questId)
 {
     StringCopy(dst, sSideQuests[questId].name);
+}
+
+void ResetQuestMenuData(void)
+{
+    memset(&gSaveBlock2Ptr->unlockedQuests, 0, sizeof(gSaveBlock2Ptr->unlockedQuests));
+    memset(&gSaveBlock2Ptr->activeQuests, 0, sizeof(gSaveBlock2Ptr->activeQuests));
+    memset(&gSaveBlock2Ptr->rewardQuests, 0, sizeof(gSaveBlock2Ptr->rewardQuests));
+    memset(&gSaveBlock2Ptr->completedQuests, 0, sizeof(gSaveBlock2Ptr->completedQuests));
+    memset(&gSaveBlock2Ptr->subQuests, 0, sizeof(gSaveBlock2Ptr->subQuests));
+    memset(&gSaveBlock2Ptr->favoriteQuests, 0, sizeof(gSaveBlock2Ptr->favoriteQuests));
 }
 
 #undef tBldYBak
