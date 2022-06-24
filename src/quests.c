@@ -845,7 +845,7 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
     const u8 * desc;
 
     if (onInit != TRUE)
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BAG_CURSOR);
 
     if (sStateDataPtr->moveModeOrigPos == 0xFF)
     {
