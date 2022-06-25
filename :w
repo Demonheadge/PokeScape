@@ -652,9 +652,9 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
         questNameArray[i] = Alloc(sizeof(u8) * 32);
     }
 
+    //PSF TODO Need to implement a nice text fade here
     if (QuestMenu_CheckSubquestMode())
     {
-        //PSF TODO fade in everything on bg1 and the objects layer
         countQuest = 0;
         parentQuest = sStateDataPtr->parentQuest;
 
@@ -771,7 +771,6 @@ void CreateObjectMenuIcon(u16 itemId, u8 idx)
         FreeSpriteTilesByTag(102 + idx);
         FreeSpritePaletteByTag(102 + idx);
 
-
         spriteId = CreateObjectGraphicsSprite(itemId,SpriteCallbackDummy,20,132,0);
         if (spriteId != MAX_SPRITES)
         {
@@ -852,7 +851,6 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMen
         if (itemIndex != LIST_CANCEL)
         {
             if (!QuestMenu_CheckSubquestMode()){
-                //PSF TODO fade in everything on bg1 and the objects layer
 
                 if (GetSetQuestFlag(itemIndex, FLAG_GET_UNLOCKED))
                 {
@@ -930,7 +928,6 @@ static void QuestMenu_PrintProgressFunc(u8 windowId, u32 itemId, u8 y)
     if (itemId != LIST_CANCEL)
     {
         if (QuestMenu_CheckSubquestMode()){
-            //PSF TODO fade in everything on bg1 and the objects layer
             if (ChangeSubQuestFlags(parentQuest,FLAG_GET_COMPLETED,itemId)){
                 colorIndex = 2;
                 switch (questType){
@@ -1127,8 +1124,6 @@ static void QuestMenu_PrintHeader(void)
             StringCopy(gStringVar3,sSideQuests[parentQuest].name);
             break;
     }
-
-    //PSF TODO fade in everything on bg1 and the objects layer
     QuestMenu_AddTextPrinterParameterized(2, 0, gStringVar3, 21, 1, 0, 1, 0, 0);
 
     StringExpandPlaceholders(gStringVar4,sText_QuestMenu_QuestNumberDisplay);
@@ -1340,7 +1335,6 @@ static void Task_QuestMenuMain(u8 taskId)
             case LIST_CANCEL:
                 if (mode > SORT_DONE){
                     QuestMenu_RemoveScrollIndicatorArrowPair();
-                    //PSF TODO fade out everything on bg1 and the objects layer
                     subquest = FALSE;
                     QuestMenu_SetMode(subquest);
                     Task_QuestMenuCleanUp(taskId);
@@ -1355,15 +1349,21 @@ static void Task_QuestMenuMain(u8 taskId)
             default:
                 if (!QuestMenu_CheckSubquestMode()){
                     if(QuestMenu_CheckHasChildren(input)){
+                        //TODO implement fading of all text and object sprite for both coming and leaving subquest mode
                         PlaySE(SE_SELECT);
                         QuestMenu_RemoveScrollIndicatorArrowPair();
                         sStateDataPtr->parentQuest = input;
                         subquest = TRUE;
                         QuestMenu_SetMode(subquest);
                         QuestMenu_SaveScrollAndRow(data);
-                        //BeginNormalPaletteFade(~0x8000, 0, 16, 0, RGB_WHITEALPHA);
+                        
+                        //fade out everything on bg1 and the sprite object
 
-                        //PSF TODO fade out everything on bg1 and the objects layer
+                        BeginNormalPaletteFade(0, 0, 0, 16, RGB_BLACK);
+                        ShowBg(1);
+                        DestroyObjectMenuIcon(sStateDataPtr->itemMenuIconSlot ^ 1);
+                        DestroyItemMenuIcon(sStateDataPtr->itemMenuIconSlot ^ 1);
+
                         Task_QuestMenuCleanUp(taskId);
                         QuestMenu_ResetSavedRowScrollToTop(data);
                     }
