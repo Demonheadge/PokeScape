@@ -14,23 +14,22 @@
 
 struct SubQuest
 {
-    /*0x00*/ const u8* name;
-    /*0x04*/ const u8* desc;
-    /*0x0C*/ const u8* map;
-    /*0x18*/ const u8 object;
+	/*0x00*/ const u8 *name;
+	/*0x04*/ const u8 *desc;
+	/*0x0C*/ const u8 *map;
+	/*0x18*/ const u8 object;
 }; /* size = 0x22 */
 
-struct SideQuest 
+struct SideQuest
 {
-    /*0x00*/ const u8* name;
-    /*0x04*/ const u8* desc;
-    /*0x04*/ const u8* donedesc;
-    /*0x0C*/ const u8* map;
-    u8 object;
-    const struct SubQuest* subquests;
-    const u8 childtype;
-    const u8 numSubquests;
-
+	/*0x00*/ const u8 *name;
+	/*0x04*/ const u8 *desc;
+	/*0x04*/ const u8 *donedesc;
+	/*0x0C*/ const u8 *map;
+	u8 object;
+	const struct SubQuest *subquests;
+	const u8 childtype;
+	const u8 numSubquests;
 }; /* size = 0x18 */
 
 extern const struct SubQuest gSubQuests1[SUB_QUEST_1_COUNT];
@@ -39,29 +38,29 @@ extern const struct SideQuest gSideQuests[SIDE_QUEST_COUNT];
 
 enum QuestCases
 {
-    FLAG_GET_UNLOCKED,      // check if quest is unlocked
-    FLAG_GET_INACTIVE, //check if quest is unlocked but has no other state
-    FLAG_GET_ACTIVE,        // check if quest is active
-    FLAG_GET_REWARD,     // check if quest is ready for reward
-    FLAG_GET_COMPLETED,     // check if quest is completed
-    FLAG_GET_FAVORITE,     // check if quest is ready for favorite
-    FLAG_SET_UNLOCKED,      // mark unlocked quest
-    FLAG_SET_INACTIVE, //mark quest as inactive
-    FLAG_SET_ACTIVE,        // mark quest as active
-    FLAG_SET_REWARD,     // mark quest ready for reward
-    FLAG_SET_COMPLETED,     // mark completed quest
-    FLAG_SET_FAVORITE,     // mark quest ready for favorite
-    FLAG_REMOVE_INACTIVE, //remove inactive flag from quest
-    FLAG_REMOVE_ACTIVE, //remove active flag from quest
-    FLAG_REMOVE_REWARD, //remove reward flag from quest
-    FLAG_REMOVE_FAVORITE, //remove favorite flag from quest
+	FLAG_GET_UNLOCKED,      // check if quest is unlocked
+	FLAG_GET_INACTIVE, //check if quest is unlocked but has no other state
+	FLAG_GET_ACTIVE,        // check if quest is active
+	FLAG_GET_REWARD,     // check if quest is ready for reward
+	FLAG_GET_COMPLETED,     // check if quest is completed
+	FLAG_GET_FAVORITE,     // check if quest is favorited
+	FLAG_SET_UNLOCKED,      // mark quest as unlocked
+	FLAG_SET_INACTIVE, //mark quest as inactive
+	FLAG_SET_ACTIVE,        // mark quest as active
+	FLAG_SET_REWARD,     // mark quest ready for reward
+	FLAG_SET_COMPLETED,     // mark completed quest
+	FLAG_SET_FAVORITE,     // mark quest as a favorite
+	FLAG_REMOVE_INACTIVE, //remove inactive flag from quest
+	FLAG_REMOVE_ACTIVE, //remove active flag from quest
+	FLAG_REMOVE_REWARD, //remove reward flag from quest
+	FLAG_REMOVE_FAVORITE, //remove favorite flag from quest
 };
 enum SubQuestTypes
 {
-    SUBQUEST_NONE,
-    SUBQUEST_CATCH,
-    SUBQUEST_FIND,
-    SUBQUEST_READ,
+	SUBQUEST_NONE,
+	SUBQUEST_CATCH,
+	SUBQUEST_FIND,
+	SUBQUEST_READ,
 };
 
 // functions
@@ -75,11 +74,8 @@ s8 ChangeSubQuestFlags(u8 quest, u8 caseId, u8 childQuest);
 s8 QuestMenu_ManageFavoriteQuests(u8 index);
 s8 GetSetQuestFlag(u8 quest, u8 caseId);
 s8 GetActiveQuestIndex(void);
-void SetActiveQuest(u8 questId);
-void TextWindow_SetStdFrame0_WithPal(u8 windowId, u16 destOffset, u8 palIdx);
 void QuestMenu_Init(u8 a0, MainCallback callback);
 void SetQuestMenuActive(void);
-void ResetActiveQuest(void);
 void CopyQuestName(u8 *dst, u8 questId);
 void ResetQuestMenuData(void);
 
