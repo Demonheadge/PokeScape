@@ -412,6 +412,7 @@ static bool8 QuestMenu_DoGfxSetup(void)
 			break;
 		case 10:
 			//When commented out, question marks loads for every slot and page does not scroll when going past number 6
+			QuestMenu_InitModeOnStartup();
 			QuestMenu_InitItems();
 			//Doesn't seem to do anything?
 			QuestMenu_SetCursorPosition();
@@ -434,7 +435,6 @@ static bool8 QuestMenu_DoGfxSetup(void)
 		case 12:
 			//print the quest titles, avatars, desc and status
 			//When this is gone, page does not seem to play nice
-			QuestMenu_InitModeOnStartup();
 			QuestMenu_BuildFilteredMenuTemplate();
 			gMain.state++;
 			break;
@@ -1334,7 +1334,7 @@ static void QuestMenu_InitItems(void)
 {
     //PSF TODO Need to call this every time the mode is changed. max showed should always be 4
     //but nItems needs to change based on how many quests should appear... need to think more what this number should be 
-	sStateDataPtr->nItems = SIDE_QUEST_COUNT;
+	sStateDataPtr->nItems = (QuestMenu_GenerateTotalItems(sStateDataPtr->filterMode)) - 1;
 	sStateDataPtr->maxShowed = sStateDataPtr->nItems + 1 <= 4 ? sStateDataPtr->nItems + 1 : 4;
 }
 
