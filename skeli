@@ -1,0 +1,76 @@
+/*
+   You basically run the prepare fade functions first, and then you have a task that runs the handle fade functions until they return true.*/
+
+static void SetGpuRegBaseForFade(bool8 fadeSprites) //Sets the GPU registers to prepare for a hardware fade
+{
+    if (fadeSprites)
+        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG3 | BLDCNT_EFFECT_BLEND); //Blend Sprites and BG0 into BG3
+    else
+        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG3 | BLDCNT_EFFECT_BLEND); //Blend BG0 into BG3
+
+    SetGpuReg(REG_OFFSET_BLDY, 0);
+}
+
+static void PrepareFadeOut(u8 taskId, bool8 fadeSprites) //Prepares the input handler for a hardware fade out
+{
+    SetGpuRegBaseForFade(fadeSprites);
+    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0x10, 0x0));
+    gTasks[taskId].data[1] = 16;
+    gTasks[taskId].data[2] = 0;
+    gTasks[taskId].data[3] = 0; //Fade Delay
+    gTasks[taskId].data[4] = 0; //Fade Delay
+}
+
+static void PrepareFadeIn(u8 taskId, bool8 fadeSprites) //Prepares the input handler for a hardware fade in
+{
+    SetGpuRegBaseForFade(fadeSprites);
+    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0x0, 0x10));
+    gTasks[taskId].data[1] = 0;
+    gTasks[taskId].data[2] = 16;
+    gTasks[taskId].data[3] = 0; //Fade Delay
+    gTasks[taskId].data[4] = 0; //Fade Delay
+}
+
+
+static bool8 HandleFadeOut(u8 taskId) //Handles the hardware fade out
+{
+    if (gTasks[taskId].data[1] == 0)
+        return TRUE;
+    else
+    {
+        if (gTasks[taskId].data[4] > 0)
+            gTasks[taskId].data[4]--;
+        else
+        {
+            gTasks[taskId].data[4] = gTasks[taskId].data[3];
+            gTasks[taskId].data[1] -= 2;
+            gTasks[taskId].data[2] += 2;
+            SetGpuReg(REG_OFFSET_BLDALPHA, (gTasks[taskId].data[2] * 256) + gTasks[taskId].data[1]);
+        }
+    }
+
+    return FALSE;
+}
+
+static bool8 HandleFadeIn(u8 taskId) //Handles the hardware fade in
+{
+    if (gTasks[taskId].data[1] >= 16)
+    {
+        if (!gPaletteFade->active)
+            return TRUE;
+    }
+    else
+    {
+        if (gTasks[taskId].data[4] > 0)
+            gTasks[taskId].data[4]--;
+        else
+        {
+            gTasks[taskId].data[4] = gTasks[taskId].data[3];
+            gTasks[taskId].data[1] += 2;
+            gTasks[taskId].data[2] -= 2;
+            SetGpuReg(REG_OFFSET_BLDALPHA, (gTasks[taskId].data[2] * 256) + gTasks[taskId].data[1]);
+        }
+    }
+
+    return FALSE;
+}

@@ -129,7 +129,6 @@ static void QuestMenu_InitModeOnStartup(void);
 static const u32 sQuestMenuTiles[] = INCBIN_U32("graphics/quest_menu/menu.4bpp.lz");
 static const u32 sQuestMenuBgPals[] = INCBIN_U32("graphics/quest_menu/menu_pal.gbapal.lz");
 static const u32 sQuestMenuTilemap[] = INCBIN_U32("graphics/quest_menu/tilemap.bin.lz");
-//PSF TODO replace with skeli's firered themed background
 
 // strings
 static const u8 sText_Empty[] = _("");
@@ -791,7 +790,7 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 	gMultiuseListMenuTemplate.upText_Y = 2;
 	gMultiuseListMenuTemplate.maxShowed = sStateDataPtr->maxShowed;
 	gMultiuseListMenuTemplate.fontId = 2;
-	gMultiuseListMenuTemplate.cursorPal = 1;
+	gMultiuseListMenuTemplate.cursorPal = 2;
 	gMultiuseListMenuTemplate.fillValue = 0;
 	gMultiuseListMenuTemplate.cursorShadowPal = 0;
 	gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_MoveCursorFunc;
@@ -1215,7 +1214,7 @@ static void QuestMenu_PrintHeader(void)
 			break;
 	}
 
-	QuestMenu_AddTextPrinterParameterized(2, 0, gStringVar3, 21, 1, 0, 1, 0, 0);
+	QuestMenu_AddTextPrinterParameterized(2, 0, gStringVar3, 10, 1, 0, 1, 0, 0);
 
 	StringExpandPlaceholders(gStringVar4, sText_QuestMenu_QuestNumberDisplay);
 
@@ -1226,7 +1225,7 @@ static void QuestMenu_PrintHeader(void)
 	}
 	else
 	{
-		QuestMenu_AddTextPrinterParameterized(2, 0, gStringVar4, 202, 1, 0, 1, 0, 0);
+		QuestMenu_AddTextPrinterParameterized(2, 0, gStringVar4, 167, 1, 0, 1, 0, 0);
 	}
 
 }
@@ -1333,6 +1332,8 @@ static u8 QuestMenu_GetCursorPosition(void)
 
 static void QuestMenu_InitItems(void)
 {
+    //PSF TODO Need to call this every time the mode is changed. max showed should always be 4
+    //but nItems needs to change based on how many quests should appear... need to think more what this number should be 
 	sStateDataPtr->nItems = SIDE_QUEST_COUNT;
 	sStateDataPtr->maxShowed = sStateDataPtr->nItems + 1 <= 4 ? sStateDataPtr->nItems + 1 : 4;
 }
@@ -1481,7 +1482,6 @@ static void Task_QuestMenuMain(u8 taskId)
 						QuestMenu_SaveScrollAndRow(data);
 						//QuestMenu_TextFadeOut();
                         fadeSprites = TRUE;
-                        PrepareFadeOut(fadeSprites);
 						Task_QuestMenuCleanUp(taskId);
 						QuestMenu_ResetSavedRowScrollToTop(data);
 						//QuestMenu_TextFadeIn();
@@ -1716,7 +1716,7 @@ static bool8 HandleFadeIn(u8 taskId) //Handles the hardware fade in
 {
 	if (gTasks[taskId].data[1] >= 16)
 	{
-		if (!gPaletteFade->active)
+		if (!gPaletteFade.active)
 			return TRUE;
 	}
 	else
