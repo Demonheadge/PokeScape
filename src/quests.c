@@ -129,6 +129,7 @@ static void QuestMenu_InitModeOnStartup(void);
 static const u32 sQuestMenuTiles[] = INCBIN_U32("graphics/quest_menu/menu.4bpp.lz");
 static const u32 sQuestMenuBgPals[] = INCBIN_U32("graphics/quest_menu/menu_pal.gbapal.lz");
 static const u32 sQuestMenuTilemap[] = INCBIN_U32("graphics/quest_menu/tilemap.bin.lz");
+//PSF TODO replace with skeli's firered themed background
 
 // strings
 static const u8 sText_Empty[] = _("");
@@ -457,6 +458,7 @@ static bool8 QuestMenu_DoGfxSetup(void)
 			break;
 		case 16:
 			//arrows at the top and bottom don't appear without this
+            //PSF TODO when there is nowhere to scroll down to, bottom arrow should disappear. this already works for the top, need to investigate
 			QuestMenu_PlaceTopMenuScrollIndicatorArrows();
 			gMain.state++;
 			break;
@@ -1408,7 +1410,7 @@ static void Task_QuestMenuMain(u8 taskId)
 	u16 scroll;
 	u16 row;
 	s32 input;
-	bool8 subquest;
+	bool8 subquest, fadeSprites;
 	u8 mode = sStateDataPtr->filterMode;
 	u8 selectedQuestId;
 
@@ -1477,10 +1479,12 @@ static void Task_QuestMenuMain(u8 taskId)
 						subquest = TRUE;
 						QuestMenu_SetMode(subquest);
 						QuestMenu_SaveScrollAndRow(data);
-						QuestMenu_TextFadeOut();
+						//QuestMenu_TextFadeOut();
+                        fadeSprites = TRUE;
+                        PrepareFadeOut(fadeSprites);
 						Task_QuestMenuCleanUp(taskId);
 						QuestMenu_ResetSavedRowScrollToTop(data);
-						QuestMenu_TextFadeIn();
+						//QuestMenu_TextFadeIn();
 					}
 				}
 				break;
@@ -1655,6 +1659,80 @@ void ResetQuestMenuData(void)
 	memset(&gSaveBlock2Ptr->completedQuests, 0, sizeof(gSaveBlock2Ptr->completedQuests));
 	memset(&gSaveBlock2Ptr->subQuests, 0, sizeof(gSaveBlock2Ptr->subQuests));
 	memset(&gSaveBlock2Ptr->favoriteQuests, 0, sizeof(gSaveBlock2Ptr->favoriteQuests));
+}
+
+static void SetGpuRegBaseForFade(bool8 fadeSprites) //Sets the GPU registers to prepare for a hardware fade
+{
+	if (fadeSprites)
+		SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_EFFECT_BLEND); //Blend Sprites and BG0 into BG3
+	else
+		SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_EFFECT_BLEND); //Blend BG0 into BG3
+
+	SetGpuReg(REG_OFFSET_BLDY, 0);
+}
+
+static void PrepareFadeOut(u8 taskId, bool8 fadeSprites) //Prepares the input handler for a hardware fade out
+{
+	SetGpuRegBaseForFade(fadeSprites);
+	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0x10, 0x0));
+	gTasks[taskId].data[1] = 16;
+	gTasks[taskId].data[2] = 0;
+	gTasks[taskId].data[3] = 0; //Fade Delay
+	gTasks[taskId].data[4] = 0; //Fade Delay
+}
+
+static void PrepareFadeIn(u8 taskId, bool8 fadeSprites) //Prepares the input handler for a hardware fade in
+{
+	SetGpuRegBaseForFade(fadeSprites);
+	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0x0, 0x10));
+	gTasks[taskId].data[1] = 0;
+	gTasks[taskId].data[2] = 16;
+	gTasks[taskId].data[3] = 0; //Fade Delay
+	gTasks[taskId].data[4] = 0; //Fade Delay
+}
+
+
+static bool8 HandleFadeOut(u8 taskId) //Handles the hardware fade out
+{
+	if (gTasks[taskId].data[1] == 0)
+		return TRUE;
+	else
+	{
+		if (gTasks[taskId].data[4] > 0)
+			gTasks[taskId].data[4]--;
+		else
+		{
+			gTasks[taskId].data[4] = gTasks[taskId].data[3];
+			gTasks[taskId].data[1] -= 2;
+			gTasks[taskId].data[2] += 2;
+			SetGpuReg(REG_OFFSET_BLDALPHA, (gTasks[taskId].data[2] * 256) + gTasks[taskId].data[1]);
+		}
+	}
+
+	return FALSE;
+}
+
+static bool8 HandleFadeIn(u8 taskId) //Handles the hardware fade in
+{
+	if (gTasks[taskId].data[1] >= 16)
+	{
+		if (!gPaletteFade->active)
+			return TRUE;
+	}
+	else
+	{
+		if (gTasks[taskId].data[4] > 0)
+			gTasks[taskId].data[4]--;
+		else
+		{
+			gTasks[taskId].data[4] = gTasks[taskId].data[3];
+			gTasks[taskId].data[1] += 2;
+			gTasks[taskId].data[2] -= 2;
+			SetGpuReg(REG_OFFSET_BLDALPHA, (gTasks[taskId].data[2] * 256) + gTasks[taskId].data[1]);
+		}
+	}
+
+	return FALSE;
 }
 
 void QuestMenu_TextFadeOut(void)
