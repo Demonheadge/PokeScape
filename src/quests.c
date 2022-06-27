@@ -603,7 +603,7 @@ static u8 QuestMenu_GenerateTotalItems(u8 mode)
 	switch (mode)
 	{
 		case SORT_DEFAULT:
-			return sStateDataPtr->nItems + 1;
+			return SIDE_QUEST_COUNT+ 1;
 		case SORT_INACTIVE:
 			return QuestMenu_CountInactiveQuests() + 1;
 		case SORT_ACTIVE:

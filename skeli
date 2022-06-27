@@ -1,6 +1,7 @@
 /*
-   You basically run the prepare fade functions first, and then you have a task that runs the handle fade functions until they return true.*/
+   You basically run the prepare fade functions first, and then you have a task that runs the handle fade functions until they return true.
 
+*/
 static void SetGpuRegBaseForFade(bool8 fadeSprites) //Sets the GPU registers to prepare for a hardware fade
 {
     if (fadeSprites)
