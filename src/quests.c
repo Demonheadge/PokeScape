@@ -457,7 +457,6 @@ static bool8 QuestMenu_DoGfxSetup(void)
 			break;
 		case 16:
 			//arrows at the top and bottom don't appear without this
-            //PSF TODO when there is nowhere to scroll down to, bottom arrow should disappear. this already works for the top, need to investigate
 			QuestMenu_PlaceTopMenuScrollIndicatorArrows();
 			gMain.state++;
 			break;
@@ -1238,10 +1237,6 @@ static void QuestMenu_PlaceTopMenuScrollIndicatorArrows(void)
     if (listSize < sStateDataPtr->maxShowed)
         listSize = sStateDataPtr->maxShowed;
 
-    /*
-	sStateDataPtr->scrollIndicatorArrowPairId = AddScrollIndicatorArrowPairParameterized(2, 94, 8, 90,
-	            sStateDataPtr->nItems - sStateDataPtr->maxShowed + 1, 110, 110, &sListMenuState.scroll);
-                */
 	sStateDataPtr->scrollIndicatorArrowPairId = AddScrollIndicatorArrowPairParameterized(2, 94, 8, 90,
 	            (listSize - sStateDataPtr->maxShowed), 110, 110, &sListMenuState.scroll);
 }
@@ -1342,8 +1337,6 @@ static u8 QuestMenu_GetCursorPosition(void)
 
 static void QuestMenu_InitItems(void)
 {
-    //PSF TODO Need to call this every time the mode is changed. max showed should always be 4
-    //but nItems needs to change based on how many quests should appear... need to think more what this number should be 
 	sStateDataPtr->nItems = (QuestMenu_GenerateTotalItems(sStateDataPtr->filterMode)) - 1;
 
 	sStateDataPtr->maxShowed = sStateDataPtr->nItems + 1 <= 4 ? sStateDataPtr->nItems + 1 : 4;
