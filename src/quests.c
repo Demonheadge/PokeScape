@@ -124,6 +124,14 @@ static void QuestMenu_TextFadeIn(void);
 static void QuestMenu_TextFadeOut(void);
 static void QuestMenu_InitModeOnStartup(void);
 
+static void SetGpuRegBaseForFade(bool8 fadeSprites); //Sets the GPU registers to prepare for a hardware fade
+static void PrepareFadeOut(u8 taskId, bool8 fadeSprites); //Prepares the input handler for a hardware fade out
+static void PrepareFadeIn(u8 taskId, bool8 fadeSprites); //Prepares the input handler for a hardware fade in
+static bool8 HandleFadeOut(u8 taskId); //Handles the hardware fade out
+static bool8 HandleFadeIn(u8 taskId); //Handles the hardware fade in
+static void Task_QuestMenu_FadeOut(u8 taskId);
+static void Task_QuestMenu_FadeIn(u8 taskId);
+
 // Data
 // graphics
 static const u32 sQuestMenuTiles[] = INCBIN_U32("graphics/quest_menu/menu.4bpp.lz");
@@ -1458,11 +1466,11 @@ static void Task_QuestMenuMain(u8 taskId)
 				if (mode > SORT_DONE)
 				{
 					QuestMenu_RemoveScrollIndicatorArrowPair();
-					QuestMenu_TextFadeOut();
+					//QuestMenu_TextFadeOut();
 					subquest = FALSE;
 					QuestMenu_SetMode(subquest);
 					Task_QuestMenuCleanUp(taskId);
-					QuestMenu_TextFadeIn();
+					//QuestMenu_TextFadeIn();
 					QuestMenu_RestoreSavedScrollAndRow(data);
 				}
 				else
@@ -1478,16 +1486,25 @@ static void Task_QuestMenuMain(u8 taskId)
 				{
 					if (QuestMenu_CheckHasChildren(input))
 					{
+                        fadeSprites = TRUE;
+                        PrepareFadeOut(taskId, fadeSprites);
+
 						PlaySE(SE_SELECT);
 						QuestMenu_RemoveScrollIndicatorArrowPair();
 						sStateDataPtr->parentQuest = input;
 						subquest = TRUE;
 						QuestMenu_SetMode(subquest);
 						QuestMenu_SaveScrollAndRow(data);
+                        
+                        CreateTask(Task_QuestMenu_FadeOut, 0);
 						//QuestMenu_TextFadeOut();
-                        fadeSprites = TRUE;
 						Task_QuestMenuCleanUp(taskId);
+
+                        PrepareFadeIn(taskId, fadeSprites);
+                        CreateTask(Task_QuestMenu_FadeIn, 0);
+
 						QuestMenu_ResetSavedRowScrollToTop(data);
+
 						//QuestMenu_TextFadeIn();
 					}
 				}
@@ -1669,9 +1686,9 @@ void ResetQuestMenuData(void)
 static void SetGpuRegBaseForFade(bool8 fadeSprites) //Sets the GPU registers to prepare for a hardware fade
 {
 	if (fadeSprites)
-		SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_EFFECT_BLEND); //Blend Sprites and BG0 into BG3
+		SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_EFFECT_BLEND); //Blend Sprites and BG0 into BG1
 	else
-		SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_EFFECT_BLEND); //Blend BG0 into BG3
+		SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_EFFECT_BLEND); //Blend BG0 into BG3 used for when the screen is only showing the exit arrow
 
 	SetGpuReg(REG_OFFSET_BLDY, 0);
 }
@@ -1740,6 +1757,22 @@ static bool8 HandleFadeIn(u8 taskId) //Handles the hardware fade in
 	return FALSE;
 }
 
+static void Task_QuestMenu_FadeOut(u8 taskId)
+{
+	if (!HandleFadeOut(taskId))
+        HandleFadeOut(taskId);
+    else
+		DestroyTask(taskId);
+}
+
+static void Task_QuestMenu_FadeIn(u8 taskId)
+{
+	if (!HandleFadeIn(taskId))
+        HandleFadeIn(taskId);
+    else
+		DestroyTask(taskId);
+}
+
 void QuestMenu_TextFadeOut(void)
 {
 	//BeginNormalPaletteFade(~0x8000, 0, 0, 16, RGB_BLACK);
@@ -1756,6 +1789,8 @@ void QuestMenu_InitModeOnStartup(void)
 {
 	sStateDataPtr->filterMode = 0;
 }
+
+
 
 #undef tBldYBak
 #undef tBldCntBak
