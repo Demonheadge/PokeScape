@@ -1232,8 +1232,12 @@ static void QuestMenu_PrintHeader(void)
 
 static void QuestMenu_PlaceTopMenuScrollIndicatorArrows(void)
 {
+    /*
 	sStateDataPtr->scrollIndicatorArrowPairId = AddScrollIndicatorArrowPairParameterized(2, 94, 8, 90,
 	            sStateDataPtr->nItems - sStateDataPtr->maxShowed + 1, 110, 110, &sListMenuState.scroll);
+                */
+	sStateDataPtr->scrollIndicatorArrowPairId = AddScrollIndicatorArrowPairParameterized(2, 94, 8, 90,
+	            QuestMenu_GenerateTotalItems(sStateDataPtr->filterMode) - sStateDataPtr->maxShowed + 1, 110, 110, &sListMenuState.scroll);
 }
 
 static void QuestMenu_RemoveScrollIndicatorArrowPair(void)
@@ -1335,6 +1339,9 @@ static void QuestMenu_InitItems(void)
     //PSF TODO Need to call this every time the mode is changed. max showed should always be 4
     //but nItems needs to change based on how many quests should appear... need to think more what this number should be 
 	sStateDataPtr->nItems = (QuestMenu_GenerateTotalItems(sStateDataPtr->filterMode)) - 1;
+    MgbaPrintf(4,"GenerateTotalItems %u",QuestMenu_GenerateTotalItems(sStateDataPtr->filterMode));
+    MgbaPrintf(4,"nItems %u",sStateDataPtr->nItems);
+
 	sStateDataPtr->maxShowed = sStateDataPtr->nItems + 1 <= 4 ? sStateDataPtr->nItems + 1 : 4;
 }
 
@@ -1497,12 +1504,13 @@ static void Task_QuestMenuCleanUp(u8 taskId)
 	s16 *data = gTasks[taskId].data;
 
 	DestroyListMenuTask(data[0], &sListMenuState.scroll, &sListMenuState.row);
-	QuestMenu_PlaceTopMenuScrollIndicatorArrows();
 	ClearStdWindowAndFrameToTransparent(2, FALSE);
 
+    //QuestMenu_InitItems();
 	QuestMenu_PrintHeader();
 	QuestMenu_AllocateResourcesForListMenu();
 	QuestMenu_BuildFilteredMenuTemplate();
+	QuestMenu_PlaceTopMenuScrollIndicatorArrows();
 
 	gTasks[taskId].func = Task_QuestMenuMain;
 }
