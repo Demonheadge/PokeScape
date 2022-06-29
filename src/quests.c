@@ -1411,7 +1411,7 @@ static void QuestMenu_ResetSavedRowScrollToTop(s16 *data)
 	data[0] = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.scroll, sListMenuState.row);
 }
 
-static void QuestMenu_RestoreSavedScrollAndRow(s16   *data)
+static void QuestMenu_RestoreSavedScrollAndRow(s16 *data)
 {
 	data[0] = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.storedScrollOffset,
 	                       sListMenuState.storedRowPosition);
@@ -1491,17 +1491,23 @@ static void Task_QuestMenuMain(u8 taskId)
 
 						PlaySE(SE_SELECT);
 						QuestMenu_RemoveScrollIndicatorArrowPair();
+                        MgbaPrintf(4,"QuestMenu_RemoveScrollIndicatorArrowPair");
 						sStateDataPtr->parentQuest = input;
 						subquest = TRUE;
 						QuestMenu_SetMode(subquest);
+                        MgbaPrintf(4,"QuestMenu_SetMode");
 						QuestMenu_SaveScrollAndRow(data);
+                        MgbaPrintf(4,"QuestMenu_SaveScrollAndRow");
                         
                         CreateTask(Task_QuestMenu_FadeOut, 0);
 						//QuestMenu_TextFadeOut();
 						Task_QuestMenuCleanUp(taskId);
 
+                        /*
                         PrepareFadeIn(taskId, fadeSprites);
+                        MgbaPrintf(4,"prepare fade in");
                         CreateTask(Task_QuestMenu_FadeIn, 0);
+                        */
 
 						QuestMenu_ResetSavedRowScrollToTop(data);
 
@@ -1695,6 +1701,7 @@ static void SetGpuRegBaseForFade(bool8 fadeSprites) //Sets the GPU registers to 
 
 static void PrepareFadeOut(u8 taskId, bool8 fadeSprites) //Prepares the input handler for a hardware fade out
 {
+    MgbaPrintf(4,"prepare fade out");
 	SetGpuRegBaseForFade(fadeSprites);
 	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0x10, 0x0));
 	gTasks[taskId].data[1] = 16;
@@ -1716,6 +1723,8 @@ static void PrepareFadeIn(u8 taskId, bool8 fadeSprites) //Prepares the input han
 
 static bool8 HandleFadeOut(u8 taskId) //Handles the hardware fade out
 {
+    MgbaPrintf(4,"handle fade out");
+
 	if (gTasks[taskId].data[1] == 0)
 		return TRUE;
 	else
@@ -1736,13 +1745,17 @@ static bool8 HandleFadeOut(u8 taskId) //Handles the hardware fade out
 
 static bool8 HandleFadeIn(u8 taskId) //Handles the hardware fade in
 {
+    MgbaPrintf(4,"handle fade in");
 	if (gTasks[taskId].data[1] >= 16)
 	{
 		if (!gPaletteFade.active)
 			return TRUE;
+    MgbaPrintf(4,"true fade in");
+
 	}
 	else
 	{
+    MgbaPrintf(4,"false fade in");
 		if (gTasks[taskId].data[4] > 0)
 			gTasks[taskId].data[4]--;
 		else
