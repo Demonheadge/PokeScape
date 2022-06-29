@@ -1425,7 +1425,7 @@ static void Task_QuestMenuMain(u8 taskId)
 	s32 input;
 	bool8 subquest, fadeSprites;
 	u8 mode = sStateDataPtr->filterMode;
-	u8 selectedQuestId;
+	u8 selectedQuestId, fadeTask;
 
 	if (!gPaletteFade.active)
 	{
@@ -1487,21 +1487,19 @@ static void Task_QuestMenuMain(u8 taskId)
 					if (QuestMenu_CheckHasChildren(input))
 					{
                         fadeSprites = TRUE;
-                        PrepareFadeOut(taskId, fadeSprites);
+                        fadeTask = 1;
+
+                        PrepareFadeOut(fadeTask, fadeSprites);
 
 						PlaySE(SE_SELECT);
-						QuestMenu_RemoveScrollIndicatorArrowPair();
-                        MgbaPrintf(4,"QuestMenu_RemoveScrollIndicatorArrowPair");
 						sStateDataPtr->parentQuest = input;
 						subquest = TRUE;
 						QuestMenu_SetMode(subquest);
-                        MgbaPrintf(4,"QuestMenu_SetMode");
 						QuestMenu_SaveScrollAndRow(data);
-                        MgbaPrintf(4,"QuestMenu_SaveScrollAndRow");
                         
                         CreateTask(Task_QuestMenu_FadeOut, 0);
+						QuestMenu_RemoveScrollIndicatorArrowPair();
 						//QuestMenu_TextFadeOut();
-						Task_QuestMenuCleanUp(taskId);
 
                         /*
                         PrepareFadeIn(taskId, fadeSprites);
@@ -1523,6 +1521,8 @@ static void Task_QuestMenuCleanUp(u8 taskId)
 {
 	s16 *data = gTasks[taskId].data;
 
+	if (!gPaletteFade.active){
+
 	DestroyListMenuTask(data[0], &sListMenuState.scroll, &sListMenuState.row);
 	ClearStdWindowAndFrameToTransparent(2, FALSE);
 
@@ -1533,6 +1533,7 @@ static void Task_QuestMenuCleanUp(u8 taskId)
 	QuestMenu_PlaceTopMenuScrollIndicatorArrows();
 
 	gTasks[taskId].func = Task_QuestMenuMain;
+    }
 }
 
 // pokefirered text_window.c
@@ -1725,10 +1726,14 @@ static bool8 HandleFadeOut(u8 taskId) //Handles the hardware fade out
 {
     MgbaPrintf(4,"handle fade out");
 
-	if (gTasks[taskId].data[1] == 0)
+	if (gTasks[taskId].data[1] == 0){
+        MgbaPrintf(4,"is tru");
+        Task_QuestMenuCleanUp(taskId);
 		return TRUE;
+    }
 	else
 	{
+        MgbaPrintf(4,"is false");
 		if (gTasks[taskId].data[4] > 0)
 			gTasks[taskId].data[4]--;
 		else
@@ -1772,10 +1777,13 @@ static bool8 HandleFadeIn(u8 taskId) //Handles the hardware fade in
 
 static void Task_QuestMenu_FadeOut(u8 taskId)
 {
+    taskId = 1;
+
 	if (!HandleFadeOut(taskId))
         HandleFadeOut(taskId);
-    else
+    else{
 		DestroyTask(taskId);
+    }
 }
 
 static void Task_QuestMenu_FadeIn(u8 taskId)
