@@ -1492,16 +1492,16 @@ static void Task_QuestMenuMain(u8 taskId)
                         fadeSprites = TRUE;
                         fadeTask = 1;
 
-                        //PrepareFadeOut(fadeTask, fadeSprites);
+                        PrepareFadeOut(fadeTask, fadeSprites);
 
 						PlaySE(SE_SELECT);
 						sStateDataPtr->parentQuest = input;
 						subquest = TRUE;
 						QuestMenu_SetMode(subquest);
 						QuestMenu_SaveScrollAndRow(data);
-						QuestMenu_ResetSavedRowScrollToTop(data);
-                        Task_QuestMenuCleanUp(taskId);
-                        //gTasks[taskId].func = Task_QuestMenu_FadeOut;
+                        //Task_QuestMenuCleanUp(taskId);
+                        gTasks[taskId].func = Task_QuestMenu_FadeOut;
+						QuestMenu_ResetSavedRowScrollToTop(data); //this line needs to be after clean up or game hangs
                         //gTasks[taskId].func = Task_QuestMenu_FadeIn;
                         //CreateTask(Task_QuestMenu_FadeIn, 0);
 						//QuestMenu_TextFadeOut();
