@@ -680,6 +680,7 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 	}
 
     MgbaPrintf(4,"mode %u",sStateDataPtr->filterMode);
+    MgbaPrintf(4,"mode %u",sStateDataPtr->filterMode);
 
 	if (QuestMenu_CheckSubquestMode())
 	{
