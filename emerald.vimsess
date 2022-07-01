@@ -39,6 +39,8 @@ set termguicolors
 set ttimeout
 set ttimeoutlen=100
 set wildmenu
+set winminheight=0
+set winminwidth=0
 let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
 let v:this_session=expand("<sfile>:p")
 silent only
@@ -63,7 +65,10 @@ vsplit
 wincmd w
 wincmd _ | wincmd |
 split
-1wincmd k
+wincmd _ | wincmd |
+split
+2wincmd k
+wincmd w
 wincmd w
 let &splitbelow = s:save_splitbelow
 let &splitright = s:save_splitright
@@ -74,13 +79,15 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 117 + 117) / 235)
-exe '2resize ' . ((&lines * 38 + 39) / 79)
-exe 'vert 2resize ' . ((&columns * 117 + 117) / 235)
-exe '3resize ' . ((&lines * 37 + 39) / 79)
-exe 'vert 3resize ' . ((&columns * 117 + 117) / 235)
+exe 'vert 1resize ' . ((&columns * 73 + 117) / 235)
+exe '2resize ' . ((&lines * 25 + 39) / 79)
+exe 'vert 2resize ' . ((&columns * 161 + 117) / 235)
+exe '3resize ' . ((&lines * 20 + 39) / 79)
+exe 'vert 3resize ' . ((&columns * 161 + 117) / 235)
+exe '4resize ' . ((&lines * 29 + 39) / 79)
+exe 'vert 4resize ' . ((&columns * 161 + 117) / 235)
 argglobal
-terminal ++curwin ++cols=117 ++rows=76 
+terminal ++curwin ++cols=73 ++rows=76 
 let s:term_buf_3 = bufnr()
 balt src/quests.c
 setlocal keymap=
@@ -209,12 +216,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 98 - ((63 * winheight(0) + 38) / 76)
+let s:l = 47 - ((46 * winheight(0) + 38) / 76)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 98
-normal! 0
+keepjumps 47
+normal! 074|
 wincmd w
 argglobal
 balt src/quests.c
@@ -346,7 +353,7 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 48 - ((32 * winheight(0) + 19) / 38)
+let s:l = 48 - ((5 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -354,8 +361,146 @@ keepjumps 48
 normal! 0
 wincmd w
 argglobal
+if bufexists("include/quests.h") | buffer include/quests.h | else | edit include/quests.h | endif
+balt include/constants/quests.h
+setlocal keymap=
+setlocal noarabic
+setlocal noautoindent
+setlocal backupcopy=
+setlocal balloonexpr=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal cindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal cursorlineopt=both
+setlocal define=^\\s*#\\s*define
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'cpp'
+setlocal filetype=cpp
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=^\\s*#\\s*include
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal listchars=
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=ccomplete#Complete
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'cpp'
+setlocal syntax=cpp
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal varsofttabstop=
+setlocal vartabstop=
+setlocal virtualedit=
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 34 - ((5 * winheight(0) + 10) / 20)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 34
+normal! 0
+wincmd w
+argglobal
 if bufexists("src/quests.c") | buffer src/quests.c | else | edit src/quests.c | endif
-balt skeli
+balt include/constants/quests.h
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -484,19 +629,21 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1333 - ((18 * winheight(0) + 18) / 37)
+let s:l = 1499 - ((9 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1333
-normal! 023|
+keepjumps 1499
+normal! 040|
 wincmd w
-3wincmd w
-exe 'vert 1resize ' . ((&columns * 117 + 117) / 235)
-exe '2resize ' . ((&lines * 38 + 39) / 79)
-exe 'vert 2resize ' . ((&columns * 117 + 117) / 235)
-exe '3resize ' . ((&lines * 37 + 39) / 79)
-exe 'vert 3resize ' . ((&columns * 117 + 117) / 235)
+4wincmd w
+exe 'vert 1resize ' . ((&columns * 73 + 117) / 235)
+exe '2resize ' . ((&lines * 25 + 39) / 79)
+exe 'vert 2resize ' . ((&columns * 161 + 117) / 235)
+exe '3resize ' . ((&lines * 20 + 39) / 79)
+exe 'vert 3resize ' . ((&columns * 161 + 117) / 235)
+exe '4resize ' . ((&lines * 29 + 39) / 79)
+exe 'vert 4resize ' . ((&columns * 161 + 117) / 235)
 tabnext
 edit ../firered/src/oak_speech.c
 let s:save_splitbelow = &splitbelow
@@ -519,7 +666,7 @@ exe 'vert 1resize ' . ((&columns * 117 + 117) / 235)
 exe 'vert 2resize ' . ((&columns * 117 + 117) / 235)
 argglobal
 terminal ++curwin ++cols=117 ++rows=76 
-let s:term_buf_6 = bufnr()
+let s:term_buf_5 = bufnr()
 balt ../firered/src/oak_speech.c
 setlocal keymap=
 setlocal noarabic
@@ -784,20 +931,22 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1806 - ((54 * winheight(0) + 38) / 76)
+let s:l = 1143 - ((53 * winheight(0) + 38) / 76)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1806
-normal! 015|
+keepjumps 1143
+normal! 057|
 wincmd w
 exe 'vert 1resize ' . ((&columns * 117 + 117) / 235)
 exe 'vert 2resize ' . ((&columns * 117 + 117) / 235)
 tabnext 1
 set stal=1
-badd +0 src/quests.c
-badd +0 ../firered/src/oak_speech.c
-badd +0 skeli
+badd +1 skeli
+badd +1 ../firered/src/oak_speech.c
+badd +1 src/quests.c
+badd +22 include/constants/quests.h
+badd +0 include/quests.h
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif

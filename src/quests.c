@@ -1786,7 +1786,6 @@ static void Task_QuestMenu_FadeOut(u8 taskId)
     else{
         Task_QuestMenuCleanUp(taskId);
         gTasks[taskId].func = Task_QuestMenu_FadeIn;
-		//DestroyTask(taskId);
     }
 }
 
@@ -1797,8 +1796,7 @@ static void Task_QuestMenu_FadeIn(u8 taskId)
 	if (!HandleFadeIn(taskId2))
         HandleFadeIn(taskId2);
     else
-		//DestroyTask(taskId);
-        gTasks[taskId].func = Task_QuestMenuCleanUp;
+        gTasks[taskId].func = Task_QuestMenuMain;
 }
 
 void QuestMenu_TextFadeOut(void)
