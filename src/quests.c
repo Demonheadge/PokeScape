@@ -1784,6 +1784,7 @@ static void Task_QuestMenu_FadeOut(u8 taskId)
 	if (!HandleFadeOut(taskId2))
         HandleFadeOut(taskId2);
     else{
+        PrepareFadeIn(taskId2, TRUE);
         Task_QuestMenuCleanUp(taskId);
         gTasks[taskId].func = Task_QuestMenu_FadeIn;
     }
