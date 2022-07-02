@@ -77,3 +77,37 @@ static bool8 HandleFadeIn(u8 taskId) //Handles the hardware fade in
 
     return FALSE;
 }
+
+//NEW SHIT
+
+static void Task_QuestMenu_FadeOut(u8 taskId)
+{
+	u8 taskId2 = taskId + 1;
+	s16 *data = gTasks[taskId].data;
+	bool8 restoreCursor;
+
+	if (!HandleFadeOut(taskId2))
+	{
+		HandleFadeOut(taskId2);
+	}
+	else
+	{
+		PrepareFadeIn(taskId2, TRUE);
+		Task_QuestMenuCleanUp(taskId);
+		gTasks[taskId].func = Task_QuestMenu_FadeIn;
+	}
+}
+
+static void Task_QuestMenu_FadeIn(u8 taskId)
+{
+	u8 taskId2 = taskId + 1;
+
+	if (!HandleFadeIn(taskId2))
+	{
+		HandleFadeIn(taskId2);
+	}
+	else
+	{
+		gTasks[taskId].func = Task_QuestMenuMain;
+	}
+}
