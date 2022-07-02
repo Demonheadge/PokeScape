@@ -1780,14 +1780,12 @@ static bool8 HandleFadeIn(u8 taskId) //Handles the hardware fade in
 static void Task_QuestMenu_FadeOut(u8 taskId)
 {
    u8 taskId2 = 1;
-	s16 *data = gTasks[taskId].data;
 
 	if (!HandleFadeOut(taskId2))
         HandleFadeOut(taskId2);
     else{
         PrepareFadeIn(taskId2, TRUE);
         Task_QuestMenuCleanUp(taskId);
-        QuestMenu_ResetSavedRowScrollToTop(data);
         gTasks[taskId].func = Task_QuestMenu_FadeIn;
     }
 }
