@@ -63,6 +63,7 @@ struct QuestMenuResources
 	s16 data[3];
 	u8 filterMode;
 	u8 parentQuest;
+    bool8 subquest;
 };
 
 struct QuestMenuStaticResources
@@ -115,7 +116,7 @@ static void QuestMenu_InitItems(void);
 static void QuestMenu_SetScrollPosition(void);
 static s8 QuestMenu_SetMode(bool8 subquest);
 static void Task_QuestMenuMain(u8 taskId);
-static void Task_QuestMenuCleanUp(u8 taskId);
+static void Task_QuestMenuCleanUp(u8 taskId, bool8 restoreCursor);
 static void QuestMenu_InitWindows(void);
 static void QuestMenu_AddTextPrinterParameterized(u8 windowId, u8 fontId, const u8 *str, u8 x, u8 y,
             u8 letterSpacing, u8 lineSpacing, u8 speed, u8 colorIdx);
@@ -670,7 +671,6 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 	u16 countQuest, numRow = 0;
 	u8 lastRow, newRow, offset = 0;
 	u8 i;
-    MgbaPrintf(4,"buildfiltered");
 
 	questNameArray = Alloc(sizeof(void *) * SIDE_QUEST_COUNT);
 
@@ -679,9 +679,6 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 		questNameArray[i] = Alloc(sizeof(u8) * 32);
 	}
 
-    MgbaPrintf(4,"mode %u",sStateDataPtr->filterMode);
-    MgbaPrintf(4,"mode %u",sStateDataPtr->filterMode);
-
 	if (QuestMenu_CheckSubquestMode())
 	{
 		countQuest = 0;
@@ -689,7 +686,6 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 
 		for (numRow = 0; numRow < sSideQuests[parentQuest].numSubquests; numRow++)
 		{
-            MgbaPrintf(4,"uh hello %u",numRow);
 			questNamePointer = ConvertIntToDecimalStringN(questNameArray[countQuest], countQuest + 1,
 			                   STR_CONV_MODE_LEFT_ALIGN, 2);
 			questNamePointer = StringAppend(questNamePointer, sText_QuestMenu_DotSpace);
@@ -1256,7 +1252,6 @@ static void QuestMenu_PlaceTopMenuScrollIndicatorArrows(void)
 
 static void QuestMenu_RemoveScrollIndicatorArrowPair(void)
 {
-    MgbaPrintf(4,"removescroll");
 	if (sStateDataPtr->scrollIndicatorArrowPairId != 0xFF)
 	{
 		RemoveScrollIndicatorArrowPair(sStateDataPtr->scrollIndicatorArrowPairId);
@@ -1429,9 +1424,12 @@ static void Task_QuestMenuMain(u8 taskId)
 	u16 scroll;
 	u16 row;
 	s32 input;
-	bool8 subquest, fadeSprites;
+	bool8 subquest, fadeSprites, restoreCursor;
 	u8 mode = sStateDataPtr->filterMode;
 	u8 selectedQuestId, fadeTask;
+
+    sStateDataPtr->subquest = FALSE;
+    subquest = sStateDataPtr->subquest;
 
 	if (!gPaletteFade.active)
 	{
@@ -1447,9 +1445,8 @@ static void Task_QuestMenuMain(u8 taskId)
 					if (!QuestMenu_CheckSubquestMode())
 					{
 						PlaySE(SE_SELECT);
-						subquest = FALSE;
 						QuestMenu_SetMode(subquest);
-						Task_QuestMenuCleanUp(taskId);
+						Task_QuestMenuCleanUp(taskId, restoreCursor);
 						QuestMenu_ResetSavedRowScrollToTop(data);
 					}
 				}
@@ -1460,7 +1457,7 @@ static void Task_QuestMenuMain(u8 taskId)
 						PlaySE(SE_SELECT);
 						selectedQuestId = sListMenuItems[sListMenuState.row + sListMenuState.scroll].id;
 						QuestMenu_ManageFavoriteQuests(selectedQuestId);
-						Task_QuestMenuCleanUp(taskId);
+						Task_QuestMenuCleanUp(taskId, restoreCursor);
 						QuestMenu_ResetSavedRowScrollToTop(data);
 					}
 				}
@@ -1470,9 +1467,8 @@ static void Task_QuestMenuMain(u8 taskId)
 				if (mode > SORT_DONE)
 				{
 					//QuestMenu_TextFadeOut();
-					subquest = FALSE;
 					QuestMenu_SetMode(subquest);
-					Task_QuestMenuCleanUp(taskId);
+						Task_QuestMenuCleanUp(taskId, restoreCursor);
 					//QuestMenu_TextFadeIn();
 					QuestMenu_RestoreSavedScrollAndRow(data);
 				}
@@ -1490,29 +1486,17 @@ static void Task_QuestMenuMain(u8 taskId)
 					if (QuestMenu_CheckHasChildren(input))
 					{
                         fadeSprites = TRUE;
+                        restoreCursor = FALSE;
+						subquest = TRUE;
                         fadeTask = 1;
-
                         PrepareFadeOut(fadeTask, fadeSprites);
 
 						PlaySE(SE_SELECT);
 						sStateDataPtr->parentQuest = input;
-						subquest = TRUE;
 						QuestMenu_SetMode(subquest);
 						QuestMenu_SaveScrollAndRow(data);
-                        //Task_QuestMenuCleanUp(taskId);
                         gTasks[taskId].func = Task_QuestMenu_FadeOut;
-						QuestMenu_ResetSavedRowScrollToTop(data); //this line needs to be after clean up or game hangs
-                        //gTasks[taskId].func = Task_QuestMenu_FadeIn;
-                        //CreateTask(Task_QuestMenu_FadeIn, 0);
-						//QuestMenu_TextFadeOut();
-
-                        /*
-                        PrepareFadeIn(taskId, fadeSprites);
-                        MgbaPrintf(4,"prepare fade in");
-                        CreateTask(Task_QuestMenu_FadeIn, 0);
-						//QuestMenu_TextFadeIn();
-                        */
-
+						QuestMenu_ResetSavedRowScrollToTop(data); //this line needs to be after clean up or fading in and out takes forever
 					}
 				}
 				break;
@@ -1520,9 +1504,8 @@ static void Task_QuestMenuMain(u8 taskId)
 	}
 }
 
-static void Task_QuestMenuCleanUp(u8 taskId)
+static void Task_QuestMenuCleanUp(u8 taskId, bool8 restoreCursor)
 {
-
 	s16 *data = gTasks[taskId].data;
     MgbaPrintf(4,"clean up");
 
@@ -1530,13 +1513,16 @@ static void Task_QuestMenuCleanUp(u8 taskId)
 	DestroyListMenuTask(data[0], &sListMenuState.scroll, &sListMenuState.row);
 	ClearStdWindowAndFrameToTransparent(2, FALSE);
 
-    //QuestMenu_InitItems();
 	QuestMenu_PrintHeader();
 	QuestMenu_AllocateResourcesForListMenu();
 	QuestMenu_BuildFilteredMenuTemplate();
 	QuestMenu_PlaceTopMenuScrollIndicatorArrows();
 
-	gTasks[taskId].func = Task_QuestMenuMain;
+    if (restoreCursor)
+        QuestMenu_RestoreSavedScrollAndRow(data);
+    else
+        QuestMenu_ResetSavedRowScrollToTop(data);
+	//gTasks[taskId].func = Task_QuestMenuMain;
 }
 
 // pokefirered text_window.c
@@ -1697,6 +1683,7 @@ static void SetGpuRegBaseForFade(bool8 fadeSprites) //Sets the GPU registers to 
 {
 	if (fadeSprites)
 		SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_EFFECT_BLEND); //Blend Sprites and BG0 into BG1
+    //SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG2 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_OBJ); /from firered
 	else
 		SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_EFFECT_BLEND); //Blend BG0 into BG3 used for when the screen is only showing the exit arrow
 
@@ -1716,6 +1703,7 @@ static void PrepareFadeOut(u8 taskId, bool8 fadeSprites) //Prepares the input ha
 
 static void PrepareFadeIn(u8 taskId, bool8 fadeSprites) //Prepares the input handler for a hardware fade in
 {
+    MgbaPrintf(4,"prepare fade in");
 	SetGpuRegBaseForFade(fadeSprites);
 	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0x0, 0x10));
 	gTasks[taskId].data[1] = 0;
@@ -1730,7 +1718,7 @@ static bool8 HandleFadeOut(u8 taskId) //Handles the hardware fade out
     MgbaPrintf(4,"handle fade out");
 
 	if (gTasks[taskId].data[1] == 0){
-        MgbaPrintf(4,"is tru");
+        MgbaPrintf(4,"fadeout is tru");
 		return TRUE;
     }
 	else
@@ -1780,12 +1768,14 @@ static bool8 HandleFadeIn(u8 taskId) //Handles the hardware fade in
 static void Task_QuestMenu_FadeOut(u8 taskId)
 {
    u8 taskId2 = 1;
+	s16 *data = gTasks[taskId].data;
+    bool8 restoreCursor;
 
 	if (!HandleFadeOut(taskId2))
         HandleFadeOut(taskId2);
     else{
         PrepareFadeIn(taskId2, TRUE);
-        Task_QuestMenuCleanUp(taskId);
+        Task_QuestMenuCleanUp(taskId, restoreCursor);
         gTasks[taskId].func = Task_QuestMenu_FadeIn;
     }
 }
