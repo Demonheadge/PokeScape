@@ -64,11 +64,9 @@ enum SubQuestTypes
 };
 
 // functions
-void CreateObjectMenuIcon(u16, u8);
-void CreateItemMenuIcon(u16, u8);
-void ResetItemMenuIconState(void);
-void DestroyItemMenuIcon(u8 idx);
-void DestroyObjectMenuIcon(u8 idx);
+void CreateQuestSprite(u16, u8, bool8);
+void ResetQuestSpriteState(void);
+void DestroyQuestSprite(u8 idx);
 void Task_OpenQuestMenuFromStartMenu(u8);
 s8 ChangeSubQuestFlags(u8 quest, u8 caseId, u8 childQuest);
 s8 QuestMenu_ManageFavoriteQuests(u8 index);

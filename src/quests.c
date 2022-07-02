@@ -399,7 +399,7 @@ static bool8 QuestMenu_DoGfxSetup(void)
 			gMain.state++;
 			break;
 		case 5:
-			ResetItemMenuIconState();
+			ResetQuestSpriteState();
 			gMain.state++;
 			break;
 		case 6:
@@ -828,31 +828,10 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 	gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_PrintProgressFunc;
 	gMultiuseListMenuTemplate.scrollMultiple = 1;
 	gMultiuseListMenuTemplate.cursorKind = 0;
+
 }
 
-void CreateObjectMenuIcon(u16 itemId, u8 idx)
-{
-	u8 *ptr = &gUnknown_2039878[10];
-	u8 spriteId;
-
-	if (ptr[idx] == 0xFF)
-	{
-
-		FreeSpriteTilesByTag(102 + idx);
-		FreeSpritePaletteByTag(102 + idx);
-
-
-		spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 20,
-		                                      132, 0);
-		if (spriteId != MAX_SPRITES)
-		{
-			ptr[idx] = spriteId;
-		}
-
-	}
-}
-
-void CreateItemMenuIcon(u16 itemId, u8 idx)
+void CreateQuestSprite(u16 itemId, u8 idx, bool8 object)
 {
 	u8 *ptr = &gUnknown_2039878[10];
 	u8 spriteId;
@@ -865,18 +844,26 @@ void CreateItemMenuIcon(u16 itemId, u8 idx)
 		FreeSpriteTilesByTag(102 + idx);
 		FreeSpritePaletteByTag(102 + idx);
 
-		spriteId = AddItemIconSprite(102 + idx, 102 + idx, itemId);
+        if (object != TRUE)
+            spriteId = AddItemIconSprite(102 + idx, 102 + idx, itemId);
+        else
+            spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 20,
+		                                      132, 0);
 
 		if (spriteId != MAX_SPRITES)
 		{
 			ptr[idx] = spriteId;
+
+        if (object != TRUE)
+        {
 			gSprites[spriteId].x2 = 24;
 			gSprites[spriteId].y2 = 140;
+            }
 		}
 	}
 }
 
-void ResetItemMenuIconState(void)
+void ResetQuestSpriteState(void)
 {
 	u16 i;
 
@@ -886,18 +873,7 @@ void ResetItemMenuIconState(void)
 	}
 }
 
-void DestroyItemMenuIcon(u8 idx)
-{
-	u8 *ptr = &gUnknown_2039878[10];
-
-	if (ptr[idx] != 0xFF)
-	{
-		DestroySpriteAndFreeResources(&gSprites[ptr[idx]]);
-		ptr[idx] = 0xFF;
-	}
-}
-
-void DestroyObjectMenuIcon(u8 idx)
+void DestroyQuestSprite(u8 idx)
 {
 	u8 *ptr = &gUnknown_2039878[10];
 
@@ -922,16 +898,14 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit,
 
 	if (sStateDataPtr->moveModeOrigPos == 0xFF)
 	{
+        DestroyQuestSprite(sStateDataPtr->itemMenuIconSlot ^ 1);
 		if (itemIndex != LIST_CANCEL)
 		{
-			DestroyObjectMenuIcon(sStateDataPtr->itemMenuIconSlot ^ 1);
-			DestroyItemMenuIcon(sStateDataPtr->itemMenuIconSlot ^ 1);
 
 			if (!QuestMenu_CheckSubquestMode())
 			{
 				if (GetSetQuestFlag(itemIndex, FLAG_GET_UNLOCKED))
 				{
-
 					//Look up the quest struct and get the description with this quest
 					if (GetSetQuestFlag(itemIndex, FLAG_GET_REWARD))
 					{
@@ -963,7 +937,7 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit,
 				}
 				else
 				{
-					CreateItemMenuIcon(ITEM_NONE, sStateDataPtr->itemMenuIconSlot);
+					CreateQuestSprite(ITEM_NONE, sStateDataPtr->itemMenuIconSlot, FALSE);
 					StringCopy(gStringVar1,  sText_Empty);
 				}
 
@@ -972,19 +946,21 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit,
 				StringExpandPlaceholders(gStringVar4, sText_QuestMenu_ShowLocation);
 				StringExpandPlaceholders(gStringVar3, gStringVar1);
 
-				CreateObjectMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
+				//CreateObjectMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
+                //MgbaPrintf(4,"itemid %u",itemId);
+				CreateQuestSprite(itemId, sStateDataPtr->itemMenuIconSlot,TRUE);
 			}
 
 			StringExpandPlaceholders(gStringVar4, sText_QuestMenu_ShowLocation);
 			StringExpandPlaceholders(gStringVar3, gStringVar1);
 
 			itemId = sSideQuests[itemIndex].object;
-			CreateObjectMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
+            CreateQuestSprite(itemId, sStateDataPtr->itemMenuIconSlot,TRUE);
+			//CreateObjectMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
 		}
 		else
 		{
-			DestroyObjectMenuIcon(sStateDataPtr->itemMenuIconSlot ^ 1);
-			CreateItemMenuIcon(-1, sStateDataPtr->itemMenuIconSlot);
+			CreateQuestSprite(-1, sStateDataPtr->itemMenuIconSlot,FALSE);
 			StringCopy(gStringVar4, sText_Empty);
 			StringCopy(gStringVar3, sText_Empty);
 		}
@@ -1564,7 +1540,7 @@ static void Task_QuestMenuMain(u8 taskId)
 static void Task_QuestMenuCleanUp(u8 taskId)
 {
 	s16 *data = gTasks[taskId].data;
-	MgbaPrintf(4, "clean up");
+	//MgbaPrintf(4, "clean up");
 
 	QuestMenu_RemoveScrollIndicatorArrowPair();
 	DestroyListMenuTask(data[0], &sListMenuState.scroll, &sListMenuState.row);
@@ -1751,11 +1727,13 @@ static void SetGpuRegBaseForFade(bool8
 {
 	if (fadeSprites)
 	{
+        ///*
 		SetGpuReg(REG_OFFSET_BLDCNT,
 		          BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 |
 		          BLDCNT_EFFECT_BLEND);      //Blend Sprites and BG0 into BG1
+                  //*/
 	}
-	//SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG2 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_OBJ); /from firered
+	//SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG2 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_OBJ); //from firered
 	else
 	{
 		SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 |
@@ -1768,7 +1746,7 @@ static void SetGpuRegBaseForFade(bool8
 static void PrepareFadeOut(u8 taskId,
                            bool8 fadeSprites) //Prepares the input handler for a hardware fade out
 {
-	MgbaPrintf(4, "prepare fade out");
+	//MgbaPrintf(4, "prepare fade out");
 	SetGpuRegBaseForFade(fadeSprites);
 	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0x10, 0x0));
 	gTasks[taskId].data[1] = 16;
@@ -1780,7 +1758,7 @@ static void PrepareFadeOut(u8 taskId,
 static void PrepareFadeIn(u8 taskId,
                           bool8 fadeSprites) //Prepares the input handler for a hardware fade in
 {
-	MgbaPrintf(4, "prepare fade in");
+	//MgbaPrintf(4, "prepare fade in");
 	SetGpuRegBaseForFade(fadeSprites);
 	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0x0, 0x10));
 	gTasks[taskId].data[1] = 0;
@@ -1792,16 +1770,16 @@ static void PrepareFadeIn(u8 taskId,
 
 static bool8 HandleFadeOut(u8 taskId) //Handles the hardware fade out
 {
-	MgbaPrintf(4, "handle fade out");
+	//MgbaPrintf(4, "handle fade out");
 
 	if (gTasks[taskId].data[1] == 0)
 	{
-		MgbaPrintf(4, "fadeout is tru");
+		//MgbaPrintf(4, "fadeout is tru");
 		return TRUE;
 	}
 	else
 	{
-		MgbaPrintf(4, "is false");
+		//MgbaPrintf(4, "is false");
 		if (gTasks[taskId].data[4] > 0)
 		{
 			gTasks[taskId].data[4]--;
@@ -1821,19 +1799,19 @@ static bool8 HandleFadeOut(u8 taskId) //Handles the hardware fade out
 
 static bool8 HandleFadeIn(u8 taskId) //Handles the hardware fade in
 {
-	MgbaPrintf(4, "handle fade in");
+	//MgbaPrintf(4, "handle fade in");
 	if (gTasks[taskId].data[1] >= 16)
 	{
 		if (!gPaletteFade.active)
 		{
 			return TRUE;
 		}
-		MgbaPrintf(4, "true fade in");
+		//MgbaPrintf(4, "true fade in");
 
 	}
 	else
 	{
-		MgbaPrintf(4, "false fade in");
+		//MgbaPrintf(4, "false fade in");
 		if (gTasks[taskId].data[4] > 0)
 		{
 			gTasks[taskId].data[4]--;
