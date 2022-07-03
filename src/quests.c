@@ -64,6 +64,7 @@ struct QuestMenuResources
 	u8 filterMode;
 	u8 parentQuest;
 	bool8 restoreCursor;
+    u8 cycle;
 };
 
 struct QuestMenuStaticResources
@@ -850,6 +851,8 @@ void CreateQuestSprite(u16 itemId, u8 idx, bool8 object)
 		else
 			spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 20,
 			                                      132, 0);
+
+            gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
 
 		if (spriteId != MAX_SPRITES)
 		{
@@ -1735,7 +1738,7 @@ static void SetGpuRegBaseForFade(bool8
 			          BLDCNT_EFFECT_BLEND);      //Blend Sprites and BG0 into BG1
 		}
 		else
-            		{
+		{
 
 			SetGpuReg(REG_OFFSET_DISPCNT,
 			          DISPCNT_BG0_ON | DISPCNT_BG1_ON | DISPCNT_OBJ_ON | DISPCNT_WIN0_ON |
@@ -1777,88 +1780,69 @@ static void SetGpuRegBaseForFade(bool8
 	SetGpuReg(REG_OFFSET_BLDY, 0);
 }
 
-static void PrepareFadeOut(u8 taskId,
-                           bool8 fadeSprites) //Prepares the input handler for a hardware fade out
+#define MAX_FADE_INTENSITY 16
+#define MIN_FADE_INTENSITY 0
+
+static void PrepareFadeOut(u8 taskId, bool8 fadeSprites)
 {
-	//MgbaPrintf(4, "prepare fade out");
+    sStateDataPtr->cycle++;
+    MgbaPrintf(4,"fadeout number: %u",sStateDataPtr->cycle);
+
 	SetGpuRegBaseForFade(fadeSprites);
-	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0x10, 0x0));
-	gTasks[taskId].data[1] = 16;
-	gTasks[taskId].data[2] = 0;
-	gTasks[taskId].data[3] = 0; //Fade Delay
-	gTasks[taskId].data[4] = 0; //Fade Delay
+	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(MAX_FADE_INTENSITY,0));
+	gTasks[taskId].data[1] = MAX_FADE_INTENSITY; //blend weight
+	gTasks[taskId].data[2] = 0; //delay
+	gTasks[taskId].data[3] = gTasks[taskId].data[2]; //delay timer
+	gTasks[taskId].data[4] = 2; //delta
+}
+
+static bool8 HandleFadeOut(u8 taskId)
+{
+
+	if (gTasks[taskId].data[3]-- != 0)
+	{
+		return FALSE;
+	}
+
+	gTasks[taskId].data[3] = gTasks[taskId].data[2];
+	gTasks[taskId].data[1] -= gTasks[taskId].data[4];
+	gTasks[taskId].data[2] += gTasks[taskId].data[3];
+
+	if (gTasks[taskId].data[1] <= 0)
+	{
+		SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0, gTasks[taskId].data[1]));
+		return TRUE;
+	}
+	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(gTasks[taskId].data[1],
+	            MAX_FADE_INTENSITY - gTasks[taskId].data[1]));
+	return FALSE;
 }
 
 static void PrepareFadeIn(u8 taskId,
                           bool8 fadeSprites) //Prepares the input handler for a hardware fade in
 {
-	//MgbaPrintf(4, "prepare fade in");
 	SetGpuRegBaseForFade(fadeSprites);
-	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0x0, 0x10));
-	gTasks[taskId].data[1] = 0;
-	gTasks[taskId].data[2] = 16;
-	gTasks[taskId].data[3] = 0; //Fade Delay
-	gTasks[taskId].data[4] = 0; //Fade Delay
-}
-
-static bool8 HandleFadeOut(u8 taskId) //Handles the hardware fade out
-{
-	//MgbaPrintf(4, "handle fade out");
-
-	if (gTasks[taskId].data[1] == 0)
-	{
-		//MgbaPrintf(4, "fadeout is tru");
-		return TRUE;
-	}
-	else
-	{
-		//MgbaPrintf(4, "is false");
-		if (gTasks[taskId].data[4] > 0)
-		{
-			gTasks[taskId].data[4]--;
-		}
-		else
-		{
-			gTasks[taskId].data[4] = gTasks[taskId].data[3];
-			gTasks[taskId].data[1] -= 2;
-			gTasks[taskId].data[2] += 2;
-			SetGpuReg(REG_OFFSET_BLDALPHA,
-			          (gTasks[taskId].data[2] * 256) + gTasks[taskId].data[1]);
-		}
-	}
-
-	return FALSE;
+	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0,
+	            MAX_FADE_INTENSITY));
+	gTasks[taskId].data[1] = MIN_FADE_INTENSITY;
+	gTasks[taskId].data[2] = 0; //delay
+	gTasks[taskId].data[3] = gTasks[taskId].data[1]; // delay timer
+	gTasks[taskId].data[4] = 2; //delta
 }
 
 static bool8 HandleFadeIn(u8 taskId) //Handles the hardware fade in
 {
-	//MgbaPrintf(4, "handle fade in");
-	if (gTasks[taskId].data[1] >= 16)
-	{
-		if (!gPaletteFade.active)
-		{
-			return TRUE;
-		}
-		//MgbaPrintf(4, "true fade in");
+	gTasks[taskId].data[3] = gTasks[taskId].data[2];
+	gTasks[taskId].data[1] += gTasks[taskId].data[4];
 
-	}
-	else
+	if (gTasks[taskId].data[1] >= MAX_FADE_INTENSITY)
 	{
-		//MgbaPrintf(4, "false fade in");
-		if (gTasks[taskId].data[4] > 0)
-		{
-			gTasks[taskId].data[4]--;
-		}
-		else
-		{
-			gTasks[taskId].data[4] = gTasks[taskId].data[3];
-			gTasks[taskId].data[1] += 2;
-			gTasks[taskId].data[2] -= 2;
-			SetGpuReg(REG_OFFSET_BLDALPHA,
-			          (gTasks[taskId].data[2] * 256) + gTasks[taskId].data[1]);
-		}
+		SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(MAX_FADE_INTENSITY,
+		            MIN_FADE_INTENSITY));
+		return TRUE;
 	}
-
+	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(gTasks[taskId].data[1],
+	            MAX_FADE_INTENSITY - gTasks[taskId].data[1]));
 	return FALSE;
 }
 

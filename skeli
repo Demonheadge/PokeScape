@@ -4,78 +4,99 @@
 https://discord.com/channels/442462691542695948/442465020291317760/941701794319446077
 
 */
-static void SetGpuRegBaseForFade(bool8 fadeSprites) //Sets the GPU registers to prepare for a hardware fade
+static void SetGpuRegBaseForFade(bool8
+                                 fadeSprites) //Sets the GPU registers to prepare for a hardware fade
 {
-    if (fadeSprites)
-        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG3 | BLDCNT_EFFECT_BLEND); //Blend Sprites and BG0 into BG3
-    else
-        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG3 | BLDCNT_EFFECT_BLEND); //Blend BG0 into BG3
+	if (fadeSprites)
+	{
+		SetGpuReg(REG_OFFSET_BLDCNT,
+		          BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG3 |
+		          BLDCNT_EFFECT_BLEND);      //Blend Sprites and BG0 into BG3
+	}
+	else
+	{
+		SetGpuReg(REG_OFFSET_BLDCNT,
+		          BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG3 |
+		          BLDCNT_EFFECT_BLEND);      //Blend BG0 into BG3
+	}
 
-    SetGpuReg(REG_OFFSET_BLDY, 0);
+	SetGpuReg(REG_OFFSET_BLDY, 0);
 }
 
-static void PrepareFadeOut(u8 taskId, bool8 fadeSprites) //Prepares the input handler for a hardware fade out
+static void PrepareFadeOut(u8 taskId,
+                           bool8 fadeSprites) //Prepares the input handler for a hardware fade out
 {
-    SetGpuRegBaseForFade(fadeSprites);
-    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0x10, 0x0));
-    gTasks[taskId].data[1] = 16;
-    gTasks[taskId].data[2] = 0;
-    gTasks[taskId].data[3] = 0; //Fade Delay
-    gTasks[taskId].data[4] = 0; //Fade Delay
+	SetGpuRegBaseForFade(fadeSprites);
+	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0x10, 0x0));
+	gTasks[taskId].data[1] = 16;
+	gTasks[taskId].data[2] = 0;
+	gTasks[taskId].data[3] = 0; //Fade Delay
+	gTasks[taskId].data[4] = 0; //Fade Delay
 }
 
-static void PrepareFadeIn(u8 taskId, bool8 fadeSprites) //Prepares the input handler for a hardware fade in
+static void PrepareFadeIn(u8 taskId,
+                          bool8 fadeSprites) //Prepares the input handler for a hardware fade in
 {
-    SetGpuRegBaseForFade(fadeSprites);
-    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0x0, 0x10));
-    gTasks[taskId].data[1] = 0;
-    gTasks[taskId].data[2] = 16;
-    gTasks[taskId].data[3] = 0; //Fade Delay
-    gTasks[taskId].data[4] = 0; //Fade Delay
+	SetGpuRegBaseForFade(fadeSprites);
+	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0x0, 0x10));
+	gTasks[taskId].data[1] = 0;
+	gTasks[taskId].data[2] = 16;
+	gTasks[taskId].data[3] = 0; //Fade Delay
+	gTasks[taskId].data[4] = 0; //Fade Delay
 }
 
 
 static bool8 HandleFadeOut(u8 taskId) //Handles the hardware fade out
 {
-    if (gTasks[taskId].data[1] == 0)
-        return TRUE;
-    else
-    {
-        if (gTasks[taskId].data[4] > 0)
-            gTasks[taskId].data[4]--;
-        else
-        {
-            gTasks[taskId].data[4] = gTasks[taskId].data[3];
-            gTasks[taskId].data[1] -= 2;
-            gTasks[taskId].data[2] += 2;
-            SetGpuReg(REG_OFFSET_BLDALPHA, (gTasks[taskId].data[2] * 256) + gTasks[taskId].data[1]);
-        }
-    }
+	if (gTasks[taskId].data[1] == 0)
+	{
+		return TRUE;
+	}
+	else
+	{
+		if (gTasks[taskId].data[4] > 0)
+		{
+			gTasks[taskId].data[4]--;
+		}
+		else
+		{
+			gTasks[taskId].data[4] = gTasks[taskId].data[3];
+			gTasks[taskId].data[1] -= 2;
+			gTasks[taskId].data[2] += 2;
+			SetGpuReg(REG_OFFSET_BLDALPHA,
+			          (gTasks[taskId].data[2] * 256) + gTasks[taskId].data[1]);
+		}
+	}
 
-    return FALSE;
+	return FALSE;
 }
 
 static bool8 HandleFadeIn(u8 taskId) //Handles the hardware fade in
 {
-    if (gTasks[taskId].data[1] >= 16)
-    {
-        if (!gPaletteFade->active)
-            return TRUE;
-    }
-    else
-    {
-        if (gTasks[taskId].data[4] > 0)
-            gTasks[taskId].data[4]--;
-        else
-        {
-            gTasks[taskId].data[4] = gTasks[taskId].data[3];
-            gTasks[taskId].data[1] += 2;
-            gTasks[taskId].data[2] -= 2;
-            SetGpuReg(REG_OFFSET_BLDALPHA, (gTasks[taskId].data[2] * 256) + gTasks[taskId].data[1]);
-        }
-    }
+	if (gTasks[taskId].data[1] >= 16)
+	{
+		if (!gPaletteFade->active)
+		{
+			return TRUE;
+		}
+	}
+	else
+	{
+		if (gTasks[taskId].data[4] > 0)
+		{
+			gTasks[taskId].data[4]--;
+		}
+		else
+		{
+			gTasks[taskId].data[4] = gTasks[taskId].data[3];
+			gTasks[taskId].data[1] += 2;
+			gTasks[taskId].data[2] -= 2;
+			SetGpuReg(REG_OFFSET_BLDALPHA,
+			          (gTasks[taskId].data[2] * 256) + gTasks[taskId].data[1]);
+		}
+	}
 
-    return FALSE;
+	return FALSE;
 }
 
 //NEW SHIT
@@ -111,3 +132,38 @@ static void Task_QuestMenu_FadeIn(u8 taskId)
 		gTasks[taskId].func = Task_QuestMenuMain;
 	}
 }
+
+//PIDGEY
+
+#define MAX_FADE_INTENSITY 31
+static void PrepareFadeIn(u8 taskId,
+                          bool8 fadeSprites) //Prepares the input handler for a hardware fade in
+{
+
+	//MgbaPrintf(4, "prepare fade in");
+	SetGpuRegBaseForFade(fadeSprites);
+	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0, MAX_FADE_INTENSITY));
+	gTasks[taskId].data[1] = 0; // blend weight
+	gTasks[taskId].data[2] = 0; // delay
+	gTasks[taskId].data[3] = gTasks[taskId].data[1]; // delay timer
+	gTasks[taskId].data[4] = 2; // delta
+}
+
+static bool8 HandleFadeIn(u8 taskId) //Handles the hardware fade in
+{
+	if (gTasks[taskId].data[3]-- != 0)
+	{
+		return FALSE;
+	}
+	gTasks[taskId].data[3] = gTasks[taskId].data[2];
+	gTasks[taskId].data[1] += gTasks[taskId].data[4];
+	if (gTasks[taskId].data[1] >= MAX_FADE_INTENSITY)
+	{
+		SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(MAX_FADE_INTENSITY, 0));
+		return TRUE;
+	}
+	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(gTasks[taskId].data[1],
+	            MAX_FADE_INTENSITY - gTasks[taskId].data[1]));
+	return FALSE;
+}
+
