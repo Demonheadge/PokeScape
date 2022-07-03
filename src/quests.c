@@ -891,9 +891,11 @@ void DestroyQuestSprite(u8 idx)
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit,
                                      struct ListMenu *list)
 {
+
 	u16 itemId;
 	u8 parentQuest = sStateDataPtr->parentQuest;
 	const u8 *desc;
+    MgbaPrintf(4,"QuestMenu_MoveCursorFunc");
 
 	if (onInit != TRUE)
 	{
@@ -979,10 +981,13 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit,
 
 static void QuestMenu_PrintProgressFunc(u8 windowId, u32 itemId, u8 y)
 {
+
+
 	u8 colorIndex = 0;
 	u8 questType;
 	u8 parentQuest = sStateDataPtr->parentQuest;
 	questType = sSideQuests[parentQuest].childtype;
+    MgbaPrintf(4,"QuestMenu_PrintProgressFunc");
 
 	if (sStateDataPtr->moveModeOrigPos != 0xFF)
 	{
@@ -1530,8 +1535,6 @@ static void Task_QuestMenuMain(u8 taskId)
 						sStateDataPtr->restoreCursor = FALSE;
 						QuestMenu_SaveScrollAndRow(data);
 						gTasks[taskId].func = Task_QuestMenu_FadeOut;
-						QuestMenu_ResetSavedRowScrollToTop(
-						      data); //this line needs to be after clean up or fading in and out takes forever
 					}
 				}
 				break;
@@ -1786,8 +1789,8 @@ static void SetGpuRegBaseForFade(bool8
 static void PrepareFadeOut(u8 taskId, bool8 fadeSprites)
 {
     sStateDataPtr->cycle++;
+    MgbaPrintf(4,"-----------------------",sStateDataPtr->cycle);
     MgbaPrintf(4,"fadeout number: %u",sStateDataPtr->cycle);
-
 	SetGpuRegBaseForFade(fadeSprites);
 	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(MAX_FADE_INTENSITY,0));
 	gTasks[taskId].data[1] = MAX_FADE_INTENSITY; //blend weight
@@ -1798,7 +1801,6 @@ static void PrepareFadeOut(u8 taskId, bool8 fadeSprites)
 
 static bool8 HandleFadeOut(u8 taskId)
 {
-
 	if (gTasks[taskId].data[3]-- != 0)
 	{
 		return FALSE;
