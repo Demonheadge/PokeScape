@@ -56,7 +56,7 @@ struct QuestMenuResources
 {
 	MainCallback savedCallback;
 	u8 moveModeOrigPos;
-	u8 itemMenuIconSlot;
+	u8 spriteIconSlot;
 	u8 maxShowed;
 	u8 nItems;
 	u8 scrollIndicatorArrowPairId;
@@ -64,7 +64,7 @@ struct QuestMenuResources
 	u8 filterMode;
 	u8 parentQuest;
 	bool8 restoreCursor;
-    u8 cycle;
+	u8 cycle;
 };
 
 struct QuestMenuStaticResources
@@ -335,7 +335,7 @@ void QuestMenu_Init(u8 a0, MainCallback callback)
 	}
 
 	sStateDataPtr->moveModeOrigPos = 0xFF;
-	sStateDataPtr->itemMenuIconSlot = 0;
+	sStateDataPtr->spriteIconSlot = 0;
 	sStateDataPtr->scrollIndicatorArrowPairId = 0xFF;
 	sStateDataPtr->savedCallback = 0;
 	for (i = 0; i < 3; i++)
@@ -852,7 +852,7 @@ void CreateQuestSprite(u16 itemId, u8 idx, bool8 object)
 			spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 20,
 			                                      132, 0);
 
-            gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
+		gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
 
 		if (spriteId != MAX_SPRITES)
 		{
@@ -891,11 +891,9 @@ void DestroyQuestSprite(u8 idx)
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit,
                                      struct ListMenu *list)
 {
-
 	u16 itemId;
 	u8 parentQuest = sStateDataPtr->parentQuest;
 	const u8 *desc;
-    MgbaPrintf(4,"QuestMenu_MoveCursorFunc");
 
 	if (onInit != TRUE)
 	{
@@ -904,7 +902,7 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit,
 
 	if (sStateDataPtr->moveModeOrigPos == 0xFF)
 	{
-		DestroyQuestSprite(sStateDataPtr->itemMenuIconSlot ^ 1);
+		DestroyQuestSprite(sStateDataPtr->spriteIconSlot ^ 1);
 		if (itemIndex != LIST_CANCEL)
 		{
 
@@ -943,7 +941,7 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit,
 				}
 				else
 				{
-					CreateQuestSprite(ITEM_NONE, sStateDataPtr->itemMenuIconSlot, FALSE);
+					CreateQuestSprite(ITEM_NONE, sStateDataPtr->spriteIconSlot, FALSE);
 					StringCopy(gStringVar1,  sText_Empty);
 				}
 
@@ -952,24 +950,23 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit,
 				StringExpandPlaceholders(gStringVar4, sText_QuestMenu_ShowLocation);
 				StringExpandPlaceholders(gStringVar3, gStringVar1);
 
-				//MgbaPrintf(4,"itemid %u",itemId);
-				CreateQuestSprite(itemId, sStateDataPtr->itemMenuIconSlot, TRUE);
+				CreateQuestSprite(itemId, sStateDataPtr->spriteIconSlot, TRUE);
 			}
 
 			StringExpandPlaceholders(gStringVar4, sText_QuestMenu_ShowLocation);
 			StringExpandPlaceholders(gStringVar3, gStringVar1);
 
 			itemId = sSideQuests[itemIndex].object;
-			CreateQuestSprite(itemId, sStateDataPtr->itemMenuIconSlot, TRUE);
+			CreateQuestSprite(itemId, sStateDataPtr->spriteIconSlot, TRUE);
 		}
 		else
 		{
-			CreateQuestSprite(-1, sStateDataPtr->itemMenuIconSlot, FALSE);
+			CreateQuestSprite(-1, sStateDataPtr->spriteIconSlot, FALSE);
 			StringCopy(gStringVar4, sText_Empty);
 			StringCopy(gStringVar3, sText_Empty);
 		}
 
-		sStateDataPtr->itemMenuIconSlot ^= 1;
+		sStateDataPtr->spriteIconSlot ^= 1;
 		FillWindowPixelBuffer(1, 0);
 
 		QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar4, 2, 3, 2, 0, 0,
@@ -987,7 +984,6 @@ static void QuestMenu_PrintProgressFunc(u8 windowId, u32 itemId, u8 y)
 	u8 questType;
 	u8 parentQuest = sStateDataPtr->parentQuest;
 	questType = sSideQuests[parentQuest].childtype;
-    MgbaPrintf(4,"QuestMenu_PrintProgressFunc");
 
 	if (sStateDataPtr->moveModeOrigPos != 0xFF)
 	{
@@ -1545,7 +1541,6 @@ static void Task_QuestMenuMain(u8 taskId)
 static void Task_QuestMenuCleanUp(u8 taskId)
 {
 	s16 *data = gTasks[taskId].data;
-	//MgbaPrintf(4, "clean up");
 
 	QuestMenu_RemoveScrollIndicatorArrowPair();
 	DestroyListMenuTask(data[0], &sListMenuState.scroll, &sListMenuState.row);
@@ -1730,50 +1725,13 @@ void ResetQuestMenuData(void)
 static void SetGpuRegBaseForFade(bool8
                                  fadeSprites) //Sets the GPU registers to prepare for a hardware fade
 {
-	bool8 yep = TRUE;
-
 	if (fadeSprites)
 	{
-		if (yep == TRUE)
-		{
-			SetGpuReg(REG_OFFSET_BLDCNT,
-			          BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 |
-			          BLDCNT_EFFECT_BLEND);      //Blend Sprites and BG0 into BG1
-		}
-		else
-		{
-
-			SetGpuReg(REG_OFFSET_DISPCNT,
-			          DISPCNT_BG0_ON | DISPCNT_BG1_ON | DISPCNT_OBJ_ON | DISPCNT_WIN0_ON |
-			          DISPCNT_WIN1_ON |
-			          DISPCNT_OBJ_ON); //enable bg0, bg1, obj, and windows 0, 1, and obj window
-
-			//window0 and window1 should consume the entire screen in two halves
-			SetGpuReg(REG_OFFSET_WIN0H, 240);
-			SetGpuReg(REG_OFFSET_WIN0V, 80);
-			SetGpuReg(REG_OFFSET_WIN1H, 240);
-			SetGpuReg(REG_OFFSET_WIN1V, 160);
-
-			SetGpuReg(REG_OFFSET_WININ,
-			          WININ_WIN0_BG0 | WININ_WIN0_BG1 | WININ_WIN0_OBJ | WININ_WIN0_CLR |
-			          WININ_WIN1_BG0 |
-			          WININ_WIN1_BG1 |
-			          WININ_WIN1_OBJ |
-			          WININ_WIN1_CLR); //enable bg1, bg0, obj, and blending on window 1 and window 0 within the bounds of the window
-
-			SetGpuReg(REG_OFFSET_WINOUT,
-			          WINOUT_WIN01_BG0 | WINOUT_WIN01_BG1 | WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR
-			          |
-			          WINOUT_WINOBJ_BG0 | WINOUT_WINOBJ_BG1 | WINOUT_WINOBJ_OBJ |
-			          WINOUT_WINOBJ_CLR); //enable bg1, bg0, obj, and blend outside the bounds of the window just to be safe
-
-			SetGpuReg(REG_OFFSET_BLDCNT,
-			          BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 |
-			          BLDCNT_EFFECT_BLEND);      //Blend Sprites and BG0 into BG1
-		}
-
+		SetGpuReg(REG_OFFSET_BLDCNT,
+		          BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 |
+		          BLDCNT_EFFECT_BLEND);      //Blend Sprites and BG0 into BG1
 	}
-	//SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG2 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_OBJ); //from firered
+
 	else
 	{
 		SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 |
@@ -1788,11 +1746,9 @@ static void SetGpuRegBaseForFade(bool8
 
 static void PrepareFadeOut(u8 taskId, bool8 fadeSprites)
 {
-    sStateDataPtr->cycle++;
-    MgbaPrintf(4,"-----------------------",sStateDataPtr->cycle);
-    MgbaPrintf(4,"fadeout number: %u",sStateDataPtr->cycle);
+	sStateDataPtr->cycle++;
 	SetGpuRegBaseForFade(fadeSprites);
-	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(MAX_FADE_INTENSITY,0));
+	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(MAX_FADE_INTENSITY, 0));
 	gTasks[taskId].data[1] = MAX_FADE_INTENSITY; //blend weight
 	gTasks[taskId].data[2] = 0; //delay
 	gTasks[taskId].data[3] = gTasks[taskId].data[2]; //delay timer
