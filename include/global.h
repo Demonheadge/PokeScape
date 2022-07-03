@@ -506,7 +506,6 @@ struct SaveBlock2
     /*0x????*/ u8 activeQuests[SIDE_QUEST_FLAGS_COUNT];
     /*0x????*/ u8 rewardQuests[SIDE_QUEST_FLAGS_COUNT];
     /*0x????*/ u8 completedQuests[SIDE_QUEST_FLAGS_COUNT];
-    ///*0x????*/ u8 inactiveQuests[SIDE_QUEST_FLAGS_COUNT];
     /*0x????*/ u8 subQuests[SIDE_QUEST_FLAGS_COUNT][100];
     /*0x????*/ u8 favoriteQuests[SIDE_QUEST_FLAGS_COUNT];
 }; 

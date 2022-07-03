@@ -828,7 +828,6 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 	gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_PrintProgressFunc;
 	gMultiuseListMenuTemplate.scrollMultiple = 1;
 	gMultiuseListMenuTemplate.cursorKind = 0;
-
 }
 
 void CreateQuestSprite(u16 itemId, u8 idx, bool8 object)
@@ -844,21 +843,23 @@ void CreateQuestSprite(u16 itemId, u8 idx, bool8 object)
 		FreeSpriteTilesByTag(102 + idx);
 		FreeSpritePaletteByTag(102 + idx);
 
-        if (object != TRUE)
-            spriteId = AddItemIconSprite(102 + idx, 102 + idx, itemId);
-        else
-            spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 20,
-		                                      132, 0);
+		if (object != TRUE)
+		{
+			spriteId = AddItemIconSprite(102 + idx, 102 + idx, itemId);
+		}
+		else
+			spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 20,
+			                                      132, 0);
 
 		if (spriteId != MAX_SPRITES)
 		{
 			ptr[idx] = spriteId;
 
-        if (object != TRUE)
-        {
-			gSprites[spriteId].x2 = 24;
-			gSprites[spriteId].y2 = 140;
-            }
+			if (object != TRUE)
+			{
+				gSprites[spriteId].x2 = 24;
+				gSprites[spriteId].y2 = 140;
+			}
 		}
 	}
 }
@@ -898,7 +899,7 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit,
 
 	if (sStateDataPtr->moveModeOrigPos == 0xFF)
 	{
-        DestroyQuestSprite(sStateDataPtr->itemMenuIconSlot ^ 1);
+		DestroyQuestSprite(sStateDataPtr->itemMenuIconSlot ^ 1);
 		if (itemIndex != LIST_CANCEL)
 		{
 
@@ -946,21 +947,19 @@ static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit,
 				StringExpandPlaceholders(gStringVar4, sText_QuestMenu_ShowLocation);
 				StringExpandPlaceholders(gStringVar3, gStringVar1);
 
-				//CreateObjectMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
-                //MgbaPrintf(4,"itemid %u",itemId);
-				CreateQuestSprite(itemId, sStateDataPtr->itemMenuIconSlot,TRUE);
+				//MgbaPrintf(4,"itemid %u",itemId);
+				CreateQuestSprite(itemId, sStateDataPtr->itemMenuIconSlot, TRUE);
 			}
 
 			StringExpandPlaceholders(gStringVar4, sText_QuestMenu_ShowLocation);
 			StringExpandPlaceholders(gStringVar3, gStringVar1);
 
 			itemId = sSideQuests[itemIndex].object;
-            CreateQuestSprite(itemId, sStateDataPtr->itemMenuIconSlot,TRUE);
-			//CreateObjectMenuIcon(itemId, sStateDataPtr->itemMenuIconSlot);
+			CreateQuestSprite(itemId, sStateDataPtr->itemMenuIconSlot, TRUE);
 		}
 		else
 		{
-			CreateQuestSprite(-1, sStateDataPtr->itemMenuIconSlot,FALSE);
+			CreateQuestSprite(-1, sStateDataPtr->itemMenuIconSlot, FALSE);
 			StringCopy(gStringVar4, sText_Empty);
 			StringCopy(gStringVar3, sText_Empty);
 		}
@@ -1725,13 +1724,48 @@ void ResetQuestMenuData(void)
 static void SetGpuRegBaseForFade(bool8
                                  fadeSprites) //Sets the GPU registers to prepare for a hardware fade
 {
+	bool8 yep = TRUE;
+
 	if (fadeSprites)
 	{
-        ///*
-		SetGpuReg(REG_OFFSET_BLDCNT,
-		          BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 |
-		          BLDCNT_EFFECT_BLEND);      //Blend Sprites and BG0 into BG1
-                  //*/
+		if (yep == TRUE)
+		{
+			SetGpuReg(REG_OFFSET_BLDCNT,
+			          BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 |
+			          BLDCNT_EFFECT_BLEND);      //Blend Sprites and BG0 into BG1
+		}
+		else
+            		{
+
+			SetGpuReg(REG_OFFSET_DISPCNT,
+			          DISPCNT_BG0_ON | DISPCNT_BG1_ON | DISPCNT_OBJ_ON | DISPCNT_WIN0_ON |
+			          DISPCNT_WIN1_ON |
+			          DISPCNT_OBJ_ON); //enable bg0, bg1, obj, and windows 0, 1, and obj window
+
+			//window0 and window1 should consume the entire screen in two halves
+			SetGpuReg(REG_OFFSET_WIN0H, 240);
+			SetGpuReg(REG_OFFSET_WIN0V, 80);
+			SetGpuReg(REG_OFFSET_WIN1H, 240);
+			SetGpuReg(REG_OFFSET_WIN1V, 160);
+
+			SetGpuReg(REG_OFFSET_WININ,
+			          WININ_WIN0_BG0 | WININ_WIN0_BG1 | WININ_WIN0_OBJ | WININ_WIN0_CLR |
+			          WININ_WIN1_BG0 |
+			          WININ_WIN1_BG1 |
+			          WININ_WIN1_OBJ |
+			          WININ_WIN1_CLR); //enable bg1, bg0, obj, and blending on window 1 and window 0 within the bounds of the window
+
+			SetGpuReg(REG_OFFSET_WINOUT,
+			          WINOUT_WIN01_BG0 | WINOUT_WIN01_BG1 | WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR
+			          |
+			          WINOUT_WINOBJ_BG0 | WINOUT_WINOBJ_BG1 | WINOUT_WINOBJ_OBJ |
+			          WINOUT_WINOBJ_CLR); //enable bg1, bg0, obj, and blend outside the bounds of the window just to be safe
+
+			SetGpuReg(REG_OFFSET_BLDCNT,
+			          BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 |
+			          BLDCNT_EFFECT_BLEND);      //Blend Sprites and BG0 into BG1
+		}
+
 	}
 	//SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG2 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_OBJ); //from firered
 	else
@@ -1766,7 +1800,6 @@ static void PrepareFadeIn(u8 taskId,
 	gTasks[taskId].data[3] = 0; //Fade Delay
 	gTasks[taskId].data[4] = 0; //Fade Delay
 }
-
 
 static bool8 HandleFadeOut(u8 taskId) //Handles the hardware fade out
 {
@@ -1831,11 +1864,7 @@ static bool8 HandleFadeIn(u8 taskId) //Handles the hardware fade in
 
 static void Task_QuestMenu_FadeOut(u8 taskId)
 {
-	if (!HandleFadeOut(taskId))
-	{
-		HandleFadeOut(taskId);
-	}
-	else
+	if (HandleFadeOut(taskId))
 	{
 		PrepareFadeIn(taskId, TRUE);
 		Task_QuestMenuCleanUp(taskId);
@@ -1845,11 +1874,7 @@ static void Task_QuestMenu_FadeOut(u8 taskId)
 
 static void Task_QuestMenu_FadeIn(u8 taskId)
 {
-	if (!HandleFadeIn(taskId))
-	{
-		HandleFadeIn(taskId);
-	}
-	else
+	if (HandleFadeIn(taskId))
 	{
 		gTasks[taskId].func = Task_QuestMenuMain;
 	}
