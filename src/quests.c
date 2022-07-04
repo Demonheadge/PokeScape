@@ -720,110 +720,6 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 	u16 countQuest, numRow = 0;
 	u8 lastRow, newRow, offset = 0;FALSE
 	u8 i;
-	u8 useMemory = TRUE;
-
-    sStateDataPtr->cycle++;
-    MgbaPrintf(4,"cycle number %u",sStateDataPtr->cycle);
-    
-	if (useMemory == FALSE)
-	{
-		if (QuestMenu_CheckSubquestMode())
-		{
-			countQuest = 0;
-			parentQuest = sStateDataPtr->parentQuest;
-
-			for (numRow = 0; numRow < sSideQuests[parentQuest].numSubquests; numRow++)
-			{
-
-				if (ChangeSubQuestFlags(parentQuest, FLAG_GET_COMPLETED, countQuest))
-				{
-					numRow = numRow;
-				}
-				else
-				{
-					numRow = numRow;
-				}
-
-				sListMenuItems[numRow].name = sText_QuestMenu_StartForMore;
-				sListMenuItems[numRow].id = countQuest;
-				countQuest++;
-				lastRow = numRow + 1;
-			}
-		}
-		else if (!QuestMenu_CheckDefaultMode())
-		{
-
-			for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
-			{
-				if (GetSetQuestFlag(countQuest, sStateDataPtr->filterMode))
-				{
-					if (GetSetQuestFlag(countQuest, FLAG_GET_FAVORITE))
-					{
-						newRow = numRow;
-						numRow++;
-					}
-					else
-					{
-						newRow = QuestMenu_CountFavoriteAndState() + offset;
-						offset++;
-					}
-
-					if (GetSetQuestFlag(countQuest, FLAG_GET_UNLOCKED))
-					{
-
-						if (QuestMenu_CheckHasChildren(countQuest))
-						{
-							newRow = newRow;
-						}
-					}
-					else
-					{
-						newRow = newRow;
-					}
-
-					sListMenuItems[newRow].name = sText_QuestMenu_StartForMore;
-					sListMenuItems[newRow].id = countQuest;
-				}
-			}
-			lastRow = numRow + offset;
-		}
-		else
-		{
-			for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
-			{
-
-				if (GetSetQuestFlag(countQuest, FLAG_GET_FAVORITE))
-				{
-					newRow = numRow;
-					numRow++;
-				}
-				else
-				{
-					newRow = QuestMenu_CountFavoriteQuests() + offset;
-					offset++;
-				}
-
-				if (GetSetQuestFlag(countQuest, FLAG_GET_UNLOCKED))
-				{
-
-					if (QuestMenu_CheckHasChildren(countQuest))
-					{
-                        countQuest = countQuest;
-					}
-				}
-				else
-				{
-                        countQuest = countQuest;
-				}
-
-				sListMenuItems[newRow].name = sText_QuestMenu_StartForMore;
-				sListMenuItems[newRow].id = countQuest;
-				lastRow = numRow + offset;
-			}
-		}
-	}
-	else
-	{
 
 		if (QuestMenu_CheckSubquestMode())
 		{
@@ -938,7 +834,6 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 				lastRow = numRow + offset;
 			}
 		}
-	}
 
 	QuestMenu_AssignCancelNameAndId(lastRow);
 
