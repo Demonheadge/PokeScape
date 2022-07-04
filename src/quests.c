@@ -52,6 +52,9 @@
 #define tBldCntBak      data[7]
 #define tBldYBak        data[8]
 
+//PSF TODO in original Unbound an unlocked quest just means it appears in the list, all quests with a NAME are considered Active... deal with this
+//PSF TODO implement press start for A-Z mode
+
 struct QuestMenuResources
 {
 	MainCallback savedCallback;
@@ -100,6 +103,8 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void);
 static void QuestMenu_AssignCancelNameAndId(u8 numRow);
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit,
                                      struct ListMenu *list);
+static void QuestMenu_MoveCursorFunc2(s32 itemIndex, bool8 onInit,
+                                      struct ListMenu *list);
 static void QuestMenu_PrintProgressFunc(u8 windowId, u32 itemId, u8 y);
 static void QuestMenu_PrintOrRemoveCursorAt(u8 y, u8 state);
 s8 QuestMenu_CountUnlockedQuests(void);
@@ -136,6 +141,24 @@ static bool8 HandleFadeOut(u8 taskId); //Handles the hardware fade out
 static bool8 HandleFadeIn(u8 taskId); //Handles the hardware fade in
 static void Task_QuestMenu_FadeOut(u8 taskId);
 static void Task_QuestMenu_FadeIn(u8 taskId);
+
+void QuestMenu_GenerateAndPrintQuestDetails(s32 questId);
+void QuestMenu_CreateNPCOrItemSprite(s32 questId);
+void QuestMenu_PrintQuestLocation(s32 questId);
+
+void QuestMenu_GenerateQuestFlavorText(s32 questId);
+void QuestMenu_PrintQuestFlavorText(s32 questId);
+void QuestMenu_GenerateQuestLocation(s32 questId);
+
+bool8 QuestMenu_IsSubquestCompletedState(s32 questId);
+bool8 QuestMenu_IsQuestRewardState(s32 questId);
+bool8 QuestMenu_IsQuestCompletedState(s32 questId);
+bool8 QuestMenu_IsQuestUnlocked(s32 questId);
+bool8 QuestMenu_IsQuestOnlyActive(s32 questId);
+bool8 QuestMenu_IsQuestActive(s32 questId);
+bool8 QuestMenu_IsQuestInactive(s32 questId);
+void QuestMenu_UpdateQuestFlavorText(s32 questId);
+
 
 // Data
 // graphics
@@ -888,91 +911,220 @@ void DestroyQuestSprite(u8 idx)
 	}
 }
 
-static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit,
-                                     struct ListMenu *list)
+void QuestMenu_PlayCursorSound(bool8 firstRun)
 {
-	u16 itemId;
-	u8 parentQuest = sStateDataPtr->parentQuest;
-	const u8 *desc;
-
-	if (onInit != TRUE)
+	if (firstRun != TRUE)
 	{
 		PlaySE(SE_RG_BAG_CURSOR);
 	}
 
+}
+
+void QuestMenu_CreateDetailsForCancel()
+{
+	FillWindowPixelBuffer(1, 0);
+
+	QuestMenu_AddTextPrinterParameterized(1, 2, sText_Empty, 2, 3, 2, 0, 0,
+	                                      0);
+	QuestMenu_AddTextPrinterParameterized(1, 2, sText_Empty, 40, 19, 5, 0, 0,
+	                                      0);
+
+	CreateQuestSprite(-1, sStateDataPtr->spriteIconSlot, FALSE);
+}
+
+static void QuestMenu_MoveCursorFunc(s32 questId, bool8 onInit,
+                                     struct ListMenu *list)
+{
+	QuestMenu_PlayCursorSound(onInit);
+
 	if (sStateDataPtr->moveModeOrigPos == 0xFF)
 	{
 		DestroyQuestSprite(sStateDataPtr->spriteIconSlot ^ 1);
-		if (itemIndex != LIST_CANCEL)
+		sStateDataPtr->spriteIconSlot ^= 1;
+
+		if (questId == LIST_CANCEL)
 		{
-
-			if (!QuestMenu_CheckSubquestMode())
-			{
-				if (GetSetQuestFlag(itemIndex, FLAG_GET_UNLOCKED))
-				{
-					//Look up the quest struct and get the description with this quest
-					if (GetSetQuestFlag(itemIndex, FLAG_GET_REWARD))
-					{
-						StringCopy(gStringVar1, sText_QuestMenu_ReturnRecieveReward);
-					}
-					if (GetSetQuestFlag(itemIndex, FLAG_GET_COMPLETED))
-					{
-						StringCopy(gStringVar1, sSideQuests[itemIndex].donedesc);
-					}
-					else
-					{
-						StringCopy(gStringVar1, sSideQuests[itemIndex].desc);
-					}
-				}
-				else
-				{
-					StringCopy(gStringVar1, sText_QuestMenu_StartForMore);
-				}
-				StringCopy(gStringVar2, sSideQuests[itemIndex].map);
-			}
-			else
-			{
-
-				if (ChangeSubQuestFlags(parentQuest, FLAG_GET_COMPLETED, itemIndex))
-				{
-					itemId = sSideQuests[parentQuest].subquests[itemIndex].object;
-					StringCopy(gStringVar1,
-					           sSideQuests[parentQuest].subquests[itemIndex].desc);
-				}
-				else
-				{
-					CreateQuestSprite(ITEM_NONE, sStateDataPtr->spriteIconSlot, FALSE);
-					StringCopy(gStringVar1,  sText_Empty);
-				}
-
-				StringCopy(gStringVar2,
-				           sSideQuests[parentQuest].subquests[itemIndex].map);
-				StringExpandPlaceholders(gStringVar4, sText_QuestMenu_ShowLocation);
-				StringExpandPlaceholders(gStringVar3, gStringVar1);
-
-				CreateQuestSprite(itemId, sStateDataPtr->spriteIconSlot, TRUE);
-			}
-
-			StringExpandPlaceholders(gStringVar4, sText_QuestMenu_ShowLocation);
-			StringExpandPlaceholders(gStringVar3, gStringVar1);
-
-			itemId = sSideQuests[itemIndex].object;
-			CreateQuestSprite(itemId, sStateDataPtr->spriteIconSlot, TRUE);
+			QuestMenu_CreateDetailsForCancel();
 		}
 		else
 		{
-			CreateQuestSprite(-1, sStateDataPtr->spriteIconSlot, FALSE);
-			StringCopy(gStringVar4, sText_Empty);
-			StringCopy(gStringVar3, sText_Empty);
+			QuestMenu_GenerateAndPrintQuestDetails(questId);
+			QuestMenu_CreateNPCOrItemSprite(questId);
 		}
+	}
+}
 
-		sStateDataPtr->spriteIconSlot ^= 1;
-		FillWindowPixelBuffer(1, 0);
+void QuestMenu_CreateNPCOrItemSprite(s32 questId)
+{
+	u16 objectId;
 
-		QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar4, 2, 3, 2, 0, 0,
-		                                      0);
-		QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar3, 40, 19, 5, 0, 0,
-		                                      0);
+	if (QuestMenu_CheckSubquestMode() == FALSE)
+	{
+		objectId = sSideQuests[questId].object;
+		CreateQuestSprite(objectId, sStateDataPtr->spriteIconSlot, TRUE);
+	}
+	else if (QuestMenu_IsSubquestCompletedState(questId) == TRUE)
+	{
+		objectId =
+		      sSideQuests[sStateDataPtr->parentQuest].subquests[questId].object;
+		CreateQuestSprite(objectId, sStateDataPtr->spriteIconSlot, TRUE);
+	}
+	else
+	{
+		CreateQuestSprite(ITEM_NONE, sStateDataPtr->spriteIconSlot, FALSE);
+	}
+	DestroyQuestSprite(sStateDataPtr->spriteIconSlot ^ 1);
+	sStateDataPtr->spriteIconSlot ^= 1;
+}
+
+void QuestMenu_GenerateAndPrintQuestDetails(s32 questId)
+{
+	QuestMenu_GenerateQuestLocation(questId);
+	QuestMenu_PrintQuestLocation(questId);
+	QuestMenu_GenerateQuestFlavorText(questId);
+	QuestMenu_PrintQuestFlavorText(questId);
+}
+
+void QuestMenu_GenerateQuestLocation(s32 questId)
+{
+	if (!QuestMenu_CheckSubquestMode())
+	{
+		StringCopy(gStringVar2, sSideQuests[questId].map);
+	}
+	else
+	{
+		StringCopy(gStringVar2,
+		           sSideQuests[sStateDataPtr->parentQuest].subquests[questId].map);
+	}
+
+	StringExpandPlaceholders(gStringVar4, sText_QuestMenu_ShowLocation);
+}
+
+void QuestMenu_PrintQuestLocation(s32 questId)
+{
+	FillWindowPixelBuffer(1, 0);
+	QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar4, 2, 3, 2, 0, 0,
+	                                      0);
+}
+
+void QuestMenu_GenerateQuestFlavorText(s32 questId)
+{
+	if (QuestMenu_CheckSubquestMode() == FALSE)
+	{
+		if (QuestMenu_IsQuestInactive(questId) == TRUE)
+		{
+			StringCopy(gStringVar1, sText_QuestMenu_StartForMore);
+		}
+		if (QuestMenu_IsQuestActive(questId) == TRUE)
+		{
+			QuestMenu_UpdateQuestFlavorText(questId);
+		}
+		if (QuestMenu_IsQuestRewardState(questId) == TRUE)
+		{
+			StringCopy(gStringVar1, sText_QuestMenu_ReturnRecieveReward);
+		}
+		if (QuestMenu_IsQuestCompletedState(questId) == TRUE)
+		{
+			StringCopy(gStringVar1, sSideQuests[questId].donedesc);
+		}
+	}
+	else
+	{
+		if (QuestMenu_IsSubquestCompletedState(questId) == TRUE)
+		{
+			StringCopy(gStringVar1,
+			           sSideQuests[sStateDataPtr->parentQuest].subquests[questId].desc);
+		}
+		else
+		{
+			StringCopy(gStringVar1, sText_Empty);
+		}
+	}
+
+	StringExpandPlaceholders(gStringVar3, gStringVar1);
+}
+
+void QuestMenu_PrintQuestFlavorText(s32 questId)
+{
+	QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar3, 40, 19, 5, 0, 0,
+	                                      0);
+}
+
+void QuestMenu_UpdateQuestFlavorText(s32 questId)
+{
+	StringCopy(gStringVar1, sSideQuests[questId].desc);
+}
+
+bool8 QuestMenu_IsQuestInactive(s32 questId)
+{
+	if (!GetSetQuestFlag(questId, FLAG_GET_ACTIVE))
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+bool8 QuestMenu_IsQuestActive(s32 questId)
+{
+	if (GetSetQuestFlag(questId, FLAG_GET_ACTIVE))
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+bool8 QuestMenu_IsSubquestCompletedState(s32 questId)
+{
+	if (ChangeSubQuestFlags(sStateDataPtr->parentQuest, FLAG_GET_COMPLETED,
+	                        questId))
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+bool8 QuestMenu_IsQuestRewardState(s32 questId)
+{
+	if (GetSetQuestFlag(questId, FLAG_GET_REWARD))
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+bool8 QuestMenu_IsQuestCompletedState(s32 questId)
+{
+	if (GetSetQuestFlag(questId, FLAG_GET_COMPLETED))
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+bool8 QuestMenu_IsQuestUnlocked(s32 questId)
+{
+	if (GetSetQuestFlag(questId, FLAG_GET_UNLOCKED))
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
 	}
 }
 
