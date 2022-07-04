@@ -97,7 +97,7 @@ static void Task_QuestMenuWaitFadeAndBail(u8 taskId);
 static bool8 QuestMenu_InitBgs(void);
 static bool8 QuestMenu_LoadGraphics(void);
 static bool8 QuestMenu_AllocateResourcesForListMenu(void);
-static u8 QuestMenu_GenerateTotalItems(u8 mode);
+static u8 QuestMenu_GenerateTotalItems();
 static s8 QuestMenu_CheckHasChildren(u16 itemId);
 static u16 QuestMenu_BuildFilteredMenuTemplate(void);
 static void QuestMenu_AssignCancelNameAndId(u8 numRow);
@@ -129,8 +129,7 @@ static void QuestMenu_AddTextPrinterParameterized(u8 windowId, u8 fontId,
 static void QuestMenu_SetInitializedFlag(u8 a0);
 static void QuestMenu_InitModeOnStartup(void);
 
-static void SetGpuRegBaseForFade(bool8
-                                 fadeSprites); //Sets the GPU registers to prepare for a hardware fade
+static void SetGpuRegBaseForFade(void); //Sets the GPU registers to prepare for a hardware fade
 static void PrepareFadeOut(u8 taskId,
                            bool8 fadeSprites); //Prepares the input handler for a hardware fade out
 static void PrepareFadeIn(u8 taskId,
@@ -623,8 +622,7 @@ static bool8 QuestMenu_LoadGraphics(void)
 static bool8 QuestMenu_AllocateResourcesForListMenu(void)
 {
 	try_alloc(sListMenuItems,
-	          sizeof(struct ListMenuItem) * QuestMenu_GenerateTotalItems(
-	                sStateDataPtr->filterMode) + 1);
+	          sizeof(struct ListMenuItem) * QuestMenu_GenerateTotalItems() + 1);
 	return TRUE;
 }
 
@@ -653,11 +651,9 @@ static s8 QuestMenu_CheckHasChildren(u16 itemId)
 	}
 }
 
-static u8 QuestMenu_GenerateTotalItems(u8 mode)
+static u8 QuestMenu_GenerateTotalItems()
 {
-	u8 parentQuest = sStateDataPtr->parentQuest;
-
-	switch (mode)
+    switch (sStateDataPtr->filterMode)
 	{
 		case SORT_DEFAULT:
 			return SIDE_QUEST_COUNT + 1;
@@ -670,7 +666,7 @@ static u8 QuestMenu_GenerateTotalItems(u8 mode)
 		case SORT_DONE:
 			return QuestMenu_CountCompletedQuests() + 1;
 		default:
-			return sSideQuests[parentQuest].numSubquests + 1;
+			return sSideQuests[sStateDataPtr->parentQuest].numSubquests + 1;
 	}
 }
 
@@ -718,8 +714,7 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 {
 	u8 parentQuest = sStateDataPtr->parentQuest;
 	u16 countQuest, numRow = 0;
-	u8 lastRow, newRow, offset = 0;FALSE
-	u8 i;
+	u8 lastRow, newRow, offset = 0;
 
 		if (QuestMenu_CheckSubquestMode())
 		{
@@ -837,8 +832,7 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 
 	QuestMenu_AssignCancelNameAndId(lastRow);
 
-	gMultiuseListMenuTemplate.totalItems = QuestMenu_GenerateTotalItems(
-	            sStateDataPtr->filterMode);
+	gMultiuseListMenuTemplate.totalItems = QuestMenu_GenerateTotalItems();
 	gMultiuseListMenuTemplate.items = sListMenuItems;
 	gMultiuseListMenuTemplate.windowId = 0;
 	gMultiuseListMenuTemplate.header_X = 0;
@@ -1419,7 +1413,7 @@ static void QuestMenu_PrintHeader(void)
 static void QuestMenu_PlaceTopMenuScrollIndicatorArrows(void)
 {
 
-	u8 listSize = (QuestMenu_GenerateTotalItems(sStateDataPtr->filterMode));
+	u8 listSize = QuestMenu_GenerateTotalItems();
 
 	if (listSize < sStateDataPtr->maxShowed)
 	{
@@ -1530,8 +1524,7 @@ static u8 QuestMenu_GetCursorPosition(void)
 
 static void QuestMenu_InitItems(void)
 {
-	sStateDataPtr->nItems = (QuestMenu_GenerateTotalItems(
-	                               sStateDataPtr->filterMode)) - 1;
+	sStateDataPtr->nItems = (QuestMenu_GenerateTotalItems()) - 1;
 
 	sStateDataPtr->maxShowed = sStateDataPtr->nItems + 1 <= 4 ?
 	                           sStateDataPtr->nItems + 1 : 4;
@@ -1877,21 +1870,11 @@ void ResetQuestMenuData(void)
 	       sizeof(gSaveBlock2Ptr->favoriteQuests));
 }
 
-static void SetGpuRegBaseForFade(bool8
-                                 fadeSprites) //Sets the GPU registers to prepare for a hardware fade
+static void SetGpuRegBaseForFade() //Sets the GPU registers to prepare for a hardware fade
 {
-	if (fadeSprites)
-	{
 		SetGpuReg(REG_OFFSET_BLDCNT,
 		          BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 |
 		          BLDCNT_EFFECT_BLEND);      //Blend Sprites and BG0 into BG1
-	}
-
-	else
-	{
-		SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 |
-		          BLDCNT_EFFECT_BLEND);      //Blend BG0 into BG3 used for when the screen is only showing the exit arrow
-	}
 
 	SetGpuReg(REG_OFFSET_BLDY, 0);
 }
@@ -1901,7 +1884,7 @@ static void SetGpuRegBaseForFade(bool8
 
 static void PrepareFadeOut(u8 taskId, bool8 fadeSprites)
 {
-	SetGpuRegBaseForFade(fadeSprites);
+	SetGpuRegBaseForFade();
 	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(MAX_FADE_INTENSITY, 0));
 	gTasks[taskId].data[1] = MAX_FADE_INTENSITY; //blend weight
 	gTasks[taskId].data[2] = 0; //delay
@@ -1933,7 +1916,7 @@ static bool8 HandleFadeOut(u8 taskId)
 static void PrepareFadeIn(u8 taskId,
                           bool8 fadeSprites) //Prepares the input handler for a hardware fade in
 {
-	SetGpuRegBaseForFade(fadeSprites);
+	SetGpuRegBaseForFade();
 	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0,
 	            MAX_FADE_INTENSITY));
 	gTasks[taskId].data[1] = MIN_FADE_INTENSITY;
