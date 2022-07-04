@@ -468,7 +468,8 @@ struct RankingHall2P
 
 // quest menu
 #include "constants/quests.h"
-#define SIDE_QUEST_FLAGS_COUNT     ((SIDE_QUEST_COUNT / 8) + ((SIDE_QUEST_COUNT % 8) ? 1 : 0))
+#define QUEST_FLAGS_COUNT ROUND_BITS_TO_BYTES(SIDE_QUEST_COUNT)
+#define SUB_FLAGS_COUNT ROUND_BITS_TO_BYTES(100)
 
 struct SaveBlock2
 {
@@ -502,12 +503,12 @@ struct SaveBlock2
     /*0x57C*/ struct RankingHall2P hallRecords2P[FRONTIER_LVL_MODE_COUNT][HALL_RECORDS_COUNT]; // From record mixing.
     /*0x624*/ u16 contestLinkResults[CONTEST_CATEGORIES_COUNT][CONTESTANT_COUNT];
     /*0x64C*/ struct BattleFrontier frontier;
-    /*0x0F2C*/ u8 unlockedQuests[SIDE_QUEST_FLAGS_COUNT];
-    /*0x????*/ u8 activeQuests[SIDE_QUEST_FLAGS_COUNT];
-    /*0x????*/ u8 rewardQuests[SIDE_QUEST_FLAGS_COUNT];
-    /*0x????*/ u8 completedQuests[SIDE_QUEST_FLAGS_COUNT];
-    /*0x????*/ u8 subQuests[SIDE_QUEST_FLAGS_COUNT][100];
-    /*0x????*/ u8 favoriteQuests[SIDE_QUEST_FLAGS_COUNT];
+    /*0x0F2C*/ u8 unlockedQuests[QUEST_FLAGS_COUNT];
+    /*0x????*/ u8 activeQuests[QUEST_FLAGS_COUNT];
+    /*0x????*/ u8 rewardQuests[QUEST_FLAGS_COUNT];
+    /*0x????*/ u8 completedQuests[QUEST_FLAGS_COUNT];
+    /*0x????*/ u8 subQuests[SIDE_QUEST_COUNT][SUB_FLAGS_COUNT];
+    /*0x????*/ u8 favoriteQuests[QUEST_FLAGS_COUNT];
 }; 
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
