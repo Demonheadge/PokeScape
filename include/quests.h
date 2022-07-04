@@ -10,6 +10,11 @@
 #define SORT_ACTIVE 2
 #define SORT_REWARD 3
 #define SORT_DONE 4
+#define SORT_DEFAULT_AZ 10
+#define SORT_INACTIVE_AZ 11
+#define SORT_ACTIVE_AZ 12
+#define SORT_REWARD_AZ 13
+#define SORT_DONE_AZ 14
 #define SORT_SUBQUEST 100
 
 struct SubQuest

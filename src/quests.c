@@ -719,8 +719,8 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 	u16 countQuest, numRow = 0;
 	u8 lastRow, newRow, offset = 0;
 
-    MgbaPrintf(4,"size of subquests %lu",sizeof(gSaveBlock2Ptr->subQuests));
-    MgbaPrintf(4,"size of reward %lu",sizeof(gSaveBlock2Ptr->rewardQuests));
+    //MgbaPrintf(4,"size of subquests %lu",sizeof(gSaveBlock2Ptr->subQuests));
+    //MgbaPrintf(4,"size of reward %lu",sizeof(gSaveBlock2Ptr->rewardQuests));
 
 	if (QuestMenu_CheckSubquestMode())
 	{
@@ -954,6 +954,7 @@ static void QuestMenu_MoveCursorFunc(s32 questId, bool8 onInit,
 		{
 			QuestMenu_GenerateAndPrintQuestDetails(questId);
 			QuestMenu_CreateNPCOrItemSprite(questId);
+            MgbaPrintf(4,"sprite");
 		}
 	}
 }
@@ -1567,6 +1568,7 @@ static void QuestMenu_ToggleAlphaSort()
 static s8 QuestMenu_SetMode(bool8 subquest)
 {
 	u8 mode = sStateDataPtr->filterMode;
+    bool8 alphaSort = sStateDataPtr->alphaSort;
 
 	if (subquest)
 	{
@@ -1648,6 +1650,7 @@ static void Task_QuestMenuMain(u8 taskId)
 					{
 						PlaySE(SE_SELECT);
 						QuestMenu_ToggleAlphaSort();
+						QuestMenu_SetMode(FALSE);
 						Task_QuestMenuCleanUp(taskId);
 					}
 				}
