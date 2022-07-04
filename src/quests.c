@@ -103,8 +103,6 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void);
 static void QuestMenu_AssignCancelNameAndId(u8 numRow);
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit,
                                      struct ListMenu *list);
-static void QuestMenu_MoveCursorFunc2(s32 itemIndex, bool8 onInit,
-                                      struct ListMenu *list);
 static void QuestMenu_PrintProgressFunc(u8 windowId, u32 itemId, u8 y);
 static void QuestMenu_PrintOrRemoveCursorAt(u8 y, u8 state);
 s8 QuestMenu_CountUnlockedQuests(void);
@@ -159,6 +157,7 @@ bool8 QuestMenu_IsQuestActive(s32 questId);
 bool8 QuestMenu_IsQuestInactive(s32 questId);
 void QuestMenu_UpdateQuestFlavorText(s32 questId);
 
+void QuestMenu_AllocateArray();
 
 // Data
 // graphics
@@ -478,6 +477,7 @@ static bool8 QuestMenu_DoGfxSetup(void)
 		case 12:
 			//print the quest titles, avatars, desc and status
 			//When this is gone, page does not seem to play nice
+            QuestMenu_AllocateArray();
 			QuestMenu_BuildFilteredMenuTemplate();
 			gMain.state++;
 			break;
@@ -628,6 +628,17 @@ static bool8 QuestMenu_AllocateResourcesForListMenu(void)
 	return TRUE;
 }
 
+void QuestMenu_AllocateArray(void)
+{
+    u8 i;
+    questNameArray = Alloc(sizeof(void *) * SIDE_QUEST_COUNT);
+
+    for (i = 0; i < 32; i++)
+    {
+        questNameArray[i] = Alloc(sizeof(u8) * 32);
+    }
+}
+
 static s8 QuestMenu_CheckHasChildren(u16 itemId)
 {
 	if (sSideQuests[itemId].childtype != 0
@@ -707,51 +718,189 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 {
 	u8 parentQuest = sStateDataPtr->parentQuest;
 	u16 countQuest, numRow = 0;
-	u8 lastRow, newRow, offset = 0;
+	u8 lastRow, newRow, offset = 0;FALSE
 	u8 i;
+	u8 useMemory = TRUE;
 
-	questNameArray = Alloc(sizeof(void *) * SIDE_QUEST_COUNT);
-
-	for (i = 0; i < 32; i++)
+    sStateDataPtr->cycle++;
+    MgbaPrintf(4,"cycle number %u",sStateDataPtr->cycle);
+    
+	if (useMemory == FALSE)
 	{
-		questNameArray[i] = Alloc(sizeof(u8) * 32);
-	}
-
-	if (QuestMenu_CheckSubquestMode())
-	{
-		countQuest = 0;
-		parentQuest = sStateDataPtr->parentQuest;
-
-		for (numRow = 0; numRow < sSideQuests[parentQuest].numSubquests; numRow++)
+		if (QuestMenu_CheckSubquestMode())
 		{
-			questNamePointer = ConvertIntToDecimalStringN(questNameArray[countQuest],
-			                   countQuest + 1,
-			                   STR_CONV_MODE_LEFT_ALIGN, 2);
-			questNamePointer = StringAppend(questNamePointer,
-			                                sText_QuestMenu_DotSpace);
+			countQuest = 0;
+			parentQuest = sStateDataPtr->parentQuest;
 
-			if (ChangeSubQuestFlags(parentQuest, FLAG_GET_COMPLETED, countQuest))
+			for (numRow = 0; numRow < sSideQuests[parentQuest].numSubquests; numRow++)
 			{
-				questNamePointer = StringAppend(questNamePointer,
-				                                sSideQuests[parentQuest].subquests[countQuest].name);
-			}
-			else
-			{
-				questNamePointer = StringAppend(questNamePointer, sText_QuestMenu_Unk);
-			}
 
-			sListMenuItems[numRow].name = questNameArray[countQuest];
-			sListMenuItems[numRow].id = countQuest;
-			countQuest++;
-			lastRow = numRow + 1;
+				if (ChangeSubQuestFlags(parentQuest, FLAG_GET_COMPLETED, countQuest))
+				{
+					numRow = numRow;
+				}
+				else
+				{
+					numRow = numRow;
+				}
+
+				sListMenuItems[numRow].name = sText_QuestMenu_StartForMore;
+				sListMenuItems[numRow].id = countQuest;
+				countQuest++;
+				lastRow = numRow + 1;
+			}
+		}
+		else if (!QuestMenu_CheckDefaultMode())
+		{
+
+			for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
+			{
+				if (GetSetQuestFlag(countQuest, sStateDataPtr->filterMode))
+				{
+					if (GetSetQuestFlag(countQuest, FLAG_GET_FAVORITE))
+					{
+						newRow = numRow;
+						numRow++;
+					}
+					else
+					{
+						newRow = QuestMenu_CountFavoriteAndState() + offset;
+						offset++;
+					}
+
+					if (GetSetQuestFlag(countQuest, FLAG_GET_UNLOCKED))
+					{
+
+						if (QuestMenu_CheckHasChildren(countQuest))
+						{
+							newRow = newRow;
+						}
+					}
+					else
+					{
+						newRow = newRow;
+					}
+
+					sListMenuItems[newRow].name = sText_QuestMenu_StartForMore;
+					sListMenuItems[newRow].id = countQuest;
+				}
+			}
+			lastRow = numRow + offset;
+		}
+		else
+		{
+			for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
+			{
+
+				if (GetSetQuestFlag(countQuest, FLAG_GET_FAVORITE))
+				{
+					newRow = numRow;
+					numRow++;
+				}
+				else
+				{
+					newRow = QuestMenu_CountFavoriteQuests() + offset;
+					offset++;
+				}
+
+				if (GetSetQuestFlag(countQuest, FLAG_GET_UNLOCKED))
+				{
+
+					if (QuestMenu_CheckHasChildren(countQuest))
+					{
+                        countQuest = countQuest;
+					}
+				}
+				else
+				{
+                        countQuest = countQuest;
+				}
+
+				sListMenuItems[newRow].name = sText_QuestMenu_StartForMore;
+				sListMenuItems[newRow].id = countQuest;
+				lastRow = numRow + offset;
+			}
 		}
 	}
-	else if (!QuestMenu_CheckDefaultMode())
+	else
 	{
 
-		for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
+		if (QuestMenu_CheckSubquestMode())
 		{
-			if (GetSetQuestFlag(countQuest, sStateDataPtr->filterMode))
+			countQuest = 0;
+			parentQuest = sStateDataPtr->parentQuest;
+
+			for (numRow = 0; numRow < sSideQuests[parentQuest].numSubquests; numRow++)
+			{
+				questNamePointer = ConvertIntToDecimalStringN(questNameArray[countQuest],
+				                   countQuest + 1,
+				                   STR_CONV_MODE_LEFT_ALIGN, 2);
+				questNamePointer = StringAppend(questNamePointer,
+				                                sText_QuestMenu_DotSpace);
+
+				if (ChangeSubQuestFlags(parentQuest, FLAG_GET_COMPLETED, countQuest))
+				{
+					questNamePointer = StringAppend(questNamePointer,
+					                                sSideQuests[parentQuest].subquests[countQuest].name);
+				}
+				else
+				{
+					questNamePointer = StringAppend(questNamePointer, sText_QuestMenu_Unk);
+				}
+
+				sListMenuItems[numRow].name = questNameArray[countQuest];
+				sListMenuItems[numRow].id = countQuest;
+				countQuest++;
+				lastRow = numRow + 1;
+			}
+		}
+		else if (!QuestMenu_CheckDefaultMode())
+		{
+
+			for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
+			{
+				if (GetSetQuestFlag(countQuest, sStateDataPtr->filterMode))
+				{
+					questNamePointer = StringCopy(questNameArray[countQuest], sText_Empty);
+
+					if (GetSetQuestFlag(countQuest, FLAG_GET_FAVORITE))
+					{
+						questNamePointer = StringAppend(questNameArray[countQuest],
+						                                sText_QuestMenu_GreenColor);
+						newRow = numRow;
+						numRow++;
+					}
+					else
+					{
+						newRow = QuestMenu_CountFavoriteAndState() + offset;
+						offset++;
+					}
+
+					if (GetSetQuestFlag(countQuest, FLAG_GET_UNLOCKED))
+					{
+						questNamePointer = StringAppend(questNameArray[countQuest],
+						                                sSideQuests[countQuest].name);
+
+						if (QuestMenu_CheckHasChildren(countQuest))
+						{
+							questNamePointer = StringAppend(questNameArray[countQuest],
+							                                sText_QuestMenu_SubQuestButton);
+						}
+					}
+					else
+					{
+						StringAppend(questNameArray[countQuest], sText_QuestMenu_Unk);
+					}
+
+					sListMenuItems[newRow].name = questNameArray[countQuest];
+					sListMenuItems[newRow].id = countQuest;
+				}
+			}
+			lastRow = numRow + offset;
+		}
+		else
+		{
+			for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
 			{
 				questNamePointer = StringCopy(questNameArray[countQuest], sText_Empty);
 
@@ -764,7 +913,7 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 				}
 				else
 				{
-					newRow = QuestMenu_CountFavoriteAndState() + offset;
+					newRow = QuestMenu_CountFavoriteQuests() + offset;
 					offset++;
 				}
 
@@ -786,48 +935,8 @@ static u16 QuestMenu_BuildFilteredMenuTemplate(void)
 
 				sListMenuItems[newRow].name = questNameArray[countQuest];
 				sListMenuItems[newRow].id = countQuest;
+				lastRow = numRow + offset;
 			}
-		}
-		lastRow = numRow + offset;
-	}
-	else
-	{
-		for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
-		{
-			questNamePointer = StringCopy(questNameArray[countQuest], sText_Empty);
-
-			if (GetSetQuestFlag(countQuest, FLAG_GET_FAVORITE))
-			{
-				questNamePointer = StringAppend(questNameArray[countQuest],
-				                                sText_QuestMenu_GreenColor);
-				newRow = numRow;
-				numRow++;
-			}
-			else
-			{
-				newRow = QuestMenu_CountFavoriteQuests() + offset;
-				offset++;
-			}
-
-			if (GetSetQuestFlag(countQuest, FLAG_GET_UNLOCKED))
-			{
-				questNamePointer = StringAppend(questNameArray[countQuest],
-				                                sSideQuests[countQuest].name);
-
-				if (QuestMenu_CheckHasChildren(countQuest))
-				{
-					questNamePointer = StringAppend(questNameArray[countQuest],
-					                                sText_QuestMenu_SubQuestButton);
-				}
-			}
-			else
-			{
-				StringAppend(questNameArray[countQuest], sText_QuestMenu_Unk);
-			}
-
-			sListMenuItems[newRow].name = questNameArray[countQuest];
-			sListMenuItems[newRow].id = countQuest;
-			lastRow = numRow + offset;
 		}
 	}
 
@@ -1130,8 +1239,6 @@ bool8 QuestMenu_IsQuestUnlocked(s32 questId)
 
 static void QuestMenu_PrintProgressFunc(u8 windowId, u32 itemId, u8 y)
 {
-
-
 	u8 colorIndex = 0;
 	u8 questType;
 	u8 parentQuest = sStateDataPtr->parentQuest;
@@ -1711,6 +1818,7 @@ static void Task_QuestMenuCleanUp(u8 taskId)
 	{
 		QuestMenu_ResetSavedRowScrollToTop(data);
 	}
+
 }
 
 // pokefirered text_window.c
@@ -1898,7 +2006,6 @@ static void SetGpuRegBaseForFade(bool8
 
 static void PrepareFadeOut(u8 taskId, bool8 fadeSprites)
 {
-	sStateDataPtr->cycle++;
 	SetGpuRegBaseForFade(fadeSprites);
 	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(MAX_FADE_INTENSITY, 0));
 	gTasks[taskId].data[1] = MAX_FADE_INTENSITY; //blend weight
