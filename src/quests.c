@@ -658,7 +658,8 @@ static s8 QuestMenu_CheckHasChildren(u16 itemId)
 
 static u8 QuestMenu_GenerateTotalItems()
 {
-	switch (sStateDataPtr->filterMode)
+    u8 mode = sStateDataPtr->filterMode % 10;
+	switch (mode)
 	{
 		case SORT_DEFAULT:
 			return SIDE_QUEST_COUNT + 1;
@@ -1795,7 +1796,7 @@ static void Task_QuestMenuCleanUp(u8 taskId)
 
 	QuestMenu_GenerateAndPrintHeader();
 	QuestMenu_AllocateResourcesForListMenu();
-	//QuestMenu_BuildFilteredMenuTemplate();
+	QuestMenu_BuildFilteredMenuTemplate();
 	QuestMenu_PlaceTopMenuScrollIndicatorArrows();
 
 	if (sStateDataPtr->restoreCursor == TRUE)
