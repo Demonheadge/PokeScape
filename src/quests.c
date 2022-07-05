@@ -101,7 +101,7 @@ static bool8 QuestMenu_LoadGraphics(void);
 static bool8 QuestMenu_AllocateResourcesForListMenu(void);
 static u8 QuestMenu_GenerateTotalItems();
 static s8 QuestMenu_CheckHasChildren(u16 itemId);
-static u16 QuestMenu_BuildFilteredMenuTemplate(void);
+static u16 QuestMenu_BuildMenuTemplate(void);
 static void QuestMenu_AssignCancelNameAndId(u8 numRow);
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit,
                                      struct ListMenu *list);
@@ -495,7 +495,7 @@ static bool8 QuestMenu_DoGfxSetup(void)
 			//print the quest titles, avatars, desc and status
 			//When this is gone, page does not seem to play nice
 			QuestMenu_AllocateArray();
-			QuestMenu_BuildFilteredMenuTemplate();
+			QuestMenu_BuildMenuTemplate();
 			gMain.state++;
 			break;
 		case 13:
@@ -888,7 +888,7 @@ u8 QuestMenu_GenerateDefaultList()
 	return lastRow;
 }
 
-static u16 QuestMenu_BuildFilteredMenuTemplate(void)
+static u16 QuestMenu_BuildMenuTemplate(void)
 {
 	//MgbaPrintf(4,"size of subquests %lu",sizeof(gSaveBlock2Ptr->subQuests));
 	//MgbaPrintf(4,"size of reward %lu",sizeof(gSaveBlock2Ptr->rewardQuests));
@@ -1864,7 +1864,7 @@ static void Task_QuestMenuCleanUp(u8 taskId)
 
 	QuestMenu_GenerateAndPrintHeader();
 	QuestMenu_AllocateResourcesForListMenu();
-	QuestMenu_BuildFilteredMenuTemplate();
+	QuestMenu_BuildMenuTemplate();
 	QuestMenu_PlaceTopMenuScrollIndicatorArrows();
 
 	if (sStateDataPtr->restoreCursor == TRUE)
