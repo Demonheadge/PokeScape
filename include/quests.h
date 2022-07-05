@@ -17,6 +17,10 @@
 #define SORT_DONE_AZ 14
 #define SORT_SUBQUEST 100
 
+#define INCREMENT 1
+#define ALPHA 2 
+#define SUB 3
+
 struct SubQuest
 {
 	/*0x00*/ const u8 *name;
