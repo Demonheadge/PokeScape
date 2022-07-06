@@ -53,7 +53,6 @@
 #define tBldYBak        data[8]
 
 //PSF TODO pressing down on last item loops around to the top, also works on the top
-//PSF TODO pressing select on "close" should do nothing
 //PSF TODO Change header text to black or do some accessibility color testing
 
 //PSF TODO in original Unbound an unlocked quest just means it appears in the list, all quests with a NAME are considered Active... deal with this
@@ -181,6 +180,13 @@ void QuestMenu_MarkFavoriteQuests(u8 countQuest);
 void QuestMenu_AllocateArray();
 u8 QuestMenu_CheckModeAndGenerateList();
 u8 *QuestMenu_DefineQuestOrder();
+bool8 QuestMenu_CheckSelectedIsCancel(u8 selectedQuestId);
+void QuestMenu_ChangeModeAndCleanUp(u8 taskId);
+void QuestMenu_ToggleAlphaModeAndCleanUp(u8 taskId);
+void QuestMenu_ToggleFavoriteAndCleanUp(u8 taskId,u8 selectedQuestId);
+void QuestMenu_ReturnFromSubquestAndCleanUp(u8 taskId);
+void QuestMenu_TurnOffQuestMenu(u8 taskId);
+void QuestMenu_EnterSubquestModeAndCleanUp(u8 taskId, s16 *data, s32 input);
 
 // Data
 // graphics
@@ -805,7 +811,8 @@ void QuestMenu_GenerateAndPrependQuestNumber(u8 countQuest)
 u8 QuestMenu_GenerateFilteredList()
 {
 	u8 mode = sStateDataPtr->filterMode % 10;
-	u8 lastRow = 0, numRow = 0, offset = 0, newRow = 0, countQuest = 0, selectedQuestId = 0;
+	u8 lastRow = 0, numRow = 0, offset = 0, newRow = 0, countQuest = 0,
+	   selectedQuestId = 0;
 	u8 *sortedQuestList;
 
 	sortedQuestList = QuestMenu_DefineQuestOrder();
@@ -861,7 +868,8 @@ u8 *QuestMenu_DefineQuestOrder()
 		{
 			for (d = c + 1; d < SIDE_QUEST_COUNT; d++)
 			{
-				if (StringCompare(sSideQuests[sortedList[c]].name, sSideQuests[sortedList[d]].name) > 0)
+				if (StringCompare(sSideQuests[sortedList[c]].name,
+				                  sSideQuests[sortedList[d]].name) > 0)
 				{
 					placeholderVariable = sortedList[c];
 					sortedList[c] = sortedList[d];
@@ -907,7 +915,8 @@ void QuestMenu_PopulateEmptyRow(u8 countQuest)
 u8 QuestMenu_GenerateDefaultList()
 {
 	u8 mode = sStateDataPtr->filterMode % 10;
-	u8 lastRow = 0, numRow = 0, offset = 0, newRow = 0, countQuest = 0, selectedQuestId = 0;
+	u8 lastRow = 0, numRow = 0, offset = 0, newRow = 0, countQuest = 0,
+	   selectedQuestId = 0;
 	u8 *sortedQuestList;
 
 	sortedQuestList = QuestMenu_DefineQuestOrder();
@@ -957,8 +966,8 @@ static u16 QuestMenu_BuildMenuTemplate(void)
 {
 
 	u8 lastRow = QuestMenu_CheckModeAndGenerateList();
-	MgbaPrintf(4,"size of subquests %lu",sizeof(gSaveBlock2Ptr->subQuests));
-	MgbaPrintf(4,"size of reward %lu",sizeof(gSaveBlock2Ptr->rewardQuests));
+	MgbaPrintf(4, "size of subquests %lu", sizeof(gSaveBlock2Ptr->subQuests));
+	MgbaPrintf(4, "size of reward %lu", sizeof(gSaveBlock2Ptr->rewardQuests));
 
 	QuestMenu_AssignCancelNameAndId(lastRow);
 
@@ -1817,13 +1826,86 @@ static void QuestMenu_RestoreSavedScrollAndRow(s16 *data)
 	                       sListMenuState.storedRowPosition);
 }
 
+void QuestMenu_ChangeModeAndCleanUp(u8 taskId)
+{
+	if (!QuestMenu_CheckSubquestMode())
+	{
+		PlaySE(SE_SELECT);
+		QuestMenu_ManageMode(INCREMENT);
+		sStateDataPtr->restoreCursor = FALSE;
+		Task_QuestMenuCleanUp(taskId);
+	}
+}
+
+void QuestMenu_ToggleAlphaModeAndCleanUp(u8 taskId)
+{
+	if (!QuestMenu_CheckSubquestMode())
+	{
+		PlaySE(SE_SELECT);
+		QuestMenu_ManageMode(ALPHA);
+		Task_QuestMenuCleanUp(taskId);
+	}
+}
+
+bool8 QuestMenu_CheckSelectedIsCancel(u8 selectedQuestId)
+{
+    if (selectedQuestId == (0xFF - 1))
+        return TRUE;
+    else
+        return FALSE;
+}
+
+void QuestMenu_ToggleFavoriteAndCleanUp(u8 taskId,u8 selectedQuestId)
+{
+    if (!QuestMenu_CheckSubquestMode() && !QuestMenu_CheckSelectedIsCancel(selectedQuestId))
+    {
+        PlaySE(SE_SELECT);
+        QuestMenu_ManageFavoriteQuests(selectedQuestId);
+        sStateDataPtr->restoreCursor = FALSE;
+        Task_QuestMenuCleanUp(taskId);
+    }
+}
+
+void QuestMenu_ReturnFromSubquestAndCleanUp(u8 taskId)
+{
+	PrepareFadeOut(taskId);
+
+	QuestMenu_ManageMode(SUB);
+	sStateDataPtr->restoreCursor = TRUE;
+
+	gTasks[taskId].func = Task_QuestMenu_FadeOut;
+}
+
+void QuestMenu_TurnOffQuestMenu(u8 taskId)
+{
+	PlaySE(SE_SELECT);
+	QuestMenu_SetInitializedFlag(0);
+	gTasks[taskId].func = Task_QuestMenuTurnOff1;
+}
+
+void QuestMenu_EnterSubquestModeAndCleanUp(u8 taskId, s16 *data, s32 input)
+{
+	if (QuestMenu_CheckHasChildren(input))
+	{
+		PrepareFadeOut(taskId);
+
+		PlaySE(SE_SELECT);
+		sStateDataPtr->parentQuest = input;
+		QuestMenu_ManageMode(SUB);
+		sStateDataPtr->restoreCursor = FALSE;
+		QuestMenu_SaveScrollAndRow(data);
+		gTasks[taskId].func = Task_QuestMenu_FadeOut;
+	}
+}
+
 static void Task_QuestMenuMain(u8 taskId)
 {
 	s16 *data = gTasks[taskId].data;
 	u16 scroll;
 	u16 row;
 	s32 input;
-	u8 selectedQuestId;
+	u8 selectedQuestId = sListMenuItems[sListMenuState.row +
+            sListMenuState.scroll].id;
 
 	if (!gPaletteFade.active)
 	{
@@ -1837,69 +1919,33 @@ static void Task_QuestMenuMain(u8 taskId)
 			case LIST_NOTHING_CHOSEN:
 				if (JOY_NEW(R_BUTTON))
 				{
-					if (!QuestMenu_CheckSubquestMode())
-					{
-						PlaySE(SE_SELECT);
-						QuestMenu_ManageMode(INCREMENT);
-						sStateDataPtr->restoreCursor = FALSE;
-						Task_QuestMenuCleanUp(taskId);
-					}
+					QuestMenu_ChangeModeAndCleanUp( taskId);
 				}
 				if (JOY_NEW(START_BUTTON))
 				{
-					if (!QuestMenu_CheckSubquestMode())
-					{
-						PlaySE(SE_SELECT);
-						QuestMenu_ManageMode(ALPHA);
-						Task_QuestMenuCleanUp(taskId);
-					}
+					QuestMenu_ToggleAlphaModeAndCleanUp( taskId);
 				}
 				if (JOY_NEW(SELECT_BUTTON))
 				{
-					if (!QuestMenu_CheckSubquestMode())
-					{
-						PlaySE(SE_SELECT);
-						selectedQuestId = sListMenuItems[sListMenuState.row +
-						                                                    sListMenuState.scroll].id;
-						QuestMenu_ManageFavoriteQuests(selectedQuestId);
-						sStateDataPtr->restoreCursor = FALSE;
-						Task_QuestMenuCleanUp(taskId);
-					}
+					QuestMenu_ToggleFavoriteAndCleanUp( taskId, selectedQuestId);
 				}
 				break;
 
 			case LIST_CANCEL:
 				if (QuestMenu_CheckSubquestMode())
 				{
-					PrepareFadeOut(taskId);
-
-					QuestMenu_ManageMode(SUB);
-					sStateDataPtr->restoreCursor = TRUE;
-
-					gTasks[taskId].func = Task_QuestMenu_FadeOut;
+					QuestMenu_ReturnFromSubquestAndCleanUp( taskId);
 				}
 				else
 				{
-					PlaySE(SE_SELECT);
-					QuestMenu_SetInitializedFlag(0);
-					gTasks[taskId].func = Task_QuestMenuTurnOff1;
+					QuestMenu_TurnOffQuestMenu(taskId);
 				}
 				break;
 
 			default:
 				if (!QuestMenu_CheckSubquestMode())
 				{
-					if (QuestMenu_CheckHasChildren(input))
-					{
-						PrepareFadeOut(taskId);
-
-						PlaySE(SE_SELECT);
-						sStateDataPtr->parentQuest = input;
-						QuestMenu_ManageMode(SUB);
-						sStateDataPtr->restoreCursor = FALSE;
-						QuestMenu_SaveScrollAndRow(data);
-						gTasks[taskId].func = Task_QuestMenu_FadeOut;
-					}
+					QuestMenu_EnterSubquestModeAndCleanUp( taskId, data, input);
 				}
 				break;
 		}
