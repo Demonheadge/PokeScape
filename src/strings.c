@@ -1822,8 +1822,24 @@ const u8 gText_Berries[] = _("BERRIES");
 
 //// side quest data
 //names
+const u8 gText_SideQuestName_1[] = _("Road to Champion");
+const u8 gText_SideQuestName_2[] = _("Finish Regional Dex");
+const u8 gText_SideQuestName_3[] = _("Capture all Legendaries");
+const u8 gText_SideQuestName_4[] = _("Finish National Dex");
+const u8 gText_SideQuestName_5[] = _("All Silver Symbols");
+const u8 gText_SideQuestName_6[] = _("All Gold Symbols");
+const u8 gText_SideQuestName_7[] = _("100% Trainer Hill");
+const u8 gText_SideQuestName_8[] = _("Conquer Battle Tents");
+const u8 gText_SideQuestName_9[] = _("Elite Four Redux");
+const u8 gText_SideQuestName_10[] = _("Superboss Steven");
+const u8 gText_SideQuestName_11[] = _("Master Rank Coordinator");
+const u8 gText_SideQuestName_12[] = _("Get All TMs");
+const u8 gText_SideQuestName_13[] = _("Trade With All");
+const u8 gText_SideQuestName_14[] = _("Trick House 100%");
+const u8 gText_SideQuestName_15[] = _("See Mirage Island");
+/*
 const u8 gText_SideQuestName_1[] = _("Side Quest 1");
-const u8 gText_SideQuestName_2[] = _("Side Quest 2 ");
+const u8 gText_SideQuestName_2[] = _("Side Quest 2");
 const u8 gText_SideQuestName_3[] = _("Side Quest 3");
 const u8 gText_SideQuestName_4[] = _("Side Quest 4");
 const u8 gText_SideQuestName_5[] = _("Side Quest 5");
@@ -1837,6 +1853,7 @@ const u8 gText_SideQuestName_12[] = _("Side Quest 12");
 const u8 gText_SideQuestName_13[] = _("Side Quest 13");
 const u8 gText_SideQuestName_14[] = _("Side Quest 14");
 const u8 gText_SideQuestName_15[] = _("Side Quest 15");
+*/
 const u8 gText_SideQuestName_16[] = _("Side Quest 16");
 const u8 gText_SideQuestName_17[] = _("Side Quest 17");
 const u8 gText_SideQuestName_18[] = _("Side Quest 18");

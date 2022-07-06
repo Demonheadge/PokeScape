@@ -52,10 +52,15 @@
 #define tBldCntBak      data[7]
 #define tBldYBak        data[8]
 
-//PSF TODO in original Unbound an unlocked quest just means it appears in the list, all quests with a NAME are considered Active... deal with this
-//PSF TODO implement press start for A-Z mode
 //PSF TODO pressing down on last item loops around to the top, also works on the top
 //PSF TODO pressing select on "close" should do nothing
+//PSF TODO Change header text to black or do some accessibility color testing
+
+//PSF TODO in original Unbound an unlocked quest just means it appears in the list, all quests with a NAME are considered Active... deal with this
+//PSF TODO Saveblock2 is overloaded. To fix this, subquests need to become flat and not 2d. I could make one giant array so two seperate arrays and just link them to each other.
+
+//PSF TODO The sprite in the bottom left does not fade in and out despite the object layer being told to blend. The object arrows in the center of the screen fade without issue.
+//PSF TODO There is a strange artifact when going from object to item.
 
 struct QuestMenuResources
 {
@@ -174,6 +179,8 @@ void QuestMenu_PopulateQuestTitle(u8 countQuest);
 void QuestMenu_AddSubQuestButton(u8 countQuest);
 void QuestMenu_MarkFavoriteQuests(u8 countQuest);
 void QuestMenu_AllocateArray();
+u8 QuestMenu_CheckModeAndGenerateList();
+u8 *QuestMenu_DefineQuestOrder();
 
 // Data
 // graphics
@@ -798,17 +805,23 @@ void QuestMenu_GenerateAndPrependQuestNumber(u8 countQuest)
 u8 QuestMenu_GenerateFilteredList()
 {
 	u8 mode = sStateDataPtr->filterMode % 10;
-	u8 lastRow = 0, numRow = 0, offset = 0, newRow = 0, countQuest = 0;
+	u8 lastRow = 0, numRow = 0, offset = 0, newRow = 0, countQuest = 0, selectedQuestId = 0;
+	u8 *sortedQuestList;
+
+	sortedQuestList = QuestMenu_DefineQuestOrder();
 
 	for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
 	{
-		if (GetSetQuestFlag(countQuest, mode))
-		{
-			QuestMenu_PopulateEmptyRow(countQuest);
+		selectedQuestId = *(sortedQuestList + countQuest);
 
-            if (GetSetQuestFlag(countQuest, FLAG_GET_FAVORITE)) //how do only conditionally show this line? //PSF TODO
+		if (GetSetQuestFlag(selectedQuestId, mode))
+		{
+			QuestMenu_PopulateEmptyRow(selectedQuestId);
+
+			if (GetSetQuestFlag(selectedQuestId,
+			                    FLAG_GET_FAVORITE)) //how do only conditionally show this line? //PSF TODO
 			{
-                QuestMenu_MarkFavoriteQuests(countQuest);
+				QuestMenu_MarkFavoriteQuests(selectedQuestId);
 				newRow = numRow;
 				numRow++;
 			}
@@ -818,8 +831,8 @@ u8 QuestMenu_GenerateFilteredList()
 				offset++;
 			}
 
-			QuestMenu_PopulateQuestTitle(countQuest);
-			QuestMenu_PopulateMenuNameAndId(newRow, countQuest);
+			QuestMenu_PopulateQuestTitle(selectedQuestId);
+			QuestMenu_PopulateMenuNameAndId(newRow, selectedQuestId);
 		}
 	}
 	return numRow + offset;
@@ -827,8 +840,38 @@ u8 QuestMenu_GenerateFilteredList()
 
 void QuestMenu_MarkFavoriteQuests(u8 countQuest)
 {
-    questNamePointer = StringAppend(questNameArray[countQuest],
-				                                sText_QuestMenu_ColorGreen);
+	questNamePointer = StringAppend(questNameArray[countQuest],
+	                                sText_QuestMenu_ColorGreen);
+}
+
+u8 *QuestMenu_DefineQuestOrder()
+{
+	static u8 sortedList[SIDE_QUEST_COUNT];
+	u8 a, c, d, e;
+	u8 placeholderVariable;
+
+	for (a = 0; a < SIDE_QUEST_COUNT; a++)
+	{
+		sortedList[a] = a;
+	}
+
+	if (QuestMenu_CheckAlphaMode())
+	{
+		for (c = 0; c < SIDE_QUEST_COUNT; c++)
+		{
+			for (d = c + 1; d < SIDE_QUEST_COUNT; d++)
+			{
+				if (StringCompare(sSideQuests[sortedList[c]].name, sSideQuests[sortedList[d]].name) > 0)
+				{
+					placeholderVariable = sortedList[c];
+					sortedList[c] = sortedList[d];
+					sortedList[d] = placeholderVariable;
+				}
+			}
+		}
+	}
+
+	return sortedList;
 }
 
 void QuestMenu_PopulateQuestTitle(u8 countQuest)
@@ -860,52 +903,62 @@ void QuestMenu_PopulateEmptyRow(u8 countQuest)
 	questNamePointer = StringCopy(questNameArray[countQuest], sText_Empty);
 }
 
+
 u8 QuestMenu_GenerateDefaultList()
 {
 	u8 mode = sStateDataPtr->filterMode % 10;
-	u8 lastRow = 0, numRow = 0, offset = 0, newRow = 0, countQuest = 0;
+	u8 lastRow = 0, numRow = 0, offset = 0, newRow = 0, countQuest = 0, selectedQuestId = 0;
+	u8 *sortedQuestList;
+
+	sortedQuestList = QuestMenu_DefineQuestOrder();
 
 	for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
 	{
-			QuestMenu_PopulateEmptyRow(countQuest);
+		selectedQuestId = *(sortedQuestList + countQuest);
+		QuestMenu_PopulateEmptyRow(selectedQuestId);
 
-            if (GetSetQuestFlag(countQuest, FLAG_GET_FAVORITE))
-			{
-                QuestMenu_MarkFavoriteQuests(countQuest);
-				newRow = numRow;
-				numRow++;
-			}
-			else
-			{
-				newRow = QuestMenu_CountFavoriteQuests() + offset; //merge with CountState into one function PSF TODO
-				offset++;
-			}
+		if (GetSetQuestFlag(selectedQuestId, FLAG_GET_FAVORITE))
+		{
+			QuestMenu_MarkFavoriteQuests(selectedQuestId);
+			newRow = numRow;
+			numRow++;
+		}
+		else
+		{
+			newRow = QuestMenu_CountFavoriteQuests() +
+			         offset; //merge with CountState into one function PSF TODO
+			offset++;
+		}
 
-			QuestMenu_PopulateQuestTitle(countQuest);
-			QuestMenu_PopulateMenuNameAndId(newRow, countQuest);
-            lastRow = numRow + offset;
+		QuestMenu_PopulateQuestTitle(selectedQuestId);
+		QuestMenu_PopulateMenuNameAndId(newRow, selectedQuestId);
+		lastRow = numRow + offset;
 	}
 	return lastRow;
 }
 
-static u16 QuestMenu_BuildMenuTemplate(void)
+u8 QuestMenu_CheckModeAndGenerateList()
 {
-	//MgbaPrintf(4,"size of subquests %lu",sizeof(gSaveBlock2Ptr->subQuests));
-	//MgbaPrintf(4,"size of reward %lu",sizeof(gSaveBlock2Ptr->rewardQuests));
-	u8 lastRow;
-
 	if (QuestMenu_CheckSubquestMode())
 	{
-		lastRow = QuestMenu_GenerateSubquestList();
+		return QuestMenu_GenerateSubquestList();
 	}
 	else if (!QuestMenu_CheckDefaultMode())
 	{
-		lastRow = QuestMenu_GenerateFilteredList();
+		return QuestMenu_GenerateFilteredList();
 	}
 	else
 	{
-		lastRow = QuestMenu_GenerateDefaultList();
+		return QuestMenu_GenerateDefaultList();
 	}
+}
+
+static u16 QuestMenu_BuildMenuTemplate(void)
+{
+
+	u8 lastRow = QuestMenu_CheckModeAndGenerateList();
+	MgbaPrintf(4,"size of subquests %lu",sizeof(gSaveBlock2Ptr->subQuests));
+	MgbaPrintf(4,"size of reward %lu",sizeof(gSaveBlock2Ptr->rewardQuests));
 
 	QuestMenu_AssignCancelNameAndId(lastRow);
 
@@ -1205,7 +1258,7 @@ bool8 QuestMenu_IsQuestUnlocked(s32 questId)
 
 static void QuestMenu_PrintProgressFunc(u8 windowId, u32 itemId, u8 y)
 {
-    u8 colorIndex = 0;
+	u8 colorIndex = 0;
 	u8 parentQuest = sStateDataPtr->parentQuest;
 	u8 questType = sSideQuests[parentQuest].childtype;
 
@@ -1296,7 +1349,7 @@ static void QuestMenu_PrintOrRemoveCursorAt(u8 y, u8 colorIdx)
 
 s8 QuestMenu_CountUnlockedQuests(void)
 {
-	u8 q = 0, i=0;
+	u8 q = 0, i = 0;
 
 	for (i = 0; i < SIDE_QUEST_COUNT; i++)
 	{
@@ -1310,7 +1363,7 @@ s8 QuestMenu_CountUnlockedQuests(void)
 
 s8 QuestMenu_CountInactiveQuests(void)
 {
-	u8 q = 0, i=0;
+	u8 q = 0, i = 0;
 
 	for (i = 0; i < SIDE_QUEST_COUNT; i++)
 	{
@@ -1324,7 +1377,7 @@ s8 QuestMenu_CountInactiveQuests(void)
 
 s8 QuestMenu_CountActiveQuests(void)
 {
-	u8 q = 0, i=0;
+	u8 q = 0, i = 0;
 
 	for (i = 0; i < SIDE_QUEST_COUNT; i++)
 	{
@@ -1338,7 +1391,7 @@ s8 QuestMenu_CountActiveQuests(void)
 
 s8 QuestMenu_CountRewardQuests(void)
 {
-	u8 q = 0, i=0;
+	u8 q = 0, i = 0;
 
 	for (i = 0; i < SIDE_QUEST_COUNT; i++)
 	{
@@ -1352,7 +1405,7 @@ s8 QuestMenu_CountRewardQuests(void)
 
 s8 QuestMenu_CountFavoriteQuests(void)
 {
-	u8 q = 0, i=0;
+	u8 q = 0, i = 0;
 
 	for (i = 0; i < SIDE_QUEST_COUNT; i++)
 	{
@@ -1366,25 +1419,25 @@ s8 QuestMenu_CountFavoriteQuests(void)
 
 s8 QuestMenu_CountFavoriteAndState(void)
 {
-	u8 q = 0, i=0;
+	u8 q = 0, i = 0;
 
-    u8 mode = sStateDataPtr->filterMode % 10;
+	u8 mode = sStateDataPtr->filterMode % 10;
 
-    for (i = 0; i < SIDE_QUEST_COUNT; i++)
-    {
-        if (GetSetQuestFlag(i, mode)
-                && GetSetQuestFlag(i, FLAG_GET_FAVORITE))
-        {
-            q++;
-        }
-    }
+	for (i = 0; i < SIDE_QUEST_COUNT; i++)
+	{
+		if (GetSetQuestFlag(i, mode)
+		            && GetSetQuestFlag(i, FLAG_GET_FAVORITE))
+		{
+			q++;
+		}
+	}
 
-        return q;
+	return q;
 }
 
 s8 QuestMenu_CountCompletedQuests(void)
 {
-	u8 q = 0, i=0;
+	u8 q = 0, i = 0;
 
 	u8 parentQuest = sStateDataPtr->parentQuest;
 
@@ -1696,7 +1749,6 @@ static s8 QuestMenu_ManageMode(u8 action)
 			mode = QuestMenu_IncrementMode(mode);
 			break;
 	}
-	MgbaPrintf(4, "modei %u", mode);
 	sStateDataPtr->filterMode = mode;
 }
 
