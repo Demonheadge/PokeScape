@@ -1423,6 +1423,6 @@ void AppendToList(u8 *list, u8 *pos, u8 newEntry)
 
 static bool8 QuestMenuCallback(void)
 {
-    CreateTask(Task_OpenQuestMenuFromStartMenu, 0);
+    CreateTask(Task_QuestMenu_OpenFromStartMenu, 0);
     return TRUE;
 }

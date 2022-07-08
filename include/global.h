@@ -468,7 +468,7 @@ struct RankingHall2P
 
 // quest menu
 #include "constants/quests.h"
-#define QUEST_FLAGS_COUNT ROUND_BITS_TO_BYTES(SIDE_QUEST_COUNT)
+#define QUEST_FLAGS_COUNT ROUND_BITS_TO_BYTES(QUEST_COUNT)
 #define SUB_FLAGS_COUNT ROUND_BITS_TO_BYTES(100)
 
 struct SaveBlock2
@@ -507,7 +507,7 @@ struct SaveBlock2
     /*0x????*/ u8 activeQuests[QUEST_FLAGS_COUNT];
     /*0x????*/ u8 rewardQuests[QUEST_FLAGS_COUNT];
     /*0x????*/ u8 completedQuests[QUEST_FLAGS_COUNT];
-    /*0x????*/ u8 subQuests[SIDE_QUEST_COUNT][SUB_FLAGS_COUNT];
+    /*0x????*/ u8 subQuests[QUEST_COUNT][SUB_FLAGS_COUNT];
     /*0x????*/ u8 favoriteQuests[QUEST_FLAGS_COUNT];
 }; 
 

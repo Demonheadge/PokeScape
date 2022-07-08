@@ -2319,44 +2319,44 @@ bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
     {
     case QUEST_MENU_OPEN:
     default:
-        SetQuestMenuActive();
+        QuestMenu_ActivateMenu();
         BeginNormalPaletteFade(0xFFFFFFFF, 2, 16, 0, 0);
         QuestMenu_Init(0, CB2_ReturnToFieldContinueScriptPlayMapMusic);
         ScriptContext1_Stop();
         break;
     case QUEST_MENU_UNLOCK_QUEST:
-        GetSetQuestFlag(questId, FLAG_SET_UNLOCKED);
-        //GetSetQuestFlag(questId, FLAG_SET_INACTIVE);
+        QuestMenu_GetSetQuestState(questId, FLAG_SET_UNLOCKED);
+        //QuestMenu_GetSetQuestState(questId, FLAG_SET_INACTIVE);
         break;
     case QUEST_MENU_COMPLETE_QUEST:
-        GetSetQuestFlag(questId, FLAG_SET_COMPLETED);
-        GetSetQuestFlag(questId, FLAG_REMOVE_REWARD);
+        QuestMenu_GetSetQuestState(questId, FLAG_SET_COMPLETED);
+        QuestMenu_GetSetQuestState(questId, FLAG_REMOVE_REWARD);
         break;
     case QUEST_MENU_SET_ACTIVE:
-        GetSetQuestFlag(questId, FLAG_SET_ACTIVE);
-        //GetSetQuestFlag(questId, FLAG_REMOVE_INACTIVE);
+        QuestMenu_GetSetQuestState(questId, FLAG_SET_ACTIVE);
+        //QuestMenu_GetSetQuestState(questId, FLAG_REMOVE_INACTIVE);
         break;
     case QUEST_MENU_SET_REWARD:
-        GetSetQuestFlag(questId, FLAG_SET_REWARD);
-        GetSetQuestFlag(questId, FLAG_REMOVE_ACTIVE);
+        QuestMenu_GetSetQuestState(questId, FLAG_SET_REWARD);
+        QuestMenu_GetSetQuestState(questId, FLAG_REMOVE_ACTIVE);
         break;
     case QUEST_MENU_BUFFER_QUEST_NAME:
-            CopyQuestName(gStringVar1, questId);
+            QuestMenu_CopyQuestName(gStringVar1, questId);
         break;
     case QUEST_MENU_CHECK_UNLOCKED:
-        if (GetSetQuestFlag(questId, FLAG_GET_UNLOCKED))
+        if (QuestMenu_GetSetQuestState(questId, FLAG_GET_UNLOCKED))
             gSpecialVar_Result = TRUE;
         else
             gSpecialVar_Result = FALSE;
         break;
     case QUEST_MENU_CHECK_COMPLETE:
-        if (GetSetQuestFlag(questId, FLAG_GET_COMPLETED))
+        if (QuestMenu_GetSetQuestState(questId, FLAG_GET_COMPLETED))
             gSpecialVar_Result = TRUE;
         else
             gSpecialVar_Result = FALSE;
         break;
     case QUEST_MENU_CHECK_REWARD:
-        if (GetSetQuestFlag(questId, FLAG_GET_REWARD))
+        if (QuestMenu_GetSetQuestState(questId, FLAG_GET_REWARD))
             gSpecialVar_Result = TRUE;
         else
             gSpecialVar_Result = FALSE;
@@ -2376,10 +2376,10 @@ bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
     switch (caseId)
     {
         case QUEST_MENU_COMPLETE_QUEST:
-            ChangeSubQuestFlags(parentId ,FLAG_SET_COMPLETED,childId);
+            QuestMenu_GetSetSubquestState(parentId ,FLAG_SET_COMPLETED,childId);
             break;
         case QUEST_MENU_CHECK_COMPLETE:
-            if (ChangeSubQuestFlags(parentId ,FLAG_GET_COMPLETED,childId))
+            if (QuestMenu_GetSetSubquestState(parentId ,FLAG_GET_COMPLETED,childId))
                 gSpecialVar_Result = TRUE;
             else
                 gSpecialVar_Result = FALSE;

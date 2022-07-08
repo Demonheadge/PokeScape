@@ -204,7 +204,7 @@ void NewGameInitData(void)
     WipeTrainerNameRecords();
     ResetTrainerHillResults();
     ResetContestLinkResults();
-    ResetQuestMenuData();
+    QuestMenu_ResetMenuSaveData();
 }
 
 static void ResetMiniGamesRecords(void)

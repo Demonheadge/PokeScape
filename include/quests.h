@@ -3,47 +3,50 @@
 
 //#include constants/quests.h       //included in global.h
 
-//#define FLAG_QUEST_MENU_ACTIVE    0x264 //added to constants/flags.h
-
 #define SORT_DEFAULT 0
 #define SORT_INACTIVE 1
 #define SORT_ACTIVE 2
 #define SORT_REWARD 3
 #define SORT_DONE 4
+
 #define SORT_DEFAULT_AZ 10
 #define SORT_INACTIVE_AZ 11
 #define SORT_ACTIVE_AZ 12
 #define SORT_REWARD_AZ 13
 #define SORT_DONE_AZ 14
+
 #define SORT_SUBQUEST 100
 
 #define INCREMENT 1
 #define ALPHA 2 
 #define SUB 3
 
+#define OBJECT 1
+#define ITEM 2
+
 struct SubQuest
 {
-	/*0x00*/ const u8 *name;
-	/*0x04*/ const u8 *desc;
-	/*0x0C*/ const u8 *map;
-	/*0x18*/ const u8 object;
-}; /* size = 0x22 */
+	const u8 *name;
+	const u8 *desc;
+	const u8 *map;
+	const u8 object;
+}; 
 
 struct SideQuest
 {
-	/*0x00*/ const u8 *name;
-	/*0x04*/ const u8 *desc;
-	/*0x04*/ const u8 *donedesc;
-	/*0x0C*/ const u8 *map;
+	const u8 *name;
+	const u8 *desc;
+	const u8 *donedesc;
+	const u8 *map;
 	u8 object;
 	const struct SubQuest *subquests;
 	const u8 childtype;
 	const u8 numSubquests;
-}; /* size = 0x18 */
+}; 
 
 extern const struct SubQuest gSubQuests1[SUB_QUEST_1_COUNT];
 extern const struct SubQuest gSubQuests2[SUB_QUEST_1_COUNT];
-extern const struct SideQuest gSideQuests[SIDE_QUEST_COUNT];
+extern const struct SideQuest gSideQuests[QUEST_COUNT];
 
 enum QuestCases
 {
@@ -64,6 +67,7 @@ enum QuestCases
 	FLAG_REMOVE_REWARD, //remove reward flag from quest
 	FLAG_REMOVE_FAVORITE, //remove favorite flag from quest
 };
+
 enum SubQuestTypes
 {
 	SUBQUEST_NONE,
@@ -73,19 +77,12 @@ enum SubQuestTypes
 };
 
 // functions
-void CreateQuestSprite(u16, u8, bool8);
-void ResetQuestSpriteState(void);
-void DestroyQuestSprite(u8 idx);
-void Task_OpenQuestMenuFromStartMenu(u8);
-s8 ChangeSubQuestFlags(u8 quest, u8 caseId, u8 childQuest);
-s8 QuestMenu_ManageFavoriteQuests(u8 index);
-s8 GetSetQuestFlag(u8 quest, u8 caseId);
-s8 GetActiveQuestIndex(void);
+s8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest);
+s8 QuestMenu_GetSetQuestState(u8 quest, u8 caseId);
 void QuestMenu_Init(u8 a0, MainCallback callback);
-void SetQuestMenuActive(void);
-void CopyQuestName(u8 *dst, u8 questId);
-void ResetQuestMenuData(void);
+void QuestMenu_ActivateMenu(void);
+void QuestMenu_CopyQuestName(u8 *dst, u8 questId);
+void QuestMenu_ResetMenuSaveData(void);
+void Task_QuestMenu_OpenFromStartMenu(u8);
 
 #endif // GUARD_QUESTS_H
-
-
