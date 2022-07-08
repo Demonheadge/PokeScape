@@ -115,23 +115,23 @@ static void Task_QuestMenuTurnOff2(u8 taskId);
 static void QuestMenu_InitItems(void);
 static void QuestMenu_SetScrollPosition(void);
 static s8 QuestMenu_ManageMode(u8 action);
-static void Task_QuestMenuMain(u8 taskId);
+static void Task_QuestMenu_Main(u8 taskId);
 static void Task_QuestMenuCleanUp(u8 taskId);
 static void QuestMenu_InitWindows(void);
 static void QuestMenu_AddTextPrinterParameterized(u8 windowId, u8 fontId,
             const u8 *str, u8 x, u8 y,
             u8 letterSpacing, u8 lineSpacing, u8 speed, u8 colorIdx);
 static void QuestMenu_SetInitializedFlag(u8 a0);
-static void QuestMenu_InitModeOnStartup(void);
+static void QuestMenu_ClearModeOnStartup(void);
 
-static void SetGpuRegBaseForFade(
+static void QuestMenu_SetGpuRegBaseForFade(
       void); //Sets the GPU registers to prepare for a hardware fade
-static void PrepareFadeOut(u8
+static void QuestMenu_PrepareFadeOut(u8
                            taskId); //Prepares the input handler for a hardware fade out
-static void PrepareFadeIn(u8
+static void QuestMenu_PrepareFadeIn(u8
                           taskId); //Prepares the input handler for a hardware fade in
-static bool8 HandleFadeOut(u8 taskId); //Handles the hardware fade out
-static bool8 HandleFadeIn(u8 taskId); //Handles the hardware fade in
+static bool8 QuestMenu_HandleFadeOut(u8 taskId); //Handles the hardware fade out
+static bool8 QuestMenu_HandleFadeIn(u8 taskId); //Handles the hardware fade in
 static void Task_QuestMenu_FadeOut(u8 taskId);
 static void Task_QuestMenu_FadeIn(u8 taskId);
 
@@ -185,6 +185,7 @@ void QuestMenu_PrintQuestState(u8 windowId, u8 y, u8 colorIndex);
 
 bool8 QuestMenu_IfRowIsOutOfBounds(void);
 bool8 QuestMenu_IfScrollIsOutOfBounds(void);
+void QuestMenu_InitFadeVariables(u8 taskId, u8 blendWeight, u8 frameDelay, u8 frameTimerBase, u8 delta);
 
 // Tiles, palettes and tilemaps for the Quest Menu
 static const u32 sQuestMenuTiles[] =
@@ -844,7 +845,7 @@ static bool8 QuestMenu_SetupGraphics(void)
 			break;
 		case 10:
 			//When commented out, question marks loads for every slot and page does not scroll when going past number 6
-			QuestMenu_InitModeOnStartup();
+			QuestMenu_ClearModeOnStartup();
 			QuestMenu_InitItems();
 			//Doesn't seem to do anything?
 			QuestMenu_SetCursorPosition();
@@ -882,7 +883,7 @@ static bool8 QuestMenu_SetupGraphics(void)
 			break;
 		case 15:
 			//everything loads, but cannot scroll or quit the meun
-			taskId = CreateTask(Task_QuestMenuMain, 0);
+			taskId = CreateTask(Task_QuestMenu_Main, 0);
 			//background loads but interface is entirely glitched out
 			gTasks[taskId].data[0] = ListMenuInit(&gMultiuseListMenuTemplate,
 			                                      sListMenuState.scroll,
@@ -2187,7 +2188,7 @@ u8 QuestMenu_ToggleAlphaMode(u8 mode)
 
 u8 QuestMenu_IncrementMode(u8 mode)
 {
-	if (mode % 10 == 4)
+	if (mode % 10 == SORT_DONE)
 	{
 		mode -= SORT_DONE;
 	}
@@ -2206,9 +2207,8 @@ static void QuestMenu_SaveScrollAndRow(s16 *data)
 	                        &sListMenuState.storedRowPosition);
 }
 
-static void QuestMenu_ResetSavedRowScrollToTop(s16 *data)
+static void QuestMenu_ResetCursorToTop(s16 *data)
 {
-	//When this function gets run, place cursor back in the first position, used for resetting the list when filtering.
 	sListMenuState.row = 0;
 	sListMenuState.scroll = 0;
 	data[0] = ListMenuInit(&gMultiuseListMenuTemplate, sListMenuState.scroll,
@@ -2241,6 +2241,7 @@ void QuestMenu_ToggleAlphaModeAndCleanUp(u8 taskId)
 	{
 		PlaySE(SE_SELECT);
 		QuestMenu_ManageMode(ALPHA);
+		sStateDataPtr->restoreCursor = FALSE;
 		Task_QuestMenuCleanUp(taskId);
 	}
 }
@@ -2271,17 +2272,16 @@ void QuestMenu_ToggleFavoriteAndCleanUp(u8 taskId, u8 selectedQuestId)
 
 void QuestMenu_ReturnFromSubquestAndCleanUp(u8 taskId)
 {
-	PrepareFadeOut(taskId);
+	QuestMenu_PrepareFadeOut(taskId);
 
+    PlaySE(SE_SELECT);
 	QuestMenu_ManageMode(SUB);
 	sStateDataPtr->restoreCursor = TRUE;
-
 	gTasks[taskId].func = Task_QuestMenu_FadeOut;
 }
 
 void QuestMenu_TurnOffQuestMenu(u8 taskId)
 {
-	PlaySE(SE_SELECT);
 	QuestMenu_SetInitializedFlag(0);
 	gTasks[taskId].func = Task_QuestMenuTurnOff1;
 }
@@ -2291,7 +2291,7 @@ void QuestMenu_EnterSubquestModeAndCleanUp(u8 taskId, s16 *data,
 {
 	if (QuestMenu_DoesQuestHaveChildrenAndNotInactive(input))
 	{
-		PrepareFadeOut(taskId);
+		QuestMenu_PrepareFadeOut(taskId);
 
 		PlaySE(SE_SELECT);
 		sStateDataPtr->parentQuest = input;
@@ -2302,19 +2302,15 @@ void QuestMenu_EnterSubquestModeAndCleanUp(u8 taskId, s16 *data,
 	}
 }
 
-static void Task_QuestMenuMain(u8 taskId)
+static void Task_QuestMenu_Main(u8 taskId)
 {
 	s16 *data = gTasks[taskId].data;
-	u16 scroll;
-	u16 row;
-	s32 input;
-	u8 selectedQuestId = sListMenuItems[sListMenuState.row +
-	                                                       sListMenuState.scroll].id;
+    s32 input = ListMenu_ProcessInput(data[0]);
+
+	u8 selectedQuestId = sListMenuItems[QuestMenu_GetCursorPosition()].id;
 
 	if (!gPaletteFade.active)
 	{
-		input = ListMenu_ProcessInput(data[0]);
-
 		ListMenuGetScrollAndRow(data[0], &sListMenuState.scroll,
 		                        &sListMenuState.row);
 
@@ -2375,7 +2371,7 @@ static void Task_QuestMenuCleanUp(u8 taskId)
 	}
 	else
 	{
-		QuestMenu_ResetSavedRowScrollToTop(data);
+		QuestMenu_ResetCursorToTop(data);
 	}
 
 }
@@ -2406,7 +2402,6 @@ static void QuestMenu_AddTextPrinterParameterized(u8 windowId, u8 fontId,
 	                             sQuestMenuWindowFontColors[colorIdx], speed, str);
 }
 
-// Start Menu Function
 void Task_QuestMenu_OpenFromStartMenu(u8 taskId)
 {
 	s16 *data = gTasks[taskId].data;
@@ -2529,72 +2524,79 @@ void QuestMenu_ResetMenuSaveData(void)
 }
 
 static void
-SetGpuRegBaseForFade() //Sets the GPU registers to prepare for a hardware fade
+QuestMenu_SetGpuRegBaseForFade() //Sets the GPU registers to prepare for a hardware fade
 {
 	SetGpuReg(REG_OFFSET_BLDCNT,
 	          BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BG0 | BLDCNT_TGT2_BG1 |
 	          BLDCNT_EFFECT_BLEND);      //Blend Sprites and BG0 into BG1
-
 	SetGpuReg(REG_OFFSET_BLDY, 0);
 }
 
 #define MAX_FADE_INTENSITY 16
 #define MIN_FADE_INTENSITY 0
 
-static void PrepareFadeOut(u8 taskId)
+void QuestMenu_InitFadeVariables(u8 taskId, u8 blendWeight, u8 frameDelay, u8 frameTimerBase, u8 delta)
 {
-	SetGpuRegBaseForFade();
-	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(MAX_FADE_INTENSITY, 0));
-	gTasks[taskId].data[1] = MAX_FADE_INTENSITY; //blend weight
-	gTasks[taskId].data[2] = 0; //delay
-	gTasks[taskId].data[3] = gTasks[taskId].data[2]; //delay timer
-	gTasks[taskId].data[4] = 2; //delta
+	gTasks[taskId].data[1] = blendWeight;
+	gTasks[taskId].data[2] = frameDelay;
+	gTasks[taskId].data[3] = gTasks[taskId].data[frameTimerBase]; 
+	gTasks[taskId].data[4] = delta;
 }
 
-static bool8 HandleFadeOut(u8 taskId)
+static void QuestMenu_PrepareFadeOut(u8 taskId)
+{
+	QuestMenu_SetGpuRegBaseForFade();
+	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(MAX_FADE_INTENSITY, 0));
+    QuestMenu_InitFadeVariables(taskId,MAX_FADE_INTENSITY,0,2,2);
+}
+
+static bool8 QuestMenu_HandleFadeOut(u8 taskId)
 {
 	if (gTasks[taskId].data[3]-- != 0)
 	{
 		return FALSE;
 	}
 
+    //Set the timer, decrease the fade weight by the delta, increase the delta by the timer
 	gTasks[taskId].data[3] = gTasks[taskId].data[2];
 	gTasks[taskId].data[1] -= gTasks[taskId].data[4];
 	gTasks[taskId].data[2] += gTasks[taskId].data[3];
 
+    //When blend weight runs out, set final blend and quit
 	if (gTasks[taskId].data[1] <= 0)
 	{
 		SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0, gTasks[taskId].data[1]));
 		return TRUE;
 	}
+    //Set intermediate blend state
 	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(gTasks[taskId].data[1],
 	            MAX_FADE_INTENSITY - gTasks[taskId].data[1]));
 	return FALSE;
 }
 
-static void PrepareFadeIn(u8
+static void QuestMenu_PrepareFadeIn(u8
                           taskId) //Prepares the input handler for a hardware fade in
 {
-	SetGpuRegBaseForFade();
+	QuestMenu_SetGpuRegBaseForFade();
 	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(0,
 	            MAX_FADE_INTENSITY));
-	gTasks[taskId].data[1] = MIN_FADE_INTENSITY;
-	gTasks[taskId].data[2] = 0; //delay
-	gTasks[taskId].data[3] = gTasks[taskId].data[1]; // delay timer
-	gTasks[taskId].data[4] = 2; //delta
+    QuestMenu_InitFadeVariables(taskId,MIN_FADE_INTENSITY,0,1,2);
 }
 
-static bool8 HandleFadeIn(u8 taskId) //Handles the hardware fade in
+static bool8 QuestMenu_HandleFadeIn(u8 taskId) //Handles the hardware fade in
 {
+    //Set the timer, ncrease the fade weight by the delta, 
 	gTasks[taskId].data[3] = gTasks[taskId].data[2];
 	gTasks[taskId].data[1] += gTasks[taskId].data[4];
 
+    //When blend weight reaches max, set final blend and quit
 	if (gTasks[taskId].data[1] >= MAX_FADE_INTENSITY)
 	{
 		SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(MAX_FADE_INTENSITY,
 		            MIN_FADE_INTENSITY));
 		return TRUE;
 	}
+    //Set intermediate blend state
 	SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(gTasks[taskId].data[1],
 	            MAX_FADE_INTENSITY - gTasks[taskId].data[1]));
 	return FALSE;
@@ -2602,9 +2604,9 @@ static bool8 HandleFadeIn(u8 taskId) //Handles the hardware fade in
 
 static void Task_QuestMenu_FadeOut(u8 taskId)
 {
-	if (HandleFadeOut(taskId))
+	if (QuestMenu_HandleFadeOut(taskId))
 	{
-		PrepareFadeIn(taskId);
+		QuestMenu_PrepareFadeIn(taskId);
 		Task_QuestMenuCleanUp(taskId);
 		gTasks[taskId].func = Task_QuestMenu_FadeIn;
 	}
@@ -2612,13 +2614,13 @@ static void Task_QuestMenu_FadeOut(u8 taskId)
 
 static void Task_QuestMenu_FadeIn(u8 taskId)
 {
-	if (HandleFadeIn(taskId))
+	if (QuestMenu_HandleFadeIn(taskId))
 	{
-		gTasks[taskId].func = Task_QuestMenuMain;
+		gTasks[taskId].func = Task_QuestMenu_Main;
 	}
 }
 
-void QuestMenu_InitModeOnStartup(void)
+void QuestMenu_ClearModeOnStartup(void)
 {
 	sStateDataPtr->filterMode = 0;
 }

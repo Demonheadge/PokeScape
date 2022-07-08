@@ -50,10 +50,53 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +84 src/quests.c
+badd +1850 ../firered/src/oak_speech.c
+badd +134 gflib/string_util.c
+badd +1 new
+badd +37 include/quests.h
+badd +510 include/global.h
+badd +156 skeli
+badd +55 include/constants/quests.h
+badd +1 src/quests
+badd +66 gflib/gpu_regs.c
+badd +90 constants/gba_constants.inc
+badd +30 ~/.astylerc
+badd +480 include/constants/items.h
+badd +1556 src/event_object_movement.c
+badd +257 include/event_object_movement.h
+badd +545 src/shop.c
+badd +674 src/naming_screen.c
+badd +3211 src/overworld.c
+badd +46 src/start_menu.c
+badd +500 include/constants/songs.h
+badd +84 src/save.c
+badd +825 gflib/sprite.c
+badd +323 gflib/sprite.h
+badd +552 include/gba/io_reg.h
+badd +272 src/battle_intro.c
+badd +5294 src/battle_dome.c
+badd +1309 src/main_menu.c
+badd +76 data/maps/InsideOfTruck/scripts.inc
+badd +1696 src/item_menu.c
+badd +964 src/menu.c
+badd +420 src/list_menu.c
+badd +8 src/item_icon.c
+badd +27 src/main.c
+badd +290 src/menu_specialized.c
+badd +122 include/list_menu.h
+badd +687 src/pokemon_summary_screen.c
+badd +163 gflib/characters.h
+badd +298 src/pokeblock.c
+badd +202 src/battle_pyramid_bag.c
+badd +654 include/constants/flags.h
+badd +2342 src/scrcmd.c
+badd +0 ../firered/src/item_pc.c
+badd +207 src/new_game.c
 argglobal
 %argdel
 set stal=2
-tabnew
+tabnew +setlocal\ bufhidden=wipe
 tabrewind
 edit src/quests.c
 let s:save_splitbelow = &splitbelow
@@ -68,7 +111,10 @@ wincmd w
 wincmd w
 wincmd _ | wincmd |
 split
-1wincmd k
+wincmd _ | wincmd |
+split
+2wincmd k
+wincmd w
 wincmd w
 let &splitbelow = s:save_splitbelow
 let &splitright = s:save_splitright
@@ -80,11 +126,13 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe 'vert 1resize ' . ((&columns * 78 + 117) / 235)
-exe 'vert 2resize ' . ((&columns * 78 + 117) / 235)
-exe '3resize ' . ((&lines * 38 + 39) / 79)
-exe 'vert 3resize ' . ((&columns * 77 + 117) / 235)
-exe '4resize ' . ((&lines * 37 + 39) / 79)
-exe 'vert 4resize ' . ((&columns * 77 + 117) / 235)
+exe 'vert 2resize ' . ((&columns * 77 + 117) / 235)
+exe '3resize ' . ((&lines * 25 + 39) / 79)
+exe 'vert 3resize ' . ((&columns * 78 + 117) / 235)
+exe '4resize ' . ((&lines * 25 + 39) / 79)
+exe 'vert 4resize ' . ((&columns * 78 + 117) / 235)
+exe '5resize ' . ((&lines * 24 + 39) / 79)
+exe 'vert 5resize ' . ((&columns * 78 + 117) / 235)
 argglobal
 terminal ++curwin ++cols=78 ++rows=76 
 let s:term_buf_3 = bufnr()
@@ -103,6 +151,7 @@ setlocal buftype=terminal
 setlocal nocindent
 setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal cinoptions=
+setlocal cinscopedecls=public,protected,private
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
 setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
@@ -205,6 +254,7 @@ setlocal termwinscroll=10000
 setlocal termwinsize=
 setlocal textwidth=0
 setlocal thesaurus=
+setlocal thesaurusfunc=
 setlocal noundofile
 setlocal undolevels=-123456
 setlocal varsofttabstop=
@@ -215,14 +265,15 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 59 - ((39 * winheight(0) + 38) / 76)
+let s:l = 9001 - ((45 * winheight(0) + 38) / 76)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 59
-normal! 045|
+keepjumps 9001
+normal! 0
 wincmd w
 argglobal
+balt src/quests.c
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -237,9 +288,10 @@ setlocal buftype=
 setlocal cindent
 setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal cinoptions=
+setlocal cinscopedecls=public,protected,private
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,:///,://
 setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
@@ -339,6 +391,7 @@ setlocal termwinscroll=10000
 setlocal termwinsize=
 setlocal textwidth=0
 setlocal thesaurus=
+setlocal thesaurusfunc=
 setlocal noundofile
 setlocal undolevels=-123456
 setlocal varsofttabstop=
@@ -351,16 +404,16 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 841 - ((35 * winheight(0) + 38) / 76)
+let s:l = 2261 - ((62 * winheight(0) + 38) / 76)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 841
+keepjumps 2261
 normal! 0
 wincmd w
 argglobal
-if bufexists("gflib/string_util.c") | buffer gflib/string_util.c | else | edit gflib/string_util.c | endif
-balt new
+if bufexists(fnamemodify("src/scrcmd.c", ":p")) | buffer src/scrcmd.c | else | edit src/scrcmd.c | endif
+balt include/constants/quests.h
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -375,9 +428,10 @@ setlocal buftype=
 setlocal cindent
 setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal cinoptions=
+setlocal cinscopedecls=public,protected,private
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,:///,://
 setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
@@ -477,6 +531,7 @@ setlocal termwinscroll=10000
 setlocal termwinsize=
 setlocal textwidth=0
 setlocal thesaurus=
+setlocal thesaurusfunc=
 setlocal noundofile
 setlocal undolevels=-123456
 setlocal varsofttabstop=
@@ -489,16 +544,16 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 134 - ((32 * winheight(0) + 19) / 38)
+let s:l = 2382 - ((14 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 134
-normal! 0
+keepjumps 2382
+normal! 013|
 wincmd w
 argglobal
-if bufexists("include/quests.h") | buffer include/quests.h | else | edit include/quests.h | endif
-balt new
+if bufexists(fnamemodify("include/quests.h", ":p")) | buffer include/quests.h | else | edit include/quests.h | endif
+balt include/constants/flags.h
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -513,9 +568,10 @@ setlocal buftype=
 setlocal cindent
 setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal cinoptions=
+setlocal cinscopedecls=public,protected,private
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,:///,://
 setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
@@ -615,6 +671,7 @@ setlocal termwinscroll=10000
 setlocal termwinsize=
 setlocal textwidth=0
 setlocal thesaurus=
+setlocal thesaurusfunc=
 setlocal noundofile
 setlocal undolevels=-123456
 setlocal varsofttabstop=
@@ -627,22 +684,164 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 37 - ((17 * winheight(0) + 18) / 37)
+let s:l = 75 - ((11 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 37
-normal! 027|
+keepjumps 75
+normal! 0
+wincmd w
+argglobal
+if bufexists(fnamemodify("src/start_menu.c", ":p")) | buffer src/start_menu.c | else | edit src/start_menu.c | endif
+balt src/new_game.c
+setlocal keymap=
+setlocal noarabic
+setlocal noautoindent
+setlocal backupcopy=
+setlocal balloonexpr=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal cindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinscopedecls=public,protected,private
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,:///,://
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal cursorlineopt=both
+setlocal define=^\\s*#\\s*define
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'c'
+setlocal filetype=c
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=^\\s*#\\s*include
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal listchars=
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=bin,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=ccomplete#Complete
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal spelloptions=
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'c'
+setlocal syntax=c
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal thesaurusfunc=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal varsofttabstop=
+setlocal vartabstop=
+setlocal virtualedit=
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1426 - ((21 * winheight(0) + 12) / 24)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1426
+normal! 05|
 wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 78 + 117) / 235)
-exe 'vert 2resize ' . ((&columns * 78 + 117) / 235)
-exe '3resize ' . ((&lines * 38 + 39) / 79)
-exe 'vert 3resize ' . ((&columns * 77 + 117) / 235)
-exe '4resize ' . ((&lines * 37 + 39) / 79)
-exe 'vert 4resize ' . ((&columns * 77 + 117) / 235)
+exe 'vert 2resize ' . ((&columns * 77 + 117) / 235)
+exe '3resize ' . ((&lines * 25 + 39) / 79)
+exe 'vert 3resize ' . ((&columns * 78 + 117) / 235)
+exe '4resize ' . ((&lines * 25 + 39) / 79)
+exe 'vert 4resize ' . ((&columns * 78 + 117) / 235)
+exe '5resize ' . ((&lines * 24 + 39) / 79)
+exe 'vert 5resize ' . ((&columns * 78 + 117) / 235)
 tabnext
-edit ../firered/src/oak_speech.c
+edit ../firered/src/item_pc.c
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -663,7 +862,7 @@ exe 'vert 1resize ' . ((&columns * 117 + 117) / 235)
 exe 'vert 2resize ' . ((&columns * 117 + 117) / 235)
 argglobal
 terminal ++curwin ++cols=117 ++rows=76 
-let s:term_buf_5 = bufnr()
+let s:term_buf_7 = bufnr()
 balt ../firered/src/oak_speech.c
 setlocal keymap=
 setlocal noarabic
@@ -679,6 +878,7 @@ setlocal buftype=terminal
 setlocal nocindent
 setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal cinoptions=
+setlocal cinscopedecls=public,protected,private
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
 setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
@@ -781,6 +981,7 @@ setlocal termwinscroll=10000
 setlocal termwinsize=
 setlocal textwidth=0
 setlocal thesaurus=
+setlocal thesaurusfunc=
 setlocal noundofile
 setlocal undolevels=-123456
 setlocal varsofttabstop=
@@ -799,7 +1000,7 @@ keepjumps 1
 normal! 0
 wincmd w
 argglobal
-balt src/quests.c
+balt ../firered/src/oak_speech.c
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -814,9 +1015,10 @@ setlocal buftype=
 setlocal cindent
 setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal cinoptions=
+setlocal cinscopedecls=public,protected,private
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
+setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,:///,://
 setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
@@ -916,6 +1118,7 @@ setlocal termwinscroll=10000
 setlocal termwinsize=
 setlocal textwidth=0
 setlocal thesaurus=
+setlocal thesaurusfunc=
 setlocal noundofile
 setlocal undolevels=-123456
 setlocal varsofttabstop=
@@ -928,50 +1131,23 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1848 - ((70 * winheight(0) + 38) / 76)
+let s:l = 52 - ((51 * winheight(0) + 38) / 76)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1848
-normal! 05|
+keepjumps 52
+normal! 0
 wincmd w
 exe 'vert 1resize ' . ((&columns * 117 + 117) / 235)
 exe 'vert 2resize ' . ((&columns * 117 + 117) / 235)
 tabnext 1
 set stal=1
-badd +493 include/global.h
-badd +1 ../firered/src/oak_speech.c
-badd +847 src/quests.c
-badd +156 skeli
-badd +37 include/quests.h
-badd +22 include/constants/quests.h
-badd +1 src/quests
-badd +66 gflib/gpu_regs.c
-badd +90 constants/gba_constants.inc
-badd +30 ~/.astylerc
-badd +480 include/constants/items.h
-badd +1556 src/event_object_movement.c
-badd +257 include/event_object_movement.h
-badd +545 src/shop.c
-badd +674 src/naming_screen.c
-badd +3211 src/overworld.c
-badd +46 src/start_menu.c
-badd +500 include/constants/songs.h
-badd +84 src/save.c
-badd +825 gflib/sprite.c
-badd +323 gflib/sprite.h
-badd +552 include/gba/io_reg.h
-badd +272 src/battle_intro.c
-badd +5294 src/battle_dome.c
-badd +1309 src/main_menu.c
-badd +70 data/maps/InsideOfTruck/scripts.inc
-badd +1 new
-badd +0 gflib/string_util.c
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
-set winheight=1 winwidth=20 shortmess=filnxtToOS
+set winheight=1 winwidth=20
+set shortmess=filnxtToOS
 let &winminheight = s:save_winminheight
 let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
