@@ -52,9 +52,6 @@
 #define tBldCntBak      data[7]
 #define tBldYBak        data[8]
 
-//PSF TODO pressing down on last item loops around to the top, also works on the top
-//PSF TODO Change header text to black or do some accessibility color testing
-
 //PSF TODO in original Unbound an unlocked quest just means it appears in the list, all quests with a NAME are considered Active... deal with this
 //PSF TODO Saveblock2 is overloaded. To fix this, subquests need to become flat and not 2d. I could make one giant array so two seperate arrays and just link them to each other.
 
@@ -73,7 +70,6 @@ struct QuestMenuResources
 	u8 filterMode;
 	u8 parentQuest;
 	bool8 restoreCursor;
-	u8 cycle;
 };
 
 struct QuestMenuStaticResources
@@ -183,10 +179,11 @@ u8 *QuestMenu_DefineQuestOrder();
 bool8 QuestMenu_CheckSelectedIsCancel(u8 selectedQuestId);
 void QuestMenu_ChangeModeAndCleanUp(u8 taskId);
 void QuestMenu_ToggleAlphaModeAndCleanUp(u8 taskId);
-void QuestMenu_ToggleFavoriteAndCleanUp(u8 taskId,u8 selectedQuestId);
+void QuestMenu_ToggleFavoriteAndCleanUp(u8 taskId, u8 selectedQuestId);
 void QuestMenu_ReturnFromSubquestAndCleanUp(u8 taskId);
 void QuestMenu_TurnOffQuestMenu(u8 taskId);
-void QuestMenu_EnterSubquestModeAndCleanUp(u8 taskId, s16 *data, s32 input);
+void QuestMenu_EnterSubquestModeAndCleanUp(u8 taskId, s16 *data,
+            s32 input);
 
 // Data
 // graphics
@@ -322,12 +319,32 @@ static const struct BgTemplate sQuestMenuBgTemplates[2] =
 
 static const u8 sQuestMenuWindowFontColors[][4] =
 {
-	{TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
-	{TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_RED,      TEXT_COLOR_TRANSPARENT},
-	{TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_GREEN,      TEXT_COLOR_TRANSPARENT},
-	{TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_BLUE,      TEXT_COLOR_TRANSPARENT},
+	{
+	TEXT_COLOR_TRANSPARENT,
+	TEXT_COLOR_DARK_GRAY,
+	TEXT_COLOR_TRANSPARENT
+	},
+	{
+	TEXT_COLOR_TRANSPARENT,
+	TEXT_COLOR_RED,
+	TEXT_COLOR_TRANSPARENT
+	},
+	{
+	TEXT_COLOR_TRANSPARENT,
+	TEXT_COLOR_GREEN,
+	TEXT_COLOR_TRANSPARENT
+	},
+	{
+	TEXT_COLOR_TRANSPARENT,
+	TEXT_COLOR_BLUE,
+	TEXT_COLOR_TRANSPARENT
+	},
+	{
+	TEXT_COLOR_TRANSPARENT,
+	TEXT_COLOR_WHITE,
+	TEXT_COLOR_TRANSPARENT
+	},
 };
-
 static const struct WindowTemplate sQuestMenuHeaderWindowTemplates[] =
 {
 	{
@@ -987,7 +1004,7 @@ static u16 QuestMenu_BuildMenuTemplate(void)
 	gMultiuseListMenuTemplate.cursorShadowPal = 0;
 	gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_MoveCursorFunc;
 	gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_PrintProgressFunc;
-	gMultiuseListMenuTemplate.scrollMultiple = 1;
+	gMultiuseListMenuTemplate.scrollMultiple = LIST_MULTIPLE_SCROLL_DPAD;
 	gMultiuseListMenuTemplate.cursorKind = 0;
 }
 
@@ -1141,7 +1158,7 @@ void QuestMenu_PrintQuestLocation(s32 questId)
 {
 	FillWindowPixelBuffer(1, 0);
 	QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar4, 2, 3, 2, 0, 0,
-	                                      0);
+	                                      4);
 }
 
 void QuestMenu_GenerateQuestFlavorText(s32 questId)
@@ -1184,7 +1201,7 @@ void QuestMenu_GenerateQuestFlavorText(s32 questId)
 void QuestMenu_PrintQuestFlavorText(s32 questId)
 {
 	QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar3, 40, 19, 5, 0, 0,
-	                                      0);
+	                                      4);
 }
 
 void QuestMenu_UpdateQuestFlavorText(s32 questId)
@@ -1849,21 +1866,26 @@ void QuestMenu_ToggleAlphaModeAndCleanUp(u8 taskId)
 
 bool8 QuestMenu_CheckSelectedIsCancel(u8 selectedQuestId)
 {
-    if (selectedQuestId == (0xFF - 1))
-        return TRUE;
-    else
-        return FALSE;
+	if (selectedQuestId == (0xFF - 1))
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
 }
 
-void QuestMenu_ToggleFavoriteAndCleanUp(u8 taskId,u8 selectedQuestId)
+void QuestMenu_ToggleFavoriteAndCleanUp(u8 taskId, u8 selectedQuestId)
 {
-    if (!QuestMenu_CheckSubquestMode() && !QuestMenu_CheckSelectedIsCancel(selectedQuestId))
-    {
-        PlaySE(SE_SELECT);
-        QuestMenu_ManageFavoriteQuests(selectedQuestId);
-        sStateDataPtr->restoreCursor = FALSE;
-        Task_QuestMenuCleanUp(taskId);
-    }
+	if (!QuestMenu_CheckSubquestMode()
+	            && !QuestMenu_CheckSelectedIsCancel(selectedQuestId))
+	{
+		PlaySE(SE_SELECT);
+		QuestMenu_ManageFavoriteQuests(selectedQuestId);
+		sStateDataPtr->restoreCursor = FALSE;
+		Task_QuestMenuCleanUp(taskId);
+	}
 }
 
 void QuestMenu_ReturnFromSubquestAndCleanUp(u8 taskId)
@@ -1883,7 +1905,8 @@ void QuestMenu_TurnOffQuestMenu(u8 taskId)
 	gTasks[taskId].func = Task_QuestMenuTurnOff1;
 }
 
-void QuestMenu_EnterSubquestModeAndCleanUp(u8 taskId, s16 *data, s32 input)
+void QuestMenu_EnterSubquestModeAndCleanUp(u8 taskId, s16 *data,
+            s32 input)
 {
 	if (QuestMenu_CheckHasChildren(input))
 	{
@@ -1905,7 +1928,7 @@ static void Task_QuestMenuMain(u8 taskId)
 	u16 row;
 	s32 input;
 	u8 selectedQuestId = sListMenuItems[sListMenuState.row +
-            sListMenuState.scroll].id;
+	                                                       sListMenuState.scroll].id;
 
 	if (!gPaletteFade.active)
 	{
@@ -1919,22 +1942,22 @@ static void Task_QuestMenuMain(u8 taskId)
 			case LIST_NOTHING_CHOSEN:
 				if (JOY_NEW(R_BUTTON))
 				{
-					QuestMenu_ChangeModeAndCleanUp( taskId);
+					QuestMenu_ChangeModeAndCleanUp(taskId);
 				}
 				if (JOY_NEW(START_BUTTON))
 				{
-					QuestMenu_ToggleAlphaModeAndCleanUp( taskId);
+					QuestMenu_ToggleAlphaModeAndCleanUp(taskId);
 				}
 				if (JOY_NEW(SELECT_BUTTON))
 				{
-					QuestMenu_ToggleFavoriteAndCleanUp( taskId, selectedQuestId);
+					QuestMenu_ToggleFavoriteAndCleanUp(taskId, selectedQuestId);
 				}
 				break;
 
 			case LIST_CANCEL:
 				if (QuestMenu_CheckSubquestMode())
 				{
-					QuestMenu_ReturnFromSubquestAndCleanUp( taskId);
+					QuestMenu_ReturnFromSubquestAndCleanUp(taskId);
 				}
 				else
 				{
@@ -1945,7 +1968,7 @@ static void Task_QuestMenuMain(u8 taskId)
 			default:
 				if (!QuestMenu_CheckSubquestMode())
 				{
-					QuestMenu_EnterSubquestModeAndCleanUp( taskId, data, input);
+					QuestMenu_EnterSubquestModeAndCleanUp(taskId, data, input);
 				}
 				break;
 		}

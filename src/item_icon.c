@@ -5,7 +5,6 @@
 #include "malloc.h"
 #include "sprite.h"
 #include "constants/items.h"
-#include "mgba_printf/mgba.h"
 
 // EWRAM vars
 EWRAM_DATA u8 *gItemIconDecompressionBuffer = NULL;
