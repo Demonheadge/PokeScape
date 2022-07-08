@@ -92,13 +92,13 @@ static void Task_QuestMenuWaitFadeAndBail(u8 taskId);
 static bool8 QuestMenu_InitBackgrounds(void);
 static bool8 QuestMenu_LoadGraphics(void);
 static bool8 QuestMenu_AllocateResourcesForListMenu(void);
-static u8 QuestMenu_CountNumberQuests();
+static u8 QuestMenu_CountNumberListRows();
 static s8 QuestMenu_DoesQuestHaveChildrenAndNotInactive(u16 itemId);
 static u16 QuestMenu_BuildMenuTemplate(void);
 static void QuestMenu_AssignCancelNameAndId(u8 numRow);
 static void QuestMenu_MoveCursorFunc(s32 itemIndex, bool8 onInit,
                                      struct ListMenu *list);
-static void QuestMenu_PrintProgressFunc(u8 windowId, u32 itemId, u8 y);
+static void QuestMenu_GenerateStateAndPrint(u8 windowId, u32 itemId, u8 y);
 static void QuestMenu_PrintOrRemoveCursorAt(u8 y, u8 state);
 s8 QuestMenu_CountUnlockedQuests(void);
 s8 QuestMenu_CountInactiveQuests(void);
@@ -177,6 +177,14 @@ void QuestMenu_ReturnFromSubquestAndCleanUp(u8 taskId);
 void QuestMenu_TurnOffQuestMenu(u8 taskId);
 void QuestMenu_EnterSubquestModeAndCleanUp(u8 taskId, s16 *data,
             s32 input);
+
+bool8 QuestMenu_IsSubquestCompleted(u8 parentQuest, u8 countQuest);
+u8 QuestMenu_GenerateSubquestState(u8 questId);
+u8 QuestMenu_GenerateQuestState(u8 questId);
+void QuestMenu_PrintQuestState(u8 windowId, u8 y, u8 colorIndex);
+
+bool8 QuestMenu_IfRowIsOutOfBounds(void);
+bool8 QuestMenu_IfScrollIsOutOfBounds(void);
 
 // Tiles, palettes and tilemaps for the Quest Menu
 static const u32 sQuestMenuTiles[] =
@@ -1005,7 +1013,7 @@ static bool8 QuestMenu_LoadGraphics(void)
 static bool8 QuestMenu_AllocateResourcesForListMenu(void)
 {
 	try_alloc(sListMenuItems,
-	          sizeof(struct ListMenuItem) * QuestMenu_CountNumberQuests() + 1);
+	          sizeof(struct ListMenuItem) * QuestMenu_CountNumberListRows() + 1);
 	return TRUE;
 }
 
@@ -1046,7 +1054,7 @@ static bool8 QuestMenu_IsSubquestMode(void)
 	}
 }
 
-static u8 QuestMenu_CountNumberQuests()
+static u8 QuestMenu_CountNumberListRows()
 {
 	u8 mode = sStateDataPtr->filterMode % 10;
 
@@ -1333,7 +1341,7 @@ static u16 QuestMenu_BuildMenuTemplate(void)
 
 	QuestMenu_AssignCancelNameAndId(lastRow);
 
-	gMultiuseListMenuTemplate.totalItems = QuestMenu_CountNumberQuests();
+	gMultiuseListMenuTemplate.totalItems = QuestMenu_CountNumberListRows();
 	gMultiuseListMenuTemplate.items = sListMenuItems;
 	gMultiuseListMenuTemplate.windowId = 0;
 	gMultiuseListMenuTemplate.header_X = 0;
@@ -1348,7 +1356,7 @@ static u16 QuestMenu_BuildMenuTemplate(void)
 	gMultiuseListMenuTemplate.fillValue = 0;
 	gMultiuseListMenuTemplate.cursorShadowPal = 0;
 	gMultiuseListMenuTemplate.moveCursorFunc = QuestMenu_MoveCursorFunc;
-	gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_PrintProgressFunc;
+	gMultiuseListMenuTemplate.itemPrintFunc = QuestMenu_GenerateStateAndPrint;
 	gMultiuseListMenuTemplate.scrollMultiple = LIST_MULTIPLE_SCROLL_DPAD;
 	gMultiuseListMenuTemplate.cursorKind = 0;
 }
@@ -1631,19 +1639,13 @@ bool8 QuestMenu_IsQuestUnlocked(s32 questId)
 	}
 }
 
-static void QuestMenu_PrintProgressFunc(u8 windowId, u32 itemId, u8 y)
+u8 QuestMenu_GenerateSubquestState(u8 questId)
 {
-	u8 colorIndex = 0;
 	u8 parentQuest = sStateDataPtr->parentQuest;
 	u8 questType = sSideQuests[parentQuest].childtype;
 
-	if (itemId != LIST_CANCEL)
-	{
-		if (QuestMenu_IsSubquestMode())
-		{
-			if (QuestMenu_GetSetSubquestState(parentQuest, FLAG_GET_COMPLETED, itemId))
+			if (QuestMenu_GetSetSubquestState(parentQuest, FLAG_GET_COMPLETED, questId))
 			{
-				colorIndex = 2;
 				switch (questType)
 				{
 					case SUBQUEST_CATCH:
@@ -1661,33 +1663,57 @@ static void QuestMenu_PrintProgressFunc(u8 windowId, u32 itemId, u8 y)
 			{
 				StringCopy(gStringVar4, sText_Empty);
 			}
-		}
-		else
-		{
-			if (QuestMenu_GetSetQuestState(itemId, FLAG_GET_COMPLETED))
+
+            return 2;
+}
+
+u8 QuestMenu_GenerateQuestState(u8 questId)
+{
+			if (QuestMenu_GetSetQuestState(questId, FLAG_GET_COMPLETED))
 			{
 				StringCopy(gStringVar4, sText_QuestMenu_Complete);
-				colorIndex = 2;
+                return 2;
 			}
-			else if (QuestMenu_GetSetQuestState(itemId, FLAG_GET_REWARD))
+			else if (QuestMenu_GetSetQuestState(questId, FLAG_GET_REWARD))
 			{
 				StringCopy(gStringVar4, sText_QuestMenu_Reward);
-				colorIndex = 1;
+                return 1;
 			}
-			else if (QuestMenu_GetSetQuestState(itemId, FLAG_GET_ACTIVE))
+			else if (QuestMenu_GetSetQuestState(questId, FLAG_GET_ACTIVE))
 			{
 				StringCopy(gStringVar4, sText_QuestMenu_Active);
-				colorIndex = 3;
+                return 3;
 			}
 			else
 			{
 				StringCopy(gStringVar4, sText_Empty);
 			}
+}
+
+static void QuestMenu_GenerateStateAndPrint(u8 windowId, u32 questId, u8 y)
+{
+    u8 colorIndex;
+
+	if (questId != LIST_CANCEL)
+	{
+		if (QuestMenu_IsSubquestMode())
+		{
+            colorIndex = QuestMenu_GenerateSubquestState(questId);
 		}
-		QuestMenu_AddTextPrinterParameterized(windowId, 0, gStringVar4, 200, y, 0,
-		                                      0, 0xFF, colorIndex);
+		else
+		{
+            colorIndex = QuestMenu_GenerateQuestState(questId);
+		}
+
+        QuestMenu_PrintQuestState(windowId,y,colorIndex);
 	}
 }
+
+void QuestMenu_PrintQuestState(u8 windowId, u8 y, u8 colorIndex)
+    {
+		QuestMenu_AddTextPrinterParameterized(windowId, 0, gStringVar4, 200, y, 0,
+		                                      0, 0xFF, colorIndex);
+    }
 
 static void QuestMenu_PrintOrRemoveCursor(u8 listMenuId, u8 colorIdx)
 {
@@ -1877,7 +1903,7 @@ void QuestMenu_GenerateNumeratorNumQuests(void)
 	}
 }
 
-void QuestMenu_GenerateMissionContextHeader(void)
+void QuestMenu_GenerateMenuContext(void)
 {
 	u8 mode = sStateDataPtr->filterMode % 10;
 	u8 parentQuest = sStateDataPtr->parentQuest;
@@ -1925,7 +1951,7 @@ void QuestMenu_PrintNumQuests(void)
 	QuestMenu_AddTextPrinterParameterized(2, 0, gStringVar4, 167, 1, 0, 1, 0,
 	                                      0);
 }
-void QuestMenu_PrintMissionContextHeader(void)
+void QuestMenu_PrintMenuContext(void)
 {
 	QuestMenu_AddTextPrinterParameterized(2, 0,
 	                                      questNameArray[QUEST_COUNT + 1], 10, 1, 0, 1, 0, 0);
@@ -1941,10 +1967,10 @@ static void QuestMenu_GenerateAndPrintHeader(void)
 {
 	QuestMenu_GenerateDenominatorNumQuests();
 	QuestMenu_GenerateNumeratorNumQuests();
-	QuestMenu_GenerateMissionContextHeader();
+	QuestMenu_GenerateMenuContext();
 
 	QuestMenu_PrintNumQuests();
-	QuestMenu_PrintMissionContextHeader();
+	QuestMenu_PrintMenuContext();
 
 	if (!QuestMenu_IsSubquestMode())
 	{
@@ -1954,7 +1980,7 @@ static void QuestMenu_GenerateAndPrintHeader(void)
 
 static void QuestMenu_PlaceTopMenuScrollIndicatorArrows(void)
 {
-	u8 listSize = QuestMenu_CountNumberQuests();
+	u8 listSize = QuestMenu_CountNumberListRows();
 
 	if (listSize < sStateDataPtr->maxShowed)
 	{
@@ -1975,17 +2001,41 @@ static void QuestMenu_RemoveScrollIndicatorArrowPair(void)
 	}
 }
 
-static void QuestMenu_SetCursorPosition(void)
+bool8 QuestMenu_IfScrollIsOutOfBounds(void)
 {
 	if (sListMenuState.scroll != 0
 	            && sListMenuState.scroll + sStateDataPtr->maxShowed >
 	            sStateDataPtr->nItems + 1)
+    {
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
+bool8 QuestMenu_IfRowIsOutOfBounds(void)
+{
+	if (sListMenuState.scroll + sListMenuState.row >= sStateDataPtr->nItems + 1)
+    {
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
+static void QuestMenu_SetCursorPosition(void)
+{
+    if (QuestMenu_IfScrollIsOutOfBounds())
 	{
 		sListMenuState.scroll = (sStateDataPtr->nItems + 1) -
 		                        sStateDataPtr->maxShowed;
 	}
-	if (sListMenuState.scroll + sListMenuState.row >= sStateDataPtr->nItems +
-	            1)
+
+    if (QuestMenu_IfRowIsOutOfBounds())
 	{
 		if (sStateDataPtr->nItems + 1 < 2)
 		{
@@ -2023,15 +2073,7 @@ static void QuestMenu_FreeResources(void)
 
 static void Task_QuestMenuTurnOff1(u8 taskId)
 {
-	if (sListMenuState.initialized == 1)
-	{
-		BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
-	}
-	else
-	{
-		BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
-	}
-
+    BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
 	gTasks[taskId].func = Task_QuestMenuTurnOff2;
 }
 
@@ -2065,7 +2107,7 @@ static u8 QuestMenu_GetCursorPosition(void)
 
 static void QuestMenu_InitItems(void)
 {
-	sStateDataPtr->nItems = (QuestMenu_CountNumberQuests()) - 1;
+	sStateDataPtr->nItems = (QuestMenu_CountNumberListRows()) - 1;
 
 	sStateDataPtr->maxShowed = sStateDataPtr->nItems + 1 <= 4 ?
 	                           sStateDataPtr->nItems + 1 : 4;
@@ -2179,6 +2221,8 @@ static void QuestMenu_RestoreSavedScrollAndRow(s16 *data)
 	                       sListMenuState.storedScrollOffset,
 	                       sListMenuState.storedRowPosition);
 }
+
+//PSF TODO refactor stop
 
 void QuestMenu_ChangeModeAndCleanUp(u8 taskId)
 {
