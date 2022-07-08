@@ -84,7 +84,6 @@ void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType);
 void QuestMenu_ResetSpriteState(void);
 void QuestMenu_DestroySprite(u8 idx);
 s8 QuestMenu_ManageFavorites(u8 index);
-void Task_QuestMenu_OpenFromStartMenu(u8);
 
 static void QuestMenu_RunSetup(void);
 static bool8 QuestMenu_SetupGraphics(void);
@@ -1637,18 +1636,6 @@ static void QuestMenu_PrintProgressFunc(u8 windowId, u32 itemId, u8 y)
 	u8 colorIndex = 0;
 	u8 parentQuest = sStateDataPtr->parentQuest;
 	u8 questType = sSideQuests[parentQuest].childtype;
-
-	if (sStateDataPtr->moveModeOrigPos != 0xFF)
-	{
-		if (sStateDataPtr->moveModeOrigPos == (u8)itemId)
-		{
-			QuestMenu_PrintOrRemoveCursorAt(y, 2);
-		}
-		else
-		{
-			QuestMenu_PrintOrRemoveCursorAt(y, 0xFF);
-		}
-	}
 
 	if (itemId != LIST_CANCEL)
 	{
