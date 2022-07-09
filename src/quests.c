@@ -44,6 +44,7 @@
 //PSF TODO The sprite in the bottom left does not fade in and out despite the object layer being told to blend. The object arrows in the center of the screen fade without issue.
 //PSF TODO There is a strange artifact when going from object to item.
 //PSFP TODO Reorganize all functions near the top
+//PSF TODO add static to all non extternal functions
 
 struct QuestMenuResources
 {
@@ -227,6 +228,7 @@ static const u8 sText_QuestMenu_ColorGreen[] = _("{COLOR}{GREEN}");
 static const u8 sText_QuestMenu_AZ[] = _(" A-Z");
 
 //Declaration of subquest structures. Edits to subquests are made here.
+//#define sub_quest(i, n, d, m, o) {.id, .name = n, .desc = d, .map = m, .object = o}
 #define sub_quest(n, d, m, o) {.name = n, .desc = d, .map = m, .object = o}
 static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
 {
@@ -1320,7 +1322,7 @@ u8 QuestMenu_GenerateDefaultList()
 u8 QuestMenu_GetModeAndGenerateList()
 {
 	MgbaPrintf(4, "size of subquests %lu", sizeof(gSaveBlock2Ptr->subQuests));
-	MgbaPrintf(4, "size of reward %lu", sizeof(gSaveBlock2Ptr->rewardQuests));
+	MgbaPrintf(4, "size of questdata%lu", sizeof(gSaveBlock2Ptr->questData));
 
 	if (QuestMenu_IsSubquestMode())
 	{
@@ -2436,6 +2438,10 @@ s8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest)
 	u8	childBit = childQuest % 8;
 	u8	childMask = 1 << childBit;
 
+    //calculate unique subquest id
+
+
+
 	switch (caseId)
 	{
 		case FLAG_GET_COMPLETED:
@@ -2448,6 +2454,7 @@ s8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest)
 	return -1;
 }
 
+/*
 s8 QuestMenu_GetSetQuestState(u8 quest, u8 caseId)
 {
 	u8 index = quest / 8; //8 bits per byte
@@ -2497,6 +2504,113 @@ s8 QuestMenu_GetSetQuestState(u8 quest, u8 caseId)
 	}
 	return -1;  //failure
 }
+*/
+
+///*
+s8 QuestMenu_GetSetQuestState(u8 quest, u8 caseId)
+{
+	u8 index = quest * 5 / 8;
+	u8 bit = quest * 5 % 8;
+    u8 mask = 0, index2 = 0, bit2 = 0, index3 = 0, bit3 = 0, mask2 = 0, mask3 = 0;
+
+	// 0 : locked
+	// 1 : actived
+	// 2 : rewarded
+	// 3 : completed
+	// 4 : favorited
+
+	switch (caseId) 
+	{
+		case FLAG_GET_UNLOCKED:
+		case FLAG_SET_UNLOCKED:
+			break;
+		case FLAG_GET_INACTIVE:
+		case FLAG_GET_ACTIVE:
+		case FLAG_SET_ACTIVE:
+		case FLAG_REMOVE_ACTIVE:
+			bit += 1;
+			break;
+		case FLAG_GET_REWARD:
+		case FLAG_SET_REWARD:
+		case FLAG_REMOVE_REWARD:
+			bit += 2;
+			break;
+		case FLAG_GET_COMPLETED:
+		case FLAG_SET_COMPLETED:
+			bit += 3;
+			break;
+		case FLAG_GET_FAVORITE:
+		case FLAG_SET_FAVORITE:
+		case FLAG_REMOVE_FAVORITE:
+			bit += 4;
+			break;
+	}
+	if (bit >= 8) {
+		index += 1;
+		bit %= 8;
+	}
+	mask = 1 << bit;
+
+	switch (caseId)
+	{
+		case FLAG_GET_UNLOCKED:
+			return gSaveBlock2Ptr->questData[index] & mask;
+		case FLAG_SET_UNLOCKED:
+			gSaveBlock2Ptr->questData[index] |= mask;
+			return 1;
+		case FLAG_GET_INACTIVE:
+			bit2 = bit + 1;
+			bit3 = bit + 2;
+			index2 = index;
+			index3 = index;
+
+			if (bit2 >= 8) {
+				index2 += 1;
+				bit2 %= 8;
+			}
+			if (bit3 >= 8) {
+				index3 += 1;
+				bit3 %= 8;
+			}
+
+			mask2 = 1 << bit2;
+			mask3 = 1 << bit3;
+			return !(gSaveBlock2Ptr->questData[index] & mask) && \
+				   !(gSaveBlock2Ptr->questData[index2] & mask2) && \
+				   !(gSaveBlock2Ptr->questData[index3] & mask3);
+		case FLAG_GET_ACTIVE:
+			return gSaveBlock2Ptr->questData[index] & mask;
+		case FLAG_SET_ACTIVE:
+			gSaveBlock2Ptr->questData[index] |= mask;
+			return 1;
+		case FLAG_REMOVE_ACTIVE:
+			gSaveBlock2Ptr->questData[index] &= ~mask;
+			return 1;
+		case FLAG_GET_REWARD:
+			return gSaveBlock2Ptr->questData[index] & mask;
+		case FLAG_SET_REWARD:
+			gSaveBlock2Ptr->questData[index] |= mask;
+			return 1;
+		case FLAG_REMOVE_REWARD:
+			gSaveBlock2Ptr->questData[index] &= ~mask;
+			return 1;
+		case FLAG_GET_COMPLETED:
+			return gSaveBlock2Ptr->questData[index] & mask;
+		case FLAG_SET_COMPLETED:
+			gSaveBlock2Ptr->questData[index] |= mask;
+			return 1;
+		case FLAG_GET_FAVORITE:
+			return gSaveBlock2Ptr->questData[index] & mask;
+		case FLAG_SET_FAVORITE:
+			gSaveBlock2Ptr->questData[index] |= mask;
+			return 1;
+		case FLAG_REMOVE_FAVORITE:
+			gSaveBlock2Ptr->questData[index] &= ~mask;
+			return 1;
+	}
+	return -1;  //failure
+}
+//*/
 
 void QuestMenu_ActivateMenu(void)
 {
@@ -2510,17 +2624,8 @@ void QuestMenu_CopyQuestName(u8 *dst, u8 questId)
 
 void QuestMenu_ResetMenuSaveData(void)
 {
-	memset(&gSaveBlock2Ptr->unlockedQuests, 0,
-	       sizeof(gSaveBlock2Ptr->unlockedQuests));
-	memset(&gSaveBlock2Ptr->activeQuests, 0,
-	       sizeof(gSaveBlock2Ptr->activeQuests));
-	memset(&gSaveBlock2Ptr->rewardQuests, 0,
-	       sizeof(gSaveBlock2Ptr->rewardQuests));
-	memset(&gSaveBlock2Ptr->completedQuests, 0,
-	       sizeof(gSaveBlock2Ptr->completedQuests));
-	memset(&gSaveBlock2Ptr->subQuests, 0, sizeof(gSaveBlock2Ptr->subQuests));
-	memset(&gSaveBlock2Ptr->favoriteQuests, 0,
-	       sizeof(gSaveBlock2Ptr->favoriteQuests));
+	memset(&gSaveBlock2Ptr->questData, 0,
+	       sizeof(gSaveBlock2Ptr->questData));
 }
 
 static void

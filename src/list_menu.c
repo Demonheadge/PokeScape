@@ -435,7 +435,7 @@ s32 ListMenu_ProcessInput(u8 listTaskId)
         if (currentPosition == lastPositon)
             ListMenuChangeSelection(list,TRUE,lastPositon, FALSE);
         else
-        ListMenuChangeSelection(list, TRUE, 1, TRUE);
+            ListMenuChangeSelection(list, TRUE, 1, TRUE);
 
         return LIST_NOTHING_CHOSEN;
     }

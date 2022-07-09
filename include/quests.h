@@ -26,6 +26,7 @@
 
 struct SubQuest
 {
+    //const u8 id;
 	const u8 *name;
 	const u8 *desc;
 	const u8 *map;

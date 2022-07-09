@@ -503,12 +503,9 @@ struct SaveBlock2
     /*0x57C*/ struct RankingHall2P hallRecords2P[FRONTIER_LVL_MODE_COUNT][HALL_RECORDS_COUNT]; // From record mixing.
     /*0x624*/ u16 contestLinkResults[CONTEST_CATEGORIES_COUNT][CONTESTANT_COUNT];
     /*0x64C*/ struct BattleFrontier frontier;
-    /*0x0F2C*/ u8 unlockedQuests[QUEST_FLAGS_COUNT];
-    /*0x????*/ u8 activeQuests[QUEST_FLAGS_COUNT];
-    /*0x????*/ u8 rewardQuests[QUEST_FLAGS_COUNT];
-    /*0x????*/ u8 completedQuests[QUEST_FLAGS_COUNT];
+    u8 questData[QUEST_FLAGS_COUNT * 5];
     /*0x????*/ u8 subQuests[QUEST_COUNT][SUB_FLAGS_COUNT];
-    /*0x????*/ u8 favoriteQuests[QUEST_FLAGS_COUNT];
+    u8 subQuests2[SUB_FLAGS_COUNT];
 }; 
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
