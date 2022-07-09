@@ -2,7 +2,7 @@
 This is a "port" of [Unbound](https://www.pokecommunity.com/showthread.php?t=382178)'s Quest Menu to use in decomp projects. ghoulslash's [Quest Menu](https://www.pokecommunity.com/showthread.php?t=434462) was used as a base, and was heavily modified to perfectly mimic Unbound's variant. This features only handles the menu and a basic handling of the quests.
 
 ## Media
-[screenshots](https://i.imgur.com/zO9MisS.gif)
+![screenshots](https://i.imgur.com/zO9MisS.gif)
 
 # Contributions
 ## [Skeli#3917](https://www.youtube.com/channel/UCRIShSkz-VJWqQT83KQlNjg)
@@ -44,7 +44,7 @@ These instructions assume that you are able to build [pokeemerald](https://githu
 
 Assuming you are in the root directory of your project, run the following commands in your terminal program of choice:
 
-```
+```bash
 git remote add psf https://github.com/PokemonSanFran/pokeemerald/ # This adds our team's pokeemerald branch as a remote repo.
 git pull psf unbound-quest-menu #This pulls in the unbound-quest-menu feature branch
 ```
@@ -53,14 +53,14 @@ git pull psf unbound-quest-menu #This pulls in the unbound-quest-menu feature br
 You cannot use this feature and ghoulslash's quest menu at the same time. You will need to use one or the other. If you have already pulled in ghoulslash's, you will need to do some work merging conflicts after pulling this one in.
 
 ## Wrapping menu
-[original background](https://i.imgur.com/Hwh2apf.png)
+![original background](https://i.imgur.com/Hwh2apf.png)
 
 Unbound's list menus wrap, meaning that when you press up on the first item a list, you are brought to the last item (and vice versa). Emerald has this behavior turned off. Pulling in this branch will turn on this functionality for all list menus in your project. If you do not want this functionality, you will need to disable it.
 
 ### Disabling wrapping
 To remove this functionality, remove the following code from `src/list_menu.c` (around line 426):
 
-```
+```c
 if (currentPosition == 0)
     ListMenuChangeSelection(list,TRUE,lastPositon,TRUE);
 else
@@ -68,50 +68,76 @@ else
 
 as well as this (around line 435):
 
-```
+```c
 if (currentPosition == lastPositon)
     ListMenuChangeSelection(list,TRUE,lastPositon, FALSE);
 else
 ```
 # Usage and Examples
-## Adding new Quests
+## Quest Anatomy
 
-There are 30 blank parent quests for you to use. This guide assumes you want to add one more.
+![original background](https://i.imgur.com/Hwh2apf.png)
 
-### Quest Data
+* A: Name string
+* B: Description string (When this quest is complete, the complete string will be shown here.)
+* D: Map string
+* E: sprite ID
+* F: sprite's type. Needs to be `OBJECT`, `ITEM`, or `PKMN`. (This list is defined in `include/quests.h`.)
+* G: The struct that hold this quest's subquests / children. NULL if none.
+* H: Number of subquests for this parent. Zero if none.
 
-#### `include/constants/quests.h`
-```
+## New Quests
+There are 30 blank parent quests for you to edit. 
+
+### `include/constants/quests.h`
+```c
 #define QUEST_29        28
 #define QUEST_30        29
-#define QUEST_GOLD_SYMBOLS 30
-#define QUEST_COUNT     (QUEST_GOLD_SYMBOLS + 1)
+#define QUEST_INFINTY_STONES 30
+#define QUEST_COUNT     (QUEST_INFINTY_STONES + 1)
 ```
-Add a quest define at the end of this list. You can name these whatever you want, like `QUEST_GOLD_SYMBOLS`. These are the names you will use in when you are scripting to refer to the quests. You will also need to update the value of QUEST\_COUNT to be your last quest in the list, +1.
+Add a quest define at the end of this list. You can name these whatever you want, like `QUEST_INFINTY_STONES`. These are the names you will use in when you are scripting to refer to the quests. You will also need to update the value of QUEST\_COUNT to be your last quest in the list, +1.
 
-#### `src/quests.c`
+### `src/strings.c`
+```c
+const u8 gText_SideQuestName_31[] = _("Endgame");
+const u8 gText_SideQuestDesc_31[] =_("Help fix the balance of the universe! Gather the Infinity Stones.");
+const u8 gText_SideQuestDoneDesc_31[] = _("All in balance, as it should be.");
+const u8 gText_SidequestMap31[] = _("New York City");
 ```
+These are all of the strings being used for your quest. You will also need to define them in `include/quests.h`.
+
+```c
+extern const u8 gText_SideQuestName_31[];
+extern const u8 gText_SideQuestDesc_31[];
+extern const u8 gText_SideQuestDoneDesc_31[];
+extern const u8 gText_SidequestMap31[];
+```
+
+### `src/quests.c`
+```c
 	side_quest(
-	      side quest name string,
-	      side quest description string,
-	      side quest complete string,
-	      side quest map string ,
-	      quest object / item / pokemon id,
-          object's type
-          subquest struct
-	      number of subquests
+	      gText_SideQuestName_31, //side quest name string
+	      gText_SideQuestDesc_31, //side quest description string 
+	      gText_SideQuestDoneDesc_31, //side quest complete description string
+	      gText_SideQuestMap31, //side quest map string
+	      OBJ_EVENT_GFX_MAXIE, //quest sprite id
+	      OBJECT, //quest sprite type
+	      NULL, //subquest struct
+	      0 //number of subquests
 	),
 ```
-Add a quest to the end of this struct, found around line 748. An example has been left there for you.
+Add a quest to the end of this struct, found around line 787. An example has been left there for you.
 
 
 
+### New Subquests
 
-### Adding new subquests
+//PSF TODO left off here
 
 ## Accessing In Game
 Calling the function 
-```
+```c
 QuestMenu_Init(0, <callback>)
 ```
 will open the Quest Menu. If the flag `FLAG_SYS_QUEST_MENU_GET` is set, the player will be able to access from the Start Menu.
@@ -144,61 +170,61 @@ Subquests only have two states - Locked and Done.
 ##Scripting Commands
 
 ### Open Quest Menu
-```
+```c
 openquestmenu
 ```
-```
+```c
 questmenu QUEST_MENU_OPEN 0
 ```
 Either of these will open the quest menu in game.
 
 ### Unlock Quest
-```
+```c
 questmenu QUEST_MENU_UNLOCK_QUEST QUEST_QUEST_24
 ```
 Set quest 24's state to unlocked. There is no reason for this to ever be used, as changing a quest's state is active will automatically do this.
 
 ### Set Active
-```
+```c
 questmenu QUEST_MENU_SET_ACTIVE QUEST_24
 ```
 Set quest 24's state to active.
 
 ### Set Reward
-```
+```c
 questmenu QUEST_MENU_SET_REWARD QUEST_24
 ```
 Set quest 24's state to reward.
 
 ### Complete Quest 
-```
+```c
 questmenu QUEST_MENU_COMPLETE_QUEST QUEST_24
 ```
-```
+```c
 subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_24, SUB_QUEST_3
 ```
 Set quest 24's state to complete, or set quest 24, subquest 3's state to complete.
 
 ### Check State
-```
+```c
 questmenu QUEST_MENU_CHECK_UNLOCKED QUEST_24
 ```
-```
+```c
 questmenu QUEST_MENU_CHECK_ACTIVE QUEST_24
 ```
-```
+```c
 questmenu QUEST_MENU_CHECK_REWARD QUEST_24
 ```
-```
+```c
 questmenu QUEST_MENU_CHECK_COMPLETE QUEST_24 
 ```
-```
+```c
 subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_24, SUB_QUEST_3
 ```
 If quest 24 has the selected state, `gSpecialVar_Result` / `VAR_RESULT` will return true. If not, will return false. The last variant will do the same for quest 24, sub quest 3.
 
 ### Buffer Quest Name
-```
+```c
 questmenu QUEST_MENU_BUFFER_QUEST_NAME QUEST_24
 ```
 Store the name of quest 24 in `gStringVar1` / `{STR_VAR_1}`.
@@ -206,17 +232,17 @@ Store the name of quest 24 in `gStringVar1` / `{STR_VAR_1}`.
 
 # Known Issues
 ## Background Image
-[original background](https://i.imgur.com/Hwh2apf.png)
+![original background](https://i.imgur.com/Hwh2apf.png)
 
 Fans of Unbound will notice that this is not the same background that is used in Unbound. Skeli was unable to give permission for use of that background, but was kind enough to provide an alternative background to be used. The colors have slightly been altered to make the text easier to read, but the original image is provided above.
 
 ## Object Fading 
-[original background]()
+![original background]()
 
 Unbound's Quest Menu's has the object in the bottom left corner of the screen fade out when the player enters or leaves a subquest. This feature does not replicate that functionality.
 
 ## Artifacting
-[gif example]()
+![gif example]()
 
 When moving from a quest that displays an object to a quest that displays a non-object, a strange artifact will appear on the screen for a frame or two.
 

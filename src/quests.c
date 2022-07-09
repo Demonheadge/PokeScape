@@ -1546,9 +1546,6 @@ u8 QuestMenu_GenerateDefaultList()
 
 u8 QuestMenu_GetModeAndGenerateList()
 {
-	MgbaPrintf(4, "size of subquests %lu", sizeof(gSaveBlock2Ptr->subQuests));
-	MgbaPrintf(4, "size of questdata%lu", sizeof(gSaveBlock2Ptr->questData));
-
 	if (QuestMenu_IsSubquestMode())
 	{
 		return QuestMenu_GenerateSubquestList();
