@@ -23,6 +23,7 @@
 
 #define OBJECT 1
 #define ITEM 2
+#define PKMN 3
 
 struct SubQuest
 {
@@ -30,7 +31,9 @@ struct SubQuest
 	const u8 *name;
 	const u8 *desc;
 	const u8 *map;
-	const u8 object;
+	const u8 sprite;
+    const u8 spritetype;
+    const u8 *type;
 }; 
 
 struct SideQuest
@@ -39,9 +42,9 @@ struct SideQuest
 	const u8 *desc;
 	const u8 *donedesc;
 	const u8 *map;
-	u8 object;
+	const u8 sprite;
+    const u8 spritetype;
 	const struct SubQuest *subquests;
-	const u8 childtype;
 	const u8 numSubquests;
 }; 
 
@@ -83,6 +86,7 @@ s8 QuestMenu_GetSetQuestState(u8 quest, u8 caseId);
 void QuestMenu_Init(u8 a0, MainCallback callback);
 void QuestMenu_ActivateMenu(void);
 void QuestMenu_CopyQuestName(u8 *dst, u8 questId);
+void QuestMenu_CopySubquestName(u8 *dst, u8 parentId, u8 childId);
 void QuestMenu_ResetMenuSaveData(void);
 void Task_QuestMenu_OpenFromStartMenu(u8);
 

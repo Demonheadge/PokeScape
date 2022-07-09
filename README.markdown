@@ -74,7 +74,38 @@ if (currentPosition == lastPositon)
 else
 ```
 # Usage and Examples
-##Adding new Quests
+## Adding new Quests
+
+There are 30 blank parent quests for you to use. This guide assumes you want to add one more.
+
+### Quest Data
+
+#### `include/constants/quests.h`
+```
+#define QUEST_29        28
+#define QUEST_30        29
+#define QUEST_GOLD_SYMBOLS 30
+#define QUEST_COUNT     (QUEST_GOLD_SYMBOLS + 1)
+```
+Add a quest define at the end of this list. You can name these whatever you want, like `QUEST_GOLD_SYMBOLS`. These are the names you will use in when you are scripting to refer to the quests. You will also need to update the value of QUEST\_COUNT to be your last quest in the list, +1.
+
+#### `src/quests.c`
+```
+	side_quest(
+	      side quest name string,
+	      side quest description string,
+	      side quest complete string,
+	      side quest map string ,
+	      quest object / item / pokemon id,
+          object's type
+          subquest struct
+	      number of subquests
+	),
+```
+Add a quest to the end of this struct, found around line 748. An example has been left there for you.
+
+
+
 
 ### Adding new subquests
 
@@ -87,22 +118,19 @@ will open the Quest Menu. If the flag `FLAG_SYS_QUEST_MENU_GET` is set, the play
 
 ## Quest States
 
-### Locked
-If a quest is locked, it appears as "????" in the quest menu.
+### Locked / Unlocked
+If a quest is locked, it appears as "????" in the quest menu. When a quest is unlocked, it's name and details will appear in the menu. Once unlocked, quests should always retain this status.
 
 ### Active
-Currently in progress.
+Currently in progress. When a quest is set as active, it is automatically unlocked.
 
 ### Reward
-Has been completed, but the player has not recieved the reward for it yet.
+Has been completed, but the player has not recieved the reward for it yet. Reward state quests are no longer active.
 
 ### Done
-Has been completed and the player has recieved the reward.
+Has been completed and the player has recieved the reward. Done quests are no longer in the reward state.
 
 Subquests only have two states - Locked and Done.
-
-
-
 
 ##Filter Modes
 
@@ -122,28 +150,58 @@ openquestmenu
 ```
 questmenu QUEST_MENU_OPEN 0
 ```
-
 Either of these will open the quest menu in game.
 
 ### Unlock Quest
 ```
-questmenu QUEST_MENU_UNLOCK_QUEST 24
+questmenu QUEST_MENU_UNLOCK_QUEST QUEST_QUEST_24
 ```
-Unlock quest number 24. When quests are locked, their name will appear as "????" in the list menu.
+Set quest 24's state to unlocked. There is no reason for this to ever be used, as changing a quest's state is active will automatically do this.
+
+### Set Active
+```
+questmenu QUEST_MENU_SET_ACTIVE QUEST_24
+```
+Set quest 24's state to active.
+
+### Set Reward
+```
+questmenu QUEST_MENU_SET_REWARD QUEST_24
+```
+Set quest 24's state to reward.
 
 ### Complete Quest 
 ```
-questmenu QUEST_MENU_COMPLETE_QUEST 24
+questmenu QUEST_MENU_COMPLETE_QUEST QUEST_24
 ```
-Complete quest number 24.
-
-
-
-### Title
 ```
-questmenu code 24
+subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_24, SUB_QUEST_3
 ```
-Sentence
+Set quest 24's state to complete, or set quest 24, subquest 3's state to complete.
+
+### Check State
+```
+questmenu QUEST_MENU_CHECK_UNLOCKED QUEST_24
+```
+```
+questmenu QUEST_MENU_CHECK_ACTIVE QUEST_24
+```
+```
+questmenu QUEST_MENU_CHECK_REWARD QUEST_24
+```
+```
+questmenu QUEST_MENU_CHECK_COMPLETE QUEST_24 
+```
+```
+subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_24, SUB_QUEST_3
+```
+If quest 24 has the selected state, `gSpecialVar_Result` / `VAR_RESULT` will return true. If not, will return false. The last variant will do the same for quest 24, sub quest 3.
+
+### Buffer Quest Name
+```
+questmenu QUEST_MENU_BUFFER_QUEST_NAME QUEST_24
+```
+Store the name of quest 24 in `gStringVar1` / `{STR_VAR_1}`.
 
 
 # Known Issues

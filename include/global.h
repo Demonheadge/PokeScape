@@ -506,7 +506,7 @@ struct SaveBlock2
 #define SUB_FLAGS_COUNT ROUND_BITS_TO_BYTES(SUB_QUEST_COUNT)
 
     u8 questData[QUEST_FLAGS_COUNT * 5];
-    u8 subQuests2[SUB_FLAGS_COUNT];
+    u8 subQuests[SUB_FLAGS_COUNT];
 }; 
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
