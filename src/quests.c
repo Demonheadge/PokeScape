@@ -39,7 +39,6 @@
 #define tPageItems      data[4]
 #define tItemPcParam    data[6]
 //PSF TODO in original Unbound an unlocked quest just means it appears in the list, all quests with a NAME are considered Active... deal with this
-//PSF TODO Saveblock2 is overloaded. To fix this, subquests need to become flat and not 2d. I could make one giant array so two seperate arrays and just link them to each other.
 
 //PSF TODO The sprite in the bottom left does not fade in and out despite the object layer being told to blend. The object arrows in the center of the screen fade without issue.
 //PSF TODO There is a strange artifact when going from object to item.
@@ -228,11 +227,11 @@ static const u8 sText_QuestMenu_ColorGreen[] = _("{COLOR}{GREEN}");
 static const u8 sText_QuestMenu_AZ[] = _(" A-Z");
 
 //Declaration of subquest structures. Edits to subquests are made here.
-//#define sub_quest(i, n, d, m, o) {.id, .name = n, .desc = d, .map = m, .object = o}
-#define sub_quest(n, d, m, o) {.name = n, .desc = d, .map = m, .object = o}
+#define sub_quest(i, n, d, m, o) {.id = i, .name = n, .desc = d, .map = m, .object = o}
 static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
 {
       sub_quest(
+            0,
             gText_SubQuest1_Name1,
             gText_SubQuest1_Desc1,
             gText_SideQuestMap1,
@@ -240,6 +239,7 @@ static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
       ),
 
       sub_quest(
+            1,
             gText_SubQuest1_Name2,
             gText_SubQuest1_Desc2,
             gText_SideQuestMap2,
@@ -247,6 +247,7 @@ static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
       ),
 
       sub_quest(
+            2,
             gText_SubQuest1_Name3,
             gText_SubQuest1_Desc3,
             gText_SideQuestMap3,
@@ -254,6 +255,7 @@ static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
       ),
 
       sub_quest(
+            3,
             gText_SubQuest1_Name4,
             gText_SubQuest1_Desc4,
             gText_SideQuestMap4,
@@ -261,6 +263,7 @@ static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
       ),
 
       sub_quest(
+            4,
             gText_SubQuest1_Name5,
             gText_SubQuest1_Desc5,
             gText_SideQuestMap5,
@@ -268,6 +271,7 @@ static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
       ),
 
       sub_quest(
+            5,
             gText_SubQuest1_Name6,
             gText_SubQuest1_Desc6,
             gText_SideQuestMap6,
@@ -275,6 +279,7 @@ static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
       ),
 
       sub_quest(
+            6,
             gText_SubQuest1_Name7,
             gText_SubQuest1_Desc7,
             gText_SideQuestMap7,
@@ -282,6 +287,7 @@ static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
       ),
 
       sub_quest(
+            7,
             gText_SubQuest1_Name8,
             gText_SubQuest1_Desc8,
             gText_SideQuestMap8,
@@ -289,6 +295,7 @@ static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
       ),
 
       sub_quest(
+            8,
             gText_SubQuest1_Name9,
             gText_SubQuest1_Desc9,
             gText_SideQuestMap9,
@@ -296,6 +303,7 @@ static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
       ),
 
       sub_quest(
+            9,
             gText_SubQuest1_Name10,
             gText_SubQuest1_Desc10,
             gText_SideQuestMap10,
@@ -305,27 +313,26 @@ static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
 
 static const struct SubQuest sSubQuests2[SUB_QUEST_2_COUNT] =
 {
-	sub_quest(gText_SubQuest2_Name1,  gText_SubQuest2_Desc1,  gText_SideQuestMap1, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name2,  gText_SubQuest2_Desc2,  gText_SideQuestMap2, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name3,  gText_SubQuest2_Desc3,  gText_SideQuestMap3, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name4,  gText_SubQuest2_Desc4,  gText_SideQuestMap4, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name5,  gText_SubQuest2_Desc5,  gText_SideQuestMap5, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name6,  gText_SubQuest2_Desc6,  gText_SideQuestMap6, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name7,  gText_SubQuest2_Desc7,  gText_SideQuestMap7, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name8,  gText_SubQuest2_Desc8,  gText_SideQuestMap8, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name9,  gText_SubQuest2_Desc9,  gText_SideQuestMap9, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name10, gText_SubQuest2_Desc10, gText_SideQuestMap10, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name11,  gText_SubQuest2_Desc11,  gText_SideQuestMap11, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name12,  gText_SubQuest2_Desc12,  gText_SideQuestMap12, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name13,  gText_SubQuest2_Desc13,  gText_SideQuestMap13, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name14,  gText_SubQuest2_Desc14,  gText_SideQuestMap14, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name15,  gText_SubQuest2_Desc15,  gText_SideQuestMap15, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name16,  gText_SubQuest2_Desc16,  gText_SideQuestMap16, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name17,  gText_SubQuest2_Desc17,  gText_SideQuestMap17, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name18,  gText_SubQuest2_Desc18,  gText_SideQuestMap18, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name19,  gText_SubQuest2_Desc19,  gText_SideQuestMap19, OBJ_EVENT_GFX_WALLY),
-	sub_quest(gText_SubQuest2_Name20, gText_SubQuest2_Desc20, gText_SideQuestMap20, OBJ_EVENT_GFX_WALLY),
-
+      sub_quest(10,gText_SubQuest2_Name1,  gText_SubQuest2_Desc1,  gText_SideQuestMap1, OBJ_EVENT_GFX_WALLY),
+      sub_quest(11,gText_SubQuest2_Name2,  gText_SubQuest2_Desc2,  gText_SideQuestMap2, OBJ_EVENT_GFX_WALLY),
+      sub_quest(12,gText_SubQuest2_Name3,  gText_SubQuest2_Desc3,  gText_SideQuestMap3, OBJ_EVENT_GFX_WALLY),
+      sub_quest(13,gText_SubQuest2_Name4,  gText_SubQuest2_Desc4,  gText_SideQuestMap4, OBJ_EVENT_GFX_WALLY),
+      sub_quest(14,gText_SubQuest2_Name5,  gText_SubQuest2_Desc5,  gText_SideQuestMap5, OBJ_EVENT_GFX_WALLY),
+      sub_quest(15,gText_SubQuest2_Name6,  gText_SubQuest2_Desc6,  gText_SideQuestMap6, OBJ_EVENT_GFX_WALLY),
+      sub_quest(16,gText_SubQuest2_Name7,  gText_SubQuest2_Desc7,  gText_SideQuestMap7, OBJ_EVENT_GFX_WALLY),
+      sub_quest(17,gText_SubQuest2_Name8,  gText_SubQuest2_Desc8,  gText_SideQuestMap8, OBJ_EVENT_GFX_WALLY),
+      sub_quest(18,gText_SubQuest2_Name9,  gText_SubQuest2_Desc9,  gText_SideQuestMap9, OBJ_EVENT_GFX_WALLY),
+      sub_quest(19,gText_SubQuest2_Name10, gText_SubQuest2_Desc10, gText_SideQuestMap10, OBJ_EVENT_GFX_WALLY),
+      sub_quest(20,gText_SubQuest2_Name11,  gText_SubQuest2_Desc11,  gText_SideQuestMap11, OBJ_EVENT_GFX_WALLY),
+      sub_quest(21,gText_SubQuest2_Name12,  gText_SubQuest2_Desc12,  gText_SideQuestMap12, OBJ_EVENT_GFX_WALLY),
+      sub_quest(22,gText_SubQuest2_Name13,  gText_SubQuest2_Desc13,  gText_SideQuestMap13, OBJ_EVENT_GFX_WALLY),
+      sub_quest(23,gText_SubQuest2_Name14,  gText_SubQuest2_Desc14,  gText_SideQuestMap14, OBJ_EVENT_GFX_WALLY),
+      sub_quest(24,gText_SubQuest2_Name15,  gText_SubQuest2_Desc15,  gText_SideQuestMap15, OBJ_EVENT_GFX_WALLY),
+      sub_quest(25,gText_SubQuest2_Name16,  gText_SubQuest2_Desc16,  gText_SideQuestMap16, OBJ_EVENT_GFX_WALLY),
+      sub_quest(26,gText_SubQuest2_Name17,  gText_SubQuest2_Desc17,  gText_SideQuestMap17, OBJ_EVENT_GFX_WALLY),
+      sub_quest(27,gText_SubQuest2_Name18,  gText_SubQuest2_Desc18,  gText_SideQuestMap18, OBJ_EVENT_GFX_WALLY),
+      sub_quest(28,gText_SubQuest2_Name19,  gText_SubQuest2_Desc19,  gText_SideQuestMap19, OBJ_EVENT_GFX_WALLY),
+      sub_quest(29,gText_SubQuest2_Name20, gText_SubQuest2_Desc20, gText_SideQuestMap20, OBJ_EVENT_GFX_WALLY),
 };
 
 //Declaration of side quest structures. Edits to subquests are made here.
@@ -1321,7 +1328,7 @@ u8 QuestMenu_GenerateDefaultList()
 
 u8 QuestMenu_GetModeAndGenerateList()
 {
-	MgbaPrintf(4, "size of subquests %lu", sizeof(gSaveBlock2Ptr->subQuests));
+	MgbaPrintf(4, "size of subquests %lu", sizeof(gSaveBlock2Ptr->subQuests2));
 	MgbaPrintf(4, "size of questdata%lu", sizeof(gSaveBlock2Ptr->questData));
 
 	if (QuestMenu_IsSubquestMode())
@@ -2430,24 +2437,19 @@ s8 QuestMenu_ManageFavorites(u8 selectedQuestId)
 
 s8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest)
 {
-	u8 index = quest / 8; //8 bits per byte
-	u8	bit = quest % 8;
+    u8 uniqueId = sSideQuests[quest].subquests[childQuest].id;
+	u8  index = uniqueId / 8; //8 bits per byte
+	u8	bit = uniqueId % 8;
 	u8	mask = 1 << bit;
 
-	u8	childIndex = childQuest / 8; //8 bits per byte
-	u8	childBit = childQuest % 8;
-	u8	childMask = 1 << childBit;
-
     //calculate unique subquest id
-
-
 
 	switch (caseId)
 	{
 		case FLAG_GET_COMPLETED:
-			return gSaveBlock2Ptr->subQuests[quest][childIndex] & childMask;
+			return gSaveBlock2Ptr->subQuests2[uniqueId] & mask;
 		case FLAG_SET_COMPLETED:
-			gSaveBlock2Ptr->subQuests[quest][childIndex] |= childMask;
+			gSaveBlock2Ptr->subQuests2[uniqueId] |= mask;
 			return 1;
 	}
 
@@ -2626,6 +2628,8 @@ void QuestMenu_ResetMenuSaveData(void)
 {
 	memset(&gSaveBlock2Ptr->questData, 0,
 	       sizeof(gSaveBlock2Ptr->questData));
+	memset(&gSaveBlock2Ptr->subQuests2, 0,
+	       sizeof(gSaveBlock2Ptr->subQuests2));
 }
 
 static void
