@@ -44,7 +44,11 @@
 #define QUEST_28        27
 #define QUEST_29        28
 #define QUEST_30        29
-#define QUEST_COUNT     (QUEST_30 + 1)
+#define QUEST_COUNT 30
+/*
+#define QUEST_INFINTY_STONES 30
+#define QUEST_COUNT     (QUEST_INFINTY_STONES + 1)
+*/
 
 #define SUB_QUEST_1          0
 #define SUB_QUEST_2          1
@@ -81,4 +85,10 @@
 #define SUB_QUEST_2_COUNT 20
 #define SUB_QUEST_COUNT (SUB_QUEST_1_COUNT + SUB_QUEST_2_COUNT)
 
+/*
+#define QUEST_1_SUB_COUNT 10
+#define QUEST_2_SUB_COUNT 20
+#define QUEST_INFINTY_SUB_COUNT 7
+#define SUB_QUEST_COUNT (QUEST_1_SUB_COUNT + QUEST_2_SUB_COUNT + QUEST_INFINTY_SUB_COUNT)
+*/
 #endif // GUARD_CONSTANTS_QUESTS_H

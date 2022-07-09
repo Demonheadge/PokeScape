@@ -74,19 +74,32 @@ if (currentPosition == lastPositon)
 else
 ```
 # Usage and Examples
-## Quest Anatomy
+## Anatomy
+
+### Quests
 
 ![original background](https://i.imgur.com/Hwh2apf.png)
 
 * A: Name string
 * B: Description string (When this quest is complete, the complete string will be shown here.)
-* D: Map string
-* E: sprite ID
-* F: sprite's type. Needs to be `OBJECT`, `ITEM`, or `PKMN`. (This list is defined in `include/quests.h`.)
-* G: The struct that hold this quest's subquests / children. NULL if none.
-* H: Number of subquests for this parent. Zero if none.
+* C: Map string
+* D: sprite ID
+* E: sprite's type. Needs to be `OBJECT`, `ITEM`, or `PKMN`. (This list is defined in `include/quests.h`.)
+* F: The struct that hold this quest's subquests / children. NULL if none.
+* G: Number of subqests in the aforementioned struct
 
-## New Quests
+### Subquests
+
+![original background](https://i.imgur.com/Hwh2apf.png)
+
+* A: Name string
+* B: Description string. This only displays when a quest is complete.
+* C: Map string
+* D: sprite ID
+* E: sprite's type. Needs to be `OBJECT`, `ITEM`, or `PKMN`. (This list is defined in `include/quests.h`.)
+* F: quest's completion type
+
+##  Adding New Quests
 There are 30 blank parent quests for you to edit. 
 
 ### `include/constants/quests.h`
@@ -124,14 +137,69 @@ extern const u8 gText_SidequestMap31[];
 	      OBJ_EVENT_GFX_MAXIE, //quest sprite id
 	      OBJECT, //quest sprite type
 	      NULL, //subquest struct
-	      0 //number of subquests
+          0, //number of subquest
 	),
 ```
-Add a quest to the end of this struct, found around line 787. An example has been left there for you.
+Add a quest to the end of this struct, found around line 787. An example has been left there for you. If you are using an existing location in your game for your map strings, like the Cave of Origin, you can just use the strings listed in `src/data/region_map/region_map_entries.h`, but you'll need the remove the `static` at the beginning of the line of you want to use. This applies to any of the strings here.
 
+#### Sprites
+Quests display a sprite of your choice in the bottom left. You can choose between an item, an NPC (object), or a Pokémon.
+* Object / NPC IDs are listed in `include/constants/event_objects.h`. In the next field, use OBJECT.
+* Item IDs are listed in `include/constants/items.h`. In the next field, use ITEM.
+* Species IDs are listed in `include/constants/species.h`. In the next field, use PKMN.
 
+If this quest has no subquests, then the last two values should be `NULL` and `0`. Now you are done adding a new quest.
 
-### New Subquests
+## Add New Subquests
+Quest 0 has 10 blank subquests and Quest 1 has 20. You can edit or delete as you see fit.
+
+### `include/constants/quests.h`
+```c
+#define QUEST_1_SUB_COUNT 10
+#define QUEST_2_SUB_COUNT 20
+#define QUEST_INFINITY_SUB_COUNT 7
+#define SUB_QUEST_COUNT (QUEST_1_SUB_COUNT + QUEST_2_SUB_COUNT + QUEST_INFINTY_SUB_COUNT)
+```
+Define the number of subquests that you'll be using. You will also need to update the total number of subquests.
+
+### `src/strings.c`
+```c
+const u8 gText_SideQuestName_31[] = _("Endgame");
+const u8 gText_SideQuestDesc_31[] =_("Help fix the balance of the universe! Gather the Infinity Stones.");
+const u8 gText_SideQuestDoneDesc_31[] = _("All in balance, as it should be.");
+const u8 gText_SidequestMap31[] = _("New York City");
+```
+These are all of the strings being used for your quest. You will also need to define them in `include/quests.h`.
+
+```c
+extern const u8 gText_SideQuestName_31[];
+extern const u8 gText_SideQuestDesc_31[];
+extern const u8 gText_SideQuestDoneDesc_31[];
+extern const u8 gText_SidequestMap31[];
+```
+
+### `src/quests.c`
+```c
+	side_quest(
+	      gText_SideQuestName_31, //side quest name string
+	      gText_SideQuestDesc_31, //side quest description string 
+	      gText_SideQuestDoneDesc_31, //side quest complete description string
+	      gText_SideQuestMap31, //side quest map string
+	      OBJ_EVENT_GFX_MAXIE, //quest sprite id
+	      OBJECT, //quest sprite type
+	      NULL, //subquest struct
+          0, //number of subquest
+	),
+```
+Add a quest to the end of this struct, found around line 787. An example has been left there for you. If you are using an existing location in your game for your map strings, like the Cave of Origin, you can just use the strings listed in `src/data/region_map/region_map_entries.h`, but you'll need the remove the `static` at the beginning of the line of you want to use. This applies to any of the strings here.
+
+#### Sprites
+Quests display a sprite of your choice in the bottom left. You can choose between an item, an NPC (object), or a Pokémon.
+* Object / NPC IDs are listed in `include/constants/event_objects.h`. In the next field, use OBJECT.
+* Item IDs are listed in `include/constants/items.h`. In the next field, use ITEM.
+* Species IDs are listed in `include/constants/species.h`. In the next field, use PKMN.
+
+If this quest has no subquests, then the last two values should be `NULL` and `0`. Now you are done adding a new quest.
 
 //PSF TODO left off here
 

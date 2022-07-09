@@ -49,7 +49,7 @@ struct SideQuest
 }; 
 
 extern const struct SubQuest gSubQuests1[SUB_QUEST_1_COUNT];
-extern const struct SubQuest gSubQuests2[SUB_QUEST_1_COUNT];
+extern const struct SubQuest gSubQuests2[SUB_QUEST_2_COUNT];
 extern const struct SideQuest gSideQuests[QUEST_COUNT];
 
 enum QuestCases
