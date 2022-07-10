@@ -2319,7 +2319,6 @@ bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
     {
     case QUEST_MENU_OPEN:
     default:
-        QuestMenu_ActivateMenu();
         BeginNormalPaletteFade(0xFFFFFFFF, 2, 16, 0, 0);
         QuestMenu_Init(0, CB2_ReturnToFieldContinueScriptPlayMapMusic);
         ScriptContext1_Stop();

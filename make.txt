@@ -1,4 +1,7 @@
 make[1]: *** tools/poryscript.zip: Not a directory.  Stop.
 make: *** [make_tools.mk:11: tools/poryscript.zip] Error 2
-tools/agbcc/bin/agbcc <flags> -o build/emerald/src/strings.o src/strings.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/new_game.o src/new_game.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/start_menu.o src/start_menu.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/quests.o src/quests.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/scrcmd.o src/scrcmd.c
 cd build/emerald && arm-none-eabi-ld -Map ../../pokeemerald.map -T ld_script.ld -o ../../pokeemerald.elf <objects> <lib>

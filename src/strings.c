@@ -1821,7 +1821,7 @@ const u8 gText_Berry[] = _("BERRY");
 const u8 gText_Berries[] = _("BERRIES");
 
 //// side quest data
-const u8 gText_SideQuestName_31[] = _("Endgame.");
+const u8 gText_SideQuestName_31[] = _("Endgame");
 const u8 gText_SideQuestDesc_31[] =_("Help fix the balance of the universe!\nGather the Infinity Gems.");
 const u8 gText_SideQuestDoneDesc_31[] = _("All in balance, as it should be.");
 const u8 gText_SideQuestMap31[] = _("New York City");

@@ -1670,6 +1670,10 @@ void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 			case ITEM:
 				spriteId = AddItemIconSprite(102 + idx, 102 + idx, itemId);
 				break;
+			case PKMN:
+				spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 20,
+				                                      132, 0);
+                break;
 			default:
 				break;
 		}
