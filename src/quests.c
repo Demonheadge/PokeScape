@@ -40,8 +40,10 @@
 #define tPageItems      data[4]
 #define tItemPcParam    data[6]
 
-//PSFP TODO Reorganize all functions near the top
+//PSF TODO Reorganize all functions near the top
 //PSF TODO add static to all non extternal functions
+//PSF TODO remove infinity quests after documentation is approved
+//PSF TODO set inside of truck back to normal
 
 struct QuestMenuResources
 {
@@ -336,203 +338,204 @@ static const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
 static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 {
 	sub_quest(
-		10,
-		gText_SubQuest2_Name1,
-		gText_SubQuest2_Desc1,
-		gText_SideQuestMap1,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      10,
+	      gText_SubQuest2_Name1,
+	      gText_SubQuest2_Desc1,
+	      gText_SideQuestMap1,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		11,
-		gText_SubQuest2_Name2,
-		gText_SubQuest2_Desc2,
-		gText_SideQuestMap2,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      11,
+	      gText_SubQuest2_Name2,
+	      gText_SubQuest2_Desc2,
+	      gText_SideQuestMap2,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		12,
-		gText_SubQuest2_Name3,
-		gText_SubQuest2_Desc3,
-		gText_SideQuestMap3,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      12,
+	      gText_SubQuest2_Name3,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap3,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		13,
-		gText_SubQuest2_Name4,
-		gText_SubQuest2_Desc4,
-		gText_SideQuestMap4,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      13,
+	      gText_SubQuest2_Name4,
+	      gText_SubQuest2_Desc4,
+	      gText_SideQuestMap4,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		14,
-		gText_SubQuest2_Name5,
-		gText_SubQuest2_Desc5,
-		gText_SideQuestMap5,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      14,
+	      gText_SubQuest2_Name5,
+	      gText_SubQuest2_Desc5,
+	      gText_SideQuestMap5,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		15,
-		gText_SubQuest2_Name6,
-		gText_SubQuest2_Desc6,
-		gText_SideQuestMap6,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      15,
+	      gText_SubQuest2_Name6,
+	      gText_SubQuest2_Desc6,
+	      gText_SideQuestMap6,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		16,
-		gText_SubQuest2_Name7,
-		gText_SubQuest2_Desc7,
-		gText_SideQuestMap7,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      16,
+	      gText_SubQuest2_Name7,
+	      gText_SubQuest2_Desc7,
+	      gText_SideQuestMap7,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		17,
-		gText_SubQuest2_Name8,
-		gText_SubQuest2_Desc8,
-		gText_SideQuestMap8,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      17,
+	      gText_SubQuest2_Name8,
+	      gText_SubQuest2_Desc8,
+	      gText_SideQuestMap8,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		18,
-		gText_SubQuest2_Name9,
-		gText_SubQuest2_Desc9,
-		gText_SideQuestMap9,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      18,
+	      gText_SubQuest2_Name9,
+	      gText_SubQuest2_Desc9,
+	      gText_SideQuestMap9,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		19,
-		gText_SubQuest2_Name10,
-		gText_SubQuest2_Desc10,
-		gText_SideQuestMap10,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      19,
+	      gText_SubQuest2_Name10,
+	      gText_SubQuest2_Desc10,
+	      gText_SideQuestMap10,
+	      SPECIES_HO_OH,
+	      PKMN,
+          sText_QuestMenu_Caught
+	      
 	),
 
 	sub_quest(
-		20,
-		gText_SubQuest2_Name11,
-		gText_SubQuest2_Desc11,
-		gText_SideQuestMap11,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      20,
+	      gText_SubQuest2_Name11,
+	      gText_SubQuest2_Desc11,
+	      gText_SideQuestMap11,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		21,
-		gText_SubQuest2_Name12,
-		gText_SubQuest2_Desc12,
-		gText_SideQuestMap12,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      21,
+	      gText_SubQuest2_Name12,
+	      gText_SubQuest2_Desc12,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		22,
-		gText_SubQuest2_Name13,
-		gText_SubQuest2_Desc13,
-		gText_SideQuestMap13,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      22,
+	      gText_SubQuest2_Name13,
+	      gText_SubQuest2_Desc13,
+	      gText_SideQuestMap13,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		23,
-		gText_SubQuest2_Name14,
-		gText_SubQuest2_Desc14,
-		gText_SideQuestMap14,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      23,
+	      gText_SubQuest2_Name14,
+	      gText_SubQuest2_Desc14,
+	      gText_SideQuestMap14,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		24,
-		gText_SubQuest2_Name15,
-		gText_SubQuest2_Desc15,
-		gText_SideQuestMap15,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      24,
+	      gText_SubQuest2_Name15,
+	      gText_SubQuest2_Desc15,
+	      gText_SideQuestMap15,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		25,
-		gText_SubQuest2_Name16,
-		gText_SubQuest2_Desc16,
-		gText_SideQuestMap16,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      25,
+	      gText_SubQuest2_Name16,
+	      gText_SubQuest2_Desc16,
+	      gText_SideQuestMap16,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		26,
-		gText_SubQuest2_Name17,
-		gText_SubQuest2_Desc17,
-		gText_SideQuestMap17,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      26,
+	      gText_SubQuest2_Name17,
+	      gText_SubQuest2_Desc17,
+	      gText_SideQuestMap17,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		27,
-		gText_SubQuest2_Name18,
-		gText_SubQuest2_Desc18,
-		gText_SideQuestMap18,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      27,
+	      gText_SubQuest2_Name18,
+	      gText_SubQuest2_Desc18,
+	      gText_SideQuestMap18,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		28,
-		gText_SubQuest2_Name19,
-		gText_SubQuest2_Desc19,
-		gText_SideQuestMap19,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      28,
+	      gText_SubQuest2_Name19,
+	      gText_SubQuest2_Desc19,
+	      gText_SideQuestMap19,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 	sub_quest(
-		29,
-		gText_SubQuest2_Name20,
-		gText_SubQuest2_Desc20,
-		gText_SideQuestMap20,
-		OBJ_EVENT_GFX_WALLY,
-		OBJECT,
-		sText_QuestMenu_Found
+	      29,
+	      gText_SubQuest2_Name20,
+	      gText_SubQuest2_Desc20,
+	      gText_SideQuestMap20,
+	      OBJ_EVENT_GFX_WALLY,
+	      OBJECT,
+	      sText_QuestMenu_Found
 	),
 
 };
@@ -541,10 +544,10 @@ static const struct SubQuest sSubQuests31[QUEST_INFINITY_SUB_COUNT] =
 {
 	sub_quest(
 	      30,
-          gText_SideQuest31_SubName1,
-          gText_SideQuest31_SubDesc1,
-          gText_SideQuest31_SubMap1,
-          SPECIES_PORYGON2,
+	      gText_SideQuest31_SubName1,
+	      gText_SideQuest31_SubDesc1,
+	      gText_SideQuest31_SubMap1,
+	      SPECIES_PORYGON2,
 	      PKMN,
 	      sText_QuestMenu_Caught
 	),
@@ -554,8 +557,8 @@ static const struct SubQuest sSubQuests31[QUEST_INFINITY_SUB_COUNT] =
 	      gText_SideQuest31_SubName2,
 	      gText_SideQuest31_SubDesc2,
 	      gText_SideQuest31_SubMap2,
-          SPECIES_URSARING,
-          PKMN,
+	      SPECIES_URSARING,
+	      PKMN,
 	      sText_QuestMenu_Caught
 	),
 
@@ -564,7 +567,7 @@ static const struct SubQuest sSubQuests31[QUEST_INFINITY_SUB_COUNT] =
 	      gText_SideQuest31_SubName3,
 	      gText_SideQuest31_SubDesc3,
 	      gText_SideQuest31_SubMap3,
-          OBJ_EVENT_GFX_HEX_MANIAC,
+	      OBJ_EVENT_GFX_HEX_MANIAC,
 	      OBJECT,
 	      sText_QuestMenu_Found
 	),
@@ -574,8 +577,8 @@ static const struct SubQuest sSubQuests31[QUEST_INFINITY_SUB_COUNT] =
 	      gText_SideQuest31_SubName4,
 	      gText_SideQuest31_SubDesc4,
 	      gText_SideQuest31_SubMap4,
-          ITEM_PETAYA_BERRY,
-          ITEM,
+	      ITEM_PETAYA_BERRY,
+	      ITEM,
 	      sText_QuestMenu_Found
 	),
 
@@ -584,8 +587,8 @@ static const struct SubQuest sSubQuests31[QUEST_INFINITY_SUB_COUNT] =
 	      gText_SideQuest31_SubName5,
 	      gText_SideQuest31_SubDesc5,
 	      gText_SideQuest31_SubMap5,
-          ITEM_GUARD_SPEC,
-          ITEM,
+	      ITEM_GUARD_SPEC,
+	      ITEM,
 	      sText_QuestMenu_Read
 	),
 
@@ -594,8 +597,8 @@ static const struct SubQuest sSubQuests31[QUEST_INFINITY_SUB_COUNT] =
 	      gText_SideQuest31_SubName6,
 	      gText_SideQuest31_SubDesc6,
 	      gText_SideQuest31_SubMap6,
-          OBJ_EVENT_GFX_SWIMMER_M,
-          OBJECT,
+	      OBJ_EVENT_GFX_SWIMMER_M,
+	      OBJECT,
 	      sText_QuestMenu_Read
 	),
 };
@@ -611,8 +614,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMap1,
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
-          NULL,
-          0
+	      NULL,
+	      0
 	),
 	side_quest(
 	      gText_SideQuestName_2,
@@ -622,17 +625,17 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
 	      sSubQuests1,
-          QUEST_1_SUB_COUNT
+	      QUEST_1_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_3,
 	      gText_SideQuestDesc_3,
 	      gText_SideQuestDoneDesc_3,
 	      gText_SideQuestMap3,
-	      OBJ_EVENT_GFX_WALLY,
+          OBJ_EVENT_GFX_WALLACE,
 	      OBJECT,
 	      sSubQuests2,
-          QUEST_2_SUB_COUNT
+	      QUEST_2_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_4,
@@ -904,7 +907,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-    	side_quest(
+	side_quest(
 	      gText_SideQuestName_31, //side quest name string
 	      gText_SideQuestDesc_31, //side quest description string
 	      gText_SideQuestDoneDesc_31, //side quest complete description string
@@ -912,7 +915,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJ_EVENT_GFX_MAXIE, //quest sprite id
 	      OBJECT, //quest sprite type
 	      sSubQuests31, //subquest struct
-          QUEST_INFINITY_SUB_COUNT //number of subquest
+	      QUEST_INFINITY_SUB_COUNT //number of subquest
 	),
 };
 
@@ -1305,7 +1308,7 @@ static bool8 QuestMenu_AllocateResourcesForListMenu(void)
 void QuestMenu_AllocateMemoryForArray(void)
 {
 	u8 i;
-    u8 allocateRows = QUEST_COUNT + 1;
+	u8 allocateRows = QUEST_COUNT + 1;
 
 	questNameArray = Alloc(sizeof(void *) * allocateRows);
 
@@ -1365,7 +1368,6 @@ static u8 QuestMenu_CountNumberListRows()
 	}
 
 }
-
 
 static bool8 QuestMenu_IsNotFilteredMode(void)
 {
@@ -1484,7 +1486,8 @@ u8 QuestMenu_GenerateFilteredList()
 			QuestMenu_PopulateEmptyRow(selectedQuestId);
 
 			if (QuestMenu_GetSetQuestState(selectedQuestId,
-			                               FLAG_GET_FAVORITE)) //how do only conditionally show this line? //PSF TODO
+			                               FLAG_GET_FAVORITE)) 
+                //TODO HN: how do only conditionally show this line? This line is the only variation from GenerateList, and I'd like to merge them into one.
 			{
 				QuestMenu_SetFavoriteQuest(selectedQuestId);
 				newRow = numRow;
@@ -1593,7 +1596,7 @@ u8 QuestMenu_GenerateDefaultList()
 		else
 		{
 			newRow = QuestMenu_CountFavoriteQuests() +
-			         offset; //merge with CountState into one function PSF TODO
+			         offset; //PSF TODO merge with CountState into one function 
 			offset++;
 		}
 
@@ -1669,9 +1672,9 @@ void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 				spriteId = AddItemIconSprite(102 + idx, 102 + idx, itemId);
 				break;
 			case PKMN:
-                LoadMonIconPalettes();
-                spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 20, 132, 0, 1, 1);
-                break;
+				LoadMonIconPalettes();
+				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 20, 132, 0, 1, 1);
+				break;
 			default:
 				break;
 		}
@@ -1757,22 +1760,24 @@ static void QuestMenu_MoveCursorFunc(s32 questId, bool8 onInit,
 void QuestMenu_DetermineSpriteType(s32 questId)
 {
 	u16 spriteId;
-    u8 spriteType;
+	u8 spriteType;
 
 	if (QuestMenu_IsSubquestMode() == FALSE)
 	{
 		spriteId = sSideQuests[questId].sprite;
-        spriteType = sSideQuests[questId].spritetype;
+		spriteType = sSideQuests[questId].spritetype;
 
-		QuestMenu_CreateSprite(spriteId, sStateDataPtr->spriteIconSlot, spriteType);
+		QuestMenu_CreateSprite(spriteId, sStateDataPtr->spriteIconSlot,
+		                       spriteType);
 	}
 	else if (QuestMenu_IsSubquestCompletedState(questId) == TRUE)
 	{
 		spriteId =
 		      sSideQuests[sStateDataPtr->parentQuest].subquests[questId].sprite;
-        spriteType = 
+		spriteType =
 		      sSideQuests[sStateDataPtr->parentQuest].subquests[questId].spritetype;
-		QuestMenu_CreateSprite(spriteId, sStateDataPtr->spriteIconSlot, spriteType);
+		QuestMenu_CreateSprite(spriteId, sStateDataPtr->spriteIconSlot,
+		                       spriteType);
 	}
 	else
 	{
@@ -1941,7 +1946,7 @@ u8 QuestMenu_GenerateSubquestState(u8 questId)
 	if (QuestMenu_GetSetSubquestState(parentQuest, FLAG_GET_COMPLETED,
 	                                  questId))
 	{
-        StringCopy(gStringVar4, sSideQuests[parentQuest].subquests[questId].type);
+		StringCopy(gStringVar4, sSideQuests[parentQuest].subquests[questId].type);
 	}
 	else
 	{
@@ -2343,7 +2348,7 @@ static void QuestMenu_SetCursorPosition(void)
 static void QuestMenu_FreeResources(void)
 {
 	int i;
-    u8 allocateRows = QUEST_COUNT + 1;
+	u8 allocateRows = QUEST_COUNT + 1;
 
 	try_free(sStateDataPtr);
 	try_free(sBg1TilemapBuffer);
@@ -2713,7 +2718,7 @@ s8 QuestMenu_ManageFavorites(u8 selectedQuestId)
 s8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest)
 {
 
-	//PSF TODO our version of this was only wasn't using index at all. I replaced uniqueId with index and it still works. I assume if I hadn't fixed this, it would have overflowed evantually?
+	//TODO HN: our version of this was only wasn't using index at all. I replaced uniqueId with index and it still works. I assume if I hadn't fixed this, it would have overflowed evantually?
 
 	u8 uniqueId = sSideQuests[quest].subquests[childQuest].id;
 	u8  index = uniqueId / 8; //8 bits per byte
@@ -2847,7 +2852,7 @@ void QuestMenu_CopyQuestName(u8 *dst, u8 questId)
 
 void QuestMenu_CopySubquestName(u8 *dst, u8 parentId, u8 childId)
 {
-	StringCopy(dst,sSideQuests[parentId].subquests[childId].name);
+	StringCopy(dst, sSideQuests[parentId].subquests[childId].name);
 }
 
 void QuestMenu_ResetMenuSaveData(void)
