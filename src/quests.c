@@ -156,7 +156,7 @@ u8 GenerateFilteredList();
 u8 GenerateDefaultList();
 void PrependQuestNumber(u8 countQuest);
 u8 PopulateListRowNameAndId(u8 row, u8 countQuest);
-void PopulateSubquestTitle(u8 parentQuest, u8 countQuest);
+void PopulateSubquestName(u8 parentQuest, u8 countQuest);
 void PopulateEmptyRow(u8 countQuest);
 void PopulateQuestName(u8 countQuest);
 void AddSubQuestButton(u8 countQuest);
@@ -1207,46 +1207,6 @@ static bool8 SetupGraphics(void)
 	return FALSE;
 }
 
-static void FadeAndBail(void)
-{
-	BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
-	CreateTask(Task_QuestMenuWaitFadeAndBail, 0);
-	SetVBlankCallback(VBlankCB);
-	SetMainCallback2(MainCB);
-}
-
-static void Task_QuestMenuWaitFadeAndBail(u8 taskId)
-{
-	if (!gPaletteFade.active)
-	{
-		SetMainCallback2(sListMenuState.savedCallback);
-		FreeResources();
-		DestroyTask(taskId);
-	}
-}
-
-static bool8 InitBackgrounds(void)
-{
-	ResetAllBgsCoordinatesAndBgCntRegs();
-	sBg1TilemapBuffer = Alloc(0x800);
-	if (sBg1TilemapBuffer == NULL)
-	{
-		return FALSE;
-	}
-
-	memset(sBg1TilemapBuffer, 0, 0x800);
-	ResetBgsAndClearDma3BusyFlags(0);
-	InitBgsFromTemplates(0, sQuestMenuBgTemplates,
-	                     NELEMS(sQuestMenuBgTemplates));
-	SetBgTilemapBuffer(1, sBg1TilemapBuffer);
-	ScheduleBgCopyTilemapToVram(1);
-	SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_1D_MAP | DISPCNT_OBJ_ON);
-	SetGpuReg(REG_OFFSET_BLDCNT, 0);
-	ShowBg(0);
-	ShowBg(1);
-	return TRUE;
-}
-
 static bool8 LoadGraphics(void)
 {
 	switch (sStateDataPtr->data[0])
@@ -1275,6 +1235,52 @@ static bool8 LoadGraphics(void)
 			return TRUE;
 	}
 	return FALSE;
+}
+
+static void QuestMenu_InitWindows(void)
+{
+	u8 i;
+
+	InitWindows(sQuestMenuHeaderWindowTemplates);
+	DeactivateAllTextPrinters();
+
+	for (i = 0; i < 3; i++)
+	{
+		FillWindowPixelBuffer(i, 0x00);
+		PutWindowTilemap(i);
+	}
+
+	ScheduleBgCopyTilemapToVram(0);
+}
+
+static bool8 InitBackgrounds(void)
+{
+	ResetAllBgsCoordinatesAndBgCntRegs();
+	sBg1TilemapBuffer = Alloc(0x800);
+	if (sBg1TilemapBuffer == NULL)
+	{
+		return FALSE;
+	}
+
+	memset(sBg1TilemapBuffer, 0, 0x800);
+	ResetBgsAndClearDma3BusyFlags(0);
+	InitBgsFromTemplates(0, sQuestMenuBgTemplates,
+	                     NELEMS(sQuestMenuBgTemplates));
+	SetBgTilemapBuffer(1, sBg1TilemapBuffer);
+	ScheduleBgCopyTilemapToVram(1);
+	SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_1D_MAP | DISPCNT_OBJ_ON);
+	SetGpuReg(REG_OFFSET_BLDCNT, 0);
+	ShowBg(0);
+	ShowBg(1);
+	return TRUE;
+}
+
+static void InitItems(void)
+{
+	sStateDataPtr->nItems = (CountNumberListRows()) - 1;
+
+	sStateDataPtr->maxShowed = sStateDataPtr->nItems + 1 <= 4 ?
+	                           sStateDataPtr->nItems + 1 : 4;
 }
 
 #define try_alloc(ptr__, size) ({ \
@@ -1409,7 +1415,7 @@ u8 GenerateSubquestList()
 	for (numRow = 0; numRow < sSideQuests[parentQuest].numSubquests; numRow++)
 	{
 		PrependQuestNumber(countQuest);
-		PopulateSubquestTitle(parentQuest, countQuest);
+		PopulateSubquestName(parentQuest, countQuest);
 		PopulateListRowNameAndId(numRow, countQuest);
 
 		countQuest++;
@@ -1437,7 +1443,7 @@ bool8 IsSubquestCompleted(u8 parentQuest, u8 countQuest)
 	}
 }
 
-void PopulateSubquestTitle(u8 parentQuest, u8 countQuest)
+void PopulateSubquestName(u8 parentQuest, u8 countQuest)
 {
 	if (IsSubquestCompleted(parentQuest, countQuest))
 	{
@@ -2309,6 +2315,25 @@ static void SetCursorPosition(void)
 	}
 }
 
+static void Task_QuestMenuWaitFadeAndBail(u8 taskId)
+{
+	if (!gPaletteFade.active)
+	{
+		SetMainCallback2(sListMenuState.savedCallback);
+		FreeResources();
+		DestroyTask(taskId);
+	}
+}
+
+static void FadeAndBail(void)
+{
+	BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
+	CreateTask(Task_QuestMenuWaitFadeAndBail, 0);
+	SetVBlankCallback(VBlankCB);
+	SetMainCallback2(MainCB);
+}
+
+
 #define try_free(ptr) ({        \
 		void ** ptr__ = (void **)&(ptr);   \
 		if (*ptr__ != NULL)                \
@@ -2366,14 +2391,6 @@ static u8 GetCursorPosition(void)
 	return sListMenuState.scroll + sListMenuState.row;
 }
 
-
-static void InitItems(void)
-{
-	sStateDataPtr->nItems = (CountNumberListRows()) - 1;
-
-	sStateDataPtr->maxShowed = sStateDataPtr->nItems + 1 <= 4 ?
-	                           sStateDataPtr->nItems + 1 : 4;
-}
 
 static void SetScrollPosition(void)
 {
@@ -2636,21 +2653,6 @@ static void Task_QuestMenuCleanUp(u8 taskId)
 }
 
 // pokefirered text_window.c
-static void QuestMenu_InitWindows(void)
-{
-	u8 i;
-
-	InitWindows(sQuestMenuHeaderWindowTemplates);
-	DeactivateAllTextPrinters();
-
-	for (i = 0; i < 3; i++)
-	{
-		FillWindowPixelBuffer(i, 0x00);
-		PutWindowTilemap(i);
-	}
-
-	ScheduleBgCopyTilemapToVram(0);
-}
 
 static void QuestMenu_AddTextPrinterParameterized(u8 windowId, u8 fontId,
             const u8 *str, u8 x, u8 y,
