@@ -33,15 +33,13 @@
 #include "mgba_printf/mgba.h"
 #include "constants/event_objects.h"
 #include "event_object_movement.h"
+#include "pokemon_icon.h"
 
 #include "random.h"
 
 #define tPageItems      data[4]
 #define tItemPcParam    data[6]
-//PSF TODO in original Unbound an unlocked quest just means it appears in the list, all quests with a NAME are considered Active... deal with this
 
-//PSF TODO The sprite in the bottom left does not fade in and out despite the object layer being told to blend. The object arrows in the center of the screen fade without issue.
-//PSF TODO There is a strange artifact when going from object to item.
 //PSFP TODO Reorganize all functions near the top
 //PSF TODO add static to all non extternal functions
 
@@ -1671,8 +1669,8 @@ void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 				spriteId = AddItemIconSprite(102 + idx, 102 + idx, itemId);
 				break;
 			case PKMN:
-				spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 20,
-				                                      132, 0);
+                LoadMonIconPalettes();
+                spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 20, 132, 0, 1, 1);
                 break;
 			default:
 				break;
@@ -2509,8 +2507,6 @@ static void QuestMenu_RestoreSavedScrollAndRow(s16 *data)
 	                       sListMenuState.storedScrollOffset,
 	                       sListMenuState.storedRowPosition);
 }
-
-//PSF TODO refactor stop
 
 void QuestMenu_ChangeModeAndCleanUp(u8 taskId)
 {

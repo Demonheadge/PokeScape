@@ -1978,7 +1978,7 @@ const u8 gText_SideQuest31_SubMap1[] = _("Bulgaria");
 
 const u8 gText_SideQuest31_SubName2[] = _("Mind Gem");
 const u8 gText_SideQuest31_SubDesc2[] = _("You defeated Hank to get the\nMind Gem.");
-const u8 gText_SideQuest31_SubMap2[] = _("Illonis");
+const u8 gText_SideQuest31_SubMap2[] = _("Illinois");
 
 const u8 gText_SideQuest31_SubName3[] = _("Soul Gem");
 const u8 gText_SideQuest31_SubDesc3[] = _("You defeated Stephen to get the\nSoul Gem.");
