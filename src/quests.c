@@ -2840,11 +2840,6 @@ s8 QuestMenu_GetSetQuestState(u8 quest, u8 caseId)
 	return -1;  //failure
 }
 
-void QuestMenu_ActivateMenu(void)
-{
-	FlagSet(FLAG_QUEST_MENU_ACTIVE);
-}
-
 void QuestMenu_CopyQuestName(u8 *dst, u8 questId)
 {
 	StringCopy(dst, sSideQuests[questId].name);
