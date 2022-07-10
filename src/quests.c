@@ -179,6 +179,10 @@ void PrintQuestState(u8 windowId, u8 y, u8 colorIndex);
 
 bool8 IfRowIsOutOfBounds(void);
 bool8 IfScrollIsOutOfBounds(void);
+static bool8 IsSubquestMode(void);
+static bool8 IsNotFilteredMode(void);
+static bool8 IsAlphaMode(void);
+
 void InitFadeVariables(u8 taskId, u8 blendWeight, u8 frameDelay,u8 frameTimerBase, u8 delta);
 
 // Tiles, palettes and tilemaps for the Quest Menu
@@ -1314,11 +1318,75 @@ void AllocateMemoryForArray(void)
 	}
 }
 
-static s8 DoesQuestHaveChildrenAndNotInactive(u16 itemId)
+static void PlaceTopMenuScrollIndicatorArrows(void)
 {
-	if (sSideQuests[itemId].numSubquests != 0
-	            && QuestMenu_GetSetQuestState(itemId, FLAG_GET_UNLOCKED)
-	            && !QuestMenu_GetSetQuestState(itemId, FLAG_GET_INACTIVE))
+	u8 listSize = CountNumberListRows();
+
+	if (listSize < sStateDataPtr->maxShowed)
+	{
+		listSize = sStateDataPtr->maxShowed;
+	}
+
+	sStateDataPtr->scrollIndicatorArrowPairId =
+	      AddScrollIndicatorArrowPairParameterized(2, 94, 8, 90,
+	                  (listSize - sStateDataPtr->maxShowed), 110, 110, &sListMenuState.scroll);
+}
+
+static void SetInitializedFlag(u8 a0)
+{
+	sListMenuState.initialized = a0;
+}
+
+static u8 GetCursorPosition(void)
+{
+	return sListMenuState.scroll + sListMenuState.row;
+}
+
+static void SetCursorPosition(void)
+{
+	if (IfScrollIsOutOfBounds())
+	{
+		sListMenuState.scroll = (sStateDataPtr->nItems + 1) -
+		                        sStateDataPtr->maxShowed;
+	}
+
+	if (IfRowIsOutOfBounds())
+	{
+		if (sStateDataPtr->nItems + 1 < 2)
+		{
+			sListMenuState.row = 0;
+		}
+		else
+		{
+			sListMenuState.row = sStateDataPtr->nItems;
+		}
+	}
+}
+
+
+static void SetScrollPosition(void)
+{
+	u8 i;
+
+	if (sListMenuState.row > 3)
+	{
+		for (i = 0; i <= sListMenuState.row - 3;
+		            sListMenuState.row--, sListMenuState.scroll++, i++)
+		{
+			if (sListMenuState.scroll + sStateDataPtr->maxShowed ==
+			            sStateDataPtr->nItems + 1)
+			{
+				break;
+			}
+		}
+	}
+}
+
+bool8 IfScrollIsOutOfBounds(void)
+{
+	if (sListMenuState.scroll != 0
+	            && sListMenuState.scroll + sStateDataPtr->maxShowed >
+	            sStateDataPtr->nItems + 1)
 	{
 		return TRUE;
 	}
@@ -1326,6 +1394,87 @@ static s8 DoesQuestHaveChildrenAndNotInactive(u16 itemId)
 	{
 		return FALSE;
 	}
+}
+
+bool8 IfRowIsOutOfBounds(void)
+{
+	if (sListMenuState.scroll + sListMenuState.row >= sStateDataPtr->nItems +
+	            1)
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+void ClearModeOnStartup(void)
+{
+	sStateDataPtr->filterMode = 0;
+}
+
+static s8 ManageMode(u8 action)
+{
+	u8 mode = sStateDataPtr->filterMode;
+
+	switch (action)
+	{
+		case SUB:
+			mode = ToggleSubquestMode(mode);
+			break;
+
+		case ALPHA:
+			mode = ToggleAlphaMode(mode);
+			break;
+
+		default:
+			mode = IncrementMode(mode);
+			break;
+	}
+	sStateDataPtr->filterMode = mode;
+}
+
+u8 ToggleSubquestMode(u8 mode)
+{
+	if (IsSubquestMode())
+	{
+		mode -= SORT_SUBQUEST;
+	}
+	else
+	{
+		mode += SORT_SUBQUEST;
+	}
+
+	return mode;
+}
+
+u8 ToggleAlphaMode(u8 mode)
+{
+	if (IsAlphaMode())
+	{
+		mode -= SORT_DEFAULT_AZ;
+	}
+	else
+	{
+		mode += SORT_DEFAULT_AZ;
+	}
+
+	return mode;
+}
+
+u8 IncrementMode(u8 mode)
+{
+	if (mode % 10 == SORT_DONE)
+	{
+		mode -= SORT_DONE;
+	}
+	else
+	{
+		mode++;
+	}
+
+	return mode;
 }
 
 static bool8 IsSubquestMode(void)
@@ -1338,31 +1487,6 @@ static bool8 IsSubquestMode(void)
 	{
 		return FALSE;
 	}
-}
-
-static u8 CountNumberListRows()
-{
-	u8 mode = sStateDataPtr->filterMode % 10;
-
-	if (IsSubquestMode())
-	{
-		return sSideQuests[sStateDataPtr->parentQuest].numSubquests + 1;
-	}
-
-	switch (mode)
-	{
-		case SORT_DEFAULT:
-			return QUEST_COUNT + 1;
-		case SORT_INACTIVE:
-			return CountInactiveQuests() + 1;
-		case SORT_ACTIVE:
-			return CountActiveQuests() + 1;
-		case SORT_REWARD:
-			return CountRewardQuests() + 1;
-		case SORT_DONE:
-			return CountCompletedQuests() + 1;
-	}
-
 }
 
 static bool8 IsNotFilteredMode(void)
@@ -1392,18 +1516,102 @@ static bool8 IsAlphaMode(void)
 	}
 }
 
-static void AssignCancelNameAndId(u8 numRow)
+static u16 BuildMenuTemplate(void)
+{
+	u8 lastRow = GetModeAndGenerateList();
+
+	AssignCancelNameAndId(lastRow);
+
+	gMultiuseListMenuTemplate.totalItems = CountNumberListRows();
+	gMultiuseListMenuTemplate.items = sListMenuItems;
+	gMultiuseListMenuTemplate.windowId = 0;
+	gMultiuseListMenuTemplate.header_X = 0;
+	gMultiuseListMenuTemplate.cursor_X = 15;
+	gMultiuseListMenuTemplate.item_X = 23;
+	gMultiuseListMenuTemplate.lettersSpacing = 1;
+	gMultiuseListMenuTemplate.itemVerticalPadding = 2;
+	gMultiuseListMenuTemplate.upText_Y = 2;
+	gMultiuseListMenuTemplate.maxShowed = sStateDataPtr->maxShowed;
+	gMultiuseListMenuTemplate.fontId = 2;
+	gMultiuseListMenuTemplate.cursorPal = 2;
+	gMultiuseListMenuTemplate.fillValue = 0;
+	gMultiuseListMenuTemplate.cursorShadowPal = 0;
+	gMultiuseListMenuTemplate.moveCursorFunc = MoveCursorFunc;
+	gMultiuseListMenuTemplate.itemPrintFunc = GenerateStateAndPrint;
+	gMultiuseListMenuTemplate.scrollMultiple = LIST_MULTIPLE_SCROLL_DPAD;
+	gMultiuseListMenuTemplate.cursorKind = 0;
+}
+
+u8 GetModeAndGenerateList()
 {
 	if (IsSubquestMode())
 	{
-		sListMenuItems[numRow].name = sText_Back;
+		return GenerateSubquestList();
+	}
+	else if (!IsNotFilteredMode())
+	{
+		return GenerateFilteredList();
 	}
 	else
 	{
-		sListMenuItems[numRow].name = sText_Close;
+		return GenerateDefaultList();
+	}
+}
+
+static u8 CountNumberListRows()
+{
+	u8 mode = sStateDataPtr->filterMode % 10;
+
+	if (IsSubquestMode())
+	{
+		return sSideQuests[sStateDataPtr->parentQuest].numSubquests + 1;
 	}
 
-	sListMenuItems[numRow].id = LIST_CANCEL;
+	switch (mode)
+	{
+		case SORT_DEFAULT:
+			return QUEST_COUNT + 1;
+		case SORT_INACTIVE:
+			return CountInactiveQuests() + 1;
+		case SORT_ACTIVE:
+			return CountActiveQuests() + 1;
+		case SORT_REWARD:
+			return CountRewardQuests() + 1;
+		case SORT_DONE:
+			return CountCompletedQuests() + 1;
+	}
+
+}
+
+u8 *DefineQuestOrder()
+{
+	static u8 sortedList[QUEST_COUNT];
+	u8 a, c, d, e;
+	u8 placeholderVariable;
+
+	for (a = 0; a < QUEST_COUNT; a++)
+	{
+		sortedList[a] = a;
+	}
+
+	if (IsAlphaMode())
+	{
+		for (c = 0; c < QUEST_COUNT; c++)
+		{
+			for (d = c + 1; d < QUEST_COUNT; d++)
+			{
+				if (StringCompare(sSideQuests[sortedList[c]].name,
+				                  sSideQuests[sortedList[d]].name) > 0)
+				{
+					placeholderVariable = sortedList[c];
+					sortedList[c] = sortedList[d];
+					sortedList[d] = placeholderVariable;
+				}
+			}
+		}
+	}
+
+	return sortedList;
 }
 
 u8 GenerateSubquestList()
@@ -1422,46 +1630,6 @@ u8 GenerateSubquestList()
 		lastRow = numRow + 1;
 	}
 	return lastRow;
-}
-
-u8 PopulateListRowNameAndId(u8 row, u8 countQuest)
-{
-	sListMenuItems[row].name = questNameArray[countQuest];
-	sListMenuItems[row].id = countQuest;
-}
-
-bool8 IsSubquestCompleted(u8 parentQuest, u8 countQuest)
-{
-	if (QuestMenu_GetSetSubquestState(parentQuest, FLAG_GET_COMPLETED,
-	                                  countQuest))
-	{
-		return TRUE;
-	}
-	else
-	{
-		return FALSE;
-	}
-}
-
-void PopulateSubquestName(u8 parentQuest, u8 countQuest)
-{
-	if (IsSubquestCompleted(parentQuest, countQuest))
-	{
-		questNamePointer = StringAppend(questNamePointer,
-		                                sSideQuests[parentQuest].subquests[countQuest].name);
-	}
-	else
-	{
-		questNamePointer = StringAppend(questNamePointer, sText_Unk);
-	}
-}
-
-void PrependQuestNumber(u8 countQuest)
-{
-	questNamePointer = ConvertIntToDecimalStringN(questNameArray[countQuest],
-	                   countQuest + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
-	questNamePointer = StringAppend(questNamePointer,
-	                                sText_DotSpace);
 }
 
 u8 GenerateFilteredList()
@@ -1501,74 +1669,6 @@ u8 GenerateFilteredList()
 	}
 	return numRow + offset;
 }
-
-void SetFavoriteQuest(u8 countQuest)
-{
-	questNamePointer = StringAppend(questNameArray[countQuest],
-	                                sText_ColorGreen);
-}
-
-u8 *DefineQuestOrder()
-{
-	static u8 sortedList[QUEST_COUNT];
-	u8 a, c, d, e;
-	u8 placeholderVariable;
-
-	for (a = 0; a < QUEST_COUNT; a++)
-	{
-		sortedList[a] = a;
-	}
-
-	if (IsAlphaMode())
-	{
-		for (c = 0; c < QUEST_COUNT; c++)
-		{
-			for (d = c + 1; d < QUEST_COUNT; d++)
-			{
-				if (StringCompare(sSideQuests[sortedList[c]].name,
-				                  sSideQuests[sortedList[d]].name) > 0)
-				{
-					placeholderVariable = sortedList[c];
-					sortedList[c] = sortedList[d];
-					sortedList[d] = placeholderVariable;
-				}
-			}
-		}
-	}
-
-	return sortedList;
-}
-
-void PopulateQuestName(u8 countQuest)
-{
-	if (QuestMenu_GetSetQuestState(countQuest, FLAG_GET_UNLOCKED))
-	{
-		questNamePointer = StringAppend(questNameArray[countQuest],
-		                                sSideQuests[countQuest].name);
-		AddSubQuestButton(countQuest);
-	}
-	else
-	{
-		StringAppend(questNameArray[countQuest], sText_Unk);
-	}
-}
-
-void AddSubQuestButton(u8 countQuest)
-{
-	if (DoesQuestHaveChildrenAndNotInactive(countQuest))
-	{
-		questNamePointer = StringAppend(questNameArray[countQuest],
-		                                sText_SubQuestButton);
-	}
-
-}
-
-void PopulateEmptyRow(u8 countQuest)
-{
-	questNamePointer = StringCopy(questNameArray[countQuest], sText_Empty);
-}
-
-
 u8 GenerateDefaultList()
 {
 	u8 mode = sStateDataPtr->filterMode % 10;
@@ -1603,47 +1703,239 @@ u8 GenerateDefaultList()
 	return lastRow;
 }
 
-u8 GetModeAndGenerateList()
+static void AssignCancelNameAndId(u8 numRow)
 {
 	if (IsSubquestMode())
 	{
-		return GenerateSubquestList();
-	}
-	else if (!IsNotFilteredMode())
-	{
-		return GenerateFilteredList();
+		sListMenuItems[numRow].name = sText_Back;
 	}
 	else
 	{
-		return GenerateDefaultList();
+		sListMenuItems[numRow].name = sText_Close;
+	}
+
+	sListMenuItems[numRow].id = LIST_CANCEL;
+}
+
+s8 CountUnlockedQuests(void)
+{
+	u8 q = 0, i = 0;
+
+	for (i = 0; i < QUEST_COUNT; i++)
+	{
+		if (QuestMenu_GetSetQuestState(i, FLAG_GET_UNLOCKED))
+		{
+			q++;
+		}
+	}
+	return q;
+}
+
+s8 CountInactiveQuests(void)
+{
+	u8 q = 0, i = 0;
+
+	for (i = 0; i < QUEST_COUNT; i++)
+	{
+		if (QuestMenu_GetSetQuestState(i, FLAG_GET_INACTIVE))
+		{
+			q++;
+		}
+	}
+	return q;
+}
+
+s8 CountActiveQuests(void)
+{
+	u8 q = 0, i = 0;
+
+	for (i = 0; i < QUEST_COUNT; i++)
+	{
+		if (QuestMenu_GetSetQuestState(i, FLAG_GET_ACTIVE))
+		{
+			q++;
+		}
+	}
+	return q;
+}
+
+s8 CountRewardQuests(void)
+{
+	u8 q = 0, i = 0;
+
+	for (i = 0; i < QUEST_COUNT; i++)
+	{
+		if (QuestMenu_GetSetQuestState(i, FLAG_GET_REWARD))
+		{
+			q++;
+		}
+	}
+	return q;
+}
+
+s8 CountCompletedQuests(void)
+{
+	u8 q = 0, i = 0;
+
+	u8 parentQuest = sStateDataPtr->parentQuest;
+
+	if (IsSubquestMode())
+	{
+		for (i = 0; i < sSideQuests[parentQuest].numSubquests; i++)
+		{
+			if (QuestMenu_GetSetSubquestState(parentQuest, FLAG_GET_COMPLETED, i))
+			{
+				q++;
+			}
+		}
+	}
+	else
+	{
+		for (i = 0; i < QUEST_COUNT; i++)
+		{
+			if (QuestMenu_GetSetQuestState(i, FLAG_GET_COMPLETED))
+			{
+				q++;
+			}
+		}
+	}
+
+	return q;
+}
+
+s8 CountFavoriteQuests(void)
+{
+	u8 q = 0, i = 0;
+
+	for (i = 0; i < QUEST_COUNT; i++)
+	{
+		if (QuestMenu_GetSetQuestState(i, FLAG_GET_FAVORITE))
+		{
+			q++;
+		}
+	}
+	return q;
+}
+
+s8 CountFavoriteAndState(void)
+{
+	u8 q = 0, i = 0;
+
+	u8 mode = sStateDataPtr->filterMode % 10;
+
+	for (i = 0; i < QUEST_COUNT; i++)
+	{
+		if (QuestMenu_GetSetQuestState(i, mode)
+		            && QuestMenu_GetSetQuestState(i, FLAG_GET_FAVORITE))
+		{
+			q++;
+		}
+	}
+
+	return q;
+}
+
+void PopulateEmptyRow(u8 countQuest)
+{
+	questNamePointer = StringCopy(questNameArray[countQuest], sText_Empty);
+}
+void PrependQuestNumber(u8 countQuest)
+{
+	questNamePointer = ConvertIntToDecimalStringN(questNameArray[countQuest],
+	                   countQuest + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
+	questNamePointer = StringAppend(questNamePointer,
+	                                sText_DotSpace);
+}
+
+void SetFavoriteQuest(u8 countQuest)
+{
+	questNamePointer = StringAppend(questNameArray[countQuest],
+	                                sText_ColorGreen);
+}
+
+void PopulateQuestName(u8 countQuest)
+{
+	if (QuestMenu_GetSetQuestState(countQuest, FLAG_GET_UNLOCKED))
+	{
+		questNamePointer = StringAppend(questNameArray[countQuest],
+		                                sSideQuests[countQuest].name);
+		AddSubQuestButton(countQuest);
+	}
+	else
+	{
+		StringAppend(questNameArray[countQuest], sText_Unk);
 	}
 }
 
-static u16 BuildMenuTemplate(void)
+void PopulateSubquestName(u8 parentQuest, u8 countQuest)
 {
-	u8 lastRow = GetModeAndGenerateList();
-
-	AssignCancelNameAndId(lastRow);
-
-	gMultiuseListMenuTemplate.totalItems = CountNumberListRows();
-	gMultiuseListMenuTemplate.items = sListMenuItems;
-	gMultiuseListMenuTemplate.windowId = 0;
-	gMultiuseListMenuTemplate.header_X = 0;
-	gMultiuseListMenuTemplate.cursor_X = 15;
-	gMultiuseListMenuTemplate.item_X = 23;
-	gMultiuseListMenuTemplate.lettersSpacing = 1;
-	gMultiuseListMenuTemplate.itemVerticalPadding = 2;
-	gMultiuseListMenuTemplate.upText_Y = 2;
-	gMultiuseListMenuTemplate.maxShowed = sStateDataPtr->maxShowed;
-	gMultiuseListMenuTemplate.fontId = 2;
-	gMultiuseListMenuTemplate.cursorPal = 2;
-	gMultiuseListMenuTemplate.fillValue = 0;
-	gMultiuseListMenuTemplate.cursorShadowPal = 0;
-	gMultiuseListMenuTemplate.moveCursorFunc = MoveCursorFunc;
-	gMultiuseListMenuTemplate.itemPrintFunc = GenerateStateAndPrint;
-	gMultiuseListMenuTemplate.scrollMultiple = LIST_MULTIPLE_SCROLL_DPAD;
-	gMultiuseListMenuTemplate.cursorKind = 0;
+	if (IsSubquestCompleted(parentQuest, countQuest))
+	{
+		questNamePointer = StringAppend(questNamePointer,
+		                                sSideQuests[parentQuest].subquests[countQuest].name);
+	}
+	else
+	{
+		questNamePointer = StringAppend(questNamePointer, sText_Unk);
+	}
 }
+
+u8 PopulateListRowNameAndId(u8 row, u8 countQuest)
+{
+	sListMenuItems[row].name = questNameArray[countQuest];
+	sListMenuItems[row].id = countQuest;
+}
+
+static s8 DoesQuestHaveChildrenAndNotInactive(u16 itemId)
+{
+	if (sSideQuests[itemId].numSubquests != 0
+	            && QuestMenu_GetSetQuestState(itemId, FLAG_GET_UNLOCKED)
+	            && !QuestMenu_GetSetQuestState(itemId, FLAG_GET_INACTIVE))
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+void AddSubQuestButton(u8 countQuest)
+{
+	if (DoesQuestHaveChildrenAndNotInactive(countQuest))
+	{
+		questNamePointer = StringAppend(questNameArray[countQuest],
+		                                sText_SubQuestButton);
+	}
+
+}
+static void QuestMenu_AddTextPrinterParameterized(u8 windowId, u8 fontId,
+            const u8 *str, u8 x, u8 y,
+            u8 letterSpacing, u8 lineSpacing, u8 speed, u8 colorIdx)
+{
+	AddTextPrinterParameterized4(windowId, fontId, x, y, letterSpacing,
+	                             lineSpacing,
+	                             sQuestMenuWindowFontColors[colorIdx], speed, str);
+}
+
+bool8 IsSubquestCompleted(u8 parentQuest, u8 countQuest)
+{
+	if (QuestMenu_GetSetSubquestState(parentQuest, FLAG_GET_COMPLETED,
+	                                  countQuest))
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+
+
+
+
+
 
 void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 {
@@ -2002,123 +2294,8 @@ void PrintQuestState(u8 windowId, u8 y, u8 colorIndex)
 }
 
 
-s8 CountUnlockedQuests(void)
-{
-	u8 q = 0, i = 0;
 
-	for (i = 0; i < QUEST_COUNT; i++)
-	{
-		if (QuestMenu_GetSetQuestState(i, FLAG_GET_UNLOCKED))
-		{
-			q++;
-		}
-	}
-	return q;
-}
 
-s8 CountInactiveQuests(void)
-{
-	u8 q = 0, i = 0;
-
-	for (i = 0; i < QUEST_COUNT; i++)
-	{
-		if (QuestMenu_GetSetQuestState(i, FLAG_GET_INACTIVE))
-		{
-			q++;
-		}
-	}
-	return q;
-}
-
-s8 CountActiveQuests(void)
-{
-	u8 q = 0, i = 0;
-
-	for (i = 0; i < QUEST_COUNT; i++)
-	{
-		if (QuestMenu_GetSetQuestState(i, FLAG_GET_ACTIVE))
-		{
-			q++;
-		}
-	}
-	return q;
-}
-
-s8 CountRewardQuests(void)
-{
-	u8 q = 0, i = 0;
-
-	for (i = 0; i < QUEST_COUNT; i++)
-	{
-		if (QuestMenu_GetSetQuestState(i, FLAG_GET_REWARD))
-		{
-			q++;
-		}
-	}
-	return q;
-}
-
-s8 CountFavoriteQuests(void)
-{
-	u8 q = 0, i = 0;
-
-	for (i = 0; i < QUEST_COUNT; i++)
-	{
-		if (QuestMenu_GetSetQuestState(i, FLAG_GET_FAVORITE))
-		{
-			q++;
-		}
-	}
-	return q;
-}
-
-s8 CountFavoriteAndState(void)
-{
-	u8 q = 0, i = 0;
-
-	u8 mode = sStateDataPtr->filterMode % 10;
-
-	for (i = 0; i < QUEST_COUNT; i++)
-	{
-		if (QuestMenu_GetSetQuestState(i, mode)
-		            && QuestMenu_GetSetQuestState(i, FLAG_GET_FAVORITE))
-		{
-			q++;
-		}
-	}
-
-	return q;
-}
-
-s8 CountCompletedQuests(void)
-{
-	u8 q = 0, i = 0;
-
-	u8 parentQuest = sStateDataPtr->parentQuest;
-
-	if (IsSubquestMode())
-	{
-		for (i = 0; i < sSideQuests[parentQuest].numSubquests; i++)
-		{
-			if (QuestMenu_GetSetSubquestState(parentQuest, FLAG_GET_COMPLETED, i))
-			{
-				q++;
-			}
-		}
-	}
-	else
-	{
-		for (i = 0; i < QUEST_COUNT; i++)
-		{
-			if (QuestMenu_GetSetQuestState(i, FLAG_GET_COMPLETED))
-			{
-				q++;
-			}
-		}
-	}
-
-	return q;
-}
 
 void GenerateDenominatorNumQuests(void)
 {
@@ -2244,19 +2421,6 @@ static void GenerateAndPrintHeader(void)
 	}
 }
 
-static void PlaceTopMenuScrollIndicatorArrows(void)
-{
-	u8 listSize = CountNumberListRows();
-
-	if (listSize < sStateDataPtr->maxShowed)
-	{
-		listSize = sStateDataPtr->maxShowed;
-	}
-
-	sStateDataPtr->scrollIndicatorArrowPairId =
-	      AddScrollIndicatorArrowPairParameterized(2, 94, 8, 90,
-	                  (listSize - sStateDataPtr->maxShowed), 110, 110, &sListMenuState.scroll);
-}
 
 static void QuestMenu_RemoveScrollIndicatorArrowPair(void)
 {
@@ -2267,53 +2431,7 @@ static void QuestMenu_RemoveScrollIndicatorArrowPair(void)
 	}
 }
 
-bool8 IfScrollIsOutOfBounds(void)
-{
-	if (sListMenuState.scroll != 0
-	            && sListMenuState.scroll + sStateDataPtr->maxShowed >
-	            sStateDataPtr->nItems + 1)
-	{
-		return TRUE;
-	}
-	else
-	{
-		return FALSE;
-	}
-}
 
-bool8 IfRowIsOutOfBounds(void)
-{
-	if (sListMenuState.scroll + sListMenuState.row >= sStateDataPtr->nItems +
-	            1)
-	{
-		return TRUE;
-	}
-	else
-	{
-		return FALSE;
-	}
-}
-
-static void SetCursorPosition(void)
-{
-	if (IfScrollIsOutOfBounds())
-	{
-		sListMenuState.scroll = (sStateDataPtr->nItems + 1) -
-		                        sStateDataPtr->maxShowed;
-	}
-
-	if (IfRowIsOutOfBounds())
-	{
-		if (sStateDataPtr->nItems + 1 < 2)
-		{
-			sListMenuState.row = 0;
-		}
-		else
-		{
-			sListMenuState.row = sStateDataPtr->nItems;
-		}
-	}
-}
 
 static void Task_QuestMenuWaitFadeAndBail(u8 taskId)
 {
@@ -2386,97 +2504,9 @@ static void Task_QuestMenuTurnOff2(u8 taskId)
 	}
 }
 
-static u8 GetCursorPosition(void)
-{
-	return sListMenuState.scroll + sListMenuState.row;
-}
 
 
-static void SetScrollPosition(void)
-{
-	u8 i;
 
-	if (sListMenuState.row > 3)
-	{
-		for (i = 0; i <= sListMenuState.row - 3;
-		            sListMenuState.row--, sListMenuState.scroll++, i++)
-		{
-			if (sListMenuState.scroll + sStateDataPtr->maxShowed ==
-			            sStateDataPtr->nItems + 1)
-			{
-				break;
-			}
-		}
-	}
-}
-
-static void SetInitializedFlag(u8 a0)
-{
-	sListMenuState.initialized = a0;
-}
-
-static s8 ManageMode(u8 action)
-{
-	u8 mode = sStateDataPtr->filterMode;
-
-	switch (action)
-	{
-		case SUB:
-			mode = ToggleSubquestMode(mode);
-			break;
-
-		case ALPHA:
-			mode = ToggleAlphaMode(mode);
-			break;
-
-		default:
-			mode = IncrementMode(mode);
-			break;
-	}
-	sStateDataPtr->filterMode = mode;
-}
-
-u8 ToggleSubquestMode(u8 mode)
-{
-	if (IsSubquestMode())
-	{
-		mode -= SORT_SUBQUEST;
-	}
-	else
-	{
-		mode += SORT_SUBQUEST;
-	}
-
-	return mode;
-}
-
-u8 ToggleAlphaMode(u8 mode)
-{
-	if (IsAlphaMode())
-	{
-		mode -= SORT_DEFAULT_AZ;
-	}
-	else
-	{
-		mode += SORT_DEFAULT_AZ;
-	}
-
-	return mode;
-}
-
-u8 IncrementMode(u8 mode)
-{
-	if (mode % 10 == SORT_DONE)
-	{
-		mode -= SORT_DONE;
-	}
-	else
-	{
-		mode++;
-	}
-
-	return mode;
-}
 
 
 static void SaveScrollAndRow(s16 *data)
@@ -2654,14 +2684,6 @@ static void Task_QuestMenuCleanUp(u8 taskId)
 
 // pokefirered text_window.c
 
-static void QuestMenu_AddTextPrinterParameterized(u8 windowId, u8 fontId,
-            const u8 *str, u8 x, u8 y,
-            u8 letterSpacing, u8 lineSpacing, u8 speed, u8 colorIdx)
-{
-	AddTextPrinterParameterized4(windowId, fontId, x, y, letterSpacing,
-	                             lineSpacing,
-	                             sQuestMenuWindowFontColors[colorIdx], speed, str);
-}
 
 void Task_QuestMenu_OpenFromStartMenu(u8 taskId)
 {
@@ -2934,7 +2956,3 @@ static void Task_FadeIn(u8 taskId)
 	}
 }
 
-void ClearModeOnStartup(void)
-{
-	sStateDataPtr->filterMode = 0;
-}
