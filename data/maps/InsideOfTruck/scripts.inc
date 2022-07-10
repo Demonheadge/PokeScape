@@ -71,9 +71,9 @@ InsideOfTruck_EventScript_MovingBox::
     questmenu QUEST_MENU_SET_ACTIVE,QUEST_8
     questmenu QUEST_MENU_SET_REWARD,QUEST_8
 
-    subquestmenu QUEST_MENU_COMPLETE_QUEST,QUEST_1,2
-    subquestmenu QUEST_MENU_COMPLETE_QUEST,QUEST_1,3
-    subquestmenu QUEST_MENU_COMPLETE_QUEST,QUEST_2,9
+    subquestmenu QUEST_MENU_COMPLETE_QUEST,QUEST_2,2
+    subquestmenu QUEST_MENU_COMPLETE_QUEST,QUEST_2,3
+    subquestmenu QUEST_MENU_COMPLETE_QUEST,QUEST_3,9
 
     setflag FLAG_SYS_QUEST_MENU_GET
 

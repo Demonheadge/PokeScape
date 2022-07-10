@@ -232,7 +232,7 @@ static const u8 sText_QuestMenu_AZ[] = _(" A-Z");
 
 //Declaration of subquest structures. Edits to subquests are made here.
 #define sub_quest(i, n, d, m, s, st, t) {.id = i, .name = n, .desc = d, .map = m, .sprite = s, .spritetype = st, .type = t}
-static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
+static const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
 {
 	sub_quest(
 	      0,
@@ -335,7 +335,7 @@ static const struct SubQuest sSubQuests1[SUB_QUEST_1_COUNT] =
 	),
 };
 
-static const struct SubQuest sSubQuests2[SUB_QUEST_2_COUNT] =
+static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 {
 	sub_quest(
 		10,
@@ -539,6 +539,68 @@ static const struct SubQuest sSubQuests2[SUB_QUEST_2_COUNT] =
 
 };
 
+static const struct SubQuest sSubQuests31[QUEST_INFINITY_SUB_COUNT] =
+{
+	sub_quest(
+	      30,
+          gText_SideQuest31_SubName1,
+          gText_SideQuest31_SubDesc1,
+          gText_SideQuest31_SubMap1,
+          SPECIES_PORYGON2,
+	      PKMN,
+	      sText_QuestMenu_Caught
+	),
+
+	sub_quest(
+	      31,
+	      gText_SideQuest31_SubName2,
+	      gText_SideQuest31_SubDesc2,
+	      gText_SideQuest31_SubMap2,
+          SPECIES_URSARING,
+          PKMN,
+	      sText_QuestMenu_Caught
+	),
+
+	sub_quest(
+	      32,
+	      gText_SideQuest31_SubName3,
+	      gText_SideQuest31_SubDesc3,
+	      gText_SideQuest31_SubMap3,
+          OBJ_EVENT_GFX_HEX_MANIAC,
+	      OBJECT,
+	      sText_QuestMenu_Found
+	),
+
+	sub_quest(
+	      33,
+	      gText_SideQuest31_SubName4,
+	      gText_SideQuest31_SubDesc4,
+	      gText_SideQuest31_SubMap4,
+          ITEM_PETAYA_BERRY,
+          ITEM,
+	      sText_QuestMenu_Found
+	),
+
+	sub_quest(
+	      34,
+	      gText_SideQuest31_SubName5,
+	      gText_SideQuest31_SubDesc5,
+	      gText_SideQuest31_SubMap5,
+          ITEM_GUARD_SPEC,
+          ITEM,
+	      sText_QuestMenu_Read
+	),
+
+	sub_quest(
+	      35,
+	      gText_SideQuest31_SubName6,
+	      gText_SideQuest31_SubDesc6,
+	      gText_SideQuest31_SubMap6,
+          OBJ_EVENT_GFX_SWIMMER_M,
+          OBJECT,
+	      sText_QuestMenu_Read
+	),
+};
 
 //Declaration of side quest structures. Edits to subquests are made here.
 #define side_quest(n, d, dd, m, s, st, sq, ns) {.name = n, .desc = d, .donedesc = dd, .map = m, .sprite = s, .spritetype = st, .subquests = sq, .numSubquests = ns}
@@ -551,8 +613,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMap1,
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
-	      sSubQuests1,
-	      SUB_QUEST_1_COUNT
+          NULL,
+          0
 	),
 	side_quest(
 	      gText_SideQuestName_2,
@@ -561,8 +623,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMap2,
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
-	      sSubQuests2,
-	      SUB_QUEST_2_COUNT
+	      sSubQuests1,
+          QUEST_1_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_3,
@@ -571,8 +633,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMap3,
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
-	      NULL,
-	      0
+	      sSubQuests2,
+          QUEST_2_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_4,
@@ -844,18 +906,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-    /*
-	side_quest(
-	      side quest name string,
-	      side quest description string,
-	      side quest complete string,
-	      side quest map string ,
-	      quest object / item / pokemon id,
-          object's type
-          subquest struct
-	      0
+    	side_quest(
+	      gText_SideQuestName_31, //side quest name string
+	      gText_SideQuestDesc_31, //side quest description string
+	      gText_SideQuestDoneDesc_31, //side quest complete description string
+	      gText_SideQuestMap31, //side quest map string
+	      OBJ_EVENT_GFX_MAXIE, //quest sprite id
+	      OBJECT, //quest sprite type
+	      sSubQuests31, //subquest struct
+          QUEST_INFINITY_SUB_COUNT //number of subquest
 	),
-     */
 };
 
 //BG layer defintions
@@ -1247,9 +1307,11 @@ static bool8 QuestMenu_AllocateResourcesForListMenu(void)
 void QuestMenu_AllocateMemoryForArray(void)
 {
 	u8 i;
-	questNameArray = Alloc(sizeof(void *) * QUEST_COUNT + 1);
+    u8 allocateRows = QUEST_COUNT + 1;
 
-	for (i = 0; i < 32; i++)
+	questNameArray = Alloc(sizeof(void *) * allocateRows);
+
+	for (i = 0; i < allocateRows + 1; i++)
 	{
 		questNameArray[i] = Alloc(sizeof(u8) * 32);
 	}
@@ -2279,12 +2341,13 @@ static void QuestMenu_SetCursorPosition(void)
 static void QuestMenu_FreeResources(void)
 {
 	int i;
+    u8 allocateRows = QUEST_COUNT + 1;
 
 	try_free(sStateDataPtr);
 	try_free(sBg1TilemapBuffer);
 	try_free(sListMenuItems);
 
-	for (i = 31; i > -1 ; i--)
+	for (i = allocateRows; i > -1 ; i--)
 	{
 		try_free(questNameArray[i]);
 	}

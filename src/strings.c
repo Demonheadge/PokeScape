@@ -1821,6 +1821,10 @@ const u8 gText_Berry[] = _("BERRY");
 const u8 gText_Berries[] = _("BERRIES");
 
 //// side quest data
+const u8 gText_SideQuestName_31[] = _("Endgame");
+const u8 gText_SideQuestDesc_31[] =_("Help fix the balance of the universe! Gather the Infinity Stones.");
+const u8 gText_SideQuestDoneDesc_31[] = _("All in balance, as it should be.");
+const u8 gText_SideQuestMap31[] = _("New York City");
 //names
 const u8 gText_SideQuestName_1[] = _("Road to Champion");
 const u8 gText_SideQuestName_2[] = _("Finish Regional Dex");
@@ -1967,6 +1971,31 @@ const u8 gText_SideQuestMap29[] = _("Map 29");
 const u8 gText_SideQuestMap30[] = _("Map 30");
 
 //subquests
+
+const u8 gText_SideQuest31_SubName1[] = _("Space Gem");
+const u8 gText_SideQuest31_SubDesc1[] = _("You defeated Tony to get the Space Gem.");
+const u8 gText_SideQuest31_SubMap1[] = _("Bulgaria");
+
+const u8 gText_SideQuest31_SubName2[] = _("Mind Gem");
+const u8 gText_SideQuest31_SubDesc2[] = _("You defeated Hank to get the Mind Gem.");
+const u8 gText_SideQuest31_SubMap2[] = _("Illonis");
+
+const u8 gText_SideQuest31_SubName3[] = _("Soul Gem");
+const u8 gText_SideQuest31_SubDesc3[] = _("You defeated Stephen to get the Soul Gem.");
+const u8 gText_SideQuest31_SubMap3[] = _("Pennsylvania");
+
+const u8 gText_SideQuest31_SubName4[] = _("Reality Gem");
+const u8 gText_SideQuest31_SubDesc4[] = _("You defeated Reed to get the Reality Gem.");
+const u8 gText_SideQuest31_SubMap4[] = _("California");
+
+const u8 gText_SideQuest31_SubName5[] = _("Time Gem");
+const u8 gText_SideQuest31_SubDesc5[] = _("You defeated Steve to get the Time Gem.");
+const u8 gText_SideQuest31_SubMap5[] = _("Manhattan");
+
+const u8 gText_SideQuest31_SubName6[] = _("Power Gem");
+const u8 gText_SideQuest31_SubDesc6[] = _("You defeated King to get the Power Gem.");
+const u8 gText_SideQuest31_SubMap6[] = _("Atlantis");
+
 const u8 gText_SubQuest1_Name1[] = _("Part 1");
 const u8 gText_SubQuest1_Name2[] = _("Part 2");
 const u8 gText_SubQuest1_Name3[] = _("Part 3");
