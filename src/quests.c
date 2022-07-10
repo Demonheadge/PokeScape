@@ -44,6 +44,7 @@
 //PSF TODO add static to all non extternal functions
 //PSF TODO remove infinity quests after documentation is approved
 //PSF TODO set inside of truck back to normal
+//PSF change s8 to u8
 
 struct QuestMenuResources
 {
@@ -96,11 +97,8 @@ static u8 CountNumberListRows();
 static s8 DoesQuestHaveChildrenAndNotInactive(u16 itemId);
 static u16 BuildMenuTemplate(void);
 static void AssignCancelNameAndId(u8 numRow);
-static void MoveCursorFunc(s32 itemIndex, bool8 onInit,
-                                     struct ListMenu *list);
-static void GenerateStateAndPrint(u8 windowId, u32 itemId,
-            u8 y);
-static void PrintOrRemoveCursorAt(u8 y, u8 state);
+static void MoveCursorFunc(s32 itemIndex, bool8 onInit,struct ListMenu *list);
+static void GenerateStateAndPrint(u8 windowId, u32 itemId,u8 y);
 s8 CountUnlockedQuests(void);
 s8 CountInactiveQuests(void);
 s8 CountActiveQuests(void);
@@ -119,22 +117,16 @@ static s8 ManageMode(u8 action);
 static void Task_Main(u8 taskId);
 static void Task_QuestMenuCleanUp(u8 taskId);
 static void QuestMenu_InitWindows(void);
-static void QuestMenu_AddTextPrinterParameterized(u8 windowId, u8 fontId,
-            const u8 *str, u8 x, u8 y,
-            u8 letterSpacing, u8 lineSpacing, u8 speed, u8 colorIdx);
+static void QuestMenu_AddTextPrinterParameterized(u8 windowId, u8 fontId,const u8 *str, u8 x, u8 y,u8 letterSpacing, u8 lineSpacing, u8 speed, u8 colorIdx);
 static void SetInitializedFlag(u8 a0);
 static void ClearModeOnStartup(void);
 
 static void SetGpuRegBaseForFade(
       void); //Sets the GPU registers to prepare for a hardware fade
-static void PrepareFadeOut(u8
-                                     taskId); //Prepares the input handler for a hardware fade out
-static void PrepareFadeIn(u8
-                                    taskId); //Prepares the input handler for a hardware fade in
-static bool8 HandleFadeOut(u8
-                                     taskId); //Handles the hardware fade out
-static bool8 HandleFadeIn(u8
-                                    taskId); //Handles the hardware fade in
+static void PrepareFadeOut(u8 taskId); //Prepares the input handler for a hardware fade out
+static void PrepareFadeIn(u8 taskId); //Prepares the input handler for a hardware fade in
+static bool8 HandleFadeOut(u8 taskId); //Handles the hardware fade out
+static bool8 HandleFadeIn(u8 taskId); //Handles the hardware fade in
 static void Task_FadeOut(u8 taskId);
 static void Task_FadeIn(u8 taskId);
 
@@ -178,8 +170,7 @@ void ToggleAlphaModeAndCleanUp(u8 taskId);
 void ToggleFavoriteAndCleanUp(u8 taskId, u8 selectedQuestId);
 void ReturnFromSubquestAndCleanUp(u8 taskId);
 void TurnOffQuestMenu(u8 taskId);
-void EnterSubquestModeAndCleanUp(u8 taskId, s16 *data,
-            s32 input);
+void EnterSubquestModeAndCleanUp(u8 taskId, s16 *data,s32 input);
 
 bool8 IsSubquestCompleted(u8 parentQuest, u8 countQuest);
 u8 GenerateSubquestState(u8 questId);
@@ -188,8 +179,7 @@ void PrintQuestState(u8 windowId, u8 y, u8 colorIndex);
 
 bool8 IfRowIsOutOfBounds(void);
 bool8 IfScrollIsOutOfBounds(void);
-void InitFadeVariables(u8 taskId, u8 blendWeight, u8 frameDelay,
-                                 u8 frameTimerBase, u8 delta);
+void InitFadeVariables(u8 taskId, u8 blendWeight, u8 frameDelay,u8 frameTimerBase, u8 delta);
 
 // Tiles, palettes and tilemaps for the Quest Menu
 static const u32 sQuestMenuTiles[] =
@@ -2005,26 +1995,6 @@ void PrintQuestState(u8 windowId, u8 y, u8 colorIndex)
 	                                      0, 0xFF, colorIndex);
 }
 
-static void PrintOrRemoveCursor(u8 listMenuId, u8 colorIdx)
-{
-	PrintOrRemoveCursorAt(ListMenuGetYCoordForPrintingArrowCursor(
-	                                      listMenuId), colorIdx);
-}
-
-static void PrintOrRemoveCursorAt(u8 y, u8 colorIdx)
-{
-	if (colorIdx == 0xFF)
-	{
-		u8 maxWidth = GetFontAttribute(1, FONTATTR_MAX_LETTER_WIDTH);
-		u8 maxHeight = GetFontAttribute(1, FONTATTR_MAX_LETTER_HEIGHT);
-		FillWindowPixelRect(0, 0, 0, y, maxWidth, maxHeight);
-	}
-	else
-	{
-		QuestMenu_AddTextPrinterParameterized(0, 2, gText_SelectorArrow, 0, y, 0,
-		                                      0, 0, colorIdx);
-	}
-}
 
 s8 CountUnlockedQuests(void)
 {
