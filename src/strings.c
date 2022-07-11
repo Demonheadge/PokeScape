@@ -1821,27 +1821,7 @@ const u8 gText_Berry[] = _("BERRY");
 const u8 gText_Berries[] = _("BERRIES");
 
 //// side quest data
-const u8 gText_SideQuestName_31[] = _("Endgame");
-const u8 gText_SideQuestDesc_31[] =_("Help fix the balance of the universe!\nGather the Infinity Gems.");
-const u8 gText_SideQuestDoneDesc_31[] = _("All in balance, as it should be.");
-const u8 gText_SideQuestMap31[] = _("New York City");
 //names
-const u8 gText_SideQuestName_1[] = _("Road to Champion");
-const u8 gText_SideQuestName_2[] = _("Finish Regional Dex");
-const u8 gText_SideQuestName_3[] = _("Capture all Legendaries");
-const u8 gText_SideQuestName_4[] = _("Finish National Dex");
-const u8 gText_SideQuestName_5[] = _("All Silver Symbols");
-const u8 gText_SideQuestName_6[] = _("All Gold Symbols");
-const u8 gText_SideQuestName_7[] = _("100% Trainer Hill");
-const u8 gText_SideQuestName_8[] = _("Conquer Battle Tents");
-const u8 gText_SideQuestName_9[] = _("Elite Four Redux");
-const u8 gText_SideQuestName_10[] = _("Superboss Steven");
-const u8 gText_SideQuestName_11[] = _("Master Rank Coordinator");
-const u8 gText_SideQuestName_12[] = _("Get All TMs");
-const u8 gText_SideQuestName_13[] = _("Trade With All");
-const u8 gText_SideQuestName_14[] = _("Trick House 100%");
-const u8 gText_SideQuestName_15[] = _("See Mirage Island");
-/*
 const u8 gText_SideQuestName_1[] = _("Side Quest 1");
 const u8 gText_SideQuestName_2[] = _("Side Quest 2");
 const u8 gText_SideQuestName_3[] = _("Side Quest 3");
@@ -1857,7 +1837,6 @@ const u8 gText_SideQuestName_12[] = _("Side Quest 12");
 const u8 gText_SideQuestName_13[] = _("Side Quest 13");
 const u8 gText_SideQuestName_14[] = _("Side Quest 14");
 const u8 gText_SideQuestName_15[] = _("Side Quest 15");
-*/
 const u8 gText_SideQuestName_16[] = _("Side Quest 16");
 const u8 gText_SideQuestName_17[] = _("Side Quest 17");
 const u8 gText_SideQuestName_18[] = _("Side Quest 18");
@@ -1877,7 +1856,7 @@ const u8 gText_SideQuestName_30[] = _("Side Quest 30");
 //descriptions
 const u8 gText_SideQuestDesc_1[] = _("Description 1");
 const u8 gText_SideQuestDesc_2[] = _("Description 2");
-const u8 gText_SideQuestDesc_3[] = _("Tame the mightiest beasts in Hoenn!");
+const u8 gText_SideQuestDesc_3[] = _("Description 3");
 const u8 gText_SideQuestDesc_4[] = _("Description 4");
 const u8 gText_SideQuestDesc_5[] = _("Description 5");
 const u8 gText_SideQuestDesc_6[] = _("Description 6");
@@ -1941,14 +1920,14 @@ const u8 gText_SideQuestDoneDesc_30[] = _("Completed Quest 30");
 //map
 const u8 gText_SideQuestMap1[] = _("Map 1");
 const u8 gText_SideQuestMap2[] = _("Map 2");
-const u8 gText_SideQuestMap3[] = _("Sootopolis City");
+const u8 gText_SideQuestMap3[] = _("Map 3");
 const u8 gText_SideQuestMap4[] = _("Map 4");
 const u8 gText_SideQuestMap5[] = _("Map 5");
 const u8 gText_SideQuestMap6[] = _("Map 6");
 const u8 gText_SideQuestMap7[] = _("Map 7");
 const u8 gText_SideQuestMap8[] = _("Map 8");
 const u8 gText_SideQuestMap9[] = _("Map 9");
-const u8 gText_SideQuestMap10[] = _("Sea Mauville");
+const u8 gText_SideQuestMap10[] = _("Map 10");
 const u8 gText_SideQuestMap11[] = _("Map 11");
 const u8 gText_SideQuestMap12[] = _("Map 12");
 const u8 gText_SideQuestMap13[] = _("Map 13");
@@ -1971,31 +1950,6 @@ const u8 gText_SideQuestMap29[] = _("Map 29");
 const u8 gText_SideQuestMap30[] = _("Map 30");
 
 //subquests
-
-const u8 gText_SideQuest31_SubName1[] = _("Space Gem");
-const u8 gText_SideQuest31_SubDesc1[] = _("You defeated Tony to get the\nSpace Gem.");
-const u8 gText_SideQuest31_SubMap1[] = _("Bulgaria");
-
-const u8 gText_SideQuest31_SubName2[] = _("Mind Gem");
-const u8 gText_SideQuest31_SubDesc2[] = _("You defeated Hank to get the\nMind Gem.");
-const u8 gText_SideQuest31_SubMap2[] = _("Illinois");
-
-const u8 gText_SideQuest31_SubName3[] = _("Soul Gem");
-const u8 gText_SideQuest31_SubDesc3[] = _("You defeated Stephen to get the\nSoul Gem.");
-const u8 gText_SideQuest31_SubMap3[] = _("Pennsylvania");
-
-const u8 gText_SideQuest31_SubName4[] = _("Reality Gem");
-const u8 gText_SideQuest31_SubDesc4[] = _("You defeated Reed to get the\nReality Gem.");
-const u8 gText_SideQuest31_SubMap4[] = _("California");
-
-const u8 gText_SideQuest31_SubName5[] = _("Time Gem");
-const u8 gText_SideQuest31_SubDesc5[] = _("You defeated Steve to get the\nTime Gem.");
-const u8 gText_SideQuest31_SubMap5[] = _("Manhattan");
-
-const u8 gText_SideQuest31_SubName6[] = _("Power Gem");
-const u8 gText_SideQuest31_SubDesc6[] = _("You defeated King to get the\nPower Gem.");
-const u8 gText_SideQuest31_SubMap6[] = _("Atlantis");
-
 const u8 gText_SubQuest1_Name1[] = _("Part 1");
 const u8 gText_SubQuest1_Name2[] = _("Part 2");
 const u8 gText_SubQuest1_Name3[] = _("Part 3");
@@ -2016,7 +1970,7 @@ const u8 gText_SubQuest2_Name6[] = _("Part 6");
 const u8 gText_SubQuest2_Name7[] = _("Part 7");
 const u8 gText_SubQuest2_Name8[] = _("Part 8");
 const u8 gText_SubQuest2_Name9[] = _("Part 9");
-const u8 gText_SubQuest2_Name10[] = _("Ho-Oh");
+const u8 gText_SubQuest2_Name10[] = _("Part 10");
 const u8 gText_SubQuest2_Name11[] = _("Part 11");
 const u8 gText_SubQuest2_Name12[] = _("Part 12");
 const u8 gText_SubQuest2_Name13[] = _("Part 13");
@@ -2048,7 +2002,7 @@ const u8 gText_SubQuest2_Desc6[] = _("Description Sub 6");
 const u8 gText_SubQuest2_Desc7[] = _("Description Sub 7");
 const u8 gText_SubQuest2_Desc8[] = _("Description Sub 8");
 const u8 gText_SubQuest2_Desc9[] = _("Description Sub 9");
-const u8 gText_SubQuest2_Desc10[] = _("You captured Ho-Oh in a fierce battle.");
+const u8 gText_SubQuest2_Desc10[] = _("Description Sub 10");
 const u8 gText_SubQuest2_Desc11[] = _("Description Sub 11");
 const u8 gText_SubQuest2_Desc12[] = _("Description Sub 12");
 const u8 gText_SubQuest2_Desc13[] = _("Description Sub 13");

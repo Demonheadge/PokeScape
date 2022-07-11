@@ -2990,10 +2990,6 @@ extern const u8 gText_Cuteness[];
 extern const u8 gText_Beauty3[];
 
 ////side quests
-extern const u8 gText_SideQuestName_31[];
-extern const u8 gText_SideQuestDesc_31[];
-extern const u8 gText_SideQuestDoneDesc_31[];
-extern const u8 gText_SideQuestMap31[];
 //names
 extern const u8 gText_SideQuestName_1[];
 extern const u8 gText_SideQuestName_2[];
@@ -3123,30 +3119,6 @@ extern const u8 gText_SideQuestMap29[];
 extern const u8 gText_SideQuestMap30[];
 
 //subquests
-extern const u8 gText_SideQuest31_SubName1[];
-extern const u8 gText_SideQuest31_SubDesc1[];
-extern const u8 gText_SideQuest31_SubMap1[];
-
-extern const u8 gText_SideQuest31_SubName2[];
-extern const u8 gText_SideQuest31_SubDesc2[];
-extern const u8 gText_SideQuest31_SubMap2[];
-
-extern const u8 gText_SideQuest31_SubName3[];
-extern const u8 gText_SideQuest31_SubDesc3[];
-extern const u8 gText_SideQuest31_SubMap3[];
-
-extern const u8 gText_SideQuest31_SubName4[];
-extern const u8 gText_SideQuest31_SubDesc4[];
-extern const u8 gText_SideQuest31_SubMap4[];
-
-extern const u8 gText_SideQuest31_SubName5[];
-extern const u8 gText_SideQuest31_SubDesc5[];
-extern const u8 gText_SideQuest31_SubMap5[];
-
-extern const u8 gText_SideQuest31_SubName6[];
-extern const u8 gText_SideQuest31_SubDesc6[];
-extern const u8 gText_SideQuest31_SubMap6[];
-
 extern const u8 gText_SubQuest1_Name1[];
 extern const u8 gText_SubQuest1_Name2[];
 extern const u8 gText_SubQuest1_Name3[];

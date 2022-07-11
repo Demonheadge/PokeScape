@@ -39,8 +39,6 @@
 #define tPageItems      data[4]
 #define tItemPcParam    data[6]
 
-//PSF TODO remove infinity quests after documentation is approved, should be 30 blank parent and 30 blank kids
-//PSF TODO set inside of truck back to normal
 //PSF TODO redo strings.h and strings.c to group by quest
 
 struct QuestMenuResources
@@ -552,69 +550,6 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 
 };
 
-static const struct SubQuest sSubQuests31[QUEST_INFINITY_SUB_COUNT] =
-{
-	sub_quest(
-	      30,
-	      gText_SideQuest31_SubName1,
-	      gText_SideQuest31_SubDesc1,
-	      gText_SideQuest31_SubMap1,
-	      SPECIES_PORYGON2,
-	      PKMN,
-	      sText_Caught
-	),
-
-	sub_quest(
-	      31,
-	      gText_SideQuest31_SubName2,
-	      gText_SideQuest31_SubDesc2,
-	      gText_SideQuest31_SubMap2,
-	      SPECIES_URSARING,
-	      PKMN,
-	      sText_Caught
-	),
-
-	sub_quest(
-	      32,
-	      gText_SideQuest31_SubName3,
-	      gText_SideQuest31_SubDesc3,
-	      gText_SideQuest31_SubMap3,
-	      OBJ_EVENT_GFX_HEX_MANIAC,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      33,
-	      gText_SideQuest31_SubName4,
-	      gText_SideQuest31_SubDesc4,
-	      gText_SideQuest31_SubMap4,
-	      ITEM_PETAYA_BERRY,
-	      ITEM,
-	      sText_Found
-	),
-
-	sub_quest(
-	      34,
-	      gText_SideQuest31_SubName5,
-	      gText_SideQuest31_SubDesc5,
-	      gText_SideQuest31_SubMap5,
-	      ITEM_GUARD_SPEC,
-	      ITEM,
-	      sText_Read
-	),
-
-	sub_quest(
-	      35,
-	      gText_SideQuest31_SubName6,
-	      gText_SideQuest31_SubDesc6,
-	      gText_SideQuest31_SubMap6,
-	      OBJ_EVENT_GFX_SWIMMER_M,
-	      OBJECT,
-	      sText_Read
-	),
-};
-
 //Declaration of side quest structures. Edits to subquests are made here.
 #define side_quest(n, d, dd, m, s, st, sq, ns) {.name = n, .desc = d, .donedesc = dd, .map = m, .sprite = s, .spritetype = st, .subquests = sq, .numSubquests = ns}
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
@@ -918,16 +853,6 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJECT,
 	      NULL,
 	      0
-	),
-	side_quest(
-	      gText_SideQuestName_31, //side quest name string
-	      gText_SideQuestDesc_31, //side quest description string
-	      gText_SideQuestDoneDesc_31, //side quest complete description string
-	      gText_SideQuestMap31, //side quest map string
-	      OBJ_EVENT_GFX_MAXIE, //quest sprite id
-	      OBJECT, //quest sprite type
-	      sSubQuests31, //subquest struct
-	      QUEST_INFINITY_SUB_COUNT //number of subquest
 	),
 };
 
