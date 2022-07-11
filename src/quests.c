@@ -1601,7 +1601,7 @@ u8 GenerateFilteredList()
 
 		if (QuestMenu_GetSetQuestState(selectedQuestId, mode))
 		{
-//TODO HN: The above check only happens in this function. GenerateDefaultList() is otherwise exactly the same. Is there a way to merge the two functions and conditionally ask for that if statement?
+			//TODO HN: The above check only happens in this function. GenerateDefaultList() is otherwise exactly the same. Is there a way to merge the two functions and conditionally ask for that if statement?
 			PopulateEmptyRow(selectedQuestId);
 
 			if (QuestMenu_GetSetQuestState(selectedQuestId,
@@ -1613,7 +1613,7 @@ u8 GenerateFilteredList()
 			}
 			else
 			{
-                newRow = CountFavoriteQuests() + offset;
+				newRow = CountFavoriteQuests() + offset;
 				offset++;
 			}
 
@@ -1645,7 +1645,7 @@ u8 GenerateDefaultList()
 		}
 		else
 		{
-            newRow = CountFavoriteQuests() + offset;
+			newRow = CountFavoriteQuests() + offset;
 			offset++;
 		}
 
@@ -1673,7 +1673,7 @@ static void AssignCancelNameAndId(u8 numRow)
 u8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest)
 {
 
-//TODO HN: the version we wrote was only wasn't using index at all. I replaced uniqueId with index and it still works. I assume if I hadn't fixed this, it would have overflowed evantually?
+	//TODO HN: the version we wrote was only wasn't using index at all. I replaced uniqueId with index and it still works. I assume if I hadn't fixed this, it would have overflowed evantually?
 
 	u8 uniqueId = sSideQuests[quest].subquests[childQuest].id;
 	u8  index = uniqueId / 8; //8 bits per byte
@@ -1888,25 +1888,29 @@ u8 CountCompletedQuests(void)
 
 u8 CountFavoriteQuests(void)
 {
-    u8 q = 0, i = 0, x = 0;
-    u8 mode = sStateDataPtr->filterMode % 10;
+	u8 q = 0, i = 0, x = 0;
+	u8 mode = sStateDataPtr->filterMode % 10;
 
-    for (i = 0; i < QUEST_COUNT; i++)
-    {
-        if (QuestMenu_GetSetQuestState(i, FLAG_GET_FAVORITE))
-        {
-            if (QuestMenu_GetSetQuestState(i, mode))
-            {
-                x++;
-            }
-            q++;
-        }
-    }
+	for (i = 0; i < QUEST_COUNT; i++)
+	{
+		if (QuestMenu_GetSetQuestState(i, FLAG_GET_FAVORITE))
+		{
+			if (QuestMenu_GetSetQuestState(i, mode))
+			{
+				x++;
+			}
+			q++;
+		}
+	}
 
-    if (IsNotFilteredMode())
-        return q;
-    else
-        return x;
+	if (IsNotFilteredMode())
+	{
+		return q;
+	}
+	else
+	{
+		return x;
+	}
 
 }
 
@@ -2762,7 +2766,7 @@ static void FadeAndBail(void)
 
 static void FreeResources(void)
 {
-//TODO HN https://discord.com/channels/717851945603432528/995400120134803520/995400122043215963
+	//TODO HN https://discord.com/channels/717851945603432528/995400120134803520/995400122043215963
 	int i;
 	u8 allocateRows = QUEST_COUNT + 1;
 
