@@ -1541,7 +1541,6 @@ u8 CreateObjectGraphicsSprite(u16 graphicsId, void (*callback)(struct Sprite *),
     CopyObjectGraphicsInfoToSpriteTemplate(graphicsId, callback, spriteTemplate, &subspriteTables);
     if (spriteTemplate->paletteTag != TAG_NONE)
         LoadObjectEventPalette(spriteTemplate->paletteTag);
-        
 
     spriteId = CreateSprite(spriteTemplate, x, y, subpriority);
     free(spriteTemplate);

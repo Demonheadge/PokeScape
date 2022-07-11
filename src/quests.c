@@ -40,9 +40,8 @@
 #define tPageItems      data[4]
 #define tItemPcParam    data[6]
 
-//PSF TODO remove infinity quests after documentation is approved
+//PSF TODO remove infinity quests after documentation is approved, should be 30 blank parent and 30 blank kids
 //PSF TODO set inside of truck back to normal
-//PSF TODO change IsQuestActiveState and friends into one giant function
 
 struct QuestMenuResources
 {
@@ -124,7 +123,6 @@ static u8 CountActiveQuests(void);
 static u8 CountRewardQuests(void);
 static u8 CountCompletedQuests(void);
 static u8 CountFavoriteQuests(void);
-static u8 CountFavoriteAndState(void);
 
 static void PopulateEmptyRow(u8 countQuest);
 static void PrependQuestNumber(u8 countQuest);
@@ -1678,11 +1676,11 @@ u8 GenerateFilteredList()
 
 		if (QuestMenu_GetSetQuestState(selectedQuestId, mode))
 		{
+//TODO HN: The above check only happens in this function. GenerateDefaultList() is otherwise exactly the same. Is there a way to merge the two functions and conditionally ask for that if statement?
 			PopulateEmptyRow(selectedQuestId);
 
 			if (QuestMenu_GetSetQuestState(selectedQuestId,
 			                               FLAG_GET_FAVORITE))
-				//TODO HN: how do only conditionally show this line? This line is the only variation from GenerateList, and I'd like to merge them into one.
 			{
 				SetFavoriteQuest(selectedQuestId);
 				newRow = numRow;
@@ -1690,7 +1688,7 @@ u8 GenerateFilteredList()
 			}
 			else
 			{
-				newRow = CountFavoriteAndState() + offset;
+                newRow = CountFavoriteQuests() + offset;
 				offset++;
 			}
 
@@ -1722,8 +1720,7 @@ u8 GenerateDefaultList()
 		}
 		else
 		{
-			newRow = CountFavoriteQuests() +
-			         offset; //PSF TODO merge with CountState into one function
+            newRow = CountFavoriteQuests() + offset;
 			offset++;
 		}
 
@@ -1751,7 +1748,7 @@ static void AssignCancelNameAndId(u8 numRow)
 u8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest)
 {
 
-	//TODO HN: our version of this was only wasn't using index at all. I replaced uniqueId with index and it still works. I assume if I hadn't fixed this, it would have overflowed evantually?
+//TODO HN: the version we wrote was only wasn't using index at all. I replaced uniqueId with index and it still works. I assume if I hadn't fixed this, it would have overflowed evantually?
 
 	u8 uniqueId = sSideQuests[quest].subquests[childQuest].id;
 	u8  index = uniqueId / 8; //8 bits per byte
@@ -1966,34 +1963,26 @@ u8 CountCompletedQuests(void)
 
 u8 CountFavoriteQuests(void)
 {
-	u8 q = 0, i = 0;
+    u8 q = 0, i = 0, x = 0;
+    u8 mode = sStateDataPtr->filterMode % 10;
 
-	for (i = 0; i < QUEST_COUNT; i++)
-	{
-		if (QuestMenu_GetSetQuestState(i, FLAG_GET_FAVORITE))
-		{
-			q++;
-		}
-	}
-	return q;
-}
+    for (i = 0; i < QUEST_COUNT; i++)
+    {
+        if (QuestMenu_GetSetQuestState(i, FLAG_GET_FAVORITE))
+        {
+            if (QuestMenu_GetSetQuestState(i, mode))
+            {
+                x++;
+            }
+            q++;
+        }
+    }
 
-u8 CountFavoriteAndState(void)
-{
-	u8 q = 0, i = 0;
+    if (IsNotFilteredMode())
+        return q;
+    else
+        return x;
 
-	u8 mode = sStateDataPtr->filterMode % 10;
-
-	for (i = 0; i < QUEST_COUNT; i++)
-	{
-		if (QuestMenu_GetSetQuestState(i, mode)
-		            && QuestMenu_GetSetQuestState(i, FLAG_GET_FAVORITE))
-		{
-			q++;
-		}
-	}
-
-	return q;
 }
 
 void PopulateEmptyRow(u8 countQuest)
@@ -2848,6 +2837,7 @@ static void FadeAndBail(void)
 
 static void FreeResources(void)
 {
+//TODO HN https://discord.com/channels/717851945603432528/995400120134803520/995400122043215963
 	int i;
 	u8 allocateRows = QUEST_COUNT + 1;
 

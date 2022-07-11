@@ -66,5 +66,3 @@ LilycoveCity_PokemonCenter_1F_Text_HaventSeenRottenScoundrels:
 	.string "POKéMON and rip off METEORITES…\p"
 	.string "I haven't seen them around recently.$"
 
-
-
