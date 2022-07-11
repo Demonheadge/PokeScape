@@ -81,114 +81,92 @@ EWRAM_DATA static void *questNamePointer = NULL;
 EWRAM_DATA static u8 **questNameArray = NULL;
 
 // This File's Functions
-
-void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType);
-void ResetSpriteState(void);
-void QuestMenu_DestroySprite(u8 idx);
-s8 ManageFavorites(u8 index);
-static void RestoreSavedScrollAndRow(s16 *data);
-static void ResetCursorToTop(s16 *data);
-
+void QuestMenu_Init(u8 a0, MainCallback callback);
+static void MainCB(void);
+static void VBlankCB(void);
 static void RunSetup(void);
+
 static bool8 SetupGraphics(void);
-static void FadeAndBail(void);
-static void Task_QuestMenuWaitFadeAndBail(u8 taskId);
-static bool8 InitBackgrounds(void);
 static bool8 LoadGraphics(void);
-static bool8 AllocateResourcesForListMenu(void);
-static u8 CountNumberListRows();
-static s8 DoesQuestHaveChildrenAndNotInactive(u16 itemId);
-static u16 BuildMenuTemplate(void);
-static void AssignCancelNameAndId(u8 numRow);
-static void MoveCursorFunc(s32 itemIndex, bool8 onInit,struct ListMenu *list);
-static void GenerateStateAndPrint(u8 windowId, u32 itemId,u8 y);
-s8 CountUnlockedQuests(void);
-s8 CountInactiveQuests(void);
-s8 CountActiveQuests(void);
-s8 CountRewardQuests(void);
-s8 CountCompletedQuests(void);
-s8 CountFavoriteQuests(void);
-s8 CountFavoriteAndState(void);
-static void GenerateAndPrintHeader(void);
-static void PlaceTopMenuScrollIndicatorArrows(void);
-static void SetCursorPosition(void);
-static void FreeResources(void);
-static void Task_QuestMenuTurnOff1(u8 taskId);
-static void Task_QuestMenuTurnOff2(u8 taskId);
+void QuestMenu_InitWindows(void);
+static bool8 InitBackgrounds(void);
 static void InitItems(void);
-static void SetScrollPosition(void);
-static s8 ManageMode(u8 action);
-static void Task_Main(u8 taskId);
-static void Task_QuestMenuCleanUp(u8 taskId);
-static void QuestMenu_InitWindows(void);
-static void QuestMenu_AddTextPrinterParameterized(u8 windowId, u8 fontId,const u8 *str, u8 x, u8 y,u8 letterSpacing, u8 lineSpacing, u8 speed, u8 colorIdx);
+static bool8 AllocateResourcesForListMenu(void);
+static void AllocateMemoryForArray();
+static void PlaceTopMenuScrollIndicatorArrows(void);
 static void SetInitializedFlag(u8 a0);
+
+static u8 GetCursorPosition(void);
+static void SetCursorPosition(void);
+static void SetScrollPosition(void);
+static bool8 IfScrollIsOutOfBounds(void);
+static bool8 IfRowIsOutOfBounds(void);
+static void SaveScrollAndRow(s16 *data);
+
 static void ClearModeOnStartup(void);
-
-static void SetGpuRegBaseForFade(
-      void); //Sets the GPU registers to prepare for a hardware fade
-static void PrepareFadeOut(u8 taskId); //Prepares the input handler for a hardware fade out
-static void PrepareFadeIn(u8 taskId); //Prepares the input handler for a hardware fade in
-static bool8 HandleFadeOut(u8 taskId); //Handles the hardware fade out
-static bool8 HandleFadeIn(u8 taskId); //Handles the hardware fade in
-static void Task_FadeOut(u8 taskId);
-static void Task_FadeIn(u8 taskId);
-
-void GenerateAndPrintQuestDetails(s32 questId);
-void DetermineSpriteType(s32 questId);
-void PrintQuestLocation(s32 questId);
-
-void GenerateQuestFlavorText(s32 questId);
-void PrintQuestFlavorText(s32 questId);
-void GenerateQuestLocation(s32 questId);
-
-bool8 IsSubquestCompletedState(s32 questId);
-bool8 IsQuestRewardState(s32 questId);
-bool8 IsQuestCompletedState(s32 questId);
-bool8 IsQuestUnlocked(s32 questId);
-bool8 IsQuestActiveState(s32 questId);
-bool8 IsQuestInactiveState(s32 questId);
-void UpdateQuestFlavorText(s32 questId);
-
-u8 ToggleSubquestMode(u8 mode);
-u8 ToggleAlphaMode(u8 mode);
-u8 IncrementMode(u8 mode);
-
-u8 GenerateSubquestList();
-u8 GenerateFilteredList();
-u8 GenerateDefaultList();
-void PrependQuestNumber(u8 countQuest);
-u8 PopulateListRowNameAndId(u8 row, u8 countQuest);
-void PopulateSubquestName(u8 parentQuest, u8 countQuest);
-void PopulateEmptyRow(u8 countQuest);
-void PopulateQuestName(u8 countQuest);
-void AddSubQuestButton(u8 countQuest);
-void SetFavoriteQuest(u8 countQuest);
-void AllocateMemoryForArray();
-u8 GetModeAndGenerateList();
-u8 *DefineQuestOrder();
-bool8 CheckSelectedIsCancel(u8 selectedQuestId);
-void ChangeModeAndCleanUp(u8 taskId);
-void ToggleAlphaModeAndCleanUp(u8 taskId);
-void ToggleFavoriteAndCleanUp(u8 taskId, u8 selectedQuestId);
-void ReturnFromSubquestAndCleanUp(u8 taskId);
-void TurnOffQuestMenu(u8 taskId);
-void EnterSubquestModeAndCleanUp(u8 taskId, s16 *data,s32 input);
-
-u8 GenerateSubquestState(u8 questId);
-u8 GenerateQuestState(u8 questId);
-void PrintQuestState(u8 windowId, u8 y, u8 colorIndex);
-
-bool8 IfRowIsOutOfBounds(void);
-bool8 IfScrollIsOutOfBounds(void);
+static s8 ManageMode(u8 action);
+static u8 ToggleAlphaMode(u8 mode);
+static u8 ToggleSubquestMode(u8 mode);
+static u8 IncrementMode(u8 mode);
 static bool8 IsSubquestMode(void);
 static bool8 IsNotFilteredMode(void);
 static bool8 IsAlphaMode(void);
-void PrintDetailsForCancel();
+
+static u16 BuildMenuTemplate(void);
+static u8 GetModeAndGenerateList();
+static u8 CountNumberListRows();
+static u8 * DefineQuestOrder();
+static u8 GenerateSubquestList();
+static u8 GenerateFilteredList();
+static u8 GenerateDefaultList();
+static void AssignCancelNameAndId(u8 numRow);
+
+static s8 CountUnlockedQuests(void);
+static s8 CountInactiveQuests(void);
+static s8 CountActiveQuests(void);
+static s8 CountRewardQuests(void);
+static s8 CountCompletedQuests(void);
+static s8 CountFavoriteQuests(void);
+static s8 CountFavoriteAndState(void);
+
+static void PopulateEmptyRow(u8 countQuest);
+static void PrependQuestNumber(u8 countQuest);
+static void SetFavoriteQuest(u8 countQuest);
+static void PopulateQuestName(u8 countQuest);
+static void PopulateSubquestName(u8 parentQuest, u8 countQuest);
+static u8 PopulateListRowNameAndId(u8 row, u8 countQuest);
+static s8 DoesQuestHaveChildrenAndNotInactive(u16 itemId);
+static void AddSubQuestButton(u8 countQuest);
+
+void QuestMenu_AddTextPrinterParameterized(u8 windowId, u8 fontId, const u8 * str, u8 x, u8 y, u8 letterSpacing, u8 lineSpacing, u8 speed, u8 colorIdx);
+
+static void MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu * list);
 void PlayCursorSound(bool8 firstRun);
+void PrintDetailsForCancel();
+static void GenerateAndPrintQuestDetails(s32 questId);
+static void GenerateQuestLocation(s32 questId);
+static void PrintQuestLocation(s32 questId);
+static void GenerateQuestFlavorText(s32 questId);
+static void UpdateQuestFlavorText(s32 questId);
+static void PrintQuestFlavorText(s32 questId);
 
+static bool8 GetQuestState(s32 questId);
+static bool8 IsQuestUnlocked(s32 questId);
+static bool8 IsQuestActiveState(s32 questId);
+static bool8 IsQuestInactiveState(s32 questId);
+static bool8 IsQuestRewardState(s32 questId);
+static bool8 IsQuestCompletedState(s32 questId);
+static bool8 IsSubquestCompletedState(s32 questId);
 
-void InitFadeVariables(u8 taskId, u8 blendWeight, u8 frameDelay,u8 frameTimerBase, u8 delta);
+static void DetermineSpriteType(s32 questId);
+void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType);
+static void ResetSpriteState(void);
+void QuestMenu_DestroySprite(u8 idx);
+
+static void GenerateStateAndPrint(u8 windowId, u32 itemId, u8 y);
+static u8 GenerateSubquestState(u8 questId);
+static u8 GenerateQuestState(u8 questId);
+static void PrintQuestState(u8 windowId, u8 y, u8 colorIndex);
 
 static void GenerateAndPrintHeader(void);
 void GenerateDenominatorNumQuests(void);
@@ -198,7 +176,34 @@ void PrintNumQuests(void);
 void PrintMenuContext(void);
 void PrintTypeFilterButton(void);
 
+static void Task_Main(u8 taskId);
+static s8 ManageFavorites(u8 index);
+static void Task_QuestMenuCleanUp(u8 taskId);
+static void RestoreSavedScrollAndRow(s16 *data);
+static void ResetCursorToTop(s16 *data);
 static void QuestMenu_RemoveScrollIndicatorArrowPair(void);
+static void EnterSubquestModeAndCleanUp(u8 taskId, s16 * data, s32 input);
+static void ChangeModeAndCleanUp(u8 taskId);
+static void ToggleAlphaModeAndCleanUp(u8 taskId);
+static void ToggleFavoriteAndCleanUp(u8 taskId, u8 selectedQuestId);
+static bool8 CheckSelectedIsCancel(u8 selectedQuestId);
+static void ReturnFromSubquestAndCleanUp(u8 taskId);
+
+static void SetGpuRegBaseForFade(void);
+static void InitFadeVariables(u8 taskId, u8 blendWeight, u8 frameDelay, u8 frameTimerBase, u8 delta);
+static void PrepareFadeOut(u8 taskId);
+static bool8 HandleFadeOut(u8 taskId);
+static void PrepareFadeIn(u8 taskId);
+static bool8 HandleFadeIn(u8 taskId);
+static void Task_FadeOut(u8 taskId);
+static void Task_FadeIn(u8 taskId);
+
+static void Task_QuestMenuWaitFadeAndBail(u8 taskId);
+static void FadeAndBail(void);
+static void FreeResources(void);
+static void TurnOffQuestMenu(u8 taskId);
+static void Task_QuestMenuTurnOff1(u8 taskId);
+static void Task_QuestMenuTurnOff2(u8 taskId);
 
 // Tiles, palettes and tilemaps for the Quest Menu
 static const u32 sQuestMenuTiles[] =
@@ -1256,7 +1261,7 @@ static bool8 LoadGraphics(void)
 	return FALSE;
 }
 
-static void QuestMenu_InitWindows(void)
+void QuestMenu_InitWindows(void)
 {
 	u8 i;
 
@@ -2061,7 +2066,7 @@ void AddSubQuestButton(u8 countQuest)
 	}
 
 }
-static void QuestMenu_AddTextPrinterParameterized(u8 windowId, u8 fontId,
+void QuestMenu_AddTextPrinterParameterized(u8 windowId, u8 fontId,
             const u8 *str, u8 x, u8 y,
             u8 letterSpacing, u8 lineSpacing, u8 speed, u8 colorIdx)
 {
