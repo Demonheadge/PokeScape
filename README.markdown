@@ -100,20 +100,24 @@ You cannot use this feature and ghoulslash's quest menu at the same time. You wi
 Unbound's list menus wrap, meaning that when you press up on the first item a list, you are brought to the last item (and vice versa). Emerald has this behavior turned off. Pulling in this branch will turn on this functionality for all list menus in your project. If you do not want this functionality, you will need to disable it.
 
 #### Disabling wrapping
-To remove this functionality, remove the following code from [`src/list_menu.c`](https://github.com/PokemonSanFran/pokeemerald/blob/668853c9f4e37d93800b8edfcbeae8705e8e50fd/src/list_menu.c#L426-L428).
+To remove this functionality, you'll need to make some changes to [`src/list_menu.c`](https://github.com/PokemonSanFran/pokeemerald/blob/668853c9f4e37d93800b8edfcbeae8705e8e50fd/src/list_menu.c#L426-L428).
 
-```c
-if (currentPosition == 0)
-    ListMenuChangeSelection(list,TRUE,lastPositon,TRUE);
-else
-```
+```diff c
+ else if (JOY_REPEAT(DPAD_UP))
+    {
+-        if (currentPosition == 0)
+-            ListMenuChangeSelection(list,TRUE,lastPositon,TRUE);
+-        else
+            ListMenuChangeSelection(list, TRUE, 1, FALSE);
 
-as well [as this](https://github.com/PokemonSanFran/pokeemerald/blob/668853c9f4e37d93800b8edfcbeae8705e8e50fd/src/list_menu.c#L435-L437):
-
-```c
-if (currentPosition == lastPositon)
-    ListMenuChangeSelection(list,TRUE,lastPositon, FALSE);
-else
+        return LIST_NOTHING_CHOSEN;
+    }
+    else if (JOY_REPEAT(DPAD_DOWN))
+    {
+-        if (currentPosition == lastPositon)
+-            ListMenuChangeSelection(list,TRUE,lastPositon, FALSE);
+-        else
+            ListMenuChangeSelection(list, TRUE, 1, TRUE);
 ```
 ### Saveblock2 space
 This feature's save data with 30 parent quests and 30 subquests occupies 25 bytes in Saveblock2. Due to the way the feature has been set up, the current system can only support approximately 100 parent quests and 168 subquests. (Parent quests use 5 bits each, and child quests use 1 bit each.) If you want to add more than that, you will need to free up more space on the saveblock.
@@ -502,6 +506,7 @@ We are currently not taking any donations, so please donate to some of our favor
 
 * [Centre for Effective Altruism USA Inc.](https://www.charitynavigator.org/ein/471988398)
 * [JS](http://google.com)
+* [HN](http://google.com)
 * [MM](http://google.com)
 
 # Contributors 
@@ -520,7 +525,7 @@ We are currently not taking any donations, so please donate to some of our favor
 ## **HN (PSF Developer)**
 * A lot of these aren't written down because we meet in voice calls, but HN was absolutely instrumental in getting this working.
 
-## **[Karathan#1337](https://github.com/SBird1337/)**
+## **[Karathan#1337](https://www.twitch.tv/1337sbird)**
 * Explained printing encoded strings via MgbaPrintf 
 * Suggested ways reduce size of quests on saveblock2
 * Suggested ways to allocate memory for prepend/append of the quest name
@@ -530,7 +535,7 @@ We are currently not taking any donations, so please donate to some of our favor
 * Helped debug and refactor implementation of fading text
 * Suggested ways to fix the object fading issue
 
-## **[Greenphx#5428](https://steamcommunity.com/profiles/76561198798955832) / [MGriffin#3997](https://www.pokecommunity.com/member.php?u=471077) / [Deokishisu#3251](https://www.pokecommunity.com/member.php?u=22062)**
+## **[Greenphx#5428](https://github.com/Greenphx9) / [Deokishisu#3251](https://www.pokecommunity.com/member.php?u=22062)**
 * Suggested ways reduce size of quests on saveblock2
 
 ## **[BSBob#4144](https://github.com/nielsmittertreiner)**

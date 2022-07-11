@@ -82,12 +82,12 @@ enum SubQuestTypes
 };
 
 // functions
+void QuestMenu_Init(u8 a0, MainCallback callback);
 s8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest);
 s8 QuestMenu_GetSetQuestState(u8 quest, u8 caseId);
-void QuestMenu_Init(u8 a0, MainCallback callback);
+void Task_QuestMenu_OpenFromStartMenu(u8);
 void QuestMenu_CopyQuestName(u8 *dst, u8 questId);
 void QuestMenu_CopySubquestName(u8 *dst, u8 parentId, u8 childId);
 void QuestMenu_ResetMenuSaveData(void);
-void Task_QuestMenu_OpenFromStartMenu(u8);
 
 #endif // GUARD_QUESTS_H
