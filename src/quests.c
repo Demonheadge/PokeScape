@@ -45,7 +45,7 @@
 //PSF TODO remove infinity quests after documentation is approved
 //PSF TODO set inside of truck back to normal
 //PSF TODO change s8 to u8
-//PSF TODO change IsQuestActive and friends into one giant function
+//PSF TODO change IsQuestActiveState and friends into one giant function
 
 struct QuestMenuResources
 {
@@ -143,8 +143,8 @@ bool8 IsSubquestCompletedState(s32 questId);
 bool8 IsQuestRewardState(s32 questId);
 bool8 IsQuestCompletedState(s32 questId);
 bool8 IsQuestUnlocked(s32 questId);
-bool8 IsQuestActive(s32 questId);
-bool8 IsQuestInactive(s32 questId);
+bool8 IsQuestActiveState(s32 questId);
+bool8 IsQuestInactiveState(s32 questId);
 void UpdateQuestFlavorText(s32 questId);
 
 u8 ToggleSubquestMode(u8 mode);
@@ -172,7 +172,6 @@ void ReturnFromSubquestAndCleanUp(u8 taskId);
 void TurnOffQuestMenu(u8 taskId);
 void EnterSubquestModeAndCleanUp(u8 taskId, s16 *data,s32 input);
 
-bool8 IsSubquestCompleted(u8 parentQuest, u8 countQuest);
 u8 GenerateSubquestState(u8 questId);
 u8 GenerateQuestState(u8 questId);
 void PrintQuestState(u8 windowId, u8 y, u8 colorIndex);
@@ -1872,7 +1871,7 @@ void PopulateQuestName(u8 countQuest)
 
 void PopulateSubquestName(u8 parentQuest, u8 countQuest)
 {
-	if (IsSubquestCompleted(parentQuest, countQuest))
+    if (IsSubquestCompletedState(countQuest))
 	{
 		questNamePointer = StringAppend(questNamePointer,
 		                                sSideQuests[parentQuest].subquests[countQuest].name);
@@ -1943,6 +1942,14 @@ static void MoveCursorFunc(s32 questId, bool8 onInit,
 	}
 }
 
+void PlayCursorSound(bool8 firstRun)
+{
+	if (firstRun == FALSE)
+	{
+		PlaySE(SE_RG_BAG_CURSOR);
+	}
+}
+
 void PrintDetailsForCancel()
 {
 	FillWindowPixelBuffer(1, 0);
@@ -1986,11 +1993,11 @@ void GenerateQuestFlavorText(s32 questId)
 {
 	if (IsSubquestMode() == FALSE)
 	{
-		if (IsQuestInactive(questId) == TRUE)
+		if (IsQuestInactiveState(questId) == TRUE)
 		{
 			StringCopy(gStringVar1, sText_StartForMore);
 		}
-		if (IsQuestActive(questId) == TRUE)
+		if (IsQuestActiveState(questId) == TRUE)
 		{
 			UpdateQuestFlavorText(questId);
 		}
@@ -2028,10 +2035,22 @@ void PrintQuestFlavorText(s32 questId)
 	                                      4);
 }
 
-bool8 IsSubquestCompleted(u8 parentQuest, u8 countQuest)
+bool8 IsSubquestCompletedState(s32 questId)
 {
-	if (QuestMenu_GetSetSubquestState(parentQuest, FLAG_GET_COMPLETED,
-	                                  countQuest))
+	if (QuestMenu_GetSetSubquestState(sStateDataPtr->parentQuest,
+	                                  FLAG_GET_COMPLETED,
+	                                  questId))
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+bool8 IsQuestRewardState(s32 questId)
+{
+	if (QuestMenu_GetSetQuestState(questId, FLAG_GET_REWARD))
 	{
 		return TRUE;
 	}
@@ -2041,6 +2060,83 @@ bool8 IsSubquestCompleted(u8 parentQuest, u8 countQuest)
 	}
 }
 
+bool8 IsQuestInactiveState(s32 questId)
+{
+	if (!QuestMenu_GetSetQuestState(questId, FLAG_GET_ACTIVE))
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+bool8 IsQuestActiveState(s32 questId)
+{
+	if (QuestMenu_GetSetQuestState(questId, FLAG_GET_ACTIVE))
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+bool8 IsQuestCompletedState(s32 questId)
+{
+	if (QuestMenu_GetSetQuestState(questId, FLAG_GET_COMPLETED))
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+bool8 IsQuestUnlocked(s32 questId)
+{
+	if (QuestMenu_GetSetQuestState(questId, FLAG_GET_UNLOCKED))
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+void DetermineSpriteType(s32 questId)
+{
+	u16 spriteId;
+	u8 spriteType;
+
+	if (IsSubquestMode() == FALSE)
+	{
+		spriteId = sSideQuests[questId].sprite;
+		spriteType = sSideQuests[questId].spritetype;
+
+		QuestMenu_CreateSprite(spriteId, sStateDataPtr->spriteIconSlot,
+		                       spriteType);
+	}
+	else if (IsSubquestCompletedState(questId) == TRUE)
+	{
+		spriteId =
+		      sSideQuests[sStateDataPtr->parentQuest].subquests[questId].sprite;
+		spriteType =
+		      sSideQuests[sStateDataPtr->parentQuest].subquests[questId].spritetype;
+		QuestMenu_CreateSprite(spriteId, sStateDataPtr->spriteIconSlot,
+		                       spriteType);
+	}
+	else
+	{
+		QuestMenu_CreateSprite(ITEM_NONE, sStateDataPtr->spriteIconSlot, ITEM);
+	}
+	QuestMenu_DestroySprite(sStateDataPtr->spriteIconSlot ^ 1);
+	sStateDataPtr->spriteIconSlot ^= 1;
+}
 void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 {
 	u8 *ptr = &sItemMenuIconSpriteIds[10];
@@ -2106,124 +2202,23 @@ void QuestMenu_DestroySprite(u8 idx)
 		ptr[idx] = 0xFF;
 	}
 }
-
-void PlayCursorSound(bool8 firstRun)
+static void GenerateStateAndPrint(u8 windowId, u32 questId,
+            u8 y)
 {
-	if (firstRun == FALSE)
+	u8 colorIndex;
+
+	if (questId != LIST_CANCEL)
 	{
-		PlaySE(SE_RG_BAG_CURSOR);
-	}
-}
+		if (IsSubquestMode())
+		{
+			colorIndex = GenerateSubquestState(questId);
+		}
+		else
+		{
+			colorIndex = GenerateQuestState(questId);
+		}
 
-
-
-void DetermineSpriteType(s32 questId)
-{
-	u16 spriteId;
-	u8 spriteType;
-
-	if (IsSubquestMode() == FALSE)
-	{
-		spriteId = sSideQuests[questId].sprite;
-		spriteType = sSideQuests[questId].spritetype;
-
-		QuestMenu_CreateSprite(spriteId, sStateDataPtr->spriteIconSlot,
-		                       spriteType);
-	}
-	else if (IsSubquestCompletedState(questId) == TRUE)
-	{
-		spriteId =
-		      sSideQuests[sStateDataPtr->parentQuest].subquests[questId].sprite;
-		spriteType =
-		      sSideQuests[sStateDataPtr->parentQuest].subquests[questId].spritetype;
-		QuestMenu_CreateSprite(spriteId, sStateDataPtr->spriteIconSlot,
-		                       spriteType);
-	}
-	else
-	{
-		QuestMenu_CreateSprite(ITEM_NONE, sStateDataPtr->spriteIconSlot, ITEM);
-	}
-	QuestMenu_DestroySprite(sStateDataPtr->spriteIconSlot ^ 1);
-	sStateDataPtr->spriteIconSlot ^= 1;
-}
-
-
-
-
-
-
-bool8 IsSubquestCompletedState(s32 questId)
-{
-	if (QuestMenu_GetSetSubquestState(sStateDataPtr->parentQuest,
-	                                  FLAG_GET_COMPLETED,
-	                                  questId))
-	{
-		return TRUE;
-	}
-	else
-	{
-		return FALSE;
-	}
-}
-bool8 IsQuestRewardState(s32 questId)
-{
-	if (QuestMenu_GetSetQuestState(questId, FLAG_GET_REWARD))
-	{
-		return TRUE;
-	}
-	else
-	{
-		return FALSE;
-	}
-}
-
-bool8 IsQuestInactive(s32 questId)
-{
-	if (!QuestMenu_GetSetQuestState(questId, FLAG_GET_ACTIVE))
-	{
-		return TRUE;
-	}
-	else
-	{
-		return FALSE;
-	}
-}
-
-bool8 IsQuestActive(s32 questId)
-{
-	if (QuestMenu_GetSetQuestState(questId, FLAG_GET_ACTIVE))
-	{
-		return TRUE;
-	}
-	else
-	{
-		return FALSE;
-	}
-}
-
-
-
-bool8 IsQuestCompletedState(s32 questId)
-{
-	if (QuestMenu_GetSetQuestState(questId, FLAG_GET_COMPLETED))
-	{
-		return TRUE;
-	}
-	else
-	{
-		return FALSE;
-	}
-}
-
-bool8 IsQuestUnlocked(s32 questId)
-{
-	if (QuestMenu_GetSetQuestState(questId, FLAG_GET_UNLOCKED))
-	{
-		return TRUE;
-	}
-	else
-	{
-		return FALSE;
+		PrintQuestState(windowId, y, colorIndex);
 	}
 }
 
@@ -2267,25 +2262,6 @@ u8 GenerateQuestState(u8 questId)
 	}
 }
 
-static void GenerateStateAndPrint(u8 windowId, u32 questId,
-            u8 y)
-{
-	u8 colorIndex;
-
-	if (questId != LIST_CANCEL)
-	{
-		if (IsSubquestMode())
-		{
-			colorIndex = GenerateSubquestState(questId);
-		}
-		else
-		{
-			colorIndex = GenerateQuestState(questId);
-		}
-
-		PrintQuestState(windowId, y, colorIndex);
-	}
-}
 
 void PrintQuestState(u8 windowId, u8 y, u8 colorIndex)
 {
