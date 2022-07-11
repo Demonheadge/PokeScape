@@ -48,38 +48,11 @@ InsideOfTruck_EventScript_SetIntroFlagsFemale::
 	end
 
 InsideOfTruck_EventScript_MovingBox::
-	//msgbox InsideOfTruck_Text_BoxPrintedWithMonLogo, MSGBOX_SIGN
-    questmenu QUEST_MENU_SET_ACTIVE,QUEST_1
-    questmenu QUEST_MENU_SET_REWARD,QUEST_1
-    
-    questmenu QUEST_MENU_SET_ACTIVE,QUEST_2
-    
-    questmenu QUEST_MENU_SET_ACTIVE,QUEST_3
-    
-    questmenu QUEST_MENU_SET_ACTIVE,QUEST_4
-    
-    questmenu QUEST_MENU_SET_ACTIVE,QUEST_5
-    questmenu QUEST_MENU_SET_REWARD,QUEST_5
-    questmenu QUEST_MENU_COMPLETE_QUEST,QUEST_5
-
-    questmenu QUEST_MENU_SET_ACTIVE,QUEST_8
-    questmenu QUEST_MENU_SET_REWARD,QUEST_8
-
-    subquestmenu QUEST_MENU_COMPLETE_QUEST,QUEST_2,2
-    subquestmenu QUEST_MENU_COMPLETE_QUEST,QUEST_2,3
-    subquestmenu QUEST_MENU_COMPLETE_QUEST,QUEST_3,9
-
-    questmenu QUEST_MENU_SET_ACTIVE,QUEST_INFINITY_STONES
-    subquestmenu QUEST_MENU_COMPLETE_QUEST,QUEST_INFINITY_STONES,0
-    subquestmenu QUEST_MENU_COMPLETE_QUEST,QUEST_INFINITY_STONES,2
-    subquestmenu QUEST_MENU_COMPLETE_QUEST,QUEST_INFINITY_STONES,4
-
-    setflag FLAG_SYS_QUEST_MENU_GET
-
-    openquestmenu
-    end
+	msgbox InsideOfTruck_Text_BoxPrintedWithMonLogo, MSGBOX_SIGN
+	end
 
 InsideOfTruck_Text_BoxPrintedWithMonLogo:
 	.string "The box is printed with a POKéMON logo.\p"
 	.string "It's a POKéMON brand moving and\n"
 	.string "delivery service.$"
+

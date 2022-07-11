@@ -30,7 +30,6 @@
 #include "constants/field_weather.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
-#include "mgba_printf/mgba.h"
 #include "constants/event_objects.h"
 #include "event_object_movement.h"
 #include "pokemon_icon.h"
@@ -42,6 +41,7 @@
 
 //PSF TODO remove infinity quests after documentation is approved, should be 30 blank parent and 30 blank kids
 //PSF TODO set inside of truck back to normal
+//PSF TODO redo strings.h and strings.c to group by quest
 
 struct QuestMenuResources
 {
