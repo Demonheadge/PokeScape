@@ -1247,8 +1247,7 @@ void AllocateMemoryForArray(void)
 
 	questNameArray = Alloc(sizeof(void *) * allocateRows);
 
-	//for (i = 0; i < allocateRows + 1; i++)
-    for (i=0; i < allocateRows; i++)
+	for (i = 0; i < allocateRows; i++)
 	{
 		questNameArray[i] = Alloc(sizeof(u8) * 32);
 	}
@@ -1495,10 +1494,10 @@ u8 GetModeAndGenerateList()
 	{
 		return GenerateSubquestList();
 	}
-    else
-    {
-        return GenerateList(!IsNotFilteredMode());
-    }
+	else
+	{
+		return GenerateList(!IsNotFilteredMode());
+	}
 }
 
 static u8 CountNumberListRows()
@@ -1577,38 +1576,40 @@ u8 GenerateSubquestList()
 
 u8 GenerateList(bool8 isFiltered)
 {
-    u8 mode = sStateDataPtr-> filterMode % 10;
-    u8 lastRow = 0, numRow = 0, offset = 0, newRow = 0, countQuest = 0, selectedQuestId = 0;
-    u8 *sortedQuestList;
+	u8 mode = sStateDataPtr-> filterMode % 10;
+	u8 lastRow = 0, numRow = 0, offset = 0, newRow = 0, countQuest = 0,
+	   selectedQuestId = 0;
+	u8 *sortedQuestList;
 
-    sortedQuestList = DefineQuestOrder();
+	sortedQuestList = DefineQuestOrder();
 
-    for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
-    {
-        selectedQuestId = *(sortedQuestList + countQuest);
+	for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
+	{
+		selectedQuestId = *(sortedQuestList + countQuest);
 
-        if (isFiltered && !QuestMenu_GetSetQuestState(selectedQuestId,mode)){
-            continue;
-        }
+		if (isFiltered && !QuestMenu_GetSetQuestState(selectedQuestId, mode))
+		{
+			continue;
+		}
 
-        PopulateEmptyRow(selectedQuestId);
+		PopulateEmptyRow(selectedQuestId);
 
-        if (QuestMenu_GetSetQuestState(selectedQuestId,FLAG_GET_FAVORITE))
-        {
-            SetFavoriteQuest(selectedQuestId);
-            newRow = numRow;
-            numRow++;
-        }
-        else
-        {
-            newRow = CountFavoriteQuests() + offset;
-            offset++;
-        }
+		if (QuestMenu_GetSetQuestState(selectedQuestId, FLAG_GET_FAVORITE))
+		{
+			SetFavoriteQuest(selectedQuestId);
+			newRow = numRow;
+			numRow++;
+		}
+		else
+		{
+			newRow = CountFavoriteQuests() + offset;
+			offset++;
+		}
 
-        PopulateQuestName(selectedQuestId);
-        PopulateListRowNameAndId(newRow, selectedQuestId);
-    }
-    return numRow + offset;
+		PopulateQuestName(selectedQuestId);
+		PopulateListRowNameAndId(newRow, selectedQuestId);
+	}
+	return numRow + offset;
 }
 
 static void AssignCancelNameAndId(u8 numRow)
@@ -2720,14 +2721,12 @@ static void FadeAndBail(void)
 static void FreeResources(void)
 {
 	int i;
-	u8 allocateRows = QUEST_COUNT + 1;
 
 	try_free(sStateDataPtr);
 	try_free(sBg1TilemapBuffer);
 	try_free(sListMenuItems);
 
-	//for (i = allocateRows; i > -1 ; i--)
-    for (i = QUEST_COUNT; i > -1; i--)
+	for (i = QUEST_COUNT; i > -1; i--)
 	{
 		try_free(questNameArray[i]);
 	}
