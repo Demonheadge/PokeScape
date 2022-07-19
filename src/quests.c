@@ -111,8 +111,7 @@ static u8 GetModeAndGenerateList();
 static u8 CountNumberListRows();
 static u8 *DefineQuestOrder();
 static u8 GenerateSubquestList();
-static u8 GenerateFilteredList();
-static u8 GenerateDefaultList();
+static u8 GenerateList(bool8 isFiltered);
 static void AssignCancelNameAndId(u8 numRow);
 
 static u8 CountUnlockedQuests(void);
@@ -239,6 +238,9 @@ static const u8 sText_DotSpace[] = _(". ");
 static const u8 sText_Close[] = _("Close");
 static const u8 sText_ColorGreen[] = _("{COLOR}{GREEN}");
 static const u8 sText_AZ[] = _(" A-Z");
+
+///////////////////////////////////////////////////////////////////////////////
+//////////////////////BEGIN SUBQUEST CUSTOMIZATION/////////////////////////////
 
 //Declaration of subquest structures. Edits to subquests are made here.
 #define sub_quest(i, n, d, m, s, st, t) {.id = i, .name = n, .desc = d, .map = m, .sprite = s, .spritetype = st, .type = t}
@@ -550,6 +552,12 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 
 };
 
+////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
+////////////////////////BEGIN QUEST CUSTOMIZATION//////////////////////////////
+
 //Declaration of side quest structures. Edits to subquests are made here.
 #define side_quest(n, d, dd, m, s, st, sq, ns) {.name = n, .desc = d, .donedesc = dd, .map = m, .sprite = s, .spritetype = st, .subquests = sq, .numSubquests = ns}
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
@@ -579,7 +587,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_3,
 	      gText_SideQuestDoneDesc_3,
 	      gText_SideQuestMap3,
-	      OBJ_EVENT_GFX_WALLACE,
+	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
 	      sSubQuests2,
 	      QUEST_2_SUB_COUNT
@@ -855,6 +863,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      0
 	),
 };
+////////////////////////END QUEST CUSTOMIZATION////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
 //BG layer defintions
 static const struct BgTemplate sQuestMenuBgTemplates[2] =
@@ -1502,14 +1512,10 @@ u8 GetModeAndGenerateList()
 	{
 		return GenerateSubquestList();
 	}
-	else if (!IsNotFilteredMode())
-	{
-		return GenerateFilteredList();
-	}
-	else
-	{
-		return GenerateDefaultList();
-	}
+    else
+    {
+        return GenerateList(!IsNotFilteredMode());
+    }
 }
 
 static u8 CountNumberListRows()
@@ -1586,74 +1592,40 @@ u8 GenerateSubquestList()
 	return lastRow;
 }
 
-u8 GenerateFilteredList()
+u8 GenerateList(bool8 isFiltered)
 {
-	u8 mode = sStateDataPtr->filterMode % 10;
-	u8 lastRow = 0, numRow = 0, offset = 0, newRow = 0, countQuest = 0,
-	   selectedQuestId = 0;
-	u8 *sortedQuestList;
+    u8 mode = sStateDataPtr-> filterMode % 10;
+    u8 lastRow = 0, numRow = 0, offset = 0, newRow = 0, countQuest = 0, selectedQuestId = 0;
+    u8 *sortedQuestList;
 
-	sortedQuestList = DefineQuestOrder();
+    sortedQuestList = DefineQuestOrder();
 
-	for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
-	{
-		selectedQuestId = *(sortedQuestList + countQuest);
+    for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
+    {
+        selectedQuestId = *(sortedQuestList + countQuest);
 
-		if (QuestMenu_GetSetQuestState(selectedQuestId, mode))
-		{
-			//TODO HN: The above check only happens in this function. GenerateDefaultList() is otherwise exactly the same. Is there a way to merge the two functions and conditionally ask for that if statement?
-			PopulateEmptyRow(selectedQuestId);
+        if (isFiltered && !QuestMenu_GetSetQuestState(selectedQuestId,mode)){
+            continue;
+        }
 
-			if (QuestMenu_GetSetQuestState(selectedQuestId,
-			                               FLAG_GET_FAVORITE))
-			{
-				SetFavoriteQuest(selectedQuestId);
-				newRow = numRow;
-				numRow++;
-			}
-			else
-			{
-				newRow = CountFavoriteQuests() + offset;
-				offset++;
-			}
+        PopulateEmptyRow(selectedQuestId);
 
-			PopulateQuestName(selectedQuestId);
-			PopulateListRowNameAndId(newRow, selectedQuestId);
-		}
-	}
-	return numRow + offset;
-}
-u8 GenerateDefaultList()
-{
-	u8 mode = sStateDataPtr->filterMode % 10;
-	u8 lastRow = 0, numRow = 0, offset = 0, newRow = 0, countQuest = 0,
-	   selectedQuestId = 0;
-	u8 *sortedQuestList;
+        if (QuestMenu_GetSetQuestState(selectedQuestId,FLAG_GET_FAVORITE))
+        {
+            SetFavoriteQuest(selectedQuestId);
+            newRow = numRow;
+            numRow++;
+        }
+        else
+        {
+            newRow = CountFavoriteQuests() + offset;
+            offset++;
+        }
 
-	sortedQuestList = DefineQuestOrder();
-
-	for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
-	{
-		selectedQuestId = *(sortedQuestList + countQuest);
-		PopulateEmptyRow(selectedQuestId);
-
-		if (QuestMenu_GetSetQuestState(selectedQuestId, FLAG_GET_FAVORITE))
-		{
-			SetFavoriteQuest(selectedQuestId);
-			newRow = numRow;
-			numRow++;
-		}
-		else
-		{
-			newRow = CountFavoriteQuests() + offset;
-			offset++;
-		}
-
-		PopulateQuestName(selectedQuestId);
-		PopulateListRowNameAndId(newRow, selectedQuestId);
-		lastRow = numRow + offset;
-	}
-	return lastRow;
+        PopulateQuestName(selectedQuestId);
+        PopulateListRowNameAndId(newRow, selectedQuestId);
+    }
+    return numRow + offset;
 }
 
 static void AssignCancelNameAndId(u8 numRow)
@@ -1672,8 +1644,6 @@ static void AssignCancelNameAndId(u8 numRow)
 
 u8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest)
 {
-
-	//TODO HN: the version we wrote was only wasn't using index at all. I replaced uniqueId with index and it still works. I assume if I hadn't fixed this, it would have overflowed evantually?
 
 	u8 uniqueId = sSideQuests[quest].subquests[childQuest].id;
 	u8  index = uniqueId / 8; //8 bits per byte

@@ -48,7 +48,35 @@ InsideOfTruck_EventScript_SetIntroFlagsFemale::
 	end
 
 InsideOfTruck_EventScript_MovingBox::
-	msgbox InsideOfTruck_Text_BoxPrintedWithMonLogo, MSGBOX_SIGN
+    questmenu QUEST_MENU_UNLOCK_QUEST,QUEST_1
+    questmenu QUEST_MENU_SET_ACTIVE,QUEST_1
+    questmenu QUEST_MENU_SET_REWARD,QUEST_1
+
+    questmenu QUEST_MENU_UNLOCK_QUEST,QUEST_2
+    questmenu QUEST_MENU_SET_ACTIVE,QUEST_2
+
+    questmenu QUEST_MENU_UNLOCK_QUEST,QUEST_3
+    questmenu QUEST_MENU_SET_ACTIVE,QUEST_3
+
+    questmenu QUEST_MENU_UNLOCK_QUEST,QUEST_4
+    questmenu QUEST_MENU_SET_ACTIVE,QUEST_4
+
+    questmenu QUEST_MENU_UNLOCK_QUEST,QUEST_5
+    questmenu QUEST_MENU_SET_ACTIVE,QUEST_5
+    questmenu QUEST_MENU_SET_REWARD,QUEST_5
+    questmenu QUEST_MENU_COMPLETE_QUEST,QUEST_5
+
+    questmenu QUEST_MENU_UNLOCK_QUEST,QUEST_8
+    questmenu QUEST_MENU_SET_ACTIVE,QUEST_8
+    questmenu QUEST_MENU_SET_REWARD,QUEST_8
+
+    subquestmenu QUEST_MENU_COMPLETE_QUEST,QUEST_1,2
+    subquestmenu QUEST_MENU_COMPLETE_QUEST,QUEST_1,3
+    subquestmenu QUEST_MENU_COMPLETE_QUEST,QUEST_2,9
+
+    setflag FLAG_SYS_QUEST_MENU_GET
+
+    openquestmenu
 	end
 
 InsideOfTruck_Text_BoxPrintedWithMonLogo:
