@@ -39,8 +39,6 @@
 #define tPageItems      data[4]
 #define tItemPcParam    data[6]
 
-//PSF TODO redo strings.h and strings.c to group by quest
-
 struct QuestMenuResources
 {
 	MainCallback savedCallback;
@@ -558,7 +556,7 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 ///////////////////////////////////////////////////////////////////////////////
 ////////////////////////BEGIN QUEST CUSTOMIZATION//////////////////////////////
 
-//Declaration of side quest structures. Edits to subquests are made here.
+//Declaration of side quest structures. Edits to quests are made here.
 #define side_quest(n, d, dd, m, s, st, sq, ns) {.name = n, .desc = d, .donedesc = dd, .map = m, .sprite = s, .spritetype = st, .subquests = sq, .numSubquests = ns}
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
@@ -1073,22 +1071,17 @@ static bool8 SetupGraphics(void)
 			}
 			break;
 		case 9:
-			//Loads the background, text and sprites will still spawn
 			QuestMenu_InitWindows();
 			gMain.state++;
 			break;
 		case 10:
-			//When commented out, question marks loads for every slot and page does not scroll when going past number 6
 			ClearModeOnStartup();
 			InitItems();
-			//Doesn't seem to do anything?
 			SetCursorPosition();
-			//Doesn't seem to do anything?
 			SetScrollPosition();
 			gMain.state++;
 			break;
 		case 11:
-			//If allocating resource for the itemsin quest menu works, then advance, otherwise quit the quest menu
 			if (AllocateResourcesForListMenu())
 			{
 				gMain.state++;
@@ -1100,32 +1093,25 @@ static bool8 SetupGraphics(void)
 			}
 			break;
 		case 12:
-			//print the quest titles, avatars, desc and status
-			//When this is gone, page does not seem to play nice
 			AllocateMemoryForArray();
 			BuildMenuTemplate();
 			gMain.state++;
 			break;
 		case 13:
-			//header does not print
 			GenerateAndPrintHeader();
 			gMain.state++;
 			break;
 		case 14:
-			//sub_80985E4();
 			gMain.state++;
 			break;
 		case 15:
-			//everything loads, but cannot scroll or quit the meun
 			taskId = CreateTask(Task_Main, 0);
-			//background loads but interface is entirely glitched out
 			gTasks[taskId].data[0] = ListMenuInit(&gMultiuseListMenuTemplate,
 			                                      sListMenuState.scroll,
 			                                      sListMenuState.row);
 			gMain.state++;
 			break;
 		case 16:
-			//arrows at the top and bottom don't appear without this
 			PlaceTopMenuScrollIndicatorArrows();
 			gMain.state++;
 			break;
@@ -1133,7 +1119,6 @@ static bool8 SetupGraphics(void)
 			gMain.state++;
 			break;
 		case 18:
-			//unknown
 			if (sListMenuState.initialized == 1)
 			{
 				BlendPalettes(0xFFFFFFFF, 16, RGB_BLACK);
@@ -1141,7 +1126,6 @@ static bool8 SetupGraphics(void)
 			gMain.state++;
 			break;
 		case 19:
-			//unknown
 			if (sListMenuState.initialized == 1)
 			{
 				BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
@@ -1155,9 +1139,7 @@ static bool8 SetupGraphics(void)
 			gMain.state++;
 			break;
 		default:
-			//quest menu begins and loads, you can quit, but cannot see or interact
 			SetVBlankCallback(VBlankCB);
-			//screen goes to black, nothing else happens
 			SetMainCallback2(MainCB);
 			return TRUE;
 	}
@@ -1265,7 +1247,8 @@ void AllocateMemoryForArray(void)
 
 	questNameArray = Alloc(sizeof(void *) * allocateRows);
 
-	for (i = 0; i < allocateRows + 1; i++)
+	//for (i = 0; i < allocateRows + 1; i++)
+    for (i=0; i < allocateRows; i++)
 	{
 		questNameArray[i] = Alloc(sizeof(u8) * 32);
 	}
@@ -2386,35 +2369,35 @@ static void GenerateMenuContext(void)
 	switch (mode)
 	{
 		case SORT_DEFAULT:
-			questNamePointer = StringCopy(questNameArray[QUEST_COUNT + 1],
+			questNamePointer = StringCopy(questNameArray[QUEST_COUNT],
 			                              sText_AllHeader);
 			break;
 		case SORT_INACTIVE:
-			questNamePointer = StringCopy(questNameArray[QUEST_COUNT + 1],
+			questNamePointer = StringCopy(questNameArray[QUEST_COUNT],
 			                              sText_InactiveHeader);
 			break;
 		case SORT_ACTIVE:
-			questNamePointer = StringCopy(questNameArray[QUEST_COUNT + 1],
+			questNamePointer = StringCopy(questNameArray[QUEST_COUNT],
 			                              sText_ActiveHeader);
 			break;
 		case SORT_REWARD:
-			questNamePointer = StringCopy(questNameArray[QUEST_COUNT + 1],
+			questNamePointer = StringCopy(questNameArray[QUEST_COUNT],
 			                              sText_RewardHeader);
 			break;
 		case SORT_DONE:
-			questNamePointer = StringCopy(questNameArray[QUEST_COUNT + 1],
+			questNamePointer = StringCopy(questNameArray[QUEST_COUNT],
 			                              sText_CompletedHeader);
 			break;
 	}
 
 	if (IsAlphaMode())
 	{
-		questNamePointer = StringAppend(questNameArray[QUEST_COUNT + 1],
+		questNamePointer = StringAppend(questNameArray[QUEST_COUNT],
 		                                sText_AZ);
 	}
 	if (IsSubquestMode())
 	{
-		questNamePointer = StringCopy(questNameArray[QUEST_COUNT + 1],
+		questNamePointer = StringCopy(questNameArray[QUEST_COUNT],
 		                              sSideQuests[parentQuest].name);
 
 	}
@@ -2429,7 +2412,7 @@ static void PrintNumQuests(void)
 static void PrintMenuContext(void)
 {
 	QuestMenu_AddTextPrinterParameterized(2, 0,
-	                                      questNameArray[QUEST_COUNT + 1], 10, 1, 0, 1, 0, 0);
+	                                      questNameArray[QUEST_COUNT], 10, 1, 0, 1, 0, 0);
 }
 static void PrintTypeFilterButton(void)
 {
@@ -2736,7 +2719,6 @@ static void FadeAndBail(void)
 
 static void FreeResources(void)
 {
-	//TODO HN https://discord.com/channels/717851945603432528/995400120134803520/995400122043215963
 	int i;
 	u8 allocateRows = QUEST_COUNT + 1;
 
@@ -2744,7 +2726,8 @@ static void FreeResources(void)
 	try_free(sBg1TilemapBuffer);
 	try_free(sListMenuItems);
 
-	for (i = allocateRows; i > -1 ; i--)
+	//for (i = allocateRows; i > -1 ; i--)
+    for (i = QUEST_COUNT; i > -1; i--)
 	{
 		try_free(questNameArray[i]);
 	}

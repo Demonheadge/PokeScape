@@ -1,1 +1,2 @@
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/quests.o src/quests.c
 cd build/emerald && arm-none-eabi-ld -Map ../../pokeemerald.map -T ld_script.ld -o ../../pokeemerald.elf <objects> <lib>
