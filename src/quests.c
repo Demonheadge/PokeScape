@@ -1243,7 +1243,7 @@ static bool8 AllocateResourcesForListMenu(void)
 void AllocateMemoryForArray(void)
 {
 	u8 i;
-	u8 allocateRows = QUEST_COUNT + 1;
+	u8 allocateRows = QUEST_ARRAY_COUNT + 1;
 
 	questNameArray = Alloc(sizeof(void *) * allocateRows);
 
@@ -2370,35 +2370,35 @@ static void GenerateMenuContext(void)
 	switch (mode)
 	{
 		case SORT_DEFAULT:
-			questNamePointer = StringCopy(questNameArray[QUEST_COUNT],
+			questNamePointer = StringCopy(questNameArray[QUEST_ARRAY_COUNT],
 			                              sText_AllHeader);
 			break;
 		case SORT_INACTIVE:
-			questNamePointer = StringCopy(questNameArray[QUEST_COUNT],
+			questNamePointer = StringCopy(questNameArray[QUEST_ARRAY_COUNT],
 			                              sText_InactiveHeader);
 			break;
 		case SORT_ACTIVE:
-			questNamePointer = StringCopy(questNameArray[QUEST_COUNT],
+			questNamePointer = StringCopy(questNameArray[QUEST_ARRAY_COUNT],
 			                              sText_ActiveHeader);
 			break;
 		case SORT_REWARD:
-			questNamePointer = StringCopy(questNameArray[QUEST_COUNT],
+			questNamePointer = StringCopy(questNameArray[QUEST_ARRAY_COUNT],
 			                              sText_RewardHeader);
 			break;
 		case SORT_DONE:
-			questNamePointer = StringCopy(questNameArray[QUEST_COUNT],
+			questNamePointer = StringCopy(questNameArray[QUEST_ARRAY_COUNT],
 			                              sText_CompletedHeader);
 			break;
 	}
 
 	if (IsAlphaMode())
 	{
-		questNamePointer = StringAppend(questNameArray[QUEST_COUNT],
+		questNamePointer = StringAppend(questNameArray[QUEST_ARRAY_COUNT],
 		                                sText_AZ);
 	}
 	if (IsSubquestMode())
 	{
-		questNamePointer = StringCopy(questNameArray[QUEST_COUNT],
+		questNamePointer = StringCopy(questNameArray[QUEST_ARRAY_COUNT],
 		                              sSideQuests[parentQuest].name);
 
 	}
@@ -2413,7 +2413,7 @@ static void PrintNumQuests(void)
 static void PrintMenuContext(void)
 {
 	QuestMenu_AddTextPrinterParameterized(2, 0,
-	                                      questNameArray[QUEST_COUNT], 10, 1, 0, 1, 0, 0);
+	                                      questNameArray[QUEST_ARRAY_COUNT], 10, 1, 0, 1, 0, 0);
 }
 static void PrintTypeFilterButton(void)
 {
@@ -2726,7 +2726,7 @@ static void FreeResources(void)
 	try_free(sBg1TilemapBuffer);
 	try_free(sListMenuItems);
 
-	for (i = QUEST_COUNT; i > -1; i--)
+	for (i = QUEST_ARRAY_COUNT; i > -1; i--)
 	{
 		try_free(questNameArray[i]);
 	}
