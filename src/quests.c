@@ -1583,7 +1583,7 @@ u8 GenerateList(bool8 isFiltered)
 
 	sortedQuestList = DefineQuestOrder();
 
-	for (countQuest = 0; countQuest < sStateDataPtr->nItems; countQuest++)
+	for (countQuest = 0; countQuest < QUEST_COUNT; countQuest++)
 	{
 		selectedQuestId = *(sortedQuestList + countQuest);
 
@@ -2492,6 +2492,7 @@ static void Task_QuestMenuCleanUp(u8 taskId)
 	DestroyListMenuTask(data[0], &sListMenuState.scroll, &sListMenuState.row);
 	ClearStdWindowAndFrameToTransparent(2, FALSE);
 
+	InitItems();
 	GenerateAndPrintHeader();
 	AllocateResourcesForListMenu();
 	BuildMenuTemplate();

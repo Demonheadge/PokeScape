@@ -12,7 +12,7 @@
 #define QUEST_MENU_CHECK_REWARD         7  //checks if questId is in Reward state. Returns result to gSpecialVar_Result
 #define QUEST_MENU_CHECK_COMPLETE       8   //checks if questId has been completed. Returns result to gSpecialVar_Result
 #define QUEST_MENU_BUFFER_QUEST_NAME    9   //buffers a quest name to gStringVar1
-                                            
+
 // quest number defines
 #define QUEST_1          0
 #define QUEST_2          1
@@ -79,7 +79,7 @@
 
 #define QUEST_1_SUB_COUNT 10
 #define QUEST_2_SUB_COUNT 20
-#define SUB_QUEST_COUNT (QUEST_1_SUB_COUNT + QUEST_2_SUB_COUNT) 
+#define SUB_QUEST_COUNT (QUEST_1_SUB_COUNT + QUEST_2_SUB_COUNT)
 
 #define QUEST_ARRAY_COUNT (SUB_QUEST_COUNT > QUEST_COUNT ? SUB_QUEST_COUNT : QUEST_COUNT)
 #endif // GUARD_CONSTANTS_QUESTS_H
