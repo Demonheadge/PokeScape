@@ -48,10 +48,6 @@ struct SideQuest
 	const u8 numSubquests;
 }; 
 
-extern const struct SubQuest gSubQuests1[QUEST_1_SUB_COUNT];
-extern const struct SubQuest gSubQuests2[QUEST_2_SUB_COUNT];
-extern const struct SideQuest gSideQuests[QUEST_COUNT];
-
 enum QuestCases
 {
 	FLAG_GET_UNLOCKED,      // check if quest is unlocked
@@ -70,14 +66,6 @@ enum QuestCases
 	FLAG_REMOVE_ACTIVE, //remove active flag from quest
 	FLAG_REMOVE_REWARD, //remove reward flag from quest
 	FLAG_REMOVE_FAVORITE, //remove favorite flag from quest
-};
-
-enum SubQuestTypes
-{
-	SUBQUEST_NONE,
-	SUBQUEST_CATCH,
-	SUBQUEST_FIND,
-	SUBQUEST_READ,
 };
 
 // functions
