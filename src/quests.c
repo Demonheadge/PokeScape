@@ -44,6 +44,7 @@ struct QuestMenuResources
 	MainCallback savedCallback;
 	u8 moveModeOrigPos;
 	u8 spriteIconSlot;
+	u16 oldPaletteTag;
 	u8 maxShowed;
 	u8 nItems;
 	u8 scrollIndicatorArrowPairId;
@@ -2229,8 +2230,19 @@ static void QuestMenu_DestroySprite(u8 idx)
 
 	if (ptr[idx] != 0xFF)
 	{
-		DestroySpriteAndFreeResources(&gSprites[ptr[idx]]);
+		u16 palTag = GetSpritePaletteTagByPaletteNum(
+		                   gSprites[ptr[idx]].oam.paletteNum);
+		DestroySprite(&gSprites[ptr[idx]]);
 		ptr[idx] = 0xFF;
+
+		if (sStateDataPtr->oldPaletteTag != palTag)
+		{
+			if (sStateDataPtr->oldPaletteTag != 0)
+			{
+				FreeSpriteTilesByTag(sStateDataPtr->oldPaletteTag);
+				sStateDataPtr->oldPaletteTag = palTag;
+			}
+		}
 	}
 }
 static void GenerateStateAndPrint(u8 windowId, u32 questId,
