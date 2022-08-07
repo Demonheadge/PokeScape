@@ -1821,6 +1821,11 @@ const u8 gText_Berry[] = _("BERRY");
 const u8 gText_Berries[] = _("BERRIES");
 
 //// side quest data
+//generic strings
+const u8 gText_QuestAnnounce[] = _("The quest '{STR_VAR_1}'\nis now {STR_VAR_2}.");
+const u8 gText_QuestComplete[] =_("complete");
+const u8 gText_QuestActive[] =_("active");
+
 //names
 const u8 gText_SideQuestName_1[] = _("Side Quest 1");
 const u8 gText_SideQuestName_2[] = _("Side Quest 2");
