@@ -227,7 +227,7 @@ static const u8 sText_StartForMore[] =
       _("Start for more details.");
 static const u8 sText_ReturnRecieveReward[] =
       _("Return to {STR_VAR_2}\nto recieve your reward!");
-static const u8 sText_SubQuestButton[] = _("{A_BUTTON}");
+static const u8 sText_SubQuestButton[] = _(" {A_BUTTON}");
 static const u8 sText_Type[] = _("{R_BUTTON}Type");
 static const u8 sText_Caught[] = _("Caught");
 static const u8 sText_Found[] = _("Found");
