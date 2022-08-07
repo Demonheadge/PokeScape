@@ -1741,6 +1741,12 @@
     .2byte \parentId
     .2byte \childId
     .endm
+
+    @ Check the quest state and return a number associated with quest state
+    .macro returnqueststate questId:req
+    .byte 0xe5
+    .byte \questId
+    .endm
     
     .macro openquestmenu
     questmenu 0 0

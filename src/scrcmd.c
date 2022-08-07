@@ -2372,6 +2372,27 @@ bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
     return TRUE;
 }
 
+bool8 ScrCmd_returnqueststate(struct ScriptContext *ctx)
+{
+    u8 questId = VarGet(ScriptReadByte(ctx));
+
+    if (QuestMenu_GetSetQuestState(questId, FLAG_GET_INACTIVE)){
+        gSpecialVar_Result = FLAG_GET_INACTIVE;
+        return FALSE;
+    }
+    if (QuestMenu_GetSetQuestState(questId, FLAG_GET_ACTIVE)){
+        gSpecialVar_Result = FLAG_GET_ACTIVE;
+        return FALSE;
+    }
+    if (QuestMenu_GetSetQuestState(questId, FLAG_GET_REWARD)){
+        gSpecialVar_Result = FLAG_GET_REWARD;
+        return FALSE;
+    }
+    if (QuestMenu_GetSetQuestState(questId, FLAG_GET_COMPLETED)){
+        gSpecialVar_Result = FLAG_GET_COMPLETED;
+        return FALSE;
+    }
+}
 
 bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
 {
