@@ -83,6 +83,7 @@ static void TryUpdateGymLeaderRematchFromTrainer(void);
 static void CB2_GiveStarter(void);
 static void CB2_StartFirstBattle(void);
 static void CB2_EndFirstBattle(void);
+static bool8 ShouldContinueAfterLose(void);
 static void CB2_EndTrainerBattle(void);
 static bool32 IsPlayerDefeated(u32 battleOutcome);
 static u16 GetRematchTrainerId(u16 trainerId);
@@ -1107,6 +1108,7 @@ const u8 *BattleSetup_ConfigureTrainerBattle(const u8 *data)
     switch (sTrainerBattleMode)
     {
     case TRAINER_BATTLE_SINGLE_NO_INTRO_TEXT:
+    case TRAINER_BATTLE_CONTINUE_AFTER_LOSE:
         TrainerBattleLoadArgs(sOrdinaryNoIntroBattleParams, data);
         return EventScript_DoNoIntroTrainerBattle;
     case TRAINER_BATTLE_DOUBLE:
@@ -1323,6 +1325,14 @@ void BattleSetup_StartTrainerBattle(void)
     ScriptContext1_Stop();
 }
 
+static bool8 ShouldContinueAfterLose()
+{
+    if (sTrainerBattleMode == TRAINER_BATTLE_CONTINUE_AFTER_LOSE)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 static void CB2_EndTrainerBattle(void)
 {
     if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
@@ -1331,7 +1341,7 @@ static void CB2_EndTrainerBattle(void)
     }
     else if (IsPlayerDefeated(gBattleOutcome) == TRUE)
     {
-        if (InBattlePyramid() || InTrainerHillChallenge())
+        if (InBattlePyramid() || InTrainerHillChallenge() || ShouldContinueAfterLose())
             SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         else
             SetMainCallback2(CB2_WhiteOut);

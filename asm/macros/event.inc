@@ -699,6 +699,8 @@
 		.4byte \pointer3 @ event script
 	.elseif \type == TRAINER_BATTLE_SINGLE_NO_INTRO_TEXT
 		.4byte \pointer1 @ text
+	.elseif \type == TRAINER_BATTLE_CONTINUE_AFTER_LOSE
+		.4byte \pointer1 @ text
 	.elseif \type == TRAINER_BATTLE_DOUBLE
 		.4byte \pointer1 @ text
 		.4byte \pointer2 @ text
@@ -776,6 +778,10 @@
 	trainerbattle TRAINER_BATTLE_SINGLE_NO_INTRO_TEXT, \trainer, 0, \lose_text
 	.endm
 
+	@ Starts a trainer battle, skipping intro text. Returns the overworld if the player loses or wins. Takes a trainer and loss text
+	.macro trainerbattle_continue_after_lose trainer:req, lose_text:req
+	trainerbattle TRAINER_BATTLE_CONTINUE_AFTER_LOSE, \trainer, 0, \lose_text
+	.endm
 
 	@ Starts a trainer battle using the battle information stored in RAM (usually by the scripts in trainer_battle.inc, which
 	@ are run by trainerbattle), and blocks script execution until the battle finishes.
