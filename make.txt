@@ -1,0 +1,7 @@
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/graphics.o src/graphics.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/contest_painting.o src/contest_painting.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/quests.o src/quests.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/region_map.o src/region_map.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/pokenav_region_map.o src/pokenav_region_map.c
+tools/agbcc/bin/agbcc <flags> -o build/emerald/src/scrcmd.o src/scrcmd.c
+cd build/emerald && arm-none-eabi-ld -Map ../../pokeemerald.map -T ld_script.ld -o ../../pokeemerald.elf <objects> <lib>

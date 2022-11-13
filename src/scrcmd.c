@@ -2318,7 +2318,7 @@ bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
     default:
         BeginNormalPaletteFade(0xFFFFFFFF, 2, 16, 0, 0);
         QuestMenu_Init(0, CB2_ReturnToFieldContinueScriptPlayMapMusic);
-        ScriptContext1_Stop();
+        ScriptContext_Stop();
         break;
     case QUEST_MENU_UNLOCK_QUEST:
         QuestMenu_GetSetQuestState(questId, FLAG_SET_UNLOCKED);
