@@ -1006,7 +1006,7 @@ static u8 SaveConfirmInputCallback(void)
             sSaveDialogCallback = SaveFileExistsCallback;
             return SAVE_IN_PROGRESS;
         }
-    case -1: // B Button
+    case MENU_B_PRESSED:
     case 1: // No
         HideSaveInfoWindow();
         HideSaveMessageWindow();
@@ -1052,7 +1052,7 @@ static u8 SaveOverwriteInputCallback(void)
     case 0: // Yes
         sSaveDialogCallback = SaveSavingMessageCallback;
         return SAVE_IN_PROGRESS;
-    case -1: // B Button
+    case MENU_B_PRESSED:
     case 1: // No
         HideSaveInfoWindow();
         HideSaveMessageWindow();
@@ -1171,7 +1171,7 @@ static u8 BattlePyramidRetireInputCallback(void)
     {
     case 0: // Yes
         return SAVE_CANCELED;
-    case -1: // B Button
+    case MENU_B_PRESSED:
     case 1: // No
         HideSaveMessageWindow();
         return SAVE_SUCCESS;
@@ -1206,8 +1206,8 @@ static bool32 InitSaveWindowAfterLinkBattle(u8 *state)
         ResetBgsAndClearDma3BusyFlags(0);
         InitBgsFromTemplates(0, sBgTemplates_LinkBattleSave, ARRAY_COUNT(sBgTemplates_LinkBattleSave));
         InitWindows(sWindowTemplates_LinkBattleSave);
-        LoadUserWindowBorderGfx_(0, 8, 224);
-        Menu_LoadStdPalAt(240);
+        LoadUserWindowBorderGfx_(0, 8, BG_PLTT_ID(14));
+        Menu_LoadStdPalAt(BG_PLTT_ID(15));
         break;
     case 3:
         ShowBg(0);
