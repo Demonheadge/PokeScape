@@ -1642,7 +1642,7 @@ static void AirCutterProjectileStep1(u8 taskId)
         gTasks[taskId].data[gTasks[taskId].data[1] + 13] = spriteId;
         gTasks[taskId].data[0] = gTasks[taskId].data[3];
         gTasks[taskId].data[1]++;
-        PlaySE12WithPanning(SE_M_BLIZZARD2, BattleAnimAdjustPanning(-63));
+        PlaySE12WithPanning(SE_M_BLIZZARD2, BattleAnimAdjustPanning(SOUND_PAN_ATTACKER + 1));
         if (gTasks[taskId].data[1] > 2)
             gTasks[taskId].func = AirCutterProjectileStep2;
     }
@@ -1667,7 +1667,7 @@ void AnimTask_AirCutterProjectile(u8 taskId)
     }
     else
     {
-        if ((gBattlerPositions[gBattleAnimTarget] & BIT_SIDE) == B_SIDE_PLAYER)
+        if (GET_BATTLER_SIDE2(gBattleAnimTarget) == B_SIDE_PLAYER)
         {
             gTasks[taskId].data[4] = 1;
             gBattleAnimArgs[0] = -gBattleAnimArgs[0];
@@ -1839,7 +1839,7 @@ static void AnimBulletSeed_Step1(struct Sprite *sprite)
     int i;
     u16 rand;
     s16 *ptr;
-    PlaySE12WithPanning(SE_M_HORN_ATTACK, BattleAnimAdjustPanning(63));
+    PlaySE12WithPanning(SE_M_HORN_ATTACK, BattleAnimAdjustPanning(SOUND_PAN_TARGET));
     sprite->x += sprite->x2;
     sprite->y += sprite->y2;
     sprite->y2 = 0;
@@ -2485,7 +2485,7 @@ static void AnimPencil(struct Sprite *sprite)
     sprite->data[3] = 16;
     sprite->data[4] = 0;
     sprite->data[5] = GetBattlerSpriteCoordAttr(gBattleAnimTarget, BATTLER_COORD_ATTR_HEIGHT) + 2;
-    sprite->data[6] = BattleAnimAdjustPanning(63);
+    sprite->data[6] = BattleAnimAdjustPanning(SOUND_PAN_TARGET);
     sprite->callback = AnimPencil_Step;
 }
 
@@ -2678,7 +2678,7 @@ static void AnimUproarRing(struct Sprite *sprite)
     u8 index = IndexOfSpritePaletteTag(ANIM_TAG_THIN_RING);
     if (index != 0xFF)
     {
-        BlendPalette(((index << 20) + 0x1010000) >> 16, 15, gBattleAnimArgs[5], gBattleAnimArgs[4]);
+        BlendPalette((OBJ_PLTT_ID(index) + 1), 15, gBattleAnimArgs[5], gBattleAnimArgs[4]);
     }
 
     StartSpriteAffineAnim(sprite, 1);
@@ -3023,10 +3023,10 @@ void AnimTask_LoadMusicNotesPals(u8 taskId)
     for (i = 1; i < NUM_MUSIC_NOTE_PAL_TAGS; i++)
         paletteNums[i] = AllocSpritePalette(ANIM_SPRITES_START - i);
 
-    gMonSpritesGfxPtr->buffer = AllocZeroed(0x2000);
+    gMonSpritesGfxPtr->buffer = AllocZeroed(MON_PIC_SIZE * MAX_MON_PIC_FRAMES);
     LZDecompressWram(gBattleAnimSpritePal_MusicNotes2, gMonSpritesGfxPtr->buffer);
     for (i = 0; i < NUM_MUSIC_NOTE_PAL_TAGS; i++)
-        LoadPalette(&gMonSpritesGfxPtr->buffer[i * 32], (u16)((paletteNums[i] << 4) + 0x100), 32);
+        LoadPalette(&gMonSpritesGfxPtr->buffer[i * 32], (u16)(OBJ_PLTT_ID(paletteNums[i])), PLTT_SIZE_4BPP);
 
     FREE_AND_SET_NULL(gMonSpritesGfxPtr->buffer);
     DestroyAnimVisualTask(taskId);
@@ -3043,9 +3043,7 @@ void AnimTask_FreeMusicNotesPals(u8 taskId)
 
 static void SetMusicNotePalette(struct Sprite *sprite, u8 a, u8 b)
 {
-    u8 tile;
-    tile = (b & 1);
-    tile = ((-tile | tile) >> 31) & 32;
+    u8 tile = (b & 1) ? 32 : 0;
     sprite->oam.tileNum += tile + (a << 2);
     sprite->oam.paletteNum = IndexOfSpritePaletteTag(sMusicNotePaletteTagsTable[b >> 1]);
 }
@@ -3261,7 +3259,7 @@ void AnimTask_HeartsBackground(u8 taskId)
     GetBattleAnimBg1Data(&animBg);
     AnimLoadCompressedBgGfx(animBg.bgId, gBattleAnimBgImage_Attract, animBg.tilesOffset);
     AnimLoadCompressedBgTilemapHandleContest(&animBg, gBattleAnimBgTilemap_Attract, FALSE);
-    LoadCompressedPalette(gBattleAnimBgPalette_Attract, animBg.paletteId * 16, 32);
+    LoadCompressedPalette(gBattleAnimBgPalette_Attract, BG_PLTT_ID(animBg.paletteId), PLTT_SIZE_4BPP);
     gTasks[taskId].func = AnimTask_HeartsBackground_Step;
 }
 
@@ -3345,7 +3343,7 @@ void AnimTask_ScaryFace(u8 taskId)
         AnimLoadCompressedBgTilemapHandleContest(&animBg, &gBattleAnimBgTilemap_ScaryFaceOpponent, FALSE);
 
     AnimLoadCompressedBgGfx(animBg.bgId, gBattleAnimBgImage_ScaryFace, animBg.tilesOffset);
-    LoadCompressedPalette(gBattleAnimBgPalette_ScaryFace, animBg.paletteId * 16, 32);
+    LoadCompressedPalette(gBattleAnimBgPalette_ScaryFace, BG_PLTT_ID(animBg.paletteId), PLTT_SIZE_4BPP);
     gTasks[taskId].func = AnimTask_ScaryFace_Step;
 }
 
@@ -3792,8 +3790,7 @@ static void AnimPerishSongMusicNote_Step2(struct Sprite *sprite)
 
     if (sprite->data[4] > 3)
     {
-        int var1 = sprite->data[2];
-        sprite->invisible = var1 - (((s32)(var1 + ((u32)var1 >> 31)) >> 1) << 1);
+        sprite->invisible = sprite->data[2] % 2;
         DestroyAnimSprite(sprite);
     }
 

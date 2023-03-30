@@ -665,7 +665,7 @@ void StartDodrioBerryPicking(u16 partyId, void (*exitCallback)(void))
 {
     sExitingGame = FALSE;
 
-    if (gReceivedRemoteLinkPlayers != 0 && (sGame = AllocZeroed(sizeof(*sGame))))
+    if (gReceivedRemoteLinkPlayers && (sGame = AllocZeroed(sizeof(*sGame))))
     {
         ResetTasksAndSprites();
         InitDodrioGame(sGame);
@@ -775,7 +775,7 @@ static void Task_StartDodrioGame(u8 taskId)
     case 3:
         if (IsLinkTaskFinished())
         {
-            if (gReceivedRemoteLinkPlayers != 0)
+            if (gReceivedRemoteLinkPlayers)
             {
                 LoadWirelessStatusIndicatorSpriteGfx();
                 CreateWirelessStatusIndicatorSprite(0, 0);
@@ -2906,7 +2906,7 @@ void IsDodrioInParty(void)
     for (i = 0; i < PARTY_SIZE; i++)
     {
         if (GetMonData(&gPlayerParty[i], MON_DATA_SANITY_HAS_SPECIES)
-            && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2) == SPECIES_DODRIO)
+            && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG) == SPECIES_DODRIO)
         {
             gSpecialVar_Result = TRUE;
             return;
@@ -2988,7 +2988,7 @@ static void Task_ShowDodrioBerryPickingRecords(u8 taskId)
         {
             RemoveWindow(tWindowId);
             DestroyTask(taskId);
-            EnableBothScriptContexts();
+            ScriptContext_Enable();
         }
         break;
     }
@@ -3005,8 +3005,8 @@ static void PrintRecordsText(u8 windowId, s32 width)
     recordNums[1] = gSaveBlock2Ptr->berryPick.bestScore;
     recordNums[2] = gSaveBlock2Ptr->berryPick.berriesPickedInRow;
 
-    LoadUserWindowBorderGfx_(windowId, 0x21D, 0xD0);
-    DrawTextBorderOuter(windowId, 0x21D, 0xD);
+    LoadUserWindowBorderGfx_(windowId, 0x21D, BG_PLTT_ID(13));
+    DrawTextBorderOuter(windowId, 0x21D, 13);
     FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
     AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_BerryPickingRecords, GetStringCenterAlignXOffset(FONT_NORMAL, gText_BerryPickingRecords, width * 8), 1, TEXT_SKIP_DRAW, NULL);
     for (i = 0; i < NUM_RECORD_TYPES; i++)
@@ -4429,12 +4429,12 @@ static void ResetBerryAndStatusBarSprites(void)
 static void LoadWindowFrameGfx(u8 frameId)
 {
     LoadBgTiles(BG_INTERFACE, GetWindowFrameTilesPal(frameId)->tiles, 0x120, 1);
-    LoadPalette(GetWindowFrameTilesPal(frameId)->pal, 0xA0, 0x20);
+    LoadPalette(GetWindowFrameTilesPal(frameId)->pal, BG_PLTT_ID(10), PLTT_SIZE_4BPP);
 }
 
 static void LoadUserWindowFrameGfx(void)
 {
-    LoadUserWindowBorderGfx_(0, 0xA, 0xB0);
+    LoadUserWindowBorderGfx_(0, 0xA, BG_PLTT_ID(11));
 }
 
 static void ResetGfxState(void)
@@ -4675,7 +4675,7 @@ static void ShowNames(void)
                 ClearWindowTilemap(sGfx->windowIds[i]);
                 RemoveWindow(sGfx->windowIds[i]);
             }
-            FillBgTilemapBufferRect_Palette0(BG_INTERFACE, 0, 0, 0, 30, 20);
+            FillBgTilemapBufferRect_Palette0(BG_INTERFACE, 0, 0, 0, DISPLAY_TILE_WIDTH, DISPLAY_TILE_HEIGHT);
             CopyBgTilemapBufferToVram(BG_INTERFACE);
             sGfx->finished = TRUE;
         }
@@ -4859,7 +4859,7 @@ static void ShowResults(void)
                 sGfx->state++;
             }
 
-            FillBgTilemapBufferRect_Palette0(BG_INTERFACE, 0, 0, 5, 30, 15);
+            FillBgTilemapBufferRect_Palette0(BG_INTERFACE, 0, 0, 5, DISPLAY_TILE_WIDTH, DISPLAY_TILE_HEIGHT - 5);
             RemoveWindow(sGfx->windowIds[1]);
             sGfx->windowIds[1] = AddWindow(&sWindowTemplate_Prize);
             ClearWindowTilemap(sGfx->windowIds[1]);
@@ -4917,7 +4917,7 @@ static void ShowResults(void)
         ClearWindowTilemap(sGfx->windowIds[1]);
         RemoveWindow(sGfx->windowIds[0]);
         RemoveWindow(sGfx->windowIds[1]);
-        FillBgTilemapBufferRect_Palette0(BG_INTERFACE, 0, 0, 0, 30, 20);
+        FillBgTilemapBufferRect_Palette0(BG_INTERFACE, 0, 0, 0, DISPLAY_TILE_WIDTH, DISPLAY_TILE_HEIGHT);
         CopyBgTilemapBufferToVram(BG_INTERFACE);
         sGfx->finished = TRUE;
         break;
@@ -5012,7 +5012,7 @@ static void Msg_WantToPlayAgain(void)
         ClearWindowTilemap(sGfx->windowIds[WIN_YES_NO]);
         RemoveWindow(sGfx->windowIds[WIN_PLAY_AGAIN]);
         RemoveWindow(sGfx->windowIds[WIN_YES_NO]);
-        FillBgTilemapBufferRect_Palette0(BG_INTERFACE, 0, 0, 0, 30, 20);
+        FillBgTilemapBufferRect_Palette0(BG_INTERFACE, 0, 0, 0, DISPLAY_TILE_WIDTH, DISPLAY_TILE_HEIGHT);
         CopyBgTilemapBufferToVram(BG_INTERFACE);
         sGfx->finished = TRUE;
         break;
@@ -5044,7 +5044,7 @@ static void Msg_SavingDontTurnOff(void)
             sGfx->state++;
         break;
     default:
-        FillBgTilemapBufferRect_Palette0(BG_INTERFACE, 0, 0, 0, 30, 20);
+        FillBgTilemapBufferRect_Palette0(BG_INTERFACE, 0, 0, 0, DISPLAY_TILE_WIDTH, DISPLAY_TILE_HEIGHT);
         CopyBgTilemapBufferToVram(BG_INTERFACE);
         sGfx->finished = TRUE;
         break;
@@ -5083,7 +5083,7 @@ static void EraseMessage(void)
 {
     ClearWindowTilemap(sGfx->windowIds[0]);
     RemoveWindow(sGfx->windowIds[0]);
-    FillBgTilemapBufferRect_Palette0(BG_INTERFACE, 0, 0, 0, 30, 20);
+    FillBgTilemapBufferRect_Palette0(BG_INTERFACE, 0, 0, 0, DISPLAY_TILE_WIDTH, DISPLAY_TILE_HEIGHT);
     CopyBgTilemapBufferToVram(BG_INTERFACE);
     sGfx->finished = TRUE;
 }
@@ -5121,7 +5121,7 @@ static void Msg_SomeoneDroppedOut(void)
         sGfx->playAgainState = PLAY_AGAIN_DROPPED;
         ClearWindowTilemap(sGfx->windowIds[0]);
         RemoveWindow(sGfx->windowIds[0]);
-        FillBgTilemapBufferRect_Palette0(BG_INTERFACE, 0, 0, 0, 30, 20);
+        FillBgTilemapBufferRect_Palette0(BG_INTERFACE, 0, 0, 0, DISPLAY_TILE_WIDTH, DISPLAY_TILE_HEIGHT);
         CopyBgTilemapBufferToVram(BG_INTERFACE);
         sGfx->finished = TRUE;
         break;
@@ -5193,7 +5193,7 @@ static bool32 LoadBgGfx(void)
     switch (sGfx->loadState)
     {
     case 0:
-        LoadPalette(sBg_Pal, 0, sizeof(sBg_Pal));
+        LoadPalette(sBg_Pal, BG_PLTT_ID(0), sizeof(sBg_Pal));
         break;
     case 1:
         ResetTempTileDataBuffers();
@@ -5209,7 +5209,7 @@ static bool32 LoadBgGfx(void)
             return FALSE;
         break;
     case 5:
-        LoadPalette(GetTextWindowPalette(3), 0xD0, 0x20);
+        LoadPalette(GetTextWindowPalette(3), BG_PLTT_ID(13), PLTT_SIZE_4BPP);
         break;
     default:
         sGfx->loadState = 0;

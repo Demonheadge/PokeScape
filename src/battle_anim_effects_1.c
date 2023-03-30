@@ -84,7 +84,7 @@ static void AnimMilkBottle(struct Sprite *);
 static void AnimMilkBottle_Step1(struct Sprite *);
 static void AnimMilkBottle_Step2(struct Sprite *, int, int);
 static void AnimGrantingStars(struct Sprite *);
-static void AnimSparkingStars(struct Sprite *);
+static void AnimSparklingStars(struct Sprite *);
 static void AnimBubbleBurst(struct Sprite *);
 static void AnimBubbleBurst_Step(struct Sprite *);
 static void AnimSleepLetterZ(struct Sprite *);
@@ -1416,7 +1416,7 @@ const struct SpriteTemplate gSparklingStarsSpriteTemplate =
     .anims = gGrantingStarsAnimTable,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = AnimSparkingStars,
+    .callback = AnimSparklingStars,
 };
 
 static const union AnimCmd sAnim_BubbleBurst[] =
@@ -3184,14 +3184,14 @@ static void AnimItemSteal_Step3(struct Sprite *sprite)
 
     sprite->y2 = Sin(sprite->data[0] + 0x80, 30 - sprite->data[1] * 8);
     if (sprite->y2 == 0)
-        PlaySE12WithPanning(SE_M_BUBBLE2, BattleAnimAdjustPanning(63));
+        PlaySE12WithPanning(SE_M_BUBBLE2, BattleAnimAdjustPanning(SOUND_PAN_TARGET));
 
     if (moveAlongLinearPath(sprite))
     {
         sprite->y2 = 0;
         sprite->data[0] = 0;
         sprite->callback = AnimItemSteal_Step2;
-        PlaySE12WithPanning(SE_M_BUBBLE2, BattleAnimAdjustPanning(-64));
+        PlaySE12WithPanning(SE_M_BUBBLE2, BattleAnimAdjustPanning(SOUND_PAN_ATTACKER));
     }
 }
 
@@ -3641,8 +3641,8 @@ void AnimTask_CycleMagicalLeafPal(u8 taskId)
     switch (task->data[0])
     {
     case 0:
-        task->data[8] = IndexOfSpritePaletteTag(ANIM_TAG_LEAF) * 16 + 256;
-        task->data[12] = IndexOfSpritePaletteTag(ANIM_TAG_RAZOR_LEAF) * 16 + 256;
+        task->data[8] = OBJ_PLTT_ID(IndexOfSpritePaletteTag(ANIM_TAG_LEAF));
+        task->data[12] = OBJ_PLTT_ID(IndexOfSpritePaletteTag(ANIM_TAG_RAZOR_LEAF));
         task->data[0]++;
         break;
     case 1:
@@ -4137,7 +4137,7 @@ static void AnimGrantingStars(struct Sprite *sprite)
     sprite->callback = TranslateSpriteLinearFixedPoint;
 }
 
-static void AnimSparkingStars(struct Sprite *sprite)
+static void AnimSparklingStars(struct Sprite *sprite)
 {
     u8 battler;
     if (!gBattleAnimArgs[2])
@@ -4264,7 +4264,7 @@ static void AnimLockOnTarget_Step1(struct Sprite *sprite)
         sprite->callback = StartAnimLinearTranslation;
         StoreSpriteCallbackInData6(sprite, AnimLockOnTarget_Step2);
         sprite->data[5] += 0x100;
-        PlaySE12WithPanning(SE_M_LOCK_ON, BattleAnimAdjustPanning(63));
+        PlaySE12WithPanning(SE_M_LOCK_ON, BattleAnimAdjustPanning(SOUND_PAN_TARGET));
         break;
     }
 
@@ -4349,8 +4349,8 @@ static void AnimLockOnTarget_Step4(struct Sprite *sprite)
         int pal;
         sprite->data[2]++;
         pal = sprite->oam.paletteNum;
-        LoadPalette(&gPlttBufferUnfaded[0x108 + pal * 16], pal * 16 | 0x101, 4);
-        PlaySE12WithPanning(SE_M_LEER, BattleAnimAdjustPanning(63));
+        LoadPalette(&gPlttBufferUnfaded[OBJ_PLTT_ID(pal) + 8], OBJ_PLTT_ID(pal) + 1, PLTT_SIZEOF(2));
+        PlaySE12WithPanning(SE_M_LEER, BattleAnimAdjustPanning(SOUND_PAN_TARGET));
     }
     else if (sprite->data[1] == 0)
     {
@@ -4561,11 +4561,11 @@ static void AnimTipMon_Step(struct Sprite *sprite)
 
 void AnimTask_SkullBashPosition(u8 taskId)
 {
-    u8 a;
+    u8 side;
 
     gTasks[taskId].data[0] = gBattlerSpriteIds[gBattleAnimAttacker];
-    a = GetBattlerSide(gBattleAnimAttacker);
-    gTasks[taskId].data[1] = a;
+    side = GetBattlerSide(gBattleAnimAttacker);
+    gTasks[taskId].data[1] = side;
     gTasks[taskId].data[2] = 0;
     switch (gBattleAnimArgs[0])
     {
@@ -4577,7 +4577,7 @@ void AnimTask_SkullBashPosition(u8 taskId)
         gTasks[taskId].data[3] = 8;
         gTasks[taskId].data[4] = 0;
         gTasks[taskId].data[5] = 3;
-        if (a == 0)
+        if (side == B_SIDE_PLAYER)
             gTasks[taskId].data[5] *= -1;
 
         gTasks[taskId].func = AnimTask_SkullBashPositionSet;
@@ -4586,7 +4586,7 @@ void AnimTask_SkullBashPosition(u8 taskId)
         gTasks[taskId].data[3] = 8;
         gTasks[taskId].data[4] = 0x600;
         gTasks[taskId].data[5] = 0xC0;
-        if (a == 0)
+        if (side == B_SIDE_PLAYER)
         {
             gTasks[taskId].data[4] = -gTasks[taskId].data[4];
             gTasks[taskId].data[5] = -gTasks[taskId].data[5];
@@ -4812,7 +4812,7 @@ static void AnimSharpenSphere(struct Sprite *sprite)
     sprite->data[2] = 0;
     sprite->data[3] = 0;
     sprite->data[4] = 0;
-    sprite->data[5] = BattleAnimAdjustPanning(-64);
+    sprite->data[5] = BattleAnimAdjustPanning(SOUND_PAN_ATTACKER);
     sprite->callback = AnimSharpenSphere_Step;
 }
 
@@ -5173,8 +5173,8 @@ void AnimTask_DoubleTeam(u8 taskId)
     struct Task *task = &gTasks[taskId];
     task->data[0] = GetAnimBattlerSpriteId(ANIM_ATTACKER);
     task->data[1] = AllocSpritePalette(ANIM_TAG_BENT_SPOON);
-    r3 = (task->data[1] * 16) + 0x100;
-    r4 = (gSprites[task->data[0]].oam.paletteNum + 16) << 4;
+    r3 = OBJ_PLTT_ID(task->data[1]);
+    r4 = OBJ_PLTT_ID2(gSprites[task->data[0]].oam.paletteNum);
     for (i = 1; i < 16; i++)
         gPlttBufferUnfaded[r3 + i] = gPlttBufferUnfaded[r4 + i];
 
