@@ -643,7 +643,7 @@ static bool32 PartyCanLearnMoveLevelUp(u16 species, u16 moveId)
 bool32 PartyHasMonLearnsKnowsFieldMove(u16 itemId)
 {
     struct Pokemon *mon;
-    u32 species = 0, i = 0;
+    u32 species, i;
     u16 moveId = ItemIdToBattleMoveId(itemId);
     gSpecialVar_Result = PARTY_SIZE;
     gSpecialVar_0x8004 = 0;
@@ -657,15 +657,25 @@ bool32 PartyHasMonLearnsKnowsFieldMove(u16 itemId)
             break;
 
         if (PartyCanLearnMoveLevelUp(species, moveId)
-            || (CanMonLearnTMTutor(mon, itemId,0) == ALREADY_KNOWS_MOVE)
-            || (CanMonLearnTMTutor(mon, itemId,0) == CAN_LEARN_MOVE)
+                || (CanMonLearnTMTutor(mon, itemId,0) == ALREADY_KNOWS_MOVE)
+                || (CanMonLearnTMTutor(mon, itemId,0) == CAN_LEARN_MOVE)
            )
         {
             gSpecialVar_Result = i;
             gSpecialVar_0x8004 = species;
             return TRUE;
         }
+
+        for (i = 0; i < TUTOR_MOVE_COUNT; i++)
+        {
+            if ((CanMonLearnTMTutor(mon,0,i) == ALREADY_KNOWS_MOVE)
+                    || (CanMonLearnTMTutor(mon,0,i) == CAN_LEARN_MOVE))
+            {
+                gSpecialVar_Result = i;
+                gSpecialVar_0x8004 = species;
+                return TRUE;
+            }
+        }
     }
     return FALSE;
 }
-
