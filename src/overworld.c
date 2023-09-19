@@ -66,7 +66,7 @@
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
-#include "qol_field_moves.h"
+#include "qol_field_moves.h" // qol_field_moves
 
 struct CableClubPlayer
 {
@@ -984,7 +984,6 @@ void SetDefaultFlashLevel(void)
         gSaveBlock1Ptr->flashLevel = 1;
     else
         gSaveBlock1Ptr->flashLevel = gMaxFlashLevel - 1;
-
     TryUseFlash(); // qol_field_moves
 }
 
@@ -1549,7 +1548,7 @@ void CB2_NewGame(void)
     PlayTimeCounter_Start();
     ScriptContext_Init();
     UnlockPlayerFieldControls();
-    //gFieldCallback = ExecuteTruckSequence;
+    gFieldCallback = ExecuteTruckSequence;
     gFieldCallback2 = NULL;
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();
