@@ -5,8 +5,8 @@ EventScript_CutTree::
 	//checkpartymove MOVE_CUT
     checkitem ITEM_CUT_TOOL, 1
     goto_if_eq VAR_RESULT, TRUE, EventScript_UseCutTool
-	goto_if_unset FLAG_BADGE01_GET, EventScript_CheckTreeCantCut
     checkpartylearnknowsfieldmove ITEM_HM01
+	goto_if_unset FLAG_BADGE01_GET, EventScript_CheckTreeCantCut
 @ End qol_field_moves
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CheckTreeCantCut
 	setfieldeffectargument 0, VAR_RESULT
