@@ -20,7 +20,7 @@ MossdeepCity_OnTransition:
 MossdeepCity_EventScript_PokefanF::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_HM_DIVE, MossdeepCity_EventScript_PokefanFMagmaGone
+
 	msgbox MossdeepCity_Text_SpaceCenterReceivedLetter, MSGBOX_DEFAULT
 	release
 	end
@@ -33,7 +33,7 @@ MossdeepCity_EventScript_PokefanFMagmaGone::
 MossdeepCity_EventScript_Sailor::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_HM_DIVE, MossdeepCity_EventScript_SailorMagmaGone
+
 	msgbox MossdeepCity_Text_MossdeepTargetedByMagma, MSGBOX_DEFAULT
 	release
 	end
@@ -82,27 +82,7 @@ MossdeepCity_EventScript_VisitedMossdeep::
 
 MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter::
 	lockall
-	applymovement LOCALID_MAXIE, MossdeepCity_Movement_MaxieGestureToSpaceCenter
-	waitmovement 0
-	applymovement LOCALID_GRUNT_1, MossdeepCity_Movement_GruntFaceSpaceCenter
-	applymovement LOCALID_GRUNT_2, MossdeepCity_Movement_GruntFaceSpaceCenter
-	applymovement LOCALID_GRUNT_3, MossdeepCity_Movement_GruntFaceSpaceCenter
-	applymovement LOCALID_GRUNT_4, MossdeepCity_Movement_GruntFaceSpaceCenter
-	waitmovement 0
-	applymovement LOCALID_MAXIE, MossdeepCity_Movement_MaxieEnterSpaceCenter
-	applymovement LOCALID_GRUNT_1, MossdeepCity_Movement_Grunt1EnterSpaceCenter
-	applymovement LOCALID_GRUNT_2, MossdeepCity_Movement_Grunt2EnterSpaceCenter
-	applymovement LOCALID_GRUNT_3, MossdeepCity_Movement_Grunt3EnterSpaceCenter
-	applymovement LOCALID_GRUNT_4, MossdeepCity_Movement_Grunt4EnterSpaceCenter
-	waitmovement 0
-	removeobject LOCALID_MAXIE
-	removeobject LOCALID_GRUNT_1
-	removeobject LOCALID_GRUNT_2
-	removeobject LOCALID_GRUNT_3
-	removeobject LOCALID_GRUNT_4
-	delay 30
-	setvar VAR_MOSSDEEP_CITY_STATE, 2
-	setflag FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA
+	
 	releaseall
 	end
 

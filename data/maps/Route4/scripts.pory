@@ -1,0 +1,181 @@
+const OBJ_EVENT_ID_DAYCAREWATCHER = 2
+
+mapscripts Route4_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 1) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+        call(POTTERINGTON_FARM_OUTDOOR_STATE)
+        goto (TryMoveDaycareMan)
+    }
+}
+
+script MuggerBattleRoute4{
+    trainerbattle_single(TRAINER_MUGGER_ROUTE4, "Stand and deliver!",format("People seem very afraid of me.\pMaybe it's the way I say hello?"))
+    msgbox(format("People seem very afraid of me.\pMaybe it's the way I say hello?"))
+    release
+}
+
+script ScammerBattleRoute4{
+    trainerbattle_single(TRAINER_SCAMMER_ROUTE4, format("Psst… Want to buy some cabbage?"),format("A no would have been fine…"))
+    msgbox(format("Selling rare black lobster!"))
+    release
+}
+
+script FarmerBattleRoute4{
+    trainerbattle_single(TRAINER_FARMER_ROUTE4, format("I breed all my animals here at Potterington farm."),format("Guess I need to breed stronger monsters!"))
+    msgbox(format("Have you checked out the farm?\pIt's a great place to raise monsters of your own!"))
+    release
+}
+
+script Route4Sign{
+    msgbox("Potterington Farm", MSGBOX_SIGN)
+    release
+}
+
+script TryMoveDaycareMan{
+    if (flag(FLAG_PENDING_DAYCARE_EGG)){
+        setobjectxyperm(1,19,17)
+    }
+    else{
+        setobjectxyperm(1,19,16)
+    }
+}
+
+
+
+
+
+
+
+script ROUTE4_TRIGGER1_DaycareWatcher 
+{
+    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_PLAYER3)
+    waitmovement (0)
+    call(ROUTE4_TRIGGER_DaycareWatcher_PART1)
+    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_PLAYER1)
+    waitmovement (0)
+    call(ROUTE4_TRIGGER_DaycareWatcher_PART2)
+}
+
+script ROUTE4_TRIGGER2_DaycareWatcher 
+{
+    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_PLAYER3)
+    waitmovement (0)
+    call(ROUTE4_TRIGGER_DaycareWatcher_PART1)
+    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_PLAYER2)
+    waitmovement (0)
+    call(ROUTE4_TRIGGER_DaycareWatcher_PART2)
+}
+
+script ROUTE4_TRIGGER_DaycareWatcher_PART1 
+{
+    namebox ("Farmer")
+    msgbox(format("Hiya Adventurer!\lCould you follow me?\pI want to show you something."))
+    closemessage
+    hidenamebox
+    //PLAY MUSIC
+    applymovement(OBJ_EVENT_ID_DAYCAREWATCHER, MOVEMENT_ROUTE4_DaycareWatcher1)
+    return
+}
+
+script ROUTE4_TRIGGER_DaycareWatcher_PART2 
+{
+    delay(8)
+    namebox ("Niece Pott.")
+    msgbox(format("This place is called Potterington Farm!\pWe look after your Monsters and help them grow while you are away.\pWe have also set up special breeding pens for certain monsters.\pYou should and inquire about it if it is something that intrests you!\pAnyway that is all I wanted to show you.\pTake care!"))
+    closemessage
+    hidenamebox
+    applymovement(OBJ_EVENT_ID_DAYCAREWATCHER, MOVEMENT_ROUTE4_DaycareWatcher2)
+    waitmovement (0)
+    //END MUSIC
+    setobjectxyperm(OBJ_EVENT_ID_DAYCAREWATCHER,8,17)
+    setvar(VAR_POKESCAPE_POTTERINGTON_FARM_STATE, 1)
+    release
+    end
+}
+
+
+
+movement MOVEMENT_ROUTE4_DaycareWatcher1
+{
+    walk_up * 6
+    walk_left * 2
+    delay_8
+    face_right
+}   
+
+movement MOVEMENT_ROUTE4_DaycareWatcher2
+{
+    walk_left * 5
+    walk_up * 1
+    walk_left * 2
+    walk_up * 1
+    delay_8
+    face_down
+}   
+
+movement MOVEMENT_ROUTE4_PLAYER1
+{
+    walk_up * 7
+    walk_left * 1
+}   
+
+movement MOVEMENT_ROUTE4_PLAYER2
+{
+    walk_up * 8
+    walk_left * 1
+}   
+
+movement MOVEMENT_ROUTE4_PLAYER3
+{
+    face_up
+}   
+
+script ROUTE4_DaycareWatcher 
+{
+    faceplayer
+    namebox ("Niece Pott.")
+    random(3)
+        switch (var(VAR_RESULT)) {
+            case 0:
+                msgbox(format("Some people have been reporting different coloured monsters hatching from their eggs which are different from the parents."))
+            case 1:
+                msgbox(format("There have been rumours that multiple monsters have been breeding together and creating hybrids.\pBut I've yet to see any of these so called hybrids."))
+            case 2:
+                msgbox(format("I really enjoy just sitting here and seeing what type of Monsters the next adventurer will bring."))
+            case 3:
+                msgbox(format("Over time high achieving adventurers visit our little farm and hand out gifts.\pI wonder what makes them decide to visit our little farm."))
+        }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+script POTTERINGTON_FARM_OUTDOOR_STATE{
+        switch (var(VAR_POKESCAPE_POTTERINGTON_FARM_STATE)){ 
+            case 0: 
+                return
+            case 1: 
+                setobjectxyperm(OBJ_EVENT_ID_DAYCAREWATCHER,8,17)
+                return
+
+
+        }
+}
+
+
+
+
+script ROUTE4_PatchFarmer
+{
+    faceplayer
+    namebox ("Farmer")
+    msgbox(format("Did you know you can plant crops in farming patches?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}

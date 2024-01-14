@@ -1,0 +1,152 @@
+mapscripts Route23_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 3) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+}
+
+
+
+
+script NPC_ROUTE23_BLOCKADE_DWARVES
+{
+	lock
+	faceplayer
+    namebox ("Dwarf")
+	msgbox(format("There has been a landslide on Ice Mountain, we are currently cleaning up.\pCome back later."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+//BATTLE
+script BATTLE_ROUTE23_TRAINER_1
+{
+    trainerbattle_single(TRAINER_ROUTE23_TRAINER_1, format("My cart just broke down, I've sent an adventurer off to fix it.\pWhile I wait lets have a battle!"),format("Thanks for passing the time with me."))
+    msgbox(format("There have been lots of landslides around Ice Mountain lately, I am not sure what has been causing them."))
+	hidenamebox
+    release
+	end
+}
+script BATTLE_ROUTE23_TRAINER_2
+{
+    trainerbattle_single(TRAINER_ROUTE23_TRAINER_2, format("YARRRRR!\pHear my war cry it is battle time!"),format("YAWWOOOOOCH!"))
+    msgbox(format("RRAAAAUUUUGGGHH!\pThat was a good battle!\pRAAAUUUUUGH!"))
+	hidenamebox
+    release
+	end
+}
+script BATTLE_ROUTE23_TRAINER_BARB_COUPLE_1
+{
+    trainerbattle_double(TRAINER_ROUTE23_TRAINER_COUPLE, format("We battle together as a team, do you think you can handle us?"),format("We lost but we will work stronger together to win next time!"),format("We would love to have a double battle with you, but you don't have enough monsters."))
+    namebox ("Sarah")
+    msgbox(format("Teamwork makes the dream work!"))
+	hidenamebox
+    release
+	end
+}
+script BATTLE_ROUTE23_TRAINER_BARB_COUPLE_2
+{
+    trainerbattle_double(TRAINER_ROUTE23_TRAINER_COUPLE, format("You stand no chance against the two of us!"),format("We lost but we will work stronger together to win next time!"),format("We would love to have a double battle with you, but you don't have enough monsters."))
+    namebox ("Trevor")
+    msgbox(format("Working alone is great and all, but working together you can achieve so much more!"))
+	hidenamebox
+    release
+	end
+}
+script BATTLE_ROUTE23_TRAINER_3
+{
+    trainerbattle_single(TRAINER_ROUTE23_TRAINER_3, format("You think you have what it takes to enter our village?\pI think not."),format("That sparkle in your eye!\pYou know the true ways of the barbarians."))
+    msgbox(format("That sparkle in your eye!\pYou know the true ways of the barbarians."))
+	hidenamebox
+    release
+	end
+}
+script BATTLE_ROUTE23_TRAINER_4
+{
+    trainerbattle_single(TRAINER_ROUTE23_TRAINER_4, format("You want to go to Edgeville?\pHa don't make me laugh, you couldn't even hold your own against me!"),format("Edgeville is full of many strong trainers.\pYou have guts if you think you can take them on."))
+    msgbox(format("Edgeville is full of many strong trainers.\pYou have guts if you think you can take them on."))
+	hidenamebox
+    release
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//PHEONIX EGG
+script SCRIPT_PHEONIX_EGG {
+
+	lock
+	msgbox(format("There is an egg, would you like to interact with it?"), MSGBOX_YESNO)
+		if (!var(VAR_RESULT)) {
+			msgbox(format("You decide to leave it alone incase its mumma comes back."))
+			release
+			end
+		}
+	msgbox(format("The egg wiggles as you approach it.\pWhat do you do?"))
+	multichoicedefault (1, 0, MULTI_PHEONIXEGG, 0, 1)
+		switch (var(VAR_RESULT))
+		{
+			case 0:
+				goto(SCRIPT_PHEONIX_EGG_CLAP)
+			case 1:
+				goto(SCRIPT_PHEONIX_EGG_KICK)
+		}	
+}
+
+script SCRIPT_PHEONIX_EGG_CLAP {
+	msgbox(format("You clap at the egg.\p…{PAUSE 16}…{PAUSE 16}…{PAUSE 16}…\pThe egg begins bouncing up and down in what appears to be joy?"))
+	getpartysize
+	compare (VAR_RESULT, PARTY_SIZE)
+	msgbox(format("The egg rolls towards you appearing to want to follow you."))
+	goto_if_eq (SCRIPT_PHEONIX_EGG_NOROOM)
+	setflag (FLAG_RECEIVED_PHOENIX_EGG)
+	removeobject(3)
+	playfanfare (MUS_OBTAIN_ITEM)
+	msgbox(format("Obtained the HAPPY LITTLE EGG!"))
+	waitfanfare
+	giveegg (SPECIES_PHOENLING_REBIRTH_FORM)
+	release
+	end
+}
+
+script SCRIPT_PHEONIX_EGG_KICK {
+	msgbox(format("With all your might you kick the egg like a football!"))
+	playse(SE_WALL_HIT)
+	msgbox(format("…{PAUSE 16}…{PAUSE 16}…{PAUSE 16}…\pWhat appears to be steam seems to be coming from the egg?"))
+	getpartysize
+	compare (VAR_RESULT, PARTY_SIZE)
+	msgbox(format("The egg rolls towards you appearing to want to follow you."))
+	goto_if_eq (SCRIPT_PHEONIX_EGG_NOROOM)
+	setflag (FLAG_RECEIVED_PHOENIX_EGG)
+	removeobject(3)
+	playfanfare (MUS_OBTAIN_ITEM)
+	msgbox(format("Obtained the ANGRY LITTLE EGG!"))
+	waitfanfare
+	giveegg (SPECIES_PHOENLING_REBORN_FORM)
+	release
+	end
+}
+
+script SCRIPT_PHEONIX_EGG_NOROOM {
+	msgbox(format("But sadly you have no room in your party for the egg."))
+	release
+	end
+}
+
+
+
+

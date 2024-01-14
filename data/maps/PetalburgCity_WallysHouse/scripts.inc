@@ -6,7 +6,7 @@ PetalburgCity_WallysHouse_MapScripts::
 	.byte 0
 
 PetalburgCity_WallysHouse_OnWarp:
-	map_script_2 VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_WallysHouse_EventScript_PlayerWallysDadFaceEachOther
+	map_script_2 VAR_POKESCAPE_RIMMINGTON_STATE, 4, PetalburgCity_WallysHouse_EventScript_PlayerWallysDadFaceEachOther
 	.2byte 0
 
 PetalburgCity_WallysHouse_EventScript_PlayerWallysDadFaceEachOther::
@@ -15,16 +15,15 @@ PetalburgCity_WallysHouse_EventScript_PlayerWallysDadFaceEachOther::
 	end
 
 PetalburgCity_WallysHouse_OnFrame:
-	map_script_2 VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_WallysHouse_EventScript_GiveHMSurf
+	map_script_2 VAR_POKESCAPE_RIMMINGTON_STATE, 4, PetalburgCity_WallysHouse_EventScript_GiveHM03Surf
 	.2byte 0
 
-PetalburgCity_WallysHouse_EventScript_GiveHMSurf::
+PetalburgCity_WallysHouse_EventScript_GiveHM03Surf::
 	lockall
 	msgbox PetalburgCity_WallysHouse_Text_PleaseExcuseUs, MSGBOX_DEFAULT
-	giveitem ITEM_HM_SURF
-	setflag FLAG_RECEIVED_HM_SURF
+	giveitem ITEM_HM03
 	msgbox PetalburgCity_WallysHouse_Text_SurfGoAllSortsOfPlaces, MSGBOX_DEFAULT
-	setvar VAR_PETALBURG_CITY_STATE, 5
+	setvar VAR_POKESCAPE_RIMMINGTON_STATE, 5
 	releaseall
 	end
 
@@ -32,14 +31,13 @@ PetalburgCity_WallysHouse_EventScript_WallysDad::
 	lock
 	faceplayer
 	goto_if_set FLAG_DEFEATED_WALLY_VICTORY_ROAD, PetalburgCity_WallysHouse_EventScript_DefeatedWallyInVictoryRoad
-	goto_if_set FLAG_RECEIVED_HM_SURF, PetalburgCity_WallysHouse_EventScript_ReceievedHMSurf
 	goto_if_set FLAG_THANKED_FOR_PLAYING_WITH_WALLY, PetalburgCity_WallysHouse_EventScript_PlayedWithWally
 	msgbox PetalburgCity_WallysHouse_Text_ThanksForPlayingWithWally, MSGBOX_DEFAULT
 	setflag FLAG_THANKED_FOR_PLAYING_WITH_WALLY
 	release
 	end
 
-PetalburgCity_WallysHouse_EventScript_ReceievedHMSurf::
+PetalburgCity_WallysHouse_EventScript_ReceievedHM03Surf::
 	msgbox PetalburgCity_WallysHouse_Text_WallyIsComingHomeSoon, MSGBOX_DEFAULT
 	release
 	end
@@ -57,12 +55,11 @@ PetalburgCity_WallysHouse_EventScript_PlayedWithWally::
 PetalburgCity_WallysHouse_EventScript_WallysMom::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_HM_SURF, PetalburgCity_WallysHouse_EventScript_ReceivedHMSurf
 	msgbox PetalburgCity_WallysHouse_Text_WallyWasReallyHappy, MSGBOX_DEFAULT
 	release
 	end
 
-PetalburgCity_WallysHouse_EventScript_ReceivedHMSurf::
+PetalburgCity_WallysHouse_EventScript_ReceivedHM03Surf::
 	msgbox PetalburgCity_WallysHouse_Text_WallyLeftWithoutTelling, MSGBOX_DEFAULT
 	release
 	end

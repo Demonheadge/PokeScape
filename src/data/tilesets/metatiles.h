@@ -207,3 +207,99 @@ const u16 gMetatileAttributes_MysteryEventsHouse[] = INCBIN_U16("data/tilesets/s
 
 const u16 gMetatiles_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatiles.bin");
 const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatile_attributes.bin");
+
+const u16 gMetatiles_PokeScapeOutdoors[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/metatiles.bin");
+const u16 gMetatileAttributes_PokeScapeOutdoors[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/metatile_attributes.bin");
+	
+const u16 gMetatiles_Lumbridge[] = INCBIN_U16("data/tilesets/secondary/lumbridge/metatiles.bin");	
+const u16 gMetatileAttributes_Lumbridge[] = INCBIN_U16("data/tilesets/secondary/lumbridge/metatile_attributes.bin");
+	
+const u16 gMetatiles_PokeScapeIndoors[] = INCBIN_U16("data/tilesets/primary/PokeScapeIndoors/metatiles.bin");	
+const u16 gMetatileAttributes_PokeScapeIndoors[] = INCBIN_U16("data/tilesets/primary/PokeScapeIndoors/metatile_attributes.bin");
+	
+const u16 gMetatiles_Lumbridge_Swamp[] = INCBIN_U16("data/tilesets/secondary/lumbridge_swamp/metatiles.bin");	
+const u16 gMetatileAttributes_Lumbridge_Swamp[] = INCBIN_U16("data/tilesets/secondary/lumbridge_swamp/metatile_attributes.bin");
+	
+const u16 gMetatiles_Windmill[] = INCBIN_U16("data/tilesets/secondary/windmill/metatiles.bin");
+const u16 gMetatileAttributes_Windmill[] = INCBIN_U16("data/tilesets/secondary/windmill/metatile_attributes.bin");
+	
+const u16 gMetatiles_Rimmington[] = INCBIN_U16("data/tilesets/secondary/rimmington/metatiles.bin");
+const u16 gMetatileAttributes_Rimmington[] = INCBIN_U16("data/tilesets/secondary/rimmington/metatile_attributes.bin");
+	
+const u16 gMetatiles_Bank[] = INCBIN_U16("data/tilesets/secondary/bank/metatiles.bin");
+const u16 gMetatileAttributes_Bank[] = INCBIN_U16("data/tilesets/secondary/bank/metatile_attributes.bin");
+	
+const u16 gMetatiles_Draynor[] = INCBIN_U16("data/tilesets/secondary/draynor/metatiles.bin");
+const u16 gMetatileAttributes_Draynor[] = INCBIN_U16("data/tilesets/secondary/draynor/metatile_attributes.bin");
+	
+const u16 gMetatiles_Falador[] = INCBIN_U16("data/tilesets/secondary/falador/metatiles.bin");
+const u16 gMetatileAttributes_Falador[] = INCBIN_U16("data/tilesets/secondary/falador/metatile_attributes.bin");
+	
+const u16 gMetatiles_Varrock[] = INCBIN_U16("data/tilesets/secondary/varrock/metatiles.bin");
+const u16 gMetatileAttributes_Varrock[] = INCBIN_U16("data/tilesets/secondary/varrock/metatile_attributes.bin");
+	
+const u16 gMetatiles_AlKharid[] = INCBIN_U16("data/tilesets/secondary/alkharid/metatiles.bin");
+const u16 gMetatileAttributes_AlKharid[] = INCBIN_U16("data/tilesets/secondary/alkharid/metatile_attributes.bin");
+	
+const u16 gMetatiles_IndoorTowns1[] = INCBIN_U16("data/tilesets/secondary/indoortowns1/metatiles.bin");
+const u16 gMetatileAttributes_IndoorTowns1[] = INCBIN_U16("data/tilesets/secondary/indoortowns1/metatile_attributes.bin");
+	
+const u16 gMetatiles_PokeScape_Church[] = INCBIN_U16("data/tilesets/secondary/pokescape_church/metatiles.bin");
+const u16 gMetatileAttributes_PokeScape_Church[] = INCBIN_U16("data/tilesets/secondary/pokescape_church/metatile_attributes.bin");
+	
+const u16 gMetatiles_PokeScape_Caves[] = INCBIN_U16("data/tilesets/secondary/pokescape_caves/metatiles.bin");
+const u16 gMetatileAttributes_PokeScape_Caves[] = INCBIN_U16("data/tilesets/secondary/pokescape_caves/metatile_attributes.bin");
+	
+const u16 gMetatiles_Karamja[] = INCBIN_U16("data/tilesets/secondary/karamja/metatiles.bin");
+const u16 gMetatileAttributes_Karamja[] = INCBIN_U16("data/tilesets/secondary/karamja/metatile_attributes.bin");
+	
+const u16 gMetatiles_Wizards_Tower[] = INCBIN_U16("data/tilesets/secondary/wizards_tower/metatiles.bin");
+const u16 gMetatileAttributes_Wizards_Tower[] = INCBIN_U16("data/tilesets/secondary/wizards_tower/metatile_attributes.bin");
+	
+const u16 gMetatiles_DraynorManor[] = INCBIN_U16("data/tilesets/secondary/draynormanor/metatiles.bin");
+const u16 gMetatileAttributes_DraynorManor[] = INCBIN_U16("data/tilesets/secondary/draynormanor/metatile_attributes.bin");
+	
+const u16 gMetatiles_QueenBlackDragon[] = INCBIN_U16("data/tilesets/secondary/queenblackdragon/metatiles.bin");
+const u16 gMetatileAttributes_QueenBlackDragon[] = INCBIN_U16("data/tilesets/secondary/queenblackdragon/metatile_attributes.bin");
+	
+const u16 gMetatiles_Pub[] = INCBIN_U16("data/tilesets/secondary/pub/metatiles.bin");
+const u16 gMetatileAttributes_Pub[] = INCBIN_U16("data/tilesets/secondary/pub/metatile_attributes.bin");
+	
+const u16 gMetatiles_Lumbridge_Swamp_Caves[] = INCBIN_U16("data/tilesets/secondary/lumbridge_swamp_caves/metatiles.bin");
+const u16 gMetatileAttributes_Lumbridge_Swamp_Caves[] = INCBIN_U16("data/tilesets/secondary/lumbridge_swamp_caves/metatile_attributes.bin");
+	
+const u16 gMetatiles_Abyss[] = INCBIN_U16("data/tilesets/secondary/abyss/metatiles.bin");
+const u16 gMetatileAttributes_Abyss[] = INCBIN_U16("data/tilesets/secondary/abyss/metatile_attributes.bin");
+	
+const u16 gMetatiles_GoblinVillage[] = INCBIN_U16("data/tilesets/secondary/goblinvillage/metatiles.bin");
+const u16 gMetatileAttributes_GoblinVillage[] = INCBIN_U16("data/tilesets/secondary/goblinvillage/metatile_attributes.bin");
+	
+const u16 gMetatiles_Wilderness[] = INCBIN_U16("data/tilesets/secondary/wilderness/metatiles.bin");
+const u16 gMetatileAttributes_Wilderness[] = INCBIN_U16("data/tilesets/secondary/wilderness/metatile_attributes.bin");
+	
+const u16 gMetatiles_Barbarian_Village[] = INCBIN_U16("data/tilesets/secondary/barbarian_village/metatiles.bin");
+const u16 gMetatileAttributes_Barbarian_Village[] = INCBIN_U16("data/tilesets/secondary/barbarian_village/metatile_attributes.bin");
+	
+const u16 gMetatiles_PokeScape_Sewers[] = INCBIN_U16("data/tilesets/secondary/pokescape_sewers/metatiles.bin");
+const u16 gMetatileAttributes_PokeScape_Sewers[] = INCBIN_U16("data/tilesets/secondary/pokescape_sewers/metatile_attributes.bin");
+	
+const u16 gMetatiles_Mazcab[] = INCBIN_U16("data/tilesets/secondary/mazcab/metatiles.bin");
+const u16 gMetatileAttributes_Mazcab[] = INCBIN_U16("data/tilesets/secondary/mazcab/metatile_attributes.bin");
+	
+const u16 gMetatiles_Dungeoneering[] = INCBIN_U16("data/tilesets/secondary/dungeoneering/metatiles.bin");
+const u16 gMetatileAttributes_Dungeoneering[] = INCBIN_U16("data/tilesets/secondary/dungeoneering/metatile_attributes.bin");
+	
+const u16 gMetatiles_PokeScape_HAM[] = INCBIN_U16("data/tilesets/secondary/pokescape_ham/metatiles.bin");
+const u16 gMetatileAttributes_PokeScape_HAM[] = INCBIN_U16("data/tilesets/secondary/pokescape_ham/metatile_attributes.bin");
+	
+const u16 gMetatiles_Edgeville[] = INCBIN_U16("data/tilesets/secondary/edgeville/metatiles.bin");
+const u16 gMetatileAttributes_Edgeville[] = INCBIN_U16("data/tilesets/secondary/edgeville/metatile_attributes.bin");
+	
+const u16 gMetatiles_IndoorTowns2[] = INCBIN_U16("data/tilesets/secondary/indoortowns2/metatiles.bin");
+const u16 gMetatileAttributes_IndoorTowns2[] = INCBIN_U16("data/tilesets/secondary/indoortowns2/metatile_attributes.bin");
+	
+const u16 gMetatiles_Yanille[] = INCBIN_U16("data/tilesets/secondary/yanille/metatiles.bin");
+const u16 gMetatileAttributes_Yanille[] = INCBIN_U16("data/tilesets/secondary/yanille/metatile_attributes.bin");
+
+const u16 gMetatiles_Ice_Mountain[] = INCBIN_U16("data/tilesets/secondary/ice_mountain/metatiles.bin");
+const u16 gMetatileAttributes_Ice_Mountain[] = INCBIN_U16("data/tilesets/secondary/ice_mountain/metatile_attributes.bin");

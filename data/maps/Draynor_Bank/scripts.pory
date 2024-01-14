@@ -1,0 +1,97 @@
+mapscripts Draynor_Bank_MapScripts {
+    MAP_SCRIPT_ON_LOAD { //ON LOAD FOR MAP TILES
+    call(Draynor_Bank_OnTransition)
+    }
+	MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 1) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT,
+    }
+} 
+
+
+
+script Draynor_Bank_OnTransition {
+    setrespawn(HEAL_LOCATION_DRAYNOR)
+    return
+}
+
+
+
+script NPC_DraynorBank_Qutiedoll{
+	lock
+    namebox("Qutiedoll")
+	msgbox(format("How do you get behind the bank booth?"))
+    hidenamebox
+    release
+	end
+}
+
+script NPC_DraynorBank_Purepker895{
+	lock
+	faceplayer
+    namebox("Purepker895")
+	msgbox(format("…"))
+    hidenamebox
+    release
+	end
+}
+
+script NPC_DraynorBank_1337sp34kr{
+	lock
+	faceplayer
+    namebox("1337sp34kr")
+	msgbox(format("S331ing N4ts!"))
+    hidenamebox
+    release
+	end
+}
+
+script NPC_DraynorBank_Elfinlocks{
+	lock
+	faceplayer
+    namebox("Elfinlocks")
+	msgbox(format("Buying 2k nats, no noob offers!"))
+    hidenamebox
+    release
+	end
+}
+
+script NPC_DraynorBank_PilloryGuard{
+	lock
+	faceplayer
+    namebox("Pillory Guard")
+	msgbox(format("You would be best to watch yourself.\pOtherwise you're in for da cage!"))
+    hidenamebox
+    release
+	end
+}
+
+//LUMBRIDGE BANK
+script NPC_LumbridgeBank_NPC1{
+	lock
+	faceplayer
+    //namebox("Pillory Guard")
+	msgbox(format("The Lumbridge Bank used to be on top of the Lumbridge Castle, but it was difficult to get there.\pDuke Horacio however started a Gym there and moved the Bank to a more convenient location."))
+    hidenamebox
+    release
+	end
+}
+
+script NPC_LumbridgeBank_NPC2{
+	lock
+	faceplayer
+    //namebox("Pillory Guard")
+	msgbox(format("Remember if your Monsters ever get poisoned you can feed them a Chocolate Sunday to make them feel better!\pWhat?\lDo not worry.\pChocolate is not poisonous to Monsters."))
+    hidenamebox
+    release
+	end
+}
+
+script NPC_LumbridgeBank_NPC3{
+	lock
+	faceplayer
+    //namebox("Pillory Guard")
+	msgbox(format("These bankers are great, you can heal your Monsters and store your items."))
+    hidenamebox
+    release
+	end
+}

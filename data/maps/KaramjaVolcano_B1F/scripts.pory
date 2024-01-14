@@ -1,0 +1,525 @@
+mapscripts KaramjaVolcano_B1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 15) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+    MAP_SCRIPT_ON_LOAD {
+        goto(KaramjaVolcano_STATE1)
+        }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_POKESCAPE_KARAMJAVOLCANO_STATE, 0: EVENT_KaramjaVolcano_HAM_EnterVolcano
+    ]
+}
+
+
+
+
+
+
+script KaramjaVolcano_STATE1{
+        switch (var(VAR_POKESCAPE_KARAMJAVOLCANO_STATE)){ 
+            case 0: 
+            case 1: 
+                playbgm (MUS_PS_ENCOUNTER_HAM, 1)
+                release
+                end
+            case 2: 
+                setflag(FLAG_TEMP_1)
+                removeobject(6)
+                playbgm (MUS_PS_ENCOUNTER_HAM, 1)
+                release
+                end
+            case 3: 
+                setflag(FLAG_TEMP_1)
+                setflag(FLAG_TEMP_2)
+                removeobject(1)
+                removeobject(2)
+                removeobject(3)
+                removeobject(4)
+                removeobject(5)
+                removeobject(6)
+                release
+                end
+            }
+    }
+
+
+
+
+script EVENT_KaramjaVolcano_HAM_EnterVolcano
+{
+    lock
+    playse(SE_PIN)
+    applymovement(6, HAM_KaramjaVolcano_1)
+    waitmovement(0)
+    applymovement(6, HAM_KaramjaVolcano_2)
+    waitmovement(0)
+    namebox ("H.A.M Grunt")
+    msgbox(format("You again!\pYou ruined my plans at Wizards Tower!\pWhat are you doing here?!\pI must inform the leader at once!"))
+    hidenamebox
+    closemessage
+    applymovement(6, HAM_KaramjaVolcano_3)
+    waitmovement(0)
+    setvar(VAR_POKESCAPE_KARAMJAVOLCANO_STATE, 2)
+    setflag(FLAG_TEMP_1)
+    removeobject(6)
+    release
+    end
+}
+
+
+movement HAM_KaramjaVolcano_1{
+	emote_exclamation_mark
+    face_player
+    delay_16
+}
+
+movement HAM_KaramjaVolcano_2{
+	walk_down * 2
+}
+
+movement HAM_KaramjaVolcano_3{
+	walk_up * 5
+    //walk_left * 4
+    //walk_up * 5
+}
+
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script NPC_KaramjaVolcano_HAM_1
+{
+    lock
+    namebox ("H.A.M Grunt")
+    msgbox(format("Stay out of our way you disgusting lava creatures!"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_KaramjaVolcano_HAM_2
+{
+    lock
+    namebox ("H.A.M Grunt")
+    msgbox(format("Soon you lava creatures will be no more!"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_KaramjaVolcano_Tzhaar_1
+{
+    lock
+    namebox ("Tzhaar")
+    msgbox(format("LEAVE THE VOLCANO!"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_KaramjaVolcano_Tzhaar_2
+{
+    lock
+    namebox ("Tzhaar")
+    msgbox(format("GET OUT!\nGET OUT!"))
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+
+
+script BATTLE_KaramjaVolcano_HAM_1
+{
+    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_1, format("We plan on making this volcano erupt and take out every monsters by doing so!"),format("Once we erupt this volcano it should wipe out all of the monsters on karamja!"))
+    namebox ("H.A.M Grunt")
+    msgbox(format("Once we erupt this volcano it should wipe out all of the monsters on karamja!"))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_KaramjaVolcano_HAM_2
+{
+    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_2, format("Ahhh!\nA Lava monster!"),format("Those lava rock monsters are scary."))
+    namebox ("H.A.M Grunt")
+    msgbox(format("Those lava rock monsters are scary."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_KaramjaVolcano_HAM_3
+{
+    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_3, format("Our goal is to rid the world of all monsters!\pYou cannot stop us!"),format("I lost!\nBut you cannot stop us!"))
+    namebox ("H.A.M Grunt")
+    msgbox(format("Even though you may have defeated me, you stand no chance against our leader!"))
+    hidenamebox
+    release
+    end
+}
+
+
+script BATTLE_KaramjaVolcano_HAM_4
+{
+    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_4, format("Dont try to stop us!"),format("Ok you can try, but it wont work."))
+    namebox ("H.A.M Grunt")
+    msgbox(format("Ok you can try, but it wont work."))
+    hidenamebox
+    release
+    end
+}
+
+
+script BATTLE_KaramjaVolcano_HAM_5
+{
+    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_5, format("The world will be rid of monsters, you cant stop this movement!"),format("We will achieve our goals!"))
+    namebox ("H.A.M Grunt")
+    msgbox(format("We will rid the world of all monsters, you cant stop us!"))
+    hidenamebox
+    release
+    end
+}
+
+
+script BATTLE_KaramjaVolcano_HAM_6
+{
+    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_6, format("Nothing will stop us!\pThis volcano is about to become a monster killer!"),format("Wait… Won't it kill us too?"))
+    namebox ("H.A.M Grunt")
+    msgbox(format("Nope!\nI don't like this plan anymore!\pI'm out of here!"))
+    hidenamebox
+    closemessage
+    fadescreen(FADE_TO_BLACK)
+    setflag(FLAG_TEMP_1)
+    removeobject(7)
+    fadescreen(FADE_FROM_BLACK)
+    release
+    end
+}
+
+
+
+
+script BATTLE_KaramjaVolcano_Skeleton_1
+{
+    trainerbattle_single(TRAINER_KARAMJAVOLCANO_SKELETON_1, format("Bonejour!"),format("Bone voyage!"))
+    namebox ("Skeleton")
+    msgbox(format("I need to work on my puns but I've got no body to test them on."))
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+
+//trainerbattle_no_intro(TRAINER, msgbox(format("DEFEATED")))
+
+//trainerbattle_single(TRAINER, format("INTRO"),format("DEFEATED"))
+    
+//trainerbattle_double(TRAINER, format("INTRO"),format("DEFEATED"),format("NOT ENOUGH MONSTERS"))
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script NPC_VARRESETER1
+{
+	lock
+	faceplayer
+    playmoncry(SPECIES_MAREEP, 0)
+    setvar(VAR_POKESCAPE_KARAMJAVOLCANO_STATE, 0)
+	msgbox(format("Karamaja VAR set to 0"))
+    waitmoncry
+    waitmessage
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script NPC_ORCHY_MusicPlayer
+{
+    lock
+    faceplayer
+    namebox ("Orchy")
+    msgbox(format("Hey!\pIt is me Runescape Reorchestrated, you can call me Orchy for short.\pI am here today to help you test some music."))
+    msgbox(format("vsBATTLE, YES. ENCOUNTER, NO."), MSGBOX_YESNO)
+		if (var(VAR_RESULT)){
+            hidenamebox
+			goto(PokeScapeSongList_VSBattles)
+			release
+			end
+		}
+		else {
+            hidenamebox
+            goto(PokeScapeSongList_ENCOUNTERS)
+			release
+			end
+		}
+}
+
+
+script PokeScapeSongList_VSBattles{
+        switch (var(VAR_POKESCAPE_MUSIC_STATE)){ 
+            case 0: 
+                namebox ("0")
+                playbgm (MUS_PS_VS_ELITE4, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 1)
+                msgbox(format("NOW PLAYING: VS ELITE4"))
+                hidenamebox
+                release
+                end
+            case 1: 
+                namebox ("1")
+                playbgm (MUS_PS_VS_WILD_F2P, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 2)
+                msgbox(format("NOW PLAYING: VS WILD F2P"))
+                hidenamebox
+                release
+                end
+            case 2: 
+                namebox ("2")
+                playbgm (MUS_PS_VS_WILD_P2P, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 3)
+                msgbox(format("NOW PLAYING: VS WILD P2P"))
+                hidenamebox
+                release
+                end
+            case 3: 
+                namebox ("3")
+                playbgm (MUS_PS_VS_TRAINER_F2P, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 4)
+                msgbox(format("NOW PLAYING: VS TRAINER F2P"))
+                hidenamebox
+                release
+                end
+            case 4: 
+                namebox ("4")
+                playbgm (MUS_PS_VS_TRAINER_P2P, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 5)
+                msgbox(format("NOW PLAYING: VS TRAINER P2P"))
+                hidenamebox
+                release
+                end
+            case 5: 
+                namebox ("5")
+                playbgm (MUS_PS_VS_KNIGHTS, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 6)
+                msgbox(format("NOW PLAYING: VS KNIGHTS"))
+                hidenamebox
+                release
+                end
+            case 6: 
+                namebox ("6")
+                playbgm (MUS_PS_VS_ORCHY, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 7)
+                msgbox(format("NOW PLAYING: VS ORCHY"))
+                hidenamebox
+                release
+                end
+            case 7: 
+                namebox ("7")
+                playbgm (MUS_PS_VS_HAM, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 8)
+                msgbox(format("NOW PLAYING: VS HAM"))
+                hidenamebox
+                release
+                end
+            case 8: 
+                namebox ("8")
+                playbgm (MUS_PS_VS_LEGENDARY, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 9)
+                msgbox(format("NOW PLAYING: VS LEGENDARY"))
+                hidenamebox
+                release
+                end
+            case 9: 
+                namebox ("9")
+                playbgm (MUS_PS_VS_POKESCAPERS, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 10)
+                msgbox(format("NOW PLAYING: VS POKESCAPERS"))
+                hidenamebox
+                release
+                end
+            case 10: 
+                namebox ("10")
+                playbgm (MUS_PS_VS_CHAOS_ELEMENTAL, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 11)
+                msgbox(format("NOW PLAYING: VS CHAOS ELE"))
+                hidenamebox
+                release
+                end
+            case 11: 
+                namebox ("11")
+                playbgm (MUS_PS_TZHAAR, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 12)
+                msgbox(format("NOW PLAYING: TERRIBLE CAVERNS"))
+                hidenamebox
+                release
+                end
+            case 12: 
+                namebox ("12")
+                playbgm (MUS_PS_RIMMINGTON, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 0)
+                msgbox(format("NOW PLAYING: TERRIBLE CAVERNS"))
+                hidenamebox
+                release
+                end
+            
+            }
+}
+
+
+
+
+
+script PokeScapeSongList_ENCOUNTERS{
+        switch (var(VAR_POKESCAPE_MUSIC_STATE)){ 
+            case 0: 
+                namebox ("0")
+                playbgm (MUS_PS_ENCOUNTER_HAM, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 1)
+                msgbox(format("NOW PLAYING: ENCOUNTER HAM"))
+                hidenamebox
+                release
+                end
+            case 1: 
+                namebox ("1")
+                playbgm (MUS_PS_ENCOUNTER_GYM, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 2)
+                msgbox(format("NOW PLAYING: ENCOUNTER GYM"))
+                hidenamebox
+                release
+                end
+            case 2: 
+                namebox ("2")
+                playbgm (MUS_PS_ENCOUNTER_LEGENDARY, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 3)
+                msgbox(format("NOW PLAYING: ENCOUNTER LEGENDARY"))
+                hidenamebox
+                release
+                end
+            case 3: 
+                namebox ("3")
+                playbgm (MUS_PS_ENCOUNTER_KNIGHTS, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 4)
+                msgbox(format("NOW PLAYING: ENCOUNTER KNIGHTS"))
+                hidenamebox
+                release
+                end
+            case 4: 
+                namebox ("4")
+                playbgm (MUS_PS_ENCOUNTER_PKER, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 5)
+                msgbox(format("NOW PLAYING: ENCOUNTER PKER"))
+                hidenamebox
+                release
+                end
+            case 5: 
+                namebox ("5")
+                playbgm (MUS_PS_ENCOUNTER_MITHRILMAN, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 6)
+                msgbox(format("NOW PLAYING: ENCOUNTER MITHRILMAN"))
+                hidenamebox
+                release
+                end
+            case 6: 
+                namebox ("6")
+                playbgm (MUS_PS_ENCOUNTER_NOOB, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 7)
+                msgbox(format("NOW PLAYING: ENCOUNTER NOOB"))
+                hidenamebox
+                release
+                end
+            case 7: 
+                namebox ("7")
+                playbgm (MUS_PS_ENCOUNTER_SKILLER, 1)
+                setvar(VAR_POKESCAPE_MUSIC_STATE, 0)
+                msgbox(format("NOW PLAYING: ENCOUNTER SKILLER"))
+                hidenamebox
+                release
+                end
+            
+            }
+}

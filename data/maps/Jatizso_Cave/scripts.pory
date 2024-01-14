@@ -1,0 +1,204 @@
+const ELIZABETH_ID = 1
+const SNAILY_ID = 2
+
+
+
+mapscripts Jatizso_Cave_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 11) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+        call(JATIZSO_CAVE_STATE)
+    }
+}
+
+
+script JATIZSO_CAVE_STATE {
+
+    if (flag(FLAG_EVENT_TEAM_JATIZSO)) 
+    {
+        if ( (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 25) || (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 30) || (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 35) || (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 40) )
+        {
+            addobject(SNAILY_ID)
+            setobjectxy(SNAILY_ID, 2, 3)
+            setobjectxyperm(SNAILY_ID, 2, 3)
+            setobjectmovementtype(SNAILY_ID, MOVEMENT_TYPE_FACE_UP)
+            addobject(ELIZABETH_ID)
+            setobjectxy(ELIZABETH_ID, 2, 2)
+            setobjectxyperm(ELIZABETH_ID, 2, 2)
+            setobjectmovementtype(ELIZABETH_ID, MOVEMENT_TYPE_FACE_DOWN)
+            
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+script JATIZSO_NPC_Tazim
+{
+    if ( (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 30) || (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 35) || (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 40) )
+        {
+            lock
+            faceplayer
+            namebox ("Elizabeth")
+            msgbox(format("Thank you for the Tea."))
+            closemessage
+            hidenamebox
+        }
+    if ((var(VAR_POKESCAPE_RAC_QUEST_STATE) == 20) && (flag(FLAG_EVENT_TEAM_JATIZSO) && ((var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 25))) )
+    {
+        msgbox(format("Elizabeth seems too distracted."))
+        closemessage
+        end
+    }
+    lock
+    faceplayer
+    namebox ("Elizabeth")
+    msgbox(format("Stay back!\pI want no part of this, my adventuring days are over!\pJust leave me and Snaily alone!"))
+    closemessage
+    hidenamebox
+    checkitem(ITEM_TEA, 1)
+        if (var(VAR_RESULT)){
+            namebox ("Elizabeth")
+            msgbox(format("…{PAUSE 15}…{PAUSE 15}…\pSniff, Sniff…\pWhat is that smell.\pGIVE IT TO ME!"))
+            hidenamebox
+            closemessage
+            msgbox(format("Elizabeth snatches the Tea from your backpack."))
+            closemessage
+            namebox ("Elizabeth")
+            msgbox(format("This!\pThis PLEASES ME!\pHere Snaily try some!"))
+            hidenamebox
+            closemessage
+            fadescreen(FADE_TO_BLACK)
+            setvar(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS, 25)
+            addobject(SNAILY_ID)
+            setobjectxy(SNAILY_ID, 2, 3)
+            setobjectxyperm(SNAILY_ID, 2, 3)
+            setobjectmovementtype(SNAILY_ID, MOVEMENT_TYPE_FACE_UP)
+            addobject(ELIZABETH_ID)
+            setobjectxy(ELIZABETH_ID, 2, 2)
+            setobjectxyperm(ELIZABETH_ID, 2, 2)
+            setobjectmovementtype(ELIZABETH_ID, MOVEMENT_TYPE_FACE_DOWN)
+            fadescreen(FADE_FROM_BLACK)
+            release
+            end
+        }
+    release
+    end
+}
+script JATIZSO_NPC_Snail
+{
+    if ( (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 30) || (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 35) || (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 40) )
+        {
+            lock
+            faceplayer
+            namebox ("Snaily")
+            playmoncry(SPECIES_SHELLDER, 0)
+            msgbox(format("SLURRPY SLURP!!"))
+            waitmoncry
+            hidenamebox
+            msgbox(format("It seems to be thankful for the drink."))
+            closemessage
+            hidenamebox
+            release
+            end
+        }
+    if ((var(VAR_POKESCAPE_RAC_QUEST_STATE) == 20) && (flag(FLAG_EVENT_TEAM_JATIZSO) && ((var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 25))) )
+    {
+        msgbox(format("Snaily seems too distracted."))
+        closemessage
+        end
+    }
+	lock
+    faceplayer
+    namebox ("Snaily")
+    playmoncry(SPECIES_SHELLDER, 0)
+	msgbox(format("SLURRP!"))
+    waitmoncry
+    hidenamebox
+    msgbox(format("It seems to be very defensive of Elizabeth."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script NPC_STAN_FROGEEL_BURGER
+{
+	lock
+    faceplayer
+    namebox ("Hyper Stan")
+	msgbox(format("Fresh Frogeel burgers!\pGet your fresh Frogeel burgers!\pHere take one, it is on the house.\nDemonheadge did it."))
+    hidenamebox
+    closemessage
+    giveitem(ITEM_FROGEEL_BURGER, 1)
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//QUEST LIST
+//[MAIN QUEST]   -  (Team Jatizso)  The Art Fight
+//  (ATTACKS:)      JAXYYS, ENKO, ……
+
+//[SIDEQUEST]   -   (Team Jatizso)  Picture Perfect
+//  (ATTACKS:)      ELEJ
+
+//[SIDEQUEST]   -   (Team Jatizso)  The Tasteful painting
+//  (ATTACKS:)      MOD BLKWITCH, MOD DRAGON, MOD FOX, NICKI, CICI, PENNY, TAZIM, NYCHANNEL
+
+//[SIDEQUEST]   -   (Team Jatizso)  Rabbit Hauntings      
+//  (ATTACKS:)      PENNY, AIGIS, SCIZORTONGUE
+//Hunt 4 Rabbits for Penny. Aigis and Scizortongue try to stop you.
+
+//[SIDEQUEST]   -   (Team Jatizso)  Yakfiltration
+//  (ATTACKS:)      Dewydds, Wisp, Moggie, mod jerv
+//DESCPTION: Gain the favour of Neitiznot by being a yak around town. Dewydds orginal plan was to turn everyone into yaks. 
+//Instead the he turns the player into one. Wisp helps gather energy for the spell. Moggies gives egg for spell.
+//Mod Jerv can talk to yaks. He knows you are not a yak.
+
+
+
+
+//[MAIN QUEST]   -  (Team Neitiznot)    The Art Fight 
+//  (ATTACKS:)      PREZLEEK, SIR THEODORE, ……
+
+
+

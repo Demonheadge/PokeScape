@@ -1,0 +1,502 @@
+{
+  "id": "MAP_ABYSSAL_REALM_1",
+  "name": "Abyssal_Realm_1",
+  "layout": "LAYOUT_ABYSSAL_REALM_1",
+  "music": "MUS_PS_VICTORY_ROAD",
+  "region_map_section": "MAPSEC_ABYSS",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NOOB",
+      "x": 3,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NOOB",
+      "x": 26,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ABYSS_PORTAL",
+      "x": 14,
+      "y": 17,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WIZARD_DARK",
+      "x": 14,
+      "y": 19,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SAFARI_ZONE_WIZARD",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NOOB",
+      "x": 9,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RSMVER_M",
+      "x": 34,
+      "y": 32,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_ORCHY_MusicPlayer",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BIRCHS_BAG",
+      "x": 33,
+      "y": 34,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PokeScapeSongList_ENCOUNTERS",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BIRCHS_BAG",
+      "x": 33,
+      "y": 33,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PokeScapeSongList_VSBattles",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ABYSSAL_DEMON",
+      "x": 22,
+      "y": 27,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 4,
+      "movement_range_y": 4,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GNOME_CHILD",
+      "x": 39,
+      "y": 31,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GnomeBoi_Kevin",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DEMONHEADGE",
+      "x": 40,
+      "y": 35,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HYPER_STAN",
+      "x": 37,
+      "y": 35,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LUKIENLIGHT",
+      "x": 39,
+      "y": 47,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BOT_DRAGON",
+      "x": 32,
+      "y": 47,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VerdanturfTown_FriendshipRatersHouse_EventScript_FriendshipRater",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "x": 37,
+      "y": 47,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SAFARI_ZONE_WIZARD",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 20,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_FALADOR",
+      "dest_warp_id": 14
+    },
+    {
+      "x": 43,
+      "y": 49,
+      "elevation": 0,
+      "dest_map": "MAP_RELLEKKA",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 14,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_TUTORIAL_ISLAND",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 22,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_TZHAAR_1F",
+      "dest_warp_id": 3
+    },
+    {
+      "x": 41,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_LUMBRIDGE_CASTLE_BASEMENT",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 7,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_YANILLE",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 12,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_MUSA_POINT",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 18,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_MODERATOR_LOBBY",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 36,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_ABYSSAL_REALM_1",
+      "dest_warp_id": 9
+    },
+    {
+      "x": 10,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_ABYSSAL_REALM_1",
+      "dest_warp_id": 8
+    },
+    {
+      "x": 8,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_MAZCAB_OTOT",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 14,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_ABYSSAL_REALM_1",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 27,
+      "y": 49,
+      "elevation": 0,
+      "dest_map": "MAP_AL_KHARID",
+      "dest_warp_id": 8
+    },
+    {
+      "x": 47,
+      "y": 31,
+      "elevation": 0,
+      "dest_map": "MAP_ABYSSAL_REALM_1",
+      "dest_warp_id": 14
+    },
+    {
+      "x": 35,
+      "y": 45,
+      "elevation": 0,
+      "dest_map": "MAP_ABYSSAL_REALM_1",
+      "dest_warp_id": 13
+    },
+    {
+      "x": 25,
+      "y": 49,
+      "elevation": 0,
+      "dest_map": "MAP_BARROWS",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 52,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_STARTER_HOUSE_FALADOR",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 53,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_STARTER_HOUSE_VARROCK",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 54,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_STARTER_HOUSE_YANILLE",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 45,
+      "y": 49,
+      "elevation": 0,
+      "dest_map": "MAP_JATIZSO",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 47,
+      "y": 49,
+      "elevation": 0,
+      "dest_map": "MAP_NEITIZNOT",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 55,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_STARTER_HOUSE_RELLEKKA",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 56,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_STARTER_HOUSE_AL_KHARID",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 48,
+      "y": 58,
+      "elevation": 0,
+      "dest_map": "MAP_CORPOREAL_BEAST_LAIR",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 46,
+      "y": 58,
+      "elevation": 0,
+      "dest_map": "MAP_LUMBRIDGE_FOREST",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 50,
+      "y": 58,
+      "elevation": 0,
+      "dest_map": "MAP_LUMBRIDGE_SWAMP_CAVES_JUNA",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 60,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_LUMBRIDGE",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 61,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_VARROCK",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 62,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_FALADOR",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 63,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_BARBARIAN_VILLAGE",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 64,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_EDGEVILLE",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 65,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_MUSA_POINT",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 66,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_TZHAAR_1F",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 67,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_GOBLIN_VILLAGE",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 68,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_AL_KHARID",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 44,
+      "y": 58,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS_1",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 58,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_GWD_1",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 59,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_DUNGEONEERING_LOBBY",
+      "dest_warp_id": 0
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 57,
+      "y": 44,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Randomise_Dungeon_Seed"
+    },
+    {
+      "type": "sign",
+      "x": 60,
+      "y": 42,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Check_Dungeon_Seed"
+    }
+  ]
+}

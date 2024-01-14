@@ -1,0 +1,281 @@
+
+
+mapscripts Dungeoneering_Lobby_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        setflag(FLAG_TEMP_12) //- Prevents Normal Decorations spawning in Puzzle / Boss / Starter Rooms.
+        call(Randomise_Dungeon)
+    }
+}
+
+
+
+
+
+
+
+
+script DUNGEONEERING_CHECK_VAR {
+    buffernumberstring(STR_VAR_1, VAR_DUNGEONEERING_STARTER_ROOM) 
+    msgbox(format("The Starting room is Room: {STR_VAR_1}."))
+    buffernumberstring(STR_VAR_1, VAR_DUNGEONEERING_RANDOM_PUZZLE_1) 
+    msgbox(format("The Puzzle Room 1 is: {STR_VAR_1}."))
+    buffernumberstring(STR_VAR_1, VAR_DUNGEONEERING_RANDOM_PUZZLE_2) 
+    msgbox(format("The Puzzle Room 2 is: {STR_VAR_1}."))
+    buffernumberstring(STR_VAR_1, VAR_DUNGEONEERING_RANDOM_PUZZLE_3) 
+    msgbox(format("The Puzzle Room 3 is: {STR_VAR_1}."))
+    buffernumberstring(STR_VAR_1, VAR_DUNGEONEERING_RANDOM_PUZZLE_4) 
+    msgbox(format("The Puzzle Room 4 is: {STR_VAR_1}."))
+    buffernumberstring(STR_VAR_1, VAR_DUNGEONEERING_RANDOM_PUZZLE_5) 
+    msgbox(format("The Puzzle Room 5 is: {STR_VAR_1}."))
+    buffernumberstring(STR_VAR_1, VAR_DUNGEONEERING_RANDOM_PUZZLE_6) 
+    msgbox(format("The Puzzle Room 6 is: {STR_VAR_1}."))
+    buffernumberstring(STR_VAR_1, VAR_DUNGEONEERING_RANDOM_PUZZLE_7) 
+    msgbox(format("The Puzzle Room 7 is: {STR_VAR_1}."))
+    buffernumberstring(STR_VAR_1, VAR_DUNGEONEERING_RANDOM_PUZZLE_8) 
+    msgbox(format("The Puzzle Room 8 is: {STR_VAR_1}."))
+    closemessage
+    release
+    end
+}
+
+
+
+
+script Randomise_Puzzles {
+    setvar(VAR_DUNGEONEERING_AMOUNT_OF_PUZZLES, 6) //amount of puzzles
+
+    random(VAR_DUNGEONEERING_AMOUNT_OF_PUZZLES) 
+    copyvar(VAR_DUNGEONEERING_RANDOM_PUZZLE_1, VAR_RESULT)
+    random(VAR_DUNGEONEERING_AMOUNT_OF_PUZZLES) 
+    copyvar(VAR_DUNGEONEERING_RANDOM_PUZZLE_2, VAR_RESULT)
+    random(VAR_DUNGEONEERING_AMOUNT_OF_PUZZLES) 
+    copyvar(VAR_DUNGEONEERING_RANDOM_PUZZLE_3, VAR_RESULT)
+    random(VAR_DUNGEONEERING_AMOUNT_OF_PUZZLES) 
+    copyvar(VAR_DUNGEONEERING_RANDOM_PUZZLE_4, VAR_RESULT)
+    random(VAR_DUNGEONEERING_AMOUNT_OF_PUZZLES) 
+    copyvar(VAR_DUNGEONEERING_RANDOM_PUZZLE_5, VAR_RESULT)
+    random(VAR_DUNGEONEERING_AMOUNT_OF_PUZZLES) 
+    copyvar(VAR_DUNGEONEERING_RANDOM_PUZZLE_6, VAR_RESULT)
+    random(VAR_DUNGEONEERING_AMOUNT_OF_PUZZLES) 
+    copyvar(VAR_DUNGEONEERING_RANDOM_PUZZLE_7, VAR_RESULT)
+    random(VAR_DUNGEONEERING_AMOUNT_OF_PUZZLES) //+ 10
+    copyvar(VAR_DUNGEONEERING_RANDOM_PUZZLE_8, VAR_RESULT) //Add 10 to get to the harder puzzles.
+    return
+}
+
+
+
+script Start_Dungeoneering {
+    call(RandomiseSeed_ForDoors)
+    call(Randomise_Dungeon)
+    call(Randomise_Puzzles)
+    if (var(VAR_DUNGEONEERING_STARTER_ROOM) == 1) {
+        //setdynamicwarp(MAP_DUNGEONEERING_1, 0)
+        warp(MAP_DUNGEONEERING_1, 0, 0, 0)
+        waitstate
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 2) {
+        //setdynamicwarp(MAP_DUNGEONEERING_1, 0)
+        warp(MAP_DUNGEONEERING_2, 0, 0, 0)
+        waitstate
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 3) {
+        //setdynamicwarp(MAP_DUNGEONEERING_1, 0)
+        warp(MAP_DUNGEONEERING_3, 0, 0, 0)
+        waitstate
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 4) {
+        //setdynamicwarp(MAP_DUNGEONEERING_1, 0)
+        warp(MAP_DUNGEONEERING_4, 0, 0, 0)
+        waitstate
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 5) {
+        //setdynamicwarp(MAP_DUNGEONEERING_1, 0)
+        warp(MAP_DUNGEONEERING_5, 0, 0, 0)
+        waitstate
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 6) {
+        //setdynamicwarp(MAP_DUNGEONEERING_1, 0)
+        warp(MAP_DUNGEONEERING_6, 0, 0, 0)
+        waitstate
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 7) {
+        //setdynamicwarp(MAP_DUNGEONEERING_1, 0)
+        warp(MAP_DUNGEONEERING_7, 0, 0, 0)
+        waitstate
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 8) {
+        //setdynamicwarp(MAP_DUNGEONEERING_8, 0)
+        warp(MAP_DUNGEONEERING_8, 0, 0, 0)
+        waitstate
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 9) {
+        //setdynamicwarp(MAP_DUNGEONEERING_1, 0)
+        warp(MAP_DUNGEONEERING_9, 0, 0, 0)
+        waitstate
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 10) {
+        //setdynamicwarp(MAP_DUNGEONEERING_1, 0)
+        warp(MAP_DUNGEONEERING_10, 0, 0, 0)
+        waitstate
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 11) {
+        //setdynamicwarp(MAP_DUNGEONEERING_1, 0)
+        warp(MAP_DUNGEONEERING_11, 0, 0, 0)
+        waitstate
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 12) {
+        //setdynamicwarp(MAP_DUNGEONEERING_1, 0)
+        warp(MAP_DUNGEONEERING_12, 0, 0, 0)
+        waitstate
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 13) {
+        //setdynamicwarp(MAP_DUNGEONEERING_1, 0)
+        warp(MAP_DUNGEONEERING_13, 0, 0, 0)
+        waitstate
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 14) {
+        //setdynamicwarp(MAP_DUNGEONEERING_1, 0)
+        warp(MAP_DUNGEONEERING_14, 0, 0, 0)
+        waitstate
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 15) {
+        //setdynamicwarp(MAP_DUNGEONEERING_1, 0)
+        warp(MAP_DUNGEONEERING_15, 0, 0, 0)
+        waitstate
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 16) {
+        //setdynamicwarp(MAP_DUNGEONEERING_1, 0)
+        warp(MAP_DUNGEONEERING_16, 0, 0, 0)
+        waitstate
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//LAYOUTS
+
+script DungeonLayout_ROOM_PATH_1 {
+    //STARTER ROOM 1
+    setvar(VAR_DUNGEONEERING_STARTER_ROOM, 1)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_1, DungeonLayout_StartingRoom)
+    call(DungeonLayout_BLOCKED_RIGHT_ROOM_1)
+    call(DungeonLayout_BLOCKED_LEFT_ROOM_1)
+    call(DungeonLayout_BLOCKED_DOWN_ROOM_1)
+    call(DungeonLayout_BLOCKED_RIGHT_ROOM_4)
+    call(DungeonLayout_BLOCKED_RIGHT_ROOM_1)
+    call(DungeonLayout_BLOCKED_UP_ROOM_8)
+    setvar(VAR_DUNGEONEERING_BOSS_ROOM, 12)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_12, DungeonLayout_BossRoom)
+    return
+}
+
+script DungeonLayout_ROOM_PATH_2 {
+    //STARTER ROOM 1
+    setvar(VAR_DUNGEONEERING_STARTER_ROOM, 1)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_1, DungeonLayout_StartingRoom)
+    call(DungeonLayout_BLOCKED_DOWN_ROOM_1)
+    call(DungeonLayout_BLOCKED_DOWN_ROOM_2)
+    call(DungeonLayout_BLOCKED_UP_ROOM_3)
+    call(DungeonLayout_BLOCKED_RIGHT_ROOM_4)
+    setvar(VAR_DUNGEONEERING_BOSS_ROOM, 12)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_12, DungeonLayout_BossRoom)
+    return
+}
+
+script DungeonLayout_ROOM_PATH_3 {
+    //STARTER ROOM 1
+    setvar(VAR_DUNGEONEERING_STARTER_ROOM, 8)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_8, DungeonLayout_StartingRoom)
+    call(DungeonLayout_BLOCKED_RIGHT_ROOM_12)
+    call(DungeonLayout_BLOCKED_LEFT_ROOM_8)
+    call(DungeonLayout_BLOCKED_RIGHT_ROOM_5)
+    call(DungeonLayout_BLOCKED_LEFT_ROOM_14)
+    call(DungeonLayout_BLOCKED_DOWN_ROOM_1)
+    call(DungeonLayout_BLOCKED_LEFT_ROOM_1)
+    call(DungeonLayout_BLOCKED_DOWN_ROOM_2)
+    setvar(VAR_DUNGEONEERING_BOSS_ROOM, 12)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_12, DungeonLayout_BossRoom)
+    return
+}
+script DungeonLayout_ROOM_PATH_4 {
+    //STARTER ROOM 1
+    setvar(VAR_DUNGEONEERING_STARTER_ROOM, 6)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_6, DungeonLayout_StartingRoom)
+    call(DungeonLayout_BLOCKED_RIGHT_ROOM_2)
+    call(DungeonLayout_BLOCKED_RIGHT_ROOM_1)
+    call(DungeonLayout_BLOCKED_UP_ROOM_2)
+    setvar(VAR_DUNGEONEERING_BOSS_ROOM, 2)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_2, DungeonLayout_BossRoom)
+    return
+}
+
+script DungeonLayout_ROOM_PATH_5 {
+    //STARTER ROOM 1
+    setvar(VAR_DUNGEONEERING_STARTER_ROOM, 4)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_4, DungeonLayout_StartingRoom)
+
+    call(DungeonLayout_BLOCKED_RIGHT_ROOM_4)
+    call(DungeonLayout_BLOCKED_DOWN_ROOM_1)
+    call(DungeonLayout_BLOCKED_DOWN_ROOM_12)
+    call(DungeonLayout_BLOCKED_UP_ROOM_8)
+    call(DungeonLayout_BLOCKED_UP_ROOM_15)
+    call(DungeonLayout_BLOCKED_UP_ROOM_14)
+    call(DungeonLayout_BLOCKED_DOWN_ROOM_3)
+    call(DungeonLayout_BLOCKED_UP_ROOM_3)
+    call(DungeonLayout_BLOCKED_LEFT_ROOM_5)
+
+
+
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_1, DungeonLayout_PuzzleRoom_1)
+
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_2, DungeonLayout_PuzzleRoom_2)
+
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_3, DungeonLayout_PuzzleRoom_3)
+    //FLAG_DG_PUZZLE_ROOM_1 - Check if complete.
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_5, DungeonLayout_PuzzleRoom_5)
+    //FLAG_DG_PUZZLE_ROOM_2
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_6, DungeonLayout_PuzzleRoom_6)
+    //FLAG_DG_PUZZLE_ROOM_3
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_7, DungeonLayout_PuzzleRoom_7)
+    //FLAG_DG_PUZZLE_ROOM_4
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_8, DungeonLayout_PuzzleRoom_8)
+    
+
+    setvar(VAR_DUNGEONEERING_BOSS_ROOM, 11)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_11, DungeonLayout_BossRoom)
+    return
+}

@@ -141,3 +141,7 @@ const u32 gBerryPalette_Jaboca[] = INCBIN_U32("graphics/berries/jaboca.gbapal.lz
 const u32 gBerryPalette_Rowap[] = INCBIN_U32("graphics/berries/rowap.gbapal.lz");
 const u32 gBerryPalette_Kee[] = INCBIN_U32("graphics/berries/kee.gbapal.lz");
 const u32 gBerryPalette_Maranga[] = INCBIN_U32("graphics/berries/maranga.gbapal.lz");
+
+//pokescape crops
+const u32 gBerryPic_Cabbage[] = INCBIN_U32("graphics/berries/cabbage.4bpp.lz");
+const u32 gBerryPalette_Cabbage[] = INCBIN_U32("graphics/berries/cabbage.gbapal.lz");

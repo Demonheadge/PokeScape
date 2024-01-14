@@ -1,0 +1,658 @@
+mapscripts Port_Sarim_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+    goto(PORTSARIM_STATE)
+    
+    }
+    
+    
+} 
+
+
+
+
+
+
+
+
+
+
+script PORTSARIM_STATE{
+	switch (var(VAR_POKESCAPE_FALADOR_STATE)){ 
+        //HAM EVENT PORT SARIM
+		case 0: 
+            end
+
+        //HAM EVENT PORT SARIM - ENDS - FALADOR BLOCKADE LEAVES (Add switch to Route script)
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            removeobject(21)
+            removeobject(22)
+            removeobject(23)
+            removeobject(24)
+            removeobject(25)
+            removeobject(26)
+            removeobject(27)
+            setflag(FLAG_EVENT_PORTSARIM_HAM_BOAT)
+            return
+    }
+}
+
+
+
+
+//HAM EVENT ----------------------------------------------------------------------------------------------
+script PORTSARIM_HAM_EVENT_TRIGGER1 {
+    call(PORTSARIM_HAM_EVENT_PART1)
+    applymovement(OBJ_EVENT_ID_CAMERA, PORTSARIM_HAM_CAMERA_1)
+    call(PORTSARIM_HAM_EVENT_PART2)
+    applymovement(OBJ_EVENT_ID_CAMERA, PORTSARIM_HAM_CAMERA_2)
+    waitmovement(0)
+    special(RemoveCameraObject) 
+    delay(20)
+    release
+    end
+}
+
+script PORTSARIM_HAM_EVENT_TRIGGER2 {
+    call(PORTSARIM_HAM_EVENT_PART1)
+    applymovement(OBJ_EVENT_ID_CAMERA, PORTSARIM_HAM_CAMERA_3)
+    call(PORTSARIM_HAM_EVENT_PART2)
+    applymovement(OBJ_EVENT_ID_CAMERA, PORTSARIM_HAM_CAMERA_4)
+    waitmovement(0)
+    special(RemoveCameraObject) 
+    delay(20)
+    release
+    end
+}
+
+script PORTSARIM_HAM_EVENT_PART1 {
+    lock
+    //---MOVE CAMERA OVER TO HAM---
+    delay(60)
+    special(SpawnCameraObject) 
+    return
+}
+
+script PORTSARIM_HAM_EVENT_PART2 {   
+    delay(40)
+    playbgm (MUS_PS_ENCOUNTER_HAM, 1)
+    waitmovement(0)
+    special(RemoveCameraObject) 
+    delay(60)
+    //------------------------------
+    PlaySE(SE_PIN)
+    applymovement(25, PORTSARIM_HAM_LEADER_1)
+    namebox ("H.A.M Leader")
+    msgbox(format("It's about time you got here rookie!\pWhat took you so long!\pDo you have the package?!"))
+    waitmovement(0)
+    waitmessage 
+    hidenamebox
+    applymovement(21, PORTSARIM_HAM_MEMBER_2)
+    namebox ("H.A.M Member")
+    msgbox(format("Sorry Leader!\pI lost the goods…\p Some pesky adventurers-"))
+    waitmovement(0)
+    waitmessage 
+    hidenamebox
+    applymovement(25, PORTSARIM_HAM_LEADER_3)
+    namebox ("H.A.M Leader")
+    msgbox(format("YOU WHAT?!\p I DON'T WANT TO HEAR IT!\pWe are already behind schedule so we will have to talk about this later!"))
+    waitmovement(0)
+    waitmessage 
+    hidenamebox
+    namebox ("H.A.M Member")
+    msgbox(format("…"))
+    waitmessage 
+    hidenamebox
+    namebox ("H.A.M Leader")
+    msgbox(format("Alright grunts!\pWe are moving out to Karamja for our next mission!\pEveryone on the ship!"))
+    waitmessage 
+    hidenamebox
+    closemessage
+    applymovement(25, PORTSARIM_HAM_LEADER_4)
+    waitmovement(0)
+    fadescreen(FADE_TO_BLACK)
+    removeobject(21)
+    removeobject(22)
+    removeobject(23)
+    removeobject(24)
+    removeobject(25)
+    removeobject(26)
+    setflag(FLAG_EVENT_PORTSARIM_HAM_BOAT)
+    setvar(VAR_POKESCAPE_FALADOR_STATE, 1)
+    fadescreen(FADE_FROM_BLACK)
+    applymovement(27, PORTSARIM_HAM_BOAT)
+    waitmovement(0)
+    removeobject(27)
+    //---MOVE CAMERA BACK FROM HAM---
+    delay(10)
+    savebgm(MUS_DUMMY)
+    fadedefaultbgm
+    special(SpawnCameraObject) 
+    return
+}
+
+
+
+movement PORTSARIM_HAM_LEADER_1{
+	emote_exclamation_mark
+    delay_8
+    walk_in_place_left
+    walk_in_place_left
+}
+movement PORTSARIM_HAM_MEMBER_2{
+    jump_in_place_right
+    jump_in_place_right
+    delay_4
+	walk_in_place_right
+}
+movement PORTSARIM_HAM_LEADER_3{
+	jump_in_place_left
+}
+movement PORTSARIM_HAM_LEADER_4{
+	face_down
+}
+movement PORTSARIM_HAM_BOAT{
+	walk_slow_right
+    walk_slow_right
+    walk_slow_right
+    walk_slow_right
+    walk_slow_right
+    walk_slow_right
+    walk_slow_right
+    walk_slow_right
+    walk_slow_right
+}
+
+movement PORTSARIM_HAM_CAMERA_1{
+    walk_slow_right
+    walk_slow_diag_southeast
+    walk_slow_right
+    walk_slow_right
+    walk_slow_right
+    walk_slow_right
+    walk_slow_right
+	step_end
+}
+movement PORTSARIM_HAM_CAMERA_2{
+    walk_slow_left
+    walk_slow_left
+    walk_slow_left
+    walk_slow_left
+    walk_slow_left
+    walk_slow_diag_northwest
+    walk_slow_left
+	step_end
+}
+movement PORTSARIM_HAM_CAMERA_3{
+    walk_slow_diag_southeast
+    walk_slow_diag_southeast
+    walk_slow_diag_southeast
+    walk_slow_right
+    walk_slow_right
+	step_end
+}
+movement PORTSARIM_HAM_CAMERA_4{
+    walk_slow_diag_northwest
+    walk_slow_diag_northwest
+    walk_slow_diag_northwest
+    walk_slow_left
+    walk_slow_left
+	step_end
+}
+
+script NPC_FLAGRESETER
+{
+	lock
+	faceplayer
+    playmoncry(SPECIES_MAREEP, 0)
+    clearflag(FLAG_EVENT_PORTSARIM_HAM_BOAT)
+	msgbox(format("Your flag is now reset!"))
+    waitmoncry
+    waitmessage
+	release
+	end
+}
+
+//------HAM EVENT END-----------------------------------------------------------------------------
+
+
+
+
+
+
+
+script NPC_SEAGULL
+{
+	lock
+	faceplayer
+    playmoncry(SPECIES_WINGULL, 0)
+	msgbox(format("Gull!"))
+    waitmoncry
+	release
+	end
+}
+
+
+script NPC_PORTSARIM_BETTY
+{
+	lock
+	faceplayer
+    namebox ("Betty")
+	msgbox(format("Welcome to Betty's Magic Emporium!\pHow may I help you today?"))//If you are here to make a potion for a witch, I believe you know your way out.\pBye!"))
+    waitmessage
+    hidenamebox
+    pokemart (STORE_RuneStore_2)
+    msgbox("Thank you, come again!")
+	release
+	end
+}
+
+script NPC_PORTSARIM_BRIAN
+{
+	lock
+	faceplayer
+    namebox ("Brian")
+	msgbox(format("Hi there, welcome to Brian's Battleaxe Bazaar.\pIf you see Jimmy the Chisel please tell him to get back here.\pI cannot open the shop without him."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_CAPTIAN_TOBIAS
+{
+	lock
+	faceplayer
+    namebox ("Tobias")
+    if (flag(FLAG_BADGE02_GET) == false) 
+	{
+        msgbox(format("Sorry but our boat has popped a leak.\pIt will be some time before it is repaired.\pYou should go visit the Party Room in Falador or something while you are waiting."))
+        hidenamebox
+        release
+        end
+    }
+    if(var(VAR_POKESCAPE_KARAMJAVOLCANO_STATE)==0) {
+        msgbox(format("Is your name PLAYER?\pI have received word that you are participating in the MvM Championships, is this correct?\pUsually our services cost 30gp but we have a deal with the Championship League that allows all participants to travel for free!\pSo…{PAUSE 15}…  Ahem!"))
+    }
+    msgbox(format("Hi, there would you like to board the boat to Musa Point, Karamja?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)==1)
+    {
+        msgbox(format("All aboard!\lWe set sail for Karamja!"))
+        waitmessage
+        hidenamebox
+        warp (MAP_MUSA_POINT,2,0,0)
+    }
+    else
+    {
+        msgbox(format("Suit yourself."))
+    }
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_CREWMAN_1
+{
+	lock
+	faceplayer
+    //namebox ("NAME")
+	msgbox(format("These ships go to just about any port.\pThere are a lot of exotic monsters out there so make sure to use our services."))
+    waitmessage
+    //hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_CREWMAN_2
+{
+	lock
+	faceplayer
+    //namebox ("NAME")
+	msgbox(format("If you go to Musa Point, say hi to Stephanie for me.\pI love her tattoos."))
+    waitmessage
+    //hidenamebox
+	release
+	end
+}
+
+
+script NPC_PORTSARIM_GRUM
+{
+	lock
+	faceplayer
+    namebox ("Grum")
+	msgbox(format("Do you want some of these gems?\pThey are truely outrageous.\pProbably out of your price range."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_KLARENSE
+{
+	lock
+	faceplayer
+    namebox ("Klarense")
+	msgbox(format("This ship will set sail to only the most dangerous locations.\pBut the time is not right just yet."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_LORRIS
+{
+	lock
+	faceplayer
+    namebox ("Lorris")
+	msgbox(format("People always say Thresnor and I look the same, but we are completely different."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_NPC_1
+{
+	lock
+	faceplayer
+    //namebox ("NAME")
+	msgbox(format("Sailing will never happen, get over it."))
+    waitmessage
+    //hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_MONK_1
+{
+	lock
+	faceplayer
+    namebox ("Monk")
+	msgbox(format("I cannot believe they nicked out ship…"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_MONK_2
+{
+	lock
+	faceplayer
+    namebox ("Monk")
+	msgbox(format("Sorry, but you cannot enter Entrana while you have those despicable creatures with you."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_NPC_2
+{
+	lock
+	faceplayer
+    //namebox ("NAME")
+	msgbox(format("Did you know that water type moves are twice as strong in the rain, but fire type moves damage are halved?"))
+    waitmessage
+    //hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_NPC_3
+{
+	lock
+	faceplayer
+    //namebox ("NAME")
+	msgbox(format("I have that shanty stuck in my head."))
+    waitmessage
+    //hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_NPC_4
+{
+	lock
+	faceplayer
+    //namebox ("NAME")
+	msgbox(format("Here in Port Sarim we mostly just see seagulls.\pI hope you like them."))
+    waitmessage
+    //hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_NPC_5
+{
+	lock
+	faceplayer
+    //namebox ("NAME")
+	msgbox(format("I wish I had my own port, maybe a player owned port?"))
+    waitmessage
+    //hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_SIGNPOST
+{
+	lock
+	faceplayer
+    //namebox ("NAME")
+	msgbox(format("Welcome to Port Sarim.\p…\pThere is something scribbled on the sign.\pSea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2.\pSea Shanty 2."))
+    waitmessage
+    //hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_REDBEARD_FRANK
+{
+	lock
+	faceplayer
+    namebox ("REDBEARD FRANK")
+	msgbox(format("Do you have any Karamjan rum?\pNo?\pShame."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_NPC_6
+{
+	lock
+	faceplayer
+    //namebox ("NAME")
+    msgbox(format("Sea Shanty 2 is the best song right?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+        {
+            msgbox(format("Damn right!"))
+        }
+        else 
+        {
+            msgbox(format("WOT!?\p…\p…\pREEEEEEEE!"))
+        }
+    waitmessage
+    //hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_VOID_SQUIRE
+{
+    if (flag(FLAG_BADGE02_GET)) 
+    {
+        goto(PEST_CONTROL_ENTER)
+    }
+	faceplayer
+    namebox ("Void Squire")
+    msgbox(format("Sorry, to set sail to the outpost you will need at least 3 badges.\pPlease come back when you have them."))
+	//msgbox(format("I am very sorry, but the Void Knights told me not to speak to strangers."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_THE_FACE
+{
+	lock
+	faceplayer
+    namebox ("The Face")
+	msgbox(format("Welcome to the Rat Pits.\pWe do not have any fights going on at this moment.\pBut if you want to raise a strong cat, remember that there are multiple ways to evolve a kitten."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_THRESNOR
+{
+	lock
+	faceplayer
+    namebox ("Thresnor")
+	msgbox(format("People always say Lorris and I look the same, but we are completely different."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_TRADER_STAN
+{
+	lock
+	faceplayer
+    namebox ("Trader Stan")
+	msgbox(format("Sorry, this ship is not ready to set sail anytime soon.\pMy cousin still needs to hand over some supplies."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_NPC_7
+{
+	lock
+	faceplayer
+    //namebox ("CUPHOLDER")
+	msgbox(format("Do you happen to know what to do with a drunken sailor?\pAsking for a friend."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_WYDIN
+{
+	lock
+	faceplayer
+    namebox ("Wydin")
+	msgbox(format("If you are here with a mithril arrow, soft clay and a chisel, I suggest you leave before I call the guards."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_GENERALSTORE_CUSTOMER_1
+{
+	lock
+	faceplayer
+    namebox ("Customer")
+	msgbox(format("It is good to see that Wydin finally hired an assistant to run the store.\pHe has been struggling on his own for awhile now."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_GENERALSTORE_CUSTOMER_2
+{
+	lock
+	faceplayer
+    namebox ("Customer")
+	msgbox(format("Me like this store!\pMr.W allows me to buy bread to feed me family."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+script NPC_PORTSARIM_GERRANT
+{
+	lock
+	faceplayer
+    namebox ("Gerrant")
+    checkitem(ITEM_BIG_NET, 1)
+        if (!var(VAR_RESULT)){
+            msgbox(format("THAT IS IT!\pTHAT SHINE IN YOUR EYES!\pYou understand the beauty of fishing don't you?!\pHere take this!"))
+            closemessage
+            hidenamebox
+            giveitem(ITEM_BIG_NET)
+            namebox ("Gerrant")
+            msgbox(format("This fishing net will allow you to catch those big suckers!\pDon't worry I won't charge you anything for it!\pNow off with you!\pMuch fishing awaits in your future!"))
+            closemessage
+            hidenamebox
+            release
+            end
+        }
+        else {
+            msgbox(format("Being in the fish selling business has made me gain weight over the years.\pOh did you wish to buy something?"))
+            closemessage
+            hidenamebox
+            release
+            end
+        }
+    release
+    end
+}
+
+
+script NPC_PORTSARIM_FISHING_CUSTOMER
+{
+	lock
+	faceplayer
+    namebox ("Customer")
+	msgbox(format("Psst… {PAUSE 15}Yeah, you.\pI will let you in on a little secret…\p…{PAUSE 15}…{PAUSE 15}\n…{PAUSE 15}…{PAUSE 15}\pThey say that if you stay in the same location and catch a whole heap of fish that it is very common that you might find a super rare coloured fish!\p…{PAUSE 15}…{PAUSE 15}\nThis stays between us."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+script NPC_PORTSARIM_BANK_NPC
+{
+	lock
+	faceplayer
+    //namebox ("CUSTOMER")
+	msgbox(format("Ye will never believe me lad.\pI raised six seagulls.\nSix!\pThats more than three!\pEvery one of them wee flying rats evolved to a different beastie.\pWhat in tarnation is this sorcery lad?"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_PORTSARIM_BATTLEAXE_LOREBOOK
+{
+	lock
+	msgbox(format("It seems to be a Fan-fic about a man who fell in love with his battleaxe.\pYou feel the sudden urge to leave."))
+    waitmessage
+	release
+	end
+}
+
+
+
+
+
+
+

@@ -1,0 +1,88 @@
+mapscripts Tutorial_Island_MapScripts{}
+
+script Tutorial_Jogger{
+	lock
+	faceplayer
+	msgbox("cupholder")
+	release
+}
+
+script Tutorial_Chicken{
+	lock
+	faceplayer
+	msgbox("BAWK!")
+	release
+
+}
+
+script Tutorial_Ironman {
+	lock
+	faceplayer
+	msgbox("Cupholders are EZ scape.")
+	release
+}
+
+script Tutorial_Noob1 {
+	lock
+	faceplayer
+	msgbox("I Picked Guthling as my starter!")
+	release
+}
+
+script Tutorial_Noob2 {
+	lock
+	faceplayer
+	msgbox("I Picked Zamling as my starter!")
+	release
+}
+
+script Tutorial_Sign{
+	msgbox("Thanks for playing!")
+	release
+}
+
+
+
+script Tutorial_PondGirl{
+	lock
+	faceplayer
+	checkitem (ITEM_SMALL_NET, 1)
+	if (!var(VAR_RESULT))
+	{
+		msgbox(format("I dropped my net in the pond! Can you help me get it back?"))
+		applymovement(OBJ_EVENT_ID_PLAYER, Tutorial_FacePond)
+		msgbox("You dig around in the pond for a moment.\p…")
+		delay (15)
+		msgbox(format("You feel an item at the bottom of the pond"))
+		giveitem (ITEM_SMALL_NET, 1)
+		msgbox(format("Thats not my net… mine was a lot bigger.  Oh well you can keep it."))
+		release
+	}
+	else
+	{
+		msgbox("Thanks for trying to help me.")
+		release
+	}
+}
+
+script Tutorial_PondGirlCheck{
+	checkitem (ITEM_SMALL_NET, 1)
+	if (!var(VAR_RESULT)) {
+		lock
+		msgbox("That girl looks like she needs help.")
+		applymovement(OBJ_EVENT_ID_PLAYER,Tutorial_ReturnToPond)
+		waitmovement(0)
+		release
+	}
+	else{
+		release
+	}
+}
+
+movement Tutorial_FacePond{
+	face_down
+}
+
+movement Tutorial_ReturnToPond{
+	walk_right *3
+}

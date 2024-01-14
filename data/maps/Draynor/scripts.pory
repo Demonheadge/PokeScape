@@ -1,0 +1,402 @@
+const OBJ_EVENT_ID_DRAYNORGUARD = 19
+
+mapscripts Draynor_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        call(WizardsTower_Draynor_STATE)
+        call(DRAYNOR_GUARD_STATE)
+        end
+        }
+}
+
+
+
+script WizardsTower_Draynor_STATE{
+        switch (var(VAR_POKESCAPE_WIZARDS_TOWER_STATE)){ 
+            case 0: 
+            case 1: 
+            case 2: 
+			case 3: 
+                //HIDE NPCS
+                setflag(FLAG_TEMP_1)
+				setflag(FLAG_TEMP_2)
+                removeobject(21)
+				removeobject(24)
+                release
+                return
+            case 4:
+                //SHOW NPCs EVENT
+                clearflag(FLAG_TEMP_1)
+				clearflag(FLAG_TEMP_2)
+                addobject(21)
+				addobject(24)
+                release
+                return
+            case 5:
+			case 6: 
+            case 7: 
+            case 8: 
+            case 9: 
+                //HIDE NPCs
+                setflag(FLAG_TEMP_1)
+				setflag(FLAG_TEMP_2)
+                removeobject(21)
+				removeobject(24)
+                release
+                return
+            }
+    }
+
+script DRAYNOR_GUARD_STATE{
+        switch (var(VAR_POKESCAPE_DRAYNOR_GUARD_STATE)){ 
+            case 0: 
+                //HIDE NPCS
+                setflag(FLAG_TEMP_3)
+				removeobject(OBJ_EVENT_ID_DRAYNORGUARD)
+                release
+                return
+            case 1: 
+                //SHOW NPCs EVENT
+                clearflag(FLAG_TEMP_3)
+				addobject(OBJ_EVENT_ID_DRAYNORGUARD)
+                setobjectxyperm(OBJ_EVENT_ID_DRAYNORGUARD,17,31)
+                release
+                return
+            }
+    }
+
+
+
+
+
+
+
+script HAM_EVENT_Draynor{
+    lockall
+    applymovement(21, HAM_Movement6_1)
+    namebox("Ariane")
+    msgbox(format("I'm not sure which way he went…\pMaybe the market…"))
+	waitmovement(0)
+    hidenamebox
+    closemessage
+	applymovement(21, HAM_Movement6_2)
+    waitmovement(0)
+	removeobject(21)
+	setflag(FLAG_TEMP_1)
+	setvar(VAR_POKESCAPE_WIZARDS_TOWER_STATE, 5)
+	release
+	end
+}
+
+movement HAM_Movement6_1{
+    face_up
+	delay_16
+	face_left
+	delay_16
+	face_right
+	delay_16
+	face_left
+	delay_16
+}
+
+movement HAM_Movement6_2{
+    walk_left * 11
+}
+
+script Draynor_Ariane{
+	lock
+    namebox("Ariane")
+	msgbox(format("He doesn't seem to be here…\pI hope he didn't leave town…"))
+    hidenamebox
+    release
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+script NPC_PIG
+{
+	lock
+	faceplayer
+    playmoncry(SPECIES_PIG, 0)
+	msgbox(format("OINK!"))
+    waitmoncry
+	release
+	end
+}
+
+
+script Draynor_Diango {
+	lock
+	faceplayer
+    namebox("Diango")
+    random(3)
+        switch (var(VAR_RESULT)) {
+            case 0: 
+                msgbox(format("Howdy!\pHave you seen my holiday items?\pLook at this toy horsey!\pHi-ho Silver, and away!"))
+            case 1:
+                msgbox(format("Howdy!\pLook at this cool spinning plate I have!\pOh dear, I dropped it."))
+            case 2:
+                msgbox(format("Howdy!\pDo you like my rubber chicken?\pWhack!"))
+        }
+    hidenamebox
+    release
+	end
+}
+
+script Draynor_Miss_Schism{
+	lock
+	faceplayer
+    namebox("Miss Schism")
+	msgbox(format("Hello, I hear a lot of gossip and rumours.\pFor example did you know if you use flavoured milk on a Cow it may evolve into another Cow.\pFurthermore, if that Cow learns a move that spins around really fast it can evolve even further!"))
+    hidenamebox
+    release
+	end
+}
+
+script Draynor_Oliva{
+	lock
+	faceplayer
+    namebox("Oliva")
+	msgbox(format("The other day a stranger dressed in blue and yellow gave me a kitten."))
+    hidenamebox
+    release
+	end
+}
+
+script Draynor_Martin{
+	lock
+	faceplayer
+    namebox("Martin")
+	msgbox(format("Sorry, I'm a bit too busy to talk.\pSomeone nicked my cabbage."))
+    hidenamebox
+    release
+	end
+}
+
+script Draynor_Guard1{
+    namebox("Guard")
+	msgbox(format("Hey!\nGet your hands off there!"))
+    hidenamebox
+    release
+	end
+}
+
+script Draynor_Coolmom227{
+    namebox("Cool Mom227")
+	msgbox(format("…"))
+    hidenamebox
+    release
+	end
+}
+
+script Draynor_Guard2{
+	lock
+	faceplayer
+    namebox("Guard")
+	msgbox(format("Don't cause any trouble."))
+    hidenamebox
+    release
+	end
+}
+
+script Draynor_Guard3{
+	lock
+	faceplayer
+    namebox("Guard")
+	msgbox(format("What do you want now?\pCan you not see I am working?"))
+    hidenamebox
+    release
+	end
+}
+
+script Draynor_FORTUNATO{
+    faceplayer
+    namebox("Fortunato")
+	msgbox(format("Can I interest you in something to drink?"))
+    hidenamebox
+    release
+	end
+}
+
+script Draynor_AGGIE{
+    lock
+    faceplayer
+    namebox("Aggie")
+
+    if (!flag(FLAG_RECEIVED_TM63)) { //
+        msgbox(format("Would you be interested in any dyes?"))
+        msgbox(format("Oh you are one of those adventuers that fight with Monsters.\pHere I might have something to help with that."))
+        giveitem(ITEM_TM63, 1) // Trick or treat
+        msgbox(format("Who ever is hit by that move will be turned into a Ghost-type."))
+        setflag(FLAG_RECEIVED_TM63)
+        hidenamebox
+        release
+        end
+    }
+    
+    msgbox(format("I usually help adventurers dye their items but for you hopefully that move will come in handy instead."))
+    hidenamebox
+    release
+	end
+}
+
+
+
+
+script Draynor_TREE{
+    if (var(VAR_POKESCAPE_DRAYNOR_GUARD_STATE)==0){
+    lock
+    namebox("???")
+	msgbox(format("Ooooch!\pOof!\pOuch!"))
+    hidenamebox
+    addobject(OBJ_EVENT_ID_DRAYNORGUARD)
+    playse(SE_LEDGE)
+    applymovement(OBJ_EVENT_ID_DRAYNORGUARD, Movement_DraynorGuardTree_1)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_DraynorGuardTree_2)
+    waitmovement(0)
+    namebox("Guard")
+    msgbox(format("Ow!\pThat really hurt!\pHey what is the big idea!\pI was trying to catch a red coloured Ravenling, but you scared it away!\p…\pSigh…\pOh well, I guess I should better get back to work…"))
+    hidenamebox
+    closemessage
+    applymovement(OBJ_EVENT_ID_DRAYNORGUARD, Movement_DraynorGuardTree_3)
+    waitmovement(0)
+    setvar(VAR_POKESCAPE_DRAYNOR_GUARD_STATE, 1)
+    release
+	end
+    }
+    else
+    {
+        end
+    }
+}
+
+movement Movement_DraynorGuardTree_1
+{
+	jump_special_down
+}   
+
+movement Movement_DraynorGuardTree_2
+{
+    lock_facing_direction
+	walk_fast_down
+    unlock_facing_direction
+}  
+
+movement Movement_DraynorGuardTree_3
+{
+	walk_right *2
+    walk_up * 2
+    face_down
+}   
+
+
+
+
+
+script NPC_Draynor_Woman_1{
+	lock
+	faceplayer
+    namebox("Quester")
+	msgbox(format("If you follow this road south, it will lead you to the Wizards' Tower.\pMake sure to be all healed up before trekking there."))
+    hidenamebox
+    release
+	end
+}
+
+script NPC_Draynor_Noob_WillowTree{
+	lock
+	faceplayer
+    namebox("Noob")
+	msgbox(format("The dark wizards told me they were thrown out of the Wizards' Tower for being Zamorakians and now I cannot play by the willow trees."))
+    hidenamebox
+    release
+	end
+}
+
+
+
+
+
+
+
+
+//INDOORS
+script Draynor_Morgan{
+    switch (var(VAR_POKESCAPE_WIZARDS_TOWER_STATE)){ 
+        case 0: 
+        case 1: 
+        case 2: 
+        case 3: 
+        case 4: 
+        case 5: 
+        case 6: 
+        case 7: 
+            lock
+	        faceplayer
+            namebox("Morgan")
+            msgbox(format("There's a Vampyre in Draynor Manor but no one believes me…"))
+            hidenamebox
+            release
+            end
+
+        case 8:
+            lock
+	        faceplayer
+            namebox("Morgan")
+            msgbox(format("What is that?!\pYou defeated the Vampyre in a battle?\pWell thanks for that!"))
+            hidenamebox
+            release
+            end
+    }
+}
+
+script NPC_Draynor_Morgans_Wife{
+	lock
+	faceplayer
+    namebox("Morgans Wife")
+	msgbox(format("All my husband thinks of is slaying vampyres these days…\pBut I think he is trying to slay our marriage instead."))
+    hidenamebox
+    release
+	end
+}
+
+script NPC_Draynor_Mugger{
+	lock
+	faceplayer
+    namebox("Mugger")
+	msgbox(format("Draynor village is the town of farmers and vampyres.\pI am not sure why I decided to be a mugger here but its a job somebody has to take."))
+    hidenamebox
+    release
+	end
+}
+
+
+
+
+
+script NPC_Draynor_WiseOldMan{
+	lock
+	faceplayer
+    namebox("Wise Old Man")
+	msgbox(format("…"))
+    hidenamebox
+    release
+	end
+}
+
+
+
+
+    
+	
+    
+

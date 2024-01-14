@@ -1,0 +1,1165 @@
+const OBJ_EVENT_ID_COOK = 1
+const OBJ_EVENT_ID_MITHRILMAN = 2
+
+mapscripts Lumbridge_Castle_2_MapScripts{
+    //MAP_SCRIPT_ON_FRAME_TABLE [
+    //    VAR_POKESCAPE_LUMBRIDGE_CASTLE_STATE, 0: Lumbridge_Castle_Introduction
+    //]
+	MAP_SCRIPT_ON_FRAME_TABLE 
+    [
+        VAR_TEMP_A, 0: Lumbridge_Castle_Introduction
+    ]
+	MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 1) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT,
+    
+	if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 1) //if OPEN WORLD
+    	{
+            call(OPENWORLD_STATE_HIDESTARTERS) // Hide starter mon pouches
+    	}
+	}
+
+}
+
+
+script OPENWORLD_STATE_HIDESTARTERS {
+        removeobject(5) 
+        removeobject(6)
+		removeobject(7)
+        setflag(FLAG_STARTER1)
+        setflag(FLAG_STARTER2)
+		setflag(FLAG_STARTER3)
+		return
+}
+
+
+
+
+
+
+
+script Lumbridge_Bookshelf
+{
+	lock
+	msgbox(format("There is a Book with the title Adamantman Guide.\pInside the pages are torn and graffitied with the words Adamantmen are noobs."))
+	release
+	end
+}
+
+script Lumbridge_Bookshelf_2
+{
+	lock
+	msgbox(format("There is a Book about MvM Championships.\pMvM also known as Monster VS Monster.\pAdventurers gather from all around the world to battle it out atop the Wilderness Volcano to see who is the strongest of them all."))
+	release
+	end
+}
+
+
+//-----------------------------------------------------------------------
+script Lumbridge_Castle_GUARD{
+	lock
+	faceplayer
+	msgbox(format("I'm on guard duty.\pPlease do not cause any problems."))
+	release
+	end
+}
+
+script Lumbridge_Castle_HALLWAY_GUARD{
+	lock
+	faceplayer
+	msgbox(format("I'm sorry but this hallway is off limits.\pI am surprised you are talking to me to be honest.\pNo one ever uses this hallway."))
+	release
+	end
+}
+script Lumbridge_Castle_HALLWAY_TRIGGER{
+	lock
+	PlaySE(SE_PIN)
+	applymovement(3, Movement_Lumbridge_Castle_HALLWAY_TRIGGER1)
+	waitmovement(0)
+	msgbox(format("I'm sorry but this hallway is off limits."))
+	waitmessage 
+	applymovement(OBJ_EVENT_ID_PLAYER, Movement_Lumbridge_Castle_HALLWAY_TRIGGER2)
+    applymovement(3, Movement_Lumbridge_Castle_HALLWAY_TRIGGER3)
+    waitmovement(0)
+    release
+    end
+	}
+movement Movement_Lumbridge_Castle_HALLWAY_TRIGGER1{
+	emote_exclamation_mark
+    face_player
+}
+movement Movement_Lumbridge_Castle_HALLWAY_TRIGGER2{
+	walk_left
+}
+movement Movement_Lumbridge_Castle_HALLWAY_TRIGGER3{
+	face_left
+}
+//-----------------------------------------------------------------------
+
+
+script Lumbridge_Castle_COOKS_TRIGGER{
+	if((var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE) == 0 && var(VAR_POKESCAPE_GAMEMODE_STATE) == 0)){
+		lock
+		PlaySE(SE_PIN)
+		applymovement(OBJ_EVENT_ID_PLAYER, Movement_Lumbridge_Castle_COOKS_TRIGGER1)
+		waitmovement(0)
+		msgbox(format("REEEEEEEEEEE!"))
+		waitmessage 
+		msgbox(format("You hear a loud noise coming from the kitchen."))
+		waitmessage 
+		closemessage
+		applymovement(OBJ_EVENT_ID_PLAYER, Movement_Lumbridge_Castle_COOKS_TRIGGER2)
+		waitmovement(0)
+	}
+	release
+	end
+}
+
+movement Movement_Lumbridge_Castle_COOKS_TRIGGER1{
+	emote_exclamation_mark
+}
+
+movement Movement_Lumbridge_Castle_COOKS_TRIGGER2{
+	walk_up
+}
+
+script Lumbridge_Castle_COOKS_TRIGGER_celler{
+	if((var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE) == 0 && var(VAR_POKESCAPE_GAMEMODE_STATE) == 0)){
+		lock
+		PlaySE(SE_PIN)
+		applymovement(OBJ_EVENT_ID_PLAYER, Movement_Lumbridge_Castle_COOKS_TRIGGER1)
+		waitmovement(0)
+		msgbox(format("Wait!\pCome talk to me."))
+		waitmessage 
+		closemessage
+		applymovement(OBJ_EVENT_ID_PLAYER, Movement_WALKLEFT)
+		waitmovement(0)
+		release
+		end
+	}
+	else{
+		release
+		end
+	}
+}
+
+//-----------------------------------------------------------------------
+script Lumbridge_Castle_Introduction
+{
+//SECTION 1
+	if((var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE) == 0 && var(VAR_POKESCAPE_GAMEMODE_STATE) == 0)){
+	lockall
+	setvar(VAR_TEMP_A, 1)
+	setvar(VAR_POKESCAPE_LUMBRIDGE_CASTLE_STATE, 1)
+	getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+	if (var(VAR_TEMP_1) == 17){
+		goto (LeftDoorScript)
+	} else {
+		goto (RightDoorScript)
+	}
+}
+	setvar(VAR_TEMP_A, 1)
+	release
+	end
+}
+
+script LeftDoorScript
+{
+	applymovement(9, Movement_Duke)
+	applymovement(10, Movement_Hans_5)
+	waitmovement (0)
+	playse(SE_PIN)
+	applymovement(10, Movement_Hans_2)
+	waitmovement (0)
+	namebox ("Hans")
+	msgbox(format("Hello there!\pMy name is Hans.\pYou are...?"))
+	applymovement(OBJ_EVENT_ID_PLAYER, Movement_PLAYER_1)
+	waitmovement (0)
+	msgbox(format("...\pNice to meet you {PLAYER}.\pYou must be here to see the researcher?\pWe've had a few others come see him today too.\pFollow me."))
+	waitmessage
+	hidenamebox
+	closemessage
+	applymovement(10, Movement_Hans_6)
+	applymovement(OBJ_EVENT_ID_PLAYER, Movement_PLAYER_3)
+	waitmovement (0)
+	applymovement(4, Movement_NORMALTREE_1)
+	waitmovement (0)
+//SECTION 2
+	namebox ("Hans")
+	msgbox(format("Sorry to interrupt but this is {PLAYER}.\pThey are interested in your quest Professor."))
+	hidenamebox
+	applymovement(4, Movement_NORMALTREE_2)
+	waitmovement (0)
+	namebox ("Prof. Normal Tree")
+	msgbox(format("Nice.\pI am Professor Normal Tree.\pI am in need of assistants to help me in my research, as you would know this world is full to the brim with all sorts of monsters.\pWhat I would like assistance with is filling this BESTIARY with as much data as possible.\pOf course I wouldn't ask you to do it for free, I'll be giving you one of 3 rare monsters to take with you on your journey."))
+	msgbox(format("Would you like to accept my Quest?"), MSGBOX_YESNO)
+	while (var(VAR_RESULT) != 1) {
+        msgbox(format("Noob.\p...How about now?"), MSGBOX_YESNO)	
+	}
+		msgbox(format("Nice.\pPlease choose from one of these 3 monsters on the table."))
+		hidenamebox
+	release
+	end
+}
+
+
+script RightDoorScript 
+	{
+
+	applymovement(9, Movement_Duke)
+	applymovement(10, Movement_Hans_1)
+	waitmovement (0)
+	playse(SE_PIN)
+	applymovement(10, Movement_Hans_2)
+	waitmovement (0)
+	namebox ("Hans")
+	msgbox(format("Hello there!\pMy name is Hans.\pYou are...?"))
+	applymovement(OBJ_EVENT_ID_PLAYER, Movement_PLAYER_1)
+	waitmovement (0)
+	msgbox(format("...\pNice to meet you {PLAYER}.\pYou must be here to see the researcher?\pWe've had a few others come see him today too.\pFollow me."))
+	waitmessage
+	hidenamebox
+	closemessage
+	applymovement(10, Movement_Hans_3)
+	applymovement(OBJ_EVENT_ID_PLAYER, Movement_PLAYER_2)
+	waitmovement (0)
+	applymovement(4, Movement_NORMALTREE_1)
+	waitmovement (0)
+//SECTION 2
+	namebox ("Hans")
+	msgbox(format("Sorry to interrupt but this is {PLAYER}.\pThey are interested in your quest Professor."))
+	hidenamebox
+	applymovement(4, Movement_NORMALTREE_2)
+	waitmovement (0)
+	namebox ("Prof. Normal Tree")
+	msgbox(format("Nice.\pI am Professor Normal Tree.\pI am in need of assistants to help me in my research, as you would know this world is full to the brim with all sorts of monsters.\pWhat I would like assistance with is filling this BESTIARY with as much data as possible.\pOf course I wouldn't ask you to do it for free, I'll be giving you one of 3 rare monsters to take with you on your journey."))
+	msgbox(format("Would you like to accept my Quest?"), MSGBOX_YESNO)
+	while (var(VAR_RESULT) != 1) {
+        msgbox(format("Noob.\p...How about now?"), MSGBOX_YESNO)	
+	}
+		msgbox(format("Nice.\pPlease choose from one of these 3 monsters on the table."))
+		hidenamebox
+	release
+	end
+}
+
+script Lumbridge_Castle_Professor_Normal_Tree_1{
+	if (flag(FLAG_STARTER1)){
+			applymovement(OBJ_EVENT_ID_PLAYER, Movement_Starter1)
+			waitmovement(0)
+		}
+		elif (flag(FLAG_STARTER2)) {
+			applymovement(OBJ_EVENT_ID_PLAYER, Movement_Starter2)
+			waitmovement(0)
+		}
+		elif (flag(FLAG_STARTER3)) {
+			applymovement(OBJ_EVENT_ID_PLAYER, Movement_Starter3)
+			waitmovement(0)
+		}
+		namebox ("Prof. Normal Tree")
+		msgbox(format("Nice.\pPlease take this BESTIARY."))
+		hidenamebox
+		playfanfare(MUS_OBTAIN_ITEM)
+		msgbox(format("Obtained the BESTIARY."))
+		waitfanfare
+		namebox ("Prof. Normal Tree")
+		msgbox(format("I've got to head to Kandarin now, I look forward to seeing how much of the BESTIARY you've filled out the next we meet.\pUntil then...\lFarewell."))
+		waitmessage
+		hidenamebox
+		closemessage
+		fadescreen (FADE_TO_BLACK)
+		removeobject(4)
+		fadescreen(FADE_FROM_BLACK)
+		goto(Lumbridge_Castle_Hans_1)
+		release
+		end	
+	}
+
+script Lumbridge_Castle_Professor_Normal_Tree_2{
+	lock
+	faceplayer
+	namebox ("Prof. Normal Tree")
+	msgbox(format("Please choose from one of these 3 monsters on the table."))
+	hidenamebox
+	release
+	end
+	}
+
+script Lumbridge_Castle_Hans_0{
+	lock
+	faceplayer
+	namebox ("Hans")
+	msgbox(format("Oh how exciting!\pI wonder which one you will choose."))
+	hidenamebox
+	release
+	end
+	}
+
+script Lumbridge_Castle_Hans_1{
+	applymovement(10, Movement_Hans_4)
+	waitmovement(0)
+	namebox ("Hans")
+	msgbox(format("{PLAYER}, before you go have you heard of the MvM championships?\pMvM, which stands for Monster VS Monster, is where trainers compete against eachother in battle by using their monsters to fight for them.\pIf you wish to participate in the MvM Championships you must defeat 8 leaders from around Gielinor and make your way to the Wilderness Volcano.\pThe Duke is one of these 8 Leaders.\pIf you are interested you should pay him a visit."))
+	msgbox(format("Oh, before I forget take these."))
+	waitmessage
+	hidenamebox
+	closemessage
+	giveitem(ITEM_NORMAL_POUCH, 10)
+	namebox ("Hans")
+	msgbox(format("These are Pouches, you can capture monsters with them.\pAnyway, all the best on your adventure {PLAYER}, I'm sure I'll see you around."))
+	hidenamebox
+	closemessage
+	fadescreen (FADE_TO_BLACK)
+	removeobject(9)
+	removeobject(10)
+	fadescreen(FADE_FROM_BLACK)
+	setflag (FLAG_SYS_POKEDEX_GET)
+	setflag (FLAG_SYS_NATIONAL_DEX)
+	special (EnableNationalPokedex)
+	release
+	end
+}
+
+script Starter_TRIGGER{
+	if(!flag(FLAG_SYS_POKEMON_GET)){
+		lock
+		namebox ("Prof. Normal Tree")
+		msgbox(format("Don't leave!\pPlease choose from one of these 3 monsters on the table."))
+		waitmessage
+		hidenamebox
+		closemessage
+		applymovement(OBJ_EVENT_ID_PLAYER, Movement_Starter_TRIGGER)
+		waitmovement(0)
+		release
+	}
+	else{
+		release
+		end
+	}
+}
+
+
+//LUMBRIDGE INTRODUCTION MOVEMENTS
+
+movement Movement_Starter_TRIGGER
+{
+	walk_up
+}
+movement Movement_Duke
+{
+	walk_down * 4
+	walk_left * 14
+}
+movement Movement_Hans_1
+{
+	walk_down * 5
+	walk_left * 4
+}
+movement Movement_Hans_2
+{
+	emote_exclamation_mark
+	face_player
+	delay_16
+	walk_down
+}
+
+
+movement Movement_PLAYER_1
+{
+	walk_in_place_up * 2
+}
+movement Movement_Hans_3
+{
+	walk_up
+	walk_right * 4
+	walk_up * 5
+	walk_right * 2
+	walk_up * 4
+	walk_left
+}
+
+movement Movement_Hans_5
+{
+	walk_down * 5
+	walk_left * 5
+}
+
+movement Movement_Hans_6
+{
+	walk_up
+	walk_right * 5
+	walk_up * 5
+	walk_right * 2
+	walk_up * 4
+	walk_left
+}
+
+
+movement Movement_PLAYER_2
+{
+	walk_up * 2
+	walk_right * 4
+	walk_up * 5
+	walk_right * 2
+	walk_up * 3
+	walk_left * 2
+	face_up
+}
+
+movement Movement_PLAYER_3
+{
+	walk_up * 2
+	walk_right * 5
+	walk_up * 5
+	walk_right * 2
+	walk_up * 3
+	walk_left * 2
+	face_up
+}
+
+
+movement Movement_NORMALTREE_1
+{
+	face_right
+}
+movement Movement_NORMALTREE_2
+{
+	face_player
+}
+movement Movement_Hans_4
+{
+	walk_left
+	face_player
+}
+movement Movement_Starter1
+{
+	walk_right
+	face_up
+}
+movement Movement_Starter2
+{
+	face_up
+}
+movement Movement_Starter3
+{
+	walk_left
+	face_up
+}
+
+//--STARTER CHOICES---------------------------------------------------------
+script Pouch_Starter1 {
+	lock
+	if ((flag(FLAG_STARTER2)) || flag(FLAG_STARTER3)){
+		msgbox("You have already chosen!\pNo need to be greedy!")
+		release
+	}	
+	else{
+		if (!flag(FLAG_MEMBERSHIP)) {
+			lock
+			showmonpic (SPECIES_GUTHLING, 10, 3)
+			msgbox("This is a GRASS type Monster.\nThe Bird of Balance, GUTHLING.")
+			msgbox(format("Would you like this monster as your starter?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == NO){
+					hidemonpic
+					release	
+				}
+				else{
+					setflag (FLAG_SYS_POKEMON_GET)
+					givemon (SPECIES_GUTHLING,5, ITEM_NONE)
+					msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+						if (var(VAR_RESULT) == NO){
+							removeobject (5)
+							hidemonpic
+							release
+						}
+						else{
+							setvar (VAR_0x8004, 0)
+							call (Common_EventScript_NameReceivedPartyMon)
+							removeobject (5)
+						}
+						goto(Lumbridge_Castle_Professor_Normal_Tree_1)
+				}
+		}
+		elif (flag(FLAG_MEMBERSHIP)) {
+			lock
+			showmonpic (SPECIES_ARMALING, 10, 3)
+			msgbox("This is an Armaling.")
+			msgbox(format("Would you like this monster as your starter?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == NO){
+					hidemonpic
+					release
+				}
+				else{
+					setflag (FLAG_SYS_POKEMON_GET)
+					givemon (SPECIES_ARMALING,5, ITEM_NONE)
+					msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+						if (var(VAR_RESULT) == NO){
+							removeobject (5)
+							hidemonpic
+							release
+						}
+						else{
+							setvar (VAR_0x8004, 0)
+							call (Common_EventScript_NameReceivedPartyMon)
+							removeobject (5)
+						}
+						goto(Lumbridge_Castle_Professor_Normal_Tree_1)
+				}
+		}
+	}
+}
+
+
+
+script Pouch_Starter2 {
+	lock
+	if ((flag(FLAG_STARTER1)) || flag(FLAG_STARTER3)){
+		msgbox("You have already chosen!\pNo need to be greedy!")
+		release	
+	}
+	else{
+		if (!flag(FLAG_MEMBERSHIP)) {
+			lock
+			showmonpic (SPECIES_ZAMLING, 10, 3)
+			msgbox("This is a FIRE type Monster.\nThe Bird of Chaos, ZAMLING.")
+			msgbox(format("Would you like this monster as your starter?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == NO){
+					hidemonpic
+					release		
+				}
+				else{
+					setflag (FLAG_SYS_POKEMON_GET)
+					givemon (SPECIES_ZAMLING,5, ITEM_NONE)
+					msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+						if (var(VAR_RESULT) == NO){
+							removeobject (6)
+							hidemonpic
+							release							
+						}
+						else{
+							setvar (VAR_0x8004, 0)
+							call (Common_EventScript_NameReceivedPartyMon)
+							removeobject (6)
+						}
+						goto(Lumbridge_Castle_Professor_Normal_Tree_1)
+				}		
+		}
+		elif (flag(FLAG_MEMBERSHIP)) {
+			lock
+			showmonpic (SPECIES_UNGODLING, 10, 3)
+			msgbox("This is an Ungodling.")
+			msgbox(format("Would you like this monster as your starter?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == NO){
+					hidemonpic
+					release
+				}
+				else{
+					setflag (FLAG_SYS_POKEMON_GET)
+					givemon (SPECIES_UNGODLING,5, ITEM_NONE)
+					msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+						if (var(VAR_RESULT) == NO){
+							removeobject (6)
+							hidemonpic
+							release							
+						}
+						else{
+							setvar (VAR_0x8004, 0)
+							call (Common_EventScript_NameReceivedPartyMon)
+							removeobject (6)
+						}
+						goto(Lumbridge_Castle_Professor_Normal_Tree_1)
+				}		
+		}	
+	}
+}
+
+script Pouch_Starter3 {
+	lock
+	if ((flag(FLAG_STARTER1)) || flag(FLAG_STARTER2)){
+		msgbox("You have already chosen!\pNo need to be greedy!")
+		release		
+	}	
+	else{
+		if (!flag(FLAG_MEMBERSHIP)) {
+			lock
+			showmonpic (SPECIES_SARALING, 10, 3)
+			msgbox("This is a WATER type Monster.\nThe Bird of Order, SARALING.")
+			msgbox(format("Would you like this monster as your starter?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == NO){
+					hidemonpic
+					release					
+				}
+				else{
+					setflag (FLAG_SYS_POKEMON_GET)
+					givemon (SPECIES_SARALING,5, ITEM_NONE)
+					msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+						if (var(VAR_RESULT) == NO){
+							removeobject (7)
+							hidemonpic
+							release							
+						}
+						else{
+							setvar (VAR_0x8004, 0)
+							call (Common_EventScript_NameReceivedPartyMon)
+							removeobject (7)						
+						}
+						goto(Lumbridge_Castle_Professor_Normal_Tree_1)
+				}		
+		}
+		elif (flag(FLAG_MEMBERSHIP)) {
+			lock
+			showmonpic (SPECIES_TUMEKLING, 10, 3)
+			msgbox("This is an Tumekling.")
+			msgbox(format("Would you like this monster as your starter?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == NO){
+					hidemonpic
+					release
+				}
+				else{
+					setflag (FLAG_SYS_POKEMON_GET)
+					givemon (SPECIES_TUMEKLING,5, ITEM_NONE)
+					msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+						if (var(VAR_RESULT) == NO){
+							removeobject (7)
+							hidemonpic
+							release							
+						}
+						else{
+							setvar (VAR_0x8004, 0)
+							call (Common_EventScript_NameReceivedPartyMon)
+							removeobject (7)												
+						}
+						goto(Lumbridge_Castle_Professor_Normal_Tree_1)
+				}		
+		}	
+	}
+}
+//-----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+//-------------COOKS ASSISTANT----------------------------------------------------------
+
+script QUEST_Cooks_Assistant_STATE{
+	lock
+	faceplayer
+	switch (var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE)){ 
+		case 0: 
+			namebox ("Cook")
+			msgbox(format("Oh dear..\pWhat am I to do..\nI'm in a terrible, terrible mess!\pI should be making a cake for the Duke but I forgot to get the ingredients!"))
+			msgbox(format("Can you please help me?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT)){
+				hidenamebox
+				startquest (QUEST_COOKS_ASSISTANT)
+				namebox ("Cook")
+				msgbox(format("Oh, thank you, thank you!\pI need an egg, some milk, and some flour.\pFor the eggs you should check out the chicken farms, around Lumbridge.\pYou can get some milk from the Cow Field, east of Lumbridge.\pYou should ask someone at the Windmill if they can give you some flour, north of Lumbridge."))
+				msgbox(format("Oh..\nBefore you go."))
+				giveitem (ITEM_MAP)
+				msgbox(format("Hopefully that map will help you if you get lost."))
+				setvar(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE, 1)
+				hidenamebox
+				release
+				end
+			}
+			else {
+				namebox ("Cook")
+				msgbox(format("Fine!\pI always knew you adventurer types were callous beasts!\pGo on your merry way."))
+				hidenamebox
+				release
+				end
+			}
+
+
+
+
+    	case 1: 
+			namebox ("Cook")
+			msgbox(format("Do you have the ingredients?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT)){
+				msgbox(format("Let me check..."))
+				call(CooksAssistant_Check_EGG)
+				call(CooksAssistant_Check_MILK)
+				call(CooksAssistant_Check_FLOUR)
+				msgbox(format("It looks like you have everything!\p...\pThis is a bit awkward but could you also bake the cake?\pI forgot how...\pPlease use the range over there!"))
+				setvar(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE, 2)
+				hidenamebox
+				release
+				end
+			}
+			else {
+				msgbox(format("Please Hurry.."))
+				hidenamebox
+				release
+				end
+			}
+
+
+
+
+		case 2: 
+			checkitem(ITEM_SPECIAL_CAKE, 1)
+			if (!var(VAR_RESULT)){
+				namebox ("Cook")
+				msgbox(format("What you don't know how to bake a cake either?!\pTry throwing all of the ingredents on the range and see what happens."))
+				hidenamebox
+				release
+				end
+			}
+			else {
+				msgbox(format("{PLAYER} handed the SPECIAL CAKE to the Cook."))
+				removeitem (ITEM_SPECIAL_CAKE, 1)
+				namebox ("Cook")
+				msgbox(format("I am saved!\nThank you so much!\pFeel free to use my range anytime!"))
+				hidenamebox
+				closemessage
+				setvar(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE, 3)
+				questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_COOKS_ASSISTANT)
+				namebox ("Cook")
+				msgbox(format("Also as a thank you for helping me please take these, they may be useful to you."))
+				hidenamebox
+				closemessage
+				giveitem(ITEM_BREAD, 5)
+				giveitem(ITEM_CAKE, 1)
+				giveitem(ITEM_PURPLE_SWEETS, 2)
+				namebox ("Cook")
+				msgbox(format("Once again, thank you."))
+				if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY MODE
+				{
+					playse(SE_PIN)
+					applymovement(OBJ_EVENT_ID_COOK,COOK_COOKSASSISTANT_1)
+					waitmovement(0)
+					msgbox(format("Oh?\nWhat's that?\pYou wanted to challenge the Duke to a Gym Battle?\pWhy didn't you say so!\pGo straight up those stairs.\n I'll let him know you're coming."))
+				}
+
+				hidenamebox
+				release
+				end
+			}
+		case 3: 
+			namebox ("Cook")
+			if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 1) 
+			{
+				msgbox(format("Once again, thank you for your help making the cake."))
+				hidenamebox
+				release
+				end
+			}
+			msgbox(format("Just head up those stairs, you'll find the Duke up there."))
+			hidenamebox
+			release
+			end
+		case 4: 
+		case 5:
+		namebox ("Cook")
+			msgbox(format("Thank you for all of your help earlier!"))
+			hidenamebox
+			release
+			end
+
+
+	}
+}
+
+movement COOK_COOKSASSISTANT_1 {
+	emote_question_mark
+}
+//---------------------------------------------------------------------------------
+
+
+script CooksAssistant_Check_MILK {
+	checkitem (ITEM_TOP_QUALITY_MILK,1)
+	if (!var(VAR_RESULT)){
+		msgbox(format("You don't have any milk.\pYou can get some milk from the Cow Field, east of Lumbridge."))
+		hidenamebox
+		//goto(SCRIPT_CooksAssistant_DoYouNeedHelp)
+		release
+		end
+	}
+	else {
+		msgbox(format("You have the milk!"))
+		return
+	}
+}
+
+script CooksAssistant_Check_FLOUR {
+	checkitem (ITEM_EXTRA_FINE_FLOUR,1)
+	if (!var(VAR_RESULT)){
+		msgbox(format("You don't have any flour.\pYou should ask someone at the Windmill if they can give you some flour, north of Lumbridge."))
+		hidenamebox
+		//goto(SCRIPT_CooksAssistant_DoYouNeedHelp)
+		release
+		end
+	}
+	else {
+		msgbox(format("You have the flour!"))
+		return
+	}
+}
+
+script CooksAssistant_Check_EGG {
+	checkitem (ITEM_SUPER_LARGE_EGG,1)
+	if (!var(VAR_RESULT)){
+		msgbox(format("You don't have any eggs.\pYou check out the chicken farms, around Lumbridge."))
+		hidenamebox
+		//goto(SCRIPT_CooksAssistant_DoYouNeedHelp)
+		release
+		end
+	}
+	else {
+		msgbox(format("You have the egg!"))
+		return
+	}
+}
+
+
+//---------------------------------------------------------------------------------
+
+script QUEST_TRIGGER_BLOCK_COOKSASSISTANT {
+	if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 1) //if OPEN WORLD
+    	{
+            release
+			end
+    	}
+	switch (var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE)){ 
+		case 0: 
+		case 1: 
+		case 2: 
+			lock
+			playSE(SE_PIN)
+			applymovement(OBJ_EVENT_ID_COOK, BLOCK_COOKSASSISTANT_1)
+			waitmovement(0)
+			namebox("Cook")
+			msgbox(format("Hey you there!\nCome here for a minute."))
+			closemessage
+			hidenamebox
+			applymovement(OBJ_EVENT_ID_PLAYER,BLOCK_COOKSASSISTANT_2)
+			waitmovement(0)
+			release
+			end
+		case 3: 
+		case 4: 
+		case 5: 
+			release
+			end
+	}
+}
+
+
+
+movement BLOCK_COOKSASSISTANT_1 {
+	emote_exclamation_mark
+	jump_in_place_left
+}
+movement BLOCK_COOKSASSISTANT_2 {
+	walk_right * 2
+	walk_down * 2
+	walk_right * 3
+
+}
+
+//---------------------------------------------------------------------------------
+
+
+
+script QUEST_COOKING_RANGE_COOKSASSISTANT{
+	lock
+	switch (var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE)){ 
+		case 0: 
+		case 1: 
+			lock
+			delay_16
+			playSE(SE_PIN)
+			applymovement(OBJ_EVENT_ID_COOK, COOK_COOKSASSISTANT_2)
+			waitmovement(0)
+			namebox("Cook")
+			msgbox(format("Hey don't use my range without asking first!"))
+			hidenamebox
+			release
+			end
+
+		case 2: 
+			checkitem (ITEM_SPECIAL_CAKE,1)
+			if (!var(VAR_RESULT)){
+				msgbox(format("Would you like to bake a cake?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT)){
+					call(CooksAssistant_RANGE_Check_EGG)
+					call(CooksAssistant_RANGE_Check_MILK)
+					call(CooksAssistant_RANGE_Check_FLOUR)
+					removeitem(ITEM_SUPER_LARGE_EGG)
+					removeitem(ITEM_TOP_QUALITY_MILK)
+					removeitem(ITEM_EXTRA_FINE_FLOUR)
+					msgbox(format("...\pUnsure on how to bake a cake you throw all the ingredients at the range.")) 
+					msgbox(format("{PAUSE 32}1, {PAUSE 15}2, and{PAUSE 15}… {PAUSE 15}… {PAUSE 15}… {PAUSE 15}{PLAY_SE SE_BALL_BOUNCE_1}Poof!\pYou bake a cake!"))
+					giveitem(ITEM_SPECIAL_CAKE, 1)
+					release
+					end
+				}
+				else {
+					msgbox(format("You decided that your Cooking level was too low to complete this task."))
+					release
+					end
+				}
+			}
+			else {
+				msgbox(format("You have already baked the cake."))
+				release
+				end
+			}
+
+		case 3: 
+		case 4: 
+		case 5: 
+			goto(COOKING_RANGE)
+			release
+			end
+	}
+}
+
+
+movement COOK_COOKSASSISTANT_2 {
+	emote_exclamation_mark
+	jump_in_place_up
+}
+
+
+
+script CooksAssistant_RANGE_Check_MILK {
+	checkitem (ITEM_TOP_QUALITY_MILK,1)
+	if (!var(VAR_RESULT)){
+		msgbox(format("You don't have any milk."))
+		release
+		end
+	}
+	else {
+		return
+	}
+}
+
+script CooksAssistant_RANGE_Check_FLOUR {
+	checkitem (ITEM_EXTRA_FINE_FLOUR,1)
+	if (!var(VAR_RESULT)){
+		msgbox(format("You don't have any flour."))
+		release
+		end
+	}
+	else {
+		return
+	}
+}
+
+script CooksAssistant_RANGE_Check_EGG {
+	checkitem (ITEM_SUPER_LARGE_EGG,1)
+	if (!var(VAR_RESULT)){
+		msgbox(format("You don't have any eggs."))
+		release
+		end
+	}
+	else {
+		return
+	}
+}
+
+
+//----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script FillBucketWater{
+	checkitem (ITEM_EMPTY_BUCKET, 1)
+	if (var(VAR_RESULT)){
+		removeitem (ITEM_EMPTY_BUCKET, 1)
+		giveitem (ITEM_WATER_BUCKET, 1)
+		release
+	}
+	else {
+		msgbox("Running water - A nice feature!")
+		release
+	}
+}
+
+
+
+
+
+
+script NPC_LUMBRIDGE_HARLAN
+{
+	lock
+	faceplayer
+    namebox ("Harlan")
+	msgbox(format("The best offense is a great defence!\pYou should focus on defensive moves such as Barrier and Protect.\pThis strategy has helped me get to where I am today."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+//-----------------------------------------------------------------------
+
+
+
+//MITHRILMAN ENCOUNTER 1--------
+script Mithrilman_LUMBRIDGE {
+	lock
+	faceplayer
+	goto(Mithrilman_LUMBRIDGE_STATE_2)
+	release
+	end
+}
+
+script Mithrilman_LUMBRIDGE_TRIGGER {
+	if((var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE) == 1 && var(VAR_POKESCAPE_GAMEMODE_STATE) == 0 && flag(FLAG_MITHRILMAN1) == FALSE)){
+		goto(Mithrilman_LUMBRIDGE_STATE_1)
+	}
+	else {
+		release
+		end
+	}
+}
+
+script Mithrilman_LUMBRIDGE_STATE_1 {
+        lock
+		PlaySE(SE_PIN)
+		applymovement(OBJ_EVENT_ID_MITHRILMAN, Movement_MithrilmanSpotted)
+		waitmovement(0)
+		delay(60)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        if (var(VAR_TEMP_2) == 13){
+            applymovement(OBJ_EVENT_ID_MITHRILMAN, Movement_InteractFACEDOWN)
+			waitmovement (OBJ_EVENT_ID_MITHRILMAN)
+			applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+			waitmovement (0)
+			goto(Mithrilman_LUMBRIDGE_STATE_2)
+        }
+		if (var(VAR_TEMP_2) == 14){
+            applymovement(OBJ_EVENT_ID_MITHRILMAN, Movement_WalkDown1)
+			waitmovement (OBJ_EVENT_ID_MITHRILMAN)
+			applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+			waitmovement (0)
+			goto(Mithrilman_LUMBRIDGE_STATE_2)
+        } else {
+            applymovement(OBJ_EVENT_ID_MITHRILMAN, Movement_WalkDown2)
+			waitmovement (OBJ_EVENT_ID_MITHRILMAN)
+			applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+			waitmovement (0)
+			goto(Mithrilman_LUMBRIDGE_STATE_2)
+        }
+		release
+		end
+}
+movement Movement_WalkDown1
+{
+	walk_down * 1
+}
+movement Movement_WalkDown2
+{
+	walk_down * 2
+}
+movement Movement_WalkDown3
+{
+	walk_down * 3
+}
+movement Movement_MithrilmanSpotted
+{
+	emote_exclamation_mark
+	face_player
+}
+
+script Mithrilman_LUMBRIDGE_STATE_2{
+    playbgm (MUS_ENCOUNTER_MAY, 1)
+    if((var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE) == 0)){
+		applymovement(OBJ_EVENT_ID_MITHRILMAN, Movement_InteractFACEPLAYER)
+	    waitmovement(0)
+        namebox ("???")
+        msgbox(format("I douth believe the cook seeks assistance.\pYou should go check with him."))
+        savebgm(MUS_DUMMY)
+	    fadedefaultbgm
+		hidenamebox
+		closemessage
+		applymovement(OBJ_EVENT_ID_MITHRILMAN, Movement_InteractFACEUP)
+	    waitmovement(0)
+        release
+        end
+    }
+    else {
+        namebox ("???")
+        msgbox(format("Helloust there knave, thee be a challenger of the duke thine can tell.\pWhomst am I?\pLook upon me in awe knave, for thine amst the greatest of all challengers of the PokeScapian realm.\pThine's a Mithrilman."))
+        namebox ("Mithrilman")
+        msgbox(format("Morest fabled thanst the Ironmen and faster than the Adamantmen.\pThe Mithrilman is a challenge upon the very spirit ofst PokeScape itself.\pAs thy predecessor inst this realm.\pWhy doesnt thine show ye, knave, howst a true master battles.")) 
+        hidenamebox
+        trainerbattle_no_intro(TRAINER_MITHRILMAN1,format("…"))
+        goto(Mithrilman_LUMBRIDGE_STATE_3)
+        release
+        end
+    }
+}
+script Mithrilman_LUMBRIDGE_STATE_3{  
+    lock
+    faceplayer  
+    namebox ("Mithrilman")
+    msgbox(format("Ahaa, it would seemst that thine monsters were weakened since the Duke's ordeal.\pThine werest the luckiest, forst thine have used all thine 200 cabbages on that battle.\pThus leaving thine cabbage-less for the battle with thee knave.\pYee be lucky knave, forst thine am a Mithrilman and thine shalt return and glory be rewon!"))
+    waitmessage
+    hidenamebox
+	closemessage
+	fadescreen (FADE_TO_BLACK)
+	removeobject(2)
+	fadescreen(FADE_FROM_BLACK)
+    setflag (FLAG_MITHRILMAN1)
+    clearflag (FLAG_MITHRILMAN2)
+    savebgm(MUS_DUMMY)
+	fadedefaultbgm
+    release
+    end
+}
+
+//-----------------------------

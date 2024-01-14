@@ -1,0 +1,1158 @@
+const OBJ_EVENT_ID_ZEZIMA = 1
+const OBJ_EVENT_ID_BOATY = 2
+const OBJ_EVENT_ID_DEMONHEADGE = 5
+const OBJ_EVENT_ID_HYPERSTAN = 4
+const OBJ_EVENT_ID_TEHNOOBSHOW = 3
+
+const OBJ_EVENT_ID_ED8_Female = 30
+const OBJ_EVENT_ID_ED8_Male = 29
+
+mapscripts Rimmington_MapScripts{
+	MAP_SCRIPT_ON_TRANSITION {
+    goto(Rimmington_STATE)
+    }
+}
+
+
+script Rimmington_STATE{
+	switch (var(VAR_POKESCAPE_RIMMINGTON_STATE)){ 
+		case 0: 
+            //NPCS House Portal
+            //playbgm(MUS_RG_GAME_CORNER, 1)
+
+			setobjectxyperm(OBJ_EVENT_ID_ZEZIMA,22,5)
+			setobjectmovementtype(OBJ_EVENT_ID_ZEZIMA,MOVEMENT_TYPE_FACE_UP)
+
+            setobjectxyperm(OBJ_EVENT_ID_BOATY,22,6)
+			setobjectmovementtype(OBJ_EVENT_ID_BOATY,MOVEMENT_TYPE_FACE_UP)
+
+            setobjectxyperm(OBJ_EVENT_ID_TEHNOOBSHOW,23,6)
+			setobjectmovementtype(OBJ_EVENT_ID_TEHNOOBSHOW,MOVEMENT_TYPE_FACE_LEFT)
+
+            setobjectxyperm(OBJ_EVENT_ID_DEMONHEADGE,24,6)
+			setobjectmovementtype(OBJ_EVENT_ID_DEMONHEADGE,MOVEMENT_TYPE_FACE_RIGHT)
+
+            setobjectxyperm(OBJ_EVENT_ID_HYPERSTAN,25,6)
+			setobjectmovementtype(OBJ_EVENT_ID_HYPERSTAN,MOVEMENT_TYPE_FACE_LEFT)
+
+            setobjectxyperm(24,21,5)
+			setobjectmovementtype(24,MOVEMENT_TYPE_JOG_IN_PLACE_RIGHT)
+
+            setobjectxyperm(27,19,7) //RSMVer_M
+			setobjectmovementtype(27,MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
+
+            setobjectxyperm(20,20,7)
+			setobjectmovementtype(20,MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
+
+            setobjectxyperm(15,23,7)
+			setobjectmovementtype(15,MOVEMENT_TYPE_JOG_IN_PLACE_UP)
+
+            setobjectxyperm(25,28,6)
+			setobjectmovementtype(25,MOVEMENT_TYPE_JOG_IN_PLACE_LEFT)
+
+            setobjectxyperm(23,29,7)
+			setobjectmovementtype(23,MOVEMENT_TYPE_JOG_IN_PLACE_LEFT)
+
+            setobjectxyperm(7,27,8)
+			setobjectmovementtype(7,MOVEMENT_TYPE_LOOK_AROUND)
+
+            //NPCs around town.
+            removeobject (10) //HIDEJMOD
+            //SEAGULL
+            setobjectxyperm(21,37,17)
+			setobjectmovementtype(21,MOVEMENT_TYPE_LOOK_AROUND)
+            setflag(FLAG_TEMP_2)
+            release
+            end
+    	case 1: 
+            //HIDE HOUSE PARTIES
+            removeobject (OBJ_EVENT_ID_ZEZIMA)
+            removeobject (OBJ_EVENT_ID_BOATY)
+            removeobject (OBJ_EVENT_ID_DEMONHEADGE)
+            removeobject (OBJ_EVENT_ID_HYPERSTAN)
+            removeobject (OBJ_EVENT_ID_TEHNOOBSHOW)
+            removeobject (24)
+            removeobject (27)
+            removeobject (20)
+            removeobject (15)
+            removeobject (25)
+            removeobject (23)
+            setflag(FLAG_TEMP_1)
+            setobjectxyperm(27,21,7) //RSMVer_M
+			setobjectmovementtype(27,MOVEMENT_TYPE_LOOK_AROUND)
+            release
+            end           
+		case 2: 
+		case 3: 
+		case 4: 
+		case 5:
+		case 6: 
+		case 7: 
+		case 8: 
+		case 9: 		
+			release
+			end
+		}
+}
+
+
+//ITEMS
+//HIDDEN ITEMS:
+script ITEM_RIMMINGTON_4
+{
+    finditem(ITEM_LAMP_SPATT)
+    end
+}
+
+script ITEM_RIMMINGTON_5
+{
+    finditem(ITEM_LAMP_SPATT)
+    end
+}
+
+
+
+//RIMMINGTON TOWN
+script NPC_RIMMINGTON_CustomsOfficer{
+    lock
+    faceplayer
+    namebox("Officer")
+    msgbox(format("Behave yourself otherwise I will take you to Rock Island Prison.\pYou don't want to go to Rock Island Prison."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_JagexMod{
+    lock
+    faceplayer
+    random(31)
+    call(NPC_RIMMINGTON_JagexMod_NAMES)
+    msgbox(format("I am a ninja!\pNow you see me."))
+    hidenamebox
+    closemessage
+    fadescreen(FADE_TO_BLACK)
+    removeobject (10) //HIDEJMOD
+    setflag(FLAG_TEMP_A)
+    delay(8)
+    fadescreen(FADE_FROM_BLACK)
+    call(NPC_RIMMINGTON_JagexMod_NAMES)
+    msgbox(format("Now you don't…"))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+script NPC_RIMMINGTON_JagexMod_NAMES
+{
+    
+    switch (var(VAR_RESULT)) {
+        case 0: 
+            namebox("Mod Dorn")
+        case 1: 
+            namebox("Mod Abe")
+        case 2: 
+            namebox("Mod AoB")
+        case 3: 
+            namebox("Mod Breezy")
+        case 4: 
+            namebox("Mod Canine")
+        case 5: 
+            namebox("Mod Chaose")
+        case 6: 
+            namebox("Mod Chaplain")
+        case 7: 
+            namebox("Mod Doctor")
+        case 8: 
+            namebox("Mod Edge")
+        case 9: 
+            namebox("Mod Erator")
+        case 10: 
+            namebox("Mod Frosch")
+        case 11: 
+            namebox("Mod Halo")
+        case 12: 
+            namebox("Mod Harrison")
+        case 13: 
+            namebox("Mod Hing")
+        case 14: 
+            namebox("Mod Hunter")
+        case 15: 
+            namebox("Mod Iago")
+        case 16: 
+            namebox("Mod Kalaya")
+        case 17: 
+            namebox("Mod Kari")
+        case 18: 
+            namebox("Mod Kelpie")
+        case 19: 
+            namebox("Mod Kylar")
+        case 20: 
+            namebox("Mod Lab")
+        case 21: 
+            namebox("Mod Labcoat")
+        case 22: 
+            namebox("Mod Liam")
+        case 23: 
+            namebox("Mod Maylea")
+        case 24: 
+            namebox("Mod Pi")
+        case 25: 
+            namebox("Mod Ramen")
+        case 26: 
+            namebox("Mod Ryan")
+        case 27: 
+            namebox("Mod Shogun")
+        case 28: 
+            namebox("Mod Stu")
+        case 29: 
+            namebox("Mod Tomb")
+        case 30: 
+            namebox("Mod Veda")
+        
+        
+    }
+    return
+
+}
+
+
+
+
+
+script NPC_RIMMINGTON_PETER{
+    lock
+    faceplayer
+    namebox("Peter")
+    msgbox(format("There are a lot of slushing noises coming from the bottom of that well.\pSomeone should take a look."))
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+script NPC_RIMMINGTON_GnomeBoiKevin {
+    lock
+    faceplayer
+    checkitem (ITEM_TERRORBIRD_POUCH, 1)
+	if (!var(VAR_RESULT))
+	{
+        namebox("Kevin")
+        msgbox(format("Hiya!\pI am Little GnomeBoi Kevin!\pYou look exhausted, where did you come from?\p…{PAUSE 15}… LUMBRIDGE!?\pThis will not do!\pHere take this!"))
+        hidenamebox
+        giveitem (ITEM_TERRORBIRD_POUCH)
+        namebox("Kevin")
+        msgbox(format("You can use that pouch to summon a lightning blue fast Terrorbird!\p…{PAUSE 15}…{PAUSE 15} NO!\pDon't use it in battle.\nYou ride it!\pIt will help you travel the land of Gielinor.\pIt is my gift to you.\pAll I ask in return is for you to treat it well."))  
+    }
+    else 
+    {
+        namebox("Kevin")
+        msgbox(format("Terrorbirds are great to get around with!"))
+    }
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+
+script NPC_TERRORBIRD
+{
+	lock
+	faceplayer
+    playmoncry(SPECIES_WINGULL, 0)
+	msgbox(format("SKREEEE!"))
+    waitmoncry
+	release
+	end
+}
+
+script NPC_RIMMINGTON_NPC_8{
+    lock
+    faceplayer
+    namebox("Taria")
+    msgbox(format("Have you heard the rumours of a really strong monster in the Rimmington Mines?"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_NPC_9{
+    lock
+    faceplayer
+    //namebox("CUPHOLDER")
+    msgbox(format("You can not always run from your problems.\pRunning near others will make them spot you easier.\pBe careful if you do not want a fight."))
+    hidenamebox
+    release
+    end
+}
+
+//30 f
+//29 m
+script NPC_RIMMINGTON_NPC_10{
+    lock
+    applymovement(OBJ_EVENT_ID_ED8_Female, RIMMINGTON_ED8_FEMALE)
+    waitmovement(0)
+    namebox("EDater")
+    msgbox(format("Honey whats your favorite Elite Dungeon?"))
+    hidenamebox
+    closemessage
+    applymovement(OBJ_EVENT_ID_ED8_Male, RIMMINGTON_ED8_MALE)
+    waitmovement(0)
+    namebox("EDater")
+    msgbox(format("ED8."))
+    hidenamebox
+    closemessage
+    applymovement(OBJ_EVENT_ID_ED8_Female, RIMMINGTON_ED8)
+    applymovement(OBJ_EVENT_ID_ED8_Male, RIMMINGTON_ED8)
+    waitmovement(0)
+    release
+    end
+}
+movement RIMMINGTON_ED8_FEMALE
+{
+    walk_in_place_right * 3
+}
+movement RIMMINGTON_ED8_MALE
+{
+    walk_in_place_left * 3
+}
+movement RIMMINGTON_ED8
+{
+    face_down
+}
+
+script NPC_RIMMINGTON_NPC_11{
+    lock
+    faceplayer
+    namebox("CUPHOLDER")
+    msgbox(format("CUPHOLDER"))
+    hidenamebox
+    release
+    end
+}
+//Show skippy a mudskipper?
+script NPC_RIMMINGTON_NPC_SKIPPY{
+    lock
+    faceplayer
+    namebox("Skippy")
+    msgbox(format("The Mudskippers!"))
+    hidenamebox
+    //Check player party for mudskippers
+    release
+    end
+}
+
+script NPC_RIMMINGTON_NPC_16{
+    lock
+    faceplayer
+    namebox("Hetty")
+    msgbox(format("Newts?\pNo I don't have any why do you ask?"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_NPC_17{
+    lock
+    faceplayer
+    namebox("Chancey")
+    msgbox(format("Leave me alone, I am trying to gamble with my buddies.\pTalk to me in a members world."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_NPC_18{
+    lock
+    faceplayer
+    namebox("Hops")
+    msgbox(format("It is a dreadful world we live in."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_NPC_19{
+    lock
+    faceplayer
+    namebox("Da Vinci")
+    msgbox(format("The chemist is close by here.\pBe careful or you might get blown up."))
+    hidenamebox
+    release
+    end
+}
+
+//SHOP
+script NPC_RIMMINGTON_NPC_12{
+    lock
+    faceplayer
+    //namebox("CUPHOLDER")
+    msgbox(format("If you ever need anything unnoted I am your guy!"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_NPC_13{
+    lock
+    faceplayer
+    namebox("Assistant")
+    msgbox(format("Oh no!\pWe have almost run out of our supply of bread for this month!"))
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+
+
+
+//SIGNPOSTS
+script RIMMINGTON_WELL {
+    msgbox(format("It is a well.\pIt looks really dark down there."))
+    checkitem(ITEM_LANTERN, 1)
+        if (var(VAR_RESULT)){
+            msgbox(format("Would you like to climb into the well?"), MSGBOX_YESNO)
+                if (var(VAR_RESULT)){
+                    msgbox(format("You climb down the well."))
+                    warp (MAP_RIMMINGTON_MINES_B2F,0,0,0)
+                    closemessage
+                    release
+                    end
+                }
+                release
+                end
+        }
+        else {
+            //msgbox(format("You don't have a lantern."))
+            closemessage
+            release
+            end
+        }
+    closemessage
+    release
+    end
+}
+
+script RIMMINGTON_HOUSE_PORTAL{
+
+    msgbox(format("It is a House Portal.\pWhich house would you like to go to?"))
+    multichoicedefault (1, 0, MULTI_POH, 0, 0)
+    switch (var(VAR_RESULT))
+    {
+        case 0:
+            msgbox(format("Going to your house."))
+            //goto (SecretBase_EventScript_CheckEntrance_POH)            
+        case 1:
+            msgbox(format("Going to Cursed You's House."))
+            warp (MAP_POH_1,0,0,0)
+            end
+        case 2:
+            msgbox(format("Going to FaladorEvent House."))
+        case 3:
+            //compare (VAR_0x8007, SECRET_BASE_YELLOW_CAVE)
+            //goto_if_eq (Thok_house)
+            msgbox(format("Thoks house is located in Relleka."))
+        case 4:
+            msgbox(format("You have no friends."))
+    }
+    release
+    end
+}
+
+script RIMMINGTON_SIGNPOST_HOUSEPORTAL
+{
+	msgbox(format("Rimmington House Portal."))
+	closemessage
+	end
+}
+
+script RIMMINGTON_SIGNPOST_RIMMINGTON
+{
+	msgbox(format("Rimmington, known for it's famous house parties."))
+	closemessage
+	end
+}
+
+
+
+
+
+
+
+
+
+script NPC_SETVAR_RIMMINGTON{
+    lock
+    faceplayer
+    namebox("RIMMINGTON VAR")
+    if((var(VAR_POKESCAPE_RIMMINGTON_STATE) == 0)){
+        msgbox(format("This is a test script for the Rimmington Event.\pTHE VAR IS NOW SET TO 1"))
+        setvar(VAR_POKESCAPE_RIMMINGTON_STATE, 1)
+        hidenamebox
+        release
+        end
+    }
+    else {
+        msgbox(format("This is a test script for the Rimmington Event.\pTHE VAR IS NOW SET TO 0"))
+        setvar(VAR_POKESCAPE_RIMMINGTON_STATE, 0)
+        hidenamebox
+        release
+        end
+
+    }
+}
+
+
+
+
+//HOUSE PARTY LINE ------------------------------------------
+script NPC_RIMMINGTON_FANBOYNOOB_1{
+    
+    namebox("FAN NOOB")
+    msgbox(format("OMG!\pOMG!\pOMG!\pOMG!\pOMG!\pOMG! OMG! OMG!\nOMG! OMG! OMG!\pOH EMM GEEE!!\pOH MY GOD!!\pIt's Tehnoobshow!!!!\pSign my everything!"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_FANBOYNOOB_2{
+    
+    namebox("FAN NOOB")
+    msgbox(format("Hi Zezima!\pHey Zezima!\pZEEEZZZIIIIMAAA!\pADD ME PLS!!!"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_FANBOYNOOB_3{
+    faceplayer
+    namebox("FAN NOOB")
+    msgbox(format("They say the house of Zezima has a golden statue spewing chocolate we cant eat because we are not maxed."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_FANBOYNOOB_4{
+    faceplayer
+    namebox("FAN NOOB")
+    msgbox(format("I wonder what the house of someone with 99 construction looks like!"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_RSMVer_1{
+    switch (var(VAR_POKESCAPE_RIMMINGTON_STATE)){ 
+        
+		case 0: 
+            namebox("RSMVer")
+            msgbox(format("What should our next RSMV be about?"))
+            hidenamebox
+            release
+            end
+        case 1:
+            lock
+            faceplayer
+            namebox("RSMVer")
+            msgbox(format("Does anyone have an open altar?"))
+            hidenamebox
+            release
+            end
+    }  
+}
+
+script NPC_RIMMINGTON_RSMVer_2{
+    
+    namebox("RSMVer")
+    msgbox(format("House parties are hype!!"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_Zezima{
+    
+    namebox("Zezima")
+    msgbox(format("…"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_Boaty{
+    
+    namebox("Boaty")
+    msgbox(format("This is such an xp waste."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_NPC_1{
+    lock
+    faceplayer
+    namebox("Man")
+    msgbox(format("Occasionally Gielinorian celebrities host house parties here.\pRimmington goes from a quiet little town to being louder than the Falador party room."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_NPC_2{
+    faceplayer
+    namebox("Man")
+    msgbox(format("I just want to train construction, why is there a line?"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_Tehnoobshow{
+    
+    namebox("Tehnoobshow")
+    msgbox(format("…"))
+    hidenamebox
+    release
+    end
+}
+
+
+script NPC_RIMMINGTON_DemonAndStan{
+	
+    random(17)
+        switch (var(VAR_RESULT)) {
+            case 0: 
+                applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
+				namebox("Hyper Stan")
+                msgbox(format("Do you think there will be cupholders?"))
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
+                namebox("Demonheadge")
+                msgbox(format("For the last time Stan, YES!"))
+                waitmovement(0)
+				hidenamebox
+				release
+				end
+            case 1: 
+            applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
+				namebox("Hyper Stan")
+                msgbox(format("Was frogeel invited?"))
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
+                namebox("Demonheadge")
+                msgbox(format("Its not Friday today."))
+                waitmovement(0)
+				hidenamebox
+				release
+				end
+            case 2: 
+                applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
+                namebox("Demonheadge")
+                msgbox(format("Where is Orchy and Lukien?"))
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
+                namebox("Hyper Stan")
+                msgbox(format("Fishing."))
+                waitmovement(0)
+                hidenamebox
+                release
+                end
+            case 3: 
+                applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
+                namebox("Hyper Stan")
+                msgbox(format("Do you use a special dry cleaning for your hat or-?"))
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
+                namebox("Demonheadge")
+                msgbox(format("Lets not have this conversation here man."))
+                waitmovement(0)
+                hidenamebox
+                release
+                end
+            case 4: 
+                applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
+                namebox("Demonheadge")
+                msgbox(format("Ok so tell me again the steps for the plan to kidnap zezimas cat…"))
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
+                namebox("Hyper Stan")
+                msgbox(format("SHHHHH people are listening!"))
+                waitmovement(0)
+                hidenamebox
+                release
+                end
+            case 5: 
+                applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
+                namebox("Demonheadge")
+                msgbox(format("Why are we standing in line? I am a celebrity!"))
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
+                namebox("Hyper Stan")
+                msgbox(format("Mickey we dont even qualify as celery…"))
+                waitmovement(0)
+                hidenamebox
+                release
+                end
+            case 6: 
+                applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
+                namebox("Demonheadge")
+                msgbox(format("Follow me on Twitter!"))
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
+                namebox("Hyper Stan")
+                msgbox(format("The app or the bird?"))
+                waitmovement(0)
+                hidenamebox
+                release
+                end
+            case 7: 
+                applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
+                namebox("Hyper Stan")
+                msgbox(format("How long must we wait?"))
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
+                namebox("Demonheadge")
+                msgbox(format("With our dev time?\pSOON TM by my estimate."))
+                waitmovement(0)
+                hidenamebox
+                release
+                end
+            case 8: 
+                applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
+                namebox("Demonheadge")
+                msgbox(format("How are you handling the wait in the line so far?"))
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
+                namebox("Hyper Stan")
+                msgbox(format("Made 15 sprites and a very bad dialogue joke."))
+                waitmovement(0)
+                hidenamebox
+                release
+                end
+            case 9: 
+                applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
+                namebox("Demonheadge")
+                msgbox(format("I hate lines!"))
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
+                namebox("Hyper Stan")
+                msgbox(format("You prefer curves?"))
+                waitmovement(0)
+                hidenamebox
+                release
+                end
+            case 10: 
+                applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
+                namebox("Demonheadge")
+                msgbox(format("What is with all the noobs?"))
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
+                namebox("Hyper Stan")
+                msgbox(format("They can smell success."))
+                waitmovement(0)
+                hidenamebox
+                release
+                end
+            case 11: 
+                applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
+                namebox("Demonheadge")
+                msgbox(format("Oh no, was this a hatless party?"))
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
+                namebox("Hyper Stan")
+                msgbox(format("No!!\pWithout our hats we have no identity."))
+                waitmovement(0)
+                hidenamebox
+                release
+                end
+            case 12: 
+                applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
+                namebox("Hyper Stan")
+                msgbox(format("Why is this taking so long?"))
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
+                namebox("Demonheadge")
+                msgbox(format("Zezima forgot his house key."))
+                waitmovement(0)
+                hidenamebox
+                release
+                end
+            case 13: 
+                applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
+                namebox("Hyper Stan")
+                msgbox(format("Did that guy sneak in line?"))
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
+                namebox("Demonheadge")
+                msgbox(format("You are antagonising the world again Stan…"))
+                waitmovement(0)
+                hidenamebox
+                release
+                end
+
+            case 14: 
+                applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
+                namebox("Demonheadge")
+                msgbox(format("Hey Stan, when do you think we should make a cameo for ourselves?\pIs it fair to even cameo in your own game?"))
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
+                namebox("Hyper Stan")
+                msgbox(format("No Demon, it is not.\pBut now seems like the right time."))
+                waitmovement(0)
+                hidenamebox
+                release
+                end
+
+            case 15: 
+                applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
+                namebox("Hyper Stan")
+                msgbox(format("Shouldn't you be coding?"))
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
+                namebox("Demonheadge")
+                msgbox(format("Shouldn't you be pixelling?!"))
+                waitmovement(0)
+                hidenamebox
+                release
+                end
+
+            case 16: 
+                applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
+                namebox("Hyper Stan")
+                msgbox(format("Nice hat!"))
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
+                namebox("Demonheadge")
+                msgbox(format("Nice hat!"))
+                waitmovement(0)
+                hidenamebox
+                release
+                end
+        }
+	release
+	end
+}
+
+movement MOVE_DEMONHEADGE_1 {
+    walk_in_place_right * 3
+}
+
+movement MOVE_HYPERSTAN_1 {
+    walk_in_place_left * 3
+}
+//HOUSE PARTY LINE END ---------------------------
+
+
+
+
+
+
+
+
+
+//Inside POH
+script POH_HOUSE_PORTAL{
+
+    msgbox(format("Now leaving the house."))
+    warp (MAP_RIMMINGTON,8,0,0)
+    release
+    end
+}
+
+//ARIZRAIN
+script NPC_POH_ARIZRAIN{
+    lock
+    faceplayer
+    namebox("ARIZRAIN")
+    msgbox(format("I enjoy making RSMVs."))
+    hidenamebox
+    release
+    end
+}
+
+//SKYTHEKID
+script NPC_POH_SKYTHEKID{
+    lock
+    faceplayer
+    namebox("SKYTHEKID")
+    msgbox(format("Awhwahegl."))
+    hidenamebox
+    msgbox(format("He seems to be making weird noises and pulling faces."))
+    release
+    end
+}
+//CHISZLE
+script NPC_POH_CHISZLE{
+    lock
+    faceplayer
+    namebox("CHISZLE")
+    msgbox(format("Yo mamma so fwat that she bigger than an elder god."))
+    hidenamebox
+    release
+    end
+}
+//BUMBUM007
+script NPC_POH_BUMBUM007{
+    lock
+    faceplayer
+    namebox("BUMBUM007")
+    msgbox(format("Have you seen Runway2020?\pI need him for the next runefactor."))
+    hidenamebox
+    release
+    end
+}
+//TEHNOOBSHOW
+script NPC_POH_TEHNOOBSHOW{
+    lock
+    faceplayer
+    namebox("TEHNOOBSHOW")
+    msgbox(format("So for the next episode I need you to……"))
+    hidenamebox
+    release
+    end
+}
+//GONTHORIAN
+script NPC_POH_GONTHORIAN{
+    lock
+    faceplayer
+    namebox("GONTHORIAN")
+    msgbox(format("I like goldfish crackers."))
+    hidenamebox
+    release
+    end
+}
+//ZEZIMA
+script NPC_POH_ZEZIMA{
+    lock
+    faceplayer
+    namebox("ZEZIMA")
+    msgbox(format("…"))
+    hidenamebox
+    release
+    end
+}
+//EXCL
+script NPC_POH_EXCL{
+    lock
+    faceplayer
+    namebox("EXCL")
+    msgbox(format("Quest capes are too hard to maintain…\pI need a new outfit."))
+    hidenamebox
+    release
+    end
+}
+
+//CURSED YOU
+script NPC_POH_CURSEDYOU{
+    lock
+    faceplayer
+    namebox("CURSED YOU")
+    msgbox(format("Wow there are way too many of you!\pI might have to start kicking people from my house soon."))
+    hidenamebox
+    release
+    end
+}
+
+//MONK
+script NPC_POH_MONK{
+    lock
+    faceplayer
+    namebox("MONK")
+    msgbox(format("5036\p5037\p5038\pHow many more Dragon Bones til level 99…"))
+    hidenamebox
+    release
+    end
+}
+
+//FIREMAKER
+script NPC_POH_FIREMAKER{
+    lock
+    faceplayer
+    namebox("FIREMAKER")
+    msgbox(format("I am getting payed 25k an hour!\pThis is great money!"))
+    hidenamebox
+    release
+    end
+}
+
+//BUTLER
+script NPC_POH_BUTLER{
+    lock
+    faceplayer
+    namebox("BUTLER")
+    msgbox(format("I don't think I am getting paid nearly enough to serve all of these people."))
+    hidenamebox
+    release
+    end
+}
+
+//JMOD
+script NPC_POH_JMOD{
+    lock
+    faceplayer
+    namebox("Mod Meadows")
+    msgbox(format("I heard that there was something sketchy that might be going down soon, so I am on the look out."))
+    hidenamebox
+    release
+    end
+}
+
+//RAPTOR
+script NPC_POH_RAPTOR{
+    lock
+    faceplayer
+    namebox("RAPTOR")
+    msgbox(format("Hey you came!\pHere I have something for you!"))
+    giveitem(ITEM_PICKAXE, 1)
+    msgbox(format("With this you can mine rocks."))
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+//RIMMINGTON INDOORS
+
+//ITEMS
+//HIDDEN ITEMS: 
+
+script ITEM_RIMMINGTON_1
+{
+    finditem(ITEM_CAKE)
+    end
+}
+
+script ITEM_RIMMINGTON_2
+{
+    finditem(ITEM_POTION_SPEED)
+    end
+}
+
+script ITEM_RIMMINGTON_3
+{
+    finditem(ITEM_LAMP_SPATT)
+    end
+}
+
+//SCRIPTS
+
+script NPC_RIMMINGTON_NPC_14
+{
+    lock
+    faceplayer
+    namebox("Hengels")
+    msgbox(format("Why did we even move here, the neighbours are so noisy."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_NPC_15
+{
+    lock
+    faceplayer
+    namebox("Anja")
+    msgbox(format("My husband loves fishing, that is why we moved here from Falador."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_NPC_3
+{
+    lock
+    faceplayer
+    namebox("CHEMIST")
+    msgbox(format("Welcome to my lab.\pDo you need any medicine?"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_BONES
+{
+    lock
+    msgbox(format("Yuck!\pIt is a pile of Bones."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_NPC_4
+{
+    lock
+    faceplayer
+    namebox("ROMMIK")
+    msgbox(format("Welcome to my clothing store.\pWould you like to change your outfit?"))
+    hidenamebox
+    release
+    end
+}
+script NPC_RIMMINGTON_NPC_5
+{
+    lock
+    faceplayer
+    namebox("CUPHOLDER")
+    msgbox(format("I want to buy a skillcape, but I appearntly don't have the level to wear it."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_NPC_6
+{
+    lock
+    faceplayer
+    namebox("BRIAN")
+    msgbox(format("I'm all out of wood to fletch."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_RIMMINGTON_NPC_7
+{
+    lock
+    faceplayer
+    namebox("OFFICER")
+    msgbox(format("Don't steal another adventurers monsters.\pOtherwise you will be shipped off to Rock Prison Island."))
+    hidenamebox
+    release
+    end
+}
+
+
+
+script NPC_Hanannie
+{
+    lock
+    faceplayer
+    namebox("Hanannie")
+    msgbox(format("Hahahahahahahaa!!\pHello Chat!\pDid you know Woodcutting is the best skill ever?"))
+    hidenamebox
+    release
+    end
+}

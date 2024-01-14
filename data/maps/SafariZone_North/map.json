@@ -14,19 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_SAFARI_ZONE_NORTHWEST",
+      "direction": "left",
       "offset": 0,
-      "direction": "left"
+      "map": "MAP_SAFARI_ZONE_NORTHWEST"
     },
     {
-      "map": "MAP_SAFARI_ZONE_SOUTH",
+      "direction": "down",
       "offset": 0,
-      "direction": "down"
+      "map": "MAP_SAFARI_ZONE_SOUTH"
     },
     {
-      "map": "MAP_SAFARI_ZONE_NORTHEAST",
+      "direction": "right",
       "offset": 0,
-      "direction": "right"
+      "map": "MAP_SAFARI_ZONE_NORTHEAST"
     }
   ],
   "object_events": [
@@ -145,10 +145,16 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SafariZone_North_EventScript_ItemCalcium",
-      "flag": "FLAG_ITEM_SAFARI_ZONE_NORTH_CALCIUM"
+      "flag": "FLAG_TEMP_16"
     }
   ],
-  "warp_events": [],
-  "coord_events": [],
-  "bg_events": []
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

@@ -1,0 +1,1567 @@
+//FLAGS and VARS in use:
+//VAR_DUNGEONEERING_BOSS_ROOM               - Sets which room is the Boss Room.
+//VAR_DUNGEONEERING_STARTER_ROOM            - Sets which room is the Starting Room.
+//FLAG_TEMP_11                              - Prevents Decorations spawning in the boss Room.
+//FLAG_TEMP_12                              - Prevents Normal Decorations spawning in Puzzle / Boss / Starter Rooms.
+//VAR_STORE_SEED_RESULT                     - Stores the Dungeons randomly generated seed.
+//VAR_TEMP_9                                - Creates the % for randomised seed.
+//VAR_DUNGEONEERING_AMOUNT_OF_PUZZLES       - The amount of Puzzles to be used as a % when randomising.
+//VAR_DUNGEONEERING_RANDOM_PUZZLE_ (1-8)    - Value determines the Puzzle Room's Puzzle.
+//FLAG_DG_PUZZLE_ROOM_ (1-8)                - When a Puzzle Room is completed.
+//FLAG_TEMP_1E                              - Removes Puzzle functionality.
+
+
+
+//FLAG_TEMP_1                               - Used by ID_GFX_VAR_1
+//FLAG_TEMP_2                               - Used by ID_GFX_VAR_2
+//FLAG_TEMP_3                               - Used by ID_GFX_VAR_3
+//FLAG_TEMP_4                               - Used by ID_GFX_VAR_4
+//FLAG_TEMP_5                               - Used by ID_GFX_VAR_5
+//FLAG_TEMP_6                               - Used by ID_GFX_VAR_6
+//FLAG_TEMP_7                               - Used by ID_GFX_VAR_7      -- ONLY TO BE USED FOR TRAINERS     - RADIUS (1)
+//FLAG_TEMP_8                               - Used by ID_GFX_VAR_8      -- ONLY TO BE USED FOR TRAINERS     - RADIUS (5)
+//FLAG_TEMP_9                               - Used by ID_GFX_VAR_9      -- ONLY TO BE USED FOR TRAINERS     - RADIUS (5)
+//FLAG_TEMP_10                              - Used by ID_GFX_VAR_0      -- MOSTLY USED FOR ITEMS.
+
+//VAR_DUNGEONEERING_OBJECT_SCRIPT_1         - Used by ID_GFX_VAR_1      --Determines what script to use.
+
+//VAR_DUNGEONEERING_OBJECT_SCRIPT INFO:
+//1 - CUTTREE
+//2 - ITEM
+//3 - TRAINER
+//4 - ROCK SMASH
+
+const ID_GFX_VAR_1 = 1
+const ID_GFX_VAR_2 = 2
+const ID_GFX_VAR_3 = 3
+const ID_GFX_VAR_4 = 4
+const ID_GFX_VAR_5 = 5
+const ID_GFX_VAR_6 = 6
+const ID_GFX_VAR_7 = 7
+const ID_GFX_VAR_8 = 8
+const ID_GFX_VAR_9 = 9
+const ID_GFX_VAR_0 = 10
+
+
+
+mapscripts Dungeoneering_1_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        call(Randomise_Dungeon)
+    }
+}
+
+script RandomiseSeed_ForDoors {
+    setvar(VAR_TEMP_9, 5)
+    specialvar (VAR_STORE_SEED_RESULT, GetSeededResult)
+}
+
+script Dungeon_HideFlags {
+    setflag(FLAG_TEMP_1)
+    setflag(FLAG_TEMP_2)
+    setflag(FLAG_TEMP_3)
+    setflag(FLAG_TEMP_4)
+    setflag(FLAG_TEMP_5)
+    setflag(FLAG_TEMP_6)
+    setflag(FLAG_TEMP_7)
+    setflag(FLAG_TEMP_8)
+    setflag(FLAG_TEMP_9)
+    setflag(FLAG_TEMP_10)
+}
+
+
+
+script Randomise_Dungeon {
+    call(Dungeon_HideFlags)
+    
+//Creates a path, by setting the starting/boss rooms and closing off certain doors.
+    call_if_eq (VAR_STORE_SEED_RESULT, 0, DungeonLayout_ROOM_PATH_1)
+    call_if_eq (VAR_STORE_SEED_RESULT, 1, DungeonLayout_ROOM_PATH_2)
+    call_if_eq (VAR_STORE_SEED_RESULT, 2, DungeonLayout_ROOM_PATH_3)
+    call_if_eq (VAR_STORE_SEED_RESULT, 3, DungeonLayout_ROOM_PATH_4)
+    call_if_eq (VAR_STORE_SEED_RESULT, 4, DungeonLayout_ROOM_PATH_5)
+
+//start decorating rooms
+    call(DungeonLayout_StartingRoom_DECO)
+    if (!flag(FLAG_TEMP_11)) {
+        call(DungeonLayout_BossRoom_DECO)
+    }
+    if (!flag(FLAG_TEMP_12)) {
+        call(DungeonLayout_NormalRoom_DECO)
+    }
+    special(DrawWholeMapView) 
+    call(DungeonCheckIfItemIsClaimed)
+    return
+}
+
+script DungeonLayout_ShutDoors_LEFT {
+//RIGHT
+    setmetatile(0, 4, 522, 1) 
+    setmetatile(1, 4, 523, 1) 
+    setmetatile(0, 5, 522, 1)
+    setmetatile(1, 5, 523, 1) 
+    setmetatile(0, 6, 522, 1) 
+    setmetatile(1, 6, 523, 1) 
+    setmetatile(0, 7, 522, 1) 
+    setmetatile(1, 7, 523, 1) 
+    return
+}
+script DungeonLayout_ShutDoors_RIGHT {
+//RIGHT
+    setmetatile(13, 4, 521, 1) 
+    setmetatile(14, 4, 522, 1) 
+    setmetatile(13, 5, 521, 1)
+    setmetatile(14, 5, 522, 1) 
+    setmetatile(13, 6, 521, 1) 
+    setmetatile(14, 6, 522, 1) 
+    setmetatile(13, 7, 521, 1) 
+    setmetatile(14, 7, 522, 1) 
+    return
+}
+script DungeonLayout_ShutDoors_DOWN {
+//DOWN
+    setmetatile(6, 8, 520, 0) 
+    setmetatile(7, 8, 520, 0) 
+    setmetatile(8, 8, 520, 0)
+    return
+}
+script DungeonLayout_ShutDoors_UP {
+//UP
+    setmetatile(6, 1, 518, 1) 
+    setmetatile(7, 1, 518, 1) 
+    setmetatile(8, 1, 518, 1)
+    setmetatile(6, 2, 526, 1) 
+    setmetatile(7, 2, 526, 1) 
+    setmetatile(8, 2, 526, 1)
+    return
+}
+script DungeonLayout_StartingRoom {
+    setmetatile(3, 2, 536, 0) 
+    setmetatile(3, 1, 528, 1)
+    return
+}
+script DungeonLayout_BossRoom {
+    setmetatile(2, 1, 518, 1)
+    setmetatile(3, 1, 518, 1)
+    setmetatile(4, 1, 518, 1) 
+    setmetatile(5, 1, 518, 1) 
+    setmetatile(6, 1, 518, 1)
+    setmetatile(7, 1, 518, 1) 
+    setmetatile(8, 1, 518, 1) 
+    setmetatile(9, 1, 518, 1)
+    setmetatile(10, 1, 518, 1) 
+    setmetatile(11, 1, 518, 1) 
+    setmetatile(12, 1, 518, 1)
+    setmetatile(2, 2, 526, 1) 
+    setmetatile(3, 2, 526, 1)
+    setmetatile(4, 2, 526, 1) 
+    setmetatile(5, 2, 526, 1) 
+    setmetatile(6, 2, 526, 1)
+    setmetatile(7, 2, 526, 1) 
+    setmetatile(8, 2, 526, 1) 
+    setmetatile(9, 2, 526, 1)
+    setmetatile(10, 2, 526, 1) 
+    setmetatile(11, 2, 526, 1) 
+    setmetatile(12, 2, 526, 1)
+    setmetatile(3, 2, 536, 0) //ladder
+    setmetatile(3, 1, 528, 1) //ladder
+    return
+}
+
+
+
+
+
+script DungeonLayout_PuzzleRoom_1 {
+    setflag(FLAG_TEMP_12) //Prevents regular decorations
+
+    switch(var(VAR_DUNGEONEERING_RANDOM_PUZZLE_1)){
+		case 0:
+            call(DungeonLayout_PuzzleRoom_RopeBridge)
+        case 1:	
+            call(DungeonLayout_PuzzleRoom_VineRoom_1)
+        case 2:
+            call(DungeonLayout_PuzzleRoom_VineRoom_2)
+        case 3:
+            call(DungeonLayout_PuzzleRoom_Item)
+        case 4:
+            call(DungeonLayout_PuzzleRoom_Rock)
+        case 5:
+            call(DungeonLayout_PuzzleRoom_Battle)
+        }
+    return
+}
+script DungeonLayout_PuzzleRoom_2 {
+    setflag(FLAG_TEMP_12) //Prevents regular decorations
+
+    switch(var(VAR_DUNGEONEERING_RANDOM_PUZZLE_2)){
+		case 0:
+            call(DungeonLayout_PuzzleRoom_RopeBridge)
+        case 1:	
+            call(DungeonLayout_PuzzleRoom_VineRoom_1)
+        case 2:
+            call(DungeonLayout_PuzzleRoom_VineRoom_2)
+        case 3:
+            call(DungeonLayout_PuzzleRoom_Item)
+        case 4:
+            call(DungeonLayout_PuzzleRoom_Rock)
+        case 5:
+            call(DungeonLayout_PuzzleRoom_Battle)
+        }
+    return
+}
+script DungeonLayout_PuzzleRoom_3 {
+    setflag(FLAG_TEMP_12) //Prevents regular decorations
+
+    switch(var(VAR_DUNGEONEERING_RANDOM_PUZZLE_3)){
+		case 0:
+            call(DungeonLayout_PuzzleRoom_RopeBridge)
+        case 1:	
+            call(DungeonLayout_PuzzleRoom_VineRoom_1)
+        case 2:
+            call(DungeonLayout_PuzzleRoom_VineRoom_2)
+        case 3:
+            call(DungeonLayout_PuzzleRoom_Item)
+        case 4:
+            call(DungeonLayout_PuzzleRoom_Rock)
+        case 5:
+            call(DungeonLayout_PuzzleRoom_Battle)
+        }
+    return
+}
+script DungeonLayout_PuzzleRoom_4 {
+    setflag(FLAG_TEMP_12) //Prevents regular decorations
+
+    switch(var(VAR_DUNGEONEERING_RANDOM_PUZZLE_4)){
+		case 0:
+            call(DungeonLayout_PuzzleRoom_RopeBridge)
+        case 1:	
+            call(DungeonLayout_PuzzleRoom_VineRoom_1)
+        case 2:
+            call(DungeonLayout_PuzzleRoom_VineRoom_2)
+        case 3:
+            call(DungeonLayout_PuzzleRoom_Item)
+        case 4:
+            call(DungeonLayout_PuzzleRoom_Rock)
+        case 5:
+            call(DungeonLayout_PuzzleRoom_Battle)
+        }
+    return
+}
+script DungeonLayout_PuzzleRoom_5 {
+    setflag(FLAG_TEMP_12) //Prevents regular decorations
+
+    switch(var(VAR_DUNGEONEERING_RANDOM_PUZZLE_5)){
+		case 0:
+            call(DungeonLayout_PuzzleRoom_RopeBridge)
+        case 1:	
+            call(DungeonLayout_PuzzleRoom_VineRoom_1)
+        case 2:
+            call(DungeonLayout_PuzzleRoom_VineRoom_2)
+        case 3:
+            call(DungeonLayout_PuzzleRoom_Item)
+        case 4:
+            call(DungeonLayout_PuzzleRoom_Rock)
+        case 5:
+            call(DungeonLayout_PuzzleRoom_Battle)
+        }
+    return
+}
+script DungeonLayout_PuzzleRoom_6 {
+    setflag(FLAG_TEMP_12) //Prevents regular decorations
+
+    switch(var(VAR_DUNGEONEERING_RANDOM_PUZZLE_6)){
+		case 0:
+            call(DungeonLayout_PuzzleRoom_RopeBridge)
+        case 1:	
+            call(DungeonLayout_PuzzleRoom_VineRoom_1)
+        case 2:
+            call(DungeonLayout_PuzzleRoom_VineRoom_2)
+        case 3:
+            call(DungeonLayout_PuzzleRoom_Item)
+        case 4:
+            call(DungeonLayout_PuzzleRoom_Rock)
+        case 5:
+            call(DungeonLayout_PuzzleRoom_Battle)
+        }
+    return
+}
+script DungeonLayout_PuzzleRoom_7 {
+    setflag(FLAG_TEMP_12) //Prevents regular decorations
+
+    switch(var(VAR_DUNGEONEERING_RANDOM_PUZZLE_7)){
+		case 0:
+            call(DungeonLayout_PuzzleRoom_RopeBridge)
+        case 1:	
+            call(DungeonLayout_PuzzleRoom_VineRoom_1)
+        case 2:
+            call(DungeonLayout_PuzzleRoom_VineRoom_2)
+        case 3:
+            call(DungeonLayout_PuzzleRoom_Item)
+        case 4:
+            call(DungeonLayout_PuzzleRoom_Rock)
+        case 5:
+            call(DungeonLayout_PuzzleRoom_Battle)
+        }
+    return
+}
+script DungeonLayout_PuzzleRoom_8 {
+    setflag(FLAG_TEMP_12) //Prevents regular decorations
+
+    switch(var(VAR_DUNGEONEERING_RANDOM_PUZZLE_8)){
+		case 0:
+            call(DungeonLayout_PuzzleRoom_RopeBridge)
+        case 1:	
+            call(DungeonLayout_PuzzleRoom_VineRoom_1)
+        case 2:
+            call(DungeonLayout_PuzzleRoom_VineRoom_2)
+        case 3:
+            call(DungeonLayout_PuzzleRoom_Item)
+        case 4:
+            call(DungeonLayout_PuzzleRoom_Rock)
+        case 5:
+            call(DungeonLayout_PuzzleRoom_Battle)
+        }
+    return
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script DungeonLayout_PuzzleRoom_VineRoom_1 {
+//TILES
+    setmetatile(2, 1, 518, 1)
+    setmetatile(3, 1, 518, 1)
+    setmetatile(4, 1, 518, 1) 
+    setmetatile(5, 1, 518, 1) 
+    setmetatile(9, 1, 518, 1)
+    setmetatile(10, 1, 518, 1) 
+    setmetatile(11, 1, 518, 1) 
+    setmetatile(12, 1, 518, 1)
+    setmetatile(2, 2, 526, 1) 
+    setmetatile(3, 2, 526, 1)
+    setmetatile(4, 2, 526, 1) 
+    setmetatile(5, 2, 526, 1) 
+    setmetatile(9, 2, 526, 1)
+    setmetatile(10, 2, 526, 1) 
+    setmetatile(11, 2, 526, 1) 
+    setmetatile(12, 2, 526, 1)
+    setmetatile(3, 3, METATILE_Dungeoneering_VINE_END_UP, 1)
+    setmetatile(2, 4, METATILE_Dungeoneering_VINE_MID_1, 1)
+    setmetatile(3, 4, METATILE_Dungeoneering_VINE_CROSS_L, 1)
+    setmetatile(3, 5, METATILE_Dungeoneering_VINE_BOTTOM_L, 1)
+    setmetatile(4, 5, METATILE_Dungeoneering_VINE_MID_2, 1)
+    setmetatile(5, 5, METATILE_Dungeoneering_VINE_CROSS_L, 1)
+    setmetatile(5, 4, METATILE_Dungeoneering_VINE_END_UP, 1)
+    setmetatile(5, 6, METATILE_Dungeoneering_VINE_MID_L, 1)
+    setmetatile(5, 7, METATILE_Dungeoneering_VINE_BOTTOM_L, 1)
+    setmetatile(6, 7, METATILE_Dungeoneering_VINE_MID_2, 1)
+    setmetatile(7, 7, METATILE_Dungeoneering_VINE_END_R, 1)
+    setmetatile(2, 7, METATILE_Dungeoneering_VINE_END_L, 1)
+    setmetatile(3, 7, METATILE_Dungeoneering_VINE_TOP_R, 1)
+    setmetatile(3, 8, METATILE_Dungeoneering_VINE_END_DOWN, 1)
+    setmetatile(7, 4, METATILE_Dungeoneering_VINE_END_L, 1)
+    setmetatile(8, 4, METATILE_Dungeoneering_VINE_MID_1, 1)
+    setmetatile(9, 4, METATILE_Dungeoneering_VINE_TOP_R, 1)
+    setmetatile(9, 5, METATILE_Dungeoneering_VINE_MID_R, 1)
+    setmetatile(9, 6, METATILE_Dungeoneering_VINE_MID_L, 1)
+    setmetatile(9, 7, METATILE_Dungeoneering_VINE_BOTTOM_L, 1)
+    setmetatile(10, 7, METATILE_Dungeoneering_VINE_CROSS_DOWN, 1)
+    setmetatile(10, 8, METATILE_Dungeoneering_VINE_END_DOWN, 1)
+    setmetatile(11, 7, METATILE_Dungeoneering_VINE_MID_1, 1)
+    setmetatile(12, 7, METATILE_Dungeoneering_VINE_END_R, 1)
+    setmetatile(11, 5, METATILE_Dungeoneering_VINE_END_DOWN, 1)
+    setmetatile(11, 4, METATILE_Dungeoneering_VINE_CROSS_R, 1)
+    setmetatile(11, 3, METATILE_Dungeoneering_VINE_END_UP, 1)
+    setmetatile(12, 4, METATILE_Dungeoneering_VINE_MID_1, 1)
+//OBJECTS
+    setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_CUTTABLE_TREE)
+    setobjectxyperm(ID_GFX_VAR_1, 6, 4)
+    setobjectmovementtype(ID_GFX_VAR_1,MOVEMENT_TYPE_NONE)
+    clearflag(FLAG_TEMP_1)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_1, 1)
+
+    setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_CUTTABLE_TREE)
+    setobjectxyperm(ID_GFX_VAR_2, 4, 7)
+    setobjectmovementtype(ID_GFX_VAR_2,MOVEMENT_TYPE_NONE)
+    clearflag(FLAG_TEMP_2)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_2, 1)
+
+    setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_CUTTABLE_TREE)
+    setobjectxyperm(ID_GFX_VAR_3, 8, 7)
+    setobjectmovementtype(ID_GFX_VAR_3,MOVEMENT_TYPE_NONE)
+    clearflag(FLAG_TEMP_3)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_3, 1)
+
+    setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_CUTTABLE_TREE)
+    setobjectxyperm(ID_GFX_VAR_4, 10, 5)
+    setobjectmovementtype(ID_GFX_VAR_4,MOVEMENT_TYPE_NONE)
+    clearflag(FLAG_TEMP_4)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_4, 1)
+
+    //TRAINER ONLY #7
+    setvar(VAR_OBJ_GFX_ID_7, OBJ_EVENT_GFX_RUNE_ARMOUR) 
+    setobjectxyperm(ID_GFX_VAR_7, 7, 5)
+    setobjectmovementtype(ID_GFX_VAR_7,MOVEMENT_TYPE_FACE_DOWN_AND_LEFT)
+    clearflag(FLAG_TEMP_7)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_7, 3)
+}
+script DungeonLayout_PuzzleRoom_VineRoom_2 {
+//TILES
+    setmetatile(2, 1, 518, 1)
+    setmetatile(3, 1, 518, 1)
+    setmetatile(4, 1, 518, 1) 
+    setmetatile(5, 1, 518, 1) 
+    setmetatile(9, 1, 518, 1)
+    setmetatile(10, 1, 518, 1) 
+    setmetatile(11, 1, 518, 1) 
+    setmetatile(12, 1, 518, 1)
+    setmetatile(2, 2, 526, 1) 
+    setmetatile(3, 2, 526, 1)
+    setmetatile(4, 2, 526, 1) 
+    setmetatile(5, 2, 526, 1) 
+    setmetatile(9, 2, 526, 1)
+    setmetatile(10, 2, 526, 1) 
+    setmetatile(11, 2, 526, 1) 
+    setmetatile(12, 2, 526, 1)
+    //METATILE_Dungeoneering_
+    setmetatile(2, 7, METATILE_Dungeoneering_VINE_END_L, 1)
+    setmetatile(3, 7, METATILE_Dungeoneering_VINE_BOTTOM_R, 1)
+    setmetatile(3, 6, METATILE_Dungeoneering_VINE_MID_L, 1)
+    setmetatile(3, 5, METATILE_Dungeoneering_VINE_MID_L, 1)
+    setmetatile(3, 4, METATILE_Dungeoneering_VINE_END_UP, 1)
+    setmetatile(5, 3, METATILE_Dungeoneering_VINE_END_UP, 1)
+    setmetatile(5, 4, METATILE_Dungeoneering_VINE_BOTTOM_L, 1)
+    setmetatile(6, 4, METATILE_Dungeoneering_VINE_MID_2, 1)
+    setmetatile(7, 4, METATILE_Dungeoneering_VINE_END_R, 1)
+    setmetatile(5, 6, METATILE_Dungeoneering_VINE_END_UP, 1)
+    setmetatile(5, 7, METATILE_Dungeoneering_VINE_CROSS_R, 1)
+    setmetatile(5, 8, METATILE_Dungeoneering_VINE_END_DOWN, 1)
+    setmetatile(6, 7, METATILE_Dungeoneering_VINE_MID_1, 1)
+    setmetatile(7, 7, METATILE_Dungeoneering_VINE_BOTTOM_R, 1)
+    setmetatile(7, 6, METATILE_Dungeoneering_VINE_END_UP, 1)
+    setmetatile(9, 3, METATILE_Dungeoneering_VINE_END_UP, 1)
+    setmetatile(9, 4, METATILE_Dungeoneering_VINE_END_DOWN, 1)
+    setmetatile(9, 8, METATILE_Dungeoneering_VINE_END_UP, 1)
+    setmetatile(9, 6, METATILE_Dungeoneering_VINE_END_L, 1)
+    setmetatile(10, 6, METATILE_Dungeoneering_VINE_MID_2, 1)
+    setmetatile(11, 6, METATILE_Dungeoneering_VINE_CROSS_L, 1)
+    setmetatile(11, 7, METATILE_Dungeoneering_VINE_END_DOWN, 1)
+    setmetatile(11, 5, METATILE_Dungeoneering_VINE_MID_R, 1)
+    setmetatile(11, 4, METATILE_Dungeoneering_VINE_TOP_L, 1)
+    setmetatile(12, 4, METATILE_Dungeoneering_VINE_MID_1, 1)
+//OBJECTS
+    setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_CUTTABLE_TREE)
+    setobjectxyperm(ID_GFX_VAR_1, 4, 4)
+    setobjectmovementtype(ID_GFX_VAR_1,MOVEMENT_TYPE_NONE)
+    clearflag(FLAG_TEMP_1)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_1, 1)
+    setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_CUTTABLE_TREE)
+    setobjectxyperm(ID_GFX_VAR_2, 8, 4)
+    setobjectmovementtype(ID_GFX_VAR_2,MOVEMENT_TYPE_NONE)
+    clearflag(FLAG_TEMP_2)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_2, 1)
+    setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_CUTTABLE_TREE)
+    setobjectxyperm(ID_GFX_VAR_3, 4, 7)
+    setobjectmovementtype(ID_GFX_VAR_3,MOVEMENT_TYPE_NONE)
+    clearflag(FLAG_TEMP_3)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_3, 1)
+    setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_CUTTABLE_TREE)
+    setobjectxyperm(ID_GFX_VAR_4, 8, 6)
+    setobjectmovementtype(ID_GFX_VAR_4,MOVEMENT_TYPE_NONE)
+    clearflag(FLAG_TEMP_4)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_4, 1)
+    setvar(VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_CUTTABLE_TREE)
+    setobjectxyperm(ID_GFX_VAR_5, 11, 8)
+    setobjectmovementtype(ID_GFX_VAR_5,MOVEMENT_TYPE_NONE)
+    clearflag(FLAG_TEMP_5)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_5, 1)
+//ITEM
+    setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_POUCH)
+    setobjectxyperm(ID_GFX_VAR_0, 2, 8)
+    setobjectmovementtype(ID_GFX_VAR_0,MOVEMENT_TYPE_NONE)
+    clearflag(FLAG_TEMP_10)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_10, 2)
+
+}
+
+script DungeonLayout_PuzzleRoom_Rock {
+    //BACK WALL
+    setmetatile(1, 1, METATILE_Dungeoneering_FROZEN_WALL_CORNER_R, 1)
+    setmetatile(2, 1, METATILE_Dungeoneering_FROZEN_WALL_TOP, 1)
+    setmetatile(3, 1, METATILE_Dungeoneering_FROZEN_WALL_TOP, 1)
+    setmetatile(4, 1, METATILE_Dungeoneering_FROZEN_WALL_CORNER_L, 1)
+    setmetatile(5, 1, METATILE_Dungeoneering_FROZEN_WALL_CORNER_R, 1)
+    setmetatile(9, 1, METATILE_Dungeoneering_FROZEN_WALL_CORNER_L, 1)
+    setmetatile(10, 1, METATILE_Dungeoneering_FROZEN_WALL_CORNER_R, 1)
+    setmetatile(11, 1, METATILE_Dungeoneering_FROZEN_WALL_TOP, 1)
+    setmetatile(12, 1, METATILE_Dungeoneering_FROZEN_WALL_TOP, 1)
+    setmetatile(13, 1, METATILE_Dungeoneering_FROZEN_WALL_CORNER_L, 1)
+    setmetatile(1, 2, METATILE_Dungeoneering_FROZEN_WALL_CIELING_R, 1)
+    setmetatile(2, 2, METATILE_Dungeoneering_FROZEN_WALL_BOTTOM, 1)
+    setmetatile(3, 2, METATILE_Dungeoneering_FROZEN_WALL_BOTTOM, 1)
+    setmetatile(4, 2, METATILE_Dungeoneering_FROZEN_WALL_CIELING_L, 1)
+    setmetatile(5, 2, METATILE_Dungeoneering_FROZEN_WALL_CIELING_R, 1)
+    setmetatile(9, 2, METATILE_Dungeoneering_FROZEN_WALL_CIELING_L, 1)
+    setmetatile(10, 2, METATILE_Dungeoneering_FROZEN_WALL_CIELING_R, 1)
+    setmetatile(11, 2, METATILE_Dungeoneering_FROZEN_WALL_BOTTOM, 1)
+    setmetatile(12, 2, METATILE_Dungeoneering_FROZEN_WALL_BOTTOM, 1)
+    setmetatile(13, 2, METATILE_Dungeoneering_FROZEN_WALL_CIELING_L, 1)
+    setmetatile(4, 3, METATILE_Dungeoneering_FROZEN_WALL_TOP_L, 1)
+    setmetatile(5, 3, METATILE_Dungeoneering_FROZEN_WALL_TOP_R, 1)
+    setmetatile(4, 4, METATILE_Dungeoneering_FROZEN_WALL_BOTTOM_L, 1)
+    setmetatile(5, 4, METATILE_Dungeoneering_FROZEN_WALL_BOTTOM_R, 1)
+    setmetatile(9, 3, METATILE_Dungeoneering_FROZEN_WALL_TOP_L, 1)
+    setmetatile(10, 3, METATILE_Dungeoneering_FROZEN_WALL_TOP_R, 1)
+    setmetatile(9, 4, METATILE_Dungeoneering_FROZEN_WALL_BOTTOM_L, 1)
+    setmetatile(10, 4, METATILE_Dungeoneering_FROZEN_WALL_BOTTOM_R, 1)
+    setmetatile(2, 3, METATILE_Dungeoneering_DG_ROCK_1, 1)
+    setmetatile(6, 4, METATILE_Dungeoneering_DG_ROCK_1, 1)
+    setmetatile(8, 6, METATILE_Dungeoneering_DG_ROCK_1, 1)
+    setmetatile(11, 4, METATILE_Dungeoneering_DG_ROCK_1, 1)
+    setmetatile(12, 7, METATILE_Dungeoneering_DG_ROCK_1, 1)
+    setmetatile(2, 5, METATILE_Dungeoneering_DG_ROCK_1, 1)
+    setmetatile(3, 7, METATILE_Dungeoneering_DG_ROCK_2, 1)
+    setmetatile(6, 7, METATILE_Dungeoneering_DG_ROCK_2, 1)
+    setmetatile(8, 3, METATILE_Dungeoneering_DG_ROCK_2, 1)
+    setmetatile(4, 6, METATILE_Dungeoneering_FROZEN_WALL_CIELING_TOP_L, 1)
+    setmetatile(5, 6, METATILE_Dungeoneering_FROZEN_WALL_CIELING_TOP_R, 1)
+    setmetatile(4, 7, METATILE_Dungeoneering_FROZEN_WALL_CIELING_L, 1)
+    setmetatile(5, 7, METATILE_Dungeoneering_FROZEN_WALL_CIELING_R, 1)
+    setmetatile(4, 8, METATILE_Dungeoneering_FROZEN_WALL_CIELING_L, 1)
+    setmetatile(5, 8, METATILE_Dungeoneering_FROZEN_WALL_CIELING_R, 1)
+    setmetatile(9, 6, METATILE_Dungeoneering_FROZEN_WALL_CIELING_TOP_L, 1)
+    setmetatile(10, 6, METATILE_Dungeoneering_FROZEN_WALL_CIELING_TOP_R, 1)
+    setmetatile(9, 7, METATILE_Dungeoneering_FROZEN_WALL_CIELING_L, 1)
+    setmetatile(10, 7, METATILE_Dungeoneering_FROZEN_WALL_CIELING_R, 1)
+    setmetatile(9, 8, METATILE_Dungeoneering_FROZEN_WALL_CIELING_L, 1)
+    setmetatile(10, 8, METATILE_Dungeoneering_FROZEN_WALL_CIELING_R, 1)
+    setmetatile(4, 9, METATILE_Dungeoneering_FROZEN_WALL_CORNER_BOTTOM_R, 1)
+    setmetatile(5, 9, METATILE_Dungeoneering_FROZEN_WALL_CORNER_BOTTOM_L, 1)
+    setmetatile(9, 9, METATILE_Dungeoneering_FROZEN_WALL_CORNER_BOTTOM_R, 1)
+    setmetatile(10, 9, METATILE_Dungeoneering_FROZEN_WALL_CORNER_BOTTOM_L, 1)
+//OBJECTS
+    setvar(VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_BREAKABLE_ROCK)
+    setobjectxyperm(ID_GFX_VAR_1, 7, 5)
+    setobjectmovementtype(ID_GFX_VAR_1,MOVEMENT_TYPE_NONE)
+    clearflag(FLAG_TEMP_1)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_1, 4)
+    setvar(VAR_OBJ_GFX_ID_2, OBJ_EVENT_GFX_BREAKABLE_ROCK)
+    setobjectxyperm(ID_GFX_VAR_2, 8, 4)
+    setobjectmovementtype(ID_GFX_VAR_2,MOVEMENT_TYPE_NONE)
+    clearflag(FLAG_TEMP_2)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_2, 4)
+    setvar(VAR_OBJ_GFX_ID_3, OBJ_EVENT_GFX_BREAKABLE_ROCK)
+    setobjectxyperm(ID_GFX_VAR_3, 4, 5)
+    setobjectmovementtype(ID_GFX_VAR_3,MOVEMENT_TYPE_NONE)
+    clearflag(FLAG_TEMP_3)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_3, 4)
+    setvar(VAR_OBJ_GFX_ID_4, OBJ_EVENT_GFX_BREAKABLE_ROCK)
+    setobjectxyperm(ID_GFX_VAR_4, 10, 5)
+    setobjectmovementtype(ID_GFX_VAR_4,MOVEMENT_TYPE_NONE)
+    clearflag(FLAG_TEMP_4)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_4, 4)
+    setvar(VAR_OBJ_GFX_ID_5, OBJ_EVENT_GFX_BREAKABLE_ROCK)
+    setobjectxyperm(ID_GFX_VAR_5, 12, 4)
+    setobjectmovementtype(ID_GFX_VAR_5,MOVEMENT_TYPE_NONE)
+    clearflag(FLAG_TEMP_5)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_5, 4)
+    setvar(VAR_OBJ_GFX_ID_6, OBJ_EVENT_GFX_BREAKABLE_ROCK)
+    setobjectxyperm(ID_GFX_VAR_6, 7, 7)
+    setobjectmovementtype(ID_GFX_VAR_6,MOVEMENT_TYPE_NONE)
+    clearflag(FLAG_TEMP_6)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_6, 4)
+    setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_POUCH)
+    setobjectxyperm(ID_GFX_VAR_0, 11, 3)
+    setobjectmovementtype(ID_GFX_VAR_0,MOVEMENT_TYPE_NONE)
+    clearflag(FLAG_TEMP_10)
+    setvar(VAR_DUNGEONEERING_OBJECT_SCRIPT_10, 2)
+}
+script DungeonLayout_PuzzleRoom_Item {
+    //BACK WALL
+    setmetatile(7, 5, 913, 1)
+}
+script DungeonLayout_PuzzleRoom_Trainer {
+    //BACK WALL
+    setmetatile(7, 5, 922, 1)
+}
+script DungeonLayout_PuzzleRoom_Battle {
+    //BACK WALL
+    setmetatile(7, 5, 876, 1)
+}
+
+
+script DungeonLayout_PuzzleRoom_RopeBridge {
+    //BACK WALL
+    setmetatile(2, 1, 518, 1)
+    setmetatile(3, 1, 518, 1)
+    setmetatile(4, 1, 518, 1) 
+    setmetatile(5, 1, 518, 1) 
+    setmetatile(9, 1, 518, 1)
+    setmetatile(10, 1, 518, 1) 
+    setmetatile(11, 1, 518, 1) 
+    setmetatile(12, 1, 518, 1)
+    setmetatile(2, 2, 526, 1) 
+    setmetatile(3, 2, 526, 1)
+    setmetatile(4, 2, 526, 1) 
+    setmetatile(5, 2, 526, 1) 
+    setmetatile(9, 2, 526, 1)
+    setmetatile(10, 2, 526, 1) 
+    setmetatile(11, 2, 526, 1) 
+    setmetatile(12, 2, 526, 1)
+    setmetatile(2, 3, 589, 1) //HOLE - TOP CORNER L
+    setmetatile(3, 3, 590, 1) //HOLE - TOP 
+    setmetatile(4, 3, 590, 1) //HOLE - TOP 
+    setmetatile(5, 3, 591, 1) //HOLE - TOP CORNER R
+    setmetatile(6, 3, 520, 0) //FLOOR TILE 
+    setmetatile(7, 3, 929, 0) //ROPE - TOP TIED
+    setmetatile(8, 3, 520, 0) //FLOOR TILE
+    setmetatile(9, 3, 589, 1) //HOLE - TOP CORNER L
+    setmetatile(10, 3, 590, 1) //HOLE - TOP 
+    setmetatile(11, 3, 590, 1) //HOLE - TOP 
+    setmetatile(12, 3, 591, 1) //HOLE - TOP CORNER R
+    setmetatile(2, 4, 597, 1) //HOLE - MID EDGE L
+    setmetatile(3, 4, 598, 1) //HOLE - MID 
+    setmetatile(4, 4, 598, 1) //HOLE - MID 
+    setmetatile(5, 4, 639, 1) //HOLE - TOP > 
+    setmetatile(6, 4, 590, 1) //HOLE - TOP 
+    setmetatile(7, 4, 590, 1) //HOLE - TOP 
+    setmetatile(8, 4, 590, 1) //HOLE - TOP 
+    setmetatile(9, 4, 638, 1) //HOLE - TOP <
+    setmetatile(10, 4, 598, 1) //HOLE - MID 
+    setmetatile(11, 4, 598, 1) //HOLE - MID 
+    setmetatile(12, 4, 599, 1) //HOLE - MID EDGE R
+    setmetatile(2, 5, 605, 1) //HOLE - BOTTOM CORNER L
+    setmetatile(3, 5, 606, 1) //HOLE - BOTTOM 
+    setmetatile(4, 5, 646, 1) //HOLE - BOTTOM >
+    setmetatile(5, 5, 598, 1) //HOLE - MID
+    setmetatile(6, 5, 598, 1) //HOLE - MID
+    setmetatile(7, 5, 598, 1) //HOLE - MID
+    setmetatile(8, 5, 598, 1) //HOLE - MID
+    setmetatile(9, 5, 598, 1) //HOLE - MID
+    setmetatile(10, 5, 647, 1) //HOLE - BOTTOM <
+    setmetatile(11, 5, 606, 1) //HOLE - BOTTOM 
+    setmetatile(12, 5, 607, 1) //HOLE - BOTTOM CORNER R
+    setmetatile(4, 6, 605, 1) //HOLE - BOTTOM CORNER L
+    setmetatile(5, 6, 606, 1) //HOLE - BOTTOM 
+    setmetatile(6, 6, 606, 1) //HOLE - BOTTOM 
+    setmetatile(7, 6, 952, 1) //ROPE - EMPTY BUILD
+    setmetatile(8, 6, 606, 1) //HOLE - BOTTOM 
+    setmetatile(9, 6, 606, 1) //HOLE - BOTTOM 
+    setmetatile(10, 6, 607, 1) //HOLE - BOTTOM CORNER R
+    setmetatile(7, 7, 961, 0) //ROPE - BOTTOM TIED
+//Randomise Junk layout.
+    //random(2)
+    //if (var(VAR_RESULT)== 0) {
+        setmetatile(3, 6, 601, 0) //BOOK - BIG
+        setmetatile(11, 8, 601, 0) //BOOK - BIG
+        setmetatile(5, 8, 602, 0) //BOOK - SMALL
+        setmetatile(10, 8, 602, 0) //BOOK - SMALL
+        setmetatile(2, 8, 930, 1) //LOOM
+    //}
+    //elif (var(VAR_RESULT) == 1) {
+      //  setmetatile(11, 6, 601, 0) //BOOK - BIG
+      //  setmetatile(5, 7, 601, 0) //BOOK - BIG
+      //  setmetatile(3, 6, 602, 0) //BOOK - SMALL
+      //  setmetatile(9, 8, 602, 0) //BOOK - SMALL
+      //  setmetatile(12, 8, 930, 1) //LOOM
+    //}
+
+//Checks to see if you have completed the Puzzle room.
+    specialvar (VAR_RESULT, GetCurrentMap)
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_1 && flag(FLAG_DG_PUZZLE_ROOM_1)) {
+        setflag(FLAG_TEMP_1E) // Turns off puzzles.
+        call(DungeonCompleted_PuzzleRoom_Rope)
+    }
+    elif (var(VAR_RESULT) == MAP_DUNGEONEERING_2 && flag(FLAG_DG_PUZZLE_ROOM_2)) {
+        setflag(FLAG_TEMP_1E) // Turns off puzzles.
+        call(DungeonCompleted_PuzzleRoom_Rope)
+    }
+    elif (var(VAR_RESULT) == MAP_DUNGEONEERING_3 && flag(FLAG_DG_PUZZLE_ROOM_3)) {
+        setflag(FLAG_TEMP_1E) // Turns off puzzles.
+        call(DungeonCompleted_PuzzleRoom_Rope)
+    }
+    elif (var(VAR_RESULT) == MAP_DUNGEONEERING_4 && flag(FLAG_DG_PUZZLE_ROOM_4)) {
+        setflag(FLAG_TEMP_1E) // Turns off puzzles.
+        call(DungeonCompleted_PuzzleRoom_Rope)
+    }
+    elif (var(VAR_RESULT) == MAP_DUNGEONEERING_5 && flag(FLAG_DG_PUZZLE_ROOM_5)) {
+        setflag(FLAG_TEMP_1E) // Turns off puzzles.
+        call(DungeonCompleted_PuzzleRoom_Rope)
+    }
+    elif (var(VAR_RESULT) == MAP_DUNGEONEERING_6 && flag(FLAG_DG_PUZZLE_ROOM_6)) {
+        setflag(FLAG_TEMP_1E) // Turns off puzzles.
+        call(DungeonCompleted_PuzzleRoom_Rope)
+    }
+    elif (var(VAR_RESULT) == MAP_DUNGEONEERING_7 && flag(FLAG_DG_PUZZLE_ROOM_7)) {
+        setflag(FLAG_TEMP_1E) // Turns off puzzles.
+        call(DungeonCompleted_PuzzleRoom_Rope)
+    }
+    elif (var(VAR_RESULT) == MAP_DUNGEONEERING_8 && flag(FLAG_DG_PUZZLE_ROOM_8)) {
+        setflag(FLAG_TEMP_1E) // Turns off puzzles.
+        call(DungeonCompleted_PuzzleRoom_Rope)
+    }
+    return
+}
+script DungeonCompleted_PuzzleRoom_Rope {
+    setmetatile(7, 5, 945, 0) //ROPE - MID
+    setmetatile(7, 4, 937, 0) //ROPE - TOP HOLE
+    setmetatile(7, 6, 953, 0) //ROPE - BOTTOM EDGE
+}
+
+
+///CLOSED DOOR ROOMS
+//ROOM 1
+script DungeonLayout_BLOCKED_RIGHT_ROOM_1 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_1, DungeonLayout_ShutDoors_RIGHT)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_2, DungeonLayout_ShutDoors_LEFT)
+    return
+}
+script DungeonLayout_BLOCKED_UP_ROOM_1 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_4, DungeonLayout_ShutDoors_DOWN)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_1, DungeonLayout_ShutDoors_UP)
+    return
+}
+script DungeonLayout_BLOCKED_DOWN_ROOM_1 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_1, DungeonLayout_ShutDoors_DOWN)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_5, DungeonLayout_ShutDoors_UP)
+    return
+}
+script DungeonLayout_BLOCKED_LEFT_ROOM_1 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_3, DungeonLayout_ShutDoors_RIGHT)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_1, DungeonLayout_ShutDoors_LEFT)
+    return
+}
+//ROOM 2
+script DungeonLayout_BLOCKED_DOWN_ROOM_2 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_2, DungeonLayout_ShutDoors_DOWN)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_7, DungeonLayout_ShutDoors_UP)
+    return
+}
+script DungeonLayout_BLOCKED_UP_ROOM_2 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_6, DungeonLayout_ShutDoors_DOWN)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_2, DungeonLayout_ShutDoors_UP)
+    return
+}
+script DungeonLayout_BLOCKED_RIGHT_ROOM_2 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_2, DungeonLayout_ShutDoors_RIGHT)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_9, DungeonLayout_ShutDoors_LEFT)
+    return
+}
+//ROOM 3
+script DungeonLayout_BLOCKED_DOWN_ROOM_3 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_3, DungeonLayout_ShutDoors_DOWN)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_11, DungeonLayout_ShutDoors_UP)
+    return
+}
+script DungeonLayout_BLOCKED_UP_ROOM_3 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_10, DungeonLayout_ShutDoors_DOWN)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_3, DungeonLayout_ShutDoors_UP)
+    return
+}
+//ROOM 4
+script DungeonLayout_BLOCKED_RIGHT_ROOM_4 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_4, DungeonLayout_ShutDoors_RIGHT)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_6, DungeonLayout_ShutDoors_LEFT)
+    return
+}
+script DungeonLayout_BLOCKED_LEFT_ROOM_4 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_10, DungeonLayout_ShutDoors_RIGHT)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_4, DungeonLayout_ShutDoors_LEFT)
+    return
+}
+//ROOM 5
+script DungeonLayout_BLOCKED_LEFT_ROOM_5 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_11, DungeonLayout_ShutDoors_RIGHT)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_5, DungeonLayout_ShutDoors_LEFT)
+    return
+}
+script DungeonLayout_BLOCKED_RIGHT_ROOM_5 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_5, DungeonLayout_ShutDoors_RIGHT)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_7, DungeonLayout_ShutDoors_LEFT)
+    return
+}
+//ROOM 8
+script DungeonLayout_BLOCKED_LEFT_ROOM_8 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_7, DungeonLayout_ShutDoors_RIGHT)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_8, DungeonLayout_ShutDoors_LEFT)
+    return
+}
+script DungeonLayout_BLOCKED_UP_ROOM_8 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_9, DungeonLayout_ShutDoors_DOWN)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_8, DungeonLayout_ShutDoors_UP)
+    return
+}
+//ROOM 12
+script DungeonLayout_BLOCKED_RIGHT_ROOM_12 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_6, DungeonLayout_ShutDoors_RIGHT)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_12, DungeonLayout_ShutDoors_LEFT)
+    return
+}
+script DungeonLayout_BLOCKED_DOWN_ROOM_12 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_12, DungeonLayout_ShutDoors_DOWN)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_9, DungeonLayout_ShutDoors_UP)
+    return
+}
+//ROOM 13
+script DungeonLayout_BLOCKED_UP_ROOM_13 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_11, DungeonLayout_ShutDoors_DOWN)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_13, DungeonLayout_ShutDoors_UP)
+    return
+}
+//ROOM 14
+script DungeonLayout_BLOCKED_LEFT_ROOM_14 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_13, DungeonLayout_ShutDoors_RIGHT)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_14, DungeonLayout_ShutDoors_LEFT)
+    return
+}
+script DungeonLayout_BLOCKED_RIGHT_ROOM_14 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_14, DungeonLayout_ShutDoors_RIGHT)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_15, DungeonLayout_ShutDoors_LEFT)
+    return
+}
+script DungeonLayout_BLOCKED_UP_ROOM_14 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_5, DungeonLayout_ShutDoors_DOWN)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_14, DungeonLayout_ShutDoors_UP)
+    return
+}
+//ROOM 15
+script DungeonLayout_BLOCKED_UP_ROOM_15 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_7, DungeonLayout_ShutDoors_DOWN)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_15, DungeonLayout_ShutDoors_UP)
+    return
+}
+//ROOM 16
+script DungeonLayout_BLOCKED_UP_ROOM_16 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_8, DungeonLayout_ShutDoors_DOWN)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_16, DungeonLayout_ShutDoors_UP)
+    return
+}
+script DungeonLayout_BLOCKED_RIGHT_ROOM_16 {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_15, DungeonLayout_ShutDoors_RIGHT)
+    call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_16, DungeonLayout_ShutDoors_LEFT)
+    return
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script DungeonLayout_StartingRoom_DECO {
+//if starting room
+    if (var(VAR_DUNGEONEERING_STARTER_ROOM) == 1) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_1, DungeonLayout_StartingRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 2) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_2, DungeonLayout_StartingRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 3) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_3, DungeonLayout_StartingRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 4) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_4, DungeonLayout_StartingRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 5) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_5, DungeonLayout_StartingRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 6) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_6, DungeonLayout_StartingRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 7) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_7, DungeonLayout_StartingRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 8) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_8, DungeonLayout_StartingRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 9) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_9, DungeonLayout_StartingRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 10) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_10, DungeonLayout_StartingRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 11) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_11, DungeonLayout_StartingRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 12) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_2, DungeonLayout_StartingRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 12) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_2, DungeonLayout_StartingRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 13) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_13, DungeonLayout_StartingRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 14) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_14, DungeonLayout_StartingRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 15) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_15, DungeonLayout_StartingRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_STARTER_ROOM) == 16) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_16, DungeonLayout_StartingRoom_DECO_Layout)
+    }
+
+    return
+}
+script DungeonLayout_StartingRoom_DECO_Layout {
+    setflag(FLAG_TEMP_12)
+    setflag(FLAG_TEMP_11)
+
+    setmetatile(6, 5, 623, 1) //OBBY Bottom
+    setmetatile(6, 4, 615, 0) //OBBY top
+
+    setmetatile(8, 4, 576, 0) //mat - top L corner
+    setmetatile(9, 4, 577, 0) //mat - top 
+    setmetatile(10, 4, 578, 0) //mat - top R corner
+
+    setmetatile(8, 5, 584, 0) //mat - MID L corner
+    setmetatile(9, 5, 585, 0) //mat - MID 
+    setmetatile(10, 5, 586, 0) //mat - MID R corner
+
+    setmetatile(8, 6, 584, 0) //mat - MID L corner
+    setmetatile(9, 6, 585, 0) //mat - MID 
+    setmetatile(10, 6, 586, 0) //mat - MID R corner
+
+    setmetatile(8, 7, 592, 0) //mat - BOT L corner
+    setmetatile(9, 7, 593, 0) //mat - BOT 
+    setmetatile(10, 7, 594, 0) //mat - BOT R corner
+    return
+}
+
+
+
+script DungeonLayout_BossRoom_DECO_Layout {
+    setflag(FLAG_TEMP_12)
+    setmetatile(2, 7, 604, 1) //Pillar Bottom
+    setmetatile(2, 6, 596, 0) //Pillar mid
+    setmetatile(2, 5, 588, 0) //Pillar top
+    setmetatile(4, 5, 604, 1) //Pillar Bottom
+    setmetatile(4, 4, 596, 0) //Pillar mid
+    setmetatile(4, 3, 588, 0) //Pillar top
+    setmetatile(10, 5, 604, 1) //Pillar Bottom
+    setmetatile(10, 4, 596, 0) //Pillar mid
+    setmetatile(10, 3, 588, 0) //Pillar top
+    setmetatile(12, 7, 604, 1) //Pillar Bottom
+    setmetatile(12, 6, 596, 0) //Pillar mid
+    setmetatile(12, 5, 588, 0) //Pillar top
+
+    return
+}
+
+script DungeonLayout_NormalRoom_DECO {
+//if normal room
+        setvar(VAR_TEMP_9, 2)
+        specialvar(VAR_RESULT, GetSeededResult)
+        call_if_eq (VAR_RESULT, 0, DungeonLayout_1)
+        call_if_eq (VAR_RESULT, 1, DungeonLayout_2)
+        return
+}
+
+script DungeonLayout_BossRoom_DECO {
+//if starting room
+    if (var(VAR_DUNGEONEERING_BOSS_ROOM) == 1) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_1, DungeonLayout_BossRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_BOSS_ROOM) == 2) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_2, DungeonLayout_BossRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_BOSS_ROOM) == 3) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_3, DungeonLayout_BossRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_BOSS_ROOM) == 4) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_4, DungeonLayout_BossRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_BOSS_ROOM) == 5) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_5, DungeonLayout_BossRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_BOSS_ROOM) == 6) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_6, DungeonLayout_BossRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_BOSS_ROOM) == 7) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_7, DungeonLayout_BossRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_BOSS_ROOM) == 8) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_8, DungeonLayout_BossRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_BOSS_ROOM) == 9) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_9, DungeonLayout_BossRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_BOSS_ROOM) == 10) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_10, DungeonLayout_BossRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_BOSS_ROOM) == 11) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_11, DungeonLayout_BossRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_BOSS_ROOM) == 12) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_2, DungeonLayout_BossRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_BOSS_ROOM) == 13) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_2, DungeonLayout_BossRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_BOSS_ROOM) == 14) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_13, DungeonLayout_BossRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_BOSS_ROOM) == 15) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_14, DungeonLayout_BossRoom_DECO_Layout)
+    }
+    elif (var(VAR_DUNGEONEERING_BOSS_ROOM) == 16) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_15, DungeonLayout_BossRoom_DECO_Layout)
+    }
+    return
+}
+
+script DungeonCompleted_PuzzleRoom {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_1) {
+        setflag(FLAG_DG_PUZZLE_ROOM_1) //Puzzle Room is completed.
+    }
+    elif (var(VAR_RESULT) == MAP_DUNGEONEERING_2) {
+        setflag(FLAG_DG_PUZZLE_ROOM_2) //Puzzle Room is completed.
+    }
+    elif (var(VAR_RESULT) == MAP_DUNGEONEERING_3) {
+        setflag(FLAG_DG_PUZZLE_ROOM_3) //Puzzle Room is completed.
+    }
+    elif (var(VAR_RESULT) == MAP_DUNGEONEERING_4) {
+        setflag(FLAG_DG_PUZZLE_ROOM_4) //Puzzle Room is completed.
+    }
+    elif (var(VAR_RESULT) == MAP_DUNGEONEERING_5) {
+        setflag(FLAG_DG_PUZZLE_ROOM_5) //Puzzle Room is completed.
+    }
+    elif (var(VAR_RESULT) == MAP_DUNGEONEERING_6) {
+        setflag(FLAG_DG_PUZZLE_ROOM_6) //Puzzle Room is completed.
+    }
+    elif (var(VAR_RESULT) == MAP_DUNGEONEERING_7) {
+        setflag(FLAG_DG_PUZZLE_ROOM_7) //Puzzle Room is completed.
+    }
+    elif (var(VAR_RESULT) == MAP_DUNGEONEERING_8) {
+        setflag(FLAG_DG_PUZZLE_ROOM_8) //Puzzle Room is completed.
+    }
+}
+
+
+script DungeonInteractions_DG_ROPE {
+    if (!flag(FLAG_TEMP_1E)) {
+        checkitem(ITEM_DG_ROPE, 1)
+        if (var(VAR_RESULT)) {
+            setmetatile(7, 5, 945, 0) //ROPE - MID
+            setmetatile(7, 4, 937, 0) //ROPE - TOP HOLE
+            setmetatile(7, 6, 953, 0) //ROPE - BOTTOM EDGE
+            special(DrawWholeMapView) 
+            removeitem(ITEM_DG_ROPE, 1)
+            call(DungeonCompleted_PuzzleRoom)
+            end
+        }
+    }
+    end
+}
+script DungeonInteractions_DG_STRING {
+    if (!flag(FLAG_TEMP_1E)) {
+        checkitem(ITEM_DG_ROPE, 1)
+        if (!var(VAR_RESULT)) {
+            checkitem(ITEM_DG_BALL_OF_WOOL, 1)
+            if (!var(VAR_RESULT)) {
+                finditem (ITEM_DG_BALL_OF_WOOL)
+                end
+            }
+        }
+    }
+    msgbox(format("You search the junk and find nothing."))
+    closemessage
+    end
+}
+script DungeonInteractions_DG_SPINNING_WHEEL {
+    if (!flag(FLAG_TEMP_1E)) {
+        checkitem(ITEM_DG_BALL_OF_WOOL, 1)
+        if (var(VAR_RESULT)) {
+            msgbox(format("You spin the string into some useful rope."))
+            closemessage
+            finditem(ITEM_DG_ROPE, 1)
+            removeitem(ITEM_DG_BALL_OF_WOOL, 1)
+            end
+        }
+    }
+    msgbox(format("You need some string to make a rope."))
+    closemessage
+    end
+}
+
+
+
+
+
+//VAR_DUNGEONEERING_OBJECT_SCRIPT INFO:
+//1 - CUTTREE
+//2 - ITEM
+//3 - TRAINER
+//4 - ROCKSMASH
+
+//Script assigned to all OBJECTS.
+script DungeonInteractions_Object1 {
+
+    switch(var(VAR_DUNGEONEERING_OBJECT_SCRIPT_1)){
+		case 0:
+            end
+        case 1:	//CUT TREE
+            goto(EventScript_CutTree)
+        case 2: //RANDOM DUNGEONEERING ITEM
+            goto(GIVE_RANDOM_ITEM_DUNGEONEERING)
+        case 3: //RANDOM DUNGEONEERING ITEM
+            goto(DungeonInteractions_TrainerBattle)
+        case 4: //RANDOM DUNGEONEERING ITEM
+            goto(EventScript_New_RockSmash)
+        }  
+    end
+}
+script DungeonInteractions_Object2 {
+
+    switch(var(VAR_DUNGEONEERING_OBJECT_SCRIPT_2)){
+		case 0:
+            end
+        case 1:	//CUT TREE
+            goto(EventScript_CutTree)
+        case 2: //RANDOM DUNGEONEERING ITEM
+            goto(GIVE_RANDOM_ITEM_DUNGEONEERING)
+        case 3: //RANDOM DUNGEONEERING ITEM
+            goto(DungeonInteractions_TrainerBattle)
+        case 4: //RANDOM DUNGEONEERING ITEM
+            goto(EventScript_New_RockSmash)
+        }  
+    end
+}
+script DungeonInteractions_Object3 {
+
+    switch(var(VAR_DUNGEONEERING_OBJECT_SCRIPT_3)){
+		case 0:
+            end
+        case 1:	//CUT TREE
+            goto(EventScript_CutTree)
+        case 2: //RANDOM DUNGEONEERING ITEM
+            goto(GIVE_RANDOM_ITEM_DUNGEONEERING)
+        case 3: //RANDOM DUNGEONEERING ITEM
+            goto(DungeonInteractions_TrainerBattle)
+        case 4: //RANDOM DUNGEONEERING ITEM
+            goto(EventScript_New_RockSmash)
+        }  
+    end
+}
+script DungeonInteractions_Object4 {
+
+    switch(var(VAR_DUNGEONEERING_OBJECT_SCRIPT_4)){
+		case 0:
+            end
+        case 1:	//CUT TREE
+            goto(EventScript_CutTree)
+        case 2: //RANDOM DUNGEONEERING ITEM
+            goto(GIVE_RANDOM_ITEM_DUNGEONEERING)
+        case 3: //RANDOM DUNGEONEERING ITEM
+            goto(DungeonInteractions_TrainerBattle)
+        case 4: //RANDOM DUNGEONEERING ITEM
+            goto(EventScript_New_RockSmash)
+        }  
+    end
+}
+script DungeonInteractions_Object5 {
+
+    switch(var(VAR_DUNGEONEERING_OBJECT_SCRIPT_5)){
+		case 0:
+            end
+        case 1:	//CUT TREE
+            goto(EventScript_CutTree)
+        case 2: //RANDOM DUNGEONEERING ITEM
+            goto(GIVE_RANDOM_ITEM_DUNGEONEERING)
+        case 3: //RANDOM DUNGEONEERING ITEM
+            goto(DungeonInteractions_TrainerBattle)
+        case 4: //RANDOM DUNGEONEERING ITEM
+            goto(EventScript_New_RockSmash)
+        }  
+    end
+}
+script DungeonInteractions_Object6 {
+
+    switch(var(VAR_DUNGEONEERING_OBJECT_SCRIPT_6)){
+		case 0:
+            end
+        case 1:	//CUT TREE
+            goto(EventScript_CutTree)
+        case 2: //RANDOM DUNGEONEERING ITEM
+            goto(GIVE_RANDOM_ITEM_DUNGEONEERING)
+        case 3: //RANDOM DUNGEONEERING ITEM
+            goto(DungeonInteractions_TrainerBattle)
+        case 4: //RANDOM DUNGEONEERING ITEM
+            goto(EventScript_New_RockSmash)
+        }  
+    end
+}
+script DungeonInteractions_Object7 {
+
+    switch(var(VAR_DUNGEONEERING_OBJECT_SCRIPT_7)){
+		case 0:
+            end
+        case 1:	//CUT TREE
+            goto(EventScript_CutTree)
+        case 2: //RANDOM DUNGEONEERING ITEM
+            goto(GIVE_RANDOM_ITEM_DUNGEONEERING)
+        case 3: //RANDOM DUNGEONEERING ITEM
+            goto(DungeonInteractions_TrainerBattle)
+        case 4: //RANDOM DUNGEONEERING ITEM
+            goto(EventScript_New_RockSmash)
+        }  
+    end
+}
+script DungeonInteractions_Object8 {
+
+    switch(var(VAR_DUNGEONEERING_OBJECT_SCRIPT_8)){
+		case 0:
+            end
+        case 1:	//CUT TREE
+            goto(EventScript_CutTree)
+        case 2: //RANDOM DUNGEONEERING ITEM
+            goto(GIVE_RANDOM_ITEM_DUNGEONEERING)
+        case 3: //RANDOM DUNGEONEERING ITEM
+            goto(DungeonInteractions_TrainerBattle)
+        case 4: //RANDOM DUNGEONEERING ITEM
+            goto(EventScript_New_RockSmash)
+        }  
+    end
+}
+script DungeonInteractions_Object9 {
+
+    switch(var(VAR_DUNGEONEERING_OBJECT_SCRIPT_9)){
+		case 0:
+            end
+        case 1:	//CUT TREE
+            goto(EventScript_CutTree)
+        case 2: //RANDOM DUNGEONEERING ITEM
+            goto(GIVE_RANDOM_ITEM_DUNGEONEERING)
+        case 3: //RANDOM DUNGEONEERING ITEM
+            goto(DungeonInteractions_TrainerBattle)
+        case 4: //RANDOM DUNGEONEERING ITEM
+            goto(EventScript_New_RockSmash)
+        }  
+    end
+}
+script DungeonInteractions_Object10 {
+
+    switch(var(VAR_DUNGEONEERING_OBJECT_SCRIPT_10)){
+		case 0:
+            end
+        case 1:	//CUT TREE
+            goto(EventScript_CutTree)
+        case 2: //RANDOM DUNGEONEERING ITEM
+            goto(GIVE_RANDOM_ITEM_DUNGEONEERING)
+        case 3: //RANDOM DUNGEONEERING ITEM
+            goto(DungeonInteractions_TrainerBattle)
+        case 4: //RANDOM DUNGEONEERING ITEM
+            goto(EventScript_New_RockSmash)
+        }  
+    end
+}
+script DungeonInteractions {
+
+    switch(var(VAR_DUNGEONEERING_OBJECT_SCRIPT_1)){
+		case 0:
+            end
+        case 1:	//CUT TREE
+            goto(EventScript_CutTree)
+        case 2: //RANDOM DUNGEONEERING ITEM
+            goto(GIVE_RANDOM_ITEM_DUNGEONEERING)
+        case 3: //RANDOM DUNGEONEERING ITEM
+            goto(DungeonInteractions_TrainerBattle)
+        case 4: //RANDOM DUNGEONEERING ITEM
+            goto(EventScript_New_RockSmash)
+        }  
+    end
+}
+
+
+
+
+
+
+
+
+
+script DungeonCheckIfItemIsClaimed {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_1 && flag(FLAG_DUNGEONEERING_ITEM_1)) { //Have you found all the items in room 1?
+        setflag(FLAG_TEMP_10)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_2 && flag(FLAG_DUNGEONEERING_ITEM_2)) { //Have you found all the items in room 1?
+        setflag(FLAG_TEMP_10)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_3 && flag(FLAG_DUNGEONEERING_ITEM_3)) { //Have you found all the items in room 1?
+        setflag(FLAG_TEMP_10)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_4 && flag(FLAG_DUNGEONEERING_ITEM_4)) { //Have you found all the items in room 1?
+        setflag(FLAG_TEMP_10)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_5 && flag(FLAG_DUNGEONEERING_ITEM_5)) { //Have you found all the items in room 1?
+        setflag(FLAG_TEMP_10)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_6 && flag(FLAG_DUNGEONEERING_ITEM_6)) { //Have you found all the items in room 1?
+        setflag(FLAG_TEMP_10)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_7 && flag(FLAG_DUNGEONEERING_ITEM_7)) { //Have you found all the items in room 1?
+        setflag(FLAG_TEMP_10)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_8 && flag(FLAG_DUNGEONEERING_ITEM_8)) { //Have you found all the items in room 1?
+        setflag(FLAG_TEMP_10)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_9 && flag(FLAG_DUNGEONEERING_ITEM_9)) { //Have you found all the items in room 1?
+        setflag(FLAG_TEMP_10)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_10 && flag(FLAG_DUNGEONEERING_ITEM_10)) { //Have you found all the items in room 1?
+        setflag(FLAG_TEMP_10)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_10 && flag(FLAG_DUNGEONEERING_ITEM_11)) { //Have you found all the items in room 1?
+        setflag(FLAG_TEMP_10)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_10 && flag(FLAG_DUNGEONEERING_ITEM_12)) { //Have you found all the items in room 1?
+        setflag(FLAG_TEMP_10)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_10 && flag(FLAG_DUNGEONEERING_ITEM_13)) { //Have you found all the items in room 1?
+        setflag(FLAG_TEMP_10)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_10 && flag(FLAG_DUNGEONEERING_ITEM_14)) { //Have you found all the items in room 1?
+        setflag(FLAG_TEMP_10)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_10 && flag(FLAG_DUNGEONEERING_ITEM_15)) { //Have you found all the items in room 1?
+        setflag(FLAG_TEMP_10)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_10 && flag(FLAG_DUNGEONEERING_ITEM_16)) { //Have you found all the items in room 1?
+        setflag(FLAG_TEMP_10)
+    }
+    return
+}
+
+script DungeonPickUp_Item{
+    specialvar (VAR_RESULT, GetCurrentMap)
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_1 && flag(FLAG_TEMP_13)) {
+        setflag(FLAG_DUNGEONEERING_ITEM_1)
+        setflag(FLAG_TEMP_10)
+        removeobject(VAR_LAST_TALKED)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_2 && flag(FLAG_TEMP_13)) {
+        setflag(FLAG_DUNGEONEERING_ITEM_2)
+        setflag(FLAG_TEMP_10)
+        removeobject(VAR_LAST_TALKED)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_3 && flag(FLAG_TEMP_13)) {
+        setflag(FLAG_DUNGEONEERING_ITEM_3)
+        setflag(FLAG_TEMP_10)
+        removeobject(VAR_LAST_TALKED)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_4 && flag(FLAG_TEMP_13)) {
+        setflag(FLAG_DUNGEONEERING_ITEM_4)
+        setflag(FLAG_TEMP_10)
+        removeobject(VAR_LAST_TALKED)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_5 && flag(FLAG_TEMP_13)) {
+        setflag(FLAG_DUNGEONEERING_ITEM_5)
+        setflag(FLAG_TEMP_10)
+        removeobject(VAR_LAST_TALKED)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_6 && flag(FLAG_TEMP_13)) {
+        setflag(FLAG_DUNGEONEERING_ITEM_6)
+        setflag(FLAG_TEMP_10)
+        removeobject(VAR_LAST_TALKED)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_7 && flag(FLAG_TEMP_13)) {
+        setflag(FLAG_DUNGEONEERING_ITEM_7)
+        setflag(FLAG_TEMP_10)
+        removeobject(VAR_LAST_TALKED)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_8 && flag(FLAG_TEMP_13)) {
+        setflag(FLAG_DUNGEONEERING_ITEM_8)
+        setflag(FLAG_TEMP_10)
+        removeobject(VAR_LAST_TALKED)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_9 && flag(FLAG_TEMP_13)) {
+        setflag(FLAG_DUNGEONEERING_ITEM_9)
+        setflag(FLAG_TEMP_10)
+        removeobject(VAR_LAST_TALKED)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_10 && flag(FLAG_TEMP_13)) {
+        setflag(FLAG_DUNGEONEERING_ITEM_10)
+        setflag(FLAG_TEMP_10)
+        removeobject(VAR_LAST_TALKED)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_11 && flag(FLAG_TEMP_13)) {
+        setflag(FLAG_DUNGEONEERING_ITEM_11)
+        setflag(FLAG_TEMP_10)
+        removeobject(VAR_LAST_TALKED)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_12 && flag(FLAG_TEMP_13)) {
+        setflag(FLAG_DUNGEONEERING_ITEM_12)
+        setflag(FLAG_TEMP_10)
+        removeobject(VAR_LAST_TALKED)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_13 && flag(FLAG_TEMP_13)) {
+        setflag(FLAG_DUNGEONEERING_ITEM_13)
+        setflag(FLAG_TEMP_10)
+        removeobject(VAR_LAST_TALKED)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_14 && flag(FLAG_TEMP_13)) {
+        setflag(FLAG_DUNGEONEERING_ITEM_14)
+        setflag(FLAG_TEMP_10)
+        removeobject(VAR_LAST_TALKED)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_15 && flag(FLAG_TEMP_13)) {
+        setflag(FLAG_DUNGEONEERING_ITEM_15)
+        setflag(FLAG_TEMP_10)
+        removeobject(VAR_LAST_TALKED)
+    }
+    if (var(VAR_RESULT) == MAP_DUNGEONEERING_16 && flag(FLAG_TEMP_13)) {
+        setflag(FLAG_DUNGEONEERING_ITEM_16)
+        setflag(FLAG_TEMP_10)
+        removeobject(VAR_LAST_TALKED)
+    }
+    call(DungeonCheckIfItemIsClaimed)
+	return
+}
+
+script GIVE_RANDOM_ITEM_DUNGEONEERING {
+	random(28) 
+	switch (var(VAR_RESULT)) { 
+            case 0: 
+				finditem(ITEM_FLAX, 6)
+			case 1: 
+				finditem(ITEM_SPIRIT_SHARD, 2)
+			case 2: 
+				finditem(ITEM_PRAYER_POTION, 1)
+			case 3: 
+				finditem(ITEM_LAMP_SPATT, 1)
+			case 4: 
+				finditem(ITEM_STAT_BEER, 1)
+			case 5: 
+				finditem(ITEM_CRYSTAL_POUCH, 1)
+			case 6: 
+				finditem(ITEM_PURPLE_SWEETS, 1)
+			case 7: 
+				finditem(ITEM_CHOCOLATE_CAKE, 1)
+			case 8: 
+				finditem(ITEM_MINT_CAKE, 1)
+			case 9: 
+				finditem(ITEM_HWEEN_MASK, 1)
+			case 10: 
+				finditem(ITEM_EMPTY_BUCKET, 1)
+			case 11: 
+				finditem(ITEM_DRAGON_SCIMITAR, 1)
+			case 12: 
+				finditem(ITEM_ELEMENTAL_POUCH, 5)
+			case 13: 
+				finditem(ITEM_BLACK_POUCH, 15)
+			case 14: 
+				finditem(ITEM_NORMAL_POUCH, 20)
+			case 15: 
+				finditem(ITEM_SPIRIT_CHARM, 1)
+			case 16: 
+				finditem(ITEM_GODRABBITFOOT, 1)
+            case 17: 
+				finditem(ITEM_CABBAGE, 1)
+            case 18: 
+				finditem(ITEM_PURPLE_SWEETS, 5)
+            case 19: 
+				finditem(ITEM_CABBAGE, 1)
+            case 20: 
+				finditem(ITEM_PARTY_HAT, 1)
+            case 21: 
+				finditem(ITEM_GODSWORD, 1)
+            case 22: 
+				finditem(ITEM_CABBAGE, 1)
+            case 23: 
+				finditem(ITEM_DRAGON_POUCH, 1)
+            case 24: 
+				finditem(ITEM_GRANITE_MAUL, 1)
+            case 25: 
+				finditem(ITEM_DRAGON_CLAWS, 1)
+            case 26: 
+				finditem(ITEM_BREAD, 1)
+            case 27: 
+				finditem(ITEM_CABBAGE, 5)
+	}
+    setflag(FLAG_TEMP_13) //Sets the flag for that room for if the ITEM is claimed.
+    call(DungeonPickUp_Item)
+	return
+}
+
+script DungeonInteractions_TrainerBattle {
+
+}

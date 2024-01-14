@@ -1,0 +1,66 @@
+mapscripts Tutorial_Island_Lab_Down_MapScripts{}
+
+
+
+script membership {
+	msgbox("Would you like to be a member?", MSGBOX_YESNO)
+		if (var(VAR_RESULT) == YES){
+			setflag (FLAG_MEMBERSHIP)
+			release
+		}
+		else {
+			clearflag (FLAG_MEMBERSHIP)
+			release
+		}
+}
+
+script INeedAMonsterUp{
+	if(!flag(FLAG_SYS_POKEMON_GET)){
+		lock
+		msgbox("I should take a monster with me.")
+		applymovement(OBJ_EVENT_ID_PLAYER, MonsterMoveUp)
+		waitmovement(0)
+		release
+	}
+	else{
+		release
+	}
+}
+
+script INeedAMonsterLeft{
+	if(!flag(FLAG_SYS_POKEMON_GET)){
+		lock
+		msgbox("I should take a monster with me.")
+		applymovement(OBJ_EVENT_ID_PLAYER, MonsterMoveLeft)
+		waitmovement(0)
+		release
+	}
+	else{
+		release
+	}
+}
+
+script INeedAMonsterRight{
+	if(!flag(FLAG_SYS_POKEMON_GET)){
+		lock
+		msgbox("I should take a monster with me.")
+		applymovement(OBJ_EVENT_ID_PLAYER, MonsterMoveRight)
+		waitmovement(0)
+		release
+	}
+	else{
+		release
+	}
+}
+
+movement MonsterMoveUp{
+	walk_up
+}
+
+movement MonsterMoveLeft{
+	walk_left
+}
+
+movement MonsterMoveRight{
+	walk_right
+}

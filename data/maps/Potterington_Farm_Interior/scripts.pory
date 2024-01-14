@@ -1,0 +1,387 @@
+const OBJ_EVENT_ID_GUTHIX = 5
+const OBJ_EVENT_ID_SARADOMIN = 4
+const OBJ_EVENT_ID_ZAMORAK = 2
+const OBJ_EVENT_ID_BAROO = 9
+const OBJ_EVENT_ID_PREZLEEK = 10
+const OBJ_EVENT_ID_ZEZIMA = 12
+const OBJ_EVENT_ID_GONTHORIAN = 6
+const OBJ_EVENT_ID_JMOD = 11
+const OBJ_EVENT_ID_DEMONHEADGE = 7
+const OBJ_EVENT_ID_HYPERSTAN = 8
+const OBJ_EVENT_ID_PATTY = 14
+
+
+mapscripts Potterington_Farm_Interior_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        call(POTTERINGTON_FARM_STATE)
+
+    }
+}
+
+
+script POTTERINGTON_FARM_STATE{
+
+    setflag(FLAG_TEMP_1)
+    setflag(FLAG_TEMP_2)
+    setflag(FLAG_TEMP_3)
+    setflag(FLAG_TEMP_4)
+    setflag(FLAG_TEMP_5)
+    setflag(FLAG_TEMP_6)
+    setflag(FLAG_TEMP_7)
+    setflag(FLAG_TEMP_8)
+    setflag(FLAG_TEMP_9)
+    setflag(FLAG_TEMP_A)
+    removeobject(OBJ_EVENT_ID_GUTHIX)
+    removeobject(OBJ_EVENT_ID_SARADOMIN)
+    removeobject(OBJ_EVENT_ID_ZAMORAK)
+    removeobject(OBJ_EVENT_ID_PREZLEEK)
+    removeobject(OBJ_EVENT_ID_BAROO)
+    removeobject(OBJ_EVENT_ID_ZEZIMA)
+    removeobject(OBJ_EVENT_ID_GONTHORIAN)
+    removeobject(OBJ_EVENT_ID_JMOD)
+    removeobject(OBJ_EVENT_ID_DEMONHEADGE)
+    removeobject(OBJ_EVENT_ID_HYPERSTAN)
+    removeobject(OBJ_EVENT_ID_PATTY)
+    
+    //if ACHIEVEMENT FLAGS are achieved
+    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
+        {
+        clearflag(FLAG_TEMP_1)
+        addobject(OBJ_EVENT_ID_GUTHIX)
+        }
+    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
+        {
+        clearflag(FLAG_TEMP_2)
+        addobject(OBJ_EVENT_ID_SARADOMIN)
+        }
+    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
+        {
+        clearflag(FLAG_TEMP_3)
+        addobject(OBJ_EVENT_ID_ZAMORAK)
+        }
+    checkitem (ITEM_TERRORBIRD_POUCH, 1)
+        if (var(VAR_RESULT))
+        {
+        clearflag(FLAG_TEMP_4)
+        addobject(OBJ_EVENT_ID_PREZLEEK)
+        addobject(OBJ_EVENT_ID_BAROO)
+        }
+    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
+        {
+        clearflag(FLAG_TEMP_5)
+        addobject(OBJ_EVENT_ID_ZEZIMA)
+        }
+    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
+        {
+        clearflag(FLAG_TEMP_6)
+        addobject(OBJ_EVENT_ID_GONTHORIAN)
+        }
+    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
+        {
+        clearflag(FLAG_TEMP_7)
+        addobject(OBJ_EVENT_ID_JMOD)
+        }
+    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
+        {
+        clearflag(FLAG_TEMP_8)
+        addobject(OBJ_EVENT_ID_DEMONHEADGE)
+        }
+    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
+        {
+        clearflag(FLAG_TEMP_9)
+        addobject(OBJ_EVENT_ID_HYPERSTAN)
+        }
+    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
+        {
+        clearflag(FLAG_TEMP_A)
+        addobject(OBJ_EVENT_ID_PATTY)
+        }
+    
+        
+    release
+    end
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script EventScript_DaycareMan 
+{
+    lock
+	faceplayer
+	special (GetDaycareMonNicknames)
+    specialvar (VAR_RESULT, GetDaycareState)
+	compare (VAR_RESULT, DAYCARE_EGG_WAITING)
+	goto_if_eq (Route117_EventScript_DaycareEggWaiting)
+	compare (VAR_RESULT, DAYCARE_ONE_MON)
+	goto_if_eq (Route117_EventScript_CheckOnOneMon)
+	compare (VAR_RESULT, DAYCARE_TWO_MONS)
+	goto_if_eq (Route117_EventScript_CheckOnTwoMons)
+    namebox ("Father Pott.")
+	msgbox(format("Hello, I am Father Potterington.\nWe help take care of the precious MONSTERs of Adventurers.\pIf you'd like us to raise your MONSTER, have a word with my wife."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script EventScript_DaycareLady
+{
+    lock
+	faceplayer
+    
+	specialvar (VAR_RESULT, GetDaycareState)
+	compare (VAR_RESULT, DAYCARE_EGG_WAITING)
+	goto_if_eq (Route117_PokemonDayCare_EventScript_EggWaiting)
+	compare (VAR_RESULT, DAYCARE_ONE_MON)
+	goto_if_eq (Route117_PokemonDayCare_EventScript_OneMonInDaycare)
+	compare (VAR_RESULT, DAYCARE_TWO_MONS)
+	goto_if_eq (Route117_PokemonDayCare_EventScript_TwoMonsInDaycare)
+    namebox ("Mother Pott.")
+	msgbox(format("Hey there, I am Mother Potterington.\pWe can raise and breed MONSTERs for you.\pWould you like us to raise one?"), MSGBOX_YESNO)
+    hidenamebox
+	compare (VAR_RESULT, YES)
+	goto_if_eq (Route117_PokemonDayCare_EventScript_GiveMonToRaise)
+    namebox ("Mother Pott.")
+	msgbox (Route117_PokemonDayCare_Text_FineThenComeAgain, MSGBOX_DEFAULT)
+    hidenamebox
+	release
+	end
+}
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script POTTERINGTON_FARM_Lassy 
+{
+    //PLAYSOUND
+    namebox ("Lassy")
+    msgbox(format("Zzz… {PAUSE 16}Zzz… {PAUSE 16}\nZzz… {PAUSE 16}Zzz…"))
+    //WAITSOUND
+    closemessage
+    hidenamebox
+    //GIVE EGG
+    release
+    end
+}
+
+
+
+
+
+script SCRIPT_EGG_NOROOM
+{
+    msgbox(format("You have no space for this."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+
+script POTTERINGTON_FARM_Zamorak 
+{
+    faceplayer
+    namebox ("Zamorak")
+    msgbox(format("I am a cupholder."))
+    closemessage
+    hidenamebox
+    //GIVE EGG
+    release
+    end
+}
+
+script POTTERINGTON_FARM_Saradomin 
+{
+    faceplayer
+    namebox ("Saradomin")
+    msgbox(format("I am a cupholder."))
+    closemessage
+    hidenamebox
+    //GIVE EGG
+    release
+    end
+}
+
+script POTTERINGTON_FARM_Guthix
+{
+    if (!flag(FLAG_RECEIVED_GUTHIX_EGG)) {
+        lock
+        faceplayer
+        namebox ("Guthix")
+        msgbox(format("Hello my name is GUTTTHHHIIXX!!!\pYou can have THHHISSS!"))
+        closemessage
+        hidenamebox
+        //GIVE EGG
+        getpartysize
+        compare (VAR_RESULT, PARTY_SIZE)
+        goto_if_eq (SCRIPT_EGG_NOROOM)
+        setflag (FLAG_RECEIVED_GUTHIX_EGG)
+        playfanfare (MUS_OBTAIN_ITEM)
+        msgbox(format("Obtained an EGG from Guthix!"))
+        waitfanfare
+        giveegg (SPECIES_GUTHLING)
+        namebox ("Guthix")
+        msgbox(format("Look after it!"))
+    }
+    else {
+        namebox ("Guthix")
+        msgbox(format("Did you know grass is blue!!"))
+    }
+    hidenamebox
+    closemessage
+	release
+	end
+}
+
+script POTTERINGTON_FARM_Gonthorian
+{
+    faceplayer
+    namebox ("Gonthorian")
+    msgbox(format("I am a cupholder."))
+    closemessage
+    hidenamebox
+    //GIVE EGG
+    release
+    end
+}
+
+script POTTERINGTON_FARM_Zezima
+{
+    faceplayer
+    namebox ("Zezima")
+    msgbox(format("I am a cupholder."))
+    closemessage
+    hidenamebox
+    //GIVE EGG
+    release
+    end
+}
+
+
+script POTTERINGTON_FARM_Prezleek
+{
+    lockall
+    faceplayer
+    checkitem (ITEM_YAK_POUCH, 1)
+	if (!var(VAR_RESULT))
+	{
+        checkitem (ITEM_TERRORBIRD_POUCH, 1)
+        if (var(VAR_RESULT))
+        {
+            namebox ("Prezleek")
+            msgbox(format("Hello.\pWait…{PAUSE 16} What is that…?{PAUSE 16}\nA rideable Terrorbird?!\pUnbelieveable everyone knows Yaks are the best source of transportation."))
+            applymovement(OBJ_EVENT_ID_PREZLEEK, Movement_InteractFACELEFT)
+            waitmovement(0)
+            msgbox(format("Baroo, you agree with me right?"))
+            closemessage
+            hidenamebox
+            applymovement(OBJ_EVENT_ID_BAROO, Movement_InteractFACERIGHT)
+            waitmovement(0)
+            namebox ("Baroo")
+            msgbox(format("Baroooo, Baroo!"))
+            closemessage
+            hidenamebox
+            applymovement(OBJ_EVENT_ID_PREZLEEK, Movement_InteractFACEPLAYER)
+            waitmovement(0)
+            namebox ("Prezleek")
+            msgbox(format("See even Baroo agrees.\pHere have this."))
+            closemessage
+            hidenamebox
+            giveitem(ITEM_YAK_POUCH, 1)
+        }
+    }
+    namebox ("Prezleek")
+    msgbox(format("See aren't Yaks so much better than Terrorbirds?"))
+    closemessage
+    hidenamebox
+    release
+    end   
+}
+
+script POTTERINGTON_FARM_Baroo
+{
+    faceplayer
+    namebox ("Baroo")
+    //PLAY SOUND
+    msgbox(format("Baroo, baroo!"))
+    //WAITSOUND
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+script POTTERINGTON_FARM_Demonheadge
+{
+    faceplayer
+    namebox ("Demonheadge")
+    msgbox(format("I am a cupholder."))
+    closemessage
+    hidenamebox
+    //GIVE EGG
+    release
+    end
+}
+
+script POTTERINGTON_FARM_HyperStan
+{
+    faceplayer
+    namebox ("Hyper Stan")
+    msgbox(format("I am a cupholder."))
+    closemessage
+    hidenamebox
+    //GIVE EGG
+    release
+    end
+}
+
+script POTTERINGTON_FARM_JagexMod
+{
+    faceplayer
+    namebox ("Mod ???")
+    msgbox(format("I am a cupholder."))
+    closemessage
+    hidenamebox
+    //GIVE EGG
+    release
+    end
+}

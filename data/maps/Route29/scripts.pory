@@ -1,0 +1,104 @@
+
+mapscripts Route29_MapScripts 
+{
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 11) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+        call(WEATHER_CHANGE_ROUTE_SAND)
+    }
+    MAP_SCRIPT_ON_LOAD 
+    {
+        call(ROUTE29_DOOR)
+    }
+}
+
+script ROUTE29_DOOR
+{
+    if (flag(FLAG_DUNGEONEERING_DOOR_ROUTE29))
+    {
+        setmetatile(24, 11, 121, 0)
+        special(DrawWholeMapView) 
+    }
+}
+
+script DUNGEONEERING_DOOR_ROUTE29
+{
+    if (!flag(FLAG_DUNGEONEERING_DOOR_ROUTE29))
+    {
+        msgbox(format("It appears to be a mysterious door.\pWould you like to try and pry it open?"), MSGBOX_YESNO)
+        closemessage
+		if (var(VAR_RESULT))
+        {
+            playse(SE_SWITCH)
+            waitse
+            delay(30)
+            setmetatile(24, 11, 121, 0)
+            special(DrawWholeMapView) 
+            playse(SE_ICE_BREAK)
+            setflag(FLAG_DUNGEONEERING_DOOR_ROUTE29)
+            msgbox(format("The door opens."))
+            closemessage
+        }
+    }
+    else
+    {
+        msgbox(format("The door is already open."))
+        closemessage
+    } 
+    release
+    end
+}
+
+
+
+
+
+//trainer battles
+script BATTLE_ROUTE29_TRAINER_1
+{ //Dreadnip x2
+    trainerbattle_single(TRAINER_ROUTE29_TRAINER_1, format("Tell me where the Strykewyrms are!\pNow!"),format("Keep your secrets then, noob."))
+    //namebox ("Slayer")
+    msgbox(format("I've been looking for the Strykewyrms for hours.\pI was told they were found in the caves and desert but I have yet to come across any."))
+	//hidenamebox
+    release
+	end
+}
+script BATTLE_ROUTE29_TRAINER_2
+{ //Desert sole , Heim lobster
+    trainerbattle_single(TRAINER_ROUTE29_TRAINER_2, format("Minerals are truly fascinating dont you think?"),format("Keep your strong monsters.\pI will keep to my minerals."))
+    //namebox ("Miner")
+    msgbox(format("Keep your strong monsters.\pI will keep to my minerals."))
+	//hidenamebox
+    release
+	end
+}
+script BATTLE_ROUTE29_TRAINER_3
+{ //Rock strange form
+    trainerbattle_single(TRAINER_ROUTE29_TRAINER_3, format("I am examining this place for ancient relics.\pDo not disturb me!"),format("What do you mean the Digsite is north?"))
+    //namebox ("Archaeologist")
+    msgbox(format("What do you mean the Digsite is north?"))
+	//hidenamebox
+    release
+	end
+}
+script BATTLE_ROUTE29_TRAINER_4
+{ //Mystery chicken, Shrimp, Varrock chicken
+    trainerbattle_single(TRAINER_ROUTE29_TRAINER_4, format("I am getting real close to Falador.\pGet out of my way!"),format("I will keep going south.\pEventually I will find Falador."))
+    //namebox ("Noob")
+    msgbox(format("I will keep going south.\pEventually I will find Falador."))
+	//hidenamebox
+    release
+	end
+}
+script BATTLE_ROUTE29_TRAINER_5
+{ //Monkey x2, Poison scorpion, Pit scorpion
+    trainerbattle_single(TRAINER_ROUTE29_TRAINER_5, format("Brother there is an enemy opposing us.\pBrother we must approach this enemy!\pNo brother it is opposing us, Attack!"),format("Bro: Brother we lost! How could this be?!\pBrother: Shut up."))
+    namebox ("Bro")
+    msgbox(format("Brother we lost! How could this be?!"))
+	hidenamebox
+    namebox ("Brother")
+    msgbox(format("Shut up Bro."))
+	hidenamebox
+    release
+	end
+}
+

@@ -306,10 +306,7 @@ PlayersHouse_1F_Movement_MomReturnToSeatFemale:
 PlayersHouse_1F_EventScript_Mom::
 	lock
 	faceplayer
-	goto_if_eq VAR_LITTLEROOT_HOUSES_STATE_MAY, 4, PlayersHouse_1F_EventScript_DontPushYourselfTooHard
-	goto_if_eq VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 4, PlayersHouse_1F_EventScript_DontPushYourselfTooHard
-	goto_if_set FLAG_HAS_MATCH_CALL, PlayersHouse_1F_EventScript_TryRegisterMom
-	goto_if_set FLAG_RESCUED_BIRCH, PlayersHouse_1F_EventScript_MomHealsParty
+
 	goto_if_eq VAR_TEMP_1, 1, PlayersHouse_1F_EventScript_SeeYouHoney
 	goto_if_eq VAR_LITTLEROOT_INTRO_STATE, 7, PlayersHouse_1F_EventScript_DidYouMeetProfBirch
 	msgbox PlayersHouse_1F_Text_IsntItNiceInHere, MSGBOX_DEFAULT
@@ -473,15 +470,7 @@ PlayersHouse_1F_EventScript_GetSSTicketAndSeeLatiTV::
 	special TurnOffTVScreen
 	call_if_eq VAR_0x8008, MALE, PlayersHouse_1F_EventScript_MomApproachPlayerAfterTVMale
 	call_if_eq VAR_0x8008, FEMALE, PlayersHouse_1F_EventScript_MomApproachPlayerAfterTVFemale
-	msgbox PlayersHouse_1F_Text_WhatColorDidTheySay, MSGBOX_DEFAULT
-	multichoice 22, 8, MULTI_TV_LATI, TRUE
-	copyvar VAR_0x8004, VAR_RESULT
-	special InitRoamer
-	copyvar VAR_ROAMER_POKEMON, VAR_RESULT
-	msgbox PlayersHouse_1F_Text_StillUnknownPokemon, MSGBOX_DEFAULT
-	closemessage
-	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 4
-	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 4
+
 	releaseall
 	end
 
@@ -677,4 +666,13 @@ PlayersHouse_1F_Movement_PlayerApproachTVForLatiFemale:
 
 EventScript_RunningShoesManual::
 	msgbox PlayersHouse_1F_Text_RunningShoesManual, MSGBOX_SIGN
+	end
+
+Tutorial_Island_EventScript_WallClock:: @ 8292799
+	goto_if_set FLAG_SET_WALL_CLOCK, PlayersHouse_2F_EventScript_CheckWallClock
+	msgbox PlayersHouse_2F_Text_ClockIsStopped, MSGBOX_DEFAULT
+	call PlayersHouse_2F_EventScript_SetWallClock
+	delay 30
+	setflag FLAG_SET_WALL_CLOCK
+	releaseall
 	end

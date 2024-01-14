@@ -1,0 +1,117 @@
+mapscripts Route9_MapScripts {
+}
+
+
+
+
+
+script ROUTE9_SIGNPOST
+{
+    msgbox(format("Rimmington Mines.\pBeware of recent earthquakes."))
+    closemessage
+    end
+}
+
+//NPCS
+
+script ROUTE9_RAPTOR
+{
+    faceplayer
+    namebox ("RAPTOR")
+    msgbox(format("Beware!\pA massive Dragon lurks within the depths of these caves."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+//ITEMS
+
+script ITEM_ROUTE9_CABBAGE
+{
+    finditem(ITEM_CABBAGE)
+    end
+}
+
+script ITEM_ROUTE9_MUD_RUNE
+{
+    finditem(ITEM_MUD_RUNE)
+    end
+}
+
+script ITEM_ROUTE9_TM54_MUD_BOMB
+{
+    finditem(ITEM_TM54_MUD_BOMB)
+    end
+}
+
+
+
+
+
+
+
+//BATTLE
+
+script BATTLE_ROUTE9_GUTHIX_WIZARD{
+    trainerbattle_single(TRAINER_ROUTE9_GUTHIX_WIZARD, format("For Guthix!"),format("FOR GUUUUTTTHHIIXXX!"))
+    msgbox(format("Wait…{PAUSE 16}\nAre you telling me Guthix does not want me jumping out of nowhere to scare people who are about to pick up treasure?"))
+    release
+}
+
+
+script BATTLE_ROUTE9_MINER_1{
+    trainerbattle_single(TRAINER_ROUTE9_MINER_1, format("Hey buddy back off!\pCan't you see I'm minin' ere!"),format("This is my spot so hop!"))
+    msgbox(format("Can you please hop."))
+    release
+}
+
+script BATTLE_ROUTE9_MINER_2{
+    trainerbattle_single(TRAINER_ROUTE9_MINER_2, format("The worst feeling in the world is when someone steals your ore!"),format("No Ore!"))
+    msgbox(format("I now understand how PvMers feel when they get crashed."))
+    release
+}
+
+//BEACH HOBGOBLINS
+script BATTLE_ROUTE9_GOBLIN_1{
+    trainerbattle_single(TRAINER_ROUTE9_GOBLIN_1, format("Hobs here before, this goblin land now."),format("Hobs vacating, Oo'glog Spa."))
+    namebox ("HOBS")
+    msgbox(format("Hobs vacating, Oo'glog Spa."))
+    hidenamebox
+    release
+}
+
+script BATTLE_ROUTE9_GOBLIN_2{
+    trainerbattle_single(TRAINER_ROUTE9_GOBLIN_2, format("Big high war god fond of Snape grass, step off human!"),format("That lie, Big high war god not care for Snape grass."))
+    msgbox(format("That lie, Big high war god not care for Snape grass."))
+    release
+}
+
+script BATTLE_ROUTE9_GOBLIN_3{
+    trainerbattle_single(TRAINER_ROUTE9_GOBLIN_3, format("Distance of sea, expand mind of me."),format("Snowtoes be poet now."))
+    namebox ("SNOWTOES")
+    msgbox(format("Snowtoes be poet now."))
+    hidenamebox
+    release
+}
+
+script BATTLE_ROUTE9_GOBLIN_4{
+    trainerbattle_single(TRAINER_ROUTE9_GOBLIN_4, format("Human crafting house classy.\pHuman show me how to enter!"),format("Brown appoo? What dat?"))
+    msgbox(format("Brown appoo? What dat?"))
+    release
+}
+
+
+script BATTLE_ROUTE9_MUGGER{
+    trainerbattle_single(TRAINER_ROUTE9_MUGGER, format("I bet you are one of those noobs going to those house parties.\pThis will be easy!"),format("Urgh! I almost got you."))
+    msgbox(format("So much traffic comes through here when there is a house party on.\pI can loot so much stuff from the noobs."))
+    release
+}
+
+script BATTLE_ROUTE9_CHEF{
+    trainerbattle_single(TRAINER_ROUTE9_CHEF, format("They say there is a massive slime monster living in Rimmington Well."),format("Have you ever wondered how slimes breed?"))
+    msgbox(format("Slimes are pretty neat, I use them in my cooking sometimes."))
+    release
+}

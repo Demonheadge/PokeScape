@@ -1,0 +1,216 @@
+
+
+mapscripts AlKharid_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 11) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+}
+
+
+
+
+script ALKHARID_GNOMEGLIDER
+{
+    msgbox(format("It is a Gnome Glider."))
+    closemessage
+    release
+    end
+}
+
+//NPCS
+script ALKHARID_NPC_1
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("The Gnome Glider is currently undergoing maintenance.\pPlease come back later."))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+script ALKHARID_NPC_2
+{
+    faceplayer
+    namebox ("Ali")
+    msgbox(format("Browse my Wares."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script ALKHARID_NPC_3
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("Welcome to Al Kharid, NOOB!"))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+script ALKHARID_NPC_4
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("Dont cause trouble here in city, law enforcement has a tendency to call upon several more guards unneedingly for the smallest of cases."))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+script ALKHARID_NPC_5
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("Up North is the desert, you can find both sunny weather and sandstorms there.\pSome monsters seems to evolve only under those conditions."))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+script ALKHARID_NPC_6
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("Did you know theres a ban on magic carpets in Al Kharid?\pApparently their leader died using one at one point."))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+script ALKHARID_NPC_7
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("This is Al Kharid castle, would you like to lose to the prince?"))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+script ALKHARID_NPC_8
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("This is Al Kharid castle, would you like to challenge the prince?"))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+script ALKHARID_NPC_9
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("We deal with a lot of thiefs and cutthroats here.\pAl Kharid does not welcome them, yet they keep coming back."))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+script ALKHARID_NPC_10
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format(""))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+script ALKHARID_NPC_11
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format(""))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+script ALKHARID_NPC_12
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format(""))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+script ALKHARID_NPC_13
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format(""))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+script ALKHARID_NPC_14
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format(""))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+script ALKHARID_NPC_15
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format(""))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+script ALKHARID_NPC_16
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format(""))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+
+
+
+
+
+//NPCS SHANTYPASS
+script SHANTYPASS_NPC_1
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format(""))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+script SHANTYPASS_NPC_2
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format(""))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+script SHANTYPASS_NPC_3
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format(""))
+    closemessage
+    //hidenamebox
+    release
+    end
+}

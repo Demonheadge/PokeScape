@@ -14,19 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_SAFARI_ZONE_NORTH",
+      "direction": "up",
       "offset": 0,
-      "direction": "up"
+      "map": "MAP_SAFARI_ZONE_NORTH"
     },
     {
-      "map": "MAP_SAFARI_ZONE_SOUTHWEST",
+      "direction": "left",
       "offset": 0,
-      "direction": "left"
+      "map": "MAP_SAFARI_ZONE_SOUTHWEST"
     },
     {
-      "map": "MAP_SAFARI_ZONE_SOUTHEAST",
+      "direction": "right",
       "offset": 0,
-      "direction": "right"
+      "map": "MAP_SAFARI_ZONE_SOUTHEAST"
     }
   ],
   "object_events": [
@@ -115,9 +115,13 @@
       "y": 33,
       "elevation": 0,
       "dest_map": "MAP_ROUTE121_SAFARI_ZONE_ENTRANCE",
-      "dest_warp_id": "0"
+      "dest_warp_id": 0
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
 }

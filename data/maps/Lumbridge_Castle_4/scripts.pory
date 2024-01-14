@@ -1,0 +1,69 @@
+const OBJ_EVENT_ID_DUKE = 1
+
+
+mapscripts Lumbridge_Castle_4_MapScripts{
+
+    MAP_SCRIPT_ON_LOAD {
+        call(LUMBRIDGE_GYM_MUSIC)
+    }
+}
+
+
+
+
+
+
+script GYMLEADER_DUKE{
+    lock
+    faceplayer
+    namebox("Duke Horacio")
+    msgbox(format("So you've made it to the top!\nCongratulations!\pYou wish to challenge me to a battle?\nSo be it!\lMay the best trainer win!"))
+    hidenamebox
+    trainerbattle_no_intro(TRAINER_LEADER_DUKE_1, msgbox(format("You beat me…\p…Congratulations!")))
+    goto(GYMLEADER_DUKE_BATTLEWON)
+    release
+    end
+}
+    
+
+ script GYMLEADER_DUKE_BATTLEWON{   
+    lock
+    faceplayer
+    namebox("Duke Horacio")
+    msgbox(format("Congratulations!\nYou've managed to defeat me.\pHere is your official GYM BADGE, you've definitely earned it."))
+    hidenamebox
+    playfanfare(MUS_PS_QUEST_COMPLETE)
+    msgbox(format("{PLAYER} received the Lumbridge BADGE from Duke Horacio."))
+    waitmessage
+    waitfanfare
+    namebox("Duke Horacio")
+    msgbox(format("Also have this, it is my favourite move."))
+    hidenamebox
+    giveitem (ITEM_TM36, 1)
+    compare(VAR_RESULT, FALSE)
+	goto_if_eq(Common_EventScript_ShowBagIsFull)
+    namebox("Duke Horacio")
+    msgbox(format("That move is called Slack off, which is exactly what I love to do on my days off.\pHopefully it will help you on your journey."))
+    msgbox(format("Also, I suppose you'll be heading to the next gym, correct?\pThen you would be wanting to go to Falador.\pMight I suggest first stopping off at the Wizards Tower, south of Draynor and doing some training with the Wizards?\pBest of luck adventurer!"))
+    closemessage
+    hidenamebox
+    fadescreen(FADE_TO_BLACK)
+    call(SetGymTrainers_LUMBRIDGE)
+    removeobject(OBJ_EVENT_ID_DUKE)
+    setflag(FLAG_BADGE01_GET)
+    addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
+    setvar(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE, 5)
+    fadescreen(FADE_FROM_BLACK)
+    release
+    end
+ }
+
+
+script SetGymTrainers_LUMBRIDGE {   
+    settrainerflag(TRAINER_LUMBRIDGE_GYM1)
+    settrainerflag(TRAINER_LUMBRIDGE_GYM2)
+    settrainerflag(TRAINER_LUMBRIDGE_GYM3)
+    settrainerflag(TRAINER_LUMBRIDGE_GYM4)
+    return
+}
+

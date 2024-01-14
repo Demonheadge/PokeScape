@@ -1,0 +1,55 @@
+mapscripts KaramjaVolcano_B2F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 15) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+    MAP_SCRIPT_ON_LOAD {
+        goto(KaramjaVolcano_STATE2)
+        }
+}
+
+
+
+
+
+
+
+script KaramjaVolcano_STATE2{
+        switch (var(VAR_POKESCAPE_KARAMJAVOLCANO_STATE)){ 
+            case 0:
+            case 1: 
+                playbgm (MUS_PS_ENCOUNTER_HAM, 1)
+                savebgm(MUS_PS_ENCOUNTER_HAM)
+                release
+                end
+            case 2: 
+                playbgm (MUS_PS_ENCOUNTER_HAM, 1)
+                savebgm(MUS_PS_ENCOUNTER_HAM)
+                release
+                end
+            case 3: 
+                setflag(FLAG_TEMP_1)
+                removeobject(2)
+                removeobject(3)
+                removeobject(4)
+                release
+                end
+            }
+    }
+
+
+    //ITEMS
+script ITEM_KARAMJA_VOLCANO_1
+{
+    finditem(ITEM_PURPLE_SWEETS)
+    end
+}
+script ITEM_KARAMJA_VOLCANO_2
+{
+    finditem(ITEM_PURPLE_SWEETS)
+    end
+}
+script ITEM_KARAMJA_VOLCANO_3
+{
+    finditem(ITEM_PURPLE_SWEETS)
+    end
+}

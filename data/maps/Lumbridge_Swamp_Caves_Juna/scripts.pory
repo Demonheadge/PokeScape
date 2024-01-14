@@ -1,0 +1,313 @@
+mapscripts Lumbridge_Swamp_Caves_Juna_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 43) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 43-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA 
+    }
+    MAP_SCRIPT_ON_LOAD { //ON LOAD FOR MAP TILES
+            setflag(FLAG_TEMP_B)
+            setflag(FLAG_TEMP_C)
+            setflag(FLAG_TEMP_F)
+            call(JUNA_POOL_STATE)
+            call(JUNA_POOL_DIRTY)
+            
+    }
+
+}
+
+script JUNA_POOL_DIRTY{
+    if (!flag(FLAG_TEMP_10)){
+        setmetatile(29, 11, 556, 0)
+        setmetatile(30, 11, 556, 0)
+        setmetatile(29, 12, 556, 0)
+        setmetatile(30, 12, 556, 0)
+        setmetatile(29, 13, 556, 0)
+        setmetatile(30, 13, 556, 0)
+        setmetatile(29, 14, 556, 0)
+        setmetatile(30, 14, 556, 0)
+        setmetatile(28, 13, 556, 0)
+        setmetatile(28, 14, 556, 0)
+        special(DrawWholeMapView)     
+    }
+    if (flag(FLAG_TEMP_10)){
+        //clean water.
+        setmetatile(29, 11, 646, 0)
+        setmetatile(30, 11, 646, 0)
+        setmetatile(29, 12, 646, 0)
+        setmetatile(30, 12, 646, 0)
+        setmetatile(29, 13, 646, 0)
+        setmetatile(30, 13, 646, 0)
+        setmetatile(29, 14, 646, 0)
+        setmetatile(30, 14, 646, 0)
+        setmetatile(28, 13, 646, 0)
+        setmetatile(28, 14, 646, 0)
+
+        setmetatile(28, 24, 589, 0)
+        setmetatile(26, 24, 646, 0)
+        setmetatile(27, 24, 646, 0)
+        setmetatile(26, 25, 646, 0)
+        setmetatile(27, 25, 646, 0)
+
+        setmetatile(1, 18, 589, 0)
+        setmetatile(2, 18, 646, 0)
+        setmetatile(3, 18, 646, 0)
+        setmetatile(2, 19, 646, 0)
+        setmetatile(3, 19, 646, 0)
+        special(DrawWholeMapView)     
+    }
+    
+    return
+}
+
+
+script JUNA_POOL_ALL_FLAGS{
+    //State of the Tears
+    if (flag(FLAG_TEMP_A)){
+        if (flag(FLAG_TEMP_B)){
+            if (flag(FLAG_TEMP_C)){
+                if (flag(FLAG_TEMP_D)){
+                    if (flag(FLAG_TEMP_E)){
+                        if (flag(FLAG_TEMP_F)){
+                            msgbox(format("BEEP BOOP."))
+                            closemessage
+                            setflag(FLAG_TEMP_10)
+                            call(JUNA_POOL_DIRTY)
+                            return
+                        }
+                        
+                    }
+                    
+                }
+                
+            } 
+            
+        }
+        
+    }
+    return
+}
+
+
+script JUNA_POOL_STATE{
+    //State of the Tears
+    //call(JUNA_POOL_ALL_FLAGS)
+    if (flag(FLAG_TEMP_A)){
+        setmetatile(30, 9, 589, 0)
+		special(DrawWholeMapView)     
+    }
+    elif (!flag(FLAG_TEMP_A))
+    {
+        setmetatile(30, 9, 590, 0)
+	    special(DrawWholeMapView)
+    }
+
+    if (flag(FLAG_TEMP_B)){
+        setmetatile(32, 9, 589, 0)
+		special(DrawWholeMapView)      
+    }
+    elif (!flag(FLAG_TEMP_B))
+    {
+        setmetatile(32, 9, 590, 0)
+	    special(DrawWholeMapView)  
+    }
+
+    if (flag(FLAG_TEMP_C)){
+        setmetatile(34, 9, 589, 0)
+		special(DrawWholeMapView)      
+    }
+    else
+    {
+        setmetatile(34, 9, 590, 0)
+	    special(DrawWholeMapView)  
+    }
+
+    if (flag(FLAG_TEMP_D)){
+        setmetatile(37, 9, 589, 0)
+		special(DrawWholeMapView)      
+    }
+    else
+    {
+        setmetatile(37, 9, 590, 0)
+	    special(DrawWholeMapView)  
+    }
+
+    if (flag(FLAG_TEMP_E)){
+        setmetatile(38, 10, 589, 0)
+		special(DrawWholeMapView)      
+    }
+    else
+    {
+        setmetatile(38, 10, 590, 0)
+	    special(DrawWholeMapView)  
+    }
+
+    if (flag(FLAG_TEMP_F)){
+        setmetatile(38, 15, 589, 0)
+		special(DrawWholeMapView)      
+    }
+    else
+    {
+        setmetatile(38, 15, 590, 0)
+	    special(DrawWholeMapView)  
+    }
+    return
+}
+
+
+
+script JUNA_TOGGLE_TEMP_FLAG_1 {
+    if (!flag(FLAG_TEMP_A))
+    {
+        setflag(FLAG_TEMP_A)
+        return  
+    }
+    if (flag(FLAG_TEMP_A))
+    {
+        clearflag(FLAG_TEMP_A) 
+        return 
+    }
+    return
+}
+script JUNA_TOGGLE_TEMP_FLAG_2 {
+    if (!flag(FLAG_TEMP_B))
+    {
+        setflag(FLAG_TEMP_B)
+        return  
+    }
+    if (flag(FLAG_TEMP_B))
+    {
+        clearflag(FLAG_TEMP_B) 
+        return 
+    }
+    return
+}
+script JUNA_TOGGLE_TEMP_FLAG_3 {
+    if (!flag(FLAG_TEMP_C))
+    {
+        setflag(FLAG_TEMP_C)
+        return  
+    }
+    if (flag(FLAG_TEMP_C))
+    {
+        clearflag(FLAG_TEMP_C) 
+        return 
+    }
+    return
+}
+script JUNA_TOGGLE_TEMP_FLAG_4 {
+    if (!flag(FLAG_TEMP_D))
+    {
+        setflag(FLAG_TEMP_D)
+        return  
+    }
+    if (flag(FLAG_TEMP_D))
+    {
+        clearflag(FLAG_TEMP_D) 
+        return 
+    }
+    return
+}
+script JUNA_TOGGLE_TEMP_FLAG_5 {
+    if (!flag(FLAG_TEMP_E))
+    {
+        setflag(FLAG_TEMP_E)
+        return  
+    }
+    if (flag(FLAG_TEMP_E))
+    {
+        clearflag(FLAG_TEMP_E) 
+        return 
+    }
+    return
+}
+script JUNA_TOGGLE_TEMP_FLAG_6 {
+    if (!flag(FLAG_TEMP_F))
+    {
+        setflag(FLAG_TEMP_F)
+        return  
+    }
+    if (flag(FLAG_TEMP_F))
+    {
+        clearflag(FLAG_TEMP_F) 
+        return 
+    }
+    return
+}
+
+
+
+script JUNA_TEARS_1{
+	call(JUNA_TOGGLE_TEMP_FLAG_1)
+    call(JUNA_TOGGLE_TEMP_FLAG_2)
+    call(JUNA_POOL_STATE)
+    call(JUNA_POOL_ALL_FLAGS)
+	return
+}
+
+script JUNA_TEARS_2{
+	call(JUNA_TOGGLE_TEMP_FLAG_1)
+    call(JUNA_TOGGLE_TEMP_FLAG_2)
+    call(JUNA_TOGGLE_TEMP_FLAG_3)
+    call(JUNA_POOL_STATE)
+    call(JUNA_POOL_ALL_FLAGS)
+	return
+}
+
+script JUNA_TEARS_3{
+	call(JUNA_TOGGLE_TEMP_FLAG_2)
+    call(JUNA_TOGGLE_TEMP_FLAG_3)
+    call(JUNA_TOGGLE_TEMP_FLAG_4)
+    call(JUNA_POOL_STATE)
+    call(JUNA_POOL_ALL_FLAGS)
+	return
+}
+
+script JUNA_TEARS_4{
+	call(JUNA_TOGGLE_TEMP_FLAG_3)
+    call(JUNA_TOGGLE_TEMP_FLAG_4)
+    call(JUNA_TOGGLE_TEMP_FLAG_5)
+    call(JUNA_POOL_STATE)
+    call(JUNA_POOL_ALL_FLAGS)
+	return
+}
+
+script JUNA_TEARS_5{
+	call(JUNA_TOGGLE_TEMP_FLAG_4)
+    call(JUNA_TOGGLE_TEMP_FLAG_5)
+    call(JUNA_TOGGLE_TEMP_FLAG_6)
+    call(JUNA_POOL_STATE)
+    call(JUNA_POOL_ALL_FLAGS)
+	return
+}
+
+script JUNA_TEARS_6{
+	call(JUNA_TOGGLE_TEMP_FLAG_5)
+    call(JUNA_TOGGLE_TEMP_FLAG_6)
+    call(JUNA_POOL_STATE)
+    call(JUNA_POOL_ALL_FLAGS)
+	return
+}
+
+
+
+
+
+
+
+
+
+
+script JUNA_TOXIC_WATER{
+    msgbox(format("This water is too toxic to pass."))
+    closemessage
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+

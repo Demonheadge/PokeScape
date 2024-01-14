@@ -48,24 +48,21 @@ BirthIsland_Exterior_EventScript_Triangle::
 	special DoDeoxysRockInteraction
 	waitstate
 	switch VAR_RESULT
-	case DEOXYS_ROCK_FAILED,     BirthIsland_Exterior_EventScript_Failed
-	case DEOXYS_ROCK_PROGRESSED, BirthIsland_Exterior_EventScript_Progressed
-	case DEOXYS_ROCK_SOLVED,     BirthIsland_Exterior_EventScript_Deoxys
-	case DEOXYS_ROCK_COMPLETE,   BirthIsland_Exterior_EventScript_Complete
+	case 0, BirthIsland_Exterior_EventScript_NotSolved1
+	case 1, BirthIsland_Exterior_EventScript_NotSolved2
+	case 2, BirthIsland_Exterior_EventScript_Deoxys
+	case 3, BirthIsland_Exterior_EventScript_NotSolved3
 	end
 
-@ The actual rock triangle movement is handled by DoDeoxysRockInteraction.
-@ Unless the player has solved the puzzle and needs to encounter Deoxys,
-@ there's nothing else the script needs to do.
-BirthIsland_Exterior_EventScript_Failed::
+BirthIsland_Exterior_EventScript_NotSolved1::
 	release
 	end
 
-BirthIsland_Exterior_EventScript_Progressed::
+BirthIsland_Exterior_EventScript_NotSolved2::
 	release
 	end
 
-BirthIsland_Exterior_EventScript_Complete::
+BirthIsland_Exterior_EventScript_NotSolved3::
 	release
 	end
 
@@ -81,11 +78,11 @@ BirthIsland_Exterior_EventScript_Deoxys::
 	applymovement LOCALID_DEOXYS, BirthIsland_Exterior_Movement_DeoxysApproach
 	waitmovement 0
 	waitse
-	playmoncry SPECIES_DEOXYS_NORMAL, CRY_MODE_ENCOUNTER
+	playmoncry SPECIES_DEOXYS, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
 	setvar VAR_LAST_TALKED, LOCALID_DEOXYS
-	seteventmon SPECIES_DEOXYS_NORMAL, 30
+	seteventmon SPECIES_DEOXYS, 30
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -100,12 +97,12 @@ BirthIsland_Exterior_EventScript_Deoxys::
 
 BirthIsland_Exterior_EventScript_DefeatedDeoxys::
 	setflag FLAG_DEFEATED_DEOXYS
-	setvar VAR_0x8004, SPECIES_DEOXYS_NORMAL
+	setvar VAR_0x8004, SPECIES_DEOXYS
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
 BirthIsland_Exterior_EventScript_RanFromDeoxys::
-	setvar VAR_0x8004, SPECIES_DEOXYS_NORMAL
+	setvar VAR_0x8004, SPECIES_DEOXYS
 	goto Common_EventScript_LegendaryFlewAway
 	end
 

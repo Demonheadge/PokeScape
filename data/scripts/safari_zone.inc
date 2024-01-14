@@ -1,10 +1,14 @@
 SafariZone_EventScript_OutOfBallsMidBattle::
+	setvar VAR_SAFARI_ZONE_STATE, 7
+	goto SAFARI_ZONE_ALTAR_STATE
 	setvar VAR_SAFARI_ZONE_STATE, 1
 	special ExitSafariMode
 	setwarp MAP_ROUTE121_SAFARI_ZONE_ENTRANCE, 2, 5
 	end
 
 SafariZone_EventScript_Exit::
+	setvar VAR_SAFARI_ZONE_STATE, 7
+	goto SAFARI_ZONE_ALTAR_STATE
 	setvar VAR_SAFARI_ZONE_STATE, 1
 	special ExitSafariMode
 	warp MAP_ROUTE121_SAFARI_ZONE_ENTRANCE, 2, 5
@@ -22,13 +26,7 @@ SafariZone_EventScript_Retire::
 	goto SafariZone_EventScript_Exit
 
 SafariZone_EventScript_TimesUp::
-	lockall
-	playse SE_DING_DONG
-	message SafariZone_Text_TimesUp
-	waitmessage
-	waitbuttonpress
-	releaseall
-	goto SafariZone_EventScript_Exit
+	goto SAFARI_ZONE_WIZARD_NEXT_ROUND
 
 SafariZone_EventScript_OutOfBalls::
 	lockall
@@ -78,8 +76,8 @@ SafariZone_Text_TimesUp:
 	.string "Your SAFARI Game is over.$"
 
 SafariZone_Text_OutOfBalls:
-	.string "You've run out of SAFARI BALLS.\n"
-	.string "Your SAFARI Game is over.$"
+	.string "You've run out of POUCHES.\n"
+	.string "You will be teleported out.$"
 
 SafariZone_Text_PlacePokeblockOnFeeder:
 	.string "Would you like to place a {POKEBLOCK}\n"

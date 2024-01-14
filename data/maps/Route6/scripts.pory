@@ -1,0 +1,176 @@
+const OBJ_EVENT_ID_MUGGER = 5
+const OBJ_EVENT_ID_RAT = 7
+const OBJ_EVENT_ID_GUARD = 4
+const OBJ_EVENT_ID_UNICORN = 6
+
+
+mapscripts Route6_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 3) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+        
+        if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+        {
+            goto(FALADORSOUTH_STATE)
+        }
+        else //if OPENWORLD
+        {
+            call(OPENWORLD_STATE_ROUTE6)
+        }
+        
+        
+        
+        
+    }
+}
+
+
+script OPENWORLD_STATE_ROUTE6 {
+        addobject(2)
+        clearflag(FLAG_TEMP_1)
+        removeobject(OBJ_EVENT_ID_MUGGER)
+        removeobject(OBJ_EVENT_ID_RAT)
+        removeobject(OBJ_EVENT_ID_GUARD)
+        removeobject(OBJ_EVENT_ID_UNICORN)
+        setflag(FLAG_TEMP_2)
+		return
+}
+
+
+
+
+
+script FALADORSOUTH_STATE{
+	switch (var(VAR_POKESCAPE_FALADOR_STATE)){ 
+        //HAM EVENT PORT SARIM - FALADOR SOUTH GATE ADD NPCS
+		case 0: 
+            removeobject(2)
+            setflag(FLAG_TEMP_1)
+
+            clearflag(FLAG_TEMP_2)
+            addobject(OBJ_EVENT_ID_MUGGER)
+            addobject(OBJ_EVENT_ID_RAT)
+            addobject(OBJ_EVENT_ID_GUARD)
+            addobject(OBJ_EVENT_ID_UNICORN)
+            
+            end
+
+        //HAM EVENT PORT SARIM - ENDS - FALADOR SOUTH GATE REMOVE NPCS
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            addobject(2)
+            clearflag(FLAG_TEMP_1)
+            
+            removeobject(OBJ_EVENT_ID_MUGGER)
+            removeobject(OBJ_EVENT_ID_RAT)
+            removeobject(OBJ_EVENT_ID_GUARD)
+            removeobject(OBJ_EVENT_ID_UNICORN)
+            setflag(FLAG_TEMP_2)
+            end
+    }
+}
+
+
+
+
+
+
+
+
+
+
+script ROUTE6_BLOCK_FaladorGuard
+{
+
+    applymovement(OBJ_EVENT_ID_MUGGER, MOVEMENT_ROUTE6_MUGGER)
+    waitmovement (0)
+    namebox ("Mugger")
+    msgbox(format("Heh, I bet you won't even last 30 seconds against my Rat!"))
+    closemessage
+    hidenamebox
+
+    applymovement(OBJ_EVENT_ID_RAT, MOVEMENT_ROUTE6_RAT)
+    waitmovement (0)
+    playmoncry(SPECIES_RATTATA, 0)
+    namebox ("Rat")
+    msgbox(format("Squeeek!"))
+    waitmoncry
+    closemessage
+    hidenamebox
+
+    applymovement(OBJ_EVENT_ID_GUARD, MOVEMENT_ROUTE6_GUARD)
+    waitmovement (0)
+    namebox ("Guard")
+    msgbox(format("You will not enter Falador for as long as I am here you disgusting mugger!"))
+    closemessage
+    hidenamebox
+
+    applymovement(OBJ_EVENT_ID_UNICORN, MOVEMENT_ROUTE6_UNICORN)
+    waitmovement (0)
+    playmoncry(SPECIES_LOTAD, 0)
+    namebox ("Unicorn")
+    msgbox(format("Neeeigh!"))
+    waitmoncry
+    closemessage
+    hidenamebox
+
+    release
+    end
+}
+
+
+
+movement MOVEMENT_ROUTE6_MUGGER
+{
+    walk_in_place_right * 3
+}  
+
+movement MOVEMENT_ROUTE6_RAT
+{
+    walk_in_place_right * 3
+}  
+
+movement MOVEMENT_ROUTE6_GUARD
+{
+    walk_in_place_left * 3
+}  
+
+movement MOVEMENT_ROUTE6_UNICORN
+{
+    walk_in_place_left * 3
+}  
+
+
+
+
+
+//BATTLE TRAINERS
+
+script BATTLE_ROUTE6_FIREMAKER{
+    trainerbattle_single(TRAINER_ROUTE6_FIREMAKER, format("Hey get out of my way, im making bonfires here!"),format("Burned to a crisp.\pI hope you levelled up…"))
+    msgbox(format("Burned to a crisp.\pI hope you levelled up…"))
+    release
+}
+
+script BATTLE_ROUTE6_MUGGER{
+    trainerbattle_single(TRAINER_MUGGER_ROUTE6, format("Your money or your life!"),format("Okay I guess you can keep both…"))
+    namebox ("Mugger")
+    msgbox(format("Shoo you're making it hard for me to mug people."))
+    hidenamebox
+    release
+    end
+}
+
+
+script BATTLE_ROUTE6_GUARD_1
+{
+    trainerbattle_single(TRAINER_ROUTE6_GUARD_1, format("Welcome to Falador, I greet you with a battle!"),format("Welcome and goodbye."))
+    namebox ("Guard")
+    msgbox(format("Enjoy your stay, and do not get in trouble."))
+	hidenamebox
+    release
+	end
+}

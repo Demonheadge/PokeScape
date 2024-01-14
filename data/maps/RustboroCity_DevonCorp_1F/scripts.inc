@@ -5,7 +5,7 @@ RustboroCity_DevonCorp_1F_MapScripts::
 	.byte 0
 
 RustboroCity_DevonCorp_1F_OnTransition:
-	call_if_unset FLAG_RETURNED_DEVON_GOODS, RustboroCity_DevonCorp_1F_EventScript_BlockStairs
+
 	end
 
 RustboroCity_DevonCorp_1F_EventScript_BlockStairs::
@@ -15,10 +15,7 @@ RustboroCity_DevonCorp_1F_EventScript_BlockStairs::
 
 RustboroCity_DevonCorp_1F_EventScript_Employee::
 	lock
-	faceplayer
-	goto_if_set FLAG_RETURNED_DEVON_GOODS, RustboroCity_DevonCorp_1F_EventScript_GoodsRecovered
-	goto_if_set FLAG_DEVON_GOODS_STOLEN, RustboroCity_DevonCorp_1F_EventScript_RobberWasntBright
-	msgbox RustboroCity_DevonCorp_1F_Text_ThoseShoesAreOurProduct, MSGBOX_DEFAULT
+
 	release
 	end
 
@@ -34,12 +31,7 @@ RustboroCity_DevonCorp_1F_EventScript_GoodsRecovered::
 
 RustboroCity_DevonCorp_1F_EventScript_StairGuard::
 	lock
-	faceplayer
-	goto_if_set FLAG_RETURNED_DEVON_GOODS, RustboroCity_DevonCorp_1F_EventScript_AlwaysWelcome
-	goto_if_set FLAG_RECOVERED_DEVON_GOODS, RustboroCity_DevonCorp_1F_EventScript_GotRobbed
-	goto_if_set FLAG_DEVON_GOODS_STOLEN, RustboroCity_DevonCorp_1F_EventScript_GotRobbed
-	msgbox RustboroCity_DevonCorp_1F_Text_OnlyAuthorizedPeopleEnter, MSGBOX_DEFAULT
-	release
+
 	end
 
 RustboroCity_DevonCorp_1F_EventScript_AlwaysWelcome::
@@ -54,11 +46,7 @@ RustboroCity_DevonCorp_1F_EventScript_GotRobbed::
 
 RustboroCity_DevonCorp_1F_EventScript_Greeter::
 	lock
-	faceplayer
-	goto_if_set FLAG_RETURNED_DEVON_GOODS, RustboroCity_DevonCorp_1F_EventScript_WelcomeToDevonCorp
-	goto_if_set FLAG_RECOVERED_DEVON_GOODS, RustboroCity_DevonCorp_1F_EventScript_StaffGotRobbed
-	goto_if_set FLAG_DEVON_GOODS_STOLEN, RustboroCity_DevonCorp_1F_EventScript_StaffGotRobbed
-	msgbox RustboroCity_DevonCorp_1F_Text_WelcomeToDevonCorp, MSGBOX_DEFAULT
+
 	release
 	end
 

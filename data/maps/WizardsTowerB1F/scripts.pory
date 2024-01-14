@@ -1,0 +1,79 @@
+const SEDRIDOR_ID = 1
+const ARIANE_ID = 6
+
+mapscripts WizardsTowerB1F_MapScripts{
+    MAP_SCRIPT_ON_LOAD {
+        call(WizardsTower_B1F_STATE)
+        }
+    
+}
+
+
+
+
+
+
+
+script WizardsTower_B1F_STATE{
+        switch (var(VAR_POKESCAPE_WIZARDS_TOWER_STATE)){ 
+            case 0: 
+            case 1: 
+            case 2: 
+            case 3: 
+            case 4: 
+            case 5:
+            case 6: 
+            case 7: 
+            case 8: 
+                setflag(FLAG_TEMP_1)
+                setflag(FLAG_TEMP_2) 
+                removeobject(SEDRIDOR_ID)
+                removeobject(ARIANE_ID)
+                release
+                return
+            case 9: 
+                clearflag(FLAG_TEMP_1)
+                clearflag(FLAG_TEMP_2)
+                addobject(SEDRIDOR_ID)
+                addobject(ARIANE_ID)
+                release
+                return
+            }
+    }
+
+
+
+script NPC_WizardsTowerB1F_Ariane{
+    faceplayer
+    namebox("Ariane")
+    msgbox(format("I cannot believe that guy got away…"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script NPC_WizardsTowerB1F_Sedridor{
+    lock
+    faceplayer
+    namebox("Sedridor")
+    checkitem(ITEM_TALISMAN_AIR, 1)
+        if (!var(VAR_RESULT)){
+            msgbox(format("Hello {PLAYER}, I heard from Ariane that you gave chase into Draynor Manor.\pI would like you to have this."))
+            hidenamebox
+            giveitem(ITEM_TALISMAN_AIR)
+            namebox("Sedridor")
+            msgbox(format("I recieved this Talisman from the Duke of Lumbridge.\pAfter a bit of research I have come to the conclusion that it can be used on those mysterious altars.\pYou should go try it out."))
+            hidenamebox
+            closemessage
+            release
+            end
+        }
+        else {
+            msgbox(format("Hello {PLAYER}, have you visited those mysterious altars?"))
+            hidenamebox
+            closemessage
+            release
+            end
+        }
+}

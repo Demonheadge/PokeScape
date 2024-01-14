@@ -200,12 +200,7 @@ SlateportCity_Harbor_EventScript_NoTicket::
 	end
 
 SlateportCity_Harbor_EventScript_Lilycove::
-	msgbox SlateportCity_Harbor_Text_LilycoveItIs, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, SlateportCity_Harbor_EventScript_ChooseNewDestination
-	setvar VAR_SS_TIDAL_STATE, SS_TIDAL_BOARD_SLATEPORT
-	call SlateportCity_Harbor_EventScript_BoardFerry
-	warp MAP_SS_TIDAL_CORRIDOR, 1, 10
-	waitstate
+
 	release
 	end
 
@@ -293,7 +288,6 @@ SlateportCity_Harbor_EventScript_CaptStern::
 	faceplayer
 	goto_if_set FLAG_BADGE07_GET, SlateportCity_Harbor_EventScript_CaptSternFerryOrScannerComment
 	goto_if_set FLAG_EVIL_TEAM_ESCAPED_STERN_SPOKE, SlateportCity_Harbor_EventScript_NeedDive
-	goto_if_set FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, SlateportCity_Harbor_EventScript_TeamAquaLeftNeedDive
 	goto_if_eq VAR_SLATEPORT_HARBOR_STATE, 2, SlateportCity_Harbor_EventScript_WhyStealSubmarine
 	msgbox SlateportCity_Harbor_Text_SameThugsTriedToRobAtMuseum, MSGBOX_DEFAULT
 	closemessage

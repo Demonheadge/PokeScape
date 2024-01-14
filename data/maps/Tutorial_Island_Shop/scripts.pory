@@ -1,0 +1,33 @@
+mapscripts Tutorial_Island_Shop_MapScripts{}
+
+script Tutorial_Island_Shop_EventScript_Clerk{
+	lock
+	faceplayer
+	checkitem (ITEM_BRONZE_POUCH, 1)
+	if (!var(VAR_RESULT)){
+		msgbox("Welcome!\n This is a general store!\p Here you can buy general use items!")
+		msgbox("Since this is your first time take this!")
+		giveitem (ITEM_BRONZE_POUCH, 1)
+		msgbox("Next time it will cost you!\n Good luck on your journey!")
+		release
+	}
+	else{
+	
+		msgbox("Can I help you at all?")
+		waitmessage
+		pokemart (Tutorial_Island_Shop_Pokemart)
+		msgbox("Thanks for shopping!")
+		release
+	}
+}
+
+raw `
+	.align 2
+	Tutorial_Island_Shop_Pokemart:
+	.2byte ITEM_BRONZE_POUCH
+	.2byte ITEM_EMPTY_BUCKET
+	.2byte ITEM_EMPTY_POT
+	.2byte ITEM_NONE
+	release
+	end
+`

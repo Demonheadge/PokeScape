@@ -1,0 +1,641 @@
+mapscripts KaramjaVolcano_B3F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 15) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+    MAP_SCRIPT_ON_LOAD {
+        goto(KaramjaVolcano_STATE3)
+        }
+}
+
+
+
+
+
+
+
+script KaramjaVolcano_STATE3{
+        switch (var(VAR_POKESCAPE_KARAMJAVOLCANO_STATE)){ 
+            case 0: 
+            case 1: 
+            case 2: 
+                setflag(FLAG_ELVARG)
+                setflag(FLAG_TEMP_4)
+                setflag(FLAG_TEMP_5)
+                removeobject(15)
+                removeobject(16)
+                removeobject(17)
+                playbgm (MUS_PS_ENCOUNTER_HAM, 1)
+                release
+                end
+            case 3: 
+                setflag(FLAG_TEMP_1)
+                setflag(FLAG_TEMP_2)
+                setflag(FLAG_TEMP_3)
+                setflag(FLAG_TEMP_4)
+                removeobject(1)
+                removeobject(2)
+                removeobject(3)
+                removeobject(4)
+                removeobject(5)
+                removeobject(6)
+                removeobject(7)
+                removeobject(8)
+                removeobject(15)
+                removeobject(16)
+                //MOVE rocks
+				setobjectxyperm(11,12,17)
+                setobjectxyperm(18,10,31)
+				release
+                end
+			case 4: 
+            case 5:
+			case 6:
+			case 7: 
+            case 8: 
+                release
+                end
+            }
+    }
+
+
+
+
+
+script NPC_KaramjaVolcano_HAM_EVENT1
+{
+    
+    playSE(SE_PIN)
+    applymovement(3, HAM_EVENT_KaramjaVolcano_1)
+    waitmovement(0)
+    applymovement(3, HAM_EVENT_KaramjaVolcano_2)
+    waitmovement(0)
+    namebox ("H.A.M Grunt")
+    msgbox(format("Leader!\nThis is the adventurer who gave me trouble at the Wizards Tower!"))
+    hidenamebox
+    closemessage
+    applymovement(3, HAM_EVENT_KaramjaVolcano_3)
+    applymovement(2, HAM_EVENT_KaramjaVolcano_8)
+    waitmovement(0)
+    namebox ("H.A.M Leader")
+    msgbox(format("So you are the one who interrupted our mission to retrieve the abyssal research notes.\pNo matter, our plans were only set back slightly!\pWe still were able to obtain the information we needed.\pAnyway since you made it this far, you won't be getting out of here in one piece so I may as well tell you.\pYou may be wondering why we are all the way in the middle of this volcano?\pSimple, we plan to trigger an eruption wiping out all of these disgusting monsters and now you alongside with it."))
+    msgbox(format("Ha, you think you can stop us…\pThis will be entertaining."))
+    hidenamebox
+    trainerbattle_no_intro(TRAINER_KARAMJAVOLCANO_HAM_ADMIN_PATTY, msgbox(format("What?\nHow can this happen…")))
+    namebox ("H.A.M Leader")
+    msgbox(format("I don't know how you are so strong but it does not matter, you are too late!\pWatch as we get rid of every monster on this forsaken island!"))
+    hidenamebox
+    closemessage
+    applymovement(2, HAM_EVENT_KaramjaVolcano_9)
+    applymovement(OBJ_EVENT_ID_PLAYER, HAM_EVENT_KaramjaVolcano_10)
+    special(SpawnCameraObject) 
+    applymovement(3, HAM_EVENT_KaramjaVolcano_4)
+    //applymovement(2, HAM_EVENT_KaramjaVolcano_4)
+    delay(40)
+    applymovement(OBJ_EVENT_ID_CAMERA, KARAMJAVOLCANO_HAM_CAMERA_1)
+    //playbgm (MUS_PS_ENCOUNTER_HAM, 1)
+    waitmovement(0)
+    special(RemoveCameraObject) 
+    delay(60)
+    playse(SE_THUNDERSTORM_STOP)
+    delay(30)
+    playse(SE_THUNDERSTORM_STOP)
+    delay(30)
+    playse(SE_THUNDERSTORM_STOP)
+    delay(30)
+    playse(SE_THUNDERSTORM_STOP)
+    delay(30)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 4) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(60)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 4) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(60)
+    applymovement(3, HAM_EVENT_KaramjaVolcano_5)
+    namebox ("H.A.M Grunt")
+    msgbox(format("LEADER!\pSomething is wrong!\pThe rift… It is out of control!"))
+    waitmovement(0)
+    applymovement(2, HAM_EVENT_KaramjaVolcano_5)
+    namebox ("H.A.M Leader")
+    msgbox(format("Fix it then!"))
+    waitmovement(0)
+    hidenamebox
+    closemessage
+    delay(60)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 4) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(40)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 4) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(40)
+    namebox ("Abyssal Mage")
+    msgbox(format("Watch out!"))
+    hidenamebox
+    closemessage
+    delay(60)
+    playse(SE_M_DETECT)
+	//dofieldeffectsparkle(16, 14, 0) 
+	//waitfieldeffect(FLDEFF_SPARKLE)
+    delay(60)
+	playse(SE_ORB)
+	special(DoOrbEffect)
+    delay(60)
+    fadescreen(FADE_TO_WHITE)
+    special(FadeOutOrbEffect)
+    delay(60)
+    delay(60)
+    delay(60)
+    delay(60)
+    setflag(FLAG_TEMP_3)
+    removeobject(1)
+    fadescreen(FADE_FROM_WHITE)
+    delay(60)
+    applymovement(2, HAM_EVENT_KaramjaVolcano_11)
+    waitmovement(0)
+    namebox ("H.A.M ADMIN")
+    msgbox(format("NOO!!!\pThe calculations were meant to be correct!\pIt seems more research is still needed…"))
+    hidenamebox
+    closemessage
+    delay(60)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(60)
+    applymovement(2, HAM_EVENT_KaramjaVolcano_14)
+    applymovement(OBJ_EVENT_ID_PLAYER, HAM_EVENT_KaramjaVolcano_14)
+    applymovement(5, HAM_EVENT_KaramjaVolcano_12)
+    applymovement(6, HAM_EVENT_KaramjaVolcano_12)
+    applymovement(4, HAM_EVENT_KaramjaVolcano_13)
+    applymovement(3, HAM_EVENT_KaramjaVolcano_13)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(60)
+    delay(60)
+    waitmovement(0)
+    namebox ("H.A.M Leader")
+    msgbox(format("What was that?!\pThat wasn't the rift…"))
+    hidenamebox
+    closemessage
+    clearflag(FLAG_TEMP_4)
+    addobject(15)
+    addobject(16)
+    applymovement(15, HAM_EVENT_KaramjaVolcano_6)
+    applymovement(16, HAM_EVENT_KaramjaVolcano_15)
+    waitmovement(0)
+    applymovement(2, HAM_EVENT_KaramjaVolcano_16)
+    applymovement(3, HAM_EVENT_KaramjaVolcano_16)
+    applymovement(OBJ_EVENT_ID_PLAYER, HAM_EVENT_KaramjaVolcano_7)
+    waitmovement(0)
+    namebox ("H.A.M Grunt")
+    msgbox(format("Leader we have to go!\pIt is coming!"))
+    namebox ("H.A.M Leader")
+    msgbox(format("What is coming?"))
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    namebox ("H.A.M Grunt")
+    msgbox(format("The legendary Dragon, Elvarg!\nIt has awoken!\pIt must awoken due to the rifts energy!"))
+    applymovement(2, HAM_EVENT_KaramjaVolcano_2)
+    waitmovement(0)
+    namebox ("H.A.M Leader")
+    msgbox(format("Urgh!\nOur plans my have been foiled this time but our team in Feldip Hills should have succeeded at obtaining the horn by now, so it is only a matter of time!\pLets get out of here!"))
+    fadescreen(FADE_TO_BLACK)
+    playmoncry(SPECIES_LUGIA, 2)
+    namebox ("ELVARG")
+    msgbox(format("ROOOOOOAAAARRRR!!!"))
+    waitmoncry
+    special(SpawnCameraObject) 
+    applymovement(OBJ_EVENT_ID_CAMERA, KARAMJAVOLCANO_HAM_CAMERA_2)
+    waitmovement(0)
+    special(RemoveCameraObject) 
+    setflag(FLAG_TEMP_1)
+    setflag(FLAG_TEMP_2)
+    setflag(FLAG_TEMP_4)
+    setvar(VAR_POKESCAPE_KARAMJAVOLCANO_STATE, 3)
+    removeobject(1)
+    removeobject(2)
+    removeobject(3)
+    removeobject(4)
+    removeobject(5)
+    removeobject(6)
+    removeobject(7)
+    removeobject(8)
+    removeobject(15)
+    removeobject(16)
+    hidenamebox
+    closemessage
+    clearflag(FLAG_ELVARG)
+    addobject(17) //elvarg
+    fadescreen(FADE_FROM_BLACK)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    playmoncry(SPECIES_LUGIA, 2)
+    namebox ("ELVARG")
+    msgbox(format("ROOOOOOAAAARRRR!!!"))
+    waitmoncry
+    hidenamebox
+    closemessage
+    delay(20)
+    msgbox(format("The cave starts to collapse around you.\pYou escape to safety."))
+    warp (MAP_ROUTE39,0,0,0)
+    waitstate
+    release
+    end
+}
+
+movement HAM_EVENT_KaramjaVolcano_1{
+	emote_exclamation_mark
+    face_player
+    delay_16
+    delay_16
+    delay_16
+    delay_16
+}
+
+movement HAM_EVENT_KaramjaVolcano_2{
+	face_down
+}
+
+movement HAM_EVENT_KaramjaVolcano_3{
+	face_player
+}
+
+movement HAM_EVENT_KaramjaVolcano_4{
+	face_right
+}
+
+movement KARAMJAVOLCANO_HAM_CAMERA_1{
+    walk_slow_right *6
+	step_end
+}
+
+movement KARAMJAVOLCANO_HAM_CAMERA_2{
+    walk_faster_left * 6
+    walk_faster_right
+    walk_faster_down
+    walk_faster_right
+	step_end
+}
+
+movement HAM_EVENT_KaramjaVolcano_5{
+	walk_in_place_right * 3
+}
+
+movement HAM_EVENT_KaramjaVolcano_6{
+    walk_fast_right * 4
+}
+
+movement HAM_EVENT_KaramjaVolcano_7{
+	face_up
+}
+
+movement HAM_EVENT_KaramjaVolcano_8{
+	walk_left
+}
+
+movement HAM_EVENT_KaramjaVolcano_9{
+	walk_slow_right
+}
+
+movement HAM_EVENT_KaramjaVolcano_10{
+	walk_slow_right
+    walk_slow_down
+    walk_slow_right
+}
+
+movement HAM_EVENT_KaramjaVolcano_11{
+	walk_fast_right *2
+    delay_8
+    face_down
+    delay_8
+    face_right
+    delay_8
+    face_up
+    delay_8
+    face_left
+}
+
+movement HAM_EVENT_KaramjaVolcano_12{
+    face_left
+    delay_8
+    face_right
+    delay_8
+    face_up
+    delay_8
+    face_left
+    delay_8
+    face_right
+    delay_8
+    face_up
+    delay_8
+    face_left
+}
+
+movement HAM_EVENT_KaramjaVolcano_13{
+    face_up
+    delay_8
+    face_down
+    delay_8
+    face_up
+    delay_8
+    face_right
+    delay_8
+    face_down
+    delay_8
+    face_up
+    delay_8
+    face_right
+}
+
+movement HAM_EVENT_KaramjaVolcano_14{
+    face_up
+    delay_8
+    face_right
+    delay_8
+    face_down
+    delay_8
+    face_left
+    delay_8
+    face_right
+    delay_8
+    face_down
+    delay_8
+    face_right
+}
+
+movement HAM_EVENT_KaramjaVolcano_15{
+    walk_fast_right * 6
+}
+
+movement HAM_EVENT_KaramjaVolcano_16{
+    face_left
+}
+
+
+
+
+
+
+
+
+
+
+script NPC_KaramjaVolcano_HAM_EVENT2
+{
+    delay(60)
+    playse(SE_M_DETECT)
+	dofieldeffectsparkle(16, 14, 0) 
+	waitfieldeffect(FLDEFF_SPARKLE)
+    delay(60)
+    playfanfare(MUS_AWAKEN_LEGEND)
+	playse(SE_ORB)
+	special(DoOrbEffect)
+    delay(60)
+    fadescreen(FADE_TO_WHITE)
+    delay(60)
+    fadeoutbgm(1)
+    special(FadeOutOrbEffect)
+    fadescreen(FADE_FROM_WHITE)
+}
+
+
+
+
+
+script ELVARG_KaramjaVolcano
+{
+    lock
+	//faceplayer
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    playmoncry(SPECIES_LUGIA, 2)
+    namebox ("ELVARG")
+    msgbox(format("ROOOOOOAAAARRRR!!!"))
+    waitmoncry
+    hidenamebox
+    closemessage
+    delay(20)
+	setvar(VAR_0x8004, SPECIES_ELVARG)
+	setvar(VAR_0x8005, 40  @ level)
+	setvar(VAR_0x8006, ITEM_NONE)
+	special(CreateEventLegalEnemyMon)
+	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+	special(BattleSetup_StartLegendaryBattle)
+	waitstate
+	setflag(FLAG_ELVARG)
+    removeobject(17)
+	release
+	end
+}
+
+
+
+
+
+script ENCOUNTER_LESSERDEMON_KARAMJA_1 {
+	lock
+	faceplayer
+    namebox ("Lesser Demon")
+	playmoncry(SPECIES_EKANS, 0)
+	msgbox(format("GWARAKU!"))
+	waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+	setwildbattle (SPECIES_DEMON_LESSER_OSRS_FORM, 15, ITEM_NONE)
+	dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+        fadescreen(FADE_TO_BLACK)
+		//setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 1)
+        setflag(FLAG_TEMP_A)
+        removeobject(5)// (OBJ_EVENT_ID_LESSERDEMON)
+        fadescreen(FADE_FROM_BLACK)
+		//msgbox(format("You have defeated me!"))
+		closemessage
+		end
+	}
+	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
+        fadescreen(FADE_TO_BLACK)
+		//setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 2)
+        setflag(FLAG_TEMP_A)
+        removeobject(5) //(OBJ_EVENT_ID_LESSERDEMON)
+        fadescreen(FADE_FROM_BLACK)
+		//msgbox(format("You have caught me!"))
+		closemessage
+		end
+	}
+	end
+}
+
+script ENCOUNTER_LESSERDEMON_KARAMJA_2 {
+	lock
+	faceplayer
+    namebox ("Lesser Demon")
+	playmoncry(SPECIES_EKANS, 0)
+	msgbox(format("GWARAKU!"))
+	waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+	setwildbattle (SPECIES_DEMON_LESSER_OSRS_FORM, 15, ITEM_NONE)
+	dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+        fadescreen(FADE_TO_BLACK)
+		//setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 1)
+        setflag(FLAG_TEMP_B)
+        removeobject(6)// (OBJ_EVENT_ID_LESSERDEMON)
+        fadescreen(FADE_FROM_BLACK)
+		//msgbox(format("You have defeated me!"))
+		closemessage
+		end
+	}
+	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
+        fadescreen(FADE_TO_BLACK)
+		//setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 2)
+        setflag(FLAG_TEMP_B)
+        removeobject(6) //(OBJ_EVENT_ID_LESSERDEMON)
+        fadescreen(FADE_FROM_BLACK)
+		//msgbox(format("You have caught me!"))
+		closemessage
+		end
+	}
+	end
+}
+
+
+
+
+script ENCOUNTER_JAD {
+	lock
+    namebox ("JAD")
+	playmoncry(SPECIES_EKANS, 0)
+	msgbox(format("TOKTOK RAAWOORR!"))
+	waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+	setwildbattle (SPECIES_TZTOK_JAD, 50, ITEM_FRAGMENT_OF_JAS)
+	dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+        fadescreen(FADE_TO_BLACK)
+		//setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 1)
+        setflag(FLAG_TEMP_1)
+        removeobject(6)// (OBJ_EVENT_ID_LESSERDEMON)
+        fadescreen(FADE_FROM_BLACK)
+		//msgbox(format("You have defeated me!"))
+		closemessage
+		end
+	}
+	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
+        fadescreen(FADE_TO_BLACK)
+		//setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 2)
+        setflag(FLAG_TEMP_1)
+        removeobject(6) //(OBJ_EVENT_ID_LESSERDEMON)
+        fadescreen(FADE_FROM_BLACK)
+		//msgbox(format("You have caught me!"))
+		closemessage
+		end
+	}
+	end
+}
+
+
+script ITEM_MegaEvolution_TOKHAAR
+{
+    finditem(ITEM_MEGASTONE_TOKHAAR)
+    end
+}
+
+script ITEM_MegaEvolution_TZHAAR
+{
+    finditem(ITEM_MEGASTONE_TZHAAR)
+    end
+}

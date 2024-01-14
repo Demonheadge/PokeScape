@@ -1,0 +1,738 @@
+const OBJ_EVENT_ID_QUEST_AMIK = 11
+const OBJ_EVENT_ID_QUEST_KNIGHT = 1
+const OBJ_EVENT_ID_QUEST_OWEN = 12
+const OBJ_EVENT_ID_QUEST_KNIGHT_GUARD_1 = 3
+const OBJ_EVENT_ID_QUEST_KNIGHT_GUARD_2 = 13
+
+
+mapscripts Falador_Castleyard_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+
+    if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    	{
+            goto(FALADORCASTLE_QUEST_STATE)
+    	}
+		else
+		{
+			call(OPENWORLD_STATE_FALADORCASTLE)
+		}
+    }
+}
+
+script OPENWORLD_STATE_FALADORCASTLE {
+		removeobject(OBJ_EVENT_ID_QUEST_AMIK)
+        removeobject(OBJ_EVENT_ID_QUEST_OWEN)
+        removeobject(OBJ_EVENT_ID_QUEST_KNIGHT)
+        setflag(FLAG_TEMP_1)
+        setflag(FLAG_TEMP_2)
+        setflag(FLAG_TEMP_3)
+		return
+}
+
+
+
+script FALADORCASTLE_QUEST_STATE{
+	switch (var(VAR_POKESCAPE_FALADOR_STATE)){ 
+		//case 0:
+		//case 1: 
+			//return
+
+		case 1: //REMOVE KNIGHT AND OWEN WHEN THEY GO TO MINES.
+            removeobject(OBJ_EVENT_ID_QUEST_KNIGHT)
+			removeobject(OBJ_EVENT_ID_QUEST_OWEN)
+			setflag(FLAG_TEMP_1)
+
+            setobjectxyperm(OBJ_EVENT_ID_QUEST_AMIK, 11, 15)
+			setobjectmovementtype(OBJ_EVENT_ID_QUEST_AMIK,MOVEMENT_TYPE_LOOK_AROUND)
+
+            setobjectxyperm(OBJ_EVENT_ID_QUEST_KNIGHT_GUARD_1, 10, 11)
+			setobjectmovementtype(OBJ_EVENT_ID_QUEST_KNIGHT_GUARD_1,MOVEMENT_TYPE_FACE_UP)
+            setobjectxyperm(OBJ_EVENT_ID_QUEST_KNIGHT_GUARD_2, 11, 11)
+			setobjectmovementtype(OBJ_EVENT_ID_QUEST_KNIGHT_GUARD_2,MOVEMENT_TYPE_FACE_UP)
+
+			return
+
+        case 3:  
+            setobjectxyperm(OBJ_EVENT_ID_QUEST_AMIK, 11, 14)
+			setobjectmovementtype(OBJ_EVENT_ID_QUEST_AMIK,MOVEMENT_TYPE_FACE_UP)
+            setobjectxyperm(OBJ_EVENT_ID_QUEST_OWEN, 10, 13)
+			setobjectmovementtype(OBJ_EVENT_ID_QUEST_OWEN,MOVEMENT_TYPE_FACE_DOWN)
+            setobjectxyperm(OBJ_EVENT_ID_QUEST_KNIGHT, 12, 13)
+			setobjectmovementtype(OBJ_EVENT_ID_QUEST_KNIGHT,MOVEMENT_TYPE_FACE_DOWN)
+			return
+        case 4: 
+        case 5: 
+            //setobjectxyperm(OBJ_EVENT_ID_QUEST_KNIGHT, 9, 12)
+			//setobjectmovementtype(OBJ_EVENT_ID_QUEST_KNIGHT,MOVEMENT_TYPE_FACE_RIGHT)
+            removeobject(OBJ_EVENT_ID_QUEST_AMIK)
+			removeobject(OBJ_EVENT_ID_QUEST_OWEN)
+            removeobject(OBJ_EVENT_ID_QUEST_KNIGHT)
+			setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+			return
+	}
+}
+
+
+//IGNORE
+script NPC_FALADORCASTLE_QUEST_PART_1
+{
+    lock
+    namebox ("SIR OWEN")
+	msgbox(format("Right away sir."))
+    closemessage
+    hidenamebox
+    applymovement(OBJ_EVENT_ID_QUEST_OWEN, FALADORCASTLE_MOVEMENT_1)
+    waitmovement(0)
+    namebox ("SIR OWEN")
+	msgbox(format("With me Theo."))
+    closemessage
+    hidenamebox
+    //CHECK LOCATION
+    getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+    if (var(VAR_TEMP_1) == 10){
+		applymovement(OBJ_EVENT_ID_QUEST_OWEN, FALADORCASTLE_MOVEMENT_2)
+        applymovement(OBJ_EVENT_ID_QUEST_KNIGHT, FALADORCASTLE_MOVEMENT_3)
+        waitmovement(0)
+	} else {
+		applymovement(OBJ_EVENT_ID_QUEST_OWEN, FALADORCASTLE_MOVEMENT_2)
+        applymovement(OBJ_EVENT_ID_QUEST_KNIGHT, FALADORCASTLE_MOVEMENT_3)
+        applymovement(OBJ_EVENT_ID_PLAYER, FALADORCASTLE_MOVEMENT_11)
+        waitmovement(0)
+	}
+    removeobject(OBJ_EVENT_ID_QUEST_KNIGHT)
+    removeobject(OBJ_EVENT_ID_QUEST_OWEN)
+    setflag(FLAG_TEMP_1)
+    setflag(FLAG_TEMP_3)
+    applymovement(OBJ_EVENT_ID_QUEST_AMIK, FALADORCASTLE_MOVEMENT_4)
+    waitmovement(0)
+    namebox ("SIR AMIK VARZE")
+	msgbox(format("Oh sorry, I am not accepting challengers today.\pThere has been a disturbance within the Dwarven mines, which has my top priority.\pSo sadly I will not be able to accept your battle until after this matter is resolved."))
+    closemessage
+    hidenamebox
+    applymovement(OBJ_EVENT_ID_PLAYER, FALADORCASTLE_MOVEMENT_5)
+    waitmovement(0)
+    setvar(VAR_POKESCAPE_FALADOR_STATE, 2)
+	release
+	end
+}
+
+movement FALADORCASTLE_MOVEMENT_1{
+    walk_up
+    walk_right
+    delay_8
+}
+movement FALADORCASTLE_MOVEMENT_2{
+    walk_up
+    walk_up
+    walk_up
+    walk_up
+}
+movement FALADORCASTLE_MOVEMENT_3{
+    walk_left
+    walk_up
+    walk_up
+    walk_up
+}
+movement FALADORCASTLE_MOVEMENT_4{
+    face_up
+    walk_left
+    walk_up
+    walk_up
+}
+movement FALADORCASTLE_MOVEMENT_5{
+    walk_up
+}
+movement FALADORCASTLE_MOVEMENT_11{
+    delay_8
+    lock_facing_direction
+    walk_left
+}
+
+script NPC_FALADORCASTLE_QUEST_PART_2
+{
+    lock
+    namebox ("SIR AMIK VARZE")
+	msgbox(format("The sooner the disturbance within the Dwarven mines is sorted out, the sooner we can have a gym battle"))
+    closemessage
+    hidenamebox
+    applymovement(OBJ_EVENT_ID_PLAYER, FALADORCASTLE_MOVEMENT_5)
+    waitmovement(0)
+	release
+	end
+}
+
+script NPC_FALADORCASTLE_QUEST_AMIK_CHAT
+{
+	lock
+	faceplayer
+    namebox ("SIR AMIK VARZE")
+	msgbox(format("The sooner the disturbance within the Dwarven mines is sorted out, the sooner we can have a gym battle"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT
+{
+    if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 1) //if OPENWORLD
+    	{
+            lock
+            faceplayer
+            namebox ("WHITE KNIGHT")
+            msgbox(format("Welcome to the Falador Castle!"))
+    	}
+		else
+		{
+			switch (var(VAR_POKESCAPE_FALADOR_STATE)) { 
+            case 0:
+            case 1: 
+            case 2: 
+            case 3: 
+                lock
+                faceplayer
+                namebox ("WHITE KNIGHT")
+                msgbox(format("Sorry but the castle is closed for all MvM Championship participants, until the disturbance within the Dwarven mines is resolved.\pWhich also means do not go poking around the mines in the north east of town, past the Party Room.\pWe don't want you getting in danger."))
+            case 4: 
+            case 5: 
+                lock
+                faceplayer
+                namebox ("WHITE KNIGHT")
+                msgbox(format("Welcome to the Falador Castle!"))
+            }
+		}
+    closemessage
+    hidenamebox
+    release
+    end	
+}
+
+
+
+
+
+
+
+script NPC_FALADORCASTLE_QUEST_PART_4_1
+{
+    applymovement(OBJ_EVENT_ID_PLAYER, FALADORCASTLE_MOVEMENT_6) 
+    waitmovement(0)
+    goto(NPC_FALADORCASTLE_QUEST_PART_4)
+}
+script NPC_FALADORCASTLE_QUEST_PART_4_2
+{
+    applymovement(OBJ_EVENT_ID_PLAYER, FALADORCASTLE_MOVEMENT_7)
+    waitmovement(0)
+    goto(NPC_FALADORCASTLE_QUEST_PART_4)
+}
+script NPC_FALADORCASTLE_QUEST_PART_4
+{
+    namebox ("Sir Amik Varze")
+	msgbox(format("Thank you for the report."))
+    closemessage
+    hidenamebox
+    applymovement(OBJ_EVENT_ID_QUEST_KNIGHT, FALADORCASTLE_MOVEMENT_8) //Look at player.
+    applymovement(OBJ_EVENT_ID_QUEST_OWEN, FALADORCASTLE_MOVEMENT_9) //Look at player.
+    waitmovement(0)
+    namebox ("Sir Owen")
+	msgbox(format("Aha, nice timing!\pThis is the challenger I spoke about."))
+    closemessage
+    hidenamebox
+    namebox ("Sir Amik Varze")
+	msgbox(format("I am grateful for your assistance within the mines.\pHave you considered joining the white knights?\pAh but I am getting ahead of myself, you mentioned you wished to challenge me to a battle.\pI know you've already proved yourself within the mines but one more challenge lays before you.\pMake it to the top of the castle, I shall be waiting.\pGood luck!"))
+    closemessage
+    hidenamebox
+    applymovement(OBJ_EVENT_ID_QUEST_AMIK, FALADORCASTLE_MOVEMENT_10) // WALK AWAY
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, FALADORCASTLE_MOVEMENT_8) 
+    waitmovement(0)
+    namebox ("Sir Owen")
+	msgbox(format("Good luck challenger and thank you again for your assistance."))
+    closemessage
+    hidenamebox
+    applymovement(OBJ_EVENT_ID_PLAYER, FALADORCASTLE_MOVEMENT_9) 
+    waitmovement(0)
+    namebox ("Sir Theodore")
+	msgbox(format("Thank you and I will see you soon!"))
+    closemessage
+    hidenamebox
+    applymovement(OBJ_EVENT_ID_PLAYER, FALADORCASTLE_MOVEMENT_12) 
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_QUEST_KNIGHT, FALADORCASTLE_MOVEMENT_10) // WALK AWAY
+    applymovement(OBJ_EVENT_ID_QUEST_OWEN, FALADORCASTLE_MOVEMENT_10) // WALK AWAY
+    waitmovement(0)
+    removeobject(OBJ_EVENT_ID_QUEST_AMIK)
+    removeobject(OBJ_EVENT_ID_QUEST_OWEN)
+    removeobject(OBJ_EVENT_ID_QUEST_KNIGHT)
+    setflag(FLAG_TEMP_1)
+    setflag(FLAG_TEMP_2)
+    setflag(FLAG_TEMP_3)
+    setvar(VAR_POKESCAPE_FALADOR_STATE, 4)
+	release
+	end
+}
+movement FALADORCASTLE_MOVEMENT_6{
+    walk_down
+    walk_right
+    walk_down
+}
+movement FALADORCASTLE_MOVEMENT_7{
+    walk_down * 2
+}
+movement FALADORCASTLE_MOVEMENT_8{
+    face_left
+}
+movement FALADORCASTLE_MOVEMENT_9{
+    face_right
+}
+movement FALADORCASTLE_MOVEMENT_10{
+    walk_down * 8
+}
+movement FALADORCASTLE_MOVEMENT_12{
+    face_down
+}
+
+
+//GYM BATLLES
+//Sir Theodore
+script NPC_FALADORCASTLE_GYM_SIRTHEO {
+    trainerbattle_single(TRAINER_FALADOR_GYM_1, format("This is Falador Castle, and we are the White Knights that protect the Kingdom.\pDo you have what it takes to defeat us?!"),format("As expected.") )
+    namebox("Sir Theodore")
+    if (!flag(FLAG_BADGE02_GET)) {
+        msgbox(format("You have the strength of a White Knight.\pGood luck navigating the castle."))
+        if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    	{
+            msgbox(format("Also thank you again for your assistance in the mines."))
+    	}
+    }
+    else 
+    {
+        msgbox(format("Look at you!\pHave you considered becoming a White Knight like myself?"))
+    }
+    hidenamebox
+    closemessage
+    end
+
+
+
+
+    
+		
+}
+//Sir Emony
+script NPC_FALADORCASTLE_GYM_TRAINER_2 {
+	trainerbattle_single(TRAINER_FALADOR_GYM_2, format("Stop right there!\pBehold my ducks!"),format("My dream is to one day be a duck.") )
+    namebox("Sir Emony")
+    if (!flag(FLAG_BADGE02_GET)) {
+        msgbox(format("Sir Amik is just down this hallway.\pBut why go battle him when you can battle me and my ducks again?"))
+    }
+    else 
+    {
+        msgbox(format("The other White Knights make fun of me for having a full team of Ducks but you have to admit they are pretty strong."))
+    }
+    hidenamebox
+    closemessage
+    end
+}
+//Sir Pryce
+script NPC_FALADORCASTLE_GYM_TRAINER_3 {
+	trainerbattle_single(TRAINER_FALADOR_GYM_3, format("Careful where you are going there.\pYou would not want to stumble into an ambush would you?"),format("Not on my watch.") )
+    namebox("Sir Pryce")
+    if (!flag(FLAG_BADGE02_GET)) {
+        msgbox(format("Sir Amik may or may not be down this hallway."))
+    }
+    else 
+    {
+        msgbox(format("The White knights have to be silent above all.\pSir Amik Vaze tends to have horrible hangovers."))
+    }
+    hidenamebox
+    closemessage
+    end
+}
+//Sir Loin
+script NPC_FALADORCASTLE_GYM_TRAINER_4 {
+	trainerbattle_single(TRAINER_FALADOR_GYM_4, format("To get to Sir Amik you will have to get through me!"),format("Guess I wasn't that hard to get past.") )
+    namebox("Sir Loin")
+    if (!flag(FLAG_BADGE02_GET)) {
+        msgbox(format("Guess I wasn't that hard to get past.\pGood luck finding Sir Amik.\pThis castle was designed to confuse intruders."))
+    }
+    else 
+    {
+        msgbox(format("This castle was designed to confuse intruders."))
+    }
+    hidenamebox
+    closemessage
+    end
+}
+//Sir AMIK VARZE
+script NPC_FALADORCASTLE_GYM_SIRAMIKVARZE {
+    lock
+    faceplayer
+    namebox("Sir Amik Varze")
+    if (!flag(FLAG_BADGE02_GET)){
+        if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    	{
+            msgbox(format("Well done getting here and once again, thank you for earlier within the mines.\pAnyway enough informal chatting…"))
+            closemessage
+    	}
+        msgbox(format("Welcome to Falador Castle.\pI, Sir Amik Varze am the Falador Gym Leader.\p I will be your opponent for this match.\pAre you ready? "))
+        hidenamebox
+        trainerbattle_no_intro(TRAINER_FALADOR_GYM_AMIKVARZE, msgbox(format("Count me impressed, have you considered joining the White Knights?")))
+        msgbox(format("I am impressed!\pYou have shown me so much potential I must give you this badge."))
+        playfanfare(MUS_PS_QUEST_COMPLETE)
+        msgbox(format("{PLAYER} received the Falador BADGE from Sir Amik Varze."))
+        waitfanfare
+        waitmessage
+        msgbox(format("Also have this, it is my favourite move."))
+        hidenamebox
+        giveitem (ITEM_TM07, 1)
+        compare(VAR_RESULT, FALSE)
+        goto_if_eq(Common_EventScript_ShowBagIsFull)
+        namebox("Sir Amik Varze")
+        msgbox(format("That move is called Razor Shell, it is a very sharp move.\pHopefully it will help you on your journey."))
+        setvar(VAR_POKESCAPE_FALADOR_STATE, 5)
+        setflag(FLAG_BADGE02_GET)
+        addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
+        call(SetGymTrainers_FALADOR)
+        hidenamebox
+        release
+        end
+    }
+    msgbox(format("I recommend that you make your way to Al Kharid or Varrock for your next MvM gym challenge.\pUnless you would like to become a white knight instead?"))
+    hidenamebox
+    release
+    end
+}
+
+
+
+script SetGymTrainers_FALADOR {   
+    settrainerflag(TRAINER_FALADOR_GYM_1)
+    settrainerflag(TRAINER_FALADOR_GYM_2)
+    settrainerflag(TRAINER_FALADOR_GYM_3)
+    settrainerflag(TRAINER_FALADOR_GYM_4)
+    return
+}
+
+
+script NPC_FALADORCASTLE_GYM_SIROWEN
+{
+	lock
+	faceplayer
+    namebox ("Sir Owen")
+	msgbox(format("Hello again, these guys won't talk.\pBut there does not seem to be anything stolen, so we aren't sure what they meant by distraction."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORCASTLE_GYM_SirRentee
+{
+	lock
+	faceplayer
+    namebox ("Sir Rentee")
+	msgbox(format("I am the designer of all the Family Crests.\pI wanted to make a design for the Badge of the Falador Gym too, but Sir Amik prevered the design of some 'Stan' fella over my design.\pSigh, guess I could not compete against such artistic brilliance."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORCASTLE_GYM_Ambassador_Spanfipple
+{
+	lock
+	faceplayer
+    namebox ("Spanfipple")
+	msgbox(format("Earlier I saw the new prisoners.\pThey must be bad people, but their Pink outfits looked fabulous!\pMuch better than all this boring white around here."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORCASTLE_GYM_HAM
+{
+	lock
+	faceplayer
+    namebox ("H.A.M Member")
+	msgbox(format("We will not tell you anything!"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORCASTLE_GYM_BLACKKNIGHT
+{
+	lock
+	faceplayer
+    namebox ("Black Knight")
+	msgbox(format("Buzz off, you and those White Knights make my blood boil."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+script NPC_FALADORCASTLE_WHITEKNIGHT_1
+{
+	switch (var(VAR_POKESCAPE_FALADOR_STATE)){ 
+		case 4: 
+			lock
+			faceplayer
+			//namebox("Sir Loin")
+			msgbox(format("If you are looking for Amik then you should probably head back inside."))
+            hidenamebox
+            closemessage
+			release
+			end
+        case 5:
+			lock
+			faceplayer
+            //namebox("Sir Loin")
+			msgbox(format("Those Black Knights really grind my gears, one of these days we will rid them."))
+            hidenamebox
+            closemessage
+            release
+			end
+	}
+}
+
+script NPC_FALADORCASTLE_WHITEKNIGHT_2
+{
+	switch (var(VAR_POKESCAPE_FALADOR_STATE)){ 
+		case 4: 
+			lock
+			faceplayer
+			//namebox("Sir Loin")
+			msgbox(format("Turn around, no Sir Amik this way."))
+            hidenamebox
+            closemessage
+			release
+			end
+        case 5:
+			lock
+			faceplayer
+            //namebox("Sir Loin")
+			msgbox(format("We are the order for order."))
+            hidenamebox
+            closemessage
+            release
+			end
+	}
+}
+
+script NPC_FALADORCASTLE_WHITEKNIGHT_3
+{
+	switch (var(VAR_POKESCAPE_FALADOR_STATE)){ 
+		case 4: 
+			lock
+			faceplayer
+			//namebox("Sir Loin")
+			msgbox(format("Hello my name is Sir Amik Varze.\pJust kidding!\pHe is inside just down the corridor next door to our torture chamber."))
+            hidenamebox
+            closemessage
+			release
+			end
+        case 5:
+			lock
+			faceplayer
+            //namebox("Sir Loin")
+			msgbox(format("Our enemy are the Black Knights.\pThey call themselves Kinshra though."))
+            hidenamebox
+            closemessage
+            release
+			end
+	}
+}
+
+script NPC_FALADORCASTLE_WHITEKNIGHT_4
+{
+	lock
+	faceplayer
+	msgbox(format("There used to be a chicken on the courtyard but some adventurer caught it.\pI kinda miss her."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORCASTLE_WHITEKNIGHT_5
+{
+	lock
+	faceplayer
+	msgbox(format("Many of my fellow Knights somehow have puns for their names.\pHowever they are completely oblivious to this."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORCASTLE_WHITEKNIGHT_6
+{
+	lock
+	faceplayer
+	msgbox(format("Keeping this Castle clean is a lot of work…\pBut it is even harder navigating it."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORCASTLE_GUARD_1
+{
+	lock
+	faceplayer
+    namebox("Guard")
+	msgbox(format("Its a steep learning curve, but one day I will become a White Knight."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORCASTLE_WHITEKNIGHT_7
+{
+	lock
+	faceplayer
+    namebox("White Knight")
+	msgbox(format("We trained this guard to be a White Knight wrong on purpose, as a joke."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORCASTLE_WHITEKNIGHT_8
+{
+	lock
+    namebox("White Knight")
+	msgbox(format("Want to come with me to the Rising Sun Inn after work?"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//ROUTE 23
+script NPC_ROUTE23_DWARF_ROCKS
+{
+	lock
+	faceplayer
+    namebox ("DWARF")
+	msgbox(format("If only those goblins did not steal our pickaxe supplies.\pThen I could easily clear this rockslide."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+//ROUTE 24
+
+script NPC_ROUTE24_DORIC
+{
+	lock
+	faceplayer
+    namebox ("DORIC")
+	msgbox(format("Hello traveller, I was wondering if you could get me some Iron ore.\pYou see, suddenly all ya human-folk are obsessed with Ironman mode and I want in.\pWhat does that mean I have to get it myself?\pNonsense!\pStop kidding around and get this old dwarf some iron ore.\pI will reward you of course!"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+script NPC_FALADORCASTLE_SQUIRE
+{
+    lock
+    faceplayer
+    namebox ("Squire")
+	msgbox(format("Sorry I cannot chat.\pI have to go polish Sir Vyvin's sword."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORCASTLE_KNIGHT_9
+{
+    lock
+    faceplayer
+    namebox ("White Knight")
+	msgbox(format("This is the interrogation chamber.\pOther knights call it the torture chamber, although I wish they wouldn't…"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORCASTLE_GUARD_2
+{
+    lock
+    faceplayer
+    namebox ("Guard")
+	msgbox(format("I am so lost.\pI was meant to be meeting Sir Vyvin like five minutes ago for a meeting."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORCASTLE_QUESTER
+{
+    lock
+    faceplayer
+    namebox ("Quester")
+	msgbox(format("I figured I would come ask for a quest at Falador Castle, but it seems there are only quests avaliable for White Knights.\pMaybe I should become one."))
+    closemessage
+    hidenamebox
+	release
+	end
+}

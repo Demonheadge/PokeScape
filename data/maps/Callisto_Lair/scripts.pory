@@ -1,0 +1,66 @@
+
+mapscripts Callisto_Lair_MapScripts {
+    MAP_SCRIPT_ON_LOAD { //ON LOAD FOR MAP TILES
+    call(CALLISTO_STATE)
+    }
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 6) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+} 
+
+
+
+
+
+
+
+script CALLISTO_STATE {
+	switch (var(VAR_CALLISTO_STATE)){ 
+		case 0:
+			clearflag(FLAG_TEMP_A)
+			return
+        case 5:
+            removeobject(1)
+            setflag(FLAG_TEMP_A)
+            return
+    }
+}
+
+
+
+
+
+
+script ENCOUNTER_CALLISTO
+{
+	lock
+	//msgbox(format("As you approach the Giant Mole, it attacks!"))
+    namebox ("CALLISTO")
+    playmoncry(SPECIES_URSARING, 0)
+	msgbox(format("ROARR!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+	setwildbattle (SPECIES_CALLISTO, 40, ITEM_NONE)
+	dowildbattle
+    if (var(VAR_RESULT) == B_OUTCOME_WON) { //DEFEATED, Can still encounter again.
+        fadescreen(FADE_TO_BLACK)
+		setvar(VAR_CALLISTO_STATE, 0) // Resets Callisto state.
+        setflag(FLAG_TEMP_A)
+        removeobject (1)
+        fadescreen(FADE_FROM_BLACK)
+		closemessage
+		end
+	}
+	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) { //CAPTURED! Cannot encounter again.
+        fadescreen(FADE_TO_BLACK)
+		setvar(VAR_CALLISTO_STATE, 5) // captured
+        setflag(FLAG_TEMP_A)
+        removeobject (1)
+        fadescreen(FADE_FROM_BLACK)
+		closemessage
+		end
+	}
+	end
+}

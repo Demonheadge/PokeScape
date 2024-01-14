@@ -1,0 +1,825 @@
+const OBJ_EVENT_ID_ADVISOR = 2
+
+mapscripts Varrock_Palace_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        call(VARROCKGYM_TRAINERS)
+    }
+    
+}
+
+script VARROCKGYM_TRAINERS
+{
+    if (!flag(FLAG_BADGE03_GET)) //IF VARROCK BADGE has NOT been obtained.
+    {       
+    
+        if ((var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 0) || (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 5)) //if GYM CHALLANGE HASNT STARTED
+        {
+            call(SetGymTrainers_VARROCK)
+        }
+    }
+    return
+}
+
+
+
+
+
+script TRIGGER_VARROCK_GYM_ADVISOR
+{
+    if (!flag(FLAG_BADGE03_GET)) //IF VARROCK BADGE has NOT been obtained.
+    {       
+    
+        if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 0)
+        {
+            lock
+            applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+            applymovement(OBJ_EVENT_ID_ADVISOR, Movement_InteractFACEPLAYER)
+            waitmovement(0)
+            call(QUEST_VARROCK_GYM_1) 
+            applymovement(OBJ_EVENT_ID_PLAYER, Movement_WALKDOWN)
+            waitmovement(0)
+            release
+            end
+        }
+        if ((var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 5) || (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10) || (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 15))
+        {
+            lock
+            applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+            applymovement(OBJ_EVENT_ID_ADVISOR, Movement_InteractFACEPLAYER)
+            waitmovement(0)
+            call(QUEST_VARROCK_GYM_2)
+            applymovement(OBJ_EVENT_ID_PLAYER, Movement_WALKDOWN)
+            waitmovement(0)
+            release
+            end
+        }
+        if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 20)
+        {
+            lock
+            applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+            applymovement(OBJ_EVENT_ID_ADVISOR, Movement_InteractFACEPLAYER)
+            waitmovement(0)
+            call(QUEST_VARROCK_GYM_3) 
+            release
+            end
+        }
+        if ((var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 25) || (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 26))
+        {
+            release
+            end
+        }
+    }
+    release
+    end
+}
+script VARROCK_GYM_ADVISOR
+{
+    if (!flag(FLAG_BADGE03_GET)) //IF VARROCK BADGE has NOT been obtained.
+    {       
+    
+        if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 0)
+        {
+            lock
+            faceplayer
+            call(QUEST_VARROCK_GYM_1)
+            release
+            end
+        }
+        if ((var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 5) || (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10) || (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 15))
+        {
+            lock
+            faceplayer
+            call(QUEST_VARROCK_GYM_2)
+            release
+            end
+        }
+        if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 20)
+        {
+            lock
+            faceplayer
+            call(QUEST_VARROCK_GYM_3)
+            release
+            end
+        }
+        if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 25)
+        {
+            lock
+            faceplayer
+            call(QUEST_VARROCK_GYM_4)
+            release
+            end
+        }
+        if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 26)
+        {
+            lock
+            faceplayer
+            call(QUEST_VARROCK_GYM_5)
+            release
+            end
+        }
+    }
+    lock
+    faceplayer
+    call(QUEST_VARROCK_GYM_5)
+    release
+    end
+}
+script QUEST_VARROCK_GYM_1
+{
+    namebox("Advisor")
+    msgbox(format("Greetings, are you here for an MvM Championship challenge?"), MSGBOX_YESNO)
+    if (!var(VAR_RESULT))
+    { 
+        msgbox(format("Well I am very sorry but the King is quite busy today.\pYou will have to see him another day."))
+        closemessage
+        hidenamebox
+        return
+    }
+    msgbox(format("Excellent!\pBefore you may challenge King Roald you must complete our Gym Challenge.\pYou can start it by speaking to Reldo located within our Library."))
+    closemessage
+    hidenamebox
+    //QUEST START - VARROCK GYM.
+    setvar(VAR_POKESCAPE_VARROCK_GYM_QUEST, 5)
+    return
+}
+script QUEST_VARROCK_GYM_2
+{
+    namebox("Advisor")
+    msgbox(format("Good luck with your Gym Challenge!\pYou can find Reldo in our Library."))
+    closemessage
+    hidenamebox
+    return
+}
+script QUEST_VARROCK_GYM_3
+{
+    namebox("Advisor")
+    msgbox(format("What's this?\pA note from Reldo you say?\pHmm…{PAUSE 15}…{PAUSE 15} Ah yes.\pCongratulations are in order, you may now pass see the King."))
+    closemessage
+    hidenamebox
+    setvar(VAR_POKESCAPE_VARROCK_GYM_QUEST, 25)
+    return
+}
+script QUEST_VARROCK_GYM_4
+{
+    namebox("Advisor")
+    msgbox(format("Good luck with your Gym Challenge!"))
+    closemessage
+    hidenamebox
+    return
+}
+script QUEST_VARROCK_GYM_5
+{
+    namebox("Advisor")
+    msgbox(format("Amazing, I didn't think anyone could put a smile on his face!"))
+    closemessage
+    hidenamebox
+    return
+}
+
+
+
+
+
+script VARROCK_GYM_RELDO
+{
+    lock
+    faceplayer
+    namebox("Reldo")
+    msgbox(format("Welcome to the Library of Varrock."))
+    if (!flag(FLAG_BADGE03_GET)) //IF VARROCK BADGE has NOT been obtained.
+    {       
+        if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 5)
+        {
+            msgbox(format("Oh are you perhaps here for your the Gym Challenge?\pOh you are?\pHere are a list of books that are overdu-\pI mean, I need you to search all around the castle and find these 4 specific books.\pOnce you have found them all return back here and your challenge will be complete."))
+            setvar(VAR_POKESCAPE_VARROCK_GYM_QUEST, 10)
+            call(ClearGymTrainers_VARROCK)
+        }
+        if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+        {
+            msgbox(format("If you are having trouble finding the 4 books then try asking people or searching the bookshelves around the castle."))
+        }
+        if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 20)
+        {
+            msgbox(format("Good luck on your Gym Challenge."))
+        }
+        if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 15)
+        {
+            msgbox(format("You found all of the books that were overdu-!\pAhem, Congratulations on completing your Gym Challenge!\pHere show this to the Advisor as proof of your accomplishments."))
+            hidenamebox
+            msgbox(format("Reldo scribbles on a small peice of paper before handing it to you."))
+            namebox("Reldo")
+            msgbox(format("Good luck challenger!"))
+            setvar(VAR_POKESCAPE_VARROCK_GYM_QUEST, 20)
+        }     
+        if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 26)
+        {
+            msgbox(format("Congratulations on winning the MvM battle against King Roald!."))
+        }   
+    }
+    else
+    {
+        msgbox(format("We have so many books about so many things.\pIf you have a question about something don't be afraid to ask me."))
+    }
+    closemessage
+    hidenamebox 
+    release
+    end
+}
+
+script VARROCK_GYM_GENERIC_BOOK
+{
+    random(5)
+    switch (var(VAR_RESULT)) 
+    {
+        case 0:
+            msgbox(format("This book is filled with so many words that it gives you a headache."))
+        case 1:
+            msgbox(format("It is a picture book!\pThis is your type of book!"))
+        case 2:
+            msgbox(format("It is an extremely big and thick book, titled RSWiki.\pIt seems like a lot of love and dedication went into this."))
+        case 3:
+            msgbox(format("This is book looks interesting to read."))
+        case 4:
+            msgbox(format("It is a magazine!\pIt appears to be an image of a very beautiful strong looking woman crushing a Turoth between her thighs.\pThe text reads…\pThe truth behind Neive the Slayer Master."))
+    }
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        msgbox(format("But sadly this book isn't on the list of books you are looking for."))
+    }
+    closemessage
+    release
+    end
+}
+script VARROCK_GYM_BOOK_1
+{
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        if (flag(FLAG_VARROCKGYM_BOOK_1) == false)
+        {
+            msgbox(format("The title reads…\pHow to train your Frogeel."))
+            msgbox(format("This is one of the books you are looking for!\pYou put the book in your bag."))
+            closemessage
+            setflag(FLAG_VARROCKGYM_BOOK_1)
+            call(VARROCK_GYM_BOOK_CHECK)
+        }
+    }
+    msgbox(format("The bookshelf is empty."))
+    closemessage
+    release
+    end
+}
+script VARROCK_GYM_BOOK_2
+{
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        if (flag(FLAG_VARROCKGYM_BOOK_2) == false)
+        {
+            msgbox(format("You search through the pile of books…{PAUSE 15}…{PAUSE 15}…"))
+            msgbox(format("After rummaging through the pile of sticky books you finally find one that are looking for!\pThe title reads…{PAUSE 15}…{PAUSE 15} One Small favour.\pHow fitting.\pYou put the book in your bag."))
+            closemessage
+            setflag(FLAG_VARROCKGYM_BOOK_2)
+            call(VARROCK_GYM_BOOK_CHECK)
+        }
+    }
+    msgbox(format("It is a pile of messy, sticky books."))
+    closemessage
+    release
+    end
+}
+script VARROCK_GYM_BOOK_3
+{
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        if (flag(FLAG_VARROCKGYM_BOOK_3) == false)
+        {
+            lock
+            applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEDOWN)
+            applymovement(9, Movement_WALKUP)
+            waitmovement(0)
+
+            namebox("Priest")
+            msgbox(format("How rude of you!\pWe are in the middle of Prayer and you think now is a good time to make a noise rummaging through the bookshelf?!\pI'll teach you to interupt our time of worship!"))
+            hidenamebox
+            trainerbattle_no_intro(TRAINER_VARROCK_GYM_4, msgbox(format("…")))
+            namebox("Priest")
+            msgbox(format("Just hurry up and find the book you are looking for then get out.")) 
+            hidenamebox 
+            closemessage
+            applymovement(9, Movement_WALKDOWN)
+            waitmovement(0)
+            applymovement(9, Movement_InteractFACERIGHT)
+            waitmovement(0)
+            delay(16)
+            applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+            waitmovement(0)
+            msgbox(format("You search the bookcase…{PAUSE 15}…\pYou find a book!\nThe title reads…\pMourning's End Part VII.\pA sudden chill rushes over you as you realise the volume number of the book."))
+            msgbox(format("This is one of the books you are looking for!\pYou put the book in your bag."))    
+            closemessage
+            setflag(FLAG_VARROCKGYM_BOOK_3)
+            call(VARROCK_GYM_BOOK_CHECK)
+        }
+    }
+    msgbox(format("The bookshelf is empty."))
+    closemessage
+    release
+    end
+}
+script VARROCK_GYM_BOOK_4
+{
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        if (flag(FLAG_VARROCKGYM_BOOK_4) == false)
+        {
+            msgbox(format("You find a book!\pThe title reads…\pMvM for dummies."))
+            msgbox(format("This is one of the books you are looking for!\pYou put the book in your bag."))
+            closemessage
+            setflag(FLAG_VARROCKGYM_BOOK_4)
+            call(VARROCK_GYM_BOOK_CHECK)
+        }
+    }
+    msgbox(format("The bookshelf is empty."))
+    closemessage
+    release
+    end
+}
+
+script VARROCK_GYM_BOOK_CHECK
+{
+    if (flag(FLAG_VARROCKGYM_BOOK_1) == false)
+    {
+        end
+    }
+    if (flag(FLAG_VARROCKGYM_BOOK_2) == false)
+    {
+        end
+    }
+    if (flag(FLAG_VARROCKGYM_BOOK_3) == false)
+    {
+        end
+    }
+    if (flag(FLAG_VARROCKGYM_BOOK_4) == false)
+    {
+        end
+    }
+    msgbox(format("That is the last book.\pYou should return to Reldo."))
+    closemessage
+    setvar(VAR_POKESCAPE_VARROCK_GYM_QUEST, 15)
+    release
+    end
+}
+
+
+script VARROCK_GYM_SIR_PRYSIN
+{
+    lock
+    faceplayer
+    namebox("Sir Prysin")
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        msgbox(format("Hmm…?\pYou are curious about what book I am reading?\pIt is called Shadow Of The Storm."))
+        hidenamebox
+        msgbox(format("Sadly this book isn't on the list of books you are looking for."))
+    }
+    else
+    {
+        msgbox(format("My great-grandfather once slayed the Demon known as Delrith.\pNow I get to live the good life here in the castle."))
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_GYM_RANGER
+{
+    lock
+    faceplayer
+    //namebox("")
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        msgbox(format("What am I reading you ask?\pDon't judge but I am reading a murder mystery, this one is called Misthalin Mystery.\pI just really like these sort of stories."))
+        hidenamebox
+        msgbox(format("Sadly this book isn't on the list of books you are looking for."))
+    }
+    else
+    {
+        msgbox(format("After reading about what happened with Lord Sinclair in Kandarin, I've been intrigued by these murder mystery books."))
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_GYM_QUESTER
+{
+    lock
+    faceplayer
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        msgbox(format("Buzz off!\pI've got a quest to research."))
+    }
+    else
+    {
+        msgbox(format("Buzz off!\pI've got a quest to research."))
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_GYM_GUARD_1
+{
+    lock
+    faceplayer
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        msgbox(format("Oh, you are trying to return the overdue books to the libary?\pI think there is one in the pile of books in our sleeping quarters."))
+    }
+    else
+    {
+        msgbox(format("Welcome to Varrock Castle."))
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCK_GYM_GUARD_2
+{
+    lock
+    faceplayer
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        //msgbox(format("I swear Reldo put a spell on some of the books, they seem to glow red when they are overdue."))
+        msgbox(format("I swear Reldo is such a bookworm."))
+    }
+    else
+    {
+        msgbox(format("Welcome to Varrock Castle."))
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCK_GYM_GUARD_3
+{
+    lock
+    faceplayer
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        msgbox(format("Overdue Books?\pWell don't ask me, I don't even read."))
+    }
+    else
+    {
+        msgbox(format("Welcome to Varrock Castle."))
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCK_GYM_GUARD_4
+{
+    lock
+    faceplayer
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        msgbox(format("Eww you read books?\pYuck.\pI just look at all the pretty pictures."))
+    }
+    else
+    {
+        msgbox(format("Welcome to Varrock Castle."))
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCK_GYM_GUARD_5
+{
+    lock
+    faceplayer
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        msgbox(format("I hope Rex didn't eat one of those books you are looking for.\pHe once ate my application to become a Knight of Falador so I had to settle with a becoming a Guard of Varrock instead."))
+    }
+    else
+    {
+        msgbox(format("Welcome to Varrock Castle."))
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCK_GYM_PRAYER_1
+{
+    lock
+    faceplayer
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        msgbox(format("……\pShh!"))
+    }
+    else
+    {
+        msgbox(format("……\pShh!"))
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCK_GYM_PRAYER_2
+{
+    lock
+    faceplayer
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        msgbox(format("Please don't bother us while we are Praying."))
+    }
+    else
+    {
+        msgbox(format("Please don't bother us while we are Praying."))
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCK_GYM_PRAYER_3
+{
+    lock
+    faceplayer
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        msgbox(format("……{PAUSE 15}……\pHuh what?!\pI wasn't sleeping I swear!\pOh a book?\pI think there is one in the bookshelf in the corner."))
+    }
+    else
+    {
+        msgbox(format("…{PAUSE 15} Zzz… {PAUSE 15} Zzz…\pHe is fast asleep."))
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCK_GYM_PRAYER_4
+{
+    lock
+    faceplayer
+    namebox("Priest")
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        msgbox(format("You are being very annoying.\pCan you please leave, we are in the middle of Prayer."))
+    }
+    else
+    {
+        msgbox(format("Can you please leave, we are in the middle of Prayer."))
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCK_GYM_DRUID
+{
+    lock
+    faceplayer
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        msgbox(format("An overdue book?\pI believe there is one in my room downstairs."))
+    }
+    else
+    {
+        msgbox(format("…"))
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCK_GYM_GNOME
+{
+    lock
+    faceplayer
+    if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
+    {
+        msgbox(format("You are looking for Books?\pHave you tried looking in the bookshelves?"))
+    }
+    else
+    {
+        msgbox(format("…"))
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCK_GYM_GUARD_BLOCKING
+{
+    lock
+    faceplayer
+    msgbox(format("Sorry but beyond here is off limits to the public."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCK_GYM_GUARD_6
+{
+    lock
+    faceplayer
+    msgbox(format("This castle is no where near as confusing as the Falador Castle, I am greatful for that."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+
+//VARROCK GYM
+
+
+script BATTLE_VARROCK_GYM_TRAINER_1 
+{ //Guard dog x2
+	trainerbattle_single(TRAINER_VARROCK_GYM_1, format("Hey you!\nDo not trespass!"),format("Consider that a warning!") )
+    switch (var(VAR_POKESCAPE_VARROCK_GYM_QUEST)){ 
+		case 0: 
+        case 5: 
+			lock
+			faceplayer
+            namebox("Guard")
+			msgbox(format("Welcome to Varrock Castle!"))
+            hidenamebox
+			release
+			end
+        case 10:
+        case 15: 
+        case 20: 
+        case 25: 
+        case 26: 
+			lock
+			faceplayer
+            namebox("Guard")
+            msgbox(format("Do not trespass around the Castle unsupervised."))
+            hidenamebox
+            release
+			end
+	}
+}
+
+script BATTLE_VARROCK_GYM_TRAINER_2
+{ //Guard dog, labrador
+	trainerbattle_single(TRAINER_VARROCK_GYM_2, format("You look shady.\pGet out of the sleeping quaters!"),format("You may pass shady person.") )
+    switch (var(VAR_POKESCAPE_VARROCK_GYM_QUEST)){ 
+		case 0: 
+        case 5: 
+			lock
+			faceplayer
+            namebox("Guard")
+			msgbox(format("Hello shady looking person."))
+            hidenamebox
+			release
+			end
+        case 10:
+			lock
+			faceplayer
+            namebox("Guard")
+            msgbox(format("Oh you were looking for a book?\pWell good luck there are lots of books in this castle."))
+            hidenamebox
+            release
+			end
+        case 15: 
+        case 20: 
+        case 25: 
+        case 26: 
+			lock
+			faceplayer
+            namebox("Guard")
+			msgbox(format("Hello again shady looking person."))
+            hidenamebox
+			release
+			end
+	}
+}
+
+script BATTLE_VARROCK_GYM_TRAINER_3
+{ //Guard dog, kingly rat x2
+	trainerbattle_single(TRAINER_VARROCK_GYM_3, format("The king said he did not want visitors today."),format("You do not care what the king wants at all, do you?") )
+    switch (var(VAR_POKESCAPE_VARROCK_GYM_QUEST)){ 
+		case 0: 
+        case 5: 
+			lock
+			faceplayer
+            namebox("Guard")
+			msgbox(format("The king said he did not want visitors today.\pYou do not care what the king wants at all, do you?"))
+            hidenamebox
+			release
+			end
+        case 10:
+			lock
+			faceplayer
+            namebox("Guard")
+            msgbox(format("You are an MvM challenger?\pWell tough, the king said he did not want visitors today."))
+            hidenamebox
+            release
+			end
+        case 15: 
+        case 20: 
+        case 25: 
+        case 26: 
+			lock
+			faceplayer
+            namebox("Guard")
+			msgbox(format("The king said he did not want visitors today.\pYou do not care what the king wants at all, do you?"))
+            hidenamebox
+			release
+			end
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//King Roald
+script VARROCK_GYM_KINGROALD {
+    lock
+    faceplayer
+    namebox("King Roald")
+    if (!flag(FLAG_BADGE03_GET)){
+
+        msgbox(format("Oh what is it now?\pWho are you?\nWhat do you want?\pCan you not see I am busy?\p…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}\pOh right, so you are one of those MvM Challengers.\pI don't know why I even have this role.\pVery well, lets get this out of the way, show me what you can do."))
+        hidenamebox
+        trainerbattle_no_intro(TRAINER_VARROCK_GYM_KINGROALD, msgbox(format("That was a very enjoyable battle!")))
+        namebox("King Roald")
+        msgbox(format("I must say, I quite enjoyed that battle we just had.\pI want to say it's the most enjoyment I've had in years.\pHere I believe you have earnt this."))
+        hidenamebox
+        playfanfare(MUS_PS_QUEST_COMPLETE)
+        msgbox(format("{PLAYER} received the Varrock BADGE from King Roald."))
+        waitfanfare
+        waitmessage
+        namebox("King Roald")
+        msgbox(format("Also have this Scroll."))
+        hidenamebox
+        giveitem (ITEM_TM20, 1)
+        compare(VAR_RESULT, FALSE)
+        goto_if_eq(Common_EventScript_ShowBagIsFull)
+        playbgm(MUS_PS_VARROCK, 0)
+        savebgm(MUS_PS_VARROCK)
+        namebox("King Roald")
+        msgbox(format("That move is called Draining Kiss, my Queen uses it on me all the time and it is always super effective.\pHopefully it will be of more use to you than on me."))
+        setvar(VAR_POKESCAPE_VARROCK_GYM_QUEST, 26)
+        setflag(FLAG_BADGE03_GET)
+        addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
+        call(SetGymTrainers_VARROCK)
+        hidenamebox
+        release
+        end
+    }
+    if (flag(FLAG_BADGE04_GET)){
+        msgbox(format("You seem like you would be strong enough to take on the Barbarians, maybe you should head there next for your MvM gym challenge."))
+    }
+    else
+    {
+        msgbox(format("You should go pester the Prince in Al Kharid for your next MvM gym challenge."))
+    }
+    hidenamebox
+    release
+    end
+}
+
+
+
+script SetGymTrainers_VARROCK {   
+    settrainerflag(TRAINER_VARROCK_GYM_1)
+    settrainerflag(TRAINER_VARROCK_GYM_2)
+    settrainerflag(TRAINER_VARROCK_GYM_3)
+    settrainerflag(TRAINER_VARROCK_GYM_4)
+    return
+}
+script ClearGymTrainers_VARROCK {   
+    cleartrainerflag(TRAINER_VARROCK_GYM_1)
+    cleartrainerflag(TRAINER_VARROCK_GYM_2)
+    cleartrainerflag(TRAINER_VARROCK_GYM_3)
+    cleartrainerflag(TRAINER_VARROCK_GYM_4)
+    return
+}

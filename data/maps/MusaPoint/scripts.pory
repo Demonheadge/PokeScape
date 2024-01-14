@@ -1,0 +1,240 @@
+mapscripts MusaPoint_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 15) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+
+}
+
+
+
+script NPC_MUSAPOINT_SAILOR
+{
+	lock
+	faceplayer
+    namebox ("SAILOR")
+    msgbox(format("Hi, there would you like to board the boat to Port Sarim?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)==1)
+    {
+        msgbox(format("All aboard!\lWe set sail for Port Sarim!"))
+        warp (MAP_PORT_SARIM,8,0,0)
+    }
+    else
+    {
+        msgbox(format("Suit yourself."))
+    }
+
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+script NPC_LegendArts
+{
+	lock
+	faceplayer
+    namebox ("LEGEND ARTS")
+	msgbox(format("What…{PAUSE 15}{PAUSE 15}…{PAUSE 15}{PAUSE 15}…\nHow did I get here?"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+//ITEMS
+script ITEM_MUSA_POINT_1
+{
+    finditem(ITEM_PURPLE_SWEETS)
+    end
+}
+
+
+//NPCS
+script NPC_MUSA_POINT_1
+{
+	lock
+	faceplayer
+    namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_MUSA_POINT_2
+{
+	lock
+	faceplayer
+    //namebox ("Cupholder")
+	msgbox(format("30 years ago I buried me treasure here.\pNow I've spent 5 years digging on the beach to find it only to realize that maybe I buried it in Brimhaven?"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_MUSA_POINT_3
+{
+	lock
+	faceplayer
+    //namebox ("Cupholder")
+	msgbox(format("The Customs Officers constantly keep us under supervision, apparently they dont want Karamja Rum to reach the mainland.\pIts all a conspiracy to keep the White knights in power I tell you!"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_MUSA_POINT_4
+{
+	lock
+	faceplayer
+    //namebox ("Cupholder")
+	msgbox(format("Up north is a fishing spot, you might find yourself a battle there with the local fishers."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_MUSA_POINT_5
+{
+	lock
+	faceplayer
+    //namebox ("Cupholder")
+	msgbox(format("I once saw a Polar Bear in this well, but no one believes me.\pThey all just think I was drunk.\pBut I wasn't!\p… Or was I…"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_MUSA_POINT_6
+{
+	lock
+	faceplayer
+    //namebox ("Cupholder")
+	msgbox(format("The banana farm is the pride and joy of Musa Point.\pThat or the bar is the only thing keeping us a landmark really."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_MUSA_POINT_7
+{
+	lock
+	faceplayer
+    //namebox ("Cupholder")
+	msgbox(format("Welcome to Karamja.\pMake sure to prepare some antipoisons."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_MUSA_POINT_8
+{
+	lock
+	faceplayer
+    namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_MUSA_POINT_9
+{
+	lock
+	faceplayer
+    //namebox ("Cupholder")
+	msgbox(format("Fishing Levels?"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_MUSA_POINT_10
+{
+	lock
+	faceplayer
+    //namebox ("Cupholder")
+	msgbox(format("Fire, anyone?"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_MUSA_POINT_Luthas
+{
+	lock
+	faceplayer
+    namebox ("Luthas")
+	msgbox(format("Bananas make the world go round.\pWould you like to buy one?"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_Monkey
+{
+	lock
+	faceplayer
+    namebox ("Monkey")
+	msgbox(format("Oook, Ook!"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_MUSA_POINT_PubOwner
+{
+	lock
+	faceplayer
+    //namebox ("")
+	msgbox(format("Can I intrest you in some of our famous Karamajan Rum?\pOr perhaps you would like some of our wines, spirits or beers?"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+
+//TRAINERS
+script BATTLE_MUSA_POINT_TRAINER_1
+{
+    trainerbattle_single(TRAINER_MUSA_POINT_TRAINER_1, format("My Fishing level is 62."),format("I can only use quick chat."))
+    //namebox ("Cupholder")
+    msgbox(format("I can only use quick chat."))
+	hidenamebox
+    release
+	end
+}
+script BATTLE_MUSA_POINT_TRAINER_2
+{
+    trainerbattle_single(TRAINER_MUSA_POINT_TRAINER_2, format("Why am I here?\pFight me to find out!"),format("I love fishing but I cannot afford membership.\pThat is why I am here."))
+    //namebox ("Cupholder")
+    msgbox(format("I love fishing but I cannot afford membership.\pThat is why I am here."))
+	hidenamebox
+    release
+	end
+}
+script BATTLE_MUSA_POINT_TRAINER_3
+{
+    trainerbattle_single(TRAINER_MUSA_POINT_TRAINER_3, format("Noob fishing spot tells me I need a higher fishing level to be here.\pNow I am angry!"),format("My fishing level is 14."))
+    //namebox ("Cupholder")
+    msgbox(format("My fishing level is 14."))
+	hidenamebox
+    release
+	end
+}
+script BATTLE_MUSA_POINT_TRAINER_4
+{
+    trainerbattle_single(TRAINER_MUSA_POINT_TRAINER_4, format("Life is like a fishing spot, you never know what you are going to get."),format("Unless you fish for lobsters, you only get lobsters like this."))
+    //namebox ("Cupholder")
+    msgbox(format("Life is like a fishing spot, you never know what you are going to get.\pUnless you fish for lobsters, you only get lobsters like this."))
+	hidenamebox
+    release
+	end
+}

@@ -1,0 +1,431 @@
+mapscripts Varrock_Pub_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION { 
+        call(PUB_EVENT_STATE)   
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_POKESCAPE_GOLDENGNOMES, 15: GOLDENGNOME_EVENT_END
+    ]
+}
+
+
+
+script PUB_EVENT_STATE {
+
+    random(3)
+        switch (var(VAR_RESULT)) 
+        {
+            case 0:
+                addobject(13)
+                addobject(14)
+                addobject(15)
+                addobject(16)
+                addobject(17)
+                addobject(18)
+                addobject(19)
+                addobject(20)
+                clearflag(FLAG_TEMP_2)
+                removeobject(2)
+                removeobject(9)
+                removeobject(7)
+                removeobject(8)
+                removeobject(6)
+                removeobject(11)
+                setflag(FLAG_TEMP_1)
+                return
+            case 1:
+            case 2:
+                removeobject(13)
+                removeobject(14)
+                removeobject(15)
+                removeobject(16)
+                removeobject(17)
+                removeobject(18)
+                removeobject(19)
+                removeobject(20)
+                setflag(FLAG_TEMP_2)
+                addobject(2)
+                addobject(9)
+                addobject(7)
+                addobject(8)
+                addobject(6)
+                addobject(11)
+                clearflag(FLAG_TEMP_1)
+                return
+        }
+	
+}
+
+
+//NPCS.
+
+
+script NPC_VarrockPub_BARBARIAN
+{
+    lock
+    faceplayer
+    namebox("Barbarian")
+    msgbox(format("YAARRG, Do yer want a Pub Crawl battle?!")) 
+    hidenamebox
+    release
+    end
+}
+
+script NPC_VarrockPub_NPC1
+{
+    lock
+    faceplayer
+    //namebox(".")
+    msgbox(format("Did you know that many players have named themselves after Pokemons?\pThere is one player named Evil Lucario who is really good at PvM.\pMany people agree that a Pokemon RSN is awesome, if you wanna see some, seek out u/Zarmos on Reddit, who took screenshots of over 380 Pokemon RSNs!\pThough it did take him almost 2 years to capture them all!"))
+    //msgbox(format("Woops I am talking to much, here is a <Item> to make up for it!"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_VarrockPub_NPC2
+{
+    lock
+    faceplayer
+    //namebox(".")
+    msgbox(format("Sometimes people from the Runescape Art Community come to party here.\pThey are amazing, fun, talented and they are simply awesome!\pI am not a artist but I love to see their masterpieces.")) 
+    hidenamebox
+    release
+    end
+}
+
+script NPC_VarrockPub_NPC3
+{
+    lock
+    faceplayer
+    namebox("Guard")
+    msgbox(format("Did you know some Monsters can Mega Evolve when given specific items to hold?\pNo for real!\pThey change their forms mid battle and then return to what they were previously.")) 
+    hidenamebox
+    release
+    end
+}
+
+script NPC_VarrockPub_NPC4
+{
+    lock
+    faceplayer
+    namebox("Guard")
+    random(7)
+        switch (var(VAR_RESULT)) {
+            case 0: 
+                msgbox(format("I heard that Wall Beasts can Mega Evolve with an item that can be found deep within the Lumbridge Caves.")) 
+            case 1: 
+                msgbox(format("I heard that Dagannoths can Mega Evolve with an items that can be found deep within the Waterbirth Island.")) 
+            case 2: 
+                msgbox(format("I heard that a Queen Kalphite can Mega Evolve with an item that can be found within the Desert.")) 
+            case 3: 
+                msgbox(format("I heard that a big Lava monster can Mega Evolve with an item that can be found within the Tzhaar Fight Caves."))
+            case 4: 
+                msgbox(format("I heard that a creature of pure chaos can Mega Evolve with an item that can be found deep within the Wilderness."))
+            case 5: 
+                msgbox(format("I heard that there was some guy who has a ton of those fragments but is only willing to trade them for some sort of token."))   //Dungeoneering reward shop?
+            case 6: 
+                msgbox(format("If the fragments are so powerful in causing a monster to mega evolve, I would hate to see what the object the fragments were originally would do to the monsters.")) 
+        }
+    hidenamebox
+    release
+    end
+}
+
+script NPC_VarrockPub_NPC5
+{
+    lock
+    faceplayer
+    namebox("Guard")
+    msgbox(format("Appearntly some fragments of a stone are the key to Mega Evolution.\pBut what stone can do that?")) 
+    hidenamebox
+    release
+    end
+}
+
+
+script NPC_VarrockPub_NPC6
+{
+    lock
+    faceplayer
+    namebox("Dr. Harlow")
+    msgbox(format("HIC."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_VarrockPub_NPC7
+{
+    lock
+    faceplayer
+    namebox("Bartender")
+    msgbox(format("Can I get you something to drink?"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_VarrockPub_NPC8
+{
+    lock
+    faceplayer
+    namebox("Man")
+    msgbox(format("…"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_VarrockPub_NPC9
+{
+    lock
+    faceplayer
+    namebox("Man")
+    msgbox(format("Sometimes strange things happen within this pub.\pPeople start uncontrollably talking about a forth wall breaking things.\pHeck the other day the bartender was going on about some sort of computer game."))
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+//BATTLE
+
+
+script NPC_VarrockPub_Trainer_1 { // PUB TRAINER 7
+	lock
+	faceplayer
+    namebox("Jonny")
+	msgbox(format("Did the gang send you?"))
+	hidenamebox
+	if (flag(FLAG_UNUSED_0x93B) == false) 
+	{
+		msgbox(format("Do you wish to challenge them to a battle?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT))
+			{
+				hidenamebox
+				setflag(FLAG_UNUSED_0x93B)
+				trainerbattle_no_intro(TRAINER_PUB_SARIM_1, msgbox(format("…")))
+				namebox("Jonny")
+				msgbox(format("Here have this."))
+				hidenamebox
+				call(GIVE_RANDOM_ITEM)
+			}
+	}
+    hidenamebox
+    release
+	end
+}
+
+
+script NPC_VarrockPub_Trainer_2 { // PUB TRAINER 8
+	lock
+	faceplayer
+    namebox("Cook")
+	msgbox(format("It is exhausting work cooking food for so many people.\pI will be on my five minute break soon, so I have that to look forward to."))
+	hidenamebox
+	if (flag(FLAG_UNUSED_0x93C) == false) 
+	{
+		msgbox(format("Do you wish to challenge them to a battle?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT))
+			{
+				hidenamebox
+				setflag(FLAG_UNUSED_0x93C)
+				trainerbattle_no_intro(TRAINER_PUB_SARIM_1, msgbox(format("…")))
+				namebox("Cook")
+				msgbox(format("This is on me."))
+				hidenamebox
+				call(GIVE_RANDOM_ITEM)
+			}
+	}
+    hidenamebox
+    release
+	end
+}
+
+
+
+
+
+
+
+script GoldenGnome
+{
+	lock
+	faceplayer
+	msgbox(format("Somebody dropped this trash, it's a little broken, but you can have it."))
+	call(GiveMon_GOLDENGNOME)
+    msgbox(format("Hopefully this will be a case of one mans trash is another mans treasure.\pBut I doubt it."))
+	release
+	end
+}	
+
+
+
+script GiveMon_GOLDENGNOME {
+    setvar(VAR_TEMP_1, SPECIES_GNOMEY)
+    givemon (SPECIES_GNOMEY, 5, ITEM_NONE)
+    compare(VAR_RESULT, 0)
+	goto_if_eq(GiveMon_SendParty_GOLDENGNOME)
+    compare(VAR_RESULT, 1)
+	goto_if_eq(GiveMon_SendPC_GOLDENGNOME)
+    goto(Common_EventScript_NoMoreRoomForPokemon)
+    end
+}
+
+script GiveMon_SendParty_GOLDENGNOME{
+	call(GiveMon_ReceivedFanfare_GOLDENGNOME)
+	msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+    compare(VAR_RESULT, NO)
+	goto_if_eq(GiveMon_Received_GOLDENGNOME)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(GiveMon_Received_GOLDENGNOME)
+	end
+}
+
+script GiveMon_SendPC_GOLDENGNOME {
+	call(GiveMon_ReceivedFanfare_GOLDENGNOME)
+	msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+    compare(VAR_RESULT, NO)
+	goto_if_eq(GiveMon_TransferredToPC_GOLDENGNOME)
+	call (Common_EventScript_NameReceivedBoxMon)
+	goto (GiveMon_TransferredToPC_GOLDENGNOME)
+	end
+}
+
+script GiveMon_TransferredToPC_GOLDENGNOME{
+	call (Common_EventScript_TransferredToPC)
+	goto (GiveMon_Received_GOLDENGNOME)
+	end
+}
+
+script GiveMon_ReceivedFanfare_GOLDENGNOME{
+	bufferspeciesname(1, SPECIES_GNOMEY)
+	//removeobject LOCALID_BELDUM_BALL
+    //setvar(VAR_POKESCAPE_ERNEST_QUEST_STATE, 3)
+	playfanfare (MUS_OBTAIN_ITEM)
+	msgbox(format("{PLAYER} obtained a {STR_VAR_2}."))
+	waitmessage
+	waitfanfare
+	bufferspeciesname(0, SPECIES_GNOMEY)
+	return
+}
+
+script GiveMon_Received_GOLDENGNOME{
+    //msgbox(format("EVENT COMPLETE."))
+	releaseall
+	return
+}
+
+
+
+
+
+
+script BATTLE_Prezleek
+{
+    lock
+    faceplayer
+    namebox ("Prezleek")
+    msgbox(format("…"))
+	hidenamebox
+    closemessage
+    namebox ("Baroo")
+    msgbox(format("Baroo? Baroo?"))
+	hidenamebox
+    closemessage
+    trainerbattle_single(TRAINER_PREZLEEK, format("…"),format("…"))
+    namebox ("Prezleek")
+    msgbox(format("…"))
+	hidenamebox
+    closemessage
+    release
+	end
+}
+
+
+script RAC_Spriggan
+{
+    lock
+    faceplayer
+    namebox ("Spriggan")
+    msgbox(format("Hello."))
+    hidenamebox
+    closemessage
+    release
+	end	
+}
+
+script RAC_Enkoro
+{
+    lock
+    faceplayer
+    namebox ("Enkoro")
+    msgbox(format("Hello."))
+    hidenamebox
+    closemessage
+    release
+	end	
+}
+
+script RAC_LegendArts
+{
+    lock
+    faceplayer
+    namebox ("LegendArts")
+    msgbox(format("Hello."))
+    hidenamebox
+    closemessage
+    release
+	end	
+}
+
+script RAC_Theo
+{
+    lock
+    faceplayer
+    namebox ("Theo")
+    msgbox(format("Hello."))
+    hidenamebox
+    closemessage
+    release
+	end	
+}
+
+script RAC_NYChannel
+{
+    lock
+    faceplayer
+    namebox ("NYChannel")
+    msgbox(format("Hello."))
+    hidenamebox
+    closemessage
+    release
+	end	
+}
+
+script RAC_Jaxyys
+{
+    lock
+    faceplayer
+    namebox ("Jaxyys")
+    msgbox(format("Hello."))
+    hidenamebox
+    closemessage
+    release
+	end	
+}
+
+script RAC_Snow
+{
+    lock
+    faceplayer
+    namebox ("Seakara")
+    msgbox(format("Hello."))
+    hidenamebox
+    closemessage
+    release
+	end	
+}

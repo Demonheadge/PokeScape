@@ -1,0 +1,10 @@
+mapscripts AlKharid_Bank_MapScripts {
+    MAP_SCRIPT_ON_LOAD { //ON LOAD FOR MAP TILES
+    call(AlKharid_Bank_OnTransition)
+    }
+} 
+
+script AlKharid_Bank_OnTransition {
+    setrespawn(HEAL_LOCATION_AL_KHARID)
+    return
+}

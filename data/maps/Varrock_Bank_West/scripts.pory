@@ -1,0 +1,262 @@
+mapscripts Varrock_Bank_West_MapScripts {
+    MAP_SCRIPT_ON_LOAD { //ON LOAD FOR MAP TILES
+    call(VarrockWest_Bank_OnTransition)
+    }
+} 
+
+script VarrockWest_Bank_OnTransition {
+    setrespawn(HEAL_LOCATION_VARROCK)
+    return
+}
+
+
+
+//NPCS
+script VARROCKBANKWEST_NPC_NPC1
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("Can't you see I am busy High-Alching, what do you want!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCKBANKWEST_NPC_NPC2
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("I only made 1m profit today.\pIf this keeps up I might be poor in 5 years or so."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCKBANKWEST_NPC_NPC3
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("Nice outfit Noob!\pI bet you couldn't afford to buy anything awesome like mine from the Solomon Store."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCKBANKWEST_NPC_NPC4
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("I bought a bunch of runes here in Varrock, but I have no idea who to use them on.\pWhy is there no list?\pDo I have to actually use my brain and experiment?!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCKBANKWEST_NPC_NPC5
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("Get lost kid, I am Fletching and need to concentrate."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCKBANKWEST_NPC_NPC6
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("{COLOR RED}red:wave: Buying Abyssal Whip!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCKBANKWEST_NPC_NPC7
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("I have been trying to telegrab the ring in the basement for hours now!\pDo I need a higher magic level?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script VARROCKBANKWEST_NPC_NPC8
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("People often make fires outside.\pBe careful, or else the flames might get you."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//VARROCK BANK QUEST - DROP PARTY
+script QUEST_DROPPARTY_1
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("Drop Party!\pDrop Party!\pFollow me for Drop Party!"))
+    closemessage
+    hidenamebox
+    //Quest Start! Quest VAR +1
+    //Movement main and group walking outside.
+    release
+    end
+}
+
+script QUEST_DROPPARTY_2
+{
+    //Upon leaving the Bank and entering Varrock
+    //namebox ("")
+    msgbox(format("This way for Drop Party!"))
+    closemessage
+    hidenamebox
+    //Quest VAR +1
+    //Movement main and group walking to the square.
+    release
+    end
+}
+
+script QUEST_DROPPARTY_3
+{
+    //Entering North Varrock via church way.
+    //namebox ("")
+    msgbox(format("Drop party!\pDropping lots!"))
+    closemessage
+    hidenamebox
+    //Quest VAR +1
+    //Movement main and group walking north to wildy
+    release
+    end
+}
+
+script QUEST_DROPPARTY_4
+{
+    //Entering Wildy
+    //namebox ("")
+    msgbox(format("Drop party happening now!\pDropping items!"))
+    closemessage
+    hidenamebox
+    //Quest VAR +1
+    //Movement main walking around, spawning items.
+    release
+    end
+}
+
+script QUEST_DROPPARTY_NPCS_LURED
+{
+    //Entering Wildy
+    //namebox ("")
+    //scammer 1
+    msgbox(format("Don't go in it is a lure!"))
+    //scammer 2
+    msgbox(format("Woah I got an Abyssal Whip!"))
+    //scammer 3
+    msgbox(format("I got a Santa hat!"))
+    //Upon entering the wilderness and trying to pick up an item.
+    msgbox(format("Haha! Got lured you!\pI bet you weren't expecting this.\pNow Hand over your Monsters!"))
+    closemessage
+    hidenamebox
+    //battle 3 people
+    msgbox(format("What?!\pNo way he/she managed to anti-lure us!\pFlee before the guards get here!"))
+    //Player can now pick up items as rewards for the quest.
+    giveitem(ITEM_ABYSSAL_WHIP, 1)
+    giveitem(ITEM_SANTA_HAT, 1)
+    giveitem(ITEM_CABBAGE, 1)
+    giveitem(ITEM_CABBAGE, 1)
+    giveitem(ITEM_CABBAGE, 1)
+    //Quest VAR +1
+    //QUEST COMPLETE
+    //Movement main walking around, spawning items.
+    release
+    end
+}
+
+script QUEST_DROPPARTY_NPCS_HYPED
+{
+    //namebox ("")
+    random(3)
+        switch (var(VAR_RESULT)) {
+            case 0:
+                msgbox(format("Oooh a drop party!\pI am so excited!"))
+            case 1:
+                msgbox(format("Fr33 St00F PL0X!"))
+            case 2:
+                msgbox(format("Trade me!"))
+            case 3:
+                msgbox(format("Why is everyone following this guy?"))
+        }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script QUEST_DROPPARTY_NPCS_BORED
+{
+    //namebox ("")
+    random(3)
+        switch (var(VAR_RESULT)) {
+            case 0:
+                msgbox(format("This is boring, I am about to leave."))
+            case 1:
+                msgbox(format("Scammer!\pDon't trust this guy!"))
+            case 2:
+                msgbox(format("Where are you going?\pJust drop it here."))
+            case 3:
+                msgbox(format("LOL he is going to the Wildy."))
+        }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script BARBSTRONGHOLD_RIVAL_BOOT_CHOICE
+{
+    faceplayer
+    namebox ("RIVAL")
+    msgbox(format("Fancy seeing you here {PLAYER}.\pThere are two boots here and it says we can only take one.\pI am so indecisive I don't know what one to pick…\pOh I know!\pI'll get you to pick.\pI will take whichever one you don't choose."))
+    closemessage
+    hidenamebox
+    msgbox(format("Nice choice!\pThen I will select these ones!"))
+    msgbox(format("RIVAL OBTAINED FANCY BOOTS."))
+    msgbox(format("…{PAUSE 16}… Actually…\pI kind of don't want these anymore.\pHere you can take them!"))
+    giveitem(ITEM_FANCY_BOOTS, 1)
+    msgbox(format("Don't worry I doubt this counts as you taking both boots since I took it first.\pEnjoy, I'll see you around!"))
+    //apply movement walks to ladder.
+    //set flags
+    release
+    end
+}

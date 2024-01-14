@@ -1,0 +1,246 @@
+mapscripts Kourend_Catacombs_1_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_SLAYER_COMPLETE, 1: SLAYER_TASK_COMPLETE
+    ]
+}
+
+script ZEAH_TELEPORT_ENTER {
+    checkitem(ITEM_PURPLE_SWEETS, 1)
+        if (var(VAR_RESULT)) {
+            msgbox(format("The totem in your backpack reacts to the Altar.\pWould you like to use it?"), MSGBOX_YESNO)
+            if (var(VAR_RESULT)){
+                    msgbox(format("Suddenly the world starts to warp around you."))
+                    applymovement(OBJ_EVENT_ID_PLAYER, movement_TELEPORT_OUT)
+                    removeitem(ITEM_PURPLE_SWEETS, 1)
+                    warpteleport (MAP_KOUREND_CATACOMBS_7,0,0,0)
+                    closemessage
+                    release
+                    end
+                }
+            closemessage
+            release
+            end
+        }
+    msgbox(format("There seems to be a slot in the Altar for something."))
+    closemessage
+    release
+    end           
+}
+
+script XERICS_TELEPORT {
+    msgbox(format("Would you like to teleport to the Kourend?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+            msgbox(format("Suddenly the world starts to warp around you."))
+            applymovement(OBJ_EVENT_ID_PLAYER, movement_TELEPORT_OUT)
+            warpteleport (MAP_KOUREND_CATACOMBS_1,0,0,0)
+            closemessage
+            release
+            end
+        }  
+    closemessage
+    release
+    end
+}
+
+script ANCIENT_SHARD_TELEPORT {
+    
+    msgbox(format("Would you like to teleport to the Catacombs of Kourend?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+            msgbox(format("Suddenly the world starts to warp around you."))
+            playse(SE_WARP_IN)
+            applymovement(OBJ_EVENT_ID_PLAYER, movement_TELEPORT_OUT)
+            waitmovement(0)
+            closemessage
+            release
+            random(7)
+                switch (var(VAR_RESULT)) {
+                    case 0: 
+                        warpspinenter (MAP_KOUREND_CATACOMBS_1, 28, 20)
+                    case 1: 
+                        warpspinenter (MAP_KOUREND_CATACOMBS_4, 38, 12)
+                    case 2: 
+                        warpspinenter (MAP_KOUREND_CATACOMBS_4, 77, 9)
+                    case 3: 
+                        warpspinenter (MAP_KOUREND_CATACOMBS_5, 4, 14)
+                    case 4: 
+                        warpspinenter (MAP_KOUREND_CATACOMBS_2, 48, 2)
+                    case 5: 
+                        warpspinenter (MAP_KOUREND_CATACOMBS_2, 8, 19)
+                    case 6: 
+                        warpspinenter (MAP_KOUREND_CATACOMBS_6, 5, 6)
+                }
+            end
+        }  
+    closemessage
+    release
+    end
+}
+
+movement movement_TELEPORT_OUT
+{
+    fly_up
+} 
+
+script NPC_NIEVE
+{
+    lock
+    faceplayer
+    namebox ("Nieve")
+    msgbox(format("Would you like a Slayer Assignment?"), MSGBOX_YESNO)
+    hidenamebox
+			if (var(VAR_RESULT)){
+                call(SLAYER_TASK_ASSIGN)
+                call(SLAYER_TASK_CHECK)
+                hidenamebox
+            }
+    release
+    end
+}
+
+script give_SLAYER_GEM
+{
+    finditem(ITEM_SLAYER_GEM)
+    end
+}
+
+
+
+
+
+// VAR_SLAYER_ASSIGNMENT
+// 1    -   BLOODVELD
+// 2    -   DEMON
+// 3    -   ABYSSAL DEMON
+// 4    -   JELLY
+// 5    -   HELLHOUND
+// 6    -   BASILISK
+// 7    -   COCKATRICE
+// 8    - 
+// 9    -     
+script SLAYER_TASK_ASSIGN
+{
+    //Assigns Amount
+    random(4)
+    addvar(VAR_RESULT, 1)
+    copyvar(VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT)
+    //Assigns Species
+    random(10)
+        switch (var(VAR_RESULT)) {
+            case 0: 
+                setvar(VAR_SLAYER_ASSIGNMENT, 1)                  //MON
+                bufferspeciesname(STR_VAR_2, SPECIES_BLOODVELD)   //MON
+                buffernumberstring(STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT)       //AMOUNT
+            case 1: 
+                setvar(VAR_SLAYER_ASSIGNMENT, 2)                //MON
+                bufferspeciesname(STR_VAR_2, SPECIES_FROGEEL)   //MON
+                buffernumberstring(STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT)       //AMOUNT
+            case 2: 
+                setvar(VAR_SLAYER_ASSIGNMENT, 3)                 //MON
+                bufferspeciesname(STR_VAR_2, SPECIES_GUTHLING)   //MON
+                buffernumberstring(STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT)        //AMOUNT
+            case 3:
+            case 4:
+                setvar(VAR_SLAYER_ASSIGNMENT, 4)                 //MON
+                bufferspeciesname(STR_VAR_2, SPECIES_ROC)   //MON
+                buffernumberstring(STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT)        //AMOUNT
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+                msgbox(format("Rerolled"))
+                closemessage
+                call(SLAYER_TASK_ASSIGN) 
+            case 9:
+                setvar(VAR_SLAYER_ASSIGNMENT, 4)                 //MON
+                bufferspeciesname(STR_VAR_2, SPECIES_ROC)   //MON
+                buffernumberstring(STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT)        //AMOUNT
+
+        }
+    return
+}
+script SLAYER_TASK_CHECK
+{
+    switch (var(VAR_SLAYER_ASSIGNMENT)) {
+        case 0: 
+            msgbox(format("You currently do not have an assignment."))
+            closemessage
+            return
+        case 1: 
+            bufferspeciesname(STR_VAR_2, SPECIES_BLOODVELD)
+            buffernumberstring(STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT)
+        case 2: 
+            bufferspeciesname(STR_VAR_2, SPECIES_DEMON_LESSER_OSRS_FORM)
+            buffernumberstring (STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT)
+        case 3: 
+            bufferspeciesname(STR_VAR_2, SPECIES_ZAMLING)
+            buffernumberstring (STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT)
+        
+    }
+    msgbox(format("Your current assignment is to slay {STR_VAR_3} {STR_VAR_2}"))
+    closemessage
+    return
+}
+script SLAYER_TASK_COMPLETE
+{
+    //if (var(VAR_SLAYER_COMPLETE) == 1) {
+        lock
+        playfanfare(MUS_PS_QUEST_COMPLETE)
+        //Assigns Amount of Slayer Points
+        random(12)
+        addvar(VAR_RESULT, 1)
+        copyvar(VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT)
+        setvar(VAR_0x8004, 12) // Sets temp VAR
+        special (GiveFrontierBattlePoints)
+        buffernumberstring (STR_VAR_1, VAR_0x8004)
+        msgbox(format("Slayer Assignment complete!\n{PLAYER} obtained {STR_VAR_1} Slayer Point(s)."))
+        waitmessage
+        waitfanfare
+        closemessage
+        setvar(VAR_SLAYER_ASSIGNMENT, 0)
+        setvar(VAR_SLAYER_COMPLETE, 0)
+        release
+        return
+    //}
+    //return
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script ROTTEN_POTATO_TELEPORT {
+    
+    msgbox(format("Only use this if you are stuck.\pThis will cause you to whiteout."), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+            msgbox(format("As you bite into the rotten potato you and your team feel the touch of the PokeScape gods.\pIt was too much for you."))
+            goto(EventScript_FieldWhiteOut)
+            release
+            end
+        }  
+    closemessage
+    release
+    end
+}
+
+

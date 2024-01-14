@@ -227,6 +227,15 @@ gScriptCmdTable::
 	.4byte ScrCmd_warpwhitefade                     @ 0xe0
 	.4byte ScrCmd_buffercontestname                 @ 0xe1
 	.4byte ScrCmd_bufferitemnameplural              @ 0xe2
+	.4byte ScrCmd_givemonwithnature					@ 0xe3
+	.4byte ScrCmd_giveshinymon						@ 0xe4
+	.4byte ScrCmd_namebox							@ 0xe5
+	.4byte ScrCmd_hidenamebox						@ 0xe6
+	.4byte ScrCmd_checkgamemode						@ 0xe7
+	.4byte ScrCmd_dowildbattleNoCatch       		@ 0xe8
+	.4byte ScrCmd_questmenu                 		@ 0xe9
+    .4byte ScrCmd_subquestmenu              		@ 0xea
+    .4byte ScrCmd_returnqueststate          		@ 0xeb
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

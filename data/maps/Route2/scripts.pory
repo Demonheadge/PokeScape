@@ -1,0 +1,339 @@
+mapscripts Route2_MapScripts{
+    MAP_SCRIPT_ON_LOAD {
+        if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    	{
+            goto(QUEST_STATE_WizardsTower_ROUTE2)
+    	}
+    }
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 1) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+        if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    	{
+            
+    	}
+		else
+		{
+			call(OPENWORLD_STATE_ROUTE2)
+		}
+    }
+}
+
+
+script OPENWORLD_STATE_ROUTE2 {
+        setflag(FLAG_TEMP_1)
+        setflag(FLAG_TEMP_2) //HIDE MUGGER
+        setvar(VAR_TEMP_2, 1) //HIDE MUGGER TRIGGER
+        removeobject(1)
+        removeobject(2)
+        removeobject(3)
+		return
+}
+
+
+
+script QUEST_STATE_WizardsTower_ROUTE2{
+        switch (var(VAR_POKESCAPE_WIZARDS_TOWER_STATE)){ 
+            case 0: 
+                setflag(FLAG_TEMP_1)
+                setflag(FLAG_TEMP_2) //HIDE MUGGER
+                setvar(VAR_TEMP_2, 1) //HIDE MUGGER TRIGGER
+                removeobject(1)
+                removeobject(2)
+                removeobject(3)
+                release
+                end
+            case 1: 
+            case 2: 
+                //HIDE NPCS
+                setflag(FLAG_TEMP_1)
+                removeobject(2)
+                removeobject(3)
+                release
+                end
+            case 3: 
+                //SHOW NPCs EVENT
+                clearflag(FLAG_TEMP_1)
+                addobject(2)
+                addobject(3)
+                release
+                end
+            case 4: 
+            case 5:
+            case 6: 
+            case 7: 
+            case 8: 
+                //HIDE NPCs
+                setflag(FLAG_TEMP_1)
+                removeobject(2)
+                removeobject(3)
+                release
+                end
+            case 9: 
+                setflag(FLAG_TEMP_1)
+                setflag(FLAG_TEMP_2) //HIDE MUGGER
+                setvar(VAR_TEMP_2, 1) //HIDE MUGGER TRIGGER
+                removeobject(1)
+                removeobject(2)
+                removeobject(3)
+                release
+                end
+            }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-----------------------------------------------------------
+
+script HAM_EVENT_WizardsTower_4{
+    lockall
+    namebox("Ariane")
+    msgbox(format("I wonder if he went this way?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+script HAM_EVENT_Route2_MAIN_1{
+    lockall
+    playbgm (MUS_PS_ENCOUNTER_HAM, 1)
+    applymovement(2, HAM_Movement5_1)
+    namebox("H.A.M. member")
+    msgbox(format("Move!\nGet out of my way!"))
+    hidenamebox
+    closemessage
+    waitmovement(0)
+    applymovement(1, HAM_Movement5_7)
+    namebox("Highwayman")
+    msgbox(format("Stand and deliver!"))
+    hidenamebox
+    closemessage
+    waitmovement(0)
+    playse(SE_WALL_HIT)
+    applymovement(1, HAM_Movement5_2)
+    applymovement(2, HAM_Movement5_3)
+    waitmovement(0)
+    namebox("H.A.M. member")
+    msgbox(format("Ayyyyeeeeek!"))
+    hidenamebox
+    closemessage
+    applymovement(2, HAM_Movement5_4)
+    delay(16)
+    applymovement(1, HAM_Movement5_8)
+    playse(SE_PIN)
+    applymovement(3, HAM_Movement5_5)
+    waitmovement(0)
+    return
+}
+
+script HAM_EVENT_Route2_MAIN_2{
+    removeobject(2)
+    removeobject(3)
+    setflag(FLAG_TEMP_1)
+    setvar(VAR_POKESCAPE_WIZARDS_TOWER_STATE, 4)
+    savebgm(MUS_DUMMY)
+	fadedefaultbgm
+    release
+    end
+}
+
+
+script HAM_EVENT_Route2_TRIGGER_1{
+    call(HAM_EVENT_Route2_MAIN_1)
+    namebox("Ariane")
+    msgbox(format("There you are!"))
+    hidenamebox
+    closemessage
+    applymovement(3, HAM_Movement5_6)
+    waitmovement(0)
+    goto(HAM_EVENT_Route2_MAIN_2)
+}
+
+script HAM_EVENT_Route2_TRIGGER_2{
+    call(HAM_EVENT_Route2_MAIN_1)
+    namebox("Ariane")
+    msgbox(format("There you are!"))
+    hidenamebox
+    closemessage
+    applymovement(3, HAM_Movement5_9)
+    waitmovement(0)
+    goto(HAM_EVENT_Route2_MAIN_2)
+}
+
+
+
+movement HAM_Movement5_1{
+    walk_in_place_fast_right * 3
+}
+
+movement HAM_Movement5_2{
+    walk_fast_left
+}
+
+movement HAM_Movement5_3{
+    slide_left
+    jump_special_left
+    face_right
+}
+
+movement HAM_Movement5_4{
+    walk_faster_left * 1
+    walk_faster_up * 7
+}
+
+movement HAM_Movement5_5{
+    emote_exclamation_mark
+    face_right
+}
+
+movement HAM_Movement5_6{
+    walk_fast_right * 2
+    walk_fast_up * 10
+}
+
+movement HAM_Movement5_7{
+    walk_in_place_fast_left * 3
+}
+
+movement HAM_Movement5_8{
+    walk_slow_right * 1
+    face_left
+}
+    
+movement HAM_Movement5_9{
+    walk_fast_right * 1
+    walk_fast_up * 10
+}
+
+//-----------------------------------------------------------
+
+
+script BLOCK_ROUTE2_Highwayman
+{
+        lock
+        namebox ("Highwayman")
+		msgbox(format("Stand and deliver!"))
+		closemessage
+        hidenamebox
+        playse(SE_WALL_HIT)
+        applymovement(1, HAM_Movement5_2)
+        applymovement(OBJ_EVENT_ID_PLAYER, HAM_Movement5_3)
+        waitmovement(0)
+        applymovement(1, HAM_Movement5_8)
+        waitmovement(0)
+        release
+        end
+}
+
+
+script NPC_ROUTE2_Wizard
+{
+    faceplayer
+    //namebox ("CUPHOLDER")
+    msgbox(format("They say that there are hidden floors within the Wizards' Tower.\pI've never found them though."))
+    hidenamebox
+    release
+    end
+}
+
+
+script BATTLE_ROUTE2_Trainer_1
+{
+    trainerbattle_single(TRAINER_ROUTE2_TRAINER_1, format("Do you know the way to Draynor village by any chance?"),format("Wrong direction?\pI've followed the W for south all day!"))
+    namebox ("How2type")
+    msgbox(format("Wrong direction?\pI've followed the W for south all day!"))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_ROUTE2_Trainer_2
+{
+    trainerbattle_single(TRAINER_ROUTE2_TRAINER_2, format("Passing this bridge gets you to the wizard tower."),format("Wizards use runes to conjure magic."))
+    namebox ("Tam McGrubor")
+    msgbox(format("Runes are marvellous.\pUsing them on monsters might make them evolve!"))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_ROUTE2_Trainer_3
+{
+    trainerbattle_single(TRAINER_ROUTE2_TRAINER_3, format("A game is not a good game without a fishing minigame."),format("Now you too can enjoy the joy of fishing."))
+    namebox ("Cakebaws")
+    msgbox(format("Now you too can enjoy the joy of fishing."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_ROUTE2_Trainer_4
+{
+    trainerbattle_single(TRAINER_ROUTE2_TRAINER_4, format("Noobs fear me, fish fear me, pkers turns their eyes away from me as I walk."),format("No fish dare make a sound in my presence.\pI walk alone on this barren earth."))
+    namebox ("SlimyTem")
+    msgbox(format("No fish dare make a sound in my presence.\pI walk alone on this barren earth."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_ROUTE2_Trainer_5
+{
+    trainerbattle_single(TRAINER_ROUTE2_TRAINER_5, format("You don't look very strong, this battle will be over in an instant!"),format("Impossible!\pI was sure you were weak…\pWait, does this mean I'm weaker than you?!"))
+    namebox ("Dark Wizard")
+    msgbox(format("Ugh… how!?\pWas my foresight wrong…?\pNo, it can't be…"))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_ROUTE2_Trainer_6
+{
+    trainerbattle_single(TRAINER_ROUTE2_TRAINER_6, format("Let's just get this over with…"),format("What a surprise, I lost.\pWho would have guessed…"))
+    namebox ("Dark Wizard")
+    msgbox(format("I suppose it's not all bad.\pAt least you must feel better about yourself… right?"))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_ROUTE2_Trainer_7
+{
+    trainerbattle_single(TRAINER_ROUTE2_TRAINER_7, format("…"),format("…"))
+    namebox ("Bot")
+    msgbox(format("…"))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+
+
+script NPC_ROUTE2_BLACK_KNIGHT{
+    lock
+    faceplayer
+    namebox("Black Knight")
+    msgbox(format("For the Kinshra!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+

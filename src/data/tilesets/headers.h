@@ -825,3 +825,353 @@ const struct Tileset gTileset_UnionRoom =
     .metatileAttributes = gMetatileAttributes_UnionRoom,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_PokeScapeOutdoors =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+	.tiles = gTilesetTiles_PokeScapeOutdoors,
+	.palettes = gTilesetPalettes_PokeScapeOutdoors,
+	.metatiles = gMetatiles_PokeScapeOutdoors,
+	.metatile_attributes = gMetatileAttributes_PokeScapeOutdoors,
+	.callback = InitTilesetAnim_PokeScapeOutdoors,
+};
+
+const struct Tileset gTileset_Lumbridge =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Lumbridge,
+    .palettes = gTilesetPalettes_Lumbridge,
+    .metatiles = gMetatiles_Lumbridge,
+    .metatile_attributes = gMetatileAttributes_Lumbridge,
+    .callback = InitTilesetAnim_Lumbridge,
+};	
+const struct Tileset gTileset_PokeScapeIndoors =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_PokeScapeIndoors,
+    .palettes = gTilesetPalettes_PokeScapeIndoors,
+    .metatiles = gMetatiles_PokeScapeIndoors,
+    .metatile_attributes = gMetatileAttributes_PokeScapeIndoors,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Lumbridge_Swamp =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Lumbridge_Swamp,
+    .palettes = gTilesetPalettes_Lumbridge_Swamp,
+    .metatiles = gMetatiles_Lumbridge_Swamp,
+    .metatile_attributes = gMetatileAttributes_Lumbridge_Swamp,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Windmill =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Windmill,
+    .palettes = gTilesetPalettes_Windmill,
+    .metatiles = gMetatiles_Windmill,
+    .metatile_attributes = gMetatileAttributes_Windmill,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Rimmington =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Rimmington,
+    .palettes = gTilesetPalettes_Rimmington,
+    .metatiles = gMetatiles_Rimmington,
+    .metatile_attributes = gMetatileAttributes_Rimmington,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Bank =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Bank,
+    .palettes = gTilesetPalettes_Bank,
+    .metatiles = gMetatiles_Bank,
+    .metatile_attributes = gMetatileAttributes_Bank,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Draynor =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Draynor,
+    .palettes = gTilesetPalettes_Draynor,
+    .metatiles = gMetatiles_Draynor,
+    .metatile_attributes = gMetatileAttributes_Draynor,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Falador =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Falador,
+    .palettes = gTilesetPalettes_Falador,
+    .metatiles = gMetatiles_Falador,
+    .metatile_attributes = gMetatileAttributes_Falador,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Varrock =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Varrock,
+    .palettes = gTilesetPalettes_Varrock,
+    .metatiles = gMetatiles_Varrock,
+    .metatile_attributes = gMetatileAttributes_Varrock,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_AlKharid =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_AlKharid,
+    .palettes = gTilesetPalettes_AlKharid,
+    .metatiles = gMetatiles_AlKharid,
+    .metatile_attributes = gMetatileAttributes_AlKharid,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_IndoorTowns1 =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_IndoorTowns1,
+    .palettes = gTilesetPalettes_IndoorTowns1,
+    .metatiles = gMetatiles_IndoorTowns1,
+    .metatile_attributes = gMetatileAttributes_IndoorTowns1,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PokeScape_Church =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PokeScape_Church,
+    .palettes = gTilesetPalettes_PokeScape_Church,
+    .metatiles = gMetatiles_PokeScape_Church,
+    .metatile_attributes = gMetatileAttributes_PokeScape_Church,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PokeScape_Caves =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PokeScape_Caves,
+    .palettes = gTilesetPalettes_PokeScape_Caves,
+    .metatiles = gMetatiles_PokeScape_Caves,
+    .metatile_attributes = gMetatileAttributes_PokeScape_Caves,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Karamja =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Karamja,
+    .palettes = gTilesetPalettes_Karamja,
+    .metatiles = gMetatiles_Karamja,
+    .metatile_attributes = gMetatileAttributes_Karamja,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Wizards_Tower =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Wizards_Tower,
+    .palettes = gTilesetPalettes_Wizards_Tower,
+    .metatiles = gMetatiles_Wizards_Tower,
+    .metatile_attributes = gMetatileAttributes_Wizards_Tower,
+    .callback = InitTilesetAnim_Wizards_Tower,
+};
+
+const struct Tileset gTileset_DraynorManor =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_DraynorManor,
+    .palettes = gTilesetPalettes_DraynorManor,
+    .metatiles = gMetatiles_DraynorManor,
+    .metatile_attributes = gMetatileAttributes_DraynorManor,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_QueenBlackDragon =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_QueenBlackDragon,
+    .palettes = gTilesetPalettes_QueenBlackDragon,
+    .metatiles = gMetatiles_QueenBlackDragon,
+    .metatile_attributes = gMetatileAttributes_QueenBlackDragon,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Pub =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Pub,
+    .palettes = gTilesetPalettes_Pub,
+    .metatiles = gMetatiles_Pub,
+    .metatile_attributes = gMetatileAttributes_Pub,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Lumbridge_Swamp_Caves =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Lumbridge_Swamp_Caves,
+    .palettes = gTilesetPalettes_Lumbridge_Swamp_Caves,
+    .metatiles = gMetatiles_Lumbridge_Swamp_Caves,
+    .metatile_attributes = gMetatileAttributes_Lumbridge_Swamp_Caves,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Abyss =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Abyss,
+    .palettes = gTilesetPalettes_Abyss,
+    .metatiles = gMetatiles_Abyss,
+    .metatile_attributes = gMetatileAttributes_Abyss,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_GoblinVillage =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_GoblinVillage,
+    .palettes = gTilesetPalettes_GoblinVillage,
+    .metatiles = gMetatiles_GoblinVillage,
+    .metatile_attributes = gMetatileAttributes_GoblinVillage,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Wilderness =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Wilderness,
+    .palettes = gTilesetPalettes_Wilderness,
+    .metatiles = gMetatiles_Wilderness,
+    .metatile_attributes = gMetatileAttributes_Wilderness,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Barbarian_Village =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Barbarian_Village,
+    .palettes = gTilesetPalettes_Barbarian_Village,
+    .metatiles = gMetatiles_Barbarian_Village,
+    .metatile_attributes = gMetatileAttributes_Barbarian_Village,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PokeScape_Sewers =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PokeScape_Sewers,
+    .palettes = gTilesetPalettes_PokeScape_Sewers,
+    .metatiles = gMetatiles_PokeScape_Sewers,
+    .metatile_attributes = gMetatileAttributes_PokeScape_Sewers,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Mazcab =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Mazcab,
+    .palettes = gTilesetPalettes_Mazcab,
+    .metatiles = gMetatiles_Mazcab,
+    .metatile_attributes = gMetatileAttributes_Mazcab,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Dungeoneering =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Dungeoneering,
+    .palettes = gTilesetPalettes_Dungeoneering,
+    .metatiles = gMetatiles_Dungeoneering,
+    .metatile_attributes = gMetatileAttributes_Dungeoneering,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PokeScape_HAM =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PokeScape_HAM,
+    .palettes = gTilesetPalettes_PokeScape_HAM,
+    .metatiles = gMetatiles_PokeScape_HAM,
+    .metatile_attributes = gMetatileAttributes_PokeScape_HAM,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Edgeville =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Edgeville,
+    .palettes = gTilesetPalettes_Edgeville,
+    .metatiles = gMetatiles_Edgeville,
+    .metatile_attributes = gMetatileAttributes_Edgeville,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_IndoorTowns2 =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_IndoorTowns2,
+    .palettes = gTilesetPalettes_IndoorTowns2,
+    .metatiles = gMetatiles_IndoorTowns2,
+    .metatile_attributes = gMetatileAttributes_IndoorTowns2,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Yanille =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Yanille,
+    .palettes = gTilesetPalettes_Yanille,
+    .metatiles = gMetatiles_Yanille,
+    .metatile_attributes = gMetatileAttributes_Yanille,
+    .callback = NULL,
+};
+
+gTileset_Ice_Mountain::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_Ice_Mountain
+	.4byte gTilesetPalettes_Ice_Mountain
+	.4byte gMetatiles_Ice_Mountain
+	.4byte gMetatileAttributes_Ice_Mountain
+	.4byte NULL

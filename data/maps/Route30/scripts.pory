@@ -1,0 +1,166 @@
+
+mapscripts Route30_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+    setvar(VAR_EVOLUTION_MAP_STATE, 16) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    call(MoveNPCsAfterEvents_WILDERNESS_BLOCK)
+    }
+}
+
+
+
+
+script WILDERNESS_SIGNPOST
+{
+    msgbox(format("DANGER!\pBeyond this point you are not safe.\pThere is a high chance that strong wild Monsters and Pkers will attack you."))
+    closemessage
+    release
+    end
+}
+
+script BLOCKADE_ROUTE30_WILDERNESS
+{
+    if (var(VAR_WILDERNESS_BLOCK_STATE) == 1) 
+        {
+            goto(BLOCKADE_ROUTE30_WILDERNESS_3)
+        }
+        else 
+        {
+            faceplayer
+            namebox ("Guard")
+            msgbox(format("Beyond here lies the Wilderness.\pIt is full of many dangerous monsters and people.\pThe king has posted us here to only allow those whomst have proved themselves able to defend themselves."))
+            closemessage
+            hidenamebox
+            call(BLOCKADE_ROUTE30_WILDERNESS_2)
+            closemessage
+            hidenamebox
+            release
+            end
+        }
+}
+
+script BLOCKADE_ROUTE30_WILDERNESS_2 {
+    if (flag(FLAG_BADGE01_GET) && flag(FLAG_BADGE02_GET) && flag(FLAG_BADGE03_GET) && flag(FLAG_BADGE04_GET) && flag(FLAG_BADGE05_GET) && flag(FLAG_BADGE06_GET) && flag(FLAG_BADGE07_GET) && flag(FLAG_BADGE08_GET)){
+            namebox ("Guard")
+            msgbox(format("Impressive!\pYou have all of the MvM Badges, you seem like you are well prepared to now face the Wilderness!\pGood luck on your MvM Championships Journey!"))
+    }
+    else
+    {
+        msgbox(format("WARNING - It is recommended that you have at least 8 Gym Badges before proceeding.\pWould you like to pass and enter the Wilderness?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT)){
+                namebox ("Guard")
+                msgbox(format("You may pass but do not say we didn't warn you."))
+            }
+            else
+            {
+                namebox ("Guard")
+                msgbox(format("A wise choice, it can be very dangerous out there for those who are not prepared."))
+                return
+            }
+    }
+    fadescreen(FADE_TO_BLACK)
+    setvar(VAR_WILDERNESS_BLOCK_STATE, 1)
+    setflag(FLAG_TEMP_1)
+    removeobject(6)
+    removeobject(7)
+    removeobject(8)
+    removeobject(9)
+    call(MoveNPCsAfterEvents_WILDERNESS_BLOCK)
+    special(DrawWholeMapView)
+    closemessage
+    hidenamebox
+    fadescreen(FADE_FROM_BLACK)
+    return
+}
+
+script BLOCKADE_ROUTE30_WILDERNESS_3 {
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("The Wilderness is a dangerous place.\pMake sure you are always cautious while traversing it."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script MoveNPCsAfterEvents_WILDERNESS_BLOCK{
+        switch (var(VAR_WILDERNESS_BLOCK_STATE)){ 
+            case 0: 
+				return
+            case 1:
+				setobjectxyperm(6, 11, 7)
+				setobjectmovementtype(6, MOVEMENT_TYPE_FACE_DOWN)
+
+				setobjectxyperm(7, 12, 7)
+				setobjectmovementtype(7, MOVEMENT_TYPE_FACE_DOWN_AND_LEFT)
+
+                setobjectxyperm(8, 37, 4)
+				setobjectmovementtype(8, MOVEMENT_TYPE_FACE_DOWN_AND_LEFT)
+
+				setobjectxyperm(9, 36, 3)
+				setobjectmovementtype(9, MOVEMENT_TYPE_LOOK_AROUND)
+        }
+}
+
+
+
+
+//NPC
+
+script NPC_ROUTE30_PKER
+{
+    faceplayer
+    namebox ("Darkermanz")
+    msgbox(format("There is nothing more satisfying than spec'ing someone out.\pI love using the move Dark Descent to take my competition out of the game.\pHere I'll share this with you so you can understand what I mean."))
+    closemessage
+    hidenamebox
+    giveitem(ITEM_TM37_THOUSAND_ARROWS)
+    namebox ("Darkermanz")
+    msgbox(format("You should try Dark Descent out on some noobs in the Wilderness."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+//BATTLES
+
+script BATTLE_ROUTE30_TRAINER_1
+{
+    trainerbattle_single(TRAINER_ROUTE30_TRAINER_1, format("I knew this would work, you wanted that item didn't you!\pHah!\nIt was a lure all along!"),format("What?! I've been anti-lured."))
+    namebox ("Black Knight")
+    msgbox(format("I cannot believe I got anti-lured, I hope the other knights don't hear about this.\pJust take your loot and go."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_ROUTE30_TRAINER_2 //Bonbloc 
+{
+    trainerbattle_single(TRAINER_ROUTE30_TRAINER_2, format("Since I cannot PK you, I'll challenge you to a battle instead!"),format("You are lucky you weren't in the Wilderness."))
+    namebox ("Bonbloc")
+    msgbox(format("I am on my way to the Jolly Boar in to split the loot I got while Pking."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_ROUTE30_TRAINER_3 //Youbleedred 
+{
+    trainerbattle_single(TRAINER_ROUTE30_TRAINER_3, format("Woah, woah, woah!\pWhat seems to be the rush?\pWhy not stay for a battle."),format("That was over so fast!"))
+    namebox ("Youbleedred")
+    msgbox(format("Wow you have some skills!\pWe should rush some noobs together in the Wilderness one time."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_ROUTE30_TRAINER_4
+{
+    trainerbattle_single(TRAINER_ROUTE30_TRAINER_4, format("I've been digging these ruins up all day, I could use a break.\pSay lets have a battle!"),format("I think we have uncovered your potential!"))
+    namebox ("Archaeologist")
+    msgbox(format("These ruins look like they used to belong to a cult of Zamorak but I am not sure yet until I uncover some more."))
+	hidenamebox
+    release
+	end
+}

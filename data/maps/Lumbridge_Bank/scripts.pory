@@ -1,0 +1,114 @@
+
+
+mapscripts Lumbridge_Bank_MapScripts {
+    MAP_SCRIPT_ON_LOAD { //ON LOAD FOR MAP TILES
+    call(Lumbridge_Bank_OnTransition)
+    }
+} 
+
+
+
+script Lumbridge_Bank_OnTransition {
+    setrespawn(HEAL_LOCATION_LUMBRIDGE)
+    return
+}
+
+
+script BANK_EventScript_PC {
+    setvar(VAR_0x800B, LOCALID_NURSE)
+    lock
+	faceplayer
+    namebox ("Banker")
+	msgbox(format("Welcome to the Bank of PokeScape."))
+	
+    msgbox(format("Would you like to heal your MONSTERs?"), MSGBOX_YESNO)
+	while (var(VAR_RESULT) != 1) {
+        msgbox(format("Very well, come again soon."))	
+        hidenamebox
+        release
+        end
+	}
+    msgbox(format("Your MONSTERs are all healed!"))
+    special(HealPlayerParty)
+    hidenamebox
+	release
+	end
+}
+
+
+script BANK_EventScript_Banker {
+    
+	faceplayer
+    //namebox ("Banker")
+    msgbox(format("Welcome to the Bank of PokeScape.\pHow may I help you today?"))
+	waitmessage
+    goto(BANK_OPTIONS)
+}
+script BANK_OPTIONS {
+    closemessage
+    multichoicedefault (1, 0, MULTI_BANKOPTIONS, 0, 0)
+		switch (var(VAR_RESULT))
+		{
+			case 0:
+				goto(BANK_HEAL)
+			case 1:
+				goto(EventScript_AccessPokemonStorage)
+                //goto(EventScript_AccessHallOfFame)
+            case 2:
+                goto(EventScript_AccessPlayersPC)
+            //case: MULTI_B_PRESSED (BANK_ExitBank)
+            case 3:
+                goto (BANK_ExitBank)
+		}	
+        end
+
+	//special(ScriptMenu_CreatePCMultichoice)
+	waitstate
+	goto(EventScript_AccessPC)
+	end
+}
+
+script BANK_ExitBank
+{
+	setvar (VAR_0x8004, 0)
+	playse (SE_PC_OFF)
+	//special (DoPCTurnOffEffect)
+	releaseall
+	end
+}
+
+script BANK_HEAL {
+    msgbox(format("Very well, I will take your MONSTERs for a minute."))
+    closemessage
+    fadescreen(FADE_TO_BLACK)
+    playfanfare (MUS_HEAL)
+	waitfanfare
+	special (HealPlayerParty)
+    fadescreen(FADE_FROM_BLACK)
+    msgbox(format("Your MONSTERs are all healed!\pPlease come again soon."))
+    hidenamebox
+	releaseall
+	end
+}
+
+
+	//msgbox(format("Would you like to access your Bank Account?"), MSGBOX_YESNO)
+	//while (var(VAR_RESULT) != 1) {
+    //    msgbox(format("Very well, come again soon."))	
+    //    hidenamebox
+    //    release
+    //    end
+        
+	//}
+    //hidenamebox
+	//special(ShowPokemonStorageSystemPC)
+    //special(PlayerPC)
+	//waitstate
+    //namebox ("Banker")
+	//msgbox(format("Thank you for using the Bank of PokeScape."))
+    //hidenamebox
+	//release
+	//end
+//}
+
+

@@ -1,0 +1,372 @@
+mapscripts Lumbridge_House_Starter1_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE 
+    [
+        VAR_TEMP_0, 0: Explorer_Jack_1
+    ]
+}
+
+script Explorer_Jack_1
+{
+    if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    {
+        if (!flag(FLAG_SET_WALL_CLOCK)){
+            lockall
+            setvar(VAR_POKESCAPE_STARTER_HOUSE_STATE, 1)
+            playse(SE_PIN)
+            applymovement(1, Movement_Explorer_Jack_1)
+            waitmovement (0)
+            namebox ("Explorer Jack")
+            msgbox(format("You're awake!\pDo you know what time it is?"))
+            goto (SetClock)
+            hidenamebox
+            setvar(VAR_TEMP_0, 1)
+            release
+            end
+        }
+        else {
+            setvar(VAR_TEMP_0, 1)
+            release
+            end
+        }
+    }
+    else //if OPENWORLD
+    {
+        setvar(VAR_TEMP_0, 1) 
+        release
+    }
+}
+
+script SetClock
+{
+	fadescreen (FADE_TO_BLACK)
+	special (StartWallClock)
+	waitstate
+	setflag (FLAG_SET_WALL_CLOCK)
+	goto (Explorer_Jack_2)
+}
+
+script Explorer_Jack_2 {
+	namebox ("Explorer Jack")
+    gettime
+    if (var(VAR_0x8000) < 7 || var(VAR_0x8000) >= 21) {
+        msgbox(format("Are you sure you don't want to go back to bed?"))
+    } elif (var(VAR_0x8000) < 12) {
+        msgbox(format("I am surprised you're up this early, you usually oversleep."))
+    } else {
+        msgbox(format("It's about time you got up."))
+    }
+	msgbox(format("Anyhow, I've got some news for you.\pApparently a famous researcher is currently visiting the Duke in Lumbridge Castle and I heard he is giving out Monsters to anyone who can help him with a quest!\pI think you should go pay him a visit seeing as you've always had a fondness for adventures."))
+	closemessage
+	hidenamebox
+	applymovement(1, Movement_Explorer_Jack_2)
+	waitmovement (0)
+	setflag (FLAG_RECEIVED_RUNNING_SHOES)
+	setflag (FLAG_SYS_B_DASH)
+    setflag (FLAG_SYS_QUEST_MENU_GET) //Unlocks quest menu.
+    additem (ITEM_ROTTEN_POTATO)
+	release
+	end
+}
+
+movement Movement_Explorer_Jack_1
+{
+	face_up
+	emote_exclamation_mark
+	delay_8
+	walk_up * 2
+	walk_right
+	face_up
+}
+
+movement Movement_Explorer_Jack_2
+{
+	walk_left * 3
+	walk_up
+}
+
+script Explorer_Jack_3 {
+	lock
+	faceplayer
+    if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    {
+        if((var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE) == 0)){
+            namebox ("Explorer Jack")
+            msgbox(format("You should make your way to Lumbridge Castle."))
+            hidenamebox
+            release
+            end
+        }
+        else {
+            namebox ("Explorer Jack")
+            msgbox(format("Wow!\pThe researcher gave you a monster and you've been invited to participate in the MvM Championships?!\pHow Lucky!"))
+            hidenamebox
+            release
+            end
+        }
+    }
+    else //if OPENWORLD
+    {
+        namebox ("Explorer Jack")
+        msgbox(format("Lumbridge Castle is where this towns MvM Championships battle is held.\pThe current Leader of our town is Duke Horacio."))
+        hidenamebox
+        release
+        end
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+//------------------------------------------------------------------
+//POKESCAPE ITEMS
+//---------------------------------
+script CHEAT_ITEM_PULSE_CORE
+{
+    finditem(ITEM_PULSE_CORE)
+    end
+}
+
+script ITEM_LUMBRIDGE_BREAD_1
+{
+    finditem(ITEM_BREAD)
+    end
+}
+
+script ITEM_LUMBRIDGE_STEEL_POUCH
+{
+    finditem(ITEM_STEEL_POUCH)
+    end
+}
+
+script ITEM_LUMBRIDGE_DRUNK_DRAGON
+{
+    finditem(ITEM_DRUNK_DRAGON)
+    end
+}
+
+script ITEM_LUMBRIDGE_BREAD_2
+{
+    finditem(ITEM_BREAD)
+    end
+}
+
+script ITEM_ROUTE1_BALL_OF_WOOL
+{
+    finditem(ITEM_WOOLBALL)
+    end
+}
+
+script ITEM_LUMBRIDGE_CAKE
+{
+    finditem(ITEM_CAKE)
+    end
+}
+
+script ITEM_LUMBRIDGE_PRISMATIC_STAR
+{
+    finditem(ITEM_PRISMATIC_STAR)
+    end
+}
+
+script ITEM_ROUTE1_DEATH_RUNE
+{
+    finditem(ITEM_EARTH_RUNE)
+    end
+}
+
+script ITEM_ROUTE1_CHOC_SUNDAY
+{
+    finditem(ITEM_CHOCOLATE_SUNDAY)
+    end
+}
+
+script ITEM_ROUTE1_BREAD
+{
+    finditem(ITEM_BREAD)
+    end
+}
+
+script ITEM_ROUTE1_CHOCOLATE_SUNDAY
+{
+    finditem(ITEM_CHOCOLATE_SUNDAY)
+    end
+}
+
+script ITEM_MILLLANEMILL_TM05
+{
+    finditem(ITEM_TM05_TAILWIND)
+    end
+}
+
+script ITEM_MILLLANEMILL_MITHRIL_POUCH
+{
+    finditem(ITEM_MITHRIL_POUCH)
+    end
+}
+
+script ITEM_DRAYNORMANOR_CAKE
+{
+    finditem(ITEM_CAKE)
+    end
+}
+
+script ITEM_DRAYNORMANOR_CABBAGE
+{
+    finditem(ITEM_CABBAGE)
+    end
+}
+
+script ITEM_DRAYNOR_DEFENCE_POTION
+{
+    finditem(ITEM_POTION_DEF)
+    end
+}
+
+script ITEM_DRAYNORSEWERS_TM50
+{
+    finditem(ITEM_TM50_POISON_JAB)
+    end
+}
+
+script ITEM_DRAYNORSEWERS_BEER
+{
+    finditem(ITEM_STAT_BEER)
+    end
+}
+
+script ITEM_ROUTE2_MAGIC_POTION
+{
+    finditem(ITEM_POTION_SPATT)
+    end
+}
+
+script ITEM_ROUTE2_RUNE_POUCH
+{
+    finditem(ITEM_RUNE_POUCH)
+    end
+}
+
+script ITEM_WIZARDSTOWER_WIZARDS_HAT
+{
+    finditem(ITEM_WIZARDS_HAT)
+    end
+}
+
+script ITEM_WIZARDSTOWER_AIR_RUNE
+{
+    finditem(ITEM_AIR_RUNE)
+    end
+}
+
+script ITEM_WIZARDSTOWER_WATER_RUNE
+{
+    finditem(ITEM_WATER_RUNE)
+    end
+}
+script ITEM_WIZARDSTOWER_EARTH_RUNE
+{
+    finditem(ITEM_EARTH_RUNE)
+    end
+}
+script ITEM_WIZARDSTOWER_FIRE_RUNE
+{
+    finditem(ITEM_FIRE_RUNE)
+    end
+}
+
+script ITEM_ROUTE12_BREAD
+{
+    finditem(ITEM_BREAD)
+    end
+}
+
+script ITEM_ROUTE12_WIZARDS_BLIZZARD
+{
+    finditem(ITEM_WIZARDS_BLIZZARD)
+    end
+}
+
+script ITEM_ROUTE12_CABBAGE
+{
+    finditem(ITEM_CABBAGE)
+    end
+}
+
+script ITEM_ROUTE12_ATTACK_POTION
+{
+    finditem(ITEM_POTION_ATT)
+    end
+}
+
+script ITEM_ROUTE12_EGG
+{
+    finditem(ITEM_CHOCOLATE_SUNDAY)
+    end
+}
+
+script ITEM_ROUTE12_PRAYER_POTION
+{
+    finditem(ITEM_PRAYER_POTION)
+    end
+}
+
+//DRAYNOR MANOR
+
+script ITEM_DRAYNORMANOR_TM43_PSYCHO_CUT
+{
+    finditem(ITEM_TM43_PSYCHO_CUT)
+    end
+}
+
+
+//WIZARDS TOWER
+script ITEM_WIZARDSTOWER_AIR_RUNE_2
+{
+    finditem(ITEM_AIR_RUNE)
+    end
+}
+
+script ITEM_ROUTE4_FLAX
+{
+    finditem(ITEM_FLAX)
+    end
+}
+
+//PORT SARIM
+//HIDDEN:  WATER_RUNE, LAMP_SPEED
+script ITEM_PORTSARIM_BLUEBERRY_SPECIAL
+{
+    finditem(ITEM_BLUEBERRY_SPECIAL)
+    end
+}
+
+script ITEM_PORTSARIM_ITEM_FRUIT_BLAST
+{
+    finditem(ITEM_FRUIT_BLAST)
+    end
+}
+
+script ITEM_PORTSARIM_ITEM_SPIRIT_SHARD
+{
+    finditem(ITEM_SPIRIT_SHARD)
+    end
+}
+//LUMBRIDGE SWAMP
+script ITEM_LUMBRIDGESWAMP_ITEM_SPIRIT_SHARD
+{
+    finditem(ITEM_SPIRIT_SHARD)
+    end
+}
+
+script ITEM_LUMBRIDGE_FOREST_CABBAGE
+{
+    finditem(ITEM_CABBAGE)
+    end
+}

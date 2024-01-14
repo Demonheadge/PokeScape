@@ -1,0 +1,1322 @@
+const ELEJ_ID = 20
+const ELEJ_SPOT_1_ID = 24
+const ELEJ_SPOT_2_ID = 14
+const ELEJ_SPOT_3_ID = 8
+const ELEJ_SPOT_4_ID = 9
+const MORGAN_ID = 10
+const MAGNOLIA_ID = 17
+
+//Rellekka
+const LOCALID_Maria = 20
+const LOCALID_Mord = 21
+const LOCALID_BOAT = 22
+
+//JAGEX ROOM
+const BATS_ID = 1
+const DRAGON_ID = 2
+
+mapscripts Jatizso_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 11) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+        call(JATIZSO_STATE)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_POKESCAPE_RAC_QUEST_STATE, 5: RAC_QUEST_START_P2_JATIZSO
+    ]
+}
+
+script JATIZSO_STATE {
+
+    if (flag(FLAG_EVENT_TEAM_JATIZSO)) 
+    {
+        if (var(VAR_POKESCAPE_RAC_QUEST_ELEJ) == 0)
+        {
+            removeobject(ELEJ_SPOT_1_ID)
+            removeobject(ELEJ_SPOT_2_ID)
+            removeobject(ELEJ_SPOT_3_ID)
+            removeobject(ELEJ_SPOT_4_ID)
+            setflag(FLAG_TEMP_A)
+            setflag(FLAG_TEMP_B)
+            setflag(FLAG_TEMP_C)
+            setflag(FLAG_TEMP_D)
+        }
+        if (var(VAR_POKESCAPE_RAC_QUEST_ELEJ) == 5)
+        {
+            addobject(ELEJ_SPOT_1_ID)
+            removeobject(ELEJ_SPOT_2_ID)
+            removeobject(ELEJ_SPOT_3_ID)
+            removeobject(ELEJ_SPOT_4_ID)
+            clearflag(FLAG_TEMP_A)
+            setflag(FLAG_TEMP_B)
+            setflag(FLAG_TEMP_C)
+            setflag(FLAG_TEMP_D)
+        }
+        if (var(VAR_POKESCAPE_RAC_QUEST_ELEJ) == 10)
+        {
+            removeobject(ELEJ_SPOT_1_ID)
+            addobject(ELEJ_SPOT_2_ID)
+            removeobject(ELEJ_SPOT_3_ID)
+            removeobject(ELEJ_SPOT_4_ID)
+            setflag(FLAG_TEMP_A)
+            clearflag(FLAG_TEMP_B)
+            setflag(FLAG_TEMP_C)
+            setflag(FLAG_TEMP_D)
+            setobjectxyperm(ELEJ_ID, 31, 28)
+            setobjectmovementtype(ELEJ_ID, MOVEMENT_TYPE_LOOK_AROUND)
+        }
+        if (var(VAR_POKESCAPE_RAC_QUEST_ELEJ) == 15)
+        {
+            removeobject(ELEJ_SPOT_1_ID)
+            removeobject(ELEJ_SPOT_2_ID)
+            addobject(ELEJ_SPOT_3_ID)
+            removeobject(ELEJ_SPOT_4_ID)
+            setflag(FLAG_TEMP_A)
+            setflag(FLAG_TEMP_B)
+            clearflag(FLAG_TEMP_C)
+            setflag(FLAG_TEMP_D)
+            setobjectxyperm(ELEJ_ID, 20, 8)
+            setobjectmovementtype(ELEJ_ID, MOVEMENT_TYPE_LOOK_AROUND)
+        }
+        if (var(VAR_POKESCAPE_RAC_QUEST_ELEJ) == 20)
+        {
+            removeobject(ELEJ_SPOT_1_ID)
+            removeobject(ELEJ_SPOT_2_ID)
+            removeobject(ELEJ_SPOT_3_ID)
+            addobject(ELEJ_SPOT_4_ID)
+            setflag(FLAG_TEMP_A)
+            setflag(FLAG_TEMP_B)
+            setflag(FLAG_TEMP_C)
+            clearflag(FLAG_TEMP_D)
+            setobjectxyperm(ELEJ_ID, 25, 4)
+            setobjectmovementtype(ELEJ_ID, MOVEMENT_TYPE_LOOK_AROUND)
+        }
+        if (var(VAR_POKESCAPE_RAC_QUEST_ELEJ) == 25)
+        {
+            removeobject(ELEJ_SPOT_1_ID)
+            removeobject(ELEJ_SPOT_2_ID)
+            removeobject(ELEJ_SPOT_3_ID)
+            removeobject(ELEJ_SPOT_4_ID)
+            setflag(FLAG_TEMP_A)
+            setflag(FLAG_TEMP_B)
+            setflag(FLAG_TEMP_C)
+            setflag(FLAG_TEMP_D)
+            setobjectxyperm(ELEJ_ID, 12, 15)
+            setobjectmovementtype(ELEJ_ID, MOVEMENT_TYPE_LOOK_AROUND)
+        }
+
+
+
+
+
+
+
+    
+    }
+    return
+}
+
+
+
+
+script JATIZSO_INTERACT
+{
+    msgbox(format("It is a Gnome Glider."))
+    closemessage
+    release
+    end
+}
+
+//NPCS
+script JATIZSO_NPC_Lights
+{
+    lock
+    faceplayer
+    namebox ("Lights")
+    checktrainerflag(TRAINER_MITHRILMAN1) 
+    if (!var(VAR_RESULT))
+		{	
+            msgbox(format("Psst…\pPhantom and I are about to pull off a once in a lifetime heist.\pAnd you are in our way!"))
+            closemessage
+            hidenamebox
+            trainerbattle_no_intro(TRAINER_MITHRILMAN1,format("…"))
+        }
+    msgbox(format("By any chance could I persuade you into not telling the guards?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+script JATIZSO_NPC_Nicki
+{
+    lock
+    faceplayer
+    namebox ("Morgan")
+
+    random(4)
+        switch (var(VAR_RESULT)) { 
+        case 0: 
+            msgbox(format("STUPID NEITZNOTS!"))
+        case 1: 
+            msgbox(format("DRAGONS R HOT!"))
+        case 2: 
+            msgbox(format("COME OVER HERE!\pI WILL MESS YOU UP!"))
+        case 3: 
+            msgbox(format("STUPID YAK LOVERS!"))
+            faceplayer
+            msgbox(format("Actually, we all really like Yaks but don't tell them that."))
+            //face right.
+        }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+script JATIZSO_NPC_AeternusLux
+{
+    lock
+    faceplayer
+    namebox ("Lux")
+    msgbox(format("I enjoy staring out into the sea.\pIt reminds me of Boni.\pOH WHY!\pWhy did the Art Fight have to be held on Jatizso and not the Arc!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+script JATIZSO_NPC_Willoway
+{
+    lock
+    //SHOW SILSKE
+    //FACE SILSKE (!)
+    //HIDE SILSKE
+    msgbox(format("…\pYou know I saw you right?"))
+    faceplayer
+    namebox ("Fay")
+    msgbox(format("…\pHe won't leave me alone."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+script JATIZSO_NPC_Casilliio
+{
+    lock
+    faceplayer
+    namebox ("Cass")
+    msgbox(format("I heard the king was over taxing his people so I came to educate him."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script JATIZSO_NPC_Pop
+{
+	lock
+    namebox ("Pop")
+    playmoncry(SPECIES_SHELLDER, 0)
+	msgbox(format("PAWEEEW!"))
+    waitmoncry
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+script JATIZSO_NPC_Mothy
+{
+    lock
+    faceplayer
+    namebox ("Evelynn")
+    msgbox(format("BUZZ OFF!\pI do not care if you are a Neitiznot or a Jatizso.\pYou all disgust me the same.\pNOW SCRAM!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+script JATIZSO_NPC_Cici
+{
+    lock
+    faceplayer
+    namebox ("Magnolia")
+    msgbox(format("Morgan please stop yelling at the Neitiznots.\pIt is not helping anyone."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+script JATIZSO_NPC_taffingspy
+{
+    lock
+    faceplayer
+    namebox ("Florin")
+    msgbox(format("I would challenge you to a battle but I do not want Kitty to be hurt anymore than she has."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script JATIZSO_NPC_Kitty
+{
+	lock
+    namebox ("Kitty")
+    playmoncry(SPECIES_MEOWTH, 0)
+	msgbox(format("Meowar!"))
+    waitmoncry
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script JATIZSO_NPC_JacksonOHare
+{
+    if ((var(VAR_POKESCAPE_RAC_QUEST_STATE) == 20) && (flag(FLAG_EVENT_TEAM_JATIZSO)) )
+    {
+        goto(RAC_QUEST_JATIZSO_JAGEX_P2)
+    }
+    lock
+    faceplayer
+    namebox ("Jackson")
+    msgbox(format("I like it here on Jatizso, there are no rabbits in sight.\pI could never see myself staying with those rabbit infested Neitiznots!"))
+    closemessage
+    hidenamebox
+    release
+    end
+    
+}
+script JATIZSO_NPC_BonBun
+{
+	lock
+    namebox ("Bon-Bun")
+    playmoncry(SPECIES_SHELLDER, 0)
+	msgbox(format("BOOOOON!"))
+    waitmoncry
+    hidenamebox
+    //jackson face bon-bun
+    namebox ("Jackson")
+    msgbox(format("Bon-Bun… I do wish you would stop calling me Jackie."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+
+script JATIZSO_NPC_Elej 
+{
+    if ( (var(VAR_POKESCAPE_RAC_QUEST_STATE) == 20) && (var(VAR_POKESCAPE_RAC_QUEST_ELEJ) == 25) && (flag(FLAG_EVENT_TEAM_JATIZSO)) )
+    {
+        lock
+        faceplayer
+        namebox ("Elej")
+        //msgbox(format("Quest Complete."))
+        msgbox(format("Thank you again for all of your help!\pI look forward to battling alongside you in the Art Fight."))
+        closemessage
+        hidenamebox
+        release
+        end
+    }
+    if ((var(VAR_POKESCAPE_RAC_QUEST_STATE) == 20) && (flag(FLAG_EVENT_TEAM_JATIZSO))) 
+    {
+        goto(RAC_QUEST_JATIZSO_ELEJ_P1)
+    }
+    
+    lock
+    faceplayer
+    namebox ("Elej")
+    msgbox(format("Do you think this picture best shows off Jatizso in all of its glory?\pI want to send it to the Neitiznots as a peace offering."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+//Looks at painting on the wall
+script JATIZSO_NPC_ModDragon_ModBats 
+{
+
+    if ((var(VAR_POKESCAPE_RAC_QUEST_STATE) == 20) && (flag(FLAG_EVENT_TEAM_JATIZSO))) 
+    {
+        goto(RAC_QUEST_JATIZSO_JAGEX_P1)
+    }
+
+    lock
+    namebox ("Madame Dragon")
+    msgbox(format("This is so tasteful!"))
+    closemessage
+    hidenamebox
+    namebox ("Bats")
+    msgbox(format("TASTEFUL!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+script JATIZSO_NPC_Hakazin
+{
+    lock
+    namebox ("Laith")
+    msgbox(format("The king wants us to fortify the boarders from the Neitiznots."))
+    closemessage
+    hidenamebox
+    namebox ("Alexandra")
+    msgbox(format("What would that even entail?"))
+    closemessage
+    hidenamebox
+    namebox ("Laith")
+    msgbox(format("I am not sure, last time it was throwing more salt into the water."))
+    closemessage
+    hidenamebox
+    namebox ("Alexandra")
+    msgbox(format("…\pI remember that."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+script JATIZSO_NPC_Dewydd 
+{
+    lock
+    faceplayer
+    namebox ("Dewydd")
+    msgbox(format("Don't mind me.\pI am just trying to create a spell to turn all the Neitiznots into Yaks."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+script JATIZSO_NPC_Charmchi 
+{
+    lock
+    faceplayer
+    namebox ("Charm")
+    msgbox(format("Can you go ask the king when we can go fight those Neitiznots?\pI am itchin for a fight!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script JATIZSO_NPC_Tifa
+{
+    lock
+    faceplayer
+    namebox ("Charm")
+    msgbox(format("Unless we are going into battle can you please leave me alone.\pUnless you would like to be friends?\pJK! HAHA! FORGET I SAID ANYTHING!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+script JATIZSO_NPC_Moggies
+{
+	lock
+    namebox ("Moggies")
+    playmoncry(SPECIES_TORCHIC, 0)
+	msgbox(format("BWAK!"))
+    waitmoncry
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script JATIZSO_NPC_Rallis
+{
+    lock
+    faceplayer
+    namebox ("Rallis")
+    msgbox(format("Hey did you pass Relleka on your way here?\pDo you think on your way back you could tell Olaf to come for a visit?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+script JATIZSO_NPC_Jaxyys
+{
+    if ((var(VAR_POKESCAPE_RAC_QUEST_STATE) == 15) && (flag(FLAG_EVENT_TEAM_JATIZSO))) 
+    {
+        goto(RAC_QUEST_START_P3_JATIZSO_Jaxyys)
+    }
+    if ((var(VAR_POKESCAPE_RAC_QUEST_STATE) == 20) && (flag(FLAG_EVENT_TEAM_JATIZSO))) 
+    {
+        goto(RAC_QUEST_START_P3_JATIZSO_Jaxyys_check)
+    }
+    lock
+    faceplayer
+    namebox ("Jaxyys")
+    msgbox(format("Hello, you should speak to the King and not me if you wish to have Honourable Holmgang."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script JATIZSO_NPC_Enko
+{
+    if ((var(VAR_POKESCAPE_RAC_QUEST_STATE) == 15) && (flag(FLAG_EVENT_TEAM_JATIZSO))) 
+    {
+        goto(RAC_QUEST_START_P3_JATIZSO_ENKO)
+    }
+    if ((var(VAR_POKESCAPE_RAC_QUEST_STATE) == 20) && (flag(FLAG_EVENT_TEAM_JATIZSO))) 
+    {
+        goto(RAC_QUEST_START_P3_JATIZSO_ENKO_check)
+    }
+    lock
+    faceplayer
+    namebox ("Enko")
+    msgbox(format("Hello, you should speak to the King and not me if you wish to have Honourable Holmgang."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+script JATIZSO_NPC_KING
+{
+    if ((var(VAR_POKESCAPE_RAC_QUEST_STATE) == 10) && (flag(FLAG_EVENT_TEAM_JATIZSO))) 
+    {
+        goto(RAC_QUEST_START_P3_JATIZSO)
+    }
+    lock
+    faceplayer
+    namebox ("KING")
+    msgbox(format("GO AWAY!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+
+//---------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+//RAC QUEST-----------------------------
+
+script RAC_QUEST_START
+{
+    lock
+    //move
+    applymovement(LOCALID_Mord, Movement_InteractRIGHT)
+    waitmovement(0)
+    namebox ("Mord Gunnars")
+    msgbox(format("JJATIZSO artists are better!"))
+    closemessage
+    hidenamebox
+    //move
+    applymovement(LOCALID_Maria, Movement_InteractLEFT)
+    waitmovement(0)
+    namebox ("Maria Gunnars")
+    msgbox(format("No NEITIZNOT artists are better!"))
+    closemessage
+    hidenamebox
+
+    msgbox(format("They seem to be arguing over which island has the better artists.\pWould you like to start the Art Fight Quest?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+        startquest (QUEST_ARTFIGHT_JATIZSO)
+        goto(RAC_QUEST_START_P1)
+    }
+    msgbox(format("You decide to leave them to bicker amongst themselves."))
+    closemessage
+    release
+    end
+}
+
+
+script RAC_QUEST_START_P1
+{
+    lock
+    //faceplayer
+    applymovement(LOCALID_Maria, Movement_InteractFACEDOWN)
+    waitmovement(0)
+    namebox ("Maria Gunnars")
+    msgbox(format("You there, settle this for us.\pWhich artists do you think are better?"))
+    //move
+    closemessage
+    hidenamebox
+    applymovement(LOCALID_Mord, Movement_InteractRIGHT)
+    waitmovement(0)
+    namebox ("Mord Gunnars")
+    msgbox(format("Clearly JATIZSO artists are better!"))
+    //move
+    closemessage
+    hidenamebox
+
+    applymovement(LOCALID_Maria, Movement_InteractLEFT)
+    waitmovement(0)
+    namebox ("Maria Gunnars")
+    msgbox(format("No clearly NEITZNOT artists are better!!"))
+    closemessage
+    hidenamebox
+
+    msgbox(format("Choose a team.\n(You cannot change this later.)"))
+    multichoicedefault (1, 0, MULTI_FREMMYTEAMS, 0, 1)
+    switch (var(VAR_RESULT))
+    {
+        case 0:
+            closemessage
+            applymovement(LOCALID_Mord, Movement_InteractRIGHT)
+            waitmovement(0)
+            namebox ("Mord Gunnars")
+            msgbox(format("Ha! I told you JATIZSO artists were better!"))
+            applymovement(LOCALID_Mord, Movement_InteractFACEDOWN)
+            waitmovement(0)
+            msgbox(format("Adventurer, allow me to ferry you to Jatizso any time."))
+            closemessage
+            hidenamebox
+            setflag(FLAG_EVENT_TEAM_JATIZSO)
+            setvar(VAR_POKESCAPE_RAC_QUEST_STATE, 5)
+            //goto(BANK_HEAL)
+        case 1:
+            closemessage
+            applymovement(LOCALID_Maria, Movement_InteractLEFT)
+            waitmovement(0)
+            namebox ("Maria Gunnars")
+            msgbox(format("Ha! I told you NEITIZNOT artists were better!"))
+            applymovement(LOCALID_Maria, Movement_InteractFACEDOWN)
+            waitmovement(0)
+            msgbox(format("Adventurer, allow me to ferry you to Neitiznot at any time."))
+            closemessage
+            hidenamebox
+            setflag(FLAG_EVENT_TEAM_NEITIZNOT)
+            setvar(VAR_POKESCAPE_RAC_QUEST_STATE, 5)
+            //goto(BANK_HEAL)
+        case 2:
+            //goto(EventScript_AccessPlayersPC)
+        //case: MULTI_B_PRESSED (BANK_ExitBank) //maybe add a while so they cannot say no.
+        case 3:
+            goto (BANK_ExitBank)
+    }	
+    release
+    end
+
+}
+
+
+
+
+
+script RAC_QUEST_START_P2_NEITIZNOT
+{
+    //faceplayer applymovement
+    lock
+    namebox ("Maria Gunnars")
+    msgbox(format("Welcome to Neitiznot adventurer.\pThis land is full of amazing artists and Yaks!\pStop by the Longhall in town and tell our King how much you like Neitiznot artists better than Jatizso!\pIf you are lucky you might even be able to challenge the King to Honourable Holmgang.\pWhich is just the way we say Gym Battle.\pEnjoy exploring the Island of Neitiznot.\pCome speak to me again if you wish to travel back to Rellekka."))
+    setvar(VAR_POKESCAPE_RAC_QUEST_STATE, 10)
+    hidenamebox
+    closemessage
+    release
+    end
+}
+script RAC_QUEST_START_P2_JATIZSO
+{
+    //faceplayer applymovement
+    applymovement(LOCALID_Mord, Movement_InteractFACELEFT)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+    waitmovement(0)
+    lock
+    namebox ("Mord Gunnars")
+    msgbox(format("Welcome to Jatizso adventurer.\pThis land is full of amazing artists and Rock Crabs!\pStop by the Longhall in town and tell our King how much you like Jatizso artists better than Neitiznot!\pIf you are lucky you might even be able to challenge the King to Honourable Holmgang.\pWhich is just the way we say Gym Battle.\pEnjoy exploring the Island of Jatizso.\pCome speak to me again if you wish to travel back to Rellekka."))
+    setvar(VAR_POKESCAPE_RAC_QUEST_STATE, 10)
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+
+script RAC_QUEST_START_P3_JATIZSO
+{
+    lock
+    faceplayer
+    namebox ("King")
+    msgbox(format("How dare you approach me?!\pWhat do you want?\p…{PAUSE 15} …{PAUSE 15} …{PAUSE 15} …{PAUSE 15} …\pI see, you desire to have Honourable Holmgang with me?\pPAH! I don’t even know who you are!\pFor all I know you could be a filthy Yak lover from Neitiznot!\pAnyway I am way too busy preparing for a battle against Neitiznot.\pI will not even consider your challenge until the battle is won.\pSince you are here, I shall recruit you!\pProve yourself and I might just consider your challenge.\pGo speak with Jaxyys and they will give you more details.\pNow go away.\nI am done with you."))
+    setvar(VAR_POKESCAPE_RAC_QUEST_STATE, 15)
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+script RAC_QUEST_START_P3_JATIZSO_Jaxyys
+{
+    lock
+    faceplayer
+    namebox ("Jaxyys")
+    msgbox(format("So you are the new recruit!\pYour first task is to ensure all the other artists are ready for the battle ahead.\pGo around the Isle of Jatizso and speak with each of them and make sure they are ready to go.\pIf you have any questions feel free to come back and speak with myself or Enko."))
+    setvar(VAR_POKESCAPE_RAC_QUEST_STATE, 20)
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script RAC_QUEST_START_P3_JATIZSO_Jaxyys_check
+{
+    lock
+    faceplayer
+    namebox ("Jaxyys")
+    msgbox(format("Hey recruit, have you ensured that all the other artists are ready for the battle ahead?"))
+    closemessage
+    
+
+
+    if ( (var(VAR_POKESCAPE_RAC_QUEST_ELEJ) == 25) ) // &&
+        {
+            closemessage
+            hidenamebox
+            release
+            end
+        }
+
+    msgbox(format("So it seems we are still waiting on “X” amount of artists to confirm that they are ready for the fight.\pThe artists are all around the island, they may be inside of the buildings, some of them might also have things they need to do before joining.\pIf you could help them complete their tasks that would be great.\pCome back to me once everyone is ready."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+script RAC_QUEST_START_P3_JATIZSO_ENKO
+{
+    lock
+    faceplayer
+    namebox ("Enko")
+    msgbox(format("I think Jaxyys would like to talk to you."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script RAC_QUEST_START_P3_JATIZSO_ENKO_check
+{
+    lock
+    faceplayer
+    namebox ("Enko")
+    msgbox(format("Hello recruit, I can provide you some hints for where people are located.\pWould you like a hint?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//ELEJ QUEST-----------------------------------------------------------------------------------------------
+script RAC_QUEST_JATIZSO_ELEJ_P1 
+{
+    lock
+    if (flag(FLAG_EVENT_TEAM_JATIZSO)) 
+    {
+        if ((var(VAR_POKESCAPE_RAC_QUEST_ELEJ) == 5) || (var(VAR_POKESCAPE_RAC_QUEST_ELEJ) == 10) || (var(VAR_POKESCAPE_RAC_QUEST_ELEJ) == 15) || (var(VAR_POKESCAPE_RAC_QUEST_ELEJ) == 20))
+        {
+            faceplayer
+            namebox ("Elej")
+            msgbox(format("Rememeber we should be looking for a location that helps make Jatizso 'shine'!"))
+            closemessage
+            hidenamebox
+        }
+        if (var(VAR_POKESCAPE_RAC_QUEST_ELEJ) == 0)
+        {
+            namebox ("Elej")
+            msgbox(format("Hmm…{PAUSE 15}…{PAUSE 15}…\nHMMMMMMMM…{PAUSE 15}…{PAUSE 15}…\pHMMMMMMMMMMM…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}…!\pNo this does not work!"))
+            closemessage
+            hidenamebox
+            applymovement(ELEJ_ID, Movement_QuestionMark)
+            playse(SE_PIN)
+            waitmovement(0)
+            faceplayer
+            namebox ("Elej")
+            msgbox(format("Oh hello I didn't see you there.\pWhat can I do for you?"))
+            closemessage
+            hidenamebox
+
+            applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractUP)
+            waitmovement(0)
+
+            namebox ("Elej")
+            msgbox(format("The Art Fight?\pI would love to join but I am actually quite busy at the moment.\pYou see, I want to take the best picture that shows off Jatizso in all of its glory!"))
+            closemessage
+            hidenamebox
+
+            applymovement(ELEJ_ID, Movement_InteractFACEUP)
+            waitmovement(0)
+            delay(30)
+
+            namebox ("Elej")
+            msgbox(format("…{PAUSE 16}…"))
+            closemessage
+            hidenamebox
+            faceplayer
+            namebox ("Elej")
+            msgbox(format("But I cannot seem to get this shot right.\pDo you think you could help me find an ideal location to take this picture?"), MSGBOX_YESNO)
+            if (!var(VAR_RESULT))
+            { 
+                msgbox(format("Sigh, perhaps another time…"))
+                closemessage
+                hidenamebox
+                applymovement(ELEJ_ID, Movement_InteractFACEUP)
+                waitmovement(0)
+                release
+                end
+            }
+            msgbox(format("Oh yay thank you!\pTake a look around town, we would be looking for a location that helps make Jatizso 'shine'!"))
+            closemessage
+            hidenamebox
+            setvar(VAR_POKESCAPE_RAC_QUEST_ELEJ, 5)
+            call(JATIZSO_STATE)
+            //startquest (QUEST_ARTFIGHT_NEITIZNOT)
+            //questmenu (QUEST_MENU_UNLOCK_QUEST, QUEST_RAC_PICTURE_PERFECT)
+            //subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ARTFIGHT_JATIZSO, 0)
+            //subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ARTFIGHT_JATIZSO, 1)
+            //subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ARTFIGHT_JATIZSO, 2)
+            //subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ARTFIGHT_JATIZSO, 3)
+            //subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ARTFIGHT_JATIZSO, 4)
+            //subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ARTFIGHT_JATIZSO, 5)
+            //subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ARTFIGHT_NEITIZNOT, 6)
+            //subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ARTFIGHT_NEITIZNOT, 7)
+            //subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ARTFIGHT_NEITIZNOT, 8)
+            //subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ARTFIGHT_NEITIZNOT, 9)
+            //subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ARTFIGHT_NEITIZNOT, 10)
+
+            //msgbox(format("ELEJ Side Quest, Start!"))
+            //closemessage
+        } 
+    }
+    release
+    end
+}
+
+script RAC_QUEST_JATIZSO_ELEJ_SPOT_1
+{
+    msgbox(format("Call Elej over to investegate this spot?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+        fadescreen(FADE_TO_BLACK)
+        setvar(VAR_POKESCAPE_RAC_QUEST_ELEJ, 10)
+
+        call(JATIZSO_STATE)
+        addobject(ELEJ_ID)
+        setobjectxy(ELEJ_ID, 31, 28)
+        setobjectxyperm(ELEJ_ID, 31, 28)
+        setobjectmovementtype(ELEJ_ID, MOVEMENT_TYPE_LOOK_AROUND)
+        applymovement(ELEJ_ID, Movement_InteractFACEPLAYER)
+        waitmovement(0)
+        
+        fadescreen(FADE_FROM_BLACK)
+        namebox ("Elej")
+        msgbox(format("Oooh, this spot looks promising!\pLets try a picture here!"))
+        closemessage
+        hidenamebox
+        fadescreen(FADE_TO_BLACK)
+        playse(SE_EGG_HATCH)
+        fadescreen(FADE_FROM_BLACK)
+        namebox ("Elej")
+        msgbox(format("Hmm…\nNo I don't think this will do.\pLets keep looking!"))
+        closemessage
+        hidenamebox
+        subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ARTFIGHT_JATIZSO, 0)
+    }
+    closemessage
+    end
+}
+script RAC_QUEST_JATIZSO_ELEJ_SPOT_2
+{
+    msgbox(format("Call Elej over to investegate this spot?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+        fadescreen(FADE_TO_BLACK)
+        setvar(VAR_POKESCAPE_RAC_QUEST_ELEJ, 15)
+
+        call(JATIZSO_STATE)
+        addobject(ELEJ_ID)
+        setobjectxy(ELEJ_ID, 20, 8)
+        setobjectxyperm(ELEJ_ID, 20, 8)
+        setobjectmovementtype(ELEJ_ID, MOVEMENT_TYPE_LOOK_AROUND)
+        applymovement(ELEJ_ID, Movement_InteractFACEPLAYER)
+        waitmovement(0)
+        
+        fadescreen(FADE_FROM_BLACK)
+        namebox ("Elej")
+        msgbox(format("Oooh, this spot looks promising!\pLets try a picture here!"))
+        closemessage
+        hidenamebox
+        fadescreen(FADE_TO_BLACK)
+        playse(SE_EGG_HATCH)
+        fadescreen(FADE_FROM_BLACK)
+        namebox ("Elej")
+        msgbox(format("Hmm…\nNo I don't think this will do.\pLets keep looking!"))
+        closemessage
+        hidenamebox
+    }
+    closemessage
+    end
+}
+script RAC_QUEST_JATIZSO_ELEJ_SPOT_3
+{
+    msgbox(format("Call Elej over to investegate this spot?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+        fadescreen(FADE_TO_BLACK)
+        setvar(VAR_POKESCAPE_RAC_QUEST_ELEJ, 20)
+
+        call(JATIZSO_STATE)
+        addobject(ELEJ_ID)
+        setobjectxy(ELEJ_ID, 26, 3)
+        setobjectxyperm(ELEJ_ID, 26, 3)
+        setobjectmovementtype(ELEJ_ID, MOVEMENT_TYPE_LOOK_AROUND)
+        applymovement(ELEJ_ID, Movement_InteractFACEPLAYER)
+        waitmovement(0)
+        
+        fadescreen(FADE_FROM_BLACK)
+        namebox ("Elej")
+        msgbox(format("Oooh, this spot looks promising!\pLets try a picture here!"))
+        closemessage
+        hidenamebox
+        fadescreen(FADE_TO_BLACK)
+        playse(SE_EGG_HATCH)
+        fadescreen(FADE_FROM_BLACK)
+        namebox ("Elej")
+        msgbox(format("Hmm…\nNo I don't think this will do.\pLets keep looking!"))
+        closemessage
+        hidenamebox
+    }
+    closemessage
+    end
+}
+script RAC_QUEST_JATIZSO_ELEJ_SPOT_4
+{
+    msgbox(format("Call Elej over to investegate this spot?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+        fadescreen(FADE_TO_BLACK)
+        setvar(VAR_POKESCAPE_RAC_QUEST_ELEJ, 25)
+
+        call(JATIZSO_STATE)
+        addobject(ELEJ_ID)
+        setobjectxy(ELEJ_ID, 12, 14)
+        setobjectxyperm(ELEJ_ID, 12, 14)
+        setobjectmovementtype(ELEJ_ID, MOVEMENT_TYPE_LOOK_AROUND)
+        applymovement(ELEJ_ID, Movement_InteractFACEPLAYER)
+        waitmovement(0)
+        
+        fadescreen(FADE_FROM_BLACK)
+        namebox ("Elej")
+        msgbox(format("Oooh, this spot looks promising!\pLets try a picture here!"))
+        closemessage
+        hidenamebox
+        fadescreen(FADE_TO_BLACK)
+        playse(SE_EGG_HATCH)
+        fadescreen(FADE_FROM_BLACK)
+        namebox ("Elej")
+        msgbox(format("This is…\pPERFECT!\pWith this done I can now participate in the Art Fight!\pPlease take this as a gift for helping me."))
+        closemessage
+        hidenamebox
+        giveitem(ITEM_TEAR_OF_GUTHIX, 1) //PICTURE REWARD
+        //msgbox(format("ELEJ Side Quest, Complete!"))
+        //closemessage
+        namebox ("Elej")
+        msgbox(format("I look forward to battling alongside you in the Art Fight."))
+        closemessage
+        hidenamebox
+    }
+    closemessage
+    end
+}
+
+movement Movement_QuestionMark
+{
+    emote_question_mark
+} 
+//ELEJ SIDEQUEST-----------------------------------------------------------------------------------------------
+//ATTACKS: ELEJ
+
+//The Tasteful painting SIDEQUEST-----------------------------------------------------------------------------------------------
+//ATTACKS: MOD BLKWITCH, MOD DRAGON, MOD FOX, NICKI, CICI, PENNY, TAZIM, NYCHANNEL
+
+
+
+script RAC_QUEST_JATIZSO_JAGEX_P1 {
+
+    if (flag(FLAG_EVENT_TEAM_JATIZSO)) 
+    {
+        if (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 35)
+        {
+           faceplayer
+            namebox ("Bats")
+            msgbox(format("Thank you again. Quest is over."))
+            closemessage
+            hidenamebox 
+            release
+            end
+        }
+        if (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 35)
+        {
+           faceplayer
+            namebox ("Bats")
+            msgbox(format("Thank you. Quest complete."))
+            closemessage
+            hidenamebox 
+            setvar(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS, 40)
+            release
+            end
+        }
+        if ((var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 5) || (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 10) || (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 15) || (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 20))
+        {
+            faceplayer
+            namebox ("Bats")
+            msgbox(format("Go talk to Jackie in the Black Smith Building and ask how to get into Neitiznot."))
+            closemessage
+            hidenamebox
+        }
+        if (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 0)
+        {
+            lock
+            applymovement(DRAGON_ID, Movement_InteractUP)
+            namebox ("Madame Dragon")
+            msgbox(format("Wow, Eterna has really outdone herself with this piece.\pIt is so tasteful!"))
+            closemessage
+            waitmovement(0)
+            applymovement(BATS_ID, Movement_InteractUP)
+            namebox ("Bats")
+            msgbox(format("I agree, it is just so…{PAUSE 15} TASTEFUL!"))
+            closemessage
+            waitmovement(0)
+            applymovement(DRAGON_ID, Movement_InteractUP)
+            namebox ("Madame Dragon")
+            msgbox(format("We should send her some wine."))
+            closemessage
+            waitmovement(0)
+            applymovement(BATS_ID, Movement_InteractUP)
+            namebox ("Bats")
+            msgbox(format("That wine better be…{PAUSE 15} TASTEFUL!"))
+            closemessage
+            hidenamebox
+            waitmovement(0)
+            applymovement(DRAGON_ID, Movement_InteractUP)
+            namebox ("Madame Dragon")
+            msgbox(format("Of course, it will be as tasteful as this painting!"))
+            closemessage
+            hidenamebox
+            waitmovement(0)
+            applymovement(BATS_ID, Movement_InteractUP)
+            namebox ("Bats")
+            msgbox(format("…{PAUSE 15} TASTY!"))
+            closemessage
+            hidenamebox
+            waitmovement(0)
+            applymovement(DRAGON_ID, Movement_InteractRIGHT)
+            namebox ("Madame Dragon")
+            msgbox(format("Bats do me a solid and fly over to Neitiznot to drop it off to her."))
+            closemessage
+            hidenamebox
+            waitmovement(0)
+            applymovement(BATS_ID, Movement_InteractLEFT)
+            namebox ("Bats")
+            msgbox(format("…{PAUSE 15} I can not do that.\pThe Art Fight rules prevents that."))
+            closemessage
+            hidenamebox
+            waitmovement(0)
+            applymovement(DRAGON_ID, Movement_InteractRIGHT)
+            namebox ("Madame Dragon")
+            msgbox(format("How can we give her this tasteful wine then?"))
+            closemessage
+            hidenamebox
+            waitmovement(0)
+            applymovement(BATS_ID, Movement_InteractLEFT)
+            namebox ("Bats")
+            msgbox(format("…{PAUSE 15} We would require one that is able to sneak stealthly into Neitiznot.\pI cannot do that for my armour makes too much noise."))
+            closemessage
+            hidenamebox
+            //FACEPLAYER
+            applymovement(DRAGON_ID, Movement_InteractFACEDOWN)
+            applymovement(BATS_ID, Movement_InteractFACEDOWN)
+            waitmovement(0)
+            namebox ("Madame Dragon")
+            msgbox(format("Stranger, you seem to have overheard our entire conversation.\pCan you please deliver this to Eterna on Neitiznot for us?"), MSGBOX_YESNO)
+            if (!var(VAR_RESULT))
+            { 
+                msgbox(format("Leave us been then."))
+                closemessage
+                hidenamebox
+                release
+                end
+            } 
+            namebox ("Madame Dragon")
+            msgbox(format("Thank you stranger.\pYou should talk to Jackie.\pI heard he sneaks over to neitiznot through a secret tunnel all the time."))
+            closemessage
+            hidenamebox
+            namebox ("Bats")
+            msgbox(format("…{PAUSE 15} THANK YOU.\pOnce more thing.\pBe careful not to drink it.\pIt is not for you. or anyone else."))
+            closemessage
+            hidenamebox
+            giveitem(ITEM_TEA, 1)
+            setvar(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS, 5)
+        }
+        release
+        end
+    }
+}
+
+
+
+script RAC_QUEST_SIGNPOST_RABBIT_CHECK {
+    buffernumberstring(0, VAR_POKESCAPE_RAC_QUEST_RABBITS)
+    msgbox(format("You have killed {STR_VAR_1} Rabbits."))
+    release
+    end
+}
+script RAC_QUEST_JACKIE_RABBIT_CHECK {
+    //buffernumberstring(0, VAR_POKESCAPE_RAC_QUEST_RABBITS)
+    //msgbox(format("You have killed {STR_VAR_1} amount of Rabbits."))
+    if (var(VAR_POKESCAPE_RAC_QUEST_RABBITS) >= 5) {
+        buffernumberstring(0, VAR_POKESCAPE_RAC_QUEST_RABBITS)
+        msgbox(format("WOAH!\pYou have defeated {STR_VAR_1} Rabbits!\pConsider me impressed!\pYou have fired me up!\pI shall eagerly join the Art Fight in hopes of defeating more Rabbits!"))
+    }
+    if (var(VAR_POKESCAPE_RAC_QUEST_RABBITS) >= 10) {
+        msgbox(format("WOAH!\pYou have defeated so many rabbits!"))
+    }
+    return
+}
+
+
+script RAC_QUEST_JATIZSO_JAGEX_P2 { //JACKIE
+
+    if ( (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 35) || (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 40) )
+        {
+            faceplayer
+            namebox ("Jackson")
+            msgbox(format("You haven't forgotten about our deal have you?"))
+            closemessage
+            hidenamebox
+            call(RAC_QUEST_JACKIE_RABBIT_CHECK)
+            release
+            end
+        }
+    if (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 20)
+        {
+            faceplayer
+            namebox ("Jackson")
+            msgbox(format("The secret passage is in the Jatizso Mines.\pLocated North of here down the ladder.\pAnd don't forget about our deal I expect those rabbits gone!"))
+            closemessage
+            hidenamebox
+            release
+            end
+        }
+    if (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 5)
+        {
+            faceplayer
+            namebox ("Jackson")
+            msgbox(format("What do you want?\p…\pYes, I am Jackie.\pAlthough I hate being refered to as that.\pWhat can I do for you?"))
+            closemessage
+            hidenamebox
+            applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractUP)
+            waitmovement(0)
+            namebox ("Jackson")
+            msgbox(format("Getting into Neitiznot is dangerous for someone who is associated with Jatizso even if just slightly.\pBut I suppose I could help you.\pOn one condition that is."))
+            closemessage
+            setvar(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS, 10)
+            msgbox(format("I would like you to defeat all of Neitiznots Rabbits while you are over there.\pI despise them.\pDo we have a deal?"), MSGBOX_YESNO)
+            if (!var(VAR_RESULT))
+            { 
+                msgbox(format("No deal then."))
+                closemessage
+                hidenamebox
+                release
+                end
+            } 
+            setvar(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS, 15)
+        }
+    if (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 10)
+        {
+            faceplayer
+            namebox ("Jackson")
+            msgbox(format("Have you changed your mind?\pDefeat all the Rabbits and I will tell you the secret passage into Neitiznot.\pDo we have a deal?"), MSGBOX_YESNO)
+            if (!var(VAR_RESULT))
+            { 
+                msgbox(format("No deal then."))
+                closemessage
+                hidenamebox
+                release
+                end
+            } 
+            setvar(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS, 15)
+        }
+    if (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 15)
+        {
+            namebox ("Jackson")
+            msgbox(format("Great!\pNow that we have a deal.\pThere is a secret tunnel inside the Jatizso Mines north of here.\pYou'll notice a woman called Elizabeth around that area.\pShe has kind of lost the plot lately but if you give this to her I am sure she won't be an issue."))
+            closemessage
+            hidenamebox
+            giveitem(ITEM_ABYSSAL_WHIP, 1)
+            setvar(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS, 20)
+            namebox ("Jackson")
+            msgbox(format("And don't forget about our deal!"))
+            closemessage
+            hidenamebox
+        }
+    
+        lock
+        faceplayer
+        namebox ("Jackson")
+        msgbox(format("I like it here on Jatizso, there are no rabbits in sight.\pI could never see myself staying with those rabbit infested Neitiznots!"))
+        closemessage
+        hidenamebox
+        release
+        end
+}
+
+
+
+
+script RAC_QUEST_JATIZSO_JAGEX_P3_TRIGGER { //MORGAN
+    
+    if (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 20)
+        {
+            checkitem(ITEM_ABYSSAL_WHIP, 1)
+            if (var(VAR_RESULT)){
+                applymovement(MORGAN_ID, Movement_InteractLEFT)
+                waitmovement(0)
+				namebox ("Morgan")
+				msgbox(format("STUPID NEITIZNOTS!"))
+				hidenamebox
+                closemessage
+                applymovement(MORGAN_ID, Movement_InteractFACEPLAYER)
+                waitmovement(0)
+                namebox ("Morgan")
+				msgbox(format("HEY, YOU!\pWhat is that you have in your backpack!?\pI smell Zamorakian wine!\pYou must give it to me NOW!"))
+				hidenamebox
+                closemessage
+                applymovement(MAGNOLIA_ID, Movement_InteractFACEPLAYER)
+                waitmovement(0)
+				namebox ("Magnolia")
+				msgbox(format("Run, adventurer!"))
+				hidenamebox
+                closemessage
+                setvar(VAR_TEMP_E, 1)
+				release
+				end
+			}
+        }
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+
+//JAGEX MOD QUEST-----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+

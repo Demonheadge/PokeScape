@@ -1,0 +1,372 @@
+mapscripts Giant_Mole_Cave_MapScripts {
+    MAP_SCRIPT_ON_LOAD { //ON LOAD FOR MAP TILES
+    call(GIANTMOLE_STATE)
+    }
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 3) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT,
+    }
+} 
+
+
+script GIANTMOLE_STATE{
+	switch (var(VAR_GIANTMOLE_STATE)){ 
+		case 0:
+			//removeobject(1)
+            removeobject(2)
+            removeobject(3)
+            removeobject(4)
+            removeobject(5)
+            removeobject(6)
+            removeobject(7)
+            removeobject(8)
+            removeobject(9)
+            removeobject(10)
+            removeobject(11)
+			clearflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+            setflag(FLAG_TEMP_4)
+            setflag(FLAG_TEMP_5)
+            setflag(FLAG_TEMP_6)
+            setflag(FLAG_TEMP_7)
+            setflag(FLAG_TEMP_8)
+            setflag(FLAG_TEMP_9)
+            setflag(FLAG_TEMP_A)
+            setflag(FLAG_TEMP_B)
+            
+			return
+
+		case 1: 
+			removeobject(1)
+            //removeobject(2)
+            removeobject(3)
+            removeobject(4)
+            removeobject(5)
+            removeobject(6)
+            removeobject(7)
+            removeobject(8)
+            removeobject(9)
+            removeobject(10)
+            removeobject(11)
+			setflag(FLAG_TEMP_1)
+            clearflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+            setflag(FLAG_TEMP_4)
+            setflag(FLAG_TEMP_5)
+            setflag(FLAG_TEMP_6)
+            setflag(FLAG_TEMP_7)
+            setflag(FLAG_TEMP_8)
+            setflag(FLAG_TEMP_9)
+            setflag(FLAG_TEMP_A)
+            setflag(FLAG_TEMP_B)
+			return
+        case 2: 
+			removeobject(1)
+            removeobject(2)
+            //removeobject(3)
+            removeobject(4)
+            removeobject(5)
+            removeobject(6)
+            removeobject(7)
+            removeobject(8)
+            removeobject(9)
+            removeobject(10)
+            removeobject(11)
+			setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_2)
+            clearflag(FLAG_TEMP_3)
+            setflag(FLAG_TEMP_4)
+            setflag(FLAG_TEMP_5)
+            setflag(FLAG_TEMP_6)
+            setflag(FLAG_TEMP_7)
+            setflag(FLAG_TEMP_8)
+            setflag(FLAG_TEMP_9)
+            setflag(FLAG_TEMP_A)
+            setflag(FLAG_TEMP_B)
+			return
+        case 3: 
+			removeobject(1)
+            removeobject(2)
+            removeobject(3)
+            //removeobject(4)
+            removeobject(5)
+            removeobject(6)
+            removeobject(7)
+            removeobject(8)
+            removeobject(9)
+            removeobject(10)
+            removeobject(11)
+			setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+            clearflag(FLAG_TEMP_4)
+            setflag(FLAG_TEMP_5)
+            setflag(FLAG_TEMP_6)
+            setflag(FLAG_TEMP_7)
+            setflag(FLAG_TEMP_8)
+            setflag(FLAG_TEMP_9)
+            setflag(FLAG_TEMP_A)
+            setflag(FLAG_TEMP_B)
+			return
+        case 4: 
+			removeobject(1)
+            removeobject(2)
+            removeobject(3)
+            removeobject(4)
+            //removeobject(5)
+            removeobject(6)
+            removeobject(7)
+            removeobject(8)
+            removeobject(9)
+            removeobject(10)
+            removeobject(11)
+			setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+            setflag(FLAG_TEMP_4)
+            clearflag(FLAG_TEMP_5)
+            setflag(FLAG_TEMP_6)
+            setflag(FLAG_TEMP_7)
+            setflag(FLAG_TEMP_8)
+            setflag(FLAG_TEMP_9)
+            setflag(FLAG_TEMP_A)
+            setflag(FLAG_TEMP_B)
+			return
+        case 5: 
+			removeobject(1)
+            removeobject(2)
+            removeobject(3)
+            removeobject(4)
+            removeobject(5)
+            //removeobject(6)
+            removeobject(7)
+            removeobject(8)
+            removeobject(9)
+            removeobject(10)
+            removeobject(11)
+			setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+            setflag(FLAG_TEMP_4)
+            setflag(FLAG_TEMP_5)
+            clearflag(FLAG_TEMP_6)
+            setflag(FLAG_TEMP_7)
+            setflag(FLAG_TEMP_8)
+            setflag(FLAG_TEMP_9)
+            setflag(FLAG_TEMP_A)
+            setflag(FLAG_TEMP_B)
+			return
+        case 6: 
+			removeobject(1)
+            removeobject(2)
+            removeobject(3)
+            removeobject(4)
+            removeobject(5)
+            removeobject(6)
+            //removeobject(7)
+            removeobject(8)
+            removeobject(9)
+            removeobject(10)
+            removeobject(11)
+			setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+            setflag(FLAG_TEMP_4)
+            setflag(FLAG_TEMP_5)
+            setflag(FLAG_TEMP_6)
+            clearflag(FLAG_TEMP_7)
+            setflag(FLAG_TEMP_8)
+            setflag(FLAG_TEMP_9)
+            setflag(FLAG_TEMP_A)
+            setflag(FLAG_TEMP_B)
+			return
+        case 7: 
+			removeobject(1)
+            removeobject(2)
+            removeobject(3)
+            removeobject(4)
+            removeobject(5)
+            removeobject(6)
+            removeobject(7)
+            //removeobject(8)
+            removeobject(9)
+            removeobject(10)
+            removeobject(11)
+			setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+            setflag(FLAG_TEMP_4)
+            setflag(FLAG_TEMP_5)
+            setflag(FLAG_TEMP_6)
+            setflag(FLAG_TEMP_7)
+            clearflag(FLAG_TEMP_8)
+            setflag(FLAG_TEMP_9)
+            setflag(FLAG_TEMP_A)
+            setflag(FLAG_TEMP_B)
+			return
+        case 8: 
+			removeobject(1)
+            removeobject(2)
+            removeobject(3)
+            removeobject(4)
+            removeobject(5)
+            removeobject(6)
+            removeobject(7)
+            removeobject(8)
+            //removeobject(9)
+            removeobject(10)
+            removeobject(11)
+			setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+            setflag(FLAG_TEMP_4)
+            setflag(FLAG_TEMP_5)
+            setflag(FLAG_TEMP_6)
+            setflag(FLAG_TEMP_7)
+            setflag(FLAG_TEMP_8)
+            clearflag(FLAG_TEMP_9)
+            setflag(FLAG_TEMP_A)
+            setflag(FLAG_TEMP_B)
+			return
+        case 9: 
+			removeobject(1)
+            removeobject(2)
+            removeobject(3)
+            removeobject(4)
+            removeobject(5)
+            removeobject(6)
+            removeobject(7)
+            removeobject(8)
+            removeobject(9)
+            //removeobject(10)
+            removeobject(11)
+			setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+            setflag(FLAG_TEMP_4)
+            setflag(FLAG_TEMP_5)
+            setflag(FLAG_TEMP_6)
+            setflag(FLAG_TEMP_7)
+            setflag(FLAG_TEMP_8)
+            setflag(FLAG_TEMP_9)
+            clearflag(FLAG_TEMP_A)
+            setflag(FLAG_TEMP_B)
+			return
+        case 10: 
+			removeobject(1)
+            removeobject(2)
+            removeobject(3)
+            removeobject(4)
+            removeobject(5)
+            removeobject(6)
+            removeobject(7)
+            removeobject(8)
+            removeobject(9)
+            removeobject(10)
+            //removeobject(11)
+			setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+            setflag(FLAG_TEMP_4)
+            setflag(FLAG_TEMP_5)
+            setflag(FLAG_TEMP_6)
+            setflag(FLAG_TEMP_7)
+            setflag(FLAG_TEMP_8)
+            setflag(FLAG_TEMP_9)
+            setflag(FLAG_TEMP_A)
+            clearflag(FLAG_TEMP_B)
+			return
+        case 11: 
+			removeobject(1)
+            removeobject(2)
+            removeobject(3)
+            removeobject(4)
+            removeobject(5)
+            removeobject(6)
+            removeobject(7)
+            removeobject(8)
+            removeobject(9)
+            removeobject(10)
+            removeobject(11)
+			setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+            setflag(FLAG_TEMP_4)
+            setflag(FLAG_TEMP_5)
+            setflag(FLAG_TEMP_6)
+            setflag(FLAG_TEMP_7)
+            setflag(FLAG_TEMP_8)
+            setflag(FLAG_TEMP_9)
+            setflag(FLAG_TEMP_A)
+            setflag(FLAG_TEMP_B)
+			return
+	}
+
+}
+
+
+
+
+	
+
+script NPC_GIANT_MOLE
+{
+	lock
+    fadescreen(FADE_TO_BLACK)
+	msgbox(format("As you approach the Giant Mole, it digs away…"))
+    switch (var(VAR_GIANTMOLE_STATE)){ 
+		case 0: setvar(VAR_GIANTMOLE_STATE, 1)
+        case 1: setvar(VAR_GIANTMOLE_STATE, 2)
+        case 2: setvar(VAR_GIANTMOLE_STATE, 3)
+        case 3: setvar(VAR_GIANTMOLE_STATE, 4)
+        case 4: setvar(VAR_GIANTMOLE_STATE, 5)
+        case 5: setvar(VAR_GIANTMOLE_STATE, 6)
+        case 6: setvar(VAR_GIANTMOLE_STATE, 7)
+        case 7: setvar(VAR_GIANTMOLE_STATE, 8)
+        case 8: setvar(VAR_GIANTMOLE_STATE, 9)
+        case 9: setvar(VAR_GIANTMOLE_STATE, 10)
+    }
+    closemessage
+    call(GIANTMOLE_STATE)
+    fadescreen(FADE_FROM_BLACK)
+	release
+	end
+}
+
+
+
+script ENCOUNTER_GIANT_MOLE
+{
+	lock
+	//msgbox(format("As you approach the Giant Mole, it attacks!"))
+    namebox ("GIANT MOLE")
+    playmoncry(SPECIES_EKANS, 0)
+	msgbox(format("SNEEEEEE!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+	setwildbattle (SPECIES_GIANT_MOLE, 30, ITEM_NONE)
+	dowildbattle
+    if (var(VAR_RESULT) == B_OUTCOME_WON) { //DEFEATED, Can still encounter again.
+        fadescreen(FADE_TO_BLACK)
+		setvar(VAR_GIANTMOLE_STATE, 0)
+        setflag(FLAG_TEMP_B)
+        removeobject (11)
+        fadescreen(FADE_FROM_BLACK)
+		closemessage
+		end
+	}
+	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) { //CAPTURED! Cannot encounter again.
+        fadescreen(FADE_TO_BLACK)
+		setvar(VAR_GIANTMOLE_STATE, 11)
+        setflag(FLAG_TEMP_B)
+        removeobject (11)
+        fadescreen(FADE_FROM_BLACK)
+		closemessage
+		end
+	}
+	end
+}
+
+

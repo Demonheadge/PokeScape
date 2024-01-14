@@ -11,12 +11,12 @@ Route101_OnTransition:
 	end
 
 Route101_OnFrame:
-	map_script_2 VAR_ROUTE101_STATE, 0, Route101_EventScript_HideMapNamePopup
+	map_script_2 VAR_POKESCAPE_KARAMJAVOLCANO_STATE, 0, Route101_EventScript_HideMapNamePopup
 	.2byte 0
 
 Route101_EventScript_HideMapNamePopup::
 	setflag FLAG_HIDE_MAP_NAME_POPUP
-	setvar VAR_ROUTE101_STATE, 1
+	setvar VAR_POKESCAPE_KARAMJAVOLCANO_STATE, 1
 	end
 
 Route101_EventScript_StartBirchRescue::
@@ -40,7 +40,7 @@ Route101_EventScript_StartBirchRescue::
 	waitmovement 0
 	msgbox Route101_Text_PleaseHelp, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_ROUTE101_STATE, 2
+	setvar VAR_POKESCAPE_KARAMJAVOLCANO_STATE, 2
 	releaseall
 	end
 
@@ -222,7 +222,7 @@ Route101_EventScript_BirchsBag::
 	lock
 	faceplayer
 	setflag FLAG_SYS_POKEMON_GET
-	setflag FLAG_RESCUED_BIRCH
+	setflag FLAG_TEMP_1
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_ZIGZAGOON
 	setobjectxy OBJ_EVENT_ID_PLAYER, 6, 13
@@ -238,7 +238,7 @@ Route101_EventScript_BirchsBag::
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
 	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
 	setvar VAR_BIRCH_LAB_STATE, 2
-	setvar VAR_ROUTE101_STATE, 3
+	setvar VAR_POKESCAPE_KARAMJAVOLCANO_STATE, 3
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, Route101_EventScript_HideMayInBedroom
@@ -300,3 +300,25 @@ Route101_Text_RouteSign:
 	.string "ROUTE 101\n"
 	.string "{UP_ARROW} OLDALE TOWN$"
 
+
+Script_CheckDexFlag::
+	lock
+	faceplayer
+	goto_if_set FLAG_SYS_NATIONAL_DEX, Script_DexFlagSet
+	msgbox Text_DexFlagClear, MSGBOX_DEFAULT
+	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
+	release
+	end
+
+Script_DexFlagSet::
+	msgbox Text_DexFlagSet, MSGBOX_DEFAULT
+	giveitem ITEM_MASTER_BALL, 100
+	release
+	end
+
+Text_DexFlagClear:
+	.string "Pokédex flag is cleared.$"
+
+Text_DexFlagSet:
+	.string "Pokédex flag is set.$"

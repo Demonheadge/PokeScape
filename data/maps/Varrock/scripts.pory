@@ -1,0 +1,1159 @@
+mapscripts Varrock_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 16) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+}
+
+
+
+
+
+
+
+script VARROCK_SIGNPOST
+{
+    msgbox(format("Varrock, the trade centre of the Gielinor."))
+    closemessage
+    release
+    end
+}
+script VARROCKGYM_SIGNPOST
+{
+    msgbox(format("Varrock Gym."))
+    closemessage
+    release
+    end
+}
+
+
+script VARROCK_Gypsy_Aris_SIGNPOST
+{
+    msgbox(format("My tent was destroyed by some adventurers having MvM battles in the square and is awaiting repair.\pI've moved to a small house in north Varrock for the time being.\l-Gypsy Aris."))
+    closemessage
+    release
+    end
+}
+
+//NPCS
+
+
+//an NPC that offer to trim a monster, and after you accept and give them one they just disappear
+script VARROCK_SCAMMER
+{
+    faceplayer
+    namebox ("Suspicious Man")
+    msgbox(format("Pssst, give me your monster, I'll trim it for you."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_GUARD_0
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("Are you here to challenge the king to an MvM battle?\pKeep going north from here you will find him in the Palace."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_RUNEARMOUR
+{
+    faceplayer
+    //namebox ("Guard")
+    msgbox(format("I am thinking about getting a new sword, but they do not seem to be selling any Rune items."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_Trader1
+{
+    
+    //namebox ("")
+    msgbox(format("I heard you can trade your monsters with others at the Grand Exchange.\pIs that true?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_Trader2
+{
+    
+    //namebox ("")
+    msgbox(format("You can trade monsters at Grand Exchange with others.\pThe only downside is that I've heard it is a hassle to set up a trade and you have to know people."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_Firemaker
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("A long line of fires is the best way to train the Firemaking skill."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+script VARROCK_NPC_Guard1
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("We had an incident the other month which was caused by an MvM battle getting out of hand.\pFor some reason an adventurer thought it would be a good idea to unleash a Dragon in the square.\pSo now we are on duty to make sure no more damages come to other buildings."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_Guard2
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("Welcome to Varrock.\pIf you are here to challenge the King to an MvM gym battle, then you can find him at the palace in the middle of town."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_CLEANER
+{
+    faceplayer
+    namebox ("Cleaner")
+    msgbox(format("Sweeping the streets is hard work but someone needs to keep this town clean."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_Guard3
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("I sure could use a cup of tea…"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_Archaeologist
+{
+    faceplayer
+    namebox ("Archaeologist")
+    msgbox(format("I recently excavated a relic which appears to be from a long lost city.\pWe put it on display in the museum."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_Quester
+{
+    faceplayer
+    namebox ("Quester")
+    msgbox(format("I wanted to go on a quest but was told I did not have enough Kudos.\pI do not get it, do they want help or not?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_Willough
+{
+    faceplayer
+    namebox ("Willough")
+    msgbox(format("Our mum sent us to town to tell Fluffs to come home but now she is stuck up on the castle wall and refuses to come down."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_Shilop
+{
+    faceplayer
+    namebox ("Shilop")
+    msgbox(format("Here kitty, kitty!\pFluffs come down lets go home!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_Baraek
+{
+    faceplayer
+    namebox ("Baraek")
+    msgbox(format("I am selling newspapers 50GP each.\pAre you interested in one?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_MAN_1
+{
+    faceplayer
+    //namebox ("Baraek")
+    msgbox(format("Some monsters can evolve if they are in different areas of the Gielinor.\pWe call them regional variants.\pAn example would be the Chickens we have here in Varrock differ greatly compared to those in Lumbridge and Karamja."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+script VARROCK_NPC_MAN_2
+{
+    faceplayer
+    //namebox ("Baraek")
+    msgbox(format("You know how adventurers use potions to help boost their stats while fighting?\pWell the same can be done with monsters!\pNext time you are at a store you should pick some up, they can come in handy."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+script VARROCK_NPC_Halen
+{
+    faceplayer
+    namebox ("Haig Halen")
+    msgbox(format("Very sorry, but we are closed right now."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_Halen2
+{
+    faceplayer
+    //namebox ("Haig Halen")
+    msgbox(format("Honestly I think this is a joke."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_BronzeGuy
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("There are Pigeons everywhere here.\pSurely they must be useful for something right?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_Guard_5
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("The southern trail holds a lot of danger.\pPlease be careful of bears and other perils."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_Guard_6
+{
+    namebox ("Guard")
+    msgbox(format("Yes the castle is to the north."))
+    namebox ("Dwarf")
+    msgbox(format("And the kart system goes to the castle?"))
+    namebox ("Guard")
+    msgbox(format("No, it goes to the Grand Exchange."))
+    namebox ("Dwarf")
+    msgbox(format("Ok but where is the castle then?"))
+    namebox ("Guard")
+    msgbox(format("Ugh…"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_Ranger
+{
+    faceplayer
+    namebox ("Ranger")
+    msgbox(format("Sometimes the best teacher is defeat.\pIf you lose a battle think about how to change your team to adapt to the opponents strategy."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_THUG_1
+{
+    faceplayer
+    //namebox ("Ranger")
+    msgbox(format("You are in the wrong neighborhood.\pGet out before I make you stand and deliver."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_THUG_2
+{
+    faceplayer
+    //namebox ("Ranger")
+    msgbox(format("The criminal justice system is balanced on a knives edge, we thugs bring the knives and the guards gets us on the edge of the city."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_THUG_3
+{
+    faceplayer
+    //namebox ("Ranger")
+    msgbox(format("Once I get these lobsters all burnt and good, the Grand Exchange wont know what hit them."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_NOOB_1
+{
+    faceplayer
+    //namebox ("Ranger")
+    msgbox(format("I am meeting a friend up north past the border, he told me to bring my best items and money so they could see them."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_PRIEST
+{
+    faceplayer
+    //namebox ("Ranger")
+    msgbox(format("Would you like to partake in the ceremony?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_GUARD_7
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("Past this is the Wilderness, it is a lawless place and I can not in good conscience allow you to go there without a stern warning. Be careful."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_10
+{
+    faceplayer
+    //namebox ("Guard")
+    msgbox(format("They say the king is a surprisingly strong monster trainer.\pBut his wife prefers tending to her garden than indulging in his hobby."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_11
+{
+    faceplayer
+    //namebox ("Guard")
+    msgbox(format("Dont dig for treasure chests, you have been warned."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_12
+{
+    faceplayer
+    namebox ("Skiller")
+    msgbox(format("I should stop by Aubury's Rune Shop and grab some Runes to evolve my Monsters."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_13
+{
+    faceplayer
+    namebox ("Charlie")
+    msgbox(format("Life is hard.\pSpare some cash?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_14
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("Purple Sweets are really yum!\pI know it is a waste eating them myself but I cannot help it."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+script VARROCK_NPC_Romeo
+{
+    faceplayer
+    namebox ("Romeo")
+    msgbox(format("Juliet, where art thou!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+script VARROCKSTORE_NPC_1
+{
+    faceplayer
+    namebox ("Noob")
+    msgbox(format("I probably should buy one of each Cocktail.\pThat way I can heal any status effects."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCKSTORE_NPC_2
+{
+    faceplayer
+    namebox ("Man")
+    //msgbox(format("Bronze, Iron, Steel, Adamant, Rune.\pThere are so many pouches to choose from.\pEach better than the previous."))
+    msgbox(format("When catching monsters some pouches are better than others.\pFor example a Mystic Pouch works really well on Fairy-Type Monsters."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+script VARROCK_NPC_PALACE_GUARD_1
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("Our king specialises in Fairy-Type monsters.\pBut don't tell anyone I told you that."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_PALACE_GUARD_2
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("There are hidden items all over the place.\pI should really invest in an ItemFinder set."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_PALACE_GUARD_3
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("King Roald is one of the MvM Leaders.\pYou can find him in the Castle."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_PALACE_GUARD_4
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("Be careful not to let your monsters faint.\pI heard horror stories about some monsters evolving into undead versions of themselves."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_Thessalia
+{
+    faceplayer
+    namebox ("Thessalia")
+    msgbox(format("Hello, I can change your outfit for you.\pBut you will have to come back later."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_ThessaliaGrandma
+{
+    faceplayer
+    //namebox ("Grandma")
+    msgbox(format("Zzz…"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_SWORDSHOP_1
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("Sorry, all of my Weapons are out of stock at the moment."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_SWORDSHOP_2
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("I came to buy a Dragon Scimitar to power up my Monsters Dragon-Type moves.\pBut they don't have any in stock."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_SWORDSHOP_3
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("Did you know a Mithril Scimitar boosts the Attack stat for monsters that are not yet evolved."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_NPC_SWORDSHOP_4
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("Today is my day off."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+
+
+script VARROCK_NPC_TeaSalesman {
+    lock
+    faceplayer
+    namebox ("Tea Salesman")
+    msgbox(format("Selling Tea is my passion.\pFollow your passion and life will reward you.\pAnyway, are you in need of some high qualitea?"))
+    waitmessage
+    hidenamebox
+    pokemart (TeaSalesmanVarrock)
+    msgbox("Thank you, come again!")
+    release
+    end
+}
+raw `
+    .align 2
+TeaSalesmanVarrock:
+    .2byte ITEM_REPEL_TEA_1
+    .2byte ITEM_REPEL_TEA_2
+    .2byte ITEM_REPEL_TEA_3
+    .2byte ITEM_NONE
+    release
+    end
+`
+
+
+
+
+
+
+script VARROCK_NPC_Apothecary {
+    lock
+    faceplayer
+    namebox ("Apothecary")
+    msgbox(format("Welcome to my Potion store!\pHow may I help you?"))
+    waitmessage
+    hidenamebox
+    pokemart (ApothecaryVarrock)
+    msgbox("Thank you, come again!")
+    release
+    end
+}
+raw `
+    .align 2
+ApothecaryVarrock:
+    .2byte ITEM_POTION_HP
+    .2byte ITEM_POTION_ATT
+    .2byte ITEM_POTION_DEF
+    .2byte ITEM_POTION_SPATT
+	.2byte ITEM_POTION_SPDEF
+	.2byte ITEM_POTION_SPEED
+    .2byte ITEM_NONE
+    release
+    end
+
+`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//ROUTE38
+
+script TRIGGER_BLOCK_ROUTE38
+{
+    if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    {
+        lock
+        namebox("Guard")
+        msgbox(format("Sorry, by order of the King only those who have obtained the Varrock Badge may pass here."))
+        closemessage
+        hidenamebox
+        applymovement(OBJ_EVENT_ID_PLAYER, Movement_WALKLEFT)
+        waitmovement(0)
+        setvar(VAR_TEMP_0, 1) //Dont need this.
+        release
+        end
+    }
+    else
+    {
+        setvar(VAR_TEMP_0, 1) 
+        release
+    }
+}
+
+script NPC_VARROCKGUARD_BLOCKADE_1
+{
+    lock
+    faceplayer
+    namebox("Guard")
+    //if (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE) == 0){
+        msgbox(format("Sorry, by order of the King only those who have obtained the Varrock Badge may pass here."))
+        if (flag(FLAG_BADGE03_GET)){
+            msgbox(format("You have the Varrock Badge!\pYou may pass, but be cautious.\pDangerous Monsters lurk beyond here."))
+            hidenamebox
+            closemessage
+            //APPLY MOVEMENT
+            //applymovement(OBJ_EVENT_ID_BARBARIAN_BLOCK_1, BARBARIANVILLAGE_BLOCK_1)
+            //waitmovement(0)
+            //setvar(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE, 1)
+            release
+            end
+        }
+    //}
+    //if (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE) == 1){
+    //    msgbox(format("Be cautious adventurer."))
+    //}
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+script NPC_ARCHAEOLOGIST_BLOCKADE_1
+{
+    lock
+    faceplayer
+    namebox("Archaeologist")
+    //if (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE) == 0){
+        msgbox(format("Stop!\pPlease wait awhile, we recently uncovered some mysterious ruins within our digsite.\pWe are in the middle of excervating them and cannot risk being disterbed."))
+        if (flag(FLAG_BADGE07_GET)){
+            msgbox(format("You should see it!\pThe city of senstinstin has been found!"))
+            hidenamebox
+            closemessage
+            //APPLY MOVEMENT
+            //applymovement(OBJ_EVENT_ID_BARBARIAN_BLOCK_1, BARBARIANVILLAGE_BLOCK_1)
+            //waitmovement(0)
+            //setvar(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE, 1)
+            release
+            end
+        }
+    //}
+    //if (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE) == 1){
+    //    msgbox(format("Be cautious adventurer."))
+    //}
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+
+
+script BATTLE_Varrock_Max
+{
+    lock
+    faceplayer
+	namebox ("Max")
+    msgbox(format("Come back and talk to me once you have achieved something great."))
+    //trainerbattle_single(TRAINER_Varrock_Max, format("…"),format("…"))
+    //namebox ("Max")
+    //msgbox(format("…"))
+	hidenamebox
+    release
+	end
+}
+
+script NPC_Varrock_MaxRock
+{
+    msgbox(format("It is a massive rock!\pIt appears to be alive."))
+    //trainerbattle_single(TRAINER_Varrock_Max, format("…"),format("…"))
+    //namebox ("Max")
+    //msgbox(format("…"))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_Soffan_and_Quo
+{
+    trainerbattle_single(TRAINER_Soffan_and_Quo, format("…"),format("…"))
+    //namebox ("")
+    msgbox(format("…"))
+	hidenamebox
+    release
+	end
+}
+
+
+
+script NPC_VANNAKA
+{
+    faceplayer
+    namebox ("Vannaka")
+    msgbox(format("My name is Vannaka I have the honour of being a Gym Leader for the MvM Championships and I am also apart of Slayer Masters."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script NPC_SLAYERMASTERLIST
+{
+    msgbox(format("It is a list containing all of the Slayer Masters."))
+    msgbox(format("Vannaka - Arrav Badge.\pTurael - Keiper Badge.\pDuradel - Bwana Badge.\pChaeldar - Grisial Badge.\pMazchna - Sanguine Badge.\pKrystilla - Forinthry Badge.\pNieve - Umesco Badge.\pKonar - Kaal Badge."))
+    msgbox(format("After obtaining all Slayer Master Badges you will then be eligible to participate in the… …\pThe page is torn."))
+    closemessage
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script GAMEMODE_MONSTER_OR_POKEMON_SCRIPT
+{
+    faceplayer
+    //buffernumberstring(0, FLAG_GAMEMODE_MONSTER_SPAWN)
+    //msgbox(format("The var is currently: {STR_VAR_1}" ))
+    msgbox(format("EDIT GAMEMODE?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+        msgbox(format("SPAWN POKEMON?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT))
+        { 
+            setflag(FLAG_GAMEMODE_MONSTER_SPAWN)
+            closemessage
+            end
+        }
+        msgbox(format("SPAWN MONSTERS?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT))
+        { 
+            setflag(FLAG_GAMEMODE_MONSTER_SPAWN)
+            closemessage
+            end
+        }
+    }
+    release
+	end
+}
+
+
+
+script EDIT_LEVEL_SCALING
+{
+	faceplayer
+    //buffernumberstring(0, VAR_ROUTE113_STATE)
+    buffernumberstring(0, VAR_GAMEMODE_LEVEL_SCALING)
+    msgbox(format("Level Scaling is: {STR_VAR_1}" ))
+
+    msgbox(format("EDIT LEVEL SCALING?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+        msgbox(format("ADD +1\nLEVEL SCALING?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT))
+        { 
+            addvar(VAR_GAMEMODE_LEVEL_SCALING, 1)
+            closemessage
+            end
+        }
+
+        msgbox(format("SUBTRACT -1\nLEVEL SCALING?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT))
+        { 
+            subvar(VAR_GAMEMODE_LEVEL_SCALING, 1)
+            closemessage
+            end
+        }
+
+        msgbox(format("SET 0\nLEVEL SCALING?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT))
+        { 
+            setvar(VAR_GAMEMODE_LEVEL_SCALING, 0)
+            closemessage
+            end
+        }
+    }
+    //buffernumberstring(2,VAR_RESULT)
+    //setflag (FLAG_SYS_POKEMON_GET)
+    //special (ChooseStarter)
+    //waitstate
+    release
+	end
+}
+
+
+
+
+
+
+
+
+
+//GERTRUDE's House
+script NPC_VARROCK_GERTRUDE
+{
+    lock
+    faceplayer
+    namebox ("Gertrude")
+    if (!flag(FLAG_RECIEVED_KITTEN)) 
+    {
+        msgbox(format("Oh hello there sweety.\pWould you be interested in a kitten?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT))
+        { 
+            msgbox(format("Well I cannot just give you one.\pI need to make sure you are a responsible pet owner first.\pIs it alright if I test you?"), MSGBOX_YESNO)
+            if (var(VAR_RESULT))
+            { 
+                trainerbattle_no_intro(TRAINER_GERTRUDE, msgbox(format("You have beaten my bitty kitties!")))
+                msgbox(format("You pass the test with flying colours.\pHere I would like you to have this kitty."))
+                call(GiveMon_VARROCK_KITTEN)
+                setflag(FLAG_RECIEVED_KITTEN)
+                msgbox(format("Please look after it."))
+            }
+            else
+            {
+                msgbox(format("Come back if you change your mind."))
+            }
+        }
+        else
+        {
+            msgbox(format("Oh, but they are really cute."))
+        }
+    }
+    else
+    {
+        msgbox(format("How is that Kitten I gave you going?\pI hope it is well."))
+    }
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_VARROCK_PHILOP
+{
+    lock
+    faceplayer
+    namebox ("Philop")
+	msgbox(format("Mum says that Fluffs is her favourite of all the kitties."))
+    //msgbox(format("I don't want this kitten.\pI want a grown up one.\pDo you have a big grown up Kitty you would like to trade for this Kitten?"), MSGBOX_YESNO)
+    //    if (var(VAR_RESULT))
+     //   { 
+     //   }
+
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_VARROCK_KANEL
+{
+    lock
+    faceplayer
+    namebox ("Kanel")
+	msgbox(format("Meow."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+
+script NPC_VARROCK_CAT_INFO
+{
+
+	msgbox(format("It is a Bookcase filled with tons of information about cats.\pWould you like to read it?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT))
+        { 
+            msgbox(format("It is commonly known that a Kitten can evolve into a Cat at level 20.\pBut a Cat can evolve into many other forms from there.\pSome cats can evolve from having specific types of monsters in the party, such as PSYCHIC types & some rats.\pOther cats can evolve by using a certain Rune on them.\pBut don't let them REST all the time otherwise they may get lazy.\pAnd even the closest of bonds may cause a cat to get a bit too overgrown."))
+        }
+    closemessage
+	release
+	end
+}
+
+
+script NPC_ROUTE18_MAN
+{
+    lock
+    faceplayer
+	msgbox(format("Over the road here is Gertrudes house.\pIf you like cats then I think you should pay her a visit.\pIf I was not busy sitting on this bench I would pay her a visit myself."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+
+script GiveMon_VARROCK_KITTEN {
+    setvar(VAR_TEMP_1, SPECIES_KITTEN)
+    giveshinymon (SPECIES_KITTEN, 10, ITEM_WOOLBALL, 0)
+    compare(VAR_RESULT, 0)
+	goto_if_eq(GiveMon_VARROCK_SendParty_KITTEN)
+    compare(VAR_RESULT, 1)
+	goto_if_eq(GiveMon_VARROCK_SendPC_KITTEN)
+    goto(Common_EventScript_NoMoreRoomForPokemon)
+    end
+}
+
+script GiveMon_VARROCK_SendParty_KITTEN{
+	call(GiveMon_VARROCK_ReceivedFanfare_KITTEN)
+	msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+    compare(VAR_RESULT, NO)
+	goto_if_eq(GiveMon_VARROCK_Received_KITTEN)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(GiveMon_VARROCK_Received_KITTEN)
+	end
+}
+
+script GiveMon_VARROCK_SendPC_KITTEN {
+	call(GiveMon_VARROCK_ReceivedFanfare_KITTEN)
+	msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+    compare(VAR_RESULT, NO)
+	goto_if_eq(GiveMon_VARROCK_TransferredToPC_KITTEN)
+	call (Common_EventScript_NameReceivedBoxMon)
+	goto (GiveMon_VARROCK_TransferredToPC_KITTEN)
+	end
+}
+
+script GiveMon_VARROCK_TransferredToPC_KITTEN{
+	call (Common_EventScript_TransferredToPC)
+	goto (GiveMon_VARROCK_Received_KITTEN)
+	end
+}
+
+script GiveMon_VARROCK_ReceivedFanfare_KITTEN{
+	bufferspeciesname(1, SPECIES_KITTEN)
+	//removeobject LOCALID_BELDUM_BALL
+    //setvar(VAR_POKESCAPE_ERNEST_QUEST_STATE, 3)
+	playfanfare (MUS_OBTAIN_ITEM)
+	msgbox(format("{PLAYER} obtained a {STR_VAR_2}."))
+	waitmessage
+	waitfanfare
+	bufferspeciesname(0, SPECIES_KITTEN)
+	return
+}
+
+script GiveMon_VARROCK_Received_KITTEN{
+    //msgbox(format("EVENT COMPLETE."))
+	releaseall
+	return
+}
+
+
+
+
+
+
+
+
+
+//GOODIE BAG
+script NPC_GOODIEBAG //1 / 28 chance
+{ 
+	lock
+	faceplayer
+    namebox("NightmareRH")
+	msgbox(format("Hooba, Hubba, Hubba!"))
+	if (flag(FLAG_UNUSED_0x93D) == false) 
+	{
+        msgbox(format("Oh my goodness!\nIt's time for a new daily giveaway!"))
+		msgbox(format("Would you like a Goodie from the Goodie bag!?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT))
+			{
+				setflag(FLAG_UNUSED_0x93D)
+				msgbox(format("Hooba, hooba hoo!\pThis goodie is for hooba you!"))
+				hidenamebox
+				call(GIVE_RANDOM_ITEM_28)
+			}
+        else
+        {
+            msgbox(format("Don't be a bunghole.\pJust take the Goodies."))
+            hidenamebox
+            closemessage
+            release
+            end
+        }
+	}
+    else
+    {
+        msgbox(format("I have already given you a Goodie today."))
+    }
+    msgbox(format("You should come back tomorrow for another Goodie."))
+    hidenamebox
+    closemessage
+    release
+	end
+}
+
+script GIVE_RANDOM_ITEM_28 {
+	random(28) 
+	switch (var(VAR_RESULT)) { 
+            case 0: 
+				giveitem(ITEM_FLAX, 6)
+			case 1: 
+				giveitem(ITEM_SPIRIT_SHARD, 2)
+			case 2: 
+				giveitem(ITEM_PRAYER_POTION, 1)
+			case 3: 
+				giveitem(ITEM_LAMP_SPATT, 1)
+			case 4: 
+				giveitem(ITEM_STAT_BEER, 1)
+			case 5: 
+				giveitem(ITEM_CRYSTAL_POUCH, 1)
+			case 6: 
+				giveitem(ITEM_PURPLE_SWEETS, 1)
+			case 7: 
+				giveitem(ITEM_CHOCOLATE_CAKE, 1)
+			case 8: 
+				giveitem(ITEM_MINT_CAKE, 1)
+			case 9: 
+				giveitem(ITEM_HWEEN_MASK, 1)
+			case 10: 
+				giveitem(ITEM_EMPTY_BUCKET, 1)
+			case 11: 
+				giveitem(ITEM_DRAGON_SCIMITAR, 1)
+			case 12: 
+				giveitem(ITEM_ELEMENTAL_POUCH, 5)
+			case 13: 
+				giveitem(ITEM_BLACK_POUCH, 15)
+			case 14: 
+				giveitem(ITEM_NORMAL_POUCH, 20)
+			case 15: 
+				giveitem(ITEM_SPIRIT_CHARM, 1)
+			case 16: 
+				giveitem(ITEM_GODRABBITFOOT, 1)
+            case 17: 
+				giveitem(ITEM_CABBAGE, 1)
+            case 18: 
+				giveitem(ITEM_PURPLE_SWEETS, 5)
+            case 19: 
+				giveitem(ITEM_CABBAGE, 1)
+            case 20: 
+				giveitem(ITEM_PARTY_HAT, 1)
+            case 21: 
+				giveitem(ITEM_GODSWORD, 1)
+            case 22: 
+				giveitem(ITEM_CABBAGE, 1)
+            case 23: 
+				giveitem(ITEM_DRAGON_POUCH, 1)
+            case 24: 
+				giveitem(ITEM_GRANITE_MAUL, 1)
+            case 25: 
+				giveitem(ITEM_DRAGON_CLAWS, 1)
+            case 26: 
+				giveitem(ITEM_BREAD, 1)
+            case 27: 
+				giveitem(ITEM_CABBAGE, 5)
+	}
+	return
+}
+
+
+
+
+
+
+

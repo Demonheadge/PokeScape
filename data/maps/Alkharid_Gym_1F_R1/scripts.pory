@@ -1,0 +1,394 @@
+
+
+mapscripts Alkharid_Gym_1F_R1_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 11) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+        call(ALKHARID_GYM_ROOMS_STATE)
+        call(ALKHARID_GYM_NPCS_POST_GYM_1F_1R)
+    }
+}
+
+script ALKHARID_GYM_NPCS_POST_GYM_1F_1R{
+	switch (var(VAR_POKESCAPE_ALKHARID_GYM_QUEST)){ 
+        case 30: //GYM DEFEATED
+            setobjectxyperm(2, 2, 4)
+			setobjectmovementtype(2,MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
+    }
+    return
+}
+
+
+
+
+
+
+
+
+
+
+//NPCS
+
+
+script GYM_NPC_3
+{
+    lock
+    faceplayer
+    if (flag(FLAG_ALKHARIDGYM_2) == FALSE)
+		{	
+            if (var(VAR_POKESCAPE_ALKHARID_GYM_QUEST)==15) { //If Gym Challenge.
+                call(CHECK_IF_ALI)
+                if (var(VAR_POKESCAPE_ALKHARID_GYM_QUEST)==20) {
+                    msgbox(format("Guards help me as I make my escape!"))
+                    hidenamebox
+                    closemessage
+                    applymovement(VAR_LAST_TALKED, Movement_AlkharidGym_TELEPORT)
+                    delay(30)
+                    removeobject(VAR_LAST_TALKED)
+                    addobject(1) // extra guard
+                    clearflag(FLAG_TEMP_6)
+                    applymovement(3, Movement_AlkharidGym_NPC_3)
+                    applymovement(1, Movement_AlkharidGym_NPC_3_Ali)
+                    delay(60)
+                    applymovement(OBJ_EVENT_ID_PLAYER, Movement_FACEDOWN)
+                    waitmovement(0)
+                    namebox("Warrior")
+                    msgbox(format("Brother, I will help thee with this infidel!"))
+                    hidenamebox
+                    closemessage
+                    trainerbattle_no_intro(TRAINER_ALKHARID_GYM_TRAINER_2, format("Consider that a warning!") )
+                    if (var(VAR_RESULT) == B_OUTCOME_LOST) { //
+                        setvar(VAR_POKESCAPE_ALKHARID_GYM_QUEST, 0)
+                        end
+                    }
+                    msgbox(format("You have defeated us!\pBut the Prince has made his escape so we have done our jobs."))
+                    closemessage
+                    hidenamebox
+                    applymovement(3, Movement_WALKDOWN)
+                    waitmovement(0)
+                    applymovement(3, Movement_FACEUP)
+                    waitmovement(0)
+                    release
+                    end
+                }
+                applymovement(3, Movement_AlkharidGym_NPC_3)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Movement_FACEDOWN)
+                waitmovement(0)
+                namebox("Warrior")
+                msgbox(format("Brother, I will help thee with this infidel!"))
+                hidenamebox
+                closemessage
+                trainerbattle_no_intro(TRAINER_ALKHARID_GYM_TRAINER_2, format("Consider that a warning!") )
+                namebox("Warrior")
+                msgbox(format("You have defeated us!\pBut the Prince is still somewhere around the Palace."))
+                closemessage
+                hidenamebox
+                setflag(FLAG_ALKHARIDGYM_2)
+                applymovement(3, Movement_WALKDOWN)
+                waitmovement(0)
+                applymovement(3, Movement_FACEUP)
+                waitmovement(0)
+                release
+                end
+            }
+        }
+    if (flag(FLAG_BADGE04_GET)) { //If Gym badge is obtained.
+        msgbox(format("Hello congrats on beating the gym."))
+        release
+        end
+    }
+    if (var(VAR_POKESCAPE_ALKHARID_GYM_QUEST)==0) { // If Gym challenge hasnt been started.
+        msgbox(format("Hello."))
+    }
+    else {
+        msgbox(format("We use our lives to protect our prince."))
+    }
+    release
+    end
+}
+
+
+script GYM_NPC_4
+{
+    lock
+    faceplayer
+    if (flag(FLAG_ALKHARIDGYM_2) == FALSE)
+		{	
+            if (var(VAR_POKESCAPE_ALKHARID_GYM_QUEST)==15) { //If Gym Challenge.
+                call(CHECK_IF_ALI)
+                if (var(VAR_POKESCAPE_ALKHARID_GYM_QUEST)==20) {
+                    msgbox(format("Guards help me as I make my escape!"))
+                    hidenamebox
+                    closemessage
+                    applymovement(VAR_LAST_TALKED, Movement_AlkharidGym_TELEPORT)
+                    delay(30)
+                    removeobject(VAR_LAST_TALKED)
+                    addobject(1) // extra guard
+                    clearflag(FLAG_TEMP_6)
+                    applymovement(2, Movement_AlkharidGym_NPC_4)
+                    applymovement(1, Movement_AlkharidGym_NPC_4_Ali)
+                    delay(60)
+                    applymovement(OBJ_EVENT_ID_PLAYER, Movement_FACELEFT)
+                    waitmovement(0)
+                    namebox("Warrior")
+                    msgbox(format("Brother, I will help thee with this infidel!"))
+                    hidenamebox
+                    closemessage
+                    trainerbattle_no_intro(TRAINER_ALKHARID_GYM_TRAINER_2, format("Consider that a warning!") )
+                    if (var(VAR_RESULT) == B_OUTCOME_LOST) { //
+                        setvar(VAR_POKESCAPE_ALKHARID_GYM_QUEST, 0)
+                        end
+                    }
+                    msgbox(format("You have defeated us!\pBut the Prince has made his escape so we have done our jobs."))
+                    closemessage
+                    hidenamebox
+                    applymovement(1, Movement_WALKDOWN)
+                    waitmovement(0)
+                    applymovement(1, Movement_FACEUP)
+                    waitmovement(0)
+                    release
+                    end
+                }
+                applymovement(2, Movement_AlkharidGym_NPC_4)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, Movement_FACEDOWN)
+                waitmovement(0)
+                namebox("Warrior")
+                msgbox(format("Brother, I will help thee with this infidel!"))
+                hidenamebox
+                closemessage
+                trainerbattle_no_intro(TRAINER_ALKHARID_GYM_TRAINER_2, format("Consider that a warning!") )
+                namebox("Warrior")
+                msgbox(format("You have defeated us!\pBut the Prince is still somewhere around the Palace."))
+                closemessage
+                hidenamebox
+                setflag(FLAG_ALKHARIDGYM_2)
+                applymovement(2, Movement_AlkharidGym_moveafterbattle_1)
+                waitmovement(0)
+                release
+                end
+            }
+        }
+    if (flag(FLAG_BADGE04_GET)) { //If Gym badge is obtained.
+        msgbox(format("Hello congrats on beating the gym."))
+        release
+        end
+    }
+    if (var(VAR_POKESCAPE_ALKHARID_GYM_QUEST)==0) { // If Gym challenge hasnt been started.
+        msgbox(format("Hello this is the gym."))
+    }
+    else {
+        msgbox(format("We use our lives to protect our prince."))
+    }
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+movement Movement_AlkharidGym_NPC_3
+{
+    walk_faster_down *2
+    walk_faster_left * 7
+    face_player
+} 
+movement Movement_AlkharidGym_NPC_3_Ali
+{
+    walk_faster_up * 2
+    walk_faster_left * 4
+    face_player
+} 
+movement Movement_AlkharidGym_NPC_4
+{
+    walk_faster_down *2
+    walk_faster_right * 7
+    face_player
+} 
+movement Movement_AlkharidGym_NPC_4_Ali
+{
+    delay_16
+    walk_fast_up * 3
+    walk_fast_right * 3
+    face_player
+} 
+
+
+
+
+
+
+
+
+
+
+
+script SAFARI_ZONE_WIZARD
+{
+    lock
+    faceplayer
+    namebox("Dark Wizard")
+    msgbox(format("Welcome to the Abyss.\pI wish you wouldn't bother me.\pBut seeing as you are here…\pCare to play a little game?"), MSGBOX_YESNO)
+    if (!var(VAR_RESULT))
+    { 
+        msgbox(format("Come back if you change your mind."))
+        closemessage
+        hidenamebox
+        release
+        end
+    }
+    msgbox(format("Would you like some info?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+       msgbox(format("I will teleport you to different Altars across the world.\pI would like you to capture some creatures so I can discover more about the Abyss.\pBut considering how unstable the Abyss is I can only keep you in each plane of existance for a certain amount of time.\pProably about 100 steps."))
+    }
+    special (EnterSafariMode)
+    msgbox(format("I will now Teleport you.\pSenventior disthine molenko!"))
+    closemessage
+    hidenamebox
+    setvar (VAR_SAFARI_ZONE_STATE, 0) //Tells the game which altar you are at. (0 means no altar.)
+    goto (SAFARI_ZONE_WIZARD_TELEPORT)
+    release
+    end
+}
+
+script SAFARI_ZONE_WIZARD_TELEPORT
+{	
+    addvar (VAR_SAFARI_ZONE_STATE, 1)
+    
+    //switch (var(VAR_RESULT))
+    //{
+    //    case ITEM_TALISMAN_AIR:
+    //        msgbox(format("You have AIR."))
+    //    case ITEM_TALISMAN_FIRE:
+    //        msgbox(format("You have FIRE."))
+    //}
+
+    special (SafariModeRestartSteps)
+    //special (SafariModeRestartStepsExtra)
+    goto (SAFARI_ZONE_ALTAR_STATE)
+}
+
+script SAFARI_ZONE_WIZARD_NEXT_ROUND
+{
+    lockall
+	playse (SE_DING_DONG)
+    if (var(VAR_SAFARI_ZONE_STATE)==6) { //-1
+        msgbox(format("Time's up!\pYou are being teleported back to the Abyss."))
+    }
+    else
+    {
+        msgbox(format("Time's up!\pYou are being teleported to the next Altar…"))
+    }
+    waitmessage
+	waitbuttonpress
+	releaseall
+    goto (SAFARI_ZONE_WIZARD_TELEPORT)
+}
+
+
+
+
+script SAFARI_ZONE_ALTAR_STATE{
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_Altar_TELEPORT)
+    waitmovement(0)
+	switch (var(VAR_SAFARI_ZONE_STATE)){ 
+		case 0: 
+            msgbox(format("ERROR, You are currently not able to teleport to any Altar."))
+        case 1: 
+            warp (MAP_AIR_ALTAR,0,0,0)
+        case 2: 
+            warp (MAP_MIND_ALTAR,0,0,0)
+        case 3:
+            warp (MAP_WATER_ALTAR,0,0,0)
+        case 4:
+            warp (MAP_EARTH_ALTAR,0,0,0)
+        case 5:
+            warp (MAP_FIRE_ALTAR,0,0,0)
+        case 6:
+            warp (MAP_BODY_ALTAR,0,0,0)
+        case 7: //GAME OVER
+            setvar (VAR_SAFARI_ZONE_STATE, 0) //Set it to 8 and then add a forced map script talk obtain to welcome you back. Maybe giving you some stats.
+            special (ExitSafariMode)
+            warp (MAP_ABYSSAL_REALM_1,11,0,0)
+    }
+    release
+    end
+}    
+
+movement Movement_Altar_TELEPORT
+{
+    fly_up
+} 
+
+
+//You will only be able to take "50" steps before my magic will wear off and you will be teleported to the next Altar.
+//I will give you 5 "Elemental Pouches". //gNumSafariBalls
+//You can obtain more Pouches by collecting the pouches scattered around the Altars.
+//If you run out of Pouches trying to catch Monsters you will be returned to the Abyss.
+
+//Pouches only appear if Safari zone is active.  Set Temp 1 otherwise.
+//Exit portal only appears if Safari Zone is not active. Maptile edit.
+
+
+script ITEM_SAFARI_ZONE_POUCH
+{
+    playse (MUS_OBTAIN_ITEM)
+    removeobject (VAR_LAST_TALKED)
+    msgbox(format("You found extra Pouches!"))
+    delay(60)
+    closemessage
+    special (SafariModeIncreasePouches)
+    //waitfanfare
+    end
+}
+
+
+
+
+
+
+
+
+
+script POKESCAPE_CURRENT_VERSION
+{
+    msgbox(format("PokeScape Version 5.0"))
+    closemessage
+    end
+}

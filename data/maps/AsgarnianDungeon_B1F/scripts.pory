@@ -1,0 +1,178 @@
+
+mapscripts AsgarnianDungeon_B1F_MapScripts 
+{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script NPC_AsgarnianDungeon_RAPTOR
+{
+	lock
+    faceplayer
+    namebox ("RAPTOR")
+	msgbox(format("It is too dangerous for you to enter.\pLeave these wyverns to me."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+//ITEMS
+//HIDDEN ITEMS: ANCIENT_POUCH, SANTA_HAT, BEER
+//
+
+script ITEM_AsgarnianDungeon_1
+{
+    finditem(ITEM_LAMP_SPATT)
+    end
+}
+
+script ITEM_AsgarnianDungeon_2
+{
+    finditem(ITEM_LAMP_SPDEF)
+    end
+}
+
+script ITEM_AsgarnianDungeon_3
+{
+    finditem(ITEM_PRAYER_POTION)
+    end
+}
+
+script ITEM_AsgarnianDungeon_4
+{
+    finditem(ITEM_ELEMENTAL_POUCH)
+    end
+}
+
+script ITEM_AsgarnianDungeon_5
+{
+    finditem(ITEM_SPIRIT_CHARM)
+    end
+}
+
+
+
+
+
+//BATTLE
+script BATTLE_AsgarnianDungeon_MUGGER_1
+{
+    trainerbattle_single(TRAINER_AsgarnianDungeon_MUGGER_1, format("No I will not return the gp I just pickpocketed from you."),format("Fine here, have your gp back."))
+    msgbox(format("Not many people come down here due the dangerous monsters further in."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_AsgarnianDungeon_PIRATE_1
+{
+    trainerbattle_single(TRAINER_AsgarnianDungeon_PIRATE_1, format("They say treasures be deep within this cave mate.\pYer not getting to it."),format("Maybe the real treasure be me encounter with ye."))
+    msgbox(format("Maybe the real treasure be me encounter with ye."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_AsgarnianDungeon_PIRATE_2
+{
+    trainerbattle_single(TRAINER_AsgarnianDungeon_PIRATE_2, format("This is our supply depot, get out!"),format("Since I can no longer use force I would like to strongly and politely request you to get out."))
+    msgbox(format("Since I can no longer use force I would like to strongly and politely request you to get out."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_AsgarnianDungeon_PIRATE_3
+{
+    trainerbattle_single(TRAINER_AsgarnianDungeon_PIRATE_3, format("Ye got a lot of cahoonies coming up to face me.\pVery well I shall swab the floor with you, en garde!"),format("Please dont go telling the authorities about our petty squable, aye?"))
+    msgbox(format("Please dont go telling the authorities about our petty squable, aye?"))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_AsgarnianDungeon_PIRATE_4
+{
+    trainerbattle_single(TRAINER_AsgarnianDungeon_PIRATE_4, format("Ye adventurers always pass us by without a word.\pYer a rude kind aint cha?"),format("Maybe challenging ye up front like that was rude as well aye?"))
+    msgbox(format("Maybe challenging ye up front like that was rude as well aye?"))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_AsgarnianDungeon_GOBLIN_1
+{
+    trainerbattle_single(TRAINER_AsgarnianDungeon_GOBLIN_1, format("Big high war god command Gruntknee recruit dragon from this cave."),format("Gruntknee not really up for this task.\pGruntknee wants to go home."))
+    namebox ("Gruntknee")
+    msgbox(format("Gruntknee not really up for this task.\pGruntknee wants to go home."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_AsgarnianDungeon_GOBLIN_2
+{
+    trainerbattle_single(TRAINER_AsgarnianDungeon_GOBLIN_2, format("Cold wind blows here, Shiverknees prefers pirate cave.\pYou better stay out too."),format("Go ahead then.\pSpoil Shiverknees good gesture."))
+    namebox ("Shiverknees")
+    msgbox(format("Go ahead then.\pSpoil Shiverknees good gesture."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_AsgarnianDungeon_QUESTER
+{
+    trainerbattle_single(TRAINER_AsgarnianDungeon_QUESTER, format("Urgh, every time I try to mine Blurite ore I keep getting inturpted!"),format("I am having to keep fending off these monsters!\pAll I want to do is mine the Blurite ore."))
+    msgbox(format("I am having to keep fending off these monsters!\pAll I want to do is mine the Blurite ore."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_AsgarnianDungeon_PVM_1
+{
+    trainerbattle_single(TRAINER_AsgarnianDungeon_PVM_1, format("Im on an Ice Warrior slayer task, dont bother me noob."),format("Maybe it was overkill.\pAll the Ice Warriors are gone now."))
+    msgbox(format("Maybe it was overkill.\pAll the Ice Warriors are gone now."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_AsgarnianDungeon_PVM_2
+{
+    trainerbattle_single(TRAINER_AsgarnianDungeon_PVM_2, format("This right here is a safespot.\pFor me that is."),format("Maybe I was never safe right here to begin with."))
+    msgbox(format("Maybe I was never safe right here to begin with."))
+	hidenamebox
+    release
+	end
+}

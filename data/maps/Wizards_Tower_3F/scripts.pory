@@ -1,0 +1,152 @@
+const OBJ_EVENT_ID_LESSERDEMON = 1
+
+mapscripts Wizards_Tower_3F_MapScripts{
+	MAP_SCRIPT_ON_TRANSITION {
+    goto(LESSERDEMON_STATE)
+    }
+
+}
+
+
+script LESSERDEMON_STATE{
+	switch (var(VAR_POKESCAPE_LESSERDEMON_STATE)){ 
+		case 0: 
+			end
+    	case 1: 
+            //DEMON was defeated but not caught!
+			clearflag(FLAG_TEMP_A)
+            addobject (OBJ_EVENT_ID_LESSERDEMON)
+            end
+		case 2: 
+            //DEMON was caught!
+			setflag(FLAG_TEMP_A)
+            removeobject (OBJ_EVENT_ID_LESSERDEMON)
+            end
+
+		}
+}
+
+
+
+
+
+
+
+
+
+
+script NPC_WIZARDSTOWER_LESSERDEMON_GATE
+{
+    if (var(VAR_POKESCAPE_LESSERDEMON_STATE) == 0) {
+    lock
+    msgbox(format("As you approach the gate the Demon attacks you!"))
+    namebox ("Lesser Demon")
+	playmoncry(SPECIES_EKANS, 0)
+	msgbox(format("RAOUGH!"))
+	waitmoncry
+    hidenamebox
+	closemessage
+	release
+	end
+    }
+    else {
+    msgbox(format("As you approach the gate…\p{PAUSE 15}…{PAUSE 15}…{PAUSE 15}…\pNothing interesting happens…"))
+    closemessage
+	release
+	end
+    }
+
+}
+
+
+
+
+
+
+
+script ENCOUNTER_LESSERDEMON {
+	lock
+	faceplayer
+    namebox ("Lesser Demon")
+	playmoncry(SPECIES_EKANS, 0)
+	msgbox(format("GWARAKU!"))
+	waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+	setwildbattle (SPECIES_DEMON_LESSER_OSRS_FORM, 15, ITEM_NONE)
+	dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+        fadescreen(FADE_TO_BLACK)
+		setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 1)
+        setflag(FLAG_TEMP_A)
+        removeobject (OBJ_EVENT_ID_LESSERDEMON)
+        fadescreen(FADE_FROM_BLACK)
+		//msgbox(format("You have defeated me!"))
+		closemessage
+		end
+	}
+	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
+        fadescreen(FADE_TO_BLACK)
+		setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 2)
+        setflag(FLAG_TEMP_A)
+        removeobject (OBJ_EVENT_ID_LESSERDEMON)
+        fadescreen(FADE_FROM_BLACK)
+		//msgbox(format("You have caught me!"))
+		closemessage
+		end
+	}
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#script ENCOUNTER_CUPHOLDER {
+#	lock
+#	faceplayer
+#    namebox ("Lesser Demon")
+#	playmoncry(SPECIES_EKANS, 0)
+#	msgbox(format("GWARAKU!"))
+#	waitmoncry
+#   hidenamebox
+#	closemessage
+#	delay(1)
+#	setwildbattle (SPECIES_DEMON_LESSER_OSRS_FORM, 15, ITEM_NONE)
+#	dowildbattle
+#	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+#		msgbox(format("You have defeated me!"))
+#		end
+#	}
+#	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
+#		msgbox(format("You have caught me!"))
+#		end
+#	}
+#	msgbox(format("You lost of fled!"))
+#	closemessage
+#	end
+#}

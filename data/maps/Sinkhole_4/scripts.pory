@@ -1,0 +1,168 @@
+mapscripts Sinkhole_4_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        call(Randomise_Dungeon)
+    }
+
+}
+
+
+
+
+
+script TRYWARPINGDOORS_ENTER {
+    //LAST FLOOR,               Room 1, 2, 3, etc.
+    //setvar (VAR_0x8006, 0)
+    //ENTERED FROM THE,         LEFT 1, RIGHT 2, UP 3, DOWN 4
+    //setvar (VAR_0x8005, 0)
+    buffernumberstring(STR_VAR_1, VAR_0x8006) 
+    buffernumberstring(STR_VAR_2, VAR_TEMP_1) 
+    msgbox(format("VAR 0x8006 is {STR_VAR_1}.\nVAR TEMP 1 is {STR_VAR_2}"))
+    buffernumberstring(STR_VAR_1, VAR_0x8005) 
+    buffernumberstring(STR_VAR_2, VAR_TEMP_2) 
+    msgbox(format("VAR 0x8005 is {STR_VAR_1}.\nVAR TEMP 2 is {STR_VAR_2}"))
+    buffernumberstring(STR_VAR_1, VAR_0x8004) 
+    buffernumberstring(STR_VAR_2, VAR_TEMP_3) 
+    msgbox(format("VAR 0x8004 is {STR_VAR_1}.\nVAR TEMP 3 is {STR_VAR_2}"))
+    closemessage
+
+}
+
+
+
+
+script mapwarp {
+    copyvar(VAR_TEMP_1, VAR_0x8006) //REMEMBERS the LAST Floor
+    //copyvar(VAR_DUNGEONEERING_LAST_DOOR_ENTERED, VAR_0x8005) //REMEMBERS last WARP number entered from.
+    //copyvar(VAR_TEMP_3, VAR_0x8004) //This is the next WARP number to go to.
+    goto(checkmapwarp)
+
+}
+script checkmapwarp {
+
+//LAST FLOOR
+        //if (var(VAR_DUNGEONEERING_LAST_DOOR_ENTERED) == VAR_0x8004) { //If the Last door == the door I want to goto
+        //    if (var(VAR_TEMP_1) == 1) {
+        //        if (var(VAR_0x8004) == 2) {
+        //            setdynamicwarp(MAP_DUNGEONEERING_1, 2)
+        //        }
+        //        elif (var(VAR_0x8004) == 3) {
+        //            setdynamicwarp(MAP_DUNGEONEERING_1, 3)
+        //        }
+        //    }
+        //    elif (var(VAR_TEMP_1) == 2) {
+        //        if (var(VAR_0x8004) == 2) {
+         //           setdynamicwarp(MAP_DUNGEONEERING_2, 2)
+         //       }
+          ///      elif (var(VAR_0x8004) == 3) {
+          ///          setdynamicwarp(MAP_DUNGEONEERING_2, 3)
+          ///      }
+        //    }
+     //   }
+            
+//NEXT FLOOR
+   // else {
+   ///     setdynamicwarp(MAP_DUNGEONEERING_2, 1)
+   // }
+}
+
+
+script setwheretowarp_1 {
+    
+}
+
+//1 - DOWN
+//2 - RIGHT
+//3 - LEFT
+//4 - UP
+
+script TRIGGER_LEFT_EXIT {
+//WHERE TO WARP NEXT.
+    setvar (VAR_0x8004, 3) //GOTO TO WARP #3
+//WHAT IS THIS EXIT.
+    setvar (VAR_0x8005, 2) //THIS IS WARP #2
+    call(REMEMBER_THIS_FLOOR)
+    //call(NEXT_ROOM)
+    call(checkmapwarp)
+    release
+    end
+}
+
+script TRIGGER_RIGHT_EXIT {
+//WHERE TO WARP NEXT.
+    setvar (VAR_0x8004, 2) //GOTO TO WARP #2
+//WHAT IS THIS EXIT.
+    setvar (VAR_0x8005, 3) //THIS IS WARP #3
+    //setvar (VAR_0x8005, 2) //WHAT EXIT
+    call(REMEMBER_THIS_FLOOR)
+    //call(NEXT_ROOM)
+    call(checkmapwarp)
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+
+
+script TRIGGER_UP_EXIT {
+    setvar (VAR_0x8005, 4) //WHAT EXIT
+    call(REMEMBER_THIS_FLOOR)
+    //call(NEXT_ROOM)
+    call(checkmapwarp)
+    release
+    end
+}
+script TRIGGER_DOWN_EXIT {
+    setvar (VAR_0x8005, 1) //WHAT EXIT
+    call(REMEMBER_THIS_FLOOR)
+    //call(NEXT_ROOM)
+    call(checkmapwarp)
+    release
+    end
+}
+
+
+script REMEMBER_THIS_FLOOR {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    goto_if_eq (VAR_RESULT, MAP_DUNGEONEERING_1, REMEMBER_MAP_DUNGEONEERING_1)
+    goto_if_eq (VAR_RESULT, MAP_DUNGEONEERING_2, REMEMBER_MAP_DUNGEONEERING_2)
+    goto_if_eq (VAR_RESULT, MAP_DUNGEONEERING_3, REMEMBER_MAP_DUNGEONEERING_3)
+}
+script REMEMBER_MAP_DUNGEONEERING_1 {
+    setvar (VAR_0x8006, 1) //THIS ROOM.
+}
+script REMEMBER_MAP_DUNGEONEERING_2 {
+    setvar (VAR_0x8006, 2) //THIS ROOM.
+}
+script REMEMBER_MAP_DUNGEONEERING_3 {
+    setvar (VAR_0x8006, 3) //THIS ROOM.
+}
+
+
+
+
+
+
+
+
+
+script NEXT_ROOM {
+    specialvar (VAR_RESULT, GetCurrentMap)
+    goto_if_eq (VAR_RESULT, MAP_DUNGEONEERING_1, REMEMBER_MAP_DUNGEONEERING_1)
+    goto_if_eq (VAR_RESULT, MAP_DUNGEONEERING_2, REMEMBER_MAP_DUNGEONEERING_2)
+    goto_if_eq (VAR_RESULT, MAP_DUNGEONEERING_3, REMEMBER_MAP_DUNGEONEERING_3)
+}
+
+
+
+
+
+
+
+

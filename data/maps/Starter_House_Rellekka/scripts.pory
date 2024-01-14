@@ -1,0 +1,108 @@
+mapscripts Starter_House_Rellekka_MapScripts {
+    MAP_SCRIPT_ON_LOAD 
+    {
+        checkgamemode
+        if (var(VAR_RESULT) == 0)
+        {
+            setvar(VAR_POKESCAPE_GAMEMODE_STATE, 0) //SETS STORY MODE.
+        }
+        if (var(VAR_RESULT) == 1)
+        {
+            setvar(VAR_POKESCAPE_GAMEMODE_STATE, 1) //SETS OPEN WORLD MODE.
+        }
+        if (flag(FLAG_RECEIVED_YAK) == TRUE){
+            call(STARTERHOUSE_RELLEKKA_STATE)
+        }
+    }
+
+    MAP_SCRIPT_ON_FRAME_TABLE 
+    [
+        VAR_TEMP_0, 0: GAMEMODE_CHECK_NEWGAME_ITEMS
+    ]
+}
+
+script STARTERHOUSE_RELLEKKA_STATE {
+    if (flag(FLAG_EVENT_TEAM_JATIZSO)) 
+    {
+        removeobject(3)
+    }
+}
+
+
+
+
+
+script GiveMon_Yak {
+
+    lock
+    showmonpic (SPECIES_YAK_NORMAL_FORM, 10, 3)
+    msgbox("Inside this Pouch is a YAK.")
+    msgbox(format("Would you like to take this monster?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == NO){
+            hidemonpic
+            release	
+        }
+        else {
+            givemon (SPECIES_YAK_NORMAL_FORM, 50, ITEM_VERACFLAIL)
+            msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+                if (var(VAR_RESULT) == NO){
+                    removeobject (5)
+                    hidemonpic
+                    release
+                }
+                else{
+                    setvar (VAR_0x8004, 0)
+                    call (Common_EventScript_NameReceivedPartyMon)
+                    removeobject (5)
+                }
+                setflag(FLAG_RECEIVED_YAK)
+                removeobject(3)
+        }
+}
+
+
+
+
+script Quest_Start {
+    startquest (QUEST_ARTFIGHT_JATIZSO)
+    //questmenu (QUEST_MENU_UNLOCK_QUEST, QUEST_1)
+    //questmenu (QUEST_MENU_SET_ACTIVE, QUEST_1)
+    //subquestmenu (QUEST_MENU_SET_ACTIVE , QUEST_ARTFIGHT, SUB_QUEST_PICTURE_PERFECT)
+    //subquestmenu (QUEST_MENU_CHECK_COMPLETE, QUEST_2, SUB_QUEST_3)
+    end
+}
+script Unlock_Quest_Menu {
+    setflag(FLAG_SYS_QUEST_MENU_GET)
+    end
+}
+
+
+script Quest_Test {
+    setflag (FLAG_SYS_QUEST_MENU_GET)
+    //questmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_1)
+    //questmenu (QUEST_MENU_CHECK_COMPLETE, QUEST_1)
+    msgbox("Inside this Pouch is a YAK.")
+    closemessage
+    goto_if_eq (VAR_RESULT, TRUE, CelebrateEndgame)
+    end
+}
+
+script CelebrateEndgame {
+    special (DoDomeConfetti)
+    return
+}
+
+
+
+
+script Quest_Test_1 {
+    startquest (QUEST_ARTFIGHT_JATIZSO)
+    end
+}
+script Quest_Test_2 {
+    //startquest (SUB_QUEST_PICTURE_PERFECT)
+    //subquestmenu (QUEST_MENU_SET_REWARD, QUEST_ARTFIGHT, SUB_QUEST_PICTURE_PERFECT)
+    //subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ARTFIGHT, SUB_QUEST_PICTURE_PERFECT)
+    //questmenu (QUEST_MENU_SET_REWARD, QUEST_ARTFIGHT )
+    end
+}

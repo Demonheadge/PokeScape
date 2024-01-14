@@ -1,0 +1,481 @@
+mapscripts HiddenGrottos_MapScripts {
+    MAP_SCRIPT_ON_LOAD 
+    {
+        call(HIDDEN_GROTTO_ENTRY_SPAWNS)
+    }
+}
+
+//HIDDEN GROTTO
+
+//CHOOSE WHICH SECTION OF THE HIDDEN GROTTO TO ENTER AT.
+script HIDDEN_GROTTO_ENTRY {
+    lockall
+    msgbox(format("You've found a path between the trees!\pWill you follow it?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+
+        specialvar (VAR_RESULT, GetCurrentMap)
+        goto_if_eq (VAR_RESULT, MAP_ROUTE1, HIDDEN_GROTTO_WARP_ROUTE_1)
+        goto_if_eq (VAR_RESULT, MAP_ROUTE4, HIDDEN_GROTTO_WARP_ROUTE_4)
+        goto_if_eq (VAR_RESULT, MAP_ROUTE9, HIDDEN_GROTTO_WARP_ROUTE_9)
+        goto_if_eq (VAR_RESULT, MAP_ROUTE27, HIDDEN_GROTTO_WARP_ROUTE_27)
+        goto_if_eq (VAR_RESULT, MAP_ROUTE20, HIDDEN_GROTTO_WARP_ROUTE_20)
+        goto_if_eq (VAR_RESULT, MAP_ROUTE14, HIDDEN_GROTTO_WARP_ROUTE_14)
+    }  
+    closemessage
+    release
+    end
+}
+script HIDDEN_GROTTO_WARP_ROUTE_1 {
+    warp(MAP_HIDDEN_GROTTOS, 1, 0, 0)
+    waitstate
+}
+script HIDDEN_GROTTO_WARP_ROUTE_4 {
+    warp(MAP_HIDDEN_GROTTOS, 3, 0, 0)
+    waitstate
+}
+script HIDDEN_GROTTO_WARP_ROUTE_9 {
+    warp(MAP_HIDDEN_GROTTOS, 4, 0, 0)
+    waitstate
+}
+script HIDDEN_GROTTO_WARP_ROUTE_27 {
+    warp(MAP_HIDDEN_GROTTOS, 7, 0, 0)
+    waitstate
+}
+script HIDDEN_GROTTO_WARP_ROUTE_20 {
+    warp(MAP_HIDDEN_GROTTOS, 0, 0, 0)
+    waitstate
+}
+script HIDDEN_GROTTO_WARP_ROUTE_14 {
+    warp(MAP_HIDDEN_GROTTOS, 5, 0, 0)
+    waitstate
+}
+
+//CHOOSE WHAT SPAWNS
+script HIDDEN_GROTTO_ENTRY_SPAWNS {
+    random(13)
+    switch (var(VAR_RESULT)) {
+        case 0: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_POUCH)
+        case 1: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_UNICORN_BLACK)
+        case 2: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_UNICORN_WHITE)
+        case 3: 
+            call(HIDDEN_GROTTO_RANDOM_CAT)
+        case 4: 
+            call(HIDDEN_GROTTO_RANDOM_DOG)  
+        case 5: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_POUCH)
+        case 6: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RAC_BONBUN)
+        case 7: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_POUCH)
+        case 8: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RAC_BONBUN)
+        case 9: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_POUCH)
+        case 10: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_POUCH) 
+        case 11: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RAC_BONBUN)
+        case 12: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RAC_BONBUN)  
+        }
+    release
+    end
+}
+
+
+
+
+script HIDDEN_GROTTO_INTERACT {
+    call(HIDDEN_GROTTO_LEVELS)
+//ITEM
+    if (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_ITEM_POUCH)
+    { 
+        call(HIDDEN_GROTTO_FIND_ITEM)
+    }
+//RANDOM
+    elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_RAC_BONBUN)
+    { 
+        goto(ENCOUNTER_RANDOM)
+    }
+//UNICORN
+    elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_UNICORN_BLACK)
+    { 
+        setwildbattle (SPECIES_UNICORN_BLACK_FORM, VAR_TEMP_E, ITEM_NONE)
+        goto(ENCOUNTER_UNICORN)
+    }
+    elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_UNICORN_WHITE)
+    { 
+        setwildbattle (SPECIES_UNICORN_WHITE_FORM, VAR_TEMP_E, ITEM_NONE)
+        goto(ENCOUNTER_UNICORN)
+    }
+//CAT
+    elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_CAT_BLACK)
+    { 
+        setwildbattle (SPECIES_CAT_NORMAL_FORM, VAR_TEMP_E, ITEM_NONE)
+        goto(ENCOUNTER_CAT)
+    }
+    elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_CAT_BLACKWHITE)
+    { 
+        setwildbattle (SPECIES_CAT_LAZY_FORM, VAR_TEMP_E, ITEM_NONE)
+        goto(ENCOUNTER_CAT)
+    }
+    elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_CAT_BROWN)
+    { 
+        setwildbattle (SPECIES_CAT_WILY_FORM, VAR_TEMP_E, ITEM_NONE)
+        goto(ENCOUNTER_CAT)
+    }
+    elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_CAT_BROWNWHITE)
+    { 
+        setwildbattle (SPECIES_CAT_OVERGROWN_FORM, VAR_TEMP_E, ITEM_NONE)
+        goto(ENCOUNTER_CAT)
+    }
+    elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_CAT_CLOCKWORK)
+    { 
+        setwildbattle (SPECIES_CAT_CLOCKWORK_FORM, VAR_TEMP_E, ITEM_NONE)
+        goto(ENCOUNTER_CAT)
+    }
+    elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_CAT_HELL)
+    { 
+        setwildbattle (SPECIES_CAT_HELL_FORM, VAR_TEMP_E, ITEM_NONE)
+        goto(ENCOUNTER_CAT)
+    }
+    elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_CAT_PURPLE)
+    { 
+        setwildbattle (SPECIES_CAT_PURPLE_FORM, VAR_TEMP_E, ITEM_NONE)
+        goto(ENCOUNTER_CAT)
+    }
+    elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_CAT_WHITE)
+    { 
+        setwildbattle (SPECIES_CAT_POST_FORM, VAR_TEMP_E, ITEM_NONE)
+        goto(ENCOUNTER_CAT)
+    }
+//DOG
+    elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_DOG_CORGI)
+    { 
+        setwildbattle (SPECIES_CORGI, VAR_TEMP_E, ITEM_NONE)
+        goto(ENCOUNTER_DOG)
+    }
+    elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_DOG_DALMATIAN)
+    { 
+        setwildbattle (SPECIES_DALMATIAN, VAR_TEMP_E, ITEM_NONE)
+        goto(ENCOUNTER_DOG)
+    }
+    elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_DOG_GUARD)
+    { 
+        setwildbattle (SPECIES_GUARD_DOG, VAR_TEMP_E, ITEM_NONE)
+        goto(ENCOUNTER_DOG)
+    }
+    elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_DOG_LABRADOR)
+    { 
+        setwildbattle (SPECIES_LABRADOR, VAR_TEMP_E, ITEM_NONE)
+        goto(ENCOUNTER_DOG)
+    }
+    elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_DOG_SLEEP)
+    { 
+        setwildbattle (SPECIES_BORDER_COLLIE, VAR_TEMP_E, ITEM_NONE)
+        goto(ENCOUNTER_DOG)
+    }
+    elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_DOG_STRAY)
+    { 
+        setwildbattle (SPECIES_STRAY_DOG, VAR_TEMP_E, ITEM_NONE)
+        goto(ENCOUNTER_DOG)
+    }
+    //call(HIDDEN_GROTTO_SETFLAGS)
+    release
+    end
+}
+script HIDDEN_GROTTO_RANDOM_CAT {
+    random(8)
+    switch (var(VAR_RESULT)) {
+        case 0: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_CAT_BLACK)
+        case 1: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_CAT_BLACKWHITE)
+        case 2: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_CAT_BROWN)
+        case 3: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_CAT_BROWNWHITE)
+        case 4: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_CAT_CLOCKWORK)
+        case 5: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_CAT_HELL)
+        case 6: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_CAT_PURPLE)
+        case 7: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_CAT_WHITE)
+        } 
+    return
+}
+script HIDDEN_GROTTO_RANDOM_DOG {
+    random(6)
+    switch (var(VAR_RESULT)) {
+        case 0: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_DOG_CORGI)
+        case 1: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_DOG_DALMATIAN)
+        case 2: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_DOG_GUARD)
+        case 3: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_DOG_LABRADOR)
+        case 4: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_DOG_SLEEP)
+        case 5: 
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_DOG_STRAY)
+        } 
+    return
+}
+
+script HIDDEN_GROTTO_LEVELS {
+    if (!flag(FLAG_BADGE01_GET)) {
+        setvar(VAR_TEMP_E, 10)
+    }
+    if (flag(FLAG_BADGE01_GET)) {
+        setvar(VAR_TEMP_E, 15)
+    }
+    if (flag(FLAG_BADGE02_GET)) {
+        setvar(VAR_TEMP_E, 20)
+    }
+    if (flag(FLAG_BADGE03_GET)) {
+        setvar(VAR_TEMP_E, 25)
+    }
+    if (flag(FLAG_BADGE04_GET)) {
+        setvar(VAR_TEMP_E, 30)
+    }
+    if (flag(FLAG_BADGE05_GET)) {
+        setvar(VAR_TEMP_E, 35)
+    }
+    if (flag(FLAG_BADGE06_GET)) {
+        setvar(VAR_TEMP_E, 40)
+    }
+    if (flag(FLAG_BADGE07_GET)) {
+        setvar(VAR_TEMP_E, 45)
+    }
+    if (flag(FLAG_BADGE08_GET)) {
+        setvar(VAR_TEMP_E, 50)
+    }
+    return
+}
+
+script HIDDEN_GROTTO_SETFLAGS {
+    clearflag(FLAG_HIDDEN_GROTTO_1)
+    closemessage
+    end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script ENCOUNTER_CAT {
+    lock
+    namebox ("Cat")
+	playmoncry(SPECIES_MEOWTH, 0)
+	msgbox(format("MEEEOWW!"))
+	waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+	dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+        fadescreen(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+	}
+	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) { // Cannot catch with dowildbattleNoCatch
+        fadescreen(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+	}
+    elif (var(VAR_RESULT) == B_OUTCOME_RAN) { 
+        fadescreen(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+	}
+	return
+}
+script ENCOUNTER_DOG {
+    lock
+    namebox ("Dog")
+	playmoncry(SPECIES_GROWLITHE, 0)
+	msgbox(format("WOOOF!"))
+	waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+	dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+        fadescreen(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+	}
+	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) { // Cannot catch with dowildbattleNoCatch
+        fadescreen(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+	}
+    elif (var(VAR_RESULT) == B_OUTCOME_RAN) { 
+        fadescreen(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+	}
+	return
+}
+script ENCOUNTER_UNICORN {
+    lock
+    namebox ("UNICORN")
+	playmoncry(SPECIES_PONYTA, 0)
+	msgbox(format("NEIIIGH!"))
+	waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+	dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+        fadescreen(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+	}
+	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) { // Cannot catch with dowildbattleNoCatch
+        fadescreen(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+	}
+    elif (var(VAR_RESULT) == B_OUTCOME_RAN) { 
+        fadescreen(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+	}
+	return
+}
+script ENCOUNTER_RANDOM {
+    lock
+    msgbox(format("Something jumps at you from the shadows!"))
+	playmoncry(SPECIES_LUGIA, 0)
+	msgbox(format("RAUGHOUGH!"))
+	waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    call(RANDOM_DOWILDBATTLE_MON)
+	dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+        fadescreen(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+	}
+	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) { // Cannot catch with dowildbattleNoCatch
+        fadescreen(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+	}
+    elif (var(VAR_RESULT) == B_OUTCOME_RAN) { 
+        fadescreen(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+	}
+	return
+}
+
+script RANDOM_DOWILDBATTLE_MON {
+    random(6)
+    switch (var(VAR_RESULT)) {
+        case 0: 
+            setwildbattle (SPECIES_BIRD_NEST, VAR_TEMP_E, ITEM_NONE)
+        case 1: 
+            setwildbattle (SPECIES_THE_ILLUSIVE, VAR_TEMP_E, ITEM_NONE)
+        case 2: 
+            setwildbattle (SPECIES_CHINCHOMPA_GIANT, VAR_TEMP_E, ITEM_NONE)
+        case 3: 
+            setwildbattle (SPECIES_IMPLING_LUCKY_FORM, VAR_TEMP_E, ITEM_NONE)
+        case 4: 
+            setwildbattle (SPECIES_WOLPERTING, VAR_TEMP_E, ITEM_NONE)
+        case 5: 
+            setwildbattle (SPECIES_SHAIKAH, VAR_TEMP_E, ITEM_NONE)
+            
+        } 
+    return
+}
+
+script HIDDEN_GROTTO_FIND_ITEM {
+	random(28) 
+	switch (var(VAR_RESULT)) { 
+            case 0: 
+				finditem(ITEM_FLAX, 6)
+			case 1: 
+				finditem(ITEM_SPIRIT_SHARD, 2)
+			case 2: 
+				finditem(ITEM_PRAYER_POTION, 1)
+			case 3: 
+				finditem(ITEM_LAMP_SPATT, 1)
+			case 4: 
+				finditem(ITEM_STAT_BEER, 1)
+			case 5: 
+				finditem(ITEM_CRYSTAL_POUCH, 1)
+			case 6: 
+				finditem(ITEM_PURPLE_SWEETS, 1)
+			case 7: 
+				finditem(ITEM_CHOCOLATE_CAKE, 1)
+			case 8: 
+				finditem(ITEM_MINT_CAKE, 1)
+			case 9: 
+				finditem(ITEM_HWEEN_MASK, 1)
+			case 10: 
+				finditem(ITEM_EMPTY_BUCKET, 1)
+			case 11: 
+				finditem(ITEM_DRAGON_SCIMITAR, 1)
+			case 12: 
+				finditem(ITEM_ELEMENTAL_POUCH, 5)
+			case 13: 
+				finditem(ITEM_BLACK_POUCH, 15)
+			case 14: 
+				finditem(ITEM_NORMAL_POUCH, 20)
+			case 15: 
+				finditem(ITEM_SPIRIT_CHARM, 1)
+			case 16: 
+				finditem(ITEM_GODRABBITFOOT, 1)
+            case 17: 
+				finditem(ITEM_CABBAGE, 1)
+            case 18: 
+				finditem(ITEM_PURPLE_SWEETS, 5)
+            case 19: 
+				finditem(ITEM_CABBAGE, 1)
+            case 20: 
+				finditem(ITEM_PARTY_HAT, 1)
+            case 21: 
+				finditem(ITEM_GODSWORD, 1)
+            case 22: 
+				finditem(ITEM_CABBAGE, 1)
+            case 23: 
+				finditem(ITEM_DRAGON_POUCH, 1)
+            case 24: 
+				finditem(ITEM_GRANITE_MAUL, 1)
+            case 25: 
+				finditem(ITEM_DRAGON_CLAWS, 1)
+            case 26: 
+				finditem(ITEM_BREAD, 1)
+            case 27: 
+				finditem(ITEM_CABBAGE, 5)
+	}
+	end
+}

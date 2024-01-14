@@ -1,0 +1,1148 @@
+const OBJ_EVENT_ID_MODTIMBO = 5
+const OBJ_EVENT_ID_BLOCK_GUARD_1 = 37
+const OBJ_EVENT_ID_BLOCK_GUARD_2 = 38
+const OBJ_EVENT_ID_BLOCK_MERCHANT = 39
+const OBJ_EVENT_ID_BLOCK_KNIGHT = 40
+const OBJ_EVENT_ID_BLOCK_durial321 = 27
+
+mapscripts Falador_MapScripts {
+    MAP_SCRIPT_ON_LOAD { //ON LOAD FOR MAP TILES
+	if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    {
+    	call(FALADOR_QUEST_STATE)
+	}
+	else 
+	{
+		call(OPENWORLD_STATE_FALADOR)
+	}
+	call(MODTIMBO_STATE)
+	}
+
+	MAP_SCRIPT_ON_TRANSITION { //ON LOAD FOR MAP TILES
+    if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    {
+    	call(FALADOR_QUEST_STATE)
+	}
+	else 
+	{
+		call(OPENWORLD_STATE_FALADOR)
+	}
+
+    }
+} 
+
+
+script OPENWORLD_STATE_FALADOR {
+        setflag(FLAG_TEMP_2)
+		setmetatile(24, 6, 609, 0)
+		setmetatile(24, 7, 617, 0)
+		setmetatile(25, 6, 609, 0)
+		special(DrawWholeMapView) 
+		removeobject(OBJ_EVENT_ID_BLOCK_KNIGHT)
+		setflag(FLAG_TEMP_1)
+		removeobject(OBJ_EVENT_ID_BLOCK_GUARD_1)
+		removeobject(OBJ_EVENT_ID_BLOCK_GUARD_2)
+		removeobject(OBJ_EVENT_ID_BLOCK_MERCHANT)
+		removeobject(OBJ_EVENT_ID_BLOCK_durial321)
+		return
+}
+
+
+
+
+
+script MODTIMBO_STATE{
+	switch (var(VAR_POKESCAPE_MODTIMBO_STATE)){ 
+		case 0:
+			removeobject(OBJ_EVENT_ID_MODTIMBO)
+			setflag(FLAG_MOD_TIMBO)
+			return
+
+		case 1: 
+			setmetatile(44, 5, 593, 1)
+			setmetatile(44, 6, 15, 1)
+			special(DrawWholeMapView) 
+			removeobject(OBJ_EVENT_ID_MODTIMBO)
+			setflag(FLAG_MOD_TIMBO)
+			return
+	}
+
+}
+
+
+
+
+
+
+
+
+//ITEMS---------------------------------
+//HIDDEN ITEMS:
+script ITEM_FALADOR_1
+{
+    finditem(ITEM_ADAMANT_POUCH)
+    end
+}
+script ITEM_FALADOR_2
+{
+    finditem(ITEM_TM26_KINGS_SHIELD)
+    end
+}
+
+
+
+
+//OUTDOORS
+script FALADOR_SIGN
+{
+	lock
+	msgbox(format("Falador, home of the White Knights."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+script FALADOR_MINES_SIGN
+{
+	lock
+	msgbox(format("Dwarven Mines."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+script NPC_FALADOR_STATUE
+{
+	lock
+	msgbox(format("It is a statue of Saradomin."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+script NPC_FALADOR_STATUE_1
+{
+	lock
+	msgbox(format("It is a statue of Saradomin.\pThere appears to be some scribble on the statue.\pIt reads, BOW TO THE GREAT ONE."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+script NPC_FALADOR_DOG
+{
+	lock
+	faceplayer
+	namebox ("DALMATION")
+	msgbox(format("RUFF!"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_NPC_1
+{
+	lock
+	faceplayer
+    //namebox ("RSN")
+	msgbox(format("Have you heard about the Mining & Smithing rework?"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+script NPC_FALADOR_GUARD_1
+{
+	lock
+	faceplayer
+    namebox ("Guard")
+	msgbox(format("I am so thankful I was assigned to guard the south gate!\pI heard that the north gate guys don't even last half a day."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_GUARD_2
+{
+	lock
+	faceplayer
+    namebox ("Guard")
+	msgbox(format("Stop right there you criminal scum.\p…\pI am very sorry about that.\pI really needed to catch a criminal for a promotion.\pIf you see a criminal please send them my way."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_GUARD_3
+{
+	lock
+	faceplayer
+    namebox ("Guard")
+	msgbox(format("Stand and deliver!\pWait, that is the wrong line.\pSorry, I am new to this job."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_NPC_2
+{
+	lock
+	faceplayer
+    //namebox ("RSN")
+	msgbox(format("You should always stock up on items to heal your party.\pCakes and beer are a safe bet."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_NPC_3
+{
+	lock
+	faceplayer
+    //namebox ("RSN")
+	msgbox(format("I used an air rune on my frog, and it evolved differently from what I thought it would.\pMaybe there are more of these types of evolutions out there?"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_NPC_4
+{
+	lock
+	faceplayer
+    //namebox ("RSN")
+	msgbox(format("Gnome cocktails are very useful.\pThey increase your monsters stats."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+
+
+
+//BLOCK EVENT
+script NPC_FALADOR_GUARD_4
+{
+	lock
+	faceplayer
+    namebox ("Guard")
+	msgbox(format("Falador is a nice city, the white knights keeps us safe.\pStay vigilant adventurer."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_GUARD_5
+{
+	lock
+	faceplayer
+    namebox ("Guard")
+	msgbox(format("While most guards prefer to use a sword or monster to keep order in Falador, I prefer my crossbow.\pThat way people if people attack me from behind a obstacle I do not have to stand still and accept my fate."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_GUARD_6
+{
+	lock
+	faceplayer
+    namebox ("Guard")
+	msgbox(format("This statue shows our god of choice.\pSaradomin the god of wisdom.\pPlease do show your respect."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_GUARD_7
+{
+	lock
+	faceplayer
+    namebox ("Guard")
+	msgbox(format("The guard looks nervous, you wonder why…"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_WHITEKNIGHT_1
+{
+	lock
+	faceplayer
+    namebox ("White Knight")
+	msgbox(format("South from here is the Falador castle home to the White Knights.\pAre you interested in signing up?"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+//-----
+
+
+script NPC_FALADOR_WHITEKNIGHT_2
+{
+	lock
+	faceplayer
+    namebox ("White Knight")
+	msgbox(format("Past this bridge is Falador Castle!\pWhich is also the gym location for the MvM Championships."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_WHITEKNIGHT_3
+{
+	lock
+	faceplayer
+    namebox ("White Knight")
+	msgbox(format("Sir Amik Varze is our towns gym leader."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_NPC_11
+{
+	lock
+	faceplayer
+    //namebox ("")
+	msgbox(format("After I finish work today I might walk around Falador Park."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_NPC_12
+{
+	lock
+	faceplayer
+    //namebox ("")
+	msgbox(format("Oh don't mind me.\pI'm just training my Firemaking skill."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_MINER_1
+{
+	faceplayer
+    //namebox ("")
+	msgbox(format("I am mining coal to get enough money for a better pickaxe.\pThen I can mine coal faster to get an even better pickaxe."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_MINER_2
+{
+	lock
+	faceplayer
+    //namebox ("")
+	msgbox(format("This is so much work, but someone has to do it otherwise we will never see it finished."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_DWARF_1
+{
+	faceplayer
+    //namebox ("")
+	msgbox(format("If you are wanting to access the Dwarven Mines.\pYou can do so by entering the building next door to the Party Room, north of here."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_DWARF_2
+{
+	faceplayer
+    //namebox ("")
+	msgbox(format("Sorry to inconvenience you but the entrance to the underground mines is currently unavailable due to the rework."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_SMITHER
+{
+	lock
+	faceplayer
+    //namebox ("")
+	msgbox(format("We are currently in the middle of expanding the Mining Guild.\pWe are also going to be clearing this plot of land to put a Smithing Guild here."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_WOODCUTTER
+{
+	lock
+	faceplayer
+    //namebox ("")
+	msgbox(format("Chop, chop, chop!\pGoodbye trees, hello Smithing Guild!"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//INDOORS
+script NPC_FALADOR_ESTATE_AGENT
+{
+	lock
+	faceplayer
+    namebox ("Estate Agent")
+	msgbox(format("Hello, it would appear that you are looking for a house? I am most sorry but there is no menagerie big enough to fit your needs. I will get in touch with you if the situation changes."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_WORKMAN
+{
+	lock
+	faceplayer
+    namebox ("Workman")
+	msgbox(format(" I wish my useless apprentice would hurry up and finish our order for Varrock."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_APPRENTICE
+{
+	lock
+	faceplayer
+    namebox ("Apprentice")
+	msgbox(format("Ayyee!\pAfter I finished making this chair it came to life!\pI do not suppose you want to buy it from me, do you?\pI need to cover the cost of materials and I do not think a living chair will make our client happy…"), MSGBOX_YESNO)
+		if (!var(VAR_RESULT))
+		{
+			goto(NPC_FALADOR_APPRENTICE_NO)
+		}
+		msgbox(format("Thank you so much!\pLet me just calculate the total…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}Alright!\pSo that comes to 5000gp.\pIs this okay with you?"), MSGBOX_YESNO)
+			if (!var(VAR_RESULT))
+			{
+				goto(NPC_FALADOR_APPRENTICE_NO)
+			}
+			checkmoney(5000, 0)
+				if (!var(VAR_RESULT))
+				{
+					msgbox(format("…{PAUSE 32}…{PAUSE 32} Uh…\p{PAUSE 32}You do not have enough money."))
+					waitmessage
+					hidenamebox
+					release
+					end
+				}
+    			msgbox(format("Thank you! You are a lifesaver! "))
+				hidenamebox
+				call(GiveMon_FALADOR_ANICHAIR)
+				removemoney(5000, 0)
+    
+	namebox ("Apprentice")
+    msgbox(format("WHAT?!\pHOW!?\pI accidentally made another living chair!"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+script NPC_FALADOR_APPRENTICE_NO
+{
+	msgbox(format("Urk!\pNo problem, who would want a living chair anyway."))
+	closemessage
+	hidenamebox
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+script GiveMon_FALADOR_ANICHAIR {
+    setvar(VAR_TEMP_1, SPECIES_ANICHAIR)
+    givemon (SPECIES_ANICHAIR, 20, ITEM_NONE)
+    compare(VAR_RESULT, 0)
+	goto_if_eq(GiveMon_FALADOR_SendParty_ANICHAIR)
+    compare(VAR_RESULT, 1)
+	goto_if_eq(GiveMon_FALADOR_SendPC_ANICHAIR)
+    goto(Common_EventScript_NoMoreRoomForPokemon)
+    end
+}
+
+script GiveMon_FALADOR_SendParty_ANICHAIR{
+	call(GiveMon_FALADOR_ReceivedFanfare_ANICHAIR)
+	msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+    compare(VAR_RESULT, NO)
+	goto_if_eq(GiveMon_FALADOR_Received_ANICHAIR)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(GiveMon_FALADOR_Received_ANICHAIR)
+	end
+}
+
+script GiveMon_FALADOR_SendPC_ANICHAIR {
+	call(GiveMon_FALADOR_ReceivedFanfare_ANICHAIR)
+	msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+    compare(VAR_RESULT, NO)
+	goto_if_eq(GiveMon_FALADOR_TransferredToPC_ANICHAIR)
+	call (Common_EventScript_NameReceivedBoxMon)
+	goto (GiveMon_FALADOR_TransferredToPC_ANICHAIR)
+	end
+}
+
+script GiveMon_FALADOR_TransferredToPC_ANICHAIR{
+	call (Common_EventScript_TransferredToPC)
+	goto (GiveMon_FALADOR_Received_ANICHAIR)
+	end
+}
+
+script GiveMon_FALADOR_ReceivedFanfare_ANICHAIR{
+	bufferspeciesname(1, SPECIES_ANICHAIR)
+	//removeobject LOCALID_BELDUM_BALL
+    //setvar(VAR_POKESCAPE_ERNEST_QUEST_STATE, 3)
+	playfanfare (MUS_OBTAIN_ITEM)
+	msgbox(format("{PLAYER} obtained a {STR_VAR_2}."))
+	waitmessage
+	waitfanfare
+	bufferspeciesname(0, SPECIES_ANICHAIR)
+	return
+}
+
+script GiveMon_FALADOR_Received_ANICHAIR{
+    //msgbox(format("EVENT COMPLETE."))
+	releaseall
+	return
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script NPC_FALADOR_HAIRDRESSER
+{
+	lock
+	faceplayer
+    namebox ("Hairdresser")
+	if (!flag(FLAG_HAIRDRESSER))
+	{		
+		msgbox(format("You want a haircut?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT)){
+			msgbox(format("Well, first you will have to battle me."))
+			closemessage
+			hidenamebox
+			trainerbattle_no_intro(TRAINER_FALADOR_HAIRDRESSER, msgbox(format("Oh no, my chinchompas!")))
+			namebox ("Hairdresser")
+			msgbox(format("Why would you faint all my chinchompas.\pNow who will run the wheel to make the sign outside spin.\pMy business is ruined!"))
+			msgbox(format("Take this, and never return.\nAlso you get no haircut."))
+			hidenamebox
+			setflag(FLAG_HAIRDRESSER)
+			giveitem(ITEM_RING_OF_WEALTH, 1)
+			namebox ("Hairdresser")
+			msgbox(format("Please leave.\pFor the good of my business."))
+			closemessage
+			hidenamebox
+		}
+		else 
+		{
+			msgbox(format("Out of my way then, can you not see I have hair to cut?"))
+			closemessage
+			hidenamebox
+		}
+		release
+		end
+	}
+	else 
+	{
+		msgbox(format("What more do you want!\pGet out!"))
+	}
+	closemessage
+	hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_HAIRDRESSER_NPC
+{
+	lock
+	faceplayer
+    //namebox ("")
+	msgbox(format("Today im really feeling the dragoon hairstyle.\pIt will fix my love life for sure."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_HAIRDRESSER_SUOMI
+{
+	lock
+	//faceplayer
+    namebox ("SUOMI")
+	msgbox(format("What, do you think this is my natural hair colour?\pI have to dye my hair every few weeks to keep it this purple."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+script NPC_FALADOR_CASSIE
+{
+	lock
+	faceplayer
+    namebox ("Cassie")
+	msgbox(format("Sorry, I just sold my quota of shields for today. You cannot let monsters equip shields anyway."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+script NPC_FALADOR_NPC_10
+{
+	lock
+	faceplayer
+    namebox ("")
+	msgbox(format("Is it still there?! I do not want to leave my house unless it is gone! What? It is just a spiderling? I do not believe you, it is a monster! Stop trying to trick me!"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_MYSTERIOUS_OLD_MAN
+{
+	lock
+	faceplayer
+    namebox ("Mysterious Old Man")
+	msgbox(format("Oh hello again {PLAYER}. I am here to visit Falador in attempt to open these strange cubes. Here you have one"))
+    msgbox(format(" If you figure out how to open it please get in contact with me again."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+//FALADOR PARK
+script NPC_FALADOR_SirTiffyCachien
+{
+	lock
+	faceplayer
+    namebox ("Sir Tiffy Cachien")
+	msgbox(format("I enjoy spending my time here at the park sitting on this bench."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+script NPC_FALADOR_HESKEL
+{
+	lock
+	faceplayer
+    namebox ("Heskel")
+	msgbox(format("I wish someone would take over for me, it has been days since I had my last break."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+script NPC_FALADOR_NPC_5
+{
+	lock
+	faceplayer
+    namebox ("Gardener")
+	msgbox(format("It is really hard tending to these gardens.\pMy farming level is way too low."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+script NPC_FALADOR_NPC_6
+{
+	lock
+	faceplayer
+    namebox ("Garden Supplier")
+	msgbox(format("If you are here to buy bagged trees to sell them for a higher price, I regret to inform you that I have increased the prices."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+script NPC_FALADOR_Wyson
+{
+	lock
+	faceplayer
+    namebox ("Wyson")
+	msgbox(format("I heard some rumours about a giant mole living somewhere in this area, and that interacting with an object would get you to it.\pI am too scared to find out how though."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+//MOD TIMBO------------------------------------------
+
+
+
+
+script Falador_TREE {
+	switch (var(VAR_POKESCAPE_MODTIMBO_STATE)){ 
+		case 0:
+			lock
+			clearflag(FLAG_MOD_TIMBO)
+			addobject(OBJ_EVENT_ID_MODTIMBO)
+			playse(SE_LEDGE)
+			applymovement(OBJ_EVENT_ID_MODTIMBO, Movement_FaladorTree_1)
+			applymovement(OBJ_EVENT_ID_PLAYER, Movement_FaladorTree_2)
+			waitmovement(0)
+			namebox("Mod Timbo")
+			msgbox(format("Oh no, you caught me!!\pI was planning to chop down this tree but it appears I must chop you down first!"))
+			hidenamebox
+			closemessage
+			trainerbattle_no_intro(TRAINER_FALADOR_MODTIMBO, msgbox(format("You saw nothing!")))
+			fadescreen(FADE_TO_BLACK)
+			//CHANGE MAP TILE 
+			setmetatile(44, 5, 593, 1)
+			setmetatile(44, 6, 15, 1)
+			special(DrawWholeMapView) 
+			//REMOVE TIMBO
+			removeobject(OBJ_EVENT_ID_MODTIMBO)
+			setflag(FLAG_MOD_TIMBO)
+			fadescreen(FADE_FROM_BLACK)
+			msgbox(format("Despite winning the battle Timbo appears to have chopped down the tree anyway.\pThere is something next to the stump.\pLooks like he dropped it in a rush."))
+			giveitem(ITEM_TINDERBOX, 1)
+			setvar(VAR_POKESCAPE_MODTIMBO_STATE,1)
+			release
+			end
+		case 1:
+			msgbox(format("TIIIIMBOOOOOOOOO!"))
+			closemessage
+			end
+	}
+
+}
+
+movement Movement_FaladorTree_1
+{
+	jump_special_down
+}   
+
+movement Movement_FaladorTree_2
+{
+    lock_facing_direction
+	walk_fast_down
+    unlock_facing_direction
+	face_up
+}  
+
+//-------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script NPC_FALADOR_NPC_8
+{
+	lock
+	faceplayer
+    namebox ("")
+	msgbox(format(""))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+script NPC_FALADOR_NPC_7
+{
+	lock
+	faceplayer
+    namebox ("Gardener")
+	msgbox(format("Maybe they will one day rework farming. A man can dream."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+script NPC_FALADOR_GENERALSTORE_NPC
+{
+	lock
+	faceplayer
+    namebox ("Guard")
+	msgbox(format("Even if your monsters get stronger, it never hurts to have some healing items ready for when you are in a pinch."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+script NPC_FALADOR_BANK_NPC_1
+{
+	lock
+	faceplayer
+    namebox ("Guard")
+	msgbox(format("You can only carry six monsters.\pMake sure to cover all your bases with those six."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_GEMSTORE_NPC_1
+{
+	lock
+	faceplayer
+    //namebox ("Guard")
+	msgbox(format("They say the gems from this store comes all the way from Shilo Village.\pThats all the way over in Karamja!"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_GEMSTORE_OWNER
+{
+	lock
+	faceplayer
+    //namebox ("Guard")
+	msgbox(format("Welcome!\pI am very sorry but the shipment of gems is still on hold and there is nothing else I can sell you.\pPlease come again another time."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_BANK_NPC_2
+{
+	lock
+	faceplayer
+    //namebox ("Guard")
+	msgbox(format("I got wiped out by Sir Amik.\pGuess my monsters just werent strong enough."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_BANK_NPC_3
+{
+	lock
+	faceplayer
+    namebox ("White Knight")
+	msgbox(format("Back in the day a lot of people crowded up here and in the park yelling colourful words and screaming at each other to get attention.\pI really miss it."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_HOUSE_NPC_1
+{
+	lock
+	faceplayer
+    //namebox ("Guard")
+	msgbox(format("Dinner will be ready soon, will you be joining us?"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_HOUSE_NPC_2
+{
+	lock
+	faceplayer
+    //namebox ("Guard")
+	msgbox(format("I don't know you but I am telling you, run!\pIt is too late for me but you can still run before the dinner is ready!\pHelp…"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//UNSUDED
+script NPC_FALADOR_NPC_9
+{
+	lock
+	faceplayer
+    //namebox ("")
+	msgbox(format("Did you know part of the Dwarven Mines are right underneath us!\pIt is scary just thinking about it."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//--------------------
+//Story
+//---------------
+
+
+
+script FALADOR_QUEST_STATE{
+	switch (var(VAR_POKESCAPE_FALADOR_STATE)){ 
+		case 0:
+		case 1: 
+			return
+		case 2:
+		case 3:  
+		case 4: //REMOVE DWARVEN MINES BLOCKADE 
+            removeobject(OBJ_EVENT_ID_BLOCK_KNIGHT)
+			setflag(FLAG_TEMP_1)
+			return
+
+		case 5: //REMOVE DWARVEN MINES BLOCKADE 
+            setflag(FLAG_TEMP_2)
+			setmetatile(24, 6, 609, 0)
+			setmetatile(24, 7, 617, 0)
+			setmetatile(25, 6, 609, 0)
+			special(DrawWholeMapView) 
+			removeobject(OBJ_EVENT_ID_BLOCK_KNIGHT)
+			setflag(FLAG_TEMP_1)
+			removeobject(OBJ_EVENT_ID_BLOCK_GUARD_1)
+			removeobject(OBJ_EVENT_ID_BLOCK_GUARD_2)
+			removeobject(OBJ_EVENT_ID_BLOCK_MERCHANT)
+			removeobject(OBJ_EVENT_ID_BLOCK_durial321)
+			return
+	}
+
+}
+
+script NPC_FALADOR_BLOCK_GUARD_1
+{
+	lock
+	faceplayer
+    namebox ("GUARD")
+	msgbox(format("We've been informed that this shipment may contain Karmajan Rum.\pYou should inform Sir Amik Varze right away!"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+script NPC_FALADOR_BLOCK_GUARD_2
+{
+	lock
+	faceplayer
+    namebox ("GUARD")
+	msgbox(format("Please stand back while we search these wares.\pWhile waiting you should visit the White Knights Castle."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+script NPC_FALADOR_BLOCK_MERCHANT
+{
+	lock
+	faceplayer
+    namebox ("MERCHANT")
+	msgbox(format("Why did that guy have to say I was carrying suspicious goods…"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+script NPC_FALADOR_BLOCK_KNIGHT
+{
+	lock
+	faceplayer
+    namebox ("KNIGHT")
+	msgbox(format("There have been reports of a distrubance in these mines.\pSir Owen and Sir Theodore have both gone ahead to investigate."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+script FALADOR_QUEST_STATE_CHANGER{
+	switch (var(VAR_POKESCAPE_FALADOR_STATE)){ 
+		case 0:
+			msgbox(format("FALADORSTATE isnow 1"))
+			setvar(VAR_POKESCAPE_FALADOR_STATE, 1)
+			closemessage
+			return
+		case 1: 
+			msgbox(format("FALADORSTATE isnow 2"))
+			setvar(VAR_POKESCAPE_FALADOR_STATE, 2)
+			closemessage
+			return
+		case 2:
+			msgbox(format("FALADORSTATE isnow 3"))
+            setvar(VAR_POKESCAPE_FALADOR_STATE, 3)
+			closemessage
+			return
+        case 3:
+			msgbox(format("FALADORSTATE isnow 4"))
+			setvar(VAR_POKESCAPE_FALADOR_STATE, 4)
+			closemessage
+			return
+        case 4:    
+			msgbox(format("FALADORSTATE isnow 5"))
+			setvar(VAR_POKESCAPE_FALADOR_STATE, 5)
+			closemessage
+			return
+        case 5:
+			msgbox(format("FALADORSTATE isnow 0"))
+            setvar(VAR_POKESCAPE_FALADOR_STATE, 0)
+			closemessage
+			return
+	}
+}

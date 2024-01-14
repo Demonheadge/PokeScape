@@ -16,12 +16,12 @@ const struct MonCoords gTrainerBackPicCoords[] =
 const struct CompressedSpriteSheet gTrainerBackPicTable[] =
 {
     [TRAINER_BACK_PIC_BRENDAN] = {
-        .data = (const u32 *)gTrainerBackPic_Brendan,
+        .data = (const u32 *)gTrainerBackPic_protaganist_m,
         .size = TRAINER_PIC_SIZE * ARRAY_COUNT(gTrainerBackPicTable_Brendan),
         .tag = TRAINER_BACK_PIC_BRENDAN,
     },
     [TRAINER_BACK_PIC_MAY] = {
-        .data = (const u32 *)gTrainerBackPic_May,
+        .data = (const u32 *)gTrainerBackPic_protaganist_f,
         .size = TRAINER_PIC_SIZE * ARRAY_COUNT(gTrainerBackPicTable_May),
         .tag = TRAINER_BACK_PIC_MAY,
     },
@@ -61,8 +61,8 @@ const struct CompressedSpriteSheet gTrainerBackPicTable[] =
 
 const struct CompressedSpritePalette gTrainerBackPicPaletteTable[] =
 {
-    TRAINER_BACK_PAL(BRENDAN, gTrainerPalette_Brendan),
-    TRAINER_BACK_PAL(MAY, gTrainerPalette_May),
+    TRAINER_BACK_PAL(BRENDAN, gTrainerBackPic_protaganist_m),
+    TRAINER_BACK_PAL(MAY, gTrainerBackPic_protaganist_f),
     TRAINER_BACK_PAL(RED, gTrainerBackPicPalette_Red),
     TRAINER_BACK_PAL(LEAF, gTrainerBackPicPalette_Leaf),
     TRAINER_BACK_PAL(RUBY_SAPPHIRE_BRENDAN, gTrainerPalette_RubySapphireBrendan),

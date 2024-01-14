@@ -1,0 +1,27 @@
+
+
+mapscripts Draynor_Sewers_1_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 1) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT,
+    }
+}
+
+
+
+
+//BATTLES
+//Low levels
+script BATTLE_DRAYNORSEWERS_SKELETON_1{
+    trainerbattle_single(TRAINER_DRAYNORSEWERS_SKELETON_1, format("The skeleton wanders towards you ominously…"),format("The skeleton seems offended about something trivial."))
+    msgbox(format("The skeleton seems offended about something trivial."))
+    release
+    end
+}
+
+script BATTLE_DRAYNORSEWERS_SKELETON_2{
+    trainerbattle_single(TRAINER_DRAYNORSEWERS_SKELETON_2, format("Chills runs down your spine as you prepare to battle the skeleton."),format("The skeleton waves goodbye to you."))
+    msgbox(format("The skeleton waves goodbye to you."))
+    release
+    end
+}

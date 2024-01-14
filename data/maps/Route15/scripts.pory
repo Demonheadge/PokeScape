@@ -1,0 +1,123 @@
+mapscripts Route15_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 16) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+}
+
+
+
+
+
+
+
+
+
+script ROUTE15_SIGNPOST
+{
+    msgbox(format("NORTH - VARROCK.\lSOUTH - AL KHARID.\lEAST - DIGSITE."))
+    closemessage
+    release
+    end
+}
+
+//NPC
+
+script ROUTE15_NPC_UNICORN
+{
+    lock
+    faceplayer
+    namebox ("Unicorn")
+    msgbox(format("NEEEIGGH!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script ROUTE15_NPC_MINER
+{
+    lock
+    faceplayer
+    namebox ("Miner")
+    msgbox(format("I am going to craft so many Pouches with these ores!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script ROUTE15_NPC_NOOB
+{
+    lock
+    faceplayer
+    namebox ("Noob")
+    msgbox(format("My Pickaxe head just flew off.\pHave you seen it anywhere?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+//BATTLES
+
+script BATTLE_ROUTE15_TRAINER_1 
+{ //Penguin spy (rock) ,War tortoise 
+    trainerbattle_single(TRAINER_ROUTE15_TRAINER_1, format("We mine all day, time for a break."),format("I lost a lot of exp on that break.\pI may never recover from this loss."))
+    namebox ("Miner")
+    msgbox(format("I lost a lot of exp on that break.\pI may never recover from this loss."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_ROUTE15_TRAINER_2
+{ //Pickaxe. Nature impling.
+    trainerbattle_single(TRAINER_ROUTE15_TRAINER_2, format("You better be worth my time interrupting me like this."),format("I guess you were partly worth it."))
+    namebox ("Miner")
+    msgbox(format("I guess you were partly worth it."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_ROUTE15_TRAINER_3
+{ //Brine rat. pet rock. Cavefish.
+    trainerbattle_single(TRAINER_ROUTE15_TRAINER_3, format("It might not be ambitious, but I'd really like to reach mining level 9 by the week."),format("I am never going to make it…"))
+    namebox ("Miner")
+    msgbox(format("I am never going to make it…"))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_ROUTE15_TRAINER_4
+{ //Sheephound (border collie) . Birds nest. Dancing doll
+    trainerbattle_single(TRAINER_ROUTE15_TRAINER_4, format("I chop down trees, I eat my lunch, I like to battle strangers!"),format("On wednesday I go shopping, just like my dear papa!"))
+    namebox ("Woodcutter")
+    msgbox(format("On Wednesday I go shopping, just like my dear papa!"))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_ROUTE15_TRAINER_5
+{
+    trainerbattle_single(TRAINER_ROUTE15_TRAINER_5, format("I tried Mining but everyone kept stealing my ore so I am going to try some MvM battles instead!"),format("Looks like I am no good at this either…"))
+    namebox ("Noob")
+    msgbox(format("Seems like I am no good at Mining or MvM battles.\pMaybe I'll try Questing, I doubt I could go wrong with that."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_ROUTE15_TRAINER_6
+{
+    trainerbattle_single(TRAINER_ROUTE15_TRAINER_6, format("My Woodcutting level is 14.\pWhat is yours?"),format("My Beaver?\pI found him was level 3."))
+    namebox ("Woodcutter")
+    msgbox(format("My Beaver?\pI found him was level 3."))
+	hidenamebox
+    release
+	end
+}
+
+//I hear the digsite is nearby, but only members are allowed to excavate it.

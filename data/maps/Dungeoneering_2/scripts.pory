@@ -1,0 +1,7 @@
+mapscripts Dungeoneering_2_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        call(Randomise_Dungeon)
+    }
+}
+
+

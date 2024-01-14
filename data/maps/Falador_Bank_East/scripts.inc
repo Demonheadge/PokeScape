@@ -1,0 +1,18 @@
+Falador_Bank_East_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Falador_Bank_East_MapScripts_MAP_SCRIPT_ON_LOAD
+	map_script MAP_SCRIPT_ON_TRANSITION, Falador_Bank_East_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	.byte 0
+
+Falador_Bank_East_MapScripts_MAP_SCRIPT_ON_LOAD:
+	call Falador2_Bank_OnTransition
+	return
+
+Falador_Bank_East_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setvar VAR_EVOLUTION_MAP_STATE, 3
+	return
+
+
+Falador2_Bank_OnTransition::
+	setrespawn HEAL_LOCATION_FALADOR2
+	return
+

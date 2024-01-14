@@ -142,23 +142,23 @@ LilycoveCity_ContestLobby_EventScript_SetPaintingFlag::
 	return
 
 LilycoveCity_ContestLobby_EventScript_MadeCoolPainting::
-	setflag FLAG_COOL_PAINTING_MADE
+
 	return
 
 LilycoveCity_ContestLobby_EventScript_MadeBeautyPainting::
-	setflag FLAG_BEAUTY_PAINTING_MADE
+
 	return
 
 LilycoveCity_ContestLobby_EventScript_MadeCutePainting::
-	setflag FLAG_CUTE_PAINTING_MADE
+
 	return
 
 LilycoveCity_ContestLobby_EventScript_MadeSmartPainting::
-	setflag FLAG_SMART_PAINTING_MADE
+
 	return
 
 LilycoveCity_ContestLobby_EventScript_MadeToughPainting::
-	setflag FLAG_TOUGH_PAINTING_MADE
+
 	return
 
 LilycoveCity_ContestLobby_Movement_ArtistApproachPlayer:

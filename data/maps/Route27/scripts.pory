@@ -1,0 +1,68 @@
+mapscripts Route27_MapScripts{
+	MAP_SCRIPT_ON_TRANSITION {
+        //setvar(VAR_EVOLUTION_MAP_STATE, 15) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+	}
+}
+
+
+//NPCS
+script NPC_ROUTE27_1
+{
+	lock
+	faceplayer
+    namebox ("Monk")
+	msgbox(format("Sorry the chapel is off limits."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_ROUTE27_2
+{
+	lock
+	faceplayer
+    namebox ("Monk")
+	msgbox(format("Take your monsters and leave.\pYou may not enter."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+//TRAINERS
+script BATTLE_ROUTE27_TRAINER_1
+{
+    trainerbattle_single(TRAINER_ROUTE27_TRAINER_1, format("Stan and deliver!"),format("Wait it is stand?\pSorry, I am new at this."))
+    namebox ("Stan the Mugger")
+    msgbox(format("Wait it is stand?\pSorry, I am new at this."))
+	hidenamebox
+    release
+	end
+}
+script BATTLE_ROUTE27_TRAINER_2
+{
+    trainerbattle_single(TRAINER_ROUTE27_TRAINER_2, format("Waiting for an Evil Tree to spawn, it will show up soon."),format("Hmm… Maybe I got the wrong location."))
+    //namebox ("Cupholder")
+    msgbox(format("Hmm… Maybe I got the wrong location."))
+	hidenamebox
+    release
+	end
+}
+script BATTLE_ROUTE27_TRAINER_3
+{
+    trainerbattle_single(TRAINER_ROUTE27_TRAINER_3, format("This is Ice Mountain, the path to the Dwarven Mines."),format("This is Ice Mountain, the path to the Dwarven Mines."))
+    //namebox ("Cupholder")
+    msgbox(format("This is Ice Mountain, the path to the Dwarven Mines."))
+	hidenamebox
+    release
+	end
+}
+script BATTLE_ROUTE27_TRAINER_4
+{
+    trainerbattle_single(TRAINER_ROUTE27_TRAINER_4, format("You stay away from Ice Mountain, you hear me?!"),format("Stay away!"))
+    //namebox ("Cupholder")
+    msgbox(format("If you know what is best then you should stay away from Ice Mountain."))
+	hidenamebox
+    release
+	end
+}

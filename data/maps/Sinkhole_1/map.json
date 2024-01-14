@@ -1,0 +1,242 @@
+{
+  "id": "MAP_SINKHOLE_1",
+  "name": "Sinkhole_1",
+  "layout": "LAYOUT_SINKHOLE_1",
+  "music": "MUS_PS_VICTORY_ROAD",
+  "region_map_section": "MAPSEC_DUNGEON_SINKHOLE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RUNE_ARMOUR",
+      "x": 19,
+      "y": 27,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SINKHOLE_NPC_FORGOTTENWARRIOR_2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FORTUNATO",
+      "x": 21,
+      "y": 25,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SINKHOLE_NPC_TRADER",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
+      "x": 6,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ITEM_SINKHOLE_1",
+      "flag": "FLAG_ITEM_SINKHOLE_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_COW_DAIRY",
+      "x": 21,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_COW",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
+      "x": 33,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ITEM_SINKHOLE_2",
+      "flag": "FLAG_ITEM_SINKHOLE_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
+      "x": 40,
+      "y": 28,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ITEM_SINKHOLE_3",
+      "flag": "FLAG_ITEM_SINKHOLE_3"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_IRONMAN",
+      "x": 41,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "BATTLE_SINKHOLE_NPC_FORGOTTENWARRIOR_1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RANGER_F",
+      "x": 38,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SINKHOLE_NPC_FORGOTTENWARRIOR_1",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 17,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_ASGARNIAN_DUNGEON_B3F",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 21,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_SINKHOLE_1",
+      "dest_warp_id": 2
+    },
+    {
+      "x": 21,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_SINKHOLE_1",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 15,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_SINKHOLE_1",
+      "dest_warp_id": 4
+    },
+    {
+      "x": 12,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_SINKHOLE_1",
+      "dest_warp_id": 3
+    },
+    {
+      "x": 27,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_SINKHOLE_1",
+      "dest_warp_id": 6
+    },
+    {
+      "x": 30,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_SINKHOLE_1",
+      "dest_warp_id": 5
+    },
+    {
+      "x": 36,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_SINKHOLE_1",
+      "dest_warp_id": 8
+    },
+    {
+      "x": 36,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_SINKHOLE_1",
+      "dest_warp_id": 7
+    },
+    {
+      "x": 36,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_SINKHOLE_1",
+      "dest_warp_id": 10
+    },
+    {
+      "x": 36,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_SINKHOLE_1",
+      "dest_warp_id": 9
+    },
+    {
+      "x": 21,
+      "y": 28,
+      "elevation": 0,
+      "dest_map": "MAP_SINKHOLE_1",
+      "dest_warp_id": 12
+    },
+    {
+      "x": 21,
+      "y": 32,
+      "elevation": 0,
+      "dest_map": "MAP_SINKHOLE_1",
+      "dest_warp_id": 11
+    },
+    {
+      "x": 21,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_SINKHOLE_1",
+      "dest_warp_id": 14
+    },
+    {
+      "x": 21,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_SINKHOLE_1",
+      "dest_warp_id": 13
+    },
+    {
+      "x": 21,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_SINKHOLE_2",
+      "dest_warp_id": 0
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

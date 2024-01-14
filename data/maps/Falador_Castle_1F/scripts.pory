@@ -1,0 +1,23 @@
+mapscripts Falador_Castle_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+
+    if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    	{
+            //
+    	}
+		else
+		{
+			call(OPENWORLD_STATE_FALADOR_CASTLE_1F)
+		}
+    }
+}
+
+script OPENWORLD_STATE_FALADOR_CASTLE_1F {
+		removeobject(2)
+        removeobject(5)
+        removeobject(3)
+        removeobject(4)
+        removeobject(8)
+        setflag(FLAG_TEMP_1)
+		return
+}

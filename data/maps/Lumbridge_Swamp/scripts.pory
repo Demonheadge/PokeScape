@@ -1,0 +1,216 @@
+mapscripts Lumbridge_Swamp_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 1) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+		if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+			{
+				if (flag(FLAG_BADGE01_GET)){
+				call(LUMBRIDGE_SWAMP_STATE)
+				}
+			}
+			else
+			{
+				call(LUMBRIDGE_SWAMP_STATE)
+			}
+	}
+} 
+
+script LUMBRIDGE_SWAMP_STATE{
+	removeobject(4)
+	setflag(FLAG_TEMP_5)
+	removeobject(8)
+	setflag(FLAG_TEMP_5)
+    return
+}
+
+script BLOCK_LumbridgeSwamp_HAM
+{
+	lock
+    applymovement(9, MOVEMENT_LUMBRIDGESWAMP_PINKMAN)
+    namebox ("Pink Man")
+	msgbox(format("Oh come on!\pNewcomer map, more like trash map!"))
+    hidenamebox
+    waitmovement(0)
+    applymovement(4, MOVEMENT_LUMBRIDGESWAMP_PINKGIRL_1)
+    namebox ("Pink Girl")
+	msgbox(format("You are looking at it upside down.\pSee the hideout should be right through here."))
+    waitmovement(0)
+	hidenamebox
+    namebox ("Pink Man")
+	msgbox(format("…"))
+	hidenamebox
+    applymovement(4, MOVEMENT_LUMBRIDGESWAMP_PINKGIRL_2)
+    waitmovement(0)
+	release
+	end
+}
+
+
+movement MOVEMENT_LUMBRIDGESWAMP_PINKMAN{
+    walk_in_place_fast_up *3
+}
+
+movement MOVEMENT_LUMBRIDGESWAMP_PINKGIRL_1{
+	face_right
+}
+
+movement MOVEMENT_LUMBRIDGESWAMP_PINKGIRL_2{
+	face_up
+}
+
+
+
+
+
+
+
+script BATTLE_LumbridgeSwamp_TRAINER_1{
+	trainerbattle_single(TRAINER_RSN_LUM_SWAMP, format("This is me swamp!"),format("Get out of me swamp!"))
+	namebox("Slimethighs")
+	msgbox(format("Me do not like you."))
+	hidenamebox
+	closemessage
+	end
+}
+
+
+script BATTLE_LumbridgeSwamp_TRAINER_2{
+	trainerbattle_single(TRAINER_SKELETON_LUM_SWAMP, format("Rattle, rattle!"),format("Rattle…"))
+	namebox("Brittlebones")
+	msgbox(format("Rattle…"))
+	hidenamebox
+	closemessage
+	end
+}
+
+
+script BATTLE_LumbridgeSwamp_TRAINER_3{
+	trainerbattle_single(TRAINER_MUGGER_LUM_SWAMP, format("Stay still and nobody gets hurt!"),format("My feelings got hurt by your victory."))
+	namebox("Robin")
+	msgbox(format("My feelings got hurt by your victory."))
+	hidenamebox
+	closemessage
+	end
+}
+
+script BATTLE_LumbridgeSwamp_TRAINER_4{
+	trainerbattle_single(TRAINER_LUM_SWAMP_GRASSTEETH, format("Did pink humans say to find me?"),format("Pink humans chase relentless.\pMe scared."))
+	namebox("Grassteeth")
+	msgbox(format("Pink humans chase relentless.\pMe scared."))
+	hidenamebox
+	closemessage
+	end
+}
+
+
+
+
+script LumSwampSign{
+    msgbox(format("WARNING: Goblins below!"), MSGBOX_SIGN)
+    release
+}
+
+
+
+
+
+
+
+
+
+script LUMBRIDGESWAMP_CANDLESELLER
+{
+	lock
+	faceplayer
+	msgbox(format("I wouldn't go down there without a light source.\pIt's dangerous!"))
+    checkitem(ITEM_LANTERN, 1)
+        if (!var(VAR_RESULT)){
+            msgbox(format("But…{PAUSE 15}…{PAUSE 15}…\pIf you are serious about going down there, take this."))
+            giveitem(ITEM_LANTERN)
+            msgbox(format("Be careful down there."))
+            closemessage
+            release
+            end
+        }
+        else {
+            closemessage
+            release
+            end
+        }
+    closemessage
+	release
+	end
+}
+
+
+script LUMBRIDGESWAMP_FAIRY
+{
+	lock
+	faceplayer
+	namebox ("Fairy")
+	msgbox(format("Wh-what!?\pThere is no secret passage to Zanaris here, no way!"))
+	hidenamebox
+	closemessage
+	release
+	end
+}
+
+
+script LUMBRIDGESWAMP_Urhney
+{
+	lock
+	faceplayer
+    checkitem(ITEM_GHOSTSPEAK_AMULET, 1)
+        if (!var(VAR_RESULT)){
+			namebox ("Father Urhney")
+            msgbox(format("Urgh, I wish you adventurers would stop barging into my house like this all the time.\pSay no more, this is what you want isn't it?"))
+			hidenamebox
+			closemessage
+            giveitem(ITEM_GHOSTSPEAK_AMULET)
+			namebox ("Father Urhney")
+            msgbox(format("Now go away and let me meditate in peace!"))
+			hidenamebox
+            closemessage
+            release
+            end
+        }
+        else {
+			namebox ("Father Urhney")
+			msgbox(format("Go away I already gave you that Ghostspeak amulet!\pLet me meditate in peace!"))
+            closemessage
+			hidenamebox
+            release
+            end
+        }
+    closemessage
+	release
+	end
+}
+
+
+script LUMBRIDGESWAMP_BOOK
+{
+	msgbox(format("The book is titled,\n101 Ways to successfully Meditate.\pStep 1, Live far away from civilation.\pStep 2, make sure it is far enough away that adventurers don't light fires at your windows."))
+	hidenamebox
+	closemessage
+	release
+	end
+}
+
+script EventScript_RestBed
+{
+	lock
+	msgbox(format("Would you like to take a rest?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+		fadescreen(FADE_TO_BLACK)
+		closemessage
+		playfanfare (MUS_HEAL)
+		waitfanfare
+		special(HealPlayerParty)
+		fadescreen(FADE_FROM_BLACK)
+		
+	}
+	
+	release
+	end
+}

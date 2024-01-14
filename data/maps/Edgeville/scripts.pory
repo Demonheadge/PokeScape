@@ -1,0 +1,126 @@
+mapscripts Edgeville_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 15) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+}
+
+
+
+//ITEMS
+script ITEM_EDGEVILLE_1
+{
+    finditem(ITEM_PURPLE_SWEETS)
+    end
+}
+
+//NPCS
+script NPC_EDGEVILLE_1
+{
+	lock
+	faceplayer
+    namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_2
+{
+	lock
+	faceplayer
+    namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_3
+{
+	lock
+	faceplayer
+    namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_4
+{
+	lock
+	faceplayer
+    namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_5
+{
+	lock
+	faceplayer
+    namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_6
+{
+	lock
+	faceplayer
+    namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_7
+{
+	lock
+	faceplayer
+    namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_8
+{
+	lock
+	faceplayer
+    namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_9
+{
+	lock
+	faceplayer
+    namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_10
+{
+	lock
+	faceplayer
+    namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}

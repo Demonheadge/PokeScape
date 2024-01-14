@@ -1,0 +1,147 @@
+const OBJ_EVENT_ID_TZTOKJAD = 11
+
+mapscripts Tzhaar_FightCaves_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION 
+    {
+
+    }
+    
+}
+
+
+script NPC_TZHAAR_GYM_TOKHAAR
+{
+    lock
+    faceplayer
+    namebox("TokHaar")
+
+    if (var(VAR_POKESCAPE_TZHAAR_GYM_QUEST) == 1) {
+        msgbox(format("Go to the Fight Caves."))
+    }
+
+    if (var(VAR_POKESCAPE_TZHAAR_GYM_QUEST) == 18) {
+        msgbox(format("Pathetic, to think you would panic and run from the fight caves!\pTry again but next time don't run away like a coward."))
+        setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1)
+    }
+
+    if (var(VAR_POKESCAPE_TZHAAR_GYM_QUEST) == 19) {
+        msgbox(format("You defeated TzTok Jad!"))
+    }
+
+    if (var(VAR_POKESCAPE_TZHAAR_GYM_QUEST) == 20) {
+        msgbox(format("You caught TzTok Jad!"))
+    }
+
+    if (var(VAR_POKESCAPE_TZHAAR_GYM_QUEST) == 0) {
+        msgbox(format("Welcome to the Tzhaar Gym.\pIf you wish to battle me you must show your strength in the Fight Caves."))
+        setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1)
+    }
+
+    
+    
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+script NPC_TZHAAR_GYM_WAVE_1
+{
+    lock
+    msgbox(format("All Tzhaar have been defeated.\pWAVE 1 COMPLETE, MOVING TO NEXT WAVE."))
+    closemessage
+    warp(MAP_TZHAAR_CAVES_1, 3, 0, 0)
+    end
+}
+script NPC_TZHAAR_GYM_WAVE_2
+{
+    lock
+    msgbox(format("All Tzhaar have been defeated.\pWAVE 2 COMPLETE, MOVING TO NEXT WAVE."))
+    closemessage
+    warp(MAP_TZHAAR_CAVES_1, 4, 0, 0)
+    end
+}
+script NPC_TZHAAR_GYM_WAVE_3
+{
+    lock
+    msgbox(format("TzTok Jad has been defeated.\pWAVE 3 COMPLETE, Exiting Caves."))
+    closemessage
+    warp(MAP_TZHAAR_CAVES_1, 0, 0, 0)
+    end
+}
+
+
+
+
+script ENCOUNTER_JAD_GYM {
+	lock
+    namebox ("JAD")
+	playmoncry(SPECIES_EKANS, 0)
+	msgbox(format("TOKTOK RAAWOORR!"))
+	waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+	setwildbattle (SPECIES_TZTOK_JAD, 5, ITEM_FRAGMENT_OF_JAS)
+	dowildbattleNoCatch
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+        fadescreen(FADE_TO_BLACK)
+		setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 19)
+        setflag(FLAG_TEMP_1)
+        removeobject(OBJ_EVENT_ID_TZTOKJAD)
+        fadescreen(FADE_FROM_BLACK)
+        goto(NPC_TZHAAR_GYM_WAVE_3)
+		closemessage
+		end
+	}
+	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) { // Cannot catch with dowildbattleNoCatch
+        fadescreen(FADE_TO_BLACK)
+		setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 20)
+        setflag(FLAG_TEMP_1)
+        removeobject(OBJ_EVENT_ID_TZTOKJAD)
+        fadescreen(FADE_FROM_BLACK)
+		closemessage
+		end
+	}
+    elif (var(VAR_RESULT) == B_OUTCOME_LOST) {
+        fadescreen(FADE_TO_BLACK)
+		setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1) 
+        fadescreen(FADE_FROM_BLACK)
+		closemessage
+		end
+	}
+    elif (var(VAR_RESULT) == B_OUTCOME_RAN) {
+        namebox ("JAD")
+        playmoncry(SPECIES_EKANS, 0)
+        msgbox(format("TOKKRAAWOORR!"))
+		closemessage
+        hidenamebox
+        msgbox(format("TzTok Jad does not seem pleased with your attempt to escape."))
+    
+        msgbox(format("The cave begins to shake."))
+
+        msgbox(format("The cave has caved in."))
+        closemessage
+  
+		setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 18) 
+
+        warp(MAP_TZHAAR_CAVES_1, 0, 0, 0)
+		end
+	}
+	end
+}
+
+
+
+
+//Mod Sarnie
+script BATTLE_MOD_SARNIE
+{
+    trainerbattle_single(TRAINER_MOD_SARNIE, format("I just got the Fire Cape!\pLet me try it out on you!"),format("Wow."))
+    namebox ("Mod Sarnie")
+    msgbox(format("You should try the special fight wave challenges.\pYou could get a Fire Cape like me."))
+	hidenamebox
+    release
+	end
+}

@@ -14,9 +14,9 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE101",
+      "direction": "up",
       "offset": 0,
-      "direction": "up"
+      "map": "MAP_ROUTE101"
     }
   ],
   "object_events": [
@@ -131,21 +131,28 @@
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
-      "dest_warp_id": "1"
+      "dest_warp_id": 1
     },
     {
       "x": 5,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
-      "dest_warp_id": "1"
+      "dest_warp_id": 1
     },
     {
       "x": 7,
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
-      "dest_warp_id": "0"
+      "dest_warp_id": 0
+    },
+    {
+      "x": 13,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_TUTORIAL_ISLAND_LAB_UP",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [
@@ -154,7 +161,7 @@
       "x": 10,
       "y": 1,
       "elevation": 3,
-      "var": "VAR_LITTLEROOT_TOWN_STATE",
+      "var": "VAR_POKESCAPE_MUSIC_STATE",
       "var_value": "0",
       "script": "LittlerootTown_EventScript_NeedPokemonTriggerLeft"
     },
@@ -163,7 +170,7 @@
       "x": 11,
       "y": 1,
       "elevation": 3,
-      "var": "VAR_LITTLEROOT_TOWN_STATE",
+      "var": "VAR_POKESCAPE_MUSIC_STATE",
       "var_value": "0",
       "script": "LittlerootTown_EventScript_NeedPokemonTriggerRight"
     },
@@ -172,7 +179,7 @@
       "x": 11,
       "y": 1,
       "elevation": 3,
-      "var": "VAR_LITTLEROOT_TOWN_STATE",
+      "var": "VAR_POKESCAPE_MUSIC_STATE",
       "var_value": "1",
       "script": "LittlerootTown_EventScript_GoSaveBirchTrigger"
     },
@@ -181,7 +188,7 @@
       "x": 8,
       "y": 9,
       "elevation": 3,
-      "var": "VAR_LITTLEROOT_TOWN_STATE",
+      "var": "VAR_POKESCAPE_MUSIC_STATE",
       "var_value": "3",
       "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger4"
     },
@@ -190,7 +197,7 @@
       "x": 9,
       "y": 9,
       "elevation": 3,
-      "var": "VAR_LITTLEROOT_TOWN_STATE",
+      "var": "VAR_POKESCAPE_MUSIC_STATE",
       "var_value": "3",
       "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger5"
     },
@@ -199,7 +206,7 @@
       "x": 10,
       "y": 9,
       "elevation": 3,
-      "var": "VAR_LITTLEROOT_TOWN_STATE",
+      "var": "VAR_POKESCAPE_MUSIC_STATE",
       "var_value": "3",
       "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger2"
     },
@@ -208,7 +215,7 @@
       "x": 11,
       "y": 9,
       "elevation": 3,
-      "var": "VAR_LITTLEROOT_TOWN_STATE",
+      "var": "VAR_POKESCAPE_MUSIC_STATE",
       "var_value": "3",
       "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger3"
     },
@@ -217,7 +224,7 @@
       "x": 10,
       "y": 2,
       "elevation": 3,
-      "var": "VAR_LITTLEROOT_TOWN_STATE",
+      "var": "VAR_POKESCAPE_MUSIC_STATE",
       "var_value": "3",
       "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger0"
     },
@@ -226,7 +233,7 @@
       "x": 11,
       "y": 2,
       "elevation": 3,
-      "var": "VAR_LITTLEROOT_TOWN_STATE",
+      "var": "VAR_POKESCAPE_MUSIC_STATE",
       "var_value": "3",
       "script": "LittlerootTown_EventScript_GiveRunningShoesTrigger1"
     }

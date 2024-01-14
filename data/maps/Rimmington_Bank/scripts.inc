@@ -1,0 +1,18 @@
+Rimmington_Bank_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Rimmington_Bank_MapScripts_MAP_SCRIPT_ON_LOAD
+	map_script MAP_SCRIPT_ON_TRANSITION, Rimmington_Bank_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	.byte 0
+
+Rimmington_Bank_MapScripts_MAP_SCRIPT_ON_LOAD:
+	call Rimmington_Bank_OnTransition
+	return
+
+Rimmington_Bank_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setvar VAR_EVOLUTION_MAP_STATE, 3
+	return
+
+
+Rimmington_Bank_OnTransition::
+	setrespawn HEAL_LOCATION_RIMMINGTON
+	return
+

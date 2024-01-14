@@ -1,0 +1,92 @@
+mapscripts Moderator_Lobby_MapScripts{
+	  
+}
+
+
+
+
+script ModeratorLobby_JMOD_0
+{
+	lock
+	faceplayer
+    namebox("Mod Meds")
+	msgbox(format("Welcome fellow Mods to The Lonch Battle Clob!\p…{PAUSE 15}…{PAUSE 15}Wait!\nYou are not a mod!\pHow did you get in here?!"))
+    hidenamebox
+	release
+	end
+}	
+
+
+
+
+
+script ModeratorLobby_JMOD_1
+{
+	lock
+	faceplayer
+    namebox("Mod Chaose")
+	msgbox(format("I have painstackingly choosen the best monsters and EV trained them all to the maxiumum levels."))
+    hidenamebox
+	release
+	end
+}	
+
+
+script ModeratorLobby_JMOD_2
+{
+	lock
+	faceplayer
+    namebox("Mod Dolan")
+	msgbox(format("Has anyone seen my duck!?\pWhere is my DUCK!\pI cannot battle without my duck!"))
+    hidenamebox
+	release
+	end
+}	
+
+script ModeratorLobby_JMOD_3
+{
+	lock
+	faceplayer
+    namebox("Mod Spyro")
+	msgbox(format("ROOOOAR!\p…{PAUSE 15} Did I scare you?\pNo?{PAUSE 15}\nWhat about that bug on you shoulder?"))
+    hidenamebox
+	release
+	end
+}	
+
+script ModeratorLobby_JMOD_4
+{
+	lock
+	faceplayer
+    namebox("Mod Camel")
+	msgbox(format("My camels shall help me win this!\pWe have a secret weapon!\pUgthanki dung!\pWait…. now it isn't a secret…"))
+    hidenamebox
+	release
+	end
+}	
+
+script ModeratorLobby_JMOD_5
+{
+	lock
+	faceplayer
+    namebox("Mod Daze")
+	msgbox(format("Muhahaha!\pI shall now spawn a rotten potato and become the champion!"))
+    hidenamebox
+    giveitem(ITEM_ROTTEN_POTATO, 1)
+    namebox("Mod Daze")
+    msgbox(format("Wait… Why didn't that work?\pWhere is the potato!"))
+    hidenamebox
+	release
+	end
+}	
+
+script ModeratorLobby_JMOD_6
+{
+	lock
+	faceplayer
+    namebox("Mod Shauny")
+	msgbox(format("For the last time it is not my birthday!"))
+    hidenamebox
+	release
+	end
+}	

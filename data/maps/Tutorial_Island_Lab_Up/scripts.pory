@@ -1,0 +1,282 @@
+mapscripts Tutorial_Island_Lab_Up_MapScripts{}
+
+script ClockNotSetLeft{
+	if (!flag(FLAG_SET_WALL_CLOCK)){
+		lock
+		msgbox("I should check what time it is.")
+		applymovement(OBJ_EVENT_ID_PLAYER,ClockMoveLeft)
+		waitmovement(0)
+		release
+	}
+	else {
+	release
+	}
+}
+
+script ClockNotSetDown{
+	if (!flag(FLAG_SET_WALL_CLOCK)){
+		lock
+		msgbox("I should check what time it is.")
+		applymovement(OBJ_EVENT_ID_PLAYER,ClockMoveDown)
+		waitmovement(0)
+		release
+	}
+	else{
+	release
+	}
+}
+
+script PcStartGame{
+	lock
+	if (!flag(FLAG_SET_WALL_CLOCK)){
+		goto (SetTime)
+	}
+	
+	if (!flag(FLAG_SYS_POKEMON_GET)){
+		goto (MembershipChoice)
+	}
+	
+	else {
+	msgbox("BEEP BEEP BOOP")
+	release
+	
+	}
+
+}
+
+script SetTime{
+	msgbox("You check the clock. What time is it?")
+	fadescreen (FADE_TO_BLACK)
+	special (StartWallClock)
+	waitstate
+	setflag (FLAG_SET_WALL_CLOCK)
+	goto (PcStartGame)
+}
+
+script MembershipChoice{
+	msgbox("Would you like to be a member?", MSGBOX_YESNO)
+	if (var(VAR_RESULT)){
+		setflag (FLAG_MEMBERSHIP)
+		goto (SkipChoice)
+	}
+		
+	else{
+		goto (SkipChoice)
+	}
+}
+
+script SkipChoice{
+	msgbox("Would you like to skip the tutorial?", MSGBOX_YESNO)
+	if (var(VAR_RESULT)){
+			setflag (FLAG_SYS_POKEDEX_GET)
+			setflag (FLAG_SYS_NATIONAL_DEX)
+			special (EnableNationalPokedex)
+			setflag (FLAG_RECEIVED_RUNNING_SHOES)
+			setflag (FLAG_SYS_B_DASH)
+			giveitem (ITEM_PICKAXE)
+			giveitem (ITEM_SMALL_NET)
+			release
+		if (flag(FLAG_MEMBERSHIP)){
+			goto (MemberStarterChoice)
+		}
+		else{
+			goto (FreeStarterChoice)
+		}
+
+	}
+	else {
+		release
+	}
+}
+
+script MemberStarterChoice{
+	multichoicedefault (1, 0, MULTI_STARTER_MEMBER, 0, 1)
+	switch(var(VAR_RESULT)){
+		case 0:			
+		showmonpic (SPECIES_ARMALING, 10, 3)
+		msgbox("This is an armaling.")
+		msgbox(format("Would you like this monster as your starter?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO){
+			hidemonpic
+			release
+			goto (MemberStarterChoice)		
+		}
+		else{
+			setflag (FLAG_SYS_POKEMON_GET)
+			setflag (FLAG_STARTER1)
+			givemon (SPECIES_ARMALING,5, ITEM_NONE)
+			msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == NO){
+				hidemonpic
+				release
+							
+			}
+			else{
+				setvar (VAR_0x8004, 0)
+				call (Common_EventScript_NameReceivedPartyMon)
+							
+						
+			}
+			goto (TutorialIslandExitWarpMembers)
+		}
+		case 1:
+		showmonpic (SPECIES_UNGODLING, 10, 3)
+		msgbox("This is an ungodling.")
+		msgbox(format("Would you like this monster as your starter?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO){
+			hidemonpic
+			goto (MemberStarterChoice)
+	
+		}
+		else{
+			setflag (FLAG_STARTER2)
+			setflag (FLAG_SYS_POKEMON_GET)
+			givemon (SPECIES_UNGODLING,5, ITEM_NONE)
+			msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == NO){
+				hidemonpic
+				release
+							
+			}
+			else{
+				setvar (VAR_0x8004, 0)
+				call (Common_EventScript_NameReceivedPartyMon)
+							
+						
+			}
+			goto (TutorialIslandExitWarpMembers)
+		}
+		case 2:
+			showmonpic (SPECIES_TUMEKLING, 10, 3)
+			msgbox("This is a tumekling.")
+			msgbox(format("Would you like this monster as your starter?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == NO){
+				hidemonpic
+				goto (MemberStarterChoice)
+			}
+			else{
+				setflag (FLAG_STARTER3)
+				setflag (FLAG_SYS_POKEMON_GET)
+				givemon (SPECIES_TUMEKLING,5, ITEM_NONE)
+				msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == NO){
+					hidemonpic
+					release
+							
+				}
+				else{
+					setvar (VAR_0x8004, 0)
+					call (Common_EventScript_NameReceivedPartyMon)
+							
+						
+				}
+				goto (TutorialIslandExitWarpMembers)
+			}
+				
+				
+	}
+}
+
+script FreeStarterChoice{
+	multichoicedefault (1, 0, MULTI_STARTER_FREE, 0, 1)
+	switch(var(VAR_RESULT)){
+		case 0:			
+		showmonpic (SPECIES_GUTHLING, 10, 3)
+		msgbox("This is a guthling.")
+		msgbox(format("Would you like this monster as your starter?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO){
+			hidemonpic
+			release
+			goto (FreeStarterChoice)		
+		}
+		else{
+			setflag (FLAG_SYS_POKEMON_GET)
+			setflag (FLAG_STARTER1)
+			givemon (SPECIES_GUTHLING,5, ITEM_NONE)
+			msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == NO){
+				hidemonpic
+				release
+							
+			}
+			else{
+				setvar (VAR_0x8004, 0)
+				call (Common_EventScript_NameReceivedPartyMon)
+							
+						
+			}
+			goto (TutorialIslandExitWarpFree)
+		}
+		case 1:
+		showmonpic (SPECIES_ZAMLING, 10, 3)
+		msgbox("This is a zamling.")
+		msgbox(format("Would you like this monster as your starter?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == NO){
+			hidemonpic
+			goto (FreeStarterChoice)
+	
+		}
+		else{
+			setflag (FLAG_STARTER2)
+			setflag (FLAG_SYS_POKEMON_GET)
+			givemon (SPECIES_ZAMLING,5, ITEM_NONE)
+			msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == NO){
+				hidemonpic
+				release
+							
+			}
+			else{
+				setvar (VAR_0x8004, 0)
+				call (Common_EventScript_NameReceivedPartyMon)
+							
+						
+			}
+			goto (TutorialIslandExitWarpFree)
+		}
+		case 2:
+			showmonpic (SPECIES_SARALING, 10, 3)
+			msgbox("This is a saraling.")
+			msgbox(format("Would you like this monster as your starter?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT) == NO){
+				hidemonpic
+				goto (FreeStarterChoice)
+			}
+			else{
+				setflag (FLAG_STARTER3)
+				setflag (FLAG_SYS_POKEMON_GET)
+				givemon (SPECIES_SARALING,5, ITEM_NONE)
+				msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT) == NO){
+					hidemonpic
+					release
+							
+				}
+				else{
+					setvar (VAR_0x8004, 0)
+					call (Common_EventScript_NameReceivedPartyMon)
+							
+						
+				}
+				goto (TutorialIslandExitWarpFree)
+			}
+				
+				
+	}
+}
+
+script TutorialIslandExitWarpFree{
+	warp (MAP_LUMBRIDGE_HOUSE_STARTER2,255, 5 , 3)
+}
+
+script TutorialIslandExitWarpMembers{
+	warp (MAP_VARROCK,255, 28 , 12)
+}
+
+movement ClockMoveLeft{
+	walk_left
+}
+
+movement ClockMoveDown{
+	walk_down
+}

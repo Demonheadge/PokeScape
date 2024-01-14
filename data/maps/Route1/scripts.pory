@@ -1,0 +1,872 @@
+const OBJ_EVENT_ID_ERNEST = 5
+const OBJ_EVENT_ID_VERONICA = 6
+const OBJ_EVENT_ID_ERNEST_CHICKEN = 31
+const OBJ_EVENT_ID_HAM = 23
+const OBJ_EVENT_ID_ARIANE = 22
+const OBJ_EVENT_ID_FARMER = 4
+const OBJ_EVENT_ID_COW_1 = 12
+const OBJ_EVENT_ID_COW_2 = 13
+
+
+mapscripts Route1_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    	{
+            goto(QUEST_STATE_WizardsTower_ROUTE1)
+    	}
+    }
+
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 0) //0-Nothing, 1-Varrock, 2-Morytania, 3-Members.
+
+        if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    	{
+            call(TryMoveNpcsRoute1)
+    	}
+		else
+		{
+			call(OPENWORLD_STATE_ROUTE1)
+		}
+    }
+
+    //MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:Route1WarpCheck 
+} 
+
+
+script OPENWORLD_STATE_ROUTE1 {
+		setobjectxyperm(OBJ_EVENT_ID_FARMER, 42, 10)
+        setobjectmovementtype(OBJ_EVENT_ID_FARMER,MOVEMENT_TYPE_FACE_DOWN)
+        setobjectxyperm(OBJ_EVENT_ID_COW_1, 37, 12)
+        setobjectxyperm(OBJ_EVENT_ID_COW_2, 43, 12)
+        setobjectmovementtype(OBJ_EVENT_ID_COW_2,MOVEMENT_TYPE_FACE_DOWN)
+        setflag(FLAG_TEMP_1)
+        setflag(FLAG_TEMP_2)
+        setflag(FLAG_TEMP_3)
+        clearflag(FLAG_TEMP_4)
+        addobject(OBJ_EVENT_ID_ERNEST)
+        removeobject(OBJ_EVENT_ID_ARIANE)
+        removeobject(OBJ_EVENT_ID_HAM)
+        removeobject(OBJ_EVENT_ID_ERNEST_CHICKEN) 
+        setobjectxyperm(OBJ_EVENT_ID_ERNEST,10,12)
+        setobjectxyperm(OBJ_EVENT_ID_VERONICA,10,13)
+		return
+}
+
+
+script QUEST_STATE_WizardsTower_ROUTE1{
+        switch (var(VAR_POKESCAPE_WIZARDS_TOWER_STATE)){ 
+            case 0: 
+            case 1: 
+            case 2: 
+			case 3: 
+            case 4:
+                //HIDE NPCS
+                removeobject(22) //ariane
+				removeobject(23) //HAM
+                removeobject(5) //ernest
+                setflag(FLAG_TEMP_1)
+				setflag(FLAG_TEMP_2)
+                setflag(FLAG_TEMP_4)
+                release
+                end
+            case 5:
+                //SHOW NPCs EVENT
+                clearflag(FLAG_TEMP_2)
+                clearflag(FLAG_TEMP_4)
+				addobject(23) //HAM
+                addobject(5) //ernest
+                removeobject(32) //ernest chicken
+                removeobject(22) //ariane
+                setflag(FLAG_TEMP_1)
+                setflag(FLAG_TEMP_3)
+                release
+                end
+			case 6: 
+            case 7: 
+                //HIDE NPCs
+                setflag(FLAG_TEMP_1)
+				setflag(FLAG_TEMP_2)
+                setflag(FLAG_TEMP_3)
+                removeobject(22)
+				removeobject(23)
+                removeobject(32) //ernest chicken
+                clearflag(FLAG_TEMP_4) //ernest
+                addobject(5) //ernest
+                release
+                end
+            case 8: 
+            case 9: 
+                //HIDE NPCs
+                setflag(FLAG_TEMP_1)
+				setflag(FLAG_TEMP_2)
+                setflag(FLAG_TEMP_3)
+                clearflag(FLAG_TEMP_4)
+                addobject(5) //ernest
+                removeobject(22)
+				removeobject(23)
+                removeobject(32) //ernest chicken
+                setobjectxyperm(5,10,12)
+                setobjectxyperm(6,10,13)
+                release
+                end
+            }
+    }
+
+
+
+script TryMoveNpcsRoute1{
+    if (flag(FLAG_BADGE01_GET)){
+        setobjectxyperm(4, 42, 10)
+        setobjectmovementtype(4,MOVEMENT_TYPE_FACE_DOWN)
+
+        setobjectxyperm(12, 37, 12)
+
+        setobjectxyperm(13, 43, 12)
+        setobjectmovementtype(13,MOVEMENT_TYPE_FACE_DOWN)
+    }
+    if (!(var(VAR_POKESCAPE_WIZARDS_TOWER_STATE) == 6)){
+        removeobject(22)
+        setflag(FLAG_TEMP_5)
+        removeobject(23)
+        setflag(FLAG_TEMP_4)
+    }
+    return
+}
+
+
+
+
+
+script Route1WarpCheck{
+    map_script_2 (VAR_TEMP_1, 0, TryMoveNpcsRoute1)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script NPC_DUCK
+{
+	lock
+	faceplayer
+    namebox ("DUCK")
+    playmoncry(SPECIES_PSYDUCK, 0)
+	msgbox(format("Quack!"))
+    waitmoncry
+    hidenamebox
+	release
+	end
+}
+
+script NPC_RAT
+{
+	lock
+	faceplayer
+    namebox ("RAT")
+    playmoncry(SPECIES_RATTATA, 0)
+	msgbox(format("SKREEK!"))
+    waitmoncry
+    hidenamebox
+	release
+	end
+}
+
+script NPC_SHEEP
+{
+	lock
+	faceplayer
+    namebox ("SHEEP")
+    playmoncry(SPECIES_MAREEP, 0)
+	msgbox(format("Baaa!"))
+    waitmoncry
+    hidenamebox
+	release
+	end
+}
+
+script NPC_COW
+{
+	lock
+	faceplayer
+    namebox ("COW")
+    playmoncry(SPECIES_MILTANK, 0)
+	msgbox(format("Mooo!"))
+    waitmoncry
+    hidenamebox
+	release
+	end
+}
+
+script NPC_CAT
+{
+	lock
+	faceplayer
+    namebox ("CAT")
+    playmoncry(SPECIES_MEOWTH, 0)
+	msgbox(format("Meeeooww…"))
+    waitmoncry
+    hidenamebox
+	release
+	end
+}
+
+script NPC_ABYSSALDEMON
+{
+	lock
+	faceplayer
+    namebox ("ABYSSAL DEMON")
+    //playmoncry(SPECIES_MAREEP, 0)
+	msgbox(format("Schttle, skrtch!"))
+    //waitmoncry
+    hidenamebox
+	release
+	end
+}
+
+script NPC_CAMEL
+{
+	lock
+	faceplayer
+    namebox ("CAMEL")
+    playmoncry(SPECIES_MILTANK, 0)
+	msgbox(format("The Camel spits at you."))
+    waitmoncry
+    hidenamebox
+	release
+	end
+}
+
+script SIGN_ROUTE1_1
+{
+	lock
+	msgbox(format("Fred's Farm."))
+	release
+	end
+}
+
+script SIGN_ROUTE1_2
+{
+	lock
+	msgbox(format("NORTH to MILL LANE MILL\pWEST to DRAYNOR\pEAST to LUMBRIDGE"))
+	release
+	end
+}
+
+script SIGN_ROUTE1_3
+{
+	lock
+	msgbox(format("NORTH to DRAYNOR MANOR\pWEST to FALADOR\pEAST to LUMBRIDGE\pSOUTH to DRAYNOR"))
+	release
+	end
+}
+
+
+script NPC_FISHERMAN_1
+{
+	lock
+	faceplayer
+	msgbox(format("I love to fish in this pond.\pIt is so peaceful, with the ducks that keep me company.\pI cannot imagine anything bad to happen here."))
+    checkitem(ITEM_SMALL_NET, 1)
+        if (!var(VAR_RESULT)){
+            msgbox(format("You seem like someone who would also enjoy fishing in this pond.\pHere take this!"))
+            giveitem(ITEM_SMALL_NET)
+            msgbox(format("It is only a small net but I'm sure there are plenty of things you could fish up with it!"))
+            release
+            end
+        }
+        else {
+            release
+            end
+        }
+	release
+	end
+}
+
+
+
+script BLOCK_ROUTE1_FARMER {
+    lock 
+    faceplayer
+    namebox("Farmer")
+    if (!flag(FLAG_BADGE01_GET)){
+        msgbox(format("Some Goblins scared my cows out of their pens.\pNow I'm struggling to get them back in!"))
+        hidenamebox
+        closemessage
+        release
+        end
+    }
+    else{
+        msgbox(format("I finally got my Cows out of the way."))
+        hidenamebox
+        closemessage
+        release
+        end
+    }
+    release
+    end
+}
+
+script THIEF_ROUTE_1
+{
+	lock
+    faceplayer
+    namebox("Darren")
+	msgbox(format("Nothing to see here kid.\pSHOOO!"))
+    hidenamebox
+    closemessage
+	release
+	end
+}
+
+script ROUTE1_FarmerFred
+{
+	lock
+    faceplayer
+    namebox("Fred")
+	msgbox(format("Get off my farm!"))
+    hidenamebox
+    closemessage
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//TRAINER BATTLES-----------------------------------------
+
+script Wartfoot_Route1_Battle
+{
+    trainerbattle_single(TRAINER_GOBLIN_1_ROUTE1, "Brown armour best!","Um… My brown armour in the wash.")
+    namebox ("WartFoot")
+    msgbox("Me like brown armour, but now it dirty.")
+    hidenamebox
+    release
+    end
+}
+
+script Frogface_Route1_Battle
+{
+    trainerbattle_single(TRAINER_GOBLIN_2_ROUTE1, "You ugly!","You still ugly!")
+    namebox ("FrogFace")
+    msgbox("You really, really ugly!")
+    hidenamebox
+    release
+    end
+}
+
+script Trainer1_Route1_Battle
+{
+    trainerbattle_single(TRAINER_RSN_ROUTE1, "You look like a noob!","Maybe I'm the noob…")
+    namebox ("Bob")
+    msgbox(format("The mill is up ahead.\pI heard you can get some good flour there."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script MudbeardBattle{
+    trainerbattle_single(TRAINER_GOBLIN_3_ROUTE1,"Go away smelly human!","Leave me alone!" )
+    namebox ("Mudbeard")
+    msgbox("Smelly human!")
+    closemessage
+    hidenamebox
+    release
+    
+}
+
+script Route1FarmerBattle{
+    trainerbattle_single(TRAINER_FARMER_ROUTE1,format("Cor blimey what are ye doing on me lands!"),format("Its not really my lands yet."))
+    namebox ("John")
+    msgbox("Its not really my lands yet.")
+    hidenamebox
+    release
+}
+
+script FeetfingersBattle{
+    trainerbattle_single(TRAINER_GOBLIN_4_ROUTE1,"Me Feetfingers who you?","Feetfingers, impressed!")
+    namebox ("Feetfingers")
+    msgbox("Friend of Feetfingers?")
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script ChickenBattleScript1{
+    lock
+    faceplayer
+    playmoncry(SPECIES_TORCHIC, 0)
+    msgbox(format("BWAK!"))
+    waitmoncry
+    setwildbattle (SPECIES_CHICKEN_NORMAL_FORM, 4, ITEM_NONE)
+    dowildbattle
+    removeobject (8)
+    release
+}
+
+script ChickenBattleScript2{
+    lock
+    faceplayer
+    playmoncry(SPECIES_TORCHIC, 0)
+    msgbox(format("BWAK!"))
+    waitmoncry
+    setwildbattle (SPECIES_CHICKEN_NORMAL_FORM, 4, ITEM_NONE)
+    dowildbattle
+    removeobject (9)
+    release
+}
+
+script ChickenBattleScript3{
+    lock
+    faceplayer
+    playmoncry(SPECIES_TORCHIC, 0)
+    msgbox(format("BWAK!"))
+    waitmoncry
+    setwildbattle (SPECIES_CHICKEN_NORMAL_FORM, 4, ITEM_NONE)
+    dowildbattle
+    removeobject (10)
+    release
+}
+
+script EvilChickenBattleScript{
+    lock
+    faceplayer
+    playmoncry(SPECIES_COMBUSKEN, 0)
+    msgbox(format("BWAWWWK!\pBEGONE {PLAYER}!"))
+    waitmoncry
+    setwildbattle (SPECIES_EVILCHICKEN, 10, ITEM_NONE)
+    dowildbattle
+    removeobject (11)
+    setflag (FLAG_EVILCHICKEN_DEFEATED)
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//ADD OPTIONAL SCRIPT LATER SHOWING ERNEST AN ERNEST CHICKEN. HIS SON!
+script ErnestAndVeronica {
+    if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    {
+        switch (var(VAR_POKESCAPE_WIZARDS_TOWER_STATE)){ 
+                case 0: 
+                case 1: 
+                case 2: 
+                case 3: 
+                case 4:
+                    
+                    playmoncry(SPECIES_TORCHIC, 0)
+                    namebox("Ernest")
+                    msgbox(format("Bwak bwak bwwwaaaakk!"))
+                    waitmoncry
+                    hidenamebox
+                    closemessage
+                    
+                    applymovement(6, HAM_Movement7_6)
+                    namebox("Veronica")
+                    msgbox(format("What do you mean a scientist turned you into a chicken!?\pYou were meant to get directions!"))
+                    hidenamebox
+                    closemessage
+                    waitmovement(0)
+                    
+                    playmoncry(SPECIES_TORCHIC, 0)
+                    namebox("Ernest")
+                    msgbox(format("Bwakbawk."))
+                    waitmoncry
+                    playmoncry(SPECIES_TORCHIC, 0)
+                    msgbox(format("Bwak bwakbwak!"))
+                    waitmoncry
+                    hidenamebox
+                    closemessage
+                    
+                    applymovement(6, HAM_Movement7_6)
+                    namebox("Veronica")
+                    msgbox(format("Well go get him to change you back!\pI don't want to be engaged to a chicken!\pThat's just fowl…"))
+                    hidenamebox
+                    closemessage
+                    waitmovement(0)
+                    
+                    playmoncry(SPECIES_COMBUSKEN, 0)
+                    namebox("Ernest")
+                    msgbox(format("Bwak…"))
+                    waitmoncry
+                    hidenamebox
+                    closemessage
+                    
+                    release
+                    end
+                case 5:
+                case 6: 
+                case 7: 
+                    namebox("Ernest")
+                    msgbox(format("Professor Oddenstein made me human again!"))
+                    hidenamebox
+                    closemessage
+                    namebox("Veronica")
+                    msgbox(format("I think I liked you better when you were a chicken."))
+                    hidenamebox
+                    closemessage
+                    release
+                    end
+                case 8: 
+                case 9: 
+                    namebox("Veronica")
+                    msgbox(format("Did you ever end up getting some directions?"))
+                    hidenamebox
+                    closemessage
+                    namebox("Ernest")
+                    msgbox(format("Oh no!\pI completely forgot!"))
+                    hidenamebox
+                    closemessage
+                    release
+                    end
+        }
+    }
+    else
+    {
+        namebox("Veronica")
+        msgbox(format("I think we are lost, go to that mannor and ask for directions?"))
+        hidenamebox
+        closemessage
+        namebox("Ernest")
+        msgbox(format("But it is scary!\pI don't want to go."))
+        hidenamebox
+        closemessage
+        release
+        end
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script HAM_EVENT_Route1_MAIN_1{
+    lockall
+    playbgm (MUS_PS_ENCOUNTER_HAM, 1)
+    applymovement(23, HAM_Movement7_1)
+    namebox("H.A.M. member")
+    msgbox(format("Get out of my way!\pI need to get to Port Sarim!"))
+    hidenamebox
+    closemessage
+    waitmovement(0)
+    applymovement(5, HAM_Movement7_7)
+    namebox("Ernest")
+    msgbox(format("I'm so glad im not a chicken anymore…\pThat was cluckin' scary!"))
+    hidenamebox
+    waitmovement(0)
+    applymovement(6, HAM_Movement7_6)
+    namebox("Veronica")
+    msgbox(format("Lets just avoid that creepy Manor from now on."))
+    hidenamebox
+    waitmovement(0)
+    applymovement(23, HAM_Movement7_1)
+    namebox("H.A.M. member")
+    msgbox(format("Urgh!\pWhy does everyone insist on getting in my way!"))
+    hidenamebox
+    closemessage
+    waitmovement(0)
+    return
+}
+
+
+script HAM_EVENT_Route1_TRIGGER_1 {
+    call(HAM_EVENT_Route1_MAIN_1)
+    clearflag(FLAG_TEMP_2)
+    addobject(22)
+    applymovement(22, HAM_Movement7_2)
+    waitmovement(0)
+    namebox("Ariane")
+    msgbox(format("Stop thief!\pThere is nowhere left for you to run!"))
+    hidenamebox
+    closemessage
+    call(HAM_EVENT_Route1_MAIN_2)
+    applymovement(22, HAM_Movement7_4)
+    waitmovement(0)
+    goto(HAM_EVENT_Route1_MAIN_3)
+}
+
+script HAM_EVENT_Route1_TRIGGER_2 {
+    call(HAM_EVENT_Route1_MAIN_1)
+    clearflag(FLAG_TEMP_2)
+    addobject(22)
+    applymovement(22, HAM_Movement7_8)
+    waitmovement(0)
+    namebox("Ariane")
+    msgbox(format("Stop thief!\pThere is nowhere left for you to run!"))
+    hidenamebox
+    closemessage
+    call(HAM_EVENT_Route1_MAIN_2)
+    applymovement(22, HAM_Movement7_9)
+    waitmovement(0)
+    goto(HAM_EVENT_Route1_MAIN_3)
+}
+
+
+script HAM_EVENT_Route1_MAIN_2{
+    applymovement(23, HAM_Movement7_5)
+    waitmovement(0)
+    namebox("H.A.M. member")
+    msgbox(format("Urrrrgh!\pYou are persistent!\pLeave me alone!"))
+    hidenamebox
+    closemessage
+    applymovement(23, HAM_Movement7_3)
+    delay(16)
+    return
+}
+
+    
+script HAM_EVENT_Route1_MAIN_3{
+    setflag(FLAG_TEMP_1)
+	setflag(FLAG_TEMP_2)
+    removeobject(22)
+	removeobject(23)
+    setvar(VAR_POKESCAPE_WIZARDS_TOWER_STATE, 6)    
+    savebgm(MUS_DUMMY)
+	fadedefaultbgm
+    release
+    end
+}
+
+
+
+
+movement HAM_Movement7_1 {
+    walk_in_place_left * 3
+    
+}
+
+movement HAM_Movement7_2 {
+    walk_fast_up * 9
+    face_left
+}
+
+movement HAM_Movement7_8 {
+    walk_left
+    walk_fast_up * 9
+    face_left
+}
+
+movement HAM_Movement7_3 {
+    walk_fast_right
+    walk_fast_up * 10
+}
+        
+movement HAM_Movement7_4 {
+    walk_fast_left * 2
+    walk_fast_up * 10
+}
+
+movement HAM_Movement7_9 {
+    walk_fast_left * 1
+    walk_fast_up * 10
+}
+
+movement HAM_Movement7_5 {
+    face_right
+}
+
+
+movement HAM_Movement7_6 {
+    walk_in_place_up * 3
+}
+
+movement HAM_Movement7_7 {
+    walk_in_place_down * 3
+    
+}
+
+
+
+script ArianeChaseHamEvent7{
+    lockall
+    namebox("H.A.M. member")
+    msgbox(format("Get out of my way! you're blocking the path!"))
+    hidenamebox
+    namebox("Ernest")
+    msgbox(format("I'm so glad im not a chicken anymore… that was cluckin scary."))
+    hidenamebox
+    namebox("Veronica")
+    msgbox(format("Lets just avoid that creepy manor from now on."))
+    hidenamebox
+    msgbox(format("Kissing noises"))
+    namebox("H.A.M. member")
+    msgbox(format("I SAID GET OUT OF THE WAY!!"))
+    hidenamebox
+    release
+    lockall
+    applymovement(23, HamMemberRuns3)
+    waitmovement(0)
+    applymovement(5, ErnestShoved)
+    waitmovement(0)
+    namebox("Ernest")
+    msgbox("Well that was uncalled for!")
+    hidenamebox
+    release
+    lockall
+    applymovement(5,ErnestMoveBack)
+    namebox("Ariane")
+    msgbox(format("Stop thief! There is nowhere left for you to run!"))
+    hidenamebox
+    namebox("H.A.M. member")
+    msgbox(format("UGH! This dumb couple keeps blocking my way… but there is still the manor!"))
+    hidenamebox
+    release
+    lockall
+    applymovement(23, HamMemberRuns4)
+    waitmovement(0)
+    applymovement(22, ArianeRunAfterHam11)
+    waitmovement(0)
+    removeobject(23)
+    setflag(FLAG_TEMP_4)
+    removeobject(22)
+    setflag(FLAG_TEMP_5)
+    setvar(VAR_POKESCAPE_WIZARDS_TOWER_STATE, 7)
+
+
+
+}
+
+
+movement HamMemberRuns3{
+    walk_fast_left
+}
+
+movement ErnestShoved{
+    slide_left
+    face_right
+}
+
+movement ErnestMoveBack{
+    walk_right
+    face_up
+}
+
+movement HamMemberRuns4{
+  walk_fast_right * 2
+    walk_fast_up * 5
+   // walk_fast_left * 3
+   // walk_fast_up * 5
+    //walk_fast_left * 1
+    //walk_fast_up * 9  
+}
+
+
+movement ArianeRunAfterHam11 {
+    walk_fast_left
+    walk_fast_up * 5
+   // walk_fast_left * 3
+   // walk_fast_up * 5
+   // walk_fast_left * 1
+    //walk_fast_up * 9 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+script BATTLE_AREA_TRAINER_1
+{
+    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_1, format("Cor Blimey what are ye doin in me pockets!"),format("Oh, ye werent a pickpocket."))
+    namebox ("TRAINER")
+    msgbox(format("Sorry about the misunderstandin chap."))
+    hidenamebox
+    release
+    end
+}
+
+
+
+script BATTLE_AREA_TRAINER_2
+{
+    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_1, format("These are my wheat fields and if your about to rample them then go on the neighbors plot!"),format("Wheat a twist!"))
+    namebox ("TRAINER")
+    msgbox(format("Just this once I will look the other way, but be nice to my crops."))
+    hidenamebox
+    release
+    end
+}
+
+
+
+script BATTLE_AREA_TRAINER_3
+{
+    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_1, format("Human not understand glory of big high war god. Me show you!"),format("Now human understands."))
+    namebox ("TRAINER")
+    msgbox(format("Big high war god is god of goblins."))
+    hidenamebox
+    release
+    end
+}
+

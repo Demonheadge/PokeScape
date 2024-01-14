@@ -1,0 +1,160 @@
+
+mapscripts Falador_Pub_1F_MapScripts{
+
+}
+
+
+//ITEMS---------------------------------
+//HIDDEN ITEMS:
+script ITEM_FALADORPUB_1
+{
+    finditem(ITEM_STAT_BEER)
+    end
+}
+
+
+script NPC_FALADORPUB_BARMAID_1
+{
+	lock
+	faceplayer
+    namebox ("Emily")
+	msgbox(format("Our Asgarnian Ale is selling lot the hot cakes today.\pNo seriously, everyone is ordering hot cakes!"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORPUB_BARMAID_2
+{
+	lock
+	faceplayer
+    namebox ("Kaylee")
+	msgbox(format("Sorry I will be right with you, I just have to get these orders first!"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORPUB_BARMAID_3
+{
+	lock
+    namebox ("Barmaid")
+	msgbox(format("Hufff Pufff…\pBeing Barmaid is hard work."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+script NPC_FALADORPUB_NPC1
+{
+	lock
+	faceplayer
+    //namebox ("Guard")
+	msgbox(format("Today was a rough day.\pSeven of my friends were killed and then the perpetrator lit fireworks over his head before he ran off.\pI hate this job."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+script NPC_FALADORPUB_NPC2
+{
+	lock
+	faceplayer
+    //namebox ("Guard")
+	msgbox(format("Some guy named Sir Theodore made a big hassle at work.\pApparently cleaning duty is not in accords with the ways of the White Knight code."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORPUB_NPC3
+{
+	lock
+	faceplayer
+    //namebox ("Guard")
+	msgbox(format("They say there exists a special rabbits foot that certain birds react to.\pIt makes their eggs become special.\pI wonder where you could find one…"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORPUB_NPC4
+{
+	lock
+    namebox ("Guard")
+	msgbox(format("Thanks for inviting me along for drinks guys."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADORPUB_NPC5
+{
+	lock
+    namebox ("White Knight")
+	msgbox(format("Haha!\pHey get a load of that Trash Knight sitting at the table all by themselves."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+script NPC_FALADORPUB_NPC6
+{
+	lock
+    namebox ("White Knight")
+	msgbox(format("You guys won't believe this!\pThe other day when I was surveying the park I saw a different coloured mole!\pSadly I ran out of pouches so I couldn't catch it…"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+script NPC_FALADORPUB_NPC7
+{
+	lock
+	faceplayer
+    namebox ("White Knight")
+	msgbox(format("I heard a rumour that the eye of Saradomin can change a monsters form making it one thousand times stronger!"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+script NPC_FALADORPUB_NPC8
+{
+	lock
+	faceplayer
+    namebox ("Black Knight")
+	msgbox(format("Scram!\pI cannot hear what they are saying at that table if you are here annoying me!"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+script PUBCRAWL_FALADOR
+{
+	lock
+	faceplayer
+    namebox ("Barbarian")
+	msgbox(format("HIC\pELLO THERE\pHIC\pARROUGGH!\pYEEU INTERESTED IN A LITTLE BAR CRAWL?"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}

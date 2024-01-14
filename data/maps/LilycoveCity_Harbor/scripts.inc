@@ -85,11 +85,7 @@ LilycoveCity_Harbor_EventScript_GoToFarawayIsland::
 
 LilycoveCity_Harbor_EventScript_GoToSlateport::
 	msgbox LilycoveCity_Harbor_Text_SlateportItIs, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, LilycoveCity_Harbor_EventScript_FerryDestinationChangeMind
-	setvar VAR_SS_TIDAL_STATE, SS_TIDAL_BOARD_LILYCOVE
-	call LilycoveCity_Harbor_EventScript_BoardFerry
-	warp MAP_SS_TIDAL_CORRIDOR, 1, 10
-	waitstate
+
 	release
 	end
 
@@ -363,11 +359,7 @@ LilycoveCity_Harbor_EventScript_NoTicket::
 
 @ Unused
 LilycoveCity_Harbor_EventScript_GoToSlateportUnused::
-	msgbox LilycoveCity_Harbor_Text_SlateportItIs, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, LilycoveCity_Harbor_EventScript_FerryDestinationChangeMind
-	setvar VAR_SS_TIDAL_STATE, SS_TIDAL_BOARD_LILYCOVE
-	call LilycoveCity_Harbor_EventScript_BoardFerry
-	warp MAP_SS_TIDAL_CORRIDOR, 1, 10
+
 	waitstate
 	release
 	end

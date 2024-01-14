@@ -1,0 +1,263 @@
+mapscripts Lumbridge_Castle_1_MapScripts {
+
+	MAP_SCRIPT_ON_LOAD {
+        call(LUMBRIDGE_GYM_MUSIC)
+    }
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:TryHideHans
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script TryHideHans {
+	map_script_2 (VAR_TEMP_1, 0, HideHans2)
+}
+
+script HideHans2{
+	if((var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE) == 0)) {
+		removeobject(9)
+		setflag(FLAG_TEMP_1)
+	}
+}
+
+
+
+script Lumbridge_Castle_Hans
+{
+	lock
+	faceplayer
+	namebox ("Hans")
+	msgbox(format("I've been patrolling this castle for years!\pI've seen many things in my life time."))
+	hidenamebox
+	release
+	end
+}
+
+
+
+
+
+script Lumbridge_Castle_NPC1
+{
+	lock
+	faceplayer
+	//namebox ("???")
+	msgbox(format("There is no way to avoid combat in a battle.\pBut you can run from wild battles."))
+	//hidenamebox
+	release
+	end
+}
+
+script Lumbridge_Castle_NPC2
+{
+	lock
+	faceplayer
+	//namebox ("???")
+	msgbox(format("You need money for more pouches?\pSorry I am not doubling money."))
+	//hidenamebox
+	release
+	end
+}
+
+script Lumbridge_Castle_NPC3
+{
+	lock
+	faceplayer
+	//namebox ("???")
+	msgbox(format("The Duke holds power over Lumbridge.\pBut personally I dont think he is that good of a ruler."))
+	//hidenamebox
+	release
+	end
+}
+
+script Lumbridge_Castle_NPC4
+{
+	lock
+	faceplayer
+	//namebox ("???")
+	msgbox(format("The best way to find your enemies type is to just use moves.\pIdentify their weakness!"))
+	//hidenamebox
+	release
+	end
+}
+
+
+script Lumbridge_Castle_NPC5
+{
+	lock
+	faceplayer
+	//namebox ("???")
+	msgbox(format("I need flour from the mill but it is such a long trip."))
+	//hidenamebox
+	release
+	end
+}
+
+
+script Lumbridge_Castle_NPC6
+{
+	lock
+	faceplayer
+	//namebox ("???")
+	msgbox(format("The Duke is sort of like the regional champion around here.\pBetter stay on his good side."))
+	//hidenamebox
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+script Hans{
+    msgbox("Cupholder")
+    release
+}
+
+script Man1LumbridgeCastle{
+    msgbox("I love the castle!")
+    release
+}
+
+script Woman1LumbridgeCastle{
+    msgbox("I don't remember why I came here")
+    release
+}
+
+script ImpBattleLumbridge{
+    setwildbattle(SPECIES_IMP,5,ITEM_NONE)
+    msgbox("EEEEE")
+    dowildbattle
+    removeobject(VAR_LAST_TALKED)
+    release
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script LUMBRIDGE_GYM_TRAINER_1 {
+	trainerbattle_single(TRAINER_LUMBRIDGE_GYM1, format("You think you are ready to face the Duke?\pWell I do not think so!"),format("You are ready to face the duke after all it seems.") )
+    switch (var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE)){ 
+		case 4: 
+			lock
+			faceplayer
+			namebox("Anabell")
+			msgbox(format("You fought well.\pI should train harder."))
+			hidenamebox
+			release
+			end
+        case 5:
+			lock
+			faceplayer
+			namebox("Anabell")
+            msgbox(format("I cannot believe you beat the Duke as well!\pYou are like a champion in the making!"))
+			hidenamebox
+            release
+			end
+	}
+}
+
+
+script LUMBRIDGE_GYM_TRAINER_2 {
+	trainerbattle_single(TRAINER_LUMBRIDGE_GYM2, format("Feast your eyes upon pure cuteness!"),format("I may have lost but have you ever seen something so cute?") )
+    switch (var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE)){ 
+		case 4: 
+			lock
+			faceplayer
+			namebox("Gideon")
+			msgbox(format("Do you agree on how cute my rabbit is?"))
+			hidenamebox
+			release
+			end
+        case 5:
+			lock
+			faceplayer
+			namebox("Gideon")
+            msgbox(format("You have some pretty cute monsters, but my rabbit is cuter!"))
+			hidenamebox
+            release
+			end
+	}
+}
+
+
+script LUMBRIDGE_GYM_TRAINER_3 {
+	trainerbattle_single(TRAINER_LUMBRIDGE_GYM3, format("The Duke of Lumbridge is the strongest man this side of the Lum."),format("Then again this side of the Lum is pretty big."))
+    switch (var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE)){ 
+		case 4: 
+			lock
+			faceplayer
+			namebox("Jesse")
+			msgbox(format("Maybe I should train on the other side of the river."))
+			hidenamebox
+			release
+			end
+        case 5:
+			lock
+			faceplayer
+			namebox("Jesse")
+            msgbox(format("Oh wow!\nWhere do you train?\pMaybe I should train there!"))
+			hidenamebox
+            release
+			end
+	}
+}
+
+script LUMBRIDGE_GYM_TRAINER_4 {
+	trainerbattle_single(TRAINER_LUMBRIDGE_GYM4, format("Ready to face the Duke himself? Let us check."),format("Sure.\nYou barely pass. ") )
+    switch (var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE)){ 
+		case 4: 
+			lock
+			faceplayer
+			namebox("Jericho")
+			msgbox(format("It was a close fight."))
+			hidenamebox
+			release
+			end
+        case 5:
+			lock
+			faceplayer
+			namebox("Jericho")
+            msgbox(format("I guess you were ready to face the duke."))
+			hidenamebox
+            release
+			end
+	}
+}

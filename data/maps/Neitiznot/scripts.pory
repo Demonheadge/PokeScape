@@ -1,0 +1,211 @@
+const BOAT_ID = 10
+const NELLE_ID = 11
+const LOCALID_BUNNY_1 = 12
+const LOCALID_BUNNY_2 = 13
+const LOCALID_BUNNY_3 = 14
+const LOCALID_BUNNY_4 = 15
+const LOCALID_BUNNY_5 = 16
+
+//HOUSE
+const ETERNA_ID = 16
+
+mapscripts Neitiznot_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 11) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+        call(NEITIZNOT_STATE)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_POKESCAPE_RAC_QUEST_STATE, 5: RAC_QUEST_START_P2_NEITIZNOT
+        VAR_POKESCAPE_RAC_QUEST_JAGEXMODS, 25: RAC_QUEST_NEITIZNOT_ENTRY
+    ]
+}
+
+script NEITIZNOT_STATE{
+    if (flag(FLAG_EVENT_TEAM_JATIZSO)) 
+    {
+        if (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 30)
+        {
+            removeobject(NELLE_ID)
+            setflag(VAR_TEMP_E)
+            
+        }
+    }
+    return
+}
+
+
+
+
+script RAC_QUEST_NEITIZNOT_ENTRY
+{
+    lock
+    applymovement(NELLE_ID, MOVEMENT_WALKLEFT)
+    waitmovement(0)
+    namebox ("Nelle")
+    msgbox(format("Do you know what you just did?!\pYou entered Neitiznot from Jatizso!\pBut more importantly you interupted my Woodcutting!\pAnd that is something I will not stand for!"))
+    trainerbattle_no_intro(TRAINER_MITHRILMAN1,format("…"))
+    namebox ("Nelle")
+    msgbox(format("Nooo!\pNot George!\pI must need to heal him quick!"))
+    hidenamebox
+    closemessage
+    applymovement(NELLE_ID, MOVEMENT_NELLE_RUNTOBANK)
+    waitmovement(0)
+    removeobject(NELLE_ID)
+    setflag(VAR_TEMP_E)
+    setvar(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS, 30)
+    release
+    end
+}
+movement MOVEMENT_WALKLEFT {
+	walk_left * 1
+}
+movement MOVEMENT_NELLE_RUNTOBANK {
+	walk_faster_down * 2
+    walk_faster_left * 2
+    walk_faster_down * 5
+}
+
+
+
+script JATIZSO_NPC_ModBlkWitch
+{
+
+    if ((var(VAR_POKESCAPE_RAC_QUEST_STATE) == 20) && (flag(FLAG_EVENT_TEAM_JATIZSO))) 
+    {
+        goto(RAC_QUEST_JATIZSO_JAGEX_P4)
+    }
+
+    lock
+    namebox ("Eterna")
+    msgbox(format("This is so tasteful!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+
+
+
+
+script RAC_QUEST_JATIZSO_JAGEX_P4 { //BlkWitch
+    if (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 35)
+        {
+            namebox ("Eterna")
+            msgbox(format("Thank you!\pTell the others I also said thank you."))
+            hidenamebox
+            closemessage
+        }
+    if (var(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS) == 30)
+        {
+            checkitem(ITEM_TEA, 1)
+            if (var(VAR_RESULT)){
+                applymovement(ETERNA_ID, Movement_QuestionMark)
+                waitmovement(0)
+				namebox ("Eterna")
+				msgbox(format("Who are you?"))
+				hidenamebox
+                closemessage
+                removeitem(ITEM_TEA, 1)
+                namebox ("Eterna")
+				msgbox(format("Thank you!\pTell the others I also said thank you."))
+				hidenamebox
+                closemessage
+                setvar(VAR_POKESCAPE_RAC_QUEST_JAGEXMODS, 35)
+				release
+				end
+			}
+        }
+    end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script BATTLE_RAC_RABBIT {
+    lock
+    namebox ("Rabbit")
+	playmoncry(SPECIES_EKANS, 0)
+	msgbox(format("BUNNNIEEE!"))
+	waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+	setwildbattle (SPECIES_RABBIT, 30, ITEM_NONE)
+	dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+        fadescreen(FADE_TO_BLACK)
+		addvar(VAR_POKESCAPE_RAC_QUEST_RABBITS, 1)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+	}
+	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) { // Cannot catch with dowildbattleNoCatch
+        fadescreen(FADE_TO_BLACK)
+		addvar(VAR_POKESCAPE_RAC_QUEST_RABBITS, 1)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+	}
+    elif (var(VAR_RESULT) == B_OUTCOME_LOST) {
+        fadescreen(FADE_TO_BLACK)
+		//setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1) 
+        fadescreen(FADE_FROM_BLACK)
+		closemessage
+		end
+	}
+    elif (var(VAR_RESULT) == B_OUTCOME_RAN) {
+        namebox ("Rabbit")
+        playmoncry(SPECIES_EKANS, 0)
+        msgbox(format("BOOONNNEEEEYYY!!!!"))
+		closemessage
+        hidenamebox
+        msgbox(format("The Rabbit seems to have become more confident at it's skills.\pIt attacks again!"))
+        closemessage
+        setwildbattle (SPECIES_RABBIT, 100, ITEM_NONE)
+	    dowildbattleNoCatch
+        if (var(VAR_RESULT) == B_OUTCOME_WON) {
+            fadescreen(FADE_TO_BLACK)
+            addvar(VAR_POKESCAPE_RAC_QUEST_RABBITS, 1)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+            msgbox(format("You somehow overcame that horrorfying experience.\pYou now understand why Jackson dislikes Rabbits."))
+            closemessage
+            hidenamebox
+	    }
+	}
+	end
+}
+
+
+//You have killed (VAR_POKESCAPE_RAC_QUEST_RABBITS) amount of Rabbits.

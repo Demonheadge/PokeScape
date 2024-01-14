@@ -1,0 +1,131 @@
+mapscripts Route16_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 16) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+}
+
+
+//ITEMS ROUTE16
+//HIDDEN ITEMS: 
+//
+script ITEM_ROUTE16_1
+{
+    finditem(ITEM_EFFIGY)
+    end
+}
+
+script ITEM_ROUTE16_2
+{
+    finditem(ITEM_CAKE)
+    end
+}
+
+
+
+//ITEMS ROUTE17
+//HIDDEN ITEMS: 
+//
+script ITEM_ROUTE17_1
+{
+    finditem(ITEM_EARTH_RUNE)
+    end
+}
+
+//ITEMS ROUTE15
+//HIDDEN ITEMS: 
+//
+script ITEM_ROUTE15_1
+{
+    finditem(ITEM_PURPLE_SWEETS)
+    end
+}
+script ITEM_ROUTE15_2
+{
+    finditem(ITEM_AUGMENTED_POUCH)
+    end
+}
+script ITEM_ROUTE15_3
+{
+    finditem(ITEM_CABBAGE)
+    end
+}
+script ITEM_ROUTE15_4
+{
+    finditem(ITEM_PRAYER_POTION)
+    end
+}
+
+//ITEMS ROUTE13
+//HIDDEN ITEMS: 
+//
+script ITEM_ROUTE13_1
+{
+    finditem(ITEM_SUPER_PRAYER_POTION)
+    end
+}
+script ITEM_ROUTE13_2
+{
+    finditem(ITEM_CAKE)
+    end
+}
+script ITEM_ROUTE13_3
+{
+    finditem(ITEM_POTION_ATT)
+    end
+}
+
+//ITEMS ROUTE14
+//HIDDEN ITEMS: 
+//
+script ITEM_ROUTE14_1
+{
+    finditem(ITEM_LAMP_ATT)
+    end
+}
+
+//ITEMS ROUTE29
+//HIDDEN ITEMS: 3 items, ITEM_SPIRIT_SHARD, ITEM_GRANITE_POUCH, ITEM_SPIRIT_SHARD
+//
+script ITEM_ROUTE29_1
+{
+    finditem(ITEM_FIRE_RUNE)
+    end
+}
+script ITEM_ROUTE29_2
+{
+    finditem(ITEM_ROCKCAKE)
+    end
+}
+
+//ITEMS ROUTE28
+//HIDDEN ITEMS: 
+//
+script ITEM_ROUTE28_1
+{
+    finditem(ITEM_REPEL_TEA_2)
+    end
+}
+script ITEM_ROUTE28_2
+{
+    finditem(ITEM_ADAMANT_POUCH)
+    end
+}
+
+//ITEMS ALKHARID
+//HIDDEN ITEMS: 
+//
+script ITEM_ALKHARID_1
+{
+    finditem(ITEM_LAMP_SPDEF)
+    end
+}
+
+
+//ITEMS ROUTE19
+//HIDDEN ITEMS: 
+//
+script ITEM_ROUTE19_1
+{
+    finditem(ITEM_ADAMANT_POUCH)
+    end
+}

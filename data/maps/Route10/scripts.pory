@@ -1,0 +1,150 @@
+mapscripts Route10_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 3) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+}
+
+
+
+
+//NPC DIALOGUE
+
+script ROUTE10_Pirate
+{
+    faceplayer
+    namebox ("PIRATE")
+    msgbox(format("Arrrr…\pMe best matey Polly past away a few yeeyarrs ago…\pIt feels like only yeesterrdey."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script ROUTE10_DragonBot
+{
+    faceplayer
+    namebox ("L337AFK3R69")
+    msgbox(format("Urgh I went afk for 5 minutes!\pWhen I came back a Goblin had PKed me!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script ROUTE10_SirRebrum
+{
+    faceplayer
+    namebox ("Sir Rebrum")
+    msgbox(format("Go no further adventurer!\pGhastly, smelly worm monsters have been attacking folks around this area.\pWe have been dispatched here to secure the area for the time being."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script ROUTE10_WhiteKnight_1
+{
+    faceplayer
+    namebox ("White Knight")
+    msgbox(format("Disgusting!\pI have worm juice all over my shiny new armour!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script ROUTE10_WhiteKnight_2
+{
+    faceplayer
+    namebox ("White Knight")
+    msgbox(format("All of my monsters fainted…\pI need to recover for a bit."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+//BATTLE TRAINERS
+
+script BATTLE_ROUTE10_MONK{
+    trainerbattle_single(TRAINER_ROUTE10_MONK, format("You don't seem to be dead…\pWe might be able arrange something to fix that."),format("Oh you prefer to live?\pThat too is an option."))
+    msgbox(format("Did you know Death Runes make certain monsters evolve?\pDo you think there are Life Rune too?\pIt really makes you think."))
+    release
+}
+
+script BATTLE_ROUTE10_GOBLIN_1{
+    trainerbattle_single(TRAINER_ROUTE10_GOBLIN_1, format("HUMAN!\pMe not let you pass!\pThis is goblin road!"),format("Ok human can pass!"))
+    msgbox(format("Me sorry for causing trouble for human!\pDon't hurt goblin!"))
+    release
+}
+
+script BATTLE_ROUTE10_GOBLIN_2{
+    trainerbattle_single(TRAINER_ROUTE10_GOBLIN_2, format("Me want to visit graves but stupid humans won't let me!"),format("Me just want to see friend…"))
+    msgbox(format("Me friend is spider.\pMe accidently sat on him.\pMe want to visit grave and say sorry…"))
+    release
+}
+
+
+//ITEMS
+//HIDDEN ITEMS:  ITEM_MINT_CAKE ,  ITEM_LAMP_SPDEF
+script ITEM_ROUTE10_TM38_ROCKTOMB
+{
+    finditem(ITEM_TM38)
+    end
+}
+
+script ITEM_ROUTE10_PINEAPPLE_PUNCH
+{
+    finditem(ITEM_PINEAPPLE_PUNCH)
+    end
+}
+
+
+
+
+
+//GRAVESTONES
+
+script ROUTE10_Gravestone_1
+{
+    msgbox(format("The gravestone reads…\pHere lies my hopes and Dreams…"))
+    closemessage
+    end
+}
+
+script ROUTE10_Gravestone_2
+{
+    msgbox(format("The gravestone reads…\pDied to seafood."))
+    closemessage
+    end
+}
+
+script ROUTE10_Gravestone_3
+{
+    msgbox(format("The gravestone reads…\pPokeScapes initial ETA"))
+    closemessage
+    end
+}
+
+script ROUTE10_Gravestone_4
+{
+    msgbox(format("The grave is really old and is hard to read…\pR…Sca…e For…ms\pYou wonder what it could mean."))
+    closemessage
+    end
+}
+
+script ROUTE10_Gravestone_5
+{
+    msgbox(format("The gravestone reads…\pDied by thinking it was a good idea to throw fishing explosives at a Mogre."))
+    closemessage
+    end
+}
+
+script ROUTE10_Signpost
+{
+    msgbox(format("Port Sarim Church.\pNorth to Port Sarim Graveyard."))
+    closemessage
+    end
+}

@@ -1,0 +1,446 @@
+mapscripts Lumbridge_General_Store_MapScripts {}    
+
+script GeneralStoreShopScript {
+    
+    switch (var(VAR_GAMEMODE_LEVEL_SCALING)){ 
+		case 0:
+        case 1: 
+            pokemart (STORE_GeneralStore_0) //0 BADGES
+        case 2:
+            pokemart (STORE_GeneralStore_1) //1 BADGES
+        case 3:
+        case 4:
+            pokemart (STORE_GeneralStore_2) //3 BADGES
+        case 5:
+        case 6:
+            pokemart (STORE_GeneralStore_3) //5 BADGES
+        case 7:
+        case 8:
+        case 9:
+            pokemart (STORE_GeneralStore_4) // 8 BADGES
+        case 10:
+            pokemart (STORE_GeneralStore_4) // ELITE 4
+    
+    return
+    }
+}
+
+
+
+///GENERAL STORE SCRIPTS
+
+//LUMBRIDGE
+script GeneralStore_LUMBRIDGE {
+    lock
+    faceplayer
+    msgbox(format("Welcome to the Lumbridge General Store.\pHow may I help you?"))
+    waitmessage
+    call(GeneralStoreShopScript)
+    msgbox("Thank you, come again!")
+    release
+}
+//DRAYNOR
+script GeneralStore_DRAYNOR {
+    lock
+    faceplayer
+    msgbox(format("Welcome to the Drayor Markets.\pHow may I help you?"))
+    waitmessage
+    call(GeneralStoreShopScript)
+    msgbox("Thank you, come again!")
+    release
+}
+//FALADOR
+script GeneralStore_FALADOR {
+    lock
+    faceplayer
+    msgbox(format("Welcome to the Falador General Store.\pHow may I help you?"))
+    waitmessage
+    call(GeneralStoreShopScript)
+    msgbox("Thank you, come again!")
+    release
+}
+//VARROCK
+script GeneralStore_VARROCK {
+    lock
+    faceplayer
+    msgbox(format("Welcome to the Varrock General Store.\pHow may I help you?"))
+    waitmessage
+    call(GeneralStoreShopScript)
+    msgbox("Thank you, come again!")
+    release
+}
+//PORT SARIM
+script GeneralStore_PORTSARIM {
+    lock
+    faceplayer
+    msgbox(format("Welcome to the Port Sarim General Store.\pHow may I help you?"))
+    waitmessage
+    call(GeneralStoreShopScript)
+    msgbox("Thank you, come again!")
+    release
+}
+//RIMMINGTON
+script GeneralStore_RIMMINGTON {
+    lock
+    faceplayer
+    msgbox(format("Welcome to the Rimmington General Store.\pHow may I help you?"))
+    waitmessage
+    call(GeneralStoreShopScript)
+    msgbox("Thank you, come again!")
+    release
+}
+
+
+
+///STORE SCRIPTS
+script SHOP_RUNESTORE_VARROCK
+{
+	lock
+	faceplayer
+    namebox ("Aubury")
+	msgbox(format("Welcome to the Rune Shop!\pHow may I help you today?"))
+    waitmessage
+    hidenamebox
+    pokemart (STORE_RuneStore_1)
+    msgbox("Thank you, come again!")
+	release
+	end
+}
+
+script SHOP_PRAYER_FALADOR
+{
+	lock
+	faceplayer
+    namebox ("Flynn")
+	msgbox(format("Hello.\nDo you want to buy or sell anything?"))
+    waitmessage
+    hidenamebox
+    pokemart (STORE_Prayer)
+    msgbox("Thank you, come again!")
+	release
+	end
+}
+
+
+script SHOP_TM_VARROCK_MUSEUM
+{
+	lock
+	faceplayer
+    namebox ("Torrcs")
+	msgbox(format("Do you like the art of sword fighting?\pIf so do I have something for you."))
+    waitmessage
+    hidenamebox
+    pokemart (STORE_TM_2)
+    msgbox(format("Hope to see you again."))
+	release
+	end
+}
+
+script SHOP_TM_SEERS_WIZARD
+{
+	lock
+	faceplayer
+    namebox ("Phantuwti")
+	msgbox(format("Lovely weather we are having today don't you agree?\pIt'd be such a shame if something were to change that…"))
+    waitmessage
+    hidenamebox
+    pokemart (STORE_TM_1)
+    msgbox(format("Yes, it would be such a shame if the weather suddenly changed."))
+	release
+	end
+}
+
+
+
+
+
+
+//Rune Stores
+raw `
+    .align 2
+STORE_RuneStore_1:
+    .2byte ITEM_AIR_RUNE
+    .2byte ITEM_WATER_RUNE
+    .2byte ITEM_EARTH_RUNE
+	.2byte ITEM_FIRE_RUNE
+    .2byte ITEM_NONE
+    release
+    end
+`
+
+raw `
+    .align 2
+STORE_RuneStore_2:
+    .2byte ITEM_MIND_RUNE
+    .2byte ITEM_BODY_RUNE
+    .2byte ITEM_COSMIC_RUNE
+	.2byte ITEM_CHAOS_RUNE
+    .2byte ITEM_NATURE_RUNE
+    .2byte ITEM_NONE
+    release
+    end
+`
+
+raw `
+    .align 2
+STORE_RuneStore_3:
+    .2byte ITEM_LAW_RUNE
+    .2byte ITEM_ASTRAL_RUNE
+    .2byte ITEM_DEATH_RUNE
+	.2byte ITEM_BLOOD_RUNE
+    .2byte ITEM_SOUL_RUNE
+    .2byte ITEM_NONE
+    release
+    end
+`
+
+raw `
+    .align 2
+STORE_RuneStore_4:
+    .2byte ITEM_DUST_RUNE
+    .2byte ITEM_MUD_RUNE
+    .2byte ITEM_MIST_RUNE
+	.2byte ITEM_LAVA_RUNE
+    .2byte ITEM_LIFE_RUNE
+    .2byte ITEM_NONE
+    release
+    end
+`
+//
+
+//Specialized Pouches
+raw `
+    .align 2
+STORE_SpecialPouches:
+    .2byte ITEM_NORMAL_POUCH
+    .2byte ITEM_BLACK_POUCH
+    .2byte ITEM_SPLITBARK_POUCH
+	.2byte ITEM_DRAGONBANE_POUCH
+    .2byte ITEM_AUGMENTED_POUCH
+    .2byte ITEM_MYSTIC_POUCH
+    .2byte ITEM_BARROWS_POUCH
+    .2byte ITEM_GRANITE_POUCH
+    .2byte ITEM_ANCIENT_POUCH
+    .2byte ITEM_ELEMENTAL_POUCH
+    .2byte ITEM_NONE
+    release
+    end
+`
+
+///TM Shops
+//Wizards' Tower
+raw `
+    .align 2
+STORE_TM_1:
+    .2byte ITEM_TM01_SUNNY_DAY
+    .2byte ITEM_TM02_RAIN_DANCE
+    .2byte ITEM_TM03_HAIL
+	.2byte ITEM_TM04_SANDSTORM
+    .2byte ITEM_NONE
+    release
+    end
+`
+//Varrock Museum
+raw `
+    .align 2
+STORE_TM_2:
+    .2byte ITEM_TM25_GUILLOTINE
+    .2byte ITEM_TM26_KINGS_SHIELD
+    .2byte ITEM_TM27_SACRED_SWORD
+	.2byte ITEM_TM28_SWORDS_DANCE
+    .2byte ITEM_TM29_SECRET_SWORD
+    .2byte ITEM_NONE
+    release
+    end
+`
+//Mining Guild
+raw `
+    .align 2
+STORE_TM_3:
+    .2byte ITEM_TM10_ELECTRIC_TERRAIN
+    .2byte ITEM_TM11_PSYCHIC_TERRAIN
+    .2byte ITEM_TM12_MISTY_TERRAIN
+	.2byte ITEM_TM09_GRASSY_TERRAIN
+    .2byte ITEM_NONE
+    release
+    end
+`
+//LAMPS
+raw `
+    .align 2
+STORE_Lamps:
+    .2byte ITEM_LAMP_HP
+    .2byte ITEM_LAMP_ATT
+    .2byte ITEM_LAMP_DEF
+	.2byte ITEM_LAMP_SPATT
+    .2byte ITEM_LAMP_SPDEF
+    .2byte ITEM_LAMP_SPEED
+    .2byte ITEM_NONE
+    release
+    end
+`
+//Elixers
+raw `
+    .align 2
+STORE_Prayer:
+    .2byte ITEM_PRAYER_POTION
+    .2byte ITEM_SUPER_PRAYER_POTION
+    .2byte ITEM_NONE
+    release
+    end
+`
+//HELMET STORE
+raw `
+    .align 2
+STORE_Helmet:
+    .2byte ITEM_BRONZEHELMET
+    .2byte ITEM_IRONMAN_HELMET
+    .2byte ITEM_ARMA_HELM
+    .2byte ITEM_NONE
+    release
+    end
+`
+//Farming Supplies
+raw `
+    .align 2
+STORE_FarmingSupplies:
+    .2byte ITEM_CABBAGE_FARMING
+    .2byte ITEM_APPLE
+    .2byte ITEM_BANANNA
+	.2byte ITEM_CADAVABERRY
+    .2byte ITEM_COCONUT
+    .2byte ITEM_CORN
+    .2byte ITEM_GARLIC
+    .2byte ITEM_GRAPES
+    .2byte ITEM_JANGERBERRY
+	.2byte ITEM_LEMON
+    .2byte ITEM_ONION
+    .2byte ITEM_ORANGE
+    .2byte ITEM_PINEAPPLE
+    .2byte ITEM_POISONIVYBERRY
+    .2byte ITEM_POTATO
+	.2byte ITEM_REDBERRY
+    .2byte ITEM_STRAWBERRY
+    .2byte ITEM_TOMATO
+    .2byte ITEM_TURNIP
+    .2byte ITEM_WATERMELON
+    .2byte ITEM_WHITEBERRY
+    .2byte ITEM_NONE
+    release
+    end
+`
+///GENERAL STORE 
+// 0 BADGES
+raw `
+    .align 2
+STORE_GeneralStore_0:
+    .2byte ITEM_BRONZE_POUCH
+    .2byte ITEM_IRON_POUCH
+    .2byte ITEM_BREAD
+	.2byte ITEM_WIZARDS_BLIZZARD
+    .2byte ITEM_CHOCOLATE_SUNDAY
+    .2byte ITEM_DRUNK_DRAGON
+    .2byte ITEM_FRUIT_BLAST
+    .2byte ITEM_PINEAPPLE_PUNCH
+    .2byte ITEM_REPEL_TEA_1
+	.2byte ITEM_EMPTY_BUCKET
+    .2byte ITEM_NONE
+    release
+    end
+`
+// 1+ BADGES
+raw `
+    .align 2
+STORE_GeneralStore_1:
+    .2byte ITEM_BRONZE_POUCH
+    .2byte ITEM_IRON_POUCH
+    .2byte ITEM_STEEL_POUCH
+    .2byte ITEM_BREAD
+    .2byte ITEM_CAKE
+	.2byte ITEM_WIZARDS_BLIZZARD
+    .2byte ITEM_CHOCOLATE_SUNDAY
+    .2byte ITEM_DRUNK_DRAGON
+    .2byte ITEM_FRUIT_BLAST
+    .2byte ITEM_PINEAPPLE_PUNCH
+    .2byte ITEM_REPEL_TEA_1
+	.2byte ITEM_EMPTY_BUCKET
+    .2byte ITEM_NONE
+    release
+    end
+`
+// 3+ BADGES
+raw `
+    .align 2
+STORE_GeneralStore_2:
+    .2byte ITEM_BRONZE_POUCH
+    .2byte ITEM_IRON_POUCH
+    .2byte ITEM_STEEL_POUCH
+    .2byte ITEM_MITHRIL_POUCH
+    .2byte ITEM_BREAD
+    .2byte ITEM_CAKE
+	.2byte ITEM_WIZARDS_BLIZZARD
+    .2byte ITEM_CHOCOLATE_SUNDAY
+    .2byte ITEM_DRUNK_DRAGON
+    .2byte ITEM_FRUIT_BLAST
+    .2byte ITEM_PINEAPPLE_PUNCH
+    .2byte ITEM_REPEL_TEA_1
+    .2byte ITEM_REPEL_TEA_2
+	.2byte ITEM_EMPTY_BUCKET
+    .2byte ITEM_NONE
+    release
+    end
+`
+// 5+ BADGES
+raw `
+    .align 2
+STORE_GeneralStore_3:
+    .2byte ITEM_BRONZE_POUCH
+    .2byte ITEM_IRON_POUCH
+    .2byte ITEM_STEEL_POUCH
+    .2byte ITEM_MITHRIL_POUCH
+    .2byte ITEM_ADAMANT_POUCH
+    .2byte ITEM_BREAD
+    .2byte ITEM_CAKE
+	.2byte ITEM_WIZARDS_BLIZZARD
+    .2byte ITEM_CHOCOLATE_SUNDAY
+    .2byte ITEM_DRUNK_DRAGON
+    .2byte ITEM_FRUIT_BLAST
+    .2byte ITEM_PINEAPPLE_PUNCH
+    .2byte ITEM_BLUEBERRY_SPECIAL
+    .2byte ITEM_REPEL_TEA_1
+    .2byte ITEM_REPEL_TEA_2
+    .2byte ITEM_REPEL_TEA_3
+    .2byte ITEM_CABBAGE
+	.2byte ITEM_EMPTY_BUCKET
+    .2byte ITEM_NONE
+    release
+    end
+`
+// 8+ BADGES
+raw `
+    .align 2
+STORE_GeneralStore_4:
+    .2byte ITEM_BRONZE_POUCH
+    .2byte ITEM_IRON_POUCH
+    .2byte ITEM_STEEL_POUCH
+    .2byte ITEM_MITHRIL_POUCH
+    .2byte ITEM_ADAMANT_POUCH
+    .2byte ITEM_RUNE_POUCH
+    .2byte ITEM_BREAD
+    .2byte ITEM_CAKE
+    .2byte ITEM_CHOCOLATE_CAKE
+	.2byte ITEM_WIZARDS_BLIZZARD
+    .2byte ITEM_CHOCOLATE_SUNDAY
+    .2byte ITEM_DRUNK_DRAGON
+    .2byte ITEM_FRUIT_BLAST
+    .2byte ITEM_PINEAPPLE_PUNCH
+    .2byte ITEM_BLUEBERRY_SPECIAL
+    .2byte ITEM_REPEL_TEA_1
+    .2byte ITEM_REPEL_TEA_2
+    .2byte ITEM_REPEL_TEA_3
+    .2byte ITEM_CABBAGE
+	.2byte ITEM_EMPTY_BUCKET
+    .2byte ITEM_NONE
+    release
+    end
+`

@@ -1,0 +1,446 @@
+mapscripts Route8_MapScripts {
+}
+
+
+
+
+
+
+script ROUTE8_SIGNPOST
+{
+    msgbox(format("WEST to Crafting Guild.\pSOUTH to Rimmington.\pEAST to FALADOR."))
+    closemessage
+    end
+}
+
+
+
+//NPCS
+
+script ROUTE8_MAN
+{
+    faceplayer
+    namebox ("Man")
+    msgbox(format("This is my secret pathway how did you find it?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script ROUTE8_MINER_3
+{
+    faceplayer
+    namebox ("MINER")
+    msgbox(format("I wish they had a Bank here.\pI have to make a trip all the way to Falador if I want to heal my monsters."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+//ITEMS
+
+script ITEM_ROUTE8_ITEM_MITHRIL_POUCH
+{
+    finditem(ITEM_MITHRIL_POUCH)
+    end
+}
+
+script ITEM_ROUTE8_ITEM_FLAX
+{
+    finditem(ITEM_FLAX)
+    end
+}
+
+script ITEM_ROUTE8_ITEM_PRAYER_POTION
+{
+    finditem(ITEM_PRAYER_POTION)
+    end
+}
+
+
+
+
+
+//BATTLE TRAINERS
+
+script BATTLE_ROUTE8_THIEF{
+    trainerbattle_single(TRAINER_ROUTE8_THIEF, format("Hi there, you wouldn't want some very rare a expensive charcoal would you?"),format("You could have just said no…"))
+    msgbox(format("You could have just said no…"))
+    release
+}
+
+script BATTLE_ROUTE8_NOOB{
+    trainerbattle_single(TRAINER_ROUTE8_NOOB, format("LOL!\nI'll pwn you noob!"),format("CH00B!"))
+    msgbox(format("Ch00b!"))
+    release
+}
+
+script BATTLE_ROUTE8_DnD{
+    trainerbattle_single(TRAINER_ROUTE8_DnD, format("Have you seen any penguins around here?"),format("No?\nAww I need to find 2 more this week."))
+    msgbox(format("If you see any penguins let me know!"))
+    release
+}
+
+script BATTLE_ROUTE8_MINER_1{
+    trainerbattle_single(TRAINER_ROUTE8_MINER_1, format("Do you know the way to the crafting guild?"),format("I heard the crafting guild has a good ore deposit."))
+    msgbox(format("I want to mine some silver ore at the crafting guild."))
+    release
+}
+
+script BATTLE_ROUTE8_WOODCUTTER{
+    trainerbattle_single(TRAINER_ROUTE8_WOODCUTTER, format("The trick to woodcutting is like any slayer task, the gear!"),format("I should invest in better gear…"))
+    msgbox(format("I should invest in better gear."))
+    release
+}
+
+script BATTLE_ROUTE8_MINER_2{
+    trainerbattle_single(TRAINER_ROUTE8_MINER_2, format("Dig a dig a- oh hello there."),format("Please move away, this rock is mine."))
+    msgbox(format("Please move away, this rock is mine."))
+    release
+}
+
+// BATTLE WIZARDS
+script BATTLE_ROUTE8_WIZARD_AIR{
+    trainerbattle_single(TRAINER_ROUTE8_WIZARD_AIR, format("Stop right there!\pIf you wish to see Mr.Mortifer you will have to defeat the 4 elemental battle kings!\pSadly this is as far as you will go!"),format("I may have lost, but you won't get much further!"))
+    msgbox(format("I lost to you, but I won't next time."))
+    release
+}
+
+script BATTLE_ROUTE8_WIZARD_WATER{
+    trainerbattle_single(TRAINER_ROUTE8_WIZARD_WATER, format("You are a thousand years away from facing Mr.Mortifer!"),format("You just got lucky that is all…"))
+    msgbox(format("Water-types are superior."))
+    release
+}
+
+script BATTLE_ROUTE8_WIZARD_EARTH{
+    trainerbattle_single(TRAINER_ROUTE8_WIZARD_EARTH, format("All the other elemental battle kings opted to have demons on their teams.\pI have decided to take a different approach.\pHow well do you think you can hold up?!"),format("How could I have lost!\pMaybe I should look into getting a Sandfiend."))
+    msgbox(format("Maybe I should look into getting a Sandfiend."))
+    release
+}
+
+script BATTLE_ROUTE8_WIZARD_FIRE{
+    trainerbattle_single(TRAINER_ROUTE8_WIZARD_FIRE, format("I am who stands between you and Mr.Mortifer!\pThere is no way you are getting past me!"),format("Nooo!\pI don't want to be turned into a mushroom!"))
+    msgbox(format("Noo!\pPlease Mr.Mortifer don't turn me into a mushroom again!"))
+    release
+}
+
+script BATTLE_ROUTE8_WIZARD_MALIGNIUS_MORTIFER{
+    checktrainerflag(TRAINER_ROUTE8_WIZARD_MALIGNIUS_MORTIFER)
+		if (!var(VAR_RESULT))
+		{	
+            trainerbattle_single(TRAINER_ROUTE8_WIZARD_MALIGNIUS_MORTIFER, format("Impressive…\pYou got past the 4 elemental lame wizards.\pI'll have you know my skill is on a completely different level to them.\pI hope you are prepared for I will turn you into a mushroom, and then maybe have mushroom soup for dinner!"),format("Impossible!"))
+            namebox ("Malignius")
+            msgbox(format("Impossible!\pI have never lost a battle before.\pYou are strong adventurer, I will give you that…\pHere as a reward for defeating me take this."))
+            hidenamebox
+            closemessage
+            giveitem(ITEM_STAFF_OF_EARTH, 1)
+            namebox ("Malignius")
+            msgbox(format("You can go away now.\pIf you do not I may have second thoughts about having mushroom soup."))
+            hidenamebox
+            closemessage
+            release
+            end
+        }
+        else
+        {
+            lock
+            faceplayer
+            namebox ("Malignius")
+            msgbox(format("You can go away now.\pIf you do not I may have second thoughts about having mushroom soup."))
+            hidenamebox
+            closemessage
+            release
+            end
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script ABYSSALRIFT_Route8_ENTER{
+msgbox(format("There is a rift in space.\pWould you like to enter it?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT)){
+                    msgbox(format("As you step into the rift the world around you starts to shimmer."))
+                    warp (MAP_ABYSSAL_REALM_2,0,0,0)
+                    closemessage
+                    release
+                    end
+                }
+                closemessage
+                release
+                end
+}
+
+
+script ABYSSALRIFT_Route8_RETURN{
+msgbox(format("There is a rift in space.\pWould you like to enter it?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT)){
+                    msgbox(format("As you step into the rift the world around you starts to shimmer."))
+                    warp (MAP_ROUTE8,0,0,0)
+                    closemessage
+                    release
+                    end
+                }
+                closemessage
+                release
+                end
+}
+
+script ABYSSALRIFT_Route8_SudoBash{
+                    msgbox(format("001000101001010101001\p0101010010101\p010101010010101010\p010101010\p0101010\n01001\n0101010\p2349812649632946317824024\p42069"))
+                    closemessage
+                    release
+                    end
+
+}
+
+
+
+
+
+
+
+
+
+script ABYSSALRIFT_Mazcab_ENTER{
+msgbox(format("There is a rift in space.\pWould you like to enter it?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT)){
+                    msgbox(format("As you step into the rift the world around you starts to shimmer."))
+                    warp (MAP_MAZCAB_OTOT,0,0,0)
+                    closemessage
+                    release
+                    end
+                }
+                closemessage
+                release
+                end
+}
+
+
+script ABYSSALRIFT_Mazcab_RETURN{
+msgbox(format("There is a rift in space.\pWould you like to enter it?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT)){
+                    msgbox(format("As you step into the rift the world around you starts to shimmer."))
+                    warp (MAP_ABYSSAL_REALM_1,10,0,0)
+                    closemessage
+                    release
+                    end
+                }
+                closemessage
+                release
+                end
+}
+
+
+script ABYSSALRIFT_Mazcab_Shauny{
+                    faceplayer
+                    namebox("Shauny")
+                    msgbox(format("It is not my Birthday!\p…\pOh wait, I am mistaken, today is indeed my birthday."))
+                    closemessage
+                    hidenamebox
+                    release
+                    end
+
+}
+
+
+
+
+
+
+
+
+
+
+script ALTAR_WATER_ENTER{
+    msgbox(format("It is a mysterious Altar."))
+    msgbox(format("Would you like to use the Water Talisman?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT)){
+                    msgbox(format("The WATER TALISMAN begins to glow.\pA mass of energy suddenly surrounds you!"))
+                    warp (MAP_MAZCAB_OTOT,0,0,0)
+                    closemessage
+                    release
+                    end
+                }
+                closemessage
+                release
+                end
+}
+
+
+script ALTAR_WATER_RETURN{
+msgbox(format("Would you like to leave this realm?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT)){
+                    msgbox(format("As you step into the portal a mass of energy surrounds you!"))
+                    warp (MAP_ROUTE4,1,0,0)
+                    closemessage
+                    release
+                    end
+                }
+                closemessage
+                release
+                end
+}
+
+script ALTAR_EARTH_ENTER{
+    msgbox(format("It is a mysterious Altar."))
+    checkitem (ITEM_TALISMAN_EARTH, 1)
+        if (var(VAR_RESULT))
+        {
+        msgbox(format("Would you like to use the Earth Talisman?"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)){
+                        msgbox(format("The EARTH TALISMAN begins to glow.\pA mass of energy suddenly surrounds you!"))
+                        warp (MAP_MAZCAB_OTOT,0,0,0)
+                        closemessage
+                        release
+                        end
+                    }
+                    closemessage
+                    release
+                    end
+        }
+    closemessage
+    release
+    end
+}
+
+
+script ALTAR_EARTH_RETURN{
+msgbox(format("Would you like to leave this realm?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT)){
+                    msgbox(format("As you step into the portal a mass of energy surrounds you!"))
+                    warp (MAP_ROUTE17,1,0,0)
+                    closemessage
+                    release
+                    end
+                }
+                closemessage
+                release
+                end
+}
+
+
+
+
+
+//CRAFTING GUILD
+
+script CRAFTINGGUILD_MILKSELLER
+{
+    lock
+    faceplayer
+    msgbox(format("Why hello there, are you interested in some flavoured Milk?"))
+    pokemart(FlavouredMilkShop)
+    closemessage
+    release
+    end
+}
+
+
+raw `
+
+    .align 2
+FlavouredMilkShop:
+	.2byte ITEM_MILK_BUCKET
+    .2byte ITEM_VANILLA_MILK
+    .2byte ITEM_STRAWBERRY_MILK
+    .2byte ITEM_CHOCOLATE_MILK
+	.2byte ITEM_NONE
+
+    release
+    end
+
+`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script PEST_CONTROL_ENTER{
+    faceplayer
+    namebox("Void Squire")
+    msgbox(format("Would you like to set sail to the Outpost?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT)){
+                    hidenamebox
+                    closemessage
+                    msgbox(format("You board the ship."))
+                    warp (MAP_MINIGAME_1,0,0,0)
+                    closemessage
+                    release
+                    end
+                }
+            hidenamebox
+            closemessage
+            release
+            end
+}
+
+
+script PEST_CONTROL_RETURN{
+    faceplayer
+    namebox("Void Squire")
+    msgbox(format("Would you like to return to the mainland?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT)){
+                    hidenamebox
+                    closemessage
+                    msgbox(format("You board the ship."))
+                    warp (MAP_PORT_SARIM,9,0,0)
+                    closemessage
+                    release
+                    end
+                }
+            hidenamebox
+            closemessage
+            release
+            end
+}
+
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+mapscripts Mill_Lane_Mill_3_MapScripts {
+    
+}
+
+script Millie_Miller{
+    if((var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE) == 1)){
+        checkitem (ITEM_EXTRA_FINE_FLOUR,1)
+	    if (!var(VAR_RESULT)){
+            lock
+            faceplayer
+            namebox ("Millie Miller")
+            msgbox(format("Welcome to Mill Lane Mill!\pI heard that you were after some of our flour.\pTehehehehe.\pI can give you some if you want…"))
+            trainerbattle_single(TRAINER_MILLIE_MILLER_MILLLANEMILL,format("But you'll have to battle me for it.\pTeheehehe!"),format("I was so close!"),GiveQuestWheat)
+            hidenamebox
+            release
+            end
+        }
+        else {
+            lock
+            faceplayer
+            msgbox(format("Welcome to Mill Lane Mill!\pWould you like to buy some flour?"))
+            pokemart(MillLaneMillFlourShop)
+            release
+            end
+        }
+    }
+    else {
+        lock
+        faceplayer
+        msgbox(format("Welcome to Mill Lane Mill!\pWould you like to buy some flour?"))
+        pokemart(MillLaneMillFlourShop)
+        release
+        end
+    }
+}
+
+script GiveQuestWheat{
+    lock
+    faceplayer
+    namebox ("Millie Miller")
+    msgbox("Congratulations!\nHere is the flour.")
+    hidenamebox
+    giveitem(ITEM_EXTRA_FINE_FLOUR)
+    subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_COOKS_ASSISTANT, 2)
+    namebox ("Millie Miller")
+    msgbox(format("If you run out you may get some more from me anytime you wish.\pAlthough it will come at a cost.\pTehehehe!"))
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+
+
+
+raw `
+
+    .align 2
+MillLaneMillFlourShop:
+	.2byte ITEM_FLOUR_POT
+    .2byte ITEM_EMPTY_POT
+    .2byte ITEM_WHEAT
+	.2byte ITEM_NONE
+
+    release
+    end
+
+`
+
+
+
+script MillLaneMill_Item_FLOUR_POT
+{
+    finditem(ITEM_BREAD)
+    end
+}
+
+
+
+

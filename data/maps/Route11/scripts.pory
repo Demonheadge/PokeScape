@@ -1,0 +1,135 @@
+mapscripts Route11_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 5) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+}
+
+
+
+
+
+
+
+//BATTLE
+
+script BATTLE_ROUTE11_QUESTER{
+    trainerbattle_single(TRAINER_ROUTE11_QUESTER, format("That darned Squire, how did I get into this mess.\pHey you!\nHave you seen any Blurite?!"),format("I hate this quest."))
+    msgbox(format("I've been searching for hours I cannot find Blurite ore anywhere!\pI hate this quest."))
+    release
+}
+
+script BATTLE_ROUTE11_PIRATE{
+    trainerbattle_single(TRAINER_ROUTE11_PIRATE, format("Me be reading the map to find the treasure, stay off scalliwag!"),format("Reading maps be easier if both me eyes were not made of glass."))
+    msgbox(format("Reading maps be easier if both me eyes were not made of glass."))
+    release
+}
+
+script BATTLE_ROUTE11_SAILOR{
+    trainerbattle_single(TRAINER_ROUTE11_SAILOR, format("What do you do with a drunken sailor?\pBattle him of course!"),format("I'm not drunk enough for this."))
+    msgbox(format("I'm not drunk enough for this."))
+    release
+}
+
+script BATTLE_ROUTE11_PvMer{
+    trainerbattle_single(TRAINER_ROUTE11_PvMer, format("You look like a good warmup, prepare yourself!"),format("Losing to you it makes me wonder how I will beat a Mogre…"))
+    msgbox(format("Losing to you it makes me wonder how I will beat a Mogre…"))
+    release
+}
+
+script BATTLE_ROUTE11_GRACEFUL{
+    trainerbattle_single(TRAINER_ROUTE11_GRACEFUL, format("He-Hoof-Ha{PAUSE 15}…{PAUSE 15}…\nHa-Hoo-wheeze{PAUSE 15}…{PAUSE 15}…\pBlurgh-bleck-boohgh{PAUSE 15}…{PAUSE 15}…\nBa…tt…le Me…"),format("If I grunt while working out that means I am doing a good job right?"))
+    msgbox(format("Excuse me I have a lot of agility training to do."))
+    release
+}
+
+
+
+
+
+//ITEMS
+
+script ITEM_ROUTE11_ITEM_1
+{
+    finditem(ITEM_POTION_ATT)
+    end
+}
+
+script ITEM_ROUTE11_ITEM_2
+{
+    finditem(ITEM_MITHRIL_POUCH)
+    end
+}
+
+script ITEM_ROUTE11_ITEM_3
+{
+    finditem(ITEM_CRYSTAL_POUCH)
+    end
+}
+
+script ITEM_ROUTE11_ITEM_4
+{
+    finditem(ITEM_TM54)
+    end
+}
+
+script ITEM_ROUTE11_ITEM_5
+{
+    finditem(ITEM_WATER_RUNE)
+    end
+}
+
+
+
+
+//MUDSKIPPER POINT
+
+script NPC_MUDSKIPPERPOINT_NPC_1 { 
+	lock
+	faceplayer
+    namebox("QUESTER")
+	msgbox(format("I heard you could get Yellow Flippers from the Mogres.\pDo you think they would give me a pair if I ask nicely?"))
+    hidenamebox
+    release
+	end
+}
+
+script NPC_MUDSKIPPERPOINT_FAIRY { 
+	lock
+	faceplayer
+    namebox("FAIRY")
+	msgbox(format("I am not sure why, but our Fairy Ring network seems to be down."))
+    hidenamebox
+    release
+	end
+}
+
+script BATTLE_MUDSKIPPERPOINT_SLAYER{
+    trainerbattle_single(TRAINER_MUDSKIPPERPOINT_SLAYER, format("No!\pI left my explosive potions at the bank!"),format("This is such an xp waste!"))
+    msgbox(format("How am I meant to challenge the Morges to a battle without explosive potions and a full team of fainted monsters."))
+    release
+}
+//Team: Shrimp. Rainbow fish Mudskiiper
+
+script BATTLE_MUDSKIPPERPOINT_FISHER_1{
+    trainerbattle_single(TRAINER_MUDSKIPPERPOINT_FISHERMAN_1, format("Oh!\pLooks like I have snagged a big one in my net!"),format("Aww it got away…"))
+    msgbox(format("I heard that there was some sort of device that allows you to dive under the water.\pWhat I'd give to see how the Mudskippers live!"))
+    release
+}
+// Flatfish, Short finned eel, Cod
+
+script BATTLE_MUDSKIPPERPOINT_FISHER_2{
+    trainerbattle_single(TRAINER_MUDSKIPPERPOINT_FISHERMAN_2, format("Do you know why they call this place Mudskipper Point?"),format("I am serious, why do they call this place Mudskipper Point?"))
+    msgbox(format("Oh now I get it.\pIt is because of all the Mudskippers right?"))
+    release
+}
+//Chinchompa, Chinchompa ,Turoth
+
+
+
+
+
+
+
+
+
+

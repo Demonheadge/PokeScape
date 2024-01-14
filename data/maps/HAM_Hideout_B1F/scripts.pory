@@ -1,0 +1,412 @@
+const DEMONHEADGE_ID = 24
+const JMOD_1_ID = 25
+const JMOD_2_ID = 26
+const DEACON_ID = 3
+const FROGEEL_ID = 29
+const FROGEEL_2_ID = 30
+const HYPERSTAN_ID = 27
+const ORCHY_ID = 28
+const ZANIK_ID = 22
+const MITHRILMAN_ID = 31
+const GNOMEBOY_ID = 32
+
+mapscripts HAM_Hideout_B1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        goto(HAM_HIDEOUT_GOLDENGNOME_PLACENPCS)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_POKESCAPE_GOLDENGNOMES, 10: HAM_HIDEOUT_GOLDENGNOME_STATE
+    ]
+}
+
+script HAM_HIDEOUT_GOLDENGNOME_PLACENPCS {
+    if (var(VAR_POKESCAPE_GOLDENGNOMES) == 5) 
+        {
+            addobject(DEMONHEADGE_ID)
+            addobject(JMOD_1_ID)
+            addobject(JMOD_2_ID)
+            setobjectxyperm(DEMONHEADGE_ID,27,20)
+            setobjectxyperm(JMOD_1_ID,27,20)
+            setobjectxyperm(JMOD_2_ID,28,20)
+
+            addobject(FROGEEL_ID)
+            setobjectxyperm(FROGEEL_ID,27,20)
+            addobject(FROGEEL_2_ID)
+            setobjectxyperm(FROGEEL_2_ID,11,23)
+
+            addobject(HYPERSTAN_ID)
+            setobjectxyperm(HYPERSTAN_ID,27,20)
+            addobject(ORCHY_ID)
+            setobjectxyperm(ORCHY_ID,27,20)
+
+
+            addobject(ZANIK_ID)
+            setobjectxyperm(ZANIK_ID,16,23)
+            setobjectmovementtype(ZANIK_ID,MOVEMENT_TYPE_FACE_UP)
+            addobject(MITHRILMAN_ID)
+            setobjectxyperm(MITHRILMAN_ID,22,23)
+            setobjectmovementtype(MITHRILMAN_ID,MOVEMENT_TYPE_FACE_UP)
+            addobject(GNOMEBOY_ID)
+            setobjectxyperm(GNOMEBOY_ID,22,21)
+            setobjectmovementtype(GNOMEBOY_ID,MOVEMENT_TYPE_FACE_UP)
+
+            removeobject(14)
+            removeobject(4)
+            removeobject(6)
+            removeobject(5)
+            removeobject(8)
+            setflag(FLAG_TEMP_1)
+            setvar(VAR_POKESCAPE_GOLDENGNOMES, 10)
+        }
+    
+}
+
+
+script HAM_HIDEOUT_GOLDENGNOME_STATE {
+        applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+        waitmovement(0)
+        
+
+        call(HAM_HIDEOUT_GOLDENGNOME_EVENT)
+        //setvar (VAR_TEMP_0, 1)
+		return
+}
+
+script GOLDENGNOME_CAMERA_CALL {
+    lock
+    //---SPAWN CAMERA EVENT---
+    delay(60)
+    special(SpawnCameraObject) 
+    return
+}
+
+//EVENT
+script HAM_HIDEOUT_GOLDENGNOME_EVENT {
+    fadescreen(FADE_TO_BLACK)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT)
+    applymovement(ZANIK_ID, Movement_InteractFACERIGHT)
+    delay(60)
+    call(GOLDENGNOME_CAMERA_CALL)
+    applymovement(OBJ_EVENT_ID_CAMERA, GOLDENGNOME_CAMERA_1_START)
+    delay(60)
+    fadescreen(FADE_FROM_BLACK)
+    delay(60)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+    applymovement(ZANIK_ID, Movement_InteractFACEUP)
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    delay(60)
+
+    namebox("H.A.M Deacon")
+    msgbox(format("And thus, we will finally execute our plan to rid this world of those fiendish Monsters and send them to the Abyss where they belong!"))
+    waitmessage
+    closemessage
+    hidenamebox
+    playbgm (MUS_PS_ROUTE_LUMBRIDGE, 1)
+    applymovement(JMOD_1_ID, GOLDENGNOME_MOVEMENT_1)
+    waitmovement(0)
+    applymovement(DEACON_ID, Movement_InteractFACERIGHT)
+    waitmovement(0)
+    namebox("H.A.M Deacon")
+    msgbox(format("…{PAUSE 16}…{PAUSE 16}…\pWhat is this?"))
+    waitmessage
+    closemessage
+    hidenamebox
+    applymovement(JMOD_1_ID, Movement_InteractFACELEFT)
+    waitmovement(0)
+    //JMOD go get demon
+    applymovement(DEACON_ID, Movement_InteractFACEDOWN)
+    applymovement(JMOD_1_ID, GOLDENGNOME_MOVEMENT_5)
+    namebox("H.A.M Deacon")
+    msgbox(format("Sorry everyone, it seems like there is some sort of an announcement."))
+    waitmessage
+    closemessage
+    hidenamebox
+    //QUESTION MARKS FROM HAM
+    waitmovement(0)
+    delay(10)
+    applymovement(JMOD_1_ID, GOLDENGNOME_MOVEMENT_6)
+    delay(20)
+    applymovement(DEMONHEADGE_ID, GOLDENGNOME_MOVEMENT_2)
+    delay(10)
+    applymovement(JMOD_2_ID, GOLDENGNOME_MOVEMENT_4)
+    delay(60)
+    applymovement(DEACON_ID, GOLDENGNOME_MOVEMENT_3)
+    waitmovement(JMOD_2_ID)
+    delay(10)
+    namebox("Demonheadge")
+    msgbox(format("Hello everyone.\pI am Demonheadge, the creator of PokeScape.\pAnd as of a few seconds ago I have been informed that PokeScape has just won a Golden Gnome!"))
+    waitmessage
+    closemessage
+    hidenamebox
+    //SURPREISED FACES
+    playbgm (MUS_PS_PORT_SARIM, 1)
+    call(FROGEEL_EXCITED)
+
+    namebox("Demonheadge")
+    msgbox(format("That's crazy right?!\pI've also been asked to say a few words."))
+    waitmessage
+    msgbox(format("I would like to thank all of the incredible people who helped and assisted in some way on this project.\pWithout them it wouldn't be where it is today."))
+    closemessage
+    hidenamebox
+    applymovement(HYPERSTAN_ID, GOLDENGNOME_MOVEMENT_GUEST)
+    waitmovement(0)
+    namebox("Hyper Stan")
+    msgbox(format("Hey, I am HyperStan.\pI drew most of the Pixel Art for this Project.\p…{PAUSE 16} Using this moment I would like to say that Ja-"))
+    closemessage
+    hidenamebox
+    applymovement(JMOD_2_ID, GOLDENGNOME_MOVEMENT_JMOD_WALK_FORWARD)
+    waitmovement(0)
+    namebox("Jagex Mod")
+    msgbox(format("Sorry, Hyper Stan has just been muted for inappropriate behaviour.\pPlease continue the awards."))
+    closemessage
+    hidenamebox
+    applymovement(JMOD_2_ID, GOLDENGNOME_MOVEMENT_JMOD_WALK_BACKWARDS)
+    waitmovement(0)
+
+    applymovement(HYPERSTAN_ID, GOLDENGNOME_MOVEMENT_GUEST_stan)
+    waitmovement(0)
+
+    applymovement(ORCHY_ID, GOLDENGNOME_MOVEMENT_GUEST)
+    waitmovement(0)
+    namebox("Orchy")
+    msgbox(format("Hello I am known as RuneScape ReOrchestrated.\pI made all of the custom music for this Project.\pI hope you enjoy it!"))
+    closemessage
+    hidenamebox
+    applymovement(ORCHY_ID, GOLDENGNOME_MOVEMENT_GUEST_orchy)
+    waitmovement(0)
+
+    applymovement(FROGEEL_2_ID, GOLDENGNOME_MOVEMENT_GUEST_frogeel)
+    waitmovement(0)
+    namebox("FROGEEL")
+    msgbox(format("AAAAAAAAAAAA!"))
+    closemessage
+    hidenamebox
+    delay(60)
+    namebox("Demonheadge")
+    msgbox(format("Ah, cannot forget about Frogeel for his pursuit-less despair and endeavor which has kept us motivated to keep going."))
+    waitmessage
+    closemessage
+    hidenamebox
+    applymovement(FROGEEL_2_ID, GOLDENGNOME_MOVEMENT_GUEST_frogeel_exit)
+    waitmovement(0)
+    namebox("Demonheadge")
+    msgbox(format("Some other mentions are ImcandoBrett, Ryu Saint, Lopendebank, Chase, MrKalius, Sudo Bash, Jitterbug, GentleShen, PippinSmith and many, many others who have popped in along the way to contribute in one way or another."))
+    waitmessage
+    msgbox(format("PokeScape has been a passion project on and off for a few years now just for fun and I hope to continue it!\pThank you all for voting for us.\pWe appreciate it a lot.\pNow enjoy the rest of the Golden Gnome Awards!"))
+    closemessage
+    hidenamebox
+    //fadescreen(FADE_TO_BLACK)
+    savebgm(MUS_DUMMY)
+    fadedefaultbgm
+    setvar(VAR_POKESCAPE_GOLDENGNOMES, 15)
+    warpwhitefade( MAP_VARROCK_PUB_1F, 255, 2, 20)
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+movement GOLDENGNOME_CAMERA_1_START{ // camera
+    //walk_slow_right * 5
+    walk_slow_right * 2
+    walk_slow_up * 5
+	step_end
+}
+movement GOLDENGNOME_MOVEMENT_1{ // JMOD 1
+    walk_left * 6
+    walk_up * 4
+    walk_left * 1
+	step_end
+}
+movement GOLDENGNOME_MOVEMENT_2{ // DEMON
+    walk_left * 6
+    walk_up * 4
+    walk_left * 2
+    face_down
+	step_end
+}
+movement GOLDENGNOME_MOVEMENT_3{ //DEACON MOVE
+    walk_left * 3
+    face_right
+	step_end
+}
+movement GOLDENGNOME_MOVEMENT_4{ //JMOD 2
+    walk_left * 7
+    walk_up * 4
+    walk_left * 1
+    face_down
+	step_end
+}
+movement GOLDENGNOME_MOVEMENT_5{ //JMOD 1 walk back
+    walk_right * 1
+    walk_down * 4
+    walk_right * 6
+	step_end
+}
+movement GOLDENGNOME_MOVEMENT_6{ // JMOD 1 reenter stage
+    walk_left * 6
+    walk_up * 4
+    walk_left * 3
+    face_down
+	step_end
+}
+movement GOLDENGNOME_MOVEMENT_GUEST{ // annouce self
+    walk_left * 2
+    walk_up * 1
+    walk_left * 6
+    face_down
+	step_end
+}
+movement GOLDENGNOME_MOVEMENT_GUEST_stan{ // stan move
+    walk_left * 1
+    face_down
+	step_end
+}
+movement GOLDENGNOME_MOVEMENT_GUEST_orchy{ // orchy move
+    walk_right * 1
+    face_down
+	step_end
+}
+movement GOLDENGNOME_MOVEMENT_GUEST_frogeel{ // frogeel
+    jump_left * 9
+    face_down
+	step_end
+}
+movement GOLDENGNOME_MOVEMENT_GUEST_frogeel_exit{ // frogeel
+    jump_left * 4
+    jump_down * 5
+    face_down
+	step_end
+}
+movement GOLDENGNOME_MOVEMENT_JMOD_WALK_FORWARD{ // jmod
+    walk_down
+	step_end
+}
+movement GOLDENGNOME_MOVEMENT_JMOD_WALK_BACKWARDS{ // jmod
+    lock_facing_direction
+    walk_up
+	step_end
+}
+
+
+script FROGEEL_EXCITED {
+    
+    applymovement(FROGEEL_ID, GOLDENGNOME_MOVEMENT_Frogeel)
+    applymovement(FROGEEL_2_ID, GOLDENGNOME_MOVEMENT_Frogeel_2)
+    waitmovement(0)
+}
+
+movement GOLDENGNOME_MOVEMENT_Frogeel{ // frogeel
+    jump_left * 8
+    jump_up * 1
+    jump_left
+    jump_right * 2
+    jump_left
+    jump_2_down * 4
+    jump_down * 1
+    //jump_left
+    //jump_special_down
+    //jump_in_place_right_left
+	step_end
+}
+
+movement GOLDENGNOME_MOVEMENT_Frogeel_2{ // frogeel
+    jump_right * 3
+    jump_2_up * 1
+    jump_up * 1
+    jump_right * 2
+    jump_2_right * 4
+    jump_right * 4
+    //jump_left
+    //jump_special_down
+    //jump_in_place_right_left
+	step_end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//GOLDEN GNOMES
+
+
+script GOLDENGNOME_EVENT_START {
+    lock
+    faceplayer
+    if (var(VAR_POKESCAPE_GOLDENGNOMES)==0)
+    {
+        msgbox(format("Hi, would you like to watch the Golden Gnomes Awards?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT)==1)
+        {
+            setvar(VAR_POKESCAPE_GOLDENGNOMES, 5)
+            msgbox(format("Enjoy watching!"))
+            waitmessage
+            warpwhitefade( MAP_HAM_HIDEOUT_B1F, 255, 17, 23)
+            end
+        }
+    }
+    msgbox(format("I hope you enjoyed watching Golden Gnomes."))
+    release
+    end
+}
+
+
+script GOLDENGNOME_EVENT_END {
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT)
+    applymovement(2, Movement_InteractFACERIGHT)
+    waitmovement(0)
+    msgbox(format("I hope you enjoyed watching the Golden Gnomes.\pHere is a gift for you."))
+    waitmessage
+    closemessage
+    call(GiveMon_GOLDENGNOME)
+    setvar(VAR_POKESCAPE_GOLDENGNOMES, 20)
+    //setflag(FLAG_GOLDENGNOME)
+    release
+    end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script GOLDENGNOME_TEST {
+    if (flag(FLAG_GOLDENGNOME) == TRUE) {
+        
+        //setobjectxyperm(OBJ_EVENT_ID_PLAYER,19,30)
+        //setobjectxyperm(OBJ_EVENT_ID_CAMERA,19,30)
+        //call(GOLDENGNOME_EVENT_PART1)
+        //applymovement(OBJ_EVENT_ID_CAMERA, GOLDENGNOME_CAMERA_1_START)
+        //waitmovement(0)
+        //applymovement(OBJ_EVENT_ID_PLAYER, GOLDENGNOME_MOVEMENT_2)
+        //waitmovement(0)
+        setflag (FLAG_HIDE_MAP_NAME_POPUP)
+        msgbox(format("Testing…"))
+        closemessage
+        end
+
+    }
+    return
+}

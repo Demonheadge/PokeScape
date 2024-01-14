@@ -1,0 +1,142 @@
+
+mapscripts Route31_MapScripts{
+	MAP_SCRIPT_ON_TRANSITION{
+		setvar(VAR_EVOLUTION_MAP_STATE, 6) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    
+
+		call(WEATHER_CHANGE_ROUTE)
+		#random (100)
+		#if (var(VAR_RESULT) == 99)
+		#{
+		#	clearflag(FLAG_UNUSED_0x493)
+		#}
+		#else {
+		#	setflag (FLAG_UNUSED_0x493)
+		#}
+		#release
+	}
+}
+
+
+
+
+
+
+
+
+
+script WEATHER_CHANGE_ROUTE
+{
+	random(6)
+	//if (var(VAR_RESULT) > 2) 
+	//{
+	//	setweather (WEATHER_RAIN)
+	//	doweather
+	//}
+
+	switch (var(VAR_RESULT)) { 
+            case 1: 
+				setweather (WEATHER_RAIN)
+				doweather
+            case 2: 
+				setweather (WEATHER_DOWNPOUR)
+				doweather
+                playbgm(MUS_ABNORMAL_WEATHER, 0)
+				savebgm(MUS_ABNORMAL_WEATHER)
+			case 4: 
+				setweather (WEATHER_SANDSTORM)
+				doweather
+                playbgm(MUS_ROUTE113, 0)
+                savebgm(MUS_ROUTE113)
+			case 5: 
+				setweather (WEATHER_DROUGHT)
+				doweather
+				playbgm(MUS_WEATHER_GROUDON, 0)
+				savebgm(MUS_WEATHER_GROUDON)
+	}
+	return
+}
+
+script WEATHER_CHANGE_ROUTE_RAIN
+{
+	random(6)
+	switch (var(VAR_RESULT)) { 
+			case 0: 
+				return
+            case 1: 
+				setweather (WEATHER_RAIN)
+				doweather
+            case 2: 
+				setweather (WEATHER_DOWNPOUR)
+				doweather
+			case 4: 
+				return
+			case 5: 
+				return
+			case 6: 
+				return
+	}
+	return
+}
+
+script WEATHER_CHANGE_ROUTE_SAND
+{
+	random(15)
+	switch (var(VAR_RESULT)) { 
+			case 0: 
+				return
+            case 1: 
+				return
+            case 8: 
+				setweather (WEATHER_SUNNY)
+				doweather
+			case 12: 
+				setweather (WEATHER_SANDSTORM)
+				doweather
+			case 13: 
+				setweather (WEATHER_SANDSTORM)
+				doweather
+			case 14: 
+				setweather (WEATHER_DROUGHT)
+				doweather
+				
+	}
+	return
+}
+
+script WEATHER_CHANGE_ROUTE_SNOW
+{
+	random(6)
+	switch (var(VAR_RESULT)) { 
+			case 0: 
+				return
+            case 1: 
+				setweather (WEATHER_SNOW)
+				doweather
+            case 2: 
+				setweather (WEATHER_SNOW)
+				doweather
+			case 4: 
+				return
+			case 5: 
+				return
+			case 6: 
+				return
+	}
+	return
+}
+
+
+
+
+
+//TRAINER
+script BATTLE_SCAPEINK
+{
+    trainerbattle_single(TRAINER_SCAPEINK, format("Ha got you!\pThere is no where for you to run!"),format("Oh no I dropped my dds."))
+    namebox ("ScapeInk")
+    msgbox(format("You were lucky this time, next time I will get you for sure!"))
+	hidenamebox
+    release
+	end
+}

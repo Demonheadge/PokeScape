@@ -1,0 +1,24 @@
+mapscripts Falador_Bank_West_1F_MapScripts {
+    MAP_SCRIPT_ON_LOAD { //ON LOAD FOR MAP TILES
+    call(Falador_Bank_OnTransition)
+    }
+} 
+
+script Falador_Bank_OnTransition {
+    setrespawn(HEAL_LOCATION_FALADOR)
+    return
+}
+
+
+
+script NPC_FALADOR_BANK_GUARD_1
+{
+	lock
+	faceplayer
+    namebox ("Guard")
+	msgbox(format("I am tasked with guarding this bank.\pHowever crime rates in Falador are really low due to the White Knights being here."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}

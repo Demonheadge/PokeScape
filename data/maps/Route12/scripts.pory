@@ -1,0 +1,448 @@
+const ALKAHRID_GUARD_1_ID = 29
+const ALKAHRID_GUARD_2_ID = 30
+
+mapscripts Route12_MapScripts{
+	MAP_SCRIPT_ON_TRANSITION{
+		setvar(VAR_EVOLUTION_MAP_STATE, 1) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+
+		if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    	{
+			call(ROUTE12_STATE)
+		}
+		else
+		{
+			call(OPENWORLD_STATE_ROUTE12)
+		}
+
+
+
+		
+		//call(WEATHER_CHANGE_ROUTE)
+		#random (100)
+		#if (var(VAR_RESULT) == 99)
+		#{
+		#	clearflag(FLAG_UNUSED_0x493)
+		#}
+		#else {
+		#	setflag (FLAG_UNUSED_0x493)
+		#}
+		#release
+	}
+}
+
+
+script OPENWORLD_STATE_ROUTE12 {
+	setobjectxyperm(16,29,9)
+	setobjectmovementtype(16,MOVEMENT_TYPE_LOOK_AROUND)
+	setobjectxyperm(14,30,14)
+	setobjectmovementtype(14,MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
+	setobjectxyperm(15,33,8)
+	setobjectmovementtype(15,MOVEMENT_TYPE_WANDER_AROUND)
+	return
+}
+
+script ROUTE12_STATE{
+	if (flag(FLAG_BADGE02_GET)){
+            setobjectxyperm(16,29,9)
+			setobjectmovementtype(16,MOVEMENT_TYPE_LOOK_AROUND)
+            setobjectxyperm(14,30,14)
+			setobjectmovementtype(14,MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
+			setobjectxyperm(15,33,8)
+			setobjectmovementtype(15,MOVEMENT_TYPE_WANDER_AROUND)
+            return
+    }
+}
+
+
+//----------------------------------------------------------------------------
+
+script Gillie_Groats{
+    if((var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE) == 1)){
+        checkitem (ITEM_TOP_QUALITY_MILK,1)
+	    if (!var(VAR_RESULT)){
+            lock
+            faceplayer
+            namebox ("Gillie Groats")
+            msgbox(format("Hello and welcome to the Groat's Milk Farm!\pWhat can I do for you?"))
+			applymovement(23, ROUTE12_GILLIEGROATS_1)
+			waitmovement(0)
+			msgbox(format("What's that?\nThe cook needs some milk?\pI'll give you some for free this time but next time you'll have to buy some."))
+			hidenamebox
+			closemessage
+			giveitem(ITEM_TOP_QUALITY_MILK)
+			subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_COOKS_ASSISTANT, 1)
+            namebox ("Gillie Groats")
+			msgbox(format("Say hello to the cook for me!"))
+			hidenamebox
+			closemessage
+            release
+            end
+        }
+        else {
+            lock
+            faceplayer
+			namebox ("Gillie Groats")
+            msgbox(format("Hello and welcome to the Groat's Milk Farm!\pWould you like to buy some Milk?"))
+			hidenamebox
+            pokemart(GroatsShop)
+            release
+            end
+        }
+    }
+    else {
+        lock
+        faceplayer
+		namebox ("Gillie Groats")
+        msgbox(format("Hello and welcome to the Groat's Milk Farm!\pWould you like to buy some Milk?"))
+		hidenamebox
+        pokemart(GroatsShop)
+        release
+        end
+    }
+}
+
+movement ROUTE12_GILLIEGROATS_1
+{
+	emote_question_mark
+}
+
+
+raw `
+
+    .align 2
+GroatsShop:
+	.2byte ITEM_MILK_BUCKET
+    .2byte ITEM_EMPTY_BUCKET
+	.2byte ITEM_NONE
+
+    release
+    end
+
+`
+
+//----------------------------------------------------------------------------
+
+
+script NPC_DAIRYCOW{
+	lock
+	faceplayer
+	playmoncry(SPECIES_MILTANK, 0)
+	namebox("Dairy Cow")
+	msgbox(format("Mooo!"))
+	hidenamebox
+	msgbox(format("Would you like to milk the cow?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT)){
+		checkitem(ITEM_EMPTY_BUCKET, 1)
+		if (var(VAR_RESULT)){
+			msgbox(format("You squeeze some milk into your empty bucket."))
+			removeitem (ITEM_EMPTY_BUCKET, 1)
+			giveitem (ITEM_MILK_BUCKET, 1)
+			release
+			end
+		}
+		else{
+			msgbox(format("You squeeze the milk into your imaginary bucket.\p…\pNothing interesting happened."))
+			release
+			end
+		}
+	}
+	hidenamebox
+	release
+	end
+	}
+
+//---------------------------------------------
+
+
+script NPC_LUMBRIDGE_CHICKEN{
+
+	if((var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE) == 1)){
+        checkitem (ITEM_SUPER_LARGE_EGG,1)
+	    if (!var(VAR_RESULT)){
+			lock
+			faceplayer
+			namebox("Chicken")
+			playmoncry(SPECIES_TORCHIC, 0)
+			msgbox(format("Bwak Bwak!"))
+			waitmoncry
+			hidenamebox
+			msgbox(format("You get into a staring contest with the chicken…"))
+			msgbox(format("{PAUSE 15}… {PAUSE 15}… {PAUSE 15}… {PAUSE 15}{PLAY_SE SE_PIN}!"))
+			closemessage
+			playmoncry(SPECIES_TORCHIC, 0)
+			waitmoncry
+			msgbox(format("The chicken laid an egg!"))
+			giveitem(ITEM_SUPER_LARGE_EGG)
+			subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_COOKS_ASSISTANT, 0)
+			release
+			end
+		}
+		else {
+            lock
+            faceplayer
+            namebox("Chicken")
+			playmoncry(SPECIES_TORCHIC, 0)
+			msgbox(format("Bwwaak!"))
+			waitmoncry
+			hidenamebox
+            release
+            end
+        }
+    }
+    else {
+        lock
+        faceplayer
+        namebox("Chicken")
+		playmoncry(SPECIES_TORCHIC, 0)
+		msgbox(format("Bwwaak!"))
+		waitmoncry
+		hidenamebox
+        release
+        end
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script SIGN_ROUTE12
+{
+	msgbox(format("NORTH to Varrock\pWEST to Lumbridge\pEAST to Al-Kharid"))
+	closemessage
+	end
+}
+
+
+script BLOCK_Route12_Farmer {
+    lock 
+    faceplayer
+    namebox("Farmer")
+	if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    {
+		if (!flag(FLAG_BADGE02_GET)){
+			msgbox(format("Urgh, I wish the goblins would stop messing with my sheep!"))
+			hidenamebox
+			closemessage
+			release
+			end
+		}
+		else{
+			msgbox(format("I finally got my Sheep out of the way."))
+			hidenamebox
+			closemessage
+			release
+			end
+		}
+		release
+		end
+	}
+	else
+	{
+		msgbox(format("Goblins are very annoying.\pI can see them looking at my sheep."))
+		hidenamebox
+		closemessage
+		release
+		end
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script Cow_Battle
+{
+	lock
+	faceplayer
+	#showmonpic (SPECIES_COW, 10, 3)
+	msgbox ("MOOOO")
+	setwildbattle (SPECIES_COW, 7, ITEM_NONE)
+	#hidemonpic
+	dowildbattle
+	removeobject (VAR_LAST_TALKED)
+	if (var(VAR_RESULT) == B_OUTCOME_WON || var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+		checkitem(ITEM_EMPTY_BUCKET, 1)
+		if (var(VAR_RESULT)){
+			removeitem (ITEM_EMPTY_BUCKET, 1)
+			giveitem (ITEM_MILK_BUCKET, 1)
+		}
+		else{
+			msgbox(format("If I had an empty bucket I could milk this cow."))
+		}
+		release
+	}
+	else {
+	lock
+	msgbox("MOOOO")
+	release
+	}
+
+}
+
+script ChickenBattle{
+	lock
+	faceplayer
+	msgbox("BAWK")
+	setwildbattle(SPECIES_CHICKEN_NORMAL_FORM, 5, ITEM_NONE)
+	dowildbattle
+	removeobject (VAR_LAST_TALKED)
+	if (var(VAR_RESULT) == B_OUTCOME_WON || var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+		giveitem (ITEM_EGG)
+		release
+	}
+}
+
+script GoblinBattle4{
+	trainerbattle_single(TRAINER_GOBLIN_4_ROUTE12, "This place goblin place.\nHuman go home.",format("Human strong.\nThis now Goblin and human home."))
+	namebox("Wormtongue")
+	msgbox(format("Human strong.\nThis now goblin and human home."))
+	hidenamebox
+	closemessage
+	end
+}
+
+script GoblinBattle5{
+	trainerbattle_single(TRAINER_GOBLIN_5_ROUTE12, format("Human weak.\nFeethands show why."),format("Feethands weak.\nHuman show Feethands why."))
+	namebox("Feethands")
+	msgbox(format("Feethands weak.\nHuman show Feethands why."))
+	hidenamebox
+	closemessage
+	end
+}
+
+script GoblinBattle6{
+	trainerbattle_single(TRAINER_GOBLIN_6_ROUTE12, format("Human homes makes for weak monster.\pSee strong monster here."),format("Strong monsters in human homes it seems."))
+	namebox("Eyemonger")
+	msgbox(format("Strong monsters in human homes it seems."))
+	hidenamebox
+	closemessage
+	end
+}
+
+script BATTLE_ROUTE12_SMELLYBACK{
+	trainerbattle_single(TRAINER_GOBLIN_7_ROUTE12, format("Big high war god say human go home."),format("Big high war god calls for rematch.\pLater…\nMuch later…"))
+	namebox("Smellyback")
+	msgbox(format("Big high war god calls for rematch.\pLater…\nMuch later…"))
+	hidenamebox
+	closemessage
+	end
+}
+
+script BATTLE_ROUTE12_TRAINER_1{
+	trainerbattle_single(TRAINER_RSN_ROUTE12, format("You look like a noob, even I could beat you!"),format("I will have you know I went easy on you.\nJust wait until you see my main."))
+	namebox("NotANoob37")
+	msgbox(format("I will have you know I went easy on you.\pJust wait until you see my main."))
+	hidenamebox
+	closemessage
+	end
+}
+
+	//trainerbattle_single(TRAINER_RSN_ROUTE12, format("You look like a noob, even I could beat you!"),format("Well drat.\pMaybe I should've looked for rarer monsters around here first."))
+	//msgbox(format("Well drat.\pMaybe I should've looked for rarer monsters around here first."))
+
+
+
+
+
+
+
+
+script NPC_ROUTE12_Goblin_1{
+    lock
+	faceplayer
+	namebox("Goblin")
+    msgbox(format("Go away human.\pGoblin cooking."))
+    hidenamebox
+	closemessage
+	release
+	end
+}
+
+script NPC_ROUTE12_Farmer{
+    lock
+	faceplayer
+	namebox("Farmer")
+    msgbox(format("Did you know that you can plant crops and harvest them later."))
+    hidenamebox
+	closemessage
+	release
+	end
+}
+
+script NPC_ROUTE12_Seth_Groats{
+    lock
+	faceplayer
+	namebox("Seth Groats")
+    msgbox(format("Who are you and what are you doing in my house!?\pGet out and take those disgusting monsters with you!"))
+    hidenamebox
+	closemessage
+	release
+	end
+}
+
+script NPC_DOG
+{
+	lock
+	faceplayer
+    playmoncry(SPECIES_GROWLITHE, 0)
+	msgbox(format("WOOF!"))
+    waitmoncry
+	release
+	end
+}
+
+script NPC_ROUTE12_Fisherman{
+    lock
+	faceplayer
+	namebox("Fisherman")
+    msgbox(format("We once had a wooden bridge here, but some firemakers burnt it down…"))
+    hidenamebox
+	closemessage
+	release
+	end
+}
+
+script NPC_ROUTE12_Goblin_2{
+    lock
+	faceplayer
+	namebox("Goblin")
+    msgbox(format("Me fishing."))
+    hidenamebox
+	closemessage
+	release
+	end
+}
+
+
+
+
+
+

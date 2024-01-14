@@ -25,3 +25,17 @@ EventScript_ShopShelf::
 EventScript_Blueprint::
 	msgbox Text_Blueprint, MSGBOX_SIGN
 	end
+
+
+
+EventScript_DG_ROPE::
+	goto(DungeonInteractions_DG_ROPE)
+	end
+
+EventScript_DG_STRING::
+	goto(DungeonInteractions_DG_STRING)
+	end
+
+EventScript_DG_SPINNING_WHEEL::
+	goto(DungeonInteractions_DG_SPINNING_WHEEL)
+	end

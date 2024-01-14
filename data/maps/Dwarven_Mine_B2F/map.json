@@ -1,0 +1,41 @@
+{
+  "id": "MAP_DWARVEN_MINE_B2F",
+  "name": "Dwarven_Mine_B2F",
+  "layout": "LAYOUT_DWARVEN_MINE_B2F",
+  "music": "MUS_PS_CAVE_F2P",
+  "region_map_section": "MAPSEC_DWARVEN_MINES",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 26,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_DWARVEN_MINE_B1F",
+      "dest_warp_id": 2
+    },
+    {
+      "x": 12,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_VORAGO_CAVERN",
+      "dest_warp_id": 0
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

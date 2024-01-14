@@ -1,0 +1,140 @@
+mapscripts AsgarnianDungeon_B3F_MapScripts 
+{
+    MAP_SCRIPT_ON_LOAD 
+    {
+        call(AsgarnianDungeon_B3F_DOOR)
+    }
+    MAP_SCRIPT_ON_TRANSITION 
+    {
+        call(AsgarnianDungeon_B3F_STATE)
+    }
+}
+
+
+
+
+script AsgarnianDungeon_B3F_STATE
+{
+	switch (var(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE)){ 
+		case 0:
+            clearflag(FLAG_TEMP_D)
+            addobject(14)
+            setobjectxy(14, 23, 7)
+            setobjectxyperm(14, 23, 7)
+        case 1:
+            clearflag(FLAG_TEMP_D)
+            addobject(14)
+            setobjectxy(14, 25, 5)
+            setobjectxyperm(14, 25, 5)
+        case 2:
+            removeobject(14)
+            setflag(FLAG_TEMP_D)
+    }
+    return
+}
+
+script AsgarnianDungeon_B3F_DOOR
+{
+    if (var(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE) == 2)
+    {
+        setmetatile(26, 4, 910, 0)
+        special(DrawWholeMapView) 
+    }
+    return
+}
+
+
+
+script DUNGEONEERING_DOOR_AsgarnianDungeon_B3F
+{
+    if (var(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE) == 1)
+    {
+        msgbox(format("It appears to be a mysterious door.\pWould you like to try and pry it open?"), MSGBOX_YESNO)
+        closemessage
+		if (var(VAR_RESULT))
+        {
+            playse(SE_SWITCH)
+            waitse
+            delay(30)
+            setmetatile(26, 4, 910, 0)
+            special(DrawWholeMapView) 
+            playse(SE_ICE_BREAK)
+            msgbox(format("The door opens."))
+            closemessage
+
+            applymovement(14, Movement_InteractFACERIGHT)
+	        waitmovement(0)
+            namebox("???")
+	        msgbox(format("Hey thanks, that was extremely helpful of you."))
+            closemessage
+            hidenamebox
+            applymovement(OBJ_EVENT_ID_PLAYER, Movement_ASGDUNGEON_3)
+            applymovement(14, Movement_ASGDUNGEON_4)
+            playse(SE_DOOR)
+	        waitmovement(0)
+            removeobject(14)
+            setflag(FLAG_TEMP_D)
+            setvar(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE, 2)
+        }
+    }
+    else
+    {
+        msgbox(format("The door is already open."))
+        closemessage
+    } 
+    release
+    end
+}
+
+script TRIGGER_DUNGEONEERING_DOOR_AsgarnianDungeon_B3F
+{
+    lock
+    call(AsgarnianDungeon_B3F_STATE)
+    applymovement(14, Movement_ASGDUNGEON_1)
+	waitmovement(0)
+    namebox("???")
+	msgbox(format("Psst…{PAUSE 15} Hey you…\pCome this way."))
+    closemessage
+    hidenamebox
+    applymovement(14, Movement_ASGDUNGEON_2)
+	waitmovement(0)
+    setvar(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE, 1)
+    call(AsgarnianDungeon_B3F_STATE)
+    release
+    end
+}
+
+movement Movement_ASGDUNGEON_1
+{
+    walk_left * 5
+}  
+
+movement Movement_ASGDUNGEON_2
+{
+    walk_right * 6
+} 
+
+movement Movement_ASGDUNGEON_3
+{
+    lock_facing_direction
+    walk_down
+    unlock_facing_direction
+} 
+
+movement Movement_ASGDUNGEON_4
+{
+    walk_right
+    walk_up
+} 
+
+
+script DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_NPC
+{
+    faceplayer
+    namebox("???")
+	msgbox(format("Hey you see this door?\pTry opening it."))
+    closemessage
+    hidenamebox
+    release
+    end
+}

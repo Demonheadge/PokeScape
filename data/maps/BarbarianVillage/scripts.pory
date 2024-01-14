@@ -1,0 +1,368 @@
+const OBJ_EVENT_ID_BARBARIAN_BLOCK_1 = 6
+const OBJ_EVENT_ID_BARBARIAN_BLOCK_2 = 7
+
+mapscripts BarbarianVillage_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY MODE
+    	{
+            call(STORYMODE_STATE_BARBARIAN_VILLAGE)
+    	}
+        elif (var(VAR_POKESCAPE_GAMEMODE_STATE) == 1) //if OPENWORLD MODE
+    	{
+            call(OPENWORLDMODE_STATE_BARBARIAN_VILLAGE)
+    	}
+    }
+}
+
+
+
+
+
+script STORYMODE_STATE_BARBARIAN_VILLAGE {
+	switch (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE)){ 
+		case 0: 
+            //Block the Gym entry until the gym is explained to the player.
+            setobjectxyperm(OBJ_EVENT_ID_BARBARIAN_BLOCK_1,11,19)
+			setobjectmovementtype(OBJ_EVENT_ID_BARBARIAN_BLOCK_1,MOVEMENT_TYPE_FACE_DOWN)
+            setobjectxyperm(OBJ_EVENT_ID_BARBARIAN_BLOCK_2,12,19)
+			setobjectmovementtype(OBJ_EVENT_ID_BARBARIAN_BLOCK_2,MOVEMENT_TYPE_FACE_DOWN)
+            return
+        case 1:
+        case 2:
+            return
+        case 3:
+            //Allows access to the Stronghold.
+            setobjectxyperm(2,13,27)
+			setobjectmovementtype(2,MOVEMENT_TYPE_FACE_UP)
+            return
+    }
+}
+script OPENWORLDMODE_STATE_BARBARIAN_VILLAGE {
+    if (flag(FLAG_BADGE06_GET) == TRUE) {
+        //Allows access to the Stronghold.
+        setobjectxyperm(2,13,27)
+        setobjectmovementtype(2,MOVEMENT_TYPE_FACE_UP)
+        return
+    }
+}
+    
+
+
+
+
+
+
+
+
+
+//NPC
+script NPC_BARB_BLOCKADE_1
+{
+    lock
+    faceplayer
+    namebox("Barbarian")
+    if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 1) { //OPENWORLD MODE
+        msgbox(format("Our Chieftain is very strong.\pDo not underestimate him!"))
+        hidenamebox
+        release
+        end
+    }
+    if (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE) == 0)
+    {
+        msgbox(format("Only the strong may enter our longhall!\pYou should probably leave if you know what is good for you."))
+        if (flag(FLAG_BADGE01_GET) && flag(FLAG_BADGE02_GET) && flag(FLAG_BADGE03_GET) && flag(FLAG_BADGE04_GET) && flag(FLAG_BADGE05_GET))
+        {
+            msgbox(format("Ohhoho!!\pImpressive you have at least four Badges.\pYou may pass, we shall watch your battle and cheer for your victory!"))
+            hidenamebox
+            closemessage
+        }
+        else
+        {
+            hidenamebox
+            closemessage
+            msgbox(format("It is recommended that you have at least 4 Gym Badges attempting our Gym.\pAre you sure you would like to challenge the Gym?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT)){
+                namebox ("Barbarian")
+                msgbox(format("Ohho, so this challenger thinks they have what it takes to beat our Chieftain?\pThis will be entertaining to watch, very well.\pYou may pass."))
+            }
+            else
+            {
+                namebox ("Barbarian")
+                msgbox(format("Come back when you are stronger!"))
+                hidenamebox
+                closemessage
+                release
+                end
+            }
+        }
+            hidenamebox
+            closemessage
+            applymovement(OBJ_EVENT_ID_BARBARIAN_BLOCK_1, BARBARIANVILLAGE_BLOCK_1)
+            applymovement(OBJ_EVENT_ID_BARBARIAN_BLOCK_2, BARBARIANVILLAGE_BLOCK_2)
+            waitmovement(0)
+            setvar(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE, 1)
+            release
+            end
+    }
+
+    if (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE) == 1)
+    {
+        msgbox(format("Good luck on your gym challenge."))
+    }
+    if (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE) == 2)
+    {
+        msgbox(format("We knew you would be struggling but good luck on your gym challenge."))
+    }
+    if (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE) == 3)
+    {
+        msgbox(format("You defeated our Chieftain!\pWe are impressed, well done!"))
+    }
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+movement BARBARIANVILLAGE_BLOCK_1 {
+    walk_left
+    face_down
+}
+movement BARBARIANVILLAGE_BLOCK_2 {
+    walk_right
+    face_down
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script NPC_BARBARIANVILLAGE_DUNGEONGIRL
+{
+    lock
+    faceplayer
+    namebox("Litara")
+    if (flag(FLAG_BADGE06_GET)) 
+    {
+        msgbox(format("You have proved yourself a barbarian in name and spirit!\pI grant you access to use our stronghold for training.\pThe monsters found within are very strong, so have fun training!"))
+    }
+    else
+    {
+        msgbox(format("Only once you have proved yourself a barbarian are you allowed to use our dungeon for training."))
+    }
+    hidenamebox
+    release
+    end
+}
+
+
+script NPC_BARBARIANVILLAGE_SIGNPOST
+{
+    lock
+    msgbox(format("Barbarian Village.\pAlso known as Gunnarsgrunn."))
+    release
+    end
+}
+
+
+script NPC_BARBARIANVILLAGE_NPC1
+{
+    lock
+    faceplayer
+    namebox("Barbarian")
+    msgbox(format("Chieftain Gunthor is the strongest warrior of our village and also the 6th strongest MvM Gym Leader."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_BARBARIANVILLAGE_NPC2
+{
+    lock
+    faceplayer
+    namebox("Barbarian")
+    msgbox(format("Finally after all the training my Monster learnt a new move.\pThe crazy thing is that it evolved right after!"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_BARBARIANVILLAGE_NPC3
+{
+    lock
+    faceplayer
+    namebox("Barbarian")
+    msgbox(format("We don't need no Banks to heal our Monsters in our Village.\pThat is the path of a weakling."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_BARBARIANVILLAGE_NPC4
+{
+    lock
+    faceplayer
+    namebox("Barbarian")
+    msgbox(format("My father is the Chieftain of this village and also a Gym Leader.\pI feel like I have a lot to live up to."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_BARBARIANVILLAGE_NPC5
+{
+    lock
+    faceplayer
+    namebox("Dwarf")
+    msgbox(format("There is a girl I like, but I do not know if she would like me.\pI do not know what to do so I will stay here picking each petal of this flower until fate decides for me."))
+    hidenamebox
+    release
+    end
+}
+
+
+//ROUTE 20
+
+script NPC_ROUTE20_NPC1
+{
+    lock
+    faceplayer
+    namebox("Barbarian")
+    msgbox(format("This is a popular spot for fly fishing.\pMany adventurers catch Trout and Salmon in our river."))
+    hidenamebox
+    release
+    end
+}
+
+
+script BATTLE_ROUTE20_FISHERMAN_1
+{
+    trainerbattle_single(TRAINER_ROUTE20_TRAINER_1, format("If you look carefully in the water you can see a rainbow."),format("So these Rainbow Fish are why you can see a rainbow in the river."))
+    //namebox ("")
+    msgbox(format("So these Rainbow Fish are why you can see a rainbow in the river."))
+	hidenamebox
+    release
+	end
+}
+
+
+script BATTLE_ROUTE20_FISHERMAN_2
+{
+    trainerbattle_single(TRAINER_ROUTE20_TRAINER_2, format("You just scared away my catch!"),format("I just ran out of feathers…"))
+    //namebox ("")
+    msgbox(format("Fly fishing is great!\pMuch better than regular net fishing."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_ROUTE20_FISHERMAN_3
+{
+    trainerbattle_single(TRAINER_ROUTE20_TRAINER_3, format("I caught these fishing in a dungeon.\pI'd like to see how good they are in battle!"),format("I may have lost but I now understand the strength of these little guys."))
+    //namebox ("")
+    msgbox(format("If you are interested where I got these from you should take a visit to the cavern by Mudskipper point."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_ROUTE20_SKILLER
+{
+    trainerbattle_single(TRAINER_ROUTE20_TRAINER_4, format("Fishing is great, I could do this all day."),format("You should do some fishing too."))
+    //namebox ("")
+    msgbox(format("You should do some fishing too.\pYou would never know what rare fish you could find until you try."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_ROUTE20_DUO_1
+{
+    trainerbattle_double(TRAINER_ROUTE20_DUO, format("Pass the Trout."),format("Oh no it burnt…"),format("We would love to have a double battle with you, but you don't have enough monsters."))
+    namebox ("Cook")
+    msgbox(format("Can someone light a fire for me?"))
+	hidenamebox
+    release
+	end
+}
+script BATTLE_ROUTE20_DUO_2
+{
+    trainerbattle_double(TRAINER_ROUTE20_DUO, format("Feel the burn!"),format("The fire went out of control…"),format("We would love to have a double battle with you, but you don't have enough monsters."))
+    namebox ("Firemaker")
+    msgbox(format("I have the most important job here."))
+	hidenamebox
+    release
+	end
+}
+
+
+
+
+
+//INDOORS
+
+script NPC_BARBARIANVILLAGE_NPC6
+{
+    lock
+    faceplayer
+    namebox("Barbarian")
+    msgbox(format("I make all the clothes for out village.\pBut don't tell anyone that I get my supplies from Thessalia in Varrock."))
+    hidenamebox
+    release
+    end
+}
+
+script SHOP_HELMET_BARBARIANVILLAGE
+{
+	lock
+	faceplayer
+    namebox ("Peska")
+	msgbox(format("Welcome to my Helmet shop.\pCan I intrest you in anything?"))
+    waitmessage
+    hidenamebox
+    pokemart (STORE_Helmet)
+    msgbox("Thank you, come again!")
+	release
+	end
+}
+
+
+
+
+
+

@@ -1,0 +1,112 @@
+const LOCALID_Maria = 20
+const LOCALID_Mord = 21
+const LOCALID_BOAT = 22
+
+mapscripts Rellekka_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 4) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+}
+
+
+
+
+
+
+
+script RAC_QUEST_SAIL_MAN
+{
+    lock
+    if (var(VAR_POKESCAPE_RAC_QUEST_STATE) == 0)
+    {
+        goto(RAC_QUEST_START)
+    }
+
+    faceplayer
+    namebox ("Mord Gunnars")
+
+    if (flag(FLAG_EVENT_TEAM_NEITIZNOT)) 
+    {
+        msgbox(format("Go away adventurer.\pI have nothing to say to someone who thinks Neitiznot artists are better than Jatizso artists."))
+        hidenamebox
+        release
+        end
+    }
+    
+    msgbox(format("Ah hello adventurer.\pWould you like to board the boat to Jatizso?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+        msgbox(format("Very well, hop in!"))
+        closemessage
+        hidenamebox
+        setvar(VAR_TEMP_8, 0)
+        call(RAC_BOAT)
+        warp (MAP_JATIZSO,0,0,0)
+    } 
+    hidenamebox
+    release
+    end
+}
+script RAC_QUEST_SAIL_WOMAN
+{
+    lock
+    if (var(VAR_POKESCAPE_RAC_QUEST_STATE) == 0)
+    {
+        goto(RAC_QUEST_START)
+    }
+
+    faceplayer
+    namebox ("Maria Gunnars")
+
+    if (flag(FLAG_EVENT_TEAM_JATIZSO)) 
+    {
+        msgbox(format("Go away adventurer.\pI have nothing to say to someone who thinks Jatizso artists are better than Neitiznot artists."))
+        hidenamebox
+        release
+        end
+    }
+    
+    msgbox(format("Ah hello adventurer.\pWould you like to board the boat to Neitiznot?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+        msgbox(format("Very well, hop in!"))
+        closemessage
+        hidenamebox
+        setvar(VAR_TEMP_8, 1)
+        call(RAC_BOAT)
+        warp (MAP_NEITIZNOT,0,0,0)
+    } 
+    hidenamebox
+    release
+    end
+}
+
+
+script RAC_BOAT
+{
+    fadescreen(FADE_TO_BLACK)
+    if (var (VAR_TEMP_8) == 0) {
+        hideobjectat(LOCALID_Mord, MAP_RELLEKKA)
+    }
+    if (var (VAR_TEMP_8) == 1) {
+        hideobjectat(LOCALID_Maria, MAP_RELLEKKA)
+    }
+    hideobjectat(OBJ_EVENT_ID_PLAYER, MAP_RELLEKKA)
+    //removeobject(OBJ_EVENT_ID_PLAYER) //Hide player
+
+    fadescreen(FADE_FROM_BLACK)
+    applymovement(LOCALID_BOAT, MOVEMENT_RAC_BOAT)
+    waitmovement(0)
+    
+    
+}
+
+
+movement MOVEMENT_RAC_BOAT {
+	walk_slow_left * 8
+}
+
+
+
+
+

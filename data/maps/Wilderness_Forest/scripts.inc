@@ -1,0 +1,12 @@
+Wilderness_Forest_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Wilderness_Forest_MapScripts_MAP_SCRIPT_ON_LOAD
+	map_script MAP_SCRIPT_ON_TRANSITION, Wilderness_Forest_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	.byte 0
+
+Wilderness_Forest_MapScripts_MAP_SCRIPT_ON_LOAD:
+	return
+
+Wilderness_Forest_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setvar VAR_EVOLUTION_MAP_STATE, 6
+	return
+

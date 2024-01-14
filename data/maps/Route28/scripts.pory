@@ -1,0 +1,163 @@
+const ALKAHRID_GUARD_1_ID = 29
+const ALKAHRID_GUARD_2_ID = 30
+const OBJ_EVENT_ID_PENGUIN_DND = 14
+const OBJ_EVENT_ID_PENGUIN = 13
+
+mapscripts Route28_MapScripts{
+	MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 11) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+		call(SPECIAL_PENGUIN_EVENT)
+		call(WEATHER_CHANGE_ROUTE_SAND)
+	}
+
+}
+
+script ENCOUNTER_PENGUIN_CACTUS {
+	lock
+	faceplayer
+    namebox ("Penguin")
+	playmoncry(SPECIES_PIDGEY, 0)
+	msgbox(format("Noot! Noot!"))
+	waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+	setwildbattle (SPECIES_PENGUIN_DISGUISE_CACTUS_FORM, 15, ITEM_NONE)
+	dowildbattle
+    fadescreen(FADE_TO_BLACK)
+    setflag(FLAG_TEMP_8)
+    setflag(FLAG_TEMP_9)
+    removeobject(OBJ_EVENT_ID_PENGUIN_DND)
+    removeobject(OBJ_EVENT_ID_PENGUIN)
+    fadedefaultbgm
+    fadescreen(FADE_FROM_BLACK)
+    closemessage
+    end
+}
+
+
+
+
+script BLOCK_Alkharid_Guards
+{
+	lock
+	faceplayer
+	if (!flag(FLAG_BADGE04_GET))
+        {
+			goto(BLOCK_ALKHAIRD_GATE)
+        }
+	msgbox(format("That is the Al-Kharid Badge!\pYou may pass."))
+	closemessage
+	release
+	end
+}
+
+script TRIGGER_ALKHAIRD_GATE
+{
+	if (!flag(FLAG_BADGE04_GET))
+        {
+			goto(BLOCK_ALKHAIRD_GATE)
+        }
+	release
+	end
+}
+
+script BLOCK_ALKHAIRD_GATE
+{
+	lockall
+	applymovement (ALKAHRID_GUARD_1_ID,movement_BLOCK_ALKHAIRD_GATE_1)
+	applymovement (ALKAHRID_GUARD_2_ID,movement_BLOCK_ALKHAIRD_GATE_2)
+	waitmovement (0)
+	msgbox(format("Halt!\pOnly those whom possess the Al-Khaird Badge may enter!"))
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER,movement_BLOCK_ALKHAIRD_GATE_3)
+	applymovement (ALKAHRID_GUARD_1_ID,Movement_FACELEFT)
+	applymovement (ALKAHRID_GUARD_2_ID,Movement_FACELEFT)
+	waitmovement (0)
+	release
+	end
+}
+
+movement movement_BLOCK_ALKHAIRD_GATE_1
+{
+	face_down
+}
+movement movement_BLOCK_ALKHAIRD_GATE_2
+{
+	face_up
+}
+movement movement_BLOCK_ALKHAIRD_GATE_3
+{
+	walk_left
+}
+
+
+
+
+
+script BLOCK_DEMO_END
+{
+	lockall
+	msgbox(format("POKESCAPE MESSAGE - PAST THIS POINT IS ALL UNFINISHED CONTENT!\pThank you for playing PokeScape!\pIf you wish to proceed be cautious as all content is not yet finished."))
+	closemessage
+	release
+	end
+}
+
+
+
+//trainer battles
+script BATTLE_ROUTE28_TRAINER_1
+{ // x2 gecko, giant rat.
+    trainerbattle_single(TRAINER_ROUTE28_TRAINER_1, format("They assigned me to this boring post on the outskirts of town.\pCan you entertain me?"),format("Thank you for the fight.\pI have grown bored of battles now though."))
+    //namebox ("Guard")
+    msgbox(format("Thank you for the fight.\pI have grown bored of battles now though."))
+	//hidenamebox
+    release
+	end
+}
+script BATTLE_ROUTE28_TRAINER_2
+{ //animated armor, Dobbin, Ungodbird
+    trainerbattle_single(TRAINER_ROUTE28_TRAINER_2, format("Hey you!\pYou look worse of than me.\pLets fight."),format("This makes no sense I have better armour than you."))
+    //namebox ("Bronze Noob")
+    msgbox(format("My friend is looking for Falador.\pHave you seen him?"))
+	//hidenamebox
+    release
+	end
+}
+script BATTLE_ROUTE28_TRAINER_3
+{ //Ninja monkey
+    trainerbattle_single(TRAINER_ROUTE28_TRAINER_3, format("Al Kharid is past here, allow me to test you."),format("Fine, you pass the test."))
+    //namebox ("Guard")
+    msgbox(format("Do not give my brothers any trouble while visting Al Kharid."))
+	//hidenamebox
+    release
+	end
+}
+script BATTLE_ROUTE28_TRAINER_4
+{ //Bloated frog, Night spider
+    trainerbattle_single(TRAINER_ROUTE28_TRAINER_4, format("Have you seen any ruins around these parts?"),format("You could have just said no…"))
+    //namebox ("Archeaologist")
+    msgbox(format("Oh the pile of rocks over there are the ruins I have been looking for!\pI heard that they were magical in some way."))
+	//hidenamebox
+    release
+	end
+}
+script BATTLE_ROUTE28_TRAINER_5
+{ //mole thing from pest control, Spidine, Ninja monkey
+    trainerbattle_single(TRAINER_ROUTE28_TRAINER_5, format("Hey lets have a quick duel!"),format("Wow, when I said lets have a quick duel I didn't expect it to be that quick."))
+    //namebox ("Rusher")
+    msgbox(format("Wow, when I said lets have a quick duel I didn't expect it to be that quick."))
+	//hidenamebox
+    release
+	end
+}
+
+
+
+
+
+
+
+
+

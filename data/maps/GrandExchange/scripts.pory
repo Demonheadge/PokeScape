@@ -1,0 +1,58 @@
+mapscripts GrandExchange_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 16) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+}
+
+script GE_GUARD_BLOCK
+{
+    lock
+	faceplayer
+    namebox("Guard")
+    msgbox(format("Hello adventurer.\pI have a message for you from the POKESCAPERS."))
+    closemessage
+    hidenamebox
+    msgbox(format("The Grand Exchange is currently a Work in progress.\pThe plan is to have to make use of multiplayer features.\pUse it at your own risk."))
+    closemessage
+    hidenamebox
+    end 
+}
+
+script GE_TRADE_INFO
+{
+    lock
+	faceplayer
+    msgbox(format("Welcome to the Grand Exchange.\pHere we trade many goods, but seeing as you are an MvM Challenger we have a very special section for you to use.\pYou are able to battle and trade with other players.\pTalk to the clerk next to me to be taken to the special room."))
+    closemessage
+    hidenamebox
+    end 
+}
+
+script GE_TRADE_WARP
+{
+    lock
+	faceplayer
+    msgbox(format("Would you like to be taken to the multiplayer corner?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT))
+			{
+                msgbox(format("Have fun."))
+                closemessage
+                hidenamebox
+                //warpteleport2 (MAP_OLDALE_TOWN_POKEMON_CENTER_2F,0,0,0)
+                //warpmossdeepgym (MAP_OLDALE_TOWN_POKEMON_CENTER_2F,0,0,0)
+                warp (MAP_OLDALE_TOWN_POKEMON_CENTER_2F,3,0,0)
+                closemessage
+                release
+                end
+                //setmetatile(10, 4, 243, 1)
+            }
+    msgbox(format("Please come again soon."))
+    closemessage
+    hidenamebox
+    end 
+}
+
+
+
+
+

@@ -1,0 +1,19 @@
+mapscripts Starter_House_Varrock_MapScripts {
+    MAP_SCRIPT_ON_LOAD 
+    {
+        checkgamemode
+        if (var(VAR_RESULT) == 0)
+        {
+            setvar(VAR_POKESCAPE_GAMEMODE_STATE, 0) //SETS STORY MODE.
+        }
+        if (var(VAR_RESULT) == 1)
+        {
+            setvar(VAR_POKESCAPE_GAMEMODE_STATE, 1) //SETS OPEN WORLD MODE.
+        }
+    }
+
+    MAP_SCRIPT_ON_FRAME_TABLE 
+    [
+        VAR_TEMP_0, 0: GAMEMODE_CHECK_NEWGAME_ITEMS
+    ]
+}

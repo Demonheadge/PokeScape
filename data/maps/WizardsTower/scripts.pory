@@ -1,0 +1,305 @@
+const OBJ_EVENT_ID_ARIANE = 6
+
+mapscripts WizardsTower_MapScripts{
+    MAP_SCRIPT_ON_TRANSITION {
+        goto(WizardsTower_Outdoors_STATE)
+        setvar(VAR_EVOLUTION_MAP_STATE, 1) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    
+        }
+        
+    }
+
+
+    script WizardsTower_Outdoors_STATE{
+        switch (var(VAR_POKESCAPE_WIZARDS_TOWER_STATE)){ 
+            case 0: 
+                //HIDE NPCS
+                setflag(FLAG_TEMP_1)
+                setflag(FLAG_TEMP_2)
+                release
+                end
+            case 1: 
+                //SHOW ARIANE
+                clearflag(FLAG_TEMP_1)
+                addobject(OBJ_EVENT_ID_ARIANE)
+                //HIDE NPCS
+                setflag(FLAG_TEMP_2)
+                release
+                end
+            case 2: 
+                //HIDE ARIANE
+                setflag(FLAG_TEMP_1)
+                //SHOW NPCS
+                clearflag(FLAG_TEMP_2)
+                addobject(9)
+                addobject(5)
+                release
+                end
+            case 3: 
+            case 4: 
+            case 5:
+            case 6: 
+            case 7: 
+            case 8: 
+            case 9: 
+                setflag(FLAG_TEMP_1)
+                setflag(FLAG_TEMP_2)
+                release
+                end
+            }
+    }
+
+
+
+script HAM_EVENT_WizardsTower_2{
+    lockall
+    applymovement (OBJ_EVENT_ID_ARIANE, MOVEMENT_HAM_ARIANE_1)
+    waitmovement(0)
+    namebox("Ariane")
+    msgbox(format("Which way did he go…"))
+    closemessage
+    hidenamebox
+    playse(SE_PIN)
+    applymovement(OBJ_EVENT_ID_ARIANE, MOVEMENT_HAM_ARIANE_2)
+    waitmovement(0)
+    removeobject(OBJ_EVENT_ID_ARIANE)
+    setflag(FLAG_TEMP_1)
+    setvar(VAR_POKESCAPE_WIZARDS_TOWER_STATE, 2)
+    clearflag(FLAG_TEMP_2)
+    addobject(9)
+    addobject(5)
+    release
+    end
+}
+
+
+script HAM_EVENT_WizardsTower_3{
+    lockall
+    playbgm (MUS_PS_ENCOUNTER_HAM, 1)
+    namebox("Ariane")
+    msgbox(format("Stop right there thief!"))
+    hidenamebox
+    release
+    lockall
+    playSE(SE_PIN)
+    applymovement(5,HamMemberSuprised)
+    namebox("H.A.M. member")
+    msgbox(format("You'll never catch me!"))
+    hidenamebox
+    release
+    lockall
+    applymovement(5,HamMemberRuns)
+    waitmovement(0)
+    removeobject(5)
+    setflag(FLAG_TEMP_2)
+    playSE(SE_LEDGE)
+    applymovement (9,ArianeRunAfterHam5)
+    delay(16)
+    playSE(SE_LEDGE)
+    applymovement (9,ArianeRunAfterHam5)
+    namebox("Ariane")
+    msgbox(format("Get back here!"))
+    hidenamebox
+    release
+    lockall
+    applymovement(9, ArianeRunAfterHam6)
+    waitmovement(0)
+    removeobject(9)
+    setflag(FLAG_TEMP_1)
+    setvar(VAR_POKESCAPE_WIZARDS_TOWER_STATE, 3)
+    savebgm(MUS_DUMMY)
+	fadedefaultbgm
+    release
+}
+
+
+
+
+
+
+
+
+
+
+
+movement MOVEMENT_HAM_ARIANE_1{
+    face_right
+    delay_8
+    face_down
+    delay_8
+    face_right
+    delay_8
+    face_down
+    delay_8
+    face_right
+    delay_8
+    face_down
+}
+
+movement MOVEMENT_HAM_ARIANE_2{
+    emote_exclamation_mark
+    face_right
+    delay_16
+    delay_4
+    walk_fast_right * 3
+    walk_fast_up * 4
+    walk_fast_right * 5
+}
+
+
+
+movement HamMemberSuprised{
+    emote_exclamation_mark
+    jump_in_place_down
+}
+
+movement HamMemberRuns{
+    walk_fast_up * 7
+    set_invisible
+}
+
+movement ArianeRunAfterHam5{
+    jump_in_place_up
+}
+
+movement ArianeRunAfterHam6 {
+    walk_fast_up * 7
+    set_invisible
+}
+
+
+
+
+
+
+
+
+
+
+
+
+script NPC_WIZARDSTOWER_SleepingWizard
+{
+	lock
+	msgbox(format("…\l………\pThey seem to be asleep."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+
+
+script NPC_WIZARDSTOWER_NoobshowNPCs
+{
+	lock
+    applymovement(7, MOVEMENT_WIZARDSTOWER_NPC1)
+    waitmovement (0)
+    namebox ("Traveller")
+	msgbox(format("Hmm sorry, what is that?\pI could not hear you because I was totin my staff along this shiny Wizards' Tower road."))
+    waitmessage
+    hidenamebox
+    closemessage
+    applymovement(8, MOVEMENT_WIZARDSTOWER_NPC2)
+    waitmovement (0)
+    namebox ("Noob")
+	msgbox(format("Have you seen a road with so much dust and sand?"))
+    waitmessage
+    hidenamebox
+    closemessage
+    applymovement(7, MOVEMENT_WIZARDSTOWER_NPC3)
+    waitmovement (0)
+    namebox ("Traveller")
+	msgbox(format("Listen noob, I have traveled every road in this here land."))
+    waitmessage
+    hidenamebox
+    closemessage
+    applymovement(7, MOVEMENT_WIZARDSTOWER_NPC4)
+    waitmovement (0)
+	release
+	end
+}
+
+movement MOVEMENT_WIZARDSTOWER_NPC1
+{
+	face_down
+}
+
+movement MOVEMENT_WIZARDSTOWER_NPC2
+{
+	walk_in_place_up * 2
+}
+
+movement MOVEMENT_WIZARDSTOWER_NPC3
+{
+	walk_in_place_down * 2
+}
+
+movement MOVEMENT_WIZARDSTOWER_NPC4
+{
+	face_left
+}
+
+
+
+
+
+
+
+
+//-------- TRAINERS
+
+script BATTLE_WizardsTower_Trainer_1
+{
+    trainerbattle_single(TRAINER_WIZARDSTOWER_TRAINER_1, format("Magic has an inherent advantage over melee!"),format("You seem to have an inherent advantage over me."))
+    //namebox ("CUPHOLDER")
+    msgbox(format("You seem to have an inherent advantage over me."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_WizardsTower_Trainer_2
+{
+    trainerbattle_single(TRAINER_WIZARDSTOWER_TRAINER_2, format("Welcome to the wizard tower, now face my magic!"),format("Hope you enjoy your stay."))
+    namebox ("Goldberg")
+    msgbox(format("Hope you enjoy your stay."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_WizardsTower_Trainer_3
+{
+    trainerbattle_single(TRAINER_WIZARDSTOWER_TRAINER_3, format("With the power of runes, humans can use magic."),format("Maybe our runes pales in comparison to your monsters."))
+    //namebox ("CUPHOLDER")
+    msgbox(format("Maybe our runes pales in comparison to your monsters."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_WizardsTower_Trainer_4
+{
+    trainerbattle_single(TRAINER_WIZARDSTOWER_TRAINER_4, format("Hey you watch this!"),format("Took me years to learn magic, but after all these years im not sure if it was worth the time."))
+    //namebox ("CUPHOLDER")
+    msgbox(format("Took me years to learn magic, but after all these years im not sure if it was worth the time."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_WizardsTower_Myrtle
+{
+    trainerbattle_single(TRAINER_WIZARDSTOWER_TRAINER_MYRTLE, format("I love water types!"),format("But I hate getting wet…"))
+    namebox ("Myrtle")
+    msgbox(format("Water type monsters amaze me, but I cannot stand getting wet."))
+    hidenamebox
+    release
+    end
+}
+

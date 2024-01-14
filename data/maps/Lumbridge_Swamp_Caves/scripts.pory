@@ -1,0 +1,175 @@
+mapscripts Lumbridge_Swamp_Caves_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 43) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 43-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+}
+
+
+
+
+
+
+
+
+script LumbridgeSwampCaves_WallBeasts
+{
+	lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_WallBeast)
+    playSE(SE_LEDGE)
+    msgbox(format("Something jumps out of the wall towards you!"))
+    waitmovement(0)
+	
+    random(8)
+        switch (var(VAR_RESULT)) {
+            case 0: 
+            case 1: 
+            case 2: 
+            case 3: 
+            case 4: 
+				msgbox(format("A hand swipes at you!"))
+                closemessage
+				setwildbattle(SPECIES_WALL_BEAST, 10, ITEM_NONE)
+				dowildbattle
+				release
+				end
+            case 5: 
+				msgbox(format("A wild Monster attacked!"))
+                closemessage
+				special(RockSmashWildEncounter)
+				release
+				end
+			case 6: 
+				msgbox(format("A creature jumps out at you!"))
+                closemessage
+				setwildbattle(SPECIES_FLEDGLING, 10, ITEM_NONE)
+				dowildbattle
+				release
+				end
+            case 7: 
+            msgbox(format("A small hand falls out of the rubble!"))
+            closemessage
+            setwildbattle(SPECIES_HAND_CREEPING_FORM, 10, ITEM_NONE)
+            dowildbattle
+            release
+            end
+            
+        }
+	release
+	end
+}
+
+movement Movement_WallBeast
+{
+    emote_exclamation_mark
+    jump_in_place_up
+}   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//ITEMS
+
+script ITEM_LUMBRIDGESWAMPCAVE_ITEM_1
+{
+    finditem(ITEM_TM21_TOXIC)
+    end
+}
+
+script ITEM_LUMBRIDGESWAMPCAVE_ITEM_2
+{
+    finditem(ITEM_SPIRIT_SHARD)
+    end
+}
+
+script ITEM_LUMBRIDGESWAMPCAVE_ITEM_3
+{
+    finditem(ITEM_SPIRIT_SHARD)
+    end
+}
+
+script ITEM_LUMBRIDGESWAMPCAVE_ITEM_4
+{
+    finditem(ITEM_SPIRIT_SHARD)
+    end
+}
+
+script ITEM_LUMBRIDGESWAMPCAVE_ITEM_5
+{
+    finditem(ITEM_SPIRIT_SHARD)
+    end
+}
+
+script ITEM_LUMBRIDGESWAMPCAVE_ITEM_6
+{
+    finditem(ITEM_SPIRIT_SHARD)
+    end
+}
+
+
+
+//BATTLES
+//Low levels
+script BATTLE_LUMBRIDGESWAMPCAVE_FISHERMAN_1{
+    trainerbattle_single(TRAINER_LUMBRIDGESWAMPCAVE_FISHERMAN_1, format("Im collecting frogspawn, dont bother me."),format("I hear somewhere in Kandarin theres a tower.\pIf you bring it a slimy eel and frog legs it will create a legendary monster."))
+    //namebox("EELFROG330")
+    msgbox(format("I hear somewhere in Kandarin theres a tower.\pIf you bring it a slimy eel and frog legs it will create a legendary monster."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_LUMBRIDGESWAMPCAVE_SKELETON_1{
+    trainerbattle_single(TRAINER_LUMBRIDGESWAMPCAVE_SKELETON_1, format("The skeleton tries to shoo you away."),format("Chitter, chitter."))
+    msgbox(format("It looks like the skeleton thinks you are smart for bringing a lantern rather than a naked candle."))
+    release
+    end
+}
+
+script BATTLE_LUMBRIDGESWAMPCAVE_PVMER_1{
+    trainerbattle_single(TRAINER_LUMBRIDGESWAMPCAVE_PVMER_1, format("Show me the way to the slayer tower noob!"),format("Oh it is in Morytania.\pThis explains a lot."))
+    //namebox("B 0 0 M E R")
+    msgbox(format("Oh it is in Morytania.\pThis explains a lot."))
+    hidenamebox
+    release
+    end
+}
+//MID levels
+script BATTLE_LUMBRIDGESWAMPCAVE_4
+{
+    trainerbattle_single(TRAINER_LUMBRIDGESWAMPCAVE_4, format("Really should have brought a lantern for this task…"),format("I cannot even see if I won or lost…"))
+    //namebox ("Cupholder")
+    msgbox(format("I cannot even see if I won or lost…"))
+	hidenamebox
+    release
+	end
+}
+script BATTLE_LUMBRIDGESWAMPCAVE_5
+{
+    trainerbattle_single(TRAINER_LUMBRIDGESWAMPCAVE_5, format("I might not be able to see, but that will not stop me from fishing!"),format("Cupholder has lost."))
+    //namebox ("Cupholder")
+    msgbox(format("I might not be able to see, but that will not stop me from ignoring you."))
+	hidenamebox
+    release
+	end
+}
+script BATTLE_LUMBRIDGESWAMPCAVE_6
+{
+    trainerbattle_single(TRAINER_LUMBRIDGESWAMPCAVE_6, format("I am here to kill all the cave slimes!"),format("Kill all the slimes!!"))
+    //namebox ("Cupholder")
+    msgbox(format("Kill all the slimes!!"))
+	hidenamebox
+    release
+	end
+}

@@ -1,0 +1,317 @@
+mapscripts QueenBlackDragon_Lair_MapScripts{
+}
+
+
+
+
+
+
+raw `
+QBD_Battle_QBD::
+	lock
+	faceplayer
+	applymovement 1, QUEENBLACK_DRAGON_MOVEMENT
+	waitmovement 0
+	waitse
+	delay 20
+	playse SE_THUNDERSTORM_STOP
+	setvar VAR_0x8004, 0  @ vertical pan
+	setvar VAR_0x8005, 3  @ horizontal pan
+	setvar VAR_0x8006, 4  @ num shakes
+	setvar VAR_0x8007, 2  @ shake delay
+	special ShakeCamera
+	delay 30
+	playse SE_THUNDERSTORM_STOP
+	setvar VAR_0x8004, 0  @ vertical pan
+	setvar VAR_0x8005, 3  @ horizontal pan
+	setvar VAR_0x8006, 4  @ num shakes
+	setvar VAR_0x8007, 2  @ shake delay
+	special ShakeCamera
+	delay 30
+	delay 50
+	waitse
+	playmoncry SPECIES_LUGIA, 2
+	waitmoncry
+	delay 20
+	setvar VAR_0x8004, SPECIES_DRAGON_QUEEN_BLACK_FORM
+	setvar VAR_0x8005, 70  @ level
+	setvar VAR_0x8006, ITEM_NONE
+	special CreateEventLegalEnemyMon
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq NavelRock_Bottom_EventScript_DefeatedLugia
+	compare VAR_RESULT, B_OUTCOME_RAN
+	goto_if_eq NavelRock_Bottom_EventScript_RanFromLugia
+	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
+	goto_if_eq NavelRock_Bottom_EventScript_RanFromLugia
+	@setflag FLAG_CAUGHT_LUGIA
+	release
+	end
+` 
+
+
+movement QUEENBLACK_DRAGON_MOVEMENT{
+	init_affine_anim
+	walk_down_start_affine
+	delay_16
+	delay_16
+	walk_down_affine
+	delay_16
+	delay_16
+	walk_down_affine
+	step_end
+}
+
+
+
+
+script QBDLAIR_1 {
+    switch (var(VAR_POKESCAPE_STARTER_HOUSE_STATE)) {
+        case 1:
+			lock
+            msgbox(format("You activate the pillar!"))
+			setmetatile(9, 10, 656, 1) //RED
+
+			setmetatile(5, 13, 680, 0)
+			setmetatile(6, 13, 681, 0)
+			setmetatile(7, 13, 682, 0)
+			setmetatile(8, 13, 683, 0)
+			setmetatile(9, 13, 684, 0)
+
+			setmetatile(5, 14, 688, 0)
+			setmetatile(6, 14, 689, 0)
+			setmetatile(7, 14, 690, 0)
+			setmetatile(8, 14, 691, 1)
+
+			setmetatile(5, 15, 696, 0)
+			setmetatile(6, 15, 697, 1)
+
+			special(DrawWholeMapView) 
+			setvar(VAR_POKESCAPE_STARTER_HOUSE_STATE, 2)
+			release
+			end
+			
+
+        case 2:
+			lock
+			msgbox(format("The pillar is already activated."))
+			release
+			end
+			
+    }
+}
+
+
+
+
+
+script QBDLAIR_2 {
+	setmetatile(4, 15, 672, 1) //RED
+	setmetatile(5, 15, 673, 0) //RED
+
+	setmetatile(9, 13, 704, 0)
+	setmetatile(10, 13, 705, 0)
+	setmetatile(11, 13, 706, 0)
+	setmetatile(12, 13, 707, 0)
+	setmetatile(13, 13, 708, 0)
+
+	setmetatile(10, 14, 713, 1)
+	setmetatile(11, 14, 714, 0)
+	setmetatile(12, 14, 715, 0)
+	setmetatile(13, 14, 716, 0)
+
+	setmetatile(12, 15, 723, 1)
+	setmetatile(13, 15, 724, 0)
+
+	special(DrawWholeMapView) 
+	end
+}
+
+script QBDLAIR_3 {
+	setmetatile(13, 15, 664, 0) //RED
+	setmetatile(14, 15, 665, 1) //RED
+
+	setmetatile(7, 13, 746, 0)
+	setmetatile(8, 13, 747, 0)
+	setmetatile(9, 13, 748, 0)
+	setmetatile(10, 13, 755, 0)
+	setmetatile(11, 13, 756, 0)
+
+	setmetatile(8, 14, 658, 0)
+	setmetatile(9, 14, 659, 0)
+	setmetatile(10, 14, 660, 0)
+
+	setmetatile(8, 15, 666, 1)
+	setmetatile(9, 15, 667, 0)
+	setmetatile(10, 15, 668, 1)
+
+	setmetatile(9, 16, 675, 1)
+
+	special(DrawWholeMapView) 
+	end
+}
+
+
+script QBDLAIR_4 {
+	setmetatile(9, 16, 657, 1) //RED
+
+
+	special(DrawWholeMapView) 
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//SINGLE - middle
+//script middle {
+//	setmetatile(13, 15, 664, 1) //RED
+//	setmetatile(14, 15, 665, 0) //RED
+//
+//	setmetatile(7, 13, 649, 0)
+//	setmetatile(8, 13, 650, 0)
+//	setmetatile(9, 13, 651, 0)
+//	setmetatile(10, 13, 652, 0)
+//	setmetatile(11, 13, 653, 0)
+
+//	setmetatile(8, 14, 658, 1)
+//	setmetatile(9, 14, 659, 0)
+//	setmetatile(10, 14, 660, 0)
+
+//	setmetatile(8, 15, 666, 1)
+//	setmetatile(9, 15, 667, 0)
+//setmetatile(10, 15, 668, 0)
+
+//	setmetatile(9, 16, 675, 0)
+//
+//	special(DrawWholeMapView) 
+//	end
+//}
+
+
+
+
+
+
+//ITEMS
+//HIDDEN ITEMS: SPIRITSHARD, ITEM_PINEAPPLE_PUNCH
+//
+
+script ITEM_RimmingtonMines_1
+{
+    finditem(ITEM_EARTH_RUNE)
+    end
+}
+
+script ITEM_RimmingtonMines_2
+{
+    finditem(ITEM_EARTH_RUNE)
+    end
+}
+
+script ITEM_RimmingtonMines_3
+{
+    finditem(ITEM_TM33_DRAGON_BREATH)
+    end
+}
+
+
+
+
+//RIMMINGTON MINES
+
+script BATTLE_RimmingtonMines_Miner
+{
+    trainerbattle_single(TRAINER_RimmingtonMines_Miner, format("Woah!\pYou startled me!"),format("I wasn't ready…"))
+    //namebox ("")
+    msgbox(format("Do you hear that faint singing in the distance?\pThese caves creep me out."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_RimmingtonMines_Ironman
+{
+    trainerbattle_single(TRAINER_RimmingtonMines_Ironman, format("I've come to do some extra training but man these bugs are annoying!"),format("At least I am not a Hardcore Ironman…"))
+    //namebox ("")
+    msgbox(format("There a worms everywhere, yuck!\pAt least I can get some decent experience from them."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_RimmingtonMines_Slayer
+{
+    trainerbattle_single(TRAINER_RimmingtonMines_Slayer, format("Oooh, I just got assigned a new Slayer task!\pYOU."),format("Mercy!"))
+    //namebox ("")
+    msgbox(format("Looks like my next task is to go to the Bank…"))
+	hidenamebox
+    release
+	end
+}
+
+script NPC_RimmingtonMines_WhiteKnight
+{
+	lock
+    faceplayer
+    namebox("Sir Plyan")
+    msgbox(format("Careful, it is dangerous deeper in.\pOur party was attacked by these massive Grotworm things.\pI am on pack up duty, the rest of the party has retreated outside."))
+    hidenamebox
+    release
+    end
+}
+
+
+//B2F
+
+script BATTLE_RimmingtonMines_DRAGONBOT_1
+{
+    trainerbattle_single(TRAINER_RimmingtonMines_DRAGONBOT_1, format("TARGET ACQUIRED!"),format("ERROR DETECTED!"))
+    namebox ("Bot")
+    msgbox(format("ERROR DETECTED!"))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_RimmingtonMines_DRAGONBOT_2
+{
+    trainerbattle_single(TRAINER_RimmingtonMines_DRAGONBOT_2, format("LOCATION UNKNOWN.\nRANDOM SCRIPT ACTIVATE."),format("TELEPORT INITIATE…"))
+    namebox ("Bot")
+    msgbox(format("TELEPORTATION FAILED."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_RimmingtonMines_Slayer_1
+{
+    trainerbattle_single(TRAINER_RimmingtonMines_Slayer_1, format("Die Bot!"),format("I cannot believe I just lost to a bot…"))
+    //namebox ("")
+    msgbox(format("Oh you are not a bot?\pI've been trying to get rid of these bots for the past few days, looks like they might be broken now though."))
+	hidenamebox
+    release
+	end
+}
+
+
+
+
+

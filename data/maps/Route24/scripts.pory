@@ -1,0 +1,167 @@
+mapscripts Route24_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 3) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+}
+
+//SIGNPOST
+script ROUTE24_SIGNPOST
+{
+	msgbox(format("East to Taverley.\pNorth to Goblin Village\pSouth to Falador."))
+	closemessage
+	end
+}
+script ROUTE24_GOBLIN_SIGNPOST
+{
+	msgbox(format("Goblin Village.\pRed Armour best!"))
+	closemessage
+	end
+}
+
+//NPC
+script NPC_ROUTE24_BLOCKADE_1
+{
+    lock
+    faceplayer
+    namebox("White Knight")
+    msgbox(format("Sorry you need to be a member to access past here.\pWhat is a member?\pA member is someone who has obtained all of the badges in F2P."))
+    hidenamebox
+    release
+    end
+}
+
+script BLOCK_ROUTE24_BLOCKADE_WHITEKNIGHT
+{
+        lock
+        namebox("White Knight")
+        msgbox(format("Sorry you need to be a member to access past here.\pWhat is a member?\pA member is someone who has obtained all of the badges in F2P."))
+		closemessage
+        hidenamebox
+        applymovement(OBJ_EVENT_ID_PLAYER, Blockmovement_WhiteKnight)
+        waitmovement(0)
+        release
+        end
+}
+movement Blockmovement_WhiteKnight{
+    slide_right
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//TRAINERS
+script BATTLE_ROUTE24_MUGGER{
+    trainerbattle_single(TRAINER_ROUTE24_MUGGER, format("Deliver and stand!"),format("Sorry I mixed that up, could you please be robbed again?\pNo?\pOk then…"))
+    namebox ("RSN")
+    msgbox(format("Sorry I mixed that up, could you please be robbed again?\pNo?\pOk then…"))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_ROUTE24_WOODCUTTER_1{
+    trainerbattle_single(TRAINER_NYCHANNEL, format("Woodcutting is more than just cutting trees, here let me show you."),format("If I lose a battle and nobody is here.\pDo I still get xp?"))
+    namebox ("NyChannel")
+    msgbox(format("If I lose a battle and nobody is here.\pDo I still get xp?"))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_ROUTE24_WOODCUTTER_2{
+    trainerbattle_single(TRAINER_ROUTE24_WOODCUTTER_2, format("To chop down trees you need a hatchet like mine."),format("I bet you dont even have over 20 Woodcutting."))
+    namebox ("RSN")
+    msgbox(format("I bet you dont even have over 20 Woodcutting."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_ROUTE24_GOBLIN_1{
+    trainerbattle_single(TRAINER_ROUTE24_GOBLIN_1, format("Prepare for battle human!"),format("Human prepare well."))
+    //namebox ("")
+    msgbox(format("Human prepare well."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_ROUTE24_GOBLIN_2{
+    trainerbattle_single(TRAINER_ROUTE24_GOBLIN_2, format("Stay out of village smelly human!"),format("Goblin Village not take kindly to your kind."))
+    namebox ("Smellygob")
+    msgbox(format("Goblin Village not take kindly to your kind."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_ROUTE24_GOBLIN_3{
+    trainerbattle_single(TRAINER_ROUTE24_GOBLIN_3, format("Guard duty serious task given by General Bentnose.\pStay gone human!"),format("Bootlicker is considering changing to green faction.\pWartface is better leader."))
+    namebox ("Bootlicker")
+    msgbox(format("Bootlicker is considering changing to green faction.\pWartface is better leader."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_ROUTE24_GOBLIN_4{
+    trainerbattle_single(TRAINER_ROUTE24_GOBLIN_4, format("Red or green, humans stay out."),format("Conflict of colours eternal."))
+    namebox ("Bentwart")
+    msgbox(format("Conflict of colours eternal."))
+    hidenamebox
+    release
+    end
+}
+
+
+//NPC
+script NPC_ROUTE24_NPC_1{
+    lock
+    faceplayer
+    namebox ("MAN")
+    msgbox(format("Due east is Varrock, the capital of Misthalin.\pOn the way there you can meet some unfriendly dwarves and barbarians but dont let them ruin your day."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_ROUTE24_NPC_2{
+    lock
+    faceplayer
+    namebox ("WOMAN")
+    msgbox(format("Up north is the Goblin Village.\pThey do not enjoy the company of humans and seem to be under some civil war over differing opinions.\pI suggest you go east instead adventurer."))
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+//ROUTE 40
+script BATTLE_ROUTE40_DIVINER {
+    trainerbattle_single(TRAINER_ROUTE40_DIVINER, format("I feel a strange power emanating from these rock formations."),format("I feel it!\nIt makes me feel all tingly!"))
+    namebox ("DIVINER")
+    msgbox(format("You feel it too don't you?\pThe strange power emanating from these rocks."))
+    hidenamebox
+    release
+    end
+}

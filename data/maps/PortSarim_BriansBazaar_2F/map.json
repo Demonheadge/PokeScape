@@ -1,0 +1,41 @@
+{
+  "id": "MAP_PORT_SARIM_BRIANS_BAZAAR_2F",
+  "name": "PortSarim_BriansBazaar_2F",
+  "layout": "LAYOUT_PORT_SARIM_BRIANS_BAZAAR_2F",
+  "music": "MUS_PS_PORT_SARIM",
+  "region_map_section": "MAPSEC_PORT_SARIM",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_PORT_SARIM_BRIANS_BAZAAR_1F",
+      "dest_warp_id": 1
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NPC_PORTSARIM_BATTLEAXE_LOREBOOK"
+    }
+  ]
+}

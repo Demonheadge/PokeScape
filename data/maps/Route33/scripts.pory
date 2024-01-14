@@ -1,0 +1,55 @@
+mapscripts Route33_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 14) 
+    }
+}
+
+//ITEMS
+script ITEM_ROUTE33_1
+{
+    finditem(ITEM_LINZAHAMMER)
+    end
+}
+
+//NPCS
+script NPC_ROUTE33_NPC1
+{
+    lock
+    faceplayer
+    //namebox("")
+    msgbox(format("Begone!\pStay away unless you worship Zamorak."))
+    hidenamebox
+    release
+    end
+}
+
+//BATTLES
+script BATTLE_ROUTE33_ZAMORAK1 // ZAMORAK MAGE
+{
+    trainerbattle_single(TRAINER_ROUTE33_ZAMORAK1, format("A curse be upon you!"),format("I may have lost but I have still cursed you.\pNow begone!"))
+    //namebox ("")
+    msgbox(format("I may have lost but I have still cursed you.\pNow begone!"))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_ROUTE33_GOBLIN1 // GOBLIN 1
+{
+    trainerbattle_single(TRAINER_ROUTE33_GOBLIN1, format("Hooman, why are you out here?!"),format("Hooman no answer question."))
+    //namebox ("")
+    msgbox(format("Hooman no answer question.\pWhy is hooman out here?!"))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_ROUTE33_GOBLIN2 // GOBLIN 2
+{
+    trainerbattle_single(TRAINER_ROUTE33_GOBLIN2, format("Stupid red hoomans they so noisy!"),format("Red hoomans make lots of noise."))
+    //namebox ("")
+    msgbox(format("Red hoomans make lots of noise.\pMe want to get rid of them."))
+	hidenamebox
+    release
+	end
+}

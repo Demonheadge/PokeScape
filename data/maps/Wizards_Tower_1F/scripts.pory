@@ -1,0 +1,779 @@
+const OBJ_EVENT_ID_SEDRIDOR = 9
+const OBJ_EVENT_ID_HAMGrunt = 8
+const OBJ_EVENT_ID_ARIANE = 7
+
+mapscripts Wizards_Tower_1F_MapScripts{
+	MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 1) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+		if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    	{
+            goto(WizardsTower_STATE)
+    	}
+		else
+		{
+			call(OPENWORLD_STATE_WIZARDSTOWER_1F)
+		}
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		//VAR_POKESCAPE_WIZARDS_TOWER_STATE, 0: HAM_EVENT_WizardsTower_1
+		VAR_TEMP_B, 0: HAM_EVENT_WizardsTower_1
+    ]
+
+}
+
+
+script OPENWORLD_STATE_WIZARDSTOWER_1F {
+		setobjectxyperm(4,5,14)
+		setobjectmovementtype(4,MOVEMENT_TYPE_LOOK_AROUND)
+		removeobject (OBJ_EVENT_ID_SEDRIDOR)
+		removeobject (OBJ_EVENT_ID_ARIANE)
+		removeobject (OBJ_EVENT_ID_HAMGrunt)
+		setflag(FLAG_TEMP_1)
+		setflag(FLAG_TEMP_2)
+		return
+}
+
+
+script WizardsTower_STATE{
+	switch (var(VAR_POKESCAPE_WIZARDS_TOWER_STATE)){ 
+		case 0: 
+			//HIDE SEDRIDOR
+			setflag(FLAG_TEMP_1)
+			release
+			end
+    	case 1: 
+		case 2: 
+		case 3: 
+		case 4: 
+		case 5:
+			//MOVE WIZARD
+			setobjectxyperm(4,8,14)
+			setobjectmovementtype(4,MOVEMENT_TYPE_FACE_DOWN)
+			//MOVE SEDRIDOR
+			setobjectxyperm(OBJ_EVENT_ID_SEDRIDOR,8,15)
+			setobjectmovementtype(OBJ_EVENT_ID_SEDRIDOR,MOVEMENT_TYPE_FACE_UP)
+			//REMOVE ARIANE
+			removeobject (OBJ_EVENT_ID_ARIANE)
+			//REMOVE H.A.M
+			removeobject (OBJ_EVENT_ID_HAMGrunt)
+
+			setflag(FLAG_TEMP_2)
+			setvar(VAR_TEMP_B, 1)
+		case 6: 
+		case 7: 
+		case 8: 
+		case 9: 
+			//MOVE WIZARD
+			setobjectxyperm(4,5,14)
+			setobjectmovementtype(4,MOVEMENT_TYPE_LOOK_AROUND)
+			removeobject (OBJ_EVENT_ID_SEDRIDOR)
+			removeobject (OBJ_EVENT_ID_ARIANE)
+			removeobject (OBJ_EVENT_ID_HAMGrunt)
+			setflag(FLAG_TEMP_1)
+			setflag(FLAG_TEMP_2)
+			setvar(VAR_TEMP_B, 1)
+			release
+			end
+
+		}
+}
+
+
+
+//SEDRIDOR
+script WizardsTower_SEDRIDOR{
+	switch (var(VAR_POKESCAPE_WIZARDS_TOWER_STATE)){ 
+		case 0: 
+			lock
+			faceplayer
+			namebox ("Sedridor")
+			msgbox(format("CUPHOLDER"))
+			hidenamebox
+			release
+			end
+		case 1: 
+		case 2: 
+		case 3: 
+		case 4: 
+		case 5: 
+		case 6: 
+		case 7: 
+		case 8: 
+		case 9: 
+			lock
+			faceplayer
+			namebox ("Sedridor")
+			msgbox(format("Could you please go after Ariane."))
+			hidenamebox
+			release
+			end
+	}
+}
+
+
+//Wizard Finix
+script WizardsTower_Wizard{
+	switch (var(VAR_POKESCAPE_WIZARDS_TOWER_STATE)){ 
+		case 0: 
+			lock
+			faceplayer
+			namebox ("Finix")
+			msgbox(format("Hello and welcome to the Wizards Tower."))
+			hidenamebox
+			release
+			end
+		case 1: 
+		case 2: 
+		case 3: 
+		case 4: 
+		case 5: 
+		case 6: 
+		case 7: 
+		case 8: 
+			lock
+			faceplayer
+			namebox ("Finix")
+			msgbox(format("Why would that pink hooded guy steal our research papers on the abyss?"))
+			hidenamebox
+			release
+			end
+		case 9: 
+			lock
+			faceplayer
+			namebox ("Finix")
+			msgbox(format("Thank you for helping out earlier."))
+			hidenamebox
+			release
+			end
+	}
+}
+
+
+script WizardsTower_EVENT_TRIGGER{
+	switch (var(VAR_POKESCAPE_WIZARDS_TOWER_STATE)){ 
+		case 0: 
+		case 1: 
+		case 2: 
+		case 3: 
+		case 4: 
+		case 5: 
+		case 6: 
+		case 7: 
+		case 8: 
+			lock
+			applymovement(4, Movement_Wizard_WizardsTower4)
+			waitmovement(0)
+			namebox ("Finix")
+			msgbox(format("Sorry, but the library is off limits for the time being."))
+			closemessage
+			hidenamebox
+			applymovement(OBJ_EVENT_ID_PLAYER, Movement_Player_WizardsTower4)
+			waitmovement(0)
+			release
+			end
+		case 9: 
+			release
+			end
+	}
+}
+
+
+
+script HAM_EVENT_WizardsTower_1 {
+	if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    {
+		lockall
+		playbgm (MUS_PS_ENCOUNTER_HAM, 1)
+		namebox ("???")
+		msgbox(format("Someone stop him!"))
+		waitmessage
+		hidenamebox
+		closemessage
+		applymovement(OBJ_EVENT_ID_HAMGrunt, Movement_HAM_Member_WizardsTower1)
+		waitmovement (0)
+		playSE(SE_WALL_HIT)
+		applymovement(OBJ_EVENT_ID_PLAYER, Movement_Player_WizardsTower1)
+		applymovement(OBJ_EVENT_ID_HAMGrunt, Movement_HAM_Member_WizardsTower2)
+		applymovement(OBJ_EVENT_ID_ARIANE, Movement_Araine_WizardsTower1)
+		waitmovement (0)
+		removeobject(OBJ_EVENT_ID_HAMGrunt)
+		removeobject(OBJ_EVENT_ID_ARIANE)
+
+		namebox ("???")
+		msgbox(format("What's all that racket?!"))
+		waitmessage
+		hidenamebox
+		closemessage
+		clearflag(FLAG_TEMP_1)
+		addobject(OBJ_EVENT_ID_SEDRIDOR)
+		showobjectat (OBJ_EVENT_ID_SEDRIDOR, MAP_WIZARDS_TOWER_1F)
+		applymovement(4, Movement_Wizard_WizardsTower1)
+		applymovement(OBJ_EVENT_ID_SEDRIDOR, Movement_Sedridor_WizardsTower1)
+		waitmovement (4)
+		applymovement(OBJ_EVENT_ID_SEDRIDOR, Movement_Sedridor_WizardsTower2)
+		namebox ("Finix")
+		msgbox(format("Sedridor, sir.\pA cloaked man just ran off with a bunch of our research papers!\pAriane just gave chase to him!"))
+		hidenamebox
+		namebox ("Sedridor")
+		msgbox(format("She what!?\pOh the silly girl, I hope she doesn't cause any trouble…"))
+		hidenamebox
+		closemessage
+
+
+		applymovement(OBJ_EVENT_ID_PLAYER, Movement_Player_WizardsTower2)
+		waitmovement (0)
+		playse(SE_PIN)
+		applymovement(OBJ_EVENT_ID_SEDRIDOR, Movement_Sedridor_WizardsTower3)
+		
+		delay(16)
+		namebox ("Sedridor")
+		msgbox(format("Who are you?"))
+		hidenamebox
+		closemessage
+		applymovement(OBJ_EVENT_ID_PLAYER, Movement_Player_WizardsTower3)
+		waitmovement (0)
+		namebox ("Sedridor")
+		msgbox(format("Ah {PLAYER}, I wish we met under better circumstances but could I ask you go after Ariane incase she gets into trouble."))
+		hidenamebox
+		closemessage
+		savebgm(MUS_DUMMY)
+		fadedefaultbgm
+		setvar(VAR_POKESCAPE_WIZARDS_TOWER_STATE, 1)
+		setvar(VAR_TEMP_B, 1)
+		release
+		end
+	}
+	else
+	{
+		setvar(VAR_TEMP_B, 1) 
+        release
+	}
+}
+
+
+
+//MOVEMENTS FOR EVENT
+
+movement Movement_HAM_Member_WizardsTower1
+{
+	walk_fast_down * 4
+	walk_fast_right
+	walk_fast_down 
+}
+
+movement Movement_Player_WizardsTower1
+{
+	lock_facing_direction
+	slide_left
+	unlock_facing_direction
+	face_right
+	delay_16
+}
+
+movement Movement_Araine_WizardsTower1
+{
+	walk_fast_down * 5
+	walk_fast_right
+	walk_fast_down * 2
+	set_invisible
+}
+
+movement Movement_HAM_Member_WizardsTower2
+{
+	walk_fast_down * 1
+	set_invisible
+}
+
+movement Movement_Sedridor_WizardsTower1
+{
+	set_visible
+	walk_down * 2
+	walk_left * 4
+	
+}
+
+movement Movement_Wizard_WizardsTower1
+{
+	walk_down * 3
+	delay_16
+	face_left
+	delay_8
+	face_right
+	delay_8
+	walk_down
+	delay_4
+	walk_right *2
+	face_down
+}
+
+movement Movement_Sedridor_WizardsTower2
+{
+	face_up
+}
+
+movement Movement_Sedridor_WizardsTower3
+{
+	emote_exclamation_mark
+	face_player
+}
+
+movement Movement_Hide_Sedridor{
+	set_invisible
+}
+
+movement Movement_Player_WizardsTower2{
+	walk_up
+	walk_right
+}
+
+movement Movement_Player_WizardsTower3{
+	walk_in_place_right * 3
+}
+
+
+movement Movement_Player_WizardsTower4{
+	walk_down
+}
+
+movement Movement_Wizard_WizardsTower4
+{
+	face_up
+}
+
+
+
+
+script NPC_WIZARDSTOWER_Book_1
+{
+	msgbox(format("There are books filled with all sorts of knowledge!"))
+    closemessage
+	release
+	end
+}
+
+script NPC_WIZARDSTOWER_Book_2
+{
+	msgbox(format("Pouches and Monsters, can you catch em all?\pWhat an interesting read.'"))
+    closemessage
+	release
+	end
+}
+
+script NPC_WIZARDSTOWER_Book_3
+{
+	msgbox(format("There are lots of books."))
+    closemessage
+	release
+	end
+}
+
+script NPC_WIZARDSTOWER_Book_4
+{
+	msgbox(format("The book is titled Other Worlds & Realms.\pIt seems interesting."))
+    closemessage
+	release
+	end
+}
+
+script NPC_WIZARDSTOWER_Book_5
+{
+	msgbox(format("These notes about the Lumbridge Catacombs.\p…{PAUSE 15} …{PAUSE 15}\pThe monsters located in the catacombs have become far too dangerous so I would highly advice closing the catacombs to the public for the forseeable future. - Ilona."))
+    closemessage
+	release
+	end
+}
+
+
+script NPC_WIZARDSTOWER_Skeleton
+{
+	lock
+	faceplayer
+    namebox ("Skeleton")
+	msgbox(format("Did you come from Lumbridge?\pMy friend lives there!"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+script NPC_WIZARDSTOWER_Valina
+{
+	lock
+	faceplayer
+    namebox ("Valina")
+	msgbox(format("Hello.\lWelcome to the Wizards Tower."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_WIZARDSTOWER_Traiborn
+{
+	lock
+	faceplayer
+    namebox ("Traiborn")
+	msgbox(format("Hey you there!\pHave you seen the Thingummyut?"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_WIZARDSTOWER_Jalarast
+{
+	lock
+	faceplayer
+	if (!flag(FLAG_RECEIVED_SPLITBARK)){
+		namebox ("Jalarast")
+		msgbox(format("Here you should have this!"))
+		hidenamebox
+		giveitem (ITEM_SPLITBARK, 1)
+		waitmessage
+		closemessage
+		setflag(FLAG_RECEIVED_SPLITBARK)
+		}
+	namebox ("Jalarast")
+	msgbox(format("Splitbark has amazing Magical properties!\pIt can enhance a Psychic Type's power."))
+	waitmessage
+	hidenamebox
+	release
+	end
+}
+
+script NPC_WIZARDSTOWER_Mizog
+{
+	lock
+	faceplayer
+    namebox ("Mizgog")
+	msgbox(format("Hi there, I am a Beadromancer.\pI study the power of Magical beads."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_WIZARDSTOWER_Taloram
+{
+	lock
+	
+    namebox ("Taloram")
+	msgbox(format("Oi Melville, let us mess with Mizog, I caught a ton of Imps earlier and they are itching for a battle."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_WIZARDSTOWER_Melville_Grayzag
+{
+	lock
+	
+    namebox ("Melville Grayzag")
+	msgbox(format("Heck yeah!\pMy Imp just evolved into a Lesser Demon."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_WIZARDSTOWER_Borann
+{
+	lock
+	faceplayer
+    namebox ("Borann")
+	msgbox(format("Please be quiet in the Library."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_WIZARDSTOWER_Isidor
+{
+	lock
+	faceplayer
+    namebox ("Isidor")
+	msgbox(format("I have been working on a new kind of teleportation Magic.\pSurprisingly it works!"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_WIZARDSTOWER_Ellaron
+{
+	lock
+	faceplayer
+    namebox ("Ellaron")
+	msgbox(format("CAN A WIZARD NOT GET SOME PEACE AND QUIET AROUND HERE! GO AWAY!"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_WIZARDSTOWER_Onglewip
+{
+	lock
+	faceplayer
+    namebox ("Prof. Onglewip")
+	msgbox(format("Hello human.\pI am here to study what type of Magic the Human Wizards here use in battle."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+//LOCATED IN CHRISTMAS AREA
+script NPC_WIZARDSTOWER_Sinterklaas
+{
+	lock
+	faceplayer
+    namebox ("Sinterklaas")
+	msgbox(format("How did you get in here?!"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_WIZARDSTOWER_Sioncorn
+{
+	lock
+	faceplayer
+    namebox ("Sioncorn")
+	msgbox(format("Have you seen my Tinsel Snake around here?"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_WIZARDSTOWER_Rick
+{
+	lock
+	faceplayer
+    namebox ("Rick")
+	msgbox(format("I've recently started to study the evolution of certain Monsters because I nearly lost my head with my previous research."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_WIZARDSTOWER_SnowImp
+{
+	lock
+	faceplayer
+    namebox ("Snow Imp")
+	msgbox(format("Kekeke!"))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+script NPC_WIZARDSTOWER_Rinsit
+{
+	lock
+	faceplayer
+    namebox ("Rinsit")
+	msgbox(format("Sometimes when I'm around a pile of Elemental Runes, I feel like I am being watched."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_WIZARDSTOWER_RuneGuardian
+{
+	lock
+	faceplayer
+	playmoncry(SPECIES_UNOWN, 0)
+    namebox ("Rune Guardian")
+	msgbox(format("Btttz, btzz!"))
+	waitmoncry
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+script NPC_WIZARDSTOWER_PulseCore
+{
+	if (!flag(FLAG_RECEIVED_PULSECORE)){
+
+		lock
+
+		msgbox(format("You find {PAUSE 15}…{PAUSE 15}… a bunch of rocks?"))
+		playse(SE_PIN)
+		applymovement(2 rinsit_1)
+		waitmovement(0)
+		namebox ("Rinsit")
+
+
+		checkplayergender
+		if (var(VAR_RESULT) == MALE) {
+			msgbox(format("Not just any rocks my boy they are Elemental Runes!"))
+		} else {
+			msgbox(format("Not just any rocks my gal they are Runes!"))
+		}
+
+		applymovement(OBJ_EVENT_ID_PLAYER, rinsit_4)
+		waitmovement(0)
+
+
+		msgbox(format("Oh?{PAUSE 15}\nWhat is that shiny rock?\pWait a minute, that is not suppose to be in there let me see."))
+		applymovement(2 rinsit_2)
+		waitmovement(0)
+		msgbox(format("{PAUSE 15}…{PAUSE 15}…{PAUSE 15}…\pAh… this is a Pulse Core."))
+		applymovement(2 rinsit_3)
+		waitmovement(0)
+		msgbox(format("Here you can have it."))
+		hidenamebox
+		giveitem(ITEM_PULSE_CORE, 1)
+		namebox ("Rinsit")
+		msgbox(format("A Pulse Core will help your monsters gain a little bit of extra experience after battles.\pI am sure you will find a use for it."))
+		waitmessage
+		hidenamebox
+		setflag(FLAG_RECEIVED_PULSECORE)
+		release
+		end
+	}
+	else {
+		lock
+		delay(16)
+		playse(SE_PIN)
+		applymovement(2 rinsit_1)
+		waitmovement(0)
+		namebox ("Rinsit")
+		msgbox(format("Hey!\pDon't touch my bag of rocks!\pI mean Runes, not rocks!"))
+		waitmessage
+		hidenamebox
+		release
+		end
+	}
+}
+
+	
+
+movement rinsit_1 {
+	emote_exclamation_mark
+	delay_8
+	face_player
+}
+
+movement rinsit_2 {
+	face_up
+}
+
+movement rinsit_3 {
+	face_player
+}
+
+movement rinsit_4 {
+	face_left
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script HAM_EVENT_Ariane1
+{
+
+	lock
+	namebox ("Ariane")
+	msgbox(format("Urhgh, which way did he go?"))
+	hidenamebox
+	release
+	end
+
+}
+
+
+	script VAR_CHECKER{
+	switch (var(VAR_POKESCAPE_WIZARDS_TOWER_STATE)){ 
+		case 0: 
+			msgbox(format("0"))
+			setvar(VAR_POKESCAPE_WIZARDS_TOWER_STATE, 1)
+			release
+			end
+		case 1: 
+			msgbox(format("1"))
+			setvar(VAR_POKESCAPE_WIZARDS_TOWER_STATE, 2)
+			release
+			end
+		case 2: 
+			msgbox(format("2"))
+			setvar(VAR_POKESCAPE_WIZARDS_TOWER_STATE, 3)
+			release
+			end
+		case 3: 
+			msgbox(format("3"))
+			setvar(VAR_POKESCAPE_WIZARDS_TOWER_STATE, 4)
+			release
+			end
+		case 4: 
+			msgbox(format("4"))
+			setvar(VAR_POKESCAPE_WIZARDS_TOWER_STATE, 5)
+			release
+			end
+		case 5: 
+			msgbox(format("5"))
+			setvar(VAR_POKESCAPE_WIZARDS_TOWER_STATE, 6)
+			release
+			end
+		case 6: 
+			msgbox(format("6"))
+			setvar(VAR_POKESCAPE_WIZARDS_TOWER_STATE, 7)
+			release
+			end
+		case 7: 
+			msgbox(format("7"))
+			setvar(VAR_POKESCAPE_WIZARDS_TOWER_STATE, 8)
+			release
+			end
+		case 8: 
+			msgbox(format("8"))
+			setvar(VAR_POKESCAPE_WIZARDS_TOWER_STATE, 9)
+			release
+			end
+	}
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
