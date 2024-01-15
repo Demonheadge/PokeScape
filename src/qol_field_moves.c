@@ -244,22 +244,22 @@ void Task_SurfToolFieldEffect(u8 taskId)
 
 u32 UseSurf(u32 fieldMoveStatus)
 {
-    HideMapNamePopUpWindow();
+	HideMapNamePopUpWindow();
 	ForcePlayerToPerformMovementAction();
-    LockPlayerAndLoadMon();
+	LockPlayerAndLoadMon();
 #ifdef QOL_NO_MESSAGING
-    FlagSet(FLAG_SYS_USE_SURF);
+	FlagSet(FLAG_SYS_USE_SURF);
 #endif //QOL_NO_MESSAGING
 
-    if (FlagGet(FLAG_SYS_USE_SURF))
-        ScriptContext_SetupScript(EventScript_UseSurfFieldEffect);
-    else if(fieldMoveStatus == FIELD_MOVE_POKEMON)
-        ScriptContext_SetupScript(EventScript_UseSurfMove);
-    else if(fieldMoveStatus == FIELD_MOVE_TOOL)
-        ScriptContext_SetupScript(EventScript_UseSurfTool);
+	if (FlagGet(FLAG_SYS_USE_SURF))
+		ScriptContext_SetupScript(EventScript_UseSurfFieldEffect);
+	else if(fieldMoveStatus == FIELD_MOVE_POKEMON)
+		ScriptContext_SetupScript(EventScript_UseSurfMove);
+	else if(fieldMoveStatus == FIELD_MOVE_TOOL)
+		ScriptContext_SetupScript(EventScript_UseSurfTool);
 
-    FlagSet(FLAG_SYS_USE_SURF);
-    return COLLISION_START_SURFING;
+	FlagSet(FLAG_SYS_USE_SURF);
+	return COLLISION_START_SURFING;
 }
 
 void RemoveRelevantSurfFieldEffect(void)
