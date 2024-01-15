@@ -66,5 +66,6 @@ void SetPlayerInvisibility(bool8 invisible);
 u8 player_get_pos_including_state_based_drift(s16 *x, s16 *y);
 void StartFishing(u8 rod);
 void PlayerAvatarTransition_Surfing(struct ObjectEvent *); // qol_field_moves
+void ForcePlayerToPerformMovementAction(void); // qol_field_moves
 
 #endif // GUARD_FIELD_PLAYER_AVATAR_H

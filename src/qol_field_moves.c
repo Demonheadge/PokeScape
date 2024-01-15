@@ -8,13 +8,11 @@
 #include "item.h"
 #include "field_control_avatar.h"
 #include "map_name_popup.h"
-#include "field_player_avatar.h"
 #include "constants/items.h"
 #include "fldeff.h"
 #include "overworld.h"
 #include "region_map.h"
 #include "item_use.h"
-#include "field_player_avatar.h"
 #include "item.h"
 #include "constants/items.h"
 #include "event_scripts.h"
@@ -247,6 +245,7 @@ void Task_SurfToolFieldEffect(u8 taskId)
 u32 UseSurf(u32 fieldMoveStatus)
 {
     HideMapNamePopUpWindow();
+	ForcePlayerToPerformMovementAction();
     LockPlayerAndLoadMon();
 #ifdef QOL_NO_MESSAGING
     FlagSet(FLAG_SYS_USE_SURF);

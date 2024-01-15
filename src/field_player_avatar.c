@@ -1054,9 +1054,16 @@ void PlayerFreeze(void)
     if (gPlayerAvatar.tileTransitionState == T_TILE_CENTER || gPlayerAvatar.tileTransitionState == T_NOT_MOVING)
     {
         if (IsPlayerNotUsingAcroBikeOnBumpySlope())
-            PlayerForceSetHeldMovement(GetFaceDirectionMovementAction(gObjectEvents[gPlayerAvatar.objectEventId].facingDirection));
+			ForcePlayerToPerformMovementAction(); //qol_field_moves
     }
 }
+
+// Start qol_field_moves
+void ForcePlayerToPerformMovementAction(void)
+{
+	PlayerForceSetHeldMovement(GetFaceDirectionMovementAction(gObjectEvents[gPlayerAvatar.objectEventId].facingDirection));
+}
+// End qol_field_moves
 
 // wheelie idle
 void PlayerIdleWheelie(u8 direction)
