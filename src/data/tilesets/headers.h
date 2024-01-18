@@ -1166,12 +1166,13 @@ const struct Tileset gTileset_Yanille =
     .callback = NULL,
 };
 
-gTileset_Ice_Mountain::
-	.byte TRUE @ is compressed
-	.byte TRUE @ is secondary
-	.2byte 0
-	.4byte gTilesetTiles_Ice_Mountain
-	.4byte gTilesetPalettes_Ice_Mountain
-	.4byte gMetatiles_Ice_Mountain
-	.4byte gMetatileAttributes_Ice_Mountain
-	.4byte NULL
+const struct Tileset gTileset_Ice_Mountain =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+	.tiles = gTilesetTiles_Ice_Mountain,
+	.palettes = gTilesetPalettes_Ice_Mountain,
+	.metatiles = gMetatiles_Ice_Mountain,
+	.metatile_attributes = gMetatileAttributes_Ice_Mountain,
+    .callback = NULL,
+};
