@@ -245,6 +245,12 @@
 #define MOVEMENT_ACTION_EMOTE_X                         0x9E
 #define MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK          0x9F
 
+// Slow Running (Sideways Stairs)
+#define MOVEMENT_ACTION_RUN_DOWN_SLOW                   0xA0
+#define MOVEMENT_ACTION_RUN_UP_SLOW                     0xA1
+#define MOVEMENT_ACTION_RUN_LEFT_SLOW                   0xA2
+#define MOVEMENT_ACTION_RUN_RIGHT_SLOW                  0xA3
+
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF
 
