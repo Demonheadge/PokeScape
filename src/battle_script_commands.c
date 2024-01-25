@@ -14773,17 +14773,17 @@ static void Cmd_handleballthrow(void)
         {
             switch (gLastUsedItem)
             {
-            case ITEM_ULTRA_BALL:
+            case ITEM_IRON_POUCH:
                 ballMultiplier = 200;
                 break;
             case ITEM_SPORT_BALL:
                 if (B_SPORT_BALL_MODIFIER <= GEN_7)
                     ballMultiplier = 150;
-            case ITEM_GREAT_BALL:
+            case ITEM_BRONZE_POUCH:
             case ITEM_SAFARI_BALL:
                 ballMultiplier = 150;
                 break;
-            case ITEM_NET_BALL:
+            case ITEM_LEATHER_POUCH:
                 if (IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_WATER) || IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_BUG))
                     ballMultiplier = B_NET_BALL_MODIFIER >= GEN_7 ? 350 : 300;
                 break;
@@ -14827,11 +14827,11 @@ static void Cmd_handleballthrow(void)
                 if (i == TIME_EVENING || i == TIME_NIGHT || gMapHeader.cave || gMapHeader.mapType == MAP_TYPE_UNDERGROUND)
                     ballMultiplier = (B_DUSK_BALL_MODIFIER >= GEN_7 ? 300 : 350);
                 break;
-            case ITEM_QUICK_BALL:
+            case ITEM_SNAKESKIN_POUCH:
                 if (gBattleResults.battleTurnCounter == 0)
                     ballMultiplier = (B_QUICK_BALL_MODIFIER >= GEN_5 ? 500 : 400);
                 break;
-            case ITEM_LEVEL_BALL:
+            case ITEM_SACRED_POUCH:
                 if (gBattleMons[gBattlerAttacker].level >= 4 * gBattleMons[gBattlerTarget].level)
                     ballMultiplier = 800;
                 else if (gBattleMons[gBattlerAttacker].level > 2 * gBattleMons[gBattlerTarget].level)
@@ -14908,7 +14908,7 @@ static void Cmd_handleballthrow(void)
                         ballAddition = 40;
                 }
                 break;
-            case ITEM_DREAM_BALL:
+            case ITEM_IMPHIDE_POUCH:
                 if (B_DREAM_BALL_MODIFIER >= GEN_8 && (gBattleMons[gBattlerTarget].status1 & STATUS1_SLEEP || GetBattlerAbility(gBattlerTarget) == ABILITY_COMATOSE))
                     ballMultiplier = 400;
                 break;
@@ -14975,7 +14975,7 @@ static void Cmd_handleballthrow(void)
                 maxShakes = BALL_3_SHAKES_SUCCESS;
             }
 
-            if (gLastUsedItem == ITEM_MASTER_BALL)
+            if (gLastUsedItem == ITEM_CRYSTAL_POUCH)
             {
                 shakes = maxShakes;
             }

@@ -14,7 +14,7 @@ WILD_BATTLE_TEST("Pokemon gain exp after catching a Pokemon")
         PLAYER(SPECIES_WOBBUFFET) { Level(level); }
         OPPONENT(SPECIES_CATERPIE) { HP(1); }
     } WHEN {
-        TURN { USE_ITEM(player, ITEM_ULTRA_BALL); }
+        TURN { USE_ITEM(player, ITEM_IRON_POUCH); }
     } SCENE {
         MESSAGE("You used Ultra Ball!");
         ANIMATION(ANIM_TYPE_SPECIAL, B_ANIM_BALL_THROW, player);

@@ -947,19 +947,19 @@ u8 ItemIdToBallId(u16 ballItem)
 {
     switch (ballItem)
     {
-    case ITEM_POKE_BALL:
+    case ITEM_NORMAL_POUCH:
         return BALL_POKE;
-    case ITEM_GREAT_BALL:
+    case ITEM_BRONZE_POUCH:
         return BALL_GREAT;
-    case ITEM_ULTRA_BALL:
+    case ITEM_IRON_POUCH:
         return BALL_ULTRA;
-    case ITEM_MASTER_BALL:
+    case ITEM_CRYSTAL_POUCH:
         return BALL_MASTER;
     case ITEM_PREMIER_BALL:
         return BALL_PREMIER;
     case ITEM_HEAL_BALL:
         return BALL_HEAL;
-    case ITEM_NET_BALL:
+    case ITEM_LEATHER_POUCH:
         return BALL_NET;
     case ITEM_NEST_BALL:
         return BALL_NEST;
@@ -969,19 +969,19 @@ u8 ItemIdToBallId(u16 ballItem)
         return BALL_DUSK;
     case ITEM_TIMER_BALL:
         return BALL_TIMER;
-    case ITEM_QUICK_BALL:
+    case ITEM_SNAKESKIN_POUCH:
         return BALL_QUICK;
     case ITEM_REPEAT_BALL:
         return BALL_REPEAT;
-    case ITEM_LUXURY_BALL:
+    case ITEM_ROYAL_POUCH:
         return BALL_LUXURY;
-    case ITEM_LEVEL_BALL:
+    case ITEM_SACRED_POUCH:
         return BALL_LEVEL;
     case ITEM_LURE_BALL:
         return BALL_LURE;
     case ITEM_MOON_BALL:
         return BALL_MOON;
-    case ITEM_FRIEND_BALL:
+    case ITEM_BLESSED_POUCH:
         return BALL_FRIEND;
     case ITEM_LOVE_BALL:
         return BALL_LOVE;
@@ -989,7 +989,7 @@ u8 ItemIdToBallId(u16 ballItem)
         return BALL_FAST;
     case ITEM_HEAVY_BALL:
         return BALL_HEAVY;
-    case ITEM_DREAM_BALL:
+    case ITEM_IMPHIDE_POUCH:
         return BALL_DREAM;
     case ITEM_SAFARI_BALL:
         return BALL_SAFARI;

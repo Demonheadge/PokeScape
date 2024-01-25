@@ -13,7 +13,7 @@ SootopolisCity_Mart_EventScript_Clerk::
 
 	.align 2
 SootopolisCity_Mart_Pokemart:
-	.2byte ITEM_ULTRA_BALL
+	.2byte ITEM_IRON_POUCH
 	.2byte ITEM_HYPER_POTION
 	.2byte ITEM_MAX_POTION
 	.2byte ITEM_FULL_HEAL

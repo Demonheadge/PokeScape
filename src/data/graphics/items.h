@@ -2141,18 +2141,25 @@ const u32 gItemIconPalette_FragmentOfJas[] = INCBIN_U32("graphics/items/pokescap
 
 const u32 gItemIcon_MEGASTONE_TZHAAR[] = INCBIN_U32("graphics/items/pokescape_icons/fragment_of_jas.4bpp.lz");
 const u32 gItemIconPalette_MEGASTONE_TZHAAR[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/fragment_of_jas.gbapal.lz");  
+
 const u32 gItemIcon_MEGASTONE_TOKHAAR[] = INCBIN_U32("graphics/items/pokescape_icons/fragment_of_jas.4bpp.lz");
 const u32 gItemIconPalette_MEGASTONE_TOKHAAR[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/fragment_of_jas.gbapal.lz");  
+
 const u32 gItemIcon_MEGASTONE_WARRIOR[] = INCBIN_U32("graphics/items/pokescape_icons/fragment_of_jas.4bpp.lz");
 const u32 gItemIconPalette_MEGASTONE_WARRIOR[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/fragment_of_jas.gbapal.lz");  
+
 const u32 gItemIcon_MEGASTONE_SEER[] = INCBIN_U32("graphics/items/pokescape_icons/fragment_of_jas.4bpp.lz");
 const u32 gItemIconPalette_MEGASTONE_SEER[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/fragment_of_jas.gbapal.lz");  
+
 const u32 gItemIcon_MEGASTONE_ARCHER[] = INCBIN_U32("graphics/items/pokescape_icons/fragment_of_jas.4bpp.lz");
 const u32 gItemIconPalette_MEGASTONE_ARCHER[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/fragment_of_jas.gbapal.lz");  
+
 const u32 gItemIcon_MEGASTONE_CHAOS[] = INCBIN_U32("graphics/items/pokescape_icons/fragment_of_jas.4bpp.lz");
 const u32 gItemIconPalette_MEGASTONE_CHAOS[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/fragment_of_jas.gbapal.lz");  
+
 const u32 gItemIcon_MEGASTONE_KALPHITE[] = INCBIN_U32("graphics/items/pokescape_icons/fragment_of_jas.4bpp.lz");
 const u32 gItemIconPalette_MEGASTONE_KALPHITE[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/fragment_of_jas.gbapal.lz");  
+
 const u32 gItemIcon_MEGASTONE_BEAST[] = INCBIN_U32("graphics/items/pokescape_icons/fragment_of_jas.4bpp.lz");
 const u32 gItemIconPalette_MEGASTONE_BEAST[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/fragment_of_jas.gbapal.lz");  
 
@@ -2783,20 +2790,24 @@ const u32 gItemIconPalette_FrogeelBurger[] = INCBIN_U32("graphics/items/pokescap
 
 const u32 gItemIcon_ANCIENT_SHARD[] = INCBIN_U32("graphics/items/pokescape_icons/ancient_shard.4bpp.lz");
 const u32 gItemIconPalette_ANCIENT_SHARD[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/ancient_shard.gbapal.lz");
+
 const u32 gItemIcon_DARK_TOTEM_BASE[] = INCBIN_U32("graphics/items/pokescape_icons/xeric.4bpp.lz");
 const u32 gItemIconPalette_DARK_TOTEM_BASE[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/xeric.gbapal.lz");
+
 const u32 gItemIcon_DARK_TOTEM_MID[] = INCBIN_U32("graphics/items/pokescape_icons/xeric.4bpp.lz");
 const u32 gItemIconPalette_DARK_TOTEM_MID[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/xeric.gbapal.lz");
+
 const u32 gItemIcon_DARK_TOTEM_TOP[] = INCBIN_U32("graphics/items/pokescape_icons/xeric.4bpp.lz");
 const u32 gItemIconPalette_DARK_TOTEM_TOP[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/xeric.gbapal.lz");
+
 const u32 gItemIcon_DARK_TOTEM[] = INCBIN_U32("graphics/items/pokescape_icons/xeric.4bpp.lz");
 const u32 gItemIconPalette_DARK_TOTEM[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/xeric.gbapal.lz");
+
 const u32 gItemIcon_Xeric[] = INCBIN_U32("graphics/items/pokescape_icons/xeric.4bpp.lz");
 const u32 gItemIconPalette_Xeric[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/xeric.gbapal.lz");
+
 const u32 gItemIcon_SLAYER_GEM[] = INCBIN_U32("graphics/items/pokescape_icons/slayergem.4bpp.lz");
 const u32 gItemIconPalette_SLAYER_GEM[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/slayergem.gbapal.lz");
-
-
 
 //pokescape tms
 

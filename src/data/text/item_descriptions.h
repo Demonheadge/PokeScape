@@ -4047,3 +4047,1109 @@ static const u8 sSweetScentToolDesc[] = _(
     "luring pokemon.");
 
 // End qol_field_moves
+
+//POKESCAPE
+static const u8 sAirRuneDesc[] = _(
+    "Makes certain\n"
+    "species of MONSTERs\n"
+    "evolve.");
+
+static const u8 sEvoItemDesc[] = _(
+    "Makes certain\n"
+    "species of MONSTERs\n"
+    "evolve.");
+	
+static const u8 sEvoLegendaryItemDesc[] = _(
+    "Makes Legendary\n"
+    "species of MONSTERs\n"
+    "evolve.");	
+	
+static const u8 sRedScaleDesc[] = _(
+    "A scale obtained\n"
+	"from a Red Dragon.");		
+	
+static const u8 sGreenScaleDesc[] = _(
+    "A scale obtained\n"
+	"from a Green Dragon.");		
+	
+static const u8 sBlueScaleDesc[] = _(
+    "A scale obtained\n"
+	"from a Blue Dragon.");		
+		
+static const u8 sBlackScaleDesc[] = _(
+    "A scale obtained\n"
+	"from a Black Dragon.");		
+	
+static const u8 sFragmentOfJasDesc[] = _(
+    "Allows specific\n"
+    "MONSTERS to\n"
+    "Mega Evolve.");
+
+//pokescape pouches
+static const u8 sNormalPouchDesc[] = _(
+    "The most basic tool\n"
+    "for catching\n"
+    "MONSTERS.");
+	
+static const u8 sBronzePouchDesc[] = _(
+    "The tool made from\n"
+    "Bronze for catching\n"
+    "MONSTERS.");
+	
+static const u8 sIronPouchDesc[] = _(
+    "The tool made from\n"
+    "Iron for catching\n"
+    "MONSTERS.");
+	
+static const u8 sSteelPouchDesc[] = _(
+    "The tool made from\n"
+    "Steel for catching\n"
+    "MONSTERS.");
+	
+static const u8 sBlackPouchDesc[] = _(
+    "The Kinshra designed\n"
+    "this tool for\n"
+    "catching MONSTERS.");
+	
+static const u8 sMithrilPouchDesc[] = _(
+    "The tool made from\n"
+    "Mithril for catching\n"
+    "MONSTERS.");
+	
+static const u8 sAdamantPouchDesc[] = _(
+    "The tool made from\n"
+    "Adamant for\n"
+    "catching MONSTERS.");
+	
+static const u8 sRunePouchDesc[] = _(
+    "The tool made from\n"
+    "Runite for catching\n"
+    "MONSTERS.");
+	
+static const u8 sDragonPouchDesc[] = _(
+    "The best tool\n"
+    "for catching\n"
+    "MONSTERS.");
+	
+static const u8 sCrystalPouchDesc[] = _(
+    "The tool made from\n"
+    "Crystal for catching\n"
+    "Legendary MONSTERS.");
+
+static const u8 sSplitbarkPouchDesc[] = _(
+    "The worst tool\n"
+    "for catching\n"
+    "MONSTERS.");
+	
+static const u8 sDragonbanePouchDesc[] = _(
+    "The tool made from\n"
+    "Bane for catching\n"
+    "Dragon-Types.");
+	
+static const u8 sAugmentedPouchDesc[] = _(
+    "A tool invented\n"
+    "for catching Electric\n"
+    "and Steel-Types.");
+	
+static const u8 sMysticPouchDesc[] = _(
+    "A mysterious tool\n"
+    "for catching\n"
+    "Fairy-Types.");
+	
+static const u8 sBarrowsPouchDesc[] = _(
+    "A cursed tool\n"
+    "for catching\n"
+    "MONSTERS.");
+	
+static const u8 sGranitePouchDesc[] = _(
+    "A granite tool\n"
+    "for catching\n"
+    "Heavy MONSTERS.");
+	
+static const u8 sAncientPouchDesc[] = _(
+    "An ancient tool\n"
+    "designed for catching\n"
+    "Demonic MONSTERS.");
+	
+static const u8 sElementalPouchDesc[] = _(
+    "A tool for \n"
+    "catching Elemental\n"
+    "MONSTERS.");
+	
+static const u8 sTALISMANDesc[] = _(
+    "A mysterious Talisman\n"
+    "that is attracted\n"
+    "towards an altar.");
+
+//COOKS ASSISTANT QUEST ----
+
+static const u8 sSuperLargeEggDesc[] = _(
+    "A super large egg.\n"
+    "\n"
+    "(Cooks Assistant)");
+
+static const u8 sTopQualityMilkDesc[] = _(
+    "Some top quality\n"
+    "milk.\n"
+    "(Cooks Assistant)");
+
+static const u8 sExtraFineFlourDesc[] = _(
+    "Some extra fine\n"
+    "flour.\n"
+    "(Cooks Assistant)");
+
+static const u8 sSpecialCakeDesc[] = _(
+    "A delicious looking\n"
+    "Cake.\n"
+    "(Cooks Assistant)");
+
+//ERNEST QUEST---
+
+static const u8 sFishFoodDesc[] = _(
+    "Could use some\n"
+    "poison.\n"
+    "(Ernest Quest)");
+
+static const u8 sFishFoodPoisonedDesc[] = _(
+    "Use with a fountain\n"
+    "you monster.\n"
+    "(Ernest Quest)");
+
+static const u8 sOilCanDesc[] = _(
+    "Give this to\n"
+    "Prof. Oddenstein.\n"
+    "(Ernest Quest)");
+
+static const u8 sPressureGaugeDesc[] = _(
+    "Give this to\n"
+    "Prof. Oddenstein.\n"
+    "(Ernest Quest)");
+
+static const u8 sRubberTubeDesc[] = _(
+    "Give this to\n"
+    "Prof. Oddenstein.\n"
+    "(Ernest Quest)");
+
+static const u8 sMagicalCageDesc[] = _(
+    "Useful to keep\n"
+    "dead things in.\n"
+    "(Ernest Quest)");
+
+//POKESCAPE HP HEALING
+
+static const u8 sBreadDesc[] = _(
+    "A piece of bread.\n"
+    "\n"
+    "Restores 20HP.");
+
+static const u8 sCakeDesc[] = _(
+    "A whole cake.\n"
+    "\n"
+    "Restores 50HP.");
+
+static const u8 sChocolateCakeDesc[] = _(
+    "An edible piece of\n"
+    "happiness.\n"
+    "Restores 150HP.");
+
+//POKESCAPE STATUS HEALING
+
+static const u8 sChocolateSundayDesc[] = _(
+    "A gnome cocktail\n"
+    "that cures poison.");
+
+static const u8 sBlueberrySpecialDesc[] = _(
+    "A gnome cocktail\n"
+    "healing all status\n"
+    "ailments.");
+
+static const u8 sDrunkDragonDesc[] = _(
+    "A gnome cocktail\n"
+    "that heals burns.");
+
+static const u8 sFruitBlastDesc[] = _(
+    "A gnome cocktail\n"
+    "that cures\n"
+    "paralysis.");
+
+static const u8 sPineapplePunchDesc[] = _(
+    "A gnome cocktail\n"
+    "that awakens\n"
+    "MONSTERS.");
+
+static const u8 sWizardsBlizzardDesc[] = _(
+    "A gnome cocktail\n"
+    "that Defrosts\n"
+    "MONSTERS.");
+
+//POKESCAPE STAT BOOSTING 
+
+static const u8 sPurpleSweetsDesc[] = _(
+    "Raises the level\n"
+    "of a MONSTERS by\n"
+    "one.");
+
+//POKESCAPE FARMING ITEMS
+
+static const u8 sCabbageDesc[] = _(
+    "Herald of the \n"
+    "Brassica. Heals a\n"
+    "paralyzed MONSTER.");
+
+static const u8 sAppleDesc[] = _(
+    "This is a Cupholder.");
+
+static const u8 sBananaDesc[] = _(
+    "This is a Cupholder.");
+
+static const u8 sCadavaberryDesc[] = _(
+    "This is a Cupholder.");
+
+static const u8 sCoconutDesc[] = _(
+    "This is a Cupholder.");
+
+//POKESCAPE SPECIAL ITEMS
+
+static const u8 s10thSigilDesc[] = _(
+    "The sigil of\n"
+    "the squad.\n"
+    "Flinches enemies.");
+
+static const u8 sAbyssalWhipDesc[] = _(
+    "Makes monsters\n"
+    "stronger but locks\n"
+    "moves used.");
+
+static const u8 sArmahelmDesc[] = _(
+    "Increases damage\n"
+    "of flying type\n"
+    "moves.");
+
+static const u8 sBloodFuryDesc[] = _(
+    "Heals monsters\n"
+    "based on damage\n"
+    "dealt.");
+
+static const u8 sBlueBoaterDesc[] = _(
+    "The best hat.\n"
+    "Do not wear this!");
+
+static const u8 sBoneXBowDesc[] = _(
+    "Increases the\n"
+    "accuracy of\n"
+    "monsters.");
+
+static const u8 sBronzeHelmDesc[] = _(
+    "Helm to protect\n"
+    "noobs and unevolved\n"
+    "monsters.");
+
+static const u8 sDagonHaiHatDesc[] = _(
+    "Extends the\n"
+    "Duration of\n"
+    "Terrains used.");
+
+static const u8 sEyePatchDesc[] = _(
+    "Increases the\n"
+    "power of Dark\n"
+    "type moves.");
+
+static const u8 sDragonClawDesc[] = _(
+    "Gives a chance\n"
+    "to strike first\n"
+    "in battle.");
+
+static const u8 sDragonDaggerPoisonDesc[] = _(
+    "Increases the\n"
+    "power of Poison\n"
+    "type moves.");
+
+static const u8 sDragonScimitarDesc[] = _(
+    "Increases the\n"
+    "power of Dragon\n"
+    "type moves.");
+  
+static const u8 sDruidPouchDesc[] = _(
+    "Increases the\n"
+    "power of Grass\n"
+    "type moves.");
+   
+static const u8 sEffigyDesc[] = _(
+    "Powers monster up\n"
+    "if hit by super\n"
+    "effective moves.");
+   
+static const u8 sElementalShieldDesc[] = _(
+    "Increases defence\n"
+    "But locks monsters\n"
+    "out of status moves.");
+  
+static const u8 sFighterBootsDesc[] = _(
+    "Increases the\n"
+    "power of Fighting\n"
+    "type moves.");
+   
+static const u8 sFighterTorsoDesc[] = _(
+    "Decreases speed\n"
+    "but increases EV\n"
+    "gained in battle.");
+    
+static const u8 sFireCapeDesc[] = _(
+    "A cape of lava\n"
+    "burning the user\n"
+    "when worn.");
+   
+static const u8 sGhostSpeakDesc[] = _(
+    "Increases the\n"
+    "power of Ghost\n"
+    "type moves.");
+ 
+static const u8 sGodSwordDesc[] = _(
+    "The godsword\n"
+    "coveted by all.\n"
+    "Heals the user.");
+
+static const u8 sGnomeGogglesDesc[] = _(
+    "Increases Special\n"
+    "attacks but locks\n"
+    "the users moves.");
+ 
+static const u8 sGnomScarfDesc[] = _(
+    "Increases Speed\n"
+    "but locks the users\n"
+    "moves.");
+ 
+static const u8 sGuthanSpearDesc[] = _(
+    "Increases the\n"
+    "health regained\n"
+    "from drain moves.");
+ 
+static const u8 sGraniteMaulDesc[] = _(
+    "Increases the\n"
+    "power of Rock\n"
+    "type moves.");
+   
+static const u8 sHolyWrenchDesc[] = _(
+    "Increases the\n"
+    "power of Electric\n"
+    "type moves.");
+ 
+static const u8 sInfinityBootsDesc[] = _(
+    "Increases the\n"
+    "power of Fairy\n"
+    "type moves.");
+  
+        
+static const u8 sIronmanHelmetDesc[] = _(
+    "Increases the\n"
+    "power of Steel\n"
+    "type moves.");
+    
+static const u8 sGnomeBallDesc[] = _(
+    "Increases the\n"
+    "happiness of its\n"
+    "holder.");
+   
+static const u8 sKerisDesc[] = _(
+    "Increases the\n"
+    "power of Bug\n"
+    "type moves.");
+    
+static const u8 sKrakenTentaclePouchDesc[] = _(
+    "Applies poison\n"
+    "To the monsters\n"
+    "moves.");
+  
+static const u8 sLinzaHammerDesc[] = _(
+    "Bulks up a\n"
+    "monster to hit\n"
+    "back when hit.");
+  
+static const u8 sRabbitFootDesc[] = _(
+    //"Foot of a rabbit.\n"
+    //"Very lucky. Not so\n"
+    //"much for trees.");
+    "Made from Rabbits.\n"
+    "Loved by nesting\n"
+    "birds.");
+
+static const u8 sGodRabbitFootDesc[] = _(
+    //"The Rabbit foot\n"
+    //"blessed by gods.\n"
+    //"Coveted by birds.");
+    "This item is blessed.\n"
+    "Loved by nesting\n"
+    "god birds.");
+
+static const u8 sOrbOfOcullusDesc[] = _(
+    "Increases the\n"
+    "Crit chance of\n"
+    "moves.");
+
+static const u8 sOverloadhDesc[] = _(
+    "Increases the\n"
+    "power of moves\n"
+    "but drains life.");
+    
+static const u8 sPrismaticShardDesc[] = _(
+    "Increases the\n"
+    "experience gained\n"
+    "in battle.");
+
+static const u8 sPulseCoreDesc[] = _(
+    "Shares experience\n"
+    "between your\n"
+    "monsters.");
+  
+static const u8 sRingOfLifeDesc[] = _(
+    "Ejects the user\n"
+    "out of battle\n"
+    "when in danger.");
+   
+static const u8 sRingOfWealthDesc[] = _(
+    "Makes people\n"
+    "genereous after\n"
+    "battle.");
+  
+static const u8 sRockCakeDesc[] = _(
+    "Invites the holder\n"
+    "to eat it.\n"
+    "Hurts the user.");
+  
+static const u8 sSaraBrewDesc[] = _(
+    "Heals the user\n"
+    "at the end of\n"
+    "each turn.");
+    
+static const u8 sSilverSickleDesc[] = _(
+    "Repels wild\n"
+    "monsters from\n"
+    "encountering you.");
+   
+static const u8 sSnelmDesc[] = _(
+    "The best fashion\n"
+    "you can ever\n"
+    "adorn yourself with.");
+   
+static const u8 sSpiritShieldDesc[] = _(
+    "A shield from the\n"
+    "spirit realm\n"
+    "that protects you.");
+   
+static const u8 sSpottedCapeDesc[] = _(
+    "Makes the user\n"
+    "fast enough to\n"
+    "always escape.");
+
+static const u8 sEarthStaffDesc[] = _(
+    "Increases the\n"
+    "power of Ground\n"
+    "type moves.");
+
+ 
+static const u8 sTinderboxDesc[] = _(
+    "Increases the\n"
+    "power of Fire\n"
+    "type moves.");
+
+   
+static const u8 sTomeOfFrostDesc[] = _(
+    "Increases the\n"
+    "power of Ice\n"
+    "type moves.");
+
+static const u8 sWaterskinDesc[] = _(
+    "Increases the\n"
+    "power of Water\n"
+    "type moves.");
+
+static const u8 sWizardHatDesc[] = _(
+    "Increases the\n"
+    "power of Psychic\n"
+    "type moves.");
+
+    
+static const u8 sBallOfWoolDesc[] = _(
+    "Increases the\n"
+    "power of Normal\n"
+    "type moves.");
+
+  static const u8 sVeracFlailDesc[] = _(
+    "Decreases the PP\n"
+    "of enemies\n"
+    "upon impact.");
+
+static const u8 sDharokaxeDesc[] = _(
+    "Deals more damage\n"
+    "based on the HP\n"
+    "of the enemy.");
+
+static const u8 sKarilXBowDesc[] = _(
+    "Decreases the\n"
+    "stats of foe\n"
+    "upon impact.");
+
+static const u8 sahrimStaffDesc[] = _(
+    "Decreases the\n"
+    "stats of foes\n"
+    "hit.");
+
+static const u8 sToragHammerDesc[] = _(
+    "Lowers the speed\n"
+    "of foes hit\n"
+    "on contact.");
+
+static const u8 sAkriaeMaceDesc[] = _(
+    "Increases your\n"
+    "PP in battle\n"
+    "with foes.");
+
+static const u8 sDFSDesc[] = _(
+    "Decreases damage\n"
+    "from Dragon\n"
+    "type moves.");
+
+static const u8 sPhoenixNeckDesc[] = _(
+    "Holds the user\n"
+    "alive on fatal\n"
+    "impact.");
+
+static const u8 sMithrilScimitarDesc[] = _(
+    "Increases the\n"
+    "power of unevolved\n"
+    "monsters.");
+
+static const u8 sSnowGlobeDesc[] = _(
+    "Extends the\n"
+    "duration of\n"
+    "weather.");
+
+static const u8 sNewcomerMapDesc[] = _(
+    "A map of PokeScape.\n"
+    "\n"
+    "");
+//KEY ITEMS  HMS
+static const u8 sPickaxeDesc[] = _(
+    "Used to mine rocks.\n"
+    "\n"
+    "");
+
+static const u8 sBoatDesc[] = _(
+    "Used to sail the\n"
+    "oceans of Gielinor.\n"
+    "");
+
+static const u8 sDragonAxeDesc[] = _(
+    "Used to cut down.\n"
+    "Trees.\n"
+    "");
+
+static const u8 sBattleaxeDesc[] = _(
+    "Used to move\n"
+    "boulders.\n"
+    "");
+
+static const u8 sDivingGearDesc[] = _(
+    "Used to dive under\n"
+    "the ocean.\n"
+    "");
+
+static const u8 sSpadeDesc[] = _(
+    "Used to escape\n"
+    "dungeons.\n"
+    "");
+
+static const u8 sTeleportsDesc[] = _(
+    "Used to teleport\n"
+    "around Gielinor.\n"
+    "");
+
+static const u8 sGrappleDesc[] = _(
+    "Used to climb\n"
+    "waterfalls and\n"
+    "cliffs.");
+
+static const u8 sLanternDesc[] = _(
+    "Used in caves and\n"
+    "dark places.\n"
+    "");
+
+static const u8 sTerrorbirdDesc[] = _(
+    "Summon a Terrorbird\n"
+    "to ride.\n"
+    "");
+
+static const u8 sYakDesc[] = _(
+    "Summon a Yak\n"
+    "to ride.\n"
+    "");
+
+static const u8 sSmallNetDesc[] = _(
+    "Use by any body of\n"
+    "water to fish for\n"
+    "wild MONSTERS.");
+
+static const u8 sBigNetDesc[] = _(
+    "A decent fishing\n"
+    "net for catching\n"
+    "wild MONSTERS.");
+
+static const u8 sDragonNetDesc[] = _(
+    "The best fishing\n"
+    "net for catching\n"
+    "wild MONSTERS.");
+
+//TREASURES------
+
+static const u8 sFlaxDesc[] = _(
+    "A flexible plant\n"
+    "that would sell\n"
+    "at a cheap price.");
+
+static const u8 sSpiritShardDesc[] = _(
+    "Shard of an obelisk\n"
+    "that would sell\n"
+    "at a cheap price.");
+
+static const u8 sMintCakeDesc[] = _(
+    "An strange cake\n"
+    "that would sell\n"
+    "at a cheap price.");
+
+static const u8 sHweenMaskDesc[] = _(
+    "2Spooky4Me!\n"
+    "Can be sold at\n"
+    "a high price.");
+
+static const u8 sSantaHatDesc[] = _(
+    "Ho, ho, ho!\n"
+    "Can be sold at\n"
+    "a high price.");
+
+static const u8 sPartyHatDesc[] = _(
+    "A paper hat.\n"
+    "Can be sold at\n"
+    "a high price.");
+
+//-----------
+static const u8 sSplitbarkDesc[] = _(
+    "A hold item that\n"
+    "boosts PSYCHIC-\n"
+    "type moves.");
+
+static const u8 sMilkBucketDesc[] = _(
+    "Used in as an\n"
+    "ingredient in \n"
+    "various foods.");
+
+static const u8 sVanillaMilkDesc[] = _(
+    "Makes certain\n"
+    "species of MONSTERs\n"
+    "evolve.");
+
+static const u8 sStrawberryMilkDesc[] = _(
+    "Makes certain\n"
+    "species of MONSTERs\n"
+    "evolve.");
+
+static const u8 sChocolateMilkDesc[] = _(
+    "Makes certain\n"
+    "species of MONSTERs\n"
+    "evolve.");
+
+static const u8 sSpeedLampDesc[] = _(
+    "A lamp left by a\n"
+    "Genie. Raises the\n"
+    "base SPEED stat.");
+
+static const u8 sEmptyBucketDesc[] = _(
+    "An empty bucket.\n"
+    "Nothing interesting\n"
+    "happens.");
+
+//START -- SCROLLS
+
+static const u8 sScroll_01_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Sunny Day)");
+
+static const u8 sScroll_02_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Rain Dance)");
+
+static const u8 sScroll_03_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Hail)");
+
+static const u8 sScroll_04_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Sandstorm)");
+
+static const u8 sScroll_05_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Tailwind)");
+
+static const u8 sScroll_06_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Nitro Charge)");
+
+static const u8 sScroll_07_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Razor Shell)");
+
+static const u8 sScroll_08_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Solar Blade)");
+
+static const u8 sScroll_09_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Grass Terrain)");
+
+static const u8 sScroll_10_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Electric Terrain)");
+
+static const u8 sScroll_11_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Psychic Terrain)");
+
+static const u8 sScroll_12_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Misty Terrain)");
+
+static const u8 sScroll_13_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Brine)");
+
+static const u8 sScroll_14_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Energy Ball)");
+
+static const u8 sScroll_15_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Lava Plume)");
+
+static const u8 sScroll_16_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Hurricane)");
+
+static const u8 sScroll_17_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Aerial Ace)");
+
+static const u8 sScroll_18_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "()");
+
+static const u8 sScroll_19_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Volt Tackle)");
+
+static const u8 sScroll_20_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Draining Kiss)");
+
+static const u8 sScroll_21_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Toxic)");
+
+static const u8 sScroll_22_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Shadow Bone)");
+
+static const u8 sScroll_23_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Baneful Bunker)");
+
+static const u8 sScroll_24_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(U-Turn)");
+
+static const u8 sScroll_25_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Guillotine)");
+
+static const u8 sScroll_26_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Kings Shield)");
+
+static const u8 sScroll_27_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Sacred Sword)");
+
+static const u8 sScroll_28_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Swords Dance)");
+
+static const u8 sScroll_29_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Secret Sword)");
+
+static const u8 sScroll_30_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Return)");
+
+static const u8 sScroll_31_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Frustration)");
+
+static const u8 sScroll_32_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(False Swipe)");
+
+static const u8 sScroll_33_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Dragonbreath)");
+
+static const u8 sScroll_34_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Dragon Hammer)");
+
+static const u8 sScroll_35_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Leech Life)");
+
+static const u8 sScroll_36_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Slack Off)");
+
+static const u8 sScroll_37_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Thousand Arrows)");
+
+static const u8 sScroll_38_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Rock Tomb)");
+
+static const u8 sScroll_39_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Revelation Dance)");
+
+static const u8 sScroll_40_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Volt Switch)");
+
+static const u8 sScroll_41_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Flash Cannon)");
+
+static const u8 sScroll_42_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Pollen Puff)");
+
+static const u8 sScroll_43_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Psycho Cut)");
+
+static const u8 sScroll_44_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Play Rough)");
+
+static const u8 sScroll_45_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Spectral Theif)");
+
+static const u8 sScroll_46_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Dragon Tail)");
+
+static const u8 sScroll_47_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Lunar Dance)");
+
+static const u8 sScroll_48_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Power Gem)");
+
+static const u8 sScroll_49_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Snarl)");
+
+static const u8 sScroll_50_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Poison Jab)");
+
+static const u8 sScroll_51_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Icicle Crash)");
+
+static const u8 sScroll_52_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "()");
+
+static const u8 sScroll_53_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Ice Beam)");
+
+static const u8 sScroll_54_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Mud Bomb)");
+
+static const u8 sScroll_55_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Hex)");
+
+static const u8 sScroll_56_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Switcheroo)");
+
+static const u8 sScroll_57_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Psyshock)");
+
+static const u8 sScroll_58_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Sludge Wave)");
+
+static const u8 sScroll_59_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Spikes)");
+
+static const u8 sScroll_60_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Bulk Up)");
+
+static const u8 sScroll_61_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Pay Day)");
+
+static const u8 sScroll_62_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Defog)");
+
+static const u8 sScroll_63_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Trick or Treat)");
+
+static const u8 sScroll_64_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Revenge)");
+
+static const u8 sScroll_65_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Ice Hammer)");
+
+static const u8 sScroll_66_Desc[] = _(
+    "This Scroll\n"
+    "contains the move:\n"
+    "(Brutal Swing)");
+
+//END -- SCROLLS
+
+static const u8 sANCIENT_SHARD_Desc[] = _(
+    "An infused crystal\n"
+    "with teleportation\n"
+    "properties.");
+
+static const u8 sDARK_TOTEM_BASE_Desc[] = _(
+    "A piece of a\n"
+    "Dark Totem. Combined\n"
+    "with other pieces.");
+
+static const u8 sDARK_TOTEM_MID_Desc[] = _(
+    "A piece of a\n"
+    "Dark Totem. Combined\n"
+    "with other pieces.");
+
+static const u8 sDARK_TOTEM_TOP_Desc[] = _(
+    "A piece of a\n"
+    "Dark Totem. Combined\n"
+    "with other pieces.");
+
+static const u8 sDARK_TOTEM_Desc[] = _(
+    "A presence emanates\n"
+    "from within. What does\n"
+    "this do?");
+
+static const u8 sXeric_Desc[] = _(
+    "An amulet that\n"
+    "will teleport you\n"
+    "to another land.");
+    
+static const u8 sSLAYER_GEM_Desc[] = _(
+    "A gem that contacts\n"
+    "your Slayer Master.\n"
+    "");
+
+static const u8 sFrogeelBurgerDesc[] = _(
+    "A Fresh burger\n"
+    "made from Frogeels.\n"
+    "Tastes like AAAAA!");
+
+static const u8 sUnstuckDesc[] = _(
+    "If you are stuck\n"
+    "use this item.\n"
+    "");	
+
+static const u8 sDGItemDesc[] = _(
+    "An item that\n"
+    "can be used within\n"
+    "Dungeoneering.");
+
+static const u8 sCupholderDesc[] = _(
+    "This is a Cupholder.");

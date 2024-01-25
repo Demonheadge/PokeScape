@@ -685,17 +685,17 @@ static void InheritIVs(struct Pokemon *egg, struct DayCare *daycare)
 
 static void InheritPokeball(struct Pokemon *egg, struct BoxPokemon *father, struct BoxPokemon *mother)
 {
-    u16 inheritBall = ITEM_POKE_BALL;
+    u16 inheritBall = ITEM_NORMAL_POUCH;
     u16 fatherBall = GetBoxMonData(father, MON_DATA_POKEBALL);
     u16 motherBall = GetBoxMonData(mother, MON_DATA_POKEBALL);
     u16 fatherSpecies = GetBoxMonData(father, MON_DATA_SPECIES);
     u16 motherSpecies = GetBoxMonData(mother, MON_DATA_SPECIES);
 
-    if (fatherBall == ITEM_MASTER_BALL || fatherBall == ITEM_CHERISH_BALL)
-        fatherBall = ITEM_POKE_BALL;
+    if (fatherBall == ITEM_CRYSTAL_POUCH || fatherBall == ITEM_CHERISH_BALL)
+        fatherBall = ITEM_NORMAL_POUCH;
 
-    if (motherBall == ITEM_MASTER_BALL || motherBall == ITEM_CHERISH_BALL)
-        motherBall = ITEM_POKE_BALL;
+    if (motherBall == ITEM_CRYSTAL_POUCH || motherBall == ITEM_CHERISH_BALL)
+        motherBall = ITEM_NORMAL_POUCH;
 
     if (P_BALL_INHERITING >= GEN_7)
     {
@@ -1110,7 +1110,7 @@ void CreateEgg(struct Pokemon *mon, u16 species, bool8 setHotSpringsLocation)
 
     CreateMon(mon, species, EGG_HATCH_LEVEL, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
     metLevel = 0;
-    ball = ITEM_POKE_BALL;
+    ball = ITEM_NORMAL_POUCH;
     language = LANGUAGE_JAPANESE;
     SetMonData(mon, MON_DATA_POKEBALL, &ball);
     SetMonData(mon, MON_DATA_NICKNAME, sJapaneseEggNickname);
@@ -1137,7 +1137,7 @@ static void SetInitialEggData(struct Pokemon *mon, u16 species, struct DayCare *
     personality = daycare->offspringPersonality;
     CreateMon(mon, species, EGG_HATCH_LEVEL, USE_RANDOM_IVS, TRUE, personality, OT_ID_PLAYER_ID, 0);
     metLevel = 0;
-    ball = ITEM_POKE_BALL;
+    ball = ITEM_NORMAL_POUCH;
     language = LANGUAGE_JAPANESE;
     SetMonData(mon, MON_DATA_POKEBALL, &ball);
     SetMonData(mon, MON_DATA_NICKNAME, sJapaneseEggNickname);

@@ -313,7 +313,7 @@ Script_CheckDexFlag::
 
 Script_DexFlagSet::
 	msgbox Text_DexFlagSet, MSGBOX_DEFAULT
-	giveitem ITEM_MASTER_BALL, 100
+	giveitem ITEM_CRYSTAL_POUCH, 100
 	release
 	end
 

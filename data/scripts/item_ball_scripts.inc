@@ -15,7 +15,7 @@ Route104_EventScript_ItemPPUp::
 	end
 
 Route104_EventScript_ItemPokeBall::
-	finditem ITEM_POKE_BALL
+	finditem ITEM_NORMAL_POUCH
 	end
 
 Route104_EventScript_ItemXAccuracy::
@@ -115,7 +115,7 @@ Route115_EventScript_ItemIron::
 	end
 
 Route115_EventScript_ItemGreatBall::
-	finditem ITEM_GREAT_BALL
+	finditem ITEM_BRONZE_POUCH
 	end
 
 Route115_EventScript_ItemHealPowder::
@@ -147,7 +147,7 @@ Route116_EventScript_ItemPotion::
 	end
 
 Route117_EventScript_ItemGreatBall::
-	finditem ITEM_GREAT_BALL
+	finditem ITEM_BRONZE_POUCH
 	end
 
 Route117_EventScript_ItemRevive::
@@ -227,7 +227,7 @@ Route123_EventScript_ItemCalcium::
 	end
 
 Route123_EventScript_ItemUltraBall::
-	finditem ITEM_ULTRA_BALL
+	finditem ITEM_IRON_POUCH
 	end
 
 Route123_EventScript_ItemElixir::
@@ -323,7 +323,7 @@ LilycoveCity_EventScript_ItemMaxRepel::
 	end
 
 MossdeepCity_EventScript_ItemNetBall::
-	finditem ITEM_NET_BALL
+	finditem ITEM_LEATHER_POUCH
 	end
 
 PetalburgWoods_EventScript_ItemXAttack::
@@ -331,7 +331,7 @@ PetalburgWoods_EventScript_ItemXAttack::
 	end
 
 PetalburgWoods_EventScript_ItemGreatBall::
-	finditem ITEM_GREAT_BALL
+	finditem ITEM_BRONZE_POUCH
 	end
 
 PetalburgWoods_EventScript_ItemEther::
@@ -343,7 +343,7 @@ PetalburgWoods_EventScript_ItemParalyzeHeal::
 	end
 
 RusturfTunnel_EventScript_ItemPokeBall::
-	finditem ITEM_POKE_BALL
+	finditem ITEM_NORMAL_POUCH
 	end
 
 RusturfTunnel_EventScript_ItemMaxEther::
@@ -355,7 +355,7 @@ GraniteCave_1F_EventScript_ItemEscapeRope::
 	end
 
 GraniteCave_B1F_EventScript_ItemPokeBall::
-	finditem ITEM_POKE_BALL
+	finditem ITEM_NORMAL_POUCH
 	end
 
 GraniteCave_B2F_EventScript_ItemRepel::
@@ -399,7 +399,7 @@ MeteorFalls_B1F_2R_EventScript_ItemTMDragonClaw::
 	end
 
 NewMauville_Inside_EventScript_ItemUltraBall::
-	finditem ITEM_ULTRA_BALL
+	finditem ITEM_IRON_POUCH
 	end
 
 NewMauville_Inside_EventScript_ItemEscapeRope::
@@ -443,7 +443,7 @@ AbandonedShip_CaptainsOffice_EventScript_ItemStorageKey::
 	end
 
 AbandonedShip_HiddenFloorRooms_EventScript_ItemLuxuryBall::
-	finditem ITEM_LUXURY_BALL
+	finditem ITEM_ROYAL_POUCH
 	end
 
 AbandonedShip_HiddenFloorRooms_EventScript_ItemScanner::
@@ -483,7 +483,7 @@ SafariZone_Southeast_EventScript_ItemBigPearl::
 	end
 
 MtPyre_2F_EventScript_ItemUltraBall::
-	finditem ITEM_ULTRA_BALL
+	finditem ITEM_IRON_POUCH
 	end
 
 MtPyre_3F_EventScript_ItemSuperRepel::
@@ -511,7 +511,7 @@ MtPyre_Exterior_EventScript_ItemTMSkillSwap::
 	end
 
 AquaHideout_B1F_EventScript_ItemMasterBall::
-	finditem ITEM_MASTER_BALL
+	finditem ITEM_CRYSTAL_POUCH
 	end
 
 AquaHideout_B1F_EventScript_ItemNugget::
@@ -527,7 +527,7 @@ AquaHideout_B2F_EventScript_ItemNestBall::
 	end
 
 AquaHideout_B2F_EventScript_ItemMasterBall::
-	finditem ITEM_MASTER_BALL      // Unused
+	finditem ITEM_CRYSTAL_POUCH      // Unused
 	end
 
 Route119_EventScript_ItemNugget::

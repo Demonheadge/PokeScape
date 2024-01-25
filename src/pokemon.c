@@ -814,7 +814,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     SetBoxMonData(boxMon, MON_DATA_MET_LOCATION, &value);
     SetBoxMonData(boxMon, MON_DATA_MET_LEVEL, &level);
     SetBoxMonData(boxMon, MON_DATA_MET_GAME, &gGameVersion);
-    value = ITEM_POKE_BALL;
+    value = ITEM_NORMAL_POUCH;
     SetBoxMonData(boxMon, MON_DATA_POKEBALL, &value);
     SetBoxMonData(boxMon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
 
@@ -3100,7 +3100,7 @@ bool8 ExecuteTableBasedItemEffect(struct Pokemon *mon, u16 item, u8 partyIndex, 
             friendship += friendshipChange;                                                             \
         if (friendshipChange > 0)                                                                       \
         {                                                                                               \
-            if (GetMonData(mon, MON_DATA_POKEBALL, NULL) == ITEM_LUXURY_BALL)                           \
+            if (GetMonData(mon, MON_DATA_POKEBALL, NULL) == ITEM_ROYAL_POUCH)                           \
                 friendship++;                                                                           \
             if (GetMonData(mon, MON_DATA_MET_LOCATION, NULL) == GetCurrentRegionMapSectionId())         \
                 friendship++;                                                                           \
@@ -4481,7 +4481,7 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
             friendship += mod;
             if (mod > 0)
             {
-                if (GetMonData(mon, MON_DATA_POKEBALL, 0) == ITEM_LUXURY_BALL)
+                if (GetMonData(mon, MON_DATA_POKEBALL, 0) == ITEM_ROYAL_POUCH)
                     friendship++;
                 if (GetMonData(mon, MON_DATA_MET_LOCATION, 0) == GetCurrentRegionMapSectionId())
                     friendship++;

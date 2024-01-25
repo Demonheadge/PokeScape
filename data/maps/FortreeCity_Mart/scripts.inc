@@ -13,8 +13,8 @@ FortreeCity_Mart_EventScript_Clerk::
 
 	.align 2
 FortreeCity_Mart_Pokemart:
-	.2byte ITEM_GREAT_BALL
-	.2byte ITEM_ULTRA_BALL
+	.2byte ITEM_BRONZE_POUCH
+	.2byte ITEM_IRON_POUCH
 	.2byte ITEM_SUPER_POTION
 	.2byte ITEM_HYPER_POTION
 	.2byte ITEM_ANTIDOTE

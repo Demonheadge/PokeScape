@@ -5425,7 +5425,7 @@ static void PrintStatsScreen_Moves_Top(u8 taskId)
     else
     {
         StringCopy(gStringVar4, gText_CommunicationError);
-        item = ITEM_MASTER_BALL;
+        item = ITEM_CRYSTAL_POUCH;
     }
 
     //Egg/TM/Level/Tutor Item Icon

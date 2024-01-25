@@ -1657,4 +1657,12 @@ void ItemUseOnFieldCB_SweetScentTool(u8 taskId)
     DestroyTask(taskId);
 }
 // End qol_field_moves
+
+extern void  CB2_FieldShowRegionMap(void);
+
+void ItemUseOutOfBattle_Map(u8 taskId){
+    gBagMenu->newScreenCallback = CB2_FieldShowRegionMap;
+	Task_FadeAndCloseBagMenu(taskId);
+}
+
 #undef tUsingRegisteredKeyItem

@@ -278,7 +278,7 @@ static const u16 sQuizLadyPrizes[] =
     ITEM_WATMEL_BERRY,
     ITEM_BELUE_BERRY,
     ITEM_DURIN_BERRY,
-    ITEM_LUXURY_BALL,
+    ITEM_ROYAL_POUCH,
     ITEM_TM_HYPER_BEAM,
     ITEM_BIG_PEARL,
     ITEM_STAR_PIECE,
@@ -331,8 +331,8 @@ static const u16 sFavorLadyAcceptedItems_Roundish[] =
     ITEM_GREPA_BERRY,
     ITEM_MAGOST_BERRY,
     ITEM_WATMEL_BERRY,
-    ITEM_POKE_BALL,
-    ITEM_ULTRA_BALL,
+    ITEM_NORMAL_POUCH,
+    ITEM_IRON_POUCH,
     ITEM_NONE
 };
 
@@ -375,7 +375,7 @@ static const u16 sFavorLadyAcceptedItems_Shiny[] =
     ITEM_TWISTED_SPOON,
     ITEM_SILVER_POWDER,
     ITEM_BRIGHT_POWDER,
-    ITEM_LUXURY_BALL,
+    ITEM_ROYAL_POUCH,
     ITEM_PREMIER_BALL,
     ITEM_NONE
 };
@@ -422,7 +422,7 @@ static const u16 *const sFavorLadyAcceptedItemLists[] =
 
 static const u16 sFavorLadyPrizes[] =
 {
-    ITEM_LUXURY_BALL,
+    ITEM_ROYAL_POUCH,
     ITEM_NUGGET,
     ITEM_PROTEIN,
     ITEM_HEART_SCALE,
