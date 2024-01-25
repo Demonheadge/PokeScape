@@ -1419,3 +1419,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Dungeoneering_15/scripts.inc"
 	.include "data/maps/Dungeoneering_16/scripts.inc"
 	.include "data/maps/Dungeoneering_Lobby/scripts.inc"
+	
+    .include "data/scripts/qol_field_move_scripts.inc" @ qol_field_moves 

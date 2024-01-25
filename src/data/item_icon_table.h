@@ -859,6 +859,18 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_SWIFT_MOCHI] =  {gItemIcon_Mochi, gItemIconPalette_SwiftMochi},
     [ITEM_FRESH_START_MOCHI] =  {gItemIcon_Mochi, gItemIconPalette_FreshStartMochi},
     [ITEM_GLIMMERING_CHARM] = {gItemIcon_GlimmeringCharm, gItemIconPalette_GlimmeringCharm},
+        // Start qol_field_moves
+    [ITEM_CUT_TOOL] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
+    [ITEM_FLY_TOOL] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
+    [ITEM_SURF_TOOL] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
+    [ITEM_STRENGTH_TOOL] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
+    [ITEM_FLASH_TOOL] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
+    [ITEM_ROCKSMASH_TOOL] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
+    [ITEM_WATERFALL_TOOL] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
+    [ITEM_DIVE_TOOL] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
+    [ITEM_TELEPORT_TOOL] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
+    [ITEM_SWEETSCENT_TOOL] = {gItemIcon_QuestionMark, gItemIconPalette_QuestionMark},
+        // End qol_field_moves
     // Return to field arrow
     [ITEMS_COUNT] = {gItemIcon_ReturnToFieldArrow, gItemIconPalette_ReturnToFieldArrow},
 };

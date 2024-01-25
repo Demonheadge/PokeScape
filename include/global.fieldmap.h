@@ -296,6 +296,11 @@ enum
     //sideways_stairs
     COLLISION_SIDEWAYS_STAIRS_TO_RIGHT,
     COLLISION_SIDEWAYS_STAIRS_TO_LEFT
+    //Start qol_field_moves
+    COLLISION_START_SURFING,
+    COLLISION_START_CUT,
+    COLLISION_START_ROCK_SMASH
+    //End qol_field_moves
 };
 
 // player running states

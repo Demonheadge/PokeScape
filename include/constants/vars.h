@@ -101,55 +101,55 @@
 #define VAR_POKESCAPE_LUMBRIDGE_CASTLE_STATE 0x4052 // POKESCAPE Unused Var
 #define VAR_LAVARIDGE_TOWN_STATE             0x4053
 #define VAR_CURRENT_SECRET_BASE              0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
-#define VAR_POKESCAPE_WIZARDS_TOWER_STATE            0x4055 // Unused Var
-#define VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE            0x4056 // Unused Var
-#define VAR_POKESCAPE_RIMMINGTON_STATE                 0x4057
-#define VAR_POKESCAPE_DRAYNOR_GUARD_STATE             0x4058
-#define VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE              0x4059 // Unused Var
-#define VAR_POKESCAPE_RAC_QUEST_STATE              0x405A
-#define VAR_POKESCAPE_RAC_QUEST_ELEJ               0x405B // Unused Var
-#define VAR_POKESCAPE_RAC_QUEST_JAGEXMODS              0x405C // Unused Var
-#define VAR_POKESCAPE_RAC_QUEST_RABBITS              0x405D
+#define VAR_POKESCAPE_WIZARDS_TOWER_STATE    0x4055 // Unused Var
+#define VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE 0x4056 // Unused Var
+#define VAR_POKESCAPE_RIMMINGTON_STATE       0x4057
+#define VAR_POKESCAPE_DRAYNOR_GUARD_STATE    0x4058
+#define VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE 0x4059 // Unused Var
+#define VAR_POKESCAPE_RAC_QUEST_STATE        0x405A
+#define VAR_POKESCAPE_RAC_QUEST_ELEJ         0x405B // Unused Var
+#define VAR_POKESCAPE_RAC_QUEST_JAGEXMODS    0x405C // Unused Var
+#define VAR_POKESCAPE_RAC_QUEST_RABBITS      0x405D
 #define VAR_SOOTOPOLIS_CITY_STATE            0x405E
 #define VAR_EVER_GRANDE_CITY_STATE           0x405F // Unused Var
-#define VAR_POKESCAPE_KARAMJAVOLCANO_STATE                0x4060
-#define VAR_POKESCAPE_DRAYNORMANOR_LEVER_STATE            0x4061 // Unused Var
-#define VAR_POKESCAPE_ERNEST_QUEST_STATE                  0x4062 // Unused Var
-#define VAR_POKESCAPE_LESSERDEMON_STATE                   0x4063
-#define VAR_POKESCAPE_POTTERINGTON_FARM_STATE             0x4064 // Unused Var
-#define VAR_POKESCAPE_FALADOR_STATE                   0x4065 // Unused Var
-#define VAR_POKESCAPE_MODTIMBO_STATE                   0x4066 // Unused Var
-#define VAR_GIANTMOLE_STATE                   0x4067 // Unused Var
-#define VAR_GOBLINVILLAGE_STATE                   0x4068 // Unused Var
-#define VAR_WILDERNESS_BLOCK_STATE                   0x4069
-#define VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE       0x406A // Unused Var
-#define VAR_OPENWORLD_STATE                   0x406B ////Should remove and change this to a FLAG!!!
+#define VAR_POKESCAPE_KARAMJAVOLCANO_STATE   0x4060
+#define VAR_POKESCAPE_DRAYNORMANOR_LEVER_STATE 0x4061 // Unused Var
+#define VAR_POKESCAPE_ERNEST_QUEST_STATE     0x4062 // Unused Var
+#define VAR_POKESCAPE_LESSERDEMON_STATE      0x4063
+#define VAR_POKESCAPE_POTTERINGTON_FARM_STATE 0x4064 // Unused Var
+#define VAR_POKESCAPE_FALADOR_STATE          0x4065 // Unused Var
+#define VAR_POKESCAPE_MODTIMBO_STATE         0x4066 // Unused Var
+#define VAR_GIANTMOLE_STATE                  0x4067 // Unused Var
+#define VAR_GOBLINVILLAGE_STATE              0x4068 // Unused Var
+#define VAR_WILDERNESS_BLOCK_STATE           0x4069
+#define VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE 0x406A // Unused Var
+#define VAR_OPENWORLD_STATE                  0x406B ////Should remove and change this to a FLAG!!!
 #define VAR_ROUTE113_STATE                   0x406C // Unused Var
-#define VAR_GAMEMODE_LEVEL_SCALING                   0x406D // Unused Var
-#define VAR_EVOLUTION_MAP_STATE                   0x406E // Unused Var
+#define VAR_GAMEMODE_LEVEL_SCALING           0x406D // Unused Var
+#define VAR_EVOLUTION_MAP_STATE              0x406E // Unused Var
 #define VAR_ROUTE116_STATE                   0x406F
-#define VAR_POKESCAPE_GAMEMODE_STATE                   0x4070 // Unused Var
-#define VAR_POKESCAPE_VARROCK_GYM_QUEST                   0x4071
-#define VAR_POKESCAPE_TZHAAR_GYM_QUEST                   0x4072
-#define VAR_POKESCAPE_GOLDENGNOMES                   0x4073 // Unused Var
+#define VAR_POKESCAPE_GAMEMODE_STATE         0x4070 // Unused Var
+#define VAR_POKESCAPE_VARROCK_GYM_QUEST      0x4071
+#define VAR_POKESCAPE_TZHAAR_GYM_QUEST       0x4072
+#define VAR_POKESCAPE_GOLDENGNOMES           0x4073 // Unused Var
 #define VAR_CALLISTO_STATE                   0x4074
-#define VAR_POKESCAPE_ALKHARID_GYM_QUEST                   0x4075 // Unused Var
-#define VAR_POKESCAPE_ALKHARID_GYM_ALI_STATE                   0x4076 // Unused Var
-#define VAR_GAMEMODE_MONSTERS_STATE                   0x4077 // Unused Var
-#define VAR_GAMEMODE_SCALE_EVOLUTION_STATE                   0x4078 // Unused Var
-#define VAR_SLAYER_LEFT_TO_DEFEAT                   0x4079 // Unused Var
-#define VAR_SLAYER_ASSIGNMENT                   0x407A // Unused Var
-#define VAR_SLAYER_COMPLETE                   0x407B
+#define VAR_POKESCAPE_ALKHARID_GYM_QUEST     0x4075 // Unused Var
+#define VAR_POKESCAPE_ALKHARID_GYM_ALI_STATE 0x4076 // Unused Var
+#define VAR_GAMEMODE_MONSTERS_STATE          0x4077 // Unused Var
+#define VAR_GAMEMODE_SCALE_EVOLUTION_STATE   0x4078 // Unused Var
+#define VAR_SLAYER_LEFT_TO_DEFEAT            0x4079 // Unused Var
+#define VAR_SLAYER_ASSIGNMENT                0x407A // Unused Var
+#define VAR_SLAYER_COMPLETE                  0x407B
 #define VAR_SEED                             0x407C // Unused Var
-#define VAR_DUNGEONEERING_DOOR                   0x407D // Unused Var
-#define VAR_DUNGEONEERING_RANDOM_PUZZLE_3                   0x407E // Unused Var
-#define VAR_STORE_SEED_RESULT                   0x407F // Unused Var
-#define VAR_DUNGEONEERING_STARTER_ROOM                   0x4080 // Unused Var
-#define VAR_DUNGEONEERING_BOSS_ROOM                   0x4081 // Unused Var
-#define VAR_DUNGEONEERING_RANDOM_PUZZLE_1      0x4082
-#define VAR_DUNGEONEERING_RANDOM_PUZZLE_2                    0x4083 // Unused Var
+#define VAR_DUNGEONEERING_DOOR               0x407D // Unused Var
+#define VAR_DUNGEONEERING_RANDOM_PUZZLE_3    0x407E // Unused Var
+#define VAR_STORE_SEED_RESULT                0x407F // Unused Var
+#define VAR_DUNGEONEERING_STARTER_ROOM       0x4080 // Unused Var
+#define VAR_DUNGEONEERING_BOSS_ROOM          0x4081 // Unused Var
+#define VAR_DUNGEONEERING_RANDOM_PUZZLE_1    0x4082
+#define VAR_DUNGEONEERING_RANDOM_PUZZLE_2    0x4083 // Unused Var
 #define VAR_BIRCH_LAB_STATE                  0x4084
-#define VAR_DUNGEONEERING_RANDOM_PUZZLE_4              0x4085 // 0-1: Wally tutorial, 2-6: 0-4 badges, 7: Defeated Norman, 8: Rematch Norman
+#define VAR_DUNGEONEERING_RANDOM_PUZZLE_4    0x4085 // 0-1: Wally tutorial, 2-6: 0-4 badges, 7: Defeated Norman, 8: Rematch Norman
 #define VAR_CONTEST_HALL_STATE               0x4086
 #define VAR_CABLE_CLUB_STATE                 0x4087
 #define VAR_CONTEST_TYPE                     0x4088
@@ -187,21 +187,21 @@
 #define VAR_UNUSED_0x40A8                    0x40A8 // Unused Var
 #define VAR_CYCLING_CHALLENGE_STATE          0x40A9
 #define VAR_SLATEPORT_MUSEUM_1F_STATE        0x40AA
-#define VAR_DUNGEONEERING_RANDOM_PUZZLE_5       0x40AB
-#define VAR_DUNGEONEERING_RANDOM_PUZZLE_6       0x40AC
-#define VAR_DUNGEONEERING_RANDOM_PUZZLE_7       0x40AD
-#define VAR_DUNGEONEERING_RANDOM_PUZZLE_8       0x40AE
-#define VAR_DUNGEONEERING_AMOUNT_OF_PUZZLES       0x40AF
-#define VAR_DUNGEONEERING_OBJECT_SCRIPT_1       0x40B0 //VAR_TRICK_HOUSE_PUZZLE_6_STATE
-#define VAR_DUNGEONEERING_OBJECT_SCRIPT_2       0x40B1 //VAR_TRICK_HOUSE_PUZZLE_7_STATE
-#define VAR_DUNGEONEERING_OBJECT_SCRIPT_3       0x40B2 //VAR_TRICK_HOUSE_PUZZLE_8_STATE
-#define VAR_DUNGEONEERING_OBJECT_SCRIPT_4          0x40B3 //VAR_WEATHER_INSTITUTE_STATE
-#define VAR_DUNGEONEERING_OBJECT_SCRIPT_5                   0x40B4 //VAR_SS_TIDAL_STATE
-#define VAR_DUNGEONEERING_OBJECT_SCRIPT_6  0x40B5 //VAR_TRICK_HOUSE_ENTER_FROM_CORRIDOR
-#define VAR_DUNGEONEERING_OBJECT_SCRIPT_7     0x40B6 //VAR_TRICK_HOUSE_PUZZLE_7_STATE_2 // Leftover from RS, never set
-#define VAR_DUNGEONEERING_OBJECT_SCRIPT_8         0x40B7 //VAR_SLATEPORT_FAN_CLUB_STATE
-#define VAR_DUNGEONEERING_OBJECT_SCRIPT_9                    0x40B8 //VAR_UNUSED_0x40B8 // Unused Var
-#define VAR_DUNGEONEERING_OBJECT_SCRIPT_10                    0x40B9 //VAR_MT_PYRE_STATE
+#define VAR_DUNGEONEERING_RANDOM_PUZZLE_5    0x40AB
+#define VAR_DUNGEONEERING_RANDOM_PUZZLE_6    0x40AC
+#define VAR_DUNGEONEERING_RANDOM_PUZZLE_7    0x40AD
+#define VAR_DUNGEONEERING_RANDOM_PUZZLE_8    0x40AE
+#define VAR_DUNGEONEERING_AMOUNT_OF_PUZZLES  0x40AF
+#define VAR_DUNGEONEERING_OBJECT_SCRIPT_1    0x40B0 //VAR_TRICK_HOUSE_PUZZLE_6_STATE
+#define VAR_DUNGEONEERING_OBJECT_SCRIPT_2    0x40B1 //VAR_TRICK_HOUSE_PUZZLE_7_STATE
+#define VAR_DUNGEONEERING_OBJECT_SCRIPT_3    0x40B2 //VAR_TRICK_HOUSE_PUZZLE_8_STATE
+#define VAR_DUNGEONEERING_OBJECT_SCRIPT_4    0x40B3 //VAR_WEATHER_INSTITUTE_STATE
+#define VAR_DUNGEONEERING_OBJECT_SCRIPT_5    0x40B4 //VAR_SS_TIDAL_STATE
+#define VAR_DUNGEONEERING_OBJECT_SCRIPT_6    0x40B5 //VAR_TRICK_HOUSE_ENTER_FROM_CORRIDOR
+#define VAR_DUNGEONEERING_OBJECT_SCRIPT_7    0x40B6 //VAR_TRICK_HOUSE_PUZZLE_7_STATE_2 // Leftover from RS, never set
+#define VAR_DUNGEONEERING_OBJECT_SCRIPT_8    0x40B7 //VAR_SLATEPORT_FAN_CLUB_STATE
+#define VAR_DUNGEONEERING_OBJECT_SCRIPT_9    0x40B8 //VAR_UNUSED_0x40B8 // Unused Var
+#define VAR_DUNGEONEERING_OBJECT_SCRIPT_10   0x40B9 //VAR_MT_PYRE_STATE
 #define VAR_NEW_MAUVILLE_STATE               0x40BA
 #define VAR_UNUSED_0x40BB                    0x40BB // Unused Var
 #define VAR_BRAVO_TRAINER_BATTLE_TOWER_ON    0x40BC
@@ -236,7 +236,7 @@
 #define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
 #define VAR_REGISTER_BIRCH_STATE             0x40DA
 #define VAR_UNUSED_0x40DB                    0x40DB // Unused Var
-#define VAR_DIFFICULTY                    0x40DC // Unused Var
+#define VAR_DIFFICULTY                       0x40DC // Unused Var
 #define VAR_GIFT_PICHU_SLOT                  0x40DD
 #define VAR_GIFT_UNUSED_1                    0x40DE // Var is written to, but never read
 #define VAR_GIFT_UNUSED_2                    0x40DF // Var is written to, but never read
@@ -263,7 +263,7 @@
 #define VAR_ROXANNE_CALL_STEP_COUNTER        0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER       0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER 0x40F6
-#define VAR_UNUSED_0x40F7                    0x40F7 // Unused Var
+#define VAR_FLY_TOOL_SOURCE                  0x40F7 // QoL Field Moves
 #define VAR_UNUSED_0x40F8                    0x40F8 // Unused Var
 #define VAR_UNUSED_0x40F9                    0x40F9 // Unused Var
 #define VAR_UNUSED_0x40FA                    0x40FA // Unused Var

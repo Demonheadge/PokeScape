@@ -236,6 +236,7 @@ gScriptCmdTable::
 	.4byte ScrCmd_questmenu                 		@ 0xe9
     .4byte ScrCmd_subquestmenu              		@ 0xea
     .4byte ScrCmd_returnqueststate          		@ 0xeb
+    .4byte ScrCmd_checkpartylearnknowsfieldmove     @ 0xec // qol_field_moves
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop
