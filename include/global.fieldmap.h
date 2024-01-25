@@ -195,7 +195,6 @@ struct ObjectEvent
              u32 fixedPriority:1;
              u32 hideReflection:1;
              //u32 padding:4;
-    /*0x04*/ u8 spriteId;
     /*0x05*/ u16 graphicsId;
     /*0x06*/ u8 movementType;
     /*0x07*/ u8 trainerType;

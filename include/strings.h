@@ -179,6 +179,7 @@ extern const u8 gText_EmptyString2[];
 extern const u8 gText_Confirm3[];
 extern const u8 gText_Cancel4[];
 extern const u8 gText_IsThisTheCorrectTime[];
+extern const u8 gText_PkmnFainted3[];
 extern const u8 gText_PkmnFainted_FldPsn[];
 extern const u8 gText_Coins[];
 extern const u8 gText_Silver[];
@@ -287,6 +288,7 @@ extern const u8 gText_SavingPlayer[];
 extern const u8 gText_SavingBadges[];
 extern const u8 gText_SavingPokedex[];
 extern const u8 gText_SavingTime[];
+extern const u8 gText_SavingGameMode[];
 
 // Battle pyramid menu texts
 extern const u8 gText_BattlePyramidConfirmRest[];
@@ -352,6 +354,10 @@ extern const u8 gText_ContinueMenuPokedex[];
 extern const u8 gText_ContinueMenuBadges[];
 extern const u8 gText_BirchBoy[];
 extern const u8 gText_BirchGirl[];
+extern const u8 gText_Birch_RegionSelect[];
+extern const u8 gText_CUPHOLDER[];
+
+/*
 extern const u8 gText_DefaultNameStu[];
 extern const u8 gText_DefaultNameMilton[];
 extern const u8 gText_DefaultNameTom[];
@@ -392,6 +398,11 @@ extern const u8 gText_DefaultNameLillie[];
 extern const u8 gText_DefaultNameTerra[];
 extern const u8 gText_DefaultNameLucy[];
 extern const u8 gText_DefaultNameHalie[];
+*/
+
+extern const u8 gText_DefaultNameScapes[];
+extern const u8 gText_DefaultNameScaper[];
+
 
 extern const u8 gText_BirchInTrouble[];
 extern const u8 gText_ConfirmStarterChoice[];
@@ -2052,6 +2063,7 @@ extern const u8 gPCText_Scenery2[];
 extern const u8 gPCText_Scenery3[];
 extern const u8 gPCText_Etcetera[];
 extern const u8 gPCText_Friends[];
+extern const u8 gPCText_PokeScape_1[];
 extern const u8 gPCText_Forest[];
 extern const u8 gPCText_City[];
 extern const u8 gPCText_Desert[];
@@ -3003,12 +3015,144 @@ extern const u8 gText_NoRibbonWinners[];
 extern const u8 gText_NumberIndex[];
 extern const u8 gText_RibbonsF700[];
 
-// use_pokeblock
+// Use Pokéblock
 extern const u8 gText_Coolness[];
 extern const u8 gText_Toughness[];
 extern const u8 gText_Smartness[];
 extern const u8 gText_Cuteness[];
 extern const u8 gText_Beauty3[];
+
+// Berry Blender
+extern const u8 gText_SavingDontTurnOff2[];
+extern const u8 gText_BlenderMaxSpeedRecord[];
+extern const u8 gText_234Players[];
+
+// Battle Factory Screen
+extern const u8 gText_RentalPkmn2[];
+extern const u8 gText_SelectFirstPkmn[];
+extern const u8 gText_SelectSecondPkmn[];
+extern const u8 gText_SelectThirdPkmn[];
+extern const u8 gText_TheseThreePkmnOkay[];
+extern const u8 gText_CantSelectSamePkmn[];
+extern const u8 gText_Summary[];
+extern const u8 gText_Rechoose[];
+extern const u8 gText_Deselect[];
+extern const u8 gText_Rent[];
+extern const u8 gText_Others2[];
+extern const u8 gText_Yes2[];
+extern const u8 gText_Yes3[];
+extern const u8 gText_No2[];
+extern const u8 gText_No3[];
+extern const u8 gText_QuitSwapping[];
+extern const u8 gText_AcceptThisPkmn[];
+extern const u8 gText_SelectPkmnToAccept[];
+extern const u8 gText_SelectPkmnToSwap[];
+extern const u8 gText_PkmnSwap[];
+extern const u8 gText_Swap[];
+extern const u8 gText_Summary2[];
+extern const u8 gText_PkmnForSwap[];
+extern const u8 gText_SamePkmnInPartyAlready[];
+extern const u8 gText_Cancel3[];
+
+//pokescape pouch crafting
+
+extern const u8 gText_BronzePouch[];
+extern const u8 gText_IronPouch[];
+extern const u8 gText_SteelPouch[];
+extern const u8 gText_MithrilPouch[];
+extern const u8 gText_AdamantPouch[];
+extern const u8 gText_RunePouch[];
+extern const u8 gText_DragonPouch[];
+
+extern const u8 gText_BlackPouch[];
+extern const u8 gText_CrystalPouch[];
+extern const u8 gText_DragonbanePouch[];
+extern const u8 gText_AugmentedPouch[];
+extern const u8 gText_MysticPouch[];
+extern const u8 gText_BarrowsPouch[];
+extern const u8 gText_GranitePouch[];
+extern const u8 gText_AncientPouch[];
+extern const u8 gText_ElementalPouch[];
+
+//pokescape starter menu
+
+extern const u8 gText_GuthlingStarter[];
+extern const u8 gText_ZamlingStarter[];
+extern const u8 gText_SaralingStarter[];
+
+extern const u8 gText_ArmalingStarter[];
+extern const u8 gText_UngodlingStarter[];
+extern const u8 gText_TumeklingStarter[];
+
+//POH
+extern const u8 gText_POH_HOME[];
+extern const u8 gText_POH_HOUSE_1[];
+extern const u8 gText_POH_HOUSE_2[];
+extern const u8 gText_POH_HOUSE_3[];
+extern const u8 gText_POH_HOUSE_4[];
+
+//PICKAXE
+extern const u8 gText_POH_RED[];
+extern const u8 gText_POH_GREEN[];
+extern const u8 gText_POH_BROWN[];
+extern const u8 gText_POH_GREY[];
+extern const u8 gText_POH_WHITE[];
+extern const u8 gText_POH_BLUE[];
+extern const u8 gText_POH_CYAN[];
+extern const u8 gText_POH_BLACK[];
+
+extern const u8 gText_PhoenixEgg_Clap[];
+extern const u8 gText_PhoenixEgg_Kick[];
+
+extern const u8 gText_BANK_HEAL[];
+extern const u8 gText_BANK_STORE_MONSTERS[];
+extern const u8 gText_BANK_STORE_ITEMS[];
+
+extern const u8 gText_JATIZSO[];
+extern const u8 gText_NEITIZNOT[];
+
+extern const u8 gText_GetSlayerAssignment[];
+extern const u8 gText_OpenSlayerRewardShop[];
+
+//pokescape cheat menu
+extern const u8 gText_CheatEvolutionShop[];
+extern const u8 gText_CheatPouchShop[];
+extern const u8 gText_AddCash[];
+extern const u8 gText_AddCandy[];
+extern const u8 gText_AddKeyItems[];
+extern const u8 gText_CheatTMShop[];
+extern const u8 gText_CheatStatShop[];
+extern const u8 gText_CheatMiscShop[];
+
+//misc pokescape stuff
+extern const u8 gText_NextMenu[];
+extern const u8 gText_YouAlreadyHaveThis[];
+extern const u8 gText_YouWantedThisTM[];
+extern const u8 gText_NeedMoreBadges[];
+
+//POKESCAPE NEWGAME
+
+extern const u8 gText_NewGame_Welcome[];
+extern const u8 gText_NewGame_Story_or_OpenWorld[];
+extern const u8 gText_STORYMODE[];
+extern const u8 gText_OPENWORLD[];
+extern const u8 gText_NewGame_STORYMODE_info[];
+extern const u8 gText_NewGame_OPENWORLD_info[];
+extern const u8 gText_F2P[];
+extern const u8 gText_P2P[];
+extern const u8 gText_NewGame_F2PorP2P[];
+extern const u8 gText_NewGame_TownSelection[];
+
+extern const u8 gText_NewGame_Region_1[];
+extern const u8 gText_NewGame_Region_2[];
+extern const u8 gText_NewGame_Region_3[];
+extern const u8 gText_NewGame_Region_4[];
+extern const u8 gText_NewGame_Region_5[];
+extern const u8 gText_NewGame_Region_6[];
+extern const u8 gText_NewGame_Region_7[];
+extern const u8 gText_NewGame_Region_8[];
+extern const u8 gText_NewGame_appearance[];
+extern const u8 gText_NewGame_RegionChoosen[];
 
 ////side quests
 //generic strings
@@ -3016,10 +3160,43 @@ extern const u8 gText_QuestAnnounce[];
 extern const u8 gText_QuestComplete[];
 extern const u8 gText_QuestActive[];
 
+//Quest - Cooks Assistant
+extern const u8 gText_SideQuestName_CooksAssistant[];
+extern const u8 gText_SideQuestDesc_CooksAssistant[];
+extern const u8 gText_SideQuestDesc_Completed_CooksAssistant[];
+extern const u8 gText_MapName_Lumbridge[];
+extern const u8 gText_MapName_MillLaneMill[];
+extern const u8 gText_MapName_Route1[];
+extern const u8 gText_MapName_Route12[];
+extern const u8 gText_SubQuest_Cooks_Assistant_1[];
+extern const u8 gText_SubQuest_Cooks_Assistant_2[];
+extern const u8 gText_SubQuest_Cooks_Assistant_3[];
+extern const u8 gText_SubQuest1_Desc_Cooks_Assistant_1[];
+extern const u8 gText_SubQuest1_Desc_Cooks_Assistant_2[];
+extern const u8 gText_SubQuest1_Desc_Cooks_Assistant_3[];
+//Quest - Ernest
+extern const u8 gText_SideQuestName_Ernest[];
+extern const u8 gText_SideQuestDesc_Ernest[];
+extern const u8 gText_SideQuestDesc_Completed_Ernest[];
+extern const u8 gText_SideQuestMap_Draynor_Manor[];
+extern const u8 gText_SubQuest_Ernest_Name1[];
+extern const u8 gText_SubQuest_Ernest_Name2[];
+extern const u8 gText_SubQuest_Ernest_Name3[];
+
+//Quest - Kourend Slayer
+extern const u8 gText_SideQuestName_Kourend_Slayer[];
+extern const u8 gText_SideQuestDesc_Kourend_Slayer[];
+extern const u8 gText_SideQuestDesc_Completed_Kourend_Slayer[];
+extern const u8 gText_SideQuestMap_Kourend[];
+extern const u8 gText_SubQuest_Kourend_Slayer_Name1[];
+extern const u8 gText_SubQuest_Kourend_Slayer_Name2[];
+extern const u8 gText_SubQuest_Kourend_Slayer_Name3[];
+
+/*
 //names
 extern const u8 gText_SideQuestName_1[];
 extern const u8 gText_SideQuestName_2[];
-extern const u8 gText_SideQuestName_3[];
+
 extern const u8 gText_SideQuestName_4[];
 extern const u8 gText_SideQuestName_5[];
 extern const u8 gText_SideQuestName_6[];
@@ -3116,7 +3293,7 @@ extern const u8 gText_SideQuestDoneDesc_30[];
 extern const u8 gText_SideQuestMap1[];
 extern const u8 gText_SideQuestMap2[];
 extern const u8 gText_SideQuestMap3[];
-extern const u8 gText_SideQuestMap4[];
+
 extern const u8 gText_SideQuestMap5[];
 extern const u8 gText_SideQuestMap6[];
 extern const u8 gText_SideQuestMap7[];
@@ -3156,9 +3333,10 @@ extern const u8 gText_SubQuest1_Name8[];
 extern const u8 gText_SubQuest1_Name9[];
 extern const u8 gText_SubQuest1_Name10[];
 
-extern const u8 gText_SubQuest2_Name1[];
-extern const u8 gText_SubQuest2_Name2[];
-extern const u8 gText_SubQuest2_Name3[];
+extern const u8 gText_SubQuest_Cooks_Assistant_1[];
+extern const u8 gText_SubQuest_Cooks_Assistant_2[];
+extern const u8 gText_SubQuest_Cooks_Assistant_3[];
+
 extern const u8 gText_SubQuest2_Name4[];
 extern const u8 gText_SubQuest2_Name5[];
 extern const u8 gText_SubQuest2_Name6[];
@@ -3208,50 +3386,58 @@ extern const u8 gText_SubQuest2_Desc17[];
 extern const u8 gText_SubQuest2_Desc18[];
 extern const u8 gText_SubQuest2_Desc19[];
 extern const u8 gText_SubQuest2_Desc20[];
+*/
 
-// Berry Blender
-extern const u8 gText_SavingDontTurnOff2[];
-extern const u8 gText_BlenderMaxSpeedRecord[];
-extern const u8 gText_234Players[];
+extern const u8 gText_FollowerOff[];
+extern const u8 gText_FollowerOn[];
+extern const u8 gText_DifficultyEasy[];
+extern const u8 gText_DifficultyNormal[];
+extern const u8 gText_DifficultyHard[];
+extern const u8 gText_SmallDot[];
+extern const u8 gText_LargeDot[];
+extern const u8 gText_PageNav[];
+extern const u8 gText_Follower[];
+extern const u8 gText_Difficulty[];
+extern const u8 gText_OpenWorldOptionsMenu[];
+extern const u8 gText_PkmnOrMons[];
+extern const u8 gText_MonsterMode[];
+extern const u8 gText_PokemonMode[];
+extern const u8 gText_PulseCoreOn[];
+extern const u8 gText_PulseCoreOff[];
 
-// Battle Factory Screen
-extern const u8 gText_RentalPkmn2[];
-extern const u8 gText_SelectFirstPkmn[];
-extern const u8 gText_SelectSecondPkmn[];
-extern const u8 gText_SelectThirdPkmn[];
-extern const u8 gText_TheseThreePkmnOkay[];
-extern const u8 gText_CantSelectSamePkmn[];
-extern const u8 gText_Summary[];
-extern const u8 gText_Rechoose[];
-extern const u8 gText_Deselect[];
-extern const u8 gText_Rent[];
-extern const u8 gText_Others2[];
-extern const u8 gText_Yes2[];
-extern const u8 gText_Yes3[];
-extern const u8 gText_No2[];
-extern const u8 gText_No3[];
-extern const u8 gText_QuitSwapping[];
-extern const u8 gText_AcceptThisPkmn[];
-extern const u8 gText_SelectPkmnToAccept[];
-extern const u8 gText_SelectPkmnToSwap[];
-extern const u8 gText_PkmnSwap[];
-extern const u8 gText_Swap[];
-extern const u8 gText_Summary2[];
-extern const u8 gText_PkmnForSwap[];
-extern const u8 gText_SamePkmnInPartyAlready[];
-extern const u8 gText_Cancel3[];
+extern const u8 gText_DarkTotemTop[];
+extern const u8 gText_DarkTotemTop_SALE[];
+extern const u8 gText_DarkTotemTop_Desc[];
+extern const u8 gText_DarkTotemMiddle[];
+extern const u8 gText_DarkTotemMiddle_SALE[];
+extern const u8 gText_DarkTotemMiddle_Desc[];
+extern const u8 gText_DarkTotemBottom[];
+extern const u8 gText_DarkTotemBottom_SALE[];
+extern const u8 gText_DarkTotemBottom_Desc[];
+extern const u8 gText_AncientShard[];
+extern const u8 gText_AncientShard_Desc[];
 
-// Naming Screen
-extern const u8 gText_MoveOkBack[];
-extern const u8 gText_YourName[];
-extern const u8 gText_BoxName[];
-extern const u8 gText_PkmnsNickname[];
-extern const u8 gText_TellHimTheWords[];
-
-// Exp. Share
-extern const u8 gText_ExpShareOn[];
-extern const u8 gText_ExpShareOff[];
-
-extern const u8 gText_BasePointsResetToZero[];
+extern const u8 gText_Overload[];
+extern const u8 gText_SaradominBrew[];
+extern const u8	gText_PhoenixNecklace[];
+extern const u8	gText_AbyssalWhip[];
+extern const u8	gText_DragonfireSheild[];
+extern const u8	gText_DragonClaws[];
+extern const u8	gText_DragonDaggerP[];
+extern const u8	gText_DragonScimitar[];
+extern const u8	gText_ElementalShield[];
+extern const u8	gText_GraniteMaul[];
+extern const u8	gText_KrakenTentacle[];
+extern const u8 gText_Overload_Desc[];
+extern const u8 gText_SaradominBrew_Desc[];
+extern const u8	gText_PhoenixNecklace_Desc[];
+extern const u8	gText_AbyssalWhip_Desc[];
+extern const u8	gText_DragonfireSheild_Desc[];
+extern const u8	gText_DragonClaws_Desc[];
+extern const u8	gText_DragonDaggerP_Desc[];
+extern const u8	gText_DragonScimitar_Desc[];
+extern const u8	gText_ElementalShield_Desc[];
+extern const u8	gText_GraniteMaul_Desc[];
+extern const u8	gText_KrakenTentacle_Desc[];
 
 #endif // GUARD_STRINGS_H

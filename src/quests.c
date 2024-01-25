@@ -209,9 +209,9 @@ static const u32 sQuestMenuTilemap[] =
 
 //Strings used for the Quest Menu
 static const u8 sText_Empty[] = _("");
-static const u8 sText_AllHeader[] = _("All Missions");
-static const u8 sText_InactiveHeader[] = _("Inactive Missions");
-static const u8 sText_ActiveHeader[] = _("Active Missions");
+static const u8 sText_AllHeader[] = _("Quest List");
+static const u8 sText_InactiveHeader[] = _("Not Started Quests");
+static const u8 sText_ActiveHeader[] = _("Started Quests");
 static const u8 sText_RewardHeader[] = _("Reward Available");
 static const u8 sText_CompletedHeader[] =
       _("Completed Missions");
@@ -224,7 +224,7 @@ static const u8 sText_Complete[] = _("Done");
 static const u8 sText_ShowLocation[] =
       _("Location: {STR_VAR_2}");
 static const u8 sText_StartForMore[] =
-      _("Start for more details.");
+      _("You have yet to start this quest.");
 static const u8 sText_ReturnRecieveReward[] =
       _("Return to {STR_VAR_2}\nto recieve your reward!");
 static const u8 sText_SubQuestButton[] = _(" {A_BUTTON}");
@@ -237,318 +237,214 @@ static const u8 sText_DotSpace[] = _(". ");
 static const u8 sText_Close[] = _("Close");
 static const u8 sText_ColorGreen[] = _("{COLOR}{GREEN}");
 static const u8 sText_AZ[] = _(" A-Z");
+static const u8 sText_InProgress[] = _("In Progress");
 
 ///////////////////////////////////////////////////////////////////////////////
 //////////////////////BEGIN SUBQUEST CUSTOMIZATION/////////////////////////////
 
 //Declaration of subquest structures. Edits to subquests are made here.
 #define sub_quest(i, n, d, m, s, st, t) {.id = i, .name = n, .desc = d, .map = m, .sprite = s, .spritetype = st, .type = t}
-static const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
+
+/*
+static const struct SubQuest sSubQuestsArtFight_Jatizso[QUEST_ARTFIGHT_JATIZSO_SUB_COUNT] =
 {
 	sub_quest(
-	      0,
+	      0, //Picture Perfect
 	      gText_SubQuest1_Name1,
 	      gText_SubQuest1_Desc1,
-	      gText_SideQuestMap1,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestMap2,
+	      OBJ_EVENT_GFX_RAC_ELEJ,
 	      OBJECT,
-	      sText_Found
+	      sText_Complete
 	),
 
 	sub_quest(
-	      1,
+	      1, //The Tasteful Painting
 	      gText_SubQuest1_Name2,
 	      gText_SubQuest1_Desc2,
 	      gText_SideQuestMap2,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_RAC_DRAGON,
 	      OBJECT,
-	      sText_Found
+	      sText_Complete
 	),
 
 	sub_quest(
-	      2,
+	      2, //Haunting Rabbits
 	      gText_SubQuest1_Name3,
 	      gText_SubQuest1_Desc3,
-	      gText_SideQuestMap3,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestMap2,
+	      OBJ_EVENT_GFX_RAC_JACKIE,
 	      OBJECT,
-	      sText_Found
+	      sText_Empty
 	),
 
 	sub_quest(
-	      3,
+	      3, //Yakfiltration
 	      gText_SubQuest1_Name4,
 	      gText_SubQuest1_Desc4,
-	      gText_SideQuestMap4,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestMap2,
+	      OBJ_EVENT_GFX_YAK,
 	      OBJECT,
-	      sText_Found
+	      sText_Empty
 	),
 
 	sub_quest(
 	      4,
 	      gText_SubQuest1_Name5,
 	      gText_SubQuest1_Desc5,
-	      gText_SideQuestMap5,
+	      gText_SideQuestMap2,
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
-	      sText_Found
+	      sText_Empty
 	),
+};
 
+static const struct SubQuest sSubQuestsArtFight_Neitiznot[QUEST_ARTFIGHT_NEITIZNOT_SUB_COUNT] =
+{
 	sub_quest(
 	      5,
 	      gText_SubQuest1_Name6,
 	      gText_SubQuest1_Desc6,
-	      gText_SideQuestMap6,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestMap2,
+	      OBJ_EVENT_GFX_PREZLEEK,
 	      OBJECT,
-	      sText_Found
+	      sText_Empty
 	),
 
 	sub_quest(
 	      6,
 	      gText_SubQuest1_Name7,
 	      gText_SubQuest1_Desc7,
-	      gText_SideQuestMap7,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SideQuestMap2,
+	      OBJ_EVENT_GFX_PREZLEEK,
 	      OBJECT,
-	      sText_Found
+	      sText_Empty
 	),
 
 	sub_quest(
 	      7,
 	      gText_SubQuest1_Name8,
 	      gText_SubQuest1_Desc8,
-	      gText_SideQuestMap8,
+	      gText_SideQuestMap2,
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
-	      sText_Found
+	      sText_Empty
 	),
 
 	sub_quest(
 	      8,
 	      gText_SubQuest1_Name9,
 	      gText_SubQuest1_Desc9,
-	      gText_SideQuestMap9,
+	      gText_SideQuestMap2,
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
-	      sText_Found
+	      sText_Empty
 	),
 
 	sub_quest(
 	      9,
 	      gText_SubQuest1_Name10,
 	      gText_SubQuest1_Desc10,
-	      gText_SideQuestMap10,
+	      gText_SideQuestMap2,
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
+	      sText_Empty
+	),
+};*/
+
+static const struct SubQuest sSubQuests_ERNEST_THE_CHICKEN[QUEST_ERNEST_THE_CHICKEN_SUB_COUNT] =
+{
+	sub_quest(
+	      15,
+	      gText_SubQuest_Ernest_Name1,
+	      gText_SubQuest_Ernest_Name2,
+	      gText_SideQuestMap_Draynor_Manor,
+	      ITEM_OIL_CAN,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      16,
+	      gText_SubQuest_Ernest_Name2,
+	      gText_SubQuest_Ernest_Name2,
+	      gText_SideQuestMap_Draynor_Manor,
+	      ITEM_RUBBER_TUBE,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      17,
+	      gText_SubQuest_Ernest_Name3,
+	      gText_SubQuest_Ernest_Name2,
+	      gText_SideQuestMap_Draynor_Manor,
+	      ITEM_PRESSURE_GAUGE,
+	      ITEM,
 	      sText_Found
 	),
 };
 
-static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
+static const struct SubQuest sSubQuests_COOKS_ASSISTANT[QUEST_COOKS_ASSISTANT_SUB_COUNT] =
 {
 	sub_quest(
-	      10,
-	      gText_SubQuest2_Name1,
-	      gText_SubQuest2_Desc1,
-	      gText_SideQuestMap1,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      11,
-	      gText_SubQuest2_Name2,
-	      gText_SubQuest2_Desc2,
-	      gText_SideQuestMap2,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      12,
-	      gText_SubQuest2_Name3,
-	      gText_SubQuest2_Desc3,
-	      gText_SideQuestMap3,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      13,
-	      gText_SubQuest2_Name4,
-	      gText_SubQuest2_Desc4,
-	      gText_SideQuestMap4,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      14,
-	      gText_SubQuest2_Name5,
-	      gText_SubQuest2_Desc5,
-	      gText_SideQuestMap5,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      15,
-	      gText_SubQuest2_Name6,
-	      gText_SubQuest2_Desc6,
-	      gText_SideQuestMap6,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      16,
-	      gText_SubQuest2_Name7,
-	      gText_SubQuest2_Desc7,
-	      gText_SideQuestMap7,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      17,
-	      gText_SubQuest2_Name8,
-	      gText_SubQuest2_Desc8,
-	      gText_SideQuestMap8,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
 	      18,
-	      gText_SubQuest2_Name9,
-	      gText_SubQuest2_Desc9,
-	      gText_SideQuestMap9,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      gText_SubQuest_Cooks_Assistant_1,
+	      gText_SubQuest1_Desc_Cooks_Assistant_1,
+	      gText_MapName_Route1,
+	      ITEM_EGG,
+	      ITEM,
 	      sText_Found
 	),
-
 	sub_quest(
 	      19,
-	      gText_SubQuest2_Name10,
-	      gText_SubQuest2_Desc10,
-	      gText_SideQuestMap10,
-	      SPECIES_HO_OH,
-	      PKMN,
-	      sText_Caught
-
-	),
-
-	sub_quest(
-	      20,
-	      gText_SubQuest2_Name11,
-	      gText_SubQuest2_Desc11,
-	      gText_SideQuestMap11,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      gText_SubQuest_Cooks_Assistant_2,
+	      gText_SubQuest1_Desc_Cooks_Assistant_2,
+	      gText_MapName_Route12,
+	      ITEM_MILK_BUCKET,
+	      ITEM,
 	      sText_Found
 	),
+	sub_quest(
+	      20,
+	      gText_SubQuest_Cooks_Assistant_3,
+	      gText_SubQuest1_Desc_Cooks_Assistant_3,
+	      gText_MapName_MillLaneMill,
+	      ITEM_FLOUR_POT,
+	      ITEM,
+	      sText_Found
+	),
+};
 
+static const struct SubQuest sSubQuests_KOUREND_SLAYER[QUEST_KOUREND_SLAYER_SUB_COUNT] =
+{
 	sub_quest(
 	      21,
-	      gText_SubQuest2_Name12,
-	      gText_SubQuest2_Desc12,
-	      gText_SideQuestMap12,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      gText_SubQuest_Kourend_Slayer_Name1,
+	      gText_SubQuest_Kourend_Slayer_Name2,
+	      gText_SideQuestMap_Kourend,
+	      ITEM_DARK_TOTEM_BASE,
+	      ITEM,
 	      sText_Found
 	),
 
 	sub_quest(
 	      22,
-	      gText_SubQuest2_Name13,
-	      gText_SubQuest2_Desc13,
-	      gText_SideQuestMap13,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      gText_SubQuest_Kourend_Slayer_Name2,
+	      gText_SubQuest_Kourend_Slayer_Name2,
+	      gText_SideQuestMap_Kourend,
+	      ITEM_DARK_TOTEM_MID,
+	      ITEM,
 	      sText_Found
 	),
 
 	sub_quest(
 	      23,
-	      gText_SubQuest2_Name14,
-	      gText_SubQuest2_Desc14,
-	      gText_SideQuestMap14,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      gText_SubQuest_Kourend_Slayer_Name3,
+	      gText_SubQuest_Kourend_Slayer_Name2,
+	      gText_SideQuestMap_Kourend,
+	      ITEM_DARK_TOTEM_TOP,
+	      ITEM,
 	      sText_Found
 	),
-
-	sub_quest(
-	      24,
-	      gText_SubQuest2_Name15,
-	      gText_SubQuest2_Desc15,
-	      gText_SideQuestMap15,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      25,
-	      gText_SubQuest2_Name16,
-	      gText_SubQuest2_Desc16,
-	      gText_SideQuestMap16,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      26,
-	      gText_SubQuest2_Name17,
-	      gText_SubQuest2_Desc17,
-	      gText_SideQuestMap17,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      27,
-	      gText_SubQuest2_Name18,
-	      gText_SubQuest2_Desc18,
-	      gText_SideQuestMap18,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      28,
-	      gText_SubQuest2_Name19,
-	      gText_SubQuest2_Desc19,
-	      gText_SideQuestMap19,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
-	sub_quest(
-	      29,
-	      gText_SubQuest2_Name20,
-	      gText_SubQuest2_Desc20,
-	      gText_SideQuestMap20,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
-	),
-
 };
 
 ////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
@@ -561,296 +457,67 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 #define side_quest(n, d, dd, m, s, st, sq, ns) {.name = n, .desc = d, .donedesc = dd, .map = m, .sprite = s, .spritetype = st, .subquests = sq, .numSubquests = ns}
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
+	/*
+	  gText_SideQuestName_31, //side quest name string
+      gText_SideQuestDesc_31, //side quest description string 
+      gText_SideQuestDoneDesc_31, //side quest complete description string
+      gText_SideQuestMap31, //side quest map string
+      OBJ_EVENT_GFX_MAXIE, //quest sprite id
+      OBJECT, //quest sprite type
+      NULL, //subquest struct
+      0 //number of subquest
+	*/
+	side_quest( 									//Cooks Assistant
+	      gText_SideQuestName_CooksAssistant,
+	      gText_SideQuestDesc_CooksAssistant,
+	      gText_SideQuestDesc_Completed_CooksAssistant,
+	      gText_MapName_Lumbridge,
+	      OBJ_EVENT_GFX_COOK,
+	      OBJECT,
+	      sSubQuests_COOKS_ASSISTANT,
+	      QUEST_COOKS_ASSISTANT_SUB_COUNT
+	),
+	side_quest(
+	      gText_SideQuestName_Ernest,
+	      gText_SideQuestDesc_Ernest,
+	      gText_SideQuestDesc_Completed_Ernest,
+	      gText_SideQuestMap_Draynor_Manor,
+	      SPECIES_ERNEST,
+	      PKMN,
+	      sSubQuests_ERNEST_THE_CHICKEN,
+	      QUEST_ERNEST_THE_CHICKEN_SUB_COUNT
+	),
+	side_quest(
+	      gText_SideQuestName_Kourend_Slayer,
+	      gText_SideQuestDesc_Kourend_Slayer,
+	      gText_SideQuestDesc_Completed_Kourend_Slayer,
+	      gText_SideQuestMap_Kourend,
+	      SPECIES_ERNEST,
+	      PKMN,
+	      sSubQuests_KOUREND_SLAYER,
+	      QUEST_KOUREND_SLAYER_SUB_COUNT
+	),/*
 	side_quest(
 	      gText_SideQuestName_1,
 	      gText_SideQuestDesc_1,
 	      gText_SideQuestDoneDesc_1,
 	      gText_SideQuestMap1,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_YAK,
 	      OBJECT,
-	      NULL,
-	      0
+	      sSubQuestsArtFight_Jatizso,
+	      QUEST_ARTFIGHT_JATIZSO_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_2,
 	      gText_SideQuestDesc_2,
 	      gText_SideQuestDoneDesc_2,
 	      gText_SideQuestMap2,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_YAK,
 	      OBJECT,
-	      sSubQuests1,
-	      QUEST_1_SUB_COUNT
+	      sSubQuestsArtFight_Neitiznot,
+	      QUEST_ARTFIGHT_NEITIZNOT_SUB_COUNT
 	),
-	side_quest(
-	      gText_SideQuestName_3,
-	      gText_SideQuestDesc_3,
-	      gText_SideQuestDoneDesc_3,
-	      gText_SideQuestMap3,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sSubQuests2,
-	      QUEST_2_SUB_COUNT
-	),
-	side_quest(
-	      gText_SideQuestName_4,
-	      gText_SideQuestDesc_4,
-	      gText_SideQuestDoneDesc_4,
-	      gText_SideQuestMap4,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_5,
-	      gText_SideQuestDesc_5,
-	      gText_SideQuestDoneDesc_5,
-	      gText_SideQuestMap5,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_6,
-	      gText_SideQuestDesc_6,
-	      gText_SideQuestDoneDesc_6,
-	      gText_SideQuestMap6,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_7,
-	      gText_SideQuestDesc_7,
-	      gText_SideQuestDoneDesc_7,
-	      gText_SideQuestMap7,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_8,
-	      gText_SideQuestDesc_8,
-	      gText_SideQuestDoneDesc_8,
-	      gText_SideQuestMap8,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_9,
-	      gText_SideQuestDesc_9,
-	      gText_SideQuestDoneDesc_9,
-	      gText_SideQuestMap9,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_10,
-	      gText_SideQuestDesc_10,
-	      gText_SideQuestDoneDesc_10,
-	      gText_SideQuestMap10,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_11,
-	      gText_SideQuestDesc_11,
-	      gText_SideQuestDoneDesc_11,
-	      gText_SideQuestMap11,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_12,
-	      gText_SideQuestDesc_12,
-	      gText_SideQuestDoneDesc_12,
-	      gText_SideQuestMap12,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_13,
-	      gText_SideQuestDesc_13,
-	      gText_SideQuestDoneDesc_13,
-	      gText_SideQuestMap13,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_14,
-	      gText_SideQuestDesc_14,
-	      gText_SideQuestDoneDesc_14,
-	      gText_SideQuestMap14,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_15,
-	      gText_SideQuestDesc_15,
-	      gText_SideQuestDoneDesc_15,
-	      gText_SideQuestMap15,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_16,
-	      gText_SideQuestDesc_16,
-	      gText_SideQuestDoneDesc_16,
-	      gText_SideQuestMap16,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_17,
-	      gText_SideQuestDesc_17,
-	      gText_SideQuestDoneDesc_17,
-	      gText_SideQuestMap17,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_18,
-	      gText_SideQuestDesc_18,
-	      gText_SideQuestDoneDesc_18,
-	      gText_SideQuestMap18,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_19,
-	      gText_SideQuestDesc_19,
-	      gText_SideQuestDoneDesc_19,
-	      gText_SideQuestMap19,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_20,
-	      gText_SideQuestDesc_20,
-	      gText_SideQuestDoneDesc_20,
-	      gText_SideQuestMap20,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_21,
-	      gText_SideQuestDesc_21,
-	      gText_SideQuestDoneDesc_21,
-	      gText_SideQuestMap21,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_22,
-	      gText_SideQuestDesc_22,
-	      gText_SideQuestDoneDesc_22,
-	      gText_SideQuestMap22,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_23,
-	      gText_SideQuestDesc_23,
-	      gText_SideQuestDoneDesc_23,
-	      gText_SideQuestMap23,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_24,
-	      gText_SideQuestDesc_24,
-	      gText_SideQuestDoneDesc_24,
-	      gText_SideQuestMap24,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_25,
-	      gText_SideQuestDesc_25,
-	      gText_SideQuestDoneDesc_25,
-	      gText_SideQuestMap25,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_26,
-	      gText_SideQuestDesc_26,
-	      gText_SideQuestDoneDesc_26,
-	      gText_SideQuestMap26,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_27,
-	      gText_SideQuestDesc_27,
-	      gText_SideQuestDoneDesc_27,
-	      gText_SideQuestMap27,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_28,
-	      gText_SideQuestDesc_28,
-	      gText_SideQuestDoneDesc_28,
-	      gText_SideQuestMap28,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_29,
-	      gText_SideQuestDesc_29,
-	      gText_SideQuestDoneDesc_29,
-	      gText_SideQuestMap29,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
+	
 	side_quest(
 	      gText_SideQuestName_30,
 	      gText_SideQuestDesc_30,
@@ -860,8 +527,9 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJECT,
 	      NULL,
 	      0
-	),
+	),*/
 };
+
 ////////////////////////END QUEST CUSTOMIZATION////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
