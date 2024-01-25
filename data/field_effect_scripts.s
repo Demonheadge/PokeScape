@@ -79,6 +79,7 @@ gFieldEffectScriptPointers::
     .4byte gFieldEffectScript_UseDiveTool               @ FLDEFF_USE_DIVE_TOOL
     .4byte gFieldEffectScript_UseTeleportTool           @ FLDEFF_USE_TELEPORT_TOOL
 @ End qol_field_moves
+	.4byte gFieldEffectScript_Wheat                     @ FLDEFF_WHEAT
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -382,3 +383,7 @@ gFieldEffectScript_UseTeleportTool::
 	field_eff_end
 
 @ End qol_field_moves
+
+gFieldEffectScript_Wheat:: @ 82DBB6A
+	field_eff_loadfadedpal_callnative gSpritePalette_Wheat, FldEff_Wheat
+	field_eff_end

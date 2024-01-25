@@ -1009,7 +1009,6 @@ const u16 gObjectEventPalette_RAC_KITTY[] = INCBIN_U16("graphics/object_events/p
 const u16 gObjectEventPalette_RAC_POPBUBBLE[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/RAC_POPBUBBLE.gbapal");
 */
 
-
 //POKESCAPE FIELD EFFECTS
 const u32 gFieldEffectObjectPic_Wheat[] = INCBIN_U32("graphics/field_effects/pics/wheat.4bpp");
 const u16 gFieldEffectObjectPic_WheatPalette[] = INCBIN_U16("graphics/field_effects/pics/wheat.gbapal");

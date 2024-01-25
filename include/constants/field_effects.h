@@ -77,6 +77,7 @@
 #define FLDEFF_USE_DIVE_TOOL             72
 #define FLDEFF_USE_TELEPORT_TOOL         73
 // End qol_field_moves
+#define FLDEFF_WHEAT		             74
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1
@@ -128,5 +129,6 @@
 #define FLDEFF_PAL_TAG_SMALL_SPARKLE      0x100F
 #define FLDEFF_PAL_TAG_HOF_MONITOR        0x1010
 #define FLDEFF_PAL_TAG_UNKNOWN            0x1011
+#define FLDEFF_PAL_TAG_WHEAT              0x1012
 
 #endif // GUARD_FIELD_EFFECT_CONSTANTS_H

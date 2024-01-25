@@ -1,5 +1,6 @@
 const struct SpritePalette gSpritePalette_GeneralFieldEffect0 = {gFieldEffectObjectPalette0, FLDEFF_PAL_TAG_GENERAL_0};
 const struct SpritePalette gSpritePalette_GeneralFieldEffect1 = {gFieldEffectObjectPalette1, FLDEFF_PAL_TAG_GENERAL_1};
+const struct SpritePalette gSpritePalette_Wheat               = {gFieldEffectObjectPic_WheatPalette, FLDEFF_PAL_TAG_WHEAT};
 
 static const union AnimCmd sAnim_Shadow[] =
 {
@@ -1287,3 +1288,39 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_Rayquaza = {
 };
 
 static const struct SpritePalette sSpritePalette_Unused = {gObjectEventPal_Npc3, FLDEFF_PAL_TAG_UNKNOWN};
+
+// Pokescape
+
+static const struct SpriteFrameImage sPicTable_Wheat[] = {
+    overworld_frame(gFieldEffectObjectPic_Wheat, 2, 2, 0),
+    overworld_frame(gFieldEffectObjectPic_Wheat, 2, 2, 1),
+    overworld_frame(gFieldEffectObjectPic_Wheat, 2, 2, 2),
+    overworld_frame(gFieldEffectObjectPic_Wheat, 2, 2, 3),
+};
+
+static const union AnimCmd sAnim_Wheat[] =
+{
+    ANIMCMD_FRAME(1, 3),
+    ANIMCMD_FRAME(2, 3),
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_FRAME(3, 4),
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_FRAME(3, 4),
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnimTable_Wheat[] =
+{
+    sAnim_Wheat,
+};
+
+const struct SpriteTemplate gFieldEffectObjectTemplate_Wheat = {
+    .tileTag = TAG_NONE,
+    .paletteTag = FLDEFF_PAL_TAG_WHEAT,
+    .oam = &gObjectEventBaseOam_16x16,
+    .anims = sAnimTable_Wheat,
+    .images = sPicTable_Wheat,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = UpdateWheatFieldEffect,
+};
