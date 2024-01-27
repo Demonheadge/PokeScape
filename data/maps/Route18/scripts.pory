@@ -125,10 +125,10 @@ script BATTLE_ROUTE18_TRAINER1 // AGILITY
 	end
 }
 
-script BATTLE_ROUTE18_TRAINER2 //Canada Grrl
+script BATTLE_ROUTE18_TRAINER2 //Canada Grl
 {
     trainerbattle_single(TRAINER_ROUTE18_TRAINER_2, format("SPOTTED!"),format("Oh wait, you aren't a penguin."))
-    namebox ("Canada Grrl")
+    namebox ("Canada Grl")
     msgbox(format("I heard there was a Penguin in this area but all I see are cats.\pHave you seen any?"))
 	hidenamebox
     release

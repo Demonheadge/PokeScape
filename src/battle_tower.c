@@ -1447,10 +1447,10 @@ u8 GetFrontierOpponentClass(u16 trainerId)
     {
         return GetFrontierBrainTrainerClass();
     }
-    else if (trainerId == TRAINER_STEVEN_PARTNER)
-    {
-        trainerClass = gTrainers[TRAINER_STEVEN].trainerClass;
-    }
+    //else if (trainerId == TRAINER_STEVEN_PARTNER)
+    //{
+    //    trainerClass = gTrainers[TRAINER_STEVEN].trainerClass;
+    //}
     else if (trainerId >= TRAINER_CUSTOM_PARTNER)
     {
         trainerClass = gTrainers[trainerId - TRAINER_CUSTOM_PARTNER].trainerClass;
@@ -1531,11 +1531,11 @@ void GetFrontierTrainerName(u8 *dst, u16 trainerId)
         CopyFrontierBrainTrainerName(dst);
         return;
     }
-    else if (trainerId == TRAINER_STEVEN_PARTNER)
-    {
-        for (i = 0; i < PLAYER_NAME_LENGTH; i++)
-            dst[i] = gTrainers[TRAINER_STEVEN].trainerName[i];
-    }
+    //else if (trainerId == TRAINER_STEVEN_PARTNER)
+    //{
+    //    for (i = 0; i < PLAYER_NAME_LENGTH; i++)
+    //        dst[i] = gTrainers[TRAINER_STEVEN].trainerName[i];
+    //}
     else if (trainerId >= TRAINER_CUSTOM_PARTNER)
     {
         for (i = 0; gTrainers[trainerId - TRAINER_CUSTOM_PARTNER].trainerName[i] != EOS; i++)
@@ -2246,7 +2246,7 @@ static void SaveTowerChallenge(void)
         SaveBattleTowerRecord();
 
     gSaveBlock2Ptr->frontier.challengeStatus = gSpecialVar_0x8005;
-    VarSet(VAR_TEMP_CHALLENGE_STATUS, 0);
+    //VarSet(VAR_TEMP_CHALLENGE_STATUS, 0);
     gSaveBlock2Ptr->frontier.challengePaused = TRUE;
     SaveGameFrontier();
 }
@@ -3012,36 +3012,36 @@ static void FillPartnerParty(u16 trainerId)
     s32 ball = -1;
     SetFacilityPtrsGetLevel();
 
-    if (trainerId == TRAINER_STEVEN_PARTNER)
-    {
-        for (i = 0; i < MULTI_PARTY_SIZE; i++)
-        {
-            do
-            {
-                j = Random32();
-            } while (IsShinyOtIdPersonality(STEVEN_OTID, j) || sStevenMons[i].nature != GetNatureFromPersonality(j));
-            CreateMon(&gPlayerParty[MULTI_PARTY_SIZE + i],
-                      sStevenMons[i].species,
-                      sStevenMons[i].level,
-                      sStevenMons[i].fixedIV,
-                      TRUE,
-                      #ifdef BUGFIX
-                      j,
-                      #else
-                      i, // BUG: personality was stored in the 'j' variable. As a result, Steven's Pokémon do not have the intended natures.
-                      #endif
-                      OT_ID_PRESET, STEVEN_OTID);
-            for (j = 0; j < PARTY_SIZE; j++)
-                SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_HP_EV + j, &sStevenMons[i].evs[j]);
-            for (j = 0; j < MAX_MON_MOVES; j++)
-                SetMonMoveSlot(&gPlayerParty[MULTI_PARTY_SIZE + i], sStevenMons[i].moves[j], j);
-            SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, gTrainers[TRAINER_STEVEN].trainerName);
-            j = MALE;
-            SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
-            CalculateMonStats(&gPlayerParty[MULTI_PARTY_SIZE + i]);
-        }
-    }
-    else if (trainerId >= TRAINER_CUSTOM_PARTNER)
+    //if (trainerId == TRAINER_STEVEN_PARTNER)
+    //{
+    //    for (i = 0; i < MULTI_PARTY_SIZE; i++)
+    //    {
+    //        do
+    //        {
+    //            j = Random32();
+    //        } while (IsShinyOtIdPersonality(STEVEN_OTID, j) || sStevenMons[i].nature != GetNatureFromPersonality(j));
+    //        CreateMon(&gPlayerParty[MULTI_PARTY_SIZE + i],
+    //                  sStevenMons[i].species,
+    //                  sStevenMons[i].level,
+    //                  sStevenMons[i].fixedIV,
+    //                  TRUE,
+    //                  #ifdef BUGFIX
+    //                  j,
+    //                  #else
+    //                  i, // BUG: personality was stored in the 'j' variable. As a result, Steven's Pokémon do not have the intended natures.
+    //                  #endif
+    //                  OT_ID_PRESET, STEVEN_OTID);
+    //        for (j = 0; j < PARTY_SIZE; j++)
+    //            SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_HP_EV + j, &sStevenMons[i].evs[j]);
+    //        for (j = 0; j < MAX_MON_MOVES; j++)
+    //            SetMonMoveSlot(&gPlayerParty[MULTI_PARTY_SIZE + i], sStevenMons[i].moves[j], j);
+    //        SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_NAME, gTrainers[TRAINER_STEVEN].trainerName);
+    //        j = MALE;
+    //        SetMonData(&gPlayerParty[MULTI_PARTY_SIZE + i], MON_DATA_OT_GENDER, &j);
+    //        CalculateMonStats(&gPlayerParty[MULTI_PARTY_SIZE + i]);
+    //    }
+    //}
+    /* else */if (trainerId >= TRAINER_CUSTOM_PARTNER)
     {
         otID = Random32();
 

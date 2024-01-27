@@ -5109,7 +5109,7 @@ static bool8 IsEasyChatGroupUnlocked(u8 groupId)
     switch (groupId)
     {
     case EC_GROUP_TRENDY_SAYING:
-        return FlagGet(FLAG_UNLOCKED_TRENDY_SAYINGS);
+        //return FlagGet(FLAG_UNLOCKED_TRENDY_SAYINGS);
     case EC_GROUP_EVENTS:
     case EC_GROUP_MOVE_1:
     case EC_GROUP_MOVE_2:
@@ -5629,8 +5629,8 @@ static void SetUnlockedEasyChatGroups(void)
         sWordData->unlockedGroupIds[sWordData->numUnlockedGroups++] = EC_GROUP_MOVE_2;
     }
 
-    if (FlagGet(FLAG_UNLOCKED_TRENDY_SAYINGS))
-        sWordData->unlockedGroupIds[sWordData->numUnlockedGroups++] = EC_GROUP_TRENDY_SAYING;
+    //if (FlagGet(FLAG_UNLOCKED_TRENDY_SAYINGS))
+    //    sWordData->unlockedGroupIds[sWordData->numUnlockedGroups++] = EC_GROUP_TRENDY_SAYING;
 
     if (IsNationalPokedexEnabled())
         sWordData->unlockedGroupIds[sWordData->numUnlockedGroups++] = EC_GROUP_POKEMON_NATIONAL;

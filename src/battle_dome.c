@@ -2638,7 +2638,7 @@ static void SetDomeOpponentGraphicsId(void)
 static void SaveDomeChallenge(void)
 {
     gSaveBlock2Ptr->frontier.challengeStatus = gSpecialVar_0x8005;
-    VarSet(VAR_TEMP_CHALLENGE_STATUS, 0);
+    //VarSet(VAR_TEMP_CHALLENGE_STATUS, 0);
     gSaveBlock2Ptr->frontier.challengePaused = TRUE;
     SaveGameFrontier();
 }
@@ -6067,19 +6067,21 @@ static void CopyDomeTrainerName(u8 *str, u16 trainerId)
 
 static u8 GetDomeBrainTrainerPicId(void)
 {
-    return gTrainers[TRAINER_TUCKER].trainerPic;
+    //return gTrainers[TRAINER_TUCKER].trainerPic;
+    return FALSE;
 }
 
 static u8 GetDomeBrainTrainerClass(void)
 {
-    return gTrainers[TRAINER_TUCKER].trainerClass;
+    //return gTrainers[TRAINER_TUCKER].trainerClass;
+    return FALSE;
 }
 
 static void CopyDomeBrainTrainerName(u8 *str)
 {
-    int i;
+    //int i;
 
-    for (i = 0; i < PLAYER_NAME_LENGTH; i++)
-        str[i] = gTrainers[TRAINER_TUCKER].trainerName[i];
-    str[i] = EOS;
+    //for (i = 0; i < PLAYER_NAME_LENGTH; i++)
+    //    str[i] = gTrainers[TRAINER_TUCKER].trainerName[i];
+    //str[i] = EOS;
 }

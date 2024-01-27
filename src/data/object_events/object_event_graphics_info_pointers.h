@@ -530,7 +530,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OrikalkumOr
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ElementalOre;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BaneOre;
 
-extern const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
+const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
     [OBJ_EVENT_GFX_BRENDAN_MACH_BIKE] =        &gObjectEventGraphicsInfo_BrendanMachBike,
     [OBJ_EVENT_GFX_BRENDAN_SURFING] =          &gObjectEventGraphicsInfo_BrendanSurfing,
@@ -1055,7 +1055,7 @@ extern const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPoint
 	[OBJ_EVENT_GFX_BANE_ORE] =          		    &gObjectEventGraphicsInfo_BaneOre,
 };
 
-extern const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
+const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
     [MAUVILLE_MAN_BARD]        = &gObjectEventGraphicsInfo_Bard,
     [MAUVILLE_MAN_HIPSTER]     = &gObjectEventGraphicsInfo_Hipster,
     [MAUVILLE_MAN_TRADER]      = &gObjectEventGraphicsInfo_Trader,

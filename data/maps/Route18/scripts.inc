@@ -197,7 +197,7 @@ BATTLE_ROUTE18_TRAINER2_Text_1:
 	.string "Oh wait, you aren't a penguin.$"
 
 BATTLE_ROUTE18_TRAINER2_Text_2:
-	.string "Canada Grrl$"
+	.string "Canada Grl$"
 
 BATTLE_ROUTE18_TRAINER2_Text_3:
 	.string "I heard there was a Penguin in this area\n"

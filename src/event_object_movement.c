@@ -133,14 +133,14 @@ static u16 GetObjectEventFlagIdByObjectEventId(u8);
 static void UpdateObjectEventVisibility(struct ObjectEvent *, struct Sprite *);
 static void MakeSpriteTemplateFromObjectEventTemplate(const struct ObjectEventTemplate *, struct SpriteTemplate *, const struct SubspriteTable **);
 static void GetObjectEventMovingCameraOffset(s16 *, s16 *);
-static struct ObjectEventTemplate *GetObjectEventTemplateByLocalIdAndMap(u8, u8, u8);
+static const struct ObjectEventTemplate *GetObjectEventTemplateByLocalIdAndMap(u8, u8, u8);
 static void RemoveObjectEventIfOutsideView(struct ObjectEvent *);
 static void SpawnObjectEventOnReturnToField(u8, s16, s16);
 static void SetPlayerAvatarObjectEventIdAndObjectId(u8, u8);
 static void ResetObjectEventFldEffData(struct ObjectEvent *);
 static u8 LoadSpritePaletteIfTagExists(const struct SpritePalette *);
 static u8 FindObjectEventPaletteIndexByTag(u16);
-static void _PatchObjectPalette(u16, u8);
+static void UNUSED _PatchObjectPalette(u16, u8);
 static bool8 ObjectEventDoesElevationMatch(struct ObjectEvent *, u8);
 static void SpriteCB_CameraObject(struct Sprite *);
 static void CameraObject_0(struct Sprite *);
@@ -437,6 +437,327 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_LUGIA                   0x1121
 #define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
+
+//POKESCAPE
+/*
+#define OBJ_EVENT_PAL_SKELETON_1 0x1124
+#define OBJ_EVENT_PAL_SKELETON_2 0x1125
+#define OBJ_EVENT_PAL_SKELETON_3 0x1126
+*/
+#define OBJ_EVENT_PAL_DWARF_1 0x1127
+#define OBJ_EVENT_PAL_DWARF_2 0x1128
+#define OBJ_EVENT_PAL_DWARF_3 0x1129
+#define OBJ_EVENT_PAL_DWARF_4 0x112A
+#define OBJ_EVENT_PAL_TRIBEMEN_1 0x112B
+#define OBJ_EVENT_PAL_TRIBEMEN_2 0x112C
+#define OBJ_EVENT_PAL_TRIBEMEN_3 0x112D
+#define OBJ_EVENT_PAL_MONK_1 0x112E
+#define OBJ_EVENT_PAL_MONK_2 0x112F
+#define OBJ_EVENT_PAL_DRUID_1 0x1130
+#define OBJ_EVENT_PAL_DRUID_2 0x1131
+#define OBJ_EVENT_PAL_DRUID_3 0x1132
+#define OBJ_EVENT_PAL_MAGGIE 0x1133
+#define OBJ_EVENT_PAL_WENDY 0x1134
+#define OBJ_EVENT_PAL_HAM_JOHANHUS 0x1135
+#define OBJ_EVENT_PAL_HAM_SIGMUND_1 0x1136
+#define OBJ_EVENT_PAL_HAM_SIGMUND_2 0x1137
+#define OBJ_EVENT_PAL_HAM_PATTY 0x1138
+#define OBJ_EVENT_PAL_HAM_DEACON 0x1139
+#define OBJ_EVENT_PAL_HAM_GRUNT_M 0x113A
+#define OBJ_EVENT_PAL_HAM_GRUNT_F 0x113B
+#define OBJ_EVENT_PAL_GOBLIN_1 0x113C
+#define OBJ_EVENT_PAL_GOBLIN_2 0x113D
+#define OBJ_EVENT_PAL_GOBLIN_GENERALBENTNOZE 0x113E
+#define OBJ_EVENT_PAL_GOBLIN_GENERALWARTFACE 0x113F
+/*
+#define OBJ_EVENT_PAL_GOEBIE_1 0x1140
+#define OBJ_EVENT_PAL_GOEBIE_2 0x1141
+#define OBJ_EVENT_PAL_GOEBIE_3 0x1142
+#define OBJ_EVENT_PAL_GOEBIE_4 0x1143
+#define OBJ_EVENT_PAL_GOEBIE_5 0x1144
+#define OBJ_EVENT_PAL_GOEBIE_6 0x1145
+*/
+#define OBJ_EVENT_PAL_PIRATE_1 0x1146
+#define OBJ_EVENT_PAL_PIRATE_2 0x1147
+#define OBJ_EVENT_PAL_PIRATE_3 0x1148
+/*
+#define OBJ_EVENT_PAL_BARBARIAN_FEMALE_1 0x1149
+#define OBJ_EVENT_PAL_BARBARIAN_FEMALE_2 0x114A
+#define OBJ_EVENT_PAL_BARBARIAN_MALE_1 0x114B
+#define OBJ_EVENT_PAL_BARBARIAN_MALE_2 0x114C
+*/
+#define OBJ_EVENT_PAL_TZHAAR_GA_AL 0x114D
+#define OBJ_EVENT_PAL_TZHAAR_1 0x114E
+#define OBJ_EVENT_PAL_TZHAAR_2 0x114F
+#define OBJ_EVENT_PAL_TZHAAR_3 0x1150
+#define OBJ_EVENT_PAL_TZHAAR_4 0x1151
+#define OBJ_EVENT_PAL_WIZARD_DARK 0x1152
+#define OBJ_EVENT_PAL_WIZARD_GUTHIX 0x1153
+#define OBJ_EVENT_PAL_WIZARD_GUTHIX_DAGGER 0x1154
+#define OBJ_EVENT_PAL_WIZARD_M 0x1155
+#define OBJ_EVENT_PAL_WIZARD_F 0x1156
+#define OBJ_EVENT_PAL_WIZARD_ARCHMAGE 0x1157
+#define OBJ_EVENT_PAL_KNIGHT_WHITE_F 0x1158
+#define OBJ_EVENT_PAL_KNIGHT_WHITE_M 0x1159
+#define OBJ_EVENT_PAL_KNIGHT_WHITE_SIRTIFFYCASHIN 0x115A
+#define OBJ_EVENT_PAL_KNIGHT_BLACK_F 0x115B
+#define OBJ_EVENT_PAL_KNIGHT_BLACK_M 0x115C
+#define OBJ_EVENT_PAL_KNIGHT_BLACK_DAQUARIUS 0x115D
+#define OBJ_EVENT_PAL_BANKER_F 0x115E
+#define OBJ_EVENT_PAL_BANKER_M 0x115F
+#define OBJ_EVENT_PAL_GENERAL_STORE_CLERK 0x1160
+#define OBJ_EVENT_PAL_GUARD_KHAZARD 0x1161
+#define OBJ_EVENT_PAL_GUARD_FALADOR 0x1162
+#define OBJ_EVENT_PAL_GUARD_ALKHAIRD 0x1163
+#define OBJ_EVENT_PAL_GUARD_DRAYNOR 0x1164
+#define OBJ_EVENT_PAL_GUARD_VARROCK_1 0x1165
+#define OBJ_EVENT_PAL_GUARD_VARROCK_2 0x1166
+#define OBJ_EVENT_PAL_GUARD_VARROCK_3 0x1167
+#define OBJ_EVENT_PAL_FAIRY_1 0x1168
+#define OBJ_EVENT_PAL_FAIRY_2 0x1169
+#define OBJ_EVENT_PAL_FAIRY_3 0x116A
+#define OBJ_EVENT_PAL_IRONMAN 0x116B
+#define OBJ_EVENT_PAL_MITHRILMAN 0x116C
+#define OBJ_EVENT_PAL_ADAMANTMAN 0x116D
+#define OBJ_EVENT_PAL_BARROWS_AHRIM 0x116E
+#define OBJ_EVENT_PAL_BARROWS_DHAROK 0x116F
+#define OBJ_EVENT_PAL_BARROWS_KARIL 0x1170
+#define OBJ_EVENT_PAL_BARROWS_VERAC 0x1171
+#define OBJ_EVENT_PAL_BARROWS_TORAG 0x1172
+#define OBJ_EVENT_PAL_BARROWS_GUTHAN 0x1173
+#define OBJ_EVENT_PAL_BARROWS_SILSKE 0x1174
+#define OBJ_EVENT_PAL_MAN_1 0x1175
+#define OBJ_EVENT_PAL_WOMAN_1 0x1176
+//SKILLS
+#define OBJ_EVENT_PAL_GRACEFUL 0x1177
+#define OBJ_EVENT_PAL_CHEF 0x1178
+#define OBJ_EVENT_PAL_FIREMAKER 0x1179
+#define OBJ_EVENT_PAL_WOODCUTTER 0x117A
+#define OBJ_EVENT_PAL_SUMMONER 0x117B
+#define OBJ_EVENT_PAL_MERCHER 0x117C
+#define OBJ_EVENT_PAL_FISHERMAN 0x117D
+#define OBJ_EVENT_PAL_HUNTER_M 0x117E
+#define OBJ_EVENT_PAL_HUNTER_F 0x117F
+#define OBJ_EVENT_PAL_FARMER_M 0x1180
+#define OBJ_EVENT_PAL_FARMER_F 0x1181
+// 0x1182
+#define OBJ_EVENT_PAL_NOOB 0x1183
+#define OBJ_EVENT_PAL_QUESTER 0x1184
+#define OBJ_EVENT_PAL_JMOD 0x1185
+#define OBJ_EVENT_PAL_DND 0x1186
+#define OBJ_EVENT_PAL_BOT_DRAGON 0x1187
+#define OBJ_EVENT_PAL_MUGGER 0x1188
+#define OBJ_EVENT_PAL_THIEF 0x1189
+#define OBJ_EVENT_PAL_BARMAID 0x118A
+#define OBJ_EVENT_PAL_PKER 0x118B
+#define OBJ_EVENT_PAL_PVMER 0x118C
+#define OBJ_EVENT_PAL_SKILLER 0x118D
+#define OBJ_EVENT_PAL_RSMVER_M 0x118E
+#define OBJ_EVENT_PAL_RSMVER_F 0x118F
+#define OBJ_EVENT_PAL_SAILOR 0x1190
+#define OBJ_EVENT_PAL_RANGER_F 0x1191
+//PLAYERS
+#define OBJ_EVENT_PAL_SUDO_BASH 0x1192
+#define OBJ_EVENT_PAL_DEMONHEADGE 0x1193
+#define OBJ_EVENT_PAL_PREZLEEK 0x1194
+#define OBJ_EVENT_PAL_LUKIENLIGHT 0x1195
+#define OBJ_EVENT_PAL_HYPER_STAN 0x1196
+//UNIQUE NPCS
+#define OBJ_EVENT_PAL_HANS 0x1197
+#define OBJ_EVENT_PAL_HAIRDRESSER 0x1198
+#define OBJ_EVENT_PAL_COOK 0x1199
+#define OBJ_EVENT_PAL_COUNT_DRAYNOR 0x119A
+#define OBJ_EVENT_PAL_GNOME_CHILD 0x119B
+#define OBJ_EVENT_PAL_BARAEK 0x119C
+#define OBJ_EVENT_PAL_DIANGO 0x119D
+#define OBJ_EVENT_PAL_HAIG_HALEN 0x119E
+#define OBJ_EVENT_PAL_KATRINE 0x119F
+#define OBJ_EVENT_PAL_PROF_NORMAL_TREE 0x1200
+#define OBJ_EVENT_PAL_STRAVEN 0x1201
+#define OBJ_EVENT_PAL_EXPLORER_JACK 0x1202
+#define OBJ_EVENT_PAL_FORTUNATO 0x1203
+/*
+#define OBJ_EVENT_PAL_SARADOMIN 0x1204
+#define OBJ_EVENT_PAL_ZAMORAK 0x1205
+#define OBJ_EVENT_PAL_GUTHIX 0x1206
+*/
+#define OBJ_EVENT_PAL_AVA 0x1207
+#define OBJ_EVENT_PAL_RELDO 0x1208
+#define OBJ_EVENT_PAL_MAX 0x1209
+#define OBJ_EVENT_PAL_SIR_OWEN 0x120A
+#define OBJ_EVENT_PAL_OZAN 0x120B
+#define OBJ_EVENT_PAL_XENIA 0x120C
+#define OBJ_EVENT_PAL_RAPTOR 0x120D
+#define OBJ_EVENT_PAL_ARIANE 0x120E
+#define OBJ_EVENT_PAL_ZANIK 0x120F
+#define OBJ_EVENT_PAL_ZANIK_HAM 0x1210
+//ITEMS
+#define OBJ_EVENT_PAL_BONE_PILE 0x1211
+#define OBJ_EVENT_PAL_ITEM_POUCH 0x1212
+#define OBJ_EVENT_PAL_PHOENIX_EGG 0x1213
+#define OBJ_EVENT_PAL_SHIP_1 0x1214
+//MONSTERS
+#define OBJ_EVENT_PAL_DUCK_SWIM         0x1215
+#define OBJ_EVENT_PAL_DUCK_WALK         0x1216
+#define OBJ_EVENT_PAL_BASILISK          0x1217
+#define OBJ_EVENT_PAL_COW               0x1218
+#define OBJ_EVENT_PAL_COW_DAIRY         0x1219
+#define OBJ_EVENT_PAL_CHICKEN           0x121A
+#define OBJ_EVENT_PAL_EVIL_CHICKEN      0x121B
+#define OBJ_EVENT_PAL_IMP               0x121C
+#define OBJ_EVENT_PAL_IMP_SNOW          0x121D
+#define OBJ_EVENT_PAL_KALPHITE_KING     0x121E
+#define OBJ_EVENT_PAL_KALPHITE_QUEEN    0x122F
+#define OBJ_EVENT_PAL_KALPHITE_WORKER   0x1220
+#define OBJ_EVENT_PAL_GWD_GENERAL_GRAADOR 0x1221
+#define OBJ_EVENT_PAL_ABYSSAL_SIRE      0x1222
+#define OBJ_EVENT_PAL_VORAGO            0x1223
+#define OBJ_EVENT_PAL_PIGLET            0x1224
+#define OBJ_EVENT_PAL_PIGZILLA          0x1225
+#define OBJ_EVENT_PAL_YAK               0x1226
+#define OBJ_EVENT_PAL_PENGUIN_ROCK      0x1227
+#define OBJ_EVENT_PAL_QUEEN_BLACK_DRAGON 0x1228
+#define OBJ_EVENT_PAL_ELVARG            0x1229
+#define OBJ_EVENT_PAL_KING_BLACK_DRAGON 0x122A
+#define OBJ_EVENT_PAL_RAT               0x122B
+#define OBJ_EVENT_PAL_RUNE_GUARDIAN     0x122C
+#define OBJ_EVENT_PAL_SHEEP             0x122D
+//#define OBJ_EVENT_PAL_SARALING        0x122E
+#define OBJ_EVENT_PAL_SARAOWL         0x122F
+#define OBJ_EVENT_PAL_GUTHRAPTOR        0x1230
+/*
+#define OBJ_EVENT_PAL_SKELETAL_OX_M     0x1231
+#define OBJ_EVENT_PAL_SKELETAL_OX_F     0x1232
+*/
+#define OBJ_EVENT_PAL_TERRORBIRDS       0x1233
+#define OBJ_EVENT_PAL_PKER_RUSHER       0x1234
+//#define OBJ_EVENT_PAL_TERRORBIRD_2    0x1234
+#define OBJ_EVENT_PAL_TZTOK_JAD         0x1235
+#define OBJ_EVENT_PAL_MOLE_GIANT        0x1236
+#define OBJ_EVENT_PAL_MOLE_BABY         0x1237
+#define OBJ_EVENT_PAL_CAMEL             0x1238
+#define OBJ_EVENT_PAL_FROGEEL           0x1239
+#define OBJ_EVENT_PAL_SCORPION          0x123A
+#define OBJ_EVENT_PAL_SLIME             0x123B
+#define OBJ_EVENT_PAL_RAVEN             0x123C
+#define OBJ_EVENT_PAL_SEAGULL           0x123D
+#define OBJ_EVENT_PAL_STRYKEWYRM_SANDY  0x123E
+#define OBJ_EVENT_PAL_UNICORN_WHITE     0x123F
+#define OBJ_EVENT_PAL_UNICORN_BLACK     0x1240
+//GYMLEADERS
+#define OBJ_EVENT_PAL_GYMLEADER_DUKE_HORACIO 0x1241
+#define OBJ_EVENT_PAL_GYMLEADER_SIR_AMIK_VARZE 0x1242
+#define OBJ_EVENT_PAL_GYMLEADER_PRINCE_ALI 0x1243
+#define OBJ_EVENT_PAL_GYMLEADER_KING_ROALD 0x1244
+#define OBJ_EVENT_PAL_GYMLEADER_TOKHAARHOK 0x1245
+#define OBJ_EVENT_PAL_GYMLEADER_GUNTHOR 0x1246
+#define OBJ_EVENT_PAL_GYMLEADER_WISE_OLD_MAN 0x1247
+#define OBJ_EVENT_PAL_GYMLEADER_VANNAKA 0x1248
+//CHAMPIONS
+#define OBJ_EVENT_PAL_BOATY             0x1249
+#define OBJ_EVENT_PAL_SUOMI             0x124A
+#define OBJ_EVENT_PAL_ZEZIMA            0x124B
+//OTHER
+#define OBJ_EVENT_PAL_PROTAGANIST       0x124C
+#define OBJ_EVENT_PAL_ORE_PAL           0x124D
+#define OBJ_EVENT_PAL_ORE_PAL2          0x124E
+#define OBJ_EVENT_PAL_CABBAGE_CROP      0x124F
+
+#define OBJ_EVENT_PAL_ABYSSAL_DEMON     0x1250
+#define OBJ_EVENT_PAL_CHAOS_ELEMENTAL   0x1251
+#define OBJ_EVENT_PAL_MINER             0x1252
+#define OBJ_EVENT_PAL_SMITH             0x1253
+#define OBJ_EVENT_PAL_DOG_SLEEP         0x1254
+#define OBJ_EVENT_PAL_JUNA              0x1255
+#define OBJ_EVENT_PAL_ABYSS_PORTAL      0x1256
+#define OBJ_EVENT_PAL_CHAIR             0x1257
+#define OBJ_EVENT_PAL_STRYKEWYRM_FREEZY 0x1258
+#define OBJ_EVENT_PAL_STRYKEWYRM_LEAFY  0x1259
+#define OBJ_EVENT_PAL_GhostDisguise     0x125A
+/*
+#define OBJ_EVENT_PAL_CAT_BLACK			0x125B
+#define OBJ_EVENT_PAL_CAT_WHITE			0x125C
+#define OBJ_EVENT_PAL_CAT_BROWN			0x125D
+#define OBJ_EVENT_PAL_CAT_HELL			0x125E
+#define OBJ_EVENT_PAL_CAT_BLACKWHITE	0x125F
+#define OBJ_EVENT_PAL_CAT_CLOCKWORK		0x1260
+#define OBJ_EVENT_PAL_CAT_BROWNWHITE	0x1261
+#define OBJ_EVENT_PAL_CAT_PURPLE		0x1262*/
+#define OBJ_EVENT_PAL_ARCHAEOLOGIST		0x1263
+#define OBJ_EVENT_PAL_DIVINER			0x1264
+#define OBJ_EVENT_PAL_DURIAL321			0x1265/*
+#define OBJ_EVENT_PAL_SARADOMIN_OWL		0x1266
+#define OBJ_EVENT_PAL_ZAMORAK_HAWK		0x1267
+#define OBJ_EVENT_PAL_GUTHIX_RAPTOR		0x1268
+#define OBJ_EVENT_PAL_DOG_STRAY			0x1269
+#define OBJ_EVENT_PAL_DOG_LABRADOR		0x126A
+#define OBJ_EVENT_PAL_DOG_GUARD			0x126B
+#define OBJ_EVENT_PAL_DOG_CORGI			0x126C
+#define OBJ_EVENT_PAL_DOG_DALMATIAN		0x126D
+*/
+
+#define OBJ_EVENT_PAL_SKELETAL			0x125B
+#define OBJ_EVENT_PAL_CATS			    0x125C
+#define OBJ_EVENT_PAL_DOGS			    0x125D
+#define OBJ_EVENT_PAL_BARBARIANS		0x125E
+#define OBJ_EVENT_PAL_GOEBIES			0x125F
+#define OBJ_EVENT_PAL_ZAMORAK			0x1260
+#define OBJ_EVENT_PAL_SARADOMIN			0x1261
+#define OBJ_EVENT_PAL_GUTHIX			0x1262
+#define OBJ_EVENT_PAL_KNIGHTS1			0x1266
+#define OBJ_EVENT_PAL_KNIGHTS2			0x1267
+#define OBJ_EVENT_PAL_HAM			    0x1268
+#define OBJ_EVENT_PAL_BARROWS			0x1269
+/*
+#define OBJ_EVENT_PAL_GOBLINS			0x125B
+#define OBJ_EVENT_PAL_BARROWS			0x125B
+#define OBJ_EVENT_PAL_GUARDS			0x125B
+*/
+
+
+
+#define OBJ_EVENT_PAL_SMUGGLER			0x126A
+//RAC
+#define OBJ_EVENT_PAL_RAC_PALETTE_1		0x126B
+#define OBJ_EVENT_PAL_RAC_PALETTE_2		0x126C
+#define OBJ_EVENT_PAL_RAC_PALETTE_3		0x126D
+#define OBJ_EVENT_PAL_RAC_PALETTE_4		0x126E
+#define OBJ_EVENT_PAL_RAC_PALETTE_5		0x126F
+#define OBJ_EVENT_PAL_RAC_PALETTE_6		0x1270
+
+
+#define OBJ_EVENT_PAL_CORP_BOSS			0x1271
+#define OBJ_EVENT_PAL_GIANTS			0x1272
+#define OBJ_EVENT_PAL_DRAGONS           0x1273
+#define OBJ_EVENT_PAL_SKOTIZO           0x1274
+
+/*
+#define OBJ_EVENT_PAL_RAC_BATS			0x126B
+#define OBJ_EVENT_PAL_RAC_DRAGON		0x126C
+#define OBJ_EVENT_PAL_RAC_ELEJ			0x126D
+#define OBJ_EVENT_PAL_RAC_JACKIE		0x126E
+#define OBJ_EVENT_PAL_RAC_BONBUN		0x126F
+#define OBJ_EVENT_PAL_RAC_ALEXANDRA	    0x1270
+#define OBJ_EVENT_PAL_RAC_BLKWITCH	    0x1271
+#define OBJ_EVENT_PAL_RAC_CHARM	        0x1272
+#define OBJ_EVENT_PAL_RAC_CRESBOT	    0x1273
+#define OBJ_EVENT_PAL_RAC_DEWYDD	    0x1274
+#define OBJ_EVENT_PAL_RAC_ELIZABETH	    0x1275
+#define OBJ_EVENT_PAL_RAC_ENKO	        0x1276
+#define OBJ_EVENT_PAL_RAC_FAYDENE	    0x1277
+#define OBJ_EVENT_PAL_RAC_FLORIN	    0x1278
+#define OBJ_EVENT_PAL_RAC_ISOHEL	    0x1279
+#define OBJ_EVENT_PAL_RAC_JAXYYS	    0x127A
+#define OBJ_EVENT_PAL_RAC_KITTY	        0x127B
+#define OBJ_EVENT_PAL_RAC_MOGGIE	    0x127C
+#define OBJ_EVENT_PAL_RAC_NELLE	        0x127D
+#define OBJ_EVENT_PAL_RAC_PARRISH	    0x127E
+#define OBJ_EVENT_PAL_RAC_POPBUBBLE	    0x127F
+#define OBJ_EVENT_PAL_RAC_SNAILY	    0x1280
+#define OBJ_EVENT_PAL_RAC_TIFA	        0x1281
+#define OBJ_EVENT_PAL_RAC_WHISPER	    0x1282
+*/
+
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -483,6 +804,323 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Lugia,                 OBJ_EVENT_PAL_TAG_LUGIA},
     {gObjectEventPal_RubySapphireBrendan,   OBJ_EVENT_PAL_TAG_RS_BRENDAN},
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
+    //POKESCAPE
+/*
+    {gObjectEventPalette_Skeleton_1, OBJ_EVENT_PAL_SKELETON_1},
+    {gObjectEventPalette_Skeleton_2, OBJ_EVENT_PAL_SKELETON_2},
+    {gObjectEventPalette_Skeleton_3, OBJ_EVENT_PAL_SKELETON_3},
+    */
+    {gObjectEventPalette_Dwarf_1, OBJ_EVENT_PAL_DWARF_1},
+    {gObjectEventPalette_Dwarf_2, OBJ_EVENT_PAL_DWARF_2},
+    {gObjectEventPalette_Dwarf_3, OBJ_EVENT_PAL_DWARF_3},
+    {gObjectEventPalette_Dwarf_4, OBJ_EVENT_PAL_DWARF_4},
+    {gObjectEventPalette_Tribemen_1, OBJ_EVENT_PAL_TRIBEMEN_1},
+    {gObjectEventPalette_Tribemen_2, OBJ_EVENT_PAL_TRIBEMEN_2},
+    {gObjectEventPalette_Tribemen_3, OBJ_EVENT_PAL_TRIBEMEN_3},
+    {gObjectEventPalette_Monk_1, OBJ_EVENT_PAL_MONK_1},
+    {gObjectEventPalette_Monk_2, OBJ_EVENT_PAL_MONK_2},
+    {gObjectEventPalette_Druid_1, OBJ_EVENT_PAL_DRUID_1},
+    {gObjectEventPalette_Druid_2, OBJ_EVENT_PAL_DRUID_2},
+    {gObjectEventPalette_Druid_3, OBJ_EVENT_PAL_DRUID_3},
+    {gObjectEventPalette_Maggie, OBJ_EVENT_PAL_MAGGIE},
+    {gObjectEventPalette_Wendy, OBJ_EVENT_PAL_WENDY},
+    {gObjectEventPalette_HAM_Johanhus, OBJ_EVENT_PAL_HAM_JOHANHUS},
+    {gObjectEventPalette_HAM_Sigmund_1, OBJ_EVENT_PAL_HAM_SIGMUND_1},
+    {gObjectEventPalette_HAM_Sigmund_2, OBJ_EVENT_PAL_HAM_SIGMUND_2},
+    {gObjectEventPalette_HAM_Patty, OBJ_EVENT_PAL_HAM_PATTY},
+    {gObjectEventPalette_HAM_Deacon, OBJ_EVENT_PAL_HAM_DEACON},
+    {gObjectEventPalette_HAM_Grunt_M, OBJ_EVENT_PAL_HAM_GRUNT_M},
+    {gObjectEventPalette_HAM_Grunt_F, OBJ_EVENT_PAL_HAM_GRUNT_F},
+    {gObjectEventPalette_Goblin_1, OBJ_EVENT_PAL_GOBLIN_1},
+    {gObjectEventPalette_Goblin_2, OBJ_EVENT_PAL_GOBLIN_2},
+    {gObjectEventPalette_Goblin_GeneralBentnoze, OBJ_EVENT_PAL_GOBLIN_GENERALBENTNOZE},
+    {gObjectEventPalette_Goblin_GeneralWartface, OBJ_EVENT_PAL_GOBLIN_GENERALWARTFACE},
+    /*
+    {gObjectEventPalette_Goebie_1, OBJ_EVENT_PAL_GOEBIE_1},
+    {gObjectEventPalette_Goebie_2, OBJ_EVENT_PAL_GOEBIE_2},
+    {gObjectEventPalette_Goebie_3, OBJ_EVENT_PAL_GOEBIE_3},
+    {gObjectEventPalette_Goebie_4, OBJ_EVENT_PAL_GOEBIE_4},
+    {gObjectEventPalette_Goebie_5, OBJ_EVENT_PAL_GOEBIE_5},
+    {gObjectEventPalette_Goebie_6, OBJ_EVENT_PAL_GOEBIE_6},
+    */
+    {gObjectEventPalette_Pirate_1, OBJ_EVENT_PAL_PIRATE_1},
+    {gObjectEventPalette_Pirate_2, OBJ_EVENT_PAL_PIRATE_2},
+    {gObjectEventPalette_Pirate_3, OBJ_EVENT_PAL_PIRATE_3},
+    /*
+    {gObjectEventPalette_Barbarian_Female_1, OBJ_EVENT_PAL_BARBARIAN_FEMALE_1},
+    {gObjectEventPalette_Barbarian_Female_2, OBJ_EVENT_PAL_BARBARIAN_FEMALE_2},
+    {gObjectEventPalette_Barbarian_Male_1, OBJ_EVENT_PAL_BARBARIAN_MALE_1},
+    {gObjectEventPalette_Barbarian_Male_2, OBJ_EVENT_PAL_BARBARIAN_MALE_2},
+    */
+    {gObjectEventPalette_Tzhaar_Ga_al, OBJ_EVENT_PAL_TZHAAR_GA_AL},
+    {gObjectEventPalette_Tzhaar_1, OBJ_EVENT_PAL_TZHAAR_1},
+    {gObjectEventPalette_Tzhaar_2, OBJ_EVENT_PAL_TZHAAR_2},
+    {gObjectEventPalette_Tzhaar_3, OBJ_EVENT_PAL_TZHAAR_3},
+    {gObjectEventPalette_Tzhaar_4, OBJ_EVENT_PAL_TZHAAR_4},
+    {gObjectEventPalette_Wizard_Dark, OBJ_EVENT_PAL_WIZARD_DARK},
+    {gObjectEventPalette_Wizard_Guthix, OBJ_EVENT_PAL_WIZARD_GUTHIX},
+    {gObjectEventPalette_Wizard_Guthix_Dagger, OBJ_EVENT_PAL_WIZARD_GUTHIX_DAGGER},
+    {gObjectEventPalette_Wizard_M, OBJ_EVENT_PAL_WIZARD_M},
+    {gObjectEventPalette_Wizard_F, OBJ_EVENT_PAL_WIZARD_F},
+    {gObjectEventPalette_Wizard_Archmage, OBJ_EVENT_PAL_WIZARD_ARCHMAGE},
+    {gObjectEventPalette_Knight_White_F, OBJ_EVENT_PAL_KNIGHT_WHITE_F},
+    {gObjectEventPalette_Knight_White_M, OBJ_EVENT_PAL_KNIGHT_WHITE_M},
+    {gObjectEventPalette_Knight_White_SirTiffyCashin, OBJ_EVENT_PAL_KNIGHT_WHITE_SIRTIFFYCASHIN},
+    {gObjectEventPalette_Knight_Black_F, OBJ_EVENT_PAL_KNIGHT_BLACK_F},
+    {gObjectEventPalette_Knight_Black_M, OBJ_EVENT_PAL_KNIGHT_BLACK_M},
+    {gObjectEventPalette_Knight_Black_Daquarius, OBJ_EVENT_PAL_KNIGHT_BLACK_DAQUARIUS},
+    {gObjectEventPalette_Banker_F, OBJ_EVENT_PAL_BANKER_F},
+    {gObjectEventPalette_Banker_M, OBJ_EVENT_PAL_BANKER_M},
+    {gObjectEventPalette_General_Store_Clerk, OBJ_EVENT_PAL_GENERAL_STORE_CLERK},
+    {gObjectEventPalette_Guard_Khazard, OBJ_EVENT_PAL_GUARD_KHAZARD},
+    {gObjectEventPalette_Guard_Falador, OBJ_EVENT_PAL_GUARD_FALADOR},
+    {gObjectEventPalette_Guard_Alkhaird, OBJ_EVENT_PAL_GUARD_ALKHAIRD},
+    {gObjectEventPalette_Guard_Draynor, OBJ_EVENT_PAL_GUARD_DRAYNOR},
+    {gObjectEventPalette_Guard_Varrock_1, OBJ_EVENT_PAL_GUARD_VARROCK_1},
+    {gObjectEventPalette_Guard_Varrock_2, OBJ_EVENT_PAL_GUARD_VARROCK_2},
+    {gObjectEventPalette_Guard_Varrock_3, OBJ_EVENT_PAL_GUARD_VARROCK_3},
+    {gObjectEventPalette_Fairy_1, OBJ_EVENT_PAL_FAIRY_1},
+    {gObjectEventPalette_Fairy_2, OBJ_EVENT_PAL_FAIRY_2},
+    {gObjectEventPalette_Fairy_3, OBJ_EVENT_PAL_FAIRY_3},
+    {gObjectEventPalette_Ironman, OBJ_EVENT_PAL_IRONMAN},
+    {gObjectEventPalette_Mithrilman, OBJ_EVENT_PAL_MITHRILMAN},
+    {gObjectEventPalette_Adamantman, OBJ_EVENT_PAL_ADAMANTMAN},
+    {gObjectEventPalette_Barrows_Ahrim, OBJ_EVENT_PAL_BARROWS_AHRIM},
+    {gObjectEventPalette_Barrows_Dharok, OBJ_EVENT_PAL_BARROWS_DHAROK},
+    {gObjectEventPalette_Barrows_Karil, OBJ_EVENT_PAL_BARROWS_KARIL},
+    {gObjectEventPalette_Barrows_Verac, OBJ_EVENT_PAL_BARROWS_VERAC},
+    {gObjectEventPalette_Barrows_Torag, OBJ_EVENT_PAL_BARROWS_TORAG},
+    {gObjectEventPalette_Barrows_Guthan, OBJ_EVENT_PAL_BARROWS_GUTHAN},
+    {gObjectEventPalette_Barrows_Silske, OBJ_EVENT_PAL_BARROWS_SILSKE},
+    {gObjectEventPalette_Man_1, OBJ_EVENT_PAL_MAN_1},
+    {gObjectEventPalette_Woman_1, OBJ_EVENT_PAL_WOMAN_1},
+//SKILLS
+    {gObjectEventPalette_Graceful, OBJ_EVENT_PAL_GRACEFUL},
+    {gObjectEventPalette_Chef, OBJ_EVENT_PAL_CHEF},
+    {gObjectEventPalette_Firemaker, OBJ_EVENT_PAL_FIREMAKER},
+    {gObjectEventPalette_Woodcutter, OBJ_EVENT_PAL_WOODCUTTER},
+    {gObjectEventPalette_Summoner, OBJ_EVENT_PAL_SUMMONER},
+    {gObjectEventPalette_Mercher, OBJ_EVENT_PAL_MERCHER},
+    {gObjectEventPalette_Fisherman, OBJ_EVENT_PAL_FISHERMAN},
+    {gObjectEventPalette_Hunter_M, OBJ_EVENT_PAL_HUNTER_M},
+    {gObjectEventPalette_Hunter_F, OBJ_EVENT_PAL_HUNTER_F},
+    {gObjectEventPalette_Farmer_M, OBJ_EVENT_PAL_FARMER_M},
+    {gObjectEventPalette_Farmer_F, OBJ_EVENT_PAL_FARMER_F},
+    //
+    {gObjectEventPalette_Noob, OBJ_EVENT_PAL_NOOB},
+    {gObjectEventPalette_Quester, OBJ_EVENT_PAL_QUESTER},
+    {gObjectEventPalette_Jmod, OBJ_EVENT_PAL_JMOD},
+    {gObjectEventPalette_DnD, OBJ_EVENT_PAL_DND},
+    {gObjectEventPalette_Bot_Dragon, OBJ_EVENT_PAL_BOT_DRAGON},
+    {gObjectEventPalette_Mugger, OBJ_EVENT_PAL_MUGGER},
+    {gObjectEventPalette_Thief, OBJ_EVENT_PAL_THIEF},
+    {gObjectEventPalette_BarMaid, OBJ_EVENT_PAL_BARMAID},
+    {gObjectEventPalette_Pker, OBJ_EVENT_PAL_PKER},
+    {gObjectEventPalette_Pvmer, OBJ_EVENT_PAL_PVMER},
+    {gObjectEventPalette_Skiller, OBJ_EVENT_PAL_SKILLER},
+    {gObjectEventPalette_RSMVer_M, OBJ_EVENT_PAL_RSMVER_M},
+    {gObjectEventPalette_RSMVer_F, OBJ_EVENT_PAL_RSMVER_F},
+    {gObjectEventPalette_Sailor, OBJ_EVENT_PAL_SAILOR},
+    {gObjectEventPalette_Ranger_F, OBJ_EVENT_PAL_RANGER_F},
+//PLAYERS
+    {gObjectEventPalette_Sudo_Bash, OBJ_EVENT_PAL_SUDO_BASH},
+    {gObjectEventPalette_Demonheadge, OBJ_EVENT_PAL_DEMONHEADGE},
+    {gObjectEventPalette_Prezleek, OBJ_EVENT_PAL_PREZLEEK},
+    {gObjectEventPalette_LukienLight, OBJ_EVENT_PAL_LUKIENLIGHT},
+    {gObjectEventPalette_Hyper_Stan, OBJ_EVENT_PAL_HYPER_STAN},
+//UNIQUE NPCS
+    {gObjectEventPalette_Hans, OBJ_EVENT_PAL_HANS},
+    {gObjectEventPalette_Hairdresser, OBJ_EVENT_PAL_HAIRDRESSER},
+    {gObjectEventPalette_Cook, OBJ_EVENT_PAL_COOK},
+    {gObjectEventPalette_Count_Draynor, OBJ_EVENT_PAL_COUNT_DRAYNOR},
+    {gObjectEventPalette_Gnome_Child, OBJ_EVENT_PAL_GNOME_CHILD},
+    {gObjectEventPalette_Baraek, OBJ_EVENT_PAL_BARAEK},
+    {gObjectEventPalette_Diango, OBJ_EVENT_PAL_DIANGO},
+    {gObjectEventPalette_Haig_Halen, OBJ_EVENT_PAL_HAIG_HALEN},
+    {gObjectEventPalette_Katrine, OBJ_EVENT_PAL_KATRINE},
+    {gObjectEventPalette_Prof_Normal_Tree, OBJ_EVENT_PAL_PROF_NORMAL_TREE},
+    {gObjectEventPalette_Straven, OBJ_EVENT_PAL_STRAVEN},
+    {gObjectEventPalette_Explorer_Jack, OBJ_EVENT_PAL_EXPLORER_JACK},
+    {gObjectEventPalette_Fortunato, OBJ_EVENT_PAL_FORTUNATO},
+    /*
+    {gObjectEventPalette_Saradomin, OBJ_EVENT_PAL_SARADOMIN},
+    {gObjectEventPalette_Zamorak, OBJ_EVENT_PAL_ZAMORAK},
+    {gObjectEventPalette_Guthix, OBJ_EVENT_PAL_GUTHIX},
+    */
+    {gObjectEventPalette_Ava, OBJ_EVENT_PAL_AVA},
+    {gObjectEventPalette_Reldo, OBJ_EVENT_PAL_RELDO},
+    {gObjectEventPalette_Max, OBJ_EVENT_PAL_MAX},
+    {gObjectEventPalette_Sir_Owen, OBJ_EVENT_PAL_SIR_OWEN},
+    {gObjectEventPalette_Ozan, OBJ_EVENT_PAL_OZAN},
+    {gObjectEventPalette_Xenia, OBJ_EVENT_PAL_XENIA},
+    {gObjectEventPalette_Raptor, OBJ_EVENT_PAL_RAPTOR},
+    {gObjectEventPalette_Ariane, OBJ_EVENT_PAL_ARIANE},
+    {gObjectEventPalette_Zanik, OBJ_EVENT_PAL_ZANIK},
+    {gObjectEventPalette_Zanik_HAM, OBJ_EVENT_PAL_ZANIK_HAM},
+//ITEMS
+    {gObjectEventPalette_Bone_Pile, OBJ_EVENT_PAL_BONE_PILE},
+    {gObjectEventPalette_Item_Pouch, OBJ_EVENT_PAL_ITEM_POUCH},
+    {gObjectEventPalette_Phoenix_Egg, OBJ_EVENT_PAL_PHOENIX_EGG},
+    {gObjectEventPalette_Ship_1, OBJ_EVENT_PAL_SHIP_1},
+//MONSTERS
+    {gObjectEventPalette_Duck_Swim, OBJ_EVENT_PAL_DUCK_SWIM},
+    {gObjectEventPalette_Duck_Walk, OBJ_EVENT_PAL_DUCK_WALK},
+    {gObjectEventPalette_Basilisk, OBJ_EVENT_PAL_BASILISK},
+    {gObjectEventPalette_Cow, OBJ_EVENT_PAL_COW},
+    {gObjectEventPalette_Cow_Dairy, OBJ_EVENT_PAL_COW_DAIRY},
+    {gObjectEventPalette_Chicken, OBJ_EVENT_PAL_CHICKEN},
+    {gObjectEventPalette_Evil_Chicken, OBJ_EVENT_PAL_EVIL_CHICKEN},
+    {gObjectEventPalette_Imp, OBJ_EVENT_PAL_IMP},
+    {gObjectEventPalette_Imp_Snow, OBJ_EVENT_PAL_IMP_SNOW},
+    {gObjectEventPalette_Kalphite_King, OBJ_EVENT_PAL_KALPHITE_KING},
+    {gObjectEventPalette_Kalphite_Queen, OBJ_EVENT_PAL_KALPHITE_QUEEN},
+    {gObjectEventPalette_Kalphite_Worker, OBJ_EVENT_PAL_KALPHITE_WORKER},
+    {gObjectEventPalette_GWD_General_Graador, OBJ_EVENT_PAL_GWD_GENERAL_GRAADOR},
+    {gObjectEventPalette_Abyssal_Sire, OBJ_EVENT_PAL_ABYSSAL_SIRE},
+    {gObjectEventPalette_Vorago, OBJ_EVENT_PAL_VORAGO},
+    {gObjectEventPalette_Piglet, OBJ_EVENT_PAL_PIGLET},
+    {gObjectEventPalette_Pigzilla, OBJ_EVENT_PAL_PIGZILLA},
+    {gObjectEventPalette_Yak, OBJ_EVENT_PAL_YAK},
+    {gObjectEventPalette_Penguin_Rock, OBJ_EVENT_PAL_PENGUIN_ROCK},
+    {gObjectEventPalette_Queen_Black_Dragon, OBJ_EVENT_PAL_QUEEN_BLACK_DRAGON},
+    {gObjectEventPalette_Elvarg, OBJ_EVENT_PAL_ELVARG},
+    {gObjectEventPalette_King_Black_Dragon, OBJ_EVENT_PAL_KING_BLACK_DRAGON},
+    {gObjectEventPalette_Rat, OBJ_EVENT_PAL_RAT},
+    {gObjectEventPalette_Rune_Guardian, OBJ_EVENT_PAL_RUNE_GUARDIAN},
+    {gObjectEventPalette_Sheep, OBJ_EVENT_PAL_SHEEP},
+    //{gObjectEventPalette_Saraling, OBJ_EVENT_PAL_SARALING},
+    {gObjectEventPalette_Saraowl, OBJ_EVENT_PAL_SARAOWL},
+    {gObjectEventPalette_Guthraptor, OBJ_EVENT_PAL_GUTHRAPTOR},
+    /*
+    {gObjectEventPalette_Skeletal_Ox_M, OBJ_EVENT_PAL_SKELETAL_OX_M},
+    {gObjectEventPalette_Skeletal_Ox_F, OBJ_EVENT_PAL_SKELETAL_OX_F},
+    */
+    //{gObjectEventPalette_Terrorbird_1, OBJ_EVENT_PAL_TERRORBIRD_1},
+    //{gObjectEventPalette_Terrorbird_2, OBJ_EVENT_PAL_TERRORBIRD_2},
+    {gObjectEventPalette_TzTok_Jad, OBJ_EVENT_PAL_TZTOK_JAD},
+    {gObjectEventPalette_Mole_Giant, OBJ_EVENT_PAL_MOLE_GIANT},
+    {gObjectEventPalette_Mole_Baby, OBJ_EVENT_PAL_MOLE_BABY},
+    {gObjectEventPalette_Camel, OBJ_EVENT_PAL_CAMEL},
+    {gObjectEventPalette_Frogeel, OBJ_EVENT_PAL_FROGEEL},
+    {gObjectEventPalette_Scorpion, OBJ_EVENT_PAL_SCORPION},
+    {gObjectEventPalette_Slime, OBJ_EVENT_PAL_SLIME},
+    {gObjectEventPalette_Raven, OBJ_EVENT_PAL_RAVEN},
+    {gObjectEventPalette_Seagull, OBJ_EVENT_PAL_SEAGULL},
+    {gObjectEventPalette_Strykewyrm_Sandy, OBJ_EVENT_PAL_STRYKEWYRM_SANDY},
+    {gObjectEventPalette_Strykewyrm_Freezy, OBJ_EVENT_PAL_STRYKEWYRM_FREEZY},
+    {gObjectEventPalette_Strykewyrm_Leafy, OBJ_EVENT_PAL_STRYKEWYRM_LEAFY},
+    {gObjectEventPalette_Unicorn_White, OBJ_EVENT_PAL_UNICORN_WHITE},
+    {gObjectEventPalette_Unicorn_Black, OBJ_EVENT_PAL_UNICORN_BLACK},
+//GYMLEADERS
+    {gObjectEventPalette_GymLeader_Duke_Horacio, OBJ_EVENT_PAL_GYMLEADER_DUKE_HORACIO},
+    {gObjectEventPalette_GymLeader_Sir_Amik_Varze, OBJ_EVENT_PAL_GYMLEADER_SIR_AMIK_VARZE},
+    {gObjectEventPalette_GymLeader_Prince_Ali, OBJ_EVENT_PAL_GYMLEADER_PRINCE_ALI},
+    {gObjectEventPalette_GymLeader_King_Roald, OBJ_EVENT_PAL_GYMLEADER_KING_ROALD},
+    {gObjectEventPalette_GymLeader_TokhaarHok, OBJ_EVENT_PAL_GYMLEADER_TOKHAARHOK},
+    {gObjectEventPalette_GymLeader_Gunthor, OBJ_EVENT_PAL_GYMLEADER_GUNTHOR},
+    {gObjectEventPalette_GymLeader_Wise_Old_Man, OBJ_EVENT_PAL_GYMLEADER_WISE_OLD_MAN},
+    {gObjectEventPalette_GymLeader_Vannaka, OBJ_EVENT_PAL_GYMLEADER_VANNAKA},
+//CHAMPIONS
+    {gObjectEventPalette_Boaty, OBJ_EVENT_PAL_BOATY},
+    {gObjectEventPalette_Suomi, OBJ_EVENT_PAL_SUOMI},
+    {gObjectEventPalette_Zezima, OBJ_EVENT_PAL_ZEZIMA},	
+
+    {gObjectEventPalette_Abyssal_Demon, OBJ_EVENT_PAL_ABYSSAL_DEMON},	
+    {gObjectEventPalette_Chaos_Elemental, OBJ_EVENT_PAL_CHAOS_ELEMENTAL},	
+    {gObjectEventPalette_Miner, OBJ_EVENT_PAL_MINER},	
+    {gObjectEventPalette_Smith, OBJ_EVENT_PAL_SMITH},	
+    {gObjectEventPalette_Dog_Sleep, OBJ_EVENT_PAL_DOG_SLEEP},	
+    {gObjectEventPalette_Juna, OBJ_EVENT_PAL_JUNA},	
+    {gObjectEventPalette_Abyss_Portal, OBJ_EVENT_PAL_ABYSS_PORTAL},	
+    {gObjectEventPalette_Chair, OBJ_EVENT_PAL_CHAIR},	
+/*
+    {gObjectEventPalette_Cat_Black, OBJ_EVENT_PAL_CAT_BLACK},
+    {gObjectEventPalette_Cat_White, OBJ_EVENT_PAL_CAT_WHITE},
+    {gObjectEventPalette_Cat_Brown, OBJ_EVENT_PAL_CAT_BROWN},
+    {gObjectEventPalette_Cat_Hell, OBJ_EVENT_PAL_CAT_HELL},
+    {gObjectEventPalette_Cat_BlackWhite, OBJ_EVENT_PAL_CAT_BLACKWHITE},
+    {gObjectEventPalette_Cat_Clockwork, OBJ_EVENT_PAL_CAT_CLOCKWORK},
+    {gObjectEventPalette_Cat_BrownWhite, OBJ_EVENT_PAL_CAT_BROWNWHITE},
+    {gObjectEventPalette_Cat_Purple, OBJ_EVENT_PAL_CAT_PURPLE},*/
+    {gObjectEventPalette_Archaeologist, OBJ_EVENT_PAL_ARCHAEOLOGIST},
+    {gObjectEventPalette_Diviner, OBJ_EVENT_PAL_DIVINER},
+    {gObjectEventPalette_Durial321, OBJ_EVENT_PAL_DURIAL321},/*
+    {gObjectEventPalette_Saradomin_Owl, OBJ_EVENT_PAL_SARADOMIN_OWL},
+    {gObjectEventPalette_Zamorak_Hawk, OBJ_EVENT_PAL_ZAMORAK_HAWK},
+    {gObjectEventPalette_Guthix_Raptor, OBJ_EVENT_PAL_GUTHIX_RAPTOR},
+    {gObjectEventPalette_Dog_Stray, OBJ_EVENT_PAL_DOG_STRAY},
+    {gObjectEventPalette_Dog_Labrador, OBJ_EVENT_PAL_DOG_LABRADOR},
+    {gObjectEventPalette_Dog_Guard, OBJ_EVENT_PAL_DOG_GUARD},
+    {gObjectEventPalette_Dog_Corgi, OBJ_EVENT_PAL_DOG_CORGI},
+    {gObjectEventPalette_Dog_Dalmatian, OBJ_EVENT_PAL_DOG_DALMATIAN},
+    */
+//OTHER    
+	{gObjectEventPalette_OrePal, OBJ_EVENT_PAL_ORE_PAL},
+	{gObjectEventPalette_OrePal2, OBJ_EVENT_PAL_ORE_PAL2},
+	{gObjectEventPalette_CabbageCrop, OBJ_EVENT_PAL_CABBAGE_CROP},
+    {gObjectEventPalette_Protaganist, OBJ_EVENT_PAL_PROTAGANIST},
+    {gObjectEventPalette_GhostDisguise, OBJ_EVENT_PAL_GhostDisguise},	
+
+
+    {gObjectEventPalette_SKELETAL, OBJ_EVENT_PAL_SKELETAL},
+    {gObjectEventPalette_CATS, OBJ_EVENT_PAL_CATS},
+    {gObjectEventPalette_DOGS, OBJ_EVENT_PAL_DOGS},
+    {gObjectEventPalette_BARBARIANS, OBJ_EVENT_PAL_BARBARIANS},
+    {gObjectEventPalette_GOEBIES, OBJ_EVENT_PAL_GOEBIES},
+    {gObjectEventPalette_ZAMORAK, OBJ_EVENT_PAL_ZAMORAK},
+    {gObjectEventPalette_SARADOMIN, OBJ_EVENT_PAL_SARADOMIN},
+    {gObjectEventPalette_GUTHIX, OBJ_EVENT_PAL_GUTHIX},
+    {gObjectEventPalette_TERRORBIRDS, OBJ_EVENT_PAL_TERRORBIRDS},
+    {gObjectEventPalette_KNIGHTS1, OBJ_EVENT_PAL_KNIGHTS1},
+    {gObjectEventPalette_KNIGHTS2, OBJ_EVENT_PAL_KNIGHTS2},
+    {gObjectEventPalette_HAM, OBJ_EVENT_PAL_HAM},
+    {gObjectEventPalette_BARROWS, OBJ_EVENT_PAL_BARROWS},
+    
+    /*
+    {gObjectEventPalette_GOBLINS, OBJ_EVENT_PAL_GOBLINS},
+    {gObjectEventPalette_BARROWS, OBJ_EVENT_PAL_BARROWS},
+    {gObjectEventPalette_GUARDS, OBJ_EVENT_PAL_GUARDS},
+    */
+    {gObjectEventPalette_Pker_Rusher, OBJ_EVENT_PAL_PKER_RUSHER},
+    {gObjectEventPalette_Smuggler, OBJ_EVENT_PAL_SMUGGLER},
+    {gObjectEventPalette_RAC_PALETTE_1, OBJ_EVENT_PAL_RAC_PALETTE_1},
+    {gObjectEventPalette_RAC_PALETTE_2, OBJ_EVENT_PAL_RAC_PALETTE_2},
+    {gObjectEventPalette_RAC_PALETTE_3, OBJ_EVENT_PAL_RAC_PALETTE_3},
+    {gObjectEventPalette_RAC_PALETTE_4, OBJ_EVENT_PAL_RAC_PALETTE_4},
+    {gObjectEventPalette_RAC_PALETTE_5, OBJ_EVENT_PAL_RAC_PALETTE_5},
+    {gObjectEventPalette_RAC_PALETTE_6, OBJ_EVENT_PAL_RAC_PALETTE_6},
+    
+    {gObjectEventPalette_CORP_BOSS, OBJ_EVENT_PAL_CORP_BOSS},
+    {gObjectEventPalette_GIANTS, OBJ_EVENT_PAL_GIANTS},
+    {gObjectEventPalette_Skotizo, OBJ_EVENT_PAL_SKOTIZO},
+    {gObjectEventPalette_DRAGONS, OBJ_EVENT_PAL_DRAGONS},
+    
+    /*
+    {gObjectEventPalette_RAC_BATS, OBJ_EVENT_PAL_RAC_BATS},
+    {gObjectEventPalette_RAC_DRAGON, OBJ_EVENT_PAL_RAC_DRAGON},
+    {gObjectEventPalette_RAC_ELEJ, OBJ_EVENT_PAL_RAC_ELEJ},
+    {gObjectEventPalette_RAC_JACKIE, OBJ_EVENT_PAL_RAC_JACKIE},
+    {gObjectEventPalette_RAC_BONBUN, OBJ_EVENT_PAL_RAC_BONBUN},
+    {gObjectEventPalette_RAC_CHARM, OBJ_EVENT_PAL_RAC_CHARM},
+    {gObjectEventPalette_RAC_ALEXANDRA, OBJ_EVENT_PAL_RAC_ALEXANDRA},
+    {gObjectEventPalette_RAC_BLKWITCH, OBJ_EVENT_PAL_RAC_BLKWITCH},
+    {gObjectEventPalette_RAC_CRESBOT, OBJ_EVENT_PAL_RAC_CRESBOT},
+    {gObjectEventPalette_RAC_ELIZABETH, OBJ_EVENT_PAL_RAC_ELIZABETH},
+    {gObjectEventPalette_RAC_ENKO, OBJ_EVENT_PAL_RAC_ENKO},
+    {gObjectEventPalette_RAC_FAYDENE, OBJ_EVENT_PAL_RAC_FAYDENE},
+    {gObjectEventPalette_RAC_FLORIN, OBJ_EVENT_PAL_RAC_FLORIN},
+    {gObjectEventPalette_RAC_ISOHEL, OBJ_EVENT_PAL_RAC_ISOHEL},
+    {gObjectEventPalette_RAC_JAXYYS, OBJ_EVENT_PAL_RAC_JAXYYS},
+    {gObjectEventPalette_RAC_KITTY, OBJ_EVENT_PAL_RAC_KITTY},
+    {gObjectEventPalette_RAC_MOGGIE, OBJ_EVENT_PAL_RAC_MOGGIE},
+    {gObjectEventPalette_RAC_NELLE, OBJ_EVENT_PAL_RAC_NELLE},
+    {gObjectEventPalette_RAC_PARRISH, OBJ_EVENT_PAL_RAC_PARRISH},
+    {gObjectEventPalette_RAC_POPBUBBLE, OBJ_EVENT_PAL_RAC_POPBUBBLE},
+    {gObjectEventPalette_RAC_SNAILY, OBJ_EVENT_PAL_RAC_SNAILY},
+    {gObjectEventPalette_RAC_TIFA, OBJ_EVENT_PAL_RAC_TIFA},
+    {gObjectEventPalette_RAC_WHISPER, OBJ_EVENT_PAL_RAC_WHISPER},
+    {gObjectEventPalette_RAC_DEWYDD, OBJ_EVENT_PAL_RAC_DEWYDD},
+    */
 #ifdef BUGFIX
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 #else
@@ -1286,7 +1924,6 @@ void RemoveAllObjectEventsExceptPlayer(void)
 static u8 TrySetupObjectEventSprite(const struct ObjectEventTemplate *objectEventTemplate, struct SpriteTemplate *spriteTemplate, u8 mapNum, u8 mapGroup, s16 cameraX, s16 cameraY)
 {
     u8 spriteId;
-    u8 paletteSlot;
     u8 objectEventId;
     struct Sprite *sprite;
     struct ObjectEvent *objectEvent;
@@ -1582,7 +2219,6 @@ void SpawnObjectEventsOnReturnToField(s16 x, s16 y)
 static void SpawnObjectEventOnReturnToField(u8 objectEventId, s16 x, s16 y)
 {
     u8 i;
-    u8 paletteSlot;
     struct Sprite *sprite;
     struct ObjectEvent *objectEvent;
     struct SpriteTemplate spriteTemplate;
@@ -1663,7 +2299,6 @@ void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u16 graphicsId)
 {
     const struct ObjectEventGraphicsInfo *graphicsInfo;
     struct Sprite *sprite;
-    u8 paletteSlot;
 
     graphicsInfo = GetObjectEventGraphicsInfo(graphicsId);
     sprite = &gSprites[objectEvent->spriteId];
@@ -1905,7 +2540,7 @@ static u8 FindObjectEventPaletteIndexByTag(u16 tag)
     return 0xFF;
 }
 
-static void _PatchObjectPalette(u16 tag, u8 slot)
+static void UNUSED _PatchObjectPalette(u16 tag, u8 slot)
 {
     PatchObjectPalette(tag, slot);
 }
@@ -4477,12 +5112,10 @@ u8 GetSidewaysStairsCollision(struct ObjectEvent *objectEvent, u8 dir, u8 curren
 
 static u8 GetVanillaCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u8 direction)
 {
-    u8 direction = dir;
-
-#if OW_FLAG_NO_COLLISION != 0
+    #if OW_FLAG_NO_COLLISION != 0
     if (FlagGet(OW_FLAG_NO_COLLISION))
         return COLLISION_NONE;
-#endif
+    #endif
 
     if (IsCoordOutsideObjectEventMovementRange(objectEvent, x, y))
         return COLLISION_OUTSIDE_RANGE;
@@ -4530,7 +5163,6 @@ static bool8 ObjectEventOnRightSideStair(struct ObjectEvent *objectEvent, s16 x,
 
 u8 GetCollisionAtCoords(struct ObjectEvent *objectEvent, s16 x, s16 y, u32 dir)
 {
-    u8 direction = dir;
     u8 currentBehavior = MapGridGetMetatileBehaviorAt(objectEvent->currentCoords.x, objectEvent->currentCoords.y);
     u8 nextBehavior = MapGridGetMetatileBehaviorAt(x, y);
     u8 collision;

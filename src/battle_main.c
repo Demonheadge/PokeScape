@@ -383,7 +383,7 @@ const struct TrainerMoney gTrainerMoneyTable[] =
 };
 
 #if B_TRAINER_CLASS_POKE_BALLS >= GEN_7
-static const u16 sTrainerBallTable[TRAINER_CLASS_COUNT] =
+static const u16 sTrainerBallTable[TRAINER_CLASS_NUM] =
 {
 #if B_TRAINER_CLASS_POKE_BALLS == GEN_7
     [TRAINER_CLASS_PKMN_BREEDER] = ITEM_BLESSED_POUCH,

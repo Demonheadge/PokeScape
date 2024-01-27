@@ -298,58 +298,58 @@ bool32 CountSSTidalStep(u16 delta)
 
 u8 GetSSTidalLocation(s8 *mapGroup, s8 *mapNum, s16 *x, s16 *y)
 {
-    u16 *varCruiseStepCount = GetVarPointer(VAR_CRUISE_STEP_COUNT);
-    switch (*GetVarPointer(VAR_SS_TIDAL_STATE))
-    {
-    case SS_TIDAL_BOARD_SLATEPORT:
-    case SS_TIDAL_LAND_SLATEPORT:
-        return SS_TIDAL_LOCATION_SLATEPORT;
-    case SS_TIDAL_HALFWAY_LILYCOVE:
-    case SS_TIDAL_EXIT_CURRENTS_RIGHT:
-        return SS_TIDAL_LOCATION_ROUTE131;
-    case SS_TIDAL_LAND_LILYCOVE:
-    case SS_TIDAL_BOARD_LILYCOVE:
-        return SS_TIDAL_LOCATION_LILYCOVE;
-    case SS_TIDAL_DEPART_LILYCOVE:
-    case SS_TIDAL_EXIT_CURRENTS_LEFT:
-        return SS_TIDAL_LOCATION_ROUTE124;
-    case SS_TIDAL_DEPART_SLATEPORT:
-        if (*varCruiseStepCount < 60)
-        {
-            *mapNum = MAP_NUM(ROUTE134);
-            *x = *varCruiseStepCount + 19;
-        }
-        else if (*varCruiseStepCount < 140)
-        {
-            *mapNum = MAP_NUM(ROUTE133);
-            *x = *varCruiseStepCount - 60;
-        }
-        else
-        {
-            *mapNum = MAP_NUM(ROUTE132);
-            *x = *varCruiseStepCount - 140;
-        }
-        break;
-    case SS_TIDAL_HALFWAY_SLATEPORT:
-        if (*varCruiseStepCount < 66)
-        {
-            *mapNum = MAP_NUM(ROUTE132);
-            *x = 65 - *varCruiseStepCount;
-        }
-        else if (*varCruiseStepCount < 146)
-        {
-            *mapNum = MAP_NUM(ROUTE133);
-            *x = 145 - *varCruiseStepCount;
-        }
-        else
-        {
-            *mapNum = MAP_NUM(ROUTE134);
-            *x = 224 - *varCruiseStepCount;
-        }
-        break;
-    }
-    *mapGroup = MAP_GROUP(ROUTE132);
-    *y = 20;
+    //u16 *varCruiseStepCount = GetVarPointer(VAR_CRUISE_STEP_COUNT);
+    //switch (*GetVarPointer(VAR_SS_TIDAL_STATE))
+    //{
+    //case SS_TIDAL_BOARD_SLATEPORT:
+    //case SS_TIDAL_LAND_SLATEPORT:
+    //    return SS_TIDAL_LOCATION_SLATEPORT;
+    //case SS_TIDAL_HALFWAY_LILYCOVE:
+    //case SS_TIDAL_EXIT_CURRENTS_RIGHT:
+    //    return SS_TIDAL_LOCATION_ROUTE131;
+    //case SS_TIDAL_LAND_LILYCOVE:
+    //case SS_TIDAL_BOARD_LILYCOVE:
+    //    return SS_TIDAL_LOCATION_LILYCOVE;
+    //case SS_TIDAL_DEPART_LILYCOVE:
+    //case SS_TIDAL_EXIT_CURRENTS_LEFT:
+    //    return SS_TIDAL_LOCATION_ROUTE124;
+    //case SS_TIDAL_DEPART_SLATEPORT:
+    //    if (*varCruiseStepCount < 60)
+    //    {
+    //        *mapNum = MAP_NUM(ROUTE134);
+    //        *x = *varCruiseStepCount + 19;
+    //    }
+    //    else if (*varCruiseStepCount < 140)
+    //    {
+    //        *mapNum = MAP_NUM(ROUTE133);
+    //        *x = *varCruiseStepCount - 60;
+    //    }
+    //    else
+    //    {
+    //        *mapNum = MAP_NUM(ROUTE132);
+    //       *x = *varCruiseStepCount - 140;
+    //    }
+    //    break;
+    //case SS_TIDAL_HALFWAY_SLATEPORT:
+    //    if (*varCruiseStepCount < 66)
+    //    {
+    //        *mapNum = MAP_NUM(ROUTE132);
+    //        *x = 65 - *varCruiseStepCount;
+    //    }
+    //    else if (*varCruiseStepCount < 146)
+    //    {
+    //        *mapNum = MAP_NUM(ROUTE133);
+    //        *x = 145 - *varCruiseStepCount;
+    //    }
+    //    else
+    //    {
+    //        *mapNum = MAP_NUM(ROUTE134);
+    //        *x = 224 - *varCruiseStepCount;
+    //    }
+    //    break;
+    //}
+    //*mapGroup = MAP_GROUP(ROUTE132);
+    //*y = 20;
     return SS_TIDAL_LOCATION_CURRENTS;
 }
 
@@ -405,27 +405,27 @@ bool32 ShouldDoScottFortreeCall(void)
 
 bool32 ShouldDoScottBattleFrontierCall(void)
 {
-    if (FlagGet(FLAG_SCOTT_CALL_BATTLE_FRONTIER))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_SCOTT_BF_CALL_STEP_COUNTER)) < 10)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
+    //if (FlagGet(FLAG_SCOTT_CALL_BATTLE_FRONTIER))
+    //{
+    //   switch (gMapHeader.mapType)
+    //    {
+    //    case MAP_TYPE_TOWN:
+    //    case MAP_TYPE_CITY:
+    //    case MAP_TYPE_ROUTE:
+    //    case MAP_TYPE_OCEAN_ROUTE:
+    //        if (++(*GetVarPointer(VAR_SCOTT_BF_CALL_STEP_COUNTER)) < 10)
+    //            return FALSE;
+    //        break;
+    //    default:
+    //        return FALSE;
+    //    }
+    //}
+    //else
+    //{
         return FALSE;
-    }
+    //}
 
-    return TRUE;
+    //return TRUE;
 }
 
 bool32 ShouldDoRoxanneCall(void)
@@ -455,27 +455,27 @@ bool32 ShouldDoRoxanneCall(void)
 
 bool32 ShouldDoRivalRayquazaCall(void)
 {
-    if (FlagGet(FLAG_DEFEATED_MAGMA_SPACE_CENTER))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER)) < 250)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
+    //if (FlagGet(FLAG_DEFEATED_MAGMA_SPACE_CENTER))
+    //{
+    //    switch (gMapHeader.mapType)
+    //    {
+    //    case MAP_TYPE_TOWN:
+    //    case MAP_TYPE_CITY:
+    //    case MAP_TYPE_ROUTE:
+    //    case MAP_TYPE_OCEAN_ROUTE:
+    //        if (++(*GetVarPointer(VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER)) < 250)
+    //            return FALSE;
+    //        break;
+    //    default:
+    //        return FALSE;
+    //    }
+    //}
+    //else
+    //{
         return FALSE;
-    }
+    //}
 
-    return TRUE;
+    //return TRUE;
 }
 
 u8 GetLinkPartnerNames(void)
@@ -1181,18 +1181,18 @@ void EndLotteryCornerComputerEffect(void)
 
 void SetTrickHouseNuggetFlag(void)
 {
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET;
-    *specVar = flag;
-    FlagSet(flag);
+    //u16 *specVar = &gSpecialVar_0x8004;
+    //u16 flag = FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET;
+    //*specVar = flag;
+    //FlagSet(flag);
 }
 
 void ResetTrickHouseNuggetFlag(void)
 {
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET;
-    *specVar = flag;
-    FlagClear(flag);
+    //u16 *specVar = &gSpecialVar_0x8004;
+    //u16 flag = FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET;
+    //*specVar = flag;
+    //FlagClear(flag);
 }
 
 bool8 CheckLeadMonCool(void)

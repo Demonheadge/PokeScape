@@ -327,9 +327,7 @@ static const struct TrainerMon sParty_Lumbridge_Gym4[] = {
     }
 };
 
-
-
-    static const struct TrainerMon sParty_Rsn_Lum_Swamp[] = {
+static const struct TrainerMon sParty_Rsn_Lum_Swamp[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 9,
@@ -2203,9 +2201,7 @@ static const struct TrainerMon sParty_FALADOR_GYM_4[] = {
     }
 };
 
-
-
-static const struct TrainerMonItemCustomMoves sParty_FALADOR_HAIRDRESSER[] = {
+static const struct TrainerMon sParty_FALADOR_HAIRDRESSER[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 20,
@@ -3731,7 +3727,7 @@ static const struct TrainerMon sParty_ROUTE15_TRAINER_6[] = {
 
 
 //BARROWS
-static const struct TrainerMonNoItemCustomMoves sParty_BARROWS_GUTHAN[] = {
+static const struct TrainerMon sParty_BARROWS_GUTHAN[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 42,
@@ -4219,7 +4215,7 @@ static const struct TrainerMon sParty_SCAPEINK[] = {
 //GYM LEADERS
 
 //#GYM - Lumbridge - Duke Horacio          
-static const struct TrainerMonNoItemCustomMoves sParty_LEADER_DUKE_1[] = { //STORYMODE
+static const struct TrainerMon sParty_LEADER_DUKE_1[] = { //STORYMODE
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 8,
@@ -4239,7 +4235,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_LEADER_DUKE_1[] = { //STO
     .moves = {MOVE_SLACK_OFF, MOVE_TACKLE, MOVE_FEATHER_DANCE, MOVE_PECK}
     }
 };/*
-static const struct TrainerMonNoItemCustomMoves sParty_LEADER_DUKE_2[] = {
+static const struct TrainerMon sParty_LEADER_DUKE_2[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 30,
@@ -4265,7 +4261,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_LEADER_DUKE_2[] = {
     .moves = {MOVE_SLACK_OFF, MOVE_ABSORB, MOVE_TACKLE, MOVE_GROWL}
     }
 };
-static const struct TrainerMonNoItemCustomMoves sParty_LEADER_DUKE_FINAL[] = {
+static const struct TrainerMon sParty_LEADER_DUKE_FINAL[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 100,
@@ -4306,7 +4302,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_LEADER_DUKE_FINAL[] = {
 */
 
 //#GYM - Falador - Sir Amik Varze        
-static const struct TrainerMonNoItemCustomMoves sParty_FALADOR_GYM_AMIKVARZE[] = {
+static const struct TrainerMon sParty_FALADOR_GYM_AMIKVARZE[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 28,
@@ -4326,7 +4322,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_FALADOR_GYM_AMIKVARZE[] =
     .moves = {MOVE_BITE, MOVE_HOWL, MOVE_BUBBLE, MOVE_MUD_SPORT}
     }
 };/*
-static const struct TrainerMonNoItemCustomMoves sParty_LEADER_SIRAMIKVARZE_FINAL[] = {
+static const struct TrainerMon sParty_LEADER_SIRAMIKVARZE_FINAL[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 28,
@@ -4349,7 +4345,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_LEADER_SIRAMIKVARZE_FINAL
 */
 
 //#GYM - AlKharid - Prince Ali        
-static const struct TrainerMonNoItemCustomMoves sParty_ALKHARID_GYM_PRINCE_ALI[] = {
+static const struct TrainerMon sParty_ALKHARID_GYM_PRINCE_ALI[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 42,
@@ -4378,7 +4374,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_ALKHARID_GYM_PRINCE_ALI[]
 
 
 //Gunthor        #GYM - Barbarian Village
-static const struct TrainerMonNoItemCustomMoves sParty_BARBARIAN_GYM_GUNTHOR[] = {
+static const struct TrainerMon sParty_BARBARIAN_GYM_GUNTHOR[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 48,
@@ -4413,7 +4409,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_BARBARIAN_GYM_GUNTHOR[] =
 
 
 //#GYM - VARROCK - King Roald        
-static const struct TrainerMonNoItemCustomMoves sParty_VARROCK_GYM_KINGROALD[] = {
+static const struct TrainerMon sParty_VARROCK_GYM_KINGROALD[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 42,
@@ -4441,7 +4437,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_VARROCK_GYM_KINGROALD[] =
 };
 /*
 //#GYM - KARAMJA - TokHaar
-static const struct TrainerMonNoItemCustomMoves sParty_LEADER_TOKHAAR_FINAL[] = {
+static const struct TrainerMon sParty_LEADER_TOKHAAR_FINAL[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 100,
@@ -4450,7 +4446,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_LEADER_TOKHAAR_FINAL[] = 
     }
 };
 //#GYM - EDGEVILLE - Vannaka
-static const struct TrainerMonNoItemCustomMoves sParty_LEADER_VANNAKA_FINAL[] = {
+static const struct TrainerMon sParty_LEADER_VANNAKA_FINAL[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 100,
@@ -4459,7 +4455,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_LEADER_VANNAKA_FINAL[] = 
     }
 };
 //#GYM - DRAYNOR - Wise Old Man
-static const struct TrainerMonNoItemCustomMoves sParty_LEADER_WISEOLDMAN_FINAL[] = {
+static const struct TrainerMon sParty_LEADER_WISEOLDMAN_FINAL[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 100,

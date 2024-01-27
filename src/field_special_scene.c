@@ -297,7 +297,7 @@ bool8 TrySetPortholeWarpDestination(void)
 void Task_HandlePorthole(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
-    u16 *cruiseState = GetVarPointer(VAR_SS_TIDAL_STATE);
+    //u16 *cruiseState = GetVarPointer(VAR_SS_TIDAL_STATE);
     struct WarpData *location = &gSaveBlock1Ptr->location;
 
     switch (data[0])
@@ -316,10 +316,10 @@ void Task_HandlePorthole(u8 taskId)
             return;
         if (CountSSTidalStep(1) == TRUE)
         {
-            if (*cruiseState == SS_TIDAL_DEPART_SLATEPORT)
-                *cruiseState = SS_TIDAL_EXIT_CURRENTS_RIGHT;
-            else
-                *cruiseState = SS_TIDAL_EXIT_CURRENTS_LEFT;
+            //if (*cruiseState == SS_TIDAL_DEPART_SLATEPORT)
+            //    *cruiseState = SS_TIDAL_EXIT_CURRENTS_RIGHT;
+            //else
+            //    *cruiseState = SS_TIDAL_EXIT_CURRENTS_LEFT;
             data[0] = EXIT_PORTHOLE;
             return;
         }
@@ -332,16 +332,16 @@ void Task_HandlePorthole(u8 taskId)
             return;
         }
 
-        if (*cruiseState == SS_TIDAL_DEPART_SLATEPORT)
-        {
-            ScriptMovement_StartObjectMovementScript(OBJ_EVENT_ID_PLAYER, location->mapNum, location->mapGroup, sSSTidalSailEastMovementScript);
-            data[0] = IDLE_CHECK;
-        }
-        else
-        {
+        //if (*cruiseState == SS_TIDAL_DEPART_SLATEPORT)
+        //{
+        //    ScriptMovement_StartObjectMovementScript(OBJ_EVENT_ID_PLAYER, location->mapNum, location->mapGroup, sSSTidalSailEastMovementScript);
+        //    data[0] = IDLE_CHECK;
+        //}
+        //else
+        //{
             ScriptMovement_StartObjectMovementScript(OBJ_EVENT_ID_PLAYER, location->mapNum, location->mapGroup, sSSTidalSailWestMovementScript);
             data[0] = IDLE_CHECK;
-        }
+        //}
         break;
     case EXIT_PORTHOLE:
         FlagClear(FLAG_DONT_TRANSITION_MUSIC);
@@ -359,9 +359,9 @@ static void ShowSSTidalWhileSailing(void)
 
     gSprites[spriteId].coordOffsetEnabled = FALSE;
 
-    if (VarGet(VAR_SS_TIDAL_STATE) == SS_TIDAL_DEPART_SLATEPORT)
-        StartSpriteAnim(&gSprites[spriteId], GetFaceDirectionAnimNum(DIR_EAST));
-    else
+    //if (VarGet(VAR_SS_TIDAL_STATE) == SS_TIDAL_DEPART_SLATEPORT)
+    //    StartSpriteAnim(&gSprites[spriteId], GetFaceDirectionAnimNum(DIR_EAST));
+    //else
         StartSpriteAnim(&gSprites[spriteId], GetFaceDirectionAnimNum(DIR_WEST));
 }
 

@@ -242,7 +242,10 @@
 #define MB_UNUSED_EE 0xEE
 #define MB_UNUSED_EF 0xEF
 
-#define NUM_METATILE_BEHAVIORS 0xF0
+//pokescape
+#define MB_WHEAT 0xF0
+
+#define NUM_METATILE_BEHAVIORS 0xF1
 
 #define MB_INVALID   0xFF
 

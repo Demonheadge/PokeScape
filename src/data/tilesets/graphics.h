@@ -2210,4 +2210,4 @@ const u16 gTilesetPalettes_Ice_Mountain[][16] = {
 	INCBIN_U16("data/tilesets/secondary/ice_mountain/palettes/12.gbapal"),
 };
 	
-const u32 gTilesetTiles_Ice_Mountain[] = INCBIN_U32("data/tilesets/secondary/ice_mountain/tiles.4bpp.lz"
+const u32 gTilesetTiles_Ice_Mountain[] = INCBIN_U32("data/tilesets/secondary/ice_mountain/tiles.4bpp.lz");

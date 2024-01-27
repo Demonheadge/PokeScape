@@ -186,7 +186,6 @@ extern const struct SpriteTemplate *const gFieldEffectObjectTemplatePointers[];
 u8 CreateWarpArrowSprite(void)
 {
     u8 spriteId;
-    struct Sprite *sprite;
 
     LoadFieldEffectPalette_(FLDEFFOBJ_ARROW, FALSE);
     spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_ARROW], 0, 0, 0x52);
@@ -469,6 +468,43 @@ void UpdateLongGrassFieldEffect(struct Sprite *sprite)
          && (objectEvent->previousCoords.x != sprite->sX || objectEvent->previousCoords.y != sprite->sY))
             sprite->sObjectMoved = TRUE;
 
+        UpdateObjectEventSpriteInvisibility(sprite, FALSE);
+        UpdateGrassFieldEffectSubpriority(sprite, sprite->sElevation, 0);
+    }
+}
+
+void UpdateWheatFieldEffect(struct Sprite *sprite)
+{
+    u8 mapNum;
+    u8 mapGroup;
+    u8 metatileBehavior;
+    u8 localId;
+    u8 objectEventId;
+    struct ObjectEvent *objectEvent;
+
+    mapNum = sprite->data[5] >> 8;
+    mapGroup = sprite->data[5];
+    if (gCamera.active && (gSaveBlock1Ptr->location.mapNum != mapNum || gSaveBlock1Ptr->location.mapGroup != mapGroup))
+    {
+        sprite->data[1] -= gCamera.x;
+        sprite->data[2] -= gCamera.y;
+        sprite->data[5] = ((u8)gSaveBlock1Ptr->location.mapNum << 8) | (u8)gSaveBlock1Ptr->location.mapGroup;
+    }
+    localId = sprite->data[3] >> 8;
+    mapNum = sprite->data[3];
+    mapGroup = sprite->data[4];
+    metatileBehavior = MapGridGetMetatileBehaviorAt(sprite->data[1], sprite->data[2]);
+    if (TryGetObjectEventIdByLocalIdAndMap(localId, mapNum, mapGroup, &objectEventId) || !MetatileBehavior_IsWheat(metatileBehavior) || (sprite->data[7] && sprite->animEnded))
+    {
+        FieldEffectStop(sprite, FLDEFF_WHEAT);
+    }
+    else
+    {
+        objectEvent = &gObjectEvents[objectEventId];
+        if ((objectEvent->currentCoords.x != sprite->data[1] || objectEvent->currentCoords.y != sprite->data[2]) && (objectEvent->previousCoords.x != sprite->data[1] || objectEvent->previousCoords.y != sprite->data[2]))
+        {
+            sprite->data[7] = TRUE;
+        }
         UpdateObjectEventSpriteInvisibility(sprite, FALSE);
         UpdateGrassFieldEffectSubpriority(sprite, sprite->sElevation, 0);
     }
@@ -1738,43 +1774,6 @@ u32 FldEff_Wheat(void)
         }
     }
     return 0;
-}
-
-void UpdateWheatFieldEffect(struct Sprite *sprite)
-{
-    u8 mapNum;
-    u8 mapGroup;
-    u8 metatileBehavior;
-    u8 localId;
-    u8 objectEventId;
-    struct ObjectEvent *objectEvent;
-
-    mapNum = sprite->data[5] >> 8;
-    mapGroup = sprite->data[5];
-    if (gCamera.active && (gSaveBlock1Ptr->location.mapNum != mapNum || gSaveBlock1Ptr->location.mapGroup != mapGroup))
-    {
-        sprite->data[1] -= gCamera.x;
-        sprite->data[2] -= gCamera.y;
-        sprite->data[5] = ((u8)gSaveBlock1Ptr->location.mapNum << 8) | (u8)gSaveBlock1Ptr->location.mapGroup;
-    }
-    localId = sprite->data[3] >> 8;
-    mapNum = sprite->data[3];
-    mapGroup = sprite->data[4];
-    metatileBehavior = MapGridGetMetatileBehaviorAt(sprite->data[1], sprite->data[2]);
-    if (TryGetObjectEventIdByLocalIdAndMap(localId, mapNum, mapGroup, &objectEventId) || !MetatileBehavior_IsWheat(metatileBehavior) || (sprite->data[7] && sprite->animEnded))
-    {
-        FieldEffectStop(sprite, FLDEFF_WHEAT);
-    }
-    else
-    {
-        objectEvent = &gObjectEvents[objectEventId];
-        if ((objectEvent->currentCoords.x != sprite->data[1] || objectEvent->currentCoords.y != sprite->data[2]) && (objectEvent->previousCoords.x != sprite->data[1] || objectEvent->previousCoords.y != sprite->data[2]))
-        {
-            sprite->data[7] = TRUE;
-        }
-        UpdateObjectEventSpriteInvisibility(sprite, FALSE);
-        UpdateGrassFieldEffectSubpriority(sprite, sprite->sElevation, 0);
-    }
 }
 
 static void LoadFieldEffectPalette_(u8 fieldEffect, bool8 updateGammaType)

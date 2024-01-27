@@ -287,14 +287,14 @@ bool8 ShouldDoBrailleRegicePuzzle(void)
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ISLAND_CAVE)
         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ISLAND_CAVE))
     {
-        if (FlagGet(FLAG_SYS_BRAILLE_REGICE_COMPLETED))
+        //if (FlagGet(FLAG_SYS_BRAILLE_REGICE_COMPLETED))
             return FALSE;
         // Set when the player interacts with the braille message
-        if (FlagGet(FLAG_TEMP_REGICE_PUZZLE_STARTED) == FALSE)
-            return FALSE;
+        //if (FlagGet(FLAG_TEMP_REGICE_PUZZLE_STARTED) == FALSE)
+        //    return FALSE;
         // Cleared when the player interacts with the braille message
-        if (FlagGet(FLAG_TEMP_REGICE_PUZZLE_FAILED) == TRUE)
-            return FALSE;
+        //if (FlagGet(FLAG_TEMP_REGICE_PUZZLE_FAILED) == TRUE)
+        //    return FALSE;
 
         for (i = 0; i < ARRAY_COUNT(sRegicePathCoords); i++)
         {
@@ -335,8 +335,8 @@ bool8 ShouldDoBrailleRegicePuzzle(void)
         }
 
         // Player stepped on an incorrect space, puzzle failed.
-        FlagSet(FLAG_TEMP_REGICE_PUZZLE_FAILED);
-        FlagClear(FLAG_TEMP_REGICE_PUZZLE_STARTED);
+        //FlagSet(FLAG_TEMP_REGICE_PUZZLE_FAILED);
+        //FlagClear(FLAG_TEMP_REGICE_PUZZLE_STARTED);
     }
 
     return FALSE;

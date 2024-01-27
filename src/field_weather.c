@@ -105,7 +105,7 @@ void (*const gWeatherPalStateFuncs[])(void) =
 
 // This table specifies which of the color maps should be
 // applied to each of the background and sprite palettes.
-EWRAM_DATA u8 sBasePaletteGammaTypes[32] =
+EWRAM_DATA u8 sBasePaletteColorMapTypes[32] =
 {
     // background palettes
     COLOR_MAP_DARK_CONTRAST,
@@ -151,7 +151,7 @@ void StartWeather(void)
     {
         u8 index = 15;
         CpuCopy32(gFogPalette, &gPlttBufferUnfaded[0x100 + index * 16], 32);
-        BuildGammaShiftTables();
+        BuildColorMaps();
         gWeatherPtr->altGammaSpritePalIndex = index;
         gWeatherPtr->rainSpriteCount = 0;
         gWeatherPtr->curRainSpriteIndex = 0;
@@ -264,20 +264,18 @@ static u8 None_Finish(void)
 // this function always builds the same two tables.
 static void BuildColorMaps(void)
 {
-    u16 v0;
-    u8 (*gammaTable)[32];
-    u16 v2;
-    u16 v4;
-    u16 v5;
-    u16 gammaIndex;
-    u16 v9;
-    u32 v10;
-    u16 v11;
-    s16 dunno;
-    u8 i;
+    u16 i;
+    u8 (*colorMaps)[32];
+    u16 colorVal;
+    u16 curBrightness;
+    u16 brightnessDelta;
+    u16 colorMapIndex;
+    u16 baseBrightness;
+    u32 remainingBrightness;
+    s16 diff;
 
     for (i = 0; i <= 12; i++)
-        sBasePaletteGammaTypes[i] = GAMMA_NORMAL;
+        sBasePaletteColorMapTypes[i] = GAMMA_NORMAL;
 
     sPaletteColorMapTypes = sBasePaletteColorMapTypes;
     for (i = 0; i < 2; i++)
@@ -1110,5 +1108,5 @@ void ResetPreservedPalettesInWeather(void)
 void UpdatePaletteGammaType(u8 index, u8 gammaType)
 {
     if (index != 0xFF)
-        sBasePaletteGammaTypes[index + 16] = gammaType;
+        sBasePaletteColorMapTypes[index + 16] = gammaType;
 }

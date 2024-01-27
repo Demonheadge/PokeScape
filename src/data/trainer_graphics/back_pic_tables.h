@@ -61,8 +61,8 @@ const struct CompressedSpriteSheet gTrainerBackPicTable[] =
 
 const struct CompressedSpritePalette gTrainerBackPicPaletteTable[] =
 {
-    TRAINER_BACK_PAL(BRENDAN, gTrainerBackPic_protaganist_m),
-    TRAINER_BACK_PAL(MAY, gTrainerBackPic_protaganist_f),
+    TRAINER_BACK_PAL(BRENDAN, gTrainerPalette_protaganist_m_back),
+    TRAINER_BACK_PAL(MAY, gTrainerPalette_protaganist_f_back),
     TRAINER_BACK_PAL(RED, gTrainerBackPicPalette_Red),
     TRAINER_BACK_PAL(LEAF, gTrainerBackPicPalette_Leaf),
     TRAINER_BACK_PAL(RUBY_SAPPHIRE_BRENDAN, gTrainerPalette_RubySapphireBrendan),

@@ -277,6 +277,8 @@ const u32 gTrainerPalette_RubySapphireBrendan[] = INCBIN_U32("graphics/trainers/
 const u32 gTrainerFrontPic_RubySapphireMay[] = INCBIN_U32("graphics/trainers/front_pics/may_rs.4bpp.lz");
 const u32 gTrainerPalette_RubySapphireMay[] = INCBIN_U32("graphics/trainers/palettes/may_rs.gbapal.lz");
 
+const u8 gTrainerBackPic_protaganist_f[] = INCBIN_U8("graphics/trainers/pokescape/back_pics/protaganist_f.4bpp");
+const u8 gTrainerBackPic_protaganist_m[] = INCBIN_U8("graphics/trainers/pokescape/back_pics/protaganist_m.4bpp");
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red.4bpp");
@@ -302,8 +304,6 @@ const u32 gTrainerFrontPic_ozan[] = INCBIN_U32("graphics/trainers/pokescape/fron
 
 const u32 gTrainerFrontPic_protaganist_f[] = INCBIN_U32("graphics/trainers/pokescape/front_pics/EVENT/protaganist_f.4bpp.lz");
 const u32 gTrainerFrontPic_protaganist_m[] = INCBIN_U32("graphics/trainers/pokescape/front_pics/EVENT/protaganist_m.4bpp.lz");
-const u8 gTrainerBackPic_protaganist_f[] = INCBIN_U8("graphics/trainers/pokescape/back_pics/protaganist_f.4bpp");
-const u8 gTrainerBackPic_protaganist_m[] = INCBIN_U8("graphics/trainers/pokescape/back_pics/protaganist_m.4bpp");
 
 const u32 gTrainerFrontPic_raptor[] = INCBIN_U32("graphics/trainers/pokescape/front_pics/EVENT/raptor.4bpp.lz");
 const u32 gTrainerFrontPic_sigmund[] = INCBIN_U32("graphics/trainers/pokescape/front_pics/EVENT/sigmund.4bpp.lz");
