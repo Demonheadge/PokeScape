@@ -530,4 +530,14 @@ extern const u8 BattleScript_DynamaxBegins[];
 extern const u8 BattleScript_DynamaxEnds[];
 extern const u8 BattleScript_MoveBlockedByDynamax[];
 
+// pokescape
+extern const u8 BattleScript_ChaoticRiftEnds[];
+extern const u8 BattleScript_PetrifyActivatesEnd3[];
+extern const u8 BattleScript_PetrifyActivates[];
+extern const u8 BattleScript_AbyssalActivates[];
+extern const u8 BattleScript_Haemancy[];
+extern const u8 BattleScript_Goosebumps[];
+extern const u8 BattleScript_AvernicActivates[];
+extern const u8 BattleScript_FireShieldEnds[];
+
 #endif // GUARD_BATTLE_SCRIPTS_H

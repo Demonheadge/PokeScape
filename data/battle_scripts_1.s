@@ -10808,3 +10808,62 @@ BattleScript_EffectSnow::
 	call BattleScript_CheckPrimalWeather
 	setsnow
 	goto BattleScript_MoveWeatherChange
+
+BattleScript_ChaoticRiftEnds::
+	printstring STRINGID_CHAOTICRIFTENDS
+	waitmessage 0x40
+	end2
+
+BattleScript_KarilCrossbow::
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printstring STRINGID_KARILCROSSBOW
+	waitmessage 0x40
+	return
+
+BattleScript_AhrimStaff::
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printstring STRINGID_AHRIMSTAFF
+	waitmessage 0x40
+	return
+
+BattleScript_ToragHammer::
+	printstring STRINGID_TORAGHAMMER
+	waitmessage 0x40
+	return
+
+BattleScript_AbyssalActivates::
+	pause 0x20
+	call BattleScript_AbilityPopUp
+	attackanimation
+	waitanimation
+	printstring STRINGID_PKMNTWISTEDDIMENSIONS
+	end3
+
+BattleScript_Haemancy::
+	pause 0x20
+	call BattleScript_AbilityPopUp
+	waitmessage 0x40
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	pause 0x20
+	return
+
+BattleScript_Goosebumps::
+	pause 0x20
+	call BattleScript_AbilityPopUp
+	waitmessage 0x40
+	settaunt BattleScript_ButItFailed
+	printstring STRINGID_TOOSCARED
+	waitmessage 0x40
+	return
+
+BattleScript_FireShieldEnds::
+	pause 0x20
+	call BattleScript_AbilityPopUp
+	waitmessage 0x40
+	setgastroacid BattleScript_ButItFailed
+	printstring STRINGID_FIRESHIELDENDS
+	waitmessage 0x40
+	return
+	

@@ -564,20 +564,25 @@
 #define TRAINER_CLASS_FIRE_GIANT        0x82
 #define TRAINER_CLASS_NUM               0x83
 
-#define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
-#define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music
-#define TRAINER_ENCOUNTER_MUSIC_GIRL         2 // used for male Tubers and Young Couples too
+#define TRAINER_ENCOUNTER_MUSIC_MALE         0 // Standard male encounter music
+#define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // Standard female encounter music
+#define TRAINER_ENCOUNTER_MUSIC_GIRL         2 // Used for male Tubers and Young Couples too
 #define TRAINER_ENCOUNTER_MUSIC_SUSPICIOUS   3
 #define TRAINER_ENCOUNTER_MUSIC_INTENSE      4
 #define TRAINER_ENCOUNTER_MUSIC_COOL         5
 #define TRAINER_ENCOUNTER_MUSIC_AQUA         6
 #define TRAINER_ENCOUNTER_MUSIC_MAGMA        7
 #define TRAINER_ENCOUNTER_MUSIC_SWIMMER      8
-#define TRAINER_ENCOUNTER_MUSIC_TWINS        9 // used for other trainer classes too
+#define TRAINER_ENCOUNTER_MUSIC_TWINS        9 // Used for other trainer classes too
 #define TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR  10
-#define TRAINER_ENCOUNTER_MUSIC_HIKER       11 // used for other trainer classes too
+#define TRAINER_ENCOUNTER_MUSIC_HIKER       11 // Used for other trainer classes too
 #define TRAINER_ENCOUNTER_MUSIC_INTERVIEWER 12
 #define TRAINER_ENCOUNTER_MUSIC_RICH        13 // Rich Boys and Gentlemen
+#define TRAINER_ENCOUNTER_MUSIC_PKER        14
+#define TRAINER_ENCOUNTER_MUSIC_HAM         15 // Ham Grunts
+#define TRAINER_ENCOUNTER_MUSIC_NOOB        16 // Happy noobs
+#define TRAINER_ENCOUNTER_MUSIC_CHOOB       17 // Scary choobs
+#define TRAINER_ENCOUNTER_SKILLER           18
 
 #define F_TRAINER_FEMALE (1 << 7)
 

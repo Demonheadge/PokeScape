@@ -421,6 +421,13 @@
 #define EFFECT_RAGING_BULL                  415
 #define EFFECT_RAGE_FIST                    416
 
-#define NUM_BATTLE_MOVE_EFFECTS             417
+#define LAST_VANILLA_MOVE                   EFFECT_RAGE_FIST
+
+#define EFFECT_INVERSE_BATTLE               (LAST_VANILLA_MOVE + 1)
+#define EFFECT_SLICE_DICE                   (LAST_VANILLA_MOVE + 2)
+#define EFFECT_SARADOMIN_STRIKE             (LAST_VANILLA_MOVE + 3)
+#define EFFECT_VENGEANCE                    (LAST_VANILLA_MOVE + 4)
+
+#define NUM_BATTLE_MOVE_EFFECTS             421
 
 #endif  // GUARD_CONSTANTS_BATTLE_MOVE_EFFECTS_H

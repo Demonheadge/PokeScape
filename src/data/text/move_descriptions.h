@@ -3336,6 +3336,87 @@ const u8 gNotDoneYetDescription[] = _(
     "This move can't be used. Its\n"
     "effect is in development.");
 
+// Pokescape
+static const u8 sChaoticRiftDescription[] = _(
+    "Opens a chaotic rift.\n"
+    "Type matchups get weird!.");
+
+static const u8 sSaradominStrikeDescription[] = _(
+    "Strikes your foe with the power.\n"
+    "of Saradomin. Lowers PP of target.");
+
+static const u8 sSwordStrikeDescription[] = _(
+    "Strike forth with a mighty blade.\n"
+    "High critical ratio.");
+
+static const u8 sSliceDiceDescription[] = _(
+    "Rapidly strikes the foe with razor\n"
+    "sharp claws. Always hits 4 times.");
+
+static const u8 sZamorakFlamesDescription[] = _(
+    "Strike your foe with the power of\n"
+    "Zamorak. Lowers targets SPATK.");
+
+static const u8 sGuthixClawsDescription[] = _(
+    "Strike your foe with the power of\n"
+    "Zamorak. Lowers targets SPATK.");
+
+static const u8 sPolyporeStrikeDescription[] = _(
+    "Send forth a ball of nature.\n"
+    "May paralyze the target.");
+
+static const u8 sIceBarrageDescription[] = _(
+    "Strike the target with ice magic.\n"
+    "May freeze the target.");
+
+static const u8 sBloodBarrageDescription[] = _(
+    "Strike the target with blood magic.\n"
+    "Steals a large amount of health.");
+
+static const u8 sVengeanceDescription[] = _(
+    "Strike the target with blood magic.\n"
+    "Steals a large amount of health.");
+
+static const u8 sArmadylStormDescription[] = _(
+    "Strike the target with armadyls winds.\n"
+    "Deals a large amount of damage.");
+
+static const u8 sTumekenStormDescription[] = _(
+    "Strike with the force of the desert.\n"
+    "Sets up a sandstorm.");
+
+static const u8 sSmokeBarrageDescription[] = _(
+    "Strike with the force of the desert.\n"
+    "Sets up a sandstorm.");
+
+static const u8 sShadowBarrageDescription[] = _(
+    "Strike with the force of the desert.\n"
+    "Sets up a sandstorm.");
+
+static const u8 sTelegrabDescription[] = _(
+    "Casts a spell to retrieve an item.\n"
+    "Steals targets item.");
+
+static const u8 sFreeStuffDescription[] = _(
+    "Beg for free stuff!\n"
+    "Can find items.");
+
+static const u8 sBandosFuryDescription[] = _(
+    "Attack with the fury of Bandos!\n"
+    "Can raise ATK.");
+
+static const u8 sZarosBeckonDescription[] = _(
+    "Draw the foes in the dark abyss.\n"
+    "Prevents healing.");
+
+static const u8 sSerenShineDescription[] = _(
+    "Protects allies in the hail.\n"
+    "Sets aurora veil in hail.");
+
+static const u8 sGodlessRebelDescription[] = _(
+    "Draw from the power of the godless.\n"
+    "Doubles power with status.");
+
 #undef BINDING_TURNS
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
@@ -4190,4 +4271,26 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_PSYCHIC_NOISE - 1] = sPsychicNoiseDescription,
     [MOVE_UPPER_HAND - 1] = sUpperHandDescription,
     [MOVE_MALIGNANT_CHAIN - 1] = sMalignantChainDescription,
+
+    // Pokescape
+    [MOVE_CHAOTIC_RIFT - 1] = sChaoticRiftDescription,
+    [MOVE_SARADOMIN_STRIKE - 1] = sSaradominStrikeDescription,
+    [MOVE_SWORD_STRIKE - 1] = sSwordStrikeDescription,
+    [MOVE_SLICE_DICE - 1] = sSliceDiceDescription,
+    [MOVE_ZAMORAK_FLAMES - 1] = sZamorakFlamesDescription,
+    [MOVE_GUTHIX_CLAWS - 1] = sGuthixClawsDescription,
+    [MOVE_POLYPORE_STRIKE - 1] = sPolyporeStrikeDescription,
+    [MOVE_ICE_BARRAGE - 1] = sIceBarrageDescription,
+    [MOVE_BLOOD_BARRAGE - 1] = sBloodBarrageDescription,
+    [MOVE_VENGEANCE - 1] = sVengeanceDescription,
+    [MOVE_ARMADYL_STORM - 1] = sArmadylStormDescription,
+    [MOVE_TUMEKEN_STORM - 1] = sTumekenStormDescription,
+    [MOVE_SMOKE_BARRAGE - 1] = sSmokeBarrageDescription,
+    [MOVE_SHADOW_BARRAGE -1] = sShadowBarrageDescription,
+    [MOVE_TELEGRAB - 1] = sTelegrabDescription,
+    [MOVE_FREE_STUFF - 1] = sFreeStuffDescription,
+    [MOVE_BANDOS_FURY - 1] = sBandosFuryDescription,
+    [MOVE_ZAROS_BECKON - 1] = sZarosBeckonDescription,
+    [MOVE_SEREN_SHINE - 1] = sSerenShineDescription,
+    [MOVE_GODLESS_REBEL - 1] = sGodlessRebelDescription,
 };

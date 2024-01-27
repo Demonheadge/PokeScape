@@ -1929,6 +1929,7 @@ enum
     ENDTURN_RAINBOW,
     ENDTURN_SEA_OF_FIRE,
     ENDTURN_SWAMP,
+    ENDTURN_CHAOTIC_RIFT,
     ENDTURN_FIELD_COUNT,
 };
 
@@ -2526,6 +2527,15 @@ u8 DoFieldEndTurnEffects(void)
                 gBattleStruct->turnCountersTracker++;
                 gBattleStruct->turnSideTracker = 0;
             }
+            break;
+        case ENDTURN_CHAOTIC_RIFT:
+            if (gFieldStatuses & STATUS_FIELD_CHAOTIC_RIFT && --gFieldTimers.chaoticRiftTimer == 0)
+            {
+                gFieldStatuses &= ~(STATUS_FIELD_CHAOTIC_RIFT);
+                BattleScriptExecute(BattleScript_ChaoticRiftEnds);
+                effect++;
+            }
+            gBattleStruct->turnCountersTracker++;
             break;
         case ENDTURN_FIELD_COUNT:
             effect++;
@@ -8677,6 +8687,7 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         basePower = gBattleStruct->presentBasePower;
         break;
     case EFFECT_TRIPLE_KICK:
+    case EFFECT_SLICE_DICE:
         if (gMultiHitCounter == 0) // Calc damage with max BP for move consideration
             basePower *= 6;
         else
@@ -10134,7 +10145,7 @@ uq4_12_t CalcTypeEffectivenessMultiplier(u32 move, u32 moveType, u32 battlerAtk,
     if (move != MOVE_STRUGGLE && moveType != TYPE_MYSTERY)
     {
         modifier = CalcTypeEffectivenessMultiplierInternal(move, moveType, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
-        if (gBattleMoves[move].effect == EFFECT_TWO_TYPED_MOVE)
+        if (gBattleMoves[move].effect == EFFECT_TWO_TYPED_MOVE || gBattleMoves[move].effect == EFFECT_SARADOMIN_STRIKE)
             modifier = CalcTypeEffectivenessMultiplierInternal(move, gBattleMoves[move].argument, battlerAtk, battlerDef, recordAbilities, modifier, defAbility);
     }
 
@@ -10181,7 +10192,7 @@ static uq4_12_t GetInverseTypeMultiplier(uq4_12_t multiplier)
 
 uq4_12_t GetTypeModifier(u32 atkType, u32 defType)
 {
-    if (B_FLAG_INVERSE_BATTLE != 0 && FlagGet(B_FLAG_INVERSE_BATTLE))
+    if ((B_FLAG_INVERSE_BATTLE != 0 && FlagGet(B_FLAG_INVERSE_BATTLE)) || gFieldStatuses & STATUS_FIELD_CHAOTIC_RIFT)
         return GetInverseTypeMultiplier(sTypeEffectivenessTable[atkType][defType]);
     return sTypeEffectivenessTable[atkType][defType];
 }

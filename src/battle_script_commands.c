@@ -14038,6 +14038,9 @@ static void Cmd_setroom(void)
     case EFFECT_MAGIC_ROOM:
         HandleRoomMove(STATUS_FIELD_MAGIC_ROOM, &gFieldTimers.magicRoomTimer, 4);
         break;
+    case EFFECT_INVERSE_BATTLE:
+        HandleRoomMove(STATUS_FIELD_CHAOTIC_RIFT, &gFieldTimers.chaoticRiftTimer,6);
+        break;
     default:
         gBattleCommunication[MULTISTRING_CHOOSER] = 6;
         break;
