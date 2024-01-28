@@ -18058,7 +18058,7 @@ static const union AnimCmd *const sAnims_Cow_Harlequin_Form[] ={
 	sAnim_Cow_Harlequin_Form_1,
 };
 
-static const union AnimCmd *const sAnims_Skeletalox_Female_Form[] ={
+static const union AnimCmd *const sAnims_SkeletalOx_Female_Form[] ={
 	sAnim_GeneralFrame0,
 	sAnim_Skeletalox_Female_Form_1,
 };
@@ -18073,7 +18073,7 @@ static const union AnimCmd *const sAnims_Bull_Elder_Form[] ={
 	sAnim_Bull_Elder_Form_1,
 };
 
-static const union AnimCmd *const sAnims_Skeletalox_Male_Form[] ={
+static const union AnimCmd *const sAnims_SkeletalOx_Male_Form[] ={
 	sAnim_GeneralFrame0,
 	sAnim_Skeletalox_Male_Form_1,
 };
@@ -18318,7 +18318,7 @@ static const union AnimCmd *const sAnims_Salmon_Leaping_Form[] ={
 	sAnim_Salmon_Leaping_Form_1,
 };
 
-static const union AnimCmd *const sAnims_Shark_Greatwhite_Form[] ={
+static const union AnimCmd *const sAnims_Shark_GreatWhite_Form[] ={
 	sAnim_GeneralFrame0,
 	sAnim_Shark_Greatwhite_Form_1,
 };
@@ -18353,7 +18353,7 @@ static const union AnimCmd *const sAnims_Seerfish[] ={
 	sAnim_Seerfish_1,
 };
 
-static const union AnimCmd *const sAnims_Desertsole[] ={
+static const union AnimCmd *const sAnims_DesertSole[] ={
 	sAnim_GeneralFrame0,
 	sAnim_Desertsole_1,
 };
@@ -18418,7 +18418,7 @@ static const union AnimCmd *const sAnims_Monkfish_Normal_Form[] ={
 	sAnim_Monkfish_Normal_Form_1,
 };
 
-static const union AnimCmd *const sAnims_Anglerfish[] ={
+static const union AnimCmd *const sAnims_AnglerFish[] ={
 	sAnim_GeneralFrame0,
 	sAnim_Anglerfish_1,
 };
@@ -18438,7 +18438,7 @@ static const union AnimCmd *const sAnims_Monkfish_Golden_Form[] ={
 	sAnim_Monkfish_Golden_Form_1,
 };
 
-static const union AnimCmd *const sAnims_Goblinfish[] ={
+static const union AnimCmd *const sAnims_GoblinFish[] ={
 	sAnim_GeneralFrame0,
 	sAnim_Goblinfish_1,
 };

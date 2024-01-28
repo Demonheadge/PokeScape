@@ -347,8 +347,17 @@
 #define FACILITY_CLASS_LEAF                  0x4f
 #define FACILITY_CLASS_RS_BRENDAN            0x50
 #define FACILITY_CLASS_RS_MAY                0x51
+//POKESCAPE
+#define FACILITY_CLASS_JMOD_F                0x52
+#define FACILITY_CLASS_JMOD_M                0x53
+#define FACILITY_CLASS_IRONMAN               0x54
+#define FACILITY_CLASS_MITHRIL_MAN           0x55
+#define FACILITY_CLASS_RUNE_MAN              0x56
+#define FACILITY_CLASS_DEMONHEADGE           0x57
+#define FACILITY_CLASS_HYPERSTAN             0x58
+#define FACILITY_CLASS_BRONZE_MAN            0x59
 
-#define FACILITY_CLASSES_COUNT               0x52
+#define FACILITY_CLASSES_COUNT               0x5A
 
 #define RS_FACILITY_CLASS_AQUA_LEADER_ARCHIE    0x0
 #define RS_FACILITY_CLASS_AQUA_GRUNT_M          0x1

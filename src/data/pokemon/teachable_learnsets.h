@@ -39729,7 +39729,7 @@ static const u16 sCow_Harlequin_FormTeachableLearnset[] = {
     MOVE_REVENGE,
     MOVE_UNAVAILABLE,
 };
-static const u16 sSkeletalox_Female_FormTeachableLearnset[] = {
+static const u16 sSkeletalOx_Female_FormTeachableLearnset[] = {
     MOVE_SOLAR_BLADE,
     MOVE_GRASSY_TERRAIN,
     MOVE_MISTY_TERRAIN,
@@ -39788,7 +39788,7 @@ static const u16 sBull_Elder_FormTeachableLearnset[] = {
     MOVE_REVENGE,
     MOVE_UNAVAILABLE,
 };
-static const u16 sSkeletalox_Male_FormTeachableLearnset[] = {
+static const u16 sSkeletalOx_Male_FormTeachableLearnset[] = {
     MOVE_SOLAR_BLADE,
     MOVE_GRASSY_TERRAIN,
     MOVE_MISTY_TERRAIN,
@@ -40564,7 +40564,7 @@ static const u16 sSalmon_Leaping_FormTeachableLearnset[] = {
     MOVE_DEFOG,
     MOVE_UNAVAILABLE,
 };
-static const u16 sShark_Greatwhite_FormTeachableLearnset[] = {
+static const u16 sShark_GreatWhite_FormTeachableLearnset[] = {
     MOVE_RAIN_DANCE,
     MOVE_BRINE,
     MOVE_AERIAL_ACE,
@@ -40630,7 +40630,7 @@ static const u16 sSeerfishTeachableLearnset[] = {
     MOVE_DEFOG,
     MOVE_UNAVAILABLE,
 };
-static const u16 sDesertsoleTeachableLearnset[] = {
+static const u16 sDesertSoleTeachableLearnset[] = {
     MOVE_RAIN_DANCE,
     MOVE_SANDSTORM,
     MOVE_BRINE,
@@ -40778,7 +40778,7 @@ static const u16 sMonkfish_Normal_FormTeachableLearnset[] = {
     MOVE_DEFOG,
     MOVE_UNAVAILABLE,
 };
-static const u16 sAnglerfishTeachableLearnset[] = {
+static const u16 sAnglerFishTeachableLearnset[] = {
     MOVE_RAIN_DANCE,
     MOVE_ELECTRIC_TERRAIN,
     MOVE_BRINE,
@@ -40818,7 +40818,7 @@ static const u16 sMonkfish_Golden_FormTeachableLearnset[] = {
     MOVE_DEFOG,
     MOVE_UNAVAILABLE,
 };
-static const u16 sGoblinfishTeachableLearnset[] = {
+static const u16 sGoblinFishTeachableLearnset[] = {
     MOVE_RAIN_DANCE,
     MOVE_SANDSTORM,
     MOVE_BRINE,

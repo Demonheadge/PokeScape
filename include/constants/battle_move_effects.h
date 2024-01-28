@@ -427,7 +427,10 @@
 #define EFFECT_SLICE_DICE                   (LAST_VANILLA_MOVE + 2)
 #define EFFECT_SARADOMIN_STRIKE             (LAST_VANILLA_MOVE + 3)
 #define EFFECT_VENGEANCE                    (LAST_VANILLA_MOVE + 4)
+#define EFFECT_FREE_STUFF                   (LAST_VANILLA_MOVE + 5)
+#define EFFECT_HEAL_BLOCK_HIT               (LAST_VANILLA_MOVE + 6)
+#define EFFECT_AURORA_VEIL_HIT              (LAST_VANILLA_MOVE + 7)
 
-#define NUM_BATTLE_MOVE_EFFECTS             421
+#define NUM_BATTLE_MOVE_EFFECTS             424
 
 #endif  // GUARD_CONSTANTS_BATTLE_MOVE_EFFECTS_H

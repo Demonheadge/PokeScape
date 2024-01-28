@@ -1136,5 +1136,5 @@ void SetMatchCallRegisteredFlag(void)
 {
     int r0 = GetRematchIdxByTrainerIdx(gSpecialVar_0x8004);
     if (r0 >= 0)
-        FlagSet(FLAG_SYS_GAME_CLEAR)
+        FlagSet(FLAG_SYS_GAME_CLEAR);
 }

@@ -107,7 +107,7 @@ static bool8 IsAlphaMode(void);
 
 static void BuildMenuTemplate(void);
 static u8 GetModeAndGenerateList();
-static void CountNumberListRows();
+static u8 CountNumberListRows();
 static u8 *DefineQuestOrder();
 static u8 GenerateSubquestList();
 static u8 GenerateList(bool8 isFiltered);
@@ -158,7 +158,7 @@ static void QuestMenu_DestroySprite(u8 idx);
 
 static void GenerateStateAndPrint(u8 windowId, u32 itemId, u8 y);
 static u8 GenerateSubquestState(u8 questId);
-static void GenerateQuestState(u8 questId);
+static u8 GenerateQuestState(u8 questId);
 static void PrintQuestState(u8 windowId, u8 y, u8 colorIndex);
 
 static void GenerateAndPrintHeader(void);
@@ -1169,7 +1169,7 @@ u8 GetModeAndGenerateList()
 	}
 }
 
-static void CountNumberListRows()
+static u8 CountNumberListRows()
 {
 	u8 mode = sStateDataPtr->filterMode % 10;
 
@@ -1190,14 +1190,16 @@ static void CountNumberListRows()
 			return CountRewardQuests() + 1;
 		case SORT_DONE:
 			return CountCompletedQuests() + 1;
+		default:
+			return QUEST_COUNT + 1;
 	}
 
 }
 
-u8 *DefineQuestOrder()
+static u8 *DefineQuestOrder()
 {
 	static u8 sortedList[QUEST_COUNT];
-	u8 a, c, d
+	u8 a, c, d;
 	u8 placeholderVariable;
 
 	for (a = 0; a < QUEST_COUNT; a++)
@@ -1843,7 +1845,7 @@ static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 	u8 *ptr = &sItemMenuIconSpriteIds[10];
 	u8 spriteId;
 	//struct SpriteSheet spriteSheet;
-	struct CompressedSpritePalette spritePalette;
+	//struct CompressedSpritePalette spritePalette;
 	//struct SpriteTemplate *spriteTemplate;
 
 	if (ptr[idx] == 0xFF)
@@ -1951,7 +1953,7 @@ u8 GenerateSubquestState(u8 questId)
 	return 2;
 }
 
-static void GenerateQuestState(u8 questId)
+static u8 GenerateQuestState(u8 questId)
 {
 	if (QuestMenu_GetSetQuestState(questId, FLAG_GET_COMPLETED))
 	{
@@ -1971,6 +1973,7 @@ static void GenerateQuestState(u8 questId)
 	else
 	{
 		StringCopy(gStringVar4, sText_Empty);
+		return 0;
 	}
 }
 
