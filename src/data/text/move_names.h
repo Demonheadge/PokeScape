@@ -1,6 +1,6 @@
 #if B_EXPANDED_MOVE_NAMES == TRUE
 // 16 letters
-const u8 gMoveNames[MOVES_COUNT_POKESCAPE][MOVE_NAME_LENGTH + 1] =
+const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
 {
     [MOVE_NONE] = _("-"),
     [MOVE_POUND] = _("Pound"),
@@ -850,6 +850,27 @@ const u8 gMoveNames[MOVES_COUNT_POKESCAPE][MOVE_NAME_LENGTH + 1] =
     [MOVE_PSYCHIC_NOISE] = _("Psychic Noise"),
     [MOVE_UPPER_HAND] = _("Upper Hand"),
     [MOVE_MALIGNANT_CHAIN] = _("Malignant Chain"),
+    // Pokescape
+    [MOVE_CHAOTIC_RIFT] = _("Chaotic Rift"),
+    [MOVE_SARADOMIN_STRIKE] = _("Sara Strike"),
+    [MOVE_SWORD_STRIKE] = _("Slice"),
+    [MOVE_SLICE_DICE] = _("Slice & Dice"),
+    [MOVE_ZAMORAK_FLAMES] = _("Zammy Flame"),
+    [MOVE_GUTHIX_CLAWS] = _("Guthix Claws"),
+    [MOVE_POLYPORE_STRIKE] = _("Poly Strike"),
+    [MOVE_ICE_BARRAGE] = _("Ice Barrage"),
+    [MOVE_BLOOD_BARRAGE] = _("Blood Barrage"),
+    [MOVE_VENGEANCE]= _("Vengeance"),
+    [MOVE_ARMADYL_STORM] = _("Armadyl Storm"),
+    [MOVE_TUMEKEN_STORM] = _("Tumeken Storm"),
+    [MOVE_SMOKE_BARRAGE] = _("Smoke Barrage"),
+    [MOVE_SHADOW_BARRAGE] = _("Shadow Barrage"),
+    [MOVE_TELEGRAB] = _("Telegrab"),
+    [MOVE_FREE_STUFF] = _("Free Stuff???"),
+    [MOVE_BANDOS_FURY] = _("Bandos Fury"),
+    [MOVE_ZAROS_BECKON] = _("Zaros Beckon"),
+    [MOVE_SEREN_SHINE]= _("Seren Shine"),
+    [MOVE_GODLESS_REBEL] = _("Godless Rebel"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("Max Guard"),
     [MOVE_MAX_STRIKE] = _("Max Strike"),
@@ -904,32 +925,10 @@ const u8 gMoveNames[MOVES_COUNT_POKESCAPE][MOVE_NAME_LENGTH + 1] =
     [MOVE_G_MAX_DEPLETION] = _("Gmax Depletion"),
     [MOVE_G_MAX_ONE_BLOW] = _("Gmax One Blow"),
     [MOVE_G_MAX_RAPID_FLOW] = _("Gmax Rapid Flow"),
-    
-    // Pokescape
-    [MOVE_CHAOTIC_RIFT] = _("Chaotic Rift"),
-    [MOVE_SARADOMIN_STRIKE] = _("Sara Strike"),
-    [MOVE_SWORD_STRIKE] = _("Slice"),
-    [MOVE_SLICE_DICE] = _("Slice & Dice"),
-    [MOVE_ZAMORAK_FLAMES] = _("Zammy Flame"),
-    [MOVE_GUTHIX_CLAWS] = _("Guthix Claws"),
-    [MOVE_POLYPORE_STRIKE] = _("Poly Strike"),
-    [MOVE_ICE_BARRAGE] = _("Ice Barrage"),
-    [MOVE_BLOOD_BARRAGE] = _("Blood Barrage"),
-    [MOVE_VENGEANCE]= _("Vengeance"),
-    [MOVE_ARMADYL_STORM] = _("Armadyl Storm"),
-    [MOVE_TUMEKEN_STORM] = _("Tumeken Storm"),
-    [MOVE_SMOKE_BARRAGE] = _("Smoke Barrage"),
-    [MOVE_SHADOW_BARRAGE] = _("Shadow Barrage"),
-    [MOVE_TELEGRAB] = _("Telegrab"),
-    [MOVE_FREE_STUFF] = _("Free Stuff???"),
-    [MOVE_BANDOS_FURY] = _("Bandos Fury"),
-    [MOVE_ZAROS_BECKON] = _("Zaros Beckon"),
-    [MOVE_SEREN_SHINE]= _("Seren Shine"),
-    [MOVE_GODLESS_REBEL] = _("Godless Rebel"),
 };
 #else
 // 12 letters
-const u8 gMoveNames[MOVES_COUNT_POKESCAPE][MOVE_NAME_LENGTH + 1] =
+const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
 {
     [MOVE_NONE] = _("-"),
     [MOVE_POUND] = _("Pound"),
@@ -1779,6 +1778,27 @@ const u8 gMoveNames[MOVES_COUNT_POKESCAPE][MOVE_NAME_LENGTH + 1] =
     [MOVE_PSYCHIC_NOISE] = _("PsychicNoise"),
     [MOVE_UPPER_HAND] = _("Upper Hand"),
     [MOVE_MALIGNANT_CHAIN] = _("MalignntChan"),
+    //pokescape
+    [MOVE_CHAOTIC_RIFT] = _("Chaotic Rift"),
+    [MOVE_SARADOMIN_STRIKE] = _("Sara Strike"),
+    [MOVE_SWORD_STRIKE] = _("Slice"),
+    [MOVE_SLICE_DICE] = _("Slice&Dice"),
+    [MOVE_ZAMORAK_FLAMES] = _("Zammy Flame"),
+    [MOVE_GUTHIX_CLAWS] = _("Guthix Claws"),
+    [MOVE_POLYPORE_STRIKE] = _("Poly Strike"),
+    [MOVE_ICE_BARRAGE] = _("Ice Barrage"),
+    [MOVE_BLOOD_BARRAGE] = _("Blood Brrage"),
+    [MOVE_VENGEANCE]= _("Vengeance"),
+    [MOVE_ARMADYL_STORM] = _("Armadyl Strm"),
+    [MOVE_TUMEKEN_STORM] = _("Tumeken Strm"),
+    [MOVE_SMOKE_BARRAGE] = _("Smoke Brrage"),
+    [MOVE_SHADOW_BARRAGE] = _("Shdow Brrage"),
+    [MOVE_TELEGRAB] = _("Telegrab"),
+    [MOVE_FREE_STUFF] = _("Free Stuff?"),
+    [MOVE_BANDOS_FURY] = _("Bandos Fury"),
+    [MOVE_ZAROS_BECKON] = _("Zaros Beckon"),
+    [MOVE_SEREN_SHINE]= _("Seren Shine"),
+    [MOVE_GODLESS_REBEL] = _("Godlss Rebel"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("M-Guard"),
     [MOVE_MAX_STRIKE] = _("M-Strike"),
@@ -1833,28 +1853,6 @@ const u8 gMoveNames[MOVES_COUNT_POKESCAPE][MOVE_NAME_LENGTH + 1] =
     [MOVE_G_MAX_DEPLETION] = _("G-Depletion"),
     [MOVE_G_MAX_ONE_BLOW] = _("G-One Blow"),
     [MOVE_G_MAX_RAPID_FLOW] = _("G-Rapid Flow"),
-
-    //pokescape
-    [MOVE_CHAOTIC_RIFT] = _("Chaotic Rift"),
-    [MOVE_SARADOMIN_STRIKE] = _("Sara Strike"),
-    [MOVE_SWORD_STRIKE] = _("Slice"),
-    [MOVE_SLICE_DICE] = _("Slice&Dice"),
-    [MOVE_ZAMORAK_FLAMES] = _("Zammy Flame"),
-    [MOVE_GUTHIX_CLAWS] = _("Guthix Claws"),
-    [MOVE_POLYPORE_STRIKE] = _("Poly Strike"),
-    [MOVE_ICE_BARRAGE] = _("Ice Barrage"),
-    [MOVE_BLOOD_BARRAGE] = _("Blood Brrage"),
-    [MOVE_VENGEANCE]= _("Vengeance"),
-    [MOVE_ARMADYL_STORM] = _("Armadyl Strm"),
-    [MOVE_TUMEKEN_STORM] = _("Tumeken Strm"),
-    [MOVE_SMOKE_BARRAGE] = _("Smoke Brrage"),
-    [MOVE_SHADOW_BARRAGE] = _("Shdow Brrage"),
-    [MOVE_TELEGRAB] = _("Telegrab"),
-    [MOVE_FREE_STUFF] = _("Free Stuff?"),
-    [MOVE_BANDOS_FURY] = _("Bandos Fury"),
-    [MOVE_ZAROS_BECKON] = _("Zaros Beckon"),
-    [MOVE_SEREN_SHINE]= _("Seren Shine"),
-    [MOVE_GODLESS_REBEL] = _("Godlss Rebel"),
 };
 #endif
 

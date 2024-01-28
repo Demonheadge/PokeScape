@@ -122,10 +122,10 @@ script LUMBRIDGESWAMP_CANDLESELLER
 	lock
 	faceplayer
 	msgbox(format("I wouldn't go down there without a light source.\pIt's dangerous!"))
-    checkitem(ITEM_LANTERN, 1)
+    checkitem(ITEM_FLASH_TOOL, 1)
         if (!var(VAR_RESULT)){
             msgbox(format("But…{PAUSE 15}…{PAUSE 15}…\pIf you are serious about going down there, take this."))
-            giveitem(ITEM_LANTERN)
+            giveitem(ITEM_FLASH_TOOL)
             msgbox(format("Be careful down there."))
             closemessage
             release

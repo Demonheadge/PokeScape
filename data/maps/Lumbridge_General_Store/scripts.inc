@@ -281,7 +281,7 @@ STORE_Helmet:
 
     .align 2
 STORE_FarmingSupplies:
-    .2byte ITEM_CABBAGE_FARMING
+    .2byte ITEM_FARMING_CABBAGE
     .2byte ITEM_APPLE
     .2byte ITEM_BANANNA
 	.2byte ITEM_CADAVABERRY

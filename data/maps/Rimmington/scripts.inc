@@ -459,7 +459,7 @@ NPC_RIMMINGTON_NPC_13::
 
 RIMMINGTON_WELL::
 	msgbox RIMMINGTON_WELL_Text_0
-	checkitem ITEM_LANTERN, 1
+	checkitem ITEM_FLASH_TOOL, 1
 	compare VAR_RESULT, 0
 	goto_if_ne RIMMINGTON_WELL_2
 	closemessage
@@ -1060,7 +1060,7 @@ NPC_POH_RAPTOR::
 	faceplayer
 	namebox NPC_POH_RAPTOR_Text_0
 	msgbox NPC_POH_RAPTOR_Text_1
-	giveitem ITEM_PICKAXE, 1
+	giveitem ITEM_ROCKSMASH_TOOL, 1
 	msgbox NPC_POH_RAPTOR_Text_2
 	hidenamebox
 	release

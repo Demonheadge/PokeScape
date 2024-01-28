@@ -122,15 +122,15 @@ GnomeBoi_Kevin_8:
 	giveitem ITEM_DRAGON_NET
 	giveitem ITEM_TERRORBIRD_POUCH
 	giveitem ITEM_YAK_POUCH
-	giveitem ITEM_PICKAXE
-	giveitem ITEM_BOAT
-	giveitem ITEM_AXE
-	giveitem ITEM_STRENGTHITEM
-	giveitem ITEM_DIVEITEM
-	giveitem ITEM_SPADE
-	giveitem ITEM_FLYITEM
-	giveitem ITEM_LANTERN
-	giveitem ITEM_WATERFALLITEM
+	giveitem ITEM_ROCKSMASH_TOOL
+	giveitem ITEM_SURF_TOOL
+	giveitem ITEM_CUT_TOOL
+	giveitem ITEM_STRENGTH_TOOL
+	giveitem ITEM_DIVE_TOOL
+	giveitem ITEM_TELEPORT_TOOL
+	giveitem ITEM_FLY_TOOL
+	giveitem ITEM_FLASH_TOOL
+	giveitem ITEM_WATERFALL_TOOL
 	giveitem ITEM_MAP
 	giveitem ITEM_ITEMFINDER
 	giveitem ITEM_POKEBLOCK_CASE
@@ -145,7 +145,6 @@ GnomeBoi_Kevin_9:
 
 GnomeBoi_Kevin_10:
 	msgbox GnomeBoi_Kevin_Text_8
-	additem ITEM_FRIENDSHIP_BOOSTER, 100
 	additem ITEM_PULSE_CORE, 6
 	additem ITEM_PURPLE_SWEETS, 100
 	additem ITEM_FRAGMENT_OF_JAS, 5

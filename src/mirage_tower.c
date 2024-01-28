@@ -330,8 +330,8 @@ void SetMirageTowerVisibility(void)
 
     rand = Random();
     visible = rand & 1;
-    if (FlagGet(FLAG_FORCE_MIRAGE_TOWER_VISIBLE) == TRUE)
-        visible = TRUE;
+    //if (FlagGet(FLAG_FORCE_MIRAGE_TOWER_VISIBLE) == TRUE)
+    //    visible = TRUE;
 
     if (visible)
     {

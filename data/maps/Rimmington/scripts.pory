@@ -424,7 +424,7 @@ script NPC_RIMMINGTON_NPC_13{
 //SIGNPOSTS
 script RIMMINGTON_WELL {
     msgbox(format("It is a well.\pIt looks really dark down there."))
-    checkitem(ITEM_LANTERN, 1)
+    checkitem(ITEM_FLASH_TOOL, 1)
         if (var(VAR_RESULT)){
             msgbox(format("Would you like to climb into the well?"), MSGBOX_YESNO)
                 if (var(VAR_RESULT)){
@@ -1019,7 +1019,7 @@ script NPC_POH_RAPTOR{
     faceplayer
     namebox("RAPTOR")
     msgbox(format("Hey you came!\pHere I have something for you!"))
-    giveitem(ITEM_PICKAXE, 1)
+    giveitem(ITEM_ROCKSMASH_TOOL, 1)
     msgbox(format("With this you can mine rocks."))
     hidenamebox
     release

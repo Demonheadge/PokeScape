@@ -173,7 +173,7 @@ script NPC_GOBLINVILLAGE_RECHOOSEPICKAXE
     hidenamebox
     closemessage
     msgbox(format("The goblin snatches your Pickaxe and throws it into the box with the others."))
-    removeitem(ITEM_PICKAXE)
+    removeitem(ITEM_ROCKSMASH_TOOL)
     removeitem(ITEM_ADAMANTPICKAXE)
     removeitem(ITEM_BRONZEPICKAXE)
     removeitem(ITEM_IRONPICKAXE)
@@ -210,7 +210,7 @@ script NPC_GOBLINVILLAGE_CHOOSEPICKAXE
             namebox ("WARTFACE")
             msgbox(format("HA!\pIn your face Bentnoze!\pRed is best!"))
             hidenamebox
-            giveitem(ITEM_PICKAXE, 1)       
+            giveitem(ITEM_ROCKSMASH_TOOL, 1)       
         case 2:
             //!!! from goblins
             namebox ("GRUBFOOT")
@@ -384,8 +384,8 @@ script EventScript_New_RockSmash
 {
     lockall
 
-    setitemarg(ITEM_PICKAXE)
-    checkitem (ITEM_PICKAXE,1)
+    setitemarg(ITEM_ROCKSMASH_TOOL)
+    checkitem (ITEM_ROCKSMASH_TOOL,1)
 	if (!var(VAR_RESULT))
     {
         setitemarg(ITEM_ADAMANTPICKAXE)

@@ -42,8 +42,6 @@ static void LockPlayerAndLoadMon(void);
 static void FieldCallback_UseFlyTool(void);
 static void Task_UseFlyTool(void);
 
-static void SurfToolFieldEffect_Init(struct Task *task); //qol_field_moves
-
 static void SetUpFieldMove_UseFlash(u32);
 static void UseFlash(u32 fieldMoveStatus);
 static void FieldCallback_UseFlashTool(void);
@@ -53,11 +51,9 @@ static void Task_UseWaterfallTool(u8);
 static bool8 IsPlayerFacingWaterfall(void);
 
 static void Task_UseDiveTool(u8);
-static bool8 DiveToolFieldEffect_Init(struct Task *task);
-static bool8 DiveToolFieldEffect_TryWarp(struct Task *task);
 
-static bool32 PartyCanLearnMoveLevelUp(u16, u16);
-static bool32 SetMonResultVariables(u32 partyIndex, u32 species);
+static bool32 UNUSED PartyCanLearnMoveLevelUp(u16, u16);
+static bool32 UNUSED SetMonResultVariables(u32 partyIndex, u32 species);
 
 #define tState      data[0]
 #define tFallOffset data[1]
@@ -71,11 +67,11 @@ static u8 CreateUseToolTask(void)
 
 static void Task_UseTool_Init(u8 taskId)
 {
-    u8 objEventId;
+    //u8 objEventId;
 
     LockPlayerFieldControls();
     gPlayerAvatar.preventStep = TRUE;
-    objEventId = gPlayerAvatar.objectEventId;
+    //objEventId = gPlayerAvatar.objectEventId;
 
         gFieldEffectArguments[1] = GetPlayerFacingDirection();
         if (gFieldEffectArguments[1] == DIR_SOUTH)
@@ -169,7 +165,7 @@ bool32 IsFlyToolUsed(void)
     return (VarGet(VAR_FLY_TOOL_SOURCE));
 }
 
-bool32 ReturnToFieldOrBagFromFlyTool(void)
+void ReturnToFieldOrBagFromFlyTool(void)
 {
     if (VarGet(VAR_FLY_TOOL_SOURCE) == FLY_SOURCE_BAG)
         GoToBagMenu(ITEMMENULOCATION_LAST,KEYITEMS_POCKET,CB2_ReturnToFieldWithOpenMenu);
@@ -216,7 +212,7 @@ u32 CanUseSurfFromInteractedWater()
 
 u8 FldEff_UseSurfTool(void)
 {
-    u8 taskId = CreateTask(Task_SurfToolFieldEffect, 0);
+    CreateTask(Task_SurfToolFieldEffect, 0);
     Overworld_ClearSavedMusic();
     Overworld_ChangeMusicTo(MUS_SURF);
     return FALSE;
@@ -673,50 +669,50 @@ void ClearFieldMoveFlags(void)
     FlagClear(FLAG_SYS_USE_WATERFALL);
 }
 
-static bool32 PartyCanLearnMoveLevelUp(u16 species, u16 moveId)
+static bool32 UNUSED PartyCanLearnMoveLevelUp(u16 species, u16 moveId)
 {
-    u32 i = 0;
-    for (i = 0; gLevelUpLearnsets[species][i] != LEVEL_UP_END; i++)
-    {
-        if ((gLevelUpLearnsets[species][i] & LEVEL_UP_MOVE_ID) == moveId)
-            return TRUE;
-    }
+    //u32 i = 0;
+    //for (i = 0; gLevelUpLearnsets[species][i] != LEVEL_UP_END; i++)
+    //{
+    //    if ((gLevelUpLearnsets[species][i] & LEVEL_UP_MOVE_ID) == moveId)
+    //        return TRUE;
+    //}
     return FALSE;
 }
 
 bool32 PartyHasMonLearnsKnowsFieldMove(u16 itemId)
 {
-    struct Pokemon *mon;
-    u32 species, i, monCanLearnTM, monCanLearnTutor;
-    u16 moveId = ItemIdToBattleMoveId(itemId);
-    gSpecialVar_Result = PARTY_SIZE;
-    gSpecialVar_0x8004 = 0;
+    //struct Pokemon *mon;
+    //u32 species, i, monCanLearnTM, monCanLearnTutor;
+    //u16 moveId = ItemIdToBattleMoveId(itemId);
+    //gSpecialVar_Result = PARTY_SIZE;
+    //gSpecialVar_0x8004 = 0;
 
-    for (i = 0; i < PARTY_SIZE; i++)
-    {
-        mon = &gPlayerParty[i];
-        species = GetMonData(mon,MON_DATA_SPECIES,NULL);
+    //for (i = 0; i < PARTY_SIZE; i++)
+    //{
+    //    mon = &gPlayerParty[i];
+    //    species = GetMonData(mon,MON_DATA_SPECIES,NULL);
 
-        if (species == SPECIES_NONE)
-            break;
+    //    if (species == SPECIES_NONE)
+    //        break;
 
-        monCanLearnTM = CanMonLearnTMTutor(mon,itemId,0);
-        if ((PartyCanLearnMoveLevelUp(species, moveId)
-                || (monCanLearnTM) == ALREADY_KNOWS_MOVE)
-                || (monCanLearnTM) == CAN_LEARN_MOVE)
-            return SetMonResultVariables(i,species);
+    //    monCanLearnTM = CanMonLearnTMTutor(mon,moveId,0);
+    //    if ((PartyCanLearnMoveLevelUp(species, moveId)
+    //            || (monCanLearnTM) == ALREADY_KNOWS_MOVE)
+    //            || (monCanLearnTM) == CAN_LEARN_MOVE)
+    //        return SetMonResultVariables(i,species);
 
-        for (i = 0; i < TUTOR_MOVE_COUNT; i++)
-        {
-            monCanLearnTutor = CanMonLearnTMTutor(mon, 0, i);
-            if (monCanLearnTutor == ALREADY_KNOWS_MOVE || monCanLearnTutor == CAN_LEARN_MOVE)
-                return SetMonResultVariables(i,species);
-        }
-    }
+    //    for (i = 0; i < TUTOR_MOVE_COUNT; i++)
+    //    {
+    //        monCanLearnTutor = CanMonLearnTMTutor(mon, 0, i);
+    //        if (monCanLearnTutor == ALREADY_KNOWS_MOVE || monCanLearnTutor == CAN_LEARN_MOVE)
+    //            return SetMonResultVariables(i,species);
+    //    }
+    //}
     return FALSE;
 }
 
-static bool32 SetMonResultVariables(u32 partyIndex, u32 species)
+static bool32 UNUSED SetMonResultVariables(u32 partyIndex, u32 species)
 {
     gSpecialVar_Result = partyIndex;
     gSpecialVar_0x8004 = species;

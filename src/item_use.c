@@ -1460,6 +1460,13 @@ void Task_ItemUse_CloseMessageBoxAndReturnToField_VsSeeker(u8 taskId)
 }
 
 // Start qol_field_moves
+static void ItemUseOnFieldCB_CutTool(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(EventScript_UseCutTool);
+    DestroyTask(taskId);
+}
+
 void ItemUseOutOfBattle_CutTool(u8 taskId)
 {
     if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_CUTTABLE_TREE))
@@ -1470,12 +1477,24 @@ void ItemUseOutOfBattle_CutTool(u8 taskId)
     else
         DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
 }
-void ItemUseOnFieldCB_CutTool(u8 taskId)
+
+static void CB2_OpenFlyToolFromBag(void)
 {
-    LockPlayerFieldControls();
-    ScriptContext_SetupScript(EventScript_UseCutTool);
-    DestroyTask(taskId);
+    VarSet(VAR_FLY_TOOL_SOURCE,FLY_SOURCE_BAG);
+    CB2_OpenFlyMap();
 }
+
+static void Task_OpenRegisteredFlyTool(u8 taskId)
+{
+    VarSet(VAR_FLY_TOOL_SOURCE,FLY_SOURCE_FIELD);
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        SetMainCallback2(CB2_OpenFlyMap);
+        DestroyTask(taskId);
+    }
+}
+
 void ItemUseOutOfBattle_FlyTool(u8 taskId)
 {
     if (MenuHelpers_IsLinkActive() == TRUE)
@@ -1493,21 +1512,13 @@ void ItemUseOutOfBattle_FlyTool(u8 taskId)
         gTasks[taskId].func = Task_OpenRegisteredFlyTool;
     }
 }
-static void CB2_OpenFlyToolFromBag(void)
+
+static void ItemUseOnFieldCB_SurfTool(u8 taskId)
 {
-    VarSet(VAR_FLY_TOOL_SOURCE,FLY_SOURCE_BAG);
-    CB2_OpenFlyMap();
+    ScriptContext_SetupScript(EventScript_UseSurfTool);
+    DestroyTask(taskId);
 }
-static void Task_OpenRegisteredFlyTool(u8 taskId)
-{
-    VarSet(VAR_FLY_TOOL_SOURCE,FLY_SOURCE_FIELD);
-    if (!gPaletteFade.active)
-    {
-        CleanupOverworldWindowsAndTilemaps();
-        SetMainCallback2(CB2_OpenFlyMap);
-        DestroyTask(taskId);
-    }
-}
+
 void ItemUseOutOfBattle_SurfTool(u8 taskId)
 {
     if (IsPlayerFacingSurfableFishableWater())
@@ -1518,22 +1529,27 @@ void ItemUseOutOfBattle_SurfTool(u8 taskId)
     else
         DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
 }
-void ItemUseOnFieldCB_SurfTool(u8 taskId)
-{
-    ScriptContext_SetupScript(EventScript_UseSurfTool);
-    DestroyTask(taskId);
-}
-void ItemUseOutOfBattle_StrengthTool(u8 taskId)
-{
-    sItemUseOnFieldCB = ItemUseOnFieldCB_StrengthTool;
-    SetUpItemUseOnFieldCallback(taskId);
-}
-void ItemUseOnFieldCB_StrengthTool(u8 taskId)
+
+static void ItemUseOnFieldCB_StrengthTool(u8 taskId)
 {
     LockPlayerFieldControls();
     ScriptContext_SetupScript(EventScript_UseStrengthTool);
     DestroyTask(taskId);
 }
+
+void ItemUseOutOfBattle_StrengthTool(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_StrengthTool;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+
+static void ItemUseOnFieldCB_FlashTool(u8 taskId)
+{
+    LockPlayerFieldControls();
+    FldEff_UseFlashTool();
+    DestroyTask(taskId);
+}
+
 void ItemUseOutOfBattle_FlashTool(u8 taskId)
 {
     if (CanUseFlash())
@@ -1544,12 +1560,14 @@ void ItemUseOutOfBattle_FlashTool(u8 taskId)
     else
         DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
 }
-void ItemUseOnFieldCB_FlashTool(u8 taskId)
+
+static void ItemUseOnFieldCB_RockSmashTool(u8 taskId)
 {
     LockPlayerFieldControls();
-    FldEff_UseFlashTool();
+    ScriptContext_SetupScript(EventScript_UseRockSmashTool);
     DestroyTask(taskId);
 }
+
 void ItemUseOutOfBattle_RockSmashTool(u8 taskId)
 {
     if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_BREAKABLE_ROCK))
@@ -1560,12 +1578,14 @@ void ItemUseOutOfBattle_RockSmashTool(u8 taskId)
     else
         DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
 }
-static void ItemUseOnFieldCB_RockSmashTool(u8 taskId)
+
+static void ItemUseOnFieldCB_WaterfallTool(u8 taskId)
 {
     LockPlayerFieldControls();
-    ScriptContext_SetupScript(EventScript_UseRockSmashTool);
+    ScriptContext_SetupScript(EventScript_UseWaterfallTool);
     DestroyTask(taskId);
 }
+
 void ItemUseOutOfBattle_WaterfallTool(u8 taskId)
 {
     if (CanUseWaterfallTool())
@@ -1576,12 +1596,14 @@ void ItemUseOutOfBattle_WaterfallTool(u8 taskId)
     else
         DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
 }
-void ItemUseOnFieldCB_WaterfallTool(u8 taskId)
+
+static void ItemUseOnFieldCB_DiveTool(u8 taskId)
 {
     LockPlayerFieldControls();
-    ScriptContext_SetupScript(EventScript_UseWaterfallTool);
+    ScriptContext_SetupScript(EventScript_UseDiveTool);
     DestroyTask(taskId);
 }
+
 void ItemUseOutOfBattle_DiveTool(u8 taskId)
 {
     if (TrySetDiveWarp())
@@ -1593,11 +1615,22 @@ void ItemUseOutOfBattle_DiveTool(u8 taskId)
         DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
 }
 
-void ItemUseOnFieldCB_DiveTool(u8 taskId)
+static void ItemUseOnFieldCB_TeleportTool(u8 taskId)
 {
     LockPlayerFieldControls();
-    ScriptContext_SetupScript(EventScript_UseDiveTool);
+
+    if (gTasks[taskId].tUsingRegisteredKeyItem != TRUE)
+        FldEff_UseTeleportTool();
+    else
+        ScriptContext_SetupScript(EventScript_AskTeleportTool);
+
     DestroyTask(taskId);
+}
+
+static void SetUpFieldAndUseTeleportTool(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_TeleportTool;
+    SetUpItemUseOnFieldCallback(taskId);
 }
 
 static const struct YesNoFuncTable sUseTeleportToolFuncTable =
@@ -1606,13 +1639,11 @@ static const struct YesNoFuncTable sUseTeleportToolFuncTable =
     .noFunc = CloseItemMessage,
 };
 
-void ItemUseOutOfBattle_TeleportTool(u8 taskId)
+static void UseTeleportToolYesNo(u8 taskId)
 {
-    if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
-        AskPlayerTeleportTool(taskId);
-    else
-        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+    BagMenu_YesNo(taskId, ITEMWIN_YESNO_HIGH, &sUseTeleportToolFuncTable);
 }
+
 static void AskPlayerTeleportTool(u8 taskId)
 {
     const struct MapHeader *mapHeader;
@@ -1625,42 +1656,33 @@ static void AskPlayerTeleportTool(u8 taskId)
     else
         ItemUseOnFieldCB_TeleportTool(taskId);
 }
-static void UseTeleportToolYesNo(u8 taskId)
-{
-    BagMenu_YesNo(taskId, ITEMWIN_YESNO_HIGH, &sUseTeleportToolFuncTable);
-}
-static void SetUpFieldAndUseTeleportTool(u8 taskId)
-{
-    sItemUseOnFieldCB = ItemUseOnFieldCB_TeleportTool;
-    SetUpItemUseOnFieldCallback(taskId);
-}
-void ItemUseOnFieldCB_TeleportTool(u8 taskId)
-{
-    LockPlayerFieldControls();
 
-    if (gTasks[taskId].tUsingRegisteredKeyItem != TRUE)
-        FldEff_UseTeleportTool();
+void ItemUseOutOfBattle_TeleportTool(u8 taskId)
+{
+    if (Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
+        AskPlayerTeleportTool(taskId);
     else
-        ScriptContext_SetupScript(EventScript_AskTeleportTool);
+        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+}
 
-    DestroyTask(taskId);
-}
-void ItemUseOutOfBattle_SweetScentTool(u8 taskId)
-{
-        sItemUseOnFieldCB = ItemUseOnFieldCB_SweetScentTool;
-        SetUpItemUseOnFieldCallback(taskId);
-}
-void ItemUseOnFieldCB_SweetScentTool(u8 taskId)
+static void ItemUseOnFieldCB_SweetScentTool(u8 taskId)
 {
     LockPlayerFieldControls();
     FldEff_SweetScentTool();
     DestroyTask(taskId);
 }
+
+void ItemUseOutOfBattle_SweetScentTool(u8 taskId)
+{
+        sItemUseOnFieldCB = ItemUseOnFieldCB_SweetScentTool;
+        SetUpItemUseOnFieldCallback(taskId);
+}
 // End qol_field_moves
 
 extern void  CB2_FieldShowRegionMap(void);
 
-void ItemUseOutOfBattle_Map(u8 taskId){
+void ItemUseOutOfBattle_PokescapeMap(u8 taskId)
+{
     gBagMenu->newScreenCallback = CB2_FieldShowRegionMap;
 	Task_FadeAndCloseBagMenu(taskId);
 }

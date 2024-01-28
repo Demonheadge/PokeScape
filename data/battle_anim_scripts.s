@@ -875,6 +875,27 @@ gBattleAnims_Moves::
 	.4byte Move_PSYCHIC_NOISE
 	.4byte Move_UPPER_HAND
 	.4byte Move_MALIGNANT_CHAIN
+@@@@@@@@@@ POKESCAPE @@@@@@@@@@
+	.4byte Move_CHAOTIC_RIFT
+	.4byte Move_SARADOMIN_STRIKE
+	.4byte Move_SWORD_STRIKE
+	.4byte Move_SLICE_DICE
+	.4byte Move_ZAMORAK_FLAMES
+	.4byte Move_GUTHIX_CLAWS
+	.4byte Move_POLYPORE_STRIKE
+	.4byte Move_ICE_BARRAGE
+	.4byte Move_BLOOD_BARRAGE
+	.4byte Move_VENGEANCE
+	.4byte Move_ARMADYL_STORM
+	.4byte Move_TUMEKEN_STORM
+	.4byte Move_SMOKE_BARRAGE
+	.4byte Move_SHADOW_BARRAGE
+	.4byte Move_TELEGRAB
+	.4byte Move_FREE_STUFF
+	.4byte Move_BANDOS_FURY
+	.4byte Move_ZAROS_BECKON
+	.4byte Move_SEREN_SHINE
+	.4byte Move_GODLESS_REBEL
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -965,27 +986,6 @@ gBattleAnims_Moves::
 	.4byte Move_G_MAX_DEPLETION
 	.4byte Move_G_MAX_ONE_BLOW
 	.4byte Move_G_MAX_RAPID_FLOW
-@@@ Last Move - cannot be reached
-	.4byte Move_CHAOTIC_RIFT
-	.4byte Move_SARADOMIN_STRIKE
-	.4byte Move_SWORD_STRIKE
-	.4byte Move_SLICE_DICE
-	.4byte Move_ZAMORAK_FLAMES
-	.4byte Move_GUTHIX_CLAWS
-	.4byte Move_POLYPORE_STRIKE
-	.4byte Move_ICE_BARRAGE
-	.4byte Move_BLOOD_BARRAGE
-	.4byte Move_VENGEANCE
-	.4byte Move_ARMADYL_STORM
-	.4byte Move_TUMEKEN_STORM
-	.4byte Move_SMOKE_BARRAGE
-	.4byte Move_SHADOW_BARRAGE
-	.4byte Move_TELEGRAB
-	.4byte Move_FREE_STUFF
-	.4byte Move_BANDOS_FURY
-	.4byte Move_ZAROS_BECKON
-	.4byte Move_SEREN_SHINE
-	.4byte Move_GODLESS_REBEL
 @@@ Last Move - cannot be reached
 	.4byte Move_COUNT
 

@@ -62,6 +62,116 @@ extern const u32 gBallGfx_Cherish[];
 extern const u32 gBallPal_Cherish[];
 extern const u32 gOpenPokeballGfx[];
 
+//pokescape
+extern const u32 gInterfaceGfx_NormalPouch[];
+extern const u32 gInterfacePal_NormalPouch[];
+
+extern const u32 gInterfaceGfx_BronzePouch[];
+extern const u32 gInterfacePal_BronzePouch[];
+
+extern const u32 gInterfaceGfx_IronPouch[];
+extern const u32 gInterfacePal_IronPouch[];
+
+extern const u32 gInterfaceGfx_SteelPouch[];
+extern const u32 gInterfacePal_SteelPouch[];
+
+extern const u32 gInterfaceGfx_BlackPouch[];
+extern const u32 gInterfacePal_BlackPouch[];
+
+extern const u32 gInterfaceGfx_MithrilPouch[];
+extern const u32 gInterfacePal_MithrilPouch[];
+
+extern const u32 gInterfaceGfx_AdamantPouch[];
+extern const u32 gInterfacePal_AdamantPouch[];
+
+extern const u32 gInterfaceGfx_RunePouch[];
+extern const u32 gInterfacePal_RunePouch[];
+
+extern const u32 gInterfaceGfx_DragonPouch[];
+extern const u32 gInterfacePal_DragonPouch[];
+
+extern const u32 gInterfaceGfx_CrystalPouch[];
+extern const u32 gInterfacePal_CrystalPouch[];
+
+extern const u32 gInterfaceGfx_SplitbarkPouch[];
+extern const u32 gInterfacePal_SplitbarkPouch[];
+
+extern const u32 gInterfaceGfx_DragonbanePouch[];
+extern const u32 gInterfacePal_DragonbanePouch[];
+
+extern const u32 gInterfaceGfx_AugmentedPouch[];
+extern const u32 gInterfacePal_AugmentedPouch[];
+
+extern const u32 gInterfaceGfx_MysticPouch[];
+extern const u32 gInterfacePal_MysticPouch[];
+
+extern const u32 gInterfaceGfx_BarrowsPouch[];
+extern const u32 gInterfacePal_BarrowsPouch[];
+
+extern const u32 gInterfaceGfx_GranitePouch[];
+extern const u32 gInterfacePal_GranitePouch[];
+
+extern const u32 gInterfaceGfx_AncientPouch[];
+extern const u32 gInterfacePal_AncientPouch[];
+
+extern const u32 gInterfaceGfx_ElementalPouch[];
+extern const u32 gInterfacePal_ElementalPouch[];
+
+//pokescape pokeballs
+extern const u32 gItemIconPalette_NormalPouch[];
+extern const u32 gItemIcon_NormalPouch[];
+
+extern const u32 gItemIconPalette_BronzePouch[];
+extern const u32 gItemIcon_BronzePouch[];
+
+extern const u32 gItemIconPalette_IronPouch[];
+extern const u32 gItemIcon_IronPouch[];
+
+extern const u32 gItemIconPalette_SteelPouch[];
+extern const u32 gItemIcon_SteelPouch[];
+
+extern const u32 gItemIconPalette_BlackPouch[];
+extern const u32 gItemIcon_BlackPouch[];
+
+extern const u32 gItemIconPalette_MithrilPouch[];
+extern const u32 gItemIcon_MithrilPouch[];
+
+extern const u32 gItemIconPalette_AdamantPouch[];
+extern const u32 gItemIcon_AdamantPouch[];
+
+extern const u32 gItemIconPalette_RunePouch[];
+extern const u32 gItemIcon_RunePouch[];
+
+extern const u32 gItemIconPalette_DragonPouch[];
+extern const u32 gItemIcon_DragonPouch[];
+
+extern const u32 gItemIconPalette_CrystalPouch[];
+extern const u32 gItemIcon_CrystalPouch[];
+
+extern const u32 gItemIconPalette_SplitbarkPouch[];
+extern const u32 gItemIcon_SplitbarkPouch[];
+
+extern const u32 gItemIconPalette_DragonbanePouch[];
+extern const u32 gItemIcon_DragonbanePouch[];
+
+extern const u32 gItemIconPalette_AugmentedPouch[];
+extern const u32 gItemIcon_AugmentedPouch[];
+
+extern const u32 gItemIconPalette_MysticPouch[];
+extern const u32 gItemIcon_MysticPouch[];
+
+extern const u32 gItemIconPalette_BarrowsPouch[];
+extern const u32 gItemIcon_BarrowsPouch[];
+
+extern const u32 gItemIconPalette_GranitePouch[];
+extern const u32 gItemIcon_GranitePouch[];
+
+extern const u32 gItemIconPalette_AncientPouch[];
+extern const u32 gItemIcon_AncientPouch[];
+
+extern const u32 gItemIconPalette_ElementalPouch[];
+extern const u32 gItemIcon_ElementalPouch[];
+
 // pokemon gfx
 extern const u16 gMonIconPalettes[][16];
 
@@ -3904,7 +4014,8 @@ extern const u32 gItemIcon_MysticCloth[];
 extern const u32 gItemIconPalette_MysticCloth[];
 extern const u32 gItemIcon_Splitbark[];
 extern const u32 gItemIconPalette_Splitbark[];
-// food crafting
+
+// Food crafting
 extern const u32 gItemIcon_Egg[];
 extern const u32 gItemIconPalette_Egg[];
 extern const u32 gItemIcon_EmptyBucket[];

@@ -54,6 +54,10 @@ extern const u8 gText_Poke_Balls[];
 extern const u8 gText_TMs_Hms[];
 extern const u8 gText_Berries2[];
 
+extern const u8 gText_ExpShareOn[];
+extern const u8 gText_ExpShareOff[];
+extern const u8 gText_BasePointsResetToZero[];
+
 extern const u8 gText_Single2[];
 extern const u8 gText_Double2[];
 extern const u8 gText_Multi[];
@@ -2983,6 +2987,12 @@ extern const u8 gText_BeautyContest[];
 extern const u8 gText_CutenessContest[];
 extern const u8 gText_SmartnessContest[];
 extern const u8 gText_ToughnessContest[];
+
+extern const u8 gText_YourName[];
+extern const u8 gText_BoxName[];
+extern const u8 gText_PkmnsNickname[];
+extern const u8 gText_TellHimTheWords[];
+extern const u8 gText_MoveOkBack[];
 
 // PokéNav Match Call
 extern const u8 gText_CallCantBeMadeHere[];
