@@ -224,6 +224,28 @@ const struct SpriteTemplate gNightmareDevilSpriteTemplate =
     .callback = AnimGhostStatusSprite,
 };
 
+const struct SpriteTemplate gVengeanceSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_VENGEANCE,
+    .paletteTag = ANIM_TAG_VENGEANCE,
+    .oam = &gOamData_AffineOff_ObjBlend_32x32,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimGhostStatusSprite,
+};
+
+const struct SpriteTemplate gPolyporeStrikeSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_POLYPORE_STRIKE,
+    .paletteTag = ANIM_TAG_POLYPORE_STRIKE,
+    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gAffineAnims_ShadowBall,
+    .callback = AnimShadowBall,
+};
+
 static const union AnimCmd sAnim_GrudgeFlame[] =
 {
     ANIMCMD_FRAME(0, 4),

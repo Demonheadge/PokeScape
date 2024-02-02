@@ -42737,7 +42737,7 @@ static const u16 sPongTeachableLearnset[] = {
     MOVE_TRICK_OR_TREAT,
     MOVE_UNAVAILABLE,
 };
-static const u16 sPenguin_Mcgraw_FormTeachableLearnset[] = {
+static const u16 sPenguin_McGraw_FormTeachableLearnset[] = {
     MOVE_RAIN_DANCE,
     MOVE_HAIL,
     MOVE_RAZOR_SHELL,
@@ -42871,7 +42871,7 @@ static const u16 sPenguin_Disguise_Box_FormTeachableLearnset[] = {
     MOVE_REVENGE,
     MOVE_UNAVAILABLE,
 };
-static const u16 sExexparrotTeachableLearnset[] = {
+static const u16 sExExParrotTeachableLearnset[] = {
     MOVE_RAIN_DANCE,
     MOVE_HAIL,
     MOVE_TAILWIND,
@@ -43124,7 +43124,7 @@ static const u16 sFruit_BatTeachableLearnset[] = {
     MOVE_TRICK_OR_TREAT,
     MOVE_UNAVAILABLE,
 };
-static const u16 sVampyrebatTeachableLearnset[] = {
+static const u16 sVampyreBatTeachableLearnset[] = {
     MOVE_SANDSTORM,
     MOVE_TAILWIND,
     MOVE_PSYCHIC_TERRAIN,
@@ -43298,7 +43298,7 @@ static const u16 sPlant_Stranger_FormTeachableLearnset[] = {
     MOVE_SPIKES,
     MOVE_UNAVAILABLE,
 };
-static const u16 sEvilturnipTeachableLearnset[] = {
+static const u16 sEvilTurnipTeachableLearnset[] = {
     MOVE_SUNNY_DAY,
     MOVE_RAIN_DANCE,
     MOVE_SOLAR_BLADE,
@@ -43425,7 +43425,7 @@ static const u16 sYak_Sacred_FormTeachableLearnset[] = {
     MOVE_BULK_UP,
     MOVE_UNAVAILABLE,
 };
-static const u16 sYak_Cluescroll_FormTeachableLearnset[] = {
+static const u16 sYak_ClueScroll_FormTeachableLearnset[] = {
     MOVE_SUNNY_DAY,
     MOVE_FLAME_CHARGE,
     MOVE_SOLAR_BLADE,

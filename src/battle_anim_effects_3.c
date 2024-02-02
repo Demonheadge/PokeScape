@@ -196,6 +196,17 @@ const struct SpriteTemplate gWhiteHaloSpriteTemplate =
     .callback = AnimWhiteHalo,
 };
 
+const struct SpriteTemplate gTelegrabSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_TELEGRAB,
+    .paletteTag = ANIM_TAG_TELEGRAB,
+    .oam = &gOamData_AffineOff_ObjBlend_64x64,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimWhiteHalo,
+};
+
 const struct SpriteTemplate gTealAlertSpriteTemplate =
 {
     .tileTag = ANIM_TAG_TEAL_ALERT,

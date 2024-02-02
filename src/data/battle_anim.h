@@ -1455,6 +1455,15 @@ const struct CompressedSpriteSheet gBattleAnimPicTable[] =
     {gBattleAnimSpriteGfx_SyrupShell, 0x2000, ANIM_TAG_SYRUP_SHELL_YELLOW},
     {gBattleAnimSpriteGfx_SyrupSplat, 0x400, ANIM_TAG_SYRUP_SPLAT_RED},
     {gBattleAnimSpriteGfx_SyrupSplat, 0x400, ANIM_TAG_SYRUP_SPLAT_YELLOW},
+
+    // Pokescape
+    {gBattleAnimSpriteGfx_Slash, 0x0800, ANIM_TAG_SWORD_STRIKE},
+    {gBattleAnimSpriteGfx_Lightning, 0x0800, ANIM_TAG_SARADOMIN_STRIKE},
+    {gBattleAnimSpriteGfx_EnergyBall, 0x0200, ANIM_TAG_POLYPORE_STRIKE},
+    {gBattleAnimSpriteGfx_ToxicBubble, 0x0400, ANIM_TAG_BLOOD_BARRAGE_PARTICLES},
+    {gBattleAnimSpriteGfx_SmallBubbles, 0x0140, ANIM_TAG_BLOOD_BUBBLE},
+    {gBattleAnimSpriteGfx_GhostlySpirit, 0x0200, ANIM_TAG_VENGEANCE},
+    {gBattleAnimSpriteGfx_RoundWhiteHalo, 0x0800, ANIM_TAG_TELEGRAB},
 };
 
 const struct CompressedSpritePalette gBattleAnimPaletteTable[] =

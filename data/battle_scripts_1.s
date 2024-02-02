@@ -10866,4 +10866,3 @@ BattleScript_FireShieldEnds::
 	printstring STRINGID_FIRESHIELDENDS
 	waitmessage 0x40
 	return
-	

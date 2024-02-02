@@ -18918,7 +18918,7 @@ static const union AnimCmd *const sAnims_Pong[] ={
 	sAnim_Pong_1,
 };
 
-static const union AnimCmd *const sAnims_Penguin_Mcgraw_Form[] ={
+static const union AnimCmd *const sAnims_Penguin_McGraw_Form[] ={
 	sAnim_GeneralFrame0,
 	sAnim_Penguin_Mcgraw_Form_1,
 };
@@ -18953,7 +18953,7 @@ static const union AnimCmd *const sAnims_Penguin_Disguise_Box_Form[] ={
 	sAnim_Penguin_Disguise_Box_Form_1,
 };
 
-static const union AnimCmd *const sAnims_Exexparrot[] ={
+static const union AnimCmd *const sAnims_ExExParrot[] ={
 	sAnim_GeneralFrame0,
 	sAnim_Exexparrot_1,
 };
@@ -19013,7 +19013,7 @@ static const union AnimCmd *const sAnims_Fruit_Bat[] ={
 	sAnim_Fruit_Bat_1,
 };
 
-static const union AnimCmd *const sAnims_Vampyrebat[] ={
+static const union AnimCmd *const sAnims_VampyreBat[] ={
 	sAnim_GeneralFrame0,
 	sAnim_Vampyrebat_1,
 };
@@ -19063,7 +19063,7 @@ static const union AnimCmd *const sAnims_Plant_Stranger_Form[] ={
 	sAnim_Plant_Stranger_Form_1,
 };
 
-static const union AnimCmd *const sAnims_Evilturnip[] ={
+static const union AnimCmd *const sAnims_EvilTurnip[] ={
 	sAnim_GeneralFrame0,
 	sAnim_Evilturnip_1,
 };
@@ -19098,7 +19098,7 @@ static const union AnimCmd *const sAnims_Yak_Sacred_Form[] ={
 	sAnim_Yak_Sacred_Form_1,
 };
 
-static const union AnimCmd *const sAnims_Yak_Cluescroll_Form[] ={
+static const union AnimCmd *const sAnims_Yak_ClueScroll_Form[] ={
 	sAnim_GeneralFrame0,
 	sAnim_Yak_Cluescroll_Form_1,
 };

@@ -33783,10 +33783,10 @@ Move_VENGEANCE:
 	loadspritegfx ANIM_TAG_VENGEANCE
 	monbg ANIM_TARGET
 	splitbgprio_all
-	launchtask AnimTask_ShakeMon 0x5 0x5 ANIM_TARGET 0x2 0x0 0x25 0x1
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 16, 1
 	playsewithpan SE_M_NIGHTMARE, SOUND_PAN_TARGET
 	delay 0x20
-	launchtemplate gVengeanceSpriteTemplate 0x84, 0x0
+	createsprite gVengeanceSpriteTemplate, ANIM_TARGET, 0
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	end

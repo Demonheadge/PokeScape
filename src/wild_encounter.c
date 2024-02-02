@@ -38,6 +38,7 @@ extern const u8 EventScript_SprayWoreOff[];
 #define NUM_FISHING_SPOTS (NUM_FISHING_SPOTS_1 + NUM_FISHING_SPOTS_2 + NUM_FISHING_SPOTS_3)
 
 enum {
+    WILD_AREA_WHEAT,
     WILD_AREA_LAND,
     WILD_AREA_WATER,
     WILD_AREA_ROCKS,
@@ -181,6 +182,37 @@ static u16 FeebasRandom(void)
 static void FeebasSeedRng(u16 seed)
 {
     sFeebasRngValue = seed;
+}
+
+// WHEAT_WILD_COUNT
+static u8 ChooseWildMonIndex_Wheat(void)
+{
+    u8 rand = Random() % ENCOUNTER_CHANCE_WHEAT_MONS_TOTAL;
+
+    if (rand < ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_0)
+        return 0;
+    else if (rand >= ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_0 && rand < ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_1)
+        return 1;
+    else if (rand >= ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_1 && rand < ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_2)
+        return 2;
+    else if (rand >= ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_2 && rand < ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_3)
+        return 3;
+    else if (rand >= ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_3 && rand < ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_4)
+        return 4;
+    else if (rand >= ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_4 && rand < ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_5)
+        return 5;
+    else if (rand >= ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_5 && rand < ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_6)
+        return 6;
+    else if (rand >= ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_6 && rand < ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_7)
+        return 7;
+    else if (rand >= ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_7 && rand < ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_8)
+        return 8;
+    else if (rand >= ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_8 && rand < ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_9)
+        return 9;
+    else if (rand >= ENCOUNTER_CHANCE_WHEAT_MONS_SLOT_9)
+        return 10;
+    else
+        return 11;
 }
 
 // LAND_WILD_COUNT
@@ -477,6 +509,22 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
 
     switch (area)
     {
+	case WILD_AREA_WHEAT:
+        if (OW_MAGNET_PULL < GEN_9 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_STEEL, ABILITY_MAGNET_PULL, &wildMonIndex, LAND_WILD_COUNT))
+            break;
+        if (OW_STATIC < GEN_9 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_STATIC, &wildMonIndex, LAND_WILD_COUNT))
+            break;
+        if (OW_LIGHTNING_ROD == GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_ELECTRIC, ABILITY_LIGHTNING_ROD, &wildMonIndex, LAND_WILD_COUNT))
+            break;
+        if (OW_FLASH_FIRE == GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_FIRE, ABILITY_FLASH_FIRE, &wildMonIndex, LAND_WILD_COUNT))
+            break;
+        if (OW_HARVEST == GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_GRASS, ABILITY_HARVEST, &wildMonIndex, LAND_WILD_COUNT))
+            break;
+        if (OW_STORM_DRAIN == GEN_8 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_WATER, ABILITY_STORM_DRAIN, &wildMonIndex, LAND_WILD_COUNT))
+            break;
+
+        wildMonIndex = ChooseWildMonIndex_Wheat();
+
     case WILD_AREA_LAND:
         if (OW_MAGNET_PULL < GEN_9 && TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildMonInfo->wildPokemon, TYPE_STEEL, ABILITY_MAGNET_PULL, &wildMonIndex, LAND_WILD_COUNT))
             break;
@@ -673,6 +721,30 @@ bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)
     {
         if (MetatileBehavior_IsLandWildEncounter(curMetatileBehavior) == TRUE)
         {
+			if (MetatileBehavior_IsWheat(curMetaTileBehavior) == TRUE){
+				if (gWildMonHeaders[headerId].wheatMonsInfo == NULL)
+					return FALSE;
+				else if (prevMetatileBehavior != curMetaTileBehavior && !AllowWildCheckOnNewMetatile())
+						return FALSE;
+				else if (WildEncounterCheck(gWildMonHeaders[headerId].wheatMonsInfo->encounterRate, FALSE) != TRUE)
+						return FALSE;
+                if (TryGenerateWildMon(gWildMonHeaders[headerId].wheatMonsInfo, WILD_AREA_LAND, WILD_CHECK_REPEL | WILD_CHECK_KEEN_EYE) == TRUE)
+                {
+                    if (TryDoDoubleWildBattle())
+                    {
+                        struct Pokemon mon1 = gEnemyParty[0];
+                        TryGenerateWildMon(gWildMonHeaders[headerId].wheatMonsInfo, WILD_AREA_LAND, WILD_CHECK_KEEN_EYE);
+                        gEnemyParty[1] = mon1;
+                        BattleSetup_StartDoubleWildBattle();
+                    }
+                    else
+                    {
+                        BattleSetup_StartWildBattle();
+                    }
+                    return TRUE;
+				}
+			}
+            
             if (gWildMonHeaders[headerId].landMonsInfo == NULL)
                 return FALSE;
             else if (prevMetatileBehavior != curMetatileBehavior && !AllowWildCheckOnNewMetatile())
