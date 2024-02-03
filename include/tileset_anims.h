@@ -32,4 +32,10 @@ void InitTilesetAnim_EliteFour(void);
 void InitTilesetAnim_BattleDome(void);
 void InitTilesetAnim_BattlePyramid(void);
 
+void InitTilesetAnim_PokeScapeOutdoors(void);
+void InitTilesetAnim_Lumbridge(void);
+void InitTilesetAnim_Wizards_Tower(void);
+
+
+
 #endif // GUARD_TILESET_ANIMS_H
