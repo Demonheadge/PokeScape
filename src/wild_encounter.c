@@ -721,10 +721,10 @@ bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)
     {
         if (MetatileBehavior_IsLandWildEncounter(curMetatileBehavior) == TRUE)
         {
-			if (MetatileBehavior_IsWheat(curMetaTileBehavior) == TRUE){
+			if (MetatileBehavior_IsWheat(curMetatileBehavior) == TRUE){
 				if (gWildMonHeaders[headerId].wheatMonsInfo == NULL)
 					return FALSE;
-				else if (prevMetatileBehavior != curMetaTileBehavior && !AllowWildCheckOnNewMetatile())
+				else if (prevMetatileBehavior != curMetatileBehavior && !AllowWildCheckOnNewMetatile())
 						return FALSE;
 				else if (WildEncounterCheck(gWildMonHeaders[headerId].wheatMonsInfo->encounterRate, FALSE) != TRUE)
 						return FALSE;

@@ -43,6 +43,12 @@ static void TilesetAnim_MauvilleGym(u16);
 static void TilesetAnim_BikeShop(u16);
 static void TilesetAnim_BattlePyramid(u16);
 static void TilesetAnim_BattleDome(u16);
+//PokeScape Start//
+static void TilesetAnim_PokeScapeOutdoors(u16);
+static void TilesetAnim_Lumbridge(u16);
+static void TilesetAnim_Wizards_Tower(u16);
+//PokeScape End//
+
 static void QueueAnimTiles_General_Flower(u16);
 static void QueueAnimTiles_General_Water(u16);
 static void QueueAnimTiles_General_SandWaterEdge(u16);
@@ -73,6 +79,94 @@ static void QueueAnimTiles_MauvilleGym_ElectricGates(u16);
 static void QueueAnimTiles_SootopolisGym_Waterfalls(u16);
 static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
+//PokeScape Start//
+static void QueueAnimTiles_PokeScapeOutdoors_Water(u16);
+static void QueueAnimTiles_PokeScapeOutdoors_WaterRocks(u16);
+static void QueueAnimTiles_Lumbridge_Fountain(u16);
+static void QueueAnimTiles_Wizards_Tower_Torch(u16);
+static void QueueAnimTiles_Wizards_Tower_Portal(u16);
+//PokeScape End//
+
+
+
+
+//PokeScape Start//
+const u16 gTilesetAnims_PokeScapeOutdoors_Water_Frame0[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/water/0.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_Water_Frame1[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/water/1.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_Water_Frame2[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/water/2.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_Water_Frame3[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/water/3.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_Water_Frame4[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/water/4.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_Water_Frame5[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/water/5.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_Water_Frame6[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/water/6.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_Water_Frame7[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/water/7.4bpp");
+
+const u16 *const gTilesetAnims_PokeScapeOutdoors_Water[] = {
+    gTilesetAnims_PokeScapeOutdoors_Water_Frame0,
+    gTilesetAnims_PokeScapeOutdoors_Water_Frame1,
+    gTilesetAnims_PokeScapeOutdoors_Water_Frame2,
+    gTilesetAnims_PokeScapeOutdoors_Water_Frame3,
+    gTilesetAnims_PokeScapeOutdoors_Water_Frame4,
+    gTilesetAnims_PokeScapeOutdoors_Water_Frame5,
+    gTilesetAnims_PokeScapeOutdoors_Water_Frame6,
+    gTilesetAnims_PokeScapeOutdoors_Water_Frame7
+};
+
+const u16 gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame0[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/waterrocks/0.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame1[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/waterrocks/1.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame2[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/waterrocks/2.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame3[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/waterrocks/3.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame4[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/waterrocks/4.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame5[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/waterrocks/5.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame6[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/waterrocks/6.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame7[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/waterrocks/7.4bpp");
+
+const u16 *const gTilesetAnims_PokeScapeOutdoors_WaterRocks[] = {
+    gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame0,
+    gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame1,
+    gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame2,
+    gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame3,
+    gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame4,
+    gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame5,
+    gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame6,
+    gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame7
+};
+
+const u16 gTilesetAnims_Lumbridge_Fountain_Frame0[] = INCBIN_U16("data/tilesets/secondary/lumbridge/anim/fountain/fountain0.4bpp");
+const u16 gTilesetAnims_Lumbridge_Fountain_Frame1[] = INCBIN_U16("data/tilesets/secondary/lumbridge/anim/fountain/fountain1.4bpp");
+const u16 gTilesetAnims_Lumbridge_Fountain_Frame2[] = INCBIN_U16("data/tilesets/secondary/lumbridge/anim/fountain/fountain2.4bpp");
+const u16 gTilesetAnims_Lumbridge_Fountain_Frame3[] = INCBIN_U16("data/tilesets/secondary/lumbridge/anim/fountain/fountain3.4bpp");
+
+const u16 *const gTilesetAnims_Lumbridge_Fountain[] = {
+    gTilesetAnims_Lumbridge_Fountain_Frame0,
+    gTilesetAnims_Lumbridge_Fountain_Frame1,
+    gTilesetAnims_Lumbridge_Fountain_Frame2,
+    gTilesetAnims_Lumbridge_Fountain_Frame3
+};
+
+const u16 gTilesetAnims_Wizards_Tower_Torch_Frame0[] = INCBIN_U16("data/tilesets/secondary/wizards_tower/anim/torch/torch0.4bpp");
+const u16 gTilesetAnims_Wizards_Tower_Torch_Frame1[] = INCBIN_U16("data/tilesets/secondary/wizards_tower/anim/torch/torch1.4bpp");
+const u16 gTilesetAnims_Wizards_Tower_Torch_Frame2[] = INCBIN_U16("data/tilesets/secondary/wizards_tower/anim/torch/torch2.4bpp");
+const u16 gTilesetAnims_Wizards_Tower_Torch_Frame3[] = INCBIN_U16("data/tilesets/secondary/wizards_tower/anim/torch/torch3.4bpp");
+
+const u16 *const gTilesetAnims_Wizards_Tower_Torch[] = {
+    gTilesetAnims_Wizards_Tower_Torch_Frame0,
+    gTilesetAnims_Wizards_Tower_Torch_Frame1,
+    gTilesetAnims_Wizards_Tower_Torch_Frame2,
+    gTilesetAnims_Wizards_Tower_Torch_Frame3
+};
+
+const u16 gTilesetAnims_Wizards_Tower_Portal_Frame0[] = INCBIN_U16("data/tilesets/secondary/wizards_tower/anim/portal/portal0.4bpp");
+const u16 gTilesetAnims_Wizards_Tower_Portal_Frame1[] = INCBIN_U16("data/tilesets/secondary/wizards_tower/anim/portal/portal1.4bpp");
+const u16 gTilesetAnims_Wizards_Tower_Portal_Frame2[] = INCBIN_U16("data/tilesets/secondary/wizards_tower/anim/portal/portal2.4bpp");
+const u16 gTilesetAnims_Wizards_Tower_Portal_Frame3[] = INCBIN_U16("data/tilesets/secondary/wizards_tower/anim/portal/portal3.4bpp");
+
+const u16 *const gTilesetAnims_Wizards_Tower_Portal[] = {
+    gTilesetAnims_Wizards_Tower_Portal_Frame0,
+    gTilesetAnims_Wizards_Tower_Portal_Frame1,
+    gTilesetAnims_Wizards_Tower_Portal_Frame2,
+    gTilesetAnims_Wizards_Tower_Portal_Frame3
+};
+//PokeScape End//
 
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/1.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/0.4bpp");
@@ -615,6 +709,27 @@ static void _InitSecondaryTilesetAnimation(void)
         gMapHeader.mapLayout->secondaryTileset->callback();
 }
 
+void InitTilesetAnim_PokeScapeOutdoors(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 256;
+    sPrimaryTilesetAnimCallback = TilesetAnim_PokeScapeOutdoors;
+}
+
+void InitTilesetAnim_Lumbridge(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_Lumbridge;
+}
+
+void InitTilesetAnim_Wizards_Tower(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_Wizards_Tower;
+}
+
 void InitTilesetAnim_General(void)
 {
     sPrimaryTilesetAnimCounter = 0;
@@ -648,6 +763,74 @@ static void TilesetAnim_Building(u16 timer)
     if (timer % 8 == 0)
         QueueAnimTiles_Building_TVTurnedOn(timer / 8);
 }
+
+
+//PokeScape//---------------
+static void TilesetAnim_PokeScapeOutdoors(u16 timer)
+{
+
+    if (timer % 16 == 0)
+        QueueAnimTiles_PokeScapeOutdoors_Water(timer >> 4);
+    if (timer % 16 == 0)
+        QueueAnimTiles_PokeScapeOutdoors_WaterRocks(timer >> 4);
+
+}
+
+static void TilesetAnim_Lumbridge(u16 timer)
+{
+
+    if (timer % 16 == 0)
+        QueueAnimTiles_Lumbridge_Fountain(timer >> 4);
+
+}
+
+
+static void TilesetAnim_Wizards_Tower(u16 timer)
+{
+
+    if (timer % 16 == 0)
+        QueueAnimTiles_Wizards_Tower_Torch(timer >> 4);
+    if (timer % 16 == 1)
+        QueueAnimTiles_Wizards_Tower_Portal(timer >> 4);
+
+}
+
+//PokeScape//---------------
+
+
+//PokeScape//---------------
+static void QueueAnimTiles_PokeScapeOutdoors_Water(u16 timer)
+{
+    u16 i = timer % 8; 
+    AppendTilesetAnimToBuffer(gTilesetAnims_PokeScapeOutdoors_Water[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(484)), 0x180);
+}
+
+static void QueueAnimTiles_PokeScapeOutdoors_WaterRocks(u16 timer)
+{
+    u16 i = timer % 8; 
+    AppendTilesetAnimToBuffer(gTilesetAnims_PokeScapeOutdoors_WaterRocks[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(502)), 0xC0);
+}
+
+static void QueueAnimTiles_Lumbridge_Fountain(u16 timer)
+{
+    u16 i = timer % 4; 
+    AppendTilesetAnimToBuffer(gTilesetAnims_Lumbridge_Fountain[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(800)), 0x200);
+}
+
+static void QueueAnimTiles_Wizards_Tower_Torch(u16 timer)
+{
+    u16 i = timer % 4; 
+    AppendTilesetAnimToBuffer(gTilesetAnims_Wizards_Tower_Torch[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(1000)), 0x20);
+}
+
+static void QueueAnimTiles_Wizards_Tower_Portal(u16 timer)
+{
+    u16 i = timer % 4; 
+    AppendTilesetAnimToBuffer(gTilesetAnims_Wizards_Tower_Portal[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(1004)), 0x80);
+}
+
+//PokeScape//---------------
+
 
 static void QueueAnimTiles_General_Flower(u16 timer)
 {
