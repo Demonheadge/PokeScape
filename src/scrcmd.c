@@ -2453,3 +2453,24 @@ bool8 ScrCmd_checkpartylearnknowsfieldmove(struct ScriptContext *ctx)
     return FALSE;
 }
 // End qol_field_moves
+
+bool8 ScrCmd_namebox(struct ScriptContext *ctx) {
+    const u8 *name = (const u8 *)ScriptReadWord(ctx);
+
+    if (name == NULL)
+        name = (const u8 *)ctx->data[0];
+    ShowFieldName(name);
+    return FALSE;
+}
+
+bool8 ScrCmd_hidenamebox(struct ScriptContext *ctx) {
+    if(IsNameboxDisplayed())
+        ClearNamebox();
+    return FALSE;
+}
+
+bool8 ScrCmd_checkgamemode(struct ScriptContext *ctx)
+{
+    gSpecialVar_Result = gSaveBlock2Ptr->GameMode;
+    return FALSE;
+}

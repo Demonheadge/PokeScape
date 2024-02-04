@@ -2189,3 +2189,481 @@
 	.endm
 
     @ End qol_field_moves
+
+
+	.macro givemonwithnature species:req, level:req, item:req, nature:req
+	.byte 0xe3
+	.2byte \species
+	.byte \level
+	.2byte \item
+	.4byte \nature
+	.4byte 0x0
+	.byte 0
+	.endm
+
+	.macro giveshinymon species:req, level:req, item:req, nature:req
+	.byte 0xe4
+	.2byte \species
+	.byte \level
+	.2byte \item
+	.4byte \nature
+	.4byte 0x0
+	.byte 0
+	.endm
+
+	@displays a name box containing specified text.
+	.macro namebox name:req
+	.byte 0xe5
+	.4byte \name
+	.endm
+
+	@ closes current message box
+	.macro hidenamebox
+	.byte 0xe6
+	.endm
+
+	@ Checks the player's GAME MODE. If STORYMODE, then STORYMODE (0) is stored in VAR_RESULT. If OPENWORLD, then OPENWORLD (1) is stored in VAR_RESULT.
+	.macro checkgamemode
+	.byte 0xe7
+	.endm
+
+@ Supplementary
+
+	.macro goto_if_unset flag:req, dest:req
+	checkflag \flag
+	goto_if FALSE, \dest
+	.endm
+
+	.macro goto_if_set flag:req, dest:req
+	checkflag \flag
+	goto_if TRUE, \dest
+	.endm
+
+	@ Allows 'compare' followed by a conditional goto/call to be combined into a single statement.
+	@ The following are examples of the two acceptable formats this facilitates:
+	@ compare VAR_RESULT, TRUE
+	@ goto_if_eq MyScript
+	@ - or -
+	@ goto_if_eq VAR_RESULT, TRUE, MyScript
+	@
+	@ The first two arguments to this macro are the base command, e.g. 'goto_if 1' for goto_if_eq.
+	@ The remaining arguments 'a, b, c' depend on the format:
+	@ For a single statement, 'a' and 'b' are the values to compare and 'c' is the destination pointer.
+	@ For a statement preceded by a compare, 'a' is the destination pointer and 'b/c' are not provided.
+	.macro trycompare jump:req, condition:req, a:req, b, c
+	.ifnb \c
+		compare \a, \b
+		\jump \condition, \c
+	.else
+		\jump \condition, \a
+	.endif
+	.endm
+
+	.macro goto_if_lt a:req, b, c @ LESS THAN
+	trycompare goto_if, 0, \a, \b, \c
+	.endm
+
+	.macro goto_if_eq a:req, b, c @ EQUAL
+	trycompare goto_if, 1, \a, \b, \c
+	.endm
+
+	.macro goto_if_gt a:req, b, c @ GREATER THAN
+	trycompare goto_if, 2, \a, \b, \c
+	.endm
+
+	.macro goto_if_le a:req, b, c @ LESS THAN OR EQUAL
+	trycompare goto_if, 3, \a, \b, \c
+	.endm
+
+	.macro goto_if_ge a:req, b, c @ GREATER THAN OR EQUAL
+	trycompare goto_if, 4, \a, \b, \c
+	.endm
+
+	.macro goto_if_ne a:req, b, c @ NOT EQUAL
+	trycompare goto_if, 5, \a, \b, \c
+	.endm
+
+	.macro call_if_unset flag:req, dest:req
+	checkflag \flag
+	call_if FALSE, \dest
+	.endm
+
+	.macro call_if_set flag:req, dest:req
+	checkflag \flag
+	call_if TRUE, \dest
+	.endm
+
+	.macro call_if_lt a:req, b, c @ LESS THAN
+	trycompare call_if, 0, \a, \b, \c
+	.endm
+
+	.macro call_if_eq a:req, b, c @ EQUAL
+	trycompare call_if, 1, \a, \b, \c
+	.endm
+
+	.macro call_if_gt a:req, b, c @ GREATER THAN
+	trycompare call_if, 2, \a, \b, \c
+	.endm
+
+	.macro call_if_le a:req, b, c @ LESS THAN OR EQUAL
+	trycompare call_if, 3, \a, \b, \c
+	.endm
+
+	.macro call_if_ge a:req, b, c @ GREATER THAN OR EQUAL
+	trycompare call_if, 4, \a, \b, \c
+	.endm
+
+	.macro call_if_ne a:req, b, c @ NOT EQUAL
+	trycompare call_if, 5, \a, \b, \c
+	.endm
+
+	.macro vgoto_if_eq a:req, b, c
+	trycompare vgoto_if, TRUE, \a, \b, \c
+	.endm
+
+	.macro vgoto_if_ne a:req, b, c
+	trycompare vgoto_if, FALSE, \a, \b, \c
+	.endm
+
+	.macro vgoto_if_unset flag:req, dest:req
+	checkflag \flag
+	vgoto_if FALSE, \dest
+	.endm
+
+	.macro vgoto_if_set flag:req, dest:req
+	checkflag \flag
+	vgoto_if TRUE, \dest
+	.endm
+
+	.macro goto_if_defeated trainer:req, dest:req
+	checktrainerflag \trainer
+	goto_if TRUE, \dest
+	.endm
+
+	.macro goto_if_not_defeated trainer:req, dest:req
+	checktrainerflag \trainer
+	goto_if FALSE, \dest
+	.endm
+
+	.macro call_if_defeated trainer:req, dest:req
+	checktrainerflag \trainer
+	call_if TRUE, \dest
+	.endm
+
+	.macro call_if_not_defeated trainer:req, dest:req
+	checktrainerflag \trainer
+	call_if FALSE, \dest
+	.endm
+
+	.macro switch var:req
+	copyvar VAR_0x8000, \var
+	.endm
+
+	.macro case condition:req, dest:req
+	compare VAR_0x8000, \condition
+	goto_if_eq \dest
+	.endm
+
+	@ Message box types
+	MSGBOX_NPC = 2
+	MSGBOX_SIGN = 3
+	MSGBOX_DEFAULT = 4
+	MSGBOX_YESNO = 5
+	MSGBOX_AUTOCLOSE = 6
+	MSGBOX_GETPOINTS = 9
+	MSGBOX_POKENAV = 10
+
+	YES = 1
+	NO  = 0
+
+	@ Buffers the given text and calls the relevant standard message script (see gStdScripts).
+	.macro msgbox text:req, type=MSGBOX_DEFAULT
+	loadword 0, \text
+	callstd \type
+	.endm
+
+	@ Gives 'amount' of the specified 'item' to the player and prints a message with fanfare.
+	@ If the player doesn't have space for all the items then as many are added as possible, the
+	@ message indicates there is no room, and VAR_RESULT is set to FALSE.
+	@ Otherwise VAR_RESULT is set to TRUE, and the message indicates they have received the item(s).
+	.macro giveitem item:req, amount=1
+	setorcopyvar VAR_0x8000, \item
+	setorcopyvar VAR_0x8001, \amount
+	callstd STD_OBTAIN_ITEM
+	.endm
+
+	@ For picking up items in the overworld. Similar to giveitem, but with different language and
+	@ sets the flag of the last-talked to object (the item the player picked up).
+	.macro finditem item:req, amount=1
+	setorcopyvar VAR_0x8000, \item
+	setorcopyvar VAR_0x8001, \amount
+	callstd STD_FIND_ITEM
+	.endm
+
+	@ Equivalent to giveitem but for a single decoration.
+	.macro givedecoration decoration:req
+	setorcopyvar VAR_0x8000, \decoration
+	callstd STD_OBTAIN_DECORATION
+	.endm
+
+	@ Registers the specified trainer in Match Call and plays a fanfare with a notification message.
+	.macro register_matchcall trainer:req
+	setvar VAR_0x8004, \trainer
+	special SetMatchCallRegisteredFlag
+	setorcopyvar VAR_0x8000, \trainer
+	callstd STD_REGISTER_MATCH_CALL
+	.endm
+
+	@ Does a sparkle field effect (e.g. when the Trick Master is hiding) at the given coordinates.
+	.macro dofieldeffectsparkle x:req, y:req, priority:req
+	setfieldeffectargument 0, \x
+	setfieldeffectargument 1, \y
+	setfieldeffectargument 2, \priority
+	dofieldeffect FLDEFF_SPARKLE
+	.endm
+
+	@ Prints a braille message, waits for an A or B press, then closes the message.
+	.macro braillemsgbox text:req
+	braillemessage \text
+	waitbuttonpress
+	closebraillemessage
+	.endm
+
+	@ Creates an "event legal" Pokémon for an encounter
+	.macro seteventmon species:req, level:req, item=ITEM_NONE
+	setvar VAR_0x8004, \species
+	setvar VAR_0x8005, \level
+	setvar VAR_0x8006, \item
+	special CreateEventLegalEnemyMon
+	.endm
+
+	@ Set up a totem boost for the next battle.
+	@ 'battler' is the position of the mon you want to gain a boost. see B_POSITION_xx in include/constants/battle.h.
+	@ The rest of the arguments are the stat change values to each stat.
+	@ For example, giving the first opponent +1 to atk and -2 to speed would be: settotemboost B_POSITION_OPPONENT_LEFT, 1, 0, -2
+	.macro settotemboost battler:req, atk=0,def=0,speed=0,spatk=0,spdef=0,acc=0,evas=0
+	setvar VAR_0x8000, \battler
+	setvar VAR_0x8001, \atk
+	setvar VAR_0x8002, \def
+	setvar VAR_0x8003, \speed
+	setvar VAR_0x8004, \spatk
+	setvar VAR_0x8005, \spdef
+	setvar VAR_0x8006, \acc
+	setvar VAR_0x8007, \evas
+	special SetTotemBoost
+	.endm
+
+	@ useful totem boost macros
+	.macro totemboost_atk1 battler:req
+	settotemboost \battler, 1
+	.endm
+	.macro totemboost_def1 battler:req
+	settotemboost \battler, 0, 1
+	.endm
+	.macro totemboost_speed1 battler:req
+	settotemboost \battler, 0, 0, 1
+	.endm
+	.macro totemboost_spatk1 battler:req
+	settotemboost \battler, 0, 0, 0, 1
+	.endm
+	.macro totemboost_spdef1 battler:req
+	settotemboost \battler, 0, 0, 0, 0, 1
+	.endm
+	.macro totemboost_acc1 battler:req
+	settotemboost \battler, 0, 0, 0, 0, 0, 1
+	.endm
+	.macro totemboost_evas1 battler:req
+	settotemboost \battler, 0, 0, 0, 0, 0, 0, 1
+	.endm
+
+	.macro totemboost_atk2 battler:req
+	settotemboost \battler, 2
+	.endm
+	.macro totemboost_def2 battler:req
+	settotemboost \battler, 0, 2
+	.endm
+	.macro totemboost_speed2 battler:req
+	settotemboost \battler, 0, 0, 2
+	.endm
+	.macro totemboost_spatk2 battler:req
+	settotemboost \battler, 0, 0, 0, 2
+	.endm
+	.macro totemboost_spdef2 battler:req
+	settotemboost \battler, 0, 0, 0, 0, 2
+	.endm
+	.macro totemboost_acc2 battler:req
+	settotemboost \battler, 0, 0, 0, 0, 0, 2
+	.endm
+	.macro totemboost_evas2 battler:req
+	settotemboost \battler, 0, 0, 0, 0, 0, 0, 2
+	.endm
+
+	.macro setitemarg id:req
+	setvar VAR_0x8000, \id,
+	callnative ScrCmd_SetItemArg
+	.endm
+
+	.macro scrollingmultichoice id:req, x:req, y:req, show:req, b:req
+	setvar VAR_0x8004, \id,
+	setvar VAR_0x8005, \x,
+	setvar VAR_0x8006, \y,
+	setvar VAR_0x8007, \show,
+	setvar VAR_0x8008, \b,
+	callnative ScriptMenu_ScrollingMultichoice
+	waitstate
+	.endm
+
+
+
+
+	.macro questmenu case:req, questId:req
+    .byte 0xe9
+    .byte \case
+    .byte \questId
+    .endm
+
+    .macro subquestmenu case:req, parentId:req, childId:req
+    .byte 0xea
+    .byte \case
+    .2byte \parentId
+    .2byte \childId
+    .endm
+
+    @ Check the quest state and return a number associated with quest state
+    .macro returnqueststate questId:req
+    .byte 0xeb
+    .byte \questId
+    .endm
+    
+    .macro openquestmenu
+    questmenu 0 0
+    .endm
+
+    @ Starts the specified quest.
+	.macro startquest quest:req
+	closemessage
+	delay 30
+	questmenu QUEST_MENU_SET_ACTIVE, \quest
+	questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
+    bufferstring 1 gText_QuestActive
+	playfanfare MUS_LEVEL_UP 
+	msgbox gText_QuestAnnounce, MSGBOX_SIGN
+	waitfanfare
+	.endm
+
+    @ Completes the specified quest.
+	.macro completequest quest:req
+	closemessage
+	delay 30
+	questmenu QUEST_MENU_COMPLETE_QUEST, \quest
+	questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
+    bufferstring 1 gText_QuestComplete
+	playfanfare MUS_LEVEL_UP 
+	msgbox gText_QuestAnnounce, MSGBOX_SIGN
+	waitfanfare
+	.endm
+
+	.macro goto_if_quest_inactive quest:req, dest:req
+	questmenu QUEST_MENU_CHECK_INACTIVE \quest
+	goto_if_eq VAR_RESULT, TRUE, \dest
+	.endm
+
+	.macro goto_if_quest_active quest:req, dest:req
+	questmenu QUEST_MENU_CHECK_ACTIVE \quest
+	goto_if_eq VAR_RESULT, TRUE, \dest
+	.endm
+
+	.macro goto_if_quest_reward quest:req, dest:req
+	questmenu QUEST_MENU_CHECK_REWARD \quest
+	goto_if_eq VAR_RESULT, TRUE, \dest
+	.endm
+
+	.macro goto_if_quest_complete quest:req, dest:req
+	questmenu QUEST_MENU_CHECK_COMPLETE \quest
+	goto_if_eq VAR_RESULT, TRUE, \dest
+	.endm
+
+    .macro goto_if_quest_not_inactive quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_INACTIVE \quest
+    goto_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+    .macro goto_if_quest_not_active quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_ACTIVE \quest
+    goto_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+    .macro goto_if_quest_not_reward quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_REWARD \quest
+    goto_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+    .macro goto_if_quest_not_complete quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_COMPLETE \quest
+    goto_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+    .macro call_if_quest_inactive quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_INACTIVE \quest
+    call_if_eq VAR_RESULT, TRUE, \dest
+    .endm
+
+    .macro call_if_quest_active quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_ACTIVE \quest
+    call_if_eq VAR_RESULT, TRUE, \dest
+    .endm
+
+    .macro call_if_quest_reward quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_REWARD \quest
+    call_if_eq VAR_RESULT, TRUE, \dest
+    .endm
+
+    .macro call_if_quest_complete quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_COMPLETE \quest
+    call_if_eq VAR_RESULT, TRUE, \dest
+    .endm
+
+    .macro call_if_quest_not_inactive quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_INACTIVE \quest
+    call_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+    .macro call_if_quest_not_active quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_ACTIVE \quest
+    call_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+    .macro call_if_quest_not_reward quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_REWARD \quest
+    call_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+    .macro call_if_quest_not_complete quest:req, dest:req
+    questmenu QUEST_MENU_CHECK_COMPLETE \quest
+    call_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+	.macro completesubquest quest:req, subquest:req
+	closemessage
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, \quest, \subquest
+	.endm
+
+    .macro goto_if_subquest_complete parent:req,child:req, dest:req
+    subquestmenu QUEST_MENU_CHECK_COMPLETE \parent \child
+    goto_if_eq VAR_RESULT, TRUE, \dest
+    .endm
+
+    .macro call_if_subquest_complete parent:req,child:req, dest:req
+    subquestmenu QUEST_MENU_CHECK_COMPLETE \parent \child
+    call_if_eq VAR_RESULT, TRUE, \dest
+    .endm
+
+    .macro goto_if_subquest_not_complete parent:req,child:req, dest:req
+    subquestmenu QUEST_MENU_CHECK_COMPLETE \parent \child
+    goto_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+    .macro call_if_subquest_not_complete parent:req,child:req, dest:req
+    subquestmenu QUEST_MENU_CHECK_COMPLETE \parent \child
+    call_if_eq VAR_RESULT, FALSE, \dest
+    .endm
