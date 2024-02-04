@@ -5297,7 +5297,7 @@ const u8 *GetTrainerPartnerName(void)
     {
         if (gPartnerTrainerId == TRAINER_STEVEN_PARTNER)
         {
-            return gTrainers[TRAINER_STEVEN].trainerName;
+            return gTrainers[TRAINER_MAGGIE].trainerName; //Replaced TRAINER_STEVEN with TRAINER_MAGGIE. (TEMP)
         }
         else
         {
