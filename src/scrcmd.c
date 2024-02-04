@@ -16,6 +16,7 @@
 #include "event_object_lock.h"
 #include "event_object_movement.h"
 #include "field_message_box.h"
+#include "field_name_box.h"
 #include "field_player_avatar.h"
 #include "field_screen_effect.h"
 #include "field_specials.h"
@@ -2473,4 +2474,11 @@ bool8 ScrCmd_checkgamemode(struct ScriptContext *ctx)
 {
     gSpecialVar_Result = gSaveBlock2Ptr->GameMode;
     return FALSE;
+}
+
+bool8 ScrCmd_dowildbattleNoCatch(struct ScriptContext *ctx)
+{
+    BattleSetup_StartScriptedWildBattleNoCatch();
+    ScriptContext_Stop();
+    return TRUE;
 }

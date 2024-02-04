@@ -345,7 +345,6 @@ NPC_GOBLINCHEIFS::
 
 EventScript_New_RockSmash::
 	lockall
-	setitemarg ITEM_ROCKSMASH_TOOL
 	checkitem ITEM_ROCKSMASH_TOOL, 1
 	compare VAR_RESULT, 0
 	goto_if_eq EventScript_New_RockSmash_2
@@ -361,49 +360,42 @@ EventScript_New_RockSmash_1:
 	end
 
 EventScript_New_RockSmash_2:
-	setitemarg ITEM_ADAMANTPICKAXE
 	checkitem ITEM_ADAMANTPICKAXE, 1
 	compare VAR_RESULT, 0
 	goto_if_eq EventScript_New_RockSmash_4
 	goto EventScript_New_RockSmash_1
 
 EventScript_New_RockSmash_4:
-	setitemarg ITEM_BRONZEPICKAXE
 	checkitem ITEM_BRONZEPICKAXE, 1
 	compare VAR_RESULT, 0
 	goto_if_eq EventScript_New_RockSmash_6
 	goto EventScript_New_RockSmash_1
 
 EventScript_New_RockSmash_6:
-	setitemarg ITEM_IRONPICKAXE
 	checkitem ITEM_IRONPICKAXE, 1
 	compare VAR_RESULT, 0
 	goto_if_eq EventScript_New_RockSmash_8
 	goto EventScript_New_RockSmash_1
 
 EventScript_New_RockSmash_8:
-	setitemarg ITEM_STEELPICKAXE
 	checkitem ITEM_STEELPICKAXE, 1
 	compare VAR_RESULT, 0
 	goto_if_eq EventScript_New_RockSmash_10
 	goto EventScript_New_RockSmash_1
 
 EventScript_New_RockSmash_10:
-	setitemarg ITEM_MITHRILPICKAXE
 	checkitem ITEM_MITHRILPICKAXE, 1
 	compare VAR_RESULT, 0
 	goto_if_eq EventScript_New_RockSmash_12
 	goto EventScript_New_RockSmash_1
 
 EventScript_New_RockSmash_12:
-	setitemarg ITEM_RUNEPICKAXE
 	checkitem ITEM_RUNEPICKAXE, 1
 	compare VAR_RESULT, 0
 	goto_if_eq EventScript_New_RockSmash_14
 	goto EventScript_New_RockSmash_1
 
 EventScript_New_RockSmash_14:
-	setitemarg ITEM_BLACKPICKAXE
 	checkitem ITEM_BLACKPICKAXE, 1
 	compare VAR_RESULT, 0
 	goto_if_eq EventScript_New_RockSmash_16

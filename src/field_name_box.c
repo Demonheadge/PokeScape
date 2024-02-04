@@ -170,8 +170,6 @@ static void CreateTask_DisplayNamebox() {
 }
 
 static void Task_DisplayNamebox(u8 taskId) {
-    struct Task *task = &gTasks[taskId];
-
     if (gTasks[taskId].tTimer) 
         gTasks[taskId].tTimer--;
     else{

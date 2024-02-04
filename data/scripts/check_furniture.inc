@@ -26,8 +26,6 @@ EventScript_Blueprint::
 	msgbox Text_Blueprint, MSGBOX_SIGN
 	end
 
-
-
 EventScript_DG_ROPE::
 	goto(DungeonInteractions_DG_ROPE)
 	end
