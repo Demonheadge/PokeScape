@@ -20,7 +20,6 @@
 sound/**/*.bin
 sound/songs/midi/*.s
 tools/agbcc
-tools/poryscript
 *.map
 *.bat
 *.dump
