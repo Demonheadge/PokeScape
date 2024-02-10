@@ -24,6 +24,7 @@
 // gTileset_BattleFrontier
 #define METATILE_BattleFrontier_CorridorOpenDoor_Bottom  0x20F
 #define METATILE_BattleFrontier_CorridorOpenDoor_Top     0x207
+#define METATILE_BattleFrontier_Door_Corridor            0x224
 #define METATILE_BattleFrontier_Door_Elevator            0x20E
 #define METATILE_BattleFrontier_Door_MultiCorridor       0x2AD
 #define METATILE_BattleFrontier_Elevator_Bottom0         0x339
@@ -143,6 +144,48 @@
 #define METATILE_Dewford_Door              0x225
 #define METATILE_Dewford_Door_BattleTower  0x25D
 
+// gTileset_Dungeoneering
+#define METATILE_Dungeoneering_DG_PLAIN_FLOOR               0x208
+#define METATILE_Dungeoneering_DG_ROCK_1                    0x3A3
+#define METATILE_Dungeoneering_DG_ROCK_2                    0x3AB
+#define METATILE_Dungeoneering_FROZEN_DOOR_BOTTOM_L         0x21D
+#define METATILE_Dungeoneering_FROZEN_DOOR_BOTTOM_R         0x21F
+#define METATILE_Dungeoneering_FROZEN_DOOR_ENTRY            0x21C
+#define METATILE_Dungeoneering_FROZEN_DOOR_TOP              0x214
+#define METATILE_Dungeoneering_FROZEN_DOOR_TOP_L            0x215
+#define METATILE_Dungeoneering_FROZEN_DOOR_TOP_R            0x217
+#define METATILE_Dungeoneering_FROZEN_WALL_BOTTOM           0x20E
+#define METATILE_Dungeoneering_FROZEN_WALL_BOTTOM_L         0x219
+#define METATILE_Dungeoneering_FROZEN_WALL_BOTTOM_R         0x21B
+#define METATILE_Dungeoneering_FROZEN_WALL_CIELING_L        0x209
+#define METATILE_Dungeoneering_FROZEN_WALL_CIELING_MID      0x20A
+#define METATILE_Dungeoneering_FROZEN_WALL_CIELING_R        0x20B
+#define METATILE_Dungeoneering_FROZEN_WALL_CIELING_TOP      0x202
+#define METATILE_Dungeoneering_FROZEN_WALL_CIELING_TOP_L    0x201
+#define METATILE_Dungeoneering_FROZEN_WALL_CIELING_TOP_R    0x203
+#define METATILE_Dungeoneering_FROZEN_WALL_CORNER_BOTTOM_L  0x233
+#define METATILE_Dungeoneering_FROZEN_WALL_CORNER_BOTTOM_R  0x234
+#define METATILE_Dungeoneering_FROZEN_WALL_CORNER_L         0x204
+#define METATILE_Dungeoneering_FROZEN_WALL_CORNER_R         0x20C
+#define METATILE_Dungeoneering_FROZEN_WALL_TOP              0x206
+#define METATILE_Dungeoneering_FROZEN_WALL_TOP_L            0x211
+#define METATILE_Dungeoneering_FROZEN_WALL_TOP_R            0x213
+#define METATILE_Dungeoneering_VINE_BOTTOM_L                0x3C5
+#define METATILE_Dungeoneering_VINE_BOTTOM_R                0x3C7
+#define METATILE_Dungeoneering_VINE_CROSS_DOWN              0x3D6
+#define METATILE_Dungeoneering_VINE_CROSS_L                 0x3DF
+#define METATILE_Dungeoneering_VINE_CROSS_R                 0x3D7
+#define METATILE_Dungeoneering_VINE_END_DOWN                0x3D5
+#define METATILE_Dungeoneering_VINE_END_L                   0x3CE
+#define METATILE_Dungeoneering_VINE_END_R                   0x3CF
+#define METATILE_Dungeoneering_VINE_END_UP                  0x3CD
+#define METATILE_Dungeoneering_VINE_MID_1                   0x3B6
+#define METATILE_Dungeoneering_VINE_MID_2                   0x3C6
+#define METATILE_Dungeoneering_VINE_MID_L                   0x3BD
+#define METATILE_Dungeoneering_VINE_MID_R                   0x3BF
+#define METATILE_Dungeoneering_VINE_TOP_L                   0x3B5
+#define METATILE_Dungeoneering_VINE_TOP_R                   0x3B7
+
 // gTileset_EliteFour
 #define METATILE_EliteFour_EntryDoor_ClosedBottom    0x20E
 #define METATILE_EliteFour_EntryDoor_ClosedTop       0x206
@@ -248,6 +291,10 @@
 #define METATILE_GenericBuilding_TableEdge               0x2F1
 #define METATILE_GenericBuilding_TrickHouse_Door_Closed  0x21B
 #define METATILE_GenericBuilding_TrickHouse_Stairs_Down  0x219
+
+// gTileset_GoblinVillage
+#define METATILE_GoblinVillage_Door_Goblin_L  0x229
+#define METATILE_GoblinVillage_Door_Goblin_R  0x228
 
 // gTileset_InsideOfTruck
 #define METATILE_InsideOfTruck_DoorClosedFloor_Bottom  0x21D
@@ -403,6 +450,16 @@
 #define METATILE_Petalburg_Door_Littleroot  0x248
 #define METATILE_Petalburg_Door_Oldale      0x287
 
+// gTileset_PokeScapeOutdoors
+#define METATILE_PokeScapeOutdoors_Door_Bank_L          0x13A
+#define METATILE_PokeScapeOutdoors_Door_Bank_R          0x135
+#define METATILE_PokeScapeOutdoors_Door_GeneralStore_L  0x12C
+#define METATILE_PokeScapeOutdoors_Door_GeneralStore_R  0x136
+#define METATILE_PokeScapeOutdoors_Door_General_L       0x1CB
+#define METATILE_PokeScapeOutdoors_Door_General_R       0x1D3
+#define METATILE_PokeScapeOutdoors_Door_Pub_L           0x1EA
+#define METATILE_PokeScapeOutdoors_Door_Pub_R           0x1D2
+
 // gTileset_PokemonCenter
 #define METATILE_PokemonCenter_CounterBarrier            0x25D
 #define METATILE_PokemonCenter_Door_CableClub            0x264
@@ -431,13 +488,20 @@
 #define METATILE_PokemonCenter_Floor_ShadowTop           0x21E
 #define METATILE_PokemonCenter_Floor_ShadowTop_Alt       0x2DC
 
-// gTileset_RSMossdeepGym
-#define METATILE_RSMossdeepGym_RedArrow_Down   0x205
-#define METATILE_RSMossdeepGym_RedArrow_Left   0x20C
-#define METATILE_RSMossdeepGym_RedArrow_Right  0x204
-#define METATILE_RSMossdeepGym_RedArrow_Up     0x20D
-#define METATILE_RSMossdeepGym_Switch_Down     0x239
-#define METATILE_RSMossdeepGym_Switch_Up       0x238
+// gTileset_QueenBlackDragon
+#define METATILE_QueenBlackDragon_QBDlair_Tile0  0x289
+#define METATILE_QueenBlackDragon_QBDlair_Tile1  0x28A
+#define METATILE_QueenBlackDragon_QBDlair_Tile2  0x28B
+#define METATILE_QueenBlackDragon_QBDlair_Tile3  0x28C
+#define METATILE_QueenBlackDragon_QBDlair_Tile4  0x28D
+
+// gTileset_RS
+#define METATILE_RS_MossdeepGym_RedArrow_Down   0x205
+#define METATILE_RS_MossdeepGym_RedArrow_Left   0x20C
+#define METATILE_RS_MossdeepGym_RedArrow_Right  0x204
+#define METATILE_RS_MossdeepGym_RedArrow_Up     0x20D
+#define METATILE_RS_MossdeepGym_Switch_Down     0x239
+#define METATILE_RS_MossdeepGym_Switch_Up       0x238
 
 // gTileset_Rustboro
 #define METATILE_Rustboro_Door_Gray  0x21F
@@ -459,7 +523,9 @@
 #define METATILE_SecretBase_BigPlant_BaseRight1         0x2ED
 #define METATILE_SecretBase_BigPlant_BaseRight2         0x2EF
 #define METATILE_SecretBase_BigPlant_TopLeft            0x2E4
+#define METATILE_SecretBase_BigPlant_TopLeftWall        0x2E5
 #define METATILE_SecretBase_BigPlant_TopRight           0x2E6
+#define METATILE_SecretBase_BigPlant_TopRightWall       0x2E6
 #define METATILE_SecretBase_BlueBalloon                 0x33C
 #define METATILE_SecretBase_BlueBrick_Bottom            0x22F
 #define METATILE_SecretBase_BlueBrick_Top               0x227
