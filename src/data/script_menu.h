@@ -771,6 +771,103 @@ static const struct MenuAction MultichoiceList_TagMatchType[] =
     {gText_Exit},
 };
 
+// Pokescape
+static const struct MenuAction MultichoiceList_PouchCraft[] =
+{
+	{gText_BronzePouch},
+	{gText_IronPouch},
+	{gText_SteelPouch},
+	{gText_BlackPouch},
+	{gText_MithrilPouch},
+	{gText_AdamantPouch},
+	{gText_RunePouch},
+	{gText_DragonPouch},
+	{gText_NextMenu},
+};
+
+static const struct MenuAction MultichoiceList_PouchCraft2[] =
+{
+	{gText_AncientPouch},
+	{gText_AugmentedPouch},
+	{gText_BarrowsPouch},
+	{gText_CrystalPouch},
+	{gText_DragonbanePouch},
+	{gText_ElementalPouch},
+	{gText_GranitePouch},
+	{gText_MysticPouch},
+	{gText_Exit},
+};
+
+
+static const struct MenuAction MultichoiceList_CheatMenu[] =
+{
+	{gText_CheatEvolutionShop},
+	{gText_CheatPouchShop},
+	{gText_CheatTMShop},
+    {gText_CheatStatShop},
+	{gText_CheatMiscShop},
+	{gText_AddKeyItems},
+	{gText_AddCash},
+	{gText_AddCandy},
+	{gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_StarterFree[] =
+{
+	{gText_GuthlingStarter},
+	{gText_ZamlingStarter},
+	{gText_SaralingStarter},
+};
+
+static const struct MenuAction MultichoiceList_StarterMember[] =
+{
+	{gText_ArmalingStarter},
+	{gText_UngodlingStarter},
+	{gText_TumeklingStarter},
+};
+
+static const struct MenuAction MultichoiceList_POH[] =
+{
+    {gText_POH_HOME},
+    {gText_POH_HOUSE_1},
+    {gText_POH_HOUSE_2},
+    {gText_POH_HOUSE_3},
+    {gText_POH_HOUSE_4},
+    {gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_COLOUR_PICKAXE[] =
+{
+    {gText_POH_GREEN},
+    {gText_POH_RED},
+    {gText_POH_BROWN},
+    {gText_POH_GREY},
+    {gText_POH_WHITE},
+    {gText_POH_BLUE},
+    {gText_POH_CYAN},
+    {gText_POH_BLACK},
+    //{gText_Exit},
+};
+
+static const struct MenuAction MultichoiceList_PHEONIXEGG[] =
+{
+    {gText_PhoenixEgg_Clap},
+    {gText_PhoenixEgg_Kick},
+};
+
+static const struct MenuAction MultichoiceList_BANKOPTIONS[] =
+{
+    {gText_BANK_HEAL},
+    {gText_BANK_STORE_MONSTERS},
+    {gText_BANK_STORE_ITEMS},
+    {gText_Exit},
+};
+static const struct MenuAction MultichoiceList_FREMMYTEAMS[] =
+{
+    {gText_JATIZSO},
+    {gText_NEITIZNOT},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -898,6 +995,18 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_SLATEPORT_TENT_RULES]       = MULTICHOICE(MultichoiceList_SlateportTentRules),
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
+
+	//pokescape
+	[MULTI_POUCH_CRAFT]				   = MULTICHOICE(MultichoiceList_PouchCraft),
+	[MULTI_POUCH_CRAFT2]			   = MULTICHOICE(MultichoiceList_PouchCraft2),
+	[MULTI_CHEAT_MENU]				   = MULTICHOICE(MultichoiceList_CheatMenu),
+	[MULTI_STARTER_FREE]			   = MULTICHOICE(MultichoiceList_StarterFree),
+	[MULTI_STARTER_MEMBER]			   = MULTICHOICE(MultichoiceList_StarterMember),
+    [MULTI_POH]			               = MULTICHOICE(MultichoiceList_POH),
+    [MULTI_COLOUR_PICKAXE]			   = MULTICHOICE(MultichoiceList_COLOUR_PICKAXE),
+    [MULTI_PHEONIXEGG]			       = MULTICHOICE(MultichoiceList_PHEONIXEGG),
+    [MULTI_BANKOPTIONS]				   = MULTICHOICE(MultichoiceList_BANKOPTIONS),
+    [MULTI_FREMMYTEAMS]				   = MULTICHOICE(MultichoiceList_FREMMYTEAMS),
 };
 
 const u8 *const gStdStrings[] =

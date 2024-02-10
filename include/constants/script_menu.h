@@ -122,6 +122,19 @@
 #define MULTI_SLATEPORT_TENT_RULES         111
 #define MULTI_FALLARBOR_TENT_RULES         112
 #define MULTI_TAG_MATCH_TYPE               113
+//pokescape pouch menu
+#define MULTI_POUCH_CRAFT				   114
+#define MULTI_POUCH_CRAFT2				   115
+//pokescape cheat menu
+#define MULTI_CHEAT_MENU				   116
+//pokescape starter menus
+#define MULTI_STARTER_FREE				   117
+#define MULTI_STARTER_MEMBER			   118
+#define MULTI_POH                          119
+#define MULTI_COLOUR_PICKAXE               120
+#define MULTI_PHEONIXEGG                   121
+#define MULTI_BANKOPTIONS                  122
+#define MULTI_FREMMYTEAMS                  123
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0
