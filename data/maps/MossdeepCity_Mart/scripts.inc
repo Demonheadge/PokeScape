@@ -15,7 +15,7 @@ MossdeepCity_Mart_EventScript_Clerk::
 MossdeepCity_Mart_Pokemart:
 	.2byte ITEM_IRON_POUCH
 	.2byte ITEM_LEATHER_POUCH
-	.2byte ITEM_DIVE_BALL
+	.2byte ITEM_CATALYTIC_POUCH
 	.2byte ITEM_HYPER_POTION
 	.2byte ITEM_FULL_HEAL
 	.2byte ITEM_REVIVE

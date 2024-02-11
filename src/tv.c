@@ -4636,7 +4636,7 @@ static void DoTVShowPokemonTodaySuccessfulCapture(void)
         TVShowConvertInternationalString(gStringVar1, show->pokemonToday.playerName, show->pokemonToday.language);
         StringCopy(gStringVar2, GetSpeciesName(show->pokemonToday.species));
         TVShowConvertInternationalString(gStringVar3, show->pokemonToday.nickname, show->pokemonToday.language2);
-        if (show->pokemonToday.ball == ITEM_CRYSTAL_POUCH)
+        if (show->pokemonToday.ball == ITEM_DRAGON_POUCH)
             sTVShowState = 5;
         else
             sTVShowState = 1;

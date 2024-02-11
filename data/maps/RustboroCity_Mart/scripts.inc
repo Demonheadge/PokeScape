@@ -41,8 +41,8 @@ RustboroCity_Mart_EventScript_PokemartExpanded::
 	.align 2
 RustboroCity_Mart_Pokemart_Expanded:
 	.2byte ITEM_NORMAL_POUCH
-	.2byte ITEM_TIMER_BALL
-	.2byte ITEM_REPEAT_BALL
+	.2byte ITEM_ADAMANT_POUCH
+	.2byte ITEM_AUGMENTED_POUCH
 	.2byte ITEM_POTION
 	.2byte ITEM_SUPER_POTION
 	.2byte ITEM_ANTIDOTE

@@ -203,7 +203,7 @@ Route120_EventScript_ItemHyperPotion::
 	end
 
 Route120_EventScript_ItemNestBall::
-	finditem ITEM_NEST_BALL
+	finditem ITEM_ELEMENTAL_POUCH
 	end
 
 Route120_EventScript_ItemRevive::
@@ -427,7 +427,7 @@ AbandonedShip_Rooms_B1F_EventScript_ItemEscapeRope::
 	end
 
 AbandonedShip_Rooms2_B1F_EventScript_ItemDiveBall::
-	finditem ITEM_DIVE_BALL
+	finditem ITEM_CATALYTIC_POUCH
 	end
 
 AbandonedShip_Room_B1F_EventScript_ItemTMIceBeam::
@@ -443,7 +443,7 @@ AbandonedShip_CaptainsOffice_EventScript_ItemStorageKey::
 	end
 
 AbandonedShip_HiddenFloorRooms_EventScript_ItemLuxuryBall::
-	finditem ITEM_ROYAL_POUCH
+	finditem ITEM_EMBROIDERED_POUCH
 	end
 
 AbandonedShip_HiddenFloorRooms_EventScript_ItemScanner::
@@ -511,7 +511,7 @@ MtPyre_Exterior_EventScript_ItemTMSkillSwap::
 	end
 
 AquaHideout_B1F_EventScript_ItemMasterBall::
-	finditem ITEM_CRYSTAL_POUCH
+	finditem ITEM_DRAGON_POUCH
 	end
 
 AquaHideout_B1F_EventScript_ItemNugget::
@@ -523,11 +523,11 @@ AquaHideout_B1F_EventScript_ItemMaxElixir::
 	end
 
 AquaHideout_B2F_EventScript_ItemNestBall::
-	finditem ITEM_NEST_BALL
+	finditem ITEM_ELEMENTAL_POUCH
 	end
 
 AquaHideout_B2F_EventScript_ItemMasterBall::
-	finditem ITEM_CRYSTAL_POUCH      // Unused
+	finditem ITEM_DRAGON_POUCH      // Unused
 	end
 
 Route119_EventScript_ItemNugget::
@@ -539,7 +539,7 @@ Route119_EventScript_ItemMaxElixir::
 	end
 
 Route119_EventScript_ItemNestBall::
-	finditem ITEM_NEST_BALL
+	finditem ITEM_ELEMENTAL_POUCH
 	end
 
 ShoalCave_LowTideEntranceRoom_EventScript_ItemBigPearl::

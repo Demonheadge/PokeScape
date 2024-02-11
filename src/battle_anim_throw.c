@@ -953,51 +953,51 @@ u8 ItemIdToBallId(u16 ballItem)
         return BALL_GREAT;
     case ITEM_IRON_POUCH:
         return BALL_ULTRA;
-    case ITEM_CRYSTAL_POUCH:
+    case ITEM_DRAGON_POUCH:
         return BALL_MASTER;
     case ITEM_PREMIER_BALL:
         return BALL_PREMIER;
-    case ITEM_HEAL_BALL:
+    case ITEM_BLESSED_POUCH:
         return BALL_HEAL;
     case ITEM_LEATHER_POUCH:
         return BALL_NET;
-    case ITEM_NEST_BALL:
+    case ITEM_ELEMENTAL_POUCH:
         return BALL_NEST;
-    case ITEM_DIVE_BALL:
+    case ITEM_CATALYTIC_POUCH:
         return BALL_DIVE;
-    case ITEM_DUSK_BALL:
+    case ITEM_CRYSTAL_POUCH:
         return BALL_DUSK;
-    case ITEM_TIMER_BALL:
+    case ITEM_ADAMANT_POUCH:
         return BALL_TIMER;
-    case ITEM_SNAKESKIN_POUCH:
+    case ITEM_MITHRIL_POUCH:
         return BALL_QUICK;
-    case ITEM_REPEAT_BALL:
+    case ITEM_AUGMENTED_POUCH:
         return BALL_REPEAT;
-    case ITEM_ROYAL_POUCH:
+    case ITEM_EMBROIDERED_POUCH:
         return BALL_LUXURY;
-    case ITEM_SACRED_POUCH:
+    case ITEM_BARROWS_POUCH:
         return BALL_LEVEL;
-    case ITEM_LURE_BALL:
+    case ITEM_SPIDERSILK_POUCH:
         return BALL_LURE;
-    case ITEM_MOON_BALL:
+    case ITEM_ANCIENT_POUCH:
         return BALL_MOON;
-    case ITEM_BLESSED_POUCH:
+    case ITEM_ROYAL_POUCH:
         return BALL_FRIEND;
-    case ITEM_LOVE_BALL:
+    case ITEM_MYSTIC_POUCH:
         return BALL_LOVE;
-    case ITEM_FAST_BALL:
+    case ITEM_DRAGONBANE_POUCH:
         return BALL_FAST;
-    case ITEM_HEAVY_BALL:
+    case ITEM_GRANITE_POUCH:
         return BALL_HEAVY;
     case ITEM_IMPHIDE_POUCH:
         return BALL_DREAM;
-    case ITEM_SAFARI_BALL:
+    case ITEM_GEM_POUCH:
         return BALL_SAFARI;
-    case ITEM_SPORT_BALL:
+    case ITEM_SPLITBARK_POUCH:
         return BALL_SPORT;
-    case ITEM_PARK_BALL:
+    case ITEM_BLACK_POUCH:
         return BALL_PARK;
-    case ITEM_BEAST_BALL:
+    case ITEM_FISHBOWL_POUCH:
         return BALL_BEAST;
     case ITEM_CHERISH_BALL:
         return BALL_CHERISH;

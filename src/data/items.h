@@ -67,7 +67,7 @@ const struct Item gItems[] =
         .secondaryId = ITEM_IRON_POUCH - FIRST_BALL,
     },
 
-    [ITEM_CRYSTAL_POUCH] =
+    [ITEM_DRAGON_POUCH] =
     {
         .name = _("Master Ball"),
         .price = 0,
@@ -75,7 +75,7 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_CRYSTAL_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_DRAGON_POUCH - FIRST_BALL,
     },
 
     [ITEM_PREMIER_BALL] =
@@ -89,7 +89,7 @@ const struct Item gItems[] =
         .secondaryId = ITEM_PREMIER_BALL - FIRST_BALL,
     },
 
-    [ITEM_HEAL_BALL] =
+    [ITEM_BLESSED_POUCH] =
     {
         .name = _("Heal Ball"),
         .price = 300,
@@ -97,7 +97,7 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_HEAL_BALL - FIRST_BALL,
+        .secondaryId = ITEM_BLESSED_POUCH - FIRST_BALL,
     },
 
     [ITEM_LEATHER_POUCH] =
@@ -111,7 +111,7 @@ const struct Item gItems[] =
         .secondaryId = ITEM_LEATHER_POUCH - FIRST_BALL,
     },
 
-    [ITEM_NEST_BALL] =
+    [ITEM_ELEMENTAL_POUCH] =
     {
         .name = _("Nest Ball"),
         .price = 1000,
@@ -119,10 +119,10 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_NEST_BALL - FIRST_BALL,
+        .secondaryId = ITEM_ELEMENTAL_POUCH - FIRST_BALL,
     },
 
-    [ITEM_DIVE_BALL] =
+    [ITEM_CATALYTIC_POUCH] =
     {
         .name = _("Dive Ball"),
         .price = 1000,
@@ -130,10 +130,10 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_DIVE_BALL - FIRST_BALL,
+        .secondaryId = ITEM_CATALYTIC_POUCH - FIRST_BALL,
     },
 
-    [ITEM_DUSK_BALL] =
+    [ITEM_CRYSTAL_POUCH] =
     {
         .name = _("Dusk Ball"),
         .price = 1000,
@@ -141,10 +141,10 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_DUSK_BALL - FIRST_BALL,
+        .secondaryId = ITEM_CRYSTAL_POUCH - FIRST_BALL,
     },
 
-    [ITEM_TIMER_BALL] =
+    [ITEM_ADAMANT_POUCH] =
     {
         .name = _("Timer Ball"),
         .price = 1000,
@@ -152,10 +152,10 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_TIMER_BALL - FIRST_BALL,
+        .secondaryId = ITEM_ADAMANT_POUCH - FIRST_BALL,
     },
 
-    [ITEM_SNAKESKIN_POUCH] =
+    [ITEM_MITHRIL_POUCH] =
     {
         .name = _("Quick Ball"),
         .price = 1000,
@@ -163,10 +163,10 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_SNAKESKIN_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_MITHRIL_POUCH - FIRST_BALL,
     },
 
-    [ITEM_REPEAT_BALL] =
+    [ITEM_AUGMENTED_POUCH] =
     {
         .name = _("Repeat Ball"),
         .price = 1000,
@@ -174,10 +174,10 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_REPEAT_BALL - FIRST_BALL,
+        .secondaryId = ITEM_AUGMENTED_POUCH - FIRST_BALL,
     },
 
-    [ITEM_ROYAL_POUCH] =
+    [ITEM_EMBROIDERED_POUCH] =
     {
         .name = _("Luxury Ball"),
         .price = 1000,
@@ -185,10 +185,10 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_ROYAL_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_EMBROIDERED_POUCH - FIRST_BALL,
     },
 
-    [ITEM_SACRED_POUCH] =
+    [ITEM_BARROWS_POUCH] =
     {
         .name = _("Level Ball"),
         .price = 0,
@@ -196,10 +196,10 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_SACRED_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_BARROWS_POUCH - FIRST_BALL,
     },
 
-    [ITEM_LURE_BALL] =
+    [ITEM_SPIDERSILK_POUCH] =
     {
         .name = _("Lure Ball"),
         .price = 0,
@@ -207,10 +207,10 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_LURE_BALL - FIRST_BALL,
+        .secondaryId = ITEM_SPIDERSILK_POUCH - FIRST_BALL,
     },
 
-    [ITEM_MOON_BALL] =
+    [ITEM_ANCIENT_POUCH] =
     {
         .name = _("Moon Ball"),
         .price = 0,
@@ -218,10 +218,10 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_MOON_BALL - FIRST_BALL,
+        .secondaryId = ITEM_ANCIENT_POUCH - FIRST_BALL,
     },
 
-    [ITEM_BLESSED_POUCH] =
+    [ITEM_ROYAL_POUCH] =
     {
         .name = _("Friend Ball"),
         .price = 0,
@@ -229,10 +229,10 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_BLESSED_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_ROYAL_POUCH - FIRST_BALL,
     },
 
-    [ITEM_LOVE_BALL] =
+    [ITEM_MYSTIC_POUCH] =
     {
         .name = _("Love Ball"),
         .price = 0,
@@ -240,10 +240,10 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_LOVE_BALL - FIRST_BALL,
+        .secondaryId = ITEM_MYSTIC_POUCH - FIRST_BALL,
     },
 
-    [ITEM_FAST_BALL] =
+    [ITEM_DRAGONBANE_POUCH] =
     {
         .name = _("Fast Ball"),
         .price = 0,
@@ -251,10 +251,10 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_FAST_BALL - FIRST_BALL,
+        .secondaryId = ITEM_DRAGONBANE_POUCH - FIRST_BALL,
     },
 
-    [ITEM_HEAVY_BALL] =
+    [ITEM_GRANITE_POUCH] =
     {
         .name = _("Heavy Ball"),
         .price = 0,
@@ -262,7 +262,7 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_HEAVY_BALL - FIRST_BALL,
+        .secondaryId = ITEM_GRANITE_POUCH - FIRST_BALL,
     },
 
     [ITEM_IMPHIDE_POUCH] =
@@ -276,7 +276,7 @@ const struct Item gItems[] =
         .secondaryId = ITEM_IMPHIDE_POUCH - FIRST_BALL,
     },
 
-    [ITEM_SAFARI_BALL] =
+    [ITEM_GEM_POUCH] =
     {
         .name = _("Safari Ball"),
         .price = 0,
@@ -284,10 +284,10 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_SAFARI_BALL - FIRST_BALL,
+        .secondaryId = ITEM_GEM_POUCH - FIRST_BALL,
     },
 
-    [ITEM_SPORT_BALL] =
+    [ITEM_SPLITBARK_POUCH] =
     {
         .name = _("Sport Ball"),
         .price = 0,
@@ -295,10 +295,10 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_SPORT_BALL - FIRST_BALL,
+        .secondaryId = ITEM_SPLITBARK_POUCH - FIRST_BALL,
     },
 
-    [ITEM_PARK_BALL] =
+    [ITEM_BLACK_POUCH] =
     {
         .name = _("Park Ball"),
         .price = 0,
@@ -306,10 +306,10 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_PARK_BALL - FIRST_BALL,
+        .secondaryId = ITEM_BLACK_POUCH - FIRST_BALL,
     },
 
-    [ITEM_BEAST_BALL] =
+    [ITEM_FISHBOWL_POUCH] =
     {
         .name = _("Beast Ball"),
         .price = 0,
@@ -317,7 +317,7 @@ const struct Item gItems[] =
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_BEAST_BALL - FIRST_BALL,
+        .secondaryId = ITEM_FISHBOWL_POUCH - FIRST_BALL,
     },
 
     [ITEM_CHERISH_BALL] =

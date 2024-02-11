@@ -103,90 +103,93 @@ script HIDDEN_GROTTO_INTERACT {
 //UNICORN
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_UNICORN_BLACK)
     { 
-        setwildbattle (SPECIES_UNICORN_BLACK_FORM, VAR_TEMP_E, ITEM_NONE)
+        setwildbattle (SPECIES_UNICORN_BLACK_FORM, 15)
         goto(ENCOUNTER_UNICORN)
     }
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_UNICORN_WHITE)
     { 
-        setwildbattle (SPECIES_UNICORN_WHITE_FORM, VAR_TEMP_E, ITEM_NONE)
+        setwildbattle (SPECIES_UNICORN_WHITE_FORM, 15)
         goto(ENCOUNTER_UNICORN)
     }
 //CAT
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_CAT_BLACK)
     { 
-        setwildbattle (SPECIES_CAT_NORMAL_FORM, VAR_TEMP_E, ITEM_NONE)
+        setwildbattle (SPECIES_CAT_NORMAL_FORM, 15)
         goto(ENCOUNTER_CAT)
     }
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_CAT_BLACKWHITE)
     { 
-        setwildbattle (SPECIES_CAT_LAZY_FORM, VAR_TEMP_E, ITEM_NONE)
+        setwildbattle (SPECIES_CAT_LAZY_FORM, 15)
         goto(ENCOUNTER_CAT)
     }
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_CAT_BROWN)
     { 
-        setwildbattle (SPECIES_CAT_WILY_FORM, VAR_TEMP_E, ITEM_NONE)
+        setwildbattle (SPECIES_CAT_WILY_FORM, 15)
         goto(ENCOUNTER_CAT)
     }
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_CAT_BROWNWHITE)
     { 
-        setwildbattle (SPECIES_CAT_OVERGROWN_FORM, VAR_TEMP_E, ITEM_NONE)
+        setwildbattle (SPECIES_CAT_OVERGROWN_FORM, 15)
         goto(ENCOUNTER_CAT)
     }
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_CAT_CLOCKWORK)
     { 
-        setwildbattle (SPECIES_CAT_CLOCKWORK_FORM, VAR_TEMP_E, ITEM_NONE)
+        setwildbattle (SPECIES_CAT_CLOCKWORK_FORM, 15)
         goto(ENCOUNTER_CAT)
     }
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_CAT_HELL)
     { 
-        setwildbattle (SPECIES_CAT_HELL_FORM, VAR_TEMP_E, ITEM_NONE)
+        setwildbattle (SPECIES_CAT_HELL_FORM, 15)
         goto(ENCOUNTER_CAT)
     }
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_CAT_PURPLE)
     { 
-        setwildbattle (SPECIES_CAT_PURPLE_FORM, VAR_TEMP_E, ITEM_NONE)
+        setwildbattle (SPECIES_CAT_PURPLE_FORM, 15)
         goto(ENCOUNTER_CAT)
     }
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_CAT_WHITE)
     { 
-        setwildbattle (SPECIES_CAT_POST_FORM, VAR_TEMP_E, ITEM_NONE)
+        setwildbattle (SPECIES_CAT_POST_FORM, 15)
         goto(ENCOUNTER_CAT)
     }
 //DOG
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_DOG_CORGI)
     { 
-        setwildbattle (SPECIES_CORGI, VAR_TEMP_E, ITEM_NONE)
+        setwildbattle (SPECIES_CORGI, 15)
         goto(ENCOUNTER_DOG)
     }
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_DOG_DALMATIAN)
     { 
-        setwildbattle (SPECIES_DALMATIAN, VAR_TEMP_E, ITEM_NONE)
+        setwildbattle (SPECIES_DALMATIAN, 15)
         goto(ENCOUNTER_DOG)
     }
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_DOG_GUARD)
     { 
-        setwildbattle (SPECIES_GUARD_DOG, VAR_TEMP_E, ITEM_NONE)
+        setwildbattle (SPECIES_GUARD_DOG, 15)
         goto(ENCOUNTER_DOG)
     }
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_DOG_LABRADOR)
     { 
-        setwildbattle (SPECIES_LABRADOR, VAR_TEMP_E, ITEM_NONE)
+        setwildbattle (SPECIES_LABRADOR, 15)
         goto(ENCOUNTER_DOG)
     }
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_DOG_SLEEP)
     { 
-        setwildbattle (SPECIES_BORDER_COLLIE, VAR_TEMP_E, ITEM_NONE)
+        setwildbattle (SPECIES_BORDER_COLLIE, 15)
         goto(ENCOUNTER_DOG)
     }
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_DOG_STRAY)
     { 
-        setwildbattle (SPECIES_STRAY_DOG, VAR_TEMP_E, ITEM_NONE)
+        setwildbattle (SPECIES_STRAY_DOG, 15)
         goto(ENCOUNTER_DOG)
     }
     //call(HIDDEN_GROTTO_SETFLAGS)
     release
     end
 }
+
+// Levels need to be changed to be based on the result of VAR_TEMP_E
+
 script HIDDEN_GROTTO_RANDOM_CAT {
     random(8)
     switch (var(VAR_RESULT)) {
@@ -401,21 +404,21 @@ script RANDOM_DOWILDBATTLE_MON {
     random(6)
     switch (var(VAR_RESULT)) {
         case 0: 
-            setwildbattle (SPECIES_BIRD_NEST, VAR_TEMP_E, ITEM_NONE)
+            setwildbattle (SPECIES_BIRD_NEST, 15)
         case 1: 
-            setwildbattle (SPECIES_THE_ILLUSIVE, VAR_TEMP_E, ITEM_NONE)
+            setwildbattle (SPECIES_THE_ILLUSIVE, 15)
         case 2: 
-            setwildbattle (SPECIES_CHINCHOMPA_GIANT, VAR_TEMP_E, ITEM_NONE)
+            setwildbattle (SPECIES_CHINCHOMPA_GIANT, 15)
         case 3: 
-            setwildbattle (SPECIES_IMPLING_LUCKY_FORM, VAR_TEMP_E, ITEM_NONE)
+            setwildbattle (SPECIES_IMPLING_LUCKY_FORM, 15)
         case 4: 
-            setwildbattle (SPECIES_WOLPERTING, VAR_TEMP_E, ITEM_NONE)
+            setwildbattle (SPECIES_WOLPERTING, 15)
         case 5: 
-            setwildbattle (SPECIES_SHAIKAH, VAR_TEMP_E, ITEM_NONE)
-            
+            setwildbattle (SPECIES_SHAIKAH, 15)  
         } 
     return
 }
+    // Levels need to be changed to be based on the value of VAR_TEMP_E
 
 script HIDDEN_GROTTO_FIND_ITEM {
 	random(28) 

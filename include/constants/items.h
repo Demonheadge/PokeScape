@@ -7,30 +7,33 @@
 #define ITEM_NORMAL_POUCH 1 // Regular
 #define ITEM_BRONZE_POUCH 2 // Great
 #define ITEM_IRON_POUCH 3 // Ultra
-#define ITEM_CRYSTAL_POUCH 4 // Master
+#define ITEM_DRAGON_POUCH 4 // Master
 #define ITEM_PREMIER_BALL 5
-#define ITEM_HEAL_BALL 6
+#define ITEM_BLESSED_POUCH 6 // Heal
 #define ITEM_LEATHER_POUCH 7 // Net
-#define ITEM_NEST_BALL 8
-#define ITEM_DIVE_BALL 9
-#define ITEM_DUSK_BALL 10
-#define ITEM_TIMER_BALL 11
-#define ITEM_SNAKESKIN_POUCH 12 // Quick
-#define ITEM_REPEAT_BALL 13
-#define ITEM_ROYAL_POUCH 14 // Luxury
-#define ITEM_SACRED_POUCH 15 // Level
-#define ITEM_LURE_BALL 16
-#define ITEM_MOON_BALL 17
-#define ITEM_BLESSED_POUCH 18 // Friend
-#define ITEM_LOVE_BALL 19
-#define ITEM_FAST_BALL 20
-#define ITEM_HEAVY_BALL 21
+#define ITEM_ELEMENTAL_POUCH 8 // Nest
+#define ITEM_CATALYTIC_POUCH 9 // Dive
+#define ITEM_CRYSTAL_POUCH 10 // Dusk
+#define ITEM_ADAMANT_POUCH 11 // Timer
+#define ITEM_MITHRIL_POUCH 12 // Quick
+#define ITEM_AUGMENTED_POUCH 13 // Repeat
+#define ITEM_EMBROIDERED_POUCH 14 // Luxury
+#define ITEM_BARROWS_POUCH 15 // Level
+#define ITEM_SPIDERSILK_POUCH 16 // Lure
+#define ITEM_ANCIENT_POUCH 17 // Moon
+#define ITEM_ROYAL_POUCH 18 // Friend
+#define ITEM_MYSTIC_POUCH 19 // Love
+#define ITEM_DRAGONBANE_POUCH 20 // Fast
+#define ITEM_GRANITE_POUCH 21 // Heavy
 #define ITEM_IMPHIDE_POUCH 22 // Dream
-#define ITEM_SAFARI_BALL 23
-#define ITEM_SPORT_BALL 24
-#define ITEM_PARK_BALL 25
-#define ITEM_BEAST_BALL 26
+#define ITEM_GEM_POUCH 23 // Safari
+#define ITEM_SPLITBARK_POUCH 24 // Sport
+#define ITEM_BLACK_POUCH 25 // Park
+#define ITEM_FISHBOWL_POUCH 26 // Beast
 #define ITEM_CHERISH_BALL 27
+
+#define ITEM_STEEL_POUCH ITEM_BRONZE_POUCH
+#define ITEM_RUNE_POUCH ITEM_IRON_POUCH
 
 // Note: If moving ball IDs around, updating FIRST_BALL/LAST_BALL is not sufficient
 //       Several places expect the ball IDs to be first and contiguous (e.g. MON_DATA_POKEBALL)
@@ -160,6 +163,10 @@
 #define ITEM_LURE 117
 #define ITEM_SUPER_LURE 118
 #define ITEM_MAX_LURE 119
+
+#define ITEM_REPEL_TEA_1 ITEM_REPEL
+#define ITEM_REPEL_TEA_2 ITEM_SUPER_REPEL
+#define ITEM_REPEL_TEA_3 ITEM_MAX_REPEL
 
 #define ITEM_ESCAPE_ROPE 120
 

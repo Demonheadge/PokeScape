@@ -16,7 +16,7 @@ static const struct TrainerMon sTestParty1[] =
 {
     {
         .species = SPECIES_WOBBUFFET,
-        .ball = ITEM_CRYSTAL_POUCH,
+        .ball = ITEM_DRAGON_POUCH,
         .ability = ABILITY_TELEPATHY,
         .friendship = 42,
         .gender = TRAINER_MON_FEMALE,
@@ -50,7 +50,7 @@ TEST("CreateNPCTrainerPartyForTrainer generates customized Pokémon")
     EXPECT(IsMonShiny(&testParty[0]));
     EXPECT(!IsMonShiny(&testParty[1]));
 
-    EXPECT(GetMonData(&testParty[0], MON_DATA_POKEBALL, 0) == ITEM_CRYSTAL_POUCH);
+    EXPECT(GetMonData(&testParty[0], MON_DATA_POKEBALL, 0) == ITEM_DRAGON_POUCH);
     EXPECT(GetMonData(&testParty[1], MON_DATA_POKEBALL, 0) == ITEM_NORMAL_POUCH);
 
     EXPECT(GetMonData(&testParty[0], MON_DATA_SPECIES, 0) == SPECIES_WOBBUFFET);

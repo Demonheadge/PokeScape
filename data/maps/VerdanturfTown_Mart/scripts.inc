@@ -14,7 +14,7 @@ VerdanturfTown_Mart_EventScript_Clerk::
 	.align 2
 VerdanturfTown_Mart_Pokemart:
 	.2byte ITEM_BRONZE_POUCH
-	.2byte ITEM_NEST_BALL
+	.2byte ITEM_ELEMENTAL_POUCH
 	.2byte ITEM_SUPER_POTION
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL

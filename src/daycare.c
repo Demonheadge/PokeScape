@@ -691,10 +691,10 @@ static void InheritPokeball(struct Pokemon *egg, struct BoxPokemon *father, stru
     u16 fatherSpecies = GetBoxMonData(father, MON_DATA_SPECIES);
     u16 motherSpecies = GetBoxMonData(mother, MON_DATA_SPECIES);
 
-    if (fatherBall == ITEM_CRYSTAL_POUCH || fatherBall == ITEM_CHERISH_BALL)
+    if (fatherBall == ITEM_DRAGON_POUCH || fatherBall == ITEM_CHERISH_BALL)
         fatherBall = ITEM_NORMAL_POUCH;
 
-    if (motherBall == ITEM_CRYSTAL_POUCH || motherBall == ITEM_CHERISH_BALL)
+    if (motherBall == ITEM_DRAGON_POUCH || motherBall == ITEM_CHERISH_BALL)
         motherBall = ITEM_NORMAL_POUCH;
 
     if (P_BALL_INHERITING >= GEN_7)
