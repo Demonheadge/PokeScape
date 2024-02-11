@@ -153,6 +153,7 @@ struct InGameTrade {
     u8 ivs[NUM_STATS];
     u8 abilityNum;
     u32 otId;
+    u32 moves[4];
     u8 conditions[CONTEST_CATEGORIES_COUNT];
     u32 personality;
     u16 heldItem;
@@ -4529,13 +4530,19 @@ static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTr
 {
     const struct InGameTrade *inGameTrade = &sIngameTrades[whichInGameTrade];
     u8 level = GetMonData(&gPlayerParty[whichPlayerMon], MON_DATA_LEVEL);
+    u8 i;
 
     struct Mail mail;
     u8 metLocation = METLOC_IN_GAME_TRADE;
     u8 mailNum;
     struct Pokemon *pokemon = &gEnemyParty[0];
 
-    CreateMon(pokemon, inGameTrade->species, level, USE_RANDOM_IVS, TRUE, inGameTrade->personality, OT_ID_PRESET, inGameTrade->otId);
+    if (inGameTrade->personality == 0x00){
+        CreateMon(pokemon, inGameTrade->species, level, USE_RANDOM_IVS, FALSE, 0, OT_ID_PRESET, inGameTrade->otId);
+    }
+    else{
+        CreateMon(pokemon, inGameTrade->species, level, USE_RANDOM_IVS, FALSE, 0, OT_ID_PRESET_SHINY, inGameTrade->otId);
+    }
 
     SetMonData(pokemon, MON_DATA_HP_IV, &inGameTrade->ivs[0]);
     SetMonData(pokemon, MON_DATA_ATK_IV, &inGameTrade->ivs[1]);
@@ -4554,6 +4561,12 @@ static void CreateInGameTradePokemonInternal(u8 whichPlayerMon, u8 whichInGameTr
     SetMonData(pokemon, MON_DATA_TOUGH, &inGameTrade->conditions[4]);
     SetMonData(pokemon, MON_DATA_SHEEN, &inGameTrade->sheen);
     SetMonData(pokemon, MON_DATA_MET_LOCATION, &metLocation);
+
+    for (i = 0; i < 4; i++)
+    {
+        SetMonData(pokemon, MON_DATA_MOVE1 + i, &inGameTrade->moves[i]);
+        SetMonData(pokemon, MON_DATA_PP1 + i, &gBattleMoves[inGameTrade->moves[i]].pp);
+    }
 
     mailNum = 0;
     if (inGameTrade->heldItem != ITEM_NONE)

@@ -6112,3 +6112,52 @@ u16 GetSpeciesPreEvolution(u16 species)
 
     return SPECIES_NONE;
 }
+
+void MaxHpIV (void){
+    u8 iv = 31;
+    SetMonData(&gPlayerParty[GetLeadMonIndex()],MON_DATA_HP_IV, &iv);
+    CalculateMonStats(&gPlayerParty[GetLeadMonIndex()]);
+    return;
+}
+
+void MaxAtkIV (void){
+    u8 iv = 31;
+    SetMonData(&gPlayerParty[GetLeadMonIndex()],MON_DATA_ATK_IV, &iv);
+    CalculateMonStats(&gPlayerParty[GetLeadMonIndex()]);
+    return;
+}
+
+void MaxDefIV (void){
+    u8 iv = 31;
+    SetMonData(&gPlayerParty[GetLeadMonIndex()],MON_DATA_DEF_IV, &iv);
+    CalculateMonStats(&gPlayerParty[GetLeadMonIndex()]);
+    return;
+}
+
+void MaxSpAtkIV (void){
+    u8 iv = 31;
+    SetMonData(&gPlayerParty[GetLeadMonIndex()],MON_DATA_SPATK_IV, &iv);
+    CalculateMonStats(&gPlayerParty[GetLeadMonIndex()]);
+    return;
+}
+
+void MaxSpDefIV (void){
+    u8 iv = 31;
+    SetMonData(&gPlayerParty[GetLeadMonIndex()],MON_DATA_SPDEF_IV, &iv);
+    CalculateMonStats(&gPlayerParty[GetLeadMonIndex()]);
+    return;
+}
+
+void MaxSpeedIV (void){
+    u8 iv = 31;
+    SetMonData(&gPlayerParty[GetLeadMonIndex()],MON_DATA_SPEED_IV, &iv);
+    CalculateMonStats(&gPlayerParty[GetLeadMonIndex()]);
+    return;
+}
+
+void MinSpeedIV(void){
+    u8 iv = 0;
+    SetMonData(&gPlayerParty[GetLeadMonIndex()],MON_DATA_SPEED_IV, &iv);
+    CalculateMonStats(&gPlayerParty[GetLeadMonIndex()]);
+    return;
+}

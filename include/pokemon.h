@@ -712,5 +712,11 @@ u16 SanitizeSpeciesId(u16 species);
 bool32 IsSpeciesEnabled(u16 species);
 u16 GetCryIdBySpecies(u16 species);
 u16 GetSpeciesPreEvolution(u16 species);
+void MaxHpIv(void);
+void MaxAtkIv(void);
+void MaxDefIv(void);
+void MaxSpAtkIv(void);
+void MaxSpDefIv(void);
+void MaxSpeedIv(void);
 
 #endif // GUARD_POKEMON_H

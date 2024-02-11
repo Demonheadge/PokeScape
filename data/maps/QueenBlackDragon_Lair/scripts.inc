@@ -31,7 +31,7 @@ QBD_Battle_QBD::
 	setvar VAR_0x8004, SPECIES_DRAGON_QUEEN_BLACK_FORM
 	setvar VAR_0x8005, 70  @ level
 	setvar VAR_0x8006, ITEM_NONE
-	special CreateEventLegalEnemyMon
+	special CreateEnemyEventMon
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

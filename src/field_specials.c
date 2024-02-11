@@ -1677,6 +1677,19 @@ bool8 InMultiPartnerRoom(void)
     return FALSE;
 }
 
+
+u32 GetCurrentMap(void)
+{
+    return (gSaveBlock1Ptr->location.mapGroup << 8) | gSaveBlock1Ptr->location.mapNum;
+}
+
+u32 GetSeededResult(void)
+{
+    u32 mapId = gSaveBlock1Ptr->location.mapNum;
+    u32 result = (VarGet(VAR_SEED) ^ mapId) % VarGet(VAR_TEMP_9);
+    return result;
+}
+
 void OffsetCameraForBattle(void)
 {
     SetCameraPanningCallback(NULL);

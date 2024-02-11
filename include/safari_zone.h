@@ -9,6 +9,8 @@ void ResetSafariZoneFlag(void);
 
 void EnterSafariMode(void);
 void ExitSafariMode(void);
+void SafariModeRestartSteps(void);
+void SafariModeIncreasePouches(void);
 
 bool8 SafariZoneTakeStep(void);
 void SafariZoneRetirePrompt(void);

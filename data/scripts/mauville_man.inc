@@ -80,7 +80,7 @@ MauvilleCity_PokemonCenter_1F_EventScript_TryTeachWord::
 
 MauvilleCity_PokemonCenter_1F_EventScript_TeachWord::
 	msgbox MauvilleCity_PokemonCenter_1F_Text_HaveYouHeardOfPhrase, MSGBOX_DEFAULT
-	special SetHipsterSpokenFlag
+	special SetHipsterTaughtWord
 	release
 	end
 

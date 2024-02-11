@@ -984,70 +984,70 @@ static const union AffineAnimCmd *const sAffineAnims_CrossingMonPics[] =
 
 static const struct InGameTrade sIngameTrades[] =
 {
-    [INGAME_TRADE_SEEDOT] =
+    [INGAME_TRADE_RED_DRAGON] =
     {
-        .nickname = _("DOTS"),
-        .species = SPECIES_SEEDOT,
-        .ivs = {5, 4, 5, 4, 4, 4},
-        .abilityNum = 1,
-        .otId = 38726,
-        .conditions = {30, 5, 5, 5, 5},
-        .personality = 0x84,
-        .heldItem = ITEM_CHESTO_BERRY,
+        .nickname = _("Sottlepot"),
+        .species = SPECIES_DRAGON_RED_FORM,
+        .ivs = {4, 5, 4, 5, 4, 4},
+        .abilityNum = 0,
+        .otId = 33158,
+        .moves = {MOVE_YAWN, 0, 0, 0},
+        .personality = 0x00,
+        .heldItem = ITEM_NONE,
         .mailNum = -1,
-        .otName = _("KOBE"),
+        .otName = _("RODDECK"),
         .otGender = MALE,
-        .sheen = 10,
-        .requestedSpecies = SPECIES_RALTS
+        .sheen = 0,
+        .requestedSpecies = SPECIES_DRAGONLING_GREEN_FORM
     },
-    [INGAME_TRADE_PLUSLE] =
+    [INGAME_TRADE_KING_RAT] =
     {
-        .nickname = _("PLUSES"),
-        .species = SPECIES_PLUSLE,
-        .ivs = {4, 4, 4, 5, 5, 4},
-        .abilityNum = 0,
-        .otId = 73996,
-        .conditions = {5, 5, 30, 5, 5},
-        .personality = 0x6F,
-        .heldItem = ITEM_WOOD_MAIL,
-        .mailNum = 0,
-        .otName = _("ROMAN"),
-        .otGender = MALE,
-        .sheen = 10,
-        .requestedSpecies = SPECIES_VOLBEAT
-    },
-    [INGAME_TRADE_HORSEA] =
-    {
-        .nickname = _("SEASOR"),
-        .species = SPECIES_HORSEA,
-        .ivs = {5, 4, 4, 4, 5, 4},
-        .abilityNum = 0,
-        .otId = 46285,
-        .conditions = {5, 5, 5, 5, 30},
-        .personality = 0x7F,
-        .heldItem = ITEM_WAVE_MAIL,
-        .mailNum = 1,
-        .otName = _("SKYLAR"),
-        .otGender = MALE,
-        .sheen = 10,
-        .requestedSpecies = SPECIES_BAGON
-    },
-    [INGAME_TRADE_MEOWTH] =
-    {
-        .nickname = _("MEOWOW"),
-        .species = SPECIES_MEOWTH,
+        .nickname = _("HARALD"),
+        .species = SPECIES_RAT_KING_FORM,
         .ivs = {4, 5, 4, 5, 4, 4},
         .abilityNum = 0,
         .otId = 91481,
-        .conditions = {5, 5, 5, 30, 5},
-        .personality = 0x8B,
-        .heldItem = ITEM_RETRO_MAIL,
-        .mailNum = 2,
-        .otName = _("ISIS"),
-        .otGender = FEMALE,
+        .moves = {MOVE_NONE, 0, 0, 0},
+        .personality = 0x00,
+        .heldItem = ITEM_NONE,
+        .mailNum = -1,
+        .otName = _("PWNER69"),
+        .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_SKITTY
-    }
+        .requestedSpecies = SPECIES_GIANT_RAT_NORMAL_FORM
+    },
+    [INGAME_TRADE_BIRDS_NEST] =
+    {
+        .nickname = _("BLIMEY"),
+        .species = SPECIES_CAVE_SLIME,
+        .ivs = {4, 5, 4, 5, 4, 4},
+        .abilityNum = 0,
+        .otId = 73581,
+        .moves = {MOVE_NONE, 0, 0, 0},
+        .personality = 0x00,
+        .heldItem = ITEM_NONE,
+        .mailNum = -1,
+        .otName = _("CAM"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_PIG
+    },
+    [INGAME_TRADE_CAVE_SLIME] =
+    {
+        .nickname = _("CHIRPY"),
+        .species = SPECIES_BIRD_NEST,
+        .ivs = {4, 5, 4, 5, 4, 4},
+        .abilityNum = 0,
+        .otId = 73581,
+        .moves = {MOVE_NONE, 0, 0, 0},
+        .personality = 0x00,
+        .heldItem = ITEM_NONE,
+        .mailNum = -1,
+        .otName = _("CH0PP3R"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_GIANT_RAT_NORMAL_FORM
+    },
 };
 
 static const u16 sIngameTradeMail[][MAIL_WORDS_COUNT + 1] =

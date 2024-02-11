@@ -89,6 +89,16 @@ bool8 SafariZoneTakeStep(void)
     return FALSE;
 }
 
+void SafariModeRestartSteps(void)
+{
+    sSafariZoneStepCounter = 50;
+}
+
+void SafariModeIncreasePouches(void)
+{
+    gNumSafariBalls = gNumSafariBalls+5;
+}
+
 void SafariZoneRetirePrompt(void)
 {
     ScriptContext_SetupScript(SafariZone_EventScript_RetirePrompt);
