@@ -1565,7 +1565,7 @@ u8 GetTrainerEncounterMusicIdInBattlePyramid(u16 trainerId)
 
 static void UNUSED BattlePyramidRetireChallenge(void)
 {
-    ScriptContext_SetupScript(BattlePyramid_Retire);
+    //ScriptContext_SetupScript(BattlePyramid_Retire);
 }
 
 static u16 GetUniqueTrainerId(u8 objectEventId)
@@ -1704,16 +1704,16 @@ void LoadBattlePyramidObjectEventTemplates(void)
 
 void LoadBattlePyramidFloorObjectEventScripts(void)
 {
-    int i;
-    struct ObjectEventTemplate *events = gSaveBlock1Ptr->objectEventTemplates;
+//    int i;
+//    struct ObjectEventTemplate *events = gSaveBlock1Ptr->objectEventTemplates;
 
-    for (i = 0; i < OBJECT_EVENT_TEMPLATES_COUNT; i++)
-    {
-        if (events[i].graphicsId != OBJ_EVENT_GFX_ITEM_BALL)
-            events[i].script = BattlePyramid_TrainerBattle;
-        else
-            events[i].script = BattlePyramid_FindItemBall;
-    }
+    //for (i = 0; i < OBJECT_EVENT_TEMPLATES_COUNT; i++)
+    //{
+        //if (events[i].graphicsId != OBJ_EVENT_GFX_ITEM_BALL)
+            //events[i].script = BattlePyramid_TrainerBattle;
+        //else
+        //    events[i].script = BattlePyramid_FindItemBall;
+    //}
 }
 
 static void GetPyramidEntranceAndExitSquareIds(u8 *entranceSquareId, u8 *exitSquareId)

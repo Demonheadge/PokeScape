@@ -499,8 +499,8 @@ u32 UseWaterfall(struct PlayerAvatar playerAvatar, u32 fieldMoveStatus)
 
     if (FlagGet(FLAG_SYS_USE_WATERFALL))
         FieldEffectStart(FLDEFF_USE_WATERFALL_TOOL);
-    else if(fieldMoveStatus == FIELD_MOVE_POKEMON)
-        ScriptContext_SetupScript(EventScript_UseWaterfallMon);
+    //else if(fieldMoveStatus == FIELD_MOVE_POKEMON)
+    //    ScriptContext_SetupScript(EventScript_UseWaterfallMon);
     else if(fieldMoveStatus == FIELD_MOVE_TOOL)
         ScriptContext_SetupScript(EventScript_UseWaterfallTool);
 

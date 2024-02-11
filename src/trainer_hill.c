@@ -654,7 +654,7 @@ void LoadTrainerHillObjectEventTemplates(void)
         bits = i << 2;
         eventTemplates[i].movementType = ((sHillData->floors[floorId].map.trainerDirections >> bits) & 0xF) + MOVEMENT_TYPE_FACE_UP;
         eventTemplates[i].trainerRange_berryTreeId = (sHillData->floors[floorId].map.trainerRanges >> bits) & 0xF;
-        eventTemplates[i].script = TrainerHill_EventScript_TrainerBattle;
+        //eventTemplates[i].script = TrainerHill_EventScript_TrainerBattle;
         gSaveBlock2Ptr->frontier.trainerIds[i] = i + 1;
     }
 
@@ -848,7 +848,8 @@ void SetHillTrainerFlag(void)
 
 const u8 *GetTrainerHillTrainerScript(void)
 {
-    return TrainerHill_EventScript_TrainerBattle;
+    //return TrainerHill_EventScript_TrainerBattle;
+    return 0;
 }
 
 static void ShowTrainerHillPostBattleText(void)

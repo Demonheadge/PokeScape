@@ -1679,7 +1679,7 @@ void ItemUseOutOfBattle_SweetScentTool(u8 taskId)
 }
 // End qol_field_moves
 
-extern void  CB2_FieldShowRegionMap(void);
+extern void CB2_FieldShowRegionMap(void);
 
 void ItemUseOutOfBattle_PokescapeMap(u8 taskId)
 {

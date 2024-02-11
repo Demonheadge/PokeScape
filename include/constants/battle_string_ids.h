@@ -697,7 +697,20 @@
 #define STRINGID_THESWAMPDISAPPEARED                  695
 #define STRINGID_PKMNTELLCHILLINGRECEPTIONJOKE        696
 
-#define BATTLESTRINGS_COUNT                           697
+#define BATTLESTRINGS_VANILLA_END                     STRINGID_PKMNTELLCHILLINGRECEPTIONJOKE
+
+#define STRINGID_CANTRUNFROMRAT                       (BATTLESTRINGS_VANILLA_END + 1)
+#define STRINGID_THINGSGETWEIRD                       (BATTLESTRINGS_VANILLA_END + 2)
+#define STRINGID_CHAOTICRIFTENDS                      (BATTLESTRINGS_VANILLA_END + 3)
+#define STRINGID_KARILCROSSBOW                        (BATTLESTRINGS_VANILLA_END + 4)
+#define STRINGID_AHRIMSTAFF                           (BATTLESTRINGS_VANILLA_END + 5)
+#define STRINGID_TORAGHAMMER                          (BATTLESTRINGS_VANILLA_END + 6)
+#define STRINGID_PETRIFY                              (BATTLESTRINGS_VANILLA_END + 7)
+#define STRINGID_TOOSCARED                            (BATTLESTRINGS_VANILLA_END + 8)
+#define STRINGID_FIRESHIELDENDS                       (BATTLESTRINGS_VANILLA_END + 9)
+
+#define BATTLESTRINGS_POKESCAPE_COUNT                 (BATTLESTRINGS_VANILLA_END - BATTLESTRINGS_VANILLA_END)
+#define BATTLESTRINGS_COUNT                           (BATTLESTRINGS_VANILLA_END + BATTLESTRINGS_POKESCAPE_COUNT + 1)
 
 // This is the string id that gBattleStringsTable starts with.
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,

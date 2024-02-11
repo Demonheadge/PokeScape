@@ -66,7 +66,7 @@ MauvilleCity_PokemonCenter_1F_EventScript_Hipster::
 	faceplayer
 	setflag FLAG_SYS_HIPSTER_MEET
 	msgbox MauvilleCity_PokemonCenter_1F_Text_TeachWhatsHipAndHappening, MSGBOX_DEFAULT
-	special GetHipsterSpokenFlag
+	@special GetHipsterSpokenFlag
 	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_PokemonCenter_1F_EventScript_TryTeachWord
 	msgbox MauvilleCity_PokemonCenter_1F_Text_IAlreadyTaughtYou, MSGBOX_DEFAULT
 	release

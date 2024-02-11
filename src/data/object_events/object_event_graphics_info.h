@@ -1781,6 +1781,25 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MrBrineysBoat = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayFieldMove = {
+    .tileTag = TAG_NONE, 
+    .paletteTag = OBJ_EVENT_PAL_TAG_MAY, 
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION, 
+    .size = 512, 
+    .width = 32, 
+    .height = 32, 
+    .paletteSlot = 0, 
+    .shadowSize = SHADOW_SIZE_M, 
+    .inanimate = FALSE, 
+    .disableReflectionPaletteLoad = FALSE, 
+    .tracks = TRACKS_FOOT, 
+    .oam = &gObjectEventBaseOam_32x32, 
+    .subspriteTables = sOamTables_32x32, 
+    .anims = sAnimTable_FieldMove, 
+    .images = sPicTable_MayFieldMove, 
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Truck = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_TRUCK,
@@ -4572,6 +4591,102 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh = {
     .anims = sAnimTable_HoOh,
     .images = sPicTable_HoOh,
     .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+//Pokescape Start
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CUPHOLDER1 = {
+    .tileTag = TAG_NONE, 
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1, 
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE, 
+    .size = 256, 
+    .width = 16, 
+    .height = 32, 
+    .paletteSlot = 2, 
+    .shadowSize = SHADOW_SIZE_M, 
+    .inanimate = FALSE, 
+    .disableReflectionPaletteLoad = FALSE, 
+    .tracks = TRACKS_FOOT, 
+    .oam = &gObjectEventBaseOam_16x32, 
+    .subspriteTables = sOamTables_16x32, 
+    .anims = sAnimTable_Standard, 
+    .images = sPicTable_CUPHOLDER1, 
+    .affineAnims = gDummySpriteAffineAnimTable
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CUPHOLDER2 = {
+    .tileTag = TAG_NONE, 
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1, 
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE, 
+    .size = 256, 
+    .width = 16, 
+    .height = 32, 
+    .paletteSlot = 2, 
+    .shadowSize = SHADOW_SIZE_M, 
+    .inanimate = FALSE, 
+    .disableReflectionPaletteLoad = FALSE, 
+    .tracks = TRACKS_FOOT, 
+    .oam = &gObjectEventBaseOam_16x32, 
+    .subspriteTables = sOamTables_16x32, 
+    .anims = sAnimTable_Standard, 
+    .images = sPicTable_CUPHOLDER2,
+    .affineAnims = gDummySpriteAffineAnimTable
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CUPHOLDER3 = {
+    .tileTag = TAG_NONE, 
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1, 
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE, 
+    .size = 256, 
+    .width = 16, 
+    .height = 32, 
+    .paletteSlot = 2, 
+    .shadowSize = SHADOW_SIZE_M, 
+    .inanimate = FALSE, 
+    .disableReflectionPaletteLoad = FALSE, 
+    .tracks = TRACKS_FOOT, 
+    .oam = &gObjectEventBaseOam_16x32, 
+    .subspriteTables = sOamTables_16x32, 
+    .anims = sAnimTable_Standard, 
+    .images = sPicTable_CUPHOLDER3, 
+    .affineAnims = gDummySpriteAffineAnimTable
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CUPHOLDER4 = {
+    .tileTag = TAG_NONE, 
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1, 
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE, 
+    .size = 256, 
+    .width = 16, 
+    .height = 32, 
+    .paletteSlot = 2, 
+    .shadowSize = SHADOW_SIZE_M, 
+    .inanimate = FALSE, 
+    .disableReflectionPaletteLoad = FALSE, 
+    .tracks = TRACKS_FOOT, 
+    .oam = &gObjectEventBaseOam_16x32, 
+    .subspriteTables = sOamTables_16x32, 
+    .anims = sAnimTable_Standard, 
+    .images = sPicTable_CUPHOLDER4, 
+    .affineAnims = gDummySpriteAffineAnimTable
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CUPHOLDER5 = {
+    .tileTag = TAG_NONE, 
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1, 
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE, 
+    .size = 256, 
+    .width = 16, 
+    .height = 32, 
+    .paletteSlot = 2, 
+    .shadowSize = SHADOW_SIZE_M, 
+    .inanimate = FALSE, 
+    .disableReflectionPaletteLoad = FALSE, 
+    .tracks = TRACKS_FOOT, 
+    .oam = &gObjectEventBaseOam_16x32, 
+    .subspriteTables = sOamTables_16x32, 
+    .anims = sAnimTable_Standard, 
+    .images = sPicTable_CUPHOLDER5, 
+    .affineAnims = gDummySpriteAffineAnimTable
 };
 
 //Kalphites

@@ -834,6 +834,17 @@ static const u8 sText_TheSeaOfFireDisappeared[] = _("The sea of fire around {B_A
 static const u8 sText_SwampEnvelopedSide[] = _("A swamp enveloped\n{B_DEF_TEAM2} team!");
 static const u8 sText_TheSwampDisappeared[] = _("The swamp around {B_ATK_TEAM2}\nteam disappeared!");
 
+//Pokescape Start
+static const u8 sText_CantRunFromRat[] = _("DON'T EVEN THINK ABOUT RUNNING\nFROM A RAT!!");
+static const u8 sText_ThingsGetWeird[] = _("Things just got weird..");
+static const u8 sText_ChaoticRiftEnds[] = _("The weird presence fades.");
+static const u8 sText_KarilCrossbow[] =_("{B_ATK_NAME_WITH_PREFIX}'s {B_LAST_ITEM} LOWERED\n{B_DEF_NAME_WITH_PREFIX}'s SPEED!");
+static const u8 sText_AhrimStaff[] =_("{B_ATK_NAME_WITH_PREFIX}'s {B_LAST_ITEM} LOWERED\n{B_DEF_NAME_WITH_PREFIX}'s ATTACK!");
+static const u8 sText_ToragHammer[] =_("{B_ATK_NAME_WITH_PREFIX}'s {B_LAST_ITEM} PREVENTS\n{B_DEF_NAME_WITH_PREFIX} FROM RUNNING!");
+static const u8 sText_Petrify[] =_("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\nlowers {B_DEF_NAME_WITH_PREFIX}'s SPEED!");
+static const u8 sText_TooScared[] =_("{B_ATK_NAME_WITH_PREFIX}'s {B_LAST_ABILITY} makes\n{B_DEF_NAME_WITH_PREFIX} only able to attack!");
+static const u8 sText_FireShieldEnds[] = _("{B_DEF_NAME_WITH_PREFIX}'s fire shield\ndissipates!");
+
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
     [STRINGID_THESWAMPDISAPPEARED - BATTLESTRINGS_TABLE_START] = sText_TheSwampDisappeared,
@@ -1521,6 +1532,17 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_ULTRABURSTCOMPLETED - BATTLESTRINGS_TABLE_START] = sText_UltraBurstCompleted,
     [STRINGID_TEAMGAINEDEXP - BATTLESTRINGS_TABLE_START] = sText_TeamGainedEXP,
     [STRINGID_TARGETCOVEREDINSTICKYCANDYSYRUP - BATTLESTRINGS_TABLE_START] = sText_TargetCoveredInStickyCandySyrup,
+    
+    //Pokescape Start
+    [STRINGID_CANTRUNFROMRAT - BATTLESTRINGS_TABLE_START] = sText_CantRunFromRat,
+    [STRINGID_THINGSGETWEIRD - BATTLESTRINGS_TABLE_START] = sText_ThingsGetWeird,
+    [STRINGID_CHAOTICRIFTENDS - BATTLESTRINGS_TABLE_START] = sText_ChaoticRiftEnds,
+    [STRINGID_KARILCROSSBOW - BATTLESTRINGS_TABLE_START] = sText_KarilCrossbow,
+    [STRINGID_AHRIMSTAFF - BATTLESTRINGS_TABLE_START] = sText_AhrimStaff,
+    [STRINGID_TORAGHAMMER - BATTLESTRINGS_TABLE_START] = sText_ToragHammer,
+    [STRINGID_PETRIFY - BATTLESTRINGS_TABLE_START] = sText_Petrify,
+    [STRINGID_TOOSCARED - BATTLESTRINGS_TABLE_START] = sText_TooScared,
+    [STRINGID_FIRESHIELDENDS - BATTLESTRINGS_TABLE_START] = sText_FireShieldEnds,
 };
 
 const u16 gTrainerUsedItemStringIds[] =
