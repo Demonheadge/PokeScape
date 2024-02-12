@@ -12,7 +12,7 @@ jobs:
       GAME_VERSION: EMERALD
       GAME_REVISION: 0
       GAME_LANGUAGE: ENGLISH
-      MODERN: 0
+      MODERN: 1
       COMPARE: 0
     steps:
       - name: Checkout
