@@ -160,4 +160,11 @@ bool8 MetatileBehavior_IsSidewaysStairsLeftSideBottom(u8 metatileBehavior);
 bool8 MetatileBehavior_IsSidewaysStairsRightSideAny(u8 metatileBehavior);
 bool8 MetatileBehavior_IsSidewaysStairsLeftSideAny(u8 metatileBehavior);
 
+//pokescape
+bool8 MetatileBehavior_IsWheat(u8);
+bool8 MetatileBehavior_IsRestBed(u8);
+bool8 MetatileBehavior_Is_DG_ROPE(u8);
+bool8 MetatileBehavior_Is_DG_STRING(u8);
+bool8 MetatileBehavior_Is_DG_SPINNING_WHEEL(u8);
+
 #endif // GUARD_METATILE_BEHAVIOR_H

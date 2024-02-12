@@ -683,6 +683,43 @@ const struct BattleBackground sBattleTerrainTable[] =
         .entryTilemap = gBattleTerrainAnimTilemap_Building,
         .palette = gBattleTerrainPalette_Plain,
     },
+
+    // Pokescape Start
+    [BATTLE_TERRAIN_POKESCAPE_WILDERNESS] =
+    {
+        .tileset = gBattleTerrainTiles_Wilderness,
+        .tilemap = gBattleTerrainTilemap_Wilderness,
+        .entryTileset = gBattleTerrainAnimTiles_Wilderness,
+        .entryTilemap = gBattleTerrainAnimTilemap_Wilderness,
+        .palette = gBattleTerrainPalette_Wilderness,
+    },
+
+	[BATTLE_TERRAIN_POKESCAPE_WHEAT] =
+    {
+        .tileset = gBattleTerrainTiles_Wheat,
+        .tilemap = gBattleTerrainTilemap_Wheat,
+        .entryTileset = gBattleTerrainAnimTiles_Wheat,
+        .entryTilemap = gBattleTerrainAnimTilemap_Wheat,
+        .palette = gBattleTerrainPalette_Wheat,
+    },
+
+    [BATTLE_TERRAIN_POKESCAPE_BARROWS] =
+    {
+        .tileset = gBattleTerrainTiles_POKESCAPE_BARROWS,
+        .tilemap = gBattleTerrainTilemap_POKESCAPE_BARROWS,
+        .entryTileset = gBattleTerrainAnimTiles_POKESCAPE_BARROWS,
+        .entryTilemap = gBattleTerrainAnimTilemap_POKESCAPE_BARROWS,
+        .palette = gBattleTerrainPalette_POKESCAPE_BARROWS,
+    },
+
+    [BATTLE_TERRAIN_POKESCAPE_GRASS] =
+    {
+        .tileset = gBattleTerrainTiles_POKESCAPE_GRASS,
+        .tilemap = gBattleTerrainTilemap_POKESCAPE_GRASS,
+        .entryTileset = gBattleTerrainAnimTiles_POKESCAPE_GRASS,
+        .entryTilemap = gBattleTerrainAnimTilemap_POKESCAPE_GRASS,
+        .palette = gBattleTerrainPalette_POKESCAPE_GRASS,
+    },
 };
 
 static void UNUSED CB2_UnusedBattleInit(void);

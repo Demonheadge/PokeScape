@@ -73,6 +73,9 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_RayquazaSpotlight         @ FLDEFF_RAYQUAZA_SPOTLIGHT
 	.4byte gFieldEffectScript_DestroyDeoxysRock         @ FLDEFF_DESTROY_DEOXYS_ROCK
 	.4byte gFieldEffectScript_MoveDeoxysRock            @ FLDEFF_MOVE_DEOXYS_ROCK
+	.4byte gFldEffScript_UseVsSeeker                    @ FLDEFF_USE_VS_SEEKER
+	.4byte gFldEffScript_XIcon                          @ FLDEFF_X_ICON
+	.4byte gFldEffScript_DoubleExclMarkIcon             @ FLDEFF_DOUBLE_EXCL_MARK_ICON
 @ Start qol_field_moves
     .4byte gFieldEffectScript_UseSurfTool               @ FLDEFF_USE_SURF_TOOL
     .4byte gFieldEffectScript_UseWaterfallTool          @ FLDEFF_USE_WATERFALL_TOOL 

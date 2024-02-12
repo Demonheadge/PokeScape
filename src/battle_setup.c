@@ -676,7 +676,7 @@ u8 BattleSetup_GetTerrainId(void)
     if (MetatileBehavior_IsSandOrDeepSand(tileBehavior))
         return BATTLE_TERRAIN_SAND;
 	if (MetatileBehavior_IsWheat(tileBehavior))
-        return BATTLE_TERRAIN_GRASS; // change to BATTLE_TERRAIN_POKESCAPE_WHEAT;
+        return BATTLE_TERRAIN_POKESCAPE_WHEAT;
 
     switch (gMapHeader.mapType)
     {
@@ -701,10 +701,10 @@ u8 BattleSetup_GetTerrainId(void)
         return BATTLE_TERRAIN_PLAIN;
 	case MAP_TYPE_WILDERNESS:
 		if (MetatileBehavior_IsTallGrass(tileBehavior))
-			return BATTLE_TERRAIN_GRASS; // change to BATTLE_TERRAIN_POKESCAPE_WILDERNESS;
+			return BATTLE_TERRAIN_POKESCAPE_WILDERNESS;
     case MAP_TYPE_BARROWS:
 		if (MetatileBehavior_IsTallGrass(tileBehavior))
-			return BATTLE_TERRAIN_GRASS; // change to BATTLE_TERRAIN_POKESCAPE_BARROWS;
+			return BATTLE_TERRAIN_POKESCAPE_BARROWS;
 	case MAP_TYPE_ROUTE:
 		if (MetatileBehavior_IsTallGrass(tileBehavior))
 			return BATTLE_TERRAIN_GRASS;
