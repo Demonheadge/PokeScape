@@ -1,0 +1,6 @@
+[submodule "tools/flips"]
+	path = tools/flips
+	url = https://github.com/Alcaro/Flips.git
+[submodule "tools/pokeemerald"]
+	path = tools/pokeemerald
+	url = https://github.com/pret/pokeemerald.git
