@@ -63,4 +63,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pokescape.bps
-          path: pokescape.bps
+          path: pokescape_agbcc.bps
