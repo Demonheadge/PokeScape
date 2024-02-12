@@ -46,12 +46,20 @@
 #include "union_room_chat.h"
 #include "quests.h"
 #include "constants/items.h"
+#include "constants/heal_locations.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 
 static void ClearFrontierRecord(void);
-static void WarpToTruck(void);
 static void ResetMiniGamesRecords(void);
+static void WarpToLUMBRIDGE(void);
+static void WarpToFALADOR(void);
+static void WarpToVARROCK(void);
+static void WarpToALKHARID(void);
+static void WarpToYANILLE(void);
+static void WarpToARDOUGNE(void);
+static void WarpToCATHERBY(void);
+static void WarpToRELLEKKA(void);
 
 EWRAM_DATA bool8 gDifferentSaveFile = FALSE;
 EWRAM_DATA bool8 gEnableContestDebugging = FALSE;
@@ -125,9 +133,44 @@ static void ClearFrontierRecord(void)
     gSaveBlock2Ptr->frontier.opponentNames[1][0] = EOS;
 }
 
-static void WarpToTruck(void)
+static void WarpToLUMBRIDGE(void)
 {
-    SetWarpDestination(MAP_GROUP(INSIDE_OF_TRUCK), MAP_NUM(INSIDE_OF_TRUCK), WARP_ID_NONE, -1, -1);
+    SetWarpDestination(MAP_GROUP(LUMBRIDGE_HOUSE_STARTER2), MAP_NUM(LUMBRIDGE_HOUSE_STARTER2), -1, 5, 5);
+    WarpIntoMap();
+}
+static void WarpToFALADOR(void)
+{
+    SetWarpDestination(MAP_GROUP(STARTER_HOUSE_FALADOR), MAP_NUM(STARTER_HOUSE_FALADOR), -1, 3, 5);
+    WarpIntoMap();
+}
+static void WarpToVARROCK(void)
+{
+    SetWarpDestination(MAP_GROUP(STARTER_HOUSE_VARROCK), MAP_NUM(STARTER_HOUSE_VARROCK), -1, 3, 5);
+    WarpIntoMap();
+}
+static void WarpToALKHARID(void)
+{
+    SetWarpDestination(MAP_GROUP(STARTER_HOUSE_AL_KHARID), MAP_NUM(STARTER_HOUSE_AL_KHARID), 1, 5, 5);
+    WarpIntoMap();
+}
+static void WarpToYANILLE(void)
+{
+    SetWarpDestination(MAP_GROUP(STARTER_HOUSE_YANILLE), MAP_NUM(STARTER_HOUSE_YANILLE), 1, 5, 5);
+    WarpIntoMap();
+}
+static void WarpToARDOUGNE(void)
+{
+    SetWarpDestination(MAP_GROUP(ARDOUGNE), MAP_NUM(ARDOUGNE), 1, 5, 5);
+    WarpIntoMap();
+}
+static void WarpToCATHERBY(void)
+{
+    SetWarpDestination(MAP_GROUP(RIMMINGTON), MAP_NUM(RIMMINGTON), 1, 5, 5);
+    WarpIntoMap();
+}
+static void WarpToRELLEKKA(void)
+{
+    SetWarpDestination(MAP_GROUP(STARTER_HOUSE_RELLEKKA), MAP_NUM(STARTER_HOUSE_RELLEKKA), 1, 5, 5);
     WarpIntoMap();
 }
 
@@ -193,7 +236,49 @@ void NewGameInitData(void)
     InitDewfordTrend();
     ResetFanClub();
     ResetLotteryCorner();
-    WarpToTruck();
+    
+    //POKESCAPE STARTING LOCATIONS
+    if (gSaveBlock2Ptr->regionLocation == 0)
+    {
+        WarpToLUMBRIDGE();
+	    SetLastHealLocationWarp(HEAL_LOCATION_LUMBRIDGE);
+    }
+    if (gSaveBlock2Ptr->regionLocation == 1)
+    {
+        WarpToFALADOR();
+	    SetLastHealLocationWarp(HEAL_LOCATION_FALADOR2);
+    }
+    if (gSaveBlock2Ptr->regionLocation == 2)
+    {
+        WarpToVARROCK();
+	    SetLastHealLocationWarp(HEAL_LOCATION_VARROCK2);
+    }
+    if (gSaveBlock2Ptr->regionLocation == 3)
+    {
+        WarpToALKHARID();
+	    SetLastHealLocationWarp(HEAL_LOCATION_AL_KHARID);
+    }
+    if (gSaveBlock2Ptr->regionLocation == 4)
+    {
+        WarpToYANILLE();
+	    SetLastHealLocationWarp(HEAL_LOCATION_YANILLE);
+    }
+    if (gSaveBlock2Ptr->regionLocation == 5)
+    {
+        WarpToARDOUGNE();
+	    SetLastHealLocationWarp(HEAL_LOCATION_ARDOUGNE);
+    }
+    if (gSaveBlock2Ptr->regionLocation == 6)
+    {
+        WarpToCATHERBY();
+	    SetLastHealLocationWarp(HEAL_LOCATION_MAZCAB_OTOT);
+    }
+    if (gSaveBlock2Ptr->regionLocation == 7)
+    {
+        WarpToRELLEKKA();
+	    SetLastHealLocationWarp(HEAL_LOCATION_RELLEKKA);
+    }
+
     RunScriptImmediately(EventScript_ResetAllMapFlags);
     ResetMiniGamesRecords();
     InitUnionRoomChatRegisteredTexts();
