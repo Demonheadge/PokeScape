@@ -158,8 +158,8 @@ NPC_FALADORPUB_BARMAID_3_Text_1:
 NPC_FALADORPUB_NPC1_Text_0:
 	.string "Today was a rough day.\p"
 	.string "Seven of my friends were killed and\n"
-	.string "then the perpetrator lit fireworks\l"
-	.string "over his head before he ran off.\p"
+	.string "then the perpetrator lit fireworks over\l"
+	.string "his head before he ran off.\p"
 	.string "I hate this job.$"
 
 NPC_FALADORPUB_NPC2_Text_0:

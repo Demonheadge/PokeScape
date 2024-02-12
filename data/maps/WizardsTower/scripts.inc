@@ -302,8 +302,8 @@ NPC_WIZARDSTOWER_NoobshowNPCs_Text_0:
 NPC_WIZARDSTOWER_NoobshowNPCs_Text_1:
 	.string "Hmm sorry, what is that?\p"
 	.string "I could not hear you because I was\n"
-	.string "totin my staff along this shiny\l"
-	.string "Wizards' Tower road.$"
+	.string "totin my staff along this shiny Wizards'\l"
+	.string "Tower road.$"
 
 NPC_WIZARDSTOWER_NoobshowNPCs_Text_2:
 	.string "Noob$"

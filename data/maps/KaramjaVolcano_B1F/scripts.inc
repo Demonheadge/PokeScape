@@ -478,8 +478,7 @@ BATTLE_KaramjaVolcano_HAM_1_Text_0:
 
 BATTLE_KaramjaVolcano_HAM_1_Text_1:
 	.string "Once we erupt this volcano it should\n"
-	.string "wipe out all of the monsters on\l"
-	.string "karamja!$"
+	.string "wipe out all of the monsters on karamja!$"
 
 BATTLE_KaramjaVolcano_HAM_2_Text_0:
 	.string "Ahhh!\n"
@@ -499,8 +498,7 @@ BATTLE_KaramjaVolcano_HAM_3_Text_1:
 
 BATTLE_KaramjaVolcano_HAM_3_Text_2:
 	.string "Even though you may have defeated me,\n"
-	.string "you stand no chance against our\l"
-	.string "leader!$"
+	.string "you stand no chance against our leader!$"
 
 BATTLE_KaramjaVolcano_HAM_4_Text_0:
 	.string "Dont try to stop us!$"

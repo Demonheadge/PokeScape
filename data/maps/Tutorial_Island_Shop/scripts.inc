@@ -24,6 +24,7 @@ Tutorial_Island_Shop_EventScript_Clerk_1:
 	return
 
 
+
 	.align 2
 	Tutorial_Island_Shop_Pokemart:
 	.2byte ITEM_BRONZE_POUCH

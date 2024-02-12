@@ -1311,8 +1311,8 @@ LeftDoorScript_Text_5:
 	.string "filling this BESTIARY with as much data\l"
 	.string "as possible.\p"
 	.string "Of course I wouldn't ask you to do it\n"
-	.string "for free, I'll be giving you one of 3\l"
-	.string "rare monsters to take with you on your\l"
+	.string "for free, I'll be giving you one of 3 rare\l"
+	.string "monsters to take with you on your\l"
 	.string "journey.$"
 
 LeftDoorScript_Text_6:
@@ -1372,8 +1372,7 @@ Lumbridge_Castle_Hans_1_Text_2:
 	.string "These are Pouches, you can capture\n"
 	.string "monsters with them.\p"
 	.string "Anyway, all the best on your adventure\n"
-	.string "{PLAYER}, I'm sure I'll see you\l"
-	.string "around.$"
+	.string "{PLAYER}, I'm sure I'll see you around.$"
 
 Starter_TRIGGER_Text_0:
 	.string "Don't leave!\p"
@@ -1594,8 +1593,8 @@ Mithrilman_LUMBRIDGE_STATE_2_Text_2:
 	.string "challenger of the duke thine can tell.\p"
 	.string "Whomst am I?\p"
 	.string "Look upon me in awe knave, for thine\n"
-	.string "amst the greatest of all challengers\l"
-	.string "of the PokeScapian realm.\p"
+	.string "amst the greatest of all challengers of\l"
+	.string "the PokeScapian realm.\p"
 	.string "Thine's a Mithrilman.$"
 
 Mithrilman_LUMBRIDGE_STATE_2_Text_3:

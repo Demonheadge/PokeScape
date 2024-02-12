@@ -156,6 +156,7 @@ GnomeBoi_Kevin_11:
 	goto GnomeBoi_Kevin_1
 
 
+
     .align 2
 Cheat_Menu_Shop_Pouches:
 	.2byte ITEM_NORMAL_POUCH
@@ -179,6 +180,7 @@ Cheat_Menu_Shop_Pouches:
     .2byte ITEM_NONE
     release
     end
+
 
     .align 2
 Cheat_Menu_Shop_Evolution:
@@ -219,6 +221,7 @@ Cheat_Menu_Shop_Evolution:
     .2byte ITEM_NONE
     release
     end
+
 
     .align 2
 Cheat_Menu_Shop_Medicine:
@@ -261,6 +264,7 @@ Cheat_Menu_Shop_Medicine:
     .2byte ITEM_NONE
     release
     end
+
 
     .align 2
 Cheat_Menu_Shop_TM:
@@ -334,6 +338,7 @@ Cheat_Menu_Shop_TM:
     .2byte ITEM_NONE
     release
     end
+
 
     .align 2
 Cheat_Menu_Shop_Misc:

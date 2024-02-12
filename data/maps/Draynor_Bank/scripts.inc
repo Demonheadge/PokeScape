@@ -134,9 +134,8 @@ NPC_LumbridgeBank_NPC1_Text_0:
 
 NPC_LumbridgeBank_NPC2_Text_0:
 	.string "Remember if your Monsters ever get\n"
-	.string "poisoned you can feed them a\l"
-	.string "Chocolate Sunday to make them feel\l"
-	.string "better!\p"
+	.string "poisoned you can feed them a Chocolate\l"
+	.string "Sunday to make them feel better!\p"
 	.string "What?\l"
 	.string "Do not worry.\p"
 	.string "Chocolate is not poisonous to\n"

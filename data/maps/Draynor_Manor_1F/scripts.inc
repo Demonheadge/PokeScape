@@ -343,8 +343,7 @@ NPC_DraynorManor_Ava_Text_3:
 NPC_DraynorManor_Ava_Text_4:
 	.string "I'm overjoyed with my new mattress!\p"
 	.string "It almost feels like I'm being consumed\n"
-	.string "by a fluffy…{PAUSE 15}{PAUSE 15} undead…{PAUSE 15}{PAUSE 15} zombie…{PAUSE 15}\l"
-	.string "chicken…?$"
+	.string "by a fluffy…{PAUSE 15}{PAUSE 15} undead…{PAUSE 15}{PAUSE 15} zombie…{PAUSE 15} chicken…?$"
 
 NPC_DraynorManor_Ava_Text_5:
 	.string "If only there were more trainers\n"

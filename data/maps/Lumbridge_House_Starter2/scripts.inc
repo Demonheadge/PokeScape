@@ -153,6 +153,7 @@ Set_The_Needle_Clock::
 	return
 
 
+
 EventScript_CheckClock::
 	incrementgamestat GAME_STAT_CHECKED_CLOCK
 	fadescreen FADE_TO_BLACK
@@ -659,8 +660,8 @@ Mithrilman_WILDERNESS1_Text_0:
 
 Mithrilman_WILDERNESS1_Text_1:
 	.string "Thine have beatenst the 8 strongest of\n"
-	.string "this realm and thine shall now smite\l"
-	.string "yee as the non Mithrilman thoust are.$"
+	.string "this realm and thine shall now smite yee\l"
+	.string "as the non Mithrilman thoust are.$"
 
 Mithrilman_WILDERNESS2_Text_0:
 	.string "Mithrilmen are solitary.\p"

@@ -273,8 +273,7 @@ ROUTE4_DaycareWatcher_Text_2:
 
 ROUTE4_DaycareWatcher_Text_3:
 	.string "Over time high achieving adventurers\n"
-	.string "visit our little farm and hand out\l"
-	.string "gifts.\p"
+	.string "visit our little farm and hand out gifts.\p"
 	.string "I wonder what makes them decide to\n"
 	.string "visit our little farm.$"
 

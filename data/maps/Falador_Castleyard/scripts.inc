@@ -696,8 +696,8 @@ NPC_FALADORCASTLE_QUEST_PART_1_Text_4:
 
 NPC_FALADORCASTLE_QUEST_PART_2_Text_0:
 	.string "The sooner the disturbance within the\n"
-	.string "Dwarven mines is sorted out, the\l"
-	.string "sooner we can have a gym battle$"
+	.string "Dwarven mines is sorted out, the sooner\l"
+	.string "we can have a gym battle$"
 
 NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT_Text_0:
 	.string "WHITE KNIGHT$"
@@ -893,8 +893,8 @@ NPC_FALADORCASTLE_GYM_SirRentee_Text_1:
 	.string "Crests.\p"
 	.string "I wanted to make a design for the Badge\n"
 	.string "of the Falador Gym too, but Sir Amik\l"
-	.string "prevered the design of some 'Stan'\l"
-	.string "fella over my design.\p"
+	.string "prevered the design of some 'Stan' fella\l"
+	.string "over my design.\p"
 	.string "Sigh, guess I could not compete against\n"
 	.string "such artistic brilliance.$"
 
@@ -1016,8 +1016,7 @@ NPC_FALADORCASTLE_SQUIRE_Text_1:
 NPC_FALADORCASTLE_KNIGHT_9_Text_0:
 	.string "This is the interrogation chamber.\p"
 	.string "Other knights call it the torture\n"
-	.string "chamber, although I wish they\l"
-	.string "wouldn't…$"
+	.string "chamber, although I wish they wouldn't…$"
 
 NPC_FALADORCASTLE_GUARD_2_Text_0:
 	.string "I am so lost.\p"

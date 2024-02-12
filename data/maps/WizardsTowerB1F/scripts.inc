@@ -84,8 +84,7 @@ NPC_WizardsTowerB1F_Sedridor_Text_0:
 
 NPC_WizardsTowerB1F_Sedridor_Text_1:
 	.string "Hello {PLAYER}, I heard from Ariane\n"
-	.string "that you gave chase into Draynor\l"
-	.string "Manor.\p"
+	.string "that you gave chase into Draynor Manor.\p"
 	.string "I would like you to have this.$"
 
 NPC_WizardsTowerB1F_Sedridor_Text_2:

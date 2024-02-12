@@ -306,6 +306,8 @@ CRAFTINGGUILD_MILKSELLER::
 	end
 
 
+
+
     .align 2
 FlavouredMilkShop:
 	.2byte ITEM_MILK_BUCKET

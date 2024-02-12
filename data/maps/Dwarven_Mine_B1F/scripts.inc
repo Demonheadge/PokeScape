@@ -471,8 +471,8 @@ NPC_DWARVENMINES_DWARF_1_Text_1:
 
 NPC_DWARVENMINES_DWARF_2_Text_0:
 	.string "There has been a cave-in within the\n"
-	.string "Motherlode Mine, it might take us\l"
-	.string "awhile to clear it.\p"
+	.string "Motherlode Mine, it might take us awhile\l"
+	.string "to clear it.\p"
 	.string "I feel for those poor adventurers\n"
 	.string "trapped inside when it clapsed though.$"
 
@@ -487,8 +487,7 @@ NPC_DWARVENMINES_DWARF_3_Text_0:
 	.string "transportation.\p"
 	.string "It can be a hard job when you are\n"
 	.string "sorting through the ores only to find\l"
-	.string "some Scoprions nibbling on Earth\l"
-	.string "Runes.$"
+	.string "some Scoprions nibbling on Earth Runes.$"
 
 NPC_FALADORCASTLE_QUEST_PART_3_Text_0:
 	.string "Sir Theodore$"

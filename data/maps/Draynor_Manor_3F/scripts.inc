@@ -420,9 +420,9 @@ NPC_DraynorManor_Chicken_Text_3:
 	.string "I call that an Ernest Chicken!\p"
 	.string "I named it this breed after its father.\p"
 	.string "Basically I turned this guy called\n"
-	.string "Ernest into a chicken, he laid some\l"
-	.string "eggs and these chickens are what\l"
-	.string "hatched from them.$"
+	.string "Ernest into a chicken, he laid some eggs\l"
+	.string "and these chickens are what hatched\l"
+	.string "from them.$"
 
 SCRIPT_DraynorManor_Poison_Text_0:
 	.string "You search the shelves…{PAUSE 15} …{PAUSE 15}\p"

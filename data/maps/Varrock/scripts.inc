@@ -496,6 +496,7 @@ VARROCK_NPC_TeaSalesman::
 	end
 
 
+
     .align 2
 TeaSalesmanVarrock:
     .2byte ITEM_REPEL_TEA_1
@@ -516,6 +517,7 @@ VARROCK_NPC_Apothecary::
 	msgbox VARROCK_NPC_TeaSalesman_Text_2
 	release
 	end
+
 
 
     .align 2
@@ -1079,8 +1081,8 @@ VARROCK_NPC_Guard1_Text_0:
 VARROCK_NPC_Guard2_Text_0:
 	.string "Welcome to Varrock.\p"
 	.string "If you are here to challenge the King to\n"
-	.string "an MvM gym battle, then you can find\l"
-	.string "him at the palace in the middle of town.$"
+	.string "an MvM gym battle, then you can find him\l"
+	.string "at the palace in the middle of town.$"
 
 VARROCK_CLEANER_Text_0:
 	.string "Cleaner$"
@@ -1217,8 +1219,7 @@ VARROCK_NPC_THUG_3_Text_0:
 VARROCK_NPC_NOOB_1_Text_0:
 	.string "I am meeting a friend up north past the\n"
 	.string "border, he told me to bring my best\l"
-	.string "items and money so they could see\l"
-	.string "them.$"
+	.string "items and money so they could see them.$"
 
 VARROCK_NPC_PRIEST_Text_0:
 	.string "Would you like to partake in the\n"
@@ -1301,8 +1302,8 @@ VARROCK_NPC_PALACE_GUARD_4_Text_0:
 	.string "Be careful not to let your monsters\n"
 	.string "faint.\p"
 	.string "I heard horror stories about some\n"
-	.string "monsters evolving into undead\l"
-	.string "versions of themselves.$"
+	.string "monsters evolving into undead versions\l"
+	.string "of themselves.$"
 
 VARROCK_NPC_Thessalia_Text_0:
 	.string "Thessalia$"

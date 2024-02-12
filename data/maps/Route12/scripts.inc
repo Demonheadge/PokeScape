@@ -87,6 +87,8 @@ ROUTE12_GILLIEGROATS_1:
 	emote_question_mark
 	step_end
 
+
+
     .align 2
 GroatsShop:
 	.2byte ITEM_MILK_BUCKET

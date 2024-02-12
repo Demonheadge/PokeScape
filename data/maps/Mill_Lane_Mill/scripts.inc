@@ -44,6 +44,7 @@ BEEFY_BILL_MILL_LANE_MILL::
 	end
 
 
+
     .align 2
 GeneralStoreBeefyBill:
     .2byte ITEM_EMPTY_BUCKET
@@ -193,8 +194,8 @@ GNOME_MILL_LANE_MILL_Text_2:
 	.string "Triple Redundant Aero Super Hawser.\p"
 	.string "However I am unsure where to get these.\p"
 	.string "I am unused to Human Lands and as my\n"
-	.string "Terrorbird broke a leg going back to\l"
-	.string "the Grand Tree would take me forever!\p"
+	.string "Terrorbird broke a leg going back to the\l"
+	.string "Grand Tree would take me forever!\p"
 	.string "Continue your adventure and you might\n"
 	.string "find T.R.A.S.H. on your path.$"
 

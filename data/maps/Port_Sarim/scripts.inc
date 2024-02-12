@@ -647,8 +647,8 @@ NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_1:
 NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_2:
 	.string "Is your name PLAYER?\p"
 	.string "I have received word that you are\n"
-	.string "participating in the MvM\l"
-	.string "Championships, is this correct?\p"
+	.string "participating in the MvM Championships,\l"
+	.string "is this correct?\p"
 	.string "Usually our services cost 30gp but we\n"
 	.string "have a deal with the Championship\l"
 	.string "League that allows all participants to\l"

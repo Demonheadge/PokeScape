@@ -1177,9 +1177,9 @@ NPC_FALADOR_NPC_10_Text_0:
 NPC_FALADOR_NPC_10_Text_1:
 	.string "Is it still there?! I do not want to\n"
 	.string "leave my house unless it is gone! What?\l"
-	.string "It is just a spiderling? I do not\l"
-	.string "believe you, it is a monster! Stop\l"
-	.string "trying to trick me!$"
+	.string "It is just a spiderling? I do not believe\l"
+	.string "you, it is a monster! Stop trying to\l"
+	.string "trick me!$"
 
 NPC_FALADOR_MYSTERIOUS_OLD_MAN_Text_0:
 	.string "Mysterious Old Man$"
@@ -1221,9 +1221,9 @@ NPC_FALADOR_NPC_6_Text_0:
 
 NPC_FALADOR_NPC_6_Text_1:
 	.string "If you are here to buy bagged trees to\n"
-	.string "sell them for a higher price, I regret\l"
-	.string "to inform you that I have increased\l"
-	.string "the prices.$"
+	.string "sell them for a higher price, I regret to\l"
+	.string "inform you that I have increased the\l"
+	.string "prices.$"
 
 NPC_FALADOR_Wyson_Text_0:
 	.string "Wyson$"

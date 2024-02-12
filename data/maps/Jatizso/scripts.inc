@@ -1635,8 +1635,8 @@ RAC_QUEST_JATIZSO_ELEJ_P1_Text_3:
 	.string "I would love to join but I am actually\n"
 	.string "quite busy at the moment.\p"
 	.string "You see, I want to take the best\n"
-	.string "picture that shows off Jatizso in all\l"
-	.string "of its glory!$"
+	.string "picture that shows off Jatizso in all of\l"
+	.string "its glory!$"
 
 RAC_QUEST_JATIZSO_ELEJ_P1_Text_4:
 	.string "…{PAUSE 16}…$"

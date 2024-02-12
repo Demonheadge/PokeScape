@@ -53,9 +53,9 @@ NPC_LumbridgeBasement_Demonheadge_Text_1:
 	.string "Just so you know this portal leads to\n"
 	.string "my beta testing area.\p"
 	.string "So please do not go here unless you\n"
-	.string "have finished playing the beta and\l"
-	.string "want to mess around with some buggy\l"
-	.string "mess, cheat, etc.\p"
+	.string "have finished playing the beta and want\l"
+	.string "to mess around with some buggy mess,\l"
+	.string "cheat, etc.\p"
 	.string "I do highly reccomend you play through\n"
 	.string "the beta once first.$"
 

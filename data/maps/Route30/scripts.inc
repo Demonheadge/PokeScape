@@ -304,5 +304,5 @@ BATTLE_ROUTE30_TRAINER_4_Text_2:
 
 BATTLE_ROUTE30_TRAINER_4_Text_3:
 	.string "These ruins look like they used to\n"
-	.string "belong to a cult of Zamorak but I am\l"
-	.string "not sure yet until I uncover some more.$"
+	.string "belong to a cult of Zamorak but I am not\l"
+	.string "sure yet until I uncover some more.$"

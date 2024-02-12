@@ -49,6 +49,8 @@ GiveQuestWheat::
 	end
 
 
+
+
     .align 2
 MillLaneMillFlourShop:
 	.2byte ITEM_FLOUR_POT

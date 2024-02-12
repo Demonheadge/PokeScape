@@ -142,8 +142,7 @@ BATTLE_ROUTE15_TRAINER_2_Text_1:
 
 BATTLE_ROUTE15_TRAINER_3_Text_0:
 	.string "It might not be ambitious, but I'd really\n"
-	.string "like to reach mining level 9 by the\l"
-	.string "week.$"
+	.string "like to reach mining level 9 by the week.$"
 
 BATTLE_ROUTE15_TRAINER_3_Text_1:
 	.string "I am never going to make it…$"

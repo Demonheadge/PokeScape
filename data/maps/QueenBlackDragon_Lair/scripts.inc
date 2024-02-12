@@ -2,6 +2,7 @@ QueenBlackDragon_Lair_MapScripts::
 	.byte 0
 
 
+
 QBD_Battle_QBD::
 	lock
 	faceplayer

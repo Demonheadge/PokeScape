@@ -713,8 +713,8 @@ NPC_KaramjaVolcano_HAM_EVENT1_Text_17:
 	.string "Urgh!\n"
 	.string "Our plans my have been foiled this time\l"
 	.string "but our team in Feldip Hills should have\l"
-	.string "succeeded at obtaining the horn by\l"
-	.string "now, so it is only a matter of time!\p"
+	.string "succeeded at obtaining the horn by now,\l"
+	.string "so it is only a matter of time!\p"
 	.string "Lets get out of here!$"
 
 NPC_KaramjaVolcano_HAM_EVENT1_Text_18:

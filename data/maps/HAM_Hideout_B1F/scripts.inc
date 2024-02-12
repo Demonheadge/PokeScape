@@ -450,8 +450,8 @@ HAM_HIDEOUT_GOLDENGNOME_EVENT_Text_5:
 	.string "I am Demonheadge, the creator of\n"
 	.string "PokeScape.\p"
 	.string "And as of a few seconds ago I have been\n"
-	.string "informed that PokeScape has just won\l"
-	.string "a Golden Gnome!$"
+	.string "informed that PokeScape has just won a\l"
+	.string "Golden Gnome!$"
 
 HAM_HIDEOUT_GOLDENGNOME_EVENT_Text_6:
 	.string "That's crazy right?!\p"
@@ -509,9 +509,8 @@ HAM_HIDEOUT_GOLDENGNOME_EVENT_Text_17:
 	.string "Ryu Saint, Lopendebank, Chase,\l"
 	.string "MrKalius, Sudo Bash, Jitterbug,\l"
 	.string "GentleShen, PippinSmith and many, many\l"
-	.string "others who have popped in along the\l"
-	.string "way to contribute in one way or\l"
-	.string "another.$"
+	.string "others who have popped in along the way\l"
+	.string "to contribute in one way or another.$"
 
 HAM_HIDEOUT_GOLDENGNOME_EVENT_Text_18:
 	.string "PokeScape has been a passion project\n"

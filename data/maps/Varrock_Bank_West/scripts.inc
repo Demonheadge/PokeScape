@@ -339,6 +339,5 @@ BARBSTRONGHOLD_RIVAL_BOOT_CHOICE_Text_4:
 
 BARBSTRONGHOLD_RIVAL_BOOT_CHOICE_Text_5:
 	.string "Don't worry I doubt this counts as you\n"
-	.string "taking both boots since I took it\l"
-	.string "first.\p"
+	.string "taking both boots since I took it first.\p"
 	.string "Enjoy, I'll see you around!$"

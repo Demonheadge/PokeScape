@@ -160,6 +160,7 @@ SHOP_TM_SEERS_WIZARD::
 	end
 
 
+
     .align 2
 STORE_RuneStore_1:
     .2byte ITEM_AIR_RUNE
@@ -169,6 +170,7 @@ STORE_RuneStore_1:
     .2byte ITEM_NONE
     release
     end
+
 
     .align 2
 STORE_RuneStore_2:
@@ -181,6 +183,7 @@ STORE_RuneStore_2:
     release
     end
 
+
     .align 2
 STORE_RuneStore_3:
     .2byte ITEM_LAW_RUNE
@@ -192,6 +195,7 @@ STORE_RuneStore_3:
     release
     end
 
+
     .align 2
 STORE_RuneStore_4:
     .2byte ITEM_DUST_RUNE
@@ -202,6 +206,7 @@ STORE_RuneStore_4:
     .2byte ITEM_NONE
     release
     end
+
 
     .align 2
 STORE_SpecialPouches:
@@ -219,6 +224,7 @@ STORE_SpecialPouches:
     release
     end
 
+
     .align 2
 STORE_TM_1:
     .2byte ITEM_TM01_SUNNY_DAY
@@ -228,6 +234,7 @@ STORE_TM_1:
     .2byte ITEM_NONE
     release
     end
+
 
     .align 2
 STORE_TM_2:
@@ -240,6 +247,7 @@ STORE_TM_2:
     release
     end
 
+
     .align 2
 STORE_TM_3:
     .2byte ITEM_TM10_ELECTRIC_TERRAIN
@@ -249,6 +257,7 @@ STORE_TM_3:
     .2byte ITEM_NONE
     release
     end
+
 
     .align 2
 STORE_Lamps:
@@ -262,6 +271,7 @@ STORE_Lamps:
     release
     end
 
+
     .align 2
 STORE_Prayer:
     .2byte ITEM_PRAYER_POTION
@@ -269,6 +279,7 @@ STORE_Prayer:
     .2byte ITEM_NONE
     release
     end
+
 
     .align 2
 STORE_Helmet:
@@ -278,6 +289,7 @@ STORE_Helmet:
     .2byte ITEM_NONE
     release
     end
+
 
     .align 2
 STORE_FarmingSupplies:
@@ -306,6 +318,7 @@ STORE_FarmingSupplies:
     release
     end
 
+
     .align 2
 STORE_GeneralStore_0:
     .2byte ITEM_BRONZE_POUCH
@@ -321,6 +334,7 @@ STORE_GeneralStore_0:
     .2byte ITEM_NONE
     release
     end
+
 
     .align 2
 STORE_GeneralStore_1:
@@ -339,6 +353,7 @@ STORE_GeneralStore_1:
     .2byte ITEM_NONE
     release
     end
+
 
     .align 2
 STORE_GeneralStore_2:
@@ -359,6 +374,7 @@ STORE_GeneralStore_2:
     .2byte ITEM_NONE
     release
     end
+
 
     .align 2
 STORE_GeneralStore_3:
@@ -383,6 +399,7 @@ STORE_GeneralStore_3:
     .2byte ITEM_NONE
     release
     end
+
 
     .align 2
 STORE_GeneralStore_4:
