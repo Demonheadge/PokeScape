@@ -283,7 +283,6 @@ clean-check-tools:
 clean-emerald:
 	@$(MAKE) clean -C tools/pokeemerald
 	rm -f pokeemerald.gba
-	rm -rf tools/pokeemerald/tools/agbcc
 
 mostlyclean: tidynonmodern tidymodern tidycheck
 	find sound -iname '*.bin' -exec rm {} +
@@ -312,7 +311,7 @@ tidycheck:
 	rm -f $(TESTELF) $(HEADLESSELF)
 	rm -rf $(TEST_OBJ_DIR_NAME)
 
-emerald: tools/pokeemerald/tools/agbcc
+emerald:
 	@$(MAKE) -C tools/pokeemerald
 	cp tools/pokeemerald/pokeemerald.gba ./
 
