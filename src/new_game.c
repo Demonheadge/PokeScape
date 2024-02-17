@@ -236,6 +236,18 @@ void NewGameInitData(void)
     InitDewfordTrend();
     ResetFanClub();
     ResetLotteryCorner();
+    RunScriptImmediately(EventScript_ResetAllMapFlags);
+    ResetMiniGamesRecords();
+    InitUnionRoomChatRegisteredTexts();
+    InitLilycoveLady();
+    ResetAllApprenticeData();
+    ClearRankingHallRecords();
+    InitMatchCallCounters();
+    ClearMysteryGift();
+    WipeTrainerNameRecords();
+    ResetTrainerHillResults();
+    ResetContestLinkResults();
+    QuestMenu_ResetMenuSaveData();
     
     //POKESCAPE STARTING LOCATIONS
     if (gSaveBlock2Ptr->regionLocation == 0)
@@ -278,19 +290,6 @@ void NewGameInitData(void)
         WarpToRELLEKKA();
 	    SetLastHealLocationWarp(HEAL_LOCATION_RELLEKKA);
     }
-
-    RunScriptImmediately(EventScript_ResetAllMapFlags);
-    ResetMiniGamesRecords();
-    InitUnionRoomChatRegisteredTexts();
-    InitLilycoveLady();
-    ResetAllApprenticeData();
-    ClearRankingHallRecords();
-    InitMatchCallCounters();
-    ClearMysteryGift();
-    WipeTrainerNameRecords();
-    ResetTrainerHillResults();
-    ResetContestLinkResults();
-    QuestMenu_ResetMenuSaveData();
 }
 
 static void ResetMiniGamesRecords(void)

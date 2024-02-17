@@ -11,6 +11,5 @@ EventScript_ResetAllBerries:: @ 827149Df
 	return
 
 EventScript_ResetAllMapFlags:: @ 82715DE
-	setflag FLAG_EVILCHICKEN_HIDE 
 	call EventScript_ResetAllBerries
 	end

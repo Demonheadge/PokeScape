@@ -2,6 +2,7 @@ enum {
     WALLPAPER_FOREST,
     WALLPAPER_CITY,
     WALLPAPER_DESERT,
+    WALLPAPER_POKESCAPE_1,
     WALLPAPER_SAVANNA,
     WALLPAPER_CRAG,
     WALLPAPER_VOLCANO,
@@ -51,6 +52,17 @@ static const u16 sWallpaperPalettes_Savanna[][16] =
 };
 static const u32 sWallpaperTiles_Savanna[] = INCBIN_U32("graphics/pokemon_storage/wallpapers/savanna/tiles.4bpp.lz");
 static const u32 sWallpaperTilemap_Savanna[] = INCBIN_U32("graphics/pokemon_storage/wallpapers/savanna/tilemap.bin.lz");
+
+//PokeScape
+static const u16 sWallpaperPalettes_PokeScape_1[][16] =
+{
+    INCBIN_U16("graphics/pokemon_storage/wallpapers/PokeScape_1_frame.gbapal"),
+    INCBIN_U16("graphics/pokemon_storage/wallpapers/PokeScape_1/bg.gbapal"),
+};
+static const u32 sWallpaperTiles_PokeScape_1[] = INCBIN_U32("graphics/pokemon_storage/wallpapers/PokeScape_1/tiles.4bpp.lz");
+static const u32 sWallpaperTilemap_PokeScape_1[] = INCBIN_U32("graphics/pokemon_storage/wallpapers/PokeScape_1/tilemap.bin.lz");
+
+//PokeScape end
 
 static const u16 sWallpaperPalettes_Crag[][16] =
 {
@@ -153,23 +165,24 @@ static const u32 sWallpaperTilemap_Unused[] = INCBIN_U32("graphics/pokemon_stora
 // Shadow color, text color
 static const u16 sBoxTitleColors[WALLPAPER_COUNT][2] =
 {
-    [WALLPAPER_FOREST]     = {RGB(7, 7, 7), RGB_WHITE},
-    [WALLPAPER_CITY]       = {RGB(7, 7, 7), RGB_WHITE},
-    [WALLPAPER_DESERT]     = {RGB(7, 7, 7), RGB_WHITE},
-    [WALLPAPER_SAVANNA]    = {RGB(7, 7, 7), RGB_WHITE},
-    [WALLPAPER_CRAG]       = {RGB(7, 7, 7), RGB_WHITE},
-    [WALLPAPER_VOLCANO]    = {RGB(7, 7, 7), RGB_WHITE},
-    [WALLPAPER_SNOW]       = {RGB(7, 7, 7), RGB_WHITE},
-    [WALLPAPER_CAVE]       = {RGB(7, 7, 7), RGB_WHITE},
-    [WALLPAPER_BEACH]      = {RGB(7, 7, 7), RGB_WHITE},
-    [WALLPAPER_SEAFLOOR]   = {RGB(7, 7, 7), RGB_WHITE},
-    [WALLPAPER_RIVER]      = {RGB(7, 7, 7), RGB_WHITE},
-    [WALLPAPER_SKY]        = {RGB(7, 7, 7), RGB_WHITE},
-    [WALLPAPER_POLKADOT]   = {RGB(7, 7, 7), RGB_WHITE},
-    [WALLPAPER_POKECENTER] = {RGB(7, 7, 7), RGB_WHITE},
-    [WALLPAPER_MACHINE]    = {RGB(7, 7, 7), RGB_WHITE},
-    [WALLPAPER_PLAIN]      = {RGB(7, 7, 7), RGB_WHITE},
-    [WALLPAPER_FRIENDS]    = {RGB(7, 7, 7), RGB_WHITE}
+    [WALLPAPER_FOREST]      = {RGB(7, 7, 7), RGB_WHITE},
+    [WALLPAPER_CITY]        = {RGB(7, 7, 7), RGB_WHITE},
+    [WALLPAPER_DESERT]      = {RGB(7, 7, 7), RGB_WHITE},
+    [WALLPAPER_POKESCAPE_1] = {RGB(7, 7, 7), RGB_WHITE},
+    [WALLPAPER_SAVANNA]     = {RGB(7, 7, 7), RGB_WHITE},
+    [WALLPAPER_CRAG]        = {RGB(7, 7, 7), RGB_WHITE},
+    [WALLPAPER_VOLCANO]     = {RGB(7, 7, 7), RGB_WHITE},
+    [WALLPAPER_SNOW]        = {RGB(7, 7, 7), RGB_WHITE},
+    [WALLPAPER_CAVE]        = {RGB(7, 7, 7), RGB_WHITE},
+    [WALLPAPER_BEACH]       = {RGB(7, 7, 7), RGB_WHITE},
+    [WALLPAPER_SEAFLOOR]    = {RGB(7, 7, 7), RGB_WHITE},
+    [WALLPAPER_RIVER]       = {RGB(7, 7, 7), RGB_WHITE},
+    [WALLPAPER_SKY]         = {RGB(7, 7, 7), RGB_WHITE},
+    [WALLPAPER_POLKADOT]    = {RGB(7, 7, 7), RGB_WHITE},
+    [WALLPAPER_POKECENTER]  = {RGB(7, 7, 7), RGB_WHITE},
+    [WALLPAPER_MACHINE]     = {RGB(7, 7, 7), RGB_WHITE},
+    [WALLPAPER_PLAIN]       = {RGB(7, 7, 7), RGB_WHITE},
+    [WALLPAPER_FRIENDS]     = {RGB(7, 7, 7), RGB_WHITE}
 };
 
 #define WALLPAPER_ENTRY(name) {sWallpaperTiles_##name, sWallpaperTilemap_##name, sWallpaperPalettes_##name[0]}
@@ -181,6 +194,7 @@ static const struct Wallpaper sWallpapers[WALLPAPER_COUNT - 1] =
     [WALLPAPER_FOREST]     = WALLPAPER_ENTRY(Forest),
     [WALLPAPER_CITY]       = WALLPAPER_ENTRY(City),
     [WALLPAPER_DESERT]     = WALLPAPER_ENTRY(Desert),
+    [WALLPAPER_POKESCAPE_1] = WALLPAPER_ENTRY(PokeScape_1),
     [WALLPAPER_SAVANNA]    = WALLPAPER_ENTRY(Savanna),
     [WALLPAPER_CRAG]       = WALLPAPER_ENTRY(Crag),
     [WALLPAPER_VOLCANO]    = WALLPAPER_ENTRY(Volcano),

@@ -135,6 +135,7 @@ enum {
     MENU_FOREST,
     MENU_CITY,
     MENU_DESERT,
+    MENU_POKESCAPE1,
     MENU_SAVANNA,
     MENU_CRAG,
     MENU_VOLCANO,
@@ -4391,6 +4392,7 @@ static void AddWallpapersMenu(u8 wallpaperSet)
         SetMenuText(MENU_POKECENTER);
         SetMenuText(MENU_MACHINE);
         SetMenuText(MENU_SIMPLE);
+        SetMenuText(MENU_POKESCAPE1);
         break;
     }
     AddMenu();
@@ -8032,6 +8034,7 @@ static const u8 *const sMenuTexts[] =
     [MENU_FOREST]     = gPCText_Forest,
     [MENU_CITY]       = gPCText_City,
     [MENU_DESERT]     = gPCText_Desert,
+    [MENU_POKESCAPE1] = gPCText_PokeScape_1,
     [MENU_SAVANNA]    = gPCText_Savanna,
     [MENU_CRAG]       = gPCText_Crag,
     [MENU_VOLCANO]    = gPCText_Volcano,

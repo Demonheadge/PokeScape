@@ -542,6 +542,12 @@ $(WALLPAPERGFXDIR)/plain/frame.4bpp: %.4bpp: %.png
 $(WALLPAPERGFXDIR)/plain/tiles.4bpp: $(WALLPAPERGFXDIR)/plain/frame.4bpp $(WALLPAPERGFXDIR)/plain/bg.4bpp
 	@cat $^ >$@
 
+$(WALLPAPERGFXDIR)/PokeScape_1_frame.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 19
+
+$(WALLPAPERGFXDIR)/PokeScape_1/tiles.4bpp: $(WALLPAPERGFXDIR)/PokeScape_1_frame.4bpp $(WALLPAPERGFXDIR)/PokeScape_1/bg.4bpp
+	@cat $^ >$@
+
 $(WALLPAPERGFXDIR)/friends_frame1.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 57 -Wnum_tiles
 

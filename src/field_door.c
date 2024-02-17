@@ -131,6 +131,17 @@ static const u8 sDoorAnimTiles_TrainerHillLobbyElevator[] = INCBIN_U8("graphics/
 static const u16 sDoorNullPalette48[16] = {};
 static const u8 sDoorAnimTiles_TrainerHillRoofElevator[] = INCBIN_U8("graphics/door_anims/trainer_hill_roof_elevator.4bpp");
 static const u16 sDoorNullPalette49[16] = {};
+// Pokescape Start
+static const u8 sDoorAnimTiles_Door_GeneralStore_L[] = INCBIN_U8("graphics/door_anims/Door_GeneralStore_L.4bpp");
+static const u8 sDoorAnimTiles_Door_GeneralStore_R[] = INCBIN_U8("graphics/door_anims/Door_GeneralStore_R.4bpp");
+static const u8 sDoorAnimTiles_Door_Bank_L[] = INCBIN_U8("graphics/door_anims/Door_Bank_L.4bpp");
+static const u8 sDoorAnimTiles_Door_Bank_R[] = INCBIN_U8("graphics/door_anims/Door_Bank_R.4bpp");
+static const u8 sDoorAnimTiles_Door_Pub_L[] = INCBIN_U8("graphics/door_anims/Door_Pub_L.4bpp");
+static const u8 sDoorAnimTiles_Door_Pub_R[] = INCBIN_U8("graphics/door_anims/Door_Pub_R.4bpp");
+static const u8 sDoorAnimTiles_Door_General_L[] = INCBIN_U8("graphics/door_anims/Door_General_L.4bpp");
+static const u8 sDoorAnimTiles_Door_General_R[] = INCBIN_U8("graphics/door_anims/Door_General_R.4bpp");
+static const u8 sDoorAnimTiles_Door_Goblin_L[] = INCBIN_U8("graphics/door_anims/Door_Goblin_L.4bpp");
+static const u8 sDoorAnimTiles_Door_Goblin_R[] = INCBIN_U8("graphics/door_anims/Door_Goblin_R.4bpp");
 
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =
 {
@@ -163,6 +174,24 @@ static const struct DoorAnimFrame sBigDoorCloseAnimFrames[] =
 {
     {4, 0x400},
     {4, 0x200},
+    {4, 0},
+    {4, -1},
+    {0, 0},
+};
+
+static const struct DoorAnimFrame sSmallDoorOpenAnimFrames[] =
+{
+    {4, -1},
+    {4, 0},
+    {4, 0x80},
+    {4, 0x100},
+    {0, 0},
+};
+
+static const struct DoorAnimFrame sSmallDoorCloseAnimFrames[] =
+{
+    {4, 0x100},
+    {4, 0x80},
     {4, 0},
     {4, -1},
     {0, 0},
@@ -219,6 +248,17 @@ static const u8 sDoorAnimPalettes_BattleDomePreBattleRoom[] = {9, 9, 7, 7, 7, 7,
 static const u8 sDoorAnimPalettes_BattleTentInterior[] = {9, 9, 9, 9, 9, 9, 9, 9};
 static const u8 sDoorAnimPalettes_TrainerHillLobbyElevator[] = {7, 7, 7, 7, 7, 7, 7, 7};
 static const u8 sDoorAnimPalettes_TrainerHillRoofElevator[] = {9, 9, 7, 7, 7, 7, 7, 7};
+// Pokescape Start
+static const u8 sDoorAnimPalettes_Door_GeneralStore_L[] = {3, 3, 3, 3};
+static const u8 sDoorAnimPalettes_Door_GeneralStore_R[] = {3, 3, 3, 3};
+static const u8 sDoorAnimPalettes_Door_Bank_L[] = {4, 4, 4, 4};
+static const u8 sDoorAnimPalettes_Door_Bank_R[] = {4, 4, 4, 4};
+static const u8 sDoorAnimPalettes_Door_Pub_L[] = {3, 3, 3, 3};
+static const u8 sDoorAnimPalettes_Door_Pub_R[] = {3, 3, 3, 3};
+static const u8 sDoorAnimPalettes_Door_General_L[] = {4, 4, 4, 4};
+static const u8 sDoorAnimPalettes_Door_General_R[] = {4, 4, 4, 4};
+static const u8 sDoorAnimPalettes_Door_Goblin_L[] = {7, 7, 7, 7};
+static const u8 sDoorAnimPalettes_Door_Goblin_R[] = {7, 7, 7, 7};
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
@@ -277,6 +317,17 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_BattleTent_Door,                              DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTentInterior, sDoorAnimPalettes_BattleTentInterior},
     {METATILE_TrainerHill_Door_Elevator_Lobby,              DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_TrainerHillLobbyElevator, sDoorAnimPalettes_TrainerHillLobbyElevator},
     {METATILE_TrainerHill_Door_Elevator_Roof,               DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_TrainerHillRoofElevator, sDoorAnimPalettes_TrainerHillRoofElevator},
+    // Pokescape Start
+    {METATILE_PokeScapeOutdoors_Door_GeneralStore_L,        DOOR_SOUND_NORMAL, 0, sDoorAnimTiles_Door_GeneralStore_L, sDoorAnimPalettes_Door_GeneralStore_L}, 
+    {METATILE_PokeScapeOutdoors_Door_GeneralStore_R,        DOOR_SOUND_NORMAL, 0, sDoorAnimTiles_Door_GeneralStore_R, sDoorAnimPalettes_Door_GeneralStore_R}, 
+    {METATILE_PokeScapeOutdoors_Door_Bank_L,                DOOR_SOUND_NORMAL, 0, sDoorAnimTiles_Door_Bank_L, sDoorAnimPalettes_Door_Bank_L}, 
+    {METATILE_PokeScapeOutdoors_Door_Bank_R,                DOOR_SOUND_NORMAL, 0, sDoorAnimTiles_Door_Bank_R, sDoorAnimPalettes_Door_Bank_R}, 
+    {METATILE_PokeScapeOutdoors_Door_Pub_L,                 DOOR_SOUND_NORMAL, 0, sDoorAnimTiles_Door_Pub_L, sDoorAnimPalettes_Door_Pub_L}, 
+    {METATILE_PokeScapeOutdoors_Door_Pub_R,                 DOOR_SOUND_NORMAL, 0, sDoorAnimTiles_Door_Pub_R, sDoorAnimPalettes_Door_Pub_R}, 
+    {METATILE_PokeScapeOutdoors_Door_General_L,             DOOR_SOUND_NORMAL, 0, sDoorAnimTiles_Door_General_L, sDoorAnimPalettes_Door_General_L}, 
+    {METATILE_PokeScapeOutdoors_Door_General_R,             DOOR_SOUND_NORMAL, 0, sDoorAnimTiles_Door_General_R, sDoorAnimPalettes_Door_General_R}, 
+    {METATILE_GoblinVillage_Door_Goblin_L,                  DOOR_SOUND_NORMAL, 0, sDoorAnimTiles_Door_Goblin_L, sDoorAnimPalettes_Door_Goblin_L}, 
+    {METATILE_GoblinVillage_Door_Goblin_R,                  DOOR_SOUND_NORMAL, 0, sDoorAnimTiles_Door_Goblin_R, sDoorAnimPalettes_Door_Goblin_R},
     {},
 };
 
@@ -336,7 +387,7 @@ static void DrawCurrentDoorAnimFrame(const struct DoorGraphics *gfx, u32 x, u32 
         BuildDoorTiles(&tiles[8], DOOR_TILE_START_SIZE2 + 12, &paletteNums[4]);
         DrawDoorMetatileAt(x + 1, y, &tiles[8]);
     }
-    else
+    else if (gfx->size == 1)
     {
         // Top metatile
         BuildDoorTiles(&tiles[0], DOOR_TILE_START_SIZE1 + 0, &paletteNums[0]);
@@ -346,13 +397,21 @@ static void DrawCurrentDoorAnimFrame(const struct DoorGraphics *gfx, u32 x, u32 
         BuildDoorTiles(&tiles[0], DOOR_TILE_START_SIZE1 + 4, &paletteNums[4]);
         DrawDoorMetatileAt(x, y, &tiles[0]);
     }
+    else
+    {
+        BuildDoorTiles(&tiles[0], DOOR_TILE_START_SIZE1 + 4, &paletteNums[0]);
+        DrawDoorMetatileAt(x, y, &tiles[0]);
+    }
 }
 
 static void DrawClosedDoorTiles(const struct DoorGraphics *gfx, u32 x, u32 y)
 {
-    CurrentMapDrawMetatileAt(x, y - 1);
     CurrentMapDrawMetatileAt(x, y);
 
+    if (gfx->size >= 1)
+    {
+        CurrentMapDrawMetatileAt(x, y - 1);
+    }
     if (gfx->size == 2)
     {
         CurrentMapDrawMetatileAt(x + 1, y - 1);
@@ -464,8 +523,12 @@ static void DrawClosedDoor(const struct DoorGraphics *gfx, u32 x, u32 y)
 static void DrawOpenedDoor(const struct DoorGraphics *gfx, u32 x, u32 y)
 {
     gfx = GetDoorGraphics(gfx, MapGridGetMetatileIdAt(x, y));
-    if (gfx != NULL)
-        DrawDoor(gfx, GetLastDoorFrame(sDoorOpenAnimFrames, sDoorOpenAnimFrames), x, y);
+    if (gfx != NULL) {
+        if (gfx->size >= 1)
+            DrawDoor(gfx, GetLastDoorFrame(sDoorOpenAnimFrames, sDoorOpenAnimFrames), x, y);
+        else
+            DrawDoor(gfx, GetLastDoorFrame(sSmallDoorOpenAnimFrames, sSmallDoorOpenAnimFrames), x, y);
+    }
 }
 
 static s8 StartDoorOpenAnimation(const struct DoorGraphics *gfx, u32 x, u32 y)
@@ -479,8 +542,10 @@ static s8 StartDoorOpenAnimation(const struct DoorGraphics *gfx, u32 x, u32 y)
     {
         if (gfx->size == 2)
             return StartDoorAnimationTask(gfx, sBigDoorOpenAnimFrames, x, y);
-        else
+        else if (gfx->size == 1)
             return StartDoorAnimationTask(gfx, sDoorOpenAnimFrames, x, y);
+		else
+		    return StartDoorAnimationTask(gfx, sSmallDoorOpenAnimFrames, x, y);
     }
 }
 
@@ -489,8 +554,10 @@ static s8 StartDoorCloseAnimation(const struct DoorGraphics *gfx, u32 x, u32 y)
     gfx = GetDoorGraphics(gfx, MapGridGetMetatileIdAt(x, y));
     if (gfx == NULL)
         return -1;
-    else
+    else if (gfx->size >= 1)
         return StartDoorAnimationTask(gfx, sDoorCloseAnimFrames, x, y);
+    else
+        return StartDoorAnimationTask(gfx, sSmallDoorCloseAnimFrames, x, y);
 }
 
 static s8 GetDoorSoundType(const struct DoorGraphics *gfx, u32 x, u32 y)

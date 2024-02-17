@@ -1393,26 +1393,38 @@ static void ShowSaveInfoWindow(void)
     u8 color;
     u32 xOffset;
     u32 yOffset;
+    const u8* stringgamemode = gText_CUPHOLDER;
+
+    //Checks GameMode
+    if (gSaveBlock2Ptr->GameMode == 0)
+    {
+        stringgamemode = gText_STORYMODE;
+    }
+    if (gSaveBlock2Ptr->GameMode == 1)
+    {
+        stringgamemode = gText_OPENWORLD;
+    }
 
     if (!FlagGet(FLAG_SYS_POKEDEX_GET))
     {
         saveInfoWindow.height -= 2;
     }
 
+    saveInfoWindow.height += 2;
     sSaveInfoWindowId = AddWindow(&saveInfoWindow);
     DrawStdWindowFrame(sSaveInfoWindowId, FALSE);
 
     gender = gSaveBlock2Ptr->playerGender;
-    color = TEXT_COLOR_RED;  // Red when female, blue when male.
+    color = TEXT_COLOR_DARK_GRAY; // Red when female, blue when male. //TODO: TEXT COLOUR FOR GAMEMODE (BLUE STORY, RED OPENWORLD.)
 
     if (gender == MALE)
     {
-        color = TEXT_COLOR_BLUE;
+        color = TEXT_COLOR_DARK_GRAY;
     }
 
     // Print region name
     yOffset = 1;
-    BufferSaveMenuText(SAVE_MENU_LOCATION, gStringVar4, TEXT_COLOR_GREEN);
+    BufferSaveMenuText(SAVE_MENU_LOCATION, gStringVar4, color);
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, 0, yOffset, TEXT_SKIP_DRAW, NULL);
 
     // Print player name
@@ -1445,6 +1457,13 @@ static void ShowSaveInfoWindow(void)
     BufferSaveMenuText(SAVE_MENU_PLAY_TIME, gStringVar4, color);
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
+
+    // Print GAME MODE
+    yOffset += 16;
+    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingGameMode, 0, yOffset, TEXT_SKIP_DRAW, NULL); //gamemode:
+    BufferSaveMenuText(SAVE_MENU_PLAY_TIME, gStringVar4, color);
+    xOffset = GetStringRightAlignXOffset(FONT_NORMAL, stringgamemode, 0x70);
+    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, stringgamemode, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
 
     CopyWindowToVram(sSaveInfoWindowId, COPYWIN_GFX);
 }
