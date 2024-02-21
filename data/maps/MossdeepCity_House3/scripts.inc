@@ -3,7 +3,6 @@ MossdeepCity_House3_MapScripts::
 
 MossdeepCity_House3_EventScript_SuperRodFisherman::
 	lock
-
 	end
 
 MossdeepCity_House3_EventScript_ReceivedSuperRod::
