@@ -1039,10 +1039,11 @@ void MainCB2_Intro(void)
     AnimateSprites();
     BuildOamBuffer();
     UpdatePaletteFade();
-    if (gMain.newKeys != 0 && !gPaletteFade.active)
+    /*if (gMain.newKeys != 0 && !gPaletteFade.active)
         SetMainCallback2(MainCB2_EndIntro);
     else if (gIntroFrameCounter != -1)
-        gIntroFrameCounter++;
+        gIntroFrameCounter++;*/
+    SetMainCallback2(MainCB2_EndIntro);
 }
 
 static void MainCB2_EndIntro(void)
@@ -1117,8 +1118,10 @@ static u8 SetUpCopyrightScreen(void)
         if (UpdatePaletteFade())
             break;
 #if EXPANSION_INTRO == TRUE
-        SetMainCallback2(CB2_ExpansionIntro);
-        CreateTask(Task_HandleExpansionIntro, 0);
+        //SetMainCallback2(CB2_ExpansionIntro);
+        //CreateTask(Task_HandleExpansionIntro, 0);
+        CreateTask(Task_Scene1_Load, 0);
+        SetMainCallback2(MainCB2_Intro);
 #else
         CreateTask(Task_Scene1_Load, 0);
         SetMainCallback2(MainCB2_Intro);
