@@ -1078,10 +1078,15 @@ static void UpdateAshFieldEffect_End(struct Sprite *sprite)
 #define sPrevX        data[6]
 #define sPrevY        data[7]
 
+extern const struct SpritePalette gSpritePalette_SurfBlob;
+
 u32 FldEff_SurfBlob(void)
 {
     u8 spriteId;
 
+    LoadSpritePalette(&gSpritePalette_SurfBlob);
+    UpdatePaletteGammaType(IndexOfSpritePaletteTag(gSpritePalette_SurfBlob.tag), GAMMA_NORMAL);
+    UpdateSpritePaletteWithWeather(IndexOfSpritePaletteTag(gSpritePalette_SurfBlob.tag));
     SetSpritePosToOffsetMapCoords((s16 *)&gFieldEffectArguments[0], (s16 *)&gFieldEffectArguments[1], 8, 8);
     spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[FLDEFFOBJ_SURF_BLOB], gFieldEffectArguments[0], gFieldEffectArguments[1], 150);
     if (spriteId != MAX_SPRITES)
