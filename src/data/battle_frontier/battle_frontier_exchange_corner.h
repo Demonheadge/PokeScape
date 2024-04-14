@@ -48,6 +48,26 @@ static const u16 sFrontierExchangeCorner_HoldItems[] =
     ITEM_LIST_END
 };
 
+static const u16 sSlayerShopItems[] =
+{
+    ITEM_DARK_TOTEM_BASE,
+    ITEM_DARK_TOTEM_MID,
+    ITEM_DARK_TOTEM_TOP,
+    ITEM_ANCIENT_SHARD,
+    ITEM_OVERLOAD,
+    ITEM_SARADOMIN_BREW,
+    ITEM_PHOENIX_NECKLACE,
+    ITEM_ABYSSAL_WHIP,
+    ITEM_DFS,
+    ITEM_DRAGON_CLAWS,
+    ITEM_DRAGON_DAGGER_POISON,
+    ITEM_DRAGON_SCIMITAR,
+    ITEM_ELEMENTAL_SHIELD,
+    ITEM_GRANITE_MAUL,
+    ITEM_KRAKEN_TENTACLE,
+    ITEM_LIST_END
+};
+
 static const u8 *const sFrontierExchangeCorner_Decor1Descriptions[] =
 {
     BattleFrontier_ExchangeServiceCorner_Text_KissPosterDesc,
@@ -95,5 +115,25 @@ static const u8 *const sFrontierExchangeCorner_HoldItemsDescriptions[] =
     BattleFrontier_ExchangeServiceCorner_Text_KingsRockDesc,
     BattleFrontier_ExchangeServiceCorner_Text_FocusBandDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ScopeLensDesc,
+    gText_Exit
+};
+
+static const u8 *const sSlayerShopItemDescriptions[] =
+{
+    gText_DarkTotemBottom_Desc,
+    gText_DarkTotemMiddle_Desc,
+    gText_DarkTotemTop_Desc,
+    gText_AncientShard_Desc,
+    gText_Overload_Desc,
+    gText_SaradominBrew_Desc,
+    gText_PhoenixNecklace_Desc,
+    gText_AbyssalWhip_Desc,
+    gText_DragonfireShield_Desc,
+    gText_DragonClaws_Desc,
+    gText_DragonDaggerP_Desc,
+    gText_DragonScimitar_Desc,
+    gText_ElementalShield_Desc,
+    gText_GraniteMaul_Desc,
+    gText_KrakenTentacle_Desc,
     gText_Exit
 };

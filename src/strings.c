@@ -1921,6 +1921,9 @@ const u8 gText_NEITIZNOT[] =_("NEITIZNOT");
 const u8 gText_GetSlayerAssignment[] =_("SLAYER ASSIGNMENT");
 const u8 gText_OpenSlayerRewardShop[] =_("REWARD SHOP");
 
+const u8 gText_CAVE_FUNGUS[] =_("CAVE FUNGUS");
+const u8 gText_GLOWING_MOSS[] =_("GLOWING MOSS");
+const u8 gText_BROWN_WATER[] =_("BROWN WATER");
 
 //misc
 const u8 gText_NextMenu[] =_("Next");
@@ -1964,8 +1967,8 @@ const u8 gText_PulseCoreOff[] = _("Exp is no longer being shared.\p");
 //// side quest data
 //generic strings
 const u8 gText_QuestAnnounce[] = _("The quest '{STR_VAR_1}'\nhas now {STR_VAR_2}.");
-const u8 gText_QuestComplete[] =_("Complete");
-const u8 gText_QuestActive[] =_("Started");
+const u8 gText_QuestComplete[] =_("complete");
+const u8 gText_QuestActive[] =_("started");
 
 
 //Cooks Assistant
@@ -1983,7 +1986,18 @@ const u8 gText_MapName_MillLaneMill[] = _("Mill Lane Mill");
 const u8 gText_MapName_Route1[] = _("Route 1");
 const u8 gText_MapName_Route12[] = _("Route 12");
 
-
+//Rune Mysteries
+const u8 gText_SideQuestName_RuneMysteries[] = _("Rune Mysteries");
+const u8 gText_SideQuestDesc_RuneMysteries[] = _("Deliver the mysterious Talisman\nto Archmage Sedridor in\nthe Wizards' Tower.");
+const u8 gText_SideQuestDesc_Completed_RuneMysteries[] = _("Quest Completed!");
+const u8 gText_MapName_WizardsTower[] = _("Wizards' Tower");
+const u8 gText_SubQuest_RuneMysteries_1[] = _("Mysterious Talisman");
+const u8 gText_SubQuest1_Desc_RuneMysteries_1[] = _("You delivered the Talisman\nto Archmage Sedridor.");
+const u8 gText_SubQuest_RuneMysteries_2[] = _("Mysterious Ruins");
+const u8 gText_SubQuest1_Desc_RuneMysteries_2[] = _("You accessed the Ruins\nusing the Talisman.");
+const u8 gText_SubQuest_RuneMysteries_3[] = _("Reported Findings");
+const u8 gText_SubQuest1_Desc_RuneMysteries_3[] = _("You reported everything you\nfound out to Duke Horacio.");
+const u8 gText_MapName_Route7[] = _("Route 7");
 //Ernest the Chicken
 const u8 gText_SideQuestName_Ernest[] = _("Ernest the Chicken");
 const u8 gText_SideQuestDesc_Ernest[] = _("Help Prof.Oddenstein resurect Poly.");
@@ -2239,7 +2253,7 @@ const u8  gText_Overload [] = _("OVERLOAD{CLEAR_TO 0x5E}48 SP");
 const u8  gText_SaradominBrew [] = _("SARADOMIN BREW{CLEAR_TO 0x5E}48 SP");
 const u8 gText_PhoenixNecklace [] = _("PHOENIX NECKLACE{CLEAR_TO 0x5E}48 SP");
 const u8 gText_AbyssalWhip [] = _("ABYSSAL WHIP{CLEAR_TO 0x5E}48 SP");
-const u8 gText_DragonfireSheild [] = _("DRAGON SHEILD{CLEAR_TO 0x5E}48 SP");
+const u8 gText_DragonfireShield [] = _("DRAGON SHIELD{CLEAR_TO 0x5E}48 SP");
 const u8 gText_DragonClaws [] = _("DRAGON CLAWS{CLEAR_TO 0x5E}48 SP");
 const u8 gText_DragonDaggerP [] = _("DRAGON DAGGER{CLEAR_TO 0x5E}48 SP");
 const u8 gText_DragonScimitar [] = _("DRAGON SCIMITAR{CLEAR_TO 0x5E}48 SP");
@@ -2250,10 +2264,11 @@ const u8 gText_Overload_Desc [] = _("Increases the power of moves\nbut drains li
 const u8 gText_SaradominBrew_Desc [] = _("Brew made by skilled Herblorers.\nIt heals at the end of each turn.");
 const u8 gText_PhoenixNecklace_Desc [] = _("Holds the user alive upon\nfatal impact.");
 const u8 gText_AbyssalWhip_Desc [] = _("This boosts Attack but only\nallows the use of one move.");
-const u8 gText_DragonfireSheild_Desc [] = _("Decreases damage from\nDragon-type moves.");
+const u8 gText_DragonfireShield_Desc [] = _("Decreases damage from\nDragon-type moves.");
 const u8 gText_DragonClaws_Desc [] = _("Gives a chance to strike first in battle.");
 const u8 gText_DragonDaggerP_Desc [] = _("Increases the power of\nPoison-type moves.");
 const u8 gText_DragonScimitar_Desc [] = _("Increases the power of\nDragon-type moves.");
 const u8 gText_ElementalShield_Desc [] = _("Increases defence but locks\nmonsters out of status moves.");
 const u8 gText_GraniteMaul_Desc [] = _("Increases the power of\nRock-type moves.");
 const u8 gText_KrakenTentacle_Desc [] = _("Applies poison to the monsters moves.");
+

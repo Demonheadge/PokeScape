@@ -352,41 +352,10 @@ static const struct SubQuest sSubQuestsArtFight_Neitiznot[QUEST_ARTFIGHT_NEITIZN
 	),
 };*/
 
-static const struct SubQuest sSubQuests_ERNEST_THE_CHICKEN[QUEST_ERNEST_THE_CHICKEN_SUB_COUNT] =
-{
-	sub_quest(
-	      15,
-	      gText_SubQuest_Ernest_Name1,
-	      gText_SubQuest_Ernest_Name2,
-	      gText_SideQuestMap_Draynor_Manor,
-	      ITEM_OIL_CAN,
-	      ITEM,
-	      sText_Found
-	),
-	sub_quest(
-	      16,
-	      gText_SubQuest_Ernest_Name2,
-	      gText_SubQuest_Ernest_Name2,
-	      gText_SideQuestMap_Draynor_Manor,
-	      ITEM_RUBBER_TUBE,
-	      ITEM,
-	      sText_Found
-	),
-	sub_quest(
-	      17,
-	      gText_SubQuest_Ernest_Name3,
-	      gText_SubQuest_Ernest_Name2,
-	      gText_SideQuestMap_Draynor_Manor,
-	      ITEM_PRESSURE_GAUGE,
-	      ITEM,
-	      sText_Found
-	),
-};
-
 static const struct SubQuest sSubQuests_COOKS_ASSISTANT[QUEST_COOKS_ASSISTANT_SUB_COUNT] =
 {
 	sub_quest(
-	      18,
+	      SUB_QUEST_COOKSASSISTANT_1,
 	      gText_SubQuest_Cooks_Assistant_1,
 	      gText_SubQuest1_Desc_Cooks_Assistant_1,
 	      gText_MapName_Route1,
@@ -395,7 +364,7 @@ static const struct SubQuest sSubQuests_COOKS_ASSISTANT[QUEST_COOKS_ASSISTANT_SU
 	      sText_Found
 	),
 	sub_quest(
-	      19,
+	      SUB_QUEST_COOKSASSISTANT_2,
 	      gText_SubQuest_Cooks_Assistant_2,
 	      gText_SubQuest1_Desc_Cooks_Assistant_2,
 	      gText_MapName_Route12,
@@ -404,7 +373,7 @@ static const struct SubQuest sSubQuests_COOKS_ASSISTANT[QUEST_COOKS_ASSISTANT_SU
 	      sText_Found
 	),
 	sub_quest(
-	      20,
+	      SUB_QUEST_COOKSASSISTANT_3,
 	      gText_SubQuest_Cooks_Assistant_3,
 	      gText_SubQuest1_Desc_Cooks_Assistant_3,
 	      gText_MapName_MillLaneMill,
@@ -414,10 +383,74 @@ static const struct SubQuest sSubQuests_COOKS_ASSISTANT[QUEST_COOKS_ASSISTANT_SU
 	),
 };
 
+static const struct SubQuest sSubQuests_RUNE_MYSTERIES[QUEST_RUNE_MYSTERIES_SUB_COUNT] =
+{
+	sub_quest(
+	      SUB_QUEST_RUNEMYSTERIES_1,
+	      gText_SubQuest_RuneMysteries_1,
+	      gText_SubQuest1_Desc_RuneMysteries_1,
+	      gText_MapName_WizardsTower,
+	      ITEM_TALISMAN_MYSTERY,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      SUB_QUEST_RUNEMYSTERIES_2,
+	      gText_SubQuest_RuneMysteries_2,
+	      gText_SubQuest1_Desc_RuneMysteries_2,
+	      gText_MapName_Route7,
+	      ITEM_TALISMAN_MYSTERY,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      SUB_QUEST_RUNEMYSTERIES_3,
+	      gText_SubQuest_RuneMysteries_3,
+	      gText_SubQuest1_Desc_RuneMysteries_3,
+	      gText_MapName_Lumbridge,
+	      OBJ_EVENT_GFX_GYMLEADER_DUKE_HORACIO,
+	      OBJECT,
+	      sText_Found
+	),
+
+};
+
+
+static const struct SubQuest sSubQuests_ERNEST_THE_CHICKEN[QUEST_ERNEST_THE_CHICKEN_SUB_COUNT] =
+{
+	sub_quest(
+	      SUB_QUEST_ERNESTTHECHICKEN_1,
+	      gText_SubQuest_Ernest_Name1,
+	      gText_SubQuest_Ernest_Name2,
+	      gText_SideQuestMap_Draynor_Manor,
+	      ITEM_OIL_CAN,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      SUB_QUEST_ERNESTTHECHICKEN_2,
+	      gText_SubQuest_Ernest_Name2,
+	      gText_SubQuest_Ernest_Name2,
+	      gText_SideQuestMap_Draynor_Manor,
+	      ITEM_RUBBER_TUBE,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      SUB_QUEST_ERNESTTHECHICKEN_3,
+	      gText_SubQuest_Ernest_Name3,
+	      gText_SubQuest_Ernest_Name2,
+	      gText_SideQuestMap_Draynor_Manor,
+	      ITEM_PRESSURE_GAUGE,
+	      ITEM,
+	      sText_Found
+	),
+};
+
 static const struct SubQuest sSubQuests_KOUREND_SLAYER[QUEST_KOUREND_SLAYER_SUB_COUNT] =
 {
 	sub_quest(
-	      21,
+	      SUB_QUEST_DARKTOTEM_1,
 	      gText_SubQuest_Kourend_Slayer_Name1,
 	      gText_SubQuest_Kourend_Slayer_Name2,
 	      gText_SideQuestMap_Kourend,
@@ -425,9 +458,8 @@ static const struct SubQuest sSubQuests_KOUREND_SLAYER[QUEST_KOUREND_SLAYER_SUB_
 	      ITEM,
 	      sText_Found
 	),
-
 	sub_quest(
-	      22,
+	      SUB_QUEST_DARKTOTEM_2,
 	      gText_SubQuest_Kourend_Slayer_Name2,
 	      gText_SubQuest_Kourend_Slayer_Name2,
 	      gText_SideQuestMap_Kourend,
@@ -435,9 +467,8 @@ static const struct SubQuest sSubQuests_KOUREND_SLAYER[QUEST_KOUREND_SLAYER_SUB_
 	      ITEM,
 	      sText_Found
 	),
-
 	sub_quest(
-	      23,
+	      SUB_QUEST_DARKTOTEM_3,
 	      gText_SubQuest_Kourend_Slayer_Name3,
 	      gText_SubQuest_Kourend_Slayer_Name2,
 	      gText_SideQuestMap_Kourend,
@@ -446,7 +477,6 @@ static const struct SubQuest sSubQuests_KOUREND_SLAYER[QUEST_KOUREND_SLAYER_SUB_
 	      sText_Found
 	),
 };
-
 ////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 

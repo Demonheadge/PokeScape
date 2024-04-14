@@ -3124,6 +3124,10 @@ extern const u8 gText_NEITIZNOT[];
 extern const u8 gText_GetSlayerAssignment[];
 extern const u8 gText_OpenSlayerRewardShop[];
 
+extern const u8 gText_CAVE_FUNGUS[];
+extern const u8 gText_GLOWING_MOSS[];
+extern const u8 gText_BROWN_WATER[];
+
 //pokescape cheat menu
 extern const u8 gText_CheatEvolutionShop[];
 extern const u8 gText_CheatPouchShop[];
@@ -3170,6 +3174,7 @@ extern const u8 gText_QuestAnnounce[];
 extern const u8 gText_QuestComplete[];
 extern const u8 gText_QuestActive[];
 
+
 //Quest - Cooks Assistant
 extern const u8 gText_SideQuestName_CooksAssistant[];
 extern const u8 gText_SideQuestDesc_CooksAssistant[];
@@ -3184,6 +3189,20 @@ extern const u8 gText_SubQuest_Cooks_Assistant_3[];
 extern const u8 gText_SubQuest1_Desc_Cooks_Assistant_1[];
 extern const u8 gText_SubQuest1_Desc_Cooks_Assistant_2[];
 extern const u8 gText_SubQuest1_Desc_Cooks_Assistant_3[];
+
+//Quest - Rune Mysteries
+extern const u8 gText_SideQuestName_RuneMysteries[];
+extern const u8 gText_SideQuestDesc_RuneMysteries[];
+extern const u8 gText_SideQuestDesc_Completed_RuneMysteries[];
+extern const u8 gText_MapName_WizardsTower[];
+extern const u8 gText_SubQuest_RuneMysteries_1[];
+extern const u8 gText_SubQuest_RuneMysteries_2[];
+extern const u8 gText_SubQuest_RuneMysteries_3[];
+extern const u8 gText_SubQuest1_Desc_RuneMysteries_1[];
+extern const u8 gText_SubQuest1_Desc_RuneMysteries_2[];
+extern const u8 gText_SubQuest1_Desc_RuneMysteries_3[];
+extern const u8 gText_MapName_Route7[];
+
 //Quest - Ernest
 extern const u8 gText_SideQuestName_Ernest[];
 extern const u8 gText_SideQuestDesc_Ernest[];
@@ -3431,7 +3450,7 @@ extern const u8 gText_Overload[];
 extern const u8 gText_SaradominBrew[];
 extern const u8	gText_PhoenixNecklace[];
 extern const u8	gText_AbyssalWhip[];
-extern const u8	gText_DragonfireSheild[];
+extern const u8	gText_DragonfireShield[];
 extern const u8	gText_DragonClaws[];
 extern const u8	gText_DragonDaggerP[];
 extern const u8	gText_DragonScimitar[];
@@ -3442,7 +3461,7 @@ extern const u8 gText_Overload_Desc[];
 extern const u8 gText_SaradominBrew_Desc[];
 extern const u8	gText_PhoenixNecklace_Desc[];
 extern const u8	gText_AbyssalWhip_Desc[];
-extern const u8	gText_DragonfireSheild_Desc[];
+extern const u8	gText_DragonfireShield_Desc[];
 extern const u8	gText_DragonClaws_Desc[];
 extern const u8	gText_DragonDaggerP_Desc[];
 extern const u8	gText_DragonScimitar_Desc[];
