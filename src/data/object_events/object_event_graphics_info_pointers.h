@@ -485,13 +485,10 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dog_Labrado
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dog_Guard;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dog_Corgi;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dog_Dalmatian;
-
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pker_Rusher;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Rune_Armour;
-
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Corp_Beast;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Corp_Core;
-
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Smuggler;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RAC_BATS;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RAC_DRAGON;
@@ -517,6 +514,37 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RAC_POPBUBB
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RAC_SNAILY;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RAC_TIFA;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RAC_WHISPER;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hill_Giant;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Moss_Giant;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fire_Giant;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Skotizo;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dragon_Green;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dragon_Blue;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dragon_Red;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dragon_Black;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_dragon_armour;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_dungeoneering_1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_dungeoneering_2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_dungeoneering_3;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_dungeoneering_4;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_dungeoneering_5;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_dungeoneering_6;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_dungeoneering_7;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_dungeoneering_8;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_dungeoneering_9;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_hazelmere_1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_hazelmere_2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_mystic_blue;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_mystic_light;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_necromancer;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_runecrafter_green;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_runecrafter_yellow;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_wizard_zamorak;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_thok_angry;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_thok_happy;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_kreearra;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_strykewyrm_wildy;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_hanannie;
 
 //ORES
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CopperOre;
@@ -1041,6 +1069,37 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_RAC_WHISPER] =                       &gObjectEventGraphicsInfo_RAC_WHISPER,
     [OBJ_EVENT_GFX_CORP_BEAST] =                    &gObjectEventGraphicsInfo_Corp_Beast,
     [OBJ_EVENT_GFX_CORP_CORE] =                    &gObjectEventGraphicsInfo_Corp_Core,
+    [OBJ_EVENT_GFX_HILL_GIANT] =                    &gObjectEventGraphicsInfo_Hill_Giant,
+    [OBJ_EVENT_GFX_MOSS_GIANT] =                    &gObjectEventGraphicsInfo_Moss_Giant,
+    [OBJ_EVENT_GFX_FIRE_GIANT] =                    &gObjectEventGraphicsInfo_Fire_Giant,
+    [OBJ_EVENT_GFX_SKOTIZO] =                       &gObjectEventGraphicsInfo_Skotizo,
+    [OBJ_EVENT_GFX_DRAGON_GREEN] =                       &gObjectEventGraphicsInfo_Dragon_Green,
+    [OBJ_EVENT_GFX_DRAGON_RED] =                       &gObjectEventGraphicsInfo_Dragon_Red,
+    [OBJ_EVENT_GFX_DRAGON_BLUE] =                       &gObjectEventGraphicsInfo_Dragon_Blue,
+    [OBJ_EVENT_GFX_DRAGON_BLACK] =                       &gObjectEventGraphicsInfo_Dragon_Black,
+    [OBJ_EVENT_GFX_DRAGON_ARMOUR] =                       &gObjectEventGraphicsInfo_dragon_armour,
+    [OBJ_EVENT_GFX_DUNGEONEERING_1] =                       &gObjectEventGraphicsInfo_dungeoneering_1,
+    [OBJ_EVENT_GFX_DUNGEONEERING_2] =                       &gObjectEventGraphicsInfo_dungeoneering_2,
+    [OBJ_EVENT_GFX_DUNGEONEERING_3] =                       &gObjectEventGraphicsInfo_dungeoneering_3,
+    [OBJ_EVENT_GFX_DUNGEONEERING_4] =                       &gObjectEventGraphicsInfo_dungeoneering_4,
+    [OBJ_EVENT_GFX_DUNGEONEERING_5] =                       &gObjectEventGraphicsInfo_dungeoneering_5,
+    [OBJ_EVENT_GFX_DUNGEONEERING_6] =                       &gObjectEventGraphicsInfo_dungeoneering_6,
+    [OBJ_EVENT_GFX_DUNGEONEERING_7] =                       &gObjectEventGraphicsInfo_dungeoneering_7,
+    [OBJ_EVENT_GFX_DUNGEONEERING_8] =                       &gObjectEventGraphicsInfo_dungeoneering_8,
+    [OBJ_EVENT_GFX_DUNGEONEERING_9] =                       &gObjectEventGraphicsInfo_dungeoneering_9,
+    [OBJ_EVENT_GFX_HAZELMERE_1] =                           &gObjectEventGraphicsInfo_hazelmere_1,
+    [OBJ_EVENT_GFX_HAZELMERE_2] =                           &gObjectEventGraphicsInfo_hazelmere_2,
+    [OBJ_EVENT_GFX_MYSTIC_BLUE] =                           &gObjectEventGraphicsInfo_mystic_blue,
+    [OBJ_EVENT_GFX_MYSTIC_LIGHT] =                          &gObjectEventGraphicsInfo_mystic_light,
+    [OBJ_EVENT_GFX_NECROMANCER] =                           &gObjectEventGraphicsInfo_necromancer,
+    [OBJ_EVENT_GFX_RUNECRAFTER_GREEN] =                     &gObjectEventGraphicsInfo_runecrafter_green,
+    [OBJ_EVENT_GFX_RUNECRAFTER_YELLOW] =                    &gObjectEventGraphicsInfo_runecrafter_yellow,
+    [OBJ_EVENT_GFX_WIZARD_ZAMORAK] =                        &gObjectEventGraphicsInfo_wizard_zamorak,
+    [OBJ_EVENT_GFX_THOK_ANGRY] =                            &gObjectEventGraphicsInfo_thok_angry,
+    [OBJ_EVENT_GFX_THOK_HAPPY] =                            &gObjectEventGraphicsInfo_thok_happy,
+    [OBJ_EVENT_GFX_KREEARRA] =                              &gObjectEventGraphicsInfo_kreearra,
+    [OBJ_EVENT_GFX_STRYKEWYRM_WILDY] =                      &gObjectEventGraphicsInfo_strykewyrm_wildy,
+    [OBJ_EVENT_GFX_HANANNIE] =                              &gObjectEventGraphicsInfo_hanannie,
 
 //ORES 
 	[OBJ_EVENT_GFX_COPPER_ORE] =          		    &gObjectEventGraphicsInfo_CopperOre,
