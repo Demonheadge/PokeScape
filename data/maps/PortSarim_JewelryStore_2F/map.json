@@ -24,8 +24,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_GRUMS_HOUSE",
+      "flag": "FLAG_ITEM_GRUMS_HOUSE"
     }
   ],
   "warp_events": [
@@ -34,7 +34,7 @@
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_PORT_SARIM_JEWELRY_STORE",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

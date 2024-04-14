@@ -40,43 +40,41 @@ script OPENWORLD_STATE_ROUTE6 {
 
 
 
-script FALADORSOUTH_STATE{
-	switch (var(VAR_POKESCAPE_FALADOR_STATE)){ 
-        //HAM EVENT PORT SARIM - FALADOR SOUTH GATE ADD NPCS
-		case 0: 
-            removeobject(2)
-            setflag(FLAG_TEMP_1)
+script FALADORSOUTH_STATE {
 
-            clearflag(FLAG_TEMP_2)
-            addobject(OBJ_EVENT_ID_MUGGER)
-            addobject(OBJ_EVENT_ID_RAT)
-            addobject(OBJ_EVENT_ID_GUARD)
-            addobject(OBJ_EVENT_ID_UNICORN)
-            
-            end
-
-        //HAM EVENT PORT SARIM - ENDS - FALADOR SOUTH GATE REMOVE NPCS
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-            addobject(2)
-            clearflag(FLAG_TEMP_1)
-            
-            removeobject(OBJ_EVENT_ID_MUGGER)
-            removeobject(OBJ_EVENT_ID_RAT)
-            removeobject(OBJ_EVENT_ID_GUARD)
-            removeobject(OBJ_EVENT_ID_UNICORN)
-            setflag(FLAG_TEMP_2)
-            end
+    if ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) < 110)) { //LESS THAN //If melzars maze hasnt been completed.
+        removeobject(2)
+        setflag(FLAG_TEMP_1)
+        clearflag(FLAG_TEMP_2)
+        addobject(OBJ_EVENT_ID_MUGGER)
+        addobject(OBJ_EVENT_ID_RAT)
+        addobject(OBJ_EVENT_ID_GUARD)
+        addobject(OBJ_EVENT_ID_UNICORN)
+        addobject(8)
     }
+    else {
+        removeobject(OBJ_EVENT_ID_MUGGER)
+        removeobject(OBJ_EVENT_ID_RAT)
+        removeobject(OBJ_EVENT_ID_GUARD)
+        removeobject(OBJ_EVENT_ID_UNICORN)
+        setflag(FLAG_TEMP_2)
+    }
+    return
+    
 }
 
 
 
-
-
+script ROUTE6_NPC_GUARD_HAM{
+    lock
+	faceplayer
+	namebox("Guard")
+    msgbox(format("We've recieved reports that there is current H.A.M activity in Rimmington.\pWe wish to send some White Knights to go investigate but they are currently busy with some distrubances within the Dwarven Mines."))
+    hidenamebox
+	closemessage
+	release
+	end
+}
 
 
 
@@ -150,7 +148,7 @@ movement MOVEMENT_ROUTE6_UNICORN
 //BATTLE TRAINERS
 
 script BATTLE_ROUTE6_FIREMAKER{
-    trainerbattle_single(TRAINER_ROUTE6_FIREMAKER, format("Hey get out of my way, im making bonfires here!"),format("Burned to a crisp.\pI hope you levelled up…"))
+    trainerbattle_single(TRAINER_ROUTE6_FIREMAKER, format("Hey get out of my way, I'm making bonfires here!"),format("Burned to a crisp.\pI hope you levelled up…"))
     msgbox(format("Burned to a crisp.\pI hope you levelled up…"))
     release
 }

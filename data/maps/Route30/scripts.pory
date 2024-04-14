@@ -110,12 +110,16 @@ script NPC_ROUTE30_PKER
 {
     faceplayer
     namebox ("Darkermanz")
-    msgbox(format("There is nothing more satisfying than spec'ing someone out.\pI love using the move Dark Descent to take my competition out of the game.\pHere I'll share this with you so you can understand what I mean."))
-    closemessage
-    hidenamebox
-    giveitem(ITEM_TM37_THOUSAND_ARROWS)
-    namebox ("Darkermanz")
-    msgbox(format("You should try Dark Descent out on some noobs in the Wilderness."))
+    msgbox(format("There is nothing more satisfying than spec'ing someone out.\pI love using the move Dark Descent to take my competition out of the game."))
+    if (flag(FLAG_RECEIVED_TM37_DARKERMANZ) == FALSE) {
+        msgbox(format("Here I'll share this with you so you can understand what I mean."))
+        closemessage
+        hidenamebox
+        giveitem(ITEM_TM37_THOUSAND_ARROWS)
+        namebox ("Darkermanz")
+        msgbox(format("You should try Dark Descent out on some noobs in the Wilderness."))
+        setflag(FLAG_RECEIVED_TM37_DARKERMANZ)
+    }
     closemessage
     hidenamebox
     release
@@ -135,7 +139,7 @@ script BATTLE_ROUTE30_TRAINER_1
 	end
 }
 
-script BATTLE_ROUTE30_TRAINER_2 //Bonbloc 
+script BATTLE_ROUTE30_TRAINER_2 
 {
     trainerbattle_single(TRAINER_ROUTE30_TRAINER_2, format("Since I cannot PK you, I'll challenge you to a battle instead!"),format("You are lucky you weren't in the Wilderness."))
     namebox ("Bonbloc")
@@ -145,7 +149,7 @@ script BATTLE_ROUTE30_TRAINER_2 //Bonbloc
 	end
 }
 
-script BATTLE_ROUTE30_TRAINER_3 //Youbleedred 
+script BATTLE_ROUTE30_TRAINER_3
 {
     trainerbattle_single(TRAINER_ROUTE30_TRAINER_3, format("Woah, woah, woah!\pWhat seems to be the rush?\pWhy not stay for a battle."),format("That was over so fast!"))
     namebox ("Youbleedred")
@@ -159,7 +163,7 @@ script BATTLE_ROUTE30_TRAINER_4
 {
     trainerbattle_single(TRAINER_ROUTE30_TRAINER_4, format("I've been digging these ruins up all day, I could use a break.\pSay lets have a battle!"),format("I think we have uncovered your potential!"))
     namebox ("Archaeologist")
-    msgbox(format("These ruins look like they used to belong to a cult of Zamorak but I am not sure yet until I uncover some more."))
+    msgbox(format("These ruins look like they used to belong to others followers of Zamorak, but I'll need to do more research to be certain."))
 	hidenamebox
     release
 	end

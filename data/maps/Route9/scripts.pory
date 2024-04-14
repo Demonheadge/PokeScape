@@ -1,6 +1,44 @@
 mapscripts Route9_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+		setvar(VAR_EVOLUTION_MAP_STATE, 0) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+
+		if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    	{
+			call(ROUTE9_STATE)
+		}
+		else //if OPENWORLD
+		{
+			call(ROUTE9_STATE)
+		}
+	}
 }
 
+
+
+script ROUTE9_STATE {
+
+    if ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 105) || (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 106)) {
+        addobject(12)
+        addobject(13)
+        clearflag(FLAG_TEMP_1F)
+        if (flag(FLAG_POKESCAPE_RIMMINGTON_HAM_LOST_TIME) == TRUE) {
+            addobject(27)
+            clearflag(FLAG_TEMP_1E)
+        }
+        else {
+            removeobject(27)
+            setflag(FLAG_TEMP_1E)
+        }
+    }
+    else {
+        removeobject(12)
+        removeobject(13)
+        setflag(FLAG_TEMP_1F)
+        removeobject(27)
+        setflag(FLAG_TEMP_1E)
+    }
+    return
+}
 
 
 

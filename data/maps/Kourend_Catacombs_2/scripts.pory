@@ -1,0 +1,306 @@
+mapscripts Kourend_Catacombs_2_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_SLAYER_COMPLETE, 1: SLAYER_TASK_COMPLETE
+    ]
+}
+
+
+
+
+
+
+script KOUREND_SLAYER_QUEST_START {
+    msgbox(format("You look strong, could I would you be interested in doing some Slayer tasks for me?"))
+    msgbox(format("Slayer Master explains Slayer Tasks, explains how Slayer Tasks work by ONLY defeating monsters. Explains Slayer Points(SP), offers rewards mentioning totems that he found."))
+    msgbox(format("Take this it will help you remember your Slayer Assignment."))
+    giveitem(ITEM_SLAYER_GEM, 1)
+    closemessage
+    hidenamebox
+    startquest (QUEST_KOUREND_SLAYER)
+    release
+    end
+}
+
+
+script giveSlayerPoints {
+    setvar (VAR_0x8004, 100)
+    special(GiveFrontierBattlePoints)
+    end
+}
+
+script SLAYER_REWARD_SHOP {
+    msgbox(format("What would you like?"))
+	special (ShowBattlePointsWindow)
+
+    //setvar (VAR_0x8004, SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1)
+    setvar (VAR_0x8004, SCROLL_SLAYER_REWARD_SHOP)
+	special (ShowFrontierExchangeCornerItemIconWindow)
+	special (ShowScrollableMultichoice)
+	waitstate
+	special (CloseFrontierExchangeCornerItemIconWindow)
+	switch (var(VAR_RESULT)) {
+            case 0: 
+                goto(SlayerRewardShop_DarkTotemTop)
+            case 1: 
+                goto(SlayerRewardShop_DarkTotemMiddle)
+            case 2: 
+                goto(SlayerRewardShop_DarkTotemBottom)
+            case 3: 
+                goto(SlayerRewardShop_AncientShard)
+            case 4: 
+                goto(SlayerRewardShop_Overload)
+            case 5: 
+                goto(SlayerRewardShop_SARADOMIN_BREW)
+            case 6: 
+                goto(SlayerRewardShop_PHOENIX_NECKLACE)
+            case 7: 
+                goto(SlayerRewardShop_ABYSSAL_WHIP)
+            case 8: 
+                goto(SlayerRewardShop_DFS)
+            case 9: 
+                goto(SlayerRewardShop_DRAGON_CLAWS)
+            case 10: 
+                goto(SlayerRewardShop_DRAGON_DAGGER_POISON)
+            case 11: 
+                goto(SlayerRewardShop_DRAGON_SCIMITAR)
+            case 12: 
+                goto(SlayerRewardShop_ELEMENTAL_SHIELD)
+            case 13: 
+                goto(SlayerRewardShop_GRANITE_MAUL)
+            case 14: 
+                goto(SlayerRewardShop_KRAKEN_TENTACLE)
+            case 15: //exit
+                goto(SLAYER_REWARD_SHOP_Goodbye)
+            case MULTI_B_PRESSED: 
+                goto(SLAYER_REWARD_SHOP_Goodbye)
+    }
+	end
+}
+
+
+script SLAYER_REWARD_SHOP_Goodbye {
+    special (CloseBattlePointsWindow)
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+
+script SLAYER_REWARD_SHOP_TryPurchasePrize {
+    specialvar (VAR_TEMP_1, GetFrontierBattlePoints)
+    goto_if_ge (VAR_TEMP_1, VAR_0x8008, SLAYER_REWARD_SHOP_TryGiveItem)
+    msgbox(format("I'm so sorry…\nYou don't have enough Slayer Points…$"))
+    goto(SLAYER_REWARD_SHOP)
+    end
+}
+
+script SLAYER_REWARD_SHOP_TryGiveItem {
+    checkitemspace (VAR_0x8009)
+    goto_if_eq (VAR_RESULT, FALSE, BattleFrontier_ExchangeServiceCorner_EventScript_BagFull)
+    copyvar (VAR_0x8004, VAR_0x8008)
+	special (TakeFrontierBattlePoints)
+	special (UpdateBattlePointsWindow)
+	playse (SE_SHOP)
+    msgbox(format("Here is your prize!"))
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE , QUEST_KOUREND_SLAYER, 0)
+    if (!var(VAR_RESULT))
+    { 
+        if (var(VAR_0x8009) == ITEM_DARK_TOTEM_BASE) {
+            subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_KOUREND_SLAYER, 0)
+        }
+    }
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE , QUEST_KOUREND_SLAYER, 1)
+    if (!var(VAR_RESULT))
+    { 
+        if (var(VAR_0x8009) == ITEM_DARK_TOTEM_MID) {
+            subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_KOUREND_SLAYER, 1)
+        }
+    }
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE , QUEST_KOUREND_SLAYER, 2)
+    if (!var(VAR_RESULT))
+    { 
+        if (var(VAR_0x8009) == ITEM_DARK_TOTEM_TOP) {
+            subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_KOUREND_SLAYER, 2)
+        }
+    }
+    giveitem (VAR_0x8009)
+	goto (SLAYER_REWARD_SHOP)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//SLAYER REWARD SHOP ITEMS
+
+script SlayerRewardShop_DarkTotemTop {
+    msgbox(format("You've chosen the 'TOP' piece of the DARK TOTEM.\pIs that correct?"), MSGBOX_YESNO)
+    goto_if_eq (VAR_RESULT, NO, SLAYER_REWARD_SHOP)
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE , QUEST_KOUREND_SLAYER, 0)
+    if (!var(VAR_RESULT))
+    { 
+        setvar (VAR_0x8008, 50) //if quest is complete up the price.
+        msgbox(format("Oh lucky you!\nThis item is currently on sale for 50(SP)!"))
+    }
+    elif (var(VAR_RESULT)) {
+        setvar (VAR_0x8008, 100) //if quest is complete up the price.
+    }
+    setvar (VAR_0x8009, ITEM_DARK_TOTEM_BASE)
+    goto (SLAYER_REWARD_SHOP_TryPurchasePrize)
+    end
+}
+script SlayerRewardShop_DarkTotemMiddle {
+    msgbox(format("You've chosen the 'MIDDLE' piece of the DARK TOTEM.\pIs that correct?"), MSGBOX_YESNO)
+    goto_if_eq (VAR_RESULT, NO, SLAYER_REWARD_SHOP)
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE , QUEST_KOUREND_SLAYER, 1)
+    if (!var(VAR_RESULT))
+    { 
+        setvar (VAR_0x8008, 50) //if quest is complete up the price.
+        msgbox(format("Oh lucky you!\nThis item is currently on sale for 50(SP)!"))
+    }
+    elif (var(VAR_RESULT)) {
+        setvar (VAR_0x8008, 100) //if quest is complete up the price.
+    }
+    setvar (VAR_0x8009, ITEM_DARK_TOTEM_MID)
+    goto (SLAYER_REWARD_SHOP_TryPurchasePrize)
+    end
+}
+script SlayerRewardShop_DarkTotemBottom {
+    msgbox(format("You've chosen the 'BOTTOM' piece of the DARK TOTEM.\pIs that correct?"), MSGBOX_YESNO)
+    goto_if_eq (VAR_RESULT, NO, SLAYER_REWARD_SHOP)
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE , QUEST_KOUREND_SLAYER, 2)
+    if (!var(VAR_RESULT))
+    { 
+        setvar (VAR_0x8008, 50) //if quest is complete up the price.
+        msgbox(format("Oh lucky you!\nThis item is currently on sale for 50(SP)!"))
+    }
+    elif (var(VAR_RESULT)) {
+        setvar (VAR_0x8008, 100) //if quest is complete up the price.
+    }
+    setvar (VAR_0x8009, ITEM_DARK_TOTEM_TOP)
+    goto (SLAYER_REWARD_SHOP_TryPurchasePrize)
+    end
+}
+script SlayerRewardShop_AncientShard {
+    msgbox(format("You've chosen the ANCIENT SHARD.\pIs that correct?"), MSGBOX_YESNO)
+    goto_if_eq (VAR_RESULT, NO, SLAYER_REWARD_SHOP)
+    setvar (VAR_0x8008, 6) 
+    setvar (VAR_0x8009, ITEM_ANCIENT_SHARD)
+    goto (SLAYER_REWARD_SHOP_TryPurchasePrize)
+    end
+}
+
+
+
+
+
+
+script SlayerRewardShop_Overload {
+    msgbox(format("You've chosen the OVERLOAD.\pIs that correct?"), MSGBOX_YESNO)
+    goto_if_eq (VAR_RESULT, NO, SLAYER_REWARD_SHOP)
+    setvar (VAR_0x8008, 48) 
+    setvar (VAR_0x8009, ITEM_OVERLOAD)
+    goto (SLAYER_REWARD_SHOP_TryPurchasePrize)
+    end
+}
+script SlayerRewardShop_SARADOMIN_BREW {
+    msgbox(format("You've chosen the SARADOMIN BREW.\pIs that correct?"), MSGBOX_YESNO)
+    goto_if_eq (VAR_RESULT, NO, SLAYER_REWARD_SHOP)
+    setvar (VAR_0x8008, 48) 
+    setvar (VAR_0x8009, ITEM_SARADOMIN_BREW)
+    goto (SLAYER_REWARD_SHOP_TryPurchasePrize)
+    end
+}
+script SlayerRewardShop_PHOENIX_NECKLACE{
+    msgbox(format("You've chosen the PHOENIX NECKLACE.\pIs that correct?"), MSGBOX_YESNO)
+    goto_if_eq (VAR_RESULT, NO, SLAYER_REWARD_SHOP)
+    setvar (VAR_0x8008, 48) 
+    setvar (VAR_0x8009, ITEM_PHOENIX_NECKLACE)
+    goto (SLAYER_REWARD_SHOP_TryPurchasePrize)
+    end
+}
+script SlayerRewardShop_ABYSSAL_WHIP {
+    msgbox(format("You've chosen the ABYSSAL WHIP.\pIs that correct?"), MSGBOX_YESNO)
+    goto_if_eq (VAR_RESULT, NO, SLAYER_REWARD_SHOP)
+    setvar (VAR_0x8008, 48) 
+    setvar (VAR_0x8009, ITEM_ABYSSAL_WHIP)
+    goto (SLAYER_REWARD_SHOP_TryPurchasePrize)
+    end
+}
+script SlayerRewardShop_DFS {
+    msgbox(format("You've chosen the ANTI DRAGON SHIELD.\pIs that correct?"), MSGBOX_YESNO)
+    goto_if_eq (VAR_RESULT, NO, SLAYER_REWARD_SHOP)
+    setvar (VAR_0x8008, 48) 
+    setvar (VAR_0x8009, ITEM_DFS)
+    goto (SLAYER_REWARD_SHOP_TryPurchasePrize)
+    end
+}
+script SlayerRewardShop_DRAGON_CLAWS {
+    msgbox(format("You've chosen the DRAGON CLAWS.\pIs that correct?"), MSGBOX_YESNO)
+    goto_if_eq (VAR_RESULT, NO, SLAYER_REWARD_SHOP)
+    setvar (VAR_0x8008, 48) 
+    setvar (VAR_0x8009, ITEM_DRAGON_CLAWS)
+    goto (SLAYER_REWARD_SHOP_TryPurchasePrize)
+    end
+}
+script SlayerRewardShop_DRAGON_DAGGER_POISON {
+    msgbox(format("You've chosen the DRAGON DAGGER.\pIs that correct?"), MSGBOX_YESNO)
+    goto_if_eq (VAR_RESULT, NO, SLAYER_REWARD_SHOP)
+    setvar (VAR_0x8008, 48) 
+    setvar (VAR_0x8009, ITEM_DRAGON_DAGGER_POISON)
+    goto (SLAYER_REWARD_SHOP_TryPurchasePrize)
+    end
+}
+script SlayerRewardShop_DRAGON_SCIMITAR {
+    msgbox(format("You've chosen the DRAGON SCIMITAR.\pIs that correct?"), MSGBOX_YESNO)
+    goto_if_eq (VAR_RESULT, NO, SLAYER_REWARD_SHOP)
+    setvar (VAR_0x8008, 48) 
+    setvar (VAR_0x8009, ITEM_DRAGON_SCIMITAR)
+    goto (SLAYER_REWARD_SHOP_TryPurchasePrize)
+    end
+}
+
+script SlayerRewardShop_ELEMENTAL_SHIELD {
+    msgbox(format("You've chosen the ELEMENTAL SHIELD.\pIs that correct?"), MSGBOX_YESNO)
+    goto_if_eq (VAR_RESULT, NO, SLAYER_REWARD_SHOP)
+    setvar (VAR_0x8008, 48) 
+    setvar (VAR_0x8009, ITEM_ELEMENTAL_SHIELD)
+    goto (SLAYER_REWARD_SHOP_TryPurchasePrize)
+    end
+}
+script SlayerRewardShop_GRANITE_MAUL {
+    msgbox(format("You've chosen the GRANITE MAUL.\pIs that correct?"), MSGBOX_YESNO)
+    goto_if_eq (VAR_RESULT, NO, SLAYER_REWARD_SHOP)
+    setvar (VAR_0x8008, 48) 
+    setvar (VAR_0x8009, ITEM_GRANITE_MAUL)
+    goto (SLAYER_REWARD_SHOP_TryPurchasePrize)
+    end
+}
+script SlayerRewardShop_KRAKEN_TENTACLE {
+    msgbox(format("You've chosen the KRAKEN TENTACLE.\pIs that correct?"), MSGBOX_YESNO)
+    goto_if_eq (VAR_RESULT, NO, SLAYER_REWARD_SHOP)
+    setvar (VAR_0x8008, 48) 
+    setvar (VAR_0x8009, ITEM_KRAKEN_TENTACLE)
+    goto (SLAYER_REWARD_SHOP_TryPurchasePrize)
+    end
+}
+
+
+
+
+
+

@@ -1,0 +1,466 @@
+mapscripts Kourend_Catacombs_8_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        call(SKOTIZO_CHECK)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_SLAYER_COMPLETE, 1: SLAYER_TASK_COMPLETE
+    ]
+}
+
+
+script SKOTIZO_CHECK {
+    checkitem(ITEM_DARK_TOTEM, 1)
+    if (var(VAR_RESULT)) {
+        setflag(FLAG_TEMP_A)
+        removeobject(1)
+    }
+    if (var(VAR_TEMP_E) == 5) {
+        clearflag(FLAG_TEMP_A)
+        addobject(1)
+
+        setmetatile(9,4,673,0)
+        setmetatile(10,4,673,0)
+        setmetatile(11,4,673,0)
+        setmetatile(9,5,673,0)
+        setmetatile(10,5,673,0)
+        setmetatile(11,5,673,0)
+        special (DrawWholeMapView)
+    }
+
+}
+
+script SKOTIZO_TRIGGER {
+    
+    if (var(VAR_TEMP_E) == 5) {
+        release
+        end
+    }
+    checkitem(ITEM_DARK_TOTEM, 1)
+        if (var(VAR_RESULT)) {
+            lock
+            applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_UP)
+            waitmovement(0)
+            msgbox(format("The Dark Totem in your backpack starts to react to the crystal.\pWould you like to use it?"), MSGBOX_YESNO)
+            if (var(VAR_RESULT)){
+                    msgbox(format("The Totem and the crystal begin to shake."))
+                    closemessage
+                    delay(30)
+                    setvar(VAR_0x8004, 0)  //vertical pan
+                    setvar(VAR_0x8005, 3)  //horizontal pan
+                    setvar(VAR_0x8006, 4) //NUM SHAKES
+                    setvar(VAR_0x8007, 2) //SHAKE DELAY
+                    special(ShakeCamera)
+                    delay(60)
+                    setvar(VAR_0x8004, 0)  //vertical pan
+                    setvar(VAR_0x8005, 3)  //horizontal pan
+                    setvar(VAR_0x8006, 4) //NUM SHAKES
+                    setvar(VAR_0x8007, 2) //SHAKE DELAY
+                    special(ShakeCamera)
+                    delay(60)
+                    fadescreen(FADE_TO_WHITE)
+                    clearflag(FLAG_TEMP_A)
+                    addobject(1)
+                    setmetatile(9,4,673,0)
+                    setmetatile(10,4,673,0)
+                    setmetatile(11,4,673,0)
+                    setmetatile(9,5,673,0)
+                    setmetatile(10,5,673,0)
+                    setmetatile(11,5,673,0)
+                    special (DrawWholeMapView)
+	                playse (SE_ICE_BREAK)
+                    fadescreen(FADE_FROM_WHITE)
+                    msgbox(format("The crystal shatters and reveals a giant monster!"))
+                    closemessage
+                    goto(ENCOUNTER_SKOTIZO)
+                }
+            closemessage
+            release
+            end
+        }
+    release
+    end           
+}
+
+script ENCOUNTER_SKOTIZO
+{
+	lock
+    namebox ("SKOTIZO")
+    playmoncry(SPECIES_URSARING, 0)
+	msgbox(format("ROOOARR!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+	setwildbattle (SPECIES_SKOTIZO, 70, ITEM_NONE)
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreen(FADE_TO_BLACK)
+            removeitem(ITEM_DARK_TOTEM, 1)
+            msgbox(format("You feel the catacombs shake and tremble as the Dark Totem shatters into pieces.\pThe air feels renewed."))
+            closemessage
+            setflag(FLAG_TEMP_A)
+            removeobject (1)
+            fadescreen(FADE_FROM_BLACK)
+            questmenu(QUEST_MENU_CHECK_COMPLETE , QUEST_KOUREND_SLAYER)
+            if (!var(VAR_RESULT))
+            { 
+                questmenu(QUEST_MENU_COMPLETE_QUEST , QUEST_KOUREND_SLAYER)
+            }
+            call(RESET_KOUREND_CATACOMBS)
+            closemessage
+            end
+        case B_OUTCOME_CAUGHT:
+            fadescreen(FADE_TO_BLACK)
+            removeitem(ITEM_DARK_TOTEM, 1)
+            msgbox(format("You feel the catacombs shake and tremble as the Dark Totem shatters into pieces.\pThe air feels renewed."))
+            closemessage
+            setflag(FLAG_TEMP_A)
+            removeobject (1)
+            fadescreen(FADE_FROM_BLACK)
+            questmenu(QUEST_MENU_CHECK_COMPLETE , QUEST_KOUREND_SLAYER)
+            if (!var(VAR_RESULT))
+            { 
+                questmenu(QUEST_MENU_COMPLETE_QUEST , QUEST_KOUREND_SLAYER)
+            }
+            call(RESET_KOUREND_CATACOMBS)
+            closemessage
+            end
+        case B_OUTCOME_RAN:
+            msgbox(format("Skotizo just stands there staring at you menacingly."))
+            closemessage
+            setvar(VAR_TEMP_E, 5)
+        case B_OUTCOME_PLAYER_TELEPORTED:
+            msgbox(format("Skotizo is in disbelief you just teleported away from battle."))
+            closemessage
+            setvar(VAR_TEMP_E, 5)
+    }
+    release
+	end
+}
+
+script RESET_KOUREND_CATACOMBS {
+    clearflag(FLAG_ITEM_REPEATABLE_ITEM_1)
+    clearflag(FLAG_ITEM_REPEATABLE_ITEM_2)
+    clearflag(FLAG_ITEM_REPEATABLE_ITEM_3)
+    clearflag(FLAG_ITEM_REPEATABLE_ITEM_4)
+    clearflag(FLAG_ITEM_REPEATABLE_ITEM_5)
+    clearflag(FLAG_ITEM_REPEATABLE_ITEM_6)
+    clearflag(FLAG_ITEM_REPEATABLE_ITEM_7)
+    clearflag(FLAG_ITEM_REPEATABLE_ITEM_8)
+    clearflag(FLAG_ITEM_REPEATABLE_ITEM_9)
+    clearflag(FLAG_ITEM_REPEATABLE_ITEM_10)
+
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_1)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_2)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_3)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_4)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_5)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_6)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_7)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_8)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_9)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_10)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_11)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_12)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_13)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_14)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_15)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_16)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_17)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_18)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_19)
+    clearflag(FLAG_HIDDEN_ITEM_TEMP_20)
+
+    return
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//OW ENCOUNTERS
+script ENCOUNTER_ABYSSAL_DEMON
+{
+	lock
+    faceplayer
+    namebox ("ABYSSAL DEMON")
+    playmoncry(SPECIES_URSARING, 0)
+	msgbox(format("WIZZZLE!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    if (var(VAR_RESULT) == MAP_ABYSSAL_REALM_1) {
+        setwildbattle (SPECIES_ABYSSAL_DEMON_FORM, 25, ITEM_NONE)
+    }
+    else {
+        setwildbattle (SPECIES_ABYSSAL_DEMON_FORM, 50, ITEM_NONE)
+    }
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+        case B_OUTCOME_CAUGHT:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+    }
+    release
+	end
+}
+
+script ENCOUNTER_SLIME
+{
+	lock
+    faceplayer
+    namebox ("SLIME")
+    playmoncry(SPECIES_URSARING, 0)
+	msgbox(format("GLOOOP! GOOP!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    if (var(VAR_RESULT) == MAP_KOUREND_CATACOMBS_4) {
+        setwildbattle (SPECIES_JELLY_WARPED_FORM, 50, ITEM_NONE)
+    }
+    elif (var(VAR_RESULT) == MAP_KOUREND_CATACOMBS_3) {
+        setwildbattle (SPECIES_JELLY_NORMAL_FORM, 50, ITEM_NONE)
+    }
+    else {
+        setwildbattle (SPECIES_CAVE_SLIME, 20, ITEM_NONE)
+    }
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+        case B_OUTCOME_CAUGHT:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+    }
+    release
+	end
+}
+
+script ENCOUNTER_ROCKCRAB
+{
+	lock
+    namebox ("ROCK CRAB")
+    playmoncry(SPECIES_URSARING, 0)
+	msgbox(format("SNIP SNIP!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    if ((var(VAR_RESULT) == MAP_KOUREND_CATACOMBS_3) || (var(VAR_RESULT) == MAP_KOUREND_CATACOMBS_4)){
+        setwildbattle (SPECIES_ROCK_CRAB_GIANT_SAND_FORM, 50, ITEM_NONE)
+    }
+    else {
+        setwildbattle (SPECIES_ROCK_CRAB_NORMAL_FORM, 20, ITEM_NONE)
+    }
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+        case B_OUTCOME_CAUGHT:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+    }
+    release
+	end
+}
+
+script ENCOUNTER_DRAGON_BLACK
+{
+	lock
+    namebox ("DRAGON")
+    playmoncry(SPECIES_URSARING, 0)
+	msgbox(format("RAWR!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    setwildbattle (SPECIES_DRAGON_BLACK_FORM, 50, ITEM_NONE)
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+        case B_OUTCOME_CAUGHT:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+    }
+    release
+	end
+}
+script ENCOUNTER_DRAGON_RED
+{
+	lock
+    namebox ("DRAGON")
+    playmoncry(SPECIES_URSARING, 0)
+	msgbox(format("RAWR!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    setwildbattle (SPECIES_DRAGON_RED_FORM, 50, ITEM_NONE)
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+        case B_OUTCOME_CAUGHT:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+    }
+    release
+	end
+}
+script ENCOUNTER_DRAGON_BLUE
+{
+	lock
+    namebox ("DRAGON")
+    playmoncry(SPECIES_URSARING, 0)
+	msgbox(format("RAWR!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    setwildbattle (SPECIES_DRAGON_BLUE_FORM, 50, ITEM_NONE)
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+        case B_OUTCOME_CAUGHT:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+    }
+    release
+	end
+}
+script ENCOUNTER_DRAGON_GREEN
+{
+	lock
+    namebox ("DRAGON")
+    playmoncry(SPECIES_URSARING, 0)
+	msgbox(format("RAWR!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    setwildbattle (SPECIES_DRAGON_GREEN_FORM, 50, ITEM_NONE)
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+        case B_OUTCOME_CAUGHT:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+    }
+    release
+	end
+}
+script ENCOUNTER_BASILISK
+{
+	lock
+    namebox ("BASILISK")
+    playmoncry(SPECIES_URSARING, 0)
+	msgbox(format("KYARROOW!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    setwildbattle (SPECIES_BASILISK_KNIGHT_FORM, 50, ITEM_NONE)
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+        case B_OUTCOME_CAUGHT:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+    }
+    release
+	end
+}
+
+script ENCOUNTER_GREATER_DEMON
+{
+	lock
+    faceplayer
+    namebox ("GREATER DEMON")
+    playmoncry(SPECIES_EKANS, 0)
+	msgbox(format("RAOUGH!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    if (var(VAR_RESULT) == MAP_KOUREND_CATACOMBS_2) {
+        setwildbattle (SPECIES_DEMON_GREATER_OSRS_FORM, 50, ITEM_NONE)
+    }
+    elif (var(VAR_RESULT) == MAP_KOUREND_CATACOMBS_3) {
+        setwildbattle (SPECIES_DEMON_GREATER_TONGUE_FORM, 50, ITEM_NONE)
+    }
+    elif (var(VAR_RESULT) == MAP_KOUREND_CATACOMBS_7) {
+        setwildbattle (SPECIES_DEMON_GREATER_BLACK_FORM, 50, ITEM_NONE)
+    }
+    else {
+        setwildbattle (SPECIES_DEMON_GREATER_OSRS_FORM, 25, ITEM_NONE)
+    }
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+        case B_OUTCOME_CAUGHT:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+    }
+    release
+	end
+}

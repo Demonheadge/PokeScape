@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "down",
+      "map": "MAP_GOBLIN_VILLAGE",
       "offset": -2,
-      "map": "MAP_GOBLIN_VILLAGE"
+      "direction": "down"
     }
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_WIZARD_DARK",
+      "graphics_id": "OBJ_EVENT_GFX_WIZARD_ZAMORAK",
       "x": 13,
       "y": 12,
       "elevation": 3,
@@ -34,7 +34,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WIZARD_DARK",
+      "graphics_id": "OBJ_EVENT_GFX_WIZARD_ZAMORAK",
       "x": 9,
       "y": 16,
       "elevation": 3,
@@ -74,8 +74,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
-      "x": 6,
-      "y": 10,
+      "x": 33,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -84,10 +84,29 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ITEM_ROUTE33_1",
       "flag": "FLAG_ITEM_ROUTE33_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RUNECRAFTER_GREEN",
+      "x": 31,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
-
+    {
+      "x": 8,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_ZAMORAK_CHURCH",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
 
@@ -103,8 +122,8 @@
     },
     {
       "type": "sign",
-      "x": 7,
-      "y": 15,
+      "x": 8,
+      "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LOCKED_DOOR"

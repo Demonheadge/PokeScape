@@ -303,3 +303,6 @@ const u16 gMetatileAttributes_Yanille[] = INCBIN_U16("data/tilesets/secondary/ya
 
 const u16 gMetatiles_Ice_Mountain[] = INCBIN_U16("data/tilesets/secondary/ice_mountain/metatiles.bin");
 const u16 gMetatileAttributes_Ice_Mountain[] = INCBIN_U16("data/tilesets/secondary/ice_mountain/metatile_attributes.bin");
+
+const u16 gMetatiles_ChaosTunnels[] = INCBIN_U16("data/tilesets/secondary/chaos_tunnels/metatiles.bin");
+const u16 gMetatileAttributes_ChaosTunnels[] = INCBIN_U16("data/tilesets/secondary/chaos_tunnels/metatile_attributes.bin");

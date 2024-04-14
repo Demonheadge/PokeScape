@@ -250,8 +250,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NOOB",
-      "x": 2,
-      "y": 34,
+      "x": 3,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -328,8 +328,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
-      "x": 31,
-      "y": 22,
+      "x": 3,
+      "y": 40,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -354,8 +354,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 40,
-      "y": 28,
+      "x": 37,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -393,8 +393,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 40,
-      "y": 29,
+      "x": 38,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -419,8 +419,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 7,
-      "y": 41,
+      "x": 0,
+      "y": 49,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -528,49 +528,49 @@
       "y": 44,
       "elevation": 0,
       "dest_map": "MAP_LUMBRIDGE_SWAMP",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 2,
       "y": 22,
       "elevation": 0,
       "dest_map": "MAP_ROUTE2",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 46,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_LUMBRIDGE",
-      "dest_warp_id": 16
+      "dest_warp_id": "16"
     },
     {
       "x": 30,
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_HAM_HIDEOUT_B1F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 3,
       "y": 22,
       "elevation": 0,
       "dest_map": "MAP_ROUTE2",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 25,
       "y": 44,
       "elevation": 0,
       "dest_map": "MAP_LUMBRIDGE_SWAMP",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 47,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_LUMBRIDGE",
-      "dest_warp_id": 17
+      "dest_warp_id": "17"
     }
   ],
   "coord_events": [

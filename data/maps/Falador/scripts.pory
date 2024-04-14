@@ -18,14 +18,16 @@ mapscripts Falador_MapScripts {
 	call(MODTIMBO_STATE)
 	}
 
-	MAP_SCRIPT_ON_TRANSITION { //ON LOAD FOR MAP TILES
+	MAP_SCRIPT_ON_TRANSITION { 
     if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
     {
     	call(FALADOR_QUEST_STATE)
+		call(HIDDEN_GROTTO_RESET)
 	}
 	else 
 	{
 		call(OPENWORLD_STATE_FALADOR)
+		call(HIDDEN_GROTTO_RESET)
 	}
 
     }
@@ -1145,4 +1147,58 @@ script FALADOR_QUEST_STATE_CHANGER{
 			closemessage
 			return
 	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//redo
+script TRIGGER_FALADOR_CASTLE {
+    if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //STORY
+	{
+		if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 110) {
+			lock
+			applymovement(10, Movement_InteractFACEPLAYER)
+			applymovement(9, Movement_InteractFACEPLAYER)
+			waitmovement(0)
+			namebox("White Knight")
+			msgbox(format("Sorry, but you cannot enter the gym right now."))
+			closemessage
+			hidenamebox
+			applymovement(OBJ_EVENT_ID_PLAYER, movement_lock_walk_up)
+        	waitmovement(0)
+			release
+		}
+	}
+	release
+	end
+}
+
+
+movement movement_lock_walk_up{
+	lock_facing_direction
+    walk_up
 }

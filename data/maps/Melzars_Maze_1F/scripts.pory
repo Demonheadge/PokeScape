@@ -1,0 +1,347 @@
+mapscripts Melzars_Maze_1F_MapScripts{
+
+	MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_POKESCAPE_STORYMODE_PROGRESS, 105: MELZARS_1F_RAT
+    ]
+
+	MAP_SCRIPT_ON_TRANSITION{
+		setvar(VAR_EVOLUTION_MAP_STATE, 0) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+	
+		if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    	{
+            call(MELZARS_1F_STATE)
+    	}
+		elif (var(VAR_POKESCAPE_GAMEMODE_STATE) == 1) //if openworld
+    	{
+            call(MELZARS_1F_STATE)
+    	}
+	
+	}
+
+	
+
+	
+
+}
+
+script MELZARS_1F_RAT {
+	playmoncry(SPECIES_GIANT_RAT_NORMAL_FORM, 0)
+	delay(60)
+	applymovement(11, movement_MELZAR_RAT_1)
+	waitmovement(0)
+	playmoncry(SPECIES_GIANT_RAT_NORMAL_FORM, 0)
+	msgbox(format("Squeek!"))
+	waitmoncry
+	closemessage
+	delay(30)
+	applymovement(11, movement_MELZAR_RAT_3)
+	waitmovement(0)
+	playfanfare (MUS_OBTAIN_ITEM)
+	removeobject(10)
+	setflag(FLAG_TEMP_1F)
+	msgbox(format("RAT obtained the RED KEY."))
+	waitfanfare
+	closemessage
+	delay(30)
+	applymovement(11, movement_MELZAR_RAT_2)
+	playmoncry(SPECIES_GIANT_RAT_NORMAL_FORM, 0)
+	waitmovement(0)
+	removeobject(11)
+	setflag(FLAG_TEMP_1E)
+	setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 106) //AFTER RAT STEAL KEY CUTSCENE
+	closemessage
+    return   
+}
+
+
+script MELZARS_1F_STATE {
+	setvar(VAR_TEMP_F, 5)
+	
+	if ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 105)) {
+			addobject(10)
+			clearflag(FLAG_TEMP_1F)
+			addobject(11)
+			clearflag(FLAG_TEMP_1E)
+	}
+	else {
+		removeobject(10)
+		setflag(FLAG_TEMP_1F)
+		removeobject(11)
+		setflag(FLAG_TEMP_1E)
+	}
+	if ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) < 110)) { //LESS THAN
+		addobject(9)
+		clearflag(FLAG_TEMP_1D)
+	} 
+	else {
+		removeobject(9)
+		setflag(FLAG_TEMP_1D)
+	}
+    return   
+}
+
+movement movement_MELZAR_RAT_1
+{
+    walk_fast_down *2
+    walk_fast_left * 1
+	walk_fast_down *2
+	walk_fast_right *2
+	walk_fast_up *2
+	walk_fast_left *2
+	walk_fast_down *2
+	walk_fast_right *1
+    face_player
+} 
+movement movement_MELZAR_RAT_2
+{
+    face_player
+	delay_16 *4
+	walk_faster_up * 5
+} 
+movement movement_MELZAR_RAT_3
+{
+    face_up
+} 
+
+
+script MELZARS_1F_RATS_QUEST {
+    lock
+    faceplayer
+	namebox ("RAT")
+    if (var(VAR_POKESCAPE_MELZARS_MAZE_DOORS) == 0) { //AFTER RAT STEAL KEY CUTSCENE
+			playmoncry(SPECIES_GIANT_RAT_NORMAL_FORM, 0)
+        	msgbox(format("Squeek!"))
+			waitmoncry
+			hidenamebox
+    		closemessage
+			random(VAR_TEMP_F)
+			switch (var(VAR_RESULT)) {
+			case 0: 
+				setwildbattle(SPECIES_GIANT_RAT_NORMAL_FORM, 10, ITEM_NONE)
+				dowildbattle
+				removeobject(VAR_LAST_TALKED)
+				setvar(VAR_POKESCAPE_MELZARS_MAZE_DOORS, 1) //1F KEY OBTAINED
+				msgbox(format("The Rat dropped the RED KEY!"))
+				playfanfare (MUS_OBTAIN_ITEM)
+				msgbox(format("{PLAYER} obtained the RED KEY."))
+				waitfanfare
+				closemessage
+				release
+				end
+			case 1: 
+			case 2: 
+			case 3: 
+			case 4: 
+				setwildbattle(SPECIES_GIANT_RAT_NORMAL_FORM, 10, ITEM_NONE)
+				dowildbattle
+				removeobject(VAR_LAST_TALKED)
+				msgbox(format("Seems like this Rat did not have the key."))
+				closemessage
+				subvar(VAR_TEMP_F, 1)
+				release
+				end
+			} 
+        }
+        else {
+            msgbox(format("You've already got the key.\pYou decide not to torture the poor rats any more."))
+            hidenamebox
+            closemessage
+        }
+    release
+    end   
+}
+
+
+
+
+script MELZARS_LOCKED_DOOR_1F_1 {
+	if ((var(VAR_POKESCAPE_MELZARS_MAZE_DOORS) == 1) || (var(VAR_POKESCAPE_MELZARS_MAZE_DOORS) == 2) || (var(VAR_POKESCAPE_MELZARS_MAZE_DOORS) == 3)) { //If you have room 1 key.
+		setmetatile (8, 6, 849, 0)
+		setmetatile (8, 8, 121, 0)
+		special(DrawWholeMapView) 
+	} 
+	else {
+		msgbox(format("You need a red key to unlock this door."))
+		closemessage
+	}
+	end
+}
+script MELZARS_LOCKED_DOOR_1F_2 {
+	if ((var(VAR_POKESCAPE_MELZARS_MAZE_DOORS) == 1) || (var(VAR_POKESCAPE_MELZARS_MAZE_DOORS) == 2) || (var(VAR_POKESCAPE_MELZARS_MAZE_DOORS) == 3)) { //If you have room 1 key.
+		setmetatile (14, 6, 849, 0)
+		setmetatile (14, 8, 121, 0)
+		special(DrawWholeMapView) 
+	} 
+	else {
+		msgbox(format("You need a red key to unlock this door."))
+		closemessage
+	}
+	end
+}
+script MELZARS_LOCKED_DOOR_1F_3 {
+	if ((var(VAR_POKESCAPE_MELZARS_MAZE_DOORS) == 1) || (var(VAR_POKESCAPE_MELZARS_MAZE_DOORS) == 2) || (var(VAR_POKESCAPE_MELZARS_MAZE_DOORS) == 3)) { //If you have room 1 key.
+		setmetatile (20, 6, 849, 0)
+		setmetatile (20, 8, 121, 0)
+		special(DrawWholeMapView) 
+	} 
+	else {
+		msgbox(format("You need a red key to unlock this door."))
+		closemessage
+	}
+	end
+}
+
+script MELZARS_LOCKED_DOOR_1F_4 {
+	if (var(VAR_POKESCAPE_MELZARS_MAZE_DOORS) == 3) { //If you have  b1f key.
+		setmetatile (19, 19, 849, 0)
+		setmetatile (19, 21, 121, 0)
+		special(DrawWholeMapView) 
+	} 
+	else {
+		msgbox(format("You need a green key to unlock this door."))
+		closemessage
+	}
+	end
+}
+
+script MELZARS_LOCKED_DOOR_B1F_1 {
+	if (var(VAR_POKESCAPE_MELZARS_MAZE_DOORS) == 3) { //If you have  b1f key.
+		setmetatile (2, 11, 849, 0)
+		setmetatile (2, 13, 121, 0)
+		special(DrawWholeMapView) 
+	} 
+	else {
+		msgbox(format("You need a green key to unlock this door."))
+		closemessage
+	}
+	end
+}
+
+script MELZARS_LOCKED_DOOR_B1F_2 {
+	if (var(VAR_POKESCAPE_MELZARS_MAZE_DOORS) == 3) { //If you have  b1f key.
+		setmetatile (5, 11, 849, 0)
+		setmetatile (5, 13, 121, 0)
+		special(DrawWholeMapView) 
+	} 
+	else {
+		msgbox(format("You need a green key to unlock this door."))
+		closemessage
+	}
+	end
+}
+
+script MELZARS_LOCKED_DOOR_B1F_3 {
+	if (var(VAR_TEMP_E) == 1) {
+		if (var(VAR_POKESCAPE_MELZARS_MAZE_DOORS) == 3) { //If you have  b1f key.
+			setmetatile (10, 5, 849, 0)
+			setmetatile (10, 7, 121, 0)
+			special(DrawWholeMapView) 
+		} 
+		else {
+			msgbox(format("You need a green key to unlock this door."))
+			closemessage
+		}
+	}
+	else {
+		msgbox(format("The door appears to be locked from this side."))
+		closemessage
+	}
+	return
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Battles
+
+script BATTLE_MELZARS_1F_TRAINER_1
+{
+    trainerbattle_single(TRAINER_MELZARS_1F_TRAINER_1, format("I won't let you stop our plans!"),format("You won't get very far without a key.."))
+    namebox ("H.A.M GRUNT")
+    msgbox(format("Awwww, I had a key to meet up with everybody else but I tripped, dropped it, and the blasted rats stole it!"))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_MELZARS_1F_TRAINER_2
+{
+    trainerbattle_single(TRAINER_MELZARS_1F_TRAINER_2, format("Melzar has taught us the dark arts of necromancy. There is no way you can win."),format("I guess I should go back to studying.."))
+    namebox ("Nuxor")
+    msgbox(format("They say Melzar built this place on top of the ruins of a camp of Crandorian refugees.\pI wonder what happened to them all?"))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_MELZARS_1F_TRAINER_3
+{
+    trainerbattle_single(TRAINER_MELZARS_1F_TRAINER_3, format("The skeleton lurches to life and attacks!"),format("The skeletons bones groan under the weight of defeat."))
+    //namebox ("")
+    msgbox(format("Rattle rattle."))
+	hidenamebox
+    release
+	end
+}
+
+
+
+//ITEMS
+script ITEM_MELZARS_1F_ROPE
+{
+    finditem(ITEM_ESCAPE_ROPE)
+    end
+}
+
+//Need a PokeScape equivalent? Cannot currently see one in the code
+
+
+
+
+
+
+
+
+
+//Route 19 Grunts
+
+
+script HAM_ROUTE9_MELZARS_1{
+    lock
+	if (flag(FLAG_POKESCAPE_RIMMINGTON_HAM_LOST_TIME) == TRUE) {
+		applymovement(13, MOVEMENT_FACE_LEFT)
+		namebox("H.A.M GRUNT")
+		msgbox(format("Where have you been?\pAlso where is everyone else?"))
+		namebox("H.A.M FAN")
+		msgbox(format("Sorry I saw all these famous people and were wanting them to sign my robe.\pAlso I think they said the meetup point was down this path at that spooky old building."))
+	}
+	else {
+		faceplayer
+		namebox("H.A.M GRUNT")
+		msgbox(format("This is the meeting point right?\pWhere is everyone?"))
+	}
+    hidenamebox
+	closemessage
+	release
+	end
+}
+
+script HAM_ROUTE9_MELZARS_2{
+    lock
+	faceplayer
+	namebox("H.A.M GRUNT")
+    msgbox(format("Where is she?\pEveryone has already gone in to look for the map."))
+    hidenamebox
+	closemessage
+	release
+	end
+}

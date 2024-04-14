@@ -145,6 +145,7 @@ GnomeBoi_Kevin_9:
 
 GnomeBoi_Kevin_10:
 	msgbox GnomeBoi_Kevin_Text_8
+	additem ITEM_FRIENDSHIP_BOOSTER, 100
 	additem ITEM_PULSE_CORE, 6
 	additem ITEM_PURPLE_SWEETS, 100
 	additem ITEM_FRAGMENT_OF_JAS, 5
@@ -422,7 +423,7 @@ Cheat_Menu_Shop_Misc:
     end
 
 Lumbridge_Church_Father_Aereck_Text_0:
-	.string "Monsters dont really die.\p"
+	.string "Monsters don't really die.\p"
 	.string "They will not be needing graves.\p"
 	.string "Just take them to the bank.$"
 

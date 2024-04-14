@@ -5,14 +5,14 @@ mapscripts Kourend_Catacombs_1_MapScripts {
 }
 
 script ZEAH_TELEPORT_ENTER {
-    checkitem(ITEM_PURPLE_SWEETS, 1)
+    checkitem(ITEM_DARK_TOTEM, 1)
         if (var(VAR_RESULT)) {
-            msgbox(format("The totem in your backpack reacts to the Altar.\pWould you like to use it?"), MSGBOX_YESNO)
+            msgbox(format("The Totem in your backpack reacts to the Altar.\pWould you like to use it?"), MSGBOX_YESNO)
             if (var(VAR_RESULT)){
                     msgbox(format("Suddenly the world starts to warp around you."))
                     applymovement(OBJ_EVENT_ID_PLAYER, movement_TELEPORT_OUT)
-                    removeitem(ITEM_PURPLE_SWEETS, 1)
-                    warpteleport (MAP_KOUREND_CATACOMBS_7,0,0,0)
+                    //removeitem(ITEM_DARK_TOTEM, 1)
+                    warpteleport (MAP_KOUREND_CATACOMBS_8,0,0,0)
                     closemessage
                     release
                     end
@@ -26,6 +26,22 @@ script ZEAH_TELEPORT_ENTER {
     release
     end           
 }
+script ZEAH_TELEPORT_EXIT {
+    msgbox(format("Would you like to return to the Dark Altar in the Catacombs?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+            msgbox(format("Suddenly the world starts to warp around you."))
+            applymovement(OBJ_EVENT_ID_PLAYER, movement_TELEPORT_OUT)
+            //additem(ITEM_DARK_TOTEM, 1)
+            warpteleport (MAP_KOUREND_CATACOMBS_1, 14,0,0)
+            closemessage
+            release
+            end
+        }
+    closemessage
+    release
+    end
+}       
+
 
 script XERICS_TELEPORT {
     msgbox(format("Would you like to teleport to the Kourend?"), MSGBOX_YESNO)
@@ -81,22 +97,6 @@ movement movement_TELEPORT_OUT
     fly_up
 } 
 
-script NPC_NIEVE
-{
-    lock
-    faceplayer
-    namebox ("Nieve")
-    msgbox(format("Would you like a Slayer Assignment?"), MSGBOX_YESNO)
-    hidenamebox
-			if (var(VAR_RESULT)){
-                call(SLAYER_TASK_ASSIGN)
-                call(SLAYER_TASK_CHECK)
-                hidenamebox
-            }
-    release
-    end
-}
-
 script give_SLAYER_GEM
 {
     finditem(ITEM_SLAYER_GEM)
@@ -104,8 +104,57 @@ script give_SLAYER_GEM
 }
 
 
+script NPC_VANNAKA_SLAYER_MASTER
+{
+    lock
+    faceplayer
+    //namebox ("Vannaka")
+    questmenu(QUEST_MENU_CHECK_UNLOCKED , QUEST_KOUREND_SLAYER)
+    if (!var(VAR_RESULT))
+    { 
+        call(KOUREND_SLAYER_QUEST_START)
+    }
+    call(FUNCTION_SLAYER_TASK_MASTER)
+    closemessage
+    hidenamebox
+    release
+    end
+}
 
+script FUNCTION_SLAYER_TASK_MASTER {
+    multichoicedefault (1, 0, MULTI_SLAYER_MASTER, 0, 0)
+    switch (var(VAR_RESULT)) {
+        case 0:
+            goto(KOUREND_SLAYER_TASK)
+        case 1:
+            goto(SLAYER_REWARD_SHOP)
+        case MULTI_B_PRESSED:
+            end
+    }
+    end
+}
 
+script KOUREND_SLAYER_TASK
+{
+    if (var(VAR_SLAYER_LEFT_TO_DEFEAT) >= 1) {
+        call(SLAYER_TASK_CHECK)
+        msgbox(format("Would you like to cancel your current Slayer Assignment?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT)){
+            call(SLAYER_TASK_CANCEL)
+        }
+    }
+
+    if (var(VAR_SLAYER_ASSIGNMENT) == 0) {
+        msgbox(format("Would you like a Slayer Assignment?"), MSGBOX_YESNO)
+        hidenamebox
+        if (var(VAR_RESULT)) {
+            call(SLAYER_TASK_ASSIGN)
+            call(SLAYER_TASK_CHECK)
+        }
+    }
+    release
+    return
+}
 
 // VAR_SLAYER_ASSIGNMENT
 // 1    -   BLOODVELD
@@ -203,23 +252,70 @@ script SLAYER_TASK_COMPLETE
     //}
     //return
 }
+script SLAYER_TASK_CANCEL
+{
+    setvar(VAR_SLAYER_ASSIGNMENT, 0)
+    setvar(VAR_SLAYER_LEFT_TO_DEFEAT, 0)
+    return
+}
 
 
+script DARK_TOTEM_CHECK
+{
+    lock
+    faceplayer
+    checkitem(ITEM_DARK_TOTEM, 1)
+    if (var(VAR_RESULT) == TRUE) {
+        msgbox(format("It has been rumoured that the Dark Totem is to be used on something but no one has ever figured out what."))
+        closemessage
+        hidenamebox
+        release
+        end
+    }
+    checkitem(ITEM_DARK_TOTEM_BASE, 1)
+    if (var(VAR_RESULT) == TRUE) {
+        goto(DARK_TOTEM_COMBINE)
+    }
+    checkitem(ITEM_DARK_TOTEM_MID, 1)
+    if (var(VAR_RESULT) == TRUE) {
+        goto(DARK_TOTEM_COMBINE)
+    }
+    checkitem(ITEM_DARK_TOTEM_TOP, 1)
+    if (var(VAR_RESULT) == TRUE) {
+        goto(DARK_TOTEM_COMBINE)
+    }
+    msgbox(format("Do you know what the Dark Totem is?\pIf you ever find a piece you should show me."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script DARK_TOTEM_COMBINE
+{
+    msgbox(format("Oh!\pThat is a piece of the Dark Totem!\pIf you can bring me all 3 pieces I can combine it the full Dark Totem."))
+    checkitem(ITEM_DARK_TOTEM_BASE, 1)
+    if (var(VAR_RESULT) == TRUE) {
+        checkitem(ITEM_DARK_TOTEM_MID, 1)
+        if (var(VAR_RESULT) == TRUE) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            checkitem(ITEM_DARK_TOTEM_TOP, 1)
+            if (var(VAR_RESULT) == TRUE) {
+                msgbox(format("Oh!!!\pYou have all 3 pieces!"))
+                msgbox(format("Would you like me to combine the pieces and create the Dark Totem?"), MSGBOX_YESNO)
+                if (var(VAR_RESULT)) {
+                    removeitem(ITEM_DARK_TOTEM_BASE, 1)
+                    removeitem(ITEM_DARK_TOTEM_MID, 1)
+                    removeitem(ITEM_DARK_TOTEM_TOP, 1)
+                    giveitem(ITEM_DARK_TOTEM, 1)
+                }
+            }
+        }
+    } 
+    closemessage
+    hidenamebox
+    release
+    end
+}
 
 
 

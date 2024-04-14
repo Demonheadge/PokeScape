@@ -14,29 +14,29 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "down",
+      "map": "MAP_KOUREND_CATACOMBS_1",
       "offset": 0,
-      "map": "MAP_KOUREND_CATACOMBS_1"
+      "direction": "down"
     },
     {
-      "direction": "down",
+      "map": "MAP_KOUREND_CATACOMBS_3",
       "offset": 35,
-      "map": "MAP_KOUREND_CATACOMBS_3"
+      "direction": "down"
     },
     {
-      "direction": "left",
+      "map": "MAP_KOUREND_CATACOMBS_5",
       "offset": 26,
-      "map": "MAP_KOUREND_CATACOMBS_5"
+      "direction": "left"
     },
     {
-      "direction": "left",
+      "map": "MAP_KOUREND_CATACOMBS_6",
       "offset": 0,
-      "map": "MAP_KOUREND_CATACOMBS_6"
+      "direction": "left"
     },
     {
-      "direction": "right",
+      "map": "MAP_KOUREND_CATACOMBS_7",
       "offset": 0,
-      "map": "MAP_KOUREND_CATACOMBS_7"
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -50,11 +50,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "FIND_RANDOM_ITEM_KOUREND",
+      "flag": "FLAG_ITEM_REPEATABLE_ITEM_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ELVARG",
+      "graphics_id": "OBJ_EVENT_GFX_DRAGON_GREEN",
       "x": 18,
       "y": 13,
       "elevation": 3,
@@ -63,60 +63,60 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ENCOUNTER_DRAGON_GREEN",
+      "flag": "FLAG_TEMP_5"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ABYSSAL_DEMON",
       "x": 27,
       "y": 12,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 5,
+      "movement_range_y": 5,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ENCOUNTER_ABYSSAL_DEMON",
+      "flag": "FLAG_TEMP_6"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ABYSSAL_DEMON",
       "x": 29,
       "y": 4,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 9,
+      "movement_range_y": 9,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ENCOUNTER_ABYSSAL_DEMON",
+      "flag": "FLAG_TEMP_7"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_IMP",
-      "x": 34,
-      "y": 13,
+      "x": 32,
+      "y": 15,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ENCOUNTER_GREATER_DEMON",
+      "flag": "FLAG_TEMP_4"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_IMP",
-      "x": 37,
-      "y": 14,
+      "x": 39,
+      "y": 11,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ENCOUNTER_GREATER_DEMON",
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
@@ -128,7 +128,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "DARK_TOTEM_CHECK",
       "flag": "0"
     },
     {
@@ -141,8 +141,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "FIND_RANDOM_ITEM_KOUREND",
+      "flag": "FLAG_ITEM_REPEATABLE_ITEM_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
@@ -154,21 +154,21 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_Catacombs_of_Kourend_3",
+      "flag": "FLAG_ITEM_KOUREND_CATACOMBS_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BASILISK",
       "x": 34,
       "y": 22,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 4,
+      "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ENCOUNTER_BASILISK",
+      "flag": "FLAG_TEMP_8"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
@@ -180,8 +180,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_Catacombs_of_Kourend_2",
+      "flag": "FLAG_ITEM_KOUREND_CATACOMBS_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SKELETON_1",
@@ -206,8 +206,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "EventScript_New_RockSmash",
+      "flag": "FLAG_TEMP_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -219,8 +219,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "EventScript_New_RockSmash",
+      "flag": "FLAG_TEMP_1"
     }
   ],
   "warp_events": [
@@ -229,91 +229,91 @@
       "y": 24,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_1",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 26,
       "y": 23,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_2",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     },
     {
       "x": 31,
       "y": 23,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_2",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 31,
       "y": 4,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_2",
-      "dest_warp_id": 4
+      "dest_warp_id": "4"
     },
     {
       "x": 36,
       "y": 4,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_2",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 38,
       "y": 22,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_2",
-      "dest_warp_id": 6
+      "dest_warp_id": "6"
     },
     {
       "x": 43,
       "y": 22,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_2",
-      "dest_warp_id": 5
+      "dest_warp_id": "5"
     },
     {
       "x": 40,
       "y": 4,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_2",
-      "dest_warp_id": 8
+      "dest_warp_id": "8"
     },
     {
       "x": 45,
       "y": 4,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_2",
-      "dest_warp_id": 7
+      "dest_warp_id": "7"
     },
     {
       "x": 48,
       "y": 1,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_2",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 47,
       "y": 1,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_2",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 6,
       "y": 15,
       "elevation": 0,
-      "dest_map": "MAP_KOUREND_CATACOMBS_2",
-      "dest_warp_id": 0
+      "dest_map": "MAP_KOUREND_CATACOMBS_6",
+      "dest_warp_id": "0"
     },
     {
       "x": 6,
       "y": 23,
       "elevation": 0,
-      "dest_map": "MAP_KOUREND_CATACOMBS_2",
-      "dest_warp_id": 0
+      "dest_map": "MAP_KOUREND_CATACOMBS_1",
+      "dest_warp_id": "13"
     }
   ],
   "coord_events": [
@@ -325,48 +325,48 @@
       "x": 10,
       "y": 7,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_STAT_BEER",
+      "flag": "FLAG_HIDDEN_ITEM_TEMP_6"
     },
     {
       "type": "hidden_item",
       "x": 16,
       "y": 11,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_LAMP_SPDEF",
+      "flag": "FLAG_HIDDEN_ITEM_TEMP_7"
     },
     {
       "type": "hidden_item",
       "x": 36,
       "y": 9,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_ELEMENTAL_POUCH",
+      "flag": "FLAG_HIDDEN_ITEM_TEMP_8"
     },
     {
       "type": "hidden_item",
       "x": 48,
       "y": 22,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_MINT_CAKE",
+      "flag": "FLAG_HIDDEN_ITEM_TEMP_9"
     },
     {
       "type": "hidden_item",
       "x": 12,
       "y": 18,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_ANCIENT_POUCH",
+      "flag": "FLAG_HIDDEN_ITEM_TEMP_5"
     },
     {
       "type": "hidden_item",
       "x": 5,
       "y": 20,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_SPIRIT_SHARD",
+      "flag": "FLAG_HIDDEN_ITEM_TEMP_4"
     }
   ]
 }

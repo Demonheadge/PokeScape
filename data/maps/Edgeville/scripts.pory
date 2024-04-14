@@ -13,13 +13,23 @@ script ITEM_EDGEVILLE_1
     end
 }
 
+script SIGNPOST_EDGEVILLE_GYM
+{
+	lock
+	msgbox(format("Edgeville Gym, located beneath the graveyard."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
 //NPCS
 script NPC_EDGEVILLE_1
 {
 	lock
 	faceplayer
-    namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+    namebox ("Mugger")
+	msgbox(format("Beyond here is the Wilderness.\pI'd suggest steering clear of it if I were you.\pSomeone might mug you and take your stuff.."))
     closemessage
     hidenamebox
 	release
@@ -29,8 +39,8 @@ script NPC_EDGEVILLE_2
 {
 	lock
 	faceplayer
-    namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+    namebox ("Fisherman")
+	msgbox(format("There's this crazy person in that house who lives with his mum.\pIf you listen really carefully, sometimes you can hear his mum shout that he needs a bath, and you can hear him yell 'BUT I SMELL POSITIVELY EEEVIIILLLL'"))
     closemessage
     hidenamebox
 	release
@@ -40,8 +50,8 @@ script NPC_EDGEVILLE_3
 {
 	lock
 	faceplayer
-    namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+    namebox ("Choob")
+	msgbox(format("Welcome to Edgeville.\pAre you looking for Vannaka? He's just south of here.. in that creepy dungeon!"))
     closemessage
     hidenamebox
 	release
@@ -51,8 +61,8 @@ script NPC_EDGEVILLE_4
 {
 	lock
 	faceplayer
-    namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+    namebox ("PVMer")
+	msgbox(format("If you go south into the dungeon you can face a bunch of monsters.\pAdventurers come from all over Gielinor to murder hill giants there for their bones.\pIt's quite fun actually."))
     closemessage
     hidenamebox
 	release
@@ -62,8 +72,8 @@ script NPC_EDGEVILLE_5
 {
 	lock
 	faceplayer
-    namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+    namebox ("SkillSpecs")
+	msgbox(format("Argh! I nearly smited an AGS but the guy I was fighting tele'd away..\pI'm going to restock and then head north again.\pI better not find you up in the Wilderness without your most expensive items.."))
     closemessage
     hidenamebox
 	release
@@ -73,8 +83,8 @@ script NPC_EDGEVILLE_6
 {
 	lock
 	faceplayer
-    namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+    namebox ("Hanannie")
+	msgbox(format("Hey, this is my yew tree! Go get your own!"))
     closemessage
     hidenamebox
 	release
@@ -84,8 +94,8 @@ script NPC_EDGEVILLE_7
 {
 	lock
 	faceplayer
-    namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+    namebox ("PVMer")
+	msgbox(format("I hear some monsters only evolve in certain areas.\pFor instance, one of my chickens evolved differently while I was on Karamja!"))
     closemessage
     hidenamebox
 	release
@@ -95,8 +105,8 @@ script NPC_EDGEVILLE_8
 {
 	lock
 	faceplayer
-    namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+    namebox ("Man")
+	msgbox(format("Edgeville was recently rebuilt.\pBut with all these adventurers constantly using the place it almost feels well lived."))
     closemessage
     hidenamebox
 	release
@@ -106,8 +116,8 @@ script NPC_EDGEVILLE_9
 {
 	lock
 	faceplayer
-    namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+    namebox ("Jailer")
+	msgbox(format("Edgeville doesn't really have a monarch of its own, so we abide by the King of Misthalin.\pIt makes things easier when you can just follow orders without thinking too much about it."))
     closemessage
     hidenamebox
 	release
@@ -117,7 +127,371 @@ script NPC_EDGEVILLE_10
 {
 	lock
 	faceplayer
-    namebox ("Cupholder")
+    namebox ("Jailer")
+	msgbox(format("Let this be a fair warning. If you cause any trouble, we will lock you up and only feed you bread and water."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+//MISCELLANEOUS
+script EDGEVILLE_SIGN_1
+{
+	lock
+	faceplayer
+	msgbox(format("North to Edgeville.\pWest to the Monastery and Dwarven Mountain."))
+	release
+	end
+}
+
+script EDGEVILLE_SIGN_2
+{
+	lock
+	faceplayer
+	msgbox(format("COMING SOON: a route to the Grand Exchange.\pCourtesy of King Roald III of Varrock."))
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//EDGEVILLE GYM
+
+//On edgeville dungeon map, set temp flag for basilsk if defeated.
+//FLAG_TEMP_1F
+
+
+script NPC_EDGEVILLE_VANNAKA_SLAYER_MASTER
+{
+    lock
+    faceplayer
+    namebox ("Vannaka")
+    questmenu(QUEST_MENU_CHECK_COMPLETE , QUEST_KOUREND_SLAYER)
+    if (!var(VAR_RESULT))
+    { 
+        call(EDGEVILLE_GYM_START)
+    }
+	else 
+	{
+		msgbox(format("Hello {PLAYER}, what can I do for you?"))
+		closemessage
+		hidenamebox
+		call(FUNCTION_SLAYER_TASK_MASTER)
+	}
+    
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script EDGEVILLE_GYM_START {
+
+	if (var(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST) == 0) {
+		msgbox(format("Welcome to the Edgeville Gym.\pI am Vannaka, I suppose you want this badge.\pBefore I give it to you I you will have to complete my gym challenge.\pThe challenge is complete a Slayer task within this dungeon.\pAre you up for the challenge?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT)){
+			msgbox(format("Excellent, I shall open the gate for you.\pYou current Slayer Assignment is to slay 1 Basilisk within this Dungeon."))
+			startquest (QUEST_KOUREND_SLAYER)
+			setvar(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST, 5)
+			//open gate
+			//setmetatile(x,y,id,0)
+			
+		}
+		else
+		{
+			msgbox(format("Come back if you wish to challenge me."))
+		}
+		return
+	}
+	if (var(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST) == 5) {
+		msgbox(format("You can find a Basilisk deep within this dungeon.\pFeel free to show off to those pesky hill giants."))
+		return
+	}
+	if (var(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST) == 10) {
+		msgbox(format("You lost to the Basilisk?\pMaybe you're not as strong as I thought you were.\pGo give it another try."))
+		return
+	}
+	if (var(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST) == 15) {
+		msgbox(format("Well done in defeating that Basilisk.\pIt looks like you even got slayer points from defeating it!\pYou can buy items from my slayer shop with those points.\pBut I am getting ahead of myself, you have proven yourself worth of a battle with the mighty slayer master Vannaka.\pIt is my duty of the Gym Leader of Edgeville to accept your challenge.\pVery well, show me what you've got!"))
+		call(EDGEVILLE_GYM_BATTLE_VANNAKA)
+		return
+	}
+	if (var(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST) == 20) {
+		msgbox(format("Back for more?\pLets go!"))
+		call(EDGEVILLE_GYM_BATTLE_VANNAKA)
+		return
+	}
+
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+script EDGEVILLE_GYM_BATTLE_VANNAKA {
+		trainerbattle_no_intro(TRAINER_ALKHARID_GYM_PRINCE_ALI, msgbox(format("That was a very enjoyable battle!")))
+		if (var(VAR_RESULT) == B_OUTCOME_LOST) { //If lost gym battle.
+			setvar(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST, 20)
+			end
+		}
+
+        namebox("Vannaka")
+        msgbox(format("Have this Badge."))
+        hidenamebox
+        playfanfare(MUS_PS_QUEST_COMPLETE) //MUS_OBTAIN_BADGE MUS_PS_QUEST_COMPLETE
+        msgbox(format("{PLAYER} received the Edgeville BADGE from Vannaka."))
+        waitfanfare
+        waitmessage
+        namebox("Vannaka")
+        msgbox(format("Also have this Scroll and some Slayer Point(s)."))
+        hidenamebox
+        giveitem (ITEM_TM48, 1) //Power Gem.
+        compare(VAR_RESULT, FALSE)
+        goto_if_eq(Common_EventScript_ShowBagIsFull)
+
+
+		playfanfare(MUS_PS_QUEST_COMPLETE)
+		//Assigns Amount of Slayer Points
+		setvar(VAR_0x8004, 12) // Sets temp VAR
+		special (GiveFrontierBattlePoints)
+		msgbox(format("{PLAYER} obtained 12 Slayer Point(s)."))
+		waitmessage
+		waitfanfare
+		closemessage
+
+
+        namebox("Vannaka")
+        msgbox(format("That move is called Power Gem.\pIt sparkles just as all our precious Gems around the palace do."))
+        setvar(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST, 25)
+        setflag(FLAG_BADGE07_GET)
+        addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
+        //call(SetGymTrainers_VARROCK)
+
+		msgbox(format("Now that you've bested me you are eligible to take Slayer Tasks from me.\pTalk to me again if you'd like to particpate."))
+		msgbox(format("You should make your way to Daemonheim in the Wilderness for your next badge."))
+		closemessage
+        hidenamebox
+		questmenu(QUEST_MENU_COMPLETE_QUEST , QUEST_KOUREND_SLAYER)
+        release
+        return
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script BATTLE_BASILISK_GYM {
+    lock
+	faceplayer
+    namebox ("Basilisk")
+	playmoncry(SPECIES_BASILISK, 0)
+	msgbox(format("ZREOWWRAH!"))
+	waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+	setwildbattle (SPECIES_BASILISK, 45, ITEM_NONE)
+	dowildbattleNoCatch
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+        fadescreen(FADE_TO_BLACK)
+		setvar(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST, 15)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+		call(EDGEVILLE_GYM_GIVE_SLAYER_POINTS)
+	}
+	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) { // Cannot catch with dowildbattleNoCatch
+        fadescreen(FADE_TO_BLACK)
+		setvar(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST, 15)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+		call(EDGEVILLE_GYM_GIVE_SLAYER_POINTS)
+	}
+    elif (var(VAR_RESULT) == B_OUTCOME_LOST) {
+		setvar(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST, 10)
+		closemessage
+		end
+	}
+    elif (var(VAR_RESULT) == B_OUTCOME_RAN) {
+        namebox ("Basilisk")
+        playmoncry(SPECIES_BASILISK, 0)
+        msgbox(format("ZGREOUWWRAHH!!!"))
+		closemessage
+        hidenamebox
+        msgbox(format("The Basilisk seems to be angry with you."))
+        closemessage
+	}
+	end
+}
+
+script EDGEVILLE_GYM_GIVE_SLAYER_POINTS {
+
+	playfanfare(MUS_PS_QUEST_COMPLETE)
+	//Assigns Amount of Slayer Points
+	setvar(VAR_0x8004, 12) // Sets temp VAR
+	special (GiveFrontierBattlePoints)
+	msgbox(format("Slayer Assignment complete!\n{PLAYER} obtained 12 Slayer Point(s)."))
+	waitmessage
+	waitfanfare
+	closemessage
+	msgbox(format("You should return to Vannaka."))
+
+	return
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//EDGEVILLE INDOOR 
+
+
+script ITEM_EDGEVILLE_INDOOR_1
+{
+    finditem(ITEM_NONE)
+    end
+}
+script ITEM_EDGEVILLE_INDOOR_2
+{
+    finditem(ITEM_NONE)
+    end
+}
+
+script NPC_EDGEVILLE_HOUSE_NPC_1 {
+	lock
+	faceplayer
+    //namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_HOUSE_NPC_2 {
+	lock
+	faceplayer
+    //namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_HOUSE_NPC_3 {
+	lock
+	faceplayer
+    //namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_HOUSE_NPC_4 {
+	lock
+	faceplayer
+    //namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_HOUSE_NPC_5 {
+	lock
+	faceplayer
+    //namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_HOUSE_NPC_6 {
+	lock
+	faceplayer
+    //namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_HOUSE_NPC_7 {
+	lock
+	faceplayer
+    //namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_HOUSE_NPC_8 {
+	lock
+	faceplayer
+    //namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_HOUSE_NPC_9 {
+	lock
+	faceplayer
+    //namebox ("Cupholder")
+	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_EDGEVILLE_HOUSE_NPC_10 {
+	lock
+	faceplayer
+    //namebox ("Cupholder")
 	msgbox(format("Hello, I am a Cupholder."))
     closemessage
     hidenamebox

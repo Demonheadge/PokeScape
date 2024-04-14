@@ -1176,3 +1176,14 @@ const struct Tileset gTileset_Ice_Mountain =
 	.metatileAttributes = gMetatileAttributes_Ice_Mountain,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_ChaosTunnels =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+	.tiles = gTilesetTiles_ChaosTunnels,
+	.palettes = gTilesetPalettes_ChaosTunnels,
+	.metatiles = gMetatiles_ChaosTunnels,
+	.metatileAttributes = gMetatileAttributes_ChaosTunnels,
+	.callback = NULL,
+};

@@ -14,19 +14,24 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "up",
+      "map": "MAP_ROUTE8",
       "offset": 0,
-      "map": "MAP_ROUTE8"
+      "direction": "up"
     },
     {
-      "direction": "down",
+      "map": "MAP_RIMMINGTON",
       "offset": 0,
-      "map": "MAP_RIMMINGTON"
+      "direction": "down"
     },
     {
-      "direction": "right",
+      "map": "MAP_ROUTE10",
       "offset": 18,
-      "map": "MAP_ROUTE10"
+      "direction": "right"
+    },
+    {
+      "map": "MAP_CRANDOR",
+      "offset": -11,
+      "direction": "left"
     }
   ],
   "object_events": [
@@ -174,30 +179,30 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 27,
-      "y": 24,
+      "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_M",
+      "x": 14,
+      "y": 19,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_CutTree",
-      "flag": "FLAG_TEMP_7"
+      "script": "HAM_ROUTE9_MELZARS_2",
+      "flag": "FLAG_TEMP_1F"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 28,
-      "y": 24,
+      "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_F",
+      "x": 29,
+      "y": 22,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_CutTree",
-      "flag": "FLAG_TEMP_8"
+      "script": "HAM_ROUTE9_MELZARS_1",
+      "flag": "FLAG_TEMP_1F"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -233,7 +238,7 @@
       "movement_type": "MOVEMENT_TYPE_BURIED",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_SEE_ALL_DIRECTIONS",
+      "trainer_type": "TRAINER_TYPE_BURIED",
       "trainer_sight_or_berry_tree_id": "1",
       "script": "BATTLE_ROUTE9_GUTHIX_WIZARD",
       "flag": "0"
@@ -367,6 +372,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_AdamantSmash",
       "flag": "FLAG_TEMP_D"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HAM_DEACON",
+      "x": 28,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HAM_ROUTE9_MELZARS_1",
+      "flag": "FLAG_TEMP_1E"
     }
   ],
   "warp_events": [
@@ -375,21 +393,21 @@
       "y": 15,
       "elevation": 0,
       "dest_map": "MAP_RIMMINGTON_MINES",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     },
     {
       "x": 15,
-      "y": 15,
+      "y": 16,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE9",
-      "dest_warp_id": 1
+      "dest_map": "MAP_MELZARS_MAZE_1F",
+      "dest_warp_id": "0"
     },
     {
       "x": 51,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_HIDDEN_GROTTOS",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -439,7 +457,7 @@
     {
       "type": "sign",
       "x": 15,
-      "y": 16,
+      "y": 15,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LOCKED_DOOR"

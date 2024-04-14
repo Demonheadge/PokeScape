@@ -20,7 +20,7 @@ Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	return
 
 Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
-	call TryMoveNpcsRoute1
+	call STORYMODE_STATE_ROUTE1
 	return
 
 
@@ -43,6 +43,21 @@ OPENWORLD_STATE_ROUTE1::
 	return
 
 
+STORYMODE_STATE_ROUTE1::
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 20
+	goto_if_ge STORYMODE_STATE_ROUTE1_2
+STORYMODE_STATE_ROUTE1_1:
+	return
+
+STORYMODE_STATE_ROUTE1_2:
+	setobjectxyperm 4, 42, 10
+	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_DOWN
+	setobjectxyperm 12, 37, 12
+	setobjectxyperm 13, 43, 12
+	setobjectmovementtype 13, MOVEMENT_TYPE_FACE_DOWN
+	goto STORYMODE_STATE_ROUTE1_1
+
+
 QUEST_STATE_WizardsTower_ROUTE1::
 	switch VAR_POKESCAPE_WIZARDS_TOWER_STATE
 	case 0, QUEST_STATE_WizardsTower_ROUTE1_2
@@ -53,8 +68,10 @@ QUEST_STATE_WizardsTower_ROUTE1::
 	case 5, QUEST_STATE_WizardsTower_ROUTE1_3
 	case 6, QUEST_STATE_WizardsTower_ROUTE1_4
 	case 7, QUEST_STATE_WizardsTower_ROUTE1_4
-	case 8, QUEST_STATE_WizardsTower_ROUTE1_5
-	case 9, QUEST_STATE_WizardsTower_ROUTE1_5
+	case 8, QUEST_STATE_WizardsTower_ROUTE1_4
+	case 9, QUEST_STATE_WizardsTower_ROUTE1_4
+	case 10, QUEST_STATE_WizardsTower_ROUTE1_5
+	case 11, QUEST_STATE_WizardsTower_ROUTE1_5
 	return
 
 QUEST_STATE_WizardsTower_ROUTE1_2:
@@ -104,35 +121,6 @@ QUEST_STATE_WizardsTower_ROUTE1_5:
 	setobjectxyperm 6, 10, 13
 	release
 	end
-
-
-TryMoveNpcsRoute1::
-	goto_if_set FLAG_BADGE01_GET, TryMoveNpcsRoute1_2
-TryMoveNpcsRoute1_1:
-	compare VAR_POKESCAPE_WIZARDS_TOWER_STATE, 6
-	goto_if_ne TryMoveNpcsRoute1_5
-TryMoveNpcsRoute1_4:
-	return
-
-TryMoveNpcsRoute1_2:
-	setobjectxyperm 4, 42, 10
-	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_DOWN
-	setobjectxyperm 12, 37, 12
-	setobjectxyperm 13, 43, 12
-	setobjectmovementtype 13, MOVEMENT_TYPE_FACE_DOWN
-	goto TryMoveNpcsRoute1_1
-
-TryMoveNpcsRoute1_5:
-	removeobject 22
-	setflag FLAG_TEMP_5
-	removeobject 23
-	setflag FLAG_TEMP_4
-	goto TryMoveNpcsRoute1_4
-
-
-Route1WarpCheck::
-	map_script_2 VAR_TEMP_1, 0, TryMoveNpcsRoute1
-	return
 
 
 NPC_DUCK::
@@ -263,22 +251,24 @@ BLOCK_ROUTE1_FARMER::
 	lock
 	faceplayer
 	namebox BLOCK_ROUTE1_FARMER_Text_0
-	goto_if_unset FLAG_BADGE01_GET, BLOCK_ROUTE1_FARMER_2
-	msgbox BLOCK_ROUTE1_FARMER_Text_2
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 15
+	goto_if_eq BLOCK_ROUTE1_FARMER_2
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 10
+	goto_if_le BLOCK_ROUTE1_FARMER_3
+	msgbox BLOCK_ROUTE1_FARMER_Text_3
+BLOCK_ROUTE1_FARMER_1:
 	hidenamebox
 	closemessage
-	release
-	end
-
 	release
 	end
 
 BLOCK_ROUTE1_FARMER_2:
 	msgbox BLOCK_ROUTE1_FARMER_Text_1
-	hidenamebox
-	closemessage
-	release
-	end
+	goto BLOCK_ROUTE1_FARMER_1
+
+BLOCK_ROUTE1_FARMER_3:
+	msgbox BLOCK_ROUTE1_FARMER_Text_2
+	goto BLOCK_ROUTE1_FARMER_1
 
 
 THIEF_ROUTE_1::
@@ -344,7 +334,7 @@ MudbeardBattle::
 Route1FarmerBattle::
 	trainerbattle_single TRAINER_FARMER_ROUTE1, Route1FarmerBattle_Text_0, Route1FarmerBattle_Text_1
 	namebox Route1FarmerBattle_Text_2
-	msgbox Route1FarmerBattle_Text_1
+	msgbox Route1FarmerBattle_Text_3
 	hidenamebox
 	release
 	return
@@ -400,14 +390,13 @@ ChickenBattleScript3::
 
 EvilChickenBattleScript::
 	lock
-	faceplayer
-	playmoncry SPECIES_COMBUSKEN, 0
+	playmoncry SPECIES_EVILCHICKEN, 0
 	msgbox EvilChickenBattleScript_Text_0
 	waitmoncry
 	setwildbattle SPECIES_EVILCHICKEN, 10, ITEM_NONE
 	dowildbattle
-	removeobject 11
-	setflag FLAG_EVILCHICKEN_DEFEATED
+	removeobject VAR_LAST_TALKED
+	setvar VAR_POKESCAPE_ERNEST_QUEST_STATE, 5
 	return
 
 
@@ -435,8 +424,10 @@ ErnestAndVeronica_1:
 	case 5, ErnestAndVeronica_6
 	case 6, ErnestAndVeronica_6
 	case 7, ErnestAndVeronica_6
-	case 8, ErnestAndVeronica_7
-	case 9, ErnestAndVeronica_7
+	case 8, ErnestAndVeronica_6
+	case 9, ErnestAndVeronica_6
+	case 10, ErnestAndVeronica_7
+	case 11, ErnestAndVeronica_7
 	return
 
 ErnestAndVeronica_5:
@@ -685,14 +676,14 @@ ArianeChaseHamEvent7::
 	msgbox ArianeChaseHamEvent7_Text_0
 	hidenamebox
 	namebox ErnestAndVeronica_Text_0
-	msgbox ArianeChaseHamEvent7_Text_1
+	msgbox HAM_EVENT_Route1_MAIN_1_Text_2
 	hidenamebox
 	namebox ErnestAndVeronica_Text_2
-	msgbox ArianeChaseHamEvent7_Text_2
+	msgbox ArianeChaseHamEvent7_Text_1
 	hidenamebox
-	msgbox ArianeChaseHamEvent7_Text_3
+	msgbox ArianeChaseHamEvent7_Text_2
 	namebox HAM_EVENT_Route1_MAIN_1_Text_0
-	msgbox ArianeChaseHamEvent7_Text_4
+	msgbox ArianeChaseHamEvent7_Text_3
 	hidenamebox
 	release
 	lockall
@@ -701,16 +692,16 @@ ArianeChaseHamEvent7::
 	applymovement 5, ErnestShoved
 	waitmovement 0
 	namebox ErnestAndVeronica_Text_0
-	msgbox ArianeChaseHamEvent7_Text_5
+	msgbox ArianeChaseHamEvent7_Text_4
 	hidenamebox
 	release
 	lockall
 	applymovement 5, ErnestMoveBack
 	namebox HAM_EVENT_Route1_TRIGGER_1_Text_0
-	msgbox ArianeChaseHamEvent7_Text_6
+	msgbox ArianeChaseHamEvent7_Text_5
 	hidenamebox
 	namebox HAM_EVENT_Route1_MAIN_1_Text_0
-	msgbox ArianeChaseHamEvent7_Text_7
+	msgbox ArianeChaseHamEvent7_Text_6
 	hidenamebox
 	release
 	lockall
@@ -863,11 +854,18 @@ BLOCK_ROUTE1_FARMER_Text_0:
 	.string "Farmer$"
 
 BLOCK_ROUTE1_FARMER_Text_1:
+	.string "Hey sorry bud, I think I'm going to be\n"
+	.string "here awhile.\p"
+	.string "If you want to get to Draynor you'll\n"
+	.string "have to go through the swamp to the\l"
+	.string "south.$"
+
+BLOCK_ROUTE1_FARMER_Text_2:
 	.string "Some Goblins scared my cows out of\n"
 	.string "their pens.\p"
 	.string "Now I'm struggling to get them back in!$"
 
-BLOCK_ROUTE1_FARMER_Text_2:
+BLOCK_ROUTE1_FARMER_Text_3:
 	.string "I finally got my Cows out of the way.$"
 
 THIEF_ROUTE_1_Text_0:
@@ -942,6 +940,9 @@ Route1FarmerBattle_Text_1:
 
 Route1FarmerBattle_Text_2:
 	.string "John$"
+
+Route1FarmerBattle_Text_3:
+	.string "It's not really my lands yet.$"
 
 FeetfingersBattle_Text_0:
 	.string "Me Feetfingers who you?$"
@@ -1023,11 +1024,11 @@ HAM_EVENT_Route1_MAIN_1_Text_1:
 	.string "I need to get to Port Sarim!$"
 
 HAM_EVENT_Route1_MAIN_1_Text_2:
-	.string "I'm so glad im not a chicken anymore…\p"
+	.string "I'm so glad I'm not a chicken anymore…\p"
 	.string "That was cluckin' scary!$"
 
 HAM_EVENT_Route1_MAIN_1_Text_3:
-	.string "Lets just avoid that creepy Manor from\n"
+	.string "Let's just avoid that creepy Manor from\n"
 	.string "now on.$"
 
 HAM_EVENT_Route1_MAIN_1_Text_4:
@@ -1052,27 +1053,23 @@ ArianeChaseHamEvent7_Text_0:
 	.string "path!$"
 
 ArianeChaseHamEvent7_Text_1:
-	.string "I'm so glad im not a chicken anymore…\n"
-	.string "that was cluckin scary.$"
-
-ArianeChaseHamEvent7_Text_2:
-	.string "Lets just avoid that creepy manor from\n"
+	.string "Let's just avoid that creepy manor from\n"
 	.string "now on.$"
 
-ArianeChaseHamEvent7_Text_3:
+ArianeChaseHamEvent7_Text_2:
 	.string "Kissing noises$"
 
-ArianeChaseHamEvent7_Text_4:
+ArianeChaseHamEvent7_Text_3:
 	.string "I SAID GET OUT OF THE WAY!!$"
 
-ArianeChaseHamEvent7_Text_5:
+ArianeChaseHamEvent7_Text_4:
 	.string "Well that was uncalled for!$"
 
-ArianeChaseHamEvent7_Text_6:
+ArianeChaseHamEvent7_Text_5:
 	.string "Stop thief! There is nowhere left for\n"
 	.string "you to run!$"
 
-ArianeChaseHamEvent7_Text_7:
+ArianeChaseHamEvent7_Text_6:
 	.string "UGH! This dumb couple keeps blocking my\n"
 	.string "way… but there is still the manor!$"
 

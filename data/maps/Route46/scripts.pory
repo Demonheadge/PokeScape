@@ -3,3 +3,85 @@ mapscripts Route46_MapScripts {
         setvar(VAR_EVOLUTION_MAP_STATE, 16) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
     }
 }
+
+//BATTLES
+script BATTLE_ROUTE_46_TRAINER_1
+{
+    trainerbattle_single(TRAINER_ROUTE_46_TRAINER_1, format("You won't believe what happened! \pWhilst excavating nearby, I found the most magical pot..."),format("Aw, you made me drop it!"))
+    namebox ("Archaeologist")
+    msgbox(format("Aw, you made me drop it!"))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_ROUTE_46_TRAINER_2
+{
+    trainerbattle_single(TRAINER_ROUTE_46_TRAINER_2, format("I'm waiting until they open up the digsite so I can be the first one inside!\pI won't let you beat me to it!"),format("Okay, fine. I'll go explore the cave to the east instead!"))
+    namebox ("Le Me")
+    msgbox(format("Okay, fine. I'll go explore the cave to the east instead!"))
+	hidenamebox
+    release
+	end
+}
+
+//NPCS
+script ROUTE46_STUDENT
+{
+    faceplayer
+    namebox ("Student")
+    msgbox(format("The study of Earth Sciences is: the study of the earth, its contents and history... \pSorry, I didn't see you there. \pI'm too busy studying for my Earth Sciences exam to talk more right now."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script ROUTE46_ARCHAEOLOGIST
+{
+    faceplayer
+    namebox ("Archaeologist")
+    msgbox(format("I'm not really supposed to say anything, but...\pWe think we have discovered the ruins of an ancient civilization!\pI heard that the Museum Curator is coming down personally to inspect them!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+//Miscellanous
+
+script DIGSITE_SIGN
+{
+	lock
+	faceplayer
+	msgbox(format("Anyone wishing to do any work on the digsite must first prove they have passed all 3 Earth Science exams."))
+	release
+	end
+}
+
+script PLACEHOLDER_ITEM_DIGSITE_1
+{
+	lock
+	faceplayer
+	msgbox(format("It is a fragile looking animal skull. \pYou're worried it may be damaged if handled without the proper equipment and decide to leave it alone."))
+	release
+	end
+}
+
+script PLACEHOLDER_ITEM_DIGSITE_2
+{
+	lock
+	faceplayer
+	msgbox(format("You rummage through the pile of items. \pUnfortunately all you can find are broken arrow shafts and pieces of damaged armour. \pThis must be the archaeologist's discarded item pile."))
+	release
+	end
+}
+
+script PLACEHOLDER_ITEM_DIGSITE_3
+{
+	lock
+	faceplayer
+	msgbox(format("You find a panning tray laying beside the river bed. \pYou have no idea how to use it, so leave it where it is for now."))
+	release
+	end
+}

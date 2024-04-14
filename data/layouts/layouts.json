@@ -4464,7 +4464,7 @@
     {
       "id": "LAYOUT_LUMBRIDGE_HOUSE_1",
       "name": "Lumbridge_House_1_Layout",
-      "width": 6,
+      "width": 7,
       "height": 8,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_IndoorTowns1",
@@ -4474,7 +4474,7 @@
     {
       "id": "LAYOUT_LUMBRIDGE_HOUSE_2",
       "name": "Lumbridge_House_2_Layout",
-      "width": 6,
+      "width": 7,
       "height": 8,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_Petalburg",
@@ -4484,7 +4484,7 @@
     {
       "id": "LAYOUT_LUMBRIDGE_HOUSE_RODDECK1",
       "name": "Lumbridge_House_Roddeck1_Layout",
-      "width": 6,
+      "width": 8,
       "height": 9,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_IndoorTowns1",
@@ -4504,7 +4504,7 @@
     {
       "id": "LAYOUT_LUMBRIDGE_HOUSE_STARTER1",
       "name": "Lumbridge_House_Starter1_Layout",
-      "width": 6,
+      "width": 8,
       "height": 10,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_IndoorTowns1",
@@ -4514,7 +4514,7 @@
     {
       "id": "LAYOUT_LUMBRIDGE_HOUSE_STARTER2",
       "name": "Lumbridge_House_Starter2_Layout",
-      "width": 12,
+      "width": 13,
       "height": 10,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_IndoorTowns1",
@@ -4757,7 +4757,7 @@
       "width": 10,
       "height": 9,
       "primary_tileset": "gTileset_PokeScapeIndoors",
-      "secondary_tileset": "gTileset_IndoorTowns1",
+      "secondary_tileset": "gTileset_Lumbridge",
       "border_filepath": "data/layouts/Lumbridge_House_4/border.bin",
       "blockdata_filepath": "data/layouts/Lumbridge_House_4/map.bin"
     },
@@ -4774,7 +4774,7 @@
     {
       "id": "LAYOUT_LUMBRIDGE_CASTLE_2",
       "name": "Lumbridge_Castle_2_Layout",
-      "width": 36,
+      "width": 38,
       "height": 17,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_IndoorTowns1",
@@ -4784,7 +4784,7 @@
     {
       "id": "LAYOUT_LUMBRIDGE_CASTLE_3",
       "name": "Lumbridge_Castle_3_Layout",
-      "width": 36,
+      "width": 38,
       "height": 14,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_IndoorTowns1",
@@ -5024,7 +5024,7 @@
     {
       "id": "LAYOUT_EDGEVILLE",
       "name": "Edgeville_Layout",
-      "width": 44,
+      "width": 54,
       "height": 50,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_Edgeville",
@@ -5064,7 +5064,7 @@
     {
       "id": "LAYOUT_ROUTE30",
       "name": "Route30_Layout",
-      "width": 50,
+      "width": 48,
       "height": 18,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_Varrock",
@@ -5074,7 +5074,7 @@
     {
       "id": "LAYOUT_ROUTE31",
       "name": "Route31_Layout",
-      "width": 54,
+      "width": 52,
       "height": 26,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_Wilderness",
@@ -5534,7 +5534,7 @@
     {
       "id": "LAYOUT_POTTERINGTON_FARM_INTERIOR",
       "name": "Potterington_Farm_Interior_Layout",
-      "width": 12,
+      "width": 13,
       "height": 14,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_IndoorTowns1",
@@ -5794,7 +5794,7 @@
     {
       "id": "LAYOUT_DRAYNOR_HOUSE_WO_M_1F",
       "name": "Draynor_House_WoM_1F_Layout",
-      "width": 10,
+      "width": 11,
       "height": 10,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_DraynorManor",
@@ -5804,7 +5804,7 @@
     {
       "id": "LAYOUT_DRAYNOR_HOUSE_WO_M_2F",
       "name": "Draynor_House_WoM_2F_Layout",
-      "width": 10,
+      "width": 11,
       "height": 10,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_DraynorManor",
@@ -5984,8 +5984,8 @@
     {
       "id": "LAYOUT_TZHAAR_CAVES_1",
       "name": "Tzhaar_Caves_1_Layout",
-      "width": 60,
-      "height": 40,
+      "width": 48,
+      "height": 36,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_PokeScape_Caves",
       "border_filepath": "data/layouts/Tzhaar_Caves_1/border.bin",
@@ -6135,7 +6135,7 @@
       "id": "LAYOUT_ROUTE42",
       "name": "Route42_Layout",
       "width": 22,
-      "height": 20,
+      "height": 22,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_Wilderness",
       "border_filepath": "data/layouts/Route42/border.bin",
@@ -6145,7 +6145,7 @@
       "id": "LAYOUT_ROUTE43",
       "name": "Route43_Layout",
       "width": 20,
-      "height": 20,
+      "height": 22,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_Wilderness",
       "border_filepath": "data/layouts/Route43/border.bin",
@@ -6344,7 +6344,7 @@
     {
       "id": "LAYOUT_LUMBRIDGE_SWAMP_HOUSE_FATHER_URHNEY",
       "name": "Lumbridge_Swamp_House_FatherUrhney_Layout",
-      "width": 10,
+      "width": 11,
       "height": 10,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_Petalburg",
@@ -6924,8 +6924,8 @@
     {
       "id": "LAYOUT_BARBARIAN_VILLAGE_GYM_HALL",
       "name": "BarbarianVillage_GymHall_Layout",
-      "width": 30,
-      "height": 30,
+      "width": 12,
+      "height": 18,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_PokeScape_HAM",
       "border_filepath": "data/layouts/BarbarianVillage_GymHall/border.bin",
@@ -6967,7 +6967,7 @@
       "width": 50,
       "height": 50,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
-      "secondary_tileset": "gTileset_PokeScape_Caves",
+      "secondary_tileset": "gTileset_ChaosTunnels",
       "border_filepath": "data/layouts/WildernessVolcano_ChampionRoom/border.bin",
       "blockdata_filepath": "data/layouts/WildernessVolcano_ChampionRoom/map.bin"
     },
@@ -7134,8 +7134,8 @@
     {
       "id": "LAYOUT_GRAND_EXCHANGE",
       "name": "GrandExchange_Layout",
-      "width": 20,
-      "height": 24,
+      "width": 26,
+      "height": 36,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_Varrock",
       "border_filepath": "data/layouts/GrandExchange/border.bin",
@@ -7164,7 +7164,7 @@
     {
       "id": "LAYOUT_ALKHARID_GYM_1F_R2",
       "name": "Alkharid_Gym_1F_R2_Layout",
-      "width": 20,
+      "width": 22,
       "height": 14,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_IndoorTowns2",
@@ -7304,8 +7304,8 @@
     {
       "id": "LAYOUT_AL_KHARID_HOUSE_1",
       "name": "AlKharid_House_1_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 8,
+      "height": 8,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_IndoorTowns2",
       "border_filepath": "data/layouts/AlKharid_House_1/border.bin",
@@ -7890,6 +7890,506 @@
       "secondary_tileset": "gTileset_Dungeoneering",
       "border_filepath": "data/layouts/Dungeoneering_Lobby/border.bin",
       "blockdata_filepath": "data/layouts/Dungeoneering_Lobby/map.bin"
+    },
+    {
+      "id": "LAYOUT_KOUREND_CATACOMBS_8",
+      "name": "Kourend_Catacombs_8_Layout",
+      "width": 21,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lumbridge_Swamp_Caves",
+      "border_filepath": "data/layouts/Kourend_Catacombs_8/border.bin",
+      "blockdata_filepath": "data/layouts/Kourend_Catacombs_8/map.bin"
+    },
+    {
+      "id": "LAYOUT_CHAOS_TUNNELS_B2F",
+      "name": "Chaos_Tunnels_B2F_Layout",
+      "width": 80,
+      "height": 80,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_PokeScape_Caves",
+      "border_filepath": "data/layouts/Chaos_Tunnels_B2F/border.bin",
+      "blockdata_filepath": "data/layouts/Chaos_Tunnels_B2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_TZHAAR_CAVES_2",
+      "name": "Tzhaar_Caves_2_Layout",
+      "width": 34,
+      "height": 24,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_PokeScape_Caves",
+      "border_filepath": "data/layouts/Tzhaar_Caves_2/border.bin",
+      "blockdata_filepath": "data/layouts/Tzhaar_Caves_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_VARROCK_SEWERS_3F",
+      "name": "Varrock_Sewers_3F_Layout",
+      "width": 40,
+      "height": 30,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_PokeScape_Sewers",
+      "border_filepath": "data/layouts/Varrock_Sewers_3F/border.bin",
+      "blockdata_filepath": "data/layouts/Varrock_Sewers_3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_VARROCK_CHURCH",
+      "name": "Varrock_Church_Layout",
+      "width": 10,
+      "height": 15,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_PokeScape_Church",
+      "border_filepath": "data/layouts/Varrock_Church/border.bin",
+      "blockdata_filepath": "data/layouts/Varrock_Church/map.bin"
+    },
+    {
+      "id": "LAYOUT_ABYSSAL_REALM_3",
+      "name": "Abyssal_Realm_3_Layout",
+      "width": 9,
+      "height": 10,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_Abyss",
+      "border_filepath": "data/layouts/Abyssal_Realm_3/border.bin",
+      "blockdata_filepath": "data/layouts/Abyssal_Realm_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_PORT_SARIM_LIGHTHOUSE",
+      "name": "PortSarim_Lighthouse_Layout",
+      "width": 18,
+      "height": 13,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_Bank",
+      "border_filepath": "data/layouts/PortSarim_Lighthouse/border.bin",
+      "blockdata_filepath": "data/layouts/PortSarim_Lighthouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_PORT_SARIM_LIGHTHOUSE_2F",
+      "name": "PortSarim_Lighthouse_2F_Layout",
+      "width": 18,
+      "height": 13,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_Bank",
+      "border_filepath": "data/layouts/PortSarim_Lighthouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/PortSarim_Lighthouse_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PORT_SARIM_LIGHTHOUSE_3F",
+      "name": "PortSarim_Lighthouse_3F_Layout",
+      "width": 18,
+      "height": 18,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_Bank",
+      "border_filepath": "data/layouts/PortSarim_Lighthouse_3F/border.bin",
+      "blockdata_filepath": "data/layouts/PortSarim_Lighthouse_3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_MELZARS_MAZE_1F",
+      "name": "Melzars_Maze_1F_Layout",
+      "width": 28,
+      "height": 26,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_DraynorManor",
+      "border_filepath": "data/layouts/Melzars_Maze_1F/border.bin",
+      "blockdata_filepath": "data/layouts/Melzars_Maze_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_MELZARS_MAZE_2F",
+      "name": "Melzars_Maze_2F_Layout",
+      "width": 32,
+      "height": 28,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_DraynorManor",
+      "border_filepath": "data/layouts/Melzars_Maze_2F/border.bin",
+      "blockdata_filepath": "data/layouts/Melzars_Maze_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_MELZARS_MAZE_3F",
+      "name": "Melzars_Maze_3F_Layout",
+      "width": 28,
+      "height": 28,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_DraynorManor",
+      "border_filepath": "data/layouts/Melzars_Maze_3F/border.bin",
+      "blockdata_filepath": "data/layouts/Melzars_Maze_3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_MELZARS_MAZE_B1F",
+      "name": "Melzars_Maze_B1F_Layout",
+      "width": 22,
+      "height": 20,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_DraynorManor",
+      "border_filepath": "data/layouts/Melzars_Maze_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/Melzars_Maze_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE48",
+      "name": "Route48_Layout",
+      "width": 16,
+      "height": 20,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_Wilderness",
+      "border_filepath": "data/layouts/Route48/border.bin",
+      "blockdata_filepath": "data/layouts/Route48/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE49",
+      "name": "Route49_Layout",
+      "width": 30,
+      "height": 38,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_Wilderness",
+      "border_filepath": "data/layouts/Route49/border.bin",
+      "blockdata_filepath": "data/layouts/Route49/map.bin"
+    },
+    {
+      "id": "LAYOUT_CRANDOR",
+      "name": "Crandor_Layout",
+      "width": 60,
+      "height": 52,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_Karamja",
+      "border_filepath": "data/layouts/Crandor/border.bin",
+      "blockdata_filepath": "data/layouts/Crandor/map.bin"
+    },
+    {
+      "id": "LAYOUT_DAEMONHEIM",
+      "name": "Daemonheim_Layout",
+      "width": 40,
+      "height": 30,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_Wilderness",
+      "border_filepath": "data/layouts/Daemonheim/border.bin",
+      "blockdata_filepath": "data/layouts/Daemonheim/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE0",
+      "name": "Route0_Layout",
+      "width": 40,
+      "height": 46,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_Wilderness",
+      "border_filepath": "data/layouts/Route0/border.bin",
+      "blockdata_filepath": "data/layouts/Route0/map.bin"
+    },
+    {
+      "id": "LAYOUT_TZHAAR_CAVES_3",
+      "name": "Tzhaar_Caves_3_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_PokeScape_Caves",
+      "border_filepath": "data/layouts/Tzhaar_Caves_3/border.bin",
+      "blockdata_filepath": "data/layouts/Tzhaar_Caves_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_TZHAAR_CAVES_4",
+      "name": "Tzhaar_Caves_4_Layout",
+      "width": 12,
+      "height": 10,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_PokeScape_Caves",
+      "border_filepath": "data/layouts/Tzhaar_Caves_4/border.bin",
+      "blockdata_filepath": "data/layouts/Tzhaar_Caves_4/map.bin"
+    },
+    {
+      "id": "LAYOUT_TZHAAR_CAVES_5",
+      "name": "Tzhaar_Caves_5_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_PokeScape_Caves",
+      "border_filepath": "data/layouts/Tzhaar_Caves_5/border.bin",
+      "blockdata_filepath": "data/layouts/Tzhaar_Caves_5/map.bin"
+    },
+    {
+      "id": "LAYOUT_EDGEVILLE_GYM",
+      "name": "Edgeville_Gym_Layout",
+      "width": 30,
+      "height": 50,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_PokeScape_Sewers",
+      "border_filepath": "data/layouts/Edgeville_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/Edgeville_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE200",
+      "name": "Route200_Layout",
+      "width": 34,
+      "height": 20,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_Edgeville",
+      "border_filepath": "data/layouts/Route200/border.bin",
+      "blockdata_filepath": "data/layouts/Route200/map.bin"
+    },
+    {
+      "id": "LAYOUT_EDGEVILLE_HOUSE_1",
+      "name": "Edgeville_House_1_Layout",
+      "width": 8,
+      "height": 8,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns1",
+      "border_filepath": "data/layouts/Edgeville_House_1/border.bin",
+      "blockdata_filepath": "data/layouts/Edgeville_House_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_EDGEVILLE_HOUSE_2",
+      "name": "Edgeville_House_2_Layout",
+      "width": 7,
+      "height": 11,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns1",
+      "border_filepath": "data/layouts/Edgeville_House_2/border.bin",
+      "blockdata_filepath": "data/layouts/Edgeville_House_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_EDGEVILLE_HOUSE_3",
+      "name": "Edgeville_House_3_Layout",
+      "width": 9,
+      "height": 14,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns1",
+      "border_filepath": "data/layouts/Edgeville_House_3/border.bin",
+      "blockdata_filepath": "data/layouts/Edgeville_House_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_EDGEVILLE_HOUSE_4",
+      "name": "Edgeville_House_4_Layout",
+      "width": 8,
+      "height": 10,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns1",
+      "border_filepath": "data/layouts/Edgeville_House_4/border.bin",
+      "blockdata_filepath": "data/layouts/Edgeville_House_4/map.bin"
+    },
+    {
+      "id": "LAYOUT_EDGEVILLE_BANK",
+      "name": "Edgeville_Bank_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_Bank",
+      "border_filepath": "data/layouts/Edgeville_Bank/border.bin",
+      "blockdata_filepath": "data/layouts/Edgeville_Bank/map.bin"
+    },
+    {
+      "id": "LAYOUT_EDGEVILLE_GENERAL_STORE",
+      "name": "Edgeville_General_Store_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns1",
+      "border_filepath": "data/layouts/Edgeville_General_Store/border.bin",
+      "blockdata_filepath": "data/layouts/Edgeville_General_Store/map.bin"
+    },
+    {
+      "id": "LAYOUT_EDGEVILLE_GENERAL_STORE_2F",
+      "name": "Edgeville_General_Store_2F_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns1",
+      "border_filepath": "data/layouts/Edgeville_General_Store_2F/border.bin",
+      "blockdata_filepath": "data/layouts/Edgeville_General_Store_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ICE_MOUNTAIN",
+      "name": "Ice_Mountain_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_Ice_Mountain",
+      "border_filepath": "data/layouts/Ice_Mountain/border.bin",
+      "blockdata_filepath": "data/layouts/Ice_Mountain/map.bin"
+    },
+    {
+      "id": "LAYOUT_DWARVEN_MINES_HOUSE_1",
+      "name": "Dwarven_Mines_House_1_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns1",
+      "border_filepath": "data/layouts/Dwarven_Mines_House_1/border.bin",
+      "blockdata_filepath": "data/layouts/Dwarven_Mines_House_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_DWARVEN_MINES_HOUSE_2",
+      "name": "Dwarven_Mines_House_2_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns1",
+      "border_filepath": "data/layouts/Dwarven_Mines_House_2/border.bin",
+      "blockdata_filepath": "data/layouts/Dwarven_Mines_House_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_DWARVEN_MINES_HOUSE_3",
+      "name": "Dwarven_Mines_House_3_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns1",
+      "border_filepath": "data/layouts/Dwarven_Mines_House_3/border.bin",
+      "blockdata_filepath": "data/layouts/Dwarven_Mines_House_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE19_COOKING_GUILD",
+      "name": "Route19_CookingGuild_Layout",
+      "width": 20,
+      "height": 10,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns1",
+      "border_filepath": "data/layouts/Route19_CookingGuild/border.bin",
+      "blockdata_filepath": "data/layouts/Route19_CookingGuild/map.bin"
+    },
+    {
+      "id": "LAYOUT_AL_KHARID_HOUSE_2",
+      "name": "AlKharid_House_2_Layout",
+      "width": 8,
+      "height": 8,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns2",
+      "border_filepath": "data/layouts/AlKharid_House_2/border.bin",
+      "blockdata_filepath": "data/layouts/AlKharid_House_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_AL_KHARID_HOUSE_3",
+      "name": "AlKharid_House_3_Layout",
+      "width": 6,
+      "height": 8,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns2",
+      "border_filepath": "data/layouts/AlKharid_House_3/border.bin",
+      "blockdata_filepath": "data/layouts/AlKharid_House_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_AL_KHARID_HOUSE_4_1F",
+      "name": "AlKharid_House_4_1F_Layout",
+      "width": 8,
+      "height": 10,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns2",
+      "border_filepath": "data/layouts/AlKharid_House_4_1F/border.bin",
+      "blockdata_filepath": "data/layouts/AlKharid_House_4_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_AL_KHARID_HOUSE_4_2F",
+      "name": "AlKharid_House_4_2F_Layout",
+      "width": 8,
+      "height": 10,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns2",
+      "border_filepath": "data/layouts/AlKharid_House_4_2F/border.bin",
+      "blockdata_filepath": "data/layouts/AlKharid_House_4_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_AL_KHARID_GENERAL_STORE",
+      "name": "AlKharid_GeneralStore_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns2",
+      "border_filepath": "data/layouts/AlKharid_GeneralStore/border.bin",
+      "blockdata_filepath": "data/layouts/AlKharid_GeneralStore/map.bin"
+    },
+    {
+      "id": "LAYOUT_AL_KHARID_TENT",
+      "name": "AlKharid_Tent_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_IndoorTowns2",
+      "border_filepath": "data/layouts/AlKharid_Tent/border.bin",
+      "blockdata_filepath": "data/layouts/AlKharid_Tent/map.bin"
+    },
+    {
+      "id": "LAYOUT_WILDERNESS_VOLCANO_ROOM_1",
+      "name": "WildernessVolcano_Room_1_Layout",
+      "width": 14,
+      "height": 14,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_ChaosTunnels",
+      "border_filepath": "data/layouts/WildernessVolcano_Room_1/border.bin",
+      "blockdata_filepath": "data/layouts/WildernessVolcano_Room_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_WILDERNESS_VOLCANO_ROOM_2",
+      "name": "WildernessVolcano_Room_2_Layout",
+      "width": 16,
+      "height": 14,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_ChaosTunnels",
+      "border_filepath": "data/layouts/WildernessVolcano_Room_2/border.bin",
+      "blockdata_filepath": "data/layouts/WildernessVolcano_Room_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_WILDERNESS_VOLCANO_ROOM_3",
+      "name": "WildernessVolcano_Room_3_Layout",
+      "width": 16,
+      "height": 14,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_ChaosTunnels",
+      "border_filepath": "data/layouts/WildernessVolcano_Room_3/border.bin",
+      "blockdata_filepath": "data/layouts/WildernessVolcano_Room_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_WILDERNESS_VOLCANO_ROOM_4",
+      "name": "WildernessVolcano_Room_4_Layout",
+      "width": 14,
+      "height": 14,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_ChaosTunnels",
+      "border_filepath": "data/layouts/WildernessVolcano_Room_4/border.bin",
+      "blockdata_filepath": "data/layouts/WildernessVolcano_Room_4/map.bin"
+    },
+    {
+      "id": "LAYOUT_MUDSKIPPER_POINT_THURGOS_HUT",
+      "name": "Mudskipper_Point_ThurgosHut_Layout",
+      "width": 8,
+      "height": 8,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_GoblinVillage",
+      "border_filepath": "data/layouts/Mudskipper_Point_ThurgosHut/border.bin",
+      "blockdata_filepath": "data/layouts/Mudskipper_Point_ThurgosHut/map.bin"
+    },
+    {
+      "id": "LAYOUT_VARROCK_HOUSE_5",
+      "name": "Varrock_House_5_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns1",
+      "border_filepath": "data/layouts/Varrock_House_5/border.bin",
+      "blockdata_filepath": "data/layouts/Varrock_House_5/map.bin"
+    },
+    {
+      "id": "LAYOUT_DAEMONHEIM_GYM",
+      "name": "Daemonheim_Gym_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_Dungeoneering",
+      "border_filepath": "data/layouts/Daemonheim_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/Daemonheim_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_DAEMONHEIM_BANK",
+      "name": "Daemonheim_Bank_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_Bank",
+      "border_filepath": "data/layouts/Daemonheim_Bank/border.bin",
+      "blockdata_filepath": "data/layouts/Daemonheim_Bank/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZAMORAK_CHURCH",
+      "name": "Zamorak_Church_Layout",
+      "width": 10,
+      "height": 14,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns2",
+      "border_filepath": "data/layouts/Zamorak_Church/border.bin",
+      "blockdata_filepath": "data/layouts/Zamorak_Church/map.bin"
     }
   ]
 }

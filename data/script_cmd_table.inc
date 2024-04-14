@@ -237,6 +237,10 @@ gScriptCmdTable::
     .4byte ScrCmd_subquestmenu              		@ 0xea
     .4byte ScrCmd_returnqueststate          		@ 0xeb
     .4byte ScrCmd_checkpartylearnknowsfieldmove     @ 0xec // qol_field_moves
+    .4byte ScrCmd_setfollower						@ 0xed
+    .4byte ScrCmd_destroyfollower					@ 0xee
+    .4byte ScrCmd_facefollower						@ 0xef
+    .4byte ScrCmd_checkfollower						@ 0xf0
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

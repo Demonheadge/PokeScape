@@ -4,7 +4,21 @@ Varrock_MapScripts::
 
 Varrock_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 16
+	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
+	goto_if_eq Varrock_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	call HIDDEN_GROTTO_RESET
 	return
+
+Varrock_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	call HIDDEN_GROTTO_RESET
+	return
+
+
+VARROCK_SEWERS_SIGNPOST::
+	msgbox VARROCK_SEWERS_SIGNPOST_Text_0
+	closemessage
+	release
+	end
 
 
 VARROCK_SIGNPOST::
@@ -358,12 +372,42 @@ VARROCK_NPC_14::
 	end
 
 
+VARROCK_NPC_15::
+	faceplayer
+	namebox VARROCK_NPC_GUARD_0_Text_0
+	msgbox VARROCK_NPC_15_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 VARROCK_NPC_Romeo::
 	faceplayer
 	namebox VARROCK_NPC_Romeo_Text_0
 	msgbox VARROCK_NPC_Romeo_Text_1
 	closemessage
 	hidenamebox
+	release
+	end
+
+
+VARROCK_URI::
+	lock
+	faceplayer
+	namebox VARROCK_URI_Text_0
+	msgbox VARROCK_URI_Text_1
+	closemessage
+	hidenamebox
+	giveitem ITEM_ITEMFINDER
+	namebox VARROCK_URI_Text_0
+	msgbox VARROCK_URI_Text_2
+	closemessage
+	hidenamebox
+	fadescreen FADE_TO_BLACK
+	setflag FLAG_URI_ITEMFINDER
+	removeobject VAR_LAST_TALKED
+	fadescreen FADE_FROM_BLACK
 	release
 	end
 
@@ -545,7 +589,7 @@ TRIGGER_BLOCK_ROUTE38_1:
 	msgbox TRIGGER_BLOCK_ROUTE38_Text_0
 	closemessage
 	hidenamebox
-	applymovement OBJ_EVENT_ID_PLAYER, Movement_WALKLEFT
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_LEFT
 	waitmovement 0
 	setvar VAR_TEMP_0, 1
 	release
@@ -1016,6 +1060,9 @@ GIVE_RANDOM_ITEM_28_30:
 	goto GIVE_RANDOM_ITEM_28_1
 
 
+VARROCK_SEWERS_SIGNPOST_Text_0:
+	.string "Sewers - Watch out for rats.$"
+
 VARROCK_SIGNPOST_Text_0:
 	.string "Varrock, the trade centre of the\n"
 	.string "Gielinor.$"
@@ -1179,7 +1226,7 @@ VARROCK_NPC_Guard_6_Text_1:
 	.string "Dwarf$"
 
 VARROCK_NPC_Guard_6_Text_2:
-	.string "And the kart system goes to the\n"
+	.string "And the cart system goes to the\n"
 	.string "castle?$"
 
 VARROCK_NPC_Guard_6_Text_3:
@@ -1229,7 +1276,8 @@ VARROCK_NPC_GUARD_7_Text_0:
 	.string "Past this is the Wilderness, it is a\n"
 	.string "lawless place and I can not in good\l"
 	.string "conscience allow you to go there\l"
-	.string "without a stern warning. Be careful.$"
+	.string "without a stern warning.\p"
+	.string "Be careful.$"
 
 VARROCK_NPC_10_Text_0:
 	.string "They say the king is a surprisingly\n"
@@ -1260,11 +1308,30 @@ VARROCK_NPC_14_Text_0:
 	.string "I know it is a waste eating them myself\n"
 	.string "but I cannot help it.$"
 
+VARROCK_NPC_15_Text_0:
+	.string "Do you enjoy farming as much as me?\p"
+	.string "Be sure to make good friends with the\n"
+	.string "Strange Plants.\p"
+	.string "But keep them away from Dark types.$"
+
 VARROCK_NPC_Romeo_Text_0:
 	.string "Romeo$"
 
 VARROCK_NPC_Romeo_Text_1:
 	.string "Juliet, where art thou!$"
+
+VARROCK_URI_Text_0:
+	.string "Uri$"
+
+VARROCK_URI_Text_1:
+	.string "Do you like solving puzzles?\p"
+	.string "Finding unexpected goodies?\p"
+	.string "Well say no more!\p"
+	.string "These items…{PAUSE 32} are…{PAUSE 32} for…{PAUSE 32} you!$"
+
+VARROCK_URI_Text_2:
+	.string "Hidden treasures lay everywhere!\p"
+	.string "Until we meet again!$"
 
 VARROCKSTORE_NPC_1_Text_0:
 	.string "Noob$"
@@ -1368,12 +1435,12 @@ NPC_ARCHAEOLOGIST_BLOCKADE_1_Text_0:
 	.string "Please wait awhile, we recently\n"
 	.string "uncovered some mysterious ruins within\l"
 	.string "our digsite.\p"
-	.string "We are in the middle of excervating\n"
-	.string "them and cannot risk being disterbed.$"
+	.string "We are in the middle of excavating them\n"
+	.string "and cannot risk being disturbed.$"
 
 NPC_ARCHAEOLOGIST_BLOCKADE_1_Text_1:
 	.string "You should see it!\p"
-	.string "The city of senstinstin has been found!$"
+	.string "The city of Senntisten has been found!$"
 
 BATTLE_Varrock_Max_Text_0:
 	.string "Max$"

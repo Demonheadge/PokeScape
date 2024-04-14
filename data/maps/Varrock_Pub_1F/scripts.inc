@@ -59,6 +59,16 @@ PUB_EVENT_STATE_3:
 	return
 
 
+NPC_VarrockPub_GOLDENGNOMES::
+	lock
+	faceplayer
+	namebox NPC_VarrockPub_GOLDENGNOMES_Text_0
+	msgbox NPC_VarrockPub_GOLDENGNOMES_Text_1
+	hidenamebox
+	release
+	end
+
+
 NPC_VarrockPub_BARBARIAN::
 	lock
 	faceplayer
@@ -412,6 +422,15 @@ RAC_Snow::
 	end
 
 
+NPC_VarrockPub_GOLDENGNOMES_Text_0:
+	.string "Drunk Man$"
+
+NPC_VarrockPub_GOLDENGNOMES_Text_1:
+	.string "hic…\n"
+	.string "YoU kNow whaT stiNkz?!\p"
+	.string "tHe faCt thAt PoK.S.ape lOsT the.. LoSt.\p"
+	.string "G..d..n .nO.mes.$"
+
 NPC_VarrockPub_BARBARIAN_Text_0:
 	.string "Barbarian$"
 
@@ -489,7 +508,7 @@ NPC_VarrockPub_NPC4_Text_6:
 	.string "the monsters.$"
 
 NPC_VarrockPub_NPC5_Text_0:
-	.string "Appearntly some fragments of a stone\n"
+	.string "Apparently some fragments of a stone\n"
 	.string "are the key to Mega Evolution.\p"
 	.string "But what stone can do that?$"
 

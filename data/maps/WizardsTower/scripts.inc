@@ -20,6 +20,8 @@ WizardsTower_Outdoors_STATE::
 	case 7, WizardsTower_Outdoors_STATE_5
 	case 8, WizardsTower_Outdoors_STATE_5
 	case 9, WizardsTower_Outdoors_STATE_5
+	case 10, WizardsTower_Outdoors_STATE_5
+	case 11, WizardsTower_Outdoors_STATE_5
 	return
 
 WizardsTower_Outdoors_STATE_2:
@@ -325,7 +327,7 @@ BATTLE_WizardsTower_Trainer_1_Text_1:
 	.string "over me.$"
 
 BATTLE_WizardsTower_Trainer_2_Text_0:
-	.string "Welcome to the wizard tower, now face\n"
+	.string "Welcome to the Wizards' Tower, now face\n"
 	.string "my magic!$"
 
 BATTLE_WizardsTower_Trainer_2_Text_1:

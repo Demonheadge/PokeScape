@@ -74,7 +74,7 @@ Gillie_Groats_4:
 	hidenamebox
 	closemessage
 	giveitem ITEM_TOP_QUALITY_MILK
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_COOKS_ASSISTANT, 1
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_COOKS_ASSISTANT, SUB_QUEST_COOKSASSISTANT_2
 	namebox Gillie_Groats_Text_0
 	msgbox Gillie_Groats_Text_3
 	hidenamebox
@@ -170,7 +170,7 @@ NPC_LUMBRIDGE_CHICKEN_4:
 	waitmoncry
 	msgbox NPC_LUMBRIDGE_CHICKEN_Text_4
 	giveitem ITEM_SUPER_LARGE_EGG
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_COOKS_ASSISTANT, 0
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_COOKS_ASSISTANT, SUB_QUEST_COOKSASSISTANT_1
 	release
 	end
 
@@ -314,6 +314,8 @@ NPC_ROUTE12_Goblin_1::
 	msgbox NPC_ROUTE12_Goblin_1_Text_1
 	hidenamebox
 	closemessage
+	applymovement 6, MOVEMENT_FACE_DOWN
+	waitmovement 0
 	release
 	end
 
@@ -342,7 +344,6 @@ NPC_ROUTE12_Seth_Groats::
 
 NPC_DOG::
 	lock
-	faceplayer
 	playmoncry SPECIES_GROWLITHE, 0
 	msgbox NPC_DOG_Text_0
 	waitmoncry

@@ -2211,3 +2211,21 @@ const u16 gTilesetPalettes_Ice_Mountain[][16] = {
 };
 	
 const u32 gTilesetTiles_Ice_Mountain[] = INCBIN_U32("data/tilesets/secondary/ice_mountain/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_ChaosTunnels[][16] = {
+	INCBIN_U16("data/tilesets/secondary/chaos_tunnels/palettes/00.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/chaos_tunnels/palettes/01.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/chaos_tunnels/palettes/02.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/chaos_tunnels/palettes/03.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/chaos_tunnels/palettes/04.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/chaos_tunnels/palettes/05.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/chaos_tunnels/palettes/06.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/chaos_tunnels/palettes/07.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/chaos_tunnels/palettes/08.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/chaos_tunnels/palettes/09.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/chaos_tunnels/palettes/10.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/chaos_tunnels/palettes/11.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/chaos_tunnels/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_ChaosTunnels[] = INCBIN_U32("data/tilesets/secondary/chaos_tunnels/tiles.4bpp.lz");
