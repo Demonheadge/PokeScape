@@ -728,12 +728,11 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_RAC_PALETTE_4		0x126E
 #define OBJ_EVENT_PAL_RAC_PALETTE_5		0x126F
 #define OBJ_EVENT_PAL_RAC_PALETTE_6		0x1270
-
-
 #define OBJ_EVENT_PAL_CORP_BOSS			0x1271
-//#define OBJ_EVENT_PAL_GIANTS			  0x1272
-//#define OBJ_EVENT_PAL_DRAGONS           0x1273
-//#define OBJ_EVENT_PAL_SKOTIZO           0x1274
+#define OBJ_EVENT_PAL_GIANTS			0x1272
+#define OBJ_EVENT_PAL_DRAGONS           0x1273
+#define OBJ_EVENT_PAL_SKOTIZO           0x1274
+#define OBJ_EVENT_PAL_DUNGEONEERING     0x1275
 
 /*
 #define OBJ_EVENT_PAL_RAC_BATS			0x126B
@@ -1093,11 +1092,11 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_RAC_PALETTE_4, OBJ_EVENT_PAL_RAC_PALETTE_4},
     {gObjectEventPalette_RAC_PALETTE_5, OBJ_EVENT_PAL_RAC_PALETTE_5},
     {gObjectEventPalette_RAC_PALETTE_6, OBJ_EVENT_PAL_RAC_PALETTE_6},
-    
     {gObjectEventPalette_CORP_BOSS, OBJ_EVENT_PAL_CORP_BOSS},
-    //{gObjectEventPalette_GIANTS, OBJ_EVENT_PAL_GIANTS},
-    //{gObjectEventPalette_Skotizo, OBJ_EVENT_PAL_SKOTIZO},
-    //{gObjectEventPalette_DRAGONS, OBJ_EVENT_PAL_DRAGONS},
+    {gObjectEventPalette_GIANTS, OBJ_EVENT_PAL_GIANTS},
+    {gObjectEventPalette_Skotizo, OBJ_EVENT_PAL_SKOTIZO},
+    {gObjectEventPalette_DRAGONS, OBJ_EVENT_PAL_DRAGONS},
+    {gObjectEventPalette_DUNGEONEERING, OBJ_EVENT_PAL_DUNGEONEERING},
     
     /*
     {gObjectEventPalette_RAC_BATS, OBJ_EVENT_PAL_RAC_BATS},

@@ -819,6 +819,154 @@ static const union AnimCmd *const sAnims_SoffanQuo[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_Barrows_RS3_Guthan[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Barrows_RS3_Karil[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_Chase[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_dragon_armour[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_duo_dragon_ranger[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_duo_mage_light[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_duo_mage_runecraft[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_fire_giant[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_graceful_2[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_hill_giant[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_joe[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_lady_keli[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_mage_mystic[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_meteor[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_moss_giant[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_necromancer[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_PippinSmith[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_ramokee[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_ranger_robin[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_runecrafter[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_thok[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_tokhaar[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_VoidKnight_1[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_VoidKnight_2[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_VoidKnight_3[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_VoidKnight_4[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_VoidKnight_5[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_WiseOldMan_1[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_WiseOldMan_2[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_wizard_zamorak[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_ham_babe[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_ham_patty[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_hans[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_hazelmere[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_sir_tiffy[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_zanik_caves[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_zanik_ham[] ={
+    sAnim_GeneralFrame0,
+};
+
 const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 {
     [TRAINER_PIC_HIKER] = sAnims_Hiker,
@@ -1027,4 +1175,41 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_guard_draynor] = sAnims_guard_draynor,
     [TRAINER_PIC_quester] = sAnims_quester,
     [TRAINER_PIC_SoffanQuo] = sAnims_SoffanQuo,
+    [TRAINER_PIC_Barrows_RS3_Guthan] = sAnims_Barrows_RS3_Guthan,
+    [TRAINER_PIC_Barrows_RS3_Karil] = sAnims_Barrows_RS3_Karil,
+    [TRAINER_PIC_Chase] = sAnims_Chase,
+    [TRAINER_PIC_dragon_armour] = sAnims_dragon_armour,
+    [TRAINER_PIC_duo_dragon_ranger] = sAnims_duo_dragon_ranger,
+    [TRAINER_PIC_duo_mage_light] = sAnims_duo_mage_light,
+    [TRAINER_PIC_duo_mage_runecraft] = sAnims_duo_mage_runecraft,
+    [TRAINER_PIC_fire_giant] = sAnims_fire_giant,
+    [TRAINER_PIC_graceful_2] = sAnims_graceful_2,
+    [TRAINER_PIC_hill_giant] = sAnims_hill_giant,
+    [TRAINER_PIC_joe] = sAnims_joe,
+    [TRAINER_PIC_lady_keli] = sAnims_lady_keli,
+    [TRAINER_PIC_mage_mystic] = sAnims_mage_mystic,
+    [TRAINER_PIC_meteor] = sAnims_meteor,
+    [TRAINER_PIC_moss_giant] = sAnims_moss_giant,
+    [TRAINER_PIC_necromancer] = sAnims_necromancer,
+    [TRAINER_PIC_PippinSmith] = sAnims_PippinSmith,
+    [TRAINER_PIC_ramokee] = sAnims_ramokee,
+    [TRAINER_PIC_ranger_robin] = sAnims_ranger_robin,
+    [TRAINER_PIC_runecrafter] = sAnims_runecrafter,
+    [TRAINER_PIC_thok] = sAnims_thok,
+    [TRAINER_PIC_tokhaar] = sAnims_tokhaar,
+    [TRAINER_PIC_VoidKnight_1] = sAnims_VoidKnight_1,
+    [TRAINER_PIC_VoidKnight_2] = sAnims_VoidKnight_2,
+    [TRAINER_PIC_VoidKnight_3] = sAnims_VoidKnight_3,
+    [TRAINER_PIC_VoidKnight_4] = sAnims_VoidKnight_4,
+    [TRAINER_PIC_VoidKnight_5] = sAnims_VoidKnight_5,
+    [TRAINER_PIC_WiseOldMan_1] = sAnims_WiseOldMan_1,
+    [TRAINER_PIC_WiseOldMan_2] = sAnims_WiseOldMan_2,
+    [TRAINER_PIC_wizard_zamorak] = sAnims_wizard_zamorak,
+    [TRAINER_PIC_ham_babe] = sAnims_ham_babe,
+    [TRAINER_PIC_ham_patty] = sAnims_ham_patty,
+    [TRAINER_PIC_hans] = sAnims_hans,
+    [TRAINER_PIC_hazelmere] = sAnims_hazelmere,
+    [TRAINER_PIC_sir_tiffy] = sAnims_sir_tiffy,
+    [TRAINER_PIC_zanik_caves] = sAnims_zanik_caves,
+    [TRAINER_PIC_zanik_ham] = sAnims_zanik_ham,
 };
