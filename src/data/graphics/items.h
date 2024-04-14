@@ -2378,8 +2378,8 @@ const u32 gItemIconPalette_arma_helm[] = INCBIN_U32("graphics/items/pokescape_ic
 const u32 gItemIcon_bad_egg[] = INCBIN_U32("graphics/items/pokescape_icons/bad_egg.4bpp.lz");
 const u32 gItemIconPalette_bad_egg[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/bad_egg.gbapal.lz");
 
-const u32 gItemIcon_bananna[] = INCBIN_U32("graphics/items/pokescape_icons/bananna.4bpp.lz");
-const u32 gItemIconPalette_bananna[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/bananna.gbapal.lz");
+const u32 gItemIcon_banana[] = INCBIN_U32("graphics/items/pokescape_icons/banana.4bpp.lz");
+const u32 gItemIconPalette_banana[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/banana.gbapal.lz");
 
 const u32 gItemIcon_blackPickaxe[] = INCBIN_U32("graphics/items/pokescape_icons/blackPickaxe.4bpp.lz");
 const u32 gItemIconPalette_blackPickaxe[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/blackPickaxe.gbapal.lz");
@@ -2808,6 +2808,22 @@ const u32 gItemIconPalette_Xeric[] = INCBIN_U32("graphics/items/pokescape_icon_p
 
 const u32 gItemIcon_SLAYER_GEM[] = INCBIN_U32("graphics/items/pokescape_icons/slayergem.4bpp.lz");
 const u32 gItemIconPalette_SLAYER_GEM[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/slayergem.gbapal.lz");
+
+const u32 gItemIcon_cheese[] = INCBIN_U32("graphics/items/pokescape_icons/cheese.4bpp.lz");
+const u32 gItemIconPalette_cheese[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/cheese.gbapal.lz");
+
+const u32 gItemIcon_CRANDOR_MAP_FULL[] = INCBIN_U32("graphics/items/pokescape_icons/crandor_map_full.4bpp.lz");
+const u32 gItemIconPalette_CRANDOR_MAP_FULL[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/crandor_map_full.gbapal.lz");
+
+const u32 gItemIcon_CRANDOR_MAP_PIECE1[] = INCBIN_U32("graphics/items/pokescape_icons/crandor_map_piece1.4bpp.lz");
+const u32 gItemIconPalette_CRANDOR_MAP_PIECE1[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/crandor_map_piece1.gbapal.lz");
+
+const u32 gItemIcon_CRANDOR_MAP_PIECE2[] = INCBIN_U32("graphics/items/pokescape_icons/crandor_map_piece2.4bpp.lz");
+const u32 gItemIconPalette_CRANDOR_MAP_PIECE2[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/crandor_map_piece2.gbapal.lz");
+
+const u32 gItemIcon_CRANDOR_MAP_PIECE3[] = INCBIN_U32("graphics/items/pokescape_icons/crandor_map_piece3.4bpp.lz");
+const u32 gItemIconPalette_CRANDOR_MAP_PIECE3[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/crandor_map_piece3.gbapal.lz");
+
 
 //pokescape tms
 

@@ -950,7 +950,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_APPLE] = {gItemIcon_apple, gItemIconPalette_apple},
     [ITEM_ARMA_HELM] = {gItemIcon_arma_helm, gItemIconPalette_arma_helm},
     [ITEM_BAD_EGG] = {gItemIcon_bad_egg, gItemIconPalette_bad_egg},
-    [ITEM_BANANNA] = {gItemIcon_bananna, gItemIconPalette_bananna},
+    [ITEM_BANANA] = {gItemIcon_banana, gItemIconPalette_banana},
     [ITEM_BLACKPICKAXE] = {gItemIcon_blackPickaxe, gItemIconPalette_blackPickaxe},
     [ITEM_BLOODFURY] = {gItemIcon_bloodFury, gItemIconPalette_bloodFury},
     [ITEM_BLUEBERRY_SPECIAL] = {gItemIcon_blueberry_special, gItemIconPalette_blueberry_special},
@@ -1120,10 +1120,14 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_DARK_TOTEM] = {gItemIcon_DARK_TOTEM, gItemIconPalette_DARK_TOTEM},
     [ITEM_XERIC] = {gItemIcon_Xeric, gItemIconPalette_Xeric},
     [ITEM_SLAYER_GEM] = {gItemIcon_SLAYER_GEM, gItemIconPalette_SLAYER_GEM},
-
-    // Dungeoneering
     [ITEM_DG_BALL_OF_WOOL] = {gItemIcon_woolBall, gItemIconPalette_woolBall},
     [ITEM_DG_ROPE] = {gItemIcon_EscapeRope, gItemIconPalette_EscapeRope},
+    [ITEM_SCURRIUS_CHEESE] = {gItemIcon_cheese, gItemIconPalette_cheese},
+    [ITEM_TALISMAN_MYSTERY] = {gItemIcon_talisman_air, gItemIconPalette_talisman_air},
+    [ITEM_CRANDOR_MAP_FULL] = {gItemIcon_CRANDOR_MAP_FULL, gItemIconPalette_CRANDOR_MAP_FULL},
+    [ITEM_CRANDOR_MAP_PIECE1] = {gItemIcon_CRANDOR_MAP_PIECE1, gItemIconPalette_CRANDOR_MAP_PIECE1},
+    [ITEM_CRANDOR_MAP_PIECE2] = {gItemIcon_CRANDOR_MAP_PIECE2, gItemIconPalette_CRANDOR_MAP_PIECE2},
+    [ITEM_CRANDOR_MAP_PIECE3] = {gItemIcon_CRANDOR_MAP_PIECE3, gItemIconPalette_CRANDOR_MAP_PIECE3},
     // End Pokescape items
 
     // Return to field arrow

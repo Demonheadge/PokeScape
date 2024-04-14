@@ -4177,7 +4177,7 @@ static const u8 sElementalPouchDesc[] = _(
     "MONSTERS.");
 	
 static const u8 sTALISMANDesc[] = _(
-    "A mysterious Talisman\n"
+    "A strange Talisman\n"
     "that is attracted\n"
     "towards an altar.");
 
@@ -5150,6 +5150,26 @@ static const u8 sDGItemDesc[] = _(
     "An item that\n"
     "can be used within\n"
     "Dungeoneering.");
+
+static const u8 sCrandorMapDesc[] = _(
+    "A map to the isle\n"
+    "of Crandor.\n"
+    "");
+
+static const u8 sCrandorPieceDesc[] = _(
+    "A piece of a map\n"
+    "leading to an\n"
+    "unknown location.");
+    
+static const u8 sCheeseDesc[] = _(
+    "Some sewer cheese.\n"
+    "It seems like it\n"
+    "may be sentient.");
+
+static const u8 sMYSTERYTALISMANDesc[] = _(
+    "A mysterious\n"
+    "Talisman.\n"
+    "(Rune Mysteries)");
 
 static const u8 sCupholderDesc[] = _(
     "This is a Cupholder.");

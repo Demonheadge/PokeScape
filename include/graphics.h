@@ -4151,8 +4151,8 @@ extern const u32 gItemIcon_arma_helm[];
 extern const u32 gItemIconPalette_arma_helm[];
 extern const u32 gItemIcon_bad_egg[];
 extern const u32 gItemIconPalette_bad_egg[];
-extern const u32 gItemIcon_bananna[];
-extern const u32 gItemIconPalette_bananna[];
+extern const u32 gItemIcon_banana[];
+extern const u32 gItemIconPalette_banana[];
 extern const u32 gItemIcon_blackPickaxe[];
 extern const u32 gItemIconPalette_blackPickaxe[];
 extern const u32 gItemIcon_bloodFury[];
@@ -4468,6 +4468,16 @@ extern const u32 gItemIcon_Xeric[];
 extern const u32 gItemIconPalette_Xeric[];
 extern const u32 gItemIcon_SLAYER_GEM[];
 extern const u32 gItemIconPalette_SLAYER_GEM[];
+extern const u32 gItemIcon_cheese[];
+extern const u32 gItemIconPalette_cheese[];
+extern const u32 gItemIcon_CRANDOR_MAP_FULL[];
+extern const u32 gItemIconPalette_CRANDOR_MAP_FULL[];
+extern const u32 gItemIcon_CRANDOR_MAP_PIECE1[];
+extern const u32 gItemIconPalette_CRANDOR_MAP_PIECE1[];
+extern const u32 gItemIcon_CRANDOR_MAP_PIECE2[];
+extern const u32 gItemIconPalette_CRANDOR_MAP_PIECE2[];
+extern const u32 gItemIcon_CRANDOR_MAP_PIECE3[];
+extern const u32 gItemIconPalette_CRANDOR_MAP_PIECE3[];
 
 // pokescape crops
 extern const u32 gBerryPic_Cabbage[];

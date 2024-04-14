@@ -10799,9 +10799,9 @@ const struct Item gItems[] =
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
     },
 
-    [ITEM_BANANNA] =
+    [ITEM_BANANA] =
     {
-        .name = _("BANANNA"),
+        .name = _("BANANA"),
         .price = 20,
         .holdEffect = HOLD_EFFECT_CURE_PAR,
         .description = sBananaDesc,
@@ -11948,6 +11948,65 @@ const struct Item gItems[] =
         .description = sSnowGlobeDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_TALISMAN_MYSTERY] =
+    {
+        .name = _("TALISMAN"),
+        .price = 0,
+        .description = sMYSTERYTALISMANDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = 3,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_SCURRIUS_CHEESE] =
+    {
+        .name = _("CHEESE"),
+        .price = 0,
+        .description = sCheeseDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_CRANDOR_MAP_FULL] =
+    {
+        .name = _("CRANDOR MAP"),
+        .price = 0,
+        .description = sCrandorMapDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_CRANDOR_MAP_PIECE1] =
+    {
+        .name = _("MAP PIECE 1"),
+        .price = 0,
+        .description = sCrandorPieceDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_CRANDOR_MAP_PIECE2] =
+    {
+        .name = _("MAP PIECE 2"),
+        .price = 0,
+        .description = sCrandorPieceDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+    [ITEM_CRANDOR_MAP_PIECE3] =
+    {
+        .name = _("MAP PIECE 3"),
+        .price = 0,
+        .description = sCrandorPieceDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 /*
