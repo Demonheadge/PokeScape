@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "left",
+      "map": "MAP_SAFARI_ZONE_SOUTH",
       "offset": 0,
-      "map": "MAP_SAFARI_ZONE_SOUTH"
+      "direction": "left"
     },
     {
-      "direction": "up",
+      "map": "MAP_SAFARI_ZONE_NORTHEAST",
       "offset": 0,
-      "map": "MAP_SAFARI_ZONE_NORTHEAST"
+      "direction": "up"
     }
   ],
   "object_events": [
@@ -75,7 +75,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SafariZone_Southeast_EventScript_ItemBigPearl",
-      "flag": "FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL"
+      "flag": "FLAG_TEMP_11"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
@@ -88,7 +88,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SafariZone_Southeast_EventScript_ExpansionZoneAttendant",
-      "flag": "FLAG_HIDE_SAFARI_ZONE_SOUTH_EAST_EXPANSION"
+      "flag": "FLAG_TEMP_11"
     }
   ],
   "warp_events": [
@@ -104,7 +104,7 @@
       "y": 36,
       "elevation": 3,
       "item": "ITEM_PP_UP",
-      "flag": "FLAG_HIDDEN_ITEM_SAFARI_ZONE_SOUTH_EAST_PP_UP"
+      "flag": "FLAG_TEMP_11"
     },
     {
       "type": "hidden_item",
@@ -112,7 +112,7 @@
       "y": 33,
       "elevation": 0,
       "item": "ITEM_FULL_RESTORE",
-      "flag": "FLAG_HIDDEN_ITEM_SAFARI_ZONE_SOUTH_EAST_FULL_RESTORE"
+      "flag": "FLAG_TEMP_11"
     }
   ]
 }

@@ -14,29 +14,34 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "right",
+      "map": "MAP_ROUTE6",
       "offset": -14,
-      "map": "MAP_ROUTE6"
+      "direction": "right"
     },
     {
-      "direction": "up",
+      "map": "MAP_ROUTE7",
       "offset": 42,
-      "map": "MAP_ROUTE7"
+      "direction": "up"
     },
     {
-      "direction": "right",
+      "map": "MAP_ROUTE5",
       "offset": 22,
-      "map": "MAP_ROUTE5"
+      "direction": "right"
     },
     {
-      "direction": "down",
+      "map": "MAP_ROUTE9",
       "offset": 0,
-      "map": "MAP_ROUTE9"
+      "direction": "down"
     },
     {
-      "direction": "up",
+      "map": "MAP_ROUTE34",
       "offset": 0,
-      "map": "MAP_ROUTE34"
+      "direction": "up"
+    },
+    {
+      "map": "MAP_CRANDOR",
+      "offset": 15,
+      "direction": "left"
     }
   ],
   "object_events": [
@@ -171,7 +176,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WIZARD_DARK",
+      "graphics_id": "OBJ_EVENT_GFX_WIZARD_ZAMORAK",
       "x": 67,
       "y": 21,
       "elevation": 3,
@@ -223,7 +228,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WIZARD_DARK",
+      "graphics_id": "OBJ_EVENT_GFX_MYSTIC_BLUE",
       "x": 62,
       "y": 22,
       "elevation": 3,
@@ -236,7 +241,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WIZARD_DARK",
+      "graphics_id": "OBJ_EVENT_GFX_MYSTIC_LIGHT",
       "x": 60,
       "y": 25,
       "elevation": 3,
@@ -249,7 +254,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WIZARD_DARK",
+      "graphics_id": "OBJ_EVENT_GFX_WIZARD_GUTHIX",
       "x": 65,
       "y": 24,
       "elevation": 3,
@@ -385,21 +390,21 @@
       "y": 19,
       "elevation": 0,
       "dest_map": "MAP_ABYSSAL_REALM_2",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 22,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_ROUTE8_MAKEOVER_MAGE",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 24,
       "y": 21,
       "elevation": 0,
       "dest_map": "MAP_ROUTE8_CRAFTING_GUILD",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

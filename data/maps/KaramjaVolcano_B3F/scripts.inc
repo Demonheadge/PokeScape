@@ -504,7 +504,7 @@ ELVARG_KaramjaVolcano::
 	setvar VAR_0x8004, SPECIES_ELVARG
 	setvar VAR_0x8005, 40 @ level
 	setvar VAR_0x8006, ITEM_NONE
-	special CreateEnemyEventMon
+	special CreateEventLegalEnemyMon
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

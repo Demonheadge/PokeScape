@@ -106,16 +106,16 @@ BarbarianVillage_GYM_STATE_4:
 	setobjectxy 8, 7, 8
 	setobjectxyperm 8, 7, 8
 	setobjectmovementtype 8, MOVEMENT_TYPE_FACE_UP
-	applymovement 1, Movement_FACEUP
-	applymovement 2, Movement_FACEUP
-	applymovement 3, Movement_FACERIGHT
-	applymovement 4, Movement_FACEUP
-	applymovement 5, Movement_FACELEFT
-	applymovement 6, Movement_FACELEFT
-	applymovement 7, Movement_FACEUP
-	applymovement 8, Movement_FACEUP
-	applymovement 9, Movement_FACERIGHT
-	applymovement 11, Movement_FACERIGHT
+	applymovement 1, MOVEMENT_FACE_UP
+	applymovement 2, MOVEMENT_FACE_UP
+	applymovement 3, MOVEMENT_FACE_RIGHT
+	applymovement 4, MOVEMENT_FACE_UP
+	applymovement 5, MOVEMENT_FACE_LEFT
+	applymovement 6, MOVEMENT_FACE_LEFT
+	applymovement 7, MOVEMENT_FACE_UP
+	applymovement 8, MOVEMENT_FACE_UP
+	applymovement 9, MOVEMENT_FACE_RIGHT
+	applymovement 11, MOVEMENT_FACE_RIGHT
 	return
 
 BarbarianVillage_GYM_STATE_5:
@@ -209,16 +209,16 @@ NPC_BARBGYM_BARBARIAN_2::
 	call ContestHall_EventScript_VObjectAudienceLookAround
 	namebox NPC_BARBGYM_BARBARIAN_1_Text_0
 	msgbox NPC_BARBGYM_BARBARIAN_2_Text_1
-	applymovement 10, Movement_WALKUP
+	applymovement 10, MOVEMENT_WALK_UP
 	waitmovement 0
-	applymovement 10, Movement_FACELEFT
+	applymovement 10, MOVEMENT_FACE_LEFT
 	waitmovement 0
 	msgbox NPC_BARBGYM_BARBARIAN_2_Text_2
 	hidenamebox
 	closemessage
 	playse SE_M_ENCORE2
 	call ContestHall_EventScript_VObjectAudienceLookAround
-	applymovement 10, Movement_FACERIGHT
+	applymovement 10, MOVEMENT_FACE_RIGHT
 	waitmovement 0
 	namebox NPC_BARBGYM_BARBARIAN_1_Text_0
 	msgbox NPC_BARBGYM_BARBARIAN_2_Text_3
@@ -227,7 +227,7 @@ NPC_BARBGYM_BARBARIAN_2::
 	waitmovement 0
 	playse SE_M_ENCORE2
 	call ContestHall_EventScript_VObjectAudienceLookAround
-	applymovement 10, Movement_FACEDOWN
+	applymovement 10, MOVEMENT_FACE_DOWN
 	waitmovement 0
 	msgbox NPC_BARBGYM_BARBARIAN_2_Text_4
 	hidenamebox
@@ -238,8 +238,8 @@ NPC_BARBGYM_BARBARIAN_2::
 	msgbox NPC_BARBGYM_BARBARIAN_2_Text_6
 	hidenamebox
 	closemessage
-	applymovement 6, Movement_WALKLEFT
-	applymovement OBJ_EVENT_ID_PLAYER, Movement_WALKRIGHT
+	applymovement 6, MOVEMENT_WALK_LEFT
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_RIGHT
 	waitmovement 0
 	trainerbattle_no_intro TRAINER_BARBARIAN_GYM_TRAINER_1, NPC_BARBGYM_BARBARIAN_2_Text_7
 	namebox NPC_BARBGYM_BARBARIAN_1_Text_0
@@ -264,8 +264,8 @@ NPC_BARBGYM_BARBARIAN_2::
 	msgbox NPC_BARBGYM_BARBARIAN_2_Text_11
 	hidenamebox
 	closemessage
-	applymovement 2, Movement_WALKLEFT
-	applymovement OBJ_EVENT_ID_PLAYER, Movement_WALKRIGHT
+	applymovement 2, MOVEMENT_WALK_LEFT
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_RIGHT
 	waitmovement 0
 	trainerbattle_no_intro TRAINER_BARBARIAN_GYM_TRAINER_2, NPC_BARBGYM_BARBARIAN_2_Text_12
 	namebox NPC_BARBGYM_BARBARIAN_1_Text_0
@@ -293,13 +293,13 @@ NPC_BARBGYM_BARBARIAN_2::
 	call ContestHall_EventScript_VObjectAudienceLookAround
 	msgbox NPC_BARBGYM_BARBARIAN_2_Text_16
 	delay 15
-	applymovement 10, Movement_FACELEFT
+	applymovement 10, MOVEMENT_FACE_LEFT
 	waitmovement 0
 	namebox NPC_BARBGYM_BARBARIAN_1_Text_0
 	msgbox NPC_BARBGYM_BARBARIAN_2_Text_17
 	hidenamebox
 	closemessage
-	applymovement OBJ_EVENT_ID_PLAYER, Movement_WALKRIGHT
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_RIGHT
 	waitmovement 0
 	namebox NPC_BARBGYM_BARBARIAN_1_Text_0
 	msgbox NPC_BARBGYM_BARBARIAN_2_Text_18
@@ -312,7 +312,7 @@ NPC_BARBGYM_BARBARIAN_2::
 	closemessage
 	playse SE_M_ENCORE2
 	call ContestHall_EventScript_VObjectAudienceLookAround
-	applymovement 10, Movement_FACEDOWN
+	applymovement 10, MOVEMENT_FACE_DOWN
 	waitmovement 0
 	namebox NPC_BARBGYM_BARBARIAN_1_Text_0
 	msgbox NPC_BARBGYM_BARBARIAN_2_Text_20
@@ -355,7 +355,7 @@ NPC_BARBGYM_BARBARIAN_2::
 	waitfanfare
 	playbgm MUS_PS_BARBARIAN_VILLAGE, 0
 	savebgm MUS_PS_BARBARIAN_VILLAGE
-	applymovement 10, Movement_WALKDOWN
+	applymovement 10, MOVEMENT_WALK_DOWN
 	waitmovement 0
 	namebox NPC_BARBGYM_BARBARIAN_1_Text_0
 	msgbox NPC_BARBGYM_BARBARIAN_2_Text_30
@@ -373,35 +373,35 @@ NPC_BARBGYM_BARBARIAN_2::
 	end
 
 
-Movement_FACEUP:
+MOVEMENT_FACE_UP:
 	face_up
 	step_end
 
-Movement_FACELEFT:
+MOVEMENT_FACE_LEFT:
 	face_left
 	step_end
 
-Movement_FACERIGHT:
+MOVEMENT_FACE_RIGHT:
 	face_right
 	step_end
 
-Movement_FACEDOWN:
+MOVEMENT_FACE_DOWN:
 	face_down
 	step_end
 
-Movement_WALKUP:
+MOVEMENT_WALK_UP:
 	walk_up
 	step_end
 
-Movement_WALKLEFT:
+MOVEMENT_WALK_LEFT:
 	walk_left
 	step_end
 
-Movement_WALKRIGHT:
+MOVEMENT_WALK_RIGHT:
 	walk_right
 	step_end
 
-Movement_WALKDOWN:
+MOVEMENT_WALK_DOWN:
 	walk_down
 	step_end
 
@@ -609,7 +609,7 @@ NPC_BARBGYM_BARBARIAN_1_Text_0:
 
 NPC_BARBGYM_BARBARIAN_1_Text_1:
 	.string "Your battle was impressive!\p"
-	.string "You are now a honnorary Barbarian!\p"
+	.string "You are now a honorary Barbarian!\p"
 	.string "You should go see Litara about\n"
 	.string "accessing our Stronghold.$"
 
@@ -645,7 +645,7 @@ NPC_BARBGYM_BARBARIAN_2_Text_1:
 
 NPC_BARBGYM_BARBARIAN_2_Text_2:
 	.string "In this corner we have the challenger\n"
-	.string "known simple as {PLAYER}!$"
+	.string "known simply as {PLAYER}!$"
 
 NPC_BARBGYM_BARBARIAN_2_Text_3:
 	.string "And in this corner it is our very own\n"
@@ -693,7 +693,7 @@ NPC_BARBGYM_BARBARIAN_2_Text_13:
 NPC_BARBGYM_BARBARIAN_2_Text_14:
 	.string "The time has come for the third and\n"
 	.string "final battle before facing our\l"
-	.string "Cheiftan.\p"
+	.string "Chieftain.\p"
 	.string "Your challenger is no other than…{PAUSE 15}…{PAUSE 15} ME!$"
 
 NPC_BARBGYM_BARBARIAN_2_Text_15:
@@ -721,7 +721,7 @@ NPC_BARBGYM_BARBARIAN_2_Text_20:
 	.string "Gym Badge is the one and only one of\l"
 	.string "the strongest in all of the MvM\l"
 	.string "Championships!\p"
-	.string "Give it up for our Cheifian… {PAUSE 15}GUNTHOR!!!$"
+	.string "Give it up for our Chieftain… {PAUSE 15}GUNTHOR!!!$"
 
 NPC_BARBGYM_BARBARIAN_2_Text_21:
 	.string "GGUUUUNNNTTHHHOOOORRR!!!!$"
@@ -759,8 +759,8 @@ NPC_BARBGYM_BARBARIAN_2_Text_28:
 	.string "And of course we cannot forget this,\n"
 	.string "the main reason you are here today.\p"
 	.string "Here you go {PLAYER} I proudly award\n"
-	.string "you this Gym Badge and also hearby\l"
-	.string "declare you an honnorary Barbarian!$"
+	.string "you this Gym Badge and also hereby\l"
+	.string "declare you an honorary Barbarian!$"
 
 NPC_BARBGYM_BARBARIAN_2_Text_29:
 	.string "{PLAYER} received the Barbarian\n"

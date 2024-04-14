@@ -1,11 +1,16 @@
 Draynor_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, Draynor_MapScripts_MAP_SCRIPT_ON_LOAD
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Draynor_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
 Draynor_MapScripts_MAP_SCRIPT_ON_LOAD:
 	call WizardsTower_Draynor_STATE
 	call DRAYNOR_GUARD_STATE
-	end
+	return
+
+Draynor_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_POKESCAPE_GOLDENGNOMES, 15, GOLDENGNOME_EVENT_END
+	.2byte 0
 
 
 WizardsTower_Draynor_STATE::
@@ -16,10 +21,12 @@ WizardsTower_Draynor_STATE::
 	case 3, WizardsTower_Draynor_STATE_2
 	case 4, WizardsTower_Draynor_STATE_3
 	case 5, WizardsTower_Draynor_STATE_4
-	case 6, WizardsTower_Draynor_STATE_4
-	case 7, WizardsTower_Draynor_STATE_4
-	case 8, WizardsTower_Draynor_STATE_4
-	case 9, WizardsTower_Draynor_STATE_4
+	case 6, WizardsTower_Draynor_STATE_5
+	case 7, WizardsTower_Draynor_STATE_5
+	case 8, WizardsTower_Draynor_STATE_5
+	case 9, WizardsTower_Draynor_STATE_5
+	case 10, WizardsTower_Draynor_STATE_5
+	case 11, WizardsTower_Draynor_STATE_5
 	return
 
 WizardsTower_Draynor_STATE_2:
@@ -39,6 +46,13 @@ WizardsTower_Draynor_STATE_3:
 	return
 
 WizardsTower_Draynor_STATE_4:
+	setflag FLAG_TEMP_1
+	removeobject 21
+	clearflag FLAG_TEMP_2
+	addobject 24
+	return
+
+WizardsTower_Draynor_STATE_5:
 	setflag FLAG_TEMP_1
 	setflag FLAG_TEMP_2
 	removeobject 21
@@ -110,7 +124,6 @@ HAM_Movement6_2:
 	step_end
 
 Draynor_Ariane::
-	lock
 	namebox HAM_EVENT_Draynor_Text_0
 	msgbox Draynor_Ariane_Text_0
 	hidenamebox
@@ -132,27 +145,73 @@ Draynor_Diango::
 	lock
 	faceplayer
 	namebox Draynor_Diango_Text_0
-	random 3
-	switch VAR_RESULT
-	case 0, Draynor_Diango_3
-	case 1, Draynor_Diango_4
-	case 2, Draynor_Diango_5
+	msgbox Draynor_Diango_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne Draynor_Diango_2
+	msgbox Draynor_Diango_Text_6
 Draynor_Diango_1:
 	hidenamebox
 	release
 	end
 
-Draynor_Diango_3:
-	msgbox Draynor_Diango_Text_1
-	goto Draynor_Diango_1
-
-Draynor_Diango_4:
+Draynor_Diango_2:
+	hidenamebox
 	msgbox Draynor_Diango_Text_2
+	random 3
+	compare VAR_RESULT, 0
+	goto_if_eq Draynor_Diango_6
+Draynor_Diango_5:
+	goto_if_unset FLAG_DIANGO_GIFT_DRAGONKITE, Draynor_Diango_8
+	goto_if_unset FLAG_DIANGO_GIFT_FROGEELBURGER, Draynor_Diango_9
+	compare VAR_POKESCAPE_GOLDENGNOMES, 0
+	goto_if_eq Draynor_Diango_10
+	msgbox Draynor_Diango_Text_5
 	goto Draynor_Diango_1
 
-Draynor_Diango_5:
+Draynor_Diango_6:
 	msgbox Draynor_Diango_Text_3
+	goto Draynor_Diango_5
+
+Draynor_Diango_8:
+	call GIFT_DRAGONKITE
 	goto Draynor_Diango_1
+
+Draynor_Diango_9:
+	call GIFT_FROGEELBURGER
+	goto Draynor_Diango_1
+
+Draynor_Diango_10:
+	msgbox Draynor_Diango_Text_4
+	call GOLDENGNOME_EVENT_START
+	goto Draynor_Diango_1
+
+
+GIFT_DRAGONKITE::
+	msgbox GIFT_DRAGONKITE_Text_0
+	givemon SPECIES_DRAGONKITE, 10, ITEM_NONE
+	bufferspeciesname 1, SPECIES_DRAGONKITE
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox GIFT_DRAGONKITE_Text_1
+	waitmessage
+	waitfanfare
+	bufferspeciesname 0, SPECIES_DRAGONKITE
+	setflag FLAG_DIANGO_GIFT_DRAGONKITE
+	msgbox GIFT_DRAGONKITE_Text_2
+	msgbox GIFT_DRAGONKITE_Text_3
+	return
+
+
+GIFT_FROGEELBURGER::
+	msgbox GIFT_DRAGONKITE_Text_0
+	additem ITEM_FROGEEL_BURGER, 1
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox GIFT_FROGEELBURGER_Text_0
+	waitmessage
+	waitfanfare
+	setflag FLAG_DIANGO_GIFT_FROGEELBURGER
+	msgbox GIFT_DRAGONKITE_Text_2
+	msgbox GIFT_FROGEELBURGER_Text_1
+	return
 
 
 Draynor_Miss_Schism::
@@ -325,7 +384,10 @@ Draynor_Morgan::
 	case 5, Draynor_Morgan_2
 	case 6, Draynor_Morgan_2
 	case 7, Draynor_Morgan_2
-	case 8, Draynor_Morgan_3
+	case 8, Draynor_Morgan_2
+	case 9, Draynor_Morgan_3
+	case 10, Draynor_Morgan_3
+	case 11, Draynor_Morgan_3
 	return
 
 Draynor_Morgan_2:
@@ -385,8 +447,10 @@ HAM_EVENT_Draynor_Text_1:
 	.string "Maybe the market…$"
 
 Draynor_Ariane_Text_0:
-	.string "He doesn't seem to be here…\p"
-	.string "I hope he didn't leave town…$"
+	.string "I cannot see him anywhere…\p"
+	.string "Did I take a wrong turn?\p"
+	.string "I hope he didn't run north towards\n"
+	.string "Draynor Manor…$"
 
 NPC_PIG_Text_0:
 	.string "OINK!$"
@@ -396,19 +460,47 @@ Draynor_Diango_Text_0:
 
 Draynor_Diango_Text_1:
 	.string "Howdy!\p"
-	.string "Have you seen my holiday items?\p"
-	.string "Look at this toy horsey!\p"
-	.string "Hi-ho Silver, and away!$"
+	.string "Would you like to see if you have any\n"
+	.string "gifts avaliable?$"
 
 Draynor_Diango_Text_2:
-	.string "Howdy!\p"
-	.string "Look at this cool spinning plate I have!\p"
-	.string "Oh dear, I dropped it.$"
+	.string "Loading - please wait{PAUSE 32}.{PAUSE 32}.{PAUSE 32}.$"
 
 Draynor_Diango_Text_3:
-	.string "Howdy!\p"
-	.string "Do you like my rubber chicken?\p"
-	.string "Whack!$"
+	.string "Connection Lost.\p"
+	.string "Please wait - attempting to\n"
+	.string "reestablish{PAUSE 32}.{PAUSE 32}.{PAUSE 32}.$"
+
+Draynor_Diango_Text_4:
+	.string "An announcement was found!$"
+
+Draynor_Diango_Text_5:
+	.string "There was no gift to be found…$"
+
+Draynor_Diango_Text_6:
+	.string "Thank you come again.$"
+
+GIFT_DRAGONKITE_Text_0:
+	.string "Gift successfully found!$"
+
+GIFT_DRAGONKITE_Text_1:
+	.string "{PLAYER} obtained a {STR_VAR_2}.$"
+
+GIFT_DRAGONKITE_Text_2:
+	.string "There is a note alongside the gift, it\n"
+	.string "reads:$"
+
+GIFT_DRAGONKITE_Text_3:
+	.string "Thank you for using Gift System.\n"
+	.string "- Diango$"
+
+GIFT_FROGEELBURGER_Text_0:
+	.string "{PLAYER} obtained a FROGEEL BURGER.$"
+
+GIFT_FROGEELBURGER_Text_1:
+	.string "Thank you for playing PokeScape.\p"
+	.string "Check out our website and discord\n"
+	.string "server for the latest updates.$"
 
 Draynor_Miss_Schism_Text_0:
 	.string "Miss Schism$"
@@ -547,10 +639,10 @@ NPC_Draynor_Mugger_Text_0:
 	.string "Mugger$"
 
 NPC_Draynor_Mugger_Text_1:
-	.string "Draynor village is the town of farmers\n"
+	.string "Draynor Village is the town of farmers\n"
 	.string "and vampyres.\p"
 	.string "I am not sure why I decided to be a\n"
-	.string "mugger here but its a job somebody has\l"
+	.string "mugger here but it's a job somebody has\l"
 	.string "to take.$"
 
 NPC_Draynor_WiseOldMan_Text_0:

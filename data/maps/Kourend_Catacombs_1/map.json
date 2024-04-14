@@ -14,29 +14,29 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "up",
+      "map": "MAP_KOUREND_CATACOMBS_2",
       "offset": 0,
-      "map": "MAP_KOUREND_CATACOMBS_2"
+      "direction": "up"
     },
     {
-      "direction": "right",
+      "map": "MAP_KOUREND_CATACOMBS_3",
       "offset": 0,
-      "map": "MAP_KOUREND_CATACOMBS_3"
+      "direction": "right"
     },
     {
-      "direction": "down",
+      "map": "MAP_KOUREND_CATACOMBS_4",
       "offset": -16,
-      "map": "MAP_KOUREND_CATACOMBS_4"
+      "direction": "down"
     },
     {
-      "direction": "left",
+      "map": "MAP_KOUREND_CATACOMBS_5",
       "offset": 0,
-      "map": "MAP_KOUREND_CATACOMBS_5"
+      "direction": "left"
     },
     {
-      "direction": "left",
+      "map": "MAP_KOUREND_CATACOMBS_6",
       "offset": -26,
-      "map": "MAP_KOUREND_CATACOMBS_6"
+      "direction": "left"
     }
   ],
   "object_events": [
@@ -50,8 +50,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "FIND_RANDOM_ITEM_KOUREND",
+      "flag": "FLAG_ITEM_REPEATABLE_ITEM_6"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
@@ -63,8 +63,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "FIND_RANDOM_ITEM_KOUREND",
+      "flag": "FLAG_ITEM_REPEATABLE_ITEM_7"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SKELETON_1",
@@ -80,7 +80,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BIG_REGIROCK_DOLL",
+      "graphics_id": "OBJ_EVENT_GFX_HILL_GIANT",
       "x": 14,
       "y": 21,
       "elevation": 3,
@@ -89,17 +89,17 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "give_SLAYER_GEM",
+      "script": "NULL",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BIG_REGIROCK_DOLL",
+      "graphics_id": "OBJ_EVENT_GFX_HILL_GIANT",
       "x": 23,
       "y": 24,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
@@ -116,7 +116,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_New_RockSmash",
-      "flag": "0"
+      "flag": "FLAG_TEMP_4"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -129,7 +129,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_New_RockSmash",
-      "flag": "0"
+      "flag": "FLAG_TEMP_5"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -142,7 +142,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_New_RockSmash",
-      "flag": "0"
+      "flag": "FLAG_TEMP_6"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -155,7 +155,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_New_RockSmash",
-      "flag": "0"
+      "flag": "FLAG_TEMP_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -168,7 +168,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_New_RockSmash",
-      "flag": "0"
+      "flag": "FLAG_TEMP_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -181,7 +181,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_New_RockSmash",
-      "flag": "0"
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GYMLEADER_VANNAKA",
@@ -193,20 +193,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_NIEVE",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_ADAMANTMAN",
-      "x": 24,
-      "y": 8,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "SLAYER_TASK_CHECK",
+      "script": "NPC_VANNAKA_SLAYER_MASTER",
       "flag": "0"
     },
     {
@@ -215,6 +202,19 @@
       "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ITEM_Catacombs_of_Kourend_4",
+      "flag": "FLAG_ITEM_KOUREND_CATACOMBS_4"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MOSS_GIANT",
+      "x": 6,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -228,99 +228,106 @@
       "x": 23,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_ABYSSAL_REALM_1",
-      "dest_warp_id": 35
+      "dest_map": "MAP_ABYSSAL_REALM_3",
+      "dest_warp_id": "0"
     },
     {
       "x": 21,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_1",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     },
     {
       "x": 21,
       "y": 4,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_1",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 21,
       "y": 1,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_2",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 24,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_1",
-      "dest_warp_id": 5
+      "dest_warp_id": "5"
     },
     {
       "x": 30,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_1",
-      "dest_warp_id": 4
+      "dest_warp_id": "4"
     },
     {
       "x": 33,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_3",
-      "dest_warp_id": 0
+      "dest_warp_id": "3"
     },
     {
       "x": 21,
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_1",
-      "dest_warp_id": 8
+      "dest_warp_id": "8"
     },
     {
       "x": 21,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_1",
-      "dest_warp_id": 7
+      "dest_warp_id": "7"
     },
     {
       "x": 18,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_1",
-      "dest_warp_id": 10
+      "dest_warp_id": "10"
     },
     {
       "x": 12,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_1",
-      "dest_warp_id": 9
+      "dest_warp_id": "9"
     },
     {
       "x": 6,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_KOUREND_CATACOMBS_5",
-      "dest_warp_id": 0
+      "dest_map": "MAP_KOUREND_CATACOMBS_1",
+      "dest_warp_id": "12"
     },
     {
       "x": 6,
       "y": 4,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_1",
-      "dest_warp_id": 0
+      "dest_warp_id": "11"
     },
     {
       "x": 6,
       "y": 1,
       "elevation": 0,
-      "dest_map": "MAP_KOUREND_CATACOMBS_1",
-      "dest_warp_id": 0
+      "dest_map": "MAP_KOUREND_CATACOMBS_2",
+      "dest_warp_id": "12"
+    },
+    {
+      "x": 21,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_KOUREND_CATACOMBS_8",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -332,24 +339,24 @@
       "x": 19,
       "y": 9,
       "elevation": 3,
-      "item": "ITEM_XERIC",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_SPIRIT_SHARD",
+      "flag": "FLAG_HIDDEN_ITEM_TEMP_1"
     },
     {
       "type": "hidden_item",
       "x": 27,
       "y": 24,
       "elevation": 3,
-      "item": "ITEM_ANCIENT_SHARD",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_LAMP_HP",
+      "flag": "FLAG_HIDDEN_ITEM_TEMP_2"
     },
     {
       "type": "hidden_item",
       "x": 17,
       "y": 28,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_PURPLE_SWEETS",
+      "flag": "FLAG_HIDDEN_ITEM_TEMP_3"
     },
     {
       "type": "sign",

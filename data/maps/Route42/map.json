@@ -14,33 +14,38 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "right",
+      "map": "MAP_ROUTE41",
       "offset": -5,
-      "map": "MAP_ROUTE41"
+      "direction": "right"
     },
     {
-      "direction": "left",
+      "map": "MAP_ROUTE43",
       "offset": 0,
-      "map": "MAP_ROUTE43"
+      "direction": "left"
     },
     {
-      "direction": "down",
+      "map": "MAP_ROUTE47",
       "offset": -24,
-      "map": "MAP_ROUTE47"
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE48",
+      "offset": 6,
+      "direction": "down"
     }
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_PKER",
+      "graphics_id": "OBJ_EVENT_GFX_PKER_RUSHER",
       "x": 6,
       "y": 3,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "BATTLE_ROUTE_42_TRAINER_2",
       "flag": "0"
     },
     {
@@ -51,9 +56,9 @@
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "BATTLE_ROUTE_42_TRAINER_1",
       "flag": "0"
     },
     {
@@ -66,7 +71,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ROUTE_42_NPC_1",
       "flag": "0"
     },
     {
@@ -77,22 +82,22 @@
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "BATTLE_ROUTE_42_TRAINER_4",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SKELETON_1",
-      "x": 13,
-      "y": 12,
+      "graphics_id": "OBJ_EVENT_GFX_WIZARD_DARK",
+      "x": 9,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "BATTLE_ROUTE_42_TRAINER_3",
       "flag": "0"
     },
     {
@@ -105,8 +110,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_ROUTE_42_EASTER_EGG",
+      "flag": "FLAG_ITEM_ROUTE_42_EASTER_EGG"
     }
   ],
   "warp_events": [

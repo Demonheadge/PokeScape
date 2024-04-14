@@ -141,6 +141,16 @@ BATTLE_ROUTE18_TRAINER7::
 	end
 
 
+ITEM_ROUTE_18_BEER::
+	finditem ITEM_STAT_BEER
+	end
+
+
+ITEM_ROUTE_18_CAKE::
+	finditem ITEM_CAKE
+	end
+
+
 NPC_ROUTE19_BRASS_KEY::
 	msgbox NPC_ROUTE19_BRASS_KEY_Text_0
 	release
@@ -197,7 +207,7 @@ BATTLE_ROUTE18_TRAINER2_Text_1:
 	.string "Oh wait, you aren't a penguin.$"
 
 BATTLE_ROUTE18_TRAINER2_Text_2:
-	.string "Canada Grl$"
+	.string "Canada Grrl$"
 
 BATTLE_ROUTE18_TRAINER2_Text_3:
 	.string "I heard there was a Penguin in this area\n"
@@ -258,8 +268,8 @@ BATTLE_ROUTE18_TRAINER6_Text_2:
 	.string "Me respect you strength.$"
 
 BATTLE_ROUTE18_TRAINER7_Text_0:
-	.string "Good of you to come through the east\n"
-	.string "gate, you would by cruched by the\l"
+	.string "Good of you to come through the west\n"
+	.string "gate, you would by crushed by the\l"
 	.string "south.$"
 
 BATTLE_ROUTE18_TRAINER7_Text_1:

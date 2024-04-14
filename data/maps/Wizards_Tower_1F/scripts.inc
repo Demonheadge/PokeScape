@@ -38,10 +38,12 @@ WizardsTower_STATE::
 	case 3, WizardsTower_STATE_3
 	case 4, WizardsTower_STATE_3
 	case 5, WizardsTower_STATE_3
-	case 6, WizardsTower_STATE_4
-	case 7, WizardsTower_STATE_4
-	case 8, WizardsTower_STATE_4
-	case 9, WizardsTower_STATE_4
+	case 6, WizardsTower_STATE_3
+	case 7, WizardsTower_STATE_3
+	case 8, WizardsTower_STATE_3
+	case 9, WizardsTower_STATE_3
+	case 10, WizardsTower_STATE_4
+	case 11, WizardsTower_STATE_4
 	return
 
 WizardsTower_STATE_2:
@@ -85,6 +87,8 @@ WizardsTower_SEDRIDOR::
 	case 7, WizardsTower_SEDRIDOR_3
 	case 8, WizardsTower_SEDRIDOR_3
 	case 9, WizardsTower_SEDRIDOR_3
+	case 10, WizardsTower_SEDRIDOR_3
+	case 11, WizardsTower_SEDRIDOR_3
 	return
 
 WizardsTower_SEDRIDOR_2:
@@ -118,6 +122,8 @@ WizardsTower_Wizard::
 	case 7, WizardsTower_Wizard_3
 	case 8, WizardsTower_Wizard_3
 	case 9, WizardsTower_Wizard_4
+	case 10, WizardsTower_Wizard_4
+	case 11, WizardsTower_Wizard_4
 	return
 
 WizardsTower_Wizard_2:
@@ -149,20 +155,28 @@ WizardsTower_Wizard_4:
 
 
 WizardsTower_EVENT_TRIGGER::
+	compare VAR_POKESCAPE_GAMEMODE_STATE, 1
+	goto_if_eq WizardsTower_EVENT_TRIGGER_2
 	switch VAR_POKESCAPE_WIZARDS_TOWER_STATE
-	case 0, WizardsTower_EVENT_TRIGGER_2
-	case 1, WizardsTower_EVENT_TRIGGER_2
-	case 2, WizardsTower_EVENT_TRIGGER_2
-	case 3, WizardsTower_EVENT_TRIGGER_2
-	case 4, WizardsTower_EVENT_TRIGGER_2
-	case 5, WizardsTower_EVENT_TRIGGER_2
-	case 6, WizardsTower_EVENT_TRIGGER_2
-	case 7, WizardsTower_EVENT_TRIGGER_2
-	case 8, WizardsTower_EVENT_TRIGGER_2
-	case 9, WizardsTower_EVENT_TRIGGER_3
+	case 0, WizardsTower_EVENT_TRIGGER_5
+	case 1, WizardsTower_EVENT_TRIGGER_5
+	case 2, WizardsTower_EVENT_TRIGGER_5
+	case 3, WizardsTower_EVENT_TRIGGER_5
+	case 4, WizardsTower_EVENT_TRIGGER_5
+	case 5, WizardsTower_EVENT_TRIGGER_5
+	case 6, WizardsTower_EVENT_TRIGGER_5
+	case 7, WizardsTower_EVENT_TRIGGER_5
+	case 8, WizardsTower_EVENT_TRIGGER_5
+	case 9, WizardsTower_EVENT_TRIGGER_5
+	case 10, WizardsTower_EVENT_TRIGGER_6
+	case 11, WizardsTower_EVENT_TRIGGER_6
 	return
 
 WizardsTower_EVENT_TRIGGER_2:
+	release
+	end
+
+WizardsTower_EVENT_TRIGGER_5:
 	lock
 	applymovement 4, Movement_Wizard_WizardsTower4
 	waitmovement 0
@@ -175,7 +189,7 @@ WizardsTower_EVENT_TRIGGER_2:
 	release
 	end
 
-WizardsTower_EVENT_TRIGGER_3:
+WizardsTower_EVENT_TRIGGER_6:
 	release
 	end
 
@@ -242,6 +256,7 @@ HAM_EVENT_WizardsTower_1_1:
 	fadedefaultbgm
 	setvar VAR_POKESCAPE_WIZARDS_TOWER_STATE, 1
 	setvar VAR_TEMP_B, 1
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 20
 	release
 	end
 
@@ -577,7 +592,7 @@ NPC_WIZARDSTOWER_PulseCore::
 	lock
 	delay 16
 	playse SE_PIN
-	applymovement 2 rinsit_1
+	applymovement 2, rinsit_1
 	waitmovement 0
 	namebox NPC_WIZARDSTOWER_Rinsit_Text_0
 	msgbox NPC_WIZARDSTOWER_PulseCore_Text_7
@@ -791,7 +806,7 @@ NPC_WIZARDSTOWER_Book_4_Text_0:
 	.string "It seems interesting.$"
 
 NPC_WIZARDSTOWER_Book_5_Text_0:
-	.string "These notes about the Lumbridge\n"
+	.string "These notes are about the Lumbridge\n"
 	.string "Catacombs.\p"
 	.string "…{PAUSE 15} …{PAUSE 15}\p"
 	.string "The monsters located in the catacombs\n"

@@ -1,4 +1,4 @@
-const OBJ_EVENT_ID_DUKE = 1
+const OBJ_EVENT_ID_DUKE = 13
 
 
 mapscripts Lumbridge_Castle_4_MapScripts{
@@ -33,7 +33,7 @@ script GYMLEADER_DUKE{
     msgbox(format("Congratulations!\nYou've managed to defeat me.\pHere is your official GYM BADGE, you've definitely earned it."))
     hidenamebox
     playfanfare(MUS_PS_QUEST_COMPLETE)
-    msgbox(format("{PLAYER} received the Lumbridge BADGE from Duke Horacio."))
+    msgbox(format("{PLAYER} received the LUMBRIDGE BADGE from Duke Horacio."))
     waitmessage
     waitfanfare
     namebox("Duke Horacio")
@@ -44,7 +44,20 @@ script GYMLEADER_DUKE{
 	goto_if_eq(Common_EventScript_ShowBagIsFull)
     namebox("Duke Horacio")
     msgbox(format("That move is called Slack off, which is exactly what I love to do on my days off.\pHopefully it will help you on your journey."))
-    msgbox(format("Also, I suppose you'll be heading to the next gym, correct?\pThen you would be wanting to go to Falador.\pMight I suggest first stopping off at the Wizards Tower, south of Draynor and doing some training with the Wizards?\pBest of luck adventurer!"))
+    if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    {
+        msgbox(format("Before you go, could you to do me a favour?\pPop over to the Wizards' Tower and have the Archmage check out this mysterious Talisman for me.\pI would go myself but I have a Castle and Gym to run."))
+        closemessage
+        hidenamebox
+        giveitem(ITEM_TALISMAN_MYSTERY, 1)
+        namebox("Duke Horacio")
+        msgbox(format("Wizards' Tower is located south of Draynor Village.\pYou can get there through Lumbridge Swamp to the south of here.\pReturn to me once you've delivered the Talisman and I'll give you something for your troubles.\pBest of luck adventurer!"))
+        closemessage
+        hidenamebox
+        setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 15) //Obtained the LUMBRIDGE BADGE
+        //START RUNE MYSTERIES QUEST
+        startquest (QUEST_RUNE_MYSTERIES)
+    }
     closemessage
     hidenamebox
     fadescreen(FADE_TO_BLACK)
@@ -52,7 +65,7 @@ script GYMLEADER_DUKE{
     removeobject(OBJ_EVENT_ID_DUKE)
     setflag(FLAG_BADGE01_GET)
     addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
-    setvar(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE, 5)
+    setvar(VAR_POKESCAPE_LUMBRIDGE_GYM_QUEST, 2)
     fadescreen(FADE_FROM_BLACK)
     release
     end

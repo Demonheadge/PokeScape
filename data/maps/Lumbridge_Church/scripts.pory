@@ -11,7 +11,7 @@ script Lumbridge_Church_Father_Aereck
 {
 	lock
 	faceplayer
-	msgbox(format("Monsters dont really die.\pThey will not be needing graves.\pJust take them to the bank."))
+	msgbox(format("Monsters don't really die.\pThey will not be needing graves.\pJust take them to the bank."))
 	release
 	end
 }	
@@ -164,6 +164,7 @@ script GnomeBoi_Kevin
 			release
 		case 7:
 			msgbox ("Heres some candy!")
+			additem (ITEM_FRIENDSHIP_BOOSTER, 100)
             additem (ITEM_PULSE_CORE, 6)
 			additem (ITEM_PURPLE_SWEETS, 100)
 			additem (ITEM_FRAGMENT_OF_JAS, 5)

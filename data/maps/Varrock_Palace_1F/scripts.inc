@@ -53,7 +53,7 @@ TRIGGER_VARROCK_GYM_ADVISOR_5:
 	applymovement 2, Movement_InteractFACEPLAYER
 	waitmovement 0
 	call QUEST_VARROCK_GYM_1
-	applymovement OBJ_EVENT_ID_PLAYER, Movement_WALKDOWN
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN
 	waitmovement 0
 	release
 	end
@@ -64,7 +64,7 @@ TRIGGER_VARROCK_GYM_ADVISOR_8:
 	applymovement 2, Movement_InteractFACEPLAYER
 	waitmovement 0
 	call QUEST_VARROCK_GYM_2
-	applymovement OBJ_EVENT_ID_PLAYER, Movement_WALKDOWN
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN
 	waitmovement 0
 	release
 	end
@@ -355,7 +355,7 @@ VARROCK_GYM_BOOK_3_2:
 VARROCK_GYM_BOOK_3_4:
 	lock
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACEDOWN
-	applymovement 9, Movement_WALKUP
+	applymovement 9, MOVEMENT_WALK_UP
 	waitmovement 0
 	namebox VARROCK_GYM_BOOK_3_Text_0
 	msgbox VARROCK_GYM_BOOK_3_Text_1
@@ -365,7 +365,7 @@ VARROCK_GYM_BOOK_3_4:
 	msgbox VARROCK_GYM_BOOK_3_Text_3
 	hidenamebox
 	closemessage
-	applymovement 9, Movement_WALKDOWN
+	applymovement 9, MOVEMENT_WALK_DOWN
 	waitmovement 0
 	applymovement 9, Movement_InteractFACERIGHT
 	waitmovement 0
@@ -937,7 +937,7 @@ VARROCK_GYM_RELDO_Text_5:
 	.string "of your accomplishments.$"
 
 VARROCK_GYM_RELDO_Text_6:
-	.string "Reldo scribbles on a small peice of\n"
+	.string "Reldo scribbles on a small piece of\n"
 	.string "paper before handing it to you.$"
 
 VARROCK_GYM_RELDO_Text_7:
@@ -976,7 +976,7 @@ VARROCK_GYM_GENERIC_BOOK_Text_4:
 	.string "beautiful strong looking woman\l"
 	.string "crushing a Turoth between her thighs.\p"
 	.string "The text reads…\p"
-	.string "The truth behind Neive the Slayer\n"
+	.string "The truth behind Nieve the Slayer\n"
 	.string "Master.$"
 
 VARROCK_GYM_GENERIC_BOOK_Text_5:
@@ -1156,7 +1156,7 @@ VARROCK_GYM_GUARD_BLOCKING_Text_0:
 VARROCK_GYM_GUARD_6_Text_0:
 	.string "This castle is no where near as\n"
 	.string "confusing as the Falador Castle, I am\l"
-	.string "greatful for that.$"
+	.string "grateful for that.$"
 
 BATTLE_VARROCK_GYM_TRAINER_1_Text_0:
 	.string "Hey you!\n"

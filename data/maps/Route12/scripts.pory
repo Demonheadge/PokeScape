@@ -1,5 +1,5 @@
-const ALKAHRID_GUARD_1_ID = 29
-const ALKAHRID_GUARD_2_ID = 30
+const ALKHARID_GUARD_1_ID = 29
+const ALKHARID_GUARD_2_ID = 30
 
 mapscripts Route12_MapScripts{
 	MAP_SCRIPT_ON_TRANSITION{
@@ -70,7 +70,7 @@ script Gillie_Groats{
 			hidenamebox
 			closemessage
 			giveitem(ITEM_TOP_QUALITY_MILK)
-			subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_COOKS_ASSISTANT, 1)
+			subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_COOKS_ASSISTANT, SUB_QUEST_COOKSASSISTANT_2)
             namebox ("Gillie Groats")
 			msgbox(format("Say hello to the cook for me!"))
 			hidenamebox
@@ -173,7 +173,7 @@ script NPC_LUMBRIDGE_CHICKEN{
 			waitmoncry
 			msgbox(format("The chicken laid an egg!"))
 			giveitem(ITEM_SUPER_LARGE_EGG)
-			subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_COOKS_ASSISTANT, 0)
+			subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_COOKS_ASSISTANT, SUB_QUEST_COOKSASSISTANT_1)
 			release
 			end
 		}
@@ -382,6 +382,8 @@ script NPC_ROUTE12_Goblin_1{
     msgbox(format("Go away human.\pGoblin cooking."))
     hidenamebox
 	closemessage
+	applymovement (6,MOVEMENT_FACE_DOWN)
+	waitmovement(0)
 	release
 	end
 }
@@ -411,7 +413,6 @@ script NPC_ROUTE12_Seth_Groats{
 script NPC_DOG
 {
 	lock
-	faceplayer
     playmoncry(SPECIES_GROWLITHE, 0)
 	msgbox(format("WOOF!"))
     waitmoncry

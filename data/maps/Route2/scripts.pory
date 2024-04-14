@@ -62,13 +62,15 @@ script QUEST_STATE_WizardsTower_ROUTE2{
             case 6: 
             case 7: 
             case 8: 
+            case 9: 
                 //HIDE NPCs
                 setflag(FLAG_TEMP_1)
                 removeobject(2)
                 removeobject(3)
                 release
                 end
-            case 9: 
+            case 10: 
+		    case 11: 
                 setflag(FLAG_TEMP_1)
                 setflag(FLAG_TEMP_2) //HIDE MUGGER
                 setvar(VAR_TEMP_2, 1) //HIDE MUGGER TRIGGER
@@ -175,8 +177,21 @@ script HAM_EVENT_Route2_TRIGGER_2{
     waitmovement(0)
     goto(HAM_EVENT_Route2_MAIN_2)
 }
-
-
+script HAM_EVENT_Route2_TRIGGER_3{
+    applymovement(3, MOVEMENT_FACE_DOWN)
+    applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_UP)
+    waitmovement(0)
+    namebox("Ariane")
+    msgbox(format("Have you seen a man in pink?\pI don't know which way he went…"))
+    hidenamebox
+    closemessage
+    applymovement(3, MOVEMENT_FACE_LEFT)
+    applymovement (OBJ_EVENT_ID_PLAYER, movement_WALKRIGHT)
+    waitmovement(0)
+}
+movement movement_WALKRIGHT{
+    walk_right
+}
 
 movement HAM_Movement5_1{
     walk_in_place_fast_right * 3
@@ -255,9 +270,9 @@ script NPC_ROUTE2_Wizard
 
 script BATTLE_ROUTE2_Trainer_1
 {
-    trainerbattle_single(TRAINER_ROUTE2_TRAINER_1, format("Do you know the way to Draynor village by any chance?"),format("Wrong direction?\pI've followed the W for south all day!"))
-    namebox ("How2type")
-    msgbox(format("Wrong direction?\pI've followed the W for south all day!"))
+    trainerbattle_single(TRAINER_ROUTE2_TRAINER_1, format("Please no!\pI'm so close to the Bank I don't want to be sent back to Lumbridge!"),format("Nooo!\pBack to Lumbridge I go!"))
+    //namebox ("SkIlla4Eva")
+    msgbox(format("If the swamp wasn't hard enough there was also a forest to pass through!?\pThis is too much for a skiller…"))
     hidenamebox
     release
     end
@@ -265,7 +280,7 @@ script BATTLE_ROUTE2_Trainer_1
 
 script BATTLE_ROUTE2_Trainer_2
 {
-    trainerbattle_single(TRAINER_ROUTE2_TRAINER_2, format("Passing this bridge gets you to the wizard tower."),format("Wizards use runes to conjure magic."))
+    trainerbattle_single(TRAINER_ROUTE2_TRAINER_2, format("Passing this bridge gets you to the Wizards' Tower."),format("Wizards use runes to conjure magic."))
     namebox ("Tam McGrubor")
     msgbox(format("Runes are marvellous.\pUsing them on monsters might make them evolve!"))
     hidenamebox

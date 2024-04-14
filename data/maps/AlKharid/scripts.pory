@@ -17,6 +17,21 @@ script ALKHARID_GNOMEGLIDER
     end
 }
 
+script ALKHARID_SIGN
+{
+	lock
+	msgbox(format("Welcome to Al Kharid.\pThe jewel of the Kharidian Desert."))
+	release
+	end
+}
+
+script ALKHARID_WATERWELL
+{
+	msgbox(format("No matter how hard you look, you can't see any polar bears down there."))
+	release
+	end
+}
+
 //NPCS
 script ALKHARID_NPC_1
 {
@@ -52,7 +67,7 @@ script ALKHARID_NPC_4
 {
     faceplayer
     //namebox ("")
-    msgbox(format("Dont cause trouble here in city, law enforcement has a tendency to call upon several more guards unneedingly for the smallest of cases."))
+    msgbox(format("Don't cause trouble here in the city, law enforcement has a tendency to call upon several more guards unnecessarily for the smallest of cases."))
     closemessage
     //hidenamebox
     release
@@ -72,7 +87,7 @@ script ALKHARID_NPC_6
 {
     faceplayer
     //namebox ("")
-    msgbox(format("Did you know theres a ban on magic carpets in Al Kharid?\pApparently their leader died using one at one point."))
+    msgbox(format("Did you know there's a ban on magic carpets in Al Kharid?\pApparently their leader died using one at one point."))
     closemessage
     //hidenamebox
     release
@@ -102,7 +117,7 @@ script ALKHARID_NPC_9
 {
     faceplayer
     //namebox ("")
-    msgbox(format("We deal with a lot of thiefs and cutthroats here.\pAl Kharid does not welcome them, yet they keep coming back."))
+    msgbox(format("I heard rumours of archaeologists carrying out an excavation on some ruins nearby.\pI wonder what magical artifacts might be sealed inside."))
     closemessage
     //hidenamebox
     release
@@ -112,7 +127,7 @@ script ALKHARID_NPC_10
 {
     faceplayer
     //namebox ("")
-    msgbox(format(""))
+    msgbox(format("I'm glad I managed to get assigned as a guard outside the palace.\pTherer were too many adventurers coming into the palace and trapping my brothers behind furniture to kill them."))
     closemessage
     //hidenamebox
     release
@@ -122,7 +137,7 @@ script ALKHARID_NPC_11
 {
     faceplayer
     //namebox ("")
-    msgbox(format(""))
+    msgbox(format("We deal with a lot of thieves and cutthroats here.\pAl Kharid does not welcome them, yet they keep coming back."))
     closemessage
     //hidenamebox
     release
@@ -131,8 +146,8 @@ script ALKHARID_NPC_11
 script ALKHARID_NPC_12
 {
     faceplayer
-    //namebox ("")
-    msgbox(format(""))
+    //namebox ("Spirit Angler")
+    msgbox(format("The Spirit of the Sea has awoken and is creating intense storms for sailors.\pI wonder if there are any adventurers brave enough to defeat it."))
     closemessage
     //hidenamebox
     release
@@ -141,8 +156,8 @@ script ALKHARID_NPC_12
 script ALKHARID_NPC_13
 {
     faceplayer
-    //namebox ("")
-    msgbox(format(""))
+    //namebox ("Ozan")
+    msgbox(format("Who am I?\pOnly the most famous hero ever born in Al Kharid!\pI helped aid in the defence of Burthorpe from the troll invasion.\pI helped rescue the druid master Pikkupstix from the depths of Daemonheim!\p…{PAUSE 32}\pWhat do you mean you've never heard of me?"))
     closemessage
     //hidenamebox
     release
@@ -187,8 +202,8 @@ script ALKHARID_NPC_16
 script SHANTYPASS_NPC_1
 {
     faceplayer
-    //namebox ("")
-    msgbox(format(""))
+    //namebox ("Shantay")
+    msgbox(format("This is the pass of Shantay. I guard this area with my men. I am responsible for keeping this pass open.\pUnfortunately it is currently undergoing some repairs. Please come back again later."))
     closemessage
     //hidenamebox
     release
@@ -197,8 +212,8 @@ script SHANTYPASS_NPC_1
 script SHANTYPASS_NPC_2
 {
     faceplayer
-    //namebox ("")
-    msgbox(format(""))
+    //namebox ("Shantay Guard")
+    msgbox(format("I help Shantay prevent outlaws from getting out of the desert. And we stop the inexperienced from a dry death in the sands."))
     closemessage
     //hidenamebox
     release
@@ -207,10 +222,57 @@ script SHANTYPASS_NPC_2
 script SHANTYPASS_NPC_3
 {
     faceplayer
-    //namebox ("")
-    msgbox(format(""))
+    //namebox ("Shantay")
+    msgbox(format("Go talk to Shantay. I'm on duty and I don't have time to talk to the likes of you!"))
     closemessage
     //hidenamebox
     release
     end
 }
+
+
+
+
+
+
+script ITEM_ALKHARID_INDOOR_1
+{
+    finditem(ITEM_NONE)
+    end
+}
+script ITEM_ALKHARID_INDOOR_2
+{
+    finditem(ITEM_NONE)
+    end
+}
+
+script ALKHARID_INDOOR_NPC_1
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    //hidenamebox
+    release
+    end
+}
+script ALKHARID_INDOOR_NPC_2
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    //hidenamebox
+    release
+    end
+} 
+script ALKHARID_INDOOR_NPC_3
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    //hidenamebox
+    release
+    end
+} 

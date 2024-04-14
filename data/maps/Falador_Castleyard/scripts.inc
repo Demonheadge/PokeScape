@@ -893,8 +893,8 @@ NPC_FALADORCASTLE_GYM_SirRentee_Text_1:
 	.string "Crests.\p"
 	.string "I wanted to make a design for the Badge\n"
 	.string "of the Falador Gym too, but Sir Amik\l"
-	.string "prevered the design of some 'Stan' fella\l"
-	.string "over my design.\p"
+	.string "preferred the design of some 'Stan'\l"
+	.string "fella over my design.\p"
 	.string "Sigh, guess I could not compete against\n"
 	.string "such artistic brilliance.$"
 

@@ -1,6 +1,14 @@
 mapscripts Varrock_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setvar(VAR_EVOLUTION_MAP_STATE, 16) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+        if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    	{
+			call(HIDDEN_GROTTO_RESET)
+    	}
+		else
+		{
+			call(HIDDEN_GROTTO_RESET)
+		}
     }
 }
 
@@ -8,7 +16,13 @@ mapscripts Varrock_MapScripts {
 
 
 
-
+script VARROCK_SEWERS_SIGNPOST
+{
+    msgbox(format("Sewers - Watch out for rats."))
+    closemessage
+    release
+    end
+}
 
 script VARROCK_SIGNPOST
 {
@@ -277,7 +291,7 @@ script VARROCK_NPC_Guard_6
     namebox ("Guard")
     msgbox(format("Yes the castle is to the north."))
     namebox ("Dwarf")
-    msgbox(format("And the kart system goes to the castle?"))
+    msgbox(format("And the cart system goes to the castle?"))
     namebox ("Guard")
     msgbox(format("No, it goes to the Grand Exchange."))
     namebox ("Dwarf")
@@ -360,7 +374,7 @@ script VARROCK_NPC_GUARD_7
 {
     faceplayer
     namebox ("Guard")
-    msgbox(format("Past this is the Wilderness, it is a lawless place and I can not in good conscience allow you to go there without a stern warning. Be careful."))
+    msgbox(format("Past this is the Wilderness, it is a lawless place and I can not in good conscience allow you to go there without a stern warning.\pBe careful."))
     closemessage
     hidenamebox
     release
@@ -422,6 +436,17 @@ script VARROCK_NPC_14
     end
 }
 
+script VARROCK_NPC_15
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("Do you enjoy farming as much as me?\pBe sure to make good friends with the Strange Plants.\pBut keep them away from Dark types."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
 
 script VARROCK_NPC_Romeo
 {
@@ -434,6 +459,26 @@ script VARROCK_NPC_Romeo
     end
 }
 
+script VARROCK_URI
+{
+    lock
+    faceplayer
+    namebox ("Uri")
+    msgbox(format("Do you like solving puzzles?\pFinding unexpected goodies?\pWell say no more!\pThese items…{PAUSE 32} are…{PAUSE 32} for…{PAUSE 32} you!"))
+    closemessage
+    hidenamebox
+    giveitem(ITEM_ITEMFINDER)
+    namebox ("Uri")
+    msgbox(format("Hidden treasures lay everywhere!\pUntil we meet again!"))
+    closemessage
+    hidenamebox
+    fadescreen(FADE_TO_BLACK)
+    setflag(FLAG_URI_ITEMFINDER)
+    removeobject(VAR_LAST_TALKED)
+    fadescreen(FADE_FROM_BLACK)
+    release
+    end
+}
 
 script VARROCKSTORE_NPC_1
 {
@@ -657,7 +702,7 @@ script TRIGGER_BLOCK_ROUTE38
         msgbox(format("Sorry, by order of the King only those who have obtained the Varrock Badge may pass here."))
         closemessage
         hidenamebox
-        applymovement(OBJ_EVENT_ID_PLAYER, Movement_WALKLEFT)
+        applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_LEFT)
         waitmovement(0)
         setvar(VAR_TEMP_0, 1) //Dont need this.
         release
@@ -704,9 +749,9 @@ script NPC_ARCHAEOLOGIST_BLOCKADE_1
     faceplayer
     namebox("Archaeologist")
     //if (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE) == 0){
-        msgbox(format("Stop!\pPlease wait awhile, we recently uncovered some mysterious ruins within our digsite.\pWe are in the middle of excervating them and cannot risk being disterbed."))
+        msgbox(format("Stop!\pPlease wait awhile, we recently uncovered some mysterious ruins within our digsite.\pWe are in the middle of excavating them and cannot risk being disturbed."))
         if (flag(FLAG_BADGE07_GET)){
-            msgbox(format("You should see it!\pThe city of senstinstin has been found!"))
+            msgbox(format("You should see it!\pThe city of Senntisten has been found!"))
             hidenamebox
             closemessage
             //APPLY MOVEMENT

@@ -21,7 +21,7 @@ mapscripts Route1_MapScripts {
 
         if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
     	{
-            call(TryMoveNpcsRoute1)
+            call(STORYMODE_STATE_ROUTE1) 
     	}
 		else
 		{
@@ -50,6 +50,18 @@ script OPENWORLD_STATE_ROUTE1 {
         setobjectxyperm(OBJ_EVENT_ID_ERNEST,10,12)
         setobjectxyperm(OBJ_EVENT_ID_VERONICA,10,13)
 		return
+}
+
+script STORYMODE_STATE_ROUTE1{
+    //Cows will move after you have interacted with the Wizards' Tower.
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 20) { //If Storymode progress is EQUAL or MORE.
+        setobjectxyperm(4, 42, 10)
+        setobjectmovementtype(4,MOVEMENT_TYPE_FACE_DOWN)
+        setobjectxyperm(12, 37, 12)
+        setobjectxyperm(13, 43, 12)
+        setobjectmovementtype(13,MOVEMENT_TYPE_FACE_DOWN)
+    }
+    return
 }
 
 
@@ -83,6 +95,8 @@ script QUEST_STATE_WizardsTower_ROUTE1{
                 end
 			case 6: 
             case 7: 
+            case 8:
+            case 9: 
                 //HIDE NPCs
                 setflag(FLAG_TEMP_1)
 				setflag(FLAG_TEMP_2)
@@ -94,8 +108,10 @@ script QUEST_STATE_WizardsTower_ROUTE1{
                 addobject(5) //ernest
                 release
                 end
-            case 8: 
-            case 9: 
+             
+            
+            case 10: 
+		    case 11: 
                 //HIDE NPCs
                 setflag(FLAG_TEMP_1)
 				setflag(FLAG_TEMP_2)
@@ -114,32 +130,15 @@ script QUEST_STATE_WizardsTower_ROUTE1{
 
 
 
-script TryMoveNpcsRoute1{
-    if (flag(FLAG_BADGE01_GET)){
-        setobjectxyperm(4, 42, 10)
-        setobjectmovementtype(4,MOVEMENT_TYPE_FACE_DOWN)
-
-        setobjectxyperm(12, 37, 12)
-
-        setobjectxyperm(13, 43, 12)
-        setobjectmovementtype(13,MOVEMENT_TYPE_FACE_DOWN)
-    }
-    if (!(var(VAR_POKESCAPE_WIZARDS_TOWER_STATE) == 6)){
-        removeobject(22)
-        setflag(FLAG_TEMP_5)
-        removeobject(23)
-        setflag(FLAG_TEMP_4)
-    }
-    return
-}
 
 
 
 
 
-script Route1WarpCheck{
-    map_script_2 (VAR_TEMP_1, 0, TryMoveNpcsRoute1)
-}
+
+//script Route1WarpCheck{
+//    map_script_2 (VAR_TEMP_1, 0, STORYMODE_STATE_ROUTE1)
+//}
 
 
 
@@ -301,20 +300,18 @@ script BLOCK_ROUTE1_FARMER {
     lock 
     faceplayer
     namebox("Farmer")
-    if (!flag(FLAG_BADGE01_GET)){
+
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 15) { 
+        msgbox(format("Hey sorry bud, I think I'm going to be here awhile.\pIf you want to get to Draynor you'll have to go through the swamp to the south."))
+    }
+    elif (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 10) { //If Storymode progress is EQUAL or LESS.
         msgbox(format("Some Goblins scared my cows out of their pens.\pNow I'm struggling to get them back in!"))
-        hidenamebox
-        closemessage
-        release
-        end
     }
     else{
         msgbox(format("I finally got my Cows out of the way."))
-        hidenamebox
-        closemessage
-        release
-        end
     }
+    hidenamebox
+    closemessage
     release
     end
 }
@@ -403,7 +400,7 @@ script MudbeardBattle{
 script Route1FarmerBattle{
     trainerbattle_single(TRAINER_FARMER_ROUTE1,format("Cor blimey what are ye doing on me lands!"),format("Its not really my lands yet."))
     namebox ("John")
-    msgbox("Its not really my lands yet.")
+    msgbox("It's not really my lands yet.")
     hidenamebox
     release
 }
@@ -468,14 +465,14 @@ script ChickenBattleScript3{
 
 script EvilChickenBattleScript{
     lock
-    faceplayer
-    playmoncry(SPECIES_COMBUSKEN, 0)
+    playmoncry(SPECIES_EVILCHICKEN, 0)
     msgbox(format("BWAWWWK!\pBEGONE {PLAYER}!"))
     waitmoncry
     setwildbattle (SPECIES_EVILCHICKEN, 10, ITEM_NONE)
     dowildbattle
-    removeobject (11)
-    setflag (FLAG_EVILCHICKEN_DEFEATED)
+    removeobject (VAR_LAST_TALKED)
+    setvar(VAR_POKESCAPE_ERNEST_QUEST_STATE, 5)
+    //setflag (FLAG_EVILCHICKEN_DEFEATED)
 
 }
 
@@ -548,6 +545,8 @@ script ErnestAndVeronica {
                 case 5:
                 case 6: 
                 case 7: 
+                case 8: 
+                case 9:
                     namebox("Ernest")
                     msgbox(format("Professor Oddenstein made me human again!"))
                     hidenamebox
@@ -558,8 +557,9 @@ script ErnestAndVeronica {
                     closemessage
                     release
                     end
-                case 8: 
-                case 9: 
+                 
+                case 10: 
+		        case 11: 
                     namebox("Veronica")
                     msgbox(format("Did you ever end up getting some directions?"))
                     hidenamebox
@@ -615,12 +615,12 @@ script HAM_EVENT_Route1_MAIN_1{
     waitmovement(0)
     applymovement(5, HAM_Movement7_7)
     namebox("Ernest")
-    msgbox(format("I'm so glad im not a chicken anymore…\pThat was cluckin' scary!"))
+    msgbox(format("I'm so glad I'm not a chicken anymore…\pThat was cluckin' scary!"))
     hidenamebox
     waitmovement(0)
     applymovement(6, HAM_Movement7_6)
     namebox("Veronica")
-    msgbox(format("Lets just avoid that creepy Manor from now on."))
+    msgbox(format("Let's just avoid that creepy Manor from now on."))
     hidenamebox
     waitmovement(0)
     applymovement(23, HAM_Movement7_1)
@@ -747,10 +747,10 @@ script ArianeChaseHamEvent7{
     msgbox(format("Get out of my way! you're blocking the path!"))
     hidenamebox
     namebox("Ernest")
-    msgbox(format("I'm so glad im not a chicken anymore… that was cluckin scary."))
+    msgbox(format("I'm so glad I'm not a chicken anymore…\pThat was cluckin' scary!"))
     hidenamebox
     namebox("Veronica")
-    msgbox(format("Lets just avoid that creepy manor from now on."))
+    msgbox(format("Let's just avoid that creepy manor from now on."))
     hidenamebox
     msgbox(format("Kissing noises"))
     namebox("H.A.M. member")

@@ -14,24 +14,24 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "left",
+      "map": "MAP_KOUREND_CATACOMBS_1",
       "offset": 0,
-      "map": "MAP_KOUREND_CATACOMBS_1"
+      "direction": "left"
     },
     {
-      "direction": "up",
+      "map": "MAP_KOUREND_CATACOMBS_2",
       "offset": -35,
-      "map": "MAP_KOUREND_CATACOMBS_2"
+      "direction": "up"
     },
     {
-      "direction": "down",
+      "map": "MAP_KOUREND_CATACOMBS_4",
       "offset": -51,
-      "map": "MAP_KOUREND_CATACOMBS_4"
+      "direction": "down"
     },
     {
-      "direction": "up",
+      "map": "MAP_KOUREND_CATACOMBS_7",
       "offset": 15,
-      "map": "MAP_KOUREND_CATACOMBS_7"
+      "direction": "up"
     }
   ],
   "object_events": [
@@ -45,8 +45,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "EventScript_New_RockSmash",
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -58,8 +58,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "EventScript_New_RockSmash",
+      "flag": "FLAG_TEMP_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -71,8 +71,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "EventScript_New_RockSmash",
+      "flag": "FLAG_TEMP_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
@@ -84,8 +84,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "FIND_RANDOM_ITEM_KOUREND",
+      "flag": "FLAG_ITEM_REPEATABLE_ITEM_4"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
@@ -97,11 +97,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "FIND_RANDOM_ITEM_KOUREND",
+      "flag": "FLAG_ITEM_REPEATABLE_ITEM_5"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_STRYKEWYRM_LEAFY",
+      "graphics_id": "OBJ_EVENT_GFX_MOSS_GIANT",
       "x": 7,
       "y": 19,
       "elevation": 3,
@@ -125,6 +125,58 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SLIME",
+      "x": 19,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ENCOUNTER_SLIME",
+      "flag": "FLAG_TEMP_4"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SLIME",
+      "x": 21,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ENCOUNTER_SLIME",
+      "flag": "FLAG_TEMP_5"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SLIME",
+      "x": 21,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ENCOUNTER_SLIME",
+      "flag": "FLAG_TEMP_6"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_IMP",
+      "x": 21,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ENCOUNTER_GREATER_DEMON",
+      "flag": "FLAG_TEMP_7"
     }
   ],
   "warp_events": [
@@ -132,50 +184,50 @@
       "x": 22,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_KOUREND_CATACOMBS_3",
-      "dest_warp_id": 0
+      "dest_map": "MAP_KOUREND_CATACOMBS_7",
+      "dest_warp_id": "0"
     },
     {
       "x": 6,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_3",
-      "dest_warp_id": 0
+      "dest_warp_id": "2"
     },
     {
       "x": 6,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_3",
-      "dest_warp_id": 0
+      "dest_warp_id": "1"
     },
     {
       "x": 4,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_KOUREND_CATACOMBS_3",
-      "dest_warp_id": 0
+      "dest_map": "MAP_KOUREND_CATACOMBS_1",
+      "dest_warp_id": "6"
     },
     {
       "x": 8,
       "y": 24,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_3",
-      "dest_warp_id": 0
+      "dest_warp_id": "5"
     },
     {
       "x": 8,
       "y": 27,
       "elevation": 0,
       "dest_map": "MAP_KOUREND_CATACOMBS_3",
-      "dest_warp_id": 0
+      "dest_warp_id": "4"
     },
     {
       "x": 18,
       "y": 32,
       "elevation": 0,
-      "dest_map": "MAP_KOUREND_CATACOMBS_3",
-      "dest_warp_id": 0
+      "dest_map": "MAP_KOUREND_CATACOMBS_4",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -187,48 +239,48 @@
       "x": 6,
       "y": 1,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_LAMP_DEF",
+      "flag": "FLAG_HIDDEN_ITEM_TEMP_10"
     },
     {
       "type": "hidden_item",
       "x": 24,
       "y": 8,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_LAMP_ATT",
+      "flag": "FLAG_HIDDEN_ITEM_TEMP_11"
     },
     {
       "type": "hidden_item",
       "x": 15,
       "y": 26,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_PARTY_HAT",
+      "flag": "FLAG_HIDDEN_ITEM_TEMP_12"
     },
     {
       "type": "hidden_item",
       "x": 18,
       "y": 13,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_FLAX",
+      "flag": "FLAG_TEMP_10"
     },
     {
       "type": "hidden_item",
       "x": 23,
       "y": 14,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_BLACK_POUCH",
+      "flag": "FLAG_TEMP_8"
     },
     {
       "type": "hidden_item",
       "x": 19,
       "y": 15,
       "elevation": 3,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_CAKE",
+      "flag": "FLAG_TEMP_9"
     }
   ]
 }
