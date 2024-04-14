@@ -53,6 +53,11 @@
 #include "fldeff.h"
 // End qol_field_moves
 
+extern const u8 EventScript_SLAYER_TASK_CHECK[];
+extern const u8 EventScript_XERIC[];
+extern const u8 EventScript_ANCIENT_SHARD[];
+extern const u8 EventScript_ROTTEN_POTATO[];
+
 static void SetUpItemUseCallback(u8);
 static void FieldCB_UseItemOnField(void);
 static void Task_CallItemUseOnFieldCallback(u8);
@@ -92,6 +97,7 @@ static void SetUpFieldAndUseTeleportTool(u8 taskId);
 static void UseTeleportToolYesNo(u8 taskId);
 static void AskPlayerTeleportTool(u8 taskId);
 // End qol_field_moves
+static void ItemUseOnFieldCB_RunScript(u8);
 
 // EWRAM variables
 EWRAM_DATA static void(*sItemUseOnFieldCB)(u8 taskId) = NULL;
@@ -263,6 +269,60 @@ void ItemUseOutOfBattle_Bike(u8 taskId)
         else
             DisplayDadsAdviceCannotUseItemMessage(taskId, tUsingRegisteredKeyItem);
     }
+}
+
+void ItemUseOutOfBattle_Function(u8 taskId) //This is used to change a Flag / Variable from the items menu.
+{
+    if ((gSpecialVar_ItemId == ITEM_SLAYER_GEM) || (gSpecialVar_ItemId == ITEM_XERIC) || (gSpecialVar_ItemId == ITEM_ANCIENT_SHARD) || (gSpecialVar_ItemId == ITEM_ROTTEN_POTATO))
+    {
+        if (gMapHeader.mapType == MAP_TYPE_UNDERWATER)
+        {
+            DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+        }
+        else {
+            sItemUseOnFieldCB = ItemUseOnFieldCB_RunScript;
+            gFieldCallback = FieldCB_UseItemOnField;
+            gBagMenu->newScreenCallback = CB2_ReturnToField;
+            Task_FadeAndCloseBagMenu(taskId);
+        }   
+            
+    }
+    else if (gSpecialVar_ItemId >= ITEM_PULSE_CORE) { 
+        if (FlagGet(FLAG_EXP_ALL) == FALSE)
+        {
+            FlagSet(FLAG_EXP_ALL);
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_PulseCoreOn, CloseItemMessage);
+        }
+        else if (FlagGet(FLAG_EXP_ALL) == TRUE)
+        {
+            FlagClear(FLAG_EXP_ALL);
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_PulseCoreOff, CloseItemMessage);
+        }
+        else
+            DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+    }
+}
+
+static void ItemUseOnFieldCB_RunScript(u8 taskId)
+{
+    LockPlayerFieldControls(); //ScriptContext_Enable???
+    if (gSpecialVar_ItemId == ITEM_SLAYER_GEM)
+    {
+        ScriptContext_SetupScript(EventScript_SLAYER_TASK_CHECK);
+    }
+    else if (gSpecialVar_ItemId == ITEM_XERIC)
+    {
+        ScriptContext_SetupScript(EventScript_XERIC);
+    }
+    else if (gSpecialVar_ItemId == ITEM_ANCIENT_SHARD)
+    {
+        ScriptContext_SetupScript(EventScript_ANCIENT_SHARD);
+    }
+    else if (gSpecialVar_ItemId == ITEM_ROTTEN_POTATO)
+    {
+        ScriptContext_SetupScript(EventScript_ROTTEN_POTATO);
+    }
+    DestroyTask(taskId);
 }
 
 static void ItemUseOnFieldCB_Bike(u8 taskId)

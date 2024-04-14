@@ -11218,7 +11218,7 @@ const struct Item gItems[] =
         .description = sANCIENT_SHARD_Desc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse
+        .fieldUseFunc = ItemUseOutOfBattle_Function
     },
 
     [ITEM_DARK_TOTEM_BASE] =
@@ -11260,7 +11260,6 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
-
     [ITEM_XERIC] =
     {
         .name = _("XERIC AMMY"),
@@ -11268,7 +11267,7 @@ const struct Item gItems[] =
         .description = sXeric_Desc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_Function,
     },
 
     [ITEM_SLAYER_GEM] =
@@ -11278,7 +11277,7 @@ const struct Item gItems[] =
         .description = sSLAYER_GEM_Desc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_Function,
     },
 
     [ITEM_DG_BALL_OF_WOOL] =
@@ -11696,7 +11695,7 @@ const struct Item gItems[] =
         .description = sPulseCoreDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .fieldUseFunc = ItemUseOutOfBattle_Function,
     },
     [ITEM_RING_OF_LIFE] =
     {
@@ -12008,6 +12007,16 @@ const struct Item gItems[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+
+    [ITEM_ROTTEN_POTATO] =
+    {
+        .name = _("ROTTEN POTATO"),
+        .price = 2100,
+        .description = sUnstuckDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Function,
     },
 /*
     [ITEM_BINDING_BAND] = //TEMP ITEM BINDING BAND

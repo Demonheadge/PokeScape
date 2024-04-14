@@ -355,7 +355,7 @@ static const struct SubQuest sSubQuestsArtFight_Neitiznot[QUEST_ARTFIGHT_NEITIZN
 static const struct SubQuest sSubQuests_COOKS_ASSISTANT[QUEST_COOKS_ASSISTANT_SUB_COUNT] =
 {
 	sub_quest(
-	      SUB_QUEST_COOKSASSISTANT_1,
+	      0,
 	      gText_SubQuest_Cooks_Assistant_1,
 	      gText_SubQuest1_Desc_Cooks_Assistant_1,
 	      gText_MapName_Route1,
@@ -364,7 +364,7 @@ static const struct SubQuest sSubQuests_COOKS_ASSISTANT[QUEST_COOKS_ASSISTANT_SU
 	      sText_Found
 	),
 	sub_quest(
-	      SUB_QUEST_COOKSASSISTANT_2,
+	      1,
 	      gText_SubQuest_Cooks_Assistant_2,
 	      gText_SubQuest1_Desc_Cooks_Assistant_2,
 	      gText_MapName_Route12,
@@ -373,7 +373,7 @@ static const struct SubQuest sSubQuests_COOKS_ASSISTANT[QUEST_COOKS_ASSISTANT_SU
 	      sText_Found
 	),
 	sub_quest(
-	      SUB_QUEST_COOKSASSISTANT_3,
+	      2,
 	      gText_SubQuest_Cooks_Assistant_3,
 	      gText_SubQuest1_Desc_Cooks_Assistant_3,
 	      gText_MapName_MillLaneMill,
@@ -386,7 +386,7 @@ static const struct SubQuest sSubQuests_COOKS_ASSISTANT[QUEST_COOKS_ASSISTANT_SU
 static const struct SubQuest sSubQuests_RUNE_MYSTERIES[QUEST_RUNE_MYSTERIES_SUB_COUNT] =
 {
 	sub_quest(
-	      SUB_QUEST_RUNEMYSTERIES_1,
+	      3,
 	      gText_SubQuest_RuneMysteries_1,
 	      gText_SubQuest1_Desc_RuneMysteries_1,
 	      gText_MapName_WizardsTower,
@@ -395,7 +395,7 @@ static const struct SubQuest sSubQuests_RUNE_MYSTERIES[QUEST_RUNE_MYSTERIES_SUB_
 	      sText_Found
 	),
 	sub_quest(
-	      SUB_QUEST_RUNEMYSTERIES_2,
+	      4,
 	      gText_SubQuest_RuneMysteries_2,
 	      gText_SubQuest1_Desc_RuneMysteries_2,
 	      gText_MapName_Route7,
@@ -404,7 +404,7 @@ static const struct SubQuest sSubQuests_RUNE_MYSTERIES[QUEST_RUNE_MYSTERIES_SUB_
 	      sText_Found
 	),
 	sub_quest(
-	      SUB_QUEST_RUNEMYSTERIES_3,
+	      5,
 	      gText_SubQuest_RuneMysteries_3,
 	      gText_SubQuest1_Desc_RuneMysteries_3,
 	      gText_MapName_Lumbridge,
@@ -419,7 +419,7 @@ static const struct SubQuest sSubQuests_RUNE_MYSTERIES[QUEST_RUNE_MYSTERIES_SUB_
 static const struct SubQuest sSubQuests_ERNEST_THE_CHICKEN[QUEST_ERNEST_THE_CHICKEN_SUB_COUNT] =
 {
 	sub_quest(
-	      SUB_QUEST_ERNESTTHECHICKEN_1,
+	      6,
 	      gText_SubQuest_Ernest_Name1,
 	      gText_SubQuest_Ernest_Name2,
 	      gText_SideQuestMap_Draynor_Manor,
@@ -428,7 +428,7 @@ static const struct SubQuest sSubQuests_ERNEST_THE_CHICKEN[QUEST_ERNEST_THE_CHIC
 	      sText_Found
 	),
 	sub_quest(
-	      SUB_QUEST_ERNESTTHECHICKEN_2,
+	      7,
 	      gText_SubQuest_Ernest_Name2,
 	      gText_SubQuest_Ernest_Name2,
 	      gText_SideQuestMap_Draynor_Manor,
@@ -437,7 +437,7 @@ static const struct SubQuest sSubQuests_ERNEST_THE_CHICKEN[QUEST_ERNEST_THE_CHIC
 	      sText_Found
 	),
 	sub_quest(
-	      SUB_QUEST_ERNESTTHECHICKEN_3,
+	      8,
 	      gText_SubQuest_Ernest_Name3,
 	      gText_SubQuest_Ernest_Name2,
 	      gText_SideQuestMap_Draynor_Manor,
@@ -450,7 +450,7 @@ static const struct SubQuest sSubQuests_ERNEST_THE_CHICKEN[QUEST_ERNEST_THE_CHIC
 static const struct SubQuest sSubQuests_KOUREND_SLAYER[QUEST_KOUREND_SLAYER_SUB_COUNT] =
 {
 	sub_quest(
-	      SUB_QUEST_DARKTOTEM_1,
+	      9,
 	      gText_SubQuest_Kourend_Slayer_Name1,
 	      gText_SubQuest_Kourend_Slayer_Name2,
 	      gText_SideQuestMap_Kourend,
@@ -459,7 +459,7 @@ static const struct SubQuest sSubQuests_KOUREND_SLAYER[QUEST_KOUREND_SLAYER_SUB_
 	      sText_Found
 	),
 	sub_quest(
-	      SUB_QUEST_DARKTOTEM_2,
+	      10,
 	      gText_SubQuest_Kourend_Slayer_Name2,
 	      gText_SubQuest_Kourend_Slayer_Name2,
 	      gText_SideQuestMap_Kourend,
@@ -468,7 +468,7 @@ static const struct SubQuest sSubQuests_KOUREND_SLAYER[QUEST_KOUREND_SLAYER_SUB_
 	      sText_Found
 	),
 	sub_quest(
-	      SUB_QUEST_DARKTOTEM_3,
+	      11,
 	      gText_SubQuest_Kourend_Slayer_Name3,
 	      gText_SubQuest_Kourend_Slayer_Name2,
 	      gText_SideQuestMap_Kourend,
@@ -497,6 +497,9 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
       NULL, //subquest struct
       0 //number of subquest
 	*/
+
+	///  THESE DETERMINE THE ORDER THINGS APPEAR IN THE QUEST JOURNAL.  ///
+
 	side_quest( 									//Cooks Assistant
 	      gText_SideQuestName_CooksAssistant,
 	      gText_SideQuestDesc_CooksAssistant,
@@ -506,6 +509,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJECT,
 	      sSubQuests_COOKS_ASSISTANT,
 	      QUEST_COOKS_ASSISTANT_SUB_COUNT
+	),
+	side_quest( 									//Rune Mysteries
+	      gText_SideQuestName_RuneMysteries,
+	      gText_SideQuestDesc_RuneMysteries,
+	      gText_SideQuestDesc_Completed_RuneMysteries,
+	      gText_MapName_WizardsTower,
+	      OBJ_EVENT_GFX_WIZARD_ARCHMAGE,
+	      OBJECT,
+	      sSubQuests_RUNE_MYSTERIES,
+	      QUEST_RUNE_MYSTERIES_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_Ernest,
@@ -522,11 +535,12 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_Kourend_Slayer,
 	      gText_SideQuestDesc_Completed_Kourend_Slayer,
 	      gText_SideQuestMap_Kourend,
-	      SPECIES_ERNEST,
-	      PKMN,
+	      ITEM_DARK_TOTEM,
+	      ITEM,
 	      sSubQuests_KOUREND_SLAYER,
 	      QUEST_KOUREND_SLAYER_SUB_COUNT
-	),/*
+	),
+	/*
 	side_quest(
 	      gText_SideQuestName_1,
 	      gText_SideQuestDesc_1,

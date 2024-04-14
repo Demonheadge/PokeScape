@@ -2791,17 +2791,17 @@ const u32 gItemIconPalette_FrogeelBurger[] = INCBIN_U32("graphics/items/pokescap
 const u32 gItemIcon_ANCIENT_SHARD[] = INCBIN_U32("graphics/items/pokescape_icons/ancient_shard.4bpp.lz");
 const u32 gItemIconPalette_ANCIENT_SHARD[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/ancient_shard.gbapal.lz");
 
-const u32 gItemIcon_DARK_TOTEM_BASE[] = INCBIN_U32("graphics/items/pokescape_icons/xeric.4bpp.lz");
-const u32 gItemIconPalette_DARK_TOTEM_BASE[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/xeric.gbapal.lz");
+const u32 gItemIcon_DARK_TOTEM_BASE[] = INCBIN_U32("graphics/items/pokescape_icons/dark_totem_bottom.4bpp.lz");
+const u32 gItemIconPalette_DARK_TOTEM_BASE[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/dark_totem.gbapal.lz");
 
-const u32 gItemIcon_DARK_TOTEM_MID[] = INCBIN_U32("graphics/items/pokescape_icons/xeric.4bpp.lz");
-const u32 gItemIconPalette_DARK_TOTEM_MID[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/xeric.gbapal.lz");
+const u32 gItemIcon_DARK_TOTEM_MID[] = INCBIN_U32("graphics/items/pokescape_icons/dark_totem_middle.4bpp.lz");
+const u32 gItemIconPalette_DARK_TOTEM_MID[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/dark_totem.gbapal.lz");
 
-const u32 gItemIcon_DARK_TOTEM_TOP[] = INCBIN_U32("graphics/items/pokescape_icons/xeric.4bpp.lz");
-const u32 gItemIconPalette_DARK_TOTEM_TOP[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/xeric.gbapal.lz");
+const u32 gItemIcon_DARK_TOTEM_TOP[] = INCBIN_U32("graphics/items/pokescape_icons/dark_totem_top.4bpp.lz");
+const u32 gItemIconPalette_DARK_TOTEM_TOP[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/dark_totem.gbapal.lz");
 
-const u32 gItemIcon_DARK_TOTEM[] = INCBIN_U32("graphics/items/pokescape_icons/xeric.4bpp.lz");
-const u32 gItemIconPalette_DARK_TOTEM[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/xeric.gbapal.lz");
+const u32 gItemIcon_DARK_TOTEM[] = INCBIN_U32("graphics/items/pokescape_icons/dark_totem.4bpp.lz");
+const u32 gItemIconPalette_DARK_TOTEM[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/dark_totem.gbapal.lz");
 
 const u32 gItemIcon_Xeric[] = INCBIN_U32("graphics/items/pokescape_icons/xeric.4bpp.lz");
 const u32 gItemIconPalette_Xeric[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/xeric.gbapal.lz");
