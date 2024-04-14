@@ -1776,28 +1776,6 @@
 	.byte 0xe7
 	.endm
 
-    @ sets an NPC up to follow the player
-    .macro setfollower localId:req, flags:req
-    .byte 0xe3
-    .byte \localId
-    .2byte \flags
-    .endm
-    
-    @ remove the following NPC (assumes there will only ever be one)
-    .macro destroyfollower
-    .byte 0xe4
-    .endm
-    
-    @ makes the player and follower face one another
-    .macro facefollower
-    .byte 0xe5
-    .endm
-    
-    @ checks if you have a follower. returns the result to VAR_RESULT
-    .macro checkfollower
-    .byte 0xe6
-    .endm
-
 @ Supplementary
 
 	.macro goto_if_unset flag:req, dest:req
@@ -2253,8 +2231,30 @@
 	@ (zero-indexed) slot number of the first Pokemon that knows the move. If not, VAR_RESULT is set to PARTY_SIZE.
 	@ VAR_0x8004 is also set to this Pokemon's species.
 	.macro checkpartylearnknowsfieldmove tmhm:req
-	.byte 0xe3
+	.byte 0xec
 	.2byte \tmhm
 	.endm
 
     @ End qol_field_moves
+
+    @ sets an NPC up to follow the player
+    .macro setfollower localId:req, flags:req
+    .byte 0xed
+    .byte \localId
+    .2byte \flags
+    .endm
+    
+    @ remove the following NPC (assumes there will only ever be one)
+    .macro destroyfollower
+    .byte 0xee
+    .endm
+    
+    @ makes the player and follower face one another
+    .macro facefollower
+    .byte 0xef
+    .endm
+    
+    @ checks if you have a follower. returns the result to VAR_RESULT
+    .macro checkfollower
+    .byte 0xf0
+    .endm
