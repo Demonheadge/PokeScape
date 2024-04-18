@@ -378,7 +378,14 @@ static void DoStandardWildBattle(bool32 isDouble)
         VarSet(VAR_TEMP_E, 0);
         gBattleTypeFlags |= BATTLE_TYPE_PYRAMID;
     }
-    CreateBattleStartTask(GetWildBattleTransition(), 0);
+    //POKESCAPE EDIT
+    if (IsMonShiny(&gEnemyParty[0])){
+        CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_PS_VS_CHAOS_ELEMENTAL);
+    }
+    else {
+        CreateBattleStartTask(GetWildBattleTransition(), 0);
+    }
+    //
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
     IncrementDailyWildBattles();
