@@ -10296,7 +10296,6 @@ const struct Item gItems[] =
     [ITEM_FROGEEL_BURGER] =
     {
         .name = _("F.BURGER"),
-        .itemId = ITEM_CABBAGE,
         .price = 1500,
         .description = sFrogeelBurgerDesc,
         .pocket = POCKET_ITEMS,
@@ -11407,7 +11406,7 @@ const struct Item gItems[] =
 
     [ITEM_CLIMBINGBOOTS] = //Rock Climb
     {
-        .name = _("CLIMBING BOOTS"),
+        .name = _("CLIMB BOOTS"),
         .price = 0,
         .importance = 1,
         .description = sSweetScentToolDesc,
