@@ -852,6 +852,11 @@ u8 GetTrainerBattleTransition(void)
         || gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_AQUA_LEADER
         || gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_AQUA_ADMIN)
         return B_TRANSITION_AQUA;
+//pokescape
+    if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_HAM_GRUNT
+        || gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_HAM_BOSS
+        || gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_HAM_ADMIN)
+        return B_TRANSITION_HAM;
 
     if (gTrainers[gTrainerBattleOpponent_A].doubleBattle == TRUE)
         minPartyCount = 2; // double battles always at least have 2 Pokémon.

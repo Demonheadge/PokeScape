@@ -287,6 +287,10 @@ static bool8 MugshotTrainerPic_Init(struct Sprite *);
 static bool8 MugshotTrainerPic_Slide(struct Sprite *);
 static bool8 MugshotTrainerPic_SlideSlow(struct Sprite *);
 static bool8 MugshotTrainerPic_SlideOffscreen(struct Sprite *);
+//pokescape
+static void Task_TeamHAM(u8 taskId);
+static bool8 TeamHAM_Func1(struct Task *);
+static bool8 TeamHAM_Func2(struct Task *);
 
 static s16 sDebug_RectangularSpiralData;
 static u8 sTestingTransitionId;
@@ -335,6 +339,10 @@ static const u32 sFrontierSquares_EmptyBg_Tileset[] = INCBIN_U32("graphics/battl
 static const u32 sFrontierSquares_Shrink1_Tileset[] = INCBIN_U32("graphics/battle_transitions/frontier_square_3.4bpp.lz");
 static const u32 sFrontierSquares_Shrink2_Tileset[] = INCBIN_U32("graphics/battle_transitions/frontier_square_4.4bpp.lz");
 static const u32 sFrontierSquares_Tilemap[] = INCBIN_U32("graphics/battle_transitions/frontier_squares.bin");
+//POKESCAPE BATTLE TRANSITIONS
+static const u32 sTeamHAM_Palette[] = INCBIN_U32("graphics/battle_transitions/HAM_LOGO.gbapal");
+static const u32 sTeamHAM_Tileset[] = INCBIN_U32("graphics/battle_transitions/HAM_LOGO.4bpp.lz");
+static const u32 sTeamHAM_Tilemap[] = INCBIN_U32("graphics/battle_transitions/HAM_LOGO.bin.lz");
 
 // All battle transitions use the same intro
 static const TaskFunc sTasks_Intro[B_TRANSITION_COUNT] =
@@ -388,6 +396,8 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_FRONTIER_CIRCLES_CROSS_IN_SEQ] = Task_FrontierCirclesCrossInSeq,
     [B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL_IN_SEQ] = Task_FrontierCirclesAsymmetricSpiralInSeq,
     [B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL_IN_SEQ] = Task_FrontierCirclesSymmetricSpiralInSeq,
+    //PokeScape
+    [B_TRANSITION_HAM] = Task_TeamHAM,
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -489,6 +499,17 @@ static const TransitionStateFunc sKyogre_Funcs[] =
     FramesCountdown,
     WeatherDuo_FadeOut,
     WeatherDuo_End
+};
+
+static const TransitionStateFunc sTeamHAM_Funcs[] =
+{
+    TeamHAM_Func1,
+    TeamHAM_Func2,
+    PatternWeave_Blend1,
+    PatternWeave_Blend2,
+    PatternWeave_FinishAppear,
+    FramesCountdown,
+    PatternWeave_CircularMask
 };
 
 static const TransitionStateFunc sPokeballsTrail_Funcs[] =
@@ -1372,6 +1393,12 @@ static void Task_Kyogre(u8 taskId)
     while (sKyogre_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
 }
 
+//POKESCAPE
+static void Task_TeamHAM(u8 taskId)
+{
+   while (sTeamHAM_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+}
+
 static void InitPatternWeaveTransition(struct Task *task)
 {
     s32 i;
@@ -1583,6 +1610,34 @@ static bool8 Kyogre_PaletteBrighten(struct Task *task)
         task->tEndDelay = 30;
     }
 
+    return FALSE;
+}
+
+//POKESCAPE
+static bool8 TeamHAM_Func1(struct Task *task)
+{
+    u16 *tilemap, *tileset;
+
+    task->tEndDelay = 60;
+    InitPatternWeaveTransition(task);
+    GetBg0TilesDst(&tilemap, &tileset);
+    CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+    LZ77UnCompVram(sTeamHAM_Tileset, tileset);
+    LoadPalette(sTeamHAM_Palette, 0xF0, sizeof(sTeamHAM_Palette));
+
+    task->tState++;
+    return FALSE;
+}
+
+static bool8 TeamHAM_Func2(struct Task *task)
+{
+    u16 *tilemap, *tileset;
+
+    GetBg0TilesDst(&tilemap, &tileset);
+    LZ77UnCompVram(sTeamHAM_Tilemap, tilemap);
+    SetSinWave((s16*)gScanlineEffectRegBuffers[0], 0, task->tSinIndex, 132, task->tAmplitude, DISPLAY_HEIGHT);
+
+    task->tState++;
     return FALSE;
 }
 
