@@ -1615,7 +1615,7 @@ void LoadSpritePalettes(const struct SpritePalette *palettes)
 
 void DoLoadSpritePalette(const u16 *src, u16 paletteOffset)
 {
-    LoadPalette(src, OBJ_PLTT_OFFSET + paletteOffset, PLTT_SIZE_4BPP);
+    LoadPaletteFast(src, paletteOffset + OBJ_PLTT_OFFSET, PLTT_SIZE_4BPP);
 }
 
 u8 AllocSpritePalette(u16 tag)
@@ -1754,4 +1754,19 @@ bool8 AddSubspritesToOamBuffer(struct Sprite *sprite, struct OamData *destOam, u
     }
 
     return 0;
+}
+
+u16 LoadSpriteSheetByTemplate(const struct SpriteTemplate *template, u8 frame)
+{
+    u16 tileStart;
+    struct SpriteSheet tempSheet;
+    if (!template || template->tileTag == TAG_NONE || !template->images)
+        return TAG_NONE;
+    tileStart = GetSpriteTileStartByTag(template->tileTag);
+    if (tileStart != TAG_NONE)
+        return tileStart;
+    tempSheet.data = template->images[frame].data;
+    tempSheet.size = template->images[frame].size;
+    tempSheet.tag = template->tileTag;
+    return LoadSpriteSheet(&tempSheet);
 }

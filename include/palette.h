@@ -32,9 +32,19 @@ enum
     FAST_FADE_OUT_TO_BLACK,
 };
 
+struct BlendSettings
+{
+    u32 blendColor:24;
+    u32 isTint:1;
+    u32 coeff:5;
+};
+
 struct PaletteFadeControl
 {
     u32 multipurpose1;
+    struct BlendSettings *bld0;
+    struct BlendSettings *bld1;
+    u16 weight:9;
     u8 delayCounter:6;
     u16 y:5; // blend coefficient
     u16 targetY:5; // target blend coefficient
@@ -52,6 +62,7 @@ struct PaletteFadeControl
     u8 deltaY:4; // rate of change of blend coefficient
 };
 
+extern const struct BlendSettings gTimeOfDayBlend[];
 extern struct PaletteFadeControl gPaletteFade;
 extern u32 gPlttBufferTransferPending;
 extern u8 ALIGNED(4) gPaletteDecompressionBuffer[];
@@ -60,6 +71,7 @@ extern u16 ALIGNED(4) gPlttBufferFaded[PLTT_BUFFER_SIZE];
 
 void LoadCompressedPalette(const u32 *src, u16 offset, u16 size);
 void LoadPalette(const void *src, u16 offset, u16 size);
+void LoadPaletteFast(const void *src, u16 offset, u16 size);
 void FillPalette(u16 value, u16 offset, u16 size);
 void TransferPlttBuffer(void);
 u8 UpdatePaletteFade(void);
@@ -79,6 +91,10 @@ void TintPalette_GrayScale(u16 *palette, u16 count);
 void TintPalette_GrayScale2(u16 *palette, u16 count);
 void TintPalette_SepiaTone(u16 *palette, u16 count);
 void TintPalette_CustomTone(u16 *palette, u16 count, u16 rTone, u16 gTone, u16 bTone);
+bool8 BeginTimeOfDayPaletteFade(u32 selectedPalettes, s8 delay, u8 startY, u8 targetY, struct BlendSettings *bld0, struct BlendSettings *bld1, u16 weight, u16 color);
+void BlendPalettesFine(u32 palettes, u16 *src, u16 *dst, u32 coeff, u32 color);
+void TimeMixPalettes(u32 palettes, u16 *src, u16 *dst, struct BlendSettings *blend0, struct BlendSettings *blend1, u16 weight0);
+void AvgPaletteWeighted(u16 *src0, u16 *src1, u16 *dst, u16 weight0);
 
 static inline void SetBackdropFromColor(u16 color)
 {
