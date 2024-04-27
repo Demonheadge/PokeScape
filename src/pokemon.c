@@ -4986,6 +4986,26 @@ u16 GetBattleBGM(void)
 
         switch (trainerClass)
         {
+        case TRAINER_CLASS_HAM_GRUNT:
+            return MUS_PS_VS_HAM;   //POKESCAPE
+        case TRAINER_CLASS_HAM_BOSS:
+            return MUS_PS_VS_HAM;   //POKESCAPE
+        case TRAINER_CLASS_HAM_ADMIN:
+            return MUS_PS_VS_HAM;   //POKESCAPE
+        case TRAINER_CLASS_BLACK_KNIGHT:
+            return MUS_PS_VS_KNIGHTS;   //POKESCAPE
+        case TRAINER_CLASS_WHITE_KNIGHT:
+            return MUS_PS_VS_KNIGHTS;   //POKESCAPE
+        case TRAINER_CLASS_POKESCAPER:
+            return MUS_PS_VS_POKESCAPERS;   //POKESCAPE
+        case TRAINER_CLASS_COUNT:
+            return MUS_PS_VS_LEGENDARY;   //POKESCAPE
+        case TRAINER_CLASS_LEGEND:
+            return MUS_PS_VS_LEGENDARY;   //POKESCAPE
+        case TRAINER_CLASS_LEADER:
+            return MUS_PS_VS_GYM;   //POKESCAPE
+        case TRAINER_CLASS_CHAMPION:
+            return MUS_VS_CHAMPION; //POKESCAPE
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_LEADER:
             return MUS_VS_AQUA_MAGMA_LEADER;
@@ -4994,10 +5014,6 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_AQUA_ADMIN:
         case TRAINER_CLASS_MAGMA_ADMIN:
             return MUS_VS_AQUA_MAGMA;
-        case TRAINER_CLASS_LEADER:
-            return MUS_VS_GYM_LEADER;
-        case TRAINER_CLASS_CHAMPION:
-            return MUS_VS_CHAMPION;
         case TRAINER_CLASS_RIVAL:
             if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
                 return MUS_VS_RIVAL;
@@ -5015,11 +5031,11 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
         default:
-            return MUS_VS_TRAINER;
+            return MUS_PS_VS_TRAINER_P2P; //POKESCAPE
         }
     }
     else
-        return MUS_VS_WILD;
+        return MUS_PS_VS_WILD_P2P;  //POKESCAPE
 }
 
 void PlayBattleBGM(void)

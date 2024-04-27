@@ -248,7 +248,6 @@ void NewGameInitData(void)
     ResetTrainerHillResults();
     ResetContestLinkResults();
     QuestMenu_ResetMenuSaveData();
-
     memset(&gSaveBlock2Ptr->follower, 0, sizeof(gSaveBlock2Ptr->follower));
     
     //POKESCAPE STARTING LOCATIONS

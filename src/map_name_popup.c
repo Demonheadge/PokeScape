@@ -71,6 +71,7 @@ static const u16 sMapPopUp_Palette_Underwater[16] = INCBIN_U16("graphics/map_pop
 
 static const u8 sRegionMapSectionId_To_PopUpThemeIdMapping[] =
 {
+    [MAPSEC_TUTORIAL_ISLAND] = MAPPOPUP_THEME_STONE,
     [MAPSEC_LUMBRIDGE] = MAPPOPUP_THEME_STONE,
     [MAPSEC_DRAYNOR] = MAPPOPUP_THEME_MARBLE,
     [MAPSEC_PORT_SARIM] = MAPPOPUP_THEME_UNDERWATER,

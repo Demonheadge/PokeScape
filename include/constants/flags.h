@@ -43,9 +43,9 @@
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
 //pokescape chicken event flags
-#define FLAG_CHICKEN1_HIDE    	 	 0x20 // Unused Flag
-#define FLAG_CHICKEN2_HIDE    	 	 0x21 // Unused Flag
-#define FLAG_CHICKEN3_HIDE    	 	 0x22 // Unused Flag
+#define FLAG_CHICKEN1_HIDE    	 	 0x20 // Unused Flag //FLAG_CHICKEN1_HIDE
+#define FLAG_CHICKEN2_HIDE    	 	 0x21 // Unused Flag //FLAG_CHICKEN2_HIDE
+#define FLAG_CHICKEN3_HIDE    	 	 0x22 // Unused Flag //FLAG_CHICKEN3_HIDE
 #define FLAG_EVILCHICKEN_HIDE    	 0x23 // Unused Flag
 #define FLAG_EVILCHICKEN_DEFEATED    0x24 // Unused Flag
 

@@ -378,7 +378,14 @@ static void DoStandardWildBattle(bool32 isDouble)
         VarSet(VAR_TEMP_E, 0);
         gBattleTypeFlags |= BATTLE_TYPE_PYRAMID;
     }
-    CreateBattleStartTask(GetWildBattleTransition(), 0);
+    //POKESCAPE EDIT
+    if (IsMonShiny(&gEnemyParty[0])){
+        CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_PS_VS_CHAOS_ELEMENTAL);
+    }
+    else {
+        CreateBattleStartTask(GetWildBattleTransition(), 0);
+    }
+    //
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
     IncrementDailyWildBattles();
@@ -852,6 +859,11 @@ u8 GetTrainerBattleTransition(void)
         || gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_AQUA_LEADER
         || gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_AQUA_ADMIN)
         return B_TRANSITION_AQUA;
+//pokescape
+    if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_HAM_GRUNT
+        || gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_HAM_BOSS
+        || gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_HAM_ADMIN)
+        return B_TRANSITION_HAM;
 
     if (gTrainers[gTrainerBattleOpponent_A].doubleBattle == TRUE)
         minPartyCount = 2; // double battles always at least have 2 Pokémon.
