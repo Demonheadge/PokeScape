@@ -9816,27 +9816,7 @@ const struct Item gItems[] =
     },
 
 
-
-
-
-
-
-
-
-
-
-
 // POKESCAPE ITEMS
-
-
-
-
-
-
-
-
-
-
 
 //pokescape megastones
 

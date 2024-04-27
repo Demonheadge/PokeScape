@@ -1285,7 +1285,7 @@ SECTIONS {
         sound/songs/midi/MUS_PS_VS_WILD_F2P.o(.rodata);
         sound/songs/midi/MUS_PS_VS_WILD_P2P.o(.rodata);
         sound/songs/midi/MUS_PS_VS_TRAINER_F2P.o(.rodata);
-        sound/songs/midi/MUS_PS_VS_TRAINER_P2P.o(.rodata);
+        sound/songs/midi/MUS_PS_TRAINER_VICTORY.o(.rodata);
         sound/songs/midi/MUS_PS_VS_GYM.o(.rodata);
         sound/songs/midi/MUS_PS_VS_HAM.o(.rodata);
         sound/songs/midi/MUS_PS_VS_KNIGHTS.o(.rodata);
@@ -1306,6 +1306,7 @@ SECTIONS {
         sound/songs/midi/MUS_PS_ENCOUNTER_MITHRILMAN.o(.rodata);
         sound/songs/midi/MUS_PS_QUEST_COMPLETE.o(.rodata);
         sound/songs/midi/MUS_PS_KOUREND_CATACOMBS.o(.rodata);
+        sound/songs/midi/MUS_PS_VS_TRAINER_P2P.o(.rodata);
     } > ROM =0
 
     lib_rodata :
