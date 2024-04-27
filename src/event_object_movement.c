@@ -1323,6 +1323,10 @@ bool8 (*const gOppositeDirectionBlockedMetatileFuncs[])(u8) = {
     MetatileBehavior_IsSouthBlocked,
     MetatileBehavior_IsNorthBlocked,
     MetatileBehavior_IsWestBlocked,
+    MetatileBehavior_IsEastBlocked,
+    MetatileBehavior_IsSouthBlocked,
+    MetatileBehavior_IsNorthBlocked,
+    MetatileBehavior_IsWestBlocked,
     MetatileBehavior_IsEastBlocked
 };
 
@@ -1330,7 +1334,11 @@ bool8 (*const gDirectionBlockedMetatileFuncs[])(u8) = {
     MetatileBehavior_IsNorthBlocked,
     MetatileBehavior_IsSouthBlocked,
     MetatileBehavior_IsEastBlocked,
-    MetatileBehavior_IsWestBlocked
+    MetatileBehavior_IsWestBlocked,
+    MetatileBehavior_IsSouthBlocked,
+    MetatileBehavior_IsNorthBlocked,
+    MetatileBehavior_IsWestBlocked,
+    MetatileBehavior_IsEastBlocked
 };
 
 static const struct Coords16 sDirectionToVectors[] = {
