@@ -30,6 +30,8 @@ struct WildPokemonHeader
 extern const struct WildPokemonHeader gWildMonHeaders[];
 extern bool8 gIsFishingEncounter;
 extern bool8 gIsSurfingEncounter;
+extern u8 gChainFishingStreak;
+extern bool8 gIsFishingEncounter;
 
 void DisableWildEncounters(bool8 disabled);
 u8 PickWildMonNature(void);
