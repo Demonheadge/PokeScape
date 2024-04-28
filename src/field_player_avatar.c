@@ -708,39 +708,42 @@ static u8 CheckForPlayerAvatarStaticCollision(u8 direction)
     return CheckForObjectEventStaticCollision(playerObjEvent, x, y, direction, MapGridGetMetatileBehaviorAt(x, y));
 }
 
+
 u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u8 direction, u8 metatileBehavior)
 {
     u8 collision = GetCollisionAtCoords(objectEvent, x, y, direction);
-    //u8 currentBehavior = MapGridGetMetatileBehaviorAt(objectEvent->currentCoords.x, objectEvent->currentCoords.y);
-    u32 fieldMoveStatus; // qol_field_moves
-    
+#if QOL_INSTANT_ACTIONS == TRUE
+    u32 fieldMoveStatus = FIELD_MOVE_FAIL;
+#endif
+
     if (collision == COLLISION_ELEVATION_MISMATCH && CanStopSurfing(x, y, direction))
         return COLLISION_STOP_SURFING;
 
-    // Start qol_field_moves
-    fieldMoveStatus = CanUseSurf(x,y,collision);
-    if (fieldMoveStatus)
+#if QOL_INSTANT_ACTIONS == TRUE
+    fieldMoveStatus = CanUseSurf(x,y);
+    if (fieldMoveStatus != FIELD_MOVE_FAIL)
         return UseSurf(fieldMoveStatus);
 
     fieldMoveStatus = CanUseCut(x,y);
-    if (fieldMoveStatus)
+    if (fieldMoveStatus != FIELD_MOVE_FAIL)
         return UseCut(fieldMoveStatus);
 
     fieldMoveStatus = CanUseRockSmash(x,y);
-    if (fieldMoveStatus)
+    if (fieldMoveStatus != FIELD_MOVE_FAIL)
         return UseRockSmash(fieldMoveStatus);
-    // End qol_field_moves
+#endif
 
     if (ShouldJumpLedge(x, y, direction))
     {
         IncrementGameStat(GAME_STAT_JUMPED_DOWN_LEDGES);
         return COLLISION_LEDGE_JUMP;
     }
-    // Start qol_field_moves
+
+#if QOL_INSTANT_ACTIONS == TRUE
     fieldMoveStatus = CanUseStrength(collision);
-    if (fieldMoveStatus)
+    if (fieldMoveStatus != FIELD_MOVE_FAIL)
         return UseStrength(fieldMoveStatus,x,y,direction);
-    // End qol_field_moves
+#endif
 
     if (collision == COLLISION_OBJECT_EVENT && TryPushBoulder(x, y, direction))
         return COLLISION_PUSHED_BOULDER;
@@ -751,21 +754,6 @@ u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u
             return COLLISION_ROTATING_GATE;
         CheckAcroBikeCollision(x, y, metatileBehavior, &collision);
     }
-    
-    //sideways stairs logic
-    /*
-    if (MetatileBehavior_IsSidewaysStairsLeftSideTop(metatileBehavior) && direction == DIR_EAST)
-        return COLLISION_IMPASSABLE;    //moving onto left-side top edge east from ground -> cannot move
-    else if (MetatileBehavior_IsSidewaysStairsRightSideTop(metatileBehavior) && direction == DIR_WEST)
-        return COLLISION_IMPASSABLE;    //moving onto left-side top edge east from ground -> cannot move
-    else if (MetatileBehavior_IsSidewaysStairsRightSideBottom(metatileBehavior) && (direction == DIR_EAST || direction == DIR_SOUTH))
-        return COLLISION_IMPASSABLE;
-    else if (MetatileBehavior_IsSidewaysStairsLeftSideBottom(metatileBehavior) && (direction == DIR_WEST || direction == DIR_SOUTH))
-        return COLLISION_IMPASSABLE;
-    else if ((MetatileBehavior_IsSidewaysStairsLeftSideTop(currentBehavior) || MetatileBehavior_IsSidewaysStairsRightSideTop(currentBehavior))
-     && direction == DIR_NORTH && collision == COLLISION_NONE)
-        return COLLISION_IMPASSABLE;    //trying to move north off of top-most tile onto same level doesn't work
-    */
         
     return collision;
 }

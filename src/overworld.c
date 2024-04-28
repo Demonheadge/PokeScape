@@ -1010,10 +1010,10 @@ void SetDefaultFlashLevel(void)
 {
 
     // Start qol_field_moves
-#ifdef QOL_NO_MESSAGING
+#if QOL_NO_MESSAGING == TRUE
     if(CanUseFlash())
         FlagSet(FLAG_SYS_USE_FLASH);
-#endif //QOL_NO_MESSAGING
+#endif
    // End qol_field_moves
 
     if (!gMapHeader.cave)

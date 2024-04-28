@@ -101,15 +101,10 @@ u32 CanUseCut(s16 x, s16 y)
     bool32 bagHasItem = CheckBagHasItem(ITEM_CUT_TOOL,1);
     bool32 playerHasBadge = FlagGet(FLAG_BADGE01_GET);
 
-    if (
-            CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_CUTTABLE_TREE)
-            && GetObjectEventIdByPosition(x, y, 1) == OBJECT_EVENTS_COUNT
-            && ((monHasMove && playerHasBadge) || bagHasItem)
-       )
-
-    {
+    if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_CUTTABLE_TREE)
+        && GetObjectEventIdByPosition(x, y, 1) == OBJECT_EVENTS_COUNT
+        && ((monHasMove && playerHasBadge) || bagHasItem))
         return bagHasItem ? FIELD_MOVE_TOOL : FIELD_MOVE_POKEMON;
-    }
 
     return FIELD_MOVE_FAIL;
 }
@@ -118,9 +113,9 @@ u32 UseCut(u32 fieldMoveStatus)
 {
     HideMapNamePopUpWindow();
     LockPlayerAndLoadMon();
-#ifdef QOL_NO_MESSAGING
+#if QOL_NO_MESSAGING == TRUE
     FlagSet(FLAG_SYS_USE_CUT);
-#endif //QOL_NO_MESSAGING
+#endif
 
     if (FlagGet(FLAG_SYS_USE_CUT))
         ScriptContext_SetupScript(EventScript_CutTreeDown);
@@ -186,17 +181,12 @@ u32 CanUseSurf(s16 x, s16 y, u8 collision)
     bool32 playerHasBadge = FlagGet(FLAG_BADGE05_GET);
     bool32 collisionHasMismatch = (collision == COLLISION_ELEVATION_MISMATCH);
 
-    if (
-            IsPlayerFacingSurfableFishableWater()
-            && collisionHasMismatch
-            && (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
-            && GetObjectEventIdByPosition(x, y, 1) == OBJECT_EVENTS_COUNT
-            && ((monHasMove && playerHasBadge) || bagHasItem)
-       )
-
-    {
+    if (IsPlayerFacingSurfableFishableWater()
+        && collisionHasMismatch
+        && (!TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+        && GetObjectEventIdByPosition(x, y, 1) == OBJECT_EVENTS_COUNT
+        && ((monHasMove && playerHasBadge) || bagHasItem))
         return bagHasItem ? FIELD_MOVE_TOOL : FIELD_MOVE_POKEMON;
-    }
 
     return FIELD_MOVE_FAIL;
 }
@@ -243,9 +233,9 @@ u32 UseSurf(u32 fieldMoveStatus)
 	HideMapNamePopUpWindow();
 	ForcePlayerToPerformMovementAction();
 	LockPlayerAndLoadMon();
-#ifdef QOL_NO_MESSAGING
+#if QOL_NO_MESSAGING == TRUE
 	FlagSet(FLAG_SYS_USE_SURF);
-#endif //QOL_NO_MESSAGING
+#endif
 
 	if (FlagGet(FLAG_SYS_USE_SURF))
 		ScriptContext_SetupScript(EventScript_UseSurfFieldEffect);
@@ -282,21 +272,18 @@ u32 CanUseStrength(u8 collision)
     bool32 playerUsedStrength = FlagGet(FLAG_SYS_USE_STRENGTH);
     bool32 collisionEvent = (collision == COLLISION_OBJECT_EVENT);
 
-    if (
-        CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_PUSHABLE_BOULDER)
+    if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_PUSHABLE_BOULDER)
         && !playerUsedStrength
         && collisionEvent
-        && ((monHasMove && playerHasBadge) || bagHasItem)
-       )
-    {
-        return bagHasItem ? FIELD_MOVE_TOOL : FIELD_MOVE_POKEMON;
-    }
+        && ((monHasMove && playerHasBadge) || bagHasItem))
+    return bagHasItem ? FIELD_MOVE_TOOL : FIELD_MOVE_POKEMON;
+
     return FIELD_MOVE_FAIL;
 }
 
 u32 UseStrength(u32 fieldMoveStatus, u8 x, u8 y, u8 direction)
 {
-#ifdef QOL_NO_MESSAGING
+#if QOL_NO_MESSAGING == TRUE
     FlagSet(FLAG_SYS_USE_STRENGTH);
 #endif
     HideMapNamePopUpWindow();
@@ -375,15 +362,12 @@ u32 CanUseFlash(void)
     bool32 playerHasBadge = FlagGet(FLAG_BADGE02_GET);
     bool32 bagHasItem = CheckBagHasItem(ITEM_FLASH_TOOL,1);
 
-    if(
-            playerIsInCave
-            && mapIsNotLit
-            && !playerHasUsedFlash
-            && ((monHasMove && playerHasBadge) || bagHasItem)
-      )
-    {
+    if(playerIsInCave
+        && mapIsNotLit
+        && !playerHasUsedFlash
+        && ((monHasMove && playerHasBadge) || bagHasItem))
         return bagHasItem ? FIELD_MOVE_TOOL : FIELD_MOVE_POKEMON;
-    }
+
     return FIELD_MOVE_FAIL;
 }
 
@@ -402,22 +386,27 @@ void TryUseFlash(void)
 }
 
 // Rock Smash
+u32 CheckBagHasPickaxe(void)
+{
+    bool32 bagHasItem = FALSE;
+    if (CheckBagHasItem(ITEM_ROCKSMASH_TOOL,1) || CheckBagHasItem(ITEM_RUNEPICKAXE,1) || CheckBagHasItem(ITEM_ADAMANTPICKAXE,1) ||
+        CheckBagHasItem(ITEM_MITHRILPICKAXE,1) || CheckBagHasItem(ITEM_BLACKPICKAXE,1) || CheckBagHasItem(ITEM_STEELPICKAXE,1) ||
+        CheckBagHasItem(ITEM_IRONPICKAXE,1) || CheckBagHasItem(ITEM_BRONZEPICKAXE,1))
+    bagHasItem = TRUE;
+
+    return bagHasItem;
+}
 
 u32 CanUseRockSmash(s16 x, s16 y)
 {
     bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(ITEM_HM06);
-    bool32 bagHasItem = CheckBagHasItem(ITEM_ROCKSMASH_TOOL,1);
+    bool32 bagHasItem = CheckBagHasPickaxe();
     bool32 playerHasBadge = FlagGet(FLAG_BADGE03_GET);
 
-    if (
-            CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_BREAKABLE_ROCK)
-            && GetObjectEventIdByPosition(x, y, 1) == OBJECT_EVENTS_COUNT
-            && ((monHasMove && playerHasBadge) || bagHasItem)
-       )
-
-    {
+    if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_BREAKABLE_ROCK)
+        && GetObjectEventIdByPosition(x, y, 1) == OBJECT_EVENTS_COUNT
+        && ((monHasMove && playerHasBadge) || bagHasItem))
         return bagHasItem ? FIELD_MOVE_TOOL : FIELD_MOVE_POKEMON;
-    }
 
     return FIELD_MOVE_FAIL;
 }
@@ -426,9 +415,9 @@ u32 UseRockSmash(u32 fieldMoveStatus)
 {
     HideMapNamePopUpWindow();
     LockPlayerAndLoadMon();
-#ifdef QOL_NO_MESSAGING
+#if QOL_NO_MESSAGING == TRUE
     FlagSet(FLAG_SYS_USE_ROCK_SMASH);
-#endif //QOL_NO_MESSAGING
+#endif
 
     if (FlagGet(FLAG_SYS_USE_ROCK_SMASH))
         ScriptContext_SetupScript(EventScript_SmashRock);
@@ -469,16 +458,11 @@ u32 CanUseWaterfall(u8 direction)
     bool32 playerHasBadge = FlagGet(FLAG_BADGE08_GET);
     bool32 isPlayerPushedSouth = (direction == DIR_SOUTH);
 
-    if (
-            IsPlayerFacingWaterfall()
-            && IsPlayerSurfingNorth()
-            && isPlayerPushedSouth
-            && ((monHasMove && playerHasBadge) || bagHasItem)
-       )
-
-    {
+    if (IsPlayerFacingWaterfall()
+        && IsPlayerSurfingNorth()
+        && isPlayerPushedSouth
+        && ((monHasMove && playerHasBadge) || bagHasItem))
         return bagHasItem ? FIELD_MOVE_TOOL : FIELD_MOVE_POKEMON;
-    }
 
     return FIELD_MOVE_FAIL;
 }
@@ -492,9 +476,9 @@ u32 UseWaterfall(struct PlayerAvatar playerAvatar, u32 fieldMoveStatus)
 {
     HideMapNamePopUpWindow();
     LockPlayerAndLoadMon();
-#ifdef QOL_NO_MESSAGING
+#if QOL_NO_MESSAGING == TRUE
     FlagSet(FLAG_SYS_USE_WATERFALL);
-#endif //QOL_NO_MESSAGING
+#endif
     playerAvatar.runningState = MOVING;
 
     if (FlagGet(FLAG_SYS_USE_WATERFALL))
@@ -570,14 +554,9 @@ u32 CanUseDiveDown(void)
     bool32 playerHasBadge = FlagGet(FLAG_BADGE07_GET);
     bool32 diveWarpSuccessful = (TrySetDiveWarp() == 2);
 
-    if (
-            diveWarpSuccessful
-            && ((monHasMove && playerHasBadge) || bagHasItem)
-       )
-
-    {
+    if (diveWarpSuccessful
+        && ((monHasMove && playerHasBadge) || bagHasItem))
         return bagHasItem ? FIELD_MOVE_TOOL : FIELD_MOVE_POKEMON;
-    }
 
     return FIELD_MOVE_FAIL;
 }
@@ -590,15 +569,10 @@ u32 CanUseDiveEmerge(void)
     bool32 diveWarpSuccessful = (TrySetDiveWarp() == 1);
     bool32 playerisUnderwater = (gMapHeader.mapType == MAP_TYPE_UNDERWATER);
 
-    if (
-            diveWarpSuccessful
-            && playerisUnderwater
-            && ((monHasMove && playerHasBadge) || bagHasItem)
-       )
-
-    {
+    if (diveWarpSuccessful
+        && playerisUnderwater
+        && ((monHasMove && playerHasBadge) || bagHasItem))
         return bagHasItem ? FIELD_MOVE_TOOL : FIELD_MOVE_POKEMON;
-    }
 
     return FIELD_MOVE_FAIL;
 }

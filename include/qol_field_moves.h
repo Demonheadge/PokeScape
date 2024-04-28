@@ -56,5 +56,8 @@ enum FlyToolSource
 };
 
 // https://github.com/PokemonSanFran/pokeemerald/wiki/QoL-Field-Moves#developer-options
-// When QOL_NO_MESSAGING is enabled, when the player uses a Field Move automatically for the first time on a map, a message or animation does not appear.
-//#define QOL_NO_MESSAGING
+// When QOL_NO_MESSAGING is set to TRUE, when the player uses a Field Move automatically for the first time on a map, a message or animation does not appear.
+#define QOL_NO_MESSAGING    FALSE
+
+// When QOL_INSTANT_ACTIONS is set to TRUE, when the player would move into a field object or onto water, the associated field move is used instantly.
+#define QOL_INSTANT_ACTIONS     FALSE
