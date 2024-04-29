@@ -7142,6 +7142,801 @@ const struct Item gItems[] =
 
 // TMs/HMs. They don't have a set flingPower, as that's handled by GetFlingPowerFromItemId.
 
+
+    [ITEM_TM_SUNNY_DAY] =
+    {
+        .name = _("SCROLL 01"),
+        .price = 3000,
+        .description = sScroll_01_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_SUNNY_DAY,
+    },
+
+    [ITEM_TM_RAIN_DANCE] =
+    {
+        .name = _("SCROLL 02"),
+        .price = 3000,
+        .description = sScroll_02_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_RAIN_DANCE,
+    },
+
+    [ITEM_TM_HAIL] =
+    {
+        .name = _("SCROLL 03"),
+        .price = 3000,
+        .description = sScroll_03_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_HAIL,
+    },
+
+    [ITEM_TM_SANDSTORM] =
+    {
+        .name = _("SCROLL 04"),
+        .price = 3000,
+        .description = sScroll_04_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_SANDSTORM,
+    },
+
+    [ITEM_TM_TAILWIND] =
+    {
+        .name = _("SCROLL 05"),
+        .price = 3000,
+        .description = sScroll_05_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_TAILWIND,
+    },
+
+    [ITEM_TM_FLAME_CHARGE] =
+    {
+        .name = _("SCROLL 06"),
+        .price = 3000,
+        .description = sScroll_06_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_FLAME_CHARGE,
+    },
+
+    [ITEM_TM_RAZOR_SHELL] =
+    {
+        .name = _("SCROLL 07"),
+        .price = 3000,
+        .description = sScroll_07_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_RAZOR_SHELL,
+    },
+
+    [ITEM_TM_SOLAR_BLADE] =
+    {
+        .name = _("SCROLL 08"),
+        .price = 3000,
+        .description = sScroll_08_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_SOLAR_BLADE,
+    },
+
+    [ITEM_TM_GRASSY_TERRAIN] =
+    {
+        .name = _("SCROLL 09"),
+        .price = 3000,
+        .description = sScroll_09_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_GRASSY_TERRAIN,
+    },
+
+    [ITEM_TM_ELECTRIC_TERRAIN] =
+    {
+        .name = _("SCROLL 10"),
+        .price = 3000,
+        .description = sScroll_10_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_ELECTRIC_TERRAIN,
+    },
+
+    [ITEM_TM_PSYCHIC_TERRAIN] =
+    {
+        .name = _("SCROLL 11"),
+        .price = 3000,
+        .description = sScroll_11_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_PSYCHIC_TERRAIN,
+    },
+
+    [ITEM_TM_MISTY_TERRAIN] =
+    {
+        .name = _("SCROLL 12"),
+        .price = 3000,
+        .description = sScroll_12_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_MISTY_TERRAIN,
+    },
+
+    [ITEM_TM_BRINE] =
+    {
+        .name = _("SCROLL 13"),
+        .price = 3000,
+        .description = sScroll_13_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_BRINE,
+    },
+
+    [ITEM_TM_ENERGY_BALL] =
+    {
+        .name = _("SCROLL 14"),
+        .price = 3000,
+        .description = sScroll_14_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_ENERGY_BALL,
+    },
+
+    [ITEM_TM_LAVA_PLUME] =
+    {
+        .name = _("SCROLL 15"),
+        .price = 3000,
+        .description = sScroll_15_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_LAVA_PLUME,
+    },
+
+    [ITEM_TM_HURRICANE] =
+    {
+        .name = _("SCROLL 16"),
+        .price = 3000,
+        .description = sScroll_16_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_HURRICANE,
+    },
+
+    [ITEM_TM_AERIAL_ACE] =
+    {
+        .name = _("SCROLL 17"),
+        .price = 3000,
+        .description = sScroll_17_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_AERIAL_ACE,
+    },
+
+    [ITEM_TM_STEEL_WING] =
+    {
+        .name = _("SCROLL 18"),
+        .price = 3000,
+        .description = sScroll_18_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_STEEL_WING,
+    },
+
+    [ITEM_TM_VOLT_TACKLE] =
+    {
+        .name = _("SCROLL 19"),
+        .price = 3000,
+        .description = sScroll_19_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_VOLT_TACKLE,
+    },
+
+    [ITEM_TM_DRAINING_KISS] =
+    {
+        .name = _("SCROLL 20"),
+        .price = 3000,
+        .description = sScroll_20_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_DRAINING_KISS,
+    },
+
+    [ITEM_TM_TOXIC] =
+    {
+        .name = _("SCROLL 21"),
+        .price = 3000,
+        .description = sScroll_21_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_TOXIC,
+    },
+
+    [ITEM_TM_SHADOW_BONE] =
+    {
+        .name = _("SCROLL 22"),
+        .price = 3000,
+        .description = sScroll_22_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_SHADOW_BONE,
+    },
+
+    [ITEM_TM_BANEFUL_BUNKER] =
+    {
+        .name = _("SCROLL 23"),
+        .price = 3000,
+        .description = sScroll_23_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_BANEFUL_BUNKER,
+    },
+
+    [ITEM_TM_U_TURN] =
+    {
+        .name = _("SCROLL 24"),
+        .price = 3000,
+        .description = sScroll_24_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_U_TURN,
+    },
+
+    [ITEM_TM_GUILLOTINE] =
+    {
+        .name = _("SCROLL 25"),
+        .price = 3000,
+        .description = sScroll_25_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_GUILLOTINE,
+    },
+
+    [ITEM_TM_KINGS_SHIELD] =
+    {
+        .name = _("SCROLL 26"),
+        .price = 3000,
+        .description = sScroll_26_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_KINGS_SHIELD,
+    },
+
+    [ITEM_TM_SACRED_SWORD] =
+    {
+        .name = _("SCROLL 27"),
+        .price = 3000,
+        .description = sScroll_27_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_SACRED_SWORD,
+    },
+
+    [ITEM_TM_SWORDS_DANCE] =
+    {
+        .name = _("SCROLL 28"),
+        .price = 3000,
+        .description = sScroll_28_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_SWORDS_DANCE,
+    },
+
+    [ITEM_TM_SECRET_SWORD] =
+    {
+        .name = _("SCROLL 29"),
+        .price = 3000,
+        .description = sScroll_29_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_SECRET_SWORD,
+    },
+
+    [ITEM_TM_RETURN] =
+    {
+        .name = _("SCROLL 30"),
+        .price = 3000,
+        .description = sScroll_30_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_RETURN,
+    },
+
+    [ITEM_TM_FRUSTRATION] =
+    {
+        .name = _("SCROLL 31"),
+        .price = 3000,
+        .description = sScroll_31_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_FRUSTRATION,
+    },
+
+    [ITEM_TM_FALSE_SWIPE] =
+    {
+        .name = _("SCROLL 32"),
+        .price = 3000,
+        .description = sScroll_32_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_FALSE_SWIPE,
+    },
+
+    [ITEM_TM_DRAGON_BREATH] =
+    {
+        .name = _("SCROLL 33"),
+        .price = 3000,
+        .description = sScroll_33_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_DRAGON_BREATH,
+    },
+
+    [ITEM_TM_DRAGON_HAMMER] =
+    {
+        .name = _("SCROLL 34"),
+        .price = 3000,
+        .description = sScroll_34_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_DRAGON_HAMMER,
+    },
+
+    [ITEM_TM_LEECH_LIFE] =
+    {
+        .name = _("SCROLL 35"),
+        .price = 3000,
+        .description = sScroll_35_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_LEECH_LIFE,
+    },
+
+    [ITEM_TM_SLACK_OFF] =
+    {
+        .name = _("SCROLL 36"),
+        .price = 3000,
+        .description = sScroll_36_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_SLACK_OFF,
+    },
+
+    [ITEM_TM_THOUSAND_ARROWS] =
+    {
+        .name = _("SCROLL 37"),
+        .price = 3000,
+        .description = sScroll_37_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_THOUSAND_ARROWS,
+    },
+
+    [ITEM_TM_ROCK_TOMB] =
+    {
+        .name = _("SCROLL 38"),
+        .price = 3000,
+        .description = sScroll_38_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_ROCK_TOMB,
+    },
+
+    [ITEM_TM_REVELATION_DANCE] =
+    {
+        .name = _("SCROLL 39"),
+        .price = 3000,
+        .description = sScroll_39_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_REVELATION_DANCE,
+    },
+
+    [ITEM_TM_VOLT_SWITCH] =
+    {
+        .name = _("SCROLL 40"),
+        .price = 3000,
+        .description = sScroll_40_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_VOLT_SWITCH,
+    },
+
+    [ITEM_TM_FLASH_CANNON] =
+    {
+        .name = _("SCROLL 41"),
+        .price = 3000,
+        .description = sScroll_41_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_FLASH_CANNON,
+    },
+
+    [ITEM_TM_POLLEN_PUFF] =
+    {
+        .name = _("SCROLL 42"),
+        .price = 3000,
+        .description = sScroll_42_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_PULLEN_PUFF,
+    },
+
+    [ITEM_TM_PSYCHO_CUT] =
+    {
+        .name = _("SCROLL 43"),
+        .price = 3000,
+        .description = sScroll_43_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_PSYCHO_CUT,
+    },
+
+    [ITEM_TM_PLAY_ROUGH] =
+    {
+        .name = _("SCROLL 44"),
+        .price = 3000,
+        .description = sScroll_44_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_PLAY_ROUGH,
+    },
+
+    [ITEM_TM_SPECTRAL_THIEF] =
+    {
+        .name = _("SCROLL 45"),
+        .price = 3000,
+        .description = sScroll_45_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_SPECTRAL_THIEF,
+    },
+
+    [ITEM_TM_DRAGON_TAIL] =
+    {
+        .name = _("SCROLL 46"),
+        .price = 3000,
+        .description = sScroll_46_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_DRAGON_TAIL,
+    },
+
+    [ITEM_TM_LUNAR_DANCE] =
+    {
+        .name = _("SCROLL 47"),
+        .price = 3000,
+        .description = sScroll_47_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_LUNAR_DANCE,
+    },
+
+    [ITEM_TM_POWER_GEM] =
+    {
+        .name = _("SCROLL 48"),
+        .price = 3000,
+        .description = sScroll_48_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_POWER_GEM,
+    },
+
+    [ITEM_TM_SNARL] =
+    {
+        .name = _("SCROLL 49"),
+        .price = 3000,
+        .description = sScroll_49_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_SNARL,
+    },
+
+    [ITEM_TM_POISON_JAB] =
+    {
+        .name = _("SCROLL 50"),
+        .price = 3000,
+        .description = sScroll_50_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_POISON_JAB,
+    },
+
+    [ITEM_TM_ICICLE_CRASH] =
+    {
+        .name = _("SCROLL 51"),
+        .price = 3000,
+        .description = sScroll_51_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_ICICLE_CRASH,
+    },
+
+    [ITEM_TM_POWDER] =
+    {
+        .name = _("SCROLL 52"),
+        .price = 3000,
+        .description = sScroll_52_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_POWDER,
+    },
+
+    [ITEM_TM_ICE_BEAM] =
+    {
+        .name = _("SCROLL 53"),
+        .price = 3000,
+        .description = sScroll_53_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_ICE_BEAM,
+    },
+
+    [ITEM_TM_MUD_BOMB] =
+    {
+        .name = _("SCROLL 54"),
+        .price = 3000,
+        .description = sScroll_54_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_MUD_BOMB,
+    },
+
+    [ITEM_TM_HEX] =
+    {
+        .name = _("SCROLL 55"),
+        .price = 3000,
+        .description = sScroll_55_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_HEX,
+    },
+
+    [ITEM_TM_SWITCHEROO] =
+    {
+        .name = _("SCROLL 56"),
+        .price = 3000,
+        .description = sScroll_56_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_SWITCHEROO,
+    },
+
+    [ITEM_TM_PSYSHOCK] =
+    {
+        .name = _("SCROLL 57"),
+        .price = 3000,
+        .description = sScroll_57_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_PSYSHOCK,
+    },
+
+    [ITEM_TM_SLUDGE_WAVE] =
+    {
+        .name = _("SCROLL 58"),
+        .price = 3000,
+        .description = sScroll_58_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_SLUDGE_WAVE,
+    },
+
+    [ITEM_TM_SPIKES] =
+    {
+        .name = _("SCROLL 59"),
+        .price = 3000,
+        .description = sScroll_59_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_SPIKES,
+    },
+
+    [ITEM_TM_BULK_UP] =
+    {
+        .name = _("SCROLL 60"),
+        .price = 3000,
+        .description = sScroll_60_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_BULK_UP,
+    },
+
+    [ITEM_TM_PAY_DAY] =
+    {
+        .name = _("SCROLL 61"),
+        .price = 3000,
+        .description = sScroll_61_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_PAY_DAY,
+    },
+
+    [ITEM_TM_DEFOG] =
+    {
+        .name = _("SCROLL 62"),
+        .price = 3000,
+        .description = sScroll_62_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_DEFOG,
+    },
+
+    [ITEM_TM_TRICK_OR_TREAT] =
+    {
+        .name = _("SCROLL 63"),
+        .price = 3000,
+        .description = sScroll_63_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_TRICK_OR_TREAT,
+    },
+
+    [ITEM_TM_REVENGE] =
+    {
+        .name = _("SCROLL 64"),
+        .price = 3000,
+        .description = sScroll_64_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_REVENGE,
+    },
+
+    [ITEM_TM_ICE_HAMMER] =
+    {
+        .name = _("SCROLL 65"),
+        .price = 3000,
+        .description = sScroll_65_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_ICE_HAMMER,
+    },
+
+    [ITEM_TM_BRUTAL_SWING] =
+    {
+        .name = _("SCROLL 66"),
+        .price = 3000,
+        .description = sScroll_66_Desc,
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+        .secondaryId = MOVE_BRUTAL_SWING,
+    },
+
+
+/*
     [ITEM_TM_FOCUS_PUNCH] =
     {
         .name = _("TM01"),
@@ -7933,7 +8728,7 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
         .secondaryId = MOVE_NONE, // Todo
     },
-
+*/
     [ITEM_TM67] =
     {
         .name = _("TM67"),
