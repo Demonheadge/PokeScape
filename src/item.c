@@ -925,6 +925,7 @@ u8 ItemId_GetBattleUsage(u16 itemId)
     u16 item = SanitizeItemId(itemId);
     // Handle E-Reader berries.
     if (item == ITEM_ENIGMA_BERRY_E_READER)
+#if FREE_ENIGMA_BERRY == FALSE
     {
         switch (GetItemEffectType(gSpecialVar_ItemId))
         {
@@ -947,6 +948,9 @@ u8 ItemId_GetBattleUsage(u16 itemId)
                 return 0;
         }
     }
+#else
+        return 0;
+#endif //FREE_ENIGMA_BERRY
     else
         return gItems[item].battleUsage;
 }
