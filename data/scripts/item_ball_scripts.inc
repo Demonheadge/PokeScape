@@ -106,10 +106,6 @@ Route115_EventScript_ItemSuperPotion::
 	finditem ITEM_SUPER_POTION
 	end
 
-Route115_EventScript_ItemTMFocusPunch::
-	finditem ITEM_TM_FOCUS_PUNCH
-	end
-
 Route115_EventScript_ItemIron::
 	finditem ITEM_IRON
 	end
@@ -379,7 +375,7 @@ FieryPath_EventScript_ItemTMToxic::
 	end
 
 MeteorFalls_1F_1R_EventScript_ItemTMIronTail::
-	finditem ITEM_TM_IRON_TAIL
+	finditem ITEM_TM_TOXIC
 	end
 
 MeteorFalls_1F_1R_EventScript_ItemFullHeal::
@@ -395,7 +391,7 @@ MeteorFalls_1F_1R_EventScript_ItemPPUP::
 	end
 
 MeteorFalls_B1F_2R_EventScript_ItemTMDragonClaw::
-	finditem ITEM_TM_DRAGON_CLAW
+	finditem ITEM_TM_TOXIC
 	end
 
 NewMauville_Inside_EventScript_ItemUltraBall::
@@ -463,7 +459,7 @@ ScorchedSlab_EventScript_ItemTMSunnyDay::
 	end
 
 SafariZone_Northwest_EventScript_ItemTMSolarBeam::
-	finditem ITEM_TM_SOLAR_BEAM
+	finditem ITEM_TM_SOLAR_BLADE
 	end
 
 SafariZone_North_EventScript_ItemCalcium::
@@ -499,7 +495,7 @@ MtPyre_5F_EventScript_ItemLaxIncense::
 	end
 
 MtPyre_6F_EventScript_ItemTMShadowBall::
-	finditem ITEM_TM_SHADOW_BALL
+	finditem ITEM_TM_SHADOW_BONE
 	end
 
 MtPyre_Exterior_EventScript_ItemMaxPotion::
@@ -507,7 +503,7 @@ MtPyre_Exterior_EventScript_ItemMaxPotion::
 	end
 
 MtPyre_Exterior_EventScript_ItemTMSkillSwap::
-	finditem ITEM_TM_SKILL_SWAP
+	finditem ITEM_TM_TOXIC
 	end
 
 AquaHideout_B1F_EventScript_ItemMasterBall::
@@ -563,7 +559,7 @@ ShoalCave_LowTideIceRoom_EventScript_ItemNeverMeltIce::
 	end
 
 SeafloorCavern_Room9_EventScript_ItemTMEarthquake::
-	finditem ITEM_TM_EARTHQUAKE
+	finditem ITEM_TM_TOXIC
 	end
 
 Route110_TrickHousePuzzle1_EventScript_ItemOrangeMail::
@@ -611,7 +607,7 @@ VictoryRoad_1F_EventScript_ItemPPUp::
 	end
 
 VictoryRoad_B1F_EventScript_ItemTMPsychic::
-	finditem ITEM_TM_PSYCHIC
+	finditem ITEM_TM_TOXIC
 	end
 
 VictoryRoad_B1F_EventScript_ItemFullRestore::

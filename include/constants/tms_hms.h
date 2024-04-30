@@ -2,56 +2,72 @@
 #define GUARD_CONSTANTS_TMS_HMS_H
 
 #define FOREACH_TM(F) \
-    F(FOCUS_PUNCH) \
-    F(DRAGON_CLAW) \
-    F(WATER_PULSE) \
-    F(CALM_MIND) \
-    F(ROAR) \
-    F(TOXIC) \
-    F(HAIL) \
-    F(BULK_UP) \
-    F(BULLET_SEED) \
-    F(HIDDEN_POWER) \
     F(SUNNY_DAY) \
-    F(TAUNT) \
-    F(ICE_BEAM) \
-    F(BLIZZARD) \
-    F(HYPER_BEAM) \
-    F(LIGHT_SCREEN) \
-    F(PROTECT) \
     F(RAIN_DANCE) \
-    F(GIGA_DRAIN) \
-    F(SAFEGUARD) \
-    F(FRUSTRATION) \
-    F(SOLAR_BEAM) \
-    F(IRON_TAIL) \
-    F(THUNDERBOLT) \
-    F(THUNDER) \
-    F(EARTHQUAKE) \
-    F(RETURN) \
-    F(DIG) \
-    F(PSYCHIC) \
-    F(SHADOW_BALL) \
-    F(BRICK_BREAK) \
-    F(DOUBLE_TEAM) \
-    F(REFLECT) \
-    F(SHOCK_WAVE) \
-    F(FLAMETHROWER) \
-    F(SLUDGE_BOMB) \
+    F(HAIL) \
     F(SANDSTORM) \
-    F(FIRE_BLAST) \
-    F(ROCK_TOMB) \
+    F(TAILWIND) \
+    F(FLAME_CHARGE) \
+    F(RAZOR_SHELL) \
+    F(SOLAR_BLADE) \
+    F(GRASSY_TERRAIN) \
+    F(ELECTRIC_TERRAIN) \
+    F(PSYCHIC_TERRAIN) \
+    F(MISTY_TERRAIN) \
+    F(BRINE) \
+    F(ENERGY_BALL) \
+    F(LAVA_PLUME) \
+    F(HURRICANE) \
     F(AERIAL_ACE) \
-    F(TORMENT) \
-    F(FACADE) \
-    F(SECRET_POWER) \
-    F(REST) \
-    F(ATTRACT) \
-    F(THIEF) \
     F(STEEL_WING) \
-    F(SKILL_SWAP) \
-    F(SNATCH) \
-    F(OVERHEAT)
+    F(VOLT_TACKLE) \
+    F(DRAINING_KISS) \
+    F(TOXIC) \
+    F(SHADOW_BONE) \
+    F(BANEFUL_BUNKER) \
+    F(U_TURN) \
+    F(GUILLOTINE) \
+    F(KINGS_SHIELD) \
+    F(SACRED_SWORD) \
+    F(SWORDS_DANCE) \
+    F(SECRET_SWORD) \
+    F(RETURN) \
+    F(FRUSTRATION) \
+    F(FALSE_SWIPE) \
+    F(DRAGON_BREATH) \
+    F(DRAGON_HAMMER) \
+    F(LEECH_LIFE) \
+    F(SLACK_OFF) \
+    F(THOUSAND_ARROWS) \
+    F(ROCK_TOMB) \
+    F(REVELATION_DANCE) \
+    F(VOLT_SWITCH) \
+    F(FLASH_CANNON) \
+    F(POLLEN_PUFF) \
+    F(PSYCHO_CUT) \
+    F(PLAY_ROUGH) \
+    F(SPECTRAL_THIEF) \
+    F(DRAGON_TAIL) \
+    F(LUNAR_DANCE) \
+    F(POWER_GEM) \
+    F(SNARL) \
+    F(POISON_JAB) \
+    F(ICICLE_CRASH) \
+    F(POWDER) \
+    F(ICE_BEAM) \
+    F(MUD_BOMB) \
+    F(HEX) \
+    F(SWITCHEROO) \
+    F(PSYSHOCK) \
+    F(SLUDGE_WAVE) \
+    F(SPIKES) \
+    F(BULK_UP) \
+    F(PAY_DAY) \
+    F(DEFOG) \
+    F(TRICK_OR_TREAT) \
+    F(REVENGE) \
+    F(ICE_HAMMER) \
+    F(BRUTAL_SWING)
 
 #define FOREACH_HM(F) \
     F(CUT) \
