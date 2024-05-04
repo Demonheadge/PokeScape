@@ -19,6 +19,7 @@ struct Item
     u8 importance;
     u8 pocket;
     u8 type;
+    u8 sort:5;
     u8 battleUsage;
     u8 flingPower;
 };
@@ -32,6 +33,7 @@ struct BagPocket
 extern const struct Item gItems[];
 extern struct BagPocket gBagPockets[];
 
+u16 GetBagItemQuantity(u16 *quantity);
 void ApplyNewEncryptionKeyToBagItems(u32 newKey);
 void ApplyNewEncryptionKeyToBagItems_(u32 newKey);
 void SetBagItemsPointers(void);
@@ -96,5 +98,27 @@ enum
 };
 #undef ENUM_TM
 #undef ENUM_HM
+
+// bag sorting
+enum ItemSortType
+{
+	ITEM_TYPE_FIELD_USE,
+	ITEM_TYPE_HEALTH_RECOVERY,
+	ITEM_TYPE_STATUS_RECOVERY,
+    ITEM_TYPE_FLUTE,
+	ITEM_TYPE_PP_RECOVERY,
+	ITEM_TYPE_STAT_BOOST,
+	ITEM_TYPE_EVOLUTION_STONE,
+	ITEM_TYPE_EVOLUTION_ITEM,
+	ITEM_TYPE_BATTLE_ITEM,
+	ITEM_TYPE_POWER_ITEM,
+	ITEM_TYPE_HELD_ITEM,
+	ITEM_TYPE_MEGA_Z,
+	ITEM_TYPE_SELLABLE,
+	ITEM_TYPE_RELIC,
+	ITEM_TYPE_MAIL,
+    ITEM_TYPE_KEY_ITEM,
+    ITEM_TYPE_UNSORTABLE, // Berries/TMs/Pouches
+};
 
 #endif // GUARD_ITEM_H
