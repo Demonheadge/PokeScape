@@ -665,7 +665,8 @@
     "Varrock_GrandExchange_Path",
     "Varrock_Church",
     "Crandor",
-    "Daemonheim"
+    "Daemonheim",
+    "Digsite"
   ],
   "gMapGroup_PokescapeRoutes": [
     "Route1",
@@ -805,7 +806,8 @@
     "Draynor_Sewers_2",
     "Draynor_Sewers_3",
     "Draynor_Sewers_4",
-    "Draynor_House_Aggie"
+    "Draynor_House_Aggie",
+    "Draynor_House_Ned"
   ],
   "gMapGroup_PokescapeIndoorPortSarim": [
     "PortSarim_Pub_1F",
@@ -859,7 +861,11 @@
     "Falador_Castle_1F",
     "Falador_Castle_2F",
     "Falador_Castle_3F",
-    "Falador_Mace_Store"
+    "Falador_Mace_Store",
+    "Falador_PartyRoom",
+    "Falador_Castle_1F_R2",
+    "Falador_Castle_1F_R3",
+    "Falador_Castle_3F_R2"
   ],
   "gMapGroup_PokescapeIndoorVarrock": [
     "Varrock_Thessalia_Shop",
@@ -890,7 +896,11 @@
     "Grand_Exchange_Indoor",
     "Varrock_Sewers_3F",
     "Route19_CookingGuild",
-    "Varrock_House_5"
+    "Varrock_House_5",
+    "Varrock_House_6",
+    "Varrock_House_7",
+    "Varrock_House_8",
+    "Varrock_House_9"
   ],
   "gMapGroup_PokescapeIndoorBarbarianVillage": [
     "BarbarianVillage_GymHall",
@@ -944,7 +954,8 @@
     "Edgeville_General_Store_2F",
     "Dwarven_Mines_House_1",
     "Dwarven_Mines_House_2",
-    "Dwarven_Mines_House_3"
+    "Dwarven_Mines_House_3",
+    "Edgeville_Route19_Brass_House"
   ],
   "gMapGroup_PokescapeOutdoorMembers": [
     "Yanille",
@@ -971,7 +982,13 @@
     "Route169",
     "Route170",
     "Route171",
-    "Route172"
+    "Route172",
+    "Canifis",
+    "Route180",
+    "Route60",
+    "Route61",
+    "Route62",
+    "Route63"
   ],
   "gMapGroup_PokescapeIndoorTzhaar": [
     "Tzhaar_1F",
@@ -1068,6 +1085,9 @@
     "WildernessVolcano_Room_3",
     "WildernessVolcano_Room_4",
     "Mudskipper_Point_ThurgosHut",
-    "Zamorak_Church"
+    "Zamorak_Church",
+    "Crandor_SeaRoute",
+    "Ungael",
+    "Varlamore"
   ]
 }

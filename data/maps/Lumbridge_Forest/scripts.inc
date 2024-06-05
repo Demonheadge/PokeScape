@@ -78,14 +78,28 @@ NPC_LUMBRIDGE_FOREST_3::
 
 NPC_LUMBRIDGE_FOREST_4::
 	lock
-	faceplayer
 	namebox NPC_LUMBRIDGE_FOREST_4_Text_0
 	msgbox NPC_LUMBRIDGE_FOREST_4_Text_1
+	closemessage
+	hidenamebox
+	playse SE_LEDGE
+	applymovement 13, MOVEMENT_SHOCKED_FACEPLAYER
+	waitmovement 0
+	namebox NPC_LUMBRIDGE_FOREST_4_Text_0
+	msgbox NPC_LUMBRIDGE_FOREST_4_Text_2
 	closemessage
 	hidenamebox
 	release
 	end
 
+
+MOVEMENT_SHOCKED_FACEPLAYER:
+	emote_exclamation_mark
+	face_player
+	lock_facing_direction
+	jump_in_place_down
+	unlock_facing_direction
+	step_end
 
 NPC_LUMBRIDGE_FOREST_5::
 	lock
@@ -101,8 +115,8 @@ NPC_LUMBRIDGE_FOREST_5::
 NPC_LUMBRIDGE_FOREST_6::
 	lock
 	faceplayer
-	namebox NPC_LUMBRIDGE_FOREST_5_Text_0
-	msgbox NPC_LUMBRIDGE_FOREST_5_Text_1
+	namebox NPC_LUMBRIDGE_FOREST_6_Text_0
+	msgbox NPC_LUMBRIDGE_FOREST_6_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -147,8 +161,8 @@ BATTLE_LUMBRIDGEFOREST_TRAINER_2::
 
 BATTLE_LUMBRIDGEFOREST_TRAINER_3::
 	trainerbattle_single TRAINER_LUMBRIDGEFOREST_TRAINER_3, BATTLE_LUMBRIDGEFOREST_TRAINER_3_Text_0, BATTLE_LUMBRIDGEFOREST_TRAINER_3_Text_1
-	namebox BATTLE_LUMBRIDGEFOREST_TRAINER_2_Text_2
-	msgbox BATTLE_LUMBRIDGEFOREST_TRAINER_3_Text_2
+	namebox BATTLE_LUMBRIDGEFOREST_TRAINER_3_Text_2
+	msgbox BATTLE_LUMBRIDGEFOREST_TRAINER_3_Text_3
 	hidenamebox
 	release
 	end
@@ -193,8 +207,9 @@ NPC_LUMBRIDGE_FOREST_1_Text_0:
 	.string "Monk$"
 
 NPC_LUMBRIDGE_FOREST_1_Text_1:
-	.string "Why are all of standing around here?\p"
-	.string "None of your business. Get lost.$"
+	.string "Why are all of us standing around here?\p"
+	.string "None of your business.\p"
+	.string "Get lost.$"
 
 NPC_LUMBRIDGE_FOREST_2_Text_0:
 	.string "Warrior$"
@@ -221,17 +236,27 @@ NPC_LUMBRIDGE_FOREST_4_Text_0:
 	.string "Archer$"
 
 NPC_LUMBRIDGE_FOREST_4_Text_1:
-	.string "Rats, I dropped my last sweet looking\n"
-	.string "for that stupid lepre-\p"
-	.string "Hey! Forget anything you might have\n"
-	.string "heard us say when we didn't realise you\l"
-	.string "were there!$"
+	.string "Rats!\p"
+	.string "I dropped my last sweet looking for\n"
+	.string "that stupid lepre-$"
+
+NPC_LUMBRIDGE_FOREST_4_Text_2:
+	.string "Forget anything you might have heard!\p"
+	.string "Now go away this is our quest!$"
 
 NPC_LUMBRIDGE_FOREST_5_Text_0:
 	.string "Cupholder$"
 
 NPC_LUMBRIDGE_FOREST_5_Text_1:
 	.string "Hello, I am a Cupholder.$"
+
+NPC_LUMBRIDGE_FOREST_6_Text_0:
+	.string "Woodcutter$"
+
+NPC_LUMBRIDGE_FOREST_6_Text_1:
+	.string "I can see Lumbridge on the other side.\p"
+	.string "If only I had the Woodcutting level to\n"
+	.string "get past these trees…$"
 
 BATTLE_LUMBRIDGEFOREST_BOT1_Text_0:
 	.string "ALERT!\p"
@@ -243,7 +268,7 @@ BATTLE_LUMBRIDGEFOREST_BOT1_Text_1:
 	.string "HELLO, I AM NOT A BOT.$"
 
 BATTLE_LUMBRIDGEFOREST_BOT1_Text_2:
-	.string "BOT$"
+	.string "alhgkj73$"
 
 BATTLE_LUMBRIDGEFOREST_WOODCUTTER1_Text_0:
 	.string "OMG LUL, guess what?\p"
@@ -253,11 +278,11 @@ BATTLE_LUMBRIDGEFOREST_WOODCUTTER1_Text_1:
 	.string "JK, I'll share.$"
 
 BATTLE_LUMBRIDGEFOREST_WOODCUTTER1_Text_2:
-	.string "WOODCUTTER$"
+	.string "Ch0ppa1$"
 
 BATTLE_LUMBRIDGEFOREST_WOODCUTTER1_Text_3:
 	.string "Like ROFLMAO you are stronk.\p"
-	.string "You sure cut me down to size, OMGEALUL!$"
+	.string "You sure cut me down to size, OMEGALUL!$"
 
 BATTLE_LUMBRIDGEFOREST_TRAINER_1_Text_0:
 	.string "I am going to jump out and attack you\n"
@@ -268,7 +293,7 @@ BATTLE_LUMBRIDGEFOREST_TRAINER_1_Text_1:
 	.string "have lost this battle.$"
 
 BATTLE_LUMBRIDGEFOREST_TRAINER_1_Text_2:
-	.string "MUGGER$"
+	.string "Mugger$"
 
 BATTLE_LUMBRIDGEFOREST_TRAINER_2_Text_0:
 	.string "Me and me friend destroyed the path\n"
@@ -280,7 +305,7 @@ BATTLE_LUMBRIDGEFOREST_TRAINER_2_Text_1:
 	.string "Oh no, you has escaped the trap!$"
 
 BATTLE_LUMBRIDGEFOREST_TRAINER_2_Text_2:
-	.string "GOBLIN$"
+	.string "Foulblood$"
 
 BATTLE_LUMBRIDGEFOREST_TRAINER_2_Text_3:
 	.string "Me and me friend destroyed the path\n"
@@ -297,6 +322,9 @@ BATTLE_LUMBRIDGEFOREST_TRAINER_3_Text_1:
 	.string "Clearly big high war god favours you.$"
 
 BATTLE_LUMBRIDGEFOREST_TRAINER_3_Text_2:
+	.string "Toadtoes$"
+
+BATTLE_LUMBRIDGEFOREST_TRAINER_3_Text_3:
 	.string "Me liek this forest.\p"
 	.string "Me hope no harm comes to it.\p"
 	.string "Me would be sad if big high war god were\n"

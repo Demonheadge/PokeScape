@@ -1,0 +1,206 @@
+
+
+mapscripts Falador_Castle_3F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+    if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    	{
+            goto(FALADORCASTLE_3F_STATE)
+    	}
+    }
+
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_B, 1: QUEST_FALADORCASTLE_EVENT_AFTER_GYM
+    ]
+}
+
+
+script FALADORCASTLE_3F_STATE {
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 120) {
+        clearflag(FLAG_TEMP_1F)
+        addobject(4)
+        addobject(5)
+        addobject(6)
+        addobject(7)
+        addobject(8)
+        addobject(9)
+        addobject(10)
+        setvar(VAR_TEMP_B, 1)
+        setobjectxyperm(4, 20, 9)
+        setobjectxyperm(1, 20, 10) 
+
+        removeobject(2)
+        removeobject(3)
+        setflag(FLAG_TEMP_1E)
+    }
+    else {
+        removeobject(4)
+        removeobject(5)
+        removeobject(6)
+        removeobject(7)
+        removeobject(8)
+        removeobject(9)
+        removeobject(10)
+        setflag(FLAG_TEMP_1F)
+    }
+    return
+}
+
+movement movement_falador_postgym_1 {
+    walk_up * 5
+}
+movement movement_falador_postgym_2 {
+    face_up * 5
+    walk_left
+    face_right
+}
+movement movement_falador_postgym_3 {
+    set_visible
+    face_up
+    delay_16
+    walk_up * 4
+    walk_right 
+    walk_up
+}
+movement movement_falador_postgym_4 {
+    set_invisible
+}
+
+movement movement_falador_postgym_5 {
+    face_down
+    walk_down * 2
+    face_right
+    walk_right *2
+}
+
+movement movement_falador_postgym_6 {
+    face_left
+    walk_left * 2
+    face_up
+    walk_up * 2
+}
+
+movement movement_falador_postgym_7 {
+    lock_facing_direction
+    walk_down
+    unlock_facing_direction
+}
+movement movement_falador_postgym_8 {
+    walk_down
+    face_left
+}
+movement movement_falador_postgym_9 {
+    face_up
+    delay_16 * 3
+    face_down
+}
+
+
+
+script QUEST_FALADORCASTLE_EVENT_AFTER_GYM //after the gym you get teleported to interrogation room.
+{
+    applymovement(1, movement_falador_postgym_4)
+    waitmovement(0)
+
+//WIP
+    applymovement(OBJ_EVENT_ID_PLAYER, movement_falador_postgym_1)
+    applymovement(4, movement_falador_postgym_2)
+    applymovement(1, movement_falador_postgym_3)
+    waitmovement(0)
+    delay(120)
+
+	//player walks over to owen
+    namebox ("Sir Owen")
+	msgbox(format("Thank you all for coming.\pWe have been hard at work interrogating the prisoners, so far we've worked out that the H.A.M members and the Black Knights have been working together to recover some sort of map.\pApparently, the map leads to some sort of weapon that will wipe out many of the inhabitants of Gielinor!\pHowever, we have no idea where the map leads and without it I doubt we will ever find out."))
+    closemessage
+    hidenamebox
+
+
+    applymovement(10, MOVEMENT_WALK_DOWN)
+    
+//Sir Owen
+    namebox ("Sir Owen")
+    msgbox(format("Thank you all for coming.\pWe have been hard at work interrograting the prisoners.\pIt appears that H.A.M and the Black Knights have been working together, but despite our best efforts they refuse to tell us their plans.\p{PLAYER} do you know anything that might be of help in our investigation?"))
+    closemessage
+    hidenamebox
+    applymovement(5, MOVEMENT_INTERACT_DOWN)
+    waitmovement(0)
+
+    namebox ("Sir Owen")
+    msgbox(format("What!?\pYou have already encountered two other H.A.M squads around Asgarnia!\pThey were trying to obtain these map pieces?"))
+    closemessage
+    hidenamebox
+
+    applymovement(10, movement_falador_postgym_8)
+    applymovement(1, movement_falador_postgym_7)
+    waitmovement(0)
+    
+    
+//Sir Tiffy
+    namebox ("Sir Tiffy Cashien")
+    msgbox(format("May I take a look at those?\pHmm…{PAUSE 15}\nThis is…\pYou must be pulling my leg!\pThis is a map to the lost island Crandor!"))
+    closemessage
+    hidenamebox
+
+//Sir Amik Varze
+    namebox ("Sir Amik Varze")
+    msgbox(format("What would H.A.M and the Black Knights want with Crandor?"))
+    closemessage
+    hidenamebox
+
+//Sir Tiffy
+    namebox ("Sir Tiffy Cashien")
+    msgbox(format("30 years ago, Crandor used to be a thriving city full of adventurers and mages but one day we lost all contact with them.\pThere must be something on the Island they want."))
+    //30 years ago, Crandor used to be a thriving city full of adventurers and mages but one day we lost all contact with them.
+    //To this day no one has figured out what happened, as sailing to the island has been next to impossible due to the harsh seas.
+    //
+    closemessage
+    hidenamebox
+
+    
+
+//Sir Amik Varze
+    namebox ("Sir Amik Varze")
+    msgbox(format("We will need to investigate this immediately and neutralise the H.A.M threat!\pI will organise the funds for a ship to set sail from Port Sarim to Crandor."))
+    closemessage
+    hidenamebox
+
+
+
+
+
+//Sir Owen 
+    namebox ("Sir Owen")
+    msgbox(format("That is easier said than done.\pSailing to the island has been next to impossible due to the harsh seas!"))
+    closemessage
+    hidenamebox
+
+
+    applymovement(10, movement_falador_postgym_9)
+    waitmovement(0)
+
+    namebox ("Sir Tiffy Cashien")
+    msgbox(format("Actually there may be someone who can help.\pCaptain Ned.\pHe is used to be one of the best sailors back in the day but has since retired in Draynor Village.\pIf anyone has the knowledge and experience to get there, it'll be him."))
+    closemessage
+    hidenamebox
+
+
+//Sir Amik Varze
+    namebox ("Sir Amik Varze")
+    msgbox(format("Very well, {PLAYER} I wouldn't normally do this but since you have the map and have proven your strength against the White Knights, I wish to ask for you assistance.\pPlease give Ned a visit over in Draynor and convice him to sail to Crandor.\pWe will be in contact once we have organised a vessel."))
+    closemessage
+    hidenamebox
+
+
+
+
+    setvar(VAR_TEMP_B, 0)
+    setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 125)
+
+	release
+	end
+
+}
+
+
+
+

@@ -1102,7 +1102,7 @@ NPC_POH_RAPTOR::
 	faceplayer
 	namebox NPC_POH_RAPTOR_Text_0
 	msgbox NPC_POH_RAPTOR_Text_1
-	giveitem ITEM_ROCKSMASH_TOOL, 1
+	giveitem ITEM_DRAGON_PICKAXE, 1
 	msgbox NPC_POH_RAPTOR_Text_2
 	hidenamebox
 	release

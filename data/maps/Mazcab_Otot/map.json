@@ -3,7 +3,7 @@
   "name": "Mazcab_Otot",
   "layout": "LAYOUT_MAZCAB_OTOT",
   "music": "MUS_PS_BARBARIAN_VILLAGE",
-  "region_map_section": "MAPSEC_TUTORIAL_ISLAND",
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_SNOW",
   "map_type": "MAP_TYPE_TOWN",

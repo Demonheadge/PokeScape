@@ -35,8 +35,8 @@ NPC_PortSarimPub_NPC_2::
 NPC_PortSarimPub_Pirate_1::
 	lock
 	faceplayer
-	namebox NPC_PortSarimPub_NPC_2_Text_0
-	msgbox NPC_PortSarimPub_Pirate_1_Text_0
+	namebox NPC_PortSarimPub_Pirate_1_Text_0
+	msgbox NPC_PortSarimPub_Pirate_1_Text_1
 	hidenamebox
 	goto_if_unset FLAG_UNUSED_0x935, NPC_PortSarimPub_Pirate_1_2
 NPC_PortSarimPub_Pirate_1_1:
@@ -45,7 +45,7 @@ NPC_PortSarimPub_Pirate_1_1:
 	end
 
 NPC_PortSarimPub_Pirate_1_2:
-	msgbox NPC_PortSarimPub_Pirate_1_Text_1, MSGBOX_YESNO
+	msgbox NPC_PortSarimPub_Pirate_1_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne NPC_PortSarimPub_Pirate_1_4
 	goto NPC_PortSarimPub_Pirate_1_1
@@ -53,9 +53,9 @@ NPC_PortSarimPub_Pirate_1_2:
 NPC_PortSarimPub_Pirate_1_4:
 	hidenamebox
 	setflag FLAG_UNUSED_0x935
-	trainerbattle_no_intro TRAINER_PUB_SARIM_1, NPC_PortSarimPub_Pirate_1_Text_2
-	namebox NPC_PortSarimPub_NPC_2_Text_0
-	msgbox NPC_PortSarimPub_Pirate_1_Text_3
+	trainerbattle_no_intro TRAINER_PUB_SARIM_1, NPC_PortSarimPub_Pirate_1_Text_3
+	namebox NPC_PortSarimPub_Pirate_1_Text_0
+	msgbox NPC_PortSarimPub_Pirate_1_Text_4
 	hidenamebox
 	call GIVE_RANDOM_ITEM
 	goto NPC_PortSarimPub_Pirate_1_1
@@ -64,8 +64,8 @@ NPC_PortSarimPub_Pirate_1_4:
 NPC_PortSarimPub_Pirate_2::
 	lock
 	faceplayer
-	namebox NPC_PortSarimPub_NPC_2_Text_0
-	msgbox NPC_PortSarimPub_Pirate_2_Text_0
+	namebox NPC_PortSarimPub_Pirate_2_Text_0
+	msgbox NPC_PortSarimPub_Pirate_2_Text_1
 	hidenamebox
 	goto_if_unset FLAG_UNUSED_0x936, NPC_PortSarimPub_Pirate_2_2
 NPC_PortSarimPub_Pirate_2_1:
@@ -74,7 +74,7 @@ NPC_PortSarimPub_Pirate_2_1:
 	end
 
 NPC_PortSarimPub_Pirate_2_2:
-	msgbox NPC_PortSarimPub_Pirate_1_Text_1, MSGBOX_YESNO
+	msgbox NPC_PortSarimPub_Pirate_1_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne NPC_PortSarimPub_Pirate_2_4
 	goto NPC_PortSarimPub_Pirate_2_1
@@ -82,9 +82,9 @@ NPC_PortSarimPub_Pirate_2_2:
 NPC_PortSarimPub_Pirate_2_4:
 	hidenamebox
 	setflag FLAG_UNUSED_0x936
-	trainerbattle_no_intro TRAINER_PUB_SARIM_2, NPC_PortSarimPub_Pirate_1_Text_2
-	namebox NPC_PortSarimPub_NPC_2_Text_0
-	msgbox NPC_PortSarimPub_Pirate_2_Text_1
+	trainerbattle_no_intro TRAINER_PUB_SARIM_2, NPC_PortSarimPub_Pirate_1_Text_3
+	namebox NPC_PortSarimPub_Pirate_2_Text_0
+	msgbox NPC_PortSarimPub_Pirate_2_Text_2
 	hidenamebox
 	call GIVE_RANDOM_ITEM
 	goto NPC_PortSarimPub_Pirate_2_1
@@ -103,7 +103,7 @@ NPC_PortSarimPub_Dwarf_1:
 	end
 
 NPC_PortSarimPub_Dwarf_2:
-	msgbox NPC_PortSarimPub_Pirate_1_Text_1, MSGBOX_YESNO
+	msgbox NPC_PortSarimPub_Pirate_1_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne NPC_PortSarimPub_Dwarf_4
 	goto NPC_PortSarimPub_Dwarf_1
@@ -111,7 +111,7 @@ NPC_PortSarimPub_Dwarf_2:
 NPC_PortSarimPub_Dwarf_4:
 	hidenamebox
 	setflag FLAG_UNUSED_0x937
-	trainerbattle_no_intro TRAINER_PUB_SARIM_3, NPC_PortSarimPub_Pirate_1_Text_2
+	trainerbattle_no_intro TRAINER_PUB_SARIM_3, NPC_PortSarimPub_Pirate_1_Text_3
 	namebox NPC_PortSarimPub_Dwarf_Text_0
 	msgbox NPC_PortSarimPub_Dwarf_Text_2
 	hidenamebox
@@ -124,26 +124,6 @@ NPC_PortSarimPub_PUBCRAWL::
 	faceplayer
 	namebox NPC_PortSarimPub_PUBCRAWL_Text_0
 	msgbox NPC_PortSarimPub_PUBCRAWL_Text_1
-	hidenamebox
-	release
-	end
-
-
-NPC_PortSarim_Church_Monk_1::
-	lock
-	faceplayer
-	namebox NPC_PortSarim_Church_Monk_1_Text_0
-	msgbox NPC_PortSarim_Church_Monk_1_Text_1
-	hidenamebox
-	release
-	end
-
-
-NPC_PortSarim_Church_Monk_2::
-	lock
-	faceplayer
-	namebox NPC_PortSarim_Church_Monk_1_Text_0
-	msgbox NPC_PortSarim_Church_Monk_2_Text_0
 	hidenamebox
 	release
 	end
@@ -241,6 +221,66 @@ GIVE_RANDOM_ITEM_19:
 	goto GIVE_RANDOM_ITEM_1
 
 
+NPC_PortSarim_Church_Monk_1::
+	lock
+	faceplayer
+	namebox NPC_PortSarim_Church_Monk_1_Text_0
+	msgbox NPC_PortSarim_Church_Monk_1_Text_1
+	hidenamebox
+	release
+	end
+
+
+NPC_PortSarim_Church_Monk_2::
+	lock
+	faceplayer
+	namebox NPC_PortSarim_Church_Monk_1_Text_0
+	msgbox NPC_PortSarim_Church_Monk_2_Text_0
+	hidenamebox
+	release
+	end
+
+
+NPC_Smuggler_Varlamore::
+	lock
+	faceplayer
+	namebox NPC_Smuggler_Varlamore_Text_0
+	checkitem ITEM_WHISTLE, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq NPC_Smuggler_Varlamore_2
+NPC_Smuggler_Varlamore_1:
+	msgbox NPC_Smuggler_Varlamore_Text_2
+	closemessage
+	hidenamebox
+	release
+	end
+
+NPC_Smuggler_Varlamore_2:
+	msgbox NPC_Smuggler_Varlamore_Text_1
+	closemessage
+	hidenamebox
+	giveitem ITEM_WHISTLE, 1
+	goto NPC_Smuggler_Varlamore_1
+
+
+WHISTLE_TELEPORT::
+	msgbox WHISTLE_TELEPORT_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne WHISTLE_TELEPORT_2
+	closemessage
+	release
+	end
+
+WHISTLE_TELEPORT_2:
+	playse SE_M_SCREECH
+	msgbox WHISTLE_TELEPORT_Text_1
+	applymovement OBJ_EVENT_ID_PLAYER, movement_TELEPORT_OUT
+	warpteleport MAP_VARLAMORE, 0, 0, 0
+	closemessage
+	release
+	end
+
+
 NPC_PortSarimPub_BARTENDER_Text_0:
 	.string "BARTENDER$"
 
@@ -274,30 +314,36 @@ NPC_PortSarimPub_NPC_2_Text_1:
 	.string "Disgusting!$"
 
 NPC_PortSarimPub_Pirate_1_Text_0:
+	.string "PIRATE GIBBS$"
+
+NPC_PortSarimPub_Pirate_1_Text_1:
 	.string "The customs officer confiscates all\n"
 	.string "Karamja Rum.\p"
 	.string "She is the reason the Rum is always\n"
 	.string "gone.$"
 
-NPC_PortSarimPub_Pirate_1_Text_1:
+NPC_PortSarimPub_Pirate_1_Text_2:
 	.string "Do you wish to challenge them to a\n"
 	.string "battle?$"
 
-NPC_PortSarimPub_Pirate_1_Text_2:
+NPC_PortSarimPub_Pirate_1_Text_3:
 	.string "…$"
 
-NPC_PortSarimPub_Pirate_1_Text_3:
+NPC_PortSarimPub_Pirate_1_Text_4:
 	.string "I guess I owe you this.$"
 
 NPC_PortSarimPub_Pirate_2_Text_0:
+	.string "PIRATE POPEYE$"
+
+NPC_PortSarimPub_Pirate_2_Text_1:
 	.string "AYE!\p"
 	.string "This is Port Sarim's Battle Pub.$"
 
-NPC_PortSarimPub_Pirate_2_Text_1:
+NPC_PortSarimPub_Pirate_2_Text_2:
 	.string "Yaarr, take this.$"
 
 NPC_PortSarimPub_Dwarf_Text_0:
-	.string "DWARF$"
+	.string "BREHAN$"
 
 NPC_PortSarimPub_Dwarf_Text_1:
 	.string "Outrageous!\p"
@@ -333,3 +379,32 @@ NPC_PortSarim_Church_Monk_2_Text_0:
 	.string "here.\p"
 	.string "I don't think many people know of its\n"
 	.string "existence.$"
+
+NPC_Smuggler_Varlamore_Text_0:
+	.string "Smuggler$"
+
+NPC_Smuggler_Varlamore_Text_1:
+	.string "Psst, have you heard?\p"
+	.string "There's a religion that worships the sun\n"
+	.string "to the content to the west.\p"
+	.string "Not many people from this continent\n"
+	.string "know about them.\p"
+	.string "The people from the continent are also\n"
+	.string "know to travel around by flying on the\l"
+	.string "backs of huge birds!\p"
+	.string "How cool is that!\p"
+	.string "……\p"
+	.string "Speaking of which, I need to get rid of\n"
+	.string "this whistle.\p"
+	.string "Take it.$"
+
+NPC_Smuggler_Varlamore_Text_2:
+	.string "You never got that whistle from me.$"
+
+WHISTLE_TELEPORT_Text_0:
+	.string "Would you like to teleport to\n"
+	.string "Varlamore?$"
+
+WHISTLE_TELEPORT_Text_1:
+	.string "Suddenly the world starts to warp\n"
+	.string "around you.$"

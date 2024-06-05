@@ -140,7 +140,7 @@ NPC_GOBLINVILLAGE_RECHOOSEPICKAXE::
 	hidenamebox
 	closemessage
 	msgbox NPC_GOBLINVILLAGE_RECHOOSEPICKAXE_Text_1
-	removeitem ITEM_ROCKSMASH_TOOL
+	removeitem ITEM_DRAGON_PICKAXE
 	removeitem ITEM_ADAMANTPICKAXE
 	removeitem ITEM_BRONZEPICKAXE
 	removeitem ITEM_IRONPICKAXE
@@ -186,7 +186,7 @@ NPC_GOBLINVILLAGE_CHOOSEPICKAXE_4:
 	namebox NPC_GOBLINVILLAGE_PICKAXE_EVENT_Text_0
 	msgbox NPC_GOBLINVILLAGE_CHOOSEPICKAXE_Text_1
 	hidenamebox
-	giveitem ITEM_ROCKSMASH_TOOL, 1
+	giveitem ITEM_DRAGON_PICKAXE, 1
 	goto NPC_GOBLINVILLAGE_CHOOSEPICKAXE_1
 
 NPC_GOBLINVILLAGE_CHOOSEPICKAXE_5:
@@ -345,10 +345,6 @@ NPC_GOBLINCHEIFS::
 
 EventScript_New_RockSmash::
 	lockall
-	checkitem ITEM_ROCKSMASH_TOOL, 1
-	compare VAR_RESULT, 0
-	goto_if_eq EventScript_New_RockSmash_2
-EventScript_New_RockSmash_1:
 	setfieldeffectargument 0, VAR_RESULT
 	msgbox Text_WantToSmash, MSGBOX_YESNO
 	compare VAR_RESULT, NO
@@ -358,52 +354,6 @@ EventScript_New_RockSmash_1:
 	waitstate
 	goto EventScript_SmashRock
 	end
-
-EventScript_New_RockSmash_2:
-	checkitem ITEM_ADAMANTPICKAXE, 1
-	compare VAR_RESULT, 0
-	goto_if_eq EventScript_New_RockSmash_4
-	goto EventScript_New_RockSmash_1
-
-EventScript_New_RockSmash_4:
-	checkitem ITEM_BRONZEPICKAXE, 1
-	compare VAR_RESULT, 0
-	goto_if_eq EventScript_New_RockSmash_6
-	goto EventScript_New_RockSmash_1
-
-EventScript_New_RockSmash_6:
-	checkitem ITEM_IRONPICKAXE, 1
-	compare VAR_RESULT, 0
-	goto_if_eq EventScript_New_RockSmash_8
-	goto EventScript_New_RockSmash_1
-
-EventScript_New_RockSmash_8:
-	checkitem ITEM_STEELPICKAXE, 1
-	compare VAR_RESULT, 0
-	goto_if_eq EventScript_New_RockSmash_10
-	goto EventScript_New_RockSmash_1
-
-EventScript_New_RockSmash_10:
-	checkitem ITEM_MITHRILPICKAXE, 1
-	compare VAR_RESULT, 0
-	goto_if_eq EventScript_New_RockSmash_12
-	goto EventScript_New_RockSmash_1
-
-EventScript_New_RockSmash_12:
-	checkitem ITEM_RUNEPICKAXE, 1
-	compare VAR_RESULT, 0
-	goto_if_eq EventScript_New_RockSmash_14
-	goto EventScript_New_RockSmash_1
-
-EventScript_New_RockSmash_14:
-	checkitem ITEM_BLACKPICKAXE, 1
-	compare VAR_RESULT, 0
-	goto_if_eq EventScript_New_RockSmash_16
-	goto EventScript_New_RockSmash_1
-
-EventScript_New_RockSmash_16:
-	goto_if_eq EventScript_CantSmashRock
-	goto EventScript_New_RockSmash_1
 
 
 NPC_GOBLINVILLAGE_PICKAXE_EVENT_Text_0:

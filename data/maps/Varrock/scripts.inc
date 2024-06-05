@@ -42,6 +42,16 @@ VARROCK_Gypsy_Aris_SIGNPOST::
 	end
 
 
+VARROCK_GYPSY_ARIS::
+	faceplayer
+	namebox VARROCK_GYPSY_ARIS_Text_0
+	msgbox VARROCK_GYPSY_ARIS_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 VARROCK_SCAMMER::
 	faceplayer
 	namebox VARROCK_SCAMMER_Text_0
@@ -678,6 +688,28 @@ NPC_SLAYERMASTERLIST::
 	end
 
 
+NPC_VARROCK_PILLORY_GUARD::
+	lock
+	faceplayer
+	namebox NPC_VARROCK_PILLORY_GUARD_Text_0
+	msgbox NPC_VARROCK_PILLORY_GUARD_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NPC_VARROCK_PILLORY_MUGGER::
+	lock
+	faceplayer
+	namebox NPC_VARROCK_PILLORY_MUGGER_Text_0
+	msgbox NPC_VARROCK_PILLORY_MUGGER_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 GAMEMODE_MONSTER_OR_POKEMON_SCRIPT::
 	faceplayer
 	msgbox GAMEMODE_MONSTER_OR_POKEMON_SCRIPT_Text_0, MSGBOX_YESNO
@@ -1060,6 +1092,65 @@ GIVE_RANDOM_ITEM_28_30:
 	goto GIVE_RANDOM_ITEM_28_1
 
 
+VARROCK_POTIONSTORE_BOOK::
+	msgbox VARROCK_POTIONSTORE_BOOK_Text_0
+	closemessage
+	release
+	end
+
+
+ITEM_VARROCK_POTIONSTORE::
+	finditem ITEM_POTION_ATT
+	end
+
+
+ITEM_VARROCK_CLOTHESSTORE::
+	finditem ITEM_ELEMENTAL_POUCH
+	end
+
+
+ITEM_NORTH_VARROCK_1::
+	finditem ITEM_EARTH_RUNE
+	end
+
+
+VARROCK_NPC_FROGEELBURGER::
+	faceplayer
+	msgbox VARROCK_NPC_FROGEELBURGER_Text_0
+	closemessage
+	hidenamebox
+	checkitem ITEM_FROGEEL_BURGER, 1
+	compare VAR_RESULT, 0
+	goto_if_ne VARROCK_NPC_FROGEELBURGER_2
+VARROCK_NPC_FROGEELBURGER_1:
+	release
+	end
+
+VARROCK_NPC_FROGEELBURGER_2:
+	msgbox VARROCK_NPC_FROGEELBURGER_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne VARROCK_NPC_FROGEELBURGER_4
+	goto VARROCK_NPC_FROGEELBURGER_1
+
+VARROCK_NPC_FROGEELBURGER_4:
+	removeitem ITEM_FROGEEL_BURGER, 1
+	addmoney 20000, 0
+	playse SE_SHOP
+	msgbox VARROCK_NPC_FROGEELBURGER_Text_2
+	closemessage
+	hidenamebox
+	goto VARROCK_NPC_FROGEELBURGER_1
+
+
+VARROCK_NPC_WondertradeHint::
+	faceplayer
+	msgbox VARROCK_NPC_WondertradeHint_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 VARROCK_SEWERS_SIGNPOST_Text_0:
 	.string "Sewers - Watch out for rats.$"
 
@@ -1077,6 +1168,18 @@ VARROCK_Gypsy_Aris_SIGNPOST_Text_0:
 	.string "I've moved to a small house in north\n"
 	.string "Varrock for the time being.\l"
 	.string "-Gypsy Aris.$"
+
+VARROCK_GYPSY_ARIS_Text_0:
+	.string "Gypsy Aris$"
+
+VARROCK_GYPSY_ARIS_Text_1:
+	.string "Hello, sorry my future-sight services\n"
+	.string "are not currently available.\p"
+	.string "As MvM challengers like yourself\n"
+	.string "destroyed my tent.\p"
+	.string "Thankfully Sir Prysin was kind enough\n"
+	.string "to allow me to stay in his home until my\l"
+	.string "tent is repaired.$"
 
 VARROCK_SCAMMER_Text_0:
 	.string "Suspicious Man$"
@@ -1485,6 +1588,22 @@ NPC_SLAYERMASTERLIST_Text_2:
 	.string "participate in the… …\p"
 	.string "The page is torn.$"
 
+NPC_VARROCK_PILLORY_GUARD_Text_0:
+	.string "Pillory Guard$"
+
+NPC_VARROCK_PILLORY_GUARD_Text_1:
+	.string "If I catch you stealing from anybody in\n"
+	.string "the city, you'll end up locked away in\l"
+	.string "here like this delinquent!$"
+
+NPC_VARROCK_PILLORY_MUGGER_Text_0:
+	.string "Mugger$"
+
+NPC_VARROCK_PILLORY_MUGGER_Text_1:
+	.string "Argh! My fingers are so numb from all\n"
+	.string "the pickpocketing I've been doing that\l"
+	.string "I can't pick this damn lock to escape...$"
+
 GAMEMODE_MONSTER_OR_POKEMON_SCRIPT_Text_0:
 	.string "EDIT GAMEMODE?$"
 
@@ -1565,7 +1684,7 @@ NPC_VARROCK_CAT_INFO_Text_0:
 
 NPC_VARROCK_CAT_INFO_Text_1:
 	.string "It is commonly known that a Kitten can\n"
-	.string "evolve into a Cat at level 20.\p"
+	.string "evolve into a Cat by levelling it up.\p"
 	.string "But a Cat can evolve into many other\n"
 	.string "forms from there.\p"
 	.string "Some cats can evolve from having\n"
@@ -1580,7 +1699,7 @@ NPC_VARROCK_CAT_INFO_Text_1:
 	.string "cause a cat to get a bit too overgrown.$"
 
 NPC_ROUTE18_MAN_Text_0:
-	.string "Over the road here is Gertrudes house.\p"
+	.string "Over the road here is Gertrude's house.\p"
 	.string "If you like cats then I think you should\n"
 	.string "pay her a visit.\p"
 	.string "If I was not busy sitting on this bench\n"
@@ -1622,3 +1741,35 @@ NPC_GOODIEBAG_Text_6:
 NPC_GOODIEBAG_Text_7:
 	.string "You should come back tomorrow for\n"
 	.string "another Goodie.$"
+
+VARROCK_POTIONSTORE_BOOK_Text_0:
+	.string "Using potions in battle allow your\n"
+	.string "stats to temporarily be boosted.\p"
+	.string "The strength of a potion determines\n"
+	.string "how much stats are boosted by.\p"
+	.string "Regular potions boost stats by 2\n"
+	.string "levels.\p"
+	.string "Super Potions boosts stats by 3 levels.\p"
+	.string "Extreme potions boosts stats by 5\n"
+	.string "levels.$"
+
+VARROCK_NPC_FROGEELBURGER_Text_0:
+	.string "{COLOR BLUE}cyan:wave: Buying Frogeel Burgers 20k\n"
+	.string "ea!$"
+
+VARROCK_NPC_FROGEELBURGER_Text_1:
+	.string "Oh my!\p"
+	.string "Is that a Frogeel burger I smell?!\p"
+	.string "May I buy it off you for 20k gp?$"
+
+VARROCK_NPC_FROGEELBURGER_Text_2:
+	.string "Thank you, these are delicious!\p"
+	.string "If you have any more come back and I'll\n"
+	.string "buy them from you.$"
+
+VARROCK_NPC_WondertradeHint_Text_0:
+	.string "There is a desk at the Grand Exchange\n"
+	.string "that allows you to trade your monsters\l"
+	.string "with a stranger.\p"
+	.string "It's very useful for those who don't\n"
+	.string "have any friends to trade with, like me.$"

@@ -879,6 +879,11 @@ static const struct MenuAction MultichoiceList_SCURRIUS[] =
     {gText_GLOWING_MOSS},
     {gText_BROWN_WATER},
 };
+static const struct MenuAction MultichoiceList_AXES[] =
+{
+    {gText_PICKAXE},
+    {gText_AXE},
+};
 
 static const struct MenuAction MultichoiceList_Exit[] =
 {
@@ -1021,6 +1026,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FREMMYTEAMS]				   = MULTICHOICE(MultichoiceList_FREMMYTEAMS),
     [MULTI_SLAYER_MASTER]			   = MULTICHOICE(MultichoiceList_SLAYER_MASTER),
     [MULTI_SCURRIUS]			       = MULTICHOICE(MultichoiceList_SCURRIUS),
+    [MULTI_AXES]			           = MULTICHOICE(MultichoiceList_AXES),
 };
 
 const u8 *const gStdStrings[] =

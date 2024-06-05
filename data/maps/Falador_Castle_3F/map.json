@@ -19,7 +19,7 @@
       "x": 3,
       "y": 2,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 2,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -29,7 +29,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GUARD_FALADOR",
-      "x": 24,
+      "x": 19,
       "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
@@ -38,20 +38,111 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NPC_FALADORCASTLE_GUARD_2",
-      "flag": "0"
+      "flag": "FLAG_TEMP_1E"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KNIGHT_WHITE_M",
       "x": 18,
-      "y": 6,
+      "y": 5,
       "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_DOWN_AND_UP",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_FALADORCASTLE_KNIGHT_9",
+      "flag": "FLAG_TEMP_1E"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_KNIGHT_WHITE_M",
+      "x": 3,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_TEMP_1F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SIR_OWEN",
+      "x": 19,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_TEMP_1F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_KNIGHT_BLACK_F",
+      "x": 25,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_FALADORCASTLE_GYM_BLACKKNIGHT",
+      "flag": "FLAG_TEMP_1F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_KNIGHT_BLACK_M",
+      "x": 22,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_FALADORCASTLE_GYM_BLACKKNIGHT",
+      "flag": "FLAG_TEMP_1F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_M",
+      "x": 26,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_FALADORCASTLE_GYM_HAM",
+      "flag": "FLAG_TEMP_1F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_M",
+      "x": 22,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_FALADORCASTLE_GYM_HAM",
+      "flag": "FLAG_TEMP_1F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_KNIGHT_WHITE_SIRTIFFYCASHIN",
+      "x": 20,
+      "y": 3,
+      "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_FALADORCASTLE_KNIGHT_9",
-      "flag": "0"
+      "script": "NULL",
+      "flag": "FLAG_TEMP_1F"
     }
   ],
   "warp_events": [
@@ -77,7 +168,7 @@
       "dest_warp_id": "6"
     },
     {
-      "x": 20,
+      "x": 19,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_FALADOR_CASTLE_2F",

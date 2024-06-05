@@ -674,6 +674,7 @@ gSongTable::
 	song MUS_PS_QUEST_COMPLETE, 2, 2
 	song MUS_PS_KOUREND_CATACOMBS, 0, 0
 	song MUS_PS_TRAINER_VICTORY, 0, 0
+	song MUS_PS_VS_CHAOS_TUNNELS, 0, 0
 	
 	.align 2
 dummy_song_header:

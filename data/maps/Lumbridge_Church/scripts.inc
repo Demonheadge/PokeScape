@@ -122,7 +122,7 @@ GnomeBoi_Kevin_8:
 	giveitem ITEM_DRAGON_NET
 	giveitem ITEM_TERRORBIRD_POUCH
 	giveitem ITEM_YAK_POUCH
-	giveitem ITEM_ROCKSMASH_TOOL
+	giveitem ITEM_DRAGON_PICKAXE
 	giveitem ITEM_SURF_TOOL
 	giveitem ITEM_CUT_TOOL
 	giveitem ITEM_STRENGTH_TOOL

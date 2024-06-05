@@ -391,7 +391,7 @@ u32 CheckBagHasPickaxe(void)
     bool32 bagHasItem = FALSE;
     if (CheckBagHasItem(ITEM_ROCKSMASH_TOOL,1) || CheckBagHasItem(ITEM_RUNEPICKAXE,1) || CheckBagHasItem(ITEM_ADAMANTPICKAXE,1) ||
         CheckBagHasItem(ITEM_MITHRILPICKAXE,1) || CheckBagHasItem(ITEM_BLACKPICKAXE,1) || CheckBagHasItem(ITEM_STEELPICKAXE,1) ||
-        CheckBagHasItem(ITEM_IRONPICKAXE,1) || CheckBagHasItem(ITEM_BRONZEPICKAXE,1))
+        CheckBagHasItem(ITEM_IRONPICKAXE,1) || CheckBagHasItem(ITEM_DRAGON_PICKAXE,1) || CheckBagHasItem(ITEM_BRONZEPICKAXE,1))
     bagHasItem = TRUE;
 
     return bagHasItem;

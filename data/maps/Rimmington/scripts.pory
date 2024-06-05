@@ -1052,7 +1052,7 @@ script NPC_POH_RAPTOR{
     faceplayer
     namebox("RAPTOR")
     msgbox(format("Hey you came!\pHere I have something for you!"))
-    giveitem(ITEM_ROCKSMASH_TOOL, 1)
+    giveitem(ITEM_DRAGON_PICKAXE, 1)
     msgbox(format("With this you can mine rocks."))
     hidenamebox
     release

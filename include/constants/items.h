@@ -1263,9 +1263,9 @@
 #define ITEM_MITHRILPICKAXE		    (FINAL_VANILLA_ITEM + 170 )
 #define ITEM_ADAMANTPICKAXE		    (FINAL_VANILLA_ITEM + 171 )
 #define ITEM_RUNEPICKAXE		    (FINAL_VANILLA_ITEM + 172 )
+#define ITEM_DRAGON_PICKAXE         (FINAL_VANILLA_ITEM + 173 )
 
 //Special interaction key items		
-//#define ITEM_FREE                 (FINAL_VANILLA_ITEM + 173 )
 #define ITEM_XERIC		            (FINAL_VANILLA_ITEM + 174 )
 #define ITEM_ROTTEN_POTATO		    (FINAL_VANILLA_ITEM + 175 )
 #define ITEM_SLAYER_GEM		        (FINAL_VANILLA_ITEM + 176 )
@@ -1358,7 +1358,14 @@
 #define ITEM_DG_BALL_OF_WOOL		(FINAL_VANILLA_ITEM + 251 )
 #define ITEM_DG_ROPE		        (FINAL_VANILLA_ITEM + 252 )
 
-#define ITEMS_COUNT 1068
+#define ITEM_WHISTLE                (FINAL_VANILLA_ITEM + 253 )
+#define ITEM_ROPE                   (FINAL_VANILLA_ITEM + 254 )
+
+
+
+
+
+#define ITEMS_COUNT 1070
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

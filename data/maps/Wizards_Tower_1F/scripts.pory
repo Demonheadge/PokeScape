@@ -109,7 +109,7 @@ script WizardsTower_SEDRIDOR{
 			lock
 			faceplayer
 			namebox ("Sedridor")
-			msgbox(format("Could you please go after ariane."))
+			msgbox(format("Could you please go after Ariane."))
 			hidenamebox
 			release
 			end

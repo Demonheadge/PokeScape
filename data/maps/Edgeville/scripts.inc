@@ -324,13 +324,52 @@ EDGEVILLE_GYM_GIVE_SLAYER_POINTS::
 	return
 
 
+NPC_EDGEVILLE_GYM_LADDER::
+	msgbox NPC_EDGEVILLE_GYM_LADDER_Text_0
+	closemessage
+	end
+
+
+ITEM_BRASS_HOUSE::
+	finditem ITEM_EFFIGY
+	end
+
+
+TRIGGER_BRASS_KEY_DOOR::
+	lock
+	goto_if_unset FLAG_BRASS_KEY, TRIGGER_BRASS_KEY_DOOR_2
+	setvar VAR_TEMP_1, 1
+	release
+	end
+
+TRIGGER_BRASS_KEY_DOOR_2:
+	msgbox TRIGGER_BRASS_KEY_DOOR_Text_0
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN
+	waitmovement 0
+	release
+	end
+
+
+FIND_BRASS_KEY::
+	lock
+	setflag FLAG_BRASS_KEY
+	removeobject VAR_LAST_TALKED
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox FIND_BRASS_KEY_Text_0
+	waitfanfare
+	closemessage
+	release
+	end
+
+
 ITEM_EDGEVILLE_INDOOR_1::
 	finditem ITEM_NONE
 	end
 
 
 ITEM_EDGEVILLE_INDOOR_2::
-	finditem ITEM_NONE
+	finditem ITEM_FIRE_RUNE
 	end
 
 
@@ -387,7 +426,8 @@ NPC_EDGEVILLE_HOUSE_NPC_5::
 NPC_EDGEVILLE_HOUSE_NPC_6::
 	lock
 	faceplayer
-	msgbox NPC_EDGEVILLE_HOUSE_NPC_1_Text_0
+	namebox NPC_EDGEVILLE_HOUSE_NPC_6_Text_0
+	msgbox NPC_EDGEVILLE_HOUSE_NPC_6_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -397,7 +437,8 @@ NPC_EDGEVILLE_HOUSE_NPC_6::
 NPC_EDGEVILLE_HOUSE_NPC_7::
 	lock
 	faceplayer
-	msgbox NPC_EDGEVILLE_HOUSE_NPC_1_Text_0
+	namebox NPC_EDGEVILLE_HOUSE_NPC_7_Text_0
+	msgbox NPC_EDGEVILLE_HOUSE_NPC_7_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -407,7 +448,8 @@ NPC_EDGEVILLE_HOUSE_NPC_7::
 NPC_EDGEVILLE_HOUSE_NPC_8::
 	lock
 	faceplayer
-	msgbox NPC_EDGEVILLE_HOUSE_NPC_1_Text_0
+	namebox NPC_EDGEVILLE_HOUSE_NPC_8_Text_0
+	msgbox NPC_EDGEVILLE_HOUSE_NPC_8_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -645,5 +687,42 @@ EDGEVILLE_GYM_GIVE_SLAYER_POINTS_Text_0:
 EDGEVILLE_GYM_GIVE_SLAYER_POINTS_Text_1:
 	.string "You should return to Vannaka.$"
 
+NPC_EDGEVILLE_GYM_LADDER_Text_0:
+	.string "The ladder appears to be broken.$"
+
+TRIGGER_BRASS_KEY_DOOR_Text_0:
+	.string "The door is locked with what looks like\n"
+	.string "a brass padlock.$"
+
+FIND_BRASS_KEY_Text_0:
+	.string "{PLAYER} obtained the BRASS KEY.$"
+
 NPC_EDGEVILLE_HOUSE_NPC_1_Text_0:
 	.string "Hello, I am a Cupholder.$"
+
+NPC_EDGEVILLE_HOUSE_NPC_6_Text_0:
+	.string "Oziach$"
+
+NPC_EDGEVILLE_HOUSE_NPC_6_Text_1:
+	.string "Aye, 'tis a fair day my friend.\p"
+	.string "May the gods walk by yer side.\p"
+	.string "Now leave me alone, I'm all outta rune\n"
+	.string "platebodies.$"
+
+NPC_EDGEVILLE_HOUSE_NPC_7_Text_0:
+	.string "RUMadBr0$"
+
+NPC_EDGEVILLE_HOUSE_NPC_7_Text_1:
+	.string "What do you mean you don't sell PK\n"
+	.string "supplies!?\p"
+	.string "We are right next to the Wilderness!\p"
+	.string "Who on Gielinor is going to come in here\n"
+	.string "wanting to buy shears or a cake tin!$"
+
+NPC_EDGEVILLE_HOUSE_NPC_8_Text_0:
+	.string "DHBOMB99$"
+
+NPC_EDGEVILLE_HOUSE_NPC_8_Text_1:
+	.string "I'm waiting on my friend buying some\n"
+	.string "supplies, then we are going to the\l"
+	.string "Wilderness to PK and get filthy rich!$"
