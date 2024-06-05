@@ -13,7 +13,7 @@ LavaridgeTown_Mart_EventScript_Clerk::
 
 	.align 2
 LavaridgeTown_Mart_Pokemart:
-	.2byte ITEM_BRONZE_POUCH
+	.2byte ITEM_NORMAL_POUCH
 	.2byte ITEM_SUPER_POTION
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL

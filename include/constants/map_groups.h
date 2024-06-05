@@ -619,6 +619,7 @@
 #define MAP_VARROCK_CHURCH              (23 | (34 << 8))
 #define MAP_CRANDOR                     (24 | (34 << 8))
 #define MAP_DAEMONHEIM                  (25 | (34 << 8))
+#define MAP_DIGSITE                     (26 | (34 << 8))
 
 // gMapGroup_PokescapeRoutes
 #define MAP_ROUTE1   (0 | (35 << 8))
@@ -759,6 +760,7 @@
 #define MAP_DRAYNOR_SEWERS_3        (7 | (39 << 8))
 #define MAP_DRAYNOR_SEWERS_4        (8 | (39 << 8))
 #define MAP_DRAYNOR_HOUSE_AGGIE     (9 | (39 << 8))
+#define MAP_DRAYNOR_HOUSE_NED       (10 | (39 << 8))
 
 // gMapGroup_PokescapeIndoorPortSarim
 #define MAP_PORT_SARIM_PUB_1F           (0 | (40 << 8))
@@ -813,6 +815,10 @@
 #define MAP_FALADOR_CASTLE_2F        (15 | (42 << 8))
 #define MAP_FALADOR_CASTLE_3F        (16 | (42 << 8))
 #define MAP_FALADOR_MACE_STORE       (17 | (42 << 8))
+#define MAP_FALADOR_PARTY_ROOM       (18 | (42 << 8))
+#define MAP_FALADOR_CASTLE_1F_R2     (19 | (42 << 8))
+#define MAP_FALADOR_CASTLE_1F_R3     (20 | (42 << 8))
+#define MAP_FALADOR_CASTLE_3F_R2     (21 | (42 << 8))
 
 // gMapGroup_PokescapeIndoorVarrock
 #define MAP_VARROCK_THESSALIA_SHOP    (0 | (43 << 8))
@@ -844,6 +850,10 @@
 #define MAP_VARROCK_SEWERS_3F         (26 | (43 << 8))
 #define MAP_ROUTE19_COOKING_GUILD     (27 | (43 << 8))
 #define MAP_VARROCK_HOUSE_5           (28 | (43 << 8))
+#define MAP_VARROCK_HOUSE_6           (29 | (43 << 8))
+#define MAP_VARROCK_HOUSE_7           (30 | (43 << 8))
+#define MAP_VARROCK_HOUSE_8           (31 | (43 << 8))
+#define MAP_VARROCK_HOUSE_9           (32 | (43 << 8))
 
 // gMapGroup_PokescapeIndoorBarbarianVillage
 #define MAP_BARBARIAN_VILLAGE_GYM_HALL (0 | (44 << 8))
@@ -887,17 +897,18 @@
 #define MAP_DAEMONHEIM_BANK     (18 | (46 << 8))
 
 // gMapGroup47
-#define MAP_EDGEVILLE_GYM              (0 | (47 << 8))
-#define MAP_EDGEVILLE_HOUSE_1          (1 | (47 << 8))
-#define MAP_EDGEVILLE_HOUSE_2          (2 | (47 << 8))
-#define MAP_EDGEVILLE_HOUSE_3          (3 | (47 << 8))
-#define MAP_EDGEVILLE_HOUSE_4          (4 | (47 << 8))
-#define MAP_EDGEVILLE_BANK             (5 | (47 << 8))
-#define MAP_EDGEVILLE_GENERAL_STORE    (6 | (47 << 8))
-#define MAP_EDGEVILLE_GENERAL_STORE_2F (7 | (47 << 8))
-#define MAP_DWARVEN_MINES_HOUSE_1      (8 | (47 << 8))
-#define MAP_DWARVEN_MINES_HOUSE_2      (9 | (47 << 8))
-#define MAP_DWARVEN_MINES_HOUSE_3      (10 | (47 << 8))
+#define MAP_EDGEVILLE_GYM                 (0 | (47 << 8))
+#define MAP_EDGEVILLE_HOUSE_1             (1 | (47 << 8))
+#define MAP_EDGEVILLE_HOUSE_2             (2 | (47 << 8))
+#define MAP_EDGEVILLE_HOUSE_3             (3 | (47 << 8))
+#define MAP_EDGEVILLE_HOUSE_4             (4 | (47 << 8))
+#define MAP_EDGEVILLE_BANK                (5 | (47 << 8))
+#define MAP_EDGEVILLE_GENERAL_STORE       (6 | (47 << 8))
+#define MAP_EDGEVILLE_GENERAL_STORE_2F    (7 | (47 << 8))
+#define MAP_DWARVEN_MINES_HOUSE_1         (8 | (47 << 8))
+#define MAP_DWARVEN_MINES_HOUSE_2         (9 | (47 << 8))
+#define MAP_DWARVEN_MINES_HOUSE_3         (10 | (47 << 8))
+#define MAP_EDGEVILLE_ROUTE19_BRASS_HOUSE (11 | (47 << 8))
 
 // gMapGroup_PokescapeOutdoorMembers
 #define MAP_YANILLE       (0 | (48 << 8))
@@ -925,6 +936,12 @@
 #define MAP_ROUTE170      (22 | (48 << 8))
 #define MAP_ROUTE171      (23 | (48 << 8))
 #define MAP_ROUTE172      (24 | (48 << 8))
+#define MAP_CANIFIS       (25 | (48 << 8))
+#define MAP_ROUTE180      (26 | (48 << 8))
+#define MAP_ROUTE60       (27 | (48 << 8))
+#define MAP_ROUTE61       (28 | (48 << 8))
+#define MAP_ROUTE62       (29 | (48 << 8))
+#define MAP_ROUTE63       (30 | (48 << 8))
 
 // gMapGroup_PokescapeIndoorTzhaar
 #define MAP_TZHAAR_1F          (0 | (49 << 8))
@@ -1022,6 +1039,9 @@
 #define MAP_WILDERNESS_VOLCANO_ROOM_4           (83 | (50 << 8))
 #define MAP_MUDSKIPPER_POINT_THURGOS_HUT        (84 | (50 << 8))
 #define MAP_ZAMORAK_CHURCH                      (85 | (50 << 8))
+#define MAP_CRANDOR_SEA_ROUTE                   (86 | (50 << 8))
+#define MAP_UNGAEL                              (87 | (50 << 8))
+#define MAP_VARLAMORE                           (88 | (50 << 8))
 
 #define MAP_GROUPS_COUNT 51
 

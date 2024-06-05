@@ -5171,5 +5171,10 @@ static const u8 sMYSTERYTALISMANDesc[] = _(
     "Talisman.\n"
     "(Rune Mysteries)");
 
+static const u8 sWhistle_Desc[] = _(
+    "An whistle that\n"
+    "will teleport you\n"
+    "to another land.");
+
 static const u8 sCupholderDesc[] = _(
     "This is a Cupholder.");

@@ -3,7 +3,7 @@
   "name": "Tutorial_Island_Lab_Up",
   "layout": "LAYOUT_TUTORIAL_ISLAND_LAB_UP",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_TUTORIAL_ISLAND",
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

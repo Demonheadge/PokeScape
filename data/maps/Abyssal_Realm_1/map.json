@@ -215,8 +215,8 @@
       "x": 20,
       "y": 24,
       "elevation": 0,
-      "dest_map": "MAP_FALADOR",
-      "dest_warp_id": "14"
+      "dest_map": "MAP_MINIGAME_2",
+      "dest_warp_id": "0"
     },
     {
       "x": 43,
@@ -248,14 +248,14 @@
     },
     {
       "x": 7,
-      "y": 5,
+      "y": 4,
       "elevation": 0,
       "dest_map": "MAP_YANILLE",
       "dest_warp_id": "0"
     },
     {
       "x": 12,
-      "y": 3,
+      "y": 2,
       "elevation": 0,
       "dest_map": "MAP_MUSA_POINT",
       "dest_warp_id": "0"
@@ -490,6 +490,27 @@
       "elevation": 0,
       "dest_map": "MAP_WILDERNESS_VOLCANO_LOBBY",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 58,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_CANIFIS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 73,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_CRANDOR",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 59,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_RIMMINGTON",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

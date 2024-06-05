@@ -388,12 +388,27 @@
 #define	TRAINER_CRANDOR_MOSS_GIANT_3		    	    384
 #define	TRAINER_MELZARSMAZE_MELZAR_THE_MAD			    385
 #define	TRAINER_MELZARSMAZE_HAM_ADMIN_BABE			    386
+#define	TRAINER_NONE_1			                        387 //UNUSED
+#define	TRAINER_NONE_2			                        388 //UNUSED
+#define TRAINER_ROUTE26_TRAINER_1                       389
+#define TRAINER_ROUTE26_TRAINER_2                       390
+#define TRAINER_ROUTE26_TRAINER_3                       391
+#define TRAINER_ROUTE26_TRAINER_4                       392
+#define TRAINER_JMOD_OWLY                               393
+#define TRAINER_FALADOR_GYM_5                           394
+#define TRAINER_ROUTE0_TRAINER_1                        395
+#define TRAINER_ROUTE0_TRAINER_2                        396
+#define TRAINER_ROUTE0_TRAINER_3                        397
+#define TRAINER_ROUTE0_TRAINER_4                        398
+#define TRAINER_ROUTE0_TRAINER_5                        399
+#define TRAINER_LUM_SWAMP_TRAINER_5                     400
+#define TRAINER_FALADOR_GYM_6                           401
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      387
+#define TRAINERS_COUNT                      402
 #define MAX_TRAINERS_COUNT                  864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

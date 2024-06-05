@@ -3,7 +3,7 @@
   "name": "Route53",
   "layout": "LAYOUT_ROUTE53",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_TUTORIAL_ISLAND",
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",

@@ -306,3 +306,6 @@ const u16 gMetatileAttributes_Ice_Mountain[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_ChaosTunnels[] = INCBIN_U16("data/tilesets/secondary/chaos_tunnels/metatiles.bin");
 const u16 gMetatileAttributes_ChaosTunnels[] = INCBIN_U16("data/tilesets/secondary/chaos_tunnels/metatile_attributes.bin");
+
+const u16 gMetatiles_Rellekka[] = INCBIN_U16("data/tilesets/secondary/rellekka/metatiles.bin");
+const u16 gMetatileAttributes_Rellekka[] = INCBIN_U16("data/tilesets/secondary/rellekka/metatile_attributes.bin");

@@ -42,6 +42,11 @@
       "map": "MAP_GRAND_EXCHANGE",
       "offset": -12,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE18",
+      "offset": 42,
+      "direction": "left"
     }
   ],
   "object_events": [
@@ -125,13 +130,13 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WIZARD_GUTHIX",
-      "x": 7,
-      "y": 36,
+      "x": 8,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_BURIED",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VARROCK_NPC_11",
       "flag": "0"
@@ -393,8 +398,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_NORTH_VARROCK_1",
+      "flag": "FLAG_ITEM_NORTH_VARROCK_1"
     }
   ],
   "warp_events": [
@@ -428,9 +433,9 @@
     },
     {
       "x": 50,
-      "y": 10,
+      "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_VARROCK_NORTH",
+      "dest_map": "MAP_VARROCK_HOUSE_6",
       "dest_warp_id": "0"
     },
     {
@@ -480,6 +485,24 @@
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "BLOCK_DEMO_END"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TRIGGER_GE_GUARD_BLOCK"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TRIGGER_GE_GUARD_BLOCK"
     }
   ],
   "bg_events": [
@@ -514,6 +537,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "VARROCKGYM_SIGNPOST"
+    },
+    {
+      "type": "sign",
+      "x": 49,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LOCKED_DOOR"
     }
   ]
 }

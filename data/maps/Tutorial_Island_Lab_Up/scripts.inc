@@ -84,7 +84,7 @@ SkipChoice_1:
 	special EnableNationalPokedex
 	setflag FLAG_RECEIVED_RUNNING_SHOES
 	setflag FLAG_SYS_B_DASH
-	giveitem ITEM_ROCKSMASH_TOOL
+	giveitem ITEM_DRAGON_PICKAXE
 	giveitem ITEM_SMALL_NET
 	release
 	goto_if_set FLAG_MEMBERSHIP, SkipChoice_4

@@ -30,7 +30,7 @@
     },
     {
       "map": "MAP_RELLEKKA",
-      "offset": 0,
+      "offset": 31,
       "direction": "down"
     }
   ],

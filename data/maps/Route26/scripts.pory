@@ -1,6 +1,110 @@
+const OBJ_EVENT_ID_PENGUIN_DND = 11
+const OBJ_EVENT_ID_PENGUIN = 12
+
 mapscripts Route26_MapScripts{
 	MAP_SCRIPT_ON_TRANSITION {
         setvar(VAR_EVOLUTION_MAP_STATE, 3) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
         call(WEATHER_CHANGE_ROUTE_SNOW)
+        call(PENGUIN_EVENT)
 	}
+}
+
+script ENCOUNTER_PENGUIN_BOX_ROUTE26 {
+	lock
+	faceplayer
+    namebox ("Penguin")
+	playmoncry(SPECIES_PENGUIN_DISGUISE_BOX_FORM, 0)
+	msgbox(format("Noot! Noot!"))
+	waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+	setwildbattle (SPECIES_PENGUIN_DISGUISE_BOX_FORM, 15, ITEM_NONE)
+	dowildbattle
+    if (var(VAR_RESULT) == B_OUTCOME_WON || var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
+        fadescreen(FADE_TO_BLACK)
+        setflag(FLAG_TEMP_8)
+        setflag(FLAG_TEMP_9)
+        removeobject(OBJ_EVENT_ID_PENGUIN_DND)
+        removeobject(OBJ_EVENT_ID_PENGUIN)
+		savebgm(MUS_DUMMY) //<- IMPORTANT
+        fadedefaultbgm //<- IMPORTANT
+        fadescreen(FADE_FROM_BLACK)
+        closemessage
+	}
+    end
+}
+
+//Signs
+
+script SIGN_ROUTE26
+{
+	lock
+	msgbox(format("NORTH to ICE MOUNTAIN\pSOUTH to the DWARVEN MINES"))
+	release
+	end
+}
+
+
+//Battles
+
+//Dwarves
+
+script BATTLE_ROUTE26_TRAINER_1
+{
+    trainerbattle_single(TRAINER_ROUTE26_TRAINER_1, format("Hey!\pToo many humans have been coming here and disturbing us when are just trying to earn a living!\pI won't let you do the same!"),format("Eek! You're strong."))
+    namebox ("Omril")
+    msgbox(format("Please don't disturb our village."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_ROUTE26_TRAINER_2
+{
+    trainerbattle_single(TRAINER_ROUTE26_TRAINER_2, format("Beware of landslides!\pBut for now you should beware of me!"),format("You came crashing down on me like a landslide."))
+    namebox ("Elkot")
+    msgbox(format("We've had no many earthquakes and landslides lately we're not sure what are actually causing them.\pMaybe something deep within the mines?"))
+    hidenamebox
+    release
+    end
+}
+
+//Quester
+script BATTLE_ROUTE26_TRAINER_3
+{
+    trainerbattle_single(TRAINER_ROUTE26_TRAINER_3, format("Out of my way, I am on a quest for the Guildmaster of the Champions Guild!"),format("Maybe I need a stronger team before trying to take on this quest…"))
+    namebox ("4TheL0re")
+    msgbox(format("Maybe I need a stronger team before trying to take on this quest…"))
+    hidenamebox
+    release
+    end
+}
+
+//Archaeologist
+script BATTLE_ROUTE26_TRAINER_4
+{
+    trainerbattle_single(TRAINER_ROUTE26_TRAINER_4, format("I was told that there are the ruins of an ancient civilisation buried around here.\pIt will be my discovery, not yours!"),format("Oh.. Well maybe we could share the credit instead if we find it?"))
+    namebox ("Gerald")
+    msgbox(format("Supposedly the cavern I am searching for was one the hall of the Imcando dwarves.\pI don't think there are any of them left alive now."))
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+//Items
+
+script ROUTE26_SUPER_PRAYER_POTION
+{
+    finditem(ITEM_SUPER_PRAYER_POTION)
+    end
+}
+
+script ROUTE26_ADAMANT_POUCH
+{
+    finditem(ITEM_ADAMANT_POUCH)
+    end
 }

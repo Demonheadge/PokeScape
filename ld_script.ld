@@ -1307,6 +1307,7 @@ SECTIONS {
         sound/songs/midi/MUS_PS_QUEST_COMPLETE.o(.rodata);
         sound/songs/midi/MUS_PS_KOUREND_CATACOMBS.o(.rodata);
         sound/songs/midi/MUS_PS_VS_TRAINER_P2P.o(.rodata);
+        sound/songs/midi/MUS_PS_VS_CHAOS_TUNNELS.o(.rodata);
     } > ROM =0
 
     lib_rodata :

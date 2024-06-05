@@ -261,6 +261,7 @@ BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection::
 
 BattleFrontier_Lounge7_EventScript_TeachTutorMove::
 	msgbox BattleFrontier_Lounge7_Text_TeachMoveToWhichMon, MSGBOX_DEFAULT
+	@ special GetBattleFrontierTutorMoveIndex
 	fadescreen FADE_TO_BLACK
 	special CloseBattlePointsWindow
 	special CloseBattleFrontierTutorWindow

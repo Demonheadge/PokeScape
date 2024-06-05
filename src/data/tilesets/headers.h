@@ -1187,3 +1187,16 @@ const struct Tileset gTileset_ChaosTunnels =
 	.metatileAttributes = gMetatileAttributes_ChaosTunnels,
 	.callback = NULL,
 };
+
+const struct Tileset gTileset_Rellekka =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+	.tiles = gTilesetTiles_Rellekka,
+	.palettes = gTilesetPalettes_Rellekka,
+	.metatiles = gMetatiles_Rellekka,
+	.metatileAttributes = gMetatileAttributes_Rellekka,
+	.callback = NULL,
+};
+
+

@@ -2229,3 +2229,21 @@ const u16 gTilesetPalettes_ChaosTunnels[][16] = {
 };
 
 const u32 gTilesetTiles_ChaosTunnels[] = INCBIN_U32("data/tilesets/secondary/chaos_tunnels/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Rellekka[][16] = {
+	INCBIN_U16("data/tilesets/secondary/rellekka/palettes/00.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/rellekka/palettes/01.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/rellekka/palettes/02.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/rellekka/palettes/03.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/rellekka/palettes/04.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/rellekka/palettes/05.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/rellekka/palettes/06.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/rellekka/palettes/07.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/rellekka/palettes/08.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/rellekka/palettes/09.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/rellekka/palettes/10.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/rellekka/palettes/11.gbapal"),
+	INCBIN_U16("data/tilesets/secondary/rellekka/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Rellekka[] = INCBIN_U32("data/tilesets/secondary/rellekka/tiles.4bpp.lz");

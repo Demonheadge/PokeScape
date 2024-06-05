@@ -50,6 +50,19 @@ script VARROCK_Gypsy_Aris_SIGNPOST
 
 //NPCS
 
+script VARROCK_GYPSY_ARIS
+{
+    faceplayer
+    namebox ("Gypsy Aris")
+    msgbox(format("Hello, sorry my future-sight services are not currently available.\pAs MvM challengers like yourself destroyed my tent.\pThankfully Sir Prysin was kind enough to allow me to stay in his home until my tent is repaired."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
 
 //an NPC that offer to trim a monster, and after you accept and give them one they just disappear
 script VARROCK_SCAMMER
@@ -840,9 +853,29 @@ script NPC_SLAYERMASTERLIST
 }
 
 
+script NPC_VARROCK_PILLORY_GUARD
+{
+    lock
+    faceplayer
+    namebox ("Pillory Guard")
+	msgbox(format("If I catch you stealing from anybody in the city, you'll end up locked away in here like this delinquent!"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
 
-
-
+script NPC_VARROCK_PILLORY_MUGGER
+{
+    lock
+    faceplayer
+    namebox ("Mugger")
+	msgbox(format("Argh! My fingers are so numb from all the pickpocketing I've been doing that I can't pick this damn lock to escape..."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
 
 
 
@@ -1007,7 +1040,7 @@ script NPC_VARROCK_CAT_INFO
 	msgbox(format("It is a Bookcase filled with tons of information about cats.\pWould you like to read it?"), MSGBOX_YESNO)
         if (var(VAR_RESULT))
         { 
-            msgbox(format("It is commonly known that a Kitten can evolve into a Cat at level 20.\pBut a Cat can evolve into many other forms from there.\pSome cats can evolve from having specific types of monsters in the party, such as PSYCHIC types & some rats.\pOther cats can evolve by using a certain Rune on them.\pBut don't let them REST all the time otherwise they may get lazy.\pAnd even the closest of bonds may cause a cat to get a bit too overgrown."))
+            msgbox(format("It is commonly known that a Kitten can evolve into a Cat by levelling it up.\pBut a Cat can evolve into many other forms from there.\pSome cats can evolve from having specific types of monsters in the party, such as PSYCHIC types & some rats.\pOther cats can evolve by using a certain Rune on them.\pBut don't let them REST all the time otherwise they may get lazy.\pAnd even the closest of bonds may cause a cat to get a bit too overgrown."))
         }
     closemessage
 	release
@@ -1019,7 +1052,7 @@ script NPC_ROUTE18_MAN
 {
     lock
     faceplayer
-	msgbox(format("Over the road here is Gertrudes house.\pIf you like cats then I think you should pay her a visit.\pIf I was not busy sitting on this bench I would pay her a visit myself."))
+	msgbox(format("Over the road here is Gertrude's house.\pIf you like cats then I think you should pay her a visit.\pIf I was not busy sitting on this bench I would pay her a visit myself."))
     closemessage
     hidenamebox
 	release
@@ -1202,3 +1235,63 @@ script GIVE_RANDOM_ITEM_28 {
 
 
 
+script VARROCK_POTIONSTORE_BOOK
+{
+	msgbox(format("Using potions in battle allow your stats to temporarily be boosted.\pThe strength of a potion determines how much stats are boosted by.\pRegular potions boost stats by 2 levels.\pSuper Potions boosts stats by 3 levels.\pExtreme potions boosts stats by 5 levels."))
+    closemessage
+	release
+	end
+}
+
+script ITEM_VARROCK_POTIONSTORE
+{
+    finditem(ITEM_POTION_ATT)
+    end
+}
+
+script ITEM_VARROCK_CLOTHESSTORE
+{
+    finditem(ITEM_ELEMENTAL_POUCH)
+    end
+}
+
+script ITEM_NORTH_VARROCK_1
+{
+    finditem(ITEM_EARTH_RUNE)
+    end
+}
+
+script VARROCK_NPC_FROGEELBURGER
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("{COLOR BLUE}cyan:wave: Buying Frogeel Burgers 20k ea!"))
+    closemessage
+    hidenamebox
+    checkitem(ITEM_FROGEEL_BURGER, 1)
+    if (var(VAR_RESULT)) {
+        msgbox(format("Oh my!\pIs that a Frogeel burger I smell?!\pMay I buy it off you for 20k gp?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT))
+        { 
+            removeitem(ITEM_FROGEEL_BURGER, 1)
+            addmoney(20000, 0)
+            playse(SE_SHOP)
+            msgbox(format("Thank you, these are delicious!\pIf you have any more come back and I'll buy them from you."))
+            closemessage
+            hidenamebox
+        }
+    }
+    release
+    end
+}
+
+script VARROCK_NPC_WondertradeHint
+{
+    faceplayer
+    //namebox ("")
+    msgbox(format("There is a desk at the Grand Exchange that allows you to trade your monsters with a stranger.\pIt's very useful for those who don't have any friends to trade with, like me."))
+    closemessage
+    hidenamebox
+    release
+    end
+}

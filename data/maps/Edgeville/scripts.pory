@@ -370,10 +370,45 @@ script EDGEVILLE_GYM_GIVE_SLAYER_POINTS {
 	return
 }
 
+script NPC_EDGEVILLE_GYM_LADDER {
+	msgbox(format("The ladder appears to be broken."))
+	closemessage
+	end
+}
+
+script ITEM_BRASS_HOUSE
+{
+    finditem(ITEM_EFFIGY) //Make this a TM?
+    end
+}
+
+script TRIGGER_BRASS_KEY_DOOR {
+	lock
+    if (flag(FLAG_BRASS_KEY) == FALSE) {
+		msgbox(format("The door is locked with what looks like a brass padlock."))
+		closemessage
+		applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN)
+		waitmovement(0)
+		release
+		end
+	}
+	setvar(VAR_TEMP_1, 1)
+	release
+	end
+}
 
 
-
-
+script FIND_BRASS_KEY {
+	lock
+	setflag(FLAG_BRASS_KEY)
+	removeobject(VAR_LAST_TALKED)
+	playfanfare (MUS_OBTAIN_ITEM)
+	msgbox(format("{PLAYER} obtained the BRASS KEY."))
+	waitfanfare
+	closemessage
+	release
+	end
+}
 
 
 
@@ -394,7 +429,7 @@ script ITEM_EDGEVILLE_INDOOR_1
 }
 script ITEM_EDGEVILLE_INDOOR_2
 {
-    finditem(ITEM_NONE)
+    finditem(ITEM_FIRE_RUNE)
     end
 }
 
@@ -451,8 +486,8 @@ script NPC_EDGEVILLE_HOUSE_NPC_5 {
 script NPC_EDGEVILLE_HOUSE_NPC_6 {
 	lock
 	faceplayer
-    //namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+    namebox ("Oziach")
+	msgbox(format("Aye, 'tis a fair day my friend.\pMay the gods walk by yer side.\pNow leave me alone, I'm all outta rune platebodies."))
     closemessage
     hidenamebox
 	release
@@ -461,8 +496,8 @@ script NPC_EDGEVILLE_HOUSE_NPC_6 {
 script NPC_EDGEVILLE_HOUSE_NPC_7 {
 	lock
 	faceplayer
-    //namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+    namebox ("RUMadBr0")
+	msgbox(format("What do you mean you don't sell PK supplies!?\pWe are right next to the Wilderness!\pWho on Gielinor is going to come in here wanting to buy shears or a cake tin!"))
     closemessage
     hidenamebox
 	release
@@ -471,8 +506,8 @@ script NPC_EDGEVILLE_HOUSE_NPC_7 {
 script NPC_EDGEVILLE_HOUSE_NPC_8 {
 	lock
 	faceplayer
-    //namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+    namebox ("DHBOMB99")
+	msgbox(format("I'm waiting on my friend buying some supplies, then we are going to the Wilderness to PK and get filthy rich!"))
     closemessage
     hidenamebox
 	release

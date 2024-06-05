@@ -740,7 +740,7 @@ WizardsTower_SEDRIDOR_Text_1:
 	.string "CUPHOLDER$"
 
 WizardsTower_SEDRIDOR_Text_2:
-	.string "Could you please go after ariane.$"
+	.string "Could you please go after Ariane.$"
 
 WizardsTower_Wizard_Text_0:
 	.string "Finix$"

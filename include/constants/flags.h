@@ -195,13 +195,13 @@
 #define FLAG_DUNGEONEERING_ITEM_15           0xA5
 #define FLAG_DUNGEONEERING_ITEM_16           0xA6
 
-#define FLAG_DIANGO_GIFT_DRAGONKITE          0xA7 //FLAG_RECEIVED_TM34
-#define FLAG_DIANGO_GIFT_FROGEELBURGER       0xA8  //FLAG_RECEIVED_TM50
-#define FLAG_URI_ITEMFINDER                  0xA9 //FLAG_RECEIVED_TM42
-#define FLAG_RECEIVED_TM37_DARKERMANZ        0xAA //FLAG_RECEIVED_TM40
+#define FLAG_DIANGO_GIFT_DRAGONKITE          0xA7   //FLAG_RECEIVED_TM34
+#define FLAG_DIANGO_GIFT_FROGEELBURGER       0xA8   //FLAG_RECEIVED_TM50
+#define FLAG_URI_ITEMFINDER                  0xA9   //FLAG_RECEIVED_TM42
+#define FLAG_RECEIVED_TM37_DARKERMANZ        0xAA   //FLAG_RECEIVED_TM40
 #define FLAG_POKESCAPE_RIMMINGTON_HAM_LOST_TIME 0xAB //FLAG_RECEIVED_TM04
 
-#define FLAG_RECEIVED_TM03                   0xAC
+#define FLAG_CAPTURED_VORKATH                0xAC   //FLAG_RECEIVED_TM03
 #define FLAG_HIDE_SECRET_BASE_TRAINER        0xAD
 #define FLAG_DECORATION_1                    0xAE
 #define FLAG_DECORATION_2                    0xAF
@@ -750,9 +750,9 @@
 #define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
 #define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
 #define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
-#define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
-#define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag
-#define FLAG_UNUSED_0x2BB  0x2BB // Unused Flag
+#define FLAG_BRASS_KEY                                              0x2B9 // Unused Flag
+#define FLAG_SINKHOLE_BEHEMOTH_1                                    0x2BA // Unused Flag
+#define FLAG_PENGUIN_HUNT_ON_ROUTE                                  0x2BB // Unused Flag
 
 // Event Flags
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC
@@ -1210,9 +1210,9 @@
 #define FLAG_ITEM_KOUREND_CATACOMBS_3                               0x477
 #define FLAG_ITEM_KOUREND_CATACOMBS_4                               0x478
 #define FLAG_ITEM_KOUREND_CATACOMBS_5                               0x479 // Unused Flag
-#define FLAG_ITEM_ROUTE_35_MITHRIL_POUCH                            0x47A  // I have no idea if I've done this correctly
-#define FLAG_ITEM_ROUTE_35_BREAD                                    0x47B // Or this one
-#define FLAG_ITEM_ROUTE_35_CABBAGE                                  0x47C // Still practicing these
+#define FLAG_ITEM_ROUTE_35_MITHRIL_POUCH                            0x47A
+#define FLAG_ITEM_ROUTE_35_BREAD                                    0x47B 
+#define FLAG_ITEM_ROUTE_35_CABBAGE                                  0x47C 
 #define FLAG_ITEM_ROUTE_38_PRAYER_POTION                            0x47D
 #define FLAG_ITEM_ROUTE_38_CAKE                                     0x47E
 #define FLAG_ITEM_ROUTE_31_PRAYER_POTION                            0x47F
@@ -1251,23 +1251,24 @@
 #define FLAG_HIDDEN_GROTTO_6                                        0x498 // Unused Flag
 #define FLAG_HIDDEN_GROTTO_7                                        0x499 // Unused Flag
 #define FLAG_HIDDEN_GROTTO_8                                        0x49A // Unused Flag
-#define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
-#define FLAG_UNUSED_0x4A3                                           0x4A3 // Unused Flag
-#define FLAG_UNUSED_0x4A4                                           0x4A4 // Unused Flag
-#define FLAG_UNUSED_0x4A5                                           0x4A5 // Unused Flag
-#define FLAG_UNUSED_0x4A6                                           0x4A6 // Unused Flag
-#define FLAG_UNUSED_0x4A7                                           0x4A7 // Unused Flag
-#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
-#define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
-#define FLAG_UNUSED_0x4AB                                           0x4AB // Unused Flag
+
+#define FLAG_ITEM_VARROCK_POTIONSTORE                               0x49B // Unused Flag
+#define FLAG_ITEM_VARROCK_CLOTHESSTORE                              0x49C // Unused Flag
+#define FLAG_ITEM_CRANDOR_CABBAGE                                   0x49D // Unused Flag
+#define FLAG_LOWES_BONE_CROSSBOW                                    0x49E // Unused Flag
+#define FLAG_ITEM_ZMI_DEATH_RUNE                                    0x49F // Unused Flag
+#define FLAG_ITEM_BLACK_ARM_MITH_SCIM                               0x4A0 // Unused Flag
+#define FLAG_ITEM_MELZARS_3F_PRAYER_POTION                          0x4A1 // Unused Flag
+#define FLAG_ITEM_ROUTE0_TINDERBOX                                  0x4A2 // Unused Flag
+#define FLAG_ITEM_ROUTE0_SWEETS                                     0x4A3 // Unused Flag
+#define FLAG_ITEM_NORTH_VARROCK_1                                   0x4A4 // Unused Flag
+#define FLAG_ITEM_BRASS_HOUSE                                       0x4A5 // Unused Flag
+#define FLAG_ITEM_LUMBRIDGESWAMP_ITEM_2                             0x4A6 // Unused Flag
+#define FLAG_ITEM_FALADOR_CASTLE_1                                  0x4A7 // Unused Flag
+#define FLAG_ROUTE26_SUPER_PRAYER_POTION                            0x4A8 // Unused Flag
+#define FLAG_ROUTE26_ADAMANT_POUCH                                  0x4A9 // Unused Flag
+#define FLAG_EDGEVILLE_INDOOR_1                                     0x4AA // Unused Flag
+#define FLAG_EDGEVILLE_INDOOR_2                                     0x4AB // Unused Flag
 #define FLAG_UNUSED_0x4AC                                           0x4AC // Unused Flag
 #define FLAG_UNUSED_0x4AD                                           0x4AD // Unused Flag
 #define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag

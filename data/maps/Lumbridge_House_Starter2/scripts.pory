@@ -54,7 +54,7 @@ script GAMEMODE_CHECK_NEWGAME_ITEMS
             additem (ITEM_DRAGON_NET)
             additem (ITEM_TERRORBIRD_POUCH)
             additem (ITEM_YAK_POUCH)
-            additem (ITEM_ROCKSMASH_TOOL)
+            additem (ITEM_DRAGON_PICKAXE)
             additem (ITEM_SURF_TOOL)
             additem (ITEM_CUT_TOOL)
             additem (ITEM_STRENGTH_TOOL)
