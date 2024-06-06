@@ -3,7 +3,7 @@
   "name": "Yanille_Pub_2F",
   "layout": "LAYOUT_YANILLE_PUB_2F",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_TUTORIAL_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",

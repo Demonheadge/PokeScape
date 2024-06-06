@@ -47,6 +47,9 @@ static void TilesetAnim_BattleDome(u16);
 static void TilesetAnim_PokeScapeOutdoors(u16);
 static void TilesetAnim_Lumbridge(u16);
 static void TilesetAnim_Wizards_Tower(u16);
+static void TilesetAnim_Karamja(u16);
+static void TilesetAnim_Wilderness(u16);
+static void TilesetAnim_PokeScape_Caves(u16);
 //PokeScape End//
 
 static void QueueAnimTiles_General_Flower(u16);
@@ -83,9 +86,14 @@ static void QueueAnimTiles_EliteFour_WallLights(u16);
 static void QueueAnimTiles_PokeScapeOutdoors_Water(u16);
 static void QueueAnimTiles_PokeScapeOutdoors_WaterRocks(u16);
 static void QueueAnimTiles_PokeScapeOutdoors_LogFire(u16);
+static void QueueAnimTiles_PokeScapeOutdoors_Flower(u16);
 static void QueueAnimTiles_Lumbridge_Fountain(u16);
 static void QueueAnimTiles_Wizards_Tower_Torch(u16);
 static void QueueAnimTiles_Wizards_Tower_Portal(u16);
+static void QueueAnimTiles_Karamja_scorchfire1(u16);
+static void QueueAnimTiles_Karamja_scorchfire2(u16);
+static void QueueAnimTiles_Wilderness_Lava(u16);
+static void QueueAnimTiles_PokeScape_Caves_Lava(u16);
 //PokeScape End//
 
 
@@ -144,6 +152,18 @@ const u16 *const gTilesetAnims_PokeScapeOutdoors_LogFire[] = {
     gTilesetAnims_PokeScapeOutdoors_LogFire_Frame3
 };
 
+
+const u16 gTilesetAnims_PokeScapeOutdoors_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/flower/flower0.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/flower/flower1.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_Flower_Frame2[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/flower/flower2.4bpp");
+
+const u16 *const gTilesetAnims_PokeScapeOutdoors_Flower[] = {
+    gTilesetAnims_PokeScapeOutdoors_Flower_Frame0,
+    gTilesetAnims_PokeScapeOutdoors_Flower_Frame1,
+    gTilesetAnims_PokeScapeOutdoors_Flower_Frame0,
+    gTilesetAnims_PokeScapeOutdoors_Flower_Frame2
+};
+
 const u16 gTilesetAnims_Lumbridge_Fountain_Frame0[] = INCBIN_U16("data/tilesets/secondary/lumbridge/anim/fountain/fountain0.4bpp");
 const u16 gTilesetAnims_Lumbridge_Fountain_Frame1[] = INCBIN_U16("data/tilesets/secondary/lumbridge/anim/fountain/fountain1.4bpp");
 const u16 gTilesetAnims_Lumbridge_Fountain_Frame2[] = INCBIN_U16("data/tilesets/secondary/lumbridge/anim/fountain/fountain2.4bpp");
@@ -180,6 +200,59 @@ const u16 *const gTilesetAnims_Wizards_Tower_Portal[] = {
     gTilesetAnims_Wizards_Tower_Portal_Frame3
 };
 
+
+
+const u16 gTilesetAnims_Karamja_scorchfire1_Frame0[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/scorchfire1/scorchfire1_0.4bpp");
+const u16 gTilesetAnims_Karamja_scorchfire1_Frame1[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/scorchfire1/scorchfire1_1.4bpp");
+const u16 gTilesetAnims_Karamja_scorchfire1_Frame2[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/scorchfire1/scorchfire1_2.4bpp");
+const u16 gTilesetAnims_Karamja_scorchfire1_Frame3[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/scorchfire1/scorchfire1_3.4bpp");
+
+const u16 *const gTilesetAnims_Karamja_scorchfire1[] = {
+    gTilesetAnims_Karamja_scorchfire1_Frame0,
+    gTilesetAnims_Karamja_scorchfire1_Frame1,
+    gTilesetAnims_Karamja_scorchfire1_Frame2,
+    gTilesetAnims_Karamja_scorchfire1_Frame3
+};
+
+const u16 gTilesetAnims_Karamja_scorchfire2_Frame0[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/scorchfire2/scorchfire2_0.4bpp");
+const u16 gTilesetAnims_Karamja_scorchfire2_Frame1[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/scorchfire2/scorchfire2_1.4bpp");
+const u16 gTilesetAnims_Karamja_scorchfire2_Frame2[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/scorchfire2/scorchfire2_2.4bpp");
+const u16 gTilesetAnims_Karamja_scorchfire2_Frame3[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/scorchfire2/scorchfire2_3.4bpp");
+
+const u16 *const gTilesetAnims_Karamja_scorchfire2[] = {
+    gTilesetAnims_Karamja_scorchfire2_Frame0,
+    gTilesetAnims_Karamja_scorchfire2_Frame1,
+    gTilesetAnims_Karamja_scorchfire2_Frame2,
+    gTilesetAnims_Karamja_scorchfire2_Frame3
+};
+
+const u16 gTilesetAnims_Wilderness_Lava_Frame0[] = INCBIN_U16("data/tilesets/secondary/wilderness/anim/lava/0.4bpp");
+const u16 gTilesetAnims_Wilderness_Lava_Frame1[] = INCBIN_U16("data/tilesets/secondary/wilderness/anim/lava/1.4bpp");
+const u16 gTilesetAnims_Wilderness_Lava_Frame2[] = INCBIN_U16("data/tilesets/secondary/wilderness/anim/lava/2.4bpp");
+const u16 gTilesetAnims_Wilderness_Lava_Frame3[] = INCBIN_U16("data/tilesets/secondary/wilderness/anim/lava/3.4bpp");
+const u16 gTilesetAnims_Wilderness_Lava_Frame4[] = INCBIN_U16("data/tilesets/secondary/wilderness/anim/lava/4.4bpp");
+const u16 gTilesetAnims_Wilderness_Lava_Frame5[] = INCBIN_U16("data/tilesets/secondary/wilderness/anim/lava/5.4bpp");
+const u16 gTilesetAnims_Wilderness_Lava_Frame6[] = INCBIN_U16("data/tilesets/secondary/wilderness/anim/lava/6.4bpp");
+const u16 gTilesetAnims_Wilderness_Lava_Frame7[] = INCBIN_U16("data/tilesets/secondary/wilderness/anim/lava/7.4bpp");
+
+const u16 *const gTilesetAnims_Wilderness_Lava[] = {
+    gTilesetAnims_Wilderness_Lava_Frame0,
+    gTilesetAnims_Wilderness_Lava_Frame1,
+    gTilesetAnims_Wilderness_Lava_Frame2,
+    gTilesetAnims_Wilderness_Lava_Frame3
+};
+
+const u16 gTilesetAnims_PokeScape_Caves_Lava_Frame0[] = INCBIN_U16("data/tilesets/secondary/pokescape_caves/anim/lava/0.4bpp");
+const u16 gTilesetAnims_PokeScape_Caves_Lava_Frame1[] = INCBIN_U16("data/tilesets/secondary/pokescape_caves/anim/lava/1.4bpp");
+const u16 gTilesetAnims_PokeScape_Caves_Lava_Frame2[] = INCBIN_U16("data/tilesets/secondary/pokescape_caves/anim/lava/2.4bpp");
+const u16 gTilesetAnims_PokeScape_Caves_Lava_Frame3[] = INCBIN_U16("data/tilesets/secondary/pokescape_caves/anim/lava/3.4bpp");
+
+const u16 *const gTilesetAnims_PokeScape_Caves_Lava[] = {
+    gTilesetAnims_PokeScape_Caves_Lava_Frame0,
+    gTilesetAnims_PokeScape_Caves_Lava_Frame1,
+    gTilesetAnims_PokeScape_Caves_Lava_Frame2,
+    gTilesetAnims_PokeScape_Caves_Lava_Frame3
+};
 
 
 
@@ -747,6 +820,27 @@ void InitTilesetAnim_Wizards_Tower(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_Wizards_Tower;
 }
 
+void InitTilesetAnim_Karamja(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_Karamja;
+}
+
+void InitTilesetAnim_Wilderness(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_Wilderness;
+}
+
+void InitTilesetAnim_PokeScape_Caves(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_PokeScape_Caves;
+}
+
 void InitTilesetAnim_General(void)
 {
     sPrimaryTilesetAnimCounter = 0;
@@ -792,29 +886,44 @@ static void TilesetAnim_PokeScapeOutdoors(u16 timer)
         QueueAnimTiles_PokeScapeOutdoors_WaterRocks(timer >> 4);
     if (timer % 16 == 0)
         QueueAnimTiles_PokeScapeOutdoors_LogFire(timer >> 4);
+    if (timer % 16 == 0)
+        QueueAnimTiles_PokeScapeOutdoors_Flower(timer / 16);
 
 }
-
 
 static void TilesetAnim_Lumbridge(u16 timer)
 {
-
     if (timer % 16 == 0)
         QueueAnimTiles_Lumbridge_Fountain(timer >> 4);
-
 }
-
 
 static void TilesetAnim_Wizards_Tower(u16 timer)
 {
-
     if (timer % 16 == 0)
         QueueAnimTiles_Wizards_Tower_Torch(timer >> 4);
     if (timer % 16 == 1)
         QueueAnimTiles_Wizards_Tower_Portal(timer >> 4);
-
 }
 
+static void TilesetAnim_Karamja(u16 timer)
+{
+    if (timer % 8 == 0)
+        QueueAnimTiles_Karamja_scorchfire1(timer / 8);
+    if (timer % 8 == 0)
+        QueueAnimTiles_Karamja_scorchfire2(timer / 8);
+}
+
+static void TilesetAnim_Wilderness(u16 timer)
+{
+    if (timer % 16 == 1)
+        QueueAnimTiles_Wilderness_Lava(timer / 16);
+}
+
+static void TilesetAnim_PokeScape_Caves(u16 timer)
+{
+    if (timer % 16 == 1)
+        QueueAnimTiles_PokeScape_Caves_Lava(timer / 16);
+}
 //PokeScape//---------------
 
 
@@ -837,8 +946,23 @@ static void QueueAnimTiles_PokeScapeOutdoors_LogFire(u16 timer)
     AppendTilesetAnimToBuffer(gTilesetAnims_PokeScapeOutdoors_LogFire[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(472)), 0x80);
 }
 
+static void QueueAnimTiles_PokeScapeOutdoors_Flower(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_PokeScapeOutdoors_Flower);
+    AppendTilesetAnimToBuffer(gTilesetAnims_PokeScapeOutdoors_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(508)), 4 * TILE_SIZE_4BPP);
+}
 
+static void QueueAnimTiles_Karamja_scorchfire1(u16 timer)
+{
+    u16 i = timer % 4; 
+    AppendTilesetAnimToBuffer(gTilesetAnims_Karamja_scorchfire1[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(520)), 4 * TILE_SIZE_4BPP);
+}
 
+static void QueueAnimTiles_Karamja_scorchfire2(u16 timer)
+{
+    u16 i = timer % 4; 
+    AppendTilesetAnimToBuffer(gTilesetAnims_Karamja_scorchfire2[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(524)), 4 * TILE_SIZE_4BPP);
+}
 
 static void QueueAnimTiles_Lumbridge_Fountain(u16 timer)
 {
@@ -856,6 +980,18 @@ static void QueueAnimTiles_Wizards_Tower_Portal(u16 timer)
 {
     u16 i = timer % 4; 
     AppendTilesetAnimToBuffer(gTilesetAnims_Wizards_Tower_Portal[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(1004)), 0x80);
+}
+
+static void QueueAnimTiles_Wilderness_Lava(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Wilderness_Lava);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Wilderness_Lava[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(994)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_PokeScape_Caves_Lava(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_PokeScape_Caves_Lava);
+    AppendTilesetAnimToBuffer(gTilesetAnims_PokeScape_Caves_Lava[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(931)), 4 * TILE_SIZE_4BPP);
 }
 
 //PokeScape//---------------

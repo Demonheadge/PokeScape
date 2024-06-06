@@ -249,14 +249,6 @@ bool8 MetatileBehavior_IsEscalator(u8 metatileBehavior)
         return FALSE;
 }
 
-bool8 Unref_MetatileBehavior_IsUnused04(u8 metatileBehavior)
-{
-    if (metatileBehavior == MB_UNUSED_04)
-        return TRUE;
-    else
-        return FALSE;
-}
-
 bool8 MetatileBehavior_IsLadder(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_LADDER)
@@ -1486,6 +1478,14 @@ bool8 MetatileBehavior_IsSidewaysStairsLeftSideAny(u8 metatileBehavior)
 bool8 MetatileBehavior_IsRockStairs(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_ROCK_STAIRS)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsRestBed(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_REST_BED)
         return TRUE;
     else
         return FALSE;
