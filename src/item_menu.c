@@ -2785,8 +2785,6 @@ static void SortBagItems(u8 taskId)
 
 static void Task_SortFinish(u8 taskId)
 {
-    s16* data = gTasks[taskId].data;
-
     if (gMain.newKeys & (A_BUTTON | B_BUTTON))
     {
         RemoveItemMessageWindow(4);
@@ -2798,7 +2796,6 @@ static void SortItemsInBag(u8 pocket, u8 type)
 {
     struct ItemSlot* itemMem;
     u16 itemAmount;
-    s8 (*func)(struct ItemSlot*, struct ItemSlot*);
 
     switch (pocket)
     {
