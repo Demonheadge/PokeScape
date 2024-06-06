@@ -55,7 +55,7 @@ script BANK_OPTIONS {
 				goto(EventScript_AccessPokemonStorage)
                 //goto(EventScript_AccessHallOfFame)
             case 2:
-                goto(EventScript_AccessPlayersPC)
+                goto(EventScript_AccessPlayersITEMSTORAGE)
             //case: MULTI_B_PRESSED (BANK_ExitBank)
             case 3:
                 goto (BANK_ExitBank)

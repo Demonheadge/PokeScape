@@ -3,7 +3,7 @@
   "name": "Lumbridge_Swamp_House_FatherUrhney",
   "layout": "LAYOUT_LUMBRIDGE_SWAMP_HOUSE_FATHER_URHNEY",
   "music": "MUS_PS_FOREST_F2P",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_TUTORIAL_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
