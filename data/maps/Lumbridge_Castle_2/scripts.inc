@@ -159,7 +159,7 @@ Lumbridge_Castle_Introduction_2:
 	setvar VAR_TEMP_A, 1
 	setvar VAR_POKESCAPE_LUMBRIDGE_CASTLE_STATE, 1
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
-	compare VAR_TEMP_1, 17
+	compare VAR_TEMP_1, 18
 	goto_if_eq Lumbridge_Castle_Introduction_6
 	goto RightDoorScript
 	goto Lumbridge_Castle_Introduction_1

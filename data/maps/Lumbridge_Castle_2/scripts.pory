@@ -151,7 +151,7 @@ script Lumbridge_Castle_Introduction
 	setvar(VAR_TEMP_A, 1)
 	setvar(VAR_POKESCAPE_LUMBRIDGE_CASTLE_STATE, 1)
 	getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
-	if (var(VAR_TEMP_1) == 17){
+	if (var(VAR_TEMP_1) == 18){
 		goto (LeftDoorScript)
 	} else {
 		goto (RightDoorScript)
