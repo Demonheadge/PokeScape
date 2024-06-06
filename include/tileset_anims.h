@@ -36,6 +36,10 @@ void InitTilesetAnim_PokeScapeOutdoors(void);
 void InitTilesetAnim_Lumbridge(void);
 void InitTilesetAnim_Wizards_Tower(void);
 
+void InitTilesetAnim_Karamja(void);
+void InitTilesetAnim_Wilderness(void);
+void InitTilesetAnim_PokeScape_Caves(void);
+
 
 
 #endif // GUARD_TILESET_ANIMS_H

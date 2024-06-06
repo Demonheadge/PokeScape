@@ -976,7 +976,7 @@ const struct Tileset gTileset_PokeScape_Caves =
     .palettes = gTilesetPalettes_PokeScape_Caves,
     .metatiles = gMetatiles_PokeScape_Caves,
     .metatileAttributes = gMetatileAttributes_PokeScape_Caves,
-    .callback = NULL,
+    .callback = InitTilesetAnim_PokeScape_Caves,
 };
 
 const struct Tileset gTileset_Karamja =
@@ -987,7 +987,7 @@ const struct Tileset gTileset_Karamja =
     .palettes = gTilesetPalettes_Karamja,
     .metatiles = gMetatiles_Karamja,
     .metatileAttributes = gMetatileAttributes_Karamja,
-    .callback = NULL,
+    .callback = InitTilesetAnim_Karamja,
 };
 
 const struct Tileset gTileset_Wizards_Tower =
@@ -1075,7 +1075,7 @@ const struct Tileset gTileset_Wilderness =
     .palettes = gTilesetPalettes_Wilderness,
     .metatiles = gMetatiles_Wilderness,
     .metatileAttributes = gMetatileAttributes_Wilderness,
-    .callback = NULL,
+    .callback = InitTilesetAnim_Wilderness,
 };
 
 const struct Tileset gTileset_Barbarian_Village =
