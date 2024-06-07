@@ -131,20 +131,24 @@ script LUMBRIDGE_GYM_GUARD_1 {
 		case 0: 
             msgbox(format("Sorry, this hallway is off limits until I sort out this mess."))
             hidenamebox
+            closemessage
             release
             end
         case 1:
             msgbox(format("Good luck with your gym challenge!"))
             hidenamebox
+            closemessage
             release
             end
         case 2:
             msgbox(format("Welcome to Lumbridge Castle.\pMind yourself."))
             hidenamebox
+            closemessage
             release
             end
     }
     hidenamebox
+    closemessage
     release
     end
 }
@@ -183,6 +187,16 @@ script EVENTSCRIPT_LUMBRIDGECASTLE_DIARY{
 	end
 }
 
+script EVENTSCRIPT_LUMBRIDGECASTLE_SPINNINGWHEEL{
+    msgbox(format("This spinning wheel is broken.\pIt looks like there is a bunch of flax jammed in it."))
+    random(5)
+    if (var(VAR_RESULT) == 0) {
+        msgbox(format("Some of the flax came loose."))
+        giveitem(ITEM_FLAX, 1)
+    }
+	closemessage
+	end
+}
 
 
 script LUMBRIDGE_GYM_SIGMUND {

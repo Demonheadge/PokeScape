@@ -65,6 +65,7 @@ Lumbridge_Castle_HALLWAY_TRIGGER::
 	waitmovement 0
 	msgbox Lumbridge_Castle_HALLWAY_TRIGGER_Text_0
 	waitmessage
+	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_Lumbridge_Castle_HALLWAY_TRIGGER2
 	applymovement 3, Movement_Lumbridge_Castle_HALLWAY_TRIGGER3
 	waitmovement 0

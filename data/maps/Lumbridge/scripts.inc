@@ -969,9 +969,9 @@ Lumbridge_EVENT_NPC3_Text_0:
 	.string "Championships!$"
 
 Lumbridge_EVENT_NPC3_Text_1:
-	.string "People just run through this area.\p"
-	.string "They should call it run by the bridge\n"
-	.string "instead of Lumbridge.$"
+	.string "Newcomer map?\p"
+	.string "Pfft, I've got myself a World map!\p"
+	.string "And no, you cannot have it.$"
 
 NPC_LumbridgeBridge_Text_0:
 	.string "Is it just me or is this really long?\p"

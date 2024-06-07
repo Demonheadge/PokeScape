@@ -110,24 +110,28 @@ LUMBRIDGE_GYM_GUARD_1::
 	case 1, LUMBRIDGE_GYM_GUARD_1_4
 	case 2, LUMBRIDGE_GYM_GUARD_1_5
 	hidenamebox
+	closemessage
 	release
 	end
 
 LUMBRIDGE_GYM_GUARD_1_3:
 	msgbox LUMBRIDGE_GYM_GUARD_1_Text_1
 	hidenamebox
+	closemessage
 	release
 	end
 
 LUMBRIDGE_GYM_GUARD_1_4:
 	msgbox LUMBRIDGE_GYM_GUARD_1_Text_2
 	hidenamebox
+	closemessage
 	release
 	end
 
 LUMBRIDGE_GYM_GUARD_1_5:
 	msgbox LUMBRIDGE_GYM_GUARD_1_Text_3
 	hidenamebox
+	closemessage
 	release
 	end
 
@@ -161,6 +165,21 @@ EVENTSCRIPT_LUMBRIDGECASTLE_DIARY::
 	msgbox EVENTSCRIPT_LUMBRIDGECASTLE_DIARY_Text_0
 	closemessage
 	end
+
+
+EVENTSCRIPT_LUMBRIDGECASTLE_SPINNINGWHEEL::
+	msgbox EVENTSCRIPT_LUMBRIDGECASTLE_SPINNINGWHEEL_Text_0
+	random 3
+	compare VAR_RESULT, 0
+	goto_if_eq EVENTSCRIPT_LUMBRIDGECASTLE_SPINNINGWHEEL_2
+EVENTSCRIPT_LUMBRIDGECASTLE_SPINNINGWHEEL_1:
+	closemessage
+	end
+
+EVENTSCRIPT_LUMBRIDGECASTLE_SPINNINGWHEEL_2:
+	msgbox EVENTSCRIPT_LUMBRIDGECASTLE_SPINNINGWHEEL_Text_1
+	giveitem ITEM_FLAX, 1
+	goto EVENTSCRIPT_LUMBRIDGECASTLE_SPINNINGWHEEL_1
 
 
 LUMBRIDGE_GYM_SIGMUND::
@@ -223,6 +242,14 @@ LUMBRIDGE_GYM_GUARD_2_Text_0:
 EVENTSCRIPT_LUMBRIDGECASTLE_DIARY_Text_0:
 	.string "It's the Duke's Diary.\p"
 	.string "Better not read it.$"
+
+EVENTSCRIPT_LUMBRIDGECASTLE_SPINNINGWHEEL_Text_0:
+	.string "This spinning wheel is broken.\p"
+	.string "It looks like there is a bunch of flax\n"
+	.string "jammed in it.$"
+
+EVENTSCRIPT_LUMBRIDGECASTLE_SPINNINGWHEEL_Text_1:
+	.string "Some of the flax came loose.$"
 
 LUMBRIDGE_GYM_SIGMUND_Text_0:
 	.string "Sigmund$"

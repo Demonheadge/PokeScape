@@ -74,7 +74,7 @@ const struct Item gItems[] =
     [ITEM_DRAGON_POUCH] =
     {
         .name = _("DRAGON. P"),
-        .price = 0,
+        .price = 50000,
         .description = sCrystalPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
@@ -146,7 +146,7 @@ const struct Item gItems[] =
     [ITEM_CRYSTAL_POUCH] =
     {
         .name = _("CRYSTAL. P"),
-        .price = 1000,
+        .price = 20000,
         .description = sDuskBallDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
@@ -11143,7 +11143,7 @@ const struct Item gItems[] =
     {
         .name = _("CABBAGE"),
         .price = 1500,
-        .description = sReviveDesc,
+        .description = sPokeScapeReviveDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .sort = ITEM_TYPE_HEALTH_RECOVERY,

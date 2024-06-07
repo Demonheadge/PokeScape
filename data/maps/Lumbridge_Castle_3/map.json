@@ -122,6 +122,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "EVENTSCRIPT_LUMBRIDGECASTLE_DIARY"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "EVENTSCRIPT_LUMBRIDGECASTLE_SPINNINGWHEEL"
     }
   ]
 }

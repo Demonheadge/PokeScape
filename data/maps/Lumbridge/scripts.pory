@@ -379,7 +379,7 @@ script Lumbridge_EVENT_NPC3
 	}
 	lock
 	faceplayer
-	msgbox(format("People just run through this area.\pThey should call it run by the bridge instead of Lumbridge."))
+	msgbox(format("Newcomer map?\pPfft, I've got myself a World map!\pAnd no, you cannot have it."))
 	release
 	end
 }

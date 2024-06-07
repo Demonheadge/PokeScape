@@ -4477,7 +4477,7 @@
       "width": 7,
       "height": 8,
       "primary_tileset": "gTileset_PokeScapeIndoors",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_IndoorTowns1",
       "border_filepath": "data/layouts/Lumbridge_House_2/border.bin",
       "blockdata_filepath": "data/layouts/Lumbridge_House_2/map.bin"
     },
@@ -4495,7 +4495,7 @@
       "id": "LAYOUT_LUMBRIDGE_HOUSE_RODDECK2",
       "name": "Lumbridge_House_Roddeck2_Layout",
       "width": 11,
-      "height": 10,
+      "height": 11,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_IndoorTowns1",
       "border_filepath": "data/layouts/Lumbridge_House_Roddeck2/border.bin",

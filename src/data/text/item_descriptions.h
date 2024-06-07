@@ -5191,6 +5191,10 @@ static const u8 sTea3Desc[] = _(
     "calms wild MONSTERS\n"
     "for 250 steps.");
     
+static const u8 sPokeScapeReviveDesc[] = _(
+    "Revives a fainted\n"
+    "Monster with half\n"
+    "its HP.");
 
 static const u8 sCupholderDesc[] = _(
     "This is a Cupholder.");
