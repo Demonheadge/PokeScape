@@ -164,9 +164,7 @@
 #define ITEM_SUPER_LURE 118
 #define ITEM_MAX_LURE 119
 
-#define ITEM_REPEL_TEA_1 ITEM_REPEL
-#define ITEM_REPEL_TEA_2 ITEM_SUPER_REPEL
-#define ITEM_REPEL_TEA_3 ITEM_MAX_REPEL
+
 
 #define ITEM_ESCAPE_ROPE 120
 
@@ -1357,15 +1355,15 @@
 //Dungeoneering Items   
 #define ITEM_DG_BALL_OF_WOOL		(FINAL_VANILLA_ITEM + 251 )
 #define ITEM_DG_ROPE		        (FINAL_VANILLA_ITEM + 252 )
-
 #define ITEM_WHISTLE                (FINAL_VANILLA_ITEM + 253 )
 #define ITEM_ROPE                   (FINAL_VANILLA_ITEM + 254 )
+#define ITEM_REPEL_TEA_1            (FINAL_VANILLA_ITEM + 255 )
+#define ITEM_REPEL_TEA_2            (FINAL_VANILLA_ITEM + 256 )
+#define ITEM_REPEL_TEA_3            (FINAL_VANILLA_ITEM + 257 )
 
 
 
-
-
-#define ITEMS_COUNT 1070
+#define ITEMS_COUNT 1073
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

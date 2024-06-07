@@ -1131,6 +1131,9 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_DRAGON_PICKAXE] = {gItemIcon_Pickaxe, gItemIconPalette_Pickaxe},
     [ITEM_WHISTLE] = {gItemIcon_Whistle, gItemIconPalette_Whistle},
     [ITEM_ROPE] = {gItemIcon_EscapeRope, gItemIconPalette_EscapeRope},
+    [ITEM_REPEL_TEA_1] = {gItemIcon_REPEL_TEA_1, gItemIconPalette_REPEL_TEA_1},
+    [ITEM_REPEL_TEA_2] = {gItemIcon_REPEL_TEA_2, gItemIconPalette_REPEL_TEA_2},
+    [ITEM_REPEL_TEA_3] = {gItemIcon_REPEL_TEA_3, gItemIconPalette_REPEL_TEA_3},
     // End Pokescape items
 
     // Return to field arrow
