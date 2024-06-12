@@ -2409,3 +2409,7 @@
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	.endm
+
+	.macro updateslayercounter
+	various BS_FAINTED, VARIOUS_UPDATE_SLAYER_COUNTER
+	.endm

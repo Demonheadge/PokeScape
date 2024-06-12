@@ -171,6 +171,17 @@ FUNCTION_SLAYER_TASK_MASTER_5:
 	end
 
 
+SLAYER_VAR_CHECK::
+	buffernumberstring 0, VAR_SLAYER_LEFT_TO_DEFEAT
+	msgbox SLAYER_VAR_CHECK_Text_0
+	buffernumberstring 0, VAR_SLAYER_ASSIGNMENT
+	msgbox SLAYER_VAR_CHECK_Text_1
+	buffernumberstring 0, VAR_SLAYER_COMPLETE
+	msgbox SLAYER_VAR_CHECK_Text_2
+	closemessage
+	end
+
+
 KOUREND_SLAYER_TASK::
 	compare VAR_SLAYER_LEFT_TO_DEFEAT, 1
 	goto_if_ge KOUREND_SLAYER_TASK_2
@@ -209,7 +220,7 @@ SLAYER_TASK_ASSIGN::
 	random 4
 	addvar VAR_RESULT, 1
 	copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
-	random 10
+	random 3
 	switch VAR_RESULT
 	case 0, SLAYER_TASK_ASSIGN_3
 	case 1, SLAYER_TASK_ASSIGN_4
@@ -232,13 +243,13 @@ SLAYER_TASK_ASSIGN_3:
 
 SLAYER_TASK_ASSIGN_4:
 	setvar VAR_SLAYER_ASSIGNMENT, 2
-	bufferspeciesname STR_VAR_2, SPECIES_FROGEEL
+	bufferspeciesname STR_VAR_2, SPECIES_DEMON_LESSER_OSRS_FORM
 	buffernumberstring STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT
 	goto SLAYER_TASK_ASSIGN_1
 
 SLAYER_TASK_ASSIGN_5:
 	setvar VAR_SLAYER_ASSIGNMENT, 3
-	bufferspeciesname STR_VAR_2, SPECIES_GUTHLING
+	bufferspeciesname STR_VAR_2, SPECIES_ABYSSAL_DEMON_FORM
 	buffernumberstring STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT
 	goto SLAYER_TASK_ASSIGN_1
 
@@ -267,6 +278,13 @@ SLAYER_TASK_CHECK::
 	case 1, SLAYER_TASK_CHECK_4
 	case 2, SLAYER_TASK_CHECK_5
 	case 3, SLAYER_TASK_CHECK_6
+	case 4, SLAYER_TASK_CHECK_7
+	case 5, SLAYER_TASK_CHECK_7
+	case 6, SLAYER_TASK_CHECK_7
+	case 7, SLAYER_TASK_CHECK_7
+	case 8, SLAYER_TASK_CHECK_7
+	case 9, SLAYER_TASK_CHECK_7
+	case 10, SLAYER_TASK_CHECK_7
 SLAYER_TASK_CHECK_1:
 	msgbox SLAYER_TASK_CHECK_Text_1
 	closemessage
@@ -288,7 +306,12 @@ SLAYER_TASK_CHECK_5:
 	goto SLAYER_TASK_CHECK_1
 
 SLAYER_TASK_CHECK_6:
-	bufferspeciesname STR_VAR_2, SPECIES_ZAMLING
+	bufferspeciesname STR_VAR_2, SPECIES_ABYSSAL_DEMON_FORM
+	buffernumberstring STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT
+	goto SLAYER_TASK_CHECK_1
+
+SLAYER_TASK_CHECK_7:
+	bufferspeciesname STR_VAR_2, SPECIES_THINGUMWUT
 	buffernumberstring STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT
 	goto SLAYER_TASK_CHECK_1
 
@@ -298,7 +321,6 @@ SLAYER_TASK_COMPLETE::
 	playfanfare MUS_PS_QUEST_COMPLETE
 	random 12
 	addvar VAR_RESULT, 1
-	copyvar VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT
 	setvar VAR_0x8004, 12
 	special GiveFrontierBattlePoints
 	buffernumberstring STR_VAR_1, VAR_0x8004
@@ -306,6 +328,7 @@ SLAYER_TASK_COMPLETE::
 	waitmessage
 	waitfanfare
 	closemessage
+	setvar VAR_SLAYER_LEFT_TO_DEFEAT, 0
 	setvar VAR_SLAYER_ASSIGNMENT, 0
 	setvar VAR_SLAYER_COMPLETE, 0
 	release
@@ -438,6 +461,17 @@ XERICS_TELEPORT_Text_0:
 	.string "Would you like to teleport to the\n"
 	.string "Catacombs of Kourend?$"
 
+SLAYER_VAR_CHECK_Text_0:
+	.string "VAR_SLAYER_LEFT_TO_DEFEAT is:\n"
+	.string "{STR_VAR_1}$"
+
+SLAYER_VAR_CHECK_Text_1:
+	.string "VAR_SLAYER_ASSIGNMENT is:\n"
+	.string "{STR_VAR_1}$"
+
+SLAYER_VAR_CHECK_Text_2:
+	.string "VAR_SLAYER_COMPLETE is: {STR_VAR_1}$"
+
 KOUREND_SLAYER_TASK_Text_0:
 	.string "Would you like to cancel your current\n"
 	.string "Slayer Assignment?$"
@@ -454,7 +488,7 @@ SLAYER_TASK_CHECK_Text_0:
 
 SLAYER_TASK_CHECK_Text_1:
 	.string "Your current assignment is to slay\n"
-	.string "{STR_VAR_3} {STR_VAR_2}$"
+	.string "{STR_VAR_3} {STR_VAR_2}.$"
 
 SLAYER_TASK_COMPLETE_Text_0:
 	.string "Slayer Assignment complete!\n"

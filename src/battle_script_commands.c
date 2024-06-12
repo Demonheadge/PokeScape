@@ -10438,6 +10438,49 @@ static void Cmd_various(void)
         CourtChangeSwapSideStatuses();
         break;
     }
+    case VARIOUS_UPDATE_SLAYER_COUNTER: //TODO: Fix enemySpecies to == Target assigned mon.
+        {
+        u8 leftToDefeat = VarGet(VAR_SLAYER_LEFT_TO_DEFEAT);
+        s32 enemySpecies = GetMonData(&gEnemyParty[0],MON_DATA_SPECIES);
+
+        if ((VarGet(VAR_SLAYER_ASSIGNMENT) == 1) && (enemySpecies == SPECIES_BLOODVELD || enemySpecies == SPECIES_BLOODVELD_INSATIABLE_PHYSICAL_FORM || enemySpecies == SPECIES_BLOODVELD_INSATIABLE_SPECIAL_FORM)) {
+            if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+                leftToDefeat--;
+            if ((leftToDefeat <= 0))
+            {
+                VarSet(VAR_SLAYER_COMPLETE, 1);
+            }
+        }
+        else if ((VarGet(VAR_SLAYER_ASSIGNMENT) == 2) && (enemySpecies == SPECIES_DEMON_LESSER_OSRS_FORM || enemySpecies == SPECIES_DEMON_GREATER_OSRS_FORM)) {
+            if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+                leftToDefeat--;
+            if ((leftToDefeat <= 0))
+            {
+                VarSet(VAR_SLAYER_COMPLETE, 1);
+            }
+        }
+        else if ((VarGet(VAR_SLAYER_ASSIGNMENT) == 3) && (enemySpecies == SPECIES_ABYSSAL_DEMON_FORM || enemySpecies == SPECIES_ABYSSAL_MINION_FORM)) {
+            if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+                leftToDefeat--;
+            if ((leftToDefeat <= 0))
+            {
+                VarSet(VAR_SLAYER_COMPLETE, 1);
+            }
+        }
+        /* JELLY
+        else if ((VarGet(VAR_SLAYER_ASSIGNMENT) == 4) &&() enemySpecies == SPECIES_ABYSSAL_DEMON_FORM || enemySpecies == SPECIES_ABYSSAL_MINION_FORM)) {
+            if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
+                leftToDefeat--;
+            if ((leftToDefeat <= 0))
+            {
+                VarSet(VAR_SLAYER_COMPLETE, 1);
+            }
+        }*/
+        
+        VarSet(VAR_SLAYER_LEFT_TO_DEFEAT,leftToDefeat);
+        gBattlescriptCurrInstr = gBattlescriptCurrInstr + 3;
+        return;
+        }
     case VARIOUS_SWAP_STATS:
         {
             VARIOUS_ARGS(u8 stat);

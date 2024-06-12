@@ -134,6 +134,21 @@ script FUNCTION_SLAYER_TASK_MASTER {
     end
 }
 
+script SLAYER_VAR_CHECK
+{
+    buffernumberstring(0, VAR_SLAYER_LEFT_TO_DEFEAT)
+    msgbox(format("VAR_SLAYER_LEFT_TO_DEFEAT is: {STR_VAR_1}" ))
+    buffernumberstring(0, VAR_SLAYER_ASSIGNMENT)
+    msgbox(format("VAR_SLAYER_ASSIGNMENT is: {STR_VAR_1}" ))
+    buffernumberstring(0, VAR_SLAYER_COMPLETE)
+    msgbox(format("VAR_SLAYER_COMPLETE is: {STR_VAR_1}" ))
+    closemessage
+    end
+}
+
+
+
+
 script KOUREND_SLAYER_TASK
 {
     if (var(VAR_SLAYER_LEFT_TO_DEFEAT) >= 1) {
@@ -173,7 +188,7 @@ script SLAYER_TASK_ASSIGN
     addvar(VAR_RESULT, 1)
     copyvar(VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT)
     //Assigns Species
-    random(10)
+    random(3) //How many to go through.
         switch (var(VAR_RESULT)) {
             case 0: 
                 setvar(VAR_SLAYER_ASSIGNMENT, 1)                  //MON
@@ -181,11 +196,11 @@ script SLAYER_TASK_ASSIGN
                 buffernumberstring(STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT)       //AMOUNT
             case 1: 
                 setvar(VAR_SLAYER_ASSIGNMENT, 2)                //MON
-                bufferspeciesname(STR_VAR_2, SPECIES_FROGEEL)   //MON
+                bufferspeciesname(STR_VAR_2, SPECIES_DEMON_LESSER_OSRS_FORM)   //MON
                 buffernumberstring(STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT)       //AMOUNT
             case 2: 
                 setvar(VAR_SLAYER_ASSIGNMENT, 3)                 //MON
-                bufferspeciesname(STR_VAR_2, SPECIES_GUTHLING)   //MON
+                bufferspeciesname(STR_VAR_2, SPECIES_ABYSSAL_DEMON_FORM)   //MON
                 buffernumberstring(STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT)        //AMOUNT
             case 3:
             case 4:
@@ -221,11 +236,20 @@ script SLAYER_TASK_CHECK
             bufferspeciesname(STR_VAR_2, SPECIES_DEMON_LESSER_OSRS_FORM)
             buffernumberstring (STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT)
         case 3: 
-            bufferspeciesname(STR_VAR_2, SPECIES_ZAMLING)
+            bufferspeciesname(STR_VAR_2, SPECIES_ABYSSAL_DEMON_FORM)
+            buffernumberstring (STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT)
+        case 4:
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+            bufferspeciesname(STR_VAR_2, SPECIES_THINGUMWUT) //none specifically.
             buffernumberstring (STR_VAR_3, VAR_SLAYER_LEFT_TO_DEFEAT)
         
     }
-    msgbox(format("Your current assignment is to slay {STR_VAR_3} {STR_VAR_2}"))
+    msgbox(format("Your current assignment is to slay {STR_VAR_3} {STR_VAR_2}."))
     closemessage
     return
 }
@@ -237,7 +261,7 @@ script SLAYER_TASK_COMPLETE
         //Assigns Amount of Slayer Points
         random(12)
         addvar(VAR_RESULT, 1)
-        copyvar(VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT)
+        //copyvar(VAR_SLAYER_LEFT_TO_DEFEAT, VAR_RESULT)
         setvar(VAR_0x8004, 12) // Sets temp VAR
         special (GiveFrontierBattlePoints)
         buffernumberstring (STR_VAR_1, VAR_0x8004)
@@ -245,6 +269,7 @@ script SLAYER_TASK_COMPLETE
         waitmessage
         waitfanfare
         closemessage
+        setvar(VAR_SLAYER_LEFT_TO_DEFEAT, 0)
         setvar(VAR_SLAYER_ASSIGNMENT, 0)
         setvar(VAR_SLAYER_COMPLETE, 0)
         release
