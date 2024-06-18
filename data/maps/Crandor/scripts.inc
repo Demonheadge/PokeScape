@@ -23,6 +23,7 @@ CRANDOR_STATE_5:
 CRANDOR_STATE_2:
 	setvar VAR_TEMP_0, 1
 	setvar VAR_TEMP_1, 1
+	setvar VAR_TEMP_2, 1
 	clearflag FLAG_TEMP_1E
 	setflag FLAG_TEMP_1F
 	goto CRANDOR_STATE_1
@@ -209,10 +210,14 @@ TRIGGER_CRANDOR_SHAKE2::
 	end
 
 
+ELVARG_WARP::
+	warp MAP_KARAMJA_VOLCANO_B3F, 1, 0, 0
+	waitstate
+	end
+
+
 TRIGGER_ELVARGFLYOVER::
-	lock
 	applymovement OBJ_EVENT_ID_PLAYER, movement_elvargflyover4
-	savebgm MUS_DUMMY
 	fadeoutbgm 1
 	waitmovement 0
 	special SpawnCameraObject
@@ -231,8 +236,8 @@ TRIGGER_ELVARGFLYOVER::
 	applymovement 8, MOVEMENT_HAM_CONFUSED
 	delay 32
 	special RemoveCameraObject
-	waitmovement 0
-	warp MAP_KARAMJA_VOLCANO_B3F, 1
+	fadeinbgm 0
+	goto ELVARG_WARP
 	release
 	end
 

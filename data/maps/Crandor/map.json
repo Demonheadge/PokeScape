@@ -417,7 +417,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "EventScript_New_RockSmash",
+      "script": "EventScript_RockSmash",
       "flag": "FLAG_TEMP_3"
     },
     {
@@ -482,7 +482,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "TELEPORT_TO_SHIP_SCENE",
+      "script": "ELVARG_WARP",
       "flag": "0"
     },
     {
@@ -558,11 +558,11 @@
     },
     {
       "type": "trigger",
-      "x": 26,
+      "x": 25,
       "y": 27,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
+      "var": "VAR_TEMP_2",
+      "var_value": "1",
       "script": "TRIGGER_ELVARGFLYOVER"
     },
     {

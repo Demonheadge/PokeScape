@@ -11,6 +11,7 @@ script CRANDOR_STATE {
     if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 150) { 
         setvar(VAR_TEMP_0, 1)
         setvar(VAR_TEMP_1, 1)
+        setvar(VAR_TEMP_2, 1)
         clearflag(FLAG_TEMP_1E) //ham
         setflag(FLAG_TEMP_1F) //elvarg
     }
@@ -252,15 +253,19 @@ script TRIGGER_CRANDOR_SHAKE2
 
 
 
-
+script ELVARG_WARP
+{
+    warp(MAP_KARAMJA_VOLCANO_B3F, 1, 0, 0)
+    waitstate
+    end
+}
 
 
 script TRIGGER_ELVARGFLYOVER
 {
-    lock
-    
+    //lock
     applymovement(OBJ_EVENT_ID_PLAYER, movement_elvargflyover4)
-    savebgm(MUS_DUMMY)
+    //savebgm(MUS_DUMMY)
     fadeoutbgm(1)
     waitmovement(0)
     //camera
@@ -282,10 +287,9 @@ script TRIGGER_ELVARGFLYOVER
     //setobjectxy(33,21,31)
     delay(32)
     special(RemoveCameraObject)
-    //fadeinbgm(1)
-    waitmovement(0)
-    warp(MAP_KARAMJA_VOLCANO_B3F, 1)
-    
+    fadeinbgm(0)
+    //waitmovement(0)
+    goto(ELVARG_WARP)
     release
     end
 }
