@@ -4095,6 +4095,10 @@ static const struct SpriteFrameImage sPicTable_Elvarg[] = {
     overworld_frame(gObjectEventPic_Elvarg, 4, 4, 1),
 };
 
+static const struct SpriteFrameImage sPicTable_Elvarg_Fly[] = {
+    obj_frame_tiles(gObjectEventPic_Elvarg_Fly),
+};
+
 static const struct SpriteFrameImage sPicTable_King_Black_Dragon[] = {
     overworld_frame(gObjectEventPic_King_Black_Dragon, 4, 4, 0),
     overworld_frame(gObjectEventPic_King_Black_Dragon, 4, 4, 1),

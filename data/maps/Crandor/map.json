@@ -447,7 +447,7 @@
       "flag": "FLAG_TEMP_1E"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ELVARG",
+      "graphics_id": "OBJ_EVENT_GFX_ELVARG_FLY",
       "x": 20,
       "y": 26,
       "elevation": 0,
@@ -558,7 +558,7 @@
     },
     {
       "type": "trigger",
-      "x": 25,
+      "x": 26,
       "y": 27,
       "elevation": 0,
       "var": "VAR_TEMP_2",

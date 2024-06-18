@@ -547,6 +547,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_strykewyrm_
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_hanannie;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_vorkath;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_behemoth;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Elvarg_Fly;
 
 //ORES
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CopperOre;
@@ -1104,6 +1105,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_HANANNIE] =                      &gObjectEventGraphicsInfo_hanannie,
     [OBJ_EVENT_GFX_VORKATH] =                       &gObjectEventGraphicsInfo_vorkath,
     [OBJ_EVENT_GFX_BEHEMOTH] =                      &gObjectEventGraphicsInfo_behemoth,
+    [OBJ_EVENT_GFX_ELVARG_FLY] =                    &gObjectEventGraphicsInfo_Elvarg_Fly,
 
 //ORES 
 	[OBJ_EVENT_GFX_COPPER_ORE] =          		    &gObjectEventGraphicsInfo_CopperOre,

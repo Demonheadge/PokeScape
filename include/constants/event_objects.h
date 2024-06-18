@@ -555,9 +555,10 @@
 #define OBJ_EVENT_GFX_HANANNIE			        538
 #define OBJ_EVENT_GFX_VORKATH			        539
 #define OBJ_EVENT_GFX_BEHEMOTH			        540
+#define OBJ_EVENT_GFX_ELVARG_FLY				541
 
 
-#define NUM_OBJ_EVENT_GFX                        541
+#define NUM_OBJ_EVENT_GFX                        542
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //
 // Object event graphics ids are 1 byte in size (max value of 255), and the dynamic

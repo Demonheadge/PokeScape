@@ -611,17 +611,17 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_IMP               0x121C
 #define OBJ_EVENT_PAL_IMP_SNOW          0x121D
 #define OBJ_EVENT_PAL_KALPHITE_KING     0x121E
-#define OBJ_EVENT_PAL_KALPHITE_QUEEN    0x122F
-#define OBJ_EVENT_PAL_KALPHITE_WORKER   0x1220
+//#define OBJ_EVENT_PAL_KALPHITE_QUEEN    0x122F
+//#define OBJ_EVENT_PAL_KALPHITE_WORKER   0x1220
 #define OBJ_EVENT_PAL_GWD_GENERAL_GRAADOR 0x1221
-#define OBJ_EVENT_PAL_ABYSSAL_SIRE      0x1222
+//#define OBJ_EVENT_PAL_ABYSSAL_SIRE      0x1222
 #define OBJ_EVENT_PAL_VORAGO            0x1223
 #define OBJ_EVENT_PAL_PIGLET            0x1224
 #define OBJ_EVENT_PAL_PIGZILLA          0x1225
 #define OBJ_EVENT_PAL_YAK               0x1226
 #define OBJ_EVENT_PAL_PENGUIN_ROCK      0x1227
 #define OBJ_EVENT_PAL_QUEEN_BLACK_DRAGON 0x1228
-#define OBJ_EVENT_PAL_ELVARG            0x1229
+//#define OBJ_EVENT_PAL_ELVARG            0x1229
 #define OBJ_EVENT_PAL_KING_BLACK_DRAGON 0x122A
 #define OBJ_EVENT_PAL_RAT               0x122B
 #define OBJ_EVENT_PAL_RUNE_GUARDIAN     0x122C
@@ -667,12 +667,13 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_ORE_PAL2          0x124E
 #define OBJ_EVENT_PAL_CABBAGE_CROP      0x124F
 
-#define OBJ_EVENT_PAL_ABYSSAL_DEMON     0x1250
+//#define OBJ_EVENT_PAL_ABYSSAL_DEMON     0x1250
 #define OBJ_EVENT_PAL_CHAOS_ELEMENTAL   0x1251
 #define OBJ_EVENT_PAL_MINER             0x1252
 #define OBJ_EVENT_PAL_SMITH             0x1253
 #define OBJ_EVENT_PAL_DOG_SLEEP         0x1254
-#define OBJ_EVENT_PAL_JUNA              0x1255
+#define OBJ_EVENT_PAL_LEGEND_GREEN      0x1255
+//#define OBJ_EVENT_PAL_JUNA              0x1255
 #define OBJ_EVENT_PAL_ABYSS_PORTAL      0x1256
 #define OBJ_EVENT_PAL_CHAIR             0x1257
 #define OBJ_EVENT_PAL_STRYKEWYRM_FREEZY 0x1258
@@ -734,6 +735,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_SKOTIZO           0x1274
 #define OBJ_EVENT_PAL_DUNGEONEERING     0x1275
 #define OBJ_EVENT_PAL_VORKATH           0x1276
+
 
 /*
 #define OBJ_EVENT_PAL_RAC_BATS			0x126B
@@ -977,17 +979,17 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Imp, OBJ_EVENT_PAL_IMP},
     {gObjectEventPalette_Imp_Snow, OBJ_EVENT_PAL_IMP_SNOW},
     {gObjectEventPalette_Kalphite_King, OBJ_EVENT_PAL_KALPHITE_KING},
-    {gObjectEventPalette_Kalphite_Queen, OBJ_EVENT_PAL_KALPHITE_QUEEN},
-    {gObjectEventPalette_Kalphite_Worker, OBJ_EVENT_PAL_KALPHITE_WORKER},
+    //{gObjectEventPalette_Kalphite_Queen, OBJ_EVENT_PAL_KALPHITE_QUEEN},
+    //{gObjectEventPalette_Kalphite_Worker, OBJ_EVENT_PAL_KALPHITE_WORKER},
     {gObjectEventPalette_GWD_General_Graador, OBJ_EVENT_PAL_GWD_GENERAL_GRAADOR},
-    {gObjectEventPalette_Abyssal_Sire, OBJ_EVENT_PAL_ABYSSAL_SIRE},
+    //{gObjectEventPalette_Abyssal_Sire, OBJ_EVENT_PAL_ABYSSAL_SIRE},
     {gObjectEventPalette_Vorago, OBJ_EVENT_PAL_VORAGO},
     {gObjectEventPalette_Piglet, OBJ_EVENT_PAL_PIGLET},
     {gObjectEventPalette_Pigzilla, OBJ_EVENT_PAL_PIGZILLA},
     {gObjectEventPalette_Yak, OBJ_EVENT_PAL_YAK},
     {gObjectEventPalette_Penguin_Rock, OBJ_EVENT_PAL_PENGUIN_ROCK},
     {gObjectEventPalette_Queen_Black_Dragon, OBJ_EVENT_PAL_QUEEN_BLACK_DRAGON},
-    {gObjectEventPalette_Elvarg, OBJ_EVENT_PAL_ELVARG},
+    //{gObjectEventPalette_Elvarg, OBJ_EVENT_PAL_ELVARG},
     {gObjectEventPalette_King_Black_Dragon, OBJ_EVENT_PAL_KING_BLACK_DRAGON},
     {gObjectEventPalette_Rat, OBJ_EVENT_PAL_RAT},
     {gObjectEventPalette_Rune_Guardian, OBJ_EVENT_PAL_RUNE_GUARDIAN},
@@ -1029,12 +1031,12 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Suomi, OBJ_EVENT_PAL_SUOMI},
     {gObjectEventPalette_Zezima, OBJ_EVENT_PAL_ZEZIMA},	
 
-    {gObjectEventPalette_Abyssal_Demon, OBJ_EVENT_PAL_ABYSSAL_DEMON},	
+    //{gObjectEventPalette_Abyssal_Demon, OBJ_EVENT_PAL_ABYSSAL_DEMON},	
     {gObjectEventPalette_Chaos_Elemental, OBJ_EVENT_PAL_CHAOS_ELEMENTAL},	
     {gObjectEventPalette_Miner, OBJ_EVENT_PAL_MINER},	
     {gObjectEventPalette_Smith, OBJ_EVENT_PAL_SMITH},	
     {gObjectEventPalette_Dog_Sleep, OBJ_EVENT_PAL_DOG_SLEEP},	
-    {gObjectEventPalette_Juna, OBJ_EVENT_PAL_JUNA},	
+    //{gObjectEventPalette_Juna, OBJ_EVENT_PAL_JUNA},	
     {gObjectEventPalette_Abyss_Portal, OBJ_EVENT_PAL_ABYSS_PORTAL},	
     {gObjectEventPalette_Chair, OBJ_EVENT_PAL_CHAIR},	
 /*
@@ -1099,6 +1101,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_DRAGONS, OBJ_EVENT_PAL_DRAGONS},
     {gObjectEventPalette_DUNGEONEERING, OBJ_EVENT_PAL_DUNGEONEERING},
     {gObjectEventPalette_VORKATH, OBJ_EVENT_PAL_VORKATH},
+    {gObjectEventPalette_LEGEND_GREEN, OBJ_EVENT_PAL_LEGEND_GREEN},
     
     /*
     {gObjectEventPalette_RAC_BATS, OBJ_EVENT_PAL_RAC_BATS},
@@ -5914,6 +5917,24 @@ bool8 MovementAction_WalkNormalDiagonalUpRight_Step1(struct ObjectEvent *objectE
     }
     return FALSE;
 }
+
+//faster diag
+bool8 MovementAction_WalkFasterDiagonalUpRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    InitMovementNormal(objectEvent, sprite, DIR_NORTHEAST, MOVE_SPEED_FASTER);
+    return MovementAction_WalkFasterDiagonalUpRight_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_WalkFasterDiagonalUpRight_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+//
 
 bool8 MovementAction_WalkNormalDiagonalDownLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {

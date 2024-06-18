@@ -4710,7 +4710,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kalphite_King = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kalphite_Queen = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_KALPHITE_QUEEN,
+    .paletteTag = OBJ_EVENT_PAL_LEGEND_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -4728,7 +4728,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kalphite_Queen = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kalphite_Worker = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_KALPHITE_WORKER,
+    .paletteTag = OBJ_EVENT_PAL_LEGEND_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 128,
     .width = 16,
@@ -7489,7 +7489,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GWD_General_Graado
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Abyssal_Sire = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_ABYSSAL_SIRE,
+    .paletteTag = OBJ_EVENT_PAL_KNIGHTS2,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -7617,7 +7617,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Queen_Black_Dragon
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Elvarg = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_ELVARG,
+    .paletteTag = OBJ_EVENT_PAL_LEGEND_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -7631,6 +7631,24 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Elvarg = {
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Idle,
     .images = sPicTable_Elvarg,
+    .affineAnims = gDummySpriteAffineAnimTable
+};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Elvarg_Fly = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_KNIGHTS2,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = 5,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_Elvarg_Fly,
     .affineAnims = gDummySpriteAffineAnimTable
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_King_Black_Dragon = {
@@ -8244,7 +8262,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zezima = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Abyssal_Demon = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_ABYSSAL_DEMON,
+    .paletteTag = OBJ_EVENT_PAL_KNIGHTS2,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -8317,7 +8335,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Smith = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Juna = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_JUNA,
+    .paletteTag = OBJ_EVENT_PAL_LEGEND_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,

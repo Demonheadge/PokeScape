@@ -1287,6 +1287,9 @@ $(OBJEVENTGFXDIR)/pokescape_overworlds/penguin_rock.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/pokescape_overworlds/elvarg.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/pokescape_overworlds/elvarg_fly.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(OBJEVENTGFXDIR)/pokescape_overworlds/king_black_dragon.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 6
 
