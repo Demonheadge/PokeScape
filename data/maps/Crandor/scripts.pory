@@ -266,7 +266,7 @@ script TRIGGER_ELVARGFLYOVER
     //lock
     applymovement(OBJ_EVENT_ID_PLAYER, movement_elvargflyover4)
     //savebgm(MUS_DUMMY)
-    fadeoutbgm(1)
+    fadeoutbgm(1) //can crash on warp without fadein.
     waitmovement(0)
     //camera
     special(SpawnCameraObject)
@@ -325,7 +325,9 @@ movement movement_elvargflyover4 {
 movement movement_elvargflyover2 {
     lock_facing_direction
     disable_anim
-    walk_faster_right * 20
+    //walk_faster_right * 20
+    walk_faster_diag_northeast * 13
+    //walk_diag_northeast * 10
 }
 
 movement movement_elvargflyover_left {

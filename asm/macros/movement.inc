@@ -164,5 +164,6 @@
 	create_movement_action fly_down, MOVEMENT_ACTION_FLY_DOWN
 	create_movement_action emote_double_exclamation_mark, MOVEMENT_ACTION_EMOTE_DOUBLE_EXCL_MARK
 	create_movement_action emote_x, MOVEMENT_ACTION_EMOTE_X
+	create_movement_action walk_faster_diag_northeast, MOVEMENT_ACTION_WALK_FASTER_DIAGONAL_UP_RIGHT
 
 	create_movement_action step_end, MOVEMENT_ACTION_STEP_END

@@ -293,26 +293,19 @@ movement_elvargflyover4:
 movement_elvargflyover2:
 	lock_facing_direction
 	disable_anim
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
+	walk_faster_diag_northeast
+	walk_faster_diag_northeast
+	walk_faster_diag_northeast
+	walk_faster_diag_northeast
+	walk_faster_diag_northeast
+	walk_faster_diag_northeast
+	walk_faster_diag_northeast
+	walk_faster_diag_northeast
+	walk_faster_diag_northeast
+	walk_faster_diag_northeast
+	walk_faster_diag_northeast
+	walk_faster_diag_northeast
+	walk_faster_diag_northeast
 	step_end
 
 movement_elvargflyover_left:
