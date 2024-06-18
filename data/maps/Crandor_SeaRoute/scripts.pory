@@ -1,4 +1,8 @@
 
+const OBJ_EVENT_ID_ELVARG = 1
+const OBJ_EVENT_ID_CABIN_BOY = 2
+const OBJ_EVENT_ID_SHIP = 3
+
 mapscripts Crandor_SeaRoute_MapScripts {
 
 
@@ -25,12 +29,14 @@ script TELEPORT_TO_SHIP_SCENE
 {
     //warp(MAP_ROUTE32, 0, 13, 22)
     warp(MAP_CRANDOR_SEA_ROUTE, 0, 57, 5)
+    waitstate
+    end
 }
 script CRANDOR_SHIP_SCENE
 {
     lockall
     setflag(FLAG_TEMP_10)
-    removeobject(3)
+    removeobject(OBJ_EVENT_ID_CABIN_BOY)
     
     //setobjectxy(OBJ_EVENT_ID_PLAYER, 13, 22)
     
@@ -40,7 +46,7 @@ script CRANDOR_SHIP_SCENE
     
     //playbgm(MUS_PS_SURFING, 0)
     applymovement(OBJ_EVENT_ID_PLAYER, movement_setinvisible)
-    applymovement(1, movement_crandor_ship)
+    applymovement(OBJ_EVENT_ID_SHIP, movement_crandor_ship)
     waitmovement(0)
     
     namebox("Cabin Boy")
@@ -48,7 +54,7 @@ script CRANDOR_SHIP_SCENE
     closemessage
     hidenamebox
     applymovement(OBJ_EVENT_ID_PLAYER, movement_sailing4)
-    applymovement(1, movement_sailing4)
+    applymovement(OBJ_EVENT_ID_SHIP, movement_sailing4)
     waitmovement(0)
     namebox("Ned")
     msgbox(format("See that scary looking rock?\pIt means we are going the right way."))
@@ -57,7 +63,7 @@ script CRANDOR_SHIP_SCENE
 
 
     applymovement(OBJ_EVENT_ID_PLAYER, movement_sailing2)
-    applymovement(1, movement_sailing2)
+    applymovement(OBJ_EVENT_ID_SHIP, movement_sailing2)
     waitmovement(0)
     
     setweather(WEATHER_RAIN_THUNDERSTORM)
@@ -68,13 +74,13 @@ script CRANDOR_SHIP_SCENE
     hidenamebox
 
     applymovement(OBJ_EVENT_ID_PLAYER, movement_sailing2)
-    applymovement(1, movement_sailing2)
+    applymovement(OBJ_EVENT_ID_SHIP, movement_sailing2)
     waitmovement(0)
 
     delay(32)
-
+    setobjectxy(OBJ_EVENT_ID_ELVARG, 22, 9)
     playse(SE_M_FLY)
-    applymovement(2, movement_elvargflyover2)
+    applymovement(OBJ_EVENT_ID_ELVARG, movement_elvargflyover2)
     waitmovement(0)
 
     playbgm(MUS_PS_RIMMINGTON, 0)
@@ -92,12 +98,12 @@ script CRANDOR_SHIP_SCENE
 
 
     applymovement(OBJ_EVENT_ID_PLAYER, movement_sailing2)
-    applymovement(1, movement_sailing2)
+    applymovement(OBJ_EVENT_ID_SHIP, movement_sailing2)
     waitmovement(0)
 
-    setobjectxy(2, 22, 3)
+    setobjectxy(OBJ_EVENT_ID_ELVARG, 22, 3)
     playse(SE_M_FLY)
-    applymovement(2, movement_elvargflyover_left)
+    applymovement(OBJ_EVENT_ID_ELVARG, movement_elvargflyover_left)
 
     setvar (VAR_0x8004, 1  @ vertical pan)
 	setvar (VAR_0x8005, 1  @ horizontal pan)
@@ -140,7 +146,7 @@ script CRANDOR_SHIP_SCENE
 	waitstate
 
     applymovement(OBJ_EVENT_ID_PLAYER, movement_sailing4)
-    applymovement(1, movement_sailing4)
+    applymovement(OBJ_EVENT_ID_SHIP, movement_sailing4)
     waitmovement(0)
     setvar (VAR_0x8004, 1  @ vertical pan)
 	setvar (VAR_0x8005, 1  @ horizontal pan)
@@ -151,7 +157,7 @@ script CRANDOR_SHIP_SCENE
     special(DrawWholeMapView) 
 	waitstate
     applymovement(OBJ_EVENT_ID_PLAYER, movement_sailing4)
-    applymovement(1, movement_sailing4)
+    applymovement(OBJ_EVENT_ID_SHIP, movement_sailing4)
     waitmovement(0)
     setvar (VAR_0x8004, 1  @ vertical pan)
 	setvar (VAR_0x8005, 1  @ horizontal pan)
@@ -166,8 +172,8 @@ script CRANDOR_SHIP_SCENE
     closemessage
     hidenamebox
     clearflag(FLAG_TEMP_10)
-    addobject(3)
-    applymovement(3, movement_cabinboy)
+    addobject(OBJ_EVENT_ID_CABIN_BOY)
+    applymovement(OBJ_EVENT_ID_CABIN_BOY, movement_cabinboy)
     setvar (VAR_0x8004, 1  @ vertical pan)
 	setvar (VAR_0x8005, 1  @ horizontal pan)
 	setvar (VAR_0x8006, 8  @ num shakes)
@@ -182,9 +188,9 @@ script CRANDOR_SHIP_SCENE
     hidenamebox
     waitmovement(0)
     setflag(FLAG_TEMP_11)
-    removeobject(2)
+    removeobject(OBJ_EVENT_ID_ELVARG)
     applymovement(OBJ_EVENT_ID_PLAYER, movement_sailing4)
-    applymovement(1, movement_sailing4)
+    applymovement(OBJ_EVENT_ID_SHIP, movement_sailing4)
     waitmovement(0)
     setvar (VAR_0x8004, 1  @ vertical pan)
 	setvar (VAR_0x8005, 1  @ horizontal pan)
@@ -199,7 +205,7 @@ script CRANDOR_SHIP_SCENE
     closemessage
     hidenamebox
     applymovement(OBJ_EVENT_ID_PLAYER, movement_sailing4)
-    applymovement(1, movement_sailing4)
+    applymovement(OBJ_EVENT_ID_SHIP, movement_sailing4)
     waitmovement(0)
     setvar (VAR_0x8004, 1  @ vertical pan)
 	setvar (VAR_0x8005, 1  @ horizontal pan)
@@ -210,7 +216,7 @@ script CRANDOR_SHIP_SCENE
     special(DrawWholeMapView) 
 	waitstate
     applymovement(OBJ_EVENT_ID_PLAYER, movement_sailing3)
-    applymovement(1, movement_sailing3)
+    applymovement(OBJ_EVENT_ID_SHIP, movement_sailing3)
     delay(32)
     fadescreen(FADE_TO_BLACK)
     playse(SE_M_EARTHQUAKE)

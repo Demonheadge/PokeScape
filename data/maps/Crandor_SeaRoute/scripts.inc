@@ -21,29 +21,30 @@ hideplayer::
 
 TELEPORT_TO_SHIP_SCENE::
 	warp MAP_CRANDOR_SEA_ROUTE, 0, 57, 5
-	return
+	waitstate
+	end
 
 
 CRANDOR_SHIP_SCENE::
 	lockall
 	setflag FLAG_TEMP_10
-	removeobject 3
+	removeobject 2
 	applymovement OBJ_EVENT_ID_PLAYER, movement_setinvisible
-	applymovement 1, movement_crandor_ship
+	applymovement 3, movement_crandor_ship
 	waitmovement 0
 	namebox CRANDOR_SHIP_SCENE_Text_0
 	msgbox CRANDOR_SHIP_SCENE_Text_1
 	closemessage
 	hidenamebox
 	applymovement OBJ_EVENT_ID_PLAYER, movement_sailing4
-	applymovement 1, movement_sailing4
+	applymovement 3, movement_sailing4
 	waitmovement 0
 	namebox CRANDOR_SHIP_SCENE_Text_2
 	msgbox CRANDOR_SHIP_SCENE_Text_3
 	closemessage
 	hidenamebox
 	applymovement OBJ_EVENT_ID_PLAYER, movement_sailing2
-	applymovement 1, movement_sailing2
+	applymovement 3, movement_sailing2
 	waitmovement 0
 	setweather WEATHER_RAIN_THUNDERSTORM
 	doweather
@@ -52,11 +53,12 @@ CRANDOR_SHIP_SCENE::
 	closemessage
 	hidenamebox
 	applymovement OBJ_EVENT_ID_PLAYER, movement_sailing2
-	applymovement 1, movement_sailing2
+	applymovement 3, movement_sailing2
 	waitmovement 0
 	delay 32
+	setobjectxy 1, 22, 9
 	playse SE_M_FLY
-	applymovement 2, movement_elvargflyover2
+	applymovement 1, movement_elvargflyover2
 	waitmovement 0
 	playbgm MUS_PS_RIMMINGTON, 0
 	namebox CRANDOR_SHIP_SCENE_Text_0
@@ -68,11 +70,11 @@ CRANDOR_SHIP_SCENE::
 	closemessage
 	hidenamebox
 	applymovement OBJ_EVENT_ID_PLAYER, movement_sailing2
-	applymovement 1, movement_sailing2
+	applymovement 3, movement_sailing2
 	waitmovement 0
-	setobjectxy 2, 22, 3
+	setobjectxy 1, 22, 3
 	playse SE_M_FLY
-	applymovement 2, movement_elvargflyover_left
+	applymovement 1, movement_elvargflyover_left
 	setvar VAR_0x8004, 1 @ vertical pan
 	setvar VAR_0x8005, 1 @ horizontal pan
 	setvar VAR_0x8006, 8 @ num shakes
@@ -110,7 +112,7 @@ CRANDOR_SHIP_SCENE::
 	special DrawWholeMapView
 	waitstate
 	applymovement OBJ_EVENT_ID_PLAYER, movement_sailing4
-	applymovement 1, movement_sailing4
+	applymovement 3, movement_sailing4
 	waitmovement 0
 	setvar VAR_0x8004, 1 @ vertical pan
 	setvar VAR_0x8005, 1 @ horizontal pan
@@ -121,7 +123,7 @@ CRANDOR_SHIP_SCENE::
 	special DrawWholeMapView
 	waitstate
 	applymovement OBJ_EVENT_ID_PLAYER, movement_sailing4
-	applymovement 1, movement_sailing4
+	applymovement 3, movement_sailing4
 	waitmovement 0
 	setvar VAR_0x8004, 1 @ vertical pan
 	setvar VAR_0x8005, 1 @ horizontal pan
@@ -136,8 +138,8 @@ CRANDOR_SHIP_SCENE::
 	closemessage
 	hidenamebox
 	clearflag FLAG_TEMP_10
-	addobject 3
-	applymovement 3, movement_cabinboy
+	addobject 2
+	applymovement 2, movement_cabinboy
 	setvar VAR_0x8004, 1 @ vertical pan
 	setvar VAR_0x8005, 1 @ horizontal pan
 	setvar VAR_0x8006, 8 @ num shakes
@@ -152,9 +154,9 @@ CRANDOR_SHIP_SCENE::
 	hidenamebox
 	waitmovement 0
 	setflag FLAG_TEMP_11
-	removeobject 2
+	removeobject 1
 	applymovement OBJ_EVENT_ID_PLAYER, movement_sailing4
-	applymovement 1, movement_sailing4
+	applymovement 3, movement_sailing4
 	waitmovement 0
 	setvar VAR_0x8004, 1 @ vertical pan
 	setvar VAR_0x8005, 1 @ horizontal pan
@@ -169,7 +171,7 @@ CRANDOR_SHIP_SCENE::
 	closemessage
 	hidenamebox
 	applymovement OBJ_EVENT_ID_PLAYER, movement_sailing4
-	applymovement 1, movement_sailing4
+	applymovement 3, movement_sailing4
 	waitmovement 0
 	setvar VAR_0x8004, 1 @ vertical pan
 	setvar VAR_0x8005, 1 @ horizontal pan
@@ -180,7 +182,7 @@ CRANDOR_SHIP_SCENE::
 	special DrawWholeMapView
 	waitstate
 	applymovement OBJ_EVENT_ID_PLAYER, movement_sailing3
-	applymovement 1, movement_sailing3
+	applymovement 3, movement_sailing3
 	delay 32
 	fadescreen FADE_TO_BLACK
 	playse SE_M_EARTHQUAKE
