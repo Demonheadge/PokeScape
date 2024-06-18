@@ -4,8 +4,8 @@ Crandor_SeaRoute_MapScripts::
 	.byte 0
 
 Crandor_SeaRoute_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
-	call hideplayer
-	return
+	map_script_2 VAR_TEMP_B, 0, hideplayer
+	.2byte 0
 
 Crandor_SeaRoute_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_TEMP_B, 0, CRANDOR_SHIP_SCENE
@@ -13,9 +13,7 @@ Crandor_SeaRoute_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 
 
 hideplayer::
-	hideobjectat OBJ_EVENT_ID_PLAYER, TRUE
-	applymovement OBJ_EVENT_ID_PLAYER, movement_setinvisible
-	waitmovement 0
+	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_CRANDOR_SEA_ROUTE
 	return
 
 
@@ -196,7 +194,6 @@ CRANDOR_SHIP_SCENE::
 
 
 movement_setinvisible:
-	set_invisible
 	walk_slow_left
 	walk_slow_left
 	walk_slow_left

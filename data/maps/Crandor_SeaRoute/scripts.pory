@@ -4,34 +4,26 @@ const OBJ_EVENT_ID_CABIN_BOY = 2
 const OBJ_EVENT_ID_SHIP = 3
 
 mapscripts Crandor_SeaRoute_MapScripts {
-
-
-    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE {
-        call(hideplayer)  
-    }
-
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+		VAR_TEMP_B, 0: hideplayer
+    ]
     MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_TEMP_B, 0: CRANDOR_SHIP_SCENE
     ]
 }
 
 script hideplayer {
-    hideobjectat(OBJ_EVENT_ID_PLAYER, TRUE)
-    applymovement(OBJ_EVENT_ID_PLAYER, movement_setinvisible)
-    waitmovement(0)
+    hideobjectat(OBJ_EVENT_ID_PLAYER, MAP_CRANDOR_SEA_ROUTE)
     return
 }
 
-
-
-
 script TELEPORT_TO_SHIP_SCENE
 {
-    //warp(MAP_ROUTE32, 0, 13, 22)
     warp(MAP_CRANDOR_SEA_ROUTE, 0, 57, 5)
     waitstate
     end
 }
+
 script CRANDOR_SHIP_SCENE
 {
     lockall
@@ -231,7 +223,7 @@ script CRANDOR_SHIP_SCENE
 }
 
 movement movement_setinvisible {
-    set_invisible
+    //set_invisible
     walk_slow_left * 10
 }
 

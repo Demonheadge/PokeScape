@@ -32,6 +32,11 @@
       "map": "MAP_CRANDOR",
       "offset": -41,
       "direction": "left"
+    },
+    {
+      "map": "MAP_CRANDOR_SEA_ROUTE",
+      "offset": 11,
+      "direction": "left"
     }
   ],
   "object_events": [
