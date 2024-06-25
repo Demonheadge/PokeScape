@@ -320,7 +320,7 @@ const u32 gTrainerFrontPic_prince_ali[] = INCBIN_U32("graphics/trainers/pokescap
 const u32 gTrainerFrontPic_sir_amik_varze[] = INCBIN_U32("graphics/trainers/pokescape/front_pics/GYM_LEADER/sir_amik_varze.4bpp.lz");
 const u32 gTrainerFrontPic_tzhaar[] = INCBIN_U32("graphics/trainers/pokescape/front_pics/GYM_LEADER/tzhaar.4bpp.lz");
 const u32 gTrainerFrontPic_vannaka[] = INCBIN_U32("graphics/trainers/pokescape/front_pics/GYM_LEADER/vannaka.4bpp.lz");
-const u32 gTrainerFrontPic_wise_old_man[] = INCBIN_U32("graphics/trainers/pokescape/front_pics/GYM_LEADER/wise_old_man.4bpp.lz");
+const u32 gTrainerFrontPic_wise_old_man_champion[] = INCBIN_U32("graphics/trainers/pokescape/front_pics/GYM_LEADER/wise_old_man_champion.4bpp.lz");
 
 const u32 gTrainerFrontPic_canada_grrl[] = INCBIN_U32("graphics/trainers/pokescape/front_pics/PLAYER/canada_grrl.4bpp.lz");
 const u32 gTrainerFrontPic_prezleek[] = INCBIN_U32("graphics/trainers/pokescape/front_pics/PLAYER/prezleek.4bpp.lz");
@@ -477,7 +477,7 @@ const u32 gTrainerPalette_prince_ali[] = INCBIN_U32("graphics/trainers/pokescape
 const u32 gTrainerPalette_sir_amik_varze[] = INCBIN_U32("graphics/trainers/pokescape/palettes/sir_amik_varze.gbapal.lz");
 const u32 gTrainerPalette_tzhaar[] = INCBIN_U32("graphics/trainers/pokescape/palettes/tzhaar.gbapal.lz");
 const u32 gTrainerPalette_vannaka[] = INCBIN_U32("graphics/trainers/pokescape/palettes/vannaka.gbapal.lz");
-const u32 gTrainerPalette_wise_old_man[] = INCBIN_U32("graphics/trainers/pokescape/palettes/wise_old_man.gbapal.lz");
+const u32 gTrainerPalette_wise_old_man_champion[] = INCBIN_U32("graphics/trainers/pokescape/palettes/wise_old_man_champion.gbapal.lz");
 const u32 gTrainerPalette_canada_grrl[] = INCBIN_U32("graphics/trainers/pokescape/palettes/canada_grrl.gbapal.lz");
 const u32 gTrainerPalette_prezleek[] = INCBIN_U32("graphics/trainers/pokescape/palettes/prezleek.gbapal.lz");
 const u32 gTrainerPalette_willmissit[] = INCBIN_U32("graphics/trainers/pokescape/palettes/willmissit.gbapal.lz");

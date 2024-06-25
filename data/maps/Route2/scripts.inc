@@ -20,6 +20,19 @@ Route2_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	return
 
 Route2_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	call STORYMODE_STATE_ROUTE2
+	return
+
+
+STORYMODE_STATE_ROUTE2::
+	compare VAR_WISE_OLD_MAN_RIVAL, 0
+	goto_if_ne STORYMODE_STATE_ROUTE2_1
+	return
+
+STORYMODE_STATE_ROUTE2_1:
+	removeobject 14
+	setflag FLAG_TEMP_1F
+	setvar VAR_WISE_OLD_MAN_RIVAL, 1
 	return
 
 
@@ -30,6 +43,8 @@ OPENWORLD_STATE_ROUTE2::
 	removeobject 1
 	removeobject 2
 	removeobject 3
+	removeobject 14
+	setflag FLAG_TEMP_1F
 	return
 
 
@@ -63,6 +78,8 @@ QUEST_STATE_WizardsTower_ROUTE2_3:
 	setflag FLAG_TEMP_1
 	removeobject 2
 	removeobject 3
+	removeobject 14
+	setflag FLAG_TEMP_1F
 	release
 	end
 
@@ -70,6 +87,8 @@ QUEST_STATE_WizardsTower_ROUTE2_4:
 	clearflag FLAG_TEMP_1
 	addobject 2
 	addobject 3
+	removeobject 14
+	setflag FLAG_TEMP_1F
 	release
 	end
 
@@ -77,6 +96,8 @@ QUEST_STATE_WizardsTower_ROUTE2_5:
 	setflag FLAG_TEMP_1
 	removeobject 2
 	removeobject 3
+	removeobject 14
+	setflag FLAG_TEMP_1F
 	release
 	end
 
@@ -87,6 +108,8 @@ QUEST_STATE_WizardsTower_ROUTE2_6:
 	removeobject 1
 	removeobject 2
 	removeobject 3
+	removeobject 14
+	setflag FLAG_TEMP_1F
 	release
 	end
 
@@ -357,6 +380,85 @@ NPC_ROUTE2_BLACK_KNIGHT::
 	end
 
 
+TRIGGER_WISEOLDMAN_RIVAL_1::
+	lock
+	playse SE_PIN
+	applymovement 14, movement_wom_route2_0
+	waitmovement 0
+	delay 60
+	playbgm MUS_ENCOUNTER_BRENDAN, 1
+	getplayerxy VAR_TEMP_A, VAR_TEMP_B
+	compare VAR_TEMP_B, 14
+	goto_if_eq TRIGGER_WISEOLDMAN_RIVAL_1_2
+	compare VAR_TEMP_B, 15
+	goto_if_eq TRIGGER_WISEOLDMAN_RIVAL_1_3
+TRIGGER_WISEOLDMAN_RIVAL_1_1:
+	waitmovement 0
+	namebox TRIGGER_WISEOLDMAN_RIVAL_1_Text_0
+	msgbox TRIGGER_WISEOLDMAN_RIVAL_1_Text_1
+	hidenamebox
+	closemessage
+	trainerbattle_no_intro TRAINER_RIVAL_WISE_OLD_MAN_1, TRIGGER_WISEOLDMAN_RIVAL_1_Text_2
+	namebox TRIGGER_WISEOLDMAN_RIVAL_1_Text_0
+	msgbox TRIGGER_WISEOLDMAN_RIVAL_1_Text_3
+	namebox TRIGGER_WISEOLDMAN_RIVAL_1_Text_4
+	msgbox TRIGGER_WISEOLDMAN_RIVAL_1_Text_5
+	hidenamebox
+	closemessage
+	fadedefaultbgm
+	applymovement 14, movement_wom_route2_3
+	waitmovement 0
+	removeobject 14
+	setflag FLAG_TEMP_1F
+	setvar VAR_WISE_OLD_MAN_RIVAL, 1
+	release
+	end
+
+TRIGGER_WISEOLDMAN_RIVAL_1_2:
+	applymovement 14, movement_wom_route2_1
+	goto TRIGGER_WISEOLDMAN_RIVAL_1_1
+
+TRIGGER_WISEOLDMAN_RIVAL_1_3:
+	applymovement 14, movement_wom_route2_2
+	goto TRIGGER_WISEOLDMAN_RIVAL_1_1
+
+
+movement_wom_route2_0:
+	face_right
+	emote_exclamation_mark
+	delay_16
+	step_end
+
+movement_wom_route2_1:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+movement_wom_route2_2:
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+movement_wom_route2_3:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
 HAM_EVENT_WizardsTower_4_Text_0:
 	.string "Ariane$"
 
@@ -487,3 +589,38 @@ NPC_ROUTE2_BLACK_KNIGHT_Text_0:
 
 NPC_ROUTE2_BLACK_KNIGHT_Text_1:
 	.string "For the Kinshra!$"
+
+TRIGGER_WISEOLDMAN_RIVAL_1_Text_0:
+	.string "???$"
+
+TRIGGER_WISEOLDMAN_RIVAL_1_Text_1:
+	.string "My, a new face it seems.\p"
+	.string "You beat the Duke?\n"
+	.string "Impressive.\p"
+	.string "How about you and me do a little battle?\p"
+	.string "Now dont be shy, surely you can beat an\n"
+	.string "old man.$"
+
+TRIGGER_WISEOLDMAN_RIVAL_1_Text_2:
+	.string "Seems like you might just have what it\n"
+	.string "takes.$"
+
+TRIGGER_WISEOLDMAN_RIVAL_1_Text_3:
+	.string "Impressive.$"
+
+TRIGGER_WISEOLDMAN_RIVAL_1_Text_4:
+	.string "Wise Old Man$"
+
+TRIGGER_WISEOLDMAN_RIVAL_1_Text_5:
+	.string "I'm Dionysius but everyone just calls\n"
+	.string "me the Wise old man.\p"
+	.string "I used to be one of the biggest\n"
+	.string "adventurers in the world, but now im\l"
+	.string "just an old man looking back on his\l"
+	.string "glory days.\p"
+	.string "Maybe you will become something of a\n"
+	.string "legend yourself?\p"
+	.string "I hope to see you around on your\n"
+	.string "adventures, try not to get lost in the\l"
+	.string "Wizards' Tower.\p"
+	.string "Until next time.$"

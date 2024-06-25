@@ -1384,7 +1384,7 @@ $(OBJEVENTGFXDIR)/pokescape_overworlds/gymleader_tokhaarhok.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/pokescape_overworlds/gymleader_gunthor.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
-$(OBJEVENTGFXDIR)/pokescape_overworlds/gymleader_wise_old_man.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/pokescape_overworlds/wise_old_man_champion.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/pokescape_overworlds/gymleader_vannaka.4bpp: %.4bpp: %.png

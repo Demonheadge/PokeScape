@@ -407,7 +407,7 @@ extern const u32 gTrainerFrontPic_prince_ali[];
 extern const u32 gTrainerFrontPic_sir_amik_varze[];
 extern const u32 gTrainerFrontPic_tzhaar[];
 extern const u32 gTrainerFrontPic_vannaka[];
-extern const u32 gTrainerFrontPic_wise_old_man[];
+extern const u32 gTrainerFrontPic_wise_old_man_champion[];
 
 extern const u32 gTrainerFrontPic_canada_grrl[];
 extern const u32 gTrainerFrontPic_prezleek[];
@@ -564,7 +564,7 @@ extern const u32 gTrainerPalette_prince_ali[];
 extern const u32 gTrainerPalette_sir_amik_varze[];
 extern const u32 gTrainerPalette_tzhaar[];
 extern const u32 gTrainerPalette_vannaka[];
-extern const u32 gTrainerPalette_wise_old_man[];
+extern const u32 gTrainerPalette_wise_old_man_champion[];
 extern const u32 gTrainerPalette_canada_grrl[];
 extern const u32 gTrainerPalette_prezleek[];
 extern const u32 gTrainerPalette_willmissit[];

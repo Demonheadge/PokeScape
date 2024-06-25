@@ -471,7 +471,7 @@ static const union AnimCmd *const sAnims_vannaka[] ={
     sAnim_GeneralFrame0,
 };
 
-static const union AnimCmd *const sAnims_wise_old_man[] ={
+static const union AnimCmd *const sAnims_wise_old_man_champion[] ={
     sAnim_GeneralFrame0,
 };
 
@@ -1088,7 +1088,7 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 	[TRAINER_PIC_sir_amik_varze] = sAnims_sir_amik_varze,
 	[TRAINER_PIC_tzhaar] = sAnims_tzhaar,
 	[TRAINER_PIC_vannaka] = sAnims_vannaka,
-	[TRAINER_PIC_wise_old_man] = sAnims_wise_old_man,
+	[TRAINER_PIC_wise_old_man_champion] = sAnims_wise_old_man_champion,
 	[TRAINER_PIC_canada_grrl] = sAnims_canada_grrl,
 	[TRAINER_PIC_prezleek] = sAnims_prezleek,
 	[TRAINER_PIC_willmissit] = sAnims_willmissit,

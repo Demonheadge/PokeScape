@@ -9,12 +9,20 @@ mapscripts Route2_MapScripts{
         setvar(VAR_EVOLUTION_MAP_STATE, 1) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
         if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
     	{
-            
+            call(STORYMODE_STATE_ROUTE2)
     	}
 		else
 		{
 			call(OPENWORLD_STATE_ROUTE2)
 		}
+    }
+}
+
+script STORYMODE_STATE_ROUTE2 {
+    if (!(var(VAR_WISE_OLD_MAN_RIVAL) == 0)) {
+        removeobject(14)
+        setflag(FLAG_TEMP_1F) //Wise old man
+        setvar(VAR_WISE_OLD_MAN_RIVAL, 1)
     }
 }
 
@@ -26,6 +34,8 @@ script OPENWORLD_STATE_ROUTE2 {
         removeobject(1)
         removeobject(2)
         removeobject(3)
+        removeobject(14)
+        setflag(FLAG_TEMP_1F) //Wise old man
 		return
 }
 
@@ -48,6 +58,8 @@ script QUEST_STATE_WizardsTower_ROUTE2{
                 setflag(FLAG_TEMP_1)
                 removeobject(2)
                 removeobject(3)
+                removeobject(14)
+                setflag(FLAG_TEMP_1F) //Wise old man
                 release
                 end
             case 3: 
@@ -55,6 +67,8 @@ script QUEST_STATE_WizardsTower_ROUTE2{
                 clearflag(FLAG_TEMP_1)
                 addobject(2)
                 addobject(3)
+                removeobject(14)
+                setflag(FLAG_TEMP_1F) //Wise old man
                 release
                 end
             case 4: 
@@ -67,6 +81,8 @@ script QUEST_STATE_WizardsTower_ROUTE2{
                 setflag(FLAG_TEMP_1)
                 removeobject(2)
                 removeobject(3)
+                removeobject(14)
+                setflag(FLAG_TEMP_1F) //Wise old man
                 release
                 end
             case 10: 
@@ -77,6 +93,8 @@ script QUEST_STATE_WizardsTower_ROUTE2{
                 removeobject(1)
                 removeobject(2)
                 removeobject(3)
+                removeobject(14)
+                setflag(FLAG_TEMP_1F) //Wise old man
                 release
                 end
             }
@@ -352,3 +370,56 @@ script NPC_ROUTE2_BLACK_KNIGHT{
     end
 }
 
+
+
+script TRIGGER_WISEOLDMAN_RIVAL_1{
+    lock
+    playse(SE_PIN)
+    applymovement (14, movement_wom_route2_0)
+    waitmovement(0)
+    delay(60)
+    playbgm (MUS_ENCOUNTER_BRENDAN, 1)
+    getplayerxy(VAR_TEMP_A, VAR_TEMP_B)
+    if (var(VAR_TEMP_B) == 14){
+        applymovement (14, movement_wom_route2_1)
+    } 
+    elif (var(VAR_TEMP_B) == 15){
+        applymovement (14, movement_wom_route2_2)
+    }
+    waitmovement(0)
+    namebox("???")
+    msgbox(format("My, a new face it seems.\pYou beat the Duke?\nImpressive.\pHow about you and me do a little battle?\pNow dont be shy, surely you can beat an old man."))
+    hidenamebox
+    closemessage
+    trainerbattle_no_intro(TRAINER_RIVAL_WISE_OLD_MAN_1, format("Seems like you might just have what it takes.") )
+    namebox("???")
+    msgbox(format("Impressive."))
+    namebox("Wise Old Man")
+    msgbox(format("I'm Dionysius but everyone just calls me the Wise old man.\pI used to be one of the biggest adventurers in the world, but now im just an old man looking back on his glory days.\pMaybe you will become something of a legend yourself?\pI hope to see you around on your adventures, try not to get lost in the Wizards' Tower.\pUntil next time."))
+    hidenamebox
+    closemessage
+	fadedefaultbgm
+    applymovement (14, movement_wom_route2_3)
+    waitmovement(0)
+    removeobject(14)
+    setflag(FLAG_TEMP_1F) //Wise old man
+    setvar(VAR_WISE_OLD_MAN_RIVAL, 1)
+    release
+    end
+}
+movement movement_wom_route2_0{
+    face_right
+    emote_exclamation_mark
+    delay_16
+}
+movement movement_wom_route2_1{
+    walk_right * 4
+}
+movement movement_wom_route2_2{
+    walk_down
+    walk_right * 4
+}
+movement movement_wom_route2_3{
+    walk_left * 4
+    walk_up * 8
+}
