@@ -33,9 +33,9 @@ void InitTilesetAnim_BattleDome(void);
 void InitTilesetAnim_BattlePyramid(void);
 
 void InitTilesetAnim_PokeScapeOutdoors(void);
+void InitTilesetAnim_PokeScapeIndoors(void);
 void InitTilesetAnim_Lumbridge(void);
 void InitTilesetAnim_Wizards_Tower(void);
-
 void InitTilesetAnim_Karamja(void);
 void InitTilesetAnim_Wilderness(void);
 void InitTilesetAnim_PokeScape_Caves(void);

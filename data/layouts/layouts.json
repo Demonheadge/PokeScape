@@ -8594,8 +8594,8 @@
     {
       "id": "LAYOUT_ASGARNIAN_DUNGEON_B4F",
       "name": "AsgarnianDungeon_B4F_Layout",
-      "width": 12,
-      "height": 12,
+      "width": 14,
+      "height": 14,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_Lumbridge_Swamp_Caves",
       "border_filepath": "data/layouts/AsgarnianDungeon_B4F/border.bin",

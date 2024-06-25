@@ -892,7 +892,7 @@ script QUEST_COOKING_RANGE_COOKSASSISTANT{
 		case 0: 
 		case 1: 
 			lock
-			delay_16
+			delay(30)
 			playSE(SE_PIN)
 			applymovement(OBJ_EVENT_ID_COOK, COOK_COOKSASSISTANT_2)
 			waitmovement(0)

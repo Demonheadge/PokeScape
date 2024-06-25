@@ -50,6 +50,7 @@ static void TilesetAnim_Wizards_Tower(u16);
 static void TilesetAnim_Karamja(u16);
 static void TilesetAnim_Wilderness(u16);
 static void TilesetAnim_PokeScape_Caves(u16);
+static void TilesetAnim_PokeScapeIndoors(u16);
 //PokeScape End//
 
 static void QueueAnimTiles_General_Flower(u16);
@@ -94,6 +95,7 @@ static void QueueAnimTiles_Karamja_scorchfire1(u16);
 static void QueueAnimTiles_Karamja_scorchfire2(u16);
 static void QueueAnimTiles_Wilderness_Lava(u16);
 static void QueueAnimTiles_PokeScape_Caves_Lava(u16);
+static void QueueAnimTiles_PokeScapeIndoors_Sparkle(u16);
 //PokeScape End//
 
 
@@ -254,6 +256,23 @@ const u16 *const gTilesetAnims_PokeScape_Caves_Lava[] = {
     gTilesetAnims_PokeScape_Caves_Lava_Frame3
 };
 
+
+const u16 gTilesetAnims_PokeScapeIndoors_Sparkle_Frame0[] = INCBIN_U16("data/tilesets/primary/PokeScapeIndoors/anim/sparkle/sparkle_anim_0.4bpp");
+const u16 gTilesetAnims_PokeScapeIndoors_Sparkle_Frame1[] = INCBIN_U16("data/tilesets/primary/PokeScapeIndoors/anim/sparkle/sparkle_anim_1.4bpp");
+const u16 gTilesetAnims_PokeScapeIndoors_Sparkle_Frame2[] = INCBIN_U16("data/tilesets/primary/PokeScapeIndoors/anim/sparkle/sparkle_anim_2.4bpp");
+
+const u16 *const gTilesetAnims_PokeScapeIndoors_Sparkle[] = {
+    gTilesetAnims_PokeScapeIndoors_Sparkle_Frame0,
+    gTilesetAnims_PokeScapeIndoors_Sparkle_Frame1,
+    gTilesetAnims_PokeScapeIndoors_Sparkle_Frame2,
+    gTilesetAnims_PokeScapeIndoors_Sparkle_Frame2,
+    gTilesetAnims_PokeScapeIndoors_Sparkle_Frame2,
+    gTilesetAnims_PokeScapeIndoors_Sparkle_Frame2,
+    gTilesetAnims_PokeScapeIndoors_Sparkle_Frame2,
+    gTilesetAnims_PokeScapeIndoors_Sparkle_Frame2,
+    gTilesetAnims_PokeScapeIndoors_Sparkle_Frame2,
+    gTilesetAnims_PokeScapeIndoors_Sparkle_Frame1
+};
 
 
 //PokeScape//---------------
@@ -806,6 +825,13 @@ void InitTilesetAnim_PokeScapeOutdoors(void)
     sPrimaryTilesetAnimCallback = TilesetAnim_PokeScapeOutdoors;
 }
 
+void InitTilesetAnim_PokeScapeIndoors(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 256;
+    sPrimaryTilesetAnimCallback = TilesetAnim_PokeScapeIndoors;
+}
+
 void InitTilesetAnim_Lumbridge(void)
 {
     sSecondaryTilesetAnimCounter = 0;
@@ -879,7 +905,6 @@ static void TilesetAnim_Building(u16 timer)
 //PokeScape//---------------
 static void TilesetAnim_PokeScapeOutdoors(u16 timer)
 {
-
     if (timer % 16 == 0)
         QueueAnimTiles_PokeScapeOutdoors_Water(timer >> 4);
     if (timer % 16 == 0)
@@ -888,7 +913,12 @@ static void TilesetAnim_PokeScapeOutdoors(u16 timer)
         QueueAnimTiles_PokeScapeOutdoors_LogFire(timer >> 4);
     if (timer % 16 == 0)
         QueueAnimTiles_PokeScapeOutdoors_Flower(timer / 16);
+}
 
+static void TilesetAnim_PokeScapeIndoors(u16 timer)
+{
+    if (timer % 16 == 5)
+        QueueAnimTiles_PokeScapeIndoors_Sparkle(timer / 16);
 }
 
 static void TilesetAnim_Lumbridge(u16 timer)
@@ -992,6 +1022,12 @@ static void QueueAnimTiles_PokeScape_Caves_Lava(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_PokeScape_Caves_Lava);
     AppendTilesetAnimToBuffer(gTilesetAnims_PokeScape_Caves_Lava[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(931)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_PokeScapeIndoors_Sparkle(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_PokeScapeIndoors_Sparkle);
+    AppendTilesetAnimToBuffer(gTilesetAnims_PokeScapeIndoors_Sparkle[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(436)), 2 * TILE_SIZE_4BPP);
 }
 
 //PokeScape//---------------

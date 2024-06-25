@@ -14,6 +14,10 @@ mapscripts Port_Sarim_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         call(PORTSARIM_STATE)
     }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		//VAR_POKESCAPE_WIZARDS_TOWER_STATE, 0: HAM_EVENT_WizardsTower_1
+		VAR_WISE_OLD_MAN_RIVAL, 5: PORTSARIM_WISEOLDMAN_RIVAL_2
+    ]
 } 
 
 
@@ -85,7 +89,17 @@ script PORTSARIM_STATE{
                 setobjectxyperm(OBJ_EVENT_ID_JAILGUARD, 6, 40)
                 addobject(38)
                 clearflag(FLAG_TEMP_1D)
-                
+    
+        }
+
+        //Wise Old Man
+        if ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 105) && (var(VAR_WISE_OLD_MAN_RIVAL) == 5)) {
+            addobject(42) //Wise old man
+            clearflag(FLAG_TEMP_1A)
+        }
+        else {
+            removeobject(42) //Wise old man
+            setflag(FLAG_TEMP_1A)
         }
         
         return
@@ -873,4 +887,61 @@ script NPC_PORTSARIM_DRUNK_HAM
     hidenamebox
 	release
 	end
+}
+
+
+//Wise Old man
+script PORTSARIM_WISEOLDMAN_RIVAL_2{
+    if (!(var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 105)) {
+        return
+    }
+
+    lock
+    playse(SE_PIN)
+    applymovement (42, movement_wom_portsarim_0)
+    waitmovement(0)
+    delay(60)
+    applymovement (42, movement_wom_portsarim_1)
+    waitmovement(0)
+    applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_LEFT)
+    waitmovement(0)
+    playbgm (MUS_ENCOUNTER_BRENDAN, 1)
+    waitmovement(0)
+    namebox("Wise Old Man")
+    msgbox(format("Well, you have been busy I see.\pThese H.A.M. people just goes about and do what they want.\pIt's very good to see someone like you clean up their act."))
+    hidenamebox
+    closemessage
+    applymovement (42, movement_wom_portsarim_2)
+    waitmovement(0)
+    namebox("Wise Old Man")
+    msgbox(format("I am going to the Asgarnia ice dungeon down south, care to join me?\pI will see you there if you do."))
+    hidenamebox
+    closemessage
+    applymovement (42, movement_wom_portsarim_3)
+    savebgm(MUS_DUMMY)
+	fadedefaultbgm
+    waitmovement(0)
+    removeobject(42) //Wise old man
+    setflag(FLAG_TEMP_1A) //Wise old man
+    setvar(VAR_WISE_OLD_MAN_RIVAL, 10) //10 - Met at Port Sarim Lighthouse / Jail.
+    release
+    end
+}
+movement movement_wom_portsarim_0{
+    face_right
+    emote_exclamation_mark
+    delay_16
+}
+movement movement_wom_portsarim_1{
+    walk_right * 2
+}
+movement movement_wom_portsarim_2{
+    face_left
+    delay_16 * 4
+    face_player
+}
+movement movement_wom_portsarim_3{
+    walk_left
+    walk_up * 6
+    walk_left * 6
 }

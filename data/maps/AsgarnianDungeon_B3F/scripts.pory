@@ -2,7 +2,7 @@ mapscripts AsgarnianDungeon_B3F_MapScripts
 {
     MAP_SCRIPT_ON_LOAD 
     {
-        call(AsgarnianDungeon_B3F_DOOR)
+        call(AsgarnianDungeon_B3F_METATILES)
     }
     MAP_SCRIPT_ON_TRANSITION 
     {
@@ -31,6 +31,11 @@ script AsgarnianDungeon_B3F_STATE
             addobject(14)
             //setobjectxy(14, 25, 5)
             //setobjectxyperm(14, 25, 5)
+            setmetatile(12,13,919,1) //SPARKLE
+            setmetatile(20,6,919,1) //SPARKLE
+            setmetatile(27,7,919,1) //SPARKLE
+            setmetatile(17,21,919,1) //SPARKLE
+            special(DrawWholeMapView) 
         case 15:
             removeobject(14)
             setflag(FLAG_TEMP_D)
@@ -38,14 +43,22 @@ script AsgarnianDungeon_B3F_STATE
     return
 }
 
-script AsgarnianDungeon_B3F_DOOR
+script AsgarnianDungeon_B3F_METATILES
 {
-    if (var(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE) == 15)
-    {
-        setmetatile(26, 4, 910, 0)
-        special(DrawWholeMapView) 
+    switch (var(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE)){ 
+		case 0:
+            return
+        case 5:
+        case 10:
+            setmetatile(12,13,919,1) //SPARKLE
+            setmetatile(20,6,919,1) //SPARKLE
+            setmetatile(27,7,919,1) //SPARKLE
+            setmetatile(17,21,919,1) //SPARKLE
+            special(DrawWholeMapView) 
+        case 15:
+            setmetatile(26, 4, 910, 0)
+            special(DrawWholeMapView) 
     }
-    return
 }
 
 script DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_KEYS
@@ -56,8 +69,21 @@ script DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_KEYS
         msgbox(format("{PLAYER} found the DUNGEON KEY."))
         waitfanfare
         closemessage
+        setmetatile(12,13,893,1) //
+        setmetatile(20,6,893,1) //
+        setmetatile(27,7,893,1) //
+        setmetatile(17,21,893,1) //
+        special(DrawWholeMapView) 
     }
     end
+}
+
+script DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_FAKE_KEYS
+{
+    if (var(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE) == 5) {
+        msgbox(format("You search the rubble…\pYou find nothing except some very reflective ice."))
+        closemessage
+    }
 }
 
 script DUNGEONEERING_DOOR_AsgarnianDungeon_B3F
@@ -213,7 +239,7 @@ script TRIGGER_WISEOLDMAN_RIVAL_2{
 	fadedefaultbgm
     removeobject(1)
     setflag(FLAG_TEMP_1F) //Wise old man
-    setvar(VAR_WISE_OLD_MAN_RIVAL, 10) //COMPLETE - ASG DUNGEON.
+    setvar(VAR_WISE_OLD_MAN_RIVAL, 15) //15 - Met at Asgarnia Dungeon. (Optional)
     fadescreen(FADE_FROM_BLACK)
     release
     end
@@ -223,3 +249,6 @@ movement movement_wom_asgDung_0{
     emote_exclamation_mark
     delay_16
 }
+
+
+

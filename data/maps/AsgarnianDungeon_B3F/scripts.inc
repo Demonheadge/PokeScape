@@ -4,7 +4,7 @@ AsgarnianDungeon_B3F_MapScripts::
 	.byte 0
 
 AsgarnianDungeon_B3F_MapScripts_MAP_SCRIPT_ON_LOAD:
-	call AsgarnianDungeon_B3F_DOOR
+	call AsgarnianDungeon_B3F_METATILES
 	return
 
 AsgarnianDungeon_B3F_MapScripts_MAP_SCRIPT_ON_TRANSITION:
@@ -29,6 +29,11 @@ AsgarnianDungeon_B3F_STATE_3:
 AsgarnianDungeon_B3F_STATE_4:
 	clearflag FLAG_TEMP_D
 	addobject 14
+	setmetatile 12, 13, 919, 1
+	setmetatile 20, 6, 919, 1
+	setmetatile 27, 7, 919, 1
+	setmetatile 17, 21, 919, 1
+	special DrawWholeMapView
 	goto AsgarnianDungeon_B3F_STATE_1
 
 AsgarnianDungeon_B3F_STATE_5:
@@ -37,16 +42,29 @@ AsgarnianDungeon_B3F_STATE_5:
 	goto AsgarnianDungeon_B3F_STATE_1
 
 
-AsgarnianDungeon_B3F_DOOR::
-	compare VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE, 15
-	goto_if_eq AsgarnianDungeon_B3F_DOOR_2
-AsgarnianDungeon_B3F_DOOR_1:
+AsgarnianDungeon_B3F_METATILES::
+	switch VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE
+	case 0, AsgarnianDungeon_B3F_METATILES_2
+	case 5, AsgarnianDungeon_B3F_METATILES_3
+	case 10, AsgarnianDungeon_B3F_METATILES_3
+	case 15, AsgarnianDungeon_B3F_METATILES_4
 	return
 
-AsgarnianDungeon_B3F_DOOR_2:
+AsgarnianDungeon_B3F_METATILES_2:
+	return
+
+AsgarnianDungeon_B3F_METATILES_3:
+	setmetatile 12, 13, 919, 1
+	setmetatile 20, 6, 919, 1
+	setmetatile 27, 7, 919, 1
+	setmetatile 17, 21, 919, 1
+	special DrawWholeMapView
+	return
+
+AsgarnianDungeon_B3F_METATILES_4:
 	setmetatile 26, 4, 910, 0
 	special DrawWholeMapView
-	goto AsgarnianDungeon_B3F_DOOR_1
+	return
 
 
 DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_KEYS::
@@ -61,7 +79,23 @@ DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_KEYS_2:
 	msgbox DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_KEYS_Text_0
 	waitfanfare
 	closemessage
+	setmetatile 12, 13, 893, 1
+	setmetatile 20, 6, 893, 1
+	setmetatile 27, 7, 893, 1
+	setmetatile 17, 21, 893, 1
+	special DrawWholeMapView
 	goto DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_KEYS_1
+
+
+DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_FAKE_KEYS::
+	compare VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE, 5
+	goto_if_eq DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_FAKE_KEYS_1
+	return
+
+DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_FAKE_KEYS_1:
+	msgbox DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_FAKE_KEYS_Text_0
+	closemessage
+	return
 
 
 DUNGEONEERING_DOOR_AsgarnianDungeon_B3F::
@@ -199,7 +233,7 @@ TRIGGER_WISEOLDMAN_RIVAL_2::
 	fadedefaultbgm
 	removeobject 1
 	setflag FLAG_TEMP_1F
-	setvar VAR_WISE_OLD_MAN_RIVAL, 10
+	setvar VAR_WISE_OLD_MAN_RIVAL, 15
 	fadescreen FADE_FROM_BLACK
 	release
 	end
@@ -213,6 +247,11 @@ movement_wom_asgDung_0:
 
 DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_KEYS_Text_0:
 	.string "{PLAYER} found the DUNGEON KEY.$"
+
+DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_FAKE_KEYS_Text_0:
+	.string "You search the rubble…\p"
+	.string "You find nothing except some very\n"
+	.string "reflective ice.$"
 
 DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_Text_0:
 	.string "It appears to be a mysterious door.\p"

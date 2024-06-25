@@ -855,7 +855,7 @@ const struct Tileset gTileset_PokeScapeIndoors =
     .palettes = gTilesetPalettes_PokeScapeIndoors,
     .metatiles = gMetatiles_PokeScapeIndoors,
     .metatileAttributes = gMetatileAttributes_PokeScapeIndoors,
-    .callback = NULL,
+    .callback = InitTilesetAnim_PokeScapeIndoors,
 };
 
 const struct Tileset gTileset_Lumbridge_Swamp =

@@ -246,7 +246,31 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_FAKE_KEYS"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 13,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_KEYS"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_FAKE_KEYS"
+    },
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_FAKE_KEYS"
     }
   ]
 }
