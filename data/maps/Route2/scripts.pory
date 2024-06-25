@@ -388,7 +388,7 @@ script TRIGGER_WISEOLDMAN_RIVAL_1{
     }
     waitmovement(0)
     namebox("???")
-    msgbox(format("My, a new face it seems.\pYou beat the Duke?\nImpressive.\pHow about you and me do a little battle?\pNow dont be shy, surely you can beat an old man."))
+    msgbox(format("My, a new face it seems.\pYou beat the Duke?\nImpressive.\pHow about you and me do a little battle?\pNow don't be shy, surely you can beat an old man."))
     hidenamebox
     closemessage
     trainerbattle_no_intro(TRAINER_RIVAL_WISE_OLD_MAN_1, format("Seems like you might just have what it takes.") )
@@ -398,6 +398,7 @@ script TRIGGER_WISEOLDMAN_RIVAL_1{
     msgbox(format("I'm Dionysius but everyone just calls me the Wise old man.\pI used to be one of the biggest adventurers in the world, but now im just an old man looking back on his glory days.\pMaybe you will become something of a legend yourself?\pI hope to see you around on your adventures, try not to get lost in the Wizards' Tower.\pUntil next time."))
     hidenamebox
     closemessage
+    savebgm(MUS_DUMMY)
 	fadedefaultbgm
     applymovement (14, movement_wom_route2_3)
     waitmovement(0)

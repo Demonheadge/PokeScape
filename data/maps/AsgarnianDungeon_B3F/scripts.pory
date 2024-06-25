@@ -10,7 +10,11 @@ mapscripts AsgarnianDungeon_B3F_MapScripts
     }
 }
 
-
+//VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE
+//0 - Nothing, no key found or quest start.
+//5 - Quest started
+//10 - Found Key
+//15 - quest complete, door open.
 
 
 script AsgarnianDungeon_B3F_STATE
@@ -19,14 +23,15 @@ script AsgarnianDungeon_B3F_STATE
 		case 0:
             clearflag(FLAG_TEMP_D)
             addobject(14)
-            setobjectxy(14, 23, 7)
-            setobjectxyperm(14, 23, 7)
-        case 1:
+            //setobjectxy(14, 23, 7)
+            //setobjectxyperm(14, 23, 7)
+        case 5:
+        case 10:
             clearflag(FLAG_TEMP_D)
             addobject(14)
-            setobjectxy(14, 25, 5)
-            setobjectxyperm(14, 25, 5)
-        case 2:
+            //setobjectxy(14, 25, 5)
+            //setobjectxyperm(14, 25, 5)
+        case 15:
             removeobject(14)
             setflag(FLAG_TEMP_D)
     }
@@ -35,7 +40,7 @@ script AsgarnianDungeon_B3F_STATE
 
 script AsgarnianDungeon_B3F_DOOR
 {
-    if (var(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE) == 2)
+    if (var(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE) == 15)
     {
         setmetatile(26, 4, 910, 0)
         special(DrawWholeMapView) 
@@ -43,38 +48,60 @@ script AsgarnianDungeon_B3F_DOOR
     return
 }
 
-
+script DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_KEYS
+{
+    if (var(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE) == 5) {
+        setvar(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE, 10)
+        playfanfare (MUS_OBTAIN_ITEM)
+        msgbox(format("{PLAYER} found the DUNGEON KEY."))
+        waitfanfare
+        closemessage
+    }
+    end
+}
 
 script DUNGEONEERING_DOOR_AsgarnianDungeon_B3F
 {
-    if (var(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE) == 1)
-    {
+    if (!(var(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE) == 15)) //Door is already open.
+    { 
         msgbox(format("It appears to be a mysterious door.\pWould you like to try and pry it open?"), MSGBOX_YESNO)
         closemessage
-		if (var(VAR_RESULT))
+        if (var(VAR_RESULT))
         {
-            playse(SE_SWITCH)
-            waitse
-            delay(30)
-            setmetatile(26, 4, 910, 0)
-            special(DrawWholeMapView) 
-            playse(SE_ICE_BREAK)
-            msgbox(format("The door opens."))
-            closemessage
-
-            applymovement(14, Movement_InteractFACERIGHT)
-	        waitmovement(0)
-            namebox("???")
-	        msgbox(format("Hey thanks, that was extremely helpful of you."))
-            closemessage
-            hidenamebox
-            applymovement(OBJ_EVENT_ID_PLAYER, Movement_ASGDUNGEON_3)
-            applymovement(14, Movement_ASGDUNGEON_4)
-            playse(SE_DOOR)
-	        waitmovement(0)
-            removeobject(14)
-            setflag(FLAG_TEMP_D)
-            setvar(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE, 2)
+            if (var(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE) == 10) //Found Key.
+            { 
+                playse(SE_SWITCH)
+                waitse
+                delay(30)
+                setmetatile(26, 4, 910, 0)
+                special(DrawWholeMapView) 
+                playse(SE_ICE_BREAK)
+                msgbox(format("The door opens."))
+                closemessage
+                applymovement(14, Movement_InteractFACERIGHT)
+                waitmovement(0)
+                applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_LEFT)
+                waitmovement(0)
+                namebox("???")
+                msgbox(format("Hey thanks, that was extremely helpful of you."))
+                closemessage
+                hidenamebox
+                applymovement(OBJ_EVENT_ID_PLAYER, Movement_ASGDUNGEON_3)
+                applymovement(14, Movement_ASGDUNGEON_4)
+                playse(SE_DOOR)
+                waitmovement(0)
+                removeobject(14)
+                setflag(FLAG_TEMP_D)
+                setvar(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE, 15)
+            }
+            else 
+            {
+                playse(SE_FAILURE)
+                waitse
+                delay(30)
+                msgbox(format("The door refuses to open."))
+                closemessage
+            }
         }
     }
     else
@@ -93,12 +120,12 @@ script TRIGGER_DUNGEONEERING_DOOR_AsgarnianDungeon_B3F
     applymovement(14, Movement_ASGDUNGEON_1)
 	waitmovement(0)
     namebox("???")
-	msgbox(format("Psst…{PAUSE 15} Hey you…\pCome this way."))
+	msgbox(format("Hey you…{PAUSE 15} have you seen my keys?\pI dropped them around here somewhere.\pIf you find them can you help me open this door."))
     closemessage
     hidenamebox
     applymovement(14, Movement_ASGDUNGEON_2)
 	waitmovement(0)
-    setvar(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE, 1)
+    setvar(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE, 5)
     call(AsgarnianDungeon_B3F_STATE)
     release
     end
@@ -106,12 +133,15 @@ script TRIGGER_DUNGEONEERING_DOOR_AsgarnianDungeon_B3F
 
 movement Movement_ASGDUNGEON_1
 {
-    walk_left * 5
+    walk_down * 2
+    walk_left
 }  
 
 movement Movement_ASGDUNGEON_2
 {
-    walk_right * 6
+    walk_right
+    walk_up * 2
+    face_down
 } 
 
 movement Movement_ASGDUNGEON_3
@@ -132,9 +162,64 @@ script DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_NPC
 {
     faceplayer
     namebox("???")
-	msgbox(format("Hey you see this door?\pTry opening it."))
+    if (var(VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE) == 10) {
+        msgbox(format("You found my keys!\pOh, but my poor hands now have frostbite.\pCould you open the door for me?"))
+    }
+    else {
+        msgbox(format("Have you seen my keys?\nI dropped them somewhere around here."))
+    }
     closemessage
     hidenamebox
     release
     end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script TRIGGER_WISEOLDMAN_RIVAL_2{
+    lock
+    playse(SE_PIN)
+    applymovement (1, movement_wom_asgDung_0)
+    waitmovement(0)
+    delay(60)
+    applymovement (1, MOVEMENT_WALK_DOWN)
+    waitmovement(0)
+    playbgm (MUS_ENCOUNTER_BRENDAN, 1)
+    waitmovement(0)
+    namebox("Wise Old Man")
+    msgbox(format("Aah, so you decided to humour this old man after all.\pThis place makes for a fine setpiece doesn't it?\pReally makes you tingle for a battle.\pYou have come this far, it is a bit late to turn back now."))
+    hidenamebox
+    closemessage
+    trainerbattle_no_intro(TRAINER_RIVAL_WISE_OLD_MAN_2, format("You are looking more promising by the minute.")) //On defeat."Can you even mine Bluerite in your current state?
+    namebox("Wise Old Man")
+    msgbox(format("This really is becoming a habit at this point huh?\pYou are growing stronger every battle.\pBy the way, have you seen Melzar the Mad at Rimmington?\pA strong trainer like you could probably learn a thing or two from that place.\pI hope to see you again in the future, it has been fun."))
+    hidenamebox
+    closemessage
+    fadescreen(FADE_TO_BLACK)
+    savebgm(MUS_DUMMY)
+	fadedefaultbgm
+    removeobject(1)
+    setflag(FLAG_TEMP_1F) //Wise old man
+    setvar(VAR_WISE_OLD_MAN_RIVAL, 10) //COMPLETE - ASG DUNGEON.
+    fadescreen(FADE_FROM_BLACK)
+    release
+    end
+}
+movement movement_wom_asgDung_0{
+    face_down
+    emote_exclamation_mark
+    delay_16
 }

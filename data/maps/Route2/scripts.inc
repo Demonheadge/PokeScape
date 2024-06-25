@@ -405,6 +405,7 @@ TRIGGER_WISEOLDMAN_RIVAL_1_1:
 	msgbox TRIGGER_WISEOLDMAN_RIVAL_1_Text_5
 	hidenamebox
 	closemessage
+	savebgm MUS_DUMMY
 	fadedefaultbgm
 	applymovement 14, movement_wom_route2_3
 	waitmovement 0
@@ -598,7 +599,7 @@ TRIGGER_WISEOLDMAN_RIVAL_1_Text_1:
 	.string "You beat the Duke?\n"
 	.string "Impressive.\p"
 	.string "How about you and me do a little battle?\p"
-	.string "Now dont be shy, surely you can beat an\n"
+	.string "Now don't be shy, surely you can beat an\n"
 	.string "old man.$"
 
 TRIGGER_WISEOLDMAN_RIVAL_1_Text_2:

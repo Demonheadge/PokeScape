@@ -404,6 +404,7 @@
 #define TRAINER_LUM_SWAMP_TRAINER_5                     400
 #define TRAINER_FALADOR_GYM_6                           401
 #define TRAINER_RIVAL_WISE_OLD_MAN_1                    402
+#define TRAINER_RIVAL_WISE_OLD_MAN_2                    403
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled

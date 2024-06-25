@@ -719,6 +719,7 @@
 #define MAP_CHAOS_TUNNELS_B2F           (41 | (36 << 8))
 #define MAP_ABYSSAL_REALM_3             (42 | (36 << 8))
 #define MAP_ICE_MOUNTAIN                (43 | (36 << 8))
+#define MAP_ASGARNIAN_DUNGEON_B4F       (44 | (36 << 8))
 
 // gMapGroup_PokescapeIndoorTutorialIsland
 #define MAP_TUTORIAL_ISLAND_LAB_UP   (0 | (37 << 8))
