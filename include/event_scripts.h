@@ -578,6 +578,8 @@ extern const u8 EventScript_RestBed[];
 extern const u8 EventScript_DG_ROPE[];
 extern const u8 EventScript_DG_STRING[];
 extern const u8 EventScript_DG_SPINNING_WHEEL[];
+extern const u8 EventScript_BananaTree[];
+
 
 // Secret Base
 extern const u8 SecretBase_EventScript_PC[];

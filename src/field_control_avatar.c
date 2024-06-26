@@ -425,6 +425,9 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
 {
     s8 elevation;
 
+
+    if (MetatileBehavior_IsBananaTree(metatileBehavior) == TRUE)
+        return EventScript_BananaTree;
     if (MetatileBehavior_IsRestBed(metatileBehavior) == TRUE)
         return EventScript_RestBed;
     if (MetatileBehavior_IsPlayerFacingTVScreen(metatileBehavior, direction) == TRUE)
