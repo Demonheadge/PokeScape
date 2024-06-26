@@ -1,10 +1,15 @@
 Port_Sarim_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Port_Sarim_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Port_Sarim_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
 Port_Sarim_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	call PORTSARIM_STATE
 	return
+
+Port_Sarim_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_WISE_OLD_MAN_RIVAL, 5, PORTSARIM_WISEOLDMAN_RIVAL_2
+	.2byte 0
 
 
 VARSETTER::
@@ -44,6 +49,12 @@ PORTSARIM_STATE_1:
 	case 151, PORTSARIM_STATE_7
 	case 100, PORTSARIM_STATE_8
 PORTSARIM_STATE_4:
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 105
+	goto_if_eq PORTSARIM_STATE_12
+PORTSARIM_STATE_11:
+	removeobject 42
+	setflag FLAG_TEMP_1A
+PORTSARIM_STATE_9:
 	return
 
 PORTSARIM_STATE_6:
@@ -90,6 +101,16 @@ PORTSARIM_STATE_8:
 	addobject 38
 	clearflag FLAG_TEMP_1D
 	goto PORTSARIM_STATE_4
+
+PORTSARIM_STATE_10:
+	addobject 42
+	clearflag FLAG_TEMP_1A
+	goto PORTSARIM_STATE_9
+
+PORTSARIM_STATE_12:
+	compare VAR_WISE_OLD_MAN_RIVAL, 5
+	goto_if_eq PORTSARIM_STATE_10
+	goto PORTSARIM_STATE_11
 
 
 PORTSARIM_HAM_EVENT_TRIGGER1::
@@ -743,6 +764,80 @@ NPC_PORTSARIM_DRUNK_HAM::
 	end
 
 
+PORTSARIM_WISEOLDMAN_RIVAL_2::
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 105
+	goto_if_ne PORTSARIM_WISEOLDMAN_RIVAL_2_2
+	lock
+	playse SE_PIN
+	applymovement 42, movement_wom_portsarim_0
+	waitmovement 0
+	delay 60
+	applymovement 42, movement_wom_portsarim_1
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_LEFT
+	waitmovement 0
+	playbgm MUS_ENCOUNTER_BRENDAN, 1
+	waitmovement 0
+	namebox PORTSARIM_WISEOLDMAN_RIVAL_2_Text_0
+	msgbox PORTSARIM_WISEOLDMAN_RIVAL_2_Text_1
+	hidenamebox
+	closemessage
+	applymovement 42, movement_wom_portsarim_2
+	waitmovement 0
+	namebox PORTSARIM_WISEOLDMAN_RIVAL_2_Text_0
+	msgbox PORTSARIM_WISEOLDMAN_RIVAL_2_Text_2
+	hidenamebox
+	closemessage
+	applymovement 42, movement_wom_portsarim_3
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	waitmovement 0
+	removeobject 42
+	setflag FLAG_TEMP_1A
+	setvar VAR_WISE_OLD_MAN_RIVAL, 10
+	release
+	end
+
+PORTSARIM_WISEOLDMAN_RIVAL_2_2:
+	return
+
+
+movement_wom_portsarim_0:
+	face_right
+	emote_exclamation_mark
+	delay_16
+	step_end
+
+movement_wom_portsarim_1:
+	walk_right
+	walk_right
+	step_end
+
+movement_wom_portsarim_2:
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_player
+	step_end
+
+movement_wom_portsarim_3:
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
 PORTSARIM_HAM_EVENT_PART2_Text_0:
 	.string "H.A.M Leader$"
 
@@ -1089,3 +1184,18 @@ NPC_PORTSARIM_DRUNK_HAM_Text_0:
 NPC_PORTSARIM_DRUNK_HAM_Text_1:
 	.string "hic…{PAUSE 32}Where is e…{PAUSE 32}very…{PAUSE 32}one.\n"
 	.string "Oh {PAUSE 32}…right {PAUSE 32}the lighthouse… {PAUSE 32}hic…$"
+
+PORTSARIM_WISEOLDMAN_RIVAL_2_Text_0:
+	.string "Wise Old Man$"
+
+PORTSARIM_WISEOLDMAN_RIVAL_2_Text_1:
+	.string "Well, you have been busy I see.\p"
+	.string "These H.A.M. people just goes about and\n"
+	.string "do what they want.\p"
+	.string "It's very good to see someone like you\n"
+	.string "clean up their act.$"
+
+PORTSARIM_WISEOLDMAN_RIVAL_2_Text_2:
+	.string "I am going to the Asgarnia ice dungeon\n"
+	.string "down south, care to join me?\p"
+	.string "I will see you there if you do.$"

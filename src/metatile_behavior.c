@@ -1491,4 +1491,12 @@ bool8 MetatileBehavior_IsRestBed(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_IsBananaTree(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_BANNANA_TREE)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 

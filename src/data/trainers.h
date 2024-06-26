@@ -4547,7 +4547,29 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_FALADOR_GYM_6),
     },
 
+    [TRAINER_RIVAL_WISE_OLD_MAN_1] =
+    {
+        .trainerClass = TRAINER_CLASS_WISE_OLD_MAN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_WiseOldMan_1,
+        .trainerName = _("???"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_WISE_OLD_MAN_1),
+    },
 
+    [TRAINER_RIVAL_WISE_OLD_MAN_2] =
+    {
+        .trainerClass = TRAINER_CLASS_WISE_OLD_MAN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_WiseOldMan_1,
+        .trainerName = _("DIONYSIUS"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_WISE_OLD_MAN_2),
+    },
 
 
 

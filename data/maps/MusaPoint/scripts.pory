@@ -1,8 +1,39 @@
+const OBJ_EVENT_ID_WISE_OLD_MAN = 20
+const OBJ_EVENT_ID_QUESTER = 21
+const OBJ_EVENT_ID_CUSTOMS_OFFICER = 7
+
 mapscripts MusaPoint_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+		call(MUSAPOINT_STATE)
         setvar(VAR_EVOLUTION_MAP_STATE, 15) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
     }
+	
 
+}
+
+script MUSAPOINT_STATE {
+	if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORYMODE
+    {
+		if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 150) { //Post Karamaja Gym, //FLIP >
+			addobject(OBJ_EVENT_ID_QUESTER)
+			clearflag(FLAG_TEMP_1E)
+			setobjectxyperm(OBJ_EVENT_ID_CUSTOMS_OFFICER, 38, 29)
+		}
+		else {
+			removeobject(OBJ_EVENT_ID_QUESTER)
+			setflag(FLAG_TEMP_1E)
+		}
+	//Wise Old Man
+		if (var(VAR_WISE_OLD_MAN_RIVAL) <= 30) { //Post Karamaja Gym, //FLIP >
+			addobject(OBJ_EVENT_ID_WISE_OLD_MAN)
+			clearflag(FLAG_TEMP_1F)
+		}
+		else {
+			removeobject(OBJ_EVENT_ID_WISE_OLD_MAN)
+			setflag(FLAG_TEMP_1F)
+		}
+	}
+	return
 }
 
 
@@ -10,23 +41,29 @@ mapscripts MusaPoint_MapScripts {
 script NPC_MUSAPOINT_SAILOR
 {
 	lock
-	faceplayer
     namebox ("SAILOR")
-    msgbox(format("Hi, there would you like to board the boat to Port Sarim?"), MSGBOX_YESNO)
-    if (var(VAR_RESULT)==1)
-    {
-        msgbox(format("All aboard!\lWe set sail for Port Sarim!"))
-        warp (MAP_PORT_SARIM,8,0,0)
-    }
-    else
-    {
-        msgbox(format("Suit yourself."))
-    }
-
-    waitmessage
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 150) { //Post Karamaja Gym,  //FLIP >
+		msgbox(format("I've confiscated your Karamja Rum.\pYou're in for da cage now."))
+	}
+	else {
+		faceplayer
+		msgbox(format("Hi, there would you like to board the boat to Port Sarim?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT)==1)
+		{
+			msgbox(format("All aboard!\lWe set sail for Port Sarim!"))
+			warp (MAP_PORT_SARIM,8,0,0)
+		}
+		else
+		{
+			msgbox(format("Suit yourself."))
+		}
+	}
+	closemessage
     hidenamebox
 	release
 	end
+
+	
 }
 
 
@@ -47,13 +84,15 @@ script NPC_LegendArts
 
 script SIGNPOST_MUSA_POINT
 {
-	lock
-	faceplayer
-    namebox ("Cupholder")
 	msgbox(format("Musa Point - The best bannanas in all of Karamaja!"))
     closemessage
-    hidenamebox
-	release
+	end
+}
+
+script SIGNPOST_BOAT_FOR_SALE
+{
+	msgbox(format("Boat for Sale!\pSee Luthas inside for more details."))
+    closemessage
 	end
 }
 
@@ -151,12 +190,19 @@ script NPC_MUSA_POINT_8
 {
 	lock
 	faceplayer
-    namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+    namebox ("Customs Officer")
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 150) { //Post Karamaja Gym, //FLIP >
+		msgbox(format("Sorry we've had an incident of someone trying to smuggle some Rum to the mainland.\pOur ships won't be sailing for some time while we check the cargo."))
+	}
+	else {
+		msgbox(format("This ship sails all over the land.\pThat was true until all of the ports were closed off, now we sail all around Musa Point.\pWould you like to sail to Musa Point?"))
+	}
     closemessage
     hidenamebox
 	release
 	end
+
+	
 }
 script NPC_MUSA_POINT_9
 {
@@ -274,3 +320,92 @@ script BATTLE_MUSA_POINT_TRAINER_4
     release
 	end
 }
+
+
+
+
+
+
+
+////WISE OLD MAN
+//Well then, it truly has been awhile.
+//You look quite different since we last met. Youve grown quite a lot.
+//How about we check just how much you have truly grown.
+//*BATTLE - W: You are really getting this old man riled up.
+//So you got stranded on Crandor, passed through volcano passage undereath Karamja Volcano, met with the Tzhaar and now you are here?
+//You certainly have been busy haven't you.
+//You should really take the MvM championship seriously, I think you might just make it to the end.
+//Although that might have to be put on hold for a bit as it seems someone was caught smuggling Karmaja Rum.
+//All of the boats are in lockdown until the matter is resolved.
+//If you don't want to wait around with me, I heard Luthas was selling a boat but I left my wallet at home.
+
+
+////LUTHAS
+//// BANANA-BOAT QUEST
+//Hello, I run the banana plantation. How many I help you today?
+//Ah, you interested in the boat that is for sale?
+//How much? You are very eager aren't you.
+//I can sell it to you but not for gold pieces. What I need is an employee.
+//You see I've injured my back and now am running behind on the shipment of Bananas.
+//If you could go into the plantation and pick 10 bananas for me then you can have this boat. 
+//Is that a deal?
+
+
+script EventScript_BananaTree{
+    msgbox(format("There are a bunch of Bananas on this tree!"))
+    random(2)
+    if (var(VAR_RESULT) == 0) {
+        msgbox(format("You picked a Banana!"))
+        giveitem(ITEM_BANANA, 1)
+    }
+	else {
+		msgbox(format("You failed to pick a Banana…"))
+	}
+	closemessage
+	end
+}
+
+script EventScript_BananaGround{
+	random(6)
+	switch (var(VAR_RESULT)){ 
+		case 0:
+			giveitem(ITEM_BANANA, 1)
+		case 1:
+			msgbox(format("This banana smells."))
+		case 2:
+			msgbox(format("There are fresher bananas in the trees."))
+		case 3:
+			msgbox(format("I've heard of potassium but this isn't it."))
+		case 4:
+			msgbox(format("As you reach for the banana you sense the gaze a monkey in the distance.\pYou decide to leave it."))
+		case 5:
+			msgbox(format("Ew, looks like someone stepped on this banana."))
+	}
+	closemessage
+	end
+}
+
+
+script QUEST_BOAT_MUSA_POINT_Smuggler
+{
+	lock
+    namebox ("Quester")
+	msgbox(format("Awh man, Frank set me up…"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+
+//wom
+
+	//	if (var(VAR_WISE_OLD_MAN_RIVAL) == 30) { //Post Karamaja Gym,
+	//		checkitem(ITEM_SURF_TOOL, 1)
+	//		if (var(VAR_RESULT)){
+	//			//Oh, I see you have the brought the boat. You go on ahead, this old man will wait for this matter to resolve.
+	//		}
+	//		else {
+				
+	//		}
+	//	}

@@ -6438,3 +6438,57 @@ static const struct TrainerMon sParty_FALADOR_GYM_6[] = {
     .heldItem = ITEM_NONE
     }
 };
+
+static const struct TrainerMon sParty_WISE_OLD_MAN_1[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 11,
+    .species = SPECIES_PHOENLING_REBIRTH_FORM,
+    .heldItem = ITEM_NONE
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 9,
+    .species = SPECIES_PURE,
+    .heldItem = ITEM_NONE
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 9,
+    .species = SPECIES_HATCHLING,
+    .heldItem = ITEM_NONE
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 12,
+    .species = SPECIES_PUPPY_MUTT_FORM,
+    .heldItem = ITEM_NONE
+    },
+};
+
+static const struct TrainerMon sParty_WISE_OLD_MAN_2[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 19,
+    .species = SPECIES_PHOENLING_REBIRTH_FORM,
+    .heldItem = ITEM_NONE
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 17,
+    .species = SPECIES_RUNE,
+    .heldItem = ITEM_NONE
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 17,
+    .species = SPECIES_HATCHLING,
+    .heldItem = ITEM_NONE
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 20,
+    .species = SPECIES_LYCURGUS,
+    .heldItem = ITEM_NONE
+    },
+};

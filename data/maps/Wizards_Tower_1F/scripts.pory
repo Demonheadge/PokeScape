@@ -784,7 +784,19 @@ script HAM_EVENT_Ariane1
 
 
 
+script STORYMODE_VAR_CHECK {
+	buffernumberstring(0, VAR_POKESCAPE_STORYMODE_PROGRESS)
+    msgbox(format("Storymode Var is: {STR_VAR_1}."))
+	closemessage
 
+	buffernumberstring(0, VAR_WISE_OLD_MAN_RIVAL)
+    msgbox(format("VAR_WISE_OLD_MAN_RIVAL is: {STR_VAR_1}."))
+	closemessage
+
+	
+	setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 105)
+	setvar(VAR_WISE_OLD_MAN_RIVAL, 5)
+}
 
 
 

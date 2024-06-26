@@ -1490,3 +1490,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Falador_Castle_1F_R3/scripts.inc"
 	.include "data/maps/Falador_Castle_3F_R2/scripts.inc"
 
+
+	.include "data/maps/AsgarnianDungeon_B4F/scripts.inc"

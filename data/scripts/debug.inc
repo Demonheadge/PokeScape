@@ -92,6 +92,7 @@ Debug_BoxFilledMessage_Text:
 	.string "Storage boxes filled!$"
 
 Debug_EventScript_Script_1::
+	goto(STORYMODE_VAR_CHECK)
 	end
 
 Debug_EventScript_Script_2::

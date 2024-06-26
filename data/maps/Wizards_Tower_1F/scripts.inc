@@ -733,6 +733,18 @@ VAR_CHECKER_11:
 	end
 
 
+STORYMODE_VAR_CHECK::
+	buffernumberstring 0, VAR_POKESCAPE_STORYMODE_PROGRESS
+	msgbox STORYMODE_VAR_CHECK_Text_0
+	closemessage
+	buffernumberstring 0, VAR_WISE_OLD_MAN_RIVAL
+	msgbox STORYMODE_VAR_CHECK_Text_1
+	closemessage
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 105
+	setvar VAR_WISE_OLD_MAN_RIVAL, 5
+	return
+
+
 WizardsTower_SEDRIDOR_Text_0:
 	.string "Sedridor$"
 
@@ -1008,3 +1020,10 @@ VAR_CHECKER_Text_7:
 
 VAR_CHECKER_Text_8:
 	.string "8$"
+
+STORYMODE_VAR_CHECK_Text_0:
+	.string "Storymode Var is: {STR_VAR_1}.$"
+
+STORYMODE_VAR_CHECK_Text_1:
+	.string "VAR_WISE_OLD_MAN_RIVAL is:\n"
+	.string "{STR_VAR_1}.$"
