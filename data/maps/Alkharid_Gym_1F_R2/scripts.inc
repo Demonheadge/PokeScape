@@ -694,8 +694,8 @@ ALKHARID_GYM_ALI_Text_2:
 	.string "Have this Badge.$"
 
 ALKHARID_GYM_ALI_Text_3:
-	.string "{PLAYER} received the Al Kharid\n"
-	.string "BADGE from Prince Ali.$"
+	.string "{PLAYER} received the Al Kharid BADGE\n"
+	.string "from Prince Ali.$"
 
 ALKHARID_GYM_ALI_Text_4:
 	.string "Also have this Scroll.$"

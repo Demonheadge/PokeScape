@@ -278,7 +278,7 @@ BATTLE_LumbridgeSwamp_TRAINER_5_Text_1:
 	.string "my pickaxe head back.$"
 
 BATTLE_LumbridgeSwamp_TRAINER_5_Text_2:
-	.string "Miner$"
+	.string "Hanniger$"
 
 BATTLE_LumbridgeSwamp_TRAINER_5_Text_3:
 	.string "I guess I need to visit Bob's Axes to\n"

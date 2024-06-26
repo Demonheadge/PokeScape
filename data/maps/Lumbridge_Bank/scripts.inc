@@ -114,7 +114,7 @@ BANK_EventScript_Banker_Text_0:
 	.string "How may I help you today?$"
 
 BANK_HEAL_Text_0:
-	.string "Very well, I will take your MONSTERS for\n"
+	.string "Very well, I will take your MONSTERs for\n"
 	.string "a minute.$"
 
 BANK_HEAL_Text_1:

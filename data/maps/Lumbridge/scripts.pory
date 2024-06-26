@@ -868,7 +868,7 @@ script Lumbridge_HAMDuo_1
 	lock
 	faceplayer
 	//namebox ("???")
-	msgbox(format("I'm sure the boss said that the hideout was this way..{pause 15}"))
+	msgbox(format("I'm sure the boss said that the hideout was this way..{PAUSE 15}"))
 	faceplayer
 	msgbox(format("Hey! Mind your own business!"))
 	//hidenamebox

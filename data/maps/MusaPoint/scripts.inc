@@ -40,10 +40,10 @@ MUSAPOINT_STATE_8:
 
 NPC_MUSAPOINT_SAILOR::
 	lock
-	faceplayer
 	namebox NPC_MUSAPOINT_SAILOR_Text_0
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 150
 	goto_if_le NPC_MUSAPOINT_SAILOR_2
+	faceplayer
 	msgbox NPC_MUSAPOINT_SAILOR_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, 1
 	goto_if_eq NPC_MUSAPOINT_SAILOR_5
@@ -346,7 +346,6 @@ EventScript_BananaGround_8:
 
 QUEST_BOAT_MUSA_POINT_Smuggler::
 	lock
-	faceplayer
 	namebox QUEST_BOAT_MUSA_POINT_Smuggler_Text_0
 	msgbox QUEST_BOAT_MUSA_POINT_Smuggler_Text_1
 	closemessage
