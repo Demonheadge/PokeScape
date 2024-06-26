@@ -863,6 +863,25 @@ script Lumbridge_House_Roddeck
 //---------------------
 
 
+script Lumbridge_HAMDuo_1
+{
+	lock
+	faceplayer
+	//namebox ("???")
+	msgbox(format("I'm sure the boss said that the hideout was this way..{pause 15}"))
+	faceplayer
+	msgbox(format("Hey! Mind your own business!"))
+	//hidenamebox
+	release
+	end
+}
 
-
-
+script Lumbridge_HAMDuo_2
+{
+	lock
+	//namebox ("???")
+	msgbox(format("Did the forest get overgrown again?\pMaybe we need to go find an axe to cut back some of these trees.."))
+	//hidenamebox
+	release
+	end
+}

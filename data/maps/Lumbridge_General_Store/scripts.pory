@@ -93,7 +93,7 @@ script GeneralStore_RIMMINGTON {
 script GeneralStore_ALKHARID {
     lock
     faceplayer
-    msgbox(format("Welcome to the Al-Kharid General Store.\pHow may I help you?"))
+    msgbox(format("Welcome to the Al Kharid General Store.\pHow may I help you?"))
     waitmessage
     call(GeneralStoreShopScript)
     msgbox("Thank you, come again!")

@@ -101,22 +101,22 @@ BANK_EventScript_PC_Text_1:
 	.string "Welcome to the Bank of PokeScape.$"
 
 BANK_EventScript_PC_Text_2:
-	.string "Would you like to heal your MONSTERs?$"
+	.string "Would you like to heal your MONSTERS?$"
 
 BANK_EventScript_PC_Text_3:
 	.string "Very well, come again soon.$"
 
 BANK_EventScript_PC_Text_4:
-	.string "Your MONSTERs are all healed!$"
+	.string "Your MONSTERS are all healed!$"
 
 BANK_EventScript_Banker_Text_0:
 	.string "Welcome to the Bank of PokeScape.\p"
 	.string "How may I help you today?$"
 
 BANK_HEAL_Text_0:
-	.string "Very well, I will take your MONSTERs for\n"
+	.string "Very well, I will take your MONSTERS for\n"
 	.string "a minute.$"
 
 BANK_HEAL_Text_1:
-	.string "Your MONSTERs are all healed!\p"
+	.string "Your MONSTERS are all healed!\p"
 	.string "Please come again soon.$"

@@ -114,7 +114,7 @@ movement MOVEMENT_SHOCKED_FACEPLAYER {
 }
 
 
-script NPC_LUMBRIDGE_FOREST_5
+script NPC_LUMBRIDGE_FOREST_5 //not currently in use
 {
 	lock
 	faceplayer

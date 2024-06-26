@@ -65,7 +65,7 @@ movement MOVEMENT_LUMBRIDGESWAMP_PINKGIRL_2{
 
 script BATTLE_LumbridgeSwamp_TRAINER_1{
 	trainerbattle_single(TRAINER_RSN_LUM_SWAMP, format("This is me swamp!"),format("Get out of me swamp!"))
-	namebox("Slimethighs")
+	namebox("Slimebrain")
 	msgbox(format("Me do not like you."))
 	hidenamebox
 	closemessage
@@ -75,7 +75,7 @@ script BATTLE_LumbridgeSwamp_TRAINER_1{
 
 script BATTLE_LumbridgeSwamp_TRAINER_2{
 	trainerbattle_single(TRAINER_SKELETON_LUM_SWAMP, format("Rattle, rattle!"),format("Rattle…"))
-	namebox("Brittlebones")
+	namebox("Brittleleg")
 	msgbox(format("Rattle…"))
 	hidenamebox
 	closemessage
@@ -103,7 +103,7 @@ script BATTLE_LumbridgeSwamp_TRAINER_4{
 
 script BATTLE_LumbridgeSwamp_TRAINER_5{
 	trainerbattle_single(TRAINER_LUM_SWAMP_TRAINER_5, format("My pickaxe head just flew right off!\pWoah, you think you can just take it?\pYeah I don't think so buddy."),format("Take this reward money in exchange for my pickaxe head back."))
-	namebox("Miner")
+	namebox("Hanniger")
 	msgbox(format("I guess I need to visit Bob's Axes to get my pickaxe fixed now."))
 	hidenamebox
 	closemessage

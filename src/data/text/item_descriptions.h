@@ -5177,17 +5177,17 @@ static const u8 sWhistle_Desc[] = _(
     "to another land.");
 
 static const u8 sTea1Desc[] = _(
-    "A warm beverage that\n"
+    "A warm beverage. It\n"
     "calms wild MONSTERS\n"
     "for 100 steps.");
 
 static const u8 sTea2Desc[] = _(
-    "A warm beverage that\n"
+    "A warm beverage. It\n"
     "calms wild MONSTERS\n"
     "for 200 steps.");
 
 static const u8 sTea3Desc[] = _(
-    "A warm beverage that\n"
+    "A warm beverage. It\n"
     "calms wild MONSTERS\n"
     "for 250 steps.");
     

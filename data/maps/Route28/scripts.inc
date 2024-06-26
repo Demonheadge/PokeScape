@@ -157,12 +157,12 @@ ENCOUNTER_PENGUIN_CACTUS_ROUTE28_Text_1:
 	.string "Noot! Noot!$"
 
 BLOCK_Alkharid_Guards_Text_0:
-	.string "That is the Al-Kharid Badge!\p"
+	.string "That is the Al Kharid Badge!\p"
 	.string "You may pass.$"
 
 BLOCK_ALKHARID_GATE_Text_0:
 	.string "Halt!\p"
-	.string "Only those whom possess the Al-Kharid\n"
+	.string "Only those whom possess the Al Kharid\n"
 	.string "Badge may enter!$"
 
 BLOCK_DEMO_END_Text_0:

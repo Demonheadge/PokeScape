@@ -468,7 +468,7 @@ GeneralStore_RIMMINGTON_Text_0:
 	.string "How may I help you?$"
 
 GeneralStore_ALKHARID_Text_0:
-	.string "Welcome to the Al-Kharid General Store.\p"
+	.string "Welcome to the Al Kharid General Store.\p"
 	.string "How may I help you?$"
 
 SHOP_RUNESTORE_VARROCK_Text_0:

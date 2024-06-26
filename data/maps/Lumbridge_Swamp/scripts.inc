@@ -235,7 +235,7 @@ BATTLE_LumbridgeSwamp_TRAINER_1_Text_1:
 	.string "Get out of me swamp!$"
 
 BATTLE_LumbridgeSwamp_TRAINER_1_Text_2:
-	.string "Slimethighs$"
+	.string "Slimebrain$"
 
 BATTLE_LumbridgeSwamp_TRAINER_1_Text_3:
 	.string "Me do not like you.$"
@@ -247,7 +247,7 @@ BATTLE_LumbridgeSwamp_TRAINER_2_Text_1:
 	.string "Rattle…$"
 
 BATTLE_LumbridgeSwamp_TRAINER_2_Text_2:
-	.string "Brittlebones$"
+	.string "Brittleleg$"
 
 BATTLE_LumbridgeSwamp_TRAINER_3_Text_0:
 	.string "Stay still and nobody gets hurt!$"

@@ -436,7 +436,7 @@ NPC_LUMBRIDGE_CHICKEN_Text_5:
 SIGN_ROUTE12_Text_0:
 	.string "NORTH to Varrock\p"
 	.string "WEST to Lumbridge\p"
-	.string "EAST to Al-Kharid$"
+	.string "EAST to Al Kharid$"
 
 BLOCK_Route12_Farmer_Text_0:
 	.string "Farmer$"

@@ -56,7 +56,7 @@ script WILDERNESS_CRATER_ZANIK
     lock
     faceplayer
     namebox("Zanik")
-    msgbox(format("It's good to see you again {PLAYER}! Ive been wanting to battle you ever since we battled alongside eachother to take down H.A.M!")) 
+    msgbox(format("It's good to see you again {PLAYER}! I've been wanting to battle you ever since we battled alongside eachother to take down H.A.M!")) 
     hidenamebox
     release
     end
@@ -68,7 +68,7 @@ script WILDERNESS_CRATER_WISEOLDMAN
     lock
     faceplayer
     namebox("Wise Old Man")
-    msgbox(format("Hello you mysterious person.\pYou must be strong to make it here. Lets do it. If not Ill just take all your party hats.")) 
+    msgbox(format("Hello you mysterious person.\pYou must be strong to make it here. Lets do it. If not I'll just take all your party hats.")) 
     hidenamebox
     release
     end
