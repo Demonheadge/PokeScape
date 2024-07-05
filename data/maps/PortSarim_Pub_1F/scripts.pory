@@ -235,4 +235,18 @@ script WHISTLE_TELEPORT {
     end
 }
 
-
+script RING_OF_KINSHIP_TELEPORT {
+    msgbox(format("Would you like to teleport to Daemonheim?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+			playse(SE_M_SCREECH)
+            msgbox(format("Suddenly the world starts to warp around you."))
+            applymovement(OBJ_EVENT_ID_PLAYER, movement_TELEPORT_OUT)
+            warpteleport (MAP_DAEMONHEIM,0,0,0)
+            closemessage
+            release
+            end
+        }  
+    closemessage
+    release
+    end
+}
