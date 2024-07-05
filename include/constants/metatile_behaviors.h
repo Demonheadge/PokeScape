@@ -163,9 +163,9 @@
 #define MB_UNUSED_9F 0x9F
 #define MB_BERRY_TREE_SOIL 0xA0
 #define MB_UNUSED_A1 0xA1
-#define MB_UNUSED_A2 0xA2
-#define MB_UNUSED_A3 0xA3
-#define MB_UNUSED_A4 0xA4
+#define MB_DG_ROPE 0xA2
+#define MB_DG_STRING 0xA3
+#define MB_DG_SPINNING_WHEEL 0xA4
 #define MB_UNUSED_A5 0xA5
 #define MB_UNUSED_A6 0xA6
 #define MB_UNUSED_A7 0xA7

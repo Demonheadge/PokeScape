@@ -682,6 +682,12 @@ EventScript_WHISTLE::
 	goto WHISTLE_TELEPORT
 	end
 
+EventScript_RING_OF_KINSHIP::
+	goto RING_OF_KINSHIP_TELEPORT
+	end
+
+	
+
 Text_CantDive:
 	.string "The sea is deep here. A POKéMON\n"
 	.string "may be able to go underwater.$"

@@ -1134,6 +1134,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_REPEL_TEA_1] = {gItemIcon_REPEL_TEA_1, gItemIconPalette_REPEL_TEA_1},
     [ITEM_REPEL_TEA_2] = {gItemIcon_REPEL_TEA_2, gItemIconPalette_REPEL_TEA_2},
     [ITEM_REPEL_TEA_3] = {gItemIcon_REPEL_TEA_3, gItemIconPalette_REPEL_TEA_3},
+    [ITEM_RING_OF_KINSHIP] = {gItemIcon_MegaRing, gItemIconPalette_MegaRing},
     // End Pokescape items
 
     // Return to field arrow

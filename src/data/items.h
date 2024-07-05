@@ -13672,4 +13672,15 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_Repel,
         .flingPower = 30,
     },
+
+    [ITEM_RING_OF_KINSHIP] =
+    {
+        .name = _("KINSHIP RING"),
+        .price = 0,
+        .description = sRingOfKinship_Desc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_KEY_ITEM,
+        .fieldUseFunc = ItemUseOutOfBattle_Function,
+    },
 };

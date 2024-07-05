@@ -58,6 +58,7 @@ extern const u8 EventScript_XERIC[];
 extern const u8 EventScript_ANCIENT_SHARD[];
 extern const u8 EventScript_ROTTEN_POTATO[];
 extern const u8 EventScript_WHISTLE[];
+extern const u8 EventScript_RING_OF_KINSHIP[];
 
 static void SetUpItemUseCallback(u8);
 static void FieldCB_UseItemOnField(void);
@@ -274,7 +275,7 @@ void ItemUseOutOfBattle_Bike(u8 taskId)
 
 void ItemUseOutOfBattle_Function(u8 taskId) //This is used to change a Flag / Variable from the items menu.
 {
-    if ((gSpecialVar_ItemId == ITEM_SLAYER_GEM) || (gSpecialVar_ItemId == ITEM_XERIC) || (gSpecialVar_ItemId == ITEM_ANCIENT_SHARD) || (gSpecialVar_ItemId == ITEM_ROTTEN_POTATO) || (gSpecialVar_ItemId == ITEM_WHISTLE))
+    if ((gSpecialVar_ItemId == ITEM_SLAYER_GEM) || (gSpecialVar_ItemId == ITEM_XERIC) || (gSpecialVar_ItemId == ITEM_ANCIENT_SHARD) || (gSpecialVar_ItemId == ITEM_ROTTEN_POTATO) || (gSpecialVar_ItemId == ITEM_WHISTLE) || (gSpecialVar_ItemId == ITEM_RING_OF_KINSHIP))
     {
         if (gMapHeader.mapType == MAP_TYPE_UNDERWATER)
         {
@@ -326,6 +327,10 @@ static void ItemUseOnFieldCB_RunScript(u8 taskId)
     else if (gSpecialVar_ItemId == ITEM_WHISTLE)
     {
         ScriptContext_SetupScript(EventScript_WHISTLE);
+    }
+    else if (gSpecialVar_ItemId == ITEM_RING_OF_KINSHIP)
+    {
+        ScriptContext_SetupScript(EventScript_RING_OF_KINSHIP);
     }
     DestroyTask(taskId);
 }
