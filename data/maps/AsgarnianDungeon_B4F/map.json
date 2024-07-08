@@ -83,7 +83,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_WISE_OLD_MAN_RIVAL",
-      "var_value": "0",
+      "var_value": "10",
       "script": "TRIGGER_WISEOLDMAN_RIVAL_2"
     }
   ],

@@ -209,42 +209,6 @@ DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_NPC_2:
 	goto DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_NPC_1
 
 
-TRIGGER_WISEOLDMAN_RIVAL_2::
-	lock
-	playse SE_PIN
-	applymovement 1, movement_wom_asgDung_0
-	waitmovement 0
-	delay 60
-	applymovement 1, MOVEMENT_WALK_DOWN
-	waitmovement 0
-	playbgm MUS_ENCOUNTER_BRENDAN, 1
-	waitmovement 0
-	namebox TRIGGER_WISEOLDMAN_RIVAL_2_Text_0
-	msgbox TRIGGER_WISEOLDMAN_RIVAL_2_Text_1
-	hidenamebox
-	closemessage
-	trainerbattle_no_intro TRAINER_RIVAL_WISE_OLD_MAN_2, TRIGGER_WISEOLDMAN_RIVAL_2_Text_2
-	namebox TRIGGER_WISEOLDMAN_RIVAL_2_Text_0
-	msgbox TRIGGER_WISEOLDMAN_RIVAL_2_Text_3
-	hidenamebox
-	closemessage
-	fadescreen FADE_TO_BLACK
-	savebgm MUS_DUMMY
-	fadedefaultbgm
-	removeobject 1
-	setflag FLAG_TEMP_1F
-	setvar VAR_WISE_OLD_MAN_RIVAL, 15
-	fadescreen FADE_FROM_BLACK
-	release
-	end
-
-
-movement_wom_asgDung_0:
-	face_down
-	emote_exclamation_mark
-	delay_16
-	step_end
-
 DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_KEYS_Text_0:
 	.string "{PLAYER} found the DUNGEON KEY.$"
 
@@ -288,30 +252,3 @@ DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_NPC_Text_0:
 DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_NPC_Text_1:
 	.string "Have you seen my keys?\n"
 	.string "I dropped them somewhere around here.$"
-
-TRIGGER_WISEOLDMAN_RIVAL_2_Text_0:
-	.string "Wise Old Man$"
-
-TRIGGER_WISEOLDMAN_RIVAL_2_Text_1:
-	.string "Aah, so you decided to humour this old\n"
-	.string "man after all.\p"
-	.string "This place makes for a fine setpiece\n"
-	.string "doesn't it?\p"
-	.string "Really makes you tingle for a battle.\p"
-	.string "You have come this far, it is a bit late\n"
-	.string "to turn back now.$"
-
-TRIGGER_WISEOLDMAN_RIVAL_2_Text_2:
-	.string "You are looking more promising by the\n"
-	.string "minute.$"
-
-TRIGGER_WISEOLDMAN_RIVAL_2_Text_3:
-	.string "This really is becoming a habit at this\n"
-	.string "point huh?\p"
-	.string "You are growing stronger every battle.\p"
-	.string "By the way, have you seen Melzar the\n"
-	.string "Mad at Rimmington?\p"
-	.string "A strong trainer like you could probably\n"
-	.string "learn a thing or two from that place.\p"
-	.string "I hope to see you again in the future,\n"
-	.string "it has been fun.$"

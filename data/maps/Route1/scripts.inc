@@ -205,6 +205,18 @@ NPC_CAMEL::
 	end
 
 
+NPC_MONKEY::
+	lock
+	faceplayer
+	namebox NPC_MONKEY_Text_0
+	playmoncry SPECIES_MONKEY_NORMAL_FORM, 0
+	msgbox NPC_MONKEY_Text_1
+	waitmoncry
+	hidenamebox
+	release
+	end
+
+
 SIGN_ROUTE1_1::
 	lock
 	msgbox SIGN_ROUTE1_1_Text_0
@@ -819,6 +831,12 @@ NPC_CAMEL_Text_0:
 
 NPC_CAMEL_Text_1:
 	.string "The Camel spits at you.$"
+
+NPC_MONKEY_Text_0:
+	.string "MONKEY$"
+
+NPC_MONKEY_Text_1:
+	.string "Oook, Ook!$"
 
 SIGN_ROUTE1_1_Text_0:
 	.string "Fred's Farm.$"

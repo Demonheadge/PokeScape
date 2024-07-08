@@ -386,7 +386,7 @@ TRIGGER_WISEOLDMAN_RIVAL_1::
 	applymovement 14, movement_wom_route2_0
 	waitmovement 0
 	delay 60
-	playbgm MUS_ENCOUNTER_BRENDAN, 1
+	playbgm MUS_PS_WISE_OLD_MAN_THEME, 1
 	getplayerxy VAR_TEMP_A, VAR_TEMP_B
 	compare VAR_TEMP_B, 14
 	goto_if_eq TRIGGER_WISEOLDMAN_RIVAL_1_2
@@ -401,8 +401,14 @@ TRIGGER_WISEOLDMAN_RIVAL_1_1:
 	trainerbattle_no_intro TRAINER_RIVAL_WISE_OLD_MAN_1, TRIGGER_WISEOLDMAN_RIVAL_1_Text_2
 	namebox TRIGGER_WISEOLDMAN_RIVAL_1_Text_0
 	msgbox TRIGGER_WISEOLDMAN_RIVAL_1_Text_3
-	namebox TRIGGER_WISEOLDMAN_RIVAL_1_Text_4
-	msgbox TRIGGER_WISEOLDMAN_RIVAL_1_Text_5
+	hidenamebox
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_INTERACT_LEFT
+	waitmovement 0
+	namebox TRIGGER_WISEOLDMAN_RIVAL_1_Text_0
+	msgbox TRIGGER_WISEOLDMAN_RIVAL_1_Text_4
+	namebox TRIGGER_WISEOLDMAN_RIVAL_1_Text_5
+	msgbox TRIGGER_WISEOLDMAN_RIVAL_1_Text_6
 	hidenamebox
 	closemessage
 	savebgm MUS_DUMMY
@@ -607,12 +613,16 @@ TRIGGER_WISEOLDMAN_RIVAL_1_Text_2:
 	.string "takes.$"
 
 TRIGGER_WISEOLDMAN_RIVAL_1_Text_3:
-	.string "Impressive.$"
+	.string "Impressive.\p"
+	.string "Might I ask your name?$"
 
 TRIGGER_WISEOLDMAN_RIVAL_1_Text_4:
-	.string "Wise Old Man$"
+	.string "Nice to meet you {PLAYER}.$"
 
 TRIGGER_WISEOLDMAN_RIVAL_1_Text_5:
+	.string "Wise Old Man$"
+
+TRIGGER_WISEOLDMAN_RIVAL_1_Text_6:
 	.string "I'm Dionysius but everyone just calls\n"
 	.string "me the Wise old man.\p"
 	.string "I used to be one of the biggest\n"

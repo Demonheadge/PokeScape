@@ -378,7 +378,7 @@ script TRIGGER_WISEOLDMAN_RIVAL_1{
     applymovement (14, movement_wom_route2_0)
     waitmovement(0)
     delay(60)
-    playbgm (MUS_ENCOUNTER_BRENDAN, 1)
+    playbgm (MUS_PS_WISE_OLD_MAN_THEME, 1)
     getplayerxy(VAR_TEMP_A, VAR_TEMP_B)
     if (var(VAR_TEMP_B) == 14){
         applymovement (14, movement_wom_route2_1)
@@ -393,7 +393,13 @@ script TRIGGER_WISEOLDMAN_RIVAL_1{
     closemessage
     trainerbattle_no_intro(TRAINER_RIVAL_WISE_OLD_MAN_1, format("Seems like you might just have what it takes.") )
     namebox("???")
-    msgbox(format("Impressive."))
+    msgbox(format("Impressive.\pMight I ask your name?"))
+    hidenamebox
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_INTERACT_LEFT)
+    waitmovement(0)
+    namebox("???")
+    msgbox(format("Nice to meet you {PLAYER}."))
     namebox("Wise Old Man")
     msgbox(format("I'm Dionysius but everyone just calls me the Wise old man.\pI used to be one of the biggest adventurers in the world, but now im just an old man looking back on his glory days.\pMaybe you will become something of a legend yourself?\pI hope to see you around on your adventures, try not to get lost in the Wizards' Tower.\pUntil next time."))
     hidenamebox

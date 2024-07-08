@@ -1445,3 +1445,9 @@ $(MID_SUBDIR)/MUS_PS_TRAINER_VICTORY.s: %.s: %.mid
 
 $(MID_SUBDIR)/MUS_PS_VS_CHAOS_TUNNELS.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G193 -V100
+
+$(MID_SUBDIR)/MUS_PS_WISE_OLD_MAN_THEME.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G193 -V100
+
+
+	

@@ -248,6 +248,19 @@ script NPC_CAMEL
 	end
 }
 
+script NPC_MONKEY
+{
+	lock
+	faceplayer
+    namebox ("MONKEY")
+    playmoncry(SPECIES_MONKEY_NORMAL_FORM, 0)
+	msgbox(format("Oook, Ook!"))
+    waitmoncry
+    hidenamebox
+	release
+	end
+}
+
 script SIGN_ROUTE1_1
 {
 	lock

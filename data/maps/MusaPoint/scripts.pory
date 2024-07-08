@@ -3,12 +3,25 @@ const OBJ_EVENT_ID_QUESTER = 21
 const OBJ_EVENT_ID_CUSTOMS_OFFICER = 7
 
 mapscripts MusaPoint_MapScripts {
+	MAP_SCRIPT_ON_LOAD 
+    {
+        call(MUSAPOINT_METATILES)
+    }
     MAP_SCRIPT_ON_TRANSITION {
 		call(MUSAPOINT_STATE)
         setvar(VAR_EVOLUTION_MAP_STATE, 15) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
     }
 	
 
+}
+
+script MUSAPOINT_METATILES {
+	if (var(VAR_WISE_OLD_MAN_RIVAL) <= 15) { //Post Karamaja Gym, 
+		setmetatile(12, 35, METATILE_Karamja_SAND_BANANA, 0) 
+		setmetatile(10, 36, METATILE_Karamja_SAND_BANANA, 0) 
+		setmetatile(15, 35, METATILE_Karamja_SAND_BANANA, 0) 
+		special(DrawWholeMapView) 
+	}
 }
 
 script MUSAPOINT_STATE {
@@ -24,13 +37,20 @@ script MUSAPOINT_STATE {
 			setflag(FLAG_TEMP_1E)
 		}
 	//Wise Old Man
-		if (var(VAR_WISE_OLD_MAN_RIVAL) <= 30) { //Post Karamaja Gym, //FLIP >
+		if (var(VAR_WISE_OLD_MAN_RIVAL) <= 15) { //Post Karamaja Gym, 
+			setvar(VAR_TEMP_F, 1)
 			addobject(OBJ_EVENT_ID_WISE_OLD_MAN)
 			clearflag(FLAG_TEMP_1F)
+			addobject(22)
+			addobject(23)
+			clearflag(FLAG_TEMP_1E)
 		}
 		else {
 			removeobject(OBJ_EVENT_ID_WISE_OLD_MAN)
 			setflag(FLAG_TEMP_1F)
+			removeobject(22)
+			removeobject(23)
+			setflag(FLAG_TEMP_1E)
 		}
 	}
 	return
@@ -237,14 +257,16 @@ script NPC_MUSA_POINT_Luthas
 	release
 	end
 }
-script NPC_Monkey
+script NPC_MONKEY_BLOCK
 {
 	lock
 	faceplayer
-    namebox ("Monkey")
+    namebox ("MONKEY")
+    playmoncry(SPECIES_MONKEY_NORMAL_FORM, 0)
 	msgbox(format("Oook, Ook!"))
-    closemessage
+    waitmoncry
     hidenamebox
+	msgbox(format("This monkey is bananas!"))
 	release
 	end
 }
@@ -327,10 +349,12 @@ script BATTLE_MUSA_POINT_TRAINER_4
 
 
 
+
 ////WISE OLD MAN
 //Well then, it truly has been awhile.
 //You look quite different since we last met. Youve grown quite a lot.
 //How about we check just how much you have truly grown.
+
 //*BATTLE - W: You are really getting this old man riled up.
 //So you got stranded on Crandor, passed through volcano passage undereath Karamja Volcano, met with the Tzhaar and now you are here?
 //You certainly have been busy haven't you.
@@ -398,14 +422,177 @@ script QUEST_BOAT_MUSA_POINT_Smuggler
 }
 
 
-//wom
 
-	//	if (var(VAR_WISE_OLD_MAN_RIVAL) == 30) { //Post Karamaja Gym,
-	//		checkitem(ITEM_SURF_TOOL, 1)
-	//		if (var(VAR_RESULT)){
-	//			//Oh, I see you have the brought the boat. You go on ahead, this old man will wait for this matter to resolve.
-	//		}
-	//		else {
-				
-	//		}
-	//	}
+//wom
+script TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT {
+	lock
+    playse(SE_PIN)
+    applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_wom_musapoint_noticeplayer)
+    waitmovement(0)
+    delay(60)
+    playbgm (MUS_PS_WISE_OLD_MAN_THEME, 1)
+	getplayerxy(VAR_TEMP_A, VAR_TEMP_B)
+    if (var(VAR_TEMP_B) == 26){
+        applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_wom_musapoint_01)
+		waitmovement(0)
+		applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_DOWN)
+    } 
+    elif (var(VAR_TEMP_B) == 27){
+        applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_wom_musapoint_02)
+    }
+	elif (var(VAR_TEMP_B) == 28){
+        applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_wom_musapoint_03)
+    }
+	waitmovement(0)
+	namebox("Wise Old Man")
+	msgbox(format("Well then, it truly has been awhile.\nYou look quite different since we last met."))
+	switch (var(VAR_WISE_OLD_MAN_RIVAL)) { 
+		case 10: // Last encounter was port sarim.
+			msgbox(format("It was a shame you didn't take me up on the offer to meet within Asganria Dungeon.\pIt cannot be helped I suppose.\pHow about we check just how much you have truly grown."))
+		case 15: //Encountered optional within Asganria Dungeon
+			msgbox(format("By the way, did you end up meeting with Melzar?\pHow did that go, did he put up a good fight?\pThat man loves his cabbages.\pEnough, chit chat, this old man wants to see how much you've grown since our last enocunter!"))
+		}
+	hidenamebox
+	closemessage
+	//trainerbattle_no_intro(TRAINER_RIVAL_WISE_OLD_MAN_1, format("You are really getting this old man riled up.")) 
+	namebox("Wise Old Man")
+	msgbox(format("So you got stranded on Crandor, passed through volcano passage undereath Karamja Volcano, met with the Tzhaar and now you are here?\pYou certainly have been busy haven't you.\pYou should really take the MvM championship seriously, I think you might just make it to the end."))
+	hidenamebox
+	closemessage
+	applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_wom_musapoint_1)
+	waitmovement(0)
+	namebox("Wise Old Man")
+	msgbox(format("Although that might have to be put on hold for a bit as it seems someone was caught smuggling Karmaja Rum.\pAll of the boats are in lockdown until the matter is resolved.\pIf you don't want to wait around with me, I heard Luthas was selling a boat."))
+	applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, MOVEMENT_FACE_UP)
+	waitmovement(0)
+	msgbox(format("He lives in that shack just over there.\pGo give him a visit if your interested."))
+	applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, Common_Movement_FacePlayer)
+	waitmovement(0)
+	msgbox(format("Me?\pI think I might go visit the pub for a drink.\pI truly am looking forward to seeing your MvM championship progress.\pUntil next time {PLAYER}."))
+	hidenamebox
+	closemessage
+	getplayerxy(VAR_TEMP_A, VAR_TEMP_B)
+    if (var(VAR_TEMP_B) == 26){
+        applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_wom_musapoint_04)
+    } 
+    elif (var(VAR_TEMP_B) == 27){
+        applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_wom_musapoint_05)
+    }
+	elif (var(VAR_TEMP_B) == 28){
+        applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_wom_musapoint_06)
+    }
+	waitmovement(0)
+	opendoor(18,32)
+	waitdooranim
+	applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_ENTER_DOOR)
+	waitmovement(0)
+	removeobject(OBJ_EVENT_ID_WISE_OLD_MAN)
+	setflag(FLAG_TEMP_1F)
+	closedoor(18,32)
+	setvar(VAR_WISE_OLD_MAN_RIVAL, 20) //Karmaja event completed.
+	setvar(VAR_TEMP_F, 0)
+	savebgm(MUS_DUMMY)
+	fadedefaultbgm
+	release
+	end
+	
+}
+
+movement movement_wom_musapoint_noticeplayer{
+    face_player
+    emote_exclamation_mark
+    delay_16
+}
+movement movement_wom_musapoint_01{
+    walk_left
+	walk_up
+	walk_left
+	walk_up
+	walk_left
+	face_up
+}
+movement movement_wom_musapoint_02{
+    walk_left
+	walk_up
+	walk_up
+	walk_left
+}
+movement movement_wom_musapoint_03{
+    walk_left
+	walk_up
+	walk_left
+}
+movement movement_wom_musapoint_1{
+    face_right
+    delay_16 * 6
+    face_player
+}
+
+movement movement_wom_musapoint_04{
+    walk_right
+	walk_down * 2
+	walk_right
+	walk_down * 4
+	walk_left * 6
+	face_up
+}
+movement movement_wom_musapoint_05{
+    walk_down * 2
+	walk_right
+	walk_down * 4
+	walk_left * 6
+	face_up
+}
+movement movement_wom_musapoint_06{
+	walk_down
+	walk_right
+	walk_down * 4
+	walk_left * 6
+	face_up
+}
+movement movement_ENTER_DOOR{
+	walk_up
+	set_invisible
+}
+
+
+
+
+script NPC_WISEOLDMAN_RIVAL_MUSAPOINT_PUB {
+	lock
+	faceplayer
+	namebox("Wise Old Man")
+	checkitem(ITEM_SURF_TOOL, 1)
+	if (var(VAR_RESULT)){
+		msgbox(format("Oh, I see you have the brought the boat.\pYou go on ahead and sail back to the mainland, this old man will wait for the matter at the docks to resolve."))
+	}
+	else {
+		msgbox(format("Hello again {PLAYER}.\pDid you end up going to see Luthas about that boat?"))				
+	}
+	hidenamebox
+	closemessage
+	release
+	end
+}
+
+//if ((var(VAR_WISE_OLD_MAN_RIVAL) == 10) || (var(VAR_WISE_OLD_MAN_RIVAL) == 15))  { 
+
+
+	//So you got stranded on Crandor, passed through volcano passage undereath Karamja Volcano, met with the Tzhaar and now you are here?
+	//You certainly have been busy haven't you.
+	//You should really take the MvM championship seriously, I think you might just make it to the end.
+	//Although that might have to be put on hold for a bit as it seems someone was caught smuggling Karmaja Rum.
+	//All of the boats are in lockdown until the matter is resolved.
+	//If you don't want to wait around with me, I heard Luthas was selling a boat but I left my wallet at home.
+
+		
+
+
+		//if ((var(VAR_WISE_OLD_MAN_RIVAL) == 10) || (var(VAR_WISE_OLD_MAN_RIVAL) == 15))  { //Post Karamaja Gym,
+		//		checkitem(ITEM_SURF_TOOL, 1)
+		//		if (var(VAR_RESULT)){
+		//			//Oh, I see you have the brought the boat. You go on ahead, this old man will wait for this matter to resolve.
+		//		}
+		//		else {
+					
+		//		}

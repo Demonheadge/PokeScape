@@ -2,8 +2,8 @@
   "id": "MAP_MUSA_POINT_BANANA_SHOP",
   "name": "MusaPoint_BananaShop",
   "layout": "LAYOUT_MUSA_POINT_BANANA_SHOP",
-  "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_TUTORIAL_ISLAND",
+  "music": "MUS_PS_MUSA_POINT",
+  "region_map_section": "MAPSEC_MUSA_POINT",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -37,7 +37,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_Monkey",
+      "script": "NULL",
       "flag": "0"
     }
   ],

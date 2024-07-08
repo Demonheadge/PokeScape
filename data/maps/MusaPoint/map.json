@@ -131,8 +131,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PIRATE_1",
-      "x": 23,
-      "y": 34,
+      "x": 25,
+      "y": 35,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -275,7 +275,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_GYMLEADER_WISE_OLD_MAN",
       "x": 25,
-      "y": 32,
+      "y": 29,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -296,6 +296,32 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "QUEST_BOAT_MUSA_POINT_Smuggler",
+      "flag": "FLAG_TEMP_1E"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_IMP",
+      "x": 14,
+      "y": 36,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_MONKEY_BLOCK",
+      "flag": "FLAG_TEMP_1E"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_IMP",
+      "x": 13,
+      "y": 35,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_MONKEY_BLOCK",
       "flag": "FLAG_TEMP_1E"
     }
   ],
@@ -339,12 +365,30 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 26,
+      "x": 22,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "1",
+      "script": "TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "1",
+      "script": "TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
       "y": 26,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "NULL"
+      "var": "VAR_TEMP_F",
+      "var_value": "1",
+      "script": "TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT"
     }
   ],
   "bg_events": [
