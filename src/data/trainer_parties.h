@@ -6492,3 +6492,36 @@ static const struct TrainerMon sParty_WISE_OLD_MAN_2[] = {
     .heldItem = ITEM_NONE
     },
 };
+
+static const struct TrainerMon sParty_WISE_OLD_MAN_3[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 30,
+    .species = SPECIES_PHOENIX_REBIRTH_FORM,
+    .heldItem = ITEM_NONE
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 30,
+    .species = SPECIES_RUNE,
+    .heldItem = ITEM_NONE
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 30,
+    .species = SPECIES_DRAGON_GREEN_FORM,
+    .heldItem = ITEM_NONE
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 30,
+    .species = SPECIES_SHAIKAH,
+    .heldItem = ITEM_NONE
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 30,
+    .species = SPECIES_LYCURGUS,
+    .heldItem = ITEM_NONE
+    },
+};

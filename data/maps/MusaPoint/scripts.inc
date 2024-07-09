@@ -405,20 +405,21 @@ TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_1:
 TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_8:
 	hidenamebox
 	closemessage
+	trainerbattle_no_intro TRAINER_RIVAL_WISE_OLD_MAN_3, TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_4
 	namebox TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_0
-	msgbox TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_4
+	msgbox TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_5
 	hidenamebox
 	closemessage
 	applymovement 20, movement_wom_musapoint_1
 	waitmovement 0
 	namebox TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_0
-	msgbox TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_5
+	msgbox TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_6
 	applymovement 20, MOVEMENT_FACE_UP
 	waitmovement 0
-	msgbox TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_6
+	msgbox TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_7
 	applymovement 20, Common_Movement_FacePlayer
 	waitmovement 0
-	msgbox TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_7
+	msgbox TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_8
 	hidenamebox
 	closemessage
 	getplayerxy VAR_TEMP_A, VAR_TEMP_B
@@ -812,6 +813,10 @@ TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_3:
 	.string "last enocunter!$"
 
 TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_4:
+	.string "You are really getting this old man riled\n"
+	.string "up.$"
+
+TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_5:
 	.string "So you got stranded on Crandor, passed\n"
 	.string "through volcano passage undereath\l"
 	.string "Karamja Volcano, met with the Tzhaar\l"
@@ -822,7 +827,7 @@ TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_4:
 	.string "championship seriously, I think you\l"
 	.string "might just make it to the end.$"
 
-TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_5:
+TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_6:
 	.string "Although that might have to be put on\n"
 	.string "hold for a bit as it seems someone was\l"
 	.string "caught smuggling Karmaja Rum.\p"
@@ -831,11 +836,11 @@ TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_5:
 	.string "If you don't want to wait around with\n"
 	.string "me, I heard Luthas was selling a boat.$"
 
-TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_6:
+TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_7:
 	.string "He lives in that shack just over there.\p"
 	.string "Go give him a visit if your interested.$"
 
-TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_7:
+TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_8:
 	.string "Me?\p"
 	.string "I think I might go visit the pub for a\n"
 	.string "drink.\p"

@@ -617,6 +617,8 @@
 #define MUS_PS_TRAINER_VICTORY      667
 #define	MUS_PS_VS_CHAOS_TUNNELS	    668
 #define	MUS_PS_WISE_OLD_MAN_THEME	669
+#define	MUS_PS_VS_WISE_OLD_MAN_RIVAL	670
+
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

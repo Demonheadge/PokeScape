@@ -5013,6 +5013,8 @@ u16 GetBattleBGM(void)
 
         switch (trainerClass)
         {
+        case TRAINER_CLASS_WISE_OLD_MAN: 
+            return MUS_PS_VS_WISE_OLD_MAN_RIVAL; //POKESCAPE
         case TRAINER_CLASS_HAM_GRUNT:
             return MUS_PS_VS_HAM;   //POKESCAPE
         case TRAINER_CLASS_HAM_BOSS:

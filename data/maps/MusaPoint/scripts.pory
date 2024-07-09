@@ -454,7 +454,7 @@ script TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT {
 		}
 	hidenamebox
 	closemessage
-	//trainerbattle_no_intro(TRAINER_RIVAL_WISE_OLD_MAN_1, format("You are really getting this old man riled up.")) 
+	trainerbattle_no_intro(TRAINER_RIVAL_WISE_OLD_MAN_3, format("You are really getting this old man riled up.")) 
 	namebox("Wise Old Man")
 	msgbox(format("So you got stranded on Crandor, passed through volcano passage undereath Karamja Volcano, met with the Tzhaar and now you are here?\pYou certainly have been busy haven't you.\pYou should really take the MvM championship seriously, I think you might just make it to the end."))
 	hidenamebox
