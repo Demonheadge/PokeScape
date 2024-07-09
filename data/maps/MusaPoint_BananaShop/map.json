@@ -2,7 +2,7 @@
   "id": "MAP_MUSA_POINT_BANANA_SHOP",
   "name": "MusaPoint_BananaShop",
   "layout": "LAYOUT_MUSA_POINT_BANANA_SHOP",
-  "music": "MUS_PS_MUSA_POINT",
+  "music": "MUS_DEWFORD",
   "region_map_section": "MAPSEC_MUSA_POINT",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_MUSA_POINT_Luthas",
+      "script": "LUTHAS_QUEST",
       "flag": "0"
     },
     {
@@ -37,7 +37,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_MONKEY",
       "flag": "0"
     }
   ],

@@ -238,6 +238,7 @@ static const u8 sText_Close[] = _("Close");
 static const u8 sText_ColorGreen[] = _("{COLOR}{GREEN}");
 static const u8 sText_AZ[] = _(" A-Z");
 static const u8 sText_InProgress[] = _("In Progress");
+static const u8 sText_Delivered[] = _("Done");
 
 ///////////////////////////////////////////////////////////////////////////////
 //////////////////////BEGIN SUBQUEST CUSTOMIZATION/////////////////////////////
@@ -477,6 +478,41 @@ static const struct SubQuest sSubQuests_KOUREND_SLAYER[QUEST_KOUREND_SLAYER_SUB_
 	      sText_Found
 	),
 };
+
+static const struct SubQuest sSubQuests_BANANA_BOAT[QUEST_BANANA_BOAT_SUB_COUNT] =
+{
+	sub_quest(
+	      12,
+	      gText_SubQuest_Banana_Boat_Name1,
+	      gText_SubQuest_Banana_Boat_Name1,
+	      gText_SideQuestMap_MusaPoint,
+	      ITEM_BANANA,
+	      ITEM,
+	      sText_Delivered
+	),
+	sub_quest(
+	      13,
+	      gText_SubQuest_Banana_Boat_Name2,
+	      gText_SubQuest_Banana_Boat_Name2,
+	      gText_SideQuestMap_MusaPoint,
+	      ITEM_BANANA,
+	      ITEM,
+	      sText_Delivered
+	),
+	sub_quest(
+	      14,
+	      gText_SubQuest_Banana_Boat_Name3,
+	      gText_SubQuest_Banana_Boat_Name3,
+	      gText_SideQuestMap_MusaPoint,
+	      ITEM_BANANA,
+	      ITEM,
+	      sText_Delivered
+	),
+};
+
+
+
+
 ////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -540,6 +576,19 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      sSubQuests_KOUREND_SLAYER,
 	      QUEST_KOUREND_SLAYER_SUB_COUNT
 	),
+	side_quest(
+	      gText_SideQuestName_Banana_Boat,
+	      gText_SideQuestDesc_Banana_Boat,
+	      gText_SideQuestDesc_Completed_Banana_Boat,
+	      gText_SideQuestMap_MusaPoint,
+	      ITEM_SURF_TOOL,
+	      ITEM,
+	      sSubQuests_BANANA_BOAT,
+	      QUEST_BANANA_BOAT_SUB_COUNT
+	),
+
+
+	
 	/*
 	side_quest(
 	      gText_SideQuestName_1,

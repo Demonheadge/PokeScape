@@ -2018,6 +2018,15 @@ const u8 gText_SideQuestMap_Kourend[] = _("Kourend");
 const u8 gText_SubQuest_Kourend_Slayer_Name1[] = _("Dark Totem - Top");
 const u8 gText_SubQuest_Kourend_Slayer_Name2[] = _("Dark Totem - Middle");
 const u8 gText_SubQuest_Kourend_Slayer_Name3[] = _("Dark Totem - Bottom");
+
+//Banana Boat
+const u8 gText_SideQuestName_Banana_Boat[] = _("Banana Boat");
+const u8 gText_SideQuestDesc_Banana_Boat[] = _("Assist Luthas at Musa Point.");
+const u8 gText_SideQuestDesc_Completed_Banana_Boat[] = _("Quest Completed!");
+const u8 gText_SideQuestMap_MusaPoint[] = _("Musa Point");
+const u8 gText_SubQuest_Banana_Boat_Name1[] = _("Deliver 10 Bananas.");
+const u8 gText_SubQuest_Banana_Boat_Name2[] = _("Deliver 30 Bananas.");
+const u8 gText_SubQuest_Banana_Boat_Name3[] = _("Deliver over 120 Bananas.");
 //names
 
 /*

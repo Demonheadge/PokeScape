@@ -3224,6 +3224,18 @@ extern const u8 gText_SubQuest_Kourend_Slayer_Name1[];
 extern const u8 gText_SubQuest_Kourend_Slayer_Name2[];
 extern const u8 gText_SubQuest_Kourend_Slayer_Name3[];
 
+//Quest - Banana Boat
+extern const u8 gText_SideQuestName_Banana_Boat[];
+extern const u8 gText_SideQuestDesc_Banana_Boat[];
+extern const u8 gText_SideQuestDesc_Completed_Banana_Boat[];
+extern const u8 gText_SideQuestMap_MusaPoint[];
+extern const u8 gText_SubQuest_Banana_Boat_Name1[];
+extern const u8 gText_SubQuest_Banana_Boat_Name2[];
+extern const u8 gText_SubQuest_Banana_Boat_Name3[];
+
+
+
+
 /*
 //names
 extern const u8 gText_SideQuestName_1[];

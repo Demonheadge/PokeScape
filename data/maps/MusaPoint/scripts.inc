@@ -15,13 +15,26 @@ MusaPoint_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 
 MUSAPOINT_METATILES::
 	compare VAR_WISE_OLD_MAN_RIVAL, 15
-	goto_if_le MUSAPOINT_METATILES_1
+	goto_if_le MUSAPOINT_METATILES_2
+MUSAPOINT_METATILES_1:
+	compare VAR_BANANA_BOAT_QUEST, 10
+	goto_if_ge MUSAPOINT_METATILES_4
 	return
 
-MUSAPOINT_METATILES_1:
+MUSAPOINT_METATILES_2:
 	setmetatile 12, 35, METATILE_Karamja_SAND_BANANA, 0
 	setmetatile 10, 36, METATILE_Karamja_SAND_BANANA, 0
 	setmetatile 15, 35, METATILE_Karamja_SAND_BANANA, 0
+	special DrawWholeMapView
+	goto MUSAPOINT_METATILES_1
+
+MUSAPOINT_METATILES_4:
+	setmetatile 27, 27, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
+	setmetatile 28, 27, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
+	setmetatile 29, 27, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
+	setmetatile 27, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
+	setmetatile 28, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
+	setmetatile 29, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
 	special DrawWholeMapView
 	return
 
@@ -36,30 +49,44 @@ MUSAPOINT_STATE_2:
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 150
 	goto_if_le MUSAPOINT_STATE_5
 	removeobject 21
-	setflag FLAG_TEMP_1E
+	setflag FLAG_TEMP_1D
 MUSAPOINT_STATE_4:
 	compare VAR_WISE_OLD_MAN_RIVAL, 15
-	goto_if_le MUSAPOINT_STATE_8
+	goto_if_le MUSAPOINT_STATE_9
 	removeobject 20
 	setflag FLAG_TEMP_1F
 	removeobject 22
 	removeobject 23
 	setflag FLAG_TEMP_1E
+MUSAPOINT_STATE_8:
+	compare VAR_BANANA_BOAT_QUEST, 5
+	goto_if_ge MUSAPOINT_STATE_12
+	setflag FLAG_TEMP_1C
+	setflag FLAG_TEMP_1B
+	removeobject 24
+	removeobject 25
 	goto MUSAPOINT_STATE_1
 
 MUSAPOINT_STATE_5:
 	addobject 21
-	clearflag FLAG_TEMP_1E
+	clearflag FLAG_TEMP_1D
 	setobjectxyperm 7, 38, 29
 	goto MUSAPOINT_STATE_4
 
-MUSAPOINT_STATE_8:
+MUSAPOINT_STATE_9:
 	setvar VAR_TEMP_F, 1
 	addobject 20
 	clearflag FLAG_TEMP_1F
 	addobject 22
 	addobject 23
 	clearflag FLAG_TEMP_1E
+	goto MUSAPOINT_STATE_8
+
+MUSAPOINT_STATE_12:
+	clearflag FLAG_TEMP_1C
+	clearflag FLAG_TEMP_1B
+	addobject 24
+	addobject 25
 	goto MUSAPOINT_STATE_1
 
 
@@ -594,6 +621,277 @@ NPC_WISEOLDMAN_RIVAL_MUSAPOINT_PUB_2:
 	goto NPC_WISEOLDMAN_RIVAL_MUSAPOINT_PUB_1
 
 
+LUTHAS_QUEST::
+	lock
+	faceplayer
+	namebox LUTHAS_QUEST_Text_0
+	compare VAR_BANANA_BOAT_QUEST, 25
+	goto_if_eq LUTHAS_QUEST_2
+LUTHAS_QUEST_1:
+	compare VAR_BANANA_BOAT_QUEST, 20
+	goto_if_eq LUTHAS_QUEST_5
+LUTHAS_QUEST_4:
+	compare VAR_BANANA_BOAT_QUEST, 15
+	goto_if_eq LUTHAS_QUEST_8
+LUTHAS_QUEST_7:
+	compare VAR_BANANA_BOAT_QUEST, 10
+	goto_if_eq LUTHAS_QUEST_11
+LUTHAS_QUEST_10:
+	compare VAR_BANANA_BOAT_QUEST, 5
+	goto_if_eq LUTHAS_QUEST_14
+LUTHAS_QUEST_13:
+	compare VAR_BANANA_BOAT_QUEST, 0
+	goto_if_eq LUTHAS_QUEST_17
+LUTHAS_QUEST_16:
+	msgbox LUTHAS_QUEST_Text_1
+	return
+
+LUTHAS_QUEST_2:
+	goto LUTHAS_QUEST_PART_6
+	goto LUTHAS_QUEST_1
+
+LUTHAS_QUEST_5:
+	goto LUTHAS_QUEST_PART_5
+	goto LUTHAS_QUEST_4
+
+LUTHAS_QUEST_8:
+	goto LUTHAS_QUEST_PART_4
+	goto LUTHAS_QUEST_7
+
+LUTHAS_QUEST_11:
+	goto LUTHAS_QUEST_PART_3
+	goto LUTHAS_QUEST_10
+
+LUTHAS_QUEST_14:
+	goto LUTHAS_QUEST_PART_2
+	goto LUTHAS_QUEST_13
+
+LUTHAS_QUEST_17:
+	goto LUTHAS_QUEST_PART_1
+	goto LUTHAS_QUEST_16
+
+
+LUTHAS_QUEST_PART_1::
+	msgbox LUTHAS_QUEST_PART_1_Text_0
+	checkitem ITEM_SURF_TOOL, 1
+	compare VAR_RESULT, 0
+	goto_if_ne LUTHAS_QUEST_PART_1_2
+	msgbox LUTHAS_QUEST_PART_1_Text_3
+	msgbox LUTHAS_QUEST_PART_1_Text_4
+LUTHAS_QUEST_PART_1_1:
+	msgbox LUTHAS_QUEST_PART_1_Text_5, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne LUTHAS_QUEST_PART_1_6
+	msgbox LUTHAS_QUEST_PART_1_Text_7
+LUTHAS_QUEST_PART_1_5:
+	hidenamebox
+	closemessage
+	release
+	end
+
+LUTHAS_QUEST_PART_1_2:
+	msgbox LUTHAS_QUEST_PART_1_Text_1
+	msgbox LUTHAS_QUEST_PART_1_Text_2
+	goto LUTHAS_QUEST_PART_1_1
+
+LUTHAS_QUEST_PART_1_6:
+	closemessage
+	hidenamebox
+	startquest QUEST_BANANA_BOAT
+	setvar VAR_BANANA_BOAT_QUEST, 5
+	namebox LUTHAS_QUEST_Text_0
+	msgbox LUTHAS_QUEST_PART_1_Text_6
+	goto LUTHAS_QUEST_PART_1_5
+
+
+LUTHAS_QUEST_PART_2::
+	checkitem ITEM_BANANA, 10
+	compare VAR_RESULT, 0
+	goto_if_eq LUTHAS_QUEST_PART_2_2
+	msgbox LUTHAS_QUEST_PART_2_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq LUTHAS_QUEST_PART_2_5
+	removeitem ITEM_BANANA, 10
+	addvar VAR_BANANA_COUNT, 10
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_BANANA_BOAT, 0
+	msgbox LUTHAS_QUEST_PART_2_Text_4
+	closemessage
+	hidenamebox
+	checkitem ITEM_SURF_TOOL, 1
+	compare VAR_RESULT, 0
+	goto_if_eq LUTHAS_QUEST_PART_2_11
+LUTHAS_QUEST_PART_2_10:
+	giveitem ITEM_PURPLE_SWEETS, 5
+	giveitem ITEM_PINEAPPLE, 1
+	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_BANANA_BOAT
+	setvar VAR_BANANA_BOAT_QUEST, 10
+	closemessage
+	hidenamebox
+	release
+	end
+
+LUTHAS_QUEST_PART_2_2:
+	checkitem ITEM_BANANA, 1
+	compare VAR_RESULT, 0
+	goto_if_ne LUTHAS_QUEST_PART_2_8
+LUTHAS_QUEST_PART_2_7:
+	msgbox LUTHAS_QUEST_PART_2_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+LUTHAS_QUEST_PART_2_5:
+	msgbox LUTHAS_QUEST_PART_2_Text_3
+	closemessage
+	hidenamebox
+	release
+	end
+
+LUTHAS_QUEST_PART_2_8:
+	msgbox LUTHAS_QUEST_PART_2_Text_0
+	goto LUTHAS_QUEST_PART_2_7
+
+LUTHAS_QUEST_PART_2_11:
+	giveitem ITEM_SURF_TOOL, 1
+	namebox LUTHAS_QUEST_Text_0
+	msgbox LUTHAS_QUEST_PART_2_Text_5
+	goto LUTHAS_QUEST_PART_2_10
+
+
+LUTHAS_QUEST_PART_3::
+	msgbox LUTHAS_QUEST_PART_3_Text_0
+	checkitem ITEM_BANANA, 20
+	compare VAR_RESULT, 0
+	goto_if_ne LUTHAS_QUEST_PART_3_2
+LUTHAS_QUEST_PART_3_1:
+	hidenamebox
+	closemessage
+	release
+	end
+
+LUTHAS_QUEST_PART_3_2:
+	msgbox LUTHAS_QUEST_PART_2_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq LUTHAS_QUEST_PART_3_5
+	removeitem ITEM_BANANA, 20
+	addvar VAR_BANANA_COUNT, 20
+	setvar VAR_BANANA_BOAT_QUEST, 15
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_BANANA_BOAT, 1
+	msgbox LUTHAS_QUEST_PART_3_Text_2
+	hidenamebox
+	closemessage
+	giveitem ITEM_TM12_MISTY_TERRAIN, 1
+	goto LUTHAS_QUEST_PART_3_1
+
+LUTHAS_QUEST_PART_3_5:
+	msgbox LUTHAS_QUEST_PART_3_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+
+LUTHAS_QUEST_PART_4::
+	msgbox LUTHAS_QUEST_PART_4_Text_0
+	setvar VAR_BANANA_BOAT_QUEST, 20
+	hidenamebox
+	closemessage
+	release
+	end
+
+
+LUTHAS_QUEST_PART_5::
+	msgbox LUTHAS_QUEST_PART_5_Text_0
+	checkitem ITEM_BANANA, 30
+	compare VAR_RESULT, 0
+	goto_if_ne LUTHAS_QUEST_PART_5_2
+LUTHAS_QUEST_PART_5_1:
+	hidenamebox
+	closemessage
+	release
+	end
+
+LUTHAS_QUEST_PART_5_2:
+	msgbox LUTHAS_QUEST_PART_2_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq LUTHAS_QUEST_PART_5_5
+	removeitem ITEM_BANANA, 30
+	addvar VAR_BANANA_COUNT, 30
+	msgbox LUTHAS_QUEST_PART_3_Text_2
+	hidenamebox
+	closemessage
+	call GIVE_RANDOM_ITEM_28
+	compare VAR_BANANA_COUNT, 120
+	goto_if_ge LUTHAS_QUEST_PART_5_7
+	goto LUTHAS_QUEST_PART_5_1
+
+LUTHAS_QUEST_PART_5_5:
+	msgbox LUTHAS_QUEST_PART_5_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+LUTHAS_QUEST_PART_5_7:
+	namebox LUTHAS_QUEST_Text_0
+	msgbox LUTHAS_QUEST_PART_5_Text_2
+	closemessage
+	hidenamebox
+	msgbox LUTHAS_QUEST_PART_5_Text_3
+	setvar VAR_BANANA_BOAT_QUEST, 25
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_BANANA_BOAT, 3
+	goto LUTHAS_QUEST_PART_5_1
+
+
+LUTHAS_QUEST_PART_6::
+	msgbox LUTHAS_QUEST_PART_5_Text_0
+	checkitem ITEM_BANANA, 30
+	compare VAR_RESULT, 0
+	goto_if_ne LUTHAS_QUEST_PART_6_2
+LUTHAS_QUEST_PART_6_1:
+	hidenamebox
+	closemessage
+	release
+	end
+
+LUTHAS_QUEST_PART_6_2:
+	msgbox LUTHAS_QUEST_PART_2_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq LUTHAS_QUEST_PART_6_5
+	removeitem ITEM_BANANA, 30
+	addvar VAR_BANANA_COUNT, 30
+	msgbox LUTHAS_QUEST_PART_3_Text_2
+	hidenamebox
+	closemessage
+	call GIVE_RANDOM_ITEM_28
+	compare VAR_BANANA_COUNT, 1000
+	goto_if_ge LUTHAS_QUEST_PART_6_7
+	goto LUTHAS_QUEST_PART_6_1
+
+LUTHAS_QUEST_PART_6_5:
+	msgbox LUTHAS_QUEST_PART_5_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+LUTHAS_QUEST_PART_6_7:
+	namebox LUTHAS_QUEST_Text_0
+	msgbox LUTHAS_QUEST_PART_5_Text_2
+	closemessage
+	hidenamebox
+	msgbox LUTHAS_QUEST_PART_5_Text_3
+	goto LUTHAS_QUEST_PART_6_1
+
+
+SIGN_BANANA_COUNT::
+	buffernumberstring 0, VAR_BANANA_COUNT
+	msgbox SIGN_BANANA_COUNT_Text_0
+	closemessage
+	end
+
+
 NPC_MUSAPOINT_SAILOR_Text_0:
 	.string "SAILOR$"
 
@@ -859,3 +1157,132 @@ NPC_WISEOLDMAN_RIVAL_MUSAPOINT_PUB_Text_1:
 	.string "Hello again {PLAYER}.\p"
 	.string "Did you end up going to see Luthas\n"
 	.string "about that boat?$"
+
+LUTHAS_QUEST_Text_0:
+	.string "LUTHAS$"
+
+LUTHAS_QUEST_Text_1:
+	.string "Hello, I run the banana plantation. How\n"
+	.string "many I help you today?$"
+
+LUTHAS_QUEST_PART_1_Text_0:
+	.string "Hello, I run the banana plantation.\p"
+	.string "How many I help you today?\p"
+	.string "Ah, you interested in the boat that is\n"
+	.string "for sale?$"
+
+LUTHAS_QUEST_PART_1_Text_1:
+	.string "Oh, I see you already have a boat.\p"
+	.string "Maybe you could help me with a little\n"
+	.string "job then.$"
+
+LUTHAS_QUEST_PART_1_Text_2:
+	.string "You see I've injured my back and now am\n"
+	.string "running behind on the shipment of\l"
+	.string "bananas.\p"
+	.string "If you could go into the plantation and\n"
+	.string "pick 10 bananas for me.\p"
+	.string "I've got some nicknacks you can have if\n"
+	.string "you help me with this job.$"
+
+LUTHAS_QUEST_PART_1_Text_3:
+	.string "How much?\p"
+	.string "You are very eager aren't you.\p"
+	.string "I can sell it to you but not for gold\n"
+	.string "pieces.\p"
+	.string "What I need is an employee.$"
+
+LUTHAS_QUEST_PART_1_Text_4:
+	.string "You see I've injured my back and now am\n"
+	.string "running behind on the shipment of\l"
+	.string "bananas.\p"
+	.string "If you could go into the plantation and\n"
+	.string "pick 10 bananas for me then you can\l"
+	.string "have this boat.$"
+
+LUTHAS_QUEST_PART_1_Text_5:
+	.string "Is that a deal?$"
+
+LUTHAS_QUEST_PART_1_Text_6:
+	.string "Great!\p"
+	.string "Remember I need 10 bananas from the\n"
+	.string "plantation.\p"
+	.string "Bring them back to me when you have\n"
+	.string "them.$"
+
+LUTHAS_QUEST_PART_1_Text_7:
+	.string "…\p"
+	.string "Well if you change your mind you know\n"
+	.string "where I am.$"
+
+LUTHAS_QUEST_PART_2_Text_0:
+	.string "Great it looks like you have at least 1\n"
+	.string "Banana.\p"
+	.string "But I need 10 in total.\p"
+	.string "If you could bring them to me in bulk\n"
+	.string "that would be helpful.$"
+
+LUTHAS_QUEST_PART_2_Text_1:
+	.string "Remember I need 10 bananas from the\n"
+	.string "plantation.\p"
+	.string "You can find the plantation next door.\p"
+	.string "There should be some bananas on the\n"
+	.string "trees.$"
+
+LUTHAS_QUEST_PART_2_Text_2:
+	.string "Can I have those bananas to fill the\n"
+	.string "order?$"
+
+LUTHAS_QUEST_PART_2_Text_3:
+	.string "Oh…$"
+
+LUTHAS_QUEST_PART_2_Text_4:
+	.string "Thank you, as promised here is your\n"
+	.string "reward.$"
+
+LUTHAS_QUEST_PART_2_Text_5:
+	.string "As an extra thanks for helping me have\n"
+	.string "these.$"
+
+LUTHAS_QUEST_PART_3_Text_0:
+	.string "Thank you for helping me earlier.\p"
+	.string "If you bring me another 20 Bananas I\n"
+	.string "can reward you with this neat Scroll.$"
+
+LUTHAS_QUEST_PART_3_Text_1:
+	.string "What a shame, I'll hang onto this Scroll\n"
+	.string "incase you change your mind.$"
+
+LUTHAS_QUEST_PART_3_Text_2:
+	.string "My order is filled, thank you!\p"
+	.string "Have this as a reward.$"
+
+LUTHAS_QUEST_PART_4_Text_0:
+	.string "Back again?\p"
+	.string "I always have more work if you are\n"
+	.string "interested.\p"
+	.string "Could you please get me another 30\n"
+	.string "bananas.\p"
+	.string "In terms of a reward I'm sure I can find\n"
+	.string "something for you.$"
+
+LUTHAS_QUEST_PART_5_Text_0:
+	.string "Could you bring me another 30 bananas?$"
+
+LUTHAS_QUEST_PART_5_Text_1:
+	.string "What a shame, come see me if you change\n"
+	.string "your mind.$"
+
+LUTHAS_QUEST_PART_5_Text_2:
+	.string "Hang on a minute.\p"
+	.string "I found this the other day I would like\n"
+	.string "you to have it for helping me out so\l"
+	.string "much.$"
+
+LUTHAS_QUEST_PART_5_Text_3:
+	.string "I hope you will keep assisting me in the\n"
+	.string "future.$"
+
+SIGN_BANANA_COUNT_Text_0:
+	.string "{PLAYER}'s Banana Count:\n"
+	.string "{STR_VAR_1}.$"

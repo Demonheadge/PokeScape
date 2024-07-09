@@ -539,6 +539,45 @@ ENCOUNTER_GREATER_DEMON_12:
 	goto ENCOUNTER_GREATER_DEMON_9
 
 
+ENCOUNTER_MONKEY_QUEST::
+	lock
+	faceplayer
+	namebox ENCOUNTER_MONKEY_QUEST_Text_0
+	playmoncry SPECIES_MONKEY_NORMAL_FORM, 0
+	msgbox ENCOUNTER_MONKEY_QUEST_Text_1
+	waitmoncry
+	hidenamebox
+	closemessage
+	delay 1
+	msgbox ENCOUNTER_MONKEY_QUEST_Text_2
+	closemessage
+	setwildbattle SPECIES_MONKEY_NORMAL_FORM, 20, ITEM_BANANA
+	dowildbattle
+	switch VAR_RESULT
+	case B_OUTCOME_WON, ENCOUNTER_MONKEY_QUEST_3
+	case B_OUTCOME_CAUGHT, ENCOUNTER_MONKEY_QUEST_4
+ENCOUNTER_MONKEY_QUEST_1:
+	closemessage
+	release
+	end
+
+ENCOUNTER_MONKEY_QUEST_3:
+	fadescreen FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreen FADE_FROM_BLACK
+	msgbox ENCOUNTER_MONKEY_QUEST_Text_3
+	giveitem ITEM_BANANA, 5
+	goto ENCOUNTER_MONKEY_QUEST_1
+
+ENCOUNTER_MONKEY_QUEST_4:
+	fadescreen FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreen FADE_FROM_BLACK
+	msgbox ENCOUNTER_MONKEY_QUEST_Text_3
+	giveitem ITEM_BANANA, 5
+	goto ENCOUNTER_MONKEY_QUEST_1
+
+
 SKOTIZO_TRIGGER_Text_0:
 	.string "The Dark Totem in your backpack starts\n"
 	.string "to react to the crystal.\p"
@@ -607,3 +646,15 @@ ENCOUNTER_GREATER_DEMON_Text_0:
 
 ENCOUNTER_GREATER_DEMON_Text_1:
 	.string "RAOUGH!$"
+
+ENCOUNTER_MONKEY_QUEST_Text_0:
+	.string "MONKEY$"
+
+ENCOUNTER_MONKEY_QUEST_Text_1:
+	.string "EEEKK OOK AAAK!!$"
+
+ENCOUNTER_MONKEY_QUEST_Text_2:
+	.string "The monkey attacks!$"
+
+ENCOUNTER_MONKEY_QUEST_Text_3:
+	.string "The monkey dropped some bananas.$"

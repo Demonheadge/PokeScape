@@ -22,6 +22,18 @@ script MUSAPOINT_METATILES {
 		setmetatile(15, 35, METATILE_Karamja_SAND_BANANA, 0) 
 		special(DrawWholeMapView) 
 	}
+
+	if (var(VAR_BANANA_BOAT_QUEST) >= 10) { 
+		setmetatile(27, 27, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0) 
+		setmetatile(28, 27, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0) 
+		setmetatile(29, 27, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0) 
+		setmetatile(27, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0) 
+		setmetatile(28, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0) 
+		setmetatile(29, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0) 
+		special(DrawWholeMapView) 
+	}
+
+	
 }
 
 script MUSAPOINT_STATE {
@@ -51,6 +63,19 @@ script MUSAPOINT_STATE {
 			removeobject(22)
 			removeobject(23)
 			setflag(FLAG_TEMP_1E)
+		}
+	//BANANA BOAT QUEST
+		if (var(VAR_BANANA_BOAT_QUEST) >= 5) { //QUEST START (Could change to check if quest is started)
+			clearflag(FLAG_TEMP_1C)
+			clearflag(FLAG_TEMP_1B)
+			addobject(24)
+			addobject(25)
+		}
+		else {
+			setflag(FLAG_TEMP_1C)
+			setflag(FLAG_TEMP_1B)
+			removeobject(24)
+			removeobject(25)
 		}
 	}
 	return
@@ -579,20 +604,38 @@ script NPC_WISEOLDMAN_RIVAL_MUSAPOINT_PUB {
 
 
 script LUTHAS_QUEST {
+	lock
+	faceplayer
 	namebox("LUTHAS")
 
+	//change to switch case
+
+	if (var(VAR_BANANA_BOAT_QUEST) == 25) {
+		goto(LUTHAS_QUEST_PART_6)
+	}
+
+	if (var(VAR_BANANA_BOAT_QUEST) == 20) {
+		goto(LUTHAS_QUEST_PART_5)
+	}
+
+	if (var(VAR_BANANA_BOAT_QUEST) == 15) {
+		goto(LUTHAS_QUEST_PART_4)
+	}
+
 	//if the quest has been completed.
-	questmenu(QUEST_MENU_CHECK_COMPLETE , QUEST_KOUREND_SLAYER) //banana quest
-	if (!var(VAR_RESULT))
-		{ 
-			goto(LUTHAS_QUEST_PART_3)
-		}
+	if (var(VAR_BANANA_BOAT_QUEST) == 10) {
+		goto(LUTHAS_QUEST_PART_3)
+	}
 
 	//CHECK IF THE QUEST HAS BEEN STARTED
-	goto(LUTHAS_QUEST_PART_2)
+	if (var(VAR_BANANA_BOAT_QUEST) == 5) {
+		goto(LUTHAS_QUEST_PART_2)
+	}
 
 	//CHECK IF QUEST HASNT BEEN STARTED.
-	goto(LUTHAS_QUEST_PART_1)
+	if (var(VAR_BANANA_BOAT_QUEST) == 0) {
+		goto(LUTHAS_QUEST_PART_1)
+	}
 
 	msgbox(format("Hello, I run the banana plantation. How many I help you today?"))
 
@@ -601,20 +644,24 @@ script LUTHAS_QUEST {
 
 
 script LUTHAS_QUEST_PART_1 {
-	msgbox(format("Hello, I run the banana plantation. How many I help you today?\nAh, you interested in the boat that is for sale?"))
+	msgbox(format("Hello, I run the banana plantation.\pHow many I help you today?\pAh, you interested in the boat that is for sale?"))
 	//player interact up
 	checkitem(ITEM_SURF_TOOL, 1)
 	if (var(VAR_RESULT)){
 		msgbox(format("Oh, I see you already have a boat.\pMaybe you could help me with a little job then."))
-		msgbox(format("You see I've injured my back and now am running behind on the shipment of Bananas.\pIf you could go into the plantation and pick 10 bananas for me.\pI've got some nicknacks you can have if you help me with this job."))
+		msgbox(format("You see I've injured my back and now am running behind on the shipment of bananas.\pIf you could go into the plantation and pick 10 bananas for me.\pI've got some nicknacks you can have if you help me with this job."))
 	}
 	else {
 		msgbox(format("How much?\pYou are very eager aren't you.\pI can sell it to you but not for gold pieces.\pWhat I need is an employee."))
-		msgbox(format("You see I've injured my back and now am running behind on the shipment of Bananas.\pIf you could go into the plantation and pick 10 bananas for me then you can have this boat."))
+		msgbox(format("You see I've injured my back and now am running behind on the shipment of bananas.\pIf you could go into the plantation and pick 10 bananas for me then you can have this boat."))
 	}
 	msgbox(format("Is that a deal?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT)) {
-		//Start quest
+		closemessage
+		hidenamebox
+		startquest (QUEST_BANANA_BOAT)
+		setvar(VAR_BANANA_BOAT_QUEST, 5) //Start quest
+		namebox("LUTHAS")
 		msgbox(format("Great!\pRemember I need 10 bananas from the plantation.\pBring them back to me when you have them."))
 	}
 	else {
@@ -649,6 +696,8 @@ script LUTHAS_QUEST_PART_2 {
 		end
 	}
 	removeitem(ITEM_BANANA,10)
+	addvar(VAR_BANANA_COUNT, 10)
+	subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_BANANA_BOAT, 0)
 	msgbox(format("Thank you, as promised here is your reward."))
 	closemessage
 	hidenamebox
@@ -661,6 +710,8 @@ script LUTHAS_QUEST_PART_2 {
 	giveitem(ITEM_PURPLE_SWEETS,5)
 	giveitem(ITEM_PINEAPPLE,1)
 	//QUEST COMPPLETE.
+	questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_BANANA_BOAT)
+	setvar(VAR_BANANA_BOAT_QUEST, 10) //Quest complete
 	closemessage
 	hidenamebox
 	release
@@ -670,20 +721,102 @@ script LUTHAS_QUEST_PART_2 {
 
 
 script LUTHAS_QUEST_PART_3 {
-	msgbox(format("Thank you for helping me earlier.\pIf you bring me another 10 Bananas I can reward you with a spirit shard.\pIf you bring me 30 I can reward you with this neat Scroll."))
-	
-	checkitem(ITEM_BANANA, 10)
+	msgbox(format("Thank you for helping me earlier.\pIf you bring me another 20 Bananas I can reward you with this neat Scroll."))
+	checkitem(ITEM_BANANA, 20)
 	if (var(VAR_RESULT)){
-		msgbox(format("Can I have those 10 bananas?"), MSGBOX_YESNO)
+		msgbox(format("Can I have those bananas to fill the order?"), MSGBOX_YESNO)
 		if (!var(VAR_RESULT)) {
-			msgbox(format("What a shame, if you change your mind I will give you a Spirit Shard for every 10 you give me."))
+			msgbox(format("What a shame, I'll hang onto this Scroll incase you change your mind."))
+			hidenamebox
+			closemessage
+			release
+			end
 		}
-		msgbox(format("Thank you, have this in return."))
-		addvar(VAR_BANANA_COUNT, 10)
-		giveitem(ITEM_SPIRIT_SHARD, 1)
-		if (var(VAR_BANANA_COUNT) == 30) {
-			msgbox(format("My order is filled, thank you!\pHave this as a reward."))
-			giveitem(ITEM_TM12_MISTY_TERRAIN, 1) //replace with a banana related move.
+		removeitem(ITEM_BANANA, 20)
+		addvar(VAR_BANANA_COUNT, 20)
+		setvar(VAR_BANANA_BOAT_QUEST, 15)
+		subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_BANANA_BOAT, 1)
+		msgbox(format("My order is filled, thank you!\pHave this as a reward."))
+		hidenamebox
+		closemessage
+		giveitem(ITEM_TM12_MISTY_TERRAIN, 1) //replace with a banana related move.
+	}
+	hidenamebox
+	closemessage
+	release
+	end
+}
+
+script LUTHAS_QUEST_PART_4 {
+	msgbox(format("Back again?\pI always have more work if you are interested.\pCould you please get me another 30 bananas.\pIn terms of a reward I'm sure I can find something for you."))
+	setvar(VAR_BANANA_BOAT_QUEST, 20)
+	hidenamebox
+	closemessage
+	release
+	end
+}
+
+script LUTHAS_QUEST_PART_5 {
+	msgbox(format("Could you bring me another 30 bananas?"))
+	checkitem(ITEM_BANANA, 30)
+	if (var(VAR_RESULT)){
+		msgbox(format("Can I have those bananas to fill the order?"), MSGBOX_YESNO)
+		if (!var(VAR_RESULT)) {
+			msgbox(format("What a shame, come see me if you change your mind."))
+			hidenamebox
+			closemessage
+			release
+			end
+		}
+		removeitem(ITEM_BANANA, 30)
+		addvar(VAR_BANANA_COUNT, 30)
+		msgbox(format("My order is filled, thank you!\pHave this as a reward."))
+		hidenamebox
+		closemessage
+		call(GIVE_RANDOM_ITEM_28)
+		if (var(VAR_BANANA_COUNT) >= 120) {
+			namebox("LUTHAS")
+			msgbox(format("Hang on a minute.\pI found this the other day I would like you to have it for helping me out so much."))	
+			closemessage
+			hidenamebox
+			//give mon
+			msgbox(format("I hope you will keep assisting me in the future."))
+			setvar(VAR_BANANA_BOAT_QUEST, 25)
+			subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_BANANA_BOAT, 3)
+		}
+	}
+	hidenamebox
+	closemessage
+	release
+	end
+}
+
+script LUTHAS_QUEST_PART_6 {
+	msgbox(format("Could you bring me another 30 bananas?"))
+	checkitem(ITEM_BANANA, 30)
+	if (var(VAR_RESULT)){
+		msgbox(format("Can I have those bananas to fill the order?"), MSGBOX_YESNO)
+		if (!var(VAR_RESULT)) {
+			msgbox(format("What a shame, come see me if you change your mind."))
+			hidenamebox
+			closemessage
+			release
+			end
+		}
+		removeitem(ITEM_BANANA, 30)
+		addvar(VAR_BANANA_COUNT, 30)
+		msgbox(format("My order is filled, thank you!\pHave this as a reward."))
+		hidenamebox
+		closemessage
+		call(GIVE_RANDOM_ITEM_28)
+		if (var(VAR_BANANA_COUNT) >= 1000) {
+			namebox("LUTHAS")
+			msgbox(format("Hang on a minute.\pI found this the other day I would like you to have it for helping me out so much."))	
+			closemessage
+			hidenamebox
+			//give mon
+			msgbox(format("I hope you will keep assisting me in the future."))
+			//setvar(VAR_BANANA_BOAT_QUEST, 25)
 		}
 	}
 	hidenamebox
