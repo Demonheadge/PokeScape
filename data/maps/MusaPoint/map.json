@@ -296,7 +296,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "QUEST_BOAT_MUSA_POINT_Smuggler",
-      "flag": "FLAG_TEMP_1E"
+      "flag": "FLAG_TEMP_1D"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_IMP",
@@ -330,8 +330,8 @@
       "x": 3,
       "y": 31,
       "elevation": 0,
-      "dest_map": "MAP_ABYSSAL_REALM_1",
-      "dest_warp_id": "6"
+      "dest_map": "MAP_MUSA_POINT_GENERAL_STORE",
+      "dest_warp_id": "0"
     },
     {
       "x": 25,

@@ -29,12 +29,12 @@ script MUSAPOINT_STATE {
     {
 		if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 150) { //Post Karamaja Gym, //FLIP >
 			addobject(OBJ_EVENT_ID_QUESTER)
-			clearflag(FLAG_TEMP_1E)
+			clearflag(FLAG_TEMP_1D)
 			setobjectxyperm(OBJ_EVENT_ID_CUSTOMS_OFFICER, 38, 29)
 		}
 		else {
 			removeobject(OBJ_EVENT_ID_QUESTER)
-			setflag(FLAG_TEMP_1E)
+			setflag(FLAG_TEMP_1D)
 		}
 	//Wise Old Man
 		if (var(VAR_WISE_OLD_MAN_RIVAL) <= 15) { //Post Karamaja Gym, 
@@ -575,24 +575,126 @@ script NPC_WISEOLDMAN_RIVAL_MUSAPOINT_PUB {
 	end
 }
 
-//if ((var(VAR_WISE_OLD_MAN_RIVAL) == 10) || (var(VAR_WISE_OLD_MAN_RIVAL) == 15))  { 
 
 
-	//So you got stranded on Crandor, passed through volcano passage undereath Karamja Volcano, met with the Tzhaar and now you are here?
-	//You certainly have been busy haven't you.
-	//You should really take the MvM championship seriously, I think you might just make it to the end.
-	//Although that might have to be put on hold for a bit as it seems someone was caught smuggling Karmaja Rum.
-	//All of the boats are in lockdown until the matter is resolved.
-	//If you don't want to wait around with me, I heard Luthas was selling a boat but I left my wallet at home.
 
-		
+script LUTHAS_QUEST {
+	namebox("LUTHAS")
+
+	//if the quest has been completed.
+	questmenu(QUEST_MENU_CHECK_COMPLETE , QUEST_KOUREND_SLAYER) //banana quest
+	if (!var(VAR_RESULT))
+		{ 
+			goto(LUTHAS_QUEST_PART_3)
+		}
+
+	//CHECK IF THE QUEST HAS BEEN STARTED
+	goto(LUTHAS_QUEST_PART_2)
+
+	//CHECK IF QUEST HASNT BEEN STARTED.
+	goto(LUTHAS_QUEST_PART_1)
+
+	msgbox(format("Hello, I run the banana plantation. How many I help you today?"))
+
+}
 
 
-		//if ((var(VAR_WISE_OLD_MAN_RIVAL) == 10) || (var(VAR_WISE_OLD_MAN_RIVAL) == 15))  { //Post Karamaja Gym,
-		//		checkitem(ITEM_SURF_TOOL, 1)
-		//		if (var(VAR_RESULT)){
-		//			//Oh, I see you have the brought the boat. You go on ahead, this old man will wait for this matter to resolve.
-		//		}
-		//		else {
-					
-		//		}
+
+script LUTHAS_QUEST_PART_1 {
+	msgbox(format("Hello, I run the banana plantation. How many I help you today?\nAh, you interested in the boat that is for sale?"))
+	//player interact up
+	checkitem(ITEM_SURF_TOOL, 1)
+	if (var(VAR_RESULT)){
+		msgbox(format("Oh, I see you already have a boat.\pMaybe you could help me with a little job then."))
+		msgbox(format("You see I've injured my back and now am running behind on the shipment of Bananas.\pIf you could go into the plantation and pick 10 bananas for me.\pI've got some nicknacks you can have if you help me with this job."))
+	}
+	else {
+		msgbox(format("How much?\pYou are very eager aren't you.\pI can sell it to you but not for gold pieces.\pWhat I need is an employee."))
+		msgbox(format("You see I've injured my back and now am running behind on the shipment of Bananas.\pIf you could go into the plantation and pick 10 bananas for me then you can have this boat."))
+	}
+	msgbox(format("Is that a deal?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT)) {
+		//Start quest
+		msgbox(format("Great!\pRemember I need 10 bananas from the plantation.\pBring them back to me when you have them."))
+	}
+	else {
+		msgbox(format("…\pWell if you change your mind you know where I am."))
+	}
+	hidenamebox
+	closemessage
+	release
+	end
+}
+
+
+script LUTHAS_QUEST_PART_2 {
+	checkitem(ITEM_BANANA, 10)
+	if (!var(VAR_RESULT)){
+		checkitem(ITEM_BANANA, 1)
+		if (var(VAR_RESULT)){
+			msgbox(format("Great it looks like you have at least 1 Banana.\pBut I need 10 in total.\pIf you could bring them to me in bulk that would be helpful."))
+		}
+	msgbox(format("Remember I need 10 bananas from the plantation.\pYou can find the plantation next door.\pThere should be some bananas on the trees."))
+	closemessage
+	hidenamebox
+	release
+	end
+	}
+	msgbox(format("Can I have those bananas to fill the order?"), MSGBOX_YESNO)
+	if (!var(VAR_RESULT)) {
+		msgbox(format("Oh…"))
+		closemessage
+		hidenamebox
+		release
+		end
+	}
+	removeitem(ITEM_BANANA,10)
+	msgbox(format("Thank you, as promised here is your reward."))
+	closemessage
+	hidenamebox
+	checkitem(ITEM_SURF_TOOL, 1)
+	if (!var(VAR_RESULT)){
+		giveitem(ITEM_SURF_TOOL,1)
+		namebox("LUTHAS")
+		msgbox(format("As an extra thanks for helping me have these."))
+	}
+	giveitem(ITEM_PURPLE_SWEETS,5)
+	giveitem(ITEM_PINEAPPLE,1)
+	//QUEST COMPPLETE.
+	closemessage
+	hidenamebox
+	release
+	end
+
+}
+
+
+script LUTHAS_QUEST_PART_3 {
+	msgbox(format("Thank you for helping me earlier.\pIf you bring me another 10 Bananas I can reward you with a spirit shard.\pIf you bring me 30 I can reward you with this neat Scroll."))
+	
+	checkitem(ITEM_BANANA, 10)
+	if (var(VAR_RESULT)){
+		msgbox(format("Can I have those 10 bananas?"), MSGBOX_YESNO)
+		if (!var(VAR_RESULT)) {
+			msgbox(format("What a shame, if you change your mind I will give you a Spirit Shard for every 10 you give me."))
+		}
+		msgbox(format("Thank you, have this in return."))
+		addvar(VAR_BANANA_COUNT, 10)
+		giveitem(ITEM_SPIRIT_SHARD, 1)
+		if (var(VAR_BANANA_COUNT) == 30) {
+			msgbox(format("My order is filled, thank you!\pHave this as a reward."))
+			giveitem(ITEM_TM12_MISTY_TERRAIN, 1) //replace with a banana related move.
+		}
+	}
+	hidenamebox
+	closemessage
+	release
+	end
+}
+
+script SIGN_BANANA_COUNT {
+	buffernumberstring(0, VAR_BANANA_COUNT)
+    msgbox(format("{PLAYER}'s Banana Count: {STR_VAR_1}."))
+	closemessage
+	end
+}
