@@ -2,7 +2,7 @@
   "id": "MAP_MUSA_POINT_PUB_1F",
   "name": "MusaPoint_Pub_1F",
   "layout": "LAYOUT_MUSA_POINT_PUB_1F",
-  "music": "MUS_PS_RIMMINGTON",
+  "music": "MUS_PS_MUSA_POINT",
   "region_map_section": "MAPSEC_MUSA_POINT",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -42,10 +42,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
-      "x": 2,
-      "y": 6,
+      "x": 3,
+      "y": 8,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -64,7 +64,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ITEM_MUSA_POINT_2",
-      "flag": "0"
+      "flag": "FLAG_ITEM_MUSA_POINT_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GYMLEADER_WISE_OLD_MAN",
@@ -78,6 +78,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NPC_WISEOLDMAN_RIVAL_MUSAPOINT_PUB",
       "flag": "FLAG_TEMP_1F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BANKER_M",
+      "x": 2,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BANK_MUSA_POINT",
+      "flag": "0"
     }
   ],
   "warp_events": [

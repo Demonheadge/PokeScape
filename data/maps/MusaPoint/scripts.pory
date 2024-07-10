@@ -149,7 +149,7 @@ script ITEM_MUSA_POINT_1
 }
 script ITEM_MUSA_POINT_2
 {
-    finditem(ITEM_PURPLE_SWEETS)
+    finditem(ITEM_STAT_BEER)
     end
 }
 
@@ -295,39 +295,7 @@ script NPC_MONKEY_BLOCK
 	release
 	end
 }
-script NPC_MUSA_POINT_PubOwner
-{
-	lock
-	faceplayer
-    //namebox ("")
-	msgbox(format("Can I interest you in some of our famous Karamjan Rum?\pOr perhaps you would like some of our wines, spirits or beers?"))
-    closemessage
-    hidenamebox
-	release
-	end
-}
-script NPC_MUSA_POINT_Pub_Sailer
-{
-	lock
-	faceplayer
-    //namebox ("")
-	msgbox(format("Hello, I am a Cupholder."))
-    closemessage
-    hidenamebox
-	release
-	end
-}
-script NPC_MUSA_POINT_Pub_BarCrawl
-{
-	lock
-	faceplayer
-    //namebox ("")
-	msgbox(format("Hello, I am a Cupholder."))
-    closemessage
-    hidenamebox
-	release
-	end
-}
+
 
 
 //TRAINERS

@@ -18,3 +18,48 @@ script MUSAPOINT_PUB_STATE {
         setflag(FLAG_TEMP_1F)
     }
 }
+
+
+
+script BANK_MUSA_POINT {
+    lock
+	faceplayer
+    //namebox ("Banker")
+    msgbox(format("hic\pWhy is the rum always gone.\phic\nHello…\pWelcome to the Bank of PokeScape.\pHow may I hic you today?"))
+	waitmessage
+    goto(BANK_OPTIONS)
+}
+
+script NPC_MUSA_POINT_PubOwner
+{
+	lock
+	faceplayer
+    //namebox ("")
+	msgbox(format("Can I interest you in some of our famous Karamjan Rum?\pOr perhaps you would like some of our wines, spirits or beers?"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_MUSA_POINT_Pub_BarCrawl
+{
+	lock
+	faceplayer
+    //namebox ("")
+	msgbox(format("Are you here for a Pub Crawl?"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_MUSA_POINT_Pub_Sailer
+{
+	lock
+	faceplayer
+    //namebox ("")
+	msgbox(format("Hey mate, you caught any of those lobsters?\pDid you know lobsters evolve differently depending on the weather in their environment?"))
+    closemessage
+    hidenamebox
+	release
+	end
+}

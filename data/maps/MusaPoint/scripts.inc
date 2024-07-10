@@ -282,36 +282,6 @@ NPC_MONKEY_BLOCK::
 	end
 
 
-NPC_MUSA_POINT_PubOwner::
-	lock
-	faceplayer
-	msgbox NPC_MUSA_POINT_PubOwner_Text_0
-	closemessage
-	hidenamebox
-	release
-	end
-
-
-NPC_MUSA_POINT_Pub_Sailer::
-	lock
-	faceplayer
-	msgbox NPC_MUSA_POINT_1_Text_1
-	closemessage
-	hidenamebox
-	release
-	end
-
-
-NPC_MUSA_POINT_Pub_BarCrawl::
-	lock
-	faceplayer
-	msgbox NPC_MUSA_POINT_1_Text_1
-	closemessage
-	hidenamebox
-	release
-	end
-
-
 BATTLE_MUSA_POINT_TRAINER_1::
 	trainerbattle_single TRAINER_MUSA_POINT_TRAINER_1, BATTLE_MUSA_POINT_TRAINER_1_Text_0, BATTLE_MUSA_POINT_TRAINER_1_Text_1
 	msgbox BATTLE_MUSA_POINT_TRAINER_1_Text_1
@@ -1005,12 +975,6 @@ NPC_MONKEY_BLOCK_Text_1:
 
 NPC_MONKEY_BLOCK_Text_2:
 	.string "This monkey is bananas!$"
-
-NPC_MUSA_POINT_PubOwner_Text_0:
-	.string "Can I interest you in some of our\n"
-	.string "famous Karamjan Rum?\p"
-	.string "Or perhaps you would like some of our\n"
-	.string "wines, spirits or beers?$"
 
 BATTLE_MUSA_POINT_TRAINER_1_Text_0:
 	.string "My Fishing level is 62.$"
