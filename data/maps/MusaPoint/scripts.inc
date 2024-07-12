@@ -145,7 +145,7 @@ ITEM_MUSA_POINT_1::
 
 
 ITEM_MUSA_POINT_2::
-	finditem ITEM_PURPLE_SWEETS
+	finditem ITEM_STAT_BEER
 	end
 
 

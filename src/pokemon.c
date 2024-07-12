@@ -55,6 +55,10 @@
 #include "constants/trainers.h"
 #include "constants/union_room.h"
 #include "constants/weather.h"
+#include "constants/party_menu.h"
+#include "constants/region_map_sections.h"
+#include "constants/vars.h"
+
 
 #if P_FRIENDSHIP_EVO_THRESHOLD >= GEN_9
 #define FRIENDSHIP_EVO_THRESHOLD 160
@@ -3787,6 +3791,8 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
     u16 upperPersonality = personality >> 16;
     u32 holdEffect, currentMap, partnerSpecies, partnerHeldItem, partnerHoldEffect;
     const struct Evolution *evolutions = GetSpeciesEvolutions(species);
+    u8 ailment;
+    int rand;
 
     if (evolutions == NULL)
         return SPECIES_NONE;
@@ -4060,9 +4066,419 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                     targetSpecies = evolutions[i].targetSpecies;
                 }
                 break;
+
+            //PokeScape
+            case EVO_LEVEL_STATUS:
+				ailment = GetMonAilment(mon);
+				if(evolutions[i].param <= level && ailment != AILMENT_NONE)
+				targetSpecies = evolutions[i].targetSpecies;
+				break;
+            case EVO_LEVEL_DEATH:
+				if (evolutions[i].param <= level)
+						if (GetMonData(mon, MON_DATA_HP, 0) <= 6)
+						targetSpecies = evolutions[i].targetSpecies;
+				break;
+            case EVO_LEVEL_MALE_DEATH:
+				if (evolutions[i].param <= level)
+					if (GetGenderFromSpeciesAndPersonality(species, personality) == MON_MALE)
+						if (GetMonData(mon, MON_DATA_HP, 0) <= 6)
+						targetSpecies = evolutions[i].targetSpecies;
+				break;
+			case EVO_LEVEL_FEMALE_DEATH:
+				if (evolutions[i].param <= level)
+					if (GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+						if (GetMonData(mon, MON_DATA_HP, 0) <= 6)
+						targetSpecies = evolutions[i].targetSpecies;
+				break;
+            case EVO_LEVEL_ATK_LT_SPATK:
+                if (evolutions[i].param <= level)
+                    if (GetMonData(mon, MON_DATA_ATK, 0) < GetMonData(mon, MON_DATA_SPATK, 0))
+                        targetSpecies = evolutions[i].targetSpecies;
+                break;
+			case EVO_LEVEL_ATK_GT_SPATK:
+			    if (evolutions[i].param <= level)
+                    if (GetMonData(mon, MON_DATA_ATK, 0) > GetMonData(mon, MON_DATA_SPATK, 0))
+                        targetSpecies = evolutions[i].targetSpecies;
+                break;
+			case EVO_LEVEL_ATK_EQ_SPATK:
+			    if (evolutions[i].param <= level)
+                    if (GetMonData(mon, MON_DATA_ATK, 0) == GetMonData(mon, MON_DATA_SPATK, 0))
+                        targetSpecies = evolutions[i].targetSpecies;
+                break;
+			case EVO_LEVEL_SPE_LT_SPDEF:
+			    if (evolutions[i].param <= level)
+                    if (GetMonData(mon, MON_DATA_SPEED, 0) < GetMonData(mon, MON_DATA_SPDEF, 0))
+                        targetSpecies = evolutions[i].targetSpecies;
+                break;
+			case EVO_LEVEL_SPE_GT_SPDEF:
+			    if (evolutions[i].param <= level)
+                    if (GetMonData(mon, MON_DATA_SPEED, 0) > GetMonData(mon, MON_DATA_SPDEF, 0))
+                        targetSpecies = evolutions[i].targetSpecies;
+                break;
+			case EVO_LEVEL_DEF_LT_SPE:
+			    if (evolutions[i].param <= level)
+                    if (GetMonData(mon, MON_DATA_DEF, 0) < GetMonData(mon, MON_DATA_SPEED, 0))
+                        targetSpecies = evolutions[i].targetSpecies;
+                break;
+			case EVO_LEVEL_DEF_GT_SPE:
+			    if (evolutions[i].param <= level)
+                    if (GetMonData(mon, MON_DATA_DEF, 0) > GetMonData(mon, MON_DATA_SPEED, 0))
+                        targetSpecies = evolutions[i].targetSpecies;
+                break;
+			case EVO_LEVEL_DEF_EQ_SPE:
+			    if (evolutions[i].param <= level)
+                    if (GetMonData(mon, MON_DATA_DEF, 0) == GetMonData(mon, MON_DATA_SPEED, 0))
+                        targetSpecies = evolutions[i].targetSpecies;
+                break;
+            case EVO_LEVEL_RANDOM:
+                if (evolutions[i].param <= level)
+                    rand = Random() % 3;
+                    if (rand == 1)
+                        break;
+                    else if (rand == 2)
+                        break;
+                    else if (rand == 3)
+                        targetSpecies = evolutions[i].targetSpecies;
+                    else
+                        break;
+                break;
+            case EVO_LEVEL_PERSONALITY_ONE:
+                if (evolutions[i].param <= level && (upperPersonality % 10) <= 1)
+                    targetSpecies = evolutions[i].targetSpecies;
+                break;
+			case EVO_LEVEL_PERSONALITY_TWO:
+                if (evolutions[i].param <= level && (upperPersonality % 10) == 2)
+                    targetSpecies = evolutions[i].targetSpecies;
+                break;
+			case EVO_LEVEL_PERSONALITY_THREE:
+                if (evolutions[i].param <= level && (upperPersonality % 10) == 3)
+                    targetSpecies = evolutions[i].targetSpecies;
+                break;
+			case EVO_LEVEL_PERSONALITY_FOUR:
+                if (evolutions[i].param <= level && (upperPersonality % 10) == 4)
+                    targetSpecies = evolutions[i].targetSpecies;
+                break;
+			case EVO_LEVEL_PERSONALITY_FIVE:
+                if (evolutions[i].param <= level && (upperPersonality % 10) == 5)
+                    targetSpecies = evolutions[i].targetSpecies;
+                break;
+			case EVO_LEVEL_PERSONALITY_SIX:
+                if (evolutions[i].param <= level && (upperPersonality % 10) == 6)
+                    targetSpecies = evolutions[i].targetSpecies;
+                break;
+			case EVO_LEVEL_PERSONALITY_SEVEN:
+                if (evolutions[i].param <= level && (upperPersonality % 10) == 7)
+                    targetSpecies = evolutions[i].targetSpecies;
+                break;
+			case EVO_LEVEL_PERSONALITY_EIGHT:
+                if (evolutions[i].param <= level && (upperPersonality % 10) == 8)
+                    targetSpecies = evolutions[i].targetSpecies;
+                break;
+			case EVO_LEVEL_PERSONALITY_NINE:
+                if (evolutions[i].param <= level && (upperPersonality % 10) == 9)
+                    targetSpecies = evolutions[i].targetSpecies;
+                break;
+        //MORYTANIA
+            case EVO_LEVEL_MAP_MORYTANIA:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                        if ((currentMap == MAP_CANIFIS) || (currentMap == MAP_ROUTE180) || (currentMap == MAP_ROUTE45))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break;
+            case EVO_LEVEL_MALE_MAP_MORYTANIA:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+					if (GetGenderFromSpeciesAndPersonality(species, personality) == MON_MALE)
+                        if ((currentMap == MAP_CANIFIS) || (currentMap == MAP_ROUTE180) || (currentMap == MAP_ROUTE45))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break;
+            case EVO_LEVEL_FEMALE_MAP_MORYTANIA:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+					if (GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+                        if ((currentMap == MAP_CANIFIS) || (currentMap == MAP_ROUTE180) || (currentMap == MAP_ROUTE45))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break;
+        //KARAMJA
+            case EVO_LEVEL_MAP_KARAMJA:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                        if ((currentMap == MAP_TUTORIAL_ISLAND) || (currentMap == MAP_TUTORIAL_ISLAND))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break;    
+            case EVO_LEVEL_MALE_MAP_KARAMJA:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                    if (GetGenderFromSpeciesAndPersonality(species, personality) == MON_MALE)
+                        if ((currentMap == MAP_TUTORIAL_ISLAND) || (currentMap == MAP_TUTORIAL_ISLAND))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break;  
+            case EVO_LEVEL_FEMALE_MAP_KARAMJA:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                    if (GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+                        if ((currentMap == MAP_TUTORIAL_ISLAND) || (currentMap == MAP_TUTORIAL_ISLAND))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break;  
+        //MISTHALIN
+            case EVO_LEVEL_MAP_MISTHALIN:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                        if ((currentMap == MAP_ROUTE1) || (currentMap == MAP_ROUTE2) || (currentMap == MAP_ROUTE3) || (currentMap == MAP_MILL_LANE_MILL) || (currentMap == MAP_DRAYNOR) || (currentMap == MAP_WIZARDS_TOWER) || (currentMap == MAP_LUMBRIDGE) || (currentMap == MAP_ROUTE12) || (currentMap == MAP_ROUTE13) || (currentMap == MAP_VARROCK) || (currentMap == MAP_VARROCK_NORTH) || (currentMap == MAP_ROUTE14) || (currentMap == MAP_ROUTE15) || (currentMap == MAP_ROUTE46) || (currentMap == MAP_DIGSITE) || (currentMap == MAP_ROUTE16) || (currentMap == MAP_ROUTE17) || (currentMap == MAP_ROUTE30) || (currentMap == MAP_GRAND_EXCHANGE) || (currentMap == MAP_VARROCK_GRAND_EXCHANGE_PATH) || (currentMap == MAP_ROUTE18) || (currentMap == MAP_ROUTE21) || (currentMap == MAP_ROUTE22) || (currentMap == MAP_ROUTE20) || (currentMap == MAP_EDGEVILLE) || (currentMap == MAP_DRAYNOR_SEWERS_1) || (currentMap == MAP_DRAYNOR_SEWERS_2) || (currentMap == MAP_DRAYNOR_SEWERS_3) || (currentMap == MAP_DRAYNOR_SEWERS_4) || (currentMap == MAP_MILL_LANE_MILL_1) || (currentMap == MAP_MILL_LANE_MILL_2) || (currentMap == MAP_MILL_LANE_MILL_3))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break;  
+            case EVO_LEVEL_MALE_MAP_MISTHALIN:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                    if (GetGenderFromSpeciesAndPersonality(species, personality) == MON_MALE)
+                        if ((currentMap == MAP_ROUTE1) || (currentMap == MAP_ROUTE2) || (currentMap == MAP_ROUTE3) || (currentMap == MAP_MILL_LANE_MILL) || (currentMap == MAP_DRAYNOR) || (currentMap == MAP_WIZARDS_TOWER) || (currentMap == MAP_LUMBRIDGE) || (currentMap == MAP_ROUTE12) || (currentMap == MAP_ROUTE13) || (currentMap == MAP_VARROCK) || (currentMap == MAP_VARROCK_NORTH) || (currentMap == MAP_ROUTE14) || (currentMap == MAP_ROUTE15) || (currentMap == MAP_ROUTE46) || (currentMap == MAP_DIGSITE) || (currentMap == MAP_ROUTE16) || (currentMap == MAP_ROUTE17) || (currentMap == MAP_ROUTE30) || (currentMap == MAP_GRAND_EXCHANGE) || (currentMap == MAP_VARROCK_GRAND_EXCHANGE_PATH) || (currentMap == MAP_ROUTE18) || (currentMap == MAP_ROUTE21) || (currentMap == MAP_ROUTE22) || (currentMap == MAP_ROUTE20) || (currentMap == MAP_EDGEVILLE) || (currentMap == MAP_DRAYNOR_SEWERS_1) || (currentMap == MAP_DRAYNOR_SEWERS_2) || (currentMap == MAP_DRAYNOR_SEWERS_3) || (currentMap == MAP_DRAYNOR_SEWERS_4) || (currentMap == MAP_MILL_LANE_MILL_1) || (currentMap == MAP_MILL_LANE_MILL_2) || (currentMap == MAP_MILL_LANE_MILL_3))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break; 
+            case EVO_LEVEL_FEMALE_MAP_MISTHALIN:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                    if (GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+                        if ((currentMap == MAP_ROUTE1) || (currentMap == MAP_ROUTE2) || (currentMap == MAP_ROUTE3) || (currentMap == MAP_MILL_LANE_MILL) || (currentMap == MAP_DRAYNOR) || (currentMap == MAP_WIZARDS_TOWER) || (currentMap == MAP_LUMBRIDGE) || (currentMap == MAP_ROUTE12) || (currentMap == MAP_ROUTE13) || (currentMap == MAP_VARROCK) || (currentMap == MAP_VARROCK_NORTH) || (currentMap == MAP_ROUTE14) || (currentMap == MAP_ROUTE15) || (currentMap == MAP_ROUTE46) || (currentMap == MAP_DIGSITE) || (currentMap == MAP_ROUTE16) || (currentMap == MAP_ROUTE17) || (currentMap == MAP_ROUTE30) || (currentMap == MAP_GRAND_EXCHANGE) || (currentMap == MAP_VARROCK_GRAND_EXCHANGE_PATH) || (currentMap == MAP_ROUTE18) || (currentMap == MAP_ROUTE21) || (currentMap == MAP_ROUTE22) || (currentMap == MAP_ROUTE20) || (currentMap == MAP_EDGEVILLE) || (currentMap == MAP_DRAYNOR_SEWERS_1) || (currentMap == MAP_DRAYNOR_SEWERS_2) || (currentMap == MAP_DRAYNOR_SEWERS_3) || (currentMap == MAP_DRAYNOR_SEWERS_4) || (currentMap == MAP_MILL_LANE_MILL_1) || (currentMap == MAP_MILL_LANE_MILL_2) || (currentMap == MAP_MILL_LANE_MILL_3))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break; 
+        //ASGARNIA
+            case EVO_LEVEL_MAP_ASGARNIA:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                        if ((currentMap == MAP_TUTORIAL_ISLAND) || (currentMap == MAP_TUTORIAL_ISLAND))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break;  
+            case EVO_LEVEL_MALE_MAP_ASGARNIA:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                    if (GetGenderFromSpeciesAndPersonality(species, personality) == MON_MALE)
+                        if ((currentMap == MAP_TUTORIAL_ISLAND) || (currentMap == MAP_TUTORIAL_ISLAND))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break;
+            case EVO_LEVEL_FEMALE_MAP_ASGARNIA:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                    if (GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+                        if ((currentMap == MAP_TUTORIAL_ISLAND) || (currentMap == MAP_TUTORIAL_ISLAND))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break;
+        //WILDERNESS
+            case EVO_LEVEL_MAP_WILDERNESS:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                        if ((currentMap == MAP_TUTORIAL_ISLAND) || (currentMap == MAP_TUTORIAL_ISLAND))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break;  
+        //FREMENNIK
+            case EVO_LEVEL_MAP_FREMENNIK:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                        if ((currentMap == MAP_TUTORIAL_ISLAND) || (currentMap == MAP_TUTORIAL_ISLAND))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break;  
+            case EVO_LEVEL_MALE_MAP_FREMENNIK:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                    if (GetGenderFromSpeciesAndPersonality(species, personality) == MON_MALE)
+                        if ((currentMap == MAP_TUTORIAL_ISLAND) || (currentMap == MAP_TUTORIAL_ISLAND))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break;  
+            case EVO_LEVEL_FEMALE_MAP_FREMENNIK:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                    if (GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+                        if ((currentMap == MAP_TUTORIAL_ISLAND) || (currentMap == MAP_TUTORIAL_ISLAND))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break; 
+        //KANDARIN
+            case EVO_LEVEL_MAP_KANDARIN:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                        if ((currentMap == MAP_TUTORIAL_ISLAND) || (currentMap == MAP_TUTORIAL_ISLAND))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break;  
+            case EVO_LEVEL_MALE_MAP_KANDARIN:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                    if (GetGenderFromSpeciesAndPersonality(species, personality) == MON_MALE)
+                        if ((currentMap == MAP_TUTORIAL_ISLAND) || (currentMap == MAP_TUTORIAL_ISLAND))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break;  
+            case EVO_LEVEL_FEMALE_MAP_KANDARIN:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                    if (GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+                        if ((currentMap == MAP_TUTORIAL_ISLAND) || (currentMap == MAP_TUTORIAL_ISLAND))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break;  
+        //DESERT
+            case EVO_LEVEL_MAP_DESERT:
+                currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                if (evolutions[i].param <= level)
+                        if ((currentMap == MAP_TUTORIAL_ISLAND) || (currentMap == MAP_TUTORIAL_ISLAND))
+                            targetSpecies = evolutions[i].targetSpecies; 
+                break;  
+
+        //SPECIFIC TYPE IN PARTY
+            case EVO_LEVEL_GRASS_TYPE_MON_IN_PARTY:
+                    if (evolutions[i].param <= level)
+                    {
+                        for (j = 0; j < PARTY_SIZE; j++)
+                        {
+                            u16 currSpecies = GetMonData(&gPlayerParty[j], MON_DATA_SPECIES, NULL);
+                            if (gSpeciesInfo[currSpecies].types[0] == TYPE_GRASS
+                            || gSpeciesInfo[currSpecies].types[1] == TYPE_GRASS)
+                            {
+                                targetSpecies = evolutions[i].targetSpecies;
+                                break;
+                            }
+                        }
+                    }
+                    break;
+            case EVO_LEVEL_DRAGON_TYPE_MON_IN_PARTY:
+                    if (evolutions[i].param <= level)
+                    {
+                        for (j = 0; j < PARTY_SIZE; j++)
+                        {
+                            u16 currSpecies = GetMonData(&gPlayerParty[j], MON_DATA_SPECIES, NULL);
+                            if (gSpeciesInfo[currSpecies].types[0] == TYPE_DRAGON
+                            || gSpeciesInfo[currSpecies].types[1] == TYPE_DRAGON)
+                            {
+                                targetSpecies = evolutions[i].targetSpecies;
+                                break;
+                            }
+                        }
+                    }
+                    break;
+            case EVO_LEVEL_GHOST_TYPE_MON_IN_PARTY:
+                    if (evolutions[i].param <= level)
+                    {
+                        for (j = 0; j < PARTY_SIZE; j++)
+                        {
+                            u16 currSpecies = GetMonData(&gPlayerParty[j], MON_DATA_SPECIES, NULL);
+                            if (gSpeciesInfo[currSpecies].types[0] == TYPE_GHOST
+                            || gSpeciesInfo[currSpecies].types[1] == TYPE_GHOST)
+                            {
+                                targetSpecies = evolutions[i].targetSpecies;
+                                break;
+                            }
+                        }
+                    }
+                    break;
+            case EVO_LEVEL_POISON_TYPE_MON_IN_PARTY:
+                    if (evolutions[i].param <= level)
+                    {
+                        for (j = 0; j < PARTY_SIZE; j++)
+                        {
+                            u16 currSpecies = GetMonData(&gPlayerParty[j], MON_DATA_SPECIES, NULL);
+                            if (gSpeciesInfo[currSpecies].types[0] == TYPE_POISON
+                            || gSpeciesInfo[currSpecies].types[1] == TYPE_POISON)
+                            {
+                                targetSpecies = evolutions[i].targetSpecies;
+                                break;
+                            }
+                        }
+                    }
+                    break;
+            case EVO_LEVEL_BUG_TYPE_MON_IN_PARTY:
+                    if (evolutions[i].param <= level)
+                    {
+                        for (j = 0; j < PARTY_SIZE; j++)
+                        {
+                            u16 currSpecies = GetMonData(&gPlayerParty[j], MON_DATA_SPECIES, NULL);
+                            if (gSpeciesInfo[currSpecies].types[0] == TYPE_BUG
+                            || gSpeciesInfo[currSpecies].types[1] == TYPE_BUG)
+                            {
+                                targetSpecies = evolutions[i].targetSpecies;
+                                break;
+                            }
+                        }
+                    }
+                    break;
+            case EVO_LEVEL_FAIRY_TYPE_MON_IN_PARTY:
+                    if (evolutions[i].param <= level)
+                    {
+                        for (j = 0; j < PARTY_SIZE; j++)
+                        {
+                            u16 currSpecies = GetMonData(&gPlayerParty[j], MON_DATA_SPECIES, NULL);
+                            if (gSpeciesInfo[currSpecies].types[0] == TYPE_FAIRY
+                            || gSpeciesInfo[currSpecies].types[1] == TYPE_FAIRY)
+                            {
+                                targetSpecies = evolutions[i].targetSpecies;
+                                break;
+                            }
+                        }
+                    }
+                    break;
+            case EVO_LEVEL_PSYCHIC_TYPE_MON_IN_PARTY:
+                    if (evolutions[i].param <= level)
+                    {
+                        for (j = 0; j < PARTY_SIZE; j++)
+                        {
+                            u16 currSpecies = GetMonData(&gPlayerParty[j], MON_DATA_SPECIES, NULL);
+                            if (gSpeciesInfo[currSpecies].types[0] == TYPE_PSYCHIC
+                            || gSpeciesInfo[currSpecies].types[1] == TYPE_PSYCHIC)
+                            {
+                                targetSpecies = evolutions[i].targetSpecies;
+                                break;
+                            }
+                        }
+                    }
+                    break;
+            case EVO_LEVEL_FIGHTING_TYPE_MON_IN_PARTY:
+                    if (evolutions[i].param <= level)
+                    {
+                        for (j = 0; j < PARTY_SIZE; j++)
+                        {
+                            u16 currSpecies = GetMonData(&gPlayerParty[j], MON_DATA_SPECIES, NULL);
+                            if (gSpeciesInfo[currSpecies].types[0] == TYPE_FIGHTING
+                            || gSpeciesInfo[currSpecies].types[1] == TYPE_FIGHTING)
+                            {
+                                targetSpecies = evolutions[i].targetSpecies;
+                                break;
+                            }
+                        }
+                    }
+                    break;
+        //WEATHER
+            case EVO_LEVEL_WEATHER_COLD:
+                    j = GetCurrentWeather();
+                    if (evolutions[i].param <= level
+                    && (j == WEATHER_SNOW))
+                        targetSpecies = evolutions[i].targetSpecies;
+                    break;
+            case EVO_LEVEL_WEATHER_HOT:
+                    j = GetCurrentWeather();
+                    if (evolutions[i].param <= level
+                    && (j == WEATHER_SUNNY_CLOUDS || j == WEATHER_DROUGHT))
+                        targetSpecies = evolutions[i].targetSpecies;
+                    break;
+            case EVO_LEVEL_WEATHER_DUSTY:
+                    j = GetCurrentWeather();
+                    if (evolutions[i].param <= level
+                    && (j == WEATHER_VOLCANIC_ASH || j == WEATHER_SANDSTORM))
+                        targetSpecies = evolutions[i].targetSpecies;
+                    break;
+            case EVO_LEVEL_WEATHER_ABNORMAL:
+                    j = GetCurrentWeather();
+                    if (evolutions[i].param <= level
+                    && (j == WEATHER_ABNORMAL))
+                        targetSpecies = evolutions[i].targetSpecies;
+                    break;
+
+
+
+
+
             }
         }
         break;
+
+
+        
+
+
+
     case EVO_MODE_TRADE:
         for (i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
         {
