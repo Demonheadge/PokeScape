@@ -82,7 +82,7 @@ MODERN_MAP_NAME := $(MODERN_ROM_NAME:.gba=.map)
 MODERN_PATCH_NAME := $(MODERN_ROM_NAME:.gba=.bps)
 MODERN_OBJ_DIR_NAME := build/modern
 
-SHELL := /bin/bash -o pipefail
+SHELL := bash -o pipefail
 
 ELF = $(ROM:.gba=.elf)
 MAP = $(ROM:.gba=.map)

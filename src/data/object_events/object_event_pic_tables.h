@@ -5488,3 +5488,5 @@ static const struct SpriteFrameImage sPicTable_BaneOre[] = {
     overworld_frame(gObjectEventPic_BaneOre, 2, 2, 2),
     overworld_frame(gObjectEventPic_BaneOre, 2, 2, 3),
 };
+
+extern const struct SpriteFrameImage sPicTable_BallLight[];

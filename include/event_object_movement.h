@@ -73,6 +73,12 @@ enum ReflectionTypes
 #define GROUND_EFFECT_FLAG_WHEAT_ON_SPAWN  		 (1 << 20)
 #define GROUND_EFFECT_FLAG_WHEAT_ON_MOVE    	 (1 << 21)
 
+// Sprite data for the CameraObject functions
+#define sCamera_FollowSpriteId data[0]
+#define sCamera_State          data[1]
+#define sCamera_MoveX          data[2]
+#define sCamera_MoveY          data[3]
+
 struct StepAnimTable
 {
     const union AnimCmd *const *anims;
@@ -106,12 +112,9 @@ bool8 TryGetObjectEventIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroupId, u
 u8 GetObjectEventIdByXY(s16 x, s16 y);
 void SetObjectEventDirection(struct ObjectEvent *objectEvent, u8 direction);
 u8 GetFirstInactiveObjectEventId(void);
-void RemoveObjectEventByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup);
 void RemoveObjectEvent(struct ObjectEvent *objectEvent);
-void LoadPlayerObjectReflectionPalette(u16 tag, u8 slot);
-void LoadSpecialObjectReflectionPalette(u16 tag, u8 slot);
+void RemoveObjectEventByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup);
 void TryMoveObjectEventToMapCoords(u8 localId, u8 mapNum, u8 mapGroup, s16 x, s16 y);
-void PatchObjectPalette(u16 paletteTag, u8 paletteSlot);
 void SpawnObjectEventsOnReturnToField(s16 x, s16 y);
 void OverrideSecretBaseDecorationSpriteScript(u8 localId, u8 mapNum, u8 mapGroup, u8 decorCat);
 void GetMapCoordsFromSpritePos(s16 x, s16 y, s16 *destX, s16 *destY);
@@ -125,7 +128,7 @@ u8 TrySpawnObjectEvent(u8 localId, u8 mapNum, u8 mapGroup);
 u8 SpawnSpecialObjectEventParameterized(u16 graphicsId, u8 movementBehavior, u8 localId, s16 x, s16 y, u8 elevation);
 u8 SpawnSpecialObjectEvent(struct ObjectEventTemplate *);
 void SetSpritePosToMapCoords(s16 mapX, s16 mapY, s16 *destX, s16 *destY);
-void CameraObjectReset1(void);
+void CameraObjectReset(void);
 void ObjectEventSetGraphicsId(struct ObjectEvent *, u16 graphicsId);
 void ObjectEventTurn(struct ObjectEvent *, u8 direction);
 void ObjectEventTurnByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, u8 direction);
@@ -140,7 +143,6 @@ void ObjectEventGetLocalIdAndMap(struct ObjectEvent *objectEvent, void *localId,
 void ShiftObjectEventCoords(struct ObjectEvent *, s16 x, s16 y);
 void MoveObjectEventToMapCoords(struct ObjectEvent *, s16 x, s16 y);
 void TryOverrideObjectEventTemplateCoords(u8 localId, u8 mapNum, u8 mapGroup);
-void InitObjectEventPalettes(u8 palSlot);
 void UpdateObjectEventCurrentMovement(struct ObjectEvent *, struct Sprite *, bool8(struct ObjectEvent *, struct Sprite *));
 u8 ObjectEventFaceOppositeDirection(struct ObjectEvent *, u8 direction);
 u8 GetOppositeDirection(u8 direction);
@@ -209,15 +211,17 @@ u8 GetMoveDirectionFasterAnimNum(u8 direction);
 u8 GetMoveDirectionFastestAnimNum(u8 direction);
 u8 GetLedgeJumpDirection(s16 x, s16 y, u8 direction);
 void CameraObjectSetFollowedSpriteId(u8 objectId);
-u16 GetObjectPaletteTag(u8 palSlot);
 void UpdateObjectEventSpriteInvisibility(struct Sprite *sprite, bool8 invisible);
 s16 GetFigure8XOffset(s16 idx);
 s16 GetFigure8YOffset(s16 idx);
-void CameraObjectReset2(void);
-void LoadObjectEventPalette(u16 paletteTag);
+void CameraObjectFreeze(void);
 u8 GetObjectEventBerryTreeId(u8 objectEventId);
 void SetBerryTreeJustPicked(u8 mapId, u8 mapNumber, u8 mapGroup);
 bool8 IsBerryTreeSparkling(u8 localId, u8 mapNum, u8 mapGroup);
+u8 LoadObjectEventPalette(u16 paletteTag);
+void UpdateLightSprite(struct Sprite *sprite);
+u8 UpdateSpritePaletteByTemplate(const struct SpriteTemplate *template, struct Sprite *sprite);
+u8 CreateObjectGraphicsSpriteWithTag(u16 graphicsId, void (*callback)(struct Sprite *), s16 x, s16 y, u8 subpriority, u16 paletteTag);
 const struct ObjectEventTemplate *GetObjectEventTemplateByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup);
 u8 TrySpawnObjectEventTemplate(const struct ObjectEventTemplate *objectEventTemplate, u8 mapNum, u8 mapGroup, s16 cameraX, s16 cameraY);
 

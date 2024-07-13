@@ -44,5 +44,6 @@ void ShowWarpArrowSprite(u8 spriteId, u8 direction, s16 x, s16 y);
 void UpdateWheatFieldEffect(struct Sprite*);
 void LoadFieldEffectPalette(u8 fieldEffect);
 
+void SetUpShadow(struct ObjectEvent *objEvent, struct Sprite *sprite);
 
 #endif //GUARD_FIELD_EFFECT_HELPERS_H

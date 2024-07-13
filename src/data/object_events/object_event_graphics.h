@@ -309,6 +309,9 @@ const u32 gFieldEffectObjectPic_ShadowSmall[] = INCBIN_U32("graphics/field_effec
 const u32 gFieldEffectObjectPic_ShadowMedium[] = INCBIN_U32("graphics/field_effects/pics/shadow_medium.4bpp");
 const u32 gFieldEffectObjectPic_ShadowLarge[] = INCBIN_U32("graphics/field_effects/pics/shadow_large.4bpp");
 const u32 gFieldEffectObjectPic_ShadowExtraLarge[] = INCBIN_U32("graphics/field_effects/pics/shadow_extra_large.4bpp");
+const u32 gFieldEffectObjectPic_BallLight[] = INCBIN_U32("graphics/object_events/pics/misc/light.4bpp");
+const u32 gFieldEffectObjectPic_PokeCenterLight[] = INCBIN_U32("graphics/object_events/pics/misc/poke_center_light.4bpp");
+const u32 gFieldEffectObjectPic_MartLight[] = INCBIN_U32("graphics/object_events/pics/misc/mart_light.4bpp");
 static const u32 sFiller[0x48] = {};
 const u8 gFieldEffectPic_CutGrass[] = INCBIN_U8("graphics/field_effects/pics/cut_grass.4bpp");
 const u32 gFieldEffectPic_CutGrass_Copy[] = INCBIN_U32("graphics/field_effects/pics/cut_grass.4bpp");
@@ -1041,3 +1044,6 @@ const u16 gObjectEventPalette_RAC_POPBUBBLE[] = INCBIN_U16("graphics/object_even
 //POKESCAPE FIELD EFFECTS
 const u32 gFieldEffectObjectPic_Wheat[] = INCBIN_U32("graphics/field_effects/pics/wheat.4bpp");
 const u16 gFieldEffectObjectPic_WheatPalette[] = INCBIN_U16("graphics/field_effects/pics/wheat.gbapal");
+const u16 gObjectEventPal_Light[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
+const u16 gObjectEventPal_Light2[] = INCBIN_U16("graphics/object_events/palettes/light2.gbapal");
+const u16 gObjectEventPal_NeonLight[] = INCBIN_U16("graphics/object_events/palettes/neon_light.gbapal");

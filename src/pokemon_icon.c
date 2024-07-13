@@ -7,6 +7,8 @@
 #include "sprite.h"
 #include "data.h"
 
+#include "constants/pokemon_icon.h"
+
 #define POKE_ICON_BASE_PAL_TAG 56000
 
 struct MonIconSpriteTemplate
