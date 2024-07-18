@@ -3792,7 +3792,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
     u32 holdEffect, currentMap, partnerSpecies, partnerHeldItem, partnerHoldEffect;
     const struct Evolution *evolutions = GetSpeciesEvolutions(species);
     u8 ailment;
-    int rand;
+    u8 rand = 0;
 
     if (evolutions == NULL)
         return SPECIES_NONE;
@@ -4133,11 +4133,11 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
             case EVO_LEVEL_RANDOM:
                 if (evolutions[i].param <= level)
                     rand = Random() % 3;
-                    if (rand == 1)
+                    if (rand == 0)
+                        break;
+                    else if (rand == 1)
                         break;
                     else if (rand == 2)
-                        break;
-                    else if (rand == 3)
                         targetSpecies = evolutions[i].targetSpecies;
                     else
                         break;
