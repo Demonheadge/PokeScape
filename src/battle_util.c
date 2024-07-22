@@ -8166,6 +8166,8 @@ u8 IsMonDisobedient(void)
         if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
             return 0;
 
+        obedienceLevel = 100;
+/*
         obedienceLevel = 10;
 
         if (FlagGet(FLAG_BADGE01_GET)) // Stone Badge
@@ -8182,6 +8184,7 @@ u8 IsMonDisobedient(void)
             obedienceLevel = 70;
         if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
             obedienceLevel = 80;
+*/
     }
 
     if (B_OBEDIENCE_MECHANICS >= GEN_8
