@@ -100,8 +100,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DUNGEONEERING_2",
-      "x": 19,
-      "y": 10,
+      "x": 18,
+      "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -129,7 +129,7 @@
     },
     {
       "x": 20,
-      "y": 9,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_DAEMONHEIM_GYM",
       "dest_warp_id": "0"

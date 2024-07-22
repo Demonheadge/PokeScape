@@ -439,3 +439,63 @@ script EventScript_New_RockSmash
 
 
 }
+
+
+
+script EventScript_RockSmash_POKESCAPE
+{
+  lockall
+  checkitem (ITEM_ROCKSMASH_TOOL, 1)
+  goto_if_eq (VAR_RESULT, FALSE, EventScript_CantSmashRock)
+  bufferitemname(0, ITEM_ROCKSMASH_TOOL)
+  //setfieldeffectargument (0, VAR_RESULT)
+  msgbox(format("This rock appears to be breakable.\nWould you like to use the {STR_VAR_1}?"), MSGBOX_YESNO)
+	goto_if_eq (VAR_RESULT, NO, EventScript_CancelSmash)
+	closemessage
+	dofieldeffect (FLDEFF_USE_ROCK_SMASH)
+	waitstate
+	goto (EventScript_SmashRock_POKESCAPE)
+	end
+}
+
+script EventScript_SmashRock_POKESCAPE
+{
+  msgbox(format("EventScript_SmashRock_POKESCAPE"))
+  closemessage
+  applymovement (VAR_LAST_TALKED, Movement_SmashRock)
+	waitmovement (0)
+	removeobject (VAR_LAST_TALKED)
+	special (RockSmashWildEncounter)
+	goto_if_eq (VAR_RESULT, FALSE, EventScript_EndSmash)
+	waitstate
+	releaseall
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script EventScript_GivePickaxes
+{
+  giveitem(ITEM_ROCKSMASH_TOOL, 1)
+  giveitem(ITEM_BRONZEPICKAXE, 1)
+  closemessage
+}
+script EventScript_removePickaxes
+{
+  removeitem(ITEM_ROCKSMASH_TOOL, 1)
+  removeitem(ITEM_BRONZEPICKAXE, 1)
+  removeitem(ITEM_DRAGON_PICKAXE, 1)
+  closemessage
+}

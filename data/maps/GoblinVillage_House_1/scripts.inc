@@ -356,6 +356,48 @@ EventScript_New_RockSmash::
 	end
 
 
+EventScript_RockSmash_POKESCAPE::
+	lockall
+	checkitem ITEM_ROCKSMASH_TOOL, 1
+	goto_if_eq VAR_RESULT, FALSE, EventScript_CantSmashRock
+	bufferitemname 0, ITEM_ROCKSMASH_TOOL
+	msgbox EventScript_RockSmash_POKESCAPE_Text_0, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CancelSmash
+	closemessage
+	dofieldeffect FLDEFF_USE_ROCK_SMASH
+	waitstate
+	goto EventScript_SmashRock_POKESCAPE
+	end
+
+
+EventScript_SmashRock_POKESCAPE::
+	msgbox EventScript_SmashRock_POKESCAPE_Text_0
+	closemessage
+	applymovement VAR_LAST_TALKED, Movement_SmashRock
+	waitmovement 0
+	removeobject VAR_LAST_TALKED
+	special RockSmashWildEncounter
+	goto_if_eq VAR_RESULT, FALSE, EventScript_EndSmash
+	waitstate
+	releaseall
+	end
+
+
+EventScript_GivePickaxes::
+	giveitem ITEM_ROCKSMASH_TOOL, 1
+	giveitem ITEM_BRONZEPICKAXE, 1
+	closemessage
+	return
+
+
+EventScript_removePickaxes::
+	removeitem ITEM_ROCKSMASH_TOOL, 1
+	removeitem ITEM_BRONZEPICKAXE, 1
+	removeitem ITEM_DRAGON_PICKAXE, 1
+	closemessage
+	return
+
+
 NPC_GOBLINVILLAGE_PICKAXE_EVENT_Text_0:
 	.string "WARTFACE$"
 
@@ -472,3 +514,11 @@ NPC_GOBLINCHEIFS_Text_0:
 
 NPC_GOBLINCHEIFS_Text_1:
 	.string "Red!$"
+
+EventScript_RockSmash_POKESCAPE_Text_0:
+	.string "This rock appears to be breakable.\n"
+	.string "Would you like to use the\l"
+	.string "{STR_VAR_1}?$"
+
+EventScript_SmashRock_POKESCAPE_Text_0:
+	.string "EventScript_SmashRock_POKESCAPE$"

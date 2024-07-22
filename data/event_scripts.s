@@ -1492,3 +1492,7 @@ EventScript_VsSeekerChargingDone::
 
 
 	.include "data/maps/AsgarnianDungeon_B4F/scripts.inc"
+
+	.include "data/maps/Lumbridge_Swamp_Caves_WGS_5/scripts.inc"
+
+	.include "data/maps/Barb_Stronghold_B4F_Mural/scripts.inc"

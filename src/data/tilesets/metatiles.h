@@ -309,3 +309,9 @@ const u16 gMetatileAttributes_ChaosTunnels[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_Rellekka[] = INCBIN_U16("data/tilesets/secondary/rellekka/metatiles.bin");
 const u16 gMetatileAttributes_Rellekka[] = INCBIN_U16("data/tilesets/secondary/rellekka/metatile_attributes.bin");
+
+const u16 gMetatiles_PokeScapeCaves[] = INCBIN_U16("data/tilesets/primary/PokeScapeCaves/metatiles.bin");
+const u16 gMetatileAttributes_PokeScapeCaves[] = INCBIN_U16("data/tilesets/primary/PokeScapeCaves/metatile_attributes.bin");
+
+const u16 gMetatiles_PokeScapeCaves_Extra_1[] = INCBIN_U16("data/tilesets/secondary/poke_scape_caves_extra_1/metatiles.bin");
+const u16 gMetatileAttributes_PokeScapeCaves_Extra_1[] = INCBIN_U16("data/tilesets/secondary/poke_scape_caves_extra_1/metatile_attributes.bin");

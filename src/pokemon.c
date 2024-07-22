@@ -5449,8 +5449,10 @@ u16 GetBattleBGM(void)
             return MUS_PS_VS_LEGENDARY;   //POKESCAPE
         case TRAINER_CLASS_LEADER:
             return MUS_PS_VS_GYM;   //POKESCAPE
+        case TRAINER_CLASS_MITHRILMAN:
+            return MUS_PS_VS_TRAINER_F2P; //POKESCAPE
         case TRAINER_CLASS_CHAMPION:
-            return MUS_VS_CHAMPION; //POKESCAPE
+            return MUS_VS_CHAMPION; 
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_LEADER:
             return MUS_VS_AQUA_MAGMA_LEADER;
