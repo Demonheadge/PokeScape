@@ -4078,6 +4078,24 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                 break;
 
             //PokeScape
+            case EVO_ITEM_HOLD_MALE:
+                if (heldItem == evolutions[i].param)
+                    if (GetGenderFromSpeciesAndPersonality(species, personality) == MON_MALE)
+                {
+                    heldItem = 0;
+                    SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
+                    targetSpecies = evolutions[i].targetSpecies;
+                }
+                break;
+            case EVO_ITEM_HOLD_FEMALE:
+                if (heldItem == evolutions[i].param)
+                    if (GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
+                {
+                    heldItem = 0;
+                    SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
+                    targetSpecies = evolutions[i].targetSpecies;
+                }
+                break;
             case EVO_LEVEL_STATUS:
 				ailment = GetMonAilment(mon);
 				if(evolutions[i].param <= level && ailment != AILMENT_NONE)

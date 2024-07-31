@@ -10078,6 +10078,44 @@ Cry_Slime_Queen::
 	.incbin "sound/direct_sound_samples/cries/swinub.bin"
 
 	.align 2
+Cry_Kalrag::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Animawhal::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Animasaurus::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Sea_Troll_Queen::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Yak_Lumber_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Cabbage_Shattered_World_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Vulture_Bearded_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+	
+	.align 2
+Cry_Kryket_Bat::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+
+
+
+
+
+
+	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
 

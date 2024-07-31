@@ -5798,6 +5798,14 @@ cry Cry_Cockatrice_Moonlight
 cry Cry_Revenant_Imp
 cry Cry_Revenant_Dragon
 cry Cry_Maledictus
+cry Cry_Kalrag
+cry Cry_Animawhal
+cry Cry_Animasaurus
+cry Cry_Sea_Troll_Queen
+cry Cry_Yak_Lumber_Form
+cry Cry_Cabbage_Shattered_World_Form
+cry Cry_Vulture_Bearded_Form
+cry Cry_Kryket_Bat
 
 cry_reverse Cry_Guthling
 cry_reverse Cry_Guthbird
@@ -6791,3 +6799,11 @@ cry_reverse Cry_Cockatrice_Moonlight
 cry_reverse Cry_Revenant_Imp
 cry_reverse Cry_Revenant_Dragon
 cry_reverse Cry_Maledictus
+cry_reverse Cry_Kalrag
+cry_reverse Cry_Animawhal
+cry_reverse Cry_Animasaurus
+cry_reverse Cry_Sea_Troll_Queen
+cry_reverse Cry_Yak_Lumber_Form
+cry_reverse Cry_Cabbage_Shattered_World_Form
+cry_reverse Cry_Vulture_Bearded_Form
+cry_reverse Cry_Kryket_Bat

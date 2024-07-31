@@ -40331,6 +40331,291 @@ LEVEL_UP_MOVE(65, MOVE_PRISMATIC_LASER),
 };
 
 
+static const struct LevelUpMove sBroav_Zombie_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
 
+static const struct LevelUpMove sImpling_Easter_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
 
+static const struct LevelUpMove sImpling_Snow_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sImpling_Wandering_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sImpling_Ghost_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sVorkathLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sFox_PyreLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sFox_RecruitmentDriveLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sFox_FennecLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sSalamander_TecuLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sJerboaLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sJerboa_EmbertailLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sAntelope_Sunlight_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sAntelope_Moonlight_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sCapybaraLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sCapybara_OrangeLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sEntlingLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sPigglesLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sWolpertinger_Mega_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sFlesh_Spoiler_Naked_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sFlesh_Spoiler_SpawnlingLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sCaustic_GazerLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sIris_StalkerLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sAnimated_BookLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sTome_of_StrengthLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sTome_of_RangedLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sTome_of_MagicLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sLuminescent_IcefiendLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sWarped_GalugaLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sSubmastyxLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sParamastyxLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sArchaemastyxLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sDromomastyxLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sSpinomastyxLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sGallimastyxLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sStegomastyxLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sMegamastyxLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sJelly_Alternate_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sJelly_Dungeoneering_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sJelly_Trollweiss_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sJelly_Vitreous_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sJelly_Warped_Vitreous_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sMoth_Sunlight_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sMoth_Moonlight_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sStone_of_Jas_Mega_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sSpirit_WarriorLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sSpirit_RangerLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sSpirit_MageLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sEsslingLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sEsshoundLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sEsswraithLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sHarpy_EagleLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sReborn_WarriorLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sReborn_RangerLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sReborn_MageLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sJaguar_Orange_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sJaguar_Black_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sTortleLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sCockatrice_OSRS_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sCockathriceLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sCockatrice_MoonlightLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sRevenant_ImpLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sRevenant_DragonLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sMaledictusLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sKalragLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sAnimawhalLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sAnimasaurusLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sSea_Troll_QueenLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sYak_Lumber_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sCabbage_Shattered_World_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sVulture_Bearded_FormLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
+
+static const struct LevelUpMove sKryket_BatLevelUpLearnset[] = {
+LEVEL_UP_MOVE(1, MOVE_DOUBLE_EDGE),
+};
 
