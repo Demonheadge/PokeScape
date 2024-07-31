@@ -15496,12 +15496,12 @@ const u32 gMonShinyPalette_World_Gorger[] = INCBIN_U32("graphics/pokescape_monst
 const u8 gMonIcon_World_Gorger[] = INCBIN_U8("graphics/pokescape_monsters/World_Gorger/icon.4bpp");
 const u8 gMonFootprint_World_Gorger[] = INCBIN_U8("graphics/pokescape_monsters/World_Gorger/footprint.1bpp");
 
-const u32 gMonFrontPic_Flesh_Monger[] = INCBIN_U32("graphics/pokescape_monsters/Flesh_Monger/anim_front.4bpp.lz");
-const u32 gMonPalette_Flesh_Monger[] = INCBIN_U32("graphics/pokescape_monsters/Flesh_Monger/normal.gbapal.lz");
-const u32 gMonBackPic_Flesh_Monger[] = INCBIN_U32("graphics/pokescape_monsters/Flesh_Monger/back.4bpp.lz");
-const u32 gMonShinyPalette_Flesh_Monger[] = INCBIN_U32("graphics/pokescape_monsters/Flesh_Monger/shiny.gbapal.lz");
-const u8 gMonIcon_Flesh_Monger[] = INCBIN_U8("graphics/pokescape_monsters/Flesh_Monger/icon.4bpp");
-const u8 gMonFootprint_Flesh_Monger[] = INCBIN_U8("graphics/pokescape_monsters/Flesh_Monger/footprint.1bpp");
+const u32 gMonFrontPic_Flesh_Spoiler_Covered_Form[] = INCBIN_U32("graphics/pokescape_monsters/Flesh_Spoiler_Covered_Form/anim_front.4bpp.lz");
+const u32 gMonPalette_Flesh_Spoiler_Covered_Form[] = INCBIN_U32("graphics/pokescape_monsters/Flesh_Spoiler_Covered_Form/normal.gbapal.lz");
+const u32 gMonBackPic_Flesh_Spoiler_Covered_Form[] = INCBIN_U32("graphics/pokescape_monsters/Flesh_Spoiler_Covered_Form/back.4bpp.lz");
+const u32 gMonShinyPalette_Flesh_Spoiler_Covered_Form[] = INCBIN_U32("graphics/pokescape_monsters/Flesh_Spoiler_Covered_Form/shiny.gbapal.lz");
+const u8 gMonIcon_Flesh_Spoiler_Covered_Form[] = INCBIN_U8("graphics/pokescape_monsters/Flesh_Spoiler_Covered_Form/icon.4bpp");
+const u8 gMonFootprint_Flesh_Spoiler_Covered_Form[] = INCBIN_U8("graphics/pokescape_monsters/Flesh_Spoiler_Covered_Form/footprint.1bpp");
 
 const u32 gMonFrontPic_Shadow_Forger[] = INCBIN_U32("graphics/pokescape_monsters/Shadow_Forger/anim_front.4bpp.lz");
 const u32 gMonPalette_Shadow_Forger[] = INCBIN_U32("graphics/pokescape_monsters/Shadow_Forger/normal.gbapal.lz");

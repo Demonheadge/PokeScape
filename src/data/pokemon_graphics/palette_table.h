@@ -1066,7 +1066,7 @@ const struct CompressedSpritePalette gMonPaletteTable[] =
     SPECIES_PAL(NIGHT_GAZER, gMonPalette_Night_Gazer),
     SPECIES_PAL(PLANE_FREEZER, gMonPalette_Plane_Freezer),
     SPECIES_PAL(WORLD_GORGER, gMonPalette_World_Gorger),
-    SPECIES_PAL(FLESH_MONGER, gMonPalette_Flesh_Monger),
+    SPECIES_PAL(FLESH_SPOILER_COVERED_FORM, gMonPalette_Flesh_Spoiler_Covered_Form),
     SPECIES_PAL(SHADOW_FORGER, gMonPalette_Shadow_Forger),
     SPECIES_PAL(VEIL_RIPPER, gMonPalette_Veil_Ripper),
     SPECIES_PAL(UNICORN_GAUNTLET_CORRUPTED_FORM, gMonPalette_Unicorn_Gauntlet_Corrupted_Form),

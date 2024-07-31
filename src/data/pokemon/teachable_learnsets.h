@@ -52172,7 +52172,7 @@ static const u16 sWorld_GorgerTeachableLearnset[] = {
 	MOVE_BRUTAL_SWING,
 	MOVE_UNAVAILABLE,
 };
-static const u16 sFlesh_MongerTeachableLearnset[] = {
+static const u16 sFlesh_Spoiler_Covered_FormTeachableLearnset[] = {
 	MOVE_SUNNY_DAY,
 	MOVE_TAILWIND,
 	MOVE_GRASSY_TERRAIN,

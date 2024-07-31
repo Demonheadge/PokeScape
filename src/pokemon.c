@@ -3965,6 +3965,16 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                     }
                 }
                 break;
+            case EVO_MOVE_TYPE:
+                for (j = 0; j < MAX_MON_MOVES; j++)
+                {
+                    if (gBattleMoves[GetMonData(mon, MON_DATA_MOVE1 + j, NULL)].type == evolutions[i].param)
+                    {
+                        targetSpecies = evolutions[i].targetSpecies;
+                        break;
+                    }
+                }
+                break;
             case EVO_SPECIFIC_MON_IN_PARTY:
                 for (j = 0; j < PARTY_SIZE; j++)
                 {

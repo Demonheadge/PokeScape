@@ -26451,7 +26451,7 @@ LEVEL_UP_MOVE(51, MOVE_THUNDER),
 LEVEL_UP_END
 };
 
-static const struct LevelUpMove sFlesh_MongerLevelUpLearnset[] = {
+static const struct LevelUpMove sFlesh_Spoiler_Covered_FormLevelUpLearnset[] = {
 LEVEL_UP_MOVE(1, MOVE_TELEPORT),
 LEVEL_UP_MOVE(2, MOVE_MIRACLE_EYE),
 LEVEL_UP_MOVE(3, MOVE_SELF_DESTRUCT),

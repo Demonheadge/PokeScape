@@ -17327,7 +17327,7 @@ static const union AnimCmd sAnim_World_Gorger_1[] =
 	ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_Flesh_Monger_1[] =
+static const union AnimCmd sAnim_Flesh_Spoiler_Covered_Form_1[] =
 {
 	ANIMCMD_FRAME(1, 40),
 	ANIMCMD_FRAME(0, 5),
@@ -22518,9 +22518,9 @@ static const union AnimCmd *const sAnims_World_Gorger[] ={
 	sAnim_World_Gorger_1,
 };
 
-static const union AnimCmd *const sAnims_Flesh_Monger[] ={
+static const union AnimCmd *const sAnims_Flesh_Spoiler_Covered_Form[] ={
 	sAnim_GeneralFrame0,
-	sAnim_Flesh_Monger_1,
+	sAnim_Flesh_Spoiler_Covered_Form_1,
 };
 
 static const union AnimCmd *const sAnims_Shadow_Forger[] ={

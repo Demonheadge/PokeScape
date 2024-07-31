@@ -367,6 +367,8 @@
 #define EVO_LEVEL_WEATHER_DUSTY         104
 #define EVO_LEVEL_WEATHER_COLD          105
 #define EVO_LEVEL_WEATHER_HOT           106
+#define EVO_MOVE_TYPE                   107
+
 
 // Evolution 'modes,' for GetEvolutionTargetSpecies
 #define EVO_MODE_NORMAL            0

@@ -5331,7 +5331,7 @@ const struct MonCoords gMonBackPicCoords[] =
 		.size = 0x0,
 		.y_offset = 0,
 	},
-	[SPECIES_FLESH_MONGER] =
+	[SPECIES_FLESH_SPOILER_COVERED_FORM] =
 	{
 		.size = 0x0,
 		.y_offset = 0,
