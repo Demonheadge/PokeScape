@@ -9668,7 +9668,7 @@ Cry_Abyssal_DeepSea_Guardian::
 	.incbin "sound/direct_sound_samples/cries/huntail.bin"
 
 	.align 2
-Cry_Kipple_Nano::
+Cry_Rift_Guardian::
 	.incbin "sound/direct_sound_samples/cries/phanpy.bin"
 
 	.align 2

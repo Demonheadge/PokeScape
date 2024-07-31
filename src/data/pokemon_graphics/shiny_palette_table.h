@@ -1302,7 +1302,7 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
     SPECIES_SHINY_PAL(ABYSSAL_DEEPSEA_WALKER, gMonShinyPalette_Abyssal_DeepSea_Walker),
     SPECIES_SHINY_PAL(ABYSSAL_DEEPSEA_LEECH, gMonShinyPalette_Abyssal_DeepSea_Leech),
     SPECIES_SHINY_PAL(ABYSSAL_DEEPSEA_GUARDIAN, gMonShinyPalette_Abyssal_DeepSea_Guardian),
-    SPECIES_SHINY_PAL(KIPPLE_NANO, gMonShinyPalette_Kipple_Nano),
+    SPECIES_SHINY_PAL(RIFT_GUARDIAN, gMonShinyPalette_Rift_Guardian),
     SPECIES_SHINY_PAL(CORAL_GUARDIAN, gMonShinyPalette_Coral_Guardian),
     SPECIES_SHINY_PAL(REWARDS_GUARDIAN, gMonShinyPalette_Rewards_Guardian),
     SPECIES_SHINY_PAL(BABOON_NORMAL_FORM, gMonShinyPalette_Baboon_Normal_Form),

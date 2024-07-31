@@ -6511,7 +6511,7 @@ const struct MonCoords gMonFrontPicCoords[] =
 		.size = 0x0,
 		.y_offset = 0,
 	},
-	[SPECIES_KIPPLE_NANO] =
+	[SPECIES_RIFT_GUARDIAN] =
 	{
 		.size = 0x0,
 		.y_offset = 0,

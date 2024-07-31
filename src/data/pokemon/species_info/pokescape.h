@@ -43496,7 +43496,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Abyssal_DeepSea_Guardian),
 	},
 
-[SPECIES_KIPPLE_NANO] =
+[SPECIES_RIFT_GUARDIAN] =
 	{
 		.baseHP = 80,
 		.baseAttack = 90,
@@ -43517,31 +43517,30 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
 		.abilities = { ABILITY_MAGICIAN, ABILITY_WATER_COMPACTION, ABILITY_NONE },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("KippleNano"),
-		.cryId = CRY_KIPPLE_NANO,
-		.natDexNum = NATIONAL_DEX_KIPPLE_NANO,
+		.speciesName = _("Guardian"),
+		.cryId = CRY_RIFT_GUARDIAN,
+		.natDexNum = NATIONAL_DEX_RIFT_GUARDIAN,
 		.categoryName = _("Nano"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The remains of what once was a very\n"
-			"helpfull quest giving device golem."),
+			"-"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
 		.trainerOffset = 0,
-		FRONT_PIC(Kipple_Nano, 64, 64),
+		FRONT_PIC(Rift_Guardian, 64, 64),
 		.frontPicYOffset = 0,
-		.frontAnimFrames = sAnims_Kipple_Nano,
+		.frontAnimFrames = sAnims_Rift_Guardian,
 		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
-		BACK_PIC(Kipple_Nano, 64, 64),
+		BACK_PIC(Rift_Guardian, 64, 64),
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
-		PALETTES(Kipple_Nano),
-		ICON(Kipple_Nano, 0),
-		.footprint = gMonFootprint_Kipple_Nano,
-		LEARNSETS(Kipple_Nano),
+		PALETTES(Rift_Guardian),
+		ICON(Rift_Guardian, 0),
+		.footprint = gMonFootprint_Rift_Guardian,
+		LEARNSETS(Rift_Guardian),
 	},
 
 [SPECIES_CORAL_GUARDIAN] =

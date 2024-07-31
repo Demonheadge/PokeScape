@@ -5695,7 +5695,7 @@ cry Cry_Salamander_Yellow_Form
 cry Cry_Abyssal_DeepSea_Walker
 cry Cry_Abyssal_DeepSea_Leech
 cry Cry_Abyssal_DeepSea_Guardian
-cry Cry_Kipple_Nano
+cry Cry_Rift_Guardian
 cry Cry_Coral_Guardian
 cry Cry_Rewards_Guardian
 cry Cry_Baboon_Normal_Form
@@ -6688,7 +6688,7 @@ cry_reverse Cry_Salamander_Yellow_Form
 cry_reverse Cry_Abyssal_DeepSea_Walker
 cry_reverse Cry_Abyssal_DeepSea_Leech
 cry_reverse Cry_Abyssal_DeepSea_Guardian
-cry_reverse Cry_Kipple_Nano
+cry_reverse Cry_Rift_Guardian
 cry_reverse Cry_Coral_Guardian
 cry_reverse Cry_Rewards_Guardian
 cry_reverse Cry_Baboon_Normal_Form

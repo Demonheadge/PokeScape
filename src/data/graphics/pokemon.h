@@ -17148,12 +17148,12 @@ const u32 gMonShinyPalette_Abyssal_DeepSea_Guardian[] = INCBIN_U32("graphics/pok
 const u8 gMonIcon_Abyssal_DeepSea_Guardian[] = INCBIN_U8("graphics/pokescape_monsters/Abyssal_DeepSea_Guardian/icon.4bpp");
 const u8 gMonFootprint_Abyssal_DeepSea_Guardian[] = INCBIN_U8("graphics/pokescape_monsters/Abyssal_DeepSea_Guardian/footprint.1bpp");
 
-const u32 gMonFrontPic_Kipple_Nano[] = INCBIN_U32("graphics/pokescape_monsters/Kipple_Nano/anim_front.4bpp.lz");
-const u32 gMonPalette_Kipple_Nano[] = INCBIN_U32("graphics/pokescape_monsters/Kipple_Nano/normal.gbapal.lz");
-const u32 gMonBackPic_Kipple_Nano[] = INCBIN_U32("graphics/pokescape_monsters/Kipple_Nano/back.4bpp.lz");
-const u32 gMonShinyPalette_Kipple_Nano[] = INCBIN_U32("graphics/pokescape_monsters/Kipple_Nano/shiny.gbapal.lz");
-const u8 gMonIcon_Kipple_Nano[] = INCBIN_U8("graphics/pokescape_monsters/Kipple_Nano/icon.4bpp");
-const u8 gMonFootprint_Kipple_Nano[] = INCBIN_U8("graphics/pokescape_monsters/Kipple_Nano/footprint.1bpp");
+const u32 gMonFrontPic_Rift_Guardian[] = INCBIN_U32("graphics/pokescape_monsters/Rift_Guardian/anim_front.4bpp.lz");
+const u32 gMonPalette_Rift_Guardian[] = INCBIN_U32("graphics/pokescape_monsters/Rift_Guardian/normal.gbapal.lz");
+const u32 gMonBackPic_Rift_Guardian[] = INCBIN_U32("graphics/pokescape_monsters/Rift_Guardian/back.4bpp.lz");
+const u32 gMonShinyPalette_Rift_Guardian[] = INCBIN_U32("graphics/pokescape_monsters/Rift_Guardian/shiny.gbapal.lz");
+const u8 gMonIcon_Rift_Guardian[] = INCBIN_U8("graphics/pokescape_monsters/Rift_Guardian/icon.4bpp");
+const u8 gMonFootprint_Rift_Guardian[] = INCBIN_U8("graphics/pokescape_monsters/Rift_Guardian/footprint.1bpp");
 
 const u32 gMonFrontPic_Coral_Guardian[] = INCBIN_U32("graphics/pokescape_monsters/Coral_Guardian/anim_front.4bpp.lz");
 const u32 gMonPalette_Coral_Guardian[] = INCBIN_U32("graphics/pokescape_monsters/Coral_Guardian/normal.gbapal.lz");

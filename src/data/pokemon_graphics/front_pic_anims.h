@@ -18979,7 +18979,7 @@ static const union AnimCmd sAnim_Abyssal_DeepSea_Guardian_1[] =
 	ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_Kipple_Nano_1[] =
+static const union AnimCmd sAnim_Rift_Guardian_1[] =
 {
 	ANIMCMD_FRAME(1, 40),
 	ANIMCMD_FRAME(0, 5),
@@ -23698,9 +23698,9 @@ static const union AnimCmd *const sAnims_Abyssal_DeepSea_Guardian[] ={
 	sAnim_Abyssal_DeepSea_Guardian_1,
 };
 
-static const union AnimCmd *const sAnims_Kipple_Nano[] ={
+static const union AnimCmd *const sAnims_Rift_Guardian[] ={
 	sAnim_GeneralFrame0,
-	sAnim_Kipple_Nano_1,
+	sAnim_Rift_Guardian_1,
 };
 
 static const union AnimCmd *const sAnims_Coral_Guardian[] ={

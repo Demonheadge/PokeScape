@@ -40087,7 +40087,7 @@ LEVEL_UP_MOVE(1, MOVE_SCRATCH),
 LEVEL_UP_END
 };
 
-static const struct LevelUpMove sKipple_NanoLevelUpLearnset[] = {
+static const struct LevelUpMove sRift_GuardianLevelUpLearnset[] = {
 LEVEL_UP_MOVE(1, MOVE_SCRATCH),
 LEVEL_UP_END
 };

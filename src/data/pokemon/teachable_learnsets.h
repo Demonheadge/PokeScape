@@ -57566,7 +57566,7 @@ static const u16 sAbyssal_DeepSea_GuardianTeachableLearnset[] = {
 	MOVE_ICE_HAMMER,
 	MOVE_UNAVAILABLE,
 };
-static const u16 sKipple_NanoTeachableLearnset[] = {
+static const u16 sRift_GuardianTeachableLearnset[] = {
 	MOVE_SUNNY_DAY,
 	MOVE_RAIN_DANCE,
 	MOVE_HAIL,
