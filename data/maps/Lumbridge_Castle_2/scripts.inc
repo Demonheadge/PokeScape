@@ -45,7 +45,8 @@ Lumbridge_Bookshelf_2::
 Lumbridge_Castle_GUARD::
 	lock
 	faceplayer
-	msgbox Lumbridge_Castle_GUARD_Text_0
+	namebox Lumbridge_Castle_GUARD_Text_0
+	msgbox Lumbridge_Castle_GUARD_Text_1
 	release
 	end
 
@@ -53,7 +54,8 @@ Lumbridge_Castle_GUARD::
 Lumbridge_Castle_HALLWAY_GUARD::
 	lock
 	faceplayer
-	msgbox Lumbridge_Castle_HALLWAY_GUARD_Text_0
+	namebox Lumbridge_Castle_HALLWAY_GUARD_Text_0
+	msgbox Lumbridge_Castle_HALLWAY_GUARD_Text_1
 	release
 	end
 
@@ -63,6 +65,7 @@ Lumbridge_Castle_HALLWAY_TRIGGER::
 	PlaySE SE_PIN
 	applymovement 3, Movement_Lumbridge_Castle_HALLWAY_TRIGGER1
 	waitmovement 0
+	namebox Lumbridge_Castle_HALLWAY_GUARD_Text_0
 	msgbox Lumbridge_Castle_HALLWAY_TRIGGER_Text_0
 	waitmessage
 	closemessage
@@ -186,8 +189,11 @@ LeftDoorScript::
 	waitmovement 0
 	namebox LeftDoorScript_Text_0
 	msgbox LeftDoorScript_Text_1
+	hidenamebox
+	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PLAYER_1
 	waitmovement 0
+	namebox LeftDoorScript_Text_0
 	msgbox LeftDoorScript_Text_2
 	waitmessage
 	hidenamebox
@@ -227,8 +233,11 @@ RightDoorScript::
 	waitmovement 0
 	namebox LeftDoorScript_Text_0
 	msgbox LeftDoorScript_Text_1
+	hidenamebox
+	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PLAYER_1
 	waitmovement 0
+	namebox LeftDoorScript_Text_0
 	msgbox LeftDoorScript_Text_2
 	waitmessage
 	hidenamebox
@@ -844,7 +853,9 @@ QUEST_Cooks_Assistant_STATE_7:
 	namebox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0
 	msgbox QUEST_Cooks_Assistant_STATE_Text_2
 	msgbox QUEST_Cooks_Assistant_STATE_Text_3
+	hidenamebox
 	giveitem ITEM_MAP
+	namebox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0
 	msgbox QUEST_Cooks_Assistant_STATE_Text_4
 	setvar VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE, 1
 	hidenamebox
@@ -1267,10 +1278,16 @@ Lumbridge_Bookshelf_2_Text_0:
 	.string "strongest of them all.$"
 
 Lumbridge_Castle_GUARD_Text_0:
+	.string "Brawn$"
+
+Lumbridge_Castle_GUARD_Text_1:
 	.string "I'm on guard duty.\p"
 	.string "Please do not cause any problems.$"
 
 Lumbridge_Castle_HALLWAY_GUARD_Text_0:
+	.string "Dante$"
+
+Lumbridge_Castle_HALLWAY_GUARD_Text_1:
 	.string "I'm sorry but this hallway is off limits.\p"
 	.string "I am surprised you are talking to me to\n"
 	.string "be honest.\p"
@@ -1317,11 +1334,12 @@ LeftDoorScript_Text_3:
 	.string "Professor.$"
 
 LeftDoorScript_Text_4:
-	.string "Prof. Normal Tree$"
+	.string "Prof. Tree$"
 
 LeftDoorScript_Text_5:
-	.string "Nice.\p"
 	.string "I am Professor Normal Tree.\p"
+	.string "But everyone calls me Professor Tree\n"
+	.string "for short.\p"
 	.string "I am in need of assistants to help me in\n"
 	.string "my research, as you would know this\l"
 	.string "world is full to the brim with all sorts\l"

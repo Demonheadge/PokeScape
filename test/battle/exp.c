@@ -138,7 +138,7 @@ WILD_BATTLE_TEST("Exp Share(held) gives Experience to mons which did not partici
         MESSAGE("Wobbuffet used Tackle!");
         MESSAGE("Wild Caterpie fainted!");
         // This message should appear only for gen6> exp share.
-        NOT MESSAGE("The rest of your team gained EXP. Points thanks to the Exp. Share!");
+        NOT MESSAGE("The rest of your team gained EXP. Points thanks to the Pulse Core!");
     } THEN {
         if (item == ITEM_EXP_SHARE)
             EXPECT_GT(GetMonData(&gPlayerParty[1], MON_DATA_EXP), gExperienceTables[gSpeciesInfo[SPECIES_WYNAUT].growthRate][40]);

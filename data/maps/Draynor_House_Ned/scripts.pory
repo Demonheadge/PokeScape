@@ -29,7 +29,9 @@ script Ned_Draynor{
             }
         msgbox(format("Here you go, one of my finest!"))
         removemoney(500)
+        hidenamebox
         giveitem(ITEM_ROPE)
+        namebox("Ned")
         closemessage
         hidenamebox
         release

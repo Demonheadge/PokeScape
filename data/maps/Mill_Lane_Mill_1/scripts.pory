@@ -5,6 +5,7 @@ mapscripts Mill_Lane_Mill_1_MapScripts {
 script MillLaneGreeter{
     lock
     faceplayer
+    namebox("Woman")
     msgbox(format("Welcome to Mill Lane Mill!\pWe have the best flour this side of the River Lum!"))
     release
     end
@@ -12,7 +13,7 @@ script MillLaneGreeter{
 
 script Trainer2_MillLaneMill_Battle{
     trainerbattle_single(TRAINER_TRAINER2_MILLLANEMILL, format("If you want to get to the top you will need to get past the mill three!\pBe warned I'm the second strongest of us!"),"You will never reach the top!")
-    namebox ("HOPS")
+    //namebox ("HOPS")
     msgbox(format("You may have beaten me but you'll never make it to the top!"))
     hidenamebox
     release

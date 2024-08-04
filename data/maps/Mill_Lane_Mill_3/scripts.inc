@@ -7,7 +7,8 @@ Millie_Miller::
 	goto_if_eq Millie_Miller_1
 	lock
 	faceplayer
-	msgbox Millie_Miller_Text_4
+	namebox Millie_Miller_Text_0
+	msgbox Millie_Miller_Text_3
 	pokemart MillLaneMillFlourShop
 	release
 	end
@@ -18,7 +19,8 @@ Millie_Miller_1:
 	goto_if_eq Millie_Miller_4
 	lock
 	faceplayer
-	msgbox Millie_Miller_Text_4
+	namebox Millie_Miller_Text_0
+	msgbox Millie_Miller_Text_3
 	pokemart MillLaneMillFlourShop
 	release
 	end
@@ -28,7 +30,8 @@ Millie_Miller_4:
 	faceplayer
 	namebox Millie_Miller_Text_0
 	msgbox Millie_Miller_Text_1
-	trainerbattle_single TRAINER_MILLIE_MILLER_MILLLANEMILL, Millie_Miller_Text_2, Millie_Miller_Text_3, GiveQuestWheat
+	trainerbattle_no_intro TRAINER_MILLIE_MILLER_MILLLANEMILL, Millie_Miller_Text_2
+	goto GiveQuestWheat
 	hidenamebox
 	release
 	end
@@ -74,16 +77,14 @@ Millie_Miller_Text_1:
 	.string "I heard that you were after some of our\n"
 	.string "flour.\p"
 	.string "Tehehehehe.\p"
-	.string "I can give you some if you want…$"
-
-Millie_Miller_Text_2:
+	.string "I can give you some if you want…\p"
 	.string "But you'll have to battle me for it.\p"
 	.string "Teheehehe!$"
 
-Millie_Miller_Text_3:
+Millie_Miller_Text_2:
 	.string "I was so close!$"
 
-Millie_Miller_Text_4:
+Millie_Miller_Text_3:
 	.string "Welcome to Mill Lane Mill!\p"
 	.string "Would you like to buy some flour?$"
 

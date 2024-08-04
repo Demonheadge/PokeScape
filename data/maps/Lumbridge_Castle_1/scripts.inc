@@ -68,90 +68,96 @@ Lumbridge_Castle_Hans::
 Lumbridge_Castle_NPC1::
 	lock
 	faceplayer
+	namebox Lumbridge_Castle_NPC1_Text_0
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 1
 	goto_if_eq Lumbridge_Castle_NPC1_2
-	msgbox Lumbridge_Castle_NPC1_Text_1
+	msgbox Lumbridge_Castle_NPC1_Text_2
 Lumbridge_Castle_NPC1_1:
 	release
 	end
 
 Lumbridge_Castle_NPC1_2:
-	msgbox Lumbridge_Castle_NPC1_Text_0
+	msgbox Lumbridge_Castle_NPC1_Text_1
 	goto Lumbridge_Castle_NPC1_1
 
 
 Lumbridge_Castle_NPC2::
 	lock
 	faceplayer
+	namebox Lumbridge_Castle_NPC2_Text_0
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 1
 	goto_if_eq Lumbridge_Castle_NPC2_2
-	msgbox Lumbridge_Castle_NPC2_Text_1
+	msgbox Lumbridge_Castle_NPC2_Text_2
 Lumbridge_Castle_NPC2_1:
 	release
 	end
 
 Lumbridge_Castle_NPC2_2:
-	msgbox Lumbridge_Castle_NPC2_Text_0
+	msgbox Lumbridge_Castle_NPC2_Text_1
 	goto Lumbridge_Castle_NPC2_1
 
 
 Lumbridge_Castle_NPC3::
 	lock
 	faceplayer
+	namebox Lumbridge_Castle_NPC3_Text_0
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 1
 	goto_if_eq Lumbridge_Castle_NPC3_2
-	msgbox Lumbridge_Castle_NPC3_Text_1
+	msgbox Lumbridge_Castle_NPC3_Text_2
 Lumbridge_Castle_NPC3_1:
 	release
 	end
 
 Lumbridge_Castle_NPC3_2:
-	msgbox Lumbridge_Castle_NPC3_Text_0
+	msgbox Lumbridge_Castle_NPC3_Text_1
 	goto Lumbridge_Castle_NPC3_1
 
 
 Lumbridge_Castle_NPC4::
 	lock
 	faceplayer
+	namebox Lumbridge_Castle_NPC4_Text_0
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 1
 	goto_if_eq Lumbridge_Castle_NPC4_2
-	msgbox Lumbridge_Castle_NPC4_Text_1
+	msgbox Lumbridge_Castle_NPC4_Text_2
 Lumbridge_Castle_NPC4_1:
 	release
 	end
 
 Lumbridge_Castle_NPC4_2:
-	msgbox Lumbridge_Castle_NPC4_Text_0
+	msgbox Lumbridge_Castle_NPC4_Text_1
 	goto Lumbridge_Castle_NPC4_1
 
 
 Lumbridge_Castle_NPC5::
 	lock
 	faceplayer
+	namebox Lumbridge_Castle_NPC5_Text_0
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 1
 	goto_if_eq Lumbridge_Castle_NPC5_2
-	msgbox Lumbridge_Castle_NPC5_Text_1
+	msgbox Lumbridge_Castle_NPC5_Text_2
 Lumbridge_Castle_NPC5_1:
 	release
 	end
 
 Lumbridge_Castle_NPC5_2:
-	msgbox Lumbridge_Castle_NPC5_Text_0
+	msgbox Lumbridge_Castle_NPC5_Text_1
 	goto Lumbridge_Castle_NPC5_1
 
 
 Lumbridge_Castle_NPC6::
 	lock
 	faceplayer
+	namebox Lumbridge_Castle_NPC6_Text_0
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 1
 	goto_if_eq Lumbridge_Castle_NPC6_2
-	msgbox Lumbridge_Castle_NPC6_Text_1
+	msgbox Lumbridge_Castle_NPC6_Text_2
 Lumbridge_Castle_NPC6_1:
 	release
 	end
 
 Lumbridge_Castle_NPC6_2:
-	msgbox Lumbridge_Castle_NPC6_Text_0
+	msgbox Lumbridge_Castle_NPC6_Text_1
 	goto Lumbridge_Castle_NPC6_1
 
 
@@ -295,60 +301,78 @@ Lumbridge_Castle_Hans_Text_1:
 	.string "I've seen many things in my life time.$"
 
 Lumbridge_Castle_NPC1_Text_0:
+	.string "RSMVer$"
+
+Lumbridge_Castle_NPC1_Text_1:
 	.string "Prof.Normal Tree is a famous monster\n"
 	.string "researcher.\p"
 	.string "They say he knows everything about\n"
 	.string "every monster!$"
 
-Lumbridge_Castle_NPC1_Text_1:
+Lumbridge_Castle_NPC1_Text_2:
 	.string "There is no way to avoid combat in a\n"
 	.string "battle.\p"
 	.string "But you can run from wild battles.$"
 
 Lumbridge_Castle_NPC2_Text_0:
+	.string "Mercher$"
+
+Lumbridge_Castle_NPC2_Text_1:
 	.string "Guthix, Saradomin, Zamorak…\p"
 	.string "Which one do I choose?$"
 
-Lumbridge_Castle_NPC2_Text_1:
+Lumbridge_Castle_NPC2_Text_2:
 	.string "You need money for more pouches?\p"
 	.string "Sorry I am not doubling money.$"
 
 Lumbridge_Castle_NPC3_Text_0:
+	.string "Woman$"
+
+Lumbridge_Castle_NPC3_Text_1:
 	.string "What do you mean the monsters are all\n"
 	.string "birds?!\p"
 	.string "I don't get it.$"
 
-Lumbridge_Castle_NPC3_Text_1:
+Lumbridge_Castle_NPC3_Text_2:
 	.string "The Duke holds power over Lumbridge.\p"
 	.string "But personally I dont think he is that\n"
 	.string "good of a ruler.$"
 
 Lumbridge_Castle_NPC4_Text_0:
+	.string "PKer$"
+
+Lumbridge_Castle_NPC4_Text_1:
 	.string "My friend over in Kandarin apparently\n"
 	.string "got a different monster from the\l"
 	.string "professor.$"
 
-Lumbridge_Castle_NPC4_Text_1:
+Lumbridge_Castle_NPC4_Text_2:
 	.string "The best way to find your enemies type\n"
 	.string "is to just use moves.\p"
 	.string "Identify their weakness!$"
 
 Lumbridge_Castle_NPC5_Text_0:
+	.string "Farmer$"
+
+Lumbridge_Castle_NPC5_Text_1:
 	.string "I got my very own Bestiary!\p"
 	.string "But yikes!\p"
 	.string "I don't think I am ever going to be able\n"
 	.string "to fill this out.$"
 
-Lumbridge_Castle_NPC5_Text_1:
+Lumbridge_Castle_NPC5_Text_2:
 	.string "I need flour from the mill but it is such\n"
 	.string "a long trip.$"
 
 Lumbridge_Castle_NPC6_Text_0:
+	.string "Man$"
+
+Lumbridge_Castle_NPC6_Text_1:
 	.string "Pouches, huh?\p"
 	.string "I never knew we could trap monsters\n"
 	.string "within those.$"
 
-Lumbridge_Castle_NPC6_Text_1:
+Lumbridge_Castle_NPC6_Text_2:
 	.string "The Duke is sort of like the regional\n"
 	.string "champion around here.\p"
 	.string "Better stay on his good side.$"

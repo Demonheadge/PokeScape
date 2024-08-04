@@ -63,8 +63,7 @@ MOVEMENT_LUMBRIDGESWAMP_PINKGIRL_2:
 
 BATTLE_LumbridgeSwamp_TRAINER_1::
 	trainerbattle_single TRAINER_RSN_LUM_SWAMP, BATTLE_LumbridgeSwamp_TRAINER_1_Text_0, BATTLE_LumbridgeSwamp_TRAINER_1_Text_1
-	namebox BATTLE_LumbridgeSwamp_TRAINER_1_Text_2
-	msgbox BATTLE_LumbridgeSwamp_TRAINER_1_Text_3
+	msgbox BATTLE_LumbridgeSwamp_TRAINER_1_Text_2
 	hidenamebox
 	closemessage
 	end
@@ -72,7 +71,6 @@ BATTLE_LumbridgeSwamp_TRAINER_1::
 
 BATTLE_LumbridgeSwamp_TRAINER_2::
 	trainerbattle_single TRAINER_SKELETON_LUM_SWAMP, BATTLE_LumbridgeSwamp_TRAINER_2_Text_0, BATTLE_LumbridgeSwamp_TRAINER_2_Text_1
-	namebox BATTLE_LumbridgeSwamp_TRAINER_2_Text_2
 	msgbox BATTLE_LumbridgeSwamp_TRAINER_2_Text_1
 	hidenamebox
 	closemessage
@@ -81,7 +79,6 @@ BATTLE_LumbridgeSwamp_TRAINER_2::
 
 BATTLE_LumbridgeSwamp_TRAINER_3::
 	trainerbattle_single TRAINER_MUGGER_LUM_SWAMP, BATTLE_LumbridgeSwamp_TRAINER_3_Text_0, BATTLE_LumbridgeSwamp_TRAINER_3_Text_1
-	namebox BATTLE_LumbridgeSwamp_TRAINER_3_Text_2
 	msgbox BATTLE_LumbridgeSwamp_TRAINER_3_Text_1
 	hidenamebox
 	closemessage
@@ -90,7 +87,6 @@ BATTLE_LumbridgeSwamp_TRAINER_3::
 
 BATTLE_LumbridgeSwamp_TRAINER_4::
 	trainerbattle_single TRAINER_LUM_SWAMP_GRASSTEETH, BATTLE_LumbridgeSwamp_TRAINER_4_Text_0, BATTLE_LumbridgeSwamp_TRAINER_4_Text_1
-	namebox BATTLE_LumbridgeSwamp_TRAINER_4_Text_2
 	msgbox BATTLE_LumbridgeSwamp_TRAINER_4_Text_1
 	hidenamebox
 	closemessage
@@ -99,8 +95,7 @@ BATTLE_LumbridgeSwamp_TRAINER_4::
 
 BATTLE_LumbridgeSwamp_TRAINER_5::
 	trainerbattle_single TRAINER_LUM_SWAMP_TRAINER_5, BATTLE_LumbridgeSwamp_TRAINER_5_Text_0, BATTLE_LumbridgeSwamp_TRAINER_5_Text_1
-	namebox BATTLE_LumbridgeSwamp_TRAINER_5_Text_2
-	msgbox BATTLE_LumbridgeSwamp_TRAINER_5_Text_3
+	msgbox BATTLE_LumbridgeSwamp_TRAINER_5_Text_2
 	hidenamebox
 	closemessage
 	end
@@ -120,7 +115,8 @@ ITEM_LUMBRIDGESWAMP_ITEM_2::
 LUMBRIDGESWAMP_CANDLESELLER::
 	lock
 	faceplayer
-	msgbox LUMBRIDGESWAMP_CANDLESELLER_Text_0
+	namebox LUMBRIDGESWAMP_CANDLESELLER_Text_0
+	msgbox LUMBRIDGESWAMP_CANDLESELLER_Text_1
 	checkitem ITEM_FLASH_TOOL, 1
 	compare VAR_RESULT, 0
 	goto_if_eq LUMBRIDGESWAMP_CANDLESELLER_2
@@ -133,9 +129,9 @@ LUMBRIDGESWAMP_CANDLESELLER::
 	end
 
 LUMBRIDGESWAMP_CANDLESELLER_2:
-	msgbox LUMBRIDGESWAMP_CANDLESELLER_Text_1
-	giveitem ITEM_FLASH_TOOL
 	msgbox LUMBRIDGESWAMP_CANDLESELLER_Text_2
+	giveitem ITEM_FLASH_TOOL
+	msgbox LUMBRIDGESWAMP_CANDLESELLER_Text_3
 	closemessage
 	release
 	end
@@ -235,9 +231,6 @@ BATTLE_LumbridgeSwamp_TRAINER_1_Text_1:
 	.string "Get out of me swamp!$"
 
 BATTLE_LumbridgeSwamp_TRAINER_1_Text_2:
-	.string "Slimethighs$"
-
-BATTLE_LumbridgeSwamp_TRAINER_1_Text_3:
 	.string "Me do not like you.$"
 
 BATTLE_LumbridgeSwamp_TRAINER_2_Text_0:
@@ -246,17 +239,11 @@ BATTLE_LumbridgeSwamp_TRAINER_2_Text_0:
 BATTLE_LumbridgeSwamp_TRAINER_2_Text_1:
 	.string "Rattle…$"
 
-BATTLE_LumbridgeSwamp_TRAINER_2_Text_2:
-	.string "Brittlebones$"
-
 BATTLE_LumbridgeSwamp_TRAINER_3_Text_0:
 	.string "Stay still and nobody gets hurt!$"
 
 BATTLE_LumbridgeSwamp_TRAINER_3_Text_1:
 	.string "My feelings got hurt by your victory.$"
-
-BATTLE_LumbridgeSwamp_TRAINER_3_Text_2:
-	.string "Robin$"
 
 BATTLE_LumbridgeSwamp_TRAINER_4_Text_0:
 	.string "Did pink humans say to find me?$"
@@ -264,9 +251,6 @@ BATTLE_LumbridgeSwamp_TRAINER_4_Text_0:
 BATTLE_LumbridgeSwamp_TRAINER_4_Text_1:
 	.string "Pink humans chase relentless.\p"
 	.string "Me scared.$"
-
-BATTLE_LumbridgeSwamp_TRAINER_4_Text_2:
-	.string "Grassteeth$"
 
 BATTLE_LumbridgeSwamp_TRAINER_5_Text_0:
 	.string "My pickaxe head just flew right off!\p"
@@ -278,26 +262,26 @@ BATTLE_LumbridgeSwamp_TRAINER_5_Text_1:
 	.string "my pickaxe head back.$"
 
 BATTLE_LumbridgeSwamp_TRAINER_5_Text_2:
-	.string "Miner$"
-
-BATTLE_LumbridgeSwamp_TRAINER_5_Text_3:
 	.string "I guess I need to visit Bob's Axes to\n"
 	.string "get my pickaxe fixed now.$"
 
 LumSwampSign_Text_0:
-	.string "WARNING: Goblins below!$"
+	.string "WARNING: Monsters below!$"
 
 LUMBRIDGESWAMP_CANDLESELLER_Text_0:
+	.string "Candle Seller$"
+
+LUMBRIDGESWAMP_CANDLESELLER_Text_1:
 	.string "I wouldn't go down there without a light\n"
 	.string "source.\p"
 	.string "It's dangerous!$"
 
-LUMBRIDGESWAMP_CANDLESELLER_Text_1:
+LUMBRIDGESWAMP_CANDLESELLER_Text_2:
 	.string "But…{PAUSE 15}…{PAUSE 15}…\p"
 	.string "If you are serious about going down\n"
 	.string "there, take this.$"
 
-LUMBRIDGESWAMP_CANDLESELLER_Text_2:
+LUMBRIDGESWAMP_CANDLESELLER_Text_3:
 	.string "Be careful down there.$"
 
 LUMBRIDGESWAMP_FAIRY_Text_0:

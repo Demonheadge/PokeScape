@@ -45,7 +45,7 @@ script NPC_DraynorManor_Chicken_1{
 	waitmoncry
     hidenamebox
 	closemessage
-    namebox("Prof.Oddenstein")
+    namebox("Oddenstein")
     msgbox(format("I call that an Ernest Chicken!\pI named it this breed after its father.\pBasically I turned this guy called Ernest into a chicken, he laid some eggs and these chickens are what hatched from them."))
 	hidenamebox
 	closemessage
@@ -279,13 +279,13 @@ script NPC_DraynorManor_Oddenstein{
 	faceplayer
 	switch (var(VAR_POKESCAPE_ERNEST_QUEST_STATE)){ 
 		case 0: 
-			namebox ("Prof.Oddenstein")
+			namebox ("Oddenstein")
 			msgbox(format("Hello there, you seem to be an adventurer.\pYou see, recently a human named Ernest was turned into a chicken.\pWe managed to transform him back but not before he laid a bunch of eggs.\pOriginally I thought nothing of it and was planning to have the eggs for breakfast tomorrow but they ended up hatching and now there are chicken all over the place."))
 			msgbox(format("I've come up with a great idea involving the increasing number of chickens.\pBut I need an assistant, can you help me with my experiment?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT)){
 				hidenamebox
 				startquest (QUEST_ERNEST_THE_CHICKEN)
-				namebox ("Prof.Oddenstein")
+				namebox ("Oddenstein")
 				msgbox(format("I need a few items for my experiment to succeed can you go get me them?\pI need a Oil Can, Pressure Gauge and Rubber Tube."))
                 msgbox(format("The Oil Can should be with Ava.\pShe is in the room next to the living room.\pShe loves puzzles so I'd imagine she would have hidden the door to her room behind a bookcase or something."))
                 msgbox(format("I believe the last place I saw the Pressure Gauge being used was outside in the fountain."))
@@ -306,7 +306,7 @@ script NPC_DraynorManor_Oddenstein{
 			}
 
     	case 1: 
-			namebox ("Prof.Oddenstein")
+			namebox ("Oddenstein")
 			msgbox(format("Have you found the parts?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT)){
 				msgbox(format("Let me check…"))
@@ -339,7 +339,7 @@ script NPC_DraynorManor_Oddenstein{
 			}
 
         case 2:    
-            namebox ("Prof.Oddenstein")
+            namebox ("Oddenstein")
 			msgbox(format("Don't be shy, I know they look weird but they are just chickens.\pGo pick one up and bring it over here to me."))
             //msgbox(format("Go dig up old polly and put her inside that cage!\pI buried her out the back by the gravestone."))
 			hidenamebox
@@ -348,7 +348,7 @@ script NPC_DraynorManor_Oddenstein{
 			end
 
 		case 3: 
-			namebox ("Prof.Oddenstein")
+			namebox ("Oddenstein")
 			msgbox(format("Perfect, thats an Ernest Chicken exactly what we needed!\pStand back let the experiment begin!"))
             closemessage
             hidenamebox
@@ -389,16 +389,17 @@ script NPC_DraynorManor_Oddenstein{
             end
 
         case 4: 
-            namebox ("Prof.Oddenstein")
+            namebox ("Oddenstein")
 			msgbox(format("Please dispose of that chicken."))
             closemessage
             hidenamebox
 			release
             end
 		case 5: 
-            namebox ("Prof.Oddenstein")
+            namebox ("Oddenstein")
 			msgbox(format("It is gone, thank you {PLAYER}."))
 			questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN)
+			hidenamebox
 			giveitem(ITEM_MINT_CAKE, 2)
 			setvar(VAR_POKESCAPE_ERNEST_QUEST_STATE, 6)
             closemessage
@@ -406,7 +407,7 @@ script NPC_DraynorManor_Oddenstein{
 			release
             end
 		case 6: 
-			namebox ("Prof.Oddenstein")
+			namebox ("Oddenstein")
 			msgbox(format("Thank you for your help."))
 			hidenamebox
 			closemessage
@@ -495,7 +496,7 @@ script CooksAssistant_Check_RubberTube {
 script NPC_DraynorManor_Fisherman{
 	lock
 	faceplayer
-    //namebox ("Fisherman")
+    namebox ("Man")
     checkitem (ITEM_PRESSURE_GAUGE,1)
 	if (var(VAR_RESULT)){
 		msgbox(format("Why did you do that?\pI just wanted to fish for piranhas."))

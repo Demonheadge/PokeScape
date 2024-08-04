@@ -34,6 +34,7 @@ script LumForest_STATE{
 //NPCS
 script LUMBRIDGEFOREST_NPC_BOT1
 {
+    namebox("Bot")
     msgbox(format("BEEP BOOP."))
     closemessage
     release
@@ -41,6 +42,7 @@ script LUMBRIDGEFOREST_NPC_BOT1
 }
 script LUMBRIDGEFOREST_NPC_BOT2
 {
+    namebox("Bot")
     msgbox(format("CHOP, CHOP, CHOP."))
     closemessage
     release
@@ -49,6 +51,7 @@ script LUMBRIDGEFOREST_NPC_BOT2
 script LUMBRIDGEFOREST_NPC_WOODCUTTER
 {
     faceplayer
+    namebox("Woodcutter")
     msgbox(format("These bots are so annoying."))
     closemessage
     release
@@ -153,7 +156,7 @@ script BATTLE_LUMBRIDGEFOREST_BOT1
 script BATTLE_LUMBRIDGEFOREST_WOODCUTTER1
 { //
     trainerbattle_single(TRAINER_LUMBRIDGEFOREST_WOODCUTTER1, format("OMG LUL, guess what?\pThese woods belong to me!"),format("JK, I'll share."))
-    namebox ("Ch0ppa1")
+    //namebox ("Ch0ppa1")
     msgbox(format("Like ROFLMAO you are stronk.\pYou sure cut me down to size, OMEGALUL!"))
 	hidenamebox
     release
@@ -163,7 +166,7 @@ script BATTLE_LUMBRIDGEFOREST_WOODCUTTER1
 script BATTLE_LUMBRIDGEFOREST_TRAINER_1
 { //mugger
     trainerbattle_single(TRAINER_LUMBRIDGEFOREST_TRAINER_1, format("I am going to jump out and attack you now."),format("I would jump for joy, except I seem to have lost this battle."))
-    namebox ("Mugger")
+    //namebox ("Mugger")
     msgbox(format("I would jump for joy, except I seem to have lost this battle."))
 	hidenamebox
     release
@@ -172,7 +175,7 @@ script BATTLE_LUMBRIDGEFOREST_TRAINER_1
 script BATTLE_LUMBRIDGEFOREST_TRAINER_2
 { //goblin 1
     trainerbattle_single(TRAINER_LUMBRIDGEFOREST_TRAINER_2, format("Me and me friend destroyed the path through the forest to lure pink hoomens into trap.\pNow you have wandered into it."),format("Oh no, you has escaped the trap!"))
-    namebox ("Foulblood")
+    //namebox ("Foulblood")
     msgbox(format("Me and me friend destroyed the path through the forest to lure pink hoomens into trap.\pYou escaped trap.\pMakes me rethink new trap."))
 	hidenamebox
     release
@@ -181,7 +184,7 @@ script BATTLE_LUMBRIDGEFOREST_TRAINER_2
 script BATTLE_LUMBRIDGEFOREST_TRAINER_3
 { //goblin 2
     trainerbattle_single(TRAINER_LUMBRIDGEFOREST_TRAINER_3, format("Me liek this forest.\pMe hope no harm comes to it."),format("Clearly big high war god favours you."))
-    namebox ("Toadtoes")
+    //namebox ("Toadtoes")
     msgbox(format("Me liek this forest.\pMe hope no harm comes to it.\pMe would be sad if big high war god were to damage it and make a big dirt hole."))
 	hidenamebox
     release

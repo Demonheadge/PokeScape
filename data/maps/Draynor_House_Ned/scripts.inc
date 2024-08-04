@@ -19,7 +19,9 @@ Ned_Draynor_2:
 	goto_if_eq Ned_Draynor_5
 	msgbox Ned_Draynor_Text_4
 	removemoney 500
+	hidenamebox
 	giveitem ITEM_ROPE
+	namebox Ned_Draynor_Text_0
 	closemessage
 	hidenamebox
 	release

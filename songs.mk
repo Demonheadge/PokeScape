@@ -1452,5 +1452,14 @@ $(MID_SUBDIR)/MUS_PS_WISE_OLD_MAN_THEME.s: %.s: %.mid
 $(MID_SUBDIR)/MUS_PS_VS_WISE_OLD_MAN_RIVAL.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G193 -V100
 
+$(MID_SUBDIR)/MUS_PS_GODSLAYER.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G193 -V100
+
+$(MID_SUBDIR)/MUS_PS_LUMBRIDGE_CASTLE.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G193 -V100
+
+
+	
+
 
 	

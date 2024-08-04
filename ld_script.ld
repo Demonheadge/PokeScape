@@ -1310,7 +1310,10 @@ SECTIONS {
         sound/songs/midi/MUS_PS_VS_CHAOS_TUNNELS.o(.rodata);
         sound/songs/midi/MUS_PS_WISE_OLD_MAN_THEME.o(.rodata);
         sound/songs/midi/MUS_PS_VS_WISE_OLD_MAN_RIVAL.o(.rodata);
+        sound/songs/midi/MUS_PS_GODSLAYER.o(.rodata);
+        sound/songs/midi/MUS_PS_LUMBRIDGE_CASTLE.o(.rodata);
     } > ROM =0
+
 
     lib_rodata :
     SUBALIGN(4)

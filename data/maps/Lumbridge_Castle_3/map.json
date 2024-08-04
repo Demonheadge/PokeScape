@@ -2,7 +2,7 @@
   "id": "MAP_LUMBRIDGE_CASTLE_3",
   "name": "Lumbridge_Castle_3",
   "layout": "LAYOUT_LUMBRIDGE_CASTLE_3",
-  "music": "MUS_PS_LUMBRIDGE",
+  "music": "MUS_PS_LUMBRIDGE_CASTLE",
   "region_map_section": "MAPSEC_LUMBRIDGE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -55,7 +55,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GUARD_FALADOR",
-      "x": 8,
+      "x": 17,
       "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
@@ -64,6 +64,19 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LUMBRIDGE_GYM_GUARD_1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HANS",
+      "x": 7,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HANS_GYM_LUMBRIDGE",
       "flag": "0"
     }
   ],
@@ -112,7 +125,15 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_TEMP_A",
+      "var_value": "1",
+      "script": "TRIGGER_GYM_DUKE"
+    }
   ],
   "bg_events": [
     {

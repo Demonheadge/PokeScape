@@ -26,7 +26,8 @@ SIGN_MILL_LANE_MILL::
 NPC1_MILL_LANE_MILL::
 	lock
 	faceplayer
-	msgbox NPC1_MILL_LANE_MILL_Text_0
+	namebox NPC1_MILL_LANE_MILL_Text_0
+	msgbox NPC1_MILL_LANE_MILL_Text_1
 	release
 	end
 
@@ -161,12 +162,15 @@ SIGN_MILL_LANE_MILL_Text_0:
 	.string "The finest flour in all of Gielinor.$"
 
 NPC1_MILL_LANE_MILL_Text_0:
+	.string "Farmer$"
+
+NPC1_MILL_LANE_MILL_Text_1:
 	.string "This is the Mill Lane Mill.\p"
 	.string "The Miller family has produced flour for\n"
 	.string "generations!$"
 
 BEEFY_BILL_MILL_LANE_MILL_Text_0:
-	.string "William Whitebred$"
+	.string "W. Whitebred$"
 
 BEEFY_BILL_MILL_LANE_MILL_Text_1:
 	.string "Welcome to Beefy Bill's Supplies!\p"

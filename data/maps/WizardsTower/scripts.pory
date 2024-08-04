@@ -268,7 +268,7 @@ script BATTLE_WizardsTower_Trainer_1
 script BATTLE_WizardsTower_Trainer_2
 {
     trainerbattle_single(TRAINER_WIZARDSTOWER_TRAINER_2, format("Welcome to the Wizards' Tower, now face my magic!"),format("Hope you enjoy your stay."))
-    namebox ("Goldberg")
+    //namebox ("Goldberg")
     msgbox(format("Hope you enjoy your stay."))
     hidenamebox
     release
@@ -298,7 +298,7 @@ script BATTLE_WizardsTower_Trainer_4
 script BATTLE_WizardsTower_Myrtle
 {
     trainerbattle_single(TRAINER_WIZARDSTOWER_TRAINER_MYRTLE, format("I love water types!"),format("But I hate getting wet…"))
-    namebox ("Myrtle")
+    //namebox ("Myrtle")
     msgbox(format("Water type monsters amaze me, but I cannot stand getting wet."))
     hidenamebox
     release

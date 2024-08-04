@@ -123,11 +123,23 @@ QUEST_STATE_WizardsTower_ROUTE1_5:
 	end
 
 
+NPC_DOG::
+	lock
+	faceplayer
+	namebox NPC_DOG_Text_0
+	playmoncry SPECIES_BORDER_COLLIE, 0
+	msgbox NPC_DOG_Text_1
+	waitmoncry
+	hidenamebox
+	release
+	end
+
+
 NPC_DUCK::
 	lock
 	faceplayer
 	namebox NPC_DUCK_Text_0
-	playmoncry SPECIES_PSYDUCK, 0
+	playmoncry SPECIES_DUCK_NORMAL_FORM, 0
 	msgbox NPC_DUCK_Text_1
 	waitmoncry
 	hidenamebox
@@ -139,7 +151,7 @@ NPC_RAT::
 	lock
 	faceplayer
 	namebox NPC_RAT_Text_0
-	playmoncry SPECIES_RATTATA, 0
+	playmoncry SPECIES_RAT_NORMAL_FORM, 0
 	msgbox NPC_RAT_Text_1
 	waitmoncry
 	hidenamebox
@@ -151,7 +163,7 @@ NPC_SHEEP::
 	lock
 	faceplayer
 	namebox NPC_SHEEP_Text_0
-	playmoncry SPECIES_MAREEP, 0
+	playmoncry SPECIES_SHEEP_WHITE_FORM, 0
 	msgbox NPC_SHEEP_Text_1
 	waitmoncry
 	hidenamebox
@@ -163,7 +175,7 @@ NPC_COW::
 	lock
 	faceplayer
 	namebox NPC_COW_Text_0
-	playmoncry SPECIES_MILTANK, 0
+	playmoncry SPECIES_COW, 0
 	msgbox NPC_COW_Text_1
 	waitmoncry
 	hidenamebox
@@ -175,7 +187,7 @@ NPC_CAT::
 	lock
 	faceplayer
 	namebox NPC_CAT_Text_0
-	playmoncry SPECIES_MEOWTH, 0
+	playmoncry SPECIES_CAT_NORMAL_FORM, 0
 	msgbox NPC_CAT_Text_1
 	waitmoncry
 	hidenamebox
@@ -187,7 +199,9 @@ NPC_ABYSSALDEMON::
 	lock
 	faceplayer
 	namebox NPC_ABYSSALDEMON_Text_0
+	playmoncry SPECIES_ABYSSAL_DEMON_FORM, 0
 	msgbox NPC_ABYSSALDEMON_Text_1
+	waitmoncry
 	hidenamebox
 	release
 	end
@@ -197,7 +211,7 @@ NPC_CAMEL::
 	lock
 	faceplayer
 	namebox NPC_CAMEL_Text_0
-	playmoncry SPECIES_MILTANK, 0
+	playmoncry SPECIES_CAMEL, 0
 	msgbox NPC_CAMEL_Text_1
 	waitmoncry
 	hidenamebox
@@ -213,6 +227,17 @@ NPC_MONKEY::
 	msgbox NPC_MONKEY_Text_1
 	waitmoncry
 	hidenamebox
+	release
+	end
+
+
+NPC_PIG::
+	lock
+	faceplayer
+	namebox NPC_PIG_Text_0
+	playmoncry SPECIES_PIG, 0
+	msgbox NPC_PIG_Text_1
+	waitmoncry
 	release
 	end
 
@@ -241,11 +266,12 @@ SIGN_ROUTE1_3::
 NPC_FISHERMAN_1::
 	lock
 	faceplayer
-	msgbox NPC_FISHERMAN_1_Text_0
+	namebox NPC_FISHERMAN_1_Text_0
+	msgbox NPC_FISHERMAN_1_Text_1
 	checkitem ITEM_SMALL_NET, 1
 	compare VAR_RESULT, 0
 	goto_if_eq NPC_FISHERMAN_1_2
-	msgbox NPC_FISHERMAN_1_Text_3
+	msgbox NPC_FISHERMAN_1_Text_4
 	release
 	end
 
@@ -253,9 +279,11 @@ NPC_FISHERMAN_1::
 	end
 
 NPC_FISHERMAN_1_2:
-	msgbox NPC_FISHERMAN_1_Text_1
-	giveitem ITEM_SMALL_NET
 	msgbox NPC_FISHERMAN_1_Text_2
+	hidenamebox
+	giveitem ITEM_SMALL_NET
+	namebox NPC_FISHERMAN_1_Text_0
+	msgbox NPC_FISHERMAN_1_Text_3
 	release
 	end
 
@@ -308,8 +336,7 @@ ROUTE1_FarmerFred::
 
 Wartfoot_Route1_Battle::
 	trainerbattle_single TRAINER_GOBLIN_1_ROUTE1, Wartfoot_Route1_Battle_Text_0, Wartfoot_Route1_Battle_Text_1
-	namebox Wartfoot_Route1_Battle_Text_2
-	msgbox Wartfoot_Route1_Battle_Text_3
+	msgbox Wartfoot_Route1_Battle_Text_2
 	hidenamebox
 	release
 	end
@@ -317,8 +344,7 @@ Wartfoot_Route1_Battle::
 
 Frogface_Route1_Battle::
 	trainerbattle_single TRAINER_GOBLIN_2_ROUTE1, Frogface_Route1_Battle_Text_0, Frogface_Route1_Battle_Text_1
-	namebox Frogface_Route1_Battle_Text_2
-	msgbox Frogface_Route1_Battle_Text_3
+	msgbox Frogface_Route1_Battle_Text_2
 	hidenamebox
 	release
 	end
@@ -326,8 +352,7 @@ Frogface_Route1_Battle::
 
 Trainer1_Route1_Battle::
 	trainerbattle_single TRAINER_RSN_ROUTE1, Trainer1_Route1_Battle_Text_0, Trainer1_Route1_Battle_Text_1
-	namebox Trainer1_Route1_Battle_Text_2
-	msgbox Trainer1_Route1_Battle_Text_3
+	msgbox Trainer1_Route1_Battle_Text_2
 	closemessage
 	hidenamebox
 	release
@@ -336,8 +361,7 @@ Trainer1_Route1_Battle::
 
 MudbeardBattle::
 	trainerbattle_single TRAINER_GOBLIN_3_ROUTE1, MudbeardBattle_Text_0, MudbeardBattle_Text_1
-	namebox MudbeardBattle_Text_2
-	msgbox MudbeardBattle_Text_3
+	msgbox MudbeardBattle_Text_2
 	closemessage
 	hidenamebox
 	release
@@ -346,8 +370,7 @@ MudbeardBattle::
 
 Route1FarmerBattle::
 	trainerbattle_single TRAINER_FARMER_ROUTE1, Route1FarmerBattle_Text_0, Route1FarmerBattle_Text_1
-	namebox Route1FarmerBattle_Text_2
-	msgbox Route1FarmerBattle_Text_3
+	msgbox Route1FarmerBattle_Text_2
 	hidenamebox
 	release
 	return
@@ -355,8 +378,7 @@ Route1FarmerBattle::
 
 FeetfingersBattle::
 	trainerbattle_single TRAINER_GOBLIN_4_ROUTE1, FeetfingersBattle_Text_0, FeetfingersBattle_Text_1
-	namebox FeetfingersBattle_Text_2
-	msgbox FeetfingersBattle_Text_3
+	msgbox FeetfingersBattle_Text_2
 	hidenamebox
 	release
 	end
@@ -365,7 +387,7 @@ FeetfingersBattle::
 ChickenBattleScript1::
 	lock
 	faceplayer
-	playmoncry SPECIES_TORCHIC, 0
+	playmoncry SPECIES_CHICKEN_NORMAL_FORM, 0
 	msgbox ChickenBattleScript1_Text_0
 	waitmoncry
 	setwildbattle SPECIES_CHICKEN_NORMAL_FORM, 4, ITEM_NONE
@@ -378,7 +400,7 @@ ChickenBattleScript1::
 ChickenBattleScript2::
 	lock
 	faceplayer
-	playmoncry SPECIES_TORCHIC, 0
+	playmoncry SPECIES_CHICKEN_NORMAL_FORM, 0
 	msgbox ChickenBattleScript1_Text_0
 	waitmoncry
 	setwildbattle SPECIES_CHICKEN_NORMAL_FORM, 4, ITEM_NONE
@@ -391,7 +413,7 @@ ChickenBattleScript2::
 ChickenBattleScript3::
 	lock
 	faceplayer
-	playmoncry SPECIES_TORCHIC, 0
+	playmoncry SPECIES_CHICKEN_NORMAL_FORM, 0
 	msgbox ChickenBattleScript1_Text_0
 	waitmoncry
 	setwildbattle SPECIES_CHICKEN_NORMAL_FORM, 4, ITEM_NONE
@@ -444,7 +466,7 @@ ErnestAndVeronica_1:
 	return
 
 ErnestAndVeronica_5:
-	playmoncry SPECIES_TORCHIC, 0
+	playmoncry SPECIES_CHICKEN_NORMAL_FORM, 0
 	namebox ErnestAndVeronica_Text_0
 	msgbox ErnestAndVeronica_Text_1
 	waitmoncry
@@ -456,11 +478,11 @@ ErnestAndVeronica_5:
 	hidenamebox
 	closemessage
 	waitmovement 0
-	playmoncry SPECIES_TORCHIC, 0
+	playmoncry SPECIES_CHICKEN_NORMAL_FORM, 0
 	namebox ErnestAndVeronica_Text_0
 	msgbox ErnestAndVeronica_Text_4
 	waitmoncry
-	playmoncry SPECIES_TORCHIC, 0
+	playmoncry SPECIES_CHICKEN_NORMAL_FORM, 0
 	msgbox ErnestAndVeronica_Text_5
 	waitmoncry
 	hidenamebox
@@ -471,7 +493,7 @@ ErnestAndVeronica_5:
 	hidenamebox
 	closemessage
 	waitmovement 0
-	playmoncry SPECIES_COMBUSKEN, 0
+	playmoncry SPECIES_CHICKEN_NORMAL_FORM, 1
 	namebox ErnestAndVeronica_Text_0
 	msgbox ErnestAndVeronica_Text_7
 	waitmoncry
@@ -790,53 +812,65 @@ BATTLE_AREA_TRAINER_3::
 	end
 
 
+NPC_DOG_Text_0:
+	.string "Dog$"
+
+NPC_DOG_Text_1:
+	.string "Woof, Woof!$"
+
 NPC_DUCK_Text_0:
-	.string "DUCK$"
+	.string "Duck$"
 
 NPC_DUCK_Text_1:
 	.string "Quack!$"
 
 NPC_RAT_Text_0:
-	.string "RAT$"
+	.string "Rat$"
 
 NPC_RAT_Text_1:
 	.string "SKREEK!$"
 
 NPC_SHEEP_Text_0:
-	.string "SHEEP$"
+	.string "Sheep$"
 
 NPC_SHEEP_Text_1:
 	.string "Baaa!$"
 
 NPC_COW_Text_0:
-	.string "COW$"
+	.string "Cow$"
 
 NPC_COW_Text_1:
 	.string "Mooo!$"
 
 NPC_CAT_Text_0:
-	.string "CAT$"
+	.string "Cat$"
 
 NPC_CAT_Text_1:
 	.string "Meeeooww…$"
 
 NPC_ABYSSALDEMON_Text_0:
-	.string "ABYSSAL DEMON$"
+	.string "Abyssal Demon$"
 
 NPC_ABYSSALDEMON_Text_1:
 	.string "Schttle, skrtch!$"
 
 NPC_CAMEL_Text_0:
-	.string "CAMEL$"
+	.string "Camel$"
 
 NPC_CAMEL_Text_1:
 	.string "The Camel spits at you.$"
 
 NPC_MONKEY_Text_0:
-	.string "MONKEY$"
+	.string "Monkey$"
 
 NPC_MONKEY_Text_1:
 	.string "Oook, Ook!$"
+
+NPC_PIG_Text_0:
+	.string "Pig$"
+
+NPC_PIG_Text_1:
+	.string "OINK!$"
 
 SIGN_ROUTE1_1_Text_0:
 	.string "Fred's Farm.$"
@@ -853,23 +887,26 @@ SIGN_ROUTE1_3_Text_0:
 	.string "SOUTH to DRAYNOR$"
 
 NPC_FISHERMAN_1_Text_0:
+	.string "Fisherman$"
+
+NPC_FISHERMAN_1_Text_1:
 	.string "I love to fish in this pond.\p"
 	.string "It is so peaceful, with the ducks that\n"
 	.string "keep me company.\p"
 	.string "I cannot imagine anything bad to\n"
 	.string "happen here.$"
 
-NPC_FISHERMAN_1_Text_1:
+NPC_FISHERMAN_1_Text_2:
 	.string "You seem like someone who would also\n"
 	.string "enjoy fishing in this pond.\p"
 	.string "Here take this!$"
 
-NPC_FISHERMAN_1_Text_2:
+NPC_FISHERMAN_1_Text_3:
 	.string "It is only a small net but I'm sure there\n"
 	.string "are plenty of things you could fish up\l"
 	.string "with it!$"
 
-NPC_FISHERMAN_1_Text_3:
+NPC_FISHERMAN_1_Text_4:
 	.string "How are you finding fishing in the pond?\p"
 	.string "Have you caught anything yet?{PAUSE 15}\p"
 	.string "Did you know that a crayfish evolves\n"
@@ -944,9 +981,6 @@ Wartfoot_Route1_Battle_Text_1:
 	.string "Um… My brown armour in the wash.$"
 
 Wartfoot_Route1_Battle_Text_2:
-	.string "WartFoot$"
-
-Wartfoot_Route1_Battle_Text_3:
 	.string "Me like brown armour, but now it dirty.$"
 
 Frogface_Route1_Battle_Text_0:
@@ -956,9 +990,6 @@ Frogface_Route1_Battle_Text_1:
 	.string "You still ugly!$"
 
 Frogface_Route1_Battle_Text_2:
-	.string "FrogFace$"
-
-Frogface_Route1_Battle_Text_3:
 	.string "You really, really ugly!$"
 
 Trainer1_Route1_Battle_Text_0:
@@ -968,9 +999,6 @@ Trainer1_Route1_Battle_Text_1:
 	.string "Maybe I'm the noob…$"
 
 Trainer1_Route1_Battle_Text_2:
-	.string "Bob$"
-
-Trainer1_Route1_Battle_Text_3:
 	.string "The mill is up ahead.\p"
 	.string "I heard you can get some good flour\n"
 	.string "there.$"
@@ -982,9 +1010,6 @@ MudbeardBattle_Text_1:
 	.string "Leave me alone!$"
 
 MudbeardBattle_Text_2:
-	.string "Mudbeard$"
-
-MudbeardBattle_Text_3:
 	.string "Smelly human!$"
 
 Route1FarmerBattle_Text_0:
@@ -995,9 +1020,6 @@ Route1FarmerBattle_Text_1:
 	.string "Its not really my lands yet.$"
 
 Route1FarmerBattle_Text_2:
-	.string "John$"
-
-Route1FarmerBattle_Text_3:
 	.string "It's not really my lands yet.$"
 
 FeetfingersBattle_Text_0:
@@ -1007,9 +1029,6 @@ FeetfingersBattle_Text_1:
 	.string "Feetfingers, impressed!$"
 
 FeetfingersBattle_Text_2:
-	.string "Feetfingers$"
-
-FeetfingersBattle_Text_3:
 	.string "Friend of Feetfingers?$"
 
 ChickenBattleScript1_Text_0:
