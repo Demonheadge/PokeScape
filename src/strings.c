@@ -288,7 +288,7 @@ const u8 *const gPyramidBagMenu_ReturnToStrings[] =
 const u8 gText_ReturnToVar1[] = _("Return to\n{STR_VAR_1}.");
 const u8 gText_ItemsPocket[] = _("ITEMS");
 const u8 gText_PokeBallsPocket[] = _("POUCHES");
-const u8 gText_TMHMPocket[] = _("TMs & HMs");
+const u8 gText_TMHMPocket[] = _("SCROLLS");
 const u8 gText_BerriesPocket[] = _("GOODIES");
 const u8 gText_KeyItemsPocket[] = _("KEY ITEMS");
 
@@ -1936,7 +1936,7 @@ const u8 gText_NeedMoreBadges[] =_("You need more badges to do this.{PAUSE_UNTIL
 
 
 const u8 gText_NewGame_Welcome[] =_("Welcome to the World of PokeScape.");
-const u8 gText_NewGame_Story_or_OpenWorld[] =_("Welcome to the World of PokeScape.\pThis game has the option of\ntwo play styles.\pYou can choose to play\nSTORY MODE or OPEN WORLD.");
+const u8 gText_NewGame_Story_or_OpenWorld[] =_("Welcome to the World of PokeScape.\pThis game has the option of\ntwo play styles.\pIf this is your first playthrough,\nthen choose STORY MODE.\pYou can choose to play\nSTORY MODE or OPEN WORLD.");
 const u8 gText_NewGame_STORYMODE_info[] =_("Are you sure you would like to play\nSTORY MODE?");
 //"STORY MODE is a generic Pokemon story\nexperience that has a set path and\lcontains story elements such as\lSide Quests, Evil Teams and Unique\lCharacters, as you battle your way to\lbe the very best of the regional\lchampionships.\p
 const u8 gText_NewGame_OPENWORLD_info[] =_("WARNING\nThis is currently a work in progress.\pAre you sure you would like to play\nOPEN WORLD?");
@@ -2018,6 +2018,15 @@ const u8 gText_SideQuestMap_Kourend[] = _("Kourend");
 const u8 gText_SubQuest_Kourend_Slayer_Name1[] = _("Dark Totem - Top");
 const u8 gText_SubQuest_Kourend_Slayer_Name2[] = _("Dark Totem - Middle");
 const u8 gText_SubQuest_Kourend_Slayer_Name3[] = _("Dark Totem - Bottom");
+
+//Banana Boat
+const u8 gText_SideQuestName_Banana_Boat[] = _("Banana Boat");
+const u8 gText_SideQuestDesc_Banana_Boat[] = _("Assist Luthas at Musa Point.");
+const u8 gText_SideQuestDesc_Completed_Banana_Boat[] = _("Quest Completed!");
+const u8 gText_SideQuestMap_MusaPoint[] = _("Musa Point");
+const u8 gText_SubQuest_Banana_Boat_Name1[] = _("Deliver 10 Bananas.");
+const u8 gText_SubQuest_Banana_Boat_Name2[] = _("Deliver 30 Bananas.");
+const u8 gText_SubQuest_Banana_Boat_Name3[] = _("Deliver over 120 Bananas.");
 //names
 
 /*

@@ -45,7 +45,8 @@ Lumbridge_Bookshelf_2::
 Lumbridge_Castle_GUARD::
 	lock
 	faceplayer
-	msgbox Lumbridge_Castle_GUARD_Text_0
+	namebox Lumbridge_Castle_GUARD_Text_0
+	msgbox Lumbridge_Castle_GUARD_Text_1
 	release
 	end
 
@@ -53,7 +54,8 @@ Lumbridge_Castle_GUARD::
 Lumbridge_Castle_HALLWAY_GUARD::
 	lock
 	faceplayer
-	msgbox Lumbridge_Castle_HALLWAY_GUARD_Text_0
+	namebox Lumbridge_Castle_HALLWAY_GUARD_Text_0
+	msgbox Lumbridge_Castle_HALLWAY_GUARD_Text_1
 	release
 	end
 
@@ -63,6 +65,7 @@ Lumbridge_Castle_HALLWAY_TRIGGER::
 	PlaySE SE_PIN
 	applymovement 3, Movement_Lumbridge_Castle_HALLWAY_TRIGGER1
 	waitmovement 0
+	namebox Lumbridge_Castle_HALLWAY_GUARD_Text_0
 	msgbox Lumbridge_Castle_HALLWAY_TRIGGER_Text_0
 	waitmessage
 	closemessage
@@ -131,11 +134,13 @@ Lumbridge_Castle_COOKS_TRIGGER_celler_2:
 Lumbridge_Castle_COOKS_TRIGGER_celler_1:
 	lock
 	PlaySE SE_PIN
-	applymovement OBJ_EVENT_ID_PLAYER, Movement_Lumbridge_Castle_COOKS_TRIGGER1
+	applymovement 1, BLOCK_COOKSASSISTANT_3
 	waitmovement 0
-	msgbox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0
+	namebox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0
+	msgbox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_1
 	waitmessage
 	closemessage
+	hidenamebox
 	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_LEFT
 	waitmovement 0
 	release
@@ -184,8 +189,11 @@ LeftDoorScript::
 	waitmovement 0
 	namebox LeftDoorScript_Text_0
 	msgbox LeftDoorScript_Text_1
+	hidenamebox
+	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PLAYER_1
 	waitmovement 0
+	namebox LeftDoorScript_Text_0
 	msgbox LeftDoorScript_Text_2
 	waitmessage
 	hidenamebox
@@ -225,8 +233,11 @@ RightDoorScript::
 	waitmovement 0
 	namebox LeftDoorScript_Text_0
 	msgbox LeftDoorScript_Text_1
+	hidenamebox
+	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_PLAYER_1
 	waitmovement 0
+	namebox LeftDoorScript_Text_0
 	msgbox LeftDoorScript_Text_2
 	waitmessage
 	hidenamebox
@@ -770,23 +781,23 @@ QUEST_Cooks_Assistant_STATE::
 	return
 
 QUEST_Cooks_Assistant_STATE_2:
-	namebox QUEST_Cooks_Assistant_STATE_Text_0
-	msgbox QUEST_Cooks_Assistant_STATE_Text_1
-	msgbox QUEST_Cooks_Assistant_STATE_Text_2, MSGBOX_YESNO
+	namebox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0
+	msgbox QUEST_Cooks_Assistant_STATE_Text_0
+	msgbox QUEST_Cooks_Assistant_STATE_Text_1, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne QUEST_Cooks_Assistant_STATE_7
-	namebox QUEST_Cooks_Assistant_STATE_Text_0
-	msgbox QUEST_Cooks_Assistant_STATE_Text_6
+	namebox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0
+	msgbox QUEST_Cooks_Assistant_STATE_Text_5
 	hidenamebox
 	release
 	end
 
 QUEST_Cooks_Assistant_STATE_3:
-	namebox QUEST_Cooks_Assistant_STATE_Text_0
-	msgbox QUEST_Cooks_Assistant_STATE_Text_7, MSGBOX_YESNO
+	namebox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0
+	msgbox QUEST_Cooks_Assistant_STATE_Text_6, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne QUEST_Cooks_Assistant_STATE_10
-	msgbox QUEST_Cooks_Assistant_STATE_Text_10
+	msgbox QUEST_Cooks_Assistant_STATE_Text_9
 	hidenamebox
 	release
 	end
@@ -795,23 +806,23 @@ QUEST_Cooks_Assistant_STATE_4:
 	checkitem ITEM_SPECIAL_CAKE, 1
 	compare VAR_RESULT, 0
 	goto_if_eq QUEST_Cooks_Assistant_STATE_13
-	msgbox QUEST_Cooks_Assistant_STATE_Text_12
+	msgbox QUEST_Cooks_Assistant_STATE_Text_11
 	removeitem ITEM_SPECIAL_CAKE, 1
-	namebox QUEST_Cooks_Assistant_STATE_Text_0
-	msgbox QUEST_Cooks_Assistant_STATE_Text_13
+	namebox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0
+	msgbox QUEST_Cooks_Assistant_STATE_Text_12
 	hidenamebox
 	closemessage
 	setvar VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE, 3
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_COOKS_ASSISTANT
-	namebox QUEST_Cooks_Assistant_STATE_Text_0
-	msgbox QUEST_Cooks_Assistant_STATE_Text_14
+	namebox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0
+	msgbox QUEST_Cooks_Assistant_STATE_Text_13
 	hidenamebox
 	closemessage
 	giveitem ITEM_BREAD, 5
 	giveitem ITEM_CAKE, 1
 	giveitem ITEM_PURPLE_SWEETS, 2
-	namebox QUEST_Cooks_Assistant_STATE_Text_0
-	msgbox QUEST_Cooks_Assistant_STATE_Text_15
+	namebox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0
+	msgbox QUEST_Cooks_Assistant_STATE_Text_14
 	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
 	goto_if_eq QUEST_Cooks_Assistant_STATE_22
 QUEST_Cooks_Assistant_STATE_21:
@@ -820,18 +831,18 @@ QUEST_Cooks_Assistant_STATE_21:
 	end
 
 QUEST_Cooks_Assistant_STATE_5:
-	namebox QUEST_Cooks_Assistant_STATE_Text_0
+	namebox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0
 	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
 	goto_if_eq QUEST_Cooks_Assistant_STATE_18
 QUEST_Cooks_Assistant_STATE_16:
-	msgbox QUEST_Cooks_Assistant_STATE_Text_18
+	msgbox QUEST_Cooks_Assistant_STATE_Text_17
 	hidenamebox
 	release
 	end
 
 QUEST_Cooks_Assistant_STATE_6:
-	namebox QUEST_Cooks_Assistant_STATE_Text_0
-	msgbox QUEST_Cooks_Assistant_STATE_Text_19
+	namebox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0
+	msgbox QUEST_Cooks_Assistant_STATE_Text_18
 	hidenamebox
 	release
 	end
@@ -839,36 +850,38 @@ QUEST_Cooks_Assistant_STATE_6:
 QUEST_Cooks_Assistant_STATE_7:
 	hidenamebox
 	startquest QUEST_COOKS_ASSISTANT
-	namebox QUEST_Cooks_Assistant_STATE_Text_0
+	namebox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0
+	msgbox QUEST_Cooks_Assistant_STATE_Text_2
 	msgbox QUEST_Cooks_Assistant_STATE_Text_3
-	msgbox QUEST_Cooks_Assistant_STATE_Text_4
+	hidenamebox
 	giveitem ITEM_MAP
-	msgbox QUEST_Cooks_Assistant_STATE_Text_5
+	namebox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0
+	msgbox QUEST_Cooks_Assistant_STATE_Text_4
 	setvar VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE, 1
 	hidenamebox
 	release
 	end
 
 QUEST_Cooks_Assistant_STATE_10:
-	msgbox QUEST_Cooks_Assistant_STATE_Text_8
+	msgbox QUEST_Cooks_Assistant_STATE_Text_7
 	call CooksAssistant_Check_EGG
 	call CooksAssistant_Check_MILK
 	call CooksAssistant_Check_FLOUR
-	msgbox QUEST_Cooks_Assistant_STATE_Text_9
+	msgbox QUEST_Cooks_Assistant_STATE_Text_8
 	setvar VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE, 2
 	hidenamebox
 	release
 	end
 
 QUEST_Cooks_Assistant_STATE_13:
-	namebox QUEST_Cooks_Assistant_STATE_Text_0
-	msgbox QUEST_Cooks_Assistant_STATE_Text_11
+	namebox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0
+	msgbox QUEST_Cooks_Assistant_STATE_Text_10
 	hidenamebox
 	release
 	end
 
 QUEST_Cooks_Assistant_STATE_17:
-	msgbox QUEST_Cooks_Assistant_STATE_Text_17
+	msgbox QUEST_Cooks_Assistant_STATE_Text_16
 	hidenamebox
 	release
 	end
@@ -882,7 +895,7 @@ QUEST_Cooks_Assistant_STATE_22:
 	playse SE_PIN
 	applymovement 1, COOK_COOKSASSISTANT_1
 	waitmovement 0
-	msgbox QUEST_Cooks_Assistant_STATE_Text_16
+	msgbox QUEST_Cooks_Assistant_STATE_Text_15
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 10
 	goto QUEST_Cooks_Assistant_STATE_21
 
@@ -954,7 +967,7 @@ QUEST_TRIGGER_BLOCK_COOKSASSISTANT_5:
 	playSE SE_PIN
 	applymovement 1, BLOCK_COOKSASSISTANT_1
 	waitmovement 0
-	namebox QUEST_Cooks_Assistant_STATE_Text_0
+	namebox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0
 	msgbox QUEST_TRIGGER_BLOCK_COOKSASSISTANT_Text_0
 	closemessage
 	hidenamebox
@@ -983,6 +996,11 @@ BLOCK_COOKSASSISTANT_2:
 	walk_right
 	step_end
 
+BLOCK_COOKSASSISTANT_3:
+	emote_exclamation_mark
+	jump_in_place_right
+	step_end
+
 QUEST_COOKING_RANGE_COOKSASSISTANT::
 	lock
 	switch VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE
@@ -1000,7 +1018,7 @@ QUEST_COOKING_RANGE_COOKSASSISTANT_2:
 	playSE SE_PIN
 	applymovement 1, COOK_COOKSASSISTANT_2
 	waitmovement 0
-	namebox QUEST_Cooks_Assistant_STATE_Text_0
+	namebox Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0
 	msgbox QUEST_COOKING_RANGE_COOKSASSISTANT_Text_0
 	hidenamebox
 	release
@@ -1260,10 +1278,16 @@ Lumbridge_Bookshelf_2_Text_0:
 	.string "strongest of them all.$"
 
 Lumbridge_Castle_GUARD_Text_0:
+	.string "Brawn$"
+
+Lumbridge_Castle_GUARD_Text_1:
 	.string "I'm on guard duty.\p"
 	.string "Please do not cause any problems.$"
 
 Lumbridge_Castle_HALLWAY_GUARD_Text_0:
+	.string "Dante$"
+
+Lumbridge_Castle_HALLWAY_GUARD_Text_1:
 	.string "I'm sorry but this hallway is off limits.\p"
 	.string "I am surprised you are talking to me to\n"
 	.string "be honest.\p"
@@ -1280,6 +1304,9 @@ Lumbridge_Castle_COOKS_TRIGGER_Text_1:
 	.string "kitchen.$"
 
 Lumbridge_Castle_COOKS_TRIGGER_celler_Text_0:
+	.string "Cook$"
+
+Lumbridge_Castle_COOKS_TRIGGER_celler_Text_1:
 	.string "Wait!\p"
 	.string "Come talk to me.$"
 
@@ -1307,11 +1334,12 @@ LeftDoorScript_Text_3:
 	.string "Professor.$"
 
 LeftDoorScript_Text_4:
-	.string "Prof. Normal Tree$"
+	.string "Prof. Tree$"
 
 LeftDoorScript_Text_5:
-	.string "Nice.\p"
 	.string "I am Professor Normal Tree.\p"
+	.string "But everyone calls me Professor Tree\n"
+	.string "for short.\p"
 	.string "I am in need of assistants to help me in\n"
 	.string "my research, as you would know this\l"
 	.string "world is full to the brim with all sorts\l"
@@ -1418,19 +1446,16 @@ Pouch_Starter3_Text_1:
 	.string "This is an Tumekling.$"
 
 QUEST_Cooks_Assistant_STATE_Text_0:
-	.string "Cook$"
-
-QUEST_Cooks_Assistant_STATE_Text_1:
 	.string "Oh dear...\p"
 	.string "What am I to do...\n"
 	.string "I'm in a terrible, terrible mess!\p"
 	.string "I should be making a cake for the Duke\n"
 	.string "but I forgot to get the ingredients!$"
 
-QUEST_Cooks_Assistant_STATE_Text_2:
+QUEST_Cooks_Assistant_STATE_Text_1:
 	.string "Can you please help me?$"
 
-QUEST_Cooks_Assistant_STATE_Text_3:
+QUEST_Cooks_Assistant_STATE_Text_2:
 	.string "Oh, thank you, thank you!\p"
 	.string "I need an egg, some milk, and some flour.\p"
 	.string "For the eggs you should check out the\n"
@@ -1441,27 +1466,27 @@ QUEST_Cooks_Assistant_STATE_Text_3:
 	.string "if they can give you some flour, north\l"
 	.string "of Lumbridge.$"
 
-QUEST_Cooks_Assistant_STATE_Text_4:
+QUEST_Cooks_Assistant_STATE_Text_3:
 	.string "Oh..\n"
 	.string "Before you go.$"
 
-QUEST_Cooks_Assistant_STATE_Text_5:
+QUEST_Cooks_Assistant_STATE_Text_4:
 	.string "Hopefully that map will help you if you\n"
 	.string "get lost.$"
 
-QUEST_Cooks_Assistant_STATE_Text_6:
+QUEST_Cooks_Assistant_STATE_Text_5:
 	.string "Fine!\p"
 	.string "I always knew you adventurer types\n"
 	.string "were callous beasts!\p"
 	.string "Go on your merry way.$"
 
-QUEST_Cooks_Assistant_STATE_Text_7:
+QUEST_Cooks_Assistant_STATE_Text_6:
 	.string "Do you have the ingredients?$"
 
-QUEST_Cooks_Assistant_STATE_Text_8:
+QUEST_Cooks_Assistant_STATE_Text_7:
 	.string "Let me check...$"
 
-QUEST_Cooks_Assistant_STATE_Text_9:
+QUEST_Cooks_Assistant_STATE_Text_8:
 	.string "It looks like you have everything!\p"
 	.string "...\p"
 	.string "This is a bit awkward but could you also\n"
@@ -1469,33 +1494,33 @@ QUEST_Cooks_Assistant_STATE_Text_9:
 	.string "I forgot how...\p"
 	.string "Please use the range over there!$"
 
-QUEST_Cooks_Assistant_STATE_Text_10:
+QUEST_Cooks_Assistant_STATE_Text_9:
 	.string "Please hurry...$"
 
-QUEST_Cooks_Assistant_STATE_Text_11:
+QUEST_Cooks_Assistant_STATE_Text_10:
 	.string "What you don't know how to bake a cake\n"
 	.string "either?!\p"
 	.string "Try throwing all of the ingredents on\n"
 	.string "the range and see what happens.$"
 
-QUEST_Cooks_Assistant_STATE_Text_12:
+QUEST_Cooks_Assistant_STATE_Text_11:
 	.string "{PLAYER} handed the SPECIAL CAKE to\n"
 	.string "the Cook.$"
 
-QUEST_Cooks_Assistant_STATE_Text_13:
+QUEST_Cooks_Assistant_STATE_Text_12:
 	.string "I am saved!\n"
 	.string "Thank you so much!\p"
 	.string "Feel free to use my range anytime!$"
 
-QUEST_Cooks_Assistant_STATE_Text_14:
+QUEST_Cooks_Assistant_STATE_Text_13:
 	.string "Also as a thank you for helping me\n"
 	.string "please take these, they may be useful\l"
 	.string "to you.$"
 
-QUEST_Cooks_Assistant_STATE_Text_15:
+QUEST_Cooks_Assistant_STATE_Text_14:
 	.string "Once again, thank you.$"
 
-QUEST_Cooks_Assistant_STATE_Text_16:
+QUEST_Cooks_Assistant_STATE_Text_15:
 	.string "Oh?\n"
 	.string "What's that?\p"
 	.string "You wanted to challenge the Duke to a\n"
@@ -1504,15 +1529,15 @@ QUEST_Cooks_Assistant_STATE_Text_16:
 	.string "Go straight up those stairs.\n"
 	.string "I'll let him know you're coming.$"
 
-QUEST_Cooks_Assistant_STATE_Text_17:
+QUEST_Cooks_Assistant_STATE_Text_16:
 	.string "Just head up those stairs, you'll find\n"
 	.string "the Duke up there.$"
 
-QUEST_Cooks_Assistant_STATE_Text_18:
+QUEST_Cooks_Assistant_STATE_Text_17:
 	.string "Once again, thank you for your help\n"
 	.string "making the cake.$"
 
-QUEST_Cooks_Assistant_STATE_Text_19:
+QUEST_Cooks_Assistant_STATE_Text_18:
 	.string "Thank you for all of your help earlier!$"
 
 CooksAssistant_Check_MILK_Text_0:

@@ -766,7 +766,8 @@
     "Chaos_Tunnels_B2F",
     "Abyssal_Realm_3",
     "Ice_Mountain",
-    "AsgarnianDungeon_B4F"
+    "AsgarnianDungeon_B4F",
+    "Lumbridge_Swamp_Caves_WGS_5"
   ],
   "gMapGroup_PokescapeIndoorTutorialIsland": [
     "Tutorial_Island_Lab_Up",
@@ -1089,6 +1090,7 @@
     "Zamorak_Church",
     "Crandor_SeaRoute",
     "Ungael",
-    "Varlamore"
+    "Varlamore",
+    "Barb_Stronghold_B4F_Mural"
   ]
 }

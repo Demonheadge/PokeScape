@@ -306,6 +306,71 @@
 #define EVO_MOVE_THREE_SEGMENT            44     // Pokémon levels up, knows specified move, has a personality value with a modulus of 1-99
 #define EVO_LEVEL_FAMILY_OF_THREE         45     // Pokémon reaches the specified level with a personality value with a modulus of 0
 #define EVO_LEVEL_FAMILY_OF_FOUR          46     // Pokémon reaches the specified level with a personality value with a modulus of 1-99
+//PokeScape
+#define EVO_LEVEL_STATUS	              47	// Monster reaches the specified level while having any status effect.
+#define EVO_LEVEL_DEATH			          48    // If the Monster reaches the specified level and is fainted upon leveling up it will evolve.
+#define EVO_LEVEL_MALE_DEATH		      49	// If the Monster reaches the specified level, is MALE and is fainted upon leveling up it will evolve.
+#define EVO_LEVEL_FEMALE_DEATH	          50	// If the Monster reaches the specified level, is FEMALE and is fainted upon leveling up it will evolve.
+#define EVO_LEVEL_ATK_LT_SPATK	          51		// pokemon evolves at given level if ATK < SPATK
+#define EVO_LEVEL_ATK_GT_SPATK	          52		// pokemon evolves at given level if ATK > SPATK
+#define EVO_LEVEL_ATK_EQ_SPATK	          53		// pokemon evolves at given level if ATK == SPATK
+#define EVO_LEVEL_SPE_LT_SPDEF	          54		// pokemon  evolves at given level if SPE < SPDEF
+#define EVO_LEVEL_SPE_GT_SPDEF	          55		// pokemon evolves at given level if SPE > SPDEF
+#define EVO_LEVEL_DEF_LT_SPE	          56		// pokemon evolves at given level if DEF > SPE
+#define EVO_LEVEL_DEF_GT_SPE	          57		// pokemon evolves at given level if DEF < SPE
+#define EVO_LEVEL_DEF_EQ_SPE	          58		// pokemon evolves at given level if DEF == SPE
+#define EVO_LEVEL_RANDOM                  59    //Evolves with at specific LEVEL and has a random 1/4 chance if it does evolve this level. Will have a different outcome upon next level up.
+#define EVO_LEVEL_PERSONALITY_ONE         60	//Evolves with at specific LEVEL and if the upper personality value is 1.
+#define EVO_LEVEL_PERSONALITY_TWO		  61	//Evolves with at specific LEVEL and if the upper personality value is 2.
+#define EVO_LEVEL_PERSONALITY_THREE	      62	//Evolves with at specific LEVEL and if the upper personality value is 3.
+#define EVO_LEVEL_PERSONALITY_FOUR	 	  63	//Evolves with at specific LEVEL and if the upper personality value is 4.
+#define EVO_LEVEL_PERSONALITY_FIVE		  64	//Evolves with at specific LEVEL and if the upper personality value is 5.
+#define EVO_LEVEL_PERSONALITY_SIX		  65	//Evolves with at specific LEVEL and if the upper personality value is 6.
+#define EVO_LEVEL_PERSONALITY_SEVEN	      66	//Evolves with at specific LEVEL and if the upper personality value is 7.
+#define EVO_LEVEL_PERSONALITY_EIGHT	      67	//Evolves with at specific LEVEL and if the upper personality value is 8.
+#define EVO_LEVEL_PERSONALITY_NINE	 	  68	//Evolves with at specific LEVEL and if the upper personality value is 9.
+//Map locations
+#define EVO_LEVEL_MAP_MORYTANIA	 	      69	//Evolves with at specific LEVEL on maps labeled as Morytania.
+#define EVO_LEVEL_MAP_KARAMJA	 	      70	//Evolves with at specific LEVEL on maps labeled as Karamja.
+#define EVO_LEVEL_MAP_MISTHALIN	 	      71	//Evolves with at specific LEVEL on maps labeled as Misthalin.
+#define EVO_LEVEL_MAP_ASGARNIA	 	      72	//Evolves with at specific LEVEL on maps labeled as Asgarnia.
+#define EVO_LEVEL_MAP_WILDERNESS	 	  76	//Evolves with at specific LEVEL on maps labeled as Wilderness.
+#define EVO_LEVEL_MAP_FREMENNIK	 	      77	//Evolves with at specific LEVEL on maps labeled as Fremennik.
+#define EVO_LEVEL_MAP_KANDARIN	 	      78	//Evolves with at specific LEVEL on maps labeled as Kandarin.
+#define EVO_LEVEL_MAP_DESERT	 	      79	//Evolves with at specific LEVEL on maps labeled as Desert.
+#define EVO_LEVEL_MAP_TIRANNWN	 	      80	//Evolves with at specific LEVEL on maps labeled as Tirannwn.
+//Gender Map Locations
+#define EVO_LEVEL_MALE_MAP_MORYTANIA	  81	//Evolves with at specific LEVEL, is MALE, on maps labeled as Morytania.
+#define EVO_LEVEL_FEMALE_MAP_MORYTANIA	  82	//Evolves with at specific LEVEL, is FEMALE, on maps labeled as Morytania.
+#define EVO_LEVEL_FEMALE_MAP_ASGARNIA     83
+#define EVO_LEVEL_MALE_MAP_ASGARNIA       84
+#define EVO_LEVEL_FEMALE_MAP_MISTHALIN    85
+#define EVO_LEVEL_MALE_MAP_MISTHALIN      86
+#define EVO_LEVEL_FEMALE_MAP_KARAMJA      87
+#define EVO_LEVEL_MALE_MAP_KARAMJA        88
+#define EVO_LEVEL_FEMALE_MAP_KANDARIN     89
+#define EVO_LEVEL_MALE_MAP_KANDARIN       90
+#define EVO_LEVEL_FEMALE_MAP_FREMENNIK    91
+#define EVO_LEVEL_MALE_MAP_FREMENNIK      92
+#define EVO_LEVEL_UNDERGROUND             93
+//Level, Type in party
+#define EVO_LEVEL_GRASS_TYPE_MON_IN_PARTY       95     // Pokémon reaches the specified level with a GRASS Type Pokémon in party.
+#define EVO_LEVEL_DRAGON_TYPE_MON_IN_PARTY      96     // Pokémon reaches the specified level with a DRAGON Type Pokémon in party.
+#define EVO_LEVEL_GHOST_TYPE_MON_IN_PARTY       97     // Pokémon reaches the specified level with a GHOST Type Pokémon in party.
+#define EVO_LEVEL_POISON_TYPE_MON_IN_PARTY      98     // Pokémon reaches the specified level with a POISON Type Pokémon in party.
+#define EVO_LEVEL_BUG_TYPE_MON_IN_PARTY         99     // Pokémon reaches the specified level with a BUG Type Pokémon in party.
+#define EVO_LEVEL_FAIRY_TYPE_MON_IN_PARTY       100     // Pokémon reaches the specified level with a FAIRY Type Pokémon in party.
+#define EVO_LEVEL_PSYCHIC_TYPE_MON_IN_PARTY     101     // Pokémon reaches the specified level with a PSYCHIC Type Pokémon in party.
+#define EVO_LEVEL_FIGHTING_TYPE_MON_IN_PARTY    102     // Pokémon reaches the specified level with a FIGHTING Type Pokémon in party.
+//Weather
+#define EVO_LEVEL_WEATHER_ABNORMAL      103
+#define EVO_LEVEL_WEATHER_DUSTY         104
+#define EVO_LEVEL_WEATHER_COLD          105
+#define EVO_LEVEL_WEATHER_HOT           106
+#define EVO_MOVE_TYPE                   107
+#define EVO_ITEM_HOLD_MALE              108
+#define EVO_ITEM_HOLD_FEMALE            109
+
 
 // Evolution 'modes,' for GetEvolutionTargetSpecies
 #define EVO_MODE_NORMAL            0

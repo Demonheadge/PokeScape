@@ -91,7 +91,7 @@ script Lumbridge_Castle_NPC1
 {
 	lock
 	faceplayer
-	//namebox ("???")
+	namebox ("RSMVer")
 	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 1) { //Before recieving starter mon.
 		msgbox(format("Prof.Normal Tree is a famous monster researcher.\pThey say he knows everything about every monster!"))
 	}
@@ -107,7 +107,7 @@ script Lumbridge_Castle_NPC2
 {
 	lock
 	faceplayer
-	//namebox ("???")
+	namebox ("Mercher")
 	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 1) { //Before recieving starter mon.
 		msgbox(format("Guthix, Saradomin, Zamorak…\pWhich one do I choose?"))
 	}
@@ -123,7 +123,7 @@ script Lumbridge_Castle_NPC3
 {
 	lock
 	faceplayer
-	//namebox ("???")
+	namebox ("Woman")
 	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 1) { //Before recieving starter mon.
 		msgbox(format("What do you mean the monsters are all birds?!\pI don't get it."))
 	}
@@ -139,7 +139,7 @@ script Lumbridge_Castle_NPC4
 {
 	lock
 	faceplayer
-	//namebox ("???")
+	namebox ("PKer")
 	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 1) { //Before recieving starter mon.
 		msgbox(format("My friend over in Kandarin apparently got a different monster from the professor."))
 	}
@@ -156,7 +156,7 @@ script Lumbridge_Castle_NPC5
 {
 	lock
 	faceplayer
-	//namebox ("???")
+	namebox ("Farmer")
 	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 1) { //Before recieving starter mon.
 		msgbox(format("I got my very own Bestiary!\pBut yikes!\pI don't think I am ever going to be able to fill this out."))
 	}
@@ -173,7 +173,7 @@ script Lumbridge_Castle_NPC6
 {
 	lock
 	faceplayer
-	//namebox ("???")
+	namebox ("Man")
 	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 1) { //Before recieving starter mon.
 		msgbox(format("Pouches, huh?\pI never knew we could trap monsters within those."))
 	}

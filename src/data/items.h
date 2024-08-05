@@ -12999,7 +12999,7 @@ const struct Item gItems[] =
     },
 
     [ITEM_PULSE_CORE] =
-    {
+    {/*
         .name = _("PULSE CORE"),
         .price = 3000,
         .holdEffect = HOLD_EFFECT_EXP_SHARE,
@@ -13008,6 +13008,16 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_KEY_ITEM,
         .fieldUseFunc = ItemUseOutOfBattle_Function,
+*/
+        .name = _("PULSE CORE"),
+        .price = 3000,
+        .holdEffect = HOLD_EFFECT_EXP_SHARE,
+        .description = sExpShareDesc,
+        .pocket = I_EXP_SHARE_ITEM >= GEN_6 ? POCKET_KEY_ITEMS : POCKET_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .sort = ITEM_TYPE_HELD_ITEM,
+        .fieldUseFunc = ItemUseOutOfBattle_ExpShare,
+        .flingPower = 30,
     },
 
 //Treasures
@@ -13671,5 +13681,16 @@ const struct Item gItems[] =
         .sort = ITEM_TYPE_FIELD_USE,
         .fieldUseFunc = ItemUseOutOfBattle_Repel,
         .flingPower = 30,
+    },
+
+    [ITEM_RING_OF_KINSHIP] =
+    {
+        .name = _("KINSHIP RING"),
+        .price = 0,
+        .description = sRingOfKinship_Desc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_KEY_ITEM,
+        .fieldUseFunc = ItemUseOutOfBattle_Function,
     },
 };

@@ -772,11 +772,10 @@ PORTSARIM_WISEOLDMAN_RIVAL_2::
 	applymovement 42, movement_wom_portsarim_0
 	waitmovement 0
 	delay 60
+	playbgm MUS_PS_WISE_OLD_MAN_THEME, 1
 	applymovement 42, movement_wom_portsarim_1
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_LEFT
-	waitmovement 0
-	playbgm MUS_ENCOUNTER_BRENDAN, 1
 	waitmovement 0
 	namebox PORTSARIM_WISEOLDMAN_RIVAL_2_Text_0
 	msgbox PORTSARIM_WISEOLDMAN_RIVAL_2_Text_1
@@ -1189,7 +1188,8 @@ PORTSARIM_WISEOLDMAN_RIVAL_2_Text_0:
 	.string "Wise Old Man$"
 
 PORTSARIM_WISEOLDMAN_RIVAL_2_Text_1:
-	.string "Well, you have been busy I see.\p"
+	.string "Well {PLAYER}, you have been busy I\n"
+	.string "see.\p"
 	.string "These H.A.M. people just goes about and\n"
 	.string "do what they want.\p"
 	.string "It's very good to see someone like you\n"

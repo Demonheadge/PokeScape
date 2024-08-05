@@ -69,8 +69,8 @@ script NPC_DraynorBank_PilloryGuard{
 script NPC_LumbridgeBank_NPC1{
 	lock
 	faceplayer
-    //namebox("Pillory Guard")
-	msgbox(format("The Lumbridge Bank used to be on top of the Lumbridge Castle, but it was difficult to get there.\pDuke Horacio however started a Gym there and moved the Bank to a more convenient location."))
+    namebox("Ranger")
+	msgbox(format("The Lumbridge Bank used to be on top of the Castle, but it was difficult to get there.\pDuke Horacio however started a Gym there and moved the Bank to a more convenient location."))
     hidenamebox
     release
 	end
@@ -79,7 +79,7 @@ script NPC_LumbridgeBank_NPC1{
 script NPC_LumbridgeBank_NPC2{
 	lock
 	faceplayer
-    //namebox("Pillory Guard")
+    namebox("Noob")
 	msgbox(format("Remember if your Monsters ever get poisoned you can feed them a Chocolate Sunday to make them feel better!\pWhat?\lDo not worry.\pChocolate is not poisonous to Monsters."))
     hidenamebox
     release
@@ -89,8 +89,8 @@ script NPC_LumbridgeBank_NPC2{
 script NPC_LumbridgeBank_NPC3{
 	lock
 	faceplayer
-    //namebox("Pillory Guard")
-	msgbox(format("These bankers are great, you can heal your Monsters and store your items."))
+    namebox("Farmer")
+	msgbox(format("These banks are great, you can heal your Monsters and store your items!"))
     hidenamebox
     release
 	end

@@ -2,7 +2,7 @@
   "id": "MAP_BRIMHAVEN",
   "name": "Brimhaven",
   "layout": "LAYOUT_BRIMHAVEN",
-  "music": "MUS_DEWFORD",
+  "music": "MUS_PS_MUSA_POINT",
   "region_map_section": "MAPSEC_MUSA_POINT",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

@@ -1761,3 +1761,84 @@ static const u16 sOgerponFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_OGERPON
+
+
+
+
+//POKESCAPE
+static const u16 sSailfishFormSpeciesIdTable[] = {
+    SPECIES_SAILFISH,
+    SPECIES_THALLASUS,
+    FORM_SPECIES_END,
+};
+
+static const u16 sHellhoundFormSpeciesIdTable[] = {
+    SPECIES_HELLHOUND,
+    SPECIES_CERBERUS,
+    FORM_SPECIES_END,
+};
+
+static const u16 sKalphiteQueenFormSpeciesIdTable[] = {
+    SPECIES_KALPHITE_QUEEN_FORM,
+    SPECIES_KALPHITE_QUEEN_MEGA_FORM,
+    FORM_SPECIES_END,
+};
+
+static const u16 sWolpertingerFormSpeciesIdTable[] = {
+    SPECIES_WOLPERTING,
+    SPECIES_WOLPERTINGER_MEGA_FORM,
+    FORM_SPECIES_END,
+};
+
+static const u16 sDagannothKingFormSpeciesIdTable[] = {
+    SPECIES_DAGANNOTH_KING_RANGE_FORM,
+    SPECIES_DAGANNOTH_KING_RANGE_MEGA_FORM,
+    SPECIES_DAGANNOTH_KING_MELEE_FORM,
+    SPECIES_DAGANNOTH_KING_MELEE_MEGA_FORM,
+    SPECIES_DAGANNOTH_KING_MAGIC_FORM,
+    SPECIES_DAGANNOTH_KING_MAGIC_MEGA_FORM,
+    FORM_SPECIES_END,
+};
+
+static const u16 sGlacorFormSpeciesIdTable[] = {
+    SPECIES_GLACOR,
+    SPECIES_GLACOR_ARCH_FORM,
+    FORM_SPECIES_END,
+};
+
+static const u16 sGuthixianButterflyFormSpeciesIdTable[] = {
+    SPECIES_GUTHIXIAN_BUTTERFLY,
+    SPECIES_TREBORN,
+    FORM_SPECIES_END,
+};
+
+static const u16 sTzTokJadFormSpeciesIdTable[] = {
+    SPECIES_TZTOK_JAD,
+    SPECIES_TZTOK_JAD_HD_MEGA_FORM,
+    SPECIES_TZTOK_JAD_RS3_MEGA_FORM,
+    FORM_SPECIES_END,
+};
+
+static const u16 sWolfSpiritFormSpeciesIdTable[] = {
+    SPECIES_WOLF_SPIRIT_FORM,
+    SPECIES_HELWYR,
+    FORM_SPECIES_END,
+};
+
+static const u16 sChaosElementalFormSpeciesIdTable[] = {
+    SPECIES_CHAOS_ELE,
+    SPECIES_CHAOS_ELE_MEGA_FORM,
+    FORM_SPECIES_END,
+};
+
+static const u16 sWallBeastFormSpeciesIdTable[] = {
+    SPECIES_WALL_BEAST,
+    SPECIES_WALL_BEAST_MEGA_FORM,
+    FORM_SPECIES_END,
+};
+
+static const u16 sStoneOfJasFormSpeciesIdTable[] = {
+    SPECIES_PET_ROCK,
+    SPECIES_STONE_OF_JAS_MEGA_FORM,
+    FORM_SPECIES_END,
+};

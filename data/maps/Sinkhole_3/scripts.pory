@@ -16,6 +16,12 @@ script Check_Dungeon_Seed {
     msgbox(format("VAR SEED is {STR_VAR_3} ."))
     closemessage
 }
+script Check_Dungeon_SeededResult {
+    specialvar(VAR_RESULT, GetSeededResult)
+    buffernumberstring(STR_VAR_3, VAR_RESULT) 
+    msgbox(format("VAR SEEDEDRESULT is {STR_VAR_3} ."))
+    closemessage
+}
 
 
 

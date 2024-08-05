@@ -46,7 +46,8 @@ BLOCK_Alkharid_Guards::
 	faceplayer
 	goto_if_unset FLAG_BADGE04_GET, BLOCK_Alkharid_Guards_2
 BLOCK_Alkharid_Guards_1:
-	msgbox BLOCK_Alkharid_Guards_Text_0
+	namebox BLOCK_Alkharid_Guards_Text_0
+	msgbox BLOCK_Alkharid_Guards_Text_1
 	closemessage
 	release
 	end
@@ -69,6 +70,7 @@ TRIGGER_ALKHARID_GATE_2:
 
 BLOCK_ALKHARID_GATE::
 	lockall
+	namebox BLOCK_Alkharid_Guards_Text_0
 	applymovement 29, movement_BLOCK_ALKHARID_GATE_1
 	applymovement 30, movement_BLOCK_ALKHARID_GATE_2
 	waitmovement 0
@@ -97,6 +99,7 @@ movement_BLOCK_ALKHARID_GATE_3:
 ALKHARID_GATE_GUARD::
 	lockall
 	faceplayer
+	namebox ALKHARID_GATE_GUARD_Text_0
 	msgbox BLOCK_ALKHARID_GATE_Text_0
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, movement_BLOCK_ALKHARID_GATE_3
@@ -157,13 +160,19 @@ ENCOUNTER_PENGUIN_CACTUS_ROUTE28_Text_1:
 	.string "Noot! Noot!$"
 
 BLOCK_Alkharid_Guards_Text_0:
-	.string "That is the Al Kharid Badge!\p"
+	.string "Guards$"
+
+BLOCK_Alkharid_Guards_Text_1:
+	.string "That is the Al-Kharid Badge!\p"
 	.string "You may pass.$"
 
 BLOCK_ALKHARID_GATE_Text_0:
 	.string "Halt!\p"
-	.string "Only those whom possess the Al Kharid\n"
+	.string "Only those whom possess the Al-Kharid\n"
 	.string "Badge may enter!$"
+
+ALKHARID_GATE_GUARD_Text_0:
+	.string "Guard$"
 
 BLOCK_DEMO_END_Text_0:
 	.string "POKESCAPE MESSAGE - PAST THIS POINT\n"

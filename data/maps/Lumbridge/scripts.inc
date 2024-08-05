@@ -130,16 +130,34 @@ Lumbridge_Phileas::
 	lock
 	faceplayer
 	namebox Lumbridge_Phileas_Text_0
+	checkitem ITEM_TM61_PAY_DAY, 1
+	compare VAR_RESULT, FALSE
+	goto_if_eq Lumbridge_Phileas_2
+	msgbox Lumbridge_Phileas_Text_4
+	release
+	end
+
+Lumbridge_Phileas_2:
 	msgbox Lumbridge_Phileas_Text_1
+	msgbox Lumbridge_Phileas_Text_2
 	hidenamebox
+	giveitem ITEM_TM61_PAY_DAY, 1
+	namebox Lumbridge_Phileas_Text_0
+	msgbox Lumbridge_Phileas_Text_3
 	release
 	end
 
 
-Lumbridge_Saraowl::
+NPC_SARAOWL::
 	lock
 	faceplayer
-	msgbox Lumbridge_Saraowl_Text_0
+	namebox NPC_SARAOWL_Text_0
+	playmoncry SPECIES_SARAOWL, 0
+	msgbox NPC_SARAOWL_Text_1
+	waitmoncry
+	applymovement 9, MOVEMENT_FACE_RIGHT
+	namebox Lumbridge_Phileas_Text_0
+	msgbox NPC_SARAOWL_Text_2
 	release
 	end
 
@@ -260,28 +278,27 @@ Lumbridge_IMP::
 
 
 Lumbridge_BANKER::
-	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
-	goto_if_eq Lumbridge_BANKER_3
-Lumbridge_BANKER_1:
 	lock
 	faceplayer
-	msgbox Lumbridge_BANKER_Text_1
+	namebox Lumbridge_BANKER_Text_0
+	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
+	goto_if_eq Lumbridge_BANKER_4
+Lumbridge_BANKER_3:
+	msgbox Lumbridge_BANKER_Text_2
 	applymovement 3, MOVEMENT_LUMBRIDGE_BANKER_FEMALE
 	waitmovement 0
+Lumbridge_BANKER_1:
 	release
 	end
 
 Lumbridge_BANKER_2:
-	lock
-	faceplayer
-	msgbox Lumbridge_BANKER_Text_0
-	release
-	end
+	msgbox Lumbridge_BANKER_Text_1
+	goto Lumbridge_BANKER_1
 
-Lumbridge_BANKER_3:
+Lumbridge_BANKER_4:
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 1
 	goto_if_eq Lumbridge_BANKER_2
-	goto Lumbridge_BANKER_1
+	goto Lumbridge_BANKER_3
 
 
 MOVEMENT_LUMBRIDGE_BANKER_FEMALE:
@@ -289,77 +306,75 @@ MOVEMENT_LUMBRIDGE_BANKER_FEMALE:
 	step_end
 
 Lumbridge_EVENT_NPC1::
-	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
-	goto_if_eq Lumbridge_EVENT_NPC1_3
-Lumbridge_EVENT_NPC1_1:
 	lock
 	faceplayer
-	msgbox Lumbridge_EVENT_NPC1_Text_1
+	namebox Lumbridge_EVENT_NPC1_Text_0
+	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
+	goto_if_eq Lumbridge_EVENT_NPC1_4
+Lumbridge_EVENT_NPC1_3:
+	msgbox Lumbridge_EVENT_NPC1_Text_2
+Lumbridge_EVENT_NPC1_1:
 	release
 	end
 
 Lumbridge_EVENT_NPC1_2:
-	lock
-	faceplayer
-	msgbox Lumbridge_EVENT_NPC1_Text_0
-	release
-	end
+	msgbox Lumbridge_EVENT_NPC1_Text_1
+	goto Lumbridge_EVENT_NPC1_1
 
-Lumbridge_EVENT_NPC1_3:
+Lumbridge_EVENT_NPC1_4:
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 1
 	goto_if_eq Lumbridge_EVENT_NPC1_2
-	goto Lumbridge_EVENT_NPC1_1
+	goto Lumbridge_EVENT_NPC1_3
 
 
 Lumbridge_EVENT_NPC2::
-	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
-	goto_if_eq Lumbridge_EVENT_NPC2_3
-Lumbridge_EVENT_NPC2_1:
 	lock
 	faceplayer
-	msgbox Lumbridge_EVENT_NPC2_Text_1
+	namebox Lumbridge_EVENT_NPC2_Text_0
+	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
+	goto_if_eq Lumbridge_EVENT_NPC2_4
+Lumbridge_EVENT_NPC2_3:
+	msgbox Lumbridge_EVENT_NPC2_Text_2
+Lumbridge_EVENT_NPC2_1:
 	release
 	end
 
 Lumbridge_EVENT_NPC2_2:
-	lock
-	faceplayer
-	msgbox Lumbridge_EVENT_NPC2_Text_0
-	release
-	end
+	msgbox Lumbridge_EVENT_NPC2_Text_1
+	goto Lumbridge_EVENT_NPC2_1
 
-Lumbridge_EVENT_NPC2_3:
+Lumbridge_EVENT_NPC2_4:
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 1
 	goto_if_eq Lumbridge_EVENT_NPC2_2
-	goto Lumbridge_EVENT_NPC2_1
+	goto Lumbridge_EVENT_NPC2_3
 
 
 Lumbridge_EVENT_NPC3::
-	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
-	goto_if_eq Lumbridge_EVENT_NPC3_3
-Lumbridge_EVENT_NPC3_1:
 	lock
 	faceplayer
-	msgbox Lumbridge_EVENT_NPC3_Text_1
+	namebox Lumbridge_EVENT_NPC3_Text_0
+	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
+	goto_if_eq Lumbridge_EVENT_NPC3_4
+Lumbridge_EVENT_NPC3_3:
+	msgbox Lumbridge_EVENT_NPC3_Text_2
+Lumbridge_EVENT_NPC3_1:
 	release
 	end
 
 Lumbridge_EVENT_NPC3_2:
-	lock
-	faceplayer
-	msgbox Lumbridge_EVENT_NPC3_Text_0
-	release
-	end
+	msgbox Lumbridge_EVENT_NPC3_Text_1
+	goto Lumbridge_EVENT_NPC3_1
 
-Lumbridge_EVENT_NPC3_3:
+Lumbridge_EVENT_NPC3_4:
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 1
 	goto_if_eq Lumbridge_EVENT_NPC3_2
-	goto Lumbridge_EVENT_NPC3_1
+	goto Lumbridge_EVENT_NPC3_3
 
 
 NPC_LumbridgeBridge::
 	lock
 	faceplayer
+	namebox Lumbridge_EVENT_NPC1_Text_0
 	msgbox NPC_LumbridgeBridge_Text_0
 	release
 	end
@@ -623,7 +638,8 @@ LUMBRIDGE_HATIUS_GRAVE_TRIGGER_2:
 Lumbridge_House_NPC1::
 	lock
 	faceplayer
-	msgbox Lumbridge_House_NPC1_Text_0
+	namebox Lumbridge_House_NPC1_Text_0
+	msgbox Lumbridge_House_NPC1_Text_1
 	release
 	end
 
@@ -631,7 +647,8 @@ Lumbridge_House_NPC1::
 Lumbridge_GeneralStore_NPC1::
 	lock
 	faceplayer
-	msgbox Lumbridge_GeneralStore_NPC1_Text_0
+	namebox Lumbridge_GeneralStore_NPC1_Text_0
+	msgbox Lumbridge_GeneralStore_NPC1_Text_1
 	release
 	end
 
@@ -639,7 +656,8 @@ Lumbridge_GeneralStore_NPC1::
 Lumbridge_GeneralStore_NPC2::
 	lock
 	faceplayer
-	msgbox Lumbridge_GeneralStore_NPC2_Text_0
+	namebox Lumbridge_GeneralStore_NPC2_Text_0
+	msgbox Lumbridge_GeneralStore_NPC2_Text_1
 	release
 	end
 
@@ -671,7 +689,8 @@ Lumbridge_House_BobsAxes_4:
 Lumbridge_House_BobsGirl::
 	lock
 	faceplayer
-	msgbox Lumbridge_House_BobsGirl_Text_0
+	namebox Lumbridge_House_BobsGirl_Text_0
+	msgbox Lumbridge_House_BobsGirl_Text_1
 	release
 	end
 
@@ -689,6 +708,7 @@ Lumbridge_House_Victoria::
 Lumbridge_House_NPC3::
 	lock
 	faceplayer
+	namebox Lumbridge_House_BobsGirl_Text_0
 	msgbox Lumbridge_House_NPC3_Text_0
 	release
 	end
@@ -697,6 +717,7 @@ Lumbridge_House_NPC3::
 Lumbridge_House_NPC4::
 	lock
 	faceplayer
+	namebox Lumbridge_House_BobsGirl_Text_0
 	msgbox Lumbridge_House_NPC4_Text_0
 	release
 	end
@@ -742,6 +763,7 @@ Lumbridge_GeneralStore_MOD_ASH_2:
 
 Lumbridge_GeneralStore_MOD_ASH_4:
 	msgbox Lumbridge_GeneralStore_MOD_ASH_Text_2
+	hidenamebox
 	giveitem ITEM_EMPTY_BUCKET
 	setflag FLAG_TEMP_1
 	release
@@ -818,23 +840,6 @@ Lumbridge_House_Roddeck_14:
 	goto Lumbridge_House_Roddeck_5
 
 
-Lumbridge_HAMDuo_1::
-	lock
-	faceplayer
-	msgbox Lumbridge_HAMDuo_1_Text_0
-	faceplayer
-	msgbox Lumbridge_HAMDuo_1_Text_1
-	release
-	end
-
-
-Lumbridge_HAMDuo_2::
-	lock
-	msgbox Lumbridge_HAMDuo_2_Text_0
-	release
-	end
-
-
 CUPHOLDER_NPC_Text_0:
 	.string "I am currently a Cupholder with no\n"
 	.string "dialog.$"
@@ -853,14 +858,35 @@ Lumbridge_Phileas_Text_0:
 	.string "Phileas$"
 
 Lumbridge_Phileas_Text_1:
-	.string "My Saraowl keeps me company on my\n"
-	.string "travels.$"
+	.string "Do you know about SCROLLS?\p"
+	.string "SCROLLS allow you to teach your\n"
+	.string "monsters unqiue moves that they can\l"
+	.string "otherwise not learn!$"
 
-Lumbridge_Saraowl_Text_0:
+Lumbridge_Phileas_Text_2:
+	.string "Here, take this as a gift.$"
+
+Lumbridge_Phileas_Text_3:
+	.string "That SCROLL contains the move PayDay!\p"
+	.string "It's a great way for noobs like yourself\n"
+	.string "to make some money.$"
+
+Lumbridge_Phileas_Text_4:
+	.string "SCROLLS can be very useful, don't you\n"
+	.string "agree?$"
+
+NPC_SARAOWL_Text_0:
+	.string "Saraowl$"
+
+NPC_SARAOWL_Text_1:
 	.string "Hoo Hoo!$"
 
+NPC_SARAOWL_Text_2:
+	.string "That's my Saraowl, she keeps me company\n"
+	.string "on my travels.$"
+
 Lumbridge_GENERALSTORE_CLERK_Text_0:
-	.string "Store Assistant$"
+	.string "Assistant$"
 
 Lumbridge_GENERALSTORE_CLERK_Text_1:
 	.string "Hello there and welcome to the General\n"
@@ -911,12 +937,9 @@ Lumbridge_HATIUS_Text_1:
 	.string "you miss him!$"
 
 Lumbridge_HATIUS_Text_2:
-	.string "There were some muggers in the alley\n"
-	.string "eyeing up my 3rd age armour.\p"
-	.string "So I've had to change into a more casual\n"
-	.string "look.\p"
-	.string "But now the Goblins are eyeing me, I\n"
-	.string "cannot win.$"
+	.string "I saw a gang of thieves north of the\n"
+	.string "town earlier.\p"
+	.string "I hope they don't mug me.$"
 
 Lumbridge_LACHTOPHER_Text_0:
 	.string "Lachtopher$"
@@ -950,9 +973,12 @@ Lumbridge_IMP_Text_0:
 	.string "-IMP CATCHER QUEST-$"
 
 Lumbridge_BANKER_Text_0:
-	.string "I'm waiting for my BF to finish work.$"
+	.string "Banker$"
 
 Lumbridge_BANKER_Text_1:
+	.string "I'm waiting for my BF to finish work.$"
+
+Lumbridge_BANKER_Text_2:
 	.string "A few years ago we were in a bidding war\n"
 	.string "with a fisherman.\p"
 	.string "He wanted to put a fishing shop here\n"
@@ -961,31 +987,40 @@ Lumbridge_BANKER_Text_1:
 	.string "by 75% of votes.$"
 
 Lumbridge_EVENT_NPC1_Text_0:
+	.string "Fisherman$"
+
+Lumbridge_EVENT_NPC1_Text_1:
 	.string "Woowee!\p"
 	.string "So this is Lumbridge Castle.\p"
 	.string "I'm too afraid to walk through the\n"
 	.string "gates.$"
 
-Lumbridge_EVENT_NPC1_Text_1:
+Lumbridge_EVENT_NPC1_Text_2:
 	.string "I've come all the way from Catherby.\p"
 	.string "I've always wanted to check out what\n"
 	.string "sort of fish can be caught in the River\l"
 	.string "Lum.$"
 
 Lumbridge_EVENT_NPC2_Text_0:
+	.string "Farmer$"
+
+Lumbridge_EVENT_NPC2_Text_1:
 	.string "I really want to meet this professor\n"
 	.string "guy!$"
 
-Lumbridge_EVENT_NPC2_Text_1:
+Lumbridge_EVENT_NPC2_Text_2:
 	.string "I caught myself an Impling!\p"
 	.string "I found it in the wheat fields north of\n"
 	.string "here.$"
 
 Lumbridge_EVENT_NPC3_Text_0:
+	.string "Man$"
+
+Lumbridge_EVENT_NPC3_Text_1:
 	.string "I'm interested in the MvM\n"
 	.string "Championships!$"
 
-Lumbridge_EVENT_NPC3_Text_1:
+Lumbridge_EVENT_NPC3_Text_2:
 	.string "Newcomer map?\p"
 	.string "Pfft, I've got myself a World map!\p"
 	.string "And no, you cannot have it.$"
@@ -1036,16 +1071,25 @@ Lumbridge_Hatius_TRIGGER_Text_0:
 	.string "you miss him!$"
 
 Lumbridge_House_NPC1_Text_0:
+	.string "Dwarf$"
+
+Lumbridge_House_NPC1_Text_1:
 	.string "The forge broke, so I've requested\n"
 	.string "someone from Falador to fix it.$"
 
 Lumbridge_GeneralStore_NPC1_Text_0:
+	.string "SpAc3BaR3R$"
+
+Lumbridge_GeneralStore_NPC1_Text_1:
 	.string "It is better to have more pouches than\n"
 	.string "less.\p"
 	.string "If you are on a long trip you might need\n"
 	.string "them.$"
 
 Lumbridge_GeneralStore_NPC2_Text_0:
+	.string "H1PYRaNG3r59$"
+
+Lumbridge_GeneralStore_NPC2_Text_1:
 	.string "There are a lot of goblins around these\n"
 	.string "parts, you might want to stock up on\l"
 	.string "some antipoisons.\p"
@@ -1076,6 +1120,9 @@ Lumbridge_House_BobsAxes_Text_3:
 	.string "happened to it.$"
 
 Lumbridge_House_BobsGirl_Text_0:
+	.string "Woman$"
+
+Lumbridge_House_BobsGirl_Text_1:
 	.string "Hey, are you the contractor we hired to\n"
 	.string "fix our bed?\p"
 	.string "…{PAUSE 32}\l"
@@ -1160,8 +1207,8 @@ Lumbridge_House_Roddeck_Text_0:
 	.string "Roddeck$"
 
 Lumbridge_House_Roddeck_Text_1:
-	.string "Would you like to trade me your\n"
-	.string "{STR_VAR_1} for my {STR_VAR_2}?$"
+	.string "Would you like to trade me a Baby Green\n"
+	.string "Dragon for my Red Dragon?$"
 
 Lumbridge_House_Roddeck_Text_2:
 	.string "Please take care of Sottlepot, he is a\n"
@@ -1182,16 +1229,4 @@ Lumbridge_House_Roddeck_Text_6:
 	.string "obtained in a trade?\p"
 	.string "I wish I knew that before Sottlepot\n"
 	.string "went on a rampage killing Sir Vant and\l"
-	.string "an adventurer…$"
-
-Lumbridge_HAMDuo_1_Text_0:
-	.string "I'm sure the boss said that the hideout\n"
-	.string "was this way..{PAUSE 15}$"
-
-Lumbridge_HAMDuo_1_Text_1:
-	.string "Hey! Mind your own business!$"
-
-Lumbridge_HAMDuo_2_Text_0:
-	.string "Did the forest get overgrown again?\p"
-	.string "Maybe we need to go find an axe to cut\n"
-	.string "back some of these trees..$"
+	.string "that adventurer…$"

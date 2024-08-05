@@ -25,7 +25,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_GRANITE_POUCH] = {gItemIcon_GranitePouch, gItemIconPalette_GranitePouch},
     [ITEM_IMPHIDE_POUCH] = {gItemIcon_DreamBall, gItemIconPalette_DreamBall},
     [ITEM_GEM_POUCH] = {gItemIcon_SafariBall, gItemIconPalette_SafariBall},
-    [ITEM_SPLITBARK_POUCH] = {gItemIcon_SportBall, gItemIconPalette_SportBall},
+    [ITEM_SPLITBARK_POUCH] = {gItemIcon_SplitbarkPouch, gItemIconPalette_SplitbarkPouch},
     [ITEM_BLACK_POUCH] = {gItemIcon_BlackPouch, gItemIconPalette_BlackPouch},
     [ITEM_FISHBOWL_POUCH] = {gItemIcon_BeastBall, gItemIconPalette_BeastBall},
     [ITEM_CHERISH_BALL] = {gItemIcon_CherishBall, gItemIconPalette_CherishBall},
@@ -1134,6 +1134,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_REPEL_TEA_1] = {gItemIcon_REPEL_TEA_1, gItemIconPalette_REPEL_TEA_1},
     [ITEM_REPEL_TEA_2] = {gItemIcon_REPEL_TEA_2, gItemIconPalette_REPEL_TEA_2},
     [ITEM_REPEL_TEA_3] = {gItemIcon_REPEL_TEA_3, gItemIconPalette_REPEL_TEA_3},
+    [ITEM_RING_OF_KINSHIP] = {gItemIcon_MegaRing, gItemIconPalette_MegaRing},
     // End Pokescape items
 
     // Return to field arrow

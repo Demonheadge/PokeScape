@@ -464,3 +464,37 @@ script ENCOUNTER_GREATER_DEMON
     release
 	end
 }
+
+script ENCOUNTER_MONKEY_QUEST
+{
+	lock
+    faceplayer
+    namebox ("MONKEY")
+    playmoncry(SPECIES_MONKEY_NORMAL_FORM, 0)
+	msgbox(format("EEEKK OOK AAAK!!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    msgbox(format("The monkey attacks!")) 
+    closemessage
+    setwildbattle (SPECIES_MONKEY_NORMAL_FORM, 20, ITEM_BANANA)
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+            msgbox(format("The monkey dropped some bananas.")) 
+            giveitem(ITEM_BANANA, 5)
+        case B_OUTCOME_CAUGHT:
+            fadescreen(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreen(FADE_FROM_BLACK)
+            msgbox(format("The monkey dropped some bananas.")) 
+            giveitem(ITEM_BANANA, 5)
+    }
+    closemessage
+    release
+	end
+}

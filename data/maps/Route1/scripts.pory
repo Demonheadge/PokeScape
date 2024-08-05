@@ -155,14 +155,26 @@ script QUEST_STATE_WizardsTower_ROUTE1{
 
 
 
+script NPC_DOG
+{
+	lock
+	faceplayer
+    namebox ("Dog")
+    playmoncry(SPECIES_BORDER_COLLIE, 0)
+	msgbox(format("Woof, Woof!"))
+    waitmoncry
+    hidenamebox
+	release
+	end
+}
 
 
 script NPC_DUCK
 {
 	lock
 	faceplayer
-    namebox ("DUCK")
-    playmoncry(SPECIES_PSYDUCK, 0)
+    namebox ("Duck")
+    playmoncry(SPECIES_DUCK_NORMAL_FORM, 0)
 	msgbox(format("Quack!"))
     waitmoncry
     hidenamebox
@@ -174,8 +186,8 @@ script NPC_RAT
 {
 	lock
 	faceplayer
-    namebox ("RAT")
-    playmoncry(SPECIES_RATTATA, 0)
+    namebox ("Rat")
+    playmoncry(SPECIES_RAT_NORMAL_FORM, 0)
 	msgbox(format("SKREEK!"))
     waitmoncry
     hidenamebox
@@ -187,8 +199,8 @@ script NPC_SHEEP
 {
 	lock
 	faceplayer
-    namebox ("SHEEP")
-    playmoncry(SPECIES_MAREEP, 0)
+    namebox ("Sheep")
+    playmoncry(SPECIES_SHEEP_WHITE_FORM, 0)
 	msgbox(format("Baaa!"))
     waitmoncry
     hidenamebox
@@ -200,8 +212,8 @@ script NPC_COW
 {
 	lock
 	faceplayer
-    namebox ("COW")
-    playmoncry(SPECIES_MILTANK, 0)
+    namebox ("Cow")
+    playmoncry(SPECIES_COW, 0)
 	msgbox(format("Mooo!"))
     waitmoncry
     hidenamebox
@@ -213,8 +225,8 @@ script NPC_CAT
 {
 	lock
 	faceplayer
-    namebox ("CAT")
-    playmoncry(SPECIES_MEOWTH, 0)
+    namebox ("Cat")
+    playmoncry(SPECIES_CAT_NORMAL_FORM, 0)
 	msgbox(format("Meeeooww…"))
     waitmoncry
     hidenamebox
@@ -226,10 +238,10 @@ script NPC_ABYSSALDEMON
 {
 	lock
 	faceplayer
-    namebox ("ABYSSAL DEMON")
-    //playmoncry(SPECIES_MAREEP, 0)
+    namebox ("Abyssal Demon")
+    playmoncry(SPECIES_ABYSSAL_DEMON_FORM, 0)
 	msgbox(format("Schttle, skrtch!"))
-    //waitmoncry
+    waitmoncry
     hidenamebox
 	release
 	end
@@ -239,14 +251,42 @@ script NPC_CAMEL
 {
 	lock
 	faceplayer
-    namebox ("CAMEL")
-    playmoncry(SPECIES_MILTANK, 0)
+    namebox ("Camel")
+    playmoncry(SPECIES_CAMEL, 0)
 	msgbox(format("The Camel spits at you."))
     waitmoncry
     hidenamebox
 	release
 	end
 }
+
+script NPC_MONKEY
+{
+	lock
+	faceplayer
+    namebox ("Monkey")
+    playmoncry(SPECIES_MONKEY_NORMAL_FORM, 0)
+	msgbox(format("Oook, Ook!"))
+    waitmoncry
+    hidenamebox
+	release
+	end
+}
+
+script NPC_PIG
+{
+	lock
+	faceplayer
+    namebox("Pig")
+    playmoncry(SPECIES_PIG, 0)
+	msgbox(format("OINK!"))
+    waitmoncry
+	release
+	end
+}
+
+
+
 
 script SIGN_ROUTE1_1
 {
@@ -277,11 +317,14 @@ script NPC_FISHERMAN_1
 {
 	lock
 	faceplayer
+    namebox("Fisherman")
 	msgbox(format("I love to fish in this pond.\pIt is so peaceful, with the ducks that keep me company.\pI cannot imagine anything bad to happen here."))
     checkitem(ITEM_SMALL_NET, 1)
         if (!var(VAR_RESULT)){
             msgbox(format("You seem like someone who would also enjoy fishing in this pond.\pHere take this!"))
+            hidenamebox
             giveitem(ITEM_SMALL_NET)
+            namebox("Fisherman")
             msgbox(format("It is only a small net but I'm sure there are plenty of things you could fish up with it!"))
             release
             end
@@ -360,7 +403,7 @@ script ROUTE1_FarmerFred
 script Wartfoot_Route1_Battle
 {
     trainerbattle_single(TRAINER_GOBLIN_1_ROUTE1, "Brown armour best!","Um… My brown armour in the wash.")
-    namebox ("WartFoot")
+    //namebox ("WartFoot")
     msgbox("Me like brown armour, but now it dirty.")
     hidenamebox
     release
@@ -370,7 +413,7 @@ script Wartfoot_Route1_Battle
 script Frogface_Route1_Battle
 {
     trainerbattle_single(TRAINER_GOBLIN_2_ROUTE1, "You ugly!","You still ugly!")
-    namebox ("FrogFace")
+    //namebox ("FrogFace")
     msgbox("You really, really ugly!")
     hidenamebox
     release
@@ -380,7 +423,7 @@ script Frogface_Route1_Battle
 script Trainer1_Route1_Battle
 {
     trainerbattle_single(TRAINER_RSN_ROUTE1, "You look like a noob!","Maybe I'm the noob…")
-    namebox ("Bob")
+    //namebox ("Bob")
     msgbox(format("The mill is up ahead.\pI heard you can get some good flour there."))
     closemessage
     hidenamebox
@@ -390,7 +433,7 @@ script Trainer1_Route1_Battle
 
 script MudbeardBattle{
     trainerbattle_single(TRAINER_GOBLIN_3_ROUTE1,"Go away smelly human!","Leave me alone!" )
-    namebox ("Mudbeard")
+    //namebox ("Mudbeard")
     msgbox("Smelly human!")
     closemessage
     hidenamebox
@@ -400,7 +443,7 @@ script MudbeardBattle{
 
 script Route1FarmerBattle{
     trainerbattle_single(TRAINER_FARMER_ROUTE1,format("Cor blimey what are ye doing on me lands!"),format("Its not really my lands yet."))
-    namebox ("John")
+    //namebox ("John")
     msgbox("It's not really my lands yet.")
     hidenamebox
     release
@@ -408,7 +451,7 @@ script Route1FarmerBattle{
 
 script FeetfingersBattle{
     trainerbattle_single(TRAINER_GOBLIN_4_ROUTE1,"Me Feetfingers who you?","Feetfingers, impressed!")
-    namebox ("Feetfingers")
+    //namebox ("Feetfingers")
     msgbox("Friend of Feetfingers?")
     hidenamebox
     release
@@ -431,7 +474,7 @@ script FeetfingersBattle{
 script ChickenBattleScript1{
     lock
     faceplayer
-    playmoncry(SPECIES_TORCHIC, 0)
+    playmoncry(SPECIES_CHICKEN_NORMAL_FORM, 0)
     msgbox(format("BWAK!"))
     waitmoncry
     setwildbattle (SPECIES_CHICKEN_NORMAL_FORM, 4, ITEM_NONE)
@@ -443,7 +486,7 @@ script ChickenBattleScript1{
 script ChickenBattleScript2{
     lock
     faceplayer
-    playmoncry(SPECIES_TORCHIC, 0)
+    playmoncry(SPECIES_CHICKEN_NORMAL_FORM, 0)
     msgbox(format("BWAK!"))
     waitmoncry
     setwildbattle (SPECIES_CHICKEN_NORMAL_FORM, 4, ITEM_NONE)
@@ -455,7 +498,7 @@ script ChickenBattleScript2{
 script ChickenBattleScript3{
     lock
     faceplayer
-    playmoncry(SPECIES_TORCHIC, 0)
+    playmoncry(SPECIES_CHICKEN_NORMAL_FORM, 0)
     msgbox(format("BWAK!"))
     waitmoncry
     setwildbattle (SPECIES_CHICKEN_NORMAL_FORM, 4, ITEM_NONE)
@@ -503,7 +546,7 @@ script ErnestAndVeronica {
                 case 3: 
                 case 4:
                     
-                    playmoncry(SPECIES_TORCHIC, 0)
+                    playmoncry(SPECIES_CHICKEN_NORMAL_FORM, 0)
                     namebox("Ernest")
                     msgbox(format("Bwak bwak bwwwaaaakk!"))
                     waitmoncry
@@ -517,11 +560,11 @@ script ErnestAndVeronica {
                     closemessage
                     waitmovement(0)
                     
-                    playmoncry(SPECIES_TORCHIC, 0)
+                    playmoncry(SPECIES_CHICKEN_NORMAL_FORM, 0)
                     namebox("Ernest")
                     msgbox(format("Bwakbawk."))
                     waitmoncry
-                    playmoncry(SPECIES_TORCHIC, 0)
+                    playmoncry(SPECIES_CHICKEN_NORMAL_FORM, 0)
                     msgbox(format("Bwak bwakbwak!"))
                     waitmoncry
                     hidenamebox
@@ -534,7 +577,7 @@ script ErnestAndVeronica {
                     closemessage
                     waitmovement(0)
                     
-                    playmoncry(SPECIES_COMBUSKEN, 0)
+                    playmoncry(SPECIES_CHICKEN_NORMAL_FORM, 1)
                     namebox("Ernest")
                     msgbox(format("Bwak…"))
                     waitmoncry

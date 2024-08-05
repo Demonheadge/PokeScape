@@ -281,6 +281,24 @@ WHISTLE_TELEPORT_2:
 	end
 
 
+RING_OF_KINSHIP_TELEPORT::
+	msgbox RING_OF_KINSHIP_TELEPORT_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne RING_OF_KINSHIP_TELEPORT_2
+	closemessage
+	release
+	end
+
+RING_OF_KINSHIP_TELEPORT_2:
+	playse SE_M_SCREECH
+	msgbox WHISTLE_TELEPORT_Text_1
+	applymovement OBJ_EVENT_ID_PLAYER, movement_TELEPORT_OUT
+	warpteleport MAP_DAEMONHEIM, 0, 0, 0
+	closemessage
+	release
+	end
+
+
 NPC_PortSarimPub_BARTENDER_Text_0:
 	.string "BARTENDER$"
 
@@ -408,3 +426,7 @@ WHISTLE_TELEPORT_Text_0:
 WHISTLE_TELEPORT_Text_1:
 	.string "Suddenly the world starts to warp\n"
 	.string "around you.$"
+
+RING_OF_KINSHIP_TELEPORT_Text_0:
+	.string "Would you like to teleport to\n"
+	.string "Daemonheim?$"

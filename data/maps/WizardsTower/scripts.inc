@@ -243,7 +243,6 @@ BATTLE_WizardsTower_Trainer_1::
 
 BATTLE_WizardsTower_Trainer_2::
 	trainerbattle_single TRAINER_WIZARDSTOWER_TRAINER_2, BATTLE_WizardsTower_Trainer_2_Text_0, BATTLE_WizardsTower_Trainer_2_Text_1
-	namebox BATTLE_WizardsTower_Trainer_2_Text_2
 	msgbox BATTLE_WizardsTower_Trainer_2_Text_1
 	hidenamebox
 	release
@@ -268,8 +267,7 @@ BATTLE_WizardsTower_Trainer_4::
 
 BATTLE_WizardsTower_Myrtle::
 	trainerbattle_single TRAINER_WIZARDSTOWER_TRAINER_MYRTLE, BATTLE_WizardsTower_Myrtle_Text_0, BATTLE_WizardsTower_Myrtle_Text_1
-	namebox BATTLE_WizardsTower_Myrtle_Text_2
-	msgbox BATTLE_WizardsTower_Myrtle_Text_3
+	msgbox BATTLE_WizardsTower_Myrtle_Text_2
 	hidenamebox
 	release
 	end
@@ -333,9 +331,6 @@ BATTLE_WizardsTower_Trainer_2_Text_0:
 BATTLE_WizardsTower_Trainer_2_Text_1:
 	.string "Hope you enjoy your stay.$"
 
-BATTLE_WizardsTower_Trainer_2_Text_2:
-	.string "Goldberg$"
-
 BATTLE_WizardsTower_Trainer_3_Text_0:
 	.string "With the power of runes, humans can use\n"
 	.string "magic.$"
@@ -359,8 +354,5 @@ BATTLE_WizardsTower_Myrtle_Text_1:
 	.string "But I hate getting wet…$"
 
 BATTLE_WizardsTower_Myrtle_Text_2:
-	.string "Myrtle$"
-
-BATTLE_WizardsTower_Myrtle_Text_3:
 	.string "Water type monsters amaze me, but I\n"
 	.string "cannot stand getting wet.$"

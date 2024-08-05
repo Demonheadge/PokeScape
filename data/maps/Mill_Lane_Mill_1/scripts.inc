@@ -5,21 +5,24 @@ Mill_Lane_Mill_1_MapScripts::
 MillLaneGreeter::
 	lock
 	faceplayer
-	msgbox MillLaneGreeter_Text_0
+	namebox MillLaneGreeter_Text_0
+	msgbox MillLaneGreeter_Text_1
 	release
 	end
 
 
 Trainer2_MillLaneMill_Battle::
 	trainerbattle_single TRAINER_TRAINER2_MILLLANEMILL, Trainer2_MillLaneMill_Battle_Text_0, Trainer2_MillLaneMill_Battle_Text_1
-	namebox Trainer2_MillLaneMill_Battle_Text_2
-	msgbox Trainer2_MillLaneMill_Battle_Text_3
+	msgbox Trainer2_MillLaneMill_Battle_Text_2
 	hidenamebox
 	release
 	end
 
 
 MillLaneGreeter_Text_0:
+	.string "Woman$"
+
+MillLaneGreeter_Text_1:
 	.string "Welcome to Mill Lane Mill!\p"
 	.string "We have the best flour this side of the\n"
 	.string "River Lum!$"
@@ -34,8 +37,5 @@ Trainer2_MillLaneMill_Battle_Text_1:
 	.string "You will never reach the top!$"
 
 Trainer2_MillLaneMill_Battle_Text_2:
-	.string "HOPS$"
-
-Trainer2_MillLaneMill_Battle_Text_3:
 	.string "You may have beaten me but you'll never\n"
 	.string "make it to the top!$"

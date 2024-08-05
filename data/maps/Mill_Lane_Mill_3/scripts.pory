@@ -9,8 +9,9 @@ script Millie_Miller{
             lock
             faceplayer
             namebox ("Millie Miller")
-            msgbox(format("Welcome to Mill Lane Mill!\pI heard that you were after some of our flour.\pTehehehehe.\pI can give you some if you want…"))
-            trainerbattle_single(TRAINER_MILLIE_MILLER_MILLLANEMILL,format("But you'll have to battle me for it.\pTeheehehe!"),format("I was so close!"),GiveQuestWheat)
+            msgbox(format("Welcome to Mill Lane Mill!\pI heard that you were after some of our flour.\pTehehehehe.\pI can give you some if you want…\pBut you'll have to battle me for it.\pTeheehehe!"))
+            trainerbattle_no_intro(TRAINER_MILLIE_MILLER_MILLLANEMILL,format("I was so close!"))
+            goto(GiveQuestWheat)
             hidenamebox
             release
             end
@@ -18,6 +19,7 @@ script Millie_Miller{
         else {
             lock
             faceplayer
+            namebox ("Millie Miller")
             msgbox(format("Welcome to Mill Lane Mill!\pWould you like to buy some flour?"))
             pokemart(MillLaneMillFlourShop)
             release
@@ -27,6 +29,7 @@ script Millie_Miller{
     else {
         lock
         faceplayer
+        namebox ("Millie Miller")
         msgbox(format("Welcome to Mill Lane Mill!\pWould you like to buy some flour?"))
         pokemart(MillLaneMillFlourShop)
         release

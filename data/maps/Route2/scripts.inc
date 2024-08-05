@@ -299,7 +299,8 @@ BLOCK_ROUTE2_Highwayman::
 
 NPC_ROUTE2_Wizard::
 	faceplayer
-	msgbox NPC_ROUTE2_Wizard_Text_0
+	namebox NPC_ROUTE2_Wizard_Text_0
+	msgbox NPC_ROUTE2_Wizard_Text_1
 	hidenamebox
 	release
 	end
@@ -307,8 +308,7 @@ NPC_ROUTE2_Wizard::
 
 BATTLE_ROUTE2_Trainer_1::
 	trainerbattle_single TRAINER_ROUTE2_TRAINER_1, BATTLE_ROUTE2_Trainer_1_Text_0, BATTLE_ROUTE2_Trainer_1_Text_1
-	namebox BATTLE_ROUTE2_Trainer_1_Text_2
-	msgbox BATTLE_ROUTE2_Trainer_1_Text_3
+	msgbox BATTLE_ROUTE2_Trainer_1_Text_2
 	hidenamebox
 	release
 	end
@@ -316,8 +316,7 @@ BATTLE_ROUTE2_Trainer_1::
 
 BATTLE_ROUTE2_Trainer_2::
 	trainerbattle_single TRAINER_ROUTE2_TRAINER_2, BATTLE_ROUTE2_Trainer_2_Text_0, BATTLE_ROUTE2_Trainer_2_Text_1
-	namebox BATTLE_ROUTE2_Trainer_2_Text_2
-	msgbox BATTLE_ROUTE2_Trainer_2_Text_3
+	msgbox BATTLE_ROUTE2_Trainer_2_Text_2
 	hidenamebox
 	release
 	end
@@ -325,7 +324,6 @@ BATTLE_ROUTE2_Trainer_2::
 
 BATTLE_ROUTE2_Trainer_3::
 	trainerbattle_single TRAINER_ROUTE2_TRAINER_3, BATTLE_ROUTE2_Trainer_3_Text_0, BATTLE_ROUTE2_Trainer_3_Text_1
-	namebox BATTLE_ROUTE2_Trainer_3_Text_2
 	msgbox BATTLE_ROUTE2_Trainer_3_Text_1
 	hidenamebox
 	release
@@ -334,7 +332,6 @@ BATTLE_ROUTE2_Trainer_3::
 
 BATTLE_ROUTE2_Trainer_4::
 	trainerbattle_single TRAINER_ROUTE2_TRAINER_4, BATTLE_ROUTE2_Trainer_4_Text_0, BATTLE_ROUTE2_Trainer_4_Text_1
-	namebox BATTLE_ROUTE2_Trainer_4_Text_2
 	msgbox BATTLE_ROUTE2_Trainer_4_Text_1
 	hidenamebox
 	release
@@ -361,7 +358,6 @@ BATTLE_ROUTE2_Trainer_6::
 
 BATTLE_ROUTE2_Trainer_7::
 	trainerbattle_single TRAINER_ROUTE2_TRAINER_7, BATTLE_ROUTE2_Trainer_7_Text_0, BATTLE_ROUTE2_Trainer_7_Text_0
-	namebox BATTLE_ROUTE2_Trainer_7_Text_1
 	msgbox BATTLE_ROUTE2_Trainer_7_Text_0
 	hidenamebox
 	closemessage
@@ -386,7 +382,7 @@ TRIGGER_WISEOLDMAN_RIVAL_1::
 	applymovement 14, movement_wom_route2_0
 	waitmovement 0
 	delay 60
-	playbgm MUS_ENCOUNTER_BRENDAN, 1
+	playbgm MUS_PS_WISE_OLD_MAN_THEME, 1
 	getplayerxy VAR_TEMP_A, VAR_TEMP_B
 	compare VAR_TEMP_B, 14
 	goto_if_eq TRIGGER_WISEOLDMAN_RIVAL_1_2
@@ -401,8 +397,14 @@ TRIGGER_WISEOLDMAN_RIVAL_1_1:
 	trainerbattle_no_intro TRAINER_RIVAL_WISE_OLD_MAN_1, TRIGGER_WISEOLDMAN_RIVAL_1_Text_2
 	namebox TRIGGER_WISEOLDMAN_RIVAL_1_Text_0
 	msgbox TRIGGER_WISEOLDMAN_RIVAL_1_Text_3
-	namebox TRIGGER_WISEOLDMAN_RIVAL_1_Text_4
-	msgbox TRIGGER_WISEOLDMAN_RIVAL_1_Text_5
+	hidenamebox
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_INTERACT_LEFT
+	waitmovement 0
+	namebox TRIGGER_WISEOLDMAN_RIVAL_1_Text_0
+	msgbox TRIGGER_WISEOLDMAN_RIVAL_1_Text_4
+	namebox TRIGGER_WISEOLDMAN_RIVAL_1_Text_5
+	msgbox TRIGGER_WISEOLDMAN_RIVAL_1_Text_6
 	hidenamebox
 	closemessage
 	savebgm MUS_DUMMY
@@ -490,6 +492,9 @@ HAM_EVENT_Route2_TRIGGER_3_Text_0:
 	.string "I don't know which way he went…$"
 
 NPC_ROUTE2_Wizard_Text_0:
+	.string "Cordelia$"
+
+NPC_ROUTE2_Wizard_Text_1:
 	.string "They say that there are hidden floors\n"
 	.string "within the Wizards' Tower.\p"
 	.string "I've never found them though.$"
@@ -504,9 +509,6 @@ BATTLE_ROUTE2_Trainer_1_Text_1:
 	.string "Back to Lumbridge I go!$"
 
 BATTLE_ROUTE2_Trainer_1_Text_2:
-	.string "HOW2TYPE$"
-
-BATTLE_ROUTE2_Trainer_1_Text_3:
 	.string "If the swamp wasn't hard enough, there\n"
 	.string "was also a forest to pass through!?\p"
 	.string "This is too much for a skiller…$"
@@ -519,9 +521,6 @@ BATTLE_ROUTE2_Trainer_2_Text_1:
 	.string "Wizards use runes to conjure magic.$"
 
 BATTLE_ROUTE2_Trainer_2_Text_2:
-	.string "Tam McGrubor$"
-
-BATTLE_ROUTE2_Trainer_2_Text_3:
 	.string "Runes are marvellous.\p"
 	.string "Using them on monsters might make them\n"
 	.string "evolve!$"
@@ -534,9 +533,6 @@ BATTLE_ROUTE2_Trainer_3_Text_1:
 	.string "Now you too can enjoy the joy of\n"
 	.string "fishing.$"
 
-BATTLE_ROUTE2_Trainer_3_Text_2:
-	.string "Cakebaws$"
-
 BATTLE_ROUTE2_Trainer_4_Text_0:
 	.string "Noobs fear me, fish fear me, pkers turns\n"
 	.string "their eyes away from me as I walk.$"
@@ -545,9 +541,6 @@ BATTLE_ROUTE2_Trainer_4_Text_1:
 	.string "No fish dare make a sound in my\n"
 	.string "presence.\p"
 	.string "I walk alone on this barren earth.$"
-
-BATTLE_ROUTE2_Trainer_4_Text_2:
-	.string "SlimyTem$"
 
 BATTLE_ROUTE2_Trainer_5_Text_0:
 	.string "You don't look very strong, this battle\n"
@@ -582,9 +575,6 @@ BATTLE_ROUTE2_Trainer_6_Text_2:
 BATTLE_ROUTE2_Trainer_7_Text_0:
 	.string "…$"
 
-BATTLE_ROUTE2_Trainer_7_Text_1:
-	.string "Bot$"
-
 NPC_ROUTE2_BLACK_KNIGHT_Text_0:
 	.string "Black Knight$"
 
@@ -607,12 +597,16 @@ TRIGGER_WISEOLDMAN_RIVAL_1_Text_2:
 	.string "takes.$"
 
 TRIGGER_WISEOLDMAN_RIVAL_1_Text_3:
-	.string "Impressive.$"
+	.string "Impressive.\p"
+	.string "Might I ask your name?$"
 
 TRIGGER_WISEOLDMAN_RIVAL_1_Text_4:
-	.string "Wise Old Man$"
+	.string "Nice to meet you {PLAYER}.$"
 
 TRIGGER_WISEOLDMAN_RIVAL_1_Text_5:
+	.string "Wise Old Man$"
+
+TRIGGER_WISEOLDMAN_RIVAL_1_Text_6:
 	.string "I'm Dionysius but everyone just calls\n"
 	.string "me the Wise old man.\p"
 	.string "I used to be one of the biggest\n"

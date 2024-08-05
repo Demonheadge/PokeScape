@@ -33,6 +33,7 @@ script GeneralStoreShopScript {
 script GeneralStore_LUMBRIDGE {
     lock
     faceplayer
+    namebox("Clerk")
     msgbox(format("Welcome to the Lumbridge General Store.\pHow may I help you?"))
     waitmessage
     call(GeneralStoreShopScript)
@@ -43,6 +44,7 @@ script GeneralStore_LUMBRIDGE {
 script GeneralStore_DRAYNOR {
     lock
     faceplayer
+    namebox("Clerk")
     msgbox(format("Welcome to the Drayor Markets.\pHow may I help you?"))
     waitmessage
     call(GeneralStoreShopScript)
@@ -53,6 +55,7 @@ script GeneralStore_DRAYNOR {
 script GeneralStore_FALADOR {
     lock
     faceplayer
+    namebox("Clerk")
     msgbox(format("Welcome to the Falador General Store.\pHow may I help you?"))
     waitmessage
     call(GeneralStoreShopScript)
@@ -63,6 +66,7 @@ script GeneralStore_FALADOR {
 script GeneralStore_VARROCK {
     lock
     faceplayer
+    namebox("Clerk")
     msgbox(format("Welcome to the Varrock General Store.\pHow may I help you?"))
     waitmessage
     call(GeneralStoreShopScript)
@@ -73,6 +77,7 @@ script GeneralStore_VARROCK {
 script GeneralStore_PORTSARIM {
     lock
     faceplayer
+    namebox("Clerk")
     msgbox(format("Welcome to the Port Sarim General Store.\pHow may I help you?"))
     waitmessage
     call(GeneralStoreShopScript)
@@ -83,6 +88,7 @@ script GeneralStore_PORTSARIM {
 script GeneralStore_RIMMINGTON {
     lock
     faceplayer
+    namebox("Clerk")
     msgbox(format("Welcome to the Rimmington General Store.\pHow may I help you?"))
     waitmessage
     call(GeneralStoreShopScript)
@@ -93,7 +99,8 @@ script GeneralStore_RIMMINGTON {
 script GeneralStore_ALKHARID {
     lock
     faceplayer
-    msgbox(format("Welcome to the Al Kharid General Store.\pHow may I help you?"))
+    namebox("Clerk")
+    msgbox(format("Welcome to the Al-Kharid General Store.\pHow may I help you?"))
     waitmessage
     call(GeneralStoreShopScript)
     msgbox("Thank you, come again!")

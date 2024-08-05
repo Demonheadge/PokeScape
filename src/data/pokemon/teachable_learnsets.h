@@ -52172,7 +52172,7 @@ static const u16 sWorld_GorgerTeachableLearnset[] = {
 	MOVE_BRUTAL_SWING,
 	MOVE_UNAVAILABLE,
 };
-static const u16 sFlesh_MongerTeachableLearnset[] = {
+static const u16 sFlesh_Spoiler_Covered_FormTeachableLearnset[] = {
 	MOVE_SUNNY_DAY,
 	MOVE_TAILWIND,
 	MOVE_GRASSY_TERRAIN,
@@ -57566,7 +57566,7 @@ static const u16 sAbyssal_DeepSea_GuardianTeachableLearnset[] = {
 	MOVE_ICE_HAMMER,
 	MOVE_UNAVAILABLE,
 };
-static const u16 sKipple_NanoTeachableLearnset[] = {
+static const u16 sRift_GuardianTeachableLearnset[] = {
 	MOVE_SUNNY_DAY,
 	MOVE_RAIN_DANCE,
 	MOVE_HAIL,
@@ -58241,5 +58241,366 @@ static const u16 sScurrius_Magic_FormTeachableLearnset[] = {
 	MOVE_TRICK_OR_TREAT,
 	MOVE_REVENGE,
 	MOVE_BRUTAL_SWING,
+	MOVE_UNAVAILABLE,
+};
+
+
+static const u16 sBroav_Zombie_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sImpling_Easter_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sImpling_Snow_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sImpling_Wandering_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sImpling_Ghost_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sVorkathTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sFox_PyreTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sFox_RecruitmentDriveTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sFox_FennecTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sSalamander_TecuTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sJerboaTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sJerboa_EmbertailTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sAntelope_Sunlight_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sAntelope_Moonlight_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sCapybaraTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sCapybara_OrangeTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sEntlingTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sPigglesTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sWolpertinger_Mega_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sFlesh_Spoiler_Naked_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sFlesh_Spoiler_SpawnlingTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sCaustic_GazerTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sIris_StalkerTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sAnimated_BookTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sTome_of_StrengthTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sTome_of_RangedTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sTome_of_MagicTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sLuminescent_IcefiendTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sWarped_GalugaTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sSubmastyxTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sParamastyxTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sArchaemastyxTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sDromomastyxTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sSpinomastyxTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sGallimastyxTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sStegomastyxTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sMegamastyxTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sJelly_Alternate_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sJelly_Dungeoneering_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sJelly_Trollweiss_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sJelly_Vitreous_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sJelly_Warped_Vitreous_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sMoth_Sunlight_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sMoth_Moonlight_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sStone_of_Jas_Mega_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sSpirit_WarriorTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sSpirit_RangerTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sSpirit_MageTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sEsslingTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sEsshoundTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sEsswraithTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sHarpy_EagleTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sReborn_WarriorTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sReborn_RangerTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sReborn_MageTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sJaguar_Orange_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sJaguar_Black_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sTortleTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sCockatrice_OSRS_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sCockathriceTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sCockatrice_MoonlightTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sRevenant_ImpTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sRevenant_DragonTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sMaledictusTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sKalragTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sAnimawhalTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sAnimasaurusTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sSea_Troll_QueenTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sYak_Lumber_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sCabbage_Shattered_World_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sVulture_Bearded_FormTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
+	MOVE_UNAVAILABLE,
+};
+
+static const u16 sKryket_BatTeachableLearnset[] = {
+	MOVE_SUNNY_DAY,
 	MOVE_UNAVAILABLE,
 };

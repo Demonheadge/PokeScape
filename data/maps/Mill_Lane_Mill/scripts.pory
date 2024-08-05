@@ -31,7 +31,7 @@ script SIGN_MILL_LANE_MILL
 script NPC1_MILL_LANE_MILL{
     lock
     faceplayer
-    //namebox ("Farmer")
+    namebox ("Farmer")
     msgbox(format("This is the Mill Lane Mill.\pThe Miller family has produced flour for generations!"))
     //hidenamebox
     release
@@ -42,7 +42,7 @@ script NPC1_MILL_LANE_MILL{
 script BEEFY_BILL_MILL_LANE_MILL {
     lock
     faceplayer
-    namebox ("William Whitebred")
+    namebox ("W. Whitebred")
     msgbox(format("Welcome to Beefy Bill's Supplies!\pCare to take a look at my stock?"))
     waitmessage
     hidenamebox

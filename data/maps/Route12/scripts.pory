@@ -162,14 +162,14 @@ script NPC_LUMBRIDGE_CHICKEN{
 			lock
 			faceplayer
 			namebox("Chicken")
-			playmoncry(SPECIES_TORCHIC, 0)
+			playmoncry(SPECIES_CHICKEN_NORMAL_FORM, 0)
 			msgbox(format("Bwak Bwak!"))
 			waitmoncry
 			hidenamebox
 			msgbox(format("You get into a staring contest with the chicken…"))
 			msgbox(format("{PAUSE 15}… {PAUSE 15}… {PAUSE 15}… {PAUSE 15}{PLAY_SE SE_PIN}!"))
 			closemessage
-			playmoncry(SPECIES_TORCHIC, 0)
+			playmoncry(SPECIES_CHICKEN_NORMAL_FORM, 0)
 			waitmoncry
 			msgbox(format("The chicken laid an egg!"))
 			giveitem(ITEM_SUPER_LARGE_EGG)
@@ -181,7 +181,7 @@ script NPC_LUMBRIDGE_CHICKEN{
             lock
             faceplayer
             namebox("Chicken")
-			playmoncry(SPECIES_TORCHIC, 0)
+			playmoncry(SPECIES_CHICKEN_NORMAL_FORM, 0)
 			msgbox(format("Bwwaak!"))
 			waitmoncry
 			hidenamebox
@@ -301,7 +301,7 @@ script Cow_Battle
 	}
 	else {
 	lock
-	msgbox("MOOOO")
+	msgbox("MOOOO!")
 	release
 	}
 
@@ -310,7 +310,7 @@ script Cow_Battle
 script ChickenBattle{
 	lock
 	faceplayer
-	msgbox("BAWK")
+	msgbox("BAWK!")
 	setwildbattle(SPECIES_CHICKEN_NORMAL_FORM, 5, ITEM_NONE)
 	dowildbattle
 	removeobject (VAR_LAST_TALKED)
@@ -322,7 +322,7 @@ script ChickenBattle{
 
 script GoblinBattle4{
 	trainerbattle_single(TRAINER_GOBLIN_4_ROUTE12, "This place goblin place.\nHuman go home.",format("Human strong.\nThis now Goblin and human home."))
-	namebox("Wormtongue")
+	//namebox("Wormtongue")
 	msgbox(format("Human strong.\nThis now goblin and human home."))
 	hidenamebox
 	closemessage
@@ -331,7 +331,7 @@ script GoblinBattle4{
 
 script GoblinBattle5{
 	trainerbattle_single(TRAINER_GOBLIN_5_ROUTE12, format("Human weak.\nFeethands show why."),format("Feethands weak.\nHuman show Feethands why."))
-	namebox("Feethands")
+	//namebox("Feethands")
 	msgbox(format("Feethands weak.\nHuman show Feethands why."))
 	hidenamebox
 	closemessage
@@ -340,7 +340,7 @@ script GoblinBattle5{
 
 script GoblinBattle6{
 	trainerbattle_single(TRAINER_GOBLIN_6_ROUTE12, format("Human homes makes for weak monster.\pSee strong monster here."),format("Strong monsters in human homes it seems."))
-	namebox("Eyemonger")
+	//namebox("Eyemonger")
 	msgbox(format("Strong monsters in human homes it seems."))
 	hidenamebox
 	closemessage
@@ -349,7 +349,7 @@ script GoblinBattle6{
 
 script BATTLE_ROUTE12_SMELLYBACK{
 	trainerbattle_single(TRAINER_GOBLIN_7_ROUTE12, format("Big high war god say human go home."),format("Big high war god calls for rematch.\pLater…\nMuch later…"))
-	namebox("Smellyback")
+	//namebox("Smellyback")
 	msgbox(format("Big high war god calls for rematch.\pLater…\nMuch later…"))
 	hidenamebox
 	closemessage
@@ -358,7 +358,7 @@ script BATTLE_ROUTE12_SMELLYBACK{
 
 script BATTLE_ROUTE12_TRAINER_1{
 	trainerbattle_single(TRAINER_RSN_ROUTE12, format("You look like a noob, even I could beat you!"),format("I will have you know I went easy on you.\nJust wait until you see my main."))
-	namebox("NotANoob37")
+	//namebox("NotANoob37")
 	msgbox(format("I will have you know I went easy on you.\pJust wait until you see my main."))
 	hidenamebox
 	closemessage
@@ -410,10 +410,11 @@ script NPC_ROUTE12_Seth_Groats{
 	end
 }
 
-script NPC_DOG
+script NPC_LASSIE
 {
 	lock
-    playmoncry(SPECIES_GROWLITHE, 0)
+	namebox("Lassie")
+    playmoncry(SPECIES_BORDER_COLLIE, 0)
 	msgbox(format("WOOF!"))
     waitmoncry
 	release

@@ -45,10 +45,11 @@ GeneralStoreShopScript_7:
 GeneralStore_LUMBRIDGE::
 	lock
 	faceplayer
-	msgbox GeneralStore_LUMBRIDGE_Text_0
+	namebox GeneralStore_LUMBRIDGE_Text_0
+	msgbox GeneralStore_LUMBRIDGE_Text_1
 	waitmessage
 	call GeneralStoreShopScript
-	msgbox GeneralStore_LUMBRIDGE_Text_1
+	msgbox GeneralStore_LUMBRIDGE_Text_2
 	release
 	return
 
@@ -56,10 +57,11 @@ GeneralStore_LUMBRIDGE::
 GeneralStore_DRAYNOR::
 	lock
 	faceplayer
+	namebox GeneralStore_LUMBRIDGE_Text_0
 	msgbox GeneralStore_DRAYNOR_Text_0
 	waitmessage
 	call GeneralStoreShopScript
-	msgbox GeneralStore_LUMBRIDGE_Text_1
+	msgbox GeneralStore_LUMBRIDGE_Text_2
 	release
 	return
 
@@ -67,10 +69,11 @@ GeneralStore_DRAYNOR::
 GeneralStore_FALADOR::
 	lock
 	faceplayer
+	namebox GeneralStore_LUMBRIDGE_Text_0
 	msgbox GeneralStore_FALADOR_Text_0
 	waitmessage
 	call GeneralStoreShopScript
-	msgbox GeneralStore_LUMBRIDGE_Text_1
+	msgbox GeneralStore_LUMBRIDGE_Text_2
 	release
 	return
 
@@ -78,10 +81,11 @@ GeneralStore_FALADOR::
 GeneralStore_VARROCK::
 	lock
 	faceplayer
+	namebox GeneralStore_LUMBRIDGE_Text_0
 	msgbox GeneralStore_VARROCK_Text_0
 	waitmessage
 	call GeneralStoreShopScript
-	msgbox GeneralStore_LUMBRIDGE_Text_1
+	msgbox GeneralStore_LUMBRIDGE_Text_2
 	release
 	return
 
@@ -89,10 +93,11 @@ GeneralStore_VARROCK::
 GeneralStore_PORTSARIM::
 	lock
 	faceplayer
+	namebox GeneralStore_LUMBRIDGE_Text_0
 	msgbox GeneralStore_PORTSARIM_Text_0
 	waitmessage
 	call GeneralStoreShopScript
-	msgbox GeneralStore_LUMBRIDGE_Text_1
+	msgbox GeneralStore_LUMBRIDGE_Text_2
 	release
 	return
 
@@ -100,10 +105,11 @@ GeneralStore_PORTSARIM::
 GeneralStore_RIMMINGTON::
 	lock
 	faceplayer
+	namebox GeneralStore_LUMBRIDGE_Text_0
 	msgbox GeneralStore_RIMMINGTON_Text_0
 	waitmessage
 	call GeneralStoreShopScript
-	msgbox GeneralStore_LUMBRIDGE_Text_1
+	msgbox GeneralStore_LUMBRIDGE_Text_2
 	release
 	return
 
@@ -111,10 +117,11 @@ GeneralStore_RIMMINGTON::
 GeneralStore_ALKHARID::
 	lock
 	faceplayer
+	namebox GeneralStore_LUMBRIDGE_Text_0
 	msgbox GeneralStore_ALKHARID_Text_0
 	waitmessage
 	call GeneralStoreShopScript
-	msgbox GeneralStore_LUMBRIDGE_Text_1
+	msgbox GeneralStore_LUMBRIDGE_Text_2
 	release
 	return
 
@@ -127,7 +134,7 @@ SHOP_RUNESTORE_VARROCK::
 	waitmessage
 	hidenamebox
 	pokemart STORE_RuneStore_1
-	msgbox GeneralStore_LUMBRIDGE_Text_1
+	msgbox GeneralStore_LUMBRIDGE_Text_2
 	release
 	end
 
@@ -140,7 +147,7 @@ SHOP_PRAYER_FALADOR::
 	waitmessage
 	hidenamebox
 	pokemart STORE_Prayer
-	msgbox GeneralStore_LUMBRIDGE_Text_1
+	msgbox GeneralStore_LUMBRIDGE_Text_2
 	release
 	end
 
@@ -439,10 +446,13 @@ STORE_GeneralStore_4:
     end
 
 GeneralStore_LUMBRIDGE_Text_0:
+	.string "Clerk$"
+
+GeneralStore_LUMBRIDGE_Text_1:
 	.string "Welcome to the Lumbridge General Store.\p"
 	.string "How may I help you?$"
 
-GeneralStore_LUMBRIDGE_Text_1:
+GeneralStore_LUMBRIDGE_Text_2:
 	.string "Thank you, come again!$"
 
 GeneralStore_DRAYNOR_Text_0:

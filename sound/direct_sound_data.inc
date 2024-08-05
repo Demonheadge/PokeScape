@@ -8724,7 +8724,7 @@ Cry_World_Gorger::
 	.incbin "sound/direct_sound_samples/cries/mantine.bin"
 
 	.align 2
-Cry_Flesh_Monger::
+Cry_Flesh_Spoiler_Covered_Form::
 	.incbin "sound/direct_sound_samples/cries/mantine.bin"
 
 	.align 2
@@ -9668,7 +9668,7 @@ Cry_Abyssal_DeepSea_Guardian::
 	.incbin "sound/direct_sound_samples/cries/huntail.bin"
 
 	.align 2
-Cry_Kipple_Nano::
+Cry_Rift_Guardian::
 	.incbin "sound/direct_sound_samples/cries/phanpy.bin"
 
 	.align 2
@@ -9798,9 +9798,322 @@ Cry_TzTok_Jad_RS3_Mega_Form::
 Cry_Abyssal_Guardian::
 	.incbin "sound/direct_sound_samples/cries/chimecho.bin"
 
+Cry_Airut::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
 	.align 2
 Cry_Skotizo::
 	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Scurrius_Melee_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Scurrius_Ranged_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Scurrius_Magic_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Broav_Zombie_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Impling_Easter_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Impling_Snow_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Impling_Wandering_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Impling_Ghost_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Vorkath::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Fox_Pyre::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Fox_RecruitmentDrive::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Fox_Fennec::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Salamander_Tecu::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Jerboa::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Jerboa_Embertail::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Antelope_Sunlight_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Antelope_Moonlight_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Capybara::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Capybara_Orange::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Entling::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Piggles::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Wolpertinger_Mega_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Flesh_Spoiler_Naked_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Flesh_Spoiler_Spawnling::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Caustic_Gazer::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Iris_Stalker::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Animated_Book::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Tome_of_Strength::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Tome_of_Ranged::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Tome_of_Magic::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Luminescent_Icefiend::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Warped_Galuga::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Submastyx::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Paramastyx::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Archaemastyx::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Dromomastyx::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Spinomastyx::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Gallimastyx::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Stegomastyx::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Megamastyx::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Jelly_Alternate_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Jelly_Dungeoneering_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Jelly_Trollweiss_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Jelly_Vitreous_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Jelly_Warped_Vitreous_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Moth_Sunlight_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Moth_Moonlight_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Stone_of_Jas_Mega_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Spirit_Warrior::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Spirit_Ranger::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Spirit_Mage::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Essling::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Esshound::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Esswraith::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Harpy_Eagle::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Reborn_Warrior::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Reborn_Ranger::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Reborn_Mage::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Jaguar_Orange_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Jaguar_Black_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Tortle::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Cockatrice_OSRS_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Cockathrice::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Cockatrice_Moonlight::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Revenant_Imp::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Revenant_Dragon::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Maledictus::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Slime_Queen::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Kalrag::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Animawhal::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Animasaurus::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Sea_Troll_Queen::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Yak_Lumber_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Cabbage_Shattered_World_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Vulture_Bearded_Form::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+	
+	.align 2
+Cry_Kryket_Bat::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+
+
+
+
+
 
 	.align 2
 DirectSoundWaveData_register_noise::

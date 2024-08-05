@@ -23,6 +23,14 @@ Check_Dungeon_Seed::
 	return
 
 
+Check_Dungeon_SeededResult::
+	specialvar VAR_RESULT, GetSeededResult
+	buffernumberstring STR_VAR_3, VAR_RESULT
+	msgbox Check_Dungeon_SeededResult_Text_0
+	closemessage
+	return
+
+
 Randomise_Dungeon_FAILED3::
 	setvar VAR_TEMP_9, 7
 	specialvar VAR_RESULT, GetSeededResult
@@ -249,3 +257,6 @@ DungeonLayout_2::
 
 Randomise_Dungeon_Seed_Text_0:
 	.string "VAR SEED is {STR_VAR_3} .$"
+
+Check_Dungeon_SeededResult_Text_0:
+	.string "VAR SEEDEDRESULT is {STR_VAR_3} .$"

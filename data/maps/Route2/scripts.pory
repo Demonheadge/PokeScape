@@ -278,7 +278,7 @@ script BLOCK_ROUTE2_Highwayman
 script NPC_ROUTE2_Wizard
 {
     faceplayer
-    //namebox ("CUPHOLDER")
+    namebox ("Cordelia")
     msgbox(format("They say that there are hidden floors within the Wizards' Tower.\pI've never found them though."))
     hidenamebox
     release
@@ -289,7 +289,7 @@ script NPC_ROUTE2_Wizard
 script BATTLE_ROUTE2_Trainer_1
 {
     trainerbattle_single(TRAINER_ROUTE2_TRAINER_1, format("Please no!\pI'm so close to the Bank I don't want to be sent back to Lumbridge!"),format("Nooo!\pBack to Lumbridge I go!"))
-    namebox ("HOW2TYPE")
+    //namebox ("H0w2Typ3")
     msgbox(format("If the swamp wasn't hard enough, there was also a forest to pass through!?\pThis is too much for a skiller…"))
     hidenamebox
     release
@@ -299,7 +299,7 @@ script BATTLE_ROUTE2_Trainer_1
 script BATTLE_ROUTE2_Trainer_2
 {
     trainerbattle_single(TRAINER_ROUTE2_TRAINER_2, format("Passing this bridge gets you to the Wizards' Tower."),format("Wizards use runes to conjure magic."))
-    namebox ("Tam McGrubor")
+    //namebox ("Tam McGrubor")
     msgbox(format("Runes are marvellous.\pUsing them on monsters might make them evolve!"))
     hidenamebox
     release
@@ -309,7 +309,7 @@ script BATTLE_ROUTE2_Trainer_2
 script BATTLE_ROUTE2_Trainer_3
 {
     trainerbattle_single(TRAINER_ROUTE2_TRAINER_3, format("A game is not a good game without a fishing minigame."),format("Now you too can enjoy the joy of fishing."))
-    namebox ("Cakebaws")
+    //namebox ("Cakebaws")
     msgbox(format("Now you too can enjoy the joy of fishing."))
     hidenamebox
     release
@@ -319,7 +319,7 @@ script BATTLE_ROUTE2_Trainer_3
 script BATTLE_ROUTE2_Trainer_4
 {
     trainerbattle_single(TRAINER_ROUTE2_TRAINER_4, format("Noobs fear me, fish fear me, pkers turns their eyes away from me as I walk."),format("No fish dare make a sound in my presence.\pI walk alone on this barren earth."))
-    namebox ("SlimyTem")
+    //namebox ("SlimyTem")
     msgbox(format("No fish dare make a sound in my presence.\pI walk alone on this barren earth."))
     hidenamebox
     release
@@ -349,7 +349,7 @@ script BATTLE_ROUTE2_Trainer_6
 script BATTLE_ROUTE2_Trainer_7
 {
     trainerbattle_single(TRAINER_ROUTE2_TRAINER_7, format("…"),format("…"))
-    namebox ("Bot")
+    //namebox ("Bot")
     msgbox(format("…"))
     hidenamebox
     closemessage
@@ -378,7 +378,7 @@ script TRIGGER_WISEOLDMAN_RIVAL_1{
     applymovement (14, movement_wom_route2_0)
     waitmovement(0)
     delay(60)
-    playbgm (MUS_ENCOUNTER_BRENDAN, 1)
+    playbgm (MUS_PS_WISE_OLD_MAN_THEME, 1)
     getplayerxy(VAR_TEMP_A, VAR_TEMP_B)
     if (var(VAR_TEMP_B) == 14){
         applymovement (14, movement_wom_route2_1)
@@ -393,7 +393,13 @@ script TRIGGER_WISEOLDMAN_RIVAL_1{
     closemessage
     trainerbattle_no_intro(TRAINER_RIVAL_WISE_OLD_MAN_1, format("Seems like you might just have what it takes.") )
     namebox("???")
-    msgbox(format("Impressive."))
+    msgbox(format("Impressive.\pMight I ask your name?"))
+    hidenamebox
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_INTERACT_LEFT)
+    waitmovement(0)
+    namebox("???")
+    msgbox(format("Nice to meet you {PLAYER}."))
     namebox("Wise Old Man")
     msgbox(format("I'm Dionysius but everyone just calls me the Wise old man.\pI used to be one of the biggest adventurers in the world, but now im just an old man looking back on his glory days.\pMaybe you will become something of a legend yourself?\pI hope to see you around on your adventures, try not to get lost in the Wizards' Tower.\pUntil next time."))
     hidenamebox

@@ -4269,7 +4269,7 @@ static void Cmd_getexp(void)
                     }
                     else if (IsGen6ExpShareEnabled() && !gBattleStruct->teamGotExpMsgPrinted) // Print 'the rest of your team got exp' message once, when all of the sent-in mons were given experience
                     {
-                        gLastUsedItem = ITEM_EXP_SHARE;
+                        gLastUsedItem = ITEM_PULSE_CORE;
                         PrepareStringBattle(STRINGID_TEAMGAINEDEXP, gBattleStruct->expGetterBattlerId);
                         gBattleStruct->teamGotExpMsgPrinted = TRUE;
                     }

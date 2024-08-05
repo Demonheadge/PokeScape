@@ -280,7 +280,7 @@
 #define END_SE                      SE_SUDOWOODO_SHAKE
 
 // Music
-#define START_MUS                   350
+
 #define MUS_LITTLEROOT_TEST         350 // MUS_TETSUJI
 #define MUS_GSC_ROUTE38             351 // MUS_FIELD13
 #define MUS_CAUGHT                  352 // MUS_KACHI22
@@ -492,7 +492,7 @@
 #define MUS_RG_TRAINER_TOWER        556 // MUS_RG_T_TOWER
 #define MUS_RG_SLOW_PALLET          557 // MUS_RG_SLOWMASARA
 #define MUS_RG_TEACHY_TV_MENU       558 // MUS_RG_TVNOIZE
-#define END_MUS                     MUS_RG_TEACHY_TV_MENU
+
 
 #define PH_TRAP_BLEND               559
 #define PH_TRAP_HELD                560
@@ -546,6 +546,7 @@
 #define PH_NURSE_HELD               608
 #define PH_NURSE_SOLO               609
 
+#define START_MUS                   610
 //POKESCAPE THEMES			
 #define	MUS_PS_TITLESCREEN	        610
 #define	MUS_PS_BANK	                611
@@ -616,6 +617,14 @@
 #define	MUS_PS_KOUREND_CATACOMBS	666
 #define MUS_PS_TRAINER_VICTORY      667
 #define	MUS_PS_VS_CHAOS_TUNNELS	    668
+#define	MUS_PS_WISE_OLD_MAN_THEME	669
+#define	MUS_PS_VS_WISE_OLD_MAN_RIVAL	670
+#define	MUS_PS_GODSLAYER	        671
+#define	MUS_PS_LUMBRIDGE_CASTLE	    672
+
+#define END_MUS                     MUS_PS_LUMBRIDGE_CASTLE
+
+
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

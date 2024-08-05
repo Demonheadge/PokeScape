@@ -43,6 +43,7 @@ LUMBRIDGE_GYM_STATE_3:
 	setmetatile 31, 6, 17, 1
 	setmetatile 32, 6, 17, 1
 	special DrawWholeMapView
+	setvar VAR_TEMP_A, 1
 	return
 
 LUMBRIDGE_GYM_STATE_4:
@@ -66,15 +67,75 @@ LUMBRIDGE_GYM_STATE_5:
 	return
 
 
+TRIGGER_GYM_DUKE::
+	lock
+	playse SE_PIN
+	applymovement 1, Movement_Gym_Duke_1
+	waitmovement 0
+	namebox TRIGGER_GYM_DUKE_Text_0
+	msgbox TRIGGER_GYM_DUKE_Text_1
+	closemessage
+	hidenamebox
+	savebgm MUS_PS_GYM
+	applymovement 1, Movement_Gym_Duke_2
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_Gym_Duke_3
+	waitmovement 1
+	removeobject 1
+	setflag FLAG_TEMP_1
+	setvar VAR_POKESCAPE_LUMBRIDGE_GYM_QUEST, 1
+	setvar VAR_TEMP_A, 0
+	call LUMBRIDGE_GYM_MUSIC
+	goto LUMBRIDGE_GYM_STATE
+	release
+	end
+
+
+Movement_Gym_Duke_1:
+	emote_question_mark
+	face_up
+	delay_16
+	delay_16
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	step_end
+
+Movement_Gym_Duke_2:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+Movement_Gym_Duke_3:
+	face_left
+	lock_facing_direction
+	walk_right
+	unlock_facing_direction
+	step_end
+
 NPC_DUKE_1::
 	lock
 	faceplayer
-	namebox NPC_DUKE_1_Text_0
+	namebox TRIGGER_GYM_DUKE_Text_0
 	goto_if_unset FLAG_BADGE01_GET, NPC_DUKE_1_2
 	checkitem ITEM_TALISMAN_MYSTERY, 1
 	compare VAR_RESULT, 0
 	goto_if_ne NPC_DUKE_1_6
-	msgbox NPC_DUKE_1_Text_4
+	msgbox NPC_DUKE_1_Text_3
 NPC_DUKE_1_5:
 	closemessage
 	hidenamebox
@@ -82,7 +143,7 @@ NPC_DUKE_1_5:
 	end
 
 NPC_DUKE_1_2:
-	msgbox NPC_DUKE_1_Text_1
+	msgbox NPC_DUKE_1_Text_0
 	closemessage
 	hidenamebox
 	fadescreen FADE_TO_BLACK
@@ -90,14 +151,15 @@ NPC_DUKE_1_2:
 	setflag FLAG_TEMP_1
 	setvar VAR_POKESCAPE_LUMBRIDGE_GYM_QUEST, 1
 	fadescreen FADE_FROM_BLACK
+	savebgm MUS_PS_GYM
 	call LUMBRIDGE_GYM_MUSIC
 	goto LUMBRIDGE_GYM_STATE
 	release
 	end
 
 NPC_DUKE_1_6:
+	msgbox NPC_DUKE_1_Text_1
 	msgbox NPC_DUKE_1_Text_2
-	msgbox NPC_DUKE_1_Text_3
 	goto NPC_DUKE_1_5
 
 
@@ -149,13 +211,13 @@ LUMBRIDGE_GYM_GUARD_2::
 	end
 
 LUMBRIDGE_GYM_GUARD_2_3:
-	msgbox LUMBRIDGE_GYM_GUARD_1_Text_1
+	msgbox LUMBRIDGE_GYM_GUARD_2_Text_0
 	hidenamebox
 	release
 	end
 
 LUMBRIDGE_GYM_GUARD_2_4:
-	msgbox LUMBRIDGE_GYM_GUARD_2_Text_0
+	msgbox LUMBRIDGE_GYM_GUARD_2_Text_1
 	hidenamebox
 	release
 	end
@@ -186,16 +248,65 @@ LUMBRIDGE_GYM_SIGMUND::
 	lock
 	faceplayer
 	namebox LUMBRIDGE_GYM_SIGMUND_Text_0
-	msgbox LUMBRIDGE_GYM_SIGMUND_Text_1
+	switch VAR_POKESCAPE_LUMBRIDGE_GYM_QUEST
+	case 0, LUMBRIDGE_GYM_SIGMUND_3
+	case 1, LUMBRIDGE_GYM_SIGMUND_4
+	case 2, LUMBRIDGE_GYM_SIGMUND_5
+	msgbox LUMBRIDGE_GYM_SIGMUND_Text_3
 	hidenamebox
 	release
 	end
 
+LUMBRIDGE_GYM_SIGMUND_3:
+	msgbox LUMBRIDGE_GYM_SIGMUND_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
 
-NPC_DUKE_1_Text_0:
+LUMBRIDGE_GYM_SIGMUND_4:
+	msgbox LUMBRIDGE_GYM_SIGMUND_Text_2
+	hidenamebox
+	closemessage
+	release
+	end
+
+LUMBRIDGE_GYM_SIGMUND_5:
+	msgbox LUMBRIDGE_GYM_SIGMUND_Text_3
+	hidenamebox
+	closemessage
+	release
+	end
+
+
+HANS_GYM_LUMBRIDGE::
+	lock
+	faceplayer
+	namebox HANS_GYM_LUMBRIDGE_Text_0
+	goto_if_unset FLAG_BADGE01_GET, HANS_GYM_LUMBRIDGE_2
+	msgbox HANS_GYM_LUMBRIDGE_Text_2
+HANS_GYM_LUMBRIDGE_1:
+	release
+	end
+
+HANS_GYM_LUMBRIDGE_2:
+	msgbox HANS_GYM_LUMBRIDGE_Text_1
+	goto HANS_GYM_LUMBRIDGE_1
+
+
+TRIGGER_GYM_DUKE_Text_0:
 	.string "Duke Horacio$"
 
-NPC_DUKE_1_Text_1:
+TRIGGER_GYM_DUKE_Text_1:
+	.string "Hi there!\p"
+	.string "I'm Horacio, the Duke of Lumbridge.\p"
+	.string "I heard that you wish to challenge me\n"
+	.string "to a battle!\p"
+	.string "Very well, you will have to reach the top\n"
+	.string "of the castle.\p"
+	.string "I shall be waiting!$"
+
+NPC_DUKE_1_Text_0:
 	.string "Hi there!\p"
 	.string "I'm Duke Horacio, lord of castle\n"
 	.string "Lumbridge.\p"
@@ -205,11 +316,11 @@ NPC_DUKE_1_Text_1:
 	.string "of the castle.\p"
 	.string "I shall be waiting!$"
 
-NPC_DUKE_1_Text_2:
+NPC_DUKE_1_Text_1:
 	.string "Have you been to see the Archmage\n"
 	.string "about that Talisman yet?$"
 
-NPC_DUKE_1_Text_3:
+NPC_DUKE_1_Text_2:
 	.string "Wizards' Tower is located south of\n"
 	.string "Draynor Village.\p"
 	.string "You can get there through Lumbridge\n"
@@ -218,7 +329,7 @@ NPC_DUKE_1_Text_3:
 	.string "Talisman and I'll give you something for\l"
 	.string "your troubles.$"
 
-NPC_DUKE_1_Text_4:
+NPC_DUKE_1_Text_3:
 	.string "You fought well earlier!\n"
 	.string "I look forward to a rematch.$"
 
@@ -226,8 +337,9 @@ LUMBRIDGE_GYM_GUARD_1_Text_0:
 	.string "Guard$"
 
 LUMBRIDGE_GYM_GUARD_1_Text_1:
-	.string "Sorry, this hallway is off limits until I\n"
-	.string "sort out this mess.$"
+	.string "You're a gym challenger?\p"
+	.string "The Duke he can be found in his room\n"
+	.string "down this hallway.$"
 
 LUMBRIDGE_GYM_GUARD_1_Text_2:
 	.string "Good luck with your gym challenge!$"
@@ -237,6 +349,10 @@ LUMBRIDGE_GYM_GUARD_1_Text_3:
 	.string "Mind yourself.$"
 
 LUMBRIDGE_GYM_GUARD_2_Text_0:
+	.string "Sorry, this hallway is off limits until I\n"
+	.string "sort out this mess.$"
+
+LUMBRIDGE_GYM_GUARD_2_Text_1:
 	.string "Welcome to Lumbridge Castle.$"
 
 EVENTSCRIPT_LUMBRIDGECASTLE_DIARY_Text_0:
@@ -255,5 +371,35 @@ LUMBRIDGE_GYM_SIGMUND_Text_0:
 	.string "Sigmund$"
 
 LUMBRIDGE_GYM_SIGMUND_Text_1:
-	.string "I think you're looking for the Duke.\p"
-	.string "He's in the next room.$"
+	.string "You gym challengers disgust me.\p"
+	.string "Now get out of my room, the Duke is in\n"
+	.string "the next room!$"
+
+LUMBRIDGE_GYM_SIGMUND_Text_2:
+	.string "You gym challengers disgust me.$"
+
+LUMBRIDGE_GYM_SIGMUND_Text_3:
+	.string "Go away.\p"
+	.string "I'm busy.$"
+
+HANS_GYM_LUMBRIDGE_Text_0:
+	.string "Hans$"
+
+HANS_GYM_LUMBRIDGE_Text_1:
+	.string "Oh you are taking up the challenge?\p"
+	.string "That is great!\p"
+	.string "I guess I should call you a\n"
+	.string "Completionist in the makings then.\p"
+	.string "To clear this challenge you have to\n"
+	.string "beat the Duke.\p"
+	.string "He specializes in NORMAL-TYPE\n"
+	.string "monsters.\p"
+	.string "NORMAL-TYPE's aren't weak to anything\n"
+	.string "except FIGHTING-TYPE, however if a\l"
+	.string "monster is dual typed you can work\l"
+	.string "around that.\p"
+	.string "Good luck fighting the Duke!$"
+
+HANS_GYM_LUMBRIDGE_Text_2:
+	.string "You truly are a Completionist in the\n"
+	.string "making, good job!$"

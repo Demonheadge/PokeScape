@@ -2,7 +2,7 @@
   "id": "MAP_LUMBRIDGE_CASTLE_4",
   "name": "Lumbridge_Castle_4",
   "layout": "LAYOUT_LUMBRIDGE_CASTLE_4",
-  "music": "MUS_PS_GYM",
+  "music": "MUS_PS_LUMBRIDGE_CASTLE",
   "region_map_section": "MAPSEC_LUMBRIDGE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

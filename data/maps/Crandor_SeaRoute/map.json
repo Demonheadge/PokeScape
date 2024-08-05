@@ -17,6 +17,11 @@
       "map": "MAP_RIMMINGTON",
       "offset": -11,
       "direction": "right"
+    },
+    {
+      "map": "MAP_CRANDOR",
+      "offset": 0,
+      "direction": "up"
     }
   ],
   "object_events": [

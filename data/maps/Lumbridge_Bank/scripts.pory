@@ -39,7 +39,7 @@ script BANK_EventScript_PC {
 script BANK_EventScript_Banker {
     
 	faceplayer
-    //namebox ("Banker")
+    namebox ("Banker")
     msgbox(format("Welcome to the Bank of PokeScape.\pHow may I help you today?"))
 	waitmessage
     goto(BANK_OPTIONS)

@@ -544,6 +544,7 @@ NPC_FALADOR_HAIRDRESSER_6:
 	msgbox NPC_FALADOR_HAIRDRESSER_Text_5
 	hidenamebox
 	setflag FLAG_HAIRDRESSER
+	hidenamebox
 	giveitem ITEM_RING_OF_WEALTH, 1
 	namebox NPC_FALADOR_HAIRDRESSER_Text_0
 	msgbox NPC_FALADOR_HAIRDRESSER_Text_6
@@ -1517,7 +1518,7 @@ NPC_FALADOR_HAIRDRESSER_NPC_Text_0:
 	.string "It will fix my love life for sure.$"
 
 NPC_FALADOR_HAIRDRESSER_SUOMI_Text_0:
-	.string "SUOMI$"
+	.string "KKcomics$"
 
 NPC_FALADOR_HAIRDRESSER_SUOMI_Text_1:
 	.string "What, do you think this is my natural\n"

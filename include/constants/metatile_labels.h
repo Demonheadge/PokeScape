@@ -311,6 +311,9 @@
 #define METATILE_InsideShip_IntactDoor_Bottom_Locked    0x233
 #define METATILE_InsideShip_IntactDoor_Bottom_Unlocked  0x22B
 
+// gTileset_Karamja
+#define METATILE_Karamja_SAND_BANANA  0x248
+
 // gTileset_Lavaridge
 #define METATILE_Lavaridge_AshGrass             0x207
 #define METATILE_Lavaridge_CaveEntrance_Bottom  0x25E
@@ -450,6 +453,26 @@
 #define METATILE_PetalburgGym_SlidingDoor_Frame3  0x21B
 #define METATILE_PetalburgGym_SlidingDoor_Frame4  0x21C
 
+// gTileset_PokeScapeCaves
+#define METATILE_PokeScapeCaves_Extra_1_blue_tears_bottom    0x21D
+#define METATILE_PokeScapeCaves_Extra_1_blue_tears_mid       0x215
+#define METATILE_PokeScapeCaves_Extra_1_blue_tears_puddle_L  0x223
+#define METATILE_PokeScapeCaves_Extra_1_blue_tears_puddle_M  0x224
+#define METATILE_PokeScapeCaves_Extra_1_blue_tears_puddle_R  0x225
+#define METATILE_PokeScapeCaves_Extra_1_blue_tears_top       0x20D
+#define METATILE_PokeScapeCaves_Extra_1_green_tears_bottom   0x21C
+#define METATILE_PokeScapeCaves_Extra_1_green_tears_mid      0x214
+#define METATILE_PokeScapeCaves_Extra_1_green_tears_top      0x20C
+#define METATILE_PokeScapeCaves_darkcave_pond_corner_L       0x0D0
+#define METATILE_PokeScapeCaves_darkcave_pond_corner_R       0x0D2
+#define METATILE_PokeScapeCaves_darkcave_pond_middle_L       0x0C8
+#define METATILE_PokeScapeCaves_darkcave_pond_middle_M       0x0C9
+#define METATILE_PokeScapeCaves_darkcave_pond_middle_R       0x0CA
+#define METATILE_PokeScapeCaves_darkcave_pond_sparkle        0x0D1
+#define METATILE_PokeScapeCaves_darkcave_pond_top_L          0x0C0
+#define METATILE_PokeScapeCaves_darkcave_pond_top_M          0x0C1
+#define METATILE_PokeScapeCaves_darkcave_pond_top_R          0x0C2
+
 // gTileset_PokeScapeOutdoors
 #define METATILE_PokeScapeOutdoors_Door_Bank_L          0x13A
 #define METATILE_PokeScapeOutdoors_Door_Bank_R          0x135
@@ -459,6 +482,7 @@
 #define METATILE_PokeScapeOutdoors_Door_General_R       0x1D3
 #define METATILE_PokeScapeOutdoors_Door_Pub_L           0x1EA
 #define METATILE_PokeScapeOutdoors_Door_Pub_R           0x1D2
+#define METATILE_PokeScapeOutdoors_GENERAL_SAND         0x0F9
 
 // gTileset_PokemonCenter
 #define METATILE_PokemonCenter_CounterBarrier            0x25D

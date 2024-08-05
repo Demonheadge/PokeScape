@@ -58,6 +58,7 @@ script Lumbridge_Bookshelf_2
 script Lumbridge_Castle_GUARD{
 	lock
 	faceplayer
+	namebox("Brawn")
 	msgbox(format("I'm on guard duty.\pPlease do not cause any problems."))
 	release
 	end
@@ -66,6 +67,7 @@ script Lumbridge_Castle_GUARD{
 script Lumbridge_Castle_HALLWAY_GUARD{
 	lock
 	faceplayer
+	namebox("Dante")
 	msgbox(format("I'm sorry but this hallway is off limits.\pI am surprised you are talking to me to be honest.\pNo one ever uses this hallway."))
 	release
 	end
@@ -75,6 +77,7 @@ script Lumbridge_Castle_HALLWAY_TRIGGER{
 	PlaySE(SE_PIN)
 	applymovement(3, Movement_Lumbridge_Castle_HALLWAY_TRIGGER1)
 	waitmovement(0)
+	namebox("Dante")
 	msgbox(format("I'm sorry but this hallway is off limits."))
 	waitmessage 
 	closemessage
@@ -123,21 +126,19 @@ movement Movement_Lumbridge_Castle_COOKS_TRIGGER2{
 	walk_up
 }
 
-movement Movement_Lumbridge_Castle_COOKS_TRIGGER3{
-	face_left
-}
-
 script Lumbridge_Castle_COOKS_TRIGGER_celler{
 	if((var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE) == 0 && var(VAR_POKESCAPE_GAMEMODE_STATE) == 0)){
 		lock
 		PlaySE(SE_PIN)
-		applymovement(OBJ_EVENT_ID_PLAYER, Movement_Lumbridge_Castle_COOKS_TRIGGER1)
-		applymovement(OBJ_EVENT_ID_PLAYER, Movement_Lumbridge_Castle_COOKS_TRIGGER3)
+		//applymovement(OBJ_EVENT_ID_PLAYER, Movement_Lumbridge_Castle_COOKS_TRIGGER1)
+		//waitmovement(0)
+		applymovement(OBJ_EVENT_ID_COOK, BLOCK_COOKSASSISTANT_3)
 		waitmovement(0)
 		namebox("Cook")
 		msgbox(format("Wait!\pCome talk to me."))
 		waitmessage 
 		closemessage
+		hidenamebox
 		applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_LEFT)
 		waitmovement(0)
 		release
@@ -179,9 +180,12 @@ script LeftDoorScript
 	waitmovement (0)
 	namebox ("Hans")
 	msgbox(format("Hello there!\pMy name is Hans.\pYou are...?"))
+	hidenamebox
+	closemessage
 	applymovement(OBJ_EVENT_ID_PLAYER, Movement_PLAYER_1)
 	waitmovement (0)
-	msgbox(format("...\pNice to meet you {PLAYER}.\pYou must be here to see the Professor?\pWe've had a few others come see him today too.\pFollow me."))
+	namebox ("Hans")
+	msgbox(format("...\pNice to meet you {PLAYER}.\pYou must be here to see the researcher?\pWe've had a few others come see him today too.\pFollow me."))
 	waitmessage
 	hidenamebox
 	closemessage
@@ -196,8 +200,8 @@ script LeftDoorScript
 	hidenamebox
 	applymovement(4, Movement_NORMALTREE_2)
 	waitmovement (0)
-	namebox ("Prof. Normal Tree")
-	msgbox(format("Nice.\pI am Professor Normal Tree.\pI am in need of assistants to help me in my research, as you would know this world is full to the brim with all sorts of monsters.\pWhat I would like assistance with is filling this BESTIARY with as much data as possible.\pOf course I wouldn't ask you to do it for free, I'll be giving you one of 3 rare monsters to take with you on your journey."))
+	namebox ("Prof. Tree")
+	msgbox(format("I am Professor Normal Tree.\pBut everyone calls me Professor Tree for short.\pI am in need of assistants to help me in my research, as you would know this world is full to the brim with all sorts of monsters.\pWhat I would like assistance with is filling this BESTIARY with as much data as possible.\pOf course I wouldn't ask you to do it for free, I'll be giving you one of 3 rare monsters to take with you on your journey."))
 	msgbox(format("Would you like to accept my Quest?"), MSGBOX_YESNO)
 	while (var(VAR_RESULT) != 1) {
         msgbox(format("Noob.\p...How about now?"), MSGBOX_YESNO)	
@@ -220,8 +224,11 @@ script RightDoorScript
 	waitmovement (0)
 	namebox ("Hans")
 	msgbox(format("Hello there!\pMy name is Hans.\pYou are...?"))
+	hidenamebox
+	closemessage
 	applymovement(OBJ_EVENT_ID_PLAYER, Movement_PLAYER_1)
 	waitmovement (0)
+	namebox ("Hans")
 	msgbox(format("...\pNice to meet you {PLAYER}.\pYou must be here to see the researcher?\pWe've had a few others come see him today too.\pFollow me."))
 	waitmessage
 	hidenamebox
@@ -237,8 +244,8 @@ script RightDoorScript
 	hidenamebox
 	applymovement(4, Movement_NORMALTREE_2)
 	waitmovement (0)
-	namebox ("Prof. Normal Tree")
-	msgbox(format("Nice.\pI am Professor Normal Tree.\pI am in need of assistants to help me in my research. As you may know, this world is full to the brim with all sorts of monsters.\pWhat I would like assistance with is filling this BESTIARY with as much data as possible.\pOf course I wouldn't ask you to do it for free, I'll be giving you one of 3 rare monsters to take with you on your journey."))
+	namebox ("Prof. Tree")
+	msgbox(format("I am Professor Normal Tree.\pBut everyone calls me Professor Tree for short.\pI am in need of assistants to help me in my research, as you would know this world is full to the brim with all sorts of monsters.\pWhat I would like assistance with is filling this BESTIARY with as much data as possible.\pOf course I wouldn't ask you to do it for free, I'll be giving you one of 3 rare monsters to take with you on your journey."))
 	msgbox(format("Would you like to accept my Quest?"), MSGBOX_YESNO)
 	while (var(VAR_RESULT) != 1) {
         msgbox(format("Noob.\p...How about now?"), MSGBOX_YESNO)	
@@ -262,13 +269,13 @@ script Lumbridge_Castle_Professor_Normal_Tree_1{
 			applymovement(OBJ_EVENT_ID_PLAYER, Movement_Starter3)
 			waitmovement(0)
 		}
-		namebox ("Prof. Normal Tree")
+		namebox ("Prof. Tree")
 		msgbox(format("Nice.\pPlease take this BESTIARY."))
 		hidenamebox
 		playfanfare(MUS_OBTAIN_ITEM)
 		msgbox(format("Obtained the BESTIARY."))
 		waitfanfare
-		namebox ("Prof. Normal Tree")
+		namebox ("Prof. Tree")
 		msgbox(format("I've got to head to Kandarin now, I look forward to seeing how much of the BESTIARY you've filled out the next we meet.\pUntil then...\lFarewell."))
 		waitmessage
 		hidenamebox
@@ -284,7 +291,7 @@ script Lumbridge_Castle_Professor_Normal_Tree_1{
 script Lumbridge_Castle_Professor_Normal_Tree_2{
 	lock
 	faceplayer
-	namebox ("Prof. Normal Tree")
+	namebox ("Prof. Tree")
 	msgbox(format("Please choose from one of these 3 monsters on the table."))
 	hidenamebox
 	release
@@ -330,7 +337,7 @@ script Lumbridge_Castle_Hans_1{
 script Starter_TRIGGER{
 	if(!flag(FLAG_SYS_POKEMON_GET)){
 		lock
-		namebox ("Prof. Normal Tree")
+		namebox ("Prof. Tree")
 		msgbox(format("Don't leave!\pPlease choose from one of these 3 monsters on the table."))
 		waitmessage
 		hidenamebox
@@ -681,9 +688,11 @@ script QUEST_Cooks_Assistant_STATE{
 				hidenamebox
 				startquest (QUEST_COOKS_ASSISTANT)
 				namebox ("Cook")
-				msgbox(format("Oh, thank you, thank you!\pI need an egg, some milk, and some flour.\pFor the eggs you should check out the chicken farms, around Lumbridge.\pYou can get some milk from the Cow Field, east of Lumbridge.\pYou should ask someone at the Windmill, north of Lumbridge, if they can give you some flour."))
+				msgbox(format("Oh, thank you, thank you!\pI need an egg, some milk, and some flour.\pFor the eggs you should check out the chicken farms, around Lumbridge.\pYou can get some milk from the Cow Field, east of Lumbridge.\pYou should ask someone at the Windmill if they can give you some flour, north of Lumbridge."))
 				msgbox(format("Oh..\nBefore you go."))
+				hidenamebox
 				giveitem (ITEM_MAP)
+				namebox ("Cook")
 				msgbox(format("Hopefully that map will help you if you get lost."))
 				setvar(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE, 1)
 				hidenamebox
@@ -853,38 +862,14 @@ script QUEST_TRIGGER_BLOCK_COOKSASSISTANT {
     	}
 	switch (var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE)){ 
 		case 0: 
-			lock
-			playSE(SE_PIN)
-			applymovement(OBJ_EVENT_ID_COOK, BLOCK_COOKSASSISTANT_1)
-			waitmovement(0)
-			namebox("Cook")
-			msgbox(format("Hey, you there!\nCome here for a minute."))
-			closemessage
-			hidenamebox
-			applymovement(OBJ_EVENT_ID_PLAYER,BLOCK_COOKSASSISTANT_2)
-			waitmovement(0)
-			release
-			end
 		case 1: 
-			lock
-			playSE(SE_PIN)
-			applymovement(OBJ_EVENT_ID_COOK, BLOCK_COOKSASSISTANT_1)
-			waitmovement(0)
-			namebox("Cook")
-			msgbox(format("Nobody must disturb the Duke until he's had his cake!\pPlease go and see if you can find the ingredients!"))
-			closemessage
-			hidenamebox
-			applymovement(OBJ_EVENT_ID_PLAYER,BLOCK_COOKSASSISTANT_2)
-			waitmovement(0)
-			release
-			end
 		case 2: 
 			lock
 			playSE(SE_PIN)
 			applymovement(OBJ_EVENT_ID_COOK, BLOCK_COOKSASSISTANT_1)
 			waitmovement(0)
 			namebox("Cook")
-			msgbox(format("Wait!\pYou have all the ingredients for the cake, please come back here and try baking it."))
+			msgbox(format("Hey you there!\nCome here for a minute."))
 			closemessage
 			hidenamebox
 			applymovement(OBJ_EVENT_ID_PLAYER,BLOCK_COOKSASSISTANT_2)
@@ -909,7 +894,10 @@ movement BLOCK_COOKSASSISTANT_2 {
 	walk_right * 2
 	walk_down * 2
 	walk_right * 3
-
+}
+movement BLOCK_COOKSASSISTANT_3 {
+	emote_exclamation_mark
+	jump_in_place_right
 }
 
 //---------------------------------------------------------------------------------

@@ -11,6 +11,7 @@ script Lumbridge_Church_Father_Aereck
 {
 	lock
 	faceplayer
+    namebox("Monk")
 	msgbox(format("Monsters don't really die.\pThey will not be needing graves.\pJust take them to the bank."))
 	release
 	end
@@ -20,6 +21,7 @@ script Lumbridge_Church_NPC1
 {
 	lock
 	faceplayer
+    namebox("Man")
 	msgbox(format("Praise be Saradomin!"))
 	release
 	end
@@ -29,6 +31,7 @@ script Lumbridge_Church_NPC2
 {
 	lock
 	faceplayer
+    namebox("Skiller")
 	msgbox(format("Bow to the great one!"))
 	release
 	end
@@ -38,7 +41,8 @@ script Lumbridge_Church_NPC3
 {
 	lock
 	faceplayer
-	msgbox(format("I love Lumbridge.\pNothing happens.\pTown is safe and Zamorak and Saradomin won't wreck it over some light balls."))
+    namebox("Woman")
+	msgbox(format("I love Lumbridge.\pNothing interesting happens.\pI don't think anything could ruin it.\pWe even have a lovely forest behind the castle!"))
 	release
 	end
 }	

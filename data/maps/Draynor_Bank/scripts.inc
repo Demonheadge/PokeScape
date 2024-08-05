@@ -69,7 +69,8 @@ NPC_DraynorBank_PilloryGuard::
 NPC_LumbridgeBank_NPC1::
 	lock
 	faceplayer
-	msgbox NPC_LumbridgeBank_NPC1_Text_0
+	namebox NPC_LumbridgeBank_NPC1_Text_0
+	msgbox NPC_LumbridgeBank_NPC1_Text_1
 	hidenamebox
 	release
 	end
@@ -78,7 +79,8 @@ NPC_LumbridgeBank_NPC1::
 NPC_LumbridgeBank_NPC2::
 	lock
 	faceplayer
-	msgbox NPC_LumbridgeBank_NPC2_Text_0
+	namebox NPC_LumbridgeBank_NPC2_Text_0
+	msgbox NPC_LumbridgeBank_NPC2_Text_1
 	hidenamebox
 	release
 	end
@@ -87,7 +89,8 @@ NPC_LumbridgeBank_NPC2::
 NPC_LumbridgeBank_NPC3::
 	lock
 	faceplayer
-	msgbox NPC_LumbridgeBank_NPC3_Text_0
+	namebox NPC_LumbridgeBank_NPC3_Text_0
+	msgbox NPC_LumbridgeBank_NPC3_Text_1
 	hidenamebox
 	release
 	end
@@ -125,14 +128,20 @@ NPC_DraynorBank_PilloryGuard_Text_1:
 	.string "Otherwise you're in for da cage!$"
 
 NPC_LumbridgeBank_NPC1_Text_0:
+	.string "Ranger$"
+
+NPC_LumbridgeBank_NPC1_Text_1:
 	.string "The Lumbridge Bank used to be on top of\n"
-	.string "the Lumbridge Castle, but it was\l"
-	.string "difficult to get there.\p"
+	.string "the Castle, but it was difficult to get\l"
+	.string "there.\p"
 	.string "Duke Horacio however started a Gym\n"
 	.string "there and moved the Bank to a more\l"
 	.string "convenient location.$"
 
 NPC_LumbridgeBank_NPC2_Text_0:
+	.string "Noob$"
+
+NPC_LumbridgeBank_NPC2_Text_1:
 	.string "Remember if your Monsters ever get\n"
 	.string "poisoned you can feed them a Chocolate\l"
 	.string "Sunday to make them feel better!\p"
@@ -142,5 +151,8 @@ NPC_LumbridgeBank_NPC2_Text_0:
 	.string "Monsters.$"
 
 NPC_LumbridgeBank_NPC3_Text_0:
-	.string "These bankers are great, you can heal\n"
-	.string "your Monsters and store your items.$"
+	.string "Farmer$"
+
+NPC_LumbridgeBank_NPC3_Text_1:
+	.string "These banks are great, you can heal\n"
+	.string "your Monsters and store your items!$"

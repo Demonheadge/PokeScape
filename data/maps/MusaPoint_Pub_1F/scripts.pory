@@ -1,0 +1,65 @@
+const OBJ_EVENT_ID_WISE_OLD_MAN = 5
+
+mapscripts MusaPoint_Pub_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+		call(MUSAPOINT_PUB_STATE)
+        setvar(VAR_EVOLUTION_MAP_STATE, 15) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+    }
+}
+
+
+script MUSAPOINT_PUB_STATE {
+    if (var(VAR_WISE_OLD_MAN_RIVAL) == 20) { //Post Karamaja Gym, 
+        addobject(OBJ_EVENT_ID_WISE_OLD_MAN)
+        clearflag(FLAG_TEMP_1F)
+    }
+    else {
+        removeobject(OBJ_EVENT_ID_WISE_OLD_MAN)
+        setflag(FLAG_TEMP_1F)
+    }
+}
+
+
+
+script BANK_MUSA_POINT {
+    lock
+	faceplayer
+    //namebox ("Banker")
+    msgbox(format("hic\pWhy is the rum always gone.\phic\nHello…\pWelcome to the Bank of PokeScape.\pHow may I hic you today?"))
+	waitmessage
+    goto(BANK_OPTIONS)
+}
+
+script NPC_MUSA_POINT_PubOwner
+{
+	lock
+	faceplayer
+    //namebox ("")
+	msgbox(format("Can I interest you in some of our famous Karamjan Rum?\pOr perhaps you would like some of our wines, spirits or beers?"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_MUSA_POINT_Pub_BarCrawl
+{
+	lock
+	faceplayer
+    //namebox ("")
+	msgbox(format("Are you here for a Pub Crawl?"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_MUSA_POINT_Pub_Sailer
+{
+	lock
+	faceplayer
+    //namebox ("")
+	msgbox(format("Hey mate, you caught any of those lobsters?\pDid you know lobsters evolve differently depending on the weather in their environment?"))
+    closemessage
+    hidenamebox
+	release
+	end
+}

@@ -36,6 +36,7 @@ BANK_EventScript_PC_3:
 
 BANK_EventScript_Banker::
 	faceplayer
+	namebox BANK_EventScript_PC_Text_0
 	msgbox BANK_EventScript_Banker_Text_0
 	waitmessage
 	goto BANK_OPTIONS

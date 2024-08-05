@@ -5196,5 +5196,10 @@ static const u8 sPokeScapeReviveDesc[] = _(
     "Monster with half\n"
     "its HP.");
 
+static const u8 sRingOfKinship_Desc[] = _(
+    "A ring that\n"
+    "will teleport you\n"
+    "to Daemonheim.");
+    
 static const u8 sCupholderDesc[] = _(
     "This is a Cupholder.");

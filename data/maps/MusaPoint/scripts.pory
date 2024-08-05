@@ -3,6 +3,10 @@ const OBJ_EVENT_ID_QUESTER = 21
 const OBJ_EVENT_ID_CUSTOMS_OFFICER = 7
 
 mapscripts MusaPoint_MapScripts {
+	MAP_SCRIPT_ON_LOAD 
+    {
+        call(MUSAPOINT_METATILES)
+    }
     MAP_SCRIPT_ON_TRANSITION {
 		call(MUSAPOINT_STATE)
         setvar(VAR_EVOLUTION_MAP_STATE, 15) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
@@ -11,26 +15,67 @@ mapscripts MusaPoint_MapScripts {
 
 }
 
+script MUSAPOINT_METATILES {
+	if (var(VAR_WISE_OLD_MAN_RIVAL) <= 15) { //Post Karamaja Gym, 
+		setmetatile(12, 35, METATILE_Karamja_SAND_BANANA, 0) 
+		setmetatile(10, 36, METATILE_Karamja_SAND_BANANA, 0) 
+		setmetatile(15, 35, METATILE_Karamja_SAND_BANANA, 0) 
+		special(DrawWholeMapView) 
+	}
+
+	if (var(VAR_BANANA_BOAT_QUEST) >= 10) { 
+		setmetatile(27, 27, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0) 
+		setmetatile(28, 27, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0) 
+		setmetatile(29, 27, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0) 
+		setmetatile(27, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0) 
+		setmetatile(28, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0) 
+		setmetatile(29, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0) 
+		special(DrawWholeMapView) 
+	}
+
+	
+}
+
 script MUSAPOINT_STATE {
 	if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORYMODE
     {
 		if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 150) { //Post Karamaja Gym, //FLIP >
 			addobject(OBJ_EVENT_ID_QUESTER)
-			clearflag(FLAG_TEMP_1E)
+			clearflag(FLAG_TEMP_1D)
 			setobjectxyperm(OBJ_EVENT_ID_CUSTOMS_OFFICER, 38, 29)
 		}
 		else {
 			removeobject(OBJ_EVENT_ID_QUESTER)
-			setflag(FLAG_TEMP_1E)
+			setflag(FLAG_TEMP_1D)
 		}
 	//Wise Old Man
-		if (var(VAR_WISE_OLD_MAN_RIVAL) <= 30) { //Post Karamaja Gym, //FLIP >
+		if (var(VAR_WISE_OLD_MAN_RIVAL) <= 15) { //Post Karamaja Gym, 
+			setvar(VAR_TEMP_F, 1)
 			addobject(OBJ_EVENT_ID_WISE_OLD_MAN)
 			clearflag(FLAG_TEMP_1F)
+			addobject(22)
+			addobject(23)
+			clearflag(FLAG_TEMP_1E)
 		}
 		else {
 			removeobject(OBJ_EVENT_ID_WISE_OLD_MAN)
 			setflag(FLAG_TEMP_1F)
+			removeobject(22)
+			removeobject(23)
+			setflag(FLAG_TEMP_1E)
+		}
+	//BANANA BOAT QUEST
+		if (var(VAR_BANANA_BOAT_QUEST) >= 5) { //QUEST START (Could change to check if quest is started)
+			clearflag(FLAG_TEMP_1C)
+			clearflag(FLAG_TEMP_1B)
+			addobject(24)
+			addobject(25)
+		}
+		else {
+			setflag(FLAG_TEMP_1C)
+			setflag(FLAG_TEMP_1B)
+			removeobject(24)
+			removeobject(25)
 		}
 	}
 	return
@@ -104,7 +149,7 @@ script ITEM_MUSA_POINT_1
 }
 script ITEM_MUSA_POINT_2
 {
-    finditem(ITEM_PURPLE_SWEETS)
+    finditem(ITEM_STAT_BEER)
     end
 }
 
@@ -237,50 +282,20 @@ script NPC_MUSA_POINT_Luthas
 	release
 	end
 }
-script NPC_Monkey
+script NPC_MONKEY_BLOCK
 {
 	lock
 	faceplayer
-    namebox ("Monkey")
+    namebox ("MONKEY")
+    playmoncry(SPECIES_MONKEY_NORMAL_FORM, 0)
 	msgbox(format("Oook, Ook!"))
-    closemessage
+    waitmoncry
     hidenamebox
+	msgbox(format("This monkey is bananas!"))
 	release
 	end
 }
-script NPC_MUSA_POINT_PubOwner
-{
-	lock
-	faceplayer
-    //namebox ("")
-	msgbox(format("Can I interest you in some of our famous Karamjan Rum?\pOr perhaps you would like some of our wines, spirits or beers?"))
-    closemessage
-    hidenamebox
-	release
-	end
-}
-script NPC_MUSA_POINT_Pub_Sailer
-{
-	lock
-	faceplayer
-    //namebox ("")
-	msgbox(format("Hello, I am a Cupholder."))
-    closemessage
-    hidenamebox
-	release
-	end
-}
-script NPC_MUSA_POINT_Pub_BarCrawl
-{
-	lock
-	faceplayer
-    //namebox ("")
-	msgbox(format("Hello, I am a Cupholder."))
-    closemessage
-    hidenamebox
-	release
-	end
-}
+
 
 
 //TRAINERS
@@ -327,10 +342,12 @@ script BATTLE_MUSA_POINT_TRAINER_4
 
 
 
+
 ////WISE OLD MAN
 //Well then, it truly has been awhile.
 //You look quite different since we last met. Youve grown quite a lot.
 //How about we check just how much you have truly grown.
+
 //*BATTLE - W: You are really getting this old man riled up.
 //So you got stranded on Crandor, passed through volcano passage undereath Karamja Volcano, met with the Tzhaar and now you are here?
 //You certainly have been busy haven't you.
@@ -398,14 +415,387 @@ script QUEST_BOAT_MUSA_POINT_Smuggler
 }
 
 
-//wom
 
-	//	if (var(VAR_WISE_OLD_MAN_RIVAL) == 30) { //Post Karamaja Gym,
-	//		checkitem(ITEM_SURF_TOOL, 1)
-	//		if (var(VAR_RESULT)){
-	//			//Oh, I see you have the brought the boat. You go on ahead, this old man will wait for this matter to resolve.
-	//		}
-	//		else {
-				
-	//		}
-	//	}
+//wom
+script TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT {
+	lock
+    playse(SE_PIN)
+    applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_wom_musapoint_noticeplayer)
+    waitmovement(0)
+    delay(60)
+    playbgm (MUS_PS_WISE_OLD_MAN_THEME, 1)
+	getplayerxy(VAR_TEMP_A, VAR_TEMP_B)
+    if (var(VAR_TEMP_B) == 26){
+        applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_wom_musapoint_01)
+		waitmovement(0)
+		applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_DOWN)
+    } 
+    elif (var(VAR_TEMP_B) == 27){
+        applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_wom_musapoint_02)
+    }
+	elif (var(VAR_TEMP_B) == 28){
+        applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_wom_musapoint_03)
+    }
+	waitmovement(0)
+	namebox("Wise Old Man")
+	msgbox(format("Well then, it truly has been awhile.\nYou look quite different since we last met."))
+	switch (var(VAR_WISE_OLD_MAN_RIVAL)) { 
+		case 10: // Last encounter was port sarim.
+			msgbox(format("It was a shame you didn't take me up on the offer to meet within Asganria Dungeon.\pIt cannot be helped I suppose.\pHow about we check just how much you have truly grown."))
+		case 15: //Encountered optional within Asganria Dungeon
+			msgbox(format("By the way, did you end up meeting with Melzar?\pHow did that go, did he put up a good fight?\pThat man loves his cabbages.\pEnough, chit chat, this old man wants to see how much you've grown since our last enocunter!"))
+		}
+	hidenamebox
+	closemessage
+	trainerbattle_no_intro(TRAINER_RIVAL_WISE_OLD_MAN_3, format("You are really getting this old man riled up.")) 
+	namebox("Wise Old Man")
+	msgbox(format("So you got stranded on Crandor, passed through volcano passage undereath Karamja Volcano, met with the Tzhaar and now you are here?\pYou certainly have been busy haven't you.\pYou should really take the MvM championship seriously, I think you might just make it to the end."))
+	hidenamebox
+	closemessage
+	applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_wom_musapoint_1)
+	waitmovement(0)
+	namebox("Wise Old Man")
+	msgbox(format("Although that might have to be put on hold for a bit as it seems someone was caught smuggling Karmaja Rum.\pAll of the boats are in lockdown until the matter is resolved.\pIf you don't want to wait around with me, I heard Luthas was selling a boat."))
+	applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, MOVEMENT_FACE_UP)
+	waitmovement(0)
+	msgbox(format("He lives in that shack just over there.\pGo give him a visit if your interested."))
+	applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, Common_Movement_FacePlayer)
+	waitmovement(0)
+	msgbox(format("Me?\pI think I might go visit the pub for a drink.\pI truly am looking forward to seeing your MvM championship progress.\pUntil next time {PLAYER}."))
+	hidenamebox
+	closemessage
+	getplayerxy(VAR_TEMP_A, VAR_TEMP_B)
+    if (var(VAR_TEMP_B) == 26){
+        applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_wom_musapoint_04)
+    } 
+    elif (var(VAR_TEMP_B) == 27){
+        applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_wom_musapoint_05)
+    }
+	elif (var(VAR_TEMP_B) == 28){
+        applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_wom_musapoint_06)
+    }
+	waitmovement(0)
+	opendoor(18,32)
+	waitdooranim
+	applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_ENTER_DOOR)
+	waitmovement(0)
+	removeobject(OBJ_EVENT_ID_WISE_OLD_MAN)
+	setflag(FLAG_TEMP_1F)
+	closedoor(18,32)
+	setvar(VAR_WISE_OLD_MAN_RIVAL, 20) //Karmaja event completed.
+	setvar(VAR_TEMP_F, 0)
+	savebgm(MUS_DUMMY)
+	fadedefaultbgm
+	release
+	end
+	
+}
+
+movement movement_wom_musapoint_noticeplayer{
+    face_player
+    emote_exclamation_mark
+    delay_16
+}
+movement movement_wom_musapoint_01{
+    walk_left
+	walk_up
+	walk_left
+	walk_up
+	walk_left
+	face_up
+}
+movement movement_wom_musapoint_02{
+    walk_left
+	walk_up
+	walk_up
+	walk_left
+}
+movement movement_wom_musapoint_03{
+    walk_left
+	walk_up
+	walk_left
+}
+movement movement_wom_musapoint_1{
+    face_right
+    delay_16 * 6
+    face_player
+}
+
+movement movement_wom_musapoint_04{
+    walk_right
+	walk_down * 2
+	walk_right
+	walk_down * 4
+	walk_left * 6
+	face_up
+}
+movement movement_wom_musapoint_05{
+    walk_down * 2
+	walk_right
+	walk_down * 4
+	walk_left * 6
+	face_up
+}
+movement movement_wom_musapoint_06{
+	walk_down
+	walk_right
+	walk_down * 4
+	walk_left * 6
+	face_up
+}
+movement movement_ENTER_DOOR{
+	walk_up
+	set_invisible
+}
+
+
+
+
+script NPC_WISEOLDMAN_RIVAL_MUSAPOINT_PUB {
+	lock
+	faceplayer
+	namebox("Wise Old Man")
+	checkitem(ITEM_SURF_TOOL, 1)
+	if (var(VAR_RESULT)){
+		msgbox(format("Oh, I see you have the brought the boat.\pYou go on ahead and sail back to the mainland, this old man will wait for the matter at the docks to resolve."))
+	}
+	else {
+		msgbox(format("Hello again {PLAYER}.\pDid you end up going to see Luthas about that boat?"))				
+	}
+	hidenamebox
+	closemessage
+	release
+	end
+}
+
+
+
+
+script LUTHAS_QUEST {
+	lock
+	faceplayer
+	namebox("LUTHAS")
+
+	//change to switch case
+
+	if (var(VAR_BANANA_BOAT_QUEST) == 25) {
+		goto(LUTHAS_QUEST_PART_6)
+	}
+
+	if (var(VAR_BANANA_BOAT_QUEST) == 20) {
+		goto(LUTHAS_QUEST_PART_5)
+	}
+
+	if (var(VAR_BANANA_BOAT_QUEST) == 15) {
+		goto(LUTHAS_QUEST_PART_4)
+	}
+
+	//if the quest has been completed.
+	if (var(VAR_BANANA_BOAT_QUEST) == 10) {
+		goto(LUTHAS_QUEST_PART_3)
+	}
+
+	//CHECK IF THE QUEST HAS BEEN STARTED
+	if (var(VAR_BANANA_BOAT_QUEST) == 5) {
+		goto(LUTHAS_QUEST_PART_2)
+	}
+
+	//CHECK IF QUEST HASNT BEEN STARTED.
+	if (var(VAR_BANANA_BOAT_QUEST) == 0) {
+		goto(LUTHAS_QUEST_PART_1)
+	}
+
+	msgbox(format("Hello, I run the banana plantation. How many I help you today?"))
+
+}
+
+
+
+script LUTHAS_QUEST_PART_1 {
+	msgbox(format("Hello, I run the banana plantation.\pHow many I help you today?\pAh, you interested in the boat that is for sale?"))
+	//player interact up
+	checkitem(ITEM_SURF_TOOL, 1)
+	if (var(VAR_RESULT)){
+		msgbox(format("Oh, I see you already have a boat.\pMaybe you could help me with a little job then."))
+		msgbox(format("You see I've injured my back and now am running behind on the shipment of bananas.\pIf you could go into the plantation and pick 10 bananas for me.\pI've got some nicknacks you can have if you help me with this job."))
+	}
+	else {
+		msgbox(format("How much?\pYou are very eager aren't you.\pI can sell it to you but not for gold pieces.\pWhat I need is an employee."))
+		msgbox(format("You see I've injured my back and now am running behind on the shipment of bananas.\pIf you could go into the plantation and pick 10 bananas for me then you can have this boat."))
+	}
+	msgbox(format("Is that a deal?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT)) {
+		closemessage
+		hidenamebox
+		startquest (QUEST_BANANA_BOAT)
+		setvar(VAR_BANANA_BOAT_QUEST, 5) //Start quest
+		namebox("LUTHAS")
+		msgbox(format("Great!\pRemember I need 10 bananas from the plantation.\pBring them back to me when you have them."))
+	}
+	else {
+		msgbox(format("…\pWell if you change your mind you know where I am."))
+	}
+	hidenamebox
+	closemessage
+	release
+	end
+}
+
+
+script LUTHAS_QUEST_PART_2 {
+	checkitem(ITEM_BANANA, 10)
+	if (!var(VAR_RESULT)){
+		checkitem(ITEM_BANANA, 1)
+		if (var(VAR_RESULT)){
+			msgbox(format("Great it looks like you have at least 1 Banana.\pBut I need 10 in total.\pIf you could bring them to me in bulk that would be helpful."))
+		}
+	msgbox(format("Remember I need 10 bananas from the plantation.\pYou can find the plantation next door.\pThere should be some bananas on the trees."))
+	closemessage
+	hidenamebox
+	release
+	end
+	}
+	msgbox(format("Can I have those bananas to fill the order?"), MSGBOX_YESNO)
+	if (!var(VAR_RESULT)) {
+		msgbox(format("Oh…"))
+		closemessage
+		hidenamebox
+		release
+		end
+	}
+	removeitem(ITEM_BANANA,10)
+	addvar(VAR_BANANA_COUNT, 10)
+	subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_BANANA_BOAT, 0)
+	msgbox(format("Thank you, as promised here is your reward."))
+	closemessage
+	hidenamebox
+	checkitem(ITEM_SURF_TOOL, 1)
+	if (!var(VAR_RESULT)){
+		giveitem(ITEM_SURF_TOOL,1)
+		namebox("LUTHAS")
+		msgbox(format("As an extra thanks for helping me have these."))
+	}
+	giveitem(ITEM_PURPLE_SWEETS,5)
+	giveitem(ITEM_PINEAPPLE,1)
+	//QUEST COMPPLETE.
+	questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_BANANA_BOAT)
+	setvar(VAR_BANANA_BOAT_QUEST, 10) //Quest complete
+	closemessage
+	hidenamebox
+	release
+	end
+
+}
+
+
+script LUTHAS_QUEST_PART_3 {
+	msgbox(format("Thank you for helping me earlier.\pIf you bring me another 20 Bananas I can reward you with this neat Scroll."))
+	checkitem(ITEM_BANANA, 20)
+	if (var(VAR_RESULT)){
+		msgbox(format("Can I have those bananas to fill the order?"), MSGBOX_YESNO)
+		if (!var(VAR_RESULT)) {
+			msgbox(format("What a shame, I'll hang onto this Scroll incase you change your mind."))
+			hidenamebox
+			closemessage
+			release
+			end
+		}
+		removeitem(ITEM_BANANA, 20)
+		addvar(VAR_BANANA_COUNT, 20)
+		setvar(VAR_BANANA_BOAT_QUEST, 15)
+		subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_BANANA_BOAT, 1)
+		msgbox(format("My order is filled, thank you!\pHave this as a reward."))
+		hidenamebox
+		closemessage
+		giveitem(ITEM_TM12_MISTY_TERRAIN, 1) //replace with a banana related move.
+	}
+	hidenamebox
+	closemessage
+	release
+	end
+}
+
+script LUTHAS_QUEST_PART_4 {
+	msgbox(format("Back again?\pI always have more work if you are interested.\pCould you please get me another 30 bananas.\pIn terms of a reward I'm sure I can find something for you."))
+	setvar(VAR_BANANA_BOAT_QUEST, 20)
+	hidenamebox
+	closemessage
+	release
+	end
+}
+
+script LUTHAS_QUEST_PART_5 {
+	msgbox(format("Could you bring me another 30 bananas?"))
+	checkitem(ITEM_BANANA, 30)
+	if (var(VAR_RESULT)){
+		msgbox(format("Can I have those bananas to fill the order?"), MSGBOX_YESNO)
+		if (!var(VAR_RESULT)) {
+			msgbox(format("What a shame, come see me if you change your mind."))
+			hidenamebox
+			closemessage
+			release
+			end
+		}
+		removeitem(ITEM_BANANA, 30)
+		addvar(VAR_BANANA_COUNT, 30)
+		msgbox(format("My order is filled, thank you!\pHave this as a reward."))
+		hidenamebox
+		closemessage
+		call(GIVE_RANDOM_ITEM_28)
+		if (var(VAR_BANANA_COUNT) >= 120) {
+			namebox("LUTHAS")
+			msgbox(format("Hang on a minute.\pI found this the other day I would like you to have it for helping me out so much."))	
+			closemessage
+			hidenamebox
+			//give mon
+			msgbox(format("I hope you will keep assisting me in the future."))
+			setvar(VAR_BANANA_BOAT_QUEST, 25)
+			subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_BANANA_BOAT, 3)
+		}
+	}
+	hidenamebox
+	closemessage
+	release
+	end
+}
+
+script LUTHAS_QUEST_PART_6 {
+	msgbox(format("Could you bring me another 30 bananas?"))
+	checkitem(ITEM_BANANA, 30)
+	if (var(VAR_RESULT)){
+		msgbox(format("Can I have those bananas to fill the order?"), MSGBOX_YESNO)
+		if (!var(VAR_RESULT)) {
+			msgbox(format("What a shame, come see me if you change your mind."))
+			hidenamebox
+			closemessage
+			release
+			end
+		}
+		removeitem(ITEM_BANANA, 30)
+		addvar(VAR_BANANA_COUNT, 30)
+		msgbox(format("My order is filled, thank you!\pHave this as a reward."))
+		hidenamebox
+		closemessage
+		call(GIVE_RANDOM_ITEM_28)
+		if (var(VAR_BANANA_COUNT) >= 1000) {
+			namebox("LUTHAS")
+			msgbox(format("Hang on a minute.\pI found this the other day I would like you to have it for helping me out so much."))	
+			closemessage
+			hidenamebox
+			//give mon
+			msgbox(format("I hope you will keep assisting me in the future."))
+			//setvar(VAR_BANANA_BOAT_QUEST, 25)
+		}
+	}
+	hidenamebox
+	closemessage
+	release
+	end
+}
+
+script SIGN_BANANA_COUNT {
+	buffernumberstring(0, VAR_BANANA_COUNT)
+    msgbox(format("{PLAYER}'s Banana Count: {STR_VAR_1}."))
+	closemessage
+	end
+}

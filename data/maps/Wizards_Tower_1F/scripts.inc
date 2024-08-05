@@ -734,14 +734,14 @@ VAR_CHECKER_11:
 
 
 STORYMODE_VAR_CHECK::
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 105
 	buffernumberstring 0, VAR_POKESCAPE_STORYMODE_PROGRESS
 	msgbox STORYMODE_VAR_CHECK_Text_0
 	closemessage
+	addvar VAR_WISE_OLD_MAN_RIVAL, 5
 	buffernumberstring 0, VAR_WISE_OLD_MAN_RIVAL
 	msgbox STORYMODE_VAR_CHECK_Text_1
 	closemessage
-	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 105
-	setvar VAR_WISE_OLD_MAN_RIVAL, 5
 	return
 
 
@@ -838,7 +838,7 @@ NPC_WIZARDSTOWER_Valina_Text_0:
 	.string "Valina$"
 
 NPC_WIZARDSTOWER_Valina_Text_1:
-	.string "Hello.\l"
+	.string "Hello.\n"
 	.string "Welcome to the Wizards Tower.$"
 
 NPC_WIZARDSTOWER_Traiborn_Text_0:
@@ -875,7 +875,7 @@ NPC_WIZARDSTOWER_Taloram_Text_1:
 	.string "are itching for a battle.$"
 
 NPC_WIZARDSTOWER_Melville_Grayzag_Text_0:
-	.string "Melville Grayzag$"
+	.string "Melville$"
 
 NPC_WIZARDSTOWER_Melville_Grayzag_Text_1:
 	.string "Heck yeah!\p"
