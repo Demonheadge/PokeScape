@@ -128,6 +128,17 @@ ITEM_ROUTE0_TINDERBOX::
 	end
 
 
+NPC_JAMJAM::
+	lock
+	faceplayer
+	namebox NPC_JAMJAM_Text_0
+	msgbox NPC_JAMJAM_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 BATTLE_ROUTE0_TRAINER_1_Text_0:
 	.string "You are interrupting me!$"
 
@@ -237,3 +248,11 @@ NPC_ROUTE0_CHICKEN_Text_0:
 
 NPC_ROUTE0_RAPTOR_Text_0:
 	.string "The Raptor ignores you.$"
+
+NPC_JAMJAM_Text_0:
+	.string "AJamJam$"
+
+NPC_JAMJAM_Text_1:
+	.string "Only one hour remains until I knock off\n"
+	.string "work!\p"
+	.string "HOORAY!$"

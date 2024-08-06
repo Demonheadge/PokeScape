@@ -3,7 +3,7 @@
   "name": "Route45",
   "layout": "LAYOUT_ROUTE45",
   "music": "MUS_ABNORMAL_WEATHER",
-  "region_map_section": "MAPSEC_MORYTANIA",
+  "region_map_section": "MAPSEC_ABYSS",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_ROUTE",
