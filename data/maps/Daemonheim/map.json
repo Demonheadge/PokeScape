@@ -3,14 +3,14 @@
   "name": "Daemonheim",
   "layout": "LAYOUT_DAEMONHEIM",
   "music": "MUS_PS_ROUTE_WILDERNESS",
-  "region_map_section": "MAPSEC_TUTORIAL_ISLAND",
+  "region_map_section": "MAPSEC_WILDERNESS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_TOWN",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
-  "show_map_name": true,
+  "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
@@ -21,7 +21,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_BARBARIAN_MALE_2",
+      "graphics_id": "OBJ_EVENT_GFX_BANKER_M",
       "x": 22,
       "y": 23,
       "elevation": 0,
@@ -47,9 +47,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_DUNGEONEERING_2",
+      "graphics_id": "OBJ_EVENT_GFX_SMUGGLER",
       "x": 29,
-      "y": 15,
+      "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 2,
@@ -60,20 +60,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_DUNGEONEERING_1",
-      "x": 30,
-      "y": 18,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_DUNGEONEERING_3",
+      "graphics_id": "OBJ_EVENT_GFX_BARBARIAN_MALE_1",
       "x": 22,
       "y": 14,
       "elevation": 0,
@@ -86,7 +73,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_DUNGEONEERING_3",
+      "graphics_id": "OBJ_EVENT_GFX_BARBARIAN_MALE_1",
       "x": 25,
       "y": 14,
       "elevation": 0,
@@ -99,8 +86,8 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_DUNGEONEERING_2",
-      "x": 18,
+      "graphics_id": "OBJ_EVENT_GFX_BARBARIAN_FEMALE_1",
+      "x": 27,
       "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -129,9 +116,16 @@
     },
     {
       "x": 20,
-      "y": 7,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_DAEMONHEIM_GYM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 27,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_DAEMONHEIM",
       "dest_warp_id": "0"
     }
   ],
@@ -139,6 +133,21 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 23,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 24,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    }
   ]
 }

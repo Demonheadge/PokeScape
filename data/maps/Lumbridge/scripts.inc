@@ -840,6 +840,23 @@ Lumbridge_House_Roddeck_14:
 	goto Lumbridge_House_Roddeck_5
 
 
+Lumbridge_HAMDuo_1::
+	lock
+	faceplayer
+	msgbox Lumbridge_HAMDuo_1_Text_0
+	faceplayer
+	msgbox Lumbridge_HAMDuo_1_Text_1
+	release
+	end
+
+
+Lumbridge_HAMDuo_2::
+	lock
+	msgbox Lumbridge_HAMDuo_2_Text_0
+	release
+	end
+
+
 CUPHOLDER_NPC_Text_0:
 	.string "I am currently a Cupholder with no\n"
 	.string "dialog.$"
@@ -1230,3 +1247,15 @@ Lumbridge_House_Roddeck_Text_6:
 	.string "I wish I knew that before Sottlepot\n"
 	.string "went on a rampage killing Sir Vant and\l"
 	.string "that adventurer…$"
+
+Lumbridge_HAMDuo_1_Text_0:
+	.string "I'm sure the boss said that the hideout\n"
+	.string "was this way..{PAUSE 15}$"
+
+Lumbridge_HAMDuo_1_Text_1:
+	.string "Hey! Mind your own business!$"
+
+Lumbridge_HAMDuo_2_Text_0:
+	.string "Did the forest get overgrown again?\p"
+	.string "Maybe we need to go find an axe to cut\n"
+	.string "back some of these trees..$"
