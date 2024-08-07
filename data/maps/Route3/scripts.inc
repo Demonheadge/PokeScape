@@ -78,7 +78,6 @@ Script_Wendy_1_2:
 
 NPC_SKELETAL_OX::
 	lock
-	faceplayer
 	namebox NPC_SKELETAL_OX_Text_0
 	playmoncry SPECIES_SKELETALOX_MALE_FORM, 0
 	msgbox NPC_SKELETAL_OX_Text_1
