@@ -65,7 +65,7 @@ movement MOVEMENT_LUMBRIDGESWAMP_PINKGIRL_2{
 
 script BATTLE_LumbridgeSwamp_TRAINER_1{
 	trainerbattle_single(TRAINER_RSN_LUM_SWAMP, format("This is me swamp!"),format("Get out of me swamp!"))
-	namebox("Slimethighs")
+	//namebox("Slimethighs")
 	msgbox(format("Me do not like you."))
 	hidenamebox
 	closemessage
@@ -75,7 +75,7 @@ script BATTLE_LumbridgeSwamp_TRAINER_1{
 
 script BATTLE_LumbridgeSwamp_TRAINER_2{
 	trainerbattle_single(TRAINER_SKELETON_LUM_SWAMP, format("Rattle, rattle!"),format("Rattle…"))
-	namebox("Brittlebones")
+	//namebox("Brittlebones")
 	msgbox(format("Rattle…"))
 	hidenamebox
 	closemessage
@@ -85,7 +85,7 @@ script BATTLE_LumbridgeSwamp_TRAINER_2{
 
 script BATTLE_LumbridgeSwamp_TRAINER_3{
 	trainerbattle_single(TRAINER_MUGGER_LUM_SWAMP, format("Stay still and nobody gets hurt!"),format("My feelings got hurt by your victory."))
-	namebox("Robin")
+	//namebox("Robin")
 	msgbox(format("My feelings got hurt by your victory."))
 	hidenamebox
 	closemessage
@@ -94,7 +94,7 @@ script BATTLE_LumbridgeSwamp_TRAINER_3{
 
 script BATTLE_LumbridgeSwamp_TRAINER_4{
 	trainerbattle_single(TRAINER_LUM_SWAMP_GRASSTEETH, format("Did pink humans say to find me?"),format("Pink humans chase relentless.\pMe scared."))
-	namebox("Grassteeth")
+	//namebox("Grassteeth")
 	msgbox(format("Pink humans chase relentless.\pMe scared."))
 	hidenamebox
 	closemessage
@@ -103,7 +103,7 @@ script BATTLE_LumbridgeSwamp_TRAINER_4{
 
 script BATTLE_LumbridgeSwamp_TRAINER_5{
 	trainerbattle_single(TRAINER_LUM_SWAMP_TRAINER_5, format("My pickaxe head just flew right off!\pWoah, you think you can just take it?\pYeah I don't think so buddy."),format("Take this reward money in exchange for my pickaxe head back."))
-	namebox("Miner")
+	//namebox("Miner")
 	msgbox(format("I guess I need to visit Bob's Axes to get my pickaxe fixed now."))
 	hidenamebox
 	closemessage
@@ -113,7 +113,7 @@ script BATTLE_LumbridgeSwamp_TRAINER_5{
 
 
 script LumSwampSign {
-    msgbox(format("WARNING: Goblins below!"), MSGBOX_SIGN)
+    msgbox(format("WARNING: Monsters below!"), MSGBOX_SIGN)
     closemessage
 	end
 }
@@ -135,6 +135,7 @@ script LUMBRIDGESWAMP_CANDLESELLER
 {
 	lock
 	faceplayer
+	namebox("Candle Seller")
 	msgbox(format("I wouldn't go down there without a light source.\pIt's dangerous!"))
     checkitem(ITEM_FLASH_TOOL, 1)
         if (!var(VAR_RESULT)){

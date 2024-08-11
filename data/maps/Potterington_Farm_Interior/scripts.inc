@@ -324,7 +324,7 @@ EventScript_DaycareMan_Text_0:
 EventScript_DaycareMan_Text_1:
 	.string "Hello, I am Father Potterington.\n"
 	.string "We help take care of the precious\l"
-	.string "MONSTERs of Adventurers.\p"
+	.string "MONSTERS of Adventurers.\p"
 	.string "If you'd like us to raise your MONSTER,\n"
 	.string "have a word with my wife.$"
 
@@ -333,7 +333,7 @@ EventScript_DaycareLady_Text_0:
 
 EventScript_DaycareLady_Text_1:
 	.string "Hey there, I am Mother Potterington.\p"
-	.string "We can raise and breed MONSTERs for\n"
+	.string "We can raise and breed MONSTERS for\n"
 	.string "you.\p"
 	.string "Would you like us to raise one?$"
 

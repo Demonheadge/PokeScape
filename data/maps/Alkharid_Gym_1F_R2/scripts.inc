@@ -639,13 +639,13 @@ QUEST_ALKHARID_GYM_1_Text_0:
 	.string "Osman$"
 
 QUEST_ALKHARID_GYM_1_Text_1:
-	.string "Welcome to the Al-Kharid Gym.\p"
+	.string "Welcome to the Al Kharid Gym.\p"
 	.string "Would you like to start your Gym\n"
 	.string "Challenge?$"
 
 QUEST_ALKHARID_GYM_1_Text_2:
 	.string "Come back when you are ready to\n"
-	.string "challenge the Al-Kharid Gym.$"
+	.string "challenge the Al Kharid Gym.$"
 
 QUEST_ALKHARID_GYM_1_Text_3:
 	.string "Very well, let us prepare your challenge.$"
@@ -694,8 +694,8 @@ ALKHARID_GYM_ALI_Text_2:
 	.string "Have this Badge.$"
 
 ALKHARID_GYM_ALI_Text_3:
-	.string "{PLAYER} received the Al-Kharid\n"
-	.string "BADGE from Prince Ali.$"
+	.string "{PLAYER} received the Al Kharid BADGE\n"
+	.string "from Prince Ali.$"
 
 ALKHARID_GYM_ALI_Text_4:
 	.string "Also have this Scroll.$"

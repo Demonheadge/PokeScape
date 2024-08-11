@@ -2,6 +2,9 @@ const OBJ_EVENT_ID_BARBARIAN_BLOCK_1 = 6
 const OBJ_EVENT_ID_BARBARIAN_BLOCK_2 = 7
 
 mapscripts BarbarianVillage_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION { 
+        setflag(FLAG_VISITED_BARBARIAN_VILLAGE)
+    }
     MAP_SCRIPT_ON_LOAD {
         if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY MODE
     	{

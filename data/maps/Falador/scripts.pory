@@ -7,28 +7,29 @@ const OBJ_EVENT_ID_BLOCK_durial321 = 27
 
 mapscripts Falador_MapScripts {
     MAP_SCRIPT_ON_LOAD { //ON LOAD FOR MAP TILES
-	if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
-    {
-    	call(FALADOR_QUEST_STATE)
-	}
-	else 
-	{
-		call(OPENWORLD_STATE_FALADOR)
-	}
-	call(MODTIMBO_STATE)
+		if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+		{
+			call(FALADOR_QUEST_STATE)
+		}
+		else 
+		{
+			call(OPENWORLD_STATE_FALADOR)
+		}
+		call(MODTIMBO_STATE)
 	}
 
 	MAP_SCRIPT_ON_TRANSITION { 
-    if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
-    {
-    	call(FALADOR_QUEST_STATE)
-		call(HIDDEN_GROTTO_RESET)
-	}
-	else 
-	{
-		call(OPENWORLD_STATE_FALADOR)
-		call(HIDDEN_GROTTO_RESET)
-	}
+		setflag(FLAG_VISITED_FALADOR)
+		if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+		{
+			call(FALADOR_QUEST_STATE)
+			call(HIDDEN_GROTTO_RESET)
+		}
+		else 
+		{
+			call(OPENWORLD_STATE_FALADOR)
+			call(HIDDEN_GROTTO_RESET)
+		}
 
     }
 } 
@@ -632,6 +633,7 @@ script NPC_FALADOR_HAIRDRESSER
 			msgbox(format("Take this, and never return.\nAlso you get no haircut."))
 			hidenamebox
 			setflag(FLAG_HAIRDRESSER)
+			hidenamebox
 			giveitem(ITEM_RING_OF_WEALTH, 1)
 			namebox ("Hairdresser")
 			msgbox(format("Please leave.\pFor the good of my business."))
@@ -673,7 +675,7 @@ script NPC_FALADOR_HAIRDRESSER_SUOMI
 {
 	lock
 	//faceplayer
-    namebox ("SUOMI")
+    namebox ("KKcomics")
 	msgbox(format("What, do you think this is my natural hair colour?\pI have to dye my hair every few weeks to keep it this purple."))
     waitmessage
     hidenamebox

@@ -9,7 +9,8 @@ const OBJ_EVENT_ID_ED8_Male = 29
 
 mapscripts Rimmington_MapScripts{
 	MAP_SCRIPT_ON_TRANSITION {
-    goto(Rimmington_STATE)
+        setflag(FLAG_VISITED_RIMMINGTON)
+        goto(Rimmington_STATE)
     }
 }
 

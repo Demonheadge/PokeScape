@@ -1,5 +1,10 @@
 Taverley_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Taverley_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+Taverley_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setflag FLAG_VISITED_TAVERLEY
+	return
 
 
 TAVERLEY_SIGN::

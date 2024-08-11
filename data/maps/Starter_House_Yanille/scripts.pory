@@ -74,3 +74,38 @@ script Following_Frogeel {
     release
     end
 }
+
+
+
+
+script Follower_Cupholder {
+
+    lock
+    faceplayer
+    namebox("CUPHOLDER")
+    msgbox(format("May I hold your Cup?"))
+    msgbox(format("Do you want a Cupholder?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+        loadword(0, Following_DropTheCupholder)
+        setfollower(4, 0x100)
+        msgbox(format("Very well, I shall be the best Cupholder there is!"))
+        msgbox(format("A Cupholder is now following you."))
+    }
+    hidenamebox
+    closemessage
+    release
+    end
+}
+script Following_DropTheCupholder {
+    msgbox(format("Would you like me to stop holding the cup?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+        msgbox(format("And with that, the Cupholder vanishes…"))
+        destroyfollower
+    }
+    hidenamebox
+    closemessage
+    release
+    end
+}

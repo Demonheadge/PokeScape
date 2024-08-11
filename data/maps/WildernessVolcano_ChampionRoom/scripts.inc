@@ -100,7 +100,7 @@ WILDERNESS_CRATER_ZANIK_Text_0:
 
 WILDERNESS_CRATER_ZANIK_Text_1:
 	.string "It's good to see you again {PLAYER}!\n"
-	.string "Ive been wanting to battle you ever\l"
+	.string "I've been wanting to battle you ever\l"
 	.string "since we battled alongside eachother\l"
 	.string "to take down H.A.M!$"
 
@@ -110,5 +110,5 @@ WILDERNESS_CRATER_WISEOLDMAN_Text_0:
 WILDERNESS_CRATER_WISEOLDMAN_Text_1:
 	.string "Hello you mysterious person.\p"
 	.string "You must be strong to make it here.\n"
-	.string "Lets do it. If not Ill just take all your\l"
+	.string "Lets do it. If not I'll just take all your\l"
 	.string "party hats.$"

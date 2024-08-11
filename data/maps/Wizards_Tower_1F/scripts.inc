@@ -838,7 +838,7 @@ NPC_WIZARDSTOWER_Valina_Text_0:
 	.string "Valina$"
 
 NPC_WIZARDSTOWER_Valina_Text_1:
-	.string "Hello.\l"
+	.string "Hello.\n"
 	.string "Welcome to the Wizards Tower.$"
 
 NPC_WIZARDSTOWER_Traiborn_Text_0:
@@ -875,7 +875,7 @@ NPC_WIZARDSTOWER_Taloram_Text_1:
 	.string "are itching for a battle.$"
 
 NPC_WIZARDSTOWER_Melville_Grayzag_Text_0:
-	.string "Melville Grayzag$"
+	.string "Melville$"
 
 NPC_WIZARDSTOWER_Melville_Grayzag_Text_1:
 	.string "Heck yeah!\p"

@@ -299,7 +299,8 @@ BLOCK_ROUTE2_Highwayman::
 
 NPC_ROUTE2_Wizard::
 	faceplayer
-	msgbox NPC_ROUTE2_Wizard_Text_0
+	namebox NPC_ROUTE2_Wizard_Text_0
+	msgbox NPC_ROUTE2_Wizard_Text_1
 	hidenamebox
 	release
 	end
@@ -307,8 +308,7 @@ NPC_ROUTE2_Wizard::
 
 BATTLE_ROUTE2_Trainer_1::
 	trainerbattle_single TRAINER_ROUTE2_TRAINER_1, BATTLE_ROUTE2_Trainer_1_Text_0, BATTLE_ROUTE2_Trainer_1_Text_1
-	namebox BATTLE_ROUTE2_Trainer_1_Text_2
-	msgbox BATTLE_ROUTE2_Trainer_1_Text_3
+	msgbox BATTLE_ROUTE2_Trainer_1_Text_2
 	hidenamebox
 	release
 	end
@@ -316,8 +316,7 @@ BATTLE_ROUTE2_Trainer_1::
 
 BATTLE_ROUTE2_Trainer_2::
 	trainerbattle_single TRAINER_ROUTE2_TRAINER_2, BATTLE_ROUTE2_Trainer_2_Text_0, BATTLE_ROUTE2_Trainer_2_Text_1
-	namebox BATTLE_ROUTE2_Trainer_2_Text_2
-	msgbox BATTLE_ROUTE2_Trainer_2_Text_3
+	msgbox BATTLE_ROUTE2_Trainer_2_Text_2
 	hidenamebox
 	release
 	end
@@ -325,7 +324,6 @@ BATTLE_ROUTE2_Trainer_2::
 
 BATTLE_ROUTE2_Trainer_3::
 	trainerbattle_single TRAINER_ROUTE2_TRAINER_3, BATTLE_ROUTE2_Trainer_3_Text_0, BATTLE_ROUTE2_Trainer_3_Text_1
-	namebox BATTLE_ROUTE2_Trainer_3_Text_2
 	msgbox BATTLE_ROUTE2_Trainer_3_Text_1
 	hidenamebox
 	release
@@ -334,7 +332,6 @@ BATTLE_ROUTE2_Trainer_3::
 
 BATTLE_ROUTE2_Trainer_4::
 	trainerbattle_single TRAINER_ROUTE2_TRAINER_4, BATTLE_ROUTE2_Trainer_4_Text_0, BATTLE_ROUTE2_Trainer_4_Text_1
-	namebox BATTLE_ROUTE2_Trainer_4_Text_2
 	msgbox BATTLE_ROUTE2_Trainer_4_Text_1
 	hidenamebox
 	release
@@ -361,7 +358,6 @@ BATTLE_ROUTE2_Trainer_6::
 
 BATTLE_ROUTE2_Trainer_7::
 	trainerbattle_single TRAINER_ROUTE2_TRAINER_7, BATTLE_ROUTE2_Trainer_7_Text_0, BATTLE_ROUTE2_Trainer_7_Text_0
-	namebox BATTLE_ROUTE2_Trainer_7_Text_1
 	msgbox BATTLE_ROUTE2_Trainer_7_Text_0
 	hidenamebox
 	closemessage
@@ -496,6 +492,9 @@ HAM_EVENT_Route2_TRIGGER_3_Text_0:
 	.string "I don't know which way he went…$"
 
 NPC_ROUTE2_Wizard_Text_0:
+	.string "Cordelia$"
+
+NPC_ROUTE2_Wizard_Text_1:
 	.string "They say that there are hidden floors\n"
 	.string "within the Wizards' Tower.\p"
 	.string "I've never found them though.$"
@@ -510,9 +509,6 @@ BATTLE_ROUTE2_Trainer_1_Text_1:
 	.string "Back to Lumbridge I go!$"
 
 BATTLE_ROUTE2_Trainer_1_Text_2:
-	.string "HOW2TYPE$"
-
-BATTLE_ROUTE2_Trainer_1_Text_3:
 	.string "If the swamp wasn't hard enough, there\n"
 	.string "was also a forest to pass through!?\p"
 	.string "This is too much for a skiller…$"
@@ -525,9 +521,6 @@ BATTLE_ROUTE2_Trainer_2_Text_1:
 	.string "Wizards use runes to conjure magic.$"
 
 BATTLE_ROUTE2_Trainer_2_Text_2:
-	.string "Tam McGrubor$"
-
-BATTLE_ROUTE2_Trainer_2_Text_3:
 	.string "Runes are marvellous.\p"
 	.string "Using them on monsters might make them\n"
 	.string "evolve!$"
@@ -540,9 +533,6 @@ BATTLE_ROUTE2_Trainer_3_Text_1:
 	.string "Now you too can enjoy the joy of\n"
 	.string "fishing.$"
 
-BATTLE_ROUTE2_Trainer_3_Text_2:
-	.string "Cakebaws$"
-
 BATTLE_ROUTE2_Trainer_4_Text_0:
 	.string "Noobs fear me, fish fear me, pkers turns\n"
 	.string "their eyes away from me as I walk.$"
@@ -551,9 +541,6 @@ BATTLE_ROUTE2_Trainer_4_Text_1:
 	.string "No fish dare make a sound in my\n"
 	.string "presence.\p"
 	.string "I walk alone on this barren earth.$"
-
-BATTLE_ROUTE2_Trainer_4_Text_2:
-	.string "SlimyTem$"
 
 BATTLE_ROUTE2_Trainer_5_Text_0:
 	.string "You don't look very strong, this battle\n"
@@ -587,9 +574,6 @@ BATTLE_ROUTE2_Trainer_6_Text_2:
 
 BATTLE_ROUTE2_Trainer_7_Text_0:
 	.string "…$"
-
-BATTLE_ROUTE2_Trainer_7_Text_1:
-	.string "Bot$"
 
 NPC_ROUTE2_BLACK_KNIGHT_Text_0:
 	.string "Black Knight$"

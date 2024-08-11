@@ -561,11 +561,11 @@ CRANDOR_NED_Text_3:
 	.string "Ahoy {PLAYER}, what can I do for you?$"
 
 CRANDOR_BANK_HEAL_Text_0:
-	.string "Sure thing, I will take your MONSTERs\n"
+	.string "Sure thing, I will take your MONSTERS\n"
 	.string "for a minute.$"
 
 CRANDOR_BANK_HEAL_Text_1:
-	.string "Your MONSTERs are all healed!\p"
+	.string "Your MONSTERS are all healed!\p"
 	.string "Good luck out there {PLAYER}.$"
 
 BATTLE_CRANDOR_SKELETON_1_Text_0:

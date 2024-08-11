@@ -1760,13 +1760,13 @@
 	.byte 0
 	.endm
 
-	@displays a name box containing specified text.
-	.macro namebox name:req
+	@ Sets the text of the name box in the next-shown message box.
+	.macro namebox text:req
 	.byte 0xe5
-	.4byte \name
+	.4byte \text
 	.endm
 
-	@ closes current message box
+	@ Hides the text of the name box in the next-shown message box.
 	.macro hidenamebox
 	.byte 0xe6
 	.endm

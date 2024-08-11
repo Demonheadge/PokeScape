@@ -83,6 +83,44 @@ Following_Frogeel_2:
 	goto Following_Frogeel_1
 
 
+Follower_Cupholder::
+	lock
+	faceplayer
+	namebox Follower_Cupholder_Text_0
+	msgbox Follower_Cupholder_Text_1
+	msgbox Follower_Cupholder_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne Follower_Cupholder_2
+Follower_Cupholder_1:
+	hidenamebox
+	closemessage
+	release
+	end
+
+Follower_Cupholder_2:
+	loadword 0, Following_DropTheCupholder
+	setfollower 4, 0x100
+	msgbox Follower_Cupholder_Text_3
+	msgbox Follower_Cupholder_Text_4
+	goto Follower_Cupholder_1
+
+
+Following_DropTheCupholder::
+	msgbox Following_DropTheCupholder_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne Following_DropTheCupholder_2
+Following_DropTheCupholder_1:
+	hidenamebox
+	closemessage
+	release
+	end
+
+Following_DropTheCupholder_2:
+	msgbox Following_DropTheCupholder_Text_1
+	destroyfollower
+	goto Following_DropTheCupholder_1
+
+
 FollowerTest_Text_0:
 	.string "Zanik$"
 
@@ -110,3 +148,26 @@ Following_Frogeel_Text_0:
 Following_Frogeel_Text_1:
 	.string "Despair!\l"
 	.string "For Frogeel is gone.$"
+
+Follower_Cupholder_Text_0:
+	.string "CUPHOLDER$"
+
+Follower_Cupholder_Text_1:
+	.string "May I hold your Cup?$"
+
+Follower_Cupholder_Text_2:
+	.string "Do you want a Cupholder?$"
+
+Follower_Cupholder_Text_3:
+	.string "Very well, I shall be the best Cupholder\n"
+	.string "there is!$"
+
+Follower_Cupholder_Text_4:
+	.string "A Cupholder is now following you.$"
+
+Following_DropTheCupholder_Text_0:
+	.string "Would you like me to stop holding the\n"
+	.string "cup?$"
+
+Following_DropTheCupholder_Text_1:
+	.string "And with that, the Cupholder vanishes…$"

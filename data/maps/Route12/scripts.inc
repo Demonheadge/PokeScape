@@ -148,7 +148,7 @@ NPC_LUMBRIDGE_CHICKEN_1:
 	lock
 	faceplayer
 	namebox NPC_LUMBRIDGE_CHICKEN_Text_0
-	playmoncry SPECIES_TORCHIC, 0
+	playmoncry SPECIES_CHICKEN_NORMAL_FORM, 0
 	msgbox NPC_LUMBRIDGE_CHICKEN_Text_5
 	waitmoncry
 	hidenamebox
@@ -159,14 +159,14 @@ NPC_LUMBRIDGE_CHICKEN_4:
 	lock
 	faceplayer
 	namebox NPC_LUMBRIDGE_CHICKEN_Text_0
-	playmoncry SPECIES_TORCHIC, 0
+	playmoncry SPECIES_CHICKEN_NORMAL_FORM, 0
 	msgbox NPC_LUMBRIDGE_CHICKEN_Text_1
 	waitmoncry
 	hidenamebox
 	msgbox NPC_LUMBRIDGE_CHICKEN_Text_2
 	msgbox NPC_LUMBRIDGE_CHICKEN_Text_3
 	closemessage
-	playmoncry SPECIES_TORCHIC, 0
+	playmoncry SPECIES_CHICKEN_NORMAL_FORM, 0
 	waitmoncry
 	msgbox NPC_LUMBRIDGE_CHICKEN_Text_4
 	giveitem ITEM_SUPER_LARGE_EGG
@@ -224,7 +224,7 @@ Cow_Battle::
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_eq Cow_Battle_1
 	lock
-	msgbox Cow_Battle_Text_0
+	msgbox Cow_Battle_Text_2
 	release
 	return
 
@@ -264,8 +264,7 @@ ChickenBattle_1:
 
 GoblinBattle4::
 	trainerbattle_single TRAINER_GOBLIN_4_ROUTE12, GoblinBattle4_Text_0, GoblinBattle4_Text_1
-	namebox GoblinBattle4_Text_2
-	msgbox GoblinBattle4_Text_3
+	msgbox GoblinBattle4_Text_2
 	hidenamebox
 	closemessage
 	end
@@ -273,7 +272,6 @@ GoblinBattle4::
 
 GoblinBattle5::
 	trainerbattle_single TRAINER_GOBLIN_5_ROUTE12, GoblinBattle5_Text_0, GoblinBattle5_Text_1
-	namebox GoblinBattle5_Text_2
 	msgbox GoblinBattle5_Text_1
 	hidenamebox
 	closemessage
@@ -282,7 +280,6 @@ GoblinBattle5::
 
 GoblinBattle6::
 	trainerbattle_single TRAINER_GOBLIN_6_ROUTE12, GoblinBattle6_Text_0, GoblinBattle6_Text_1
-	namebox GoblinBattle6_Text_2
 	msgbox GoblinBattle6_Text_1
 	hidenamebox
 	closemessage
@@ -291,7 +288,6 @@ GoblinBattle6::
 
 BATTLE_ROUTE12_SMELLYBACK::
 	trainerbattle_single TRAINER_GOBLIN_7_ROUTE12, BATTLE_ROUTE12_SMELLYBACK_Text_0, BATTLE_ROUTE12_SMELLYBACK_Text_1
-	namebox BATTLE_ROUTE12_SMELLYBACK_Text_2
 	msgbox BATTLE_ROUTE12_SMELLYBACK_Text_1
 	hidenamebox
 	closemessage
@@ -300,8 +296,7 @@ BATTLE_ROUTE12_SMELLYBACK::
 
 BATTLE_ROUTE12_TRAINER_1::
 	trainerbattle_single TRAINER_RSN_ROUTE12, BATTLE_ROUTE12_TRAINER_1_Text_0, BATTLE_ROUTE12_TRAINER_1_Text_1
-	namebox BATTLE_ROUTE12_TRAINER_1_Text_2
-	msgbox BATTLE_ROUTE12_TRAINER_1_Text_3
+	msgbox BATTLE_ROUTE12_TRAINER_1_Text_2
 	hidenamebox
 	closemessage
 	end
@@ -342,10 +337,11 @@ NPC_ROUTE12_Seth_Groats::
 	end
 
 
-NPC_DOG::
+NPC_LASSIE::
 	lock
-	playmoncry SPECIES_GROWLITHE, 0
-	msgbox NPC_DOG_Text_0
+	namebox NPC_LASSIE_Text_0
+	playmoncry SPECIES_BORDER_COLLIE, 0
+	msgbox NPC_LASSIE_Text_1
 	waitmoncry
 	release
 	end
@@ -436,7 +432,7 @@ NPC_LUMBRIDGE_CHICKEN_Text_5:
 SIGN_ROUTE12_Text_0:
 	.string "NORTH to Varrock\p"
 	.string "WEST to Lumbridge\p"
-	.string "EAST to Al-Kharid$"
+	.string "EAST to Al Kharid$"
 
 BLOCK_Route12_Farmer_Text_0:
 	.string "Farmer$"
@@ -459,8 +455,11 @@ Cow_Battle_Text_1:
 	.string "If I had an empty bucket I could milk\n"
 	.string "this cow.$"
 
+Cow_Battle_Text_2:
+	.string "MOOOO!$"
+
 ChickenBattle_Text_0:
-	.string "BAWK$"
+	.string "BAWK!$"
 
 GoblinBattle4_Text_0:
 	.string "This place goblin place.\nHuman go home.$"
@@ -470,9 +469,6 @@ GoblinBattle4_Text_1:
 	.string "This now Goblin and human home.$"
 
 GoblinBattle4_Text_2:
-	.string "Wormtongue$"
-
-GoblinBattle4_Text_3:
 	.string "Human strong.\n"
 	.string "This now goblin and human home.$"
 
@@ -484,9 +480,6 @@ GoblinBattle5_Text_1:
 	.string "Feethands weak.\n"
 	.string "Human show Feethands why.$"
 
-GoblinBattle5_Text_2:
-	.string "Feethands$"
-
 GoblinBattle6_Text_0:
 	.string "Human homes makes for weak monster.\p"
 	.string "See strong monster here.$"
@@ -495,9 +488,6 @@ GoblinBattle6_Text_1:
 	.string "Strong monsters in human homes it\n"
 	.string "seems.$"
 
-GoblinBattle6_Text_2:
-	.string "Eyemonger$"
-
 BATTLE_ROUTE12_SMELLYBACK_Text_0:
 	.string "Big high war god say human go home.$"
 
@@ -505,9 +495,6 @@ BATTLE_ROUTE12_SMELLYBACK_Text_1:
 	.string "Big high war god calls for rematch.\p"
 	.string "Later…\n"
 	.string "Much later…$"
-
-BATTLE_ROUTE12_SMELLYBACK_Text_2:
-	.string "Smellyback$"
 
 BATTLE_ROUTE12_TRAINER_1_Text_0:
 	.string "You look like a noob, even I could beat\n"
@@ -518,9 +505,6 @@ BATTLE_ROUTE12_TRAINER_1_Text_1:
 	.string "Just wait until you see my main.$"
 
 BATTLE_ROUTE12_TRAINER_1_Text_2:
-	.string "NotANoob37$"
-
-BATTLE_ROUTE12_TRAINER_1_Text_3:
 	.string "I will have you know I went easy on you.\p"
 	.string "Just wait until you see my main.$"
 
@@ -544,7 +528,10 @@ NPC_ROUTE12_Seth_Groats_Text_1:
 	.string "Get out and take those disgusting\n"
 	.string "monsters with you!$"
 
-NPC_DOG_Text_0:
+NPC_LASSIE_Text_0:
+	.string "Lassie$"
+
+NPC_LASSIE_Text_1:
 	.string "WOOF!$"
 
 NPC_ROUTE12_Fisherman_Text_0:

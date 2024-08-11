@@ -1,6 +1,9 @@
 const OBJ_EVENT_ID_DRAYNORGUARD = 19
 
 mapscripts Draynor_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_VISITED_DRAYNOR)
+    }
     MAP_SCRIPT_ON_LOAD {
         call(WizardsTower_Draynor_STATE)
         call(DRAYNOR_GUARD_STATE)
@@ -130,16 +133,7 @@ script Draynor_Ariane{
 
 
 
-script NPC_PIG
-{
-	lock
-	faceplayer
-    playmoncry(SPECIES_PIG, 0)
-	msgbox(format("OINK!"))
-    waitmoncry
-	release
-	end
-}
+
 
 
 script Draynor_Diango {
@@ -272,7 +266,7 @@ script Draynor_Martin{
 }
 
 script Draynor_Guard1{
-    namebox("Guard")
+    namebox("Draynor Guard")
 	msgbox(format("Hey!\nGet your hands off there!"))
     hidenamebox
     release
@@ -290,7 +284,7 @@ script Draynor_Coolmom227{
 script Draynor_Guard2{
 	lock
 	faceplayer
-    namebox("Guard")
+    namebox("Draynor Guard")
 	msgbox(format("Don't cause any trouble."))
     hidenamebox
     release
@@ -300,7 +294,7 @@ script Draynor_Guard2{
 script Draynor_Guard3{
 	lock
 	faceplayer
-    namebox("Guard")
+    namebox("Draynor Guard")
 	msgbox(format("What do you want now?\pCan you not see I am working?"))
     hidenamebox
     release
@@ -323,8 +317,10 @@ script Draynor_AGGIE{
 
     if (!flag(FLAG_RECEIVED_TM63)) { //
         msgbox(format("Would you be interested in any dyes?"))
-        msgbox(format("Oh you are one of those adventuers that fight with Monsters.\pHere I might have something to help with that."))
+        msgbox(format("Oh! You are one of those adventuers that fight with Monsters.\pHere I might have something to help with that."))
+        hidenamebox
         giveitem(ITEM_TM63, 1) // Trick or treat
+        namebox("Aggie")
         msgbox(format("Who ever is hit by that move will be turned into a Ghost-type."))
         setflag(FLAG_RECEIVED_TM63)
         hidenamebox
@@ -394,7 +390,7 @@ movement Movement_DraynorGuardTree_3
 script NPC_Draynor_Woman_1{
 	lock
 	faceplayer
-    namebox("Quester")
+    namebox("Loreman42")
 	msgbox(format("If you follow this road south, it will lead you to the Wizards' Tower.\pMake sure to be all healed up before trekking there."))
     hidenamebox
     release
@@ -478,7 +474,7 @@ script NPC_Draynor_WiseOldMan{
 	lock
 	faceplayer
     namebox("Wise Old Man")
-	msgbox(format("…"))
+	msgbox(format("Oh hello again {PLAYER}.\pThis is my home sweet home.\pFeel free to read any of my books, they might be useful to you."))
     hidenamebox
     release
 	end

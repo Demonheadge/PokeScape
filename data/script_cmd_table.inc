@@ -229,8 +229,8 @@ gScriptCmdTable::
 	.4byte ScrCmd_bufferitemnameplural              @ 0xe2
 	.4byte ScrCmd_givemonwithnature					@ 0xe3
 	.4byte ScrCmd_giveshinymon						@ 0xe4
-	.4byte ScrCmd_namebox							@ 0xe5
-	.4byte ScrCmd_hidenamebox						@ 0xe6
+	.4byte ScrCmd_setspeaker						@ 0xe5
+	.4byte ScrCmd_hidespeaker						@ 0xe6
 	.4byte ScrCmd_checkgamemode						@ 0xe7
 	.4byte ScrCmd_dowildbattleNoCatch       		@ 0xe8
 	.4byte ScrCmd_questmenu                 		@ 0xe9

@@ -21,14 +21,14 @@ script BANK_EventScript_PC {
     namebox ("Banker")
 	msgbox(format("Welcome to the Bank of PokeScape."))
 	
-    msgbox(format("Would you like to heal your MONSTERs?"), MSGBOX_YESNO)
+    msgbox(format("Would you like to heal your MONSTERS?"), MSGBOX_YESNO)
 	while (var(VAR_RESULT) != 1) {
         msgbox(format("Very well, come again soon."))	
         hidenamebox
         release
         end
 	}
-    msgbox(format("Your MONSTERs are all healed!"))
+    msgbox(format("Your MONSTERS are all healed!"))
     special(HealPlayerParty)
     hidenamebox
 	release
@@ -39,7 +39,7 @@ script BANK_EventScript_PC {
 script BANK_EventScript_Banker {
     
 	faceplayer
-    //namebox ("Banker")
+    namebox ("Banker")
     msgbox(format("Welcome to the Bank of PokeScape.\pHow may I help you today?"))
 	waitmessage
     goto(BANK_OPTIONS)
@@ -85,7 +85,7 @@ script BANK_HEAL {
 	waitfanfare
 	special (HealPlayerParty)
     fadescreen(FADE_FROM_BLACK)
-    msgbox(format("Your MONSTERs are all healed!\pPlease come again soon."))
+    msgbox(format("Your MONSTERS are all healed!\pPlease come again soon."))
     hidenamebox
 	releaseall
 	end

@@ -5,7 +5,8 @@ Lumbridge_Church_MapScripts::
 Lumbridge_Church_Father_Aereck::
 	lock
 	faceplayer
-	msgbox Lumbridge_Church_Father_Aereck_Text_0
+	namebox Lumbridge_Church_Father_Aereck_Text_0
+	msgbox Lumbridge_Church_Father_Aereck_Text_1
 	release
 	end
 
@@ -13,7 +14,8 @@ Lumbridge_Church_Father_Aereck::
 Lumbridge_Church_NPC1::
 	lock
 	faceplayer
-	msgbox Lumbridge_Church_NPC1_Text_0
+	namebox Lumbridge_Church_NPC1_Text_0
+	msgbox Lumbridge_Church_NPC1_Text_1
 	release
 	end
 
@@ -21,7 +23,8 @@ Lumbridge_Church_NPC1::
 Lumbridge_Church_NPC2::
 	lock
 	faceplayer
-	msgbox Lumbridge_Church_NPC2_Text_0
+	namebox Lumbridge_Church_NPC2_Text_0
+	msgbox Lumbridge_Church_NPC2_Text_1
 	release
 	end
 
@@ -29,7 +32,8 @@ Lumbridge_Church_NPC2::
 Lumbridge_Church_NPC3::
 	lock
 	faceplayer
-	msgbox Lumbridge_Church_NPC3_Text_0
+	namebox Lumbridge_Church_NPC3_Text_0
+	msgbox Lumbridge_Church_NPC3_Text_1
 	release
 	end
 
@@ -422,21 +426,34 @@ Cheat_Menu_Shop_Misc:
     end
 
 Lumbridge_Church_Father_Aereck_Text_0:
+	.string "Monk$"
+
+Lumbridge_Church_Father_Aereck_Text_1:
 	.string "Monsters don't really die.\p"
 	.string "They will not be needing graves.\p"
 	.string "Just take them to the bank.$"
 
 Lumbridge_Church_NPC1_Text_0:
+	.string "Man$"
+
+Lumbridge_Church_NPC1_Text_1:
 	.string "Praise be Saradomin!$"
 
 Lumbridge_Church_NPC2_Text_0:
+	.string "Skiller$"
+
+Lumbridge_Church_NPC2_Text_1:
 	.string "Bow to the great one!$"
 
 Lumbridge_Church_NPC3_Text_0:
+	.string "Woman$"
+
+Lumbridge_Church_NPC3_Text_1:
 	.string "I love Lumbridge.\p"
-	.string "Nothing happens.\p"
-	.string "Town is safe and Zamorak and Saradomin\n"
-	.string "won't wreck it over some light balls.$"
+	.string "Nothing interesting happens.\p"
+	.string "I don't think anything could ruin it.\p"
+	.string "We even have a lovely forest behind the\n"
+	.string "castle!$"
 
 Pub_Mod_Dolan_Text_0:
 	.string "Mod Dolan$"

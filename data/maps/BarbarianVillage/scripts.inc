@@ -1,6 +1,11 @@
 BarbarianVillage_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, BarbarianVillage_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	map_script MAP_SCRIPT_ON_LOAD, BarbarianVillage_MapScripts_MAP_SCRIPT_ON_LOAD
 	.byte 0
+
+BarbarianVillage_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setflag FLAG_VISITED_BARBARIAN_VILLAGE
+	return
 
 BarbarianVillage_MapScripts_MAP_SCRIPT_ON_LOAD:
 	compare VAR_POKESCAPE_GAMEMODE_STATE, 0

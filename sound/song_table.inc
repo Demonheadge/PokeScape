@@ -677,6 +677,11 @@ gSongTable::
 	song MUS_PS_VS_CHAOS_TUNNELS, 0, 0
 	song MUS_PS_WISE_OLD_MAN_THEME, 0, 0
 	song MUS_PS_VS_WISE_OLD_MAN_RIVAL, 0, 0
+	song MUS_PS_GODSLAYER, 0, 0
+	song MUS_PS_LUMBRIDGE_CASTLE, 0, 0
+
+	
+    
 	
 	.align 2
 dummy_song_header:

@@ -154,3 +154,25 @@ script ITEM_ROUTE0_TINDERBOX
     finditem(ITEM_TINDERBOX)
     end
 }
+
+
+
+
+
+
+
+
+
+
+
+script NPC_JAMJAM
+{
+	lock
+	faceplayer
+    namebox ("AJamJam")
+	msgbox(format("Only one hour remains until I knock off work!\pHOORAY!"))
+    closemessage
+    hidenamebox
+	release
+	end
+}

@@ -129,8 +129,8 @@ const u8 gText_ListByFirstLetter[] = _("List by the first letter in the name.\nS
 const u8 gText_ListByBodyColor[] = _("List by body color.\nSpotted MONSTERS only.");
 const u8 gText_ListByType[] = _("List by type.\nOwned MONSTERS only.");
 const u8 gText_ExecuteSearchSwitch[] = _("Execute search/switch.");
-const u8 gText_DexHoennTitle[] = _("HOENN DEX");
-const u8 gText_DexNatTitle[] = _("NATIONAL DEX");
+const u8 gText_DexHoennTitle[] = _("F2P DEX");
+const u8 gText_DexNatTitle[] = _("GIELINORIAN DEX");
 const u8 gText_DexSortNumericalTitle[] = _("NUMERICAL MODE");
 const u8 gText_DexSortAtoZTitle[] = _("A TO Z MODE");
 const u8 gText_DexSortHeaviestTitle[] = _("HEAVIEST MODE");
@@ -170,7 +170,7 @@ const u8 gText_DexSearchTypeNone[] = _("NONE");
 const u8 gText_SelectorArrow[] = _("▶");
 const u8 gText_EmptySpace[] = _(" "); // Unused
 const u8 gText_WelcomeToHOF[] = _("Welcome to the HALL OF FAME!");
-const u8 gText_HOFDexRating[] = _("Spotted MONSTERS: {STR_VAR_1}!\nOwned MONSTERS: {STR_VAR_2}!\pPROF. BIRCH's BESTIARY rating!\pPROF. BIRCH: Let's see…\p");
+const u8 gText_HOFDexRating[] = _("Spotted MONSTERS: {STR_VAR_1}!\nOwned MONSTERS: {STR_VAR_2}!\pPROF. NORMAL TREE's BESTIARY rating!\pPROF. NORMAL TREE: Let's see…\p");
 const u8 gText_HOFDexSaving[] = _("SAVING…\nDON'T TURN OFF THE POWER.");
 const u8 gText_HOFCorrupted[] = _("The HALL OF FAME data is corrupted.");
 const u8 gText_HOFNumber[] = _("HALL OF FAME No. {STR_VAR_1}");
@@ -288,7 +288,7 @@ const u8 *const gPyramidBagMenu_ReturnToStrings[] =
 const u8 gText_ReturnToVar1[] = _("Return to\n{STR_VAR_1}.");
 const u8 gText_ItemsPocket[] = _("ITEMS");
 const u8 gText_PokeBallsPocket[] = _("POUCHES");
-const u8 gText_TMHMPocket[] = _("TMs & HMs");
+const u8 gText_TMHMPocket[] = _("SCROLLS");
 const u8 gText_BerriesPocket[] = _("GOODIES");
 const u8 gText_KeyItemsPocket[] = _("KEY ITEMS");
 
@@ -1936,7 +1936,7 @@ const u8 gText_NeedMoreBadges[] =_("You need more badges to do this.{PAUSE_UNTIL
 
 
 const u8 gText_NewGame_Welcome[] =_("Welcome to the World of PokeScape.");
-const u8 gText_NewGame_Story_or_OpenWorld[] =_("Welcome to the World of PokeScape.\pThis game has the option of\ntwo play styles.\pYou can choose to play\nSTORY MODE or OPEN WORLD.");
+const u8 gText_NewGame_Story_or_OpenWorld[] =_("Welcome to the World of PokeScape.\pThis game has the option of\ntwo play styles.\pIf this is your first playthrough,\nthen choose STORY MODE.\pYou can choose to play\nSTORY MODE or OPEN WORLD.");
 const u8 gText_NewGame_STORYMODE_info[] =_("Are you sure you would like to play\nSTORY MODE?");
 //"STORY MODE is a generic Pokemon story\nexperience that has a set path and\lcontains story elements such as\lSide Quests, Evil Teams and Unique\lCharacters, as you battle your way to\lbe the very best of the regional\lchampionships.\p
 const u8 gText_NewGame_OPENWORLD_info[] =_("WARNING\nThis is currently a work in progress.\pAre you sure you would like to play\nOPEN WORLD?");

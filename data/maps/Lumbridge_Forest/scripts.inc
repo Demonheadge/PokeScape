@@ -22,13 +22,15 @@ LumForest_STATE::
 
 
 LUMBRIDGEFOREST_NPC_BOT1::
-	msgbox LUMBRIDGEFOREST_NPC_BOT1_Text_0
+	namebox LUMBRIDGEFOREST_NPC_BOT1_Text_0
+	msgbox LUMBRIDGEFOREST_NPC_BOT1_Text_1
 	closemessage
 	release
 	end
 
 
 LUMBRIDGEFOREST_NPC_BOT2::
+	namebox LUMBRIDGEFOREST_NPC_BOT1_Text_0
 	msgbox LUMBRIDGEFOREST_NPC_BOT2_Text_0
 	closemessage
 	release
@@ -37,7 +39,8 @@ LUMBRIDGEFOREST_NPC_BOT2::
 
 LUMBRIDGEFOREST_NPC_WOODCUTTER::
 	faceplayer
-	msgbox LUMBRIDGEFOREST_NPC_WOODCUTTER_Text_0
+	namebox LUMBRIDGEFOREST_NPC_WOODCUTTER_Text_0
+	msgbox LUMBRIDGEFOREST_NPC_WOODCUTTER_Text_1
 	closemessage
 	release
 	end
@@ -115,8 +118,8 @@ NPC_LUMBRIDGE_FOREST_5::
 NPC_LUMBRIDGE_FOREST_6::
 	lock
 	faceplayer
-	namebox NPC_LUMBRIDGE_FOREST_6_Text_0
-	msgbox NPC_LUMBRIDGE_FOREST_6_Text_1
+	namebox LUMBRIDGEFOREST_NPC_WOODCUTTER_Text_0
+	msgbox NPC_LUMBRIDGE_FOREST_6_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -134,8 +137,7 @@ BATTLE_LUMBRIDGEFOREST_BOT1::
 
 BATTLE_LUMBRIDGEFOREST_WOODCUTTER1::
 	trainerbattle_single TRAINER_LUMBRIDGEFOREST_WOODCUTTER1, BATTLE_LUMBRIDGEFOREST_WOODCUTTER1_Text_0, BATTLE_LUMBRIDGEFOREST_WOODCUTTER1_Text_1
-	namebox BATTLE_LUMBRIDGEFOREST_WOODCUTTER1_Text_2
-	msgbox BATTLE_LUMBRIDGEFOREST_WOODCUTTER1_Text_3
+	msgbox BATTLE_LUMBRIDGEFOREST_WOODCUTTER1_Text_2
 	hidenamebox
 	release
 	end
@@ -143,7 +145,6 @@ BATTLE_LUMBRIDGEFOREST_WOODCUTTER1::
 
 BATTLE_LUMBRIDGEFOREST_TRAINER_1::
 	trainerbattle_single TRAINER_LUMBRIDGEFOREST_TRAINER_1, BATTLE_LUMBRIDGEFOREST_TRAINER_1_Text_0, BATTLE_LUMBRIDGEFOREST_TRAINER_1_Text_1
-	namebox BATTLE_LUMBRIDGEFOREST_TRAINER_1_Text_2
 	msgbox BATTLE_LUMBRIDGEFOREST_TRAINER_1_Text_1
 	hidenamebox
 	release
@@ -152,8 +153,7 @@ BATTLE_LUMBRIDGEFOREST_TRAINER_1::
 
 BATTLE_LUMBRIDGEFOREST_TRAINER_2::
 	trainerbattle_single TRAINER_LUMBRIDGEFOREST_TRAINER_2, BATTLE_LUMBRIDGEFOREST_TRAINER_2_Text_0, BATTLE_LUMBRIDGEFOREST_TRAINER_2_Text_1
-	namebox BATTLE_LUMBRIDGEFOREST_TRAINER_2_Text_2
-	msgbox BATTLE_LUMBRIDGEFOREST_TRAINER_2_Text_3
+	msgbox BATTLE_LUMBRIDGEFOREST_TRAINER_2_Text_2
 	hidenamebox
 	release
 	end
@@ -161,8 +161,7 @@ BATTLE_LUMBRIDGEFOREST_TRAINER_2::
 
 BATTLE_LUMBRIDGEFOREST_TRAINER_3::
 	trainerbattle_single TRAINER_LUMBRIDGEFOREST_TRAINER_3, BATTLE_LUMBRIDGEFOREST_TRAINER_3_Text_0, BATTLE_LUMBRIDGEFOREST_TRAINER_3_Text_1
-	namebox BATTLE_LUMBRIDGEFOREST_TRAINER_3_Text_2
-	msgbox BATTLE_LUMBRIDGEFOREST_TRAINER_3_Text_3
+	msgbox BATTLE_LUMBRIDGEFOREST_TRAINER_3_Text_2
 	hidenamebox
 	release
 	end
@@ -195,12 +194,18 @@ NPC_LUMBRIDGE_FOREST_HAM_1::
 
 
 LUMBRIDGEFOREST_NPC_BOT1_Text_0:
+	.string "Bot$"
+
+LUMBRIDGEFOREST_NPC_BOT1_Text_1:
 	.string "BEEP BOOP.$"
 
 LUMBRIDGEFOREST_NPC_BOT2_Text_0:
 	.string "CHOP, CHOP, CHOP.$"
 
 LUMBRIDGEFOREST_NPC_WOODCUTTER_Text_0:
+	.string "Woodcutter$"
+
+LUMBRIDGEFOREST_NPC_WOODCUTTER_Text_1:
 	.string "These bots are so annoying.$"
 
 NPC_LUMBRIDGE_FOREST_1_Text_0:
@@ -251,9 +256,6 @@ NPC_LUMBRIDGE_FOREST_5_Text_1:
 	.string "Hello, I am a Cupholder.$"
 
 NPC_LUMBRIDGE_FOREST_6_Text_0:
-	.string "Woodcutter$"
-
-NPC_LUMBRIDGE_FOREST_6_Text_1:
 	.string "I can see Lumbridge on the other side.\p"
 	.string "If only I had the Woodcutting level to\n"
 	.string "get past these trees…$"
@@ -278,9 +280,6 @@ BATTLE_LUMBRIDGEFOREST_WOODCUTTER1_Text_1:
 	.string "JK, I'll share.$"
 
 BATTLE_LUMBRIDGEFOREST_WOODCUTTER1_Text_2:
-	.string "Ch0ppa1$"
-
-BATTLE_LUMBRIDGEFOREST_WOODCUTTER1_Text_3:
 	.string "Like ROFLMAO you are stronk.\p"
 	.string "You sure cut me down to size, OMEGALUL!$"
 
@@ -292,9 +291,6 @@ BATTLE_LUMBRIDGEFOREST_TRAINER_1_Text_1:
 	.string "I would jump for joy, except I seem to\n"
 	.string "have lost this battle.$"
 
-BATTLE_LUMBRIDGEFOREST_TRAINER_1_Text_2:
-	.string "Mugger$"
-
 BATTLE_LUMBRIDGEFOREST_TRAINER_2_Text_0:
 	.string "Me and me friend destroyed the path\n"
 	.string "through the forest to lure pink\l"
@@ -305,9 +301,6 @@ BATTLE_LUMBRIDGEFOREST_TRAINER_2_Text_1:
 	.string "Oh no, you has escaped the trap!$"
 
 BATTLE_LUMBRIDGEFOREST_TRAINER_2_Text_2:
-	.string "Foulblood$"
-
-BATTLE_LUMBRIDGEFOREST_TRAINER_2_Text_3:
 	.string "Me and me friend destroyed the path\n"
 	.string "through the forest to lure pink\l"
 	.string "hoomens into trap.\p"
@@ -322,9 +315,6 @@ BATTLE_LUMBRIDGEFOREST_TRAINER_3_Text_1:
 	.string "Clearly big high war god favours you.$"
 
 BATTLE_LUMBRIDGEFOREST_TRAINER_3_Text_2:
-	.string "Toadtoes$"
-
-BATTLE_LUMBRIDGEFOREST_TRAINER_3_Text_3:
 	.string "Me liek this forest.\p"
 	.string "Me hope no harm comes to it.\p"
 	.string "Me would be sad if big high war god were\n"

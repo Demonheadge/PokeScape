@@ -136,10 +136,10 @@ script TRIGGER_QUEST_ALKHARID_GYM
 script QUEST_ALKHARID_GYM_1
 {
     namebox("Osman")
-    msgbox(format("Welcome to the Al-Kharid Gym.\pWould you like to start your Gym Challenge?"), MSGBOX_YESNO)
+    msgbox(format("Welcome to the Al Kharid Gym.\pWould you like to start your Gym Challenge?"), MSGBOX_YESNO)
     if (!var(VAR_RESULT))
     { 
-        msgbox(format("Come back when you are ready to challenge the Al-Kharid Gym."))
+        msgbox(format("Come back when you are ready to challenge the Al Kharid Gym."))
         closemessage
         hidenamebox
         applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN)
@@ -244,7 +244,7 @@ script ALKHARID_GYM_ALI {
         msgbox(format("Have this Badge."))
         hidenamebox
         playfanfare(MUS_PS_QUEST_COMPLETE) //MUS_OBTAIN_BADGE MUS_PS_QUEST_COMPLETE
-        msgbox(format("{PLAYER} received the Al-Kharid BADGE from Prince Ali."))
+        msgbox(format("{PLAYER} received the Al Kharid BADGE from Prince Ali."))
         waitfanfare
         waitmessage
         namebox("Prince Ali")

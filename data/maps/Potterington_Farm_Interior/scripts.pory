@@ -133,7 +133,7 @@ script EventScript_DaycareMan
 	compare (VAR_RESULT, DAYCARE_TWO_MONS)
 	goto_if_eq (Route117_EventScript_CheckOnTwoMons)
     namebox ("Father Pott.")
-	msgbox(format("Hello, I am Father Potterington.\nWe help take care of the precious MONSTERs of Adventurers.\pIf you'd like us to raise your MONSTER, have a word with my wife."))
+	msgbox(format("Hello, I am Father Potterington.\nWe help take care of the precious MONSTERS of Adventurers.\pIf you'd like us to raise your MONSTER, have a word with my wife."))
     closemessage
     hidenamebox
     release
@@ -152,7 +152,7 @@ script EventScript_DaycareLady
 	compare (VAR_RESULT, DAYCARE_TWO_MONS)
 	goto_if_eq (Route117_PokemonDayCare_EventScript_TwoMonsInDaycare)
     namebox ("Mother Pott.")
-	msgbox(format("Hey there, I am Mother Potterington.\pWe can raise and breed MONSTERs for you.\pWould you like us to raise one?"), MSGBOX_YESNO)
+	msgbox(format("Hey there, I am Mother Potterington.\pWe can raise and breed MONSTERS for you.\pWould you like us to raise one?"), MSGBOX_YESNO)
     hidenamebox
 	compare (VAR_RESULT, YES)
 	goto_if_eq (Route117_PokemonDayCare_EventScript_GiveMonToRaise)

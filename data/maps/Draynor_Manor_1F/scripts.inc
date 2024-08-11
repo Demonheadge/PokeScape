@@ -395,7 +395,6 @@ TRIGGER_ARIANE_DRAYNORMANOR_1F_5_2:
 	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_RIGHT
 	applymovement OBJ_EVENT_ID_FOLLOWER, MOVEMENT_WALK_RIGHT
 	waitmovement 0
-	setvar VAR_TEMP_9, 1
 	goto TRIGGER_ARIANE_DRAYNORMANOR_1F_5_1
 
 
@@ -695,8 +694,7 @@ BATTLE_DRAYNORMANOR_Trainer_1::
 
 BATTLE_DRAYNORMANOR_Trainer_2::
 	trainerbattle_single TRAINER_DRAYNOR_MANOR_SKELETON_2, BATTLE_DRAYNORMANOR_Trainer_2_Text_0, BATTLE_DRAYNORMANOR_Trainer_2_Text_1
-	namebox BATTLE_DRAYNORMANOR_Trainer_2_Text_2
-	msgbox BATTLE_DRAYNORMANOR_Trainer_2_Text_3
+	msgbox BATTLE_DRAYNORMANOR_Trainer_2_Text_2
 	hidenamebox
 	release
 	end
@@ -951,9 +949,6 @@ BATTLE_DRAYNORMANOR_Trainer_2_Text_1:
 	.string "Oh you want to return it?$"
 
 BATTLE_DRAYNORMANOR_Trainer_2_Text_2:
-	.string "McBoneFace$"
-
-BATTLE_DRAYNORMANOR_Trainer_2_Text_3:
 	.string "You are going to return the Rubber Tube\n"
 	.string "to Oddenstein?\p"
 	.string "Sure go for it.$"

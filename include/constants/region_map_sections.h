@@ -6,15 +6,15 @@
 #define	MAPSEC_DRAYNOR	                0x02
 #define	MAPSEC_PORT_SARIM	            0x03
 #define	MAPSEC_RIMMINGTON	            0x04
-#define	MAPSEC_FALADOR	                0x05
-#define	MAPSEC_VARROCK	                0x06
-#define	MAPSEC_BARBARIAN_VILLAGE	    0x07
-#define	MAPSEC_GOBLIN_VILLAGE	        0x08
-#define	MAPSEC_DWARVEN_MINES	        0x09
-#define	MAPSEC_EDGEVILLE	            0x0A
-#define	MAPSEC_ALKHARID	                0x0B
-#define	MAPSEC_MUSA_POINT	            0x0C
-#define	MAPSEC_TAVERLEY	                0x0D
+#define	MAPSEC_TAVERLEY					0x05
+#define	MAPSEC_FALADOR	                0x06
+#define	MAPSEC_BARBARIAN_VILLAGE		0x07
+#define	MAPSEC_VARROCK	         		0x08       
+#define	MAPSEC_EDGEVILLE				0x09
+#define	MAPSEC_ALKHARID					0x0A
+#define	MAPSEC_MUSA_POINT				0x0B
+#define	MAPSEC_GOBLIN_VILLAGE	       	0x0C 
+#define	MAPSEC_DWARVEN_MINES	        0x0D
 #define	MAPSEC_LUMBRIDGE_SWAMP	        0x0E
 #define	MAPSEC_MILL_LANE_MILL	        0x0F
 #define	MAPSEC_DRAYNOR_MANOR	        0x10
@@ -69,7 +69,7 @@
 #define	MAPSEC_DUNGEON_SINKHOLE	        0x41
 #define	MAPSEC_RIMMINGTON_MINES	        0x42
 #define	MAPSEC_ABYSS	                0x43
-		//0x44
+#define	MAPSEC_GRAND_EXCHANGE			0x44
 #define	MAPSEC_MISTHALIN	            0x45
 #define	MAPSEC_KHARIDIAN_DESERT	        0x46
 #define	MAPSEC_ASGARNIA	                0x47
@@ -79,6 +79,7 @@
 #define	MAPSEC_KARAMJA	                0x4B
 #define	MAPSEC_MORYTANIA	            0x4C
 #define	MAPSEC_WILDERNESS	            0x4D
+//vanilla
 #define	MAPSEC_LITTLEROOT_TOWN	        0x4E
 #define	MAPSEC_OLDALE_TOWN	            0x4F
 #define	MAPSEC_DEWFORD_TOWN	            0x50
@@ -185,7 +186,9 @@
 #define	MAPSEC_ALTERING_CAVE	        0xB5
 #define	MAPSEC_NAVEL_ROCK	            0xB6
 #define	MAPSEC_TRAINER_HILL	            0xB7		
-
+//
+#define	MAPSEC_CRANDOR            		0xB8	
+#define	MAPSEC_ICE_MOUNTAIN            	0xB9	
 
 #define MAPSEC_NONE                     0xFB
 #define MAPSEC_ENDMAPSEC                0xFC

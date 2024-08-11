@@ -1213,3 +1213,25 @@ const struct Tileset gTileset_Rellekka =
 };
 
 
+
+const struct Tileset gTileset_PokeScapeCaves =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_PokeScapeCaves,
+    .palettes = gTilesetPalettes_PokeScapeCaves,
+    .metatiles = gMetatiles_PokeScapeCaves,
+    .metatileAttributes = gMetatileAttributes_PokeScapeCaves,
+    .callback = InitTilesetAnim_PokeScapeCaves,
+};
+
+const struct Tileset gTileset_PokeScapeCaves_Extra_1 =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PokeScapeCaves_Extra_1,
+    .palettes = gTilesetPalettes_PokeScapeCaves_Extra_1,
+    .metatiles = gMetatiles_PokeScapeCaves_Extra_1,
+    .metatileAttributes = gMetatileAttributes_PokeScapeCaves_Extra_1,
+    .callback = InitTilesetAnim_PokeScapeCaves_Extra_1,
+};

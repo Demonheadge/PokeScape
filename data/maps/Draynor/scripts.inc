@@ -1,7 +1,12 @@
 Draynor_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Draynor_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	map_script MAP_SCRIPT_ON_LOAD, Draynor_MapScripts_MAP_SCRIPT_ON_LOAD
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Draynor_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
+
+Draynor_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setflag FLAG_VISITED_DRAYNOR
+	return
 
 Draynor_MapScripts_MAP_SCRIPT_ON_LOAD:
 	call WizardsTower_Draynor_STATE
@@ -127,16 +132,6 @@ Draynor_Ariane::
 	namebox HAM_EVENT_Draynor_Text_0
 	msgbox Draynor_Ariane_Text_0
 	hidenamebox
-	release
-	end
-
-
-NPC_PIG::
-	lock
-	faceplayer
-	playmoncry SPECIES_PIG, 0
-	msgbox NPC_PIG_Text_0
-	waitmoncry
 	release
 	end
 
@@ -302,7 +297,9 @@ Draynor_AGGIE::
 Draynor_AGGIE_2:
 	msgbox Draynor_AGGIE_Text_1
 	msgbox Draynor_AGGIE_Text_2
+	hidenamebox
 	giveitem ITEM_TM63, 1
+	namebox Draynor_AGGIE_Text_0
 	msgbox Draynor_AGGIE_Text_3
 	setflag FLAG_RECEIVED_TM63
 	hidenamebox
@@ -325,8 +322,8 @@ Draynor_TREE_1:
 	applymovement 19, Movement_DraynorGuardTree_1
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_DraynorGuardTree_2
 	waitmovement 0
-	namebox Draynor_Guard1_Text_0
-	msgbox Draynor_TREE_Text_2
+	namebox Draynor_TREE_Text_2
+	msgbox Draynor_TREE_Text_3
 	hidenamebox
 	closemessage
 	applymovement 19, Movement_DraynorGuardTree_3
@@ -433,7 +430,7 @@ NPC_Draynor_WiseOldMan::
 	lock
 	faceplayer
 	namebox NPC_Draynor_WiseOldMan_Text_0
-	msgbox Draynor_Coolmom227_Text_1
+	msgbox NPC_Draynor_WiseOldMan_Text_1
 	hidenamebox
 	release
 	end
@@ -451,9 +448,6 @@ Draynor_Ariane_Text_0:
 	.string "Did I take a wrong turn?\p"
 	.string "I hope he didn't run north towards\n"
 	.string "Draynor Manor…$"
-
-NPC_PIG_Text_0:
-	.string "OINK!$"
 
 Draynor_Diango_Text_0:
 	.string "Diango$"
@@ -530,7 +524,7 @@ Draynor_Martin_Text_1:
 	.string "Someone nicked my cabbage.$"
 
 Draynor_Guard1_Text_0:
-	.string "Guard$"
+	.string "Draynor Guard$"
 
 Draynor_Guard1_Text_1:
 	.string "Hey!\n"
@@ -563,7 +557,7 @@ Draynor_AGGIE_Text_1:
 	.string "Would you be interested in any dyes?$"
 
 Draynor_AGGIE_Text_2:
-	.string "Oh you are one of those adventuers\n"
+	.string "Oh! You are one of those adventuers\n"
 	.string "that fight with Monsters.\p"
 	.string "Here I might have something to help\n"
 	.string "with that.$"
@@ -586,6 +580,9 @@ Draynor_TREE_Text_1:
 	.string "Ouch!$"
 
 Draynor_TREE_Text_2:
+	.string "Guard$"
+
+Draynor_TREE_Text_3:
 	.string "Ow!\p"
 	.string "That really hurt!\p"
 	.string "Hey what is the big idea!\p"
@@ -597,7 +594,7 @@ Draynor_TREE_Text_2:
 	.string "back to work…$"
 
 NPC_Draynor_Woman_1_Text_0:
-	.string "Quester$"
+	.string "Loreman42$"
 
 NPC_Draynor_Woman_1_Text_1:
 	.string "If you follow this road south, it will\n"
@@ -647,3 +644,9 @@ NPC_Draynor_Mugger_Text_1:
 
 NPC_Draynor_WiseOldMan_Text_0:
 	.string "Wise Old Man$"
+
+NPC_Draynor_WiseOldMan_Text_1:
+	.string "Oh hello again {PLAYER}.\p"
+	.string "This is my home sweet home.\p"
+	.string "Feel free to read any of my books, they\n"
+	.string "might be useful to you.$"

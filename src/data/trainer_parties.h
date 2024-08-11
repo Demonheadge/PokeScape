@@ -88,7 +88,7 @@ static const struct TrainerMon sParty_TRAINER1_MILLLANEMILL[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 5,
-    .species = SPECIES_KEBBIT,
+    .species = SPECIES_KEBBIT_SPOTTED_FORM,
     .heldItem = ITEM_NONE
     }
 };
@@ -3378,26 +3378,26 @@ static const struct TrainerMon sParty_LUMBRIDGEFOREST_TRAINER_1[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 12,
-    .species = SPECIES_SCORPION_PIT_FORM,
+    .species = SPECIES_SCORPLING,
     }
 };
 static const struct TrainerMon sParty_LUMBRIDGEFOREST_TRAINER_2[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 11,
-    .species = SPECIES_EEL_DUSK_FORM,
+    .species = SPECIES_EEL_SLIMY_FORM,
     }
 };
 static const struct TrainerMon sParty_LUMBRIDGEFOREST_TRAINER_3[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 11,
-    .species = SPECIES_CHICKEN_WAR_FORM,
+    .species = SPECIES_DEAD_TREE,
     },
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 9,
-    .species = SPECIES_JADINKO,
+    .species = SPECIES_COCKROACH_DRONE,
     },
 };
 
@@ -3407,7 +3407,7 @@ static const struct TrainerMon sParty_LUMBRIDGEFOREST_WOODCUTTER1[] = {
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 12,
-    .species = SPECIES_PLANT_STRANGER_FORM,
+    .species = SPECIES_PLANT_STRANGE_FORM,
     },
     {
     .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),

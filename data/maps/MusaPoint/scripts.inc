@@ -8,6 +8,7 @@ MusaPoint_MapScripts_MAP_SCRIPT_ON_LOAD:
 	return
 
 MusaPoint_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setflag FLAG_VISITED_MUSA_POINT
 	call MUSAPOINT_STATE
 	setvar VAR_EVOLUTION_MAP_STATE, 15
 	return

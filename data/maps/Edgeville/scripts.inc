@@ -3,6 +3,7 @@ Edgeville_MapScripts::
 	.byte 0
 
 Edgeville_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setflag FLAG_VISITED_EDGEVILLE
 	setvar VAR_EVOLUTION_MAP_STATE, 15
 	return
 

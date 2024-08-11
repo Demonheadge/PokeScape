@@ -289,7 +289,7 @@ void ItemUseOutOfBattle_Function(u8 taskId) //This is used to change a Flag / Va
         }   
             
     }
-    else if (gSpecialVar_ItemId >= ITEM_PULSE_CORE) { 
+    /*else if (gSpecialVar_ItemId >= ITEM_PULSE_CORE) { 
         if (FlagGet(FLAG_EXP_ALL) == FALSE)
         {
             FlagSet(FLAG_EXP_ALL);
@@ -302,7 +302,7 @@ void ItemUseOutOfBattle_Function(u8 taskId) //This is used to change a Flag / Va
         }
         else
             DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
-    }
+    }*/
 }
 
 static void ItemUseOnFieldCB_RunScript(u8 taskId)

@@ -720,6 +720,7 @@
 #define MAP_ABYSSAL_REALM_3             (42 | (36 << 8))
 #define MAP_ICE_MOUNTAIN                (43 | (36 << 8))
 #define MAP_ASGARNIAN_DUNGEON_B4F       (44 | (36 << 8))
+#define MAP_LUMBRIDGE_SWAMP_CAVES_WGS_5 (45 | (36 << 8))
 
 // gMapGroup_PokescapeIndoorTutorialIsland
 #define MAP_TUTORIAL_ISLAND_LAB_UP   (0 | (37 << 8))
@@ -1043,6 +1044,7 @@
 #define MAP_CRANDOR_SEA_ROUTE                   (86 | (50 << 8))
 #define MAP_UNGAEL                              (87 | (50 << 8))
 #define MAP_VARLAMORE                           (88 | (50 << 8))
+#define MAP_BARB_STRONGHOLD_B4F_MURAL           (89 | (50 << 8))
 
 #define MAP_GROUPS_COUNT 51
 

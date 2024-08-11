@@ -3,8 +3,6 @@ const OBJ_EVENT_ID_DUKE = 1
 
 mapscripts Lumbridge_Castle_3_MapScripts{
 
-
-
 	MAP_SCRIPT_ON_LOAD {
         call(LUMBRIDGE_GYM_MUSIC)
         call(LUMBRIDGE_GYM_STATE)
@@ -42,6 +40,7 @@ script LUMBRIDGE_GYM_STATE{
             setmetatile(31, 6, 17, 1)
             setmetatile(32, 6, 17, 1)
             special(DrawWholeMapView) 
+            setvar(VAR_TEMP_A, 1)
             return
 		case 1: //BEGIN GYM CHALLENGE
 			//HIDE DUKE
@@ -80,9 +79,47 @@ script LUMBRIDGE_GYM_STATE{
 
 
 
+script TRIGGER_GYM_DUKE { 
+    lock
+    playse(SE_PIN)
+    applymovement(OBJ_EVENT_ID_DUKE, Movement_Gym_Duke_1)
+    waitmovement(0)
+    namebox("Duke Horacio")
+    msgbox(format("Hi there!\pI'm Horacio, the Duke of Lumbridge.\pI heard that you wish to challenge me to a battle!\pVery well, you will have to reach the top of the castle.\pI shall be waiting!"))
+    closemessage
+    hidenamebox
+    savebgm(MUS_PS_GYM)
+    applymovement(OBJ_EVENT_ID_DUKE, Movement_Gym_Duke_2)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_Gym_Duke_3)
+    waitmovement(OBJ_EVENT_ID_DUKE)
+    removeobject(OBJ_EVENT_ID_DUKE)
+    setflag(FLAG_TEMP_1)
+    setvar(VAR_POKESCAPE_LUMBRIDGE_GYM_QUEST, 1)
+    setvar(VAR_TEMP_A, 0)
+    call(LUMBRIDGE_GYM_MUSIC)
+    goto(LUMBRIDGE_GYM_STATE)
+    release
+    end
+}
 
-
-
+movement Movement_Gym_Duke_1 {
+    emote_question_mark
+    face_up
+    delay_16 * 2
+    walk_up
+    walk_right * 3
+    walk_up
+}
+movement Movement_Gym_Duke_2{
+    walk_up * 5
+    walk_left * 10
+}
+movement Movement_Gym_Duke_3{
+    face_left
+    lock_facing_direction
+    walk_right
+    unlock_facing_direction
+}
 
 
 
@@ -100,7 +137,7 @@ script NPC_DUKE_1{
         setflag(FLAG_TEMP_1)
         setvar(VAR_POKESCAPE_LUMBRIDGE_GYM_QUEST, 1)
         fadescreen(FADE_FROM_BLACK)
-        //savebgm(MUS_PS_GYM)
+        savebgm(MUS_PS_GYM)
         call(LUMBRIDGE_GYM_MUSIC)
         goto(LUMBRIDGE_GYM_STATE)
         release
@@ -129,7 +166,7 @@ script LUMBRIDGE_GYM_GUARD_1 {
     namebox("Guard")
     switch (var(VAR_POKESCAPE_LUMBRIDGE_GYM_QUEST)){ 
 		case 0: 
-            msgbox(format("Sorry, this hallway is off limits until I sort out this mess."))
+            msgbox(format("You're a gym challenger?\pThe Duke he can be found in his room down this hallway."))
             hidenamebox
             closemessage
             release
@@ -203,9 +240,48 @@ script LUMBRIDGE_GYM_SIGMUND {
     lock
     faceplayer
     namebox("Sigmund")
-    msgbox(format("I think you're looking for the Duke.\pHe's in the next room."))
+    switch (var(VAR_POKESCAPE_LUMBRIDGE_GYM_QUEST)){ 
+		case 0: 
+            msgbox(format("You gym challengers disgust me.\pNow get out of my room, the Duke is in the next room!"))
+            hidenamebox
+            closemessage
+            release
+            end
+        case 1:
+            msgbox(format("You gym challengers disgust me."))
+            hidenamebox
+            closemessage
+            release
+            end
+        case 2:
+            msgbox(format("Go away.\pI'm busy."))
+            hidenamebox
+            closemessage
+            release
+            end
+    }
+    msgbox(format("Go away.\pI'm busy."))
+    //msgbox(format("I think you're looking for the Duke.\pHe's in the next room."))
     hidenamebox
     release
     end
 }
 
+
+
+
+
+script HANS_GYM_LUMBRIDGE {
+    lock
+    faceplayer
+    namebox("Hans")
+
+    if (flag(FLAG_BADGE01_GET) == FALSE) {
+        msgbox(format("Oh you are taking up the challenge?\pThat is great!\pI guess I should call you a Completionist in the makings then.\pTo clear this challenge you have to beat the Duke.\pHe specializes in NORMAL-TYPE monsters.\pNORMAL-TYPE's aren't weak to anything except FIGHTING-TYPE, however if a monster is dual typed you can work around that.\pGood luck fighting the Duke!"))
+    }
+    else {
+        msgbox(format("You truly are a Completionist in the making, good job!"))
+    }
+    release
+    end
+}

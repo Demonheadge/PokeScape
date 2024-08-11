@@ -5347,7 +5347,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HAM_Grunt_F = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Goblin_1 = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_GOBLIN_1,
+    .paletteTag = OBJ_EVENT_PAL_GOBLIN_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -5365,7 +5365,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Goblin_1 = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Goblin_2 = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_GOBLIN_2,
+    .paletteTag = OBJ_EVENT_PAL_GOBLIN_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -5383,7 +5383,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Goblin_2 = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Goblin_GeneralBentnoze = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_GOBLIN_GENERALBENTNOZE,
+    .paletteTag = OBJ_EVENT_PAL_GOBLIN_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -5401,7 +5401,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Goblin_GeneralBent
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Goblin_GeneralWartface = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_GOBLIN_GENERALWARTFACE,
+    .paletteTag = OBJ_EVENT_PAL_GOBLIN_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -5582,7 +5582,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wizard_Dark = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wizard_Guthix = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_WIZARD_GUTHIX,
+    .paletteTag = OBJ_EVENT_PAL_GUTHIX_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -5600,7 +5600,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wizard_Guthix = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Wizard_Guthix_Dagger = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_WIZARD_GUTHIX_DAGGER,
+    .paletteTag = OBJ_EVENT_PAL_GUTHIX_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -6866,7 +6866,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Count_Draynor = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gnome_Child = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_GNOME_CHILD,
+    .paletteTag = OBJ_EVENT_PAL_GUTHIX_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -7010,7 +7010,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Explorer_Jack = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fortunato = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_FORTUNATO,
+    .paletteTag = OBJ_EVENT_PAL_GUTHIX_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -8936,7 +8936,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zamorak_Hawk = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Guthix_Raptor = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_GUTHIX,
+    .paletteTag = OBJ_EVENT_PAL_GUTHIX_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -9009,7 +9009,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zamorak = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Guthix = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_GUTHIX,
+    .paletteTag = OBJ_EVENT_PAL_GUTHIX_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,

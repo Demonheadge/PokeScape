@@ -16,7 +16,6 @@
 #include "event_object_lock.h"
 #include "event_object_movement.h"
 #include "field_message_box.h"
-#include "field_name_box.h"
 #include "field_player_avatar.h"
 #include "field_screen_effect.h"
 #include "field_specials.h"
@@ -1268,6 +1267,19 @@ bool8 ScrCmd_release(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_setspeaker(struct ScriptContext *ctx)
+{
+    const u8 *name = (const u8 *)ScriptReadWord(ctx);
+    SetSpeakerName(name);
+    return FALSE;
+}
+
+bool8 ScrCmd_hidespeaker(struct ScriptContext *ctx)
+{
+    HideSpeakerName();
+    return FALSE;
+}
+
 bool8 ScrCmd_message(struct ScriptContext *ctx)
 {
     const u8 *msg = (const u8 *)ScriptReadWord(ctx);
@@ -2481,20 +2493,7 @@ bool8 ScrCmd_checkpartylearnknowsfieldmove(struct ScriptContext *ctx)
 }
 // End qol_field_moves
 
-bool8 ScrCmd_namebox(struct ScriptContext *ctx) {
-    const u8 *name = (const u8 *)ScriptReadWord(ctx);
 
-    if (name == NULL)
-        name = (const u8 *)ctx->data[0];
-    ShowFieldName(name);
-    return FALSE;
-}
-
-bool8 ScrCmd_hidenamebox(struct ScriptContext *ctx) {
-    if(IsNameboxDisplayed())
-        ClearNamebox();
-    return FALSE;
-}
 
 bool8 ScrCmd_checkgamemode(struct ScriptContext *ctx)
 {

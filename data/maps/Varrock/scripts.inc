@@ -3,6 +3,7 @@ Varrock_MapScripts::
 	.byte 0
 
 Varrock_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setflag FLAG_VISITED_VARROCK
 	setvar VAR_EVOLUTION_MAP_STATE, 16
 	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
 	goto_if_eq Varrock_MapScripts_MAP_SCRIPT_ON_TRANSITION_1

@@ -72,6 +72,25 @@ static u16 GetBattlerPokeballItemId(u8 battlerId);
 #define GFX_TAG_BEAST_BALL   55025
 #define GFX_TAG_CHERISH_BALL 55026
 
+#define GFX_TAG_NORMALPOUCH 65012
+#define GFX_TAG_BRONZEPOUCH 65013
+#define GFX_TAG_IRONPOUCH 65014
+#define GFX_TAG_STEELPOUCH 65015
+#define GFX_TAG_BLACKPOUCH 65016
+#define GFX_TAG_MITHRILPOUCH 65017
+#define GFX_TAG_ADAMANTPOUCH 65018
+#define GFX_TAG_RUNEPOUCH 65019
+#define GFX_TAG_DRAGONPOUCH 65020
+#define GFX_TAG_CRYSTALPOUCH 65021
+#define GFX_TAG_SPLITBARKPOUCH 65022
+#define GFX_TAG_DRAGONBANEPOUCH 65023
+#define GFX_TAG_AUGMENTEDPOUCH 65024
+#define GFX_TAG_MYSTICPOUCH 65025
+#define GFX_TAG_BARROWSPOUCH 65026
+#define GFX_TAG_GRANITEPOUCH 55027
+#define GFX_TAG_ANCIENTPOUCH 55028
+#define GFX_TAG_ELEMENTALPOUCH 55029
+
 const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
 {
     [BALL_POKE]    = {gBallGfx_Poke,    384, GFX_TAG_POKE_BALL},
@@ -101,6 +120,25 @@ const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
     [BALL_PARK]    = {gBallGfx_Park,    384, GFX_TAG_PARK_BALL},
     [BALL_BEAST]   = {gBallGfx_Beast,   384, GFX_TAG_BEAST_BALL},
     [BALL_CHERISH] = {gBallGfx_Cherish, 384, GFX_TAG_CHERISH_BALL},
+    
+    [BALL_NORMALPOUCH]      = {gInterfaceGfx_NormalPouch,       384, GFX_TAG_NORMALPOUCH},
+	[BALL_BRONZEPOUCH]      = {gInterfaceGfx_BronzePouch,       384, GFX_TAG_BRONZEPOUCH},
+	[BALL_IRONPOUCH]        = {gInterfaceGfx_IronPouch,         384, GFX_TAG_IRONPOUCH},
+	[BALL_STEELPOUCH]       = {gInterfaceGfx_SteelPouch,        384, GFX_TAG_STEELPOUCH},
+	[BALL_BLACKPOUCH]       = {gInterfaceGfx_BlackPouch,        384, GFX_TAG_BLACKPOUCH},
+	[BALL_MITHRILPOUCH]     = {gInterfaceGfx_MithrilPouch,      384, GFX_TAG_MITHRILPOUCH},
+	[BALL_ADAMANTPOUCH]     = {gInterfaceGfx_AdamantPouch,      384, GFX_TAG_ADAMANTPOUCH},
+	[BALL_RUNEPOUCH]        = {gInterfaceGfx_RunePouch,         384, GFX_TAG_RUNEPOUCH},
+	[BALL_DRAGONPOUCH]      = {gInterfaceGfx_DragonPouch,       384, GFX_TAG_DRAGONPOUCH},
+	[BALL_CRYSTALPOUCH]     = {gInterfaceGfx_CrystalPouch,      384, GFX_TAG_CRYSTALPOUCH},
+	[BALL_SPLITBARKPOUCH]   = {gInterfaceGfx_SplitbarkPouch,    384, GFX_TAG_SPLITBARKPOUCH},
+	[BALL_DRAGONBANEPOUCH]  = {gInterfaceGfx_DragonbanePouch,   384, GFX_TAG_DRAGONBANEPOUCH},
+	[BALL_AUGMENTEDPOUCH]   = {gInterfaceGfx_AugmentedPouch,    384, GFX_TAG_AUGMENTEDPOUCH},
+	[BALL_MYSTICPOUCH]      = {gInterfaceGfx_MysticPouch,       384, GFX_TAG_MYSTICPOUCH},
+	[BALL_BARROWSPOUCH]     = {gInterfaceGfx_BarrowsPouch,      384, GFX_TAG_BARROWSPOUCH},
+	[BALL_GRANITEPOUCH]     = {gInterfaceGfx_GranitePouch,      384, GFX_TAG_GRANITEPOUCH},
+	[BALL_ANCIENTPOUCH]     = {gInterfaceGfx_AncientPouch,      384, GFX_TAG_ANCIENTPOUCH},
+	[BALL_ELEMENTALPOUCH]   = {gInterfaceGfx_ElementalPouch,    384, GFX_TAG_ELEMENTALPOUCH},
 };
 
 const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
@@ -132,6 +170,25 @@ const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
     [BALL_PARK]    = {gBallPal_Park,    GFX_TAG_PARK_BALL},
     [BALL_BEAST]   = {gBallPal_Beast,   GFX_TAG_BEAST_BALL},
     [BALL_CHERISH] = {gBallPal_Cherish, GFX_TAG_CHERISH_BALL},
+    [BALL_NORMALPOUCH]      = {gInterfacePal_NormalPouch,       GFX_TAG_NORMALPOUCH},
+	[BALL_BRONZEPOUCH]      = {gInterfacePal_BronzePouch,       GFX_TAG_BRONZEPOUCH},
+	[BALL_IRONPOUCH]        = {gInterfacePal_IronPouch,         GFX_TAG_IRONPOUCH},
+	[BALL_STEELPOUCH]       = {gInterfacePal_SteelPouch,        GFX_TAG_STEELPOUCH},
+	[BALL_BLACKPOUCH]       = {gInterfacePal_BlackPouch,        GFX_TAG_BLACKPOUCH},
+	[BALL_MITHRILPOUCH]     = {gInterfacePal_MithrilPouch,      GFX_TAG_MITHRILPOUCH},
+	[BALL_ADAMANTPOUCH]     = {gInterfacePal_AdamantPouch,      GFX_TAG_ADAMANTPOUCH},
+	[BALL_RUNEPOUCH]        = {gInterfacePal_RunePouch,         GFX_TAG_RUNEPOUCH},
+	[BALL_DRAGONPOUCH]      = {gInterfacePal_DragonPouch,       GFX_TAG_DRAGONPOUCH},
+	[BALL_CRYSTALPOUCH]     = {gInterfacePal_CrystalPouch,      GFX_TAG_CRYSTALPOUCH},
+	[BALL_SPLITBARKPOUCH]   = {gInterfacePal_SplitbarkPouch,    GFX_TAG_SPLITBARKPOUCH},
+	[BALL_DRAGONBANEPOUCH]  = {gInterfacePal_DragonbanePouch,   GFX_TAG_DRAGONBANEPOUCH},
+	[BALL_AUGMENTEDPOUCH]   = {gInterfacePal_AugmentedPouch,    GFX_TAG_AUGMENTEDPOUCH},
+	[BALL_MYSTICPOUCH]      = {gInterfacePal_MysticPouch,       GFX_TAG_MYSTICPOUCH},
+	[BALL_BARROWSPOUCH]     = {gInterfacePal_BarrowsPouch,      GFX_TAG_BARROWSPOUCH},
+	[BALL_GRANITEPOUCH]     = {gInterfacePal_GranitePouch,      GFX_TAG_GRANITEPOUCH},
+	[BALL_ANCIENTPOUCH]     = {gInterfacePal_AncientPouch,      GFX_TAG_ANCIENTPOUCH},
+	[BALL_ELEMENTALPOUCH]   = {gInterfacePal_ElementalPouch,    GFX_TAG_ELEMENTALPOUCH},
+
 };
 
 static const struct OamData sBallOamData =
@@ -513,6 +570,187 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
     {
         .tileTag = GFX_TAG_CHERISH_BALL,
         .paletteTag = GFX_TAG_CHERISH_BALL,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+
+    [BALL_NORMALPOUCH] =
+	{
+        .tileTag = GFX_TAG_NORMALPOUCH,
+        .paletteTag = GFX_TAG_NORMALPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_BRONZEPOUCH] =
+	{
+        .tileTag = GFX_TAG_BRONZEPOUCH,
+        .paletteTag = GFX_TAG_BRONZEPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_IRONPOUCH] =
+	{
+        .tileTag = GFX_TAG_IRONPOUCH,
+        .paletteTag = GFX_TAG_IRONPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_STEELPOUCH] =
+	{
+        .tileTag = GFX_TAG_STEELPOUCH,
+        .paletteTag = GFX_TAG_STEELPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_BLACKPOUCH] =
+	{
+        .tileTag = GFX_TAG_BLACKPOUCH,
+        .paletteTag = GFX_TAG_BLACKPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_MITHRILPOUCH] =
+	{
+        .tileTag = GFX_TAG_MITHRILPOUCH,
+        .paletteTag = GFX_TAG_MITHRILPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_ADAMANTPOUCH] =
+	{
+        .tileTag = GFX_TAG_ADAMANTPOUCH,
+        .paletteTag = GFX_TAG_ADAMANTPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_RUNEPOUCH] =
+	{
+        .tileTag = GFX_TAG_RUNEPOUCH,
+        .paletteTag = GFX_TAG_RUNEPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_DRAGONPOUCH] =
+	{
+        .tileTag = GFX_TAG_DRAGONPOUCH,
+        .paletteTag = GFX_TAG_DRAGONPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_CRYSTALPOUCH] =
+	{
+        .tileTag = GFX_TAG_CRYSTALPOUCH,
+        .paletteTag = GFX_TAG_CRYSTALPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_SPLITBARKPOUCH] =
+	{
+        .tileTag = GFX_TAG_SPLITBARKPOUCH,
+        .paletteTag = GFX_TAG_SPLITBARKPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_DRAGONBANEPOUCH] =
+	{
+        .tileTag = GFX_TAG_DRAGONBANEPOUCH,
+        .paletteTag = GFX_TAG_DRAGONBANEPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_AUGMENTEDPOUCH] =
+	{
+        .tileTag = GFX_TAG_AUGMENTEDPOUCH,
+        .paletteTag = GFX_TAG_AUGMENTEDPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_MYSTICPOUCH] =
+	{
+        .tileTag = GFX_TAG_MYSTICPOUCH,
+        .paletteTag = GFX_TAG_MYSTICPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_BARROWSPOUCH] =
+	{
+        .tileTag = GFX_TAG_BARROWSPOUCH,
+        .paletteTag = GFX_TAG_BARROWSPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_GRANITEPOUCH] =
+	{
+        .tileTag = GFX_TAG_GRANITEPOUCH,
+        .paletteTag = GFX_TAG_GRANITEPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_ANCIENTPOUCH] =
+	{
+        .tileTag = GFX_TAG_ANCIENTPOUCH,
+        .paletteTag = GFX_TAG_ANCIENTPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+	[BALL_ELEMENTALPOUCH] =
+	{
+        .tileTag = GFX_TAG_ELEMENTALPOUCH,
+        .paletteTag = GFX_TAG_ELEMENTALPOUCH,
         .oam = &sBallOamData,
         .anims = sBallAnimSequences,
         .images = NULL,
@@ -1222,9 +1460,9 @@ void CreatePokeballSpriteToReleaseMon(u8 monSpriteId, u8 monPalNum, u8 x, u8 y, 
 {
     u8 spriteId;
 
-    LoadCompressedSpriteSheetUsingHeap(&gBallSpriteSheets[BALL_POKE]);
-    LoadCompressedSpritePaletteUsingHeap(&gBallSpritePalettes[BALL_POKE]);
-    spriteId = CreateSprite(&gBallSpriteTemplates[BALL_POKE], x, y, subpriority);
+    LoadCompressedSpriteSheetUsingHeap(&gBallSpriteSheets[BALL_NORMALPOUCH]);
+    LoadCompressedSpritePaletteUsingHeap(&gBallSpritePalettes[BALL_NORMALPOUCH]);
+    spriteId = CreateSprite(&gBallSpriteTemplates[BALL_NORMALPOUCH], x, y, subpriority);
 
     gSprites[spriteId].sMonSpriteId = monSpriteId;
     gSprites[spriteId].sFinalMonX = gSprites[monSpriteId].x;
@@ -1334,9 +1572,9 @@ u8 CreateTradePokeballSprite(u8 monSpriteId, u8 monPalNum, u8 x, u8 y, u8 oamPri
 {
     u8 spriteId;
 
-    LoadCompressedSpriteSheetUsingHeap(&gBallSpriteSheets[BALL_POKE]);
-    LoadCompressedSpritePaletteUsingHeap(&gBallSpritePalettes[BALL_POKE]);
-    spriteId = CreateSprite(&gBallSpriteTemplates[BALL_POKE], x, y, subPriority);
+    LoadCompressedSpriteSheetUsingHeap(&gBallSpriteSheets[BALL_NORMALPOUCH]);
+    LoadCompressedSpritePaletteUsingHeap(&gBallSpritePalettes[BALL_NORMALPOUCH]);
+    spriteId = CreateSprite(&gBallSpriteTemplates[BALL_NORMALPOUCH], x, y, subPriority);
     gSprites[spriteId].sMonSpriteId = monSpriteId;
     gSprites[spriteId].sDelay = delay;
     gSprites[spriteId].sMonPalNum = monPalNum;
