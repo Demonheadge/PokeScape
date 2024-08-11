@@ -50094,12 +50094,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_ANIMAWHAL] =
 	{
-		.baseHP = 0,
-		.baseAttack = 0,
-		.baseDefense = 0,
-		.baseSpeed = 0,
-		.baseSpAttack = 0,
-		.baseSpDefense = 0,
+		.baseHP = 1,
+		.baseAttack = 1,
+		.baseDefense = 1,
+		.baseSpeed = 1,
+		.baseSpAttack = 1,
+		.baseSpDefense = 1,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 200,
 		.expYield = 134,
@@ -50143,12 +50143,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_ANIMASAURUS] =
 	{
-		.baseHP = 0,
-		.baseAttack = 0,
-		.baseDefense = 0,
-		.baseSpeed = 0,
-		.baseSpAttack = 0,
-		.baseSpDefense = 0,
+		.baseHP = 1,
+		.baseAttack = 1,
+		.baseDefense = 1,
+		.baseSpeed = 1,
+		.baseSpAttack = 1,
+		.baseSpDefense = 1,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 200,
 		.expYield = 167,
