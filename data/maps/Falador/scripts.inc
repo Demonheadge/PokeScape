@@ -16,6 +16,7 @@ Falador_MapScripts_MAP_SCRIPT_ON_LOAD_2:
 	goto Falador_MapScripts_MAP_SCRIPT_ON_LOAD_1
 
 Falador_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setflag FLAG_VISITED_FALADOR
 	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
 	goto_if_eq Falador_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 	call OPENWORLD_STATE_FALADOR

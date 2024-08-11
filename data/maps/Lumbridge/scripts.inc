@@ -3,6 +3,7 @@ Lumbridge_MapScripts::
 	.byte 0
 
 Lumbridge_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setflag FLAG_VISITED_LUMBRIDGE
 	setvar VAR_EVOLUTION_MAP_STATE, 1
 	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
 	goto_if_eq Lumbridge_MapScripts_MAP_SCRIPT_ON_TRANSITION_1

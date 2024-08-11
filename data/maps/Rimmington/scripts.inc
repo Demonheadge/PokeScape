@@ -3,6 +3,7 @@ Rimmington_MapScripts::
 	.byte 0
 
 Rimmington_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setflag FLAG_VISITED_RIMMINGTON
 	goto Rimmington_STATE
 	return
 

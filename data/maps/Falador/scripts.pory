@@ -7,28 +7,29 @@ const OBJ_EVENT_ID_BLOCK_durial321 = 27
 
 mapscripts Falador_MapScripts {
     MAP_SCRIPT_ON_LOAD { //ON LOAD FOR MAP TILES
-	if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
-    {
-    	call(FALADOR_QUEST_STATE)
-	}
-	else 
-	{
-		call(OPENWORLD_STATE_FALADOR)
-	}
-	call(MODTIMBO_STATE)
+		if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+		{
+			call(FALADOR_QUEST_STATE)
+		}
+		else 
+		{
+			call(OPENWORLD_STATE_FALADOR)
+		}
+		call(MODTIMBO_STATE)
 	}
 
 	MAP_SCRIPT_ON_TRANSITION { 
-    if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
-    {
-    	call(FALADOR_QUEST_STATE)
-		call(HIDDEN_GROTTO_RESET)
-	}
-	else 
-	{
-		call(OPENWORLD_STATE_FALADOR)
-		call(HIDDEN_GROTTO_RESET)
-	}
+		setflag(FLAG_VISITED_FALADOR)
+		if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+		{
+			call(FALADOR_QUEST_STATE)
+			call(HIDDEN_GROTTO_RESET)
+		}
+		else 
+		{
+			call(OPENWORLD_STATE_FALADOR)
+			call(HIDDEN_GROTTO_RESET)
+		}
 
     }
 } 

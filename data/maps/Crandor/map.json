@@ -3,7 +3,7 @@
   "name": "Crandor",
   "layout": "LAYOUT_CRANDOR",
   "music": "MUS_PS_TZHAAR",
-  "region_map_section": "MAPSEC_MUSA_POINT",
+  "region_map_section": "MAPSEC_CRANDOR",
   "requires_flash": false,
   "weather": "WEATHER_RAIN_THUNDERSTORM",
   "map_type": "MAP_TYPE_ROUTE",

@@ -1,6 +1,9 @@
 const OBJ_EVENT_ID_DRAYNORGUARD = 19
 
 mapscripts Draynor_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_VISITED_DRAYNOR)
+    }
     MAP_SCRIPT_ON_LOAD {
         call(WizardsTower_Draynor_STATE)
         call(DRAYNOR_GUARD_STATE)

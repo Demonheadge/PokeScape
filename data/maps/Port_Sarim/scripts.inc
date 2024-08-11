@@ -4,6 +4,7 @@ Port_Sarim_MapScripts::
 	.byte 0
 
 Port_Sarim_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setflag FLAG_VISITED_PORT_SARIM
 	call PORTSARIM_STATE
 	return
 

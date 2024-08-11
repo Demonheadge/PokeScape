@@ -3,6 +3,7 @@ AlKharid_MapScripts::
 	.byte 0
 
 AlKharid_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setflag FLAG_VISITED_AL_KHARID
 	setvar VAR_EVOLUTION_MAP_STATE, 11
 	return
 

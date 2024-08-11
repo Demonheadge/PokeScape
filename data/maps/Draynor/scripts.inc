@@ -1,7 +1,12 @@
 Draynor_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Draynor_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	map_script MAP_SCRIPT_ON_LOAD, Draynor_MapScripts_MAP_SCRIPT_ON_LOAD
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Draynor_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
+
+Draynor_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setflag FLAG_VISITED_DRAYNOR
+	return
 
 Draynor_MapScripts_MAP_SCRIPT_ON_LOAD:
 	call WizardsTower_Draynor_STATE
