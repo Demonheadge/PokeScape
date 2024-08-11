@@ -1530,12 +1530,12 @@
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
-#define FLAG_VISITED_LUMBRIDGE                      (SYSTEM_FLAGS + 0x85) // Unused Flag
+#define FLAG_VISITED_LUMBRIDGE                      (SYSTEM_FLAGS + 0x85) // MAPSEC & these flags MUST BE IN THE SAME ORDER!!!!
 #define FLAG_VISITED_DRAYNOR                        (SYSTEM_FLAGS + 0x86) // Unused Flag
 #define FLAG_VISITED_PORT_SARIM                     (SYSTEM_FLAGS + 0x87) // Unused Flag
 #define FLAG_VISITED_RIMMINGTON                     (SYSTEM_FLAGS + 0x88) // Unused Flag
-#define FLAG_VISITED_FALADOR                        (SYSTEM_FLAGS + 0x89) // Unused Flag
-#define FLAG_VISITED_TAVERLEY                       (SYSTEM_FLAGS + 0x8A) // Unused Flag
+#define FLAG_VISITED_TAVERLEY                       (SYSTEM_FLAGS + 0x89) // Unused Flag
+#define FLAG_VISITED_FALADOR                        (SYSTEM_FLAGS + 0x8A) // Unused Flag
 #define FLAG_VISITED_BARBARIAN_VILLAGE              (SYSTEM_FLAGS + 0x8B) // Unused Flag
 #define FLAG_VISITED_VARROCK                        (SYSTEM_FLAGS + 0x8C) // Unused Flag
 #define FLAG_VISITED_EDGEVILLE                      (SYSTEM_FLAGS + 0x8D) // Unused Flag

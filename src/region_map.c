@@ -1889,7 +1889,7 @@ static void CreateFlyDestIcons(void)
     u16 shape;
     u8 spriteId;
 
-    canFlyFlag = FLAG_VISITED_LUMBRIDGE;
+    canFlyFlag = FLAG_VISITED_LUMBRIDGE;    //MAPSEC and FLAGS must be in the same ORDER!!
     for (mapSecId = MAPSEC_LUMBRIDGE; mapSecId <= MAPSEC_MUSA_POINT; mapSecId++)
     {
         GetMapSecDimensions(mapSecId, &x, &y, &width, &height);
