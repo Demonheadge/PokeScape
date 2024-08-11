@@ -319,9 +319,11 @@ script NPC_SEAGULL
 {
 	lock
 	faceplayer
-    playmoncry(SPECIES_WINGULL, 0)
+    namebox("Seagull")
+    playmoncry(SPECIES_SEAGULL_NORMAL_FORM, 0)
 	msgbox(format("Gull!"))
     waitmoncry
+    hidenamebox
 	release
 	end
 }
@@ -361,6 +363,9 @@ script NPC_PORTSARIM_CAPTIAN_TOBIAS
 
     if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) {
         msgbox(format("There seems to be some sort of commotion happening over at the lighthouse."))
+        hidenamebox
+        release
+        end
     }
     //switch (var(VAR_POKESCAPE_STORYMODE_PROGRESS)){ 
             //HAM EVENT, PORT SARIM BOAT
@@ -413,10 +418,10 @@ script NPC_PORTSARIM_CREWMAN_1
 {
 	lock
 	faceplayer
-    //namebox ("NAME")
+    namebox ("Sailor")
 	msgbox(format("These ships go to just about any port.\pThere are a lot of exotic monsters out there so make sure to use our services."))
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
@@ -425,10 +430,10 @@ script NPC_PORTSARIM_CREWMAN_2
 {
 	lock
 	faceplayer
-    //namebox ("NAME")
+    namebox ("Sailor")
 	msgbox(format("If you go to Musa Point, say hi to Stephanie for me.\pI love her tattoos."))
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
@@ -491,10 +496,10 @@ script NPC_PORTSARIM_NPC_1
    //             release
    //             end
    // }
-    //namebox ("NAME")
+    namebox ("Fisherman")
 	msgbox(format("Sailing will never happen, get over it."))
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
@@ -545,10 +550,10 @@ script NPC_PORTSARIM_NPC_2
 {
 	lock
 	faceplayer
-    //namebox ("NAME")
+    namebox ("Man")
 	msgbox(format("Did you know that water type moves are twice as strong in the rain, but fire type moves damage are halved?"))
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
@@ -557,10 +562,10 @@ script NPC_PORTSARIM_NPC_3
 {
 	lock
 	faceplayer
-    //namebox ("NAME")
+    namebox ("Man")
 	msgbox(format("I have that shanty stuck in my head."))
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
@@ -569,10 +574,10 @@ script NPC_PORTSARIM_NPC_4
 {
 	lock
 	faceplayer
-    //namebox ("NAME")
+    namebox ("Man")
 	msgbox(format("Here in Port Sarim we mostly just see seagulls.\pI hope you like them."))
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
@@ -598,10 +603,10 @@ script NPC_PORTSARIM_NPC_5
      //           release
     //            end
    // }
-    //namebox ("NAME")
+    namebox ("Man")
 	msgbox(format("I wish I had my own port, maybe a player owned port?"))
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
@@ -610,10 +615,10 @@ script NPC_PORTSARIM_SIGNPOST
 {
 	lock
 	faceplayer
-    //namebox ("NAME")
+    namebox ("Man")
 	msgbox(format("Welcome to Port Sarim.\p…\pThere is something scribbled on the sign.\pSea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2.\pSea Shanty 2."))
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
@@ -622,7 +627,7 @@ script NPC_PORTSARIM_REDBEARD_FRANK
 {
 	lock
 	faceplayer
-    namebox ("REDBEARD FRANK")
+    namebox ("Redbeard Frank")
 	msgbox(format("Do you have any Karamjan rum?\pNo?\pShame."))
     waitmessage
     hidenamebox
@@ -634,7 +639,7 @@ script NPC_PORTSARIM_NPC_6
 {
 	lock
 	faceplayer
-    //namebox ("NAME")
+    namebox ("Man")
     msgbox(format("Sea Shanty 2 is the best song right?"), MSGBOX_YESNO)
     if (var(VAR_RESULT))
         {
@@ -645,14 +650,14 @@ script NPC_PORTSARIM_NPC_6
             msgbox(format("WOT!?\p…\p…\pREEEEEEEE!"))
         }
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
 
 script NPC_PORTSARIM_VOID_SQUIRE
 {
-    if (flag(FLAG_BADGE02_GET)) 
+    if (flag(FLAG_BADGE03_GET)) 
     {
         goto(PEST_CONTROL_ENTER)
     }
@@ -706,7 +711,7 @@ script NPC_PORTSARIM_NPC_7
 {
 	lock
 	faceplayer
-    //namebox ("CUPHOLDER")
+    namebox ("Man")
 	msgbox(format("Do you happen to know what to do with a drunken sailor?\pAsking for a friend."))
     waitmessage
     hidenamebox
@@ -799,7 +804,7 @@ script NPC_PORTSARIM_BANK_NPC
 {
 	lock
 	faceplayer
-    //namebox ("CUSTOMER")
+    namebox ("Pirate")
 	msgbox(format("Ye will never believe me lad.\pI raised six seagulls.\nSix!\pThat's more than three!\pEvery one of them wee flying rats evolved to a different beastie.\pWhat in tarnation is this sorcery lad?"))
     waitmessage
     hidenamebox

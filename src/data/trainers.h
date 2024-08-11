@@ -2328,7 +2328,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_AGILE,
         .encounterMusic_gender = TRAINER_ENCOUNTER_SKILLER,
         .trainerPic = TRAINER_PIC_graceful,
-        .trainerName = _(""),
+        .trainerName = _("SP33DMACH1NE"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
@@ -3878,10 +3878,10 @@ const struct Trainer gTrainers[] = {
 //LIGHTHOUSE 2F
     [TRAINER_LIGHTHOUSE_2F_TRAINER_1] =
     {
-        .trainerClass = TRAINER_CLASS_GUARD,
+        .trainerClass = TRAINER_CLASS_HAM_GRUNT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
         .trainerPic = TRAINER_PIC_guard_draynor,
-        .trainerName = _("Lin & Den"),
+        .trainerName = _("GRUNT"),
         .items = {},
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
@@ -3890,10 +3890,10 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_LIGHTHOUSE_2F_TRAINER_2] =
     {
-        .trainerClass = TRAINER_CLASS_GUARD,
+        .trainerClass = TRAINER_CLASS_JAILER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
         .trainerPic = TRAINER_PIC_guard_draynor,
-        .trainerName = _("Lin & Den"),
+        .trainerName = _("Denis"),
         .items = {},
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,

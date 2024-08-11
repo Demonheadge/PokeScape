@@ -581,8 +581,10 @@
 #define TRAINER_CLASS_NECROMANCER		0x84
 #define TRAINER_CLASS_RUNECRAFTER		0x85
 #define TRAINER_CLASS_WISE_OLD_MAN		0x86
+#define TRAINER_CLASS_JAILER		    0x87
 
-#define TRAINER_CLASS_NUM       		0x87
+
+#define TRAINER_CLASS_NUM       		0x88
 
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // Standard male encounter music

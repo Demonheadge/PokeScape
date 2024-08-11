@@ -318,7 +318,8 @@ VARROCK_NPC_NOOB_1::
 
 VARROCK_NPC_PRIEST::
 	faceplayer
-	msgbox VARROCK_NPC_PRIEST_Text_0
+	namebox VARROCK_NPC_PRIEST_Text_0
+	msgbox VARROCK_NPC_PRIEST_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -1373,7 +1374,10 @@ VARROCK_NPC_NOOB_1_Text_0:
 	.string "items and money so they could see them.$"
 
 VARROCK_NPC_PRIEST_Text_0:
-	.string "Would you like to partake in the\n"
+	.string "Monk$"
+
+VARROCK_NPC_PRIEST_Text_1:
+	.string "Would you like to partake in a\n"
 	.string "ceremony?$"
 
 VARROCK_NPC_GUARD_7_Text_0:

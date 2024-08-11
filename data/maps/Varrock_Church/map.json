@@ -71,7 +71,7 @@
     },
     {
       "x": 7,
-      "y": 5,
+      "y": 4,
       "elevation": 0,
       "dest_map": "MAP_VARROCK_CHURCH",
       "dest_warp_id": "2"
@@ -81,6 +81,13 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LOCKED_DOOR"
+    }
   ]
 }

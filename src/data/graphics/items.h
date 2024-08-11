@@ -2886,4 +2886,7 @@ const u32 gItemIconPalette_SantaHat[] = INCBIN_U32("graphics/items/pokescape_ico
 
 const u32 gItemIcon_PartyHat[] = INCBIN_U32("graphics/items/pokescape_icons/PartyHat.4bpp.lz");
 const u32 gItemIconPalette_PartyHat[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/PartyHat.gbapal.lz");
+
+const u32 gItemIcon_ClueScrollTools[] = INCBIN_U32("graphics/items/pokescape_icons/ClueScrollTools.4bpp.lz");
+const u32 gItemIconPalette_ClueScrollTools[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/ClueScrollTools.gbapal.lz");
 //------
