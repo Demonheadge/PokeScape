@@ -8474,8 +8474,8 @@
     {
       "id": "LAYOUT_VARROCK_HOUSE_7",
       "name": "Varrock_House_7_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 10,
+      "height": 10,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_IndoorTowns1",
       "border_filepath": "data/layouts/Varrock_House_7/border.bin",

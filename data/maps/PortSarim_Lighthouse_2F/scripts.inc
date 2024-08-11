@@ -114,7 +114,8 @@ LIGHTHOUSE_2F_NPC_5_2:
 LIGHTHOUSE_2F_NPC_6::
 	lock
 	faceplayer
-	msgbox LIGHTHOUSE_2F_NPC_6_Text_0
+	namebox LIGHTHOUSE_2F_NPC_6_Text_0
+	msgbox LIGHTHOUSE_2F_NPC_6_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -132,8 +133,8 @@ BATTLE_LIGHTHOUSE_2F_HAM::
 
 BATTLE_LIGHTHOUSE_2F_GUARD::
 	trainerbattle_single TRAINER_LIGHTHOUSE_2F_TRAINER_2, BATTLE_LIGHTHOUSE_2F_GUARD_Text_0, BATTLE_LIGHTHOUSE_2F_GUARD_Text_1
-	namebox BATTLE_LIGHTHOUSE_2F_GUARD_Text_2
-	msgbox BATTLE_LIGHTHOUSE_2F_GUARD_Text_3
+	namebox LIGHTHOUSE_2F_NPC_6_Text_0
+	msgbox BATTLE_LIGHTHOUSE_2F_GUARD_Text_2
 	hidenamebox
 	release
 	return
@@ -187,7 +188,7 @@ LIGHTHOUSE_2F_NPC_4_Text_0:
 	.string "That's probably not a good sign.$"
 
 LIGHTHOUSE_2F_NPC_5_Text_0:
-	.string "SECURITY GUARD$"
+	.string "Security Guard$"
 
 LIGHTHOUSE_2F_NPC_5_Text_1:
 	.string "Oh god! I only came here to give people\n"
@@ -202,6 +203,9 @@ LIGHTHOUSE_2F_NPC_5_Text_2:
 	.string "…I don't know how to reply to this.$"
 
 LIGHTHOUSE_2F_NPC_6_Text_0:
+	.string "Jailer$"
+
+LIGHTHOUSE_2F_NPC_6_Text_1:
 	.string "This lighthouse is also acts as the jail.\p"
 	.string "That way we can guard both at the same\n"
 	.string "time.$"
@@ -230,7 +234,4 @@ BATTLE_LIGHTHOUSE_2F_GUARD_Text_1:
 	.string "We should have just let you go on ahead.$"
 
 BATTLE_LIGHTHOUSE_2F_GUARD_Text_2:
-	.string "GUARD$"
-
-BATTLE_LIGHTHOUSE_2F_GUARD_Text_3:
 	.string "I knew I should have taken today off…$"

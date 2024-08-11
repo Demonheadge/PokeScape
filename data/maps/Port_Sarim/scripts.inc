@@ -305,9 +305,11 @@ NPC_FLAGRESETER::
 NPC_SEAGULL::
 	lock
 	faceplayer
-	playmoncry SPECIES_WINGULL, 0
-	msgbox NPC_SEAGULL_Text_0
+	namebox NPC_SEAGULL_Text_0
+	playmoncry SPECIES_SEAGULL_NORMAL_FORM, 0
+	msgbox NPC_SEAGULL_Text_1
 	waitmoncry
+	hidenamebox
 	release
 	end
 
@@ -342,7 +344,6 @@ NPC_PORTSARIM_CAPTIAN_TOBIAS::
 	namebox NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_0
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 100
 	goto_if_eq NPC_PORTSARIM_CAPTIAN_TOBIAS_2
-NPC_PORTSARIM_CAPTIAN_TOBIAS_1:
 	goto_if_unset FLAG_BADGE02_GET, NPC_PORTSARIM_CAPTIAN_TOBIAS_5
 	compare VAR_POKESCAPE_KARAMJAVOLCANO_STATE, 0
 	goto_if_eq NPC_PORTSARIM_CAPTIAN_TOBIAS_8
@@ -359,7 +360,9 @@ NPC_PORTSARIM_CAPTIAN_TOBIAS_10:
 
 NPC_PORTSARIM_CAPTIAN_TOBIAS_2:
 	msgbox NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_1
-	goto NPC_PORTSARIM_CAPTIAN_TOBIAS_1
+	hidenamebox
+	release
+	end
 
 NPC_PORTSARIM_CAPTIAN_TOBIAS_5:
 	msgbox NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_2
@@ -382,8 +385,10 @@ NPC_PORTSARIM_CAPTIAN_TOBIAS_11:
 NPC_PORTSARIM_CREWMAN_1::
 	lock
 	faceplayer
-	msgbox NPC_PORTSARIM_CREWMAN_1_Text_0
+	namebox NPC_PORTSARIM_CREWMAN_1_Text_0
+	msgbox NPC_PORTSARIM_CREWMAN_1_Text_1
 	waitmessage
+	hidenamebox
 	release
 	end
 
@@ -391,8 +396,10 @@ NPC_PORTSARIM_CREWMAN_1::
 NPC_PORTSARIM_CREWMAN_2::
 	lock
 	faceplayer
+	namebox NPC_PORTSARIM_CREWMAN_1_Text_0
 	msgbox NPC_PORTSARIM_CREWMAN_2_Text_0
 	waitmessage
+	hidenamebox
 	release
 	end
 
@@ -433,8 +440,10 @@ NPC_PORTSARIM_LORRIS::
 NPC_PORTSARIM_NPC_1::
 	lock
 	faceplayer
-	msgbox NPC_PORTSARIM_NPC_1_Text_0
+	namebox NPC_PORTSARIM_NPC_1_Text_0
+	msgbox NPC_PORTSARIM_NPC_1_Text_1
 	waitmessage
+	hidenamebox
 	release
 	end
 
@@ -482,8 +491,10 @@ NPC_PORTSARIM_MONK_2_3:
 NPC_PORTSARIM_NPC_2::
 	lock
 	faceplayer
-	msgbox NPC_PORTSARIM_NPC_2_Text_0
+	namebox NPC_PORTSARIM_NPC_2_Text_0
+	msgbox NPC_PORTSARIM_NPC_2_Text_1
 	waitmessage
+	hidenamebox
 	release
 	end
 
@@ -491,8 +502,10 @@ NPC_PORTSARIM_NPC_2::
 NPC_PORTSARIM_NPC_3::
 	lock
 	faceplayer
+	namebox NPC_PORTSARIM_NPC_2_Text_0
 	msgbox NPC_PORTSARIM_NPC_3_Text_0
 	waitmessage
+	hidenamebox
 	release
 	end
 
@@ -500,8 +513,10 @@ NPC_PORTSARIM_NPC_3::
 NPC_PORTSARIM_NPC_4::
 	lock
 	faceplayer
+	namebox NPC_PORTSARIM_NPC_2_Text_0
 	msgbox NPC_PORTSARIM_NPC_4_Text_0
 	waitmessage
+	hidenamebox
 	release
 	end
 
@@ -509,8 +524,10 @@ NPC_PORTSARIM_NPC_4::
 NPC_PORTSARIM_NPC_5::
 	lock
 	faceplayer
+	namebox NPC_PORTSARIM_NPC_2_Text_0
 	msgbox NPC_PORTSARIM_NPC_5_Text_0
 	waitmessage
+	hidenamebox
 	release
 	end
 
@@ -518,8 +535,10 @@ NPC_PORTSARIM_NPC_5::
 NPC_PORTSARIM_SIGNPOST::
 	lock
 	faceplayer
+	namebox NPC_PORTSARIM_NPC_2_Text_0
 	msgbox NPC_PORTSARIM_SIGNPOST_Text_0
 	waitmessage
+	hidenamebox
 	release
 	end
 
@@ -538,12 +557,14 @@ NPC_PORTSARIM_REDBEARD_FRANK::
 NPC_PORTSARIM_NPC_6::
 	lock
 	faceplayer
+	namebox NPC_PORTSARIM_NPC_2_Text_0
 	msgbox NPC_PORTSARIM_NPC_6_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne NPC_PORTSARIM_NPC_6_2
 	msgbox NPC_PORTSARIM_NPC_6_Text_2
 NPC_PORTSARIM_NPC_6_1:
 	waitmessage
+	hidenamebox
 	release
 	end
 
@@ -553,7 +574,7 @@ NPC_PORTSARIM_NPC_6_2:
 
 
 NPC_PORTSARIM_VOID_SQUIRE::
-	goto_if_set FLAG_BADGE02_GET, NPC_PORTSARIM_VOID_SQUIRE_2
+	goto_if_set FLAG_BADGE03_GET, NPC_PORTSARIM_VOID_SQUIRE_2
 NPC_PORTSARIM_VOID_SQUIRE_1:
 	faceplayer
 	namebox NPC_PORTSARIM_VOID_SQUIRE_Text_0
@@ -604,6 +625,7 @@ NPC_PORTSARIM_TRADER_STAN::
 NPC_PORTSARIM_NPC_7::
 	lock
 	faceplayer
+	namebox NPC_PORTSARIM_NPC_2_Text_0
 	msgbox NPC_PORTSARIM_NPC_7_Text_0
 	waitmessage
 	hidenamebox
@@ -687,7 +709,8 @@ NPC_PORTSARIM_FISHING_CUSTOMER::
 NPC_PORTSARIM_BANK_NPC::
 	lock
 	faceplayer
-	msgbox NPC_PORTSARIM_BANK_NPC_Text_0
+	namebox NPC_PORTSARIM_BANK_NPC_Text_0
+	msgbox NPC_PORTSARIM_BANK_NPC_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -873,6 +896,9 @@ NPC_FLAGRESETER_Text_0:
 	.string "Your flag is now reset!$"
 
 NPC_SEAGULL_Text_0:
+	.string "Seagull$"
+
+NPC_SEAGULL_Text_1:
 	.string "Gull!$"
 
 NPC_PORTSARIM_BETTY_Text_0:
@@ -934,6 +960,9 @@ NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_6:
 	.string "Suit yourself.$"
 
 NPC_PORTSARIM_CREWMAN_1_Text_0:
+	.string "Sailor$"
+
+NPC_PORTSARIM_CREWMAN_1_Text_1:
 	.string "These ships go to just about any port.\p"
 	.string "There are a lot of exotic monsters out\n"
 	.string "there so make sure to use our services.$"
@@ -968,6 +997,9 @@ NPC_PORTSARIM_LORRIS_Text_1:
 	.string "different.$"
 
 NPC_PORTSARIM_NPC_1_Text_0:
+	.string "Fisherman$"
+
+NPC_PORTSARIM_NPC_1_Text_1:
 	.string "Sailing will never happen, get over it.$"
 
 NPC_PORTSARIM_MONK_1_Text_0:
@@ -990,6 +1022,9 @@ NPC_PORTSARIM_MONK_2_Text_1:
 	.string "creatures with you.$"
 
 NPC_PORTSARIM_NPC_2_Text_0:
+	.string "Man$"
+
+NPC_PORTSARIM_NPC_2_Text_1:
 	.string "Did you know that water type moves are\n"
 	.string "twice as strong in the rain, but fire\l"
 	.string "type moves damage are halved?$"
@@ -1017,7 +1052,7 @@ NPC_PORTSARIM_SIGNPOST_Text_0:
 	.string "Sea Shanty 2.$"
 
 NPC_PORTSARIM_REDBEARD_FRANK_Text_0:
-	.string "REDBEARD FRANK$"
+	.string "Redbeard Frank$"
 
 NPC_PORTSARIM_REDBEARD_FRANK_Text_1:
 	.string "Do you have any Karamjan rum?\p"
@@ -1134,6 +1169,9 @@ NPC_PORTSARIM_FISHING_CUSTOMER_Text_0:
 	.string "This stays between us.$"
 
 NPC_PORTSARIM_BANK_NPC_Text_0:
+	.string "Pirate$"
+
+NPC_PORTSARIM_BANK_NPC_Text_1:
 	.string "Ye will never believe me lad.\p"
 	.string "I raised six seagulls.\n"
 	.string "Six!\p"
