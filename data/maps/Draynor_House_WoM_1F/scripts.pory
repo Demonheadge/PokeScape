@@ -1,4 +1,4 @@
-mapscripts Draynor_House_WOM_1F_MapScripts {
+mapscripts Draynor_House_WoM_1F_MapScripts {
 
 }
 
@@ -6,9 +6,9 @@ mapscripts Draynor_House_WOM_1F_MapScripts {
 
 script MEGAEVOSBOOK {
     lock
-    msgbox(format("A book entitled "Mega Evolutions: Fact or Fiction?" catches your eye.\pWould you like to read it?"), MSGBOX_YESNO)
+    msgbox(format("A book entitled 'Mega Evolutions: Fact or Fiction?' catches your eye.\pWould you like to read it?"), MSGBOX_YESNO)
         if (var(VAR_RESULT)){
-            msgbox(format("Throughout my travels across Gielinor, I have either come across or heard rumours about many powerful artefacts.\pHowever, there is one artefact in particular that has eluded me.\pAn artefact rumoured to have been used by the gods to create all life and magic, and one that it imbued with so much energy that even mere fragments of it can MEGA EVOLVE a monster.\pNobody knows it's exact name, or where it came from.\pMy fellow Saradominists call it the "Eye of Saradomin", those who worship Guthix refer to it as the "Fist of Guthix" and I've also heard the deranged necromancer over near Rimmington call it the "Cabbage of Jas".\pExactly what monsters are affected by these fragments are unknown, but the ancient writings I have unearthed suggest that the following monsters may be strong enough to fully utilise its strength:\pKalphite Queen\pTzTok Jad\pDagannoth Kings\pChaos El-\p{PAUSE 15}The rest of the page is torn out.."))
+            msgbox(format("Throughout my travels across Gielinor, I have either come across or heard rumours about many powerful artefacts.\pHowever, there is one artefact in particular that has eluded me.\pAn artefact rumoured to have been used by the gods to create all life and magic, and one that it imbued with so much energy that even mere fragments of it can MEGA EVOLVE a monster.\pNobody knows it's exact name, or where it came from.\pMy fellow Saradominists call it the 'Eye of Saradomin', those who worship Guthix refer to it as the 'Fist of Guthix' and I've also heard the deranged necromancer over near Rimmington call it the 'Cabbage of Jas'.\pExactly what monsters are affected by these fragments are unknown, but the ancient writings I have unearthed suggest that the following monsters may be strong enough to fully utilise its strength:\pKalphite Queen\pTzTok Jad\pDagannoth Kings\pChaos El-\p{PAUSE 15}The rest of the page is torn out.."))
             closemessage
         }
         else {
@@ -23,7 +23,7 @@ script MEGAEVOSBOOK {
 
 script REGIONALFORMSBOOK {
     lock
-    msgbox(format("There is a book on the shelf entitled: "Fantastic Forms and Where To Find Them".\pDo you want to read it?"), MSGBOX_YESNO)
+    msgbox(format("There is a book on the shelf entitled: 'Fantastic Forms and Where To Find Them'.\pDo you want to read it?"), MSGBOX_YESNO)
         if (var(VAR_RESULT)){
             msgbox(format("One of the things that truly reminds me that Saradomin had a hand in the creation of Gielinor is the natural order that you see throughout the world.\pFor example, it doesn't matter whether you're in ASGARNIA,\phere in MISTHALIN,\pon the beaches of KARAMJA,\pvisiting the zoo in KANDARIN,\pbraving the cold of the FREMENNIK PROVINCE,\pescaping death in the WILDERNESS,\penduring the swamps of MORYTANIA,\por facing the harsh sands of the KHARIDIAN DESERT\pyou'll find that varieties of monsters like chicks, bear cubs, or even crablings have adapted to their surroundings.\pTo the point that they evolve into entirely new forms!\pSome of these evolved forms even have their own unique moves.\pHowever, exactly what moves each learns will take substantially more exploration."))
             closemessage
@@ -40,7 +40,7 @@ script REGIONALFORMSBOOK {
 
 script FOODFORMSBOOK {
     lock
-    msgbox(format("You skim over looks of very dull sounding book titles until you see one called: "Dionysius and the Chocolate Cake Factory".\pWould you like to read it?"), MSGBOX_YESNO)
+    msgbox(format("You skim over looks of very dull sounding book titles until you see one called: 'Dionysius and the Chocolate Cake Factory'.\pWould you like to read it?"), MSGBOX_YESNO)
         if (var(VAR_RESULT)){
             msgbox(format("One of the more unusual monster evolutions that I have come across on my travels have involved food.\pThey say not to feed dogs chocolate,\pbut CATS, TURKEYS, and YAKS all love CHOCOLATE CAKE.\pIt has to be CHOCOLATE CAKE though, the regular kind just won't do.\pEven more exotic creatures like DESERT DEVIL KEBBITS, MINITRICE,\pCAVE SLIME, and JELLIES love it too.\pI wonder if that's because they can't normally get hold of the stuff!\pEither way, their love of CHOCOLATE CAKE is so powerful that it'll let them evolve into entirely new forms.\pApparently this even extends to ENTS and CABBAGES.\pI don't fully believe that one though.\pI wonder if that's just a rumour start by Melzar.."))
             closemessage
@@ -106,7 +106,7 @@ script WOMMISCBOOK4 {
 
 script WOMMISCBOOK5 {
     lock
-    msgbox(format("There is a book titled: "If I Did it: Confessions of the Robber" which includes a hypothetical description of how one might rob a local bank."))
+    msgbox(format("There is a book titled: 'If I Did it: Confessions of the Robber' which includes a hypothetical description of how one might rob a local bank."))
     release
     end   
 }

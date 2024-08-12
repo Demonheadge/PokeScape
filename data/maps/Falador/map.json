@@ -857,6 +857,13 @@
       "elevation": 0,
       "dest_map": "MAP_FALADOR",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 10,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_FALADOR_HAIRDRESSERS",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
