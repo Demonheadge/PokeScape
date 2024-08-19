@@ -42,9 +42,9 @@ PORTSARIM_STATE_1:
 	removeobject 26
 	removeobject 27
 	setflag FLAG_TEMP_1F
-	setflag FLAG_TEMP_1E
 	removeobject 38
 	setflag FLAG_TEMP_1D
+	setflag FLAG_TEMP_1C
 	switch VAR_POKESCAPE_STORYMODE_PROGRESS
 	case 150, PORTSARIM_STATE_6
 	case 151, PORTSARIM_STATE_7
@@ -534,11 +534,8 @@ NPC_PORTSARIM_NPC_5::
 
 NPC_PORTSARIM_SIGNPOST::
 	lock
-	faceplayer
-	namebox NPC_PORTSARIM_NPC_2_Text_0
 	msgbox NPC_PORTSARIM_SIGNPOST_Text_0
 	waitmessage
-	hidenamebox
 	release
 	end
 
@@ -1052,7 +1049,7 @@ NPC_PORTSARIM_SIGNPOST_Text_0:
 	.string "Sea Shanty 2.$"
 
 NPC_PORTSARIM_REDBEARD_FRANK_Text_0:
-	.string "Redbeard Frank$"
+	.string "Frank$"
 
 NPC_PORTSARIM_REDBEARD_FRANK_Text_1:
 	.string "Do you have any Karamjan rum?\p"

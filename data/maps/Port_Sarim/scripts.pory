@@ -43,9 +43,12 @@ script PORTSARIM_STATE{
         removeobject(26)
         removeobject(27)
         setflag(FLAG_TEMP_1F)
-        setflag(FLAG_TEMP_1E)
+        //setflag(FLAG_TEMP_1E) boat
         removeobject(38)
         setflag(FLAG_TEMP_1D)
+        setflag(FLAG_TEMP_1C) //Ned
+        //setflag(FLAG_TEMP_1B) //Lady Lumbridge
+        
 
         switch (var(VAR_POKESCAPE_STORYMODE_PROGRESS)){ 
             //HAM EVENT, PORT SARIM BOAT
@@ -614,11 +617,8 @@ script NPC_PORTSARIM_NPC_5
 script NPC_PORTSARIM_SIGNPOST
 {
 	lock
-	faceplayer
-    namebox ("Man")
 	msgbox(format("Welcome to Port Sarim.\p…\pThere is something scribbled on the sign.\pSea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2.\pSea Shanty 2."))
     waitmessage
-    hidenamebox
 	release
 	end
 }
@@ -627,7 +627,7 @@ script NPC_PORTSARIM_REDBEARD_FRANK
 {
 	lock
 	faceplayer
-    namebox ("Redbeard Frank")
+    namebox ("Frank")
 	msgbox(format("Do you have any Karamjan rum?\pNo?\pShame."))
     waitmessage
     hidenamebox

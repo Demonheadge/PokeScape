@@ -380,16 +380,16 @@ script CRANDOR_EVENT_PORTSARIM_CABIN_BOY {
     namebox("Cabin Boy")
 
     if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) {
-        if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 150) { 
-        msgbox(format("Finally the day has come!\pI can set sail with her and make my dream come true!"))
+        if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 150) {  //> - Greater than,  < - Less than.
+            msgbox(format("Finally the day has come!\pI can set sail with her and make my dream come true!\pAlthough I wish they hadn't renamed her to the Lady Falador…"))
+            closemessage
+            hidenamebox
+            release
+            end
         }
     }
-    else {
-        msgbox(format("This ship is called the Lady Lumbridge!\pOne day I hope to set sail with her!\pBut alas the lady, she needs a captain.\pNot a wee cabin boy like myself…"))
-    }
 
-
-
+    msgbox(format("This ship is called the Lady Lumbridge!\pOne day I hope to set sail with her!\pBut alas the lady, she needs a captain.\pNot a wee cabin boy like myself…"))
     closemessage
     hidenamebox
     release

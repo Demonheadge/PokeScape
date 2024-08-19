@@ -320,8 +320,8 @@ CRANDOR_EVENT_PORTSARIM_CABIN_BOY::
 	namebox CRANDOR_SHIP_SCENE_Text_0
 	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
 	goto_if_eq CRANDOR_EVENT_PORTSARIM_CABIN_BOY_2
-	msgbox CRANDOR_EVENT_PORTSARIM_CABIN_BOY_Text_1
 CRANDOR_EVENT_PORTSARIM_CABIN_BOY_1:
+	msgbox CRANDOR_EVENT_PORTSARIM_CABIN_BOY_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -329,12 +329,15 @@ CRANDOR_EVENT_PORTSARIM_CABIN_BOY_1:
 
 CRANDOR_EVENT_PORTSARIM_CABIN_BOY_2:
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 150
-	goto_if_le CRANDOR_EVENT_PORTSARIM_CABIN_BOY_5
+	goto_if_ge CRANDOR_EVENT_PORTSARIM_CABIN_BOY_4
 	goto CRANDOR_EVENT_PORTSARIM_CABIN_BOY_1
 
-CRANDOR_EVENT_PORTSARIM_CABIN_BOY_5:
+CRANDOR_EVENT_PORTSARIM_CABIN_BOY_4:
 	msgbox CRANDOR_EVENT_PORTSARIM_CABIN_BOY_Text_0
-	goto CRANDOR_EVENT_PORTSARIM_CABIN_BOY_1
+	closemessage
+	hidenamebox
+	release
+	end
 
 
 CRANDOR_EVENT_PORTSARIM_NED::
@@ -407,7 +410,9 @@ ENCOUNTER_CHAOS_ELEMENTAL_Text_1:
 CRANDOR_EVENT_PORTSARIM_CABIN_BOY_Text_0:
 	.string "Finally the day has come!\p"
 	.string "I can set sail with her and make my\n"
-	.string "dream come true!$"
+	.string "dream come true!\p"
+	.string "Although I wish they hadn't renamed her\n"
+	.string "to the Lady Falador…$"
 
 CRANDOR_EVENT_PORTSARIM_CABIN_BOY_Text_1:
 	.string "This ship is called the Lady Lumbridge!\p"
