@@ -303,7 +303,7 @@ WOMMISCBOOK3_Text_0:
 WOMMISCBOOK4_Text_0:
 	.string "The book on the shelf talks about the\n"
 	.string "Wise Old Man's battle with a fearsome\l"
-	.string "fire-breathing dragon living deep\l"
+	.string "three headed dragon living deep\l"
 	.string "underground in the Wilderness.\p"
 	.string "It goes on to say that it can inflict\n"
 	.string "poison, burn, or even cause freezes!\p"

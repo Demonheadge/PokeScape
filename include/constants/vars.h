@@ -267,7 +267,7 @@
 #define VAR_FLY_TOOL_SOURCE                  0x40F7 // QoL Field Moves
 #define VAR_BANANA_COUNT                     0x40F8 // Unused Var
 #define VAR_BANANA_BOAT_QUEST                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                    0x40FA // Unused Var
+#define VAR_POTTERINGTON_FARM                0x40FA // Unused Var
 #define VAR_UNUSED_0x40FB                    0x40FB // Unused Var
 #define VAR_UNUSED_0x40FC                    0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                    0x40FD // Unused Var

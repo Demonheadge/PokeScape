@@ -128,6 +128,10 @@ EventScript_DaycareMan::
 EventScript_DaycareLady::
 	lock
 	faceplayer
+	namebox EventScript_DaycareLady_Text_0
+	compare VAR_POTTERINGTON_FARM, 0
+	goto_if_eq EventScript_DaycareLady_2
+EventScript_DaycareLady_1:
 	specialvar VAR_RESULT, GetDaycareState
 	compare VAR_RESULT, DAYCARE_EGG_WAITING
 	goto_if_eq Route117_PokemonDayCare_EventScript_EggWaiting
@@ -136,7 +140,7 @@ EventScript_DaycareLady::
 	compare VAR_RESULT, DAYCARE_TWO_MONS
 	goto_if_eq Route117_PokemonDayCare_EventScript_TwoMonsInDaycare
 	namebox EventScript_DaycareLady_Text_0
-	msgbox EventScript_DaycareLady_Text_1, MSGBOX_YESNO
+	msgbox EventScript_DaycareLady_Text_2, MSGBOX_YESNO
 	hidenamebox
 	compare VAR_RESULT, YES
 	goto_if_eq Route117_PokemonDayCare_EventScript_GiveMonToRaise
@@ -145,6 +149,34 @@ EventScript_DaycareLady::
 	hidenamebox
 	release
 	end
+
+EventScript_DaycareLady_2:
+	msgbox EventScript_DaycareLady_Text_1
+	setvar VAR_POTTERINGTON_FARM, 5
+	goto EventScript_DaycareLady_1
+
+
+POTTERINGTON_FARM_BOOK::
+	lock
+	msgbox POTTERINGTON_FARM_BOOK_Text_0
+	closemessage
+	end
+
+
+POTTERINGTON_FARM_BOOK_2::
+	lock
+	msgbox POTTERINGTON_FARM_BOOK_2_Text_0
+	closemessage
+	end
+
+
+POTTERINGTON_FARM_Banker::
+	faceplayer
+	namebox POTTERINGTON_FARM_Banker_Text_0
+	msgbox POTTERINGTON_FARM_Banker_Text_1
+	waitmessage
+	goto BANK_OPTIONS
+	return
 
 
 POTTERINGTON_FARM_Lassy::
@@ -332,10 +364,41 @@ EventScript_DaycareLady_Text_0:
 	.string "Mother Pott.$"
 
 EventScript_DaycareLady_Text_1:
-	.string "Hey there, I am Mother Potterington.\p"
+	.string "Hi honey, I am Mother Potterington.\p"
+	.string "Is this your first time here?\p"
+	.string "We can raise and breed MONSTERS for\n"
+	.string "you.\p"
+	.string "All we ask in return is that you pay for\n"
+	.string "our services.\p"
+	.string "Beans?\p"
+	.string "No sweety, you don't pay with beans.\p"
+	.string "Just regular old Gold pieces.\p"
+	.string "Now, what can I do for you?$"
+
+EventScript_DaycareLady_Text_2:
 	.string "We can raise and breed MONSTERS for\n"
 	.string "you.\p"
 	.string "Would you like us to raise one?$"
+
+POTTERINGTON_FARM_BOOK_Text_0:
+	.string "This book seems to be warning\n"
+	.string "adventurers to not leave monsters of\l"
+	.string "different species in the breeding pens.$"
+
+POTTERINGTON_FARM_BOOK_2_Text_0:
+	.string "There is a book with information on\n"
+	.string "Cows, Frogs, Unicorns, Sardines, Wolves,\l"
+	.string "Chickens, Roosters and Spiders.\p"
+	.string "The list goes on…$"
+
+POTTERINGTON_FARM_Banker_Text_0:
+	.string "Nephew Pott.$"
+
+POTTERINGTON_FARM_Banker_Text_1:
+	.string "I handle the finances for our family.\p"
+	.string "But I also help adventurers access\n"
+	.string "their banks.\p"
+	.string "How may I help you today?$"
 
 POTTERINGTON_FARM_Lassy_Text_0:
 	.string "Lassy$"

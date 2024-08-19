@@ -83,11 +83,11 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_STRYKEWYRM_SANDY",
-      "x": 8,
+      "graphics_id": "OBJ_EVENT_GFX_UNICORN_WHITE",
+      "x": 7,
       "y": 13,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_DOWN_LEFT_UP_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -96,11 +96,11 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_STRYKEWYRM_LEAFY",
+      "graphics_id": "OBJ_EVENT_GFX_COW_DAIRY",
       "x": 9,
       "y": 14,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -113,7 +113,7 @@
       "x": 6,
       "y": 15,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_UP_RIGHT_DOWN_LEFT",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 2,
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -188,8 +188,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TERRORBIRD_1",
-      "x": 19,
-      "y": 12,
+      "x": 21,
+      "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -211,6 +211,45 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ITEM_ROUTE4_FLAX",
       "flag": "FLAG_ITEM_ROUTE4_FLAX"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SUMMONER",
+      "x": 13,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ROUTE4_Summoner",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCORPION",
+      "x": 18,
+      "y": 12,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DIVINER",
+      "x": 20,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ROUTE4_Diviner",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -253,7 +292,7 @@
       "elevation": 0,
       "var": "VAR_POKESCAPE_POTTERINGTON_FARM_STATE",
       "var_value": "0",
-      "script": "ROUTE4_TRIGGER2_DaycareWatcher"
+      "script": "ROUTE4_TRIGGER1_DaycareWatcher"
     }
   ],
   "bg_events": [

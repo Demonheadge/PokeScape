@@ -98,7 +98,7 @@ script WOMMISCBOOK3 {
 
 script WOMMISCBOOK4 {
     lock
-    msgbox(format("The book on the shelf talks about the Wise Old Man's battle with a fearsome fire-breathing dragon living deep underground in the Wilderness.\pIt goes on to say that it can inflict poison, burn, or even cause freezes!\pI wonder whether it's possible to catch such a monster..."))
+    msgbox(format("The book on the shelf talks about the Wise Old Man's battle with a fearsome three headed dragon living deep underground in the Wilderness.\pIt goes on to say that it can inflict poison, burn, or even cause freezes!\pI wonder whether it's possible to catch such a monster..."))
     release
     end   
 }
