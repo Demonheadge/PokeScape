@@ -1,0 +1,49 @@
+{
+  "id": "MAP_MUDSKIPPER_SOUND_1",
+  "name": "Mudskipper_Sound_1",
+  "layout": "LAYOUT_MUDSKIPPER_SOUND_1",
+  "music": "MUS_GSC_ROUTE38",
+  "region_map_section": "MAPSEC_MUDSKIPPER_POINT",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_OCEAN_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_BAY_OF_SARIM",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MUDSKIPPER_POINT",
+      "offset": -14,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_TUTORIAL_ISLAND",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_MUDSKIPPER_SOUND_3",
+      "offset": -58,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

@@ -15,13 +15,18 @@
   "connections": [
     {
       "map": "MAP_TUTORIAL_ISLAND",
-      "offset": -10,
+      "offset": -6,
       "direction": "down"
     },
     {
       "map": "MAP_ROUTE2",
       "offset": 4,
       "direction": "up"
+    },
+    {
+      "map": "MAP_BAY_OF_SARIM",
+      "offset": -20,
+      "direction": "left"
     }
   ],
   "object_events": [

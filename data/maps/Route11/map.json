@@ -20,7 +20,7 @@
     },
     {
       "map": "MAP_MUDSKIPPER_POINT",
-      "offset": -6,
+      "offset": 0,
       "direction": "down"
     },
     {
@@ -32,6 +32,16 @@
       "map": "MAP_PORT_SARIM",
       "offset": 24,
       "direction": "up"
+    },
+    {
+      "map": "MAP_BAY_OF_SARIM",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_MUDSKIPPER_SOUND_2",
+      "offset": 8,
+      "direction": "left"
     }
   ],
   "object_events": [

@@ -15,14 +15,29 @@
   "connections": [
     {
       "map": "MAP_WIZARDS_TOWER",
-      "offset": 10,
+      "offset": 6,
       "direction": "up"
+    },
+    {
+      "map": "MAP_BAY_OF_SARIM",
+      "offset": -18,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MUDSKIPPER_SOUND_1",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_MUDSKIPPER_SOUND_3",
+      "offset": 20,
+      "direction": "left"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
-      "x": 32,
+      "x": 31,
       "y": 25,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -35,7 +50,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NOOB",
-      "x": 46,
+      "x": 45,
       "y": 20,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -48,7 +63,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
-      "x": 47,
+      "x": 46,
       "y": 20,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -61,7 +76,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_IRONMAN",
-      "x": 45,
+      "x": 44,
       "y": 12,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -74,7 +89,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CHICKEN",
-      "x": 44,
+      "x": 43,
       "y": 12,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
@@ -87,7 +102,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
-      "x": 13,
+      "x": 12,
       "y": 25,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
@@ -101,56 +116,56 @@
   ],
   "warp_events": [
     {
-      "x": 39,
+      "x": 38,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_TUTORIAL_ISLAND_CAVE",
       "dest_warp_id": "0"
     },
     {
-      "x": 27,
+      "x": 26,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_ABYSSAL_REALM_1",
       "dest_warp_id": "0"
     },
     {
-      "x": 43,
+      "x": 42,
       "y": 22,
       "elevation": 0,
       "dest_map": "MAP_TUTORIAL_ISLAND_CHURCH",
       "dest_warp_id": "0"
     },
     {
-      "x": 47,
+      "x": 46,
       "y": 34,
       "elevation": 0,
       "dest_map": "MAP_LUMBRIDGE",
       "dest_warp_id": "0"
     },
     {
-      "x": 11,
+      "x": 10,
       "y": 29,
       "elevation": 0,
       "dest_map": "MAP_TUTORIAL_ISLAND_SHOP",
       "dest_warp_id": "0"
     },
     {
-      "x": 20,
+      "x": 19,
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_TUTORIAL_ISLAND",
       "dest_warp_id": "6"
     },
     {
-      "x": 47,
+      "x": 46,
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_TUTORIAL_ISLAND",
       "dest_warp_id": "5"
     },
     {
-      "x": 42,
+      "x": 41,
       "y": 22,
       "elevation": 0,
       "dest_map": "MAP_TUTORIAL_ISLAND_CHURCH",
@@ -160,7 +175,7 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 23,
+      "x": 22,
       "y": 25,
       "elevation": 0,
       "var": "VAR_TEMP_0",
@@ -169,7 +184,7 @@
     },
     {
       "type": "trigger",
-      "x": 23,
+      "x": 22,
       "y": 26,
       "elevation": 0,
       "var": "VAR_TEMP_0",
@@ -180,7 +195,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 37,
+      "x": 36,
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

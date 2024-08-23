@@ -14,14 +14,24 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_MUDSKIPPER_POINT",
-      "offset": 16,
-      "direction": "right"
-    },
-    {
       "map": "MAP_ROUTE39",
       "offset": 0,
       "direction": "left"
+    },
+    {
+      "map": "MAP_RIMMINGTON",
+      "offset": 4,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MUDSKIPPER_SOUND_2",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_CRANDOR_SEA_ROUTE",
+      "offset": -74,
+      "direction": "up"
     }
   ],
   "object_events": [

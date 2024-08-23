@@ -37,6 +37,11 @@
       "map": "MAP_ROUTE11",
       "offset": -24,
       "direction": "down"
+    },
+    {
+      "map": "MAP_BAY_OF_SARIM",
+      "offset": 18,
+      "direction": "down"
     }
   ],
   "object_events": [
@@ -289,8 +294,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
-      "x": 44,
-      "y": 16,
+      "x": 45,
+      "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -471,8 +476,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_QUESTER",
-      "x": 19,
-      "y": 12,
+      "x": 20,
+      "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -585,6 +590,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_TEMP_1A"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "x": 42,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [

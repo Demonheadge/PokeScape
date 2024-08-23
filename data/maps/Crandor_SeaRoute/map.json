@@ -15,19 +15,29 @@
   "connections": [
     {
       "map": "MAP_RIMMINGTON",
-      "offset": -11,
+      "offset": -6,
       "direction": "right"
     },
     {
       "map": "MAP_CRANDOR",
       "offset": 0,
       "direction": "up"
+    },
+    {
+      "map": "MAP_MUSA_POINT",
+      "offset": 74,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE39",
+      "offset": 25,
+      "direction": "down"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ELVARG_FLY",
-      "x": 16,
+      "x": 32,
       "y": 3,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -40,7 +50,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
-      "x": 11,
+      "x": 27,
       "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -53,7 +63,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SHIP_1",
-      "x": 57,
+      "x": 73,
       "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",

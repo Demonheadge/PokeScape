@@ -29,14 +29,19 @@
       "direction": "right"
     },
     {
-      "map": "MAP_CRANDOR",
-      "offset": -41,
+      "map": "MAP_CRANDOR_SEA_ROUTE",
+      "offset": 6,
       "direction": "left"
     },
     {
-      "map": "MAP_CRANDOR_SEA_ROUTE",
-      "offset": 11,
-      "direction": "left"
+      "map": "MAP_MUSA_POINT",
+      "offset": -4,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_MUDSKIPPER_SOUND_2",
+      "offset": 42,
+      "direction": "down"
     }
   ],
   "object_events": [
