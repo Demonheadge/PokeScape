@@ -178,6 +178,29 @@ SHOP_TM_SEERS_WIZARD::
 	end
 
 
+SHOP_LOWE::
+	lock
+	faceplayer
+	namebox SHOP_LOWE_Text_0
+	msgbox SHOP_LOWE_Text_1
+	waitmessage
+	hidenamebox
+	pokemart STORE_ArcheryStore
+	msgbox SHOP_LOWE_Text_2
+	release
+	end
+
+
+
+    .align 2
+STORE_ArcheryStore:
+    .2byte ITEM_BONECROSSBOW
+    .2byte ITEM_KARILCROSSBOW
+    .2byte ITEM_WATERFALL_TOOL
+    .2byte ITEM_NONE
+    release
+    end
+
 
     .align 2
 STORE_RuneStore_1:
@@ -517,3 +540,13 @@ SHOP_TM_SEERS_WIZARD_Text_1:
 SHOP_TM_SEERS_WIZARD_Text_2:
 	.string "Yes, it would be such a shame if the\n"
 	.string "weather suddenly changed.$"
+
+SHOP_LOWE_Text_0:
+	.string "Lowe$"
+
+SHOP_LOWE_Text_1:
+	.string "Welcome to my Archery shop!\p"
+	.string "How may I help you today?$"
+
+SHOP_LOWE_Text_2:
+	.string "Thank you, come again.$"

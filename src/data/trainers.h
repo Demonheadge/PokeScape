@@ -4583,6 +4583,18 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_WISE_OLD_MAN_3),
     },
 
+    [TRAINER_VARROCK_TRAINING_ROOM_RUSHER] =
+    {
+        .trainerClass = TRAINER_CLASS_PKer,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_pk_rusher,
+        .trainerName = _("2Qu1ck 4U"),
+        .items = {},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_VARROCK_TRAINING_ROOM_RUSHER),
+    },
+
 
 
 

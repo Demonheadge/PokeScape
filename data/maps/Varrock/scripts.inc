@@ -496,7 +496,8 @@ VARROCK_NPC_Thessalia::
 
 VARROCK_NPC_ThessaliaGrandma::
 	faceplayer
-	msgbox VARROCK_NPC_ThessaliaGrandma_Text_0
+	namebox VARROCK_NPC_ThessaliaGrandma_Text_0
+	msgbox VARROCK_NPC_ThessaliaGrandma_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -1488,6 +1489,9 @@ VARROCK_NPC_Thessalia_Text_1:
 	.string "But you will have to come back later.$"
 
 VARROCK_NPC_ThessaliaGrandma_Text_0:
+	.string "Iffie$"
+
+VARROCK_NPC_ThessaliaGrandma_Text_1:
 	.string "Zzz…$"
 
 VARROCK_NPC_SWORDSHOP_1_Text_0:

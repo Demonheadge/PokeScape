@@ -11589,7 +11589,7 @@ const struct Item gItems[] =
     [ITEM_BONECROSSBOW] =
     {
         .name = _("BONE XBOW"),
-        .price = 200,
+        .price = 15000,
         .holdEffect = HOLD_EFFECT_WIDE_LENS,
         .description = sBoneXBowDesc,
         .pocket = POCKET_ITEMS,
@@ -12138,7 +12138,7 @@ const struct Item gItems[] =
     [ITEM_KARILCROSSBOW] =
     {
         .name = _("KARIL XBOW"),
-        .price = 100,
+        .price = 20000,
         .holdEffect = HOLD_EFFECT_KARIL,
         .description = sKarilXBowDesc,
         .pocket = POCKET_ITEMS,
@@ -12307,7 +12307,7 @@ const struct Item gItems[] =
     [ITEM_WATERFALL_TOOL] =
     {
         .name = _("GRAPPLE"),
-        .price = 0,
+        .price = 50000,
         .importance = 1,
         .description = sGrappleDesc,
         .pocket = POCKET_KEY_ITEMS,

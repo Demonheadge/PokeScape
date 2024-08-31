@@ -2,24 +2,14 @@ mapscripts Varrock_Lowe_Shop_MapScripts {
 
 } 
 
-script NPC_LOWE
-{
-	lock
-	faceplayer
-    namebox ("Lowe")
-	msgbox(format("This used to be one of the best places in Misthalin to buy arrows.\pHowever, people don't care about archery anymore!\pThey just want to catch monsters..."))
-    waitmessage
-    hidenamebox
-	release
-	end
-}
+
 
 script LOWES_SHOP_NPC
 {
 	lock
 	faceplayer
     namebox ("Der4ng3d")
-	msgbox(format("I thought this place sold arrows?\pHow am I meant to train ranged without them, it's not like I could make my own!"))
+	msgbox(format("This is one of the best places in Misthalin to buy arrows."))
     waitmessage
     hidenamebox
 	release
@@ -30,7 +20,7 @@ script NPC_LOWES_DOG
 {
 	lock
 	faceplayer
-	msgbox(format("You lean down and scratch the dog behind the ears.\pIt looks up at you as it stretches out on the ground"))
+	msgbox(format("You lean down and scratch the dog behind the ears.\pIt looks up at you as it stretches out on the ground."))
     waitmessage
     hidenamebox
 	release
@@ -54,6 +44,73 @@ script LOWESBOOK {
 
 script LOWES_BONE_CROSSBOW
 {
-    finditem(ITEM_BONECROSSBOW)
+    finditem(ITEM_SPIRIT_SHARD)
     end
+}
+
+
+
+
+
+
+
+
+
+//TRAINING HUT
+
+
+script NPC_TRAININGROOM_NOOB
+{
+	lock
+	faceplayer
+    namebox ("Noob")
+	msgbox(format("I heard this was a good place to train.\pBut I haven't leveled since I got here."))
+    waitmessage
+    hidenamebox
+    applymovement(2, MOVEMENT_FACE_RIGHT)
+    waitmovement(0)
+	release
+	end
+}
+script NPC_TRAININGROOM_SUMMONER
+{
+	lock
+	faceplayer
+    namebox ("Summoner")
+	msgbox(format("This is a great place to train low for low levels.\pBut once they hit level 9 they stop gaining xp."))
+    waitmessage
+    hidenamebox
+    applymovement(1, MOVEMENT_FACE_LEFT)
+    waitmovement(0)
+	release
+	end
+}
+script NPC_TRAININGROOM_IMP
+{
+	lock
+	msgbox(format("The Imp seems too focused to pay attention to you."))
+    waitmessage
+	release
+	end
+}
+
+script NPC_TRAININGROOM_RUSHER
+{
+	lock
+	faceplayer
+    namebox ("Rusher")
+	msgbox(format("Would you like to have a battle?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT)){
+            msgbox(format("I hope you are ready as I am not going to hold back!"))
+            trainerbattle_no_intro(TRAINER_VARROCK_TRAINING_ROOM_RUSHER, msgbox(format("Despite losing, I think I got stronger from that battle.")))
+        }
+        else {
+            msgbox(format("Come back if you change your mind.\pI'm here every day."))
+        }
+    waitmessage
+    hidenamebox
+    applymovement(5, MOVEMENT_FACE_UP)
+    waitmovement(0)
+	release
+	end
 }

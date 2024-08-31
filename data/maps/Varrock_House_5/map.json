@@ -46,32 +46,32 @@
       "x": 3,
       "y": 2,
       "elevation": 0,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_PURPLE_SWEETS",
+      "flag": "FLAG_HIDDEN_VARROCK_2"
     },
     {
       "type": "hidden_item",
       "x": 1,
       "y": 8,
       "elevation": 0,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_PURPLE_SWEETS",
+      "flag": "FLAG_HIDDEN_VARROCK_5"
     },
     {
       "type": "hidden_item",
       "x": 5,
       "y": 2,
       "elevation": 0,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_PURPLE_SWEETS",
+      "flag": "FLAG_HIDDEN_VARROCK_3"
     },
     {
       "type": "hidden_item",
       "x": 7,
       "y": 7,
       "elevation": 0,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_PURPLE_SWEETS",
+      "flag": "FLAG_HIDDEN_VARROCK_4"
     }
   ]
 }

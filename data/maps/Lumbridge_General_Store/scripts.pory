@@ -167,9 +167,31 @@ script SHOP_TM_SEERS_WIZARD
 }
 
 
+script SHOP_LOWE
+{
+    lock
+	faceplayer
+    namebox ("Lowe")
+	msgbox(format("Welcome to my Archery shop!\pHow may I help you today?"))
+    waitmessage
+    hidenamebox
+    pokemart (STORE_ArcheryStore)
+    msgbox(format("Thank you, come again."))
+	release
+	end
+}
 
-
-
+//Lowe's Archery 
+raw `
+    .align 2
+STORE_ArcheryStore:
+    .2byte ITEM_BONECROSSBOW
+    .2byte ITEM_KARILCROSSBOW
+    .2byte ITEM_WATERFALL_TOOL
+    .2byte ITEM_NONE
+    release
+    end
+`
 
 //Rune Stores
 raw `

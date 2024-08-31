@@ -365,7 +365,7 @@ script VARROCK_NPC_THUG_3
 script VARROCK_NPC_NOOB_1
 {
     faceplayer
-    //namebox ("Ranger")
+    namebox ("Noob")
     msgbox(format("I am meeting a friend up north past the border, he told me to bring my best items and money so they could see them."))
     closemessage
     hidenamebox
@@ -576,7 +576,7 @@ script VARROCK_NPC_Thessalia
 script VARROCK_NPC_ThessaliaGrandma
 {
     faceplayer
-    //namebox ("Grandma")
+    namebox ("Iffie")
     msgbox(format("Zzz…"))
     closemessage
     hidenamebox

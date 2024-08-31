@@ -6525,3 +6525,20 @@ static const struct TrainerMon sParty_WISE_OLD_MAN_3[] = {
     .heldItem = ITEM_NONE
     },
 };
+
+
+
+static const struct TrainerMon sParty_VARROCK_TRAINING_ROOM_RUSHER[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 30,
+    .species = SPECIES_RAT_KING_FORM,
+    .heldItem = ITEM_NONE
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 30,
+    .species = SPECIES_DARK_BEAST_PUP_FORM,
+    .heldItem = ITEM_NONE
+    },
+};
