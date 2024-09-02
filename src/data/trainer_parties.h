@@ -6542,3 +6542,42 @@ static const struct TrainerMon sParty_VARROCK_TRAINING_ROOM_RUSHER[] = {
     .heldItem = ITEM_NONE
     },
 };
+
+static const struct TrainerMon sParty_DAEMONHEIM_GYM_THOK[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 50,
+    .species = SPECIES_BULWARK_BEAST,
+    //.moves = {MOVE_POWER_GEM, MOVE_BOUNCE, MOVE_HIGH_JUMP_KICK, MOVE_RETURN}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 50,
+    .species = SPECIES_DAGANNOTH_DAUGHTER,
+    //.moves = {MOVE_POWER_GEM, MOVE_VENGEANCE, MOVE_BULK_UP, MOVE_DIG}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 50,
+    .species = SPECIES_PILLAR,
+    //.moves = {MOVE_POWER_GEM, MOVE_U_TURN, MOVE_SNARL, MOVE_EMBARGO}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 50,
+    .species = SPECIES_GOAT_MOUNTAIN_FORM,
+    //.moves = {MOVE_POWER_GEM, MOVE_BOUNCE, MOVE_MUD_BOMB, MOVE_BUBBLE_BEAM}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 50,
+    .species = SPECIES_BOULDABASS,
+    //.moves = {MOVE_POWER_GEM, MOVE_BOUNCE, MOVE_MUD_BOMB, MOVE_BUBBLE_BEAM}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 50,
+    .species = SPECIES_HEIM_CRAB,
+    //.moves = {MOVE_POWER_GEM, MOVE_BOUNCE, MOVE_MUD_BOMB, MOVE_BUBBLE_BEAM}
+    }
+};

@@ -67,9 +67,9 @@
       "flag": "FLAG_TEMP_2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WIZARD_DARK",
-      "x": 28,
-      "y": 0,
+      "graphics_id": "OBJ_EVENT_GFX_FIRE_GIANT",
+      "x": 24,
+      "y": 30,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,

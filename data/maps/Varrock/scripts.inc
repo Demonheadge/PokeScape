@@ -309,7 +309,8 @@ VARROCK_NPC_THUG_3::
 
 VARROCK_NPC_NOOB_1::
 	faceplayer
-	msgbox VARROCK_NPC_NOOB_1_Text_0
+	namebox VARROCK_NPC_NOOB_1_Text_0
+	msgbox VARROCK_NPC_NOOB_1_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -426,8 +427,8 @@ VARROCK_URI::
 
 VARROCKSTORE_NPC_1::
 	faceplayer
-	namebox VARROCKSTORE_NPC_1_Text_0
-	msgbox VARROCKSTORE_NPC_1_Text_1
+	namebox VARROCK_NPC_NOOB_1_Text_0
+	msgbox VARROCKSTORE_NPC_1_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -1370,6 +1371,9 @@ VARROCK_NPC_THUG_3_Text_0:
 	.string "what hit them.$"
 
 VARROCK_NPC_NOOB_1_Text_0:
+	.string "Noob$"
+
+VARROCK_NPC_NOOB_1_Text_1:
 	.string "I am meeting a friend up north past the\n"
 	.string "border, he told me to bring my best\l"
 	.string "items and money so they could see them.$"
@@ -1443,9 +1447,6 @@ VARROCK_URI_Text_2:
 	.string "Until we meet again!$"
 
 VARROCKSTORE_NPC_1_Text_0:
-	.string "Noob$"
-
-VARROCKSTORE_NPC_1_Text_1:
 	.string "I probably should buy one of each\n"
 	.string "Cocktail.\p"
 	.string "That way I can heal any status effects.$"

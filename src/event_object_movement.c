@@ -588,13 +588,13 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_PIGLET            0x1224
 #define OBJ_EVENT_PAL_PIGZILLA          0x1225
 #define OBJ_EVENT_PAL_YAK               0x1226
-#define OBJ_EVENT_PAL_PENGUIN_ROCK      0x1227
+#define OBJ_EVENT_PAL_PENGUINS          0x1227
 #define OBJ_EVENT_PAL_QUEEN_BLACK_DRAGON 0x1228
 #define OBJ_EVENT_PAL_KING_BLACK_DRAGON 0x122A
 #define OBJ_EVENT_PAL_RAT               0x122B
 #define OBJ_EVENT_PAL_RUNE_GUARDIAN     0x122C
 #define OBJ_EVENT_PAL_SHEEP             0x122D
-#define OBJ_EVENT_PAL_SARAOWL         0x122F
+#define OBJ_EVENT_PAL_SARAOWL           0x122F
 #define OBJ_EVENT_PAL_GUTHRAPTOR        0x1230
 #define OBJ_EVENT_PAL_TERRORBIRDS       0x1233
 #define OBJ_EVENT_PAL_PKER_RUSHER       0x1234
@@ -898,7 +898,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Piglet, OBJ_EVENT_PAL_PIGLET},
     {gObjectEventPalette_Pigzilla, OBJ_EVENT_PAL_PIGZILLA},
     {gObjectEventPalette_Yak, OBJ_EVENT_PAL_YAK},
-    {gObjectEventPalette_Penguin_Rock, OBJ_EVENT_PAL_PENGUIN_ROCK},
+    //{gObjectEventPalette_Penguin_Rock, OBJ_EVENT_PAL_PENGUIN_ROCK},
     {gObjectEventPalette_Queen_Black_Dragon, OBJ_EVENT_PAL_QUEEN_BLACK_DRAGON},
     //{gObjectEventPalette_Elvarg, OBJ_EVENT_PAL_ELVARG},
     {gObjectEventPalette_King_Black_Dragon, OBJ_EVENT_PAL_KING_BLACK_DRAGON},
@@ -1013,6 +1013,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_DUNGEONEERING, OBJ_EVENT_PAL_DUNGEONEERING},
     {gObjectEventPalette_VORKATH, OBJ_EVENT_PAL_VORKATH},
     {gObjectEventPalette_LEGEND_GREEN, OBJ_EVENT_PAL_LEGEND_GREEN},
+    {gObjectEventPalette_PENGUINS, OBJ_EVENT_PAL_PENGUINS},
     
     /*
     {gObjectEventPalette_RAC_BATS, OBJ_EVENT_PAL_RAC_BATS},

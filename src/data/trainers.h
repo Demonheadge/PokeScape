@@ -4595,6 +4595,31 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_VARROCK_TRAINING_ROOM_RUSHER),
     },
 
+    [TRAINER_DAEMONHEIM_GYM_THOK] =
+    {
+        .trainerClass = TRAINER_CLASS_LEADER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_thok,
+        .trainerName = _("THOK"),
+        .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_DAEMONHEIM_GYM_THOK),
+    },
+
+    [TRAINER_DAEMONHEIM_GYM_TRAINER_1] =
+    {
+        .trainerClass = TRAINER_CLASS_FORGOTTEN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_a_nub_tot,
+        .trainerName = _("Telmomarque"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_DAEMONHEIM_GYM_THOK),
+    },
+
+
 
 
 

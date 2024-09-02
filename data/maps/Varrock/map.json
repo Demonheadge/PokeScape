@@ -654,7 +654,7 @@
     },
     {
       "x": 49,
-      "y": 39,
+      "y": 38,
       "elevation": 0,
       "dest_map": "MAP_VARROCK",
       "dest_warp_id": "0"
@@ -799,7 +799,7 @@
     {
       "type": "sign",
       "x": 49,
-      "y": 38,
+      "y": 39,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LOCKED_DOOR"

@@ -104,9 +104,9 @@ BATTLE_LIGHTHOUSE_3F_TRAINER_1::
 
 TRIGGER_LIGHTHOUSE_HAM_PATTY::
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
-	compare VAR_TEMP_2, 11
+	compare VAR_TEMP_2, 14
 	goto_if_eq TRIGGER_LIGHTHOUSE_HAM_PATTY_2
-	compare VAR_TEMP_2, 12
+	compare VAR_TEMP_2, 15
 	goto_if_eq TRIGGER_LIGHTHOUSE_HAM_PATTY_3
 TRIGGER_LIGHTHOUSE_HAM_PATTY_1:
 	waitmovement 0
@@ -322,6 +322,11 @@ Movement_lighthouse_ham_5:
 Movement_punchGoblin:
 	walk_in_place_faster_down
 	step_end
+
+ITEM_LIGHTHOUSE_1::
+	finditem ITEM_POTION_SPATT
+	end
+
 
 LIGHTHOUSE_3F_NPC_1_Text_0:
 	.string "The guard looks like they're struggling\n"

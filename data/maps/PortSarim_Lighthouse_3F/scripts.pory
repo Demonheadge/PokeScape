@@ -117,9 +117,9 @@ script BATTLE_LIGHTHOUSE_3F_TRAINER_1
 script TRIGGER_LIGHTHOUSE_HAM_PATTY
 {
     getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
-	if (var(VAR_TEMP_2) == 11){
+	if (var(VAR_TEMP_2) == 14){
 		applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_WALKLEFT)
-	} elif (var(VAR_TEMP_2) == 12){
+	} elif (var(VAR_TEMP_2) == 15){
 		applymovement(OBJ_EVENT_ID_PLAYER, Movement_lighthouse_ham_4)
 	}
     waitmovement(0)
@@ -334,3 +334,10 @@ movement Movement_punchGoblin {
 
 
 
+
+
+script ITEM_LIGHTHOUSE_1
+{
+    finditem(ITEM_POTION_SPATT)
+    end
+}

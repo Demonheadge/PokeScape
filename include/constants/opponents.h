@@ -407,12 +407,17 @@
 #define TRAINER_RIVAL_WISE_OLD_MAN_2                    403
 #define TRAINER_RIVAL_WISE_OLD_MAN_3                    404
 #define TRAINER_VARROCK_TRAINING_ROOM_RUSHER            405
+#define TRAINER_DAEMONHEIM_GYM_THOK                     406
+#define TRAINER_DAEMONHEIM_GYM_TRAINER_1                407
+#define TRAINER_DAEMONHEIM_GYM_TRAINER_2                408
+#define TRAINER_DAEMONHEIM_GYM_TRAINER_3                409
+#define TRAINER_DAEMONHEIM_GYM_TRAINER_4                410
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      405
+#define TRAINERS_COUNT                      410
 #define MAX_TRAINERS_COUNT                  864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

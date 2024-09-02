@@ -1,0 +1,67 @@
+mapscripts Daemonheim_Gym_MapScripts {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Thok
+script DAEMONHEIM_GYM_THOK {
+    lock
+    faceplayer
+    namebox("Thok")
+    if (!flag(FLAG_BADGE06_GET)){   //if you do not have the badge.
+        msgbox(format("Welcome to the Daemonheim Gym.\pI am Thok."))
+        hidenamebox
+        trainerbattle_no_intro(TRAINER_ALKHARID_GYM_PRINCE_ALI, msgbox(format("CUPHOLDER")))
+        namebox("Thok")
+        msgbox(format("Have this Badge."))
+        hidenamebox
+        playfanfare(MUS_PS_QUEST_COMPLETE) //MUS_OBTAIN_BADGE MUS_PS_QUEST_COMPLETE
+        msgbox(format("{PLAYER} received the Daemonheim BADGE from Thok."))
+        waitfanfare
+        waitmessage
+        namebox("Thok")
+        msgbox(format("Also have this Scroll."))
+        hidenamebox
+        giveitem (ITEM_TM48, 1) //Power Gem.
+        compare(VAR_RESULT, FALSE)
+        goto_if_eq(Common_EventScript_ShowBagIsFull)
+        playbgm(MUS_PS_ALKHARID, 0)
+        savebgm(MUS_PS_ALKHARID)
+        namebox("Prince Ali")
+        msgbox(format("That move is called CUPHOLDER.\pCUPHOLDER."))
+        //setvar(VAR_POKESCAPE_ALKHARID_GYM_QUEST, 30)
+        setflag(FLAG_BADGE06_GET)
+        //addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
+        //call(SetGymTrainers_VARROCK)
+        hidenamebox
+        release
+        end
+    }
+    else {  //If you have the badge.
+        msgbox(format("You have defeated the Daemonheim Gym."))
+    }
+    hidenamebox
+    release
+    end
+}
