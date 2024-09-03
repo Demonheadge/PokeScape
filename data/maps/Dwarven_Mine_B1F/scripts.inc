@@ -142,6 +142,11 @@ ITEM_DWARVENMINES_4::
 	end
 
 
+ITEM_DWARVENMINES_5::
+	finditem ITEM_PURPLE_SWEETS
+	end
+
+
 NPC_FALADORCASTLE_QUEST_PART_3_1::
 	lock
 	applymovement OBJ_EVENT_ID_PLAYER, DWARVENMINES_MOVEMENT_0_1
@@ -559,6 +564,68 @@ BATTLE_DWARVENMINES_DWARF_4::
 	end
 
 
+BATTLE_DWARVENMINES_TRAINER_1::
+	trainerbattle_single TRAINER_DWARVENMINES_TRAINER_1, BATTLE_DWARVENMINES_TRAINER_1_Text_0, BATTLE_DWARVENMINES_TRAINER_1_Text_1
+	msgbox BATTLE_DWARVENMINES_TRAINER_1_Text_2
+	release
+	end
+
+
+NPC_DWARVENMINES_DWARF_4::
+	lock
+	faceplayer
+	namebox NPC_DWARVENMINES_DWARF_4_Text_0
+	msgbox NPC_DWARVENMINES_DWARF_4_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NPC_DWARVENMINES_DWARF_5::
+	lock
+	faceplayer
+	namebox NPC_DWARVENMINES_DWARF_5_Text_0
+	msgbox NPC_DWARVENMINES_DWARF_5_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NPC_DWARVENMINES_DWARF_6::
+	lock
+	faceplayer
+	namebox NPC_DWARVENMINES_DWARF_4_Text_0
+	msgbox NPC_DWARVENMINES_DWARF_6_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NPC_DWARVENMINES_DWARF_7::
+	lock
+	faceplayer
+	namebox NPC_DWARVENMINES_DWARF_4_Text_0
+	msgbox NPC_DWARVENMINES_DWARF_7_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NPC_DWARVENMINES_DWARF_8::
+	lock
+	faceplayer
+	namebox NPC_DWARVENMINES_DWARF_4_Text_0
+	msgbox NPC_DWARVENMINES_DWARF_8_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 NPC_SCORPION_Text_0:
 	.string "SCORPION$"
 
@@ -801,3 +868,47 @@ BATTLE_DWARVENMINES_DWARF_4_Text_1:
 
 BATTLE_DWARVENMINES_DWARF_4_Text_2:
 	.string "Drobak$"
+
+BATTLE_DWARVENMINES_TRAINER_1_Text_0:
+	.string "Excuse me, but I'm digging here!$"
+
+BATTLE_DWARVENMINES_TRAINER_1_Text_1:
+	.string "You got to watch out, I could have hit\n"
+	.string "you with my pickaxe.$"
+
+BATTLE_DWARVENMINES_TRAINER_1_Text_2:
+	.string "Be more careful next time you sneak up\n"
+	.string "on someone while they are mining.$"
+
+NPC_DWARVENMINES_DWARF_4_Text_0:
+	.string "Dwarf$"
+
+NPC_DWARVENMINES_DWARF_4_Text_1:
+	.string "It's not safe to go deeper into the\n"
+	.string "cavern.\p"
+	.string "Only a Champion of Gilienor would be\n"
+	.string "able to survive.$"
+
+NPC_DWARVENMINES_DWARF_5_Text_0:
+	.string "Conductor$"
+
+NPC_DWARVENMINES_DWARF_5_Text_1:
+	.string "Welcome to the Dwarven Railway System\n"
+	.string "or D.R.S for short.\p"
+	.string "Sadly due to the recent earthquakes\n"
+	.string "we've had to shutdown our lines.$"
+
+NPC_DWARVENMINES_DWARF_6_Text_0:
+	.string "We found a huge source of anima deep\n"
+	.string "within these mines, but just as we were\l"
+	.string "about to start digging the earthquakes\l"
+	.string "came and we had to evacuate.$"
+
+NPC_DWARVENMINES_DWARF_7_Text_0:
+	.string "I want to go to Keldegrim but the\n"
+	.string "Railway System is down.$"
+
+NPC_DWARVENMINES_DWARF_8_Text_0:
+	.string "That pickaxe you have there…\p"
+	.string "That looks like one of mine.\p"
+	.string "How did you get it?$"

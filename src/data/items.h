@@ -12597,6 +12597,17 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
+    [ITEM_TALISMAN_BODY] =
+    {
+        .name = _("BODY TALLY"),
+        .price = 200,
+        .description = sTALISMANDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .sort = ITEM_TYPE_KEY_ITEM,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+
 
 // Pickaxes
     [ITEM_RUNEPICKAXE] =

@@ -227,7 +227,13 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 38,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_FIRE_ALTAR",
+      "dest_warp_id": "1"
+    }
   ],
   "coord_events": [
     {
@@ -265,7 +271,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "ALTAR_EARTH_ENTER"
+      "script": "ALTAR_FIRE_ENTER"
     },
     {
       "type": "sign",

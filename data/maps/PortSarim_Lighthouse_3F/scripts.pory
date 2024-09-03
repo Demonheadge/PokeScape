@@ -7,6 +7,7 @@ mapscripts PortSarim_Lighthouse_3F_MapScripts {
 const OBJ_EVENT_ID_PATTY = 2
 const OBJ_EVENT_ID_WORMBRAIN = 1
 const OBJ_EVENT_ID_MAP = 9
+const OBJ_EVENT_ID_JAIL_CAPTAIN = 5
 
 script LIGHTHOUSE_3F_STATE {
 
@@ -17,9 +18,10 @@ script LIGHTHOUSE_3F_STATE {
         addobject(8)
         addobject(2)
         clearflag(FLAG_TEMP_1E)
-        addobject(1)
-        addobject(5)
+        addobject(OBJ_EVENT_ID_WORMBRAIN)
+        addobject(OBJ_EVENT_ID_JAIL_CAPTAIN)
         clearflag(FLAG_TEMP_1F)
+        clearflag(FLAG_TEMP_E)
         removeobject(OBJ_EVENT_ID_MAP)
         setflag(FLAG_TEMP_F)
         setvar(VAR_TEMP_0, 1) //sets floor trigger
@@ -32,13 +34,14 @@ script LIGHTHOUSE_3F_STATE {
         removeobject(8)
         removeobject(2)
         setflag(FLAG_TEMP_1E)
-        removeobject(1)
-        removeobject(5)
-        setflag(FLAG_TEMP_1F)
-        setobjectmovementtype(7, MOVEMENT_TYPE_WANDER_AROUND)
-        setobjectxyperm(7, 10, 10)
+        removeobject(7) //HIDES JAILER
+        setflag(FLAG_TEMP_1D) //HIDES JAILER
+        removeobject(OBJ_EVENT_ID_WORMBRAIN)
+        setflag(FLAG_TEMP_E) //HIDES WORMBRAIN
+        setobjectmovementtype(OBJ_EVENT_ID_JAIL_CAPTAIN, MOVEMENT_TYPE_WANDER_AROUND) 
+        setobjectxyperm(OBJ_EVENT_ID_JAIL_CAPTAIN, 11, 12)
         removeobject(OBJ_EVENT_ID_MAP)
-        setflag(FLAG_TEMP_F)
+        setflag(FLAG_TEMP_F) //HIDES MAP PIECE
     }
     return
 }
@@ -50,11 +53,11 @@ script LIGHTHOUSE_3F_NPC_1
     if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) { 
 	    msgbox(format("The guard looks like they're struggling to hold the H.A.M member off."))
     }
-    else { //not guard captian but oh well
+    else { 
         lock
         faceplayer
-        namebox ("GUARD CAPTAIN")
-        msgbox(format("The lighthouse is for authorized personnel only.\pBut if you want to know more about it, basically we go up there every night and light a bonfire to help ships find their way."))
+        namebox ("Jailer")
+        msgbox(format(""))
     }
     closemessage
     hidenamebox
@@ -74,14 +77,13 @@ script LIGHTHOUSE_3F_NPC_2
 
 script LIGHTHOUSE_3F_NPC_3
 {
-    //namebox ("")
     if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) { 
 	    msgbox(format("The guard hurriedly points to the nearby H.A.M members.")) 
     }
     else {
         lock
         faceplayer
-        namebox ("GUARD CAPTAIN")
+        namebox ("Jail Captain")
         msgbox(format("The lighthouse is for authorized personnel only.\pBut if you want to know more about it, basically we go up there every night and light a bonfire to help ships find their way."))
     }
     closemessage
@@ -129,23 +131,23 @@ script TRIGGER_LIGHTHOUSE_HAM_PATTY
 
 script LIGHTHOUSE_HAM_PATTY
 {
-    namebox ("PATTY")
+    namebox ("Patty")
     applymovement(OBJ_EVENT_ID_PATTY, MOVEMENT_INTERACT_LEFT)
 	msgbox(format("Give me the map you stupid Goblin!"))
     waitmovement(0)
-    namebox ("WORMBRAIN")
+    namebox ("Wormbrain")
     applymovement(OBJ_EVENT_ID_WORMBRAIN, MOVEMENT_INTERACT_RIGHT)
 	msgbox(format("If human want map, then human must pay Wormbrain 10,000GP."))
     waitmovement(0)
-    namebox ("PATTY")
+    namebox ("Patty")
 	msgbox(format("You must be joking…"))
-    namebox ("WORMBRAIN")
+    namebox ("Wormbrain")
 	msgbox(format("Wormbrain never joke if pink human want map, then pink human must pay Wormbrain 10,000GP."))
-    namebox ("PATTY")
+    namebox ("Patty")
 	msgbox(format("How about I just take it from you instead, how does that sound?"))
-    namebox ("WORMBRAIN")
+    namebox ("Wormbrain")
 	msgbox(format("Wormbrain think human is funny, would like to see human try."))
-    namebox ("PATTY")
+    namebox ("Patty")
 	msgbox(format("Have it your way then goblin.\pGet a taste of this Wind Blast!"))
 
 //apllymovement, punches goblin back 2 spots.
@@ -220,7 +222,7 @@ script LIGHTHOUSE_HAM_PATTY
     closemessage
     //Grunts walk over
     
-    applymovement(5, MOVEMENT_FACE_UP)
+    applymovement(OBJ_EVENT_ID_JAIL_CAPTAIN, MOVEMENT_FACE_UP)
     applymovement(4, Movement_lighthouse_ham_5)
     waitmovement(0)
     namebox ("H.A.M Grunt")
@@ -244,28 +246,28 @@ script LIGHTHOUSE_HAM_PATTY
     removeobject(2)
     setflag(FLAG_TEMP_1E)
     removeobject(7)
-    setflag(FLAG_TEMP_1D)
-    setobjectmovementtype(5, MOVEMENT_TYPE_FACE_DOWN)
-    setobjectxyperm(5, 7, 11)
-    setobjectxy(5, 7, 11)
-    applymovement(5, MOVEMENT_INTERACT_DOWN)
+    setflag(FLAG_TEMP_1D) //JAILER
+    setobjectmovementtype(OBJ_EVENT_ID_JAIL_CAPTAIN, MOVEMENT_TYPE_FACE_DOWN)
+    setobjectxyperm(OBJ_EVENT_ID_JAIL_CAPTAIN, 7, 14)
+    setobjectxy(OBJ_EVENT_ID_JAIL_CAPTAIN, 7, 14)
+    applymovement(OBJ_EVENT_ID_JAIL_CAPTAIN, MOVEMENT_INTERACT_DOWN)
     waitmovement(0)
-    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
     waitmovement(0)
     fadescreen(FADE_FROM_BLACK)
     
     
     //Guard walks over to the player.
-    namebox ("Guard Captain")
+    namebox ("Jail Captain")
 	msgbox(format("Thank you for assisting us in repelling H.A.M.\pThey've been very organised as of late.\pI'm not sure what they are after.\pBut here take this for helping us out."))
     closemessage
     hidenamebox
     giveitem(ITEM_TM62, 1)
     closemessage
     //Gives and ITEM or TM or something.
-    applymovement(5, Movement_lighthouse_ham_0)
+    applymovement(OBJ_EVENT_ID_JAIL_CAPTAIN, Movement_lighthouse_ham_0)
     waitmovement(0)
-    namebox ("Guard Captain")
+    namebox ("Jail Captain")
 	msgbox(format("Come on goblin, back to your cell."))
     namebox ("Wormbrain")
 	msgbox(format("Me think me nose is broken…"))
@@ -274,12 +276,14 @@ script LIGHTHOUSE_HAM_PATTY
     //Guard and goblin leave.
     //applymovement(OBJ_EVENT_ID_PLAYER, Movement_lighthouse_ham_3)
     
-    applymovement(5, Movement_lighthouse_ham_1)
+    applymovement(OBJ_EVENT_ID_JAIL_CAPTAIN, Movement_lighthouse_ham_1)
     applymovement(OBJ_EVENT_ID_WORMBRAIN, Movement_lighthouse_ham_2)
     waitmovement(0)
     removeobject(OBJ_EVENT_ID_WORMBRAIN)
-    removeobject(5)
+    setflag(FLAG_TEMP_E)
+    removeobject(OBJ_EVENT_ID_JAIL_CAPTAIN)
     setflag(FLAG_TEMP_1F)
+    
 
     setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 105) //LIGHTHOUSE EVENT FINISHED
     setvar(VAR_TEMP_0, 0)

@@ -4386,6 +4386,8 @@ extern const u32 gItemIcon_talisman_soul[];
 extern const u32 gItemIconPalette_talisman_soul[];
 extern const u32 gItemIcon_talisman_water[];
 extern const u32 gItemIconPalette_talisman_water[];
+extern const u32 gItemIcon_talisman_body[];
+extern const u32 gItemIconPalette_talisman_body[];
 extern const u32 gItemIcon_tear_of_guthix[];
 extern const u32 gItemIconPalette_tear_of_guthix[];
 extern const u32 gItemIcon_tinderbox[];

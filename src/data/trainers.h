@@ -4619,6 +4619,18 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_DAEMONHEIM_GYM_THOK),
     },
 
+    [TRAINER_DWARVENMINES_TRAINER_1] =
+	{
+        .trainerClass = TRAINER_CLASS_MINER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_miner,
+        .trainerName = _(""),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_DWARVENMINES_TRAINER_1),
+    },
+
 
 
 

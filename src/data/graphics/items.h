@@ -2728,6 +2728,9 @@ const u32 gItemIconPalette_talisman_soul[] = INCBIN_U32("graphics/items/pokescap
 const u32 gItemIcon_talisman_water[] = INCBIN_U32("graphics/items/pokescape_icons/talisman_water.4bpp.lz");
 const u32 gItemIconPalette_talisman_water[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/talisman_water.gbapal.lz");
 
+const u32 gItemIcon_talisman_body[] = INCBIN_U32("graphics/items/pokescape_icons/talisman_body.4bpp.lz");
+const u32 gItemIconPalette_talisman_body[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/talisman_body.gbapal.lz");
+
 const u32 gItemIcon_tear_of_guthix[] = INCBIN_U32("graphics/items/pokescape_icons/tear_of_guthix.4bpp.lz");
 const u32 gItemIconPalette_tear_of_guthix[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/tear_of_guthix.gbapal.lz");
 

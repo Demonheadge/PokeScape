@@ -226,7 +226,7 @@ LIGHTHOUSE_CAPN_HAND_QUEST_4:
 
 
 LIGHTHOUSE_NPC_1_Text_0:
-	.string "THIEF$"
+	.string "Thief$"
 
 LIGHTHOUSE_NPC_1_Text_1:
 	.string "I tried to rob Shantay and his guards\n"
@@ -235,7 +235,7 @@ LIGHTHOUSE_NPC_1_Text_1:
 	.string "in here!$"
 
 LIGHTHOUSE_NPC_2_Text_0:
-	.string "SKELETON$"
+	.string "Skeleton$"
 
 LIGHTHOUSE_NPC_2_Text_1:
 	.string "The skeleton chuckles at all of the\n"
@@ -246,7 +246,7 @@ LIGHTHOUSE_NPC_2_Text_2:
 	.string "happens.$"
 
 LIGHTHOUSE_NPC_3_Text_0:
-	.string "MUGGER$"
+	.string "Mugger$"
 
 LIGHTHOUSE_NPC_3_Text_1:
 	.string "Psst.\p"
@@ -275,7 +275,7 @@ LIGHTHOUSE_NPC_4_Text_3:
 	.string "There, can I go now?$"
 
 LIGHTHOUSE_NPC_WORMBRAIN_Text_0:
-	.string "WORMBRAIN$"
+	.string "Wormbrain$"
 
 LIGHTHOUSE_NPC_WORMBRAIN_Text_1:
 	.string "Me nose hurts…$"
@@ -285,7 +285,7 @@ LIGHTHOUSE_NPC_WORMBRAIN_Text_2:
 	.string "At least me get 1 meal a day.$"
 
 LIGHTHOUSE_GUARD_1_Text_0:
-	.string "JAILER$"
+	.string "Jailer$"
 
 LIGHTHOUSE_GUARD_1_Text_1:
 	.string "I overheard some H.A.M members\n"
@@ -318,7 +318,7 @@ BATTLE_LIGHTHOUSE_TRAINER_1_Text_1:
 	.string "What do you mean you're not with them?$"
 
 BATTLE_LIGHTHOUSE_TRAINER_1_Text_2:
-	.string "DAVE$"
+	.string "Dave$"
 
 BATTLE_LIGHTHOUSE_TRAINER_2_Text_0:
 	.string "Vile HAM member!\n"
@@ -328,7 +328,7 @@ BATTLE_LIGHTHOUSE_TRAINER_2_Text_1:
 	.string "You're a lot stronger than you look!$"
 
 BATTLE_LIGHTHOUSE_TRAINER_2_Text_2:
-	.string "DARREN$"
+	.string "Darren$"
 
 BATTLE_LIGHTHOUSE_TRAINER_2_Text_3:
 	.string "Sorry I mistook you for being apart of\n"

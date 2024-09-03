@@ -1087,6 +1087,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_TALISMAN_NATURE] = {gItemIcon_talisman_nature, gItemIconPalette_talisman_nature},
     [ITEM_TALISMAN_SOUL] = {gItemIcon_talisman_soul, gItemIconPalette_talisman_soul},
     [ITEM_TALISMAN_WATER] = {gItemIcon_talisman_water, gItemIconPalette_talisman_water},
+    [ITEM_TALISMAN_BODY] = {gItemIcon_talisman_body, gItemIconPalette_talisman_body},
     [ITEM_TEAR_OF_GUTHIX] = {gItemIcon_tear_of_guthix, gItemIconPalette_tear_of_guthix},
     [ITEM_TINDERBOX] = {gItemIcon_tinderbox, gItemIconPalette_tinderbox},
     [ITEM_TOMATO] = {gItemIcon_tomato, gItemIconPalette_tomato},

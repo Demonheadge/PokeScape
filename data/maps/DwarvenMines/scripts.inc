@@ -16,8 +16,10 @@ NPC_DWARVENMINES_NPC1::
 NPC_DWARVENMINES_NPC2::
 	lock
 	faceplayer
-	msgbox NPC_DWARVENMINES_NPC2_Text_0
+	namebox NPC_DWARVENMINES_NPC2_Text_0
+	msgbox NPC_DWARVENMINES_NPC2_Text_1
 	closemessage
+	hidenamebox
 	release
 	end
 
@@ -25,8 +27,10 @@ NPC_DWARVENMINES_NPC2::
 NPC_DWARVENMINES_NPC3::
 	lock
 	faceplayer
+	namebox NPC_DWARVENMINES_NPC2_Text_0
 	msgbox NPC_DWARVENMINES_NPC3_Text_0
 	closemessage
+	hidenamebox
 	release
 	end
 
@@ -34,8 +38,10 @@ NPC_DWARVENMINES_NPC3::
 NPC_DWARVENMINES_NPC4::
 	lock
 	faceplayer
+	namebox NPC_DWARVENMINES_NPC2_Text_0
 	msgbox NPC_DWARVENMINES_NPC4_Text_0
 	closemessage
+	hidenamebox
 	release
 	end
 
@@ -47,7 +53,7 @@ DWARVENMINES_SIGNPOST::
 
 
 NPC_DWARVENMINES_NPC1_Text_0:
-	.string "Dwarven Apprentice$"
+	.string "Apprentice$"
 
 NPC_DWARVENMINES_NPC1_Text_1:
 	.string "Inside here is Nulodion's multicannon\n"
@@ -62,6 +68,9 @@ NPC_DWARVENMINES_NPC1_Text_1:
 	.string "extra coin you save for me…?$"
 
 NPC_DWARVENMINES_NPC2_Text_0:
+	.string "Dwarf$"
+
+NPC_DWARVENMINES_NPC2_Text_1:
 	.string "Ho-hiiii, ho-hiiii.\p"
 	.string "Off to work, let's try not to die!{PAUSE 15}\p"
 	.string "Oh, uh, you didn't hear me singing just\n"

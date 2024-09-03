@@ -24,7 +24,8 @@ MUSAPOINT_PUB_STATE_1:
 BANK_MUSA_POINT::
 	lock
 	faceplayer
-	msgbox BANK_MUSA_POINT_Text_0
+	namebox BANK_MUSA_POINT_Text_0
+	msgbox BANK_MUSA_POINT_Text_1
 	waitmessage
 	goto BANK_OPTIONS
 	return
@@ -33,7 +34,8 @@ BANK_MUSA_POINT::
 NPC_MUSA_POINT_PubOwner::
 	lock
 	faceplayer
-	msgbox NPC_MUSA_POINT_PubOwner_Text_0
+	namebox NPC_MUSA_POINT_PubOwner_Text_0
+	msgbox NPC_MUSA_POINT_PubOwner_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -43,7 +45,8 @@ NPC_MUSA_POINT_PubOwner::
 NPC_MUSA_POINT_Pub_BarCrawl::
 	lock
 	faceplayer
-	msgbox NPC_MUSA_POINT_Pub_BarCrawl_Text_0
+	namebox NPC_MUSA_POINT_Pub_BarCrawl_Text_0
+	msgbox NPC_MUSA_POINT_Pub_BarCrawl_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -53,7 +56,8 @@ NPC_MUSA_POINT_Pub_BarCrawl::
 NPC_MUSA_POINT_Pub_Sailer::
 	lock
 	faceplayer
-	msgbox NPC_MUSA_POINT_Pub_Sailer_Text_0
+	namebox NPC_MUSA_POINT_Pub_Sailer_Text_0
+	msgbox NPC_MUSA_POINT_Pub_Sailer_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -61,6 +65,9 @@ NPC_MUSA_POINT_Pub_Sailer::
 
 
 BANK_MUSA_POINT_Text_0:
+	.string "Banker$"
+
+BANK_MUSA_POINT_Text_1:
 	.string "hic\p"
 	.string "Why is the rum always gone.\p"
 	.string "hic\n"
@@ -69,15 +76,24 @@ BANK_MUSA_POINT_Text_0:
 	.string "How may I hic you today?$"
 
 NPC_MUSA_POINT_PubOwner_Text_0:
+	.string "Bartender$"
+
+NPC_MUSA_POINT_PubOwner_Text_1:
 	.string "Can I interest you in some of our\n"
 	.string "famous Karamjan Rum?\p"
 	.string "Or perhaps you would like some of our\n"
 	.string "wines, spirits or beers?$"
 
 NPC_MUSA_POINT_Pub_BarCrawl_Text_0:
+	.string "Barbarian$"
+
+NPC_MUSA_POINT_Pub_BarCrawl_Text_1:
 	.string "Are you here for a Pub Crawl?$"
 
 NPC_MUSA_POINT_Pub_Sailer_Text_0:
+	.string "Sailor$"
+
+NPC_MUSA_POINT_Pub_Sailer_Text_1:
 	.string "Hey mate, you caught any of those\n"
 	.string "lobsters?\p"
 	.string "Did you know lobsters evolve\n"

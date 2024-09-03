@@ -53,7 +53,7 @@ script LIGHTHOUSE_NPC_1
 {
 	lock
 	faceplayer
-    namebox ("THIEF")
+    namebox ("Thief")
 	msgbox(format("I tried to rob Shantay and his guards at the pass in Al Kharid.\pNext thing I knew, I woke up locked up in here!"))
     closemessage
     hidenamebox
@@ -65,7 +65,7 @@ script LIGHTHOUSE_NPC_2
 {
 	lock
 	faceplayer
-    namebox ("SKELETON")
+    namebox ("Skeleton")
     if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) { 
 	    msgbox(format("The skeleton chuckles at all of the commotion."))
     }
@@ -82,7 +82,7 @@ script LIGHTHOUSE_NPC_3
 {
 	lock
 	faceplayer
-    namebox ("MUGGER")
+    namebox ("Mugger")
 	msgbox(format("Psst.\pHelp me sneak outta here, yeah?\pI promise I won't rob you when we get outside…"))
     closemessage
     hidenamebox
@@ -114,7 +114,7 @@ script LIGHTHOUSE_NPC_WORMBRAIN
 {
 	lock
 	faceplayer
-    namebox ("WORMBRAIN")
+    namebox ("Wormbrain")
     if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 105) { 
         msgbox(format("Me nose hurts…"))
     }
@@ -131,7 +131,7 @@ script LIGHTHOUSE_GUARD_1
 {
 	lock
 	faceplayer
-    namebox ("JAILER")
+    namebox ("Jailer")
     if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 105) { 
         msgbox(format("I overheard some H.A.M members mentioning something about a maze near Rimmington.\pHopefully they aren't planning anything."))
     }
@@ -148,7 +148,7 @@ script LIGHTHOUSE_GUARD_2
 {
 	lock
 	faceplayer
-    namebox ("JAILER")
+    namebox ("Jailer")
     if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 105) { 
         msgbox(format("I'm contacting the customs officers over at Rimmington just incase H.A.M attempt to show up there."))
     }
@@ -166,7 +166,7 @@ script LIGHTHOUSE_GUARD_2
 script BATTLE_LIGHTHOUSE_TRAINER_1
 {
     trainerbattle_single(TRAINER_LIGHTHOUSE_TRAINER_1, format("I couldn't stop your friends before they forced their way upstairs, but I'll make sure I stop you!"),format("What do you mean you're not with them?"))
-    namebox ("DAVE")
+    namebox ("Dave")
     msgbox(format("What do you mean you're not with them?"))
 	hidenamebox
     release
@@ -176,7 +176,7 @@ script BATTLE_LIGHTHOUSE_TRAINER_1
 script BATTLE_LIGHTHOUSE_TRAINER_2
 {
     trainerbattle_single(TRAINER_LIGHTHOUSE_TRAINER_2, format("Vile HAM member!\nYou will not go any further!"),format("You're a lot stronger than you look!"))
-    namebox ("DARREN")
+    namebox ("Darren")
     msgbox(format("Sorry I mistook you for being apart of HAM.\pBut please stop them before they cause any more damage."))
 	hidenamebox
     release

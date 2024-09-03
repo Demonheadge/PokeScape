@@ -585,7 +585,6 @@
 #define FLAG_HIDDEN_ITEM_MUSA_POINT_4                           (FLAG_HIDDEN_ITEMS_START + 0x30)
 #define FLAG_HIDDEN_ITEM_KARAMJA_VOLCANO_1                      (FLAG_HIDDEN_ITEMS_START + 0x31)
 #define FLAG_HIDDEN_ITEM_LUMBRIDGE_FOREST_1                     (FLAG_HIDDEN_ITEMS_START + 0x4C)
-
 #define FLAG_HIDDEN_ITEM_TEMP_1                                 (FLAG_HIDDEN_ITEMS_START + 0x4D)
 #define FLAG_HIDDEN_ITEM_TEMP_2                                 (FLAG_HIDDEN_ITEMS_START + 0x1B)
 #define FLAG_HIDDEN_ITEM_TEMP_3                                 (FLAG_HIDDEN_ITEMS_START + 0x2B)
@@ -606,20 +605,20 @@
 #define FLAG_HIDDEN_ITEM_TEMP_18                                (FLAG_HIDDEN_ITEMS_START + 0x6B)
 #define FLAG_HIDDEN_ITEM_TEMP_19                                (FLAG_HIDDEN_ITEMS_START + 0x6C)
 #define FLAG_HIDDEN_ITEM_TEMP_20                                (FLAG_HIDDEN_ITEMS_START + 0x69)
+#define FLAG_HIDDEN_ITEM_VARROCK_1                              (FLAG_HIDDEN_ITEMS_START + 0x23)
+#define FLAG_HIDDEN_ITEM_VARROCK_2                              (FLAG_HIDDEN_ITEMS_START + 0x51)
+#define FLAG_HIDDEN_ITEM_VARROCK_3                              (FLAG_HIDDEN_ITEMS_START + 0x2C)
+#define FLAG_HIDDEN_ITEM_VARROCK_4                              (FLAG_HIDDEN_ITEMS_START + 0x3E)
+#define FLAG_HIDDEN_ITEM_VARROCK_5                              (FLAG_HIDDEN_ITEMS_START + 0x25)
+#define FLAG_HIDDEN_ITEM_VARROCK_6                              (FLAG_HIDDEN_ITEMS_START + 0x55)
+#define FLAG_HIDDEN_ITEM_DWARVEN_MINES_1                        (FLAG_HIDDEN_ITEMS_START + 0x58)
+#define FLAG_HIDDEN_ITEM_DWARVEN_MINES_2                        (FLAG_HIDDEN_ITEMS_START + 0x59)
+#define FLAG_HIDDEN_ITEM_DWARVEN_MINES_3                        (FLAG_HIDDEN_ITEMS_START + 0x6F)
+#define FLAG_HIDDEN_ITEM_DWARVEN_MINES_4                        (FLAG_HIDDEN_ITEMS_START + 0x3F)
+#define FLAG_HIDDEN_ITEM_MUDSKIPPER_POINT_1                     (FLAG_HIDDEN_ITEMS_START + 0x2E)
+#define FLAG_HIDDEN_ITEM_MUDSKIPPER_POINT_2                     (FLAG_HIDDEN_ITEMS_START + 0x2F)
+#define FLAG_HIDDEN_ITEM_MUDSKIPPER_POINT_3                     (FLAG_HIDDEN_ITEMS_START + 0x56)
 
-#define FLAG_HIDDEN_VARROCK_1                                   (FLAG_HIDDEN_ITEMS_START + 0x23)
-#define FLAG_HIDDEN_VARROCK_2                                   (FLAG_HIDDEN_ITEMS_START + 0x51)
-#define FLAG_HIDDEN_VARROCK_3                                   (FLAG_HIDDEN_ITEMS_START + 0x2C)
-#define FLAG_HIDDEN_VARROCK_4                                   (FLAG_HIDDEN_ITEMS_START + 0x3E)
-#define FLAG_HIDDEN_VARROCK_5                                   (FLAG_HIDDEN_ITEMS_START + 0x25)
-#define FLAG_HIDDEN_VARROCK_6                                   (FLAG_HIDDEN_ITEMS_START + 0x55)
-#define FLAG_HIDDEN_ITEM_ROUTE_104_HEART_SCALE                  (FLAG_HIDDEN_ITEMS_START + 0x58)
-#define FLAG_HIDDEN_ITEM_ROUTE_105_HEART_SCALE                  (FLAG_HIDDEN_ITEMS_START + 0x59)
-#define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                    (FLAG_HIDDEN_ITEMS_START + 0x6F)
-#define FLAG_HIDDEN_ITEM_ROUTE_106_POKE_BALL                    (FLAG_HIDDEN_ITEMS_START + 0x3F)
-#define FLAG_HIDDEN_ITEM_ROUTE_106_STARDUST                     (FLAG_HIDDEN_ITEMS_START + 0x2E)
-#define FLAG_HIDDEN_ITEM_ROUTE_106_HEART_SCALE                  (FLAG_HIDDEN_ITEMS_START + 0x2F)
-#define FLAG_HIDDEN_ITEM_ROUTE_108_RARE_CANDY                   (FLAG_HIDDEN_ITEMS_START + 0x56)
 #define FLAG_HIDDEN_ITEM_ROUTE_109_REVIVE                       (FLAG_HIDDEN_ITEMS_START + 0x32)
 #define FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_1                (FLAG_HIDDEN_ITEMS_START + 0x34)
 #define FLAG_HIDDEN_ITEM_ROUTE_109_GREAT_BALL                   (FLAG_HIDDEN_ITEMS_START + 0x33)
@@ -1271,7 +1270,7 @@
 #define FLAG_EDGEVILLE_INDOOR_2                                     0x4AB // Unused Flag
 #define FLAG_ITEM_MUSA_POINT_2                                      0x4AC // Unused Flag
 #define FLAG_ITEM_LIGHTHOUSE_1                                      0x4AD // Unused Flag
-#define FLAG_UNUSED_0x4AE                                           0x4AE // Unused Flag
+#define FLAG_ITEM_DWARVENMINES_5                                    0x4AE // Unused Flag
 #define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
 #define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
 #define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag

@@ -560,7 +560,7 @@
       "y": 22,
       "elevation": 0,
       "item": "ITEM_PURPLE_SWEETS",
-      "flag": "FLAG_HIDDEN_VARROCK_6"
+      "flag": "FLAG_HIDDEN_ITEM_VARROCK_6"
     }
   ]
 }

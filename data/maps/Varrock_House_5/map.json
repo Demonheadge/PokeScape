@@ -47,7 +47,7 @@
       "y": 2,
       "elevation": 0,
       "item": "ITEM_PURPLE_SWEETS",
-      "flag": "FLAG_HIDDEN_VARROCK_2"
+      "flag": "FLAG_HIDDEN_ITEM_VARROCK_2"
     },
     {
       "type": "hidden_item",
@@ -55,7 +55,7 @@
       "y": 8,
       "elevation": 0,
       "item": "ITEM_PURPLE_SWEETS",
-      "flag": "FLAG_HIDDEN_VARROCK_5"
+      "flag": "FLAG_HIDDEN_ITEM_VARROCK_5"
     },
     {
       "type": "hidden_item",
@@ -63,7 +63,7 @@
       "y": 2,
       "elevation": 0,
       "item": "ITEM_PURPLE_SWEETS",
-      "flag": "FLAG_HIDDEN_VARROCK_3"
+      "flag": "FLAG_HIDDEN_ITEM_VARROCK_3"
     },
     {
       "type": "hidden_item",
@@ -71,7 +71,7 @@
       "y": 7,
       "elevation": 0,
       "item": "ITEM_PURPLE_SWEETS",
-      "flag": "FLAG_HIDDEN_VARROCK_4"
+      "flag": "FLAG_HIDDEN_ITEM_VARROCK_4"
     }
   ]
 }

@@ -206,7 +206,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_DWARVENMINES_DWARF_8",
       "flag": "0"
     },
     {
@@ -219,7 +219,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_DWARVENMINES_DWARF_5",
       "flag": "0"
     },
     {
@@ -232,7 +232,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_DWARVENMINES_DWARF_6",
       "flag": "0"
     },
     {
@@ -284,7 +284,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_DWARVENMINES_DWARF_7",
       "flag": "0"
     },
     {
@@ -292,9 +292,9 @@
       "x": 13,
       "y": 42,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
@@ -477,9 +477,9 @@
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BATTLE_DWARVENMINES_TRAINER_1",
       "flag": "0"
     },
     {
@@ -492,20 +492,20 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_DWARVENMINES_5",
+      "flag": "FLAG_ITEM_DWARVENMINES_5"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MINER",
       "x": 13,
-      "y": 22,
+      "y": 23,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_DWARVENMINES_DWARF_4",
       "flag": "0"
     },
     {
@@ -850,6 +850,38 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NPC_DWARVENMINES_CAVEIN"
+    },
+    {
+      "type": "hidden_item",
+      "x": 12,
+      "y": 8,
+      "elevation": 0,
+      "item": "ITEM_PURPLE_SWEETS",
+      "flag": "FLAG_HIDDEN_ITEM_DWARVEN_MINES_1"
+    },
+    {
+      "type": "hidden_item",
+      "x": 58,
+      "y": 56,
+      "elevation": 0,
+      "item": "ITEM_PURPLE_SWEETS",
+      "flag": "FLAG_HIDDEN_ITEM_DWARVEN_MINES_2"
+    },
+    {
+      "type": "hidden_item",
+      "x": 31,
+      "y": 4,
+      "elevation": 0,
+      "item": "ITEM_PURPLE_SWEETS",
+      "flag": "FLAG_HIDDEN_ITEM_DWARVEN_MINES_3"
+    },
+    {
+      "type": "hidden_item",
+      "x": 14,
+      "y": 47,
+      "elevation": 0,
+      "item": "ITEM_PURPLE_SWEETS",
+      "flag": "FLAG_HIDDEN_ITEM_DWARVEN_MINES_4"
     }
   ]
 }

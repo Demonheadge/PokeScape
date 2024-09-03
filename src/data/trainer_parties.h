@@ -6581,3 +6581,18 @@ static const struct TrainerMon sParty_DAEMONHEIM_GYM_THOK[] = {
     //.moves = {MOVE_POWER_GEM, MOVE_BOUNCE, MOVE_MUD_BOMB, MOVE_BUBBLE_BEAM}
     }
 };
+
+static const struct TrainerMon sParty_DWARVENMINES_TRAINER_1[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 40,
+    .species = SPECIES_ROCK_GOLDEN_FORM,
+    .heldItem = ITEM_NONE
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 40,
+    .species = SPECIES_SPOOKAXE,
+    .heldItem = ITEM_NONE
+    }
+};

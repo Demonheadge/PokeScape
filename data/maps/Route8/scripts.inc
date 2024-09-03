@@ -259,9 +259,59 @@ ABYSSALRIFT_Mazcab_Shauny::
 	end
 
 
+ALTAR_AIR_ENTER::
+	msgbox ALTAR_AIR_ENTER_Text_0
+	checkitem ITEM_TALISMAN_AIR, 1
+	compare VAR_RESULT, 0
+	goto_if_ne ALTAR_AIR_ENTER_2
+	closemessage
+	release
+	end
+
+ALTAR_AIR_ENTER_2:
+	msgbox ALTAR_AIR_ENTER_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ALTAR_AIR_ENTER_5
+	closemessage
+	release
+	end
+
+ALTAR_AIR_ENTER_5:
+	msgbox ALTAR_AIR_ENTER_Text_2
+	warp MAP_AIR_ALTAR, 1, 0, 0
+	closemessage
+	release
+	end
+
+
+ALTAR_MIND_ENTER::
+	msgbox ALTAR_AIR_ENTER_Text_0
+	checkitem ITEM_TALISMAN_MIND, 1
+	compare VAR_RESULT, 0
+	goto_if_ne ALTAR_MIND_ENTER_2
+	closemessage
+	release
+	end
+
+ALTAR_MIND_ENTER_2:
+	msgbox ALTAR_MIND_ENTER_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ALTAR_MIND_ENTER_5
+	closemessage
+	release
+	end
+
+ALTAR_MIND_ENTER_5:
+	msgbox ALTAR_MIND_ENTER_Text_1
+	warp MAP_MIND_ALTAR, 1, 0, 0
+	closemessage
+	release
+	end
+
+
 ALTAR_WATER_ENTER::
-	msgbox ALTAR_WATER_ENTER_Text_0
-	msgbox ALTAR_WATER_ENTER_Text_1, MSGBOX_YESNO
+	msgbox ALTAR_AIR_ENTER_Text_0
+	checkitem ITEM_TALISMAN_WATER, 1
 	compare VAR_RESULT, 0
 	goto_if_ne ALTAR_WATER_ENTER_2
 	closemessage
@@ -269,31 +319,23 @@ ALTAR_WATER_ENTER::
 	end
 
 ALTAR_WATER_ENTER_2:
-	msgbox ALTAR_WATER_ENTER_Text_2
-	warp MAP_MAZCAB_OTOT, 0, 0, 0
-	closemessage
-	release
-	end
-
-
-ALTAR_WATER_RETURN::
-	msgbox ALTAR_WATER_RETURN_Text_0, MSGBOX_YESNO
+	msgbox ALTAR_WATER_ENTER_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne ALTAR_WATER_RETURN_2
+	goto_if_ne ALTAR_WATER_ENTER_5
 	closemessage
 	release
 	end
 
-ALTAR_WATER_RETURN_2:
-	msgbox ALTAR_WATER_RETURN_Text_1
-	warp MAP_ROUTE4, 1, 0, 0
+ALTAR_WATER_ENTER_5:
+	msgbox ALTAR_WATER_ENTER_Text_1
+	warp MAP_WATER_ALTAR, 1, 0, 0
 	closemessage
 	release
 	end
 
 
 ALTAR_EARTH_ENTER::
-	msgbox ALTAR_WATER_ENTER_Text_0
+	msgbox ALTAR_AIR_ENTER_Text_0
 	checkitem ITEM_TALISMAN_EARTH, 1
 	compare VAR_RESULT, 0
 	goto_if_ne ALTAR_EARTH_ENTER_2
@@ -311,23 +353,57 @@ ALTAR_EARTH_ENTER_2:
 
 ALTAR_EARTH_ENTER_5:
 	msgbox ALTAR_EARTH_ENTER_Text_1
-	warp MAP_MAZCAB_OTOT, 0, 0, 0
+	warp MAP_EARTH_ALTAR, 1, 0, 0
 	closemessage
 	release
 	end
 
 
-ALTAR_EARTH_RETURN::
-	msgbox ALTAR_WATER_RETURN_Text_0, MSGBOX_YESNO
+ALTAR_FIRE_ENTER::
+	msgbox ALTAR_AIR_ENTER_Text_0
+	checkitem ITEM_TALISMAN_FIRE, 1
 	compare VAR_RESULT, 0
-	goto_if_ne ALTAR_EARTH_RETURN_2
+	goto_if_ne ALTAR_FIRE_ENTER_2
 	closemessage
 	release
 	end
 
-ALTAR_EARTH_RETURN_2:
-	msgbox ALTAR_WATER_RETURN_Text_1
-	warp MAP_ROUTE17, 1, 0, 0
+ALTAR_FIRE_ENTER_2:
+	msgbox ALTAR_FIRE_ENTER_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ALTAR_FIRE_ENTER_5
+	closemessage
+	release
+	end
+
+ALTAR_FIRE_ENTER_5:
+	msgbox ALTAR_FIRE_ENTER_Text_1
+	warp MAP_FIRE_ALTAR, 1, 0, 0
+	closemessage
+	release
+	end
+
+
+ALTAR_BODY_ENTER::
+	msgbox ALTAR_AIR_ENTER_Text_0
+	checkitem ITEM_TALISMAN_BODY, 1
+	compare VAR_RESULT, 0
+	goto_if_ne ALTAR_BODY_ENTER_2
+	closemessage
+	release
+	end
+
+ALTAR_BODY_ENTER_2:
+	msgbox ALTAR_BODY_ENTER_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ALTAR_BODY_ENTER_5
+	closemessage
+	release
+	end
+
+ALTAR_BODY_ENTER_5:
+	msgbox ALTAR_BODY_ENTER_Text_1
+	warp MAP_BODY_ALTAR, 1, 0, 0
 	closemessage
 	release
 	end
@@ -619,31 +695,59 @@ ABYSSALRIFT_Mazcab_Shauny_Text_1:
 	.string "Oh wait, I am mistaken, today is indeed\n"
 	.string "my birthday.$"
 
-ALTAR_WATER_ENTER_Text_0:
+ALTAR_AIR_ENTER_Text_0:
 	.string "It is a mysterious Altar.$"
 
-ALTAR_WATER_ENTER_Text_1:
-	.string "Would you like to use the Water\n"
-	.string "Talisman?$"
+ALTAR_AIR_ENTER_Text_1:
+	.string "Would you like to use the AIR TALISMAN?$"
 
-ALTAR_WATER_ENTER_Text_2:
+ALTAR_AIR_ENTER_Text_2:
+	.string "The AIR TALISMAN begins to glow.\p"
+	.string "A mass of energy suddenly surrounds\n"
+	.string "you!$"
+
+ALTAR_MIND_ENTER_Text_0:
+	.string "Would you like to use the MIND\n"
+	.string "TALISMAN?$"
+
+ALTAR_MIND_ENTER_Text_1:
+	.string "The MIND TALISMAN begins to glow.\p"
+	.string "A mass of energy suddenly surrounds\n"
+	.string "you!$"
+
+ALTAR_WATER_ENTER_Text_0:
+	.string "Would you like to use the WATER\n"
+	.string "TALISMAN?$"
+
+ALTAR_WATER_ENTER_Text_1:
 	.string "The WATER TALISMAN begins to glow.\p"
 	.string "A mass of energy suddenly surrounds\n"
 	.string "you!$"
 
-ALTAR_WATER_RETURN_Text_0:
-	.string "Would you like to leave this realm?$"
-
-ALTAR_WATER_RETURN_Text_1:
-	.string "As you step into the portal a mass of\n"
-	.string "energy surrounds you!$"
-
 ALTAR_EARTH_ENTER_Text_0:
-	.string "Would you like to use the Earth\n"
-	.string "Talisman?$"
+	.string "Would you like to use the EARTH\n"
+	.string "TALISMAN?$"
 
 ALTAR_EARTH_ENTER_Text_1:
 	.string "The EARTH TALISMAN begins to glow.\p"
+	.string "A mass of energy suddenly surrounds\n"
+	.string "you!$"
+
+ALTAR_FIRE_ENTER_Text_0:
+	.string "Would you like to use the FIRE\n"
+	.string "TALISMAN?$"
+
+ALTAR_FIRE_ENTER_Text_1:
+	.string "The FIRE TALISMAN begins to glow.\p"
+	.string "A mass of energy suddenly surrounds\n"
+	.string "you!$"
+
+ALTAR_BODY_ENTER_Text_0:
+	.string "Would you like to use the BODY\n"
+	.string "TALISMAN?$"
+
+ALTAR_BODY_ENTER_Text_1:
+	.string "The BODY TALISMAN begins to glow.\p"
 	.string "A mass of energy suddenly surrounds\n"
 	.string "you!$"
 

@@ -156,6 +156,11 @@ script ITEM_DWARVENMINES_4
     finditem(ITEM_TEA)
     end
 }
+script ITEM_DWARVENMINES_5
+{
+    finditem(ITEM_PURPLE_SWEETS)
+    end
+}
 
 //QUEST--------------
 script NPC_FALADORCASTLE_QUEST_PART_3_1
@@ -536,3 +541,78 @@ script BATTLE_DWARVENMINES_DWARF_4
 	end
 }
 
+
+script BATTLE_DWARVENMINES_TRAINER_1
+{
+    trainerbattle_single(TRAINER_DWARVENMINES_TRAINER_1, format("Excuse me, but I'm digging here!"),format("You got to watch out, I could have hit you with my pickaxe."))
+    //namebox ("")
+    msgbox(format("Be more careful next time you sneak up on someone while they are mining."))
+	//hidenamebox
+    release
+	end
+}
+
+
+
+
+
+
+script NPC_DWARVENMINES_DWARF_4
+{
+    lock
+    faceplayer
+    namebox ("Dwarf")
+	msgbox(format("It's not safe to go deeper into the cavern.\pOnly a Champion of Gilienor would be able to survive."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DWARVENMINES_DWARF_5
+{
+    lock
+    faceplayer
+    namebox ("Conductor")
+	msgbox(format("Welcome to the Dwarven Railway System or D.R.S for short.\pSadly due to the recent earthquakes we've had to shutdown our lines."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DWARVENMINES_DWARF_6
+{
+    lock
+    faceplayer
+    namebox ("Dwarf")
+	msgbox(format("We found a huge source of anima deep within these mines, but just as we were about to start digging the earthquakes came and we had to evacuate."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DWARVENMINES_DWARF_7
+{
+    lock
+    faceplayer
+    namebox ("Dwarf")
+	msgbox(format("I want to go to Keldegrim but the Railway System is down."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DWARVENMINES_DWARF_8
+{
+    lock
+    faceplayer
+    namebox ("Dwarf")
+	msgbox(format("That pickaxe you have there…\pThat looks like one of mine.\pHow did you get it?"))
+    closemessage
+    hidenamebox
+	release
+	end
+}

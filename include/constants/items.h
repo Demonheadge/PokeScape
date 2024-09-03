@@ -1361,10 +1361,11 @@
 #define ITEM_REPEL_TEA_2            (FINAL_VANILLA_ITEM + 256 )
 #define ITEM_REPEL_TEA_3            (FINAL_VANILLA_ITEM + 257 )
 #define ITEM_RING_OF_KINSHIP		(FINAL_VANILLA_ITEM + 258 )
+#define ITEM_TALISMAN_BODY		    (FINAL_VANILLA_ITEM + 259 )
 
 
 
-#define ITEMS_COUNT 1074
+#define ITEMS_COUNT 1075
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

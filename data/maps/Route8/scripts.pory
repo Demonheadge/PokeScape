@@ -306,45 +306,17 @@ script ABYSSALRIFT_Mazcab_Shauny{
 
 
 
-script ALTAR_WATER_ENTER{
+
+
+script ALTAR_AIR_ENTER{
     msgbox(format("It is a mysterious Altar."))
-    msgbox(format("Would you like to use the Water Talisman?"), MSGBOX_YESNO)
-				if (var(VAR_RESULT)){
-                    msgbox(format("The WATER TALISMAN begins to glow.\pA mass of energy suddenly surrounds you!"))
-                    warp (MAP_MAZCAB_OTOT,0,0,0)
-                    closemessage
-                    release
-                    end
-                }
-                closemessage
-                release
-                end
-}
-
-
-script ALTAR_WATER_RETURN{
-msgbox(format("Would you like to leave this realm?"), MSGBOX_YESNO)
-				if (var(VAR_RESULT)){
-                    msgbox(format("As you step into the portal a mass of energy surrounds you!"))
-                    warp (MAP_ROUTE4,1,0,0)
-                    closemessage
-                    release
-                    end
-                }
-                closemessage
-                release
-                end
-}
-
-script ALTAR_EARTH_ENTER{
-    msgbox(format("It is a mysterious Altar."))
-    checkitem (ITEM_TALISMAN_EARTH, 1)
+    checkitem (ITEM_TALISMAN_AIR, 1)
         if (var(VAR_RESULT))
         {
-        msgbox(format("Would you like to use the Earth Talisman?"), MSGBOX_YESNO)
+        msgbox(format("Would you like to use the AIR TALISMAN?"), MSGBOX_YESNO)
                     if (var(VAR_RESULT)){
-                        msgbox(format("The EARTH TALISMAN begins to glow.\pA mass of energy suddenly surrounds you!"))
-                        warp (MAP_MAZCAB_OTOT,0,0,0)
+                        msgbox(format("The AIR TALISMAN begins to glow.\pA mass of energy suddenly surrounds you!"))
+                        warp (MAP_AIR_ALTAR,1,0,0)
                         closemessage
                         release
                         end
@@ -357,24 +329,111 @@ script ALTAR_EARTH_ENTER{
     release
     end
 }
-
-
-script ALTAR_EARTH_RETURN{
-msgbox(format("Would you like to leave this realm?"), MSGBOX_YESNO)
-				if (var(VAR_RESULT)){
-                    msgbox(format("As you step into the portal a mass of energy surrounds you!"))
-                    warp (MAP_ROUTE17,1,0,0)
+script ALTAR_MIND_ENTER{
+    msgbox(format("It is a mysterious Altar."))
+    checkitem (ITEM_TALISMAN_MIND, 1)
+        if (var(VAR_RESULT))
+        {
+        msgbox(format("Would you like to use the MIND TALISMAN?"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)){
+                        msgbox(format("The MIND TALISMAN begins to glow.\pA mass of energy suddenly surrounds you!"))
+                        warp (MAP_MIND_ALTAR,1,0,0)
+                        closemessage
+                        release
+                        end
+                    }
                     closemessage
                     release
                     end
-                }
-                closemessage
-                release
-                end
+        }
+    closemessage
+    release
+    end
 }
-
-
-
+script ALTAR_WATER_ENTER{
+    msgbox(format("It is a mysterious Altar."))
+    checkitem (ITEM_TALISMAN_WATER, 1)
+        if (var(VAR_RESULT))
+        {
+        msgbox(format("Would you like to use the WATER TALISMAN?"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)){
+                        msgbox(format("The WATER TALISMAN begins to glow.\pA mass of energy suddenly surrounds you!"))
+                        warp (MAP_WATER_ALTAR,1,0,0)
+                        closemessage
+                        release
+                        end
+                    }
+                    closemessage
+                    release
+                    end
+        }
+    closemessage
+    release
+    end
+}
+script ALTAR_EARTH_ENTER{
+    msgbox(format("It is a mysterious Altar."))
+    checkitem (ITEM_TALISMAN_EARTH, 1)
+        if (var(VAR_RESULT))
+        {
+        msgbox(format("Would you like to use the EARTH TALISMAN?"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)){
+                        msgbox(format("The EARTH TALISMAN begins to glow.\pA mass of energy suddenly surrounds you!"))
+                        warp (MAP_EARTH_ALTAR,1,0,0)
+                        closemessage
+                        release
+                        end
+                    }
+                    closemessage
+                    release
+                    end
+        }
+    closemessage
+    release
+    end
+}
+script ALTAR_FIRE_ENTER{
+    msgbox(format("It is a mysterious Altar."))
+    checkitem (ITEM_TALISMAN_FIRE, 1)
+        if (var(VAR_RESULT))
+        {
+        msgbox(format("Would you like to use the FIRE TALISMAN?"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)){
+                        msgbox(format("The FIRE TALISMAN begins to glow.\pA mass of energy suddenly surrounds you!"))
+                        warp (MAP_FIRE_ALTAR,1,0,0)
+                        closemessage
+                        release
+                        end
+                    }
+                    closemessage
+                    release
+                    end
+        }
+    closemessage
+    release
+    end
+}
+script ALTAR_BODY_ENTER{
+    msgbox(format("It is a mysterious Altar."))
+    checkitem (ITEM_TALISMAN_BODY, 1)
+        if (var(VAR_RESULT))
+        {
+        msgbox(format("Would you like to use the BODY TALISMAN?"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)){
+                        msgbox(format("The BODY TALISMAN begins to glow.\pA mass of energy suddenly surrounds you!"))
+                        warp (MAP_BODY_ALTAR,1,0,0)
+                        closemessage
+                        release
+                        end
+                    }
+                    closemessage
+                    release
+                    end
+        }
+    closemessage
+    release
+    end
+}
 
 
 //CRAFTING GUILD
