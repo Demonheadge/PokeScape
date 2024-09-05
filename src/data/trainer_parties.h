@@ -6596,3 +6596,283 @@ static const struct TrainerMon sParty_DWARVENMINES_TRAINER_1[] = {
     .heldItem = ITEM_NONE
     }
 };
+
+
+
+
+
+
+//GYM LEADERS / ELITE4
+
+static const struct TrainerMon sParty_GYM_LEADER_TZHAAR_CHAMPION_1[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    }
+};
+
+static const struct TrainerMon sParty_GYM_LEADER_VANNAKA_1[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    }
+};
+
+static const struct TrainerMon sParty_ELITE4_SIR_TIFFY_1[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    }
+};
+
+static const struct TrainerMon sParty_ELITE4_HAZELMERE_1[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    }
+};
+
+static const struct TrainerMon sParty_ELITE4_ZANIK_1[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    }
+};
+
+static const struct TrainerMon sParty_ELITE4_HANS_1[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    }
+};
+
+static const struct TrainerMon sParty_CHAMPION_WISE_OLD_MAN_1[] = {
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    },
+    {
+    .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 70,
+    .species = SPECIES_FROGEEL,
+    //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    }
+};

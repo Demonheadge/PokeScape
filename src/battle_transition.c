@@ -292,6 +292,22 @@ static void Task_TeamHAM(u8 taskId);
 static bool8 TeamHAM_Func1(struct Task *);
 static bool8 TeamHAM_Func2(struct Task *);
 
+static void Task_DUKE_HORACIO(u8);
+static void Task_SIR_AMIK_VARZE(u8);
+static void Task_TZHAAR_CHAMPION(u8);
+static void Task_PRINCE_ALI(u8);
+static void Task_KING_ROALD(u8);
+static void Task_VANNAKA(u8);
+static void Task_THOK(u8);
+static void Task_SIR_TIFFY(u8);
+static void Task_HAZELMERE(u8);
+static void Task_ZANIK(u8);
+static void Task_HANS(u8);
+static void Task_WISE_OLD_MAN(u8);
+static void Task_GUNTHOR(u8);
+
+
+
 static s16 sDebug_RectangularSpiralData;
 static u8 sTestingTransitionId;
 static u8 sTestingTransitionState;
@@ -398,6 +414,19 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL_IN_SEQ] = Task_FrontierCirclesSymmetricSpiralInSeq,
     //PokeScape
     [B_TRANSITION_HAM] = Task_TeamHAM,
+    [B_TRANSITION_DUKE_HORACIO] = Task_DUKE_HORACIO,
+    [B_TRANSITION_SIR_AMIK_VARZE] = Task_SIR_AMIK_VARZE,
+    [B_TRANSITION_TZHAAR_CHAMPION] = Task_TZHAAR_CHAMPION,
+    [B_TRANSITION_PRINCE_ALI] = Task_PRINCE_ALI,
+    [B_TRANSITION_KING_ROALD] = Task_KING_ROALD,
+    [B_TRANSITION_VANNAKA] = Task_VANNAKA,
+    [B_TRANSITION_THOK] = Task_THOK,
+    [B_TRANSITION_SIR_TIFFY] = Task_SIR_TIFFY,
+    [B_TRANSITION_HAZELMERE] = Task_HAZELMERE,
+    [B_TRANSITION_ZANIK] = Task_ZANIK,
+    [B_TRANSITION_HANS] = Task_HANS,
+    [B_TRANSITION_WISE_OLD_MAN] = Task_WISE_OLD_MAN,
+    [B_TRANSITION_GUNTHOR] = Task_GUNTHOR,
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -569,6 +598,19 @@ static const u8 sMugshotsTrainerPicIDsTable[MUGSHOTS_COUNT] =
     [MUGSHOT_GLACIA]   = TRAINER_PIC_ELITE_FOUR_GLACIA,
     [MUGSHOT_DRAKE]    = TRAINER_PIC_ELITE_FOUR_DRAKE,
     [MUGSHOT_CHAMPION] = TRAINER_PIC_CHAMPION_WALLACE,
+    [MUGSHOT_DUKE_HORACIO] = TRAINER_PIC_duke_horacio,
+    [MUGSHOT_SIR_AMIK_VARZE] = TRAINER_PIC_sir_amik_varze,
+    [MUGSHOT_TZHAAR_CHAMPION] = TRAINER_PIC_tzhaar,
+    [MUGSHOT_GUNTHOR] = TRAINER_PIC_gunthor,
+    [MUGSHOT_PRINCE_ALI] = TRAINER_PIC_prince_ali,
+    [MUGSHOT_KING_ROALD] = TRAINER_PIC_king_roald,
+    [MUGSHOT_VANNAKA] = TRAINER_PIC_vannaka,
+    [MUGSHOT_THOK] = TRAINER_PIC_thok,
+    [MUGSHOT_SIR_TIFFY] = TRAINER_PIC_sir_tiffy,
+    [MUGSHOT_HAZELMERE] = TRAINER_PIC_hazelmere,
+    [MUGSHOT_ZANIK] = TRAINER_PIC_zanik,
+    [MUGSHOT_HANS] = TRAINER_PIC_hans,
+    [MUGSHOT_WISE_OLD_MAN] = TRAINER_PIC_wise_old_man_champion,
 };
 static const s16 sMugshotsOpponentRotationScales[MUGSHOTS_COUNT][2] =
 {
@@ -577,6 +619,19 @@ static const s16 sMugshotsOpponentRotationScales[MUGSHOTS_COUNT][2] =
     [MUGSHOT_GLACIA] =   {0x1B0, 0x1B0},
     [MUGSHOT_DRAKE] =    {0x1A0, 0x1A0},
     [MUGSHOT_CHAMPION] = {0x188, 0x188},
+    [MUGSHOT_DUKE_HORACIO] = {0x200, 0x200},
+    [MUGSHOT_SIR_AMIK_VARZE] = {0x200, 0x200},
+    [MUGSHOT_TZHAAR_CHAMPION] = {0x200, 0x200},
+    [MUGSHOT_GUNTHOR] = {0x200, 0x200},
+    [MUGSHOT_PRINCE_ALI] = {0x200, 0x200},
+    [MUGSHOT_KING_ROALD] = {0x200, 0x200},
+    [MUGSHOT_VANNAKA] = {0x200, 0x200},
+    [MUGSHOT_THOK] = {0x200, 0x200},
+    [MUGSHOT_SIR_TIFFY] = {0x200, 0x200},
+    [MUGSHOT_HAZELMERE] = {0x200, 0x200},
+    [MUGSHOT_ZANIK] = {0x200, 0x200},
+    [MUGSHOT_HANS] = {0x200, 0x200},
+    [MUGSHOT_WISE_OLD_MAN] = {0x200, 0x200},
 };
 static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
 {
@@ -585,6 +640,21 @@ static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
     [MUGSHOT_GLACIA] =   {-4,  4},
     [MUGSHOT_DRAKE] =    { 0,  5},
     [MUGSHOT_CHAMPION] = {-8,  7},
+    [MUGSHOT_DUKE_HORACIO] = { 0,  0},
+    [MUGSHOT_SIR_AMIK_VARZE] = { 0,  0},
+    [MUGSHOT_TZHAAR_CHAMPION] = { 0,  0},
+    [MUGSHOT_GUNTHOR] = { 0,  0},
+    [MUGSHOT_PRINCE_ALI] = { 0,  0},
+    [MUGSHOT_KING_ROALD] = { 0,  0},
+    [MUGSHOT_VANNAKA] = { 0,  0},
+    [MUGSHOT_THOK] = { 0,  0},
+    [MUGSHOT_SIR_TIFFY] = { 0,  0},
+    [MUGSHOT_HAZELMERE] = { 0,  0},
+    [MUGSHOT_ZANIK] = { 0,  0},
+    [MUGSHOT_HANS] = { 0,  0},
+    [MUGSHOT_WISE_OLD_MAN] = { 0,  0},
+
+    
 };
 
 static const TransitionSpriteCallback sMugshotTrainerPicFuncs[] =
@@ -921,7 +991,20 @@ static const u16 *const sOpponentMugshotsPals[MUGSHOTS_COUNT] =
     [MUGSHOT_PHOEBE] = sMugshotPal_Phoebe,
     [MUGSHOT_GLACIA] = sMugshotPal_Glacia,
     [MUGSHOT_DRAKE] = sMugshotPal_Drake,
-    [MUGSHOT_CHAMPION] = sMugshotPal_Champion
+    [MUGSHOT_CHAMPION] = sMugshotPal_Champion,
+    [MUGSHOT_DUKE_HORACIO] = sMugshotPal_Drake,
+    [MUGSHOT_SIR_AMIK_VARZE] = sMugshotPal_Drake,
+    [MUGSHOT_TZHAAR_CHAMPION] = sMugshotPal_Drake,
+    [MUGSHOT_GUNTHOR] = sMugshotPal_Drake,
+    [MUGSHOT_PRINCE_ALI] = sMugshotPal_Drake,
+    [MUGSHOT_KING_ROALD] = sMugshotPal_Drake,
+    [MUGSHOT_VANNAKA] = sMugshotPal_Drake,
+    [MUGSHOT_THOK] = sMugshotPal_Drake,
+    [MUGSHOT_SIR_TIFFY] = sMugshotPal_Drake,
+    [MUGSHOT_HAZELMERE] = sMugshotPal_Drake,
+    [MUGSHOT_ZANIK] = sMugshotPal_Drake,
+    [MUGSHOT_HANS] = sMugshotPal_Drake,
+    [MUGSHOT_WISE_OLD_MAN] = sMugshotPal_Drake,
 };
 
 static const u16 *const sPlayerMugshotsPals[GENDER_COUNT] =
@@ -2343,6 +2426,73 @@ static void Task_Champion(u8 taskId)
     gTasks[taskId].tMugshotId = MUGSHOT_CHAMPION;
     DoMugshotTransition(taskId);
 }
+
+static void Task_DUKE_HORACIO(u8 taskId)
+{
+    gTasks[taskId].tMugshotId = MUGSHOT_DUKE_HORACIO;
+    DoMugshotTransition(taskId);
+}
+static void Task_SIR_AMIK_VARZE(u8 taskId)
+{
+    gTasks[taskId].tMugshotId = MUGSHOT_SIR_AMIK_VARZE;
+    DoMugshotTransition(taskId);
+}
+static void Task_TZHAAR_CHAMPION(u8 taskId)
+{
+    gTasks[taskId].tMugshotId = MUGSHOT_TZHAAR_CHAMPION;
+    DoMugshotTransition(taskId);
+}
+static void Task_PRINCE_ALI(u8 taskId)
+{
+    gTasks[taskId].tMugshotId = MUGSHOT_PRINCE_ALI;
+    DoMugshotTransition(taskId);
+}
+static void Task_KING_ROALD(u8 taskId)
+{
+    gTasks[taskId].tMugshotId = MUGSHOT_KING_ROALD;
+    DoMugshotTransition(taskId);
+}
+static void Task_VANNAKA(u8 taskId)
+{
+    gTasks[taskId].tMugshotId = MUGSHOT_VANNAKA;
+    DoMugshotTransition(taskId);
+}
+static void Task_THOK(u8 taskId)
+{
+    gTasks[taskId].tMugshotId = MUGSHOT_THOK;
+    DoMugshotTransition(taskId);
+}
+static void Task_SIR_TIFFY(u8 taskId)
+{
+    gTasks[taskId].tMugshotId = MUGSHOT_SIR_TIFFY;
+    DoMugshotTransition(taskId);
+}
+static void Task_HAZELMERE(u8 taskId)
+{
+    gTasks[taskId].tMugshotId = MUGSHOT_HAZELMERE;
+    DoMugshotTransition(taskId);
+}
+static void Task_ZANIK(u8 taskId)
+{
+    gTasks[taskId].tMugshotId = MUGSHOT_ZANIK;
+    DoMugshotTransition(taskId);
+}
+static void Task_HANS(u8 taskId)
+{
+    gTasks[taskId].tMugshotId = MUGSHOT_HANS;
+    DoMugshotTransition(taskId);
+}
+static void Task_WISE_OLD_MAN(u8 taskId)
+{
+    gTasks[taskId].tMugshotId = MUGSHOT_WISE_OLD_MAN;
+    DoMugshotTransition(taskId);
+}
+static void Task_GUNTHOR(u8 taskId)
+{
+    gTasks[taskId].tMugshotId = MUGSHOT_GUNTHOR;
+    DoMugshotTransition(taskId);
+}
+
 
 static void DoMugshotTransition(u8 taskId)
 {

@@ -725,15 +725,17 @@ NPC_PORTSARIM_BATTLEAXE_LOREBOOK::
 NPC_PORTSARIM_NPC_JAILGUARD::
 	lock
 	faceplayer
+	namebox NPC_PORTSARIM_NPC_JAILGUARD_Text_0
 	switch VAR_POKESCAPE_STORYMODE_PROGRESS
 	case 100, NPC_PORTSARIM_NPC_JAILGUARD_3
-	msgbox NPC_PORTSARIM_NPC_JAILGUARD_Text_1
+	msgbox NPC_PORTSARIM_NPC_JAILGUARD_Text_2
 	waitmessage
+	hidenamebox
 	release
 	end
 
 NPC_PORTSARIM_NPC_JAILGUARD_3:
-	msgbox NPC_PORTSARIM_NPC_JAILGUARD_Text_0
+	msgbox NPC_PORTSARIM_NPC_JAILGUARD_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -1183,12 +1185,15 @@ NPC_PORTSARIM_BATTLEAXE_LOREBOOK_Text_0:
 	.string "You feel the sudden urge to leave.$"
 
 NPC_PORTSARIM_NPC_JAILGUARD_Text_0:
+	.string "Jailer$"
+
+NPC_PORTSARIM_NPC_JAILGUARD_Text_1:
 	.string "Was that H.A.M that just ran into the\n"
 	.string "lighthouse?!\p"
 	.string "Eh, I'm on my break, let it be someone\n"
 	.string "elses problem.$"
 
-NPC_PORTSARIM_NPC_JAILGUARD_Text_1:
+NPC_PORTSARIM_NPC_JAILGUARD_Text_2:
 	.string "I am on my break, don't bother me.$"
 
 NPC_PORTSARIM_BLOCKADE_HAM_Text_0:

@@ -182,7 +182,7 @@ script GIVE_RANDOM_ITEM {
 script NPC_PortSarim_Church_Monk_1 { 
 	lock
 	faceplayer
-    namebox("MONK")
+    namebox("Monk")
 	msgbox(format("The other night I saw a drunk throwing things into the ocean.\pHe was shouting something about Mudskippers.\pI don't even know what a Mudskipper is."))
     hidenamebox
     release
@@ -192,7 +192,7 @@ script NPC_PortSarim_Church_Monk_1 {
 script NPC_PortSarim_Church_Monk_2 { 
 	lock
 	faceplayer
-    namebox("MONK")
+    namebox("Priest")
 	msgbox(format("Not many people visit our Church out here.\pI don't think many people know of its existence."))
     hidenamebox
     release

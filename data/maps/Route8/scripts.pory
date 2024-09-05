@@ -62,7 +62,7 @@ script ROUTE8_MAN
 script ROUTE8_MINER_3
 {
     faceplayer
-    namebox ("MINER")
+    namebox ("Miner")
     msgbox(format("I wish they had a Bank here.\pI have to make a trip all the way to Falador if I want to heal my monsters."))
     closemessage
     hidenamebox
@@ -442,6 +442,7 @@ script CRAFTINGGUILD_MILKSELLER
 {
     lock
     faceplayer
+    namebox("Mr. Milks")
     msgbox(format("Why hello there, are you interested in some flavoured Milk?"))
     pokemart(FlavouredMilkShop)
     closemessage
@@ -468,7 +469,9 @@ FlavouredMilkShop:
 
 script CRAFTINGGUILD_NPC_1
 {
-    namebox ("Master Crafter")
+    lock
+    faceplayer
+    namebox ("Crafter")
 	msgbox(format("Where's your brown apron?\pYou can't come up here unless you're wearing one."))
     closemessage
     hidenamebox
@@ -478,7 +481,9 @@ script CRAFTINGGUILD_NPC_1
 
 script CRAFTINGGUILD_NPC_2
 {
-    namebox ("Master Crafter")
+    lock
+    faceplayer
+    namebox ("Crafter")
 	msgbox(format("Hello, and welcome to the Crafting Guild!\pAccomplished crafters from all over the land come here to use our top notch workshops.\pYou don't see any workshops?\pOf course not, they're all upstairs!"))
     closemessage
     hidenamebox
@@ -488,6 +493,8 @@ script CRAFTINGGUILD_NPC_2
 
 script CRAFTINGGUILD_NPC_3
 {
+    lock
+    faceplayer
     namebox ("Miner")
 	msgbox(format("I came here because I heard there were a lot of useful ores to mine, but they just have useless ore like gold or silver!\pI don't want ore for jewellery, I want ore to make my own pouches and battle monsters!"))
     closemessage

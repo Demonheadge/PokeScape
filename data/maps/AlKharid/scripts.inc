@@ -234,6 +234,82 @@ NPC_ALKHARID_GENERALSTORE_2::
 	end
 
 
+BATTLE_TEST_CUPHOLDER::
+	lock
+	faceplayer
+	msgbox BATTLE_TEST_CUPHOLDER_Text_0
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	msgbox BATTLE_TEST_CUPHOLDER_Text_1
+	trainerbattle_no_intro TRAINER_LEADER_DUKE_1, BATTLE_TEST_CUPHOLDER_Text_2
+	msgbox BATTLE_TEST_CUPHOLDER_Text_3
+	end
+
+
+GYM_BATTLE_DUKE_HORACIO::
+	trainerbattle_no_intro TRAINER_LEADER_DUKE_1, GYM_BATTLE_DUKE_HORACIO_Text_0
+	return
+
+
+GYM_BATTLE_SIR_AMIK_VARZE::
+	trainerbattle_no_intro TRAINER_FALADOR_GYM_AMIKVARZE, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+GYM_BATTLE_PRINCE_ALI::
+	trainerbattle_no_intro TRAINER_ALKHARID_GYM_PRINCE_ALI, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+GYM_BATTLE_KING_ROALD::
+	trainerbattle_no_intro TRAINER_VARROCK_GYM_KINGROALD, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+GYM_BATTLE_THOK::
+	trainerbattle_no_intro TRAINER_DAEMONHEIM_GYM_THOK, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+GYM_BATTLE_GUNTHOR::
+	trainerbattle_no_intro TRAINER_BARBARIAN_GYM_GUNTHOR, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+GYM_BATTLE_VANNAKA::
+	trainerbattle_no_intro TRAINER_GYM_LEADER_VANNAKA_1, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+GYM_BATTLE_TZHAAR_CHAMPION::
+	trainerbattle_no_intro TRAINER_GYM_LEADER_TZHAAR_CHAMPION_1, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+ELITE4_BATTLE_ZANIK::
+	trainerbattle_no_intro TRAINER_ELITE4_ZANIK_1, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+ELITE4_BATTLE_HANS::
+	trainerbattle_no_intro TRAINER_ELITE4_HANS_1, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+ELITE4_BATTLE_HAZELMERE::
+	trainerbattle_no_intro TRAINER_ELITE4_HAZELMERE_1, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+ELITE4_BATTLE_SIR_TIFFY_CASHIEN::
+	trainerbattle_no_intro TRAINER_ELITE4_SIR_TIFFY_1, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+CHAMPION_BATTLE_WISE_OLD_MAN::
+	trainerbattle_no_intro TRAINER_CHAMPION_WISE_OLD_MAN_1, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
 ALKHARID_GNOMEGLIDER_Text_0:
 	.string "It is a Gnome Glider.$"
 
@@ -365,3 +441,19 @@ NPC_ALKHARID_GENERALSTORE_2_Text_0:
 	.string "stronger monsters in the desert.\p"
 	.string "I'd suggest you be careful and run away\n"
 	.string "if you see a Strykewyrm.$"
+
+BATTLE_TEST_CUPHOLDER_Text_0:
+	.string "Hello I am Cupholder.$"
+
+BATTLE_TEST_CUPHOLDER_Text_1:
+	.string "Let's battle!$"
+
+BATTLE_TEST_CUPHOLDER_Text_2:
+	.string "I lost.$"
+
+BATTLE_TEST_CUPHOLDER_Text_3:
+	.string "You win…$"
+
+GYM_BATTLE_DUKE_HORACIO_Text_0:
+	.string "You beat me…\p"
+	.string "…Congratulations!$"

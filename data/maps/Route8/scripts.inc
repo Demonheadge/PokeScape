@@ -412,7 +412,8 @@ ALTAR_BODY_ENTER_5:
 CRAFTINGGUILD_MILKSELLER::
 	lock
 	faceplayer
-	msgbox CRAFTINGGUILD_MILKSELLER_Text_0
+	namebox CRAFTINGGUILD_MILKSELLER_Text_0
+	msgbox CRAFTINGGUILD_MILKSELLER_Text_1
 	pokemart FlavouredMilkShop
 	closemessage
 	release
@@ -433,6 +434,8 @@ FlavouredMilkShop:
     end
 
 CRAFTINGGUILD_NPC_1::
+	lock
+	faceplayer
 	namebox CRAFTINGGUILD_NPC_1_Text_0
 	msgbox CRAFTINGGUILD_NPC_1_Text_1
 	closemessage
@@ -442,6 +445,8 @@ CRAFTINGGUILD_NPC_1::
 
 
 CRAFTINGGUILD_NPC_2::
+	lock
+	faceplayer
 	namebox CRAFTINGGUILD_NPC_1_Text_0
 	msgbox CRAFTINGGUILD_NPC_2_Text_0
 	closemessage
@@ -451,8 +456,10 @@ CRAFTINGGUILD_NPC_2::
 
 
 CRAFTINGGUILD_NPC_3::
-	namebox CRAFTINGGUILD_NPC_3_Text_0
-	msgbox CRAFTINGGUILD_NPC_3_Text_1
+	lock
+	faceplayer
+	namebox ROUTE8_MINER_3_Text_0
+	msgbox CRAFTINGGUILD_NPC_3_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -520,7 +527,7 @@ ROUTE8_MAN_Text_1:
 	.string "find it?$"
 
 ROUTE8_MINER_3_Text_0:
-	.string "MINER$"
+	.string "Miner$"
 
 ROUTE8_MINER_3_Text_1:
 	.string "I wish they had a Bank here.\p"
@@ -752,11 +759,14 @@ ALTAR_BODY_ENTER_Text_1:
 	.string "you!$"
 
 CRAFTINGGUILD_MILKSELLER_Text_0:
+	.string "Mr. Milks$"
+
+CRAFTINGGUILD_MILKSELLER_Text_1:
 	.string "Why hello there, are you interested in\n"
 	.string "some flavoured Milk?$"
 
 CRAFTINGGUILD_NPC_1_Text_0:
-	.string "Master Crafter$"
+	.string "Crafter$"
 
 CRAFTINGGUILD_NPC_1_Text_1:
 	.string "Where's your brown apron?\p"
@@ -773,9 +783,6 @@ CRAFTINGGUILD_NPC_2_Text_0:
 	.string "Of course not, they're all upstairs!$"
 
 CRAFTINGGUILD_NPC_3_Text_0:
-	.string "Miner$"
-
-CRAFTINGGUILD_NPC_3_Text_1:
 	.string "I came here because I heard there were\n"
 	.string "a lot of useful ores to mine, but they\l"
 	.string "just have useless ore like gold or\l"

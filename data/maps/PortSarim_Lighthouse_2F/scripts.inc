@@ -38,9 +38,10 @@ LIGHTHOUSE_2F_NPC_1::
 	goto_if_eq LIGHTHOUSE_2F_NPC_1_3
 	lock
 	faceplayer
-	msgbox LIGHTHOUSE_2F_NPC_1_Text_2
+	msgbox LIGHTHOUSE_2F_NPC_1_Text_3
 LIGHTHOUSE_2F_NPC_1_1:
 	closemessage
+	hidenamebox
 	release
 	end
 
@@ -51,7 +52,8 @@ LIGHTHOUSE_2F_NPC_1_2:
 LIGHTHOUSE_2F_NPC_1_3:
 	lock
 	faceplayer
-	msgbox LIGHTHOUSE_2F_NPC_1_Text_1
+	namebox LIGHTHOUSE_2F_NPC_1_Text_1
+	msgbox LIGHTHOUSE_2F_NPC_1_Text_2
 	goto LIGHTHOUSE_2F_NPC_1_1
 
 
@@ -72,6 +74,7 @@ LIGHTHOUSE_2F_NPC_3::
 	msgbox LIGHTHOUSE_2F_NPC_3_Text_2
 LIGHTHOUSE_2F_NPC_3_1:
 	closemessage
+	hidenamebox
 	release
 	end
 
@@ -82,6 +85,7 @@ LIGHTHOUSE_2F_NPC_3_2:
 LIGHTHOUSE_2F_NPC_3_3:
 	lock
 	faceplayer
+	namebox LIGHTHOUSE_2F_NPC_1_Text_1
 	msgbox LIGHTHOUSE_2F_NPC_3_Text_1
 	goto LIGHTHOUSE_2F_NPC_3_1
 
@@ -114,8 +118,8 @@ LIGHTHOUSE_2F_NPC_5_2:
 LIGHTHOUSE_2F_NPC_6::
 	lock
 	faceplayer
-	namebox LIGHTHOUSE_2F_NPC_6_Text_0
-	msgbox LIGHTHOUSE_2F_NPC_6_Text_1
+	namebox LIGHTHOUSE_2F_NPC_1_Text_1
+	msgbox LIGHTHOUSE_2F_NPC_6_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -133,7 +137,7 @@ BATTLE_LIGHTHOUSE_2F_HAM::
 
 BATTLE_LIGHTHOUSE_2F_GUARD::
 	trainerbattle_single TRAINER_LIGHTHOUSE_2F_TRAINER_2, BATTLE_LIGHTHOUSE_2F_GUARD_Text_0, BATTLE_LIGHTHOUSE_2F_GUARD_Text_1
-	namebox LIGHTHOUSE_2F_NPC_6_Text_0
+	namebox LIGHTHOUSE_2F_NPC_1_Text_1
 	msgbox BATTLE_LIGHTHOUSE_2F_GUARD_Text_2
 	hidenamebox
 	release
@@ -145,13 +149,16 @@ LIGHTHOUSE_2F_NPC_1_Text_0:
 	.string "talk right now.$"
 
 LIGHTHOUSE_2F_NPC_1_Text_1:
+	.string "Jailer$"
+
+LIGHTHOUSE_2F_NPC_1_Text_2:
 	.string "Melzar…\p"
 	.string "Melzar…\p"
 	.string "Why does that name ring a bell?\p"
 	.string "Oh sorry I overheard some of H.A.M\n"
 	.string "talking about a guy named Melzar.$"
 
-LIGHTHOUSE_2F_NPC_1_Text_2:
+LIGHTHOUSE_2F_NPC_1_Text_3:
 	.string "Being a guard in Port Sarim is\n"
 	.string "exhausting!\p"
 	.string "Why?\p"
@@ -203,9 +210,6 @@ LIGHTHOUSE_2F_NPC_5_Text_2:
 	.string "…I don't know how to reply to this.$"
 
 LIGHTHOUSE_2F_NPC_6_Text_0:
-	.string "Jailer$"
-
-LIGHTHOUSE_2F_NPC_6_Text_1:
 	.string "This lighthouse is also acts as the jail.\p"
 	.string "That way we can guard both at the same\n"
 	.string "time.$"

@@ -827,6 +827,7 @@ script NPC_PORTSARIM_NPC_JAILGUARD
 {
 	lock
 	faceplayer
+    namebox ("Jailer")
     switch (var(VAR_POKESCAPE_STORYMODE_PROGRESS)){ 
             //HAM EVENT, PORT SARIM BOAT
             case 100:
@@ -836,10 +837,10 @@ script NPC_PORTSARIM_NPC_JAILGUARD
                 release
                 end
     }
-    //namebox ("NAME")
+    
 	msgbox(format("I am on my break, don't bother me."))
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }

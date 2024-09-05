@@ -1572,17 +1572,6 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_FALADOR_GYM_4),
     },
 
-    [TRAINER_FALADOR_GYM_AMIKVARZE] =
-    {
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
-        .trainerPic = TRAINER_PIC_sir_amik_varze,
-        .trainerName = _("AMIK VARZE"),
-        .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
-        .party = TRAINER_PARTY(sParty_FALADOR_GYM_AMIKVARZE),
-    },
 
     [TRAINER_FALADOR_HAIRDRESSER] =
     {
@@ -2128,17 +2117,6 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_BARBARIAN_GYM_TRAINER_3),
     },
 
-    [TRAINER_BARBARIAN_GYM_GUNTHOR] =
-    {
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
-        .trainerPic = TRAINER_PIC_gunthor,
-        .trainerName = _("GUNTHOR"),
-        .items = {ITEM_BREAD, ITEM_CAKE, ITEM_BLUEBERRY_SPECIAL, ITEM_POTION_ATT},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
-        .party = TRAINER_PARTY(sParty_BARBARIAN_GYM_GUNTHOR),
-    },
 
     // ROUTE13
     [TRAINER_ROUTE13_TRAINER_1] =
@@ -2640,17 +2618,6 @@ const struct Trainer gTrainers[] = {
     },
 
     //VARROCK GYM
-    [TRAINER_VARROCK_GYM_KINGROALD] =
-    {
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
-        .trainerPic = TRAINER_PIC_king_roald,
-        .trainerName = _("KING ROALD"),
-        .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_VARROCK_GYM_KINGROALD),
-    },
 
     [TRAINER_VARROCK_GYM_1] =
     {
@@ -2822,17 +2789,6 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_ROUTE29_TRAINER_5),
     },
 
-    [TRAINER_ALKHARID_GYM_PRINCE_ALI] =
-    {
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
-        .trainerPic = TRAINER_PIC_prince_ali,
-        .trainerName = _("PRINCE ALI"),
-        .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_ALKHARID_GYM_PRINCE_ALI),
-    },
 
     [TRAINER_BARROWS_GUTHAN] =
     {
@@ -3187,18 +3143,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_SCAPEINK),
     },
 
-    //GYM LEADERS
-    [TRAINER_LEADER_DUKE_1] =
-    {
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
-        .trainerPic = TRAINER_PIC_duke_horacio,
-        .trainerName = _("HORACIO"),
-        .items = {ITEM_BREAD, ITEM_NONE, ITEM_NONE, ITEM_NONE},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
-        .party = TRAINER_PARTY(sParty_LEADER_DUKE_1), 
-    },
+   
 
     [TRAINER_VARROCK_SEWERS_1F_TRAINER_1] =
     {
@@ -4595,17 +4540,6 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_VARROCK_TRAINING_ROOM_RUSHER),
     },
 
-    [TRAINER_DAEMONHEIM_GYM_THOK] =
-    {
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
-        .trainerPic = TRAINER_PIC_thok,
-        .trainerName = _("THOK"),
-        .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
-        .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
-        .party = TRAINER_PARTY(sParty_DAEMONHEIM_GYM_THOK),
-    },
 
     [TRAINER_DAEMONHEIM_GYM_TRAINER_1] =
     {
@@ -4634,7 +4568,161 @@ const struct Trainer gTrainers[] = {
 
 
 
+//GYM LEADERS
+    [TRAINER_LEADER_DUKE_1] =
+    {
+        .trainerClass = TRAINER_CLASS_LEADER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_duke_horacio,
+        .trainerName = _("Horacio"),
+        .items = {ITEM_BREAD, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_LEADER_DUKE_1), 
+    },
 
-
+    [TRAINER_GYM_LEADER_TZHAAR_CHAMPION_1] =
+    {
+        .trainerClass = TRAINER_CLASS_LEADER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_tzhaar,
+        .trainerName = _(""),
+        .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_GYM_LEADER_TZHAAR_CHAMPION_1),
+    },
+    
+    [TRAINER_GYM_LEADER_VANNAKA_1] =
+    {
+        .trainerClass = TRAINER_CLASS_LEADER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_vannaka,
+        .trainerName = _("Vannaka"),
+        .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_GYM_LEADER_VANNAKA_1),
+    },
+    
+    [TRAINER_FALADOR_GYM_AMIKVARZE] =
+    {
+        .trainerClass = TRAINER_CLASS_LEADER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_sir_amik_varze,
+        .trainerName = _("Amik Varze"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_FALADOR_GYM_AMIKVARZE),
+    },
+    
+    [TRAINER_BARBARIAN_GYM_GUNTHOR] =
+    {
+        .trainerClass = TRAINER_CLASS_LEADER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_gunthor,
+        .trainerName = _("Gunthor"),
+        .items = {ITEM_BREAD, ITEM_CAKE, ITEM_BLUEBERRY_SPECIAL, ITEM_POTION_ATT},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_BARBARIAN_GYM_GUNTHOR),
+    },
+    
+    [TRAINER_VARROCK_GYM_KINGROALD] =
+    {
+        .trainerClass = TRAINER_CLASS_LEADER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_king_roald,
+        .trainerName = _("King Roald"),
+        .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_VARROCK_GYM_KINGROALD),
+    },
+    
+    [TRAINER_ALKHARID_GYM_PRINCE_ALI] =
+    {
+        .trainerClass = TRAINER_CLASS_LEADER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_prince_ali,
+        .trainerName = _("Prince Ali"),
+        .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_ALKHARID_GYM_PRINCE_ALI),
+    },
+    
+    [TRAINER_DAEMONHEIM_GYM_THOK] =
+    {
+        .trainerClass = TRAINER_CLASS_LEADER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_thok,
+        .trainerName = _("Thok"),
+        .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_DAEMONHEIM_GYM_THOK),
+    },
+//ELITE4    
+    [TRAINER_ELITE4_SIR_TIFFY_1] =
+    {
+        .trainerClass = TRAINER_CLASS_ELITE_FOUR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_sir_tiffy,
+        .trainerName = _("Sir Tiffy"),
+        .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_ELITE4_SIR_TIFFY_1),
+    },
+    
+    [TRAINER_ELITE4_HAZELMERE_1] =
+    {
+        .trainerClass = TRAINER_CLASS_ELITE_FOUR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_hazelmere,
+        .trainerName = _("Hazelmere"),
+        .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_ELITE4_HAZELMERE_1),
+    },
+        
+    [TRAINER_ELITE4_ZANIK_1] =
+    {
+        .trainerClass = TRAINER_CLASS_ELITE_FOUR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_zanik,
+        .trainerName = _("Zanik"),
+        .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_ELITE4_ZANIK_1),
+    },
+        
+    [TRAINER_ELITE4_HANS_1] =
+    {
+        .trainerClass = TRAINER_CLASS_ELITE_FOUR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_hans,
+        .trainerName = _("Hans"),
+        .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_ELITE4_HANS_1),
+    },
+         
+    [TRAINER_CHAMPION_WISE_OLD_MAN_1] =
+    {
+        .trainerClass = TRAINER_CLASS_CHAMPION,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_wise_old_man_champion,
+        .trainerName = _("Dionysius"),
+        .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_CHAMPION_WISE_OLD_MAN_1),
+    },
 
 };

@@ -125,8 +125,8 @@ static const u8 sBattleTransitionTable_Wild[][2] =
 
 static const u8 sBattleTransitionTable_Trainer[][2] =
 {
-    [TRANSITION_TYPE_NORMAL] = {B_TRANSITION_POKEBALLS_TRAIL, B_TRANSITION_ANGLED_WIPES},
-    [TRANSITION_TYPE_CAVE]   = {B_TRANSITION_SHUFFLE,         B_TRANSITION_BIG_POKEBALL},
+    [TRANSITION_TYPE_NORMAL] = {B_TRANSITION_ANGLED_WIPES, B_TRANSITION_ANGLED_WIPES},
+    [TRANSITION_TYPE_CAVE]   = {B_TRANSITION_SHUFFLE,         B_TRANSITION_SHUFFLE},
     [TRANSITION_TYPE_FLASH]  = {B_TRANSITION_BLUR,            B_TRANSITION_GRID_SQUARES},
     [TRANSITION_TYPE_WATER]  = {B_TRANSITION_SWIRL,           B_TRANSITION_RIPPLE},
 };
@@ -836,22 +836,47 @@ u8 GetTrainerBattleTransition(void)
     if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
         return B_TRANSITION_CHAMPION;
 
+    if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_LEADER)
+    {
+        if (gTrainerBattleOpponent_A == TRAINER_LEADER_DUKE_1)
+            return B_TRANSITION_DUKE_HORACIO;
+        if (gTrainerBattleOpponent_A == TRAINER_FALADOR_GYM_AMIKVARZE)
+            return B_TRANSITION_SIR_AMIK_VARZE;
+        if (gTrainerBattleOpponent_A == TRAINER_GYM_LEADER_TZHAAR_CHAMPION_1)
+            return B_TRANSITION_TZHAAR_CHAMPION;
+        if (gTrainerBattleOpponent_A == TRAINER_ALKHARID_GYM_PRINCE_ALI)
+            return B_TRANSITION_PRINCE_ALI;
+        if (gTrainerBattleOpponent_A == TRAINER_VARROCK_GYM_KINGROALD)
+            return B_TRANSITION_KING_ROALD;
+        if (gTrainerBattleOpponent_A == TRAINER_GYM_LEADER_VANNAKA_1)
+            return B_TRANSITION_VANNAKA;
+        if (gTrainerBattleOpponent_A == TRAINER_DAEMONHEIM_GYM_THOK)
+            return B_TRANSITION_THOK;
+        if (gTrainerBattleOpponent_A == TRAINER_BARBARIAN_GYM_GUNTHOR)
+            return B_TRANSITION_GUNTHOR;
+    }
+
     if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_ELITE_FOUR)
     {
-        //if (gTrainerBattleOpponent_A == TRAINER_SIDNEY)
-        //    return B_TRANSITION_SIDNEY;
-        //if (gTrainerBattleOpponent_A == TRAINER_PHOEBE)
-        //    return B_TRANSITION_PHOEBE;
-        //if (gTrainerBattleOpponent_A == TRAINER_GLACIA)
-        //    return B_TRANSITION_GLACIA;
-        //if (gTrainerBattleOpponent_A == TRAINER_DRAKE)
-        //    return B_TRANSITION_DRAKE;
-        //return B_TRANSITION_CHAMPION;
+        if (gTrainerBattleOpponent_A == TRAINER_ELITE4_SIR_TIFFY_1)
+            return B_TRANSITION_SIR_TIFFY;
+        if (gTrainerBattleOpponent_A == TRAINER_ELITE4_HAZELMERE_1)
+            return B_TRANSITION_HAZELMERE;
+        if (gTrainerBattleOpponent_A == TRAINER_ELITE4_ZANIK_1)
+            return B_TRANSITION_ZANIK;
+        if (gTrainerBattleOpponent_A == TRAINER_ELITE4_HANS_1)
+            return B_TRANSITION_HANS;
+        if (gTrainerBattleOpponent_A == TRAINER_CHAMPION_WISE_OLD_MAN_1)
+            return B_TRANSITION_WISE_OLD_MAN;
     }
 
     if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_CHAMPION)
-        return B_TRANSITION_CHAMPION;
+    {
+        if (gTrainerBattleOpponent_A == TRAINER_CHAMPION_WISE_OLD_MAN_1)
+            return B_TRANSITION_WISE_OLD_MAN;
 
+        return B_TRANSITION_CHAMPION;
+    }
     if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_TEAM_MAGMA
         || gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_MAGMA_LEADER
         || gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_MAGMA_ADMIN)

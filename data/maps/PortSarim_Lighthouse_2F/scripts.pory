@@ -35,13 +35,14 @@ script LIGHTHOUSE_2F_STATE {
 //NPCS
 script LIGHTHOUSE_2F_NPC_1
 {
-    //namebox ("")
+    
     if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) { 
 	    msgbox(format("The guard is too engaged in battle to talk right now."))
     }
     elif (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 105) { 
         lock
 	    faceplayer
+        namebox ("Jailer")
         msgbox(format("Melzar…\pMelzar…\pWhy does that name ring a bell?\pOh sorry I overheard some of H.A.M talking about a guy named Melzar."))
     }
     else {
@@ -50,30 +51,28 @@ script LIGHTHOUSE_2F_NPC_1
         msgbox(format("Being a guard in Port Sarim is exhausting!\pWhy?\pBecause everything comes and goes from Port Sarim!\pWe have muggers, thieves, scammers, pirates, goblins if you can think of it we have it."))
     }
     closemessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
 
 script LIGHTHOUSE_2F_NPC_2
 {
-    //namebox ("")
 	msgbox(format("The H.A.M member is too busy battling the guard.\pYou really hope they're losing…"))
     closemessage
-    //hidenamebox
 	release
 	end
 }
 
 script LIGHTHOUSE_2F_NPC_3
 {
-    //namebox ("")
     if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) { 
 	    msgbox(format("The guard can't talk while battling!"))
     }
     elif (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 105) { 
         lock
 	    faceplayer
+        namebox ("Jailer")
         msgbox(format("You should go visit Rimmington to the east.\pThey throw the best house parties!"))
     }
     else {
@@ -82,17 +81,15 @@ script LIGHTHOUSE_2F_NPC_3
         msgbox(format("Your one of those MvM guys right?\pWe were approached by the MvM organization to see if we could adapt our jail into a gym.\pBut our captain didn't like the idea of the pirate Redbeard Frank being the gym leader."))
     }
     closemessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
 
 script LIGHTHOUSE_2F_NPC_4
 {
-    //namebox ("")
 	msgbox(format("You can hear the H.A.M member chuckling.\pThat's probably not a good sign."))
     closemessage
-    //hidenamebox
 	release
 	end
 }

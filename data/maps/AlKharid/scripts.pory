@@ -301,3 +301,87 @@ script NPC_ALKHARID_GENERALSTORE_2
     release
     end
 }
+
+
+
+
+
+script BATTLE_TEST_CUPHOLDER
+{
+    lock
+	faceplayer
+    msgbox(format("Hello I am Cupholder."))
+	playbgm (MUS_ENCOUNTER_ELITE_FOUR, FALSE)
+    msgbox(format("Let's battle!"))
+	trainerbattle_no_intro (TRAINER_LEADER_DUKE_1, format("I lost."))
+	msgbox(format("You win…"))
+	end
+}
+
+//GYM LEADERS
+script GYM_BATTLE_DUKE_HORACIO
+{
+    trainerbattle_no_intro(TRAINER_LEADER_DUKE_1, format("You beat me…\p…Congratulations!"))
+	return
+}
+script GYM_BATTLE_SIR_AMIK_VARZE
+{
+	trainerbattle_no_intro (TRAINER_FALADOR_GYM_AMIKVARZE, format("I lost."))
+	return
+}
+script GYM_BATTLE_PRINCE_ALI
+{
+	trainerbattle_no_intro (TRAINER_ALKHARID_GYM_PRINCE_ALI, format("I lost."))
+	return
+}
+script GYM_BATTLE_KING_ROALD
+{
+	trainerbattle_no_intro (TRAINER_VARROCK_GYM_KINGROALD, format("I lost."))
+	return
+}
+script GYM_BATTLE_THOK
+{
+	trainerbattle_no_intro (TRAINER_DAEMONHEIM_GYM_THOK, format("I lost."))
+	return
+}
+script GYM_BATTLE_GUNTHOR
+{
+	trainerbattle_no_intro (TRAINER_BARBARIAN_GYM_GUNTHOR, format("I lost."))
+	return
+}
+script GYM_BATTLE_VANNAKA
+{
+	trainerbattle_no_intro (TRAINER_GYM_LEADER_VANNAKA_1, format("I lost."))
+	return
+}
+script GYM_BATTLE_TZHAAR_CHAMPION
+{
+	trainerbattle_no_intro (TRAINER_GYM_LEADER_TZHAAR_CHAMPION_1, format("I lost."))
+	return
+}
+//ELITE4
+script ELITE4_BATTLE_ZANIK
+{
+	trainerbattle_no_intro (TRAINER_ELITE4_ZANIK_1, format("I lost."))
+	return
+}
+script ELITE4_BATTLE_HANS
+{
+	trainerbattle_no_intro (TRAINER_ELITE4_HANS_1, format("I lost."))
+	return
+}
+script ELITE4_BATTLE_HAZELMERE
+{
+	trainerbattle_no_intro (TRAINER_ELITE4_HAZELMERE_1, format("I lost."))
+	return
+}
+script ELITE4_BATTLE_SIR_TIFFY_CASHIEN
+{
+	trainerbattle_no_intro (TRAINER_ELITE4_SIR_TIFFY_1, format("I lost."))
+	return
+}
+script CHAMPION_BATTLE_WISE_OLD_MAN
+{
+	trainerbattle_no_intro (TRAINER_CHAMPION_WISE_OLD_MAN_1, format("I lost."))
+	return
+}

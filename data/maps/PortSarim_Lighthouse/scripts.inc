@@ -71,18 +71,16 @@ LIGHTHOUSE_NPC_1::
 LIGHTHOUSE_NPC_2::
 	lock
 	faceplayer
-	namebox LIGHTHOUSE_NPC_2_Text_0
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 100
 	goto_if_eq LIGHTHOUSE_NPC_2_2
-	msgbox LIGHTHOUSE_NPC_2_Text_2
+	msgbox LIGHTHOUSE_NPC_2_Text_1
 LIGHTHOUSE_NPC_2_1:
 	closemessage
-	hidenamebox
 	release
 	end
 
 LIGHTHOUSE_NPC_2_2:
-	msgbox LIGHTHOUSE_NPC_2_Text_1
+	msgbox LIGHTHOUSE_NPC_2_Text_0
 	goto LIGHTHOUSE_NPC_2_1
 
 
@@ -235,13 +233,10 @@ LIGHTHOUSE_NPC_1_Text_1:
 	.string "in here!$"
 
 LIGHTHOUSE_NPC_2_Text_0:
-	.string "Skeleton$"
-
-LIGHTHOUSE_NPC_2_Text_1:
 	.string "The skeleton chuckles at all of the\n"
 	.string "commotion.$"
 
-LIGHTHOUSE_NPC_2_Text_2:
+LIGHTHOUSE_NPC_2_Text_1:
 	.string "The skeleton says, Nothing interesting\n"
 	.string "happens.$"
 
@@ -255,7 +250,7 @@ LIGHTHOUSE_NPC_3_Text_1:
 	.string "outside…$"
 
 LIGHTHOUSE_NPC_4_Text_0:
-	.string "BLACK KNIGHT$"
+	.string "Black knight$"
 
 LIGHTHOUSE_NPC_4_Text_1:
 	.string "Oi!\p"
