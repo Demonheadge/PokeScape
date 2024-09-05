@@ -534,6 +534,17 @@ extern const u32 gTrainerFrontPic_hazelmere[];
 extern const u32 gTrainerFrontPic_sir_tiffy[];
 extern const u32 gTrainerFrontPic_zanik_caves[];
 extern const u32 gTrainerFrontPic_zanik_ham[];
+extern const u32 gTrainerFrontPic_celestial[];
+extern const u32 gTrainerFrontPic_dungeoneering_rusher[];
+extern const u32 gTrainerFrontPic_edimmu[];
+extern const u32 gTrainerFrontPic_forgotten_warrior_novice[];
+extern const u32 gTrainerFrontPic_primal[];
+extern const u32 gTrainerFrontPic_mrkalius[];
+extern const u32 gTrainerFrontPic_twisted[];
+extern const u32 gTrainerFrontPic_thok_gymleader[];
+extern const u32 gTrainerFrontPic_zanik_e4[];
+extern const u32 gTrainerFrontPic_worldguardian[];
+extern const u32 gTrainerFrontPic_sagittarian[];
 
 //POKESCAPE PALETTES
 extern const u32 gTrainerPalette_a_nub_tot[];
@@ -688,6 +699,17 @@ extern const u32 gTrainerPalette_hazelmere[];
 extern const u32 gTrainerPalette_sir_tiffy[];
 extern const u32 gTrainerPalette_zanik_caves[];
 extern const u32 gTrainerPalette_zanik_ham[];
+extern const u32 gTrainerPalette_celestial[];
+extern const u32 gTrainerPalette_dungeoneering_rusher[];
+extern const u32 gTrainerPalette_edimmu[];
+extern const u32 gTrainerPalette_forgotten_warrior_novice[];
+extern const u32 gTrainerPalette_primal[];
+extern const u32 gTrainerPalette_mrkalius[];
+extern const u32 gTrainerPalette_twisted[];
+extern const u32 gTrainerPalette_thok_gymleader[];
+extern const u32 gTrainerPalette_zanik_e4[];
+extern const u32 gTrainerPalette_worldguardian[];
+extern const u32 gTrainerPalette_sagittarian[];
 
 // pokeblock
 extern const u32 gMenuPokeblock_Gfx[];

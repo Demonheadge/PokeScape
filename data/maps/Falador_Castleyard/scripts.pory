@@ -419,7 +419,7 @@ script NPC_FALADORCASTLE_GYM_SIRAMIKVARZE {
     	}
         msgbox(format("Welcome to Falador Castle.\pI, Sir Amik Varze am the Falador Gym Leader.\p I will be your opponent for this match.\pAre you ready? "))
         hidenamebox
-        trainerbattle_no_intro(TRAINER_FALADOR_GYM_AMIKVARZE, msgbox(format("Count me impressed, have you considered joining the White Knights?")))
+        call(GYM_BATTLE_SIR_AMIK_VARZE)
         msgbox(format("I am impressed!\pYou have shown me so much potential I must give you this badge."))
         playfanfare(MUS_PS_QUEST_COMPLETE)
         msgbox(format("{PLAYER} received the Falador BADGE from Sir Amik Varze."))

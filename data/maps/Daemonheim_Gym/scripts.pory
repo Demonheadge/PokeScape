@@ -32,7 +32,7 @@ script DAEMONHEIM_GYM_THOK {
     if (!flag(FLAG_BADGE06_GET)){   //if you do not have the badge.
         msgbox(format("Welcome to the Daemonheim Gym.\pI am Thok."))
         hidenamebox
-        trainerbattle_no_intro(TRAINER_ALKHARID_GYM_PRINCE_ALI, msgbox(format("CUPHOLDER")))
+        call(GYM_BATTLE_THOK)
         namebox("Thok")
         msgbox(format("Have this Badge."))
         hidenamebox

@@ -411,7 +411,7 @@ NPC_FALADORCASTLE_GYM_SIRAMIKVARZE::
 	faceplayer
 	namebox NPC_FALADORCASTLE_QUEST_PART_4_Text_0
 	goto_if_unset FLAG_BADGE02_GET, NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_2
-	msgbox NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_7
+	msgbox NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_6
 	hidenamebox
 	release
 	end
@@ -422,19 +422,19 @@ NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_2:
 NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_4:
 	msgbox NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_1
 	hidenamebox
-	trainerbattle_no_intro TRAINER_FALADOR_GYM_AMIKVARZE, NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_2
-	msgbox NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_3
+	call GYM_BATTLE_SIR_AMIK_VARZE
+	msgbox NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_2
 	playfanfare MUS_PS_QUEST_COMPLETE
-	msgbox NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_4
+	msgbox NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_3
 	waitfanfare
 	waitmessage
-	msgbox NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_5
+	msgbox NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_4
 	hidenamebox
 	giveitem ITEM_TM07, 1
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
 	namebox NPC_FALADORCASTLE_QUEST_PART_4_Text_0
-	msgbox NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_6
+	msgbox NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_5
 	closemessage
 	hidenamebox
 	setvar VAR_POKESCAPE_FALADOR_STATE, 5
@@ -1188,28 +1188,24 @@ NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_1:
 	.string "Are you ready?$"
 
 NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_2:
-	.string "Count me impressed, have you\n"
-	.string "considered joining the White Knights?$"
-
-NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_3:
 	.string "I am impressed!\p"
 	.string "You have shown me so much potential I\n"
 	.string "must give you this badge.$"
 
-NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_4:
+NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_3:
 	.string "{PLAYER} received the Falador BADGE\n"
 	.string "from Sir Amik Varze.$"
 
-NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_5:
+NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_4:
 	.string "Also have this, it is my favourite move.$"
 
-NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_6:
+NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_5:
 	.string "That move is called Razor Shell, it is a\n"
 	.string "very sharp move.\p"
 	.string "Hopefully it will help you on your\n"
 	.string "journey.$"
 
-NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_7:
+NPC_FALADORCASTLE_GYM_SIRAMIKVARZE_Text_6:
 	.string "I recommend that you make your way to\n"
 	.string "Al Kharid or Varrock for your next MvM\l"
 	.string "gym challenge.\p"

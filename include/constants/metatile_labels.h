@@ -134,6 +134,16 @@
 #define METATILE_Cave_ShoalCave_DirtPile_Large           0x358
 #define METATILE_Cave_ShoalCave_DirtPile_Small           0x35A
 
+// gTileset_ChaosTunnels
+#define METATILE_ChaosTunnels_E4_CAVE_ENTER_1       0x20B
+#define METATILE_ChaosTunnels_E4_CAVE_ENTER_2       0x20C
+#define METATILE_ChaosTunnels_E4_CAVE_ENTER_3       0x20D
+#define METATILE_ChaosTunnels_E4_CAVE_TOP_M         0x209
+#define METATILE_ChaosTunnels_E4_CRACKED_TILE       0x201
+#define METATILE_ChaosTunnels_E4_CRACKED_WARP_DOWN  0x204
+#define METATILE_ChaosTunnels_E4_OPEN_DOOR_BOTTOM   0x22C
+#define METATILE_ChaosTunnels_E4_OPEN_DOOR_TOP      0x224
+
 // gTileset_Contest
 #define METATILE_Contest_CounterFlap_Bottom  0x2D9
 #define METATILE_Contest_CounterFlap_Top     0x2D1

@@ -249,7 +249,7 @@ script EDGEVILLE_GYM_START {
 
 
 script EDGEVILLE_GYM_BATTLE_VANNAKA {
-		trainerbattle_no_intro(TRAINER_ALKHARID_GYM_PRINCE_ALI, msgbox(format("That was a very enjoyable battle!")))
+		call(GYM_BATTLE_VANNAKA)
 		if (var(VAR_RESULT) == B_OUTCOME_LOST) { //If lost gym battle.
 			setvar(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST, 20)
 			end

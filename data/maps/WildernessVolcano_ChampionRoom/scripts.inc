@@ -17,7 +17,11 @@ WILDERNESS_CRATER_SIR_TIFFY::
 	faceplayer
 	namebox WILDERNESS_CRATER_SIR_TIFFY_Text_0
 	msgbox WILDERNESS_CRATER_SIR_TIFFY_Text_1
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	call ELITE4_BATTLE_SIR_TIFFY_CASHIEN
+	msgbox WILDERNESS_CRATER_SIR_TIFFY_Text_2
 	hidenamebox
+	call WILDERNESS_VOLCANO_ROOM_1_OpenNextRoom
 	release
 	end
 
@@ -27,6 +31,8 @@ WILDERNESS_CRATER_HAZELMARE::
 	faceplayer
 	namebox WILDERNESS_CRATER_HAZELMARE_Text_0
 	msgbox WILDERNESS_CRATER_HAZELMARE_Text_1
+	call ELITE4_BATTLE_HAZELMERE
+	msgbox WILDERNESS_CRATER_SIR_TIFFY_Text_2
 	hidenamebox
 	release
 	end
@@ -37,6 +43,8 @@ WILDERNESS_CRATER_HANS::
 	faceplayer
 	namebox WILDERNESS_CRATER_HANS_Text_0
 	msgbox WILDERNESS_CRATER_HANS_Text_1
+	call ELITE4_BATTLE_HANS
+	msgbox WILDERNESS_CRATER_SIR_TIFFY_Text_2
 	hidenamebox
 	release
 	end
@@ -47,6 +55,8 @@ WILDERNESS_CRATER_ZANIK::
 	faceplayer
 	namebox WILDERNESS_CRATER_ZANIK_Text_0
 	msgbox WILDERNESS_CRATER_ZANIK_Text_1
+	call ELITE4_BATTLE_ZANIK
+	msgbox WILDERNESS_CRATER_SIR_TIFFY_Text_2
 	hidenamebox
 	release
 	end
@@ -57,6 +67,8 @@ WILDERNESS_CRATER_WISEOLDMAN::
 	faceplayer
 	namebox WILDERNESS_CRATER_WISEOLDMAN_Text_0
 	msgbox WILDERNESS_CRATER_WISEOLDMAN_Text_1
+	call ELITE4_BATTLE_SIR_TIFFY_CASHIEN
+	msgbox WILDERNESS_CRATER_WISEOLDMAN_Text_2
 	hidenamebox
 	release
 	end
@@ -77,9 +89,12 @@ WILDERNESS_CRATER_SIR_TIFFY_Text_0:
 
 WILDERNESS_CRATER_SIR_TIFFY_Text_1:
 	.string "Hello {PLAYER}. I've heard a lot of\n"
-	.string "good things about you. I am looking\l"
-	.string "forward to this battle! I am number 1 in\l"
-	.string "your challenge.$"
+	.string "good things about you.\p"
+	.string "I am looking forward to this battle!\p"
+	.string "I am number 1 in your challenge.$"
+
+WILDERNESS_CRATER_SIR_TIFFY_Text_2:
+	.string "You won, go through to the next room.$"
 
 WILDERNESS_CRATER_HAZELMARE_Text_0:
 	.string "Hazelmare$"
@@ -112,3 +127,6 @@ WILDERNESS_CRATER_WISEOLDMAN_Text_1:
 	.string "You must be strong to make it here.\n"
 	.string "Lets do it. If not I'll just take all your\l"
 	.string "party hats.$"
+
+WILDERNESS_CRATER_WISEOLDMAN_Text_2:
+	.string "You won, YOU ARE THE CHAMPION!$"

@@ -260,6 +260,17 @@
 #define TRAINER_PIC_sir_tiffy			        239
 #define TRAINER_PIC_zanik_caves			        240
 #define TRAINER_PIC_zanik_ham			        241
+#define TRAINER_PIC_celestial				    242
+#define TRAINER_PIC_dungeoneering_rusher        243
+#define TRAINER_PIC_edimmu				        244
+#define TRAINER_PIC_forgotten_warrior_novice    245
+#define TRAINER_PIC_primal				        246
+#define TRAINER_PIC_mrkalius				    247
+#define TRAINER_PIC_twisted				        248
+#define TRAINER_PIC_thok_gymleader				249
+#define TRAINER_PIC_zanik_e4				    250
+#define TRAINER_PIC_worldguardian				251
+#define TRAINER_PIC_sagittarian				    252
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

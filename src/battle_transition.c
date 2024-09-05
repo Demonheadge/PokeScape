@@ -605,10 +605,10 @@ static const u8 sMugshotsTrainerPicIDsTable[MUGSHOTS_COUNT] =
     [MUGSHOT_PRINCE_ALI] = TRAINER_PIC_prince_ali,
     [MUGSHOT_KING_ROALD] = TRAINER_PIC_king_roald,
     [MUGSHOT_VANNAKA] = TRAINER_PIC_vannaka,
-    [MUGSHOT_THOK] = TRAINER_PIC_thok,
+    [MUGSHOT_THOK] = TRAINER_PIC_thok_gymleader,
     [MUGSHOT_SIR_TIFFY] = TRAINER_PIC_sir_tiffy,
     [MUGSHOT_HAZELMERE] = TRAINER_PIC_hazelmere,
-    [MUGSHOT_ZANIK] = TRAINER_PIC_zanik,
+    [MUGSHOT_ZANIK] = TRAINER_PIC_zanik_e4,
     [MUGSHOT_HANS] = TRAINER_PIC_hans,
     [MUGSHOT_WISE_OLD_MAN] = TRAINER_PIC_wise_old_man_champion,
 };

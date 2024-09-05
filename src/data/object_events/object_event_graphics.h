@@ -887,7 +887,7 @@ const u16 gObjectEventPalette_Saradomin[] = INCBIN_U16("graphics/object_events/p
 const u16 gObjectEventPalette_Zamorak[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/zamorak.gbapal");
 const u16 gObjectEventPalette_Guthix[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/guthix.gbapal");
 */
-const u16 gObjectEventPalette_Ava[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/ava.gbapal");
+//const u16 gObjectEventPalette_Ava[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/ava.gbapal");
 const u16 gObjectEventPalette_Reldo[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/reldo.gbapal");
 const u16 gObjectEventPalette_Max[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/max.gbapal");
 const u16 gObjectEventPalette_Sir_Owen[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/sir_owen.gbapal");
@@ -998,6 +998,7 @@ const u16 gObjectEventPalette_DUNGEONEERING[] = INCBIN_U16("graphics/object_even
 const u16 gObjectEventPalette_VORKATH[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/vorkath.gbapal");
 const u16 gObjectEventPalette_LEGEND_GREEN[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/Legend_Green.gbapal");
 const u16 gObjectEventPalette_PENGUINS[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/PENGUINS.gbapal");
+const u16 gObjectEventPalette_AVA_THOK[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/AVA_THOK.gbapal");
 /*
 const u16 gObjectEventPalette_RAC_BATS[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/rac_bats.gbapal");
 const u16 gObjectEventPalette_RAC_DRAGON[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/rac_dragon.gbapal");

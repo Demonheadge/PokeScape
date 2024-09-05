@@ -807,7 +807,7 @@ VARROCK_GYM_KINGROALD::
 	namebox VARROCK_GYM_KINGROALD_Text_0
 	goto_if_unset FLAG_BADGE03_GET, VARROCK_GYM_KINGROALD_2
 	goto_if_set FLAG_BADGE04_GET, VARROCK_GYM_KINGROALD_5
-	msgbox VARROCK_GYM_KINGROALD_Text_8
+	msgbox VARROCK_GYM_KINGROALD_Text_7
 VARROCK_GYM_KINGROALD_4:
 	hidenamebox
 	release
@@ -816,16 +816,16 @@ VARROCK_GYM_KINGROALD_4:
 VARROCK_GYM_KINGROALD_2:
 	msgbox VARROCK_GYM_KINGROALD_Text_1
 	hidenamebox
-	trainerbattle_no_intro TRAINER_VARROCK_GYM_KINGROALD, VARROCK_GYM_KINGROALD_Text_2
+	call GYM_BATTLE_KING_ROALD
 	namebox VARROCK_GYM_KINGROALD_Text_0
-	msgbox VARROCK_GYM_KINGROALD_Text_3
+	msgbox VARROCK_GYM_KINGROALD_Text_2
 	hidenamebox
 	playfanfare MUS_PS_QUEST_COMPLETE
-	msgbox VARROCK_GYM_KINGROALD_Text_4
+	msgbox VARROCK_GYM_KINGROALD_Text_3
 	waitfanfare
 	waitmessage
 	namebox VARROCK_GYM_KINGROALD_Text_0
-	msgbox VARROCK_GYM_KINGROALD_Text_5
+	msgbox VARROCK_GYM_KINGROALD_Text_4
 	hidenamebox
 	giveitem ITEM_TM20, 1
 	compare VAR_RESULT, FALSE
@@ -833,7 +833,7 @@ VARROCK_GYM_KINGROALD_2:
 	playbgm MUS_PS_VARROCK, 0
 	savebgm MUS_PS_VARROCK
 	namebox VARROCK_GYM_KINGROALD_Text_0
-	msgbox VARROCK_GYM_KINGROALD_Text_6
+	msgbox VARROCK_GYM_KINGROALD_Text_5
 	setvar VAR_POKESCAPE_VARROCK_GYM_QUEST, 26
 	setflag FLAG_BADGE03_GET
 	addvar VAR_GAMEMODE_LEVEL_SCALING, 1
@@ -843,7 +843,7 @@ VARROCK_GYM_KINGROALD_2:
 	end
 
 VARROCK_GYM_KINGROALD_5:
-	msgbox VARROCK_GYM_KINGROALD_Text_7
+	msgbox VARROCK_GYM_KINGROALD_Text_6
 	goto VARROCK_GYM_KINGROALD_4
 
 
@@ -1228,35 +1228,32 @@ VARROCK_GYM_KINGROALD_Text_1:
 	.string "show me what you can do.$"
 
 VARROCK_GYM_KINGROALD_Text_2:
-	.string "That was a very enjoyable battle!$"
-
-VARROCK_GYM_KINGROALD_Text_3:
 	.string "I must say, I quite enjoyed that battle\n"
 	.string "we just had.\p"
 	.string "I want to say it's the most enjoyment\n"
 	.string "I've had in years.\p"
 	.string "Here I believe you have earnt this.$"
 
-VARROCK_GYM_KINGROALD_Text_4:
+VARROCK_GYM_KINGROALD_Text_3:
 	.string "{PLAYER} received the Varrock BADGE\n"
 	.string "from King Roald.$"
 
-VARROCK_GYM_KINGROALD_Text_5:
+VARROCK_GYM_KINGROALD_Text_4:
 	.string "Also have this Scroll.$"
 
-VARROCK_GYM_KINGROALD_Text_6:
+VARROCK_GYM_KINGROALD_Text_5:
 	.string "That move is called Draining Kiss, my\n"
 	.string "Queen uses it on me all the time and it\l"
 	.string "is always super effective.\p"
 	.string "Hopefully it will be of more use to you\n"
 	.string "than on me.$"
 
-VARROCK_GYM_KINGROALD_Text_7:
+VARROCK_GYM_KINGROALD_Text_6:
 	.string "You seem like you would be strong\n"
 	.string "enough to take on the Barbarians,\l"
 	.string "maybe you should head there next for\l"
 	.string "your MvM gym challenge.$"
 
-VARROCK_GYM_KINGROALD_Text_8:
+VARROCK_GYM_KINGROALD_Text_7:
 	.string "You should go pester the Prince in Al\n"
 	.string "Kharid for your next MvM gym challenge.$"

@@ -239,7 +239,7 @@ script ALKHARID_GYM_ALI {
 
         msgbox(format("Welcome to the Al Kharid Gym."))
         hidenamebox
-        trainerbattle_no_intro(TRAINER_ALKHARID_GYM_PRINCE_ALI, msgbox(format("That was a very enjoyable battle!")))
+        call(GYM_BATTLE_PRINCE_ALI)
         namebox("Prince Ali")
         msgbox(format("Have this Badge."))
         hidenamebox

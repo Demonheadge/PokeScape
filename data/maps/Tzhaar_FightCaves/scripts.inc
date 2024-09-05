@@ -51,7 +51,7 @@ NPC_TZHAAR_GYM_TOKHAAR_7:
 	goto NPC_TZHAAR_GYM_TOKHAAR_1
 
 NPC_TZHAAR_GYM_TOKHAAR_8:
-	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_13
+	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_12
 	goto NPC_TZHAAR_GYM_TOKHAAR_1
 
 NPC_TZHAAR_GYM_TOKHAAR_9:
@@ -62,16 +62,16 @@ NPC_TZHAAR_GYM_TOKHAAR_9:
 NPC_TZHAAR_GYM_TOKHAAR_11:
 	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_7
 	hidenamebox
-	trainerbattle_no_intro TRAINER_ALKHARID_GYM_PRINCE_ALI, NPC_TZHAAR_GYM_TOKHAAR_Text_8
+	CALL GYM_BATTLE_TZHAAR_CHAMPION
 	namebox NPC_TZHAAR_GYM_TOKHAAR_Text_0
-	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_9
+	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_8
 	hidenamebox
 	playfanfare MUS_PS_QUEST_COMPLETE
-	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_10
+	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_9
 	waitfanfare
 	waitmessage
 	namebox NPC_TZHAAR_GYM_TOKHAAR_Text_0
-	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_11
+	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_10
 	hidenamebox
 	giveitem ITEM_TM48, 1
 	compare VAR_RESULT, FALSE
@@ -79,7 +79,7 @@ NPC_TZHAAR_GYM_TOKHAAR_11:
 	playbgm MUS_PS_ALKHARID, 0
 	savebgm MUS_PS_ALKHARID
 	namebox NPC_TZHAAR_GYM_TOKHAAR_Text_0
-	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_12
+	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_11
 	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 30
 	setflag FLAG_BADGE05_GET
 	addvar VAR_GAMEMODE_LEVEL_SCALING, 1
@@ -264,26 +264,23 @@ NPC_TZHAAR_GYM_TOKHAAR_Text_7:
 	.string "Very well. Show me what you got.$"
 
 NPC_TZHAAR_GYM_TOKHAAR_Text_8:
-	.string "That was a very enjoyable battle!$"
-
-NPC_TZHAAR_GYM_TOKHAAR_Text_9:
 	.string "You have done very well.\p"
 	.string "To mark your triumph, accept a gym\n"
 	.string "badge.$"
 
-NPC_TZHAAR_GYM_TOKHAAR_Text_10:
+NPC_TZHAAR_GYM_TOKHAAR_Text_9:
 	.string "{PLAYER} received the TZHAAR BADGE\n"
 	.string "from TokHaar-Hok.$"
 
-NPC_TZHAAR_GYM_TOKHAAR_Text_11:
+NPC_TZHAAR_GYM_TOKHAAR_Text_10:
 	.string "Also have this Scroll.$"
 
-NPC_TZHAAR_GYM_TOKHAAR_Text_12:
+NPC_TZHAAR_GYM_TOKHAAR_Text_11:
 	.string "That move is called Power Gem.\p"
 	.string "It sparkles just as all our precious\n"
 	.string "Gems around the palace do.$"
 
-NPC_TZHAAR_GYM_TOKHAAR_Text_13:
+NPC_TZHAAR_GYM_TOKHAAR_Text_12:
 	.string "Hello again.$"
 
 NPC_TZHAAR_GYM_WAVE_1_Text_0:

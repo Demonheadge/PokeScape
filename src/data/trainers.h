@@ -4545,7 +4545,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_FORGOTTEN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
-        .trainerPic = TRAINER_PIC_a_nub_tot,
+        .trainerPic = TRAINER_PIC_primal,
         .trainerName = _("Telmomarque"),
         .items = {},
         .doubleBattle = FALSE,
@@ -4657,7 +4657,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
-        .trainerPic = TRAINER_PIC_thok,
+        .trainerPic = TRAINER_PIC_thok_gymleader,
         .trainerName = _("Thok"),
         .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
         .doubleBattle = FALSE,
@@ -4693,7 +4693,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
-        .trainerPic = TRAINER_PIC_zanik,
+        .trainerPic = TRAINER_PIC_zanik_e4,
         .trainerName = _("Zanik"),
         .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
         .doubleBattle = FALSE,

@@ -326,7 +326,7 @@ script GYM_BATTLE_DUKE_HORACIO
 }
 script GYM_BATTLE_SIR_AMIK_VARZE
 {
-	trainerbattle_no_intro (TRAINER_FALADOR_GYM_AMIKVARZE, format("I lost."))
+    trainerbattle_no_intro(TRAINER_FALADOR_GYM_AMIKVARZE, format("Count me impressed, have you considered joining the White Knights?"))
 	return
 }
 script GYM_BATTLE_PRINCE_ALI
@@ -336,7 +336,7 @@ script GYM_BATTLE_PRINCE_ALI
 }
 script GYM_BATTLE_KING_ROALD
 {
-	trainerbattle_no_intro (TRAINER_VARROCK_GYM_KINGROALD, format("I lost."))
+    trainerbattle_no_intro(TRAINER_VARROCK_GYM_KINGROALD, format("That was a very enjoyable battle!"))
 	return
 }
 script GYM_BATTLE_THOK
@@ -346,7 +346,7 @@ script GYM_BATTLE_THOK
 }
 script GYM_BATTLE_GUNTHOR
 {
-	trainerbattle_no_intro (TRAINER_BARBARIAN_GYM_GUNTHOR, format("I lost."))
+    trainerbattle_no_intro(TRAINER_BARBARIAN_GYM_GUNTHOR, msgbox(format("ARAGGHHHARH!\pBattles like this is what I live for and why I decided to become a Gym Leader!")))
 	return
 }
 script GYM_BATTLE_VANNAKA

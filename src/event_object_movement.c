@@ -557,7 +557,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_STRAVEN 0x1201
 #define OBJ_EVENT_PAL_EXPLORER_JACK 0x1202
 #define OBJ_EVENT_PAL_FORTUNATO 0x1203
-#define OBJ_EVENT_PAL_AVA 0x1207
+//#define OBJ_EVENT_PAL_AVA 0x1207
 #define OBJ_EVENT_PAL_RELDO 0x1208
 #define OBJ_EVENT_PAL_MAX 0x1209
 #define OBJ_EVENT_PAL_SIR_OWEN 0x120A
@@ -658,7 +658,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_BARROWS			0x1269
 
 #define OBJ_EVENT_PAL_SMUGGLER			0x126A
-//RAC
+
 #define OBJ_EVENT_PAL_RAC_PALETTE_1		0x126B
 #define OBJ_EVENT_PAL_RAC_PALETTE_2		0x126C
 #define OBJ_EVENT_PAL_RAC_PALETTE_3		0x126D
@@ -672,6 +672,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_DUNGEONEERING     0x1275
 #define OBJ_EVENT_PAL_VORKATH           0x1276
 #define OBJ_EVENT_PAL_GOBLIN_GREEN		0x1277
+#define OBJ_EVENT_PAL_AVA_THOK          0x1207
 
 
 
@@ -864,7 +865,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Zamorak, OBJ_EVENT_PAL_ZAMORAK},
     {gObjectEventPalette_Guthix, OBJ_EVENT_PAL_GUTHIX},
     */
-    {gObjectEventPalette_Ava, OBJ_EVENT_PAL_AVA},
+    //{gObjectEventPalette_Ava, OBJ_EVENT_PAL_AVA},
     {gObjectEventPalette_Reldo, OBJ_EVENT_PAL_RELDO},
     {gObjectEventPalette_Max, OBJ_EVENT_PAL_MAX},
     {gObjectEventPalette_Sir_Owen, OBJ_EVENT_PAL_SIR_OWEN},
@@ -1014,6 +1015,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_VORKATH, OBJ_EVENT_PAL_VORKATH},
     {gObjectEventPalette_LEGEND_GREEN, OBJ_EVENT_PAL_LEGEND_GREEN},
     {gObjectEventPalette_PENGUINS, OBJ_EVENT_PAL_PENGUINS},
+    {gObjectEventPalette_AVA_THOK, OBJ_EVENT_PAL_AVA_THOK},
     
     /*
     {gObjectEventPalette_RAC_BATS, OBJ_EVENT_PAL_RAC_BATS},

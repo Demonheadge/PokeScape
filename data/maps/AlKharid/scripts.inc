@@ -251,7 +251,7 @@ GYM_BATTLE_DUKE_HORACIO::
 
 
 GYM_BATTLE_SIR_AMIK_VARZE::
-	trainerbattle_no_intro TRAINER_FALADOR_GYM_AMIKVARZE, BATTLE_TEST_CUPHOLDER_Text_2
+	trainerbattle_no_intro TRAINER_FALADOR_GYM_AMIKVARZE, GYM_BATTLE_SIR_AMIK_VARZE_Text_0
 	return
 
 
@@ -261,7 +261,7 @@ GYM_BATTLE_PRINCE_ALI::
 
 
 GYM_BATTLE_KING_ROALD::
-	trainerbattle_no_intro TRAINER_VARROCK_GYM_KINGROALD, BATTLE_TEST_CUPHOLDER_Text_2
+	trainerbattle_no_intro TRAINER_VARROCK_GYM_KINGROALD, GYM_BATTLE_KING_ROALD_Text_0
 	return
 
 
@@ -271,7 +271,7 @@ GYM_BATTLE_THOK::
 
 
 GYM_BATTLE_GUNTHOR::
-	trainerbattle_no_intro TRAINER_BARBARIAN_GYM_GUNTHOR, BATTLE_TEST_CUPHOLDER_Text_2
+	trainerbattle_no_intro TRAINER_BARBARIAN_GYM_GUNTHOR, GYM_BATTLE_GUNTHOR_Text_0
 	return
 
 
@@ -457,3 +457,15 @@ BATTLE_TEST_CUPHOLDER_Text_3:
 GYM_BATTLE_DUKE_HORACIO_Text_0:
 	.string "You beat me…\p"
 	.string "…Congratulations!$"
+
+GYM_BATTLE_SIR_AMIK_VARZE_Text_0:
+	.string "Count me impressed, have you\n"
+	.string "considered joining the White Knights?$"
+
+GYM_BATTLE_KING_ROALD_Text_0:
+	.string "That was a very enjoyable battle!$"
+
+GYM_BATTLE_GUNTHOR_Text_0:
+	.string "ARAGGHHHARH!\p"
+	.string "Battles like this is what I live for and\n"
+	.string "why I decided to become a Gym Leader!$"

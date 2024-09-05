@@ -7047,7 +7047,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fortunato = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Ava = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_AVA,
+    .paletteTag = OBJ_EVENT_PAL_AVA_THOK,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -10108,7 +10108,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_wizard_zamorak = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_thok_angry = {
 	.tileTag = TAG_NONE,
-	.paletteTag =  OBJ_EVENT_PAL_SMUGGLER,
+	.paletteTag =  OBJ_EVENT_PAL_AVA_THOK,
 	.reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
 	.size = 256,
 	.width = 16,

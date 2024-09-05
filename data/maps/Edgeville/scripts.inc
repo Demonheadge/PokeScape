@@ -217,18 +217,18 @@ EDGEVILLE_GYM_START_17:
 
 
 EDGEVILLE_GYM_BATTLE_VANNAKA::
-	trainerbattle_no_intro TRAINER_ALKHARID_GYM_PRINCE_ALI, EDGEVILLE_GYM_BATTLE_VANNAKA_Text_0
+	call GYM_BATTLE_VANNAKA
 	compare VAR_RESULT, B_OUTCOME_LOST
 	goto_if_eq EDGEVILLE_GYM_BATTLE_VANNAKA_2
 	namebox NPC_EDGEVILLE_VANNAKA_SLAYER_MASTER_Text_0
-	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_1
+	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_0
 	hidenamebox
 	playfanfare MUS_PS_QUEST_COMPLETE
-	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_2
+	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_1
 	waitfanfare
 	waitmessage
 	namebox NPC_EDGEVILLE_VANNAKA_SLAYER_MASTER_Text_0
-	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_3
+	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_2
 	hidenamebox
 	giveitem ITEM_TM48, 1
 	compare VAR_RESULT, FALSE
@@ -236,17 +236,17 @@ EDGEVILLE_GYM_BATTLE_VANNAKA::
 	playfanfare MUS_PS_QUEST_COMPLETE
 	setvar VAR_0x8004, 12
 	special GiveFrontierBattlePoints
-	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_4
+	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_3
 	waitmessage
 	waitfanfare
 	closemessage
 	namebox NPC_EDGEVILLE_VANNAKA_SLAYER_MASTER_Text_0
-	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_5
+	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_4
 	setvar VAR_POKESCAPE_EDGEVILLE_GYM_QUEST, 25
 	setflag FLAG_BADGE07_GET
 	addvar VAR_GAMEMODE_LEVEL_SCALING, 1
+	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_5
 	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_6
-	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_7
 	closemessage
 	hidenamebox
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_KOUREND_SLAYER
@@ -638,34 +638,31 @@ EDGEVILLE_GYM_START_Text_6:
 	.string "Lets go!$"
 
 EDGEVILLE_GYM_BATTLE_VANNAKA_Text_0:
-	.string "That was a very enjoyable battle!$"
-
-EDGEVILLE_GYM_BATTLE_VANNAKA_Text_1:
 	.string "Have this Badge.$"
 
-EDGEVILLE_GYM_BATTLE_VANNAKA_Text_2:
+EDGEVILLE_GYM_BATTLE_VANNAKA_Text_1:
 	.string "{PLAYER} received the Edgeville\n"
 	.string "BADGE from Vannaka.$"
 
-EDGEVILLE_GYM_BATTLE_VANNAKA_Text_3:
+EDGEVILLE_GYM_BATTLE_VANNAKA_Text_2:
 	.string "Also have this Scroll and some Slayer\n"
 	.string "Point(s).$"
 
-EDGEVILLE_GYM_BATTLE_VANNAKA_Text_4:
+EDGEVILLE_GYM_BATTLE_VANNAKA_Text_3:
 	.string "{PLAYER} obtained 12 Slayer Point(s).$"
 
-EDGEVILLE_GYM_BATTLE_VANNAKA_Text_5:
+EDGEVILLE_GYM_BATTLE_VANNAKA_Text_4:
 	.string "That move is called Power Gem.\p"
 	.string "It sparkles just as all our precious\n"
 	.string "Gems around the palace do.$"
 
-EDGEVILLE_GYM_BATTLE_VANNAKA_Text_6:
+EDGEVILLE_GYM_BATTLE_VANNAKA_Text_5:
 	.string "Now that you've bested me you are\n"
 	.string "eligible to take Slayer Tasks from me.\p"
 	.string "Talk to me again if you'd like to\n"
 	.string "particpate.$"
 
-EDGEVILLE_GYM_BATTLE_VANNAKA_Text_7:
+EDGEVILLE_GYM_BATTLE_VANNAKA_Text_6:
 	.string "You should make your way to Daemonheim\n"
 	.string "in the Wilderness for your next badge.$"
 

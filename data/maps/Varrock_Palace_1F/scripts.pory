@@ -769,7 +769,7 @@ script VARROCK_GYM_KINGROALD {
 
         msgbox(format("Oh what is it now?\pWho are you?\nWhat do you want?\pCan you not see I am busy?\p…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}\pOh right, so you are one of those MvM Challengers.\pI don't know why I even have this role.\pVery well, lets get this out of the way, show me what you can do."))
         hidenamebox
-        trainerbattle_no_intro(TRAINER_VARROCK_GYM_KINGROALD, msgbox(format("That was a very enjoyable battle!")))
+        call(GYM_BATTLE_KING_ROALD)
         namebox("King Roald")
         msgbox(format("I must say, I quite enjoyed that battle we just had.\pI want to say it's the most enjoyment I've had in years.\pHere I believe you have earnt this."))
         hidenamebox

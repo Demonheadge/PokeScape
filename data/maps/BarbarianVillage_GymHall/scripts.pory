@@ -412,7 +412,7 @@ script NPC_BARBGYM_BARBARIAN_2
     msgbox(format("Lets not waste any more time chit chatting I am itching for this fight!"))
     closemessage
     hidenamebox
-    trainerbattle_no_intro(TRAINER_BARBARIAN_GYM_GUNTHOR, msgbox(format("ARAGGHHHARH!\pBattles like this is what I live for and why I decided to become a Gym Leader!")))
+    call(GYM_BATTLE_GUNTHOR)
     namebox("Haakon")
     msgbox(format("My brothers and sisters…{PAUSE 15} I cannot believe it!\pThe winner is…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}{PLAYER}!!!!!!!!"))
     hidenamebox

@@ -42,7 +42,7 @@ script NPC_TZHAAR_GYM_TOKHAAR
             msgbox(format("Very well. Show me what you got."))
             //Battle TokHaar Hok
             hidenamebox
-            trainerbattle_no_intro(TRAINER_ALKHARID_GYM_PRINCE_ALI, msgbox(format("That was a very enjoyable battle!")))
+            CALL(GYM_BATTLE_TZHAAR_CHAMPION)
             namebox("TokHaar-Hok")
             msgbox(format("You have done very well.\pTo mark your triumph, accept a gym badge."))
             hidenamebox
