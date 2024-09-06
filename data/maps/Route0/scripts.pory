@@ -80,24 +80,13 @@ script NPC_ROUTE0_NPC_2
 	end
 }
 
-script NPC_ROUTE0_NPC_3
-{
-	lock
-	faceplayer
-    //namebox ("Man")
-	msgbox(format("Thok is our fiercest warrior, he and his brother Marmaros almost made it to the bottom of Daemonheim once!\pThey don't talk about it however."))
-    closemessage
-    hidenamebox
-	release
-	end
-}
 
 script NPC_ROUTE0_NPC_4
 {
 	lock
 	faceplayer
     namebox ("Marmaros")
-	msgbox(format("I-if you need Thok, g-go right up ahead."))
+	msgbox(format("I-if you need Thok, g-go right up ahead.\pHe i-is the gym leader.\pBu-but also my brother."))
     closemessage
     hidenamebox
 	release
@@ -115,6 +104,20 @@ script NPC_ROUTE0_NPC_5
 	release
 	end
 }
+
+script NPC_ROUTE0_NPC_6
+{
+	lock
+	faceplayer
+    namebox ("Hoardstalker")
+	msgbox(format("My kind have lived in the spirit realm for years.\pUntil we were summoned to this world by a powerful warlock."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+
 
 script NPC_ROUTE0_CHICKEN
 {

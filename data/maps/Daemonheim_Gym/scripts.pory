@@ -1,18 +1,23 @@
+const OBJ_EVENT_ID_THOK = 1
+
 mapscripts Daemonheim_Gym_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION 
+    {
+        call(Daemonheim_Gym_STATE)
+    }
 
 }
 
 
-
-
-
-
-
-
-
-
-
-
+script Daemonheim_Gym_STATE {
+    switch (var(VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST)){         
+        case 5:
+        case 10:
+            setflag(FLAG_TEMP_1F) //Hides thok.
+            removeobject(OBJ_EVENT_ID_THOK)
+    }
+    return        
+}
 
 
 
@@ -26,6 +31,61 @@ mapscripts Daemonheim_Gym_MapScripts {
 
 //Thok
 script DAEMONHEIM_GYM_THOK {
+    switch (var(VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST)){ 
+        case 0: //NOT STARTED
+            goto(THOK_GYM_CHALLENGE_STATE_1)
+    }
+}
+
+script THOK_GYM_CHALLENGE_STATE_1 {
+    lockall
+    faceplayer
+    namebox("Thok")
+    
+    msgbox(format("This is the greatest Gym!\pThis is the Daemonheim Gym!\pI am Thok.\pAre you here for a Gym challenge?"), MSGBOX_YESNO)
+    if (!var(VAR_RESULT))
+    { 
+        hidenamebox
+        closemessage
+        releaseall
+        end
+    }
+    msgbox(format("RAH HA HA!\pEXCELLENT!\pFOLLOW ME AND WE SHALL START!"))
+    hidenamebox
+    closemessage
+    setvar(VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST, 5)
+
+    applymovement(1, Movement_DaemonheimGym_1)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_DaemonheimGym_2)
+    waitmovement(0)
+    playse(SE_WARP_OUT)
+    warp(MAP_DAEMONHEIM, 2, 0, 0)
+}
+
+movement Movement_DaemonheimGym_1 {
+    walk_down * 5
+    set_invisible
+}
+movement Movement_DaemonheimGym_2 {
+    lock_facing_direction
+    walk_down
+    unlock_facing_direction
+    face_right
+    lock_facing_direction
+    walk_left
+    delay_8
+    unlock_facing_direction
+    walk_right
+    walk_down * 3
+}
+
+
+
+
+
+
+//Thok
+script DAEMONHEIM_GYM_THOK_BATTLE_INTRO {
     lock
     faceplayer
     namebox("Thok")

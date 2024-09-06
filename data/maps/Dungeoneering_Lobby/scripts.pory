@@ -1,6 +1,18 @@
 
+const OBJ_EVENT_ID_SMUGGLER = 1
+const OBJ_EVENT_ID_THOK = 2
 
 mapscripts Dungeoneering_Lobby_MapScripts {
+    
+    MAP_SCRIPT_ON_TRANSITION 
+    {
+        call(Daemonheim_Lobby_STATE)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE 
+    [
+		VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST, 10: THOK_GYM_CHALLENGE_STATE_3
+    ]
+
     MAP_SCRIPT_ON_LOAD {
         setflag(FLAG_TEMP_12) //- Prevents Normal Decorations spawning in Puzzle / Boss / Starter Rooms.
         call(Randomise_Dungeon)
@@ -69,6 +81,11 @@ script Start_Dungeoneering {
     call(RandomiseSeed_ForDoors)
     call(Randomise_Dungeon)
     call(Randomise_Puzzles)
+    delay(60)
+    playse(SE_LEDGE)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_JumpIntoPortal)
+    waitmovement(0)
+    
     if (var(VAR_DUNGEONEERING_STARTER_ROOM) == 1) {
         //setdynamicwarp(MAP_DUNGEONEERING_1, 0)
         warp(MAP_DUNGEONEERING_1, 0, 0, 0)
@@ -152,7 +169,10 @@ script Start_Dungeoneering {
 }
 
 
-
+movement Movement_JumpIntoPortal {
+    jump_up
+    set_invisible
+}
 
 
 
@@ -279,3 +299,93 @@ script DungeonLayout_ROOM_PATH_5 {
     call_if_eq (VAR_RESULT, MAP_DUNGEONEERING_11, DungeonLayout_BossRoom)
     return
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//THOK GYM -----------------------------------------------------------------------------
+
+script Daemonheim_Lobby_STATE {
+    setflag(FLAG_TEMP_1F) // Hide thok.
+
+    switch (var(VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST)){         
+        case 10:
+            clearflag(FLAG_TEMP_1F)
+            addobject(OBJ_EVENT_ID_THOK)
+            setobjectxyperm(OBJ_EVENT_ID_SMUGGLER, 9, 5)
+            setobjectmovementtype(OBJ_EVENT_ID_SMUGGLER, MOVEMENT_TYPE_FACE_LEFT)
+    }
+    return        
+}
+
+
+script THOK_GYM_CHALLENGE_STATE_3 {
+    
+    applymovement(OBJ_EVENT_ID_THOK, Movement_DaemonheimGym_8)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_DaemonheimGym_9)
+    waitmovement(OBJ_EVENT_ID_THOK)
+    namebox("Thok")
+    msgbox(format("I'll be in Dungeon!\pYou come find me.\lThen we battle."))
+    closemessage
+    hidenamebox
+    playse(SE_LEDGE)
+    applymovement(OBJ_EVENT_ID_THOK, Movement_DaemonheimGym_10)
+    waitmovement(0)
+    setflag(FLAG_TEMP_1F)
+    removeobject(OBJ_EVENT_ID_THOK)
+
+    applymovement(OBJ_EVENT_ID_SMUGGLER, Movement_DaemonheimGym_11)
+    waitmovement(0)
+    namebox("Smuggler")
+    msgbox(format("Sorry about Thok, he can be a little forward.\pYour a gym challenger correct?\pIt's like Thok said, you must find him within the Dungeon and then he will challenge you to a battle.\pThe part he left out was that there are many puzzles and enemies that await you.\pWhen you are ready just jump in that portal.\pGood luck, I'll be here if you need any advice about the dungeon."))
+    closemessage
+    hidenamebox
+    applymovement(OBJ_EVENT_ID_SMUGGLER, Movement_DaemonheimGym_12)
+    waitmovement(0)
+    setobjectmovementtype(OBJ_EVENT_ID_SMUGGLER, MOVEMENT_TYPE_WANDER_AROUND)
+    setvar(VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST, 15)
+
+
+    
+}
+
+movement Movement_DaemonheimGym_8 {
+    walk_up * 3
+    face_down
+}
+movement Movement_DaemonheimGym_9 {
+    walk_slow_up * 2
+}
+movement Movement_DaemonheimGym_10 {
+    jump_2_up
+}
+movement Movement_DaemonheimGym_11 {
+    face_up
+    delay_16 * 2
+    walk_left * 3
+    face_down
+}
+
+movement Movement_DaemonheimGym_12 {
+    walk_right * 3
+    face_left
+}
+
+
+
+
+
+//THOK GYM -----------------------------------------------------------------------------
