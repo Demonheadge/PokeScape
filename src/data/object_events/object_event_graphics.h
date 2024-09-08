@@ -960,6 +960,7 @@ const u16 gObjectEventPalette_Dog_Sleep[] = INCBIN_U16("graphics/object_events/p
 const u16 gObjectEventPalette_Abyss_Portal[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/abyss_portal.gbapal");
 const u16 gObjectEventPalette_Chair[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/chair.gbapal");
 const u16 gObjectEventPalette_GhostDisguise[] = INCBIN_U16("graphics/field_effects/pics/GhostDisguise.gbapal");
+const u16 gObjectEventPalette_ZombieDisguise[] = INCBIN_U16("graphics/field_effects/pics/ZombieDisguise.gbapal");
 
 const u16 gObjectEventPalette_Archaeologist[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/archaeologist.gbapal");
 const u16 gObjectEventPalette_Diviner[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/diviner.gbapal");

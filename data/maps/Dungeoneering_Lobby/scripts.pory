@@ -24,7 +24,13 @@ mapscripts Dungeoneering_Lobby_MapScripts {
 
 
 
-
+script DUNGEONEERING_CHECK_HOWMANYDUNGEONS {
+    buffernumberstring(STR_VAR_1, VAR_DUNGEONEERING_STARTER_ROOM) 
+    msgbox(format("You have explored: {STR_VAR_1} floors."))
+    closemessage
+    release
+    end
+}
 
 script DUNGEONEERING_CHECK_VAR {
     buffernumberstring(STR_VAR_1, VAR_DUNGEONEERING_STARTER_ROOM) 

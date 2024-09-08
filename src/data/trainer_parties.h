@@ -6774,7 +6774,7 @@ static const struct TrainerMon sParty_GYM_LEADER_VANNAKA_1[] = {
     //.iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ability = ABILITY_SNIPER,
     .lvl = 35,
-    .species = SPECIES_VEIL_RIPPER,
+    .species = SPECIES_DEMON_RIPPER_FORM,
     .moves = {MOVE_FURY_SWIPES, MOVE_CRUSH_CLAW, MOVE_BRUTAL_SWING, MOVE_SCREECH}
     }
 };
@@ -6971,5 +6971,60 @@ static const struct TrainerMon sParty_CHAMPION_WISE_OLD_MAN_1[] = {
     .lvl = 70,
     .species = SPECIES_FROGEEL,
     //.moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    }
+};
+
+static const struct TrainerMon sParty_EDGEVILLE_GYM_1[] = {
+    {
+    .lvl = 35,
+    .species = SPECIES_FROGEEL,
+    }
+};
+static const struct TrainerMon sParty_EDGEVILLE_GYM_2[] = {
+    {
+    .lvl = 35,
+    .species = SPECIES_FROGEEL,
+    }
+};
+static const struct TrainerMon sParty_EDGEVILLE_GYM_3[] = {
+    {
+    .lvl = 35,
+    .species = SPECIES_FROGEEL,
+    }
+};
+static const struct TrainerMon sParty_EDGEVILLE_GYM_4[] = {
+    {
+    .lvl = 35,
+    .species = SPECIES_FROGEEL,
+    }
+};
+static const struct TrainerMon sParty_EDGEVILLE_GYM_5[] = {
+    {
+    .lvl = 35,
+    .species = SPECIES_FROGEEL,
+    }
+};
+static const struct TrainerMon sParty_EDGEVILLE_GYM_6[] = {
+    {
+    .lvl = 35,
+    .species = SPECIES_FROGEEL,
+    }
+};
+static const struct TrainerMon sParty_EDGEVILLE_GYM_7[] = {
+    {
+    .lvl = 35,
+    .species = SPECIES_FROGEEL,
+    }
+};
+static const struct TrainerMon sParty_EDGEVILLE_GYM_8[] = {
+    {
+    .lvl = 35,
+    .species = SPECIES_FROGEEL,
+    }
+};
+static const struct TrainerMon sParty_EDGEVILLE_GYM_9[] = {
+    {
+    .lvl = 35,
+    .species = SPECIES_FROGEEL,
     }
 };

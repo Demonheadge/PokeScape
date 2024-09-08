@@ -276,7 +276,7 @@ GYM_BATTLE_GUNTHOR::
 
 
 GYM_BATTLE_VANNAKA::
-	trainerbattle_no_intro TRAINER_GYM_LEADER_VANNAKA_1, BATTLE_TEST_CUPHOLDER_Text_2
+	trainerbattle_no_intro TRAINER_GYM_LEADER_VANNAKA_1, GYM_BATTLE_VANNAKA_Text_0
 	return
 
 
@@ -469,3 +469,7 @@ GYM_BATTLE_GUNTHOR_Text_0:
 	.string "ARAGGHHHARH!\p"
 	.string "Battles like this is what I live for and\n"
 	.string "why I decided to become a Gym Leader!$"
+
+GYM_BATTLE_VANNAKA_Text_0:
+	.string "Haha, congratulations! You have\n"
+	.string "completed your slayer task.$"

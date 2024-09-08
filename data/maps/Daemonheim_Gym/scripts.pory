@@ -97,7 +97,7 @@ script DAEMONHEIM_GYM_THOK_BATTLE_INTRO {
         msgbox(format("Have this Badge."))
         hidenamebox
         playfanfare(MUS_PS_QUEST_COMPLETE) //MUS_OBTAIN_BADGE MUS_PS_QUEST_COMPLETE
-        msgbox(format("{PLAYER} received the Daemonheim BADGE from Thok."))
+        msgbox(format("{PLAYER} received the DAEMONHEIM BADGE from Thok."))
         waitfanfare
         waitmessage
         namebox("Thok")
@@ -122,6 +122,332 @@ script DAEMONHEIM_GYM_THOK_BATTLE_INTRO {
         msgbox(format("You have defeated the Daemonheim Gym."))
     }
     hidenamebox
+    release
+    end
+}
+
+
+
+
+
+
+const OBJ_EVENT_ID_FERRET = 2
+const OBJ_EVENT_ID_THOK2 = 3
+
+
+
+
+
+script THOK_GYM_CHALLENGE_STATE_POST_BADGE {
+    lockall
+    faceplayer
+
+    namebox("Thok")
+    msgbox(format("RAHAHAHA! YOU FIGHT WELL!\lHAVE THIS BADGE!"))
+    hidenamebox
+    closemessage
+
+    playfanfare(MUS_PS_QUEST_COMPLETE) //MUS_OBTAIN_BADGE MUS_PS_QUEST_COMPLETE
+    msgbox(format("{PLAYER} received the DAEMONHEIM BADGE from Thok."))
+    waitfanfare
+    waitmessage
+    namebox("Thok")
+    msgbox(format("TAKE THIS TOO!"))
+    hidenamebox
+    giveitem (ITEM_TM48, 1) //Power Gem.
+    compare(VAR_RESULT, FALSE)
+    goto_if_eq(Common_EventScript_ShowBagIsFull)
+    //playbgm(MUS_PS_ALKHARID, 0)
+    //savebgm(MUS_PS_ALKHARID)
+    namebox("Thok")
+    msgbox(format("That is CUPHOLDER!\pCUPHOLDER."))
+    setvar(VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST, 30)
+    setflag(FLAG_BADGE08_GET)
+    addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
+    //call(SetGymTrainers_DAEMONHEIM)
+
+    namebox("Thok")
+    msgbox(format("Let us return to the surface and celebrate!\pRAH HA HA!"))
+    hidenamebox
+    closemessage
+    //walk down
+    applymovement(OBJ_EVENT_ID_THOK2, Movement_DaemonheimGym_PostBadge_1)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_DaemonheimGym_PostBadge_2)
+    waitmovement(0)
+    delay(60)
+    playse(SE_PIN)
+    applymovement(OBJ_EVENT_ID_THOK2, Movement_DaemonheimGym_PostBadge_3)
+    fadeoutbgm(1) //can crash on warp without fadein.
+    waitmovement(0)
+    namebox("Thok")
+    msgbox(format("Thok is cold…\pThok thinks something is watching us…"))
+    hidenamebox
+    closemessage
+
+    applymovement(OBJ_EVENT_ID_THOK2, Movement_DaemonheimGym_PostBadge_10)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_DaemonheimGym_PostBadge_9)
+    waitmovement(0)
+
+    applymovement(OBJ_EVENT_ID_FERRET, Movement_DaemonheimGym_PostBadge_4)
+    waitmovement(0)
+    namebox("Ferret")
+    playmoncry(SPECIES_FERRET, CRY_MODE_NORMAL)
+    msgbox(format("Squeeak."))
+    waitmoncry
+    hidenamebox
+    closemessage
+    applymovement(OBJ_EVENT_ID_THOK2, Movement_DaemonheimGym_PostBadge_5)
+    playse(SE_LEDGE)
+    waitse
+    playse(SE_LEDGE)
+    waitse
+    playse(SE_LEDGE)
+    waitmovement(0)
+    namebox("Thok")
+    msgbox(format("RAAAAAAAAAAAAAAAAAAAAAH!!!\pRUN!! {PLAYER}!! RUN!!!"))
+    hidenamebox
+    closemessage
+    playse(SE_FLEE)
+    applymovement(OBJ_EVENT_ID_THOK2, Movement_DaemonheimGym_PostBadge_6)
+    waitmovement(0)
+    waitse
+    //???
+    playse(SE_PIN)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_DaemonheimGym_PostBadge_7)
+    waitmovement(0)
+
+    applymovement(OBJ_EVENT_ID_FERRET, Movement_DaemonheimGym_PostBadge_8)
+    waitmovement(0)
+    namebox("Ferret")
+    playmoncry(SPECIES_FERRET, CRY_MODE_ECHO_START)
+    msgbox(format("Squeeak."))
+    waitmoncry
+    hidenamebox
+    closemessage
+
+    msgbox(format("You suddenly feel a chill run down your spine as if this was the end of your life…"))
+    closemessage
+
+    
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_DaemonheimGym_PostBadge_11)
+    applymovement(OBJ_EVENT_ID_FERRET, Movement_DaemonheimGym_PostBadge_8)
+    waitmovement(0)
+    delay(40)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_DaemonheimGym_PostBadge_11)
+    applymovement(OBJ_EVENT_ID_FERRET, Movement_DaemonheimGym_PostBadge_8)
+    waitmovement(0)
+    delay(40)
+    applymovement(OBJ_EVENT_ID_FERRET, Movement_DaemonheimGym_PostBadge_8)
+    waitmovement(0)
+    namebox("Ferret")
+    playmoncry(SPECIES_FERRET, CRY_MODE_FAINT)
+    msgbox(format("Squeeak."))
+    waitmoncry
+    hidenamebox
+    closemessage
+    msgbox(format("As the ferret gets closer your eyes begin to fade."))
+    closemessage
+    fadescreen(FADE_TO_BLACK)
+    delay(60)
+    msgbox(format("Oh dear, you've whited out…"))
+    closemessage
+    //playse(SE_WARP_OUT)
+    fadeinbgm(2)
+    warpsilent(MAP_DAEMONHEIM, 2, 0, 0)
+}
+
+movement Movement_DaemonheimGym_PostBadge_1 {
+    walk_down * 4
+}
+movement Movement_DaemonheimGym_PostBadge_2 {
+    lock_facing_direction
+    walk_down
+    unlock_facing_direction
+    face_right
+    lock_facing_direction
+    walk_left
+    delay_8
+    unlock_facing_direction
+    walk_right
+    walk_down
+}
+movement Movement_DaemonheimGym_PostBadge_3 {
+    emote_question_mark
+    delay_16 * 2
+    face_left
+    delay_16 * 2
+    face_right
+    delay_16 * 2
+    face_up
+}
+movement Movement_DaemonheimGym_PostBadge_4 {
+    walk_slow_right * 3
+}
+
+movement Movement_DaemonheimGym_PostBadge_5 {
+    face_left 
+    delay_8
+    emote_double_exclamation_mark
+    jump_in_place_left * 3
+}
+movement Movement_DaemonheimGym_PostBadge_6 {
+    walk_faster_down * 1
+    set_invisible
+}
+
+movement Movement_DaemonheimGym_PostBadge_7 {
+    face_left
+    emote_question_mark
+    delay_16
+}
+movement Movement_DaemonheimGym_PostBadge_8 {
+    walk_slow_right
+}
+
+
+movement Movement_DaemonheimGym_PostBadge_9 {
+    face_up
+    delay_16 * 2
+    face_right
+    delay_16 * 2
+    face_up
+    delay_16 * 2
+    face_left
+}
+
+movement Movement_DaemonheimGym_PostBadge_10 {
+    face_right
+    delay_16 * 2
+    face_left
+    delay_16 * 2
+    face_down
+    delay_16 * 2
+    face_left
+}
+movement Movement_DaemonheimGym_PostBadge_11 {
+    lock_facing_direction
+    walk_slow_right
+}
+
+
+
+
+
+
+
+
+
+
+script HANS_DAEMONHEIM_GYM {
+    lock
+    faceplayer
+    namebox("Hans")
+    if (flag(FLAG_BADGE08_GET) == TRUE) {
+        msgbox(format("You did it again!\pThat's all 8 badges!\pYou are ready to take on the MvM championships now.\pI've been supporting you all this time, and I hope to see you there."))
+    }
+    else {
+        msgbox(format("Even in these shadowy tombs you arrive completionist in the making.\pThese are the halls of Daemonheim where Thok will be your opponent.\pThok uses ROCK-TYPE monsters, just as solid as his head one would say.\pBring your best GRASS, FIGHTING and STEEL types would be my best advice for you.\pI doubt you cannot defeat Thok however, he got to the bottom of this place, with hardly more than his fists."))
+    }
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+script HANS_EDGEVILLE_GYM {
+    lock
+    faceplayer
+    namebox("Hans")
+    if (flag(FLAG_BADGE07_GET) == TRUE) {
+        msgbox(format("To no surprise you have prevailed yet again.\pI guess you are soon at journeys end.\pHow did I get here all the way to edgeville you ask.\pWell I was going out to buy milk and somehow I just got here.\pLife is weird like that for me."))
+    }
+    else {
+        msgbox(format("Why hello there completionist in the making.\pHope you havent forgotten me.\pIt seems you are taking on Vanakka now.\pHe probably has a task set for you to complete.\pWhere is he?\pIn the most fitting place for him, in the dungeon below us!\pVanakka uses DARK-TYPE slayer monsters.\pDARK types are weak to FIGHTING, FAIRY and BUG type attacks.\pDo not bring your PSYCHIC monsters though, he will make a slayer task out of them."))
+    }
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+script HANS_VARROCK_GYM {
+    lock
+    faceplayer
+    namebox("Hans")
+    if (flag(FLAG_BADGE06_GET) == TRUE) {
+        msgbox(format("You did it!\lYou beat the king!\pI would join you for a celebration but apparently I have to find some rare seed for the queen.\pShe has an awfully strong personality."))
+    }
+    else {
+        msgbox(format("Well well, here you are again completionist in the making.\pNext up your facing King Roald the king of Mishtalin.\pHe uses FAIRY-TYPE monsters to further his royal goals.\pBring your best STEEL and POISON types to get an edge.\pBut please do not poison royalty."))
+    }
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+script HANS_ALKHARID_GYM {
+    lock
+    faceplayer
+    namebox("Hans")
+    if (flag(FLAG_BADGE04_GET) == TRUE) {
+        msgbox(format("Congratulations completionist in the making!\pUp next is getting out of this desert.\pMan that is a lot of sand to wade through…"))
+    }
+    else {
+        msgbox(format("How are you handling the heat Completionist in the making!\pWhat? Its nothing compared to a volcano?\pWell if you say so.\pHere you will have to face Prince Ali.\pHe uses GROUND-TYPE monsters to his advantage so stay on your guard.\pGROUND types are weak to WATER and GRASS types.\pTheir moves also do not affect FLYING types.\pHope you get a good battle out of this!\p"))
+    }
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+
+
+script HANS_BARBARIAN_GYM {
+    lock
+    faceplayer
+    namebox("Hans")
+    if (flag(FLAG_BADGE04_GET) == TRUE) {
+        msgbox(format("Good job beating Gunthor!\lHope you feel great.\pMe?\pI dont feel so great, the barbarians are taking me out for drinks.\pFor the third time today.\pIf you dont hear from me, tell the Duke I will be late for work tomorow."))
+    }
+    else {
+        msgbox(format("Hey there completionist in the making!\lAt it again are you not?\pThis is the Barbarian village challenge.\pYou will have to face Gunthor himself to succeed.\pGunthor prefers strong FIGHTING-TYPE monsters.\pBest bring out your best FLYING and PSYCHIC type monsters.\pAlso if the crowd seems rowdy, remember its just a cultural difference."))
+    }
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+script HANS_TZHAAR_GYM {
+    lock
+    faceplayer
+    namebox("Hans")
+    if (flag(FLAG_BADGE03_GET) == TRUE) {
+        msgbox(format("You did it completionist in the makings!\pI never had any doubt.\pBy the way, how do I get out of this volcano?"))
+    }
+    else {
+        msgbox(format("Maybe you think its weird meeting me inside a volcano, but I think its just as weird you're here too.\pThe Karamja challenge, or perhaps the Tzhaar challenge, uses FIRE-TYPE monsters.\pFIRE types are weak to WATER, GROUND and ROCK type moves.\pJust imagine youre putting out a fire and you will do great."))
+    }
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+script HANS_FALADOR_GYM {
+    lock
+    faceplayer
+    namebox("Hans")
+    if (flag(FLAG_BADGE02_GET) == TRUE) {
+        msgbox(format("I never had a doubt.\pOnwards to your next challenge then?"))
+    }
+    else {
+        msgbox(format("There you are again completionist in the making.\pWelcome to Falador castle.\pYour next challenge is to beat Sir Amik Varze.\pHe uses WATER-TYPE monsters. WATER types are weak to GRASS and ELECTRIC type moves.\pAlso Sir Amik sometimes gets drunk.\pPlease dont indulge him too much."))
+    }
+    hidenamebox
+    closemessage
     release
     end
 }

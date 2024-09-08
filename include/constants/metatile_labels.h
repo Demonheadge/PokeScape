@@ -494,6 +494,14 @@
 #define METATILE_PokeScapeOutdoors_Door_Pub_R           0x1D2
 #define METATILE_PokeScapeOutdoors_GENERAL_SAND         0x0F9
 
+// gTileset_PokeScape_Sewers
+#define METATILE_PokeScape_Sewers_GATE_CLOSED_DOWN  0x36A
+#define METATILE_PokeScape_Sewers_GATE_CLOSED_UP    0x362
+#define METATILE_PokeScape_Sewers_GATE_DOWN         0x308
+#define METATILE_PokeScape_Sewers_GATE_OPEN_DOWN    0x369
+#define METATILE_PokeScape_Sewers_GATE_OPEN_UP      0x361
+#define METATILE_PokeScape_Sewers_GATE_UP           0x300
+
 // gTileset_PokemonCenter
 #define METATILE_PokemonCenter_CounterBarrier            0x25D
 #define METATILE_PokemonCenter_Door_CableClub            0x264

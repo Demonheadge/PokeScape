@@ -673,6 +673,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_VORKATH           0x1276
 #define OBJ_EVENT_PAL_GOBLIN_GREEN		0x1277
 #define OBJ_EVENT_PAL_AVA_THOK          0x1207
+#define OBJ_EVENT_PAL_ZombieDisguise     0x1278
 
 
 
@@ -977,7 +978,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
 	{gObjectEventPalette_OrePal2, OBJ_EVENT_PAL_ORE_PAL2},
 	{gObjectEventPalette_CabbageCrop, OBJ_EVENT_PAL_CABBAGE_CROP},
     {gObjectEventPalette_Protaganist, OBJ_EVENT_PAL_PROTAGANIST},
-    {gObjectEventPalette_GhostDisguise, OBJ_EVENT_PAL_GhostDisguise},	
+    {gObjectEventPalette_GhostDisguise, OBJ_EVENT_PAL_GhostDisguise},
+    {gObjectEventPalette_ZombieDisguise, OBJ_EVENT_PAL_ZombieDisguise},	
 
 
     {gObjectEventPalette_SKELETAL, OBJ_EVENT_PAL_SKELETAL},

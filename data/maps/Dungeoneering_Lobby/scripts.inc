@@ -18,6 +18,14 @@ Dungeoneering_Lobby_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	.2byte 0
 
 
+DUNGEONEERING_CHECK_HOWMANYDUNGEONS::
+	buffernumberstring STR_VAR_1, VAR_DUNGEONEERING_STARTER_ROOM
+	msgbox DUNGEONEERING_CHECK_HOWMANYDUNGEONS_Text_0
+	closemessage
+	release
+	end
+
+
 DUNGEONEERING_CHECK_VAR::
 	buffernumberstring STR_VAR_1, VAR_DUNGEONEERING_STARTER_ROOM
 	msgbox DUNGEONEERING_CHECK_VAR_Text_0
@@ -357,6 +365,10 @@ Movement_DaemonheimGym_12:
 	walk_right
 	face_left
 	step_end
+
+DUNGEONEERING_CHECK_HOWMANYDUNGEONS_Text_0:
+	.string "You have explored: {STR_VAR_1}\n"
+	.string "floors.$"
 
 DUNGEONEERING_CHECK_VAR_Text_0:
 	.string "The Starting room is Room:\n"
