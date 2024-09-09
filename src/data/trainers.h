@@ -983,7 +983,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_WIZARD,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
-        .trainerPic = TRAINER_PIC_wizard_dark,
+        .trainerPic = TRAINER_PIC_mage_mystic,
         .trainerName = _("AIR"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -995,7 +995,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_WIZARD,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
-        .trainerPic = TRAINER_PIC_wizard_dark,
+        .trainerPic = TRAINER_PIC_mage_mystic,
         .trainerName = _("WATER"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -1007,7 +1007,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_WIZARD,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
-        .trainerPic = TRAINER_PIC_wizard_dark,
+        .trainerPic = TRAINER_PIC_guthix_wizard,
         .trainerName = _("EARTH"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -1019,7 +1019,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_WIZARD,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
-        .trainerPic = TRAINER_PIC_wizard_dark,
+        .trainerPic = TRAINER_PIC_wizard_zamorak,
         .trainerName = _("FIRE"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,

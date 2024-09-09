@@ -6505,7 +6505,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Jmod = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DnD = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_DND,
+    .paletteTag = OBJ_EVENT_PAL_RED_DRAGON,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -6523,7 +6523,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DnD = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bot_Dragon = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_BOT_DRAGON,
+    .paletteTag = OBJ_EVENT_PAL_RED_DRAGON,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -6667,7 +6667,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RSMVer_M = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RSMVer_F = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_RSMVER_F,
+    .paletteTag = OBJ_EVENT_PAL_RED_DRAGON,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -6867,7 +6867,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cook = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Count_Draynor = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_COUNT_DRAYNOR,
+    .paletteTag = OBJ_EVENT_PAL_RED_DRAGON,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -8206,7 +8206,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GymLeader_Vannaka 
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boaty = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_BOATY,
+    .paletteTag = OBJ_EVENT_PAL_RED_DRAGON,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -9065,7 +9065,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Archaeologist = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Diviner = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_DIVINER,
+    .paletteTag = OBJ_EVENT_PAL_RED_DRAGON,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -9766,7 +9766,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_kreearra = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_dragon_armour = {
 	.tileTag = TAG_NONE,
-	.paletteTag =  OBJ_EVENT_PAL_SMUGGLER,
+	.paletteTag =  OBJ_EVENT_PAL_RED_DRAGON,
 	.reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
 	.size = 256,
 	.width = 16,
