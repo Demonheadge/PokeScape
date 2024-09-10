@@ -58,3 +58,12 @@ movement movement_wom_asgDung_0{
     delay_16
 }
 
+
+script STRANGE_MURAL_FROST
+{
+	lock
+	msgbox(format("It appears to be a mural, but it is too damaged to decipher."))
+    closemessage
+	release
+	end
+}

@@ -39,9 +39,9 @@ script GAMEMODE_CHECK_NEWGAME_ITEMS
             msgbox(format("Obtained the BESTIARY."))
             waitfanfare
             setflag (FLAG_SYS_POKEDEX_GET)
-            setflag (FLAG_SYS_NATIONAL_DEX)
+            //setflag (FLAG_SYS_NATIONAL_DEX)
             setflag(FLAG_SYS_QUEST_MENU_GET) //Unlocks quest menu.
-            special (EnableNationalPokedex)
+            //special (EnableNationalPokedex)
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox(format("Obtained a load of useful items."))
             waitfanfare

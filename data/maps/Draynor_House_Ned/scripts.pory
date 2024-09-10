@@ -1,12 +1,47 @@
 mapscripts Draynor_House_Ned_MapScripts {
-
+    MAP_SCRIPT_ON_TRANSITION {
+    if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+    	{
+            call(NEDS_HOUSE_STATE)
+    	}
+    }
 } 
+
+script NEDS_HOUSE_STATE {
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 130) {
+        addobject(2)
+        clearflag(FLAG_TEMP_1F)
+        setobjectxyperm(2, 2, 4)
+        setobjectmovementtype(2, MOVEMENT_TYPE_LOOK_AROUND)
+    }
+    else {
+        removeobject(2)
+        setflag(FLAG_TEMP_1F)
+    }
+}
+
+
+
+
+
 
 //NEED SOME VARIABLE DIALOGUE SO THIS IS ONLY UNLOCKED WHEN THE QUEST STATE HAS BEEN TRIGGERED
 
 script Ned_Draynor{
 	lock
+    faceplayer
     namebox("Ned")
+
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 125) {
+        goto(Story_Ned_Draynor)
+    }
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 130) {
+        msgbox(format("After you {PLAYER}.\pTo Crandor!"))
+        closemessage
+        hidenamebox
+        release
+        end
+    }
 
 //if not story
     msgbox(format("Would you like to buy some of my world famous rope?\pIt is 500gp each."), MSGBOX_YESNO)
@@ -38,8 +73,7 @@ script Ned_Draynor{
         end
     }
 //
-	msgbox(format("Hello, is there something I can help you with?\pWant to buy some rope perhaps?\p{PAUSE 15}\pYou need to charter a ship to an island?\pWell, I was a sailor but I've not been able to get work at sea for a while.\pThey say I'm too old now.\pBut...\pIt would be a chance to sail a ship again.\pWhere do you need to sail to?\p{PAUSE 15}Crandor!?\pNo captain in their right mind would sail there, it's too dangerous!\pPlus we'd need a map and nobody has chartered a map there for decades.\pNot since, well...\pWait, you have a map? Let me take a look!{PAUSE 15}I said I'd sail anywhere if it was a chance to sail again.\pMeet me at my ship, the Lady Lumbridge in Port Sarim.\pI'll have Cabin Boy Jenkins get everything ready for us to set sail."))
-    hidenamebox
+	
     release
 	end
 }
@@ -47,9 +81,111 @@ script Ned_Draynor{
 script DRAYNOR_NED_EVENT_WHITE_KNIGHT {
 
     lock
+    faceplayer
     namebox("Sir Owen")
 	msgbox(format("The white knights have been able to secure a ship for transport.\pIt is called Lady Falador located south of the docks in Port Sarim.\pThe name of the ship was orginally called Lady Lumbridge but considering Falador is purchasing it and paying for transport it was fitting to rename it."))
     hidenamebox
     release
 	end
+}
+
+script Story_Ned_Draynor {
+    namebox("Ned")
+    msgbox(format("Hello, is there something I can help you with?\pWant to buy some rope perhaps?"))
+    hidenamebox
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_INTERACT_UP)
+    waitmovement(0)
+    namebox("Ned")
+    msgbox(format("…{PAUSE 15}…\pYou need to charter a ship to an island?\pWell, I was a sailor but I've retired.\nThey say I'm too old now.\pBut…{PAUSE 32} It would be a chance to sail a ship again.\pWhere do you need to sail to?"))
+    hidenamebox
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_INTERACT_UP)
+    waitmovement(0)
+    namebox("Ned")
+    msgbox(format("…{PAUSE 15}…\pSorry, I must be starting to go deaf.\pFor a second it sounded like you said Crandor."))
+    hidenamebox
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_INTERACT_UP)
+    waitmovement(0)
+    namebox("Ned")
+    msgbox(format("Seriously?!\nCrandor!?\pNo captain in their right mind would sail there, it's too dangerous!\pPlus we'd need a map and nobody has chartered a map there for decades.\pNot since, well…"))
+    hidenamebox
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_INTERACT_UP)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(1, MOVEMENT_EXCLAMATIONMARK_FACEPLAYER)
+    namebox("Ned")
+    msgbox(format("Wait, you have a map?!"))
+    hidenamebox
+    closemessage
+    applymovement(1, MOVEMENT_INTERACT_DOWN)
+    waitmovement(0)
+    namebox("Ned")
+    //msgbox(format("Let me take a look!"))
+    //waitmovement(0)
+    hidenamebox
+    closemessage
+    applymovement(1, Movement_InteractFACERIGHT)
+    waitmovement(0)
+    delay(60)
+    namebox("Ned")
+    msgbox(format("Hmm… wow.\pThis is the real deal alright…\pI guess I did say that I'd sail anywhere if it was a chance to sail again."))
+    hidenamebox
+    closemessage
+    applymovement(1, Movement_InteractFACEDOWN)
+    waitmovement(0)
+    namebox("Ned")
+    msgbox(format("Alright you've convinced me.")) //\pShow me to your crew and ship!"))
+    hidenamebox
+    closemessage
+    playse(SE_DOOR)
+    addobject(2)
+    clearflag(FLAG_TEMP_1F)
+    waitse
+    delay(30)
+    applymovement(1, Movement_InteractFACEDOWN)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEDOWN)
+    waitmovement(0)
+    //namebox("Sir Owen")
+    //msgbox(format("Pardon the intrusion, but I am looking for someone named {PLAYER}."))
+    hidenamebox
+    closemessage
+    applymovement(2, Movement_NedsHouse_1)
+    waitmovement(0)
+    namebox("Sir Owen")
+    msgbox(format("Ah, there you are and you must be Captain Ned."))
+    hidenamebox
+    closemessage
+    namebox("Ned")
+    msgbox(format("Aye that is me.\pWhat business do you have?"))
+    hidenamebox
+    closemessage
+    namebox("Sir Owen")
+    msgbox(format("I've come to inform you that a small crew and ship has been aquired, it is located south of the docks in Port Sarim."))
+    hidenamebox
+    closemessage
+    namebox("Ned")
+    msgbox(format("Well, I suppose that answers that question."))
+    hidenamebox
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+    waitmovement(0)
+    namebox("Ned")
+    msgbox(format("Alright then, {PLAYER} was it.\pLead the way.\pTo Crandor we shall sail!"))
+    hidenamebox
+    closemessage
+    setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 130)
+    release
+	end
+}
+
+movement MOVEMENT_EXCLAMATIONMARK_FACEPLAYER {
+    emote_exclamation_mark
+    face_player
+}
+
+movement Movement_NedsHouse_1 {
+    walk_up * 3
 }

@@ -52,7 +52,7 @@ script PORTSARIM_STATE{
 
         switch (var(VAR_POKESCAPE_STORYMODE_PROGRESS)){ 
             //HAM EVENT, PORT SARIM BOAT
-            case 150: //SETUP AFTER FALADOR
+            case 150: //SETUP AFTER FALADOR (OLD)
                 addobject(21)
                 addobject(22)
                 addobject(23)
@@ -93,6 +93,9 @@ script PORTSARIM_STATE{
                 setobjectxyperm(OBJ_EVENT_ID_JAILGUARD, 6, 40)
                 addobject(38)
                 clearflag(FLAG_TEMP_1D)
+            case 130:
+                addobject(40)
+                clearflag(FLAG_TEMP_1C)
     
         }
 
@@ -389,15 +392,17 @@ script NPC_PORTSARIM_CAPTIAN_TOBIAS
     //}
 
 
-    if (flag(FLAG_BADGE02_GET) == false) 
+    elif (flag(FLAG_BADGE03_GET) == false) 
 	{
         msgbox(format("Sorry but our boat has popped a leak.\pIt will be some time before it is repaired.\pYou should go visit the Party Room in Falador or something while you are waiting."))
         hidenamebox
         release
         end
     }
-    if(var(VAR_POKESCAPE_KARAMJAVOLCANO_STATE)==0) {
-        msgbox(format("Is your name PLAYER?\pI have received word that you are participating in the MvM Championships, is this correct?\pUsually our services cost 30gp but we have a deal with the Championship League that allows all participants to travel for free!\pSo…{PAUSE 15}…  Ahem!"))
+    elif(flag(FLAG_BADGE03_GET) == true) { //&& (var(VAR_KARMAJA_SAILORS_STATE) == 0)
+        msgbox(format("Is your name {PLAYER}?\pI have received word that you are participating in the MvM Championships, is this correct?\pUsually our services cost 30gp but we have a deal with the Championship League that allows all participants to travel for free!\pSo…{PAUSE 15}…  Ahem!"))
+        //Set var for KARMAJA_SAILORS_STATE
+        //setvar(KARMAJA_SAILORS_STATE, 5)
     }
     msgbox(format("Hi, there would you like to board the boat to Musa Point, Karamja?"), MSGBOX_YESNO)
     if (var(VAR_RESULT)==1)

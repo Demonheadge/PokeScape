@@ -5094,8 +5094,8 @@
     {
       "id": "LAYOUT_ROUTE32",
       "name": "Route32_Layout",
-      "width": 40,
-      "height": 30,
+      "width": 10,
+      "height": 10,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_Karamja",
       "border_filepath": "data/layouts/Route32/border.bin",
@@ -5144,8 +5144,8 @@
     {
       "id": "LAYOUT_ROUTE36",
       "name": "Route36_Layout",
-      "width": 12,
-      "height": 22,
+      "width": 10,
+      "height": 10,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_Falador",
       "border_filepath": "data/layouts/Route36/border.bin",

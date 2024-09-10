@@ -380,7 +380,7 @@ script CRANDOR_EVENT_PORTSARIM_CABIN_BOY {
     namebox("Cabin Boy")
 
     if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) {
-        if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 150) {  //> - Greater than,  < - Less than.
+        if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 130) {  //> - Greater than,  < - Less than.
             msgbox(format("Finally the day has come!\pI can set sail with her and make my dream come true!\pAlthough I wish they hadn't renamed her to the Lady Falador…"))
             closemessage
             hidenamebox
@@ -413,5 +413,15 @@ script CRANDOR_EVENT_PORTSARIM_NED {
     end
 }
 
+script CRANDOR_EVENT_PORTSARIM_SIROWEN {
+    lock
+    faceplayer
+    namebox("Sir Owen")
+    msgbox(format("Sorry {PLAYER}, something came up last minute that I must attend to.\pIt seems like it will just be you three sailing to Crandor.\pI wish you all the best."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
 
 

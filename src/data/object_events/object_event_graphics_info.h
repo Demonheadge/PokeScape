@@ -6541,7 +6541,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bot_Dragon = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mugger = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_MUGGER,
+    .paletteTag = OBJ_EVENT_PAL_RED_DRAGON,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -10032,7 +10032,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_mystic_light = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_necromancer = {
 	.tileTag = TAG_NONE,
-	.paletteTag =  OBJ_EVENT_PAL_SMUGGLER,
+	.paletteTag =  OBJ_EVENT_PAL_RED_DRAGON,
 	.reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
 	.size = 256,
 	.width = 16,

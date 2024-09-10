@@ -411,20 +411,34 @@ script NPC_FALADORCASTLE_GYM_SIRAMIKVARZE {
     lock
     faceplayer
     namebox("Sir Amik Varze")
-    if (!flag(FLAG_BADGE02_GET)){
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 125) {
+        goto(FALADORCASTLE_3F_SIRAMIKVARZE)
+    }
+    elif (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 130) {
+        msgbox(format("Oh, Ned agreed to sail to Crandor?\pThat's great!\pBy the way, we also got that ship for you.\pThe Lady Falador is located on the docks in Port Sarim.\pThere's no time to waste, go with haste and best of luck!"))
+        closemessage
+        hidenamebox
+        release
+        end
+    }
+    elif (!flag(FLAG_BADGE02_GET)){
         if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
     	{
             msgbox(format("Well done getting here and once again, thank you for earlier within the mines.\pAnyway enough informal chatting…"))
             closemessage
     	}
+        namebox("Sir Amik Varze")
         msgbox(format("Welcome to Falador Castle.\pI, Sir Amik Varze am the Falador Gym Leader.\p I will be your opponent for this match.\pAre you ready? "))
         hidenamebox
         call(GYM_BATTLE_SIR_AMIK_VARZE)
+        namebox("Sir Amik Varze")
         msgbox(format("I am impressed!\pYou have shown me so much potential I must give you this badge."))
+        hidenamebox
         playfanfare(MUS_PS_QUEST_COMPLETE)
         msgbox(format("{PLAYER} received the Falador BADGE from Sir Amik Varze."))
         waitfanfare
         waitmessage
+        namebox("Sir Amik Varze")
         msgbox(format("Also have this, it is my favourite move."))
         hidenamebox
         giveitem (ITEM_TM07, 1)
@@ -446,6 +460,7 @@ script NPC_FALADORCASTLE_GYM_SIRAMIKVARZE {
         release
         end
     }
+    namebox("Sir Amik Varze")
     msgbox(format("I recommend that you make your way to Al Kharid or Varrock for your next MvM gym challenge.\pUnless you would like to become a white knight instead?"))
     hidenamebox
     release
@@ -490,7 +505,7 @@ script SetGymTrainers_FALADOR {
 script NPC_FALADORCASTLE_GYM_SIRTIFFY
 {
 	lock
-    namebox ("Sir Tif")
+    namebox ("Sir Tiffy")
 	msgbox(format("Can I interest you all in a cup of tea before we begin?"))
     closemessage
     hidenamebox
@@ -630,6 +645,7 @@ script NPC_FALADORCASTLE_WHITEKNIGHT_4
 {
 	lock
 	faceplayer
+    namebox("Guard")
 	msgbox(format("There used to be a chicken on the courtyard but some adventurer caught it.\pI kinda miss her."))
     closemessage
     hidenamebox
@@ -641,6 +657,7 @@ script NPC_FALADORCASTLE_WHITEKNIGHT_5
 {
 	lock
 	faceplayer
+    namebox("White Knight")
 	msgbox(format("Many of my fellow Knights somehow have puns for their names.\pHowever they are completely oblivious to this."))
     closemessage
     hidenamebox
@@ -652,6 +669,7 @@ script NPC_FALADORCASTLE_WHITEKNIGHT_6
 {
 	lock
 	faceplayer
+    namebox("Guard")
 	msgbox(format("Keeping this Castle clean is a lot of work…\pBut it is even harder navigating it."))
     closemessage
     hidenamebox
@@ -754,7 +772,7 @@ script NPC_FALADORCASTLE_WHITEKNIGHT_13
 		case 4: 
 			lock
 			faceplayer
-			//namebox("Sir Loin")
+			namebox("Sir Loin")
 			msgbox(format("You would think Sir Amik Varze would be here in the throne room wouldn't you?\pWell sorry to burst your bubble, but he isn't here."))
             hidenamebox
             closemessage
@@ -763,7 +781,7 @@ script NPC_FALADORCASTLE_WHITEKNIGHT_13
         case 5:
 			lock
 			faceplayer
-            //namebox("Sir Loin")
+            namebox("Sir Loin")
 			msgbox(format("King Vallance?\pYeh, he is still alive and kicking.\pWe try our best to keep the bucket away from him."))
             hidenamebox
             closemessage
@@ -829,7 +847,11 @@ script BOOK_FALADORCASTLE_SIRVYVIN
 script BOOK_CRANDOR
 {
 	lock
-	msgbox(format("It's a book about the Isle of Crandor.\pRead it?"))
+	msgbox(format("It's a book about the Isle of Crandor.\pRead it?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+        msgbox(format("Nothing interesting happens…"))
+    }
     closemessage
     hidenamebox
 	release
@@ -917,7 +939,7 @@ script NPC_FALADORCASTLE_SQUIRE
     lock
     faceplayer
     namebox ("Squire")
-    if (var(VAR_POKESCAPE_FALADOR_GYM_QUEST) <= 10)
+    if (!flag(FLAG_BADGE02_GET))
     { 
         msgbox(format("For this gym challenge you must navigate your way through Falador Castle and locate Sir Amik Varze.\pIt sounds simple right?\pWell what are you waiting for, good luck challenger!"))
     }
@@ -1016,7 +1038,7 @@ script NPC_FALADORCASTLE_GUARD_2
     lock
     faceplayer
     namebox ("Guard")
-	msgbox(format("I am so lost.\pI was meant to be meeting Sir Vyvin like five minutes ago for a meeting."))
+	msgbox(format("I am so lost.\pI was meant to be meeting Sir Berus like five minutes ago for a meeting."))
     closemessage
     hidenamebox
 	release

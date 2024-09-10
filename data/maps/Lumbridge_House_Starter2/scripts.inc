@@ -50,9 +50,7 @@ GAMEMODE_CHECK_NEWGAME_ITEMS_4:
 	msgbox GAMEMODE_CHECK_NEWGAME_ITEMS_Text_4
 	waitfanfare
 	setflag FLAG_SYS_POKEDEX_GET
-	setflag FLAG_SYS_NATIONAL_DEX
 	setflag FLAG_SYS_QUEST_MENU_GET
-	special EnableNationalPokedex
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox GAMEMODE_CHECK_NEWGAME_ITEMS_Text_5
 	waitfanfare

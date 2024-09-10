@@ -328,7 +328,7 @@ CRANDOR_EVENT_PORTSARIM_CABIN_BOY_1:
 	end
 
 CRANDOR_EVENT_PORTSARIM_CABIN_BOY_2:
-	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 150
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 130
 	goto_if_ge CRANDOR_EVENT_PORTSARIM_CABIN_BOY_4
 	goto CRANDOR_EVENT_PORTSARIM_CABIN_BOY_1
 
@@ -359,6 +359,17 @@ CRANDOR_EVENT_PORTSARIM_NED_2:
 	hidenamebox
 	warp MAP_CRANDOR_SEA_ROUTE, 0, 57, 5
 	goto CRANDOR_EVENT_PORTSARIM_NED_1
+
+
+CRANDOR_EVENT_PORTSARIM_SIROWEN::
+	lock
+	faceplayer
+	namebox CRANDOR_EVENT_PORTSARIM_SIROWEN_Text_0
+	msgbox CRANDOR_EVENT_PORTSARIM_SIROWEN_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
 
 
 CRANDOR_SHIP_SCENE_Text_0:
@@ -426,3 +437,13 @@ CRANDOR_EVENT_PORTSARIM_NED_Text_0:
 
 CRANDOR_EVENT_PORTSARIM_NED_Text_1:
 	.string "Let us embark on this voyage!$"
+
+CRANDOR_EVENT_PORTSARIM_SIROWEN_Text_0:
+	.string "Sir Owen$"
+
+CRANDOR_EVENT_PORTSARIM_SIROWEN_Text_1:
+	.string "Sorry {PLAYER}, something came up\n"
+	.string "last minute that I must attend to.\p"
+	.string "It seems like it will just be you three\n"
+	.string "sailing to Crandor.\p"
+	.string "I wish you all the best.$"

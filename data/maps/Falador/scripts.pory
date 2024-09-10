@@ -663,8 +663,20 @@ script NPC_FALADOR_HAIRDRESSER_NPC
 {
 	lock
 	faceplayer
-    //namebox ("")
+    namebox ("RSMVer")
 	msgbox(format("Today im really feeling the dragoon hairstyle.\pIt will fix my love life for sure."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_HAIRDRESSER_BALD
+{
+	lock
+	faceplayer
+    namebox ("Noob")
+	msgbox(format("It takes a lot of effort to stay bald.\pI have to come in every day just for a quick snip.\pBut it is all worth it for for the ladies."))
     waitmessage
     hidenamebox
 	release
@@ -1103,12 +1115,13 @@ script FALADOR_QUEST_STATE{
 		case 2:
 		case 3:  
 		case 4: //REMOVE DWARVEN MINES BLOCKADE 
+		case 5:
             removeobject(OBJ_EVENT_ID_BLOCK_KNIGHT)
 			setflag(FLAG_TEMP_1)
 			setflag(FLAG_TEMP_1F)
 			return
 
-		case 5: //REMOVE DWARVEN MINES BLOCKADE 
+		case 6: //REMOVE DWARVEN MINES BLOCKADE 
             setflag(FLAG_TEMP_2)
 			setmetatile(24, 6, 609, 0)
 			setmetatile(24, 7, 617, 0)

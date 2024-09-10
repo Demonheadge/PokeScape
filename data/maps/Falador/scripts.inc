@@ -557,7 +557,19 @@ NPC_FALADOR_HAIRDRESSER_6:
 NPC_FALADOR_HAIRDRESSER_NPC::
 	lock
 	faceplayer
-	msgbox NPC_FALADOR_HAIRDRESSER_NPC_Text_0
+	namebox NPC_FALADOR_HAIRDRESSER_NPC_Text_0
+	msgbox NPC_FALADOR_HAIRDRESSER_NPC_Text_1
+	waitmessage
+	hidenamebox
+	release
+	end
+
+
+NPC_FALADOR_HAIRDRESSER_BALD::
+	lock
+	faceplayer
+	namebox NPC_FALADOR_HAIRDRESSER_BALD_Text_0
+	msgbox NPC_FALADOR_HAIRDRESSER_BALD_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -858,7 +870,8 @@ FALADOR_QUEST_STATE_10:
 	case 2, FALADOR_QUEST_STATE_15
 	case 3, FALADOR_QUEST_STATE_15
 	case 4, FALADOR_QUEST_STATE_15
-	case 5, FALADOR_QUEST_STATE_16
+	case 5, FALADOR_QUEST_STATE_15
+	case 6, FALADOR_QUEST_STATE_16
 	return
 
 FALADOR_QUEST_STATE_2:
@@ -1514,9 +1527,21 @@ NPC_FALADOR_HAIRDRESSER_Text_8:
 	.string "Get out!$"
 
 NPC_FALADOR_HAIRDRESSER_NPC_Text_0:
+	.string "RSMVer$"
+
+NPC_FALADOR_HAIRDRESSER_NPC_Text_1:
 	.string "Today im really feeling the dragoon\n"
 	.string "hairstyle.\p"
 	.string "It will fix my love life for sure.$"
+
+NPC_FALADOR_HAIRDRESSER_BALD_Text_0:
+	.string "Noob$"
+
+NPC_FALADOR_HAIRDRESSER_BALD_Text_1:
+	.string "It takes a lot of effort to stay bald.\p"
+	.string "I have to come in every day just for a\n"
+	.string "quick snip.\p"
+	.string "But it is all worth it for for the ladies.$"
 
 NPC_FALADOR_HAIRDRESSER_SUOMI_Text_0:
 	.string "KKcomics$"

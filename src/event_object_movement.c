@@ -528,7 +528,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_JMOD 0x1185
 //#define OBJ_EVENT_PAL_DND 0x1186
 //define OBJ_EVENT_PAL_BOT_DRAGON 0x1187
-#define OBJ_EVENT_PAL_MUGGER 0x1188
+//#define OBJ_EVENT_PAL_MUGGER 0x1188
 #define OBJ_EVENT_PAL_THIEF 0x1189
 #define OBJ_EVENT_PAL_BARMAID 0x118A
 #define OBJ_EVENT_PAL_PKER 0x118B
@@ -832,7 +832,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Jmod, OBJ_EVENT_PAL_JMOD},
     //{gObjectEventPalette_DnD, OBJ_EVENT_PAL_DND},
     //{gObjectEventPalette_Bot_Dragon, OBJ_EVENT_PAL_BOT_DRAGON},
-    {gObjectEventPalette_Mugger, OBJ_EVENT_PAL_MUGGER},
+    //{gObjectEventPalette_Mugger, OBJ_EVENT_PAL_MUGGER},
     {gObjectEventPalette_Thief, OBJ_EVENT_PAL_THIEF},
     {gObjectEventPalette_BarMaid, OBJ_EVENT_PAL_BARMAID},
     {gObjectEventPalette_Pker, OBJ_EVENT_PAL_PKER},

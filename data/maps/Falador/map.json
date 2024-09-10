@@ -821,7 +821,7 @@
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_FALADOR_PARTY_ROOM",
-      "dest_warp_id": "0"
+      "dest_warp_id": "1"
     },
     {
       "x": 56,
@@ -841,7 +841,7 @@
       "x": 68,
       "y": 12,
       "elevation": 0,
-      "dest_map": "MAP_CRANDOR",
+      "dest_map": "MAP_FALADOR_PARTY_ROOM",
       "dest_warp_id": "0"
     },
     {

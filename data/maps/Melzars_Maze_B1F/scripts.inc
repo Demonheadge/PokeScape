@@ -198,15 +198,7 @@ TRIGGER_Melzar_Maze_HAM_EVENT_BABE_1:
 	applymovement 4, MOVEMENT_WALK_RIGHT
 	applymovement 2, Movement_lighthouse_ham_3
 	waitmovement 0
-	namebox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_2
-	playmoncry SPECIES_DEMON_LESSER_TONGUE_FORM, 0
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_3
-	waitmoncry
-	hidenamebox
-	closemessage
-	delay 1
-	setwildbattle SPECIES_DEMON_LESSER_TONGUE_FORM, 25, ITEM_NONE
-	dowildbattle
+	call HAM_LESSER_DEMON_EVENT
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_TEMP_1B
 	removeobject 4
@@ -215,7 +207,7 @@ TRIGGER_Melzar_Maze_HAM_EVENT_BABE_1:
 	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_DOWN
 	waitmovement 0
 	namebox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_0
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_4
+	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_2
 	closemessage
 	hidenamebox
 	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_LEFT
@@ -224,38 +216,38 @@ TRIGGER_Melzar_Maze_HAM_EVENT_BABE_1:
 	setflag FLAG_TEMP_1A
 	removeobject 9
 	playfanfare MUS_OBTAIN_ITEM
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_5
+	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_3
 	waitfanfare
 	closemessage
 	applymovement 2, movement_MelzarsMazeB1F_Babe2
 	waitmovement 0
 	namebox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_0
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_6
+	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_4
 	closemessage
 	hidenamebox
 	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_INTERACT_LEFT
 	waitmovement 0
 	namebox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_0
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_7, MSGBOX_YESNO
+	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_5, MSGBOX_YESNO
 TRIGGER_Melzar_Maze_HAM_EVENT_BABE_9:
 	compare VAR_RESULT, 1
 	goto_if_ne TRIGGER_Melzar_Maze_HAM_EVENT_BABE_10
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_9
+	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_7
 	closemessage
 	hidenamebox
 	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_INTERACT_LEFT
 	waitmovement 0
 	namebox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_0
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_10, MSGBOX_YESNO
+	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_8, MSGBOX_YESNO
 TRIGGER_Melzar_Maze_HAM_EVENT_BABE_13:
 	compare VAR_RESULT, 1
 	goto_if_ne TRIGGER_Melzar_Maze_HAM_EVENT_BABE_14
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_12
+	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_10
 	closemessage
 	hidenamebox
-	trainerbattle_no_intro TRAINER_MELZARSMAZE_HAM_ADMIN_BABE, TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_13
+	trainerbattle_no_intro TRAINER_MELZARSMAZE_HAM_ADMIN_BABE, TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_11
 	namebox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_0
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_14
+	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_12
 	closemessage
 	hidenamebox
 	applymovement 6, movement_MelzarsMazeB1F_HAM2
@@ -267,41 +259,41 @@ TRIGGER_Melzar_Maze_HAM_EVENT_BABE_13:
 	applymovement 2, movement_MelzarsMazeB1F_Babe3
 	waitmovement 0
 	namebox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_0
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_15
+	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_13
 	closemessage
 	hidenamebox
 	applymovement 6, MOVEMENT_INTERACT_LEFT
 	namebox TRIGGER_Melzar_Maze_HAM_EVENT_MELZAR_Text_0
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_16
+	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_14
 	closemessage
 	hidenamebox
 	waitmovement 0
 	namebox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_0
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_17
+	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_15
 	closemessage
 	hidenamebox
 	applymovement 2, MOVEMENT_FACE_DOWN
 	waitmovement 0
 	namebox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_0
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_18
+	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_16
 	closemessage
 	hidenamebox
 	applymovement 6, MOVEMENT_INTERACT_LEFT
 	namebox TRIGGER_Melzar_Maze_HAM_EVENT_MELZAR_Text_0
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_19
+	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_17
 	closemessage
 	hidenamebox
 	waitmovement 0
 	applymovement 2, Movement_InteractFACERIGHT
 	waitmovement 0
 	namebox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_0
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_20
+	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_18
 	closemessage
 	hidenamebox
 	applymovement 2, MOVEMENT_FACE_DOWN
 	waitmovement 0
 	namebox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_0
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_21
+	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_19
 	closemessage
 	hidenamebox
 	fadescreen FADE_TO_BLACK
@@ -331,11 +323,11 @@ TRIGGER_Melzar_Maze_HAM_EVENT_BABE_4:
 	goto TRIGGER_Melzar_Maze_HAM_EVENT_BABE_1
 
 TRIGGER_Melzar_Maze_HAM_EVENT_BABE_10:
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_8, MSGBOX_YESNO
+	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_6, MSGBOX_YESNO
 	goto TRIGGER_Melzar_Maze_HAM_EVENT_BABE_9
 
 TRIGGER_Melzar_Maze_HAM_EVENT_BABE_14:
-	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_11, MSGBOX_YESNO
+	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_9, MSGBOX_YESNO
 	goto TRIGGER_Melzar_Maze_HAM_EVENT_BABE_13
 
 
@@ -425,6 +417,29 @@ movement_MelzarsMazeB1F_Babe3:
 	walk_right
 	step_end
 
+HAM_LESSER_DEMON_EVENT::
+	namebox HAM_LESSER_DEMON_EVENT_Text_0
+	playmoncry SPECIES_DEMON_LESSER_TONGUE_FORM, 0
+	msgbox HAM_LESSER_DEMON_EVENT_Text_1
+	waitmoncry
+	hidenamebox
+	closemessage
+	delay 1
+	setwildbattle SPECIES_DEMON_LESSER_TONGUE_FORM, 25, ITEM_NONE
+	dowildbattle
+	compare VAR_RESULT, B_OUTCOME_RAN
+	goto_if_eq HAM_LESSER_DEMON_EVENT_2
+	return
+
+HAM_LESSER_DEMON_EVENT_2:
+	namebox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_0
+	msgbox HAM_LESSER_DEMON_EVENT_Text_2
+	closemessage
+	hidenamebox
+	call HAM_LESSER_DEMON_EVENT
+	return
+
+
 Melzar_Maze_B1F_HAM_Patty_Text_0:
 	.string "Hey so this script is unfinished, but\n"
 	.string "count this as Melzars Maze section\l"
@@ -494,72 +509,66 @@ TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_1:
 	.string "Here, dispose of this Demon for me.$"
 
 TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_2:
-	.string "Lesser Demon$"
-
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_3:
-	.string "GWARAKU!$"
-
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_4:
 	.string "Thanks for that, let me just grab that\n"
 	.string "map so we can move on.$"
 
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_5:
+TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_3:
 	.string "BABE obtained the MAP PIECE.$"
 
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_6:
+TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_4:
 	.string "Wait, you're not with us are you?\p"
 	.string "Why are you here?$"
 
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_7:
+TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_5:
 	.string "You want this map piece?$"
 
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_8:
+TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_6:
 	.string "Then why are you here?\p"
 	.string "Do you want this map piece?$"
 
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_9:
+TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_7:
 	.string "Well I can't do that.\p"
 	.string "Sigmund needs this piece to get us to\n"
 	.string "Crandor so we can exterminate all\l"
 	.string "monsters.$"
 
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_10:
+TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_8:
 	.string "…{PAUSE 32}…{PAUSE 32}…\p"
 	.string "You really want this map piece don't\n"
 	.string "you?$"
 
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_11:
+TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_9:
 	.string "Then why are you still here?\p"
 	.string "Do you want this map piece?$"
 
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_12:
+TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_10:
 	.string "I guess the only way to settle this is a\n"
 	.string "battle.\p"
 	.string "Winner takes the map piece.$"
 
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_13:
+TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_11:
 	.string "Oh, this is not good.$"
 
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_14:
+TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_12:
 	.string "Aah I lost.\p"
 	.string "Sigmund is going to be mad at me again.\p"
 	.string "Ok here you can have this map piece.$"
 
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_15:
+TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_13:
 	.string "Ok guys mission failed, we're going to\n"
 	.string "Musa Point and meet up with Patty's\l"
 	.string "crew.$"
 
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_16:
+TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_14:
 	.string "What about the batallion sent to\n"
 	.string "Falador?$"
 
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_17:
+TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_15:
 	.string "Right…{PAUSE 32}\n"
 	.string "Well I don't really care about that.\p"
 	.string "Let them do as they like I guess.$"
 
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_18:
+TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_16:
 	.string "Hey you, you may have won this time, but\n"
 	.string "let me just say you shouldn't give\l"
 	.string "chase after us.\p"
@@ -569,11 +578,22 @@ TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_18:
 	.string "This one time I accidentally ate\n"
 	.string "Sigmunds san-$"
 
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_19:
+TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_17:
 	.string "We should really move on now…$"
 
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_20:
+TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_18:
 	.string "Oh right!$"
 
-TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_21:
+TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_19:
 	.string "Bye person I don't know the name of.$"
+
+HAM_LESSER_DEMON_EVENT_Text_0:
+	.string "Lesser Demon$"
+
+HAM_LESSER_DEMON_EVENT_Text_1:
+	.string "GWARAKU!$"
+
+HAM_LESSER_DEMON_EVENT_Text_2:
+	.string "Hey, like so, we need that map piece the\n"
+	.string "Demon is guarding.\p"
+	.string "Think you could try again?$"
