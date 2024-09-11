@@ -4096,7 +4096,15 @@ static const struct SpriteFrameImage sPicTable_Elvarg[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_Elvarg_Fly[] = {
-    obj_frame_tiles(gObjectEventPic_Elvarg_Fly),
+    overworld_frame(gObjectEventPic_Elvarg_Fly, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Elvarg_Fly, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Elvarg_Fly, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Elvarg_Fly, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Elvarg_Fly, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Elvarg_Fly, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Elvarg_Fly, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Elvarg_Fly, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Elvarg_Fly, 4, 4, 2),
 };
 
 static const struct SpriteFrameImage sPicTable_King_Black_Dragon[] = {

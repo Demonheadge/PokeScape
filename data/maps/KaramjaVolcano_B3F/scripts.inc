@@ -12,6 +12,21 @@ KaramjaVolcano_B3F_MapScripts_MAP_SCRIPT_ON_LOAD:
 	return
 
 
+KaramjaVolcano_B3F_STATE::
+	setflag FLAG_TEMP_1F
+	setflag FLAG_TEMP_1E
+	setflag FLAG_TEMP_1
+	setflag FLAG_TEMP_2
+	setflag FLAG_TEMP_3
+	setflag FLAG_TEMP_4
+	setflag FLAG_TEMP_5
+	setflag FLAG_TEMP_6
+	setflag FLAG_TEMP_7
+	setflag FLAG_TEMP_C
+	setflag FLAG_TEMP_D
+	return
+
+
 KaramjaVolcano_STATE3::
 	switch VAR_POKESCAPE_KARAMJAVOLCANO_STATE
 	case 0, KaramjaVolcano_STATE3_2

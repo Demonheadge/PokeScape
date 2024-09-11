@@ -865,6 +865,118 @@ movement_wom_portsarim_3:
 	walk_left
 	step_end
 
+CRANDOR_EVENT_PORTSARIM_NED::
+	lockall
+	faceplayer
+	namebox CRANDOR_EVENT_PORTSARIM_NED_Text_0
+	msgbox CRANDOR_EVENT_PORTSARIM_NED_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne CRANDOR_EVENT_PORTSARIM_NED_2
+CRANDOR_EVENT_PORTSARIM_NED_1:
+	closemessage
+	hidenamebox
+	release
+	end
+
+CRANDOR_EVENT_PORTSARIM_NED_2:
+	msgbox CRANDOR_EVENT_PORTSARIM_NED_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne CRANDOR_EVENT_PORTSARIM_NED_4
+	goto CRANDOR_EVENT_PORTSARIM_NED_1
+
+CRANDOR_EVENT_PORTSARIM_NED_4:
+	msgbox CRANDOR_EVENT_PORTSARIM_NED_Text_3
+	closemessage
+	hidenamebox
+	applymovement 44, Movement_InteractFACERIGHT
+	waitmovement 0
+	applymovement 40, MOVEMENT_PORTSARIM_CRANDOR_SAIL_1
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_PORTSARIM_CRANDOR_SAIL_7
+	applymovement 41, MOVEMENT_PORTSARIM_CRANDOR_SAIL_2
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_PORTSARIM_CRANDOR_SAIL_3
+	waitmovement 0
+	namebox CRANDOR_EVENT_PORTSARIM_NED_Text_4
+	msgbox CRANDOR_EVENT_PORTSARIM_NED_Text_5
+	closemessage
+	hidenamebox
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_PORTSARIM_CRANDOR_SAIL_4
+	waitmovement 0
+	applymovement 44, Movement_InteractFACEUP
+	waitmovement 0
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, MOVEMENT_PORTSARIM_CRANDOR_SAIL_5
+	waitmovement 0
+	applymovement 39, MOVEMENT_PORTSARIM_CRANDOR_SAIL_6
+	delay 120
+	special RemoveCameraObject
+	warp MAP_CRANDOR_SEA_ROUTE, 0, 72, 7
+	waitstate
+	end
+
+
+CRANDOR_EVENT_PORTSARIM_SIROWEN::
+	lock
+	faceplayer
+	namebox CRANDOR_EVENT_PORTSARIM_NED_Text_4
+	msgbox CRANDOR_EVENT_PORTSARIM_SIROWEN_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+MOVEMENT_PORTSARIM_CRANDOR_SAIL_1:
+	face_up
+	delay_16
+	jump_up
+	set_invisible
+	step_end
+
+MOVEMENT_PORTSARIM_CRANDOR_SAIL_2:
+	walk_left
+	walk_up
+	delay_16
+	jump_up
+	set_invisible
+	step_end
+
+MOVEMENT_PORTSARIM_CRANDOR_SAIL_3:
+	delay_16
+	walk_up
+	delay_16
+	face_left
+	step_end
+
+MOVEMENT_PORTSARIM_CRANDOR_SAIL_4:
+	walk_up
+	delay_16
+	jump_up
+	set_invisible
+	step_end
+
+MOVEMENT_PORTSARIM_CRANDOR_SAIL_5:
+	walk_slow_up
+	walk_slow_up
+	step_end
+
+MOVEMENT_PORTSARIM_CRANDOR_SAIL_6:
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	step_end
+
+MOVEMENT_PORTSARIM_CRANDOR_SAIL_7:
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+	step_end
+
 PORTSARIM_HAM_EVENT_PART2_Text_0:
 	.string "H.A.M Leader$"
 
@@ -1245,3 +1357,37 @@ PORTSARIM_WISEOLDMAN_RIVAL_2_Text_2:
 	.string "I am going to the Asgarnia ice dungeon\n"
 	.string "down south, care to join me?\p"
 	.string "I will see you there if you do.$"
+
+CRANDOR_EVENT_PORTSARIM_NED_Text_0:
+	.string "Ned$"
+
+CRANDOR_EVENT_PORTSARIM_NED_Text_1:
+	.string "{PLAYER}, are you ready to set sail to\n"
+	.string "the Isle of Crandor?$"
+
+CRANDOR_EVENT_PORTSARIM_NED_Text_2:
+	.string "I'll warn you one final time, this will be\n"
+	.string "extremely dangerous.\p"
+	.string "We might not make it back alive.\p"
+	.string "Are you sure you are ready to go?$"
+
+CRANDOR_EVENT_PORTSARIM_NED_Text_3:
+	.string "Very well, then let us embark on this\n"
+	.string "voyage!$"
+
+CRANDOR_EVENT_PORTSARIM_NED_Text_4:
+	.string "Sir Owen$"
+
+CRANDOR_EVENT_PORTSARIM_NED_Text_5:
+	.string "{PLAYER} I must admit that it pains\n"
+	.string "me not to be able to join you.\p"
+	.string "But I fully believe you are capable on\n"
+	.string "completing this mission.\p"
+	.string "Good luck!$"
+
+CRANDOR_EVENT_PORTSARIM_SIROWEN_Text_0:
+	.string "Sorry {PLAYER}, something came up\n"
+	.string "last minute that I must attend to.\p"
+	.string "It seems like it will just be you three\n"
+	.string "sailing to Crandor.\p"
+	.string "I wish you all the best.$"

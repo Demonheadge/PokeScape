@@ -9,7 +9,31 @@ mapscripts KaramjaVolcano_B3F_MapScripts {
 
 
 
+script KaramjaVolcano_B3F_STATE {
+//During HAM story.
+    setflag(FLAG_TEMP_1F) //HAM GRUNTS
+    setflag(FLAG_TEMP_1E) //HAM ADMINS
+    //-- ROCKS --
+    setflag(FLAG_TEMP_1)
+    setflag(FLAG_TEMP_2)
+    setflag(FLAG_TEMP_3)
+    setflag(FLAG_TEMP_4)
+    setflag(FLAG_TEMP_5)
+    setflag(FLAG_TEMP_6)
+    setflag(FLAG_TEMP_7)
+    //-- ----- --
+    setflag(FLAG_TEMP_C)    //SOUTH BLOCKING ROCKS
+    setflag(FLAG_TEMP_D)    //SOUTH BLOCKING ROCKS
 
+    //NOTES
+    //Walk on Trigger, walk over to event. There are no breakable rocks during ham event.
+    //There are less metatile rocks around the cave during ham event.
+    //After ham event rocks start falling.
+    //Should do a run out of cave sequence. See if you can disable wild encounters during this time.
+    //Possibly restrict bag/menu usage during this time.
+    //Could just be an automatic run cutscene.
+    //Run into Tzhaar.
+}
 
 
 

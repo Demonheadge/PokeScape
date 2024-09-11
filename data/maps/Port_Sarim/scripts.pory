@@ -9,6 +9,11 @@ const OBJ_EVENT_ID_MAN = 33
 const OBJ_EVENT_ID_QUESTER = 34
 const OBJ_EVENT_ID_JAILGUARD = 37
 
+const OBJ_EVENT_ID_SIROWEN = 44
+const OBJ_EVENT_ID_CABINBOY = 41
+const OBJ_EVENT_ID_NED = 40
+const OBJ_EVENT_ID_LADY_FALADOR = 39
+
 
 mapscripts Port_Sarim_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
@@ -955,4 +960,118 @@ movement movement_wom_portsarim_3{
     walk_left
     walk_up * 6
     walk_left * 6
+}
+
+
+
+
+
+
+
+
+
+
+script CRANDOR_EVENT_PORTSARIM_NED {
+    lockall
+    faceplayer
+    namebox("Ned")
+    msgbox(format("{PLAYER}, are you ready to set sail to the Isle of Crandor?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+        msgbox(format("I'll warn you one final time, this will be extremely dangerous.\pWe might not make it back alive.\pAre you sure you are ready to go?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT)){
+            msgbox(format("Very well, then let us embark on this voyage!"))
+            closemessage
+            hidenamebox
+
+
+            applymovement(OBJ_EVENT_ID_SIROWEN, Movement_InteractFACERIGHT)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_NED, MOVEMENT_PORTSARIM_CRANDOR_SAIL_1)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_PORTSARIM_CRANDOR_SAIL_7)
+            applymovement(OBJ_EVENT_ID_CABINBOY, MOVEMENT_PORTSARIM_CRANDOR_SAIL_2)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_PORTSARIM_CRANDOR_SAIL_3)
+            waitmovement(0)
+            namebox("Sir Owen")
+            msgbox(format("{PLAYER} I must admit that it pains me not to be able to join you.\pBut I fully believe you are capable on completing this mission.\pGood luck!"))
+            closemessage
+            hidenamebox
+            applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_PORTSARIM_CRANDOR_SAIL_4)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_SIROWEN, Movement_InteractFACEUP)
+            waitmovement(0)
+
+            special(SpawnCameraObject) 
+            applymovement(OBJ_EVENT_ID_CAMERA, MOVEMENT_PORTSARIM_CRANDOR_SAIL_5)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_LADY_FALADOR, MOVEMENT_PORTSARIM_CRANDOR_SAIL_6)
+            
+            delay(120)
+            special(RemoveCameraObject) 
+
+            warp(MAP_CRANDOR_SEA_ROUTE, 0, 72, 7)
+            waitstate
+            end
+        }
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script CRANDOR_EVENT_PORTSARIM_SIROWEN {
+    lock
+    faceplayer
+    namebox("Sir Owen")
+    msgbox(format("Sorry {PLAYER}, something came up last minute that I must attend to.\pIt seems like it will just be you three sailing to Crandor.\pI wish you all the best."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+movement MOVEMENT_PORTSARIM_CRANDOR_SAIL_1 {
+    face_up
+    delay_16
+    jump_up
+    set_invisible
+}
+
+movement MOVEMENT_PORTSARIM_CRANDOR_SAIL_2 {
+    walk_left
+    walk_up
+    delay_16
+    jump_up
+    set_invisible
+}
+
+movement MOVEMENT_PORTSARIM_CRANDOR_SAIL_3 {
+    //walk_up
+    delay_16
+    walk_up
+    delay_16
+    face_left
+}
+
+movement MOVEMENT_PORTSARIM_CRANDOR_SAIL_4 {
+    walk_up
+    delay_16
+    jump_up
+    set_invisible
+}
+
+movement MOVEMENT_PORTSARIM_CRANDOR_SAIL_5 {
+    walk_slow_up * 2
+}
+
+movement MOVEMENT_PORTSARIM_CRANDOR_SAIL_6 {
+    walk_slow_right * 7
+}
+
+movement MOVEMENT_PORTSARIM_CRANDOR_SAIL_7 {
+    lock_facing_direction
+    walk_down
+    unlock_facing_direction
 }

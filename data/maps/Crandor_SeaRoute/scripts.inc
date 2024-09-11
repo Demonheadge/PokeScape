@@ -1,15 +1,34 @@
 Crandor_SeaRoute_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Crandor_SeaRoute_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Crandor_SeaRoute_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Crandor_SeaRoute_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
+Crandor_SeaRoute_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	call CRANDOR_SEAROUTE_STATE
+	return
+
 Crandor_SeaRoute_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
-	map_script_2 VAR_TEMP_B, 0, hideplayer
+	map_script_2 VAR_TEMP_B, 1, hideplayer
 	.2byte 0
 
 Crandor_SeaRoute_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-	map_script_2 VAR_TEMP_B, 0, CRANDOR_SHIP_SCENE
+	map_script_2 VAR_TEMP_B, 1, CRANDOR_SHIP_SCENE
 	.2byte 0
+
+
+CRANDOR_SEAROUTE_STATE::
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 130
+	goto_if_eq CRANDOR_SEAROUTE_STATE_2
+	setflag FLAG_TEMP_10
+	setflag FLAG_TEMP_11
+	setflag FLAG_TEMP_13
+CRANDOR_SEAROUTE_STATE_1:
+	return
+
+CRANDOR_SEAROUTE_STATE_2:
+	setvar VAR_TEMP_B, 1
+	goto CRANDOR_SEAROUTE_STATE_1
 
 
 hideplayer::
@@ -18,8 +37,8 @@ hideplayer::
 
 
 TELEPORT_TO_SHIP_SCENE::
-	warp MAP_CRANDOR_SEA_ROUTE, 0, 57, 5
-	waitstate
+	applymovement 34, movement_elvargflyover_left
+	waitmovement 0
 	end
 
 
@@ -27,6 +46,8 @@ CRANDOR_SHIP_SCENE::
 	lockall
 	setflag FLAG_TEMP_10
 	removeobject 2
+	setobjectxyperm 1, 34, 14
+	setobjectxyperm 2, 26, 8
 	applymovement OBJ_EVENT_ID_PLAYER, movement_setinvisible
 	applymovement 3, movement_crandor_ship
 	waitmovement 0
@@ -54,7 +75,7 @@ CRANDOR_SHIP_SCENE::
 	applymovement 3, movement_sailing2
 	waitmovement 0
 	delay 32
-	setobjectxy 1, 22, 9
+	setobjectxy 1, 35, 14
 	playse SE_M_FLY
 	applymovement 1, movement_elvargflyover2
 	waitmovement 0
@@ -70,7 +91,7 @@ CRANDOR_SHIP_SCENE::
 	applymovement OBJ_EVENT_ID_PLAYER, movement_sailing2
 	applymovement 3, movement_sailing2
 	waitmovement 0
-	setobjectxy 1, 22, 3
+	setobjectxy 1, 40, 5
 	playse SE_M_FLY
 	applymovement 1, movement_elvargflyover_left
 	setvar VAR_0x8004, 1 @ vertical pan
@@ -78,7 +99,7 @@ CRANDOR_SHIP_SCENE::
 	setvar VAR_0x8006, 8 @ num shakes
 	setvar VAR_0x8007, 3 @ shake delay
 	special ShakeCamera
-	setmetatile 19, 2, 834, 0
+	setmetatile 34, 5, 834, 0
 	special DrawWholeMapView
 	delay 32
 	setvar VAR_0x8004, 1 @ vertical pan
@@ -86,7 +107,7 @@ CRANDOR_SHIP_SCENE::
 	setvar VAR_0x8006, 8 @ num shakes
 	setvar VAR_0x8007, 3 @ shake delay
 	special ShakeCamera
-	setmetatile 16, 7, 834, 0
+	setmetatile 31, 10, 834, 0
 	special DrawWholeMapView
 	delay 32
 	setvar VAR_0x8004, 1 @ vertical pan
@@ -94,9 +115,11 @@ CRANDOR_SHIP_SCENE::
 	setvar VAR_0x8006, 8 @ num shakes
 	setvar VAR_0x8007, 3 @ shake delay
 	special ShakeCamera
-	setmetatile 15, 1, 834, 0
+	setmetatile 30, 4, 834, 0
 	special DrawWholeMapView
 	waitmovement 0
+	setflag FLAG_TEMP_11
+	removeobject 1
 	namebox CRANDOR_SHIP_SCENE_Text_2
 	msgbox CRANDOR_SHIP_SCENE_Text_7
 	closemessage
@@ -106,7 +129,7 @@ CRANDOR_SHIP_SCENE::
 	setvar VAR_0x8006, 8 @ num shakes
 	setvar VAR_0x8007, 3 @ shake delay
 	special ShakeCamera
-	setmetatile 9, 3, 834, 0
+	setmetatile 24, 5, 834, 0
 	special DrawWholeMapView
 	waitstate
 	applymovement OBJ_EVENT_ID_PLAYER, movement_sailing4
@@ -117,7 +140,7 @@ CRANDOR_SHIP_SCENE::
 	setvar VAR_0x8006, 8 @ num shakes
 	setvar VAR_0x8007, 3 @ shake delay
 	special ShakeCamera
-	setmetatile 4, 4, 834, 0
+	setmetatile 31, 7, 834, 0
 	special DrawWholeMapView
 	waitstate
 	applymovement OBJ_EVENT_ID_PLAYER, movement_sailing4
@@ -128,7 +151,7 @@ CRANDOR_SHIP_SCENE::
 	setvar VAR_0x8006, 8 @ num shakes
 	setvar VAR_0x8007, 3 @ shake delay
 	special ShakeCamera
-	setmetatile 7, 7, 834, 0
+	setmetatile 22, 10, 834, 0
 	special DrawWholeMapView
 	waitstate
 	namebox CRANDOR_SHIP_SCENE_Text_0
@@ -143,7 +166,7 @@ CRANDOR_SHIP_SCENE::
 	setvar VAR_0x8006, 8 @ num shakes
 	setvar VAR_0x8007, 3 @ shake delay
 	special ShakeCamera
-	setmetatile 14, 5, 834, 0
+	setmetatile 26, 9, 834, 0
 	special DrawWholeMapView
 	waitstate
 	namebox CRANDOR_SHIP_SCENE_Text_2
@@ -151,8 +174,6 @@ CRANDOR_SHIP_SCENE::
 	closemessage
 	hidenamebox
 	waitmovement 0
-	setflag FLAG_TEMP_11
-	removeobject 1
 	applymovement OBJ_EVENT_ID_PLAYER, movement_sailing4
 	applymovement 3, movement_sailing4
 	waitmovement 0
@@ -161,7 +182,7 @@ CRANDOR_SHIP_SCENE::
 	setvar VAR_0x8006, 8 @ num shakes
 	setvar VAR_0x8007, 3 @ shake delay
 	special ShakeCamera
-	setmetatile 10, 5, 834, 0
+	setmetatile 25, 8, 834, 0
 	special DrawWholeMapView
 	waitstate
 	namebox CRANDOR_SHIP_SCENE_Text_2
@@ -176,7 +197,7 @@ CRANDOR_SHIP_SCENE::
 	setvar VAR_0x8006, 8 @ num shakes
 	setvar VAR_0x8007, 3 @ shake delay
 	special ShakeCamera
-	setmetatile 11, 3, 834, 0
+	setmetatile 22, 7, 834, 0
 	special DrawWholeMapView
 	waitstate
 	applymovement OBJ_EVENT_ID_PLAYER, movement_sailing3
@@ -188,8 +209,10 @@ CRANDOR_SHIP_SCENE::
 	msgbox CRANDOR_SHIP_SCENE_Text_11
 	closemessage
 	hidenamebox
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 135
 	delay 60
 	warp MAP_CRANDOR, 1
+	waitstate
 	return
 
 
@@ -274,6 +297,48 @@ movement_cabinboy:
 	set_invisible
 	step_end
 
+movement_elvarg_test:
+	face_left
+	lock_facing_direction
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	walk_right
+	walk_up
+	walk_down
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	unlock_facing_direction
+	face_up
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_down
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	face_right
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
 ENCOUNTER_CHAOS_ELEMENTAL::
 	lock
 	namebox ENCOUNTER_CHAOS_ELEMENTAL_Text_0
@@ -340,38 +405,6 @@ CRANDOR_EVENT_PORTSARIM_CABIN_BOY_4:
 	end
 
 
-CRANDOR_EVENT_PORTSARIM_NED::
-	lock
-	faceplayer
-	namebox CRANDOR_SHIP_SCENE_Text_2
-	msgbox CRANDOR_EVENT_PORTSARIM_NED_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, 0
-	goto_if_ne CRANDOR_EVENT_PORTSARIM_NED_2
-CRANDOR_EVENT_PORTSARIM_NED_1:
-	closemessage
-	hidenamebox
-	release
-	end
-
-CRANDOR_EVENT_PORTSARIM_NED_2:
-	msgbox CRANDOR_EVENT_PORTSARIM_NED_Text_1
-	closemessage
-	hidenamebox
-	warp MAP_CRANDOR_SEA_ROUTE, 0, 57, 5
-	goto CRANDOR_EVENT_PORTSARIM_NED_1
-
-
-CRANDOR_EVENT_PORTSARIM_SIROWEN::
-	lock
-	faceplayer
-	namebox CRANDOR_EVENT_PORTSARIM_SIROWEN_Text_0
-	msgbox CRANDOR_EVENT_PORTSARIM_SIROWEN_Text_1
-	closemessage
-	hidenamebox
-	release
-	end
-
-
 CRANDOR_SHIP_SCENE_Text_0:
 	.string "Cabin Boy$"
 
@@ -430,20 +463,3 @@ CRANDOR_EVENT_PORTSARIM_CABIN_BOY_Text_1:
 	.string "One day I hope to set sail with her!\p"
 	.string "But alas the lady, she needs a captain.\p"
 	.string "Not a wee cabin boy like myself…$"
-
-CRANDOR_EVENT_PORTSARIM_NED_Text_0:
-	.string "{PLAYER}, are you ready to set sail to\n"
-	.string "the Isle of Crandor?$"
-
-CRANDOR_EVENT_PORTSARIM_NED_Text_1:
-	.string "Let us embark on this voyage!$"
-
-CRANDOR_EVENT_PORTSARIM_SIROWEN_Text_0:
-	.string "Sir Owen$"
-
-CRANDOR_EVENT_PORTSARIM_SIROWEN_Text_1:
-	.string "Sorry {PLAYER}, something came up\n"
-	.string "last minute that I must attend to.\p"
-	.string "It seems like it will just be you three\n"
-	.string "sailing to Crandor.\p"
-	.string "I wish you all the best.$"

@@ -2,7 +2,7 @@
   "id": "MAP_DRAYNOR_HOUSE_NED",
   "name": "Draynor_House_Ned",
   "layout": "LAYOUT_DRAYNOR_HOUSE_NED",
-  "music": "MUS_PS_DRAYNOR",
+  "music": "MUS_PS_LUMBRIDGE",
   "region_map_section": "MAPSEC_DRAYNOR",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

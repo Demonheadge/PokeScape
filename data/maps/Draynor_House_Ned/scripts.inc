@@ -170,6 +170,12 @@ Story_Ned_Draynor::
 	msgbox Story_Ned_Draynor_Text_10
 	hidenamebox
 	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP
+	waitmovement 0
+	namebox Ned_Draynor_Text_0
+	msgbox Story_Ned_Draynor_Text_11
+	hidenamebox
+	closemessage
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 130
 	release
 	end
@@ -279,7 +285,9 @@ Story_Ned_Draynor_Text_9:
 
 Story_Ned_Draynor_Text_10:
 	.string "Well, I suppose that answers that\n"
-	.string "question.\p"
+	.string "question.$"
+
+Story_Ned_Draynor_Text_11:
 	.string "Alright then, {PLAYER} was it.\p"
 	.string "Lead the way.\p"
 	.string "To Crandor we shall sail!$"

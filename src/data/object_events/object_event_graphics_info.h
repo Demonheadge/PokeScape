@@ -7642,12 +7642,12 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Elvarg_Fly = {
     .height = 32,
     .paletteSlot = 5,
     .shadowSize = SHADOW_SIZE_M,
-    .inanimate = TRUE,
+    .inanimate = FALSE,
     .disableReflectionPaletteLoad = FALSE,
-    .tracks = TRACKS_FOOT,
+    .tracks = TRACKS_NONE,
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_Inanimate,
+    .anims = sAnimTable_Standard,
     .images = sPicTable_Elvarg_Fly,
     .affineAnims = gDummySpriteAffineAnimTable
 };
