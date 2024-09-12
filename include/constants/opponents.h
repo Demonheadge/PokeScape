@@ -429,8 +429,10 @@
 #define TRAINER_EDGEVILLE_GYM_7                         425
 #define TRAINER_EDGEVILLE_GYM_8                         426
 #define TRAINER_EDGEVILLE_GYM_9                         427
-
-
+#define TRAINER_ROUTE49_TRAINER_1                       428
+#define TRAINER_ROUTE49_TRAINER_2                       429
+#define TRAINER_ROUTE49_TRAINER_3                       430
+#define TRAINER_MUDSKIPPER_MUGGER                       431
 
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows

@@ -907,6 +907,23 @@ script NPC_PORTSARIM_DRUNK_HAM
 }
 
 
+script NPC_PORTSARIM_NPC_8
+{
+	lock
+	faceplayer
+    namebox ("Fisherman")
+	msgbox(format("Seagulls are great.\pThey grow up differently depending on how you raise them.\pFor example, if it has equal attack and defence when you level it up enough it'll turn into a Pelican.\pI've heard some of those runes that Wizards use have an effect on them too, but I don't dabble with any of that magic nonsense so you'll have to try those for yourself."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+
 //Wise Old man
 script PORTSARIM_WISEOLDMAN_RIVAL_2{
     if (!(var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 105)) {

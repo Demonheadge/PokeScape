@@ -1,0 +1,45 @@
+mapscripts Route49_MapScripts {
+
+}
+
+script BATTLE_ROUTE49_Trainer_1
+{
+    trainerbattle_single(TRAINER_ROUTE49_TRAINER_1, format("Heh, you almost made it savely out of the Wilderness, unfortunately...{PAUSE15}\pICE BARRAGE!"),format("Why didn't you freeze?!"))
+    //namebox ("Cupholder")
+    msgbox(format("I ran out of runes...\pDid you at least catch a cold?\pAnything?"))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_ROUTE49_Trainer_2
+{
+    trainerbattle_single(TRAINER_ROUTE49_TRAINER_2, format("I wear full Rune to the Wilderness, nobody will defeat me anyway!"),format("Plea?"))
+    //namebox ("Cupholder")
+    msgbox(format("Oh, you won't take my gear and leave me here?\pNaked?"))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_ROUTE49_Trainer_3
+{
+    trainerbattle_single(TRAINER_ROUTE49_TRAINER_2, format("No! I've been here for hours, I'm not about to let you crash me!"),format("What do you mean you can't crash a fishing spot?"))
+    //namebox ("Cupholder")
+    msgbox(format("Fine, we can share the spot but please don't tell anyone else I'm here..."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_Route49
+{
+	lock
+	faceplayer
+    namebox ("Fremennik Guard")
+	msgbox(format("You made it all the way through the Wilderness, quickly come through and take a rest among us Fremenniks!"))
+    closemessage
+    hidenamebox
+	release
+	end
+}

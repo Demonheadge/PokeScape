@@ -7028,3 +7028,67 @@ static const struct TrainerMon sParty_EDGEVILLE_GYM_9[] = {
     .species = SPECIES_FROGEEL,
     }
 };
+
+//Route49
+
+static const struct TrainerMon sParty_ROUTE49_TRAINER_1[] = {
+    {
+    .lvl = 40,
+    .species = SPECIES_ICEFIEND,
+    },
+    {
+    .lvl = 41,
+    .species = SPECIES_ICELORD,
+    },
+    {
+    .lvl = 42,
+    .species = SPECIES_DEMON_ICE_RS3_FORM,
+    }
+};
+
+static const struct TrainerMon sParty_ROUTE49_TRAINER_2[] = {
+    {
+    .lvl = 40,
+    .species = SPECIES_ROCK_CRAB_SAND_FORM,
+    },
+    {
+    .lvl = 41,
+    .species = SPECIES_COCKROACH_SOLDIER,
+    }
+};
+
+static const struct TrainerMon sParty_ROUTE49_TRAINER_3[] = {
+    {
+    .lvl = 41,
+    .species = SPECIES_CRAB_DARK_FORM,
+    },
+    {
+    .lvl = 42,
+    .species = SPECIES_GIANT_CRAB_DARK_FORM,
+    }
+};
+
+//Mudskipper Sound 3
+
+static const struct TrainerMon sParty_MUDSKIPPER_MUGGER[] = {
+    {
+    .lvl = 29,
+    .species = SPECIES_MONKEY_NORMAL_FORM,
+    },
+    {
+    .lvl = 29,
+    .species = SPECIES_MONKEY_NORMAL_FORM,
+    },
+    {
+    .lvl = 30,
+    .species = SPECIES_MONKEY_HARMLESS_FORM,
+    },
+    {
+    .lvl = 30,
+    .species = SPECIES_MONKEY_HARMLESS_FORM,
+    },
+    {
+    .lvl = 31,
+    .species = SPECIES_GORILLA_NORMAL_FORM,
+    }
+};

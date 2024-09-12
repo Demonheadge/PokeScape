@@ -4824,13 +4824,57 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_EDGEVILLE_GYM_9),
     },
 
+//Route49
 
+    [TRAINER_ROUTE49_TRAINER_1] =
+    {
+        .trainerClass = TRAINER_CLASS_PKer,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_mage_mystic,
+        .trainerName = _("Fr0stByte"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_ROUTE49_TRAINER_1),
+    },
 
+    [TRAINER_ROUTE49_TRAINER_2] =
+    {
+        .trainerClass = TRAINER_CLASS_NOOB,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_noob_rune,
+        .trainerName = _(""),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_ROUTE49_TRAINER_2),
+    },
 
+    [TRAINER_ROUTE49_TRAINER_3] =
+    {
+        .trainerClass = TRAINER_CLASS_FISHER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_fisher,
+        .trainerName = _(""),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_ROUTE49_TRAINER_3),
+    },
 
+//Mudskipper Sound 3
 
-
-
+    [TRAINER_MUDSKIPPER_MUGGER] =
+    {
+        .trainerClass = TRAINER_CLASS_MUGGER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+        .trainerPic = TRAINER_PIC_mugger,
+        .trainerName = _("Strandy"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_MUDSKIPPER_MUGGER),
+    },
 
 
 

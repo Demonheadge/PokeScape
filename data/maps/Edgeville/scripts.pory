@@ -427,7 +427,7 @@ script FIND_BRASS_KEY {
 
 script ITEM_EDGEVILLE_INDOOR_1
 {
-    finditem(ITEM_NONE)
+    finditem(ITEM_STAT_BEER)
     end
 }
 script ITEM_EDGEVILLE_INDOOR_2
@@ -440,7 +440,7 @@ script NPC_EDGEVILLE_HOUSE_NPC_1 {
 	lock
 	faceplayer
     //namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+	msgbox(format("Some dude asked me if I wanted his stuff, all I had to do is follow him to the Wilderness.\pI was tempted, but that would require way too much effort..."))
     closemessage
     hidenamebox
 	release
@@ -450,7 +450,7 @@ script NPC_EDGEVILLE_HOUSE_NPC_2 {
 	lock
 	faceplayer
     //namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+	msgbox(format("Why are all of us dudes together in this weird barn?\pI have no idea, I was told there would be Beer..."))
     closemessage
     hidenamebox
 	release
@@ -460,7 +460,7 @@ script NPC_EDGEVILLE_HOUSE_NPC_3 {
 	lock
 	faceplayer
     //namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+	msgbox(format("Living so close to the Wilderness can be scary, especially when you don't train monsters yourself, but I don't mind."))
     closemessage
     hidenamebox
 	release
@@ -470,7 +470,7 @@ script NPC_EDGEVILLE_HOUSE_NPC_4 {
 	lock
 	faceplayer
     //namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+	msgbox(format("How often do you think about the Zarosian Empire?"))
     closemessage
     hidenamebox
 	release
@@ -480,7 +480,7 @@ script NPC_EDGEVILLE_HOUSE_NPC_5 {
 	lock
 	faceplayer
     //namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+	msgbox(format("Did you know there something are useful things in boxes?\p{PAUSE15}These meet your Crate expectations!"))
     closemessage
     hidenamebox
 	release

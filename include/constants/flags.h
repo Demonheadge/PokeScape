@@ -1271,10 +1271,10 @@
 #define FLAG_ITEM_MUSA_POINT_2                                      0x4AC // Unused Flag
 #define FLAG_ITEM_LIGHTHOUSE_1                                      0x4AD // Unused Flag
 #define FLAG_ITEM_DWARVENMINES_5                                    0x4AE // Unused Flag
-#define FLAG_UNUSED_0x4AF                                           0x4AF // Unused Flag
-#define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
-#define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
-#define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
+#define FLAG_ITEM_EDGEVILLE_INDOOR_1                                0x4AF // Unused Flag
+#define FLAG_ITEM_EDGEVILLE_INDOOR_2                                0x4B0 // Unused Flag
+#define FLAG_ITEM_WGS_CAVERN_1                                      0x4B1 // Unused Flag
+#define FLAG_ITEM_WGS_CAVERN_2                                      0x4B2 // Unused Flag
 #define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
 #define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
 #define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag

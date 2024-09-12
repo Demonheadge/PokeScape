@@ -58,7 +58,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ITEM_MUDSKIPPER_2",
       "flag": "0"
     },
     {
@@ -71,7 +71,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ITEM_MUDSKIPPER_3",
       "flag": "0"
     },
     {
@@ -84,7 +84,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ITEM_MUDSKIPPER_1",
       "flag": "0"
     }
   ],
@@ -100,7 +100,7 @@
       "x": 16,
       "y": 13,
       "elevation": 0,
-      "item": "ITEM_NONE",
+      "item": "ITEM_PURPLE_SWEETS",
       "flag": "FLAG_TEMP_1"
     },
     {
@@ -108,7 +108,7 @@
       "x": 16,
       "y": 11,
       "elevation": 0,
-      "item": "ITEM_NONE",
+      "item": "ITEM_PARTY_HAT",
       "flag": "FLAG_TEMP_1"
     },
     {
@@ -116,7 +116,7 @@
       "x": 18,
       "y": 14,
       "elevation": 0,
-      "item": "ITEM_NONE",
+      "item": "ITEM_LAMP_HP",
       "flag": "FLAG_TEMP_1"
     }
   ]
