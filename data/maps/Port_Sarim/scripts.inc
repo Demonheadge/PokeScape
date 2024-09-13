@@ -792,6 +792,17 @@ NPC_PORTSARIM_DRUNK_HAM::
 	end
 
 
+NPC_PORTSARIM_NPC_8::
+	lock
+	faceplayer
+	namebox NPC_PORTSARIM_NPC_1_Text_0
+	msgbox NPC_PORTSARIM_NPC_8_Text_0
+	waitmessage
+	hidenamebox
+	release
+	end
+
+
 PORTSARIM_WISEOLDMAN_RIVAL_2::
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 105
 	goto_if_ne PORTSARIM_WISEOLDMAN_RIVAL_2_2
@@ -1341,6 +1352,19 @@ NPC_PORTSARIM_DRUNK_HAM_Text_0:
 NPC_PORTSARIM_DRUNK_HAM_Text_1:
 	.string "hic…{PAUSE 32}Where is e…{PAUSE 32}very…{PAUSE 32}one.\n"
 	.string "Oh {PAUSE 32}…right {PAUSE 32}the lighthouse… {PAUSE 32}hic…$"
+
+NPC_PORTSARIM_NPC_8_Text_0:
+	.string "Seagulls are great.\p"
+	.string "They grow up differently depending on\n"
+	.string "how you raise them.\p"
+	.string "For example, if it has equal attack and\n"
+	.string "defence when you level it up enough\l"
+	.string "it'll turn into a Pelican.\p"
+	.string "I've heard some of those runes that\n"
+	.string "Wizards use have an effect on them too,\l"
+	.string "but I don't dabble with any of that\l"
+	.string "magic nonsense so you'll have to try\l"
+	.string "those for yourself.$"
 
 PORTSARIM_WISEOLDMAN_RIVAL_2_Text_0:
 	.string "Wise Old Man$"

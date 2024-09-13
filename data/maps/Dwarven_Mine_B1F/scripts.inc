@@ -626,6 +626,46 @@ NPC_DWARVENMINES_DWARF_8::
 	end
 
 
+NPC_DWARVENMINES_DWARF_9::
+	lock
+	faceplayer
+	namebox NPC_DWARVENMINES_DWARF_1_Text_0
+	msgbox NPC_DWARVENMINES_DWARF_9_Text_0
+	hidenamebox
+	release
+	end
+
+
+NPC_DWARVENMINES_DWARF_10::
+	lock
+	faceplayer
+	namebox NPC_DWARVENMINES_DWARF_1_Text_0
+	msgbox NPC_DWARVENMINES_DWARF_10_Text_0
+	hidenamebox
+	release
+	end
+
+
+NPC_DWARVENMINES_DWARF_11::
+	lock
+	faceplayer
+	namebox NPC_DWARVENMINES_DWARF_1_Text_0
+	msgbox NPC_DWARVENMINES_DWARF_11_Text_0
+	hidenamebox
+	release
+	end
+
+
+NPC_DWARVENMINES_HURA::
+	lock
+	faceplayer
+	namebox NPC_DWARVENMINES_HURA_Text_0
+	msgbox NPC_DWARVENMINES_HURA_Text_1
+	hidenamebox
+	release
+	end
+
+
 NPC_SCORPION_Text_0:
 	.string "SCORPION$"
 
@@ -912,3 +952,43 @@ NPC_DWARVENMINES_DWARF_8_Text_0:
 	.string "That pickaxe you have there…\p"
 	.string "That looks like one of mine.\p"
 	.string "How did you get it?$"
+
+NPC_DWARVENMINES_DWARF_9_Text_0:
+	.string "If you are dealing with less than\n"
+	.string "adamantite, then you can just keep\l"
+	.string "walking human.$"
+
+NPC_DWARVENMINES_DWARF_10_Text_0:
+	.string "I've seen humans down here mining ores,\n"
+	.string "then using magic to smelt them into\l"
+	.string "bars!\p"
+	.string "Blasphemy!\p"
+	.string "It has taken dwaves centuries to find\n"
+	.string "the perfect temperatures for our\l"
+	.string "forges, there's no way humans can just\l"
+	.string "bypass that...\p"
+	.string "Right??$"
+
+NPC_DWARVENMINES_DWARF_11_Text_0:
+	.string "Heigh ho!\p"
+	.string "We dig dig dig dig dig dig dig from early\n"
+	.string "morn till night...\p"
+	.string "We dig dig dig dig dig dig dig up\n"
+	.string "everything in sight...\p"
+	.string "Heigh ho!$"
+
+NPC_DWARVENMINES_HURA_Text_0:
+	.string "Hura$"
+
+NPC_DWARVENMINES_HURA_Text_1:
+	.string "'Ello there.\p"
+	.string "Have you ever used a crossbow before?\p"
+	.string "They're dwarven engineering at its\n"
+	.string "best!\p"
+	.string "If you come across a WATERFALL that\n"
+	.string "you can't seem to cross, then launching\l"
+	.string "a MITHRIL GRAPPLE from a crossbow is a\l"
+	.string "sure-fire way to scale it!\p"
+	.string "I'm afraid I don't currently have any in\n"
+	.string "stock, but if I get any in I'll make sure\l"
+	.string "you get your hands on one.$"

@@ -191,10 +191,10 @@ REGIONALFORMSBOOK_Text_2:
 	.string "You decide not to read the book.$"
 
 FOODFORMSBOOK_Text_0:
-	.string "You skim over looks of very dull\n"
-	.string "sounding book titles until you see one\l"
-	.string "called: 'Dionysius and the Chocolate\l"
-	.string "Cake Factory'.\p"
+	.string "You skim over lots of very dull sounding\n"
+	.string "book titles until you see one called:\l"
+	.string "'Dionysius and the Chocolate Cake\l"
+	.string "Factory'.\p"
 	.string "Would you like to read it?$"
 
 FOODFORMSBOOK_Text_1:

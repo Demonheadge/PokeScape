@@ -279,6 +279,7 @@ BATTLE_BASILISK_GYM::
 	compare VAR_RESULT, B_OUTCOME_RAN
 	goto_if_eq BATTLE_BASILISK_GYM_5
 BATTLE_BASILISK_GYM_1:
+	release
 	end
 
 BATTLE_BASILISK_GYM_2:
@@ -300,6 +301,7 @@ BATTLE_BASILISK_GYM_3:
 BATTLE_BASILISK_GYM_4:
 	setvar VAR_POKESCAPE_EDGEVILLE_GYM_QUEST, 10
 	closemessage
+	release
 	end
 
 BATTLE_BASILISK_GYM_5:
@@ -366,7 +368,7 @@ FIND_BRASS_KEY::
 
 
 ITEM_EDGEVILLE_INDOOR_1::
-	finditem ITEM_NONE
+	finditem ITEM_STAT_BEER
 	end
 
 
@@ -388,7 +390,7 @@ NPC_EDGEVILLE_HOUSE_NPC_1::
 NPC_EDGEVILLE_HOUSE_NPC_2::
 	lock
 	faceplayer
-	msgbox NPC_EDGEVILLE_HOUSE_NPC_1_Text_0
+	msgbox NPC_EDGEVILLE_HOUSE_NPC_2_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -398,7 +400,7 @@ NPC_EDGEVILLE_HOUSE_NPC_2::
 NPC_EDGEVILLE_HOUSE_NPC_3::
 	lock
 	faceplayer
-	msgbox NPC_EDGEVILLE_HOUSE_NPC_1_Text_0
+	msgbox NPC_EDGEVILLE_HOUSE_NPC_3_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -408,7 +410,7 @@ NPC_EDGEVILLE_HOUSE_NPC_3::
 NPC_EDGEVILLE_HOUSE_NPC_4::
 	lock
 	faceplayer
-	msgbox NPC_EDGEVILLE_HOUSE_NPC_1_Text_0
+	msgbox NPC_EDGEVILLE_HOUSE_NPC_4_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -418,7 +420,7 @@ NPC_EDGEVILLE_HOUSE_NPC_4::
 NPC_EDGEVILLE_HOUSE_NPC_5::
 	lock
 	faceplayer
-	msgbox NPC_EDGEVILLE_HOUSE_NPC_1_Text_0
+	msgbox NPC_EDGEVILLE_HOUSE_NPC_5_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -461,7 +463,7 @@ NPC_EDGEVILLE_HOUSE_NPC_8::
 NPC_EDGEVILLE_HOUSE_NPC_9::
 	lock
 	faceplayer
-	msgbox NPC_EDGEVILLE_HOUSE_NPC_1_Text_0
+	msgbox NPC_EDGEVILLE_HOUSE_NPC_9_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -471,7 +473,7 @@ NPC_EDGEVILLE_HOUSE_NPC_9::
 NPC_EDGEVILLE_HOUSE_NPC_10::
 	lock
 	faceplayer
-	msgbox NPC_EDGEVILLE_HOUSE_NPC_1_Text_0
+	msgbox NPC_EDGEVILLE_HOUSE_NPC_9_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -788,7 +790,31 @@ FIND_BRASS_KEY_Text_0:
 	.string "{PLAYER} obtained the BRASS KEY.$"
 
 NPC_EDGEVILLE_HOUSE_NPC_1_Text_0:
-	.string "Hello, I am a Cupholder.$"
+	.string "Some dude asked me if I wanted his\n"
+	.string "stuff, all I had to do is follow him to\l"
+	.string "the Wilderness.\p"
+	.string "I was tempted, but that would require\n"
+	.string "way too much effort...$"
+
+NPC_EDGEVILLE_HOUSE_NPC_2_Text_0:
+	.string "Why are all of us dudes together in this\n"
+	.string "weird barn?\p"
+	.string "I have no idea, I was told there would\n"
+	.string "be Beer...$"
+
+NPC_EDGEVILLE_HOUSE_NPC_3_Text_0:
+	.string "Living so close to the Wilderness can be\n"
+	.string "scary, especially when you don't train\l"
+	.string "monsters yourself, but I don't mind.$"
+
+NPC_EDGEVILLE_HOUSE_NPC_4_Text_0:
+	.string "How often do you think about the\n"
+	.string "Zarosian Empire?$"
+
+NPC_EDGEVILLE_HOUSE_NPC_5_Text_0:
+	.string "Did you know there something are useful\n"
+	.string "things in boxes?\p"
+	.string "{PAUSE 15}These meet your Crate expectations!$"
 
 NPC_EDGEVILLE_HOUSE_NPC_6_Text_0:
 	.string "Oziach$"
@@ -816,6 +842,9 @@ NPC_EDGEVILLE_HOUSE_NPC_8_Text_1:
 	.string "I'm waiting on my friend buying some\n"
 	.string "supplies, then we are going to the\l"
 	.string "Wilderness to PK and get filthy rich!$"
+
+NPC_EDGEVILLE_HOUSE_NPC_9_Text_0:
+	.string "Hello, I am a Cupholder.$"
 
 BATTLE_EDGEVILLE_GYM_1_Text_0:
 	.string "My current slayer task is Skeletons.\p"
@@ -881,7 +910,7 @@ BATTLE_EDGEVILLE_GYM_6_Text_2:
 	.string "attacked it out of nowhere.$"
 
 BATTLE_EDGEVILLE_GYM_7_Text_0:
-	.string "LITTLE HUMAN.\l"
+	.string "LITTLE HUMAN.\n"
 	.string "WHAT ARE YOU DOING HERE?!$"
 
 BATTLE_EDGEVILLE_GYM_7_Text_1:

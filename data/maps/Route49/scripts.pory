@@ -4,7 +4,7 @@ mapscripts Route49_MapScripts {
 
 script BATTLE_ROUTE49_Trainer_1
 {
-    trainerbattle_single(TRAINER_ROUTE49_TRAINER_1, format("Heh, you almost made it savely out of the Wilderness, unfortunately...{PAUSE15}\pICE BARRAGE!"),format("Why didn't you freeze?!"))
+    trainerbattle_single(TRAINER_ROUTE49_TRAINER_1, format("Heh, you almost made it savely out of the Wilderness, unfortunately...{PAUSE 15}\pICE BARRAGE!"),format("Why didn't you freeze?!"))
     //namebox ("Cupholder")
     msgbox(format("I ran out of runes...\pDid you at least catch a cold?\pAnything?"))
     hidenamebox

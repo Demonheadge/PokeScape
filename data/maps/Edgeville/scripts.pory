@@ -480,7 +480,7 @@ script NPC_EDGEVILLE_HOUSE_NPC_5 {
 	lock
 	faceplayer
     //namebox ("Cupholder")
-	msgbox(format("Did you know there something are useful things in boxes?\p{PAUSE15}These meet your Crate expectations!"))
+	msgbox(format("Did you know there something are useful things in boxes?\p{PAUSE 15}These meet your Crate expectations!"))
     closemessage
     hidenamebox
 	release
