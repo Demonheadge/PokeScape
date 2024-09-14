@@ -433,13 +433,17 @@
 #define TRAINER_ROUTE49_TRAINER_2                       429
 #define TRAINER_ROUTE49_TRAINER_3                       430
 #define TRAINER_MUDSKIPPER_MUGGER                       431
+#define TRAINER_CRANDOR_HAM_ADMIN_BABE                  432
+#define TRAINER_CRANDOR_HAM_ADMIN_PATTY                 433
+
+
 
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      427
+#define TRAINERS_COUNT                      433
 #define MAX_TRAINERS_COUNT                  864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

@@ -29,16 +29,16 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HAM_PATTY",
-      "x": 35,
-      "y": 7,
+      "x": 24,
+      "y": 11,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_2"
+      "flag": "FLAG_TEMP_1F"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HAM_SIGMUND_1",
@@ -51,20 +51,20 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_1E"
+      "flag": "FLAG_TEMP_1F"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WIZARD_DARK",
-      "x": 39,
-      "y": 0,
+      "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_M",
+      "x": 27,
+      "y": 15,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_TEMP_2"
+      "script": "NPC_CRANDOR_VOLCANO_HAMGRUNT_3",
+      "flag": "FLAG_TEMP_1E"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FIRE_GIANT",
@@ -80,17 +80,17 @@
       "flag": "FLAG_TEMP_2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WIZARD_DARK",
-      "x": 39,
-      "y": 1,
+      "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_F",
+      "x": 25,
+      "y": 16,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_TEMP_2"
+      "script": "NPC_CRANDOR_VOLCANO_HAMGRUNT_4",
+      "flag": "FLAG_TEMP_1E"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -107,29 +107,29 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_M",
-      "x": 8,
-      "y": 9,
+      "x": 12,
+      "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "BATTLE_KaramjaVolcano_HAM_6",
-      "flag": "FLAG_TEMP_1F"
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_CRANDOR_VOLCANO_HAMGRUNT_1",
+      "flag": "FLAG_TEMP_1E"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_M",
-      "x": 11,
-      "y": 9,
+      "x": 13,
+      "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BATTLE_KaramjaVolcano_HAM_5",
-      "flag": "FLAG_TEMP_1F"
+      "script": "NPC_CRANDOR_VOLCANO_HAMGRUNT_1",
+      "flag": "FLAG_TEMP_1E"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -197,9 +197,9 @@
       "flag": "FLAG_TEMP_4"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_F",
-      "x": 37,
-      "y": 1,
+      "graphics_id": "OBJ_EVENT_GFX_HAM_BABE",
+      "x": 23,
+      "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -207,25 +207,25 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_4"
+      "flag": "FLAG_TEMP_1F"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_M",
-      "x": 38,
-      "y": 1,
+      "graphics_id": "OBJ_EVENT_GFX_HAM_JOHANHUS",
+      "x": 23,
+      "y": 9,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_TEMP_4"
+      "script": "Crandor_Event_Volcano",
+      "flag": "FLAG_TEMP_1F"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ELVARG",
-      "x": 37,
-      "y": 12,
+      "x": 24,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -263,8 +263,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
-      "x": 12,
-      "y": 17,
+      "x": 36,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -282,9 +282,9 @@
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "trainer_type": "TRAINER_TYPE_BURIED",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "BATTLE_KaramjaVolcano_Skeleton_1",
       "flag": "0"
     },
     {
@@ -390,6 +390,97 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
       "flag": "FLAG_TEMP_9"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_M",
+      "x": 21,
+      "y": 17,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_CRANDOR_VOLCANO_HAMGRUNT_5",
+      "flag": "FLAG_TEMP_1E"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_M",
+      "x": 19,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_CRANDOR_VOLCANO_HAMGRUNT_2",
+      "flag": "FLAG_TEMP_1E"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TZHAAR_1",
+      "x": 7,
+      "y": 38,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_TEMP_1D"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 23,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_10"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 24,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "FLAG_TEMP_F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_M",
+      "x": 9,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "BATTLE_KaramjaVolcano_HAM_5",
+      "flag": "FLAG_TEMP_1E"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_F",
+      "x": 8,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "BATTLE_KaramjaVolcano_HAM_6",
+      "flag": "FLAG_TEMP_1C"
     }
   ],
   "warp_events": [
@@ -411,21 +502,120 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 12,
+      "x": 17,
       "y": 14,
       "elevation": 0,
-      "var": "VAR_POKESCAPE_KARAMJAVOLCANO_STATE",
-      "var_value": "2",
-      "script": "NPC_KaramjaVolcano_HAM_EVENT1"
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "CRANDOR_VOLCANO_EARTHQUAKE_1"
     },
     {
       "type": "trigger",
-      "x": 33,
-      "y": 2,
+      "x": 17,
+      "y": 15,
       "elevation": 0,
-      "var": "VAR_POKESCAPE_KARAMJAVOLCANO_STATE",
+      "var": "VAR_TEMP_E",
+      "var_value": "1",
+      "script": "CRANDOR_VOLCANO_EARTHQUAKE_1"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "1",
+      "script": "Crandor_Event_Volcano"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "1",
+      "script": "Crandor_Event_Volcano"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_F",
+      "var_value": "1",
+      "script": "Crandor_Event_Volcano"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
       "var_value": "2",
-      "script": "NPC_KaramjaVolcano_HAM_EVENT1"
+      "script": "CRANDOR_VOLCANO_EARTHQUAKE_2"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "2",
+      "script": "CRANDOR_VOLCANO_EARTHQUAKE_2"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "3",
+      "script": "CRANDOR_VOLCANO_EARTHQUAKE_3"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "3",
+      "script": "CRANDOR_VOLCANO_EARTHQUAKE_3"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "3",
+      "script": "CRANDOR_VOLCANO_EARTHQUAKE_3"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 32,
+      "elevation": 0,
+      "var": "VAR_TEMP_E",
+      "var_value": "4",
+      "script": "CRANDOR_VOLCANO_EARTHQUAKE_4"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "1",
+      "script": "CRANDOR_VOLCANO_EARTHQUAKE_0"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_D",
+      "var_value": "1",
+      "script": "CRANDOR_VOLCANO_EARTHQUAKE_0"
     }
   ],
   "bg_events": [

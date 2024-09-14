@@ -18,6 +18,10 @@ script CRANDOR_STATE {
         clearflag(FLAG_TEMP_1E) //ham
         setflag(FLAG_TEMP_1F) //elvarg
     }
+    elif (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 145) {
+        clearflag(FLAG_TEMP_1E) //ham
+        setflag(FLAG_TEMP_1F) //elvarg
+    }
     else {
         setflag(FLAG_TEMP_1E) //ham
         setflag(FLAG_TEMP_1F) //elvarg
@@ -302,7 +306,9 @@ script TRIGGER_ELVARGFLYOVER
     special(RemoveCameraObject)
     fadeinbgm(0)
     //waitmovement(0)
-    goto(ELVARG_WARP)
+    setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 140)
+    warp(MAP_KARAMJA_VOLCANO_B3F, 1, 0, 0)
+    waitstate
     release
     end
 }

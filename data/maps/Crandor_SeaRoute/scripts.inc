@@ -79,7 +79,7 @@ CRANDOR_SHIP_SCENE::
 	playse SE_M_FLY
 	applymovement 1, movement_elvargflyover2
 	waitmovement 0
-	playbgm MUS_PS_RIMMINGTON, 0
+	playbgm MUS_PS_VS_CHAOS_TUNNELS, 0
 	namebox CRANDOR_SHIP_SCENE_Text_0
 	msgbox CRANDOR_SHIP_SCENE_Text_5
 	closemessage

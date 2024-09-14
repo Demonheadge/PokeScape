@@ -4876,6 +4876,30 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_MUDSKIPPER_MUGGER),
     },
 
+    [TRAINER_CRANDOR_HAM_ADMIN_PATTY] =
+    {
+        .trainerClass = TRAINER_CLASS_HAM_ADMIN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HAM,
+        .trainerPic = TRAINER_PIC_ham_patty,
+        .trainerName = _("PATTY"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_LIGHTHOUSE_3F_HAM_ADMIN_PATTY),
+    },
+
+    [TRAINER_CRANDOR_HAM_ADMIN_BABE] =
+    {
+        .trainerClass = TRAINER_CLASS_HAM_ADMIN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HAM,
+        .trainerPic = TRAINER_PIC_ham_babe,
+        .trainerName = _("BABE"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_MELZARSMAZE_HAM_ADMIN_BABE),
+    },
+
 
 
 

@@ -342,7 +342,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TZHAAR_1",
       "x": 19,
-      "y": 27,
+      "y": 29,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -350,7 +350,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "STORYMODE_TZHAAR_NPC",
-      "flag": "0"
+      "flag": "FLAG_TEMP_1F"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HANS",
@@ -418,7 +418,15 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 57,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TZHAAR_HEAL_ZONE"
+    }
   ],
   "bg_events": [
 

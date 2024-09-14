@@ -186,6 +186,7 @@ Mithrilman_FALADOR1::
 Mithrilman_FALADOR2::
 	lock
 	faceplayer
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_FALADOR2_Text_0
 	waitmessage
 	closemessage
@@ -204,6 +205,7 @@ Mithrilman_VARROCK1::
 	lock
 	faceplayer
 	playbgm MUS_ENCOUNTER_MAY, 1
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_VARROCK1_Text_0
 	trainerbattle_single TRAINER_MITHRILMAN3, Mithrilman_VARROCK1_Text_1, Mithrilman_FALADOR1_Text_2, Mithrilman_VARROCK2
 	return
@@ -212,6 +214,7 @@ Mithrilman_VARROCK1::
 Mithrilman_VARROCK2::
 	lock
 	faceplayer
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_VARROCK2_Text_0
 	waitmessage
 	closemessage
@@ -230,6 +233,7 @@ Mithrilman_ALKHARID1::
 	lock
 	faceplayer
 	playbgm MUS_ENCOUNTER_MAY, 1
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_ALKHARID1_Text_0
 	trainerbattle_single TRAINER_MITHRILMAN4, Mithrilman_ALKHARID1_Text_1, Mithrilman_FALADOR1_Text_2, Mithrilman_ALKHARID2
 	return
@@ -238,10 +242,15 @@ Mithrilman_ALKHARID1::
 Mithrilman_ALKHARID2::
 	lock
 	faceplayer
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_ALKHARID2_Text_0
+	closemessage
+	hidenamebox
 	giveitem ITEM_WATERSKIN, 1
 	waitmessage
 	closemessage
+	hidenamebox
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_ALKHARID2_Text_1
 	waitmessage
 	closemessage
@@ -260,6 +269,7 @@ Mithrilman_TZHAAR1::
 	lock
 	faceplayer
 	playbgm MUS_ENCOUNTER_MAY, 1
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_TZHAAR1_Text_0
 	trainerbattle_single TRAINER_MITHRILMAN5, Mithrilman_TZHAAR1_Text_1, Mithrilman_FALADOR1_Text_2, Mithrilman_TZHAAR2
 	return
@@ -268,9 +278,11 @@ Mithrilman_TZHAAR1::
 Mithrilman_TZHAAR2::
 	lock
 	faceplayer
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_TZHAAR2_Text_0
 	waitmessage
 	closemessage
+	hidenamebox
 	fadescreen FADE_TO_BLACK
 	removeobject 2
 	fadescreen FADE_FROM_BLACK
@@ -286,6 +298,7 @@ Mithrilman_DRAYNOR1::
 	lock
 	faceplayer
 	playbgm MUS_ENCOUNTER_MAY, 1
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_DRAYNOR1_Text_0
 	trainerbattle_single TRAINER_MITHRILMAN6, Mithrilman_DRAYNOR1_Text_1, Mithrilman_FALADOR1_Text_2, Mithrilman_DRAYNOR2
 	return
@@ -294,6 +307,7 @@ Mithrilman_DRAYNOR1::
 Mithrilman_DRAYNOR2::
 	lock
 	faceplayer
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_DRAYNOR2_Text_0
 	waitmessage
 	closemessage
@@ -312,6 +326,7 @@ Mithrilman_EDGEVILLE1::
 	goto_if_set FLAG_MITHRILMAN8, Mithrilman_EDGEVILLE1_1
 	lock
 	faceplayer
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_EDGEVILLE1_Text_2
 	release
 	end
@@ -320,6 +335,7 @@ Mithrilman_EDGEVILLE1_1:
 	lock
 	faceplayer
 	playbgm MUS_ENCOUNTER_MAY, 1
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_EDGEVILLE1_Text_0
 	trainerbattle_single TRAINER_MITHRILMAN7, Mithrilman_EDGEVILLE1_Text_1, Mithrilman_FALADOR1_Text_2, Mithrilman_EDGEVILLE2
 	return
@@ -328,6 +344,7 @@ Mithrilman_EDGEVILLE1_1:
 Mithrilman_EDGEVILLE2::
 	lock
 	faceplayer
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_EDGEVILLE2_Text_0
 	waitmessage
 	closemessage
@@ -343,6 +360,7 @@ Mithrilman_WILDERNESS1::
 	lock
 	faceplayer
 	playbgm MUS_ENCOUNTER_MAY, 1
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_WILDERNESS1_Text_0
 	trainerbattle_single TRAINER_MITHRILMAN8, Mithrilman_WILDERNESS1_Text_1, Mithrilman_FALADOR1_Text_2, Mithrilman_WILDERNESS2
 	return
@@ -351,6 +369,7 @@ Mithrilman_WILDERNESS1::
 Mithrilman_WILDERNESS2::
 	lock
 	faceplayer
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_WILDERNESS2_Text_0
 	waitmessage
 	closemessage
@@ -369,14 +388,17 @@ Mithrilman_WILDERNESSVOLCANO1::
 	lock
 	faceplayer
 	playbgm MUS_ENCOUNTER_MAY, 1
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_WILDERNESSVOLCANO1_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, 1
 	goto_if_ne Mithrilman_WILDERNESSVOLCANO1_3
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_WILDERNESSVOLCANO1_Text_2
 	trainerbattle_single TRAINER_MITHRILMAN9, Mithrilman_WILDERNESSVOLCANO1_Text_3, Mithrilman_FALADOR1_Text_2, Mithrilman_WILDERNESSVOLCANO2
 	return
 
 Mithrilman_WILDERNESSVOLCANO1_3:
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_WILDERNESSVOLCANO1_Text_1
 	savebgm MUS_DUMMY
 	fadedefaultbgm
@@ -387,6 +409,7 @@ Mithrilman_WILDERNESSVOLCANO1_3:
 Mithrilman_WILDERNESSVOLCANO2::
 	lock
 	faceplayer
+	namebox Mithrilman_FALADOR1_Text_0
 	msgbox Mithrilman_WILDERNESSVOLCANO2_Text_0
 	waitmessage
 	closemessage

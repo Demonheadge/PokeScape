@@ -1,5 +1,49 @@
 mapscripts Tzhaar_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 8) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+        call(TZHAAR_STATE)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_POKESCAPE_STORYMODE_PROGRESS, 150: STORYMODE_TZHAAR_NPC
+    ]
+}
 
+
+script TZHAAR_STATE {
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 150) {
+        clearflag(FLAG_TEMP_1F)
+    }
+    else {
+        setflag(FLAG_TEMP_1F)
+    }
+}
+
+script TZHAAR_HEAL_ZONE {
+    setrespawn(HEAL_LOCATION_TZHAAR_1F)
+    setvar(VAR_TEMP_0, 1)
+    end
+}
+
+script STORYMODE_TZHAAR_NPC
+{
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+    waitmovement(0)
+    namebox ("Tzhaar")
+    msgbox(format("JalYt, are you well?\pWe wanted to thank you for chasing off those pink-coloured JalYt's.\pThey have been very destructive to the area and attacking our kind.\pFeel free to use our facilities, and if you are an MvM challenger we have a gym is located to the west of here.\pWe thank you again.\pGoodbye."))
+    closemessage
+    hidenamebox
+    applymovement(26, HAM_EVENT_CRANDOR_VOLCANO_31)
+    waitmovement(0)
+    setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 155)
+    setflag(FLAG_TEMP_1F)
+    removeobject(26)
+    setrespawn(HEAL_LOCATION_TZHAAR_1F)
+    release
+    end
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_31 {
+    walk_up * 8
 }
 
 
@@ -34,7 +78,7 @@ script TRIGGER_TZHAAR_GYM_GAAL_1
 script TZHAAR_FIGHTCAVES_NPC
 {
     faceplayer
-    //namebox ("Tzhaar")
+    namebox ("Tzhaar")
     msgbox(format("Welcome to the Tzhaar Fight Caves!\pOnly those with the Tzhaar badge may enter."))
     closemessage
     hidenamebox
@@ -58,7 +102,7 @@ script TZHAAR_GYM_NPC
 script TZHAAR_NPC_1
 {
     faceplayer
-    //namebox ("Tzhaar")
+    namebox ("Tzhaar")
     msgbox(format("We Tzhaar are strong.\pOur strongest participate in what you call MvM Championships.\pWe even have a gym located down this corridor."))
     msgbox(format("Would you like me to show you?"))
     msgbox(format("Here we are this is the Tzhaar Gym, our champion is one of the strongest Tzhaar!"))
@@ -72,6 +116,7 @@ script TZHAAR_NPC_2
 {
     lock
     faceplayer
+    namebox ("Tzhaar")
     msgbox(format("Through here is the Elder Kiln.\pThis is for Tzhaar only.\pYou are not Tzhaar."))
 
 
@@ -90,7 +135,7 @@ script TZHAAR_NPC_2
 script TZHAAR_NPC_3
 {
     faceplayer
-    //namebox ("Tzhaar")
+    namebox ("Tzhaar")
     msgbox(format("Ever since we have participated in the MvM championships there have been many of your kind passing through our city.\pWe have had to reinforce our tunnels for safety."))
     closemessage
     hidenamebox
@@ -101,7 +146,7 @@ script TZHAAR_NPC_3
 script TZHAAR_NPC_4
 {
     faceplayer
-    //namebox ("Tzhaar")
+    namebox ("Tzhaar")
     msgbox(format("If you wish to heal check out our bank by the Fight Caves to the south east."))
     closemessage
     hidenamebox
@@ -112,7 +157,7 @@ script TZHAAR_NPC_4
 script TZHAAR_NPC_5
 {
     faceplayer
-    //namebox ("Tzhaar")
+    namebox ("Tzhaar")
     msgbox(format("Be careful, many of your kind get lost in city.\pIf you get lost try talking to us."))
     closemessage
     hidenamebox
@@ -123,7 +168,7 @@ script TZHAAR_NPC_5
 script TZHAAR_NPC_6
 {
     faceplayer
-    //namebox ("Tzhaar")
+    namebox ("Tzhaar")
     msgbox(format("To the north are our sacred Kilns.\pTo the west leads deep into the volcanos inferno.\pTo the south-east leads to the Fight Caves.\pTo the south leads to the island.\pSo many ways to go, which way will you take?"))
     closemessage
     hidenamebox
@@ -134,7 +179,7 @@ script TZHAAR_NPC_6
 script TZHAAR_NPC_7
 {
     faceplayer
-    //namebox ("Tzhaar")
+    namebox ("Tzhaar")
     msgbox(format("I have to constantly clear this corridor as we get cave-in's quite often."))
     closemessage
     hidenamebox
@@ -145,7 +190,7 @@ script TZHAAR_NPC_7
 script TZHAAR_NPC_8
 {
     faceplayer
-    //namebox ("Tzhaar")
+    namebox ("Tzhaar")
     msgbox(format("While we like to fight, we also like to make friends.\pWill you be our friend?"))
     closemessage
     hidenamebox
@@ -155,8 +200,9 @@ script TZHAAR_NPC_8
 
 script TZHAAR_NPC_9
 {
+    lock
     faceplayer
-    //namebox ("Tzhaar")
+    namebox ("Tzhaar")
     msgbox(format("When defeated we Tzhaar turn into TokKul.\pWhich is what we use for currency around here.\pBut for all of your MvM supplies we charge you the regular GP."))
     closemessage
     hidenamebox
@@ -166,8 +212,9 @@ script TZHAAR_NPC_9
 
 script TZHAAR_NPC_10
 {
+    lock
     faceplayer
-    //namebox ("Tzhaar")
+    namebox ("Tzhaar")
     msgbox(format("I could have swore I heard this TokKul talking to me.\pEh, probably nothing."))
     closemessage
     hidenamebox
@@ -177,8 +224,9 @@ script TZHAAR_NPC_10
 
 script TZHAAR_NPC_11
 {
+    lock
     faceplayer
-    //namebox ("Tzhaar")
+    namebox ("Tzhaar")
     msgbox(format("There are 3 different races.\pTokHaar, Jal and Tzhaar.\pThere are also the Ga'al, they are new.\pSo I suppose there are 4 now."))
     closemessage
     hidenamebox
@@ -188,8 +236,9 @@ script TZHAAR_NPC_11
 
 script TZHAAR_NPC_RUNE_ARMOUR
 {
+    lock
     faceplayer
-    //namebox ("Tzhaar")
+    namebox ("Choob")
     msgbox(format("This gym challenge is so hard.\pI keep getting 1-hit…"))
     closemessage
     hidenamebox
@@ -199,8 +248,9 @@ script TZHAAR_NPC_RUNE_ARMOUR
 
 script TZHAAR_NPC_12
 {
+    lock
     faceplayer
-    //namebox ("Tzhaar")
+    namebox ("Tzhaar")
     msgbox(format("These tunnels lead to deep into the heart of the volcano.\pYou are not ready to enter yet."))
     closemessage
     hidenamebox
@@ -210,9 +260,10 @@ script TZHAAR_NPC_12
 
 script TZHAAR_NPC_BANKER
 {
+    lock
     faceplayer
-    //namebox ("Tzhaar")
-    msgbox(format("Greetings, welcome to the Bank of Tzhaar!\pWe are learning new things from this human.\pWhat can I help you with today?"))
+    namebox ("Tzhaar")
+    msgbox(format("Greetings, welcome to the Bank of Tzhaar!\pWe are learning new things from this JalYt.\pWhat can I help you with today?"))
     closemessage
     hidenamebox
     release
@@ -243,7 +294,7 @@ script TZHAAR_ZANIK
 {
     faceplayer
     namebox ("Zanik")
-    msgbox(format("I have been fighting in the Fight Caves. \pI haven't gotten to the end yet though.\pThey say there's some huge creature called TzTok-Jad."))
+    msgbox(format("I have been fighting in the Fight Caves.\pI haven't gotten to the end yet though.\pThey say there's some huge creature called TzTok-Jad."))
     closemessage
     hidenamebox
     release
@@ -254,16 +305,52 @@ script TZHAAR_ZANIK
 
 
 
-
-
-
-
-
-script STORYMODE_TZHAAR_NPC
+script TZHAAR_OUTSIDE_1
 {
     faceplayer
-    //namebox ("Tzhaar")
-    msgbox(format("Thank you for chasing off those pink men, they have been very destructive to the area.\pFeel free to use our facilities, and seeing as your are an MvM challenger our gym is located to the west of here."))
+    namebox ("Tzhaar")
+    msgbox(format("JalYt, are you here to visit our city?\pWe put up a sign so your kind can find it."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script TZHAAR_OUTSIDE_2
+{
+    faceplayer
+    namebox ("Tzhaar")
+    msgbox(format("Is the lava too hot for you?\pWe find that it is too cold out here.\pWe think we might go back into the city instead."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script TZHAAR_SUMMONER
+{
+    faceplayer
+    namebox ("Summoner")
+    msgbox(format("They said there was a gym in the Volcano on Karamja.\pBut I don't see any gym!\pAll I see are rocks and monsters."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script TZHAAR_IRONMAN
+{
+    faceplayer
+    namebox ("Ironman")
+    msgbox(format("I am currently restricted from entering the Tzhaar city.\pOh, it's not because they aren't inviting.\pIt's just the rules I have impossed on myself.\pMakes me feel more accomplished if I survive on my own instead of relying on others, ya know?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script TZHAAR_ARCHAEOLOGIST
+{
+    faceplayer
+    namebox ("Archaeologist")
+    msgbox(format("I've had to translate the signposts the Tzhaar have been putting up.\pAs they are writing it in their own langauge and confusing all the MvM challengers."))
     closemessage
     hidenamebox
     release
@@ -271,6 +358,31 @@ script STORYMODE_TZHAAR_NPC
 }
 
 
+
+script TZHAAR_LANGUAGE_BOOK
+{
+    msgbox(format("It is a book containing a list of commonly used words for the Tzhaar language.\pJalYt - Human.\nMor Ul Rek - Tzhaar City.\pThe book seems unfinished."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script TZHAAR_SIGNPOST_1
+{
+    msgbox(format("Mor Ul Rek"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script TZHAAR_SIGNPOST_2
+{
+    msgbox(format("The signpost is scribbled out and replaced with:\pTzhaar City, located inside this volcano."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
 
 
 

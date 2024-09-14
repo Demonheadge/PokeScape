@@ -96,7 +96,7 @@ script CRANDOR_SHIP_SCENE
     applymovement(OBJ_EVENT_ID_ELVARG, movement_elvargflyover2)
     waitmovement(0)
 
-    playbgm(MUS_PS_RIMMINGTON, 0)
+    playbgm(MUS_PS_VS_CHAOS_TUNNELS, 0)
     namebox("Cabin Boy")
     msgbox(format("What is that?!"))
     closemessage
