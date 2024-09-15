@@ -37,6 +37,11 @@
       "map": "MAP_UNDERWATER_LUMBRIDGE",
       "offset": 0,
       "direction": "dive"
+    },
+    {
+      "map": "MAP_DRAYNOR",
+      "offset": 0,
+      "direction": "left"
     }
   ],
   "object_events": [

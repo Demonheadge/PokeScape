@@ -704,7 +704,7 @@ Crandor_Event_Volcano_1:
 	applymovement 2, HAM_EVENT_CRANDOR_VOLCANO_1
 	applymovement 15, HAM_EVENT_CRANDOR_VOLCANO_1
 	waitmovement 0
-	trainerbattle_twoopponents TRAINER_CRANDOR_HAM_ADMIN_BABE, Crandor_Event_Volcano_Text_6, TRAINER_CRANDOR_HAM_ADMIN_PATTY, Crandor_Event_Volcano_Text_7
+	trainerbattle_two_trainers TRAINER_CRANDOR_HAM_ADMIN_BABE, Crandor_Event_Volcano_Text_6, TRAINER_CRANDOR_HAM_ADMIN_PATTY, Crandor_Event_Volcano_Text_7
 	applymovement 15, Movement_InteractFACERIGHT
 	waitmovement 0
 	namebox Crandor_Event_Volcano_Text_0
@@ -1237,6 +1237,10 @@ CRANDOR_VOLCANO_EARTHQUAKE_0::
 	setvar VAR_0x8007, 2
 	special ShakeCamera
 	delay 20
+	clearflag FLAG_TEMP_F
+	clearflag FLAG_TEMP_10
+	addobject 33
+	addobject 34
 	setvar VAR_0x8004, 0
 	setvar VAR_0x8005, 3
 	setvar VAR_0x8006, 8
@@ -1249,10 +1253,6 @@ CRANDOR_VOLCANO_EARTHQUAKE_0::
 	setvar VAR_0x8007, 2
 	special ShakeCamera
 	delay 60
-	clearflag FLAG_TEMP_F
-	clearflag FLAG_TEMP_10
-	addobject 33
-	addobject 34
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 146
 	setvar VAR_TEMP_D, 2
 	release
@@ -1273,18 +1273,18 @@ CRANDOR_VOLCANO_EARTHQUAKE_1::
 	setvar VAR_0x8007, 2
 	special ShakeCamera
 	delay 20
-	setvar VAR_0x8004, 0
-	setvar VAR_0x8005, 3
-	setvar VAR_0x8006, 8
-	setvar VAR_0x8007, 2
-	special ShakeCamera
-	delay 60
 	addobject 23
 	addobject 24
 	clearflag FLAG_TEMP_6
 	clearflag FLAG_TEMP_7
 	addobject 22
 	clearflag FLAG_TEMP_5
+	setvar VAR_0x8004, 0
+	setvar VAR_0x8005, 3
+	setvar VAR_0x8006, 8
+	setvar VAR_0x8007, 2
+	special ShakeCamera
+	delay 60
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 147
 	setvar VAR_TEMP_E, 2
 	release
@@ -1305,14 +1305,14 @@ CRANDOR_VOLCANO_EARTHQUAKE_2::
 	setvar VAR_0x8007, 2
 	special ShakeCamera
 	delay 20
+	addobject 14
+	clearflag FLAG_TEMP_4
 	setvar VAR_0x8004, 0
 	setvar VAR_0x8005, 3
 	setvar VAR_0x8006, 8
 	setvar VAR_0x8007, 2
 	special ShakeCamera
 	delay 60
-	addobject 14
-	clearflag FLAG_TEMP_4
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 148
 	setvar VAR_TEMP_E, 3
 	release
@@ -1333,18 +1333,18 @@ CRANDOR_VOLCANO_EARTHQUAKE_3::
 	setvar VAR_0x8007, 2
 	special ShakeCamera
 	delay 20
-	setvar VAR_0x8004, 0
-	setvar VAR_0x8005, 3
-	setvar VAR_0x8006, 8
-	setvar VAR_0x8007, 2
-	special ShakeCamera
-	delay 60
 	addobject 10
 	clearflag FLAG_TEMP_C
 	addobject 12
 	clearflag FLAG_TEMP_D
 	addobject 7
 	clearflag FLAG_TEMP_E
+	setvar VAR_0x8004, 0
+	setvar VAR_0x8005, 3
+	setvar VAR_0x8006, 8
+	setvar VAR_0x8007, 2
+	special ShakeCamera
+	delay 60
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 149
 	setvar VAR_TEMP_E, 4
 	release
@@ -1365,6 +1365,8 @@ CRANDOR_VOLCANO_EARTHQUAKE_4::
 	setvar VAR_0x8007, 2
 	special ShakeCamera
 	delay 20
+	clearflag FLAG_TEMP_1D
+	addobject 32
 	setvar VAR_0x8004, 0
 	setvar VAR_0x8005, 3
 	setvar VAR_0x8006, 8
@@ -1373,8 +1375,6 @@ CRANDOR_VOLCANO_EARTHQUAKE_4::
 	delay 60
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 150
 	setvar VAR_TEMP_E, 5
-	clearflag FLAG_TEMP_1D
-	addobject 32
 	applymovement 32, HAM_EVENT_CRANDOR_VOLCANO_25
 	waitmovement 0
 	namebox CRANDOR_VOLCANO_EARTHQUAKE_4_Text_0
@@ -1389,7 +1389,7 @@ CRANDOR_VOLCANO_EARTHQUAKE_4::
 	delay 20
 	applymovement 32, HAM_EVENT_CRANDOR_VOLCANO_26
 	applymovement OBJ_EVENT_ID_PLAYER, HAM_EVENT_CRANDOR_VOLCANO_27
-	delay 90
+	delay 60
 	clearflag FLAG_SYS_ENCOUNTER
 	warp MAP_TZHAAR_1F, 0
 	waitstate
@@ -1409,24 +1409,24 @@ HAM_EVENT_CRANDOR_VOLCANO_25:
 	step_end
 
 HAM_EVENT_CRANDOR_VOLCANO_26:
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
 	step_end
 
 HAM_EVENT_CRANDOR_VOLCANO_27:
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_down
 	step_end
 
 HAM_EVENT_CRANDOR_VOLCANO_29:
@@ -1754,7 +1754,7 @@ CRANDOR_VOLCANO_EARTHQUAKE_4_Text_0:
 	.string "???$"
 
 CRANDOR_VOLCANO_EARTHQUAKE_4_Text_1:
-	.string "Human!\p"
+	.string "JalYt!\p"
 	.string "Quick follow me!$"
 
 NPC_CRANDOR_VOLCANO_HAMGRUNT_1_Text_0:

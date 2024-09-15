@@ -746,6 +746,7 @@ const u32 gObjectEventPic_romeo[] = INCBIN_U32("graphics/object_events/pics/poke
 const u32 gObjectEventPic_swampletics[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/swampletics.4bpp");
 const u32 gObjectEventPic_lesser_demon[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/lesser_demon.4bpp");
 const u32 gObjectEventPic_delrith[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/delrith.4bpp");
+const u32 gObjectEventPic_pirate_ship[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/pirate_ship.4bpp");
 //POKESCAPE PALETTES
 /*
 const u16 gObjectEventPalette_Skeleton_1[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/skeleton_1.gbapal");
@@ -1001,6 +1002,8 @@ const u16 gObjectEventPalette_LEGEND_GREEN[] = INCBIN_U16("graphics/object_event
 const u16 gObjectEventPalette_PENGUINS[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/PENGUINS.gbapal");
 const u16 gObjectEventPalette_AVA_THOK[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/AVA_THOK.gbapal");
 const u16 gObjectEventPalette_RED_DRAGON[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/RED_DRAGON.gbapal");
+const u16 gObjectEventPalette_PIRATE_SHIP[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/PIRATE_SHIP.gbapal");
+
 /*
 const u16 gObjectEventPalette_RAC_BATS[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/rac_bats.gbapal");
 const u16 gObjectEventPalette_RAC_DRAGON[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/rac_dragon.gbapal");

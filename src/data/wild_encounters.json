@@ -15956,7 +15956,7 @@
             ]
           },
           "water_mons": {
-            "encounter_rate": 10,
+            "encounter_rate": 7,
             "mons": [
               {
                 "min_level": 5,

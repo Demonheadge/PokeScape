@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ROUTE3",
-      "offset": 8,
+      "offset": 14,
       "direction": "right"
     },
     {
@@ -25,15 +25,25 @@
     },
     {
       "map": "MAP_ROUTE6",
-      "offset": -6,
+      "offset": 0,
       "direction": "left"
+    },
+    {
+      "map": "MAP_DRAYNOR",
+      "offset": 36,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_FALADOR",
+      "offset": -52,
+      "direction": "up"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_FARMER_M",
       "x": 19,
-      "y": 16,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -46,7 +56,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_DND",
       "x": 17,
-      "y": 25,
+      "y": 31,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -59,7 +69,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MUGGER",
       "x": 24,
-      "y": 23,
+      "y": 29,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 0,
@@ -72,7 +82,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_FARMER_M",
       "x": 26,
-      "y": 9,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_DOWN_AND_UP",
       "movement_range_x": 2,
@@ -85,7 +95,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_UNICORN_WHITE",
       "x": 7,
-      "y": 13,
+      "y": 19,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -98,7 +108,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_COW_DAIRY",
       "x": 9,
-      "y": 14,
+      "y": 20,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -111,7 +121,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_STRYKEWYRM_FREEZY",
       "x": 6,
-      "y": 15,
+      "y": 21,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 2,
@@ -124,7 +134,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_FARMER_M",
       "x": 10,
-      "y": 25,
+      "y": 31,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
       "movement_range_x": 0,
@@ -137,7 +147,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_F",
       "x": 2,
-      "y": 26,
+      "y": 32,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -150,7 +160,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
       "x": 5,
-      "y": 10,
+      "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -163,7 +173,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_M",
       "x": 2,
-      "y": 27,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -176,7 +186,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
       "x": 5,
-      "y": 10,
+      "y": 16,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -189,7 +199,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TERRORBIRD_1",
       "x": 21,
-      "y": 13,
+      "y": 19,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -202,7 +212,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
       "x": 14,
-      "y": 3,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -215,7 +225,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SUMMONER",
       "x": 13,
-      "y": 20,
+      "y": 26,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 1,
@@ -228,7 +238,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SCORPION",
       "x": 18,
-      "y": 12,
+      "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -241,7 +251,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_DIVINER",
       "x": 20,
-      "y": 21,
+      "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 1,
@@ -255,21 +265,21 @@
   "warp_events": [
     {
       "x": 15,
-      "y": 17,
+      "y": 23,
       "elevation": 0,
       "dest_map": "MAP_POTTERINGTON_FARM_INTERIOR",
       "dest_warp_id": "0"
     },
     {
       "x": 5,
-      "y": 12,
+      "y": 18,
       "elevation": 0,
       "dest_map": "MAP_ROUTE4",
       "dest_warp_id": "0"
     },
     {
       "x": 31,
-      "y": 4,
+      "y": 10,
       "elevation": 0,
       "dest_map": "MAP_HIDDEN_GROTTOS",
       "dest_warp_id": "3"
@@ -279,7 +289,7 @@
     {
       "type": "trigger",
       "x": 17,
-      "y": 26,
+      "y": 32,
       "elevation": 0,
       "var": "VAR_POKESCAPE_POTTERINGTON_FARM_STATE",
       "var_value": "0",
@@ -288,7 +298,7 @@
     {
       "type": "trigger",
       "x": 17,
-      "y": 27,
+      "y": 33,
       "elevation": 0,
       "var": "VAR_POKESCAPE_POTTERINGTON_FARM_STATE",
       "var_value": "0",
@@ -299,7 +309,7 @@
     {
       "type": "sign",
       "x": 15,
-      "y": 25,
+      "y": 31,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route4Sign"
@@ -307,7 +317,7 @@
     {
       "type": "sign",
       "x": 13,
-      "y": 17,
+      "y": 23,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NULL"
@@ -315,7 +325,7 @@
     {
       "type": "sign",
       "x": 31,
-      "y": 3,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "HIDDEN_GROTTO_ENTRY"
@@ -323,7 +333,7 @@
     {
       "type": "sign",
       "x": 32,
-      "y": 3,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "HIDDEN_GROTTO_ENTRY"

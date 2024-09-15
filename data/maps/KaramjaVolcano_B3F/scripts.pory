@@ -746,19 +746,9 @@ script Crandor_Event_Volcano {
     applymovement(OBJ_EVENT_ID_PATTY, HAM_EVENT_CRANDOR_VOLCANO_1)
     applymovement(OBJ_EVENT_ID_BABE, HAM_EVENT_CRANDOR_VOLCANO_1)
     waitmovement(0)
-    //Battle
-    //Loss: 
-    //trainerbattle_double(TRAINER_FALADOR_MODTIMBO, TRAINER_FALADOR_MODTIMBO, "intro", "lose", "not enough", FALSE)
-    //trainerbattle_double(TRAINER_FALADOR_MODTIMBO, TRAINER_FALADOR_MODTIMBO, msgbox(format("Babe: Huh, you're quite good.\pPatty: You just wont give up do you?")), )
-    //TRAINER_BATTLE_DOUBLE, \trainer, 0, \intro_text, \lose_text, \not_enough_pkmn_text
-
-    //trainerbattle_no_intro(TRAINER_FALADOR_MODTIMBO, msgbox(format("Babe: Huh, you're quite good.\pPatty: You just wont give up do you?")))
-
-
-    trainerbattle_twoopponents(TRAINER_CRANDOR_HAM_ADMIN_BABE, msgbox(format("Babe: Huh, you're quite good.")), TRAINER_CRANDOR_HAM_ADMIN_PATTY, msgbox(format("Patty: You just don't give up, do you?")))
-
-    //trainerbattle(TRAINER_BATTLE_SET_TRAINER_A, )
     
+    trainerbattle_two_trainers(TRAINER_CRANDOR_HAM_ADMIN_BABE, msgbox(format("Babe: Huh, you're quite good.")), TRAINER_CRANDOR_HAM_ADMIN_PATTY, msgbox(format("Patty: You just don't give up, do you?")))
+
     
     //Babe: Huh, you're quite good.
     //Patty: You just wont give up do you?
@@ -1256,6 +1246,10 @@ script CRANDOR_VOLCANO_EARTHQUAKE_0 {
 	setvar(VAR_0x8007, 2) //SHAKE DELAY
     special(ShakeCamera)
     delay(20)
+    clearflag(FLAG_TEMP_F)
+    clearflag(FLAG_TEMP_10)
+    addobject(33)
+    addobject(34)
     setvar(VAR_0x8004, 0)  //vertical pan
 	setvar(VAR_0x8005, 3)  //horizontal pan
     setvar(VAR_0x8006, 8) //NUM SHAKES
@@ -1269,10 +1263,7 @@ script CRANDOR_VOLCANO_EARTHQUAKE_0 {
     special(ShakeCamera)
     delay(60)
 
-    clearflag(FLAG_TEMP_F)
-    clearflag(FLAG_TEMP_10)
-    addobject(33)
-    addobject(34)
+    
     
 
     setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 146)
@@ -1297,6 +1288,12 @@ script CRANDOR_VOLCANO_EARTHQUAKE_1 {
 	setvar(VAR_0x8007, 2) //SHAKE DELAY
     special(ShakeCamera)
     delay(20)
+    addobject(23)
+    addobject(24)
+    clearflag(FLAG_TEMP_6)
+    clearflag(FLAG_TEMP_7)
+    addobject(22)
+    clearflag(FLAG_TEMP_5)
     setvar(VAR_0x8004, 0)  //vertical pan
 	setvar(VAR_0x8005, 3)  //horizontal pan
     setvar(VAR_0x8006, 8) //NUM SHAKES
@@ -1304,12 +1301,7 @@ script CRANDOR_VOLCANO_EARTHQUAKE_1 {
     special(ShakeCamera)
     delay(60)
 
-    addobject(23)
-    addobject(24)
-    clearflag(FLAG_TEMP_6)
-    clearflag(FLAG_TEMP_7)
-    addobject(22)
-    clearflag(FLAG_TEMP_5)
+    
 
     setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 147)
     setvar(VAR_TEMP_E, 2)
@@ -1333,6 +1325,8 @@ script CRANDOR_VOLCANO_EARTHQUAKE_2 {
 	setvar(VAR_0x8007, 2) //SHAKE DELAY
     special(ShakeCamera)
     delay(20)
+    addobject(14)
+    clearflag(FLAG_TEMP_4)
     setvar(VAR_0x8004, 0)  //vertical pan
 	setvar(VAR_0x8005, 3)  //horizontal pan
     setvar(VAR_0x8006, 8) //NUM SHAKES
@@ -1340,8 +1334,7 @@ script CRANDOR_VOLCANO_EARTHQUAKE_2 {
     special(ShakeCamera)
     delay(60)
 
-    addobject(14)
-    clearflag(FLAG_TEMP_4)
+    
 
     setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 148)
     setvar(VAR_TEMP_E, 3)
@@ -1365,6 +1358,12 @@ script CRANDOR_VOLCANO_EARTHQUAKE_3 {
 	setvar(VAR_0x8007, 2) //SHAKE DELAY
     special(ShakeCamera)
     delay(20)
+    addobject(10)
+    clearflag(FLAG_TEMP_C)
+    addobject(12)
+    clearflag(FLAG_TEMP_D)
+    addobject(7)
+    clearflag(FLAG_TEMP_E)
     setvar(VAR_0x8004, 0)  //vertical pan
 	setvar(VAR_0x8005, 3)  //horizontal pan
     setvar(VAR_0x8006, 8) //NUM SHAKES
@@ -1372,12 +1371,7 @@ script CRANDOR_VOLCANO_EARTHQUAKE_3 {
     special(ShakeCamera)
     delay(60)
 
-    addobject(10)
-    clearflag(FLAG_TEMP_C)
-    addobject(12)
-    clearflag(FLAG_TEMP_D)
-    addobject(7)
-    clearflag(FLAG_TEMP_E)
+    
 
     setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 149)
     setvar(VAR_TEMP_E, 4)
@@ -1401,6 +1395,8 @@ script CRANDOR_VOLCANO_EARTHQUAKE_4 {
 	setvar(VAR_0x8007, 2) //SHAKE DELAY
     special(ShakeCamera)
     delay(20)
+    clearflag(FLAG_TEMP_1D)
+    addobject(32)
     setvar(VAR_0x8004, 0)  //vertical pan
 	setvar(VAR_0x8005, 3)  //horizontal pan
     setvar(VAR_0x8006, 8) //NUM SHAKES
@@ -1411,13 +1407,12 @@ script CRANDOR_VOLCANO_EARTHQUAKE_4 {
     setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 150)
     setvar(VAR_TEMP_E, 5)
 
-    clearflag(FLAG_TEMP_1D)
-    addobject(32)
+    
 
     applymovement(32, HAM_EVENT_CRANDOR_VOLCANO_25)
     waitmovement(0)
     namebox("???")
-    msgbox(format("Human!\pQuick follow me!"))
+    msgbox(format("JalYt!\pQuick follow me!"))
     closemessage
     hidenamebox
     setvar(VAR_0x8004, 0)  //vertical pan
@@ -1429,7 +1424,7 @@ script CRANDOR_VOLCANO_EARTHQUAKE_4 {
     applymovement(32, HAM_EVENT_CRANDOR_VOLCANO_26)
     applymovement(OBJ_EVENT_ID_PLAYER, HAM_EVENT_CRANDOR_VOLCANO_27)
     
-    delay(90)
+    delay(60)
     clearflag(FLAG_SYS_ENCOUNTER) //ENABLES ENCOUNTERS!!!!!
     warp(MAP_TZHAAR_1F, 0)
     waitstate
@@ -1445,14 +1440,14 @@ movement HAM_EVENT_CRANDOR_VOLCANO_25 {
 }
 
 movement HAM_EVENT_CRANDOR_VOLCANO_26 {
-    walk_down * 3
-    walk_left * 3
-    walk_down
+    walk_fast_down * 3
+    walk_fast_left * 3
+    walk_fast_down
 }
 movement HAM_EVENT_CRANDOR_VOLCANO_27 {
-    walk_down * 4
-    walk_left * 3
-    walk_down
+    walk_faster_down * 4
+    walk_faster_left * 3
+    walk_faster_down
 }
 
 

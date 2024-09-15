@@ -124,11 +124,9 @@ CRANDOR_BANK_ExitBank::
 CRANDOR_BANK_HEAL::
 	msgbox CRANDOR_BANK_HEAL_Text_0
 	closemessage
-	fadescreen FADE_TO_BLACK
 	playfanfare MUS_HEAL
 	waitfanfare
 	special HealPlayerParty
-	fadescreen FADE_FROM_BLACK
 	msgbox CRANDOR_BANK_HEAL_Text_1
 	hidenamebox
 	releaseall

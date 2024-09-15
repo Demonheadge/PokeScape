@@ -27,6 +27,11 @@
       "map": "MAP_BAY_OF_SARIM",
       "offset": -20,
       "direction": "left"
+    },
+    {
+      "map": "MAP_LUMBRIDGE_SWAMP",
+      "offset": -30,
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -71,8 +76,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RUNE_GUARDIAN",
-      "x": 35,
-      "y": 21,
+      "x": 33,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,

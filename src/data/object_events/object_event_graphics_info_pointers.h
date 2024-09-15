@@ -568,6 +568,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_romeo;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_swampletics;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_lesser_demon;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_delrith;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_pirate_ship;
 
 //ORES
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CopperOre;
@@ -1144,8 +1145,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_PENGUIN_TOADSTOOL] =             &gObjectEventGraphicsInfo_penguin_toadstool,
     [OBJ_EVENT_GFX_ROMEO] =                         &gObjectEventGraphicsInfo_romeo,
     [OBJ_EVENT_GFX_SWAMPLETICS] =                   &gObjectEventGraphicsInfo_swampletics,
-    [OBJ_EVENT_GFX_LESSER_DEMON] =                         &gObjectEventGraphicsInfo_lesser_demon,
-    [OBJ_EVENT_GFX_DELRITH] =                   &gObjectEventGraphicsInfo_delrith,
+    [OBJ_EVENT_GFX_LESSER_DEMON] =                  &gObjectEventGraphicsInfo_lesser_demon,
+    [OBJ_EVENT_GFX_DELRITH] =                       &gObjectEventGraphicsInfo_delrith,
+    [OBJ_EVENT_GFX_PIRATE_SHIP] =                   &gObjectEventGraphicsInfo_pirate_ship,
 
 //ORES 
 	[OBJ_EVENT_GFX_COPPER_ORE] =          		    &gObjectEventGraphicsInfo_CopperOre,

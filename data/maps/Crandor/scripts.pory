@@ -120,11 +120,11 @@ script CRANDOR_BANK_ExitBank
 script CRANDOR_BANK_HEAL {
     msgbox(format("Sure thing, I will take your MONSTERS for a minute."))
     closemessage
-    fadescreen(FADE_TO_BLACK)
+    //fadescreen(FADE_TO_BLACK) //Fadescreen screws with weather: lightning if flashed at the same time.
     playfanfare (MUS_HEAL)
 	waitfanfare
 	special (HealPlayerParty)
-    fadescreen(FADE_FROM_BLACK)
+    //fadescreen(FADE_FROM_BLACK)
     msgbox(format("Your MONSTERS are all healed!\pGood luck out there {PLAYER}."))
     hidenamebox
 	releaseall

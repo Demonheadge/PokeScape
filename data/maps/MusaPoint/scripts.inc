@@ -47,7 +47,7 @@ MUSAPOINT_STATE_1:
 	return
 
 MUSAPOINT_STATE_2:
-	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 150
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 155
 	goto_if_le MUSAPOINT_STATE_5
 	removeobject 21
 	setflag FLAG_TEMP_1D
@@ -94,7 +94,7 @@ MUSAPOINT_STATE_12:
 NPC_MUSAPOINT_SAILOR::
 	lock
 	namebox NPC_MUSAPOINT_SAILOR_Text_0
-	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 150
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 155
 	goto_if_le NPC_MUSAPOINT_SAILOR_2
 	faceplayer
 	msgbox NPC_MUSAPOINT_SAILOR_Text_2, MSGBOX_YESNO
@@ -152,7 +152,6 @@ ITEM_MUSA_POINT_2::
 
 NPC_MUSA_POINT_1::
 	lock
-	faceplayer
 	namebox NPC_MUSA_POINT_1_Text_0
 	msgbox NPC_MUSA_POINT_1_Text_1
 	closemessage
@@ -164,7 +163,8 @@ NPC_MUSA_POINT_1::
 NPC_MUSA_POINT_2::
 	lock
 	faceplayer
-	msgbox NPC_MUSA_POINT_2_Text_0
+	namebox NPC_MUSA_POINT_2_Text_0
+	msgbox NPC_MUSA_POINT_2_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -174,6 +174,7 @@ NPC_MUSA_POINT_2::
 NPC_MUSA_POINT_3::
 	lock
 	faceplayer
+	namebox NPC_MUSA_POINT_2_Text_0
 	msgbox NPC_MUSA_POINT_3_Text_0
 	closemessage
 	hidenamebox
@@ -184,7 +185,8 @@ NPC_MUSA_POINT_3::
 NPC_MUSA_POINT_4::
 	lock
 	faceplayer
-	msgbox NPC_MUSA_POINT_4_Text_0
+	namebox NPC_MUSA_POINT_4_Text_0
+	msgbox NPC_MUSA_POINT_4_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -194,6 +196,7 @@ NPC_MUSA_POINT_4::
 NPC_MUSA_POINT_5::
 	lock
 	faceplayer
+	namebox NPC_MUSA_POINT_2_Text_0
 	msgbox NPC_MUSA_POINT_5_Text_0
 	closemessage
 	hidenamebox
@@ -204,7 +207,8 @@ NPC_MUSA_POINT_5::
 NPC_MUSA_POINT_6::
 	lock
 	faceplayer
-	msgbox NPC_MUSA_POINT_6_Text_0
+	namebox NPC_MUSA_POINT_6_Text_0
+	msgbox NPC_MUSA_POINT_6_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -214,7 +218,8 @@ NPC_MUSA_POINT_6::
 NPC_MUSA_POINT_7::
 	lock
 	faceplayer
-	msgbox NPC_MUSA_POINT_7_Text_0
+	namebox NPC_MUSA_POINT_7_Text_0
+	msgbox NPC_MUSA_POINT_7_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -224,10 +229,10 @@ NPC_MUSA_POINT_7::
 NPC_MUSA_POINT_8::
 	lock
 	faceplayer
-	namebox NPC_MUSA_POINT_8_Text_0
-	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 150
+	namebox NPC_MUSAPOINT_SAILOR_Text_0
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 155
 	goto_if_le NPC_MUSA_POINT_8_2
-	msgbox NPC_MUSA_POINT_8_Text_2
+	msgbox NPC_MUSA_POINT_8_Text_1
 NPC_MUSA_POINT_8_1:
 	closemessage
 	hidenamebox
@@ -235,14 +240,15 @@ NPC_MUSA_POINT_8_1:
 	end
 
 NPC_MUSA_POINT_8_2:
-	msgbox NPC_MUSA_POINT_8_Text_1
+	msgbox NPC_MUSA_POINT_8_Text_0
 	goto NPC_MUSA_POINT_8_1
 
 
 NPC_MUSA_POINT_9::
 	lock
 	faceplayer
-	msgbox NPC_MUSA_POINT_9_Text_0
+	namebox NPC_MUSA_POINT_9_Text_0
+	msgbox NPC_MUSA_POINT_9_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -252,7 +258,8 @@ NPC_MUSA_POINT_9::
 NPC_MUSA_POINT_10::
 	lock
 	faceplayer
-	msgbox NPC_MUSA_POINT_10_Text_0
+	namebox NPC_MUSA_POINT_10_Text_0
+	msgbox NPC_MUSA_POINT_10_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -595,7 +602,7 @@ NPC_WISEOLDMAN_RIVAL_MUSAPOINT_PUB_2:
 LUTHAS_QUEST::
 	lock
 	faceplayer
-	namebox LUTHAS_QUEST_Text_0
+	namebox NPC_MUSA_POINT_Luthas_Text_0
 	compare VAR_BANANA_BOAT_QUEST, 25
 	goto_if_eq LUTHAS_QUEST_2
 LUTHAS_QUEST_1:
@@ -614,7 +621,7 @@ LUTHAS_QUEST_13:
 	compare VAR_BANANA_BOAT_QUEST, 0
 	goto_if_eq LUTHAS_QUEST_17
 LUTHAS_QUEST_16:
-	msgbox LUTHAS_QUEST_Text_1
+	msgbox LUTHAS_QUEST_Text_0
 	return
 
 LUTHAS_QUEST_2:
@@ -670,7 +677,7 @@ LUTHAS_QUEST_PART_1_6:
 	hidenamebox
 	startquest QUEST_BANANA_BOAT
 	setvar VAR_BANANA_BOAT_QUEST, 5
-	namebox LUTHAS_QUEST_Text_0
+	namebox NPC_MUSA_POINT_Luthas_Text_0
 	msgbox LUTHAS_QUEST_PART_1_Text_6
 	goto LUTHAS_QUEST_PART_1_5
 
@@ -725,8 +732,10 @@ LUTHAS_QUEST_PART_2_8:
 
 LUTHAS_QUEST_PART_2_11:
 	giveitem ITEM_SURF_TOOL, 1
-	namebox LUTHAS_QUEST_Text_0
+	namebox NPC_MUSA_POINT_Luthas_Text_0
 	msgbox LUTHAS_QUEST_PART_2_Text_5
+	closemessage
+	hidenamebox
 	goto LUTHAS_QUEST_PART_2_10
 
 
@@ -805,7 +814,7 @@ LUTHAS_QUEST_PART_5_5:
 	end
 
 LUTHAS_QUEST_PART_5_7:
-	namebox LUTHAS_QUEST_Text_0
+	namebox NPC_MUSA_POINT_Luthas_Text_0
 	msgbox LUTHAS_QUEST_PART_5_Text_2
 	closemessage
 	hidenamebox
@@ -848,7 +857,7 @@ LUTHAS_QUEST_PART_6_5:
 	end
 
 LUTHAS_QUEST_PART_6_7:
-	namebox LUTHAS_QUEST_Text_0
+	namebox NPC_MUSA_POINT_Luthas_Text_0
 	msgbox LUTHAS_QUEST_PART_5_Text_2
 	closemessage
 	hidenamebox
@@ -864,7 +873,7 @@ SIGN_BANANA_COUNT::
 
 
 NPC_MUSAPOINT_SAILOR_Text_0:
-	.string "SAILOR$"
+	.string "Officer$"
 
 NPC_MUSAPOINT_SAILOR_Text_1:
 	.string "I've confiscated your Karamja Rum.\p"
@@ -897,12 +906,18 @@ SIGNPOST_BOAT_FOR_SALE_Text_0:
 	.string "See Luthas inside for more details.$"
 
 NPC_MUSA_POINT_1_Text_0:
-	.string "Cupholder$"
+	.string "Sad Pirate$"
 
 NPC_MUSA_POINT_1_Text_1:
-	.string "Hello, I am a Cupholder.$"
+	.string "Arr…{PAUSE 32}…\n"
+	.string "{PAUSE 32}Sailing…{PAUSE 32}…\p"
+	.string "One day…{PAUSE 32}…{PAUSE 32}\n"
+	.string "One…{PAUSE 32} day…{PAUSE 32}…$"
 
 NPC_MUSA_POINT_2_Text_0:
+	.string "Pirate$"
+
+NPC_MUSA_POINT_2_Text_1:
 	.string "30 years ago I buried me treasure here.\p"
 	.string "Now I've spent 5 years digging on the\n"
 	.string "beach to find it only to realize that\l"
@@ -917,6 +932,9 @@ NPC_MUSA_POINT_3_Text_0:
 	.string "knights in power I tell you!$"
 
 NPC_MUSA_POINT_4_Text_0:
+	.string "Hunter$"
+
+NPC_MUSA_POINT_4_Text_1:
 	.string "Up north is a fishing spot, you might\n"
 	.string "find yourself a battle there with the\l"
 	.string "local fishers.$"
@@ -929,36 +947,46 @@ NPC_MUSA_POINT_5_Text_0:
 	.string "… Or was I…$"
 
 NPC_MUSA_POINT_6_Text_0:
+	.string "Woman$"
+
+NPC_MUSA_POINT_6_Text_1:
 	.string "The banana farm is the pride and joy of\n"
 	.string "Musa Point.\p"
 	.string "That or the bar is the only thing\n"
 	.string "keeping us a landmark really.$"
 
 NPC_MUSA_POINT_7_Text_0:
+	.string "Man$"
+
+NPC_MUSA_POINT_7_Text_1:
 	.string "Welcome to Karamja.\p"
-	.string "Make sure to prepare some antipoisons.$"
+	.string "Make sure to prepare some anti-poisons\n"
+	.string "and some choc-sunday's for your\l"
+	.string "monsters.$"
 
 NPC_MUSA_POINT_8_Text_0:
-	.string "Customs Officer$"
-
-NPC_MUSA_POINT_8_Text_1:
 	.string "Sorry we've had an incident of someone\n"
 	.string "trying to smuggle some Rum to the\l"
 	.string "mainland.\p"
 	.string "Our ships won't be sailing for some time\n"
 	.string "while we check the cargo.$"
 
-NPC_MUSA_POINT_8_Text_2:
+NPC_MUSA_POINT_8_Text_1:
 	.string "This ship sails all over the land.\p"
 	.string "That was true until all of the ports\n"
 	.string "were closed off, now we sail all around\l"
-	.string "Musa Point.\p"
-	.string "Would you like to sail to Musa Point?$"
+	.string "Musa Point.$"
 
 NPC_MUSA_POINT_9_Text_0:
+	.string "Fisherman$"
+
+NPC_MUSA_POINT_9_Text_1:
 	.string "Fishing Levels?$"
 
 NPC_MUSA_POINT_10_Text_0:
+	.string "Firemaker$"
+
+NPC_MUSA_POINT_10_Text_1:
 	.string "Fire, anyone?$"
 
 NPC_MUSA_POINT_Luthas_Text_0:
@@ -969,7 +997,7 @@ NPC_MUSA_POINT_Luthas_Text_1:
 	.string "Would you like to buy one?$"
 
 NPC_MONKEY_BLOCK_Text_0:
-	.string "MONKEY$"
+	.string "Monkey$"
 
 NPC_MONKEY_BLOCK_Text_1:
 	.string "Oook, Ook!$"
@@ -1124,9 +1152,6 @@ NPC_WISEOLDMAN_RIVAL_MUSAPOINT_PUB_Text_1:
 	.string "about that boat?$"
 
 LUTHAS_QUEST_Text_0:
-	.string "LUTHAS$"
-
-LUTHAS_QUEST_Text_1:
 	.string "Hello, I run the banana plantation. How\n"
 	.string "many I help you today?$"
 

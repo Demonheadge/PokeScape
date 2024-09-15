@@ -5649,6 +5649,18 @@ static const struct SpriteFrameImage sPicTable_lesser_demon[] = {
     overworld_frame(gObjectEventPic_lesser_demon, 2, 4, 8),
 };
 
+static const struct SpriteFrameImage sPicTable_pirate_ship[] = {
+    overworld_frame(gObjectEventPic_pirate_ship, 4, 4, 0),
+    overworld_frame(gObjectEventPic_pirate_ship, 4, 4, 1),
+    overworld_frame(gObjectEventPic_pirate_ship, 4, 4, 2),
+    overworld_frame(gObjectEventPic_pirate_ship, 4, 4, 0),
+    overworld_frame(gObjectEventPic_pirate_ship, 4, 4, 0),
+    overworld_frame(gObjectEventPic_pirate_ship, 4, 4, 1),
+    overworld_frame(gObjectEventPic_pirate_ship, 4, 4, 1),
+    overworld_frame(gObjectEventPic_pirate_ship, 4, 4, 2),
+    overworld_frame(gObjectEventPic_pirate_ship, 4, 4, 2),
+};
+
 
 //mining
 

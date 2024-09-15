@@ -675,6 +675,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_AVA_THOK          0x1207
 #define OBJ_EVENT_PAL_ZombieDisguise    0x1278
 #define OBJ_EVENT_PAL_RED_DRAGON        0x1187
+#define OBJ_EVENT_PAL_PIRATE_SHIP       0x1249
 
 
 
@@ -1020,6 +1021,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_PENGUINS, OBJ_EVENT_PAL_PENGUINS},
     {gObjectEventPalette_AVA_THOK, OBJ_EVENT_PAL_AVA_THOK},
     {gObjectEventPalette_RED_DRAGON, OBJ_EVENT_PAL_RED_DRAGON},
+    {gObjectEventPalette_PIRATE_SHIP, OBJ_EVENT_PAL_PIRATE_SHIP},
     
     
     /*

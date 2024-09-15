@@ -330,7 +330,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ITEM_CRANDOR_SPIRIT_SHARD",
-      "flag": "0"
+      "flag": "FLAG_ITEM_CRANDOR_SPIRIT_SHARD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
@@ -343,7 +343,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ITEM_CRANDOR_RUNE_POUCH",
-      "flag": "0"
+      "flag": "FLAG_ITEM_CRANDOR_RUNE_POUCH"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
@@ -369,7 +369,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ITEM_CRANDOR_CHOCOLATE_CAKE",
-      "flag": "0"
+      "flag": "FLAG_ITEM_CRANDOR_CHOCOLATE_CAKE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -450,19 +450,6 @@
       "flag": "FLAG_TEMP_1F"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ELVARG_FLY",
-      "x": -2,
-      "y": -1,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "TELEPORT_TO_SHIP_SCENE",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
       "x": 38,
       "y": 43,
@@ -517,15 +504,6 @@
     },
     {
       "type": "trigger",
-      "x": 29,
-      "y": 28,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "TRIGGER_ELVARGFLYOVER"
-    },
-    {
-      "type": "trigger",
       "x": 20,
       "y": 35,
       "elevation": 0,
@@ -540,33 +518,6 @@
       "elevation": 0,
       "var": "VAR_TEMP_2",
       "var_value": "1",
-      "script": "TRIGGER_ELVARGFLYOVER"
-    },
-    {
-      "type": "trigger",
-      "x": 30,
-      "y": 28,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "TRIGGER_ELVARGFLYOVER"
-    },
-    {
-      "type": "trigger",
-      "x": 6,
-      "y": 4,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "TRIGGER_ELVARGFLYOVER"
-    },
-    {
-      "type": "trigger",
-      "x": 0,
-      "y": 0,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
       "script": "TRIGGER_ELVARGFLYOVER"
     },
     {

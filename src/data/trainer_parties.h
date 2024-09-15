@@ -5877,25 +5877,58 @@ static const struct TrainerMon sParty_LIGHTHOUSE_3F_TRAINER_1[] = {
 
 static const struct TrainerMon sParty_LIGHTHOUSE_3F_HAM_ADMIN_PATTY[] = {
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 25,
-    .species = SPECIES_PIG_WAR_FORM,
+    .ability = ABILITY_COMPOUND_EYES,
+    .lvl = 30,
+    .species = SPECIES_SPIDER_GIANT_FORM,
+    },
+    {
+    .ability = ABILITY_THICK_FAT,
+    .lvl = 30,
+    .species = SPECIES_COW_CHOCOLATE_FORM,
+    },
+    {
+    .ability = ABILITY_THICK_FAT,
+    .lvl = 30,
+    .species = SPECIES_PIG_SUMMONING_FORM,
+    .moves = {MOVE_MAGNITUDE, MOVE_BODY_SLAM, MOVE_REVENGE, MOVE_BULK_UP}
     }
 };
 
 static const struct TrainerMon sParty_MELZARSMAZE_HAM_ADMIN_BABE[] = {
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 25,
-    .species = SPECIES_PIG_PACK_FORM,
+    .ability = ABILITY_GOOSEBUMPS,
+    .lvl = 30,
+    .species = SPECIES_SPIDER_FEVER_FORM,
+    },
+    {
+    .ability = ABILITY_SAP_SIPPER,
+    .lvl = 30,
+    .species = SPECIES_COW_STRAWBERRY_FORM,
+    },
+    {
+    .ability = ABILITY_GALE_WINGS,
+    .lvl = 30,
+    .species = SPECIES_PIGGLES,
+    .moves = {MOVE_TAILWIND, MOVE_SLACK_OFF, MOVE_STEEL_WING, MOVE_MUD_SLAP}
     }
 };
 
 static const struct TrainerMon sParty_MELZARSMAZE_MELZAR_THE_MAD[] = {
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 25,
     .species = SPECIES_CABBAGE,
+    },
+    {
+    .lvl = 25,
+    .species = SPECIES_CABBAGE,
+    },
+    {
+    .lvl = 25,
+    .species = SPECIES_CABBAGE_SHATTERED_WORLD_FORM,
+    },
+    {
+    .lvl = 25,
+    .species = SPECIES_CABBAGE_SISTER_FORM,
     }
 };
 
@@ -7090,5 +7123,86 @@ static const struct TrainerMon sParty_MUDSKIPPER_MUGGER[] = {
     {
     .lvl = 31,
     .species = SPECIES_GORILLA_NORMAL_FORM,
+    }
+};
+
+static const struct TrainerMon sParty_CRANDOR_HAM_ADMIN_BABE[] = {
+    {
+    .ability = ABILITY_GOOSEBUMPS,
+    .lvl = 30,
+    .species = SPECIES_SPIDER_SHADOW_FORM,
+    .moves = {MOVE_STICKY_WEB, MOVE_SPIKES, MOVE_SHADOW_SNEAK, MOVE_LEECH_LIFE}
+    },
+    {
+    .ability = ABILITY_SAP_SIPPER,
+    .lvl = 30,
+    .species = SPECIES_COW_STRAWBERRY_FORM,
+    .moves = {MOVE_MILK_DRINK, MOVE_SEED_BOMB, MOVE_MUD_SLAP, MOVE_LEECH_SEED}
+    },
+    {
+    .ability = ABILITY_GALE_WINGS,
+    .lvl = 30,
+    .species = SPECIES_PIGGLES,
+    .moves = {MOVE_TAILWIND, MOVE_SLACK_OFF, MOVE_STEEL_WING, MOVE_MUD_SLAP}
+    }
+};
+static const struct TrainerMon sParty_CRANDOR_HAM_ADMIN_PATTY[] = {
+    {
+    .ability = ABILITY_COMPOUND_EYES,
+    .lvl = 30,
+    .species = SPECIES_SPIDER_BLESSED_FORM,
+    .moves = {MOVE_DISCHARGE, MOVE_ENERGY_BALL, MOVE_DRAINING_KISS, MOVE_POLLEN_PUFF}
+    },
+    {
+    .ability = ABILITY_THICK_FAT,
+    .lvl = 30,
+    .species = SPECIES_COW_CHOCOLATE_FORM,
+    .moves = {MOVE_RAPID_SPIN, MOVE_PLAY_ROUGH, MOVE_BODY_SLAM, MOVE_CAPTIVATE}
+    },
+    {
+    .ability = ABILITY_THICK_FAT,
+    .lvl = 30,
+    .species = SPECIES_PIG_SUMMONING_FORM,
+    .moves = {MOVE_EARTHQUAKE, MOVE_BULK_UP, MOVE_PLAY_ROUGH, MOVE_REVENGE}
+    }
+};
+
+
+static const struct TrainerMon sParty_SAILING_PIRATE_1[] = {
+    {
+    .lvl = 15,
+    .species = SPECIES_BASS,
+    },
+    {
+    .lvl = 15,
+    .species = SPECIES_SEERFISH,
+    }
+};
+
+
+static const struct TrainerMon sParty_AJamJam[] = {
+    {
+    .lvl = 30,
+    .species = SPECIES_COW_STRAWBERRY_FORM,
+    },
+    {
+    .lvl = 30,
+    .species = SPECIES_DEAD_TREE,
+    },
+    {
+    .lvl = 30,
+    .species = SPECIES_GUTHATRICE,
+    },
+    {
+    .lvl = 30,
+    .species = SPECIES_ZYGOMITE,
+    },
+    {
+    .lvl = 30,
+    .species = SPECIES_GIANT_FROG_ROYAL_FORM,
+    },
+    {
+    .lvl = 30,
+    .species = SPECIES_GEYSIR_TITAN,
     }
 };
