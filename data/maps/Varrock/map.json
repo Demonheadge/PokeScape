@@ -144,7 +144,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_RSMVER_M",
+      "graphics_id": "OBJ_EVENT_GFX_ROMEO",
       "x": 25,
       "y": 15,
       "elevation": 3,
@@ -196,7 +196,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MUGGER",
+      "graphics_id": "OBJ_EVENT_GFX_SWAMPLETICS",
       "x": 18,
       "y": 37,
       "elevation": 3,
@@ -300,7 +300,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_DIVINER",
+      "graphics_id": "OBJ_EVENT_GFX_BOT_DRAGON",
       "x": 58,
       "y": 20,
       "elevation": 3,
@@ -496,10 +496,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_THIEF",
-      "x": 51,
+      "x": 52,
       "y": 40,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -557,6 +557,19 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VARROCK_NPC_WondertradeHint",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENERAL_STORE_CLERK",
+      "x": 27,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "VARROCKSTORE_NPC_3",
       "flag": "0"
     }
   ],
@@ -730,14 +743,14 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 43,
+      "x": 42,
       "y": 40,
       "elevation": 0,
       "dest_map": "MAP_VARROCK",
       "dest_warp_id": "0"
     },
     {
-      "x": 43,
+      "x": 42,
       "y": 41,
       "elevation": 0,
       "dest_map": "MAP_VARROCK",

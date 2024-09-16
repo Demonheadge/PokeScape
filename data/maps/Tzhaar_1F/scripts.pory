@@ -361,7 +361,7 @@ script TZHAAR_ARCHAEOLOGIST
 
 script TZHAAR_LANGUAGE_BOOK
 {
-    msgbox(format("It is a book containing a list of commonly used words for the Tzhaar language.\pJalYt - Human.\nMor Ul Rek - Tzhaar City.\pThe book seems unfinished."))
+    msgbox(format("It is a book containing a list of commonly used words for the Tzhaar language.\pJalYt - Human.\nMor Ul Rek - Tzhaar City.\pKimit-zil - Familiar.\pThe book seems unfinished."))
     closemessage
     hidenamebox
     release
@@ -369,7 +369,7 @@ script TZHAAR_LANGUAGE_BOOK
 }
 script TZHAAR_SIGNPOST_1
 {
-    msgbox(format("Mor Ul Rek"))
+    msgbox(format("Mor Ul Rek."))
     closemessage
     hidenamebox
     release

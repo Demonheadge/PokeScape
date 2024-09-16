@@ -322,6 +322,177 @@ BATTLE_MUSA_POINT_TRAINER_4::
 	end
 
 
+NPC_MUSA_POINT_SHOP_1::
+	lock
+	faceplayer
+	namebox NPC_MUSA_POINT_4_Text_0
+	msgbox NPC_MUSA_POINT_SHOP_1_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NEWSLETTER_1::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_1_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_1_2
+NEWSLETTER_1_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_1_2:
+	msgbox NEWSLETTER_1_Text_1
+	goto NEWSLETTER_1_1
+
+
+NEWSLETTER_2::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_2_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_2_2
+NEWSLETTER_2_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_2_2:
+	msgbox NEWSLETTER_2_Text_1
+	goto NEWSLETTER_2_1
+
+
+NEWSLETTER_3::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_3_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_3_2
+NEWSLETTER_3_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_3_2:
+	msgbox NEWSLETTER_3_Text_1
+	goto NEWSLETTER_3_1
+
+
+NEWSLETTER_4::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_4_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_4_2
+NEWSLETTER_4_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_4_2:
+	msgbox NEWSLETTER_4_Text_1
+	goto NEWSLETTER_4_1
+
+
+NEWSLETTER_5::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_5_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_5_2
+NEWSLETTER_5_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_5_2:
+	msgbox NEWSLETTER_5_Text_1
+	goto NEWSLETTER_5_1
+
+
+NEWSLETTER_6::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_6_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_6_2
+NEWSLETTER_6_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_6_2:
+	msgbox NEWSLETTER_6_Text_1
+	goto NEWSLETTER_6_1
+
+
+NEWSLETTER_7::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_7_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_7_2
+NEWSLETTER_7_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_7_2:
+	msgbox NEWSLETTER_7_Text_1
+	goto NEWSLETTER_7_1
+
+
+NEWSLETTER_8::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_8_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_8_2
+NEWSLETTER_8_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_8_2:
+	msgbox NEWSLETTER_8_Text_1
+	goto NEWSLETTER_8_1
+
+
+NEWSLETTER_9::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_9_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_9_2
+NEWSLETTER_9_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_9_2:
+	msgbox NEWSLETTER_9_Text_1
+	goto NEWSLETTER_9_1
+
+
+NEWSLETTER_13::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_13_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_13_2
+NEWSLETTER_13_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_13_2:
+	msgbox NEWSLETTER_13_Text_1
+	goto NEWSLETTER_13_1
+
+
 EventScript_BananaTree::
 	msgbox EventScript_BananaTree_Text_0
 	random 2
@@ -1041,6 +1212,166 @@ BATTLE_MUSA_POINT_TRAINER_4_Text_2:
 	.string "know what you are going to get.\p"
 	.string "Unless you fish for lobsters, you only\n"
 	.string "get lobsters like this.$"
+
+NPC_MUSA_POINT_SHOP_1_Text_0:
+	.string "That Tzhaar Gym was something else, I\n"
+	.string "had to stock up on Drunk Dragon's just\l"
+	.string "to make it through the waves.$"
+
+NEWSLETTER_1_Text_0:
+	.string "Newsletter Volume 1.\n"
+	.string "Penguins, love, music!\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_1_Text_1:
+	.string "While adventurering you may\n"
+	.string "occasionally hear some unusual music\l"
+	.string "playing far off in the distance.\p"
+	.string "You may think to yourself, what is this?\p"
+	.string "Why, it is none other than penguins!\p"
+	.string "Ever since Ping & Pong started up their\n"
+	.string "music band, all penguins have joined in\l"
+	.string "on the fun.\p"
+	.string "Keep your eyes peeled, follow the\n"
+	.string "source of the music and you will find\l"
+	.string "penguins!\p"
+	.string "- Canada Girll$"
+
+NEWSLETTER_2_Text_0:
+	.string "Newsletter Volume 2.\n"
+	.string "Penguins and how to spot them!\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_2_Text_1:
+	.string "Penguins are sneaky, they disgusise\n"
+	.string "themselves in plain sight and blend in\l"
+	.string "with their surroundings.\p"
+	.string "Some say they have seen them\n"
+	.string "disgusised as barrels or bushes and\l"
+	.string "some say they have even been spotted\l"
+	.string "as toadstools!\p"
+	.string "One farmer in Lumbridge is adamant that\n"
+	.string "they disgusised themselves as one of\l"
+	.string "his sheep in the herd.\p"
+	.string "But could this be true?\p"
+	.string "- Canada Girll$"
+
+NEWSLETTER_3_Text_0:
+	.string "Newsletter Volume 3.\n"
+	.string "Cupholders.\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_3_Text_1:
+	.string "Cupholders. They hold your cups while\n"
+	.string "you do other things.\p"
+	.string "- Demonheadge$"
+
+NEWSLETTER_4_Text_0:
+	.string "Newsletter Volume 4.\n"
+	.string "Mysterious Mounds.\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_4_Text_1:
+	.string "Shh, the ground.\n"
+	.string "It moves ever so slightly.\p"
+	.string "Be careful as Wyrms are buried deep\n"
+	.string "within the sands!\p"
+	.string "They change type depending on their\n"
+	.string "enviorment.\p"
+	.string "Some say you can force these changes\n"
+	.string "to happen with magic.\p"
+	.string "I shall continue to track them.\n"
+	.string "And you should too.\p"
+	.string "- Strykewyrm Jim.$"
+
+NEWSLETTER_5_Text_0:
+	.string "Newsletter Volume 5.\n"
+	.string "Gotta go fast!\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_5_Text_1:
+	.string "Got sore feet?\n"
+	.string "{PAUSE 15}Run energy drained?\p"
+	.string "Agility level too low?\n"
+	.string "{PAUSE 15}Well be exhausted no more!\p"
+	.string "My Terrorbird can fix that in a jiffy!\n"
+	.string "Come see them in Rimmington.\p"
+	.string "- Gnome boy Kevin$"
+
+NEWSLETTER_6_Text_0:
+	.string "Newsletter Volume 6.\n"
+	.string "A Button.\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_6_Text_1:
+	.string "Hello, need help?\p"
+	.string "Where do I go next?\p"
+	.string "Are you stuck?\p"
+	.string "Does that door not open?\p"
+	.string "Just try pressing the A button!\p"
+	.string "What is the A button?\p"
+	.string "Tehehe, aren't you silly.\p"
+	.string "You know what the A button is.\p"
+	.string "The A button can even help you find\n"
+	.string "hidden items.\p"
+	.string "Just remember, when in doubt.\n"
+	.string "Just press the A button.\p"
+	.string "- Anubtot.$"
+
+NEWSLETTER_7_Text_0:
+	.string "Newsletter Volume 7.\n"
+	.string "To be a slayer master.\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_7_Text_1:
+	.string "To become the best like no one ever was,\n"
+	.string "you must do 4 simple things.\p"
+	.string "Step 1, Get your task from a slayer\n"
+	.string "master.\n"
+	.string "Step 2, Complete your task.\p"
+	.string "Step 3, ???.\n"
+	.string "Step 4, Profit.\p"
+	.string "- Wannabe Slayer Master, Erskine$"
+
+NEWSLETTER_8_Text_0:
+	.string "Newsletter Volume 8.\n"
+	.string "Sparkle, sparkle.\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_8_Text_1:
+	.string "HIDDEN ITEMS!\p"
+	.string "You want them, don't you?\p"
+	.string "They are hidden everywhere.\p"
+	.string "But how do you find them?\p"
+	.string "Solve this and information shall be\n"
+	.string "yours:\p"
+	.string "In the town, 'A KROC RV'\n"
+	.string "I am found.\p"
+	.string "Crests of royality are where, I dwell.\n"
+	.string "Sit with me and drink tea, times 3.\p"
+	.string "All will be revealed.\n"
+	.string "- ???$"
+
+NEWSLETTER_9_Text_0:
+	.string "Newsletter Volume 9.\n"
+	.string "???.\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_9_Text_1:
+	.string "?\p"
+	.string "- ???$"
+
+NEWSLETTER_13_Text_0:
+	.string "Newsletter Volume 13.\p"
+	.string "The end is neigh.\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_13_Text_1:
+	.string "Sadly the time as come to end..\p"
+	.string "This will be the last newsletter in this\n"
+	.string "series that I will be publishing.\p"
+	.string "I thank you for reading.\p"
+	.string "- Baraek$"
 
 EventScript_BananaTree_Text_0:
 	.string "There are a bunch of Bananas on this\n"

@@ -5,7 +5,8 @@ Varrock_House_1_MapScripts::
 NPC_VARROCK_WOMAN_1::
 	lock
 	faceplayer
-	msgbox NPC_VARROCK_WOMAN_1_Text_0
+	namebox NPC_VARROCK_WOMAN_1_Text_0
+	msgbox NPC_VARROCK_WOMAN_1_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -15,7 +16,8 @@ NPC_VARROCK_WOMAN_1::
 NPC_VARROCK_WOMAN_2::
 	lock
 	faceplayer
-	msgbox NPC_VARROCK_WOMAN_2_Text_0
+	namebox NPC_VARROCK_WOMAN_2_Text_0
+	msgbox NPC_VARROCK_WOMAN_2_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -29,15 +31,21 @@ VARROCK_HOUSE_1_DRAWER::
 
 
 NPC_VARROCK_WOMAN_1_Text_0:
-	.string "There used to be stray dogs that\n"
-	.string "roamed around Varrock, following\l"
+	.string "Moira$"
+
+NPC_VARROCK_WOMAN_1_Text_1:
+	.string "There used to be a lot more stray dogs\n"
+	.string "that roamed around Varrock, following\l"
 	.string "strangers begging for bones.\p"
 	.string "After the MvM Championships got\n"
 	.string "popular, people started adopting them.\p"
-	.string "{PAUSE 15}Oh god, I hope they're not being used\n"
-	.string "for battling!$"
+	.string "HAHAHA! I find it amusing that they're\n"
+	.string "being used for battling!$"
 
 NPC_VARROCK_WOMAN_2_Text_0:
+	.string "Molly$"
+
+NPC_VARROCK_WOMAN_2_Text_1:
 	.string "I grew up on the farms south of here, so\n"
 	.string "I'll let you in on a little secret I\l"
 	.string "learnt raising animals.\p"

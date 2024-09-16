@@ -68,16 +68,16 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FIRE_GIANT",
-      "x": 24,
-      "y": 30,
+      "x": 8,
+      "y": 27,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_TEMP_2"
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "BATTLE_CrandorVolcano_FireGiant_1",
+      "flag": "FLAG_TEMP_1B"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_F",
@@ -481,6 +481,19 @@
       "trainer_sight_or_berry_tree_id": "3",
       "script": "BATTLE_KaramjaVolcano_HAM_6",
       "flag": "FLAG_TEMP_1C"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FIRE_GIANT",
+      "x": 10,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "BATTLE_CrandorVolcano_FireGiant_2",
+      "flag": "FLAG_TEMP_1B"
     }
   ],
   "warp_events": [

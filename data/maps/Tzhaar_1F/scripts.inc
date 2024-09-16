@@ -544,10 +544,11 @@ TZHAAR_LANGUAGE_BOOK_Text_0:
 	.string "language.\p"
 	.string "JalYt - Human.\n"
 	.string "Mor Ul Rek - Tzhaar City.\p"
+	.string "Kimit-zil - Familiar.\p"
 	.string "The book seems unfinished.$"
 
 TZHAAR_SIGNPOST_1_Text_0:
-	.string "Mor Ul Rek$"
+	.string "Mor Ul Rek.$"
 
 TZHAAR_SIGNPOST_2_Text_0:
 	.string "The signpost is scribbled out and\n"

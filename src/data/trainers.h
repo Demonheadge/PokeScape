@@ -1200,7 +1200,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ROUTE11_GRACEFUL] =
     {
         .trainerClass = TRAINER_CLASS_AGILE,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_SKILLER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
         .trainerPic = TRAINER_PIC_graceful,
         .trainerName = _("ERKEE"),
         .items = {},
@@ -1926,7 +1926,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ROUTE18_TRAINER_1] =
     {
         .trainerClass = TRAINER_CLASS_AGILE,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_SKILLER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
         .trainerPic = TRAINER_PIC_graceful,
         .trainerName = _(""),
         .items = {},
@@ -2194,7 +2194,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ROUTE13_TRAINER_7] =
     {
         .trainerClass = TRAINER_CLASS_AGILE,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_SKILLER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
         .trainerPic = TRAINER_PIC_graceful,
         .trainerName = _(""),
         .items = {},
@@ -2304,7 +2304,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ROUTE16_TRAINER_5] =
     {
         .trainerClass = TRAINER_CLASS_AGILE,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_SKILLER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
         .trainerPic = TRAINER_PIC_graceful,
         .trainerName = _("SP33DMACH1NE"),
         .items = {},
@@ -2498,7 +2498,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ROUTE28_TRAINER_4] =
     {
         .trainerClass = TRAINER_CLASS_ARCHAEOLOGIST,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_SKILLER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
         .trainerPic = TRAINER_PIC_Archaeologist,
         .trainerName = _(""),
         .items = {},
@@ -2559,7 +2559,7 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ROUTE29_TRAINER_3] =
     {
         .trainerClass = TRAINER_CLASS_ARCHAEOLOGIST,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_SKILLER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
         .trainerPic = TRAINER_PIC_Archaeologist,
         .trainerName = _(""),
         .items = {},
@@ -3159,9 +3159,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_VARROCK_SEWERS_1F_TRAINER_2] =
     {
-        .trainerClass = TRAINER_CLASS_SUMMONER,
+        .trainerClass = TRAINER_CLASS_NECROMANCER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
-        .trainerPic = TRAINER_PIC_summoner,
+        .trainerPic = TRAINER_PIC_necromancer,
         .trainerName = _(""),
         .items = {},
         .doubleBattle = FALSE,
@@ -3171,10 +3171,10 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_VARROCK_SEWERS_1F_TRAINER_3] =
     {
-        .trainerClass = TRAINER_CLASS_UNKNOWN,
+        .trainerClass = TRAINER_CLASS_RANGER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
-        .trainerPic = TRAINER_PIC_jmod_f,
-        .trainerName = _("cbow4lyf"),
+        .trainerPic = TRAINER_PIC_ranger_robin,
+        .trainerName = _("Cb0w4lyf"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
@@ -3207,9 +3207,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_VARROCK_SEWERS_2F_TRAINER_2] =
     {
-        .trainerClass = TRAINER_CLASS_SUMMONER,
+        .trainerClass = TRAINER_CLASS_NECROMANCER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
-        .trainerPic = TRAINER_PIC_summoner,
+        .trainerPic = TRAINER_PIC_necromancer,
         .trainerName = _("D3dF1sh"),
         .items = {},
         .doubleBattle = FALSE,
@@ -3243,9 +3243,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_VARROCK_SEWERS_2F_TRAINER_5] =
     {
-        .trainerClass = TRAINER_CLASS_SUMMONER,
+        .trainerClass = TRAINER_CLASS_NECROMANCER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
-        .trainerPic = TRAINER_PIC_summoner,
+        .trainerPic = TRAINER_PIC_necromancer,
         .trainerName = _(""),
         .items = {},
         .doubleBattle = FALSE,
@@ -4914,14 +4914,41 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_AJAMJAM] =
     {
-        .trainerClass = TRAINER_CLASS_PIRATE,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
-        .trainerPic = TRAINER_PIC_pirate,
+        .trainerClass = TRAINER_CLASS_QUESTER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .trainerPic = TRAINER_PIC_quester,
         .trainerName = _("AJamJam"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
         .party = TRAINER_PARTY(sParty_AJamJam),
     },
+
+    [TRAINER_CrandorVolcano_FireGiant_1] =
+    {
+        .trainerClass = TRAINER_CLASS_FIRE_GIANT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_fire_giant,
+        .trainerName = _("Cinder"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_CrandorVolcano_FireGiant_1),
+    },
+    
+    [TRAINER_CrandorVolcano_FireGiant_2] =
+    {
+        .trainerClass = TRAINER_CLASS_FIRE_GIANT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_fire_giant,
+        .trainerName = _("Ember"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_CrandorVolcano_FireGiant_2),
+    },
+
+
+    
 
 };

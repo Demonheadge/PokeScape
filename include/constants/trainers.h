@@ -594,9 +594,9 @@
 #define TRAINER_CLASS_WISE_OLD_MAN		0x86
 #define TRAINER_CLASS_JAILER		    0x87
 #define TRAINER_CLASS_FORGOTTEN         0x88
+#define TRAINER_CLASS_RANGER            0x89
 
-
-#define TRAINER_CLASS_NUM       		0x89
+#define TRAINER_CLASS_NUM       		0x8A
 
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // Standard male encounter music
@@ -617,7 +617,7 @@
 #define TRAINER_ENCOUNTER_MUSIC_HAM         15 // Ham Grunts
 #define TRAINER_ENCOUNTER_MUSIC_NOOB        16 // Happy noobs
 #define TRAINER_ENCOUNTER_MUSIC_CHOOB       17 // Scary choobs
-#define TRAINER_ENCOUNTER_SKILLER           18
+#define TRAINER_ENCOUNTER_MUSIC_SKILLER     18
 
 #define F_TRAINER_FEMALE (1 << 7)
 

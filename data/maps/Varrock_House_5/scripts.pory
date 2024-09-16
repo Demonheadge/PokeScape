@@ -1,0 +1,92 @@
+
+mapscripts Varrock_House_5_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 15) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+        call(URI_STATE)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_TEMP_0, 0: URI_FEELING_WATCHED
+    ]
+}
+
+
+script URI_STATE {
+    checkitem(ITEM_ITEMFINDER, 1)
+        if (!var(VAR_RESULT)){
+            setflag(FLAG_URI_ITEMFINDER)
+            setflag(FLAG_HIDDEN_ITEM_VARROCK_2)
+            setflag(FLAG_HIDDEN_ITEM_VARROCK_3)
+            setflag(FLAG_HIDDEN_ITEM_VARROCK_4)
+            setflag(FLAG_HIDDEN_ITEM_VARROCK_5)
+        }
+    return
+}
+
+script URI_FEELING_WATCHED {
+    if (var(VAR_TEMP_0) == 0) {
+        checkitem(ITEM_ITEMFINDER, 1)
+            if (!var(VAR_RESULT)){
+                msgbox(format("You feel like you are being watched…"))
+                closemessage
+            }
+        setvar(VAR_TEMP_0, 1)
+    }
+    return
+}
+
+script FIND_VARROCK_URI
+{
+    lock
+    msgbox(format("Drink the tea?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {   
+        closemessage
+        playse(SE_USE_ITEM)
+        addvar(VAR_TEMP_1, 1)
+        if (var(VAR_TEMP_1) >= 3) {
+            checkitem(ITEM_ITEMFINDER, 1)
+            if (!var(VAR_RESULT)){
+                fadescreen(FADE_TO_BLACK)
+                delay(90)
+                clearflag(FLAG_URI_ITEMFINDER)
+                clearflag(FLAG_HIDDEN_ITEM_VARROCK_2)
+                clearflag(FLAG_HIDDEN_ITEM_VARROCK_3)
+                clearflag(FLAG_HIDDEN_ITEM_VARROCK_4)
+                clearflag(FLAG_HIDDEN_ITEM_VARROCK_5)
+                addobject(1)
+                fadescreen(FADE_FROM_BLACK)
+                namebox ("Uri")
+                msgbox(format("Aaah, nothing like a nice cuppa tea!"))
+                closemessage
+                hidenamebox
+                playse(SE_LEDGE)
+                applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_EXCLAMATIONMARK_JUMP_UP)
+                waitmovement(0)
+                delay(30)
+                applymovement(1, Movement_InteractFACEDOWN)
+                waitmovement(0)
+                namebox ("Uri")
+                msgbox(format("Well done!\pI see you like solving puzzles.\pWhat about finding unexpected goodies?\pWell say no more!\pThese items…{PAUSE 32} are…{PAUSE 32} for…{PAUSE 32} you!"))
+                closemessage
+                hidenamebox
+                giveitem(ITEM_ITEMFINDER)
+                namebox ("Uri")
+                msgbox(format("Hidden treasures lay everywhere!\pUntil we meet again!"))
+                closemessage
+                hidenamebox
+                fadescreen(FADE_TO_BLACK)
+                removeobject(1)
+                setflag(FLAG_URI_ITEMFINDER)
+                fadescreen(FADE_FROM_BLACK)
+                release
+                end
+            }
+            else {
+                msgbox(format("Nothing interesting happens."))
+            }
+        }
+    }
+    closemessage
+    release
+    end
+}

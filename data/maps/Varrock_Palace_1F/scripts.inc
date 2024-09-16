@@ -4,11 +4,26 @@ Varrock_Palace_1F_MapScripts::
 
 Varrock_Palace_1F_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	call VARROCKGYM_TRAINERS
+	call VARROCKGYM_STATE
 	return
 
 
+VARROCKGYM_STATE::
+	goto_if_unset FLAG_BADGE06_GET, VARROCKGYM_STATE_2
+	playbgm MUS_PS_VARROCK, 1
+	savebgm MUS_PS_VARROCK
+VARROCKGYM_STATE_1:
+	setflag FLAG_TEMP_1F
+	return
+
+VARROCKGYM_STATE_2:
+	playbgm MUS_PS_GYM, 1
+	savebgm MUS_PS_GYM
+	goto VARROCKGYM_STATE_1
+
+
 VARROCKGYM_TRAINERS::
-	goto_if_unset FLAG_BADGE03_GET, VARROCKGYM_TRAINERS_2
+	goto_if_unset FLAG_BADGE06_GET, VARROCKGYM_TRAINERS_2
 VARROCKGYM_TRAINERS_1:
 	return
 
@@ -25,7 +40,7 @@ VARROCKGYM_TRAINERS_4:
 
 
 TRIGGER_VARROCK_GYM_ADVISOR::
-	goto_if_unset FLAG_BADGE03_GET, TRIGGER_VARROCK_GYM_ADVISOR_2
+	goto_if_unset FLAG_BADGE06_GET, TRIGGER_VARROCK_GYM_ADVISOR_2
 TRIGGER_VARROCK_GYM_ADVISOR_1:
 	release
 	end
@@ -84,7 +99,7 @@ TRIGGER_VARROCK_GYM_ADVISOR_17:
 
 
 VARROCK_GYM_ADVISOR::
-	goto_if_unset FLAG_BADGE03_GET, VARROCK_GYM_ADVISOR_2
+	goto_if_unset FLAG_BADGE06_GET, VARROCK_GYM_ADVISOR_2
 VARROCK_GYM_ADVISOR_1:
 	lock
 	faceplayer
@@ -201,7 +216,7 @@ VARROCK_GYM_RELDO::
 	faceplayer
 	namebox VARROCK_GYM_RELDO_Text_0
 	msgbox VARROCK_GYM_RELDO_Text_1
-	goto_if_unset FLAG_BADGE03_GET, VARROCK_GYM_RELDO_2
+	goto_if_unset FLAG_BADGE06_GET, VARROCK_GYM_RELDO_2
 	msgbox VARROCK_GYM_RELDO_Text_9
 VARROCK_GYM_RELDO_1:
 	closemessage
@@ -449,9 +464,10 @@ VARROCK_GYM_SIR_PRYSIN_2:
 VARROCK_GYM_RANGER::
 	lock
 	faceplayer
+	namebox VARROCK_GYM_RANGER_Text_0
 	compare VAR_POKESCAPE_VARROCK_GYM_QUEST, 10
 	goto_if_eq VARROCK_GYM_RANGER_2
-	msgbox VARROCK_GYM_RANGER_Text_1
+	msgbox VARROCK_GYM_RANGER_Text_2
 VARROCK_GYM_RANGER_1:
 	closemessage
 	hidenamebox
@@ -459,7 +475,7 @@ VARROCK_GYM_RANGER_1:
 	end
 
 VARROCK_GYM_RANGER_2:
-	msgbox VARROCK_GYM_RANGER_Text_0
+	msgbox VARROCK_GYM_RANGER_Text_1
 	hidenamebox
 	msgbox VARROCK_GYM_SIR_PRYSIN_Text_2
 	goto VARROCK_GYM_RANGER_1
@@ -468,9 +484,10 @@ VARROCK_GYM_RANGER_2:
 VARROCK_GYM_QUESTER::
 	lock
 	faceplayer
+	namebox VARROCK_GYM_QUESTER_Text_0
 	compare VAR_POKESCAPE_VARROCK_GYM_QUEST, 10
 	goto_if_eq VARROCK_GYM_QUESTER_2
-	msgbox VARROCK_GYM_QUESTER_Text_0
+	msgbox VARROCK_GYM_QUESTER_Text_1
 VARROCK_GYM_QUESTER_1:
 	closemessage
 	hidenamebox
@@ -478,16 +495,17 @@ VARROCK_GYM_QUESTER_1:
 	end
 
 VARROCK_GYM_QUESTER_2:
-	msgbox VARROCK_GYM_QUESTER_Text_0
+	msgbox VARROCK_GYM_QUESTER_Text_1
 	goto VARROCK_GYM_QUESTER_1
 
 
 VARROCK_GYM_GUARD_1::
 	lock
 	faceplayer
+	namebox VARROCK_GYM_GUARD_1_Text_0
 	compare VAR_POKESCAPE_VARROCK_GYM_QUEST, 10
 	goto_if_eq VARROCK_GYM_GUARD_1_2
-	msgbox VARROCK_GYM_GUARD_1_Text_1
+	msgbox VARROCK_GYM_GUARD_1_Text_2
 VARROCK_GYM_GUARD_1_1:
 	closemessage
 	hidenamebox
@@ -495,16 +513,17 @@ VARROCK_GYM_GUARD_1_1:
 	end
 
 VARROCK_GYM_GUARD_1_2:
-	msgbox VARROCK_GYM_GUARD_1_Text_0
+	msgbox VARROCK_GYM_GUARD_1_Text_1
 	goto VARROCK_GYM_GUARD_1_1
 
 
 VARROCK_GYM_GUARD_2::
 	lock
 	faceplayer
+	namebox VARROCK_GYM_GUARD_1_Text_0
 	compare VAR_POKESCAPE_VARROCK_GYM_QUEST, 10
 	goto_if_eq VARROCK_GYM_GUARD_2_2
-	msgbox VARROCK_GYM_GUARD_1_Text_1
+	msgbox VARROCK_GYM_GUARD_1_Text_2
 VARROCK_GYM_GUARD_2_1:
 	closemessage
 	hidenamebox
@@ -519,9 +538,10 @@ VARROCK_GYM_GUARD_2_2:
 VARROCK_GYM_GUARD_3::
 	lock
 	faceplayer
+	namebox VARROCK_GYM_GUARD_1_Text_0
 	compare VAR_POKESCAPE_VARROCK_GYM_QUEST, 10
 	goto_if_eq VARROCK_GYM_GUARD_3_2
-	msgbox VARROCK_GYM_GUARD_1_Text_1
+	msgbox VARROCK_GYM_GUARD_1_Text_2
 VARROCK_GYM_GUARD_3_1:
 	closemessage
 	hidenamebox
@@ -536,9 +556,10 @@ VARROCK_GYM_GUARD_3_2:
 VARROCK_GYM_GUARD_4::
 	lock
 	faceplayer
+	namebox VARROCK_GYM_GUARD_1_Text_0
 	compare VAR_POKESCAPE_VARROCK_GYM_QUEST, 10
 	goto_if_eq VARROCK_GYM_GUARD_4_2
-	msgbox VARROCK_GYM_GUARD_1_Text_1
+	msgbox VARROCK_GYM_GUARD_1_Text_2
 VARROCK_GYM_GUARD_4_1:
 	closemessage
 	hidenamebox
@@ -553,9 +574,10 @@ VARROCK_GYM_GUARD_4_2:
 VARROCK_GYM_GUARD_5::
 	lock
 	faceplayer
+	namebox VARROCK_GYM_GUARD_1_Text_0
 	compare VAR_POKESCAPE_VARROCK_GYM_QUEST, 10
 	goto_if_eq VARROCK_GYM_GUARD_5_2
-	msgbox VARROCK_GYM_GUARD_1_Text_1
+	msgbox VARROCK_GYM_GUARD_1_Text_2
 VARROCK_GYM_GUARD_5_1:
 	closemessage
 	hidenamebox
@@ -570,9 +592,10 @@ VARROCK_GYM_GUARD_5_2:
 VARROCK_GYM_PRAYER_1::
 	lock
 	faceplayer
+	namebox VARROCK_GYM_PRAYER_1_Text_0
 	compare VAR_POKESCAPE_VARROCK_GYM_QUEST, 10
 	goto_if_eq VARROCK_GYM_PRAYER_1_2
-	msgbox VARROCK_GYM_PRAYER_1_Text_0
+	msgbox VARROCK_GYM_PRAYER_1_Text_1
 VARROCK_GYM_PRAYER_1_1:
 	closemessage
 	hidenamebox
@@ -580,13 +603,14 @@ VARROCK_GYM_PRAYER_1_1:
 	end
 
 VARROCK_GYM_PRAYER_1_2:
-	msgbox VARROCK_GYM_PRAYER_1_Text_0
+	msgbox VARROCK_GYM_PRAYER_1_Text_1
 	goto VARROCK_GYM_PRAYER_1_1
 
 
 VARROCK_GYM_PRAYER_2::
 	lock
 	faceplayer
+	namebox VARROCK_GYM_PRAYER_1_Text_0
 	compare VAR_POKESCAPE_VARROCK_GYM_QUEST, 10
 	goto_if_eq VARROCK_GYM_PRAYER_2_2
 	msgbox VARROCK_GYM_PRAYER_2_Text_0
@@ -604,9 +628,10 @@ VARROCK_GYM_PRAYER_2_2:
 VARROCK_GYM_PRAYER_3::
 	lock
 	faceplayer
+	namebox VARROCK_GYM_PRAYER_3_Text_0
 	compare VAR_POKESCAPE_VARROCK_GYM_QUEST, 10
 	goto_if_eq VARROCK_GYM_PRAYER_3_2
-	msgbox VARROCK_GYM_PRAYER_3_Text_1
+	msgbox VARROCK_GYM_PRAYER_3_Text_2
 VARROCK_GYM_PRAYER_3_1:
 	closemessage
 	hidenamebox
@@ -614,7 +639,7 @@ VARROCK_GYM_PRAYER_3_1:
 	end
 
 VARROCK_GYM_PRAYER_3_2:
-	msgbox VARROCK_GYM_PRAYER_3_Text_0
+	msgbox VARROCK_GYM_PRAYER_3_Text_1
 	goto VARROCK_GYM_PRAYER_3_1
 
 
@@ -639,9 +664,10 @@ VARROCK_GYM_PRAYER_4_2:
 VARROCK_GYM_DRUID::
 	lock
 	faceplayer
+	namebox VARROCK_GYM_DRUID_Text_0
 	compare VAR_POKESCAPE_VARROCK_GYM_QUEST, 10
 	goto_if_eq VARROCK_GYM_DRUID_2
-	msgbox VARROCK_GYM_BOOK_3_Text_2
+	msgbox VARROCK_GYM_DRUID_Text_2
 VARROCK_GYM_DRUID_1:
 	closemessage
 	hidenamebox
@@ -649,13 +675,14 @@ VARROCK_GYM_DRUID_1:
 	end
 
 VARROCK_GYM_DRUID_2:
-	msgbox VARROCK_GYM_DRUID_Text_0
+	msgbox VARROCK_GYM_DRUID_Text_1
 	goto VARROCK_GYM_DRUID_1
 
 
 VARROCK_GYM_GNOME::
 	lock
 	faceplayer
+	namebox VARROCK_GYM_GNOME_Text_0
 	compare VAR_POKESCAPE_VARROCK_GYM_QUEST, 10
 	goto_if_eq VARROCK_GYM_GNOME_2
 	msgbox VARROCK_GYM_BOOK_3_Text_2
@@ -666,13 +693,14 @@ VARROCK_GYM_GNOME_1:
 	end
 
 VARROCK_GYM_GNOME_2:
-	msgbox VARROCK_GYM_GNOME_Text_0
+	msgbox VARROCK_GYM_GNOME_Text_1
 	goto VARROCK_GYM_GNOME_1
 
 
 VARROCK_GYM_GUARD_BLOCKING::
 	lock
 	faceplayer
+	namebox VARROCK_GYM_GUARD_1_Text_0
 	msgbox VARROCK_GYM_GUARD_BLOCKING_Text_0
 	closemessage
 	hidenamebox
@@ -683,7 +711,71 @@ VARROCK_GYM_GUARD_BLOCKING::
 VARROCK_GYM_GUARD_6::
 	lock
 	faceplayer
+	namebox VARROCK_GYM_GUARD_1_Text_0
 	msgbox VARROCK_GYM_GUARD_6_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+VARROCK_GYM_MAID::
+	lock
+	namebox VARROCK_GYM_MAID_Text_0
+	msgbox VARROCK_GYM_MAID_Text_1
+	closemessage
+	hidenamebox
+	playse SE_PIN
+	applymovement 16, MOVEMENT_EXCLAMATIONMARK_FACEPLAYER
+	waitmovement 0
+	namebox VARROCK_GYM_MAID_Text_0
+	msgbox VARROCK_GYM_MAID_Text_2
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+VARROCK_GYM_CHEF::
+	lock
+	faceplayer
+	namebox VARROCK_GYM_CHEF_Text_0
+	msgbox VARROCK_GYM_CHEF_Text_1
+	closemessage
+	hidenamebox
+	applymovement 9, Movement_InteractFACEUP
+	waitmovement 0
+	release
+	end
+
+
+VARROCK_GYM_COOK::
+	lock
+	faceplayer
+	namebox VARROCK_GYM_COOK_Text_0
+	msgbox VARROCK_GYM_COOK_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+VARROCK_GYM_COOK_MAID::
+	lock
+	faceplayer
+	namebox VARROCK_GYM_MAID_Text_0
+	msgbox VARROCK_GYM_COOK_MAID_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+VARROCK_GYM_BIRTHDAY_BOY::
+	lock
+	faceplayer
+	namebox VARROCK_GYM_PRAYER_3_Text_0
+	msgbox VARROCK_GYM_BIRTHDAY_BOY_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -705,8 +797,8 @@ BATTLE_VARROCK_GYM_TRAINER_1::
 BATTLE_VARROCK_GYM_TRAINER_1_2:
 	lock
 	faceplayer
-	namebox BATTLE_VARROCK_GYM_TRAINER_1_Text_2
-	msgbox BATTLE_VARROCK_GYM_TRAINER_1_Text_3
+	namebox VARROCK_GYM_GUARD_1_Text_0
+	msgbox BATTLE_VARROCK_GYM_TRAINER_1_Text_2
 	hidenamebox
 	release
 	end
@@ -714,8 +806,8 @@ BATTLE_VARROCK_GYM_TRAINER_1_2:
 BATTLE_VARROCK_GYM_TRAINER_1_3:
 	lock
 	faceplayer
-	namebox BATTLE_VARROCK_GYM_TRAINER_1_Text_2
-	msgbox BATTLE_VARROCK_GYM_TRAINER_1_Text_4
+	namebox VARROCK_GYM_GUARD_1_Text_0
+	msgbox BATTLE_VARROCK_GYM_TRAINER_1_Text_3
 	hidenamebox
 	release
 	end
@@ -736,7 +828,7 @@ BATTLE_VARROCK_GYM_TRAINER_2::
 BATTLE_VARROCK_GYM_TRAINER_2_2:
 	lock
 	faceplayer
-	namebox BATTLE_VARROCK_GYM_TRAINER_1_Text_2
+	namebox VARROCK_GYM_GUARD_1_Text_0
 	msgbox BATTLE_VARROCK_GYM_TRAINER_2_Text_2
 	hidenamebox
 	release
@@ -745,7 +837,7 @@ BATTLE_VARROCK_GYM_TRAINER_2_2:
 BATTLE_VARROCK_GYM_TRAINER_2_3:
 	lock
 	faceplayer
-	namebox BATTLE_VARROCK_GYM_TRAINER_1_Text_2
+	namebox VARROCK_GYM_GUARD_1_Text_0
 	msgbox BATTLE_VARROCK_GYM_TRAINER_2_Text_3
 	hidenamebox
 	release
@@ -754,7 +846,7 @@ BATTLE_VARROCK_GYM_TRAINER_2_3:
 BATTLE_VARROCK_GYM_TRAINER_2_4:
 	lock
 	faceplayer
-	namebox BATTLE_VARROCK_GYM_TRAINER_1_Text_2
+	namebox VARROCK_GYM_GUARD_1_Text_0
 	msgbox BATTLE_VARROCK_GYM_TRAINER_2_Text_4
 	hidenamebox
 	release
@@ -776,7 +868,7 @@ BATTLE_VARROCK_GYM_TRAINER_3::
 BATTLE_VARROCK_GYM_TRAINER_3_2:
 	lock
 	faceplayer
-	namebox BATTLE_VARROCK_GYM_TRAINER_1_Text_2
+	namebox VARROCK_GYM_GUARD_1_Text_0
 	msgbox BATTLE_VARROCK_GYM_TRAINER_3_Text_2
 	hidenamebox
 	release
@@ -785,7 +877,7 @@ BATTLE_VARROCK_GYM_TRAINER_3_2:
 BATTLE_VARROCK_GYM_TRAINER_3_3:
 	lock
 	faceplayer
-	namebox BATTLE_VARROCK_GYM_TRAINER_1_Text_2
+	namebox VARROCK_GYM_GUARD_1_Text_0
 	msgbox BATTLE_VARROCK_GYM_TRAINER_3_Text_3
 	hidenamebox
 	release
@@ -794,7 +886,7 @@ BATTLE_VARROCK_GYM_TRAINER_3_3:
 BATTLE_VARROCK_GYM_TRAINER_3_4:
 	lock
 	faceplayer
-	namebox BATTLE_VARROCK_GYM_TRAINER_1_Text_2
+	namebox VARROCK_GYM_GUARD_1_Text_0
 	msgbox BATTLE_VARROCK_GYM_TRAINER_3_Text_2
 	hidenamebox
 	release
@@ -805,7 +897,7 @@ VARROCK_GYM_KINGROALD::
 	lock
 	faceplayer
 	namebox VARROCK_GYM_KINGROALD_Text_0
-	goto_if_unset FLAG_BADGE03_GET, VARROCK_GYM_KINGROALD_2
+	goto_if_unset FLAG_BADGE06_GET, VARROCK_GYM_KINGROALD_2
 	goto_if_set FLAG_BADGE04_GET, VARROCK_GYM_KINGROALD_5
 	msgbox VARROCK_GYM_KINGROALD_Text_7
 VARROCK_GYM_KINGROALD_4:
@@ -835,7 +927,7 @@ VARROCK_GYM_KINGROALD_2:
 	namebox VARROCK_GYM_KINGROALD_Text_0
 	msgbox VARROCK_GYM_KINGROALD_Text_5
 	setvar VAR_POKESCAPE_VARROCK_GYM_QUEST, 26
-	setflag FLAG_BADGE03_GET
+	setflag FLAG_BADGE06_GET
 	addvar VAR_GAMEMODE_LEVEL_SCALING, 1
 	call SetGymTrainers_VARROCK
 	hidenamebox
@@ -1065,29 +1157,38 @@ VARROCK_GYM_SIR_PRYSIN_Text_3:
 	.string "the castle.$"
 
 VARROCK_GYM_RANGER_Text_0:
+	.string "Ranger$"
+
+VARROCK_GYM_RANGER_Text_1:
 	.string "What am I reading you ask?\p"
 	.string "Don't judge but I am reading a murder\n"
 	.string "mystery, this one is called Misthalin\l"
 	.string "Mystery.\p"
 	.string "I just really like these sort of stories.$"
 
-VARROCK_GYM_RANGER_Text_1:
+VARROCK_GYM_RANGER_Text_2:
 	.string "After reading about what happened with\n"
 	.string "Lord Sinclair in Kandarin, I've been\l"
 	.string "intrigued by these murder mystery\l"
 	.string "books.$"
 
 VARROCK_GYM_QUESTER_Text_0:
+	.string "Quester$"
+
+VARROCK_GYM_QUESTER_Text_1:
 	.string "Buzz off!\p"
 	.string "I've got a quest to research.$"
 
 VARROCK_GYM_GUARD_1_Text_0:
+	.string "Guard$"
+
+VARROCK_GYM_GUARD_1_Text_1:
 	.string "Oh, you are trying to return the\n"
 	.string "overdue books to the libary?\p"
 	.string "I think there is one in the pile of books\n"
 	.string "in our sleeping quarters.$"
 
-VARROCK_GYM_GUARD_1_Text_1:
+VARROCK_GYM_GUARD_1_Text_2:
 	.string "Welcome to Varrock Castle.$"
 
 VARROCK_GYM_GUARD_2_Text_0:
@@ -1111,6 +1212,9 @@ VARROCK_GYM_GUARD_5_Text_0:
 	.string "instead.$"
 
 VARROCK_GYM_PRAYER_1_Text_0:
+	.string "Woman$"
+
+VARROCK_GYM_PRAYER_1_Text_1:
 	.string "……\p"
 	.string "Shh!$"
 
@@ -1119,6 +1223,9 @@ VARROCK_GYM_PRAYER_2_Text_0:
 	.string "Praying.$"
 
 VARROCK_GYM_PRAYER_3_Text_0:
+	.string "Man$"
+
+VARROCK_GYM_PRAYER_3_Text_1:
 	.string "……{PAUSE 15}……\p"
 	.string "Huh what?!\p"
 	.string "I wasn't sleeping I swear!\p"
@@ -1126,7 +1233,7 @@ VARROCK_GYM_PRAYER_3_Text_0:
 	.string "I think there is one in the bookshelf in\n"
 	.string "the corner.$"
 
-VARROCK_GYM_PRAYER_3_Text_1:
+VARROCK_GYM_PRAYER_3_Text_2:
 	.string "…{PAUSE 15} Zzz… {PAUSE 15} Zzz…\p"
 	.string "He is fast asleep.$"
 
@@ -1140,11 +1247,22 @@ VARROCK_GYM_PRAYER_4_Text_1:
 	.string "middle of Prayer.$"
 
 VARROCK_GYM_DRUID_Text_0:
+	.string "Druid$"
+
+VARROCK_GYM_DRUID_Text_1:
 	.string "An overdue book?\p"
 	.string "I believe there is one in my room\n"
 	.string "downstairs.$"
 
+VARROCK_GYM_DRUID_Text_2:
+	.string "Have you been to Taverley?\p"
+	.string "It's a lovely place, you should go\n"
+	.string "sometime.$"
+
 VARROCK_GYM_GNOME_Text_0:
+	.string "Ferrnook$"
+
+VARROCK_GYM_GNOME_Text_1:
 	.string "You are looking for Books?\p"
 	.string "Have you tried looking in the\n"
 	.string "bookshelves?$"
@@ -1158,6 +1276,45 @@ VARROCK_GYM_GUARD_6_Text_0:
 	.string "confusing as the Falador Castle, I am\l"
 	.string "grateful for that.$"
 
+VARROCK_GYM_MAID_Text_0:
+	.string "Maid$"
+
+VARROCK_GYM_MAID_Text_1:
+	.string "Urgh the king is such a slob.\p"
+	.string "I have to clean his mess up every day.\p"
+	.string "I swear it was less work as a barmaid…$"
+
+VARROCK_GYM_MAID_Text_2:
+	.string "Eek!\p"
+	.string "Please don't tell anyone I said that…$"
+
+VARROCK_GYM_CHEF_Text_0:
+	.string "Chef$"
+
+VARROCK_GYM_CHEF_Text_1:
+	.string "I don't have time to chat.\p"
+	.string "I've got about 50 cakes to cook!\p"
+	.string "Why is it suddenly every guards\n"
+	.string "birthday!$"
+
+VARROCK_GYM_COOK_Text_0:
+	.string "Cook$"
+
+VARROCK_GYM_COOK_Text_1:
+	.string "Cooking for the whole castle sure is a\n"
+	.string "lot of work.$"
+
+VARROCK_GYM_COOK_MAID_Text_0:
+	.string "1 egg, 1 pot of water, 1 bucket of flour.\p"
+	.string "Wait, why is the ratio off?!$"
+
+VARROCK_GYM_BIRTHDAY_BOY_Text_0:
+	.string "Today is actually my birthday.\p"
+	.string "But instead of wishing me a happy\n"
+	.string "birthday, my friends are telling\l"
+	.string "everyone that it is theirs instead.\p"
+	.string "Oh well, at least I will get a cake…$"
+
 BATTLE_VARROCK_GYM_TRAINER_1_Text_0:
 	.string "Hey you!\n"
 	.string "Do not trespass!$"
@@ -1166,12 +1323,9 @@ BATTLE_VARROCK_GYM_TRAINER_1_Text_1:
 	.string "Consider that a warning!$"
 
 BATTLE_VARROCK_GYM_TRAINER_1_Text_2:
-	.string "Guard$"
-
-BATTLE_VARROCK_GYM_TRAINER_1_Text_3:
 	.string "Welcome to Varrock Castle!$"
 
-BATTLE_VARROCK_GYM_TRAINER_1_Text_4:
+BATTLE_VARROCK_GYM_TRAINER_1_Text_3:
 	.string "Do not trespass around the Castle\n"
 	.string "unsupervised.$"
 

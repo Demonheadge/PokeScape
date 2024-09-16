@@ -618,8 +618,8 @@
 #define FLAG_HIDDEN_ITEM_MUDSKIPPER_POINT_1                     (FLAG_HIDDEN_ITEMS_START + 0x2E)
 #define FLAG_HIDDEN_ITEM_MUDSKIPPER_POINT_2                     (FLAG_HIDDEN_ITEMS_START + 0x2F)
 #define FLAG_HIDDEN_ITEM_MUDSKIPPER_POINT_3                     (FLAG_HIDDEN_ITEMS_START + 0x56)
+#define FLAG_HIDDEN_ITEM_VARROCK_SEWER_1                        (FLAG_HIDDEN_ITEMS_START + 0x32)
 
-#define FLAG_HIDDEN_ITEM_ROUTE_109_REVIVE                       (FLAG_HIDDEN_ITEMS_START + 0x32)
 #define FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_1                (FLAG_HIDDEN_ITEMS_START + 0x34)
 #define FLAG_HIDDEN_ITEM_ROUTE_109_GREAT_BALL                   (FLAG_HIDDEN_ITEMS_START + 0x33)
 #define FLAG_HIDDEN_ITEM_ROUTE_109_ETHER                        (FLAG_HIDDEN_ITEMS_START + 0x40)
@@ -1275,15 +1275,15 @@
 #define FLAG_ITEM_EDGEVILLE_INDOOR_2                                0x4B0 // Unused Flag
 #define FLAG_ITEM_WGS_CAVERN_1                                      0x4B1 // Unused Flag
 #define FLAG_ITEM_WGS_CAVERN_2                                      0x4B2 // Unused Flag
-#define FLAG_UNUSED_0x4B3                                           0x4B3 // Unused Flag
-#define FLAG_UNUSED_0x4B4                                           0x4B4 // Unused Flag
-#define FLAG_UNUSED_0x4B5                                           0x4B5 // Unused Flag
-#define FLAG_UNUSED_0x4B6                                           0x4B6 // Unused Flag
-#define FLAG_UNUSED_0x4B7                                           0x4B7 // Unused Flag
-#define FLAG_UNUSED_0x4B8                                           0x4B8 // Unused Flag
-#define FLAG_UNUSED_0x4B9                                           0x4B9 // Unused Flag
-#define FLAG_UNUSED_0x4BA                                           0x4BA // Unused Flag
-#define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
+#define FLAG_ITEM_VARROCK_SEWERS_1                                  0x4B3 // Unused Flag
+#define FLAG_ITEM_VARROCK_SEWERS_2                                  0x4B4 // Unused Flag
+#define FLAG_ITEM_VARROCK_SEWERS_3                                  0x4B5 // Unused Flag
+#define FLAG_ITEM_VARROCK_SEWERS_4                                  0x4B6 // Unused Flag
+#define FLAG_ITEM_VARROCK_SEWERS_5                                  0x4B7 // Unused Flag
+#define FLAG_ITEM_VARROCK_SEWERS_6                                  0x4B8 // Unused Flag
+#define FLAG_ITEM_VARROCK_SEWERS_7                                  0x4B9 // Unused Flag
+#define FLAG_ITEM_VARROCK_SEWERS_8                                  0x4BA // Unused Flag
+#define FLAG_ITEM_VARROCK_SEWERS_9                                  0x4BB // Unused Flag
 #define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
 #define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
 #define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag

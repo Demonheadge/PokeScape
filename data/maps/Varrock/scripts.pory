@@ -91,7 +91,7 @@ script VARROCK_NPC_GUARD_0
 script VARROCK_NPC_RUNEARMOUR
 {
     faceplayer
-    //namebox ("Guard")
+    namebox ("Choob")
     msgbox(format("I am thinking about getting a new sword, but they do not seem to be selling any Rune items."))
     closemessage
     hidenamebox
@@ -102,7 +102,7 @@ script VARROCK_NPC_RUNEARMOUR
 script VARROCK_NPC_Trader1
 {
     
-    //namebox ("")
+    namebox ("Noob")
     msgbox(format("I heard you can trade your monsters with others at the Grand Exchange.\pIs that true?"))
     closemessage
     hidenamebox
@@ -113,7 +113,7 @@ script VARROCK_NPC_Trader1
 script VARROCK_NPC_Trader2
 {
     
-    //namebox ("")
+    namebox ("Noob")
     msgbox(format("You can trade monsters at Grand Exchange with others.\pThe only downside is that I've heard it is a hassle to set up a trade and you have to know people."))
     closemessage
     hidenamebox
@@ -124,7 +124,7 @@ script VARROCK_NPC_Trader2
 script VARROCK_NPC_Firemaker
 {
     faceplayer
-    //namebox ("")
+    namebox ("Firemaker")
     msgbox(format("A long line of fires is the best way to train the Firemaking skill."))
     closemessage
     hidenamebox
@@ -223,9 +223,11 @@ script VARROCK_NPC_Shilop
 
 script VARROCK_NPC_Baraek
 {
+    //SHOULD BE A QUEST do deliever newspapers or something.
+    lock
     faceplayer
     namebox ("Baraek")
-    msgbox(format("I am selling newspapers 50GP each.\pAre you interested in one?"))
+    msgbox(format("Have you seen the newsletters in general stores?\pI deliver and publish those!"))
     closemessage
     hidenamebox
     release
@@ -235,7 +237,7 @@ script VARROCK_NPC_Baraek
 script VARROCK_NPC_MAN_1
 {
     faceplayer
-    //namebox ("Baraek")
+    namebox ("Old man")
     msgbox(format("Some monsters can evolve if they are in different areas of the Gielinor.\pWe call them regional variants.\pAn example would be the Chickens we have here in Varrock differ greatly compared to those in Lumbridge and Karamja."))
     closemessage
     hidenamebox
@@ -247,7 +249,7 @@ script VARROCK_NPC_MAN_1
 script VARROCK_NPC_MAN_2
 {
     faceplayer
-    //namebox ("Baraek")
+    namebox ("Noob")
     msgbox(format("You know how adventurers use potions to help boost their stats while fighting?\pWell the same can be done with monsters!\pNext time you are at a store you should pick some up, they can come in handy."))
     closemessage
     hidenamebox
@@ -270,7 +272,7 @@ script VARROCK_NPC_Halen
 script VARROCK_NPC_Halen2
 {
     faceplayer
-    //namebox ("Haig Halen")
+    namebox ("Archaeologist")
     msgbox(format("Honestly I think this is a joke."))
     closemessage
     hidenamebox
@@ -281,7 +283,7 @@ script VARROCK_NPC_Halen2
 script VARROCK_NPC_BronzeGuy
 {
     faceplayer
-    //namebox ("")
+    namebox ("Noob")
     msgbox(format("There are Pigeons everywhere here.\pSurely they must be useful for something right?"))
     closemessage
     hidenamebox
@@ -331,8 +333,9 @@ script VARROCK_NPC_Ranger
 
 script VARROCK_NPC_THUG_1
 {
+    lock
     faceplayer
-    //namebox ("Ranger")
+    namebox ("Mugger")
     msgbox(format("You are in the wrong neighborhood.\pGet out before I make you stand and deliver."))
     closemessage
     hidenamebox
@@ -343,7 +346,7 @@ script VARROCK_NPC_THUG_1
 script VARROCK_NPC_THUG_2
 {
     faceplayer
-    //namebox ("Ranger")
+    namebox ("Man")
     msgbox(format("The criminal justice system is balanced on a knives edge, we thugs bring the knives and the guards gets us on the edge of the city."))
     closemessage
     hidenamebox
@@ -354,7 +357,7 @@ script VARROCK_NPC_THUG_2
 script VARROCK_NPC_THUG_3
 {
     faceplayer
-    //namebox ("Ranger")
+    namebox ("Scammer")
     msgbox(format("Once I get these lobsters all burnt and good, the Grand Exchange wont know what hit them."))
     closemessage
     hidenamebox
@@ -398,7 +401,7 @@ script VARROCK_NPC_GUARD_7
 script VARROCK_NPC_10
 {
     faceplayer
-    //namebox ("Guard")
+    namebox ("Choob")
     msgbox(format("They say the king is a surprisingly strong monster trainer.\pBut his wife prefers tending to her garden than indulging in his hobby."))
     closemessage
     hidenamebox
@@ -409,7 +412,7 @@ script VARROCK_NPC_10
 script VARROCK_NPC_11
 {
     faceplayer
-    //namebox ("Guard")
+    namebox ("Guthix Wizard")
     msgbox(format("Dont dig for treasure chests, you have been warned."))
     closemessage
     hidenamebox
@@ -473,26 +476,7 @@ script VARROCK_NPC_Romeo
     end
 }
 
-script VARROCK_URI
-{
-    lock
-    faceplayer
-    namebox ("Uri")
-    msgbox(format("Do you like solving puzzles?\pFinding unexpected goodies?\pWell say no more!\pThese items…{PAUSE 32} are…{PAUSE 32} for…{PAUSE 32} you!"))
-    closemessage
-    hidenamebox
-    giveitem(ITEM_ITEMFINDER)
-    namebox ("Uri")
-    msgbox(format("Hidden treasures lay everywhere!\pUntil we meet again!"))
-    closemessage
-    hidenamebox
-    fadescreen(FADE_TO_BLACK)
-    setflag(FLAG_URI_ITEMFINDER)
-    removeobject(VAR_LAST_TALKED)
-    fadescreen(FADE_FROM_BLACK)
-    release
-    end
-}
+
 
 script VARROCKSTORE_NPC_1
 {
@@ -517,6 +501,16 @@ script VARROCKSTORE_NPC_2
     end
 }
 
+script VARROCKSTORE_NPC_3
+{
+    faceplayer
+    namebox ("Assistant")
+    msgbox(format("Come on in!\pHere at the General Store we stock all you need!\pNeed pouches?\nNo sweat!\pWhat about cocktails to heal your monsters?\pWe got those too!\pEmpty buckets?\pWe have it all!\pAt the General Store!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
 
 script VARROCK_NPC_PALACE_GUARD_1
 {
@@ -598,7 +592,7 @@ script VARROCK_NPC_SWORDSHOP_1
 script VARROCK_NPC_SWORDSHOP_2
 {
     faceplayer
-    //namebox ("")
+    namebox ("Pker")
     msgbox(format("I came to buy a Dragon Scimitar to power up my Monsters Dragon-Type moves.\pBut they don't have any in stock."))
     closemessage
     hidenamebox
@@ -609,7 +603,7 @@ script VARROCK_NPC_SWORDSHOP_2
 script VARROCK_NPC_SWORDSHOP_3
 {
     faceplayer
-    //namebox ("")
+    namebox ("Rusher")
     msgbox(format("Did you know a Mithril Scimitar boosts the Attack stat for monsters that are not yet evolved."))
     closemessage
     hidenamebox
@@ -620,7 +614,7 @@ script VARROCK_NPC_SWORDSHOP_3
 script VARROCK_NPC_SWORDSHOP_4
 {
     faceplayer
-    //namebox ("")
+    namebox ("Monk")
     msgbox(format("Today is my day off."))
     closemessage
     hidenamebox
@@ -1265,18 +1259,22 @@ script ITEM_NORTH_VARROCK_1
 script VARROCK_NPC_FROGEELBURGER
 {
     faceplayer
-    //namebox ("")
+    namebox ("Mercher")
     msgbox(format("{COLOR BLUE}cyan:wave: Buying Frogeel Burgers 20k ea!"))
     closemessage
     hidenamebox
     checkitem(ITEM_FROGEEL_BURGER, 1)
     if (var(VAR_RESULT)) {
+        namebox ("Mercher")
         msgbox(format("Oh my!\pIs that a Frogeel burger I smell?!\pMay I buy it off you for 20k gp?"), MSGBOX_YESNO)
         if (var(VAR_RESULT))
         { 
+            closemessage
+            hidenamebox
             removeitem(ITEM_FROGEEL_BURGER, 1)
             addmoney(20000, 0)
             playse(SE_SHOP)
+            namebox ("Mercher")
             msgbox(format("Thank you, these are delicious!\pIf you have any more come back and I'll buy them from you."))
             closemessage
             hidenamebox
@@ -1289,7 +1287,7 @@ script VARROCK_NPC_FROGEELBURGER
 script VARROCK_NPC_WondertradeHint
 {
     faceplayer
-    //namebox ("")
+    namebox ("Ironman")
     msgbox(format("There is a desk at the Grand Exchange that allows you to trade your monsters with a stranger.\pIt's very useful for those who don't have any friends to trade with, like me."))
     closemessage
     hidenamebox

@@ -337,6 +337,143 @@ script BATTLE_MUSA_POINT_TRAINER_4
 }
 
 
+script NPC_MUSA_POINT_SHOP_1
+{
+	lock
+	faceplayer
+    namebox ("Hunter")
+	msgbox(format("That Tzhaar Gym was something else, I had to stock up on Drunk Dragon's just to make it through the waves."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NEWSLETTER_1 //MUSA POINT
+{
+	lock
+	faceplayer
+	msgbox(format("Newsletter Volume 1.\nPenguins, love, music!\pWould you like to read it?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT)) {
+	msgbox(format("While adventurering you may occasionally hear some unusual music playing far off in the distance.\pYou may think to yourself, what is this?\pWhy, it is none other than penguins!\pEver since Ping & Pong started up their music band, all penguins have joined in on the fun.\pKeep your eyes peeled, follow the source of the music and you will find penguins!\p - Canada Girll"))
+	}
+    closemessage
+	release
+	end
+}
+script NEWSLETTER_2 //RIMMINGTON
+{
+	lock
+	faceplayer
+	msgbox(format("Newsletter Volume 2.\nPenguins and how to spot them!\pWould you like to read it?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT)) {
+	msgbox(format("Penguins are sneaky, they disgusise themselves in plain sight and blend in with their surroundings.\pSome say they have seen them disgusised as barrels or bushes and some say they have even been spotted as toadstools!\pOne farmer in Lumbridge is adamant that they disgusised themselves as one of his sheep in the herd.\pBut could this be true?\p - Canada Girll"))
+	}
+    closemessage
+	release
+	end
+}
+script NEWSLETTER_3 //VARROCK
+{
+	lock
+	faceplayer
+	msgbox(format("Newsletter Volume 3.\nCupholders.\pWould you like to read it?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT)) {
+	msgbox(format("Cupholders. They hold your cups while you do other things.\p - Demonheadge"))
+	}
+    closemessage
+	release
+	end
+}
+script NEWSLETTER_4 //ALKHARID
+{
+	lock
+	faceplayer
+	msgbox(format("Newsletter Volume 4.\nMysterious Mounds.\pWould you like to read it?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT)) {
+	msgbox(format("Shh, the ground.\nIt moves ever so slightly.\pBe careful as Wyrms are buried deep within the sands!\pThey change type depending on their enviorment.\pSome say you can force these changes to happen with magic.\pI shall continue to track them.\nAnd you should too.\p - Strykewyrm Jim."))
+	}
+    closemessage
+	release
+	end
+}
+script NEWSLETTER_5 //FALADOR
+{
+	lock
+	faceplayer
+	msgbox(format("Newsletter Volume 5.\nGotta go fast!\pWould you like to read it?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT)) {
+	msgbox(format("Got sore feet?\n{PAUSE 15}Run energy drained?\pAgility level too low?\n{PAUSE 15}Well be exhausted no more!\pMy Terrorbird can fix that in a jiffy!\nCome see them in Rimmington.\p - Gnome boy Kevin"))
+	}
+    closemessage
+	release
+	end
+}
+script NEWSLETTER_6 //LUMBRIDGE
+{
+	lock
+	faceplayer
+	msgbox(format("Newsletter Volume 6.\nA Button.\pWould you like to read it?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT)) {
+	msgbox(format("Hello, need help?\pWhere do I go next?\pAre you stuck?\pDoes that door not open?\pJust try pressing the A button!\pWhat is the A button?\pTehehe, aren't you silly.\pYou know what the A button is.\pThe A button can even help you find hidden items.\pJust remember, when in doubt.\nJust press the A button.\p - Anubtot."))
+	}
+    closemessage
+	release
+	end
+}
+script NEWSLETTER_7 //EDGEVILLE
+{
+	lock
+	faceplayer
+	msgbox(format("Newsletter Volume 7.\nTo be a slayer master.\pWould you like to read it?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT)) {
+	msgbox(format("To become the best like no one ever was, you must do 4 simple things.\pStep 1, Get your task from a slayer master.\nStep 2, Complete your task.\pStep 3, ???.\nStep 4, Profit.\p - Wannabe Slayer Master, Erskine"))
+	}
+    closemessage
+	release
+	end
+}
+script NEWSLETTER_8 //PORT SARIM
+{
+	lock
+	faceplayer
+	msgbox(format("Newsletter Volume 8.\nSparkle, sparkle.\pWould you like to read it?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT)) {
+	msgbox(format("HIDDEN ITEMS!\pYou want them, don't you?\pThey are hidden everywhere.\pBut how do you find them?\pSolve this and information shall be yours:\pIn the town, 'A KROC RV'\nI am found.\pCrests of royality are where, I dwell.\nSit with me and drink tea, times 3.\pAll will be revealed.\n - ???"))
+	}
+    closemessage
+	release
+	end
+}
+
+
+script NEWSLETTER_9
+{
+	lock
+	faceplayer
+	msgbox(format("Newsletter Volume 9.\n???.\pWould you like to read it?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT)) {
+	msgbox(format("?\p - ???"))
+	}
+    closemessage
+	release
+	end
+}
+script NEWSLETTER_13
+{
+	lock
+	faceplayer
+	msgbox(format("Newsletter Volume 13.\pThe end is neigh.\pWould you like to read it?"), MSGBOX_YESNO)
+	if (var(VAR_RESULT)) {
+	msgbox(format("Sadly the time as come to end..\pThis will be the last newsletter in this series that I will be publishing.\pI thank you for reading.\p - Baraek"))
+	}
+    closemessage
+	release
+	end
+}
+
+
+
 
 
 
@@ -801,3 +938,5 @@ script SIGN_BANANA_COUNT {
 	closemessage
 	end
 }
+
+

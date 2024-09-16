@@ -39,24 +39,14 @@ script KaramjaVolcano_B3F_STATE {
         setflag(FLAG_TEMP_C)
         setflag(FLAG_TEMP_1D)
         //-- ----- --
+        setflag(FLAG_TEMP_1B) //Post event trainers
     }
     else {
 //During HAM story.
     setflag(FLAG_TEMP_1F)   //HAM GRUNTS
     setflag(FLAG_TEMP_1E)   //HAM ADMINS
-    //-- ROCKS --
-    setflag(FLAG_TEMP_1)
-    setflag(FLAG_TEMP_2)
-    setflag(FLAG_TEMP_3)
-    setflag(FLAG_TEMP_4)
-    setflag(FLAG_TEMP_5)
-    setflag(FLAG_TEMP_6)
-    setflag(FLAG_TEMP_7)
-    //-- ----- --
-    setflag(FLAG_TEMP_C)    //SOUTH BLOCKING ROCKS
-    setflag(FLAG_TEMP_D)    //SOUTH BLOCKING ROCKS
     setflag(FLAG_TEMP_1D)   //TZHAAR
-    setflag(FLAG_TEMP_1C) 
+    setflag(FLAG_TEMP_1C)   //Ham grunt
     //NOTES
     //Walk on Trigger, walk over to event. There are no breakable rocks during ham event.
     //There are less metatile rocks around the cave during ham event.
@@ -1538,6 +1528,29 @@ script BATTLE_KaramjaVolcano_HAM_6
     setflag(FLAG_TEMP_1C)
     removeobject(36)
     fadescreen(FADE_FROM_BLACK)
+    release
+    end
+}
+
+
+
+script BATTLE_CrandorVolcano_FireGiant_1
+{
+    trainerbattle_single(TRAINER_CrandorVolcano_FireGiant_1, format("BURN WITH ME!"),format("LITTLE MAN, BURNT ME."))
+    namebox ("Fire Giant")
+    msgbox(format("ME LIKE IT HERE.\pHERE IS FEEL GOOD."))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+script BATTLE_CrandorVolcano_FireGiant_2
+{
+    trainerbattle_single(TRAINER_CrandorVolcano_FireGiant_2, format("RAAARUGHH!"),format("ARRUGH…"))
+    namebox ("Fire Giant")
+    msgbox(format("LITTLE MAN, THINK IS BIG MAN."))
+    hidenamebox
+    closemessage
     release
     end
 }

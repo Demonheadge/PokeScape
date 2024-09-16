@@ -106,6 +106,37 @@ script GeneralStore_ALKHARID {
     msgbox("Thank you, come again!")
     release
 }
+//MUSA POINT
+script GeneralStore_MUSAPOINT {
+    lock
+    faceplayer
+    namebox("Clerk")
+    msgbox(format("Welcome to the Musa Point General Store.\pHow may I help you?"))
+    waitmessage
+    call(GeneralStoreShopScript)
+    msgbox("Thank you, come again!")
+    release
+}
+script GeneralStore_MUSAPOINT_Assistant {
+    lock
+    faceplayer
+    namebox("Assistant")
+    msgbox(format("Hello and welcome to the Musa Point General Store.\pHow may I help you?"))
+    waitmessage
+    call(STORE_cocktails)
+    msgbox("Thank you, come again!")
+    release
+}
+script GeneralStore_TZHAAR {
+    lock
+    faceplayer
+    namebox("Tzhaar")
+    msgbox(format("JalYt, this is Tzhaar shop.\pWe sell things to assist your Kimit-zil."))
+    waitmessage
+    call(GeneralStoreShopScript)
+    msgbox("Come again.")
+    release
+}
 
 
 ///STORE SCRIPTS
@@ -478,6 +509,20 @@ STORE_GeneralStore_4:
     .2byte ITEM_REPEL_TEA_3
     .2byte ITEM_CABBAGE
 	.2byte ITEM_EMPTY_BUCKET
+    .2byte ITEM_NONE
+    release
+    end
+`
+
+raw `
+    .align 2
+STORE_cocktails:
+	.2byte ITEM_WIZARDS_BLIZZARD
+    .2byte ITEM_CHOCOLATE_SUNDAY
+    .2byte ITEM_DRUNK_DRAGON
+    .2byte ITEM_FRUIT_BLAST
+    .2byte ITEM_PINEAPPLE_PUNCH
+    .2byte ITEM_BLUEBERRY_SPECIAL
     .2byte ITEM_NONE
     release
     end

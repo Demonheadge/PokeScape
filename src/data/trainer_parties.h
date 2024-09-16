@@ -7206,3 +7206,25 @@ static const struct TrainerMon sParty_AJamJam[] = {
     .species = SPECIES_GEYSIR_TITAN,
     }
 };
+
+
+static const struct TrainerMon sParty_CrandorVolcano_FireGiant_1[] = {
+    {
+    .lvl = 40,
+    .species = SPECIES_OBSIDIAN_GOLEM,
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_EEL_LAVA_FORM,
+    }
+};
+static const struct TrainerMon sParty_CrandorVolcano_FireGiant_2[] = {
+    {
+    .lvl = 40,
+    .species = SPECIES_LAVA_TITAN,
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_TZ_KEK,
+    }
+};

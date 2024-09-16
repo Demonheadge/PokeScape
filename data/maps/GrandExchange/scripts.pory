@@ -123,7 +123,7 @@ script NPC_GE_NPC2
 {
     faceplayer
     namebox ("Merchant")
-    msgbox(format("All the construction works are on a tea break.\pI wish they'd hurry up and finish work on the GE.\pI want to do some more merching."))
+    msgbox(format("All the construction workers are on a tea break.\pI wish they'd hurry up and finish work on the GE.\pI want to do some more merching."))
     closemessage
     hidenamebox
     release

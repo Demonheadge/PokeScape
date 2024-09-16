@@ -17,15 +17,6 @@ KaramjaVolcano_B3F_STATE::
 	goto_if_eq KaramjaVolcano_B3F_STATE_1
 	setflag FLAG_TEMP_1F
 	setflag FLAG_TEMP_1E
-	setflag FLAG_TEMP_1
-	setflag FLAG_TEMP_2
-	setflag FLAG_TEMP_3
-	setflag FLAG_TEMP_4
-	setflag FLAG_TEMP_5
-	setflag FLAG_TEMP_6
-	setflag FLAG_TEMP_7
-	setflag FLAG_TEMP_C
-	setflag FLAG_TEMP_D
 	setflag FLAG_TEMP_1D
 	setflag FLAG_TEMP_1C
 	return
@@ -48,6 +39,7 @@ KaramjaVolcano_B3F_STATE_1:
 	setflag FLAG_TEMP_D
 	setflag FLAG_TEMP_C
 	setflag FLAG_TEMP_1D
+	setflag FLAG_TEMP_1B
 	return
 
 
@@ -1515,6 +1507,26 @@ BATTLE_KaramjaVolcano_HAM_6::
 	end
 
 
+BATTLE_CrandorVolcano_FireGiant_1::
+	trainerbattle_single TRAINER_CrandorVolcano_FireGiant_1, BATTLE_CrandorVolcano_FireGiant_1_Text_0, BATTLE_CrandorVolcano_FireGiant_1_Text_1
+	namebox BATTLE_CrandorVolcano_FireGiant_1_Text_2
+	msgbox BATTLE_CrandorVolcano_FireGiant_1_Text_3
+	hidenamebox
+	closemessage
+	release
+	end
+
+
+BATTLE_CrandorVolcano_FireGiant_2::
+	trainerbattle_single TRAINER_CrandorVolcano_FireGiant_2, BATTLE_CrandorVolcano_FireGiant_2_Text_0, BATTLE_CrandorVolcano_FireGiant_2_Text_1
+	namebox BATTLE_CrandorVolcano_FireGiant_1_Text_2
+	msgbox BATTLE_CrandorVolcano_FireGiant_2_Text_2
+	hidenamebox
+	closemessage
+	release
+	end
+
+
 NPC_KaramjaVolcano_HAM_EVENT1_Text_0:
 	.string "H.A.M Grunt$"
 
@@ -1800,3 +1812,25 @@ BATTLE_KaramjaVolcano_HAM_6_Text_2:
 	.string "Nope!\n"
 	.string "I don't like this plan anymore!\p"
 	.string "I'm out of here!$"
+
+BATTLE_CrandorVolcano_FireGiant_1_Text_0:
+	.string "BURN WITH ME!$"
+
+BATTLE_CrandorVolcano_FireGiant_1_Text_1:
+	.string "LITTLE MAN, BURNT ME.$"
+
+BATTLE_CrandorVolcano_FireGiant_1_Text_2:
+	.string "Fire Giant$"
+
+BATTLE_CrandorVolcano_FireGiant_1_Text_3:
+	.string "ME LIKE IT HERE.\p"
+	.string "HERE IS FEEL GOOD.$"
+
+BATTLE_CrandorVolcano_FireGiant_2_Text_0:
+	.string "RAAARUGHH!$"
+
+BATTLE_CrandorVolcano_FireGiant_2_Text_1:
+	.string "ARRUGH…$"
+
+BATTLE_CrandorVolcano_FireGiant_2_Text_2:
+	.string "LITTLE MAN, THINK IS BIG MAN.$"

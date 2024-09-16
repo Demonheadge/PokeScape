@@ -437,6 +437,9 @@
 #define TRAINER_CRANDOR_HAM_ADMIN_PATTY                 433
 #define TRAINER_SAILING_PIRATE_1                        434
 #define TRAINER_AJAMJAM                                 435
+#define TRAINER_CrandorVolcano_FireGiant_1              436
+#define TRAINER_CrandorVolcano_FireGiant_2              437
+
 
 
 
@@ -446,7 +449,7 @@
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      (TRAINER_AJAMJAM + 1)
+#define TRAINERS_COUNT                      (TRAINER_CrandorVolcano_FireGiant_2 + 1)
 #define MAX_TRAINERS_COUNT                  864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H
