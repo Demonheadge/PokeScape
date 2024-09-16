@@ -4533,4 +4533,14 @@ extern const u32 gItemIconPalette_RockTM[];
 extern const u32 gItemIconPalette_SteelTM[];
 extern const u32 gItemIconPalette_WaterTM[];
 
+// pokescape moves
+extern const u32 gBattleAnimSpritePal_SwordStrike[];
+extern const u32 gBattleAnimSpritePal_SaradominStrike[];
+extern const u32 gBattleAnimSpritePal_PolyporeStrike[];
+extern const u32 gBattleAnimSpritePal_BloodBubble[];
+extern const u32 gBattleAnimSpritePal_BloodBarrageParticles[];
+extern const u32 gBattleAnimSpritePal_Vengeance[];
+extern const u32 gBattleAnimSpritePal_Telegrab[];
+
+
 #endif //GUARD_GRAPHICS_H

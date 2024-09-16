@@ -442,6 +442,19 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectGlaiveRush              @ EFFECT_GLAIVE_RUSH
 	.4byte BattleScript_EffectBrickBreak              @ EFFECT_RAGING_BULL
 	.4byte BattleScript_EffectHit                     @ EFFECT_RAGE_FIST
+	.4byte BattleScript_EffectInverseBattle           @ EFFECT_INVERSE_BATTLE
+	.4byte BattleScript_EffectSliceDice				  @ EFFECT_SLICE_DICE
+	.4byte BattleScript_EffectSaradominStrike         @ EFFECT_SARADOMIN_STRIKE
+	.4byte BattleScript_EffectVengeance				  @ EFFECT_VENGEANCE
+	.4byte BattleScript_EffectSandstormHit			  @ EFFECT_SANDSTORM_HIT
+	.4byte BattleScript_EffectFreeStuff				  @ EFFECT_FREE_STUFF
+	.4byte BattleScript_EffectHealBlockHit			  @ EFFECT_HEAL_BLOCK_HIT
+	.4byte BattleScript_EffectAuroraVeilHit			  @ EFFECT_AURORA_VEIL_HIT
+	.4byte BattleScript_EffectHit                     @ EFFECT_DOUBLE_DAMAGE_IF_BURN
+	.4byte BattleScript_KarilCrossbow
+	.4byte BattleScript_AhrimStaff
+	.4byte BattleScript_ToragHammer
+	
 
 BattleScript_EffectGlaiveRush::
 	call BattleScript_EffectHit_Ret
@@ -10736,6 +10749,196 @@ BattleScript_EffectSnow::
 	call BattleScript_CheckPrimalWeather
 	setsnow
 	goto BattleScript_MoveWeatherChange
+
+
+
+
+
+@@@@@pokescape
+BattleScript_EffectInverseBattle:
+	attackcanceler
+	attackstring
+	ppreduce
+	setroom
+	attackanimation
+	waitanimation
+	printfromtable gRoomsStringIds
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectSliceDice::
+	attackcanceler
+	attackstring
+	ppreduce
+	sethword sTRIPLE_KICK_POWER, 0x0
+	initmultihitstring
+	setmultihit 0x4
+
+BattleScript_SliceDiceLoop::
+	jumpifhasnohp BS_ATTACKER, BattleScript_SliceDiceEnd
+	jumpifhasnohp BS_TARGET, BattleScript_SliceDiceNoMoreHits
+	jumpifhalfword CMP_EQUAL, gChosenMove, MOVE_SLEEP_TALK, BattleScript_DoSliceDiceAttack
+	jumpifstatus BS_ATTACKER, STATUS1_SLEEP, BattleScript_SliceDiceNoMoreHits
+
+BattleScript_DoSliceDiceAttack::
+	accuracycheck BattleScript_SliceDiceNoMoreHits, ACC_CURR_MOVE
+	movevaluescleanup
+	addbyte sTRIPLE_KICK_POWER, 8
+	addbyte sMULTIHIT_STRING + 4, 0x1
+	critcalc
+	damagecalc
+	adjustdamage
+	jumpifmovehadnoeffect BattleScript_SliceDiceNoMoreHits
+	attackanimation
+	waitanimation
+	effectivenesssound
+	hitanimation BS_TARGET
+	waitstate
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	critmessage
+	waitmessage 0x40
+	printstring STRINGID_EMPTYSTRING3
+	waitmessage 0x1
+	moveendto MOVEEND_NEXT_TARGET
+	jumpifbyte CMP_COMMON_BITS, gMoveResultFlags, MOVE_RESULT_FOE_ENDURED, BattleScript_SliceDicePrintStrings
+	decrementmultihit BattleScript_SliceDiceLoop
+	goto BattleScript_SliceDicePrintStrings
+
+BattleScript_SliceDiceNoMoreHits::
+	pause 0x20
+	jumpifbyte CMP_EQUAL, sMULTIHIT_STRING + 4, 0x0, BattleScript_SliceDicePrintStrings
+	bichalfword gMoveResultFlags, MOVE_RESULT_MISSED
+
+BattleScript_SliceDicePrintStrings::
+	resultmessage
+	waitmessage 0x40
+	jumpifbyte CMP_EQUAL, sMULTIHIT_STRING + 4, 0x0, BattleScript_SliceDiceEnd
+	jumpifbyte CMP_COMMON_BITS, gMoveResultFlags, MOVE_RESULT_DOESNT_AFFECT_FOE, BattleScript_SliceDiceEnd
+	copyarray gBattleTextBuff1, sMULTIHIT_STRING, 0x6
+	printstring STRINGID_HITXTIMES
+	waitmessage 0x40
+
+BattleScript_SliceDiceEnd::
+	seteffectwithchance
+	tryfaintmon BS_TARGET
+	moveendfrom MOVEEND_UPDATE_LAST_MOVES
+	end
+
+BattleScript_EffectSaradominStrike::
+	attackcanceler
+	attackstring
+	ppreduce
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	critcalc
+	damagecalc
+	adjustdamage
+	attackanimation
+	waitanimation
+	effectivenesssound
+	hitanimation BS_TARGET
+	waitstate
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	critmessage
+	waitmessage 0x40
+	resultmessage
+	waitmessage 0x40
+	tryfaintmon BS_TARGET
+	tryspiteppreduce BattleScript_MoveEnd
+	printstring STRINGID_PKMNREDUCEDPP
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectVengeance::
+	attackcanceler
+	attackstring
+	ppreduce
+	attackanimation
+	waitanimation
+	setvengeance BS_ATTACKER
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectSandstormHit::
+	attackcanceler
+	attackstring
+	ppreduce
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	critcalc
+	damagecalc
+	adjustdamage
+	attackanimation
+	waitanimation
+	effectivenesssound
+	hitanimation BS_TARGET
+	waitstate
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	critmessage
+	waitmessage 0x40
+	resultmessage
+	waitmessage 0x40
+	call BattleScript_CheckPrimalWeather
+	setsandstorm
+	printfromtable gMoveWeatherChangeStringIds
+	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_ActivateWeatherAbilities
+	tryfaintmon BS_TARGET
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectFreeStuff::
+	freestuff BS_ATTACKER
+	goto BattleScript_EffectHit
+
+BattleScript_EffectHealBlockHit:
+	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	attackstring
+	ppreduce
+	critcalc
+	damagecalc
+	adjustdamage
+	attackanimation
+	waitanimation
+	effectivenesssound
+	hitanimation BS_TARGET
+	waitstate
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	critmessage
+	waitmessage 0x40
+	resultmessage
+	waitmessage 0x40
+	jumpifability BS_TARGET_SIDE, ABILITY_AROMA_VEIL, BattleScript_AromaVeilProtects
+	sethealblock BattleScript_ButItFailed
+	printstring STRINGID_PKMNPREVENTEDFROMHEALING
+	waitmessage 0x40
+	tryfaintmon BS_TARGET
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectAuroraVeilHit:
+	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	attackstring
+	ppreduce
+	critcalc
+	damagecalc
+	adjustdamage
+	attackanimation
+	waitanimation
+	effectivenesssound
+	hitanimation BS_TARGET
+	waitstate
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	critmessage
+	waitmessage 0x40
+	resultmessage
+	waitmessage 0x40
+	tryfaintmon BS_TARGET
+	setauroraveil BS_ATTACKER
+	printfromtable gReflectLightScreenSafeguardStringIds
+	waitmessage 0x40
+	goto BattleScript_MoveEnd
 
 BattleScript_ChaoticRiftEnds::
 	printstring STRINGID_CHAOTICRIFTENDS

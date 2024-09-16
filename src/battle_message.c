@@ -836,7 +836,7 @@ static const u8 sText_TheSwampDisappeared[] = _("The swamp around {B_ATK_TEAM2}\
 
 //Pokescape Start
 static const u8 sText_CantRunFromRat[] = _("DON'T EVEN THINK ABOUT RUNNING\nFROM A RAT!!");
-static const u8 sText_ThingsGetWeird[] = _("Things just got weird..");
+static const u8 sText_ThingsGetWeird[] = _("Things just got weird…");
 static const u8 sText_ChaoticRiftEnds[] = _("The weird presence fades.");
 static const u8 sText_KarilCrossbow[] =_("{B_ATK_NAME_WITH_PREFIX}'s {B_LAST_ITEM} LOWERED\n{B_DEF_NAME_WITH_PREFIX}'s SPEED!");
 static const u8 sText_AhrimStaff[] =_("{B_ATK_NAME_WITH_PREFIX}'s {B_LAST_ITEM} LOWERED\n{B_DEF_NAME_WITH_PREFIX}'s ATTACK!");
@@ -844,6 +844,7 @@ static const u8 sText_ToragHammer[] =_("{B_ATK_NAME_WITH_PREFIX}'s {B_LAST_ITEM}
 static const u8 sText_Petrify[] =_("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\nlowers {B_DEF_NAME_WITH_PREFIX}'s SPEED!");
 static const u8 sText_TooScared[] =_("{B_ATK_NAME_WITH_PREFIX}'s {B_LAST_ABILITY} makes\n{B_DEF_NAME_WITH_PREFIX} only able to attack!");
 static const u8 sText_FireShieldEnds[] = _("{B_DEF_NAME_WITH_PREFIX}'s fire shield\ndissipates!");
+
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
@@ -2021,6 +2022,7 @@ const u16 gRoomsStringIds[] =
     STRINGID_PKMNTWISTEDDIMENSIONS, STRINGID_TRICKROOMENDS,
     STRINGID_SWAPSDEFANDSPDEFOFALLPOKEMON, STRINGID_WONDERROOMENDS,
     STRINGID_HELDITEMSLOSEEFFECTS, STRINGID_MAGICROOMENDS,
+    STRINGID_THINGSGETWEIRD, STRINGID_CHAOTICRIFTENDS,
     STRINGID_EMPTYSTRING3
 };
 

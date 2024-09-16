@@ -940,3 +940,16 @@ script SIGN_BANANA_COUNT {
 }
 
 
+
+script TOGGLE_INVERSE_BATTLE {
+	setflag(FLAG_INVERSE_BATTLE)
+    msgbox(format("Inverse battle - ENABLED"))
+	closemessage
+	end
+}
+
+script BATTLE_scorp {
+	setwildbattle (SPECIES_PET_ROCK, 50, ITEM_NONE)
+	dowildbattle
+	end
+}

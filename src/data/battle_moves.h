@@ -14713,7 +14713,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_CHAOTIC_RIFT] =
     {
-        .effect = EFFECT_INVERSE_BATTLE,
+        .effect = EFFECT_INVERSE_BATTLE, //EFFECT_INVERSE_BATTLE
         .power = 0,
         .type = TYPE_PSYCHIC,
         .accuracy = 0,
@@ -14737,6 +14737,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .split = SPLIT_SPECIAL,
         .argument = TYPE_ELECTRIC,
+        .ignoresKingsRock = TRUE,
+        .damagesAirborneDoubleDamage = TRUE,
         .zMoveEffect = 0
     },
 
@@ -14751,6 +14753,10 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
+        .makesContact = TRUE,
+        .ignoresKingsRock = TRUE,
+        .highCritRatio = TRUE,
+        .slicingMove = TRUE,
         .zMoveEffect = 0
     },
 
@@ -14765,6 +14771,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 1,
         .split = SPLIT_PHYSICAL,
+        .makesContact = TRUE,
+        .highCritRatio = TRUE,
+        .slicingMove = TRUE,
         .zMoveEffect = 0
     },
 
@@ -14779,6 +14788,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_SPECIAL,
+        .sheerForceBoost = TRUE,
         .zMoveEffect = 0
     },
 
@@ -14793,6 +14803,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_SPECIAL,
+        .sheerForceBoost = TRUE,
         .zMoveEffect = 0
     },
 
@@ -14807,6 +14818,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_SPECIAL,
+        .sheerForceBoost = TRUE,
         .zMoveEffect = 0
     },
 
@@ -14821,6 +14833,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .split = SPLIT_SPECIAL,
+        .sheerForceBoost = TRUE,
         .zMoveEffect = 0
     },
 
@@ -14835,6 +14848,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_SPECIAL,
+        .sheerForceBoost = TRUE,
         .argument = 75,
         .zMoveEffect = 0
     },
@@ -14864,20 +14878,26 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_SPECIAL,
+        .sheerForceBoost = TRUE,
+        .damagesAirborneDoubleDamage = TRUE,
+        .windMove = TRUE,
         .zMoveEffect = 0
     },
 
     [MOVE_TUMEKEN_STORM] =
     {
-        .effect = EFFECT_SANDSTORM,
+        .effect = EFFECT_SANDSTORM_HIT,
         .power = 90,
         .type = TYPE_ROCK,
         .accuracy = 100,
         .pp = 15,
-        .secondaryEffectChance = 0,
+        .secondaryEffectChance = 100,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
+        .sheerForceBoost = TRUE,
+        .damagesAirborneDoubleDamage = TRUE,
+        .windMove = TRUE,
         .zMoveEffect = 0
     },
 
@@ -14892,6 +14912,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .split = SPLIT_SPECIAL,
+        .sheerForceBoost = TRUE,
         .zMoveEffect = 0
     },
 
@@ -14906,6 +14927,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .split = SPLIT_SPECIAL,
+        .sheerForceBoost = TRUE,
         .zMoveEffect = 0
     },
 
@@ -14934,6 +14956,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
+        .danceMove = TRUE,
         .zMoveEffect = 0
     },
 
@@ -14948,6 +14971,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
+        .sheerForceBoost = TRUE,
+        .makesContact = TRUE,
         .zMoveEffect = 0
     },
 
@@ -14976,6 +15001,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_SPECIAL,
+        .snatchAffected = TRUE,
         .zMoveEffect = 0
     },
 
@@ -14990,7 +15016,23 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_PHYSICAL,
+        .makesContact = TRUE,
         .zMoveEffect = 0
+    },
+
+    [MOVE_TZ_TOK_ZEK] =
+    {
+        .power = 65,
+        .effect = EFFECT_DOUBLE_DAMAGE_IF_BURN,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .makesContact = TRUE,
+        .zMoveEffect = Z_EFFECT_NONE,
     },
 
     // Z-Moves

@@ -420,16 +420,22 @@
 #define EFFECT_RAGING_BULL                  414
 #define EFFECT_RAGE_FIST                    415
 
-#define LAST_VANILLA_MOVE                   EFFECT_RAGE_FIST
 
-#define EFFECT_INVERSE_BATTLE               (LAST_VANILLA_MOVE + 1)
-#define EFFECT_SLICE_DICE                   (LAST_VANILLA_MOVE + 2)
-#define EFFECT_SARADOMIN_STRIKE             (LAST_VANILLA_MOVE + 3)
-#define EFFECT_VENGEANCE                    (LAST_VANILLA_MOVE + 4)
-#define EFFECT_FREE_STUFF                   (LAST_VANILLA_MOVE + 5)
-#define EFFECT_HEAL_BLOCK_HIT               (LAST_VANILLA_MOVE + 6)
-#define EFFECT_AURORA_VEIL_HIT              (LAST_VANILLA_MOVE + 7)
+//These must be in the same order as battle_scripts_1.s
+#define EFFECT_INVERSE_BATTLE               416
+#define EFFECT_SLICE_DICE                   417
+#define EFFECT_SARADOMIN_STRIKE             418
+#define EFFECT_VENGEANCE                    419
+#define EFFECT_SANDSTORM_HIT                420
+#define EFFECT_FREE_STUFF                   421
+#define EFFECT_HEAL_BLOCK_HIT               422
+#define EFFECT_AURORA_VEIL_HIT              423
+#define EFFECT_DOUBLE_DAMAGE_IF_BURN        424
 
-#define NUM_BATTLE_MOVE_EFFECTS             423
+
+
+#define LAST_VANILLA_MOVE                   EFFECT_SANDSTORM_HIT //EFFECT_RAGE_FIST
+
+#define NUM_BATTLE_MOVE_EFFECTS             424
 
 #endif  // GUARD_CONSTANTS_BATTLE_MOVE_EFFECTS_H

@@ -1043,6 +1043,19 @@ SIGN_BANANA_COUNT::
 	end
 
 
+TOGGLE_INVERSE_BATTLE::
+	setflag FLAG_INVERSE_BATTLE
+	msgbox TOGGLE_INVERSE_BATTLE_Text_0
+	closemessage
+	end
+
+
+BATTLE_scorp::
+	setwildbattle SPECIES_PET_ROCK, 50, ITEM_NONE
+	dowildbattle
+	end
+
+
 NPC_MUSAPOINT_SAILOR_Text_0:
 	.string "Officer$"
 
@@ -1607,3 +1620,6 @@ LUTHAS_QUEST_PART_5_Text_3:
 SIGN_BANANA_COUNT_Text_0:
 	.string "{PLAYER}'s Banana Count:\n"
 	.string "{STR_VAR_1}.$"
+
+TOGGLE_INVERSE_BATTLE_Text_0:
+	.string "Inverse battle - ENABLED$"

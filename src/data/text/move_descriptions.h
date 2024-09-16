@@ -3417,6 +3417,10 @@ static const u8 sGodlessRebelDescription[] = _(
     "Draw from the power of the godless.\n"
     "Doubles power with status.");
 
+static const u8 sTzTokRekDescription[] = _(
+    "Does double damage if the\n"
+    "foe is burned.");
+
 #undef BINDING_TURNS
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
@@ -4293,4 +4297,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_ZAROS_BECKON - 1] = sZarosBeckonDescription,
     [MOVE_SEREN_SHINE - 1] = sSerenShineDescription,
     [MOVE_GODLESS_REBEL - 1] = sGodlessRebelDescription,
+    [MOVE_TZ_TOK_ZEK - 1] = sTzTokRekDescription,
 };
