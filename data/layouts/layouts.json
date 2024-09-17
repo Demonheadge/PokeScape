@@ -8660,6 +8660,26 @@
       "secondary_tileset": "gTileset_Karamja",
       "border_filepath": "data/layouts/Mudskipper_Sound_3/border.bin",
       "blockdata_filepath": "data/layouts/Mudskipper_Sound_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_TZHAAR_GYM_CHALLENGE",
+      "name": "Tzhaar_Gym_Challenge_Layout",
+      "width": 50,
+      "height": 50,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_PokeScape_Caves",
+      "border_filepath": "data/layouts/Tzhaar_Gym_Challenge/border.bin",
+      "blockdata_filepath": "data/layouts/Tzhaar_Gym_Challenge/map.bin"
+    },
+    {
+      "id": "LAYOUT_TZHAAR_HAR_AKEN",
+      "name": "Tzhaar_HarAken_Layout",
+      "width": 11,
+      "height": 11,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_PokeScape_Caves",
+      "border_filepath": "data/layouts/Tzhaar_HarAken/border.bin",
+      "blockdata_filepath": "data/layouts/Tzhaar_HarAken/map.bin"
     }
   ]
 }

@@ -494,6 +494,20 @@
 #define METATILE_PokeScapeOutdoors_Door_Pub_R           0x1D2
 #define METATILE_PokeScapeOutdoors_GENERAL_SAND         0x0F9
 
+// gTileset_PokeScape_Caves
+#define METATILE_PokeScape_Caves_HARAKEN_POOL_L      0x2F0
+#define METATILE_PokeScape_Caves_HARAKEN_POOL_M      0x2F1
+#define METATILE_PokeScape_Caves_HARAKEN_POOL_R      0x2F2
+#define METATILE_PokeScape_Caves_LAVA_BUBBLES        0x278
+#define METATILE_PokeScape_Caves_LAVA_POOL           0x2E1
+#define METATILE_PokeScape_Caves_LAVA_POOL_DOWN      0x2D9
+#define METATILE_PokeScape_Caves_LAVA_POOL_L         0x2E2
+#define METATILE_PokeScape_Caves_LAVA_POOL_R         0x2E0
+#define METATILE_PokeScape_Caves_TENTACLE_POOL_DOWN  0x300
+#define METATILE_PokeScape_Caves_TENTACLE_POOL_L     0x2F9
+#define METATILE_PokeScape_Caves_TENTACLE_POOL_R     0x2F8
+#define METATILE_PokeScape_Caves_TENTACLE_POOL_UP    0x2FA
+
 // gTileset_PokeScape_Sewers
 #define METATILE_PokeScape_Sewers_GATE_CLOSED_DOWN  0x36A
 #define METATILE_PokeScape_Sewers_GATE_CLOSED_UP    0x362

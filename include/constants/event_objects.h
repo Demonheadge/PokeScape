@@ -577,8 +577,12 @@
 #define OBJ_EVENT_GFX_LESSER_DEMON              560
 #define OBJ_EVENT_GFX_DELRITH                   561
 #define OBJ_EVENT_GFX_PIRATE_SHIP               562
+#define OBJ_EVENT_GFX_TZHAAR_CHAMPION           563
+#define OBJ_EVENT_GFX_TZ_KIH                    564
+#define OBJ_EVENT_GFX_HAR_AKEN                  565
+#define OBJ_EVENT_GFX_HAR_AKEN_TENTACLE         566
 
-#define NUM_OBJ_EVENT_GFX                       (OBJ_EVENT_GFX_PIRATE_SHIP + 1)
+#define NUM_OBJ_EVENT_GFX                       (OBJ_EVENT_GFX_HAR_AKEN_TENTACLE + 1)
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //
 // Object event graphics ids are 1 byte in size (max value of 255), and the dynamic

@@ -442,7 +442,6 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Strykewyrm_
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Strykewyrm_Leafy;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Unicorn_White;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Unicorn_Black;
-
 //GYMLEADERS
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GymLeader_Duke_Horacio;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GymLeader_Sir_Amik_Varze;
@@ -569,6 +568,10 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_swampletics
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_lesser_demon;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_delrith;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_pirate_ship;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_tzhaar_champion;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_tz_kih;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_har_aken;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_har_aken_tentacle;
 
 //ORES
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CopperOre;
@@ -1148,6 +1151,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LESSER_DEMON] =                  &gObjectEventGraphicsInfo_lesser_demon,
     [OBJ_EVENT_GFX_DELRITH] =                       &gObjectEventGraphicsInfo_delrith,
     [OBJ_EVENT_GFX_PIRATE_SHIP] =                   &gObjectEventGraphicsInfo_pirate_ship,
+    [OBJ_EVENT_GFX_TZHAAR_CHAMPION] =               &gObjectEventGraphicsInfo_tzhaar_champion,
+    [OBJ_EVENT_GFX_TZ_KIH] =                        &gObjectEventGraphicsInfo_tz_kih,
+    [OBJ_EVENT_GFX_HAR_AKEN] =                      &gObjectEventGraphicsInfo_har_aken,
+    [OBJ_EVENT_GFX_HAR_AKEN_TENTACLE] =             &gObjectEventGraphicsInfo_har_aken_tentacle,
 
 //ORES 
 	[OBJ_EVENT_GFX_COPPER_ORE] =          		    &gObjectEventGraphicsInfo_CopperOre,

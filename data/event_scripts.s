@@ -1504,3 +1504,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Mudskipper_Sound_2/scripts.inc"
 
 	.include "data/maps/Mudskipper_Sound_3/scripts.inc"
+
+	.include "data/maps/Tzhaar_Gym_Challenge/scripts.inc"
+
+	.include "data/maps/Tzhaar_HarAken/scripts.inc"

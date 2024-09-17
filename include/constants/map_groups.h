@@ -950,13 +950,15 @@
 #define MAP_ROUTE63       (30 | (48 << 8))
 
 // gMapGroup_PokescapeIndoorTzhaar
-#define MAP_TZHAAR_1F          (0 | (49 << 8))
-#define MAP_TZHAAR_FIGHT_CAVES (1 | (49 << 8))
-#define MAP_TZHAAR_CAVES_1     (2 | (49 << 8))
-#define MAP_TZHAAR_CAVES_2     (3 | (49 << 8))
-#define MAP_TZHAAR_CAVES_3     (4 | (49 << 8))
-#define MAP_TZHAAR_CAVES_4     (5 | (49 << 8))
-#define MAP_TZHAAR_CAVES_5     (6 | (49 << 8))
+#define MAP_TZHAAR_1F            (0 | (49 << 8))
+#define MAP_TZHAAR_FIGHT_CAVES   (1 | (49 << 8))
+#define MAP_TZHAAR_CAVES_1       (2 | (49 << 8))
+#define MAP_TZHAAR_CAVES_2       (3 | (49 << 8))
+#define MAP_TZHAAR_CAVES_3       (4 | (49 << 8))
+#define MAP_TZHAAR_CAVES_4       (5 | (49 << 8))
+#define MAP_TZHAAR_CAVES_5       (6 | (49 << 8))
+#define MAP_TZHAAR_GYM_CHALLENGE (7 | (49 << 8))
+#define MAP_TZHAAR_HAR_AKEN      (8 | (49 << 8))
 
 // gMapGroup_PokescapeIndoorVarious
 #define MAP_ROUTE1_HOUSE_FRED                   (0 | (50 << 8))

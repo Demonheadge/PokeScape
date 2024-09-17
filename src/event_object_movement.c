@@ -471,11 +471,11 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_PIRATE_1 0x1146
 #define OBJ_EVENT_PAL_PIRATE_2 0x1147
 #define OBJ_EVENT_PAL_PIRATE_3 0x1148
-#define OBJ_EVENT_PAL_TZHAAR_GA_AL 0x114D
-#define OBJ_EVENT_PAL_TZHAAR_1 0x114E
-#define OBJ_EVENT_PAL_TZHAAR_2 0x114F
-#define OBJ_EVENT_PAL_TZHAAR_3 0x1150
-#define OBJ_EVENT_PAL_TZHAAR_4 0x1151
+//#define OBJ_EVENT_PAL_TZHAAR_GA_AL 0x114D
+//#define OBJ_EVENT_PAL_TZHAAR_1 0x114E
+//#define OBJ_EVENT_PAL_TZHAAR_2 0x114F
+//#define OBJ_EVENT_PAL_TZHAAR_3 0x1150
+//#define OBJ_EVENT_PAL_TZHAAR_4 0x1151
 #define OBJ_EVENT_PAL_WIZARD_DARK 0x1152
 #define OBJ_EVENT_PAL_WIZARD_M 0x1155
 #define OBJ_EVENT_PAL_WIZARD_F 0x1156
@@ -676,6 +676,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_ZombieDisguise    0x1278
 #define OBJ_EVENT_PAL_RED_DRAGON        0x1187
 #define OBJ_EVENT_PAL_PIRATE_SHIP       0x1249
+#define OBJ_EVENT_PAL_TZHAAR            0x114E
 
 
 
@@ -773,11 +774,11 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Barbarian_Male_1, OBJ_EVENT_PAL_BARBARIAN_MALE_1},
     {gObjectEventPalette_Barbarian_Male_2, OBJ_EVENT_PAL_BARBARIAN_MALE_2},
     */
-    {gObjectEventPalette_Tzhaar_Ga_al, OBJ_EVENT_PAL_TZHAAR_GA_AL},
-    {gObjectEventPalette_Tzhaar_1, OBJ_EVENT_PAL_TZHAAR_1},
-    {gObjectEventPalette_Tzhaar_2, OBJ_EVENT_PAL_TZHAAR_2},
-    {gObjectEventPalette_Tzhaar_3, OBJ_EVENT_PAL_TZHAAR_3},
-    {gObjectEventPalette_Tzhaar_4, OBJ_EVENT_PAL_TZHAAR_4},
+    //{gObjectEventPalette_Tzhaar_Ga_al, OBJ_EVENT_PAL_TZHAAR_GA_AL},
+    //{gObjectEventPalette_Tzhaar_1, OBJ_EVENT_PAL_TZHAAR_1},
+    //{gObjectEventPalette_Tzhaar_2, OBJ_EVENT_PAL_TZHAAR_2},
+    //{gObjectEventPalette_Tzhaar_3, OBJ_EVENT_PAL_TZHAAR_3},
+    //{gObjectEventPalette_Tzhaar_4, OBJ_EVENT_PAL_TZHAAR_4},
     {gObjectEventPalette_Wizard_Dark, OBJ_EVENT_PAL_WIZARD_DARK},
     //{gObjectEventPalette_Wizard_Guthix, OBJ_EVENT_PAL_WIZARD_GUTHIX},
     //{gObjectEventPalette_Wizard_Guthix_Dagger, OBJ_EVENT_PAL_WIZARD_GUTHIX_DAGGER},
@@ -1022,6 +1023,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_AVA_THOK, OBJ_EVENT_PAL_AVA_THOK},
     {gObjectEventPalette_RED_DRAGON, OBJ_EVENT_PAL_RED_DRAGON},
     {gObjectEventPalette_PIRATE_SHIP, OBJ_EVENT_PAL_PIRATE_SHIP},
+    {gObjectEventPalette_TZHAAR, OBJ_EVENT_PAL_TZHAAR},
+    
     
     
     /*

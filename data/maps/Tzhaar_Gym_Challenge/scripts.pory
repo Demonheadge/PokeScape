@@ -1,0 +1,271 @@
+mapscripts Tzhaar_Gym_Challenge_MapScripts {}
+
+
+const OBJ_EVENT_ID_TZKIH_1 = 1
+const OBJ_EVENT_ID_TZKIH_2 = 2
+const OBJ_EVENT_ID_TZKIH_3 = 3
+const OBJ_EVENT_ID_GAAL_4 = 4
+const OBJ_EVENT_ID_GAAL_5 = 5
+
+
+script TZHAAR_GYM_CHALLENGE_WAVE1 {
+    
+    msgbox(format("WAVE 1."))
+    closemessage
+
+
+    applymovement(OBJ_EVENT_ID_TZKIH_1, movement_TZHAAR_GYM_WAVES_1)
+    applymovement(OBJ_EVENT_ID_TZKIH_2, movement_TZHAAR_GYM_WAVES_2)
+    applymovement(OBJ_EVENT_ID_TZKIH_3, movement_TZHAAR_GYM_WAVES_3)
+    delay(90)
+
+    msgbox(format("Keehsse!"))
+    closemessage
+    //
+    removeobject(OBJ_EVENT_ID_TZKIH_1)
+    removeobject(OBJ_EVENT_ID_TZKIH_2)
+    removeobject(OBJ_EVENT_ID_TZKIH_3)
+    setflag(FLAG_TEMP_1)
+    setflag(FLAG_TEMP_2)
+    setflag(FLAG_TEMP_3)
+
+
+    msgbox(format("WAVE 2."))
+    closemessage
+
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    addvar(VAR_TEMP_0, 4)
+    addvar(VAR_TEMP_1, 4)
+
+    setobjectxyperm(OBJ_EVENT_ID_TZKIH_1, VAR_TEMP_0, VAR_TEMP_1)
+    subvar(VAR_TEMP_0, 4)
+    subvar(VAR_TEMP_1, 3)
+    setobjectxyperm(OBJ_EVENT_ID_TZKIH_2, VAR_TEMP_0, VAR_TEMP_1)
+
+    addobject(OBJ_EVENT_ID_TZKIH_1)
+    addobject(OBJ_EVENT_ID_TZKIH_2)
+    addobject(OBJ_EVENT_ID_TZKIH_3)
+    clearflag(FLAG_TEMP_1)
+    clearflag(FLAG_TEMP_2)
+    clearflag(FLAG_TEMP_3)
+
+    msgbox(format("Keehsse!"))
+    closemessage
+
+
+
+    msgbox(format("WAVE 3."))
+    closemessage
+    playmoncry(SPECIES_TZ_KIH, 1)
+    msgbox(format("Keehsse!"))
+    waitmoncry
+    closemessage
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    subvar(VAR_TEMP_1, 2) // UP
+    setobjectxyperm(OBJ_EVENT_ID_TZKIH_1, VAR_TEMP_0, VAR_TEMP_1)
+
+
+
+
+
+
+
+
+
+//    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)    
+//    addvar(VAR_TEMP_1, 1) // DOWN
+//    subvar(VAR_TEMP_1, 1) // UP
+//    addvar(VAR_TEMP_0, 1) // RIGHT
+//    subvar(VAR_TEMP_0, 1) // LEFT
+
+
+    release
+    end
+}
+
+movement movement_TZHAAR_GYM_WAVES_1 {
+    walk_down * 3
+}
+movement movement_TZHAAR_GYM_WAVES_2 {
+    walk_right * 3
+}
+movement movement_TZHAAR_GYM_WAVES_3 {
+    walk_left * 3
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script RANDOM_ENEMY_SPAWN {
+//SPAWN LIST (A)
+    if (var(VAR_TEMP_A) == 1) {
+        random(2)
+        switch (var(VAR_RESULT)) {
+            case 0:
+                call(SPAWN_TZKIH_A)
+            case 1:
+                call(SPAWN_GAAL_A)
+        }
+    }
+//SPAWN LIST (B)
+    elif (var(VAR_TEMP_B) == 1) {
+        random(2)
+        switch (var(VAR_RESULT)) {
+            case 0:
+                call(SPAWN_TZKIH_B)
+            case 1:
+                call(SPAWN_GAAL_B)
+        }
+    }
+    return
+}
+script RANDOM_ENEMY_SPAWN_LOCATION {
+    random(8)
+    switch (var(VAR_RESULT)) {
+        case 0:
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            addvar(VAR_TEMP_1, 1) // DOWN
+        case 1:
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            subvar(VAR_TEMP_1, 1) // UP
+        case 2:
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            addvar(VAR_TEMP_0, 1) // RIGHT
+        case 3:
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            subvar(VAR_TEMP_0, 1) // LEFT
+        case 4:
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            addvar(VAR_TEMP_1, 2) // DOWN
+        case 5:
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            subvar(VAR_TEMP_1, 2) // UP
+        case 6:
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            addvar(VAR_TEMP_0, 2) // RIGHT
+        case 7:
+            getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+            subvar(VAR_TEMP_0, 2) // LEFT
+    }
+    return
+}
+
+
+//VAR_TEMP_A - 1 - TRIGGER-TO-SPAWN.
+//VAR_TEMP_A - 2 - DEAD.
+
+
+
+//A SPAWNS--------------------------------------------------------------------------
+script TRIGGER_ENEMY_SPAWN_A {
+    call(RANDOM_ENEMY_SPAWN_LOCATION)
+    call(RANDOM_ENEMY_SPAWN)
+    setvar(VAR_TEMP_A, 2)
+    release
+    end
+}
+
+
+script SPAWN_TZKIH_A {
+    setobjectxyperm(OBJ_EVENT_ID_TZKIH_1, VAR_TEMP_0, VAR_TEMP_1)
+    addobject(OBJ_EVENT_ID_TZKIH_1)
+    clearflag(FLAG_TEMP_1)
+    playmoncry(SPECIES_TZ_KIH, 1)
+    namebox("Tz-Kih")
+    msgbox(format("Keehsse!"))
+    waitmoncry
+    closemessage
+    return
+}
+script SPAWN_GAAL_A {
+    setobjectxyperm(OBJ_EVENT_ID_GAAL_4, VAR_TEMP_0, VAR_TEMP_1)
+    addobject(OBJ_EVENT_ID_GAAL_4)
+    clearflag(FLAG_TEMP_4)
+    //playmoncry(SPECIES_TZ_ZEK, 1)
+    namebox("Ga'al")
+    msgbox(format("Surpirse battle!"))
+    //waitmoncry
+    closemessage
+    return
+}
+
+
+script ENEMY_TZKIH_A {
+    removeobject(OBJ_EVENT_ID_TZKIH_1)
+    setflag(FLAG_TEMP_1)
+    setvar(VAR_TEMP_A, 1)
+}
+script ENEMY_GAAL_A {
+    removeobject(OBJ_EVENT_ID_GAAL_4)
+    setflag(FLAG_TEMP_4)
+    setvar(VAR_TEMP_A, 1)
+}
+
+//--------------------------------------------------------------------------
+
+
+
+//B SPAWNS--------------------------------------------------------------------------
+script TRIGGER_ENEMY_SPAWN_B {
+    call(RANDOM_ENEMY_SPAWN_LOCATION)
+    call(RANDOM_ENEMY_SPAWN)
+    setvar(VAR_TEMP_B, 2)
+    release
+    end
+}
+
+
+script SPAWN_TZKIH_B {
+    setobjectxyperm(OBJ_EVENT_ID_TZKIH_2, VAR_TEMP_0, VAR_TEMP_1)
+    addobject(OBJ_EVENT_ID_TZKIH_2)
+    clearflag(FLAG_TEMP_2)
+    playmoncry(SPECIES_TZ_KIH, 1)
+    namebox("Tz-Kih")
+    msgbox(format("Keehsse!"))
+    waitmoncry
+    closemessage
+    return
+}
+
+script SPAWN_GAAL_B {
+    setobjectxyperm(OBJ_EVENT_ID_GAAL_5, VAR_TEMP_0, VAR_TEMP_1)
+    addobject(OBJ_EVENT_ID_GAAL_5)
+    clearflag(FLAG_TEMP_5)
+    //playmoncry(SPECIES_TZ_ZEK, 1)
+    namebox("Ga'al")
+    msgbox(format("Surpirse battle!"))
+    //waitmoncry
+    closemessage
+    return
+}
+
+
+script ENEMY_TZKIH_B {
+    removeobject(OBJ_EVENT_ID_TZKIH_2)
+    setflag(FLAG_TEMP_2)
+    setvar(VAR_TEMP_B, 1)
+}
+script ENEMY_GAAL_B {
+    removeobject(OBJ_EVENT_ID_GAAL_5)
+    setflag(FLAG_TEMP_5)
+    setvar(VAR_TEMP_B, 1)
+}
+//--------------------------------------------------------------------------
