@@ -185,39 +185,44 @@ NPC_TZHAAR_GYM_LEADER::
 	lock
 	faceplayer
 	namebox NPC_TZHAAR_GYM_LEADER_Text_0
-	switch VAR_POKESCAPE_TZHAAR_GYM_QUEST
-	case 0, NPC_TZHAAR_GYM_LEADER_3
-	case 1, NPC_TZHAAR_GYM_LEADER_4
-	case 10, NPC_TZHAAR_GYM_LEADER_5
+	compare VAR_POKESCAPE_TZHAAR_GYM_QUEST, 0
+	goto_if_eq NPC_TZHAAR_GYM_LEADER_2
 NPC_TZHAAR_GYM_LEADER_1:
+	compare VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1
+	goto_if_eq NPC_TZHAAR_GYM_LEADER_5
+NPC_TZHAAR_GYM_LEADER_4:
+	compare VAR_POKESCAPE_TZHAAR_GYM_QUEST, 10
+	goto_if_eq NPC_TZHAAR_GYM_LEADER_8
+NPC_TZHAAR_GYM_LEADER_7:
 	hidenamebox
 	closemessage
 	release
 	end
 
-NPC_TZHAAR_GYM_LEADER_3:
+NPC_TZHAAR_GYM_LEADER_2:
 	msgbox NPC_TZHAAR_GYM_LEADER_Text_1
 	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1
 	goto NPC_TZHAAR_GYM_LEADER_1
 
-NPC_TZHAAR_GYM_LEADER_4:
+NPC_TZHAAR_GYM_LEADER_5:
 	msgbox NPC_TZHAAR_GYM_LEADER_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne NPC_TZHAAR_GYM_LEADER_6
-	goto NPC_TZHAAR_GYM_LEADER_1
+	goto_if_ne NPC_TZHAAR_GYM_LEADER_10
+	goto NPC_TZHAAR_GYM_LEADER_4
 
-NPC_TZHAAR_GYM_LEADER_5:
+NPC_TZHAAR_GYM_LEADER_8:
 	msgbox NPC_TZHAAR_GYM_LEADER_Text_4
 	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1
-	goto NPC_TZHAAR_GYM_LEADER_1
+	goto NPC_TZHAAR_GYM_LEADER_7
 
-NPC_TZHAAR_GYM_LEADER_6:
+NPC_TZHAAR_GYM_LEADER_10:
 	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_3
 	closemessage
 	hidenamebox
 	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 5
 	msgbox NPC_TZHAAR_GYM_LEADER_Text_3
-	goto NPC_TZHAAR_GYM_LEADER_1
+	call FIGHT_CAVES_START
+	goto NPC_TZHAAR_GYM_LEADER_4
 
 
 NPC_TZHAAR_GYM_TOKHAAR_Text_0:
@@ -330,16 +335,15 @@ BATTLE_MOD_SARNIE_Text_3:
 	.string "You could get a Fire Cape like me.$"
 
 NPC_TZHAAR_GYM_LEADER_Text_0:
-	.string "Tzhaar Champion$"
+	.string "Kimit-Kal$"
 
 NPC_TZHAAR_GYM_LEADER_Text_1:
-	.string "Welcome to the Tzhaar Gym, MvM\n"
-	.string "Challenger.\p"
-	.string "I am TzHaar Champion.\p"
+	.string "Welcome to the Mor-Ul-Rek Gym.\n"
+	.string "I am Kimit-Kal.\p"
 	.string "If the Tzhaar Badge is what you seek,\n"
 	.string "then you must participate in our Gym\l"
 	.string "Challenge.\p"
-	.string "Battle your way through 2 Waves of my\n"
+	.string "Battle your way through 5 Waves of my\n"
 	.string "brethren then defeat me in battle.$"
 
 NPC_TZHAAR_GYM_LEADER_Text_2:

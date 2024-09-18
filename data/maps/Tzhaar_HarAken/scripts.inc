@@ -17,6 +17,40 @@ Tzhaar_HarAken_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 	.2byte 0
 
 
+FIGHT_CAVES_RESTRICTIONS_ON::
+	setflag FLAG_TOGGLE_NO_CATCHING
+	msgbox FIGHT_CAVES_RESTRICTIONS_ON_Text_0
+	setflag FLAG_TOGGLE_NO_BAG_USE
+	msgbox FIGHT_CAVES_RESTRICTIONS_ON_Text_1
+	closemessage
+	return
+
+
+FIGHT_CAVES_RESTRICTIONS_OFF::
+	clearflag FLAG_TOGGLE_NO_CATCHING
+	msgbox FIGHT_CAVES_RESTRICTIONS_OFF_Text_0
+	clearflag FLAG_TOGGLE_NO_BAG_USE
+	msgbox FIGHT_CAVES_RESTRICTIONS_OFF_Text_1
+	closemessage
+	return
+
+
+FIGHT_CAVES_START::
+	call FIGHT_CAVES_RESTRICTIONS_ON
+	warp MAP_TZHAAR_GYM_CHALLENGE, 0
+	waitstate
+	return
+
+
+FIGHT_CAVES_FINISHED::
+	msgbox FIGHT_CAVES_FINISHED_Text_0
+	closemessage
+	call FIGHT_CAVES_RESTRICTIONS_OFF
+	warp MAP_TZHAAR_FIGHT_CAVES, 0
+	waitstate
+	end
+
+
 HARAKEN_STATE::
 	removeobject 1
 	setflag FLAG_TEMP_1
@@ -97,9 +131,9 @@ HARAKEN_START::
 	clearflag FLAG_TEMP_5
 	setmetatile 7, 9, METATILE_PokeScape_Caves_TENTACLE_POOL_DOWN, TRUE
 	special DrawWholeMapView
-	applymovement 5, movement_HARAKEN_2
+	applymovement 5, movement_HARAKEN_1
 	waitmovement 0
-	setobjectmovementtype 5, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+	setobjectmovementtype 5, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	addobject 6
 	clearflag FLAG_TEMP_6
 	setmetatile 3, 9, METATILE_PokeScape_Caves_TENTACLE_POOL_DOWN, TRUE
@@ -169,68 +203,144 @@ HAR_AKEN_WALK_SLOW:
 
 ENEMY_TENTACLE_1::
 	setmetatile 7, 1, METATILE_PokeScape_Caves_LAVA_POOL, TRUE
-	removeobject VAR_LAST_TALKED
+	call ENCOUNTER_TENTACLE
 	special DrawWholeMapView
 	return
 
 
 ENEMY_TENTACLE_2::
 	setmetatile 9, 3, METATILE_PokeScape_Caves_LAVA_POOL_R, TRUE
-	removeobject VAR_LAST_TALKED
+	call ENCOUNTER_TENTACLE
 	special DrawWholeMapView
 	return
 
 
 ENEMY_TENTACLE_3::
 	setmetatile 9, 7, METATILE_PokeScape_Caves_LAVA_POOL_R, TRUE
-	removeobject VAR_LAST_TALKED
+	call ENCOUNTER_TENTACLE
 	special DrawWholeMapView
 	return
 
 
 ENEMY_TENTACLE_4::
-	setmetatile 3, 9, METATILE_PokeScape_Caves_LAVA_POOL_DOWN, TRUE
-	removeobject VAR_LAST_TALKED
+	setmetatile 7, 9, METATILE_PokeScape_Caves_LAVA_POOL_DOWN, TRUE
+	call ENCOUNTER_TENTACLE
 	special DrawWholeMapView
 	return
 
 
 ENEMY_TENTACLE_5::
-	setmetatile 7, 9, METATILE_PokeScape_Caves_LAVA_POOL_DOWN, TRUE
-	removeobject VAR_LAST_TALKED
+	setmetatile 3, 9, METATILE_PokeScape_Caves_LAVA_POOL_DOWN, TRUE
+	call ENCOUNTER_TENTACLE
 	special DrawWholeMapView
 	return
 
 
 ENEMY_TENTACLE_6::
 	setmetatile 1, 7, METATILE_PokeScape_Caves_LAVA_POOL_L, TRUE
-	removeobject VAR_LAST_TALKED
+	call ENCOUNTER_TENTACLE
 	special DrawWholeMapView
 	return
 
 
 ENEMY_TENTACLE_7::
 	setmetatile 1, 3, METATILE_PokeScape_Caves_LAVA_POOL_L, TRUE
-	removeobject VAR_LAST_TALKED
+	call ENCOUNTER_TENTACLE
 	special DrawWholeMapView
 	return
 
 
 ENEMY_TENTACLE_8::
 	setmetatile 3, 1, METATILE_PokeScape_Caves_LAVA_POOL, TRUE
-	removeobject VAR_LAST_TALKED
+	call ENCOUNTER_TENTACLE
 	special DrawWholeMapView
 	return
 
 
 ENEMY_HAR_AKEN::
+	compare VAR_TEMP_C, 8
+	goto_if_eq ENEMY_HAR_AKEN_2
+	msgbox ENEMY_HAR_AKEN_Text_0
+	closemessage
+ENEMY_HAR_AKEN_1:
+	release
+	end
+
+ENEMY_HAR_AKEN_2:
 	setmetatile 4, 1, METATILE_PokeScape_Caves_LAVA_POOL, TRUE
 	setmetatile 5, 1, METATILE_PokeScape_Caves_LAVA_BUBBLES, TRUE
 	setmetatile 6, 1, METATILE_PokeScape_Caves_LAVA_POOL, TRUE
-	removeobject VAR_LAST_TALKED
+	call ENCOUNTER_HAR_AKEN
 	special DrawWholeMapView
+	goto FIGHT_CAVES_FINISHED
+	goto ENEMY_HAR_AKEN_1
+
+
+ENCOUNTER_TENTACLE::
+	setwildbattle SPECIES_TOME_OF_STRENGTH, 20, ITEM_NONE
+	dowildbattle
+	switch VAR_RESULT
+	case B_OUTCOME_WON, ENCOUNTER_TENTACLE_3
+	case B_OUTCOME_CAUGHT, ENCOUNTER_TENTACLE_4
+ENCOUNTER_TENTACLE_1:
 	return
 
+ENCOUNTER_TENTACLE_3:
+	fadescreen FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	addvar VAR_TEMP_C, 1
+	fadescreen FADE_FROM_BLACK
+	goto ENCOUNTER_TENTACLE_1
+
+ENCOUNTER_TENTACLE_4:
+	fadescreen FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	addvar VAR_TEMP_C, 1
+	fadescreen FADE_FROM_BLACK
+	goto ENCOUNTER_TENTACLE_1
+
+
+ENCOUNTER_HAR_AKEN::
+	namebox HARAKEN_START_Text_1
+	msgbox HARAKEN_START_Text_2
+	closemessage
+	hidenamebox
+	setwildbattle SPECIES_TZKAL_ZUK, 30, ITEM_NONE
+	dowildbattle
+	switch VAR_RESULT
+	case B_OUTCOME_WON, ENCOUNTER_HAR_AKEN_3
+	case B_OUTCOME_CAUGHT, ENCOUNTER_HAR_AKEN_4
+ENCOUNTER_HAR_AKEN_1:
+	return
+
+ENCOUNTER_HAR_AKEN_3:
+	fadescreen FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreen FADE_FROM_BLACK
+	goto ENCOUNTER_HAR_AKEN_1
+
+ENCOUNTER_HAR_AKEN_4:
+	fadescreen FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreen FADE_FROM_BLACK
+	goto ENCOUNTER_HAR_AKEN_1
+
+
+FIGHT_CAVES_RESTRICTIONS_ON_Text_0:
+	.string "Catching is disabled.$"
+
+FIGHT_CAVES_RESTRICTIONS_ON_Text_1:
+	.string "Bag is disabled.$"
+
+FIGHT_CAVES_RESTRICTIONS_OFF_Text_0:
+	.string "Catching is enabled.$"
+
+FIGHT_CAVES_RESTRICTIONS_OFF_Text_1:
+	.string "Bag is enabled.$"
+
+FIGHT_CAVES_FINISHED_Text_0:
+	.string "Cave completed.\n"
+	.string "Teleporting out…$"
 
 HARAKEN_START_Text_0:
 	.string "WAVE: HAR-AKEN.$"
@@ -243,3 +353,7 @@ HARAKEN_START_Text_2:
 
 HARAKEN_START_Text_3:
 	.string "Defeat the tentacles!$"
+
+ENEMY_HAR_AKEN_Text_0:
+	.string "Har-Aken is too strong to approach.\p"
+	.string "Get rid of the tentcales first!$"

@@ -440,6 +440,13 @@
 #define TRAINER_CrandorVolcano_FireGiant_1              436
 #define TRAINER_CrandorVolcano_FireGiant_2              437
 
+#define TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_1            438
+#define TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_2            439
+#define TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_3            440
+#define TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_1             441
+#define TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_2             442
+#define TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_3             443
+
 
 
 

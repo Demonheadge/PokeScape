@@ -458,6 +458,7 @@ const u32 gTrainerFrontPic_thok_gymleader[] = INCBIN_U32("graphics/trainers/poke
 const u32 gTrainerFrontPic_zanik_e4[] = INCBIN_U32("graphics/trainers/pokescape/front_pics/TRAINER/zanik_e4.4bpp.lz");
 const u32 gTrainerFrontPic_worldguardian[] = INCBIN_U32("graphics/trainers/pokescape/front_pics/TRAINER/worldguardian.4bpp.lz");
 const u32 gTrainerFrontPic_sagittarian[] = INCBIN_U32("graphics/trainers/pokescape/front_pics/TRAINER/sagittarian.4bpp.lz");
+const u32 gTrainerFrontPic_tzhaar_ket[] = INCBIN_U32("graphics/trainers/pokescape/front_pics/TRAINER/tzhaar_ket.4bpp.lz");
 
 //POKESCAPE PALETTES
 const u32 gTrainerPalette_a_nub_tot[] = INCBIN_U32("graphics/trainers/pokescape/palettes/a_nub_tot.gbapal.lz");
@@ -623,3 +624,4 @@ const u32 gTrainerPalette_thok_gymleader[] = INCBIN_U32("graphics/trainers/pokes
 const u32 gTrainerPalette_zanik_e4[] = INCBIN_U32("graphics/trainers/pokescape/palettes/zanik_e4.gbapal.lz");
 const u32 gTrainerPalette_worldguardian[] = INCBIN_U32("graphics/trainers/pokescape/palettes/worldguardian.gbapal.lz");
 const u32 gTrainerPalette_sagittarian[] = INCBIN_U32("graphics/trainers/pokescape/palettes/sagittarian.gbapal.lz");
+const u32 gTrainerPalette_tzhaar_ket[] = INCBIN_U32("graphics/trainers/pokescape/palettes/tzhaar_ket.gbapal.lz");

@@ -1011,6 +1011,10 @@ static const union AnimCmd *const sAnims_sagittarian[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_tzhaar_ket[] ={
+    sAnim_GeneralFrame0,
+};
+
 const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 {
     [TRAINER_PIC_HIKER] = sAnims_Hiker,
@@ -1267,4 +1271,5 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_zanik_e4] = sAnims_zanik_e4,
     [TRAINER_PIC_worldguardian] = sAnims_worldguardian,
     [TRAINER_PIC_sagittarian] = sAnims_sagittarian,
+    [TRAINER_PIC_tzhaar_ket] = sAnims_tzhaar_ket,
 };

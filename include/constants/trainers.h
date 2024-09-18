@@ -271,6 +271,7 @@
 #define TRAINER_PIC_zanik_e4				    250
 #define TRAINER_PIC_worldguardian				251
 #define TRAINER_PIC_sagittarian				    252
+#define TRAINER_PIC_tzhaar_ket				    253
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

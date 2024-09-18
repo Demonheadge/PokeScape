@@ -6725,7 +6725,7 @@ static const struct TrainerMon sParty_GYM_LEADER_TZHAAR_CHAMPION_1[] = {
     .ability = ABILITY_FLAME_BODY,
     .lvl = 35,
     .species = SPECIES_TZ_KIH_SPIRIT_FORM,
-    .moves = {MOVE_NATURE_POWER, MOVE_HEAT_WAVE, MOVE_WHIRLWIND, MOVE_SUNNY_DAY}
+    .moves = {MOVE_TZ_TOK_ZEK, MOVE_HEAT_WAVE, MOVE_WHIRLWIND, MOVE_SUNNY_DAY}
     },
     {
     //.ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
@@ -6741,7 +6741,7 @@ static const struct TrainerMon sParty_GYM_LEADER_TZHAAR_CHAMPION_1[] = {
     .ability = ABILITY_MAGMA_ARMOR,
     .lvl = 35,
     .species = SPECIES_TZREK_JAD,
-    .moves = {MOVE_MAGMA_STORM, MOVE_STOMPING_TANTRUM, MOVE_BULK_UP, MOVE_FLAME_CHARGE}
+    .moves = {MOVE_MAGMA_STORM, MOVE_STOMPING_TANTRUM, MOVE_BULK_UP, MOVE_TZ_TOK_ZEK}
     },
     {
     //.ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
@@ -6749,7 +6749,7 @@ static const struct TrainerMon sParty_GYM_LEADER_TZHAAR_CHAMPION_1[] = {
     .ability = ABILITY_FLAME_BODY,
     .lvl = 35,
     .species = SPECIES_TOK_XIL,
-    .moves = {MOVE_SUNNY_DAY, MOVE_THOUSAND_ARROWS, MOVE_LAVA_PLUME, MOVE_ENERGY_BALL}
+    .moves = {MOVE_SUNNY_DAY, MOVE_THOUSAND_ARROWS, MOVE_LAVA_PLUME, MOVE_SOLAR_BEAM}
     },
     {
     //.ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
@@ -6757,7 +6757,7 @@ static const struct TrainerMon sParty_GYM_LEADER_TZHAAR_CHAMPION_1[] = {
     .ability = ABILITY_MAGICIAN,
     .lvl = 35,
     .species = SPECIES_YT_MEJKOT,
-    .moves = {MOVE_SUNNY_DAY, MOVE_LAVA_PLUME, MOVE_ANCIENT_POWER, MOVE_ENERGY_BALL}
+    .moves = {MOVE_TZ_TOK_ZEK, MOVE_LAVA_PLUME, MOVE_ANCIENT_POWER, MOVE_ENERGY_BALL}
     }
 };
 
@@ -7227,4 +7227,59 @@ static const struct TrainerMon sParty_CrandorVolcano_FireGiant_2[] = {
     .lvl = 40,
     .species = SPECIES_TZ_KEK,
     }
+};
+
+//FIGHT CAVES
+
+static const struct TrainerMon sParty_TZHAAR_FIGHTCAVES_LOW_GAAL_1[] = {
+    {
+    .lvl = 30,
+    .species = SPECIES_TOK_XIL,
+    }
+};
+static const struct TrainerMon sParty_TZHAAR_FIGHTCAVES_LOW_GAAL_2[] = {
+    {
+    .lvl = 30,
+    .species = SPECIES_KET_DILL,
+    }
+};
+static const struct TrainerMon sParty_TZHAAR_FIGHTCAVES_LOW_GAAL_3[] = {
+    {
+    .lvl = 30,
+    .species = SPECIES_TZ_KEK,
+    },
+    {
+    .lvl = 30,
+    .species = SPECIES_TZ_KEK,
+    }
+};
+static const struct TrainerMon sParty_TZHAAR_FIGHTCAVES_LOW_KET_1[] = {
+    {
+    .lvl = 30,
+    .species = SPECIES_YT_HURKOT,
+    }
+};
+static const struct TrainerMon sParty_TZHAAR_FIGHTCAVES_LOW_KET_2[] = {
+    {
+    .lvl = 30,
+    .species = SPECIES_TOK_XIL,
+    }
+};
+static const struct TrainerMon sParty_TZHAAR_FIGHTCAVES_LOW_KET_3[] = {
+    {
+    .lvl = 25,
+    .species = SPECIES_TZ_KIH,
+    },
+    {
+    .lvl = 25,
+    .species = SPECIES_TZ_KEK,
+    },
+    {
+    .lvl = 25,
+    .species = SPECIES_TZ_KIH,
+    },
+    {
+    .lvl = 25,
+    .species = SPECIES_TZ_KEK,
+    },
 };

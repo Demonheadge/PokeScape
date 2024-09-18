@@ -1540,9 +1540,9 @@
 #define FLAG_VISITED_EDGEVILLE                      (SYSTEM_FLAGS + 0x8D) // Unused Flag
 #define FLAG_VISITED_AL_KHARID                      (SYSTEM_FLAGS + 0x8E) // Unused Flag
 #define FLAG_VISITED_MUSA_POINT                     (SYSTEM_FLAGS + 0x8F) // Unused Flag
-#define FLAG_INVERSE_BATTLE                         (SYSTEM_FLAGS + 0x90) // Unused Flag
-#define FLAG_UNUSED_0x8F1                           (SYSTEM_FLAGS + 0x91) // Unused Flag
-#define FLAG_UNUSED_0x8F2                           (SYSTEM_FLAGS + 0x92) // Unused Flag
+#define FLAG_TOGGLE_INVERSE_BATTLE                  (SYSTEM_FLAGS + 0x90) // Unused Flag
+#define FLAG_TOGGLE_NO_BAG_USE                      (SYSTEM_FLAGS + 0x91) // Unused Flag
+#define FLAG_TOGGLE_NO_CATCHING                     (SYSTEM_FLAGS + 0x92) // Unused Flag
 #define FLAG_UNUSED_0x8F3                           (SYSTEM_FLAGS + 0x93) // Unused Flag
 #define FLAG_UNUSED_0x8F4                           (SYSTEM_FLAGS + 0x94) // Unused Flag
 #define FLAG_UNUSED_0x8F5                           (SYSTEM_FLAGS + 0x95) // Unused Flag

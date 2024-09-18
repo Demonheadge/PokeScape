@@ -942,7 +942,7 @@ script SIGN_BANANA_COUNT {
 
 
 script TOGGLE_INVERSE_BATTLE {
-	setflag(FLAG_INVERSE_BATTLE)
+	setflag(FLAG_TOGGLE_INVERSE_BATTLE)
     msgbox(format("Inverse battle - ENABLED"))
 	closemessage
 	end

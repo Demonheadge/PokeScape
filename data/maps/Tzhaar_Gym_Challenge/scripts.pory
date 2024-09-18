@@ -1,11 +1,454 @@
-mapscripts Tzhaar_Gym_Challenge_MapScripts {}
-
-
 const OBJ_EVENT_ID_TZKIH_1 = 1
 const OBJ_EVENT_ID_TZKIH_2 = 2
 const OBJ_EVENT_ID_TZKIH_3 = 3
-const OBJ_EVENT_ID_GAAL_4 = 4
-const OBJ_EVENT_ID_GAAL_5 = 5
+const OBJ_EVENT_ID_GAAL_4 = 4 //TRAINER: TOK-XIL
+const OBJ_EVENT_ID_GAAL_5 = 5 //TRAINER: KET-DILL
+const OBJ_EVENT_ID_KET_6 = 6 //TRAINER: YT-HUR-KOT
+const OBJ_EVENT_ID_KET_7 = 7
+const OBJ_EVENT_ID_KEK_8 = 8
+const OBJ_EVENT_ID_KEK_9 = 9
+const OBJ_EVENT_ID_CHAMPION_A = 10 //TZHAAR CHAMPION: TZ_KIH_SPIRIT_FORM, REBORN_WARRIOR, TZREK_JAD, TOK_XIL, YT_MEJKOT
+
+mapscripts Tzhaar_Gym_Challenge_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION 
+    {
+        call(TZHAAR_GYM_CHALLENGE_STATE)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_TEMP_D, 0: CHALLENGE_START
+    ]
+}
+
+//HIDE ALL WAVE NPCS.
+script TZHAAR_GYM_CHALLENGE_STATE {
+    removeobject(OBJ_EVENT_ID_TZKIH_1)
+    setflag(FLAG_TEMP_1)
+    removeobject(OBJ_EVENT_ID_TZKIH_2)
+    setflag(FLAG_TEMP_2)
+    removeobject(OBJ_EVENT_ID_TZKIH_3)
+    setflag(FLAG_TEMP_3)
+    removeobject(OBJ_EVENT_ID_GAAL_4)
+    setflag(FLAG_TEMP_4)
+    removeobject(OBJ_EVENT_ID_GAAL_5)
+    setflag(FLAG_TEMP_5)
+    removeobject(OBJ_EVENT_ID_KET_6)
+    setflag(FLAG_TEMP_6)
+    removeobject(OBJ_EVENT_ID_KET_7)
+    setflag(FLAG_TEMP_7)
+    removeobject(OBJ_EVENT_ID_KEK_8)
+    setflag(FLAG_TEMP_8)
+    removeobject(OBJ_EVENT_ID_KEK_9)
+    setflag(FLAG_TEMP_9)
+    removeobject(OBJ_EVENT_ID_CHAMPION_A)
+    setflag(FLAG_TEMP_A)
+}
+
+
+script FIGHT_CAVES_QUIT {
+    lockall
+    msgbox(format("Would you like to quit your challenge?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        closemessage
+        call(FIGHT_CAVES_RESTRICTIONS_OFF)
+        warp(MAP_TZHAAR_FIGHT_CAVES, 0)
+        waitstate
+    }
+    else {
+        closemessage
+        applymovement(OBJ_EVENT_ID_PLAYER, movement_lock_walk_up)
+        waitmovement(0)
+    }
+    releaseall
+    end
+}
+
+
+
+
+
+script FIGHTCAVES_SET_SPAWN_LOCATION_1 {
+
+    random(4) 
+	switch (var(VAR_RESULT)) { 
+        case 0: 
+            setobjectxyperm(VAR_TEMP_F, 19, 14)
+        case 1: 
+            setobjectxyperm(VAR_TEMP_F, 10, 5)
+        case 2: 
+            setobjectxyperm(VAR_TEMP_F, 9, 10)
+        case 3:    
+            setobjectxyperm(VAR_TEMP_F, 15, 8)
+    } 
+    return
+}
+script FIGHTCAVES_SET_SPAWN_LOCATION_2 {
+
+    random(4) 
+	switch (var(VAR_RESULT)) { 
+        case 0: 
+            setobjectxyperm(VAR_TEMP_F, 15, 3)
+        case 1: 
+            setobjectxyperm(VAR_TEMP_F, 6, 15)
+        case 2: 
+            setobjectxyperm(VAR_TEMP_F, 10, 12)
+        case 3:    
+            setobjectxyperm(VAR_TEMP_F, 21, 13)
+    } 
+    return
+}
+script FIGHTCAVES_SET_SPAWN_LOCATION_3 {
+
+    random(4) 
+	switch (var(VAR_RESULT)) { 
+        case 0: 
+            setobjectxyperm(VAR_TEMP_F, 14, 17)
+        case 1: 
+            setobjectxyperm(VAR_TEMP_F, 18, 19)
+        case 2: 
+            setobjectxyperm(VAR_TEMP_F, 14, 6)
+        case 3:    
+            setobjectxyperm(VAR_TEMP_F, 6, 12)
+    } 
+    return
+}
+
+
+
+
+
+
+
+
+script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
+    switch(var(VAR_TEMP_C)){
+		case 0: //begin WAVE 1
+            setvar(VAR_TEMP_E, 1) //WAVE: 1
+            call(FIGHTCAVES_WAVE_TRANSITION)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_TZKIH_1)
+            clearflag(FLAG_TEMP_1)
+        case 1: //begin WAVE 2
+            setvar(VAR_TEMP_E, 2) //WAVE: 2
+            call(FIGHTCAVES_WAVE_TRANSITION)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_TZKIH_1)
+            clearflag(FLAG_TEMP_1)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_KEK_8) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_2) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_KEK_8)
+            clearflag(FLAG_TEMP_8)
+        case 3: //begin WAVE 3
+            setvar(VAR_TEMP_E, 3) //WAVE: 3
+            call(FIGHTCAVES_WAVE_TRANSITION)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_4) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_GAAL_4) //   TRAINER: TOK-XIL
+            clearflag(FLAG_TEMP_4)
+        case 4: //begin WAVE 4
+            setvar(VAR_TEMP_E, 4) //WAVE: 4
+            call(FIGHTCAVES_WAVE_TRANSITION)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_5) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_GAAL_5) //   TRAINER: KET-DILL
+            clearflag(FLAG_TEMP_5)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_KET_6) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_2) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_KET_6) //   TRAINER: YT-HUR-KOT
+            clearflag(FLAG_TEMP_6)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_3) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_TZKIH_1)
+            clearflag(FLAG_TEMP_1)
+        case 7: //begin WAVE 5
+            setvar(VAR_TEMP_E, 5) //WAVE: 5
+            call(FIGHTCAVES_WAVE_TRANSITION)
+            addobject(OBJ_EVENT_ID_CHAMPION_A)
+            clearflag(FLAG_TEMP_A)   
+    }
+}
+
+script CHALLENGE_START {
+    setvar(VAR_TEMP_D, 1)
+    applymovement(OBJ_EVENT_ID_PLAYER, ENTER_FIGHT_CAVES)
+    waitmovement(0)
+    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    release
+    end
+}
+movement ENTER_FIGHT_CAVES {
+    walk_up * 5
+    walk_right * 3
+    walk_up * 2
+    walk_right
+    face_down
+}
+
+script FIGHTCAVES_WAVE_TRANSITION {
+    //FADESCREEN
+    fadescreen(FADE_TO_BLACK)
+    buffernumberstring(0, VAR_TEMP_E)
+    msgbox(format("WAVE: {STR_VAR_1}"))
+	closemessage
+    fadescreen(FADE_FROM_BLACK)
+    return
+}
+
+
+
+#script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
+#    //VAR_TEMP_C
+#    switch(var(VAR_TEMP_C)){
+#		case 0: //goto WAVE 1
+ #           goto(FIGHT_CAVES_WAVE_BEGIN)
+#       case 1: //goto WAVE 2
+ #           goto(FIGHT_CAVES_WAVE_BEGIN)
+ #       case 3: //goto WAVE 3
+ #           goto(FIGHT_CAVES_WAVE_BEGIN)
+ #       case 4: //goto WAVE 4
+ #           goto(FIGHT_CAVES_WAVE_BEGIN)
+ #       case 7: //goto WAVE 5
+ #           goto(FIGHT_CAVES_WAVE_BEGIN) 
+ #   }
+#}
+
+//-------------------------------------------------------------------------
+script ENEMY_TZKIH_1 {
+    call(ENCOUNTER_TZ_KIH)
+    removeobject(OBJ_EVENT_ID_TZKIH_1)
+    setflag(FLAG_TEMP_1)
+    addvar(VAR_TEMP_C, 1)
+    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+}
+script ENEMY_TZKIH_2 {
+    call(ENCOUNTER_TZ_KIH)
+    removeobject(OBJ_EVENT_ID_TZKIH_2)
+    setflag(FLAG_TEMP_2)
+    addvar(VAR_TEMP_C, 1)
+    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+}
+script ENEMY_TZKIH_3 {
+    call(ENCOUNTER_TZ_KIH)
+    removeobject(OBJ_EVENT_ID_TZKIH_3)
+    setflag(FLAG_TEMP_3)
+    addvar(VAR_TEMP_C, 1)
+    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+}
+script ENEMY_GAAL_4 {
+    call(ENCOUNTER_TZHAAR_TRAINER_GAAL)
+}
+script ENEMY_GAAL_5 {
+    call(ENCOUNTER_TZHAAR_TRAINER_GAAL)
+}
+script ENEMY_KET_6 {
+    call(ENCOUNTER_TZHAAR_TRAINER_KET)
+}
+script ENEMY_KET_7 {
+    call(ENCOUNTER_TZHAAR_TRAINER_KET)
+}
+script ENEMY_KEK_8 {
+    call(ENCOUNTER_TZ_KEK)
+    removeobject(OBJ_EVENT_ID_KEK_8)
+    setflag(FLAG_TEMP_8)
+    addvar(VAR_TEMP_C, 1)
+    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+}
+script ENEMY_KEK_9 {
+    call(ENCOUNTER_TZ_KEK)
+    removeobject(OBJ_EVENT_ID_KEK_9)
+    setflag(FLAG_TEMP_9)
+    addvar(VAR_TEMP_C, 1)
+    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+}
+script ENEMY_CHAMPION_A {
+    //if badge not obtained.
+    call(GYMLEADER_TZHAAR_CHAMPION)
+    //if has badge
+    removeobject(OBJ_EVENT_ID_CHAMPION_A)
+    setflag(FLAG_TEMP_A)
+    addvar(VAR_TEMP_C, 1)
+    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+}
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
+script ENCOUNTER_TZ_KIH {
+    lock
+    faceplayer
+    namebox("Tz-Kih")
+    playmoncry(SPECIES_TZ_KIH, 0)
+	msgbox(format("Keehsse!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    switch(var(VAR_TEMP_E)){
+		case 1: //WAVE 1
+            setwildbattle (SPECIES_TZ_KIH, 25, ITEM_FIRECAPE)
+        case 2: //WAVE 2
+            setwildbattle (SPECIES_TZ_KIH, 30, ITEM_FIRECAPE)
+        case 3: //WAVE 3
+            setwildbattle (SPECIES_TZ_KIH, 30, ITEM_FIRECAPE)
+        case 4: //WAVE 4
+            setwildbattle (SPECIES_TZ_KIH, 35, ITEM_FIRECAPE)
+        case 5: //WAVE 5
+            setwildbattle (SPECIES_TZ_KIH, 35, ITEM_FIRECAPE) 
+    }
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            return
+        case B_OUTCOME_CAUGHT:
+            return
+    }
+    release
+	end
+}
+script ENCOUNTER_TZ_KEK {
+    lock
+    faceplayer
+    namebox("Tz-Kek")
+    playmoncry(SPECIES_TZ_KEK, 0)
+	msgbox(format("Kekkekkek!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    switch(var(VAR_TEMP_E)){
+		case 1: //WAVE 1
+            setwildbattle (SPECIES_TZ_KEK, 25, ITEM_FIRECAPE)
+        case 2: //WAVE 2
+            setwildbattle (SPECIES_TZ_KEK, 30, ITEM_FIRECAPE)
+        case 3: //WAVE 3
+            setwildbattle (SPECIES_TZ_KEK, 30, ITEM_FIRECAPE)
+        case 4: //WAVE 4
+            setwildbattle (SPECIES_TZ_KEK, 30, ITEM_FIRECAPE)
+        case 5: //WAVE 5
+            setwildbattle (SPECIES_TZ_KEK, 30, ITEM_FIRECAPE) 
+    }
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            return
+        case B_OUTCOME_CAUGHT:
+            return
+    }
+    release
+	end
+}
+
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
+
+script ENCOUNTER_TZHAAR_TRAINER_GAAL {
+    lock
+    faceplayer
+    switch(var(VAR_TEMP_E)){  //VAR E = WAVE NUMBER
+		case 0: //WAVE 1
+        case 1: //WAVE 2
+        case 3: //WAVE 3
+        case 4: //WAVE 4
+        case 7: //WAVE 5
+            call(TZHAAR_TRAINERS_WAVES_LOW_GAAL)
+    }
+    return
+}
+script TZHAAR_TRAINERS_WAVES_LOW_GAAL
+{
+    random(3) 
+	switch (var(VAR_RESULT)) { 
+        case 0: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_1, 0, format("intro text 1"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 1: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_2, 0, format("intro text 2"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 2: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_3, 0, format("intro text 3"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+    } 
+}
+
+script ENCOUNTER_TZHAAR_TRAINER_KET {
+    lock
+    faceplayer
+    switch(var(VAR_TEMP_E)){  //VAR E = WAVE NUMBER
+		case 0: //WAVE 1
+        case 1: //WAVE 2
+        case 3: //WAVE 3
+        case 4: //WAVE 4
+        case 7: //WAVE 5
+            call(TZHAAR_TRAINERS_WAVES_LOW_KET)
+    }
+    return
+}
+script TZHAAR_TRAINERS_WAVES_LOW_KET
+{
+    random(3) 
+	switch (var(VAR_RESULT)) { 
+        case 0: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_1, 0, format("intro text 1"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 1: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_2, 0, format("intro text 2"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 2: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_3, 0, format("intro text 3"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+    } 
+}
+
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
+
+
+script CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO {
+    removeobject(VAR_LAST_TALKED)
+    addvar(VAR_TEMP_C, 1)
+    call(ClearGymTrainers_FIGHTCAVE)
+    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+}
+
+script SetGymTrainers_FIGHTCAVE {   
+    settrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_1)
+    settrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_2)
+    settrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_3)
+    settrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_1)
+    settrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_2)
+    settrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_3)
+    return
+}
+script ClearGymTrainers_FIGHTCAVE {   
+    cleartrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_1)
+    cleartrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_2)
+    cleartrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_3)
+    cleartrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_1)
+    cleartrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_2)
+    cleartrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_3)
+    return
+}
+
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 script TZHAAR_GYM_CHALLENGE_WAVE1 {
@@ -269,3 +712,58 @@ script ENEMY_GAAL_B {
     setvar(VAR_TEMP_B, 1)
 }
 //--------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script GYMLEADER_TZHAAR_CHAMPION {
+    lock
+    faceplayer
+    namebox("Kimit-Kal")
+    msgbox(format("Well done making it this far.\pVery well.\nShow me what you got."))
+    hidenamebox
+    closemessage
+    call(GYM_BATTLE_TZHAAR_CHAMPION)
+    namebox("Kimit-Kal")
+    msgbox(format("You have done very well.\pTo mark your triumph, accept this gym badge."))
+    hidenamebox
+    closemessage
+    playfanfare(MUS_PS_QUEST_COMPLETE) //MUS_OBTAIN_BADGE MUS_PS_QUEST_COMPLETE
+    msgbox(format("{PLAYER} received the TZHAAR BADGE from Kimit-Kal."))
+    waitfanfare
+    waitmessage
+    namebox("Kimit-Kal")
+    msgbox(format("Also have this Scroll."))
+    hidenamebox
+    giveitem (ITEM_TM48, 1) //Power Gem.
+    compare(VAR_RESULT, FALSE)
+    goto_if_eq(Common_EventScript_ShowBagIsFull)
+    playbgm(MUS_PS_ALKHARID, 0)
+    savebgm(MUS_PS_ALKHARID)
+    namebox("Kimit-Kal")
+    msgbox(format("That move is called Power Gem.\pIt sparkles just as all our precious Gems around the palace do."))
+    setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 30)
+    setflag(FLAG_BADGE05_GET)
+    addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
+    msgbox(format("Now let us return outside."))
+    call(FIGHT_CAVES_FINISHED)
+    release
+    end
+}

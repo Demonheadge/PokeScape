@@ -4586,7 +4586,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
         .trainerPic = TRAINER_PIC_tzhaar,
-        .trainerName = _(""),
+        .trainerName = _("Kimit-Kal"), //Champion of Familars.
         .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
@@ -4948,6 +4948,73 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_CrandorVolcano_FireGiant_2),
     },
 
+//FIGHT CAVES
+    [TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_1] =
+    {
+        .trainerClass = TRAINER_CLASS_TZHAAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .trainerPic = TRAINER_PIC_ga_al,
+        .trainerName = _("Ga'al"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TZHAAR_FIGHTCAVES_LOW_GAAL_1),
+    },
+    [TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_2] =
+    {
+        .trainerClass = TRAINER_CLASS_TZHAAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .trainerPic = TRAINER_PIC_ga_al,
+        .trainerName = _("Ga'al"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TZHAAR_FIGHTCAVES_LOW_GAAL_2),
+    },
+    [TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_3] =
+    {
+        .trainerClass = TRAINER_CLASS_TZHAAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .trainerPic = TRAINER_PIC_ga_al,
+        .trainerName = _("Ga'al"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TZHAAR_FIGHTCAVES_LOW_GAAL_3),
+    },
+    [TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_1] =
+    {
+        .trainerClass = TRAINER_CLASS_TZHAAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .trainerPic = TRAINER_PIC_tzhaar_ket,
+        .trainerName = _("Tzhaar-Ket"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TZHAAR_FIGHTCAVES_LOW_KET_1),
+    },
+    [TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_2] =
+    {
+        .trainerClass = TRAINER_CLASS_TZHAAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .trainerPic = TRAINER_PIC_tzhaar_ket,
+        .trainerName = _("Tzhaar-Ket"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TZHAAR_FIGHTCAVES_LOW_KET_2),
+    },
+    [TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_3] =
+    {
+        .trainerClass = TRAINER_CLASS_TZHAAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .trainerPic = TRAINER_PIC_tzhaar_ket,
+        .trainerName = _("Tzhaar-Ket"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TZHAAR_FIGHTCAVES_LOW_KET_3),
+    },
 
     
 
