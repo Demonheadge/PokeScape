@@ -2831,7 +2831,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_POKESCAPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
-        .trainerPic = TRAINER_PIC_SoffanQuo,
+        .trainerPic = TRAINER_PIC_woodcutter,
         .trainerName = _("CUPHOLDER"),
         .items = {},
         .doubleBattle = FALSE,
@@ -2843,7 +2843,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_POKESCAPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
-        .trainerPic = TRAINER_PIC_SoffanQuo,
+        .trainerPic = TRAINER_PIC_dwarf_m,
         .trainerName = _("CUPHOLDER"),
         .items = {},
         .doubleBattle = FALSE,
@@ -2941,7 +2941,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_POKESCAPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
-        .trainerPic = TRAINER_PIC_SoffanQuo,
+        .trainerPic = TRAINER_PIC_runecrafter,
         .trainerName = _("CUPHOLDER"),
         .items = {},
         .doubleBattle = FALSE,

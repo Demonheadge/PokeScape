@@ -138,3 +138,29 @@ script BATTLE_ROUTE39_TRAINER_8
     release
 	end
 }
+
+//NPCS
+
+script NPC_Route39_1
+{
+	lock
+	faceplayer
+    namebox ("Pirate")
+	msgbox(format("Yarr, there was a brawl at the Dead Man's Chest.\pWe've had to close off Brimhaven to all outsiders until we've cleaned up the bodi-\puh, I mean mess!"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_Route39_2
+{
+	lock
+	faceplayer
+    namebox ("Pirate")
+	msgbox(format("Some silly landlubber came through and ordered a glass of the Supergrog..\pPicked a fight with one of the patrons, then started going crazy lashing out at anyone nearby!\pHe claimed the grog gave him double vision and couldn't see who he was attacking..\pWe've had to put a stop on other outsiders coming in for the time being."))
+    closemessage
+    hidenamebox
+	release
+	end
+}

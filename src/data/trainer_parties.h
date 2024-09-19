@@ -705,31 +705,31 @@ static const struct TrainerMon sParty_MITHRILMAN10[] = {
 static const struct TrainerMon sParty_KaramjaVolcano_HAM_ADMIN_PATTY[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 35,
     .species = SPECIES_SNAKE_NORMAL_FORM,
     .heldItem = ITEM_NONE
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 35,
     .species = SPECIES_SPIDER_DEADLYRED_FORM,
     .heldItem = ITEM_NONE
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 36,
     .species = SPECIES_GRENWALL,
     .heldItem = ITEM_NONE
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 38,
     .species = SPECIES_SEAGULL_KOPPENPLOPPEN_FORM,
     .heldItem = ITEM_NONE
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 36,
     .species = SPECIES_SCORPION_POISON_FORM,
     .heldItem = ITEM_NONE
     }
@@ -738,14 +738,14 @@ static const struct TrainerMon sParty_KaramjaVolcano_HAM_ADMIN_PATTY[] = {
 static const struct TrainerMon sParty_KaramjaVolcano_HAM_GRUNT_1[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 31,
     .species = SPECIES_PIG,
     .heldItem = ITEM_NONE
     //.moves = {MOVE_TOXIC, MOVE_AERIAL_ACE, MOVE_SPIKES, MOVE_STEEL_WING}
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 31,
     .species = SPECIES_SPIDER_JUNGLE_FORM,
     .heldItem = ITEM_NONE
     }
@@ -754,19 +754,19 @@ static const struct TrainerMon sParty_KaramjaVolcano_HAM_GRUNT_1[] = {
 static const struct TrainerMon sParty_KaramjaVolcano_HAM_GRUNT_2[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 30,
     .species = SPECIES_RAT_HELL_FORM,
     .heldItem = ITEM_NONE
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 30,
     .species = SPECIES_SPIDER_GIANT_FORM,
     .heldItem = ITEM_NONE
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 30,
     .species = SPECIES_CHICKEN_DIVING_FORM,
     .heldItem = ITEM_NONE
     }
@@ -775,19 +775,19 @@ static const struct TrainerMon sParty_KaramjaVolcano_HAM_GRUNT_2[] = {
 static const struct TrainerMon sParty_KaramjaVolcano_HAM_GRUNT_3[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 31,
     .species = SPECIES_CAT_OVERGROWN_FORM,
     .heldItem = ITEM_NONE
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 31,
     .species = SPECIES_PIG,
     .heldItem = ITEM_NONE
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 31,
     .species = SPECIES_BROAV,
     .heldItem = ITEM_NONE
     }
@@ -796,13 +796,13 @@ static const struct TrainerMon sParty_KaramjaVolcano_HAM_GRUNT_3[] = {
 static const struct TrainerMon sParty_KaramjaVolcano_HAM_GRUNT_4[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 32,
     .species = SPECIES_GIANT_RAT_CRYPT_FORM,
     .heldItem = ITEM_NONE
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 32,
     .species = SPECIES_GIANT_FROG_NORMAL_FORM,
     .heldItem = ITEM_NONE
     }
@@ -811,13 +811,13 @@ static const struct TrainerMon sParty_KaramjaVolcano_HAM_GRUNT_4[] = {
 static const struct TrainerMon sParty_KaramjaVolcano_HAM_GRUNT_5[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 32,
     .species = SPECIES_TURKEY_FEMALE_FORM,
     .heldItem = ITEM_NONE
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 33,
     .species = SPECIES_CHICKEN_KARAMJA_FORM,
     .heldItem = ITEM_NONE
     }
@@ -826,19 +826,19 @@ static const struct TrainerMon sParty_KaramjaVolcano_HAM_GRUNT_5[] = {
 static const struct TrainerMon sParty_KaramjaVolcano_HAM_GRUNT_6[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 32,
     .species = SPECIES_SPIDER_JUNGLE_FORM,
     .heldItem = ITEM_NONE
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 32,
     .species = SPECIES_SPIDER_HUGE_FORM,
     .heldItem = ITEM_NONE
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 32,
     .species = SPECIES_SPIDER_GIANT_FORM,
     .heldItem = ITEM_NONE
     }
@@ -848,13 +848,13 @@ static const struct TrainerMon sParty_KaramjaVolcano_HAM_GRUNT_6[] = {
 static const struct TrainerMon sParty_KaramjaVolcano_SKELETON_1[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 33,
     .species = SPECIES_MONKEY_ZOMBIE_FORM,
     .heldItem = ITEM_NONE
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 5,
+    .lvl = 33,
     .species = SPECIES_HAND_CRAWLING_FORM,
     .heldItem = ITEM_NONE
     }
@@ -2556,18 +2556,18 @@ static const struct TrainerMon sParty_ROUTE23_TRAINER_3[] = {
 static const struct TrainerMon sParty_ROUTE23_TRAINER_4[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 1,
-    .species = SPECIES_FROGEEL,
+    .lvl = 34,
+    .species = SPECIES_VULTURE,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 1,
-    .species = SPECIES_FROGEEL,
+    .lvl = 34,
+    .species = SPECIES_BULL,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 1,
-    .species = SPECIES_FROGEEL,
+    .lvl = 35,
+    .species = SPECIES_ANGRY_RAT,
     }
 };
 
@@ -3894,8 +3894,8 @@ static const struct TrainerMon sParty_ROUTE25_TRAINER_1[] = {
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 17,
-    .species = SPECIES_ZAMBIRD,
+    .lvl = 37,
+    .species = SPECIES_ZAMOHAWK,
     },
 };
 static const struct TrainerMon sParty_ROUTE25_TRAINER_2[] = {
@@ -6128,17 +6128,17 @@ static const struct TrainerMon sParty_MELZARS_3F_TRAINER_3[] = {
 static const struct TrainerMon sParty_CRANDOR_SKELETON_1[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 13,
+    .lvl = 28,
     .species = SPECIES_HAND_SKELETAL_FORM,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 14,
+    .lvl = 28,
     .species = SPECIES_MONKEY_ZOMBIE_FORM,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 14,
+    .lvl = 28,
     .species = SPECIES_HAND_SKELETAL_FORM,
     }
 };
@@ -6146,12 +6146,12 @@ static const struct TrainerMon sParty_CRANDOR_SKELETON_1[] = {
 static const struct TrainerMon sParty_CRANDOR_SKELETON_2[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 14,
+    .lvl = 29,
     .species = SPECIES_MONKEY_GHOST_FORM,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 14,
+    .lvl = 29,
     .species = SPECIES_HAND_SKELETAL_FORM,
     }
 };
@@ -6159,17 +6159,17 @@ static const struct TrainerMon sParty_CRANDOR_SKELETON_2[] = {
 static const struct TrainerMon sParty_CRANDOR_SKELETON_3[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 13,
+    .lvl = 28,
     .species = SPECIES_MONKEY_ZOMBIE_FORM,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 14,
+    .lvl = 28,
     .species = SPECIES_HAND_SKELETAL_FORM,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 14,
+    .lvl = 28,
     .species = SPECIES_MONKEY_GHOST_FORM,
     }
 };
@@ -6177,12 +6177,12 @@ static const struct TrainerMon sParty_CRANDOR_SKELETON_3[] = {
 static const struct TrainerMon sParty_CRANDOR_MOSS_GIANT_1[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 13,
+    .lvl = 29,
     .species = SPECIES_CRAB_MOSS_FORM,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 14,
+    .lvl = 30,
     .species = SPECIES_CRAB_MOSS_FORM,
     }
 };
@@ -6190,7 +6190,7 @@ static const struct TrainerMon sParty_CRANDOR_MOSS_GIANT_1[] = {
 static const struct TrainerMon sParty_CRANDOR_MOSS_GIANT_2[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 13,
+    .lvl = 32,
     .species = SPECIES_GIANT_CRAB_MOSS_FORM,
     }
 };
@@ -6198,17 +6198,17 @@ static const struct TrainerMon sParty_CRANDOR_MOSS_GIANT_2[] = {
 static const struct TrainerMon sParty_CRANDOR_MOSS_GIANT_3[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 13,
+    .lvl = 28,
     .species = SPECIES_MONKEY_KARAMJA_ADULT_FORM,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 14,
+    .lvl = 28,
     .species = SPECIES_CRAB_MOSS_FORM,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 14,
+    .lvl = 29,
     .species = SPECIES_GIANT_CRAB_MOSS_FORM,
     }
 };
@@ -6317,12 +6317,12 @@ static const struct TrainerMon sParty_ROUTE_31_TRAINER_7[] = {
 static const struct TrainerMon sParty_ROUTE26_TRAINER_1[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 13,
+    .lvl = 37,
     .species = SPECIES_PET_ROCK,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 14,
+    .lvl = 37,
     .species = SPECIES_SPOOKAXE,
     }
 };
@@ -6330,12 +6330,12 @@ static const struct TrainerMon sParty_ROUTE26_TRAINER_1[] = {
 static const struct TrainerMon sParty_ROUTE26_TRAINER_2[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 13,
+    .lvl = 37,
     .species = SPECIES_ROCK_POLISHED_FORM,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 14,
+    .lvl = 38,
     .species = SPECIES_ROCK_GOLDEN_FORM,
     }
 };
@@ -6343,17 +6343,17 @@ static const struct TrainerMon sParty_ROUTE26_TRAINER_2[] = {
 static const struct TrainerMon sParty_ROUTE26_TRAINER_3[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 13,
+    .lvl = 36,
     .species = SPECIES_ROOSTER_VARROCK_FORM,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 14,
+    .lvl = 37,
     .species = SPECIES_SUPER_COW,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 14,
+    .lvl = 38,
     .species = SPECIES_GIANT_RAT_HELL_FORM,
     }
 };
@@ -6361,12 +6361,12 @@ static const struct TrainerMon sParty_ROUTE26_TRAINER_3[] = {
 static const struct TrainerMon sParty_ROUTE26_TRAINER_4[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 13,
+    .lvl = 37,
     .species = SPECIES_YAK_PACK_FORM,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 14,
+    .lvl = 38,
     .species = SPECIES_GOLEM_TITAN,
     }
 };
@@ -7129,19 +7129,19 @@ static const struct TrainerMon sParty_MUDSKIPPER_MUGGER[] = {
 static const struct TrainerMon sParty_CRANDOR_HAM_ADMIN_BABE[] = {
     {
     .ability = ABILITY_GOOSEBUMPS,
-    .lvl = 30,
+    .lvl = 33,
     .species = SPECIES_SPIDER_SHADOW_FORM,
     .moves = {MOVE_STICKY_WEB, MOVE_SPIKES, MOVE_SHADOW_SNEAK, MOVE_LEECH_LIFE}
     },
     {
     .ability = ABILITY_SAP_SIPPER,
-    .lvl = 30,
+    .lvl = 35,
     .species = SPECIES_COW_STRAWBERRY_FORM,
     .moves = {MOVE_MILK_DRINK, MOVE_SEED_BOMB, MOVE_MUD_SLAP, MOVE_LEECH_SEED}
     },
     {
     .ability = ABILITY_GALE_WINGS,
-    .lvl = 30,
+    .lvl = 36,
     .species = SPECIES_PIGGLES,
     .moves = {MOVE_TAILWIND, MOVE_SLACK_OFF, MOVE_STEEL_WING, MOVE_MUD_SLAP}
     }
@@ -7149,19 +7149,19 @@ static const struct TrainerMon sParty_CRANDOR_HAM_ADMIN_BABE[] = {
 static const struct TrainerMon sParty_CRANDOR_HAM_ADMIN_PATTY[] = {
     {
     .ability = ABILITY_COMPOUND_EYES,
-    .lvl = 30,
+    .lvl = 33,
     .species = SPECIES_SPIDER_BLESSED_FORM,
     .moves = {MOVE_DISCHARGE, MOVE_ENERGY_BALL, MOVE_DRAINING_KISS, MOVE_POLLEN_PUFF}
     },
     {
     .ability = ABILITY_THICK_FAT,
-    .lvl = 30,
+    .lvl = 35,
     .species = SPECIES_COW_CHOCOLATE_FORM,
     .moves = {MOVE_RAPID_SPIN, MOVE_PLAY_ROUGH, MOVE_BODY_SLAM, MOVE_CAPTIVATE}
     },
     {
     .ability = ABILITY_THICK_FAT,
-    .lvl = 30,
+    .lvl = 36,
     .species = SPECIES_PIG_SUMMONING_FORM,
     .moves = {MOVE_EARTHQUAKE, MOVE_BULK_UP, MOVE_PLAY_ROUGH, MOVE_REVENGE}
     }

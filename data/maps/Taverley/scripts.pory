@@ -157,3 +157,25 @@ script TAVERLEY_DRUID_3
     release
     end
 }
+
+script TAVERLEY_DRUID_BLOCK {
+	lock
+	faceplayer
+    namebox ("Druid")
+	msgbox(format("The other druids are engaged in a ritual to summon creatures to help fight off the troll invaders.\pThey are not to be disturbed!"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script TAVERLEY_GUARD_BLOCK {
+	lock
+	faceplayer
+    namebox ("Guard")
+	msgbox(format("The Burthorpe Imperial Guard are currently fending off invading trolls!\pI'm sorry adventurer, but it's not currently safe for anyone to go beyond this point!"))
+    closemessage
+    hidenamebox
+	release
+	end
+}

@@ -131,6 +131,28 @@ TAVERLEY_DRUID_3::
 	end
 
 
+TAVERLEY_DRUID_BLOCK::
+	lock
+	faceplayer
+	namebox TAVERLEY_DRUID_BLOCK_Text_0
+	msgbox TAVERLEY_DRUID_BLOCK_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+TAVERLEY_GUARD_BLOCK::
+	lock
+	faceplayer
+	namebox TAVERLEY_GUARD_BLOCK_Text_0
+	msgbox TAVERLEY_GUARD_BLOCK_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 TAVERLEY_SIGN_Text_0:
 	.string "Welcome to Taverley.\p"
 	.string "Home of the Druids and the secrets of\n"
@@ -234,3 +256,22 @@ TAVERLEY_DRUID_3_Text_0:
 	.string "Deliciousness be with you.\p"
 	.string "Oh, you don't know what I'm talking\n"
 	.string "about..$"
+
+TAVERLEY_DRUID_BLOCK_Text_0:
+	.string "Druid$"
+
+TAVERLEY_DRUID_BLOCK_Text_1:
+	.string "The other druids are engaged in a ritual\n"
+	.string "to summon creatures to help fight off\l"
+	.string "the troll invaders.\p"
+	.string "They are not to be disturbed!$"
+
+TAVERLEY_GUARD_BLOCK_Text_0:
+	.string "Guard$"
+
+TAVERLEY_GUARD_BLOCK_Text_1:
+	.string "The Burthorpe Imperial Guard are\n"
+	.string "currently fending off invading trolls!\p"
+	.string "I'm sorry adventurer, but it's not\n"
+	.string "currently safe for anyone to go beyond\l"
+	.string "this point!$"

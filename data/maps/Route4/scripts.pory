@@ -82,10 +82,10 @@ script Route4Sign{
 
 script TryMoveDaycareMan{
     if (flag(FLAG_PENDING_DAYCARE_EGG)){
-        setobjectxyperm(1,19,17)
+        setobjectxyperm(1,19,23)
     }
     else{
-        setobjectxyperm(1,19,16)
+        setobjectxyperm(1,19,22)
     }
 }
 
