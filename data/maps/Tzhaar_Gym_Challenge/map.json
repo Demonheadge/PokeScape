@@ -143,6 +143,71 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ENEMY_CHAMPION_A",
       "flag": "FLAG_TEMP_A"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RAC_BONBUN",
+      "x": 11,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ENEMY_KETDILL_B",
+      "flag": "FLAG_TEMP_B"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RAC_BONBUN",
+      "x": 13,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ENEMY_TOKXIL_C",
+      "flag": "FLAG_TEMP_C"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RAC_BONBUN",
+      "x": 17,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ENEMY_YTHURKOT_D",
+      "flag": "FLAG_TEMP_D"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RAC_BONBUN",
+      "x": 19,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ENEMY_YTHURKOT_E",
+      "flag": "FLAG_TEMP_E"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TZTOK_JAD",
+      "x": 18,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ENEMY_TZREKJAD_F",
+      "flag": "FLAG_TEMP_F"
     }
   ],
   "warp_events": [

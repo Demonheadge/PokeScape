@@ -237,7 +237,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TZHAAR_3",
-      "x": 38,
+      "x": 39,
       "y": 3,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -382,7 +382,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 71,
+      "x": 70,
       "y": 4,
       "elevation": 0,
       "dest_map": "MAP_TZHAAR_1F",
@@ -403,8 +403,8 @@
       "dest_warp_id": "1"
     },
     {
-      "x": 70,
-      "y": 30,
+      "x": 10,
+      "y": 15,
       "elevation": 0,
       "dest_map": "MAP_TZHAAR_CAVES_1",
       "dest_warp_id": "0"
