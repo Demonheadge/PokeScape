@@ -16174,6 +16174,36 @@
               }
             ]
           },
+          "water_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_HERRING"
+              },
+              {
+                "min_level": 32,
+                "max_level": 37,
+                "species": "SPECIES_SARDINE"
+              },
+              {
+                "min_level": 33,
+                "max_level": 38,
+                "species": "SPECIES_MACKEREL"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_BASS"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_BELTFISH"
+              }
+            ]
+          },
           "fishing_mons": {
             "encounter_rate": 180,
             "mons": [
@@ -16256,36 +16286,6 @@
                 "min_level": 19,
                 "max_level": 30,
                 "species": "SPECIES_ROCK_CRAB_AMMONITE_FORM"
-              }
-            ]
-          },
-          "water_mons": {
-            "encounter_rate": 20,
-            "mons": [
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_HERRING"
-              },
-              {
-                "min_level": 32,
-                "max_level": 37,
-                "species": "SPECIES_SARDINE"
-              },
-              {
-                "min_level": 33,
-                "max_level": 38,
-                "species": "SPECIES_MACKEREL"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_BASS"
-              },
-              {
-                "min_level": 37,
-                "max_level": 40,
-                "species": "SPECIES_BELTFISH"
               }
             ]
           }
@@ -19979,6 +19979,36 @@
               }
             ]
           },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_SHRIMP"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_HERRING"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_LOBSTER_NORMAL_FORM"
+              },
+              {
+                "min_level": 38,
+                "max_level": 40,
+                "species": "SPECIES_SWORDFISH"
+              },
+              {
+                "min_level": 39,
+                "max_level": 40,
+                "species": "SPECIES_SHARK_NORMAL_FORM"
+              }
+            ]
+          },
           "fishing_mons": {
             "encounter_rate": 30,
             "mons": [
@@ -20031,36 +20061,6 @@
                 "min_level": 39,
                 "max_level": 40,
                 "species": "SPECIES_SHARK_GOLDEN_FORM"
-              }
-            ]
-          },
-          "water_mons": {
-            "encounter_rate": 4,
-            "mons": [
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_SHRIMP"
-              },
-              {
-                "min_level": 35,
-                "max_level": 40,
-                "species": "SPECIES_HERRING"
-              },
-              {
-                "min_level": 37,
-                "max_level": 40,
-                "species": "SPECIES_LOBSTER_NORMAL_FORM"
-              },
-              {
-                "min_level": 38,
-                "max_level": 40,
-                "species": "SPECIES_SWORDFISH"
-              },
-              {
-                "min_level": 39,
-                "max_level": 40,
-                "species": "SPECIES_SHARK_NORMAL_FORM"
               }
             ]
           }
@@ -24480,6 +24480,36 @@
               }
             ]
           },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 35,
+                "max_level": 42,
+                "species": "SPECIES_CRAYFISH"
+              },
+              {
+                "min_level": 36,
+                "max_level": 42,
+                "species": "SPECIES_ANCHOVY"
+              },
+              {
+                "min_level": 38,
+                "max_level": 43,
+                "species": "SPECIES_STURGEON"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_SALMON_LEAPING_FORM"
+              },
+              {
+                "min_level": 42,
+                "max_level": 45,
+                "species": "SPECIES_SHARK_NORMAL_FORM"
+              }
+            ]
+          },
           "fishing_mons": {
             "encounter_rate": 100,
             "mons": [
@@ -24532,36 +24562,6 @@
                 "min_level": 45,
                 "max_level": 47,
                 "species": "SPECIES_TROUT_TROPICAL_FORM"
-              }
-            ]
-          },
-          "water_mons": {
-            "encounter_rate": 4,
-            "mons": [
-              {
-                "min_level": 35,
-                "max_level": 42,
-                "species": "SPECIES_CRAYFISH"
-              },
-              {
-                "min_level": 36,
-                "max_level": 42,
-                "species": "SPECIES_ANCHOVY"
-              },
-              {
-                "min_level": 38,
-                "max_level": 43,
-                "species": "SPECIES_STURGEON"
-              },
-              {
-                "min_level": 40,
-                "max_level": 45,
-                "species": "SPECIES_SALMON_LEAPING_FORM"
-              },
-              {
-                "min_level": 42,
-                "max_level": 45,
-                "species": "SPECIES_SHARK_NORMAL_FORM"
               }
             ]
           }
