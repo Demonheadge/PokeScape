@@ -23,12 +23,10 @@ mapscripts Falador_MapScripts {
 		if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
 		{
 			call(FALADOR_QUEST_STATE)
-			call(HIDDEN_GROTTO_RESET)
 		}
 		else 
 		{
 			call(OPENWORLD_STATE_FALADOR)
-			call(HIDDEN_GROTTO_RESET)
 		}
 
     }

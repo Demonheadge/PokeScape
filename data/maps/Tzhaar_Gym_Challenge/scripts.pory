@@ -293,14 +293,27 @@ script ENCOUNTER_TZ_KIH {
     hidenamebox
 	closemessage
 	delay(1)
-    call(WAVE_LEVELS)
-    setwildbattle (SPECIES_TZ_KIH, VAR_TEMP_B, ITEM_FIRECAPE)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    if (var(VAR_RESULT) == MAP_TZHAAR_CAVES_5) {
+        setwildbattle (SPECIES_TZ_KIH, 30, ITEM_NONE)
+    }
+    else { // if fightcaves
+        call(WAVE_LEVELS)
+        setwildbattle (SPECIES_TZ_KIH, VAR_TEMP_B, ITEM_FIRECAPE) 
+    }
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
-            return
         case B_OUTCOME_CAUGHT:
-            return
+            specialvar (VAR_RESULT, GetCurrentMap)
+            if (var(VAR_RESULT) == MAP_TZHAAR_CAVES_5) {
+                fadescreen(FADE_TO_BLACK)
+                removeobject (VAR_LAST_TALKED)
+                fadescreen(FADE_FROM_BLACK)
+                release
+                end
+            }
+            return // if fightcaves
     }
     release
 	end
@@ -315,14 +328,27 @@ script ENCOUNTER_TZ_KEK {
     hidenamebox
 	closemessage
 	delay(1)
-    call(WAVE_LEVELS)
-    setwildbattle (SPECIES_TZ_KEK, VAR_TEMP_B, ITEM_FIRECAPE) 
+    specialvar (VAR_RESULT, GetCurrentMap)
+    if (var(VAR_RESULT) == MAP_TZHAAR_CAVES_5) {
+        setwildbattle (SPECIES_TZ_KEK, 30, ITEM_NONE)
+    }
+    else { // if fightcaves
+        call(WAVE_LEVELS)
+        setwildbattle (SPECIES_TZ_KEK, VAR_TEMP_B, ITEM_FIRECAPE) 
+    }
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
-            return
         case B_OUTCOME_CAUGHT:
-            return
+            specialvar (VAR_RESULT, GetCurrentMap)
+            if (var(VAR_RESULT) == MAP_TZHAAR_CAVES_5) {
+                fadescreen(FADE_TO_BLACK)
+                removeobject (VAR_LAST_TALKED)
+                fadescreen(FADE_FROM_BLACK)
+                release
+                end
+            }
+            return // if fightcaves
     }
     release
 	end
@@ -337,14 +363,28 @@ script ENCOUNTER_KET_DILL {
     hidenamebox
 	closemessage
 	delay(1)
-    call(WAVE_LEVELS)
-    setwildbattle (SPECIES_KET_DILL, VAR_TEMP_B, ITEM_FIRECAPE) 
+
+    specialvar (VAR_RESULT, GetCurrentMap)
+    if (var(VAR_RESULT) == MAP_TZHAAR_CAVES_5) {
+        setwildbattle (SPECIES_KET_DILL, 30, ITEM_NONE)
+    }
+    else { // if fightcaves
+        call(WAVE_LEVELS)
+        setwildbattle (SPECIES_KET_DILL, VAR_TEMP_B, ITEM_FIRECAPE) 
+    }
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
-            return
         case B_OUTCOME_CAUGHT:
-            return
+            specialvar (VAR_RESULT, GetCurrentMap)
+            if (var(VAR_RESULT) == MAP_TZHAAR_CAVES_5) {
+                fadescreen(FADE_TO_BLACK)
+                removeobject (VAR_LAST_TALKED)
+                fadescreen(FADE_FROM_BLACK)
+                release
+                end
+            }
+            return // if fightcaves
     }
     release
 	end
@@ -944,6 +984,7 @@ script GYMLEADER_TZHAAR_CHAMPION {
     msgbox(format("That move is called Power Gem.\pIt sparkles just as all our precious Gems around the palace do."))
     setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 30)
     setflag(FLAG_BADGE03_GET)
+    call(HIDDEN_GROTTO_RESET)
     addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
     msgbox(format("Now let us return outside."))
     call(FIGHT_CAVES_FINISHED)

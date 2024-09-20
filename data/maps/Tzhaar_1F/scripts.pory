@@ -270,6 +270,16 @@ script TZHAAR_NPC_BANKER
     end
 }
 
+script TZHAAR_NPC_13
+{
+    faceplayer
+    namebox ("Tzhaar-Ket")
+    msgbox(format("JalYt, beyond here the tunnels are unstable and our kind may attack you.\pProceed at your own risk."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
 
 
 

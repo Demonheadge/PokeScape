@@ -19,7 +19,7 @@ Trainer4_MillLaneMill_Battle::
 
 
 Trainer3_MillLaneMill_Battle_Text_0:
-	.string "It seems its time for you to face the\n"
+	.string "It seems it's time for you to face the\n"
 	.string "second strongest of the mill three!$"
 
 Trainer3_MillLaneMill_Battle_Text_1:

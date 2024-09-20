@@ -166,7 +166,7 @@ script LUMBRIDGE_GYM_GUARD_1 {
     namebox("Guard")
     switch (var(VAR_POKESCAPE_LUMBRIDGE_GYM_QUEST)){ 
 		case 0: 
-            msgbox(format("You're a gym challenger?\pThe Duke he can be found in his room down this hallway."))
+            msgbox(format("You're a gym challenger?\pThe Duke can be found in his room down this hallway."))
             hidenamebox
             closemessage
             release

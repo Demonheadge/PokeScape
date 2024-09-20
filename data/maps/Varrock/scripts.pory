@@ -4,11 +4,9 @@ mapscripts Varrock_MapScripts {
         setvar(VAR_EVOLUTION_MAP_STATE, 16) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
         if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
     	{
-			call(HIDDEN_GROTTO_RESET)
     	}
 		else
 		{
-			call(HIDDEN_GROTTO_RESET)
 		}
     }
 }
@@ -1130,13 +1128,13 @@ script NPC_GOODIEBAG //1 / 28 chance
 	faceplayer
     namebox("NightmareRH")
 	msgbox(format("Hooba, Hubba, Hubba!"))
-	if (flag(FLAG_UNUSED_0x93D) == false) 
+	if (flag(FLAG_GOODIE_BAG) == false) 
 	{
         msgbox(format("Oh my goodness!\nIt's time for a new daily giveaway!"))
 		msgbox(format("Would you like a Goodie from the Goodie bag!?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT))
 			{
-				setflag(FLAG_UNUSED_0x93D)
+				setflag(FLAG_GOODIE_BAG)
 				msgbox(format("Hooba, hooba hoo!\pThis goodie is for hooba you!"))
 				hidenamebox
 				call(GIVE_RANDOM_ITEM_28)

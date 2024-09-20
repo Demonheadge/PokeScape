@@ -218,7 +218,7 @@
 #define FLAG_DECORATION_13                   0xBA
 #define FLAG_DECORATION_14                   0xBB
 #define FLAG_RECEIVED_POKENAV                0xBC
-#define FLAG_DELIVERED_STEVEN_LETTER         0xBD
+#define FLAG_RECIEVED_EX_EX_PARROT           0xBD   
 #define FLAG_DEFEATED_WALLY_MAUVILLE         0xBE
 #define FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F  0xBF
 #define FLAG_RECEIVED_SUN_STONE_MOSSDEEP     0xC0
@@ -1242,14 +1242,14 @@
 #define FLAG_ITEM_CRANDOR_CHOCOLATE_CAKE                            0x4A0 // Unused Flag
 #define FLAG_ITEM_CRANDOR_RUNE_POUCH                                0x4A1 // Unused Flag
 
-#define FLAG_HIDDEN_GROTTO_1                                        0x493 // Unused Flag
-#define FLAG_HIDDEN_GROTTO_2                                        0x494 // Unused Flag
-#define FLAG_HIDDEN_GROTTO_3                                        0x495 // Unused Flag
-#define FLAG_HIDDEN_GROTTO_4                                        0x496 // Unused Flag
-#define FLAG_HIDDEN_GROTTO_5                                        0x497 // Unused Flag
-#define FLAG_HIDDEN_GROTTO_6                                        0x498 // Unused Flag
-#define FLAG_HIDDEN_GROTTO_7                                        0x499 // Unused Flag
-#define FLAG_HIDDEN_GROTTO_8                                        0x49A // Unused Flag
+#define FLAG_UNUSED_1                                        0x493 // Unused Flag
+#define FLAG_UNUSED_2                                        0x494 // Unused Flag
+#define FLAG_UNUSED_3                                        0x495 // Unused Flag
+#define FLAG_UNUSED_4                                        0x496 // Unused Flag
+#define FLAG_UNUSED_5                                        0x497 // Unused Flag
+#define FLAG_UNUSED_6                                        0x498 // Unused Flag
+#define FLAG_UNUSED_7                                        0x499 // Unused Flag
+#define FLAG_UNUSED_8                                        0x49A // Unused Flag
 
 #define FLAG_ITEM_VARROCK_POTIONSTORE                               0x49B // Unused Flag
 #define FLAG_ITEM_VARROCK_CLOTHESSTORE                              0x49C // Unused Flag
@@ -1623,16 +1623,17 @@
 #define FLAG_UNUSED_0x93A                           (DAILY_FLAGS_START + 0x1A) // PUB TRAINER 6
 #define FLAG_UNUSED_0x93B                           (DAILY_FLAGS_START + 0x1B) // PUB TRAINER 7
 #define FLAG_UNUSED_0x93C                           (DAILY_FLAGS_START + 0x1C) // PUB TRAINER 8
-#define FLAG_UNUSED_0x93D                           (DAILY_FLAGS_START + 0x1D) // NIGHTMARERH GOODIE BAG
+#define FLAG_GOODIE_BAG                             (DAILY_FLAGS_START + 0x1D) // NIGHTMARERH GOODIE BAG
 
-#define FLAG_UNUSED_0x93E                           (DAILY_FLAGS_START + 0x1E) // Unused Flag
-#define FLAG_UNUSED_0x93F                           (DAILY_FLAGS_START + 0x1F) // Unused Flag
-#define FLAG_UNUSED_0x940                           (DAILY_FLAGS_START + 0x20) // Unused Flag
-#define FLAG_UNUSED_0x941                           (DAILY_FLAGS_START + 0x21) // Unused Flag
-#define FLAG_UNUSED_0x942                           (DAILY_FLAGS_START + 0x22) // Unused Flag
-#define FLAG_UNUSED_0x943                           (DAILY_FLAGS_START + 0x23) // Unused Flag
-#define FLAG_UNUSED_0x944                           (DAILY_FLAGS_START + 0x24) // Unused Flag
-#define FLAG_UNUSED_0x945                           (DAILY_FLAGS_START + 0x25) // Unused Flag
+#define FLAG_HIDDEN_GROTTO_1                        (DAILY_FLAGS_START + 0x1E) // Unused Flag
+#define FLAG_HIDDEN_GROTTO_2                        (DAILY_FLAGS_START + 0x1F) // Unused Flag
+#define FLAG_HIDDEN_GROTTO_3                        (DAILY_FLAGS_START + 0x20) // Unused Flag
+#define FLAG_HIDDEN_GROTTO_4                        (DAILY_FLAGS_START + 0x21) // Unused Flag
+#define FLAG_HIDDEN_GROTTO_5                        (DAILY_FLAGS_START + 0x22) // Unused Flag
+#define FLAG_HIDDEN_GROTTO_6                        (DAILY_FLAGS_START + 0x23) // Unused Flag
+#define FLAG_HIDDEN_GROTTO_7                        (DAILY_FLAGS_START + 0x24) // Unused Flag
+#define FLAG_HIDDEN_GROTTO_8                        (DAILY_FLAGS_START + 0x25) // Unused Flag
+
 #define FLAG_UNUSED_0x946                           (DAILY_FLAGS_START + 0x26) // Unused Flag
 #define FLAG_UNUSED_0x947                           (DAILY_FLAGS_START + 0x27) // Unused Flag
 #define FLAG_UNUSED_0x948                           (DAILY_FLAGS_START + 0x28) // Unused Flag

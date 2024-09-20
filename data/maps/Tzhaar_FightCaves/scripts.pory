@@ -62,6 +62,7 @@ script NPC_TZHAAR_GYM_TOKHAAR
             msgbox(format("That move is called Power Gem.\pIt sparkles just as all our precious Gems around the palace do."))
             setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 30)
             setflag(FLAG_BADGE05_GET)
+            call(HIDDEN_GROTTO_RESET)
             addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
             //call(SetGymTrainers_TZHAAR)
             }

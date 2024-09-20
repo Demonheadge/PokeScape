@@ -248,6 +248,16 @@ TZHAAR_NPC_BANKER::
 	end
 
 
+TZHAAR_NPC_13::
+	faceplayer
+	namebox TZHAAR_NPC_13_Text_0
+	msgbox TZHAAR_NPC_13_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 TZHAAR_OZAN::
 	faceplayer
 	namebox TZHAAR_OZAN_Text_0
@@ -472,6 +482,14 @@ TZHAAR_NPC_BANKER_Text_0:
 	.string "We are learning new things from this\n"
 	.string "JalYt.\p"
 	.string "What can I help you with today?$"
+
+TZHAAR_NPC_13_Text_0:
+	.string "Tzhaar-Ket$"
+
+TZHAAR_NPC_13_Text_1:
+	.string "JalYt, beyond here the tunnels are\n"
+	.string "unstable and our kind may attack you.\p"
+	.string "Proceed at your own risk.$"
 
 TZHAAR_OZAN_Text_0:
 	.string "Ozan$"

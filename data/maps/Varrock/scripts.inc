@@ -7,11 +7,9 @@ Varrock_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 16
 	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
 	goto_if_eq Varrock_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
-	call HIDDEN_GROTTO_RESET
 	return
 
 Varrock_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
-	call HIDDEN_GROTTO_RESET
 	return
 
 
@@ -929,7 +927,7 @@ NPC_GOODIEBAG::
 	faceplayer
 	namebox NPC_GOODIEBAG_Text_0
 	msgbox NPC_GOODIEBAG_Text_1
-	goto_if_unset FLAG_UNUSED_0x93D, NPC_GOODIEBAG_2
+	goto_if_unset FLAG_GOODIE_BAG, NPC_GOODIEBAG_2
 	msgbox NPC_GOODIEBAG_Text_6
 NPC_GOODIEBAG_1:
 	msgbox NPC_GOODIEBAG_Text_7
@@ -950,7 +948,7 @@ NPC_GOODIEBAG_2:
 	end
 
 NPC_GOODIEBAG_5:
-	setflag FLAG_UNUSED_0x93D
+	setflag FLAG_GOODIE_BAG
 	msgbox NPC_GOODIEBAG_Text_4
 	hidenamebox
 	call GIVE_RANDOM_ITEM_28

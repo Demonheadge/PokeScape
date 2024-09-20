@@ -284,6 +284,7 @@ script EDGEVILLE_GYM_BATTLE_VANNAKA {
         msgbox(format("That move is called Power Gem.\pIt sparkles just as all our precious Gems around the palace do."))
         setvar(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST, 25)
         setflag(FLAG_BADGE07_GET)
+		call(HIDDEN_GROTTO_RESET)
         addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
         //call(SetGymTrainers_EDGEVILLE)
 

@@ -118,7 +118,6 @@ MOVEMENT_ROUTE6_UNICORN:
 
 BATTLE_ROUTE6_FIREMAKER::
 	trainerbattle_single TRAINER_ROUTE6_FIREMAKER, BATTLE_ROUTE6_FIREMAKER_Text_0, BATTLE_ROUTE6_FIREMAKER_Text_1
-	namebox BATTLE_ROUTE6_FIREMAKER_Text_2
 	msgbox BATTLE_ROUTE6_FIREMAKER_Text_1
 	release
 	return
@@ -126,8 +125,7 @@ BATTLE_ROUTE6_FIREMAKER::
 
 BATTLE_ROUTE6_MUGGER::
 	trainerbattle_single TRAINER_MUGGER_ROUTE6, BATTLE_ROUTE6_MUGGER_Text_0, BATTLE_ROUTE6_MUGGER_Text_1
-	namebox BATTLE_ROUTE6_MUGGER_Text_2
-	msgbox BATTLE_ROUTE6_MUGGER_Text_3
+	msgbox BATTLE_ROUTE6_MUGGER_Text_2
 	hidenamebox
 	release
 	end
@@ -150,7 +148,7 @@ ROUTE6_NPC_GUARD_HAM_Text_1:
 	.string "current H.A.M activity in Rimmington.\p"
 	.string "We wish to send some White Knights to\n"
 	.string "go investigate but they are currently\l"
-	.string "busy with some distrubances within the\l"
+	.string "busy with some disturbances within the\l"
 	.string "Dwarven Mines.$"
 
 ROUTE6_BLOCK_FaladorGuard_Text_0:
@@ -184,9 +182,6 @@ BATTLE_ROUTE6_FIREMAKER_Text_1:
 	.string "Burned to a crisp.\p"
 	.string "I hope you levelled up…$"
 
-BATTLE_ROUTE6_FIREMAKER_Text_2:
-	.string "ASH$"
-
 BATTLE_ROUTE6_MUGGER_Text_0:
 	.string "Your money or your life!$"
 
@@ -194,9 +189,6 @@ BATTLE_ROUTE6_MUGGER_Text_1:
 	.string "Okay I guess you can keep both…$"
 
 BATTLE_ROUTE6_MUGGER_Text_2:
-	.string "LEO$"
-
-BATTLE_ROUTE6_MUGGER_Text_3:
 	.string "Shoo you're making it hard for me to mug\n"
 	.string "people.$"
 

@@ -80,11 +80,11 @@ Route4Sign::
 
 TryMoveDaycareMan::
 	goto_if_set FLAG_PENDING_DAYCARE_EGG, TryMoveDaycareMan_1
-	setobjectxyperm 1, 19, 16
+	setobjectxyperm 1, 19, 22
 	return
 
 TryMoveDaycareMan_1:
-	setobjectxyperm 1, 19, 17
+	setobjectxyperm 1, 19, 23
 	return
 
 

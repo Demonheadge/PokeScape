@@ -3,7 +3,7 @@ mapscripts Mill_Lane_Mill_2_MapScripts {
 }
 
 script Trainer3_MillLaneMill_Battle{
-    trainerbattle_single(TRAINER_TRAINER3_MILLLANEMILL, format("It seems its time for you to face the second strongest of the mill three!"),format("One day I aim to be the strongest of the mill three."))
+    trainerbattle_single(TRAINER_TRAINER3_MILLLANEMILL, format("It seems it's time for you to face the second strongest of the mill three!"),format("One day I aim to be the strongest of the mill three."))
     //namebox ("CASSIDY")
     msgbox(format("One day I aim to be the strongest of the mill three."))
     hidenamebox

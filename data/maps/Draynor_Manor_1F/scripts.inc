@@ -20,32 +20,43 @@ Draynor_Manor_1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 
 
 STORYMODE_STATE_DRAYNORMANOR_1F::
-	checkfollower
+	checkitem ITEM_FISH_FOOD, 1
 	compare VAR_RESULT, 0
 	goto_if_ne STORYMODE_STATE_DRAYNORMANOR_1F_2
+STORYMODE_STATE_DRAYNORMANOR_1F_1:
+	checkfollower
+	compare VAR_RESULT, 0
+	goto_if_ne STORYMODE_STATE_DRAYNORMANOR_1F_5
 	removeobject 17
 	setflag FLAG_TEMP_1F
-STORYMODE_STATE_DRAYNORMANOR_1F_1:
+STORYMODE_STATE_DRAYNORMANOR_1F_4:
 	switch VAR_POKESCAPE_WIZARDS_TOWER_STATE
-	case 8, STORYMODE_STATE_DRAYNORMANOR_1F_7
-STORYMODE_STATE_DRAYNORMANOR_1F_5:
+	case 8, STORYMODE_STATE_DRAYNORMANOR_1F_10
+STORYMODE_STATE_DRAYNORMANOR_1F_8:
 	return
 
 STORYMODE_STATE_DRAYNORMANOR_1F_2:
-	setvar VAR_TEMP_A, 1
+	setmetatile 9, 10, METATILE_PokeScapeIndoors_CUPBOARD_SPARKLE, 1
+	setmetatile 12, 2, METATILE_PokeScapeIndoors_CUPBOARD_SPARKLE, 1
+	setmetatile 13, 2, METATILE_PokeScapeIndoors_CUPBOARD_SPARKLE, 1
+	special DrawWholeMapView
 	goto STORYMODE_STATE_DRAYNORMANOR_1F_1
 
-STORYMODE_STATE_DRAYNORMANOR_1F_7:
+STORYMODE_STATE_DRAYNORMANOR_1F_5:
+	setvar VAR_TEMP_A, 1
+	goto STORYMODE_STATE_DRAYNORMANOR_1F_4
+
+STORYMODE_STATE_DRAYNORMANOR_1F_10:
 	checkfollower
 	compare VAR_RESULT, 0
-	goto_if_eq STORYMODE_STATE_DRAYNORMANOR_1F_8
-	goto STORYMODE_STATE_DRAYNORMANOR_1F_5
+	goto_if_eq STORYMODE_STATE_DRAYNORMANOR_1F_11
+	goto STORYMODE_STATE_DRAYNORMANOR_1F_8
 
-STORYMODE_STATE_DRAYNORMANOR_1F_8:
+STORYMODE_STATE_DRAYNORMANOR_1F_11:
 	addobject 17
 	clearflag FLAG_TEMP_1F
 	setvar VAR_TEMP_B, 1
-	goto STORYMODE_STATE_DRAYNORMANOR_1F_5
+	goto STORYMODE_STATE_DRAYNORMANOR_1F_8
 
 
 HAM_EVENT_DRAYNORMANOR_1F::
@@ -430,6 +441,9 @@ DraynorManor_Lever_STATE::
 	return
 
 DraynorManor_Lever_STATE_2:
+	setmetatile 6, 15, METATILE_DraynorManor_BASEMENT_LEVER_UP_1, 1
+	setmetatile 6, 16, METATILE_DraynorManor_BASEMENT_LEVER_UP_2, 1
+	setmetatile 9, 16, METATILE_PokeScapeIndoors_BOOKCASE_SPARKLE, 1
 	setmetatile 7, 17, 602, 1
 	setmetatile 7, 18, 602, 1
 	setmetatile 7, 19, 602, 1
@@ -444,6 +458,9 @@ DraynorManor_Lever_STATE_2:
 	return
 
 DraynorManor_Lever_STATE_3:
+	setmetatile 9, 16, METATILE_PokeScapeIndoors_BOOKCASE_INTERACT_L, 1
+	setmetatile 6, 15, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_1, 1
+	setmetatile 6, 16, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_2, 1
 	setmetatile 7, 17, 570, 1
 	setmetatile 7, 18, 578, 1
 	setmetatile 7, 19, 586, 1
@@ -467,36 +484,18 @@ SIGN_DRAYNORMANOR_LEVER_1::
 SIGN_DRAYNORMANOR_LEVER_1_2:
 	lock
 	msgbox SIGN_DRAYNORMANOR_LEVER_1_Text_0
-	setmetatile 7, 17, 570, 1
-	setmetatile 7, 18, 578, 1
-	setmetatile 7, 19, 586, 1
-	setmetatile 7, 20, 516, 0
-	setmetatile 7, 21, 594, 1
-	setmetatile 8, 17, 572, 1
-	setmetatile 8, 18, 580, 1
-	setmetatile 8, 19, 588, 1
-	setmetatile 8, 20, 516, 0
-	setmetatile 8, 21, 596, 1
-	special DrawWholeMapView
+	playse SE_TRUCK_DOOR
 	setvar VAR_POKESCAPE_DRAYNORMANOR_LEVER_STATE, 1
+	call DraynorManor_Lever_STATE
 	release
 	end
 
 SIGN_DRAYNORMANOR_LEVER_1_3:
 	lock
 	msgbox SIGN_DRAYNORMANOR_LEVER_1_Text_0
-	setmetatile 7, 17, 602, 1
-	setmetatile 7, 18, 602, 1
-	setmetatile 7, 19, 602, 1
-	setmetatile 7, 20, 602, 1
-	setmetatile 7, 21, 602, 1
-	setmetatile 8, 17, 604, 1
-	setmetatile 8, 18, 604, 1
-	setmetatile 8, 19, 604, 1
-	setmetatile 8, 20, 604, 1
-	setmetatile 8, 21, 604, 1
-	special DrawWholeMapView
+	playse SE_TRUCK_DOOR
 	setvar VAR_POKESCAPE_DRAYNORMANOR_LEVER_STATE, 0
+	call DraynorManor_Lever_STATE
 	release
 	end
 
@@ -504,7 +503,11 @@ SIGN_DRAYNORMANOR_LEVER_1_3:
 NPC_DraynorManor_LEVER_A::
 	msgbox NPC_DraynorManor_LEVER_A_Text_0
 	closemessage
-	setmetatile 17, 16, 516, 0
+	playse SE_TRUCK_DOOR
+	setmetatile 14, 19, METATILE_DraynorManor_BASEMENT_LEVER_CORNER_R_DOWN_1, 1
+	setmetatile 14, 20, METATILE_DraynorManor_BASEMENT_LEVER_CORNER_R_DOWN_2, 1
+	setmetatile 17, 15, METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_TOP, 0
+	setmetatile 17, 16, METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_BOTTOM, 0
 	special DrawWholeMapView
 	end
 
@@ -512,7 +515,11 @@ NPC_DraynorManor_LEVER_A::
 NPC_DraynorManor_LEVER_B::
 	msgbox NPC_DraynorManor_LEVER_A_Text_0
 	closemessage
-	setmetatile 11, 10, 516, 0
+	playse SE_TRUCK_DOOR
+	setmetatile 19, 16, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_1, 1
+	setmetatile 19, 17, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_2, 1
+	setmetatile 11, 9, METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_TOP, 0
+	setmetatile 11, 10, METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_BOTTOM, 0
 	special DrawWholeMapView
 	end
 
@@ -520,7 +527,11 @@ NPC_DraynorManor_LEVER_B::
 NPC_DraynorManor_LEVER_C::
 	msgbox NPC_DraynorManor_LEVER_A_Text_0
 	closemessage
-	setmetatile 11, 16, 516, 0
+	playse SE_TRUCK_DOOR
+	setmetatile 19, 2, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_1, 1
+	setmetatile 19, 3, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_2, 1
+	setmetatile 11, 15, METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_TOP, 0
+	setmetatile 11, 16, METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_BOTTOM, 0
 	special DrawWholeMapView
 	end
 
@@ -528,8 +539,15 @@ NPC_DraynorManor_LEVER_C::
 NPC_DraynorManor_LEVER_D::
 	msgbox NPC_DraynorManor_LEVER_A_Text_0
 	closemessage
-	setmetatile 8, 13, 516, 0
-	setmetatile 14, 7, 516, 0
+	playse SE_TRUCK_DOOR
+	setmetatile 11, 2, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_1, 1
+	setmetatile 11, 3, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_2, 1
+	setmetatile 8, 11, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_1, 1
+	setmetatile 8, 12, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_2, 1
+	setmetatile 8, 13, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_3, 0
+	setmetatile 14, 5, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_1, 1
+	setmetatile 14, 6, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_2, 1
+	setmetatile 14, 7, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_3, 0
 	special DrawWholeMapView
 	end
 
@@ -537,8 +555,15 @@ NPC_DraynorManor_LEVER_D::
 NPC_DraynorManor_LEVER_E::
 	msgbox NPC_DraynorManor_LEVER_A_Text_0
 	closemessage
-	setmetatile 14, 13, 516, 0
-	setmetatile 8, 7, 516, 0
+	playse SE_TRUCK_DOOR
+	setmetatile 5, 10, METATILE_DraynorManor_BASEMENT_LEVER_CORNER_L_DOWN_1, 1
+	setmetatile 5, 11, METATILE_DraynorManor_BASEMENT_LEVER_CORNER_L_DOWN_2, 1
+	setmetatile 14, 11, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_1, 1
+	setmetatile 14, 12, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_2, 1
+	setmetatile 14, 13, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_3, 0
+	setmetatile 8, 5, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_1, 1
+	setmetatile 8, 6, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_2, 1
+	setmetatile 8, 7, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_3, 0
 	special DrawWholeMapView
 	end
 
@@ -546,8 +571,14 @@ NPC_DraynorManor_LEVER_E::
 NPC_DraynorManor_LEVER_F::
 	msgbox NPC_DraynorManor_LEVER_A_Text_0
 	closemessage
-	setmetatile 4, 10, 516, 0
-	setmetatile 8, 19, 516, 0
+	playse SE_TRUCK_DOOR
+	setmetatile 6, 2, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_1, 1
+	setmetatile 6, 3, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_2, 1
+	setmetatile 4, 9, METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_TOP, 0
+	setmetatile 4, 10, METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_BOTTOM, 0
+	setmetatile 8, 17, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_1, 1
+	setmetatile 8, 18, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_2, 1
+	setmetatile 8, 19, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_3, 0
 	special DrawWholeMapView
 	end
 
@@ -555,7 +586,12 @@ NPC_DraynorManor_LEVER_F::
 NPC_DraynorManor_LEVER_G::
 	msgbox NPC_DraynorManor_LEVER_A_Text_0
 	closemessage
-	setmetatile 8, 19, 516, 0
+	playse SE_TRUCK_DOOR
+	setmetatile 6, 16, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_1, 1
+	setmetatile 6, 17, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_2, 1
+	setmetatile 8, 17, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_1, 1
+	setmetatile 8, 18, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_2, 1
+	setmetatile 8, 19, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_3, 0
 	special DrawWholeMapView
 	end
 
@@ -640,16 +676,17 @@ NPC_DraynorManor_Ava_11:
 NPC_DraynorManor_Quester::
 	lock
 	faceplayer
+	namebox NPC_DraynorManor_Quester_Text_0
 	compare VAR_POKESCAPE_DRAYNORMANOR_LEVER_STATE, 1
 	goto_if_eq NPC_DraynorManor_Quester_2
-	msgbox NPC_DraynorManor_Quester_Text_1
+	msgbox NPC_DraynorManor_Quester_Text_2
 NPC_DraynorManor_Quester_1:
 	closemessage
 	release
 	end
 
 NPC_DraynorManor_Quester_2:
-	msgbox NPC_DraynorManor_Quester_Text_0
+	msgbox NPC_DraynorManor_Quester_Text_1
 	goto NPC_DraynorManor_Quester_1
 
 
@@ -790,7 +827,7 @@ FOLLOWING_Ariane_Text_1:
 	.string "Where do you think the pink guy went?$"
 
 FOLLOWING_Ariane_Text_2:
-	.string "Hey mine name is Ariane, what is yours?\p"
+	.string "Hey my name is Ariane, what is yours?\p"
 	.string "…{PAUSE 32}{PLAYER}?\n"
 	.string "That's a cute name.$"
 
@@ -906,10 +943,13 @@ NPC_DraynorManor_Ava_Text_8:
 	.string "beings.$"
 
 NPC_DraynorManor_Quester_Text_0:
+	.string "Quester$"
+
+NPC_DraynorManor_Quester_Text_1:
 	.string "Did you find the hidden switch?\p"
 	.string "Where was it?!$"
 
-NPC_DraynorManor_Quester_Text_1:
+NPC_DraynorManor_Quester_Text_2:
 	.string "I heard there was a hidden switch\n"
 	.string "somewhere in this room but I am yet to\l"
 	.string "find it.$"

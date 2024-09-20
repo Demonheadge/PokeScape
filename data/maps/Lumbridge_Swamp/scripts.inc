@@ -314,7 +314,7 @@ LUMBRIDGESWAMP_Urhney_Text_3:
 LUMBRIDGESWAMP_BOOK_Text_0:
 	.string "The book is titled,\n"
 	.string "101 Ways to successfully Meditate.\p"
-	.string "Step 1, Live far away from civilation.\p"
+	.string "Step 1, Live far away from civilisation.\p"
 	.string "Step 2, make sure it is far enough away\n"
 	.string "that adventurers don't light fires at\l"
 	.string "your windows.$"

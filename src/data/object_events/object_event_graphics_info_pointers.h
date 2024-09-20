@@ -572,6 +572,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_tzhaar_cham
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_tz_kih;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_har_aken;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_har_aken_tentacle;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ket_dill;
 
 //ORES
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CopperOre;
@@ -1155,6 +1156,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_TZ_KIH] =                        &gObjectEventGraphicsInfo_tz_kih,
     [OBJ_EVENT_GFX_HAR_AKEN] =                      &gObjectEventGraphicsInfo_har_aken,
     [OBJ_EVENT_GFX_HAR_AKEN_TENTACLE] =             &gObjectEventGraphicsInfo_har_aken_tentacle,
+    [OBJ_EVENT_GFX_KET_DILL] =                      &gObjectEventGraphicsInfo_ket_dill,
 
 //ORES 
 	[OBJ_EVENT_GFX_COPPER_ORE] =          		    &gObjectEventGraphicsInfo_CopperOre,

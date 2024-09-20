@@ -112,6 +112,7 @@ script DAEMONHEIM_GYM_THOK_BATTLE_INTRO {
         msgbox(format("That move is called CUPHOLDER.\pCUPHOLDER."))
         //setvar(VAR_POKESCAPE_ALKHARID_GYM_QUEST, 30)
         setflag(FLAG_BADGE06_GET)
+        call(HIDDEN_GROTTO_RESET)
         //addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
         //call(SetGymTrainers_VARROCK)
         hidenamebox
@@ -163,6 +164,7 @@ script THOK_GYM_CHALLENGE_STATE_POST_BADGE {
     msgbox(format("That is CUPHOLDER!\pCUPHOLDER."))
     setvar(VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST, 30)
     setflag(FLAG_BADGE08_GET)
+    call(HIDDEN_GROTTO_RESET)
     addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
     //call(SetGymTrainers_DAEMONHEIM)
 

@@ -154,6 +154,30 @@
 #define METATILE_Dewford_Door              0x225
 #define METATILE_Dewford_Door_BattleTower  0x25D
 
+// gTileset_DraynorManor
+#define METATILE_DraynorManor_BASEMENT_GATE_LOCKED_BOTTOM     0x2D7
+#define METATILE_DraynorManor_BASEMENT_GATE_LOCKED_TOP        0x2CF
+#define METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_BOTTOM   0x2E7
+#define METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_TOP      0x375
+#define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_L_DOWN_1  0x2EF
+#define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_L_DOWN_2  0x2F7
+#define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_L_UP_1    0x2FF
+#define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_L_UP_2    0x307
+#define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_R_DOWN_1  0x314
+#define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_R_DOWN_2  0x31C
+#define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_R_UP_1    0x315
+#define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_R_UP_2    0x31D
+#define METATILE_DraynorManor_BASEMENT_LEVER_DOWN_1           0x30E
+#define METATILE_DraynorManor_BASEMENT_LEVER_DOWN_2           0x316
+#define METATILE_DraynorManor_BASEMENT_LEVER_UP_1             0x30F
+#define METATILE_DraynorManor_BASEMENT_LEVER_UP_2             0x317
+#define METATILE_DraynorManor_BASEMENT_SIDE_GATE_LOCKED_1     0x36E
+#define METATILE_DraynorManor_BASEMENT_SIDE_GATE_LOCKED_2     0x376
+#define METATILE_DraynorManor_BASEMENT_SIDE_GATE_LOCKED_4     0x37E
+#define METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_1   0x36F
+#define METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_2   0x377
+#define METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_3   0x37F
+
 // gTileset_Dungeoneering
 #define METATILE_Dungeoneering_DG_PLAIN_FLOOR               0x208
 #define METATILE_Dungeoneering_DG_ROCK_1                    0x3A3
@@ -482,6 +506,13 @@
 #define METATILE_PokeScapeCaves_darkcave_pond_top_L          0x0C0
 #define METATILE_PokeScapeCaves_darkcave_pond_top_M          0x0C1
 #define METATILE_PokeScapeCaves_darkcave_pond_top_R          0x0C2
+
+// gTileset_PokeScapeIndoors
+#define METATILE_PokeScapeIndoors_BOOKCASE_INTERACT_L      0x180
+#define METATILE_PokeScapeIndoors_BOOKCASE_INTERACT_R      0x181
+#define METATILE_PokeScapeIndoors_BOOKCASE_INTERACT_SMALL  0x183
+#define METATILE_PokeScapeIndoors_BOOKCASE_SPARKLE         0x191
+#define METATILE_PokeScapeIndoors_CUPBOARD_SPARKLE         0x190
 
 // gTileset_PokeScapeOutdoors
 #define METATILE_PokeScapeOutdoors_Door_Bank_L          0x13A

@@ -10676,3 +10676,21 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_har_aken = {
     .images = sPicTable_har_aken,
     .affineAnims = gDummySpriteAffineAnimTable
 };
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ket_dill = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TZHAAR,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = 5,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Following,
+    .images = sPicTable_ket_dill,
+    .affineAnims = gDummySpriteAffineAnimTable
+};

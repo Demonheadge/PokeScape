@@ -881,6 +881,7 @@ script VARROCK_GYM_KINGROALD {
         msgbox(format("That move is called Draining Kiss, my Queen uses it on me all the time and it is always super effective.\pHopefully it will be of more use to you than on me."))
         setvar(VAR_POKESCAPE_VARROCK_GYM_QUEST, 26)
         setflag(FLAG_BADGE06_GET)
+        call(HIDDEN_GROTTO_RESET)
         addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
         call(SetGymTrainers_VARROCK)
         hidenamebox

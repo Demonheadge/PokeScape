@@ -338,8 +338,8 @@ LUMBRIDGE_GYM_GUARD_1_Text_0:
 
 LUMBRIDGE_GYM_GUARD_1_Text_1:
 	.string "You're a gym challenger?\p"
-	.string "The Duke he can be found in his room\n"
-	.string "down this hallway.$"
+	.string "The Duke can be found in his room down\n"
+	.string "this hallway.$"
 
 LUMBRIDGE_GYM_GUARD_1_Text_2:
 	.string "Good luck with your gym challenge!$"

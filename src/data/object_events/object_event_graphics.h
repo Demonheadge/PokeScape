@@ -751,6 +751,7 @@ const u32 gObjectEventPic_tzhaar_champion[] = INCBIN_U32("graphics/object_events
 const u32 gObjectEventPic_tz_kih[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/tz_kih.4bpp");
 const u32 gObjectEventPic_har_aken[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/har_aken.4bpp");
 const u32 gObjectEventPic_har_aken_tentacle[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/har_aken_tentacle.4bpp");
+const u32 gObjectEventPic_ket_dill[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/ket_dill.4bpp");
 //POKESCAPE PALETTES
 /*
 const u16 gObjectEventPalette_Skeleton_1[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/skeleton_1.gbapal");

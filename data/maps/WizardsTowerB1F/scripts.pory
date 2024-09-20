@@ -77,7 +77,7 @@ script NPC_WizardsTowerB1F_Sedridor{
         msgbox(format("You have something for me from the Duke of Lumbridge?\pMay I take a look at it for a moment?"))
         //applymovement
         msgbox(format("Aha!\pSo that's what this is!"))
-        msgbox(format("{PLAYER}, have you seen any of those mysterious altars in your travels?\pThese talismans grants you access to the realm within the altar.\pActually could you do me one small favour?\pTake this talisman to the Air Altar and report your findings back to me.\pIt will be beneficial for your travels."))
+        msgbox(format("{PLAYER}, have you seen any of those mysterious altars in your travels?\pThese talismans grant you access to the realm within the altar.\pActually could you do me one small favour?\pTake this talisman to the Air Altar and report your findings back to me.\pIt will be beneficial for your travels."))
         subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_RUNE_MYSTERIES, SUB_QUEST_RUNEMYSTERIES_1)
         hidenamebox
         closemessage

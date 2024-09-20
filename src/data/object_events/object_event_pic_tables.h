@@ -5703,7 +5703,14 @@ static const struct SpriteFrameImage sPicTable_har_aken_tentacle[] = {
     overworld_frame(gObjectEventPic_har_aken_tentacle, 2, 4, 8),
 };
 
-
+static const struct SpriteFrameImage sPicTable_ket_dill[] = {
+    overworld_frame(gObjectEventPic_ket_dill, 4, 4, 0),
+    overworld_frame(gObjectEventPic_ket_dill, 4, 4, 1),
+    overworld_frame(gObjectEventPic_ket_dill, 4, 4, 2),
+    overworld_frame(gObjectEventPic_ket_dill, 4, 4, 3),
+    overworld_frame(gObjectEventPic_ket_dill, 4, 4, 4),
+    overworld_frame(gObjectEventPic_ket_dill, 4, 4, 5),
+};
 
 
 
