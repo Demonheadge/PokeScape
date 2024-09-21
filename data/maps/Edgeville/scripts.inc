@@ -217,18 +217,18 @@ EDGEVILLE_GYM_START_17:
 
 
 EDGEVILLE_GYM_BATTLE_VANNAKA::
-	trainerbattle_no_intro TRAINER_ALKHARID_GYM_PRINCE_ALI, EDGEVILLE_GYM_BATTLE_VANNAKA_Text_0
+	call GYM_BATTLE_VANNAKA
 	compare VAR_RESULT, B_OUTCOME_LOST
 	goto_if_eq EDGEVILLE_GYM_BATTLE_VANNAKA_2
 	namebox NPC_EDGEVILLE_VANNAKA_SLAYER_MASTER_Text_0
-	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_1
+	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_0
 	hidenamebox
 	playfanfare MUS_PS_QUEST_COMPLETE
-	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_2
+	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_1
 	waitfanfare
 	waitmessage
 	namebox NPC_EDGEVILLE_VANNAKA_SLAYER_MASTER_Text_0
-	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_3
+	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_2
 	hidenamebox
 	giveitem ITEM_TM48, 1
 	compare VAR_RESULT, FALSE
@@ -236,17 +236,18 @@ EDGEVILLE_GYM_BATTLE_VANNAKA::
 	playfanfare MUS_PS_QUEST_COMPLETE
 	setvar VAR_0x8004, 12
 	special GiveFrontierBattlePoints
-	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_4
+	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_3
 	waitmessage
 	waitfanfare
 	closemessage
 	namebox NPC_EDGEVILLE_VANNAKA_SLAYER_MASTER_Text_0
-	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_5
+	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_4
 	setvar VAR_POKESCAPE_EDGEVILLE_GYM_QUEST, 25
 	setflag FLAG_BADGE07_GET
+	call HIDDEN_GROTTO_RESET
 	addvar VAR_GAMEMODE_LEVEL_SCALING, 1
+	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_5
 	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_6
-	msgbox EDGEVILLE_GYM_BATTLE_VANNAKA_Text_7
 	closemessage
 	hidenamebox
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_KOUREND_SLAYER
@@ -279,6 +280,7 @@ BATTLE_BASILISK_GYM::
 	compare VAR_RESULT, B_OUTCOME_RAN
 	goto_if_eq BATTLE_BASILISK_GYM_5
 BATTLE_BASILISK_GYM_1:
+	release
 	end
 
 BATTLE_BASILISK_GYM_2:
@@ -300,6 +302,7 @@ BATTLE_BASILISK_GYM_3:
 BATTLE_BASILISK_GYM_4:
 	setvar VAR_POKESCAPE_EDGEVILLE_GYM_QUEST, 10
 	closemessage
+	release
 	end
 
 BATTLE_BASILISK_GYM_5:
@@ -322,6 +325,7 @@ EDGEVILLE_GYM_GIVE_SLAYER_POINTS::
 	waitfanfare
 	closemessage
 	msgbox EDGEVILLE_GYM_GIVE_SLAYER_POINTS_Text_1
+	closemessage
 	return
 
 
@@ -365,7 +369,7 @@ FIND_BRASS_KEY::
 
 
 ITEM_EDGEVILLE_INDOOR_1::
-	finditem ITEM_NONE
+	finditem ITEM_STAT_BEER
 	end
 
 
@@ -387,7 +391,7 @@ NPC_EDGEVILLE_HOUSE_NPC_1::
 NPC_EDGEVILLE_HOUSE_NPC_2::
 	lock
 	faceplayer
-	msgbox NPC_EDGEVILLE_HOUSE_NPC_1_Text_0
+	msgbox NPC_EDGEVILLE_HOUSE_NPC_2_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -397,7 +401,7 @@ NPC_EDGEVILLE_HOUSE_NPC_2::
 NPC_EDGEVILLE_HOUSE_NPC_3::
 	lock
 	faceplayer
-	msgbox NPC_EDGEVILLE_HOUSE_NPC_1_Text_0
+	msgbox NPC_EDGEVILLE_HOUSE_NPC_3_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -407,7 +411,7 @@ NPC_EDGEVILLE_HOUSE_NPC_3::
 NPC_EDGEVILLE_HOUSE_NPC_4::
 	lock
 	faceplayer
-	msgbox NPC_EDGEVILLE_HOUSE_NPC_1_Text_0
+	msgbox NPC_EDGEVILLE_HOUSE_NPC_4_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -417,7 +421,7 @@ NPC_EDGEVILLE_HOUSE_NPC_4::
 NPC_EDGEVILLE_HOUSE_NPC_5::
 	lock
 	faceplayer
-	msgbox NPC_EDGEVILLE_HOUSE_NPC_1_Text_0
+	msgbox NPC_EDGEVILLE_HOUSE_NPC_5_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -460,7 +464,7 @@ NPC_EDGEVILLE_HOUSE_NPC_8::
 NPC_EDGEVILLE_HOUSE_NPC_9::
 	lock
 	faceplayer
-	msgbox NPC_EDGEVILLE_HOUSE_NPC_1_Text_0
+	msgbox NPC_EDGEVILLE_HOUSE_NPC_9_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -470,7 +474,97 @@ NPC_EDGEVILLE_HOUSE_NPC_9::
 NPC_EDGEVILLE_HOUSE_NPC_10::
 	lock
 	faceplayer
-	msgbox NPC_EDGEVILLE_HOUSE_NPC_1_Text_0
+	msgbox NPC_EDGEVILLE_HOUSE_NPC_9_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+BATTLE_EDGEVILLE_GYM_1::
+	trainerbattle_single TRAINER_EDGEVILLE_GYM_1, BATTLE_EDGEVILLE_GYM_1_Text_0, BATTLE_EDGEVILLE_GYM_1_Text_1
+	msgbox BATTLE_EDGEVILLE_GYM_1_Text_2
+	hidenamebox
+	release
+	end
+
+
+BATTLE_EDGEVILLE_GYM_2::
+	trainerbattle_single TRAINER_EDGEVILLE_GYM_2, BATTLE_EDGEVILLE_GYM_2_Text_0, BATTLE_EDGEVILLE_GYM_2_Text_1
+	msgbox BATTLE_EDGEVILLE_GYM_2_Text_2
+	hidenamebox
+	release
+	end
+
+
+BATTLE_EDGEVILLE_GYM_3::
+	trainerbattle_single TRAINER_EDGEVILLE_GYM_3, BATTLE_EDGEVILLE_GYM_3_Text_0, BATTLE_EDGEVILLE_GYM_3_Text_1
+	hidenamebox
+	msgbox BATTLE_EDGEVILLE_GYM_3_Text_2
+	hidenamebox
+	release
+	end
+
+
+BATTLE_EDGEVILLE_GYM_4::
+	trainerbattle_single TRAINER_EDGEVILLE_GYM_4, BATTLE_EDGEVILLE_GYM_4_Text_0, BATTLE_EDGEVILLE_GYM_4_Text_1
+	hidenamebox
+	msgbox BATTLE_EDGEVILLE_GYM_4_Text_2
+	hidenamebox
+	release
+	end
+
+
+BATTLE_EDGEVILLE_GYM_5::
+	trainerbattle_single TRAINER_EDGEVILLE_GYM_5, BATTLE_EDGEVILLE_GYM_5_Text_0, BATTLE_EDGEVILLE_GYM_5_Text_1
+	namebox BATTLE_EDGEVILLE_GYM_5_Text_2
+	msgbox BATTLE_EDGEVILLE_GYM_5_Text_3
+	hidenamebox
+	release
+	end
+
+
+BATTLE_EDGEVILLE_GYM_6::
+	trainerbattle_single TRAINER_EDGEVILLE_GYM_6, BATTLE_EDGEVILLE_GYM_6_Text_0, BATTLE_EDGEVILLE_GYM_6_Text_1
+	hidenamebox
+	msgbox BATTLE_EDGEVILLE_GYM_6_Text_2
+	hidenamebox
+	release
+	end
+
+
+BATTLE_EDGEVILLE_GYM_7::
+	trainerbattle_single TRAINER_EDGEVILLE_GYM_7, BATTLE_EDGEVILLE_GYM_7_Text_0, BATTLE_EDGEVILLE_GYM_7_Text_1
+	namebox BATTLE_EDGEVILLE_GYM_7_Text_2
+	msgbox BATTLE_EDGEVILLE_GYM_7_Text_3
+	hidenamebox
+	release
+	end
+
+
+BATTLE_EDGEVILLE_GYM_8::
+	trainerbattle_single TRAINER_EDGEVILLE_GYM_8, BATTLE_EDGEVILLE_GYM_8_Text_0, BATTLE_EDGEVILLE_GYM_8_Text_1
+	namebox BATTLE_EDGEVILLE_GYM_7_Text_2
+	msgbox BATTLE_EDGEVILLE_GYM_8_Text_2
+	hidenamebox
+	release
+	end
+
+
+BATTLE_EDGEVILLE_GYM_9::
+	trainerbattle_single TRAINER_EDGEVILLE_GYM_9, BATTLE_EDGEVILLE_GYM_9_Text_0, BATTLE_EDGEVILLE_GYM_9_Text_1
+	namebox BATTLE_EDGEVILLE_GYM_7_Text_2
+	msgbox BATTLE_EDGEVILLE_GYM_9_Text_1
+	hidenamebox
+	release
+	end
+
+
+GOBLIN_EDGEVILLE_GYM::
+	lock
+	faceplayer
+	namebox GOBLIN_EDGEVILLE_GYM_Text_0
+	msgbox GOBLIN_EDGEVILLE_GYM_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -638,36 +732,34 @@ EDGEVILLE_GYM_START_Text_6:
 	.string "Lets go!$"
 
 EDGEVILLE_GYM_BATTLE_VANNAKA_Text_0:
-	.string "That was a very enjoyable battle!$"
+	.string "Here, you deserve this Badge.$"
 
 EDGEVILLE_GYM_BATTLE_VANNAKA_Text_1:
-	.string "Have this Badge.$"
-
-EDGEVILLE_GYM_BATTLE_VANNAKA_Text_2:
-	.string "{PLAYER} received the Edgeville\n"
+	.string "{PLAYER} received the EDGEVILLE\n"
 	.string "BADGE from Vannaka.$"
 
-EDGEVILLE_GYM_BATTLE_VANNAKA_Text_3:
+EDGEVILLE_GYM_BATTLE_VANNAKA_Text_2:
 	.string "Also have this Scroll and some Slayer\n"
 	.string "Point(s).$"
 
-EDGEVILLE_GYM_BATTLE_VANNAKA_Text_4:
+EDGEVILLE_GYM_BATTLE_VANNAKA_Text_3:
 	.string "{PLAYER} obtained 12 Slayer Point(s).$"
 
-EDGEVILLE_GYM_BATTLE_VANNAKA_Text_5:
+EDGEVILLE_GYM_BATTLE_VANNAKA_Text_4:
 	.string "That move is called Power Gem.\p"
 	.string "It sparkles just as all our precious\n"
 	.string "Gems around the palace do.$"
 
-EDGEVILLE_GYM_BATTLE_VANNAKA_Text_6:
+EDGEVILLE_GYM_BATTLE_VANNAKA_Text_5:
 	.string "Now that you've bested me you are\n"
 	.string "eligible to take Slayer Tasks from me.\p"
 	.string "Talk to me again if you'd like to\n"
 	.string "particpate.$"
 
-EDGEVILLE_GYM_BATTLE_VANNAKA_Text_7:
-	.string "You should make your way to Daemonheim\n"
-	.string "in the Wilderness for your next badge.$"
+EDGEVILLE_GYM_BATTLE_VANNAKA_Text_6:
+	.string "Also you should make your way to\n"
+	.string "Daemonheim in the Wilderness for your\l"
+	.string "next badge.$"
 
 BATTLE_BASILISK_GYM_Text_0:
 	.string "Basilisk$"
@@ -699,7 +791,31 @@ FIND_BRASS_KEY_Text_0:
 	.string "{PLAYER} obtained the BRASS KEY.$"
 
 NPC_EDGEVILLE_HOUSE_NPC_1_Text_0:
-	.string "Hello, I am a Cupholder.$"
+	.string "Some dude asked me if I wanted his\n"
+	.string "stuff, all I had to do is follow him to\l"
+	.string "the Wilderness.\p"
+	.string "I was tempted, but that would require\n"
+	.string "way too much effort...$"
+
+NPC_EDGEVILLE_HOUSE_NPC_2_Text_0:
+	.string "Why are all of us dudes together in this\n"
+	.string "weird barn?\p"
+	.string "I have no idea, I was told there would\n"
+	.string "be Beer...$"
+
+NPC_EDGEVILLE_HOUSE_NPC_3_Text_0:
+	.string "Living so close to the Wilderness can be\n"
+	.string "scary, especially when you don't train\l"
+	.string "monsters yourself, but I don't mind.$"
+
+NPC_EDGEVILLE_HOUSE_NPC_4_Text_0:
+	.string "How often do you think about the\n"
+	.string "Zarosian Empire?$"
+
+NPC_EDGEVILLE_HOUSE_NPC_5_Text_0:
+	.string "Did you know there something are useful\n"
+	.string "things in boxes?\p"
+	.string "{PAUSE 15}These meet your Crate expectations!$"
 
 NPC_EDGEVILLE_HOUSE_NPC_6_Text_0:
 	.string "Oziach$"
@@ -727,3 +843,106 @@ NPC_EDGEVILLE_HOUSE_NPC_8_Text_1:
 	.string "I'm waiting on my friend buying some\n"
 	.string "supplies, then we are going to the\l"
 	.string "Wilderness to PK and get filthy rich!$"
+
+NPC_EDGEVILLE_HOUSE_NPC_9_Text_0:
+	.string "Hello, I am a Cupholder.$"
+
+BATTLE_EDGEVILLE_GYM_1_Text_0:
+	.string "My current slayer task is Skeletons.\p"
+	.string "You're one of those right?!$"
+
+BATTLE_EDGEVILLE_GYM_1_Text_1:
+	.string "Woah, calm down it was a joke.$"
+
+BATTLE_EDGEVILLE_GYM_1_Text_2:
+	.string "I got a task from Vannaka, did you?$"
+
+BATTLE_EDGEVILLE_GYM_2_Text_0:
+	.string "Brrraaaiiinnnsss…$"
+
+BATTLE_EDGEVILLE_GYM_2_Text_1:
+	.string "Guh?$"
+
+BATTLE_EDGEVILLE_GYM_2_Text_2:
+	.string "Heh, sorry I just needed some brains so\n"
+	.string "I can summon more conjures.$"
+
+BATTLE_EDGEVILLE_GYM_3_Text_0:
+	.string "The skeleton stumbles to life ready to\n"
+	.string "slay you!$"
+
+BATTLE_EDGEVILLE_GYM_3_Text_1:
+	.string "crumble… crumble…$"
+
+BATTLE_EDGEVILLE_GYM_3_Text_2:
+	.string "The skeleton seems disapointed to have\n"
+	.string "been slayed by you.$"
+
+BATTLE_EDGEVILLE_GYM_4_Text_0:
+	.string "The skeleton shudders a loud bone\n"
+	.string "rattling screech.$"
+
+BATTLE_EDGEVILLE_GYM_4_Text_1:
+	.string "Sreeeee…$"
+
+BATTLE_EDGEVILLE_GYM_4_Text_2:
+	.string "The skeleton ignores you.$"
+
+BATTLE_EDGEVILLE_GYM_5_Text_0:
+	.string "Wooosh!$"
+
+BATTLE_EDGEVILLE_GYM_5_Text_1:
+	.string "Wooo…sh…$"
+
+BATTLE_EDGEVILLE_GYM_5_Text_2:
+	.string "MOSS GIANT$"
+
+BATTLE_EDGEVILLE_GYM_5_Text_3:
+	.string "wooshing sounds$"
+
+BATTLE_EDGEVILLE_GYM_6_Text_0:
+	.string "You attack the skeleton!$"
+
+BATTLE_EDGEVILLE_GYM_6_Text_1:
+	.string "Rattle…rattle…$"
+
+BATTLE_EDGEVILLE_GYM_6_Text_2:
+	.string "The skeleton is upset that you\n"
+	.string "attacked it out of nowhere.$"
+
+BATTLE_EDGEVILLE_GYM_7_Text_0:
+	.string "LITTLE HUMAN.\n"
+	.string "WHAT ARE YOU DOING HERE?!$"
+
+BATTLE_EDGEVILLE_GYM_7_Text_1:
+	.string "OW! WHY…$"
+
+BATTLE_EDGEVILLE_GYM_7_Text_2:
+	.string "HILL GIANT$"
+
+BATTLE_EDGEVILLE_GYM_7_Text_3:
+	.string "WHY IS LITTLE HUMAN HERE?$"
+
+BATTLE_EDGEVILLE_GYM_8_Text_0:
+	.string "OH! SECOND DINNER!$"
+
+BATTLE_EDGEVILLE_GYM_8_Text_1:
+	.string "ARGH REFLUX!$"
+
+BATTLE_EDGEVILLE_GYM_8_Text_2:
+	.string "ME WAS HUNGRY. HUMAN NOT GOOD DINNER.$"
+
+BATTLE_EDGEVILLE_GYM_9_Text_0:
+	.string "OI WHAT ARE YOU DOING IN ME CAVE?!$"
+
+BATTLE_EDGEVILLE_GYM_9_Text_1:
+	.string "GET OUT OF ME CAVE…$"
+
+GOBLIN_EDGEVILLE_GYM_Text_0:
+	.string "Hobgoblin$"
+
+GOBLIN_EDGEVILLE_GYM_Text_1:
+	.string "Aye human.\p"
+	.string "Don't get any bright ideas.\p"
+	.string "I'm just minding my own business, you\n"
+	.string "should too.$"

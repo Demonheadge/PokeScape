@@ -14,7 +14,7 @@ Port_Sarim_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 
 
 VARSETTER::
-	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 110
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 130
 	return
 
 
@@ -42,20 +42,21 @@ PORTSARIM_STATE_1:
 	removeobject 26
 	removeobject 27
 	setflag FLAG_TEMP_1F
-	setflag FLAG_TEMP_1E
 	removeobject 38
 	setflag FLAG_TEMP_1D
+	setflag FLAG_TEMP_1C
 	switch VAR_POKESCAPE_STORYMODE_PROGRESS
 	case 150, PORTSARIM_STATE_6
 	case 151, PORTSARIM_STATE_7
 	case 100, PORTSARIM_STATE_8
+	case 130, PORTSARIM_STATE_9
 PORTSARIM_STATE_4:
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 105
-	goto_if_eq PORTSARIM_STATE_12
-PORTSARIM_STATE_11:
+	goto_if_eq PORTSARIM_STATE_13
+PORTSARIM_STATE_12:
 	removeobject 42
 	setflag FLAG_TEMP_1A
-PORTSARIM_STATE_9:
+PORTSARIM_STATE_10:
 	return
 
 PORTSARIM_STATE_6:
@@ -103,15 +104,20 @@ PORTSARIM_STATE_8:
 	clearflag FLAG_TEMP_1D
 	goto PORTSARIM_STATE_4
 
-PORTSARIM_STATE_10:
+PORTSARIM_STATE_9:
+	addobject 40
+	clearflag FLAG_TEMP_1C
+	goto PORTSARIM_STATE_4
+
+PORTSARIM_STATE_11:
 	addobject 42
 	clearflag FLAG_TEMP_1A
-	goto PORTSARIM_STATE_9
+	goto PORTSARIM_STATE_10
 
-PORTSARIM_STATE_12:
+PORTSARIM_STATE_13:
 	compare VAR_WISE_OLD_MAN_RIVAL, 5
-	goto_if_eq PORTSARIM_STATE_10
-	goto PORTSARIM_STATE_11
+	goto_if_eq PORTSARIM_STATE_11
+	goto PORTSARIM_STATE_12
 
 
 PORTSARIM_HAM_EVENT_TRIGGER1::
@@ -305,9 +311,11 @@ NPC_FLAGRESETER::
 NPC_SEAGULL::
 	lock
 	faceplayer
-	playmoncry SPECIES_WINGULL, 0
-	msgbox NPC_SEAGULL_Text_0
+	namebox NPC_SEAGULL_Text_0
+	playmoncry SPECIES_SEAGULL_NORMAL_FORM, 0
+	msgbox NPC_SEAGULL_Text_1
 	waitmoncry
+	hidenamebox
 	release
 	end
 
@@ -342,16 +350,14 @@ NPC_PORTSARIM_CAPTIAN_TOBIAS::
 	namebox NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_0
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 100
 	goto_if_eq NPC_PORTSARIM_CAPTIAN_TOBIAS_2
+	goto_if_unset FLAG_BADGE03_GET, NPC_PORTSARIM_CAPTIAN_TOBIAS_3
+	goto_if_set FLAG_BADGE03_GET, NPC_PORTSARIM_CAPTIAN_TOBIAS_4
 NPC_PORTSARIM_CAPTIAN_TOBIAS_1:
-	goto_if_unset FLAG_BADGE02_GET, NPC_PORTSARIM_CAPTIAN_TOBIAS_5
-	compare VAR_POKESCAPE_KARAMJAVOLCANO_STATE, 0
-	goto_if_eq NPC_PORTSARIM_CAPTIAN_TOBIAS_8
-NPC_PORTSARIM_CAPTIAN_TOBIAS_7:
 	msgbox NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_4, MSGBOX_YESNO
 	compare VAR_RESULT, 1
-	goto_if_eq NPC_PORTSARIM_CAPTIAN_TOBIAS_11
+	goto_if_eq NPC_PORTSARIM_CAPTIAN_TOBIAS_9
 	msgbox NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_6
-NPC_PORTSARIM_CAPTIAN_TOBIAS_10:
+NPC_PORTSARIM_CAPTIAN_TOBIAS_8:
 	waitmessage
 	hidenamebox
 	release
@@ -359,31 +365,35 @@ NPC_PORTSARIM_CAPTIAN_TOBIAS_10:
 
 NPC_PORTSARIM_CAPTIAN_TOBIAS_2:
 	msgbox NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_1
-	goto NPC_PORTSARIM_CAPTIAN_TOBIAS_1
+	hidenamebox
+	release
+	end
 
-NPC_PORTSARIM_CAPTIAN_TOBIAS_5:
+NPC_PORTSARIM_CAPTIAN_TOBIAS_3:
 	msgbox NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_2
 	hidenamebox
 	release
 	end
 
-NPC_PORTSARIM_CAPTIAN_TOBIAS_8:
+NPC_PORTSARIM_CAPTIAN_TOBIAS_4:
 	msgbox NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_3
-	goto NPC_PORTSARIM_CAPTIAN_TOBIAS_7
+	goto NPC_PORTSARIM_CAPTIAN_TOBIAS_1
 
-NPC_PORTSARIM_CAPTIAN_TOBIAS_11:
+NPC_PORTSARIM_CAPTIAN_TOBIAS_9:
 	msgbox NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_5
 	waitmessage
 	hidenamebox
 	warp MAP_MUSA_POINT, 2, 0, 0
-	goto NPC_PORTSARIM_CAPTIAN_TOBIAS_10
+	goto NPC_PORTSARIM_CAPTIAN_TOBIAS_8
 
 
 NPC_PORTSARIM_CREWMAN_1::
 	lock
 	faceplayer
-	msgbox NPC_PORTSARIM_CREWMAN_1_Text_0
+	namebox NPC_PORTSARIM_CREWMAN_1_Text_0
+	msgbox NPC_PORTSARIM_CREWMAN_1_Text_1
 	waitmessage
+	hidenamebox
 	release
 	end
 
@@ -391,8 +401,10 @@ NPC_PORTSARIM_CREWMAN_1::
 NPC_PORTSARIM_CREWMAN_2::
 	lock
 	faceplayer
+	namebox NPC_PORTSARIM_CREWMAN_1_Text_0
 	msgbox NPC_PORTSARIM_CREWMAN_2_Text_0
 	waitmessage
+	hidenamebox
 	release
 	end
 
@@ -433,8 +445,10 @@ NPC_PORTSARIM_LORRIS::
 NPC_PORTSARIM_NPC_1::
 	lock
 	faceplayer
-	msgbox NPC_PORTSARIM_NPC_1_Text_0
+	namebox NPC_PORTSARIM_NPC_1_Text_0
+	msgbox NPC_PORTSARIM_NPC_1_Text_1
 	waitmessage
+	hidenamebox
 	release
 	end
 
@@ -482,8 +496,10 @@ NPC_PORTSARIM_MONK_2_3:
 NPC_PORTSARIM_NPC_2::
 	lock
 	faceplayer
-	msgbox NPC_PORTSARIM_NPC_2_Text_0
+	namebox NPC_PORTSARIM_NPC_2_Text_0
+	msgbox NPC_PORTSARIM_NPC_2_Text_1
 	waitmessage
+	hidenamebox
 	release
 	end
 
@@ -491,8 +507,10 @@ NPC_PORTSARIM_NPC_2::
 NPC_PORTSARIM_NPC_3::
 	lock
 	faceplayer
+	namebox NPC_PORTSARIM_NPC_2_Text_0
 	msgbox NPC_PORTSARIM_NPC_3_Text_0
 	waitmessage
+	hidenamebox
 	release
 	end
 
@@ -500,8 +518,10 @@ NPC_PORTSARIM_NPC_3::
 NPC_PORTSARIM_NPC_4::
 	lock
 	faceplayer
+	namebox NPC_PORTSARIM_NPC_2_Text_0
 	msgbox NPC_PORTSARIM_NPC_4_Text_0
 	waitmessage
+	hidenamebox
 	release
 	end
 
@@ -509,15 +529,16 @@ NPC_PORTSARIM_NPC_4::
 NPC_PORTSARIM_NPC_5::
 	lock
 	faceplayer
+	namebox NPC_PORTSARIM_NPC_2_Text_0
 	msgbox NPC_PORTSARIM_NPC_5_Text_0
 	waitmessage
+	hidenamebox
 	release
 	end
 
 
 NPC_PORTSARIM_SIGNPOST::
 	lock
-	faceplayer
 	msgbox NPC_PORTSARIM_SIGNPOST_Text_0
 	waitmessage
 	release
@@ -538,12 +559,14 @@ NPC_PORTSARIM_REDBEARD_FRANK::
 NPC_PORTSARIM_NPC_6::
 	lock
 	faceplayer
+	namebox NPC_PORTSARIM_NPC_2_Text_0
 	msgbox NPC_PORTSARIM_NPC_6_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne NPC_PORTSARIM_NPC_6_2
 	msgbox NPC_PORTSARIM_NPC_6_Text_2
 NPC_PORTSARIM_NPC_6_1:
 	waitmessage
+	hidenamebox
 	release
 	end
 
@@ -553,7 +576,7 @@ NPC_PORTSARIM_NPC_6_2:
 
 
 NPC_PORTSARIM_VOID_SQUIRE::
-	goto_if_set FLAG_BADGE02_GET, NPC_PORTSARIM_VOID_SQUIRE_2
+	goto_if_set FLAG_BADGE03_GET, NPC_PORTSARIM_VOID_SQUIRE_2
 NPC_PORTSARIM_VOID_SQUIRE_1:
 	faceplayer
 	namebox NPC_PORTSARIM_VOID_SQUIRE_Text_0
@@ -604,6 +627,7 @@ NPC_PORTSARIM_TRADER_STAN::
 NPC_PORTSARIM_NPC_7::
 	lock
 	faceplayer
+	namebox NPC_PORTSARIM_NPC_2_Text_0
 	msgbox NPC_PORTSARIM_NPC_7_Text_0
 	waitmessage
 	hidenamebox
@@ -687,7 +711,8 @@ NPC_PORTSARIM_FISHING_CUSTOMER::
 NPC_PORTSARIM_BANK_NPC::
 	lock
 	faceplayer
-	msgbox NPC_PORTSARIM_BANK_NPC_Text_0
+	namebox NPC_PORTSARIM_BANK_NPC_Text_0
+	msgbox NPC_PORTSARIM_BANK_NPC_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -705,15 +730,17 @@ NPC_PORTSARIM_BATTLEAXE_LOREBOOK::
 NPC_PORTSARIM_NPC_JAILGUARD::
 	lock
 	faceplayer
+	namebox NPC_PORTSARIM_NPC_JAILGUARD_Text_0
 	switch VAR_POKESCAPE_STORYMODE_PROGRESS
 	case 100, NPC_PORTSARIM_NPC_JAILGUARD_3
-	msgbox NPC_PORTSARIM_NPC_JAILGUARD_Text_1
+	msgbox NPC_PORTSARIM_NPC_JAILGUARD_Text_2
 	waitmessage
+	hidenamebox
 	release
 	end
 
 NPC_PORTSARIM_NPC_JAILGUARD_3:
-	msgbox NPC_PORTSARIM_NPC_JAILGUARD_Text_0
+	msgbox NPC_PORTSARIM_NPC_JAILGUARD_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -759,6 +786,17 @@ NPC_PORTSARIM_DRUNK_HAM::
 	faceplayer
 	namebox NPC_PORTSARIM_DRUNK_HAM_Text_0
 	msgbox NPC_PORTSARIM_DRUNK_HAM_Text_1
+	waitmessage
+	hidenamebox
+	release
+	end
+
+
+NPC_PORTSARIM_NPC_8::
+	lock
+	faceplayer
+	namebox NPC_PORTSARIM_NPC_1_Text_0
+	msgbox NPC_PORTSARIM_NPC_8_Text_0
 	waitmessage
 	hidenamebox
 	release
@@ -838,6 +876,118 @@ movement_wom_portsarim_3:
 	walk_left
 	step_end
 
+CRANDOR_EVENT_PORTSARIM_NED::
+	lockall
+	faceplayer
+	namebox CRANDOR_EVENT_PORTSARIM_NED_Text_0
+	msgbox CRANDOR_EVENT_PORTSARIM_NED_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne CRANDOR_EVENT_PORTSARIM_NED_2
+CRANDOR_EVENT_PORTSARIM_NED_1:
+	closemessage
+	hidenamebox
+	release
+	end
+
+CRANDOR_EVENT_PORTSARIM_NED_2:
+	msgbox CRANDOR_EVENT_PORTSARIM_NED_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne CRANDOR_EVENT_PORTSARIM_NED_4
+	goto CRANDOR_EVENT_PORTSARIM_NED_1
+
+CRANDOR_EVENT_PORTSARIM_NED_4:
+	msgbox CRANDOR_EVENT_PORTSARIM_NED_Text_3
+	closemessage
+	hidenamebox
+	applymovement 44, Movement_InteractFACERIGHT
+	waitmovement 0
+	applymovement 40, MOVEMENT_PORTSARIM_CRANDOR_SAIL_1
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_PORTSARIM_CRANDOR_SAIL_7
+	applymovement 41, MOVEMENT_PORTSARIM_CRANDOR_SAIL_2
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_PORTSARIM_CRANDOR_SAIL_3
+	waitmovement 0
+	namebox CRANDOR_EVENT_PORTSARIM_NED_Text_4
+	msgbox CRANDOR_EVENT_PORTSARIM_NED_Text_5
+	closemessage
+	hidenamebox
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_PORTSARIM_CRANDOR_SAIL_4
+	waitmovement 0
+	applymovement 44, Movement_InteractFACEUP
+	waitmovement 0
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, MOVEMENT_PORTSARIM_CRANDOR_SAIL_5
+	waitmovement 0
+	applymovement 39, MOVEMENT_PORTSARIM_CRANDOR_SAIL_6
+	delay 120
+	special RemoveCameraObject
+	warp MAP_CRANDOR_SEA_ROUTE, 0, 72, 7
+	waitstate
+	end
+
+
+CRANDOR_EVENT_PORTSARIM_SIROWEN::
+	lock
+	faceplayer
+	namebox CRANDOR_EVENT_PORTSARIM_NED_Text_4
+	msgbox CRANDOR_EVENT_PORTSARIM_SIROWEN_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+MOVEMENT_PORTSARIM_CRANDOR_SAIL_1:
+	face_up
+	delay_16
+	jump_up
+	set_invisible
+	step_end
+
+MOVEMENT_PORTSARIM_CRANDOR_SAIL_2:
+	walk_left
+	walk_up
+	delay_16
+	jump_up
+	set_invisible
+	step_end
+
+MOVEMENT_PORTSARIM_CRANDOR_SAIL_3:
+	delay_16
+	walk_up
+	delay_16
+	face_left
+	step_end
+
+MOVEMENT_PORTSARIM_CRANDOR_SAIL_4:
+	walk_up
+	delay_16
+	jump_up
+	set_invisible
+	step_end
+
+MOVEMENT_PORTSARIM_CRANDOR_SAIL_5:
+	walk_slow_up
+	walk_slow_up
+	step_end
+
+MOVEMENT_PORTSARIM_CRANDOR_SAIL_6:
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	walk_slow_right
+	step_end
+
+MOVEMENT_PORTSARIM_CRANDOR_SAIL_7:
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+	step_end
+
 PORTSARIM_HAM_EVENT_PART2_Text_0:
 	.string "H.A.M Leader$"
 
@@ -873,6 +1023,9 @@ NPC_FLAGRESETER_Text_0:
 	.string "Your flag is now reset!$"
 
 NPC_SEAGULL_Text_0:
+	.string "Seagull$"
+
+NPC_SEAGULL_Text_1:
 	.string "Gull!$"
 
 NPC_PORTSARIM_BETTY_Text_0:
@@ -912,7 +1065,7 @@ NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_2:
 	.string "waiting.$"
 
 NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_3:
-	.string "Is your name PLAYER?\p"
+	.string "Is your name {PLAYER}?\p"
 	.string "I have received word that you are\n"
 	.string "participating in the MvM Championships,\l"
 	.string "is this correct?\p"
@@ -934,6 +1087,9 @@ NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_6:
 	.string "Suit yourself.$"
 
 NPC_PORTSARIM_CREWMAN_1_Text_0:
+	.string "Sailor$"
+
+NPC_PORTSARIM_CREWMAN_1_Text_1:
 	.string "These ships go to just about any port.\p"
 	.string "There are a lot of exotic monsters out\n"
 	.string "there so make sure to use our services.$"
@@ -968,6 +1124,9 @@ NPC_PORTSARIM_LORRIS_Text_1:
 	.string "different.$"
 
 NPC_PORTSARIM_NPC_1_Text_0:
+	.string "Fisherman$"
+
+NPC_PORTSARIM_NPC_1_Text_1:
 	.string "Sailing will never happen, get over it.$"
 
 NPC_PORTSARIM_MONK_1_Text_0:
@@ -990,6 +1149,9 @@ NPC_PORTSARIM_MONK_2_Text_1:
 	.string "creatures with you.$"
 
 NPC_PORTSARIM_NPC_2_Text_0:
+	.string "Man$"
+
+NPC_PORTSARIM_NPC_2_Text_1:
 	.string "Did you know that water type moves are\n"
 	.string "twice as strong in the rain, but fire\l"
 	.string "type moves damage are halved?$"
@@ -1017,7 +1179,7 @@ NPC_PORTSARIM_SIGNPOST_Text_0:
 	.string "Sea Shanty 2.$"
 
 NPC_PORTSARIM_REDBEARD_FRANK_Text_0:
-	.string "REDBEARD FRANK$"
+	.string "Frank$"
 
 NPC_PORTSARIM_REDBEARD_FRANK_Text_1:
 	.string "Do you have any Karamjan rum?\p"
@@ -1134,6 +1296,9 @@ NPC_PORTSARIM_FISHING_CUSTOMER_Text_0:
 	.string "This stays between us.$"
 
 NPC_PORTSARIM_BANK_NPC_Text_0:
+	.string "Pirate$"
+
+NPC_PORTSARIM_BANK_NPC_Text_1:
 	.string "Ye will never believe me lad.\p"
 	.string "I raised six seagulls.\n"
 	.string "Six!\p"
@@ -1148,12 +1313,15 @@ NPC_PORTSARIM_BATTLEAXE_LOREBOOK_Text_0:
 	.string "You feel the sudden urge to leave.$"
 
 NPC_PORTSARIM_NPC_JAILGUARD_Text_0:
+	.string "Jailer$"
+
+NPC_PORTSARIM_NPC_JAILGUARD_Text_1:
 	.string "Was that H.A.M that just ran into the\n"
 	.string "lighthouse?!\p"
 	.string "Eh, I'm on my break, let it be someone\n"
 	.string "elses problem.$"
 
-NPC_PORTSARIM_NPC_JAILGUARD_Text_1:
+NPC_PORTSARIM_NPC_JAILGUARD_Text_2:
 	.string "I am on my break, don't bother me.$"
 
 NPC_PORTSARIM_BLOCKADE_HAM_Text_0:
@@ -1185,6 +1353,19 @@ NPC_PORTSARIM_DRUNK_HAM_Text_1:
 	.string "hic…{PAUSE 32}Where is e…{PAUSE 32}very…{PAUSE 32}one.\n"
 	.string "Oh {PAUSE 32}…right {PAUSE 32}the lighthouse… {PAUSE 32}hic…$"
 
+NPC_PORTSARIM_NPC_8_Text_0:
+	.string "Seagulls are great.\p"
+	.string "They grow up differently depending on\n"
+	.string "how you raise them.\p"
+	.string "For example, if it has equal attack and\n"
+	.string "defence when you level it up enough\l"
+	.string "it'll turn into a Pelican.\p"
+	.string "I've heard some of those runes that\n"
+	.string "Wizards use have an effect on them too,\l"
+	.string "but I don't dabble with any of that\l"
+	.string "magic nonsense so you'll have to try\l"
+	.string "those for yourself.$"
+
 PORTSARIM_WISEOLDMAN_RIVAL_2_Text_0:
 	.string "Wise Old Man$"
 
@@ -1200,3 +1381,37 @@ PORTSARIM_WISEOLDMAN_RIVAL_2_Text_2:
 	.string "I am going to the Asgarnia ice dungeon\n"
 	.string "down south, care to join me?\p"
 	.string "I will see you there if you do.$"
+
+CRANDOR_EVENT_PORTSARIM_NED_Text_0:
+	.string "Ned$"
+
+CRANDOR_EVENT_PORTSARIM_NED_Text_1:
+	.string "{PLAYER}, are you ready to set sail to\n"
+	.string "the Isle of Crandor?$"
+
+CRANDOR_EVENT_PORTSARIM_NED_Text_2:
+	.string "I'll warn you one final time, this will be\n"
+	.string "extremely dangerous.\p"
+	.string "We might not make it back alive.\p"
+	.string "Are you sure you are ready to go?$"
+
+CRANDOR_EVENT_PORTSARIM_NED_Text_3:
+	.string "Very well, then let us embark on this\n"
+	.string "voyage!$"
+
+CRANDOR_EVENT_PORTSARIM_NED_Text_4:
+	.string "Sir Owen$"
+
+CRANDOR_EVENT_PORTSARIM_NED_Text_5:
+	.string "{PLAYER} I must admit that it pains\n"
+	.string "me not to be able to join you.\p"
+	.string "But I fully believe you are capable on\n"
+	.string "completing this mission.\p"
+	.string "Good luck!$"
+
+CRANDOR_EVENT_PORTSARIM_SIROWEN_Text_0:
+	.string "Sorry {PLAYER}, something came up\n"
+	.string "last minute that I must attend to.\p"
+	.string "It seems like it will just be you three\n"
+	.string "sailing to Crandor.\p"
+	.string "I wish you all the best.$"

@@ -230,7 +230,7 @@ ALKHARID_GYM_ALI::
 	namebox QUEST_ALKHARID_GYM_1_Text_5
 	goto_if_unset FLAG_BADGE04_GET, ALKHARID_GYM_ALI_2
 	goto_if_set FLAG_BADGE04_GET, ALKHARID_GYM_ALI_5
-	msgbox ALKHARID_GYM_ALI_Text_7
+	msgbox ALKHARID_GYM_ALI_Text_6
 ALKHARID_GYM_ALI_4:
 	hidenamebox
 	release
@@ -239,16 +239,16 @@ ALKHARID_GYM_ALI_4:
 ALKHARID_GYM_ALI_2:
 	msgbox ALKHARID_GYM_ALI_Text_0
 	hidenamebox
-	trainerbattle_no_intro TRAINER_ALKHARID_GYM_PRINCE_ALI, ALKHARID_GYM_ALI_Text_1
+	call GYM_BATTLE_PRINCE_ALI
 	namebox QUEST_ALKHARID_GYM_1_Text_5
-	msgbox ALKHARID_GYM_ALI_Text_2
+	msgbox ALKHARID_GYM_ALI_Text_1
 	hidenamebox
 	playfanfare MUS_PS_QUEST_COMPLETE
-	msgbox ALKHARID_GYM_ALI_Text_3
+	msgbox ALKHARID_GYM_ALI_Text_2
 	waitfanfare
 	waitmessage
 	namebox QUEST_ALKHARID_GYM_1_Text_5
-	msgbox ALKHARID_GYM_ALI_Text_4
+	msgbox ALKHARID_GYM_ALI_Text_3
 	hidenamebox
 	giveitem ITEM_TM48, 1
 	compare VAR_RESULT, FALSE
@@ -256,9 +256,10 @@ ALKHARID_GYM_ALI_2:
 	playbgm MUS_PS_ALKHARID, 0
 	savebgm MUS_PS_ALKHARID
 	namebox QUEST_ALKHARID_GYM_1_Text_5
-	msgbox ALKHARID_GYM_ALI_Text_5
+	msgbox ALKHARID_GYM_ALI_Text_4
 	setvar VAR_POKESCAPE_ALKHARID_GYM_QUEST, 30
 	setflag FLAG_BADGE04_GET
+	call HIDDEN_GROTTO_RESET
 	addvar VAR_GAMEMODE_LEVEL_SCALING, 1
 	call SetGymTrainers_VARROCK
 	hidenamebox
@@ -266,7 +267,7 @@ ALKHARID_GYM_ALI_2:
 	end
 
 ALKHARID_GYM_ALI_5:
-	msgbox ALKHARID_GYM_ALI_Text_6
+	msgbox ALKHARID_GYM_ALI_Text_5
 	goto ALKHARID_GYM_ALI_4
 
 
@@ -618,7 +619,7 @@ BARROWS_GUTHAN::
 	msgbox BARROWS_GUTHAN_Text_1
 	hidenamebox
 	closemessage
-	trainerbattle_no_intro TRAINER_BARROWS_GUTHAN, ALKHARID_GYM_ALI_Text_1
+	trainerbattle_no_intro TRAINER_BARROWS_GUTHAN, BARROWS_GUTHAN_Text_2
 	release
 	end
 
@@ -630,7 +631,7 @@ TEST_BATTLE::
 	msgbox TEST_BATTLE_Text_1
 	hidenamebox
 	closemessage
-	trainerbattle_no_intro TRAINER_BARROWS_GUTHAN, ALKHARID_GYM_ALI_Text_1
+	trainerbattle_no_intro TRAINER_BARROWS_GUTHAN, BARROWS_GUTHAN_Text_2
 	release
 	end
 
@@ -688,30 +689,27 @@ ALKHARID_GYM_ALI_Text_0:
 	.string "Welcome to the Al Kharid Gym.$"
 
 ALKHARID_GYM_ALI_Text_1:
-	.string "That was a very enjoyable battle!$"
-
-ALKHARID_GYM_ALI_Text_2:
 	.string "Have this Badge.$"
 
-ALKHARID_GYM_ALI_Text_3:
+ALKHARID_GYM_ALI_Text_2:
 	.string "{PLAYER} received the Al Kharid BADGE\n"
 	.string "from Prince Ali.$"
 
-ALKHARID_GYM_ALI_Text_4:
+ALKHARID_GYM_ALI_Text_3:
 	.string "Also have this Scroll.$"
 
-ALKHARID_GYM_ALI_Text_5:
+ALKHARID_GYM_ALI_Text_4:
 	.string "That move is called Power Gem.\p"
 	.string "It sparkles just as all our precious\n"
 	.string "Gems around the palace do.$"
 
-ALKHARID_GYM_ALI_Text_6:
+ALKHARID_GYM_ALI_Text_5:
 	.string "You seem like you would be strong\n"
 	.string "enough to take on the Barbarians,\l"
 	.string "maybe you should head there next for\l"
 	.string "your MvM gym challenge.$"
 
-ALKHARID_GYM_ALI_Text_7:
+ALKHARID_GYM_ALI_Text_6:
 	.string "You should go pester the Prince in Al\n"
 	.string "Kharid for your next MvM gym challenge.$"
 
@@ -796,6 +794,9 @@ BARROWS_GUTHAN_Text_0:
 BARROWS_GUTHAN_Text_1:
 	.string "I am known simply as Guthan.\p"
 	.string "Face me if you dare!$"
+
+BARROWS_GUTHAN_Text_2:
+	.string "That was a very enjoyable battle!$"
 
 TEST_BATTLE_Text_0:
 	.string "TEST$"

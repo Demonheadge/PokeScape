@@ -406,12 +406,57 @@
 #define TRAINER_RIVAL_WISE_OLD_MAN_1                    402
 #define TRAINER_RIVAL_WISE_OLD_MAN_2                    403
 #define TRAINER_RIVAL_WISE_OLD_MAN_3                    404
+#define TRAINER_VARROCK_TRAINING_ROOM_RUSHER            405
+#define TRAINER_DAEMONHEIM_GYM_THOK                     406
+#define TRAINER_DAEMONHEIM_GYM_TRAINER_1                407
+#define TRAINER_DAEMONHEIM_GYM_TRAINER_2                408
+#define TRAINER_DAEMONHEIM_GYM_TRAINER_3                409
+#define TRAINER_DAEMONHEIM_GYM_TRAINER_4                410
+#define TRAINER_DWARVENMINES_TRAINER_1                  411
+#define TRAINER_GYM_LEADER_TZHAAR_CHAMPION_1            412
+#define TRAINER_GYM_LEADER_VANNAKA_1                    413
+#define TRAINER_ELITE4_SIR_TIFFY_1                      414
+#define TRAINER_ELITE4_HAZELMERE_1                      415
+#define TRAINER_ELITE4_ZANIK_1                          416
+#define TRAINER_ELITE4_HANS_1                           417
+#define TRAINER_CHAMPION_WISE_OLD_MAN_1                 418
+#define TRAINER_EDGEVILLE_GYM_1                         419
+#define TRAINER_EDGEVILLE_GYM_2                         420
+#define TRAINER_EDGEVILLE_GYM_3                         421
+#define TRAINER_EDGEVILLE_GYM_4                         422
+#define TRAINER_EDGEVILLE_GYM_5                         423
+#define TRAINER_EDGEVILLE_GYM_6                         424
+#define TRAINER_EDGEVILLE_GYM_7                         425
+#define TRAINER_EDGEVILLE_GYM_8                         426
+#define TRAINER_EDGEVILLE_GYM_9                         427
+#define TRAINER_ROUTE49_TRAINER_1                       428
+#define TRAINER_ROUTE49_TRAINER_2                       429
+#define TRAINER_ROUTE49_TRAINER_3                       430
+#define TRAINER_MUDSKIPPER_MUGGER                       431
+#define TRAINER_CRANDOR_HAM_ADMIN_BABE                  432
+#define TRAINER_CRANDOR_HAM_ADMIN_PATTY                 433
+#define TRAINER_SAILING_PIRATE_1                        434
+#define TRAINER_AJAMJAM                                 435
+#define TRAINER_CrandorVolcano_FireGiant_1              436
+#define TRAINER_CrandorVolcano_FireGiant_2              437
+
+#define TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_1            438
+#define TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_2            439
+#define TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_3            440
+#define TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_1             441
+#define TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_2             442
+#define TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_3             443
+
+
+
+
+
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      404
+#define TRAINERS_COUNT                      (TRAINER_CrandorVolcano_FireGiant_2 + 1)
 #define MAX_TRAINERS_COUNT                  864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

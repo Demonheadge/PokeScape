@@ -9,6 +9,11 @@ const OBJ_EVENT_ID_MAN = 33
 const OBJ_EVENT_ID_QUESTER = 34
 const OBJ_EVENT_ID_JAILGUARD = 37
 
+const OBJ_EVENT_ID_SIROWEN = 44
+const OBJ_EVENT_ID_CABINBOY = 41
+const OBJ_EVENT_ID_NED = 40
+const OBJ_EVENT_ID_LADY_FALADOR = 39
+
 
 mapscripts Port_Sarim_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
@@ -27,7 +32,7 @@ mapscripts Port_Sarim_MapScripts {
 
 script VARSETTER {
     //setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 100)	//Spoke to Ariane after exiting Draynor Manor
-    setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 110)	//falador gym ready.
+    setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 130)	//falador gym ready.
 }
 
 
@@ -43,13 +48,16 @@ script PORTSARIM_STATE{
         removeobject(26)
         removeobject(27)
         setflag(FLAG_TEMP_1F)
-        setflag(FLAG_TEMP_1E)
+        //setflag(FLAG_TEMP_1E) boat
         removeobject(38)
         setflag(FLAG_TEMP_1D)
+        setflag(FLAG_TEMP_1C) //Ned
+        //setflag(FLAG_TEMP_1B) //Lady Lumbridge
+        
 
         switch (var(VAR_POKESCAPE_STORYMODE_PROGRESS)){ 
             //HAM EVENT, PORT SARIM BOAT
-            case 150: //SETUP AFTER FALADOR
+            case 150: //SETUP AFTER FALADOR (OLD)
                 addobject(21)
                 addobject(22)
                 addobject(23)
@@ -90,6 +98,9 @@ script PORTSARIM_STATE{
                 setobjectxyperm(OBJ_EVENT_ID_JAILGUARD, 6, 40)
                 addobject(38)
                 clearflag(FLAG_TEMP_1D)
+            case 130:
+                addobject(40)
+                clearflag(FLAG_TEMP_1C)
     
         }
 
@@ -319,9 +330,11 @@ script NPC_SEAGULL
 {
 	lock
 	faceplayer
-    playmoncry(SPECIES_WINGULL, 0)
+    namebox("Seagull")
+    playmoncry(SPECIES_SEAGULL_NORMAL_FORM, 0)
 	msgbox(format("Gull!"))
     waitmoncry
+    hidenamebox
 	release
 	end
 }
@@ -361,6 +374,9 @@ script NPC_PORTSARIM_CAPTIAN_TOBIAS
 
     if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) {
         msgbox(format("There seems to be some sort of commotion happening over at the lighthouse."))
+        hidenamebox
+        release
+        end
     }
     //switch (var(VAR_POKESCAPE_STORYMODE_PROGRESS)){ 
             //HAM EVENT, PORT SARIM BOAT
@@ -381,15 +397,17 @@ script NPC_PORTSARIM_CAPTIAN_TOBIAS
     //}
 
 
-    if (flag(FLAG_BADGE02_GET) == false) 
+    elif (flag(FLAG_BADGE03_GET) == false) 
 	{
         msgbox(format("Sorry but our boat has popped a leak.\pIt will be some time before it is repaired.\pYou should go visit the Party Room in Falador or something while you are waiting."))
         hidenamebox
         release
         end
     }
-    if(var(VAR_POKESCAPE_KARAMJAVOLCANO_STATE)==0) {
-        msgbox(format("Is your name PLAYER?\pI have received word that you are participating in the MvM Championships, is this correct?\pUsually our services cost 30gp but we have a deal with the Championship League that allows all participants to travel for free!\pSo…{PAUSE 15}…  Ahem!"))
+    elif(flag(FLAG_BADGE03_GET) == true) { //&& (var(VAR_KARMAJA_SAILORS_STATE) == 0)
+        msgbox(format("Is your name {PLAYER}?\pI have received word that you are participating in the MvM Championships, is this correct?\pUsually our services cost 30gp but we have a deal with the Championship League that allows all participants to travel for free!\pSo…{PAUSE 15}…  Ahem!"))
+        //Set var for KARMAJA_SAILORS_STATE
+        //setvar(KARMAJA_SAILORS_STATE, 5)
     }
     msgbox(format("Hi, there would you like to board the boat to Musa Point, Karamja?"), MSGBOX_YESNO)
     if (var(VAR_RESULT)==1)
@@ -413,10 +431,10 @@ script NPC_PORTSARIM_CREWMAN_1
 {
 	lock
 	faceplayer
-    //namebox ("NAME")
+    namebox ("Sailor")
 	msgbox(format("These ships go to just about any port.\pThere are a lot of exotic monsters out there so make sure to use our services."))
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
@@ -425,10 +443,10 @@ script NPC_PORTSARIM_CREWMAN_2
 {
 	lock
 	faceplayer
-    //namebox ("NAME")
+    namebox ("Sailor")
 	msgbox(format("If you go to Musa Point, say hi to Stephanie for me.\pI love her tattoos."))
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
@@ -491,10 +509,10 @@ script NPC_PORTSARIM_NPC_1
    //             release
    //             end
    // }
-    //namebox ("NAME")
+    namebox ("Fisherman")
 	msgbox(format("Sailing will never happen, get over it."))
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
@@ -545,10 +563,10 @@ script NPC_PORTSARIM_NPC_2
 {
 	lock
 	faceplayer
-    //namebox ("NAME")
+    namebox ("Man")
 	msgbox(format("Did you know that water type moves are twice as strong in the rain, but fire type moves damage are halved?"))
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
@@ -557,10 +575,10 @@ script NPC_PORTSARIM_NPC_3
 {
 	lock
 	faceplayer
-    //namebox ("NAME")
+    namebox ("Man")
 	msgbox(format("I have that shanty stuck in my head."))
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
@@ -569,10 +587,10 @@ script NPC_PORTSARIM_NPC_4
 {
 	lock
 	faceplayer
-    //namebox ("NAME")
+    namebox ("Man")
 	msgbox(format("Here in Port Sarim we mostly just see seagulls.\pI hope you like them."))
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
@@ -598,10 +616,10 @@ script NPC_PORTSARIM_NPC_5
      //           release
     //            end
    // }
-    //namebox ("NAME")
+    namebox ("Man")
 	msgbox(format("I wish I had my own port, maybe a player owned port?"))
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
@@ -609,11 +627,8 @@ script NPC_PORTSARIM_NPC_5
 script NPC_PORTSARIM_SIGNPOST
 {
 	lock
-	faceplayer
-    //namebox ("NAME")
 	msgbox(format("Welcome to Port Sarim.\p…\pThere is something scribbled on the sign.\pSea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2, Sea Shanty 2.\pSea Shanty 2."))
     waitmessage
-    //hidenamebox
 	release
 	end
 }
@@ -622,7 +637,7 @@ script NPC_PORTSARIM_REDBEARD_FRANK
 {
 	lock
 	faceplayer
-    namebox ("REDBEARD FRANK")
+    namebox ("Frank")
 	msgbox(format("Do you have any Karamjan rum?\pNo?\pShame."))
     waitmessage
     hidenamebox
@@ -634,7 +649,7 @@ script NPC_PORTSARIM_NPC_6
 {
 	lock
 	faceplayer
-    //namebox ("NAME")
+    namebox ("Man")
     msgbox(format("Sea Shanty 2 is the best song right?"), MSGBOX_YESNO)
     if (var(VAR_RESULT))
         {
@@ -645,14 +660,14 @@ script NPC_PORTSARIM_NPC_6
             msgbox(format("WOT!?\p…\p…\pREEEEEEEE!"))
         }
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
 
 script NPC_PORTSARIM_VOID_SQUIRE
 {
-    if (flag(FLAG_BADGE02_GET)) 
+    if (flag(FLAG_BADGE03_GET)) 
     {
         goto(PEST_CONTROL_ENTER)
     }
@@ -706,7 +721,7 @@ script NPC_PORTSARIM_NPC_7
 {
 	lock
 	faceplayer
-    //namebox ("CUPHOLDER")
+    namebox ("Man")
 	msgbox(format("Do you happen to know what to do with a drunken sailor?\pAsking for a friend."))
     waitmessage
     hidenamebox
@@ -799,7 +814,7 @@ script NPC_PORTSARIM_BANK_NPC
 {
 	lock
 	faceplayer
-    //namebox ("CUSTOMER")
+    namebox ("Pirate")
 	msgbox(format("Ye will never believe me lad.\pI raised six seagulls.\nSix!\pThat's more than three!\pEvery one of them wee flying rats evolved to a different beastie.\pWhat in tarnation is this sorcery lad?"))
     waitmessage
     hidenamebox
@@ -822,6 +837,7 @@ script NPC_PORTSARIM_NPC_JAILGUARD
 {
 	lock
 	faceplayer
+    namebox ("Jailer")
     switch (var(VAR_POKESCAPE_STORYMODE_PROGRESS)){ 
             //HAM EVENT, PORT SARIM BOAT
             case 100:
@@ -831,10 +847,10 @@ script NPC_PORTSARIM_NPC_JAILGUARD
                 release
                 end
     }
-    //namebox ("NAME")
+    
 	msgbox(format("I am on my break, don't bother me."))
     waitmessage
-    //hidenamebox
+    hidenamebox
 	release
 	end
 }
@@ -891,6 +907,23 @@ script NPC_PORTSARIM_DRUNK_HAM
 }
 
 
+script NPC_PORTSARIM_NPC_8
+{
+	lock
+	faceplayer
+    namebox ("Fisherman")
+	msgbox(format("Seagulls are great.\pThey grow up differently depending on how you raise them.\pFor example, if it has equal attack and defence when you level it up enough it'll turn into a Pelican.\pI've heard some of those runes that Wizards use have an effect on them too, but I don't dabble with any of that magic nonsense so you'll have to try those for yourself."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+
 //Wise Old man
 script PORTSARIM_WISEOLDMAN_RIVAL_2{
     if (!(var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 105)) {
@@ -944,4 +977,118 @@ movement movement_wom_portsarim_3{
     walk_left
     walk_up * 6
     walk_left * 6
+}
+
+
+
+
+
+
+
+
+
+
+script CRANDOR_EVENT_PORTSARIM_NED {
+    lockall
+    faceplayer
+    namebox("Ned")
+    msgbox(format("{PLAYER}, are you ready to set sail to the Isle of Crandor?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+        msgbox(format("I'll warn you one final time, this will be extremely dangerous.\pWe might not make it back alive.\pAre you sure you are ready to go?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT)){
+            msgbox(format("Very well, then let us embark on this voyage!"))
+            closemessage
+            hidenamebox
+
+
+            applymovement(OBJ_EVENT_ID_SIROWEN, Movement_InteractFACERIGHT)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_NED, MOVEMENT_PORTSARIM_CRANDOR_SAIL_1)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_PORTSARIM_CRANDOR_SAIL_7)
+            applymovement(OBJ_EVENT_ID_CABINBOY, MOVEMENT_PORTSARIM_CRANDOR_SAIL_2)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_PORTSARIM_CRANDOR_SAIL_3)
+            waitmovement(0)
+            namebox("Sir Owen")
+            msgbox(format("{PLAYER} I must admit that it pains me not to be able to join you.\pBut I fully believe you are capable on completing this mission.\pGood luck!"))
+            closemessage
+            hidenamebox
+            applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_PORTSARIM_CRANDOR_SAIL_4)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_SIROWEN, Movement_InteractFACEUP)
+            waitmovement(0)
+
+            special(SpawnCameraObject) 
+            applymovement(OBJ_EVENT_ID_CAMERA, MOVEMENT_PORTSARIM_CRANDOR_SAIL_5)
+            waitmovement(0)
+            applymovement(OBJ_EVENT_ID_LADY_FALADOR, MOVEMENT_PORTSARIM_CRANDOR_SAIL_6)
+            
+            delay(120)
+            special(RemoveCameraObject) 
+
+            warp(MAP_CRANDOR_SEA_ROUTE, 0, 72, 7)
+            waitstate
+            end
+        }
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script CRANDOR_EVENT_PORTSARIM_SIROWEN {
+    lock
+    faceplayer
+    namebox("Sir Owen")
+    msgbox(format("Sorry {PLAYER}, something came up last minute that I must attend to.\pIt seems like it will just be you three sailing to Crandor.\pI wish you all the best."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+movement MOVEMENT_PORTSARIM_CRANDOR_SAIL_1 {
+    face_up
+    delay_16
+    jump_up
+    set_invisible
+}
+
+movement MOVEMENT_PORTSARIM_CRANDOR_SAIL_2 {
+    walk_left
+    walk_up
+    delay_16
+    jump_up
+    set_invisible
+}
+
+movement MOVEMENT_PORTSARIM_CRANDOR_SAIL_3 {
+    //walk_up
+    delay_16
+    walk_up
+    delay_16
+    face_left
+}
+
+movement MOVEMENT_PORTSARIM_CRANDOR_SAIL_4 {
+    walk_up
+    delay_16
+    jump_up
+    set_invisible
+}
+
+movement MOVEMENT_PORTSARIM_CRANDOR_SAIL_5 {
+    walk_slow_up * 2
+}
+
+movement MOVEMENT_PORTSARIM_CRANDOR_SAIL_6 {
+    walk_slow_right * 7
+}
+
+movement MOVEMENT_PORTSARIM_CRANDOR_SAIL_7 {
+    lock_facing_direction
+    walk_down
+    unlock_facing_direction
 }

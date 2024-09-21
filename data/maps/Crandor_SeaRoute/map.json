@@ -15,20 +15,35 @@
   "connections": [
     {
       "map": "MAP_RIMMINGTON",
-      "offset": -11,
+      "offset": -6,
       "direction": "right"
     },
     {
       "map": "MAP_CRANDOR",
       "offset": 0,
       "direction": "up"
+    },
+    {
+      "map": "MAP_MUSA_POINT",
+      "offset": 74,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE39",
+      "offset": 25,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_BRIMHAVEN",
+      "offset": -15,
+      "direction": "down"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ELVARG_FLY",
-      "x": 16,
-      "y": 3,
+      "x": 1,
+      "y": 1,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -40,8 +55,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SWIMMER_M",
-      "x": 11,
-      "y": 6,
+      "x": 26,
+      "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -53,12 +68,25 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SHIP_1",
-      "x": 57,
-      "y": 5,
+      "x": 72,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_TEMP_13"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PIRATE_1",
+      "x": 64,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",

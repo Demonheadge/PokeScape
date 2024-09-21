@@ -1,0 +1,15 @@
+mapscripts Lumbridge_Swamp_Caves_WGS_3_MapScripts {
+
+}
+
+script ITEM_WGS_CAVERN_1
+{
+    finditem(ITEM_DRUID_POUCH)
+    end
+}
+
+script ITEM_WGS_CAVERN_2
+{
+    finditem(ITEM_CABBAGE)
+    end
+}

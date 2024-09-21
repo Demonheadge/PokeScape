@@ -556,9 +556,34 @@
 #define OBJ_EVENT_GFX_VORKATH			        539
 #define OBJ_EVENT_GFX_BEHEMOTH			        540
 #define OBJ_EVENT_GFX_ELVARG_FLY				541
+#define OBJ_EVENT_GFX_BALANCE_ELEMENTAL         542
+#define OBJ_EVENT_GFX_DUNGEONEER_1              543
+#define OBJ_EVENT_GFX_EDDIMU                    544
+#define OBJ_EVENT_GFX_GORAJO_1                  545
+#define OBJ_EVENT_GFX_GORAJO_2                  546
+#define OBJ_EVENT_GFX_FORGOTTEN_MAGE            547
+#define OBJ_EVENT_GFX_FORGOTTEN_RANGER          548
+#define OBJ_EVENT_GFX_GUARD_ARDY                549
+#define OBJ_EVENT_GFX_KNIGHT_ARDY               550
+#define OBJ_EVENT_GFX_MONKEY                    551
+#define OBJ_EVENT_GFX_PENGUIN                   552
+#define OBJ_EVENT_GFX_PENGUIN_BARREL            553
+#define OBJ_EVENT_GFX_PENGUIN_BOX               554
+#define OBJ_EVENT_GFX_PENGUIN_BUSH              555
+#define OBJ_EVENT_GFX_PENGUIN_CACTUS            556
+#define OBJ_EVENT_GFX_PENGUIN_TOADSTOOL         557
+#define OBJ_EVENT_GFX_ROMEO                     558
+#define OBJ_EVENT_GFX_SWAMPLETICS               559
+#define OBJ_EVENT_GFX_LESSER_DEMON              560
+#define OBJ_EVENT_GFX_DELRITH                   561
+#define OBJ_EVENT_GFX_PIRATE_SHIP               562
+#define OBJ_EVENT_GFX_TZHAAR_CHAMPION           563
+#define OBJ_EVENT_GFX_TZ_KIH                    564
+#define OBJ_EVENT_GFX_HAR_AKEN                  565
+#define OBJ_EVENT_GFX_HAR_AKEN_TENTACLE         566
+#define OBJ_EVENT_GFX_KET_DILL                  567
 
-
-#define NUM_OBJ_EVENT_GFX                        542
+#define NUM_OBJ_EVENT_GFX                       (OBJ_EVENT_GFX_KET_DILL + 1)
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //
 // Object event graphics ids are 1 byte in size (max value of 255), and the dynamic

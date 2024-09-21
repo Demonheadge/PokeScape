@@ -162,7 +162,7 @@ BATTLE_AsgarnianDungeon_PIRATE_3_Text_0:
 	.string "you, en garde!$"
 
 BATTLE_AsgarnianDungeon_PIRATE_3_Text_1:
-	.string "Please dont go telling the authorities\n"
+	.string "Please don't go telling the authorities\n"
 	.string "about our petty squable, aye?$"
 
 BATTLE_AsgarnianDungeon_PIRATE_4_Text_0:
@@ -207,7 +207,7 @@ BATTLE_AsgarnianDungeon_QUESTER_Text_1:
 	.string "All I want to do is mine the Blurite ore.$"
 
 BATTLE_AsgarnianDungeon_PVM_1_Text_0:
-	.string "Im on an Ice Warrior slayer task, dont\n"
+	.string "Im on an Ice Warrior slayer task, don't\n"
 	.string "bother me noob.$"
 
 BATTLE_AsgarnianDungeon_PVM_1_Text_1:

@@ -118,7 +118,7 @@
       "x": 2,
       "y": 3,
       "elevation": 0,
-      "item": "ITEM_NONE",
+      "item": "ITEM_PURPLE_SWEETS",
       "flag": "FLAG_TEMP_1"
     },
     {
@@ -126,7 +126,7 @@
       "x": 7,
       "y": 11,
       "elevation": 0,
-      "item": "ITEM_NONE",
+      "item": "ITEM_POTION_ATT",
       "flag": "FLAG_TEMP_1"
     },
     {
@@ -134,7 +134,7 @@
       "x": 2,
       "y": 9,
       "elevation": 0,
-      "item": "ITEM_NONE",
+      "item": "ITEM_CAKE",
       "flag": "FLAG_TEMP_1"
     }
   ]

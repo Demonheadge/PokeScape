@@ -128,7 +128,7 @@ script Lumbridge_Castle_NPC3
 		msgbox(format("What do you mean the monsters are all birds?!\pI don't get it."))
 	}
 	else {
-		msgbox(format("The Duke holds power over Lumbridge.\pBut personally I dont think he is that good of a ruler."))
+		msgbox(format("The Duke holds power over Lumbridge.\pBut personally I don't think he is that good of a ruler."))
 	}
 	//hidenamebox
 	release

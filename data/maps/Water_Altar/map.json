@@ -59,8 +59,8 @@
       "x": 7,
       "y": 14,
       "elevation": 0,
-      "dest_map": "MAP_WATER_ALTAR",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_LUMBRIDGE_SWAMP",
+      "dest_warp_id": "5"
     }
   ],
   "coord_events": [

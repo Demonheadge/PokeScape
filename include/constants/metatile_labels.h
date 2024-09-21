@@ -1,6 +1,10 @@
 #ifndef GUARD_METATILE_LABELS_H
 #define GUARD_METATILE_LABELS_H
 
+// gTileset_AlKharid
+#define METATILE_AlKharid_LOCKED_DOOR  0x251
+#define METATILE_AlKharid_OPENED_DOOR  0x213
+
 // gTileset_BattleArena
 #define METATILE_BattleArena_Door  0x21B
 
@@ -134,6 +138,16 @@
 #define METATILE_Cave_ShoalCave_DirtPile_Large           0x358
 #define METATILE_Cave_ShoalCave_DirtPile_Small           0x35A
 
+// gTileset_ChaosTunnels
+#define METATILE_ChaosTunnels_E4_CAVE_ENTER_1       0x20B
+#define METATILE_ChaosTunnels_E4_CAVE_ENTER_2       0x20C
+#define METATILE_ChaosTunnels_E4_CAVE_ENTER_3       0x20D
+#define METATILE_ChaosTunnels_E4_CAVE_TOP_M         0x209
+#define METATILE_ChaosTunnels_E4_CRACKED_TILE       0x201
+#define METATILE_ChaosTunnels_E4_CRACKED_WARP_DOWN  0x204
+#define METATILE_ChaosTunnels_E4_OPEN_DOOR_BOTTOM   0x22C
+#define METATILE_ChaosTunnels_E4_OPEN_DOOR_TOP      0x224
+
 // gTileset_Contest
 #define METATILE_Contest_CounterFlap_Bottom  0x2D9
 #define METATILE_Contest_CounterFlap_Top     0x2D1
@@ -143,6 +157,30 @@
 // gTileset_Dewford
 #define METATILE_Dewford_Door              0x225
 #define METATILE_Dewford_Door_BattleTower  0x25D
+
+// gTileset_DraynorManor
+#define METATILE_DraynorManor_BASEMENT_GATE_LOCKED_BOTTOM     0x2D7
+#define METATILE_DraynorManor_BASEMENT_GATE_LOCKED_TOP        0x2CF
+#define METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_BOTTOM   0x2E7
+#define METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_TOP      0x375
+#define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_L_DOWN_1  0x2EF
+#define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_L_DOWN_2  0x2F7
+#define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_L_UP_1    0x2FF
+#define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_L_UP_2    0x307
+#define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_R_DOWN_1  0x314
+#define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_R_DOWN_2  0x31C
+#define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_R_UP_1    0x315
+#define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_R_UP_2    0x31D
+#define METATILE_DraynorManor_BASEMENT_LEVER_DOWN_1           0x30E
+#define METATILE_DraynorManor_BASEMENT_LEVER_DOWN_2           0x316
+#define METATILE_DraynorManor_BASEMENT_LEVER_UP_1             0x30F
+#define METATILE_DraynorManor_BASEMENT_LEVER_UP_2             0x317
+#define METATILE_DraynorManor_BASEMENT_SIDE_GATE_LOCKED_1     0x36E
+#define METATILE_DraynorManor_BASEMENT_SIDE_GATE_LOCKED_2     0x376
+#define METATILE_DraynorManor_BASEMENT_SIDE_GATE_LOCKED_4     0x37E
+#define METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_1   0x36F
+#define METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_2   0x377
+#define METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_3   0x37F
 
 // gTileset_Dungeoneering
 #define METATILE_Dungeoneering_DG_PLAIN_FLOOR               0x208
@@ -473,6 +511,13 @@
 #define METATILE_PokeScapeCaves_darkcave_pond_top_M          0x0C1
 #define METATILE_PokeScapeCaves_darkcave_pond_top_R          0x0C2
 
+// gTileset_PokeScapeIndoors
+#define METATILE_PokeScapeIndoors_BOOKCASE_INTERACT_L      0x180
+#define METATILE_PokeScapeIndoors_BOOKCASE_INTERACT_R      0x181
+#define METATILE_PokeScapeIndoors_BOOKCASE_INTERACT_SMALL  0x183
+#define METATILE_PokeScapeIndoors_BOOKCASE_SPARKLE         0x191
+#define METATILE_PokeScapeIndoors_CUPBOARD_SPARKLE         0x190
+
 // gTileset_PokeScapeOutdoors
 #define METATILE_PokeScapeOutdoors_Door_Bank_L          0x13A
 #define METATILE_PokeScapeOutdoors_Door_Bank_R          0x135
@@ -482,7 +527,33 @@
 #define METATILE_PokeScapeOutdoors_Door_General_R       0x1D3
 #define METATILE_PokeScapeOutdoors_Door_Pub_L           0x1EA
 #define METATILE_PokeScapeOutdoors_Door_Pub_R           0x1D2
+#define METATILE_PokeScapeOutdoors_FLOWER_TILE_1        0x004
+#define METATILE_PokeScapeOutdoors_FLOWER_TILE_2        0x00C
 #define METATILE_PokeScapeOutdoors_GENERAL_SAND         0x0F9
+#define METATILE_PokeScapeOutdoors_LOCKED_DOOR          0x1F0
+#define METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE    0x001
+
+// gTileset_PokeScape_Caves
+#define METATILE_PokeScape_Caves_HARAKEN_POOL_L      0x2F0
+#define METATILE_PokeScape_Caves_HARAKEN_POOL_M      0x2F1
+#define METATILE_PokeScape_Caves_HARAKEN_POOL_R      0x2F2
+#define METATILE_PokeScape_Caves_LAVA_BUBBLES        0x278
+#define METATILE_PokeScape_Caves_LAVA_POOL           0x2E1
+#define METATILE_PokeScape_Caves_LAVA_POOL_DOWN      0x2D9
+#define METATILE_PokeScape_Caves_LAVA_POOL_L         0x2E2
+#define METATILE_PokeScape_Caves_LAVA_POOL_R         0x2E0
+#define METATILE_PokeScape_Caves_TENTACLE_POOL_DOWN  0x300
+#define METATILE_PokeScape_Caves_TENTACLE_POOL_L     0x2F9
+#define METATILE_PokeScape_Caves_TENTACLE_POOL_R     0x2F8
+#define METATILE_PokeScape_Caves_TENTACLE_POOL_UP    0x2FA
+
+// gTileset_PokeScape_Sewers
+#define METATILE_PokeScape_Sewers_GATE_CLOSED_DOWN  0x36A
+#define METATILE_PokeScape_Sewers_GATE_CLOSED_UP    0x362
+#define METATILE_PokeScape_Sewers_GATE_DOWN         0x308
+#define METATILE_PokeScape_Sewers_GATE_OPEN_DOWN    0x369
+#define METATILE_PokeScape_Sewers_GATE_OPEN_UP      0x361
+#define METATILE_PokeScape_Sewers_GATE_UP           0x300
 
 // gTileset_PokemonCenter
 #define METATILE_PokemonCenter_CounterBarrier            0x25D

@@ -439,7 +439,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 49,
+      "x": 50,
       "y": 31,
       "elevation": 0,
       "dest_map": "MAP_VARROCK_HOUSE_5",
@@ -545,6 +545,22 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LOCKED_DOOR"
+    },
+    {
+      "type": "sign",
+      "x": 51,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "LOCKED_DOOR"
+    },
+    {
+      "type": "hidden_item",
+      "x": 20,
+      "y": 22,
+      "elevation": 0,
+      "item": "ITEM_PURPLE_SWEETS",
+      "flag": "FLAG_HIDDEN_ITEM_VARROCK_6"
     }
   ]
 }

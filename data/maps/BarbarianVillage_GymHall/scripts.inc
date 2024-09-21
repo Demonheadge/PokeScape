@@ -330,9 +330,9 @@ NPC_BARBGYM_BARBARIAN_2::
 	msgbox NPC_BARBGYM_BARBARIAN_2_Text_24
 	closemessage
 	hidenamebox
-	trainerbattle_no_intro TRAINER_BARBARIAN_GYM_GUNTHOR, NPC_BARBGYM_BARBARIAN_2_Text_25
+	call GYM_BATTLE_GUNTHOR
 	namebox NPC_BARBGYM_BARBARIAN_1_Text_0
-	msgbox NPC_BARBGYM_BARBARIAN_2_Text_26
+	msgbox NPC_BARBGYM_BARBARIAN_2_Text_25
 	hidenamebox
 	playse SE_M_ENCORE2
 	call ContestHall_EventScript_VObjectAudienceLookAround
@@ -343,14 +343,14 @@ NPC_BARBGYM_BARBARIAN_2::
 	delay 20
 	waitmovement OBJ_EVENT_ID_CAMERA
 	namebox NPC_BARBGYM_BARBARIAN_2_Text_22
-	msgbox NPC_BARBGYM_BARBARIAN_2_Text_27
+	msgbox NPC_BARBGYM_BARBARIAN_2_Text_26
 	hidenamebox
 	giveitem ITEM_TM66_BRUTAL_SWING
 	namebox NPC_BARBGYM_BARBARIAN_2_Text_22
-	msgbox NPC_BARBGYM_BARBARIAN_2_Text_28
+	msgbox NPC_BARBGYM_BARBARIAN_2_Text_27
 	hidenamebox
 	playfanfare MUS_PS_QUEST_COMPLETE
-	msgbox NPC_BARBGYM_BARBARIAN_2_Text_29
+	msgbox NPC_BARBGYM_BARBARIAN_2_Text_28
 	waitmessage
 	waitfanfare
 	playbgm MUS_PS_BARBARIAN_VILLAGE, 0
@@ -358,11 +358,12 @@ NPC_BARBGYM_BARBARIAN_2::
 	applymovement 10, MOVEMENT_WALK_DOWN
 	waitmovement 0
 	namebox NPC_BARBGYM_BARBARIAN_1_Text_0
-	msgbox NPC_BARBGYM_BARBARIAN_2_Text_30
+	msgbox NPC_BARBGYM_BARBARIAN_2_Text_29
 	closemessage
 	hidenamebox
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_BADGE06_GET
+	call HIDDEN_GROTTO_RESET
 	addvar VAR_GAMEMODE_LEVEL_SCALING, 1
 	setvar VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE, 3
 	call BarbarianVillage_GYM_STATE
@@ -740,33 +741,28 @@ NPC_BARBGYM_BARBARIAN_2_Text_24:
 	.string "chatting I am itching for this fight!$"
 
 NPC_BARBGYM_BARBARIAN_2_Text_25:
-	.string "ARAGGHHHARH!\p"
-	.string "Battles like this is what I live for and\n"
-	.string "why I decided to become a Gym Leader!$"
-
-NPC_BARBGYM_BARBARIAN_2_Text_26:
 	.string "My brothers and sisters…{PAUSE 15} I cannot\n"
 	.string "believe it!\p"
 	.string "The winner is…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}{PLAYER}!!!!!!!!$"
 
-NPC_BARBGYM_BARBARIAN_2_Text_27:
+NPC_BARBGYM_BARBARIAN_2_Text_26:
 	.string "Well done {PLAYER}, I haven't enjoyed\n"
 	.string "myself in a battle like that in years!\p"
 	.string "Here I would like you to have this, it is\n"
 	.string "one of my favourite moves.$"
 
-NPC_BARBGYM_BARBARIAN_2_Text_28:
+NPC_BARBGYM_BARBARIAN_2_Text_27:
 	.string "And of course we cannot forget this,\n"
 	.string "the main reason you are here today.\p"
 	.string "Here you go {PLAYER} I proudly award\n"
 	.string "you this Gym Badge and also hereby\l"
 	.string "declare you an honorary Barbarian!$"
 
-NPC_BARBGYM_BARBARIAN_2_Text_29:
+NPC_BARBGYM_BARBARIAN_2_Text_28:
 	.string "{PLAYER} received the Barbarian\n"
 	.string "BADGE from Gunthor the Brave.$"
 
-NPC_BARBGYM_BARBARIAN_2_Text_30:
+NPC_BARBGYM_BARBARIAN_2_Text_29:
 	.string "Thank you all for coming today to see a\n"
 	.string "champ in the making!\p"
 	.string "Until next time!$"

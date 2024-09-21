@@ -210,7 +210,7 @@
 #define VAR_GLASS_WORKSHOP_STATE             0x40BE
 #define VAR_METEOR_FALLS_STATE               0x40BF
 #define VAR_SOOTOPOLIS_MYSTERY_EVENTS_STATE  0x40C0
-#define VAR_TRICK_HOUSE_PRIZE_PICKUP         0x40C1
+#define VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST   0x40C1 //VAR_TRICK_HOUSE_PRIZE_PICKUP 
 #define VAR_PACIFIDLOG_TM_RECEIVED_DAY       0x40C2
 #define VAR_VICTORY_ROAD_1F_STATE            0x40C3
 #define VAR_FOSSIL_RESURRECTION_STATE        0x40C4
@@ -267,7 +267,7 @@
 #define VAR_FLY_TOOL_SOURCE                  0x40F7 // QoL Field Moves
 #define VAR_BANANA_COUNT                     0x40F8 // Unused Var
 #define VAR_BANANA_BOAT_QUEST                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                    0x40FA // Unused Var
+#define VAR_POTTERINGTON_FARM                0x40FA // Unused Var
 #define VAR_UNUSED_0x40FB                    0x40FB // Unused Var
 #define VAR_UNUSED_0x40FC                    0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                    0x40FD // Unused Var

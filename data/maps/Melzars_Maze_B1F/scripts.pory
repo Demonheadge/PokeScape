@@ -197,15 +197,9 @@ script TRIGGER_Melzar_Maze_HAM_EVENT_BABE {
     waitmovement(0)
 
 	//Battles demon
-	namebox ("Lesser Demon")
-	playmoncry(SPECIES_DEMON_LESSER_TONGUE_FORM, 0)
-	msgbox(format("GWARAKU!"))
-	waitmoncry
-    hidenamebox
-	closemessage
-	delay(1)
-	setwildbattle (SPECIES_DEMON_LESSER_TONGUE_FORM, 25, ITEM_NONE)
-	dowildbattle
+	
+	call(HAM_LESSER_DEMON_EVENT)
+	
 	fadescreen(FADE_TO_BLACK)
 	setflag(FLAG_TEMP_1B)
 	removeobject(4)
@@ -281,7 +275,7 @@ script TRIGGER_Melzar_Maze_HAM_EVENT_BABE {
 	hidenamebox
 	applymovement(6, MOVEMENT_INTERACT_LEFT)
 	namebox("H.A.M Grunt")
-	msgbox(format("What about the batallion sent to Falador?"))
+	msgbox(format("What about the battalion sent to Falador?"))
 	closemessage
 	hidenamebox
 	waitmovement(0)
@@ -295,7 +289,7 @@ script TRIGGER_Melzar_Maze_HAM_EVENT_BABE {
     waitmovement(0)
 
 	namebox("Babe")
-	msgbox(format("Hey you, you may have won this time, but let me just say you shouldn't give chase after us.\pSome of the higher ups like Johannes and Sigmund can be real scary.\pI wouldn't want to oppose them.\pThis one time I accidentally ate Sigmunds san-"))
+	msgbox(format("Hey you, you may have won this time, but let me just say you shouldn't give chase after us.\pSome of the higher ups like Johanhus and Sigmund can be real scary.\pI wouldn't want to oppose them.\pThis one time I accidentally ate Sigmunds san-"))
 	closemessage
 	hidenamebox
 	applymovement(6, MOVEMENT_INTERACT_LEFT)
@@ -388,4 +382,27 @@ movement movement_MelzarsMazeB1F_HAM3 {
 }
 movement movement_MelzarsMazeB1F_Babe3 {
 	walk_right * 1
+}
+
+
+
+script HAM_LESSER_DEMON_EVENT {
+	namebox ("Lesser Demon")
+	playmoncry(SPECIES_DEMON_LESSER_TONGUE_FORM, 0)
+	msgbox(format("GWARAKU!"))
+	waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+	setwildbattle (SPECIES_DEMON_LESSER_TONGUE_FORM, 25, ITEM_NONE)
+	dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_RAN) {
+        namebox ("Babe")
+        msgbox(format("Hey, like so, we need that map piece the Demon is guarding.\pThink you could try again?"))
+		closemessage
+        hidenamebox
+		call(HAM_LESSER_DEMON_EVENT)
+		return
+	}
+	return
 }

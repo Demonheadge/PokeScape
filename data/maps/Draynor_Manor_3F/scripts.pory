@@ -56,7 +56,7 @@ script NPC_DraynorManor_Chicken_1{
 script NPC_DraynorManor_OddenstienLog{
     msgbox(format("It is Professor Oddenstien's Log book.\pWant to read it?"), MSGBOX_YESNO)
 		if (var(VAR_RESULT)){
-			msgbox(format("Log 1: I met a man named Ernest.\pThis was perfect, before he could say I word told him to be my assistant for my newest experiment.\pAnd it was a success I could now transform humans into chickens!\pWith this I will never have a shortage of eggs for breakfast."))
+			msgbox(format("Log 1: I met a man named Ernest.\pThis was perfect, before he could say a word I told him to be my assistant for my newest experiment.\pAnd it was a success I could now transform humans into chickens!\pWith this I will never have a shortage of eggs for breakfast."))
 			msgbox(format("Log 2: Ernest seemed like he wanted to go outside so I opened a window.\pI wonder where he will go."))
 			msgbox(format("Log 3: An adventurer brought Ernest back to me and told me his fiancee wanted him turned back into a human.\pDoes this mean I will no longer have eggs for breakfast?"))
 			msgbox(format("Log 4: With Ernest gone only his eggs remain.\pI probably have enough supply for a week but I think I will need to find another assistant soon otherwise I will run out of eggs."))
@@ -192,25 +192,51 @@ script SCRIPT_DraynorManor_Fountain {
 script SCRIPT_DraynorManor_Gravestone {
     msgbox(format("It is a gravestone.\pIt reads 'here lies Polly'."))
 	closemessage
-    checkitem (ITEM_MAGICAL_CAGE,1)
-	if (var(VAR_RESULT)){
-        msgbox(format("Would you like to dig up Polly?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT)){
-			msgbox(format("You dig up the corpse of an ex-parrot.\pYou place the body in the cage.\p…{PAUSE 15} …{PAUSE 15} The cage begins to glow."))
-            removeitem(ITEM_MAGICAL_CAGE)
-            msgbox(format("The ex-parrot comes to life!"))
-            call(EventScript_DraynorManor_ExExParrot)
-            msgbox(format("You should show Prof.Oddenstein."))
-            closemessage
-            end
-		}
-		else {
-            closemessage
-			end
-		}
-    }
+	if (flag(FLAG_RECIEVED_EX_EX_PARROT) == FALSE) {
+		//checkitem (ITEM_TELEPORT_TOOL,1) //SPADE
+		//if (var(VAR_RESULT)){
+			checkitem (ITEM_MAGICAL_CAGE,1)
+			if (var(VAR_RESULT)){
+				msgbox(format("Would you like to dig up Polly?"), MSGBOX_YESNO)
+				if (var(VAR_RESULT)){
+					msgbox(format("You dig up the corpse of an ex-parrot.\pYou place the body in the cage.\p…{PAUSE 15} …{PAUSE 15} The cage begins to glow."))
+					removeitem(ITEM_MAGICAL_CAGE)
+					msgbox(format("The ex-parrot comes to life!"))
+					call(EventScript_DraynorManor_ExExParrot)
+					closemessage
+					end
+				}
+				else {
+					msgbox(format("You dig up the corpse of an ex-parrot.\pBut have nowhere to put, so you bury it again.\pMaybe if you had a cage…"))
+					closemessage
+					end
+				}
+			}
+		//}
+	}
+	else {
+		msgbox(format("Looks like someone looted this grave.\pHow could they…"))
+		closemessage
+	}
     end
 }
+
+script SCRIPT_DraynorManor_FindCage {
+	msgbox(format("You search through the shelves…"))
+	if (flag(FLAG_RECIEVED_EX_EX_PARROT) == FALSE) {
+		checkitem (ITEM_MAGICAL_CAGE,1)
+		if (!var(VAR_RESULT)){
+			closemessage
+			giveitem(ITEM_MAGICAL_CAGE, 1)
+			closemessage
+			end
+		}
+	}
+	msgbox(format("…{PAUSE 15}…{PAUSE 15} and find nothing!"))
+	closemessage
+	end
+}
+
 
 script EventScript_DraynorManor_ExExParrot {
     setvar(VAR_TEMP_1, SPECIES_EXEXPARROT)
@@ -263,6 +289,7 @@ script EventScript_DraynorManor_ReceivedFanfare_ExExParrot{
 }
 
 script EventScript_DraynorManor_Received_ExExParrot{
+	setflag(FLAG_RECIEVED_EX_EX_PARROT)
     //msgbox(format("EVENT COMPLETE."))
 	releaseall
 	return
@@ -360,32 +387,41 @@ script NPC_DraynorManor_Oddenstein{
 			removeobject(3)
 			removeobject(4)
 			removeobject(5)
+			namebox ("Oddenstein")
 			msgbox(format("Okay, first we place the chicken down."))
 			closemessage
+			hidenamebox
 			addobject(7)
 			clearflag(FLAG_TEMP_19)
 			delay(64)
 			//fadescreen(FADE_FROM_BLACK)
-
+			namebox ("Oddenstein")
 			msgbox(format("Then we press this button and fiddle with these doohickles…"))
 			closemessage
+			hidenamebox
 			delay(64)
+			namebox ("Oddenstein")
 			msgbox(format("Wait no!\nSomething has gone wrong!"))
 			closemessage
+			hidenamebox
 			//fadescreen(FADE_TO_BLACK)
 			applymovement(7, movement_chickentransform)
 			waitmovement(0)
+			namebox ("Oddenstein")
 			msgbox(format("Nooo!"))
 			closemessage
+			hidenamebox
 			setflag(FLAG_TEMP_19)
 			clearflag(FLAG_TEMP_18)
 			addobject(6)
 			removeobject(7)
 			delay(32)
 			//fadescreen(FADE_FROM_BLACK)
-			msgbox(format("Drat my experiment has ended in failure!\pLets call it there.\pPlease dispose of the failed experiment."))
-			setvar(VAR_POKESCAPE_ERNEST_QUEST_STATE, 4)
+			namebox ("Oddenstein")
+			msgbox(format("Drat my experiment has ended in failure!\pLet's call it there.\pPlease dispose of the failed experiment."))
 			closemessage
+			hidenamebox
+			setvar(VAR_POKESCAPE_ERNEST_QUEST_STATE, 4)
             end
 
         case 4: 

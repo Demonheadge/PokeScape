@@ -219,7 +219,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "BANK_EventScript_Banker",
+      "script": "GeneralStore_TZHAAR",
       "flag": "0"
     },
     {
@@ -237,15 +237,15 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TZHAAR_3",
-      "x": 38,
+      "x": 39,
       "y": 3,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "TZHAAR_NPC_2",
+      "script": "TZHAAR_NPC_13",
       "flag": "0"
     },
     {
@@ -342,7 +342,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_TZHAAR_1",
       "x": 19,
-      "y": 27,
+      "y": 29,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -350,6 +350,19 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "STORYMODE_TZHAAR_NPC",
+      "flag": "FLAG_TEMP_1F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HANS",
+      "x": 9,
+      "y": 28,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HANS_TZHAAR_GYM",
       "flag": "0"
     }
   ],
@@ -369,7 +382,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 71,
+      "x": 70,
       "y": 4,
       "elevation": 0,
       "dest_map": "MAP_TZHAAR_1F",
@@ -390,8 +403,8 @@
       "dest_warp_id": "1"
     },
     {
-      "x": 70,
-      "y": 30,
+      "x": 10,
+      "y": 15,
       "elevation": 0,
       "dest_map": "MAP_TZHAAR_CAVES_1",
       "dest_warp_id": "0"
@@ -405,7 +418,15 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 57,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TZHAAR_HEAL_ZONE"
+    }
   ],
   "bg_events": [
 

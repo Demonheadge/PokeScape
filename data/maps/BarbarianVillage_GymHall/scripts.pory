@@ -412,7 +412,7 @@ script NPC_BARBGYM_BARBARIAN_2
     msgbox(format("Lets not waste any more time chit chatting I am itching for this fight!"))
     closemessage
     hidenamebox
-    trainerbattle_no_intro(TRAINER_BARBARIAN_GYM_GUNTHOR, msgbox(format("ARAGGHHHARH!\pBattles like this is what I live for and why I decided to become a Gym Leader!")))
+    call(GYM_BATTLE_GUNTHOR)
     namebox("Haakon")
     msgbox(format("My brothers and sisters…{PAUSE 15} I cannot believe it!\pThe winner is…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}{PLAYER}!!!!!!!!"))
     hidenamebox
@@ -452,6 +452,7 @@ script NPC_BARBGYM_BARBARIAN_2
     hidenamebox
     fadescreen(FADE_TO_BLACK)
     setflag(FLAG_BADGE06_GET)
+    call(HIDDEN_GROTTO_RESET)
     addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
     setvar(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE, 3)
     call(BarbarianVillage_GYM_STATE)

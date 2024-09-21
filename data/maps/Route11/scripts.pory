@@ -86,7 +86,7 @@ script ITEM_ROUTE11_ITEM_5
 script NPC_MUDSKIPPERPOINT_NPC_1 { 
 	lock
 	faceplayer
-    namebox("QUESTER")
+    namebox("Quester")
 	msgbox(format("I heard you could get Yellow Flippers from the Mogres.\pDo you think they would give me a pair if I ask nicely?"))
     hidenamebox
     release
@@ -96,7 +96,7 @@ script NPC_MUDSKIPPERPOINT_NPC_1 {
 script NPC_MUDSKIPPERPOINT_FAIRY { 
 	lock
 	faceplayer
-    namebox("FAIRY")
+    namebox("Fairy")
 	msgbox(format("I am not sure why, but our Fairy Ring network seems to be down."))
     hidenamebox
     release
@@ -106,7 +106,7 @@ script NPC_MUDSKIPPERPOINT_FAIRY {
 script NPC_MUDSKIPPERPOINT_THURGO { 
 	lock
 	faceplayer
-    namebox("THURGO")
+    namebox("Thurgo")
 	msgbox(format("I don't suppose you have any Redberry Pie?"))
     hidenamebox
     release

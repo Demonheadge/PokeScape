@@ -204,7 +204,7 @@ script LUMBRIDGESWAMP_Urhney
 
 script LUMBRIDGESWAMP_BOOK
 {
-	msgbox(format("The book is titled,\n101 Ways to successfully Meditate.\pStep 1, Live far away from civilation.\pStep 2, make sure it is far enough away that adventurers don't light fires at your windows."))
+	msgbox(format("The book is titled,\n101 Ways to successfully Meditate.\pStep 1, Live far away from civilisation.\pStep 2, make sure it is far enough away that adventurers don't light fires at your windows."))
 	hidenamebox
 	closemessage
 	release
@@ -226,6 +226,16 @@ script EventScript_RestBed
 		
 	}
 	
+	release
+	end
+}
+
+
+script EventScript_Locked_Door
+{
+	lock
+	msgbox(format("It is locked."))
+	closemessage	
 	release
 	end
 }

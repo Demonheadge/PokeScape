@@ -2413,3 +2413,11 @@
 	.macro updateslayercounter
 	various BS_FAINTED, VARIOUS_UPDATE_SLAYER_COUNTER
 	.endm
+
+	.macro setvengeance battler:req
+	various \battler, VARIOUS_SET_VENGEANCE
+	.endm
+
+	.macro freestuff battler:req
+	various \battler, VARIOUS_FREE_STUFF
+	.endm

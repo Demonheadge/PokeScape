@@ -1033,6 +1033,9 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_TreeDisguise = {
     .callback = UpdateDisguiseFieldEffect,
 };
 
+
+
+
 static const struct SpriteFrameImage sPicTable_MountainDisguise[] = {
     overworld_frame(gFieldEffectObjectPic_MountainDisguise, 2, 4, 0),
     overworld_frame(gFieldEffectObjectPic_MountainDisguise, 2, 4, 1),
@@ -1069,7 +1072,7 @@ static const union AnimCmd *const sAnimTable_MountainDisguise[] =
 
 const struct SpriteTemplate gFieldEffectObjectTemplate_MountainDisguise = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_ZombieDisguise,
     .oam = &gObjectEventBaseOam_16x32,
     .anims = sAnimTable_MountainDisguise,
     .images = sPicTable_MountainDisguise,

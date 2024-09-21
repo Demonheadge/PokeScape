@@ -195,24 +195,52 @@ SCRIPT_DraynorManor_Fountain_17:
 SCRIPT_DraynorManor_Gravestone::
 	msgbox SCRIPT_DraynorManor_Gravestone_Text_0
 	closemessage
-	checkitem ITEM_MAGICAL_CAGE, 1
-	compare VAR_RESULT, 0
-	goto_if_ne SCRIPT_DraynorManor_Gravestone_2
+	goto_if_unset FLAG_RECIEVED_EX_EX_PARROT, SCRIPT_DraynorManor_Gravestone_2
+	msgbox SCRIPT_DraynorManor_Gravestone_Text_5
+	closemessage
+SCRIPT_DraynorManor_Gravestone_1:
 	end
 
 SCRIPT_DraynorManor_Gravestone_2:
+	checkitem ITEM_MAGICAL_CAGE, 1
+	compare VAR_RESULT, 0
+	goto_if_ne SCRIPT_DraynorManor_Gravestone_5
+	goto SCRIPT_DraynorManor_Gravestone_1
+
+SCRIPT_DraynorManor_Gravestone_5:
 	msgbox SCRIPT_DraynorManor_Gravestone_Text_1, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne SCRIPT_DraynorManor_Gravestone_4
+	goto_if_ne SCRIPT_DraynorManor_Gravestone_7
+	msgbox SCRIPT_DraynorManor_Gravestone_Text_4
 	closemessage
 	end
 
-SCRIPT_DraynorManor_Gravestone_4:
+SCRIPT_DraynorManor_Gravestone_7:
 	msgbox SCRIPT_DraynorManor_Gravestone_Text_2
 	removeitem ITEM_MAGICAL_CAGE
 	msgbox SCRIPT_DraynorManor_Gravestone_Text_3
 	call EventScript_DraynorManor_ExExParrot
-	msgbox SCRIPT_DraynorManor_Gravestone_Text_4
+	closemessage
+	end
+
+
+SCRIPT_DraynorManor_FindCage::
+	msgbox SCRIPT_DraynorManor_FindCage_Text_0
+	goto_if_unset FLAG_RECIEVED_EX_EX_PARROT, SCRIPT_DraynorManor_FindCage_2
+SCRIPT_DraynorManor_FindCage_1:
+	msgbox SCRIPT_DraynorManor_FindCage_Text_1
+	closemessage
+	end
+
+SCRIPT_DraynorManor_FindCage_2:
+	checkitem ITEM_MAGICAL_CAGE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq SCRIPT_DraynorManor_FindCage_4
+	goto SCRIPT_DraynorManor_FindCage_1
+
+SCRIPT_DraynorManor_FindCage_4:
+	closemessage
+	giveitem ITEM_MAGICAL_CAGE, 1
 	closemessage
 	end
 
@@ -267,6 +295,7 @@ EventScript_DraynorManor_ReceivedFanfare_ExExParrot::
 
 
 EventScript_DraynorManor_Received_ExExParrot::
+	setflag FLAG_RECIEVED_EX_EX_PARROT
 	releaseall
 	return
 
@@ -326,28 +355,38 @@ NPC_DraynorManor_Oddenstein_5:
 	removeobject 3
 	removeobject 4
 	removeobject 5
+	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox NPC_DraynorManor_Oddenstein_Text_15
 	closemessage
+	hidenamebox
 	addobject 7
 	clearflag FLAG_TEMP_19
 	delay 64
+	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox NPC_DraynorManor_Oddenstein_Text_16
 	closemessage
+	hidenamebox
 	delay 64
+	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox NPC_DraynorManor_Oddenstein_Text_17
 	closemessage
+	hidenamebox
 	applymovement 7, movement_chickentransform
 	waitmovement 0
+	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox NPC_DraynorManor_Oddenstein_Text_18
 	closemessage
+	hidenamebox
 	setflag FLAG_TEMP_19
 	clearflag FLAG_TEMP_18
 	addobject 6
 	removeobject 7
 	delay 32
+	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox NPC_DraynorManor_Oddenstein_Text_19
-	setvar VAR_POKESCAPE_ERNEST_QUEST_STATE, 4
 	closemessage
+	hidenamebox
+	setvar VAR_POKESCAPE_ERNEST_QUEST_STATE, 4
 	end
 
 NPC_DraynorManor_Oddenstein_6:
@@ -583,9 +622,9 @@ NPC_DraynorManor_OddenstienLog_Text_0:
 
 NPC_DraynorManor_OddenstienLog_Text_1:
 	.string "Log 1: I met a man named Ernest.\p"
-	.string "This was perfect, before he could say I\n"
-	.string "word told him to be my assistant for my\l"
-	.string "newest experiment.\p"
+	.string "This was perfect, before he could say a\n"
+	.string "word I told him to be my assistant for\l"
+	.string "my newest experiment.\p"
 	.string "And it was a success I could now\n"
 	.string "transform humans into chickens!\p"
 	.string "With this I will never have a shortage\n"
@@ -693,7 +732,20 @@ SCRIPT_DraynorManor_Gravestone_Text_3:
 	.string "The ex-parrot comes to life!$"
 
 SCRIPT_DraynorManor_Gravestone_Text_4:
-	.string "You should show Prof.Oddenstein.$"
+	.string "You dig up the corpse of an ex-parrot.\p"
+	.string "But have nowhere to put, so you bury it\n"
+	.string "again.\p"
+	.string "Maybe if you had a cage…$"
+
+SCRIPT_DraynorManor_Gravestone_Text_5:
+	.string "Looks like someone looted this grave.\p"
+	.string "How could they…$"
+
+SCRIPT_DraynorManor_FindCage_Text_0:
+	.string "You search through the shelves…$"
+
+SCRIPT_DraynorManor_FindCage_Text_1:
+	.string "…{PAUSE 15}…{PAUSE 15} and find nothing!$"
 
 EventScript_DraynorManor_SendParty_ExExParrot_Text_0:
 	.string "Would you like to give your monster a\n"
@@ -800,7 +852,7 @@ NPC_DraynorManor_Oddenstein_Text_18:
 NPC_DraynorManor_Oddenstein_Text_19:
 	.string "Drat my experiment has ended in\n"
 	.string "failure!\p"
-	.string "Lets call it there.\p"
+	.string "Let's call it there.\p"
 	.string "Please dispose of the failed\n"
 	.string "experiment.$"
 

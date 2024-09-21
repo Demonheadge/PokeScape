@@ -3,12 +3,16 @@ mapscripts Falador_Castle_1F_MapScripts {
 
     if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
     	{
-            //
+            call(STORYMODE_STATE_FALADOR_CASTLE_1F)
     	}
 		else
 		{
 			call(OPENWORLD_STATE_FALADOR_CASTLE_1F)
 		}
+    }
+
+    MAP_SCRIPT_ON_LOAD {
+        call(FALADOR_GYM_MUSIC)
     }
 }
 
@@ -19,5 +23,25 @@ script OPENWORLD_STATE_FALADOR_CASTLE_1F {
         removeobject(4)
         removeobject(8)
         setflag(FLAG_TEMP_1)
+		return
+}
+
+script STORYMODE_STATE_FALADOR_CASTLE_1F {
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 115) {
+        addobject(2)
+        addobject(5)
+        addobject(3)
+        addobject(4)
+        addobject(8)
+        clearflag(FLAG_TEMP_1)
+    }
+    else {
+		removeobject(2)
+        removeobject(5)
+        removeobject(3)
+        removeobject(4)
+        removeobject(8)
+        setflag(FLAG_TEMP_1)
+    }
 		return
 }

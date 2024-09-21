@@ -1,0 +1,132 @@
+{
+  "id": "MAP_MUDSKIPPER_SOUND_2",
+  "name": "Mudskipper_Sound_2",
+  "layout": "LAYOUT_MUDSKIPPER_SOUND_2",
+  "music": "MUS_GSC_ROUTE38",
+  "region_map_section": "MAPSEC_MUDSKIPPER_POINT",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_OCEAN_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE11",
+      "offset": -8,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_MUSA_POINT",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_RIMMINGTON",
+      "offset": -42,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MUDSKIPPER_POINT",
+      "offset": 32,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_MUDSKIPPER_SOUND_3",
+      "offset": 0,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
+      "x": 7,
+      "y": 51,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PIRATE_SHIP",
+      "x": 9,
+      "y": 30,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 5,
+      "movement_range_y": 5,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "9",
+      "script": "BATTLE_SAILING_PIRATE_1",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 51,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TRIGGER_ROUGH_SEAS"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 51,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TRIGGER_ROUGH_SEAS"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 51,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TRIGGER_ROUGH_SEAS"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 51,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TRIGGER_ROUGH_SEAS"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 51,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TRIGGER_ROUGH_SEAS"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 51,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TRIGGER_ROUGH_SEAS"
+    }
+  ],
+  "bg_events": [
+
+  ]
+}

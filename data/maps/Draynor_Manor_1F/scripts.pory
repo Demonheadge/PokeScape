@@ -16,7 +16,13 @@ mapscripts Draynor_Manor_1F_MapScripts {
 }
 
 script STORYMODE_STATE_DRAYNORMANOR_1F {
-
+    checkitem (ITEM_FISH_FOOD,1)
+	if (var(VAR_RESULT)){
+        setmetatile(9, 10, METATILE_PokeScapeIndoors_CUPBOARD_SPARKLE, 1)
+        setmetatile(12, 2, METATILE_PokeScapeIndoors_CUPBOARD_SPARKLE, 1)
+        setmetatile(13, 2, METATILE_PokeScapeIndoors_CUPBOARD_SPARKLE, 1)
+        special(DrawWholeMapView)
+    }
     
 
     checkfollower
@@ -206,7 +212,7 @@ script FOLLOWING_Ariane {
         case 1:
             msgbox(format("Where do you think the pink guy went?"))
         case 2:
-            msgbox(format("Hey mine name is Ariane, what is yours?\p…{PAUSE 32}{PLAYER}?\nThat's a cute name."))
+            msgbox(format("Hey my name is Ariane, what is yours?\p…{PAUSE 32}{PLAYER}?\nThat's a cute name."))
         case 3:
             msgbox(format("You know what?\pWith you here this place isn't as scary."))
             playse(SE_LEDGE)
@@ -352,6 +358,9 @@ script TRIGGER_ARIANE_DRAYNORMANOR_1F_6 {
 script DraynorManor_Lever_STATE{
         switch (var(VAR_POKESCAPE_DRAYNORMANOR_LEVER_STATE)){ 
             case 0: 
+                setmetatile(6, 15, METATILE_DraynorManor_BASEMENT_LEVER_UP_1, 1)
+                setmetatile(6, 16, METATILE_DraynorManor_BASEMENT_LEVER_UP_2, 1)
+                setmetatile(9, 16, METATILE_PokeScapeIndoors_BOOKCASE_SPARKLE, 1)
                 //LEFT
                 setmetatile(7, 17, 602, 1)
                 setmetatile(7, 18, 602, 1)
@@ -367,6 +376,9 @@ script DraynorManor_Lever_STATE{
                 special(DrawWholeMapView) 
                 return
             case 1: 
+                setmetatile(9, 16, METATILE_PokeScapeIndoors_BOOKCASE_INTERACT_L, 1)
+                setmetatile(6, 15, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_1, 1)
+                setmetatile(6, 16, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_2, 1)
                 //LEFT
                 setmetatile(7, 17, 570, 1)
                 setmetatile(7, 18, 578, 1)
@@ -395,21 +407,24 @@ script SIGN_DRAYNORMANOR_LEVER_1 {
                 case 0:
 			lock
             msgbox(format("You pull a hidden lever!"))
+            
             //LEFT
-			setmetatile(7, 17, 570, 1)
-            setmetatile(7, 18, 578, 1)
-            setmetatile(7, 19, 586, 1)
-            setmetatile(7, 20, 516, 0)
-            setmetatile(7, 21, 594, 1)
+			//setmetatile(7, 17, 570, 1)
+            //setmetatile(7, 18, 578, 1)
+            //setmetatile(7, 19, 586, 1)
+            //setmetatile(7, 20, 516, 0)
+            //setmetatile(7, 21, 594, 1)
             //RIGHT
-			setmetatile(8, 17, 572, 1)
-            setmetatile(8, 18, 580, 1)
-            setmetatile(8, 19, 588, 1)
-            setmetatile(8, 20, 516, 0)
-            setmetatile(8, 21, 596, 1)
+			//setmetatile(8, 17, 572, 1)
+            //setmetatile(8, 18, 580, 1)
+            ///setmetatile(8, 19, 588, 1)
+            //setmetatile(8, 20, 516, 0)
+            //setmetatile(8, 21, 596, 1)
 
-			special(DrawWholeMapView) 
+			//special(DrawWholeMapView) 
+            playse(SE_TRUCK_DOOR)
 			setvar(VAR_POKESCAPE_DRAYNORMANOR_LEVER_STATE, 1)
+            call(DraynorManor_Lever_STATE)
 			release
 			end
 
@@ -417,20 +432,22 @@ script SIGN_DRAYNORMANOR_LEVER_1 {
 			lock
             msgbox(format("You pull a hidden lever!"))
             //LEFT
-			setmetatile(7, 17, 602, 1)
-            setmetatile(7, 18, 602, 1)
-            setmetatile(7, 19, 602, 1)
-            setmetatile(7, 20, 602, 1)
-            setmetatile(7, 21, 602, 1)
+			//setmetatile(7, 17, 602, 1)
+            //setmetatile(7, 18, 602, 1)
+            //setmetatile(7, 19, 602, 1)
+           // setmetatile(7, 20, 602, 1)
+            //setmetatile(7, 21, 602, 1)
             //RIGHT
-			setmetatile(8, 17, 604, 1)
-            setmetatile(8, 18, 604, 1)
-            setmetatile(8, 19, 604, 1)
-            setmetatile(8, 20, 604, 1)
-            setmetatile(8, 21, 604, 1)
+			//setmetatile(8, 17, 604, 1)
+            //setmetatile(8, 18, 604, 1)
+            //setmetatile(8, 19, 604, 1)
+            //setmetatile(8, 20, 604, 1)
+            //setmetatile(8, 21, 604, 1)
 
-			special(DrawWholeMapView) 
+			//special(DrawWholeMapView) 
+            playse(SE_TRUCK_DOOR)
 			setvar(VAR_POKESCAPE_DRAYNORMANOR_LEVER_STATE, 0)
+            call(DraynorManor_Lever_STATE)
 			release
 			end
 			
@@ -446,7 +463,12 @@ script NPC_DraynorManor_LEVER_A{
     //msgbox(format("LEVER A - ACTIVATED!\pGate 1 OPEN!"))
     closemessage
     //hidenamebox
-    setmetatile(17, 16, 516, 0) // 1
+    playse(SE_TRUCK_DOOR)
+    setmetatile(14, 19, METATILE_DraynorManor_BASEMENT_LEVER_CORNER_R_DOWN_1, 1)
+    setmetatile(14, 20, METATILE_DraynorManor_BASEMENT_LEVER_CORNER_R_DOWN_2, 1)
+
+    setmetatile(17, 15, METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_TOP, 0)
+    setmetatile(17, 16, METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_BOTTOM, 0) // 1
     special(DrawWholeMapView)
     end
 
@@ -458,7 +480,12 @@ script NPC_DraynorManor_LEVER_B{
     //msgbox(format("LEVER B - ACTIVATED!\pGate 8 OPEN!"))
     closemessage
     //hidenamebox
-    setmetatile(11, 10, 516, 0) // 8
+    playse(SE_TRUCK_DOOR)
+    setmetatile(19, 16, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_1, 1)
+    setmetatile(19, 17, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_2, 1)
+
+    setmetatile(11, 9, METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_TOP, 0) //
+    setmetatile(11, 10, METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_BOTTOM, 0) // 8
     
     special(DrawWholeMapView)
 	end
@@ -470,7 +497,13 @@ script NPC_DraynorManor_LEVER_C{
     //msgbox(format("LEVER C - ACTIVATED!\pGate 3 OPEN!"))
     closemessage
     //hidenamebox
-    setmetatile(11, 16, 516, 0) // 3
+    playse(SE_TRUCK_DOOR)
+    setmetatile(19, 2, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_1, 1)
+    setmetatile(19, 3, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_2, 1)
+
+
+    setmetatile(11, 15, METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_TOP, 0) //
+    setmetatile(11, 16, METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_BOTTOM, 0) // 3
     special(DrawWholeMapView)
 	end
 }
@@ -481,8 +514,17 @@ script NPC_DraynorManor_LEVER_D{
     //msgbox(format("LEVER D - ACTIVATED!\pGate 4 & 7 OPEN!"))
     closemessage
     //hidenamebox
-    setmetatile(8, 13, 516, 0) // 4
-    setmetatile(14, 7, 516, 0) // 7
+    playse(SE_TRUCK_DOOR)
+    setmetatile(11, 2, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_1, 1)
+    setmetatile(11, 3, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_2, 1)
+
+    setmetatile(8, 11, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_1, 1)
+    setmetatile(8, 12, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_2, 1)
+    setmetatile(8, 13, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_3, 0) // 4
+
+    setmetatile(14, 5, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_1, 1)
+    setmetatile(14, 6, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_2, 1)
+    setmetatile(14, 7, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_3, 0) // 7
     special(DrawWholeMapView)
 	end
 }
@@ -494,8 +536,17 @@ script NPC_DraynorManor_LEVER_E{
     //msgbox(format("LEVER E - ACTIVATED!\pGate 2 & 6 OPEN!"))
     closemessage
     //hidenamebox
-    setmetatile(14, 13, 516, 0) // 2
-    setmetatile(8, 7, 516, 0) // 6
+    playse(SE_TRUCK_DOOR)
+    setmetatile(5, 10, METATILE_DraynorManor_BASEMENT_LEVER_CORNER_L_DOWN_1, 1)
+    setmetatile(5, 11, METATILE_DraynorManor_BASEMENT_LEVER_CORNER_L_DOWN_2, 1)
+
+    setmetatile(14, 11, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_1, 1)
+    setmetatile(14, 12, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_2, 1)
+    setmetatile(14, 13, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_3, 0) // 2
+
+    setmetatile(8, 5, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_1, 1)
+    setmetatile(8, 6, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_2, 1)
+    setmetatile(8, 7, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_3, 0) // 6
     special(DrawWholeMapView)
 	end
 }
@@ -506,8 +557,16 @@ script NPC_DraynorManor_LEVER_F{
     //msgbox(format("LEVER F - ACTIVATED!\pGate 5 & 9 OPEN!"))
     closemessage
     //hidenamebox
-    setmetatile(4, 10, 516, 0) // 5
-    setmetatile(8, 19, 516, 0) // 9
+    playse(SE_TRUCK_DOOR)
+    setmetatile(6, 2, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_1, 1)
+    setmetatile(6, 3, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_2, 1)
+
+    setmetatile(4, 9, METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_TOP, 0)
+    setmetatile(4, 10, METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_BOTTOM, 0) // 5
+
+    setmetatile(8, 17, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_1, 1)
+    setmetatile(8, 18, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_2, 1)
+    setmetatile(8, 19, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_3, 0) // 9
     special(DrawWholeMapView)
 	end
 }
@@ -518,7 +577,13 @@ script NPC_DraynorManor_LEVER_G{
     //msgbox(format("LEVER G - ACTIVATED!\pGate 9 OPEN!"))
     closemessage
     //hidenamebox
-    setmetatile(8, 19, 516, 0) // 9
+    playse(SE_TRUCK_DOOR)
+    setmetatile(6, 16, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_1, 1)
+    setmetatile(6, 17, METATILE_DraynorManor_BASEMENT_LEVER_DOWN_2, 1)
+
+    setmetatile(8, 17, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_1, 1)
+    setmetatile(8, 18, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_2, 1)
+    setmetatile(8, 19, METATILE_DraynorManor_BASEMENT_SIDE_GATE_UNLOCKED_3, 0) // 9
     special(DrawWholeMapView)
 	end
 }
@@ -608,7 +673,7 @@ script NPC_DraynorManor_Ava{
 script NPC_DraynorManor_Quester{
     lock
 	faceplayer
-	//namebox("Quester")
+	namebox("Quester")
     if (var(VAR_POKESCAPE_DRAYNORMANOR_LEVER_STATE) == 1) 
     {
         msgbox(format("Did you find the hidden switch?\pWhere was it?!"))

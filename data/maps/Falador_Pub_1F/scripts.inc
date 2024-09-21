@@ -42,7 +42,8 @@ NPC_FALADORPUB_BARMAID_3::
 NPC_FALADORPUB_NPC1::
 	lock
 	faceplayer
-	msgbox NPC_FALADORPUB_NPC1_Text_0
+	namebox NPC_FALADORPUB_NPC1_Text_0
+	msgbox NPC_FALADORPUB_NPC1_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -52,7 +53,8 @@ NPC_FALADORPUB_NPC1::
 NPC_FALADORPUB_NPC2::
 	lock
 	faceplayer
-	msgbox NPC_FALADORPUB_NPC2_Text_0
+	namebox NPC_FALADORPUB_NPC2_Text_0
+	msgbox NPC_FALADORPUB_NPC2_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -62,7 +64,8 @@ NPC_FALADORPUB_NPC2::
 NPC_FALADORPUB_NPC3::
 	lock
 	faceplayer
-	msgbox NPC_FALADORPUB_NPC3_Text_0
+	namebox NPC_FALADORPUB_NPC3_Text_0
+	msgbox NPC_FALADORPUB_NPC3_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -71,8 +74,8 @@ NPC_FALADORPUB_NPC3::
 
 NPC_FALADORPUB_NPC4::
 	lock
-	namebox NPC_FALADORPUB_NPC4_Text_0
-	msgbox NPC_FALADORPUB_NPC4_Text_1
+	namebox NPC_FALADORPUB_NPC1_Text_0
+	msgbox NPC_FALADORPUB_NPC4_Text_0
 	waitmessage
 	hidenamebox
 	release
@@ -81,8 +84,8 @@ NPC_FALADORPUB_NPC4::
 
 NPC_FALADORPUB_NPC5::
 	lock
-	namebox NPC_FALADORPUB_NPC5_Text_0
-	msgbox NPC_FALADORPUB_NPC5_Text_1
+	namebox NPC_FALADORPUB_NPC2_Text_0
+	msgbox NPC_FALADORPUB_NPC5_Text_0
 	waitmessage
 	hidenamebox
 	release
@@ -91,7 +94,7 @@ NPC_FALADORPUB_NPC5::
 
 NPC_FALADORPUB_NPC6::
 	lock
-	namebox NPC_FALADORPUB_NPC5_Text_0
+	namebox NPC_FALADORPUB_NPC2_Text_0
 	msgbox NPC_FALADORPUB_NPC6_Text_0
 	waitmessage
 	hidenamebox
@@ -102,7 +105,7 @@ NPC_FALADORPUB_NPC6::
 NPC_FALADORPUB_NPC7::
 	lock
 	faceplayer
-	namebox NPC_FALADORPUB_NPC5_Text_0
+	namebox NPC_FALADORPUB_NPC2_Text_0
 	msgbox NPC_FALADORPUB_NPC7_Text_0
 	waitmessage
 	hidenamebox
@@ -156,6 +159,9 @@ NPC_FALADORPUB_BARMAID_3_Text_1:
 	.string "Being Barmaid is hard work.$"
 
 NPC_FALADORPUB_NPC1_Text_0:
+	.string "Guard$"
+
+NPC_FALADORPUB_NPC1_Text_1:
 	.string "Today was a rough day.\p"
 	.string "Seven of my friends were killed and\n"
 	.string "then the perpetrator lit fireworks over\l"
@@ -163,6 +169,9 @@ NPC_FALADORPUB_NPC1_Text_0:
 	.string "I hate this job.$"
 
 NPC_FALADORPUB_NPC2_Text_0:
+	.string "White Knight$"
+
+NPC_FALADORPUB_NPC2_Text_1:
 	.string "Some guy named Sir Theodore made a big\n"
 	.string "hassle at work.\p"
 	.string "Apparently cleaning duty is not in\n"
@@ -170,22 +179,19 @@ NPC_FALADORPUB_NPC2_Text_0:
 	.string "Knight code.$"
 
 NPC_FALADORPUB_NPC3_Text_0:
+	.string "Pker$"
+
+NPC_FALADORPUB_NPC3_Text_1:
 	.string "They say there exists a special rabbits\n"
 	.string "foot that certain birds react to.\p"
 	.string "It makes their eggs become special.\p"
 	.string "I wonder where you could find one…$"
 
 NPC_FALADORPUB_NPC4_Text_0:
-	.string "Guard$"
-
-NPC_FALADORPUB_NPC4_Text_1:
 	.string "Thanks for inviting me along for drinks\n"
 	.string "guys.$"
 
 NPC_FALADORPUB_NPC5_Text_0:
-	.string "White Knight$"
-
-NPC_FALADORPUB_NPC5_Text_1:
 	.string "Haha!\p"
 	.string "Hey get a load of that Trash Knight\n"
 	.string "sitting at the table all by themselves.$"

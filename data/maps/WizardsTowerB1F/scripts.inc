@@ -123,7 +123,7 @@ NPC_WizardsTowerB1F_Sedridor_Text_3:
 NPC_WizardsTowerB1F_Sedridor_Text_4:
 	.string "{PLAYER}, have you seen any of those\n"
 	.string "mysterious altars in your travels?\p"
-	.string "These talismans grants you access to\n"
+	.string "These talismans grant you access to\n"
 	.string "the realm within the altar.\p"
 	.string "Actually could you do me one small\n"
 	.string "favour?\p"

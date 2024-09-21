@@ -1,0 +1,34 @@
+mapscripts Mudskipper_Sound_3_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_EVOLUTION_MAP_STATE, 15) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+        call(WEATHER_CHANGE_SEA_ROUTES_ROUGH)
+	}
+}
+
+script BATTLE_MUDSKIPPER_MUGGER
+{
+    trainerbattle_single(TRAINER_MUDSKIPPER_MUGGER, format("Stand and deliver!"),format("Deliver me a way home!"))
+    namebox ("Strandy")
+    msgbox(format("Please send for help.{PAUSE 15}\pDon't leave me.{PAUSE 15}\pI have been here for a year.{PAUSE 15}\pI miss my family..."))
+	hidenamebox
+    release
+	end
+}
+
+script ITEM_MUDSKIPPER_1
+{
+    finditem(ITEM_BREAD)
+    end
+}
+
+script ITEM_MUDSKIPPER_2
+{
+    finditem(ITEM_CAKE)
+    end
+}
+
+script ITEM_MUDSKIPPER_3
+{
+    finditem(ITEM_WATERSKIN)
+    end
+}

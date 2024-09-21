@@ -1,0 +1,207 @@
+const OBJ_EVENT_ID_THOK = 7
+const OBJ_EVENT_ID_DOORGUARD1 = 4
+const OBJ_EVENT_ID_DOORGUARD2 = 5
+
+mapscripts Daemonheim_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION 
+    {
+        setvar(VAR_EVOLUTION_MAP_STATE, 6) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+        //call(WEATHER_CHANGE_AREA_DAEMONHEIM)
+        call(Daemonheim_STATE)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE 
+    [
+		VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST, 5: THOK_GYM_CHALLENGE_STATE_2
+    ]
+}
+
+
+script Daemonheim_STATE {
+    setflag(FLAG_TEMP_1F) // Hide thok.
+
+    switch (var(VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST)){         
+        case 5:
+            clearflag(FLAG_TEMP_1F)
+            addobject(OBJ_EVENT_ID_THOK)
+    }
+
+    if (var(VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST) >= 10) {
+        setobjectxyperm(OBJ_EVENT_ID_DOORGUARD1, 22, 14)
+        setobjectxyperm(OBJ_EVENT_ID_DOORGUARD2, 25, 14)
+    }
+    return        
+}
+
+
+script THOK_GYM_CHALLENGE_STATE_2 {
+    
+    applymovement(OBJ_EVENT_ID_THOK, Movement_DaemonheimGym_3)
+    delay(50)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_DaemonheimGym_4)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_THOK, MOVEMENT_INTERACT_UP)
+    namebox("Thok")
+    msgbox(format("Move aside!\pThe mighty Thok coming through!"))
+    closemessage
+    hidenamebox
+    waitmovement(0)
+    //guards face eachother and ? then move.
+    applymovement(OBJ_EVENT_ID_DOORGUARD1, Movement_DaemonheimGym_5)
+    applymovement(OBJ_EVENT_ID_DOORGUARD2, Movement_DaemonheimGym_6)
+    delay(5)
+    playse(SE_PIN)
+    waitmovement(0)
+    delay(60)
+    applymovement(OBJ_EVENT_ID_THOK, Movement_DaemonheimGym_7)
+    delay(30)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_DaemonheimGym_7)
+    waitmovement(0)
+    setvar(VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST, 10)
+    warp(MAP_DUNGEONEERING_LOBBY, 0, 0, 0)
+}
+
+
+
+movement Movement_DaemonheimGym_3 {
+    walk_down * 5
+    walk_right * 4
+    face_up
+}
+movement Movement_DaemonheimGym_4 {
+    walk_down * 2
+    walk_slow_down * 4
+    walk_right * 3
+    face_up
+}
+movement Movement_DaemonheimGym_5 {
+    face_right
+    emote_question_mark
+    delay_16 * 4
+    face_down
+    lock_facing_direction
+    delay_16 * 4
+    walk_left
+}
+movement Movement_DaemonheimGym_6 {
+    face_left
+    emote_question_mark
+    delay_16 * 4
+    face_down
+    lock_facing_direction
+    delay_16 * 4
+    walk_right
+}
+movement Movement_DaemonheimGym_7 {
+    walk_up * 2
+    set_invisible
+}
+
+
+
+
+
+script NPC_DAEMONHEIM_GUARD_1
+{
+	lock
+	faceplayer
+    namebox ("Guard")
+    if (var(VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST) >= 10) {
+        msgbox(format("We do as requested from the MvM league.\pAlthough I wish they picked someone else besides Thok to be the Gym Leader of this place…"))
+    }
+    else {
+        msgbox(format("Go no further!\pWe stand guard to the dungeon!\pOnly those granted permission from Thok may enter."))
+    }
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_DAEMONHEIM_GUARD_2
+{
+	lock
+	faceplayer
+    namebox ("Guard")
+    if (var(VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST) >= 10) {
+        msgbox(format("We must quarantine this dungeon as there are dangerous things that must not be allowed to corrupt the rest of the world."))
+    }
+    else {
+        msgbox(format("Go no further!\pWe stand guard to the dungeon!\pOnly those granted permission from Thok may enter."))
+    }
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+
+script NPC_DAEMONHEIM_1
+{
+	lock
+	faceplayer
+    namebox ("Novice")
+	msgbox(format("What is this blinding bright object on your ceiling!?\pMy eyes are burning!"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DAEMONHEIM_2
+{
+	lock
+	faceplayer
+    namebox ("Warrior")
+	msgbox(format("We've been told we cannot leave Daemonheim.\pThey said they had to set up some sort of quarintine."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DAEMONHEIM_3
+{
+	lock
+    applymovement(9, MOVEMENT_INTERACT_LEFT)
+    namebox ("Dungeoneer")
+	msgbox(format("Woah man, back off!"))
+    waitmovement(0)
+    closemessage
+    hidenamebox
+	applymovement(10, MOVEMENT_INTERACT_RIGHT)
+	namebox ("Smuggler")
+	msgbox(format("You cannot take those items to the outside world!\pPut them back this instant!"))
+    waitmovement(0)
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+
+script NPC_DAEMONHEIM_4
+{
+	lock
+	faceplayer
+    namebox ("Barbarian")
+	msgbox(format("Thok is our fiercest warrior, he and his brother Marmaros almost made it to the bottom of Daemonheim once!\pThey don't talk about it however."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DAEMONHEIM_5
+{
+	lock
+	faceplayer
+    namebox ("Barbarian")
+	msgbox(format("This room is off limits, go away."))
+    closemessage
+    hidenamebox
+	release
+	end
+}

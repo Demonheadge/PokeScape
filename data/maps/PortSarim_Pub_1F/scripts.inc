@@ -234,8 +234,8 @@ NPC_PortSarim_Church_Monk_1::
 NPC_PortSarim_Church_Monk_2::
 	lock
 	faceplayer
-	namebox NPC_PortSarim_Church_Monk_1_Text_0
-	msgbox NPC_PortSarim_Church_Monk_2_Text_0
+	namebox NPC_PortSarim_Church_Monk_2_Text_0
+	msgbox NPC_PortSarim_Church_Monk_2_Text_1
 	hidenamebox
 	release
 	end
@@ -383,7 +383,7 @@ NPC_PortSarimPub_PUBCRAWL_Text_1:
 	.string "to our champion about it.$"
 
 NPC_PortSarim_Church_Monk_1_Text_0:
-	.string "MONK$"
+	.string "Monk$"
 
 NPC_PortSarim_Church_Monk_1_Text_1:
 	.string "The other night I saw a drunk throwing\n"
@@ -393,6 +393,9 @@ NPC_PortSarim_Church_Monk_1_Text_1:
 	.string "I don't even know what a Mudskipper is.$"
 
 NPC_PortSarim_Church_Monk_2_Text_0:
+	.string "Priest$"
+
+NPC_PortSarim_Church_Monk_2_Text_1:
 	.string "Not many people visit our Church out\n"
 	.string "here.\p"
 	.string "I don't think many people know of its\n"

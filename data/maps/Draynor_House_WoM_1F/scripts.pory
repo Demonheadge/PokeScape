@@ -1,0 +1,120 @@
+mapscripts Draynor_House_WoM_1F_MapScripts {
+
+}
+
+
+
+script MEGAEVOSBOOK {
+    lock
+    msgbox(format("A book entitled 'Mega Evolutions: Fact or Fiction?' catches your eye.\pWould you like to read it?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT)){
+            msgbox(format("Throughout my travels across Gielinor, I have either come across or heard rumours about many powerful artefacts.\pHowever, there is one artefact in particular that has eluded me.\pAn artefact rumoured to have been used by the gods to create all life and magic, and one that it imbued with so much energy that even mere fragments of it can MEGA EVOLVE a monster.\pNobody knows it's exact name, or where it came from.\pMy fellow Saradominists call it the 'Eye of Saradomin', those who worship Guthix refer to it as the 'Fist of Guthix' and I've also heard the deranged necromancer over near Rimmington call it the 'Cabbage of Jas'.\pExactly what monsters are affected by these fragments are unknown, but the ancient writings I have unearthed suggest that the following monsters may be strong enough to fully utilise its strength:\pKalphite Queen\pTzTok Jad\pDagannoth Kings\pChaos El-\p{PAUSE 15}The rest of the page is torn out.."))
+            closemessage
+        }
+        else {
+        msgbox(format("You decide to leave the book on the shelf."))
+           closemessage
+        }
+    release
+    end   
+}
+
+
+
+script REGIONALFORMSBOOK {
+    lock
+    msgbox(format("There is a book on the shelf entitled: 'Fantastic Forms and Where To Find Them'.\pDo you want to read it?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT)){
+            msgbox(format("One of the things that truly reminds me that Saradomin had a hand in the creation of Gielinor is the natural order that you see throughout the world.\pFor example, it doesn't matter whether you're in ASGARNIA,\phere in MISTHALIN,\pon the beaches of KARAMJA,\pvisiting the zoo in KANDARIN,\pbraving the cold of the FREMENNIK PROVINCE,\pescaping death in the WILDERNESS,\penduring the swamps of MORYTANIA,\por facing the harsh sands of the KHARIDIAN DESERT\pyou'll find that varieties of monsters like chicks, bear cubs, or even crablings have adapted to their surroundings.\pTo the point that they evolve into entirely new forms!\pSome of these evolved forms even have their own unique moves.\pHowever, exactly what moves each learns will take substantially more exploration."))
+            closemessage
+        }
+        else {
+        msgbox(format("You decide not to read the book."))
+           closemessage
+        }
+    release
+    end   
+}
+
+
+
+script FOODFORMSBOOK {
+    lock
+    msgbox(format("You skim over lots of very dull sounding book titles until you see one called: 'Dionysius and the Chocolate Cake Factory'.\pWould you like to read it?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT)){
+            msgbox(format("One of the more unusual monster evolutions that I have come across on my travels have involved food.\pThey say not to feed dogs chocolate,\pbut CATS, TURKEYS, and YAKS all love CHOCOLATE CAKE.\pIt has to be CHOCOLATE CAKE though, the regular kind just won't do.\pEven more exotic creatures like DESERT DEVIL KEBBITS, MINITRICE,\pCAVE SLIME, and JELLIES love it too.\pI wonder if that's because they can't normally get hold of the stuff!\pEither way, their love of CHOCOLATE CAKE is so powerful that it'll let them evolve into entirely new forms.\pApparently this even extends to ENTS and CABBAGES.\pI don't fully believe that one though.\pI wonder if that's just a rumour start by Melzar.."))
+            closemessage
+        }
+        else {
+        msgbox(format("You choose not to bother with the book."))
+           closemessage
+        }
+    release
+    end   
+}
+
+
+
+script RUNEFORMSBOOK {
+    lock
+    msgbox(format("There is a journal tucked between two books on the shelf.\pDo you want to read it?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT)){
+            msgbox(format("Humans learnt to use magic after a traveller discovered some kind of key that allowed him to summon the magic of the four elements, which let him harness magic as both a tool and a weapon.\pThe use of the four elemental runes in monster evolution is well documented.\pHowever, as time went on and they were able to study this further, they managed to discover even more magical elements which wizards bound into stones for others to use.\pThese are much rarer to come across, but allow access to powerful and unique evolutions.\pFor example DEATH RUNES allow several monsters to evolve into either REVENANT variants that are normally only found roaming deep within the Wilderness,\por REANIMATED variants that can otherwise only be created by members of the House of Arceuus.\pThe magic of NATURE RUNES were discovered on Karamja and allow some monsters to evolve into more tropical forms than they may otherwise.\pThere are also ASTRAL RUNES but the Moon Clan on Lunar Isle do not like outsiders and have kept them a closely guarded secret, so their use is not yet known.."))
+            closemessage
+        }
+        else {
+        msgbox(format("You decide to leave the journal where it is."))
+           closemessage
+        }
+    release
+    end   
+}
+
+
+
+script WOMMISCBOOK1 {
+    lock
+    msgbox(format("None of the books on this shelf look very interesting.\pPerhaps you should try another?"))
+    release
+    end   
+}
+
+
+script WOMMISCBOOK2 {
+    lock
+    msgbox(format("You flick through the pages of a travel guide the Wise Old Man has written about the southern region of Karamja.\pHe talks about meeting a local who wanted him to stuff a dead monkey with seaweed so he could eat it.\pThere's also talk of terrifying zombies attacking a village, and jungles filled with vicious spiders and great big jungle ogres.\pMaybe I should give that place a miss.\pOr perhaps it would be a good place to catch some rare monsters..?"))
+    release
+    end   
+}
+
+
+script WOMMISCBOOK3 {
+    lock
+    msgbox(format("You skim through the pages of a book which refers to otherworldly plains.\pThe Wise Old man details a strange fairy, less than a metre tall, he met that was an incredible warrior and claimed to have come from the moon.\pThere are also pages which refer to hideous demons emerging from some kind of Abyss.\pI wonder what sort of herbs or potions helped him paint such vivid fantasies?"))
+    release
+    end   
+}
+
+
+script WOMMISCBOOK4 {
+    lock
+    msgbox(format("The book on the shelf talks about the Wise Old Man's battle with a fearsome three headed dragon living deep underground in the Wilderness.\pIt goes on to say that it can inflict poison, burn, or even cause freezes!\pI wonder whether it's possible to catch such a monster..."))
+    release
+    end   
+}
+
+
+script WOMMISCBOOK5 {
+    lock
+    msgbox(format("There is a book titled: 'If I Did it: Confessions of the Robber' which includes a hypothetical description of how one might rob a local bank."))
+    release
+    end   
+}
+
+
+script WOMSTATUE {
+    lock
+    msgbox(format("There is a small feline statue on the bookshelf."))
+    release
+    end   
+}

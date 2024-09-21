@@ -58,6 +58,46 @@ script ITEM_VARROCK_SEWERS_1
     finditem(ITEM_SCURRIUS_CHEESE)
     end
 }
+script ITEM_VARROCK_SEWERS_2
+{
+    finditem(ITEM_PURPLE_SWEETS)
+    end
+}
+script ITEM_VARROCK_SEWERS_3
+{
+    finditem(ITEM_PURPLE_SWEETS)
+    end
+}
+script ITEM_VARROCK_SEWERS_4
+{
+    finditem(ITEM_PURPLE_SWEETS)
+    end
+}
+script ITEM_VARROCK_SEWERS_5
+{
+    finditem(ITEM_PURPLE_SWEETS)
+    end
+}
+script ITEM_VARROCK_SEWERS_6
+{
+    finditem(ITEM_PURPLE_SWEETS)
+    end
+}
+script ITEM_VARROCK_SEWERS_7
+{
+    finditem(ITEM_PURPLE_SWEETS)
+    end
+}
+script ITEM_VARROCK_SEWERS_8
+{
+    finditem(ITEM_PURPLE_SWEETS)
+    end
+}
+script ITEM_VARROCK_SEWERS_9
+{
+    finditem(ITEM_PURPLE_SWEETS)
+    end
+}
 
 
 
@@ -65,7 +105,7 @@ script ITEM_VARROCK_SEWERS_1
 script BATTLE_VARROCK_SEWERS_2F_TRAINER_1
 {
     trainerbattle_single(TRAINER_VARROCK_SEWERS_2F_TRAINER_1, format("The skeleton eyes you with intent to battle!"),format("The skeletal warrior seems content with the battle that unfolded."))
-    namebox ("SKELETON")
+    //namebox ("SKELETON")
     msgbox(format("The skeletal warrior seems content with the battle that unfolded."))
 	hidenamebox
     release
@@ -75,7 +115,7 @@ script BATTLE_VARROCK_SEWERS_2F_TRAINER_1
 script BATTLE_VARROCK_SEWERS_2F_TRAINER_2
 {
     trainerbattle_single(TRAINER_VARROCK_SEWERS_2F_TRAINER_2, format("This place is great. Undead everywhere for me and only me to use. Now face me!"),format("One day I will own a nice sewer just like this and it will all be mine and mine alone."))
-    namebox ("NECROMANCER")
+    //namebox ("NECROMANCER")
     msgbox(format("One day I will own a nice sewer just like this and it will all be mine and mine alone."))
 	hidenamebox
     release
@@ -85,7 +125,7 @@ script BATTLE_VARROCK_SEWERS_2F_TRAINER_2
 script BATTLE_VARROCK_SEWERS_2F_TRAINER_3
 {
     trainerbattle_single(TRAINER_VARROCK_SEWERS_2F_TRAINER_3, format("This place is great. Undead everywhere for me and only me to use. Now face me!"),format("One day I will own a nice sewer just like this and it will all be mine and mine alone."))
-    namebox ("SKELETON")
+    //namebox ("SKELETON")
     msgbox(format("One day I will own a nice sewer just like this and it will all be mine and mine alone."))
 	hidenamebox
     release
@@ -95,7 +135,7 @@ script BATTLE_VARROCK_SEWERS_2F_TRAINER_3
 script BATTLE_VARROCK_SEWERS_2F_TRAINER_4
 {
     trainerbattle_single(TRAINER_VARROCK_SEWERS_2F_TRAINER_4, format("Prepare yourself for battle most glorious."),format("I should have been prepared for defeat most humiliating."))
-    namebox ("WARRIOR")
+    //namebox ("WARRIOR")
     msgbox(format("I should have been prepared for defeat most humiliating.."))
 	hidenamebox
     release
@@ -105,7 +145,7 @@ script BATTLE_VARROCK_SEWERS_2F_TRAINER_4
 script BATTLE_VARROCK_SEWERS_2F_TRAINER_5
 {
     trainerbattle_single(TRAINER_VARROCK_SEWERS_2F_TRAINER_5, format("Behold my awesome power of ghosts! Tremble before me!"),format("For now I can only use ghosts, but one day I will control skeletons and build an army."))
-    namebox ("NECROMANCER")
+    //namebox ("NECROMANCER")
     msgbox(format("For now I can only use ghosts, but one day I will control skeletons and build an army."))
 	hidenamebox
     release
@@ -115,7 +155,7 @@ script BATTLE_VARROCK_SEWERS_2F_TRAINER_5
 script BATTLE_VARROCK_SEWERS_2F_TRAINER_6
 {
     trainerbattle_single(TRAINER_VARROCK_SEWERS_2F_TRAINER_6, format("Bah, hey you, fight me. I need a break."),format("200 rats. They assigned me a task of 200 rats. Why the heck did they assign me 200 rats?\pMaybe this is what I get for skipping tasks for easy Slayer points..."))
-    namebox ("SLAYER")
+    //namebox ("SLAYER")
     msgbox(format("200 rats. They assigned me a task of 200 rats. Why the heck did they assign me 200 rats?\pMaybe this is what I get for skipping tasks for easy Slayer points..."))
 	hidenamebox
     release

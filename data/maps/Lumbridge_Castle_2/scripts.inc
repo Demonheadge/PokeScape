@@ -346,8 +346,6 @@ Lumbridge_Castle_Hans_1::
 	removeobject 10
 	fadescreen FADE_FROM_BLACK
 	setflag FLAG_SYS_POKEDEX_GET
-	setflag FLAG_SYS_NATIONAL_DEX
-	special EnableNationalPokedex
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 5
 	release
 	end

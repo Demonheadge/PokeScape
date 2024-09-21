@@ -1,15 +1,62 @@
+
+    const OBJ_EVENT_ID_BABE = 15
+    const OBJ_EVENT_ID_PATTY = 2
+    const OBJ_EVENT_ID_SIGMUND = 3
+    const OBJ_EVENT_ID_JOHANHUS = 16
+
+
 mapscripts KaramjaVolcano_B3F_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setvar(VAR_EVOLUTION_MAP_STATE, 15) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+        call(KaramjaVolcano_B3F_STATE)
     }
     MAP_SCRIPT_ON_LOAD {
-        goto(KaramjaVolcano_STATE3)
+        //goto(KaramjaVolcano_STATE3)
         }
 }
 
 
 
-
+script KaramjaVolcano_B3F_STATE {
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 140) {
+        setvar(VAR_TEMP_F, 1)
+        setflag(FLAG_ELVARG)
+        //-- ROCKS --
+        setflag(FLAG_TEMP_1)
+        setflag(FLAG_TEMP_2)
+        setflag(FLAG_TEMP_3)
+        setflag(FLAG_TEMP_4)
+        setflag(FLAG_TEMP_5)
+        setflag(FLAG_TEMP_6)
+        setflag(FLAG_TEMP_7)
+        //-- ----- --
+        setflag(FLAG_TEMP_F)
+        setflag(FLAG_TEMP_10)
+        removeobject(33)
+        removeobject(34)
+        setflag(FLAG_TEMP_E)
+        setflag(FLAG_TEMP_D)
+        setflag(FLAG_TEMP_C)
+        setflag(FLAG_TEMP_1D)
+        //-- ----- --
+        setflag(FLAG_TEMP_1B) //Post event trainers
+    }
+    else {
+//During HAM story.
+    setflag(FLAG_TEMP_1F)   //HAM GRUNTS
+    setflag(FLAG_TEMP_1E)   //HAM ADMINS
+    setflag(FLAG_TEMP_1D)   //TZHAAR
+    setflag(FLAG_TEMP_1C)   //Ham grunt
+    //NOTES
+    //Walk on Trigger, walk over to event. There are no breakable rocks during ham event.
+    //There are less metatile rocks around the cave during ham event.
+    //After ham event rocks start falling.
+    //Should do a run out of cave sequence. See if you can disable wild encounters during this time.
+    //Possibly restrict bag/menu usage during this time.
+    //Could just be an automatic run cutscene.
+    //Run into Tzhaar.
+    }
+}
 
 
 
@@ -637,5 +684,873 @@ script ITEM_MegaEvolution_TOKHAAR
 script ITEM_MegaEvolution_TZHAAR
 {
     finditem(ITEM_MEGASTONE_TZHAAR)
+    end
+}
+
+
+
+
+
+
+
+
+script Crandor_Event_Volcano {
+
+    lock
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    if (var(VAR_TEMP_0) == 23) {
+        applymovement(OBJ_EVENT_ID_PLAYER, HAM_EVENT_CRANDOR_VOLCANO_29)
+        waitmovement(0)
+    }
+    elif (var(VAR_TEMP_0) == 25) {
+        applymovement(OBJ_EVENT_ID_PLAYER, HAM_EVENT_CRANDOR_VOLCANO_30)
+        waitmovement(0)
+    }
+
+    playse(SE_PIN)
+    applymovement(OBJ_EVENT_ID_BABE, MOVEMENT_EXCLAMATIONMARK_FACE_DOWN)
+    waitmovement(0)
+    waitse
+    playbgm (MUS_PS_ENCOUNTER_HAM, TRUE)
+    namebox ("Babe")
+    msgbox(format("Oh, its you!"))
+    closemessage
+    hidenamebox
+    applymovement(OBJ_EVENT_ID_PATTY, Movement_InteractFACEDOWN)
+    waitmovement(0)
+    namebox ("Patty")
+    msgbox(format("Here to spoil our plans again?"))
+    closemessage
+    hidenamebox
+    namebox ("Babe")
+    msgbox(format("Sorry, but we are both on duty right now.\pThe boss is here even."))
+    closemessage
+    hidenamebox
+    applymovement(OBJ_EVENT_ID_PATTY, Movement_InteractFACELEFT)
+    applymovement(OBJ_EVENT_ID_BABE, Movement_InteractFACERIGHT)
+    waitmovement(0)
+    namebox ("Patty")
+    msgbox(format("Come on Babe, lets show this monster lover what happens when they enter the wrong volcano."))
+    closemessage
+    hidenamebox
+    applymovement(OBJ_EVENT_ID_PATTY, HAM_EVENT_CRANDOR_VOLCANO_1)
+    applymovement(OBJ_EVENT_ID_BABE, HAM_EVENT_CRANDOR_VOLCANO_1)
+    waitmovement(0)
+    
+    trainerbattle_two_trainers(TRAINER_CRANDOR_HAM_ADMIN_BABE, msgbox(format("Babe: Huh, you're quite good.")), TRAINER_CRANDOR_HAM_ADMIN_PATTY, msgbox(format("Patty: You just don't give up, do you?")))
+
+    
+    //Babe: Huh, you're quite good.
+    //Patty: You just wont give up do you?
+    //playbgm (MUS_PS_ENCOUNTER_HAM, 1)
+    applymovement(OBJ_EVENT_ID_BABE, Movement_InteractFACERIGHT)
+    waitmovement(0)
+    namebox ("Babe")
+    msgbox(format("Well, nothing else to do but give up then."))
+    closemessage
+    hidenamebox
+    applymovement(OBJ_EVENT_ID_PATTY, Movement_InteractFACELEFT)
+    waitmovement(0)
+    namebox ("Patty")
+    msgbox(format("Oh no we won't."))
+    closemessage
+    hidenamebox
+    applymovement(OBJ_EVENT_ID_PATTY, Movement_InteractFACEUP)
+    waitmovement(0)
+    namebox ("Patty")
+    msgbox(format("Boss!\nGet over here."))
+    closemessage
+    hidenamebox
+    playse(SE_PIN)
+    applymovement(OBJ_EVENT_ID_JOHANHUS, HAM_EVENT_CRANDOR_VOLCANO_2)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PATTY, HAM_EVENT_CRANDOR_VOLCANO_3)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_JOHANHUS, HAM_EVENT_CRANDOR_VOLCANO_4)
+    waitmovement(0)
+    //Johanhus enters or walks towards the player and waifu duo
+    namebox ("Johanhus")
+    msgbox(format("So this is the one you struggle with."))
+    //Turns towards player
+    namebox ("Johanhus")
+    msgbox(format("I suppose you are a monster sympathiser.\pWe of H.A.M are trying to do good in this world.\pHelp you even.\pWith the monsters gone, this world will become peaceful.\pIt is by Saradomin's will that we do so."))
+    //Turns to Sigmund whos in the back, in a blue coat
+    applymovement(OBJ_EVENT_ID_JOHANHUS, Movement_InteractFACEUP)
+    namebox ("Johanhus")
+    msgbox(format("Isn't that right Sigmund?"))
+    waitmovement(0)
+    closemessage
+    hidenamebox
+    
+    //camera pans.
+    special(SpawnCameraObject) 
+    
+    applymovement(OBJ_EVENT_ID_CAMERA, HAM_EVENT_CRANDOR_VOLCANO_5)
+    fadeoutbgm(2)
+    waitmovement(0)
+    
+    //namebox ("Sigmund")
+    //msgbox(format(""))
+    //Sigmund spins and his cloak becomes purple
+    applymovement(OBJ_EVENT_ID_SIGMUND, Movement_InteractFACEUP)
+    waitmovement(0)
+    namebox ("Sigmund")
+    msgbox(format("True.\pMonsters.\pA great power, one you seem keen to use for yourself.\pBut what if that power was turned on you?"))
+    closemessage
+    hidenamebox
+    applymovement(OBJ_EVENT_ID_SIGMUND, Movement_InteractFACEDOWN)
+    waitmovement(0)
+    //Walks slowly towards player
+    namebox ("Sigmund")
+    msgbox(format("Even now, monsters still kill families, cause torment, create orphans."))
+    closemessage
+    hidenamebox
+    //Walks slowly towards player even more
+    applymovement(OBJ_EVENT_ID_SIGMUND, HAM_EVENT_CRANDOR_VOLCANO_6)
+    applymovement(OBJ_EVENT_ID_CAMERA, HAM_EVENT_CRANDOR_VOLCANO_11)
+    delay(30)
+    applymovement(OBJ_EVENT_ID_BABE, HAM_EVENT_CRANDOR_VOLCANO_8)
+    applymovement(OBJ_EVENT_ID_JOHANHUS, HAM_EVENT_CRANDOR_VOLCANO_9)
+    namebox ("Sigmund")
+    msgbox(format("And you right there, choose to oppose us who wants them gone?\pWe of H.A.M want to cleanse this world of the blight that is monsters."))
+    waitmovement(0) 
+    closemessage
+    hidenamebox
+
+    
+    waitmovement(0)
+    namebox ("Sigmund")
+    msgbox(format("And here on Crandor, in this wrecked little volcano, we found the means to do so.\pMeaning.{PAUSE 32}\nWe have no time for you."))
+    waitmovement(0)
+    closemessage
+    hidenamebox
+
+    namebox ("Johanhus")
+    msgbox(format("Shall we take our leave then?"))
+    applymovement(OBJ_EVENT_ID_SIGMUND, HAM_EVENT_CRANDOR_VOLCANO_7)
+    waitmovement(0)
+    namebox ("Sigmund")
+    msgbox(format("Yes, we now know it exists out there.\pA weapon to destroy all monsters.\pPower."))
+    closemessage
+    hidenamebox
+
+    
+   
+   
+    //Sigmund Johanhus babe and Patty leave
+    //Sigmund turns to player before leaving
+
+    applymovement(OBJ_EVENT_ID_BABE, HAM_EVENT_CRANDOR_VOLCANO_12)
+    applymovement(OBJ_EVENT_ID_JOHANHUS, HAM_EVENT_CRANDOR_VOLCANO_13)
+    applymovement(OBJ_EVENT_ID_PLAYER, HAM_EVENT_CRANDOR_VOLCANO_22)
+    applymovement(OBJ_EVENT_ID_PATTY, HAM_EVENT_CRANDOR_VOLCANO_14)
+    applymovement(OBJ_EVENT_ID_SIGMUND, HAM_EVENT_CRANDOR_VOLCANO_15)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_SIGMUND, HAM_EVENT_CRANDOR_VOLCANO_17)
+    namebox ("Sigmund")
+    msgbox(format("Make sure they won't follow us."))
+    closemessage
+    hidenamebox
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_SIGMUND, HAM_EVENT_CRANDOR_VOLCANO_16)
+    //waitmovement(0)
+
+    
+    applymovement(31, HAM_EVENT_CRANDOR_VOLCANO_18)
+    applymovement(4, HAM_EVENT_CRANDOR_VOLCANO_21)
+    applymovement(6, HAM_EVENT_CRANDOR_VOLCANO_20)
+    delay(30)
+    applymovement(30, HAM_EVENT_CRANDOR_VOLCANO_19)
+    waitmovement(OBJ_EVENT_ID_SIGMUND)
+    waitmovement(30)
+
+    
+    setflag(FLAG_TEMP_1F)
+    removeobject(OBJ_EVENT_ID_SIGMUND)
+    removeobject(OBJ_EVENT_ID_PATTY)
+    removeobject(OBJ_EVENT_ID_JOHANHUS)
+    removeobject(OBJ_EVENT_ID_BABE)
+    
+    special(RemoveCameraObject)
+    //Sigmund leaves. 5 Ham grunts walk up to the player
+
+    //Screen shakes
+    //Screen shakes even more as Ham grunts look around confused.
+    //Screen shakes, Ham grunt jump as Elvarg flies above them.
+    //Elvarg walks up to them.
+    //Screen shakes as Ham grunts run away
+    //Elvarg walks up towards player
+    //etc
+    //Player whites/blacks out
+
+    //Wakes up in Tzhaar, Tzhaar citizen explains they found them and saved them.
+
+
+
+    delay(60)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(60)
+    applymovement(OBJ_EVENT_ID_PLAYER, HAM_EVENT_KaramjaVolcano_14)
+    applymovement(30, HAM_EVENT_KaramjaVolcano_12)
+    applymovement(31, HAM_EVENT_KaramjaVolcano_12)
+    applymovement(4, HAM_EVENT_KaramjaVolcano_13)
+    applymovement(6, HAM_EVENT_KaramjaVolcano_13)
+    namebox ("H.A.M Grunt")
+    msgbox(format("Wh-what was that?!"))
+    hidenamebox
+    closemessage
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(60)
+    delay(60)
+    waitmovement(0)
+
+
+
+    
+    fadescreen(FADE_TO_BLACK)
+
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(40)
+    clearflag(FLAG_ELVARG)
+    addobject(17)
+    fadescreen(FADE_FROM_BLACK)
+    
+    playmoncry(SPECIES_ELVARG, 2)
+    namebox ("ELVARG")
+    msgbox(format("ROOOOOOAAAARRRR!!!"))
+    waitmoncry
+    hidenamebox
+    closemessage
+    playbgm(MUS_PS_VS_CHAOS_TUNNELS, TRUE)
+    fadeinbgm(2)
+
+    applymovement(31, Movement_InteractFACEUP)
+    applymovement(4, Movement_InteractFACEUP)
+    applymovement(6, Movement_InteractFACEUP)
+    applymovement(30, Movement_InteractFACEUP)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+    waitmovement(0)
+
+    applymovement(6, MOVEMENT_INTERACT_UP)
+    namebox ("H.A.M Grunt")
+    msgbox(format("No way!\pTh-that is a dragon!"))
+    hidenamebox
+    closemessage
+    waitmovement(0)
+
+    applymovement(31, MOVEMENT_INTERACT_UP)
+    namebox ("H.A.M Grunt")
+    msgbox(format("Not just any dragon!\pThat's the legendary E-Elvarg!"))
+    hidenamebox
+    closemessage
+    waitmovement(0)
+
+    applymovement(6, Movement_InteractFACELEFT)
+    namebox ("H.A.M Grunt")
+    msgbox(format("No way man I didn't sign up for this!"))
+    hidenamebox
+    closemessage
+    waitmovement(0)
+
+    applymovement(30, Movement_InteractFACERIGHT)
+    namebox ("H.A.M Grunt")
+    msgbox(format("What do we do!?"))
+    hidenamebox
+    closemessage
+    waitmovement(0)
+
+    applymovement(4, MOVEMENT_INTERACT_UP)
+    namebox ("H.A.M Grunt")
+    msgbox(format("I have an idea…"))
+    hidenamebox
+    closemessage
+    waitmovement(0)
+    applymovement(31, Movement_InteractFACERIGHT)
+    applymovement(6, Movement_InteractFACERIGHT)
+    applymovement(30, Movement_InteractFACERIGHT)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+    waitmovement(0)
+
+    applymovement(4, HAM_EVENT_CRANDOR_VOLCANO_24)
+    playse(SE_LEDGE)
+    waitse
+    waitmovement(0)
+    applymovement(4, HAM_EVENT_CRANDOR_VOLCANO_24)
+    playse(SE_LEDGE)
+    waitse
+    waitmovement(0)
+    namebox ("H.A.M Grunt")
+    msgbox(format("R-r-run!!!"))
+    hidenamebox
+    closemessage
+    waitmovement(0)
+    playse(SE_FLEE)
+    applymovement(OBJ_EVENT_ID_PLAYER, HAM_EVENT_CRANDOR_VOLCANO_28)
+    applymovement(31, HAM_EVENT_CRANDOR_VOLCANO_23)
+    applymovement(4, HAM_EVENT_CRANDOR_VOLCANO_23)
+    applymovement(6, HAM_EVENT_CRANDOR_VOLCANO_23)
+    applymovement(30, HAM_EVENT_CRANDOR_VOLCANO_23)
+    waitmovement(0)
+
+    setflag(FLAG_TEMP_1C) 
+    removeobject(36)
+    setflag(FLAG_TEMP_1E)
+    removeobject(31)
+    removeobject(4)
+    removeobject(6)
+    removeobject(30)
+    removeobject(8)
+    removeobject(9)
+
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(60)
+
+    msgbox(format("The cave starts to collapse around you.\pYou should probably run too."))
+    closemessage
+
+    setflag(FLAG_SYS_ENCOUNTER) //DISABLES ENCOUNTERS!!!!!
+    setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 145)
+    setvar(VAR_TEMP_F, 0)
+    setvar(VAR_TEMP_E, 1)
+    setvar(VAR_TEMP_D, 1)
+    clearflag(FLAG_TEMP_1D)
+    addobject(32)
+    release
+    end
+}
+
+movement MOVEMENT_EXCLAMATIONMARK_FACE_DOWN {
+    emote_exclamation_mark
+    face_down
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_1 {
+    walk_down
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_2 {
+    emote_question_mark
+    face_down
+    delay_16 * 2
+    walk_down * 2
+    walk_right
+    face_down
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_3 {
+    face_left
+    lock_facing_direction
+    walk_right
+    unlock_facing_direction
+}
+movement HAM_EVENT_CRANDOR_VOLCANO_4 {
+    walk_down
+    delay_16 * 2
+    face_right
+    delay_16 * 2
+    face_left
+    delay_16 * 2
+    face_down
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_5 {
+    walk_slow_up * 4
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_6 {
+    walk_slow_down * 3
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_7 {
+    face_left
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_8 {
+    face_right
+    lock_facing_direction
+    walk_slow_down
+    unlock_facing_direction
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_9 {
+    face_up
+    lock_facing_direction
+    walk_slow_left
+    unlock_facing_direction
+    face_right
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_10 {
+    walk_down * 3
+    walk_left * 6
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_11 {
+    walk_slow_down * 4
+}
+
+
+movement HAM_EVENT_CRANDOR_VOLCANO_12 {
+    walk_down * 2
+    walk_left * 12
+}
+movement HAM_EVENT_CRANDOR_VOLCANO_13 {
+    walk_down * 3
+    walk_left * 12
+}
+movement HAM_EVENT_CRANDOR_VOLCANO_14 {
+    walk_down * 2
+    walk_left * 12
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_15 {
+    walk_right
+    walk_down * 3
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_16 {
+    walk_left * 10
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_17 {
+    face_down
+    delay_16 * 2
+    face_right
+}
+
+
+movement HAM_EVENT_CRANDOR_VOLCANO_18 {
+    walk_right
+    walk_down
+    walk_right * 3
+    walk_up
+    face_right
+}
+movement HAM_EVENT_CRANDOR_VOLCANO_19 {
+    walk_right * 2
+    walk_up * 3
+    face_right
+}
+movement HAM_EVENT_CRANDOR_VOLCANO_20 {
+    walk_up
+    walk_left
+    walk_up
+}
+movement HAM_EVENT_CRANDOR_VOLCANO_21 {
+    walk_left
+    walk_up * 2
+    walk_left
+}
+movement HAM_EVENT_CRANDOR_VOLCANO_22 {
+    face_right
+    delay_16 * 2
+    face_down
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_23 {
+    walk_faster_down
+    walk_faster_left * 10
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_24 {
+    jump_in_place_up
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_28 {
+    face_down
+    delay_16 * 2
+    face_left
+}
+
+script CRANDOR_VOLCANO_EARTHQUAKE_0 {
+    lockall
+
+    playmoncry(SPECIES_ELVARG, 2)
+    namebox ("ELVARG")
+    msgbox(format("ROOOOOOAAAARRRR!!!"))
+    waitmoncry
+    hidenamebox
+    closemessage
+
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    clearflag(FLAG_TEMP_F)
+    clearflag(FLAG_TEMP_10)
+    addobject(33)
+    addobject(34)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(60)
+
+    
+    
+
+    setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 146)
+    setvar(VAR_TEMP_D, 2)
+
+    release
+    end
+}
+
+script CRANDOR_VOLCANO_EARTHQUAKE_1 {
+    lockall
+
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    addobject(23)
+    addobject(24)
+    clearflag(FLAG_TEMP_6)
+    clearflag(FLAG_TEMP_7)
+    addobject(22)
+    clearflag(FLAG_TEMP_5)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(60)
+
+    
+
+    setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 147)
+    setvar(VAR_TEMP_E, 2)
+
+    release
+    end
+}
+
+script CRANDOR_VOLCANO_EARTHQUAKE_2 {
+    lockall
+
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    addobject(14)
+    clearflag(FLAG_TEMP_4)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(60)
+
+    
+
+    setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 148)
+    setvar(VAR_TEMP_E, 3)
+
+    release
+    end
+}
+
+script CRANDOR_VOLCANO_EARTHQUAKE_3 {
+    lockall
+
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    addobject(10)
+    clearflag(FLAG_TEMP_C)
+    addobject(12)
+    clearflag(FLAG_TEMP_D)
+    addobject(7)
+    clearflag(FLAG_TEMP_E)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(60)
+
+    
+
+    setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 149)
+    setvar(VAR_TEMP_E, 4)
+
+    release
+    end
+}
+
+script CRANDOR_VOLCANO_EARTHQUAKE_4 {
+    lockall
+
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    clearflag(FLAG_TEMP_1D)
+    addobject(32)
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(60)
+
+    setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 150)
+    setvar(VAR_TEMP_E, 5)
+
+    
+
+    applymovement(32, HAM_EVENT_CRANDOR_VOLCANO_25)
+    waitmovement(0)
+    namebox("???")
+    msgbox(format("JalYt!\pQuick follow me!"))
+    closemessage
+    hidenamebox
+    setvar(VAR_0x8004, 0)  //vertical pan
+	setvar(VAR_0x8005, 3)  //horizontal pan
+    setvar(VAR_0x8006, 8) //NUM SHAKES
+	setvar(VAR_0x8007, 2) //SHAKE DELAY
+    special(ShakeCamera)
+    delay(20)
+    applymovement(32, HAM_EVENT_CRANDOR_VOLCANO_26)
+    applymovement(OBJ_EVENT_ID_PLAYER, HAM_EVENT_CRANDOR_VOLCANO_27)
+    
+    delay(60)
+    clearflag(FLAG_SYS_ENCOUNTER) //ENABLES ENCOUNTERS!!!!!
+    warp(MAP_TZHAAR_1F, 0)
+    waitstate
+    release
+    end
+}
+
+
+movement HAM_EVENT_CRANDOR_VOLCANO_25 {
+    walk_fast_up * 2
+    walk_fast_right * 3
+    walk_fast_up * 3
+}
+
+movement HAM_EVENT_CRANDOR_VOLCANO_26 {
+    walk_fast_down * 3
+    walk_fast_left * 3
+    walk_fast_down
+}
+movement HAM_EVENT_CRANDOR_VOLCANO_27 {
+    walk_faster_down * 4
+    walk_faster_left * 3
+    walk_faster_down
+}
+
+
+movement HAM_EVENT_CRANDOR_VOLCANO_29 {
+    walk_right
+    face_up
+}
+movement HAM_EVENT_CRANDOR_VOLCANO_30 {
+    walk_left
+    face_up
+}
+
+
+
+
+script NPC_CRANDOR_VOLCANO_HAMGRUNT_1
+{
+    lock
+    applymovement(8, MOVEMENT_INTERACT_RIGHT)
+    namebox ("H.A.M Grunt")
+    msgbox(format("Man those Lava monsters were such a pain to get through…"))
+    hidenamebox
+    closemessage
+    waitmovement(0)
+    applymovement(9, MOVEMENT_INTERACT_LEFT)
+    namebox ("H.A.M Grunt")
+    msgbox(format("Yeah I agree, the sooner we rid the world of those foul things the better!"))
+    hidenamebox
+    closemessage
+    waitmovement(0)
+    release
+    end
+}
+script NPC_CRANDOR_VOLCANO_HAMGRUNT_2
+{
+    lock
+    faceplayer
+    namebox ("H.A.M Grunt")
+    msgbox(format("Who are you?\pI don't remember seeing you earlier."))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+script NPC_CRANDOR_VOLCANO_HAMGRUNT_3
+{
+    lock
+    faceplayer
+    namebox ("H.A.M Grunt")
+    msgbox(format("The boss is studying that mural over there.\pBut it looks pretty cracked up.\pI hope he can find what he is looking for."))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+script NPC_CRANDOR_VOLCANO_HAMGRUNT_4
+{
+    lock
+    faceplayer
+    namebox ("H.A.M Grunt")
+    msgbox(format("AAH!\pOh, you startled me.\pI thought it was another earthquake.\pThose have been happening ever since we got here…\pI hope there is no cave-in."))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+script NPC_CRANDOR_VOLCANO_HAMGRUNT_5
+{
+    lock
+    faceplayer
+    namebox ("H.A.M Grunt")
+    msgbox(format("Yo, this guy legit looks cripsy.\pI wonder what happened to him."))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+
+script BATTLE_KaramjaVolcano_HAM_6
+{
+    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_6, format("Nothing will stop us!\pThis volcano is about to become a monster killer!"),format("Wait… Won't it kill us too?"))
+    namebox ("H.A.M Grunt")
+    msgbox(format("Nope!\nI don't like this plan anymore!\pI'm out of here!"))
+    hidenamebox
+    closemessage
+    fadescreen(FADE_TO_BLACK)
+    setflag(FLAG_TEMP_1C)
+    removeobject(36)
+    fadescreen(FADE_FROM_BLACK)
+    release
+    end
+}
+
+
+
+script BATTLE_CrandorVolcano_FireGiant_1
+{
+    trainerbattle_single(TRAINER_CrandorVolcano_FireGiant_1, format("BURN WITH ME!"),format("LITTLE MAN, BURNT ME."))
+    namebox ("Fire Giant")
+    msgbox(format("ME LIKE IT HERE.\pHERE IS FEEL GOOD."))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+script BATTLE_CrandorVolcano_FireGiant_2
+{
+    trainerbattle_single(TRAINER_CrandorVolcano_FireGiant_2, format("RAAARUGHH!"),format("ARRUGH…"))
+    namebox ("Fire Giant")
+    msgbox(format("LITTLE MAN, THINK IS BIG MAN."))
+    hidenamebox
+    closemessage
+    release
     end
 }

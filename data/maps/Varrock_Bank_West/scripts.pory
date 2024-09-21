@@ -15,7 +15,7 @@ script VarrockWest_Bank_OnTransition {
 script VARROCKBANKWEST_NPC_NPC1
 {
     faceplayer
-    //namebox ("")
+    namebox ("Aut0C1icK3r")
     msgbox(format("Can't you see I am busy High-Alching, what do you want!"))
     closemessage
     hidenamebox
@@ -25,7 +25,7 @@ script VARROCKBANKWEST_NPC_NPC1
 script VARROCKBANKWEST_NPC_NPC2
 {
     faceplayer
-    //namebox ("")
+    namebox ("Mercher")
     msgbox(format("I only made 1m profit today.\pIf this keeps up I might be poor in 5 years or so.\pOr if the economy suddenly suffered from inflation."))
     closemessage
     hidenamebox
@@ -35,7 +35,7 @@ script VARROCKBANKWEST_NPC_NPC2
 script VARROCKBANKWEST_NPC_NPC3
 {
     faceplayer
-    //namebox ("")
+    namebox ("MTX fanatic")
     msgbox(format("Nice outfit Noob!\pI bet you couldn't afford to buy anything awesome like mine from the Solomon Store."))
     closemessage
     hidenamebox
@@ -45,7 +45,7 @@ script VARROCKBANKWEST_NPC_NPC3
 script VARROCKBANKWEST_NPC_NPC4
 {
     faceplayer
-    //namebox ("")
+    namebox ("1Sp1aSH2mUch")
     msgbox(format("I bought a bunch of runes here in Varrock, but I have no idea who to use them on.\pWhy is there no list?\pDo I have to actually use my brain and experiment?!"))
     closemessage
     hidenamebox
@@ -55,7 +55,7 @@ script VARROCKBANKWEST_NPC_NPC4
 script VARROCKBANKWEST_NPC_NPC5
 {
     faceplayer
-    //namebox ("")
+    namebox ("Fletcher")
     msgbox(format("Get lost kid, I am Fletching and need to concentrate."))
     closemessage
     hidenamebox
@@ -65,7 +65,7 @@ script VARROCKBANKWEST_NPC_NPC5
 script VARROCKBANKWEST_NPC_NPC6
 {
     faceplayer
-    //namebox ("")
+    namebox ("PvMer")
     msgbox(format("{COLOR RED}red:wave: Buying Abyssal Whip!"))
     closemessage
     hidenamebox
@@ -75,7 +75,7 @@ script VARROCKBANKWEST_NPC_NPC6
 script VARROCKBANKWEST_NPC_NPC7
 {
     faceplayer
-    //namebox ("")
+    namebox ("Choob")
     msgbox(format("I have been trying to telegrab the ring in the basement for hours now!\pDo I need a higher magic level?"))
     closemessage
     hidenamebox
@@ -85,7 +85,7 @@ script VARROCKBANKWEST_NPC_NPC7
 script VARROCKBANKWEST_NPC_NPC8
 {
     faceplayer
-    //namebox ("")
+    namebox ("Diviner")
     msgbox(format("People often make fires outside.\pBe careful, or else the flames might get you."))
     closemessage
     hidenamebox
@@ -110,7 +110,7 @@ script VARROCKBANKWEST_NPC_NPC8
 script QUEST_DROPPARTY_1
 {
     faceplayer
-    //namebox ("")
+    namebox ("Rich man")
     msgbox(format("Drop Party!\pDrop Party!\pFollow me for Drop Party!"))
     closemessage
     hidenamebox

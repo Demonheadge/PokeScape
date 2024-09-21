@@ -719,7 +719,11 @@
     "Route48",
     "Route49",
     "Route0",
-    "Route200"
+    "Route200",
+    "Bay_of_Sarim",
+    "Mudskipper_Sound_1",
+    "Mudskipper_Sound_2",
+    "Mudskipper_Sound_3"
   ],
   "gMapGroup_PokescapeDungeons": [
     "Tutorial_Island_Cave",
@@ -999,7 +1003,9 @@
     "Tzhaar_Caves_2",
     "Tzhaar_Caves_3",
     "Tzhaar_Caves_4",
-    "Tzhaar_Caves_5"
+    "Tzhaar_Caves_5",
+    "Tzhaar_Gym_Challenge",
+    "Tzhaar_HarAken"
   ],
   "gMapGroup_PokescapeIndoorVarious": [
     "Route1_House_Fred",

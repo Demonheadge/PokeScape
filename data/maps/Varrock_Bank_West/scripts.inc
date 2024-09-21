@@ -14,7 +14,8 @@ VarrockWest_Bank_OnTransition::
 
 VARROCKBANKWEST_NPC_NPC1::
 	faceplayer
-	msgbox VARROCKBANKWEST_NPC_NPC1_Text_0
+	namebox VARROCKBANKWEST_NPC_NPC1_Text_0
+	msgbox VARROCKBANKWEST_NPC_NPC1_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -23,7 +24,8 @@ VARROCKBANKWEST_NPC_NPC1::
 
 VARROCKBANKWEST_NPC_NPC2::
 	faceplayer
-	msgbox VARROCKBANKWEST_NPC_NPC2_Text_0
+	namebox VARROCKBANKWEST_NPC_NPC2_Text_0
+	msgbox VARROCKBANKWEST_NPC_NPC2_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -32,7 +34,8 @@ VARROCKBANKWEST_NPC_NPC2::
 
 VARROCKBANKWEST_NPC_NPC3::
 	faceplayer
-	msgbox VARROCKBANKWEST_NPC_NPC3_Text_0
+	namebox VARROCKBANKWEST_NPC_NPC3_Text_0
+	msgbox VARROCKBANKWEST_NPC_NPC3_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -41,7 +44,8 @@ VARROCKBANKWEST_NPC_NPC3::
 
 VARROCKBANKWEST_NPC_NPC4::
 	faceplayer
-	msgbox VARROCKBANKWEST_NPC_NPC4_Text_0
+	namebox VARROCKBANKWEST_NPC_NPC4_Text_0
+	msgbox VARROCKBANKWEST_NPC_NPC4_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -50,7 +54,8 @@ VARROCKBANKWEST_NPC_NPC4::
 
 VARROCKBANKWEST_NPC_NPC5::
 	faceplayer
-	msgbox VARROCKBANKWEST_NPC_NPC5_Text_0
+	namebox VARROCKBANKWEST_NPC_NPC5_Text_0
+	msgbox VARROCKBANKWEST_NPC_NPC5_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -59,7 +64,8 @@ VARROCKBANKWEST_NPC_NPC5::
 
 VARROCKBANKWEST_NPC_NPC6::
 	faceplayer
-	msgbox VARROCKBANKWEST_NPC_NPC6_Text_0
+	namebox VARROCKBANKWEST_NPC_NPC6_Text_0
+	msgbox VARROCKBANKWEST_NPC_NPC6_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -68,7 +74,8 @@ VARROCKBANKWEST_NPC_NPC6::
 
 VARROCKBANKWEST_NPC_NPC7::
 	faceplayer
-	msgbox VARROCKBANKWEST_NPC_NPC7_Text_0
+	namebox VARROCKBANKWEST_NPC_NPC7_Text_0
+	msgbox VARROCKBANKWEST_NPC_NPC7_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -77,7 +84,8 @@ VARROCKBANKWEST_NPC_NPC7::
 
 VARROCKBANKWEST_NPC_NPC8::
 	faceplayer
-	msgbox VARROCKBANKWEST_NPC_NPC8_Text_0
+	namebox VARROCKBANKWEST_NPC_NPC8_Text_0
+	msgbox VARROCKBANKWEST_NPC_NPC8_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -86,7 +94,8 @@ VARROCKBANKWEST_NPC_NPC8::
 
 QUEST_DROPPARTY_1::
 	faceplayer
-	msgbox QUEST_DROPPARTY_1_Text_0
+	namebox QUEST_DROPPARTY_1_Text_0
+	msgbox QUEST_DROPPARTY_1_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -210,10 +219,16 @@ BARBSTRONGHOLD_RIVAL_BOOT_CHOICE::
 
 
 VARROCKBANKWEST_NPC_NPC1_Text_0:
+	.string "Aut0C1icK3r$"
+
+VARROCKBANKWEST_NPC_NPC1_Text_1:
 	.string "Can't you see I am busy High-Alching,\n"
 	.string "what do you want!$"
 
 VARROCKBANKWEST_NPC_NPC2_Text_0:
+	.string "Mercher$"
+
+VARROCKBANKWEST_NPC_NPC2_Text_1:
 	.string "I only made 1m profit today.\p"
 	.string "If this keeps up I might be poor in 5\n"
 	.string "years or so.\p"
@@ -221,12 +236,18 @@ VARROCKBANKWEST_NPC_NPC2_Text_0:
 	.string "from inflation.$"
 
 VARROCKBANKWEST_NPC_NPC3_Text_0:
+	.string "MTX fanatic$"
+
+VARROCKBANKWEST_NPC_NPC3_Text_1:
 	.string "Nice outfit Noob!\p"
 	.string "I bet you couldn't afford to buy\n"
 	.string "anything awesome like mine from the\l"
 	.string "Solomon Store.$"
 
 VARROCKBANKWEST_NPC_NPC4_Text_0:
+	.string "1Sp1aSH2mUch$"
+
+VARROCKBANKWEST_NPC_NPC4_Text_1:
 	.string "I bought a bunch of runes here in\n"
 	.string "Varrock, but I have no idea who to use\l"
 	.string "them on.\p"
@@ -235,23 +256,38 @@ VARROCKBANKWEST_NPC_NPC4_Text_0:
 	.string "experiment?!$"
 
 VARROCKBANKWEST_NPC_NPC5_Text_0:
+	.string "Fletcher$"
+
+VARROCKBANKWEST_NPC_NPC5_Text_1:
 	.string "Get lost kid, I am Fletching and need to\n"
 	.string "concentrate.$"
 
 VARROCKBANKWEST_NPC_NPC6_Text_0:
+	.string "PvMer$"
+
+VARROCKBANKWEST_NPC_NPC6_Text_1:
 	.string "{COLOR RED}red:wave: Buying Abyssal Whip!$"
 
 VARROCKBANKWEST_NPC_NPC7_Text_0:
+	.string "Choob$"
+
+VARROCKBANKWEST_NPC_NPC7_Text_1:
 	.string "I have been trying to telegrab the ring\n"
 	.string "in the basement for hours now!\p"
 	.string "Do I need a higher magic level?$"
 
 VARROCKBANKWEST_NPC_NPC8_Text_0:
+	.string "Diviner$"
+
+VARROCKBANKWEST_NPC_NPC8_Text_1:
 	.string "People often make fires outside.\p"
 	.string "Be careful, or else the flames might get\n"
 	.string "you.$"
 
 QUEST_DROPPARTY_1_Text_0:
+	.string "Rich man$"
+
+QUEST_DROPPARTY_1_Text_1:
 	.string "Drop Party!\p"
 	.string "Drop Party!\p"
 	.string "Follow me for Drop Party!$"

@@ -1,20 +1,10 @@
 KaramjaVolcano_B1F_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, KaramjaVolcano_B1F_MapScripts_MAP_SCRIPT_ON_TRANSITION
-	map_script MAP_SCRIPT_ON_LOAD, KaramjaVolcano_B1F_MapScripts_MAP_SCRIPT_ON_LOAD
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, KaramjaVolcano_B1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
 KaramjaVolcano_B1F_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 15
 	return
-
-KaramjaVolcano_B1F_MapScripts_MAP_SCRIPT_ON_LOAD:
-	goto KaramjaVolcano_STATE1
-	return
-
-KaramjaVolcano_B1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-	map_script_2 VAR_POKESCAPE_KARAMJAVOLCANO_STATE, 0, EVENT_KaramjaVolcano_HAM_EnterVolcano
-	.2byte 0
 
 
 KaramjaVolcano_STATE1::
@@ -166,20 +156,6 @@ BATTLE_KaramjaVolcano_HAM_5::
 	namebox EVENT_KaramjaVolcano_HAM_EnterVolcano_Text_0
 	msgbox BATTLE_KaramjaVolcano_HAM_5_Text_2
 	hidenamebox
-	release
-	end
-
-
-BATTLE_KaramjaVolcano_HAM_6::
-	trainerbattle_single TRAINER_KARAMJAVOLCANO_HAM_GRUNT_6, BATTLE_KaramjaVolcano_HAM_6_Text_0, BATTLE_KaramjaVolcano_HAM_6_Text_1
-	namebox EVENT_KaramjaVolcano_HAM_EnterVolcano_Text_0
-	msgbox BATTLE_KaramjaVolcano_HAM_6_Text_2
-	hidenamebox
-	closemessage
-	fadescreen FADE_TO_BLACK
-	setflag FLAG_TEMP_1
-	removeobject 7
-	fadescreen FADE_FROM_BLACK
 	release
 	end
 
@@ -352,7 +328,7 @@ PokeScapeSongList_VSBattles_13:
 
 PokeScapeSongList_VSBattles_14:
 	namebox PokeScapeSongList_VSBattles_Text_24
-	playbgm MUS_PS_RIMMINGTON, 1
+	playbgm MUS_PS_VS_CHAOS_TUNNELS, 1
 	setvar VAR_POKESCAPE_MUSIC_STATE, 0
 	msgbox PokeScapeSongList_VSBattles_Text_23
 	hidenamebox
@@ -522,7 +498,7 @@ BATTLE_KaramjaVolcano_HAM_3_Text_2:
 
 BATTLE_KaramjaVolcano_HAM_4_Text_0:
 	.string "We came here searching for some\n"
-	.string "ancient dragon that once ravaged the\l"
+	.string "ancient weapon that once ravaged the\l"
 	.string "island.\p"
 	.string "Don't think you can stop us!$"
 
@@ -532,34 +508,21 @@ BATTLE_KaramjaVolcano_HAM_4_Text_1:
 BATTLE_KaramjaVolcano_HAM_4_Text_2:
 	.string "What do you mean our plan makes no\n"
 	.string "sense?\p"
-	.string "This dragon killed every single mage\n"
+	.string "This weapon killed every single mage\n"
 	.string "that lived on this island!\p"
 	.string "If anything is powerful enough to rid\n"
-	.string "the world of monsters, it's this dragon!$"
+	.string "the world of monsters, it's this weapon!$"
 
 BATTLE_KaramjaVolcano_HAM_5_Text_0:
 	.string "The world will be rid of monsters, you\n"
-	.string "cant stop this movement!$"
+	.string "can't stop this movement!$"
 
 BATTLE_KaramjaVolcano_HAM_5_Text_1:
 	.string "We will achieve our goals!$"
 
 BATTLE_KaramjaVolcano_HAM_5_Text_2:
 	.string "We will rid the world of all monsters, you\n"
-	.string "cant stop us!$"
-
-BATTLE_KaramjaVolcano_HAM_6_Text_0:
-	.string "Nothing will stop us!\p"
-	.string "This volcano is about to become a\n"
-	.string "monster killer!$"
-
-BATTLE_KaramjaVolcano_HAM_6_Text_1:
-	.string "Wait… Won't it kill us too?$"
-
-BATTLE_KaramjaVolcano_HAM_6_Text_2:
-	.string "Nope!\n"
-	.string "I don't like this plan anymore!\p"
-	.string "I'm out of here!$"
+	.string "can't stop us!$"
 
 BATTLE_KaramjaVolcano_Skeleton_1_Text_0:
 	.string "Bonejour!$"

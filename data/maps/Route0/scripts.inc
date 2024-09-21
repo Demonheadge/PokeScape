@@ -1,5 +1,11 @@
 Route0_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route0_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+Route0_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setvar VAR_EVOLUTION_MAP_STATE, 6
+	call WEATHER_CHANGE_AREA_DAEMONHEIM
+	return
 
 
 BATTLE_ROUTE0_TRAINER_1::
@@ -67,16 +73,6 @@ NPC_ROUTE0_NPC_2::
 	end
 
 
-NPC_ROUTE0_NPC_3::
-	lock
-	faceplayer
-	msgbox NPC_ROUTE0_NPC_3_Text_0
-	closemessage
-	hidenamebox
-	release
-	end
-
-
 NPC_ROUTE0_NPC_4::
 	lock
 	faceplayer
@@ -92,6 +88,17 @@ NPC_ROUTE0_NPC_5::
 	lock
 	faceplayer
 	msgbox NPC_ROUTE0_NPC_5_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NPC_ROUTE0_NPC_6::
+	lock
+	faceplayer
+	namebox NPC_ROUTE0_NPC_6_Text_0
+	msgbox NPC_ROUTE0_NPC_6_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -225,23 +232,28 @@ NPC_ROUTE0_NPC_2_Text_0:
 	.string "level is too low.\p"
 	.string "I deserve to freeze...$"
 
-NPC_ROUTE0_NPC_3_Text_0:
-	.string "Thok is our fiercest warrior, he and his\n"
-	.string "brother Marmaros almost made it to the\l"
-	.string "bottom of Daemonheim once!\p"
-	.string "They don't talk about it however.$"
-
 NPC_ROUTE0_NPC_4_Text_0:
 	.string "Marmaros$"
 
 NPC_ROUTE0_NPC_4_Text_1:
-	.string "I-if you need Thok, g-go right up ahead.$"
+	.string "I-if you need Thok, g-go right up ahead.\p"
+	.string "He i-is the gym leader.\p"
+	.string "Bu-but also my brother.$"
 
 NPC_ROUTE0_NPC_5_Text_0:
 	.string "Don't think you can just go to the\n"
 	.string "bottom of the dungeon on your first\l"
 	.string "try.\p"
 	.string "This is a tough place!$"
+
+NPC_ROUTE0_NPC_6_Text_0:
+	.string "Hoardstalker$"
+
+NPC_ROUTE0_NPC_6_Text_1:
+	.string "My kind have lived in the spirit realm\n"
+	.string "for years.\p"
+	.string "Until we were summoned to this world by\n"
+	.string "a powerful warlock.$"
 
 NPC_ROUTE0_CHICKEN_Text_0:
 	.string "Bwuk bwuk bwaaaaauuuuukk$"

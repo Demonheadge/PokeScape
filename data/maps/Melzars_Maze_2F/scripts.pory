@@ -50,7 +50,7 @@ script Melzar_Maze_2F_Bookshelf {
 	end
 }
 script Melzar_Maze_2F_Picture {
-	msgbox(format("You search the picture…\pDid it's eyes just move?\pYou find nothing interesting…"))
+	msgbox(format("You search the picture…\pDid its eyes just move?\pYou find nothing interesting…"))
 	closemessage
 	end
 }

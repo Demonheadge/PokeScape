@@ -106,6 +106,13 @@
       "elevation": 0,
       "dest_map": "MAP_ZAMORAK_CHURCH",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_MIND_ALTAR",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
@@ -118,7 +125,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "ALTAR_EARTH_ENTER"
+      "script": "ALTAR_MIND_ENTER"
     },
     {
       "type": "sign",

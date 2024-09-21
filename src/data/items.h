@@ -9407,9 +9407,9 @@ const struct Item gItems[] =
 
     [ITEM_DOWSING_MACHINE] =
     {
-        .name = _("Dowsing MCHN"),
+        .name = _("ITEM FINDER"),
         .price = 0,
-        .description = sDowsingMachineDesc,
+        .description = sClueScrollToolsDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -10747,7 +10747,7 @@ const struct Item gItems[] =
     [ITEM_AIR_RUNE] =
     {
         .name = _("AIR RUNE"),
-        .price = 2100,
+        .price = 3000,
         .description = sAirRuneDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10759,7 +10759,7 @@ const struct Item gItems[] =
     [ITEM_WATER_RUNE] =
     {
         .name = _("WATER RUNE"),
-        .price = 2100,
+        .price = 3000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10770,7 +10770,7 @@ const struct Item gItems[] =
     [ITEM_EARTH_RUNE] =
     {
         .name = _("EARTH RUNE"),
-        .price = 2100,
+        .price = 3000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10781,7 +10781,7 @@ const struct Item gItems[] =
 	[ITEM_FIRE_RUNE] =
     {
         .name = _("FIRE RUNE"),
-        .price = 2100,
+        .price = 3000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10792,7 +10792,7 @@ const struct Item gItems[] =
 	[ITEM_MIND_RUNE] =
     {
         .name = _("MIND RUNE"),
-        .price = 2100,
+        .price = 3000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10803,7 +10803,7 @@ const struct Item gItems[] =
 	[ITEM_BODY_RUNE] =
     {
         .name = _("BODY RUNE"),
-        .price = 2100,
+        .price = 3000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10814,7 +10814,7 @@ const struct Item gItems[] =
 	[ITEM_COSMIC_RUNE] =
     {
         .name = _("COSMIC RUNE"),
-        .price = 2100,
+        .price = 10000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10825,7 +10825,7 @@ const struct Item gItems[] =
 	[ITEM_CHAOS_RUNE] =
     {
         .name = _("CHAOS RUNE"),
-        .price = 2100,
+        .price = 10000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10836,7 +10836,7 @@ const struct Item gItems[] =
 	[ITEM_NATURE_RUNE] =
     {
         .name = _("NATURE RUNE"),
-        .price = 2100,
+        .price = 10000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10847,7 +10847,7 @@ const struct Item gItems[] =
 	[ITEM_DEATH_RUNE] =
     {
         .name = _("DEATH RUNE"),
-        .price = 2100,
+        .price = 10000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10858,7 +10858,7 @@ const struct Item gItems[] =
 	[ITEM_BLOOD_RUNE] =
     {
         .name = _("BLOOD RUNE"),
-        .price = 2100,
+        .price = 10000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10869,7 +10869,7 @@ const struct Item gItems[] =
 	[ITEM_LAW_RUNE] =
     {
         .name = _("LAW RUNE"),
-        .price = 2100,
+        .price = 10000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10880,7 +10880,7 @@ const struct Item gItems[] =
 	[ITEM_SOUL_RUNE] =
     {
         .name = _("SOUL RUNE"),
-        .price = 2100,
+        .price = 10000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10891,7 +10891,7 @@ const struct Item gItems[] =
 	[ITEM_DUST_RUNE] =
     {
         .name = _("DUST RUNE"),
-        .price = 2100,
+        .price = 20000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10902,7 +10902,7 @@ const struct Item gItems[] =
 	[ITEM_MUD_RUNE] =
     {
         .name = _("MUD RUNE"),
-        .price = 2100,
+        .price = 20000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10913,7 +10913,7 @@ const struct Item gItems[] =
 	[ITEM_MIST_RUNE] =
     {
         .name = _("MIST RUNE"),
-        .price = 2100,
+        .price = 20000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10924,7 +10924,7 @@ const struct Item gItems[] =
 	[ITEM_LAVA_RUNE] =
     {
         .name = _("LAVA RUNE"),
-        .price = 2100,
+        .price = 20000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10935,7 +10935,7 @@ const struct Item gItems[] =
 	[ITEM_LIFE_RUNE] =
     {
         .name = _("LIFE RUNE"),
-        .price = 2100,
+        .price = 50000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -10946,7 +10946,7 @@ const struct Item gItems[] =
 	[ITEM_ASTRAL_RUNE] =
     {
         .name = _("ASTRAL RUNE"),
-        .price = 2100,
+        .price = 10000,
         .description = sEvoItemDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
@@ -11589,7 +11589,7 @@ const struct Item gItems[] =
     [ITEM_BONECROSSBOW] =
     {
         .name = _("BONE XBOW"),
-        .price = 200,
+        .price = 15000,
         .holdEffect = HOLD_EFFECT_WIDE_LENS,
         .description = sBoneXBowDesc,
         .pocket = POCKET_ITEMS,
@@ -12138,7 +12138,7 @@ const struct Item gItems[] =
     [ITEM_KARILCROSSBOW] =
     {
         .name = _("KARIL XBOW"),
-        .price = 100,
+        .price = 20000,
         .holdEffect = HOLD_EFFECT_KARIL,
         .description = sKarilXBowDesc,
         .pocket = POCKET_ITEMS,
@@ -12307,7 +12307,7 @@ const struct Item gItems[] =
     [ITEM_WATERFALL_TOOL] =
     {
         .name = _("GRAPPLE"),
-        .price = 0,
+        .price = 50000,
         .importance = 1,
         .description = sGrappleDesc,
         .pocket = POCKET_KEY_ITEMS,
@@ -12589,6 +12589,17 @@ const struct Item gItems[] =
     [ITEM_TALISMAN_COSMIC] =
     {
         .name = _("COSMIC TALLY"),
+        .price = 200,
+        .description = sTALISMANDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .sort = ITEM_TYPE_KEY_ITEM,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    },
+
+    [ITEM_TALISMAN_BODY] =
+    {
+        .name = _("BODY TALLY"),
         .price = 200,
         .description = sTALISMANDesc,
         .pocket = POCKET_KEY_ITEMS,

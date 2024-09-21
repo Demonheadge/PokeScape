@@ -183,7 +183,7 @@ BATTLE_ROUTE24_WOODCUTTER_2_Text_0:
 	.string "like mine.$"
 
 BATTLE_ROUTE24_WOODCUTTER_2_Text_1:
-	.string "I bet you dont even have over 20\n"
+	.string "I bet you don't even have over 20\n"
 	.string "Woodcutting.$"
 
 BATTLE_ROUTE24_GOBLIN_1_Text_0:
@@ -232,7 +232,7 @@ NPC_ROUTE24_NPC_1_Text_1:
 	.string "Misthalin.\p"
 	.string "On the way there you can meet some\n"
 	.string "unfriendly dwarves and barbarians but\l"
-	.string "dont let them ruin your day.$"
+	.string "don't let them ruin your day.$"
 
 NPC_ROUTE24_NPC_2_Text_0:
 	.string "WOMAN$"

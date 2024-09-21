@@ -37,6 +37,16 @@
       "map": "MAP_PORT_SARIM",
       "offset": 12,
       "direction": "left"
+    },
+    {
+      "map": "MAP_LUMBRIDGE",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE4",
+      "offset": -36,
+      "direction": "left"
     }
   ],
   "object_events": [

@@ -55,7 +55,7 @@
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_AIR_ALTAR",
-      "dest_warp_id": "0"
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
@@ -68,7 +68,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "ALTAR_AIR_ENTER"
     }
   ]
 }

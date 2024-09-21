@@ -116,7 +116,7 @@ ROUTE46_ARCHAEOLOGIST_Text_0:
 	.string "I'm not really supposed to say\n"
 	.string "anything, but...\p"
 	.string "We think we have discovered the ruins\n"
-	.string "of an ancient civilization!\p"
+	.string "of an ancient civilisation!\p"
 	.string "I heard that the Museum Curator is\n"
 	.string "coming down personally to inspect them!$"
 

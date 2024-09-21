@@ -335,7 +335,7 @@ Lumbridge_Castle_NPC3_Text_1:
 
 Lumbridge_Castle_NPC3_Text_2:
 	.string "The Duke holds power over Lumbridge.\p"
-	.string "But personally I dont think he is that\n"
+	.string "But personally I don't think he is that\n"
 	.string "good of a ruler.$"
 
 Lumbridge_Castle_NPC4_Text_0:

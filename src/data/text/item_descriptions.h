@@ -5200,6 +5200,11 @@ static const u8 sRingOfKinship_Desc[] = _(
     "A ring that\n"
     "will teleport you\n"
     "to Daemonheim.");
+
+static const u8 sClueScrollToolsDesc[] = _(
+    "Some tools that\n"
+    "help find invisible\n"
+    "item nearby.");
     
 static const u8 sCupholderDesc[] = _(
     "This is a Cupholder.");

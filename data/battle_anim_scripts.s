@@ -875,7 +875,7 @@ gBattleAnims_Moves::
 	.4byte Move_PSYCHIC_NOISE
 	.4byte Move_UPPER_HAND
 	.4byte Move_MALIGNANT_CHAIN
-@@@@@@@@@@ POKESCAPE @@@@@@@@@@
+@@@@ POKESCAPE
 	.4byte Move_CHAOTIC_RIFT
 	.4byte Move_SARADOMIN_STRIKE
 	.4byte Move_SWORD_STRIKE
@@ -896,6 +896,7 @@ gBattleAnims_Moves::
 	.4byte Move_ZAROS_BECKON
 	.4byte Move_SEREN_SHINE
 	.4byte Move_GODLESS_REBEL
+	.4byte Move_TZ_TOK_ZEK
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -33920,3 +33921,83 @@ Move_SEREN_SHINE:
 	
 Move_GODLESS_REBEL:
 	goto Move_FACADE
+
+Move_TZ_TOK_ZEK:
+	loadspritegfx ANIM_TAG_HOLLOW_ORB
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
+	loadspritegfx ANIM_TAG_METEOR
+	loadspritegfx ANIM_TAG_FLAT_ROCK
+	createvisualtask AnimTask_HorizontalShake, 5, ANIM_PLAYER_RIGHT, 5, 32 	@ shake screen
+	createvisualtask AnimTask_HorizontalShake, 5, ANIM_PLAYER_LEFT, 5, 32 	@ shake banks
+	playsewithpan SE_M_EARTHQUAKE, 0x0
+	monbg ANIM_ATTACKER
+	splitbgprio ANIM_ATTACKER
+	delay 0x1
+	createvisualtask AnimTask_BlendPalInAndOutByTag, 0x5, ANIM_TAG_HOLLOW_ORB, 0x4c00, 0xe, 0x0, 0x3
+	createsprite gBreakneckBlitzDanceSpriteTemplate, ANIM_ATTACKER, 2, 0x0
+	createsprite gBreakneckBlitzDanceSpriteTemplate, ANIM_ATTACKER, 2, 0x2b
+	createsprite gBreakneckBlitzDanceSpriteTemplate, ANIM_ATTACKER, 2, 0x55
+	createsprite gBreakneckBlitzDanceSpriteTemplate, ANIM_ATTACKER, 2, 0x80
+	createsprite gBreakneckBlitzDanceSpriteTemplate, ANIM_ATTACKER, 2, 0xaa
+	createsprite gBreakneckBlitzDanceSpriteTemplate, ANIM_ATTACKER, 2, 0xd5
+	delay 0xf
+	createsprite gBreakneckBlitzDanceSpriteTemplate, ANIM_ATTACKER, 2, 0x0
+	createsprite gBreakneckBlitzDanceSpriteTemplate, ANIM_ATTACKER, 2, 0x2b
+	createsprite gBreakneckBlitzDanceSpriteTemplate, ANIM_ATTACKER, 2, 0x55
+	createsprite gBreakneckBlitzDanceSpriteTemplate, ANIM_ATTACKER, 2, 0x80
+	createsprite gBreakneckBlitzDanceSpriteTemplate, ANIM_ATTACKER, 2, 0xaa
+	createsprite gBreakneckBlitzDanceSpriteTemplate, ANIM_ATTACKER, 2, 0xd5
+	waitforvisualfinish
+	clearmonbg ANIM_ATTACKER
+	createvisualtask AnimTask_AllBattlersInvisibleExceptAttackerAndTarget, 10
+	waitforvisualfinish
+	fadetobg BG_DRILL
+	waitbgfadeout
+	createvisualtask AnimTask_StartSlidingBg, 0x5, 0xf700, 0x300, 0x1, 0xffff
+	waitbgfadein
+	setalpha 12, 8
+	delay 0x10
+	createvisualtask AnimTask_WindUpLunge, 5, ANIM_ATTACKER, -24, 8, 23, 10, 40, 10
+	delay 0x23
+	invisible ANIM_ATTACKER
+	createsprite gGrowingSuperpowerTemplate, ANIM_TARGET, 3, 0x0
+	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
+	delay 0x8
+	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
+	createsprite gBreakneckBlitzHitSpriteTemplate, ANIM_TARGET, 3, 0x0, 0x0, 0x1, 0x1		@ 0, 0
+	delay 0x1
+	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
+	createsprite gBreakneckBlitzHitSpriteTemplate, ANIM_TARGET, 3, 0xa, 0xfff6, 0x1, 0x1		@  +10, -10
+	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
+	delay 0x1
+	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
+	createsprite gBreakneckBlitzHitSpriteTemplate, ANIM_TARGET, 3, 0xf, 0xfff1, 0x1, 0x1		@ +15, -15
+	delay 0x1
+	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
+	createsprite gBreakneckBlitzHitSpriteTemplate, ANIM_TARGET, 3, 0x14, 0xffec, 0x1, 0x1		@ +20, -20
+	delay 0x1
+	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
+	createsprite gBreakneckBlitzHitSpriteTemplate, ANIM_TARGET, 3, 0x19, 0xffe7, 0x1, 0x1		@ +25, -25
+	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, ANIM_TARGET, 0xffe6, 0x10, 0x1, 0x4
+	waitforvisualfinish
+	createvisualtask AnimTask_RotateMonSpriteToSide, 2, 8, -512, ANIM_TARGET, 0
+	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_ATTACKER, 4, 0, 12, 1
+	createvisualtask AnimTask_ShakeMonInPlace, 2, ANIM_TARGET, 4, 0, 12, 1
+	waitforvisualfinish
+	delay 0x4
+	createvisualtask AnimTask_RotateMonSpriteToSide, 2, 8, -512, ANIM_TARGET, 1
+	delay 0xa
+	delay 0x19
+	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, ANIM_TARGET, 0x0, 0x6
+	delay 0x2
+	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 0x0, 0x5
+	waitforvisualfinish
+	delay 0x10
+	blendoff
+	clearmonbg ANIM_DEF_PARTNER
+	createvisualtask AnimTask_AllBattlersVisible, 0xA
+	waitforvisualfinish
+	call UnsetPsychicBg
+	end

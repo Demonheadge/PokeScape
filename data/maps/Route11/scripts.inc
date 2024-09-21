@@ -170,7 +170,7 @@ BATTLE_ROUTE11_GRACEFUL_Text_2:
 	.string "training to do.$"
 
 NPC_MUDSKIPPERPOINT_NPC_1_Text_0:
-	.string "QUESTER$"
+	.string "Quester$"
 
 NPC_MUDSKIPPERPOINT_NPC_1_Text_1:
 	.string "I heard you could get Yellow Flippers\n"
@@ -179,14 +179,14 @@ NPC_MUDSKIPPERPOINT_NPC_1_Text_1:
 	.string "I ask nicely?$"
 
 NPC_MUDSKIPPERPOINT_FAIRY_Text_0:
-	.string "FAIRY$"
+	.string "Fairy$"
 
 NPC_MUDSKIPPERPOINT_FAIRY_Text_1:
 	.string "I am not sure why, but our Fairy Ring\n"
 	.string "network seems to be down.$"
 
 NPC_MUDSKIPPERPOINT_THURGO_Text_0:
-	.string "THURGO$"
+	.string "Thurgo$"
 
 NPC_MUDSKIPPERPOINT_THURGO_Text_1:
 	.string "I don't suppose you have any Redberry\n"

@@ -3,13 +3,27 @@ const OBJ_EVENT_ID_ADVISOR = 2
 mapscripts Varrock_Palace_1F_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         call(VARROCKGYM_TRAINERS)
+        call(VARROCKGYM_STATE)
     }
     
 }
-
+script VARROCKGYM_STATE
+{
+    if (!flag(FLAG_BADGE06_GET)) //IF VARROCK BADGE has NOT been obtained.
+    {  
+        playbgm(MUS_PS_GYM, 1)
+        savebgm(MUS_PS_GYM)
+    }
+    else {
+        playbgm(MUS_PS_VARROCK, 1)
+        savebgm(MUS_PS_VARROCK)
+    }
+    setflag(FLAG_TEMP_1F)
+    return
+}
 script VARROCKGYM_TRAINERS
 {
-    if (!flag(FLAG_BADGE03_GET)) //IF VARROCK BADGE has NOT been obtained.
+    if (!flag(FLAG_BADGE06_GET)) //IF VARROCK BADGE has NOT been obtained.
     {       
     
         if ((var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 0) || (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 5)) //if GYM CHALLANGE HASNT STARTED
@@ -26,7 +40,7 @@ script VARROCKGYM_TRAINERS
 
 script TRIGGER_VARROCK_GYM_ADVISOR
 {
-    if (!flag(FLAG_BADGE03_GET)) //IF VARROCK BADGE has NOT been obtained.
+    if (!flag(FLAG_BADGE06_GET)) //IF VARROCK BADGE has NOT been obtained.
     {       
     
         if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 0)
@@ -74,7 +88,7 @@ script TRIGGER_VARROCK_GYM_ADVISOR
 }
 script VARROCK_GYM_ADVISOR
 {
-    if (!flag(FLAG_BADGE03_GET)) //IF VARROCK BADGE has NOT been obtained.
+    if (!flag(FLAG_BADGE06_GET)) //IF VARROCK BADGE has NOT been obtained.
     {       
     
         if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 0)
@@ -186,7 +200,7 @@ script VARROCK_GYM_RELDO
     faceplayer
     namebox("Reldo")
     msgbox(format("Welcome to the Library of Varrock."))
-    if (!flag(FLAG_BADGE03_GET)) //IF VARROCK BADGE has NOT been obtained.
+    if (!flag(FLAG_BADGE06_GET)) //IF VARROCK BADGE has NOT been obtained.
     {       
         if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 5)
         {
@@ -394,7 +408,7 @@ script VARROCK_GYM_RANGER
 {
     lock
     faceplayer
-    //namebox("")
+    namebox("Ranger")
     if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
     {
         msgbox(format("What am I reading you ask?\pDon't judge but I am reading a murder mystery, this one is called Misthalin Mystery.\pI just really like these sort of stories."))
@@ -415,6 +429,7 @@ script VARROCK_GYM_QUESTER
 {
     lock
     faceplayer
+    namebox("Quester")
     if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
     {
         msgbox(format("Buzz off!\pI've got a quest to research."))
@@ -433,6 +448,7 @@ script VARROCK_GYM_GUARD_1
 {
     lock
     faceplayer
+    namebox("Guard")
     if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
     {
         msgbox(format("Oh, you are trying to return the overdue books to the libary?\pI think there is one in the pile of books in our sleeping quarters."))
@@ -450,6 +466,7 @@ script VARROCK_GYM_GUARD_2
 {
     lock
     faceplayer
+    namebox("Guard")
     if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
     {
         //msgbox(format("I swear Reldo put a spell on some of the books, they seem to glow red when they are overdue."))
@@ -468,6 +485,7 @@ script VARROCK_GYM_GUARD_3
 {
     lock
     faceplayer
+    namebox("Guard")
     if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
     {
         msgbox(format("Overdue Books?\pWell don't ask me, I don't even read."))
@@ -485,6 +503,7 @@ script VARROCK_GYM_GUARD_4
 {
     lock
     faceplayer
+    namebox("Guard")
     if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
     {
         msgbox(format("Eww you read books?\pYuck.\pI just look at all the pretty pictures."))
@@ -502,6 +521,7 @@ script VARROCK_GYM_GUARD_5
 {
     lock
     faceplayer
+    namebox("Guard")
     if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
     {
         msgbox(format("I hope Rex didn't eat one of those books you are looking for.\pHe once ate my application to become a Knight of Falador so I had to settle with a becoming a Guard of Varrock instead."))
@@ -519,6 +539,7 @@ script VARROCK_GYM_PRAYER_1
 {
     lock
     faceplayer
+    namebox("Woman")
     if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
     {
         msgbox(format("……\pShh!"))
@@ -536,6 +557,7 @@ script VARROCK_GYM_PRAYER_2
 {
     lock
     faceplayer
+    namebox("Woman")
     if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
     {
         msgbox(format("Please don't bother us while we are Praying."))
@@ -553,6 +575,7 @@ script VARROCK_GYM_PRAYER_3
 {
     lock
     faceplayer
+    namebox("Man")
     if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
     {
         msgbox(format("……{PAUSE 15}……\pHuh what?!\pI wasn't sleeping I swear!\pOh a book?\pI think there is one in the bookshelf in the corner."))
@@ -588,13 +611,14 @@ script VARROCK_GYM_DRUID
 {
     lock
     faceplayer
+    namebox("Druid")
     if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
     {
         msgbox(format("An overdue book?\pI believe there is one in my room downstairs."))
     }
     else
     {
-        msgbox(format("…"))
+        msgbox(format("Have you been to Taverley?\pIt's a lovely place, you should go sometime."))
     }
     closemessage
     hidenamebox
@@ -605,6 +629,7 @@ script VARROCK_GYM_GNOME
 {
     lock
     faceplayer
+    namebox("Ferrnook")
     if (var(VAR_POKESCAPE_VARROCK_GYM_QUEST) == 10)
     {
         msgbox(format("You are looking for Books?\pHave you tried looking in the bookshelves?"))
@@ -622,6 +647,7 @@ script VARROCK_GYM_GUARD_BLOCKING
 {
     lock
     faceplayer
+    namebox("Guard")
     msgbox(format("Sorry but beyond here is off limits to the public."))
     closemessage
     hidenamebox
@@ -632,6 +658,7 @@ script VARROCK_GYM_GUARD_6
 {
     lock
     faceplayer
+    namebox("Guard")
     msgbox(format("This castle is no where near as confusing as the Falador Castle, I am grateful for that."))
     closemessage
     hidenamebox
@@ -639,8 +666,73 @@ script VARROCK_GYM_GUARD_6
     end
 }
 
+script VARROCK_GYM_MAID
+{
+    lock
+    namebox("Maid")
+    msgbox(format("Urgh the king is such a slob.\pI have to clean his mess up every day.\pI swear it was less work as a barmaid…"))
+    closemessage
+    hidenamebox
+    playse(SE_PIN)
+    applymovement(16, MOVEMENT_EXCLAMATIONMARK_FACEPLAYER)
+    waitmovement(0)
+    namebox("Maid")
+    msgbox(format("Eek!\pPlease don't tell anyone I said that…"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
 
+script VARROCK_GYM_CHEF
+{
+    lock
+    faceplayer
+    namebox("Chef")
+    msgbox(format("I don't have time to chat.\pI've got about 50 cakes to cook!\pWhy is it suddenly every guards birthday!"))
+    closemessage
+    hidenamebox
+    applymovement(9, Movement_InteractFACEUP)
+    waitmovement(0)
+    release
+    end
+}
 
+script VARROCK_GYM_COOK
+{
+    lock
+    faceplayer
+    namebox("Cook")
+    msgbox(format("Cooking for the whole castle sure is a lot of work."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_GYM_COOK_MAID
+{
+    lock
+    faceplayer
+    namebox("Maid")
+    msgbox(format("1 egg, 1 pot of water, 1 bucket of flour.\pWait, why is the ratio off?!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script VARROCK_GYM_BIRTHDAY_BOY
+{
+    lock
+    faceplayer
+    namebox("Man")
+    msgbox(format("Today is actually my birthday.\pBut instead of wishing me a happy birthday, my friends are telling everyone that it is theirs instead.\pOh well, at least I will get a cake…"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
 
 
 //VARROCK GYM
@@ -765,11 +857,11 @@ script VARROCK_GYM_KINGROALD {
     lock
     faceplayer
     namebox("King Roald")
-    if (!flag(FLAG_BADGE03_GET)){
+    if (!flag(FLAG_BADGE06_GET)){
 
         msgbox(format("Oh what is it now?\pWho are you?\nWhat do you want?\pCan you not see I am busy?\p…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}\pOh right, so you are one of those MvM Challengers.\pI don't know why I even have this role.\pVery well, lets get this out of the way, show me what you can do."))
         hidenamebox
-        trainerbattle_no_intro(TRAINER_VARROCK_GYM_KINGROALD, msgbox(format("That was a very enjoyable battle!")))
+        call(GYM_BATTLE_KING_ROALD)
         namebox("King Roald")
         msgbox(format("I must say, I quite enjoyed that battle we just had.\pI want to say it's the most enjoyment I've had in years.\pHere I believe you have earnt this."))
         hidenamebox
@@ -788,7 +880,8 @@ script VARROCK_GYM_KINGROALD {
         namebox("King Roald")
         msgbox(format("That move is called Draining Kiss, my Queen uses it on me all the time and it is always super effective.\pHopefully it will be of more use to you than on me."))
         setvar(VAR_POKESCAPE_VARROCK_GYM_QUEST, 26)
-        setflag(FLAG_BADGE03_GET)
+        setflag(FLAG_BADGE06_GET)
+        call(HIDDEN_GROTTO_RESET)
         addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
         call(SetGymTrainers_VARROCK)
         hidenamebox

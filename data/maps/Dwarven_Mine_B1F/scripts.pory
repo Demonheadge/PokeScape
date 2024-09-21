@@ -134,6 +134,7 @@ script NPC_DWARVENMINES_DROGO
 	end
 }
 
+
 //ITEMS---------------------------------
 //HIDDEN ITEMS:
 script ITEM_DWARVENMINES_1
@@ -154,6 +155,11 @@ script ITEM_DWARVENMINES_3
 script ITEM_DWARVENMINES_4
 {
     finditem(ITEM_TEA)
+    end
+}
+script ITEM_DWARVENMINES_5
+{
+    finditem(ITEM_PURPLE_SWEETS)
     end
 }
 
@@ -478,7 +484,7 @@ movement movement_dwarvenmines_pickupmap{
 
 script BATTLE_DWARVENMINES_SKILLER
 {
-    trainerbattle_single(TRAINER_DWARVENMINES_SKILLER, format("Please dont approach me.\pI have a terrible bodyguard and I am not afraid to use it!"),format("Hired help is all a skiller can rely on against level 16 scorpions."))
+    trainerbattle_single(TRAINER_DWARVENMINES_SKILLER, format("Please don't approach me.\pI have a terrible bodyguard and I am not afraid to use it!"),format("Hired help is all a skiller can rely on against level 16 scorpions."))
     namebox ("Treet0ps")
     msgbox(format("Hired help is all a skiller can rely on against level 16 scorpions."))
 	hidenamebox
@@ -536,3 +542,122 @@ script BATTLE_DWARVENMINES_DWARF_4
 	end
 }
 
+
+script BATTLE_DWARVENMINES_TRAINER_1
+{
+    trainerbattle_single(TRAINER_DWARVENMINES_TRAINER_1, format("Excuse me, but I'm digging here!"),format("You got to watch out, I could have hit you with my pickaxe."))
+    //namebox ("")
+    msgbox(format("Be more careful next time you sneak up on someone while they are mining."))
+	//hidenamebox
+    release
+	end
+}
+
+
+
+
+
+
+script NPC_DWARVENMINES_DWARF_4
+{
+    lock
+    faceplayer
+    namebox ("Dwarf")
+	msgbox(format("It's not safe to go deeper into the cavern.\pOnly a Champion of Gilienor would be able to survive."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DWARVENMINES_DWARF_5
+{
+    lock
+    faceplayer
+    namebox ("Conductor")
+	msgbox(format("Welcome to the Dwarven Railway System or D.R.S for short.\pSadly due to the recent earthquakes we've had to shutdown our lines."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DWARVENMINES_DWARF_6
+{
+    lock
+    faceplayer
+    namebox ("Dwarf")
+	msgbox(format("We found a huge source of anima deep within these mines, but just as we were about to start digging the earthquakes came and we had to evacuate."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DWARVENMINES_DWARF_7
+{
+    lock
+    faceplayer
+    namebox ("Dwarf")
+	msgbox(format("I want to go to Keldegrim but the Railway System is down."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DWARVENMINES_DWARF_8
+{
+    lock
+    faceplayer
+    namebox ("Dwarf")
+	msgbox(format("That pickaxe you have there…\pThat looks like one of mine.\pHow did you get it?"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DWARVENMINES_DWARF_9
+{
+	lock
+	faceplayer
+    namebox ("DWARF")
+	msgbox(format("If you are dealing with less than adamantite, then you can just keep walking human."))
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DWARVENMINES_DWARF_10
+{
+	lock
+	faceplayer
+    namebox ("DWARF")
+	msgbox(format("I've seen humans down here mining ores, then using magic to smelt them into bars!\pBlasphemy!\pIt has taken dwaves centuries to find the perfect temperatures for our forges, there's no way humans can just bypass that...\pRight?? "))
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DWARVENMINES_DWARF_11
+{
+	lock
+	faceplayer
+    namebox ("DWARF")
+	msgbox(format("Heigh ho!\pWe dig dig dig dig dig dig dig from early morn till night...\pWe dig dig dig dig dig dig dig up everything in sight...\pHeigh ho!"))
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DWARVENMINES_HURA
+{
+	lock
+	faceplayer
+    namebox ("Hura")
+	msgbox(format("'Ello there.\pHave you ever used a crossbow before?\pThey're dwarven engineering at its best!\pIf you come across a WATERFALL that you can't seem to cross, then launching a MITHRIL GRAPPLE from a crossbow is a sure-fire way to scale it!\pI'm afraid I don't currently have any in stock, but if I get any in I'll make sure you get your hands on one."))
+    hidenamebox
+	release
+	end
+}

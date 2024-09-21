@@ -6,7 +6,7 @@
   "region_map_section": "MAPSEC_PORT_SARIM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_INDOOR",
+  "map_type": "MAP_TYPE_TOWN",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": true,
@@ -17,7 +17,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_GOBLIN_1",
       "x": 5,
-      "y": 11,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -25,12 +25,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_1F"
+      "flag": "FLAG_TEMP_E"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HAM_PATTY",
       "x": 6,
-      "y": 11,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -43,7 +43,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_F",
       "x": 12,
-      "y": 10,
+      "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -56,7 +56,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_F",
       "x": 11,
-      "y": 11,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_RIGHT",
       "movement_range_x": 0,
@@ -69,7 +69,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_GUARD_DRAYNOR",
       "x": 12,
-      "y": 11,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_LEFT",
       "movement_range_x": 0,
@@ -82,20 +82,20 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_M",
       "x": 11,
-      "y": 5,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "BATTLE_LIGHTHOUSE_3F_TRAINER_1",
       "flag": "FLAG_TEMP_1E"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GUARD_DRAYNOR",
       "x": 14,
-      "y": 4,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_RIGHT",
       "movement_range_x": 2,
@@ -108,7 +108,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_M",
       "x": 15,
-      "y": 4,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_LEFT",
       "movement_range_x": 0,
@@ -121,7 +121,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
       "x": 4,
-      "y": 11,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -130,12 +130,38 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_TEMP_F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
+      "x": 12,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ITEM_LIGHTHOUSE_1",
+      "flag": "FLAG_ITEM_LIGHTHOUSE_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SEAGULL",
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
       "x": 15,
-      "y": 11,
+      "y": 14,
       "elevation": 0,
       "dest_map": "MAP_PORT_SARIM_LIGHTHOUSE_2F",
       "dest_warp_id": "1"
@@ -145,7 +171,7 @@
     {
       "type": "trigger",
       "x": 8,
-      "y": 11,
+      "y": 14,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "1",
@@ -154,7 +180,7 @@
     {
       "type": "trigger",
       "x": 8,
-      "y": 12,
+      "y": 15,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "1",
@@ -165,7 +191,7 @@
     {
       "type": "sign",
       "x": 5,
-      "y": 10,
+      "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LOCKED_DOOR"

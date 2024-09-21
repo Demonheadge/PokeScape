@@ -14,14 +14,24 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_MUDSKIPPER_POINT",
-      "offset": 16,
-      "direction": "right"
-    },
-    {
       "map": "MAP_ROUTE39",
       "offset": 0,
       "direction": "left"
+    },
+    {
+      "map": "MAP_RIMMINGTON",
+      "offset": 4,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_MUDSKIPPER_SOUND_2",
+      "offset": 0,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_CRANDOR_SEA_ROUTE",
+      "offset": -74,
+      "direction": "up"
     }
   ],
   "object_events": [
@@ -299,11 +309,11 @@
       "flag": "FLAG_TEMP_1D"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_IMP",
+      "graphics_id": "OBJ_EVENT_GFX_MONKEY",
       "x": 13,
       "y": 36,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_UP",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -312,11 +322,11 @@
       "flag": "FLAG_TEMP_1E"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_IMP",
+      "graphics_id": "OBJ_EVENT_GFX_MONKEY",
       "x": 13,
       "y": 35,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
+      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_DOWN",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -325,7 +335,7 @@
       "flag": "FLAG_TEMP_1E"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_IMP",
+      "graphics_id": "OBJ_EVENT_GFX_MONKEY",
       "x": 12,
       "y": 17,
       "elevation": 0,
@@ -338,7 +348,7 @@
       "flag": "FLAG_TEMP_1C"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_IMP",
+      "graphics_id": "OBJ_EVENT_GFX_MONKEY",
       "x": 17,
       "y": 23,
       "elevation": 0,
@@ -351,16 +361,42 @@
       "flag": "FLAG_TEMP_1B"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
-      "x": 19,
-      "y": 17,
+      "graphics_id": "OBJ_EVENT_GFX_ABYSSAL_SIRE",
+      "x": 8,
+      "y": 33,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "RandomiseSeed_Weather",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BARROWS_GUTHAN",
+      "x": 10,
+      "y": 33,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WEATHER_CHANGE_AREA_MUSAPOINT",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ABYSSAL_DEMON",
+      "x": 9,
+      "y": 35,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GET_TIME_OF_DAY",
       "flag": "0"
     }
   ],

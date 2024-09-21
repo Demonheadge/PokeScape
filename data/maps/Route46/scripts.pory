@@ -41,7 +41,7 @@ script ROUTE46_ARCHAEOLOGIST
 {
     faceplayer
     namebox ("Archaeologist")
-    msgbox(format("I'm not really supposed to say anything, but...\pWe think we have discovered the ruins of an ancient civilization!\pI heard that the Museum Curator is coming down personally to inspect them!"))
+    msgbox(format("I'm not really supposed to say anything, but...\pWe think we have discovered the ruins of an ancient civilisation!\pI heard that the Museum Curator is coming down personally to inspect them!"))
     closemessage
     hidenamebox
     release

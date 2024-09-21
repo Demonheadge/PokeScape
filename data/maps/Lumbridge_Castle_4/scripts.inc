@@ -13,7 +13,7 @@ GYMLEADER_DUKE::
 	namebox GYMLEADER_DUKE_Text_0
 	msgbox GYMLEADER_DUKE_Text_1
 	hidenamebox
-	trainerbattle_no_intro TRAINER_LEADER_DUKE_1, GYMLEADER_DUKE_Text_2
+	call GYM_BATTLE_DUKE_HORACIO
 	goto GYMLEADER_DUKE_BATTLEWON
 	release
 	end
@@ -46,6 +46,7 @@ GYMLEADER_DUKE_BATTLEWON_1:
 	call SetGymTrainers_LUMBRIDGE
 	removeobject 13
 	setflag FLAG_BADGE01_GET
+	call HIDDEN_GROTTO_RESET
 	addvar VAR_GAMEMODE_LEVEL_SCALING, 1
 	setvar VAR_POKESCAPE_LUMBRIDGE_GYM_QUEST, 2
 	fadescreen FADE_FROM_BLACK
@@ -83,10 +84,6 @@ GYMLEADER_DUKE_Text_1:
 	.string "You wish to challenge me to a battle?\n"
 	.string "So be it!\l"
 	.string "May the best trainer win!$"
-
-GYMLEADER_DUKE_Text_2:
-	.string "You beat me…\p"
-	.string "…Congratulations!$"
 
 GYMLEADER_DUKE_BATTLEWON_Text_0:
 	.string "Congratulations!\n"

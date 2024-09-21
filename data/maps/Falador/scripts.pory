@@ -13,7 +13,7 @@ mapscripts Falador_MapScripts {
 		}
 		else 
 		{
-			call(OPENWORLD_STATE_FALADOR)
+			call(OPENWORLD_STATE_FALADOR) //possibly remove
 		}
 		call(MODTIMBO_STATE)
 	}
@@ -23,12 +23,10 @@ mapscripts Falador_MapScripts {
 		if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
 		{
 			call(FALADOR_QUEST_STATE)
-			call(HIDDEN_GROTTO_RESET)
 		}
 		else 
 		{
-			call(OPENWORLD_STATE_FALADOR)
-			call(HIDDEN_GROTTO_RESET)
+			call(OPENWORLD_STATE_FALADOR) 
 		}
 
     }
@@ -37,10 +35,11 @@ mapscripts Falador_MapScripts {
 
 script OPENWORLD_STATE_FALADOR {
         setflag(FLAG_TEMP_2)
+		setmetatile(69, 19, METATILE_PokeScapeOutdoors_Door_GeneralStore_L, 0)
 		setmetatile(24, 6, 609, 0)
 		setmetatile(24, 7, 617, 0)
 		setmetatile(25, 6, 609, 0)
-		special(DrawWholeMapView) 
+		//special(DrawWholeMapView) 
 		removeobject(OBJ_EVENT_ID_BLOCK_KNIGHT)
 		setflag(FLAG_TEMP_1)
 		setflag(FLAG_TEMP_1F)
@@ -138,7 +137,7 @@ script NPC_FALADOR_DOG
 {
 	lock
 	faceplayer
-	namebox ("DALMATION")
+	namebox ("Dalmation")
 	msgbox(format("RUFF!"))
     waitmessage
     hidenamebox
@@ -150,7 +149,7 @@ script NPC_FALADOR_NPC_1
 {
 	lock
 	faceplayer
-    //namebox ("RSN")
+    namebox ("Fanatic")
 	msgbox(format("Have you heard about the Mining & Smithing rework?"))
     waitmessage
     hidenamebox
@@ -199,7 +198,7 @@ script NPC_FALADOR_NPC_2
 {
 	lock
 	faceplayer
-    //namebox ("RSN")
+    namebox ("Skiller")
 	msgbox(format("You should always stock up on items to heal your party.\pCakes and beer are a safe bet."))
     waitmessage
     hidenamebox
@@ -211,7 +210,7 @@ script NPC_FALADOR_NPC_3
 {
 	lock
 	faceplayer
-    //namebox ("RSN")
+    namebox ("Quester")
 	msgbox(format("I used an air rune on my frog, and it evolved differently from what I thought it would.\pMaybe there are more of these types of evolutions out there?"))
     waitmessage
     hidenamebox
@@ -223,7 +222,7 @@ script NPC_FALADOR_NPC_4
 {
 	lock
 	faceplayer
-    //namebox ("RSN")
+    namebox ("Noob")
 	msgbox(format("Gnome cocktails are very useful.\pThey cure monsters' status effects."))
     waitmessage
     hidenamebox
@@ -347,7 +346,7 @@ script NPC_FALADOR_NPC_11
 {
 	lock
 	faceplayer
-    //namebox ("")
+    namebox ("Barmaid")
 	msgbox(format("After I finish work today I might walk around Falador Park."))
     waitmessage
     hidenamebox
@@ -359,7 +358,7 @@ script NPC_FALADOR_NPC_12
 {
 	lock
 	faceplayer
-    //namebox ("")
+    namebox ("Firemaker")
 	msgbox(format("I cannot seem to light a fire on these flowers.\pIt's not that I don't want to, it's just some kind of magic not letting me."))
     waitmessage
     hidenamebox
@@ -370,7 +369,7 @@ script NPC_FALADOR_NPC_12
 script NPC_FALADOR_MINER_1
 {
 	faceplayer
-    //namebox ("")
+    namebox ("Miner")
 	msgbox(format("I am mining coal to get enough money for a better pickaxe.\pThen I can mine coal faster to get an even better pickaxe."))
     waitmessage
     hidenamebox
@@ -382,7 +381,7 @@ script NPC_FALADOR_MINER_2
 {
 	lock
 	faceplayer
-    //namebox ("")
+    namebox ("Miner")
 	msgbox(format("This is so much work, but someone has to do it otherwise we will never see it finished."))
     waitmessage
     hidenamebox
@@ -393,7 +392,7 @@ script NPC_FALADOR_MINER_2
 script NPC_FALADOR_DWARF_1
 {
 	faceplayer
-    //namebox ("")
+    namebox ("Dwarf")
 	msgbox(format("If you are wanting to access the Dwarven Mines.\pYou can do so by entering the building next door to the Party Room, north of here."))
     waitmessage
     hidenamebox
@@ -404,7 +403,7 @@ script NPC_FALADOR_DWARF_1
 script NPC_FALADOR_DWARF_2
 {
 	faceplayer
-    //namebox ("")
+    namebox ("Dwarf")
 	msgbox(format("Sorry to inconvenience you but the entrance to the underground mines is currently unavailable due to the rework."))
     waitmessage
     hidenamebox
@@ -416,7 +415,7 @@ script NPC_FALADOR_SMITHER
 {
 	lock
 	faceplayer
-    //namebox ("")
+    namebox ("Smith")
 	msgbox(format("We are currently in the middle of expanding the Mining Guild.\pWe are also going to be clearing this plot of land to put a Smithing Guild here."))
     waitmessage
     hidenamebox
@@ -428,7 +427,7 @@ script NPC_FALADOR_WOODCUTTER
 {
 	lock
 	faceplayer
-    //namebox ("")
+    namebox ("Woodcutter")
 	msgbox(format("Chop, chop, chop!\pGoodbye trees, hello Smithing Guild!"))
     waitmessage
     hidenamebox
@@ -663,8 +662,20 @@ script NPC_FALADOR_HAIRDRESSER_NPC
 {
 	lock
 	faceplayer
-    //namebox ("")
+    namebox ("RSMVer")
 	msgbox(format("Today im really feeling the dragoon hairstyle.\pIt will fix my love life for sure."))
+    waitmessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_FALADOR_HAIRDRESSER_BALD
+{
+	lock
+	faceplayer
+    namebox ("Noob")
+	msgbox(format("It takes a lot of effort to stay bald.\pI have to come in every day just for a quick snip.\pBut it is all worth it for for the ladies."))
     waitmessage
     hidenamebox
 	release
@@ -703,7 +714,7 @@ script NPC_FALADOR_NPC_10
 {
 	lock
 	faceplayer
-    namebox ("")
+    namebox ("Man")
 	msgbox(format("Is it still there?! I do not want to leave my house unless it is gone! What? It is just a spiderling? I do not believe you, it is a monster! Stop trying to trick me!"))
     waitmessage
     hidenamebox
@@ -1032,7 +1043,7 @@ script NPC_FALADOR_NPC_9
 {
 	lock
 	faceplayer
-    //namebox ("")
+    namebox ("Man")
 	msgbox(format("Did you know part of the Dwarven Mines are right underneath us!\pIt is scary just thinking about it."))
     waitmessage
     hidenamebox
@@ -1103,12 +1114,13 @@ script FALADOR_QUEST_STATE{
 		case 2:
 		case 3:  
 		case 4: //REMOVE DWARVEN MINES BLOCKADE 
+		case 5:
             removeobject(OBJ_EVENT_ID_BLOCK_KNIGHT)
 			setflag(FLAG_TEMP_1)
 			setflag(FLAG_TEMP_1F)
 			return
 
-		case 5: //REMOVE DWARVEN MINES BLOCKADE 
+		case 6: //REMOVE DWARVEN MINES BLOCKADE 
             setflag(FLAG_TEMP_2)
 			setmetatile(24, 6, 609, 0)
 			setmetatile(24, 7, 617, 0)
@@ -1173,7 +1185,7 @@ script NPC_FALADOR_BLOCK_GUARD_1
 {
 	lock
 	faceplayer
-    namebox ("GUARD")
+    namebox ("Guard")
 	msgbox(format("We've been informed that this shipment may contain Karmajan Rum.\pYou should inform Sir Amik Varze right away!"))
     waitmessage
     hidenamebox
@@ -1184,7 +1196,7 @@ script NPC_FALADOR_BLOCK_GUARD_2
 {
 	lock
 	faceplayer
-    namebox ("GUARD")
+    namebox ("Guard")
 	msgbox(format("Please stand back while we search these wares.\pWhile waiting you should visit the White Knights Castle."))
     waitmessage
     hidenamebox
@@ -1195,7 +1207,7 @@ script NPC_FALADOR_BLOCK_MERCHANT
 {
 	lock
 	faceplayer
-    namebox ("MERCHANT")
+    namebox ("Merchant")
 	msgbox(format("Why did that guy have to say I was carrying suspicious goods…"))
     waitmessage
     hidenamebox
@@ -1206,8 +1218,8 @@ script NPC_FALADOR_BLOCK_KNIGHT
 {
 	lock
 	faceplayer
-    namebox ("KNIGHT")
-	msgbox(format("There have been reports of a distrubance in these mines.\pSir Owen and Sir Theodore have both gone ahead to investigate."))
+    namebox ("White Knight")
+	msgbox(format("There have been reports of a disturbance in these mines.\pSir Owen and Sir Theodore have both gone ahead to investigate."))
     waitmessage
     hidenamebox
 	release

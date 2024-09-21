@@ -143,7 +143,14 @@ script EventScript_DaycareLady
 {
     lock
 	faceplayer
+    namebox ("Mother Pott.")
     
+    if (var(VAR_POTTERINGTON_FARM) == 0) {
+        msgbox(format("Hi honey, I am Mother Potterington.\pIs this your first time here?\pWe can raise and breed MONSTERS for you.\pAll we ask in return is that you pay for our services.\pBeans?\pNo sweety, you don't pay with beans.\pJust regular old Gold pieces.\pNow, what can I do for you?"))
+        setvar(VAR_POTTERINGTON_FARM, 5)
+    }
+    
+
 	specialvar (VAR_RESULT, GetDaycareState)
 	compare (VAR_RESULT, DAYCARE_EGG_WAITING)
 	goto_if_eq (Route117_PokemonDayCare_EventScript_EggWaiting)
@@ -152,7 +159,7 @@ script EventScript_DaycareLady
 	compare (VAR_RESULT, DAYCARE_TWO_MONS)
 	goto_if_eq (Route117_PokemonDayCare_EventScript_TwoMonsInDaycare)
     namebox ("Mother Pott.")
-	msgbox(format("Hey there, I am Mother Potterington.\pWe can raise and breed MONSTERS for you.\pWould you like us to raise one?"), MSGBOX_YESNO)
+	msgbox(format("We can raise and breed MONSTERS for you.\pWould you like us to raise one?"), MSGBOX_YESNO)
     hidenamebox
 	compare (VAR_RESULT, YES)
 	goto_if_eq (Route117_PokemonDayCare_EventScript_GiveMonToRaise)
@@ -163,7 +170,9 @@ script EventScript_DaycareLady
 	end
 }
 
-	
+
+
+    
 
 
 
@@ -171,9 +180,32 @@ script EventScript_DaycareLady
 
 
 
+script POTTERINGTON_FARM_BOOK
+{
+    lock
+    msgbox(format("This book seems to be warning adventurers to not leave monsters of different species in the breeding pens."))
+    closemessage
+    end
+}
+
+script POTTERINGTON_FARM_BOOK_2
+{
+    lock
+    msgbox(format("There is a book with information on Cows, Frogs, Unicorns, Sardines, Wolves, Chickens, Roosters and Spiders.\pThe list goes on…"))
+    closemessage
+    end
+}
 
 
 
+script POTTERINGTON_FARM_Banker {
+    
+	faceplayer
+    namebox ("Nephew Pott.")
+    msgbox(format("I handle the finances for our family.\pBut I also help adventurers access their banks.\pHow may I help you today?"))
+	waitmessage
+    goto(BANK_OPTIONS)
+}
 
 
 

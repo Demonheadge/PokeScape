@@ -1061,39 +1061,81 @@ static const u16 sNaturePowerMoves[BATTLE_TERRAIN_COUNT] =
 
 static const struct PickupItem sPickupTable[] =
 {//   Item                      1+  11+  21+  31+  41+  51+  61+  71+  81+  91+   Levels
-    { ITEM_POTION,          {  35,   _,   _,   _,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_TINY_MUSHROOM,   {  25,  10,   _,   _,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_REPEL,           {   8,  30,   _,   _,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_SUPER_POTION,    {   8,  10,  30,   _,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_POKE_DOLL,       {   8,  10,   9,  30,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_BIG_MUSHROOM,    {   3,  10,   9,   _,   _,   _,   _,   _,   _,   _, } },
-    { ITEM_SUPER_REPEL,     {   3,  10,   9,   9,  30,   _,   _,   _,   _,   _, } },
-    { ITEM_FULL_HEAL,       {   3,   3,   9,   8,   9,  30,   _,   _,   _,   _, } },
-    { ITEM_REVIVE,          {   3,   3,   3,   8,   8,   9,  30,   _,   _,   _, } },
-    { ITEM_HYPER_POTION,    {   3,   3,   3,   4,   8,   9,   8,  30,   _,   _, } },
-    { ITEM_ETHER,           {   1,   1,   3,   4,   4,   _,   _,   _,   _,   _, } },
-    { ITEM_MAX_REPEL,       {   _,   3,   3,   4,   4,   9,   8,   8,  30,   _, } },
-    { ITEM_MOON_STONE,      {   _,   3,   3,   4,   4,   4,   4,   5,   9,  10, } },
-    { ITEM_SUN_STONE,       {   _,   3,   3,   4,   4,   4,   4,   5,   9,  10, } },
-    { ITEM_RARE_CANDY,      {   _,   1,   1,   1,   1,   4,   4,   5,   4,   5, } },
-    { ITEM_NUGGET,          {   _,   _,   3,   4,   4,   4,   4,   5,   4,   5, } },
-    { ITEM_MAX_POTION,      {   _,   _,   3,   4,   4,   4,   8,   8,   9,  30, } },
-    { ITEM_MAX_ETHER,       {   _,   _,   1,   1,   4,   4,   4,   _,   _,   _, } },
-    { ITEM_PP_UP,           {   _,   _,   1,   1,   1,   4,   4,   5,   4,   5, } },
-    { ITEM_BIG_NUGGET,      {   _,   _,   1,   1,   1,   1,   4,   5,   4,   5, } },
-    { ITEM_DESTINY_KNOT,    {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
-    { ITEM_LEFTOVERS,       {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
-    { ITEM_MENTAL_HERB,     {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
-    { ITEM_POWER_HERB,      {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
-    { ITEM_WHITE_HERB,      {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
-    { ITEM_BALM_MUSHROOM,   {   _,   _,   1,   4,   4,   4,   4,   5,   4,   5, } },
-    { ITEM_MAX_REVIVE,      {   _,   _,   _,   4,   4,   4,   4,   7,   9,   9, } },
-    { ITEM_ELIXIR,          {   _,   _,   _,   _,   1,   1,   4,   5,   4,   5, } },
-    { ITEM_MAX_ELIXIR,      {   _,   _,   _,   _,   _,   _,   1,   1,   4,   5, } },
-    { ITEM_BOTTLE_CAP,      {   _,   _,   _,   _,   _,   _,   _,   1,   1,   1, } },
+    { ITEM_BREAD,               {  35,   _,   _,   _,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_SPIRIT_SHARD,        {  25,  10,   _,   _,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_REPEL_TEA_1,         {   8,  30,   _,   _,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_CAKE,                {   8,  10,  30,   _,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_MINT_CAKE,           {   8,  10,   9,  30,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_HWEEN_MASK,          {   3,  10,   9,   _,   _,   _,   _,   _,   _,   _, } },
+    { ITEM_REPEL_TEA_2,         {   3,  10,   9,   9,  30,   _,   _,   _,   _,   _, } },
+    { ITEM_BLUEBERRY_SPECIAL,   {   3,   3,   9,   8,   9,  30,   _,   _,   _,   _, } },
+    { ITEM_CABBAGE,             {   3,   3,   3,   8,   8,   9,  30,   _,   _,   _, } },
+    { ITEM_CHOCOLATE_CAKE,      {   3,   3,   3,   4,   8,   9,   8,  30,   _,   _, } },
+    { ITEM_PRAYER_POTION,       {   1,   1,   3,   4,   4,   _,   _,   _,   _,   _, } },
+    { ITEM_REPEL_TEA_3,         {   _,   3,   3,   4,   4,   9,   8,   8,  30,   _, } },
+    { ITEM_DAGONHAIHAT,         {   _,   3,   3,   4,   4,   4,   4,   5,   9,  10, } },
+    { ITEM_BLUEBOATER,          {   _,   3,   3,   4,   4,   4,   4,   5,   9,  10, } },
+    { ITEM_PURPLE_SWEETS,       {   _,   1,   1,   1,   1,   4,   4,   5,   4,   5, } },
+    { ITEM_SANTA_HAT,           {   _,   _,   3,   4,   4,   4,   4,   5,   4,   5, } },
+    { ITEM_MINT_CAKE,           {   _,   _,   3,   4,   4,   4,   8,   8,   9,  30, } },
+    { ITEM_MINT_CAKE,           {   _,   _,   1,   1,   4,   4,   4,   _,   _,   _, } },
+    { ITEM_STAT_BEER,           {   _,   _,   1,   1,   1,   4,   4,   5,   4,   5, } },
+    { ITEM_PARTY_HAT,           {   _,   _,   1,   1,   1,   1,   4,   5,   4,   5, } },
+    { ITEM_MINT_CAKE,           {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
+    { ITEM_SARADOMIN_BREW,      {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
+    { ITEM_MINT_CAKE,           {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
+    { ITEM_MINT_CAKE,           {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
+    { ITEM_MINT_CAKE,           {   _,   _,   1,   1,   1,   1,   1,   1,   1,   1, } },
+    { ITEM_MINT_CAKE,           {   _,   _,   1,   4,   4,   4,   4,   5,   4,   5, } },
+    { ITEM_MINT_CAKE,           {   _,   _,   _,   4,   4,   4,   4,   7,   9,   9, } },
+    { ITEM_MINT_CAKE,           {   _,   _,   _,   _,   1,   1,   4,   5,   4,   5, } },
+    { ITEM_CRYSTAL_POUCH,       {   _,   _,   _,   _,   _,   _,   1,   1,   4,   5, } },
+    { ITEM_LIFE_RUNE,           {   _,   _,   _,   _,   _,   _,   _,   1,   1,   1, } },
 };
 
 #undef _
+
+static const u16 sPickupItems[] =
+{
+    ITEM_BREAD,
+    ITEM_CHOCOLATE_SUNDAY,
+    ITEM_CAKE,
+    ITEM_MITHRIL_POUCH,
+    ITEM_BODY_RUNE,
+    ITEM_FLAX,
+    ITEM_WIZARDS_BLIZZARD,
+    ITEM_CABBAGE,
+    ITEM_RUNE_POUCH,
+    ITEM_CHOCOLATE_CAKE,
+    ITEM_PURPLE_SWEETS,
+    ITEM_LAMP_ATT,
+    ITEM_PURPLE_SWEETS, //EASTER EGG (MAX REIVIE)
+    ITEM_LAMP_HP,
+    ITEM_BLOOD_RUNE,
+    ITEM_PURPLE_SWEETS, //WISE OLD MAN SOCK
+    ITEM_DAGONHAIHAT,
+    ITEM_BLUEBOATER,
+};
+
+static const u16 sRarePickupItems[] =
+{
+    ITEM_CHOCOLATE_CAKE,
+    ITEM_SPIRIT_SHARD,
+    ITEM_DEATH_RUNE,
+    ITEM_SPIRIT_CHARM, //DRAGON POUCH replace?
+    ITEM_MINT_CAKE,
+    ITEM_SOUL_RUNE,
+    ITEM_HWEEN_MASK,
+    ITEM_CRYSTAL_POUCH,
+    ITEM_SANTA_HAT,
+    ITEM_SARADOMIN_BREW,
+    ITEM_PARTY_HAT,
+};
+
+static const u8 sPickupProbabilities[] =
+{
+    30, 40, 50, 60, 70, 80, 90, 94, 98
+};
 
 static const u8 sTerrainToType[BATTLE_TERRAIN_COUNT] =
 {
@@ -6043,6 +6085,26 @@ static void Cmd_moveend(void)
             }
             gBattleScripting.moveendState++;
             break;
+
+        case MOVEEND_VENGEANCE_CHECK:
+            if(gBattleMons[gBattlerTarget].status2 & STATUS2_VENGEANCE
+              && gBattleMons[gBattlerAttacker].hp != 0
+              && gBattlerAttacker != gBattlerTarget
+              && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+              && TARGET_TURN_DAMAGED
+            )
+            {
+                    gBattleMons[gBattlerTarget].status2 &= ~(STATUS2_VENGEANCE);
+                    PREPARE_MOVE_BUFFER(gBattleTextBuff1, MOVE_VENGEANCE);
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_SpikyShieldEffect;
+                    effect = 1;
+
+            }
+        gBattleScripting.moveendState++;
+        break;
+
+
         case MOVEEND_SYMBIOSIS:
             for (i = 0; i < gBattlersCount; i++)
             {
@@ -8459,6 +8521,9 @@ static void Cmd_various(void)
     s32 i;
     u8 data[10];
     u32 side, battler, bits;
+    u16 heldItem; //u16 species, heldItem; u8 ability;
+    u8 lvlDivBy10;
+    s32 rand;
 
     if (gBattleControllerExecFlags)
         return;
@@ -9763,6 +9828,42 @@ static void Cmd_various(void)
         }
         return;
     }
+    case VARIOUS_SET_VENGEANCE:
+        if (!(gBattleMons[gBattlerAttacker].status2 & STATUS2_VENGEANCE))
+        {
+            gBattleMons[gBattlerAttacker].status2 |= STATUS2_VENGEANCE;
+        }
+        else{
+
+        }
+        break;
+    case VARIOUS_FREE_STUFF:
+        mon = &gPlayerParty[gBattlerPartyIndexes[gBattlerAttacker]];
+        lvlDivBy10 = (GetMonData(mon, MON_DATA_LEVEL)-1) / 10;
+        heldItem  = GetMonData(mon, MON_DATA_HELD_ITEM);
+        rand = Random() % 100;
+        if (lvlDivBy10 > 9){
+            lvlDivBy10 = 9;
+        }
+        if (heldItem == ITEM_NONE)
+        {
+            s32 j;
+            for (j = 0; j < (int)ARRAY_COUNT(sPickupProbabilities); j++)
+            {
+                if (sPickupProbabilities[j] > rand)
+                {
+                    SetMonData(mon, MON_DATA_HELD_ITEM, &sPickupItems[lvlDivBy10 + j]);
+                    break;
+                }
+                else if (rand == 99 || rand == 98)
+                {
+                    SetMonData(mon, MON_DATA_HELD_ITEM, &sRarePickupItems[lvlDivBy10 + (99 - rand)]);
+                    break;
+                }
+            }
+        }
+        break;
+        return;
     case VARIOUS_DESTROY_ABILITY_POPUP:
     {
         VARIOUS_ARGS();
@@ -14079,7 +14180,7 @@ static void Cmd_setroom(void)
         HandleRoomMove(STATUS_FIELD_CHAOTIC_RIFT, &gFieldTimers.chaoticRiftTimer,6);
         break;
     default:
-        gBattleCommunication[MULTISTRING_CHOOSER] = 6;
+        gBattleCommunication[MULTISTRING_CHOOSER] = 8;
         break;
     }
     gBattlescriptCurrInstr = cmd->nextInstr;
@@ -14481,6 +14582,23 @@ static void Cmd_pickup(void)
                             break;
                         }
                     }
+/* // OLD POKESCAPE PICKUP?
+                    //s32 j;
+
+                    for (j = 0; j < (int)ARRAY_COUNT(sPickupProbabilities); j++)
+                    {
+                        if (sPickupProbabilities[j] > rand)
+                        {
+                            SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &sPickupItems[lvlDivBy10 + j]);
+                            break;
+                        }
+                        else if (rand == 99 || rand == 98)
+                        {
+                            SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &sRarePickupItems[lvlDivBy10 + (99 - rand)]);
+                            break;
+                        }
+                    }
+*/
                 }
             }
             else if (ability == ABILITY_HONEY_GATHER

@@ -2,12 +2,12 @@ mapscripts KaramjaVolcano_B1F_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setvar(VAR_EVOLUTION_MAP_STATE, 15) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
     }
-    MAP_SCRIPT_ON_LOAD {
-        goto(KaramjaVolcano_STATE1)
-        }
-    MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_POKESCAPE_KARAMJAVOLCANO_STATE, 0: EVENT_KaramjaVolcano_HAM_EnterVolcano
-    ]
+    //MAP_SCRIPT_ON_LOAD {
+    //    goto(KaramjaVolcano_STATE1)
+    //    }
+    //MAP_SCRIPT_ON_FRAME_TABLE [
+	//	VAR_POKESCAPE_KARAMJAVOLCANO_STATE, 0: EVENT_KaramjaVolcano_HAM_EnterVolcano
+    //]
 }
 
 
@@ -132,8 +132,6 @@ movement HAM_KaramjaVolcano_3{
 
 
 
-
-
 script NPC_KaramjaVolcano_HAM_1
 {
     lock
@@ -212,9 +210,9 @@ script BATTLE_KaramjaVolcano_HAM_3
 
 script BATTLE_KaramjaVolcano_HAM_4
 {
-    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_4, format("We came here searching for some ancient dragon that once ravaged the island.\pDon't think you can stop us!"),format("It's already too late..."))
+    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_4, format("We came here searching for some ancient weapon that once ravaged the island.\pDon't think you can stop us!"),format("It's already too late..."))
     namebox ("H.A.M Grunt")
-    msgbox(format("What do you mean our plan makes no sense?\pThis dragon killed every single mage that lived on this island!\pIf anything is powerful enough to rid the world of monsters, it's this dragon!"))
+    msgbox(format("What do you mean our plan makes no sense?\pThis weapon killed every single mage that lived on this island!\pIf anything is powerful enough to rid the world of monsters, it's this weapon!"))
     hidenamebox
     release
     end
@@ -223,29 +221,14 @@ script BATTLE_KaramjaVolcano_HAM_4
 
 script BATTLE_KaramjaVolcano_HAM_5
 {
-    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_5, format("The world will be rid of monsters, you cant stop this movement!"),format("We will achieve our goals!"))
+    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_5, format("The world will be rid of monsters, you can't stop this movement!"),format("We will achieve our goals!"))
     namebox ("H.A.M Grunt")
-    msgbox(format("We will rid the world of all monsters, you cant stop us!"))
+    msgbox(format("We will rid the world of all monsters, you can't stop us!"))
     hidenamebox
     release
     end
 }
 
-
-script BATTLE_KaramjaVolcano_HAM_6
-{
-    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_6, format("Nothing will stop us!\pThis volcano is about to become a monster killer!"),format("Wait… Won't it kill us too?"))
-    namebox ("H.A.M Grunt")
-    msgbox(format("Nope!\nI don't like this plan anymore!\pI'm out of here!"))
-    hidenamebox
-    closemessage
-    fadescreen(FADE_TO_BLACK)
-    setflag(FLAG_TEMP_1)
-    removeobject(7)
-    fadescreen(FADE_FROM_BLACK)
-    release
-    end
-}
 
 
 
@@ -440,7 +423,7 @@ script PokeScapeSongList_VSBattles{
                 end
             case 12: 
                 namebox ("12")
-                playbgm (MUS_PS_RIMMINGTON, 1)
+                playbgm (MUS_PS_VS_CHAOS_TUNNELS, 1)
                 setvar(VAR_POKESCAPE_MUSIC_STATE, 0)
                 msgbox(format("NOW PLAYING: TERRIBLE CAVERNS"))
                 hidenamebox

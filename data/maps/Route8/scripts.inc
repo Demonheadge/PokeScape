@@ -1,9 +1,61 @@
 Route8_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route8_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_LOAD, Route8_MapScripts_MAP_SCRIPT_ON_LOAD
 	.byte 0
 
 Route8_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	call PENGUIN_EVENT
+	return
+
+Route8_MapScripts_MAP_SCRIPT_ON_LOAD:
+	call ROUTE8_STATE
+	return
+
+
+ROUTE8_STATE::
+	goto_if_unset FLAG_ABYSS_PORTALS_ENABLED, ROUTE8_STATE_1
+	return
+
+ROUTE8_STATE_1:
+	setmetatile 41, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 42, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 43, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 44, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 45, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 39, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 40, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 41, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 42, 15, METATILE_PokeScapeOutdoors_FLOWER_TILE_2, 0
+	setmetatile 43, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 44, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 45, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 46, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 37, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 38, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 39, 16, METATILE_PokeScapeOutdoors_FLOWER_TILE_1, 0
+	setmetatile 40, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 41, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 42, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 43, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 44, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 45, 16, METATILE_PokeScapeOutdoors_FLOWER_TILE_2, 0
+	setmetatile 46, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 37, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 38, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 39, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 40, 17, METATILE_PokeScapeOutdoors_FLOWER_TILE_1, 0
+	setmetatile 41, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 42, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 43, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 44, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 45, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 46, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 38, 18, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 39, 18, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 40, 18, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 41, 18, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setflag FLAG_TEMP_1F
+	removeobject 3
 	return
 
 
@@ -259,9 +311,59 @@ ABYSSALRIFT_Mazcab_Shauny::
 	end
 
 
+ALTAR_AIR_ENTER::
+	msgbox ALTAR_AIR_ENTER_Text_0
+	checkitem ITEM_TALISMAN_AIR, 1
+	compare VAR_RESULT, 0
+	goto_if_ne ALTAR_AIR_ENTER_2
+	closemessage
+	release
+	end
+
+ALTAR_AIR_ENTER_2:
+	msgbox ALTAR_AIR_ENTER_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ALTAR_AIR_ENTER_5
+	closemessage
+	release
+	end
+
+ALTAR_AIR_ENTER_5:
+	msgbox ALTAR_AIR_ENTER_Text_2
+	warp MAP_AIR_ALTAR, 1, 0, 0
+	closemessage
+	release
+	end
+
+
+ALTAR_MIND_ENTER::
+	msgbox ALTAR_AIR_ENTER_Text_0
+	checkitem ITEM_TALISMAN_MIND, 1
+	compare VAR_RESULT, 0
+	goto_if_ne ALTAR_MIND_ENTER_2
+	closemessage
+	release
+	end
+
+ALTAR_MIND_ENTER_2:
+	msgbox ALTAR_MIND_ENTER_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ALTAR_MIND_ENTER_5
+	closemessage
+	release
+	end
+
+ALTAR_MIND_ENTER_5:
+	msgbox ALTAR_MIND_ENTER_Text_1
+	warp MAP_MIND_ALTAR, 1, 0, 0
+	closemessage
+	release
+	end
+
+
 ALTAR_WATER_ENTER::
-	msgbox ALTAR_WATER_ENTER_Text_0
-	msgbox ALTAR_WATER_ENTER_Text_1, MSGBOX_YESNO
+	msgbox ALTAR_AIR_ENTER_Text_0
+	checkitem ITEM_TALISMAN_WATER, 1
 	compare VAR_RESULT, 0
 	goto_if_ne ALTAR_WATER_ENTER_2
 	closemessage
@@ -269,31 +371,23 @@ ALTAR_WATER_ENTER::
 	end
 
 ALTAR_WATER_ENTER_2:
-	msgbox ALTAR_WATER_ENTER_Text_2
-	warp MAP_MAZCAB_OTOT, 0, 0, 0
-	closemessage
-	release
-	end
-
-
-ALTAR_WATER_RETURN::
-	msgbox ALTAR_WATER_RETURN_Text_0, MSGBOX_YESNO
+	msgbox ALTAR_WATER_ENTER_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne ALTAR_WATER_RETURN_2
+	goto_if_ne ALTAR_WATER_ENTER_5
 	closemessage
 	release
 	end
 
-ALTAR_WATER_RETURN_2:
-	msgbox ALTAR_WATER_RETURN_Text_1
-	warp MAP_ROUTE4, 1, 0, 0
+ALTAR_WATER_ENTER_5:
+	msgbox ALTAR_WATER_ENTER_Text_1
+	warp MAP_WATER_ALTAR, 1, 0, 0
 	closemessage
 	release
 	end
 
 
 ALTAR_EARTH_ENTER::
-	msgbox ALTAR_WATER_ENTER_Text_0
+	msgbox ALTAR_AIR_ENTER_Text_0
 	checkitem ITEM_TALISMAN_EARTH, 1
 	compare VAR_RESULT, 0
 	goto_if_ne ALTAR_EARTH_ENTER_2
@@ -311,23 +405,57 @@ ALTAR_EARTH_ENTER_2:
 
 ALTAR_EARTH_ENTER_5:
 	msgbox ALTAR_EARTH_ENTER_Text_1
-	warp MAP_MAZCAB_OTOT, 0, 0, 0
+	warp MAP_EARTH_ALTAR, 1, 0, 0
 	closemessage
 	release
 	end
 
 
-ALTAR_EARTH_RETURN::
-	msgbox ALTAR_WATER_RETURN_Text_0, MSGBOX_YESNO
+ALTAR_FIRE_ENTER::
+	msgbox ALTAR_AIR_ENTER_Text_0
+	checkitem ITEM_TALISMAN_FIRE, 1
 	compare VAR_RESULT, 0
-	goto_if_ne ALTAR_EARTH_RETURN_2
+	goto_if_ne ALTAR_FIRE_ENTER_2
 	closemessage
 	release
 	end
 
-ALTAR_EARTH_RETURN_2:
-	msgbox ALTAR_WATER_RETURN_Text_1
-	warp MAP_ROUTE17, 1, 0, 0
+ALTAR_FIRE_ENTER_2:
+	msgbox ALTAR_FIRE_ENTER_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ALTAR_FIRE_ENTER_5
+	closemessage
+	release
+	end
+
+ALTAR_FIRE_ENTER_5:
+	msgbox ALTAR_FIRE_ENTER_Text_1
+	warp MAP_FIRE_ALTAR, 1, 0, 0
+	closemessage
+	release
+	end
+
+
+ALTAR_BODY_ENTER::
+	msgbox ALTAR_AIR_ENTER_Text_0
+	checkitem ITEM_TALISMAN_BODY, 1
+	compare VAR_RESULT, 0
+	goto_if_ne ALTAR_BODY_ENTER_2
+	closemessage
+	release
+	end
+
+ALTAR_BODY_ENTER_2:
+	msgbox ALTAR_BODY_ENTER_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ALTAR_BODY_ENTER_5
+	closemessage
+	release
+	end
+
+ALTAR_BODY_ENTER_5:
+	msgbox ALTAR_BODY_ENTER_Text_1
+	warp MAP_BODY_ALTAR, 1, 0, 0
 	closemessage
 	release
 	end
@@ -336,7 +464,8 @@ ALTAR_EARTH_RETURN_2:
 CRAFTINGGUILD_MILKSELLER::
 	lock
 	faceplayer
-	msgbox CRAFTINGGUILD_MILKSELLER_Text_0
+	namebox CRAFTINGGUILD_MILKSELLER_Text_0
+	msgbox CRAFTINGGUILD_MILKSELLER_Text_1
 	pokemart FlavouredMilkShop
 	closemessage
 	release
@@ -357,6 +486,8 @@ FlavouredMilkShop:
     end
 
 CRAFTINGGUILD_NPC_1::
+	lock
+	faceplayer
 	namebox CRAFTINGGUILD_NPC_1_Text_0
 	msgbox CRAFTINGGUILD_NPC_1_Text_1
 	closemessage
@@ -366,6 +497,8 @@ CRAFTINGGUILD_NPC_1::
 
 
 CRAFTINGGUILD_NPC_2::
+	lock
+	faceplayer
 	namebox CRAFTINGGUILD_NPC_1_Text_0
 	msgbox CRAFTINGGUILD_NPC_2_Text_0
 	closemessage
@@ -375,8 +508,10 @@ CRAFTINGGUILD_NPC_2::
 
 
 CRAFTINGGUILD_NPC_3::
-	namebox CRAFTINGGUILD_NPC_3_Text_0
-	msgbox CRAFTINGGUILD_NPC_3_Text_1
+	lock
+	faceplayer
+	namebox ROUTE8_MINER_3_Text_0
+	msgbox CRAFTINGGUILD_NPC_3_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -444,7 +579,7 @@ ROUTE8_MAN_Text_1:
 	.string "find it?$"
 
 ROUTE8_MINER_3_Text_0:
-	.string "MINER$"
+	.string "Miner$"
 
 ROUTE8_MINER_3_Text_1:
 	.string "I wish they had a Bank here.\p"
@@ -619,40 +754,71 @@ ABYSSALRIFT_Mazcab_Shauny_Text_1:
 	.string "Oh wait, I am mistaken, today is indeed\n"
 	.string "my birthday.$"
 
-ALTAR_WATER_ENTER_Text_0:
+ALTAR_AIR_ENTER_Text_0:
 	.string "It is a mysterious Altar.$"
 
-ALTAR_WATER_ENTER_Text_1:
-	.string "Would you like to use the Water\n"
-	.string "Talisman?$"
+ALTAR_AIR_ENTER_Text_1:
+	.string "Would you like to use the AIR TALISMAN?$"
 
-ALTAR_WATER_ENTER_Text_2:
+ALTAR_AIR_ENTER_Text_2:
+	.string "The AIR TALISMAN begins to glow.\p"
+	.string "A mass of energy suddenly surrounds\n"
+	.string "you!$"
+
+ALTAR_MIND_ENTER_Text_0:
+	.string "Would you like to use the MIND\n"
+	.string "TALISMAN?$"
+
+ALTAR_MIND_ENTER_Text_1:
+	.string "The MIND TALISMAN begins to glow.\p"
+	.string "A mass of energy suddenly surrounds\n"
+	.string "you!$"
+
+ALTAR_WATER_ENTER_Text_0:
+	.string "Would you like to use the WATER\n"
+	.string "TALISMAN?$"
+
+ALTAR_WATER_ENTER_Text_1:
 	.string "The WATER TALISMAN begins to glow.\p"
 	.string "A mass of energy suddenly surrounds\n"
 	.string "you!$"
 
-ALTAR_WATER_RETURN_Text_0:
-	.string "Would you like to leave this realm?$"
-
-ALTAR_WATER_RETURN_Text_1:
-	.string "As you step into the portal a mass of\n"
-	.string "energy surrounds you!$"
-
 ALTAR_EARTH_ENTER_Text_0:
-	.string "Would you like to use the Earth\n"
-	.string "Talisman?$"
+	.string "Would you like to use the EARTH\n"
+	.string "TALISMAN?$"
 
 ALTAR_EARTH_ENTER_Text_1:
 	.string "The EARTH TALISMAN begins to glow.\p"
 	.string "A mass of energy suddenly surrounds\n"
 	.string "you!$"
 
+ALTAR_FIRE_ENTER_Text_0:
+	.string "Would you like to use the FIRE\n"
+	.string "TALISMAN?$"
+
+ALTAR_FIRE_ENTER_Text_1:
+	.string "The FIRE TALISMAN begins to glow.\p"
+	.string "A mass of energy suddenly surrounds\n"
+	.string "you!$"
+
+ALTAR_BODY_ENTER_Text_0:
+	.string "Would you like to use the BODY\n"
+	.string "TALISMAN?$"
+
+ALTAR_BODY_ENTER_Text_1:
+	.string "The BODY TALISMAN begins to glow.\p"
+	.string "A mass of energy suddenly surrounds\n"
+	.string "you!$"
+
 CRAFTINGGUILD_MILKSELLER_Text_0:
+	.string "Mr. Milks$"
+
+CRAFTINGGUILD_MILKSELLER_Text_1:
 	.string "Why hello there, are you interested in\n"
 	.string "some flavoured Milk?$"
 
 CRAFTINGGUILD_NPC_1_Text_0:
-	.string "Master Crafter$"
+	.string "Crafter$"
 
 CRAFTINGGUILD_NPC_1_Text_1:
 	.string "Where's your brown apron?\p"
@@ -669,9 +835,6 @@ CRAFTINGGUILD_NPC_2_Text_0:
 	.string "Of course not, they're all upstairs!$"
 
 CRAFTINGGUILD_NPC_3_Text_0:
-	.string "Miner$"
-
-CRAFTINGGUILD_NPC_3_Text_1:
 	.string "I came here because I heard there were\n"
 	.string "a lot of useful ores to mine, but they\l"
 	.string "just have useless ore like gold or\l"

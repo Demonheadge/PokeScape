@@ -80,71 +80,96 @@ Route4Sign::
 
 TryMoveDaycareMan::
 	goto_if_set FLAG_PENDING_DAYCARE_EGG, TryMoveDaycareMan_1
-	setobjectxyperm 1, 19, 16
+	setobjectxyperm 1, 19, 22
 	return
 
 TryMoveDaycareMan_1:
-	setobjectxyperm 1, 19, 17
+	setobjectxyperm 1, 19, 23
 	return
 
 
 ROUTE4_TRIGGER1_DaycareWatcher::
-	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_PLAYER3
+	playse SE_PIN
+	applymovement 2, MOVEMENT_ROUTE4_NIECE_1
 	waitmovement 0
-	call ROUTE4_TRIGGER_DaycareWatcher_PART1
-	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_PLAYER1
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	compare VAR_TEMP_2, 27
+	goto_if_eq ROUTE4_TRIGGER1_DaycareWatcher_2
+ROUTE4_TRIGGER1_DaycareWatcher_1:
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_UP
 	waitmovement 0
-	call ROUTE4_TRIGGER_DaycareWatcher_PART2
-	return
-
-
-ROUTE4_TRIGGER2_DaycareWatcher::
-	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_PLAYER3
-	waitmovement 0
-	call ROUTE4_TRIGGER_DaycareWatcher_PART1
-	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_PLAYER2
-	waitmovement 0
-	call ROUTE4_TRIGGER_DaycareWatcher_PART2
-	return
-
-
-ROUTE4_TRIGGER_DaycareWatcher_PART1::
-	namebox ROUTE4_TRIGGER_DaycareWatcher_PART1_Text_0
-	msgbox ROUTE4_TRIGGER_DaycareWatcher_PART1_Text_1
+	namebox ROUTE4_TRIGGER1_DaycareWatcher_Text_0
+	msgbox ROUTE4_TRIGGER1_DaycareWatcher_Text_1
 	closemessage
 	hidenamebox
-	applymovement 2, MOVEMENT_ROUTE4_DaycareWatcher1
-	return
-
-
-ROUTE4_TRIGGER_DaycareWatcher_PART2::
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	compare VAR_TEMP_2, 27
+	goto_if_eq ROUTE4_TRIGGER1_DaycareWatcher_5
+ROUTE4_TRIGGER1_DaycareWatcher_4:
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_NIECE_4
+	applymovement 2, MOVEMENT_ROUTE4_NIECE_5
+	waitmovement 0
 	delay 8
-	namebox ROUTE4_TRIGGER_DaycareWatcher_PART2_Text_0
-	msgbox ROUTE4_TRIGGER_DaycareWatcher_PART2_Text_1
+	namebox ROUTE4_TRIGGER1_DaycareWatcher_Text_0
+	msgbox ROUTE4_TRIGGER1_DaycareWatcher_Text_2
 	closemessage
 	hidenamebox
-	applymovement 2, MOVEMENT_ROUTE4_DaycareWatcher2
+	applymovement 2, MOVEMENT_ROUTE4_NIECE_6
 	waitmovement 0
 	setobjectxyperm 2, 8, 17
 	setvar VAR_POKESCAPE_POTTERINGTON_FARM_STATE, 1
 	release
 	end
 
+ROUTE4_TRIGGER1_DaycareWatcher_2:
+	applymovement 2, MOVEMENT_ROUTE4_NIECE_2
+	waitmovement 0
+	goto ROUTE4_TRIGGER1_DaycareWatcher_1
 
-MOVEMENT_ROUTE4_DaycareWatcher1:
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	walk_left
-	delay_8
-	face_right
+ROUTE4_TRIGGER1_DaycareWatcher_5:
+	applymovement 2, MOVEMENT_ROUTE4_NIECE_3
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_NIECE_3
+	waitmovement 0
+	goto ROUTE4_TRIGGER1_DaycareWatcher_4
+
+
+MOVEMENT_ROUTE4_NIECE_1:
+	emote_exclamation_mark
+	delay_16
 	step_end
 
-MOVEMENT_ROUTE4_DaycareWatcher2:
+MOVEMENT_ROUTE4_NIECE_2:
+	walk_down
+	step_end
+
+MOVEMENT_ROUTE4_NIECE_3:
+	walk_up
+	step_end
+
+MOVEMENT_ROUTE4_NIECE_4:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	step_end
+
+MOVEMENT_ROUTE4_NIECE_5:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	face_player
+	step_end
+
+MOVEMENT_ROUTE4_NIECE_6:
 	walk_left
 	walk_left
 	walk_left
@@ -158,42 +183,16 @@ MOVEMENT_ROUTE4_DaycareWatcher2:
 	face_down
 	step_end
 
-MOVEMENT_ROUTE4_PLAYER1:
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	step_end
-
-MOVEMENT_ROUTE4_PLAYER2:
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_left
-	step_end
-
-MOVEMENT_ROUTE4_PLAYER3:
-	face_up
-	step_end
-
 ROUTE4_DaycareWatcher::
 	faceplayer
-	namebox ROUTE4_TRIGGER_DaycareWatcher_PART2_Text_0
-	random 3
+	namebox ROUTE4_TRIGGER1_DaycareWatcher_Text_0
+	random 5
 	switch VAR_RESULT
 	case 0, ROUTE4_DaycareWatcher_3
 	case 1, ROUTE4_DaycareWatcher_4
 	case 2, ROUTE4_DaycareWatcher_5
 	case 3, ROUTE4_DaycareWatcher_6
+	case 4, ROUTE4_DaycareWatcher_7
 ROUTE4_DaycareWatcher_1:
 	closemessage
 	hidenamebox
@@ -216,11 +215,35 @@ ROUTE4_DaycareWatcher_6:
 	msgbox ROUTE4_DaycareWatcher_Text_3
 	goto ROUTE4_DaycareWatcher_1
 
+ROUTE4_DaycareWatcher_7:
+	msgbox ROUTE4_DaycareWatcher_Text_4
+	goto ROUTE4_DaycareWatcher_1
+
 
 ROUTE4_PatchFarmer::
 	faceplayer
-	namebox ROUTE4_TRIGGER_DaycareWatcher_PART1_Text_0
-	msgbox ROUTE4_PatchFarmer_Text_0
+	namebox ROUTE4_PatchFarmer_Text_0
+	msgbox ROUTE4_PatchFarmer_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+ROUTE4_Summoner::
+	faceplayer
+	namebox ROUTE4_Summoner_Text_0
+	msgbox ROUTE4_Summoner_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+ROUTE4_Diviner::
+	faceplayer
+	namebox ROUTE4_Diviner_Text_0
+	msgbox ROUTE4_Diviner_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -268,27 +291,30 @@ FarmerBattleRoute4_Text_3:
 Route4Sign_Text_0:
 	.string "Potterington Farm$"
 
-ROUTE4_TRIGGER_DaycareWatcher_PART1_Text_0:
-	.string "Farmer$"
-
-ROUTE4_TRIGGER_DaycareWatcher_PART1_Text_1:
-	.string "Hiya Adventurer!\l"
-	.string "Could you follow me?\p"
-	.string "I want to show you something.$"
-
-ROUTE4_TRIGGER_DaycareWatcher_PART2_Text_0:
+ROUTE4_TRIGGER1_DaycareWatcher_Text_0:
 	.string "Niece Pott.$"
 
-ROUTE4_TRIGGER_DaycareWatcher_PART2_Text_1:
+ROUTE4_TRIGGER1_DaycareWatcher_Text_1:
+	.string "Hey!\n"
+	.string "Those monsters…\p"
+	.string "Let me see them!\p"
+	.string "…{PAUSE 15}…{PAUSE 15}…\p"
+	.string "Amazing, I can see that your monsters\n"
+	.string "trust you quite a lot!\p"
+	.string "Follow me adventurer, I wish to show you\n"
+	.string "something.$"
+
+ROUTE4_TRIGGER1_DaycareWatcher_Text_2:
 	.string "This place is called Potterington Farm!\p"
-	.string "We look after your Monsters and help\n"
-	.string "them grow while you are away.\p"
-	.string "We have also set up special breeding\n"
-	.string "pens for certain monsters.\p"
-	.string "You should inquire about it, if it's\n"
-	.string "something that interests you!\p"
-	.string "Anyway that is all I wanted to show you.\p"
-	.string "Take care!$"
+	.string "Here we can look after your Monsters\n"
+	.string "and help them grow while you are away.\p"
+	.string "We have also set up breeding pens for\n"
+	.string "the monsters.\p"
+	.string "You should talk to my mother inside, if\n"
+	.string "that is something that interests you.\p"
+	.string "Anyway, that is all I wanted to show\n"
+	.string "you.\p"
+	.string "Stop by anytime, take care!$"
 
 ROUTE4_DaycareWatcher_Text_0:
 	.string "Some people have been reporting\n"
@@ -314,6 +340,35 @@ ROUTE4_DaycareWatcher_Text_3:
 	.string "I wonder what makes them decide to\n"
 	.string "visit our little farm.$"
 
+ROUTE4_DaycareWatcher_Text_4:
+	.string "Did you know that Potterington Farm is\n"
+	.string "a family run buisness?\p"
+	.string "My mother and father run this farm and\n"
+	.string "my grandma runs the farm over near\l"
+	.string "Ardougne!$"
+
 ROUTE4_PatchFarmer_Text_0:
+	.string "Farmer$"
+
+ROUTE4_PatchFarmer_Text_1:
 	.string "Did you know you can plant crops in\n"
 	.string "farming patches?$"
+
+ROUTE4_Summoner_Text_0:
+	.string "Summoner$"
+
+ROUTE4_Summoner_Text_1:
+	.string "These farmers told me that they would\n"
+	.string "raise my monsters, but when I came back\l"
+	.string "they dumped an egg on me…\p"
+	.string "I'm not ready to be a parent…$"
+
+ROUTE4_Diviner_Text_0:
+	.string "Diviner$"
+
+ROUTE4_Diviner_Text_1:
+	.string "I'm about to go on holiday and I need\n"
+	.string "someone look after my Sheep and Wolf\l"
+	.string "while I am away.\p"
+	.string "Thankfully Potterington farm offered\n"
+	.string "to look after them while I am away.$"

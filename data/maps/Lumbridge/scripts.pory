@@ -14,12 +14,10 @@ mapscripts Lumbridge_MapScripts {
 		if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
     	{
             call(STORYMODE_STATE_LUMBRIDGE)
-			call(HIDDEN_GROTTO_RESET)
     	}
 		else
 		{
 			call(OPENWORLD_STATE_LUMBRIDGE)
-			call(HIDDEN_GROTTO_RESET)
 		}
 		
     }

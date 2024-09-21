@@ -126,6 +126,42 @@ GeneralStore_ALKHARID::
 	return
 
 
+GeneralStore_MUSAPOINT::
+	lock
+	faceplayer
+	namebox GeneralStore_LUMBRIDGE_Text_0
+	msgbox GeneralStore_MUSAPOINT_Text_0
+	waitmessage
+	call GeneralStoreShopScript
+	msgbox GeneralStore_LUMBRIDGE_Text_2
+	release
+	return
+
+
+GeneralStore_MUSAPOINT_Assistant::
+	lock
+	faceplayer
+	namebox GeneralStore_MUSAPOINT_Assistant_Text_0
+	msgbox GeneralStore_MUSAPOINT_Assistant_Text_1
+	waitmessage
+	pokemart STORE_cocktails
+	msgbox GeneralStore_LUMBRIDGE_Text_2
+	release
+	return
+
+
+GeneralStore_TZHAAR::
+	lock
+	faceplayer
+	namebox GeneralStore_TZHAAR_Text_0
+	msgbox GeneralStore_TZHAAR_Text_1
+	waitmessage
+	call GeneralStoreShopScript
+	msgbox GeneralStore_TZHAAR_Text_2
+	release
+	return
+
+
 SHOP_RUNESTORE_VARROCK::
 	lock
 	faceplayer
@@ -177,6 +213,29 @@ SHOP_TM_SEERS_WIZARD::
 	release
 	end
 
+
+SHOP_LOWE::
+	lock
+	faceplayer
+	namebox SHOP_LOWE_Text_0
+	msgbox SHOP_LOWE_Text_1
+	waitmessage
+	hidenamebox
+	pokemart STORE_ArcheryStore
+	msgbox SHOP_LOWE_Text_2
+	release
+	end
+
+
+
+    .align 2
+STORE_ArcheryStore:
+    .2byte ITEM_BONECROSSBOW
+    .2byte ITEM_KARILCROSSBOW
+    .2byte ITEM_WATERFALL_TOOL
+    .2byte ITEM_NONE
+    release
+    end
 
 
     .align 2
@@ -445,6 +504,19 @@ STORE_GeneralStore_4:
     release
     end
 
+
+    .align 2
+STORE_cocktails:
+	.2byte ITEM_WIZARDS_BLIZZARD
+    .2byte ITEM_CHOCOLATE_SUNDAY
+    .2byte ITEM_DRUNK_DRAGON
+    .2byte ITEM_FRUIT_BLAST
+    .2byte ITEM_PINEAPPLE_PUNCH
+    .2byte ITEM_BLUEBERRY_SPECIAL
+    .2byte ITEM_NONE
+    release
+    end
+
 GeneralStore_LUMBRIDGE_Text_0:
 	.string "Clerk$"
 
@@ -480,6 +552,29 @@ GeneralStore_RIMMINGTON_Text_0:
 GeneralStore_ALKHARID_Text_0:
 	.string "Welcome to the Al-Kharid General Store.\p"
 	.string "How may I help you?$"
+
+GeneralStore_MUSAPOINT_Text_0:
+	.string "Welcome to the Musa Point General\n"
+	.string "Store.\p"
+	.string "How may I help you?$"
+
+GeneralStore_MUSAPOINT_Assistant_Text_0:
+	.string "Assistant$"
+
+GeneralStore_MUSAPOINT_Assistant_Text_1:
+	.string "Hello and welcome to the Musa Point\n"
+	.string "General Store.\p"
+	.string "How may I help you?$"
+
+GeneralStore_TZHAAR_Text_0:
+	.string "Tzhaar$"
+
+GeneralStore_TZHAAR_Text_1:
+	.string "JalYt, this is Tzhaar shop.\p"
+	.string "We sell things to assist your Kimit-zil.$"
+
+GeneralStore_TZHAAR_Text_2:
+	.string "Come again.$"
 
 SHOP_RUNESTORE_VARROCK_Text_0:
 	.string "Aubury$"
@@ -517,3 +612,13 @@ SHOP_TM_SEERS_WIZARD_Text_1:
 SHOP_TM_SEERS_WIZARD_Text_2:
 	.string "Yes, it would be such a shame if the\n"
 	.string "weather suddenly changed.$"
+
+SHOP_LOWE_Text_0:
+	.string "Lowe$"
+
+SHOP_LOWE_Text_1:
+	.string "Welcome to my Archery shop!\p"
+	.string "How may I help you today?$"
+
+SHOP_LOWE_Text_2:
+	.string "Thank you, come again.$"

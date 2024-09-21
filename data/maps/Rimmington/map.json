@@ -6,7 +6,7 @@
   "region_map_section": "MAPSEC_RIMMINGTON",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_TOWN",
   "allow_cycling": true,
   "allow_escaping": false,
   "allow_running": true,
@@ -20,7 +20,7 @@
     },
     {
       "map": "MAP_ROUTE10",
-      "offset": -12,
+      "offset": -30,
       "direction": "right"
     },
     {
@@ -29,14 +29,19 @@
       "direction": "right"
     },
     {
-      "map": "MAP_CRANDOR",
-      "offset": -41,
+      "map": "MAP_CRANDOR_SEA_ROUTE",
+      "offset": 6,
       "direction": "left"
     },
     {
-      "map": "MAP_CRANDOR_SEA_ROUTE",
-      "offset": 11,
-      "direction": "left"
+      "map": "MAP_MUSA_POINT",
+      "offset": -4,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_MUDSKIPPER_SOUND_2",
+      "offset": 42,
+      "direction": "down"
     }
   ],
   "object_events": [

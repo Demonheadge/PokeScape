@@ -71,18 +71,16 @@ LIGHTHOUSE_NPC_1::
 LIGHTHOUSE_NPC_2::
 	lock
 	faceplayer
-	namebox LIGHTHOUSE_NPC_2_Text_0
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 100
 	goto_if_eq LIGHTHOUSE_NPC_2_2
-	msgbox LIGHTHOUSE_NPC_2_Text_2
+	msgbox LIGHTHOUSE_NPC_2_Text_1
 LIGHTHOUSE_NPC_2_1:
 	closemessage
-	hidenamebox
 	release
 	end
 
 LIGHTHOUSE_NPC_2_2:
-	msgbox LIGHTHOUSE_NPC_2_Text_1
+	msgbox LIGHTHOUSE_NPC_2_Text_0
 	goto LIGHTHOUSE_NPC_2_1
 
 
@@ -226,7 +224,7 @@ LIGHTHOUSE_CAPN_HAND_QUEST_4:
 
 
 LIGHTHOUSE_NPC_1_Text_0:
-	.string "THIEF$"
+	.string "Thief$"
 
 LIGHTHOUSE_NPC_1_Text_1:
 	.string "I tried to rob Shantay and his guards\n"
@@ -235,18 +233,15 @@ LIGHTHOUSE_NPC_1_Text_1:
 	.string "in here!$"
 
 LIGHTHOUSE_NPC_2_Text_0:
-	.string "SKELETON$"
-
-LIGHTHOUSE_NPC_2_Text_1:
 	.string "The skeleton chuckles at all of the\n"
 	.string "commotion.$"
 
-LIGHTHOUSE_NPC_2_Text_2:
+LIGHTHOUSE_NPC_2_Text_1:
 	.string "The skeleton says, Nothing interesting\n"
 	.string "happens.$"
 
 LIGHTHOUSE_NPC_3_Text_0:
-	.string "MUGGER$"
+	.string "Mugger$"
 
 LIGHTHOUSE_NPC_3_Text_1:
 	.string "Psst.\p"
@@ -255,7 +250,7 @@ LIGHTHOUSE_NPC_3_Text_1:
 	.string "outside…$"
 
 LIGHTHOUSE_NPC_4_Text_0:
-	.string "BLACK KNIGHT$"
+	.string "Black knight$"
 
 LIGHTHOUSE_NPC_4_Text_1:
 	.string "Oi!\p"
@@ -275,7 +270,7 @@ LIGHTHOUSE_NPC_4_Text_3:
 	.string "There, can I go now?$"
 
 LIGHTHOUSE_NPC_WORMBRAIN_Text_0:
-	.string "WORMBRAIN$"
+	.string "Wormbrain$"
 
 LIGHTHOUSE_NPC_WORMBRAIN_Text_1:
 	.string "Me nose hurts…$"
@@ -285,7 +280,7 @@ LIGHTHOUSE_NPC_WORMBRAIN_Text_2:
 	.string "At least me get 1 meal a day.$"
 
 LIGHTHOUSE_GUARD_1_Text_0:
-	.string "JAILER$"
+	.string "Jailer$"
 
 LIGHTHOUSE_GUARD_1_Text_1:
 	.string "I overheard some H.A.M members\n"
@@ -318,7 +313,7 @@ BATTLE_LIGHTHOUSE_TRAINER_1_Text_1:
 	.string "What do you mean you're not with them?$"
 
 BATTLE_LIGHTHOUSE_TRAINER_1_Text_2:
-	.string "DAVE$"
+	.string "Dave$"
 
 BATTLE_LIGHTHOUSE_TRAINER_2_Text_0:
 	.string "Vile HAM member!\n"
@@ -328,7 +323,7 @@ BATTLE_LIGHTHOUSE_TRAINER_2_Text_1:
 	.string "You're a lot stronger than you look!$"
 
 BATTLE_LIGHTHOUSE_TRAINER_2_Text_2:
-	.string "DARREN$"
+	.string "Darren$"
 
 BATTLE_LIGHTHOUSE_TRAINER_2_Text_3:
 	.string "Sorry I mistook you for being apart of\n"

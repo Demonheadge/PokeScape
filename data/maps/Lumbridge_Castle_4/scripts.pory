@@ -19,7 +19,8 @@ script GYMLEADER_DUKE{
     namebox("Duke Horacio")
     msgbox(format("So you've made it to the top!\nCongratulations!\pYou wish to challenge me to a battle?\nSo be it!\lMay the best trainer win!"))
     hidenamebox
-    trainerbattle_no_intro(TRAINER_LEADER_DUKE_1, msgbox(format("You beat me…\p…Congratulations!")))
+    call(GYM_BATTLE_DUKE_HORACIO)
+    //trainerbattle_no_intro(TRAINER_LEADER_DUKE_1, msgbox(format("You beat me…\p…Congratulations!")))
     goto(GYMLEADER_DUKE_BATTLEWON)
     release
     end
@@ -64,6 +65,7 @@ script GYMLEADER_DUKE{
     call(SetGymTrainers_LUMBRIDGE)
     removeobject(OBJ_EVENT_ID_DUKE)
     setflag(FLAG_BADGE01_GET)
+    call(HIDDEN_GROTTO_RESET)
     addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
     setvar(VAR_POKESCAPE_LUMBRIDGE_GYM_QUEST, 2)
     fadescreen(FADE_FROM_BLACK)

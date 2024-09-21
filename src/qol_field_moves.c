@@ -204,7 +204,7 @@ u8 FldEff_UseSurfTool(void)
 {
     CreateTask(Task_SurfToolFieldEffect, 0);
     Overworld_ClearSavedMusic();
-    Overworld_ChangeMusicTo(MUS_SURF);
+    Overworld_ChangeMusicTo(MUS_PS_SURFING);
     return FALSE;
 }
 

@@ -1,5 +1,6 @@
 Varrock_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Varrock_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_LOAD, Varrock_MapScripts_MAP_SCRIPT_ON_LOAD
 	.byte 0
 
 Varrock_MapScripts_MAP_SCRIPT_ON_TRANSITION:
@@ -7,11 +8,23 @@ Varrock_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 16
 	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
 	goto_if_eq Varrock_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
-	call HIDDEN_GROTTO_RESET
 	return
 
 Varrock_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
-	call HIDDEN_GROTTO_RESET
+	return
+
+Varrock_MapScripts_MAP_SCRIPT_ON_LOAD:
+	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
+	goto_if_eq Varrock_MapScripts_MAP_SCRIPT_ON_LOAD_1
+	return
+
+Varrock_MapScripts_MAP_SCRIPT_ON_LOAD_1:
+	call VARROCK_STATE
+	return
+
+
+VARROCK_STATE::
+	setmetatile 9, 26, METATILE_PokeScapeOutdoors_Door_GeneralStore_L, 0
 	return
 
 
@@ -75,7 +88,8 @@ VARROCK_NPC_GUARD_0::
 
 VARROCK_NPC_RUNEARMOUR::
 	faceplayer
-	msgbox VARROCK_NPC_RUNEARMOUR_Text_0
+	namebox VARROCK_NPC_RUNEARMOUR_Text_0
+	msgbox VARROCK_NPC_RUNEARMOUR_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -83,7 +97,8 @@ VARROCK_NPC_RUNEARMOUR::
 
 
 VARROCK_NPC_Trader1::
-	msgbox VARROCK_NPC_Trader1_Text_0
+	namebox VARROCK_NPC_Trader1_Text_0
+	msgbox VARROCK_NPC_Trader1_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -91,6 +106,7 @@ VARROCK_NPC_Trader1::
 
 
 VARROCK_NPC_Trader2::
+	namebox VARROCK_NPC_Trader1_Text_0
 	msgbox VARROCK_NPC_Trader2_Text_0
 	closemessage
 	hidenamebox
@@ -100,7 +116,8 @@ VARROCK_NPC_Trader2::
 
 VARROCK_NPC_Firemaker::
 	faceplayer
-	msgbox VARROCK_NPC_Firemaker_Text_0
+	namebox VARROCK_NPC_Firemaker_Text_0
+	msgbox VARROCK_NPC_Firemaker_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -188,6 +205,7 @@ VARROCK_NPC_Shilop::
 
 
 VARROCK_NPC_Baraek::
+	lock
 	faceplayer
 	namebox VARROCK_NPC_Baraek_Text_0
 	msgbox VARROCK_NPC_Baraek_Text_1
@@ -199,7 +217,8 @@ VARROCK_NPC_Baraek::
 
 VARROCK_NPC_MAN_1::
 	faceplayer
-	msgbox VARROCK_NPC_MAN_1_Text_0
+	namebox VARROCK_NPC_MAN_1_Text_0
+	msgbox VARROCK_NPC_MAN_1_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -208,6 +227,7 @@ VARROCK_NPC_MAN_1::
 
 VARROCK_NPC_MAN_2::
 	faceplayer
+	namebox VARROCK_NPC_Trader1_Text_0
 	msgbox VARROCK_NPC_MAN_2_Text_0
 	closemessage
 	hidenamebox
@@ -227,6 +247,7 @@ VARROCK_NPC_Halen::
 
 VARROCK_NPC_Halen2::
 	faceplayer
+	namebox VARROCK_NPC_Archaeologist_Text_0
 	msgbox VARROCK_NPC_Halen2_Text_0
 	closemessage
 	hidenamebox
@@ -236,6 +257,7 @@ VARROCK_NPC_Halen2::
 
 VARROCK_NPC_BronzeGuy::
 	faceplayer
+	namebox VARROCK_NPC_Trader1_Text_0
 	msgbox VARROCK_NPC_BronzeGuy_Text_0
 	closemessage
 	hidenamebox
@@ -281,8 +303,10 @@ VARROCK_NPC_Ranger::
 
 
 VARROCK_NPC_THUG_1::
+	lock
 	faceplayer
-	msgbox VARROCK_NPC_THUG_1_Text_0
+	namebox VARROCK_NPC_THUG_1_Text_0
+	msgbox VARROCK_NPC_THUG_1_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -291,7 +315,8 @@ VARROCK_NPC_THUG_1::
 
 VARROCK_NPC_THUG_2::
 	faceplayer
-	msgbox VARROCK_NPC_THUG_2_Text_0
+	namebox VARROCK_NPC_THUG_2_Text_0
+	msgbox VARROCK_NPC_THUG_2_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -300,7 +325,8 @@ VARROCK_NPC_THUG_2::
 
 VARROCK_NPC_THUG_3::
 	faceplayer
-	msgbox VARROCK_NPC_THUG_3_Text_0
+	namebox VARROCK_NPC_THUG_3_Text_0
+	msgbox VARROCK_NPC_THUG_3_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -309,6 +335,7 @@ VARROCK_NPC_THUG_3::
 
 VARROCK_NPC_NOOB_1::
 	faceplayer
+	namebox VARROCK_NPC_Trader1_Text_0
 	msgbox VARROCK_NPC_NOOB_1_Text_0
 	closemessage
 	hidenamebox
@@ -318,7 +345,8 @@ VARROCK_NPC_NOOB_1::
 
 VARROCK_NPC_PRIEST::
 	faceplayer
-	msgbox VARROCK_NPC_PRIEST_Text_0
+	namebox VARROCK_NPC_PRIEST_Text_0
+	msgbox VARROCK_NPC_PRIEST_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -337,6 +365,7 @@ VARROCK_NPC_GUARD_7::
 
 VARROCK_NPC_10::
 	faceplayer
+	namebox VARROCK_NPC_RUNEARMOUR_Text_0
 	msgbox VARROCK_NPC_10_Text_0
 	closemessage
 	hidenamebox
@@ -346,7 +375,8 @@ VARROCK_NPC_10::
 
 VARROCK_NPC_11::
 	faceplayer
-	msgbox VARROCK_NPC_11_Text_0
+	namebox VARROCK_NPC_11_Text_0
+	msgbox VARROCK_NPC_11_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -403,30 +433,10 @@ VARROCK_NPC_Romeo::
 	end
 
 
-VARROCK_URI::
-	lock
-	faceplayer
-	namebox VARROCK_URI_Text_0
-	msgbox VARROCK_URI_Text_1
-	closemessage
-	hidenamebox
-	giveitem ITEM_ITEMFINDER
-	namebox VARROCK_URI_Text_0
-	msgbox VARROCK_URI_Text_2
-	closemessage
-	hidenamebox
-	fadescreen FADE_TO_BLACK
-	setflag FLAG_URI_ITEMFINDER
-	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
-	release
-	end
-
-
 VARROCKSTORE_NPC_1::
 	faceplayer
-	namebox VARROCKSTORE_NPC_1_Text_0
-	msgbox VARROCKSTORE_NPC_1_Text_1
+	namebox VARROCK_NPC_Trader1_Text_0
+	msgbox VARROCKSTORE_NPC_1_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -435,8 +445,18 @@ VARROCKSTORE_NPC_1::
 
 VARROCKSTORE_NPC_2::
 	faceplayer
-	namebox VARROCKSTORE_NPC_2_Text_0
-	msgbox VARROCKSTORE_NPC_2_Text_1
+	namebox VARROCK_NPC_THUG_2_Text_0
+	msgbox VARROCKSTORE_NPC_2_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+VARROCKSTORE_NPC_3::
+	faceplayer
+	namebox VARROCKSTORE_NPC_3_Text_0
+	msgbox VARROCKSTORE_NPC_3_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -495,7 +515,8 @@ VARROCK_NPC_Thessalia::
 
 VARROCK_NPC_ThessaliaGrandma::
 	faceplayer
-	msgbox VARROCK_NPC_ThessaliaGrandma_Text_0
+	namebox VARROCK_NPC_ThessaliaGrandma_Text_0
+	msgbox VARROCK_NPC_ThessaliaGrandma_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -513,7 +534,8 @@ VARROCK_NPC_SWORDSHOP_1::
 
 VARROCK_NPC_SWORDSHOP_2::
 	faceplayer
-	msgbox VARROCK_NPC_SWORDSHOP_2_Text_0
+	namebox VARROCK_NPC_SWORDSHOP_2_Text_0
+	msgbox VARROCK_NPC_SWORDSHOP_2_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -522,7 +544,8 @@ VARROCK_NPC_SWORDSHOP_2::
 
 VARROCK_NPC_SWORDSHOP_3::
 	faceplayer
-	msgbox VARROCK_NPC_SWORDSHOP_3_Text_0
+	namebox VARROCK_NPC_SWORDSHOP_3_Text_0
+	msgbox VARROCK_NPC_SWORDSHOP_3_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -531,6 +554,7 @@ VARROCK_NPC_SWORDSHOP_3::
 
 VARROCK_NPC_SWORDSHOP_4::
 	faceplayer
+	namebox VARROCK_NPC_PRIEST_Text_0
 	msgbox VARROCK_NPC_SWORDSHOP_4_Text_0
 	closemessage
 	hidenamebox
@@ -703,8 +727,8 @@ NPC_VARROCK_PILLORY_GUARD::
 NPC_VARROCK_PILLORY_MUGGER::
 	lock
 	faceplayer
-	namebox NPC_VARROCK_PILLORY_MUGGER_Text_0
-	msgbox NPC_VARROCK_PILLORY_MUGGER_Text_1
+	namebox VARROCK_NPC_THUG_1_Text_0
+	msgbox NPC_VARROCK_PILLORY_MUGGER_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -918,7 +942,7 @@ NPC_GOODIEBAG::
 	faceplayer
 	namebox NPC_GOODIEBAG_Text_0
 	msgbox NPC_GOODIEBAG_Text_1
-	goto_if_unset FLAG_UNUSED_0x93D, NPC_GOODIEBAG_2
+	goto_if_unset FLAG_GOODIE_BAG, NPC_GOODIEBAG_2
 	msgbox NPC_GOODIEBAG_Text_6
 NPC_GOODIEBAG_1:
 	msgbox NPC_GOODIEBAG_Text_7
@@ -939,7 +963,7 @@ NPC_GOODIEBAG_2:
 	end
 
 NPC_GOODIEBAG_5:
-	setflag FLAG_UNUSED_0x93D
+	setflag FLAG_GOODIE_BAG
 	msgbox NPC_GOODIEBAG_Text_4
 	hidenamebox
 	call GIVE_RANDOM_ITEM_28
@@ -1117,7 +1141,8 @@ ITEM_NORTH_VARROCK_1::
 
 VARROCK_NPC_FROGEELBURGER::
 	faceplayer
-	msgbox VARROCK_NPC_FROGEELBURGER_Text_0
+	namebox VARROCK_NPC_FROGEELBURGER_Text_0
+	msgbox VARROCK_NPC_FROGEELBURGER_Text_1
 	closemessage
 	hidenamebox
 	checkitem ITEM_FROGEEL_BURGER, 1
@@ -1128,16 +1153,20 @@ VARROCK_NPC_FROGEELBURGER_1:
 	end
 
 VARROCK_NPC_FROGEELBURGER_2:
-	msgbox VARROCK_NPC_FROGEELBURGER_Text_1, MSGBOX_YESNO
+	namebox VARROCK_NPC_FROGEELBURGER_Text_0
+	msgbox VARROCK_NPC_FROGEELBURGER_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne VARROCK_NPC_FROGEELBURGER_4
 	goto VARROCK_NPC_FROGEELBURGER_1
 
 VARROCK_NPC_FROGEELBURGER_4:
+	closemessage
+	hidenamebox
 	removeitem ITEM_FROGEEL_BURGER, 1
 	addmoney 20000, 0
 	playse SE_SHOP
-	msgbox VARROCK_NPC_FROGEELBURGER_Text_2
+	namebox VARROCK_NPC_FROGEELBURGER_Text_0
+	msgbox VARROCK_NPC_FROGEELBURGER_Text_3
 	closemessage
 	hidenamebox
 	goto VARROCK_NPC_FROGEELBURGER_1
@@ -1145,7 +1174,8 @@ VARROCK_NPC_FROGEELBURGER_4:
 
 VARROCK_NPC_WondertradeHint::
 	faceplayer
-	msgbox VARROCK_NPC_WondertradeHint_Text_0
+	namebox VARROCK_NPC_WondertradeHint_Text_0
+	msgbox VARROCK_NPC_WondertradeHint_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -1199,11 +1229,17 @@ VARROCK_NPC_GUARD_0_Text_1:
 	.string "him in the Palace.$"
 
 VARROCK_NPC_RUNEARMOUR_Text_0:
+	.string "Choob$"
+
+VARROCK_NPC_RUNEARMOUR_Text_1:
 	.string "I am thinking about getting a new\n"
 	.string "sword, but they do not seem to be\l"
 	.string "selling any Rune items.$"
 
 VARROCK_NPC_Trader1_Text_0:
+	.string "Noob$"
+
+VARROCK_NPC_Trader1_Text_1:
 	.string "I heard you can trade your monsters\n"
 	.string "with others at the Grand Exchange.\p"
 	.string "Is that true?$"
@@ -1216,6 +1252,9 @@ VARROCK_NPC_Trader2_Text_0:
 	.string "have to know people.$"
 
 VARROCK_NPC_Firemaker_Text_0:
+	.string "Firemaker$"
+
+VARROCK_NPC_Firemaker_Text_1:
 	.string "A long line of fires is the best way to\n"
 	.string "train the Firemaking skill.$"
 
@@ -1282,10 +1321,14 @@ VARROCK_NPC_Baraek_Text_0:
 	.string "Baraek$"
 
 VARROCK_NPC_Baraek_Text_1:
-	.string "I am selling newspapers 50GP each.\p"
-	.string "Are you interested in one?$"
+	.string "Have you seen the newsletters in\n"
+	.string "general stores?\p"
+	.string "I deliver and publish those!$"
 
 VARROCK_NPC_MAN_1_Text_0:
+	.string "Old man$"
+
+VARROCK_NPC_MAN_1_Text_1:
 	.string "Some monsters can evolve if they are in\n"
 	.string "different areas of the Gielinor.\p"
 	.string "We call them regional variants.\p"
@@ -1352,17 +1395,26 @@ VARROCK_NPC_Ranger_Text_1:
 	.string "opponents strategy.$"
 
 VARROCK_NPC_THUG_1_Text_0:
+	.string "Mugger$"
+
+VARROCK_NPC_THUG_1_Text_1:
 	.string "You are in the wrong neighborhood.\p"
 	.string "Get out before I make you stand and\n"
 	.string "deliver.$"
 
 VARROCK_NPC_THUG_2_Text_0:
+	.string "Man$"
+
+VARROCK_NPC_THUG_2_Text_1:
 	.string "The criminal justice system is balanced\n"
 	.string "on a knives edge, we thugs bring the\l"
 	.string "knives and the guards gets us on the\l"
 	.string "edge of the city.$"
 
 VARROCK_NPC_THUG_3_Text_0:
+	.string "Scammer$"
+
+VARROCK_NPC_THUG_3_Text_1:
 	.string "Once I get these lobsters all burnt and\n"
 	.string "good, the Grand Exchange wont know\l"
 	.string "what hit them.$"
@@ -1373,7 +1425,10 @@ VARROCK_NPC_NOOB_1_Text_0:
 	.string "items and money so they could see them.$"
 
 VARROCK_NPC_PRIEST_Text_0:
-	.string "Would you like to partake in the\n"
+	.string "Monk$"
+
+VARROCK_NPC_PRIEST_Text_1:
+	.string "Would you like to partake in a\n"
 	.string "ceremony?$"
 
 VARROCK_NPC_GUARD_7_Text_0:
@@ -1390,7 +1445,10 @@ VARROCK_NPC_10_Text_0:
 	.string "garden than indulging in his hobby.$"
 
 VARROCK_NPC_11_Text_0:
-	.string "Dont dig for treasure chests, you have\n"
+	.string "Guthix Wizard$"
+
+VARROCK_NPC_11_Text_1:
+	.string "Don't dig for treasure chests, you have\n"
 	.string "been warned.$"
 
 VARROCK_NPC_12_Text_0:
@@ -1424,35 +1482,32 @@ VARROCK_NPC_Romeo_Text_0:
 VARROCK_NPC_Romeo_Text_1:
 	.string "Juliet, where art thou!$"
 
-VARROCK_URI_Text_0:
-	.string "Uri$"
-
-VARROCK_URI_Text_1:
-	.string "Do you like solving puzzles?\p"
-	.string "Finding unexpected goodies?\p"
-	.string "Well say no more!\p"
-	.string "These items…{PAUSE 32} are…{PAUSE 32} for…{PAUSE 32} you!$"
-
-VARROCK_URI_Text_2:
-	.string "Hidden treasures lay everywhere!\p"
-	.string "Until we meet again!$"
-
 VARROCKSTORE_NPC_1_Text_0:
-	.string "Noob$"
-
-VARROCKSTORE_NPC_1_Text_1:
 	.string "I probably should buy one of each\n"
 	.string "Cocktail.\p"
 	.string "That way I can heal any status effects.$"
 
 VARROCKSTORE_NPC_2_Text_0:
-	.string "Man$"
-
-VARROCKSTORE_NPC_2_Text_1:
 	.string "When catching monsters some pouches\n"
 	.string "are better than others.\p"
 	.string "For example a Mystic Pouch works really\n"
 	.string "well on Fairy-Type Monsters.$"
+
+VARROCKSTORE_NPC_3_Text_0:
+	.string "Assistant$"
+
+VARROCKSTORE_NPC_3_Text_1:
+	.string "Come on in!\p"
+	.string "Here at the General Store we stock all\n"
+	.string "you need!\p"
+	.string "Need pouches?\n"
+	.string "No sweat!\p"
+	.string "What about cocktails to heal your\n"
+	.string "monsters?\p"
+	.string "We got those too!\p"
+	.string "Empty buckets?\p"
+	.string "We have it all!\p"
+	.string "At the General Store!$"
 
 VARROCK_NPC_PALACE_GUARD_1_Text_0:
 	.string "Our king specialises in Fairy-Type\n"
@@ -1484,6 +1539,9 @@ VARROCK_NPC_Thessalia_Text_1:
 	.string "But you will have to come back later.$"
 
 VARROCK_NPC_ThessaliaGrandma_Text_0:
+	.string "Iffie$"
+
+VARROCK_NPC_ThessaliaGrandma_Text_1:
 	.string "Zzz…$"
 
 VARROCK_NPC_SWORDSHOP_1_Text_0:
@@ -1491,12 +1549,18 @@ VARROCK_NPC_SWORDSHOP_1_Text_0:
 	.string "stock at the moment.$"
 
 VARROCK_NPC_SWORDSHOP_2_Text_0:
+	.string "Pker$"
+
+VARROCK_NPC_SWORDSHOP_2_Text_1:
 	.string "I came to buy a Dragon Scimitar to\n"
 	.string "power up my Monsters Dragon-Type\l"
 	.string "moves.\p"
 	.string "But they don't have any in stock.$"
 
 VARROCK_NPC_SWORDSHOP_3_Text_0:
+	.string "Rusher$"
+
+VARROCK_NPC_SWORDSHOP_3_Text_1:
 	.string "Did you know a Mithril Scimitar boosts\n"
 	.string "the Attack stat for monsters that are\l"
 	.string "not yet evolved.$"
@@ -1598,9 +1662,6 @@ NPC_VARROCK_PILLORY_GUARD_Text_1:
 	.string "here like this delinquent!$"
 
 NPC_VARROCK_PILLORY_MUGGER_Text_0:
-	.string "Mugger$"
-
-NPC_VARROCK_PILLORY_MUGGER_Text_1:
 	.string "Argh! My fingers are so numb from all\n"
 	.string "the pickpocketing I've been doing that\l"
 	.string "I can't pick this damn lock to escape...$"
@@ -1755,20 +1816,26 @@ VARROCK_POTIONSTORE_BOOK_Text_0:
 	.string "levels.$"
 
 VARROCK_NPC_FROGEELBURGER_Text_0:
+	.string "Mercher$"
+
+VARROCK_NPC_FROGEELBURGER_Text_1:
 	.string "{COLOR BLUE}cyan:wave: Buying Frogeel Burgers 20k\n"
 	.string "ea!$"
 
-VARROCK_NPC_FROGEELBURGER_Text_1:
+VARROCK_NPC_FROGEELBURGER_Text_2:
 	.string "Oh my!\p"
 	.string "Is that a Frogeel burger I smell?!\p"
 	.string "May I buy it off you for 20k gp?$"
 
-VARROCK_NPC_FROGEELBURGER_Text_2:
+VARROCK_NPC_FROGEELBURGER_Text_3:
 	.string "Thank you, these are delicious!\p"
 	.string "If you have any more come back and I'll\n"
 	.string "buy them from you.$"
 
 VARROCK_NPC_WondertradeHint_Text_0:
+	.string "Ironman$"
+
+VARROCK_NPC_WondertradeHint_Text_1:
 	.string "There is a desk at the Grand Exchange\n"
 	.string "that allows you to trade your monsters\l"
 	.string "with a stranger.\p"

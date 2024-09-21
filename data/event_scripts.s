@@ -1496,3 +1496,15 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Lumbridge_Swamp_Caves_WGS_5/scripts.inc"
 
 	.include "data/maps/Barb_Stronghold_B4F_Mural/scripts.inc"
+
+	.include "data/maps/Bay_of_Sarim/scripts.inc"
+
+	.include "data/maps/Mudskipper_Sound_1/scripts.inc"
+
+	.include "data/maps/Mudskipper_Sound_2/scripts.inc"
+
+	.include "data/maps/Mudskipper_Sound_3/scripts.inc"
+
+	.include "data/maps/Tzhaar_Gym_Challenge/scripts.inc"
+
+	.include "data/maps/Tzhaar_HarAken/scripts.inc"

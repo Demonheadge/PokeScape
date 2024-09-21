@@ -37,6 +37,16 @@
       "map": "MAP_ROUTE8",
       "offset": -22,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE10",
+      "offset": 4,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE3",
+      "offset": -22,
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -67,7 +77,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PIRATE_2",
+      "graphics_id": "OBJ_EVENT_GFX_PIRATE_1",
       "x": 20,
       "y": 4,
       "elevation": 3,

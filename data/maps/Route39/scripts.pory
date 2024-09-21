@@ -5,7 +5,7 @@ mapscripts Route39_MapScripts{
 	MAP_SCRIPT_ON_TRANSITION {
         setvar(VAR_EVOLUTION_MAP_STATE, 15) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
 		call(PENGUIN_EVENT)
-        call(WEATHER_CHANGE_ROUTE_RAIN)
+        call(WEATHER_CHANGE_AREA_MUSAPOINT)
 	}
 }
 
@@ -136,5 +136,31 @@ script BATTLE_ROUTE39_TRAINER_8
     msgbox(format("I had a lot of guts challenging a kid like you it seems."))
 	hidenamebox
     release
+	end
+}
+
+//NPCS
+
+script NPC_Route39_1
+{
+	lock
+	faceplayer
+    namebox ("Pirate")
+	msgbox(format("Yarr, there was a brawl at the Dead Man's Chest.\pWe've had to close off Brimhaven to all outsiders until we've cleaned up the bodi-\puh, I mean mess!"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_Route39_2
+{
+	lock
+	faceplayer
+    namebox ("Pirate")
+	msgbox(format("Some silly landlubber came through and ordered a glass of the Supergrog..\pPicked a fight with one of the patrons, then started going crazy lashing out at anyone nearby!\pHe claimed the grog gave him double vision and couldn't see who he was attacking..\pWe've had to put a stop on other outsiders coming in for the time being."))
+    closemessage
+    hidenamebox
+	release
 	end
 }

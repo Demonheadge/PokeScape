@@ -249,17 +249,17 @@ script EDGEVILLE_GYM_START {
 
 
 script EDGEVILLE_GYM_BATTLE_VANNAKA {
-		trainerbattle_no_intro(TRAINER_ALKHARID_GYM_PRINCE_ALI, msgbox(format("That was a very enjoyable battle!")))
+		call(GYM_BATTLE_VANNAKA)
 		if (var(VAR_RESULT) == B_OUTCOME_LOST) { //If lost gym battle.
 			setvar(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST, 20)
 			end
 		}
 
         namebox("Vannaka")
-        msgbox(format("Have this Badge."))
+        msgbox(format("Here, you deserve this Badge."))
         hidenamebox
         playfanfare(MUS_PS_QUEST_COMPLETE) //MUS_OBTAIN_BADGE MUS_PS_QUEST_COMPLETE
-        msgbox(format("{PLAYER} received the Edgeville BADGE from Vannaka."))
+        msgbox(format("{PLAYER} received the EDGEVILLE BADGE from Vannaka."))
         waitfanfare
         waitmessage
         namebox("Vannaka")
@@ -284,11 +284,12 @@ script EDGEVILLE_GYM_BATTLE_VANNAKA {
         msgbox(format("That move is called Power Gem.\pIt sparkles just as all our precious Gems around the palace do."))
         setvar(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST, 25)
         setflag(FLAG_BADGE07_GET)
+		call(HIDDEN_GROTTO_RESET)
         addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
-        //call(SetGymTrainers_VARROCK)
+        //call(SetGymTrainers_EDGEVILLE)
 
 		msgbox(format("Now that you've bested me you are eligible to take Slayer Tasks from me.\pTalk to me again if you'd like to particpate."))
-		msgbox(format("You should make your way to Daemonheim in the Wilderness for your next badge."))
+		msgbox(format("Also you should make your way to Daemonheim in the Wilderness for your next badge."))
 		closemessage
         hidenamebox
 		questmenu(QUEST_MENU_COMPLETE_QUEST , QUEST_KOUREND_SLAYER)
@@ -342,6 +343,7 @@ script BATTLE_BASILISK_GYM {
     elif (var(VAR_RESULT) == B_OUTCOME_LOST) {
 		setvar(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST, 10)
 		closemessage
+		release
 		end
 	}
     elif (var(VAR_RESULT) == B_OUTCOME_RAN) {
@@ -353,6 +355,7 @@ script BATTLE_BASILISK_GYM {
         msgbox(format("The Basilisk seems to be angry with you."))
         closemessage
 	}
+	release
 	end
 }
 
@@ -367,7 +370,7 @@ script EDGEVILLE_GYM_GIVE_SLAYER_POINTS {
 	waitfanfare
 	closemessage
 	msgbox(format("You should return to Vannaka."))
-
+	closemessage
 	return
 }
 
@@ -425,7 +428,7 @@ script FIND_BRASS_KEY {
 
 script ITEM_EDGEVILLE_INDOOR_1
 {
-    finditem(ITEM_NONE)
+    finditem(ITEM_STAT_BEER)
     end
 }
 script ITEM_EDGEVILLE_INDOOR_2
@@ -438,7 +441,7 @@ script NPC_EDGEVILLE_HOUSE_NPC_1 {
 	lock
 	faceplayer
     //namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+	msgbox(format("Some dude asked me if I wanted his stuff, all I had to do is follow him to the Wilderness.\pI was tempted, but that would require way too much effort..."))
     closemessage
     hidenamebox
 	release
@@ -448,7 +451,7 @@ script NPC_EDGEVILLE_HOUSE_NPC_2 {
 	lock
 	faceplayer
     //namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+	msgbox(format("Why are all of us dudes together in this weird barn?\pI have no idea, I was told there would be Beer..."))
     closemessage
     hidenamebox
 	release
@@ -458,7 +461,7 @@ script NPC_EDGEVILLE_HOUSE_NPC_3 {
 	lock
 	faceplayer
     //namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+	msgbox(format("Living so close to the Wilderness can be scary, especially when you don't train monsters yourself, but I don't mind."))
     closemessage
     hidenamebox
 	release
@@ -468,7 +471,7 @@ script NPC_EDGEVILLE_HOUSE_NPC_4 {
 	lock
 	faceplayer
     //namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+	msgbox(format("How often do you think about the Zarosian Empire?"))
     closemessage
     hidenamebox
 	release
@@ -478,7 +481,7 @@ script NPC_EDGEVILLE_HOUSE_NPC_5 {
 	lock
 	faceplayer
     //namebox ("Cupholder")
-	msgbox(format("Hello, I am a Cupholder."))
+	msgbox(format("Did you know there something are useful things in boxes?\p{PAUSE 15}These meet your Crate expectations!"))
     closemessage
     hidenamebox
 	release
@@ -529,6 +532,126 @@ script NPC_EDGEVILLE_HOUSE_NPC_10 {
 	faceplayer
     //namebox ("Cupholder")
 	msgbox(format("Hello, I am a Cupholder."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script BATTLE_EDGEVILLE_GYM_1
+{
+    trainerbattle_single(TRAINER_EDGEVILLE_GYM_1, format("My current slayer task is Skeletons.\pYou're one of those right?!"),format("Woah, calm down it was a joke."))
+    msgbox(format("I got a task from Vannaka, did you?"))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_EDGEVILLE_GYM_2
+{
+    trainerbattle_single(TRAINER_EDGEVILLE_GYM_2, format("Brrraaaiiinnnsss…"),format("Guh?"))
+    msgbox(format("Heh, sorry I just needed some brains so I can summon more conjures."))
+	hidenamebox
+    release
+	end
+}
+
+
+script BATTLE_EDGEVILLE_GYM_3
+{
+    trainerbattle_single(TRAINER_EDGEVILLE_GYM_3, format("The skeleton stumbles to life ready to slay you!"),format("crumble… crumble…"))
+	hidenamebox
+    msgbox(format("The skeleton seems disapointed to have been slayed by you."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_EDGEVILLE_GYM_4
+{
+    trainerbattle_single(TRAINER_EDGEVILLE_GYM_4, format("The skeleton shudders a loud bone rattling screech."),format("Sreeeee…"))
+	hidenamebox
+    msgbox(format("The skeleton ignores you."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_EDGEVILLE_GYM_5
+{
+    trainerbattle_single(TRAINER_EDGEVILLE_GYM_5, format("Wooosh!"),format("Wooo…sh…"))
+	namebox ("MOSS GIANT")
+    msgbox(format("wooshing sounds"))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_EDGEVILLE_GYM_6
+{
+    trainerbattle_single(TRAINER_EDGEVILLE_GYM_6, format("You attack the skeleton!"),format("Rattle…rattle…"))
+	hidenamebox
+    msgbox(format("The skeleton is upset that you attacked it out of nowhere."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_EDGEVILLE_GYM_7
+{
+    trainerbattle_single(TRAINER_EDGEVILLE_GYM_7, format("LITTLE HUMAN.\nWHAT ARE YOU DOING HERE?!"),format("OW! WHY…"))
+	namebox ("HILL GIANT")
+    msgbox(format("WHY IS LITTLE HUMAN HERE?"))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_EDGEVILLE_GYM_8
+{
+    trainerbattle_single(TRAINER_EDGEVILLE_GYM_8, format("OH! SECOND DINNER!"),format("ARGH REFLUX!"))
+	namebox ("HILL GIANT")
+    msgbox(format("ME WAS HUNGRY. HUMAN NOT GOOD DINNER."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_EDGEVILLE_GYM_9
+{
+    trainerbattle_single(TRAINER_EDGEVILLE_GYM_9, format("OI WHAT ARE YOU DOING IN ME CAVE?!"),format("GET OUT OF ME CAVE…"))
+	namebox ("HILL GIANT")
+    msgbox(format("GET OUT OF ME CAVE…"))
+	hidenamebox
+    release
+	end
+}
+
+script GOBLIN_EDGEVILLE_GYM {
+	lock
+	faceplayer
+    namebox ("Hobgoblin")
+	msgbox(format("Aye human.\pDon't get any bright ideas.\pI'm just minding my own business, you should too."))
     closemessage
     hidenamebox
 	release

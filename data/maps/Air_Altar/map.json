@@ -59,7 +59,7 @@
       "x": 6,
       "y": 12,
       "elevation": 0,
-      "dest_map": "MAP_AIR_ALTAR",
+      "dest_map": "MAP_ROUTE7",
       "dest_warp_id": "0"
     }
   ],

@@ -325,7 +325,7 @@ script NPC_RIMMINGTON_NPC_8{
 script NPC_RIMMINGTON_NPC_9{
     lock
     faceplayer
-    //namebox("CUPHOLDER")
+    namebox("Graceful")
     msgbox(format("You can not always run from your problems.\pRunning near others will make them spot you easier.\pBe careful if you do not want a fight."))
     hidenamebox
     release
@@ -339,7 +339,7 @@ script NPC_RIMMINGTON_NPC_10{
     applymovement(OBJ_EVENT_ID_ED8_Female, RIMMINGTON_ED8_FEMALE)
     waitmovement(0)
     namebox("EDater")
-    msgbox(format("Honey whats your favorite Elite Dungeon?"))
+    msgbox(format("Honey what's your favorite Elite Dungeon?"))
     hidenamebox
     closemessage
     applymovement(OBJ_EVENT_ID_ED8_Male, RIMMINGTON_ED8_MALE)
@@ -517,7 +517,7 @@ script RIMMINGTON_SIGNPOST_HOUSEPORTAL
 
 script RIMMINGTON_SIGNPOST_RIMMINGTON
 {
-	msgbox(format("Rimmington, known for it's famous house parties."))
+	msgbox(format("Rimmington, known for its famous house parties."))
 	closemessage
 	end
 }
@@ -576,7 +576,7 @@ script NPC_RIMMINGTON_FANBOYNOOB_2{
 script NPC_RIMMINGTON_FANBOYNOOB_3{
     faceplayer
     namebox("FAN NOOB")
-    msgbox(format("They say the house of Zezima has a golden statue spewing chocolate we cant eat because we are not maxed."))
+    msgbox(format("They say the house of Zezima has a golden statue spewing chocolate we can't eat because we are not maxed."))
     hidenamebox
     release
     end
@@ -738,7 +738,7 @@ script NPC_RIMMINGTON_DemonAndStan{
                 waitmovement(0)
                 applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
                 namebox("Hyper Stan")
-                msgbox(format("Mickey we dont even qualify as celery…"))
+                msgbox(format("Mickey we don't even qualify as celery…"))
                 waitmovement(0)
                 hidenamebox
                 release

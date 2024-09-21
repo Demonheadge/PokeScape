@@ -184,8 +184,8 @@ NPC_GE_NPC2_Text_0:
 	.string "Merchant$"
 
 NPC_GE_NPC2_Text_1:
-	.string "All the construction works are on a tea\n"
-	.string "break.\p"
+	.string "All the construction workers are on a\n"
+	.string "tea break.\p"
 	.string "I wish they'd hurry up and finish work\n"
 	.string "on the GE.\p"
 	.string "I want to do some more merching.$"

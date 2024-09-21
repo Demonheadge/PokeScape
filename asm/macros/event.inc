@@ -1438,7 +1438,7 @@
 	.macro setwildbattle species:req, level:req, item=ITEM_NONE, species2=SPECIES_NONE, level2=0, item2=ITEM_NONE
 	.byte 0xb6
 	.2byte \species
-	.byte \level
+	.2byte \level
 	.2byte \item
 	.2byte \species2
 	.byte \level2
@@ -2258,3 +2258,14 @@
     .macro checkfollower
     .byte 0xf0
     .endm
+
+	@ Starts a double battle with the player against two trainers
+	@ Takes two trainers and defeat text for each
+	.macro trainerbattle_two_trainers trainer_a:req, lose_text_a:req, trainer_b:req, lose_text_b:req
+	.byte 0x5c
+	.byte TRAINER_BATTLE_TWO_TRAINERS_NO_INTRO
+	.2byte \trainer_a
+	.4byte \lose_text_a
+	.2byte \trainer_b
+	.4byte \lose_text_b
+	.endm

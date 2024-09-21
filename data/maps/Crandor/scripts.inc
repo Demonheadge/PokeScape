@@ -1,23 +1,30 @@
 Crandor_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Crandor_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Crandor_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
 Crandor_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	call CRANDOR_STATE
 	return
 
+Crandor_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_POKESCAPE_STORYMODE_PROGRESS, 135, CRANDOR_CRASHED
+	.2byte 0
+
 
 CRANDOR_STATE::
-	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 150
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 136
 	goto_if_le CRANDOR_STATE_2
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 145
+	goto_if_le CRANDOR_STATE_3
 	setflag FLAG_TEMP_1E
 	setflag FLAG_TEMP_1F
 CRANDOR_STATE_1:
 	compare VAR_HATTENKRAPPER_STATE, 2
-	goto_if_eq CRANDOR_STATE_6
+	goto_if_eq CRANDOR_STATE_8
 	compare VAR_HATTENKRAPPER_STATE, 3
-	goto_if_ge CRANDOR_STATE_7
-CRANDOR_STATE_5:
+	goto_if_ge CRANDOR_STATE_9
+CRANDOR_STATE_7:
 	return
 
 CRANDOR_STATE_2:
@@ -28,14 +35,19 @@ CRANDOR_STATE_2:
 	setflag FLAG_TEMP_1F
 	goto CRANDOR_STATE_1
 
-CRANDOR_STATE_6:
-	setflag FLAG_TEMP_1D
-	goto CRANDOR_STATE_5
+CRANDOR_STATE_3:
+	clearflag FLAG_TEMP_1E
+	setflag FLAG_TEMP_1F
+	goto CRANDOR_STATE_1
 
-CRANDOR_STATE_7:
+CRANDOR_STATE_8:
+	setflag FLAG_TEMP_1D
+	goto CRANDOR_STATE_7
+
+CRANDOR_STATE_9:
 	setflag FLAG_TEMP_1C
 	setflag FLAG_TEMP_1D
-	goto CRANDOR_STATE_5
+	goto CRANDOR_STATE_7
 
 
 CRANDOR_SIGNPOST_STORE::
@@ -44,52 +56,65 @@ CRANDOR_SIGNPOST_STORE::
 	end
 
 
+CRANDOR_CRASHED::
+	lock
+	setrespawn HEAL_LOCATION_CRANDOR
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT
+	waitmovement 0
+	applymovement 11, Movement_InteractFACELEFT
+	waitmovement 0
+	applymovement 11, MOVEMENT_INTERACT_LEFT
+	namebox CRANDOR_CRASHED_Text_0
+	msgbox CRANDOR_CRASHED_Text_1
+	waitmovement 0
+	applymovement 11, Movement_InteractFACEDOWN
+	waitmovement 0
+	msgbox CRANDOR_CRASHED_Text_2
+	applymovement 11, Movement_InteractFACELEFT
+	waitmovement 0
+	msgbox CRANDOR_CRASHED_Text_3
+	closemessage
+	hidenamebox
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 136
+	release
+	end
+
+
 CRANDOR_NED::
 	lock
 	faceplayer
-	namebox CRANDOR_NED_Text_0
-	compare VAR_HATTENKRAPPER_STATE, 0
-	goto_if_eq CRANDOR_NED_2
-	msgbox CRANDOR_NED_Text_3
+	namebox CRANDOR_CRASHED_Text_0
+	msgbox CRANDOR_NED_Text_0
 	hidenamebox
 	multichoicedefault 1, 0, MULTI_BANKOPTIONS, 0, 0
 	switch VAR_RESULT
-	case 0, CRANDOR_NED_6
-	case 1, CRANDOR_NED_7
-	case 2, CRANDOR_NED_8
-	case 3, CRANDOR_NED_9
-CRANDOR_NED_4:
+	case 0, CRANDOR_NED_3
+	case 1, CRANDOR_NED_4
+	case 2, CRANDOR_NED_5
+	case 3, CRANDOR_NED_6
+CRANDOR_NED_1:
 	release
 	end
 
-CRANDOR_NED_2:
-	setrespawn HEAL_LOCATION_CRANDOR
-	msgbox CRANDOR_NED_Text_1
-	msgbox CRANDOR_NED_Text_2
-	closemessage
-	hidenamebox
-	release
-	end
+CRANDOR_NED_3:
+	goto CRANDOR_BANK_HEAL
+	goto CRANDOR_NED_1
+
+CRANDOR_NED_4:
+	goto EventScript_AccessPokemonStorage
+	goto CRANDOR_NED_1
+
+CRANDOR_NED_5:
+	goto EventScript_AccessPlayersPC
+	goto CRANDOR_NED_1
 
 CRANDOR_NED_6:
-	goto CRANDOR_BANK_HEAL
-	goto CRANDOR_NED_4
-
-CRANDOR_NED_7:
-	goto EventScript_AccessPokemonStorage
-	goto CRANDOR_NED_4
-
-CRANDOR_NED_8:
-	goto EventScript_AccessPlayersPC
-	goto CRANDOR_NED_4
-
-CRANDOR_NED_9:
 	goto BANK_ExitBank
-	goto CRANDOR_NED_4
+	goto CRANDOR_NED_1
 
 
 CRANDOR_BANK_ExitBank::
-	msgbox CRANDOR_NED_Text_2
+	msgbox CRANDOR_CRASHED_Text_3
 	closemessage
 	hidenamebox
 	releaseall
@@ -99,11 +124,9 @@ CRANDOR_BANK_ExitBank::
 CRANDOR_BANK_HEAL::
 	msgbox CRANDOR_BANK_HEAL_Text_0
 	closemessage
-	fadescreen FADE_TO_BLACK
 	playfanfare MUS_HEAL
 	waitfanfare
 	special HealPlayerParty
-	fadescreen FADE_FROM_BLACK
 	msgbox CRANDOR_BANK_HEAL_Text_1
 	hidenamebox
 	releaseall
@@ -237,7 +260,9 @@ TRIGGER_ELVARGFLYOVER::
 	delay 32
 	special RemoveCameraObject
 	fadeinbgm 0
-	goto ELVARG_WARP
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 140
+	warp MAP_KARAMJA_VOLCANO_B3F, 1, 0, 0
+	waitstate
 	release
 	end
 
@@ -264,8 +289,8 @@ movement_crandor_camera:
 	step_end
 
 movement_elvargflyover:
+	face_right
 	lock_facing_direction
-	disable_anim
 	walk_diag_northeast
 	walk_diag_northeast
 	walk_diag_northeast
@@ -281,6 +306,7 @@ movement_elvargflyover:
 	walk_diag_northeast
 	walk_diag_northeast
 	walk_diag_northeast
+	unlock_facing_direction
 	step_end
 
 movement_elvargflyover4:
@@ -291,8 +317,8 @@ movement_elvargflyover4:
 	step_end
 
 movement_elvargflyover2:
+	face_right
 	lock_facing_direction
-	disable_anim
 	walk_faster_diag_northeast
 	walk_faster_diag_northeast
 	walk_faster_diag_northeast
@@ -306,11 +332,12 @@ movement_elvargflyover2:
 	walk_faster_diag_northeast
 	walk_faster_diag_northeast
 	walk_faster_diag_northeast
+	unlock_facing_direction
 	step_end
 
 movement_elvargflyover_left:
+	face_left
 	lock_facing_direction
-	disable_anim
 	walk_faster_left
 	walk_faster_left
 	walk_faster_left
@@ -331,9 +358,11 @@ movement_elvargflyover_left:
 	walk_faster_left
 	walk_faster_left
 	walk_faster_left
+	unlock_facing_direction
 	step_end
 
 movement_elvargflyover1:
+	face_left
 	lock_facing_direction
 	delay_16
 	walk_diag_northwest
@@ -543,21 +572,24 @@ ENCOUNTER_HATTENKRAPPER_8:
 CRANDOR_SIGNPOST_STORE_Text_0:
 	.string "Hattenkrapper's Wares.$"
 
-CRANDOR_NED_Text_0:
+CRANDOR_CRASHED_Text_0:
 	.string "Ned$"
 
-CRANDOR_NED_Text_1:
+CRANDOR_CRASHED_Text_1:
+	.string "…{PLAYER}…{PAUSE 32} are you okay?$"
+
+CRANDOR_CRASHED_Text_2:
 	.string "It looks like we're stranded!\p"
 	.string "No wonder no other captains wanted to\n"
 	.string "sail anywhere near Crandor…$"
 
-CRANDOR_NED_Text_2:
+CRANDOR_CRASHED_Text_3:
 	.string "Be careful {PLAYER}, who knows what\n"
 	.string "lies upon this island.\p"
 	.string "Come see me if you need healing or\n"
 	.string "access to your bank system.$"
 
-CRANDOR_NED_Text_3:
+CRANDOR_NED_Text_0:
 	.string "Ahoy {PLAYER}, what can I do for you?$"
 
 CRANDOR_BANK_HEAL_Text_0:

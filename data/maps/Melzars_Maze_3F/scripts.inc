@@ -107,7 +107,7 @@ BATTLE_MELZAR_3F_TRAINER_1_Text_3:
 	.string "the dead.$"
 
 BATTLE_MELZAR_3F_TRAINER_2_Text_0:
-	.string "The skeletons eyes glow red as it\n"
+	.string "The skeleton's eyes glow red as it\n"
 	.string "charges at you menacingly!$"
 
 BATTLE_MELZAR_3F_TRAINER_2_Text_1:
@@ -115,7 +115,7 @@ BATTLE_MELZAR_3F_TRAINER_2_Text_1:
 	.string "fades as it is defeated.$"
 
 BATTLE_MELZAR_3F_TRAINER_2_Text_2:
-	.string "The skeletons eyes have returned to\n"
+	.string "The skeleton's eyes have returned to\n"
 	.string "normal, perhaps something sinister\l"
 	.string "nearby was controlling it earlier?$"
 

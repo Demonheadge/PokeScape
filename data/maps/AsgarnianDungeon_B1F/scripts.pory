@@ -114,8 +114,8 @@ script BATTLE_AsgarnianDungeon_PIRATE_2
 
 script BATTLE_AsgarnianDungeon_PIRATE_3
 {
-    trainerbattle_single(TRAINER_AsgarnianDungeon_PIRATE_3, format("Ye got a lot of cahoonies coming up to face me.\pVery well I shall swab the floor with you, en garde!"),format("Please dont go telling the authorities about our petty squable, aye?"))
-    msgbox(format("Please dont go telling the authorities about our petty squable, aye?"))
+    trainerbattle_single(TRAINER_AsgarnianDungeon_PIRATE_3, format("Ye got a lot of cahoonies coming up to face me.\pVery well I shall swab the floor with you, en garde!"),format("Please don't go telling the authorities about our petty squable, aye?"))
+    msgbox(format("Please don't go telling the authorities about our petty squable, aye?"))
 	hidenamebox
     release
 	end
@@ -161,7 +161,7 @@ script BATTLE_AsgarnianDungeon_QUESTER
 
 script BATTLE_AsgarnianDungeon_PVM_1
 {
-    trainerbattle_single(TRAINER_AsgarnianDungeon_PVM_1, format("Im on an Ice Warrior slayer task, dont bother me noob."),format("Maybe it was overkill.\pAll the Ice Warriors are gone now."))
+    trainerbattle_single(TRAINER_AsgarnianDungeon_PVM_1, format("Im on an Ice Warrior slayer task, don't bother me noob."),format("Maybe it was overkill.\pAll the Ice Warriors are gone now."))
     msgbox(format("Maybe it was overkill.\pAll the Ice Warriors are gone now."))
 	hidenamebox
     release

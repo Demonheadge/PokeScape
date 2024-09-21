@@ -39,16 +39,16 @@
       "direction": "up"
     },
     {
-      "map": "MAP_CRANDOR",
-      "offset": 15,
-      "direction": "left"
+      "map": "MAP_ROUTE10",
+      "offset": 58,
+      "direction": "down"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 36,
-      "y": 6,
+      "x": 42,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -73,8 +73,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ABYSS_PORTAL",
-      "x": 42,
-      "y": 18,
+      "x": 43,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -82,16 +82,16 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ABYSSALRIFT_Route8_ENTER",
-      "flag": "0"
+      "flag": "FLAG_TEMP_1F"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SHEEP",
       "x": 20,
-      "y": 8,
+      "y": 9,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NPC_SHEEP",
@@ -99,7 +99,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
-      "x": 43,
+      "x": 42,
       "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
@@ -112,10 +112,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOODCUTTER",
-      "x": 46,
-      "y": 22,
+      "x": 49,
+      "y": 21,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -151,8 +151,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DND",
-      "x": 44,
-      "y": 10,
+      "x": 46,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
       "movement_range_x": 4,
@@ -190,12 +190,12 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_NOOB",
-      "x": 58,
-      "y": 19,
+      "x": 27,
+      "y": 11,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "BATTLE_ROUTE8_NOOB",
@@ -281,8 +281,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SHEEP",
-      "x": 26,
-      "y": 9,
+      "x": 24,
+      "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
       "movement_range_x": 2,
@@ -295,7 +295,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
       "x": 34,
-      "y": 14,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -307,10 +307,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MINER",
-      "x": 38,
-      "y": 9,
+      "x": 58,
+      "y": 19,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -320,8 +320,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
-      "x": 41,
-      "y": 8,
+      "x": 14,
+      "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -360,7 +360,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_COPPER_ORE",
       "x": 29,
-      "y": 24,
+      "y": 23,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -384,7 +384,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PENGUIN_ROCK",
+      "graphics_id": "OBJ_EVENT_GFX_PENGUIN_BUSH",
       "x": 29,
       "y": 16,
       "elevation": 0,
@@ -398,28 +398,67 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DND",
-      "x": 21,
-      "y": 12,
+      "x": 23,
+      "y": 14,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
       "movement_range_x": 2,
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PENGUIN_EVENT_CANADA_GRRL",
       "flag": "FLAG_TEMP_8"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "x": 43,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_CutTree",
+      "flag": "FLAG_TEMP_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SHEEP",
+      "x": 19,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_DOWN_AND_UP",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_SHEEP",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_COW",
+      "x": 20,
+      "y": 31,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_COW",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 42,
-      "y": 19,
+      "x": 43,
+      "y": 16,
       "elevation": 0,
       "dest_map": "MAP_ABYSSAL_REALM_2",
       "dest_warp_id": "0"
     },
     {
-      "x": 22,
+      "x": 21,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_ROUTE8_MAKEOVER_MAGE",
@@ -444,6 +483,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ROUTE8_SIGNPOST"
+    },
+    {
+      "type": "sign",
+      "x": 23,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
     }
   ]
 }

@@ -17,14 +17,21 @@ script NPC_WILDERNESS_CRATER_START_CHALLENGE
     end
 }
 
-
 script WILDERNESS_CRATER_SIR_TIFFY
 {
     lock
     faceplayer
     namebox("Sir Tiffy")
-    msgbox(format("Hello {PLAYER}. I've heard a lot of good things about you. I am looking forward to this battle! I am number 1 in your challenge."))
+    //Checkflag Defeated. If true:  Talk about seeing them again.
+    //else
+    msgbox(format("Hello {PLAYER}. I've heard a lot of good things about you.\pI am looking forward to this battle!\pI am number 1 in your challenge."))
+    playbgm (MUS_ENCOUNTER_ELITE_FOUR, FALSE)
+    call(ELITE4_BATTLE_SIR_TIFFY_CASHIEN)
+    msgbox(format("You won, go through to the next room."))
+    //setflag Defeated Sir Amik.
+    //set metatiles to open door
     hidenamebox
+    call(WILDERNESS_VOLCANO_ROOM_1_OpenNextRoom)
     release
     end
 }
@@ -34,7 +41,13 @@ script WILDERNESS_CRATER_HAZELMARE
     lock
     faceplayer
     namebox("Hazelmare")
+    //Checkflag Defeated. If true:  Talk about seeing them again.
+    //else
     msgbox(format("you hear thoughts in your mind…\pI am number 3. I can read your every move.")) 
+    call(ELITE4_BATTLE_HAZELMERE)
+    msgbox(format("You won, go through to the next room."))
+    //setflag Defeated HAZELMERE.
+    //set metatiles to open door
     hidenamebox
     release
     end
@@ -45,7 +58,13 @@ script WILDERNESS_CRATER_HANS
     lock
     faceplayer
     namebox("HANS")
+    //Checkflag Defeated. If true:  Talk about seeing them again.
+    //else
     msgbox(format("{PLAYER}! Welcome to Lumbridge!")) 
+    call(ELITE4_BATTLE_HANS)
+    msgbox(format("You won, go through to the next room."))
+    //setflag Defeated HANS.
+    //set metatiles to open door
     hidenamebox
     release
     end
@@ -56,7 +75,13 @@ script WILDERNESS_CRATER_ZANIK
     lock
     faceplayer
     namebox("Zanik")
+    //Checkflag Defeated. If true:  Talk about seeing them again.
+    //else
     msgbox(format("It's good to see you again {PLAYER}! I've been wanting to battle you ever since we battled alongside eachother to take down H.A.M!")) 
+    call(ELITE4_BATTLE_ZANIK)
+    msgbox(format("You won, go through to the next room."))
+    //setflag Defeated ZANIK.
+    //set metatiles to open door
     hidenamebox
     release
     end
@@ -68,7 +93,14 @@ script WILDERNESS_CRATER_WISEOLDMAN
     lock
     faceplayer
     namebox("Wise Old Man")
+    //Checkflag Defeated. If true:  Talk about seeing them again.
+    //else
+    //need to fix text
     msgbox(format("Hello you mysterious person.\pYou must be strong to make it here. Lets do it. If not I'll just take all your party hats.")) 
+    call(ELITE4_BATTLE_SIR_TIFFY_CASHIEN)
+    msgbox(format("You won, YOU ARE THE CHAMPION!"))
+    //setflag Defeated WISE OLD MAN..
+    //set metatiles to open door
     hidenamebox
     release
     end

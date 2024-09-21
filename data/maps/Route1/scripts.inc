@@ -955,7 +955,7 @@ ROUTE1_FarmerFred_Text_1:
 	.string "little secret I've discovered.\p"
 	.string "Male lambs grow up to be rams, and lady\n"
 	.string "lambs grow up to be sheep.\p"
-	.string "Every farmer know that much.\p"
+	.string "Every farmer knows that much.\p"
 	.string "What they don't know is, if you keep\n"
 	.string "training them, they can evolve even\l"
 	.string "further!\p"

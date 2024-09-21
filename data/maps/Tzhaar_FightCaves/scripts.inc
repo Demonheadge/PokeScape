@@ -51,7 +51,7 @@ NPC_TZHAAR_GYM_TOKHAAR_7:
 	goto NPC_TZHAAR_GYM_TOKHAAR_1
 
 NPC_TZHAAR_GYM_TOKHAAR_8:
-	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_13
+	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_12
 	goto NPC_TZHAAR_GYM_TOKHAAR_1
 
 NPC_TZHAAR_GYM_TOKHAAR_9:
@@ -62,16 +62,16 @@ NPC_TZHAAR_GYM_TOKHAAR_9:
 NPC_TZHAAR_GYM_TOKHAAR_11:
 	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_7
 	hidenamebox
-	trainerbattle_no_intro TRAINER_ALKHARID_GYM_PRINCE_ALI, NPC_TZHAAR_GYM_TOKHAAR_Text_8
+	CALL GYM_BATTLE_TZHAAR_CHAMPION
 	namebox NPC_TZHAAR_GYM_TOKHAAR_Text_0
-	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_9
+	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_8
 	hidenamebox
 	playfanfare MUS_PS_QUEST_COMPLETE
-	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_10
+	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_9
 	waitfanfare
 	waitmessage
 	namebox NPC_TZHAAR_GYM_TOKHAAR_Text_0
-	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_11
+	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_10
 	hidenamebox
 	giveitem ITEM_TM48, 1
 	compare VAR_RESULT, FALSE
@@ -79,9 +79,10 @@ NPC_TZHAAR_GYM_TOKHAAR_11:
 	playbgm MUS_PS_ALKHARID, 0
 	savebgm MUS_PS_ALKHARID
 	namebox NPC_TZHAAR_GYM_TOKHAAR_Text_0
-	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_12
+	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_11
 	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 30
 	setflag FLAG_BADGE05_GET
+	call HIDDEN_GROTTO_RESET
 	addvar VAR_GAMEMODE_LEVEL_SCALING, 1
 	goto NPC_TZHAAR_GYM_TOKHAAR_1
 
@@ -185,39 +186,44 @@ NPC_TZHAAR_GYM_LEADER::
 	lock
 	faceplayer
 	namebox NPC_TZHAAR_GYM_LEADER_Text_0
-	switch VAR_POKESCAPE_TZHAAR_GYM_QUEST
-	case 0, NPC_TZHAAR_GYM_LEADER_3
-	case 1, NPC_TZHAAR_GYM_LEADER_4
-	case 10, NPC_TZHAAR_GYM_LEADER_5
+	compare VAR_POKESCAPE_TZHAAR_GYM_QUEST, 0
+	goto_if_eq NPC_TZHAAR_GYM_LEADER_2
 NPC_TZHAAR_GYM_LEADER_1:
+	compare VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1
+	goto_if_eq NPC_TZHAAR_GYM_LEADER_5
+NPC_TZHAAR_GYM_LEADER_4:
+	compare VAR_POKESCAPE_TZHAAR_GYM_QUEST, 10
+	goto_if_eq NPC_TZHAAR_GYM_LEADER_8
+NPC_TZHAAR_GYM_LEADER_7:
 	hidenamebox
 	closemessage
 	release
 	end
 
-NPC_TZHAAR_GYM_LEADER_3:
+NPC_TZHAAR_GYM_LEADER_2:
 	msgbox NPC_TZHAAR_GYM_LEADER_Text_1
 	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1
 	goto NPC_TZHAAR_GYM_LEADER_1
 
-NPC_TZHAAR_GYM_LEADER_4:
+NPC_TZHAAR_GYM_LEADER_5:
 	msgbox NPC_TZHAAR_GYM_LEADER_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne NPC_TZHAAR_GYM_LEADER_6
-	goto NPC_TZHAAR_GYM_LEADER_1
+	goto_if_ne NPC_TZHAAR_GYM_LEADER_10
+	goto NPC_TZHAAR_GYM_LEADER_4
 
-NPC_TZHAAR_GYM_LEADER_5:
+NPC_TZHAAR_GYM_LEADER_8:
 	msgbox NPC_TZHAAR_GYM_LEADER_Text_4
 	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1
-	goto NPC_TZHAAR_GYM_LEADER_1
+	goto NPC_TZHAAR_GYM_LEADER_7
 
-NPC_TZHAAR_GYM_LEADER_6:
+NPC_TZHAAR_GYM_LEADER_10:
 	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_3
 	closemessage
 	hidenamebox
 	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 5
 	msgbox NPC_TZHAAR_GYM_LEADER_Text_3
-	goto NPC_TZHAAR_GYM_LEADER_1
+	call FIGHT_CAVES_START
+	goto NPC_TZHAAR_GYM_LEADER_4
 
 
 NPC_TZHAAR_GYM_TOKHAAR_Text_0:
@@ -264,26 +270,23 @@ NPC_TZHAAR_GYM_TOKHAAR_Text_7:
 	.string "Very well. Show me what you got.$"
 
 NPC_TZHAAR_GYM_TOKHAAR_Text_8:
-	.string "That was a very enjoyable battle!$"
-
-NPC_TZHAAR_GYM_TOKHAAR_Text_9:
 	.string "You have done very well.\p"
 	.string "To mark your triumph, accept a gym\n"
 	.string "badge.$"
 
-NPC_TZHAAR_GYM_TOKHAAR_Text_10:
+NPC_TZHAAR_GYM_TOKHAAR_Text_9:
 	.string "{PLAYER} received the TZHAAR BADGE\n"
 	.string "from TokHaar-Hok.$"
 
-NPC_TZHAAR_GYM_TOKHAAR_Text_11:
+NPC_TZHAAR_GYM_TOKHAAR_Text_10:
 	.string "Also have this Scroll.$"
 
-NPC_TZHAAR_GYM_TOKHAAR_Text_12:
+NPC_TZHAAR_GYM_TOKHAAR_Text_11:
 	.string "That move is called Power Gem.\p"
 	.string "It sparkles just as all our precious\n"
 	.string "Gems around the palace do.$"
 
-NPC_TZHAAR_GYM_TOKHAAR_Text_13:
+NPC_TZHAAR_GYM_TOKHAAR_Text_12:
 	.string "Hello again.$"
 
 NPC_TZHAAR_GYM_WAVE_1_Text_0:
@@ -333,16 +336,15 @@ BATTLE_MOD_SARNIE_Text_3:
 	.string "You could get a Fire Cape like me.$"
 
 NPC_TZHAAR_GYM_LEADER_Text_0:
-	.string "Tzhaar Champion$"
+	.string "Kimit-Kal$"
 
 NPC_TZHAAR_GYM_LEADER_Text_1:
-	.string "Welcome to the Tzhaar Gym, MvM\n"
-	.string "Challenger.\p"
-	.string "I am TzHaar Champion.\p"
+	.string "Welcome to the Mor-Ul-Rek Gym.\n"
+	.string "I am Kimit-Kal.\p"
 	.string "If the Tzhaar Badge is what you seek,\n"
 	.string "then you must participate in our Gym\l"
 	.string "Challenge.\p"
-	.string "Battle your way through 2 Waves of my\n"
+	.string "Battle your way through 5 Waves of my\n"
 	.string "brethren then defeat me in battle.$"
 
 NPC_TZHAAR_GYM_LEADER_Text_2:

@@ -8879,7 +8879,13 @@ static inline u32 CalcMoveBasePower(u32 move, u32 battlerAtk, u32 battlerDef, u3
         basePower += 50 * gBattleStruct->timesGotHit[GetBattlerSide(battlerAtk)][gBattlerPartyIndexes[battlerAtk]];
         basePower = (basePower > 350) ? 350 : basePower;
         break;
+    case EFFECT_DOUBLE_DAMAGE_IF_BURN:
+        if (gBattleMons[battlerDef].status1 & STATUS1_BURN)
+            basePower *= 2;
+        break;
     }
+    
+    
 
     // Move-specific base power changes
     switch (move)
@@ -10191,7 +10197,7 @@ static uq4_12_t GetInverseTypeMultiplier(uq4_12_t multiplier)
 
 uq4_12_t GetTypeModifier(u32 atkType, u32 defType)
 {
-    if ((B_FLAG_INVERSE_BATTLE != 0 && FlagGet(B_FLAG_INVERSE_BATTLE)) || gFieldStatuses & STATUS_FIELD_CHAOTIC_RIFT)
+    if ((B_FLAG_INVERSE_BATTLE != 0 && FlagGet(B_FLAG_INVERSE_BATTLE)) || (gFieldStatuses & STATUS_FIELD_CHAOTIC_RIFT))
         return GetInverseTypeMultiplier(sTypeEffectivenessTable[atkType][defType]);
     return sTypeEffectivenessTable[atkType][defType];
 }

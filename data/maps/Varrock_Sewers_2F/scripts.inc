@@ -89,9 +89,48 @@ ITEM_VARROCK_SEWERS_1::
 	end
 
 
+ITEM_VARROCK_SEWERS_2::
+	finditem ITEM_PURPLE_SWEETS
+	end
+
+
+ITEM_VARROCK_SEWERS_3::
+	finditem ITEM_PURPLE_SWEETS
+	end
+
+
+ITEM_VARROCK_SEWERS_4::
+	finditem ITEM_PURPLE_SWEETS
+	end
+
+
+ITEM_VARROCK_SEWERS_5::
+	finditem ITEM_PURPLE_SWEETS
+	end
+
+
+ITEM_VARROCK_SEWERS_6::
+	finditem ITEM_PURPLE_SWEETS
+	end
+
+
+ITEM_VARROCK_SEWERS_7::
+	finditem ITEM_PURPLE_SWEETS
+	end
+
+
+ITEM_VARROCK_SEWERS_8::
+	finditem ITEM_PURPLE_SWEETS
+	end
+
+
+ITEM_VARROCK_SEWERS_9::
+	finditem ITEM_PURPLE_SWEETS
+	end
+
+
 BATTLE_VARROCK_SEWERS_2F_TRAINER_1::
 	trainerbattle_single TRAINER_VARROCK_SEWERS_2F_TRAINER_1, BATTLE_VARROCK_SEWERS_2F_TRAINER_1_Text_0, BATTLE_VARROCK_SEWERS_2F_TRAINER_1_Text_1
-	namebox BATTLE_VARROCK_SEWERS_2F_TRAINER_1_Text_2
 	msgbox BATTLE_VARROCK_SEWERS_2F_TRAINER_1_Text_1
 	hidenamebox
 	release
@@ -100,7 +139,6 @@ BATTLE_VARROCK_SEWERS_2F_TRAINER_1::
 
 BATTLE_VARROCK_SEWERS_2F_TRAINER_2::
 	trainerbattle_single TRAINER_VARROCK_SEWERS_2F_TRAINER_2, BATTLE_VARROCK_SEWERS_2F_TRAINER_2_Text_0, BATTLE_VARROCK_SEWERS_2F_TRAINER_2_Text_1
-	namebox BATTLE_VARROCK_SEWERS_2F_TRAINER_2_Text_2
 	msgbox BATTLE_VARROCK_SEWERS_2F_TRAINER_2_Text_1
 	hidenamebox
 	release
@@ -109,7 +147,6 @@ BATTLE_VARROCK_SEWERS_2F_TRAINER_2::
 
 BATTLE_VARROCK_SEWERS_2F_TRAINER_3::
 	trainerbattle_single TRAINER_VARROCK_SEWERS_2F_TRAINER_3, BATTLE_VARROCK_SEWERS_2F_TRAINER_2_Text_0, BATTLE_VARROCK_SEWERS_2F_TRAINER_2_Text_1
-	namebox BATTLE_VARROCK_SEWERS_2F_TRAINER_1_Text_2
 	msgbox BATTLE_VARROCK_SEWERS_2F_TRAINER_2_Text_1
 	hidenamebox
 	release
@@ -118,8 +155,7 @@ BATTLE_VARROCK_SEWERS_2F_TRAINER_3::
 
 BATTLE_VARROCK_SEWERS_2F_TRAINER_4::
 	trainerbattle_single TRAINER_VARROCK_SEWERS_2F_TRAINER_4, BATTLE_VARROCK_SEWERS_2F_TRAINER_4_Text_0, BATTLE_VARROCK_SEWERS_2F_TRAINER_4_Text_1
-	namebox BATTLE_VARROCK_SEWERS_2F_TRAINER_4_Text_2
-	msgbox BATTLE_VARROCK_SEWERS_2F_TRAINER_4_Text_3
+	msgbox BATTLE_VARROCK_SEWERS_2F_TRAINER_4_Text_2
 	hidenamebox
 	release
 	end
@@ -127,7 +163,6 @@ BATTLE_VARROCK_SEWERS_2F_TRAINER_4::
 
 BATTLE_VARROCK_SEWERS_2F_TRAINER_5::
 	trainerbattle_single TRAINER_VARROCK_SEWERS_2F_TRAINER_5, BATTLE_VARROCK_SEWERS_2F_TRAINER_5_Text_0, BATTLE_VARROCK_SEWERS_2F_TRAINER_5_Text_1
-	namebox BATTLE_VARROCK_SEWERS_2F_TRAINER_2_Text_2
 	msgbox BATTLE_VARROCK_SEWERS_2F_TRAINER_5_Text_1
 	hidenamebox
 	release
@@ -136,7 +171,6 @@ BATTLE_VARROCK_SEWERS_2F_TRAINER_5::
 
 BATTLE_VARROCK_SEWERS_2F_TRAINER_6::
 	trainerbattle_single TRAINER_VARROCK_SEWERS_2F_TRAINER_6, BATTLE_VARROCK_SEWERS_2F_TRAINER_6_Text_0, BATTLE_VARROCK_SEWERS_2F_TRAINER_6_Text_1
-	namebox BATTLE_VARROCK_SEWERS_2F_TRAINER_6_Text_2
 	msgbox BATTLE_VARROCK_SEWERS_2F_TRAINER_6_Text_1
 	hidenamebox
 	release
@@ -159,9 +193,6 @@ BATTLE_VARROCK_SEWERS_2F_TRAINER_1_Text_1:
 	.string "The skeletal warrior seems content with\n"
 	.string "the battle that unfolded.$"
 
-BATTLE_VARROCK_SEWERS_2F_TRAINER_1_Text_2:
-	.string "SKELETON$"
-
 BATTLE_VARROCK_SEWERS_2F_TRAINER_2_Text_0:
 	.string "This place is great. Undead everywhere\n"
 	.string "for me and only me to use. Now face me!$"
@@ -170,9 +201,6 @@ BATTLE_VARROCK_SEWERS_2F_TRAINER_2_Text_1:
 	.string "One day I will own a nice sewer just like\n"
 	.string "this and it will all be mine and mine\l"
 	.string "alone.$"
-
-BATTLE_VARROCK_SEWERS_2F_TRAINER_2_Text_2:
-	.string "NECROMANCER$"
 
 BATTLE_VARROCK_SEWERS_2F_TRAINER_4_Text_0:
 	.string "Prepare yourself for battle most\n"
@@ -183,9 +211,6 @@ BATTLE_VARROCK_SEWERS_2F_TRAINER_4_Text_1:
 	.string "most humiliating.$"
 
 BATTLE_VARROCK_SEWERS_2F_TRAINER_4_Text_2:
-	.string "WARRIOR$"
-
-BATTLE_VARROCK_SEWERS_2F_TRAINER_4_Text_3:
 	.string "I should have been prepared for defeat\n"
 	.string "most humiliating..$"
 
@@ -207,9 +232,6 @@ BATTLE_VARROCK_SEWERS_2F_TRAINER_6_Text_1:
 	.string "me 200 rats?\p"
 	.string "Maybe this is what I get for skipping\n"
 	.string "tasks for easy Slayer points...$"
-
-BATTLE_VARROCK_SEWERS_2F_TRAINER_6_Text_2:
-	.string "SLAYER$"
 
 VARROCK_SEWERS_2F_MAN_Text_0:
 	.string "Some Knight at the castle paid me a\n"

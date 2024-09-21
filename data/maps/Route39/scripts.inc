@@ -5,7 +5,7 @@ Route39_MapScripts::
 Route39_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 15
 	call PENGUIN_EVENT
-	call WEATHER_CHANGE_ROUTE_RAIN
+	call WEATHER_CHANGE_AREA_MUSAPOINT
 	return
 
 
@@ -125,6 +125,28 @@ BATTLE_ROUTE39_TRAINER_8::
 	end
 
 
+NPC_Route39_1::
+	lock
+	faceplayer
+	namebox NPC_Route39_1_Text_0
+	msgbox NPC_Route39_1_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NPC_Route39_2::
+	lock
+	faceplayer
+	namebox NPC_Route39_1_Text_0
+	msgbox NPC_Route39_2_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 ENCOUNTER_PENGUIN_BARREL_ROUTE39_Text_0:
 	.string "Penguin$"
 
@@ -200,3 +222,26 @@ BATTLE_ROUTE39_TRAINER_8_Text_0:
 BATTLE_ROUTE39_TRAINER_8_Text_1:
 	.string "I had a lot of guts challenging a kid\n"
 	.string "like you it seems.$"
+
+NPC_Route39_1_Text_0:
+	.string "Pirate$"
+
+NPC_Route39_1_Text_1:
+	.string "Yarr, there was a brawl at the Dead\n"
+	.string "Man's Chest.\p"
+	.string "We've had to close off Brimhaven to all\n"
+	.string "outsiders until we've cleaned up the\l"
+	.string "bodi-\p"
+	.string "uh, I mean mess!$"
+
+NPC_Route39_2_Text_0:
+	.string "Some silly landlubber came through and\n"
+	.string "ordered a glass of the Supergrog..\p"
+	.string "Picked a fight with one of the patrons,\n"
+	.string "then started going crazy lashing out at\l"
+	.string "anyone nearby!\p"
+	.string "He claimed the grog gave him double\n"
+	.string "vision and couldn't see who he was\l"
+	.string "attacking..\p"
+	.string "We've had to put a stop on other\n"
+	.string "outsiders coming in for the time being.$"

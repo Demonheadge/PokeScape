@@ -1,10 +1,25 @@
 AlKharid_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, AlKharid_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_LOAD, AlKharid_MapScripts_MAP_SCRIPT_ON_LOAD
 	.byte 0
 
 AlKharid_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setflag FLAG_VISITED_AL_KHARID
 	setvar VAR_EVOLUTION_MAP_STATE, 11
+	return
+
+AlKharid_MapScripts_MAP_SCRIPT_ON_LOAD:
+	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
+	goto_if_eq AlKharid_MapScripts_MAP_SCRIPT_ON_LOAD_1
+	return
+
+AlKharid_MapScripts_MAP_SCRIPT_ON_LOAD_1:
+	call ALKHARID_STATE
+	return
+
+
+ALKHARID_STATE::
+	setmetatile 13, 16, METATILE_AlKharid_OPENED_DOOR, 0
 	return
 
 
@@ -234,6 +249,82 @@ NPC_ALKHARID_GENERALSTORE_2::
 	end
 
 
+BATTLE_TEST_CUPHOLDER::
+	lock
+	faceplayer
+	msgbox BATTLE_TEST_CUPHOLDER_Text_0
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	msgbox BATTLE_TEST_CUPHOLDER_Text_1
+	trainerbattle_no_intro TRAINER_LEADER_DUKE_1, BATTLE_TEST_CUPHOLDER_Text_2
+	msgbox BATTLE_TEST_CUPHOLDER_Text_3
+	end
+
+
+GYM_BATTLE_DUKE_HORACIO::
+	trainerbattle_no_intro TRAINER_LEADER_DUKE_1, GYM_BATTLE_DUKE_HORACIO_Text_0
+	return
+
+
+GYM_BATTLE_SIR_AMIK_VARZE::
+	trainerbattle_no_intro TRAINER_FALADOR_GYM_AMIKVARZE, GYM_BATTLE_SIR_AMIK_VARZE_Text_0
+	return
+
+
+GYM_BATTLE_PRINCE_ALI::
+	trainerbattle_no_intro TRAINER_ALKHARID_GYM_PRINCE_ALI, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+GYM_BATTLE_KING_ROALD::
+	trainerbattle_no_intro TRAINER_VARROCK_GYM_KINGROALD, GYM_BATTLE_KING_ROALD_Text_0
+	return
+
+
+GYM_BATTLE_THOK::
+	trainerbattle_no_intro TRAINER_DAEMONHEIM_GYM_THOK, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+GYM_BATTLE_GUNTHOR::
+	trainerbattle_no_intro TRAINER_BARBARIAN_GYM_GUNTHOR, GYM_BATTLE_GUNTHOR_Text_0
+	return
+
+
+GYM_BATTLE_VANNAKA::
+	trainerbattle_no_intro TRAINER_GYM_LEADER_VANNAKA_1, GYM_BATTLE_VANNAKA_Text_0
+	return
+
+
+GYM_BATTLE_TZHAAR_CHAMPION::
+	trainerbattle_no_intro TRAINER_GYM_LEADER_TZHAAR_CHAMPION_1, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+ELITE4_BATTLE_ZANIK::
+	trainerbattle_no_intro TRAINER_ELITE4_ZANIK_1, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+ELITE4_BATTLE_HANS::
+	trainerbattle_no_intro TRAINER_ELITE4_HANS_1, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+ELITE4_BATTLE_HAZELMERE::
+	trainerbattle_no_intro TRAINER_ELITE4_HAZELMERE_1, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+ELITE4_BATTLE_SIR_TIFFY_CASHIEN::
+	trainerbattle_no_intro TRAINER_ELITE4_SIR_TIFFY_1, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
+CHAMPION_BATTLE_WISE_OLD_MAN::
+	trainerbattle_no_intro TRAINER_CHAMPION_WISE_OLD_MAN_1, BATTLE_TEST_CUPHOLDER_Text_2
+	return
+
+
 ALKHARID_GNOMEGLIDER_Text_0:
 	.string "It is a Gnome Glider.$"
 
@@ -365,3 +456,35 @@ NPC_ALKHARID_GENERALSTORE_2_Text_0:
 	.string "stronger monsters in the desert.\p"
 	.string "I'd suggest you be careful and run away\n"
 	.string "if you see a Strykewyrm.$"
+
+BATTLE_TEST_CUPHOLDER_Text_0:
+	.string "Hello I am Cupholder.$"
+
+BATTLE_TEST_CUPHOLDER_Text_1:
+	.string "Let's battle!$"
+
+BATTLE_TEST_CUPHOLDER_Text_2:
+	.string "I lost.$"
+
+BATTLE_TEST_CUPHOLDER_Text_3:
+	.string "You win…$"
+
+GYM_BATTLE_DUKE_HORACIO_Text_0:
+	.string "You beat me…\p"
+	.string "…Congratulations!$"
+
+GYM_BATTLE_SIR_AMIK_VARZE_Text_0:
+	.string "Count me impressed, have you\n"
+	.string "considered joining the White Knights?$"
+
+GYM_BATTLE_KING_ROALD_Text_0:
+	.string "That was a very enjoyable battle!$"
+
+GYM_BATTLE_GUNTHOR_Text_0:
+	.string "ARAGGHHHARH!\p"
+	.string "Battles like this is what I live for and\n"
+	.string "why I decided to become a Gym Leader!$"
+
+GYM_BATTLE_VANNAKA_Text_0:
+	.string "Haha, congratulations! You have\n"
+	.string "completed your slayer task.$"

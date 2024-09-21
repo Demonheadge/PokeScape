@@ -441,7 +441,6 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Strykewyrm_
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Strykewyrm_Leafy;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Unicorn_White;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Unicorn_Black;
-
 //GYMLEADERS
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GymLeader_Duke_Horacio;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GymLeader_Sir_Amik_Varze;
@@ -547,6 +546,32 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_hanannie;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_vorkath;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_behemoth;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Elvarg_Fly;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_balance_elemental;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_dungeoneer_1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_eddimu;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_gorajo_1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_gorajo_2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_forgotten_mage;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_forgotten_ranger;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_guard_ardy;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_knight_ardy;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_monkey;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_penguin;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_penguin_barrel;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_penguin_box;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_penguin_bush;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_penguin_cactus;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_penguin_toadstool;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_romeo;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_swampletics;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_lesser_demon;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_delrith;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_pirate_ship;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_tzhaar_champion;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_tz_kih;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_har_aken;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_har_aken_tentacle;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ket_dill;
 
 //ORES
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CopperOre;
@@ -1105,6 +1130,32 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_VORKATH] =                       &gObjectEventGraphicsInfo_vorkath,
     [OBJ_EVENT_GFX_BEHEMOTH] =                      &gObjectEventGraphicsInfo_behemoth,
     [OBJ_EVENT_GFX_ELVARG_FLY] =                    &gObjectEventGraphicsInfo_Elvarg_Fly,
+    [OBJ_EVENT_GFX_BALANCE_ELEMENTAL] =             &gObjectEventGraphicsInfo_balance_elemental,
+    [OBJ_EVENT_GFX_DUNGEONEER_1] =                  &gObjectEventGraphicsInfo_dungeoneer_1,
+    [OBJ_EVENT_GFX_EDDIMU] =                        &gObjectEventGraphicsInfo_eddimu,
+    [OBJ_EVENT_GFX_GORAJO_1] =                      &gObjectEventGraphicsInfo_gorajo_1,
+    [OBJ_EVENT_GFX_GORAJO_2] =                      &gObjectEventGraphicsInfo_gorajo_2,
+    [OBJ_EVENT_GFX_FORGOTTEN_MAGE] =                &gObjectEventGraphicsInfo_forgotten_mage,
+    [OBJ_EVENT_GFX_FORGOTTEN_RANGER] =              &gObjectEventGraphicsInfo_forgotten_ranger,
+    [OBJ_EVENT_GFX_GUARD_ARDY] =                    &gObjectEventGraphicsInfo_guard_ardy,
+    [OBJ_EVENT_GFX_KNIGHT_ARDY] =                   &gObjectEventGraphicsInfo_knight_ardy,
+    [OBJ_EVENT_GFX_MONKEY] =                        &gObjectEventGraphicsInfo_monkey,
+    [OBJ_EVENT_GFX_PENGUIN] =                       &gObjectEventGraphicsInfo_penguin,
+    [OBJ_EVENT_GFX_PENGUIN_BARREL] =                &gObjectEventGraphicsInfo_penguin_barrel,
+    [OBJ_EVENT_GFX_PENGUIN_BOX] =                   &gObjectEventGraphicsInfo_penguin_box,
+    [OBJ_EVENT_GFX_PENGUIN_BUSH] =                  &gObjectEventGraphicsInfo_penguin_bush,
+    [OBJ_EVENT_GFX_PENGUIN_CACTUS] =                &gObjectEventGraphicsInfo_penguin_cactus,
+    [OBJ_EVENT_GFX_PENGUIN_TOADSTOOL] =             &gObjectEventGraphicsInfo_penguin_toadstool,
+    [OBJ_EVENT_GFX_ROMEO] =                         &gObjectEventGraphicsInfo_romeo,
+    [OBJ_EVENT_GFX_SWAMPLETICS] =                   &gObjectEventGraphicsInfo_swampletics,
+    [OBJ_EVENT_GFX_LESSER_DEMON] =                  &gObjectEventGraphicsInfo_lesser_demon,
+    [OBJ_EVENT_GFX_DELRITH] =                       &gObjectEventGraphicsInfo_delrith,
+    [OBJ_EVENT_GFX_PIRATE_SHIP] =                   &gObjectEventGraphicsInfo_pirate_ship,
+    [OBJ_EVENT_GFX_TZHAAR_CHAMPION] =               &gObjectEventGraphicsInfo_tzhaar_champion,
+    [OBJ_EVENT_GFX_TZ_KIH] =                        &gObjectEventGraphicsInfo_tz_kih,
+    [OBJ_EVENT_GFX_HAR_AKEN] =                      &gObjectEventGraphicsInfo_har_aken,
+    [OBJ_EVENT_GFX_HAR_AKEN_TENTACLE] =             &gObjectEventGraphicsInfo_har_aken_tentacle,
+    [OBJ_EVENT_GFX_KET_DILL] =                      &gObjectEventGraphicsInfo_ket_dill,
 
 //ORES 
 	[OBJ_EVENT_GFX_COPPER_ORE] =          		    &gObjectEventGraphicsInfo_CopperOre,

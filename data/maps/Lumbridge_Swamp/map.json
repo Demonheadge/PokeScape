@@ -22,6 +22,11 @@
       "map": "MAP_ROUTE2",
       "offset": -14,
       "direction": "left"
+    },
+    {
+      "map": "MAP_WIZARDS_TOWER",
+      "offset": 30,
+      "direction": "left"
     }
   ],
   "object_events": [
@@ -269,6 +274,13 @@
       "elevation": 0,
       "dest_map": "MAP_LUMBRIDGE_SWAMP_HOUSE_FATHER_URHNEY",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_WATER_ALTAR",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

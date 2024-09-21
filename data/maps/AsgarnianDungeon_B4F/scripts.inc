@@ -63,6 +63,14 @@ movement_wom_asgDung_0:
 	delay_16
 	step_end
 
+STRANGE_MURAL_FROST::
+	lock
+	msgbox STRANGE_MURAL_FROST_Text_0
+	closemessage
+	release
+	end
+
+
 TRIGGER_WISEOLDMAN_RIVAL_2_Text_0:
 	.string "Wise Old Man$"
 
@@ -89,3 +97,7 @@ TRIGGER_WISEOLDMAN_RIVAL_2_Text_3:
 	.string "learn a thing or two from that place.\p"
 	.string "I hope to see you again in the future,\n"
 	.string "it has been fun.$"
+
+STRANGE_MURAL_FROST_Text_0:
+	.string "It appears to be a mural, but it is too\n"
+	.string "damaged to decipher.$"

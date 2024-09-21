@@ -853,7 +853,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     // Pokescape
     [MOVE_CHAOTIC_RIFT] = _("Chaotic Rift"),
     [MOVE_SARADOMIN_STRIKE] = _("Sara Strike"),
-    [MOVE_SWORD_STRIKE] = _("Slice"),
+    [MOVE_SWORD_STRIKE] = _("Sword Strike"),
     [MOVE_SLICE_DICE] = _("Slice & Dice"),
     [MOVE_ZAMORAK_FLAMES] = _("Zammy Flame"),
     [MOVE_GUTHIX_CLAWS] = _("Guthix Claws"),
@@ -871,6 +871,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_ZAROS_BECKON] = _("Zaros Beckon"),
     [MOVE_SEREN_SHINE]= _("Seren Shine"),
     [MOVE_GODLESS_REBEL] = _("Godless Rebel"),
+    [MOVE_TZ_TOK_ZEK] = _("Tz-Tok-Zek"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("Max Guard"),
     [MOVE_MAX_STRIKE] = _("Max Strike"),
@@ -1781,7 +1782,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     //pokescape
     [MOVE_CHAOTIC_RIFT] = _("Chaotic Rift"),
     [MOVE_SARADOMIN_STRIKE] = _("Sara Strike"),
-    [MOVE_SWORD_STRIKE] = _("Slice"),
+    [MOVE_SWORD_STRIKE] = _("Strike"),
     [MOVE_SLICE_DICE] = _("Slice&Dice"),
     [MOVE_ZAMORAK_FLAMES] = _("Zammy Flame"),
     [MOVE_GUTHIX_CLAWS] = _("Guthix Claws"),
@@ -1799,6 +1800,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_ZAROS_BECKON] = _("Zaros Beckon"),
     [MOVE_SEREN_SHINE]= _("Seren Shine"),
     [MOVE_GODLESS_REBEL] = _("Godlss Rebel"),
+    [MOVE_TZ_TOK_ZEK] = _("Tz-Tok-Zek"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("M-Guard"),
     [MOVE_MAX_STRIKE] = _("M-Strike"),

@@ -482,11 +482,11 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_PIRATE_1 0x1146
 #define OBJ_EVENT_PAL_PIRATE_2 0x1147
 #define OBJ_EVENT_PAL_PIRATE_3 0x1148
-#define OBJ_EVENT_PAL_TZHAAR_GA_AL 0x114D
-#define OBJ_EVENT_PAL_TZHAAR_1 0x114E
-#define OBJ_EVENT_PAL_TZHAAR_2 0x114F
-#define OBJ_EVENT_PAL_TZHAAR_3 0x1150
-#define OBJ_EVENT_PAL_TZHAAR_4 0x1151
+//#define OBJ_EVENT_PAL_TZHAAR_GA_AL 0x114D
+//#define OBJ_EVENT_PAL_TZHAAR_1 0x114E
+//#define OBJ_EVENT_PAL_TZHAAR_2 0x114F
+//#define OBJ_EVENT_PAL_TZHAAR_3 0x1150
+//#define OBJ_EVENT_PAL_TZHAAR_4 0x1151
 #define OBJ_EVENT_PAL_WIZARD_DARK 0x1152
 #define OBJ_EVENT_PAL_WIZARD_M 0x1155
 #define OBJ_EVENT_PAL_WIZARD_F 0x1156
@@ -537,16 +537,16 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_NOOB 0x1183
 #define OBJ_EVENT_PAL_QUESTER 0x1184
 #define OBJ_EVENT_PAL_JMOD 0x1185
-#define OBJ_EVENT_PAL_DND 0x1186
-#define OBJ_EVENT_PAL_BOT_DRAGON 0x1187
-#define OBJ_EVENT_PAL_MUGGER 0x1188
+//#define OBJ_EVENT_PAL_DND 0x1186
+//define OBJ_EVENT_PAL_BOT_DRAGON 0x1187
+//#define OBJ_EVENT_PAL_MUGGER 0x1188
 #define OBJ_EVENT_PAL_THIEF 0x1189
 #define OBJ_EVENT_PAL_BARMAID 0x118A
 #define OBJ_EVENT_PAL_PKER 0x118B
 #define OBJ_EVENT_PAL_PVMER 0x118C
 #define OBJ_EVENT_PAL_SKILLER 0x118D
 #define OBJ_EVENT_PAL_RSMVER_M 0x118E
-#define OBJ_EVENT_PAL_RSMVER_F 0x118F
+//#define OBJ_EVENT_PAL_RSMVER_F 0x118F
 #define OBJ_EVENT_PAL_SAILOR 0x1190
 #define OBJ_EVENT_PAL_RANGER_F 0x1191
 //PLAYERS
@@ -559,7 +559,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_HANS 0x1197
 #define OBJ_EVENT_PAL_HAIRDRESSER 0x1198
 #define OBJ_EVENT_PAL_COOK 0x1199
-#define OBJ_EVENT_PAL_COUNT_DRAYNOR 0x119A
+//#define OBJ_EVENT_PAL_COUNT_DRAYNOR 0x119A
 #define OBJ_EVENT_PAL_BARAEK 0x119C
 #define OBJ_EVENT_PAL_DIANGO 0x119D
 #define OBJ_EVENT_PAL_HAIG_HALEN 0x119E
@@ -568,7 +568,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_STRAVEN 0x1201
 #define OBJ_EVENT_PAL_EXPLORER_JACK 0x1202
 #define OBJ_EVENT_PAL_FORTUNATO 0x1203
-#define OBJ_EVENT_PAL_AVA 0x1207
+//#define OBJ_EVENT_PAL_AVA 0x1207
 #define OBJ_EVENT_PAL_RELDO 0x1208
 #define OBJ_EVENT_PAL_MAX 0x1209
 #define OBJ_EVENT_PAL_SIR_OWEN 0x120A
@@ -599,13 +599,13 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_PIGLET            0x1224
 #define OBJ_EVENT_PAL_PIGZILLA          0x1225
 #define OBJ_EVENT_PAL_YAK               0x1226
-#define OBJ_EVENT_PAL_PENGUIN_ROCK      0x1227
+#define OBJ_EVENT_PAL_PENGUINS          0x1227
 #define OBJ_EVENT_PAL_QUEEN_BLACK_DRAGON 0x1228
 #define OBJ_EVENT_PAL_KING_BLACK_DRAGON 0x122A
 #define OBJ_EVENT_PAL_RAT               0x122B
 #define OBJ_EVENT_PAL_RUNE_GUARDIAN     0x122C
 #define OBJ_EVENT_PAL_SHEEP             0x122D
-#define OBJ_EVENT_PAL_SARAOWL         0x122F
+#define OBJ_EVENT_PAL_SARAOWL           0x122F
 #define OBJ_EVENT_PAL_GUTHRAPTOR        0x1230
 #define OBJ_EVENT_PAL_TERRORBIRDS       0x1233
 #define OBJ_EVENT_PAL_PKER_RUSHER       0x1234
@@ -632,7 +632,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_GYMLEADER_WISE_OLD_MAN 0x1247
 #define OBJ_EVENT_PAL_GYMLEADER_VANNAKA 0x1248
 //CHAMPIONS
-#define OBJ_EVENT_PAL_BOATY             0x1249
+//#define OBJ_EVENT_PAL_BOATY             0x1249
 #define OBJ_EVENT_PAL_SUOMI             0x124A
 #define OBJ_EVENT_PAL_ZEZIMA            0x124B
 //OTHER
@@ -651,7 +651,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_STRYKEWYRM_LEAFY  0x1259
 #define OBJ_EVENT_PAL_GhostDisguise     0x125A
 #define OBJ_EVENT_PAL_ARCHAEOLOGIST		0x1263
-#define OBJ_EVENT_PAL_DIVINER			0x1264
+//#define OBJ_EVENT_PAL_DIVINER			0x1264
 #define OBJ_EVENT_PAL_DURIAL321			0x1265
 
 //SHARED PALETTES
@@ -669,7 +669,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_BARROWS			0x1269
 
 #define OBJ_EVENT_PAL_SMUGGLER			0x126A
-//RAC
+
 #define OBJ_EVENT_PAL_RAC_PALETTE_1		0x126B
 #define OBJ_EVENT_PAL_RAC_PALETTE_2		0x126C
 #define OBJ_EVENT_PAL_RAC_PALETTE_3		0x126D
@@ -683,6 +683,11 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_DUNGEONEERING     0x1275
 #define OBJ_EVENT_PAL_VORKATH           0x1276
 #define OBJ_EVENT_PAL_GOBLIN_GREEN		0x1277
+#define OBJ_EVENT_PAL_AVA_THOK          0x1207
+#define OBJ_EVENT_PAL_ZombieDisguise    0x1278
+#define OBJ_EVENT_PAL_RED_DRAGON        0x1187
+#define OBJ_EVENT_PAL_PIRATE_SHIP       0x1249
+#define OBJ_EVENT_PAL_TZHAAR            0x114E
 
 
 
@@ -783,11 +788,11 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Barbarian_Male_1, OBJ_EVENT_PAL_BARBARIAN_MALE_1},
     {gObjectEventPalette_Barbarian_Male_2, OBJ_EVENT_PAL_BARBARIAN_MALE_2},
     */
-    {gObjectEventPalette_Tzhaar_Ga_al, OBJ_EVENT_PAL_TZHAAR_GA_AL},
-    {gObjectEventPalette_Tzhaar_1, OBJ_EVENT_PAL_TZHAAR_1},
-    {gObjectEventPalette_Tzhaar_2, OBJ_EVENT_PAL_TZHAAR_2},
-    {gObjectEventPalette_Tzhaar_3, OBJ_EVENT_PAL_TZHAAR_3},
-    {gObjectEventPalette_Tzhaar_4, OBJ_EVENT_PAL_TZHAAR_4},
+    //{gObjectEventPalette_Tzhaar_Ga_al, OBJ_EVENT_PAL_TZHAAR_GA_AL},
+    //{gObjectEventPalette_Tzhaar_1, OBJ_EVENT_PAL_TZHAAR_1},
+    //{gObjectEventPalette_Tzhaar_2, OBJ_EVENT_PAL_TZHAAR_2},
+    //{gObjectEventPalette_Tzhaar_3, OBJ_EVENT_PAL_TZHAAR_3},
+    //{gObjectEventPalette_Tzhaar_4, OBJ_EVENT_PAL_TZHAAR_4},
     {gObjectEventPalette_Wizard_Dark, OBJ_EVENT_PAL_WIZARD_DARK},
     //{gObjectEventPalette_Wizard_Guthix, OBJ_EVENT_PAL_WIZARD_GUTHIX},
     //{gObjectEventPalette_Wizard_Guthix_Dagger, OBJ_EVENT_PAL_WIZARD_GUTHIX_DAGGER},
@@ -841,16 +846,16 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Noob, OBJ_EVENT_PAL_NOOB},
     {gObjectEventPalette_Quester, OBJ_EVENT_PAL_QUESTER},
     {gObjectEventPalette_Jmod, OBJ_EVENT_PAL_JMOD},
-    {gObjectEventPalette_DnD, OBJ_EVENT_PAL_DND},
-    {gObjectEventPalette_Bot_Dragon, OBJ_EVENT_PAL_BOT_DRAGON},
-    {gObjectEventPalette_Mugger, OBJ_EVENT_PAL_MUGGER},
+    //{gObjectEventPalette_DnD, OBJ_EVENT_PAL_DND},
+    //{gObjectEventPalette_Bot_Dragon, OBJ_EVENT_PAL_BOT_DRAGON},
+    //{gObjectEventPalette_Mugger, OBJ_EVENT_PAL_MUGGER},
     {gObjectEventPalette_Thief, OBJ_EVENT_PAL_THIEF},
     {gObjectEventPalette_BarMaid, OBJ_EVENT_PAL_BARMAID},
     {gObjectEventPalette_Pker, OBJ_EVENT_PAL_PKER},
     {gObjectEventPalette_Pvmer, OBJ_EVENT_PAL_PVMER},
     {gObjectEventPalette_Skiller, OBJ_EVENT_PAL_SKILLER},
     {gObjectEventPalette_RSMVer_M, OBJ_EVENT_PAL_RSMVER_M},
-    {gObjectEventPalette_RSMVer_F, OBJ_EVENT_PAL_RSMVER_F},
+    //{gObjectEventPalette_RSMVer_F, OBJ_EVENT_PAL_RSMVER_F},
     {gObjectEventPalette_Sailor, OBJ_EVENT_PAL_SAILOR},
     {gObjectEventPalette_Ranger_F, OBJ_EVENT_PAL_RANGER_F},
 //PLAYERS
@@ -863,7 +868,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Hans, OBJ_EVENT_PAL_HANS},
     {gObjectEventPalette_Hairdresser, OBJ_EVENT_PAL_HAIRDRESSER},
     {gObjectEventPalette_Cook, OBJ_EVENT_PAL_COOK},
-    {gObjectEventPalette_Count_Draynor, OBJ_EVENT_PAL_COUNT_DRAYNOR},
+    //{gObjectEventPalette_Count_Draynor, OBJ_EVENT_PAL_COUNT_DRAYNOR},
     //{gObjectEventPalette_Gnome_Child, OBJ_EVENT_PAL_GNOME_CHILD},
     {gObjectEventPalette_Baraek, OBJ_EVENT_PAL_BARAEK},
     {gObjectEventPalette_Diango, OBJ_EVENT_PAL_DIANGO},
@@ -878,7 +883,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Zamorak, OBJ_EVENT_PAL_ZAMORAK},
     {gObjectEventPalette_Guthix, OBJ_EVENT_PAL_GUTHIX},
     */
-    {gObjectEventPalette_Ava, OBJ_EVENT_PAL_AVA},
+    //{gObjectEventPalette_Ava, OBJ_EVENT_PAL_AVA},
     {gObjectEventPalette_Reldo, OBJ_EVENT_PAL_RELDO},
     {gObjectEventPalette_Max, OBJ_EVENT_PAL_MAX},
     {gObjectEventPalette_Sir_Owen, OBJ_EVENT_PAL_SIR_OWEN},
@@ -912,7 +917,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Piglet, OBJ_EVENT_PAL_PIGLET},
     {gObjectEventPalette_Pigzilla, OBJ_EVENT_PAL_PIGZILLA},
     {gObjectEventPalette_Yak, OBJ_EVENT_PAL_YAK},
-    {gObjectEventPalette_Penguin_Rock, OBJ_EVENT_PAL_PENGUIN_ROCK},
+    //{gObjectEventPalette_Penguin_Rock, OBJ_EVENT_PAL_PENGUIN_ROCK},
     {gObjectEventPalette_Queen_Black_Dragon, OBJ_EVENT_PAL_QUEEN_BLACK_DRAGON},
     //{gObjectEventPalette_Elvarg, OBJ_EVENT_PAL_ELVARG},
     {gObjectEventPalette_King_Black_Dragon, OBJ_EVENT_PAL_KING_BLACK_DRAGON},
@@ -952,7 +957,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_GymLeader_Wise_Old_Man, OBJ_EVENT_PAL_GYMLEADER_WISE_OLD_MAN},
     {gObjectEventPalette_GymLeader_Vannaka, OBJ_EVENT_PAL_GYMLEADER_VANNAKA},
 //CHAMPIONS
-    {gObjectEventPalette_Boaty, OBJ_EVENT_PAL_BOATY},
+    //{gObjectEventPalette_Boaty, OBJ_EVENT_PAL_BOATY},
     {gObjectEventPalette_Suomi, OBJ_EVENT_PAL_SUOMI},
     {gObjectEventPalette_Zezima, OBJ_EVENT_PAL_ZEZIMA},	
 
@@ -974,7 +979,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Cat_BrownWhite, OBJ_EVENT_PAL_CAT_BROWNWHITE},
     {gObjectEventPalette_Cat_Purple, OBJ_EVENT_PAL_CAT_PURPLE},*/
     {gObjectEventPalette_Archaeologist, OBJ_EVENT_PAL_ARCHAEOLOGIST},
-    {gObjectEventPalette_Diviner, OBJ_EVENT_PAL_DIVINER},
+    //{gObjectEventPalette_Diviner, OBJ_EVENT_PAL_DIVINER},
     {gObjectEventPalette_Durial321, OBJ_EVENT_PAL_DURIAL321},/*
     {gObjectEventPalette_Saradomin_Owl, OBJ_EVENT_PAL_SARADOMIN_OWL},
     {gObjectEventPalette_Zamorak_Hawk, OBJ_EVENT_PAL_ZAMORAK_HAWK},
@@ -990,7 +995,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
 	{gObjectEventPalette_OrePal2, OBJ_EVENT_PAL_ORE_PAL2},
 	{gObjectEventPalette_CabbageCrop, OBJ_EVENT_PAL_CABBAGE_CROP},
     {gObjectEventPalette_Protaganist, OBJ_EVENT_PAL_PROTAGANIST},
-    {gObjectEventPalette_GhostDisguise, OBJ_EVENT_PAL_GhostDisguise},	
+    {gObjectEventPalette_GhostDisguise, OBJ_EVENT_PAL_GhostDisguise},
+    {gObjectEventPalette_ZombieDisguise, OBJ_EVENT_PAL_ZombieDisguise},	
 
 
     {gObjectEventPalette_SKELETAL, OBJ_EVENT_PAL_SKELETAL},
@@ -1027,6 +1033,13 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_DUNGEONEERING, OBJ_EVENT_PAL_DUNGEONEERING},
     {gObjectEventPalette_VORKATH, OBJ_EVENT_PAL_VORKATH},
     {gObjectEventPalette_LEGEND_GREEN, OBJ_EVENT_PAL_LEGEND_GREEN},
+    {gObjectEventPalette_PENGUINS, OBJ_EVENT_PAL_PENGUINS},
+    {gObjectEventPalette_AVA_THOK, OBJ_EVENT_PAL_AVA_THOK},
+    {gObjectEventPalette_RED_DRAGON, OBJ_EVENT_PAL_RED_DRAGON},
+    {gObjectEventPalette_PIRATE_SHIP, OBJ_EVENT_PAL_PIRATE_SHIP},
+    {gObjectEventPalette_TZHAAR, OBJ_EVENT_PAL_TZHAAR},
+    
+    
     
     /*
     {gObjectEventPalette_RAC_BATS, OBJ_EVENT_PAL_RAC_BATS},

@@ -2,16 +2,23 @@ mapscripts Crandor_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         call(CRANDOR_STATE)
     }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_POKESCAPE_STORYMODE_PROGRESS, 135: CRANDOR_CRASHED
+    ]
 }
 
 
 
 
 script CRANDOR_STATE {
-    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 150) { 
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 136) { 
         setvar(VAR_TEMP_0, 1)
         setvar(VAR_TEMP_1, 1)
         setvar(VAR_TEMP_2, 1)
+        clearflag(FLAG_TEMP_1E) //ham
+        setflag(FLAG_TEMP_1F) //elvarg
+    }
+    elif (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 145) {
         clearflag(FLAG_TEMP_1E) //ham
         setflag(FLAG_TEMP_1F) //elvarg
     }
@@ -19,8 +26,6 @@ script CRANDOR_STATE {
         setflag(FLAG_TEMP_1E) //ham
         setflag(FLAG_TEMP_1F) //elvarg
     }
-
-
     if (var(VAR_HATTENKRAPPER_STATE) == 2) { 
         setflag(FLAG_TEMP_1D)
     }
@@ -43,7 +48,30 @@ script CRANDOR_SIGNPOST_STORE
 
 
 
-
+script CRANDOR_CRASHED
+{
+    lock
+    setrespawn(HEAL_LOCATION_CRANDOR)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+    waitmovement(0)
+    applymovement(11, Movement_InteractFACELEFT)
+    waitmovement(0)
+    applymovement(11, MOVEMENT_INTERACT_LEFT)
+    namebox ("Ned")
+    msgbox(format("…{PLAYER}…{PAUSE 32} are you okay?"))
+    waitmovement(0)
+    applymovement(11, Movement_InteractFACEDOWN)
+    waitmovement(0)
+    msgbox(format("It looks like we're stranded!\pNo wonder no other captains wanted to sail anywhere near Crandor…"))
+    applymovement(11, Movement_InteractFACELEFT)
+    waitmovement(0)
+    msgbox(format("Be careful {PLAYER}, who knows what lies upon this island.\pCome see me if you need healing or access to your bank system."))
+    closemessage
+    hidenamebox
+    setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 136)
+    release
+    end
+}
 
 
 
@@ -54,17 +82,6 @@ script CRANDOR_NED
     lock
     faceplayer
     namebox ("Ned")
-    if (var(VAR_HATTENKRAPPER_STATE) == 0) { 
-        setrespawn(HEAL_LOCATION_CRANDOR)
-        msgbox(format("It looks like we're stranded!\pNo wonder no other captains wanted to sail anywhere near Crandor…"))
-        msgbox(format("Be careful {PLAYER}, who knows what lies upon this island.\pCome see me if you need healing or access to your bank system."))
-        closemessage
-        hidenamebox
-        release
-        end
-    }
-
-
     msgbox(format("Ahoy {PLAYER}, what can I do for you?"))
     hidenamebox
     multichoicedefault (1, 0, MULTI_BANKOPTIONS, 0, 0)
@@ -103,11 +120,11 @@ script CRANDOR_BANK_ExitBank
 script CRANDOR_BANK_HEAL {
     msgbox(format("Sure thing, I will take your MONSTERS for a minute."))
     closemessage
-    fadescreen(FADE_TO_BLACK)
+    //fadescreen(FADE_TO_BLACK) //Fadescreen screws with weather: lightning if flashed at the same time.
     playfanfare (MUS_HEAL)
 	waitfanfare
 	special (HealPlayerParty)
-    fadescreen(FADE_FROM_BLACK)
+    //fadescreen(FADE_FROM_BLACK)
     msgbox(format("Your MONSTERS are all healed!\pGood luck out there {PLAYER}."))
     hidenamebox
 	releaseall
@@ -289,7 +306,9 @@ script TRIGGER_ELVARGFLYOVER
     special(RemoveCameraObject)
     fadeinbgm(0)
     //waitmovement(0)
-    goto(ELVARG_WARP)
+    setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 140)
+    warp(MAP_KARAMJA_VOLCANO_B3F, 1, 0, 0)
+    waitstate
     release
     end
 }
@@ -313,9 +332,11 @@ movement movement_crandor_camera {
 }
 
 movement movement_elvargflyover {
+    face_right
     lock_facing_direction
-    disable_anim
+    //disable_anim
     walk_diag_northeast *15
+    unlock_facing_direction
 }
 movement movement_elvargflyover4 {
     walk_down * 3
@@ -323,20 +344,25 @@ movement movement_elvargflyover4 {
 }
 
 movement movement_elvargflyover2 {
+    face_right
     lock_facing_direction
-    disable_anim
+    //disable_anim
     //walk_faster_right * 20
     walk_faster_diag_northeast * 13
     //walk_diag_northeast * 10
+    unlock_facing_direction
 }
 
 movement movement_elvargflyover_left {
+    face_left
     lock_facing_direction
-    disable_anim
+    //disable_anim
     walk_faster_left * 20
+    unlock_facing_direction
 }
 
 movement movement_elvargflyover1 {
+    face_left
     lock_facing_direction
     delay_16
     walk_diag_northwest

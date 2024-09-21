@@ -230,7 +230,7 @@ script VARROCK_SEWERS_3F_CHECK_PLAYER_STAND {
 script NPC_VARROCK_SEWERS_WOMAN
 {
     faceplayer
-    //namebox ("")
+    namebox ("Grimesquit")
     msgbox(format("The rats are unusually aggressive lately.\pI wonder if it has something to do with the noise I hear coming through the pipes."))
     closemessage
     hidenamebox
@@ -241,10 +241,10 @@ script NPC_VARROCK_SEWERS_WOMAN
 script VARROCK_SEWERS_1F_FISHERMAN
 {
     faceplayer
-    //namebox ("")
+    namebox ("Fisherman")
     msgbox(format("I've been fishing for rare monsters here for a while now, but I haven't found any.\pAll I've managed to catch is a useless key that I can't even battle with!"))
     closemessage
-    //hidenamebox
+    hidenamebox
     release
     end
 }
@@ -254,7 +254,7 @@ script VARROCK_SEWERS_1F_FISHERMAN
 script BATTLE_VARROCK_SEWERS_1F_TRAINER_1
 {
     trainerbattle_single(TRAINER_VARROCK_SEWERS_1F_TRAINER_1, format("The skeleton hushes you, telling you to be quiet."),format("The skeleton seemed to want the eggs to lay undisturbed."))
-    namebox ("SKELETON")
+    //namebox ("Skeleton")
     msgbox(format("The skeleton seemed to want the eggs to lay undisturbed."))
 	hidenamebox
     release
@@ -264,8 +264,8 @@ script BATTLE_VARROCK_SEWERS_1F_TRAINER_1
 script BATTLE_VARROCK_SEWERS_1F_TRAINER_2
 {
     trainerbattle_single(TRAINER_VARROCK_SEWERS_1F_TRAINER_2, format("Are you ready to indulge yourself in the dark arts of necromancy?"),format("I guess you're more interested in necromance. Say, are you doing anything later..?"))
-    namebox ("NECROMANCER")
-    msgbox(format("I guess you're more interested in necromance. Say, are you doing anything later..?"))
+    //namebox ("NECROMANCER")
+    msgbox(format("I guess you're more interested in necromancer. Say, are you doing anything later..?"))
 	hidenamebox
     release
 	end
@@ -274,7 +274,7 @@ script BATTLE_VARROCK_SEWERS_1F_TRAINER_2
 script BATTLE_VARROCK_SEWERS_1F_TRAINER_3
 {
     trainerbattle_single(TRAINER_VARROCK_SEWERS_1F_TRAINER_3, format("You just entered my strike zone!"),format("This is now my defeat zone.."))
-    namebox ("RANGER")
+    //namebox ("RANGER")
     msgbox(format("This is now my defeat zone.."))
 	hidenamebox
     release
@@ -284,7 +284,7 @@ script BATTLE_VARROCK_SEWERS_1F_TRAINER_3
 script BATTLE_VARROCK_SEWERS_1F_TRAINER_4
 {
     trainerbattle_single(TRAINER_VARROCK_SEWERS_1F_TRAINER_4, format("Hey! You're ruining my training area. Get out of here"),format("I guess there's enough rats for the both of us to train on."))
-    namebox ("MAGE")
+    //namebox ("Mage")
     msgbox(format("I guess there's enough rats for the both of us to train on."))
 	hidenamebox
     release

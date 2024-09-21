@@ -534,6 +534,18 @@ extern const u32 gTrainerFrontPic_hazelmere[];
 extern const u32 gTrainerFrontPic_sir_tiffy[];
 extern const u32 gTrainerFrontPic_zanik_caves[];
 extern const u32 gTrainerFrontPic_zanik_ham[];
+extern const u32 gTrainerFrontPic_celestial[];
+extern const u32 gTrainerFrontPic_dungeoneering_rusher[];
+extern const u32 gTrainerFrontPic_edimmu[];
+extern const u32 gTrainerFrontPic_forgotten_warrior_novice[];
+extern const u32 gTrainerFrontPic_primal[];
+extern const u32 gTrainerFrontPic_mrkalius[];
+extern const u32 gTrainerFrontPic_twisted[];
+extern const u32 gTrainerFrontPic_thok_gymleader[];
+extern const u32 gTrainerFrontPic_zanik_e4[];
+extern const u32 gTrainerFrontPic_worldguardian[];
+extern const u32 gTrainerFrontPic_sagittarian[];
+extern const u32 gTrainerFrontPic_tzhaar_ket[];
 
 //POKESCAPE PALETTES
 extern const u32 gTrainerPalette_a_nub_tot[];
@@ -688,6 +700,18 @@ extern const u32 gTrainerPalette_hazelmere[];
 extern const u32 gTrainerPalette_sir_tiffy[];
 extern const u32 gTrainerPalette_zanik_caves[];
 extern const u32 gTrainerPalette_zanik_ham[];
+extern const u32 gTrainerPalette_celestial[];
+extern const u32 gTrainerPalette_dungeoneering_rusher[];
+extern const u32 gTrainerPalette_edimmu[];
+extern const u32 gTrainerPalette_forgotten_warrior_novice[];
+extern const u32 gTrainerPalette_primal[];
+extern const u32 gTrainerPalette_mrkalius[];
+extern const u32 gTrainerPalette_twisted[];
+extern const u32 gTrainerPalette_thok_gymleader[];
+extern const u32 gTrainerPalette_zanik_e4[];
+extern const u32 gTrainerPalette_worldguardian[];
+extern const u32 gTrainerPalette_sagittarian[];
+extern const u32 gTrainerPalette_tzhaar_ket[];
 
 // pokeblock
 extern const u32 gMenuPokeblock_Gfx[];
@@ -4395,6 +4419,8 @@ extern const u32 gItemIcon_talisman_soul[];
 extern const u32 gItemIconPalette_talisman_soul[];
 extern const u32 gItemIcon_talisman_water[];
 extern const u32 gItemIconPalette_talisman_water[];
+extern const u32 gItemIcon_talisman_body[];
+extern const u32 gItemIconPalette_talisman_body[];
 extern const u32 gItemIcon_tear_of_guthix[];
 extern const u32 gItemIconPalette_tear_of_guthix[];
 extern const u32 gItemIcon_tinderbox[];
@@ -4489,6 +4515,9 @@ extern const u32 gItemIcon_CRANDOR_MAP_PIECE3[];
 extern const u32 gItemIconPalette_CRANDOR_MAP_PIECE3[];
 extern const u32 gItemIcon_Whistle[];
 extern const u32 gItemIconPalette_Whistle[];
+extern const u32 gItemIcon_ClueScrollTools[];
+extern const u32 gItemIconPalette_ClueScrollTools[];
+
 
 // pokescape crops
 extern const u32 gBerryPic_Cabbage[];
@@ -4514,5 +4543,15 @@ extern const u32 gItemIconPalette_PsychicTM[];
 extern const u32 gItemIconPalette_RockTM[];
 extern const u32 gItemIconPalette_SteelTM[];
 extern const u32 gItemIconPalette_WaterTM[];
+
+// pokescape moves
+extern const u32 gBattleAnimSpritePal_SwordStrike[];
+extern const u32 gBattleAnimSpritePal_SaradominStrike[];
+extern const u32 gBattleAnimSpritePal_PolyporeStrike[];
+extern const u32 gBattleAnimSpritePal_BloodBubble[];
+extern const u32 gBattleAnimSpritePal_BloodBarrageParticles[];
+extern const u32 gBattleAnimSpritePal_Vengeance[];
+extern const u32 gBattleAnimSpritePal_Telegrab[];
+
 
 #endif //GUARD_GRAPHICS_H

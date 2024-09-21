@@ -10,6 +10,7 @@ MusaPoint_MapScripts_MAP_SCRIPT_ON_LOAD:
 MusaPoint_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setflag FLAG_VISITED_MUSA_POINT
 	call MUSAPOINT_STATE
+	call WEATHER_CHANGE_AREA_MUSAPOINT
 	setvar VAR_EVOLUTION_MAP_STATE, 15
 	return
 
@@ -19,25 +20,24 @@ MUSAPOINT_METATILES::
 	goto_if_le MUSAPOINT_METATILES_2
 MUSAPOINT_METATILES_1:
 	compare VAR_BANANA_BOAT_QUEST, 10
-	goto_if_ge MUSAPOINT_METATILES_4
+	goto_if_ge MUSAPOINT_METATILES_5
+MUSAPOINT_METATILES_4:
 	return
 
 MUSAPOINT_METATILES_2:
 	setmetatile 12, 35, METATILE_Karamja_SAND_BANANA, 0
 	setmetatile 10, 36, METATILE_Karamja_SAND_BANANA, 0
 	setmetatile 15, 35, METATILE_Karamja_SAND_BANANA, 0
-	special DrawWholeMapView
 	goto MUSAPOINT_METATILES_1
 
-MUSAPOINT_METATILES_4:
+MUSAPOINT_METATILES_5:
 	setmetatile 27, 27, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
 	setmetatile 28, 27, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
 	setmetatile 29, 27, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
 	setmetatile 27, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
 	setmetatile 28, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
 	setmetatile 29, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
-	special DrawWholeMapView
-	return
+	goto MUSAPOINT_METATILES_4
 
 
 MUSAPOINT_STATE::
@@ -47,7 +47,7 @@ MUSAPOINT_STATE_1:
 	return
 
 MUSAPOINT_STATE_2:
-	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 150
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 155
 	goto_if_le MUSAPOINT_STATE_5
 	removeobject 21
 	setflag FLAG_TEMP_1D
@@ -94,7 +94,7 @@ MUSAPOINT_STATE_12:
 NPC_MUSAPOINT_SAILOR::
 	lock
 	namebox NPC_MUSAPOINT_SAILOR_Text_0
-	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 150
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 155
 	goto_if_le NPC_MUSAPOINT_SAILOR_2
 	faceplayer
 	msgbox NPC_MUSAPOINT_SAILOR_Text_2, MSGBOX_YESNO
@@ -152,7 +152,6 @@ ITEM_MUSA_POINT_2::
 
 NPC_MUSA_POINT_1::
 	lock
-	faceplayer
 	namebox NPC_MUSA_POINT_1_Text_0
 	msgbox NPC_MUSA_POINT_1_Text_1
 	closemessage
@@ -164,7 +163,8 @@ NPC_MUSA_POINT_1::
 NPC_MUSA_POINT_2::
 	lock
 	faceplayer
-	msgbox NPC_MUSA_POINT_2_Text_0
+	namebox NPC_MUSA_POINT_2_Text_0
+	msgbox NPC_MUSA_POINT_2_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -174,6 +174,7 @@ NPC_MUSA_POINT_2::
 NPC_MUSA_POINT_3::
 	lock
 	faceplayer
+	namebox NPC_MUSA_POINT_2_Text_0
 	msgbox NPC_MUSA_POINT_3_Text_0
 	closemessage
 	hidenamebox
@@ -184,7 +185,8 @@ NPC_MUSA_POINT_3::
 NPC_MUSA_POINT_4::
 	lock
 	faceplayer
-	msgbox NPC_MUSA_POINT_4_Text_0
+	namebox NPC_MUSA_POINT_4_Text_0
+	msgbox NPC_MUSA_POINT_4_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -194,6 +196,7 @@ NPC_MUSA_POINT_4::
 NPC_MUSA_POINT_5::
 	lock
 	faceplayer
+	namebox NPC_MUSA_POINT_2_Text_0
 	msgbox NPC_MUSA_POINT_5_Text_0
 	closemessage
 	hidenamebox
@@ -204,7 +207,8 @@ NPC_MUSA_POINT_5::
 NPC_MUSA_POINT_6::
 	lock
 	faceplayer
-	msgbox NPC_MUSA_POINT_6_Text_0
+	namebox NPC_MUSA_POINT_6_Text_0
+	msgbox NPC_MUSA_POINT_6_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -214,7 +218,8 @@ NPC_MUSA_POINT_6::
 NPC_MUSA_POINT_7::
 	lock
 	faceplayer
-	msgbox NPC_MUSA_POINT_7_Text_0
+	namebox NPC_MUSA_POINT_7_Text_0
+	msgbox NPC_MUSA_POINT_7_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -224,10 +229,10 @@ NPC_MUSA_POINT_7::
 NPC_MUSA_POINT_8::
 	lock
 	faceplayer
-	namebox NPC_MUSA_POINT_8_Text_0
-	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 150
+	namebox NPC_MUSAPOINT_SAILOR_Text_0
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 155
 	goto_if_le NPC_MUSA_POINT_8_2
-	msgbox NPC_MUSA_POINT_8_Text_2
+	msgbox NPC_MUSA_POINT_8_Text_1
 NPC_MUSA_POINT_8_1:
 	closemessage
 	hidenamebox
@@ -235,14 +240,15 @@ NPC_MUSA_POINT_8_1:
 	end
 
 NPC_MUSA_POINT_8_2:
-	msgbox NPC_MUSA_POINT_8_Text_1
+	msgbox NPC_MUSA_POINT_8_Text_0
 	goto NPC_MUSA_POINT_8_1
 
 
 NPC_MUSA_POINT_9::
 	lock
 	faceplayer
-	msgbox NPC_MUSA_POINT_9_Text_0
+	namebox NPC_MUSA_POINT_9_Text_0
+	msgbox NPC_MUSA_POINT_9_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -252,7 +258,8 @@ NPC_MUSA_POINT_9::
 NPC_MUSA_POINT_10::
 	lock
 	faceplayer
-	msgbox NPC_MUSA_POINT_10_Text_0
+	namebox NPC_MUSA_POINT_10_Text_0
+	msgbox NPC_MUSA_POINT_10_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -313,6 +320,177 @@ BATTLE_MUSA_POINT_TRAINER_4::
 	hidenamebox
 	release
 	end
+
+
+NPC_MUSA_POINT_SHOP_1::
+	lock
+	faceplayer
+	namebox NPC_MUSA_POINT_4_Text_0
+	msgbox NPC_MUSA_POINT_SHOP_1_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NEWSLETTER_1::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_1_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_1_2
+NEWSLETTER_1_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_1_2:
+	msgbox NEWSLETTER_1_Text_1
+	goto NEWSLETTER_1_1
+
+
+NEWSLETTER_2::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_2_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_2_2
+NEWSLETTER_2_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_2_2:
+	msgbox NEWSLETTER_2_Text_1
+	goto NEWSLETTER_2_1
+
+
+NEWSLETTER_3::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_3_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_3_2
+NEWSLETTER_3_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_3_2:
+	msgbox NEWSLETTER_3_Text_1
+	goto NEWSLETTER_3_1
+
+
+NEWSLETTER_4::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_4_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_4_2
+NEWSLETTER_4_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_4_2:
+	msgbox NEWSLETTER_4_Text_1
+	goto NEWSLETTER_4_1
+
+
+NEWSLETTER_5::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_5_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_5_2
+NEWSLETTER_5_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_5_2:
+	msgbox NEWSLETTER_5_Text_1
+	goto NEWSLETTER_5_1
+
+
+NEWSLETTER_6::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_6_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_6_2
+NEWSLETTER_6_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_6_2:
+	msgbox NEWSLETTER_6_Text_1
+	goto NEWSLETTER_6_1
+
+
+NEWSLETTER_7::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_7_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_7_2
+NEWSLETTER_7_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_7_2:
+	msgbox NEWSLETTER_7_Text_1
+	goto NEWSLETTER_7_1
+
+
+NEWSLETTER_8::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_8_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_8_2
+NEWSLETTER_8_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_8_2:
+	msgbox NEWSLETTER_8_Text_1
+	goto NEWSLETTER_8_1
+
+
+NEWSLETTER_9::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_9_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_9_2
+NEWSLETTER_9_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_9_2:
+	msgbox NEWSLETTER_9_Text_1
+	goto NEWSLETTER_9_1
+
+
+NEWSLETTER_13::
+	lock
+	faceplayer
+	msgbox NEWSLETTER_13_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NEWSLETTER_13_2
+NEWSLETTER_13_1:
+	closemessage
+	release
+	end
+
+NEWSLETTER_13_2:
+	msgbox NEWSLETTER_13_Text_1
+	goto NEWSLETTER_13_1
 
 
 EventScript_BananaTree::
@@ -595,7 +773,7 @@ NPC_WISEOLDMAN_RIVAL_MUSAPOINT_PUB_2:
 LUTHAS_QUEST::
 	lock
 	faceplayer
-	namebox LUTHAS_QUEST_Text_0
+	namebox NPC_MUSA_POINT_Luthas_Text_0
 	compare VAR_BANANA_BOAT_QUEST, 25
 	goto_if_eq LUTHAS_QUEST_2
 LUTHAS_QUEST_1:
@@ -614,7 +792,7 @@ LUTHAS_QUEST_13:
 	compare VAR_BANANA_BOAT_QUEST, 0
 	goto_if_eq LUTHAS_QUEST_17
 LUTHAS_QUEST_16:
-	msgbox LUTHAS_QUEST_Text_1
+	msgbox LUTHAS_QUEST_Text_0
 	return
 
 LUTHAS_QUEST_2:
@@ -670,7 +848,7 @@ LUTHAS_QUEST_PART_1_6:
 	hidenamebox
 	startquest QUEST_BANANA_BOAT
 	setvar VAR_BANANA_BOAT_QUEST, 5
-	namebox LUTHAS_QUEST_Text_0
+	namebox NPC_MUSA_POINT_Luthas_Text_0
 	msgbox LUTHAS_QUEST_PART_1_Text_6
 	goto LUTHAS_QUEST_PART_1_5
 
@@ -725,8 +903,10 @@ LUTHAS_QUEST_PART_2_8:
 
 LUTHAS_QUEST_PART_2_11:
 	giveitem ITEM_SURF_TOOL, 1
-	namebox LUTHAS_QUEST_Text_0
+	namebox NPC_MUSA_POINT_Luthas_Text_0
 	msgbox LUTHAS_QUEST_PART_2_Text_5
+	closemessage
+	hidenamebox
 	goto LUTHAS_QUEST_PART_2_10
 
 
@@ -805,7 +985,7 @@ LUTHAS_QUEST_PART_5_5:
 	end
 
 LUTHAS_QUEST_PART_5_7:
-	namebox LUTHAS_QUEST_Text_0
+	namebox NPC_MUSA_POINT_Luthas_Text_0
 	msgbox LUTHAS_QUEST_PART_5_Text_2
 	closemessage
 	hidenamebox
@@ -848,7 +1028,7 @@ LUTHAS_QUEST_PART_6_5:
 	end
 
 LUTHAS_QUEST_PART_6_7:
-	namebox LUTHAS_QUEST_Text_0
+	namebox NPC_MUSA_POINT_Luthas_Text_0
 	msgbox LUTHAS_QUEST_PART_5_Text_2
 	closemessage
 	hidenamebox
@@ -863,8 +1043,21 @@ SIGN_BANANA_COUNT::
 	end
 
 
+TOGGLE_INVERSE_BATTLE::
+	setflag FLAG_TOGGLE_INVERSE_BATTLE
+	msgbox TOGGLE_INVERSE_BATTLE_Text_0
+	closemessage
+	end
+
+
+BATTLE_scorp::
+	setwildbattle SPECIES_PET_ROCK, 50, ITEM_NONE
+	dowildbattle
+	end
+
+
 NPC_MUSAPOINT_SAILOR_Text_0:
-	.string "SAILOR$"
+	.string "Officer$"
 
 NPC_MUSAPOINT_SAILOR_Text_1:
 	.string "I've confiscated your Karamja Rum.\p"
@@ -897,12 +1090,18 @@ SIGNPOST_BOAT_FOR_SALE_Text_0:
 	.string "See Luthas inside for more details.$"
 
 NPC_MUSA_POINT_1_Text_0:
-	.string "Cupholder$"
+	.string "Sad Pirate$"
 
 NPC_MUSA_POINT_1_Text_1:
-	.string "Hello, I am a Cupholder.$"
+	.string "Arr…{PAUSE 32}…\n"
+	.string "{PAUSE 32}Sailing…{PAUSE 32}…\p"
+	.string "One day…{PAUSE 32}…{PAUSE 32}\n"
+	.string "One…{PAUSE 32} day…{PAUSE 32}…$"
 
 NPC_MUSA_POINT_2_Text_0:
+	.string "Pirate$"
+
+NPC_MUSA_POINT_2_Text_1:
 	.string "30 years ago I buried me treasure here.\p"
 	.string "Now I've spent 5 years digging on the\n"
 	.string "beach to find it only to realize that\l"
@@ -911,12 +1110,15 @@ NPC_MUSA_POINT_2_Text_0:
 NPC_MUSA_POINT_3_Text_0:
 	.string "The Customs Officers constantly keep\n"
 	.string "us under supervision, apparently they\l"
-	.string "dont want Karamja Rum to reach the\l"
+	.string "don't want Karamja Rum to reach the\l"
 	.string "mainland.\p"
 	.string "Its all a conspiracy to keep the White\n"
 	.string "knights in power I tell you!$"
 
 NPC_MUSA_POINT_4_Text_0:
+	.string "Hunter$"
+
+NPC_MUSA_POINT_4_Text_1:
 	.string "Up north is a fishing spot, you might\n"
 	.string "find yourself a battle there with the\l"
 	.string "local fishers.$"
@@ -929,36 +1131,46 @@ NPC_MUSA_POINT_5_Text_0:
 	.string "… Or was I…$"
 
 NPC_MUSA_POINT_6_Text_0:
+	.string "Woman$"
+
+NPC_MUSA_POINT_6_Text_1:
 	.string "The banana farm is the pride and joy of\n"
 	.string "Musa Point.\p"
 	.string "That or the bar is the only thing\n"
 	.string "keeping us a landmark really.$"
 
 NPC_MUSA_POINT_7_Text_0:
+	.string "Man$"
+
+NPC_MUSA_POINT_7_Text_1:
 	.string "Welcome to Karamja.\p"
-	.string "Make sure to prepare some antipoisons.$"
+	.string "Make sure to prepare some anti-poisons\n"
+	.string "and some choc-sunday's for your\l"
+	.string "monsters.$"
 
 NPC_MUSA_POINT_8_Text_0:
-	.string "Customs Officer$"
-
-NPC_MUSA_POINT_8_Text_1:
 	.string "Sorry we've had an incident of someone\n"
 	.string "trying to smuggle some Rum to the\l"
 	.string "mainland.\p"
 	.string "Our ships won't be sailing for some time\n"
 	.string "while we check the cargo.$"
 
-NPC_MUSA_POINT_8_Text_2:
+NPC_MUSA_POINT_8_Text_1:
 	.string "This ship sails all over the land.\p"
 	.string "That was true until all of the ports\n"
 	.string "were closed off, now we sail all around\l"
-	.string "Musa Point.\p"
-	.string "Would you like to sail to Musa Point?$"
+	.string "Musa Point.$"
 
 NPC_MUSA_POINT_9_Text_0:
+	.string "Fisherman$"
+
+NPC_MUSA_POINT_9_Text_1:
 	.string "Fishing Levels?$"
 
 NPC_MUSA_POINT_10_Text_0:
+	.string "Firemaker$"
+
+NPC_MUSA_POINT_10_Text_1:
 	.string "Fire, anyone?$"
 
 NPC_MUSA_POINT_Luthas_Text_0:
@@ -969,7 +1181,7 @@ NPC_MUSA_POINT_Luthas_Text_1:
 	.string "Would you like to buy one?$"
 
 NPC_MONKEY_BLOCK_Text_0:
-	.string "MONKEY$"
+	.string "Monkey$"
 
 NPC_MONKEY_BLOCK_Text_1:
 	.string "Oook, Ook!$"
@@ -1013,6 +1225,166 @@ BATTLE_MUSA_POINT_TRAINER_4_Text_2:
 	.string "know what you are going to get.\p"
 	.string "Unless you fish for lobsters, you only\n"
 	.string "get lobsters like this.$"
+
+NPC_MUSA_POINT_SHOP_1_Text_0:
+	.string "That Tzhaar Gym was something else, I\n"
+	.string "had to stock up on Drunk Dragon's just\l"
+	.string "to make it through the waves.$"
+
+NEWSLETTER_1_Text_0:
+	.string "Newsletter Volume 1.\n"
+	.string "Penguins, love, music!\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_1_Text_1:
+	.string "While adventurering you may\n"
+	.string "occasionally hear some unusual music\l"
+	.string "playing far off in the distance.\p"
+	.string "You may think to yourself, what is this?\p"
+	.string "Why, it is none other than penguins!\p"
+	.string "Ever since Ping & Pong started up their\n"
+	.string "music band, all penguins have joined in\l"
+	.string "on the fun.\p"
+	.string "Keep your eyes peeled, follow the\n"
+	.string "source of the music and you will find\l"
+	.string "penguins!\p"
+	.string "- Canada Girll$"
+
+NEWSLETTER_2_Text_0:
+	.string "Newsletter Volume 2.\n"
+	.string "Penguins and how to spot them!\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_2_Text_1:
+	.string "Penguins are sneaky, they disgusise\n"
+	.string "themselves in plain sight and blend in\l"
+	.string "with their surroundings.\p"
+	.string "Some say they have seen them\n"
+	.string "disgusised as barrels or bushes and\l"
+	.string "some say they have even been spotted\l"
+	.string "as toadstools!\p"
+	.string "One farmer in Lumbridge is adamant that\n"
+	.string "they disgusised themselves as one of\l"
+	.string "his sheep in the herd.\p"
+	.string "But could this be true?\p"
+	.string "- Canada Girll$"
+
+NEWSLETTER_3_Text_0:
+	.string "Newsletter Volume 3.\n"
+	.string "Cupholders.\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_3_Text_1:
+	.string "Cupholders. They hold your cups while\n"
+	.string "you do other things.\p"
+	.string "- Demonheadge$"
+
+NEWSLETTER_4_Text_0:
+	.string "Newsletter Volume 4.\n"
+	.string "Mysterious Mounds.\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_4_Text_1:
+	.string "Shh, the ground.\n"
+	.string "It moves ever so slightly.\p"
+	.string "Be careful as Wyrms are buried deep\n"
+	.string "within the sands!\p"
+	.string "They change type depending on their\n"
+	.string "enviorment.\p"
+	.string "Some say you can force these changes\n"
+	.string "to happen with magic.\p"
+	.string "I shall continue to track them.\n"
+	.string "And you should too.\p"
+	.string "- Strykewyrm Jim.$"
+
+NEWSLETTER_5_Text_0:
+	.string "Newsletter Volume 5.\n"
+	.string "Gotta go fast!\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_5_Text_1:
+	.string "Got sore feet?\n"
+	.string "{PAUSE 15}Run energy drained?\p"
+	.string "Agility level too low?\n"
+	.string "{PAUSE 15}Well be exhausted no more!\p"
+	.string "My Terrorbird can fix that in a jiffy!\n"
+	.string "Come see them in Rimmington.\p"
+	.string "- Gnome boy Kevin$"
+
+NEWSLETTER_6_Text_0:
+	.string "Newsletter Volume 6.\n"
+	.string "A Button.\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_6_Text_1:
+	.string "Hello, need help?\p"
+	.string "Where do I go next?\p"
+	.string "Are you stuck?\p"
+	.string "Does that door not open?\p"
+	.string "Just try pressing the A button!\p"
+	.string "What is the A button?\p"
+	.string "Tehehe, aren't you silly.\p"
+	.string "You know what the A button is.\p"
+	.string "The A button can even help you find\n"
+	.string "hidden items.\p"
+	.string "Just remember, when in doubt.\n"
+	.string "Just press the A button.\p"
+	.string "- Anubtot.$"
+
+NEWSLETTER_7_Text_0:
+	.string "Newsletter Volume 7.\n"
+	.string "To be a slayer master.\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_7_Text_1:
+	.string "To become the best like no one ever was,\n"
+	.string "you must do 4 simple things.\p"
+	.string "Step 1, Get your task from a slayer\n"
+	.string "master.\n"
+	.string "Step 2, Complete your task.\p"
+	.string "Step 3, ???.\n"
+	.string "Step 4, Profit.\p"
+	.string "- Wannabe Slayer Master, Erskine$"
+
+NEWSLETTER_8_Text_0:
+	.string "Newsletter Volume 8.\n"
+	.string "Sparkle, sparkle.\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_8_Text_1:
+	.string "HIDDEN ITEMS!\p"
+	.string "You want them, don't you?\p"
+	.string "They are hidden everywhere.\p"
+	.string "But how do you find them?\p"
+	.string "Solve this and information shall be\n"
+	.string "yours:\p"
+	.string "In the town, 'A KROC RV'\n"
+	.string "I am found.\p"
+	.string "Crests of royality are where, I dwell.\n"
+	.string "Sit with me and drink tea, times 3.\p"
+	.string "All will be revealed.\n"
+	.string "- ???$"
+
+NEWSLETTER_9_Text_0:
+	.string "Newsletter Volume 9.\n"
+	.string "???.\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_9_Text_1:
+	.string "?\p"
+	.string "- ???$"
+
+NEWSLETTER_13_Text_0:
+	.string "Newsletter Volume 13.\p"
+	.string "The end is neigh.\p"
+	.string "Would you like to read it?$"
+
+NEWSLETTER_13_Text_1:
+	.string "Sadly the time as come to end..\p"
+	.string "This will be the last newsletter in this\n"
+	.string "series that I will be publishing.\p"
+	.string "I thank you for reading.\p"
+	.string "- Baraek$"
 
 EventScript_BananaTree_Text_0:
 	.string "There are a bunch of Bananas on this\n"
@@ -1124,9 +1496,6 @@ NPC_WISEOLDMAN_RIVAL_MUSAPOINT_PUB_Text_1:
 	.string "about that boat?$"
 
 LUTHAS_QUEST_Text_0:
-	.string "LUTHAS$"
-
-LUTHAS_QUEST_Text_1:
 	.string "Hello, I run the banana plantation. How\n"
 	.string "many I help you today?$"
 
@@ -1251,3 +1620,6 @@ LUTHAS_QUEST_PART_5_Text_3:
 SIGN_BANANA_COUNT_Text_0:
 	.string "{PLAYER}'s Banana Count:\n"
 	.string "{STR_VAR_1}.$"
+
+TOGGLE_INVERSE_BATTLE_Text_0:
+	.string "Inverse battle - ENABLED$"

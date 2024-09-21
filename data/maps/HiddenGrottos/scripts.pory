@@ -33,10 +33,6 @@ script HIDDEN_GROTTO_WARP_ROUTE_1 {
     warp(MAP_HIDDEN_GROTTOS, 1, 0, 0)
     waitstate
 }
-
-
-
-
 script HIDDEN_GROTTO_WARP_ROUTE_4 {
     warp(MAP_HIDDEN_GROTTOS, 3, 0, 0)
     waitstate
@@ -49,9 +45,6 @@ script HIDDEN_GROTTO_WARP_ROUTE_14 {
     warp(MAP_HIDDEN_GROTTOS, 5, 0, 0)
     waitstate
 }
-
-
-
 script HIDDEN_GROTTO_WARP_ROUTE_27 {
     warp(MAP_HIDDEN_GROTTOS, 7, 0, 0)
     waitstate
@@ -81,7 +74,7 @@ script HIDDEN_GROTTO_ENTRY_SPAWNS {
         case 8: 
             setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RAC_BONBUN)
         case 9: 
-            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_POUCH)
+            setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RAC_BONBUN)
         case 10: 
             setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_ITEM_POUCH) 
         case 11: 
@@ -106,7 +99,14 @@ script HIDDEN_GROTTO_INTERACT {
 //RANDOM
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_RAC_BONBUN)
     { 
-        goto(ENCOUNTER_RANDOM)
+        random(2000)
+        if (var(VAR_RESULT) == 2) {
+            goto(ENCOUNTER_SUPER_RARE)
+        }
+        else {
+            goto(ENCOUNTER_RANDOM)
+        }
+        
     }
 //UNICORN
     elif (var(VAR_OBJ_GFX_ID_0) == OBJ_EVENT_GFX_UNICORN_BLACK)
@@ -237,32 +237,50 @@ script HIDDEN_GROTTO_RANDOM_DOG {
 }
 
 script HIDDEN_GROTTO_LEVELS {
-    if (!flag(FLAG_BADGE01_GET)) {
-        setvar(VAR_TEMP_E, 10)
+    if (!flag(FLAG_BADGE01_GET)) { //5 - 10
+        random(5) 
+        copyvar(VAR_TEMP_E, VAR_RESULT)
+        addvar(VAR_TEMP_E, 5)          
     }
-    if (flag(FLAG_BADGE01_GET)) {
-        setvar(VAR_TEMP_E, 15)
+    if (flag(FLAG_BADGE01_GET)) { //10 - 20
+        random(10) 
+        copyvar(VAR_TEMP_E, VAR_RESULT)
+        addvar(VAR_TEMP_E, 10)           
     }
-    if (flag(FLAG_BADGE02_GET)) {
-        setvar(VAR_TEMP_E, 20)
+    if (flag(FLAG_BADGE02_GET)) { //15 - 25
+        random(10) 
+        copyvar(VAR_TEMP_E, VAR_RESULT)
+        addvar(VAR_TEMP_E, 15)    
     }
-    if (flag(FLAG_BADGE03_GET)) {
-        setvar(VAR_TEMP_E, 25)
+    if (flag(FLAG_BADGE03_GET)) { //25 - 35
+        random(10) 
+        copyvar(VAR_TEMP_E, VAR_RESULT)
+        addvar(VAR_TEMP_E, 25)    
     }
-    if (flag(FLAG_BADGE04_GET)) {
-        setvar(VAR_TEMP_E, 30)
+    if (flag(FLAG_BADGE04_GET)) { //30 - 40
+        random(10) 
+        copyvar(VAR_TEMP_E, VAR_RESULT)
+        addvar(VAR_TEMP_E, 30)    
     }
-    if (flag(FLAG_BADGE05_GET)) {
-        setvar(VAR_TEMP_E, 35)
+    if (flag(FLAG_BADGE05_GET)) { //30 - 45
+        random(15) 
+        copyvar(VAR_TEMP_E, VAR_RESULT)
+        addvar(VAR_TEMP_E, 30)    
     }
-    if (flag(FLAG_BADGE06_GET)) {
-        setvar(VAR_TEMP_E, 40)
+    if (flag(FLAG_BADGE06_GET)) { //30 - 50
+        random(20) 
+        copyvar(VAR_TEMP_E, VAR_RESULT)
+        addvar(VAR_TEMP_E, 30)    
     }
-    if (flag(FLAG_BADGE07_GET)) {
-        setvar(VAR_TEMP_E, 45)
+    if (flag(FLAG_BADGE07_GET)) { //30 - 55
+        random(25) 
+        copyvar(VAR_TEMP_E, VAR_RESULT)
+        addvar(VAR_TEMP_E, 30)    
     }
-    if (flag(FLAG_BADGE08_GET)) {
-        setvar(VAR_TEMP_E, 50)
+    if (flag(FLAG_BADGE08_GET)) {//35 - 60
+        random(25) 
+        copyvar(VAR_TEMP_E, VAR_RESULT)
+        addvar(VAR_TEMP_E, 35)    
     }
     return
 }
@@ -391,7 +409,17 @@ script ENCOUNTER_RANDOM {
     hidenamebox
 	closemessage
 	delay(1)
-    call(RANDOM_DOWILDBATTLE_MON)
+
+    if (flag(FLAG_BADGE05_GET)) {
+        call(RANDOM_DOWILDBATTLE_MON_high)
+    }
+    else {
+        call(RANDOM_DOWILDBATTLE_MON_low)
+    }
+    
+
+
+
 	dowildbattle
 	if (var(VAR_RESULT) == B_OUTCOME_WON) {
         fadescreen(FADE_TO_BLACK)
@@ -411,7 +439,65 @@ script ENCOUNTER_RANDOM {
 	return
 }
 
-script RANDOM_DOWILDBATTLE_MON {
+script RANDOM_DOWILDBATTLE_MON_low {
+    random(25)
+    switch (var(VAR_RESULT)) {
+        case 0: 
+            setwildbattle (SPECIES_BIRD_NEST, VAR_TEMP_E, ITEM_NONE)
+        case 1: 
+            setwildbattle (SPECIES_THE_ILLUSIVE, VAR_TEMP_E, ITEM_NONE)
+        case 2: 
+            setwildbattle (SPECIES_EEK, VAR_TEMP_E, ITEM_NONE)
+        case 3: 
+            setwildbattle (SPECIES_KEBBIT_SPOTTED_FORM, VAR_TEMP_E, ITEM_NONE)
+        case 4: 
+            setwildbattle (SPECIES_RABBIT, VAR_TEMP_E, ITEM_NONE)
+        case 5: 
+            setwildbattle (SPECIES_KEBBIT_WILD_FORM, VAR_TEMP_E, ITEM_NONE)
+        case 6: 
+            setwildbattle (SPECIES_CREATURE_CUTE_FORM, VAR_TEMP_E, ITEM_NONE)
+        case 7: 
+            setwildbattle (SPECIES_SPROUTLING_SUMMER_FORM, VAR_TEMP_E, ITEM_NONE)
+        case 8: 
+            setwildbattle (SPECIES_MONTY, VAR_TEMP_E, ITEM_NONE)
+        case 9: 
+            setwildbattle (SPECIES_ANIMOUR, VAR_TEMP_E, ITEM_NONE)
+        case 10: 
+            setwildbattle (SPECIES_ROCLING, VAR_TEMP_E, ITEM_NONE)
+        case 11: 
+            setwildbattle (SPECIES_PAWYA, VAR_TEMP_E, ITEM_NONE)
+        case 12: 
+            setwildbattle (SPECIES_MACKERS, VAR_TEMP_E, ITEM_NONE)
+        case 13: 
+            setwildbattle (SPECIES_IMP, VAR_TEMP_E, ITEM_NONE)
+        case 14: 
+            setwildbattle (SPECIES_PENANCE_SPAWN, VAR_TEMP_E, ITEM_NONE)
+        case 15: 
+            setwildbattle (SPECIES_ARAXYTE_BABY, VAR_TEMP_E, ITEM_NONE)
+        case 16: 
+            setwildbattle (SPECIES_CHINCHOMPA_BABY, VAR_TEMP_E, ITEM_NONE)
+        case 17: 
+            setwildbattle (SPECIES_CAPYBARA, VAR_TEMP_E, ITEM_NONE)
+//
+        case 18: 
+            setwildbattle (SPECIES_BIRD_NEST, VAR_TEMP_E, ITEM_NONE)
+        case 19: 
+            setwildbattle (SPECIES_CHINCHOMPA_BABY, VAR_TEMP_E, ITEM_NONE)
+        case 20: 
+            setwildbattle (SPECIES_ROCLING, VAR_TEMP_E, ITEM_NONE)
+        case 21: 
+            setwildbattle (SPECIES_MACKERS, VAR_TEMP_E, ITEM_NONE)
+        case 22: 
+            setwildbattle (SPECIES_BIRD_NEST, VAR_TEMP_E, ITEM_NONE)
+        case 23: 
+            setwildbattle (SPECIES_KEBBIT_SPOTTED_FORM, VAR_TEMP_E, ITEM_NONE)
+        case 24: 
+            setwildbattle (SPECIES_CREATURE_CUTE_FORM, VAR_TEMP_E, ITEM_NONE)
+//
+        } 
+    return
+}
+script RANDOM_DOWILDBATTLE_MON_high {
     random(6)
     switch (var(VAR_RESULT)) {
         case 0: 
@@ -419,17 +505,116 @@ script RANDOM_DOWILDBATTLE_MON {
         case 1: 
             setwildbattle (SPECIES_THE_ILLUSIVE, VAR_TEMP_E, ITEM_NONE)
         case 2: 
-            setwildbattle (SPECIES_CHINCHOMPA_GIANT, VAR_TEMP_E, ITEM_NONE)
+            setwildbattle (SPECIES_EEK, VAR_TEMP_E, ITEM_NONE)
         case 3: 
-            setwildbattle (SPECIES_IMPLING_LUCKY_FORM, VAR_TEMP_E, ITEM_NONE)
+            setwildbattle (SPECIES_WOLPERTING, VAR_TEMP_E, ITEM_NONE)
         case 4: 
             setwildbattle (SPECIES_WOLPERTING, VAR_TEMP_E, ITEM_NONE)
         case 5: 
+            setwildbattle (SPECIES_KEBBIT_WILD_FORM, VAR_TEMP_E, ITEM_NONE)
+        case 6: 
+            setwildbattle (SPECIES_CREATURE_CUTE_FORM, VAR_TEMP_E, ITEM_NONE)
+        case 7: 
+            setwildbattle (SPECIES_SPROUTLING_SUMMER_FORM, VAR_TEMP_E, ITEM_NONE)
+        case 8: 
+            setwildbattle (SPECIES_MONTY, VAR_TEMP_E, ITEM_NONE)
+        case 9: 
+            setwildbattle (SPECIES_ANIMOUR, VAR_TEMP_E, ITEM_NONE)
+        case 10: 
+            setwildbattle (SPECIES_ROCLING, VAR_TEMP_E, ITEM_NONE)
+        case 11: 
+            setwildbattle (SPECIES_PAWYA, VAR_TEMP_E, ITEM_NONE)
+        case 12: 
+            setwildbattle (SPECIES_MACKERS, VAR_TEMP_E, ITEM_NONE)
+        case 13: 
+            setwildbattle (SPECIES_IMP, VAR_TEMP_E, ITEM_NONE)
+        case 14: 
+            setwildbattle (SPECIES_PENANCE_SPAWN, VAR_TEMP_E, ITEM_NONE)
+        case 15: 
+            setwildbattle (SPECIES_ARAXYTE_BABY, VAR_TEMP_E, ITEM_NONE)
+        case 16: 
+            setwildbattle (SPECIES_CHINCHOMPA_BABY, VAR_TEMP_E, ITEM_NONE)
+        case 17: 
+            setwildbattle (SPECIES_CAPYBARA, VAR_TEMP_E, ITEM_NONE)
+//
+        case 18: 
+            setwildbattle (SPECIES_BIRD_NEST, VAR_TEMP_E, ITEM_NONE)
+        case 19: 
+            setwildbattle (SPECIES_CHINCHOMPA_BABY, VAR_TEMP_E, ITEM_NONE)
+        case 20: 
             setwildbattle (SPECIES_SHAIKAH, VAR_TEMP_E, ITEM_NONE)
-            
+        case 21: 
+            setwildbattle (SPECIES_MACKERS, VAR_TEMP_E, ITEM_NONE)
+        case 22: 
+            setwildbattle (SPECIES_BIRD_NEST, VAR_TEMP_E, ITEM_NONE)
+        case 23: 
+            setwildbattle (SPECIES_IMPLING_LUCKY_FORM, VAR_TEMP_E, ITEM_NONE)
+        case 24: 
+            setwildbattle (SPECIES_FROGEEL, VAR_TEMP_E, ITEM_NONE)  
         } 
     return
 }
+script RANDOM_DOWILDBATTLE_MON_superRare {
+    random(4)
+    switch (var(VAR_RESULT)) {
+        case 0: 
+            setwildbattle (SPECIES_FLAMBEED, VAR_TEMP_E, ITEM_NONE)
+        case 1: 
+            setwildbattle (SPECIES_AGRITHNANA, VAR_TEMP_E, ITEM_NONE)
+        case 2: 
+            setwildbattle (SPECIES_KARAMEL, VAR_TEMP_E, ITEM_NONE)
+        case 3: 
+            setwildbattle (SPECIES_DESSOURT, VAR_TEMP_E, ITEM_NONE)
+        } 
+    return
+}
+
+
+script ENCOUNTER_SUPER_RARE {
+    lock
+    msgbox(format("!!!"))
+	playmoncry(SPECIES_LUGIA, 0)
+	msgbox(format("RAUGHOUGH!"))
+	waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+
+    call(RANDOM_DOWILDBATTLE_MON_superRare)
+
+	dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+        fadescreen(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+	}
+	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) { // Cannot catch with dowildbattleNoCatch
+        fadescreen(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+	}
+    elif (var(VAR_RESULT) == B_OUTCOME_RAN) { 
+        fadescreen(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreen(FADE_FROM_BLACK)
+	}
+	return
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 script HIDDEN_GROTTO_FIND_ITEM {
 	random(28) 

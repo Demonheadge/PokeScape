@@ -260,6 +260,18 @@
 #define TRAINER_PIC_sir_tiffy			        239
 #define TRAINER_PIC_zanik_caves			        240
 #define TRAINER_PIC_zanik_ham			        241
+#define TRAINER_PIC_celestial				    242
+#define TRAINER_PIC_dungeoneering_rusher        243
+#define TRAINER_PIC_edimmu				        244
+#define TRAINER_PIC_forgotten_warrior_novice    245
+#define TRAINER_PIC_primal				        246
+#define TRAINER_PIC_mrkalius				    247
+#define TRAINER_PIC_twisted				        248
+#define TRAINER_PIC_thok_gymleader				249
+#define TRAINER_PIC_zanik_e4				    250
+#define TRAINER_PIC_worldguardian				251
+#define TRAINER_PIC_sagittarian				    252
+#define TRAINER_PIC_tzhaar_ket				    253
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -581,8 +593,11 @@
 #define TRAINER_CLASS_NECROMANCER		0x84
 #define TRAINER_CLASS_RUNECRAFTER		0x85
 #define TRAINER_CLASS_WISE_OLD_MAN		0x86
+#define TRAINER_CLASS_JAILER		    0x87
+#define TRAINER_CLASS_FORGOTTEN         0x88
+#define TRAINER_CLASS_RANGER            0x89
 
-#define TRAINER_CLASS_NUM       		0x87
+#define TRAINER_CLASS_NUM       		0x8A
 
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // Standard male encounter music
@@ -603,7 +618,7 @@
 #define TRAINER_ENCOUNTER_MUSIC_HAM         15 // Ham Grunts
 #define TRAINER_ENCOUNTER_MUSIC_NOOB        16 // Happy noobs
 #define TRAINER_ENCOUNTER_MUSIC_CHOOB       17 // Scary choobs
-#define TRAINER_ENCOUNTER_SKILLER           18
+#define TRAINER_ENCOUNTER_MUSIC_SKILLER     18
 
 #define F_TRAINER_FEMALE (1 << 7)
 

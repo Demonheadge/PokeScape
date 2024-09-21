@@ -2,7 +2,7 @@
   "id": "MAP_DAEMONHEIM_GYM",
   "name": "Daemonheim_Gym",
   "layout": "LAYOUT_DAEMONHEIM_GYM",
-  "music": "MUS_PS_VS_GYM",
+  "music": "MUS_PS_GYM",
   "region_map_section": "MAPSEC_TUTORIAL_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -17,15 +17,41 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_THOK_ANGRY",
       "x": 7,
-      "y": 4,
+      "y": 3,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DAEMONHEIM_GYM_THOK",
+      "flag": "FLAG_TEMP_1F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ZIGZAGOON_2",
+      "x": 18,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_THOK_ANGRY",
+      "x": 24,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "THOK_GYM_CHALLENGE_STATE_POST_BADGE",
+      "flag": "FLAG_TEMP_1E"
     }
   ],
   "warp_events": [

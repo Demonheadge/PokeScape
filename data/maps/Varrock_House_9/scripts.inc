@@ -41,7 +41,7 @@ ITEM_ZMI_DEATH_RUNE::
 
 
 NPC_VARROCK_ZMI_1_Text_0:
-	.string "Mage of Zamorak$"
+	.string "Zamorak Mage$"
 
 NPC_VARROCK_ZMI_1_Text_1:
 	.string "We are a group of mages in service to\n"

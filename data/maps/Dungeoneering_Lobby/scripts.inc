@@ -1,11 +1,29 @@
 Dungeoneering_Lobby_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Dungeoneering_Lobby_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	map_script MAP_SCRIPT_ON_LOAD, Dungeoneering_Lobby_MapScripts_MAP_SCRIPT_ON_LOAD
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Dungeoneering_Lobby_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
+
+Dungeoneering_Lobby_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	call Daemonheim_Lobby_STATE
+	return
 
 Dungeoneering_Lobby_MapScripts_MAP_SCRIPT_ON_LOAD:
 	setflag FLAG_TEMP_12
 	call Randomise_Dungeon
 	return
+
+Dungeoneering_Lobby_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST, 10, THOK_GYM_CHALLENGE_STATE_3
+	.2byte 0
+
+
+DUNGEONEERING_CHECK_HOWMANYDUNGEONS::
+	buffernumberstring STR_VAR_1, VAR_DUNGEONEERING_STARTER_ROOM
+	msgbox DUNGEONEERING_CHECK_HOWMANYDUNGEONS_Text_0
+	closemessage
+	release
+	end
 
 
 DUNGEONEERING_CHECK_VAR::
@@ -57,6 +75,10 @@ Start_Dungeoneering::
 	call RandomiseSeed_ForDoors
 	call Randomise_Dungeon
 	call Randomise_Puzzles
+	delay 60
+	playse SE_LEDGE
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_JumpIntoPortal
+	waitmovement 0
 	compare VAR_DUNGEONEERING_STARTER_ROOM, 1
 	goto_if_eq Start_Dungeoneering_1
 	compare VAR_DUNGEONEERING_STARTER_ROOM, 2
@@ -172,6 +194,11 @@ Start_Dungeoneering_16:
 	return
 
 
+Movement_JumpIntoPortal:
+	jump_up
+	set_invisible
+	step_end
+
 DungeonLayout_ROOM_PATH_1::
 	setvar VAR_DUNGEONEERING_STARTER_ROOM, 1
 	specialvar VAR_RESULT, GetCurrentMap
@@ -265,6 +292,84 @@ DungeonLayout_ROOM_PATH_5::
 	return
 
 
+Daemonheim_Lobby_STATE::
+	setflag FLAG_TEMP_1F
+	switch VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST
+	case 10, Daemonheim_Lobby_STATE_3
+Daemonheim_Lobby_STATE_1:
+	return
+
+Daemonheim_Lobby_STATE_3:
+	clearflag FLAG_TEMP_1F
+	addobject 2
+	setobjectxyperm 1, 9, 5
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_LEFT
+	goto Daemonheim_Lobby_STATE_1
+
+
+THOK_GYM_CHALLENGE_STATE_3::
+	applymovement 2, Movement_DaemonheimGym_8
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_DaemonheimGym_9
+	waitmovement 2
+	namebox THOK_GYM_CHALLENGE_STATE_3_Text_0
+	msgbox THOK_GYM_CHALLENGE_STATE_3_Text_1
+	closemessage
+	hidenamebox
+	playse SE_LEDGE
+	applymovement 2, Movement_DaemonheimGym_10
+	waitmovement 0
+	setflag FLAG_TEMP_1F
+	removeobject 2
+	applymovement 1, Movement_DaemonheimGym_11
+	waitmovement 0
+	namebox THOK_GYM_CHALLENGE_STATE_3_Text_2
+	msgbox THOK_GYM_CHALLENGE_STATE_3_Text_3
+	closemessage
+	hidenamebox
+	applymovement 1, Movement_DaemonheimGym_12
+	waitmovement 0
+	setobjectmovementtype 1, MOVEMENT_TYPE_WANDER_AROUND
+	setvar VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST, 15
+	return
+
+
+Movement_DaemonheimGym_8:
+	walk_up
+	walk_up
+	walk_up
+	face_down
+	step_end
+
+Movement_DaemonheimGym_9:
+	walk_slow_up
+	walk_slow_up
+	step_end
+
+Movement_DaemonheimGym_10:
+	jump_2_up
+	step_end
+
+Movement_DaemonheimGym_11:
+	face_up
+	delay_16
+	delay_16
+	walk_left
+	walk_left
+	walk_left
+	face_down
+	step_end
+
+Movement_DaemonheimGym_12:
+	walk_right
+	walk_right
+	walk_right
+	face_left
+	step_end
+
+DUNGEONEERING_CHECK_HOWMANYDUNGEONS_Text_0:
+	.string "You have explored: {STR_VAR_1}\n"
+	.string "floors.$"
+
 DUNGEONEERING_CHECK_VAR_Text_0:
 	.string "The Starting room is Room:\n"
 	.string "{STR_VAR_1}.$"
@@ -292,3 +397,29 @@ DUNGEONEERING_CHECK_VAR_Text_7:
 
 DUNGEONEERING_CHECK_VAR_Text_8:
 	.string "The Puzzle Room 8 is: {STR_VAR_1}.$"
+
+THOK_GYM_CHALLENGE_STATE_3_Text_0:
+	.string "Thok$"
+
+THOK_GYM_CHALLENGE_STATE_3_Text_1:
+	.string "I'll be in Dungeon!\p"
+	.string "You come find me.\l"
+	.string "Then we battle.$"
+
+THOK_GYM_CHALLENGE_STATE_3_Text_2:
+	.string "Smuggler$"
+
+THOK_GYM_CHALLENGE_STATE_3_Text_3:
+	.string "Sorry about Thok, he can be a little\n"
+	.string "forward.\p"
+	.string "Your a gym challenger correct?\p"
+	.string "It's like Thok said, you must find him\n"
+	.string "within the Dungeon and then he will\l"
+	.string "challenge you to a battle.\p"
+	.string "The part he left out was that there are\n"
+	.string "many puzzles and enemies that await\l"
+	.string "you.\p"
+	.string "When you are ready just jump in that\n"
+	.string "portal.\p"
+	.string "Good luck, I'll be here if you need any\n"
+	.string "advice about the dungeon.$"

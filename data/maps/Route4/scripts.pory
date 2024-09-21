@@ -82,10 +82,10 @@ script Route4Sign{
 
 script TryMoveDaycareMan{
     if (flag(FLAG_PENDING_DAYCARE_EGG)){
-        setobjectxyperm(1,19,17)
+        setobjectxyperm(1,19,23)
     }
     else{
-        setobjectxyperm(1,19,16)
+        setobjectxyperm(1,19,22)
     }
 }
 
@@ -97,45 +97,41 @@ script TryMoveDaycareMan{
 
 script ROUTE4_TRIGGER1_DaycareWatcher 
 {
-    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_PLAYER3)
+    playse(SE_PIN)
+    applymovement(2, MOVEMENT_ROUTE4_NIECE_1)
     waitmovement (0)
-    call(ROUTE4_TRIGGER_DaycareWatcher_PART1)
-    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_PLAYER1)
-    waitmovement (0)
-    call(ROUTE4_TRIGGER_DaycareWatcher_PART2)
-}
 
-script ROUTE4_TRIGGER2_DaycareWatcher 
-{
-    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_PLAYER3)
-    waitmovement (0)
-    call(ROUTE4_TRIGGER_DaycareWatcher_PART1)
-    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_PLAYER2)
-    waitmovement (0)
-    call(ROUTE4_TRIGGER_DaycareWatcher_PART2)
-}
+    getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+    if (var(VAR_TEMP_2) == 27){
+        applymovement(2, MOVEMENT_ROUTE4_NIECE_2)
+        waitmovement (0)
+    } 
 
-script ROUTE4_TRIGGER_DaycareWatcher_PART1 
-{
-    namebox ("Farmer")
-    msgbox(format("Hiya Adventurer!\lCould you follow me?\pI want to show you something."))
+    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_UP)
+    waitmovement (0)
+
+    namebox ("Niece Pott.")
+    msgbox(format("Hey!\nThose monsters…\pLet me see them!\p…{PAUSE 15}…{PAUSE 15}…\pAmazing, I can see that your monsters trust you quite a lot!\pFollow me adventurer, I wish to show you something."))
     closemessage
     hidenamebox
-    //PLAY MUSIC
-    applymovement(OBJ_EVENT_ID_DAYCAREWATCHER, MOVEMENT_ROUTE4_DaycareWatcher1)
-    return
-}
 
-script ROUTE4_TRIGGER_DaycareWatcher_PART2 
-{
+    getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+    if (var(VAR_TEMP_2) == 27){
+        applymovement(2, MOVEMENT_ROUTE4_NIECE_3)
+        applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_NIECE_3)
+        waitmovement (0)
+    } 
+        applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_NIECE_4)
+        applymovement(2, MOVEMENT_ROUTE4_NIECE_5)
+        waitmovement (0)
+    
     delay(8)
     namebox ("Niece Pott.")
-    msgbox(format("This place is called Potterington Farm!\pWe look after your Monsters and help them grow while you are away.\pWe have also set up special breeding pens for certain monsters.\pYou should inquire about it, if it's something that interests you!\pAnyway that is all I wanted to show you.\pTake care!"))
+    msgbox(format("This place is called Potterington Farm!\pHere we can look after your Monsters and help them grow while you are away.\pWe have also set up breeding pens for the monsters.\pYou should talk to my mother inside, if that is something that interests you.\pAnyway, that is all I wanted to show you.\pStop by anytime, take care!"))
     closemessage
     hidenamebox
-    applymovement(OBJ_EVENT_ID_DAYCAREWATCHER, MOVEMENT_ROUTE4_DaycareWatcher2)
+    applymovement(OBJ_EVENT_ID_DAYCAREWATCHER, MOVEMENT_ROUTE4_NIECE_6)
     waitmovement (0)
-    //END MUSIC
     setobjectxyperm(OBJ_EVENT_ID_DAYCAREWATCHER,8,17)
     setvar(VAR_POKESCAPE_POTTERINGTON_FARM_STATE, 1)
     release
@@ -144,15 +140,36 @@ script ROUTE4_TRIGGER_DaycareWatcher_PART2
 
 
 
-movement MOVEMENT_ROUTE4_DaycareWatcher1
+movement MOVEMENT_ROUTE4_NIECE_1
+{
+    emote_exclamation_mark
+    delay_16
+}
+
+movement MOVEMENT_ROUTE4_NIECE_2
+{
+    walk_down
+}
+
+movement MOVEMENT_ROUTE4_NIECE_3
+{
+    walk_up
+}
+
+movement MOVEMENT_ROUTE4_NIECE_4
+{
+    walk_up * 7
+    walk_left
+}
+
+movement MOVEMENT_ROUTE4_NIECE_5
 {
     walk_up * 6
     walk_left * 2
-    delay_8
-    face_right
-}   
+    face_player
+}
 
-movement MOVEMENT_ROUTE4_DaycareWatcher2
+movement MOVEMENT_ROUTE4_NIECE_6
 {
     walk_left * 5
     walk_up * 1
@@ -162,28 +179,11 @@ movement MOVEMENT_ROUTE4_DaycareWatcher2
     face_down
 }   
 
-movement MOVEMENT_ROUTE4_PLAYER1
-{
-    walk_up * 7
-    walk_left * 1
-}   
-
-movement MOVEMENT_ROUTE4_PLAYER2
-{
-    walk_up * 8
-    walk_left * 1
-}   
-
-movement MOVEMENT_ROUTE4_PLAYER3
-{
-    face_up
-}   
-
 script ROUTE4_DaycareWatcher 
 {
     faceplayer
     namebox ("Niece Pott.")
-    random(3)
+    random(5)
         switch (var(VAR_RESULT)) {
             case 0:
                 msgbox(format("Some people have been reporting different coloured monsters hatching from their eggs which are different from the parents."))
@@ -193,6 +193,9 @@ script ROUTE4_DaycareWatcher
                 msgbox(format("I really enjoy just sitting here and seeing what type of Monsters the next adventurer will bring."))
             case 3:
                 msgbox(format("Over time high achieving adventurers visit our little farm and hand out gifts.\pI wonder what makes them decide to visit our little farm."))
+            case 4:
+                msgbox(format("Did you know that Potterington Farm is a family run buisness?\pMy mother and father run this farm and my grandma runs the farm over near Ardougne!"))
+                
         }
     closemessage
     hidenamebox
@@ -212,6 +215,28 @@ script ROUTE4_PatchFarmer
     faceplayer
     namebox ("Farmer")
     msgbox(format("Did you know you can plant crops in farming patches?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script ROUTE4_Summoner
+{
+    faceplayer
+    namebox ("Summoner")
+    msgbox(format("These farmers told me that they would raise my monsters, but when I came back they dumped an egg on me…\pI'm not ready to be a parent…"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script ROUTE4_Diviner
+{
+    faceplayer
+    namebox ("Diviner")
+    msgbox(format("I'm about to go on holiday and I need someone look after my Sheep and Wolf while I am away.\pThankfully Potterington farm offered to look after them while I am away."))
     closemessage
     hidenamebox
     release

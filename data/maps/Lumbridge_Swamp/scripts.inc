@@ -206,6 +206,14 @@ EventScript_RestBed_2:
 	goto EventScript_RestBed_1
 
 
+EventScript_Locked_Door::
+	lock
+	msgbox EventScript_Locked_Door_Text_0
+	closemessage
+	release
+	end
+
+
 BLOCK_LumbridgeSwamp_HAM_Text_0:
 	.string "Pink Man$"
 
@@ -314,10 +322,13 @@ LUMBRIDGESWAMP_Urhney_Text_3:
 LUMBRIDGESWAMP_BOOK_Text_0:
 	.string "The book is titled,\n"
 	.string "101 Ways to successfully Meditate.\p"
-	.string "Step 1, Live far away from civilation.\p"
+	.string "Step 1, Live far away from civilisation.\p"
 	.string "Step 2, make sure it is far enough away\n"
 	.string "that adventurers don't light fires at\l"
 	.string "your windows.$"
 
 EventScript_RestBed_Text_0:
 	.string "Would you like to take a rest?$"
+
+EventScript_Locked_Door_Text_0:
+	.string "It is locked.$"

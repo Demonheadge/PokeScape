@@ -4,23 +4,44 @@ const OBJ_EVENT_ID_CABIN_BOY = 2
 const OBJ_EVENT_ID_SHIP = 3
 
 mapscripts Crandor_SeaRoute_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        call(WEATHER_CHANGE_SEA_ROUTES_ROUGH)
+        call(CRANDOR_SEAROUTE_STATE)
+    }
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-		VAR_TEMP_B, 0: hideplayer
+		VAR_TEMP_B, 1: hideplayer
     ]
     MAP_SCRIPT_ON_FRAME_TABLE [
-		VAR_TEMP_B, 0: CRANDOR_SHIP_SCENE
+		VAR_TEMP_B, 1: CRANDOR_SHIP_SCENE
     ]
 }
 
+script CRANDOR_SEAROUTE_STATE {
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 130) {
+        setvar(VAR_TEMP_B, 1)
+    }
+    else {
+        setflag(FLAG_TEMP_10)
+        setflag(FLAG_TEMP_11)
+        setflag(FLAG_TEMP_13)
+    }
+    return
+}
+
 script hideplayer {
+    setweather (WEATHER_NONE)
+    doweather
     hideobjectat(OBJ_EVENT_ID_PLAYER, MAP_CRANDOR_SEA_ROUTE)
     return
 }
 
 script TELEPORT_TO_SHIP_SCENE
 {
-    warp(MAP_CRANDOR_SEA_ROUTE, 0, 57, 5)
-    waitstate
+    
+    applymovement(34, movement_elvargflyover_left)
+    waitmovement(0)
+    //warp(MAP_CRANDOR_SEA_ROUTE, 0, 65, 16)
+    //waitstate
     end
 }
 
@@ -29,6 +50,8 @@ script CRANDOR_SHIP_SCENE
     lockall
     setflag(FLAG_TEMP_10)
     removeobject(OBJ_EVENT_ID_CABIN_BOY)
+    setobjectxyperm(OBJ_EVENT_ID_ELVARG, 34, 14)
+    setobjectxyperm(OBJ_EVENT_ID_CABIN_BOY, 26, 8)
     
     //setobjectxy(OBJ_EVENT_ID_PLAYER, 13, 22)
     
@@ -70,12 +93,13 @@ script CRANDOR_SHIP_SCENE
     waitmovement(0)
 
     delay(32)
-    setobjectxy(OBJ_EVENT_ID_ELVARG, 22, 9)
+    
+    setobjectxy(OBJ_EVENT_ID_ELVARG, 35, 14)
     playse(SE_M_FLY)
     applymovement(OBJ_EVENT_ID_ELVARG, movement_elvargflyover2)
     waitmovement(0)
 
-    playbgm(MUS_PS_RIMMINGTON, 0)
+    playbgm(MUS_PS_VS_CHAOS_TUNNELS, 0)
     namebox("Cabin Boy")
     msgbox(format("What is that?!"))
     closemessage
@@ -93,7 +117,7 @@ script CRANDOR_SHIP_SCENE
     applymovement(OBJ_EVENT_ID_SHIP, movement_sailing2)
     waitmovement(0)
 
-    setobjectxy(OBJ_EVENT_ID_ELVARG, 22, 3)
+    setobjectxy(OBJ_EVENT_ID_ELVARG, 40, 5)
     playse(SE_M_FLY)
     applymovement(OBJ_EVENT_ID_ELVARG, movement_elvargflyover_left)
 
@@ -102,7 +126,7 @@ script CRANDOR_SHIP_SCENE
 	setvar (VAR_0x8006, 8  @ num shakes)
 	setvar (VAR_0x8007, 3  @ shake delay)
 	special (ShakeCamera)
-    setmetatile(19, 2, 834, 0)
+    setmetatile(34, 5, 834, 0)
     special(DrawWholeMapView) 
     
     delay(32)
@@ -111,7 +135,7 @@ script CRANDOR_SHIP_SCENE
 	setvar (VAR_0x8006, 8  @ num shakes)
 	setvar (VAR_0x8007, 3  @ shake delay)
 	special (ShakeCamera)
-    setmetatile(16, 7, 834, 0)
+    setmetatile(31, 10, 834, 0)
     special(DrawWholeMapView) 
 
     delay(32)
@@ -120,9 +144,12 @@ script CRANDOR_SHIP_SCENE
 	setvar (VAR_0x8006, 8  @ num shakes)
 	setvar (VAR_0x8007, 3  @ shake delay)
 	special (ShakeCamera)
-    setmetatile(15, 1, 834, 0)
+    setmetatile(30, 4, 834, 0)
     special(DrawWholeMapView) 
     waitmovement(0)
+
+    setflag(FLAG_TEMP_11)
+    removeobject(OBJ_EVENT_ID_ELVARG)
 
     namebox("Ned")
     msgbox(format("We are under attack!"))
@@ -133,7 +160,7 @@ script CRANDOR_SHIP_SCENE
 	setvar (VAR_0x8006, 8  @ num shakes)
 	setvar (VAR_0x8007, 3  @ shake delay)
 	special (ShakeCamera)
-    setmetatile(9, 3, 834, 0)
+    setmetatile(24, 5, 834, 0)
     special(DrawWholeMapView) 
 	waitstate
 
@@ -145,7 +172,7 @@ script CRANDOR_SHIP_SCENE
 	setvar (VAR_0x8006, 8  @ num shakes)
 	setvar (VAR_0x8007, 3  @ shake delay)
 	special (ShakeCamera)
-    setmetatile(4, 4, 834, 0)
+    setmetatile(31, 7, 834, 0)
     special(DrawWholeMapView) 
 	waitstate
     applymovement(OBJ_EVENT_ID_PLAYER, movement_sailing4)
@@ -156,7 +183,7 @@ script CRANDOR_SHIP_SCENE
 	setvar (VAR_0x8006, 8  @ num shakes)
 	setvar (VAR_0x8007, 3  @ shake delay)
 	special (ShakeCamera)
-    setmetatile(7, 7, 834, 0)
+    setmetatile(22, 10, 834, 0)
     special(DrawWholeMapView) 
 	waitstate
     namebox("Cabin Boy")
@@ -171,7 +198,7 @@ script CRANDOR_SHIP_SCENE
 	setvar (VAR_0x8006, 8  @ num shakes)
 	setvar (VAR_0x8007, 3  @ shake delay)
 	special (ShakeCamera)
-    setmetatile(14, 5, 834, 0)
+    setmetatile(26, 9, 834, 0)
     special(DrawWholeMapView) 
 	waitstate
     namebox("Ned")
@@ -179,8 +206,7 @@ script CRANDOR_SHIP_SCENE
     closemessage
     hidenamebox
     waitmovement(0)
-    setflag(FLAG_TEMP_11)
-    removeobject(OBJ_EVENT_ID_ELVARG)
+    
     applymovement(OBJ_EVENT_ID_PLAYER, movement_sailing4)
     applymovement(OBJ_EVENT_ID_SHIP, movement_sailing4)
     waitmovement(0)
@@ -189,7 +215,7 @@ script CRANDOR_SHIP_SCENE
 	setvar (VAR_0x8006, 8  @ num shakes)
 	setvar (VAR_0x8007, 3  @ shake delay)
 	special (ShakeCamera)
-    setmetatile(10, 5, 834, 0)
+    setmetatile(25, 8, 834, 0)
     special(DrawWholeMapView) 
 	waitstate
     namebox("Ned")
@@ -204,7 +230,7 @@ script CRANDOR_SHIP_SCENE
 	setvar (VAR_0x8006, 8  @ num shakes)
 	setvar (VAR_0x8007, 3  @ shake delay)
 	special (ShakeCamera)
-    setmetatile(11, 3, 834, 0)
+    setmetatile(22, 7, 834, 0)
     special(DrawWholeMapView) 
 	waitstate
     applymovement(OBJ_EVENT_ID_PLAYER, movement_sailing3)
@@ -217,9 +243,10 @@ script CRANDOR_SHIP_SCENE
     msgbox(format("AHHHHHHH!!!"))
     closemessage
     hidenamebox
-    
+    setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 135)
     delay(60)
     warp(MAP_CRANDOR, 1)
+    waitstate
 }
 
 movement movement_setinvisible {
@@ -278,7 +305,24 @@ movement movement_cabinboy {
 
 
 
-
+movement movement_elvarg_test {
+    face_left
+    lock_facing_direction
+    
+    delay_16 * 6
+    walk_right
+    walk_up
+    walk_down
+    delay_16 * 6
+    unlock_facing_direction
+    face_up
+    delay_16 * 6
+    face_down
+    delay_16 * 6
+    face_right
+    delay_16 * 6
+    
+}
 
 
 
@@ -380,38 +424,19 @@ script CRANDOR_EVENT_PORTSARIM_CABIN_BOY {
     namebox("Cabin Boy")
 
     if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) {
-        if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 150) { 
-        msgbox(format("Finally the day has come!\pI can set sail with her and make my dream come true!"))
+        if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 130) {  //> - Greater than,  < - Less than.
+            msgbox(format("Finally the day has come!\pI can set sail with her and make my dream come true!\pAlthough I wish they hadn't renamed her to the Lady Falador…"))
+            closemessage
+            hidenamebox
+            release
+            end
         }
     }
-    else {
-        msgbox(format("This ship is called the Lady Lumbridge!\pOne day I hope to set sail with her!\pBut alas the lady, she needs a captain.\pNot a wee cabin boy like myself…"))
-    }
 
-
-
+    msgbox(format("This ship is called the Lady Lumbridge!\pOne day I hope to set sail with her!\pBut alas the lady, she needs a captain.\pNot a wee cabin boy like myself…"))
     closemessage
     hidenamebox
     release
     end
 }
-
-script CRANDOR_EVENT_PORTSARIM_NED {
-    lock
-    faceplayer
-    namebox("Ned")
-    msgbox(format("{PLAYER}, are you ready to set sail to the Isle of Crandor?"), MSGBOX_YESNO)
-    if (var(VAR_RESULT)){
-        msgbox(format("Let us embark on this voyage!"))
-        closemessage
-        hidenamebox
-        warp(MAP_CRANDOR_SEA_ROUTE, 0, 57, 5)
-    }
-    closemessage
-    hidenamebox
-    release
-    end
-}
-
-
 

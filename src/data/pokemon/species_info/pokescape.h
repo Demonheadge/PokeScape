@@ -5,6 +5,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 
 
+
+
 [SPECIES_GUTHLING] =
 	{
 		.baseHP = 65,
@@ -40,9 +42,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Guthling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Guthling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Guthling, 64, 64),
 		.backPicYOffset = 0,
@@ -51,6 +51,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Guthling, 1),
 		.footprint = gMonFootprint_Guthling,
 		LEARNSETS(Guthling),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 16, SPECIES_GUTHBIRD}
 		),
@@ -91,9 +93,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Guthbird, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Guthbird,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Guthbird, 64, 64),
 		.backPicYOffset = 0,
@@ -102,6 +102,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Guthbird, 1),
 		.footprint = gMonFootprint_Guthbird,
 		LEARNSETS(Guthbird),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 36, SPECIES_GUTHRAPTOR}
 		),
@@ -142,9 +144,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Guthraptor, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Guthraptor,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Guthraptor, 64, 64),
 		.backPicYOffset = 0,
@@ -153,6 +153,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Guthraptor, 1),
 		.footprint = gMonFootprint_Guthraptor,
 		LEARNSETS(Guthraptor),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_ZAMLING] =
@@ -190,9 +192,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zamling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zamling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zamling, 64, 64),
 		.backPicYOffset = 0,
@@ -201,6 +201,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zamling, 0),
 		.footprint = gMonFootprint_Zamling,
 		LEARNSETS(Zamling),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 16, SPECIES_ZAMBIRD}
 		),
@@ -241,9 +243,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zambird, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zambird,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zambird, 64, 64),
 		.backPicYOffset = 0,
@@ -252,6 +252,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zambird, 0),
 		.footprint = gMonFootprint_Zambird,
 		LEARNSETS(Zambird),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 36, SPECIES_ZAMOHAWK}
 		),
@@ -292,9 +294,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zamohawk, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zamohawk,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zamohawk, 64, 64),
 		.backPicYOffset = 0,
@@ -303,6 +303,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zamohawk, 0),
 		.footprint = gMonFootprint_Zamohawk,
 		LEARNSETS(Zamohawk),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SARALING] =
@@ -340,9 +342,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Saraling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Saraling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Saraling, 64, 64),
 		.backPicYOffset = 0,
@@ -351,6 +351,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Saraling, 2),
 		.footprint = gMonFootprint_Saraling,
 		LEARNSETS(Saraling),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 16, SPECIES_SARABIRD}
 		),
@@ -391,9 +393,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sarabird, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sarabird,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sarabird, 64, 64),
 		.backPicYOffset = 0,
@@ -402,6 +402,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sarabird, 2),
 		.footprint = gMonFootprint_Sarabird,
 		LEARNSETS(Sarabird),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 36, SPECIES_SARAOWL}
 		),
@@ -443,9 +445,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Saraowl, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Saraowl,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Saraowl, 64, 64),
 		.backPicYOffset = 0,
@@ -454,6 +454,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Saraowl, 2),
 		.footprint = gMonFootprint_Saraowl,
 		LEARNSETS(Saraowl),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 4,
 	},
 
 [SPECIES_CHICK] =
@@ -492,9 +494,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chick, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chick,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chick, 64, 64),
 		.backPicYOffset = 0,
@@ -503,6 +503,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chick, 2),
 		.footprint = gMonFootprint_Chick,
 		LEARNSETS(Chick),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_FEMALE_MAP_ASGARNIA, 17, SPECIES_CHICKEN_NORMAL_FORM},
 			{EVO_LEVEL_MALE_MAP_ASGARNIA, 17, SPECIES_ROOSTER_NORMAL_FORM},
@@ -559,9 +561,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chicken_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chicken_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chicken_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -570,6 +570,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chicken_Normal_Form, 1),
 		.footprint = gMonFootprint_Chicken_Normal_Form,
 		LEARNSETS(Chicken_Normal_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 28, SPECIES_DREADFOWL},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_GILBERT, SPECIES_CHICKEN_DIVING_FORM}
@@ -613,9 +615,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dreadfowl, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dreadfowl,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dreadfowl, 64, 64),
 		.backPicYOffset = 0,
@@ -624,6 +624,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dreadfowl, 0),
 		.footprint = gMonFootprint_Dreadfowl,
 		LEARNSETS(Dreadfowl),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHICKEN_VARROCK_FORM] =
@@ -660,9 +662,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chicken_Varrock_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chicken_Varrock_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chicken_Varrock_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -671,6 +671,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chicken_Varrock_Form, 0),
 		.footprint = gMonFootprint_Chicken_Varrock_Form,
 		LEARNSETS(Chicken_Varrock_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_GILBERT, SPECIES_CHICKEN_DIVING_FORM},
 			{EVO_ITEM, ITEM_WATER_RUNE, SPECIES_CHICKEN_DIVING_FORM}
@@ -713,9 +715,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chicken_Diving_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chicken_Diving_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chicken_Diving_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -724,6 +724,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chicken_Diving_Form, 0),
 		.footprint = gMonFootprint_Chicken_Diving_Form,
 		LEARNSETS(Chicken_Diving_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHICKEN_KARAMJA_FORM] =
@@ -760,9 +762,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chicken_Karamja_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chicken_Karamja_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chicken_Karamja_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -771,6 +771,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chicken_Karamja_Form, 0),
 		.footprint = gMonFootprint_Chicken_Karamja_Form,
 		LEARNSETS(Chicken_Karamja_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_GILBERT, SPECIES_CHICKEN_DIVING_FORM},
 			{EVO_LEVEL, 28, SPECIES_CHICKEN_FAMINE_FORM}
@@ -813,9 +815,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chicken_Death_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chicken_Death_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chicken_Death_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -824,6 +824,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chicken_Death_Form, 0),
 		.footprint = gMonFootprint_Chicken_Death_Form,
 		LEARNSETS(Chicken_Death_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHICKEN_BANDOSIAN_FORM] =
@@ -860,9 +862,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chicken_Bandosian_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chicken_Bandosian_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chicken_Bandosian_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -871,6 +871,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chicken_Bandosian_Form, 0),
 		.footprint = gMonFootprint_Chicken_Bandosian_Form,
 		LEARNSETS(Chicken_Bandosian_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_GILBERT, SPECIES_CHICKEN_DIVING_FORM},
 			{EVO_LEVEL, 28, SPECIES_CHICKEN_PESTILENCE_FORM}
@@ -912,9 +914,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chicken_War_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chicken_War_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chicken_War_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -923,6 +923,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chicken_War_Form, 0),
 		.footprint = gMonFootprint_Chicken_War_Form,
 		LEARNSETS(Chicken_War_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ROOSTER_NORMAL_FORM] =
@@ -961,9 +963,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rooster_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rooster_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rooster_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -972,6 +972,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rooster_Normal_Form, 1),
 		.footprint = gMonFootprint_Rooster_Normal_Form,
 		LEARNSETS(Rooster_Normal_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 28, SPECIES_OOMLIE},
 			{EVO_ITEM, ITEM_MIND_RUNE, SPECIES_ERNEST}
@@ -1013,9 +1015,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ernest, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ernest,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ernest, 64, 64),
 		.backPicYOffset = 0,
@@ -1024,6 +1024,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ernest, 0),
 		.footprint = gMonFootprint_Ernest,
 		LEARNSETS(Ernest),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ROOSTER_KARAMJA_FORM] =
@@ -1060,9 +1062,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rooster_Karamja_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rooster_Karamja_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rooster_Karamja_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -1071,6 +1071,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rooster_Karamja_Form, 0),
 		.footprint = gMonFootprint_Rooster_Karamja_Form,
 		LEARNSETS(Rooster_Karamja_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_MOVE, MOVE_HIGH_JUMP_KICK, SPECIES_OOMLIE}
 		),
@@ -1112,9 +1114,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Oomlie, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Oomlie,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Oomlie, 64, 64),
 		.backPicYOffset = 0,
@@ -1123,6 +1123,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Oomlie, 0),
 		.footprint = gMonFootprint_Oomlie,
 		LEARNSETS(Oomlie),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ROOSTER_BANDOSIAN_FORM] =
@@ -1159,9 +1161,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rooster_Bandosian_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rooster_Bandosian_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rooster_Bandosian_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -1170,6 +1170,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rooster_Bandosian_Form, 0),
 		.footprint = gMonFootprint_Rooster_Bandosian_Form,
 		LEARNSETS(Rooster_Bandosian_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 28, SPECIES_CHICKEN_WAR_FORM}
 		),
@@ -1211,9 +1213,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chicken_Famine_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chicken_Famine_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chicken_Famine_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -1222,6 +1222,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chicken_Famine_Form, 0),
 		.footprint = gMonFootprint_Chicken_Famine_Form,
 		LEARNSETS(Chicken_Famine_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ROOSTER_VARROCK_FORM] =
@@ -1258,9 +1260,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rooster_Varrock_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rooster_Varrock_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rooster_Varrock_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -1269,6 +1269,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rooster_Varrock_Form, 0),
 		.footprint = gMonFootprint_Rooster_Varrock_Form,
 		LEARNSETS(Rooster_Varrock_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_CHICKEN_DEATH_FORM}
 		),
@@ -1310,9 +1312,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chicken_Pestilence_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chicken_Pestilence_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chicken_Pestilence_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -1321,6 +1321,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chicken_Pestilence_Form, 0),
 		.footprint = gMonFootprint_Chicken_Pestilence_Form,
 		LEARNSETS(Chicken_Pestilence_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHICKEN_LIZARD_FORM] =
@@ -1359,9 +1361,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chicken_Lizard_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chicken_Lizard_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chicken_Lizard_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -1370,6 +1370,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chicken_Lizard_Form, 1),
 		.footprint = gMonFootprint_Chicken_Lizard_Form,
 		LEARNSETS(Chicken_Lizard_Form),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHICKEN_UNDEAD_FORM] =
@@ -1408,9 +1410,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chicken_Undead_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chicken_Undead_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chicken_Undead_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -1419,6 +1419,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chicken_Undead_Form, 1),
 		.footprint = gMonFootprint_Chicken_Undead_Form,
 		LEARNSETS(Chicken_Undead_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHICKEN_MYSTERY_FORM] =
@@ -1457,9 +1459,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chicken_Mystery_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chicken_Mystery_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chicken_Mystery_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -1468,6 +1468,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chicken_Mystery_Form, 0),
 		.footprint = gMonFootprint_Chicken_Mystery_Form,
 		LEARNSETS(Chicken_Mystery_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_EVILCHICKEN] =
@@ -1507,9 +1509,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(EvilChicken, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_EvilChicken,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(EvilChicken, 64, 64),
 		.backPicYOffset = 0,
@@ -1518,6 +1518,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(EvilChicken, 1),
 		.footprint = gMonFootprint_EvilChicken,
 		LEARNSETS(EvilChicken),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SWORDCHICK] =
@@ -1556,9 +1558,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Swordchick, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Swordchick,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Swordchick, 64, 64),
 		.backPicYOffset = 0,
@@ -1567,6 +1567,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Swordchick, 0),
 		.footprint = gMonFootprint_Swordchick,
 		LEARNSETS(Swordchick),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_NEWTROOST] =
@@ -1606,9 +1608,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Newtroost, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Newtroost,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Newtroost, 64, 64),
 		.backPicYOffset = 0,
@@ -1617,6 +1617,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Newtroost, 2),
 		.footprint = gMonFootprint_Newtroost,
 		LEARNSETS(Newtroost),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CALF] =
@@ -1654,9 +1656,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Calf, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Calf,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Calf, 64, 64),
 		.backPicYOffset = 0,
@@ -1665,6 +1665,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Calf, 2),
 		.footprint = gMonFootprint_Calf,
 		LEARNSETS(Calf),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_COW_PLAGUE_FORM},
 			{EVO_LEVEL_FEMALE, 19, SPECIES_COW},
@@ -1715,9 +1717,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cow, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cow,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cow, 64, 64),
 		.backPicYOffset = 0,
@@ -1726,6 +1726,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cow, 0),
 		.footprint = gMonFootprint_Cow,
 		LEARNSETS(Cow),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_FEMALE_DEATH, 32, SPECIES_SKELETALOX_FEMALE_FORM},
 			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_SKELETALOX_FEMALE_FORM},
@@ -1770,9 +1772,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Super_Cow, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Super_Cow,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Super_Cow, 64, 64),
 		.backPicYOffset = 0,
@@ -1781,6 +1781,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Super_Cow, 0),
 		.footprint = gMonFootprint_Super_Cow,
 		LEARNSETS(Super_Cow),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_COW_DAIRY_FORM] =
@@ -1819,9 +1821,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cow_Dairy_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cow_Dairy_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cow_Dairy_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -1830,6 +1830,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cow_Dairy_Form, 0),
 		.footprint = gMonFootprint_Cow_Dairy_Form,
 		LEARNSETS(Cow_Dairy_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_COW_UNDEAD_FORM] =
@@ -1868,9 +1870,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cow_Undead_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cow_Undead_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cow_Undead_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -1879,6 +1879,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cow_Undead_Form, 0),
 		.footprint = gMonFootprint_Cow_Undead_Form,
 		LEARNSETS(Cow_Undead_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_VULTURE, SPECIES_SKELETALOX_FEMALE_FORM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_VULTLING, SPECIES_SKELETALOX_FEMALE_FORM},
@@ -1925,9 +1927,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cow_Chocolate_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cow_Chocolate_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cow_Chocolate_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -1936,6 +1936,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cow_Chocolate_Form, 0),
 		.footprint = gMonFootprint_Cow_Chocolate_Form,
 		LEARNSETS(Cow_Chocolate_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_MOVE, MOVE_RAPID_SPIN, SPECIES_COW_HARLEQUIN_FORM}
 		),
@@ -1977,9 +1979,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cow_Strawberry_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cow_Strawberry_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cow_Strawberry_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -1988,6 +1988,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cow_Strawberry_Form, 0),
 		.footprint = gMonFootprint_Cow_Strawberry_Form,
 		LEARNSETS(Cow_Strawberry_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_MOVE, MOVE_RAPID_SPIN, SPECIES_COW_HARLEQUIN_FORM}
 		),
@@ -2029,9 +2031,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cow_Vanilla_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cow_Vanilla_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cow_Vanilla_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -2040,6 +2040,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cow_Vanilla_Form, 0),
 		.footprint = gMonFootprint_Cow_Vanilla_Form,
 		LEARNSETS(Cow_Vanilla_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_MOVE, MOVE_RAPID_SPIN, SPECIES_COW_HARLEQUIN_FORM}
 		),
@@ -2081,9 +2083,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cow_Harlequin_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cow_Harlequin_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cow_Harlequin_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -2092,6 +2092,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cow_Harlequin_Form, 0),
 		.footprint = gMonFootprint_Cow_Harlequin_Form,
 		LEARNSETS(Cow_Harlequin_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SKELETALOX_FEMALE_FORM] =
@@ -2129,9 +2131,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(SkeletalOx_Female_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_SkeletalOx_Female_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(SkeletalOx_Female_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -2140,6 +2140,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(SkeletalOx_Female_Form, 0),
 		.footprint = gMonFootprint_SkeletalOx_Female_Form,
 		LEARNSETS(SkeletalOx_Female_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BULL] =
@@ -2177,9 +2179,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bull, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bull,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bull, 64, 64),
 		.backPicYOffset = 0,
@@ -2188,6 +2188,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bull, 0),
 		.footprint = gMonFootprint_Bull,
 		LEARNSETS(Bull),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_CHAOS_RUNE, SPECIES_CATABLEPON},
 			{EVO_LEVEL, 32, SPECIES_BULL_ELDER_FORM},
@@ -2232,9 +2234,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bull_Elder_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bull_Elder_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bull_Elder_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -2243,6 +2243,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bull_Elder_Form, 0),
 		.footprint = gMonFootprint_Bull_Elder_Form,
 		LEARNSETS(Bull_Elder_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SKELETALOX_MALE_FORM] =
@@ -2282,9 +2284,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(SkeletalOx_Male_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_SkeletalOx_Male_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(SkeletalOx_Male_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -2293,6 +2293,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(SkeletalOx_Male_Form, 0),
 		.footprint = gMonFootprint_SkeletalOx_Male_Form,
 		LEARNSETS(SkeletalOx_Male_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_TROJAN_COW] =
@@ -2331,9 +2333,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Trojan_Cow, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Trojan_Cow,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Trojan_Cow, 64, 64),
 		.backPicYOffset = 0,
@@ -2342,6 +2342,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Trojan_Cow, 0),
 		.footprint = gMonFootprint_Trojan_Cow,
 		LEARNSETS(Trojan_Cow),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_COW_PLAGUE_FORM] =
@@ -2380,9 +2382,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cow_Plague_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cow_Plague_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cow_Plague_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -2391,6 +2391,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cow_Plague_Form, 0),
 		.footprint = gMonFootprint_Cow_Plague_Form,
 		LEARNSETS(Cow_Plague_Form),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_MINOTAUR_NORMAL_FORM] =
@@ -2429,9 +2431,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Minotaur_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Minotaur_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Minotaur_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -2440,6 +2440,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Minotaur_Normal_Form, 0),
 		.footprint = gMonFootprint_Minotaur_Normal_Form,
 		LEARNSETS(Minotaur_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 42, SPECIES_MINOTAUR_RUNE_FORM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_ANIMOUR, SPECIES_MINOTAUR_RUNE_FORM},
@@ -2484,9 +2486,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Minotaur_Rune_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Minotaur_Rune_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Minotaur_Rune_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -2495,6 +2495,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Minotaur_Rune_Form, 0),
 		.footprint = gMonFootprint_Minotaur_Rune_Form,
 		LEARNSETS(Minotaur_Rune_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_UNICOW] =
@@ -2533,9 +2535,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Unicow, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Unicow,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Unicow, 64, 64),
 		.backPicYOffset = 0,
@@ -2544,6 +2544,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Unicow, 0),
 		.footprint = gMonFootprint_Unicow,
 		LEARNSETS(Unicow),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_RAT_NORMAL_FORM] =
@@ -2581,9 +2583,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rat_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rat_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rat_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -2592,6 +2592,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rat_Normal_Form, 0),
 		.footprint = gMonFootprint_Rat_Normal_Form,
 		LEARNSETS(Rat_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 17, SPECIES_GIANT_RAT_NORMAL_FORM},
 			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_RAT_HELL_FORM}
@@ -2634,9 +2636,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Giant_Rat_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Giant_Rat_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Giant_Rat_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -2645,6 +2645,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Giant_Rat_Normal_Form, 0),
 		.footprint = gMonFootprint_Giant_Rat_Normal_Form,
 		LEARNSETS(Giant_Rat_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_AIR_RUNE, SPECIES_GIANT_RAT_BLESSED_FORM},
 			{EVO_ITEM, ITEM_WATER_RUNE, SPECIES_BRINE_RAT},
@@ -2692,9 +2694,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Brine_Rat, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Brine_Rat,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Brine_Rat, 64, 64),
 		.backPicYOffset = 0,
@@ -2703,6 +2703,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Brine_Rat, 0),
 		.footprint = gMonFootprint_Brine_Rat,
 		LEARNSETS(Brine_Rat),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GIANT_RAT_BLESSED_FORM] =
@@ -2741,9 +2743,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Giant_Rat_Blessed_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Giant_Rat_Blessed_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Giant_Rat_Blessed_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -2752,6 +2752,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Giant_Rat_Blessed_Form, 0),
 		.footprint = gMonFootprint_Giant_Rat_Blessed_Form,
 		LEARNSETS(Giant_Rat_Blessed_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_RAT_HELL_FORM] =
@@ -2789,9 +2791,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rat_Hell_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rat_Hell_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rat_Hell_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -2800,6 +2800,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rat_Hell_Form, 0),
 		.footprint = gMonFootprint_Rat_Hell_Form,
 		LEARNSETS(Rat_Hell_Form),
+		.frontPicYOffset = 13,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 32, SPECIES_GIANT_RAT_HELL_FORM},
 			{EVO_LEVEL_GRASS_TYPE_MON_IN_PARTY, 32, SPECIES_SHELL_RAT}
@@ -2841,9 +2843,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Giant_Rat_Hell_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Giant_Rat_Hell_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Giant_Rat_Hell_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -2852,6 +2852,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Giant_Rat_Hell_Form, 2),
 		.footprint = gMonFootprint_Giant_Rat_Hell_Form,
 		LEARNSETS(Giant_Rat_Hell_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SHELL_RAT] =
@@ -2891,9 +2893,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Shell_Rat, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Shell_Rat,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Shell_Rat, 64, 64),
 		.backPicYOffset = 0,
@@ -2902,6 +2902,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Shell_Rat, 0),
 		.footprint = gMonFootprint_Shell_Rat,
 		LEARNSETS(Shell_Rat),
+		.frontPicYOffset = 11,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_RAT_CRYPT_FORM] =
@@ -2940,9 +2942,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rat_Crypt_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rat_Crypt_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rat_Crypt_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -2951,6 +2951,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rat_Crypt_Form, 0),
 		.footprint = gMonFootprint_Rat_Crypt_Form,
 		LEARNSETS(Rat_Crypt_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 23, SPECIES_GIANT_RAT_CRYPT_FORM},
 			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_RAT_HELL_FORM}
@@ -2993,9 +2995,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Giant_Rat_Crypt_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Giant_Rat_Crypt_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Giant_Rat_Crypt_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -3004,6 +3004,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Giant_Rat_Crypt_Form, 0),
 		.footprint = gMonFootprint_Giant_Rat_Crypt_Form,
 		LEARNSETS(Giant_Rat_Crypt_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 32, SPECIES_GIANT_RAT_DUNGEON_FORM},
 			{EVO_LEVEL_NIGHT, 32, SPECIES_ZOMBIE_RAT},
@@ -3051,9 +3053,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Warped_Rat, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Warped_Rat,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Warped_Rat, 64, 64),
 		.backPicYOffset = 0,
@@ -3062,6 +3062,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Warped_Rat, 0),
 		.footprint = gMonFootprint_Warped_Rat,
 		LEARNSETS(Warped_Rat),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ZOMBIE_RAT] =
@@ -3100,9 +3102,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zombie_Rat, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zombie_Rat,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zombie_Rat, 64, 64),
 		.backPicYOffset = 0,
@@ -3111,6 +3111,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zombie_Rat, 0),
 		.footprint = gMonFootprint_Zombie_Rat,
 		LEARNSETS(Zombie_Rat),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GIANT_RAT_DUNGEON_FORM] =
@@ -3149,9 +3151,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Giant_Rat_Dungeon_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Giant_Rat_Dungeon_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Giant_Rat_Dungeon_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -3160,6 +3160,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Giant_Rat_Dungeon_Form, 0),
 		.footprint = gMonFootprint_Giant_Rat_Dungeon_Form,
 		LEARNSETS(Giant_Rat_Dungeon_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_RAT_KING_FORM] =
@@ -3198,9 +3200,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rat_King_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rat_King_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rat_King_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -3209,6 +3209,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rat_King_Form, 0),
 		.footprint = gMonFootprint_Rat_King_Form,
 		LEARNSETS(Rat_King_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 23, SPECIES_GIANT_RAT_KING_FORM},
 			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_RAT_HELL_FORM}
@@ -3251,9 +3253,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Giant_Rat_King_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Giant_Rat_King_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Giant_Rat_King_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -3262,6 +3262,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Giant_Rat_King_Form, 0),
 		.footprint = gMonFootprint_Giant_Rat_King_Form,
 		LEARNSETS(Giant_Rat_King_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 32, SPECIES_WARPED_RAT},
 			{EVO_LEVEL_NIGHT, 32, SPECIES_ANGRY_RAT},
@@ -3310,9 +3312,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Albino_Rat, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Albino_Rat,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Albino_Rat, 64, 64),
 		.backPicYOffset = 0,
@@ -3321,6 +3321,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Albino_Rat, 0),
 		.footprint = gMonFootprint_Albino_Rat,
 		LEARNSETS(Albino_Rat),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ANGRY_RAT] =
@@ -3358,9 +3360,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Angry_Rat, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Angry_Rat,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Angry_Rat, 64, 64),
 		.backPicYOffset = 0,
@@ -3369,6 +3369,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Angry_Rat, 0),
 		.footprint = gMonFootprint_Angry_Rat,
 		LEARNSETS(Angry_Rat),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_EXPERIMENT_2_FORM] =
@@ -3406,9 +3408,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Experiment_2_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Experiment_2_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Experiment_2_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -3417,6 +3417,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Experiment_2_Form, 0),
 		.footprint = gMonFootprint_Experiment_2_Form,
 		LEARNSETS(Experiment_2_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_LAMB] =
@@ -3454,9 +3456,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Lamb, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Lamb,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Lamb, 64, 64),
 		.backPicYOffset = 0,
@@ -3465,6 +3465,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Lamb, 0),
 		.footprint = gMonFootprint_Lamb,
 		LEARNSETS(Lamb),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_FEMALE, 17, SPECIES_SHEEP_WHITE_FORM},
 			{EVO_LEVEL_MALE, 17, SPECIES_RAM_FLUFFY_FORM}
@@ -3506,9 +3508,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sheep_White_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sheep_White_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sheep_White_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -3517,6 +3517,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sheep_White_Form, 0),
 		.footprint = gMonFootprint_Sheep_White_Form,
 		LEARNSETS(Sheep_White_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 30, SPECIES_SHEEP_PLAGUE_FORM},
 			{EVO_LEVEL_NIGHT, 30, SPECIES_SHEEP_BLACK_FORM},
@@ -3561,9 +3563,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sheep_Plague_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sheep_Plague_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sheep_Plague_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -3572,6 +3572,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sheep_Plague_Form, 0),
 		.footprint = gMonFootprint_Sheep_Plague_Form,
 		LEARNSETS(Sheep_Plague_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SHEEP_BLACK_FORM] =
@@ -3611,9 +3613,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sheep_Black_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sheep_Black_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sheep_Black_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -3622,6 +3622,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sheep_Black_Form, 0),
 		.footprint = gMonFootprint_Sheep_Black_Form,
 		LEARNSETS(Sheep_Black_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_RAM_FLUFFY_FORM] =
@@ -3659,9 +3661,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ram_Fluffy_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ram_Fluffy_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ram_Fluffy_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -3670,6 +3670,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ram_Fluffy_Form, 0),
 		.footprint = gMonFootprint_Ram_Fluffy_Form,
 		LEARNSETS(Ram_Fluffy_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 30, SPECIES_RAM_SHAGGY_FORM},
 			{EVO_LEVEL_NIGHT, 30, SPECIES_RAM_GOLDEN_FORM},
@@ -3714,9 +3716,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ram_Shaggy_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ram_Shaggy_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ram_Shaggy_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -3725,6 +3725,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ram_Shaggy_Form, 0),
 		.footprint = gMonFootprint_Ram_Shaggy_Form,
 		LEARNSETS(Ram_Shaggy_Form),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_RAM_GOLDEN_FORM] =
@@ -3763,9 +3765,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ram_Golden_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ram_Golden_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ram_Golden_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -3774,6 +3774,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ram_Golden_Form, 0),
 		.footprint = gMonFootprint_Ram_Golden_Form,
 		LEARNSETS(Ram_Golden_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SHEEP_PIRATE_FORM] =
@@ -3814,9 +3816,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sheep_Pirate_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sheep_Pirate_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sheep_Pirate_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -3825,6 +3825,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sheep_Pirate_Form, 2),
 		.footprint = gMonFootprint_Sheep_Pirate_Form,
 		LEARNSETS(Sheep_Pirate_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GOAT_BILLY_FORM] =
@@ -3864,9 +3866,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Goat_Billy_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Goat_Billy_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Goat_Billy_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -3875,6 +3875,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Goat_Billy_Form, 2),
 		.footprint = gMonFootprint_Goat_Billy_Form,
 		LEARNSETS(Goat_Billy_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 28, SPECIES_GOAT_DESERT_FORM},
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_GOAT_CLAY_FORM}
@@ -3918,9 +3920,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Goat_Desert_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Goat_Desert_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Goat_Desert_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -3929,6 +3929,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Goat_Desert_Form, 0),
 		.footprint = gMonFootprint_Goat_Desert_Form,
 		LEARNSETS(Goat_Desert_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 37, SPECIES_GOAT_MOUNTAIN_FORM},
 			{EVO_ITEM, ITEM_CHAOS_RUNE, SPECIES_GORAK},
@@ -3975,9 +3977,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Goat_Mountain_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Goat_Mountain_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Goat_Mountain_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -3986,6 +3986,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Goat_Mountain_Form, 0),
 		.footprint = gMonFootprint_Goat_Mountain_Form,
 		LEARNSETS(Goat_Mountain_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GORAK] =
@@ -4025,9 +4027,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Gorak, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Gorak,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Gorak, 64, 64),
 		.backPicYOffset = 0,
@@ -4036,6 +4036,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Gorak, 0),
 		.footprint = gMonFootprint_Gorak,
 		LEARNSETS(Gorak),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SARDINE] =
@@ -4073,9 +4075,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sardine, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sardine,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sardine, 64, 64),
 		.backPicYOffset = 0,
@@ -4084,6 +4084,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sardine, 0),
 		.footprint = gMonFootprint_Sardine,
 		LEARNSETS(Sardine),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 2,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 13, SPECIES_HERRING},
 			{EVO_ITEM, ITEM_WATER_RUNE, SPECIES_PET_FISH}
@@ -4126,9 +4128,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Herring, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Herring,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Herring, 64, 64),
 		.backPicYOffset = 0,
@@ -4137,6 +4137,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Herring, 0),
 		.footprint = gMonFootprint_Herring,
 		LEARNSETS(Herring),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 25, SPECIES_TROUT_NORMAL_FORM},
 			{EVO_ITEM, ITEM_WATER_RUNE, SPECIES_TROUT_LEAPING_FORM},
@@ -4181,9 +4183,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Trout_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Trout_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Trout_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -4192,6 +4192,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Trout_Normal_Form, 0),
 		.footprint = gMonFootprint_Trout_Normal_Form,
 		LEARNSETS(Trout_Normal_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_SWORDFISH}
 		),
@@ -4232,9 +4234,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Swordfish, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Swordfish,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Swordfish, 64, 64),
 		.backPicYOffset = 0,
@@ -4243,6 +4243,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Swordfish, 0),
 		.footprint = gMonFootprint_Swordfish,
 		LEARNSETS(Swordfish),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_TROUT_LEAPING_FORM] =
@@ -4279,9 +4281,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Trout_Leaping_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Trout_Leaping_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Trout_Leaping_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -4290,6 +4290,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Trout_Leaping_Form, 0),
 		.footprint = gMonFootprint_Trout_Leaping_Form,
 		LEARNSETS(Trout_Leaping_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_STURGEON}
 		),
@@ -4331,9 +4333,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sturgeon, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sturgeon,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sturgeon, 64, 64),
 		.backPicYOffset = 0,
@@ -4342,6 +4342,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sturgeon, 0),
 		.footprint = gMonFootprint_Sturgeon,
 		LEARNSETS(Sturgeon),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_TROUT_TROPICAL_FORM] =
@@ -4378,9 +4380,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Trout_Tropical_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Trout_Tropical_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Trout_Tropical_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -4389,6 +4389,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Trout_Tropical_Form, 0),
 		.footprint = gMonFootprint_Trout_Tropical_Form,
 		LEARNSETS(Trout_Tropical_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_SAILFISH}
 		),
@@ -4430,9 +4432,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sailfish, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sailfish,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sailfish, 64, 64),
 		.backPicYOffset = 0,
@@ -4441,6 +4441,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sailfish, 0),
 		.footprint = gMonFootprint_Sailfish,
 		LEARNSETS(Sailfish),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 1,
 		.formSpeciesIdTable = sSailfishFormSpeciesIdTable,
 		.formChangeTable = sSailfishFormChangeTable,
 	},
@@ -4483,9 +4485,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Thallasus, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Thallasus,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Thallasus, 64, 64),
 		.backPicYOffset = 0,
@@ -4494,6 +4494,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Thallasus, 0),
 		.footprint = gMonFootprint_Thallasus,
 		LEARNSETS(Thallasus),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_BASS] =
@@ -4532,9 +4534,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bass, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bass,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bass, 64, 64),
 		.backPicYOffset = 0,
@@ -4543,6 +4543,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bass, 0),
 		.footprint = gMonFootprint_Bass,
 		LEARNSETS(Bass),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 26, SPECIES_SALMON_NORMAL_FORM},
 			{EVO_ITEM, ITEM_AIR_RUNE, SPECIES_SALMON_LEAPING_FORM},
@@ -4586,9 +4588,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Salmon_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Salmon_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Salmon_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -4597,6 +4597,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Salmon_Normal_Form, 0),
 		.footprint = gMonFootprint_Salmon_Normal_Form,
 		LEARNSETS(Salmon_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 45, SPECIES_SHARK_NORMAL_FORM},
 			{EVO_LEVEL_NIGHT, 45, SPECIES_FURY_SHARK}
@@ -4639,9 +4641,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Shark_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Shark_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Shark_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -4650,6 +4650,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Shark_Normal_Form, 0),
 		.footprint = gMonFootprint_Shark_Normal_Form,
 		LEARNSETS(Shark_Normal_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 6,
 	},
 
 [SPECIES_FURY_SHARK] =
@@ -4689,9 +4691,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Fury_Shark, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Fury_Shark,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Fury_Shark, 64, 64),
 		.backPicYOffset = 0,
@@ -4700,6 +4700,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Fury_Shark, 0),
 		.footprint = gMonFootprint_Fury_Shark,
 		LEARNSETS(Fury_Shark),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 6,
 	},
 
 [SPECIES_SALMON_LEAPING_FORM] =
@@ -4736,9 +4738,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Salmon_Leaping_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Salmon_Leaping_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Salmon_Leaping_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -4747,6 +4747,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Salmon_Leaping_Form, 0),
 		.footprint = gMonFootprint_Salmon_Leaping_Form,
 		LEARNSETS(Salmon_Leaping_Form),
+		.frontPicYOffset = 11,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 45, SPECIES_SHARK_GREATWHITE_FORM},
 			{EVO_LEVEL_NIGHT, 45, SPECIES_SHARK_TIGER_FORM}
@@ -4789,9 +4791,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Shark_GreatWhite_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Shark_GreatWhite_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Shark_GreatWhite_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -4800,6 +4800,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Shark_GreatWhite_Form, 0),
 		.footprint = gMonFootprint_Shark_GreatWhite_Form,
 		LEARNSETS(Shark_GreatWhite_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 4,
 	},
 
 [SPECIES_SHARK_TIGER_FORM] =
@@ -4839,9 +4841,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Shark_Tiger_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Shark_Tiger_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Shark_Tiger_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -4850,6 +4850,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Shark_Tiger_Form, 0),
 		.footprint = gMonFootprint_Shark_Tiger_Form,
 		LEARNSETS(Shark_Tiger_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 6,
 	},
 
 [SPECIES_MACKEREL] =
@@ -4889,9 +4891,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Mackerel, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Mackerel,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Mackerel, 64, 64),
 		.backPicYOffset = 0,
@@ -4900,6 +4900,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Mackerel, 0),
 		.footprint = gMonFootprint_Mackerel,
 		LEARNSETS(Mackerel),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 3,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 26, SPECIES_CATFISH}
 		),
@@ -4942,9 +4944,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Catfish, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Catfish,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Catfish, 64, 64),
 		.backPicYOffset = 0,
@@ -4953,6 +4953,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Catfish, 0),
 		.footprint = gMonFootprint_Catfish,
 		LEARNSETS(Catfish),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_SHARK_BARON_FORM}
 		),
@@ -4995,9 +4997,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Shark_Baron_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Shark_Baron_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Shark_Baron_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -5006,6 +5006,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Shark_Baron_Form, 0),
 		.footprint = gMonFootprint_Shark_Baron_Form,
 		LEARNSETS(Shark_Baron_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 4,
 	},
 
 [SPECIES_TARPON] =
@@ -5043,9 +5045,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Tarpon, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Tarpon,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Tarpon, 64, 64),
 		.backPicYOffset = 0,
@@ -5054,6 +5054,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tarpon, 0),
 		.footprint = gMonFootprint_Tarpon,
 		LEARNSETS(Tarpon),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 25, SPECIES_SEERFISH}
 		),
@@ -5096,9 +5098,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Seerfish, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Seerfish,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Seerfish, 64, 64),
 		.backPicYOffset = 0,
@@ -5107,6 +5107,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Seerfish, 0),
 		.footprint = gMonFootprint_Seerfish,
 		LEARNSETS(Seerfish),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_GRASS_TYPE_MON_IN_PARTY, 31, SPECIES_SILLAGO}
 		),
@@ -5147,9 +5149,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(DesertSole, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_DesertSole,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(DesertSole, 64, 64),
 		.backPicYOffset = 0,
@@ -5158,6 +5158,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(DesertSole, 0),
 		.footprint = gMonFootprint_DesertSole,
 		LEARNSETS(DesertSole),
+		.frontPicYOffset = 17,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SILLAGO] =
@@ -5197,9 +5199,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sillago, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sillago,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sillago, 64, 64),
 		.backPicYOffset = 0,
@@ -5208,6 +5208,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sillago, 0),
 		.footprint = gMonFootprint_Sillago,
 		LEARNSETS(Sillago),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_WOBBEGONG}
 		),
@@ -5250,9 +5252,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wobbegong, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wobbegong,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wobbegong, 64, 64),
 		.backPicYOffset = 0,
@@ -5261,6 +5261,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wobbegong, 0),
 		.footprint = gMonFootprint_Wobbegong,
 		LEARNSETS(Wobbegong),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_KARAMBWANJ] =
@@ -5300,9 +5302,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Karambwanj, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Karambwanj,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Karambwanj, 64, 64),
 		.backPicYOffset = 0,
@@ -5311,6 +5311,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Karambwanj, 0),
 		.footprint = gMonFootprint_Karambwanj,
 		LEARNSETS(Karambwanj),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 36, SPECIES_KARAMBWAN}
 		),
@@ -5354,9 +5356,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Karambwan, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Karambwan,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Karambwan, 64, 64),
 		.backPicYOffset = 0,
@@ -5365,6 +5365,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Karambwan, 0),
 		.footprint = gMonFootprint_Karambwan,
 		LEARNSETS(Karambwan),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 45, SPECIES_SEA_TROLL_QUEEN}
 		),
@@ -5406,9 +5408,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Whitefish, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Whitefish,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Whitefish, 64, 64),
 		.backPicYOffset = 0,
@@ -5417,6 +5417,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Whitefish, 0),
 		.footprint = gMonFootprint_Whitefish,
 		LEARNSETS(Whitefish),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 25, SPECIES_BELTFISH}
 		),
@@ -5458,9 +5460,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Beltfish, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Beltfish,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Beltfish, 64, 64),
 		.backPicYOffset = 0,
@@ -5469,6 +5469,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Beltfish, 0),
 		.footprint = gMonFootprint_Beltfish,
 		LEARNSETS(Beltfish),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 40, SPECIES_MANTA_RAY}
 		),
@@ -5510,9 +5512,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Manta_Ray, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Manta_Ray,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Manta_Ray, 64, 64),
 		.backPicYOffset = 0,
@@ -5521,6 +5521,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Manta_Ray, 0),
 		.footprint = gMonFootprint_Manta_Ray,
 		LEARNSETS(Manta_Ray),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 3,
 	},
 
 [SPECIES_COD] =
@@ -5559,9 +5561,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cod, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cod,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cod, 64, 64),
 		.backPicYOffset = 0,
@@ -5570,6 +5570,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cod, 0),
 		.footprint = gMonFootprint_Cod,
 		LEARNSETS(Cod),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 25, SPECIES_RAINBOW}
 		),
@@ -5611,9 +5613,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rainbow, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rainbow,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rainbow, 64, 64),
 		.backPicYOffset = 0,
@@ -5622,6 +5622,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rainbow, 0),
 		.footprint = gMonFootprint_Rainbow,
 		LEARNSETS(Rainbow),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 45, SPECIES_SHARK_GOLDEN_FORM}
 		),
@@ -5663,9 +5665,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Shark_Golden_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Shark_Golden_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Shark_Golden_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -5674,6 +5674,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Shark_Golden_Form, 0),
 		.footprint = gMonFootprint_Shark_Golden_Form,
 		LEARNSETS(Shark_Golden_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_PIKE] =
@@ -5712,9 +5714,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pike, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pike,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pike, 64, 64),
 		.backPicYOffset = 0,
@@ -5723,6 +5723,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pike, 0),
 		.footprint = gMonFootprint_Pike,
 		LEARNSETS(Pike),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_RAIN, 25, SPECIES_MONKFISH_NORMAL_FORM}
 		),
@@ -5764,9 +5766,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Monkfish_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Monkfish_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Monkfish_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -5775,6 +5775,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Monkfish_Normal_Form, 0),
 		.footprint = gMonFootprint_Monkfish_Normal_Form,
 		LEARNSETS(Monkfish_Normal_Form),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 4,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 40, SPECIES_ANGLERFISH}
 		),
@@ -5816,9 +5818,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(AnglerFish, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_AnglerFish,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(AnglerFish, 64, 64),
 		.backPicYOffset = 0,
@@ -5827,6 +5827,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(AnglerFish, 1),
 		.footprint = gMonFootprint_AnglerFish,
 		LEARNSETS(AnglerFish),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 3,
 	},
 
 [SPECIES_GIANT_CARP] =
@@ -5865,9 +5867,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Giant_Carp, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Giant_Carp,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Giant_Carp, 64, 64),
 		.backPicYOffset = 0,
@@ -5876,6 +5876,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Giant_Carp, 0),
 		.footprint = gMonFootprint_Giant_Carp,
 		LEARNSETS(Giant_Carp),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_RAIN, 25, SPECIES_MONKFISH_FRESH_FORM}
 		),
@@ -5916,9 +5918,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Monkfish_Fresh_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Monkfish_Fresh_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Monkfish_Fresh_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -5927,6 +5927,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Monkfish_Fresh_Form, 0),
 		.footprint = gMonFootprint_Monkfish_Fresh_Form,
 		LEARNSETS(Monkfish_Fresh_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 40, SPECIES_MONKFISH_GOLDEN_FORM}
 		),
@@ -5968,9 +5970,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Monkfish_Golden_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Monkfish_Golden_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Monkfish_Golden_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -5979,6 +5979,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Monkfish_Golden_Form, 0),
 		.footprint = gMonFootprint_Monkfish_Golden_Form,
 		LEARNSETS(Monkfish_Golden_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_GOBLINFISH] =
@@ -6017,9 +6019,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(GoblinFish, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_GoblinFish,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(GoblinFish, 64, 64),
 		.backPicYOffset = 0,
@@ -6028,6 +6028,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(GoblinFish, 1),
 		.footprint = gMonFootprint_GoblinFish,
 		LEARNSETS(GoblinFish),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_PET_FISH] =
@@ -6066,9 +6068,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pet_Fish, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pet_Fish,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pet_Fish, 64, 64),
 		.backPicYOffset = 0,
@@ -6077,6 +6077,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pet_Fish, 0),
 		.footprint = gMonFootprint_Pet_Fish,
 		LEARNSETS(Pet_Fish),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_KARAMBWAN, SPECIES_KARAMTHULU_OVERLORD}
 		),
@@ -6118,9 +6120,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Gilbert, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Gilbert,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Gilbert, 64, 64),
 		.backPicYOffset = 0,
@@ -6129,6 +6129,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Gilbert, 0),
 		.footprint = gMonFootprint_Gilbert,
 		LEARNSETS(Gilbert),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_CAVEFISH] =
@@ -6167,9 +6169,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cavefish, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cavefish,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cavefish, 64, 64),
 		.backPicYOffset = 0,
@@ -6178,6 +6178,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cavefish, 0),
 		.footprint = gMonFootprint_Cavefish,
 		LEARNSETS(Cavefish),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_ROCKTAIL}
 		),
@@ -6219,9 +6221,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rocktail, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rocktail,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rocktail, 64, 64),
 		.backPicYOffset = 0,
@@ -6230,6 +6230,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rocktail, 0),
 		.footprint = gMonFootprint_Rocktail,
 		LEARNSETS(Rocktail),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_EEL_SLIMY_FORM] =
@@ -6268,9 +6270,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Eel_Slimy_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Eel_Slimy_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Eel_Slimy_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -6279,6 +6279,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Eel_Slimy_Form, 0),
 		.footprint = gMonFootprint_Eel_Slimy_Form,
 		LEARNSETS(Eel_Slimy_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 5,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_EARTH_RUNE, SPECIES_EEL_CAVE_FORM},
 			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_EEL_LAVA_FORM},
@@ -6324,9 +6326,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Eel_Cave_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Eel_Cave_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Eel_Cave_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -6335,6 +6335,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Eel_Cave_Form, 0),
 		.footprint = gMonFootprint_Eel_Cave_Form,
 		LEARNSETS(Eel_Cave_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 37, SPECIES_EEL_SACRED_FORM}
 		),
@@ -6377,9 +6379,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Eel_Sacred_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Eel_Sacred_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Eel_Sacred_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -6388,6 +6388,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Eel_Sacred_Form, 0),
 		.footprint = gMonFootprint_Eel_Sacred_Form,
 		LEARNSETS(Eel_Sacred_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 3,
 	},
 
 [SPECIES_EEL_LAVA_FORM] =
@@ -6426,9 +6428,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Eel_Lava_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Eel_Lava_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Eel_Lava_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -6437,6 +6437,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Eel_Lava_Form, 0),
 		.footprint = gMonFootprint_Eel_Lava_Form,
 		LEARNSETS(Eel_Lava_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 37, SPECIES_EEL_INFERNAL_FORM}
 		),
@@ -6480,9 +6482,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Eel_Infernal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Eel_Infernal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Eel_Infernal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -6491,6 +6491,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Eel_Infernal_Form, 0),
 		.footprint = gMonFootprint_Eel_Infernal_Form,
 		LEARNSETS(Eel_Infernal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 5,
 	},
 
 [SPECIES_EEL_MOTTLED_FORM] =
@@ -6530,9 +6532,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Eel_Mottled_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Eel_Mottled_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Eel_Mottled_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -6541,6 +6541,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Eel_Mottled_Form, 0),
 		.footprint = gMonFootprint_Eel_Mottled_Form,
 		LEARNSETS(Eel_Mottled_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_EEL_SHORT_FINNED_FORM] =
@@ -6578,9 +6580,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Eel_Short_Finned_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Eel_Short_Finned_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Eel_Short_Finned_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -6589,6 +6589,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Eel_Short_Finned_Form, 0),
 		.footprint = gMonFootprint_Eel_Short_Finned_Form,
 		LEARNSETS(Eel_Short_Finned_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 37, SPECIES_EEL_DUSK_FORM},
 			{EVO_LEVEL, 37, SPECIES_EEL_SALVE_FORM}
@@ -6631,9 +6633,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Eel_Salve_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Eel_Salve_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Eel_Salve_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -6642,6 +6642,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Eel_Salve_Form, 0),
 		.footprint = gMonFootprint_Eel_Salve_Form,
 		LEARNSETS(Eel_Salve_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_EEL_DUSK_FORM] =
@@ -6681,9 +6683,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Eel_Dusk_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Eel_Dusk_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Eel_Dusk_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -6692,6 +6692,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Eel_Dusk_Form, 0),
 		.footprint = gMonFootprint_Eel_Dusk_Form,
 		LEARNSETS(Eel_Dusk_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_CAVE_MORAY] =
@@ -6730,9 +6732,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cave_Moray, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cave_Moray,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cave_Moray, 64, 64),
 		.backPicYOffset = 0,
@@ -6741,6 +6741,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cave_Moray, 0),
 		.footprint = gMonFootprint_Cave_Moray,
 		LEARNSETS(Cave_Moray),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 6,
 	},
 
 [SPECIES_VILE_FISH] =
@@ -6778,9 +6780,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Vile_Fish, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Vile_Fish,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Vile_Fish, 64, 64),
 		.backPicYOffset = 0,
@@ -6789,6 +6789,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Vile_Fish, 0),
 		.footprint = gMonFootprint_Vile_Fish,
 		LEARNSETS(Vile_Fish),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 37, SPECIES_CAVE_MORAY}
 		),
@@ -6830,9 +6832,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Piglet, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Piglet,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Piglet, 64, 64),
 		.backPicYOffset = 0,
@@ -6841,6 +6841,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Piglet, 0),
 		.footprint = gMonFootprint_Piglet,
 		LEARNSETS(Piglet),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 21, SPECIES_PIG},
 			{EVO_FRIENDSHIP, 220, SPECIES_PIGZILLA},
@@ -6885,9 +6887,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pig, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pig,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pig, 64, 64),
 		.backPicYOffset = 0,
@@ -6896,6 +6896,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pig, 2),
 		.footprint = gMonFootprint_Pig,
 		LEARNSETS(Pig),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_FRIENDSHIP, 220, SPECIES_PIGZILLA},
 			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_PIG_WAR_FORM},
@@ -6940,9 +6942,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pigzilla, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pigzilla,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pigzilla, 64, 64),
 		.backPicYOffset = 0,
@@ -6951,6 +6951,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pigzilla, 2),
 		.footprint = gMonFootprint_Pigzilla,
 		LEARNSETS(Pigzilla),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PUPPY_PUP_FORM] =
@@ -6989,9 +6991,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Puppy_Pup_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Puppy_Pup_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Puppy_Pup_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -7000,6 +7000,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Puppy_Pup_Form, 0),
 		.footprint = gMonFootprint_Puppy_Pup_Form,
 		LEARNSETS(Puppy_Pup_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_HELLPUPPY},
 			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_MUNCHER},
@@ -7050,9 +7052,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Puppy_Mutt_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Puppy_Mutt_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Puppy_Mutt_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -7061,6 +7061,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Puppy_Mutt_Form, 0),
 		.footprint = gMonFootprint_Puppy_Mutt_Form,
 		LEARNSETS(Puppy_Mutt_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_HELLPUPPY},
 			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_MUNCHER},
@@ -7112,9 +7114,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Terrier, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Terrier,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Terrier, 64, 64),
 		.backPicYOffset = 0,
@@ -7123,6 +7123,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Terrier, 0),
 		.footprint = gMonFootprint_Terrier,
 		LEARNSETS(Terrier),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SHEEPDOG] =
@@ -7161,9 +7163,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sheepdog, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sheepdog,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sheepdog, 64, 64),
 		.backPicYOffset = 0,
@@ -7172,6 +7172,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sheepdog, 0),
 		.footprint = gMonFootprint_Sheepdog,
 		LEARNSETS(Sheepdog),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DALMATIAN] =
@@ -7210,9 +7212,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dalmatian, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dalmatian,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dalmatian, 64, 64),
 		.backPicYOffset = 0,
@@ -7221,6 +7221,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dalmatian, 0),
 		.footprint = gMonFootprint_Dalmatian,
 		LEARNSETS(Dalmatian),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GREYHOUND] =
@@ -7258,9 +7260,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Greyhound, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Greyhound,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Greyhound, 64, 64),
 		.backPicYOffset = 0,
@@ -7269,6 +7269,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Greyhound, 0),
 		.footprint = gMonFootprint_Greyhound,
 		LEARNSETS(Greyhound),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BULLDOG] =
@@ -7307,9 +7309,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bulldog, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bulldog,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bulldog, 64, 64),
 		.backPicYOffset = 0,
@@ -7318,6 +7318,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bulldog, 0),
 		.footprint = gMonFootprint_Bulldog,
 		LEARNSETS(Bulldog),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_LABRADOR] =
@@ -7356,9 +7358,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Labrador, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Labrador,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Labrador, 64, 64),
 		.backPicYOffset = 0,
@@ -7367,6 +7367,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Labrador, 2),
 		.footprint = gMonFootprint_Labrador,
 		LEARNSETS(Labrador),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CORGI] =
@@ -7405,9 +7407,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Corgi, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Corgi,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Corgi, 64, 64),
 		.backPicYOffset = 0,
@@ -7416,6 +7416,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Corgi, 0),
 		.footprint = gMonFootprint_Corgi,
 		LEARNSETS(Corgi),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_TERROR_DOG] =
@@ -7454,9 +7456,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Terror_Dog, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Terror_Dog,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Terror_Dog, 64, 64),
 		.backPicYOffset = 0,
@@ -7465,6 +7465,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Terror_Dog, 1),
 		.footprint = gMonFootprint_Terror_Dog,
 		LEARNSETS(Terror_Dog),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_STRAY_DOG] =
@@ -7503,9 +7505,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Stray_Dog, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Stray_Dog,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Stray_Dog, 64, 64),
 		.backPicYOffset = 0,
@@ -7514,6 +7514,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Stray_Dog, 0),
 		.footprint = gMonFootprint_Stray_Dog,
 		LEARNSETS(Stray_Dog),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_MUNCHER] =
@@ -7552,9 +7554,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Muncher, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Muncher,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Muncher, 64, 64),
 		.backPicYOffset = 0,
@@ -7563,6 +7563,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Muncher, 2),
 		.footprint = gMonFootprint_Muncher,
 		LEARNSETS(Muncher),
+		.frontPicYOffset = 11,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_HELLPUPPY] =
@@ -7601,9 +7603,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Hellpuppy, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Hellpuppy,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Hellpuppy, 64, 64),
 		.backPicYOffset = 0,
@@ -7612,6 +7612,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Hellpuppy, 2),
 		.footprint = gMonFootprint_Hellpuppy,
 		LEARNSETS(Hellpuppy),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 45, SPECIES_HELLHOUND},
 			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_SHADOW_HOUND},
@@ -7654,9 +7656,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Hellhound, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Hellhound,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Hellhound, 64, 64),
 		.backPicYOffset = 0,
@@ -7665,6 +7665,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Hellhound, 0),
 		.footprint = gMonFootprint_Hellhound,
 		LEARNSETS(Hellhound),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 		.formSpeciesIdTable = sHellhoundFormSpeciesIdTable,
 		.formChangeTable = sHellhoundFormChangeTable,
 	},
@@ -7707,9 +7709,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cerberus, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cerberus,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cerberus, 64, 64),
 		.backPicYOffset = 0,
@@ -7718,6 +7718,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cerberus, 2),
 		.footprint = gMonFootprint_Cerberus,
 		LEARNSETS(Cerberus),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KITTEN] =
@@ -7756,9 +7758,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kitten, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kitten,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kitten, 64, 64),
 		.backPicYOffset = 0,
@@ -7767,6 +7767,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kitten, 0),
 		.footprint = gMonFootprint_Kitten,
 		LEARNSETS(Kitten),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 20, SPECIES_CAT_NORMAL_FORM}
 		),
@@ -7807,9 +7809,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cat_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cat_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cat_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -7818,6 +7818,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cat_Normal_Form, 0),
 		.footprint = gMonFootprint_Cat_Normal_Form,
 		LEARNSETS(Cat_Normal_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_RAT_HELL_FORM, SPECIES_CAT_HELL_FORM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_GIANT_RAT_HELL_FORM, SPECIES_CAT_HELL_FORM},
@@ -7874,9 +7876,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cat_Overgrown_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cat_Overgrown_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cat_Overgrown_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -7885,6 +7885,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cat_Overgrown_Form, 0),
 		.footprint = gMonFootprint_Cat_Overgrown_Form,
 		LEARNSETS(Cat_Overgrown_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_CHOCOLATE_CAKE, SPECIES_CAT_LAZY_FORM}
 		),
@@ -7926,9 +7928,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cat_Lazy_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cat_Lazy_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cat_Lazy_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -7937,6 +7937,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cat_Lazy_Form, 0),
 		.footprint = gMonFootprint_Cat_Lazy_Form,
 		LEARNSETS(Cat_Lazy_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CAT_WILY_FORM] =
@@ -7975,9 +7977,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cat_Wily_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cat_Wily_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cat_Wily_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -7986,6 +7986,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cat_Wily_Form, 0),
 		.footprint = gMonFootprint_Cat_Wily_Form,
 		LEARNSETS(Cat_Wily_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_CHOCOLATE_CAKE, SPECIES_CAT_LAZY_FORM}
 		),
@@ -8027,9 +8029,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cat_Purple_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cat_Purple_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cat_Purple_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -8038,6 +8038,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cat_Purple_Form, 2),
 		.footprint = gMonFootprint_Cat_Purple_Form,
 		LEARNSETS(Cat_Purple_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CAT_HELL_FORM] =
@@ -8076,9 +8078,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cat_Hell_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cat_Hell_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cat_Hell_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -8087,6 +8087,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cat_Hell_Form, 0),
 		.footprint = gMonFootprint_Cat_Hell_Form,
 		LEARNSETS(Cat_Hell_Form),
+		.frontPicYOffset = 11,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CAT_POST_FORM] =
@@ -8125,9 +8127,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cat_Post_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cat_Post_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cat_Post_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -8136,6 +8136,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cat_Post_Form, 2),
 		.footprint = gMonFootprint_Cat_Post_Form,
 		LEARNSETS(Cat_Post_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CAT_SUNKEN_FORM] =
@@ -8175,9 +8177,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cat_Sunken_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cat_Sunken_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cat_Sunken_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -8186,6 +8186,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cat_Sunken_Form, 2),
 		.footprint = gMonFootprint_Cat_Sunken_Form,
 		LEARNSETS(Cat_Sunken_Form),
+		.frontPicYOffset = 14,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BOB] =
@@ -8224,9 +8226,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bob, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bob,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bob, 64, 64),
 		.backPicYOffset = 0,
@@ -8235,6 +8235,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bob, 0),
 		.footprint = gMonFootprint_Bob,
 		LEARNSETS(Bob),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_EVIL_BOB] =
@@ -8274,9 +8276,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Evil_Bob, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Evil_Bob,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Evil_Bob, 64, 64),
 		.backPicYOffset = 0,
@@ -8285,6 +8285,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Evil_Bob, 0),
 		.footprint = gMonFootprint_Evil_Bob,
 		LEARNSETS(Evil_Bob),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PET_ROCK] =
@@ -8324,9 +8326,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pet_Rock, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pet_Rock,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pet_Rock, 64, 64),
 		.backPicYOffset = 0,
@@ -8335,6 +8335,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pet_Rock, 0),
 		.footprint = gMonFootprint_Pet_Rock,
 		LEARNSETS(Pet_Rock),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_AIR_RUNE, SPECIES_ROCK_POLISHED_FORM},
 			{EVO_LEVEL_BUG_TYPE_MON_IN_PARTY, 50, SPECIES_PILLAR},
@@ -8384,9 +8386,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rock_Polished_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rock_Polished_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rock_Polished_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -8395,6 +8395,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rock_Polished_Form, 0),
 		.footprint = gMonFootprint_Rock_Polished_Form,
 		LEARNSETS(Rock_Polished_Form),
+		.frontPicYOffset = 15,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PILLAR] =
@@ -8435,9 +8437,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pillar, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pillar,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pillar, 64, 64),
 		.backPicYOffset = 0,
@@ -8446,6 +8446,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pillar, 0),
 		.footprint = gMonFootprint_Pillar,
 		LEARNSETS(Pillar),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ROCK_SOUP] =
@@ -8485,9 +8487,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rock_Soup, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rock_Soup,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rock_Soup, 64, 64),
 		.backPicYOffset = 0,
@@ -8496,6 +8496,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rock_Soup, 0),
 		.footprint = gMonFootprint_Rock_Soup,
 		LEARNSETS(Rock_Soup),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SLAGILITH] =
@@ -8536,9 +8538,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Slagilith, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Slagilith,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Slagilith, 64, 64),
 		.backPicYOffset = 0,
@@ -8547,6 +8547,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Slagilith, 0),
 		.footprint = gMonFootprint_Slagilith,
 		LEARNSETS(Slagilith),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_ROCK_STRANGE_FORM] =
@@ -8586,9 +8588,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rock_Strange_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rock_Strange_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rock_Strange_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -8597,6 +8597,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rock_Strange_Form, 0),
 		.footprint = gMonFootprint_Rock_Strange_Form,
 		LEARNSETS(Rock_Strange_Form),
+		.frontPicYOffset = 15,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ROCK_GOLDEN_FORM] =
@@ -8636,9 +8638,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rock_Golden_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rock_Golden_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rock_Golden_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -8647,6 +8647,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rock_Golden_Form, 0),
 		.footprint = gMonFootprint_Rock_Golden_Form,
 		LEARNSETS(Rock_Golden_Form),
+		.frontPicYOffset = 14,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PARTY_ROCK] =
@@ -8686,9 +8688,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Party_Rock, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Party_Rock,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Party_Rock, 64, 64),
 		.backPicYOffset = 0,
@@ -8697,6 +8697,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Party_Rock, 0),
 		.footprint = gMonFootprint_Party_Rock,
 		LEARNSETS(Party_Rock),
+		.frontPicYOffset = 12,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_STRYKEWYRM_FREEZY_FORM] =
@@ -8734,9 +8736,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Strykewyrm_Freezy_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Strykewyrm_Freezy_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Strykewyrm_Freezy_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -8745,6 +8745,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Strykewyrm_Freezy_Form, 0),
 		.footprint = gMonFootprint_Strykewyrm_Freezy_Form,
 		LEARNSETS(Strykewyrm_Freezy_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_STRYKEWYRM_LEAFY_FORM] =
@@ -8781,9 +8783,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Strykewyrm_Leafy_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Strykewyrm_Leafy_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Strykewyrm_Leafy_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -8792,6 +8792,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Strykewyrm_Leafy_Form, 1),
 		.footprint = gMonFootprint_Strykewyrm_Leafy_Form,
 		LEARNSETS(Strykewyrm_Leafy_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_STRYKEWYRM_SANDY_FORM] =
@@ -8828,9 +8830,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Strykewyrm_Sandy_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Strykewyrm_Sandy_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Strykewyrm_Sandy_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -8839,6 +8839,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Strykewyrm_Sandy_Form, 0),
 		.footprint = gMonFootprint_Strykewyrm_Sandy_Form,
 		LEARNSETS(Strykewyrm_Sandy_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_STRYKEWYRM_WILDY_FORM] =
@@ -8875,9 +8877,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Strykewyrm_Wildy_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Strykewyrm_Wildy_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Strykewyrm_Wildy_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -8886,6 +8886,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Strykewyrm_Wildy_Form, 2),
 		.footprint = gMonFootprint_Strykewyrm_Wildy_Form,
 		LEARNSETS(Strykewyrm_Wildy_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SCORPLING] =
@@ -8923,9 +8925,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scorpling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scorpling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scorpling, 64, 64),
 		.backPicYOffset = 0,
@@ -8934,6 +8934,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scorpling, 2),
 		.footprint = gMonFootprint_Scorpling,
 		LEARNSETS(Scorpling),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_FRIENDSHIP_DAY, 200, SPECIES_DREADNIP},
 			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_SCORPIA},
@@ -8986,9 +8988,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scorpion_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scorpion_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scorpion_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -8997,6 +8997,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scorpion_Normal_Form, 2),
 		.footprint = gMonFootprint_Scorpion_Normal_Form,
 		LEARNSETS(Scorpion_Normal_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 41, SPECIES_SCORPION_GRAVE_FORM},
 			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_SCORPION_REANIMATED_FORM},
@@ -9039,9 +9041,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scorpion_Pit_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scorpion_Pit_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scorpion_Pit_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -9050,6 +9050,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scorpion_Pit_Form, 2),
 		.footprint = gMonFootprint_Scorpion_Pit_Form,
 		LEARNSETS(Scorpion_Pit_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 41, SPECIES_SCORPION_POISON_FORM},
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_SCORPION_SPIRIT_FORM},
@@ -9092,9 +9094,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scorpion_Poison_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scorpion_Poison_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scorpion_Poison_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -9103,6 +9103,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scorpion_Poison_Form, 0),
 		.footprint = gMonFootprint_Scorpion_Poison_Form,
 		LEARNSETS(Scorpion_Poison_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SCORPION_KING_FORM] =
@@ -9141,9 +9143,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scorpion_King_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scorpion_King_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scorpion_King_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -9152,6 +9152,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scorpion_King_Form, 0),
 		.footprint = gMonFootprint_Scorpion_King_Form,
 		LEARNSETS(Scorpion_King_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SCORPION_GRAVE_FORM] =
@@ -9190,9 +9192,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scorpion_Grave_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scorpion_Grave_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scorpion_Grave_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -9201,6 +9201,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scorpion_Grave_Form, 0),
 		.footprint = gMonFootprint_Scorpion_Grave_Form,
 		LEARNSETS(Scorpion_Grave_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SCORPION_CORRUPTED_FORM] =
@@ -9239,9 +9241,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scorpion_Corrupted_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scorpion_Corrupted_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scorpion_Corrupted_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -9250,6 +9250,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scorpion_Corrupted_Form, 1),
 		.footprint = gMonFootprint_Scorpion_Corrupted_Form,
 		LEARNSETS(Scorpion_Corrupted_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SCORPION_REANIMATED_FORM] =
@@ -9288,9 +9290,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scorpion_Reanimated_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scorpion_Reanimated_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scorpion_Reanimated_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -9299,6 +9299,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scorpion_Reanimated_Form, 2),
 		.footprint = gMonFootprint_Scorpion_Reanimated_Form,
 		LEARNSETS(Scorpion_Reanimated_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SCORPION_GAUNTLET_CRYSTALLINE_FORM] =
@@ -9337,9 +9339,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scorpion_Gauntlet_Crystalline_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scorpion_Gauntlet_Crystalline_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scorpion_Gauntlet_Crystalline_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -9348,6 +9348,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scorpion_Gauntlet_Crystalline_Form, 1),
 		.footprint = gMonFootprint_Scorpion_Gauntlet_Crystalline_Form,
 		LEARNSETS(Scorpion_Gauntlet_Crystalline_Form),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SCORPION_GAUNTLET_CORRUPTED_FORM] =
@@ -9386,9 +9388,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scorpion_Gauntlet_Corrupted_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scorpion_Gauntlet_Corrupted_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scorpion_Gauntlet_Corrupted_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -9397,6 +9397,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scorpion_Gauntlet_Corrupted_Form, 2),
 		.footprint = gMonFootprint_Scorpion_Gauntlet_Corrupted_Form,
 		LEARNSETS(Scorpion_Gauntlet_Corrupted_Form),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SCORPION_KHAZARD_FORM] =
@@ -9434,9 +9436,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scorpion_Khazard_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scorpion_Khazard_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scorpion_Khazard_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -9445,6 +9445,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scorpion_Khazard_Form, 0),
 		.footprint = gMonFootprint_Scorpion_Khazard_Form,
 		LEARNSETS(Scorpion_Khazard_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SCORPION_SPIRIT_FORM] =
@@ -9483,9 +9485,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scorpion_Spirit_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scorpion_Spirit_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scorpion_Spirit_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -9494,6 +9494,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scorpion_Spirit_Form, 0),
 		.footprint = gMonFootprint_Scorpion_Spirit_Form,
 		LEARNSETS(Scorpion_Spirit_Form),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SCORPIA] =
@@ -9533,9 +9535,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scorpia, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scorpia,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scorpia, 64, 64),
 		.backPicYOffset = 0,
@@ -9544,6 +9544,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scorpia, 2),
 		.footprint = gMonFootprint_Scorpia,
 		LEARNSETS(Scorpia),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DREADNIP] =
@@ -9581,9 +9583,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dreadnip, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dreadnip,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dreadnip, 64, 64),
 		.backPicYOffset = 0,
@@ -9592,6 +9592,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dreadnip, 2),
 		.footprint = gMonFootprint_Dreadnip,
 		LEARNSETS(Dreadnip),
+		.frontPicYOffset = 11,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PEEPLING] =
@@ -9631,9 +9633,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Peepling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Peepling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Peepling, 64, 64),
 		.backPicYOffset = 0,
@@ -9642,6 +9642,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Peepling, 0),
 		.footprint = gMonFootprint_Peepling,
 		LEARNSETS(Peepling),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 30, SPECIES_SNEAKRPEEP},
 			{EVO_ITEM, ITEM_MIND_RUNE, SPECIES_STALKER},
@@ -9686,9 +9688,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sneakrpeep, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sneakrpeep,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sneakrpeep, 64, 64),
 		.backPicYOffset = 0,
@@ -9697,6 +9697,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sneakrpeep, 0),
 		.footprint = gMonFootprint_Sneakrpeep,
 		LEARNSETS(Sneakrpeep),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 2,
 	},
 
 [SPECIES_RUNTSTABLE] =
@@ -9734,9 +9736,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Runtstable, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Runtstable,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Runtstable, 64, 64),
 		.backPicYOffset = 0,
@@ -9745,6 +9745,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Runtstable, 0),
 		.footprint = gMonFootprint_Runtstable,
 		LEARNSETS(Runtstable),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 30, SPECIES_GRIFOLAROO}
 		),
@@ -9787,9 +9789,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Basilisk, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Basilisk,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Basilisk, 64, 64),
 		.backPicYOffset = 0,
@@ -9798,6 +9798,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Basilisk, 0),
 		.footprint = gMonFootprint_Basilisk,
 		LEARNSETS(Basilisk),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BABY_MOLE] =
@@ -9836,9 +9838,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Baby_Mole, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Baby_Mole,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Baby_Mole, 64, 64),
 		.backPicYOffset = 0,
@@ -9847,6 +9847,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Baby_Mole, 0),
 		.footprint = gMonFootprint_Baby_Mole,
 		LEARNSETS(Baby_Mole),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_GIANT_MOLE}
 		),
@@ -9887,9 +9889,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Giant_Mole, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Giant_Mole,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Giant_Mole, 64, 64),
 		.backPicYOffset = 0,
@@ -9898,6 +9898,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Giant_Mole, 2),
 		.footprint = gMonFootprint_Giant_Mole,
 		LEARNSETS(Giant_Mole),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SQUIRREL] =
@@ -9936,9 +9938,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Squirrel, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Squirrel,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Squirrel, 64, 64),
 		.backPicYOffset = 0,
@@ -9947,6 +9947,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Squirrel, 0),
 		.footprint = gMonFootprint_Squirrel,
 		LEARNSETS(Squirrel),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 30, SPECIES_SPARKY},
 			{EVO_ITEM, ITEM_AIR_RUNE, SPECIES_SQUIRREL_GIANT_FORM},
@@ -9989,9 +9991,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ravenling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ravenling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ravenling, 64, 64),
 		.backPicYOffset = 0,
@@ -10000,6 +10000,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ravenling, 0),
 		.footprint = gMonFootprint_Ravenling,
 		LEARNSETS(Ravenling),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 25, SPECIES_RAVEN_NORMAL_FORM},
 			{EVO_LEVEL_NIGHT, 25, SPECIES_RAVEN_NEVERMORE_FORM},
@@ -10045,9 +10047,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Raven_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Raven_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Raven_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -10056,6 +10056,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Raven_Normal_Form, 0),
 		.footprint = gMonFootprint_Raven_Normal_Form,
 		LEARNSETS(Raven_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 2,
 	},
 
 [SPECIES_RAVEN_NEVERMORE_FORM] =
@@ -10093,9 +10095,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Raven_Nevermore_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Raven_Nevermore_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Raven_Nevermore_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -10104,6 +10104,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Raven_Nevermore_Form, 0),
 		.footprint = gMonFootprint_Raven_Nevermore_Form,
 		LEARNSETS(Raven_Nevermore_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_RAVEN_SPOOKY_FORM] =
@@ -10141,9 +10143,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Raven_Spooky_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Raven_Spooky_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Raven_Spooky_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -10152,6 +10152,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Raven_Spooky_Form, 0),
 		.footprint = gMonFootprint_Raven_Spooky_Form,
 		LEARNSETS(Raven_Spooky_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 3,
 	},
 
 [SPECIES_RAVEN_CRYSTAL_FORM] =
@@ -10189,9 +10191,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Raven_Crystal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Raven_Crystal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Raven_Crystal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -10200,6 +10200,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Raven_Crystal_Form, 2),
 		.footprint = gMonFootprint_Raven_Crystal_Form,
 		LEARNSETS(Raven_Crystal_Form),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CROW] =
@@ -10237,9 +10239,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crow, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crow,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crow, 64, 64),
 		.backPicYOffset = 0,
@@ -10248,6 +10248,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crow, 0),
 		.footprint = gMonFootprint_Crow,
 		LEARNSETS(Crow),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 18, SPECIES_MAGPIE}
 		),
@@ -10291,9 +10293,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Magpie, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Magpie,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Magpie, 64, 64),
 		.backPicYOffset = 0,
@@ -10302,6 +10302,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Magpie, 2),
 		.footprint = gMonFootprint_Magpie,
 		LEARNSETS(Magpie),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHINCHOMPA_GREY_FORM] =
@@ -10340,9 +10342,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chinchompa_Grey_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chinchompa_Grey_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chinchompa_Grey_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -10351,6 +10351,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chinchompa_Grey_Form, 0),
 		.footprint = gMonFootprint_Chinchompa_Grey_Form,
 		LEARNSETS(Chinchompa_Grey_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 42, SPECIES_CHINCHOMPA_COBALT},
 			{EVO_ITEM, ITEM_BODY_RUNE, SPECIES_CHINCHOMPA_PLUTONIAL},
@@ -10395,9 +10397,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chinchompa_Red_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chinchompa_Red_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chinchompa_Red_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -10406,6 +10406,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chinchompa_Red_Form, 2),
 		.footprint = gMonFootprint_Chinchompa_Red_Form,
 		LEARNSETS(Chinchompa_Red_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_MOVE, MOVE_EXPLOSION, SPECIES_CHINCHOMPA_BLACK},
 			{EVO_ITEM, ITEM_BODY_RUNE, SPECIES_CHINCHOMPA_GOLD_FORM},
@@ -10451,9 +10453,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chinchompa_Gold_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chinchompa_Gold_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chinchompa_Gold_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -10462,6 +10462,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chinchompa_Gold_Form, 0),
 		.footprint = gMonFootprint_Chinchompa_Gold_Form,
 		LEARNSETS(Chinchompa_Gold_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_VULTLING] =
@@ -10500,9 +10502,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Vultling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Vultling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Vultling, 64, 64),
 		.backPicYOffset = 0,
@@ -10511,6 +10511,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Vultling, 2),
 		.footprint = gMonFootprint_Vultling,
 		LEARNSETS(Vultling),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 35, SPECIES_VULTURE},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_CHICKEN_UNDEAD_FORM, SPECIES_VULTURE_RSHD_FORM},
@@ -10568,9 +10570,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Vulture, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Vulture,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Vulture, 64, 64),
 		.backPicYOffset = 0,
@@ -10579,6 +10579,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Vulture, 0),
 		.footprint = gMonFootprint_Vulture,
 		LEARNSETS(Vulture),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_PENGLING] =
@@ -10616,9 +10618,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pengling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pengling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pengling, 64, 64),
 		.backPicYOffset = 0,
@@ -10627,6 +10627,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pengling, 2),
 		.footprint = gMonFootprint_Pengling,
 		LEARNSETS(Pengling),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_FRIENDSHIP, 220, SPECIES_PENGUIN}
 		),
@@ -10668,9 +10670,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Penguin, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Penguin,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Penguin, 64, 64),
 		.backPicYOffset = 0,
@@ -10679,6 +10679,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penguin, 2),
 		.footprint = gMonFootprint_Penguin,
 		LEARNSETS(Penguin),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_NATURE_AMPED, 31, SPECIES_PING},
 			{EVO_LEVEL_NATURE_LOW_KEY, 31, SPECIES_PONG},
@@ -10733,9 +10735,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Penguin_Clockwork_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Penguin_Clockwork_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Penguin_Clockwork_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -10744,6 +10744,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penguin_Clockwork_Form, 2),
 		.footprint = gMonFootprint_Penguin_Clockwork_Form,
 		LEARNSETS(Penguin_Clockwork_Form),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_THE_THING] =
@@ -10783,9 +10785,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(The_Thing, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_The_Thing,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(The_Thing, 64, 64),
 		.backPicYOffset = 0,
@@ -10794,6 +10794,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(The_Thing, 0),
 		.footprint = gMonFootprint_The_Thing,
 		LEARNSETS(The_Thing),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PING] =
@@ -10831,9 +10833,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ping, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ping,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ping, 64, 64),
 		.backPicYOffset = 0,
@@ -10842,6 +10842,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ping, 0),
 		.footprint = gMonFootprint_Ping,
 		LEARNSETS(Ping),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PONG] =
@@ -10879,9 +10881,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pong, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pong,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pong, 64, 64),
 		.backPicYOffset = 0,
@@ -10890,6 +10890,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pong, 0),
 		.footprint = gMonFootprint_Pong,
 		LEARNSETS(Pong),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PENGUIN_MCGRAW_FORM] =
@@ -10928,9 +10930,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Penguin_McGraw_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Penguin_McGraw_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Penguin_McGraw_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -10939,6 +10939,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penguin_McGraw_Form, 2),
 		.footprint = gMonFootprint_Penguin_McGraw_Form,
 		LEARNSETS(Penguin_McGraw_Form),
+		.frontPicYOffset = 13,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_SHEEP_WHITE_FORM, SPECIES_THE_THING},
 			{EVO_MOVE_TYPE, TYPE_ROCK, SPECIES_PENGUIN_SPY_FORM},
@@ -10983,9 +10985,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Penguin_Spy_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Penguin_Spy_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Penguin_Spy_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -10994,6 +10994,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penguin_Spy_Form, 0),
 		.footprint = gMonFootprint_Penguin_Spy_Form,
 		LEARNSETS(Penguin_Spy_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PENGUIN_AGENT_FORM] =
@@ -11032,9 +11034,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Penguin_Agent_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Penguin_Agent_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Penguin_Agent_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -11043,6 +11043,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penguin_Agent_Form, 0),
 		.footprint = gMonFootprint_Penguin_Agent_Form,
 		LEARNSETS(Penguin_Agent_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PENGUIN_DISGUISE_CACTUS_FORM] =
@@ -11080,9 +11082,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Penguin_Disguise_Cactus_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Penguin_Disguise_Cactus_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Penguin_Disguise_Cactus_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -11091,6 +11091,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penguin_Disguise_Cactus_Form, 1),
 		.footprint = gMonFootprint_Penguin_Disguise_Cactus_Form,
 		LEARNSETS(Penguin_Disguise_Cactus_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PENGUIN_DISGUISE_ROCK_FORM] =
@@ -11128,9 +11130,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Penguin_Disguise_Rock_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Penguin_Disguise_Rock_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Penguin_Disguise_Rock_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -11139,6 +11139,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penguin_Disguise_Rock_Form, 2),
 		.footprint = gMonFootprint_Penguin_Disguise_Rock_Form,
 		LEARNSETS(Penguin_Disguise_Rock_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PENGUIN_DISGUISE_BUSH_FORM] =
@@ -11176,9 +11178,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Penguin_Disguise_Bush_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Penguin_Disguise_Bush_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Penguin_Disguise_Bush_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -11187,6 +11187,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penguin_Disguise_Bush_Form, 1),
 		.footprint = gMonFootprint_Penguin_Disguise_Bush_Form,
 		LEARNSETS(Penguin_Disguise_Bush_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PENGUIN_DISGUISE_BOX_FORM] =
@@ -11224,9 +11226,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Penguin_Disguise_Box_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Penguin_Disguise_Box_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Penguin_Disguise_Box_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -11235,6 +11235,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penguin_Disguise_Box_Form, 0),
 		.footprint = gMonFootprint_Penguin_Disguise_Box_Form,
 		LEARNSETS(Penguin_Disguise_Box_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_EXEXPARROT] =
@@ -11274,9 +11276,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(ExExParrot, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_ExExParrot,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(ExExParrot, 64, 64),
 		.backPicYOffset = 0,
@@ -11285,6 +11285,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(ExExParrot, 0),
 		.footprint = gMonFootprint_ExExParrot,
 		LEARNSETS(ExExParrot),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BROAV] =
@@ -11324,9 +11326,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Broav, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Broav,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Broav, 64, 64),
 		.backPicYOffset = 0,
@@ -11335,6 +11335,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Broav, 0),
 		.footprint = gMonFootprint_Broav,
 		LEARNSETS(Broav),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_PIG_SUMMONING_FORM},
 			{EVO_ITEM, ITEM_CHAOS_RUNE, SPECIES_SOURHOG},
@@ -11378,9 +11380,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Tooths, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Tooths,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Tooths, 64, 64),
 		.backPicYOffset = 0,
@@ -11389,6 +11389,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tooths, 0),
 		.footprint = gMonFootprint_Tooths,
 		LEARNSETS(Tooths),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_RUNE_GUARDIAN] =
@@ -11427,9 +11429,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rune_Guardian, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rune_Guardian,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rune_Guardian, 64, 64),
 		.backPicYOffset = 0,
@@ -11438,6 +11438,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rune_Guardian, 0),
 		.footprint = gMonFootprint_Rune_Guardian,
 		LEARNSETS(Rune_Guardian),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_COSMIC_RUNE, SPECIES_REWARDS_GUARDIAN},
 			{EVO_ITEM, ITEM_ASTRAL_RUNE, SPECIES_REWARDS_GUARDIAN},
@@ -11486,9 +11488,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Gnomey, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Gnomey,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Gnomey, 64, 64),
 		.backPicYOffset = 0,
@@ -11497,6 +11497,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Gnomey, 0),
 		.footprint = gMonFootprint_Gnomey,
 		LEARNSETS(Gnomey),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPARKLES] =
@@ -11535,9 +11537,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sparkles, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sparkles,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sparkles, 64, 64),
 		.backPicYOffset = 0,
@@ -11546,6 +11546,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sparkles, 0),
 		.footprint = gMonFootprint_Sparkles,
 		LEARNSETS(Sparkles),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BAT] =
@@ -11584,9 +11586,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bat, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bat,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bat, 64, 64),
 		.backPicYOffset = 0,
@@ -11595,6 +11595,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bat, 2),
 		.footprint = gMonFootprint_Bat,
 		LEARNSETS(Bat),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_NIGHT, 24, SPECIES_GIANT_BAT},
 			{EVO_LEVEL_DAY, 24, SPECIES_BAT_BOX_FORM},
@@ -11639,9 +11641,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Giant_Bat, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Giant_Bat,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Giant_Bat, 64, 64),
 		.backPicYOffset = 0,
@@ -11650,6 +11650,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Giant_Bat, 0),
 		.footprint = gMonFootprint_Giant_Bat,
 		LEARNSETS(Giant_Bat),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 2,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_NIGHT, 32, SPECIES_ALBINO_BAT},
 			{EVO_ITEM, ITEM_SPIRIT_SHARD, SPECIES_FRUIT_BAT},
@@ -11695,9 +11697,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Warped_Bat, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Warped_Bat,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Warped_Bat, 64, 64),
 		.backPicYOffset = 0,
@@ -11706,6 +11706,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Warped_Bat, 0),
 		.footprint = gMonFootprint_Warped_Bat,
 		LEARNSETS(Warped_Bat),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_ALBINO_BAT] =
@@ -11743,9 +11745,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Albino_Bat, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Albino_Bat,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Albino_Bat, 64, 64),
 		.backPicYOffset = 0,
@@ -11754,6 +11754,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Albino_Bat, 2),
 		.footprint = gMonFootprint_Albino_Bat,
 		LEARNSETS(Albino_Bat),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 6,
 	},
 
 [SPECIES_BAT_BOX_FORM] =
@@ -11792,9 +11794,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bat_Box_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bat_Box_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bat_Box_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -11803,6 +11803,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bat_Box_Form, 2),
 		.footprint = gMonFootprint_Bat_Box_Form,
 		LEARNSETS(Bat_Box_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 32, SPECIES_WARPED_BAT},
 			{EVO_LEVEL_NIGHT, 32, SPECIES_VAMPYREBAT},
@@ -11848,9 +11850,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Fruit_Bat, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Fruit_Bat,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Fruit_Bat, 64, 64),
 		.backPicYOffset = 0,
@@ -11859,6 +11859,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Fruit_Bat, 0),
 		.footprint = gMonFootprint_Fruit_Bat,
 		LEARNSETS(Fruit_Bat),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_VAMPYREBAT] =
@@ -11897,9 +11899,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(VampyreBat, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_VampyreBat,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(VampyreBat, 64, 64),
 		.backPicYOffset = 0,
@@ -11908,6 +11908,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(VampyreBat, 0),
 		.footprint = gMonFootprint_VampyreBat,
 		LEARNSETS(VampyreBat),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 3,
 	},
 
 [SPECIES_DEATHWING] =
@@ -11945,9 +11947,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Deathwing, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Deathwing,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Deathwing, 64, 64),
 		.backPicYOffset = 0,
@@ -11956,6 +11956,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Deathwing, 0),
 		.footprint = gMonFootprint_Deathwing,
 		LEARNSETS(Deathwing),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_SHAIKAH] =
@@ -11993,9 +11995,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Shaikah, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Shaikah,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Shaikah, 64, 64),
 		.backPicYOffset = 0,
@@ -12004,6 +12004,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Shaikah, 0),
 		.footprint = gMonFootprint_Shaikah,
 		LEARNSETS(Shaikah),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_NATURE_RUNE, SPECIES_JAGUAR_ORANGE_FORM},
 			{EVO_ITEM, ITEM_LAW_RUNE, SPECIES_GROWLER}
@@ -12046,9 +12048,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Growler, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Growler,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Growler, 64, 64),
 		.backPicYOffset = 0,
@@ -12057,6 +12057,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Growler, 2),
 		.footprint = gMonFootprint_Growler,
 		LEARNSETS(Growler),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PHOENLING_REBIRTH_FORM] =
@@ -12094,9 +12096,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Phoenling_Rebirth_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Phoenling_Rebirth_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Phoenling_Rebirth_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -12105,6 +12105,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Phoenling_Rebirth_Form, 2),
 		.footprint = gMonFootprint_Phoenling_Rebirth_Form,
 		LEARNSETS(Phoenling_Rebirth_Form),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_MOVE, MOVE_HEAT_WAVE, SPECIES_PHOENIX_REBIRTH_FORM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_REBORN_WARRIOR, SPECIES_PHOENIX_REBIRTH_FORM},
@@ -12147,9 +12149,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Phoenling_Reborn_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Phoenling_Reborn_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Phoenling_Reborn_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -12158,6 +12158,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Phoenling_Reborn_Form, 2),
 		.footprint = gMonFootprint_Phoenling_Reborn_Form,
 		LEARNSETS(Phoenling_Reborn_Form),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_MOVE, MOVE_INFERNO, SPECIES_PHOENIX_REBORN_FORM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_REBORN_WARRIOR, SPECIES_PHOENIX_REBORN_FORM},
@@ -12201,9 +12203,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Phoenix_Rebirth_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Phoenix_Rebirth_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Phoenix_Rebirth_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -12212,6 +12212,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Phoenix_Rebirth_Form, 2),
 		.footprint = gMonFootprint_Phoenix_Rebirth_Form,
 		LEARNSETS(Phoenix_Rebirth_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PHOENIX_REBORN_FORM] =
@@ -12248,9 +12250,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Phoenix_Reborn_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Phoenix_Reborn_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Phoenix_Reborn_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -12259,6 +12259,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Phoenix_Reborn_Form, 2),
 		.footprint = gMonFootprint_Phoenix_Reborn_Form,
 		LEARNSETS(Phoenix_Reborn_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_PLANT_STRANGE_FORM] =
@@ -12296,9 +12298,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Plant_Strange_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Plant_Strange_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Plant_Strange_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -12307,6 +12307,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Plant_Strange_Form, 1),
 		.footprint = gMonFootprint_Plant_Strange_Form,
 		LEARNSETS(Plant_Strange_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_FRIENDSHIP, 220, SPECIES_PLANT_STRANGER_FORM}
 		),
@@ -12347,9 +12349,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Plant_Stranger_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Plant_Stranger_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Plant_Stranger_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -12358,6 +12358,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Plant_Stranger_Form, 1),
 		.footprint = gMonFootprint_Plant_Stranger_Form,
 		LEARNSETS(Plant_Stranger_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DARK_TYPE_MON_IN_PARTY, 40, SPECIES_EVILTURNIP},
 			{EVO_LEVEL, 40, SPECIES_JADE_VINE}
@@ -12400,9 +12402,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(EvilTurnip, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_EvilTurnip,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(EvilTurnip, 64, 64),
 		.backPicYOffset = 0,
@@ -12411,6 +12411,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(EvilTurnip, 0),
 		.footprint = gMonFootprint_EvilTurnip,
 		LEARNSETS(EvilTurnip),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CREATURE_CUTE_FORM] =
@@ -12449,9 +12451,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Creature_Cute_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Creature_Cute_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Creature_Cute_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -12460,6 +12460,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Creature_Cute_Form, 2),
 		.footprint = gMonFootprint_Creature_Cute_Form,
 		LEARNSETS(Creature_Cute_Form),
+		.frontPicYOffset = 11,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CREATURE_EVIL_FORM] =
@@ -12496,9 +12498,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Creature_Evil_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Creature_Evil_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Creature_Evil_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -12507,6 +12507,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Creature_Evil_Form, 0),
 		.footprint = gMonFootprint_Creature_Evil_Form,
 		LEARNSETS(Creature_Evil_Form),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BABY_YAK] =
@@ -12545,9 +12547,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Baby_Yak, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Baby_Yak,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Baby_Yak, 64, 64),
 		.backPicYOffset = 0,
@@ -12556,6 +12556,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Baby_Yak, 0),
 		.footprint = gMonFootprint_Baby_Yak,
 		LEARNSETS(Baby_Yak),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_FRIENDSHIP, 220, SPECIES_YAK_NORMAL_FORM}
 		),
@@ -12597,9 +12599,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Yak_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Yak_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Yak_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -12608,6 +12608,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Yak_Normal_Form, 0),
 		.footprint = gMonFootprint_Yak_Normal_Form,
 		LEARNSETS(Yak_Normal_Form),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 34, SPECIES_YAK_PACK_FORM},
 			{EVO_LEVEL_NIGHT, 34, SPECIES_YAK_SNACK_FORM},
@@ -12661,9 +12663,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Yak_Pack_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Yak_Pack_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Yak_Pack_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -12672,6 +12672,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Yak_Pack_Form, 0),
 		.footprint = gMonFootprint_Yak_Pack_Form,
 		LEARNSETS(Yak_Pack_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_YAK_SACRED_FORM] =
@@ -12710,9 +12712,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Yak_Sacred_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Yak_Sacred_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Yak_Sacred_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -12721,6 +12721,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Yak_Sacred_Form, 2),
 		.footprint = gMonFootprint_Yak_Sacred_Form,
 		LEARNSETS(Yak_Sacred_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_YAK_CLUESCROLL_FORM] =
@@ -12761,9 +12763,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Yak_ClueScroll_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Yak_ClueScroll_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Yak_ClueScroll_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -12772,6 +12772,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Yak_ClueScroll_Form, 2),
 		.footprint = gMonFootprint_Yak_ClueScroll_Form,
 		LEARNSETS(Yak_ClueScroll_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_YAK_UNDEAD_FORM] =
@@ -12810,9 +12812,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Yak_Undead_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Yak_Undead_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Yak_Undead_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -12821,6 +12821,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Yak_Undead_Form, 0),
 		.footprint = gMonFootprint_Yak_Undead_Form,
 		LEARNSETS(Yak_Undead_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_YAK_SNACK_FORM] =
@@ -12859,9 +12861,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Yak_Snack_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Yak_Snack_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Yak_Snack_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -12870,6 +12870,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Yak_Snack_Form, 1),
 		.footprint = gMonFootprint_Yak_Snack_Form,
 		LEARNSETS(Yak_Snack_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_BEHEMOTH_GLUTTONOUS_FORM, SPECIES_YAK_NORMAL_FORM}
 		),
@@ -12910,9 +12912,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Minitrice, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Minitrice,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Minitrice, 64, 64),
 		.backPicYOffset = 0,
@@ -12921,6 +12921,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Minitrice, 0),
 		.footprint = gMonFootprint_Minitrice,
 		LEARNSETS(Minitrice),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 30, SPECIES_COCKATRICE},
 			{EVO_LEVEL_NIGHT, 30, SPECIES_COCKATRICE_OSRS_FORM},
@@ -12970,9 +12972,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cockatrice, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cockatrice,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cockatrice, 64, 64),
 		.backPicYOffset = 0,
@@ -12981,6 +12981,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cockatrice, 1),
 		.footprint = gMonFootprint_Cockatrice,
 		LEARNSETS(Cockatrice),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GUTHATRICE] =
@@ -13019,9 +13021,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Guthatrice, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Guthatrice,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Guthatrice, 64, 64),
 		.backPicYOffset = 0,
@@ -13030,6 +13030,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Guthatrice, 1),
 		.footprint = gMonFootprint_Guthatrice,
 		LEARNSETS(Guthatrice),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 2,
 	},
 
 [SPECIES_ZAMATRICE] =
@@ -13068,9 +13070,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zamatrice, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zamatrice,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zamatrice, 64, 64),
 		.backPicYOffset = 0,
@@ -13079,6 +13079,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zamatrice, 0),
 		.footprint = gMonFootprint_Zamatrice,
 		LEARNSETS(Zamatrice),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SARATRICE] =
@@ -13117,9 +13119,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Saratrice, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Saratrice,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Saratrice, 64, 64),
 		.backPicYOffset = 0,
@@ -13128,6 +13128,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Saratrice, 2),
 		.footprint = gMonFootprint_Saratrice,
 		LEARNSETS(Saratrice),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CORXATRICE] =
@@ -13167,9 +13169,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Corxatrice, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Corxatrice,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Corxatrice, 64, 64),
 		.backPicYOffset = 0,
@@ -13178,6 +13178,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Corxatrice, 0),
 		.footprint = gMonFootprint_Corxatrice,
 		LEARNSETS(Corxatrice),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_VULATRICE] =
@@ -13217,9 +13219,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Vulatrice, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Vulatrice,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Vulatrice, 64, 64),
 		.backPicYOffset = 0,
@@ -13228,6 +13228,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Vulatrice, 0),
 		.footprint = gMonFootprint_Vulatrice,
 		LEARNSETS(Vulatrice),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PENGATRICE] =
@@ -13266,9 +13268,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pengatrice, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pengatrice,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pengatrice, 64, 64),
 		.backPicYOffset = 0,
@@ -13277,6 +13277,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pengatrice, 0),
 		.footprint = gMonFootprint_Pengatrice,
 		LEARNSETS(Pengatrice),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHOCATRICE] =
@@ -13315,9 +13317,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chocatrice, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chocatrice,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chocatrice, 64, 64),
 		.backPicYOffset = 0,
@@ -13326,6 +13326,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chocatrice, 0),
 		.footprint = gMonFootprint_Chocatrice,
 		LEARNSETS(Chocatrice),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPROUTLING_SUMMER_FORM] =
@@ -13363,9 +13365,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sproutling_Summer_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sproutling_Summer_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sproutling_Summer_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -13374,6 +13374,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sproutling_Summer_Form, 1),
 		.footprint = gMonFootprint_Sproutling_Summer_Form,
 		LEARNSETS(Sproutling_Summer_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPROUTLING_SPRING_FORM] =
@@ -13410,9 +13412,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sproutling_Spring_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sproutling_Spring_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sproutling_Spring_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -13421,6 +13421,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sproutling_Spring_Form, 0),
 		.footprint = gMonFootprint_Sproutling_Spring_Form,
 		LEARNSETS(Sproutling_Spring_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPROUTLING_WINTER_FORM] =
@@ -13457,9 +13459,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sproutling_Winter_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sproutling_Winter_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sproutling_Winter_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -13468,6 +13468,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sproutling_Winter_Form, 1),
 		.footprint = gMonFootprint_Sproutling_Winter_Form,
 		LEARNSETS(Sproutling_Winter_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPROUTLING_AUTUMN_FORM] =
@@ -13504,9 +13506,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sproutling_Autumn_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sproutling_Autumn_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sproutling_Autumn_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -13515,6 +13515,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sproutling_Autumn_Form, 0),
 		.footprint = gMonFootprint_Sproutling_Autumn_Form,
 		LEARNSETS(Sproutling_Autumn_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_RUE] =
@@ -13553,9 +13555,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rue, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rue,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rue, 64, 64),
 		.backPicYOffset = 0,
@@ -13564,6 +13564,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rue, 0),
 		.footprint = gMonFootprint_Rue,
 		LEARNSETS(Rue),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_MONTY] =
@@ -13603,9 +13605,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Monty, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Monty,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Monty, 64, 64),
 		.backPicYOffset = 0,
@@ -13614,6 +13614,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Monty, 2),
 		.footprint = gMonFootprint_Monty,
 		LEARNSETS(Monty),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ZYGOMITE] =
@@ -13651,9 +13653,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zygomite, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zygomite,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zygomite, 64, 64),
 		.backPicYOffset = 0,
@@ -13662,6 +13662,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zygomite, 0),
 		.footprint = gMonFootprint_Zygomite,
 		LEARNSETS(Zygomite),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 41, SPECIES_ZYGOMITE_MAGICAL_FORM},
 			{EVO_LEVEL_NIGHT, 41, SPECIES_ZYGOMITE_ZANARIAN_FORM},
@@ -13706,9 +13708,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Abyssaling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Abyssaling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Abyssaling, 64, 64),
 		.backPicYOffset = 0,
@@ -13717,6 +13717,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Abyssaling, 0),
 		.footprint = gMonFootprint_Abyssaling,
 		LEARNSETS(Abyssaling),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ABYSSAL_MINION_FORM] =
@@ -13755,9 +13757,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Abyssal_Minion_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Abyssal_Minion_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Abyssal_Minion_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -13766,6 +13766,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Abyssal_Minion_Form, 0),
 		.footprint = gMonFootprint_Abyssal_Minion_Form,
 		LEARNSETS(Abyssal_Minion_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ABYSSAL_DEMON_FORM] =
@@ -13805,9 +13807,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Abyssal_Demon_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Abyssal_Demon_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Abyssal_Demon_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -13816,6 +13816,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Abyssal_Demon_Form, 2),
 		.footprint = gMonFootprint_Abyssal_Demon_Form,
 		LEARNSETS(Abyssal_Demon_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ABYSSAL_SIRE_FORM] =
@@ -13855,9 +13857,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Abyssal_Sire_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Abyssal_Sire_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Abyssal_Sire_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -13866,6 +13866,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Abyssal_Sire_Form, 0),
 		.footprint = gMonFootprint_Abyssal_Sire_Form,
 		LEARNSETS(Abyssal_Sire_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ABYSSAL_LEECH_FORM] =
@@ -13903,9 +13905,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Abyssal_Leech_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Abyssal_Leech_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Abyssal_Leech_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -13914,6 +13914,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Abyssal_Leech_Form, 2),
 		.footprint = gMonFootprint_Abyssal_Leech_Form,
 		LEARNSETS(Abyssal_Leech_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ABYSSAL_PARASITE_FORM] =
@@ -13951,9 +13953,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Abyssal_Parasite_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Abyssal_Parasite_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Abyssal_Parasite_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -13962,6 +13962,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Abyssal_Parasite_Form, 2),
 		.footprint = gMonFootprint_Abyssal_Parasite_Form,
 		LEARNSETS(Abyssal_Parasite_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ABYSSAL_LURKER_FORM] =
@@ -14000,9 +14002,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Abyssal_Lurker_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Abyssal_Lurker_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Abyssal_Lurker_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -14011,6 +14011,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Abyssal_Lurker_Form, 0),
 		.footprint = gMonFootprint_Abyssal_Lurker_Form,
 		LEARNSETS(Abyssal_Lurker_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ABYSSAL_WALKER_FORM] =
@@ -14048,9 +14050,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Abyssal_Walker_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Abyssal_Walker_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Abyssal_Walker_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -14059,6 +14059,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Abyssal_Walker_Form, 0),
 		.footprint = gMonFootprint_Abyssal_Walker_Form,
 		LEARNSETS(Abyssal_Walker_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ABYSSAL_TITAN_FORM] =
@@ -14097,9 +14099,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Abyssal_Titan_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Abyssal_Titan_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Abyssal_Titan_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -14108,6 +14108,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Abyssal_Titan_Form, 0),
 		.footprint = gMonFootprint_Abyssal_Titan_Form,
 		LEARNSETS(Abyssal_Titan_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_TZ_KIH] =
@@ -14131,7 +14133,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
 		.abilities = { ABILITY_FLAME_BODY, ABILITY_FLAME_BODY, ABILITY_FLASH_FIRE },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("Tz Kih"),
+		.speciesName = _("Tz-Kih"),
 		.cryId = CRY_TZ_KIH,
 		.natDexNum = NATIONAL_DEX_TZ_KIH,
 		.categoryName = _("Kih"),
@@ -14146,9 +14148,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Tz_Kih, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Tz_Kih,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Tz_Kih, 64, 64),
 		.backPicYOffset = 0,
@@ -14157,6 +14157,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tz_Kih, 2),
 		.footprint = gMonFootprint_Tz_Kih,
 		LEARNSETS(Tz_Kih),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 22, SPECIES_TZ_KEK},
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_TZ_KIH_SPIRIT_FORM}
@@ -14184,7 +14186,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
 		.abilities = { ABILITY_FLAME_BODY, ABILITY_FLAME_BODY, ABILITY_FLASH_FIRE },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("Tz Kek"),
+		.speciesName = _("Tz-Kek"),
 		.cryId = CRY_TZ_KEK,
 		.natDexNum = NATIONAL_DEX_TZ_KEK,
 		.categoryName = _("Kek"),
@@ -14199,9 +14201,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Tz_Kek, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Tz_Kek,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Tz_Kek, 64, 64),
 		.backPicYOffset = 0,
@@ -14210,6 +14210,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tz_Kek, 0),
 		.footprint = gMonFootprint_Tz_Kek,
 		LEARNSETS(Tz_Kek),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 36, SPECIES_TOK_XIL}
 		),
@@ -14236,7 +14238,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
 		.abilities = { ABILITY_FLAME_BODY, ABILITY_FLAME_BODY, ABILITY_FLASH_FIRE },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("Tok Xil"),
+		.speciesName = _("Tok-Xil"),
 		.cryId = CRY_TOK_XIL,
 		.natDexNum = NATIONAL_DEX_TOK_XIL,
 		.categoryName = _("Xil "),
@@ -14250,9 +14252,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Tok_Xil, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Tok_Xil,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Tok_Xil, 64, 64),
 		.backPicYOffset = 0,
@@ -14261,6 +14261,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tok_Xil, 0),
 		.footprint = gMonFootprint_Tok_Xil,
 		LEARNSETS(Tok_Xil),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_TZ_KIH_SPIRIT_FORM] =
@@ -14284,7 +14286,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
 		.abilities = { ABILITY_FLAME_BODY, ABILITY_FLAME_BODY, ABILITY_NONE },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("Tz Kih"),
+		.speciesName = _("Tz-Kih"),
 		.cryId = CRY_TZ_KIH_SPIRIT_FORM,
 		.natDexNum = NATIONAL_DEX_TZ_KIH_SPIRIT_FORM,
 		.categoryName = _("Tzhaar"),
@@ -14297,9 +14299,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Tz_Kih_Spirit_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Tz_Kih_Spirit_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Tz_Kih_Spirit_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -14308,6 +14308,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tz_Kih_Spirit_Form, 0),
 		.footprint = gMonFootprint_Tz_Kih_Spirit_Form,
 		LEARNSETS(Tz_Kih_Spirit_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_KET_DILL] =
@@ -14331,7 +14333,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
 		.abilities = { ABILITY_ARENA_TRAP, ABILITY_RUN_AWAY, ABILITY_MAGMA_ARMOR },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("Ket Dill"),
+		.speciesName = _("Ket-Dill"),
 		.cryId = CRY_KET_DILL,
 		.natDexNum = NATIONAL_DEX_KET_DILL,
 		.categoryName = _("KetDill"),
@@ -14346,9 +14348,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ket_Dill, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ket_Dill,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ket_Dill, 64, 64),
 		.backPicYOffset = 0,
@@ -14357,6 +14357,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ket_Dill, 0),
 		.footprint = gMonFootprint_Ket_Dill,
 		LEARNSETS(Ket_Dill),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_SPOOKAXE, SPECIES_KET_ZEK},
 			{EVO_LEVEL, 47, SPECIES_KET_ZEK}
@@ -14385,7 +14387,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
 		.abilities = { ABILITY_MAGMA_ARMOR, ABILITY_FLASH_FIRE, ABILITY_ARENA_TRAP },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("Ket Zek"),
+		.speciesName = _("Ket-Zek"),
 		.cryId = CRY_KET_ZEK,
 		.natDexNum = NATIONAL_DEX_KET_ZEK,
 		.categoryName = _("Zek"),
@@ -14400,9 +14402,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ket_Zek, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ket_Zek,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ket_Zek, 64, 64),
 		.backPicYOffset = 0,
@@ -14411,6 +14411,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ket_Zek, 2),
 		.footprint = gMonFootprint_Ket_Zek,
 		LEARNSETS(Ket_Zek),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_YT_HURKOT] =
@@ -14434,7 +14436,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
 		.abilities = { ABILITY_MAGMA_ARMOR, ABILITY_MAGICIAN, ABILITY_MAGICIAN },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("Yt HurKot"),
+		.speciesName = _("Yt-HurKot"),
 		.cryId = CRY_YT_HURKOT,
 		.natDexNum = NATIONAL_DEX_YT_HURKOT,
 		.categoryName = _("Hurkot"),
@@ -14449,9 +14451,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Yt_HurKot, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Yt_HurKot,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Yt_HurKot, 64, 64),
 		.backPicYOffset = 0,
@@ -14460,6 +14460,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Yt_HurKot, 0),
 		.footprint = gMonFootprint_Yt_HurKot,
 		LEARNSETS(Yt_HurKot),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 33, SPECIES_YT_MEJKOT}
 		),
@@ -14486,7 +14488,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
 		.abilities = { ABILITY_MAGMA_ARMOR, ABILITY_MAGICIAN, ABILITY_MAGICIAN },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("Yt MejKot"),
+		.speciesName = _("Yt-MejKot"),
 		.cryId = CRY_YT_MEJKOT,
 		.natDexNum = NATIONAL_DEX_YT_MEJKOT,
 		.categoryName = _("Mejkot"),
@@ -14501,9 +14503,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Yt_MejKot, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Yt_MejKot,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Yt_MejKot, 64, 64),
 		.backPicYOffset = 0,
@@ -14512,6 +14512,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Yt_MejKot, 2),
 		.footprint = gMonFootprint_Yt_MejKot,
 		LEARNSETS(Yt_MejKot),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_TZREK_JAD] =
@@ -14535,7 +14537,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MONSTER },
 		.abilities = { ABILITY_MAGMA_ARMOR, ABILITY_MAGMA_ARMOR, ABILITY_CUTE_CHARM },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("TzRek Jad"),
+		.speciesName = _("TzRek-Jad"),
 		.cryId = CRY_TZREK_JAD,
 		.natDexNum = NATIONAL_DEX_TZREK_JAD,
 		.categoryName = _("Mini Jad"),
@@ -14549,9 +14551,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(TzRek_Jad, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_TzRek_Jad,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(TzRek_Jad, 64, 64),
 		.backPicYOffset = 0,
@@ -14560,6 +14560,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(TzRek_Jad, 2),
 		.footprint = gMonFootprint_TzRek_Jad,
 		LEARNSETS(TzRek_Jad),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_FRIENDSHIP, 220, SPECIES_TZTOK_JAD},
 			{EVO_ITEM, ITEM_BLOOD_RUNE, SPECIES_JALTOK_JAD}
@@ -14587,7 +14589,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MONSTER },
 		.abilities = { ABILITY_MAGMA_ARMOR, ABILITY_MAGMA_ARMOR, ABILITY_PRESSURE },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("TzTok Jad"),
+		.speciesName = _("TzTok-Jad"),
 		.cryId = CRY_TZTOK_JAD,
 		.natDexNum = NATIONAL_DEX_TZTOK_JAD,
 		.categoryName = _("Jad"),
@@ -14602,9 +14604,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(TzTok_Jad, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_TzTok_Jad,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(TzTok_Jad, 64, 64),
 		.backPicYOffset = 0,
@@ -14613,6 +14613,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(TzTok_Jad, 0),
 		.footprint = gMonFootprint_TzTok_Jad,
 		LEARNSETS(TzTok_Jad),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 		.formSpeciesIdTable = sTzTokJadFormSpeciesIdTable,
 		.formChangeTable = sTzTokJadFormChangeTable,
 	},
@@ -14638,7 +14640,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
 		.abilities = { ABILITY_STURDY, ABILITY_MAGMA_ARMOR, ABILITY_DROUGHT },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("JalTok Jad"),
+		.speciesName = _("JalTok-Jad"),
 		.cryId = CRY_JALTOK_JAD,
 		.natDexNum = NATIONAL_DEX_JALTOK_JAD,
 		.categoryName = _("New Jad"),
@@ -14654,9 +14656,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(JalTok_Jad, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_JalTok_Jad,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(JalTok_Jad, 64, 64),
 		.backPicYOffset = 0,
@@ -14665,6 +14665,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(JalTok_Jad, 0),
 		.footprint = gMonFootprint_JalTok_Jad,
 		LEARNSETS(JalTok_Jad),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_JAL_MEJRAH] =
@@ -14688,7 +14690,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
 		.abilities = { ABILITY_STURDY, ABILITY_MAGMA_ARMOR, ABILITY_FLAME_BODY },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("Jal MejRah"),
+		.speciesName = _("Jal-MejRah"),
 		.cryId = CRY_JAL_MEJRAH,
 		.natDexNum = NATIONAL_DEX_JAL_MEJRAH,
 		.categoryName = _("Merah"),
@@ -14702,9 +14704,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jal_MejRah, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jal_MejRah,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jal_MejRah, 64, 64),
 		.backPicYOffset = 0,
@@ -14713,6 +14713,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jal_MejRah, 0),
 		.footprint = gMonFootprint_Jal_MejRah,
 		LEARNSETS(Jal_MejRah),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 22, SPECIES_JAL_AK}
 		),
@@ -14739,7 +14741,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
 		.abilities = { ABILITY_SHED_SKIN, ABILITY_MAGMA_ARMOR, ABILITY_FLAME_BODY },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("Jal Ak"),
+		.speciesName = _("Jal-Ak"),
 		.cryId = CRY_JAL_AK,
 		.natDexNum = NATIONAL_DEX_JAL_AK,
 		.categoryName = _("Ak"),
@@ -14753,9 +14755,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jal_Ak, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jal_Ak,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jal_Ak, 64, 64),
 		.backPicYOffset = 0,
@@ -14764,6 +14764,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jal_Ak, 0),
 		.footprint = gMonFootprint_Jal_Ak,
 		LEARNSETS(Jal_Ak),
+		.frontPicYOffset = 14,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 36, SPECIES_JAL_XIL}
 		),
@@ -14790,7 +14792,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
 		.abilities = { ABILITY_STURDY, ABILITY_MAGMA_ARMOR, ABILITY_NONE },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("Jal Xil"),
+		.speciesName = _("Jal-Xil"),
 		.cryId = CRY_JAL_XIL,
 		.natDexNum = NATIONAL_DEX_JAL_XIL,
 		.categoryName = _("Xil"),
@@ -14804,9 +14806,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jal_Xil, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jal_Xil,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jal_Xil, 64, 64),
 		.backPicYOffset = 0,
@@ -14815,6 +14815,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jal_Xil, 0),
 		.footprint = gMonFootprint_Jal_Xil,
 		LEARNSETS(Jal_Xil),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_JAL_NIB] =
@@ -14838,7 +14840,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
 		.abilities = { ABILITY_STURDY, ABILITY_MAGMA_ARMOR, ABILITY_ARENA_TRAP },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("Jal Nib"),
+		.speciesName = _("Jal-Nib"),
 		.cryId = CRY_JAL_NIB,
 		.natDexNum = NATIONAL_DEX_JAL_NIB,
 		.categoryName = _("Nib"),
@@ -14853,9 +14855,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jal_Nib, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jal_Nib,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jal_Nib, 64, 64),
 		.backPicYOffset = 0,
@@ -14864,6 +14864,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jal_Nib, 0),
 		.footprint = gMonFootprint_Jal_Nib,
 		LEARNSETS(Jal_Nib),
+		.frontPicYOffset = 15,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_ATK_GT_DEF, 32, SPECIES_JAL_IMKOT},
 			{EVO_LEVEL_ATK_LT_DEF, 32, SPECIES_JAL_ZEK},
@@ -14892,7 +14894,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
 		.abilities = { ABILITY_STURDY, ABILITY_MAGMA_ARMOR, ABILITY_FLAME_BODY },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("Jal ImKot"),
+		.speciesName = _("Jal-ImKot"),
 		.cryId = CRY_JAL_IMKOT,
 		.natDexNum = NATIONAL_DEX_JAL_IMKOT,
 		.categoryName = _("Imkot"),
@@ -14907,9 +14909,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jal_ImKot, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jal_ImKot,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jal_ImKot, 64, 64),
 		.backPicYOffset = 0,
@@ -14918,6 +14918,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jal_ImKot, 0),
 		.footprint = gMonFootprint_Jal_ImKot,
 		LEARNSETS(Jal_ImKot),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_JAL_ZEK] =
@@ -14941,7 +14943,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
 		.abilities = { ABILITY_STURDY, ABILITY_MAGMA_ARMOR, ABILITY_FLAME_BODY },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("Jal Zek"),
+		.speciesName = _("Jal-Zek"),
 		.cryId = CRY_JAL_ZEK,
 		.natDexNum = NATIONAL_DEX_JAL_ZEK,
 		.categoryName = _("Zek"),
@@ -14957,9 +14959,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jal_Zek, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jal_Zek,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jal_Zek, 64, 64),
 		.backPicYOffset = 0,
@@ -14968,6 +14968,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jal_Zek, 0),
 		.footprint = gMonFootprint_Jal_Zek,
 		LEARNSETS(Jal_Zek),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_TZKAL_ZUK] =
@@ -14991,7 +14993,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
 		.abilities = { ABILITY_MAGMA_ARMOR, ABILITY_DROUGHT, ABILITY_DROUGHT },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("TzKal Zuk"),
+		.speciesName = _("TzKal-Zuk"),
 		.cryId = CRY_TZKAL_ZUK,
 		.natDexNum = NATIONAL_DEX_TZKAL_ZUK,
 		.categoryName = _("Zuk"),
@@ -15007,9 +15009,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(TzKal_Zuk, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_TzKal_Zuk,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(TzKal_Zuk, 64, 64),
 		.backPicYOffset = 0,
@@ -15018,6 +15018,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(TzKal_Zuk, 2),
 		.footprint = gMonFootprint_TzKal_Zuk,
 		LEARNSETS(TzKal_Zuk),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_DUCKLING] =
@@ -15056,9 +15058,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Duckling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Duckling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Duckling, 64, 64),
 		.backPicYOffset = 0,
@@ -15067,6 +15067,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Duckling, 0),
 		.footprint = gMonFootprint_Duckling,
 		LEARNSETS(Duckling),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_FRIENDSHIP, 220, SPECIES_SWAN},
 			{EVO_LEVEL, 21, SPECIES_DUCK_NORMAL_FORM}
@@ -15110,9 +15112,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Swan, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Swan,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Swan, 64, 64),
 		.backPicYOffset = 0,
@@ -15121,6 +15121,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Swan, 0),
 		.footprint = gMonFootprint_Swan,
 		LEARNSETS(Swan),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_IMP, SPECIES_IMP}
 		),
@@ -15162,9 +15164,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Duck_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Duck_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Duck_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -15173,6 +15173,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Duck_Normal_Form, 1),
 		.footprint = gMonFootprint_Duck_Normal_Form,
 		LEARNSETS(Duck_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_MOVE, MOVE_GROWTH, SPECIES_MEGA_DUCK},
 			{EVO_LEVEL_UNDERGROUND, 21, SPECIES_DUCK_CART_FORM}
@@ -15215,9 +15217,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Mega_Duck, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Mega_Duck,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Mega_Duck, 64, 64),
 		.backPicYOffset = 0,
@@ -15226,6 +15226,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Mega_Duck, 1),
 		.footprint = gMonFootprint_Mega_Duck,
 		LEARNSETS(Mega_Duck),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DUCK_CART_FORM] =
@@ -15265,9 +15267,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Duck_Cart_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Duck_Cart_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Duck_Cart_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -15276,6 +15276,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Duck_Cart_Form, 1),
 		.footprint = gMonFootprint_Duck_Cart_Form,
 		LEARNSETS(Duck_Cart_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PLATYPODE] =
@@ -15313,9 +15315,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Platypode, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Platypode,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Platypode, 64, 64),
 		.backPicYOffset = 0,
@@ -15324,6 +15324,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Platypode, 0),
 		.footprint = gMonFootprint_Platypode,
 		LEARNSETS(Platypode),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_FRIENDSHIP, 200, SPECIES_PLATYPUS}
 		),
@@ -15364,9 +15366,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Platypus, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Platypus,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Platypus, 64, 64),
 		.backPicYOffset = 0,
@@ -15375,6 +15375,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Platypus, 0),
 		.footprint = gMonFootprint_Platypus,
 		LEARNSETS(Platypus),
+		.frontPicYOffset = 14,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_FLEDGLING] =
@@ -15413,9 +15415,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Fledgling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Fledgling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Fledgling, 64, 64),
 		.backPicYOffset = 0,
@@ -15424,6 +15424,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Fledgling, 0),
 		.footprint = gMonFootprint_Fledgling,
 		LEARNSETS(Fledgling),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 30, SPECIES_DAGANNOTH_NORMAL_FORM}
 		),
@@ -15465,9 +15467,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dagannoth_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dagannoth_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dagannoth_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -15476,6 +15476,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dagannoth_Normal_Form, 0),
 		.footprint = gMonFootprint_Dagannoth_Normal_Form,
 		LEARNSETS(Dagannoth_Normal_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_FEMALE, 43, SPECIES_DAGANNOTH_DAUGHTER},
 			{EVO_ITEM, ITEM_WATER_RUNE, SPECIES_DAGANNOTH_GUARDIAN_FORM},
@@ -15520,9 +15522,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dagannoth_Guardian_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dagannoth_Guardian_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dagannoth_Guardian_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -15531,6 +15531,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dagannoth_Guardian_Form, 0),
 		.footprint = gMonFootprint_Dagannoth_Guardian_Form,
 		LEARNSETS(Dagannoth_Guardian_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_DAGANNOTH_REANIMATED_FORM},
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_DAGANNOTH_SPIRIT_FORM}
@@ -15575,9 +15577,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dagannoth_King_Range_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dagannoth_King_Range_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dagannoth_King_Range_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -15586,6 +15586,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dagannoth_King_Range_Form, 0),
 		.footprint = gMonFootprint_Dagannoth_King_Range_Form,
 		LEARNSETS(Dagannoth_King_Range_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 		.formSpeciesIdTable = sDagannothKingFormSpeciesIdTable,
 		.formChangeTable = sDagannothKingFormChangeTable,
 	},
@@ -15624,9 +15626,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dagannoth_King_Magic_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dagannoth_King_Magic_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dagannoth_King_Magic_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -15635,6 +15635,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dagannoth_King_Magic_Form, 0),
 		.footprint = gMonFootprint_Dagannoth_King_Magic_Form,
 		LEARNSETS(Dagannoth_King_Magic_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 		.formSpeciesIdTable = sDagannothKingFormSpeciesIdTable,
 		.formChangeTable = sDagannothKingFormChangeTable,
 	},
@@ -15673,9 +15675,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dagannoth_King_Melee_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dagannoth_King_Melee_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dagannoth_King_Melee_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -15684,6 +15684,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dagannoth_King_Melee_Form, 0),
 		.footprint = gMonFootprint_Dagannoth_King_Melee_Form,
 		LEARNSETS(Dagannoth_King_Melee_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 		.formSpeciesIdTable = sDagannothKingFormSpeciesIdTable,
 		.formChangeTable = sDagannothKingFormChangeTable,
 	},
@@ -15723,9 +15725,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dagannoth_King_Range_Mega_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dagannoth_King_Range_Mega_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dagannoth_King_Range_Mega_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -15734,6 +15734,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dagannoth_King_Range_Mega_Form, 1),
 		.footprint = gMonFootprint_Dagannoth_King_Range_Mega_Form,
 		LEARNSETS(Dagannoth_King_Range_Mega_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sDagannothKingFormSpeciesIdTable,
 		.formChangeTable = sDagannothKingFormChangeTable,
@@ -15773,9 +15775,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dagannoth_King_Magic_Mega_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dagannoth_King_Magic_Mega_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dagannoth_King_Magic_Mega_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -15784,6 +15784,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dagannoth_King_Magic_Mega_Form, 2),
 		.footprint = gMonFootprint_Dagannoth_King_Magic_Mega_Form,
 		LEARNSETS(Dagannoth_King_Magic_Mega_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sDagannothKingFormSpeciesIdTable,
 		.formChangeTable = sDagannothKingFormChangeTable,
@@ -15823,9 +15825,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dagannoth_King_Melee_Mega_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dagannoth_King_Melee_Mega_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dagannoth_King_Melee_Mega_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -15834,6 +15834,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dagannoth_King_Melee_Mega_Form, 3),
 		.footprint = gMonFootprint_Dagannoth_King_Melee_Mega_Form,
 		LEARNSETS(Dagannoth_King_Melee_Mega_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sDagannothKingFormSpeciesIdTable,
 		.formChangeTable = sDagannothKingFormChangeTable,
@@ -15876,9 +15878,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chaos_Ele, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chaos_Ele,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chaos_Ele, 64, 64),
 		.backPicYOffset = 0,
@@ -15887,6 +15887,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chaos_Ele, 2),
 		.footprint = gMonFootprint_Chaos_Ele,
 		LEARNSETS(Chaos_Ele),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.formSpeciesIdTable = sChaosElementalFormSpeciesIdTable,
 		.formChangeTable = sChaosElementalFormChangeTable,
 	},
@@ -15926,9 +15928,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chaos_Ele_Mega_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chaos_Ele_Mega_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chaos_Ele_Mega_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -15937,6 +15937,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chaos_Ele_Mega_Form, 2),
 		.footprint = gMonFootprint_Chaos_Ele_Mega_Form,
 		LEARNSETS(Chaos_Ele_Mega_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 3,
 		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sChaosElementalFormSpeciesIdTable,
 		.formChangeTable = sChaosElementalFormChangeTable,
@@ -15977,9 +15979,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bandling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bandling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bandling, 64, 64),
 		.backPicYOffset = 0,
@@ -15988,6 +15988,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bandling, 0),
 		.footprint = gMonFootprint_Bandling,
 		LEARNSETS(Bandling),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 16, SPECIES_BANDBIRD}
 		),
@@ -16029,9 +16031,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bandbird, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bandbird,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bandbird, 64, 64),
 		.backPicYOffset = 0,
@@ -16040,6 +16040,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bandbird, 0),
 		.footprint = gMonFootprint_Bandbird,
 		LEARNSETS(Bandbird),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 36, SPECIES_BANDEAGLE}
 		),
@@ -16081,9 +16083,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bandeagle, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bandeagle,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bandeagle, 64, 64),
 		.backPicYOffset = 0,
@@ -16092,6 +16092,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bandeagle, 0),
 		.footprint = gMonFootprint_Bandeagle,
 		LEARNSETS(Bandeagle),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ZAROLING] =
@@ -16130,9 +16132,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zaroling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zaroling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zaroling, 64, 64),
 		.backPicYOffset = 0,
@@ -16141,6 +16141,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zaroling, 2),
 		.footprint = gMonFootprint_Zaroling,
 		LEARNSETS(Zaroling),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 16, SPECIES_ZAROBIRD}
 		),
@@ -16183,9 +16185,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zarobird, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zarobird,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zarobird, 64, 64),
 		.backPicYOffset = 0,
@@ -16194,6 +16194,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zarobird, 2),
 		.footprint = gMonFootprint_Zarobird,
 		LEARNSETS(Zarobird),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 36, SPECIES_ZARAVEN}
 		),
@@ -16236,9 +16238,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zaraven, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zaraven,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zaraven, 64, 64),
 		.backPicYOffset = 0,
@@ -16247,6 +16247,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zaraven, 2),
 		.footprint = gMonFootprint_Zaraven,
 		LEARNSETS(Zaraven),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_SERELING] =
@@ -16284,9 +16286,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sereling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sereling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sereling, 64, 64),
 		.backPicYOffset = 0,
@@ -16295,6 +16295,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sereling, 0),
 		.footprint = gMonFootprint_Sereling,
 		LEARNSETS(Sereling),
+		.frontPicYOffset = 11,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 16, SPECIES_SEREBIRD}
 		),
@@ -16335,9 +16337,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Serebird, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Serebird,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Serebird, 64, 64),
 		.backPicYOffset = 0,
@@ -16346,6 +16346,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Serebird, 0),
 		.footprint = gMonFootprint_Serebird,
 		LEARNSETS(Serebird),
+		.frontPicYOffset = 11,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 36, SPECIES_SEREPEA}
 		),
@@ -16387,9 +16389,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Serepea, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Serepea,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Serepea, 64, 64),
 		.backPicYOffset = 0,
@@ -16398,6 +16398,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Serepea, 0),
 		.footprint = gMonFootprint_Serepea,
 		LEARNSETS(Serepea),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_FROGSPAWN] =
@@ -16435,9 +16437,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Frogspawn, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Frogspawn,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Frogspawn, 64, 64),
 		.backPicYOffset = 0,
@@ -16446,6 +16446,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Frogspawn, 0),
 		.footprint = gMonFootprint_Frogspawn,
 		LEARNSETS(Frogspawn),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 10, SPECIES_FROG_NORMAL_FORM}
 		),
@@ -16486,9 +16488,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Frog_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Frog_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Frog_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -16497,6 +16497,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Frog_Normal_Form, 0),
 		.footprint = gMonFootprint_Frog_Normal_Form,
 		LEARNSETS(Frog_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 20, SPECIES_GIANT_FROG_NORMAL_FORM},
 			{EVO_ITEM, ITEM_AIR_RUNE, SPECIES_FROG_BLOATED_FORM},
@@ -16540,9 +16542,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Giant_Frog_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Giant_Frog_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Giant_Frog_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -16551,6 +16551,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Giant_Frog_Normal_Form, 0),
 		.footprint = gMonFootprint_Giant_Frog_Normal_Form,
 		LEARNSETS(Giant_Frog_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 30, SPECIES_GIANT_FROG_ROYAL_FORM}
 		),
@@ -16592,9 +16594,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Giant_Frog_Royal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Giant_Frog_Royal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Giant_Frog_Royal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -16603,6 +16603,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Giant_Frog_Royal_Form, 0),
 		.footprint = gMonFootprint_Giant_Frog_Royal_Form,
 		LEARNSETS(Giant_Frog_Royal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_FROG_BLOATED_FORM] =
@@ -16641,9 +16643,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Frog_Bloated_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Frog_Bloated_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Frog_Bloated_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -16652,6 +16652,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Frog_Bloated_Form, 0),
 		.footprint = gMonFootprint_Frog_Bloated_Form,
 		LEARNSETS(Frog_Bloated_Form),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_AIR_RUNE, SPECIES_FROG_BALLOON_FORM}
 		),
@@ -16693,9 +16695,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Frog_Balloon_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Frog_Balloon_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Frog_Balloon_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -16704,6 +16704,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Frog_Balloon_Form, 0),
 		.footprint = gMonFootprint_Frog_Balloon_Form,
 		LEARNSETS(Frog_Balloon_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 2,
 	},
 
 [SPECIES_TOAD_BARKER_FORM] =
@@ -16742,9 +16744,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Toad_Barker_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Toad_Barker_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Toad_Barker_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -16753,6 +16753,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Toad_Barker_Form, 0),
 		.footprint = gMonFootprint_Toad_Barker_Form,
 		LEARNSETS(Toad_Barker_Form),
+		.frontPicYOffset = 12,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_FROGEEL] =
@@ -16791,9 +16793,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Frogeel, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Frogeel,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Frogeel, 64, 64),
 		.backPicYOffset = 0,
@@ -16802,6 +16802,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Frogeel, 1),
 		.footprint = gMonFootprint_Frogeel,
 		LEARNSETS(Frogeel),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_SHADEEL}
 		),
@@ -16842,9 +16844,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spiderling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spiderling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spiderling, 64, 64),
 		.backPicYOffset = 0,
@@ -16853,6 +16853,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spiderling, 2),
 		.footprint = gMonFootprint_Spiderling,
 		LEARNSETS(Spiderling),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_RANDOM, 15, SPECIES_SPIDER_GIANT_FORM},
 			{EVO_LEVEL_RANDOM, 15, SPECIES_SPIDER_HUGE_FORM},
@@ -16901,9 +16903,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spider_Giant_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spider_Giant_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spider_Giant_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -16912,6 +16912,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spider_Giant_Form, 2),
 		.footprint = gMonFootprint_Spider_Giant_Form,
 		LEARNSETS(Spider_Giant_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 28, SPECIES_SPIDER_DEADLYRED_FORM},
 			{EVO_MOVE, MOVE_THUNDER_FANG, SPECIES_SPIDER_BLESSED_FORM},
@@ -16956,9 +16958,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spider_DeadlyRed_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spider_DeadlyRed_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spider_DeadlyRed_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -16967,6 +16967,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spider_DeadlyRed_Form, 2),
 		.footprint = gMonFootprint_Spider_DeadlyRed_Form,
 		LEARNSETS(Spider_DeadlyRed_Form),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPIDER_JUNGLE_FORM] =
@@ -17005,9 +17007,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spider_Jungle_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spider_Jungle_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spider_Jungle_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -17016,6 +17016,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spider_Jungle_Form, 1),
 		.footprint = gMonFootprint_Spider_Jungle_Form,
 		LEARNSETS(Spider_Jungle_Form),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPIDER_BLESSED_FORM] =
@@ -17054,9 +17056,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spider_Blessed_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spider_Blessed_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spider_Blessed_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -17065,6 +17065,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spider_Blessed_Form, 0),
 		.footprint = gMonFootprint_Spider_Blessed_Form,
 		LEARNSETS(Spider_Blessed_Form),
+		.frontPicYOffset = 13,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_NIGHT, 42, SPECIES_KALRAG}
 		),
@@ -17104,9 +17106,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spider_Huge_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spider_Huge_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spider_Huge_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -17115,6 +17115,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spider_Huge_Form, 2),
 		.footprint = gMonFootprint_Spider_Huge_Form,
 		LEARNSETS(Spider_Huge_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_NIGHT, 28, SPECIES_SPIDER_NIGHT_FORM},
 			{EVO_MOVE, MOVE_ICE_FANG, SPECIES_SPIDER_ICE_FORM},
@@ -17159,9 +17161,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spider_Night_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spider_Night_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spider_Night_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -17170,6 +17170,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spider_Night_Form, 2),
 		.footprint = gMonFootprint_Spider_Night_Form,
 		LEARNSETS(Spider_Night_Form),
+		.frontPicYOffset = 11,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPIDER_ICE_FORM] =
@@ -17207,9 +17209,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spider_Ice_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spider_Ice_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spider_Ice_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -17218,6 +17218,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spider_Ice_Form, 2),
 		.footprint = gMonFootprint_Spider_Ice_Form,
 		LEARNSETS(Spider_Ice_Form),
+		.frontPicYOffset = 15,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPIDER_SPIRIT_FORM] =
@@ -17254,9 +17256,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spider_Spirit_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spider_Spirit_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spider_Spirit_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -17265,6 +17265,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spider_Spirit_Form, 0),
 		.footprint = gMonFootprint_Spider_Spirit_Form,
 		LEARNSETS(Spider_Spirit_Form),
+		.frontPicYOffset = 13,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_EEK] =
@@ -17304,9 +17306,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Eek, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Eek,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Eek, 64, 64),
 		.backPicYOffset = 0,
@@ -17315,6 +17315,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Eek, 0),
 		.footprint = gMonFootprint_Eek,
 		LEARNSETS(Eek),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_PING, SPECIES_MINSTRLWEB},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_PONG, SPECIES_MINSTRLWEB},
@@ -17359,9 +17361,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(MinstrlWeb, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_MinstrlWeb,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(MinstrlWeb, 64, 64),
 		.backPicYOffset = 0,
@@ -17370,6 +17370,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(MinstrlWeb, 2),
 		.footprint = gMonFootprint_MinstrlWeb,
 		LEARNSETS(MinstrlWeb),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SARACHNIS] =
@@ -17408,9 +17410,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sarachnis, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sarachnis,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sarachnis, 64, 64),
 		.backPicYOffset = 0,
@@ -17419,6 +17419,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sarachnis, 0),
 		.footprint = gMonFootprint_Sarachnis,
 		LEARNSETS(Sarachnis),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_VENENATIS] =
@@ -17457,9 +17459,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Venenatis, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Venenatis,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Venenatis, 64, 64),
 		.backPicYOffset = 0,
@@ -17468,6 +17468,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Venenatis, 0),
 		.footprint = gMonFootprint_Venenatis,
 		LEARNSETS(Venenatis),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPIDINE] =
@@ -17507,9 +17509,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spidine, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spidine,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spidine, 64, 64),
 		.backPicYOffset = 0,
@@ -17518,6 +17518,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spidine, 1),
 		.footprint = gMonFootprint_Spidine,
 		LEARNSETS(Spidine),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CRAYFISH] =
@@ -17555,9 +17557,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crayfish, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crayfish,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crayfish, 64, 64),
 		.backPicYOffset = 0,
@@ -17566,6 +17566,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crayfish, 0),
 		.footprint = gMonFootprint_Crayfish,
 		LEARNSETS(Crayfish),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 11, SPECIES_SHRIMP}
 		),
@@ -17606,9 +17608,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Shrimp, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Shrimp,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Shrimp, 64, 64),
 		.backPicYOffset = 0,
@@ -17617,6 +17617,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Shrimp, 0),
 		.footprint = gMonFootprint_Shrimp,
 		LEARNSETS(Shrimp),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 19, SPECIES_LOBSTER_NORMAL_FORM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_ZYGOMITE, SPECIES_LOBSTROCITY}
@@ -17660,9 +17662,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Lobster_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Lobster_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Lobster_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -17671,6 +17671,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Lobster_Normal_Form, 2),
 		.footprint = gMonFootprint_Lobster_Normal_Form,
 		LEARNSETS(Lobster_Normal_Form),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_WEATHER_HOT, 28, SPECIES_LOBSTER_GOLDEN_FORM},
 			{EVO_LEVEL_WEATHER_DUSTY, 28, SPECIES_LOBSTER_GIANT_FORM},
@@ -17717,9 +17719,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Lobster_Golden_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Lobster_Golden_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Lobster_Golden_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -17728,6 +17728,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Lobster_Golden_Form, 2),
 		.footprint = gMonFootprint_Lobster_Golden_Form,
 		LEARNSETS(Lobster_Golden_Form),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_LOBSTER_GIANT_FORM] =
@@ -17766,9 +17768,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Lobster_Giant_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Lobster_Giant_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Lobster_Giant_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -17777,6 +17777,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Lobster_Giant_Form, 2),
 		.footprint = gMonFootprint_Lobster_Giant_Form,
 		LEARNSETS(Lobster_Giant_Form),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_LOBSTER_HEIM_FORM] =
@@ -17816,9 +17818,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Lobster_Heim_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Lobster_Heim_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Lobster_Heim_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -17827,6 +17827,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Lobster_Heim_Form, 1),
 		.footprint = gMonFootprint_Lobster_Heim_Form,
 		LEARNSETS(Lobster_Heim_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_LOBSTER_OBSIDIAN_FORM] =
@@ -17867,9 +17869,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Lobster_Obsidian_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Lobster_Obsidian_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Lobster_Obsidian_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -17878,6 +17878,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Lobster_Obsidian_Form, 2),
 		.footprint = gMonFootprint_Lobster_Obsidian_Form,
 		LEARNSETS(Lobster_Obsidian_Form),
+		.frontPicYOffset = 15,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CRAB_RED_FORM] =
@@ -17916,9 +17918,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crab_Red_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crab_Red_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crab_Red_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -17927,6 +17927,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crab_Red_Form, 2),
 		.footprint = gMonFootprint_Crab_Red_Form,
 		LEARNSETS(Crab_Red_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 33, SPECIES_GIANT_CRAB_RED_FORM},
 			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_KNIFE_CRAB}
@@ -17969,9 +17971,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Giant_Crab_Red_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Giant_Crab_Red_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Giant_Crab_Red_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -17980,6 +17980,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Giant_Crab_Red_Form, 2),
 		.footprint = gMonFootprint_Giant_Crab_Red_Form,
 		LEARNSETS(Giant_Crab_Red_Form),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CRAB_MOSS_FORM] =
@@ -18018,9 +18020,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crab_Moss_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crab_Moss_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crab_Moss_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -18029,6 +18029,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crab_Moss_Form, 2),
 		.footprint = gMonFootprint_Crab_Moss_Form,
 		LEARNSETS(Crab_Moss_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 33, SPECIES_GIANT_CRAB_MOSS_FORM}
 		),
@@ -18070,9 +18072,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Giant_Crab_Moss_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Giant_Crab_Moss_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Giant_Crab_Moss_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -18081,6 +18081,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Giant_Crab_Moss_Form, 2),
 		.footprint = gMonFootprint_Giant_Crab_Moss_Form,
 		LEARNSETS(Giant_Crab_Moss_Form),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CRAB_RUMPUMPED_FORM] =
@@ -18118,9 +18120,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crab_RumPumped_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crab_RumPumped_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crab_RumPumped_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -18129,6 +18129,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crab_RumPumped_Form, 0),
 		.footprint = gMonFootprint_Crab_RumPumped_Form,
 		LEARNSETS(Crab_RumPumped_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 33, SPECIES_GIANT_CRAB_RUMPUMPED_FORM}
 		),
@@ -18170,9 +18172,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Giant_Crab_RumPumped_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Giant_Crab_RumPumped_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Giant_Crab_RumPumped_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -18181,6 +18181,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Giant_Crab_RumPumped_Form, 1),
 		.footprint = gMonFootprint_Giant_Crab_RumPumped_Form,
 		LEARNSETS(Giant_Crab_RumPumped_Form),
+		.frontPicYOffset = 13,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CRAB_DARK_FORM] =
@@ -18218,9 +18220,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crab_Dark_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crab_Dark_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crab_Dark_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -18229,6 +18229,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crab_Dark_Form, 1),
 		.footprint = gMonFootprint_Crab_Dark_Form,
 		LEARNSETS(Crab_Dark_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_NIGHT, 33, SPECIES_GIANT_CRAB_DARK_FORM}
 		),
@@ -18271,9 +18273,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Giant_Crab_Dark_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Giant_Crab_Dark_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Giant_Crab_Dark_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -18282,6 +18282,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Giant_Crab_Dark_Form, 1),
 		.footprint = gMonFootprint_Giant_Crab_Dark_Form,
 		LEARNSETS(Giant_Crab_Dark_Form),
+		.frontPicYOffset = 13,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CRAB_GREY_FORM] =
@@ -18320,9 +18322,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crab_Grey_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crab_Grey_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crab_Grey_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -18331,6 +18331,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crab_Grey_Form, 2),
 		.footprint = gMonFootprint_Crab_Grey_Form,
 		LEARNSETS(Crab_Grey_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_NIGHT, 33, SPECIES_GIANT_CRAB_GREY_FORM}
 		),
@@ -18372,9 +18374,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Giant_Crab_Grey_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Giant_Crab_Grey_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Giant_Crab_Grey_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -18383,6 +18383,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Giant_Crab_Grey_Form, 2),
 		.footprint = gMonFootprint_Giant_Crab_Grey_Form,
 		LEARNSETS(Giant_Crab_Grey_Form),
+		.frontPicYOffset = 12,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KNIFE_CRAB] =
@@ -18421,9 +18423,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Knife_Crab, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Knife_Crab,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Knife_Crab, 64, 64),
 		.backPicYOffset = 0,
@@ -18432,6 +18432,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Knife_Crab, 2),
 		.footprint = gMonFootprint_Knife_Crab,
 		LEARNSETS(Knife_Crab),
+		.frontPicYOffset = 15,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_HEIM_CRAB] =
@@ -18469,9 +18471,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Heim_Crab, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Heim_Crab,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Heim_Crab, 64, 64),
 		.backPicYOffset = 0,
@@ -18480,6 +18480,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Heim_Crab, 1),
 		.footprint = gMonFootprint_Heim_Crab,
 		LEARNSETS(Heim_Crab),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 33, SPECIES_WEBSNIPPER},
 			{EVO_LEVEL_NIGHT, 33, SPECIES_BLUE_CRAB}
@@ -18523,9 +18525,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(WebSnipper, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_WebSnipper,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(WebSnipper, 64, 64),
 		.backPicYOffset = 0,
@@ -18534,6 +18534,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(WebSnipper, 0),
 		.footprint = gMonFootprint_WebSnipper,
 		LEARNSETS(WebSnipper),
+		.frontPicYOffset = 15,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BLUE_CRAB] =
@@ -18572,9 +18574,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Blue_Crab, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Blue_Crab,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Blue_Crab, 64, 64),
 		.backPicYOffset = 0,
@@ -18583,6 +18583,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Blue_Crab, 2),
 		.footprint = gMonFootprint_Blue_Crab,
 		LEARNSETS(Blue_Crab),
+		.frontPicYOffset = 14,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CRABLET_FIRST_FORM] =
@@ -18621,9 +18623,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crablet_First_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crablet_First_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crablet_First_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -18632,6 +18632,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crablet_First_Form, 2),
 		.footprint = gMonFootprint_Crablet_First_Form,
 		LEARNSETS(Crablet_First_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CRABLET_SECOND_FORM] =
@@ -18668,9 +18670,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crablet_Second_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crablet_Second_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crablet_Second_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -18679,6 +18679,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crablet_Second_Form, 2),
 		.footprint = gMonFootprint_Crablet_Second_Form,
 		LEARNSETS(Crablet_Second_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CRABLET_THIRD_FORM] =
@@ -18715,9 +18717,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crablet_Third_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crablet_Third_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crablet_Third_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -18726,6 +18726,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crablet_Third_Form, 2),
 		.footprint = gMonFootprint_Crablet_Third_Form,
 		LEARNSETS(Crablet_Third_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CRABLET_FORTH_FORM] =
@@ -18762,9 +18764,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crablet_Forth_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crablet_Forth_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crablet_Forth_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -18773,6 +18773,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crablet_Forth_Form, 2),
 		.footprint = gMonFootprint_Crablet_Forth_Form,
 		LEARNSETS(Crablet_Forth_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CRABLET_FIFTH_FORM] =
@@ -18809,9 +18811,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crablet_Fifth_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crablet_Fifth_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crablet_Fifth_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -18820,6 +18820,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crablet_Fifth_Form, 2),
 		.footprint = gMonFootprint_Crablet_Fifth_Form,
 		LEARNSETS(Crablet_Fifth_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CRAWLER_CAVE_FORM] =
@@ -18858,9 +18860,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crawler_Cave_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crawler_Cave_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crawler_Cave_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -18869,6 +18869,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crawler_Cave_Form, 1),
 		.footprint = gMonFootprint_Crawler_Cave_Form,
 		LEARNSETS(Crawler_Cave_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 29, SPECIES_CRAWLER_CHASM_FORM}
 		),
@@ -18910,9 +18912,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crawler_Chasm_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crawler_Chasm_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crawler_Chasm_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -18921,6 +18921,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crawler_Chasm_Form, 1),
 		.footprint = gMonFootprint_Crawler_Chasm_Form,
 		LEARNSETS(Crawler_Chasm_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 40, SPECIES_CRAWLER_MONSTROUS_FORM}
 		),
@@ -18962,9 +18964,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crawler_Monstrous_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crawler_Monstrous_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crawler_Monstrous_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -18973,6 +18973,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crawler_Monstrous_Form, 1),
 		.footprint = gMonFootprint_Crawler_Monstrous_Form,
 		LEARNSETS(Crawler_Monstrous_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_WINSTON] =
@@ -19010,9 +19012,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Winston, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Winston,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Winston, 64, 64),
 		.backPicYOffset = 0,
@@ -19021,6 +19021,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Winston, 0),
 		.footprint = gMonFootprint_Winston,
 		LEARNSETS(Winston),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 30, SPECIES_TORTOISE_NORMAL_FORM},
 			{EVO_LEVEL_NIGHT, 30, SPECIES_TORTOISE_WAR_FORM},
@@ -19065,9 +19067,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Tortoise_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Tortoise_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Tortoise_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -19076,6 +19076,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tortoise_Normal_Form, 0),
 		.footprint = gMonFootprint_Tortoise_Normal_Form,
 		LEARNSETS(Tortoise_Normal_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_TORTOISE_WARPED_FORM},
 			{EVO_ITEM, ITEM_TEAR_OF_GUTHIX, SPECIES_VALLUTA}
@@ -19119,9 +19121,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Tortoise_Warped_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Tortoise_Warped_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Tortoise_Warped_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -19130,6 +19130,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tortoise_Warped_Form, 1),
 		.footprint = gMonFootprint_Tortoise_Warped_Form,
 		LEARNSETS(Tortoise_Warped_Form),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_TORTOISE_WAR_FORM] =
@@ -19168,9 +19170,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Tortoise_War_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Tortoise_War_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Tortoise_War_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -19179,6 +19179,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tortoise_War_Form, 2),
 		.footprint = gMonFootprint_Tortoise_War_Form,
 		LEARNSETS(Tortoise_War_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_TORTLE},
 			{EVO_ITEM, ITEM_TEAR_OF_GUTHIX, SPECIES_VALLUTA}
@@ -19222,9 +19224,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Valluta, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Valluta,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Valluta, 64, 64),
 		.backPicYOffset = 0,
@@ -19233,6 +19233,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Valluta, 0),
 		.footprint = gMonFootprint_Valluta,
 		LEARNSETS(Valluta),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SEA_TURTLE] =
@@ -19271,9 +19273,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sea_Turtle, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sea_Turtle,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sea_Turtle, 64, 64),
 		.backPicYOffset = 0,
@@ -19282,6 +19282,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sea_Turtle, 2),
 		.footprint = gMonFootprint_Sea_Turtle,
 		LEARNSETS(Sea_Turtle),
+		.frontPicYOffset = 12,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_SEA_TURTLE_TREASURE_FORM}
 		),
@@ -19324,9 +19326,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sea_Turtle_Treasure_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sea_Turtle_Treasure_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sea_Turtle_Treasure_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -19335,6 +19335,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sea_Turtle_Treasure_Form, 1),
 		.footprint = gMonFootprint_Sea_Turtle_Treasure_Form,
 		LEARNSETS(Sea_Turtle_Treasure_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 3,
 	},
 
 [SPECIES_HERBERT] =
@@ -19374,9 +19376,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Herbert, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Herbert,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Herbert, 64, 64),
 		.backPicYOffset = 0,
@@ -19385,6 +19385,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Herbert, 1),
 		.footprint = gMonFootprint_Herbert,
 		LEARNSETS(Herbert),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_XINACHTO}
 		),
@@ -19427,9 +19429,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Xinachto, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Xinachto,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Xinachto, 64, 64),
 		.backPicYOffset = 0,
@@ -19438,6 +19438,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Xinachto, 0),
 		.footprint = gMonFootprint_Xinachto,
 		LEARNSETS(Xinachto),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CAVE_SLIME] =
@@ -19476,9 +19478,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cave_Slime, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cave_Slime,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cave_Slime, 64, 64),
 		.backPicYOffset = 0,
@@ -19487,6 +19487,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cave_Slime, 1),
 		.footprint = gMonFootprint_Cave_Slime,
 		LEARNSETS(Cave_Slime),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 24, SPECIES_JELLY_NORMAL_FORM},
 			{EVO_LEVEL_GHOST_TYPE_MON_IN_PARTY, 24, SPECIES_ABBYSPECTR},
@@ -19533,9 +19535,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jelly_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jelly_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jelly_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -19544,6 +19544,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jelly_Normal_Form, 1),
 		.footprint = gMonFootprint_Jelly_Normal_Form,
 		LEARNSETS(Jelly_Normal_Form),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_JELLY_WARPED_FORM},
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_JELLY_SPIRIT_FORM},
@@ -19588,9 +19590,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jelly_Warped_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jelly_Warped_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jelly_Warped_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -19599,6 +19599,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jelly_Warped_Form, 2),
 		.footprint = gMonFootprint_Jelly_Warped_Form,
 		LEARNSETS(Jelly_Warped_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_JELLY_SPIRIT_FORM] =
@@ -19638,9 +19640,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jelly_Spirit_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jelly_Spirit_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jelly_Spirit_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -19649,6 +19649,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jelly_Spirit_Form, 2),
 		.footprint = gMonFootprint_Jelly_Spirit_Form,
 		LEARNSETS(Jelly_Spirit_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ABBYSPECTR] =
@@ -19687,9 +19689,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(AbbySpectr, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_AbbySpectr,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(AbbySpectr, 64, 64),
 		.backPicYOffset = 0,
@@ -19698,6 +19698,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(AbbySpectr, 1),
 		.footprint = gMonFootprint_AbbySpectr,
 		LEARNSETS(AbbySpectr),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SALAMANDER_GREEN_FORM] =
@@ -19735,9 +19737,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Salamander_Green_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Salamander_Green_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Salamander_Green_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -19746,6 +19746,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Salamander_Green_Form, 0),
 		.footprint = gMonFootprint_Salamander_Green_Form,
 		LEARNSETS(Salamander_Green_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 15, SPECIES_SALAMANDER_ORANGE_FORM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_KILLERWATT, SPECIES_SALAMANDER_AUGMENTED_FORM}
@@ -19788,9 +19790,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Salamander_Orange_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Salamander_Orange_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Salamander_Orange_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -19799,6 +19799,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Salamander_Orange_Form, 0),
 		.footprint = gMonFootprint_Salamander_Orange_Form,
 		LEARNSETS(Salamander_Orange_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 25, SPECIES_SALAMANDER_RED_FORM},
 			{EVO_LEVEL_MAP_KARAMJA, 25, SPECIES_GECKO}
@@ -19840,9 +19842,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Salamander_Red_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Salamander_Red_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Salamander_Red_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -19851,6 +19851,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Salamander_Red_Form, 0),
 		.footprint = gMonFootprint_Salamander_Red_Form,
 		LEARNSETS(Salamander_Red_Form),
+		.frontPicYOffset = 15,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 35, SPECIES_SALAMANDER_BLACK_FORM},
 			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_SALAMANDER_YELLOW_FORM}
@@ -19893,9 +19895,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Salamander_Black_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Salamander_Black_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Salamander_Black_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -19904,6 +19904,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Salamander_Black_Form, 0),
 		.footprint = gMonFootprint_Salamander_Black_Form,
 		LEARNSETS(Salamander_Black_Form),
+		.frontPicYOffset = 15,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_SALAMANDER_AUGMENTED_FORM},
 			{EVO_LEVEL, 45, SPECIES_SALAMANDER_TECU}
@@ -19947,9 +19949,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Salamander_Augmented_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Salamander_Augmented_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Salamander_Augmented_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -19958,6 +19958,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Salamander_Augmented_Form, 0),
 		.footprint = gMonFootprint_Salamander_Augmented_Form,
 		LEARNSETS(Salamander_Augmented_Form),
+		.frontPicYOffset = 18,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GECKO] =
@@ -19995,9 +19997,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Gecko, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Gecko,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Gecko, 64, 64),
 		.backPicYOffset = 0,
@@ -20006,6 +20006,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Gecko, 2),
 		.footprint = gMonFootprint_Gecko,
 		LEARNSETS(Gecko),
+		.frontPicYOffset = 13,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 35, SPECIES_CHAMELEON},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_SHARK_NORMAL_FORM, SPECIES_SHARKIZARD}
@@ -20049,9 +20051,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chameleon, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chameleon,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chameleon, 64, 64),
 		.backPicYOffset = 0,
@@ -20060,6 +20060,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chameleon, 1),
 		.footprint = gMonFootprint_Chameleon,
 		LEARNSETS(Chameleon),
+		.frontPicYOffset = 14,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BLOODVELD] =
@@ -20098,9 +20100,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bloodveld, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bloodveld,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bloodveld, 64, 64),
 		.backPicYOffset = 0,
@@ -20109,6 +20109,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bloodveld, 0),
 		.footprint = gMonFootprint_Bloodveld,
 		LEARNSETS(Bloodveld),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_ATK_GT_SPATK, 28, SPECIES_BLOODVELD_INSATIABLE_PHYSICAL_FORM},
 			{EVO_LEVEL_ATK_LT_SPATK, 28, SPECIES_BLOODVELD_INSATIABLE_SPECIAL_FORM}
@@ -20151,9 +20153,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bloodveld_Insatiable_Physical_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bloodveld_Insatiable_Physical_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bloodveld_Insatiable_Physical_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -20162,6 +20162,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bloodveld_Insatiable_Physical_Form, 2),
 		.footprint = gMonFootprint_Bloodveld_Insatiable_Physical_Form,
 		LEARNSETS(Bloodveld_Insatiable_Physical_Form),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 43, SPECIES_BLOODVELD_MUTATED_PHYSICAL_FORM},
 			{EVO_ITEM, ITEM_BLOOD_RUNE, SPECIES_BLOODVELD_VAMPIRIC_FORM},
@@ -20204,9 +20206,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bloodveld_Insatiable_Special_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bloodveld_Insatiable_Special_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bloodveld_Insatiable_Special_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -20215,6 +20215,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bloodveld_Insatiable_Special_Form, 2),
 		.footprint = gMonFootprint_Bloodveld_Insatiable_Special_Form,
 		LEARNSETS(Bloodveld_Insatiable_Special_Form),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 43, SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM},
 			{EVO_ITEM, ITEM_BLOOD_RUNE, SPECIES_BLOODVELD_RS3_FORM},
@@ -20259,9 +20261,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bloodveld_Mutated_Physical_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bloodveld_Mutated_Physical_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bloodveld_Mutated_Physical_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -20270,6 +20270,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bloodveld_Mutated_Physical_Form, 1),
 		.footprint = gMonFootprint_Bloodveld_Mutated_Physical_Form,
 		LEARNSETS(Bloodveld_Mutated_Physical_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BLOODVELD_MUTATED_SPECIAL_FORM] =
@@ -20306,9 +20308,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bloodveld_Mutated_Special_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bloodveld_Mutated_Special_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bloodveld_Mutated_Special_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -20317,6 +20317,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bloodveld_Mutated_Special_Form, 2),
 		.footprint = gMonFootprint_Bloodveld_Mutated_Special_Form,
 		LEARNSETS(Bloodveld_Mutated_Special_Form),
+		.frontPicYOffset = 14,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_REAVER] =
@@ -20354,9 +20356,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Reaver, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Reaver,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Reaver, 64, 64),
 		.backPicYOffset = 0,
@@ -20365,6 +20365,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Reaver, 1),
 		.footprint = gMonFootprint_Reaver,
 		LEARNSETS(Reaver),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ARMALING] =
@@ -20402,9 +20404,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Armaling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Armaling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Armaling, 64, 64),
 		.backPicYOffset = 0,
@@ -20413,6 +20413,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Armaling, 0),
 		.footprint = gMonFootprint_Armaling,
 		LEARNSETS(Armaling),
+		.frontPicYOffset = 13,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 16, SPECIES_ARMABIRD}
 		),
@@ -20454,9 +20456,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Armabird, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Armabird,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Armabird, 64, 64),
 		.backPicYOffset = 0,
@@ -20465,6 +20465,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Armabird, 0),
 		.footprint = gMonFootprint_Armabird,
 		LEARNSETS(Armabird),
+		.frontPicYOffset = 12,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 36, SPECIES_ARMAFALCON}
 		),
@@ -20506,9 +20508,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Armafalcon, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Armafalcon,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Armafalcon, 64, 64),
 		.backPicYOffset = 0,
@@ -20517,6 +20517,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Armafalcon, 0),
 		.footprint = gMonFootprint_Armafalcon,
 		LEARNSETS(Armafalcon),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 6,
 	},
 
 [SPECIES_UNGODLING] =
@@ -20554,9 +20556,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ungodling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ungodling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ungodling, 64, 64),
 		.backPicYOffset = 0,
@@ -20565,6 +20565,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ungodling, 0),
 		.footprint = gMonFootprint_Ungodling,
 		LEARNSETS(Ungodling),
+		.frontPicYOffset = 12,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 16, SPECIES_UNGODBIRD}
 		),
@@ -20606,9 +20608,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ungodbird, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ungodbird,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ungodbird, 64, 64),
 		.backPicYOffset = 0,
@@ -20617,6 +20617,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ungodbird, 0),
 		.footprint = gMonFootprint_Ungodbird,
 		LEARNSETS(Ungodbird),
+		.frontPicYOffset = 12,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 36, SPECIES_UNGODGEON}
 		),
@@ -20658,9 +20660,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ungodgeon, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ungodgeon,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ungodgeon, 64, 64),
 		.backPicYOffset = 0,
@@ -20669,6 +20669,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ungodgeon, 0),
 		.footprint = gMonFootprint_Ungodgeon,
 		LEARNSETS(Ungodgeon),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 4,
 	},
 
 [SPECIES_TUMEKLING] =
@@ -20706,9 +20708,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Tumekling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Tumekling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Tumekling, 64, 64),
 		.backPicYOffset = 0,
@@ -20717,6 +20717,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tumekling, 2),
 		.footprint = gMonFootprint_Tumekling,
 		LEARNSETS(Tumekling),
+		.frontPicYOffset = 14,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 16, SPECIES_TUMEKBIRD}
 		),
@@ -20758,9 +20760,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Tumekbird, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Tumekbird,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Tumekbird, 64, 64),
 		.backPicYOffset = 0,
@@ -20769,6 +20769,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tumekbird, 2),
 		.footprint = gMonFootprint_Tumekbird,
 		LEARNSETS(Tumekbird),
+		.frontPicYOffset = 11,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 36, SPECIES_TUMEKIBIS}
 		),
@@ -20810,9 +20812,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Tumekibis, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Tumekibis,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Tumekibis, 64, 64),
 		.backPicYOffset = 0,
@@ -20821,6 +20821,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tumekibis, 2),
 		.footprint = gMonFootprint_Tumekibis,
 		LEARNSETS(Tumekibis),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KERRIT] =
@@ -20859,9 +20861,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kerrit, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kerrit,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kerrit, 64, 64),
 		.backPicYOffset = 0,
@@ -20870,6 +20870,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kerrit, 1),
 		.footprint = gMonFootprint_Kerrit,
 		LEARNSETS(Kerrit),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 3,
 	},
 
 [SPECIES_SNUFFLE] =
@@ -20908,9 +20910,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Snuffle, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Snuffle,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Snuffle, 64, 64),
 		.backPicYOffset = 0,
@@ -20919,6 +20919,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Snuffle, 0),
 		.footprint = gMonFootprint_Snuffle,
 		LEARNSETS(Snuffle),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_POPOCA] =
@@ -20958,9 +20960,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Popoca, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Popoca,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Popoca, 64, 64),
 		.backPicYOffset = 0,
@@ -20969,6 +20969,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Popoca, 1),
 		.footprint = gMonFootprint_Popoca,
 		LEARNSETS(Popoca),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHOLOA] =
@@ -21008,9 +21010,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Choloa, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Choloa,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Choloa, 64, 64),
 		.backPicYOffset = 0,
@@ -21019,6 +21019,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Choloa, 2),
 		.footprint = gMonFootprint_Choloa,
 		LEARNSETS(Choloa),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DURZAG] =
@@ -21057,9 +21059,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Durzag, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Durzag,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Durzag, 64, 64),
 		.backPicYOffset = 0,
@@ -21068,6 +21068,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Durzag, 0),
 		.footprint = gMonFootprint_Durzag,
 		LEARNSETS(Durzag),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_YAKAMARU] =
@@ -21107,9 +21109,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Yakamaru, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Yakamaru,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Yakamaru, 64, 64),
 		.backPicYOffset = 0,
@@ -21118,6 +21118,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Yakamaru, 0),
 		.footprint = gMonFootprint_Yakamaru,
 		LEARNSETS(Yakamaru),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHOMPY] =
@@ -21155,9 +21157,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chompy, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chompy,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chompy, 64, 64),
 		.backPicYOffset = 0,
@@ -21166,6 +21166,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chompy, 0),
 		.footprint = gMonFootprint_Chompy,
 		LEARNSETS(Chompy),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_SPE_LT_SPDEF, 26, SPECIES_JUBBLY},
 			{EVO_LEVEL_SPE_GT_SPDEF, 26, SPECIES_TERRORBIRD_NORMAL_FORM}
@@ -21208,9 +21210,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jubbly, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jubbly,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jubbly, 64, 64),
 		.backPicYOffset = 0,
@@ -21219,6 +21219,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jubbly, 0),
 		.footprint = gMonFootprint_Jubbly,
 		LEARNSETS(Jubbly),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_LOBSTER_NORMAL_FORM, SPECIES_JUBSTER}
 		),
@@ -21261,9 +21263,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jubster, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jubster,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jubster, 64, 64),
 		.backPicYOffset = 0,
@@ -21272,6 +21272,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jubster, 0),
 		.footprint = gMonFootprint_Jubster,
 		LEARNSETS(Jubster),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_TERRORBIRD_NORMAL_FORM] =
@@ -21310,9 +21312,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Terrorbird_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Terrorbird_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Terrorbird_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -21321,6 +21321,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Terrorbird_Normal_Form, 1),
 		.footprint = gMonFootprint_Terrorbird_Normal_Form,
 		LEARNSETS(Terrorbird_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_TERRORBIRD_SPIRIT_FORM},
 			{EVO_LEVEL, 44, SPECIES_TERRORBIRD_WARPED_FORM}
@@ -21364,9 +21366,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Terrorbird_Warped_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Terrorbird_Warped_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Terrorbird_Warped_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -21375,6 +21375,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Terrorbird_Warped_Form, 0),
 		.footprint = gMonFootprint_Terrorbird_Warped_Form,
 		LEARNSETS(Terrorbird_Warped_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_TERRORBIRD_SPIRIT_FORM] =
@@ -21413,9 +21415,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Terrorbird_Spirit_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Terrorbird_Spirit_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Terrorbird_Spirit_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -21424,6 +21424,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Terrorbird_Spirit_Form, 2),
 		.footprint = gMonFootprint_Terrorbird_Spirit_Form,
 		LEARNSETS(Terrorbird_Spirit_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_WOLF_JUVENILE_FORM] =
@@ -21462,9 +21464,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wolf_Juvenile_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wolf_Juvenile_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wolf_Juvenile_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -21473,6 +21473,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolf_Juvenile_Form, 0),
 		.footprint = gMonFootprint_Wolf_Juvenile_Form,
 		LEARNSETS(Wolf_Juvenile_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_ATK_EQ_SPATK, 20, SPECIES_WOLF_NORMAL_FORM},
 			{EVO_LEVEL_ATK_LT_SPATK, 20, SPECIES_WOLF_FENRIS_FORM},
@@ -21519,9 +21521,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wolf_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wolf_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wolf_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -21530,6 +21530,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolf_Normal_Form, 0),
 		.footprint = gMonFootprint_Wolf_Normal_Form,
 		LEARNSETS(Wolf_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 40, SPECIES_WOLF_DIRE_FORM},
 			{EVO_ITEM, ITEM_NATURE_RUNE, SPECIES_WOLF_JUNGLE_FORM}
@@ -21570,9 +21572,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wolf_Fenris_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wolf_Fenris_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wolf_Fenris_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -21581,6 +21581,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolf_Fenris_Form, 0),
 		.footprint = gMonFootprint_Wolf_Fenris_Form,
 		LEARNSETS(Wolf_Fenris_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 40, SPECIES_WOLF_SKOLL_FORM},
 			{EVO_ITEM, ITEM_EARTH_RUNE, SPECIES_WOLF_DESERT_FORM}
@@ -21621,9 +21623,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wolf_White_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wolf_White_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wolf_White_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -21632,6 +21632,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolf_White_Form, 0),
 		.footprint = gMonFootprint_Wolf_White_Form,
 		LEARNSETS(Wolf_White_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 40, SPECIES_WOLF_HATI_HATI},
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_WOLF_SPIRIT_FORM}
@@ -21672,9 +21674,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rover, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rover,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rover, 64, 64),
 		.backPicYOffset = 0,
@@ -21683,6 +21683,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rover, 2),
 		.footprint = gMonFootprint_Rover,
 		LEARNSETS(Rover),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 40, SPECIES_WOLF_CAVE_FORM},
 			{EVO_ITEM, ITEM_BODY_RUNE, SPECIES_WOLF_DRAGON_FORM}
@@ -21725,9 +21727,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wolf_Dire_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wolf_Dire_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wolf_Dire_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -21736,6 +21736,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolf_Dire_Form, 0),
 		.footprint = gMonFootprint_Wolf_Dire_Form,
 		LEARNSETS(Wolf_Dire_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_WOLF_JUNGLE_FORM] =
@@ -21772,9 +21774,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wolf_Jungle_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wolf_Jungle_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wolf_Jungle_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -21783,6 +21783,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolf_Jungle_Form, 0),
 		.footprint = gMonFootprint_Wolf_Jungle_Form,
 		LEARNSETS(Wolf_Jungle_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_WOLF_SKOLL_FORM] =
@@ -21821,9 +21823,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wolf_Skoll_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wolf_Skoll_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wolf_Skoll_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -21832,6 +21832,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolf_Skoll_Form, 0),
 		.footprint = gMonFootprint_Wolf_Skoll_Form,
 		LEARNSETS(Wolf_Skoll_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_WOLF_DESERT_FORM] =
@@ -21868,9 +21870,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wolf_Desert_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wolf_Desert_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wolf_Desert_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -21879,6 +21879,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolf_Desert_Form, 0),
 		.footprint = gMonFootprint_Wolf_Desert_Form,
 		LEARNSETS(Wolf_Desert_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_WOLF_HATI_HATI] =
@@ -21916,9 +21918,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wolf_Hati_Hati, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wolf_Hati_Hati,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wolf_Hati_Hati, 64, 64),
 		.backPicYOffset = 0,
@@ -21927,6 +21927,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolf_Hati_Hati, 0),
 		.footprint = gMonFootprint_Wolf_Hati_Hati,
 		LEARNSETS(Wolf_Hati_Hati),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_WOLF_SPIRIT_FORM] =
@@ -21965,9 +21967,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wolf_Spirit_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wolf_Spirit_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wolf_Spirit_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -21976,6 +21976,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolf_Spirit_Form, 2),
 		.footprint = gMonFootprint_Wolf_Spirit_Form,
 		LEARNSETS(Wolf_Spirit_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.formSpeciesIdTable = sWolfSpiritFormSpeciesIdTable,
 		.formChangeTable = sWolfSpiritFormChangeTable,
 	},
@@ -22016,9 +22018,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Fox, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Fox,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Fox, 64, 64),
 		.backPicYOffset = 0,
@@ -22027,6 +22027,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Fox, 2),
 		.footprint = gMonFootprint_Fox,
 		LEARNSETS(Fox),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_MOVE, MOVE_HEX, SPECIES_INARI},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_CHICKEN_VARROCK_FORM, SPECIES_FOX_RECRUITMENTDRIVE},
@@ -22078,9 +22080,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Inari, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Inari,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Inari, 64, 64),
 		.backPicYOffset = 0,
@@ -22089,6 +22089,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Inari, 2),
 		.footprint = gMonFootprint_Inari,
 		LEARNSETS(Inari),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_HELWYR] =
@@ -22127,9 +22129,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Helwyr, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Helwyr,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Helwyr, 64, 64),
 		.backPicYOffset = 0,
@@ -22138,6 +22138,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Helwyr, 0),
 		.footprint = gMonFootprint_Helwyr,
 		LEARNSETS(Helwyr),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BIRD_NEST] =
@@ -22176,9 +22178,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bird_Nest, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bird_Nest,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bird_Nest, 64, 64),
 		.backPicYOffset = 0,
@@ -22187,6 +22187,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bird_Nest, 0),
 		.footprint = gMonFootprint_Bird_Nest,
 		LEARNSETS(Bird_Nest),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_PERSONALITY_ONE, 10, SPECIES_PIGEON},
 			{EVO_LEVEL_PERSONALITY_TWO, 10, SPECIES_PHEASANT},
@@ -22235,9 +22237,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Birds_Nest_God_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Birds_Nest_God_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Birds_Nest_God_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -22246,6 +22246,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Birds_Nest_God_Form, 0),
 		.footprint = gMonFootprint_Birds_Nest_God_Form,
 		LEARNSETS(Birds_Nest_God_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_NATURE_RUNE, SPECIES_GUTHLING},
 			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_ZAMLING},
@@ -22295,9 +22297,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pigeon, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pigeon,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pigeon, 64, 64),
 		.backPicYOffset = 0,
@@ -22306,6 +22306,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pigeon, 0),
 		.footprint = gMonFootprint_Pigeon,
 		LEARNSETS(Pigeon),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 34, SPECIES_ROCLING},
 			{EVO_ITEM, ITEM_NATURE_RUNE, SPECIES_MACAW}
@@ -22348,9 +22350,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pheasant, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pheasant,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pheasant, 64, 64),
 		.backPicYOffset = 0,
@@ -22359,6 +22359,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pheasant, 1),
 		.footprint = gMonFootprint_Pheasant,
 		LEARNSETS(Pheasant),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_RAIN, 34, SPECIES_HARPY_EAGLE}
 		),
@@ -22399,9 +22401,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rocling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rocling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rocling, 64, 64),
 		.backPicYOffset = 0,
@@ -22410,6 +22410,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rocling, 0),
 		.footprint = gMonFootprint_Rocling,
 		LEARNSETS(Rocling),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 45, SPECIES_ROC}
 		),
@@ -22451,9 +22453,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Roc, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Roc,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Roc, 64, 64),
 		.backPicYOffset = 0,
@@ -22462,6 +22462,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Roc, 0),
 		.footprint = gMonFootprint_Roc,
 		LEARNSETS(Roc),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_FOAL] =
@@ -22499,9 +22501,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Foal, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Foal,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Foal, 64, 64),
 		.backPicYOffset = 0,
@@ -22510,6 +22510,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Foal, 0),
 		.footprint = gMonFootprint_Foal,
 		LEARNSETS(Foal),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 25, SPECIES_UNICORN_WHITE_FORM},
 			{EVO_LEVEL_NIGHT, 25, SPECIES_UNICORN_BLACK_FORM},
@@ -22553,9 +22555,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Unicorn_White_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Unicorn_White_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Unicorn_White_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -22564,6 +22564,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Unicorn_White_Form, 2),
 		.footprint = gMonFootprint_Unicorn_White_Form,
 		LEARNSETS(Unicorn_White_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_UNICORN_STALLION_FORM},
 			{EVO_LEVEL, 40, SPECIES_STARLIGHT},
@@ -22607,9 +22609,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Unicorn_Stallion_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Unicorn_Stallion_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Unicorn_Stallion_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -22618,6 +22618,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Unicorn_Stallion_Form, 0),
 		.footprint = gMonFootprint_Unicorn_Stallion_Form,
 		LEARNSETS(Unicorn_Stallion_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_UNICORN_BLACK_FORM] =
@@ -22657,9 +22659,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Unicorn_Black_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Unicorn_Black_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Unicorn_Black_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -22668,6 +22668,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Unicorn_Black_Form, 2),
 		.footprint = gMonFootprint_Unicorn_Black_Form,
 		LEARNSETS(Unicorn_Black_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_UNICORN_REANIMATED_FORM},
 			{EVO_LEVEL, 40, SPECIES_UNICORN_ANGRY_FORM},
@@ -22712,9 +22714,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Unicorn_Angry_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Unicorn_Angry_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Unicorn_Angry_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -22723,6 +22723,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Unicorn_Angry_Form, 0),
 		.footprint = gMonFootprint_Unicorn_Angry_Form,
 		LEARNSETS(Unicorn_Angry_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_UNICORN_REANIMATED_FORM] =
@@ -22761,9 +22763,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Unicorn_Reanimated_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Unicorn_Reanimated_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Unicorn_Reanimated_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -22772,6 +22772,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Unicorn_Reanimated_Form, 0),
 		.footprint = gMonFootprint_Unicorn_Reanimated_Form,
 		LEARNSETS(Unicorn_Reanimated_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_STARLIGHT] =
@@ -22811,9 +22813,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Starlight, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Starlight,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Starlight, 64, 64),
 		.backPicYOffset = 0,
@@ -22822,6 +22822,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Starlight, 0),
 		.footprint = gMonFootprint_Starlight,
 		LEARNSETS(Starlight),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PAWYA] =
@@ -22860,9 +22862,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pawya, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pawya,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pawya, 64, 64),
 		.backPicYOffset = 0,
@@ -22871,6 +22871,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pawya, 0),
 		.footprint = gMonFootprint_Pawya,
 		LEARNSETS(Pawya),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 34, SPECIES_GRENWALL}
 		),
@@ -22913,9 +22915,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Grenwall, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Grenwall,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Grenwall, 64, 64),
 		.backPicYOffset = 0,
@@ -22924,6 +22924,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Grenwall, 0),
 		.footprint = gMonFootprint_Grenwall,
 		LEARNSETS(Grenwall),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BEAR_CUB] =
@@ -22962,9 +22964,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bear_Cub, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bear_Cub,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bear_Cub, 64, 64),
 		.backPicYOffset = 0,
@@ -22973,6 +22973,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bear_Cub, 0),
 		.footprint = gMonFootprint_Bear_Cub,
 		LEARNSETS(Bear_Cub),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_MAP_MISTHALIN, 25, SPECIES_BEAR_NORMAL_FORM},
 			{EVO_LEVEL_MAP_ASGARNIA, 25, SPECIES_BEAR_NORMAL_FORM},
@@ -23024,9 +23026,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bear_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bear_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bear_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -23035,6 +23035,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bear_Normal_Form, 0),
 		.footprint = gMonFootprint_Bear_Normal_Form,
 		LEARNSETS(Bear_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 41, SPECIES_KENDALL},
 			{EVO_ITEM, ITEM_ASTRAL_RUNE, SPECIES_BEAR_GAUNTLET_CRYSTALLINE_FORM},
@@ -23079,9 +23081,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bear_Reanimated_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bear_Reanimated_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bear_Reanimated_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -23090,6 +23090,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bear_Reanimated_Form, 0),
 		.footprint = gMonFootprint_Bear_Reanimated_Form,
 		LEARNSETS(Bear_Reanimated_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BEAR_GAUNTLET_CRYSTALLINE_FORM] =
@@ -23127,9 +23129,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bear_Gauntlet_Crystalline_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bear_Gauntlet_Crystalline_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bear_Gauntlet_Crystalline_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -23138,6 +23138,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bear_Gauntlet_Crystalline_Form, 1),
 		.footprint = gMonFootprint_Bear_Gauntlet_Crystalline_Form,
 		LEARNSETS(Bear_Gauntlet_Crystalline_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CALLISTO] =
@@ -23176,9 +23178,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Callisto, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Callisto,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Callisto, 64, 64),
 		.backPicYOffset = 0,
@@ -23187,6 +23187,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Callisto, 0),
 		.footprint = gMonFootprint_Callisto,
 		LEARNSETS(Callisto),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_POLAR_BEAR_NORMAL_FORM] =
@@ -23225,9 +23227,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Polar_Bear_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Polar_Bear_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Polar_Bear_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -23236,6 +23236,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Polar_Bear_Normal_Form, 0),
 		.footprint = gMonFootprint_Polar_Bear_Normal_Form,
 		LEARNSETS(Polar_Bear_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 41, SPECIES_POLAR_BEAR_ARCTIC_FORM},
 			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_POLAR_BEAR_NANUQ_FORM},
@@ -23280,9 +23282,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Polar_Bear_PBJ_Agent_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Polar_Bear_PBJ_Agent_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Polar_Bear_PBJ_Agent_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -23291,6 +23291,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Polar_Bear_PBJ_Agent_Form, 1),
 		.footprint = gMonFootprint_Polar_Bear_PBJ_Agent_Form,
 		LEARNSETS(Polar_Bear_PBJ_Agent_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_POLAR_BEAR_ARCTIC_FORM] =
@@ -23329,9 +23331,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Polar_Bear_Arctic_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Polar_Bear_Arctic_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Polar_Bear_Arctic_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -23340,6 +23340,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Polar_Bear_Arctic_Form, 2),
 		.footprint = gMonFootprint_Polar_Bear_Arctic_Form,
 		LEARNSETS(Polar_Bear_Arctic_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_POLAR_BEAR_NANUQ_FORM] =
@@ -23378,9 +23380,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Polar_Bear_Nanuq_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Polar_Bear_Nanuq_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Polar_Bear_Nanuq_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -23389,6 +23389,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Polar_Bear_Nanuq_Form, 0),
 		.footprint = gMonFootprint_Polar_Bear_Nanuq_Form,
 		LEARNSETS(Polar_Bear_Nanuq_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BEAR_GRIZZLY_FORM] =
@@ -23427,9 +23429,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bear_Grizzly_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bear_Grizzly_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bear_Grizzly_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -23438,6 +23438,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bear_Grizzly_Form, 0),
 		.footprint = gMonFootprint_Bear_Grizzly_Form,
 		LEARNSETS(Bear_Grizzly_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 41, SPECIES_BEAR_ANGRY_FORM},
 			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_BEAR_REANIMATED_FORM},
@@ -23481,9 +23483,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kendall, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kendall,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kendall, 64, 64),
 		.backPicYOffset = 0,
@@ -23492,6 +23492,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kendall, 0),
 		.footprint = gMonFootprint_Kendall,
 		LEARNSETS(Kendall),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BEAR_GAUNTLET_CORRUPTED_FORM] =
@@ -23530,9 +23532,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bear_Gauntlet_Corrupted_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bear_Gauntlet_Corrupted_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bear_Gauntlet_Corrupted_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -23541,6 +23541,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bear_Gauntlet_Corrupted_Form, 0),
 		.footprint = gMonFootprint_Bear_Gauntlet_Corrupted_Form,
 		LEARNSETS(Bear_Gauntlet_Corrupted_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BEAR_ANGRY_FORM] =
@@ -23579,9 +23581,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bear_Angry_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bear_Angry_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bear_Angry_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -23590,6 +23590,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bear_Angry_Form, 2),
 		.footprint = gMonFootprint_Bear_Angry_Form,
 		LEARNSETS(Bear_Angry_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GRAAHK_NORMAL_FORM] =
@@ -23628,9 +23630,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Graahk_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Graahk_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Graahk_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -23639,6 +23639,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Graahk_Normal_Form, 2),
 		.footprint = gMonFootprint_Graahk_Normal_Form,
 		LEARNSETS(Graahk_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_GRAAHK_SPIRIT_FORM},
 			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_GRAAHK_FORSAKEN_FORM}
@@ -23681,9 +23683,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Graahk_Spirit_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Graahk_Spirit_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Graahk_Spirit_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -23692,6 +23692,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Graahk_Spirit_Form, 0),
 		.footprint = gMonFootprint_Graahk_Spirit_Form,
 		LEARNSETS(Graahk_Spirit_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DUST_DEVIL] =
@@ -23730,9 +23732,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dust_Devil, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dust_Devil,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dust_Devil, 64, 64),
 		.backPicYOffset = 0,
@@ -23741,6 +23741,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dust_Devil, 2),
 		.footprint = gMonFootprint_Dust_Devil,
 		LEARNSETS(Dust_Devil),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 35, SPECIES_SMOKEDEVIL},
 			{EVO_LEVEL_NIGHT, 35, SPECIES_CHOKEDEVIL}
@@ -23783,9 +23785,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(SmokeDevil, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_SmokeDevil,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(SmokeDevil, 64, 64),
 		.backPicYOffset = 0,
@@ -23794,6 +23794,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(SmokeDevil, 2),
 		.footprint = gMonFootprint_SmokeDevil,
 		LEARNSETS(SmokeDevil),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 47, SPECIES_SMOKEDEVIL_NUCLEAR_FORM}
 		),
@@ -23836,9 +23838,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(SmokeDevil_Nuclear_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_SmokeDevil_Nuclear_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(SmokeDevil_Nuclear_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -23847,6 +23847,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(SmokeDevil_Nuclear_Form, 2),
 		.footprint = gMonFootprint_SmokeDevil_Nuclear_Form,
 		LEARNSETS(SmokeDevil_Nuclear_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 3,
 	},
 
 [SPECIES_CHOKEDEVIL] =
@@ -23885,9 +23887,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(ChokeDevil, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_ChokeDevil,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(ChokeDevil, 64, 64),
 		.backPicYOffset = 0,
@@ -23896,6 +23896,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(ChokeDevil, 2),
 		.footprint = gMonFootprint_ChokeDevil,
 		LEARNSETS(ChokeDevil),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 2,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 47, SPECIES_SMOKEDEVIL_THERMONUCLEAR_FORM}
 		),
@@ -23937,9 +23939,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(SmokeDevil_Thermonuclear_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_SmokeDevil_Thermonuclear_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(SmokeDevil_Thermonuclear_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -23948,6 +23948,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(SmokeDevil_Thermonuclear_Form, 2),
 		.footprint = gMonFootprint_SmokeDevil_Thermonuclear_Form,
 		LEARNSETS(SmokeDevil_Thermonuclear_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 3,
 	},
 
 [SPECIES_HATCHLING] =
@@ -23986,9 +23988,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Hatchling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Hatchling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Hatchling, 64, 64),
 		.backPicYOffset = 0,
@@ -23997,6 +23997,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Hatchling, 0),
 		.footprint = gMonFootprint_Hatchling,
 		LEARNSETS(Hatchling),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM_HOLD, ITEM_GREEN_SCALE, SPECIES_DRAGONLING_GREEN_FORM},
 			{EVO_ITEM_HOLD, ITEM_BLUE_SCALE, SPECIES_DRAGONLING_BLUE_FORM},
@@ -24042,9 +24044,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dragonling_Green_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dragonling_Green_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dragonling_Green_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24053,6 +24053,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragonling_Green_Form, 1),
 		.footprint = gMonFootprint_Dragonling_Green_Form,
 		LEARNSETS(Dragonling_Green_Form),
+		.frontPicYOffset = 13,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 45, SPECIES_DRAGON_GREEN_FORM}
 		),
@@ -24094,9 +24096,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dragon_Green_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dragon_Green_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dragon_Green_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24105,6 +24105,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragon_Green_Form, 1),
 		.footprint = gMonFootprint_Dragon_Green_Form,
 		LEARNSETS(Dragon_Green_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 65, SPECIES_DRAGON_BRUTAL_GREEN_FORM},
 			{EVO_ITEM, ITEM_NATURE_RUNE, SPECIES_DRAGON_THREEHEADED_FORM}
@@ -24147,9 +24149,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dragon_Brutal_Green_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dragon_Brutal_Green_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dragon_Brutal_Green_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24158,6 +24158,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragon_Brutal_Green_Form, 1),
 		.footprint = gMonFootprint_Dragon_Brutal_Green_Form,
 		LEARNSETS(Dragon_Brutal_Green_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_ELVARG}
 		),
@@ -24198,9 +24200,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dragonling_Blue_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dragonling_Blue_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dragonling_Blue_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24209,6 +24209,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragonling_Blue_Form, 2),
 		.footprint = gMonFootprint_Dragonling_Blue_Form,
 		LEARNSETS(Dragonling_Blue_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 45, SPECIES_DRAGON_BLUE_FORM}
 		),
@@ -24250,9 +24252,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dragon_Blue_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dragon_Blue_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dragon_Blue_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24261,6 +24261,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragon_Blue_Form, 2),
 		.footprint = gMonFootprint_Dragon_Blue_Form,
 		LEARNSETS(Dragon_Blue_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 65, SPECIES_DRAGON_BRUTAL_BLUE_FORM},
 			{EVO_LEVEL_FAIRY_TYPE_MON_IN_PARTY, 65, SPECIES_KLIK},
@@ -24305,9 +24307,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dragon_Brutal_Blue_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dragon_Brutal_Blue_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dragon_Brutal_Blue_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24316,6 +24316,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragon_Brutal_Blue_Form, 2),
 		.footprint = gMonFootprint_Dragon_Brutal_Blue_Form,
 		LEARNSETS(Dragon_Brutal_Blue_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DRAGONLING_RED_FORM] =
@@ -24354,9 +24356,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dragonling_Red_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dragonling_Red_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dragonling_Red_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24365,6 +24365,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragonling_Red_Form, 2),
 		.footprint = gMonFootprint_Dragonling_Red_Form,
 		LEARNSETS(Dragonling_Red_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 45, SPECIES_DRAGON_RED_FORM}
 		),
@@ -24406,9 +24408,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dragon_Red_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dragon_Red_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dragon_Red_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24417,6 +24417,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragon_Red_Form, 2),
 		.footprint = gMonFootprint_Dragon_Red_Form,
 		LEARNSETS(Dragon_Red_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 65, SPECIES_DRAGON_BRUTAL_RED_FORM}
 		),
@@ -24459,9 +24461,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dragon_Brutal_Red_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dragon_Brutal_Red_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dragon_Brutal_Red_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24470,6 +24470,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragon_Brutal_Red_Form, 2),
 		.footprint = gMonFootprint_Dragon_Brutal_Red_Form,
 		LEARNSETS(Dragon_Brutal_Red_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DRAGONLING_BLACK_FORM] =
@@ -24507,9 +24509,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dragonling_Black_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dragonling_Black_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dragonling_Black_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24518,6 +24518,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragonling_Black_Form, 2),
 		.footprint = gMonFootprint_Dragonling_Black_Form,
 		LEARNSETS(Dragonling_Black_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 45, SPECIES_DRAGON_BLACK_FORM},
 			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_REVENANT_DRAGON}
@@ -24560,9 +24562,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dragon_Black_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dragon_Black_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dragon_Black_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24571,6 +24571,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragon_Black_Form, 2),
 		.footprint = gMonFootprint_Dragon_Black_Form,
 		LEARNSETS(Dragon_Black_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 65, SPECIES_DRAGON_BRUTAL_BLACK_FORM}
 		),
@@ -24613,9 +24615,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dragon_Brutal_Black_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dragon_Brutal_Black_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dragon_Brutal_Black_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24624,6 +24624,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragon_Brutal_Black_Form, 2),
 		.footprint = gMonFootprint_Dragon_Brutal_Black_Form,
 		LEARNSETS(Dragon_Brutal_Black_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM_HOLD_MALE, ITEM_LIFE_RUNE, SPECIES_DRAGON_KING_BLACK_FORM},
 			{EVO_ITEM_HOLD_FEMALE, ITEM_LIFE_RUNE, SPECIES_DRAGON_QUEEN_BLACK_FORM}
@@ -24665,9 +24667,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dragon_ThreeHeaded_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dragon_ThreeHeaded_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dragon_ThreeHeaded_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24676,6 +24676,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragon_ThreeHeaded_Form, 1),
 		.footprint = gMonFootprint_Dragon_ThreeHeaded_Form,
 		LEARNSETS(Dragon_ThreeHeaded_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ELVARG] =
@@ -24714,9 +24716,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Elvarg, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Elvarg,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Elvarg, 64, 64),
 		.backPicYOffset = 0,
@@ -24725,6 +24725,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Elvarg, 1),
 		.footprint = gMonFootprint_Elvarg,
 		LEARNSETS(Elvarg),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DRAGON_KING_BLACK_FORM] =
@@ -24762,9 +24764,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dragon_King_Black_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dragon_King_Black_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dragon_King_Black_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24773,6 +24773,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragon_King_Black_Form, 2),
 		.footprint = gMonFootprint_Dragon_King_Black_Form,
 		LEARNSETS(Dragon_King_Black_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DRAGON_QUEEN_BLACK_FORM] =
@@ -24811,9 +24813,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dragon_Queen_Black_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dragon_Queen_Black_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dragon_Queen_Black_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24822,6 +24822,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragon_Queen_Black_Form, 2),
 		.footprint = gMonFootprint_Dragon_Queen_Black_Form,
 		LEARNSETS(Dragon_Queen_Black_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_HAND_CREEPING_FORM] =
@@ -24860,9 +24862,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Hand_Creeping_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Hand_Creeping_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Hand_Creeping_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24871,6 +24871,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Hand_Creeping_Form, 0),
 		.footprint = gMonFootprint_Hand_Creeping_Form,
 		LEARNSETS(Hand_Creeping_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 24, SPECIES_HAND_CRAWLING_FORM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_HAND_CRAWLING_FORM, SPECIES_HAND_BROKENFINGERS_FORM}
@@ -24914,9 +24916,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Hand_Crawling_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Hand_Crawling_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Hand_Crawling_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24925,6 +24925,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Hand_Crawling_Form, 0),
 		.footprint = gMonFootprint_Hand_Crawling_Form,
 		LEARNSETS(Hand_Crawling_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_MOVE, MOVE_BONE_RUSH, SPECIES_HAND_SKELETAL_FORM},
 			{EVO_MOVE, MOVE_CRUSH_GRIP, SPECIES_HAND_CRUSHING_FORM},
@@ -24971,9 +24973,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Hand_Skeletal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Hand_Skeletal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Hand_Skeletal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -24982,6 +24982,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Hand_Skeletal_Form, 0),
 		.footprint = gMonFootprint_Hand_Skeletal_Form,
 		LEARNSETS(Hand_Skeletal_Form),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_HAND_CRUSHING_FORM] =
@@ -25020,9 +25022,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Hand_Crushing_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Hand_Crushing_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Hand_Crushing_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -25031,6 +25031,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Hand_Crushing_Form, 2),
 		.footprint = gMonFootprint_Hand_Crushing_Form,
 		LEARNSETS(Hand_Crushing_Form),
+		.frontPicYOffset = 11,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_HAND_ZOMBIE_FORM] =
@@ -25068,9 +25070,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Hand_Zombie_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Hand_Zombie_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Hand_Zombie_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -25079,6 +25079,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Hand_Zombie_Form, 0),
 		.footprint = gMonFootprint_Hand_Zombie_Form,
 		LEARNSETS(Hand_Zombie_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_TUROTH] =
@@ -25117,9 +25119,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Turoth, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Turoth,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Turoth, 64, 64),
 		.backPicYOffset = 0,
@@ -25128,6 +25128,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Turoth, 2),
 		.footprint = gMonFootprint_Turoth,
 		LEARNSETS(Turoth),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 45, SPECIES_TUROTH_MIGHTIEST_FORM},
 			{EVO_LEVEL_NIGHT, 45, SPECIES_BIG_TUROTH},
@@ -25172,9 +25174,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Turoth_Mightiest_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Turoth_Mightiest_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Turoth_Mightiest_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -25183,6 +25183,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Turoth_Mightiest_Form, 0),
 		.footprint = gMonFootprint_Turoth_Mightiest_Form,
 		LEARNSETS(Turoth_Mightiest_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BIG_TUROTH] =
@@ -25221,9 +25223,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Big_Turoth, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Big_Turoth,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Big_Turoth, 64, 64),
 		.backPicYOffset = 0,
@@ -25232,6 +25232,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Big_Turoth, 2),
 		.footprint = gMonFootprint_Big_Turoth,
 		LEARNSETS(Big_Turoth),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SOCKROTH] =
@@ -25272,9 +25274,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sockroth, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sockroth,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sockroth, 64, 64),
 		.backPicYOffset = 0,
@@ -25283,6 +25283,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sockroth, 0),
 		.footprint = gMonFootprint_Sockroth,
 		LEARNSETS(Sockroth),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_LILRASK] =
@@ -25321,9 +25323,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Lilrask, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Lilrask,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Lilrask, 64, 64),
 		.backPicYOffset = 0,
@@ -25332,6 +25332,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Lilrask, 1),
 		.footprint = gMonFootprint_Lilrask,
 		LEARNSETS(Lilrask),
+		.frontPicYOffset = 12,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_FRIENDSHIP_DAY, 220, SPECIES_KURASK}
 		),
@@ -25374,9 +25376,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kurask, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kurask,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kurask, 64, 64),
 		.backPicYOffset = 0,
@@ -25385,6 +25385,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kurask, 1),
 		.footprint = gMonFootprint_Kurask,
 		LEARNSETS(Kurask),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 50, SPECIES_KURASK_KING_FORM},
 			{EVO_LEVEL_NIGHT, 50, SPECIES_KURASK_OVERLORD_FORM}
@@ -25426,9 +25428,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kurask_King_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kurask_King_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kurask_King_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -25437,6 +25437,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kurask_King_Form, 1),
 		.footprint = gMonFootprint_Kurask_King_Form,
 		LEARNSETS(Kurask_King_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KURASK_OVERLORD_FORM] =
@@ -25474,9 +25476,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kurask_Overlord_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kurask_Overlord_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kurask_Overlord_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -25485,6 +25485,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kurask_Overlord_Form, 1),
 		.footprint = gMonFootprint_Kurask_Overlord_Form,
 		LEARNSETS(Kurask_Overlord_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KEBBIT] =
@@ -25522,9 +25524,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kebbit, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kebbit,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kebbit, 64, 64),
 		.backPicYOffset = 0,
@@ -25533,6 +25533,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kebbit, 0),
 		.footprint = gMonFootprint_Kebbit,
 		LEARNSETS(Kebbit),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DEF_EQ_SPE, 15, SPECIES_KEBBIT_POLAR_FORM},
 			{EVO_LEVEL_DEF_GT_SPE, 15, SPECIES_KEBBIT_SPOTTED_FORM},
@@ -25576,9 +25578,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kebbit_Polar_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kebbit_Polar_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kebbit_Polar_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -25587,6 +25587,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kebbit_Polar_Form, 0),
 		.footprint = gMonFootprint_Kebbit_Polar_Form,
 		LEARNSETS(Kebbit_Polar_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 32, SPECIES_KEBBIT_SABRE_FORM}
 		),
@@ -25628,9 +25630,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kebbit_Sabre_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kebbit_Sabre_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kebbit_Sabre_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -25639,6 +25639,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kebbit_Sabre_Form, 0),
 		.footprint = gMonFootprint_Kebbit_Sabre_Form,
 		LEARNSETS(Kebbit_Sabre_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KEBBIT_SPOTTED_FORM] =
@@ -25676,9 +25678,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kebbit_Spotted_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kebbit_Spotted_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kebbit_Spotted_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -25687,6 +25687,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kebbit_Spotted_Form, 0),
 		.footprint = gMonFootprint_Kebbit_Spotted_Form,
 		LEARNSETS(Kebbit_Spotted_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 25, SPECIES_KEBBIT_DARK_FORM}
 		),
@@ -25728,9 +25730,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kebbit_Dark_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kebbit_Dark_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kebbit_Dark_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -25739,6 +25739,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kebbit_Dark_Form, 0),
 		.footprint = gMonFootprint_Kebbit_Dark_Form,
 		LEARNSETS(Kebbit_Dark_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 32, SPECIES_KEBBIT_DASHING_FORM}
 		),
@@ -25780,9 +25782,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kebbit_Dashing_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kebbit_Dashing_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kebbit_Dashing_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -25791,6 +25791,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kebbit_Dashing_Form, 0),
 		.footprint = gMonFootprint_Kebbit_Dashing_Form,
 		LEARNSETS(Kebbit_Dashing_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KEBBIT_WILD_FORM] =
@@ -25830,9 +25832,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kebbit_Wild_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kebbit_Wild_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kebbit_Wild_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -25841,6 +25841,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kebbit_Wild_Form, 0),
 		.footprint = gMonFootprint_Kebbit_Wild_Form,
 		LEARNSETS(Kebbit_Wild_Form),
+		.frontPicYOffset = 14,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 25, SPECIES_KEBBIT_PRICKLY_FORM}
 		),
@@ -25882,9 +25884,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kebbit_Prickly_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kebbit_Prickly_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kebbit_Prickly_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -25893,6 +25893,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kebbit_Prickly_Form, 0),
 		.footprint = gMonFootprint_Kebbit_Prickly_Form,
 		LEARNSETS(Kebbit_Prickly_Form),
+		.frontPicYOffset = 13,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 32, SPECIES_KEBBIT_RAZOR_FORM},
 			{EVO_LEVEL_NIGHT, 32, SPECIES_KEBBIT_BIG_FORM}
@@ -25935,9 +25937,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kebbit_Razor_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kebbit_Razor_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kebbit_Razor_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -25946,6 +25946,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kebbit_Razor_Form, 0),
 		.footprint = gMonFootprint_Kebbit_Razor_Form,
 		LEARNSETS(Kebbit_Razor_Form),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KEBBIT_BIG_FORM] =
@@ -25984,9 +25986,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kebbit_Big_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kebbit_Big_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kebbit_Big_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -25995,6 +25995,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kebbit_Big_Form, 0),
 		.footprint = gMonFootprint_Kebbit_Big_Form,
 		LEARNSETS(Kebbit_Big_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KEBBIT_DESERTDEVIL_FORM] =
@@ -26032,9 +26034,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kebbit_DesertDevil_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kebbit_DesertDevil_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kebbit_DesertDevil_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26043,6 +26043,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kebbit_DesertDevil_Form, 2),
 		.footprint = gMonFootprint_Kebbit_DesertDevil_Form,
 		LEARNSETS(Kebbit_DesertDevil_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 15, SPECIES_KEBBIT_FELDIP_WEASEL_FORM},
 			{EVO_ITEM, ITEM_CHOCOLATE_CAKE, SPECIES_KEBBIT_CHOCOLATE_FORM}
@@ -26084,9 +26086,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kebbit_Feldip_Weasel_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kebbit_Feldip_Weasel_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kebbit_Feldip_Weasel_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26095,6 +26095,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kebbit_Feldip_Weasel_Form, 0),
 		.footprint = gMonFootprint_Kebbit_Feldip_Weasel_Form,
 		LEARNSETS(Kebbit_Feldip_Weasel_Form),
+		.frontPicYOffset = 15,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 23, SPECIES_KEBBIT_BARBED_FORM}
 		),
@@ -26135,9 +26137,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kebbit_Barbed_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kebbit_Barbed_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kebbit_Barbed_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26146,6 +26146,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kebbit_Barbed_Form, 0),
 		.footprint = gMonFootprint_Kebbit_Barbed_Form,
 		LEARNSETS(Kebbit_Barbed_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_MOVE_TYPE, TYPE_POISON, SPECIES_KEBBIT_DISEASED_FORM}
 		),
@@ -26187,9 +26189,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kebbit_Diseased_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kebbit_Diseased_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kebbit_Diseased_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26198,6 +26198,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kebbit_Diseased_Form, 1),
 		.footprint = gMonFootprint_Kebbit_Diseased_Form,
 		LEARNSETS(Kebbit_Diseased_Form),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KEBBIT_CHOCOLATE_FORM] =
@@ -26235,9 +26237,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kebbit_Chocolate_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kebbit_Chocolate_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kebbit_Chocolate_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26246,6 +26246,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kebbit_Chocolate_Form, 0),
 		.footprint = gMonFootprint_Kebbit_Chocolate_Form,
 		LEARNSETS(Kebbit_Chocolate_Form),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_MONKEY_NORMAL_FORM] =
@@ -26284,9 +26286,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Monkey_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Monkey_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Monkey_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26295,6 +26295,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Monkey_Normal_Form, 0),
 		.footprint = gMonFootprint_Monkey_Normal_Form,
 		LEARNSETS(Monkey_Normal_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_MOVE_TYPE, TYPE_FLYING, SPECIES_MONKEY_NINJA_FORM},
 			{EVO_LEVEL_DAY, 40, SPECIES_GORILLA_NORMAL_FORM},
@@ -26340,9 +26342,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Monkey_Ninja_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Monkey_Ninja_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Monkey_Ninja_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26351,6 +26351,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Monkey_Ninja_Form, 2),
 		.footprint = gMonFootprint_Monkey_Ninja_Form,
 		LEARNSETS(Monkey_Ninja_Form),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GORILLA_NORMAL_FORM] =
@@ -26389,9 +26391,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Gorilla_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Gorilla_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Gorilla_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26400,6 +26400,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Gorilla_Normal_Form, 0),
 		.footprint = gMonFootprint_Gorilla_Normal_Form,
 		LEARNSETS(Gorilla_Normal_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_ATK_EQ_DEF, 55, SPECIES_GORILLA_AYUNI_FORM},
 			{EVO_LEVEL_ATK_LT_DEF, 55, SPECIES_GORILLA_LEEUNI_FORM},
@@ -26444,9 +26446,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Monkey_Zombie_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Monkey_Zombie_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Monkey_Zombie_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26455,6 +26455,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Monkey_Zombie_Form, 0),
 		.footprint = gMonFootprint_Monkey_Zombie_Form,
 		LEARNSETS(Monkey_Zombie_Form),
+		.frontPicYOffset = 11,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GORILLA_ANCIENT_FORM] =
@@ -26492,9 +26494,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Gorilla_Ancient_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Gorilla_Ancient_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Gorilla_Ancient_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26503,6 +26503,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Gorilla_Ancient_Form, 0),
 		.footprint = gMonFootprint_Gorilla_Ancient_Form,
 		LEARNSETS(Gorilla_Ancient_Form),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_MONKEY_HARMLESS_FORM] =
@@ -26541,9 +26543,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Monkey_Harmless_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Monkey_Harmless_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Monkey_Harmless_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26552,6 +26552,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Monkey_Harmless_Form, 0),
 		.footprint = gMonFootprint_Monkey_Harmless_Form,
 		LEARNSETS(Monkey_Harmless_Form),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_GHOST_TYPE_MON_IN_PARTY, 40, SPECIES_MONKEY_GHOST_FORM}
 		),
@@ -26592,9 +26594,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Monkey_Ghost_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Monkey_Ghost_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Monkey_Ghost_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26603,6 +26603,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Monkey_Ghost_Form, 0),
 		.footprint = gMonFootprint_Monkey_Ghost_Form,
 		LEARNSETS(Monkey_Ghost_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_GORILLA_AYUNI_FORM] =
@@ -26640,9 +26642,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Gorilla_Ayuni_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Gorilla_Ayuni_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Gorilla_Ayuni_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26651,6 +26651,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Gorilla_Ayuni_Form, 1),
 		.footprint = gMonFootprint_Gorilla_Ayuni_Form,
 		LEARNSETS(Gorilla_Ayuni_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GORILLA_LEEUNI_FORM] =
@@ -26689,9 +26691,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Gorilla_Leeuni_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Gorilla_Leeuni_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Gorilla_Leeuni_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26700,6 +26700,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Gorilla_Leeuni_Form, 0),
 		.footprint = gMonFootprint_Gorilla_Leeuni_Form,
 		LEARNSETS(Gorilla_Leeuni_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GORILLA_ERUNI_FORM] =
@@ -26738,9 +26740,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Gorilla_Eruni_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Gorilla_Eruni_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Gorilla_Eruni_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26749,6 +26749,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Gorilla_Eruni_Form, 0),
 		.footprint = gMonFootprint_Gorilla_Eruni_Form,
 		LEARNSETS(Gorilla_Eruni_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_MONKEY_KARAMJA_BABY_FORM] =
@@ -26786,9 +26788,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Monkey_Karamja_Baby_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Monkey_Karamja_Baby_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Monkey_Karamja_Baby_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26797,6 +26797,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Monkey_Karamja_Baby_Form, 0),
 		.footprint = gMonFootprint_Monkey_Karamja_Baby_Form,
 		LEARNSETS(Monkey_Karamja_Baby_Form),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_FRIENDSHIP, 220, SPECIES_MONKEY_KARAMJA_ADULT_FORM}
 		),
@@ -26838,9 +26840,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Monkey_Karamja_Adult_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Monkey_Karamja_Adult_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Monkey_Karamja_Adult_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26849,6 +26849,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Monkey_Karamja_Adult_Form, 0),
 		.footprint = gMonFootprint_Monkey_Karamja_Adult_Form,
 		LEARNSETS(Monkey_Karamja_Adult_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_LARUPIA_NORMAL_FORM] =
@@ -26887,9 +26889,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Larupia_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Larupia_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Larupia_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26898,6 +26898,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Larupia_Normal_Form, 2),
 		.footprint = gMonFootprint_Larupia_Normal_Form,
 		LEARNSETS(Larupia_Normal_Form),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_LARUPIA_SPIRIT_FORM}
 		),
@@ -26939,9 +26941,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Larupia_Spirit_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Larupia_Spirit_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Larupia_Spirit_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26950,6 +26950,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Larupia_Spirit_Form, 0),
 		.footprint = gMonFootprint_Larupia_Spirit_Form,
 		LEARNSETS(Larupia_Spirit_Form),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KYATT_NORMAL_FORM] =
@@ -26988,9 +26990,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kyatt_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kyatt_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kyatt_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -26999,6 +26999,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kyatt_Normal_Form, 0),
 		.footprint = gMonFootprint_Kyatt_Normal_Form,
 		LEARNSETS(Kyatt_Normal_Form),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_KYATT_SPIRIT_FORM}
 		),
@@ -27040,9 +27042,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kyatt_Spirit_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kyatt_Spirit_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kyatt_Spirit_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -27051,6 +27051,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kyatt_Spirit_Form, 2),
 		.footprint = gMonFootprint_Kyatt_Spirit_Form,
 		LEARNSETS(Kyatt_Spirit_Form),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CRABLING] =
@@ -27089,9 +27091,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crabling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crabling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crabling, 64, 64),
 		.backPicYOffset = 0,
@@ -27100,6 +27100,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crabling, 2),
 		.footprint = gMonFootprint_Crabling,
 		LEARNSETS(Crabling),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_MAP_ASGARNIA, 12, SPECIES_ROCK_CRAB_NORMAL_FORM},
 			{EVO_LEVEL_MAP_MISTHALIN, 12, SPECIES_ROCK_CRAB_NORMAL_FORM},
@@ -27148,9 +27150,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rock_Crab_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rock_Crab_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rock_Crab_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -27159,6 +27159,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rock_Crab_Normal_Form, 0),
 		.footprint = gMonFootprint_Rock_Crab_Normal_Form,
 		LEARNSETS(Rock_Crab_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_ROCK_CRAB_GIANT_NORMAL_FORM}
 		),
@@ -27200,9 +27202,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rock_Crab_Giant_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rock_Crab_Giant_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rock_Crab_Giant_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -27211,6 +27211,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rock_Crab_Giant_Normal_Form, 0),
 		.footprint = gMonFootprint_Rock_Crab_Giant_Normal_Form,
 		LEARNSETS(Rock_Crab_Giant_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ROCK_CRAB_AMMONITE_FORM] =
@@ -27248,9 +27250,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rock_Crab_Ammonite_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rock_Crab_Ammonite_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rock_Crab_Ammonite_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -27259,6 +27259,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rock_Crab_Ammonite_Form, 2),
 		.footprint = gMonFootprint_Rock_Crab_Ammonite_Form,
 		LEARNSETS(Rock_Crab_Ammonite_Form),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_ROCK_CRAB_GIANT_AMMONITE_FORM}
 		),
@@ -27300,9 +27302,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rock_Crab_Giant_Ammonite_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rock_Crab_Giant_Ammonite_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rock_Crab_Giant_Ammonite_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -27311,6 +27311,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rock_Crab_Giant_Ammonite_Form, 2),
 		.footprint = gMonFootprint_Rock_Crab_Giant_Ammonite_Form,
 		LEARNSETS(Rock_Crab_Giant_Ammonite_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ROCK_CRAB_SAND_FORM] =
@@ -27348,9 +27350,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rock_Crab_Sand_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rock_Crab_Sand_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rock_Crab_Sand_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -27359,6 +27359,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rock_Crab_Sand_Form, 0),
 		.footprint = gMonFootprint_Rock_Crab_Sand_Form,
 		LEARNSETS(Rock_Crab_Sand_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_ROCK_CRAB_GIANT_SAND_FORM}
 		),
@@ -27399,9 +27401,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rock_Crab_Giant_Sand_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rock_Crab_Giant_Sand_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rock_Crab_Giant_Sand_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -27410,6 +27410,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rock_Crab_Giant_Sand_Form, 0),
 		.footprint = gMonFootprint_Rock_Crab_Giant_Sand_Form,
 		LEARNSETS(Rock_Crab_Giant_Sand_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ROCK_CRAB_SWAMP_FORM] =
@@ -27448,9 +27450,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rock_Crab_Swamp_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rock_Crab_Swamp_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rock_Crab_Swamp_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -27459,6 +27459,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rock_Crab_Swamp_Form, 1),
 		.footprint = gMonFootprint_Rock_Crab_Swamp_Form,
 		LEARNSETS(Rock_Crab_Swamp_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_ROCK_CRAB_GIANT_SWAMP_FORM}
 		),
@@ -27499,9 +27501,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rock_Crab_Giant_Swamp_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rock_Crab_Giant_Swamp_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rock_Crab_Giant_Swamp_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -27510,6 +27510,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rock_Crab_Giant_Swamp_Form, 1),
 		.footprint = gMonFootprint_Rock_Crab_Giant_Swamp_Form,
 		LEARNSETS(Rock_Crab_Giant_Swamp_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CRAB_GRANITE_FORM] =
@@ -27548,9 +27550,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crab_Granite_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crab_Granite_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crab_Granite_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -27559,6 +27559,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crab_Granite_Form, 1),
 		.footprint = gMonFootprint_Crab_Granite_Form,
 		LEARNSETS(Crab_Granite_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_LOBSTER_GRANITE_FORM},
 			{EVO_MOVE, MOVE_CRABHAMMER, SPECIES_LOBSTER_ROCK_FORM}
@@ -27601,9 +27603,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Lobster_Granite_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Lobster_Granite_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Lobster_Granite_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -27612,6 +27612,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Lobster_Granite_Form, 0),
 		.footprint = gMonFootprint_Lobster_Granite_Form,
 		LEARNSETS(Lobster_Granite_Form),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_LOBSTER_ROCK_FORM] =
@@ -27650,9 +27652,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Lobster_Rock_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Lobster_Rock_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Lobster_Rock_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -27661,6 +27661,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Lobster_Rock_Form, 0),
 		.footprint = gMonFootprint_Lobster_Rock_Form,
 		LEARNSETS(Lobster_Rock_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_RABBIT] =
@@ -27700,9 +27702,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rabbit, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rabbit,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rabbit, 64, 64),
 		.backPicYOffset = 0,
@@ -27711,6 +27711,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rabbit, 0),
 		.footprint = gMonFootprint_Rabbit,
 		LEARNSETS(Rabbit),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 27, SPECIES_WOLPERTING},
 			{EVO_LEVEL_NIGHT, 27, SPECIES_JACKALOPE}
@@ -27754,9 +27756,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wolperting, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wolperting,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wolperting, 64, 64),
 		.backPicYOffset = 0,
@@ -27765,6 +27765,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolperting, 0),
 		.footprint = gMonFootprint_Wolperting,
 		LEARNSETS(Wolperting),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 		.formSpeciesIdTable = sWolpertingerFormSpeciesIdTable,
 		.formChangeTable = sWolpertingerFormChangeTable,
 	},
@@ -27804,9 +27806,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bunyip, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bunyip,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bunyip, 64, 64),
 		.backPicYOffset = 0,
@@ -27815,6 +27815,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bunyip, 1),
 		.footprint = gMonFootprint_Bunyip,
 		LEARNSETS(Bunyip),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_TALONBEAST_TALON_FORM] =
@@ -27853,9 +27855,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(TalonBeast_Talon_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_TalonBeast_Talon_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(TalonBeast_Talon_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -27864,6 +27864,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(TalonBeast_Talon_Form, 0),
 		.footprint = gMonFootprint_TalonBeast_Talon_Form,
 		LEARNSETS(TalonBeast_Talon_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_TALONBEAST_NAIL_FORM] =
@@ -27900,9 +27902,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(TalonBeast_Nail_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_TalonBeast_Nail_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(TalonBeast_Nail_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -27911,6 +27911,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(TalonBeast_Nail_Form, 0),
 		.footprint = gMonFootprint_TalonBeast_Nail_Form,
 		LEARNSETS(TalonBeast_Nail_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_FERRET] =
@@ -27949,9 +27951,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ferret, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ferret,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ferret, 64, 64),
 		.backPicYOffset = 0,
@@ -27960,6 +27960,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ferret, 2),
 		.footprint = gMonFootprint_Ferret,
 		LEARNSETS(Ferret),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 15, SPECIES_RACOON}
 		),
@@ -28000,9 +28002,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Toy_Mouse, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Toy_Mouse,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Toy_Mouse, 64, 64),
 		.backPicYOffset = 0,
@@ -28011,6 +28011,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Toy_Mouse, 2),
 		.footprint = gMonFootprint_Toy_Mouse,
 		LEARNSETS(Toy_Mouse),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_FEMALE, 20, SPECIES_TOY_DOLL},
 			{EVO_LEVEL_MALE, 20, SPECIES_TOY_SOLDIER},
@@ -28055,9 +28057,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Toy_Doll, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Toy_Doll,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Toy_Doll, 64, 64),
 		.backPicYOffset = 0,
@@ -28066,6 +28066,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Toy_Doll, 0),
 		.footprint = gMonFootprint_Toy_Doll,
 		LEARNSETS(Toy_Doll),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_TOY_SOLDIER] =
@@ -28104,9 +28106,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Toy_Soldier, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Toy_Soldier,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Toy_Soldier, 64, 64),
 		.backPicYOffset = 0,
@@ -28115,6 +28115,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Toy_Soldier, 2),
 		.footprint = gMonFootprint_Toy_Soldier,
 		LEARNSETS(Toy_Soldier),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CAT_CLOCKWORK_FORM] =
@@ -28152,9 +28154,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cat_Clockwork_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cat_Clockwork_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cat_Clockwork_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -28163,6 +28163,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cat_Clockwork_Form, 0),
 		.footprint = gMonFootprint_Cat_Clockwork_Form,
 		LEARNSETS(Cat_Clockwork_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_MAGICARPET] =
@@ -28201,9 +28203,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Magicarpet, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Magicarpet,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Magicarpet, 64, 64),
 		.backPicYOffset = 0,
@@ -28212,6 +28212,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Magicarpet, 0),
 		.footprint = gMonFootprint_Magicarpet,
 		LEARNSETS(Magicarpet),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_ANICHAIR] =
@@ -28250,9 +28252,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Anichair, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Anichair,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Anichair, 64, 64),
 		.backPicYOffset = 0,
@@ -28261,6 +28261,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Anichair, 0),
 		.footprint = gMonFootprint_Anichair,
 		LEARNSETS(Anichair),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 34, SPECIES_MARIONETTE}
 		),
@@ -28302,9 +28304,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Exoraxe, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Exoraxe,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Exoraxe, 64, 64),
 		.backPicYOffset = 0,
@@ -28313,6 +28313,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Exoraxe, 0),
 		.footprint = gMonFootprint_Exoraxe,
 		LEARNSETS(Exoraxe),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_GANODERMIC_BEAST, SPECIES_SPORAXE}
 		),
@@ -28355,9 +28357,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spookaxe, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spookaxe,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spookaxe, 64, 64),
 		.backPicYOffset = 0,
@@ -28366,6 +28366,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spookaxe, 0),
 		.footprint = gMonFootprint_Spookaxe,
 		LEARNSETS(Spookaxe),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_DOBBIN] =
@@ -28404,9 +28406,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dobbin, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dobbin,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dobbin, 64, 64),
 		.backPicYOffset = 0,
@@ -28415,6 +28415,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dobbin, 0),
 		.footprint = gMonFootprint_Dobbin,
 		LEARNSETS(Dobbin),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 25, SPECIES_ANIMOUR}
 		),
@@ -28456,9 +28458,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Marionette, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Marionette,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Marionette, 64, 64),
 		.backPicYOffset = 0,
@@ -28467,6 +28467,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Marionette, 0),
 		.footprint = gMonFootprint_Marionette,
 		LEARNSETS(Marionette),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_DRAGONKITE] =
@@ -28505,9 +28507,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(DragonKite, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_DragonKite,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(DragonKite, 64, 64),
 		.backPicYOffset = 0,
@@ -28516,6 +28516,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(DragonKite, 0),
 		.footprint = gMonFootprint_DragonKite,
 		LEARNSETS(DragonKite),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_ANIMOUR] =
@@ -28554,9 +28556,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Animour, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Animour,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Animour, 64, 64),
 		.backPicYOffset = 0,
@@ -28565,6 +28565,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Animour, 0),
 		.footprint = gMonFootprint_Animour,
 		LEARNSETS(Animour),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 3,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_ATK_GT_SPATK, 40, SPECIES_SPIRIT_WARRIOR},
 			{EVO_LEVEL_ATK_LT_SPATK, 40, SPECIES_SPIRIT_MAGE},
@@ -28614,9 +28616,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dead_Tree, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dead_Tree,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dead_Tree, 64, 64),
 		.backPicYOffset = 0,
@@ -28625,6 +28625,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dead_Tree, 0),
 		.footprint = gMonFootprint_Dead_Tree,
 		LEARNSETS(Dead_Tree),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 30, SPECIES_COMPOST_MOUND}
 		),
@@ -28665,9 +28667,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jadinko, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jadinko,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jadinko, 64, 64),
 		.backPicYOffset = 0,
@@ -28676,6 +28676,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jadinko, 2),
 		.footprint = gMonFootprint_Jadinko,
 		LEARNSETS(Jadinko),
+		.frontPicYOffset = 11,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 20, SPECIES_JADINKO_COMMON_FORM}
 		),
@@ -28717,9 +28719,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Killerwatt, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Killerwatt,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Killerwatt, 64, 64),
 		.backPicYOffset = 0,
@@ -28728,6 +28728,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Killerwatt, 2),
 		.footprint = gMonFootprint_Killerwatt,
 		LEARNSETS(Killerwatt),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_MACKERS] =
@@ -28767,9 +28769,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Mackers, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Mackers,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Mackers, 64, 64),
 		.backPicYOffset = 0,
@@ -28778,6 +28778,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Mackers, 0),
 		.footprint = gMonFootprint_Mackers,
 		LEARNSETS(Mackers),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_FEMALE, 27, SPECIES_TURKEY_FEMALE_FORM},
 			{EVO_LEVEL_MALE, 27, SPECIES_TURKEY_MALE_FORM}
@@ -28820,9 +28822,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Turkey_Female_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Turkey_Female_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Turkey_Female_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -28831,6 +28831,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Turkey_Female_Form, 0),
 		.footprint = gMonFootprint_Turkey_Female_Form,
 		LEARNSETS(Turkey_Female_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_CHOCOLATE_CAKE, SPECIES_TURKEY_PROTESTOR_FORM},
 			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_TURKEY_PROTESTOR_FORM}
@@ -28871,9 +28873,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Turkey_Male_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Turkey_Male_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Turkey_Male_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -28882,6 +28882,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Turkey_Male_Form, 0),
 		.footprint = gMonFootprint_Turkey_Male_Form,
 		LEARNSETS(Turkey_Male_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_CHOCOLATE_CAKE, SPECIES_TURKEY_PROTESTOR_FORM},
 			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_TURKEY_PROTESTOR_FORM}
@@ -28922,9 +28924,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Turkey_Protestor_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Turkey_Protestor_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Turkey_Protestor_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -28933,6 +28933,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Turkey_Protestor_Form, 0),
 		.footprint = gMonFootprint_Turkey_Protestor_Form,
 		LEARNSETS(Turkey_Protestor_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_TOUCAN_TENACIOUS_MALE_FORM] =
@@ -28971,9 +28973,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Toucan_Tenacious_Male_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Toucan_Tenacious_Male_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Toucan_Tenacious_Male_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -28982,6 +28982,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Toucan_Tenacious_Male_Form, 0),
 		.footprint = gMonFootprint_Toucan_Tenacious_Male_Form,
 		LEARNSETS(Toucan_Tenacious_Male_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 32, SPECIES_TOUCAN_TUAI_LEIT_FORM}
 		),
@@ -29021,9 +29023,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Toucan_Tenacious_Female_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Toucan_Tenacious_Female_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Toucan_Tenacious_Female_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -29032,6 +29032,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Toucan_Tenacious_Female_Form, 0),
 		.footprint = gMonFootprint_Toucan_Tenacious_Female_Form,
 		LEARNSETS(Toucan_Tenacious_Female_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 32, SPECIES_TOUCAN_TUAI_LEIT_FORM}
 		),
@@ -29073,9 +29075,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Toucan_Tuai_Leit_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Toucan_Tuai_Leit_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Toucan_Tuai_Leit_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -29084,6 +29084,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Toucan_Tuai_Leit_Form, 2),
 		.footprint = gMonFootprint_Toucan_Tuai_Leit_Form,
 		LEARNSETS(Toucan_Tuai_Leit_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_JELLYFISH_BLUBBER_FORM] =
@@ -29122,9 +29124,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jellyfish_Blubber_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jellyfish_Blubber_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jellyfish_Blubber_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -29133,6 +29133,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jellyfish_Blubber_Form, 0),
 		.footprint = gMonFootprint_Jellyfish_Blubber_Form,
 		LEARNSETS(Jellyfish_Blubber_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 40, SPECIES_JELLYFISH}
 		),
@@ -29174,9 +29176,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jellyfish, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jellyfish,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jellyfish, 64, 64),
 		.backPicYOffset = 0,
@@ -29185,6 +29185,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jellyfish, 0),
 		.footprint = gMonFootprint_Jellyfish,
 		LEARNSETS(Jellyfish),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_PURE] =
@@ -29222,9 +29224,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pure, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pure,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pure, 64, 64),
 		.backPicYOffset = 0,
@@ -29233,6 +29233,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pure, 2),
 		.footprint = gMonFootprint_Pure,
 		LEARNSETS(Pure),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_FRIENDSHIP, 220, SPECIES_ANIMAWHAL},
 			{EVO_ITEM, ITEM_AIR_RUNE, SPECIES_RUNE},
@@ -29280,9 +29282,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rune, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rune,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rune, 64, 64),
 		.backPicYOffset = 0,
@@ -29291,6 +29291,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rune, 2),
 		.footprint = gMonFootprint_Rune,
 		LEARNSETS(Rune),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_COSMIC_RUNE, SPECIES_ESSENCE},
 			{EVO_ITEM, ITEM_ASTRAL_RUNE, SPECIES_ESSENCE},
@@ -29339,9 +29341,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Essence, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Essence,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Essence, 64, 64),
 		.backPicYOffset = 0,
@@ -29350,6 +29350,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Essence, 0),
 		.footprint = gMonFootprint_Essence,
 		LEARNSETS(Essence),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_SEAGULL_NORMAL_FORM] =
@@ -29388,9 +29390,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Seagull_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Seagull_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Seagull_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -29399,6 +29399,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Seagull_Normal_Form, 0),
 		.footprint = gMonFootprint_Seagull_Normal_Form,
 		LEARNSETS(Seagull_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_AIR_RUNE, SPECIES_ALBATROSS},
 			{EVO_ITEM, ITEM_BODY_RUNE, SPECIES_SEAGULL_STEVEN_FORM},
@@ -29445,9 +29447,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pelican, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pelican,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pelican, 64, 64),
 		.backPicYOffset = 0,
@@ -29456,6 +29456,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pelican, 0),
 		.footprint = gMonFootprint_Pelican,
 		LEARNSETS(Pelican),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ALBATROSS] =
@@ -29493,9 +29495,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Albatross, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Albatross,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Albatross, 64, 64),
 		.backPicYOffset = 0,
@@ -29504,6 +29504,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Albatross, 0),
 		.footprint = gMonFootprint_Albatross,
 		LEARNSETS(Albatross),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_SEAGULL_HATTENKRAPPER_FORM] =
@@ -29543,9 +29545,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Seagull_Hattenkrapper_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Seagull_Hattenkrapper_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Seagull_Hattenkrapper_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -29554,6 +29554,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Seagull_Hattenkrapper_Form, 0),
 		.footprint = gMonFootprint_Seagull_Hattenkrapper_Form,
 		LEARNSETS(Seagull_Hattenkrapper_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 6,
 	},
 
 [SPECIES_SEAGULL_KOPPENPLOPPEN_FORM] =
@@ -29592,9 +29594,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Seagull_Koppenploppen_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Seagull_Koppenploppen_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Seagull_Koppenploppen_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -29603,6 +29603,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Seagull_Koppenploppen_Form, 0),
 		.footprint = gMonFootprint_Seagull_Koppenploppen_Form,
 		LEARNSETS(Seagull_Koppenploppen_Form),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SEAGULL_STEVEN_FORM] =
@@ -29641,9 +29643,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Seagull_Steven_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Seagull_Steven_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Seagull_Steven_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -29652,6 +29652,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Seagull_Steven_Form, 0),
 		.footprint = gMonFootprint_Seagull_Steven_Form,
 		LEARNSETS(Seagull_Steven_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_IBIS] =
@@ -29690,9 +29692,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ibis, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ibis,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ibis, 64, 64),
 		.backPicYOffset = 0,
@@ -29701,6 +29701,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ibis, 0),
 		.footprint = gMonFootprint_Ibis,
 		LEARNSETS(Ibis),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DESERTWYRM] =
@@ -29739,9 +29741,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(DesertWyrm, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_DesertWyrm,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(DesertWyrm, 64, 64),
 		.backPicYOffset = 0,
@@ -29750,6 +29750,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(DesertWyrm, 2),
 		.footprint = gMonFootprint_DesertWyrm,
 		LEARNSETS(DesertWyrm),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 44, SPECIES_WYRM}
 		),
@@ -29791,9 +29793,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wyrm, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wyrm,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wyrm, 64, 64),
 		.backPicYOffset = 0,
@@ -29802,6 +29802,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wyrm, 2),
 		.footprint = gMonFootprint_Wyrm,
 		LEARNSETS(Wyrm),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 4,
 	},
 
 [SPECIES_SNAKE_NORMAL_FORM] =
@@ -29840,9 +29842,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Snake_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Snake_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Snake_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -29851,6 +29851,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Snake_Normal_Form, 1),
 		.footprint = gMonFootprint_Snake_Normal_Form,
 		LEARNSETS(Snake_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 26, SPECIES_COBRA_NORMAL_FORM},
 			{EVO_ITEM, ITEM_WATER_RUNE, SPECIES_SNAKE_SEA_FORM},
@@ -29897,9 +29899,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cobra_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cobra_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cobra_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -29908,6 +29908,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cobra_Normal_Form, 1),
 		.footprint = gMonFootprint_Cobra_Normal_Form,
 		LEARNSETS(Cobra_Normal_Form),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_COBRA_SPIRIT_FORM},
 			{EVO_LEVEL, 36, SPECIES_SNAKE_DESERT_FORM}
@@ -29950,9 +29952,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cobra_Spirit_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cobra_Spirit_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cobra_Spirit_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -29961,6 +29961,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cobra_Spirit_Form, 1),
 		.footprint = gMonFootprint_Cobra_Spirit_Form,
 		LEARNSETS(Cobra_Spirit_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_JUNA] =
@@ -29999,9 +30001,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Juna, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Juna,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Juna, 64, 64),
 		.backPicYOffset = 0,
@@ -30010,6 +30010,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Juna, 1),
 		.footprint = gMonFootprint_Juna,
 		LEARNSETS(Juna),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SNAKE_SEA_FORM] =
@@ -30048,9 +30050,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Snake_Sea_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Snake_Sea_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Snake_Sea_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -30059,6 +30059,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Snake_Sea_Form, 0),
 		.footprint = gMonFootprint_Snake_Sea_Form,
 		LEARNSETS(Snake_Sea_Form),
+		.frontPicYOffset = 15,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_FRIENDSHIP, 220, SPECIES_BIG_SNAKE_SEA_FORM},
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_ICXAN}
@@ -30101,9 +30103,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Big_Snake_Sea_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Big_Snake_Sea_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Big_Snake_Sea_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -30112,6 +30112,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Big_Snake_Sea_Form, 2),
 		.footprint = gMonFootprint_Big_Snake_Sea_Form,
 		LEARNSETS(Big_Snake_Sea_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_THINGUMWUT] =
@@ -30150,9 +30152,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Thingumwut, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Thingumwut,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Thingumwut, 64, 64),
 		.backPicYOffset = 0,
@@ -30161,6 +30161,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Thingumwut, 0),
 		.footprint = gMonFootprint_Thingumwut,
 		LEARNSETS(Thingumwut),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_EXPERIMENT_3_FORM] =
@@ -30198,9 +30200,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Experiment_3_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Experiment_3_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Experiment_3_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -30209,6 +30209,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Experiment_3_Form, 0),
 		.footprint = gMonFootprint_Experiment_3_Form,
 		LEARNSETS(Experiment_3_Form),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CABBAGE] =
@@ -30247,9 +30249,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cabbage, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cabbage,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cabbage, 64, 64),
 		.backPicYOffset = 0,
@@ -30258,6 +30258,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cabbage, 1),
 		.footprint = gMonFootprint_Cabbage,
 		LEARNSETS(Cabbage),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 23, SPECIES_CABBAGE_SISTER_FORM},
 			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_CABBAGE_CRISPY_FORM},
@@ -30303,9 +30305,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ughtanki, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ughtanki,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ughtanki, 64, 64),
 		.backPicYOffset = 0,
@@ -30314,6 +30314,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ughtanki, 2),
 		.footprint = gMonFootprint_Ughtanki,
 		LEARNSETS(Ughtanki),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_MIND_RUNE, SPECIES_CAMEL_WARRIOR_FORM},
 			{EVO_ITEM, ITEM_LAW_RUNE, SPECIES_CAMEL_BANK_FORM}
@@ -30356,9 +30358,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Camel, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Camel,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Camel, 64, 64),
 		.backPicYOffset = 0,
@@ -30367,6 +30367,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Camel, 2),
 		.footprint = gMonFootprint_Camel,
 		LEARNSETS(Camel),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 30, SPECIES_UGHTANKI}
 		),
@@ -30409,9 +30411,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Camel_Warrior_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Camel_Warrior_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Camel_Warrior_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -30420,6 +30420,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Camel_Warrior_Form, 1),
 		.footprint = gMonFootprint_Camel_Warrior_Form,
 		LEARNSETS(Camel_Warrior_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BALANCEELE] =
@@ -30463,9 +30465,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(BalanceEle, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_BalanceEle,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(BalanceEle, 64, 64),
 		.backPicYOffset = 0,
@@ -30474,6 +30474,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(BalanceEle, 2),
 		.footprint = gMonFootprint_BalanceEle,
 		LEARNSETS(BalanceEle),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KALPHITE_LARVA_FORM] =
@@ -30511,9 +30513,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kalphite_Larva_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kalphite_Larva_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kalphite_Larva_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -30522,6 +30522,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kalphite_Larva_Form, 0),
 		.footprint = gMonFootprint_Kalphite_Larva_Form,
 		LEARNSETS(Kalphite_Larva_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 15, SPECIES_KALPHITE_WORKER_FORM},
 			{EVO_ITEM, ITEM_EARTH_RUNE, SPECIES_KALPHITE_DUNG_FORM}
@@ -30563,9 +30565,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kalphite_Worker_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kalphite_Worker_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kalphite_Worker_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -30574,6 +30574,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kalphite_Worker_Form, 1),
 		.footprint = gMonFootprint_Kalphite_Worker_Form,
 		LEARNSETS(Kalphite_Worker_Form),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_FEMALE, 24, SPECIES_KALPHITE_SOLDIER_FORM},
 			{EVO_LEVEL_MALE, 24, SPECIES_KALPHITE_PARAGON_FORM}
@@ -30616,9 +30618,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kalphite_Soldier_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kalphite_Soldier_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kalphite_Soldier_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -30627,6 +30627,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kalphite_Soldier_Form, 1),
 		.footprint = gMonFootprint_Kalphite_Soldier_Form,
 		LEARNSETS(Kalphite_Soldier_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_KALPHITE_SPIRIT_FORM},
 			{EVO_LEVEL, 41, SPECIES_KALPHITE_GUARDIAN_FORM}
@@ -30669,9 +30671,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kalphite_Spirit_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kalphite_Spirit_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kalphite_Spirit_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -30680,6 +30680,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kalphite_Spirit_Form, 0),
 		.footprint = gMonFootprint_Kalphite_Spirit_Form,
 		LEARNSETS(Kalphite_Spirit_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KALPHITE_GUARDIAN_FORM] =
@@ -30718,9 +30720,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kalphite_Guardian_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kalphite_Guardian_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kalphite_Guardian_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -30729,6 +30729,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kalphite_Guardian_Form, 1),
 		.footprint = gMonFootprint_Kalphite_Guardian_Form,
 		LEARNSETS(Kalphite_Guardian_Form),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_KALPHITE_QUEEN_FORM}
 		),
@@ -30771,9 +30773,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kalphite_Queen_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kalphite_Queen_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kalphite_Queen_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -30782,6 +30782,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kalphite_Queen_Form, 1),
 		.footprint = gMonFootprint_Kalphite_Queen_Form,
 		LEARNSETS(Kalphite_Queen_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.formSpeciesIdTable = sKalphiteQueenFormSpeciesIdTable,
 		.formChangeTable = sKalphiteQueenFormChangeTable,
 	},
@@ -30822,9 +30824,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kalphite_Queen_Mega_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kalphite_Queen_Mega_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kalphite_Queen_Mega_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -30833,6 +30833,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kalphite_Queen_Mega_Form, 0),
 		.footprint = gMonFootprint_Kalphite_Queen_Mega_Form,
 		LEARNSETS(Kalphite_Queen_Mega_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 4,
 		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sKalphiteQueenFormSpeciesIdTable,
 		.formChangeTable = sKalphiteQueenFormChangeTable,
@@ -30874,9 +30876,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kalphite_Paragon_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kalphite_Paragon_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kalphite_Paragon_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -30885,6 +30885,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kalphite_Paragon_Form, 0),
 		.footprint = gMonFootprint_Kalphite_Paragon_Form,
 		LEARNSETS(Kalphite_Paragon_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_SOUL_RUNE, SPECIES_KALPHITE_CORRUPTED_FORM},
 			{EVO_LEVEL, 41, SPECIES_KALPHITE_MARAUDER_FORM}
@@ -30927,9 +30929,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kalphite_Corrupted_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kalphite_Corrupted_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kalphite_Corrupted_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -30938,6 +30938,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kalphite_Corrupted_Form, 0),
 		.footprint = gMonFootprint_Kalphite_Corrupted_Form,
 		LEARNSETS(Kalphite_Corrupted_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KALPHITE_MARAUDER_FORM] =
@@ -30976,9 +30978,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kalphite_Marauder_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kalphite_Marauder_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kalphite_Marauder_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -30987,6 +30987,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kalphite_Marauder_Form, 0),
 		.footprint = gMonFootprint_Kalphite_Marauder_Form,
 		LEARNSETS(Kalphite_Marauder_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_KALPHITE_KING_FORM}
 		),
@@ -31028,9 +31030,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kalphite_King_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kalphite_King_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kalphite_King_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -31039,6 +31039,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kalphite_King_Form, 0),
 		.footprint = gMonFootprint_Kalphite_King_Form,
 		LEARNSETS(Kalphite_King_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KALPHITE_DUNG_FORM] =
@@ -31077,9 +31079,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kalphite_Dung_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kalphite_Dung_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kalphite_Dung_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -31088,6 +31088,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kalphite_Dung_Form, 0),
 		.footprint = gMonFootprint_Kalphite_Dung_Form,
 		LEARNSETS(Kalphite_Dung_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_KALPHITE_REANIMATED_FORM}
 		),
@@ -31128,9 +31130,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kalphite_Reanimated_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kalphite_Reanimated_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kalphite_Reanimated_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -31139,6 +31139,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kalphite_Reanimated_Form, 0),
 		.footprint = gMonFootprint_Kalphite_Reanimated_Form,
 		LEARNSETS(Kalphite_Reanimated_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ABYSSAL_DEMON_REANIMATED_FORM] =
@@ -31178,9 +31180,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Abyssal_Demon_Reanimated_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Abyssal_Demon_Reanimated_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Abyssal_Demon_Reanimated_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -31189,6 +31189,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Abyssal_Demon_Reanimated_Form, 0),
 		.footprint = gMonFootprint_Abyssal_Demon_Reanimated_Form,
 		LEARNSETS(Abyssal_Demon_Reanimated_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BAT_GAUNTLET_CORRUPTED_FORM] =
@@ -31227,9 +31229,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bat_Gauntlet_Corrupted_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bat_Gauntlet_Corrupted_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bat_Gauntlet_Corrupted_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -31238,6 +31238,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bat_Gauntlet_Corrupted_Form, 0),
 		.footprint = gMonFootprint_Bat_Gauntlet_Corrupted_Form,
 		LEARNSETS(Bat_Gauntlet_Corrupted_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_BAT_GAUNTLET_CRYSTALLINE_FORM] =
@@ -31275,9 +31277,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bat_Gauntlet_Crystalline_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bat_Gauntlet_Crystalline_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bat_Gauntlet_Crystalline_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -31286,6 +31286,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bat_Gauntlet_Crystalline_Form, 0),
 		.footprint = gMonFootprint_Bat_Gauntlet_Crystalline_Form,
 		LEARNSETS(Bat_Gauntlet_Crystalline_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_BLOODVELD_REANIMATED_FORM] =
@@ -31324,9 +31326,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bloodveld_Reanimated_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bloodveld_Reanimated_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bloodveld_Reanimated_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -31335,6 +31335,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bloodveld_Reanimated_Form, 0),
 		.footprint = gMonFootprint_Bloodveld_Reanimated_Form,
 		LEARNSETS(Bloodveld_Reanimated_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DARK_BEAST_GAUNTLET_CORRUPTED_FORM] =
@@ -31375,9 +31377,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dark_Beast_Gauntlet_Corrupted_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dark_Beast_Gauntlet_Corrupted_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dark_Beast_Gauntlet_Corrupted_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -31386,6 +31386,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dark_Beast_Gauntlet_Corrupted_Form, 0),
 		.footprint = gMonFootprint_Dark_Beast_Gauntlet_Corrupted_Form,
 		LEARNSETS(Dark_Beast_Gauntlet_Corrupted_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DARK_BEAST_GAUNTLET_CRYSTALLINE_FORM] =
@@ -31426,9 +31428,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dark_Beast_Gauntlet_Crystalline_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dark_Beast_Gauntlet_Crystalline_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dark_Beast_Gauntlet_Crystalline_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -31437,6 +31437,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dark_Beast_Gauntlet_Crystalline_Form, 0),
 		.footprint = gMonFootprint_Dark_Beast_Gauntlet_Crystalline_Form,
 		LEARNSETS(Dark_Beast_Gauntlet_Crystalline_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DARK_BEAST_PUP_FORM] =
@@ -31475,9 +31477,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dark_Beast_Pup_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dark_Beast_Pup_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dark_Beast_Pup_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -31486,6 +31486,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dark_Beast_Pup_Form, 0),
 		.footprint = gMonFootprint_Dark_Beast_Pup_Form,
 		LEARNSETS(Dark_Beast_Pup_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 40, SPECIES_DARK_BEAST_NORMAL_FORM}
 		),
@@ -31529,9 +31531,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dark_Beast_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dark_Beast_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dark_Beast_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -31540,6 +31540,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dark_Beast_Normal_Form, 0),
 		.footprint = gMonFootprint_Dark_Beast_Normal_Form,
 		LEARNSETS(Dark_Beast_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_BLOOD_RUNE, SPECIES_DARK_BEAST_SOTETSEG_FORM},
 			{EVO_ITEM, ITEM_CHAOS_RUNE, SPECIES_DARK_BEAST_GAUNTLET_CORRUPTED_FORM},
@@ -31584,9 +31586,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dark_Beast_Sotetseg_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dark_Beast_Sotetseg_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dark_Beast_Sotetseg_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -31595,6 +31595,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dark_Beast_Sotetseg_Form, 0),
 		.footprint = gMonFootprint_Dark_Beast_Sotetseg_Form,
 		LEARNSETS(Dark_Beast_Sotetseg_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_EXPERIMENT_4_FORM] =
@@ -31633,9 +31635,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Experiment_4_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Experiment_4_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Experiment_4_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -31644,6 +31644,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Experiment_4_Form, 0),
 		.footprint = gMonFootprint_Experiment_4_Form,
 		LEARNSETS(Experiment_4_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_EXPERIMENT_5_FORM] =
@@ -31683,9 +31685,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Experiment_5_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Experiment_5_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Experiment_5_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -31694,6 +31694,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Experiment_5_Form, 0),
 		.footprint = gMonFootprint_Experiment_5_Form,
 		LEARNSETS(Experiment_5_Form),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GANODERMIC_BEAST] =
@@ -31733,9 +31735,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ganodermic_Beast, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ganodermic_Beast,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ganodermic_Beast, 64, 64),
 		.backPicYOffset = 0,
@@ -31744,6 +31744,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ganodermic_Beast, 0),
 		.footprint = gMonFootprint_Ganodermic_Beast,
 		LEARNSETS(Ganodermic_Beast),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GRIFOLAPINE] =
@@ -31782,9 +31784,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Grifolapine, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Grifolapine,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Grifolapine, 64, 64),
 		.backPicYOffset = 0,
@@ -31793,6 +31793,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Grifolapine, 0),
 		.footprint = gMonFootprint_Grifolapine,
 		LEARNSETS(Grifolapine),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 50, SPECIES_GANODERMIC_BEAST}
 		),
@@ -31834,9 +31836,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Grifolaroo, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Grifolaroo,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Grifolaroo, 64, 64),
 		.backPicYOffset = 0,
@@ -31845,6 +31845,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Grifolaroo, 0),
 		.footprint = gMonFootprint_Grifolaroo,
 		LEARNSETS(Grifolaroo),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 40, SPECIES_GRIFOLAPINE}
 		),
@@ -31886,9 +31888,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sporaxe, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sporaxe,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sporaxe, 64, 64),
 		.backPicYOffset = 0,
@@ -31897,6 +31897,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sporaxe, 0),
 		.footprint = gMonFootprint_Sporaxe,
 		LEARNSETS(Sporaxe),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_HEADLESS_BEAST] =
@@ -31935,9 +31937,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Headless_Beast, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Headless_Beast,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Headless_Beast, 64, 64),
 		.backPicYOffset = 0,
@@ -31946,6 +31946,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Headless_Beast, 0),
 		.footprint = gMonFootprint_Headless_Beast,
 		LEARNSETS(Headless_Beast),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BEHEMOTH_NORMAL_FORM] =
@@ -31983,9 +31985,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Behemoth_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Behemoth_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Behemoth_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -31994,6 +31994,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Behemoth_Normal_Form, 0),
 		.footprint = gMonFootprint_Behemoth_Normal_Form,
 		LEARNSETS(Behemoth_Normal_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 30, SPECIES_BEHEMOTH_ADOLSCENT_FORM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_YAK_SNACK_FORM, SPECIES_BEHEMOTH_GLUTTONOUS_FORM}
@@ -32035,9 +32037,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Behemoth_Adolscent_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Behemoth_Adolscent_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Behemoth_Adolscent_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -32046,6 +32046,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Behemoth_Adolscent_Form, 0),
 		.footprint = gMonFootprint_Behemoth_Adolscent_Form,
 		LEARNSETS(Behemoth_Adolscent_Form),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 45, SPECIES_SIEGE_BEAST},
 			{EVO_ITEM, ITEM_EARTH_RUNE, SPECIES_BULWARK_BEAST},
@@ -32091,9 +32093,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Siege_Beast, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Siege_Beast,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Siege_Beast, 64, 64),
 		.backPicYOffset = 0,
@@ -32102,6 +32102,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Siege_Beast, 0),
 		.footprint = gMonFootprint_Siege_Beast,
 		LEARNSETS(Siege_Beast),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BULWARK_BEAST] =
@@ -32139,9 +32141,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bulwark_Beast, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bulwark_Beast,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bulwark_Beast, 64, 64),
 		.backPicYOffset = 0,
@@ -32150,6 +32150,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bulwark_Beast, 0),
 		.footprint = gMonFootprint_Bulwark_Beast,
 		LEARNSETS(Bulwark_Beast),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BEHEMOTH_GLUTTONOUS_FORM] =
@@ -32187,9 +32189,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Behemoth_Gluttonous_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Behemoth_Gluttonous_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Behemoth_Gluttonous_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -32198,6 +32198,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Behemoth_Gluttonous_Form, 0),
 		.footprint = gMonFootprint_Behemoth_Gluttonous_Form,
 		LEARNSETS(Behemoth_Gluttonous_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BEHEMOTH_RUNEBOUND_FORM] =
@@ -32235,9 +32237,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Behemoth_Runebound_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Behemoth_Runebound_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Behemoth_Runebound_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -32246,6 +32246,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Behemoth_Runebound_Form, 0),
 		.footprint = gMonFootprint_Behemoth_Runebound_Form,
 		LEARNSETS(Behemoth_Runebound_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_STOMP] =
@@ -32283,9 +32285,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Stomp, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Stomp,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Stomp, 64, 64),
 		.backPicYOffset = 0,
@@ -32294,6 +32294,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Stomp, 0),
 		.footprint = gMonFootprint_Stomp,
 		LEARNSETS(Stomp),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 5,
 	},
 
 [SPECIES_HOPE_DEVOURER] =
@@ -32331,9 +32333,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Hope_Devourer, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Hope_Devourer,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Hope_Devourer, 64, 64),
 		.backPicYOffset = 0,
@@ -32342,6 +32342,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Hope_Devourer, 0),
 		.footprint = gMonFootprint_Hope_Devourer,
 		LEARNSETS(Hope_Devourer),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KARAMTHULU_OVERLORD] =
@@ -32381,9 +32383,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Karamthulu_Overlord, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Karamthulu_Overlord,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Karamthulu_Overlord, 64, 64),
 		.backPicYOffset = 0,
@@ -32392,6 +32392,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Karamthulu_Overlord, 0),
 		.footprint = gMonFootprint_Karamthulu_Overlord,
 		LEARNSETS(Karamthulu_Overlord),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_LIGHT_CREATURE] =
@@ -32429,9 +32431,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Light_Creature, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Light_Creature,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Light_Creature, 64, 64),
 		.backPicYOffset = 0,
@@ -32440,6 +32440,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Light_Creature, 0),
 		.footprint = gMonFootprint_Light_Creature,
 		LEARNSETS(Light_Creature),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 30, SPECIES_KILLERWATT},
 			{EVO_ITEM, ITEM_TEAR_OF_GUTHIX, SPECIES_BALANCEELE}
@@ -32482,9 +32484,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Minotaur_Reanimated_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Minotaur_Reanimated_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Minotaur_Reanimated_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -32493,6 +32493,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Minotaur_Reanimated_Form, 0),
 		.footprint = gMonFootprint_Minotaur_Reanimated_Form,
 		LEARNSETS(Minotaur_Reanimated_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_MONKEY_REANIMATED_FORM] =
@@ -32531,9 +32533,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Monkey_Reanimated_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Monkey_Reanimated_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Monkey_Reanimated_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -32542,6 +32542,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Monkey_Reanimated_Form, 0),
 		.footprint = gMonFootprint_Monkey_Reanimated_Form,
 		LEARNSETS(Monkey_Reanimated_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_RAT_GAUNTLET_CORRUPTED_FORM] =
@@ -32580,9 +32582,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rat_Gauntlet_Corrupted_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rat_Gauntlet_Corrupted_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rat_Gauntlet_Corrupted_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -32591,6 +32591,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rat_Gauntlet_Corrupted_Form, 0),
 		.footprint = gMonFootprint_Rat_Gauntlet_Corrupted_Form,
 		LEARNSETS(Rat_Gauntlet_Corrupted_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_RAT_GAUNTLET_CRYSTALLINE_FORM] =
@@ -32630,9 +32632,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rat_Gauntlet_Crystalline_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rat_Gauntlet_Crystalline_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rat_Gauntlet_Crystalline_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -32641,6 +32641,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rat_Gauntlet_Crystalline_Form, 0),
 		.footprint = gMonFootprint_Rat_Gauntlet_Crystalline_Form,
 		LEARNSETS(Rat_Gauntlet_Crystalline_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_RAT_FUNGAL_FORM] =
@@ -32680,9 +32682,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rat_Fungal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rat_Fungal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rat_Fungal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -32691,6 +32691,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rat_Fungal_Form, 0),
 		.footprint = gMonFootprint_Rat_Fungal_Form,
 		LEARNSETS(Rat_Fungal_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPARKY] =
@@ -32729,9 +32731,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sparky, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sparky,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sparky, 64, 64),
 		.backPicYOffset = 0,
@@ -32740,6 +32740,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sparky, 0),
 		.footprint = gMonFootprint_Sparky,
 		LEARNSETS(Sparky),
+		.frontPicYOffset = 10,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPIDER_CORPSE_FORM] =
@@ -32778,9 +32780,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spider_Corpse_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spider_Corpse_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spider_Corpse_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -32789,6 +32789,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spider_Corpse_Form, 0),
 		.footprint = gMonFootprint_Spider_Corpse_Form,
 		LEARNSETS(Spider_Corpse_Form),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPIDER_FEVER_FORM] =
@@ -32827,9 +32829,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spider_Fever_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spider_Fever_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spider_Fever_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -32838,6 +32838,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spider_Fever_Form, 0),
 		.footprint = gMonFootprint_Spider_Fever_Form,
 		LEARNSETS(Spider_Fever_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 28, SPECIES_SPIDER_SHADOW_FORM},
 			{EVO_MOVE, MOVE_FIRE_FANG, SPECIES_SPIDER_LAVA_FORM},
@@ -32882,9 +32884,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spider_Lava_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spider_Lava_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spider_Lava_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -32893,6 +32893,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spider_Lava_Form, 0),
 		.footprint = gMonFootprint_Spider_Lava_Form,
 		LEARNSETS(Spider_Lava_Form),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPIDER_SHADOW_FORM] =
@@ -32931,9 +32933,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spider_Shadow_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spider_Shadow_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spider_Shadow_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -32942,6 +32942,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spider_Shadow_Form, 0),
 		.footprint = gMonFootprint_Spider_Shadow_Form,
 		LEARNSETS(Spider_Shadow_Form),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_STALKER] =
@@ -32979,9 +32981,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Stalker, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Stalker,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Stalker, 64, 64),
 		.backPicYOffset = 0,
@@ -32990,6 +32990,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Stalker, 0),
 		.footprint = gMonFootprint_Stalker,
 		LEARNSETS(Stalker),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 38, SPECIES_SOULSEEKER},
 			{EVO_LEVEL_NIGHT, 38, SPECIES_STALKER_SENTINEL_FORM}
@@ -33033,9 +33035,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Soulseeker, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Soulseeker,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Soulseeker, 64, 64),
 		.backPicYOffset = 0,
@@ -33044,6 +33044,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Soulseeker, 0),
 		.footprint = gMonFootprint_Soulseeker,
 		LEARNSETS(Soulseeker),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_AIR_RUNE, SPECIES_PLANE_FREEZER},
 			{EVO_LEVEL, 46, SPECIES_WORLD_GORGER},
@@ -33087,9 +33089,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Stalker_Sentinel_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Stalker_Sentinel_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Stalker_Sentinel_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -33098,6 +33098,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Stalker_Sentinel_Form, 0),
 		.footprint = gMonFootprint_Stalker_Sentinel_Form,
 		LEARNSETS(Stalker_Sentinel_Form),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 46, SPECIES_NIGHT_GAZER},
 			{EVO_ITEM, ITEM_BODY_RUNE, SPECIES_SHADOW_FORGER},
@@ -33143,9 +33145,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Night_Gazer, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Night_Gazer,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Night_Gazer, 64, 64),
 		.backPicYOffset = 0,
@@ -33154,6 +33154,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Night_Gazer, 0),
 		.footprint = gMonFootprint_Night_Gazer,
 		LEARNSETS(Night_Gazer),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PLANE_FREEZER] =
@@ -33193,9 +33195,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Plane_Freezer, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Plane_Freezer,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Plane_Freezer, 64, 64),
 		.backPicYOffset = 0,
@@ -33204,6 +33204,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Plane_Freezer, 0),
 		.footprint = gMonFootprint_Plane_Freezer,
 		LEARNSETS(Plane_Freezer),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_WORLD_GORGER] =
@@ -33242,9 +33244,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(World_Gorger, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_World_Gorger,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(World_Gorger, 64, 64),
 		.backPicYOffset = 0,
@@ -33253,6 +33253,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(World_Gorger, 0),
 		.footprint = gMonFootprint_World_Gorger,
 		LEARNSETS(World_Gorger),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 7,
 	},
 
 [SPECIES_FLESH_SPOILER_COVERED_FORM] =
@@ -33292,9 +33294,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Flesh_Spoiler_Covered_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Flesh_Spoiler_Covered_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Flesh_Spoiler_Covered_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -33303,6 +33303,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Flesh_Spoiler_Covered_Form, 0),
 		.footprint = gMonFootprint_Flesh_Spoiler_Covered_Form,
 		LEARNSETS(Flesh_Spoiler_Covered_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 4,
 	},
 
 [SPECIES_SHADOW_FORGER] =
@@ -33342,9 +33344,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Shadow_Forger, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Shadow_Forger,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Shadow_Forger, 64, 64),
 		.backPicYOffset = 0,
@@ -33353,6 +33353,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Shadow_Forger, 0),
 		.footprint = gMonFootprint_Shadow_Forger,
 		LEARNSETS(Shadow_Forger),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 7,
 	},
 
 [SPECIES_VEIL_RIPPER] =
@@ -33392,9 +33394,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Veil_Ripper, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Veil_Ripper,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Veil_Ripper, 64, 64),
 		.backPicYOffset = 0,
@@ -33403,6 +33403,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Veil_Ripper, 0),
 		.footprint = gMonFootprint_Veil_Ripper,
 		LEARNSETS(Veil_Ripper),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 5,
 	},
 
 [SPECIES_UNICORN_GAUNTLET_CORRUPTED_FORM] =
@@ -33442,9 +33444,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Unicorn_Gauntlet_Corrupted_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Unicorn_Gauntlet_Corrupted_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Unicorn_Gauntlet_Corrupted_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -33453,6 +33453,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Unicorn_Gauntlet_Corrupted_Form, 0),
 		.footprint = gMonFootprint_Unicorn_Gauntlet_Corrupted_Form,
 		LEARNSETS(Unicorn_Gauntlet_Corrupted_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_UNICORN_GAUNTLET_CRYSTALLINE_FORM] =
@@ -33492,9 +33494,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Unicorn_Gauntlet_Crystalline_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Unicorn_Gauntlet_Crystalline_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Unicorn_Gauntlet_Crystalline_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -33503,6 +33503,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Unicorn_Gauntlet_Crystalline_Form, 0),
 		.footprint = gMonFootprint_Unicorn_Gauntlet_Crystalline_Form,
 		LEARNSETS(Unicorn_Gauntlet_Crystalline_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_WOLF_CAVE_FORM] =
@@ -33540,9 +33542,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wolf_Cave_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wolf_Cave_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wolf_Cave_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -33551,6 +33551,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolf_Cave_Form, 0),
 		.footprint = gMonFootprint_Wolf_Cave_Form,
 		LEARNSETS(Wolf_Cave_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_WOLF_DRAGON_FORM] =
@@ -33589,9 +33591,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wolf_Dragon_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wolf_Dragon_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wolf_Dragon_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -33600,6 +33600,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolf_Dragon_Form, 0),
 		.footprint = gMonFootprint_Wolf_Dragon_Form,
 		LEARNSETS(Wolf_Dragon_Form),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SHADOW_HOUND] =
@@ -33639,9 +33641,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Shadow_Hound, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Shadow_Hound,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Shadow_Hound, 64, 64),
 		.backPicYOffset = 0,
@@ -33650,6 +33650,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Shadow_Hound, 0),
 		.footprint = gMonFootprint_Shadow_Hound,
 		LEARNSETS(Shadow_Hound),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BORDER_COLLIE] =
@@ -33689,9 +33691,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Border_Collie, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Border_Collie,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Border_Collie, 64, 64),
 		.backPicYOffset = 0,
@@ -33700,6 +33700,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Border_Collie, 0),
 		.footprint = gMonFootprint_Border_Collie,
 		LEARNSETS(Border_Collie),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BLOODHOUND] =
@@ -33738,9 +33740,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bloodhound, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bloodhound,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bloodhound, 64, 64),
 		.backPicYOffset = 0,
@@ -33749,6 +33749,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bloodhound, 0),
 		.footprint = gMonFootprint_Bloodhound,
 		LEARNSETS(Bloodhound),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GUARD_DOG] =
@@ -33788,9 +33790,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Guard_Dog, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Guard_Dog,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Guard_Dog, 64, 64),
 		.backPicYOffset = 0,
@@ -33799,6 +33799,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Guard_Dog, 0),
 		.footprint = gMonFootprint_Guard_Dog,
 		LEARNSETS(Guard_Dog),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_LYCURGUS] =
@@ -33839,9 +33841,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Lycurgus, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Lycurgus,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Lycurgus, 64, 64),
 		.backPicYOffset = 0,
@@ -33850,6 +33850,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Lycurgus, 0),
 		.footprint = gMonFootprint_Lycurgus,
 		LEARNSETS(Lycurgus),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_YAK_MOORRISSEY_FORM] =
@@ -33887,9 +33889,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Yak_Moorrissey_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Yak_Moorrissey_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Yak_Moorrissey_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -33898,6 +33898,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Yak_Moorrissey_Form, 0),
 		.footprint = gMonFootprint_Yak_Moorrissey_Form,
 		LEARNSETS(Yak_Moorrissey_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_YAK_ROBIN_FORM] =
@@ -33935,9 +33937,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Yak_Robin_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Yak_Robin_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Yak_Robin_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -33946,6 +33946,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Yak_Robin_Form, 0),
 		.footprint = gMonFootprint_Yak_Robin_Form,
 		LEARNSETS(Yak_Robin_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_YAK_YAKTRICK_FORM] =
@@ -33984,9 +33986,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Yak_Yaktrick_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Yak_Yaktrick_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Yak_Yaktrick_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -33995,6 +33995,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Yak_Yaktrick_Form, 0),
 		.footprint = gMonFootprint_Yak_Yaktrick_Form,
 		LEARNSETS(Yak_Yaktrick_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CABBAGE_SISTER_FORM] =
@@ -34033,9 +34035,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cabbage_Sister_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cabbage_Sister_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cabbage_Sister_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -34044,6 +34044,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cabbage_Sister_Form, 0),
 		.footprint = gMonFootprint_Cabbage_Sister_Form,
 		LEARNSETS(Cabbage_Sister_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CABBAGE_CRISPY_FORM] =
@@ -34080,9 +34082,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cabbage_Crispy_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cabbage_Crispy_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cabbage_Crispy_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -34091,6 +34091,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cabbage_Crispy_Form, 0),
 		.footprint = gMonFootprint_Cabbage_Crispy_Form,
 		LEARNSETS(Cabbage_Crispy_Form),
+		.frontPicYOffset = 12,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_STRYKEWYRM_MINI_FORM] =
@@ -34129,9 +34131,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Strykewyrm_Mini_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Strykewyrm_Mini_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Strykewyrm_Mini_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -34140,6 +34140,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Strykewyrm_Mini_Form, 0),
 		.footprint = gMonFootprint_Strykewyrm_Mini_Form,
 		LEARNSETS(Strykewyrm_Mini_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 37, SPECIES_STRYKEWYRM_FREEZY_FORM},
 			{EVO_ITEM, ITEM_NATURE_RUNE, SPECIES_STRYKEWYRM_LEAFY_FORM},
@@ -34183,9 +34185,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crocodile_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crocodile_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crocodile_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -34194,6 +34194,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crocodile_Normal_Form, 0),
 		.footprint = gMonFootprint_Crocodile_Normal_Form,
 		LEARNSETS(Crocodile_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_CROCODILE_MUTADILE_FORM},
 			{EVO_ITEM, ITEM_SOUL_RUNE, SPECIES_CROCODILE_ANKH_FORM},
@@ -34239,9 +34241,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crocodile_Mutadile_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crocodile_Mutadile_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crocodile_Mutadile_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -34250,6 +34250,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crocodile_Mutadile_Form, 0),
 		.footprint = gMonFootprint_Crocodile_Mutadile_Form,
 		LEARNSETS(Crocodile_Mutadile_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CROCODILE_ANKH_FORM] =
@@ -34288,9 +34290,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crocodile_Ankh_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crocodile_Ankh_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crocodile_Ankh_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -34299,6 +34299,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crocodile_Ankh_Form, 0),
 		.footprint = gMonFootprint_Crocodile_Ankh_Form,
 		LEARNSETS(Crocodile_Ankh_Form),
+		.frontPicYOffset = 13,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CROCODILE_UKUNDUKA_FORM] =
@@ -34337,9 +34339,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crocodile_Ukunduka_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crocodile_Ukunduka_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crocodile_Ukunduka_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -34348,6 +34348,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crocodile_Ukunduka_Form, 0),
 		.footprint = gMonFootprint_Crocodile_Ukunduka_Form,
 		LEARNSETS(Crocodile_Ukunduka_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BLOODVELD_INSATIABLE_MUTATED_FORM] =
@@ -34388,9 +34390,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bloodveld_Insatiable_Mutated_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bloodveld_Insatiable_Mutated_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bloodveld_Insatiable_Mutated_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -34399,6 +34399,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bloodveld_Insatiable_Mutated_Form, 0),
 		.footprint = gMonFootprint_Bloodveld_Insatiable_Mutated_Form,
 		LEARNSETS(Bloodveld_Insatiable_Mutated_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BLOODVELD_ACIDIC_FORM] =
@@ -34437,9 +34439,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bloodveld_Acidic_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bloodveld_Acidic_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bloodveld_Acidic_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -34448,6 +34448,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bloodveld_Acidic_Form, 0),
 		.footprint = gMonFootprint_Bloodveld_Acidic_Form,
 		LEARNSETS(Bloodveld_Acidic_Form),
+		.frontPicYOffset = 13,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BLOODVELD_VAMPIRIC_FORM] =
@@ -34487,9 +34489,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bloodveld_Vampiric_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bloodveld_Vampiric_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bloodveld_Vampiric_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -34498,6 +34498,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bloodveld_Vampiric_Form, 0),
 		.footprint = gMonFootprint_Bloodveld_Vampiric_Form,
 		LEARNSETS(Bloodveld_Vampiric_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BLOODVELD_RS3_FORM] =
@@ -34534,9 +34536,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bloodveld_RS3_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bloodveld_RS3_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bloodveld_RS3_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -34545,6 +34545,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bloodveld_RS3_Form, 0),
 		.footprint = gMonFootprint_Bloodveld_RS3_Form,
 		LEARNSETS(Bloodveld_RS3_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BEAVER] =
@@ -34582,9 +34584,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Beaver, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Beaver,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Beaver, 64, 64),
 		.backPicYOffset = 0,
@@ -34593,6 +34593,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Beaver, 0),
 		.footprint = gMonFootprint_Beaver,
 		LEARNSETS(Beaver),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 30, SPECIES_GIANT_BEAVER}
 		),
@@ -34634,9 +34636,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Giant_Beaver, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Giant_Beaver,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Giant_Beaver, 64, 64),
 		.backPicYOffset = 0,
@@ -34645,6 +34645,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Giant_Beaver, 0),
 		.footprint = gMonFootprint_Giant_Beaver,
 		LEARNSETS(Giant_Beaver),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_RACOON] =
@@ -34682,9 +34684,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Racoon, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Racoon,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Racoon, 64, 64),
 		.backPicYOffset = 0,
@@ -34693,6 +34693,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Racoon, 0),
 		.footprint = gMonFootprint_Racoon,
 		LEARNSETS(Racoon),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 30, SPECIES_RALPH},
 			{EVO_LEVEL_NIGHT, 30, SPECIES_ROCKY},
@@ -34736,9 +34738,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ralph, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ralph,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ralph, 64, 64),
 		.backPicYOffset = 0,
@@ -34747,6 +34747,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ralph, 0),
 		.footprint = gMonFootprint_Ralph,
 		LEARNSETS(Ralph),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ROCKY] =
@@ -34785,9 +34787,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rocky, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rocky,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rocky, 64, 64),
 		.backPicYOffset = 0,
@@ -34796,6 +34796,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rocky, 0),
 		.footprint = gMonFootprint_Rocky,
 		LEARNSETS(Rocky),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_HONEY_BADGER] =
@@ -34834,9 +34836,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Honey_Badger, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Honey_Badger,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Honey_Badger, 64, 64),
 		.backPicYOffset = 0,
@@ -34845,6 +34845,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Honey_Badger, 0),
 		.footprint = gMonFootprint_Honey_Badger,
 		LEARNSETS(Honey_Badger),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SQUIRREL_GIANT_FORM] =
@@ -34883,9 +34885,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Squirrel_Giant_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Squirrel_Giant_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Squirrel_Giant_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -34894,6 +34894,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Squirrel_Giant_Form, 0),
 		.footprint = gMonFootprint_Squirrel_Giant_Form,
 		LEARNSETS(Squirrel_Giant_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SQUIRREL_AUSTRALIAN_FORM] =
@@ -34932,9 +34934,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Squirrel_Australian_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Squirrel_Australian_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Squirrel_Australian_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -34943,6 +34943,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Squirrel_Australian_Form, 0),
 		.footprint = gMonFootprint_Squirrel_Australian_Form,
 		LEARNSETS(Squirrel_Australian_Form),
+		.frontPicYOffset = 8,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_JADE_VINE] =
@@ -34982,9 +34984,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jade_Vine, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jade_Vine,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jade_Vine, 64, 64),
 		.backPicYOffset = 0,
@@ -34993,6 +34993,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jade_Vine, 0),
 		.footprint = gMonFootprint_Jade_Vine,
 		LEARNSETS(Jade_Vine),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KLIK] =
@@ -35032,9 +35034,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Klik, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Klik,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Klik, 64, 64),
 		.backPicYOffset = 0,
@@ -35043,6 +35043,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Klik, 0),
 		.footprint = gMonFootprint_Klik,
 		LEARNSETS(Klik),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_JACKALOPE] =
@@ -35080,9 +35082,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jackalope, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jackalope,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jackalope, 64, 64),
 		.backPicYOffset = 0,
@@ -35091,6 +35091,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jackalope, 0),
 		.footprint = gMonFootprint_Jackalope,
 		LEARNSETS(Jackalope),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_IMP] =
@@ -35129,9 +35131,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Imp, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Imp,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Imp, 64, 64),
 		.backPicYOffset = 0,
@@ -35140,6 +35140,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Imp, 0),
 		.footprint = gMonFootprint_Imp,
 		LEARNSETS(Imp),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_RANDOM, 20, SPECIES_DEMON_LESSER_BLACK_FORM},
 			{EVO_LEVEL_RANDOM, 20, SPECIES_DEMON_LESSER_RS3_FORM},
@@ -35185,9 +35187,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Lesser_RS3_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Lesser_RS3_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Lesser_RS3_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -35196,6 +35196,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Lesser_RS3_Form, 0),
 		.footprint = gMonFootprint_Demon_Lesser_RS3_Form,
 		LEARNSETS(Demon_Lesser_RS3_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_GREATER_RS3_FORM] =
@@ -35234,9 +35236,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Greater_RS3_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Greater_RS3_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Greater_RS3_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -35245,6 +35245,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Greater_RS3_Form, 0),
 		.footprint = gMonFootprint_Demon_Greater_RS3_Form,
 		LEARNSETS(Demon_Greater_RS3_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_KALGERION_FORM] =
@@ -35283,9 +35285,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Kalgerion_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Kalgerion_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Kalgerion_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -35294,6 +35294,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Kalgerion_Form, 0),
 		.footprint = gMonFootprint_Demon_Kalgerion_Form,
 		LEARNSETS(Demon_Kalgerion_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_THUNDEREOUS_FORM] =
@@ -35332,9 +35334,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Thundereous_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Thundereous_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Thundereous_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -35343,6 +35343,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Thundereous_Form, 0),
 		.footprint = gMonFootprint_Demon_Thundereous_Form,
 		LEARNSETS(Demon_Thundereous_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_RIPPER_FORM] =
@@ -35380,9 +35382,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Ripper_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Ripper_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Ripper_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -35391,6 +35391,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Ripper_Form, 0),
 		.footprint = gMonFootprint_Demon_Ripper_Form,
 		LEARNSETS(Demon_Ripper_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_LESSER_OSRS_FORM] =
@@ -35429,9 +35431,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Lesser_OSRS_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Lesser_OSRS_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Lesser_OSRS_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -35440,6 +35440,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Lesser_OSRS_Form, 2),
 		.footprint = gMonFootprint_Demon_Lesser_OSRS_Form,
 		LEARNSETS(Demon_Lesser_OSRS_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_GREATER_OSRS_FORM] =
@@ -35479,9 +35481,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Greater_OSRS_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Greater_OSRS_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Greater_OSRS_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -35490,6 +35490,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Greater_OSRS_Form, 0),
 		.footprint = gMonFootprint_Demon_Greater_OSRS_Form,
 		LEARNSETS(Demon_Greater_OSRS_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_TSTANON_FORM] =
@@ -35530,9 +35532,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Tstanon_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Tstanon_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Tstanon_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -35541,6 +35541,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Tstanon_Form, 0),
 		.footprint = gMonFootprint_Demon_Tstanon_Form,
 		LEARNSETS(Demon_Tstanon_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_TORMENTED_FORM] =
@@ -35579,9 +35581,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Tormented_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Tormented_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Tormented_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -35590,6 +35590,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Tormented_Form, 0),
 		.footprint = gMonFootprint_Demon_Tormented_Form,
 		LEARNSETS(Demon_Tormented_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DELRITH] =
@@ -35627,9 +35629,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Delrith, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Delrith,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Delrith, 64, 64),
 		.backPicYOffset = 0,
@@ -35638,6 +35638,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Delrith, 0),
 		.footprint = gMonFootprint_Delrith,
 		LEARNSETS(Delrith),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_LESSER_TONGUE_FORM] =
@@ -35676,9 +35678,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Lesser_Tongue_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Lesser_Tongue_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Lesser_Tongue_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -35687,6 +35687,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Lesser_Tongue_Form, 2),
 		.footprint = gMonFootprint_Demon_Lesser_Tongue_Form,
 		LEARNSETS(Demon_Lesser_Tongue_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_GREATER_TONGUE_FORM] =
@@ -35725,9 +35727,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Greater_Tongue_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Greater_Tongue_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Greater_Tongue_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -35736,6 +35736,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Greater_Tongue_Form, 0),
 		.footprint = gMonFootprint_Demon_Greater_Tongue_Form,
 		LEARNSETS(Demon_Greater_Tongue_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_ZAKLN_FORM] =
@@ -35775,9 +35777,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Zakln_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Zakln_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Zakln_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -35786,6 +35786,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Zakln_Form, 0),
 		.footprint = gMonFootprint_Demon_Zakln_Form,
 		LEARNSETS(Demon_Zakln_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_PUMMELER_FORM] =
@@ -35825,9 +35827,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Pummeler_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Pummeler_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Pummeler_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -35836,6 +35836,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Pummeler_Form, 0),
 		.footprint = gMonFootprint_Demon_Pummeler_Form,
 		LEARNSETS(Demon_Pummeler_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_CHOCOLATE_FORM] =
@@ -35874,9 +35876,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Chocolate_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Chocolate_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Chocolate_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -35885,6 +35885,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Chocolate_Form, 0),
 		.footprint = gMonFootprint_Demon_Chocolate_Form,
 		LEARNSETS(Demon_Chocolate_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_LESSER_BLACK_FORM] =
@@ -35923,9 +35925,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Lesser_Black_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Lesser_Black_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Lesser_Black_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -35934,6 +35934,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Lesser_Black_Form, 0),
 		.footprint = gMonFootprint_Demon_Lesser_Black_Form,
 		LEARNSETS(Demon_Lesser_Black_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_GREATER_BLACK_FORM] =
@@ -35971,9 +35973,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Greater_Black_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Greater_Black_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Greater_Black_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -35982,6 +35982,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Greater_Black_Form, 2),
 		.footprint = gMonFootprint_Demon_Greater_Black_Form,
 		LEARNSETS(Demon_Greater_Black_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_BALFRUG_FORM] =
@@ -36020,9 +36022,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Balfrug_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Balfrug_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Balfrug_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -36031,6 +36031,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Balfrug_Form, 0),
 		.footprint = gMonFootprint_Demon_Balfrug_Form,
 		LEARNSETS(Demon_Balfrug_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_JUNGLE_FORM] =
@@ -36068,9 +36070,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Jungle_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Jungle_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Jungle_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -36079,6 +36079,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Jungle_Form, 1),
 		.footprint = gMonFootprint_Demon_Jungle_Form,
 		LEARNSETS(Demon_Jungle_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_RIFTSPLITTER_FORM] =
@@ -36118,9 +36120,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Riftsplitter_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Riftsplitter_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Riftsplitter_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -36129,6 +36129,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Riftsplitter_Form, 0),
 		.footprint = gMonFootprint_Demon_Riftsplitter_Form,
 		LEARNSETS(Demon_Riftsplitter_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SNOW_IMP] =
@@ -36166,9 +36168,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Snow_Imp, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Snow_Imp,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Snow_Imp, 64, 64),
 		.backPicYOffset = 0,
@@ -36177,6 +36177,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Snow_Imp, 2),
 		.footprint = gMonFootprint_Snow_Imp,
 		LEARNSETS(Snow_Imp),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_ICE_OSRS_FORM] =
@@ -36215,9 +36217,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Ice_OSRS_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Ice_OSRS_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Ice_OSRS_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -36226,6 +36226,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Ice_OSRS_Form, 0),
 		.footprint = gMonFootprint_Demon_Ice_OSRS_Form,
 		LEARNSETS(Demon_Ice_OSRS_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_ICE_RS3_FORM] =
@@ -36263,9 +36265,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Ice_RS3_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Ice_RS3_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Ice_RS3_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -36274,6 +36274,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Ice_RS3_Form, 2),
 		.footprint = gMonFootprint_Demon_Ice_RS3_Form,
 		LEARNSETS(Demon_Ice_RS3_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_BLOODCHILLER_FORM] =
@@ -36313,9 +36315,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Bloodchiller_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Bloodchiller_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Bloodchiller_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -36324,6 +36324,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Bloodchiller_Form, 0),
 		.footprint = gMonFootprint_Demon_Bloodchiller_Form,
 		LEARNSETS(Demon_Bloodchiller_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DEMON_REANIMATED_FORM] =
@@ -36362,9 +36364,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Demon_Reanimated_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Demon_Reanimated_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Demon_Reanimated_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -36373,6 +36373,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Demon_Reanimated_Form, 0),
 		.footprint = gMonFootprint_Demon_Reanimated_Form,
 		LEARNSETS(Demon_Reanimated_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KRIL_TSUTSAROTH] =
@@ -36411,9 +36413,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kril_Tsutsaroth, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kril_Tsutsaroth,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kril_Tsutsaroth, 64, 64),
 		.backPicYOffset = 0,
@@ -36422,6 +36422,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kril_Tsutsaroth, 0),
 		.footprint = gMonFootprint_Kril_Tsutsaroth,
 		LEARNSETS(Kril_Tsutsaroth),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PYREFIEND] =
@@ -36459,9 +36461,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pyrefiend, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pyrefiend,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pyrefiend, 64, 64),
 		.backPicYOffset = 0,
@@ -36470,6 +36470,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pyrefiend, 0),
 		.footprint = gMonFootprint_Pyrefiend,
 		LEARNSETS(Pyrefiend),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 34, SPECIES_PYRELORD}
 		),
@@ -36510,9 +36512,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pyrelord, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pyrelord,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pyrelord, 64, 64),
 		.backPicYOffset = 0,
@@ -36521,6 +36521,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pyrelord, 0),
 		.footprint = gMonFootprint_Pyrelord,
 		LEARNSETS(Pyrelord),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_WATERFIEND] =
@@ -36559,9 +36561,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Waterfiend, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Waterfiend,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Waterfiend, 64, 64),
 		.backPicYOffset = 0,
@@ -36570,6 +36570,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Waterfiend, 2),
 		.footprint = gMonFootprint_Waterfiend,
 		LEARNSETS(Waterfiend),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 34, SPECIES_WATERLORD}
 		),
@@ -36610,9 +36612,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Waterlord, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Waterlord,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Waterlord, 64, 64),
 		.backPicYOffset = 0,
@@ -36621,6 +36621,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Waterlord, 2),
 		.footprint = gMonFootprint_Waterlord,
 		LEARNSETS(Waterlord),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ICEFIEND] =
@@ -36659,9 +36661,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Icefiend, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Icefiend,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Icefiend, 64, 64),
 		.backPicYOffset = 0,
@@ -36670,6 +36670,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Icefiend, 2),
 		.footprint = gMonFootprint_Icefiend,
 		LEARNSETS(Icefiend),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 34, SPECIES_ICELORD},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_PYRELORD, SPECIES_WATERFIEND},
@@ -36713,9 +36715,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Icelord, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Icelord,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Icelord, 64, 64),
 		.backPicYOffset = 0,
@@ -36724,6 +36724,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Icelord, 2),
 		.footprint = gMonFootprint_Icelord,
 		LEARNSETS(Icelord),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_PYRELORD, SPECIES_WATERLORD},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_PYREFIEND, SPECIES_WATERLORD}
@@ -36765,9 +36767,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Baby_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Baby_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Baby_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -36776,6 +36776,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Baby_Form, 2),
 		.footprint = gMonFootprint_Impling_Baby_Form,
 		LEARNSETS(Impling_Baby_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_RANDOM, 17, SPECIES_IMPLING_MAGPIE_FORM},
 			{EVO_LEVEL_RANDOM, 17, SPECIES_IMPLING_GOURMET_FORM},
@@ -36820,9 +36822,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Magpie_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Magpie_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Magpie_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -36831,6 +36831,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Magpie_Form, 2),
 		.footprint = gMonFootprint_Impling_Magpie_Form,
 		LEARNSETS(Impling_Magpie_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_NATURE_LOW_KEY, 35, SPECIES_IMPLING_KINGLY_FORM},
 			{EVO_LEVEL_NATURE_AMPED, 35, SPECIES_IMPLING_SNOW_FORM},
@@ -36876,9 +36878,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Dragon_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Dragon_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Dragon_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -36887,6 +36887,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Dragon_Form, 2),
 		.footprint = gMonFootprint_Impling_Dragon_Form,
 		LEARNSETS(Impling_Dragon_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_IMPLING_KINGLY_FORM] =
@@ -36924,9 +36926,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Kingly_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Kingly_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Kingly_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -36935,6 +36935,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Kingly_Form, 2),
 		.footprint = gMonFootprint_Impling_Kingly_Form,
 		LEARNSETS(Impling_Kingly_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_IMPLING_LUCKY_FORM] =
@@ -36972,9 +36974,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Lucky_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Lucky_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Lucky_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -36983,6 +36983,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Lucky_Form, 0),
 		.footprint = gMonFootprint_Impling_Lucky_Form,
 		LEARNSETS(Impling_Lucky_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_PENANCE_SPAWN] =
@@ -37021,9 +37023,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Penance_Spawn, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Penance_Spawn,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Penance_Spawn, 64, 64),
 		.backPicYOffset = 0,
@@ -37032,6 +37032,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penance_Spawn, 0),
 		.footprint = gMonFootprint_Penance_Spawn,
 		LEARNSETS(Penance_Spawn),
+		.frontPicYOffset = 9,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_ATK_EQ_SPATK, 30, SPECIES_PENANCE_HEALER},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_TOME_OF_RANGED, SPECIES_PENANCE_RANGER},
@@ -37076,9 +37078,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Penance_Healer, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Penance_Healer,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Penance_Healer, 64, 64),
 		.backPicYOffset = 0,
@@ -37087,6 +37087,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penance_Healer, 0),
 		.footprint = gMonFootprint_Penance_Healer,
 		LEARNSETS(Penance_Healer),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_PENANCE_QUEEN}
 		),
@@ -37128,9 +37130,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Penance_Ranger, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Penance_Ranger,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Penance_Ranger, 64, 64),
 		.backPicYOffset = 0,
@@ -37139,6 +37139,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penance_Ranger, 0),
 		.footprint = gMonFootprint_Penance_Ranger,
 		LEARNSETS(Penance_Ranger),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 5,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_PENANCE_KING}
 		),
@@ -37180,9 +37182,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Penance_Runner, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Penance_Runner,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Penance_Runner, 64, 64),
 		.backPicYOffset = 0,
@@ -37191,6 +37191,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penance_Runner, 0),
 		.footprint = gMonFootprint_Penance_Runner,
 		LEARNSETS(Penance_Runner),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PENANCE_FIGHTER] =
@@ -37230,9 +37232,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Penance_Fighter, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Penance_Fighter,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Penance_Fighter, 64, 64),
 		.backPicYOffset = 0,
@@ -37241,6 +37241,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penance_Fighter, 0),
 		.footprint = gMonFootprint_Penance_Fighter,
 		LEARNSETS(Penance_Fighter),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PENANCE_QUEEN] =
@@ -37280,9 +37282,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Penance_Queen, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Penance_Queen,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Penance_Queen, 64, 64),
 		.backPicYOffset = 0,
@@ -37291,6 +37291,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penance_Queen, 0),
 		.footprint = gMonFootprint_Penance_Queen,
 		LEARNSETS(Penance_Queen),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PENANCE_KING] =
@@ -37330,9 +37332,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Penance_King, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Penance_King,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Penance_King, 64, 64),
 		.backPicYOffset = 0,
@@ -37341,6 +37341,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penance_King, 0),
 		.footprint = gMonFootprint_Penance_King,
 		LEARNSETS(Penance_King),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_VOID_LEECH] =
@@ -37379,9 +37381,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Void_Leech, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Void_Leech,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Void_Leech, 64, 64),
 		.backPicYOffset = 0,
@@ -37390,6 +37390,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Void_Leech, 0),
 		.footprint = gMonFootprint_Void_Leech,
 		LEARNSETS(Void_Leech),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_PERSONALITY_ONE, 10, SPECIES_VOID_TORCHER},
 			{EVO_LEVEL_PERSONALITY_TWO, 10, SPECIES_VOID_SHIFTER},
@@ -37438,9 +37440,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Void_Torcher, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Void_Torcher,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Void_Torcher, 64, 64),
 		.backPicYOffset = 0,
@@ -37449,6 +37449,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Void_Torcher, 0),
 		.footprint = gMonFootprint_Void_Torcher,
 		LEARNSETS(Void_Torcher),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_VOID_SHIFTER] =
@@ -37487,9 +37489,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Void_Shifter, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Void_Shifter,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Void_Shifter, 64, 64),
 		.backPicYOffset = 0,
@@ -37498,6 +37498,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Void_Shifter, 0),
 		.footprint = gMonFootprint_Void_Shifter,
 		LEARNSETS(Void_Shifter),
+		.frontPicYOffset = 7,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_VOID_BRAWLER] =
@@ -37536,9 +37538,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Void_Brawler, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Void_Brawler,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Void_Brawler, 64, 64),
 		.backPicYOffset = 0,
@@ -37547,6 +37547,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Void_Brawler, 0),
 		.footprint = gMonFootprint_Void_Brawler,
 		LEARNSETS(Void_Brawler),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_VOID_DEFILER] =
@@ -37585,9 +37587,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Void_Defiler, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Void_Defiler,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Void_Defiler, 64, 64),
 		.backPicYOffset = 0,
@@ -37596,6 +37596,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Void_Defiler, 0),
 		.footprint = gMonFootprint_Void_Defiler,
 		LEARNSETS(Void_Defiler),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_VOID_SPLATTER] =
@@ -37634,9 +37636,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Void_Splatter, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Void_Splatter,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Void_Splatter, 64, 64),
 		.backPicYOffset = 0,
@@ -37645,6 +37645,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Void_Splatter, 0),
 		.footprint = gMonFootprint_Void_Splatter,
 		LEARNSETS(Void_Splatter),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_VOID_RAVAGER] =
@@ -37684,9 +37686,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Void_Ravager, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Void_Ravager,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Void_Ravager, 64, 64),
 		.backPicYOffset = 0,
@@ -37695,6 +37695,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Void_Ravager, 0),
 		.footprint = gMonFootprint_Void_Ravager,
 		LEARNSETS(Void_Ravager),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_VOID_SPINNER] =
@@ -37733,9 +37735,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Void_Spinner, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Void_Spinner,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Void_Spinner, 64, 64),
 		.backPicYOffset = 0,
@@ -37744,6 +37744,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Void_Spinner, 0),
 		.footprint = gMonFootprint_Void_Spinner,
 		LEARNSETS(Void_Spinner),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_VOID_DRONE] =
@@ -37781,9 +37783,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Void_Drone, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Void_Drone,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Void_Drone, 64, 64),
 		.backPicYOffset = 0,
@@ -37792,6 +37792,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Void_Drone, 0),
 		.footprint = gMonFootprint_Void_Drone,
 		LEARNSETS(Void_Drone),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 3,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_VOID_QUEEN}
 		),
@@ -37834,9 +37836,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Void_Queen, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Void_Queen,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Void_Queen, 64, 64),
 		.backPicYOffset = 0,
@@ -37845,6 +37845,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Void_Queen, 0),
 		.footprint = gMonFootprint_Void_Queen,
 		LEARNSETS(Void_Queen),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ANCHOVY] =
@@ -37883,9 +37885,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Anchovy, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Anchovy,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Anchovy, 64, 64),
 		.backPicYOffset = 0,
@@ -37894,6 +37894,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Anchovy, 0),
 		.footprint = gMonFootprint_Anchovy,
 		LEARNSETS(Anchovy),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_YAK_SNACK_FORM, SPECIES_ANCHOVY_PIZZA_FORM},
 			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_ANCHOVY_PIZZA_FORM}
@@ -37936,9 +37938,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Anchovy_Pizza_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Anchovy_Pizza_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Anchovy_Pizza_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -37947,6 +37947,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Anchovy_Pizza_Form, 0),
 		.footprint = gMonFootprint_Anchovy_Pizza_Form,
 		LEARNSETS(Anchovy_Pizza_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_RED_EYE] =
@@ -37985,9 +37987,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Red_Eye, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Red_Eye,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Red_Eye, 64, 64),
 		.backPicYOffset = 0,
@@ -37996,6 +37996,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Red_Eye, 0),
 		.footprint = gMonFootprint_Red_Eye,
 		LEARNSETS(Red_Eye),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 25, SPECIES_FLATFISH}
 		),
@@ -38037,9 +38039,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Flatfish, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Flatfish,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Flatfish, 64, 64),
 		.backPicYOffset = 0,
@@ -38048,6 +38048,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Flatfish, 0),
 		.footprint = gMonFootprint_Flatfish,
 		LEARNSETS(Flatfish),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 35, SPECIES_BOULDABASS}
 		),
@@ -38088,9 +38090,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Bouldabass, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Bouldabass,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Bouldabass, 64, 64),
 		.backPicYOffset = 0,
@@ -38099,6 +38099,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bouldabass, 0),
 		.footprint = gMonFootprint_Bouldabass,
 		LEARNSETS(Bouldabass),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_MUDSKIPPER] =
@@ -38136,9 +38138,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Mudskipper, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Mudskipper,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Mudskipper, 64, 64),
 		.backPicYOffset = 0,
@@ -38147,6 +38147,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Mudskipper, 0),
 		.footprint = gMonFootprint_Mudskipper,
 		LEARNSETS(Mudskipper),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 4,
 	},
 
 [SPECIES_BASILISK_BABY_FORM] =
@@ -38185,9 +38187,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Basilisk_Baby_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Basilisk_Baby_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Basilisk_Baby_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -38196,6 +38196,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Basilisk_Baby_Form, 0),
 		.footprint = gMonFootprint_Basilisk_Baby_Form,
 		LEARNSETS(Basilisk_Baby_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 30, SPECIES_BASILISK_RS3_FORM},
 			{EVO_LEVEL_NIGHT, 30, SPECIES_BASILISK_OSRS_FORM}
@@ -38239,9 +38241,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Basilisk_RS3_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Basilisk_RS3_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Basilisk_RS3_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -38250,6 +38250,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Basilisk_RS3_Form, 0),
 		.footprint = gMonFootprint_Basilisk_RS3_Form,
 		LEARNSETS(Basilisk_RS3_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 42, SPECIES_BASILISK}
 		),
@@ -38291,9 +38293,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Basilisk_OSRS_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Basilisk_OSRS_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Basilisk_OSRS_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -38302,6 +38302,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Basilisk_OSRS_Form, 0),
 		.footprint = gMonFootprint_Basilisk_OSRS_Form,
 		LEARNSETS(Basilisk_OSRS_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 42, SPECIES_BASILISK_KNIGHT_FORM}
 		),
@@ -38344,9 +38346,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Basilisk_Knight_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Basilisk_Knight_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Basilisk_Knight_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -38355,6 +38355,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Basilisk_Knight_Form, 0),
 		.footprint = gMonFootprint_Basilisk_Knight_Form,
 		LEARNSETS(Basilisk_Knight_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPIDER_UNGAEL_FORM] =
@@ -38392,9 +38394,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spider_Ungael_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spider_Ungael_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spider_Ungael_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -38403,6 +38403,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spider_Ungael_Form, 0),
 		.footprint = gMonFootprint_Spider_Ungael_Form,
 		LEARNSETS(Spider_Ungael_Form),
+		.frontPicYOffset = 14,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 28, SPECIES_SPIDER_CRYPT_FORM},
 			{EVO_MOVE, MOVE_POISON_FANG, SPECIES_SPIDER_TEMPLE_FORM},
@@ -38447,9 +38449,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spider_Crypt_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spider_Crypt_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spider_Crypt_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -38458,6 +38458,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spider_Crypt_Form, 0),
 		.footprint = gMonFootprint_Spider_Crypt_Form,
 		LEARNSETS(Spider_Crypt_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPIDER_TEMPLE_FORM] =
@@ -38496,9 +38498,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spider_Temple_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spider_Temple_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spider_Temple_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -38507,6 +38507,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spider_Temple_Form, 0),
 		.footprint = gMonFootprint_Spider_Temple_Form,
 		LEARNSETS(Spider_Temple_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPIDER_APEATOLL_FORM] =
@@ -38545,9 +38547,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spider_ApeAtoll_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spider_ApeAtoll_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spider_ApeAtoll_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -38556,6 +38556,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spider_ApeAtoll_Form, 0),
 		.footprint = gMonFootprint_Spider_ApeAtoll_Form,
 		LEARNSETS(Spider_ApeAtoll_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CATABLEPON] =
@@ -38594,9 +38596,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Catablepon, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Catablepon,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Catablepon, 64, 64),
 		.backPicYOffset = 0,
@@ -38605,6 +38605,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Catablepon, 0),
 		.footprint = gMonFootprint_Catablepon,
 		LEARNSETS(Catablepon),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PROTOMASTYX] =
@@ -38643,9 +38645,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Protomastyx, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Protomastyx,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Protomastyx, 64, 64),
 		.backPicYOffset = 0,
@@ -38654,6 +38654,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Protomastyx, 0),
 		.footprint = gMonFootprint_Protomastyx,
 		LEARNSETS(Protomastyx),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_ATK_EQ_SPATK, 23, SPECIES_SUBMASTYX},
 			{EVO_ITEM, ITEM_CHOCOLATE_CAKE, SPECIES_TYRANNOMASTYX},
@@ -38700,9 +38702,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Tyrannomastyx, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Tyrannomastyx,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Tyrannomastyx, 64, 64),
 		.backPicYOffset = 0,
@@ -38711,6 +38711,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tyrannomastyx, 0),
 		.footprint = gMonFootprint_Tyrannomastyx,
 		LEARNSETS(Tyrannomastyx),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PIG_WAR_FORM] =
@@ -38750,9 +38752,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pig_War_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pig_War_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pig_War_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -38761,6 +38761,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pig_War_Form, 0),
 		.footprint = gMonFootprint_Pig_War_Form,
 		LEARNSETS(Pig_War_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PIG_PRAYER_FORM] =
@@ -38799,9 +38801,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pig_Prayer_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pig_Prayer_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pig_Prayer_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -38810,6 +38810,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pig_Prayer_Form, 0),
 		.footprint = gMonFootprint_Pig_Prayer_Form,
 		LEARNSETS(Pig_Prayer_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PIG_PACK_FORM] =
@@ -38847,9 +38849,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pig_Pack_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pig_Pack_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pig_Pack_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -38858,6 +38858,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pig_Pack_Form, 0),
 		.footprint = gMonFootprint_Pig_Pack_Form,
 		LEARNSETS(Pig_Pack_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_HERBIBOAR] =
@@ -38896,9 +38898,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Herbiboar, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Herbiboar,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Herbiboar, 64, 64),
 		.backPicYOffset = 0,
@@ -38907,6 +38907,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Herbiboar, 0),
 		.footprint = gMonFootprint_Herbiboar,
 		LEARNSETS(Herbiboar),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GOAT_CLAY_FORM] =
@@ -38946,9 +38948,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Goat_Clay_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Goat_Clay_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Goat_Clay_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -38957,6 +38957,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Goat_Clay_Form, 0),
 		.footprint = gMonFootprint_Goat_Clay_Form,
 		LEARNSETS(Goat_Clay_Form),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 25, SPECIES_GOAT_SACREDCLAY_FORM}
 		),
@@ -38998,9 +39000,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Goat_SacredClay_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Goat_SacredClay_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Goat_SacredClay_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -39009,6 +39009,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Goat_SacredClay_Form, 0),
 		.footprint = gMonFootprint_Goat_SacredClay_Form,
 		LEARNSETS(Goat_SacredClay_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_EARTH_RUNE, SPECIES_GOAT_PRIMORDIALCLAY_FORM}
 		),
@@ -39051,9 +39053,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Goat_PrimordialClay_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Goat_PrimordialClay_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Goat_PrimordialClay_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -39062,6 +39062,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Goat_PrimordialClay_Form, 0),
 		.footprint = gMonFootprint_Goat_PrimordialClay_Form,
 		LEARNSETS(Goat_PrimordialClay_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SHADEEL] =
@@ -39100,9 +39102,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Shadeel, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Shadeel,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Shadeel, 64, 64),
 		.backPicYOffset = 0,
@@ -39111,6 +39111,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Shadeel, 0),
 		.footprint = gMonFootprint_Shadeel,
 		LEARNSETS(Shadeel),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GOLEM_TITAN] =
@@ -39149,9 +39151,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Golem_Titan, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Golem_Titan,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Golem_Titan, 64, 64),
 		.backPicYOffset = 0,
@@ -39160,6 +39160,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Golem_Titan, 0),
 		.footprint = gMonFootprint_Golem_Titan,
 		LEARNSETS(Golem_Titan),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_ATK_GT_DEF, 45, SPECIES_IRON_TITAN},
 			{EVO_LEVEL_ATK_LT_DEF, 45, SPECIES_STEEL_TITAN},
@@ -39215,9 +39217,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Moss_Titan, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Moss_Titan,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Moss_Titan, 64, 64),
 		.backPicYOffset = 0,
@@ -39226,6 +39226,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Moss_Titan, 0),
 		.footprint = gMonFootprint_Moss_Titan,
 		LEARNSETS(Moss_Titan),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_IRON_TITAN] =
@@ -39265,9 +39267,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Iron_Titan, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Iron_Titan,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Iron_Titan, 64, 64),
 		.backPicYOffset = 0,
@@ -39276,6 +39276,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Iron_Titan, 0),
 		.footprint = gMonFootprint_Iron_Titan,
 		LEARNSETS(Iron_Titan),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_STEEL_TITAN] =
@@ -39315,9 +39317,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Steel_Titan, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Steel_Titan,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Steel_Titan, 64, 64),
 		.backPicYOffset = 0,
@@ -39326,6 +39326,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Steel_Titan, 0),
 		.footprint = gMonFootprint_Steel_Titan,
 		LEARNSETS(Steel_Titan),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_LAVA_TITAN] =
@@ -39365,9 +39367,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Lava_Titan, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Lava_Titan,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Lava_Titan, 64, 64),
 		.backPicYOffset = 0,
@@ -39376,6 +39376,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Lava_Titan, 0),
 		.footprint = gMonFootprint_Lava_Titan,
 		LEARNSETS(Lava_Titan),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_OBSIDIAN_GOLEM] =
@@ -39415,9 +39417,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Obsidian_Golem, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Obsidian_Golem,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Obsidian_Golem, 64, 64),
 		.backPicYOffset = 0,
@@ -39426,6 +39426,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Obsidian_Golem, 0),
 		.footprint = gMonFootprint_Obsidian_Golem,
 		LEARNSETS(Obsidian_Golem),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SWAMP_TITAN] =
@@ -39465,9 +39467,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Swamp_Titan, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Swamp_Titan,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Swamp_Titan, 64, 64),
 		.backPicYOffset = 0,
@@ -39476,6 +39476,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Swamp_Titan, 0),
 		.footprint = gMonFootprint_Swamp_Titan,
 		LEARNSETS(Swamp_Titan),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ICE_TITAN] =
@@ -39515,9 +39517,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ice_Titan, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ice_Titan,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ice_Titan, 64, 64),
 		.backPicYOffset = 0,
@@ -39526,6 +39526,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ice_Titan, 0),
 		.footprint = gMonFootprint_Ice_Titan,
 		LEARNSETS(Ice_Titan),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_FIRE_TITAN] =
@@ -39565,9 +39567,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Fire_Titan, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Fire_Titan,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Fire_Titan, 64, 64),
 		.backPicYOffset = 0,
@@ -39576,6 +39576,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Fire_Titan, 0),
 		.footprint = gMonFootprint_Fire_Titan,
 		LEARNSETS(Fire_Titan),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GEYSIR_TITAN] =
@@ -39615,9 +39617,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Geysir_Titan, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Geysir_Titan,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Geysir_Titan, 64, 64),
 		.backPicYOffset = 0,
@@ -39626,6 +39626,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Geysir_Titan, 0),
 		.footprint = gMonFootprint_Geysir_Titan,
 		LEARNSETS(Geysir_Titan),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DARK_CORE] =
@@ -39664,9 +39666,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dark_Core, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dark_Core,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dark_Core, 64, 64),
 		.backPicYOffset = 0,
@@ -39675,6 +39675,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dark_Core, 0),
 		.footprint = gMonFootprint_Dark_Core,
 		LEARNSETS(Dark_Core),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 70, SPECIES_CORPOREAL_BEAST}
 		),
@@ -39717,9 +39719,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Corporeal_Beast, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Corporeal_Beast,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Corporeal_Beast, 64, 64),
 		.backPicYOffset = 0,
@@ -39728,6 +39728,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Corporeal_Beast, 0),
 		.footprint = gMonFootprint_Corporeal_Beast,
 		LEARNSETS(Corporeal_Beast),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CORPOREAL_BEAST_ZANIK_FORM] =
@@ -39764,9 +39766,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Corporeal_Beast_Zanik_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Corporeal_Beast_Zanik_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Corporeal_Beast_Zanik_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -39775,6 +39775,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Corporeal_Beast_Zanik_Form, 0),
 		.footprint = gMonFootprint_Corporeal_Beast_Zanik_Form,
 		LEARNSETS(Corporeal_Beast_Zanik_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_COMPOST_MOUND] =
@@ -39813,9 +39815,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Compost_Mound, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Compost_Mound,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Compost_Mound, 64, 64),
 		.backPicYOffset = 0,
@@ -39824,6 +39824,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Compost_Mound, 0),
 		.footprint = gMonFootprint_Compost_Mound,
 		LEARNSETS(Compost_Mound),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ENT] =
@@ -39863,9 +39865,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ent, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ent,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ent, 64, 64),
 		.backPicYOffset = 0,
@@ -39874,6 +39874,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ent, 0),
 		.footprint = gMonFootprint_Ent,
 		LEARNSETS(Ent),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_MONKEY_NORMAL_FORM, SPECIES_AGRITHNANA},
 			{EVO_ITEM, ITEM_CHOCOLATE_CAKE, SPECIES_AGRITHNANA},
@@ -39919,9 +39921,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Derwen, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Derwen,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Derwen, 64, 64),
 		.backPicYOffset = 0,
@@ -39930,6 +39930,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Derwen, 0),
 		.footprint = gMonFootprint_Derwen,
 		LEARNSETS(Derwen),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_COCKROACH_DRONE] =
@@ -39967,9 +39969,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cockroach_Drone, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cockroach_Drone,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cockroach_Drone, 64, 64),
 		.backPicYOffset = 0,
@@ -39978,6 +39978,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cockroach_Drone, 0),
 		.footprint = gMonFootprint_Cockroach_Drone,
 		LEARNSETS(Cockroach_Drone),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 25, SPECIES_COCKROACH_WORKER}
 		),
@@ -40019,9 +40021,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cockroach_Worker, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cockroach_Worker,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cockroach_Worker, 64, 64),
 		.backPicYOffset = 0,
@@ -40030,6 +40030,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cockroach_Worker, 0),
 		.footprint = gMonFootprint_Cockroach_Worker,
 		LEARNSETS(Cockroach_Worker),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 37, SPECIES_COCKROACH_SOLDIER},
 			{EVO_ITEM, ITEM_MIND_RUNE, SPECIES_COCKROACH_WARPED_FORM},
@@ -40075,9 +40077,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cockroach_Soldier, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cockroach_Soldier,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cockroach_Soldier, 64, 64),
 		.backPicYOffset = 0,
@@ -40086,6 +40086,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cockroach_Soldier, 0),
 		.footprint = gMonFootprint_Cockroach_Soldier,
 		LEARNSETS(Cockroach_Soldier),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_COCKROACH_WARPED_FORM] =
@@ -40124,9 +40126,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cockroach_Warped_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cockroach_Warped_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cockroach_Warped_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -40135,6 +40135,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cockroach_Warped_Form, 0),
 		.footprint = gMonFootprint_Cockroach_Warped_Form,
 		LEARNSETS(Cockroach_Warped_Form),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_FIARA] =
@@ -40173,9 +40175,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Fiara, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Fiara,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Fiara, 64, 64),
 		.backPicYOffset = 0,
@@ -40184,6 +40184,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Fiara, 0),
 		.footprint = gMonFootprint_Fiara,
 		LEARNSETS(Fiara),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CAVE_BUG] =
@@ -40221,9 +40223,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cave_Bug, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cave_Bug,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cave_Bug, 64, 64),
 		.backPicYOffset = 0,
@@ -40232,6 +40232,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cave_Bug, 0),
 		.footprint = gMonFootprint_Cave_Bug,
 		LEARNSETS(Cave_Bug),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_MALCOLM] =
@@ -40269,9 +40271,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Malcolm, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Malcolm,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Malcolm, 64, 64),
 		.backPicYOffset = 0,
@@ -40280,6 +40280,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Malcolm, 0),
 		.footprint = gMonFootprint_Malcolm,
 		LEARNSETS(Malcolm),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 4,
 	},
 
 [SPECIES_MEERKATS] =
@@ -40318,9 +40320,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Meerkats, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Meerkats,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Meerkats, 64, 64),
 		.backPicYOffset = 0,
@@ -40329,6 +40329,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Meerkats, 0),
 		.footprint = gMonFootprint_Meerkats,
 		LEARNSETS(Meerkats),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ORIGAMI_BALLOON] =
@@ -40367,9 +40369,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Origami_Balloon, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Origami_Balloon,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Origami_Balloon, 64, 64),
 		.backPicYOffset = 0,
@@ -40378,6 +40378,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Origami_Balloon, 0),
 		.footprint = gMonFootprint_Origami_Balloon,
 		LEARNSETS(Origami_Balloon),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 8,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_KRIL_TSUTSAROTH, SPECIES_KRILL_BALLOON},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_SPIRIT_RANGER, SPECIES_KRILL_BALLOON},
@@ -40422,9 +40424,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Krill_Balloon, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Krill_Balloon,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Krill_Balloon, 64, 64),
 		.backPicYOffset = 0,
@@ -40433,6 +40433,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Krill_Balloon, 0),
 		.footprint = gMonFootprint_Krill_Balloon,
 		LEARNSETS(Krill_Balloon),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 3,
 	},
 
 [SPECIES_BALLOON_GOAT] =
@@ -40471,9 +40473,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Balloon_Goat, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Balloon_Goat,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Balloon_Goat, 64, 64),
 		.backPicYOffset = 0,
@@ -40482,6 +40482,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Balloon_Goat, 0),
 		.footprint = gMonFootprint_Balloon_Goat,
 		LEARNSETS(Balloon_Goat),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_DAGANNOTH_MOTHER] =
@@ -40521,9 +40523,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dagannoth_Mother, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dagannoth_Mother,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dagannoth_Mother, 64, 64),
 		.backPicYOffset = 0,
@@ -40532,6 +40532,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dagannoth_Mother, 0),
 		.footprint = gMonFootprint_Dagannoth_Mother,
 		LEARNSETS(Dagannoth_Mother),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GELATINNOTH] =
@@ -40571,9 +40573,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Gelatinnoth, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Gelatinnoth,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Gelatinnoth, 64, 64),
 		.backPicYOffset = 0,
@@ -40582,6 +40582,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Gelatinnoth, 0),
 		.footprint = gMonFootprint_Gelatinnoth,
 		LEARNSETS(Gelatinnoth),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DAGANNOTH_DAUGHTER] =
@@ -40621,9 +40623,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dagannoth_Daughter, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dagannoth_Daughter,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dagannoth_Daughter, 64, 64),
 		.backPicYOffset = 0,
@@ -40632,6 +40632,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dagannoth_Daughter, 0),
 		.footprint = gMonFootprint_Dagannoth_Daughter,
 		LEARNSETS(Dagannoth_Daughter),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 50, SPECIES_DAGANNOTH_MOTHER},
 			{EVO_ITEM, ITEM_COSMIC_RUNE, SPECIES_GELATINNOTH}
@@ -40674,9 +40676,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dagannoth_Reanimated_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dagannoth_Reanimated_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dagannoth_Reanimated_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -40685,6 +40685,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dagannoth_Reanimated_Form, 0),
 		.footprint = gMonFootprint_Dagannoth_Reanimated_Form,
 		LEARNSETS(Dagannoth_Reanimated_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DAGANNOTH_SPIRIT_FORM] =
@@ -40724,9 +40726,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dagannoth_Spirit_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dagannoth_Spirit_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dagannoth_Spirit_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -40735,6 +40735,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dagannoth_Spirit_Form, 0),
 		.footprint = gMonFootprint_Dagannoth_Spirit_Form,
 		LEARNSETS(Dagannoth_Spirit_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_FLAMBEED] =
@@ -40774,9 +40776,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Flambeed, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Flambeed,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Flambeed, 64, 64),
 		.backPicYOffset = 0,
@@ -40785,6 +40785,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Flambeed, 0),
 		.footprint = gMonFootprint_Flambeed,
 		LEARNSETS(Flambeed),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_AGRITHNANA] =
@@ -40824,9 +40826,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(AgrithNaNa, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_AgrithNaNa,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(AgrithNaNa, 64, 64),
 		.backPicYOffset = 0,
@@ -40835,6 +40835,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(AgrithNaNa, 0),
 		.footprint = gMonFootprint_AgrithNaNa,
 		LEARNSETS(AgrithNaNa),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KARAMEL] =
@@ -40874,9 +40876,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Karamel, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Karamel,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Karamel, 64, 64),
 		.backPicYOffset = 0,
@@ -40885,6 +40885,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Karamel, 0),
 		.footprint = gMonFootprint_Karamel,
 		LEARNSETS(Karamel),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DESSOURT] =
@@ -40924,9 +40926,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dessourt, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dessourt,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dessourt, 64, 64),
 		.backPicYOffset = 0,
@@ -40935,6 +40935,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dessourt, 0),
 		.footprint = gMonFootprint_Dessourt,
 		LEARNSETS(Dessourt),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SHARKIZARD] =
@@ -40974,9 +40976,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sharkizard, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sharkizard,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sharkizard, 64, 64),
 		.backPicYOffset = 0,
@@ -40985,6 +40985,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sharkizard, 0),
 		.footprint = gMonFootprint_Sharkizard,
 		LEARNSETS(Sharkizard),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BASSTOISE] =
@@ -41024,9 +41026,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Basstoise, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Basstoise,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Basstoise, 64, 64),
 		.backPicYOffset = 0,
@@ -41035,6 +41035,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Basstoise, 0),
 		.footprint = gMonFootprint_Basstoise,
 		LEARNSETS(Basstoise),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_RAVENTZHAAR] =
@@ -41074,9 +41076,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Raventzhaar, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Raventzhaar,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Raventzhaar, 64, 64),
 		.backPicYOffset = 0,
@@ -41085,6 +41085,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Raventzhaar, 0),
 		.footprint = gMonFootprint_Raventzhaar,
 		LEARNSETS(Raventzhaar),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_WALL_BEAST] =
@@ -41121,9 +41123,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wall_Beast, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wall_Beast,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wall_Beast, 64, 64),
 		.backPicYOffset = 0,
@@ -41132,6 +41132,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wall_Beast, 1),
 		.footprint = gMonFootprint_Wall_Beast,
 		LEARNSETS(Wall_Beast),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.formSpeciesIdTable = sWallBeastFormSpeciesIdTable,
 		.formChangeTable = sWallBeastFormChangeTable,
 	},
@@ -41170,9 +41172,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wall_Beast_Mega_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wall_Beast_Mega_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wall_Beast_Mega_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -41181,6 +41181,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wall_Beast_Mega_Form, 1),
 		.footprint = gMonFootprint_Wall_Beast_Mega_Form,
 		LEARNSETS(Wall_Beast_Mega_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sWallBeastFormSpeciesIdTable,
 		.formChangeTable = sWallBeastFormChangeTable,
@@ -41223,9 +41225,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sourhog, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sourhog,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sourhog, 64, 64),
 		.backPicYOffset = 0,
@@ -41234,6 +41234,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sourhog, 0),
 		.footprint = gMonFootprint_Sourhog,
 		LEARNSETS(Sourhog),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_HAND_FARMHAND_FORM] =
@@ -41271,9 +41273,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Hand_Farmhand_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Hand_Farmhand_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Hand_Farmhand_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -41282,6 +41282,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Hand_Farmhand_Form, 0),
 		.footprint = gMonFootprint_Hand_Farmhand_Form,
 		LEARNSETS(Hand_Farmhand_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_HAND_STUFFED_FORM] =
@@ -41320,9 +41322,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Hand_Stuffed_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Hand_Stuffed_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Hand_Stuffed_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -41331,6 +41331,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Hand_Stuffed_Form, 0),
 		.footprint = gMonFootprint_Hand_Stuffed_Form,
 		LEARNSETS(Hand_Stuffed_Form),
+		.frontPicYOffset = 6,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_HAND_BROKENFINGERS_FORM] =
@@ -41368,9 +41370,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Hand_BrokenFingers_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Hand_BrokenFingers_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Hand_BrokenFingers_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -41379,6 +41379,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Hand_BrokenFingers_Form, 0),
 		.footprint = gMonFootprint_Hand_BrokenFingers_Form,
 		LEARNSETS(Hand_BrokenFingers_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_HAND_DEADHAND_FORM}
 		),
@@ -41420,9 +41422,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Hand_DeadHand_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Hand_DeadHand_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Hand_DeadHand_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -41431,6 +41431,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Hand_DeadHand_Form, 0),
 		.footprint = gMonFootprint_Hand_DeadHand_Form,
 		LEARNSETS(Hand_DeadHand_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_HAND_DUNGEONEERING_FORM] =
@@ -41469,9 +41471,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Hand_Dungeoneering_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Hand_Dungeoneering_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Hand_Dungeoneering_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -41480,6 +41480,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Hand_Dungeoneering_Form, 0),
 		.footprint = gMonFootprint_Hand_Dungeoneering_Form,
 		LEARNSETS(Hand_Dungeoneering_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SNAKE_DESERT_FORM] =
@@ -41518,9 +41520,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Snake_Desert_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Snake_Desert_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Snake_Desert_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -41529,6 +41529,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Snake_Desert_Form, 0),
 		.footprint = gMonFootprint_Snake_Desert_Form,
 		LEARNSETS(Snake_Desert_Form),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SNAKE_POISON_FORM] =
@@ -41567,9 +41569,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Snake_Poison_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Snake_Poison_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Snake_Poison_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -41578,6 +41578,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Snake_Poison_Form, 0),
 		.footprint = gMonFootprint_Snake_Poison_Form,
 		LEARNSETS(Snake_Poison_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_ICXAN},
 			{EVO_LEVEL, 36, SPECIES_SNAKE_SWAMP_FORM}
@@ -41620,9 +41622,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Snake_Swamp_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Snake_Swamp_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Snake_Swamp_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -41631,6 +41631,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Snake_Swamp_Form, 0),
 		.footprint = gMonFootprint_Snake_Swamp_Form,
 		LEARNSETS(Snake_Swamp_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ICXAN] =
@@ -41668,9 +41670,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Icxan, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Icxan,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Icxan, 64, 64),
 		.backPicYOffset = 0,
@@ -41679,6 +41679,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Icxan, 0),
 		.footprint = gMonFootprint_Icxan,
 		LEARNSETS(Icxan),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SKELETAL_WYVERN] =
@@ -41716,9 +41718,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Skeletal_Wyvern, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Skeletal_Wyvern,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Skeletal_Wyvern, 64, 64),
 		.backPicYOffset = 0,
@@ -41727,6 +41727,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Skeletal_Wyvern, 0),
 		.footprint = gMonFootprint_Skeletal_Wyvern,
 		LEARNSETS(Skeletal_Wyvern),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 65, SPECIES_WYVERN}
 		),
@@ -41768,9 +41770,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wyvern, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wyvern,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wyvern, 64, 64),
 		.backPicYOffset = 0,
@@ -41779,6 +41779,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wyvern, 0),
 		.footprint = gMonFootprint_Wyvern,
 		LEARNSETS(Wyvern),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_IMPLING_GOURMET_FORM] =
@@ -41818,9 +41820,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Gourmet_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Gourmet_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Gourmet_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -41829,6 +41829,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Gourmet_Form, 0),
 		.footprint = gMonFootprint_Impling_Gourmet_Form,
 		LEARNSETS(Impling_Gourmet_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_NATURE_AMPED, 35, SPECIES_IMPLING_DIVINE_FORM},
 			{EVO_LEVEL_NATURE_LOW_KEY, 35, SPECIES_IMPLING_GHOST_FORM},
@@ -41873,9 +41875,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Earth_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Earth_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Earth_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -41884,6 +41884,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Earth_Form, 0),
 		.footprint = gMonFootprint_Impling_Earth_Form,
 		LEARNSETS(Impling_Earth_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_NATURE_AMPED, 35, SPECIES_IMPLING_NATURE_FORM},
 			{EVO_ITEM, ITEM_ASTRAL_RUNE, SPECIES_IMPLING_CRYSTAL_FORM},
@@ -41927,9 +41929,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Young_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Young_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Young_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -41938,6 +41938,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Young_Form, 0),
 		.footprint = gMonFootprint_Impling_Young_Form,
 		LEARNSETS(Impling_Young_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_NATURE_AMPED, 35, SPECIES_IMPLING_PIRATE_FORM},
 			{EVO_LEVEL_NATURE_LOW_KEY, 35, SPECIES_IMPLING_EASTER_FORM},
@@ -41982,9 +41984,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Pirate_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Pirate_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Pirate_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -41993,6 +41993,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Pirate_Form, 0),
 		.footprint = gMonFootprint_Impling_Pirate_Form,
 		LEARNSETS(Impling_Pirate_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_IMPLING_NINJA_FORM] =
@@ -42031,9 +42033,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Ninja_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Ninja_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Ninja_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -42042,6 +42042,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Ninja_Form, 0),
 		.footprint = gMonFootprint_Impling_Ninja_Form,
 		LEARNSETS(Impling_Ninja_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_IMPLING_ZOMBIE_FORM] =
@@ -42079,9 +42081,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Zombie_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Zombie_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Zombie_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -42090,6 +42090,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Zombie_Form, 0),
 		.footprint = gMonFootprint_Impling_Zombie_Form,
 		LEARNSETS(Impling_Zombie_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_IMPLING_ECLECTIC_FORM] =
@@ -42128,9 +42130,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Eclectic_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Eclectic_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Eclectic_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -42139,6 +42139,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Eclectic_Form, 0),
 		.footprint = gMonFootprint_Impling_Eclectic_Form,
 		LEARNSETS(Impling_Eclectic_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_IMPLING_CRYSTAL_FORM] =
@@ -42177,9 +42179,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Crystal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Crystal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Crystal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -42188,6 +42188,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Crystal_Form, 0),
 		.footprint = gMonFootprint_Impling_Crystal_Form,
 		LEARNSETS(Impling_Crystal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_IMPLING_NATURE_FORM] =
@@ -42226,9 +42228,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Nature_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Nature_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Nature_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -42237,6 +42237,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Nature_Form, 0),
 		.footprint = gMonFootprint_Impling_Nature_Form,
 		LEARNSETS(Impling_Nature_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_IMPLING_ESSENCE_FORM] =
@@ -42275,9 +42277,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Essence_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Essence_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Essence_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -42286,6 +42286,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Essence_Form, 0),
 		.footprint = gMonFootprint_Impling_Essence_Form,
 		LEARNSETS(Impling_Essence_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_IMPLING_DIVINE_FORM] =
@@ -42324,9 +42326,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Divine_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Divine_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Divine_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -42335,6 +42335,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Divine_Form, 0),
 		.footprint = gMonFootprint_Impling_Divine_Form,
 		LEARNSETS(Impling_Divine_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_IMPLING_SPIRIT_FORM] =
@@ -42373,9 +42375,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Spirit_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Spirit_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Spirit_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -42384,6 +42384,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Spirit_Form, 0),
 		.footprint = gMonFootprint_Impling_Spirit_Form,
 		LEARNSETS(Impling_Spirit_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_ARAXYTE_BABY] =
@@ -42421,9 +42423,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Araxyte_Baby, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Araxyte_Baby,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Araxyte_Baby, 64, 64),
 		.backPicYOffset = 0,
@@ -42432,6 +42432,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Araxyte_Baby, 0),
 		.footprint = gMonFootprint_Araxyte_Baby,
 		LEARNSETS(Araxyte_Baby),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_ATK_EQ_SPATK, 28, SPECIES_ARAXYTE_ACIDIC},
 			{EVO_LEVEL_ATK_LT_SPATK, 28, SPECIES_ARAXYTE_MIRRORBACK},
@@ -42476,9 +42478,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Araxyte_Acidic, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Araxyte_Acidic,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Araxyte_Acidic, 64, 64),
 		.backPicYOffset = 0,
@@ -42487,6 +42487,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Araxyte_Acidic, 0),
 		.footprint = gMonFootprint_Araxyte_Acidic,
 		LEARNSETS(Araxyte_Acidic),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ARAXYTE_MIRRORBACK] =
@@ -42526,9 +42528,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Araxyte_Mirrorback, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Araxyte_Mirrorback,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Araxyte_Mirrorback, 64, 64),
 		.backPicYOffset = 0,
@@ -42537,6 +42537,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Araxyte_Mirrorback, 0),
 		.footprint = gMonFootprint_Araxyte_Mirrorback,
 		LEARNSETS(Araxyte_Mirrorback),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ARAXYTE_PULSING] =
@@ -42575,9 +42577,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Araxyte_Pulsing, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Araxyte_Pulsing,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Araxyte_Pulsing, 64, 64),
 		.backPicYOffset = 0,
@@ -42586,6 +42586,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Araxyte_Pulsing, 0),
 		.footprint = gMonFootprint_Araxyte_Pulsing,
 		LEARNSETS(Araxyte_Pulsing),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ARAXXOR] =
@@ -42624,9 +42626,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Araxxor, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Araxxor,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Araxxor, 64, 64),
 		.backPicYOffset = 0,
@@ -42635,6 +42635,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Araxxor, 0),
 		.footprint = gMonFootprint_Araxxor,
 		LEARNSETS(Araxxor),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ARAXXI] =
@@ -42673,9 +42675,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Araxxi, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Araxxi,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Araxxi, 64, 64),
 		.backPicYOffset = 0,
@@ -42684,6 +42684,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Araxxi, 0),
 		.footprint = gMonFootprint_Araxxi,
 		LEARNSETS(Araxxi),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GLACOR_ENDURING_FORM] =
@@ -42722,9 +42724,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Glacor_Enduring_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Glacor_Enduring_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Glacor_Enduring_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -42733,6 +42733,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Glacor_Enduring_Form, 0),
 		.footprint = gMonFootprint_Glacor_Enduring_Form,
 		LEARNSETS(Glacor_Enduring_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 6,
 	},
 
 [SPECIES_GLACOR_SAPPING_FORM] =
@@ -42771,9 +42773,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Glacor_Sapping_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Glacor_Sapping_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Glacor_Sapping_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -42782,6 +42782,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Glacor_Sapping_Form, 0),
 		.footprint = gMonFootprint_Glacor_Sapping_Form,
 		LEARNSETS(Glacor_Sapping_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 5,
 	},
 
 [SPECIES_GLACOR_UNSTABLE_FORM] =
@@ -42820,9 +42822,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Glacor_Unstable_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Glacor_Unstable_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Glacor_Unstable_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -42831,6 +42831,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Glacor_Unstable_Form, 0),
 		.footprint = gMonFootprint_Glacor_Unstable_Form,
 		LEARNSETS(Glacor_Unstable_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 6,
 	},
 
 [SPECIES_GLACOR] =
@@ -42868,9 +42870,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Glacor, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Glacor,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Glacor, 64, 64),
 		.backPicYOffset = 0,
@@ -42879,6 +42879,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Glacor, 0),
 		.footprint = gMonFootprint_Glacor,
 		LEARNSETS(Glacor),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 6,
 		.formSpeciesIdTable = sGlacorFormSpeciesIdTable,
 		.formChangeTable = sGlacorFormChangeTable,
 	},
@@ -42919,9 +42921,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Glacor_Arch_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Glacor_Arch_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Glacor_Arch_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -42930,6 +42930,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Glacor_Arch_Form, 0),
 		.footprint = gMonFootprint_Glacor_Arch_Form,
 		LEARNSETS(Glacor_Arch_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_JADINKO_COMMON_FORM] =
@@ -42967,9 +42969,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jadinko_Common_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jadinko_Common_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jadinko_Common_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -42978,6 +42978,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jadinko_Common_Form, 0),
 		.footprint = gMonFootprint_Jadinko_Common_Form,
 		LEARNSETS(Jadinko_Common_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 35, SPECIES_JADINKO_MALE_FORM},
 			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_JADINKO_QUEEN}
@@ -43020,9 +43022,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jadinko_Male_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jadinko_Male_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jadinko_Male_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -43031,6 +43031,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jadinko_Male_Form, 0),
 		.footprint = gMonFootprint_Jadinko_Male_Form,
 		LEARNSETS(Jadinko_Male_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_JADINKO_QUEEN] =
@@ -43069,9 +43071,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jadinko_Queen, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jadinko_Queen,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jadinko_Queen, 64, 64),
 		.backPicYOffset = 0,
@@ -43080,6 +43080,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jadinko_Queen, 0),
 		.footprint = gMonFootprint_Jadinko_Queen,
 		LEARNSETS(Jadinko_Queen),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_RUBY_HARVEST] =
@@ -43117,9 +43119,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Ruby_Harvest, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Ruby_Harvest,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Ruby_Harvest, 64, 64),
 		.backPicYOffset = 0,
@@ -43128,6 +43128,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Ruby_Harvest, 0),
 		.footprint = gMonFootprint_Ruby_Harvest,
 		LEARNSETS(Ruby_Harvest),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_SAPPHIRE_GLACIALIS] =
@@ -43166,9 +43168,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sapphire_Glacialis, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sapphire_Glacialis,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sapphire_Glacialis, 64, 64),
 		.backPicYOffset = 0,
@@ -43177,6 +43177,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sapphire_Glacialis, 0),
 		.footprint = gMonFootprint_Sapphire_Glacialis,
 		LEARNSETS(Sapphire_Glacialis),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_SNOW_KNIGHT] =
@@ -43215,9 +43217,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Snow_Knight, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Snow_Knight,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Snow_Knight, 64, 64),
 		.backPicYOffset = 0,
@@ -43226,6 +43226,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Snow_Knight, 0),
 		.footprint = gMonFootprint_Snow_Knight,
 		LEARNSETS(Snow_Knight),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_FRIENDSHIP_NIGHT, 200, SPECIES_CHARMING_MOTH}
 		),
@@ -43268,9 +43270,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Black_Warlock, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Black_Warlock,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Black_Warlock, 64, 64),
 		.backPicYOffset = 0,
@@ -43279,6 +43279,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Black_Warlock, 0),
 		.footprint = gMonFootprint_Black_Warlock,
 		LEARNSETS(Black_Warlock),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_FRIENDSHIP_DAY, 200, SPECIES_FORGE_REGENT}
 		),
@@ -43318,9 +43320,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Forge_Regent, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Forge_Regent,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Forge_Regent, 64, 64),
 		.backPicYOffset = 0,
@@ -43329,6 +43329,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Forge_Regent, 0),
 		.footprint = gMonFootprint_Forge_Regent,
 		LEARNSETS(Forge_Regent),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_GUTHIXIAN_BUTTERFLY] =
@@ -43368,9 +43370,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Guthixian_Butterfly, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Guthixian_Butterfly,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Guthixian_Butterfly, 64, 64),
 		.backPicYOffset = 0,
@@ -43379,6 +43379,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Guthixian_Butterfly, 0),
 		.footprint = gMonFootprint_Guthixian_Butterfly,
 		LEARNSETS(Guthixian_Butterfly),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.formSpeciesIdTable = sGuthixianButterflyFormSpeciesIdTable,
 		.formChangeTable = sGuthixianButterflyFormChangeTable,
 	},
@@ -43418,9 +43420,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Charming_Moth, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Charming_Moth,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Charming_Moth, 64, 64),
 		.backPicYOffset = 0,
@@ -43429,6 +43429,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Charming_Moth, 0),
 		.footprint = gMonFootprint_Charming_Moth,
 		LEARNSETS(Charming_Moth),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_NATURE_AMPED, 31, SPECIES_MOTH_SUNLIGHT_FORM},
 			{EVO_LEVEL_NATURE_LOW_KEY, 31, SPECIES_MOTH_MOONLIGHT_FORM}
@@ -43472,9 +43474,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Treborn, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Treborn,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Treborn, 64, 64),
 		.backPicYOffset = 0,
@@ -43483,6 +43483,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Treborn, 0),
 		.footprint = gMonFootprint_Treborn,
 		LEARNSETS(Treborn),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_DRAUGEN] =
@@ -43523,9 +43525,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Draugen, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Draugen,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Draugen, 64, 64),
 		.backPicYOffset = 0,
@@ -43534,6 +43534,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Draugen, 0),
 		.footprint = gMonFootprint_Draugen,
 		LEARNSETS(Draugen),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_MACAW] =
@@ -43572,9 +43574,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Macaw, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Macaw,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Macaw, 64, 64),
 		.backPicYOffset = 0,
@@ -43583,6 +43583,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Macaw, 0),
 		.footprint = gMonFootprint_Macaw,
 		LEARNSETS(Macaw),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_THE_ILLUSIVE] =
@@ -43620,9 +43622,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(The_Illusive, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_The_Illusive,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(The_Illusive, 64, 64),
 		.backPicYOffset = 0,
@@ -43631,6 +43631,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(The_Illusive, 0),
 		.footprint = gMonFootprint_The_Illusive,
 		LEARNSETS(The_Illusive),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_MOVE, MOVE_NIGHTMARE, SPECIES_EVERLASTING}
 		),
@@ -43673,9 +43675,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Doubt, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Doubt,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Doubt, 64, 64),
 		.backPicYOffset = 0,
@@ -43684,6 +43684,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Doubt, 0),
 		.footprint = gMonFootprint_Doubt,
 		LEARNSETS(Doubt),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_EVERLASTING] =
@@ -43723,9 +43725,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Everlasting, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Everlasting,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Everlasting, 64, 64),
 		.backPicYOffset = 0,
@@ -43734,6 +43734,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Everlasting, 0),
 		.footprint = gMonFootprint_Everlasting,
 		LEARNSETS(Everlasting),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 30, SPECIES_UNTOUCHABLE}
 		),
@@ -43777,9 +43779,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Untouchable, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Untouchable,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Untouchable, 64, 64),
 		.backPicYOffset = 0,
@@ -43788,6 +43788,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Untouchable, 0),
 		.footprint = gMonFootprint_Untouchable,
 		LEARNSETS(Untouchable),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_FRIENDSHIP_NIGHT, 200, SPECIES_INADEQUANCY},
 			{EVO_LEVEL_NINJASK, 40, SPECIES_DOUBT}
@@ -43830,9 +43832,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Inadequancy, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Inadequancy,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Inadequancy, 64, 64),
 		.backPicYOffset = 0,
@@ -43841,6 +43841,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Inadequancy, 0),
 		.footprint = gMonFootprint_Inadequancy,
 		LEARNSETS(Inadequancy),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHINCHOMPA_BABY] =
@@ -43880,9 +43882,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chinchompa_Baby, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chinchompa_Baby,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chinchompa_Baby, 64, 64),
 		.backPicYOffset = 0,
@@ -43891,6 +43891,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chinchompa_Baby, 0),
 		.footprint = gMonFootprint_Chinchompa_Baby,
 		LEARNSETS(Chinchompa_Baby),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 16, SPECIES_CHINCHOMPA_GREY_BABY},
 			{EVO_LEVEL_NIGHT, 16, SPECIES_CHINCHOMPA_RED_BABY},
@@ -43934,9 +43936,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chinchompa_Grey_Baby, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chinchompa_Grey_Baby,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chinchompa_Grey_Baby, 64, 64),
 		.backPicYOffset = 0,
@@ -43945,6 +43945,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chinchompa_Grey_Baby, 0),
 		.footprint = gMonFootprint_Chinchompa_Grey_Baby,
 		LEARNSETS(Chinchompa_Grey_Baby),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 28, SPECIES_CHINCHOMPA_GREY_FORM}
 		),
@@ -43986,9 +43988,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chinchompa_Red_Baby, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chinchompa_Red_Baby,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chinchompa_Red_Baby, 64, 64),
 		.backPicYOffset = 0,
@@ -43997,6 +43997,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chinchompa_Red_Baby, 0),
 		.footprint = gMonFootprint_Chinchompa_Red_Baby,
 		LEARNSETS(Chinchompa_Red_Baby),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 28, SPECIES_CHINCHOMPA_RED_FORM}
 		),
@@ -44039,9 +44041,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chinchompa_Cobalt, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chinchompa_Cobalt,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chinchompa_Cobalt, 64, 64),
 		.backPicYOffset = 0,
@@ -44050,6 +44050,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chinchompa_Cobalt, 0),
 		.footprint = gMonFootprint_Chinchompa_Cobalt,
 		LEARNSETS(Chinchompa_Cobalt),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHINCHOMPA_VIRIDIAN] =
@@ -44089,9 +44091,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chinchompa_Viridian, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chinchompa_Viridian,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chinchompa_Viridian, 64, 64),
 		.backPicYOffset = 0,
@@ -44100,6 +44100,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chinchompa_Viridian, 0),
 		.footprint = gMonFootprint_Chinchompa_Viridian,
 		LEARNSETS(Chinchompa_Viridian),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHINCHOMPA_CRYSTAL] =
@@ -44138,9 +44140,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chinchompa_Crystal, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chinchompa_Crystal,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chinchompa_Crystal, 64, 64),
 		.backPicYOffset = 0,
@@ -44149,6 +44149,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chinchompa_Crystal, 0),
 		.footprint = gMonFootprint_Chinchompa_Crystal,
 		LEARNSETS(Chinchompa_Crystal),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHINCHOMPA_PLUTONIAL] =
@@ -44188,9 +44190,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chinchompa_Plutonial, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chinchompa_Plutonial,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chinchompa_Plutonial, 64, 64),
 		.backPicYOffset = 0,
@@ -44199,6 +44199,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chinchompa_Plutonial, 0),
 		.footprint = gMonFootprint_Chinchompa_Plutonial,
 		LEARNSETS(Chinchompa_Plutonial),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHINCHOMPA_MECHANIZED] =
@@ -44237,9 +44239,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chinchompa_Mechanized, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chinchompa_Mechanized,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chinchompa_Mechanized, 64, 64),
 		.backPicYOffset = 0,
@@ -44248,6 +44248,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chinchompa_Mechanized, 0),
 		.footprint = gMonFootprint_Chinchompa_Mechanized,
 		LEARNSETS(Chinchompa_Mechanized),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHINCHOMPA_CRIMSON] =
@@ -44286,9 +44288,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chinchompa_Crimson, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chinchompa_Crimson,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chinchompa_Crimson, 64, 64),
 		.backPicYOffset = 0,
@@ -44297,6 +44297,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chinchompa_Crimson, 0),
 		.footprint = gMonFootprint_Chinchompa_Crimson,
 		LEARNSETS(Chinchompa_Crimson),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHINCHOMPA_BLACK] =
@@ -44335,9 +44337,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chinchompa_Black, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chinchompa_Black,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chinchompa_Black, 64, 64),
 		.backPicYOffset = 0,
@@ -44346,6 +44346,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chinchompa_Black, 0),
 		.footprint = gMonFootprint_Chinchompa_Black,
 		LEARNSETS(Chinchompa_Black),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CHINCHOMPA_GIANT] =
@@ -44385,9 +44387,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Chinchompa_Giant, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Chinchompa_Giant,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Chinchompa_Giant, 64, 64),
 		.backPicYOffset = 0,
@@ -44396,6 +44396,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chinchompa_Giant, 0),
 		.footprint = gMonFootprint_Chinchompa_Giant,
 		LEARNSETS(Chinchompa_Giant),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_VULTURE_RSHD_FORM] =
@@ -44434,9 +44436,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Vulture_RSHD_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Vulture_RSHD_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Vulture_RSHD_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -44445,6 +44445,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Vulture_RSHD_Form, 0),
 		.footprint = gMonFootprint_Vulture_RSHD_Form,
 		LEARNSETS(Vulture_RSHD_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_VULTURE_PINK_FORM] =
@@ -44483,9 +44485,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Vulture_Pink_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Vulture_Pink_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Vulture_Pink_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -44494,6 +44494,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Vulture_Pink_Form, 0),
 		.footprint = gMonFootprint_Vulture_Pink_Form,
 		LEARNSETS(Vulture_Pink_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_VULTURE_OSRS_FORM] =
@@ -44532,9 +44534,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Vulture_OSRS_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Vulture_OSRS_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Vulture_OSRS_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -44543,6 +44543,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Vulture_OSRS_Form, 0),
 		.footprint = gMonFootprint_Vulture_OSRS_Form,
 		LEARNSETS(Vulture_OSRS_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 4,
 	},
 
 [SPECIES_VULTURE_RS3_FORM] =
@@ -44582,9 +44584,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Vulture_RS3_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Vulture_RS3_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Vulture_RS3_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -44593,6 +44593,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Vulture_RS3_Form, 0),
 		.footprint = gMonFootprint_Vulture_RS3_Form,
 		LEARNSETS(Vulture_RS3_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BEAGLE] =
@@ -44631,9 +44633,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Beagle, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Beagle,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Beagle, 64, 64),
 		.backPicYOffset = 0,
@@ -44642,6 +44642,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Beagle, 0),
 		.footprint = gMonFootprint_Beagle,
 		LEARNSETS(Beagle),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PUG] =
@@ -44681,9 +44683,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pug, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pug,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pug, 64, 64),
 		.backPicYOffset = 0,
@@ -44692,6 +44692,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pug, 0),
 		.footprint = gMonFootprint_Pug,
 		LEARNSETS(Pug),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_HUSKIE] =
@@ -44731,9 +44733,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Huskie, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Huskie,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Huskie, 64, 64),
 		.backPicYOffset = 0,
@@ -44742,6 +44742,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Huskie, 0),
 		.footprint = gMonFootprint_Huskie,
 		LEARNSETS(Huskie),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SHIBA] =
@@ -44781,9 +44783,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Shiba, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Shiba,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Shiba, 64, 64),
 		.backPicYOffset = 0,
@@ -44792,6 +44792,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Shiba, 0),
 		.footprint = gMonFootprint_Shiba,
 		LEARNSETS(Shiba),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_POLAR_BEAR_PUNISHED] =
@@ -44829,9 +44831,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Polar_Bear_Punished, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Polar_Bear_Punished,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Polar_Bear_Punished, 64, 64),
 		.backPicYOffset = 0,
@@ -44840,6 +44840,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Polar_Bear_Punished, 0),
 		.footprint = gMonFootprint_Polar_Bear_Punished,
 		LEARNSETS(Polar_Bear_Punished),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_LOBSTROCITY] =
@@ -44877,9 +44879,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Lobstrocity, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Lobstrocity,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Lobstrocity, 64, 64),
 		.backPicYOffset = 0,
@@ -44888,6 +44888,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Lobstrocity, 0),
 		.footprint = gMonFootprint_Lobstrocity,
 		LEARNSETS(Lobstrocity),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SALAMANDER_YELLOW_FORM] =
@@ -44925,9 +44927,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Salamander_Yellow_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Salamander_Yellow_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Salamander_Yellow_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -44936,6 +44936,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Salamander_Yellow_Form, 0),
 		.footprint = gMonFootprint_Salamander_Yellow_Form,
 		LEARNSETS(Salamander_Yellow_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ABYSSAL_DEEPSEA_WALKER] =
@@ -44973,9 +44975,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Abyssal_DeepSea_Walker, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Abyssal_DeepSea_Walker,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Abyssal_DeepSea_Walker, 64, 64),
 		.backPicYOffset = 0,
@@ -44984,6 +44984,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Abyssal_DeepSea_Walker, 2),
 		.footprint = gMonFootprint_Abyssal_DeepSea_Walker,
 		LEARNSETS(Abyssal_DeepSea_Walker),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 48, SPECIES_ABYSSAL_DEEPSEA_GUARDIAN}
 		),
@@ -45024,9 +45026,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Abyssal_DeepSea_Leech, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Abyssal_DeepSea_Leech,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Abyssal_DeepSea_Leech, 64, 64),
 		.backPicYOffset = 0,
@@ -45035,6 +45035,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Abyssal_DeepSea_Leech, 2),
 		.footprint = gMonFootprint_Abyssal_DeepSea_Leech,
 		LEARNSETS(Abyssal_DeepSea_Leech),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 34, SPECIES_ABYSSAL_DEEPSEA_WALKER}
 		),
@@ -45076,9 +45078,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Abyssal_DeepSea_Guardian, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Abyssal_DeepSea_Guardian,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Abyssal_DeepSea_Guardian, 64, 64),
 		.backPicYOffset = 0,
@@ -45087,6 +45087,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Abyssal_DeepSea_Guardian, 2),
 		.footprint = gMonFootprint_Abyssal_DeepSea_Guardian,
 		LEARNSETS(Abyssal_DeepSea_Guardian),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_RIFT_GUARDIAN] =
@@ -45123,9 +45125,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rift_Guardian, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rift_Guardian,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rift_Guardian, 64, 64),
 		.backPicYOffset = 0,
@@ -45134,6 +45134,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rift_Guardian, 0),
 		.footprint = gMonFootprint_Rift_Guardian,
 		LEARNSETS(Rift_Guardian),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CORAL_GUARDIAN] =
@@ -45172,9 +45174,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Coral_Guardian, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Coral_Guardian,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Coral_Guardian, 64, 64),
 		.backPicYOffset = 0,
@@ -45183,6 +45183,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Coral_Guardian, 0),
 		.footprint = gMonFootprint_Coral_Guardian,
 		LEARNSETS(Coral_Guardian),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_REWARDS_GUARDIAN] =
@@ -45221,9 +45223,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Rewards_Guardian, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Rewards_Guardian,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Rewards_Guardian, 64, 64),
 		.backPicYOffset = 0,
@@ -45232,6 +45232,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rewards_Guardian, 0),
 		.footprint = gMonFootprint_Rewards_Guardian,
 		LEARNSETS(Rewards_Guardian),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BABOON_NORMAL_FORM] =
@@ -45270,9 +45272,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Baboon_Normal_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Baboon_Normal_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Baboon_Normal_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -45281,6 +45281,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Baboon_Normal_Form, 0),
 		.footprint = gMonFootprint_Baboon_Normal_Form,
 		LEARNSETS(Baboon_Normal_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BABOON_MAGE_FORM] =
@@ -45318,9 +45320,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Baboon_Mage_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Baboon_Mage_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Baboon_Mage_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -45329,6 +45329,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Baboon_Mage_Form, 0),
 		.footprint = gMonFootprint_Baboon_Mage_Form,
 		LEARNSETS(Baboon_Mage_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BABOON_SHAMAN_FORM] =
@@ -45368,9 +45370,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Baboon_Shaman_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Baboon_Shaman_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Baboon_Shaman_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -45379,6 +45379,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Baboon_Shaman_Form, 0),
 		.footprint = gMonFootprint_Baboon_Shaman_Form,
 		LEARNSETS(Baboon_Shaman_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BABOON_THROWER_FORM] =
@@ -45417,9 +45419,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Baboon_Thrower_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Baboon_Thrower_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Baboon_Thrower_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -45428,6 +45428,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Baboon_Thrower_Form, 0),
 		.footprint = gMonFootprint_Baboon_Thrower_Form,
 		LEARNSETS(Baboon_Thrower_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BABOON_CURSED_FORM] =
@@ -45465,9 +45467,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Baboon_Cursed_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Baboon_Cursed_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Baboon_Cursed_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -45476,6 +45476,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Baboon_Cursed_Form, 0),
 		.footprint = gMonFootprint_Baboon_Cursed_Form,
 		LEARNSETS(Baboon_Cursed_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BABOON_THRALL_FORM] =
@@ -45514,9 +45516,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Baboon_Thrall_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Baboon_Thrall_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Baboon_Thrall_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -45525,6 +45525,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Baboon_Thrall_Form, 0),
 		.footprint = gMonFootprint_Baboon_Thrall_Form,
 		LEARNSETS(Baboon_Thrall_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BABOON_VOLATILE_FORM] =
@@ -45563,9 +45565,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Baboon_Volatile_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Baboon_Volatile_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Baboon_Volatile_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -45574,6 +45574,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Baboon_Volatile_Form, 0),
 		.footprint = gMonFootprint_Baboon_Volatile_Form,
 		LEARNSETS(Baboon_Volatile_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BABOON_BABA_FORM] =
@@ -45612,9 +45614,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Baboon_BaBa_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Baboon_BaBa_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Baboon_BaBa_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -45623,6 +45623,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Baboon_BaBa_Form, 0),
 		.footprint = gMonFootprint_Baboon_BaBa_Form,
 		LEARNSETS(Baboon_BaBa_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SCARAB_SPITTING_FORM] =
@@ -45661,9 +45663,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scarab_Spitting_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scarab_Spitting_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scarab_Spitting_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -45672,6 +45672,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scarab_Spitting_Form, 0),
 		.footprint = gMonFootprint_Scarab_Spitting_Form,
 		LEARNSETS(Scarab_Spitting_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SCARAB_SOLDIER_FORM] =
@@ -45711,9 +45713,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scarab_Soldier_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scarab_Soldier_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scarab_Soldier_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -45722,6 +45722,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scarab_Soldier_Form, 0),
 		.footprint = gMonFootprint_Scarab_Soldier_Form,
 		LEARNSETS(Scarab_Soldier_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SCARAB_ARCANE_FORM] =
@@ -45759,9 +45761,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scarab_Arcane_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scarab_Arcane_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scarab_Arcane_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -45770,6 +45770,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scarab_Arcane_Form, 0),
 		.footprint = gMonFootprint_Scarab_Arcane_Form,
 		LEARNSETS(Scarab_Arcane_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SCARAB_KEPHRI_FORM] =
@@ -45808,9 +45810,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scarab_Kephri_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scarab_Kephri_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scarab_Kephri_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -45819,6 +45819,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scarab_Kephri_Form, 0),
 		.footprint = gMonFootprint_Scarab_Kephri_Form,
 		LEARNSETS(Scarab_Kephri_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CROCODILE_RED_FORM] =
@@ -45858,9 +45860,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Crocodile_Red_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Crocodile_Red_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Crocodile_Red_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -45869,6 +45869,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Crocodile_Red_Form, 0),
 		.footprint = gMonFootprint_Crocodile_Red_Form,
 		LEARNSETS(Crocodile_Red_Form),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ZEBAK] =
@@ -45906,9 +45908,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zebak, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zebak,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zebak, 64, 64),
 		.backPicYOffset = 0,
@@ -45917,6 +45917,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zebak, 0),
 		.footprint = gMonFootprint_Zebak,
 		LEARNSETS(Zebak),
+		.frontPicYOffset = 5,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CAMEL_BANK_FORM] =
@@ -45955,9 +45957,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Camel_Bank_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Camel_Bank_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Camel_Bank_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -45966,6 +45966,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Camel_Bank_Form, 0),
 		.footprint = gMonFootprint_Camel_Bank_Form,
 		LEARNSETS(Camel_Bank_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SLIME_LILGLOOP] =
@@ -46004,9 +46006,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Slime_LilGloop, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Slime_LilGloop,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Slime_LilGloop, 64, 64),
 		.backPicYOffset = 0,
@@ -46015,6 +46015,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Slime_LilGloop, 0),
 		.footprint = gMonFootprint_Slime_LilGloop,
 		LEARNSETS(Slime_LilGloop),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_MALE, 38, SPECIES_SLIME_KING},
 			{EVO_LEVEL_FEMALE, 38, SPECIES_SLIME_QUEEN}
@@ -46057,9 +46059,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Slime_King, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Slime_King,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Slime_King, 64, 64),
 		.backPicYOffset = 0,
@@ -46068,6 +46068,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Slime_King, 0),
 		.footprint = gMonFootprint_Slime_King,
 		LEARNSETS(Slime_King),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GRAAHK_FORSAKEN_FORM] =
@@ -46106,9 +46108,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Graahk_Forsaken_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Graahk_Forsaken_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Graahk_Forsaken_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -46117,6 +46117,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Graahk_Forsaken_Form, 0),
 		.footprint = gMonFootprint_Graahk_Forsaken_Form,
 		LEARNSETS(Graahk_Forsaken_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ZYGOMITE_MAGICAL_FORM] =
@@ -46155,9 +46157,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zygomite_Magical_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zygomite_Magical_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zygomite_Magical_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -46166,6 +46166,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zygomite_Magical_Form, 0),
 		.footprint = gMonFootprint_Zygomite_Magical_Form,
 		LEARNSETS(Zygomite_Magical_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ZYGOMITE_ZANARIAN_FORM] =
@@ -46203,9 +46205,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zygomite_Zanarian_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zygomite_Zanarian_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zygomite_Zanarian_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -46214,6 +46214,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zygomite_Zanarian_Form, 0),
 		.footprint = gMonFootprint_Zygomite_Zanarian_Form,
 		LEARNSETS(Zygomite_Zanarian_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ZYGOMITE_ARCSPORE_FORM] =
@@ -46252,9 +46254,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zygomite_Arcspore_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zygomite_Arcspore_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zygomite_Arcspore_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -46263,6 +46263,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zygomite_Arcspore_Form, 0),
 		.footprint = gMonFootprint_Zygomite_Arcspore_Form,
 		LEARNSETS(Zygomite_Arcspore_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ZYGOMITE_DAEMONCAP_FORM] =
@@ -46300,9 +46302,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zygomite_Daemoncap_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zygomite_Daemoncap_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zygomite_Daemoncap_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -46311,6 +46311,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zygomite_Daemoncap_Form, 0),
 		.footprint = gMonFootprint_Zygomite_Daemoncap_Form,
 		LEARNSETS(Zygomite_Daemoncap_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ZYGOMITE_ANCIENT_FORM] =
@@ -46349,9 +46351,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zygomite_Ancient_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zygomite_Ancient_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zygomite_Ancient_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -46360,6 +46360,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zygomite_Ancient_Form, 0),
 		.footprint = gMonFootprint_Zygomite_Ancient_Form,
 		LEARNSETS(Zygomite_Ancient_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ZULRAH_SERPENTINE_FORM] =
@@ -46398,9 +46400,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zulrah_Serpentine_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zulrah_Serpentine_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zulrah_Serpentine_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -46409,6 +46409,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zulrah_Serpentine_Form, 0),
 		.footprint = gMonFootprint_Zulrah_Serpentine_Form,
 		LEARNSETS(Zulrah_Serpentine_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ZULRAH_MAGMA_FORM] =
@@ -46448,9 +46450,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zulrah_Magma_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zulrah_Magma_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zulrah_Magma_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -46459,6 +46459,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zulrah_Magma_Form, 0),
 		.footprint = gMonFootprint_Zulrah_Magma_Form,
 		LEARNSETS(Zulrah_Magma_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ZULRAH_TANZANITE_FORM] =
@@ -46496,9 +46498,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Zulrah_Tanzanite_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Zulrah_Tanzanite_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Zulrah_Tanzanite_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -46507,6 +46507,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zulrah_Tanzanite_Form, 0),
 		.footprint = gMonFootprint_Zulrah_Tanzanite_Form,
 		LEARNSETS(Zulrah_Tanzanite_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PIG_SUMMONING_FORM] =
@@ -46545,9 +46547,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Pig_Summoning_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Pig_Summoning_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Pig_Summoning_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -46556,6 +46556,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pig_Summoning_Form, 0),
 		.footprint = gMonFootprint_Pig_Summoning_Form,
 		LEARNSETS(Pig_Summoning_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_TZTOK_JAD_HD_MEGA_FORM] =
@@ -46592,9 +46594,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(TzTok_Jad_HD_Mega_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_TzTok_Jad_HD_Mega_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(TzTok_Jad_HD_Mega_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -46603,6 +46603,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(TzTok_Jad_HD_Mega_Form, 0),
 		.footprint = gMonFootprint_TzTok_Jad_HD_Mega_Form,
 		LEARNSETS(TzTok_Jad_HD_Mega_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sTzTokJadFormSpeciesIdTable,
 		.formChangeTable = sTzTokJadFormChangeTable,
@@ -46642,9 +46644,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(TzTok_Jad_RS3_Mega_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_TzTok_Jad_RS3_Mega_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(TzTok_Jad_RS3_Mega_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -46653,6 +46653,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(TzTok_Jad_RS3_Mega_Form, 0),
 		.footprint = gMonFootprint_TzTok_Jad_RS3_Mega_Form,
 		LEARNSETS(TzTok_Jad_RS3_Mega_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sTzTokJadFormSpeciesIdTable,
 		.formChangeTable = sTzTokJadFormChangeTable,
@@ -46693,9 +46695,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Abyssal_Guardian, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Abyssal_Guardian,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Abyssal_Guardian, 64, 64),
 		.backPicYOffset = 0,
@@ -46704,6 +46704,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Abyssal_Guardian, 2),
 		.footprint = gMonFootprint_Abyssal_Guardian,
 		LEARNSETS(Abyssal_Guardian),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SLIME_QUEEN] =
@@ -46741,9 +46743,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Slime_Queen, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Slime_Queen,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Slime_Queen, 64, 64),
 		.backPicYOffset = 0,
@@ -46752,6 +46752,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Slime_Queen, 0),
 		.footprint = gMonFootprint_Slime_Queen,
 		LEARNSETS(Slime_Queen),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_AIRUT] =
@@ -46790,9 +46792,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Airut, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Airut,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Airut, 64, 64),
 		.backPicYOffset = 0,
@@ -46801,6 +46801,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Airut, 0),
 		.footprint = gMonFootprint_Airut,
 		LEARNSETS(Airut),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SKOTIZO] =
@@ -46838,9 +46840,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Skotizo, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Skotizo,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Skotizo, 64, 64),
 		.backPicYOffset = 0,
@@ -46849,6 +46849,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Skotizo, 0),
 		.footprint = gMonFootprint_Skotizo,
 		LEARNSETS(Skotizo),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SCURRIUS_MELEE_FORM] =
@@ -46888,9 +46890,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scurrius_Melee_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scurrius_Melee_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scurrius_Melee_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -46899,6 +46899,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scurrius_Melee_Form, 0),
 		.footprint = gMonFootprint_Scurrius_Melee_Form,
 		LEARNSETS(Scurrius_Melee_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SCURRIUS_RANGED_FORM] =
@@ -46937,9 +46939,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scurrius_Ranged_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scurrius_Ranged_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scurrius_Ranged_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -46948,6 +46948,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scurrius_Ranged_Form, 0),
 		.footprint = gMonFootprint_Scurrius_Ranged_Form,
 		LEARNSETS(Scurrius_Ranged_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SCURRIUS_MAGIC_FORM] =
@@ -46985,9 +46987,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Scurrius_Magic_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Scurrius_Magic_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Scurrius_Magic_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -46996,6 +46996,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Scurrius_Magic_Form, 0),
 		.footprint = gMonFootprint_Scurrius_Magic_Form,
 		LEARNSETS(Scurrius_Magic_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_BROAV_ZOMBIE_FORM] =
@@ -47035,9 +47037,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Broav_Zombie_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Broav_Zombie_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Broav_Zombie_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -47046,6 +47046,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Broav_Zombie_Form, 0),
 		.footprint = gMonFootprint_Broav_Zombie_Form,
 		LEARNSETS(Broav_Zombie_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_IMPLING_EASTER_FORM] =
@@ -47084,9 +47086,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Easter_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Easter_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Easter_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -47095,6 +47095,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Easter_Form, 0),
 		.footprint = gMonFootprint_Impling_Easter_Form,
 		LEARNSETS(Impling_Easter_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_IMPLING_SNOW_FORM] =
@@ -47132,9 +47134,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Snow_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Snow_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Snow_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -47143,6 +47143,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Snow_Form, 0),
 		.footprint = gMonFootprint_Impling_Snow_Form,
 		LEARNSETS(Impling_Snow_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_IMPLING_WANDERING_FORM] =
@@ -47180,9 +47182,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Wandering_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Wandering_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Wandering_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -47191,6 +47191,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Wandering_Form, 0),
 		.footprint = gMonFootprint_Impling_Wandering_Form,
 		LEARNSETS(Impling_Wandering_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_IMPLING_GHOST_FORM] =
@@ -47228,9 +47230,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Impling_Ghost_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Impling_Ghost_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Impling_Ghost_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -47239,6 +47239,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Impling_Ghost_Form, 0),
 		.footprint = gMonFootprint_Impling_Ghost_Form,
 		LEARNSETS(Impling_Ghost_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_VORKATH] =
@@ -47276,9 +47278,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Vorkath, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Vorkath,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Vorkath, 64, 64),
 		.backPicYOffset = 0,
@@ -47287,6 +47287,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Vorkath, 0),
 		.footprint = gMonFootprint_Vorkath,
 		LEARNSETS(Vorkath),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_FOX_PYRE] =
@@ -47326,9 +47328,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Fox_Pyre, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Fox_Pyre,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Fox_Pyre, 64, 64),
 		.backPicYOffset = 0,
@@ -47337,6 +47337,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Fox_Pyre, 0),
 		.footprint = gMonFootprint_Fox_Pyre,
 		LEARNSETS(Fox_Pyre),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_FOX_RECRUITMENTDRIVE] =
@@ -47378,9 +47380,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Fox_RecruitmentDrive, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Fox_RecruitmentDrive,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Fox_RecruitmentDrive, 64, 64),
 		.backPicYOffset = 0,
@@ -47389,6 +47389,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Fox_RecruitmentDrive, 0),
 		.footprint = gMonFootprint_Fox_RecruitmentDrive,
 		LEARNSETS(Fox_RecruitmentDrive),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_FOX_FENNEC] =
@@ -47428,9 +47430,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Fox_Fennec, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Fox_Fennec,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Fox_Fennec, 64, 64),
 		.backPicYOffset = 0,
@@ -47439,6 +47439,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Fox_Fennec, 0),
 		.footprint = gMonFootprint_Fox_Fennec,
 		LEARNSETS(Fox_Fennec),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SALAMANDER_TECU] =
@@ -47476,9 +47478,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Salamander_Tecu, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Salamander_Tecu,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Salamander_Tecu, 64, 64),
 		.backPicYOffset = 0,
@@ -47487,6 +47487,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Salamander_Tecu, 0),
 		.footprint = gMonFootprint_Salamander_Tecu,
 		LEARNSETS(Salamander_Tecu),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_JERBOA] =
@@ -47524,9 +47526,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jerboa, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jerboa,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jerboa, 64, 64),
 		.backPicYOffset = 0,
@@ -47535,6 +47535,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jerboa, 0),
 		.footprint = gMonFootprint_Jerboa,
 		LEARNSETS(Jerboa),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_JERBOA_EMBERTAIL] =
@@ -47573,9 +47575,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jerboa_Embertail, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jerboa_Embertail,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jerboa_Embertail, 64, 64),
 		.backPicYOffset = 0,
@@ -47584,6 +47584,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jerboa_Embertail, 0),
 		.footprint = gMonFootprint_Jerboa_Embertail,
 		LEARNSETS(Jerboa_Embertail),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ANTELOPE_SUNLIGHT_FORM] =
@@ -47623,9 +47625,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Antelope_Sunlight_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Antelope_Sunlight_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Antelope_Sunlight_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -47634,6 +47634,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Antelope_Sunlight_Form, 0),
 		.footprint = gMonFootprint_Antelope_Sunlight_Form,
 		LEARNSETS(Antelope_Sunlight_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ANTELOPE_MOONLIGHT_FORM] =
@@ -47672,9 +47674,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Antelope_Moonlight_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Antelope_Moonlight_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Antelope_Moonlight_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -47683,6 +47683,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Antelope_Moonlight_Form, 0),
 		.footprint = gMonFootprint_Antelope_Moonlight_Form,
 		LEARNSETS(Antelope_Moonlight_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CAPYBARA] =
@@ -47720,9 +47722,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Capybara, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Capybara,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Capybara, 64, 64),
 		.backPicYOffset = 0,
@@ -47731,6 +47731,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Capybara, 0),
 		.footprint = gMonFootprint_Capybara,
 		LEARNSETS(Capybara),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CAPYBARA_ORANGE] =
@@ -47768,9 +47770,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Capybara_Orange, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Capybara_Orange,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Capybara_Orange, 64, 64),
 		.backPicYOffset = 0,
@@ -47779,6 +47779,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Capybara_Orange, 0),
 		.footprint = gMonFootprint_Capybara_Orange,
 		LEARNSETS(Capybara_Orange),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ENTLING] =
@@ -47814,9 +47816,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Entling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Entling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Entling, 64, 64),
 		.backPicYOffset = 0,
@@ -47825,6 +47825,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Entling, 0),
 		.footprint = gMonFootprint_Entling,
 		LEARNSETS(Entling),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 30, SPECIES_ENT}
 		),
@@ -47867,9 +47869,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Piggles, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Piggles,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Piggles, 64, 64),
 		.backPicYOffset = 0,
@@ -47878,6 +47878,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Piggles, 0),
 		.footprint = gMonFootprint_Piggles,
 		LEARNSETS(Piggles),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_WOLPERTINGER_MEGA_FORM] =
@@ -47914,9 +47916,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Wolpertinger_Mega_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Wolpertinger_Mega_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Wolpertinger_Mega_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -47925,6 +47925,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolpertinger_Mega_Form, 0),
 		.footprint = gMonFootprint_Wolpertinger_Mega_Form,
 		LEARNSETS(Wolpertinger_Mega_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sWolpertingerFormSpeciesIdTable,
 		.formChangeTable = sWolpertingerFormChangeTable,
@@ -47965,9 +47967,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Flesh_Spoiler_Naked_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Flesh_Spoiler_Naked_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Flesh_Spoiler_Naked_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -47976,6 +47976,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Flesh_Spoiler_Naked_Form, 0),
 		.footprint = gMonFootprint_Flesh_Spoiler_Naked_Form,
 		LEARNSETS(Flesh_Spoiler_Naked_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_FLESH_SPOILER_SPAWNLING] =
@@ -48014,9 +48016,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Flesh_Spoiler_Spawnling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Flesh_Spoiler_Spawnling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Flesh_Spoiler_Spawnling, 64, 64),
 		.backPicYOffset = 0,
@@ -48025,6 +48025,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Flesh_Spoiler_Spawnling, 0),
 		.footprint = gMonFootprint_Flesh_Spoiler_Spawnling,
 		LEARNSETS(Flesh_Spoiler_Spawnling),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_CAUSTIC_GAZER] =
@@ -48060,9 +48062,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Caustic_Gazer, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Caustic_Gazer,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Caustic_Gazer, 64, 64),
 		.backPicYOffset = 0,
@@ -48071,6 +48071,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Caustic_Gazer, 0),
 		.footprint = gMonFootprint_Caustic_Gazer,
 		LEARNSETS(Caustic_Gazer),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 3,
 	},
 
 [SPECIES_IRIS_STALKER] =
@@ -48106,9 +48108,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Iris_Stalker, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Iris_Stalker,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Iris_Stalker, 64, 64),
 		.backPicYOffset = 0,
@@ -48117,6 +48117,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Iris_Stalker, 0),
 		.footprint = gMonFootprint_Iris_Stalker,
 		LEARNSETS(Iris_Stalker),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 2,
 	},
 
 [SPECIES_ANIMATED_BOOK] =
@@ -48152,9 +48154,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Animated_Book, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Animated_Book,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Animated_Book, 64, 64),
 		.backPicYOffset = 0,
@@ -48163,6 +48163,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Animated_Book, 0),
 		.footprint = gMonFootprint_Animated_Book,
 		LEARNSETS(Animated_Book),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 10,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_ATK_EQ_SPATK, 35, SPECIES_TOME_OF_RANGED},
 			{EVO_LEVEL_ATK_LT_SPATK, 35, SPECIES_TOME_OF_MAGIC},
@@ -48203,9 +48205,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Tome_of_Strength, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Tome_of_Strength,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Tome_of_Strength, 64, 64),
 		.backPicYOffset = 0,
@@ -48214,6 +48214,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tome_of_Strength, 0),
 		.footprint = gMonFootprint_Tome_of_Strength,
 		LEARNSETS(Tome_of_Strength),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 10,
 	},
 
 [SPECIES_TOME_OF_RANGED] =
@@ -48249,9 +48251,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Tome_of_Ranged, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Tome_of_Ranged,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Tome_of_Ranged, 64, 64),
 		.backPicYOffset = 0,
@@ -48260,6 +48260,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tome_of_Ranged, 0),
 		.footprint = gMonFootprint_Tome_of_Ranged,
 		LEARNSETS(Tome_of_Ranged),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 10,
 	},
 
 [SPECIES_TOME_OF_MAGIC] =
@@ -48295,9 +48297,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Tome_of_Magic, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Tome_of_Magic,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Tome_of_Magic, 64, 64),
 		.backPicYOffset = 0,
@@ -48306,6 +48306,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tome_of_Magic, 0),
 		.footprint = gMonFootprint_Tome_of_Magic,
 		LEARNSETS(Tome_of_Magic),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 10,
 	},
 
 [SPECIES_LUMINESCENT_ICEFIEND] =
@@ -48341,9 +48343,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Luminescent_Icefiend, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Luminescent_Icefiend,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Luminescent_Icefiend, 64, 64),
 		.backPicYOffset = 0,
@@ -48352,6 +48352,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Luminescent_Icefiend, 0),
 		.footprint = gMonFootprint_Luminescent_Icefiend,
 		LEARNSETS(Luminescent_Icefiend),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_WARPED_GALUGA] =
@@ -48387,9 +48389,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Warped_Galuga, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Warped_Galuga,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Warped_Galuga, 64, 64),
 		.backPicYOffset = 0,
@@ -48398,6 +48398,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Warped_Galuga, 0),
 		.footprint = gMonFootprint_Warped_Galuga,
 		LEARNSETS(Warped_Galuga),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SUBMASTYX] =
@@ -48433,9 +48435,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Submastyx, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Submastyx,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Submastyx, 64, 64),
 		.backPicYOffset = 0,
@@ -48444,6 +48444,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Submastyx, 0),
 		.footprint = gMonFootprint_Submastyx,
 		LEARNSETS(Submastyx),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_PARAMASTYX] =
@@ -48479,9 +48481,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Paramastyx, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Paramastyx,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Paramastyx, 64, 64),
 		.backPicYOffset = 0,
@@ -48490,6 +48490,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Paramastyx, 0),
 		.footprint = gMonFootprint_Paramastyx,
 		LEARNSETS(Paramastyx),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ARCHAEMASTYX] =
@@ -48525,9 +48527,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Archaemastyx, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Archaemastyx,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Archaemastyx, 64, 64),
 		.backPicYOffset = 0,
@@ -48536,6 +48536,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Archaemastyx, 0),
 		.footprint = gMonFootprint_Archaemastyx,
 		LEARNSETS(Archaemastyx),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_DROMOMASTYX] =
@@ -48571,9 +48573,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Dromomastyx, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Dromomastyx,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Dromomastyx, 64, 64),
 		.backPicYOffset = 0,
@@ -48582,6 +48582,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dromomastyx, 0),
 		.footprint = gMonFootprint_Dromomastyx,
 		LEARNSETS(Dromomastyx),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPINOMASTYX] =
@@ -48617,9 +48619,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spinomastyx, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spinomastyx,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spinomastyx, 64, 64),
 		.backPicYOffset = 0,
@@ -48628,6 +48628,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spinomastyx, 0),
 		.footprint = gMonFootprint_Spinomastyx,
 		LEARNSETS(Spinomastyx),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_GALLIMASTYX] =
@@ -48663,9 +48665,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Gallimastyx, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Gallimastyx,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Gallimastyx, 64, 64),
 		.backPicYOffset = 0,
@@ -48674,6 +48674,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Gallimastyx, 0),
 		.footprint = gMonFootprint_Gallimastyx,
 		LEARNSETS(Gallimastyx),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_STEGOMASTYX] =
@@ -48709,9 +48711,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Stegomastyx, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Stegomastyx,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Stegomastyx, 64, 64),
 		.backPicYOffset = 0,
@@ -48720,6 +48720,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Stegomastyx, 0),
 		.footprint = gMonFootprint_Stegomastyx,
 		LEARNSETS(Stegomastyx),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_MEGAMASTYX] =
@@ -48755,9 +48757,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Megamastyx, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Megamastyx,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Megamastyx, 64, 64),
 		.backPicYOffset = 0,
@@ -48766,6 +48766,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Megamastyx, 0),
 		.footprint = gMonFootprint_Megamastyx,
 		LEARNSETS(Megamastyx),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_JELLY_ALTERNATE_FORM] =
@@ -48801,9 +48803,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jelly_Alternate_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jelly_Alternate_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jelly_Alternate_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -48812,6 +48812,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jelly_Alternate_Form, 0),
 		.footprint = gMonFootprint_Jelly_Alternate_Form,
 		LEARNSETS(Jelly_Alternate_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 38, SPECIES_JELLY_TROLLWEISS_FORM},
 			{EVO_LEVEL_NIGHT, 38, SPECIES_JELLY_DUNGEONEERING_FORM},
@@ -48853,9 +48855,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jelly_Dungeoneering_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jelly_Dungeoneering_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jelly_Dungeoneering_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -48864,6 +48864,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jelly_Dungeoneering_Form, 0),
 		.footprint = gMonFootprint_Jelly_Dungeoneering_Form,
 		LEARNSETS(Jelly_Dungeoneering_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_JELLY_TROLLWEISS_FORM] =
@@ -48900,9 +48902,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jelly_Trollweiss_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jelly_Trollweiss_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jelly_Trollweiss_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -48911,6 +48911,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jelly_Trollweiss_Form, 0),
 		.footprint = gMonFootprint_Jelly_Trollweiss_Form,
 		LEARNSETS(Jelly_Trollweiss_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_JELLY_VITREOUS_FORM] =
@@ -48947,9 +48949,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jelly_Vitreous_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jelly_Vitreous_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jelly_Vitreous_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -48958,6 +48958,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jelly_Vitreous_Form, 0),
 		.footprint = gMonFootprint_Jelly_Vitreous_Form,
 		LEARNSETS(Jelly_Vitreous_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_JELLY_WARPED_VITREOUS_FORM] =
@@ -48994,9 +48996,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jelly_Warped_Vitreous_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jelly_Warped_Vitreous_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jelly_Warped_Vitreous_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -49005,6 +49005,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jelly_Warped_Vitreous_Form, 0),
 		.footprint = gMonFootprint_Jelly_Warped_Vitreous_Form,
 		LEARNSETS(Jelly_Warped_Vitreous_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_MOTH_SUNLIGHT_FORM] =
@@ -49039,9 +49041,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Moth_Sunlight_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Moth_Sunlight_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Moth_Sunlight_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -49050,6 +49050,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Moth_Sunlight_Form, 0),
 		.footprint = gMonFootprint_Moth_Sunlight_Form,
 		LEARNSETS(Moth_Sunlight_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 4,
 	},
 
 [SPECIES_MOTH_MOONLIGHT_FORM] =
@@ -49084,9 +49086,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Moth_Moonlight_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Moth_Moonlight_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Moth_Moonlight_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -49095,6 +49095,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Moth_Moonlight_Form, 0),
 		.footprint = gMonFootprint_Moth_Moonlight_Form,
 		LEARNSETS(Moth_Moonlight_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 4,
 	},
 
 [SPECIES_STONE_OF_JAS_MEGA_FORM] =
@@ -49129,9 +49131,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Stone_of_Jas_Mega_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Stone_of_Jas_Mega_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Stone_of_Jas_Mega_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -49140,6 +49140,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Stone_of_Jas_Mega_Form, 0),
 		.footprint = gMonFootprint_Stone_of_Jas_Mega_Form,
 		LEARNSETS(Stone_of_Jas_Mega_Form),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sStoneOfJasFormSpeciesIdTable,
 		.formChangeTable = sStoneOfJasFormChangeTable,
@@ -49178,9 +49180,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spirit_Warrior, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spirit_Warrior,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spirit_Warrior, 64, 64),
 		.backPicYOffset = 0,
@@ -49189,6 +49189,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spirit_Warrior, 0),
 		.footprint = gMonFootprint_Spirit_Warrior,
 		LEARNSETS(Spirit_Warrior),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 5,
 	},
 
 [SPECIES_SPIRIT_RANGER] =
@@ -49224,9 +49226,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spirit_Ranger, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spirit_Ranger,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spirit_Ranger, 64, 64),
 		.backPicYOffset = 0,
@@ -49235,6 +49235,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spirit_Ranger, 0),
 		.footprint = gMonFootprint_Spirit_Ranger,
 		LEARNSETS(Spirit_Ranger),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_SPIRIT_MAGE] =
@@ -49270,9 +49272,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Spirit_Mage, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Spirit_Mage,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Spirit_Mage, 64, 64),
 		.backPicYOffset = 0,
@@ -49281,6 +49281,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Spirit_Mage, 0),
 		.footprint = gMonFootprint_Spirit_Mage,
 		LEARNSETS(Spirit_Mage),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 5,
 	},
 
 [SPECIES_ESSLING] =
@@ -49316,9 +49318,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Essling, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Essling,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Essling, 64, 64),
 		.backPicYOffset = 0,
@@ -49327,6 +49327,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Essling, 0),
 		.footprint = gMonFootprint_Essling,
 		LEARNSETS(Essling),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_LAW_RUNE, SPECIES_ESSHOUND},
 			{EVO_ITEM, ITEM_CHAOS_RUNE, SPECIES_ESSHOUND},
@@ -49372,9 +49374,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Esshound, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Esshound,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Esshound, 64, 64),
 		.backPicYOffset = 0,
@@ -49383,6 +49383,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Esshound, 0),
 		.footprint = gMonFootprint_Esshound,
 		LEARNSETS(Esshound),
+		.frontPicYOffset = 2,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ESSWRAITH] =
@@ -49418,9 +49420,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Esswraith, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Esswraith,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Esswraith, 64, 64),
 		.backPicYOffset = 0,
@@ -49429,6 +49429,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Esswraith, 0),
 		.footprint = gMonFootprint_Esswraith,
 		LEARNSETS(Esswraith),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_HARPY_EAGLE] =
@@ -49464,9 +49466,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Harpy_Eagle, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Harpy_Eagle,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Harpy_Eagle, 64, 64),
 		.backPicYOffset = 0,
@@ -49475,6 +49475,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Harpy_Eagle, 0),
 		.footprint = gMonFootprint_Harpy_Eagle,
 		LEARNSETS(Harpy_Eagle),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_REBORN_WARRIOR] =
@@ -49511,9 +49513,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Reborn_Warrior, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Reborn_Warrior,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Reborn_Warrior, 64, 64),
 		.backPicYOffset = 0,
@@ -49522,6 +49522,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Reborn_Warrior, 0),
 		.footprint = gMonFootprint_Reborn_Warrior,
 		LEARNSETS(Reborn_Warrior),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_REBORN_RANGER] =
@@ -49558,9 +49560,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Reborn_Ranger, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Reborn_Ranger,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Reborn_Ranger, 64, 64),
 		.backPicYOffset = 0,
@@ -49569,6 +49569,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Reborn_Ranger, 0),
 		.footprint = gMonFootprint_Reborn_Ranger,
 		LEARNSETS(Reborn_Ranger),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_REBORN_MAGE] =
@@ -49605,9 +49607,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Reborn_Mage, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Reborn_Mage,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Reborn_Mage, 64, 64),
 		.backPicYOffset = 0,
@@ -49616,6 +49616,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Reborn_Mage, 0),
 		.footprint = gMonFootprint_Reborn_Mage,
 		LEARNSETS(Reborn_Mage),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_JAGUAR_ORANGE_FORM] =
@@ -49651,9 +49653,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jaguar_Orange_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jaguar_Orange_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jaguar_Orange_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -49662,6 +49662,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jaguar_Orange_Form, 0),
 		.footprint = gMonFootprint_Jaguar_Orange_Form,
 		LEARNSETS(Jaguar_Orange_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_FRIENDSHIP, 200, SPECIES_JAGUAR_BLACK_FORM}
 		),
@@ -49700,9 +49702,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Jaguar_Black_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Jaguar_Black_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Jaguar_Black_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -49711,6 +49711,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jaguar_Black_Form, 0),
 		.footprint = gMonFootprint_Jaguar_Black_Form,
 		LEARNSETS(Jaguar_Black_Form),
+		.frontPicYOffset = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_TORTLE] =
@@ -49747,9 +49749,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Tortle, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Tortle,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Tortle, 64, 64),
 		.backPicYOffset = 0,
@@ -49758,6 +49758,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tortle, 0),
 		.footprint = gMonFootprint_Tortle,
 		LEARNSETS(Tortle),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_COCKATRICE_OSRS_FORM] =
@@ -49793,9 +49795,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cockatrice_OSRS_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cockatrice_OSRS_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cockatrice_OSRS_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -49804,6 +49804,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cockatrice_OSRS_Form, 0),
 		.footprint = gMonFootprint_Cockatrice_OSRS_Form,
 		LEARNSETS(Cockatrice_OSRS_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_NIGHT, 42, SPECIES_COCKATHRICE},
 			{EVO_LEVEL_DAY, 42, SPECIES_COCKATRICE_MOONLIGHT}
@@ -49843,9 +49845,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cockathrice, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cockathrice,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cockathrice, 64, 64),
 		.backPicYOffset = 0,
@@ -49854,6 +49854,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cockathrice, 0),
 		.footprint = gMonFootprint_Cockathrice,
 		LEARNSETS(Cockathrice),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_COCKATRICE_MOONLIGHT] =
@@ -49890,9 +49892,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cockatrice_Moonlight, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cockatrice_Moonlight,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cockatrice_Moonlight, 64, 64),
 		.backPicYOffset = 0,
@@ -49901,6 +49901,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cockatrice_Moonlight, 0),
 		.footprint = gMonFootprint_Cockatrice_Moonlight,
 		LEARNSETS(Cockatrice_Moonlight),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_REVENANT_IMP] =
@@ -49937,9 +49939,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Revenant_Imp, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Revenant_Imp,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Revenant_Imp, 64, 64),
 		.backPicYOffset = 0,
@@ -49948,6 +49948,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Revenant_Imp, 0),
 		.footprint = gMonFootprint_Revenant_Imp,
 		LEARNSETS(Revenant_Imp),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 4,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 50, SPECIES_MALEDICTUS}
 		),
@@ -49987,9 +49989,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Revenant_Dragon, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Revenant_Dragon,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Revenant_Dragon, 64, 64),
 		.backPicYOffset = 0,
@@ -49998,6 +49998,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Revenant_Dragon, 0),
 		.footprint = gMonFootprint_Revenant_Dragon,
 		LEARNSETS(Revenant_Dragon),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 5,
 	},
 
 [SPECIES_MALEDICTUS] =
@@ -50033,9 +50035,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Maledictus, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Maledictus,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Maledictus, 64, 64),
 		.backPicYOffset = 0,
@@ -50044,6 +50044,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Maledictus, 0),
 		.footprint = gMonFootprint_Maledictus,
 		LEARNSETS(Maledictus),
+		.frontPicYOffset = 4,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_KALRAG] =
@@ -50079,9 +50081,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kalrag, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kalrag,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kalrag, 64, 64),
 		.backPicYOffset = 0,
@@ -50090,6 +50090,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kalrag, 0),
 		.footprint = gMonFootprint_Kalrag,
 		LEARNSETS(Kalrag),
+		.frontPicYOffset = 3,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_ANIMAWHAL] =
@@ -50125,9 +50127,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Animawhal, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Animawhal,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Animawhal, 64, 64),
 		.backPicYOffset = 0,
@@ -50136,6 +50136,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Animawhal, 0),
 		.footprint = gMonFootprint_Animawhal,
 		LEARNSETS(Animawhal),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 50, SPECIES_ANIMASAURUS}
 		),
@@ -50174,9 +50176,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Animasaurus, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Animasaurus,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Animasaurus, 64, 64),
 		.backPicYOffset = 0,
@@ -50185,6 +50185,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Animasaurus, 0),
 		.footprint = gMonFootprint_Animasaurus,
 		LEARNSETS(Animasaurus),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SEA_TROLL_QUEEN] =
@@ -50221,9 +50223,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Sea_Troll_Queen, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Sea_Troll_Queen,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Sea_Troll_Queen, 64, 64),
 		.backPicYOffset = 0,
@@ -50232,6 +50232,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Sea_Troll_Queen, 0),
 		.footprint = gMonFootprint_Sea_Troll_Queen,
 		LEARNSETS(Sea_Troll_Queen),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_YAK_LUMBER_FORM] =
@@ -50267,9 +50269,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Yak_Lumber_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Yak_Lumber_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Yak_Lumber_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -50278,6 +50278,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Yak_Lumber_Form, 0),
 		.footprint = gMonFootprint_Yak_Lumber_Form,
 		LEARNSETS(Yak_Lumber_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_BEAVER, SPECIES_YAK_NORMAL_FORM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_GIANT_BEAVER, SPECIES_YAK_NORMAL_FORM}
@@ -50317,9 +50319,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Cabbage_Shattered_World_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Cabbage_Shattered_World_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Cabbage_Shattered_World_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -50328,6 +50328,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cabbage_Shattered_World_Form, 0),
 		.footprint = gMonFootprint_Cabbage_Shattered_World_Form,
 		LEARNSETS(Cabbage_Shattered_World_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_VULTURE_BEARDED_FORM] =
@@ -50364,9 +50366,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Vulture_Bearded_Form, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Vulture_Bearded_Form,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Vulture_Bearded_Form, 64, 64),
 		.backPicYOffset = 0,
@@ -50375,6 +50375,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Vulture_Bearded_Form, 0),
 		.footprint = gMonFootprint_Vulture_Bearded_Form,
 		LEARNSETS(Vulture_Bearded_Form),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 5,
 	},
 
 [SPECIES_KRYKET_BAT] =
@@ -50411,9 +50413,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.trainerScale = 256,
 		.trainerOffset = 0,
 		FRONT_PIC(Kryket_Bat, 64, 64),
-		.frontPicYOffset = 0,
 		.frontAnimFrames = sAnims_Kryket_Bat,
-		.enemyMonElevation = 0,
 		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
 		BACK_PIC(Kryket_Bat, 64, 64),
 		.backPicYOffset = 0,
@@ -50422,8 +50422,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Kryket_Bat, 0),
 		.footprint = gMonFootprint_Kryket_Bat,
 		LEARNSETS(Kryket_Bat),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 4,
 	},
-
 
 
 

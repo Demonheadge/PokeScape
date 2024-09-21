@@ -967,6 +967,54 @@ static const union AnimCmd *const sAnims_zanik_ham[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_celestial[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_dungeoneering_rusher[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_edimmu[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_forgotten_warrior_novice[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_primal[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_mrkalius[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_twisted[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_thok_gymleader[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_zanik_e4[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_worldguardian[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_sagittarian[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_tzhaar_ket[] ={
+    sAnim_GeneralFrame0,
+};
+
 const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 {
     [TRAINER_PIC_HIKER] = sAnims_Hiker,
@@ -1212,4 +1260,16 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_sir_tiffy] = sAnims_sir_tiffy,
     [TRAINER_PIC_zanik_caves] = sAnims_zanik_caves,
     [TRAINER_PIC_zanik_ham] = sAnims_zanik_ham,
+    [TRAINER_PIC_celestial] = sAnims_celestial,
+    [TRAINER_PIC_dungeoneering_rusher] = sAnims_dungeoneering_rusher,
+    [TRAINER_PIC_edimmu] = sAnims_edimmu,
+    [TRAINER_PIC_forgotten_warrior_novice] = sAnims_forgotten_warrior_novice,
+    [TRAINER_PIC_primal] = sAnims_primal,
+    [TRAINER_PIC_mrkalius] = sAnims_mrkalius,
+    [TRAINER_PIC_twisted] = sAnims_twisted,
+    [TRAINER_PIC_thok_gymleader] = sAnims_thok_gymleader,
+    [TRAINER_PIC_zanik_e4] = sAnims_zanik_e4,
+    [TRAINER_PIC_worldguardian] = sAnims_worldguardian,
+    [TRAINER_PIC_sagittarian] = sAnims_sagittarian,
+    [TRAINER_PIC_tzhaar_ket] = sAnims_tzhaar_ket,
 };

@@ -5,7 +5,75 @@ mapscripts Route8_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         call(PENGUIN_EVENT)
     }
+    MAP_SCRIPT_ON_LOAD {
+        call(ROUTE8_STATE)
+    } 
 }
+
+
+script ROUTE8_STATE {
+    if (!flag(FLAG_ABYSS_PORTALS_ENABLED))
+    {
+        setmetatile(41, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(42, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(43, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(44, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(45, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+
+        setmetatile(39, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(40, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(41, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(42, 15, METATILE_PokeScapeOutdoors_FLOWER_TILE_2, 0)
+        setmetatile(43, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(44, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(45, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(46, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+
+        setmetatile(37, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(38, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(39, 16, METATILE_PokeScapeOutdoors_FLOWER_TILE_1, 0)
+        setmetatile(40, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(41, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(42, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(43, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(44, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(45, 16, METATILE_PokeScapeOutdoors_FLOWER_TILE_2, 0)
+        setmetatile(46, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+
+        setmetatile(37, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(38, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(39, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(40, 17, METATILE_PokeScapeOutdoors_FLOWER_TILE_1, 0)
+        setmetatile(41, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(42, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(43, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(44, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(45, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(46, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+
+        setmetatile(38, 18, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(39, 18, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(40, 18, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(41, 18, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+
+        
+
+        //special(DrawWholeMapView)  DO NOT USE WITH: ON_LOAD
+
+        setflag(FLAG_TEMP_1F)
+        removeobject(3)
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 script ENCOUNTER_PENGUIN_BUSH_ROUTE8 {
 	lock
@@ -62,7 +130,7 @@ script ROUTE8_MAN
 script ROUTE8_MINER_3
 {
     faceplayer
-    namebox ("MINER")
+    namebox ("Miner")
     msgbox(format("I wish they had a Bank here.\pI have to make a trip all the way to Falador if I want to heal my monsters."))
     closemessage
     hidenamebox
@@ -306,45 +374,122 @@ script ABYSSALRIFT_Mazcab_Shauny{
 
 
 
+
+
+script ALTAR_AIR_ENTER{
+    msgbox(format("It is a mysterious Altar."))
+    checkitem (ITEM_TALISMAN_AIR, 1)
+        if (var(VAR_RESULT))
+        {
+        msgbox(format("Would you like to use the AIR TALISMAN?"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)){
+                        msgbox(format("The AIR TALISMAN begins to glow.\pA mass of energy suddenly surrounds you!"))
+                        warp (MAP_AIR_ALTAR,1,0,0)
+                        closemessage
+                        release
+                        end
+                    }
+                    closemessage
+                    release
+                    end
+        }
+    closemessage
+    release
+    end
+}
+script ALTAR_MIND_ENTER{
+    msgbox(format("It is a mysterious Altar."))
+    checkitem (ITEM_TALISMAN_MIND, 1)
+        if (var(VAR_RESULT))
+        {
+        msgbox(format("Would you like to use the MIND TALISMAN?"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)){
+                        msgbox(format("The MIND TALISMAN begins to glow.\pA mass of energy suddenly surrounds you!"))
+                        warp (MAP_MIND_ALTAR,1,0,0)
+                        closemessage
+                        release
+                        end
+                    }
+                    closemessage
+                    release
+                    end
+        }
+    closemessage
+    release
+    end
+}
 script ALTAR_WATER_ENTER{
     msgbox(format("It is a mysterious Altar."))
-    msgbox(format("Would you like to use the Water Talisman?"), MSGBOX_YESNO)
-				if (var(VAR_RESULT)){
-                    msgbox(format("The WATER TALISMAN begins to glow.\pA mass of energy suddenly surrounds you!"))
-                    warp (MAP_MAZCAB_OTOT,0,0,0)
+    checkitem (ITEM_TALISMAN_WATER, 1)
+        if (var(VAR_RESULT))
+        {
+        msgbox(format("Would you like to use the WATER TALISMAN?"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)){
+                        msgbox(format("The WATER TALISMAN begins to glow.\pA mass of energy suddenly surrounds you!"))
+                        warp (MAP_WATER_ALTAR,1,0,0)
+                        closemessage
+                        release
+                        end
+                    }
                     closemessage
                     release
                     end
-                }
-                closemessage
-                release
-                end
+        }
+    closemessage
+    release
+    end
 }
-
-
-script ALTAR_WATER_RETURN{
-msgbox(format("Would you like to leave this realm?"), MSGBOX_YESNO)
-				if (var(VAR_RESULT)){
-                    msgbox(format("As you step into the portal a mass of energy surrounds you!"))
-                    warp (MAP_ROUTE4,1,0,0)
-                    closemessage
-                    release
-                    end
-                }
-                closemessage
-                release
-                end
-}
-
 script ALTAR_EARTH_ENTER{
     msgbox(format("It is a mysterious Altar."))
     checkitem (ITEM_TALISMAN_EARTH, 1)
         if (var(VAR_RESULT))
         {
-        msgbox(format("Would you like to use the Earth Talisman?"), MSGBOX_YESNO)
+        msgbox(format("Would you like to use the EARTH TALISMAN?"), MSGBOX_YESNO)
                     if (var(VAR_RESULT)){
                         msgbox(format("The EARTH TALISMAN begins to glow.\pA mass of energy suddenly surrounds you!"))
-                        warp (MAP_MAZCAB_OTOT,0,0,0)
+                        warp (MAP_EARTH_ALTAR,1,0,0)
+                        closemessage
+                        release
+                        end
+                    }
+                    closemessage
+                    release
+                    end
+        }
+    closemessage
+    release
+    end
+}
+script ALTAR_FIRE_ENTER{
+    msgbox(format("It is a mysterious Altar."))
+    checkitem (ITEM_TALISMAN_FIRE, 1)
+        if (var(VAR_RESULT))
+        {
+        msgbox(format("Would you like to use the FIRE TALISMAN?"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)){
+                        msgbox(format("The FIRE TALISMAN begins to glow.\pA mass of energy suddenly surrounds you!"))
+                        warp (MAP_FIRE_ALTAR,1,0,0)
+                        closemessage
+                        release
+                        end
+                    }
+                    closemessage
+                    release
+                    end
+        }
+    closemessage
+    release
+    end
+}
+script ALTAR_BODY_ENTER{
+    msgbox(format("It is a mysterious Altar."))
+    checkitem (ITEM_TALISMAN_BODY, 1)
+        if (var(VAR_RESULT))
+        {
+        msgbox(format("Would you like to use the BODY TALISMAN?"), MSGBOX_YESNO)
+                    if (var(VAR_RESULT)){
+                        msgbox(format("The BODY TALISMAN begins to glow.\pA mass of energy suddenly surrounds you!"))
+                        warp (MAP_BODY_ALTAR,1,0,0)
                         closemessage
                         release
                         end
@@ -359,30 +504,13 @@ script ALTAR_EARTH_ENTER{
 }
 
 
-script ALTAR_EARTH_RETURN{
-msgbox(format("Would you like to leave this realm?"), MSGBOX_YESNO)
-				if (var(VAR_RESULT)){
-                    msgbox(format("As you step into the portal a mass of energy surrounds you!"))
-                    warp (MAP_ROUTE17,1,0,0)
-                    closemessage
-                    release
-                    end
-                }
-                closemessage
-                release
-                end
-}
-
-
-
-
-
 //CRAFTING GUILD
 
 script CRAFTINGGUILD_MILKSELLER
 {
     lock
     faceplayer
+    namebox("Mr. Milks")
     msgbox(format("Why hello there, are you interested in some flavoured Milk?"))
     pokemart(FlavouredMilkShop)
     closemessage
@@ -409,7 +537,9 @@ FlavouredMilkShop:
 
 script CRAFTINGGUILD_NPC_1
 {
-    namebox ("Master Crafter")
+    lock
+    faceplayer
+    namebox ("Crafter")
 	msgbox(format("Where's your brown apron?\pYou can't come up here unless you're wearing one."))
     closemessage
     hidenamebox
@@ -419,7 +549,9 @@ script CRAFTINGGUILD_NPC_1
 
 script CRAFTINGGUILD_NPC_2
 {
-    namebox ("Master Crafter")
+    lock
+    faceplayer
+    namebox ("Crafter")
 	msgbox(format("Hello, and welcome to the Crafting Guild!\pAccomplished crafters from all over the land come here to use our top notch workshops.\pYou don't see any workshops?\pOf course not, they're all upstairs!"))
     closemessage
     hidenamebox
@@ -429,6 +561,8 @@ script CRAFTINGGUILD_NPC_2
 
 script CRAFTINGGUILD_NPC_3
 {
+    lock
+    faceplayer
     namebox ("Miner")
 	msgbox(format("I came here because I heard there were a lot of useful ores to mine, but they just have useless ore like gold or silver!\pI don't want ore for jewellery, I want ore to make my own pouches and battle monsters!"))
     closemessage
