@@ -9,9 +9,22 @@ mapscripts Varrock_MapScripts {
 		{
 		}
     }
+
+    MAP_SCRIPT_ON_LOAD { //ON LOAD FOR MAP TILES
+		if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+		{
+			call(VARROCK_STATE)
+		}
+		else 
+		{
+			
+		}
+	}
 }
 
-
+script VARROCK_STATE {
+    setmetatile(9, 26, METATILE_PokeScapeOutdoors_Door_GeneralStore_L, 0)
+}
 
 
 
@@ -411,7 +424,7 @@ script VARROCK_NPC_11
 {
     faceplayer
     namebox ("Guthix Wizard")
-    msgbox(format("Dont dig for treasure chests, you have been warned."))
+    msgbox(format("Don't dig for treasure chests, you have been warned."))
     closemessage
     hidenamebox
     release

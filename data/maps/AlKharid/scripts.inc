@@ -1,10 +1,25 @@
 AlKharid_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, AlKharid_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_LOAD, AlKharid_MapScripts_MAP_SCRIPT_ON_LOAD
 	.byte 0
 
 AlKharid_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setflag FLAG_VISITED_AL_KHARID
 	setvar VAR_EVOLUTION_MAP_STATE, 11
+	return
+
+AlKharid_MapScripts_MAP_SCRIPT_ON_LOAD:
+	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
+	goto_if_eq AlKharid_MapScripts_MAP_SCRIPT_ON_LOAD_1
+	return
+
+AlKharid_MapScripts_MAP_SCRIPT_ON_LOAD_1:
+	call ALKHARID_STATE
+	return
+
+
+ALKHARID_STATE::
+	setmetatile 13, 16, METATILE_AlKharid_OPENED_DOOR, 0
 	return
 
 

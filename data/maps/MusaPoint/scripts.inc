@@ -10,6 +10,7 @@ MusaPoint_MapScripts_MAP_SCRIPT_ON_LOAD:
 MusaPoint_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setflag FLAG_VISITED_MUSA_POINT
 	call MUSAPOINT_STATE
+	call WEATHER_CHANGE_AREA_MUSAPOINT
 	setvar VAR_EVOLUTION_MAP_STATE, 15
 	return
 
@@ -19,25 +20,24 @@ MUSAPOINT_METATILES::
 	goto_if_le MUSAPOINT_METATILES_2
 MUSAPOINT_METATILES_1:
 	compare VAR_BANANA_BOAT_QUEST, 10
-	goto_if_ge MUSAPOINT_METATILES_4
+	goto_if_ge MUSAPOINT_METATILES_5
+MUSAPOINT_METATILES_4:
 	return
 
 MUSAPOINT_METATILES_2:
 	setmetatile 12, 35, METATILE_Karamja_SAND_BANANA, 0
 	setmetatile 10, 36, METATILE_Karamja_SAND_BANANA, 0
 	setmetatile 15, 35, METATILE_Karamja_SAND_BANANA, 0
-	special DrawWholeMapView
 	goto MUSAPOINT_METATILES_1
 
-MUSAPOINT_METATILES_4:
+MUSAPOINT_METATILES_5:
 	setmetatile 27, 27, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
 	setmetatile 28, 27, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
 	setmetatile 29, 27, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
 	setmetatile 27, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
 	setmetatile 28, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
 	setmetatile 29, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0
-	special DrawWholeMapView
-	return
+	goto MUSAPOINT_METATILES_4
 
 
 MUSAPOINT_STATE::
@@ -1110,7 +1110,7 @@ NPC_MUSA_POINT_2_Text_1:
 NPC_MUSA_POINT_3_Text_0:
 	.string "The Customs Officers constantly keep\n"
 	.string "us under supervision, apparently they\l"
-	.string "dont want Karamja Rum to reach the\l"
+	.string "don't want Karamja Rum to reach the\l"
 	.string "mainland.\p"
 	.string "Its all a conspiracy to keep the White\n"
 	.string "knights in power I tell you!$"

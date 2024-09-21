@@ -167,6 +167,7 @@ bool8 MetatileBehavior_Is_DG_ROPE(u8);
 bool8 MetatileBehavior_Is_DG_STRING(u8);
 bool8 MetatileBehavior_Is_DG_SPINNING_WHEEL(u8);
 bool8 MetatileBehavior_IsBananaTree(u8);
+bool8 MetatileBehavior_IsLockedDoor(u8);
 
 
 

@@ -206,6 +206,14 @@ EventScript_RestBed_2:
 	goto EventScript_RestBed_1
 
 
+EventScript_Locked_Door::
+	lock
+	msgbox EventScript_Locked_Door_Text_0
+	closemessage
+	release
+	end
+
+
 BLOCK_LumbridgeSwamp_HAM_Text_0:
 	.string "Pink Man$"
 
@@ -321,3 +329,6 @@ LUMBRIDGESWAMP_BOOK_Text_0:
 
 EventScript_RestBed_Text_0:
 	.string "Would you like to take a rest?$"
+
+EventScript_Locked_Door_Text_0:
+	.string "It is locked.$"

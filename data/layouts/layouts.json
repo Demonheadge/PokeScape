@@ -4697,7 +4697,7 @@
       "width": 82,
       "height": 26,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
-      "secondary_tileset": "gTileset_Falador",
+      "secondary_tileset": "gTileset_Rimmington",
       "border_filepath": "data/layouts/Route8/border.bin",
       "blockdata_filepath": "data/layouts/Route8/map.bin"
     },

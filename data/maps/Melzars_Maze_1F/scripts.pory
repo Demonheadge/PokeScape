@@ -107,8 +107,8 @@ movement movement_MELZAR_RAT_3
 script MELZARS_1F_RATS_QUEST {
     lock
     faceplayer
-	namebox ("RAT")
     if (var(VAR_POKESCAPE_MELZARS_MAZE_DOORS) == 0) { //AFTER RAT STEAL KEY CUTSCENE
+			namebox ("RAT")
 			playmoncry(SPECIES_GIANT_RAT_NORMAL_FORM, 0)
         	msgbox(format("Squeek!"))
 			waitmoncry
@@ -285,7 +285,7 @@ script BATTLE_MELZARS_1F_TRAINER_2
 
 script BATTLE_MELZARS_1F_TRAINER_3
 {
-    trainerbattle_single(TRAINER_MELZARS_1F_TRAINER_3, format("The skeleton lurches to life and attacks!"),format("The skeletons bones groan under the weight of defeat."))
+    trainerbattle_single(TRAINER_MELZARS_1F_TRAINER_3, format("The skeleton lurches to life and attacks!"),format("The skeleton's bones groan under the weight of defeat."))
     //namebox ("")
     msgbox(format("Rattle rattle."))
 	hidenamebox

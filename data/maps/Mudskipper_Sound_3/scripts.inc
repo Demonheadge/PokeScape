@@ -1,5 +1,11 @@
 Mudskipper_Sound_3_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Mudskipper_Sound_3_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+Mudskipper_Sound_3_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setvar VAR_EVOLUTION_MAP_STATE, 15
+	call WEATHER_CHANGE_SEA_ROUTES_ROUGH
+	return
 
 
 BATTLE_MUDSKIPPER_MUGGER::

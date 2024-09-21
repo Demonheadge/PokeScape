@@ -157,7 +157,7 @@ LumbridgeSwampCaves_WallBeasts_Text_4:
 	.string "A small hand falls out of the rubble!$"
 
 BATTLE_LUMBRIDGESWAMPCAVE_FISHERMAN_1_Text_0:
-	.string "Im collecting frogspawn, dont bother\n"
+	.string "Im collecting frogspawn, don't bother\n"
 	.string "me.$"
 
 BATTLE_LUMBRIDGESWAMPCAVE_FISHERMAN_1_Text_1:

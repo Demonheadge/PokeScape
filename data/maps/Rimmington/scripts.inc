@@ -378,7 +378,8 @@ NPC_RIMMINGTON_NPC_8::
 NPC_RIMMINGTON_NPC_9::
 	lock
 	faceplayer
-	msgbox NPC_RIMMINGTON_NPC_9_Text_0
+	namebox NPC_RIMMINGTON_NPC_9_Text_0
+	msgbox NPC_RIMMINGTON_NPC_9_Text_1
 	hidenamebox
 	release
 	end
@@ -1384,6 +1385,9 @@ NPC_RIMMINGTON_NPC_8_Text_1:
 	.string "Mines?$"
 
 NPC_RIMMINGTON_NPC_9_Text_0:
+	.string "Graceful$"
+
+NPC_RIMMINGTON_NPC_9_Text_1:
 	.string "You can not always run from your\n"
 	.string "problems.\p"
 	.string "Running near others will make them spot\n"
@@ -1394,7 +1398,7 @@ NPC_RIMMINGTON_NPC_10_Text_0:
 	.string "EDater$"
 
 NPC_RIMMINGTON_NPC_10_Text_1:
-	.string "Honey whats your favorite Elite\n"
+	.string "Honey what's your favorite Elite\n"
 	.string "Dungeon?$"
 
 NPC_RIMMINGTON_NPC_10_Text_2:
@@ -1482,7 +1486,7 @@ RIMMINGTON_SIGNPOST_HOUSEPORTAL_Text_0:
 	.string "Rimmington House Portal.$"
 
 RIMMINGTON_SIGNPOST_RIMMINGTON_Text_0:
-	.string "Rimmington, known for it's famous house\n"
+	.string "Rimmington, known for its famous house\n"
 	.string "parties.$"
 
 NPC_SETVAR_RIMMINGTON_Text_0:
@@ -1523,7 +1527,7 @@ NPC_RIMMINGTON_FANBOYNOOB_2_Text_0:
 NPC_RIMMINGTON_FANBOYNOOB_3_Text_0:
 	.string "They say the house of Zezima has a\n"
 	.string "golden statue spewing chocolate we\l"
-	.string "cant eat because we are not maxed.$"
+	.string "can't eat because we are not maxed.$"
 
 NPC_RIMMINGTON_FANBOYNOOB_4_Text_0:
 	.string "I wonder what the house of someone\n"
@@ -1614,7 +1618,7 @@ NPC_RIMMINGTON_DemonAndStan_Text_12:
 	.string "celebrity!$"
 
 NPC_RIMMINGTON_DemonAndStan_Text_13:
-	.string "Mickey we dont even qualify as celery…$"
+	.string "Mickey we don't even qualify as celery…$"
 
 NPC_RIMMINGTON_DemonAndStan_Text_14:
 	.string "Follow me on Twitter!$"

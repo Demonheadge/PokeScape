@@ -87,9 +87,9 @@ script BATTLE_ROUTE24_WOODCUTTER_1{
 }
 
 script BATTLE_ROUTE24_WOODCUTTER_2{
-    trainerbattle_single(TRAINER_ROUTE24_WOODCUTTER_2, format("To chop down trees you need a hatchet like mine."),format("I bet you dont even have over 20 Woodcutting."))
+    trainerbattle_single(TRAINER_ROUTE24_WOODCUTTER_2, format("To chop down trees you need a hatchet like mine."),format("I bet you don't even have over 20 Woodcutting."))
     namebox ("RSN")
-    msgbox(format("I bet you dont even have over 20 Woodcutting."))
+    msgbox(format("I bet you don't even have over 20 Woodcutting."))
     hidenamebox
     release
     end
@@ -137,7 +137,7 @@ script NPC_ROUTE24_NPC_1{
     lock
     faceplayer
     namebox ("MAN")
-    msgbox(format("Due east is Varrock, the capital of Misthalin.\pOn the way there you can meet some unfriendly dwarves and barbarians but dont let them ruin your day."))
+    msgbox(format("Due east is Varrock, the capital of Misthalin.\pOn the way there you can meet some unfriendly dwarves and barbarians but don't let them ruin your day."))
     hidenamebox
     release
     end

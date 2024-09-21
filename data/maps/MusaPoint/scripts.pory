@@ -10,6 +10,7 @@ mapscripts MusaPoint_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
 		setflag(FLAG_VISITED_MUSA_POINT)
 		call(MUSAPOINT_STATE)
+		call(WEATHER_CHANGE_AREA_MUSAPOINT)
         setvar(VAR_EVOLUTION_MAP_STATE, 15) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
     }
 	
@@ -21,7 +22,7 @@ script MUSAPOINT_METATILES {
 		setmetatile(12, 35, METATILE_Karamja_SAND_BANANA, 0) 
 		setmetatile(10, 36, METATILE_Karamja_SAND_BANANA, 0) 
 		setmetatile(15, 35, METATILE_Karamja_SAND_BANANA, 0) 
-		special(DrawWholeMapView) 
+		//special(DrawWholeMapView)  // DO NOT USE WITH : ON_LOAD
 	}
 
 	if (var(VAR_BANANA_BOAT_QUEST) >= 10) { 
@@ -31,10 +32,9 @@ script MUSAPOINT_METATILES {
 		setmetatile(27, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0) 
 		setmetatile(28, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0) 
 		setmetatile(29, 28, METATILE_PokeScapeOutdoors_GENERAL_SAND, 0) 
-		special(DrawWholeMapView) 
+		//special(DrawWholeMapView) 
 	}
-
-	
+	return
 }
 
 script MUSAPOINT_STATE {
@@ -181,7 +181,7 @@ script NPC_MUSA_POINT_3
 	lock
 	faceplayer
     namebox ("Pirate")
-	msgbox(format("The Customs Officers constantly keep us under supervision, apparently they dont want Karamja Rum to reach the mainland.\pIts all a conspiracy to keep the White knights in power I tell you!"))
+	msgbox(format("The Customs Officers constantly keep us under supervision, apparently they don't want Karamja Rum to reach the mainland.\pIts all a conspiracy to keep the White knights in power I tell you!"))
     closemessage
     hidenamebox
 	release

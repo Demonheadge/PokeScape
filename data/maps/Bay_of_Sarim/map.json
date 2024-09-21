@@ -63,7 +63,60 @@
 
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 48,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TRIGGER_ROUGH_SEAS_Right"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 48,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TRIGGER_ROUGH_SEAS_Right"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 48,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TRIGGER_ROUGH_SEAS_Right"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 48,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TRIGGER_ROUGH_SEAS_Right"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 48,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TRIGGER_ROUGH_SEAS_Right"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 48,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TRIGGER_ROUGH_SEAS_Right"
+    }
   ],
   "bg_events": [
 

@@ -4,7 +4,7 @@ mapscripts Route31_MapScripts{
 		setvar(VAR_EVOLUTION_MAP_STATE, 6) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
     
 
-		call(WEATHER_CHANGE_ROUTE)
+		call(WEATHER_CHANGE_AREA_WILDERNESS)
 		#random (100)
 		#if (var(VAR_RESULT) == 99)
 		#{
@@ -241,4 +241,204 @@ script CHAOS_TUNNELS_SIGN
 	msgbox(format("WARNING! DANGEROUS MONSTERS BE-\pThe rest of the text is obscured by a rather large bloodstain."))
 	release
 	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//ROUTE WEATHER -------------------------------------------------------
+
+
+script RandomiseSeed_Weather { // VAR_SEED % VAR_TEMP_9.
+	random(128)
+    copyvar(VAR_SEED, VAR_RESULT)
+	setvar(VAR_TEMP_9, 10)
+    specialvar (VAR_STORE_SEED_RESULT, GetSeededResult)
+
+
+	buffernumberstring(STR_VAR_3, VAR_SEED) 
+    msgbox(format("VAR SEED is {STR_VAR_3} ."))
+    closemessage
+    buffernumberstring(STR_VAR_3, VAR_STORE_SEED_RESULT) 
+    msgbox(format("VAR SEEDEDRESULT is {STR_VAR_3} ."))
+    closemessage
+}
+
+script WEATHER_CHANGE_AREA_MUSAPOINT
+{
+	switch (var(VAR_STORE_SEED_RESULT)) { 
+		case 0: 
+		case 1: 
+		case 2: 
+		case 3: 
+			setweather (WEATHER_RAIN)
+			doweather
+		case 5:
+			setweather (WEATHER_DOWNPOUR)
+			doweather
+		default:
+			setweather (WEATHER_NONE)
+			doweather
+	}
+	return
+}
+
+script WEATHER_CHANGE_SEA_ROUTES_CALM
+{
+	switch (var(VAR_STORE_SEED_RESULT)) { 
+		case 0: 
+		case 3: 
+			setweather (WEATHER_RAIN)
+			doweather
+		case 5:
+			setweather (WEATHER_DOWNPOUR)
+			doweather
+		case 7:
+		case 8:
+			setweather (WEATHER_SUNNY)
+			doweather
+		default:
+			setweather (WEATHER_NONE)
+			doweather
+	}
+	return
+}
+script WEATHER_CHANGE_SEA_ROUTES_ROUGH
+{
+	switch (var(VAR_STORE_SEED_RESULT)) { 
+		case 0: 
+		case 1: 
+		case 2: 
+		case 3: 
+			setweather (WEATHER_RAIN)
+			doweather
+		case 9:
+			setweather (WEATHER_DOWNPOUR)
+			doweather
+		default:
+			setweather (WEATHER_NONE)
+			doweather
+	}
+	return
+}
+
+script WEATHER_CHANGE_AREA_DESERT_CALM
+{
+	switch (var(VAR_STORE_SEED_RESULT)) { 
+		case 0: 
+		case 1: 
+		case 5: 
+		case 6:
+		case 7: 
+			setweather (WEATHER_SANDSTORM)
+			doweather
+		case 8:
+			setweather (WEATHER_DROUGHT)
+			doweather
+		default:
+			setweather (WEATHER_SUNNY)
+			doweather
+	}
+	return
+}
+script WEATHER_CHANGE_AREA_DESERT_ROUGH
+{
+	switch (var(VAR_STORE_SEED_RESULT)) { 
+		case 1: 
+		case 2: 
+		case 4: 
+		case 6: 
+		case 7: 
+			setweather (WEATHER_SANDSTORM)
+			doweather
+		case 8:
+			setweather (WEATHER_SUNNY)
+			doweather
+		default:
+			setweather (WEATHER_DROUGHT)
+			doweather
+	}
+	return
+}
+
+script WEATHER_CHANGE_AREA_DAEMONHEIM
+{
+	switch (var(VAR_STORE_SEED_RESULT)) { 
+		case 4: 
+		case 7: 
+		case 3: 
+			setweather (WEATHER_SNOW)
+			doweather
+		case 8:
+			setweather (WEATHER_SHADE)
+			doweather
+		default:
+			setweather (WEATHER_VOLCANIC_ASH)
+			doweather
+	}
+	return
+}
+
+script WEATHER_CHANGE_AREA_WILDERNESS
+{
+	switch (var(VAR_STORE_SEED_RESULT)) { 
+		case 1: 
+		case 3: 
+		case 9: 
+			setweather (WEATHER_VOLCANIC_ASH)
+			doweather
+		default:
+			setweather (WEATHER_SHADE)
+			doweather
+	}
+	return
+}
+
+script WEATHER_CHANGE_AREA_ICE_MOUNTAIN
+{
+	switch (var(VAR_STORE_SEED_RESULT)) { 
+		case 4:
+			setweather (WEATHER_SUNNY)
+			doweather
+		default:
+			setweather (WEATHER_SNOW)
+			doweather
+	}
+	return
+}
+
+
+
+script GET_TIME_OF_DAY
+{
+
+	special(GetTimeOfDaySpecial)
+	buffernumberstring(STR_VAR_3, VAR_RESULT) 
+    msgbox(format("Time of day is {STR_VAR_3} ."))
+    closemessage
+
+
+	special(GetTimeOfDaySpecial)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			msgbox(format("It is TIME_MORNING."))
+		case 1:
+			msgbox(format("It is TIME_DAY."))
+		case 2:
+			msgbox(format("It is TIME_EVENING."))
+		case 3:
+			msgbox(format("It is TIME_NIGHT."))
+		
+		default:
+			msgbox(format("I have no clue what the time is."))
+	}
 }

@@ -5,7 +5,7 @@ Route29_MapScripts::
 
 Route29_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 11
-	call WEATHER_CHANGE_ROUTE_SAND
+	call WEATHER_CHANGE_AREA_DESERT_CALM
 	return
 
 Route29_MapScripts_MAP_SCRIPT_ON_LOAD:
@@ -116,8 +116,8 @@ BATTLE_ROUTE29_TRAINER_1_Text_2:
 	.string "across any.$"
 
 BATTLE_ROUTE29_TRAINER_2_Text_0:
-	.string "Minerals are truly fascinating dont you\n"
-	.string "think?$"
+	.string "Minerals are truly fascinating don't\n"
+	.string "you think?$"
 
 BATTLE_ROUTE29_TRAINER_2_Text_1:
 	.string "Keep your strong monsters.\p"

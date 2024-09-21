@@ -132,7 +132,7 @@ script BATTLE_ROUTE13_TRAINER_4
 
 script BATTLE_ROUTE14_TRAINER_1
 {
-    trainerbattle_single(TRAINER_ROUTE14_TRAINER_1, format("Dont disturb me!"),format("You woke my pet rock up…"))
+    trainerbattle_single(TRAINER_ROUTE14_TRAINER_1, format("Don't disturb me!"),format("You woke my pet rock up…"))
     namebox ("MINER")
     msgbox(format("You woke my pet rock up…"))
 	hidenamebox

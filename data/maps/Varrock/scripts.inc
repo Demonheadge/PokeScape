@@ -1,5 +1,6 @@
 Varrock_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Varrock_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_LOAD, Varrock_MapScripts_MAP_SCRIPT_ON_LOAD
 	.byte 0
 
 Varrock_MapScripts_MAP_SCRIPT_ON_TRANSITION:
@@ -10,6 +11,20 @@ Varrock_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	return
 
 Varrock_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	return
+
+Varrock_MapScripts_MAP_SCRIPT_ON_LOAD:
+	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
+	goto_if_eq Varrock_MapScripts_MAP_SCRIPT_ON_LOAD_1
+	return
+
+Varrock_MapScripts_MAP_SCRIPT_ON_LOAD_1:
+	call VARROCK_STATE
+	return
+
+
+VARROCK_STATE::
+	setmetatile 9, 26, METATILE_PokeScapeOutdoors_Door_GeneralStore_L, 0
 	return
 
 
@@ -1433,7 +1448,7 @@ VARROCK_NPC_11_Text_0:
 	.string "Guthix Wizard$"
 
 VARROCK_NPC_11_Text_1:
-	.string "Dont dig for treasure chests, you have\n"
+	.string "Don't dig for treasure chests, you have\n"
 	.string "been warned.$"
 
 VARROCK_NPC_12_Text_0:

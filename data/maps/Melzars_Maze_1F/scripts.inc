@@ -120,7 +120,6 @@ movement_MELZAR_RAT_3:
 MELZARS_1F_RATS_QUEST::
 	lock
 	faceplayer
-	namebox MELZARS_1F_RATS_QUEST_Text_0
 	compare VAR_POKESCAPE_MELZARS_MAZE_DOORS, 0
 	goto_if_eq MELZARS_1F_RATS_QUEST_2
 	msgbox MELZARS_1F_RATS_QUEST_Text_4
@@ -131,6 +130,7 @@ MELZARS_1F_RATS_QUEST_1:
 	end
 
 MELZARS_1F_RATS_QUEST_2:
+	namebox MELZARS_1F_RATS_QUEST_Text_0
 	playmoncry SPECIES_GIANT_RAT_NORMAL_FORM, 0
 	msgbox MELZARS_1F_RAT_Text_0
 	waitmoncry
@@ -426,7 +426,7 @@ BATTLE_MELZARS_1F_TRAINER_3_Text_0:
 	.string "attacks!$"
 
 BATTLE_MELZARS_1F_TRAINER_3_Text_1:
-	.string "The skeletons bones groan under the\n"
+	.string "The skeleton's bones groan under the\n"
 	.string "weight of defeat.$"
 
 BATTLE_MELZARS_1F_TRAINER_3_Text_2:

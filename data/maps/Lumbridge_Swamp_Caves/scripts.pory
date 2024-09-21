@@ -122,7 +122,7 @@ script ITEM_LUMBRIDGESWAMPCAVE_ITEM_6
 //BATTLES
 //Low levels
 script BATTLE_LUMBRIDGESWAMPCAVE_FISHERMAN_1{
-    trainerbattle_single(TRAINER_LUMBRIDGESWAMPCAVE_FISHERMAN_1, format("Im collecting frogspawn, dont bother me."),format("I hear somewhere in Kandarin theres a tower.\pIf you bring it a slimy eel and frog legs it will create a legendary monster."))
+    trainerbattle_single(TRAINER_LUMBRIDGESWAMPCAVE_FISHERMAN_1, format("Im collecting frogspawn, don't bother me."),format("I hear somewhere in Kandarin theres a tower.\pIf you bring it a slimy eel and frog legs it will create a legendary monster."))
     //namebox("EELFROG330")
     msgbox(format("I hear somewhere in Kandarin theres a tower.\pIf you bring it a slimy eel and frog legs it will create a legendary monster."))
     hidenamebox

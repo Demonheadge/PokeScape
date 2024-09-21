@@ -367,7 +367,7 @@
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_TZHAAR_CAVES_5",
-      "dest_warp_id": "0"
+      "dest_warp_id": "13"
     },
     {
       "x": 13,
@@ -394,7 +394,7 @@
       "x": 8,
       "y": 23,
       "elevation": 0,
-      "dest_map": "MAP_TZHAAR_CAVES_5",
+      "dest_map": "MAP_TZHAAR_CAVES_3",
       "dest_warp_id": "0"
     },
     {
@@ -431,6 +431,13 @@
       "elevation": 0,
       "dest_map": "MAP_TZHAAR_CAVES_5",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 37,
+      "y": 36,
+      "elevation": 0,
+      "dest_map": "MAP_TZHAAR_CAVES_5",
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [

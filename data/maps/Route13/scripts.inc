@@ -326,7 +326,7 @@ BATTLE_ROUTE13_TRAINER_4_Text_2:
 	.string "QUESTER$"
 
 BATTLE_ROUTE14_TRAINER_1_Text_0:
-	.string "Dont disturb me!$"
+	.string "Don't disturb me!$"
 
 BATTLE_ROUTE14_TRAINER_1_Text_1:
 	.string "You woke my pet rock up…$"

@@ -1,6 +1,10 @@
 #ifndef GUARD_METATILE_LABELS_H
 #define GUARD_METATILE_LABELS_H
 
+// gTileset_AlKharid
+#define METATILE_AlKharid_LOCKED_DOOR  0x251
+#define METATILE_AlKharid_OPENED_DOOR  0x213
+
 // gTileset_BattleArena
 #define METATILE_BattleArena_Door  0x21B
 
@@ -523,7 +527,11 @@
 #define METATILE_PokeScapeOutdoors_Door_General_R       0x1D3
 #define METATILE_PokeScapeOutdoors_Door_Pub_L           0x1EA
 #define METATILE_PokeScapeOutdoors_Door_Pub_R           0x1D2
+#define METATILE_PokeScapeOutdoors_FLOWER_TILE_1        0x004
+#define METATILE_PokeScapeOutdoors_FLOWER_TILE_2        0x00C
 #define METATILE_PokeScapeOutdoors_GENERAL_SAND         0x0F9
+#define METATILE_PokeScapeOutdoors_LOCKED_DOOR          0x1F0
+#define METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE    0x001
 
 // gTileset_PokeScape_Caves
 #define METATILE_PokeScape_Caves_HARAKEN_POOL_L      0x2F0

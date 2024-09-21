@@ -1499,4 +1499,11 @@ bool8 MetatileBehavior_IsBananaTree(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_IsLockedDoor(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_LOCKED_DOOR)
+        return TRUE;
+    else
+        return FALSE;
+}
 

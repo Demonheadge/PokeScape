@@ -56,7 +56,7 @@ script NPC_FALADORPUB_NPC1
 {
 	lock
 	faceplayer
-    //namebox ("Guard")
+    namebox ("Guard")
 	msgbox(format("Today was a rough day.\pSeven of my friends were killed and then the perpetrator lit fireworks over his head before he ran off.\pI hate this job."))
     waitmessage
     hidenamebox
@@ -69,7 +69,7 @@ script NPC_FALADORPUB_NPC2
 {
 	lock
 	faceplayer
-    //namebox ("Guard")
+    namebox ("White Knight")
 	msgbox(format("Some guy named Sir Theodore made a big hassle at work.\pApparently cleaning duty is not in accords with the ways of the White Knight code."))
     waitmessage
     hidenamebox
@@ -81,7 +81,7 @@ script NPC_FALADORPUB_NPC3
 {
 	lock
 	faceplayer
-    //namebox ("Guard")
+    namebox ("Pker")
 	msgbox(format("They say there exists a special rabbits foot that certain birds react to.\pIt makes their eggs become special.\pI wonder where you could find one…"))
     waitmessage
     hidenamebox

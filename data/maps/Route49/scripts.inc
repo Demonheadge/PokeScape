@@ -1,5 +1,11 @@
 Route49_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route49_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+Route49_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setvar VAR_EVOLUTION_MAP_STATE, 6
+	call WEATHER_CHANGE_AREA_DAEMONHEIM
+	return
 
 
 BATTLE_ROUTE49_Trainer_1::

@@ -840,7 +840,7 @@ NPC_FALADORCASTLE_QUEST_PART_3_Text_31:
 	.string "something…$"
 
 BATTLE_DWARVENMINES_SKILLER_Text_0:
-	.string "Please dont approach me.\p"
+	.string "Please don't approach me.\p"
 	.string "I have a terrible bodyguard and I am\n"
 	.string "not afraid to use it!$"
 

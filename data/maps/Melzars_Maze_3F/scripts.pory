@@ -42,9 +42,9 @@ script BATTLE_MELZAR_3F_TRAINER_1
 //Skeleton
 script BATTLE_MELZAR_3F_TRAINER_2
 {
-    trainerbattle_single(TRAINER_MELZARS_3F_TRAINER_2, format("The skeletons eyes glow red as it charges at you menacingly!"),format("The dark aura around the skeleton fades as it is defeated."))
+    trainerbattle_single(TRAINER_MELZARS_3F_TRAINER_2, format("The skeleton's eyes glow red as it charges at you menacingly!"),format("The dark aura around the skeleton fades as it is defeated."))
     //namebox ("")
-    msgbox(format("The skeletons eyes have returned to normal, perhaps something sinister nearby was controlling it earlier?"))
+    msgbox(format("The skeleton's eyes have returned to normal, perhaps something sinister nearby was controlling it earlier?"))
 	hidenamebox
     release
 	end

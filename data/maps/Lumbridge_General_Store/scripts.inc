@@ -144,7 +144,7 @@ GeneralStore_MUSAPOINT_Assistant::
 	namebox GeneralStore_MUSAPOINT_Assistant_Text_0
 	msgbox GeneralStore_MUSAPOINT_Assistant_Text_1
 	waitmessage
-	call STORE_cocktails
+	pokemart STORE_cocktails
 	msgbox GeneralStore_LUMBRIDGE_Text_2
 	release
 	return

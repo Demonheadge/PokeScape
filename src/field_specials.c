@@ -4338,3 +4338,9 @@ void PreparePartyForSkyBattle(void)
     VarSet(B_VAR_SKY_BATTLE,participatingPokemonSlot);
     CompactPartySlots();
 }
+
+void GetTimeOfDaySpecial(void)
+{
+	gSpecialVar_Result = GetTimeOfDay();
+}
+

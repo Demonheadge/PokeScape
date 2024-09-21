@@ -3,7 +3,7 @@ mapscripts Route29_MapScripts
 {
     MAP_SCRIPT_ON_TRANSITION {
         setvar(VAR_EVOLUTION_MAP_STATE, 11) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
-        call(WEATHER_CHANGE_ROUTE_SAND)
+        call(WEATHER_CHANGE_AREA_DESERT_CALM)
     }
     MAP_SCRIPT_ON_LOAD 
     {
@@ -64,7 +64,7 @@ script BATTLE_ROUTE29_TRAINER_1
 }
 script BATTLE_ROUTE29_TRAINER_2
 { //Desert sole , Heim lobster
-    trainerbattle_single(TRAINER_ROUTE29_TRAINER_2, format("Minerals are truly fascinating dont you think?"),format("Keep your strong monsters.\pI will keep to my minerals."))
+    trainerbattle_single(TRAINER_ROUTE29_TRAINER_2, format("Minerals are truly fascinating don't you think?"),format("Keep your strong monsters.\pI will keep to my minerals."))
     //namebox ("Miner")
     msgbox(format("Keep your strong monsters.\pI will keep to my minerals."))
 	//hidenamebox

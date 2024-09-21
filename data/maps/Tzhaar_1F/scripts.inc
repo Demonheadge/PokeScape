@@ -244,6 +244,7 @@ TZHAAR_NPC_BANKER::
 	msgbox TZHAAR_NPC_BANKER_Text_0
 	closemessage
 	hidenamebox
+	goto BANK_OPTIONS
 	release
 	end
 

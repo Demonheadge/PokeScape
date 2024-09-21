@@ -218,7 +218,7 @@ Melzar_Maze_2F_Bookshelf_Text_2:
 
 Melzar_Maze_2F_Picture_Text_0:
 	.string "You search the picture…\p"
-	.string "Did it's eyes just move?\p"
+	.string "Did its eyes just move?\p"
 	.string "You find nothing interesting…$"
 
 Melzar_Maze_2F_Tools_Text_0:

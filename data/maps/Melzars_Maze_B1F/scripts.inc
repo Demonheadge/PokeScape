@@ -560,7 +560,7 @@ TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_13:
 	.string "crew.$"
 
 TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_14:
-	.string "What about the batallion sent to\n"
+	.string "What about the battalion sent to\n"
 	.string "Falador?$"
 
 TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_15:
@@ -572,7 +572,7 @@ TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_16:
 	.string "Hey you, you may have won this time, but\n"
 	.string "let me just say you shouldn't give\l"
 	.string "chase after us.\p"
-	.string "Some of the higher ups like Johannes\n"
+	.string "Some of the higher ups like Johanhus\n"
 	.string "and Sigmund can be real scary.\p"
 	.string "I wouldn't want to oppose them.\p"
 	.string "This one time I accidentally ate\n"

@@ -29,10 +29,10 @@ Falador_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 
 OPENWORLD_STATE_FALADOR::
 	setflag FLAG_TEMP_2
+	setmetatile 69, 19, METATILE_PokeScapeOutdoors_Door_GeneralStore_L, 0
 	setmetatile 24, 6, 609, 0
 	setmetatile 24, 7, 617, 0
 	setmetatile 25, 6, 609, 0
-	special DrawWholeMapView
 	removeobject 40
 	setflag FLAG_TEMP_1
 	setflag FLAG_TEMP_1F
@@ -124,7 +124,8 @@ NPC_FALADOR_DOG::
 NPC_FALADOR_NPC_1::
 	lock
 	faceplayer
-	msgbox NPC_FALADOR_NPC_1_Text_0
+	namebox NPC_FALADOR_NPC_1_Text_0
+	msgbox NPC_FALADOR_NPC_1_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -167,7 +168,8 @@ NPC_FALADOR_GUARD_3::
 NPC_FALADOR_NPC_2::
 	lock
 	faceplayer
-	msgbox NPC_FALADOR_NPC_2_Text_0
+	namebox NPC_FALADOR_NPC_2_Text_0
+	msgbox NPC_FALADOR_NPC_2_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -177,7 +179,8 @@ NPC_FALADOR_NPC_2::
 NPC_FALADOR_NPC_3::
 	lock
 	faceplayer
-	msgbox NPC_FALADOR_NPC_3_Text_0
+	namebox NPC_FALADOR_NPC_3_Text_0
+	msgbox NPC_FALADOR_NPC_3_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -187,7 +190,8 @@ NPC_FALADOR_NPC_3::
 NPC_FALADOR_NPC_4::
 	lock
 	faceplayer
-	msgbox NPC_FALADOR_NPC_4_Text_0
+	namebox NPC_FALADOR_NPC_4_Text_0
+	msgbox NPC_FALADOR_NPC_4_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -312,7 +316,8 @@ NPC_FALADOR_WHITEKNIGHT_3_6:
 NPC_FALADOR_NPC_11::
 	lock
 	faceplayer
-	msgbox NPC_FALADOR_NPC_11_Text_0
+	namebox NPC_FALADOR_NPC_11_Text_0
+	msgbox NPC_FALADOR_NPC_11_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -322,7 +327,8 @@ NPC_FALADOR_NPC_11::
 NPC_FALADOR_NPC_12::
 	lock
 	faceplayer
-	msgbox NPC_FALADOR_NPC_12_Text_0
+	namebox NPC_FALADOR_NPC_12_Text_0
+	msgbox NPC_FALADOR_NPC_12_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -331,7 +337,8 @@ NPC_FALADOR_NPC_12::
 
 NPC_FALADOR_MINER_1::
 	faceplayer
-	msgbox NPC_FALADOR_MINER_1_Text_0
+	namebox NPC_FALADOR_MINER_1_Text_0
+	msgbox NPC_FALADOR_MINER_1_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -341,6 +348,7 @@ NPC_FALADOR_MINER_1::
 NPC_FALADOR_MINER_2::
 	lock
 	faceplayer
+	namebox NPC_FALADOR_MINER_1_Text_0
 	msgbox NPC_FALADOR_MINER_2_Text_0
 	waitmessage
 	hidenamebox
@@ -350,7 +358,8 @@ NPC_FALADOR_MINER_2::
 
 NPC_FALADOR_DWARF_1::
 	faceplayer
-	msgbox NPC_FALADOR_DWARF_1_Text_0
+	namebox NPC_FALADOR_DWARF_1_Text_0
+	msgbox NPC_FALADOR_DWARF_1_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -359,6 +368,7 @@ NPC_FALADOR_DWARF_1::
 
 NPC_FALADOR_DWARF_2::
 	faceplayer
+	namebox NPC_FALADOR_DWARF_1_Text_0
 	msgbox NPC_FALADOR_DWARF_2_Text_0
 	waitmessage
 	hidenamebox
@@ -369,7 +379,8 @@ NPC_FALADOR_DWARF_2::
 NPC_FALADOR_SMITHER::
 	lock
 	faceplayer
-	msgbox NPC_FALADOR_SMITHER_Text_0
+	namebox NPC_FALADOR_SMITHER_Text_0
+	msgbox NPC_FALADOR_SMITHER_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -379,7 +390,8 @@ NPC_FALADOR_SMITHER::
 NPC_FALADOR_WOODCUTTER::
 	lock
 	faceplayer
-	msgbox NPC_FALADOR_WOODCUTTER_Text_0
+	namebox NPC_FALADOR_WOODCUTTER_Text_0
+	msgbox NPC_FALADOR_WOODCUTTER_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -566,8 +578,8 @@ NPC_FALADOR_HAIRDRESSER_NPC::
 NPC_FALADOR_HAIRDRESSER_BALD::
 	lock
 	faceplayer
-	namebox NPC_FALADOR_HAIRDRESSER_BALD_Text_0
-	msgbox NPC_FALADOR_HAIRDRESSER_BALD_Text_1
+	namebox NPC_FALADOR_NPC_4_Text_0
+	msgbox NPC_FALADOR_HAIRDRESSER_BALD_Text_0
 	waitmessage
 	hidenamebox
 	release
@@ -725,8 +737,8 @@ Movement_FaladorTree_2:
 NPC_FALADOR_NPC_8::
 	lock
 	faceplayer
-	namebox NPC_FALADOR_NPC_10_Text_0
-	msgbox NPC_FALADOR_NPC_10_Text_0
+	namebox NPC_FALADOR_NPC_8_Text_0
+	msgbox NPC_FALADOR_NPC_8_Text_0
 	waitmessage
 	hidenamebox
 	release
@@ -837,6 +849,7 @@ NPC_FALADOR_HOUSE_NPC_2::
 NPC_FALADOR_NPC_9::
 	lock
 	faceplayer
+	namebox NPC_FALADOR_NPC_10_Text_0
 	msgbox NPC_FALADOR_NPC_9_Text_0
 	waitmessage
 	hidenamebox
@@ -1030,8 +1043,8 @@ movement_falador_walk_other:
 NPC_FALADOR_BLOCK_GUARD_1::
 	lock
 	faceplayer
-	namebox NPC_FALADOR_BLOCK_GUARD_1_Text_0
-	msgbox NPC_FALADOR_BLOCK_GUARD_1_Text_1
+	namebox NPC_FALADOR_GUARD_1_Text_0
+	msgbox NPC_FALADOR_BLOCK_GUARD_1_Text_0
 	waitmessage
 	hidenamebox
 	release
@@ -1041,7 +1054,7 @@ NPC_FALADOR_BLOCK_GUARD_1::
 NPC_FALADOR_BLOCK_GUARD_2::
 	lock
 	faceplayer
-	namebox NPC_FALADOR_BLOCK_GUARD_1_Text_0
+	namebox NPC_FALADOR_GUARD_1_Text_0
 	msgbox NPC_FALADOR_BLOCK_GUARD_2_Text_0
 	waitmessage
 	hidenamebox
@@ -1063,8 +1076,8 @@ NPC_FALADOR_BLOCK_MERCHANT::
 NPC_FALADOR_BLOCK_KNIGHT::
 	lock
 	faceplayer
-	namebox NPC_FALADOR_BLOCK_KNIGHT_Text_0
-	msgbox NPC_FALADOR_BLOCK_KNIGHT_Text_1
+	namebox NPC_FALADOR_WHITEKNIGHT_1_Text_0
+	msgbox NPC_FALADOR_BLOCK_KNIGHT_Text_0
 	waitmessage
 	hidenamebox
 	release
@@ -1187,7 +1200,7 @@ NPC_FALADOR_STORY_WHITE_KNIGHT_4::
 	lock
 	faceplayer
 	namebox NPC_FALADOR_WHITEKNIGHT_1_Text_0
-	msgbox NPC_FALADOR_NPC_10_Text_0
+	msgbox NPC_FALADOR_NPC_8_Text_0
 	waitmessage
 	hidenamebox
 	release
@@ -1270,12 +1283,15 @@ NPC_FALADOR_STATUE_1_Text_0:
 	.string "It reads, BOW TO THE GREAT ONE.$"
 
 NPC_FALADOR_DOG_Text_0:
-	.string "DALMATION$"
+	.string "Dalmation$"
 
 NPC_FALADOR_DOG_Text_1:
 	.string "RUFF!$"
 
 NPC_FALADOR_NPC_1_Text_0:
+	.string "Fanatic$"
+
+NPC_FALADOR_NPC_1_Text_1:
 	.string "Have you heard about the Mining &\n"
 	.string "Smithing rework?$"
 
@@ -1303,11 +1319,17 @@ NPC_FALADOR_GUARD_3_Text_0:
 	.string "Sorry, I am new to this job.$"
 
 NPC_FALADOR_NPC_2_Text_0:
+	.string "Skiller$"
+
+NPC_FALADOR_NPC_2_Text_1:
 	.string "You should always stock up on items to\n"
 	.string "heal your party.\p"
 	.string "Cakes and beer are a safe bet.$"
 
 NPC_FALADOR_NPC_3_Text_0:
+	.string "Quester$"
+
+NPC_FALADOR_NPC_3_Text_1:
 	.string "I used an air rune on my frog, and it\n"
 	.string "evolved differently from what I\l"
 	.string "thought it would.\p"
@@ -1315,6 +1337,9 @@ NPC_FALADOR_NPC_3_Text_0:
 	.string "evolutions out there?$"
 
 NPC_FALADOR_NPC_4_Text_0:
+	.string "Noob$"
+
+NPC_FALADOR_NPC_4_Text_1:
 	.string "Gnome cocktails are very useful.\p"
 	.string "They cure monsters' status effects.$"
 
@@ -1383,16 +1408,25 @@ NPC_FALADOR_WHITEKNIGHT_3_Text_1:
 	.string "Sir Amik Varze is our town's gym leader.$"
 
 NPC_FALADOR_NPC_11_Text_0:
+	.string "Barmaid$"
+
+NPC_FALADOR_NPC_11_Text_1:
 	.string "After I finish work today I might walk\n"
 	.string "around Falador Park.$"
 
 NPC_FALADOR_NPC_12_Text_0:
+	.string "Firemaker$"
+
+NPC_FALADOR_NPC_12_Text_1:
 	.string "I cannot seem to light a fire on these\n"
 	.string "flowers.\p"
 	.string "It's not that I don't want to, it's just\n"
 	.string "some kind of magic not letting me.$"
 
 NPC_FALADOR_MINER_1_Text_0:
+	.string "Miner$"
+
+NPC_FALADOR_MINER_1_Text_1:
 	.string "I am mining coal to get enough money\n"
 	.string "for a better pickaxe.\p"
 	.string "Then I can mine coal faster to get an\n"
@@ -1404,6 +1438,9 @@ NPC_FALADOR_MINER_2_Text_0:
 	.string "finished.$"
 
 NPC_FALADOR_DWARF_1_Text_0:
+	.string "Dwarf$"
+
+NPC_FALADOR_DWARF_1_Text_1:
 	.string "If you are wanting to access the\n"
 	.string "Dwarven Mines.\p"
 	.string "You can do so by entering the building\n"
@@ -1417,6 +1454,9 @@ NPC_FALADOR_DWARF_2_Text_0:
 	.string "rework.$"
 
 NPC_FALADOR_SMITHER_Text_0:
+	.string "Smith$"
+
+NPC_FALADOR_SMITHER_Text_1:
 	.string "We are currently in the middle of\n"
 	.string "expanding the Mining Guild.\p"
 	.string "We are also going to be clearing this\n"
@@ -1424,6 +1464,9 @@ NPC_FALADOR_SMITHER_Text_0:
 	.string "here.$"
 
 NPC_FALADOR_WOODCUTTER_Text_0:
+	.string "Woodcutter$"
+
+NPC_FALADOR_WOODCUTTER_Text_1:
 	.string "Chop, chop, chop!\p"
 	.string "Goodbye trees, hello Smithing Guild!$"
 
@@ -1533,9 +1576,6 @@ NPC_FALADOR_HAIRDRESSER_NPC_Text_1:
 	.string "It will fix my love life for sure.$"
 
 NPC_FALADOR_HAIRDRESSER_BALD_Text_0:
-	.string "Noob$"
-
-NPC_FALADOR_HAIRDRESSER_BALD_Text_1:
 	.string "It takes a lot of effort to stay bald.\p"
 	.string "I have to come in every day just for a\n"
 	.string "quick snip.\p"
@@ -1559,7 +1599,7 @@ NPC_FALADOR_CASSIE_Text_1:
 	.string "equip shields anyway.$"
 
 NPC_FALADOR_NPC_10_Text_0:
-	.string "$"
+	.string "Man$"
 
 NPC_FALADOR_NPC_10_Text_1:
 	.string "Is it still there?! I do not want to\n"
@@ -1644,6 +1684,9 @@ Falador_TREE_Text_3:
 Falador_TREE_Text_4:
 	.string "TIIIIMBOOOOOOOOO!$"
 
+NPC_FALADOR_NPC_8_Text_0:
+	.string "$"
+
 NPC_FALADOR_NPC_7_Text_0:
 	.string "Maybe they will one day rework farming.\n"
 	.string "A man can dream.$"
@@ -1712,9 +1755,6 @@ NPC_FALADOR_NPC_9_Text_0:
 	.string "It is scary just thinking about it.$"
 
 NPC_FALADOR_BLOCK_GUARD_1_Text_0:
-	.string "GUARD$"
-
-NPC_FALADOR_BLOCK_GUARD_1_Text_1:
 	.string "We've been informed that this shipment\n"
 	.string "may contain Karmajan Rum.\p"
 	.string "You should inform Sir Amik Varze right\n"
@@ -1727,18 +1767,15 @@ NPC_FALADOR_BLOCK_GUARD_2_Text_0:
 	.string "Knights Castle.$"
 
 NPC_FALADOR_BLOCK_MERCHANT_Text_0:
-	.string "MERCHANT$"
+	.string "Merchant$"
 
 NPC_FALADOR_BLOCK_MERCHANT_Text_1:
 	.string "Why did that guy have to say I was\n"
 	.string "carrying suspicious goods…$"
 
 NPC_FALADOR_BLOCK_KNIGHT_Text_0:
-	.string "KNIGHT$"
-
-NPC_FALADOR_BLOCK_KNIGHT_Text_1:
 	.string "There have been reports of a\n"
-	.string "distrubance in these mines.\p"
+	.string "disturbance in these mines.\p"
 	.string "Sir Owen and Sir Theodore have both\n"
 	.string "gone ahead to investigate.$"
 

@@ -411,7 +411,7 @@ script HANS_BARBARIAN_GYM {
     faceplayer
     namebox("Hans")
     if (flag(FLAG_BADGE04_GET) == TRUE) {
-        msgbox(format("Good job beating Gunthor!\lHope you feel great.\pMe?\pI dont feel so great, the barbarians are taking me out for drinks.\pFor the third time today.\pIf you dont hear from me, tell the Duke I will be late for work tomorow."))
+        msgbox(format("Good job beating Gunthor!\lHope you feel great.\pMe?\pI don't feel so great, the barbarians are taking me out for drinks.\pFor the third time today.\pIf you don't hear from me, tell the Duke I will be late for work tomorow."))
     }
     else {
         msgbox(format("Hey there completionist in the making!\lAt it again are you not?\pThis is the Barbarian village challenge.\pYou will have to face Gunthor himself to succeed.\pGunthor prefers strong FIGHTING-TYPE monsters.\pBest bring out your best FLYING and PSYCHIC type monsters.\pAlso if the crowd seems rowdy, remember its just a cultural difference."))
@@ -446,7 +446,7 @@ script HANS_FALADOR_GYM {
         msgbox(format("I never had a doubt.\pOnwards to your next challenge then?"))
     }
     else {
-        msgbox(format("There you are again completionist in the making.\pWelcome to Falador castle.\pYour next challenge is to beat Sir Amik Varze.\pHe uses WATER-TYPE monsters. WATER types are weak to GRASS and ELECTRIC type moves.\pAlso Sir Amik sometimes gets drunk.\pPlease dont indulge him too much."))
+        msgbox(format("There you are again completionist in the making.\pWelcome to Falador castle.\pYour next challenge is to beat Sir Amik Varze.\pHe uses WATER-TYPE monsters. WATER types are weak to GRASS and ELECTRIC type moves.\pAlso Sir Amik sometimes gets drunk.\pPlease don't indulge him too much."))
     }
     hidenamebox
     closemessage

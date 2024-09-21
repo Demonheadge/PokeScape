@@ -229,3 +229,13 @@ script EventScript_RestBed
 	release
 	end
 }
+
+
+script EventScript_Locked_Door
+{
+	lock
+	msgbox(format("It is locked."))
+	closemessage	
+	release
+	end
+}

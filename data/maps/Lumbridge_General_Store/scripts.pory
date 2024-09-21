@@ -123,7 +123,7 @@ script GeneralStore_MUSAPOINT_Assistant {
     namebox("Assistant")
     msgbox(format("Hello and welcome to the Musa Point General Store.\pHow may I help you?"))
     waitmessage
-    call(STORE_cocktails)
+    pokemart (STORE_cocktails)
     msgbox("Thank you, come again!")
     release
 }

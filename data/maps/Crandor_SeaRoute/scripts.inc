@@ -5,6 +5,7 @@ Crandor_SeaRoute_MapScripts::
 	.byte 0
 
 Crandor_SeaRoute_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	call WEATHER_CHANGE_SEA_ROUTES_ROUGH
 	call CRANDOR_SEAROUTE_STATE
 	return
 
@@ -32,6 +33,8 @@ CRANDOR_SEAROUTE_STATE_2:
 
 
 hideplayer::
+	setweather WEATHER_NONE
+	doweather
 	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_CRANDOR_SEA_ROUTE
 	return
 

@@ -515,14 +515,14 @@ BATTLE_KaramjaVolcano_HAM_4_Text_2:
 
 BATTLE_KaramjaVolcano_HAM_5_Text_0:
 	.string "The world will be rid of monsters, you\n"
-	.string "cant stop this movement!$"
+	.string "can't stop this movement!$"
 
 BATTLE_KaramjaVolcano_HAM_5_Text_1:
 	.string "We will achieve our goals!$"
 
 BATTLE_KaramjaVolcano_HAM_5_Text_2:
 	.string "We will rid the world of all monsters, you\n"
-	.string "cant stop us!$"
+	.string "can't stop us!$"
 
 BATTLE_KaramjaVolcano_Skeleton_1_Text_0:
 	.string "Bonejour!$"

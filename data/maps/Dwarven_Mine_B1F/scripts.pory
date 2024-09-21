@@ -484,7 +484,7 @@ movement movement_dwarvenmines_pickupmap{
 
 script BATTLE_DWARVENMINES_SKILLER
 {
-    trainerbattle_single(TRAINER_DWARVENMINES_SKILLER, format("Please dont approach me.\pI have a terrible bodyguard and I am not afraid to use it!"),format("Hired help is all a skiller can rely on against level 16 scorpions."))
+    trainerbattle_single(TRAINER_DWARVENMINES_SKILLER, format("Please don't approach me.\pI have a terrible bodyguard and I am not afraid to use it!"),format("Hired help is all a skiller can rely on against level 16 scorpions."))
     namebox ("Treet0ps")
     msgbox(format("Hired help is all a skiller can rely on against level 16 scorpions."))
 	hidenamebox

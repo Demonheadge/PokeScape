@@ -1,9 +1,61 @@
 Route8_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route8_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_LOAD, Route8_MapScripts_MAP_SCRIPT_ON_LOAD
 	.byte 0
 
 Route8_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	call PENGUIN_EVENT
+	return
+
+Route8_MapScripts_MAP_SCRIPT_ON_LOAD:
+	call ROUTE8_STATE
+	return
+
+
+ROUTE8_STATE::
+	goto_if_unset FLAG_ABYSS_PORTALS_ENABLED, ROUTE8_STATE_1
+	return
+
+ROUTE8_STATE_1:
+	setmetatile 41, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 42, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 43, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 44, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 45, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 39, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 40, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 41, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 42, 15, METATILE_PokeScapeOutdoors_FLOWER_TILE_2, 0
+	setmetatile 43, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 44, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 45, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 46, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 37, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 38, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 39, 16, METATILE_PokeScapeOutdoors_FLOWER_TILE_1, 0
+	setmetatile 40, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 41, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 42, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 43, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 44, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 45, 16, METATILE_PokeScapeOutdoors_FLOWER_TILE_2, 0
+	setmetatile 46, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 37, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 38, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 39, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 40, 17, METATILE_PokeScapeOutdoors_FLOWER_TILE_1, 0
+	setmetatile 41, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 42, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 43, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 44, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 45, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 46, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 38, 18, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 39, 18, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 40, 18, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 41, 18, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setflag FLAG_TEMP_1F
+	removeobject 3
 	return
 
 

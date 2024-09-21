@@ -614,10 +614,10 @@ HANS_BARBARIAN_GYM_Text_0:
 	.string "Good job beating Gunthor!\l"
 	.string "Hope you feel great.\p"
 	.string "Me?\p"
-	.string "I dont feel so great, the barbarians are\n"
-	.string "taking me out for drinks.\p"
+	.string "I don't feel so great, the barbarians\n"
+	.string "are taking me out for drinks.\p"
 	.string "For the third time today.\p"
-	.string "If you dont hear from me, tell the Duke\n"
+	.string "If you don't hear from me, tell the Duke\n"
 	.string "I will be late for work tomorow.$"
 
 HANS_BARBARIAN_GYM_Text_1:
@@ -665,4 +665,4 @@ HANS_FALADOR_GYM_Text_1:
 	.string "types are weak to GRASS and ELECTRIC\l"
 	.string "type moves.\p"
 	.string "Also Sir Amik sometimes gets drunk.\p"
-	.string "Please dont indulge him too much.$"
+	.string "Please don't indulge him too much.$"

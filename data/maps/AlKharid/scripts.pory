@@ -5,8 +5,21 @@ mapscripts AlKharid_MapScripts {
         setflag(FLAG_VISITED_AL_KHARID)
         setvar(VAR_EVOLUTION_MAP_STATE, 11) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
     }
+MAP_SCRIPT_ON_LOAD { //ON LOAD FOR MAP TILES
+		if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
+		{
+			call(ALKHARID_STATE)
+		}
+		else 
+		{
+			
+		}
+	}
 }
 
+script ALKHARID_STATE {
+    setmetatile(13, 16, METATILE_AlKharid_OPENED_DOOR, 0)
+}
 
 
 

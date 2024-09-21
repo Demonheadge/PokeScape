@@ -221,9 +221,9 @@ script BATTLE_KaramjaVolcano_HAM_4
 
 script BATTLE_KaramjaVolcano_HAM_5
 {
-    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_5, format("The world will be rid of monsters, you cant stop this movement!"),format("We will achieve our goals!"))
+    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_5, format("The world will be rid of monsters, you can't stop this movement!"),format("We will achieve our goals!"))
     namebox ("H.A.M Grunt")
-    msgbox(format("We will rid the world of all monsters, you cant stop us!"))
+    msgbox(format("We will rid the world of all monsters, you can't stop us!"))
     hidenamebox
     release
     end

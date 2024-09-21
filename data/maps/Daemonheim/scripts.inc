@@ -4,6 +4,7 @@ Daemonheim_MapScripts::
 	.byte 0
 
 Daemonheim_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	setvar VAR_EVOLUTION_MAP_STATE, 6
 	call Daemonheim_STATE
 	return
 

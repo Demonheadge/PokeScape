@@ -5,7 +5,75 @@ mapscripts Route8_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         call(PENGUIN_EVENT)
     }
+    MAP_SCRIPT_ON_LOAD {
+        call(ROUTE8_STATE)
+    } 
 }
+
+
+script ROUTE8_STATE {
+    if (!flag(FLAG_ABYSS_PORTALS_ENABLED))
+    {
+        setmetatile(41, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(42, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(43, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(44, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(45, 14, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+
+        setmetatile(39, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(40, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(41, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(42, 15, METATILE_PokeScapeOutdoors_FLOWER_TILE_2, 0)
+        setmetatile(43, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(44, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(45, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(46, 15, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+
+        setmetatile(37, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(38, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(39, 16, METATILE_PokeScapeOutdoors_FLOWER_TILE_1, 0)
+        setmetatile(40, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(41, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(42, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(43, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(44, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(45, 16, METATILE_PokeScapeOutdoors_FLOWER_TILE_2, 0)
+        setmetatile(46, 16, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+
+        setmetatile(37, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(38, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(39, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(40, 17, METATILE_PokeScapeOutdoors_FLOWER_TILE_1, 0)
+        setmetatile(41, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(42, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(43, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(44, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(45, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(46, 17, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+
+        setmetatile(38, 18, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(39, 18, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(40, 18, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+        setmetatile(41, 18, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+
+        
+
+        //special(DrawWholeMapView)  DO NOT USE WITH: ON_LOAD
+
+        setflag(FLAG_TEMP_1F)
+        removeobject(3)
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 script ENCOUNTER_PENGUIN_BUSH_ROUTE8 {
 	lock

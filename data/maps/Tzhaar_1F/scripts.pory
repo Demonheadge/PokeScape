@@ -266,6 +266,7 @@ script TZHAAR_NPC_BANKER
     msgbox(format("Greetings, welcome to the Bank of Tzhaar!\pWe are learning new things from this JalYt.\pWhat can I help you with today?"))
     closemessage
     hidenamebox
+    goto(BANK_OPTIONS)
     release
     end
 }

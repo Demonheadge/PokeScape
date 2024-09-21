@@ -350,7 +350,7 @@
     },
     {
       "x": 6,
-      "y": 2,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_TZHAAR_GYM_CHALLENGE",
       "dest_warp_id": "0"
