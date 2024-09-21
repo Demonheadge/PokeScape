@@ -1588,7 +1588,7 @@ u8 UpdateTimeOfDay(void)
 
 bool8 MapHasNaturalLight(u8 mapType)
 {
-    return mapType == MAP_TYPE_TOWN || mapType == MAP_TYPE_CITY || mapType == MAP_TYPE_ROUTE || mapType == MAP_TYPE_OCEAN_ROUTE;
+    return mapType == MAP_TYPE_TOWN || mapType == MAP_TYPE_CITY || mapType == MAP_TYPE_ROUTE || mapType == MAP_TYPE_OCEAN_ROUTE || mapType == MAP_TYPE_WILDERNESS;
 }
 
 void UpdateAltBgPalettes(u16 palettes)
