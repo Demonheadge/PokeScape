@@ -348,7 +348,7 @@ static const u8 sText_TwoWildFled[] = _("{PLAY_SE SE_FLEE}{B_LINK_OPPONENT1_NAME
 static const u8 sText_NoRunningFromTrainers[] = _("No! There's no running\nfrom a TRAINER battle!\p");
 static const u8 sText_CantEscape[] = _("Can't escape!\p");
 static const u8 sText_DontLeaveBirch[] = _("PROF. BIRCH: Don't leave me like this!\p");
-static const u8 sText_ButNothingHappened[] = _("But nothing happened!");
+static const u8 sText_ButNothingHappened[] = _("Nothing interesting happens.");
 static const u8 sText_ButItFailed[] = _("But it failed!");
 static const u8 sText_ItHurtConfusion[] = _("It hurt itself in its\nconfusion!");
 static const u8 sText_MirrorMoveFailed[] = _("The Mirror Move failed!");
@@ -658,7 +658,7 @@ static const u8 sText_TargetElectrified[] = _("The {B_DEF_NAME_WITH_PREFIX}'s mo
 static const u8 sText_AssaultVestDoesntAllow[] = _("{B_LAST_ITEM}'s effects prevent\nstatus moves from being used!\p");
 static const u8 sText_GravityPreventsUsage[] = _("{B_ATK_NAME_WITH_PREFIX} can't use {B_CURRENT_MOVE}\nbecause of gravity!\p");
 static const u8 sText_HealBlockPreventsUsage[] = _("{B_ATK_NAME_WITH_PREFIX} was\nprevented from healing!\p");
-static const u8 sText_MegaEvoReacting[] = _("{B_ATK_NAME_WITH_PREFIX}'s Fragment is\nreacting to {B_ATK_TRAINER_NAME}'s Fragment of Jas!");
+static const u8 sText_MegaEvoReacting[] = _("{B_ATK_NAME_WITH_PREFIX} is reacting\nto the Fragment of Jas!");
 static const u8 sText_FerventWishReached[] = _("{B_ATK_TRAINER_NAME}'s fervent wish\nhas reached {B_ATK_NAME_WITH_PREFIX}!");
 static const u8 sText_MegaEvoEvolved[] = _("{B_ATK_NAME_WITH_PREFIX} has Mega Evolved into\nMega {B_BUFF1}!");
 static const u8 sText_drastically[] = _("drastically ");
@@ -845,6 +845,11 @@ static const u8 sText_Petrify[] =_("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACT
 static const u8 sText_TooScared[] =_("{B_ATK_NAME_WITH_PREFIX}'s {B_LAST_ABILITY} makes\n{B_DEF_NAME_WITH_PREFIX} only able to attack!");
 static const u8 sText_FireShieldEnds[] = _("{B_DEF_NAME_WITH_PREFIX}'s fire shield\ndissipates!");
 
+//trainer battle messages
+static const u8 sText_Demonheadge_BeforeFirstTurn[] = _("Oh, ho.\nYou dare approach me?!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_Demonheadge_MegaEvolves[] = _("I've got one up on Sigmund!\pI shall be the first Trainer\nin PokeScape to MEGA EVOLVE!!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_Demonheadge_PlayerMonUnaffected[] = _("Oh please, come back when you've\nlearnt your type weakness.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_Demonheadge_FirstSTABMove[] = _("Ow! Now thats a STAB wound.{PAUSE_UNTIL_PRESS}");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
@@ -1544,6 +1549,13 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_PETRIFY - BATTLESTRINGS_TABLE_START] = sText_Petrify,
     [STRINGID_TOOSCARED - BATTLESTRINGS_TABLE_START] = sText_TooScared,
     [STRINGID_FIRESHIELDENDS - BATTLESTRINGS_TABLE_START] = sText_FireShieldEnds,
+
+    //TRAINER MESSAGES
+    [STRINGID_DEMONHEADGE_MESSAGE_1 - BATTLESTRINGS_TABLE_START] = sText_Demonheadge_BeforeFirstTurn,
+    [STRINGID_DEMONHEADGE_MESSAGE_2 - BATTLESTRINGS_TABLE_START] = sText_Demonheadge_MegaEvolves,
+    [STRINGID_DEMONHEADGE_MESSAGE_3 - BATTLESTRINGS_TABLE_START] = sText_Demonheadge_PlayerMonUnaffected,
+    [STRINGID_DEMONHEADGE_MESSAGE_4 - BATTLESTRINGS_TABLE_START] = sText_Demonheadge_FirstSTABMove,
+
 };
 
 const u16 gTrainerUsedItemStringIds[] =
@@ -4135,7 +4147,36 @@ static const struct TrainerSlide sTrainerSlides[] =
         .msgDynamax = sText_TargetWokeUp,
     },
     */
+
+   {
+        .trainerId = TRAINER_DEMONHEADGE,
+        .isFrontierTrainer = FALSE,
+        .msgLastSwitchIn = sText_AarghAlmostHadIt,
+        .msgLastLowHp = sText_BoxIsFull,
+        .msgFirstDown = sText_123Poof,
+        .msgLastHalfHp = sText_ShootSoClose,
+        .msgFirstCriticalHit = sText_CriticalHit,
+        .msgFirstSuperEffectiveHit = sText_SuperEffective,
+        .msgFirstSTABMove = sText_Demonheadge_FirstSTABMove,
+        .msgPlayerMonUnaffected = sText_Demonheadge_PlayerMonUnaffected,
+        .msgMegaEvolution = sText_Demonheadge_MegaEvolves,
+        //.msgZMove = sText_Electromagnetism,
+        .msgBeforeFirstTurn = sText_Demonheadge_BeforeFirstTurn,
+        //.msgDynamax = sText_TargetWokeUp,
+    },
 };
+
+
+
+
+
+
+
+
+
+
+
+
 
 static u32 GetEnemyMonCount(u32 firstId, u32 lastId, bool32 onlyAlive)
 {

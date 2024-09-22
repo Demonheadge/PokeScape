@@ -8680,6 +8680,16 @@
       "secondary_tileset": "gTileset_PokeScape_Caves",
       "border_filepath": "data/layouts/Tzhaar_HarAken/border.bin",
       "blockdata_filepath": "data/layouts/Tzhaar_HarAken/map.bin"
+    },
+    {
+      "id": "LAYOUT_DRAYNOR_HOUSE_POKE_SCAPER",
+      "name": "Draynor_House_PokeScaper_Layout",
+      "width": 8,
+      "height": 8,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns1",
+      "border_filepath": "data/layouts/Draynor_House_PokeScaper/border.bin",
+      "blockdata_filepath": "data/layouts/Draynor_House_PokeScaper/map.bin"
     }
   ]
 }

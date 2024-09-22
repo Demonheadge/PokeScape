@@ -1508,3 +1508,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Tzhaar_Gym_Challenge/scripts.inc"
 
 	.include "data/maps/Tzhaar_HarAken/scripts.inc"
+
+	.include "data/maps/Draynor_House_PokeScaper/scripts.inc"

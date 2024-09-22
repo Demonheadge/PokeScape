@@ -620,11 +620,11 @@
 #define FLAG_HIDDEN_ITEM_MUDSKIPPER_POINT_3                     (FLAG_HIDDEN_ITEMS_START + 0x56)
 #define FLAG_HIDDEN_ITEM_VARROCK_SEWER_1                        (FLAG_HIDDEN_ITEMS_START + 0x32)
 
-#define FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_1                (FLAG_HIDDEN_ITEMS_START + 0x34)
-#define FLAG_HIDDEN_ITEM_ROUTE_109_GREAT_BALL                   (FLAG_HIDDEN_ITEMS_START + 0x33)
-#define FLAG_HIDDEN_ITEM_ROUTE_109_ETHER                        (FLAG_HIDDEN_ITEMS_START + 0x40)
-#define FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_2                (FLAG_HIDDEN_ITEMS_START + 0x5A)
-#define FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_3                (FLAG_HIDDEN_ITEMS_START + 0x5B)
+#define FLAG_HIDDEN_ITEM_DRAYNORMANOR_1                         (FLAG_HIDDEN_ITEMS_START + 0x34)
+#define FLAG_HIDDEN_ITEM_DRAYNORMANOR_2                         (FLAG_HIDDEN_ITEMS_START + 0x33)
+#define FLAG_HIDDEN_ITEM_DRAYNORMANOR_3                         (FLAG_HIDDEN_ITEMS_START + 0x40)
+#define FLAG_HIDDEN_ITEM_DRAYNORMANOR_4                         (FLAG_HIDDEN_ITEMS_START + 0x5A)
+#define FLAG_HIDDEN_ITEM_DRAYNORMANOR_5                         (FLAG_HIDDEN_ITEMS_START + 0x5B)
 #define FLAG_HIDDEN_ITEM_ROUTE_110_REVIVE                       (FLAG_HIDDEN_ITEMS_START + 0x36)
 #define FLAG_HIDDEN_ITEM_ROUTE_110_GREAT_BALL                   (FLAG_HIDDEN_ITEMS_START + 0x35)
 #define FLAG_HIDDEN_ITEM_ROUTE_110_POKE_BALL                    (FLAG_HIDDEN_ITEMS_START + 0x41)
@@ -1242,8 +1242,8 @@
 #define FLAG_ITEM_CRANDOR_CHOCOLATE_CAKE                            0x4A0 // Unused Flag
 #define FLAG_ITEM_CRANDOR_RUNE_POUCH                                0x4A1 // Unused Flag
 
-#define FLAG_UNUSED_1                                        0x493 // Unused Flag
-#define FLAG_UNUSED_2                                        0x494 // Unused Flag
+#define FLAG_ITEM_DRAYNORMANOR_TEA                                  0x493 // Unused Flag
+#define FLAG_ITEM_DRAYNORMANOR_POUCHES                              0x494 // Unused Flag
 #define FLAG_UNUSED_3                                        0x495 // Unused Flag
 #define FLAG_UNUSED_4                                        0x496 // Unused Flag
 #define FLAG_UNUSED_5                                        0x497 // Unused Flag

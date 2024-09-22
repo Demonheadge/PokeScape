@@ -1715,7 +1715,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
-        .party = TRAINER_PARTY(sParty_Demonheadge),
+        .party = TRAINER_PARTY(sParty_Demonheadge), 
     },
 
     [TRAINER_ROUTE40_DIVINER] =

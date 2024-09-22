@@ -1190,3 +1190,15 @@ script NPC_Hanannie
     release
     end
 }
+
+//HELLWIND
+script NPC_POH_HELLWIND{
+    lock
+    faceplayer
+    namebox("Hellwind909")
+    msgbox(format("Nothing beats these house parties.\pExcept maybe making RSMVs."))
+    hidenamebox
+    closemessage
+    release
+    end
+}

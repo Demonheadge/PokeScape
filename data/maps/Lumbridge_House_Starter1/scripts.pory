@@ -371,3 +371,14 @@ script ITEM_LUMBRIDGE_FOREST_CABBAGE
     finditem(ITEM_CABBAGE)
     end
 }
+
+script ITEM_DRAYNORMANOR_TEA
+{
+    finditem(ITEM_REPEL_TEA_1, 3)
+    end
+}
+script ITEM_DRAYNORMANOR_POUCHES
+{
+    finditem(ITEM_NORMAL_POUCH, 5)
+    end
+}

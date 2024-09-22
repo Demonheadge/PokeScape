@@ -131,6 +131,7 @@ SCRIPT_DraynorManor_Poison_4:
 	removeitem ITEM_FISH_FOOD
 	giveitem ITEM_FISH_FOOD_POISONED
 	closemessage
+	call STORYMODE_STATE_DRAYNORMANOR_1F
 	end
 
 

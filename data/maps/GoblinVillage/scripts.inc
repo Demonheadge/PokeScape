@@ -161,6 +161,20 @@ BATTLE_DEMONHEADGE::
 	end
 
 
+BATTLE_DEMONHEADGE2::
+	faceplayer
+	namebox BATTLE_DEMONHEADGE2_Text_0
+	msgbox BATTLE_DEMONHEADGE2_Text_1
+	hidenamebox
+	closemessage
+	trainerbattle_no_intro TRAINER_DEMONHEADGE, BATTLE_DEMONHEADGE_Text_2
+	namebox BATTLE_DEMONHEADGE2_Text_0
+	msgbox BATTLE_DEMONHEADGE2_Text_2
+	hidenamebox
+	release
+	end
+
+
 NPC_GOBLINVILLAGE_GOBLIN_1_Text_0:
 	.string "Dulleyes$"
 
@@ -255,3 +269,14 @@ BATTLE_DEMONHEADGE_Text_3:
 	.string "PokeScaper scattered all across the\l"
 	.string "region.\p"
 	.string "I hope you enjoy playing the game.$"
+
+BATTLE_DEMONHEADGE2_Text_0:
+	.string "Demonheadge$"
+
+BATTLE_DEMONHEADGE2_Text_1:
+	.string "Hahaha!!\p"
+	.string "Hey guys, I've got something cool to\n"
+	.string "show you!$"
+
+BATTLE_DEMONHEADGE2_Text_2:
+	.string "What do you think about dem apples!$"
