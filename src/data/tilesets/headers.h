@@ -1,6 +1,11 @@
 #include "fieldmap.h"
 
+// Whether a palette has a night version, located at ((x + 9) % 16).pal
 #define SWAP_PAL(x) ((x) < NUM_PALS_IN_PRIMARY ? 1 << (x) : 1 << ((x) - NUM_PALS_IN_PRIMARY))
+
+// Whether a palette has lights
+// the color indices to blend are stored in the palette's color 0
+#define LIGHT_PAL(x) ((x) < NUM_PALS_IN_PRIMARY ? 1 << (x) : 1 << ((x) - NUM_PALS_IN_PRIMARY))
 
 const struct Tileset gTileset_General =
 {
@@ -1083,7 +1088,10 @@ const struct Tileset gTileset_GoblinVillage =
 const struct Tileset gTileset_Wilderness =
 {
     .isCompressed = TRUE,
+    //.swapPalettes = SWAP_PAL(9),
     .isSecondary = TRUE,
+    //.lightPalettes = LIGHT_PAL(9),
+    //.customLightColor = 5 | 6 | 7,
     .tiles = gTilesetTiles_Wilderness,
     .palettes = gTilesetPalettes_Wilderness,
     .metatiles = gMetatiles_Wilderness,
