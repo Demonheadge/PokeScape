@@ -151,15 +151,15 @@ ENCOUNTER_BEHEMOTH_9:
 	goto ENCOUNTER_BEHEMOTH_1
 
 ENCOUNTER_BEHEMOTH_21:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_BEHEMOTH_19
 
 ENCOUNTER_BEHEMOTH_22:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_BEHEMOTH_19
 
 

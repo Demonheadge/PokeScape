@@ -206,7 +206,7 @@ CRANDOR_SHIP_SCENE::
 	applymovement OBJ_EVENT_ID_PLAYER, movement_sailing3
 	applymovement 3, movement_sailing3
 	delay 32
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	playse SE_M_EARTHQUAKE
 	namebox CRANDOR_SHIP_SCENE_Text_2
 	msgbox CRANDOR_SHIP_SCENE_Text_11

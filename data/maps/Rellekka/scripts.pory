@@ -84,7 +84,7 @@ script RAC_QUEST_SAIL_WOMAN
 
 script RAC_BOAT
 {
-    fadescreen(FADE_TO_BLACK)
+    fadescreenswapbuffers(FADE_TO_BLACK)
     if (var (VAR_TEMP_8) == 0) {
         hideobjectat(LOCALID_Mord, MAP_RELLEKKA)
     }
@@ -94,7 +94,7 @@ script RAC_BOAT
     hideobjectat(OBJ_EVENT_ID_PLAYER, MAP_RELLEKKA)
     //removeobject(OBJ_EVENT_ID_PLAYER) //Hide player
 
-    fadescreen(FADE_FROM_BLACK)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
     applymovement(LOCALID_BOAT, MOVEMENT_RAC_BOAT)
     waitmovement(0)
     

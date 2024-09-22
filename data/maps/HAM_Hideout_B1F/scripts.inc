@@ -66,14 +66,14 @@ GOLDENGNOME_CAMERA_CALL::
 
 
 HAM_HIDEOUT_GOLDENGNOME_EVENT::
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT
 	applymovement 22, Movement_InteractFACERIGHT
 	delay 60
 	call GOLDENGNOME_CAMERA_CALL
 	applymovement OBJ_EVENT_ID_CAMERA, GOLDENGNOME_CAMERA_1_START
 	delay 60
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	delay 60
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP
 	applymovement 22, Movement_InteractFACEUP

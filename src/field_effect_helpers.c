@@ -39,7 +39,7 @@ static void SynchroniseSurfPosition(struct ObjectEvent *, struct Sprite *);
 static void UpdateBobbingEffect(struct ObjectEvent *, struct Sprite *, struct Sprite *);
 static void SpriteCB_UnderwaterSurfBlob(struct Sprite *);
 static void LoadFieldEffectPalette_(u8 fieldEffect, bool8 updateGammaType);
-static u32 ShowDisguiseFieldEffect(u8, u8);
+static u32 ShowDisguiseFieldEffect(u8 fldEff, u8 fldEffObj);
 u32 FldEff_Shadow(void);
 
 // Data used by all the field effects that share UpdateJumpImpactEffect
@@ -1506,7 +1506,7 @@ u32 ShowSandDisguiseFieldEffect(void)
     return ShowDisguiseFieldEffect(FLDEFF_SAND_DISGUISE, FLDEFFOBJ_SAND_DISGUISE);
 }
 
-static u32 ShowDisguiseFieldEffect(u8 fldEff, u8 templateIdx)
+static u32 ShowDisguiseFieldEffect(u8 fldEff, u8 fldEffObj)
 {
     u8 spriteId;
 
@@ -1515,12 +1515,11 @@ static u32 ShowDisguiseFieldEffect(u8 fldEff, u8 templateIdx)
         FieldEffectActiveListRemove(fldEff);
         return MAX_SPRITES;
     }
-    LoadFieldEffectPalette(templateIdx);
-    spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[templateIdx], 0, 0, 0);
+    spriteId = CreateSpriteAtEnd(gFieldEffectObjectTemplatePointers[fldEffObj], 0, 0, 0);
     if (spriteId != MAX_SPRITES)
     {
         struct Sprite *sprite = &gSprites[spriteId];
-        sprite->oam.paletteNum = LoadObjectEventPalette(gFieldEffectObjectTemplatePointers[fldEff]->paletteTag);
+        UpdateSpritePaletteByTemplate(gFieldEffectObjectTemplatePointers[fldEffObj], sprite);
         sprite->coordOffsetEnabled ++;
         sprite->sFldEff = fldEff;
         sprite->sLocalId = gFieldEffectArguments[0];

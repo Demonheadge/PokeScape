@@ -46,20 +46,20 @@ ENCOUNTER_CALLISTO::
 	end
 
 ENCOUNTER_CALLISTO_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setvar VAR_CALLISTO_STATE, 0
 	setflag FLAG_TEMP_A
 	removeobject 1
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	end
 
 ENCOUNTER_CALLISTO_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setvar VAR_CALLISTO_STATE, 5
 	setflag FLAG_TEMP_A
 	removeobject 1
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	end
 

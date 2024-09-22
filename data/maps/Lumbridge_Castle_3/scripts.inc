@@ -146,11 +146,11 @@ NPC_DUKE_1_2:
 	msgbox NPC_DUKE_1_Text_0
 	closemessage
 	hidenamebox
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 1
 	setflag FLAG_TEMP_1
 	setvar VAR_POKESCAPE_LUMBRIDGE_GYM_QUEST, 1
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	savebgm MUS_PS_GYM
 	call LUMBRIDGE_GYM_MUSIC
 	goto LUMBRIDGE_GYM_STATE

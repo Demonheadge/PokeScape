@@ -181,19 +181,19 @@ script ENCOUNTER_SCURRIUS
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeitem(ITEM_SCURRIUS_CHEESE, 1)
             setvar(VAR_SCURRIUS, 4)
             msgbox(format("You feel the catacombs shake and tremble as the Dark Totem shatters into pieces.\pThe air feels renewed."))
             closemessage
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
         case B_OUTCOME_CAUGHT:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeitem(ITEM_SCURRIUS_CHEESE, 1)
             setvar(VAR_SCURRIUS, 4)
             msgbox(format("You feel the catacombs shake and tremble as the Dark Totem shatters into pieces.\pThe air feels renewed."))
             closemessage
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
         case B_OUTCOME_RAN:
             msgbox(format("Scurrius is displeased."))
             closemessage

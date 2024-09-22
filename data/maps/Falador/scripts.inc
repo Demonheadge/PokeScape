@@ -704,13 +704,13 @@ Falador_TREE_2:
 	hidenamebox
 	closemessage
 	trainerbattle_no_intro TRAINER_FALADOR_MODTIMBO, Falador_TREE_Text_2
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setmetatile 44, 5, 593, 1
 	setmetatile 44, 6, 15, 1
 	special DrawWholeMapView
 	removeobject 5
 	setflag FLAG_MOD_TIMBO
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	msgbox Falador_TREE_Text_3
 	giveitem ITEM_TINDERBOX, 1
 	setvar VAR_POKESCAPE_MODTIMBO_STATE, 1

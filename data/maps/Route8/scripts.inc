@@ -79,14 +79,14 @@ ENCOUNTER_PENGUIN_BUSH_ROUTE8_1:
 	end
 
 ENCOUNTER_PENGUIN_BUSH_ROUTE8_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_TEMP_8
 	setflag FLAG_TEMP_9
 	removeobject 28
 	removeobject 27
 	savebgm MUS_DUMMY
 	fadedefaultbgm
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	goto ENCOUNTER_PENGUIN_BUSH_ROUTE8_1
 

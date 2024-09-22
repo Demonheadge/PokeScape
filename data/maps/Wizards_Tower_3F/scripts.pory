@@ -77,21 +77,21 @@ script ENCOUNTER_LESSERDEMON {
 	setwildbattle (SPECIES_DEMON_LESSER_OSRS_FORM, 15, ITEM_NONE)
 	dowildbattle
 	if (var(VAR_RESULT) == B_OUTCOME_WON) {
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
 		setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 1)
         setflag(FLAG_TEMP_A)
         removeobject (OBJ_EVENT_ID_LESSERDEMON)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
 		//msgbox(format("You have defeated me!"))
 		closemessage
 		end
 	}
 	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
 		setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 2)
         setflag(FLAG_TEMP_A)
         removeobject (OBJ_EVENT_ID_LESSERDEMON)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
 		//msgbox(format("You have caught me!"))
 		closemessage
 		end

@@ -129,14 +129,14 @@ EVENT_HAM_DRAYNORMANOR_CRYPT_1:
 	hidenamebox
 	applymovement 1, MOVEMENT_DraynorManorCrypt_COUNT_6
 	delay 16
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 1
 	setflag FLAG_TEMP_2
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	waitmovement 0
 	delay 16
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	setvar VAR_POKESCAPE_WIZARDS_TOWER_STATE, 9
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 30
 	setvar VAR_TEMP_0, 1

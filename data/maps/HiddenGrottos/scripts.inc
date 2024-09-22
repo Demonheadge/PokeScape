@@ -467,21 +467,21 @@ ENCOUNTER_CAT_1:
 	return
 
 ENCOUNTER_CAT_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_CAT_1
 
 ENCOUNTER_CAT_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_CAT_1
 
 ENCOUNTER_CAT_4:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_CAT_1
 
 
@@ -505,21 +505,21 @@ ENCOUNTER_DOG_1:
 	return
 
 ENCOUNTER_DOG_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_DOG_1
 
 ENCOUNTER_DOG_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_DOG_1
 
 ENCOUNTER_DOG_4:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_DOG_1
 
 
@@ -543,21 +543,21 @@ ENCOUNTER_UNICORN_1:
 	return
 
 ENCOUNTER_UNICORN_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_UNICORN_1
 
 ENCOUNTER_UNICORN_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_UNICORN_1
 
 ENCOUNTER_UNICORN_4:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_UNICORN_1
 
 
@@ -588,21 +588,21 @@ ENCOUNTER_RANDOM_2:
 	goto ENCOUNTER_RANDOM_1
 
 ENCOUNTER_RANDOM_6:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_RANDOM_5
 
 ENCOUNTER_RANDOM_7:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_RANDOM_5
 
 ENCOUNTER_RANDOM_8:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_RANDOM_5
 
 
@@ -918,21 +918,21 @@ ENCOUNTER_SUPER_RARE_1:
 	return
 
 ENCOUNTER_SUPER_RARE_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_SUPER_RARE_1
 
 ENCOUNTER_SUPER_RARE_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_SUPER_RARE_1
 
 ENCOUNTER_SUPER_RARE_4:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_SUPER_RARE_1
 
 

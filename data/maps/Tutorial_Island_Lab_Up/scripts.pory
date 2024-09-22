@@ -46,7 +46,7 @@ script PcStartGame{
 
 script SetTime{
 	msgbox("You check the clock. What time is it?")
-	fadescreen (FADE_TO_BLACK)
+	fadescreenswapbuffers (FADE_TO_BLACK)
 	special (StartWallClock)
 	waitstate
 	setflag (FLAG_SET_WALL_CLOCK)

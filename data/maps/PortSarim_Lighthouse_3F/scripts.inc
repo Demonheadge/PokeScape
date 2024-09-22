@@ -213,7 +213,7 @@ LIGHTHOUSE_HAM_PATTY::
 	msgbox LIGHTHOUSE_HAM_PATTY_Text_22
 	closemessage
 	hidenamebox
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 4
 	removeobject 3
 	removeobject 6
@@ -229,7 +229,7 @@ LIGHTHOUSE_HAM_PATTY::
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP
 	waitmovement 0
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	namebox LIGHTHOUSE_3F_NPC_3_Text_1
 	msgbox LIGHTHOUSE_HAM_PATTY_Text_23
 	closemessage

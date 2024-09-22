@@ -115,28 +115,28 @@ script ENCOUNTER_JAD_GYM {
 	setwildbattle (SPECIES_TZTOK_JAD, 5, ITEM_FRAGMENT_OF_JAS)
 	dowildbattleNoCatch
 	if (var(VAR_RESULT) == B_OUTCOME_WON) {
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
 		setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 19)
         setflag(FLAG_TEMP_1)
         removeobject(OBJ_EVENT_ID_TZTOKJAD)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
         goto(NPC_TZHAAR_GYM_WAVE_3)
 		closemessage
 		end
 	}
 	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) { // Cannot catch with dowildbattleNoCatch
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
 		setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 20)
         setflag(FLAG_TEMP_1)
         removeobject(OBJ_EVENT_ID_TZTOKJAD)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
 		closemessage
 		end
 	}
     elif (var(VAR_RESULT) == B_OUTCOME_LOST) {
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
 		setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1) 
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
 		closemessage
 		end
 	}

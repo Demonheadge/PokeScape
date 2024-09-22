@@ -213,7 +213,7 @@ THOK_GYM_CHALLENGE_STATE_POST_BADGE::
 	closemessage
 	msgbox THOK_GYM_CHALLENGE_STATE_POST_BADGE_Text_9
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	delay 60
 	msgbox THOK_GYM_CHALLENGE_STATE_POST_BADGE_Text_10
 	closemessage

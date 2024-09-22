@@ -220,13 +220,13 @@ script LIGHTHOUSE_CAPN_HAND_QUEST {
             msgbox(format("Yarrr, thanks. I won't forget this.\pCome see me at the Dead Man's Chest in Brimhaven.\pI'll make sure yer rewarded."))
             hidenamebox
             closemessage
-            fadescreen (FADE_TO_BLACK)
+            fadescreenswapbuffers (FADE_TO_BLACK)
             removeobject(5)
             setflag(FLAG_LIGHTHOUSE_PIRATE)
             call(JAILMAP_STATE)
             msgbox(format("You unlock the cell door, and the pirate runs off to freedom."))
             closemessage
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
         }
         else {
             msgbox(format("Nothing, eh?\nNothing be all I got, anyway.."))

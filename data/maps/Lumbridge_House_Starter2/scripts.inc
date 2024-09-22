@@ -144,7 +144,7 @@ The_Needle_Clock_7:
 
 
 Set_The_Needle_Clock::
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	special StartWallClock
 	waitstate
 	setflag FLAG_SET_WALL_CLOCK
@@ -154,7 +154,7 @@ Set_The_Needle_Clock::
 
 EventScript_CheckClock::
 	incrementgamestat GAME_STAT_CHECKED_CLOCK
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	special Special_ViewWallClock
 	waitstate
 	releaseall
@@ -190,9 +190,9 @@ Mithrilman_FALADOR2::
 	msgbox Mithrilman_FALADOR2_Text_0
 	waitmessage
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 23
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	setflag FLAG_MITHRILMAN2
 	clearflag FLAG_MITHRILMAN3
 	savebgm MUS_DUMMY
@@ -218,9 +218,9 @@ Mithrilman_VARROCK2::
 	msgbox Mithrilman_VARROCK2_Text_0
 	waitmessage
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 2
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	setflag FLAG_MITHRILMAN3
 	clearflag FLAG_MITHRILMAN4
 	savebgm MUS_DUMMY
@@ -254,9 +254,9 @@ Mithrilman_ALKHARID2::
 	msgbox Mithrilman_ALKHARID2_Text_1
 	waitmessage
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 2
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	setflag FLAG_MITHRILMAN4
 	clearflag FLAG_MITHRILMAN5
 	savebgm MUS_DUMMY
@@ -283,9 +283,9 @@ Mithrilman_TZHAAR2::
 	waitmessage
 	closemessage
 	hidenamebox
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 2
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	setflag FLAG_MITHRILMAN5
 	clearflag FLAG_MITHRILMAN6
 	savebgm MUS_DUMMY
@@ -311,9 +311,9 @@ Mithrilman_DRAYNOR2::
 	msgbox Mithrilman_DRAYNOR2_Text_0
 	waitmessage
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 2
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	setflag FLAG_MITHRILMAN6
 	clearflag FLAG_MITHRILMAN7
 	savebgm MUS_DUMMY
@@ -373,9 +373,9 @@ Mithrilman_WILDERNESS2::
 	msgbox Mithrilman_WILDERNESS2_Text_0
 	waitmessage
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 2
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	setflag FLAG_MITHRILMAN8
 	clearflag FLAG_MITHRILMAN9
 	savebgm MUS_DUMMY
@@ -413,9 +413,9 @@ Mithrilman_WILDERNESSVOLCANO2::
 	msgbox Mithrilman_WILDERNESSVOLCANO2_Text_0
 	waitmessage
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 2
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	setflag FLAG_MITHRILMAN9
 	clearflag FLAG_MITHRILMAN10
 	savebgm MUS_DUMMY

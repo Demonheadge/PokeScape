@@ -92,7 +92,7 @@ JATIZSO_NPC_Tazim_16:
 	msgbox JATIZSO_NPC_Tazim_Text_6
 	hidenamebox
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setvar VAR_POKESCAPE_RAC_QUEST_JAGEXMODS, 25
 	addobject 2
 	setobjectxy 2, 2, 3
@@ -102,7 +102,7 @@ JATIZSO_NPC_Tazim_16:
 	setobjectxy 1, 2, 2
 	setobjectxyperm 1, 2, 2
 	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_DOWN
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end
 

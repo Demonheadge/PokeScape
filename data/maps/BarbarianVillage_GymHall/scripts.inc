@@ -185,14 +185,14 @@ NPC_BARBGYM_BARBARIAN_1_5:
 	applymovement OBJ_EVENT_ID_PLAYER, BARBARIAN_GYM_MOVEMENT_1
 	waitmovement OBJ_EVENT_ID_PLAYER
 	waitmovement 10
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setvar VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE, 2
 	call BarbarianVillage_GYM_STATE
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, BARBARIAN_GYM_MOVEMENT_3
 	delay 30
 	clearflag FLAG_TEMP_1
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	waitmovement 0
 	goto NPC_BARBGYM_BARBARIAN_2
 	goto NPC_BARBGYM_BARBARIAN_1_4
@@ -361,7 +361,7 @@ NPC_BARBGYM_BARBARIAN_2::
 	msgbox NPC_BARBGYM_BARBARIAN_2_Text_29
 	closemessage
 	hidenamebox
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_BADGE06_GET
 	call HIDDEN_GROTTO_RESET
 	addvar VAR_GAMEMODE_LEVEL_SCALING, 1
@@ -369,7 +369,7 @@ NPC_BARBGYM_BARBARIAN_2::
 	call BarbarianVillage_GYM_STATE
 	special RemoveCameraObject
 	setflag FLAG_TEMP_1
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end
 

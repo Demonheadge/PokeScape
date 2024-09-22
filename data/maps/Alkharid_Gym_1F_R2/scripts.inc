@@ -135,9 +135,9 @@ QUEST_ALKHARID_GYM_1::
 	closemessage
 	hidenamebox
 	setvar VAR_POKESCAPE_ALKHARID_GYM_QUEST, 5
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	call ALKHARID_GYM_STATE
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	namebox QUEST_ALKHARID_GYM_1_Text_0
 	msgbox QUEST_ALKHARID_GYM_1_Text_4
 	closemessage
@@ -150,9 +150,9 @@ QUEST_ALKHARID_GYM_1::
 	closemessage
 	hidenamebox
 	setvar VAR_POKESCAPE_ALKHARID_GYM_QUEST, 10
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	call ALKHARID_GYM_STATE
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	namebox QUEST_ALKHARID_GYM_1_Text_5
 	msgbox QUEST_ALKHARID_GYM_1_Text_7
 	closemessage
@@ -165,10 +165,10 @@ QUEST_ALKHARID_GYM_1::
 	closemessage
 	hidenamebox
 	setvar VAR_POKESCAPE_ALKHARID_GYM_QUEST, 15
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	call ALKHARID_GYM_STATE
 	delay 60
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	addvar VAR_POKESCAPE_ALKHARID_GYM_ALI_STATE, 4
 	return
 

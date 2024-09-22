@@ -327,17 +327,17 @@ script BATTLE_BASILISK_GYM {
 	setwildbattle (SPECIES_BASILISK, 45, ITEM_NONE)
 	dowildbattleNoCatch
 	if (var(VAR_RESULT) == B_OUTCOME_WON) {
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
 		setvar(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST, 15)
         removeobject (VAR_LAST_TALKED)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
 		call(EDGEVILLE_GYM_GIVE_SLAYER_POINTS)
 	}
 	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) { // Cannot catch with dowildbattleNoCatch
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
 		setvar(VAR_POKESCAPE_EDGEVILLE_GYM_QUEST, 15)
         removeobject (VAR_LAST_TALKED)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
 		call(EDGEVILLE_GYM_GIVE_SLAYER_POINTS)
 	}
     elif (var(VAR_RESULT) == B_OUTCOME_LOST) {

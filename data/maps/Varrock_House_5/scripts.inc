@@ -75,7 +75,7 @@ FIND_VARROCK_URI_4:
 	goto FIND_VARROCK_URI_1
 
 FIND_VARROCK_URI_6:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	delay 90
 	clearflag FLAG_URI_ITEMFINDER
 	clearflag FLAG_HIDDEN_ITEM_VARROCK_2
@@ -83,7 +83,7 @@ FIND_VARROCK_URI_6:
 	clearflag FLAG_HIDDEN_ITEM_VARROCK_4
 	clearflag FLAG_HIDDEN_ITEM_VARROCK_5
 	addobject 1
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	namebox FIND_VARROCK_URI_Text_1
 	msgbox FIND_VARROCK_URI_Text_2
 	closemessage
@@ -103,10 +103,10 @@ FIND_VARROCK_URI_6:
 	msgbox FIND_VARROCK_URI_Text_4
 	closemessage
 	hidenamebox
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 1
 	setflag FLAG_URI_ITEMFINDER
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end
 

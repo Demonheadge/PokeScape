@@ -204,11 +204,11 @@ ENTER_FIGHT_CAVES:
 	step_end
 
 FIGHTCAVES_WAVE_TRANSITION::
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	buffernumberstring 0, VAR_TEMP_E
 	msgbox FIGHTCAVES_WAVE_TRANSITION_Text_0
 	closemessage
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	return
 
 
@@ -360,9 +360,9 @@ ENCOUNTER_TZ_KIH_7:
 	return
 
 ENCOUNTER_TZ_KIH_9:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end
 
@@ -401,9 +401,9 @@ ENCOUNTER_TZ_KEK_7:
 	return
 
 ENCOUNTER_TZ_KEK_9:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end
 
@@ -442,9 +442,9 @@ ENCOUNTER_KET_DILL_7:
 	return
 
 ENCOUNTER_KET_DILL_9:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end
 

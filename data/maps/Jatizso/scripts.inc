@@ -813,7 +813,7 @@ RAC_QUEST_JATIZSO_ELEJ_SPOT_1_1:
 	end
 
 RAC_QUEST_JATIZSO_ELEJ_SPOT_1_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setvar VAR_POKESCAPE_RAC_QUEST_ELEJ, 10
 	call JATIZSO_STATE
 	addobject 20
@@ -822,14 +822,14 @@ RAC_QUEST_JATIZSO_ELEJ_SPOT_1_2:
 	setobjectmovementtype 20, MOVEMENT_TYPE_LOOK_AROUND
 	applymovement 20, Movement_InteractFACEPLAYER
 	waitmovement 0
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	namebox JATIZSO_NPC_Elej_Text_0
 	msgbox RAC_QUEST_JATIZSO_ELEJ_SPOT_1_Text_1
 	closemessage
 	hidenamebox
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	playse SE_EGG_HATCH
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	namebox JATIZSO_NPC_Elej_Text_0
 	msgbox RAC_QUEST_JATIZSO_ELEJ_SPOT_1_Text_2
 	closemessage
@@ -847,7 +847,7 @@ RAC_QUEST_JATIZSO_ELEJ_SPOT_2_1:
 	end
 
 RAC_QUEST_JATIZSO_ELEJ_SPOT_2_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setvar VAR_POKESCAPE_RAC_QUEST_ELEJ, 15
 	call JATIZSO_STATE
 	addobject 20
@@ -856,14 +856,14 @@ RAC_QUEST_JATIZSO_ELEJ_SPOT_2_2:
 	setobjectmovementtype 20, MOVEMENT_TYPE_LOOK_AROUND
 	applymovement 20, Movement_InteractFACEPLAYER
 	waitmovement 0
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	namebox JATIZSO_NPC_Elej_Text_0
 	msgbox RAC_QUEST_JATIZSO_ELEJ_SPOT_1_Text_1
 	closemessage
 	hidenamebox
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	playse SE_EGG_HATCH
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	namebox JATIZSO_NPC_Elej_Text_0
 	msgbox RAC_QUEST_JATIZSO_ELEJ_SPOT_1_Text_2
 	closemessage
@@ -880,7 +880,7 @@ RAC_QUEST_JATIZSO_ELEJ_SPOT_3_1:
 	end
 
 RAC_QUEST_JATIZSO_ELEJ_SPOT_3_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setvar VAR_POKESCAPE_RAC_QUEST_ELEJ, 20
 	call JATIZSO_STATE
 	addobject 20
@@ -889,14 +889,14 @@ RAC_QUEST_JATIZSO_ELEJ_SPOT_3_2:
 	setobjectmovementtype 20, MOVEMENT_TYPE_LOOK_AROUND
 	applymovement 20, Movement_InteractFACEPLAYER
 	waitmovement 0
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	namebox JATIZSO_NPC_Elej_Text_0
 	msgbox RAC_QUEST_JATIZSO_ELEJ_SPOT_1_Text_1
 	closemessage
 	hidenamebox
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	playse SE_EGG_HATCH
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	namebox JATIZSO_NPC_Elej_Text_0
 	msgbox RAC_QUEST_JATIZSO_ELEJ_SPOT_1_Text_2
 	closemessage
@@ -913,7 +913,7 @@ RAC_QUEST_JATIZSO_ELEJ_SPOT_4_1:
 	end
 
 RAC_QUEST_JATIZSO_ELEJ_SPOT_4_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setvar VAR_POKESCAPE_RAC_QUEST_ELEJ, 25
 	call JATIZSO_STATE
 	addobject 20
@@ -922,14 +922,14 @@ RAC_QUEST_JATIZSO_ELEJ_SPOT_4_2:
 	setobjectmovementtype 20, MOVEMENT_TYPE_LOOK_AROUND
 	applymovement 20, Movement_InteractFACEPLAYER
 	waitmovement 0
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	namebox JATIZSO_NPC_Elej_Text_0
 	msgbox RAC_QUEST_JATIZSO_ELEJ_SPOT_1_Text_1
 	closemessage
 	hidenamebox
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	playse SE_EGG_HATCH
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	namebox JATIZSO_NPC_Elej_Text_0
 	msgbox RAC_QUEST_JATIZSO_ELEJ_SPOT_4_Text_0
 	closemessage

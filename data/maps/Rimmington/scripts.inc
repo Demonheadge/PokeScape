@@ -116,11 +116,11 @@ NPC_RIMMINGTON_JagexMod::
 	msgbox NPC_RIMMINGTON_JagexMod_Text_0
 	hidenamebox
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 10
 	setflag FLAG_TEMP_A
 	delay 8
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	call NPC_RIMMINGTON_JagexMod_NAMES
 	msgbox NPC_RIMMINGTON_JagexMod_Text_1
 	hidenamebox

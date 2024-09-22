@@ -132,11 +132,11 @@ script NPC_DUKE_1{
         msgbox(format("Hi there!\pI'm Duke Horacio, lord of castle Lumbridge.\pI heard from my cook that you wish to challenge me to a battle!\pVery well, you will have to reach the top of the castle.\pI shall be waiting!"))
         closemessage
         hidenamebox
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
         removeobject(1)
         setflag(FLAG_TEMP_1)
         setvar(VAR_POKESCAPE_LUMBRIDGE_GYM_QUEST, 1)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
         savebgm(MUS_PS_GYM)
         call(LUMBRIDGE_GYM_MUSIC)
         goto(LUMBRIDGE_GYM_STATE)

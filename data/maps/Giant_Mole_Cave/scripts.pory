@@ -312,7 +312,7 @@ script GIANTMOLE_STATE{
 script NPC_GIANT_MOLE
 {
 	lock
-    fadescreen(FADE_TO_BLACK)
+    fadescreenswapbuffers(FADE_TO_BLACK)
 	msgbox(format("As you approach the Giant Mole, it digs away…"))
     switch (var(VAR_GIANTMOLE_STATE)){ 
 		case 0: setvar(VAR_GIANTMOLE_STATE, 1)
@@ -328,7 +328,7 @@ script NPC_GIANT_MOLE
     }
     closemessage
     call(GIANTMOLE_STATE)
-    fadescreen(FADE_FROM_BLACK)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
 	release
 	end
 }
@@ -350,20 +350,20 @@ script ENCOUNTER_GIANT_MOLE
     special(BattleSetup_StartLegendaryBattle)
 	//dowildbattle
     if (var(VAR_RESULT) == B_OUTCOME_WON) { //DEFEATED, Can still encounter again.
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
 		setvar(VAR_GIANTMOLE_STATE, 0)
         setflag(FLAG_TEMP_B)
         removeobject (11)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
 		closemessage
 		end
 	}
 	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) { //CAPTURED! Cannot encounter again.
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
 		setvar(VAR_GIANTMOLE_STATE, 11)
         setflag(FLAG_TEMP_B)
         removeobject (11)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
 		closemessage
 		end
 	}

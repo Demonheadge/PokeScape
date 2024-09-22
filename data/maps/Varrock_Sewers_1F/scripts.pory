@@ -67,7 +67,7 @@ script ENCOUNTER_WALL_CREATURE {
     dowildbattle
     switch(var(VAR_RESULT)){
         case B_OUTCOME_WON:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             specialvar (VAR_RESULT, GetCurrentMap)
             if (var(VAR_RESULT) == MAP_VARROCK_SEWERS_1F){
                 call(VARROCK_SEWERS_1F_CHECK_PLAYER_STAND)
@@ -78,9 +78,9 @@ script ENCOUNTER_WALL_CREATURE {
             elif (var(VAR_RESULT) == MAP_VARROCK_SEWERS_3F){
                 call(VARROCK_SEWERS_3F_CHECK_PLAYER_STAND)
             }
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
         case B_OUTCOME_CAUGHT:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             specialvar (VAR_RESULT, GetCurrentMap)
             if (var(VAR_RESULT) == MAP_VARROCK_SEWERS_1F){
                 call(VARROCK_SEWERS_1F_CHECK_PLAYER_STAND)
@@ -91,7 +91,7 @@ script ENCOUNTER_WALL_CREATURE {
             elif (var(VAR_RESULT) == MAP_VARROCK_SEWERS_3F){
                 call(VARROCK_SEWERS_3F_CHECK_PLAYER_STAND)
             }
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
     }
     release
 	end

@@ -42,13 +42,13 @@ script TRIGGER_WISEOLDMAN_RIVAL_2{
     msgbox(format("This really is becoming a habit at this point huh?\pYou are growing stronger every battle.\pBy the way, have you seen Melzar the Mad at Rimmington?\pA strong trainer like you could probably learn a thing or two from that place.\pI hope to see you again in the future, it has been fun."))
     hidenamebox
     closemessage
-    fadescreen(FADE_TO_BLACK)
+    fadescreenswapbuffers (FADE_TO_BLACK)
     savebgm(MUS_DUMMY)
 	fadedefaultbgm
     removeobject(1)
     setflag(FLAG_TEMP_1F) //Wise old man
     setvar(VAR_WISE_OLD_MAN_RIVAL, 15) //15 - Met at Asgarnia Dungeon. (Optional)
-    fadescreen(FADE_FROM_BLACK)
+    fadescreenswapbuffers (FADE_FROM_BLACK)
     release
     end
 }

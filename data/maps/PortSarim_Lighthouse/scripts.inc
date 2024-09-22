@@ -213,13 +213,13 @@ LIGHTHOUSE_CAPN_HAND_QUEST_4:
 	msgbox LIGHTHOUSE_CAPN_HAND_QUEST_Text_2
 	hidenamebox
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 5
 	setflag FLAG_LIGHTHOUSE_PIRATE
 	call JAILMAP_STATE
 	msgbox LIGHTHOUSE_CAPN_HAND_QUEST_Text_3
 	closemessage
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto LIGHTHOUSE_CAPN_HAND_QUEST_1
 
 

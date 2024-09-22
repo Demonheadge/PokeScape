@@ -191,7 +191,7 @@ PORTSARIM_HAM_EVENT_PART2::
 	closemessage
 	applymovement 25, PORTSARIM_HAM_LEADER_4
 	waitmovement 0
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 21
 	removeobject 22
 	removeobject 23
@@ -200,7 +200,7 @@ PORTSARIM_HAM_EVENT_PART2::
 	removeobject 26
 	setflag FLAG_TEMP_1F
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 101
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	applymovement 27, PORTSARIM_HAM_BOAT
 	waitmovement 0
 	removeobject 27

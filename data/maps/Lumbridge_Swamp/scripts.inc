@@ -197,12 +197,12 @@ EventScript_RestBed_1:
 	end
 
 EventScript_RestBed_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	closemessage
 	playfanfare MUS_HEAL
 	waitfanfare
 	special HealPlayerParty
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto EventScript_RestBed_1
 
 

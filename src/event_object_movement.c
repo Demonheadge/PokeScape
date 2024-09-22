@@ -564,7 +564,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_DIANGO 0x119D
 #define OBJ_EVENT_PAL_HAIG_HALEN 0x119E
 #define OBJ_EVENT_PAL_KATRINE 0x119F
-#define OBJ_EVENT_PAL_PROF_NORMAL_TREE 0x1200
+//#define OBJ_EVENT_PAL_PROF_NORMAL_TREE 0x1200
 #define OBJ_EVENT_PAL_STRAVEN 0x1201
 #define OBJ_EVENT_PAL_EXPLORER_JACK 0x1202
 #define OBJ_EVENT_PAL_FORTUNATO 0x1203
@@ -874,7 +874,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Diango, OBJ_EVENT_PAL_DIANGO},
     {gObjectEventPalette_Haig_Halen, OBJ_EVENT_PAL_HAIG_HALEN},
     {gObjectEventPalette_Katrine, OBJ_EVENT_PAL_KATRINE},
-    {gObjectEventPalette_Prof_Normal_Tree, OBJ_EVENT_PAL_PROF_NORMAL_TREE},
+    //{gObjectEventPalette_Prof_Normal_Tree, OBJ_EVENT_PAL_PROF_NORMAL_TREE},
     {gObjectEventPalette_Straven, OBJ_EVENT_PAL_STRAVEN},
     {gObjectEventPalette_Explorer_Jack, OBJ_EVENT_PAL_EXPLORER_JACK},
     //{gObjectEventPalette_Fortunato, OBJ_EVENT_PAL_FORTUNATO},

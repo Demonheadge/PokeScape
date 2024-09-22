@@ -84,11 +84,11 @@ BANK_ExitBank::
 BANK_HEAL::
 	msgbox BANK_HEAL_Text_0
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	playfanfare MUS_HEAL
 	waitfanfare
 	special HealPlayerParty
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	msgbox BANK_HEAL_Text_1
 	hidenamebox
 	releaseall

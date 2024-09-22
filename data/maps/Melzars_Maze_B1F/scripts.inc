@@ -199,10 +199,10 @@ TRIGGER_Melzar_Maze_HAM_EVENT_BABE_1:
 	applymovement 2, Movement_lighthouse_ham_3
 	waitmovement 0
 	call HAM_LESSER_DEMON_EVENT
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_TEMP_1B
 	removeobject 4
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	delay 32
 	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_DOWN
 	waitmovement 0
@@ -296,7 +296,7 @@ TRIGGER_Melzar_Maze_HAM_EVENT_BABE_13:
 	msgbox TRIGGER_Melzar_Maze_HAM_EVENT_BABE_Text_19
 	closemessage
 	hidenamebox
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 110
 	removeobject 6
 	removeobject 7
@@ -306,7 +306,7 @@ TRIGGER_Melzar_Maze_HAM_EVENT_BABE_13:
 	setflag FLAG_TEMP_1D
 	setvar VAR_TEMP_5, 2
 	playbgm MUS_PS_CAVE_F2P, FALSE
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end
 

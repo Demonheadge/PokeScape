@@ -80,7 +80,7 @@ RAC_QUEST_SAIL_WOMAN_8:
 
 
 RAC_BOAT::
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	compare VAR_TEMP_8, 0
 	goto_if_eq RAC_BOAT_2
 RAC_BOAT_1:
@@ -88,7 +88,7 @@ RAC_BOAT_1:
 	goto_if_eq RAC_BOAT_5
 RAC_BOAT_4:
 	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_RELLEKKA
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	applymovement 22, MOVEMENT_RAC_BOAT
 	waitmovement 0
 	return

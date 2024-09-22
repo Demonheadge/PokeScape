@@ -46,13 +46,13 @@ TRIGGER_WISEOLDMAN_RIVAL_2::
 	msgbox TRIGGER_WISEOLDMAN_RIVAL_2_Text_3
 	hidenamebox
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	removeobject 1
 	setflag FLAG_TEMP_1F
 	setvar VAR_WISE_OLD_MAN_RIVAL, 15
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end
 

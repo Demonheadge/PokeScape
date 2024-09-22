@@ -42,14 +42,14 @@ GYMLEADER_DUKE_BATTLEWON::
 GYMLEADER_DUKE_BATTLEWON_1:
 	closemessage
 	hidenamebox
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	call SetGymTrainers_LUMBRIDGE
 	removeobject 13
 	setflag FLAG_BADGE01_GET
 	call HIDDEN_GROTTO_RESET
 	addvar VAR_GAMEMODE_LEVEL_SCALING, 1
 	setvar VAR_POKESCAPE_LUMBRIDGE_GYM_QUEST, 2
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end
 

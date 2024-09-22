@@ -825,7 +825,7 @@ script Falador_TREE {
 			hidenamebox
 			closemessage
 			trainerbattle_no_intro(TRAINER_FALADOR_MODTIMBO, msgbox(format("You saw nothing!")))
-			fadescreen(FADE_TO_BLACK)
+			fadescreenswapbuffers(FADE_TO_BLACK)
 			//CHANGE MAP TILE 
 			setmetatile(44, 5, 593, 1)
 			setmetatile(44, 6, 15, 1)
@@ -833,7 +833,7 @@ script Falador_TREE {
 			//REMOVE TIMBO
 			removeobject(OBJ_EVENT_ID_MODTIMBO)
 			setflag(FLAG_MOD_TIMBO)
-			fadescreen(FADE_FROM_BLACK)
+			fadescreenswapbuffers(FADE_FROM_BLACK)
 			msgbox(format("Despite winning the battle Timbo appears to have chopped down the tree anyway.\pThere is something next to the stump.\pLooks like he dropped it in a rush."))
 			giveitem(ITEM_TINDERBOX, 1)
 			setvar(VAR_POKESCAPE_MODTIMBO_STATE,1)

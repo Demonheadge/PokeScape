@@ -36,7 +36,7 @@ Explorer_Jack_1_4:
 
 
 SetClock::
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	special StartWallClock
 	waitstate
 	setflag FLAG_SET_WALL_CLOCK

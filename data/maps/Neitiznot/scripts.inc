@@ -149,22 +149,22 @@ BATTLE_RAC_RABBIT_1:
 	end
 
 BATTLE_RAC_RABBIT_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	addvar VAR_POKESCAPE_RAC_QUEST_RABBITS, 1
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto BATTLE_RAC_RABBIT_1
 
 BATTLE_RAC_RABBIT_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	addvar VAR_POKESCAPE_RAC_QUEST_RABBITS, 1
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto BATTLE_RAC_RABBIT_1
 
 BATTLE_RAC_RABBIT_4:
-	fadescreen FADE_TO_BLACK
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	end
 
@@ -183,10 +183,10 @@ BATTLE_RAC_RABBIT_5:
 	goto BATTLE_RAC_RABBIT_1
 
 BATTLE_RAC_RABBIT_10:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	addvar VAR_POKESCAPE_RAC_QUEST_RABBITS, 1
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	msgbox BATTLE_RAC_RABBIT_Text_4
 	closemessage
 	hidenamebox

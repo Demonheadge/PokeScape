@@ -29,14 +29,14 @@ ENCOUNTER_PENGUIN_ROCK_ROUTE47_1:
 	end
 
 ENCOUNTER_PENGUIN_ROCK_ROUTE47_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_TEMP_8
 	setflag FLAG_TEMP_9
 	removeobject 1
 	removeobject 2
 	savebgm MUS_DUMMY
 	fadedefaultbgm
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	goto ENCOUNTER_PENGUIN_ROCK_ROUTE47_1
 

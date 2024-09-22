@@ -198,7 +198,7 @@ script NPC_KaramjaVolcano_HAM_EVENT1
 	playse(SE_ORB)
 	special(DoOrbEffect)
     delay(60)
-    fadescreen(FADE_TO_WHITE)
+    fadescreenswapbuffers(FADE_TO_WHITE)
     special(FadeOutOrbEffect)
     delay(60)
     delay(60)
@@ -206,7 +206,7 @@ script NPC_KaramjaVolcano_HAM_EVENT1
     delay(60)
     setflag(FLAG_TEMP_3)
     removeobject(1)
-    fadescreen(FADE_FROM_WHITE)
+    fadescreenswapbuffers(FADE_FROM_WHITE)
     delay(60)
     applymovement(2, HAM_EVENT_KaramjaVolcano_11)
     waitmovement(0)
@@ -301,7 +301,7 @@ script NPC_KaramjaVolcano_HAM_EVENT1
     waitmovement(0)
     namebox ("H.A.M Leader")
     msgbox(format("Urgh!\nOur plans my have been foiled this time but our team in Feldip Hills should have succeeded at obtaining the horn by now, so it is only a matter of time!\pLets get out of here!"))
-    fadescreen(FADE_TO_BLACK)
+    fadescreenswapbuffers(FADE_TO_BLACK)
     playmoncry(SPECIES_LUGIA, 2)
     namebox ("ELVARG")
     msgbox(format("ROOOOOOAAAARRRR!!!"))
@@ -328,7 +328,7 @@ script NPC_KaramjaVolcano_HAM_EVENT1
     closemessage
     clearflag(FLAG_ELVARG)
     addobject(17) //elvarg
-    fadescreen(FADE_FROM_BLACK)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
     delay(20)
     setvar(VAR_0x8004, 0)  //vertical pan
 	setvar(VAR_0x8005, 3)  //horizontal pan
@@ -510,11 +510,11 @@ script NPC_KaramjaVolcano_HAM_EVENT2
 	playse(SE_ORB)
 	special(DoOrbEffect)
     delay(60)
-    fadescreen(FADE_TO_WHITE)
+    fadescreenswapbuffers(FADE_TO_WHITE)
     delay(60)
     fadeoutbgm(1)
     special(FadeOutOrbEffect)
-    fadescreen(FADE_FROM_WHITE)
+    fadescreenswapbuffers(FADE_FROM_WHITE)
 }
 
 
@@ -580,21 +580,21 @@ script ENCOUNTER_LESSERDEMON_KARAMJA_1 {
 	setwildbattle (SPECIES_DEMON_LESSER_OSRS_FORM, 15, ITEM_NONE)
 	dowildbattle
 	if (var(VAR_RESULT) == B_OUTCOME_WON) {
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
 		//setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 1)
         setflag(FLAG_TEMP_A)
         removeobject(5)// (OBJ_EVENT_ID_LESSERDEMON)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
 		//msgbox(format("You have defeated me!"))
 		closemessage
 		end
 	}
 	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
 		//setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 2)
         setflag(FLAG_TEMP_A)
         removeobject(5) //(OBJ_EVENT_ID_LESSERDEMON)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
 		//msgbox(format("You have caught me!"))
 		closemessage
 		end
@@ -615,21 +615,21 @@ script ENCOUNTER_LESSERDEMON_KARAMJA_2 {
 	setwildbattle (SPECIES_DEMON_LESSER_OSRS_FORM, 15, ITEM_NONE)
 	dowildbattle
 	if (var(VAR_RESULT) == B_OUTCOME_WON) {
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
 		//setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 1)
         setflag(FLAG_TEMP_B)
         removeobject(6)// (OBJ_EVENT_ID_LESSERDEMON)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
 		//msgbox(format("You have defeated me!"))
 		closemessage
 		end
 	}
 	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
 		//setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 2)
         setflag(FLAG_TEMP_B)
         removeobject(6) //(OBJ_EVENT_ID_LESSERDEMON)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
 		//msgbox(format("You have caught me!"))
 		closemessage
 		end
@@ -652,21 +652,21 @@ script ENCOUNTER_JAD {
 	setwildbattle (SPECIES_TZTOK_JAD, 50, ITEM_FRAGMENT_OF_JAS)
 	dowildbattle
 	if (var(VAR_RESULT) == B_OUTCOME_WON) {
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
 		//setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 1)
         setflag(FLAG_TEMP_1)
         removeobject(6)// (OBJ_EVENT_ID_LESSERDEMON)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
 		//msgbox(format("You have defeated me!"))
 		closemessage
 		end
 	}
 	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
 		//setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 2)
         setflag(FLAG_TEMP_1)
         removeobject(6) //(OBJ_EVENT_ID_LESSERDEMON)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
 		//msgbox(format("You have caught me!"))
 		closemessage
 		end
@@ -939,7 +939,7 @@ script Crandor_Event_Volcano {
 
 
     
-    fadescreen(FADE_TO_BLACK)
+    fadescreenswapbuffers(FADE_TO_BLACK)
 
     setvar(VAR_0x8004, 0)  //vertical pan
 	setvar(VAR_0x8005, 3)  //horizontal pan
@@ -949,7 +949,7 @@ script Crandor_Event_Volcano {
     delay(40)
     clearflag(FLAG_ELVARG)
     addobject(17)
-    fadescreen(FADE_FROM_BLACK)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
     
     playmoncry(SPECIES_ELVARG, 2)
     namebox ("ELVARG")
@@ -1524,10 +1524,10 @@ script BATTLE_KaramjaVolcano_HAM_6
     msgbox(format("Nope!\nI don't like this plan anymore!\pI'm out of here!"))
     hidenamebox
     closemessage
-    fadescreen(FADE_TO_BLACK)
+    fadescreenswapbuffers(FADE_TO_BLACK)
     setflag(FLAG_TEMP_1C)
     removeobject(36)
-    fadescreen(FADE_FROM_BLACK)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
     release
     end
 }

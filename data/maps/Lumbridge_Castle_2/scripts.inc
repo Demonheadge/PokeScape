@@ -284,9 +284,9 @@ Lumbridge_Castle_Professor_Normal_Tree_1_1:
 	waitmessage
 	hidenamebox
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 4
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto Lumbridge_Castle_Hans_1
 	release
 	end
@@ -341,10 +341,10 @@ Lumbridge_Castle_Hans_1::
 	msgbox Lumbridge_Castle_Hans_1_Text_2
 	hidenamebox
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 9
 	removeobject 10
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	setflag FLAG_SYS_POKEDEX_GET
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 5
 	release
@@ -1248,9 +1248,9 @@ Mithrilman_LUMBRIDGE_STATE_3::
 	waitmessage
 	hidenamebox
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 2
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	setflag FLAG_MITHRILMAN1
 	clearflag FLAG_MITHRILMAN2
 	savebgm MUS_DUMMY

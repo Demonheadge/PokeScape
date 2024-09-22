@@ -887,7 +887,7 @@ script RAC_QUEST_JATIZSO_ELEJ_SPOT_1
     msgbox(format("Call Elej over to investegate this spot?"), MSGBOX_YESNO)
     if (var(VAR_RESULT))
     { 
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
         setvar(VAR_POKESCAPE_RAC_QUEST_ELEJ, 10)
 
         call(JATIZSO_STATE)
@@ -898,14 +898,14 @@ script RAC_QUEST_JATIZSO_ELEJ_SPOT_1
         applymovement(ELEJ_ID, Movement_InteractFACEPLAYER)
         waitmovement(0)
         
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
         namebox ("Elej")
         msgbox(format("Oooh, this spot looks promising!\pLets try a picture here!"))
         closemessage
         hidenamebox
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
         playse(SE_EGG_HATCH)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
         namebox ("Elej")
         msgbox(format("Hmm…\nNo I don't think this will do.\pLets keep looking!"))
         closemessage
@@ -920,7 +920,7 @@ script RAC_QUEST_JATIZSO_ELEJ_SPOT_2
     msgbox(format("Call Elej over to investegate this spot?"), MSGBOX_YESNO)
     if (var(VAR_RESULT))
     { 
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
         setvar(VAR_POKESCAPE_RAC_QUEST_ELEJ, 15)
 
         call(JATIZSO_STATE)
@@ -931,14 +931,14 @@ script RAC_QUEST_JATIZSO_ELEJ_SPOT_2
         applymovement(ELEJ_ID, Movement_InteractFACEPLAYER)
         waitmovement(0)
         
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
         namebox ("Elej")
         msgbox(format("Oooh, this spot looks promising!\pLets try a picture here!"))
         closemessage
         hidenamebox
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
         playse(SE_EGG_HATCH)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
         namebox ("Elej")
         msgbox(format("Hmm…\nNo I don't think this will do.\pLets keep looking!"))
         closemessage
@@ -952,7 +952,7 @@ script RAC_QUEST_JATIZSO_ELEJ_SPOT_3
     msgbox(format("Call Elej over to investegate this spot?"), MSGBOX_YESNO)
     if (var(VAR_RESULT))
     { 
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
         setvar(VAR_POKESCAPE_RAC_QUEST_ELEJ, 20)
 
         call(JATIZSO_STATE)
@@ -963,14 +963,14 @@ script RAC_QUEST_JATIZSO_ELEJ_SPOT_3
         applymovement(ELEJ_ID, Movement_InteractFACEPLAYER)
         waitmovement(0)
         
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
         namebox ("Elej")
         msgbox(format("Oooh, this spot looks promising!\pLets try a picture here!"))
         closemessage
         hidenamebox
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
         playse(SE_EGG_HATCH)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
         namebox ("Elej")
         msgbox(format("Hmm…\nNo I don't think this will do.\pLets keep looking!"))
         closemessage
@@ -984,7 +984,7 @@ script RAC_QUEST_JATIZSO_ELEJ_SPOT_4
     msgbox(format("Call Elej over to investegate this spot?"), MSGBOX_YESNO)
     if (var(VAR_RESULT))
     { 
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
         setvar(VAR_POKESCAPE_RAC_QUEST_ELEJ, 25)
 
         call(JATIZSO_STATE)
@@ -995,14 +995,14 @@ script RAC_QUEST_JATIZSO_ELEJ_SPOT_4
         applymovement(ELEJ_ID, Movement_InteractFACEPLAYER)
         waitmovement(0)
         
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
         namebox ("Elej")
         msgbox(format("Oooh, this spot looks promising!\pLets try a picture here!"))
         closemessage
         hidenamebox
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
         playse(SE_EGG_HATCH)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
         namebox ("Elej")
         msgbox(format("This is…\pPERFECT!\pWith this done I can now participate in the Art Fight!\pPlease take this as a gift for helping me."))
         closemessage

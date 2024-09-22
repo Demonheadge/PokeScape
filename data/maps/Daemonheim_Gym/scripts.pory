@@ -249,7 +249,7 @@ script THOK_GYM_CHALLENGE_STATE_POST_BADGE {
     closemessage
     msgbox(format("As the ferret gets closer your eyes begin to fade."))
     closemessage
-    fadescreen(FADE_TO_BLACK)
+    fadescreenswapbuffers(FADE_TO_BLACK)
     delay(60)
     msgbox(format("Oh dear, you've whited out…"))
     closemessage

@@ -176,7 +176,7 @@ NPC_KaramjaVolcano_HAM_EVENT1::
 	playse SE_ORB
 	special DoOrbEffect
 	delay 60
-	fadescreen FADE_TO_WHITE
+	fadescreenswapbuffers FADE_TO_WHITE
 	special FadeOutOrbEffect
 	delay 60
 	delay 60
@@ -184,7 +184,7 @@ NPC_KaramjaVolcano_HAM_EVENT1::
 	delay 60
 	setflag FLAG_TEMP_3
 	removeobject 1
-	fadescreen FADE_FROM_WHITE
+	fadescreenswapbuffers FADE_FROM_WHITE
 	delay 60
 	applymovement 2, HAM_EVENT_KaramjaVolcano_11
 	waitmovement 0
@@ -279,7 +279,7 @@ NPC_KaramjaVolcano_HAM_EVENT1::
 	waitmovement 0
 	namebox NPC_KaramjaVolcano_HAM_EVENT1_Text_2
 	msgbox NPC_KaramjaVolcano_HAM_EVENT1_Text_17
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	playmoncry SPECIES_LUGIA, 2
 	namebox NPC_KaramjaVolcano_HAM_EVENT1_Text_18
 	msgbox NPC_KaramjaVolcano_HAM_EVENT1_Text_19
@@ -306,7 +306,7 @@ NPC_KaramjaVolcano_HAM_EVENT1::
 	closemessage
 	clearflag FLAG_ELVARG
 	addobject 17
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	delay 20
 	setvar VAR_0x8004, 0
 	setvar VAR_0x8005, 3
@@ -497,11 +497,11 @@ NPC_KaramjaVolcano_HAM_EVENT2::
 	playse SE_ORB
 	special DoOrbEffect
 	delay 60
-	fadescreen FADE_TO_WHITE
+	fadescreenswapbuffers FADE_TO_WHITE
 	delay 60
 	fadeoutbgm 1
 	special FadeOutOrbEffect
-	fadescreen FADE_FROM_WHITE
+	fadescreenswapbuffers FADE_FROM_WHITE
 	return
 
 
@@ -564,18 +564,18 @@ ENCOUNTER_LESSERDEMON_KARAMJA_1::
 	end
 
 ENCOUNTER_LESSERDEMON_KARAMJA_1_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_TEMP_A
 	removeobject 5
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	end
 
 ENCOUNTER_LESSERDEMON_KARAMJA_1_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_TEMP_A
 	removeobject 5
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	end
 
@@ -599,18 +599,18 @@ ENCOUNTER_LESSERDEMON_KARAMJA_2::
 	end
 
 ENCOUNTER_LESSERDEMON_KARAMJA_2_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_TEMP_B
 	removeobject 6
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	end
 
 ENCOUNTER_LESSERDEMON_KARAMJA_2_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_TEMP_B
 	removeobject 6
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	end
 
@@ -633,18 +633,18 @@ ENCOUNTER_JAD::
 	end
 
 ENCOUNTER_JAD_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_TEMP_1
 	removeobject 6
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	end
 
 ENCOUNTER_JAD_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_TEMP_1
 	removeobject 6
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	end
 
@@ -846,7 +846,7 @@ Crandor_Event_Volcano_1:
 	delay 60
 	delay 60
 	waitmovement 0
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setvar VAR_0x8004, 0
 	setvar VAR_0x8005, 3
 	setvar VAR_0x8006, 8
@@ -855,7 +855,7 @@ Crandor_Event_Volcano_1:
 	delay 40
 	clearflag FLAG_ELVARG
 	addobject 17
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	playmoncry SPECIES_ELVARG, 2
 	namebox NPC_KaramjaVolcano_HAM_EVENT1_Text_18
 	msgbox NPC_KaramjaVolcano_HAM_EVENT1_Text_19
@@ -1499,10 +1499,10 @@ BATTLE_KaramjaVolcano_HAM_6::
 	msgbox BATTLE_KaramjaVolcano_HAM_6_Text_2
 	hidenamebox
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_TEMP_1C
 	removeobject 36
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end
 

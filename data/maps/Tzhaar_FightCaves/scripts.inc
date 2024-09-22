@@ -133,28 +133,28 @@ ENCOUNTER_JAD_GYM::
 	end
 
 ENCOUNTER_JAD_GYM_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 19
 	setflag FLAG_TEMP_1
 	removeobject 11
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto NPC_TZHAAR_GYM_WAVE_3
 	closemessage
 	end
 
 ENCOUNTER_JAD_GYM_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 20
 	setflag FLAG_TEMP_1
 	removeobject 11
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	end
 
 ENCOUNTER_JAD_GYM_4:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	end
 

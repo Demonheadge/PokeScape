@@ -236,7 +236,7 @@ script CRANDOR_SHIP_SCENE
     applymovement(OBJ_EVENT_ID_PLAYER, movement_sailing3)
     applymovement(OBJ_EVENT_ID_SHIP, movement_sailing3)
     delay(32)
-    fadescreen(FADE_TO_BLACK)
+    fadescreenswapbuffers(FADE_TO_BLACK)
     playse(SE_M_EARTHQUAKE)
 
     namebox("Ned")

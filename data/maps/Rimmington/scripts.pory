@@ -141,11 +141,11 @@ script NPC_RIMMINGTON_JagexMod{
     msgbox(format("I am a ninja!\pNow you see me."))
     hidenamebox
     closemessage
-    fadescreen(FADE_TO_BLACK)
+    fadescreenswapbuffers(FADE_TO_BLACK)
     removeobject (10) //HIDEJMOD
     setflag(FLAG_TEMP_A)
     delay(8)
-    fadescreen(FADE_FROM_BLACK)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
     call(NPC_RIMMINGTON_JagexMod_NAMES)
     msgbox(format("Now you don't…"))
     hidenamebox

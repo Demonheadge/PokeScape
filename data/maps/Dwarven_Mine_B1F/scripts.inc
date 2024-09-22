@@ -330,7 +330,7 @@ NPC_FALADORCASTLE_QUEST_PART_3::
 	hidenamebox
 	savebgm MUS_DUMMY
 	fadedefaultbgm
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_TEMP_1
 	setflag FLAG_TEMP_2
 	removeobject 40
@@ -343,7 +343,7 @@ NPC_FALADORCASTLE_QUEST_PART_3::
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 115
 	clearflag FLAG_TEMP_F
 	addobject 59
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	delay 32
 	msgbox NPC_FALADORCASTLE_QUEST_PART_3_Text_31
 	closemessage

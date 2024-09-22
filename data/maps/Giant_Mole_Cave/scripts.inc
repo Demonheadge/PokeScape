@@ -320,7 +320,7 @@ GIANTMOLE_STATE_13:
 
 NPC_GIANT_MOLE::
 	lock
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	msgbox NPC_GIANT_MOLE_Text_0
 	switch VAR_GIANTMOLE_STATE
 	case 0, NPC_GIANT_MOLE_3
@@ -336,7 +336,7 @@ NPC_GIANT_MOLE::
 NPC_GIANT_MOLE_1:
 	closemessage
 	call GIANTMOLE_STATE
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end
 
@@ -399,20 +399,20 @@ ENCOUNTER_GIANT_MOLE::
 	end
 
 ENCOUNTER_GIANT_MOLE_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setvar VAR_GIANTMOLE_STATE, 0
 	setflag FLAG_TEMP_B
 	removeobject 11
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	end
 
 ENCOUNTER_GIANT_MOLE_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setvar VAR_GIANTMOLE_STATE, 11
 	setflag FLAG_TEMP_B
 	removeobject 11
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	end
 

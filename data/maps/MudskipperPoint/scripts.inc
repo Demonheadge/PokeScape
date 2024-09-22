@@ -27,14 +27,14 @@ ENCOUNTER_PENGUIN_BARREL_MUDSKIPPER_POINT_1:
 	end
 
 ENCOUNTER_PENGUIN_BARREL_MUDSKIPPER_POINT_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_TEMP_8
 	setflag FLAG_TEMP_9
 	removeobject 7
 	removeobject 8
 	savebgm MUS_DUMMY
 	fadedefaultbgm
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	goto ENCOUNTER_PENGUIN_BARREL_MUDSKIPPER_POINT_1
 

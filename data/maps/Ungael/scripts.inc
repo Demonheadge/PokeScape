@@ -59,20 +59,20 @@ ENCOUNTER_VORKATH_1:
 	end
 
 ENCOUNTER_VORKATH_2:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_TEMP_F
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	msgbox ENCOUNTER_VORKATH_Text_2
 	closemessage
 	goto ENCOUNTER_VORKATH_1
 
 ENCOUNTER_VORKATH_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setflag FLAG_TEMP_F
 	setflag FLAG_CAPTURED_VORKATH
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	msgbox ENCOUNTER_VORKATH_Text_3
 	closemessage
 	goto ENCOUNTER_VORKATH_1

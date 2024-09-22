@@ -45,7 +45,7 @@ BLOCKADE_ROUTE30_WILDERNESS_2_3:
 	return
 
 BLOCKADE_ROUTE30_WILDERNESS_2_1:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	setvar VAR_WILDERNESS_BLOCK_STATE, 1
 	setflag FLAG_TEMP_1
 	removeobject 6
@@ -56,7 +56,7 @@ BLOCKADE_ROUTE30_WILDERNESS_2_1:
 	special DrawWholeMapView
 	closemessage
 	hidenamebox
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	return
 
 BLOCKADE_ROUTE30_WILDERNESS_2_2:

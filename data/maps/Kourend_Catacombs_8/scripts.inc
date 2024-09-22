@@ -80,7 +80,7 @@ SKOTIZO_TRIGGER_8:
 	setvar VAR_0x8007, 2
 	special ShakeCamera
 	delay 60
-	fadescreen FADE_TO_WHITE
+	fadescreenswapbuffers FADE_TO_WHITE
 	clearflag FLAG_TEMP_A
 	addobject 1
 	setmetatile 9, 4, 673, 0
@@ -91,7 +91,7 @@ SKOTIZO_TRIGGER_8:
 	setmetatile 11, 5, 673, 0
 	special DrawWholeMapView
 	playse SE_ICE_BREAK
-	fadescreen FADE_FROM_WHITE
+	fadescreenswapbuffers FADE_FROM_WHITE
 	msgbox SKOTIZO_TRIGGER_Text_2
 	closemessage
 	goto ENCOUNTER_SKOTIZO
@@ -119,13 +119,13 @@ ENCOUNTER_SKOTIZO_1:
 	end
 
 ENCOUNTER_SKOTIZO_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeitem ITEM_DARK_TOTEM, 1
 	msgbox ENCOUNTER_SKOTIZO_Text_2
 	closemessage
 	setflag FLAG_TEMP_A
 	removeobject 1
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	questmenu QUEST_MENU_CHECK_COMPLETE, QUEST_KOUREND_SLAYER
 	compare VAR_RESULT, 0
 	goto_if_eq ENCOUNTER_SKOTIZO_8
@@ -135,13 +135,13 @@ ENCOUNTER_SKOTIZO_7:
 	end
 
 ENCOUNTER_SKOTIZO_4:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeitem ITEM_DARK_TOTEM, 1
 	msgbox ENCOUNTER_SKOTIZO_Text_2
 	closemessage
 	setflag FLAG_TEMP_A
 	removeobject 1
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	questmenu QUEST_MENU_CHECK_COMPLETE, QUEST_KOUREND_SLAYER
 	compare VAR_RESULT, 0
 	goto_if_eq ENCOUNTER_SKOTIZO_11
@@ -233,15 +233,15 @@ ENCOUNTER_ABYSSAL_DEMON_2:
 	goto ENCOUNTER_ABYSSAL_DEMON_1
 
 ENCOUNTER_ABYSSAL_DEMON_7:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_ABYSSAL_DEMON_5
 
 ENCOUNTER_ABYSSAL_DEMON_8:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_ABYSSAL_DEMON_5
 
 
@@ -279,15 +279,15 @@ ENCOUNTER_SLIME_3:
 	goto ENCOUNTER_SLIME_1
 
 ENCOUNTER_SLIME_9:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_SLIME_7
 
 ENCOUNTER_SLIME_10:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_SLIME_7
 
 
@@ -320,15 +320,15 @@ ENCOUNTER_ROCKCRAB_2:
 	goto ENCOUNTER_ROCKCRAB_1
 
 ENCOUNTER_ROCKCRAB_9:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_ROCKCRAB_7
 
 ENCOUNTER_ROCKCRAB_10:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_ROCKCRAB_7
 
 
@@ -351,15 +351,15 @@ ENCOUNTER_DRAGON_BLACK_1:
 	end
 
 ENCOUNTER_DRAGON_BLACK_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_DRAGON_BLACK_1
 
 ENCOUNTER_DRAGON_BLACK_4:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_DRAGON_BLACK_1
 
 
@@ -382,15 +382,15 @@ ENCOUNTER_DRAGON_RED_1:
 	end
 
 ENCOUNTER_DRAGON_RED_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_DRAGON_RED_1
 
 ENCOUNTER_DRAGON_RED_4:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_DRAGON_RED_1
 
 
@@ -413,15 +413,15 @@ ENCOUNTER_DRAGON_BLUE_1:
 	end
 
 ENCOUNTER_DRAGON_BLUE_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_DRAGON_BLUE_1
 
 ENCOUNTER_DRAGON_BLUE_4:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_DRAGON_BLUE_1
 
 
@@ -444,15 +444,15 @@ ENCOUNTER_DRAGON_GREEN_1:
 	end
 
 ENCOUNTER_DRAGON_GREEN_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_DRAGON_GREEN_1
 
 ENCOUNTER_DRAGON_GREEN_4:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_DRAGON_GREEN_1
 
 
@@ -475,15 +475,15 @@ ENCOUNTER_BASILISK_1:
 	end
 
 ENCOUNTER_BASILISK_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_BASILISK_1
 
 ENCOUNTER_BASILISK_4:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_BASILISK_1
 
 
@@ -527,15 +527,15 @@ ENCOUNTER_GREATER_DEMON_4:
 	goto ENCOUNTER_GREATER_DEMON_1
 
 ENCOUNTER_GREATER_DEMON_11:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_GREATER_DEMON_9
 
 ENCOUNTER_GREATER_DEMON_12:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_GREATER_DEMON_9
 
 
@@ -562,17 +562,17 @@ ENCOUNTER_MONKEY_QUEST_1:
 	end
 
 ENCOUNTER_MONKEY_QUEST_3:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	msgbox ENCOUNTER_MONKEY_QUEST_Text_3
 	giveitem ITEM_BANANA, 5
 	goto ENCOUNTER_MONKEY_QUEST_1
 
 ENCOUNTER_MONKEY_QUEST_4:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	msgbox ENCOUNTER_MONKEY_QUEST_Text_3
 	giveitem ITEM_BANANA, 5
 	goto ENCOUNTER_MONKEY_QUEST_1

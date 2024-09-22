@@ -45,20 +45,20 @@ script ENCOUNTER_CALLISTO
 	setwildbattle (SPECIES_CALLISTO, 40, ITEM_NONE)
 	dowildbattle
     if (var(VAR_RESULT) == B_OUTCOME_WON) { //DEFEATED, Can still encounter again.
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
 		setvar(VAR_CALLISTO_STATE, 0) // Resets Callisto state.
         setflag(FLAG_TEMP_A)
         removeobject (1)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
 		closemessage
 		end
 	}
 	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) { //CAPTURED! Cannot encounter again.
-        fadescreen(FADE_TO_BLACK)
+        fadescreenswapbuffers(FADE_TO_BLACK)
 		setvar(VAR_CALLISTO_STATE, 5) // captured
         setflag(FLAG_TEMP_A)
         removeobject (1)
-        fadescreen(FADE_FROM_BLACK)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
 		closemessage
 		end
 	}

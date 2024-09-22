@@ -57,7 +57,7 @@ script SKOTIZO_TRIGGER {
                     setvar(VAR_0x8007, 2) //SHAKE DELAY
                     special(ShakeCamera)
                     delay(60)
-                    fadescreen(FADE_TO_WHITE)
+                    fadescreenswapbuffers(FADE_TO_WHITE)
                     clearflag(FLAG_TEMP_A)
                     addobject(1)
                     setmetatile(9,4,673,0)
@@ -68,7 +68,7 @@ script SKOTIZO_TRIGGER {
                     setmetatile(11,5,673,0)
                     special (DrawWholeMapView)
 	                playse (SE_ICE_BREAK)
-                    fadescreen(FADE_FROM_WHITE)
+                    fadescreenswapbuffers(FADE_FROM_WHITE)
                     msgbox(format("The crystal shatters and reveals a giant monster!"))
                     closemessage
                     goto(ENCOUNTER_SKOTIZO)
@@ -95,13 +95,13 @@ script ENCOUNTER_SKOTIZO
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeitem(ITEM_DARK_TOTEM, 1)
             msgbox(format("You feel the catacombs shake and tremble as the Dark Totem shatters into pieces.\pThe air feels renewed."))
             closemessage
             setflag(FLAG_TEMP_A)
             removeobject (1)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
             questmenu(QUEST_MENU_CHECK_COMPLETE , QUEST_KOUREND_SLAYER)
             if (!var(VAR_RESULT))
             { 
@@ -111,13 +111,13 @@ script ENCOUNTER_SKOTIZO
             closemessage
             end
         case B_OUTCOME_CAUGHT:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeitem(ITEM_DARK_TOTEM, 1)
             msgbox(format("You feel the catacombs shake and tremble as the Dark Totem shatters into pieces.\pThe air feels renewed."))
             closemessage
             setflag(FLAG_TEMP_A)
             removeobject (1)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
             questmenu(QUEST_MENU_CHECK_COMPLETE , QUEST_KOUREND_SLAYER)
             if (!var(VAR_RESULT))
             { 
@@ -220,13 +220,13 @@ script ENCOUNTER_ABYSSAL_DEMON
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
         case B_OUTCOME_CAUGHT:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
     }
     release
 	end
@@ -256,13 +256,13 @@ script ENCOUNTER_SLIME
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
         case B_OUTCOME_CAUGHT:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
     }
     release
 	end
@@ -288,13 +288,13 @@ script ENCOUNTER_ROCKCRAB
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
         case B_OUTCOME_CAUGHT:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
     }
     release
 	end
@@ -314,13 +314,13 @@ script ENCOUNTER_DRAGON_BLACK
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
         case B_OUTCOME_CAUGHT:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
     }
     release
 	end
@@ -339,13 +339,13 @@ script ENCOUNTER_DRAGON_RED
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
         case B_OUTCOME_CAUGHT:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
     }
     release
 	end
@@ -364,13 +364,13 @@ script ENCOUNTER_DRAGON_BLUE
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
         case B_OUTCOME_CAUGHT:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
     }
     release
 	end
@@ -389,13 +389,13 @@ script ENCOUNTER_DRAGON_GREEN
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
         case B_OUTCOME_CAUGHT:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
     }
     release
 	end
@@ -414,13 +414,13 @@ script ENCOUNTER_BASILISK
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
         case B_OUTCOME_CAUGHT:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
     }
     release
 	end
@@ -453,13 +453,13 @@ script ENCOUNTER_GREATER_DEMON
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
         case B_OUTCOME_CAUGHT:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
     }
     release
 	end
@@ -482,15 +482,15 @@ script ENCOUNTER_MONKEY_QUEST
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
             msgbox(format("The monkey dropped some bananas.")) 
             giveitem(ITEM_BANANA, 5)
         case B_OUTCOME_CAUGHT:
-            fadescreen(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_TO_BLACK)
             removeobject (VAR_LAST_TALKED)
-            fadescreen(FADE_FROM_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
             msgbox(format("The monkey dropped some bananas.")) 
             giveitem(ITEM_BANANA, 5)
     }

@@ -6956,7 +6956,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Katrine = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Prof_Normal_Tree = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_PROF_NORMAL_TREE,
+    .paletteTag = OBJ_EVENT_PAL_GUTHIX_GREEN,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,

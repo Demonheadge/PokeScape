@@ -249,21 +249,21 @@ ENCOUNTER_SCURRIUS_4:
 	goto ENCOUNTER_SCURRIUS_1
 
 ENCOUNTER_SCURRIUS_10:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeitem ITEM_SCURRIUS_CHEESE, 1
 	setvar VAR_SCURRIUS, 4
 	msgbox ENCOUNTER_SCURRIUS_Text_1
 	closemessage
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_SCURRIUS_8
 
 ENCOUNTER_SCURRIUS_11:
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeitem ITEM_SCURRIUS_CHEESE, 1
 	setvar VAR_SCURRIUS, 4
 	msgbox ENCOUNTER_SCURRIUS_Text_1
 	closemessage
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_SCURRIUS_8
 
 ENCOUNTER_SCURRIUS_12:
