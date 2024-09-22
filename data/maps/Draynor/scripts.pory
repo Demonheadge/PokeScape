@@ -200,13 +200,14 @@ script Draynor_Diango {
 script GIFT_DRAGONKITE {
     msgbox(format("Gift successfully found!"))
 
-    givemon (SPECIES_DRAGONKITE, 10, ITEM_NONE)
-    bufferspeciesname(1, SPECIES_DRAGONKITE)
-	playfanfare (MUS_OBTAIN_ITEM)
-	msgbox(format("{PLAYER} obtained a {STR_VAR_2}."))
-	waitmessage
-	waitfanfare
-	bufferspeciesname(0, SPECIES_DRAGONKITE)
+    call(EventScript_GiveMon_Dragonkite)
+    //givemon (SPECIES_DRAGONKITE, 10, ITEM_NONE)
+    //bufferspeciesname(1, SPECIES_DRAGONKITE)
+	//playfanfare (MUS_OBTAIN_ITEM)
+	//msgbox(format("{PLAYER} obtained a {STR_VAR_2}."))
+	//waitmessage
+	//waitfanfare
+	//bufferspeciesname(0, SPECIES_DRAGONKITE)
     setflag(FLAG_DIANGO_GIFT_DRAGONKITE)
 
     msgbox(format("There is a note alongside the gift, it reads:"))
@@ -227,6 +228,100 @@ script GIFT_FROGEELBURGER {
     msgbox(format("Thank you for playing PokeScape.\pCheck out our website and discord server for the latest updates."))
     return
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script EventScript_GiveMon_Dragonkite {
+    setvar(VAR_TEMP_1, SPECIES_DRAGONKITE)
+    givemon (SPECIES_DRAGONKITE, 10, ITEM_NONE)
+    compare(VAR_RESULT, 0)
+	goto_if_eq(EventScript_GiveMon_SendParty_Dragonkite)
+    compare(VAR_RESULT, 1)
+	goto_if_eq(EventScript_GiveMon_SendPC_Dragonkite)
+    goto(Common_EventScript_NoMoreRoomForPokemon)
+    end
+}
+
+script EventScript_GiveMon_SendParty_Dragonkite{
+	call(EventScript_GiveMon_ReceivedFanfare_Dragonkite)
+	msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+    compare(VAR_RESULT, NO)
+	goto_if_eq(EventScript_GiveMon_Received_Dragonkite)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(EventScript_GiveMon_Received_Dragonkite)
+	end
+}
+
+script EventScript_GiveMon_SendPC_Dragonkite {
+	call(EventScript_GiveMon_ReceivedFanfare_Dragonkite)
+	msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+    compare(VAR_RESULT, NO)
+	goto_if_eq(EventScript_GiveMon_TransferredToPC_Dragonkite)
+	call (Common_EventScript_NameReceivedBoxMon)
+	goto (EventScript_GiveMon_TransferredToPC_Dragonkite)
+	end
+}
+
+script EventScript_GiveMon_TransferredToPC_Dragonkite{
+	call (Common_EventScript_TransferredToPC)
+	goto (EventScript_GiveMon_Received_Dragonkite)
+	end
+}
+
+script EventScript_GiveMon_ReceivedFanfare_Dragonkite{
+	bufferspeciesname(1, SPECIES_DRAGONKITE)
+	playfanfare (MUS_OBTAIN_TMHM)
+	msgbox(format("{PLAYER} obtained a {STR_VAR_2}."))
+	waitmessage
+	waitfanfare
+	bufferspeciesname(0, SPECIES_DRAGONKITE)
+	return
+}
+
+script EventScript_GiveMon_Received_Dragonkite{
+	return
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

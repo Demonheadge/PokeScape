@@ -183,16 +183,10 @@ Draynor_Diango_10:
 
 GIFT_DRAGONKITE::
 	msgbox GIFT_DRAGONKITE_Text_0
-	givemon SPECIES_DRAGONKITE, 10, ITEM_NONE
-	bufferspeciesname 1, SPECIES_DRAGONKITE
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox GIFT_DRAGONKITE_Text_1
-	waitmessage
-	waitfanfare
-	bufferspeciesname 0, SPECIES_DRAGONKITE
+	call EventScript_GiveMon_Dragonkite
 	setflag FLAG_DIANGO_GIFT_DRAGONKITE
+	msgbox GIFT_DRAGONKITE_Text_1
 	msgbox GIFT_DRAGONKITE_Text_2
-	msgbox GIFT_DRAGONKITE_Text_3
 	return
 
 
@@ -204,8 +198,60 @@ GIFT_FROGEELBURGER::
 	waitmessage
 	waitfanfare
 	setflag FLAG_DIANGO_GIFT_FROGEELBURGER
-	msgbox GIFT_DRAGONKITE_Text_2
+	msgbox GIFT_DRAGONKITE_Text_1
 	msgbox GIFT_FROGEELBURGER_Text_1
+	return
+
+
+EventScript_GiveMon_Dragonkite::
+	setvar VAR_TEMP_1, SPECIES_DRAGONKITE
+	givemon SPECIES_DRAGONKITE, 10, ITEM_NONE
+	compare VAR_RESULT, 0
+	goto_if_eq EventScript_GiveMon_SendParty_Dragonkite
+	compare VAR_RESULT, 1
+	goto_if_eq EventScript_GiveMon_SendPC_Dragonkite
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+
+EventScript_GiveMon_SendParty_Dragonkite::
+	call EventScript_GiveMon_ReceivedFanfare_Dragonkite
+	msgbox EventScript_GiveMon_SendParty_Dragonkite_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq EventScript_GiveMon_Received_Dragonkite
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto EventScript_GiveMon_Received_Dragonkite
+	end
+
+
+EventScript_GiveMon_SendPC_Dragonkite::
+	call EventScript_GiveMon_ReceivedFanfare_Dragonkite
+	msgbox EventScript_GiveMon_SendParty_Dragonkite_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq EventScript_GiveMon_TransferredToPC_Dragonkite
+	call Common_EventScript_NameReceivedBoxMon
+	goto EventScript_GiveMon_TransferredToPC_Dragonkite
+	end
+
+
+EventScript_GiveMon_TransferredToPC_Dragonkite::
+	call Common_EventScript_TransferredToPC
+	goto EventScript_GiveMon_Received_Dragonkite
+	end
+
+
+EventScript_GiveMon_ReceivedFanfare_Dragonkite::
+	bufferspeciesname 1, SPECIES_DRAGONKITE
+	playfanfare MUS_OBTAIN_TMHM
+	msgbox EventScript_GiveMon_ReceivedFanfare_Dragonkite_Text_0
+	waitmessage
+	waitfanfare
+	bufferspeciesname 0, SPECIES_DRAGONKITE
+	return
+
+
+EventScript_GiveMon_Received_Dragonkite::
 	return
 
 
@@ -478,13 +524,10 @@ GIFT_DRAGONKITE_Text_0:
 	.string "Gift successfully found!$"
 
 GIFT_DRAGONKITE_Text_1:
-	.string "{PLAYER} obtained a {STR_VAR_2}.$"
-
-GIFT_DRAGONKITE_Text_2:
 	.string "There is a note alongside the gift, it\n"
 	.string "reads:$"
 
-GIFT_DRAGONKITE_Text_3:
+GIFT_DRAGONKITE_Text_2:
 	.string "Thank you for using Gift System.\n"
 	.string "- Diango$"
 
@@ -495,6 +538,13 @@ GIFT_FROGEELBURGER_Text_1:
 	.string "Thank you for playing PokeScape.\p"
 	.string "Check out our website and discord\n"
 	.string "server for the latest updates.$"
+
+EventScript_GiveMon_SendParty_Dragonkite_Text_0:
+	.string "Would you like to give your monster a\n"
+	.string "nickname?$"
+
+EventScript_GiveMon_ReceivedFanfare_Dragonkite_Text_0:
+	.string "{PLAYER} obtained a {STR_VAR_2}.$"
 
 Draynor_Miss_Schism_Text_0:
 	.string "Miss Schism$"

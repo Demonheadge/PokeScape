@@ -200,7 +200,20 @@ script BATTLE_DEMONHEADGE{
 
 
 
-
+script BATTLE_DEMONHEADGE2{
+    
+    faceplayer
+    namebox("Demonheadge")
+    msgbox(format("Hahaha!!\pHey guys, I've got something cool to show you!"))
+    hidenamebox
+	closemessage
+    trainerbattle_no_intro(TRAINER_DEMONHEADGE, msgbox(format("You are a PokeScapian Master!")))
+    namebox ("Demonheadge")
+    msgbox(format("What do you think about dem apples!"))
+    hidenamebox
+    release
+    end
+}
 
 
 

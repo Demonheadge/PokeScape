@@ -2396,6 +2396,12 @@ static const struct TrainerMon sParty_MUDSKIPPERPOINT_FISHERMAN_2[] = {
 static const struct TrainerMon sParty_Demonheadge[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 50,
+    .species = SPECIES_CHAOS_ELE,
+    .heldItem = ITEM_MEGASTONE_CHAOS,
+    },
+    {
+    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 25,
     .species = SPECIES_RAVEN_NORMAL_FORM,
     },

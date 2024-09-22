@@ -322,6 +322,16 @@ ITEM_LUMBRIDGE_FOREST_CABBAGE::
 	end
 
 
+ITEM_DRAYNORMANOR_TEA::
+	finditem ITEM_REPEL_TEA_1, 3
+	end
+
+
+ITEM_DRAYNORMANOR_POUCHES::
+	finditem ITEM_NORMAL_POUCH, 5
+	end
+
+
 Explorer_Jack_1_Text_0:
 	.string "Explorer Jack$"
 

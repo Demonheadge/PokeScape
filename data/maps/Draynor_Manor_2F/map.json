@@ -107,10 +107,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CHAIR",
-      "x": 34,
+      "x": 32,
       "y": 3,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -121,7 +121,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_CHICKEN",
       "x": 18,
-      "y": 3,
+      "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -130,6 +130,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NPC_DraynorManor_Chicken_2",
       "flag": "FLAG_TEMP_1C"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CHAIR",
+      "x": 17,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_COPY_PLAYER_OPPOSITE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -167,6 +180,14 @@
       "elevation": 3,
       "item": "ITEM_PURPLE_SWEETS",
       "flag": "FLAG_HIDDEN_ITEM_DRAYNORMANOR_ITEM_PURPLE_SWEETS"
+    },
+    {
+      "type": "hidden_item",
+      "x": 24,
+      "y": 22,
+      "elevation": 0,
+      "item": "ITEM_BLACK_POUCH",
+      "flag": "FLAG_HIDDEN_ITEM_DRAYNORMANOR_2"
     }
   ]
 }

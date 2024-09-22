@@ -161,7 +161,7 @@
 // gTileset_DraynorManor
 #define METATILE_DraynorManor_BASEMENT_GATE_LOCKED_BOTTOM     0x2D7
 #define METATILE_DraynorManor_BASEMENT_GATE_LOCKED_TOP        0x2CF
-#define METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_BOTTOM   0x2E7
+#define METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_BOTTOM   0x37D
 #define METATILE_DraynorManor_BASEMENT_GATE_UNLOCKED_TOP      0x375
 #define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_L_DOWN_1  0x2EF
 #define METATILE_DraynorManor_BASEMENT_LEVER_CORNER_L_DOWN_2  0x2F7
@@ -516,6 +516,7 @@
 #define METATILE_PokeScapeIndoors_BOOKCASE_INTERACT_R      0x181
 #define METATILE_PokeScapeIndoors_BOOKCASE_INTERACT_SMALL  0x183
 #define METATILE_PokeScapeIndoors_BOOKCASE_SPARKLE         0x191
+#define METATILE_PokeScapeIndoors_CUPBOARD_ITEMS           0x039
 #define METATILE_PokeScapeIndoors_CUPBOARD_SPARKLE         0x190
 
 // gTileset_PokeScapeOutdoors

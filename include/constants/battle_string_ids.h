@@ -705,8 +705,14 @@
 #define STRINGID_PETRIFY                              703
 #define STRINGID_TOOSCARED                            704
 #define STRINGID_FIRESHIELDENDS                       705
+//TRAINER MESSAGES
+#define STRINGID_DEMONHEADGE_MESSAGE_1                706
+#define STRINGID_DEMONHEADGE_MESSAGE_2                707
+#define STRINGID_DEMONHEADGE_MESSAGE_3                708
+#define STRINGID_DEMONHEADGE_MESSAGE_4                709
 
-#define BATTLESTRINGS_VANILLA_END                     STRINGID_FIRESHIELDENDS
+
+#define BATTLESTRINGS_VANILLA_END                     709
 
 
 
@@ -717,6 +723,9 @@
 // String ids before this (e.g. STRINGID_INTROMSG) are not in the table,
 // and are instead handled explicitly by BufferStringBattle.
 #define BATTLESTRINGS_TABLE_START  STRINGID_TRAINER1LOSETEXT
+
+
+
 
 // The below IDs are all indexes into battle message tables,
 // used to determine which of a set of messages to print.

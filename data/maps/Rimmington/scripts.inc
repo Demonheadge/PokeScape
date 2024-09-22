@@ -1214,6 +1214,17 @@ NPC_Hanannie::
 	end
 
 
+NPC_POH_HELLWIND::
+	lock
+	faceplayer
+	namebox NPC_POH_HELLWIND_Text_0
+	msgbox NPC_POH_HELLWIND_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+
 NPC_RIMMINGTON_CustomsOfficer_Text_0:
 	.string "Officer$"
 
@@ -1857,3 +1868,10 @@ NPC_Hanannie_Text_1:
 	.string "Hello Chat!\p"
 	.string "Did you know Woodcutting is the best\n"
 	.string "skill ever?$"
+
+NPC_POH_HELLWIND_Text_0:
+	.string "Hellwind909$"
+
+NPC_POH_HELLWIND_Text_1:
+	.string "Nothing beats these house parties.\p"
+	.string "Except maybe making RSMVs.$"
