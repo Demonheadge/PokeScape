@@ -206,7 +206,7 @@ script NPC_Smuggler_Varlamore
     namebox("Smuggler")
     checkitem(ITEM_WHISTLE, 1)
     if (var(VAR_RESULT) == FALSE) {
-        msgbox(format("Psst, have you heard?\pThere's a religion that worships the sun to the content to the west.\pNot many people from this continent know about them.\pThe people from the continent are also know to travel around by flying on the backs of huge birds!\pHow cool is that!\p……\pSpeaking of which, I need to get rid of this whistle.\pTake it."))
+        msgbox(format("Psst, have you heard?\pThere's a religion that worships the sun on the continent to the west.\pNot many people from this continent know about them.\pThe people from the continent are also know to travel around by flying on the backs of huge birds!\pHow cool is that!\p……\pSpeaking of which, I need to get rid of this whistle.\pTake it."))
         closemessage
         hidenamebox
         giveitem(ITEM_WHISTLE, 1)

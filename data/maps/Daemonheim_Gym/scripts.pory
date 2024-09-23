@@ -430,7 +430,7 @@ script HANS_TZHAAR_GYM {
         msgbox(format("You did it completionist in the makings!\pI never had any doubt.\pBy the way, how do I get out of this volcano?"))
     }
     else {
-        msgbox(format("Maybe you think its weird meeting me inside a volcano, but I think its just as weird you're here too.\pThe Karamja challenge, or perhaps the Tzhaar challenge, uses FIRE-TYPE monsters.\pFIRE types are weak to WATER, GROUND and ROCK type moves.\pJust imagine youre putting out a fire and you will do great."))
+        msgbox(format("Maybe you think it's weird meeting me inside a volcano, but I think it's just as weird you're here too.\pThe Karamja challenge, or perhaps the Tzhaar challenge, uses FIRE-TYPE monsters.\pFIRE types are weak to WATER, GROUND and ROCK type moves.\pJust imagine you're putting out a fire and you will do great."))
     }
     hidenamebox
     closemessage

@@ -1489,16 +1489,16 @@ static const struct TrainerMon sParty_ROUTE9_GOBLIN_2[] = {
 };
 
 static const struct TrainerMon sParty_ROUTE9_GOBLIN_3[] = {
-    {
+{
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 22,
-    .species = SPECIES_FROG_NORMAL_FORM,
+    .lvl = 21,
+    .species = SPECIES_SPIDER_GIANT_FORM,
     .heldItem = ITEM_NONE
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 20,
-    .species = SPECIES_SPIDER_GIANT_FORM,
+    .lvl = 22,
+    .species = SPECIES_FROG_NORMAL_FORM,
     .heldItem = ITEM_NONE
     }
 };
@@ -1507,13 +1507,13 @@ static const struct TrainerMon sParty_ROUTE9_GOBLIN_4[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 22,
-    .species = SPECIES_WOLF_JUVENILE_FORM,
+    .species = SPECIES_GIANT_BAT,
     .heldItem = ITEM_NONE
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 19,
-    .species = SPECIES_GIANT_BAT,
+    .lvl = 23,
+    .species = SPECIES_WOLF_JUVENILE_FORM,
     .heldItem = ITEM_NONE
     }
 };
@@ -4388,22 +4388,28 @@ static const struct TrainerMon sParty_LEADER_DUKE_FINAL[] = {
 //#GYM - Falador - Sir Amik Varze        
 static const struct TrainerMon sParty_FALADOR_GYM_AMIKVARZE[] = {
     {
+    .ability = ABILITY_DRIZZLE,
+    .nature = NATURE_SASSY,
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 28,
     .species = SPECIES_BELTFISH,
-    .moves = {MOVE_AQUA_JET, MOVE_WRAP, MOVE_WATER_PULSE, MOVE_CHARGE_BEAM}
+    .moves = {MOVE_AQUA_JET, MOVE_MUD_BOMB, MOVE_WATER_PULSE, MOVE_CHARGE_BEAM}
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 32,
-    .species = SPECIES_CRAB_RUMPUMPED_FORM,
-    .moves = {MOVE_RAZOR_SHELL, MOVE_ROCK_SMASH, MOVE_SLAM, MOVE_NONE}
-    },
-    {
+    .ability = ABILITY_SWIFT_SWIM,
+    .nature = NATURE_MODEST,
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 30,
-    .species = SPECIES_SWAN,
-    .moves = {MOVE_BITE, MOVE_HOWL, MOVE_BUBBLE, MOVE_MUD_SPORT}
+    .species = SPECIES_TROUT_NORMAL_FORM,
+    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_PULSE, MOVE_U_TURN, MOVE_ICE_BEAM}
+    },
+    {
+    .ability = ABILITY_PINCERS,
+    .nature = NATURE_JOLLY,
+    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 32,
+    .species = SPECIES_GIANT_CRAB_RUMPUMPED_FORM,
+    .moves = {MOVE_RAZOR_SHELL, MOVE_POISON_JAB, MOVE_TEETER_DANCE, MOVE_AERIAL_ACE}
     }
 };/*
 static const struct TrainerMon sParty_LEADER_SIRAMIKVARZE_FINAL[] = {

@@ -217,7 +217,9 @@ script NPC_TZHAAR_GYM_LEADER
         hidenamebox
         setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 5)
         //applymovement to tzhaar.
+        namebox("Ga'al")
         msgbox(format("Follow me."))
+        hidenamebox
         //warp()
         call(FIGHT_CAVES_START)
         }

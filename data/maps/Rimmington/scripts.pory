@@ -432,7 +432,7 @@ script NPC_RIMMINGTON_NPC_19{
 script NPC_RIMMINGTON_NPC_12{
     lock
     faceplayer
-    //namebox("CUPHOLDER")
+    namebox("Phials")
     msgbox(format("If you ever need anything unnoted I am your guy!"))
     hidenamebox
     release
@@ -1149,7 +1149,7 @@ script NPC_RIMMINGTON_NPC_5
 {
     lock
     faceplayer
-    namebox("CUPHOLDER")
+    namebox("Gamezter006")
     msgbox(format("I want to buy a skillcape, but I apparently don't have the level to wear it."))
     hidenamebox
     release

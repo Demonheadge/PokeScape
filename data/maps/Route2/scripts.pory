@@ -401,7 +401,7 @@ script TRIGGER_WISEOLDMAN_RIVAL_1{
     namebox("???")
     msgbox(format("Nice to meet you {PLAYER}."))
     namebox("Wise Old Man")
-    msgbox(format("I'm Dionysius but everyone just calls me the Wise old man.\pI used to be one of the biggest adventurers in the world, but now im just an old man looking back on his glory days.\pMaybe you will become something of a legend yourself?\pI hope to see you around on your adventures, try not to get lost in the Wizards' Tower.\pUntil next time."))
+    msgbox(format("I'm Dionysius but everyone just calls me the Wise Old Man.\pI used to be one of the biggest adventurers in the world, but now I'm just an old man looking back on his glory days.\pMaybe you will become something of a legend yourself?\pI hope to see you around on your adventures, try not to get lost in the Wizards' Tower.\pUntil next time."))
     hidenamebox
     closemessage
     savebgm(MUS_DUMMY)

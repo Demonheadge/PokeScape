@@ -713,7 +713,7 @@ script Crandor_Event_Volcano {
     waitse
     playbgm (MUS_PS_ENCOUNTER_HAM, TRUE)
     namebox ("Babe")
-    msgbox(format("Oh, its you!"))
+    msgbox(format("Oh, it's you!"))
     closemessage
     hidenamebox
     applymovement(OBJ_EVENT_ID_PATTY, Movement_InteractFACEDOWN)
@@ -730,7 +730,7 @@ script Crandor_Event_Volcano {
     applymovement(OBJ_EVENT_ID_BABE, Movement_InteractFACERIGHT)
     waitmovement(0)
     namebox ("Patty")
-    msgbox(format("Come on Babe, lets show this monster lover what happens when they enter the wrong volcano."))
+    msgbox(format("Come on Babe, let's show this monster lover what happens when they enter the wrong volcano."))
     closemessage
     hidenamebox
     applymovement(OBJ_EVENT_ID_PATTY, HAM_EVENT_CRANDOR_VOLCANO_1)

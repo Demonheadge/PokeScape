@@ -12177,12 +12177,12 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 5,
+                "min_level": 7,
                 "max_level": 13,
                 "species": "SPECIES_SARDINE"
               },
               {
-                "min_level": 5,
+                "min_level": 7,
                 "max_level": 13,
                 "species": "SPECIES_ANCHOVY"
               },
@@ -15592,13 +15592,13 @@
             "encounter_rate": 80,
             "mons": [
               {
-                "min_level": 5,
-                "max_level": 9,
+                "min_level": 6,
+                "max_level": 11,
                 "species": "SPECIES_CRAYFISH"
               },
               {
-                "min_level": 5,
-                "max_level": 9,
+                "min_level": 6,
+                "max_level": 11,
                 "species": "SPECIES_SARDINE"
               },
               {
@@ -20171,63 +20171,63 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 30,
-                "max_level": 31,
+                "min_level": 23,
+                "max_level": 26,
                 "species": "SPECIES_IMP"
               },
               {
-                "min_level": 30,
-                "max_level": 31,
+                "min_level": 23,
+                "max_level": 26,
                 "species": "SPECIES_GIANT_BAT"
               },
               {
-                "min_level": 30,
-                "max_level": 31,
+                "min_level": 24,
+                "max_level": 27,
                 "species": "SPECIES_GIANT_BAT"
               },
               {
-                "min_level": 30,
-                "max_level": 32,
+                "min_level": 24,
+                "max_level": 27,
                 "species": "SPECIES_IMP"
               },
               {
-                "min_level": 30,
-                "max_level": 32,
+                "min_level": 24,
+                "max_level": 27,
                 "species": "SPECIES_DEMON_LESSER_OSRS_FORM"
               },
               {
-                "min_level": 30,
-                "max_level": 33,
+                "min_level": 25,
+                "max_level": 28,
                 "species": "SPECIES_DEMON_LESSER_OSRS_FORM"
               },
               {
-                "min_level": 30,
-                "max_level": 33,
+                "min_level": 25,
+                "max_level": 28,
                 "species": "SPECIES_BAT"
               },
               {
-                "min_level": 30,
-                "max_level": 33,
+                "min_level": 26,
+                "max_level": 29,
                 "species": "SPECIES_DEMON_LESSER_OSRS_FORM"
               },
               {
-                "min_level": 30,
-                "max_level": 34,
+                "min_level": 26,
+                "max_level": 29,
                 "species": "SPECIES_DEMON_LESSER_TONGUE_FORM"
               },
               {
-                "min_level": 30,
-                "max_level": 34,
+                "min_level": 26,
+                "max_level": 29,
                 "species": "SPECIES_DEMON_LESSER_TONGUE_FORM"
               },
               {
-                "min_level": 30,
-                "max_level": 35,
+                "min_level": 27,
+                "max_level": 30,
                 "species": "SPECIES_GOLEM_TITAN"
               },
               {
-                "min_level": 30,
-                "max_level": 35,
+                "min_level": 27,
+                "max_level": 31,
                 "species": "SPECIES_GOLEM_TITAN"
               }
             ]
@@ -20236,28 +20236,28 @@
             "encounter_rate": 0,
             "mons": [
               {
-                "min_level": 30,
-                "max_level": 35,
+                "min_level": 24,
+                "max_level": 29,
                 "species": "SPECIES_ROCK_CRAB_SAND_FORM"
               },
               {
-                "min_level": 30,
-                "max_level": 35,
+                "min_level": 24,
+                "max_level": 29,
                 "species": "SPECIES_ROCK_CRAB_AMMONITE_FORM"
               },
               {
-                "min_level": 30,
-                "max_level": 35,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_ROCK_CRAB_GIANT_SAND_FORM"
               },
               {
-                "min_level": 32,
-                "max_level": 35,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_ROCK_CRAB_GIANT_AMMONITE_FORM"
               },
               {
-                "min_level": 34,
-                "max_level": 36,
+                "min_level": 26,
+                "max_level": 31,
                 "species": "SPECIES_ROCK_STRANGE_FORM"
               }
             ]

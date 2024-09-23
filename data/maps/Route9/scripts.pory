@@ -115,21 +115,21 @@ script BATTLE_ROUTE9_MINER_2{
 //BEACH HOBGOBLINS
 script BATTLE_ROUTE9_GOBLIN_1{
     trainerbattle_single(TRAINER_ROUTE9_GOBLIN_1, format("Hobs here before, this goblin land now."),format("Hobs vacating, Oo'glog Spa."))
-    namebox ("HOBS")
+    //namebox ("HOBS")
     msgbox(format("Hobs vacating, Oo'glog Spa."))
     hidenamebox
     release
 }
 
 script BATTLE_ROUTE9_GOBLIN_2{
-    trainerbattle_single(TRAINER_ROUTE9_GOBLIN_2, format("Big high war god fond of Snape grass, step off human!"),format("That lie, Big high war god not care for Snape grass."))
-    msgbox(format("That lie, Big high war god not care for Snape grass."))
+    trainerbattle_single(TRAINER_ROUTE9_GOBLIN_2, format("Big High War God fond of Snape grass, step off human!"),format("That lie, Big High War God not care for Snape grass."))
+    msgbox(format("That lie, Big High War God not care for Snape grass."))
     release
 }
 
 script BATTLE_ROUTE9_GOBLIN_3{
     trainerbattle_single(TRAINER_ROUTE9_GOBLIN_3, format("Distance of sea, expand mind of me."),format("Snowtoes be poet now."))
-    namebox ("SNOWTOES")
+    //namebox ("SNOWTOES")
     msgbox(format("Snowtoes be poet now."))
     hidenamebox
     release

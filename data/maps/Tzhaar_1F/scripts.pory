@@ -29,7 +29,7 @@ script STORYMODE_TZHAAR_NPC
     applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
     waitmovement(0)
     namebox ("Tzhaar")
-    msgbox(format("JalYt, are you well?\pWe wanted to thank you for chasing off those pink-coloured JalYt's.\pThey have been very destructive to the area and attacking our kind.\pFeel free to use our facilities, and if you are an MvM challenger we have a gym is located to the west of here.\pWe thank you again.\pGoodbye."))
+    msgbox(format("JalYt, are you well?\pWe wanted to thank you for chasing off those pink-coloured JalYt's.\pThey have been very destructive to the area and attacking our kind.\pFeel free to use our facilities, and if you are an MvM challenger we have a gym located to the west of here.\pWe thank you again.\pGoodbye."))
     closemessage
     hidenamebox
     applymovement(26, HAM_EVENT_CRANDOR_VOLCANO_31)
@@ -351,7 +351,7 @@ script TZHAAR_IRONMAN
 {
     faceplayer
     namebox ("Ironman")
-    msgbox(format("I am currently restricted from entering the Tzhaar city.\pOh, it's not because they aren't inviting.\pIt's just the rules I have impossed on myself.\pMakes me feel more accomplished if I survive on my own instead of relying on others, ya know?"))
+    msgbox(format("I am currently restricted from entering the Tzhaar city.\pOh, it's not because they aren't inviting.\pIt's just the rules I have imposed on myself.\pMakes me feel more accomplished if I survive on my own instead of relying on others, ya know?"))
     closemessage
     hidenamebox
     release
@@ -361,7 +361,7 @@ script TZHAAR_ARCHAEOLOGIST
 {
     faceplayer
     namebox ("Archaeologist")
-    msgbox(format("I've had to translate the signposts the Tzhaar have been putting up.\pAs they are writing it in their own langauge and confusing all the MvM challengers."))
+    msgbox(format("I've had to translate the signposts the Tzhaar have been putting up.\pAs they are writing it in their own language and confusing all the MvM challengers."))
     closemessage
     hidenamebox
     release
