@@ -733,6 +733,7 @@ struct BattleStruct
     u8 trainerSlideZMoveMsgDone:1;
     u8 trainerSlideBeforeFirstTurnMsgDone:1;
     u8 trainerSlideDynamaxMsgDone:1;
+    u8 trainerSlidePlayerLostMsgDone:1;
     u8 pledgeMove:1;
     u8 isSkyBattle:1;
     u32 aiDelayTimer; // Counts number of frames AI takes to choose an action.

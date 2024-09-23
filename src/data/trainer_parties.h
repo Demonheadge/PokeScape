@@ -876,7 +876,7 @@ static const struct TrainerMon sParty_DRAYNOR_MANOR_COUNT_DRAYNOR[] = {
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 15,
+    .lvl = 20,
     .species = SPECIES_VAMPYREBAT,
     .heldItem = ITEM_NONE
     }

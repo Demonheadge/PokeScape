@@ -329,13 +329,8 @@ void HideMapNamePopUpWindow(void)
 {
     if (FuncIsActiveTask(Task_MapNamePopUpWindow))
     {
-    #ifdef UBFIX
-        if (GetMapNamePopUpWindowId() != WINDOW_NONE)
-    #endif // UBFIX
-        {
-            ClearStdWindowAndFrame(GetMapNamePopUpWindowId(), TRUE);
-            RemoveMapNamePopUpWindow();
-        }
+        ClearStdWindowAndFrame(GetMapNamePopUpWindowId(), TRUE);
+        RemoveMapNamePopUpWindow();
         SetGpuReg_ForcedBlank(REG_OFFSET_BG0VOFS, 0);
         DestroyTask(sPopupTaskId);
     }

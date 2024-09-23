@@ -1539,6 +1539,10 @@
 	callnative BS_TryTrainerSlideMegaEvolutionMsg
 	.endm
 
+	.macro trytrainerslideplayerlostmsg
+	callnative BS_TryTrainerSlidePlayerLostMsg
+	.endm
+	
 	.macro trytrainerslidedynamaxmsg
 	callnative BS_TryTrainerSlideDynamaxMsg
 	.endm

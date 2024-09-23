@@ -462,6 +462,39 @@ movement_wom_route2_3:
 	walk_up
 	step_end
 
+nowhiteout_test_1::
+	cleartrainerflag TRAINER_RIVAL_WISE_OLD_MAN_1
+	trainerbattle_no_intro_no_whiteout TRAINER_RIVAL_WISE_OLD_MAN_1, nowhiteout_test_1_Text_0
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_LOST
+	goto_if_eq nowhiteout_test_1_2
+	msgbox nowhiteout_test_1_Text_2
+nowhiteout_test_1_1:
+	closemessage
+	end
+
+nowhiteout_test_1_2:
+	special HealPlayerParty
+	msgbox nowhiteout_test_1_Text_1
+	goto nowhiteout_test_1_1
+
+
+nowhiteout_test_2::
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq nowhiteout_test_3
+	special HealPlayerParty
+	msgbox nowhiteout_test_2_Text_0
+	closemessage
+	end
+
+
+nowhiteout_test_3::
+	msgbox nowhiteout_test_3_Text_0
+	closemessage
+	end
+
+
 HAM_EVENT_WizardsTower_4_Text_0:
 	.string "Ariane$"
 
@@ -619,3 +652,18 @@ TRIGGER_WISEOLDMAN_RIVAL_1_Text_6:
 	.string "adventures, try not to get lost in the\l"
 	.string "Wizards' Tower.\p"
 	.string "Until next time.$"
+
+nowhiteout_test_1_Text_0:
+	.string "I lost, you win.$"
+
+nowhiteout_test_1_Text_1:
+	.string "You lost! Suck it!$"
+
+nowhiteout_test_1_Text_2:
+	.string "You defeated me.$"
+
+nowhiteout_test_2_Text_0:
+	.string "You lost. Oh no.$"
+
+nowhiteout_test_3_Text_0:
+	.string "You won.$"
