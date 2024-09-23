@@ -73,9 +73,9 @@ script ITEM_ROUTE9_CABBAGE
     end
 }
 
-script ITEM_ROUTE9_MUD_RUNE
+script ITEM_ROUTE9_EARTH_RUNE
 {
-    finditem(ITEM_MUD_RUNE)
+    finditem(ITEM_EARTH_RUNE)
     end
 }
 

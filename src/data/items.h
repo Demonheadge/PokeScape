@@ -11142,13 +11142,14 @@ const struct Item gItems[] =
     [ITEM_CABBAGE] =
     {
         .name = _("CABBAGE"),
-        .price = 1500,
+        .price = 2000,
         .description = sPokeScapeReviveDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .sort = ITEM_TYPE_HEALTH_RECOVERY,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .battleUsage = EFFECT_ITEM_REVIVE,
+        .flingPower = 30,
     },
     
     [ITEM_BLUEBERRY_SPECIAL] =
@@ -11228,12 +11229,13 @@ const struct Item gItems[] =
     [ITEM_PURPLE_SWEETS] =
     {
         .name = _("PURPLE SWEETS"),
-        .price = 4800,
+        .price = 10000,
         .description = sPurpleSweetsDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .sort = ITEM_TYPE_FIELD_USE,
         .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .flingPower = 30,
     },
 
     [ITEM_STAT_BEER] =
@@ -13704,4 +13706,78 @@ const struct Item gItems[] =
         .sort = ITEM_TYPE_KEY_ITEM,
         .fieldUseFunc = ItemUseOutOfBattle_Function,
     },
+
+
+
+/*
+// Weather Rocks
+
+    [ITEM_BOOK_OF_SARADOMIN] = //damp rock
+    {
+        .name = _("Damp Book"),
+        .price = 4000,
+        .holdEffect = HOLD_EFFECT_DAMP_ROCK,
+        .description = sDampRockDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_HELD_ITEM,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 60,
+    },
+
+    [ITEM_BOOK_OF_ZAMORAK] = //Heat rock
+    {
+        .name = _("Heat Book"),
+        .price = 4000,
+        .holdEffect = HOLD_EFFECT_HEAT_ROCK,
+        .description = sHeatRockDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_HELD_ITEM,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 60,
+    },
+
+    [ITEM_BOOK_OF_] = // smooth rock
+    {
+        .name = _("Smooth Book"),
+        .price = 4000,
+        .holdEffect = HOLD_EFFECT_SMOOTH_ROCK,
+        .description = sSmoothRockDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_HELD_ITEM,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+    },
+
+    [ITEM_BOOK_OF_SEREN] = //icy rock 
+    {
+        .name = _("Icy Book"), 
+        .price = 4000,
+        .holdEffect = HOLD_EFFECT_ICY_ROCK,
+        .description = sIcyRockDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_HELD_ITEM,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 40,
+    },
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 };

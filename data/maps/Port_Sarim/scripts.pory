@@ -22,7 +22,7 @@ mapscripts Port_Sarim_MapScripts {
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
 		//VAR_POKESCAPE_WIZARDS_TOWER_STATE, 0: HAM_EVENT_WizardsTower_1
-		VAR_WISE_OLD_MAN_RIVAL, 5: PORTSARIM_WISEOLDMAN_RIVAL_2
+		VAR_TEMP_F, 1: PORTSARIM_WISEOLDMAN_RIVAL_2
     ]
 } 
 
@@ -53,6 +53,12 @@ script PORTSARIM_STATE{
         setflag(FLAG_TEMP_1D)
         setflag(FLAG_TEMP_1C) //Ned
         //setflag(FLAG_TEMP_1B) //Lady Lumbridge
+        removeobject(45)
+        removeobject(46)
+        removeobject(47)
+        removeobject(48)
+        removeobject(49)
+        setflag(FLAG_TEMP_9)
         
 
         switch (var(VAR_POKESCAPE_STORYMODE_PROGRESS)){ 
@@ -98,6 +104,17 @@ script PORTSARIM_STATE{
                 setobjectxyperm(OBJ_EVENT_ID_JAILGUARD, 6, 40)
                 addobject(38)
                 clearflag(FLAG_TEMP_1D)
+                addobject(45)
+                addobject(46)
+                addobject(47)
+                addobject(48)
+                addobject(49)
+                clearflag(FLAG_TEMP_9)
+            case 101:
+                setobjectmovementtype(OBJ_EVENT_ID_JAILGUARD, MOVEMENT_TYPE_FACE_DOWN)
+                setobjectxyperm(OBJ_EVENT_ID_JAILGUARD, 6, 40)
+                addobject(38)
+                clearflag(FLAG_TEMP_1D)
             case 130:
                 addobject(40)
                 clearflag(FLAG_TEMP_1C)
@@ -106,6 +123,7 @@ script PORTSARIM_STATE{
 
         //Wise Old Man
         if ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 105) && (var(VAR_WISE_OLD_MAN_RIVAL) == 5)) {
+            setvar(VAR_TEMP_F, 1)
             addobject(42) //Wise old man
             clearflag(FLAG_TEMP_1A)
         }
@@ -127,6 +145,12 @@ script PORTSARIM_STATE{
         setflag(FLAG_TEMP_1F)
         removeobject(38)
         setflag(FLAG_TEMP_1D)
+        removeobject(45)
+        removeobject(46)
+        removeobject(47)
+        removeobject(48)
+        removeobject(49)
+        setflag(FLAG_TEMP_9)
         return
     }
 }
@@ -372,7 +396,7 @@ script NPC_PORTSARIM_CAPTIAN_TOBIAS
 	faceplayer
     namebox ("Tobias")
 
-    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) {
+    if ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) || (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 101)) {
         msgbox(format("There seems to be some sort of commotion happening over at the lighthouse."))
         hidenamebox
         release
@@ -841,6 +865,7 @@ script NPC_PORTSARIM_NPC_JAILGUARD
     switch (var(VAR_POKESCAPE_STORYMODE_PROGRESS)){ 
             //HAM EVENT, PORT SARIM BOAT
             case 100:
+            case 101:
                 msgbox(format("Was that H.A.M that just ran into the lighthouse?!\pEh, I'm on my break, let it be someone elses problem."))
                 closemessage
                 hidenamebox
@@ -926,38 +951,36 @@ script NPC_PORTSARIM_NPC_8
 
 //Wise Old man
 script PORTSARIM_WISEOLDMAN_RIVAL_2{
-    if (!(var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 105)) {
-        return
+    if ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 105)) {
+        lock
+        playse(SE_PIN)
+        applymovement (42, movement_wom_portsarim_0)
+        waitmovement(0)
+        delay(60)
+        playbgm (MUS_PS_WISE_OLD_MAN_THEME, 1)
+        applymovement (42, movement_wom_portsarim_1)
+        waitmovement(0)
+        applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_LEFT)
+        waitmovement(0)
+        namebox("Wise Old Man")
+        msgbox(format("Well {PLAYER}, you have been busy I see.\pThese H.A.M. people just goes about and do what they want.\pIt's very good to see someone like you clean up their act."))
+        hidenamebox
+        closemessage
+        applymovement (42, movement_wom_portsarim_2)
+        waitmovement(0)
+        namebox("Wise Old Man")
+        msgbox(format("I am going to the Asgarnia ice dungeon down south, care to join me?\pI will see you there if you do."))
+        hidenamebox
+        closemessage
+        applymovement (42, movement_wom_portsarim_3)
+        savebgm(MUS_DUMMY)
+        fadedefaultbgm
+        waitmovement(0)
+        removeobject(42) //Wise old man
+        setflag(FLAG_TEMP_1A) //Wise old man
+        setvar(VAR_WISE_OLD_MAN_RIVAL, 10) //10 - Met at Port Sarim Lighthouse / Jail.
     }
-
-    lock
-    playse(SE_PIN)
-    applymovement (42, movement_wom_portsarim_0)
-    waitmovement(0)
-    delay(60)
-    playbgm (MUS_PS_WISE_OLD_MAN_THEME, 1)
-    applymovement (42, movement_wom_portsarim_1)
-    waitmovement(0)
-    applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_LEFT)
-    waitmovement(0)
-    namebox("Wise Old Man")
-    msgbox(format("Well {PLAYER}, you have been busy I see.\pThese H.A.M. people just goes about and do what they want.\pIt's very good to see someone like you clean up their act."))
-    hidenamebox
-    closemessage
-    applymovement (42, movement_wom_portsarim_2)
-    waitmovement(0)
-    namebox("Wise Old Man")
-    msgbox(format("I am going to the Asgarnia ice dungeon down south, care to join me?\pI will see you there if you do."))
-    hidenamebox
-    closemessage
-    applymovement (42, movement_wom_portsarim_3)
-    savebgm(MUS_DUMMY)
-	fadedefaultbgm
-    waitmovement(0)
-    removeobject(42) //Wise old man
-    setflag(FLAG_TEMP_1A) //Wise old man
-    setvar(VAR_WISE_OLD_MAN_RIVAL, 10) //10 - Met at Port Sarim Lighthouse / Jail.
-    release
+    setvar(VAR_TEMP_F, 2)
     end
 }
 movement movement_wom_portsarim_0{
@@ -1091,4 +1114,84 @@ movement MOVEMENT_PORTSARIM_CRANDOR_SAIL_7 {
     lock_facing_direction
     walk_down
     unlock_facing_direction
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script TRIGGER_PORTSARIM_HAM_EVENT_WALK_TO_JAIL
+{
+	lock
+	
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) {
+        applymovement(45, movement_walk_to_lighthouse_3)
+        applymovement(46, MOVEMENT_INTERACT_RIGHT)
+        waitmovement(46)
+        delay(30)
+        applymovement(46, movement_walk_to_lighthouse_1)
+        delay(30)
+        applymovement(48, movement_walk_to_lighthouse_1)
+        delay(20)
+        applymovement(47, movement_walk_to_lighthouse_1)
+        delay(10)
+        applymovement(49, movement_walk_to_lighthouse_1)
+        applymovement(45, movement_walk_to_lighthouse_2)
+        waitmovement(0)
+        playse(SE_LEDGE)
+        applymovement(45, movement_jump_in_place_LEFT)
+        waitmovement(0)
+        waitse
+        applymovement(45, movement_walk_to_lighthouse_4)
+        waitmovement(0)
+        removeobject(45)
+        removeobject(46)
+        removeobject(47)
+        removeobject(48)
+        removeobject(49)
+        setflag(FLAG_TEMP_9)
+        setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 101)
+    }
+	release
+	end
+}
+
+movement movement_walk_to_lighthouse_1 {
+    walk_left * 7
+}
+movement movement_walk_to_lighthouse_2 {
+    face_down
+    delay_16 * 2
+    face_left
+}
+movement movement_walk_to_lighthouse_3 {
+    face_up
+    delay_16 * 2
+    face_right
+    delay_16 * 2
+    face_up
+}
+movement movement_walk_to_lighthouse_4 {
+    walk_fast_left
+    walk_fast_down
+    walk_fast_left * 7
+}
+movement movement_jump_in_place_LEFT {
+    jump_in_place_left
 }

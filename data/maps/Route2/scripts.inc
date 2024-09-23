@@ -413,7 +413,7 @@ TRIGGER_WISEOLDMAN_RIVAL_1_1:
 	waitmovement 0
 	removeobject 14
 	setflag FLAG_TEMP_1F
-	setvar VAR_WISE_OLD_MAN_RIVAL, 1
+	setvar VAR_WISE_OLD_MAN_RIVAL, 5
 	release
 	end
 
@@ -492,6 +492,14 @@ nowhiteout_test_2::
 nowhiteout_test_3::
 	msgbox nowhiteout_test_3_Text_0
 	closemessage
+	end
+
+
+BATTLE_BOT_1::
+	trainerbattle_single TRAINER_ROUTE2_TRAINER_1, BATTLE_BOT_1_Text_0, BATTLE_ROUTE2_Trainer_1_Text_1
+	msgbox BATTLE_BOT_1_Text_1
+	hidenamebox
+	release
 	end
 
 
@@ -667,3 +675,10 @@ nowhiteout_test_2_Text_0:
 
 nowhiteout_test_3_Text_0:
 	.string "You won.$"
+
+BATTLE_BOT_1_Text_0:
+	.string "RESPONSE ACTIVATED: Hi, my name is\n"
+	.string "01000010 01001111 01000010.$"
+
+BATTLE_BOT_1_Text_1:
+	.string "RESPONSE ACTIVATED: Hi, my name is 01000010 01001111 01000010.$"

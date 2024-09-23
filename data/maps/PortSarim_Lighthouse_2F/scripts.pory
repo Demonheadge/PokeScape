@@ -7,7 +7,7 @@ mapscripts PortSarim_Lighthouse_2F_MapScripts {
 
 script LIGHTHOUSE_2F_STATE {
 
-    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) {
+    if ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) || (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 101)) {
         addobject(4)
         addobject(5)
         addobject(2)
@@ -36,7 +36,7 @@ script LIGHTHOUSE_2F_STATE {
 script LIGHTHOUSE_2F_NPC_1
 {
     
-    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) { 
+    if ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) || (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 101)) { 
 	    msgbox(format("The guard is too engaged in battle to talk right now."))
     }
     elif (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 105) { 
@@ -66,7 +66,7 @@ script LIGHTHOUSE_2F_NPC_2
 
 script LIGHTHOUSE_2F_NPC_3
 {
-    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) { 
+    if ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) || (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 101)) { 
 	    msgbox(format("The guard can't talk while battling!"))
     }
     elif (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 105) { 
@@ -99,7 +99,7 @@ script LIGHTHOUSE_2F_NPC_5
 	lock
 	faceplayer
     namebox ("Security Guard")
-    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) { 
+    if ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) || (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 101)) { 
 	    msgbox(format("Oh god! I only came here to give people tips on security!\pI'm not built for battling."))
     }
     else {

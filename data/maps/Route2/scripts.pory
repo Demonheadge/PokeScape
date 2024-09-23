@@ -410,7 +410,7 @@ script TRIGGER_WISEOLDMAN_RIVAL_1{
     waitmovement(0)
     removeobject(14)
     setflag(FLAG_TEMP_1F) //Wise old man
-    setvar(VAR_WISE_OLD_MAN_RIVAL, 1)
+    setvar(VAR_WISE_OLD_MAN_RIVAL, 5)
     release
     end
 }
@@ -466,3 +466,17 @@ script nowhiteout_test_3 {
 
 //USEFUL FOR TRAINER SIGHTS.
 //trainerbattle_no_whiteout_continue_script (TRAINER_RIVAL_WISE_OLD_MAN_1, "INTRO", "YOU WIN", nowhiteout_test_2)
+
+
+
+
+
+
+script BATTLE_BOT_1
+{
+    trainerbattle_single(TRAINER_ROUTE2_TRAINER_1, format("RESPONSE ACTIVATED: Hi, my name is 01000010 01001111 01000010."),format("Nooo!\pBack to Lumbridge I go!"))
+    msgbox ("RESPONSE ACTIVATED: Hi, my name is 01000010 01001111 01000010.") //Bob.
+    hidenamebox
+    release
+    end
+}

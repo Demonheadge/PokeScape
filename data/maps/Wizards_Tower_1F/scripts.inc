@@ -740,7 +740,7 @@ STORYMODE_VAR_CHECK::
 	buffernumberstring 0, VAR_WISE_OLD_MAN_RIVAL
 	msgbox STORYMODE_VAR_CHECK_Text_1
 	closemessage
-	setvar VAR_WISE_OLD_MAN_RIVAL, 10
+	setvar VAR_WISE_OLD_MAN_RIVAL, 5
 	return
 
 

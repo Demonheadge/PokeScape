@@ -1123,7 +1123,7 @@
 #define FLAG_ITEM_PORTSARIM_ITEM_FRUIT_BLAST                        0x423
 #define FLAG_ITEM_PORTSARIM_ITEM_SPIRIT_SHARD                       0x424
 #define FLAG_ITEM_ROUTE9_TM54_MUD_BOMB                              0x425
-#define FLAG_ITEM_ROUTE9_MUD_RUNE                                   0x426
+#define FLAG_ITEM_ROUTE9_EARTH_RUNE                                 0x426
 #define FLAG_ITEM_ROUTE9_CABBAGE                                    0x427
 #define FLAG_ITEM_ROUTE8_ITEM_MITHRIL_POUCH                         0x428
 #define FLAG_ITEM_ROUTE8_ITEM_FLAX                                  0x429

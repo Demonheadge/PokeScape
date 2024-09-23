@@ -9,7 +9,7 @@ Port_Sarim_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	return
 
 Port_Sarim_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-	map_script_2 VAR_WISE_OLD_MAN_RIVAL, 5, PORTSARIM_WISEOLDMAN_RIVAL_2
+	map_script_2 VAR_TEMP_F, 1, PORTSARIM_WISEOLDMAN_RIVAL_2
 	.2byte 0
 
 
@@ -31,6 +31,12 @@ PORTSARIM_STATE::
 	setflag FLAG_TEMP_1F
 	removeobject 38
 	setflag FLAG_TEMP_1D
+	removeobject 45
+	removeobject 46
+	removeobject 47
+	removeobject 48
+	removeobject 49
+	setflag FLAG_TEMP_9
 	return
 
 PORTSARIM_STATE_1:
@@ -45,18 +51,25 @@ PORTSARIM_STATE_1:
 	removeobject 38
 	setflag FLAG_TEMP_1D
 	setflag FLAG_TEMP_1C
+	removeobject 45
+	removeobject 46
+	removeobject 47
+	removeobject 48
+	removeobject 49
+	setflag FLAG_TEMP_9
 	switch VAR_POKESCAPE_STORYMODE_PROGRESS
 	case 150, PORTSARIM_STATE_6
 	case 151, PORTSARIM_STATE_7
 	case 100, PORTSARIM_STATE_8
-	case 130, PORTSARIM_STATE_9
+	case 101, PORTSARIM_STATE_9
+	case 130, PORTSARIM_STATE_10
 PORTSARIM_STATE_4:
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 105
-	goto_if_eq PORTSARIM_STATE_13
-PORTSARIM_STATE_12:
+	goto_if_eq PORTSARIM_STATE_14
+PORTSARIM_STATE_13:
 	removeobject 42
 	setflag FLAG_TEMP_1A
-PORTSARIM_STATE_10:
+PORTSARIM_STATE_11:
 	return
 
 PORTSARIM_STATE_6:
@@ -102,22 +115,36 @@ PORTSARIM_STATE_8:
 	setobjectxyperm 37, 6, 40
 	addobject 38
 	clearflag FLAG_TEMP_1D
+	addobject 45
+	addobject 46
+	addobject 47
+	addobject 48
+	addobject 49
+	clearflag FLAG_TEMP_9
 	goto PORTSARIM_STATE_4
 
 PORTSARIM_STATE_9:
+	setobjectmovementtype 37, MOVEMENT_TYPE_FACE_DOWN
+	setobjectxyperm 37, 6, 40
+	addobject 38
+	clearflag FLAG_TEMP_1D
+	goto PORTSARIM_STATE_4
+
+PORTSARIM_STATE_10:
 	addobject 40
 	clearflag FLAG_TEMP_1C
 	goto PORTSARIM_STATE_4
 
-PORTSARIM_STATE_11:
+PORTSARIM_STATE_12:
+	setvar VAR_TEMP_F, 1
 	addobject 42
 	clearflag FLAG_TEMP_1A
-	goto PORTSARIM_STATE_10
+	goto PORTSARIM_STATE_11
 
-PORTSARIM_STATE_13:
+PORTSARIM_STATE_14:
 	compare VAR_WISE_OLD_MAN_RIVAL, 5
-	goto_if_eq PORTSARIM_STATE_11
-	goto PORTSARIM_STATE_12
+	goto_if_eq PORTSARIM_STATE_12
+	goto PORTSARIM_STATE_13
 
 
 PORTSARIM_HAM_EVENT_TRIGGER1::
@@ -350,14 +377,16 @@ NPC_PORTSARIM_CAPTIAN_TOBIAS::
 	namebox NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_0
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 100
 	goto_if_eq NPC_PORTSARIM_CAPTIAN_TOBIAS_2
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 101
+	goto_if_eq NPC_PORTSARIM_CAPTIAN_TOBIAS_2
 	goto_if_unset FLAG_BADGE03_GET, NPC_PORTSARIM_CAPTIAN_TOBIAS_3
 	goto_if_set FLAG_BADGE03_GET, NPC_PORTSARIM_CAPTIAN_TOBIAS_4
 NPC_PORTSARIM_CAPTIAN_TOBIAS_1:
 	msgbox NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_4, MSGBOX_YESNO
 	compare VAR_RESULT, 1
-	goto_if_eq NPC_PORTSARIM_CAPTIAN_TOBIAS_9
+	goto_if_eq NPC_PORTSARIM_CAPTIAN_TOBIAS_11
 	msgbox NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_6
-NPC_PORTSARIM_CAPTIAN_TOBIAS_8:
+NPC_PORTSARIM_CAPTIAN_TOBIAS_10:
 	waitmessage
 	hidenamebox
 	release
@@ -379,12 +408,12 @@ NPC_PORTSARIM_CAPTIAN_TOBIAS_4:
 	msgbox NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_3
 	goto NPC_PORTSARIM_CAPTIAN_TOBIAS_1
 
-NPC_PORTSARIM_CAPTIAN_TOBIAS_9:
+NPC_PORTSARIM_CAPTIAN_TOBIAS_11:
 	msgbox NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_5
 	waitmessage
 	hidenamebox
 	warp MAP_MUSA_POINT, 2, 0, 0
-	goto NPC_PORTSARIM_CAPTIAN_TOBIAS_8
+	goto NPC_PORTSARIM_CAPTIAN_TOBIAS_10
 
 
 NPC_PORTSARIM_CREWMAN_1::
@@ -733,6 +762,7 @@ NPC_PORTSARIM_NPC_JAILGUARD::
 	namebox NPC_PORTSARIM_NPC_JAILGUARD_Text_0
 	switch VAR_POKESCAPE_STORYMODE_PROGRESS
 	case 100, NPC_PORTSARIM_NPC_JAILGUARD_3
+	case 101, NPC_PORTSARIM_NPC_JAILGUARD_3
 	msgbox NPC_PORTSARIM_NPC_JAILGUARD_Text_2
 	waitmessage
 	hidenamebox
@@ -805,7 +835,12 @@ NPC_PORTSARIM_NPC_8::
 
 PORTSARIM_WISEOLDMAN_RIVAL_2::
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 105
-	goto_if_ne PORTSARIM_WISEOLDMAN_RIVAL_2_2
+	goto_if_eq PORTSARIM_WISEOLDMAN_RIVAL_2_2
+PORTSARIM_WISEOLDMAN_RIVAL_2_1:
+	setvar VAR_TEMP_F, 2
+	end
+
+PORTSARIM_WISEOLDMAN_RIVAL_2_2:
 	lock
 	playse SE_PIN
 	applymovement 42, movement_wom_portsarim_0
@@ -833,11 +868,7 @@ PORTSARIM_WISEOLDMAN_RIVAL_2::
 	removeobject 42
 	setflag FLAG_TEMP_1A
 	setvar VAR_WISE_OLD_MAN_RIVAL, 10
-	release
-	end
-
-PORTSARIM_WISEOLDMAN_RIVAL_2_2:
-	return
+	goto PORTSARIM_WISEOLDMAN_RIVAL_2_1
 
 
 movement_wom_portsarim_0:
@@ -986,6 +1017,87 @@ MOVEMENT_PORTSARIM_CRANDOR_SAIL_7:
 	lock_facing_direction
 	walk_down
 	unlock_facing_direction
+	step_end
+
+TRIGGER_PORTSARIM_HAM_EVENT_WALK_TO_JAIL::
+	lock
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 100
+	goto_if_eq TRIGGER_PORTSARIM_HAM_EVENT_WALK_TO_JAIL_2
+TRIGGER_PORTSARIM_HAM_EVENT_WALK_TO_JAIL_1:
+	release
+	end
+
+TRIGGER_PORTSARIM_HAM_EVENT_WALK_TO_JAIL_2:
+	applymovement 45, movement_walk_to_lighthouse_3
+	applymovement 46, MOVEMENT_INTERACT_RIGHT
+	waitmovement 46
+	delay 30
+	applymovement 46, movement_walk_to_lighthouse_1
+	delay 30
+	applymovement 48, movement_walk_to_lighthouse_1
+	delay 20
+	applymovement 47, movement_walk_to_lighthouse_1
+	delay 10
+	applymovement 49, movement_walk_to_lighthouse_1
+	applymovement 45, movement_walk_to_lighthouse_2
+	waitmovement 0
+	playse SE_LEDGE
+	applymovement 45, movement_jump_in_place_LEFT
+	waitmovement 0
+	waitse
+	applymovement 45, movement_walk_to_lighthouse_4
+	waitmovement 0
+	removeobject 45
+	removeobject 46
+	removeobject 47
+	removeobject 48
+	removeobject 49
+	setflag FLAG_TEMP_9
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 101
+	goto TRIGGER_PORTSARIM_HAM_EVENT_WALK_TO_JAIL_1
+
+
+movement_walk_to_lighthouse_1:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+movement_walk_to_lighthouse_2:
+	face_down
+	delay_16
+	delay_16
+	face_left
+	step_end
+
+movement_walk_to_lighthouse_3:
+	face_up
+	delay_16
+	delay_16
+	face_right
+	delay_16
+	delay_16
+	face_up
+	step_end
+
+movement_walk_to_lighthouse_4:
+	walk_fast_left
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
+
+movement_jump_in_place_LEFT:
+	jump_in_place_left
 	step_end
 
 PORTSARIM_HAM_EVENT_PART2_Text_0:
