@@ -70,7 +70,7 @@ script EVENT_HAM_DRAYNORMANOR_CRYPT {
         applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_DraynorManorCrypt_PLAYER_1)
         waitmovement(0)
         playbgm (MUS_PS_ENCOUNTER_HAM, 1)
-        namebox("COUNT DRAYNOR")
+        namebox("Count Draynor")
         msgbox(format("You dare enter my home and cause a racket!?\pI will not tolerate this!"))
         hidenamebox
         closemessage
@@ -78,11 +78,11 @@ script EVENT_HAM_DRAYNORMANOR_CRYPT {
         playse(SE_WALL_HIT)
         applymovement(HAMGRUNT_ID, MOVEMENT_DraynorManorCrypt_HAM_1)
         waitmovement(0)
-        namebox("H.A.M GRUNT")
+        namebox("H.A.M Grunt")
         msgbox(format("Urgh…"))
         hidenamebox
         closemessage
-        namebox("COUNT DRAYNOR")
+        namebox("Count Draynor")
         msgbox(format("I'm not done with you yet!"))
         hidenamebox
         closemessage
@@ -96,7 +96,7 @@ script EVENT_HAM_DRAYNORMANOR_CRYPT {
         playse(SE_WALL_HIT)
         applymovement(HAMGRUNT_ID, MOVEMENT_DraynorManorCrypt_HAM_3)
         waitmovement(HAMGRUNT_ID)
-        namebox("COUNT DRAYNOR")
+        namebox("Count Draynor")
         msgbox(format("…"))
         hidenamebox
         closemessage
@@ -104,22 +104,34 @@ script EVENT_HAM_DRAYNORMANOR_CRYPT {
         waitmovement(0)
         delay(16)
         
-        namebox("COUNT DRAYNOR")
+        namebox("Count Draynor")
         msgbox(format("Another one!\pI guess I will have to deal with you as well!"))
         hidenamebox
         closemessage
         applymovement(HAMGRUNT_ID, MOVEMENT_DraynorManorCrypt_HAM_4)
-        trainerbattle_no_intro(TRAINER_DRAYNOR_MANOR_COUNT_DRAYNOR, msgbox(format("Urgh!\nRight through the heart!")))
+
+
+
+
+        trainerbattle_no_intro_no_whiteout (TRAINER_DRAYNOR_MANOR_COUNT_DRAYNOR, "Urgh!\nRight through the heart!")
         setflag(FLAG_TEMP_1)
         removeobject(HAMGRUNT_ID)
-        namebox("COUNT DRAYNOR")
-        msgbox(format("…{PAUSE 15}\pYou may be the victor, but I still have strength left in me!\p…{PAUSE 15} …{PAUSE 15}\pOh, you are here to capture the pink man?"))
+        specialvar (VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_LOST) {
+            special (HealPlayerParty)
+            namebox("Count Draynor")
+            msgbox(format("Time to finish you off!\p…{PAUSE 15} …{PAUSE 15}\pOh, you are here to capture the pink man?"))
+        }
+        else {
+            namebox("Count Draynor")
+            msgbox(format("…{PAUSE 15}\pYou may be the victor, but I still have strength left in me!\p…{PAUSE 15} …{PAUSE 15}\pOh, you are here to capture the pink man?"))
+        }
         closemessage
         hidenamebox
         applymovement(COUNTDRAYNOR_ID, MOVEMENT_DraynorManorCrypt_COUNT_5)
         waitmovement(0)
-        namebox("COUNT DRAYNOR")
-        msgbox(format("Hmmm… The pink man seems to have fled during our battle.\pSorry about that, I wouldn't think he has gotten that far.\pI'm going back to bed, please don't disturb me again."))
+        namebox("Count Draynor")
+        msgbox(format("Hmmm… It appears that the pink man seems to have fled during our battle.\pSorry about that, I wouldn't think he has gotten that far.\pI'm going back to bed, please don't disturb me again."))
         closemessage
         hidenamebox
         applymovement(COUNTDRAYNOR_ID, MOVEMENT_DraynorManorCrypt_COUNT_6)
@@ -144,6 +156,23 @@ script EVENT_HAM_DRAYNORMANOR_CRYPT {
         setvar(VAR_TEMP_0, 1) 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

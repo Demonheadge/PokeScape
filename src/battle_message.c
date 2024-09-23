@@ -853,6 +853,12 @@ static const u8 sText_Demonheadge_PlayerMonUnaffected[] = _("Oh please, come bac
 static const u8 sText_Demonheadge_FirstSTABMove[] = _("Ow! Now thats a STAB wound.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_Demonheadge_PlayerLost[] = _("It seems I have won this fight.\pBack to Lumbridge for you.{PAUSE_UNTIL_PRESS}");
 
+
+static const u8 sText_CountDraynor_BeforeFirstTurn[] = _("I will drain you dry!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_CountDraynor_SwitchIn[] = _("We fight till the last drop.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_CountDraynor_PlayerLost[] = _("Pathetic human.{PAUSE_UNTIL_PRESS}");
+
+
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
     [STRINGID_THESWAMPDISAPPEARED - BATTLESTRINGS_TABLE_START] = sText_TheSwampDisappeared,
@@ -1560,6 +1566,9 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_DEMONHEADGE_MESSAGE_4 - BATTLESTRINGS_TABLE_START] = sText_Demonheadge_FirstSTABMove,
     [STRINGID_DEMONHEADGE_MESSAGE_5 - BATTLESTRINGS_TABLE_START] = sText_Demonheadge_PlayerLost,
 
+    [STRINGID_COUNTDRAYNOR_MESSAGE_1 - BATTLESTRINGS_TABLE_START] = sText_CountDraynor_BeforeFirstTurn,
+    [STRINGID_COUNTDRAYNOR_MESSAGE_2 - BATTLESTRINGS_TABLE_START] = sText_CountDraynor_SwitchIn,
+    [STRINGID_COUNTDRAYNOR_MESSAGE_3 - BATTLESTRINGS_TABLE_START] = sText_CountDraynor_PlayerLost,
     
 
 };
@@ -4170,6 +4179,13 @@ static const struct TrainerSlide sTrainerSlides[] =
         .msgMegaEvolution = sText_Demonheadge_MegaEvolves,
         .msgBeforeFirstTurn = sText_Demonheadge_BeforeFirstTurn,
         .msgPlayerLost = sText_Demonheadge_PlayerLost,
+    },
+
+    {
+        .trainerId = TRAINER_DRAYNOR_MANOR_COUNT_DRAYNOR,
+        .msgBeforeFirstTurn = sText_CountDraynor_BeforeFirstTurn,
+        .msgLastSwitchIn = sText_CountDraynor_SwitchIn,
+        .msgPlayerLost = sText_CountDraynor_PlayerLost,
     },
 };
 

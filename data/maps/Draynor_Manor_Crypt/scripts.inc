@@ -114,17 +114,21 @@ EVENT_HAM_DRAYNORMANOR_CRYPT_1:
 	hidenamebox
 	closemessage
 	applymovement 2, MOVEMENT_DraynorManorCrypt_HAM_4
-	trainerbattle_no_intro TRAINER_DRAYNOR_MANOR_COUNT_DRAYNOR, EVENT_HAM_DRAYNORMANOR_CRYPT_Text_7
+	trainerbattle_no_intro_no_whiteout TRAINER_DRAYNOR_MANOR_COUNT_DRAYNOR, EVENT_HAM_DRAYNORMANOR_CRYPT_Text_7
 	setflag FLAG_TEMP_1
 	removeobject 2
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_LOST
+	goto_if_eq EVENT_HAM_DRAYNORMANOR_CRYPT_5
 	namebox EVENT_HAM_DRAYNORMANOR_CRYPT_Text_0
-	msgbox EVENT_HAM_DRAYNORMANOR_CRYPT_Text_8
+	msgbox EVENT_HAM_DRAYNORMANOR_CRYPT_Text_9
+EVENT_HAM_DRAYNORMANOR_CRYPT_4:
 	closemessage
 	hidenamebox
 	applymovement 1, MOVEMENT_DraynorManorCrypt_COUNT_5
 	waitmovement 0
 	namebox EVENT_HAM_DRAYNORMANOR_CRYPT_Text_0
-	msgbox EVENT_HAM_DRAYNORMANOR_CRYPT_Text_9
+	msgbox EVENT_HAM_DRAYNORMANOR_CRYPT_Text_10
 	closemessage
 	hidenamebox
 	applymovement 1, MOVEMENT_DraynorManorCrypt_COUNT_6
@@ -142,6 +146,12 @@ EVENT_HAM_DRAYNORMANOR_CRYPT_1:
 	setvar VAR_TEMP_0, 1
 	release
 	end
+
+EVENT_HAM_DRAYNORMANOR_CRYPT_5:
+	special HealPlayerParty
+	namebox EVENT_HAM_DRAYNORMANOR_CRYPT_Text_0
+	msgbox EVENT_HAM_DRAYNORMANOR_CRYPT_Text_8
+	goto EVENT_HAM_DRAYNORMANOR_CRYPT_4
 
 
 NPC_DraynorManor_RESETEVENT::
@@ -237,7 +247,7 @@ NPC_DraynorManor_CountCoffin::
 
 
 EVENT_HAM_DRAYNORMANOR_CRYPT_Text_0:
-	.string "COUNT DRAYNOR$"
+	.string "Count Draynor$"
 
 EVENT_HAM_DRAYNORMANOR_CRYPT_Text_1:
 	.string "You dare enter my home and cause a\n"
@@ -245,7 +255,7 @@ EVENT_HAM_DRAYNORMANOR_CRYPT_Text_1:
 	.string "I will not tolerate this!$"
 
 EVENT_HAM_DRAYNORMANOR_CRYPT_Text_2:
-	.string "H.A.M GRUNT$"
+	.string "H.A.M Grunt$"
 
 EVENT_HAM_DRAYNORMANOR_CRYPT_Text_3:
 	.string "Urgh…$"
@@ -262,10 +272,15 @@ EVENT_HAM_DRAYNORMANOR_CRYPT_Text_6:
 	.string "well!$"
 
 EVENT_HAM_DRAYNORMANOR_CRYPT_Text_7:
-	.string "Urgh!\n"
-	.string "Right through the heart!$"
+	.string "Urgh!\nRight through the heart!$"
 
 EVENT_HAM_DRAYNORMANOR_CRYPT_Text_8:
+	.string "Time to finish you off!\p"
+	.string "…{PAUSE 15} …{PAUSE 15}\p"
+	.string "Oh, you are here to capture the pink\n"
+	.string "man?$"
+
+EVENT_HAM_DRAYNORMANOR_CRYPT_Text_9:
 	.string "…{PAUSE 15}\p"
 	.string "You may be the victor, but I still have\n"
 	.string "strength left in me!\p"
@@ -273,9 +288,9 @@ EVENT_HAM_DRAYNORMANOR_CRYPT_Text_8:
 	.string "Oh, you are here to capture the pink\n"
 	.string "man?$"
 
-EVENT_HAM_DRAYNORMANOR_CRYPT_Text_9:
-	.string "Hmmm… The pink man seems to have fled\n"
-	.string "during our battle.\p"
+EVENT_HAM_DRAYNORMANOR_CRYPT_Text_10:
+	.string "Hmmm… It appears that the pink man\n"
+	.string "seems to have fled during our battle.\p"
 	.string "Sorry about that, I wouldn't think he\n"
 	.string "has gotten that far.\p"
 	.string "I'm going back to bed, please don't\n"
