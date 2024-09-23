@@ -705,15 +705,15 @@
 #define STRINGID_PETRIFY                              703
 #define STRINGID_TOOSCARED                            704
 #define STRINGID_FIRESHIELDENDS                       705
-//TRAINER MESSAGES
 #define STRINGID_DEMONHEADGE_MESSAGE_1                706
 #define STRINGID_DEMONHEADGE_MESSAGE_2                707
 #define STRINGID_DEMONHEADGE_MESSAGE_3                708
 #define STRINGID_DEMONHEADGE_MESSAGE_4                709
 #define STRINGID_PLAYERWHITEOUT3                      710
+#define STRINGID_DEMONHEADGE_MESSAGE_5                711
 
 
-#define BATTLESTRINGS_VANILLA_END                     710
+#define BATTLESTRINGS_VANILLA_END                     711
 
 
 

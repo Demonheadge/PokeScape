@@ -851,6 +851,7 @@ static const u8 sText_Demonheadge_BeforeFirstTurn[] = _("Oh, ho.\nYou dare appro
 static const u8 sText_Demonheadge_MegaEvolves[] = _("I've got one up on Sigmund!\pI shall be the first Trainer\nin PokeScape to MEGA EVOLVE!!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_Demonheadge_PlayerMonUnaffected[] = _("Oh please, come back when you've\nlearnt your type weakness.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_Demonheadge_FirstSTABMove[] = _("Ow! Now thats a STAB wound.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_Demonheadge_PlayerLost[] = _("It seems I have won this fight.\pBack to Lumbridge for you.{PAUSE_UNTIL_PRESS}");
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
@@ -1557,6 +1558,9 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_DEMONHEADGE_MESSAGE_2 - BATTLESTRINGS_TABLE_START] = sText_Demonheadge_MegaEvolves,
     [STRINGID_DEMONHEADGE_MESSAGE_3 - BATTLESTRINGS_TABLE_START] = sText_Demonheadge_PlayerMonUnaffected,
     [STRINGID_DEMONHEADGE_MESSAGE_4 - BATTLESTRINGS_TABLE_START] = sText_Demonheadge_FirstSTABMove,
+    [STRINGID_DEMONHEADGE_MESSAGE_5 - BATTLESTRINGS_TABLE_START] = sText_Demonheadge_PlayerLost,
+
+    
 
 };
 
@@ -4126,6 +4130,7 @@ struct TrainerSlide
     const u8 *msgZMove;
     const u8 *msgBeforeFirstTurn;
     const u8 *msgDynamax;
+    const u8 *msgPlayerLost;    
 };
 
 static const struct TrainerSlide sTrainerSlides[] =
@@ -4133,20 +4138,21 @@ static const struct TrainerSlide sTrainerSlides[] =
     /* Put any trainer slide-in messages inside this array.
     Example:
     {
-        .trainerId = TRAINER_WALLY_VR_2,
+        .trainerId = TRAINER_WALLY_VR_2,    - TRAINER BATTLE goes here.
         .isFrontierTrainer = FALSE,
-        .msgLastSwitchIn = sText_AarghAlmostHadIt,
-        .msgLastLowHp = sText_BoxIsFull,
-        .msgFirstDown = sText_123Poof,
-        .msgLastHalfHp = sText_ShootSoClose,
-        .msgFirstCriticalHit = sText_CriticalHit,
-        .msgFirstSuperEffectiveHit = sText_SuperEffective,
-        .msgFirstSTABMove = sText_ABoosted,
-        .msgPlayerMonUnaffected = sText_ButNoEffect,
-        .msgMegaEvolution = sText_PowderExplodes,
-        .msgZMove = sText_Electromagnetism,
-        .msgBeforeFirstTurn = sText_GravityIntensified,
-        .msgDynamax = sText_TargetWokeUp,
+        .msgLastSwitchIn = ,                - The trainer sends out their last monster.
+        .msgLastLowHp = ,                   - The trainers last monsters hp is low.
+        .msgFirstDown = ,                   - You defeat the trainers first monster.
+        .msgLastHalfHp = ,                  -
+        .msgFirstCriticalHit = ,            -
+        .msgFirstSuperEffectiveHit = ,      -
+        .msgFirstSTABMove = ,               -
+        .msgPlayerMonUnaffected = ,         - When NPC attacks you but it does nothing.
+        .msgMegaEvolution = ,               - When the other trainer mega evolves.
+        .msgZMove = ,                       - When the other trainer uses a Z-MOVE.
+        .msgBeforeFirstTurn = ,             - When the battle starts, slide in to talk after the monsters are sent out.
+        .msgDynamax = ,                     - When the other trainer dynamax's.
+        .msgPlayerLost = ,                  - When the PLAYER loses the battle.
     },
     */
 
@@ -4160,11 +4166,10 @@ static const struct TrainerSlide sTrainerSlides[] =
         .msgFirstCriticalHit = sText_CriticalHit,
         .msgFirstSuperEffectiveHit = sText_SuperEffective,
         .msgFirstSTABMove = sText_Demonheadge_FirstSTABMove,
-        .msgPlayerMonUnaffected = sText_Demonheadge_PlayerMonUnaffected,
+        .msgPlayerMonUnaffected = sText_Demonheadge_PlayerMonUnaffected, 
         .msgMegaEvolution = sText_Demonheadge_MegaEvolves,
-        //.msgZMove = sText_Electromagnetism,
         .msgBeforeFirstTurn = sText_Demonheadge_BeforeFirstTurn,
-        //.msgDynamax = sText_TargetWokeUp,
+        .msgPlayerLost = sText_Demonheadge_PlayerLost,
     },
 };
 
@@ -4273,7 +4278,7 @@ u32 ShouldDoTrainerSlide(u32 battler, u32 which)
             case TRAINER_SLIDE_LAST_LOW_HP:
                 if (sTrainerSlides[i].msgLastLowHp != NULL
                     && GetEnemyMonCount(firstId, lastId, TRUE) == 1
-                    && BattlerHPPercentage(battler, GREATER_THAN_OR_EQUAL, 4)
+                    && BattlerHPPercentage(battler, LESS_THAN_OR_EQUAL, 4)
                     && !gBattleStruct->trainerSlideLowHpMsgDone)
                 {
                     gBattleStruct->trainerSlideLowHpMsgDone = TRUE;
@@ -4368,6 +4373,15 @@ u32 ShouldDoTrainerSlide(u32 battler, u32 which)
                     gBattleStruct->trainerSlideMsg = sTrainerSlides[i].msgDynamax;
                     return TRUE;
                 }
+                break;
+            case TRAINER_SLIDE_PLAYER_LOST:
+                if (sTrainerSlides[i].msgPlayerLost != NULL && !gBattleStruct->trainerSlidePlayerLostMsgDone)
+                {
+                    gBattleStruct->trainerSlidePlayerLostMsgDone = TRUE;
+                    gBattleStruct->trainerSlideMsg = sTrainerSlides[i].msgPlayerLost;
+                    return TRUE;
+                }
+
                 break;
             }
             break;

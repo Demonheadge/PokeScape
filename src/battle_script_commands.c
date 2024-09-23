@@ -16559,6 +16559,21 @@ void BS_TryTrainerSlideDynamaxMsg(void)
         gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
+void BS_TryTrainerSlidePlayerLostMsg(void)
+{
+    NATIVE_ARGS();
+    s32 shouldSlide;
+
+    if ((shouldSlide = ShouldDoTrainerSlide(gBattlerAttacker, TRAINER_SLIDE_PLAYER_LOST)))
+    {
+        gBattleScripting.battler = gBattlerAttacker;
+        BattleScriptPush(cmd->nextInstr);
+        gBattlescriptCurrInstr = (shouldSlide == 1 ? BattleScript_TrainerASlideMsgRet : BattleScript_TrainerBSlideMsgRet);
+    }
+    else
+        gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
 void BS_TryHealPulse(void)
 {
     NATIVE_ARGS(const u8 *failInstr);
