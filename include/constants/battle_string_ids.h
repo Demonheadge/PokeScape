@@ -710,9 +710,10 @@
 #define STRINGID_DEMONHEADGE_MESSAGE_2                707
 #define STRINGID_DEMONHEADGE_MESSAGE_3                708
 #define STRINGID_DEMONHEADGE_MESSAGE_4                709
+#define STRINGID_PLAYERWHITEOUT3                      710
 
 
-#define BATTLESTRINGS_VANILLA_END                     709
+#define BATTLESTRINGS_VANILLA_END                     710
 
 
 

@@ -430,3 +430,39 @@ movement movement_wom_route2_3{
     walk_left * 4
     walk_up * 8
 }
+
+
+
+script nowhiteout_test_1 {
+    cleartrainerflag(TRAINER_RIVAL_WISE_OLD_MAN_1)
+    trainerbattle_no_intro_no_whiteout (TRAINER_RIVAL_WISE_OLD_MAN_1, "I lost, you win.")
+    specialvar (VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_LOST) {
+        special (HealPlayerParty)
+        msgbox ("You lost! Suck it!")
+    }
+    else {
+        msgbox ("You defeated me.")
+    }
+    closemessage
+    end
+}
+
+script nowhiteout_test_2 {
+    specialvar (VAR_RESULT, GetBattleOutcome)
+	compare (VAR_RESULT, B_OUTCOME_WON)
+	goto_if_eq (nowhiteout_test_3)
+    special (HealPlayerParty)
+	msgbox ("You lost. Oh no.")
+    closemessage
+    end
+}
+
+script nowhiteout_test_3 {
+    msgbox ("You won.")
+    closemessage
+    end
+}
+
+//USEFUL FOR TRAINER SIGHTS.
+//trainerbattle_no_whiteout_continue_script (TRAINER_RIVAL_WISE_OLD_MAN_1, "INTRO", "YOU WIN", nowhiteout_test_2)
