@@ -590,7 +590,8 @@ NPC_FALADORCASTLE_WHITEKNIGHT_1::
 NPC_FALADORCASTLE_WHITEKNIGHT_1_2:
 	lock
 	faceplayer
-	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
+	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
+	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_1
 	hidenamebox
 	closemessage
 	release
@@ -599,7 +600,8 @@ NPC_FALADORCASTLE_WHITEKNIGHT_1_2:
 NPC_FALADORCASTLE_WHITEKNIGHT_1_3:
 	lock
 	faceplayer
-	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_1
+	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
+	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_2
 	hidenamebox
 	closemessage
 	release
@@ -615,6 +617,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_2::
 NPC_FALADORCASTLE_WHITEKNIGHT_2_2:
 	lock
 	faceplayer
+	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
 	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_2_Text_0
 	hidenamebox
 	closemessage
@@ -624,6 +627,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_2_2:
 NPC_FALADORCASTLE_WHITEKNIGHT_2_3:
 	lock
 	faceplayer
+	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
 	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_2_Text_1
 	hidenamebox
 	closemessage
@@ -661,8 +665,8 @@ NPC_FALADORCASTLE_WHITEKNIGHT_4::
 NPC_FALADORCASTLE_WHITEKNIGHT_5::
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_5_Text_0
-	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_5_Text_1
+	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
+	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_5_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -694,7 +698,7 @@ NPC_FALADORCASTLE_GUARD_1::
 NPC_FALADORCASTLE_WHITEKNIGHT_7::
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_5_Text_0
+	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
 	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_7_Text_0
 	closemessage
 	hidenamebox
@@ -705,7 +709,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_7::
 NPC_FALADORCASTLE_WHITEKNIGHT_8::
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_5_Text_0
+	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
 	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_8_Text_0
 	closemessage
 	hidenamebox
@@ -732,7 +736,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_9_2:
 NPC_FALADORCASTLE_WHITEKNIGHT_10::
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_5_Text_0
+	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
 	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_10_Text_0
 	closemessage
 	hidenamebox
@@ -743,7 +747,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_10::
 NPC_FALADORCASTLE_WHITEKNIGHT_11::
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_5_Text_0
+	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
 	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_11_Text_0
 	closemessage
 	hidenamebox
@@ -754,7 +758,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_11::
 NPC_FALADORCASTLE_WHITEKNIGHT_12::
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_5_Text_0
+	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
 	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_12_Text_0
 	closemessage
 	hidenamebox
@@ -792,7 +796,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_13_3:
 NPC_FALADORCASTLE_WHITEKNIGHT_14::
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_5_Text_0
+	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
 	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_14_Text_0
 	closemessage
 	hidenamebox
@@ -979,7 +983,7 @@ FALADORCASTLE_MOVEMENT_SQUIRE_3r:
 NPC_FALADORCASTLE_KNIGHT_9::
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_5_Text_0
+	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
 	msgbox NPC_FALADORCASTLE_KNIGHT_9_Text_0
 	closemessage
 	hidenamebox
@@ -1317,10 +1321,13 @@ NPC_FALADORCASTLE_GYM_BLACKKNIGHT_Text_1:
 	.string "make my blood boil.$"
 
 NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0:
+	.string "White Knight$"
+
+NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_1:
 	.string "If you are looking for Amik then you\n"
 	.string "should probably head back inside.$"
 
-NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_1:
+NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_2:
 	.string "Those Black Knights really grind my\n"
 	.string "gears, one of these days we will rid\l"
 	.string "them.$"
@@ -1359,9 +1366,6 @@ NPC_FALADORCASTLE_WHITEKNIGHT_4_Text_1:
 	.string "I kinda miss her.$"
 
 NPC_FALADORCASTLE_WHITEKNIGHT_5_Text_0:
-	.string "White Knight$"
-
-NPC_FALADORCASTLE_WHITEKNIGHT_5_Text_1:
 	.string "Many of my fellow Knights somehow have\n"
 	.string "puns for their names.\p"
 	.string "However they are completely oblivious\n"
@@ -1407,7 +1411,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_9_Text_4:
 	.string "comes up with them.$"
 
 NPC_FALADORCASTLE_WHITEKNIGHT_10_Text_0:
-	.string "This is our living quaters.\p"
+	.string "This is our living quarters.\p"
 	.string "I should probably put up a barrier up to\n"
 	.string "stop MvM challengers from coming in.$"
 

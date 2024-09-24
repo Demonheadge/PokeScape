@@ -185,7 +185,7 @@ script HAM_EVENT_DraynorManor_DOOR_RIGHT{
 }
 
 script HAM_EVENT_DraynorManor_Ariane_1{
-	msgbox(format("I gave chase to that guy but he escaped…\pI'm heading back to report to Sedridor.\pThanks for you assistance.\pCome visit me at the tower sometime!"))
+	msgbox(format("I gave chase to that guy but he escaped…\pI'm heading back to report to Sedridor.\pThanks for your assistance.\pCome visit me at the tower sometime!"))
 	closemessage
 	hidenamebox
 	applymovement(1, Ariane_DraynorManor_6)
@@ -212,7 +212,7 @@ script HAM_EVENT_DraynorManor_DOOR_WRONG{
 	applymovement(OBJ_EVENT_ID_PLAYER, Ariane_DraynorManor_10)
 	waitmovement(0)
 	namebox("Ariane")
-	msgbox(format("I gave chase to that guy but he escaped…\pI'm heading back to report to Sedridor.\pThanks for you assistance.\pCome visit me at the tower sometime!"))
+	msgbox(format("I gave chase to that guy but he escaped…\pI'm heading back to report to Sedridor.\pThanks for your assistance.\pCome visit me at the tower sometime!"))
 	closemessage
 	hidenamebox
 	applymovement(1, Ariane_DraynorManor_9)
@@ -232,7 +232,7 @@ script HAM_EVENT_DraynorManor_DOOR_WHITEOUT{
 
 	namebox("Ariane")
     msgbox(format("What?!\p{PLAYER}! How did you get here?!\pUrgh nevermind that!"))
-	msgbox(format("I gave chase to that guy but he escaped…\pI'm heading back to report to Sedridor.\pThanks for you assistance.\pCome visit me at the tower sometime!"))
+	msgbox(format("I gave chase to that guy but he escaped…\pI'm heading back to report to Sedridor.\pThanks for your assistance.\pCome visit me at the tower sometime!"))
 	closemessage
 	hidenamebox
 	getplayerxy(VAR_TEMP_1, VAR_TEMP_2)

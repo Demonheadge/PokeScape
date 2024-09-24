@@ -20,10 +20,20 @@ script ITEM_ROUTE3_BREAD
 
 
 
+script BATTLE_ROUTE3_Trainer_2
+{
+    trainerbattle_single(TRAINER_ROUTE3_TRAINER_2, format("I'm going to give this whole battle with a monster thing a try!"),format("Yeah, this isn't for me."))
+    //namebox ("1337L0n3r")
+    msgbox(format("I think I'll stick to doing things on my own rather than with monsters."))
+    hidenamebox
+    release
+    end
+}
+
 script BATTLE_ROUTE3_Trainer_1
 {
     trainerbattle_single(TRAINER_ROUTE3_TRAINER_1, format("I am not really a fan of MvM but I will give it a shot!"),format("Yeah, I still don't like MvM."))
-    namebox ("IPWNSKILLS")
+    //namebox ("IPWNSKILLS")
     msgbox(format("I think I'll stick to skilling with my partners instead of trying out for the MvM championships."))
     hidenamebox
     release

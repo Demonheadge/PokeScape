@@ -12,10 +12,17 @@ ITEM_ROUTE3_BREAD::
 	end
 
 
+BATTLE_ROUTE3_Trainer_2::
+	trainerbattle_single TRAINER_ROUTE3_TRAINER_2, BATTLE_ROUTE3_Trainer_2_Text_0, BATTLE_ROUTE3_Trainer_2_Text_1
+	msgbox BATTLE_ROUTE3_Trainer_2_Text_2
+	hidenamebox
+	release
+	end
+
+
 BATTLE_ROUTE3_Trainer_1::
 	trainerbattle_single TRAINER_ROUTE3_TRAINER_1, BATTLE_ROUTE3_Trainer_1_Text_0, BATTLE_ROUTE3_Trainer_1_Text_1
-	namebox BATTLE_ROUTE3_Trainer_1_Text_2
-	msgbox BATTLE_ROUTE3_Trainer_1_Text_3
+	msgbox BATTLE_ROUTE3_Trainer_1_Text_2
 	hidenamebox
 	release
 	end
@@ -87,6 +94,17 @@ NPC_SKELETAL_OX::
 	end
 
 
+BATTLE_ROUTE3_Trainer_2_Text_0:
+	.string "I'm going to give this whole battle with\n"
+	.string "a monster thing a try!$"
+
+BATTLE_ROUTE3_Trainer_2_Text_1:
+	.string "Yeah, this isn't for me.$"
+
+BATTLE_ROUTE3_Trainer_2_Text_2:
+	.string "I think I'll stick to doing things on my\n"
+	.string "own rather than with monsters.$"
+
 BATTLE_ROUTE3_Trainer_1_Text_0:
 	.string "I am not really a fan of MvM but I will\n"
 	.string "give it a shot!$"
@@ -95,9 +113,6 @@ BATTLE_ROUTE3_Trainer_1_Text_1:
 	.string "Yeah, I still don't like MvM.$"
 
 BATTLE_ROUTE3_Trainer_1_Text_2:
-	.string "IPWNSKILLS$"
-
-BATTLE_ROUTE3_Trainer_1_Text_3:
 	.string "I think I'll stick to skilling with my\n"
 	.string "partners instead of trying out for the\l"
 	.string "MvM championships.$"

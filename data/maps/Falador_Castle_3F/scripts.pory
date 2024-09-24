@@ -246,7 +246,7 @@ script QUEST_FALADORCASTLE_EVENT_AFTER_GYM //after the gym you get teleported to
     waitmovement(0)
 
     namebox ("Sir Tiffy Cashien")
-    msgbox(format("Actually there may be someone who can help.\pCaptain Ned.\pHe is used to be one of the best sailors back in the day but has since retired in Draynor Village.\pIf anyone has the knowledge and experience to get there, it'll be him."))
+    msgbox(format("Actually there may be someone who can help.\pCaptain Ned.\pHe used to be one of the best sailors back in the day but has since retired in Draynor Village.\pIf anyone has the knowledge and experience to get there, it'll be him."))
     closemessage
     hidenamebox
     applymovement(OBJ_EVENT_ID_SIR_TIFFY, MOVEMENT_INTERACT_DOWN)
@@ -266,7 +266,7 @@ script QUEST_FALADORCASTLE_EVENT_AFTER_GYM //after the gym you get teleported to
     waitmovement(0)
     applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
     namebox ("Sir Amik Varze")
-    msgbox(format("Very well, {PLAYER} I wouldn't normally do this but since you have the map and have proven your strength against the White Knights, I wish to ask for you assistance.\pPlease give Ned a visit over in Draynor and convice him to sail to Crandor.\pWe will be in contact once we have organised a vessel."))
+    msgbox(format("Very well, {PLAYER} I wouldn't normally do this but since you have the map and have proven your strength against the White Knights, I wish to ask for your assistance.\pPlease give Ned a visit over in Draynor and convice him to sail to Crandor.\pWe will be in contact once we have organised a vessel."))
     closemessage
     hidenamebox
     waitmovement(0)

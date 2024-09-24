@@ -407,7 +407,7 @@ NPC_Smuggler_Varlamore_Text_0:
 NPC_Smuggler_Varlamore_Text_1:
 	.string "Psst, have you heard?\p"
 	.string "There's a religion that worships the sun\n"
-	.string "to the content to the west.\p"
+	.string "on the continent to the west.\p"
 	.string "Not many people from this continent\n"
 	.string "know about them.\p"
 	.string "The people from the continent are also\n"

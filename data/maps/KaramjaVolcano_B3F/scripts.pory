@@ -198,7 +198,7 @@ script NPC_KaramjaVolcano_HAM_EVENT1
 	playse(SE_ORB)
 	special(DoOrbEffect)
     delay(60)
-    fadescreenswapbuffers(FADE_TO_WHITE)
+    fadescreen(FADE_TO_WHITE)
     special(FadeOutOrbEffect)
     delay(60)
     delay(60)
@@ -206,7 +206,7 @@ script NPC_KaramjaVolcano_HAM_EVENT1
     delay(60)
     setflag(FLAG_TEMP_3)
     removeobject(1)
-    fadescreenswapbuffers(FADE_FROM_WHITE)
+    fadescreen(FADE_FROM_WHITE)
     delay(60)
     applymovement(2, HAM_EVENT_KaramjaVolcano_11)
     waitmovement(0)
@@ -939,7 +939,7 @@ script Crandor_Event_Volcano {
 
 
     
-    fadescreenswapbuffers(FADE_TO_BLACK)
+    fadescreen(FADE_TO_BLACK)
 
     setvar(VAR_0x8004, 0)  //vertical pan
 	setvar(VAR_0x8005, 3)  //horizontal pan
@@ -949,7 +949,7 @@ script Crandor_Event_Volcano {
     delay(40)
     clearflag(FLAG_ELVARG)
     addobject(17)
-    fadescreenswapbuffers(FADE_FROM_BLACK)
+    fadescreen(FADE_FROM_BLACK)
     
     playmoncry(SPECIES_ELVARG, 2)
     namebox ("ELVARG")
@@ -1435,9 +1435,9 @@ movement HAM_EVENT_CRANDOR_VOLCANO_26 {
     walk_fast_down
 }
 movement HAM_EVENT_CRANDOR_VOLCANO_27 {
-    walk_faster_down * 4
-    walk_faster_left * 3
-    walk_faster_down
+    walk_fast_down * 4
+    walk_fast_left * 3
+    walk_fast_down
 }
 
 
@@ -1524,10 +1524,10 @@ script BATTLE_KaramjaVolcano_HAM_6
     msgbox(format("Nope!\nI don't like this plan anymore!\pI'm out of here!"))
     hidenamebox
     closemessage
-    fadescreenswapbuffers(FADE_TO_BLACK)
+    fadescreen(FADE_TO_BLACK)
     setflag(FLAG_TEMP_1C)
     removeobject(36)
-    fadescreenswapbuffers(FADE_FROM_BLACK)
+    fadescreen(FADE_FROM_BLACK)
     release
     end
 }

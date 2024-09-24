@@ -364,7 +364,7 @@ STORYMODE_TZHAAR_NPC_Text_1:
 	.string "area and attacking our kind.\p"
 	.string "Feel free to use our facilities, and if\n"
 	.string "you are an MvM challenger we have a gym\l"
-	.string "is located to the west of here.\p"
+	.string "located to the west of here.\p"
 	.string "We thank you again.\p"
 	.string "Goodbye.$"
 
@@ -541,7 +541,7 @@ TZHAAR_IRONMAN_Text_1:
 	.string "the Tzhaar city.\p"
 	.string "Oh, it's not because they aren't\n"
 	.string "inviting.\p"
-	.string "It's just the rules I have impossed on\n"
+	.string "It's just the rules I have imposed on\n"
 	.string "myself.\p"
 	.string "Makes me feel more accomplished if I\n"
 	.string "survive on my own instead of relying on\l"
@@ -554,7 +554,7 @@ TZHAAR_ARCHAEOLOGIST_Text_1:
 	.string "I've had to translate the signposts the\n"
 	.string "Tzhaar have been putting up.\p"
 	.string "As they are writing it in their own\n"
-	.string "langauge and confusing all the MvM\l"
+	.string "language and confusing all the MvM\l"
 	.string "challengers.$"
 
 TZHAAR_LANGUAGE_BOOK_Text_0:

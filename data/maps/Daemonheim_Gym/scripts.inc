@@ -640,15 +640,15 @@ HANS_TZHAAR_GYM_Text_0:
 	.string "volcano?$"
 
 HANS_TZHAAR_GYM_Text_1:
-	.string "Maybe you think its weird meeting me\n"
-	.string "inside a volcano, but I think its just as\l"
-	.string "weird you're here too.\p"
+	.string "Maybe you think it's weird meeting me\n"
+	.string "inside a volcano, but I think it's just\l"
+	.string "as weird you're here too.\p"
 	.string "The Karamja challenge, or perhaps the\n"
 	.string "Tzhaar challenge, uses FIRE-TYPE\l"
 	.string "monsters.\p"
 	.string "FIRE types are weak to WATER, GROUND\n"
 	.string "and ROCK type moves.\p"
-	.string "Just imagine youre putting out a fire\n"
+	.string "Just imagine you're putting out a fire\n"
 	.string "and you will do great.$"
 
 HANS_FALADOR_GYM_Text_0:

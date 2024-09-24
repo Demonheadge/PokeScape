@@ -19,7 +19,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Maggie"),
         .items = {ITEM_BREAD, ITEM_BREAD, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_HP_AWARE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON,
         .party = TRAINER_PARTY(sParty_Maggie),
     },
 
@@ -847,6 +847,18 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_ROUTE3_TRAINER_1),
     },
 
+    [TRAINER_ROUTE3_TRAINER_2] =
+    {
+        .trainerClass = TRAINER_CLASS_IRONMAN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_ironman,
+        .trainerName = _("1337L0n3r"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_ROUTE3_TRAINER_2),
+    },
+
     [TRAINER_ROUTE5_CAPTAINTOCK] =
     {
         .trainerClass = TRAINER_CLASS_PIRATE,
@@ -1578,10 +1590,10 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_LEGEND,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
         .trainerPic = TRAINER_PIC_hairdresser,
-        .trainerName = _("HAIRDRSSER"),
+        .trainerName = _("Hairdresser"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON,
         .party = TRAINER_PARTY(sParty_FALADOR_HAIRDRESSER),
     },
 

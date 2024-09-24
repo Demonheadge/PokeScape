@@ -44,7 +44,7 @@ POTTERINGTON_FARM_OUTDOOR_STATE_2:
 	return
 
 POTTERINGTON_FARM_OUTDOOR_STATE_3:
-	setobjectxyperm 2, 8, 17
+	setobjectxyperm 2, 8, 23
 	return
 
 
@@ -116,7 +116,7 @@ ROUTE4_TRIGGER1_DaycareWatcher_4:
 	hidenamebox
 	applymovement 2, MOVEMENT_ROUTE4_NIECE_6
 	waitmovement 0
-	setobjectxyperm 2, 8, 17
+	setobjectxyperm 2, 8, 23
 	setvar VAR_POKESCAPE_POTTERINGTON_FARM_STATE, 1
 	release
 	end

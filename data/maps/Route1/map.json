@@ -25,12 +25,12 @@
     },
     {
       "map": "MAP_ROUTE3",
-      "offset": 12,
+      "offset": 0,
       "direction": "left"
     },
     {
       "map": "MAP_DRAYNOR_MANOR",
-      "offset": -16,
+      "offset": -22,
       "direction": "up"
     },
     {

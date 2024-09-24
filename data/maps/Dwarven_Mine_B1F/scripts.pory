@@ -154,7 +154,7 @@ script ITEM_DWARVENMINES_3
 }
 script ITEM_DWARVENMINES_4
 {
-    finditem(ITEM_TEA)
+    finditem(ITEM_REPEL_TEA_2)
     end
 }
 script ITEM_DWARVENMINES_5
@@ -341,7 +341,7 @@ script NPC_FALADORCASTLE_QUEST_PART_3
     applymovement(OBJ_EVENT_ID_QUEST_OWEN, DWARVENMINES_MOVEMENT_2)
     waitmovement(0)
     namebox ("Sir Owen")
-    msgbox(format("Thank you for your assistance challenger.\pIf you could stop by the castle a bit later and assist me in filling out a report that'd be appricated."))
+    msgbox(format("Thank you for your assistance adventurer.\pIf you could stop by the castle a bit later and assist me in filling out a report that'd be appricated."))
     closemessage
     hidenamebox
     applymovement(OBJ_EVENT_ID_QUEST_BLACKKNIGHT, MOVEMENT_INTERACT_UP)

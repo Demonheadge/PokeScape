@@ -349,6 +349,19 @@ NPC_DraynorManor_Oddenstein_5:
 	msgbox NPC_DraynorManor_Oddenstein_Text_14
 	closemessage
 	hidenamebox
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	compare VAR_TEMP_2, 3
+	goto_if_eq NPC_DraynorManor_Oddenstein_16
+	compare VAR_TEMP_2, 4
+	goto_if_eq NPC_DraynorManor_Oddenstein_17
+NPC_DraynorManor_Oddenstein_15:
+	applymovement 1, movement_ENEREST_CHICKEN_QUEST_3
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, movement_ENEREST_CHICKEN_QUEST_6
+	waitmovement OBJ_EVENT_ID_PLAYER
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, movement_ENEREST_CHICKEN_QUEST_5
+	waitmovement 0
 	setflag FLAG_TEMP_1D
 	setflag FLAG_TEMP_1E
 	setflag FLAG_TEMP_1F
@@ -360,29 +373,69 @@ NPC_DraynorManor_Oddenstein_5:
 	msgbox NPC_DraynorManor_Oddenstein_Text_15
 	closemessage
 	hidenamebox
+	applymovement 1, movement_ENEREST_CHICKEN_QUEST_7
+	waitmovement 0
 	addobject 7
 	clearflag FLAG_TEMP_19
 	delay 64
+	applymovement 1, movement_ENEREST_CHICKEN_QUEST_4
+	waitmovement 0
+	applymovement 1, MOVEMENT_INTERACT_RIGHT
 	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox NPC_DraynorManor_Oddenstein_Text_16
+	waitmovement 0
 	closemessage
 	hidenamebox
+	applymovement 1, Movement_InteractFACEDOWN
+	waitmovement 0
 	delay 64
 	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox NPC_DraynorManor_Oddenstein_Text_17
 	closemessage
 	hidenamebox
+	setvar VAR_0x8004, 1 @ vertical pan
+	setvar VAR_0x8005, 1 @ horizontal pan
+	setvar VAR_0x8006, 8 @ num shakes
+	setvar VAR_0x8007, 3 @ shake delay
+	special ShakeCamera
+	waitstate
+	setvar VAR_0x8004, 1 @ vertical pan
+	setvar VAR_0x8005, 1 @ horizontal pan
+	setvar VAR_0x8006, 8 @ num shakes
+	setvar VAR_0x8007, 3 @ shake delay
+	special ShakeCamera
+	waitstate
 	applymovement 7, movement_chickentransform
 	waitmovement 0
 	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox NPC_DraynorManor_Oddenstein_Text_18
 	closemessage
 	hidenamebox
+	playse SE_ORB
+	special DoOrbEffect
+	delay 60
+	fadescreenswapbuffers FADE_TO_WHITE
+	special FadeOutOrbEffect
+	delay 120
+	setvar VAR_0x8004, 1 @ vertical pan
+	setvar VAR_0x8005, 1 @ horizontal pan
+	setvar VAR_0x8006, 8 @ num shakes
+	setvar VAR_0x8007, 3 @ shake delay
+	special ShakeCamera
+	waitstate
+	setvar VAR_0x8004, 1 @ vertical pan
+	setvar VAR_0x8005, 1 @ horizontal pan
+	setvar VAR_0x8006, 8 @ num shakes
+	setvar VAR_0x8007, 3 @ shake delay
+	special ShakeCamera
+	waitstate
+	delay 120
 	setflag FLAG_TEMP_19
 	clearflag FLAG_TEMP_18
 	addobject 6
 	removeobject 7
 	delay 32
+	fadescreenswapbuffers FADE_FROM_WHITE
 	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox NPC_DraynorManor_Oddenstein_Text_19
 	closemessage
@@ -439,20 +492,36 @@ NPC_DraynorManor_Oddenstein_12:
 	call CooksAssistant_Check_PressureGauge
 	call CooksAssistant_Check_RubberTube
 	msgbox NPC_DraynorManor_Oddenstein_Text_10
+	closemessage
+	hidenamebox
 	removeitem ITEM_OIL_CAN
 	removeitem ITEM_PRESSURE_GAUGE
 	removeitem ITEM_RUBBER_TUBE
 	applymovement 1, MOVEMENT_DraynorManor_Oddenstein_1
 	waitmovement 0
+	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox NPC_DraynorManor_Oddenstein_Text_11
+	closemessage
+	hidenamebox
 	applymovement 1, MOVEMENT_DraynorManor_Oddenstein_2
 	waitmovement 0
+	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox NPC_DraynorManor_Oddenstein_Text_12
+	closemessage
+	hidenamebox
 	hidenamebox
 	closemessage
 	setvar VAR_POKESCAPE_ERNEST_QUEST_STATE, 2
 	release
 	end
+
+NPC_DraynorManor_Oddenstein_16:
+	applymovement OBJ_EVENT_ID_PLAYER, movement_ENEREST_CHICKEN_QUEST_1
+	goto NPC_DraynorManor_Oddenstein_15
+
+NPC_DraynorManor_Oddenstein_17:
+	applymovement OBJ_EVENT_ID_PLAYER, movement_ENEREST_CHICKEN_QUEST_2
+	goto NPC_DraynorManor_Oddenstein_15
 
 
 movement_chickentransform:
@@ -488,15 +557,64 @@ MOVEMENT_DraynorManor_Oddenstein_2:
 	face_player
 	step_end
 
+movement_ENEREST_CHICKEN_QUEST_1:
+	face_down
+	delay_16
+	delay_16
+	step_end
+
+movement_ENEREST_CHICKEN_QUEST_2:
+	face_down
+	lock_facing_direction
+	walk_up
+	unlock_facing_direction
+	delay_16
+	delay_16
+	step_end
+
+movement_ENEREST_CHICKEN_QUEST_3:
+	walk_left
+	walk_left
+	face_down
+	face_down
+	step_end
+
+movement_ENEREST_CHICKEN_QUEST_4:
+	walk_right
+	walk_right
+	step_end
+
+movement_ENEREST_CHICKEN_QUEST_5:
+	walk_slow_down
+	walk_slow_down
+	walk_slow_down
+	walk_slow_down
+	step_end
+
+movement_ENEREST_CHICKEN_QUEST_6:
+	delay_16
+	delay_16
+	walk_left
+	walk_left
+	face_down
+	step_end
+
+movement_ENEREST_CHICKEN_QUEST_7:
+	walk_down
+	walk_down
+	step_end
+
 CooksAssistant_Check_OilCan::
 	checkitem ITEM_OIL_CAN, 1
 	compare VAR_RESULT, 0
 	goto_if_eq CooksAssistant_Check_OilCan_1
+	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox CooksAssistant_Check_OilCan_Text_1
 	closemessage
 	return
 
 CooksAssistant_Check_OilCan_1:
+	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox CooksAssistant_Check_OilCan_Text_0
 	hidenamebox
 	closemessage
@@ -508,11 +626,13 @@ CooksAssistant_Check_PressureGauge::
 	checkitem ITEM_PRESSURE_GAUGE, 1
 	compare VAR_RESULT, 0
 	goto_if_eq CooksAssistant_Check_PressureGauge_1
+	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox CooksAssistant_Check_PressureGauge_Text_1
 	closemessage
 	return
 
 CooksAssistant_Check_PressureGauge_1:
+	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox CooksAssistant_Check_PressureGauge_Text_0
 	hidenamebox
 	closemessage
@@ -524,11 +644,13 @@ CooksAssistant_Check_RubberTube::
 	checkitem ITEM_RUBBER_TUBE, 1
 	compare VAR_RESULT, 0
 	goto_if_eq CooksAssistant_Check_RubberTube_1
+	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox CooksAssistant_Check_RubberTube_Text_1
 	closemessage
 	return
 
 CooksAssistant_Check_RubberTube_1:
+	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox CooksAssistant_Check_RubberTube_Text_0
 	hidenamebox
 	closemessage
@@ -845,7 +967,7 @@ NPC_DraynorManor_Oddenstein_Text_16:
 
 NPC_DraynorManor_Oddenstein_Text_17:
 	.string "Wait no!\n"
-	.string "Something has gone wrong!$"
+	.string "Something is wrong!$"
 
 NPC_DraynorManor_Oddenstein_Text_18:
 	.string "Nooo!$"

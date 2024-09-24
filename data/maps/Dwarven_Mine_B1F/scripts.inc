@@ -138,7 +138,7 @@ ITEM_DWARVENMINES_3::
 
 
 ITEM_DWARVENMINES_4::
-	finditem ITEM_TEA
+	finditem ITEM_REPEL_TEA_2
 	end
 
 
@@ -824,7 +824,7 @@ NPC_FALADORCASTLE_QUEST_PART_3_Text_27:
 
 NPC_FALADORCASTLE_QUEST_PART_3_Text_28:
 	.string "Thank you for your assistance\n"
-	.string "challenger.\p"
+	.string "adventurer.\p"
 	.string "If you could stop by the castle a bit\n"
 	.string "later and assist me in filling out a\l"
 	.string "report that'd be appricated.$"

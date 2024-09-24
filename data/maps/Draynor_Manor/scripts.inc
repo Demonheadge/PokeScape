@@ -485,7 +485,7 @@ HAM_EVENT_DraynorManor_Ariane_1_Text_0:
 	.string "I gave chase to that guy but he\n"
 	.string "escaped…\p"
 	.string "I'm heading back to report to Sedridor.\p"
-	.string "Thanks for you assistance.\p"
+	.string "Thanks for your assistance.\p"
 	.string "Come visit me at the tower sometime!$"
 
 HAM_EVENT_DraynorManor_DOOR_WRONG_Text_0:

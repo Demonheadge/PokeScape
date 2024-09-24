@@ -1,14 +1,32 @@
 
 static const struct TrainerMon sParty_Maggie[] = {
+    
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 19,
-    .species = SPECIES_CAT_PURPLE_FORM,
+    .friendship = 255,
+    //.ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 18,
+    .gender = TRAINER_MON_FEMALE,
+    .species = SPECIES_SKELETALOX_FEMALE_FORM,
+    .nickname = COMPOUND_STRING("Babe"),
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .friendship = 255,
+    //.ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 18,
-    .species = SPECIES_SKELETALOX_FEMALE_FORM,
+    .gender = TRAINER_MON_MALE,
+    .species = SPECIES_SKELETALOX_MALE_FORM,
+    .nickname = COMPOUND_STRING("Norman"),
+    },
+    {
+    .friendship = 255,
+    //.ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .lvl = 19,
+    .species = SPECIES_CAT_PURPLE_FORM,
+    .gender = TRAINER_MON_MALE,
+    .nickname = COMPOUND_STRING("Trogs"),
     }
 };
 
@@ -863,21 +881,35 @@ static const struct TrainerMon sParty_KaramjaVolcano_SKELETON_1[] = {
 
 static const struct TrainerMon sParty_DRAYNOR_MANOR_COUNT_DRAYNOR[] = {
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 19,
-    .species = SPECIES_SPIDERLING,
-    .heldItem = ITEM_NONE
-    },
-    {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 17,
     .species = SPECIES_BLOODVELD,
+    .ability = ABILITY_HAEMANCY,
+    .nature = NATURE_IMPISH,
+    .moves = {MOVE_LEECH_LIFE, MOVE_SNARL, MOVE_MEGA_DRAIN, MOVE_BITE},
     .heldItem = ITEM_NONE
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .lvl = 19,
+    .species = SPECIES_SPIDER_GIANT_FORM,
+    .ability = ABILITY_GOOSEBUMPS,
+    .nature = NATURE_HARDY,
+    .moves = {MOVE_STICKY_WEB, MOVE_POISON_FANG, MOVE_INFESTATION, MOVE_LEECH_LIFE},
+    .heldItem = ITEM_NONE
+    },
+    {
+    .lvl = 19,
+    .species = SPECIES_BLOODVELD_VAMPIRIC_FORM,
+    .ability = ABILITY_HAEMANCY,
+    .nature = NATURE_ADAMANT,
+    .moves = {MOVE_STRENGTH_SAP, MOVE_BITE, MOVE_WORK_UP, MOVE_NONE},
+    .heldItem = ITEM_NONE
+    },
+    {
     .lvl = 20,
     .species = SPECIES_VAMPYREBAT,
+    .ability = ABILITY_HAEMANCY,
+    .nature = NATURE_RASH,
+    .moves = {MOVE_BLOOD_BARRAGE, MOVE_AIR_CUTTER, MOVE_MEGA_DRAIN, MOVE_NONE},
     .heldItem = ITEM_NONE
     }
 };
@@ -1167,6 +1199,12 @@ static const struct TrainerMon sParty_ROUTE3_TRAINER_1[] = {
     .lvl = 15,
     .species = SPECIES_PHEASANT,
     }
+};
+static const struct TrainerMon sParty_ROUTE3_TRAINER_2[] = {
+    {
+    .lvl = 15,
+    .species = SPECIES_SALMON_NORMAL_FORM,
+    },
 };
 
 static const struct TrainerMon sParty_ROUTE5_CAPTIANTOCK[] = {
@@ -2203,42 +2241,49 @@ static const struct TrainerMon sParty_FALADOR_GYM_4[] = {
 
 static const struct TrainerMon sParty_FALADOR_HAIRDRESSER[] = {
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .ev = TRAINER_PARTY_EVS(0, 252, 4, 0, 0, 252),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .nickname = COMPOUND_STRING("Ridgeley"),
     .lvl = 20,
     .species = SPECIES_CHINCHOMPA_BABY,
-    .heldItem = ITEM_OVERLOAD,
-    .moves = {MOVE_POUND, MOVE_EXPLOSION, MOVE_PAY_DAY, MOVE_NONE}
+    .heldItem = ITEM_DRAGON_CLAWS,
+    .moves = {MOVE_EXPLOSION, MOVE_EXPLOSION, MOVE_EXPLOSION, MOVE_EXPLOSION}
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .ev = TRAINER_PARTY_EVS(0, 252, 4, 0, 0, 252),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 22,
     .species = SPECIES_CHINCHOMPA_GREY_FORM,
     .heldItem = ITEM_OVERLOAD,
     .moves = {MOVE_EXPLOSION, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .ev = TRAINER_PARTY_EVS(0, 252, 4, 0, 0, 252),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 24,
     .species = SPECIES_CHINCHOMPA_RED_FORM,
     .heldItem = ITEM_OVERLOAD,
     .moves = {MOVE_EXPLOSION, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .ev = TRAINER_PARTY_EVS(0, 252, 4, 0, 0, 252),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 25,
     .species = SPECIES_CHINCHOMPA_BLACK,
     .heldItem = ITEM_OVERLOAD,
     .moves = {MOVE_EXPLOSION, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .ev = TRAINER_PARTY_EVS(0, 252, 4, 0, 0, 252),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 28,
     .species = SPECIES_CHINCHOMPA_GIANT,
     .heldItem = ITEM_OVERLOAD,
     .moves = {MOVE_EXPLOSION, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+    .ev = TRAINER_PARTY_EVS(0, 252, 4, 0, 0, 252),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 30,
     .species = SPECIES_CHINCHOMPA_MECHANIZED,
     .heldItem = ITEM_OVERLOAD,
@@ -3993,7 +4038,7 @@ static const struct TrainerMon sParty_ROUTE39_TRAINER_3[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 31,
-    .species = SPECIES_CHARMELEON,
+    .species = SPECIES_CHAMELEON,
     }
 };
 static const struct TrainerMon sParty_ROUTE39_TRAINER_4[] = {

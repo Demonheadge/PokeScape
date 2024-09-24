@@ -42,7 +42,7 @@ script POTTERINGTON_FARM_OUTDOOR_STATE{
             case 0: 
                 return
             case 1: 
-                setobjectxyperm(OBJ_EVENT_ID_DAYCAREWATCHER,8,17)
+                setobjectxyperm(OBJ_EVENT_ID_DAYCAREWATCHER,8,23)
                 return
         }
 }
@@ -132,7 +132,7 @@ script ROUTE4_TRIGGER1_DaycareWatcher
     hidenamebox
     applymovement(OBJ_EVENT_ID_DAYCAREWATCHER, MOVEMENT_ROUTE4_NIECE_6)
     waitmovement (0)
-    setobjectxyperm(OBJ_EVENT_ID_DAYCAREWATCHER,8,17)
+    setobjectxyperm(OBJ_EVENT_ID_DAYCAREWATCHER,8,23)
     setvar(VAR_POKESCAPE_POTTERINGTON_FARM_STATE, 1)
     release
     end

@@ -4625,7 +4625,7 @@
       "id": "LAYOUT_ROUTE3",
       "name": "Route3_Layout",
       "width": 22,
-      "height": 22,
+      "height": 34,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_Draynor",
       "border_filepath": "data/layouts/Route3/border.bin",
@@ -4674,7 +4674,7 @@
     {
       "id": "LAYOUT_DRAYNOR_MANOR",
       "name": "Draynor_Manor_Layout",
-      "width": 32,
+      "width": 38,
       "height": 42,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_DraynorManor",

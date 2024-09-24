@@ -212,7 +212,7 @@ NPC_TZHAAR_GYM_LEADER_5:
 	goto NPC_TZHAAR_GYM_LEADER_4
 
 NPC_TZHAAR_GYM_LEADER_8:
-	msgbox NPC_TZHAAR_GYM_LEADER_Text_4
+	msgbox NPC_TZHAAR_GYM_LEADER_Text_5
 	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1
 	goto NPC_TZHAAR_GYM_LEADER_7
 
@@ -221,7 +221,9 @@ NPC_TZHAAR_GYM_LEADER_10:
 	closemessage
 	hidenamebox
 	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 5
-	msgbox NPC_TZHAAR_GYM_LEADER_Text_3
+	namebox NPC_TZHAAR_GYM_LEADER_Text_3
+	msgbox NPC_TZHAAR_GYM_LEADER_Text_4
+	hidenamebox
 	call FIGHT_CAVES_START
 	goto NPC_TZHAAR_GYM_LEADER_4
 
@@ -352,9 +354,12 @@ NPC_TZHAAR_GYM_LEADER_Text_2:
 	.string "challenge?$"
 
 NPC_TZHAAR_GYM_LEADER_Text_3:
-	.string "Follow me.$"
+	.string "Ga'al$"
 
 NPC_TZHAAR_GYM_LEADER_Text_4:
+	.string "Follow me.$"
+
+NPC_TZHAAR_GYM_LEADER_Text_5:
 	.string "Us Tzhaar have proven Victorious this\n"
 	.string "time.\p"
 	.string "Come back and challenge us again when\n"

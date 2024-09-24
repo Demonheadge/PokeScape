@@ -485,7 +485,8 @@ NPC_RIMMINGTON_NPC_19::
 NPC_RIMMINGTON_NPC_12::
 	lock
 	faceplayer
-	msgbox NPC_RIMMINGTON_NPC_12_Text_0
+	namebox NPC_RIMMINGTON_NPC_12_Text_0
+	msgbox NPC_RIMMINGTON_NPC_12_Text_1
 	hidenamebox
 	release
 	end
@@ -1177,8 +1178,8 @@ NPC_RIMMINGTON_NPC_4::
 NPC_RIMMINGTON_NPC_5::
 	lock
 	faceplayer
-	namebox NPC_RIMMINGTON_NPC_11_Text_0
-	msgbox NPC_RIMMINGTON_NPC_5_Text_0
+	namebox NPC_RIMMINGTON_NPC_5_Text_0
+	msgbox NPC_RIMMINGTON_NPC_5_Text_1
 	hidenamebox
 	release
 	end
@@ -1453,6 +1454,9 @@ NPC_RIMMINGTON_NPC_19_Text_1:
 	.string "Be careful or you might get blown up.$"
 
 NPC_RIMMINGTON_NPC_12_Text_0:
+	.string "Phials$"
+
+NPC_RIMMINGTON_NPC_12_Text_1:
 	.string "If you ever need anything unnoted I am\n"
 	.string "your guy!$"
 
@@ -1841,6 +1845,9 @@ NPC_RIMMINGTON_NPC_4_Text_1:
 	.string "Would you like to change your outfit?$"
 
 NPC_RIMMINGTON_NPC_5_Text_0:
+	.string "Gamezter006$"
+
+NPC_RIMMINGTON_NPC_5_Text_1:
 	.string "I want to buy a skillcape, but I\n"
 	.string "apparently don't have the level to wear\l"
 	.string "it.$"

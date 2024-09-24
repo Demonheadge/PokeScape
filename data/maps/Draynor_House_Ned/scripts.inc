@@ -223,7 +223,7 @@ DRAYNOR_NED_EVENT_WHITE_KNIGHT_Text_1:
 	.string "secure a ship for transport.\p"
 	.string "It is called Lady Falador located south\n"
 	.string "of the docks in Port Sarim.\p"
-	.string "The name of the ship was orginally\n"
+	.string "The name of the ship was originally\n"
 	.string "called Lady Lumbridge but considering\l"
 	.string "Falador is purchasing it and paying for\l"
 	.string "transport it was fitting to rename it.$"

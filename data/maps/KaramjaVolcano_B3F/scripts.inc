@@ -176,7 +176,7 @@ NPC_KaramjaVolcano_HAM_EVENT1::
 	playse SE_ORB
 	special DoOrbEffect
 	delay 60
-	fadescreenswapbuffers FADE_TO_WHITE
+	fadescreen FADE_TO_WHITE
 	special FadeOutOrbEffect
 	delay 60
 	delay 60
@@ -184,7 +184,7 @@ NPC_KaramjaVolcano_HAM_EVENT1::
 	delay 60
 	setflag FLAG_TEMP_3
 	removeobject 1
-	fadescreenswapbuffers FADE_FROM_WHITE
+	fadescreen FADE_FROM_WHITE
 	delay 60
 	applymovement 2, HAM_EVENT_KaramjaVolcano_11
 	waitmovement 0
@@ -846,7 +846,7 @@ Crandor_Event_Volcano_1:
 	delay 60
 	delay 60
 	waitmovement 0
-	fadescreenswapbuffers FADE_TO_BLACK
+	fadescreen FADE_TO_BLACK
 	setvar VAR_0x8004, 0
 	setvar VAR_0x8005, 3
 	setvar VAR_0x8006, 8
@@ -855,7 +855,7 @@ Crandor_Event_Volcano_1:
 	delay 40
 	clearflag FLAG_ELVARG
 	addobject 17
-	fadescreenswapbuffers FADE_FROM_BLACK
+	fadescreen FADE_FROM_BLACK
 	playmoncry SPECIES_ELVARG, 2
 	namebox NPC_KaramjaVolcano_HAM_EVENT1_Text_18
 	msgbox NPC_KaramjaVolcano_HAM_EVENT1_Text_19
@@ -1411,14 +1411,14 @@ HAM_EVENT_CRANDOR_VOLCANO_26:
 	step_end
 
 HAM_EVENT_CRANDOR_VOLCANO_27:
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_left
-	walk_faster_left
-	walk_faster_left
-	walk_faster_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
 	step_end
 
 HAM_EVENT_CRANDOR_VOLCANO_29:
@@ -1499,10 +1499,10 @@ BATTLE_KaramjaVolcano_HAM_6::
 	msgbox BATTLE_KaramjaVolcano_HAM_6_Text_2
 	hidenamebox
 	closemessage
-	fadescreenswapbuffers FADE_TO_BLACK
+	fadescreen FADE_TO_BLACK
 	setflag FLAG_TEMP_1C
 	removeobject 36
-	fadescreenswapbuffers FADE_FROM_BLACK
+	fadescreen FADE_FROM_BLACK
 	release
 	end
 
@@ -1642,7 +1642,7 @@ Crandor_Event_Volcano_Text_0:
 	.string "Babe$"
 
 Crandor_Event_Volcano_Text_1:
-	.string "Oh, its you!$"
+	.string "Oh, it's you!$"
 
 Crandor_Event_Volcano_Text_2:
 	.string "Patty$"
@@ -1656,7 +1656,7 @@ Crandor_Event_Volcano_Text_4:
 	.string "The boss is here even.$"
 
 Crandor_Event_Volcano_Text_5:
-	.string "Come on Babe, lets show this monster\n"
+	.string "Come on Babe, let's show this monster\n"
 	.string "lover what happens when they enter the\l"
 	.string "wrong volcano.$"
 

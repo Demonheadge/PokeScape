@@ -584,7 +584,7 @@ script NPC_FALADORCASTLE_WHITEKNIGHT_1
 		case 4: 
 			lock
 			faceplayer
-			//namebox("Sir Loin")
+			namebox("White Knight")
 			msgbox(format("If you are looking for Amik then you should probably head back inside."))
             hidenamebox
             closemessage
@@ -593,7 +593,7 @@ script NPC_FALADORCASTLE_WHITEKNIGHT_1
         case 5:
 			lock
 			faceplayer
-            //namebox("Sir Loin")
+            namebox("White Knight")
 			msgbox(format("Those Black Knights really grind my gears, one of these days we will rid them."))
             hidenamebox
             closemessage
@@ -608,7 +608,7 @@ script NPC_FALADORCASTLE_WHITEKNIGHT_2
 		case 4: 
 			lock
 			faceplayer
-			//namebox("Sir Loin")
+			namebox("White Knight")
 			msgbox(format("Turn around, no Sir Amik this way."))
             hidenamebox
             closemessage
@@ -617,7 +617,7 @@ script NPC_FALADORCASTLE_WHITEKNIGHT_2
         case 5:
 			lock
 			faceplayer
-            //namebox("Sir Loin")
+            namebox("White Knight")
 			msgbox(format("We are the order for order."))
             hidenamebox
             closemessage
@@ -735,7 +735,7 @@ script NPC_FALADORCASTLE_WHITEKNIGHT_10
 	lock
     faceplayer
     namebox("White Knight")
-	msgbox(format("This is our living quaters.\pI should probably put up a barrier up to stop MvM challengers from coming in."))
+	msgbox(format("This is our living quarters.\pI should probably put up a barrier up to stop MvM challengers from coming in."))
     closemessage
     hidenamebox
 	release

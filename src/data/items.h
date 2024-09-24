@@ -11411,14 +11411,15 @@ const struct Item gItems[] =
     [ITEM_PRAYER_POTION] =
     {
         .name = _("PRAYER POTION"),
-        .price = 3000,
+        .price = 1200,
         .holdEffectParam = 10,
-        .description = sElixirDesc,
+        .description = sEtherDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
+        .type = ITEM_USE_PARTY_MENU_MOVES,
         .sort = ITEM_TYPE_PP_RECOVERY,
         .fieldUseFunc = ItemUseOutOfBattle_PPRecovery,
         .battleUsage = EFFECT_ITEM_RESTORE_PP,
+        .flingPower = 30,
     },
 
     [ITEM_SUPER_PRAYER_POTION] =

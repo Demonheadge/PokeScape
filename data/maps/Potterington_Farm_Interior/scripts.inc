@@ -294,8 +294,6 @@ POTTERINGTON_FARM_Prezleek_4:
 	msgbox POTTERINGTON_FARM_Prezleek_Text_2
 	closemessage
 	hidenamebox
-	applymovement 9, Movement_InteractFACERIGHT
-	waitmovement 0
 	namebox POTTERINGTON_FARM_Prezleek_Text_3
 	msgbox POTTERINGTON_FARM_Prezleek_Text_4
 	closemessage

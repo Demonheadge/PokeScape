@@ -649,9 +649,9 @@ TRIGGER_WISEOLDMAN_RIVAL_1_Text_5:
 
 TRIGGER_WISEOLDMAN_RIVAL_1_Text_6:
 	.string "I'm Dionysius but everyone just calls\n"
-	.string "me the Wise old man.\p"
+	.string "me the Wise Old Man.\p"
 	.string "I used to be one of the biggest\n"
-	.string "adventurers in the world, but now im\l"
+	.string "adventurers in the world, but now I'm\l"
 	.string "just an old man looking back on his\l"
 	.string "glory days.\p"
 	.string "Maybe you will become something of a\n"

@@ -96,7 +96,6 @@ BATTLE_ROUTE9_MINER_2::
 
 BATTLE_ROUTE9_GOBLIN_1::
 	trainerbattle_single TRAINER_ROUTE9_GOBLIN_1, BATTLE_ROUTE9_GOBLIN_1_Text_0, BATTLE_ROUTE9_GOBLIN_1_Text_1
-	namebox BATTLE_ROUTE9_GOBLIN_1_Text_2
 	msgbox BATTLE_ROUTE9_GOBLIN_1_Text_1
 	hidenamebox
 	release
@@ -112,7 +111,6 @@ BATTLE_ROUTE9_GOBLIN_2::
 
 BATTLE_ROUTE9_GOBLIN_3::
 	trainerbattle_single TRAINER_ROUTE9_GOBLIN_3, BATTLE_ROUTE9_GOBLIN_3_Text_0, BATTLE_ROUTE9_GOBLIN_3_Text_1
-	namebox BATTLE_ROUTE9_GOBLIN_3_Text_2
 	msgbox BATTLE_ROUTE9_GOBLIN_3_Text_1
 	hidenamebox
 	release
@@ -192,15 +190,12 @@ BATTLE_ROUTE9_GOBLIN_1_Text_0:
 BATTLE_ROUTE9_GOBLIN_1_Text_1:
 	.string "Hobs vacating, Oo'glog Spa.$"
 
-BATTLE_ROUTE9_GOBLIN_1_Text_2:
-	.string "HOBS$"
-
 BATTLE_ROUTE9_GOBLIN_2_Text_0:
-	.string "Big high war god fond of Snape grass,\n"
+	.string "Big High War God fond of Snape grass,\n"
 	.string "step off human!$"
 
 BATTLE_ROUTE9_GOBLIN_2_Text_1:
-	.string "That lie, Big high war god not care for\n"
+	.string "That lie, Big High War God not care for\n"
 	.string "Snape grass.$"
 
 BATTLE_ROUTE9_GOBLIN_3_Text_0:
@@ -208,9 +203,6 @@ BATTLE_ROUTE9_GOBLIN_3_Text_0:
 
 BATTLE_ROUTE9_GOBLIN_3_Text_1:
 	.string "Snowtoes be poet now.$"
-
-BATTLE_ROUTE9_GOBLIN_3_Text_2:
-	.string "SNOWTOES$"
 
 BATTLE_ROUTE9_GOBLIN_4_Text_0:
 	.string "Human crafting house classy.\p"

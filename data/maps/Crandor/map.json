@@ -146,7 +146,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "2",
+      "trainer_sight_or_berry_tree_id": "1",
       "script": "BATTLE_KaramjaVolcano_HAM_1",
       "flag": "FLAG_TEMP_1E"
     },
@@ -582,8 +582,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 9,
-      "y": 7,
+      "x": 7,
+      "y": 16,
       "elevation": 0,
       "item": "ITEM_PINEAPPLE_PUNCH",
       "flag": "FLAG_HIDDEN_ITEM_TEMP_8"
@@ -598,7 +598,7 @@
     },
     {
       "type": "hidden_item",
-      "x": 39,
+      "x": 41,
       "y": 5,
       "elevation": 0,
       "item": "ITEM_POTION_HP",
@@ -622,7 +622,7 @@
     },
     {
       "type": "hidden_item",
-      "x": 42,
+      "x": 40,
       "y": 22,
       "elevation": 0,
       "item": "ITEM_LAMP_SPEED",

@@ -253,6 +253,34 @@
       "y": 36,
       "elevation": 0,
       "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "weather",
+      "x": 8,
+      "y": 27,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_FOG_DIAGONAL"
+    },
+    {
+      "type": "weather",
+      "x": 9,
+      "y": 27,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_FOG_DIAGONAL"
+    },
+    {
+      "type": "weather",
+      "x": 8,
+      "y": 26,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SUNNY"
+    },
+    {
+      "type": "weather",
+      "x": 9,
+      "y": 26,
+      "elevation": 0,
+      "weather": "COORD_EVENT_WEATHER_SUNNY"
     }
   ],
   "bg_events": [
