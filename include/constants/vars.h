@@ -125,7 +125,7 @@
 #define VAR_WILDERNESS_BLOCK_STATE           0x4069
 #define VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE 0x406A // Unused Var
 #define VAR_OPENWORLD_STATE                  0x406B ////Should remove and change this to a FLAG!!!
-#define VAR_ROUTE113_STATE                   0x406C // Unused Var
+#define VAR_GAMEMODE_LEVEL_CAP               0x406C // Unused Var
 #define VAR_GAMEMODE_LEVEL_SCALING           0x406D // Unused Var
 #define VAR_EVOLUTION_MAP_STATE              0x406E // Unused Var
 #define VAR_ROUTE116_STATE                   0x406F
