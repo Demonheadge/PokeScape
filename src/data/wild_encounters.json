@@ -11493,7 +11493,7 @@
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_SPIDERLING"
+                "species": "SPECIES_IMPLING_BABY_FORM"
               },
               {
                 "min_level": 2,
@@ -11518,7 +11518,7 @@
               {
                 "min_level": 1,
                 "max_level": 4,
-                "species": "SPECIES_CALF"
+                "species": "SPECIES_IMPLING_BABY_FORM"
               },
               {
                 "min_level": 1,
@@ -11543,7 +11543,7 @@
               {
                 "min_level": 1,
                 "max_level": 5,
-                "species": "SPECIES_IMPLING_BABY_FORM"
+                "species": "SPECIES_PENGLING"
               }
             ]
           }
@@ -12000,7 +12000,7 @@
               {
                 "min_level": 35,
                 "max_level": 40,
-                "species": "SPECIES_SHRIMP"
+                "species": "SPECIES_SALMON_NORMAL_FORM"
               },
               {
                 "min_level": 35,
@@ -12010,12 +12010,12 @@
               {
                 "min_level": 35,
                 "max_level": 40,
-                "species": "SPECIES_BLUE_CRAB"
+                "species": "SPECIES_EEL_SLIMY_FORM"
               },
               {
                 "min_level": 35,
                 "max_level": 40,
-                "species": "SPECIES_EEL_SLIMY_FORM"
+                "species": "SPECIES_TROUT_NORMAL_FORM"
               }
             ]
           },
@@ -12234,7 +12234,7 @@
               {
                 "min_level": 3,
                 "max_level": 5,
-                "species": "SPECIES_LAMB"
+                "species": "SPECIES_CROW"
               },
               {
                 "min_level": 3,
@@ -12244,7 +12244,7 @@
               {
                 "min_level": 3,
                 "max_level": 5,
-                "species": "SPECIES_CHICK"
+                "species": "SPECIES_CROW"
               },
               {
                 "min_level": 4,
@@ -12254,7 +12254,7 @@
               {
                 "min_level": 4,
                 "max_level": 6,
-                "species": "SPECIES_LAMB"
+                "species": "SPECIES_IMPLING_BABY_FORM"
               },
               {
                 "min_level": 4,
@@ -12264,7 +12264,7 @@
               {
                 "min_level": 4,
                 "max_level": 7,
-                "species": "SPECIES_CALF"
+                "species": "SPECIES_CROW"
               },
               {
                 "min_level": 5,
@@ -12289,7 +12289,7 @@
               {
                 "min_level": 7,
                 "max_level": 8,
-                "species": "SPECIES_IMPLING_BABY_FORM"
+                "species": "SPECIES_MACKERS"
               }
             ]
           }
@@ -13281,7 +13281,7 @@
               {
                 "min_level": 32,
                 "max_level": 37,
-                "species": "SPECIES_HEIM_CRAB"
+                "species": "SPECIES_TROUT_NORMAL_FORM"
               },
               {
                 "min_level": 34,
@@ -13352,6 +13352,71 @@
                 "min_level": 25,
                 "max_level": 35,
                 "species": "SPECIES_MACKEREL"
+              }
+            ]
+          },
+          "wheat_mons": {
+            "encounter_rate": 50,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_CALF"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_CALF"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_IMPLING_BABY_FORM"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PIGLET"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_IMPLING_BABY_FORM"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PIGLET"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_CALF"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_IMPLING_BABY_FORM"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_PIGLET"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_IMPLING_BABY_FORM"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_CABBAGE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_MACKERS"
               }
             ]
           }
@@ -13889,7 +13954,7 @@
               {
                 "min_level": 5,
                 "max_level": 7,
-                "species": "SPECIES_CALF"
+                "species": "SPECIES_KEBBIT"
               },
               {
                 "min_level": 5,
@@ -13939,7 +14004,7 @@
               {
                 "min_level": 5,
                 "max_level": 7,
-                "species": "SPECIES_BABY_YAK"
+                "species": "SPECIES_MACKERS"
               }
             ]
           },

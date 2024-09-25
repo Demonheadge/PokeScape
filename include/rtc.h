@@ -76,7 +76,7 @@
     #define DAY_HOUR_BEGIN     10
     #define DAY_HOUR_END       16
 
-    #define EVENING_HOUR_BEGIN 16
+    #define EVENING_HOUR_BEGIN 15
     #define EVENING_HOUR_END   20
 
     #define NIGHT_HOUR_BEGIN   20
@@ -85,7 +85,7 @@
 
 #define TIME_MORNING           0   //6am - 10am
 #define TIME_DAY               1   //10am - 4pm
-#define TIME_EVENING           2   //4pm - 8pm
+#define TIME_EVENING           2   //3pm - 8pm
 #define TIME_NIGHT             3   //8pm - 6am
 
 extern struct Time gLocalTime;

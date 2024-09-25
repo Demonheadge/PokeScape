@@ -6,6 +6,7 @@ Draynor_MapScripts::
 
 Draynor_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setflag FLAG_VISITED_DRAYNOR
+	call WEATHER_CHANGE_AREA_DRAYNOR
 	return
 
 Draynor_MapScripts_MAP_SCRIPT_ON_LOAD:

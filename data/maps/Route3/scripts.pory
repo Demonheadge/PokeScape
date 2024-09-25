@@ -100,12 +100,36 @@ script Script_Wendy_1
     end
 }
 
-script NPC_SKELETAL_OX
+script NPC_SKELETAL_OX_NORMAN
 {
 	lock
-    namebox ("Skeletal Ox")
+    namebox ("Norman")
     playmoncry(SPECIES_SKELETALOX_MALE_FORM, 0)
 	msgbox(format("Waaroo!"))
+    waitmoncry
+    hidenamebox
+	release
+	end
+}
+script NPC_SKELETAL_OX_BABE
+{
+	lock
+    namebox ("Babe")
+    playmoncry(SPECIES_SKELETALOX_FEMALE_FORM, 0)
+	msgbox(format("Weeroo!"))
+    waitmoncry
+    hidenamebox
+	release
+	end
+}
+
+script NPC_CAT_TROGS
+{
+	lock
+	faceplayer
+    namebox ("Trogs")
+    playmoncry(SPECIES_CAT_PURPLE_FORM, 0)
+	msgbox(format("Meeoow…"))
     waitmoncry
     hidenamebox
 	release

@@ -33,7 +33,7 @@ CRANDOR_SEAROUTE_STATE_2:
 
 
 hideplayer::
-	setweather WEATHER_NONE
+	setweather WEATHER_SUNNY
 	doweather
 	hideobjectat OBJ_EVENT_ID_PLAYER, MAP_CRANDOR_SEA_ROUTE
 	return

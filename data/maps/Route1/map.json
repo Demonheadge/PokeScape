@@ -182,8 +182,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EVIL_CHICKEN",
-      "x": 28,
-      "y": 35,
+      "x": -1,
+      "y": 33,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 4,

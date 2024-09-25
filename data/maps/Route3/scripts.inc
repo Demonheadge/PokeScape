@@ -83,11 +83,34 @@ Script_Wendy_1_2:
 	end
 
 
-NPC_SKELETAL_OX::
+NPC_SKELETAL_OX_NORMAN::
 	lock
-	namebox NPC_SKELETAL_OX_Text_0
+	namebox NPC_SKELETAL_OX_NORMAN_Text_0
 	playmoncry SPECIES_SKELETALOX_MALE_FORM, 0
-	msgbox NPC_SKELETAL_OX_Text_1
+	msgbox NPC_SKELETAL_OX_NORMAN_Text_1
+	waitmoncry
+	hidenamebox
+	release
+	end
+
+
+NPC_SKELETAL_OX_BABE::
+	lock
+	namebox NPC_SKELETAL_OX_BABE_Text_0
+	playmoncry SPECIES_SKELETALOX_FEMALE_FORM, 0
+	msgbox NPC_SKELETAL_OX_BABE_Text_1
+	waitmoncry
+	hidenamebox
+	release
+	end
+
+
+NPC_CAT_TROGS::
+	lock
+	faceplayer
+	namebox NPC_CAT_TROGS_Text_0
+	playmoncry SPECIES_CAT_PURPLE_FORM, 0
+	msgbox NPC_CAT_TROGS_Text_1
 	waitmoncry
 	hidenamebox
 	release
@@ -166,8 +189,20 @@ Script_Wendy_1_Text_2:
 	.string "She usually becomes to irritating to be\n"
 	.string "around without her battle fix.$"
 
-NPC_SKELETAL_OX_Text_0:
-	.string "Skeletal Ox$"
+NPC_SKELETAL_OX_NORMAN_Text_0:
+	.string "Norman$"
 
-NPC_SKELETAL_OX_Text_1:
+NPC_SKELETAL_OX_NORMAN_Text_1:
 	.string "Waaroo!$"
+
+NPC_SKELETAL_OX_BABE_Text_0:
+	.string "Babe$"
+
+NPC_SKELETAL_OX_BABE_Text_1:
+	.string "Weeroo!$"
+
+NPC_CAT_TROGS_Text_0:
+	.string "Trogs$"
+
+NPC_CAT_TROGS_Text_1:
+	.string "Meeoow…$"

@@ -76,7 +76,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_SKELETAL_OX",
+      "script": "NPC_SKELETAL_OX_NORMAN",
       "flag": "0"
     },
     {
@@ -102,7 +102,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_SKELETAL_OX",
+      "script": "NPC_SKELETAL_OX_BABE",
       "flag": "0"
     },
     {
@@ -141,7 +141,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_CAT",
+      "script": "NPC_CAT_TROGS",
       "flag": "0"
     },
     {

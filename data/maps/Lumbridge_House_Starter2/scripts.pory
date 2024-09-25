@@ -6,6 +6,7 @@ mapscripts Lumbridge_House_Starter2_MapScripts {
         if (var(VAR_RESULT) == 0)
         {
             setvar(VAR_POKESCAPE_GAMEMODE_STATE, 0) //SETS STORY MODE.
+            addvar(VAR_GAMEMODE_LEVEL_CAP, 16)
         }
         if (var(VAR_RESULT) == 1)
         {

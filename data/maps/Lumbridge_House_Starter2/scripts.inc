@@ -14,6 +14,7 @@ Lumbridge_House_Starter2_MapScripts_MAP_SCRIPT_ON_LOAD_1:
 
 Lumbridge_House_Starter2_MapScripts_MAP_SCRIPT_ON_LOAD_2:
 	setvar VAR_POKESCAPE_GAMEMODE_STATE, 0
+	addvar VAR_GAMEMODE_LEVEL_CAP, 16
 	goto Lumbridge_House_Starter2_MapScripts_MAP_SCRIPT_ON_LOAD_1
 
 Lumbridge_House_Starter2_MapScripts_MAP_SCRIPT_ON_LOAD_4:

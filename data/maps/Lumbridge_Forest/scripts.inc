@@ -4,6 +4,7 @@ Lumbridge_Forest_MapScripts::
 
 Lumbridge_Forest_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 6
+	call WEATHER_CHANGE_AREA_DRAYNOR
 	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
 	goto_if_eq Lumbridge_Forest_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 	return

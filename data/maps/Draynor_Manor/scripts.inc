@@ -10,6 +10,7 @@ Draynor_Manor_MapScripts_MAP_SCRIPT_ON_LOAD:
 
 Draynor_Manor_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 1
+	call WEATHER_CHANGE_AREA_DRAYNOR
 	return
 
 Draynor_Manor_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:

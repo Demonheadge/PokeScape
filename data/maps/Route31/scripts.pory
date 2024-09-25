@@ -442,3 +442,29 @@ script GET_TIME_OF_DAY
 			msgbox(format("I have no clue what the time is."))
 	}
 }
+
+
+script WEATHER_CHANGE_AREA_DRAYNOR
+{
+	special(GetTimeOfDaySpecial)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			setweather (WEATHER_SHADE)
+			doweather
+		case 1:
+			setweather (WEATHER_SHADE)
+			doweather
+		case 2:
+			setweather (WEATHER_NONE)
+			doweather
+		case 3:
+			setweather (WEATHER_NONE)
+			doweather
+		
+		default:
+			setweather (WEATHER_SHADE)
+			doweather
+	}
+	
+	return
+}

@@ -3,6 +3,7 @@ const OBJ_EVENT_ID_DRAYNORGUARD = 19
 mapscripts Draynor_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_VISITED_DRAYNOR)
+        call(WEATHER_CHANGE_AREA_DRAYNOR)
     }
     MAP_SCRIPT_ON_LOAD {
         call(WizardsTower_Draynor_STATE)
