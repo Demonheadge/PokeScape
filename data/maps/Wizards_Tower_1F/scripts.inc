@@ -655,6 +655,13 @@ rinsit_4:
 	face_left
 	step_end
 
+WIZARDS_TOWER_SYMBOL::
+	lock
+	msgbox WIZARDS_TOWER_SYMBOL_Text_0
+	release
+	end
+
+
 HAM_EVENT_Ariane1::
 	lock
 	namebox HAM_EVENT_Ariane1_Text_0
@@ -983,6 +990,9 @@ NPC_WIZARDSTOWER_PulseCore_Text_7:
 	.string "Hey!\p"
 	.string "Don't touch my bag of rocks!\p"
 	.string "I mean Runes, not rocks!$"
+
+WIZARDS_TOWER_SYMBOL_Text_0:
+	.string "It's a weird symbol.$"
 
 HAM_EVENT_Ariane1_Text_0:
 	.string "Ariane$"

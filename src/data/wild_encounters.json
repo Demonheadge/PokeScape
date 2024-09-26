@@ -11679,6 +11679,225 @@
           }
         },
         {
+          "map": "MAP_ROUTE1",
+          "base_label": "gRoute1_Night",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_CHICK"
+              },
+              {
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_LAMB"
+              },
+              {
+                "min_level": 2,
+                "max_level": 3,
+                "species": "SPECIES_LAMB"
+              },
+              {
+                "min_level": 1,
+                "max_level": 3,
+                "species": "SPECIES_CHICK"
+              },
+              {
+                "min_level": 1,
+                "max_level": 3,
+                "species": "SPECIES_LAMB"
+              },
+              {
+                "min_level": 1,
+                "max_level": 3,
+                "species": "SPECIES_CALF"
+              },
+              {
+                "min_level": 1,
+                "max_level": 3,
+                "species": "SPECIES_CHICK"
+              },
+              {
+                "min_level": 3,
+                "max_level": 3,
+                "species": "SPECIES_CHICK"
+              },
+              {
+                "min_level": 1,
+                "max_level": 3,
+                "species": "SPECIES_IMP"
+              },
+              {
+                "min_level": 1,
+                "max_level": 3,
+                "species": "SPECIES_SPIDERLING"
+              },
+              {
+                "min_level": 1,
+                "max_level": 3,
+                "species": "SPECIES_IMP"
+              },
+              {
+                "min_level": 1,
+                "max_level": 3,
+                "species": "SPECIES_PENGLING"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 35,
+                "max_level": 45,
+                "species": "SPECIES_CRAYFISH"
+              },
+              {
+                "min_level": 35,
+                "max_level": 45,
+                "species": "SPECIES_COD"
+              },
+              {
+                "min_level": 35,
+                "max_level": 45,
+                "species": "SPECIES_FROG_NORMAL_FORM"
+              },
+              {
+                "min_level": 35,
+                "max_level": 45,
+                "species": "SPECIES_FROGSPAWN"
+              },
+              {
+                "min_level": 35,
+                "max_level": 45,
+                "species": "SPECIES_GIANT_FROG_NORMAL_FORM"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 100,
+            "mons": [
+              {
+                "min_level": 1,
+                "max_level": 4,
+                "species": "SPECIES_CRAYFISH"
+              },
+              {
+                "min_level": 1,
+                "max_level": 4,
+                "species": "SPECIES_SHRIMP"
+              },
+              {
+                "min_level": 10,
+                "max_level": 15,
+                "species": "SPECIES_CRAYFISH"
+              },
+              {
+                "min_level": 10,
+                "max_level": 15,
+                "species": "SPECIES_SHRIMP"
+              },
+              {
+                "min_level": 10,
+                "max_level": 15,
+                "species": "SPECIES_FROG_NORMAL_FORM"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_CRAYFISH"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_SHRIMP"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_FROG_NORMAL_FORM"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_GIANT_FROG_NORMAL_FORM"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_COD"
+              }
+            ]
+          },
+          "wheat_mons": {
+            "encounter_rate": 50,
+            "mons": [
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_LAMB"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_IMPLING_BABY_FORM"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_CHICK"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_PIGLET"
+              },
+              {
+                "min_level": 1,
+                "max_level": 4,
+                "species": "SPECIES_LAMB"
+              },
+              {
+                "min_level": 1,
+                "max_level": 4,
+                "species": "SPECIES_PIGLET"
+              },
+              {
+                "min_level": 1,
+                "max_level": 4,
+                "species": "SPECIES_IMPLING_BABY_FORM"
+              },
+              {
+                "min_level": 1,
+                "max_level": 4,
+                "species": "SPECIES_LAMB"
+              },
+              {
+                "min_level": 1,
+                "max_level": 4,
+                "species": "SPECIES_PIGLET"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_IMPLING_BABY_FORM"
+              },
+              {
+                "min_level": 1,
+                "max_level": 4,
+                "species": "SPECIES_IMPLING_BABY_FORM"
+              },
+              {
+                "min_level": 1,
+                "max_level": 5,
+                "species": "SPECIES_PENGLING"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_LUMBRIDGE_SWAMP",
           "base_label": "gLumbridge_Swamp0",
           "land_mons": {

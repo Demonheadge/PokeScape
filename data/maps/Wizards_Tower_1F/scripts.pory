@@ -711,6 +711,13 @@ movement rinsit_4 {
 
 
 
+script WIZARDS_TOWER_SYMBOL
+{
+	lock
+	msgbox(format("It's a weird symbol."))
+	release
+	end
+}
 
 
 script HAM_EVENT_Ariane1
