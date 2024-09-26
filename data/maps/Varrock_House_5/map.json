@@ -81,5 +81,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_EAST",
       "script": "FIND_VARROCK_URI"
     }
-  ]
+  ],
+  "has_night_table": false
 }

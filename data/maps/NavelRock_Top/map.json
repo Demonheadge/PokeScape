@@ -57,5 +57,6 @@
       "item": "ITEM_SACRED_ASH",
       "flag": "FLAG_TEMP_11"
     }
-  ]
+  ],
+  "has_night_table": false
 }

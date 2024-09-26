@@ -113,5 +113,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "QUEST_COOKING_RANGE_COOKSASSISTANT"
     }
-  ]
+  ],
+  "has_night_table": false
 }

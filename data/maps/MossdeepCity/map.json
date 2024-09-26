@@ -481,5 +481,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "MossdeepCity_EventScript_WhiteRock"
     }
-  ]
+  ],
+  "has_night_table": false
 }

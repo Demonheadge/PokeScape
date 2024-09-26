@@ -143,5 +143,6 @@
       "item": "ITEM_ELEMENTAL_POUCH",
       "flag": "FLAG_HIDDEN_ITEM_DRAYNORMANOR_3"
     }
-  ]
+  ],
+  "has_night_table": false
 }

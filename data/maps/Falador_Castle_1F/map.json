@@ -181,5 +181,6 @@
       "item": "ITEM_BREAD",
       "flag": "FLAG_HIDDEN_ITEM_TEMP_5"
     }
-  ]
+  ],
+  "has_night_table": false
 }

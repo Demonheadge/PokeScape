@@ -119,5 +119,6 @@
       "item": "ITEM_LAMP_HP",
       "flag": "FLAG_TEMP_1"
     }
-  ]
+  ],
+  "has_night_table": false
 }

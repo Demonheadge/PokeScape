@@ -883,5 +883,6 @@
       "item": "ITEM_PURPLE_SWEETS",
       "flag": "FLAG_HIDDEN_ITEM_DWARVEN_MINES_4"
     }
-  ]
+  ],
+  "has_night_table": false
 }

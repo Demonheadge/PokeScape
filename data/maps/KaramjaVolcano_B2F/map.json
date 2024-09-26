@@ -160,5 +160,6 @@
       "item": "ITEM_PURPLE_SWEETS",
       "flag": "FLAG_HIDDEN_ITEM_KARAMJA_VOLCANO_1"
     }
-  ]
+  ],
+  "has_night_table": false
 }

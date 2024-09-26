@@ -69,5 +69,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "MillLaneMill_Item_WHEAT3"
     }
-  ]
+  ],
+  "has_night_table": false
 }

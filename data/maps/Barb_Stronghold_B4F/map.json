@@ -130,5 +130,6 @@
       "item": "ITEM_FIGHTER_BOOTS",
       "flag": "FLAG_TEMP_2"
     }
-  ]
+  ],
+  "has_night_table": false
 }

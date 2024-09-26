@@ -244,5 +244,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "MELZARS_LOCKED_DOOR_B1F_3"
     }
-  ]
+  ],
+  "has_night_table": false
 }

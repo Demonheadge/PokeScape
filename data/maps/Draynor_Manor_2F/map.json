@@ -189,5 +189,6 @@
       "item": "ITEM_BLACK_POUCH",
       "flag": "FLAG_HIDDEN_ITEM_DRAYNORMANOR_2"
     }
-  ]
+  ],
+  "has_night_table": false
 }

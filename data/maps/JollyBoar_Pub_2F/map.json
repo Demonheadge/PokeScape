@@ -62,5 +62,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "JOLLYBOARBOOK"
     }
-  ]
+  ],
+  "has_night_table": false
 }

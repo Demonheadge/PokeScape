@@ -470,5 +470,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LilycoveCity_ContestLobby_EventScript_LinkContestResults"
     }
-  ]
+  ],
+  "has_night_table": false
 }

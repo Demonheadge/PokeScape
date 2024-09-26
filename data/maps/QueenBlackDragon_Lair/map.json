@@ -148,5 +148,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "TELEPORT_EXIT_QBD_LAIR"
     }
-  ]
+  ],
+  "has_night_table": false
 }

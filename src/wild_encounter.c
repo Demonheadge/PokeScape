@@ -408,6 +408,14 @@ static u16 GetCurrentMapWildMonHeaderId(void)
 
                 i += alteringCaveId;
             }
+        else if (gMapHeader.nightEncounterTable)
+            {
+                u8 dayOrNight = 0;
+                if (gTimeOfDay == TIME_OF_DAY_NIGHT)
+                    dayOrNight = 1;
+
+                i += dayOrNight;
+            }
 
             return i;
         }

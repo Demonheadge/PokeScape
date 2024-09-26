@@ -95,5 +95,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NEWSLETTER_7"
     }
-  ]
+  ],
+  "has_night_table": false
 }

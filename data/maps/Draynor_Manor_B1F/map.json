@@ -170,5 +170,6 @@
       "item": "ITEM_MITHRIL_POUCH",
       "flag": "FLAG_HIDDEN_ITEM_DRAYNORMANOR_5"
     }
-  ]
+  ],
+  "has_night_table": false
 }

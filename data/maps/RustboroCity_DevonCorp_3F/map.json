@@ -83,5 +83,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "RustboroCity_DevonCorp_3F_EventScript_RareRocksDisplay"
     }
-  ]
+  ],
+  "has_night_table": false
 }

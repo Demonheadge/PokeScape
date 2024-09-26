@@ -37,5 +37,6 @@
       "item": "ITEM_COAL_ORE",
       "flag": "FLAG_TEMP_1"
     }
-  ]
+  ],
+  "has_night_table": false
 }

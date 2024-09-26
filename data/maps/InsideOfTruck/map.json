@@ -147,5 +147,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "InsideOfTruck_EventScript_MovingBox"
     }
-  ]
+  ],
+  "has_night_table": false
 }

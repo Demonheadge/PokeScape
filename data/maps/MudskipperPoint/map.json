@@ -184,5 +184,6 @@
       "item": "ITEM_PURPLE_SWEETS",
       "flag": "FLAG_HIDDEN_ITEM_MUDSKIPPER_POINT_1"
     }
-  ]
+  ],
+  "has_night_table": false
 }

@@ -115,5 +115,6 @@
       "item": "ITEM_STAT_BEER",
       "flag": "FLAG_HIDDEN_ITEM_TEMP_14"
     }
-  ]
+  ],
+  "has_night_table": false
 }

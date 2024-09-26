@@ -282,5 +282,6 @@
       "item": "ITEM_CAKE",
       "flag": "FLAG_TEMP_9"
     }
-  ]
+  ],
+  "has_night_table": false
 }

@@ -147,5 +147,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NPC_ROUTE19_BRASS_KEY"
     }
-  ]
+  ],
+  "has_night_table": false
 }

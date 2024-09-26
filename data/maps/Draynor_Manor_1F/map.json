@@ -437,5 +437,6 @@
       "item": "ITEM_REPEL_TEA_2",
       "flag": "FLAG_HIDDEN_ITEM_DRAYNORMANOR_4"
     }
-  ]
+  ],
+  "has_night_table": false
 }

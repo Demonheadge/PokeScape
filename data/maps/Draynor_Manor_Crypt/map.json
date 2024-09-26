@@ -78,5 +78,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NPC_DraynorManor_CountCoffin"
     }
-  ]
+  ],
+  "has_night_table": false
 }

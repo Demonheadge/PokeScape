@@ -384,5 +384,6 @@
       "item": "ITEM_PRAYER_POTION",
       "flag": "FLAG_HIDDEN_ITEM_TEMP_4"
     }
-  ]
+  ],
+  "has_night_table": false
 }

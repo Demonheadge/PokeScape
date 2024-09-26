@@ -267,5 +267,6 @@
       "item": "ITEM_STAFF_OF_EARTH",
       "flag": "FLAG_TEMP_1"
     }
-  ]
+  ],
+  "has_night_table": false
 }

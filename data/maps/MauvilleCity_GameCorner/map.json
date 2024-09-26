@@ -383,5 +383,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Roulette_EventScript_Table2"
     }
-  ]
+  ],
+  "has_night_table": false
 }

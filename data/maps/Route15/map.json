@@ -339,5 +339,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ROUTE15_SIGNPOST"
     }
-  ]
+  ],
+  "has_night_table": false
 }

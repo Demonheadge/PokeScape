@@ -131,5 +131,6 @@
       "item": "ITEM_POTION_ATT",
       "flag": "FLAG_HIDDEN_ITEM_TEMP_18"
     }
-  ]
+  ],
+  "has_night_table": false
 }

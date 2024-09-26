@@ -143,5 +143,6 @@
       "item": "ITEM_DRAGONBANE_POUCH",
       "flag": "FLAG_HIDDEN_ITEM_TEMP_20"
     }
-  ]
+  ],
+  "has_night_table": false
 }

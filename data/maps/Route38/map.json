@@ -325,5 +325,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LOCKED_DOOR_RAG_AND_BONE"
     }
-  ]
+  ],
+  "has_night_table": false
 }

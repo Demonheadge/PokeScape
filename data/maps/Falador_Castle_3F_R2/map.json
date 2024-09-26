@@ -93,5 +93,6 @@
       "item": "ITEM_CABBAGE",
       "flag": "FLAG_HIDDEN_ITEM_TEMP_1"
     }
-  ]
+  ],
+  "has_night_table": false
 }

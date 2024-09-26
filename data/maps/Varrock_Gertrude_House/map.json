@@ -114,5 +114,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NPC_VARROCK_CAT_INFO"
     }
-  ]
+  ],
+  "has_night_table": false
 }

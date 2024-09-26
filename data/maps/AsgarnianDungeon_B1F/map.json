@@ -144,5 +144,6 @@
       "item": "ITEM_STAT_BEER",
       "flag": "FLAG_HIDDEN_ITEM_AsgarnianDungeon_3"
     }
-  ]
+  ],
+  "has_night_table": false
 }

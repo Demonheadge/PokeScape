@@ -240,5 +240,6 @@
       "item": "ITEM_PINEAPPLE_PUNCH",
       "flag": "FLAG_HIDDEN_FLAG_ITEM_RimmingtonMines_1"
     }
-  ]
+  ],
+  "has_night_table": false
 }

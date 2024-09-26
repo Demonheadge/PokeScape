@@ -176,5 +176,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "HAMLET"
     }
-  ]
+  ],
+  "has_night_table": false
 }

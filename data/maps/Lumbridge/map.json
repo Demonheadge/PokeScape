@@ -775,5 +775,6 @@
       "item": "ITEM_STAT_BEER",
       "flag": "FLAG_HIDDEN_ITEM_LUMBRIDGE_BEER"
     }
-  ]
+  ],
+  "has_night_table": false
 }

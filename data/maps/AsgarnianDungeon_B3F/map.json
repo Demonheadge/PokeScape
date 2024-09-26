@@ -272,5 +272,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_FAKE_KEYS"
     }
-  ]
+  ],
+  "has_night_table": false
 }

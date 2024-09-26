@@ -25,5 +25,6 @@
   "bg_events": [
 
   ],
+  "has_night_table": false,
   "shared_scripts_map": "BattlePyramidSquare01"
 }

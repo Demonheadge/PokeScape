@@ -114,5 +114,6 @@
       "item": "ITEM_FULL_RESTORE",
       "flag": "FLAG_TEMP_11"
     }
-  ]
+  ],
+  "has_night_table": false
 }

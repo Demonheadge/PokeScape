@@ -119,5 +119,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "STRANGE_MURAL_FROST"
     }
-  ]
+  ],
+  "has_night_table": false
 }

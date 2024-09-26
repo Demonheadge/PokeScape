@@ -151,7 +151,8 @@ string generate_map_header_text(Json map_data, Json layouts_data) {
              << "allow_cycling=" << json_to_string(map_data, "allow_cycling") << ", "
              << "allow_escaping=" << json_to_string(map_data, "allow_escaping") << ", "
              << "allow_running=" << json_to_string(map_data, "allow_running") << ", "
-             << "show_map_name=" << json_to_string(map_data, "show_map_name") << "\n";
+             << "show_map_name=" << json_to_string(map_data, "show_map_name") << ", "
+             << "has_night_table=" << json_to_string(map_data, "has_night_table") << "\n";
 
     if (version == "firered")
         text << "\t.byte " << json_to_string(map_data, "floor_number") << "\n";

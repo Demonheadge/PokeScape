@@ -652,5 +652,6 @@
       "item": "ITEM_REPEL_TEA_2",
       "flag": "FLAG_HIDDEN_ITEM_TEMP_13"
     }
-  ]
+  ],
+  "has_night_table": false
 }

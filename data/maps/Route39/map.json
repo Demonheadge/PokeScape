@@ -425,5 +425,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "TZHAAR_SIGNPOST_2"
     }
-  ]
+  ],
+  "has_night_table": false
 }

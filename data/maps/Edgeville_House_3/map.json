@@ -137,5 +137,6 @@
       "item": "ITEM_CAKE",
       "flag": "FLAG_TEMP_1"
     }
-  ]
+  ],
+  "has_night_table": false
 }

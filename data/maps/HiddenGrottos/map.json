@@ -230,5 +230,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "HIDDEN_GROTTO_RESET"
     }
-  ]
+  ],
+  "has_night_table": false
 }

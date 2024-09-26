@@ -341,5 +341,6 @@
       "item": "ITEM_SPIRIT_SHARD",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE29_3"
     }
-  ]
+  ],
+  "has_night_table": false
 }

@@ -296,5 +296,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SCURRIUS_CAULDRON"
     }
-  ]
+  ],
+  "has_night_table": false
 }

@@ -368,5 +368,6 @@
       "item": "ITEM_SPIRIT_SHARD",
       "flag": "FLAG_HIDDEN_ITEM_TEMP_4"
     }
-  ]
+  ],
+  "has_night_table": false
 }

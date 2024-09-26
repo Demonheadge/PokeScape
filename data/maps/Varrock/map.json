@@ -935,5 +935,6 @@
       "item": "ITEM_PURPLE_SWEETS",
       "flag": "FLAG_HIDDEN_ITEM_VARROCK_1"
     }
-  ]
+  ],
+  "has_night_table": false
 }
