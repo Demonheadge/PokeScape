@@ -240,3 +240,86 @@ script EventScript_Locked_Door
 	release
 	end
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+script Friendship_Checker_Pikkupstix {
+
+	lock
+	faceplayer
+	namebox ("Pikkupstix")
+	//msgbox(format("Would you like me to check friendship?"))
+	msgbox(format("I can speak with monsters.\pHmm…"))
+	specialvar (VAR_RESULT, GetLeadMonFriendshipScore)
+	switch(var(VAR_RESULT)) {
+		case 0:
+			msgbox(format("It says that it hates you and everything you stand for.\pIt doesnt want to be your friend and that you're bad and should feel bad.\pTheres also a lot about your mother I left out.\pOverall im not sure if this monster likes you at all."))
+    		msgbox(format("FRIENDSHIP is: FRIENDSHIP NONE."))
+		case 1:
+			msgbox(format("This monster says it doesn't trust you and that if you wanted to be it's friend, why do you hardly bond with it?\pMaybe it thinks it would be better put in the wild like this?"))
+    		msgbox(format("FRIENDSHIP is: FRIENDSHIP 1 TO 49."))
+		case 2:
+			msgbox(format("I'm picking up that this monster is trying to give you a chance but doesnt quite trust you just yet.\pMaybe the two of you should bond a little more?"))
+    		msgbox(format("FRIENDSHIP is: FRIENDSHIP 50 TO 99."))
+		case 3:
+			msgbox(format("The monster doesnt really mention you.\pIt had a lot to say, just not about you.\pI guess you could say your relationship is very neutral and lukewarm?"))
+    		msgbox(format("FRIENDSHIP is: FRIENDSHIP 100 TO 149."))
+		case 4:	
+			msgbox(format("It seems like this monster is quite fond of you.\pYou must have made a good impression on it.\pIt wishes to get to know you even better though."))
+    		msgbox(format("FRIENDSHIP is: FRIENDSHIP 150 TO 199."))
+		case 5:
+			msgbox(format("This monster has a lot to say about you.\pQuite a lot in fact, it seems positivly enchanted by you.\pSurely no other word than best of friends could describe the bond the two of you share.\pIt makes me happy to see how well the two of you are faring."))
+    		msgbox(format("FRIENDSHIP is: FRIENDSHIP 200 TO 254."))
+		case 6:
+			msgbox(format("AdoresYou"))
+    		msgbox(format("FRIENDSHIP is: FRIENDSHIP MAX."))
+	}
+	closemessage
+	release
+	end	
+}
+
+script NPC_JITTERBUG
+{
+	lock
+	faceplayer
+	namebox ("Jitterbug")
+	msgbox(format("Hey, don't mind me.\pI'm just waiting for Demonheadge to start the Ruby Ring quest."))
+	hidenamebox
+	closemessage
+	release
+	end
+}
+script NPC_SUDOBASH
+{
+	lock
+	faceplayer
+	namebox ("Sudo Bash")
+	msgbox(format("AUHWH12319VNISNVJNJ010101001 RUBY 101021 RING.\pHurry up and make our quest."))
+	hidenamebox
+	closemessage
+	release
+	end
+}
+
+
+
+
+
+
+
+
+
+
+
+

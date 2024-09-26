@@ -463,7 +463,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TRIBEMEN_3 0x112D
 #define OBJ_EVENT_PAL_MONK_1 0x112E
 #define OBJ_EVENT_PAL_MONK_2 0x112F
-#define OBJ_EVENT_PAL_DRUID_1 0x1130
+
 #define OBJ_EVENT_PAL_DRUID_2 0x1131
 #define OBJ_EVENT_PAL_DRUID_3 0x1132
 #define OBJ_EVENT_PAL_MAGGIE 0x1133
@@ -688,6 +688,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_RED_DRAGON        0x1187
 #define OBJ_EVENT_PAL_PIRATE_SHIP       0x1249
 #define OBJ_EVENT_PAL_TZHAAR            0x114E
+#define OBJ_EVENT_PAL_DRUID_1           0x1130
 
 
 
@@ -755,7 +756,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Tribemen_3, OBJ_EVENT_PAL_TRIBEMEN_3},
     {gObjectEventPalette_Monk_1, OBJ_EVENT_PAL_MONK_1},
     {gObjectEventPalette_Monk_2, OBJ_EVENT_PAL_MONK_2},
-    {gObjectEventPalette_Druid_1, OBJ_EVENT_PAL_DRUID_1},
+    
     {gObjectEventPalette_Druid_2, OBJ_EVENT_PAL_DRUID_2},
     {gObjectEventPalette_Druid_3, OBJ_EVENT_PAL_DRUID_3},
     {gObjectEventPalette_Maggie, OBJ_EVENT_PAL_MAGGIE},
@@ -1038,6 +1039,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_RED_DRAGON, OBJ_EVENT_PAL_RED_DRAGON},
     {gObjectEventPalette_PIRATE_SHIP, OBJ_EVENT_PAL_PIRATE_SHIP},
     {gObjectEventPalette_TZHAAR, OBJ_EVENT_PAL_TZHAAR},
+    {gObjectEventPalette_Druid_1, OBJ_EVENT_PAL_DRUID_1},
     
     
     

@@ -215,6 +215,83 @@ EventScript_Locked_Door::
 	end
 
 
+Friendship_Checker_Pikkupstix::
+	lock
+	faceplayer
+	namebox Friendship_Checker_Pikkupstix_Text_0
+	msgbox Friendship_Checker_Pikkupstix_Text_1
+	specialvar VAR_RESULT, GetLeadMonFriendshipScore
+	switch VAR_RESULT
+	case 0, Friendship_Checker_Pikkupstix_3
+	case 1, Friendship_Checker_Pikkupstix_4
+	case 2, Friendship_Checker_Pikkupstix_5
+	case 3, Friendship_Checker_Pikkupstix_6
+	case 4, Friendship_Checker_Pikkupstix_7
+	case 5, Friendship_Checker_Pikkupstix_8
+	case 6, Friendship_Checker_Pikkupstix_9
+Friendship_Checker_Pikkupstix_1:
+	closemessage
+	release
+	end
+
+Friendship_Checker_Pikkupstix_3:
+	msgbox Friendship_Checker_Pikkupstix_Text_2
+	msgbox Friendship_Checker_Pikkupstix_Text_3
+	goto Friendship_Checker_Pikkupstix_1
+
+Friendship_Checker_Pikkupstix_4:
+	msgbox Friendship_Checker_Pikkupstix_Text_4
+	msgbox Friendship_Checker_Pikkupstix_Text_5
+	goto Friendship_Checker_Pikkupstix_1
+
+Friendship_Checker_Pikkupstix_5:
+	msgbox Friendship_Checker_Pikkupstix_Text_6
+	msgbox Friendship_Checker_Pikkupstix_Text_7
+	goto Friendship_Checker_Pikkupstix_1
+
+Friendship_Checker_Pikkupstix_6:
+	msgbox Friendship_Checker_Pikkupstix_Text_8
+	msgbox Friendship_Checker_Pikkupstix_Text_9
+	goto Friendship_Checker_Pikkupstix_1
+
+Friendship_Checker_Pikkupstix_7:
+	msgbox Friendship_Checker_Pikkupstix_Text_10
+	msgbox Friendship_Checker_Pikkupstix_Text_11
+	goto Friendship_Checker_Pikkupstix_1
+
+Friendship_Checker_Pikkupstix_8:
+	msgbox Friendship_Checker_Pikkupstix_Text_12
+	msgbox Friendship_Checker_Pikkupstix_Text_13
+	goto Friendship_Checker_Pikkupstix_1
+
+Friendship_Checker_Pikkupstix_9:
+	msgbox Friendship_Checker_Pikkupstix_Text_14
+	msgbox Friendship_Checker_Pikkupstix_Text_15
+	goto Friendship_Checker_Pikkupstix_1
+
+
+NPC_JITTERBUG::
+	lock
+	faceplayer
+	namebox NPC_JITTERBUG_Text_0
+	msgbox NPC_JITTERBUG_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+
+NPC_SUDOBASH::
+	lock
+	faceplayer
+	namebox NPC_SUDOBASH_Text_0
+	msgbox NPC_SUDOBASH_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+
 BLOCK_LumbridgeSwamp_HAM_Text_0:
 	.string "Pink Man$"
 
@@ -333,3 +410,98 @@ EventScript_RestBed_Text_0:
 
 EventScript_Locked_Door_Text_0:
 	.string "It is locked.$"
+
+Friendship_Checker_Pikkupstix_Text_0:
+	.string "Pikkupstix$"
+
+Friendship_Checker_Pikkupstix_Text_1:
+	.string "I can speak with monsters.\p"
+	.string "Hmm…$"
+
+Friendship_Checker_Pikkupstix_Text_2:
+	.string "It says that it hates you and\n"
+	.string "everything you stand for.\p"
+	.string "It doesnt want to be your friend and\n"
+	.string "that you're bad and should feel bad.\p"
+	.string "Theres also a lot about your mother I\n"
+	.string "left out.\p"
+	.string "Overall im not sure if this monster likes\n"
+	.string "you at all.$"
+
+Friendship_Checker_Pikkupstix_Text_3:
+	.string "FRIENDSHIP is: FRIENDSHIP NONE.$"
+
+Friendship_Checker_Pikkupstix_Text_4:
+	.string "This monster says it doesn't trust you\n"
+	.string "and that if you wanted to be it's\l"
+	.string "friend, why do you hardly bond with it?\p"
+	.string "Maybe it thinks it would be better put\n"
+	.string "in the wild like this?$"
+
+Friendship_Checker_Pikkupstix_Text_5:
+	.string "FRIENDSHIP is: FRIENDSHIP 1 TO 49.$"
+
+Friendship_Checker_Pikkupstix_Text_6:
+	.string "I'm picking up that this monster is\n"
+	.string "trying to give you a chance but doesnt\l"
+	.string "quite trust you just yet.\p"
+	.string "Maybe the two of you should bond a\n"
+	.string "little more?$"
+
+Friendship_Checker_Pikkupstix_Text_7:
+	.string "FRIENDSHIP is: FRIENDSHIP 50 TO 99.$"
+
+Friendship_Checker_Pikkupstix_Text_8:
+	.string "The monster doesnt really mention you.\p"
+	.string "It had a lot to say, just not about you.\p"
+	.string "I guess you could say your relationship\n"
+	.string "is very neutral and lukewarm?$"
+
+Friendship_Checker_Pikkupstix_Text_9:
+	.string "FRIENDSHIP is: FRIENDSHIP 100 TO 149.$"
+
+Friendship_Checker_Pikkupstix_Text_10:
+	.string "It seems like this monster is quite fond\n"
+	.string "of you.\p"
+	.string "You must have made a good impression on\n"
+	.string "it.\p"
+	.string "It wishes to get to know you even\n"
+	.string "better though.$"
+
+Friendship_Checker_Pikkupstix_Text_11:
+	.string "FRIENDSHIP is: FRIENDSHIP 150 TO 199.$"
+
+Friendship_Checker_Pikkupstix_Text_12:
+	.string "This monster has a lot to say about you.\p"
+	.string "Quite a lot in fact, it seems positivly\n"
+	.string "enchanted by you.\p"
+	.string "Surely no other word than best of\n"
+	.string "friends could describe the bond the two\l"
+	.string "of you share.\p"
+	.string "It makes me happy to see how well the\n"
+	.string "two of you are faring.$"
+
+Friendship_Checker_Pikkupstix_Text_13:
+	.string "FRIENDSHIP is: FRIENDSHIP 200 TO 254.$"
+
+Friendship_Checker_Pikkupstix_Text_14:
+	.string "AdoresYou$"
+
+Friendship_Checker_Pikkupstix_Text_15:
+	.string "FRIENDSHIP is: FRIENDSHIP MAX.$"
+
+NPC_JITTERBUG_Text_0:
+	.string "Jitterbug$"
+
+NPC_JITTERBUG_Text_1:
+	.string "Hey, don't mind me.\p"
+	.string "I'm just waiting for Demonheadge to\n"
+	.string "start the Ruby Ring quest.$"
+
+NPC_SUDOBASH_Text_0:
+	.string "Sudo Bash$"
+
+NPC_SUDOBASH_Text_1:
+	.string "AUHWH12319VNISNVJNJ010101001 RUBY\n"
+	.string "101021 RING.\p"
+	.string "Hurry up and make our quest.$"

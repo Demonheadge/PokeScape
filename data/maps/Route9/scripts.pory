@@ -153,3 +153,11 @@ script BATTLE_ROUTE9_CHEF{
     msgbox(format("Slimes are pretty neat, I use them in my cooking sometimes."))
     release
 }
+
+
+
+
+
+
+
+

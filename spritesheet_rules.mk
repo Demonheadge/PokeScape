@@ -1755,3 +1755,9 @@ $(OBJEVENTGFXDIR)/pokescape_overworlds/tzhaar_champion.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/pokescape_overworlds/ket_dill.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/pokescape_overworlds/jitterbug.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+	
+$(OBJEVENTGFXDIR)/pokescape_overworlds/pikkupstix.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
