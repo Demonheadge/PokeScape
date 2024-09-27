@@ -884,6 +884,18 @@ static const struct MenuAction MultichoiceList_AXES[] =
     {gText_PICKAXE},
     {gText_AXE},
 };
+static const struct MenuAction MultichoiceList_SANDWICH[] =
+{
+    {gText_BAGUETTE},
+    {gText_BAGUETTE},
+    {gText_BAGUETTE},
+    {gText_BAGUETTE},
+    {gText_BAGUETTE},
+    {gText_TRIANGLE_SANDWICH},
+};
+
+
+
 
 static const struct MenuAction MultichoiceList_Exit[] =
 {
@@ -1027,6 +1039,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_SLAYER_MASTER]			   = MULTICHOICE(MultichoiceList_SLAYER_MASTER),
     [MULTI_SCURRIUS]			       = MULTICHOICE(MultichoiceList_SCURRIUS),
     [MULTI_AXES]			           = MULTICHOICE(MultichoiceList_AXES),
+    [MULTI_SANDWICH]			       = MULTICHOICE(MultichoiceList_SANDWICH),
 };
 
 const u8 *const gStdStrings[] =

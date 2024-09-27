@@ -138,5 +138,5 @@ const u8 gTrainerClassNames[][13] = {
     [TRAINER_CLASS_JAILER] = _("JAILER"),
     [TRAINER_CLASS_FORGOTTEN] = _("FORGOTTEN"),
     [TRAINER_CLASS_RANGER] = _("RANGER"),
-    
+    [TRAINER_CLASS_SANDWICH] = _("SANDWICH"),
 };

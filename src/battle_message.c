@@ -858,6 +858,16 @@ static const u8 sText_CountDraynor_BeforeFirstTurn[] = _("I will drain you dry!{
 static const u8 sText_CountDraynor_SwitchIn[] = _("We fight till the last drop.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_CountDraynor_PlayerLost[] = _("Pathetic human.{PAUSE_UNTIL_PRESS}");
 
+static const u8 sText_SandwichLady_BeforeFirstTurn[] = _("You should have picked the\ntriangle sandwich.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_SandwichLady_SwitchIn[] = _("Oh dear…\pIt appears I'm down to\nmy last monster.{PAUSE_UNTIL_PRESS}");
+static const u8 sText_SandwichLady_LastHalfHp[] = _("I'm down to my last\nbaguette!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_SandwichLady_FirstSuperEffectiveHit[] = _("Hey, I didn't say you could\ndo that!{PAUSE_UNTIL_PRESS}");
+
+static const u8 sText_AntiDragonShieldReducedDamage[] = _("The Dragonfire Shield reduced\nthe incoming damage.");
+static const u8 sText_SpiritShieldReducedDamage[] = _("The Spirit Shield reduced\nthe incoming damage.");
+
+static const u8 sText_EatingSandwich[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} happily\nconsumes the {B_LAST_ITEM}.\p{B_BUFF1} was boosted.\nHP was restored.");
+
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
@@ -1569,8 +1579,17 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_COUNTDRAYNOR_MESSAGE_1 - BATTLESTRINGS_TABLE_START] = sText_CountDraynor_BeforeFirstTurn,
     [STRINGID_COUNTDRAYNOR_MESSAGE_2 - BATTLESTRINGS_TABLE_START] = sText_CountDraynor_SwitchIn,
     [STRINGID_COUNTDRAYNOR_MESSAGE_3 - BATTLESTRINGS_TABLE_START] = sText_CountDraynor_PlayerLost,
-    
 
+    [STRINGID_SANDWICHLADY_MESSAGE_1 - BATTLESTRINGS_TABLE_START] = sText_SandwichLady_BeforeFirstTurn,
+    [STRINGID_SANDWICHLADY_MESSAGE_2 - BATTLESTRINGS_TABLE_START] = sText_SandwichLady_SwitchIn,
+    [STRINGID_SANDWICHLADY_MESSAGE_3 - BATTLESTRINGS_TABLE_START] = sText_SandwichLady_LastHalfHp,
+    [STRINGID_SANDWICHLADY_MESSAGE_4 - BATTLESTRINGS_TABLE_START] = sText_SandwichLady_FirstSuperEffectiveHit,
+
+    [STRINGID_ANTIDRAGONSHIELDREDUCEDAMAGE - BATTLESTRINGS_TABLE_START] = sText_AntiDragonShieldReducedDamage,
+    [STRINGID_SPIRITSHIELDREDUCEDAMAGE - BATTLESTRINGS_TABLE_START] = sText_SpiritShieldReducedDamage,
+    [STRINGID_EATINGSANDWICH - BATTLESTRINGS_TABLE_START] = sText_EatingSandwich,
+    
+    
 };
 
 const u16 gTrainerUsedItemStringIds[] =
@@ -4187,7 +4206,18 @@ static const struct TrainerSlide sTrainerSlides[] =
         .msgLastSwitchIn = sText_CountDraynor_SwitchIn,
         .msgPlayerLost = sText_CountDraynor_PlayerLost,
     },
+
+    {
+        .trainerId = TRAINER_SANDWICH_LADY_1,
+        .msgBeforeFirstTurn = sText_SandwichLady_BeforeFirstTurn, //You should have picked the triangle sandwich.
+        .msgLastSwitchIn = sText_SandwichLady_SwitchIn, //Oh dear…
+        .msgLastHalfHp = sText_SandwichLady_LastHalfHp, //I'm down to my last baguette!
+        .msgFirstSuperEffectiveHit = sText_SandwichLady_FirstSuperEffectiveHit, //Hey, I didn't say you could do that!
+    },
+
+    
 };
+
 
 
 

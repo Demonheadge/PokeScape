@@ -3131,6 +3131,9 @@ extern const u8 gText_BROWN_WATER[];
 extern const u8 gText_PICKAXE[];
 extern const u8 gText_AXE[];
 
+extern const u8 gText_BAGUETTE[];
+extern const u8 gText_TRIANGLE_SANDWICH[];
+
 //pokescape cheat menu
 extern const u8 gText_CheatEvolutionShop[];
 extern const u8 gText_CheatPouchShop[];

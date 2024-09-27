@@ -6298,6 +6298,8 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PIKE_QUEEN:
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
+        case TRAINER_CLASS_SANDWICH:
+            return MUS_PS_VS_ORCHY;
         default:
             return MUS_PS_VS_TRAINER_P2P; //POKESCAPE
         }

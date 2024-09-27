@@ -114,7 +114,7 @@
 #define FLAG_DUNGEONEERING_DOOR_ROUTE29      0x54  // FLAG_UNUSED_0x054 Unused Flag
 #define FLAG_ABYSS_PORTALS_ENABLED           0x55  // FLAG_UNUSED_0x055 Unused Flag 
 #define FLAG_HAIRDRESSER                     0x56
-#define FLAG_MET_RIVAL_MOM                   0x57
+#define FLAG_SANDWICH_LADY                   0x57 //FLAG_MET_RIVAL_MOM
 #define FLAG_BIRCH_AIDE_MET                  0x58
 #define FLAG_DECLINED_BIKE                   0x59
 #define FLAG_RECEIVED_BIKE                   0x5A

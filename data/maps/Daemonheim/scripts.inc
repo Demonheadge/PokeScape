@@ -6,6 +6,7 @@ Daemonheim_MapScripts::
 Daemonheim_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 6
 	call Daemonheim_STATE
+	call RANDOM_EVENT_SANDWICH_LADY
 	return
 
 Daemonheim_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:

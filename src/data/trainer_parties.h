@@ -7396,3 +7396,73 @@ static const struct TrainerMon sParty_TZHAAR_FIGHTCAVES_LOW_KET_3[] = {
     .species = SPECIES_TZ_KEK,
     },
 };
+
+
+
+static const struct TrainerMon sParty_Hellwind[] = {
+    {
+    .lvl = 40,
+    .species = SPECIES_ZAMOHAWK,
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_HELLPUPPY,
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_CHICKEN_DIVING_FORM,
+    .nickname = COMPOUND_STRING("KFC"),
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_RAT_HELL_FORM,
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_SPIRIT_RANGER,
+    }
+};
+
+
+static const struct TrainerMon sParty_SANDWICH_LADY_1[] = {
+    {
+    .lvl = 40,
+    .species = SPECIES_ANCHOVY_PIZZA_FORM,
+    .heldItem = ITEM_SARADOMIN_BREW,
+    .ev = TRAINER_PARTY_EVS(252, 0, 100, 100, 4, 52),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    //.moves = {MOVE_SANDSTORM, MOVE_SPIKES, MOVE_CRABHAMMER, MOVE_ROCK_WRECKER}
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_COW_HARLEQUIN_FORM,
+    .heldItem = ITEM_GODSWORD,
+    .ev = TRAINER_PARTY_EVS(252, 0, 100, 100, 4, 52),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    //.moves = {MOVE_SANDSTORM, MOVE_SPIKES, MOVE_CRABHAMMER, MOVE_ROCK_WRECKER}
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_FLAMBEED,
+    .heldItem = ITEM_SARADOMIN_BREW,
+    .ev = TRAINER_PARTY_EVS(252, 0, 100, 100, 4, 52),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    //.moves = {MOVE_SANDSTORM, MOVE_SPIKES, MOVE_CRABHAMMER, MOVE_ROCK_WRECKER}
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_CHOCATRICE,
+    .heldItem = ITEM_SARADOMIN_BREW,
+    .ev = TRAINER_PARTY_EVS(252, 0, 100, 100, 4, 52),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    //.moves = {MOVE_SANDSTORM, MOVE_SPIKES, MOVE_CRABHAMMER, MOVE_ROCK_WRECKER}
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_YAK_SNACK_FORM,
+    .heldItem = ITEM_GODSWORD,
+    .ev = TRAINER_PARTY_EVS(252, 0, 100, 100, 4, 52),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    //.moves = {MOVE_SANDSTORM, MOVE_SPIKES, MOVE_CRABHAMMER, MOVE_ROCK_WRECKER}
+    },
+};

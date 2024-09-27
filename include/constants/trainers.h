@@ -272,6 +272,7 @@
 #define TRAINER_PIC_worldguardian				251
 #define TRAINER_PIC_sagittarian				    252
 #define TRAINER_PIC_tzhaar_ket				    253
+#define TRAINER_PIC_sandwich_lady   		    254
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -596,6 +597,9 @@
 #define TRAINER_CLASS_JAILER		    0x87
 #define TRAINER_CLASS_FORGOTTEN         0x88
 #define TRAINER_CLASS_RANGER            0x89
+#define TRAINER_CLASS_SANDWICH          0x8a
+
+
 
 #define TRAINER_CLASS_NUM       		0x8A
 

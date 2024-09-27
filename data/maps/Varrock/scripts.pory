@@ -1,7 +1,10 @@
+const OBJ_EVENT_ID_SANDWICH_LADY = 46
+
 mapscripts Varrock_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_VISITED_VARROCK)
         setvar(VAR_EVOLUTION_MAP_STATE, 16) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+        call(RANDOM_EVENT_SANDWICH_LADY)
         if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
     	{
     	}
@@ -24,6 +27,74 @@ mapscripts Varrock_MapScripts {
 
 script VARROCK_STATE {
     setmetatile(9, 26, METATILE_PokeScapeOutdoors_Door_GeneralStore_L, 0)
+}
+
+
+
+
+script RANDOM_EVENT_SANDWICH_LADY {
+	//Random chance for SANDWICH LADY Event to spawn in MAP.
+	random(30)
+	if (var(VAR_RESULT) == 1) {
+		clearflag(FLAG_SANDWICH_LADY)
+		addobject(OBJ_EVENT_ID_SANDWICH_LADY)
+	}
+	else {
+		setflag(FLAG_SANDWICH_LADY)
+		removeobject(OBJ_EVENT_ID_SANDWICH_LADY)
+	}
+	return
+}
+
+
+script NPC_SANDWICH_LADY {
+    lock
+    faceplayer
+    namebox("Sandwich Lady")
+    msgbox(format("Hello deary, you look hungry.\pHere have the triangle sandwich on me."))
+    hidenamebox
+	closemessage
+
+    msgbox(format("What do you take?"))
+    multichoicedefault (1, 0, MULTI_SANDWICH, 0, 1)
+    switch (var(VAR_RESULT))
+    {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+            giveitem(ITEM_BAGUETTE_SANDWICH, 1)
+            namebox("Sandwich Lady")
+            msgbox(format("Hey!\nI didn't say you could take that one!"))
+            call(BATTLE_SANDWICH_LADY)
+            namebox("Sandwich Lady")
+            msgbox(format("How rude!\pBe off with you."))
+            hidenamebox
+            closemessage
+        case 5:
+            namebox("Sandwich Lady")
+            msgbox(format("Here you go sweety."))
+            hidenamebox
+            closemessage
+            giveitem(ITEM_TRIANGLE_SANDWICH, 1)
+            namebox("Sandwich Lady")
+            msgbox(format("Hope that fills you up!\pToodle-oo!"))
+            hidenamebox
+            closemessage
+    }
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(VAR_LAST_TALKED)
+    setflag(FLAG_SANDWICH_LADY)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    release
+    end
+}
+
+script BATTLE_SANDWICH_LADY {
+    cleartrainerflag(TRAINER_SANDWICH_LADY_1)
+    trainerbattle_no_intro(TRAINER_SANDWICH_LADY_1, msgbox(format("My poor sandwiches…")))
+    return
 }
 
 

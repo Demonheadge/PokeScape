@@ -686,12 +686,12 @@ const u8 *const gItemEffectTable[ITEMS_COUNT] =
     [ITEM_CHOCOLATE_MILK]               = gItemEffect_EvoItem,
 
     // Medicine
-    [ITEM_BREAD]             = gItemEffect_Potion,
-    [ITEM_CAKE]       = gItemEffect_SuperPotion,
-    [ITEM_CHOCOLATE_CAKE]       = gItemEffect_HyperPotion,
-    //[ITEM_MAX_POTION]         = gItemEffect_MaxPotion,
+    [ITEM_BREAD]                        = gItemEffect_Potion,
+    [ITEM_CAKE]                         = gItemEffect_SuperPotion,
+    [ITEM_CHOCOLATE_CAKE]               = gItemEffect_HyperPotion,
+    //[ITEM_TRIANGLE_SANDWICH]            = gItemEffect_MaxPotion,
     //[ITEM_FULL_RESTORE]       = gItemEffect_FullRestore,
-    [ITEM_CABBAGE]             = gItemEffect_Revive,
+    [ITEM_CABBAGE]                      = gItemEffect_Revive,
     //[ITEM_MAX_REVIVE]         = gItemEffect_MaxRevive,
     //[ITEM_FRESH_WATER]        = gItemEffect_FreshWater,
     //[ITEM_SODA_POP]           = gItemEffect_SodaPop,
@@ -712,7 +712,7 @@ const u8 *const gItemEffectTable[ITEMS_COUNT] =
     //[ITEM_ELIXIR]             = gItemEffect_Elixir,
     //[ITEM_MAX_ELIXIR]         = gItemEffect_MaxElixir,
     //[ITEM_BERRY_JUICE]        = gItemEffect_BerryJuice,
-    //[ITEM_SACRED_ASH]         = gItemEffect_SacredAsh,
+    //[ITEM_BAGUETTE]                     = gItemEffect_SacredAsh,
     //[ITEM_SWEET_HEART]        = gItemEffect_Potion,
     //[ITEM_MAX_HONEY]          = gItemEffect_MaxRevive,
 

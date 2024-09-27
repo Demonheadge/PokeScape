@@ -588,7 +588,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("DRAYNOR"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_ACE_POKEMON | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_ACE_POKEMON | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_STALL,
         .party = TRAINER_PARTY(sParty_DRAYNOR_MANOR_COUNT_DRAYNOR),
     },
 
@@ -1593,7 +1593,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Hairdresser"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON,
+        .aiFlags = AI_FLAG_WILL_SUICIDE | AI_FLAG_HP_AWARE | AI_FLAG_ACE_POKEMON,
         .party = TRAINER_PARTY(sParty_FALADOR_HAIRDRESSER),
     },
 
@@ -5028,6 +5028,51 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_TZHAAR_FIGHTCAVES_LOW_KET_3),
     },
 
+    [TRAINER_HELLWIND] =
+    {
+        .trainerClass = TRAINER_CLASS_RSMVer,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_rsmv_m,
+        .trainerName = _("Hellwind"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_Hellwind), 
+    },
+
+    [TRAINER_SANDWICH_LADY_1] =
+    {
+        .trainerClass = TRAINER_CLASS_SANDWICH,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_sandwich_lady,
+        .trainerName = _("LADY"),
+        .items = {ITEM_TRIANGLE_SANDWICH, ITEM_TRIANGLE_SANDWICH, ITEM_TRIANGLE_SANDWICH, ITEM_TRIANGLE_SANDWICH},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_STALL | AI_FLAG_ACE_POKEMON | AI_FLAG_HP_AWARE | AI_FLAG_OMNISCIENT,
+        .party = TRAINER_PARTY(sParty_SANDWICH_LADY_1), 
+    },
+
     
 
+
+
+
+
+/*
+    #define TRAINER_HELLWIND                                445
+#define TRAINER_HYPER_STAN                              446
+#define TRAINER_LOPENDEBANK                             447
+#define TRAINER_CHASE                                   448
+#define TRAINER_ORCHY                                   449
+#define TRAINER_MRKALIUS                                450
+#define TRAINER_RYU_SAINT                               451
+#define TRAINER_IMCANDOBRETT                            452
+#define TRAINER_GENTLESHEN                              453
+#define TRAINER_PIPPINSMITH                             454
+#define TRAINER_SUDO_BASH                               455
+#define TRAINER_JITTERBUG                               456
+#define TRAINER_LUKEINLIGHT                             457
+#define TRAINER_A_TWISTED_SMILE                         458
+#define TRAINER_SANDWICH_LADY_1                         459
+*/
 };

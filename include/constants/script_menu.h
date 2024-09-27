@@ -138,6 +138,8 @@
 #define MULTI_SLAYER_MASTER                124
 #define MULTI_SCURRIUS                     125
 #define MULTI_AXES                         126
+#define MULTI_SANDWICH                     127
+
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

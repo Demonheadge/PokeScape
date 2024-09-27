@@ -448,8 +448,21 @@
 #define TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_3             443
 
 #define TRAINER_ROUTE3_TRAINER_2                        444
-
-
+#define TRAINER_HELLWIND                                445
+#define TRAINER_HYPER_STAN                              446
+#define TRAINER_LOPENDEBANK                             447
+#define TRAINER_CHASE                                   448
+#define TRAINER_ORCHY                                   449
+#define TRAINER_MRKALIUS                                450
+#define TRAINER_RYU_SAINT                               451
+#define TRAINER_IMCANDOBRETT                            452
+#define TRAINER_GENTLESHEN                              453
+#define TRAINER_PIPPINSMITH                             454
+#define TRAINER_SUDO_BASH                               455
+#define TRAINER_JITTERBUG                               456
+#define TRAINER_LUKEINLIGHT                             457
+#define TRAINER_A_TWISTED_SMILE                         458
+#define TRAINER_SANDWICH_LADY_1                         459
 
 
 
@@ -458,7 +471,7 @@
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      (TRAINER_ROUTE3_TRAINER_2 + 1)
+#define TRAINERS_COUNT                      (TRAINER_HELLWIND + 1)
 #define MAX_TRAINERS_COUNT                  864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

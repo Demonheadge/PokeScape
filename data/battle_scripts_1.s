@@ -11009,3 +11009,26 @@ BattleScript_FireShieldEnds::
 	printstring STRINGID_FIRESHIELDENDS
 	waitmessage 0x40
 	return
+
+BattleScript_RandomStatDown::
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_RandomStatDown2
+BattleScript_RandomStatDown2::
+	setbyte cMULTISTRING_CHOOSER, 0x4
+	call BattleScript_StatUp
+	end2
+
+BattleScript_AntiDragonShieldReducedDamage::
+	printstring STRINGID_ANTIDRAGONSHIELDREDUCEDAMAGE
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
+BattleScript_SpiritShieldReducedDamage::
+	printstring STRINGID_SPIRITSHIELDREDUCEDAMAGE
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
+
+BattleScript_EatingSandwich::
+	printstring STRINGID_EATINGSANDWICH
+	waitmessage B_WAIT_TIME_LONG
+	end2

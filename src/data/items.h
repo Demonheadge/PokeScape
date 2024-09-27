@@ -11127,6 +11127,8 @@ const struct Item gItems[] =
         .battleUsage = EFFECT_ITEM_RESTORE_HP,
     },
 
+    
+
     [ITEM_FROGEEL_BURGER] =
     {
         .name = _("F.BURGER"),
@@ -13770,10 +13772,105 @@ const struct Item gItems[] =
 
 
 
+//SANDWICHES
 
+    [ITEM_TRIANGLE_SANDWICH] =
+    {
+        .name = _("T. Sandwich"),
+        .price = 20,
+        .holdEffect = HOLD_EFFECT_ATTACK_UP,
+        .holdEffectParam = 4,
+        .description = sLiechiBerryDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+    },
 
+    [ITEM_SQUARE_SANDWICH] =
+    {
+        .name = _("S. Sandwich"),
+        .price = 20,
+        .holdEffect = HOLD_EFFECT_DEFENSE_UP,
+        .holdEffectParam = 4,
+        .description = sGanlonBerryDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+    },
 
+    [ITEM_MEAT_PIE_SANDWICH] =
+    {
+        .name = _("Meat Pie"),
+        .price = 20,
+        .holdEffect = HOLD_EFFECT_SPEED_UP,
+        .holdEffectParam = 4,
+        .description = sSalacBerryDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+    },
 
+    [ITEM_BREAD_ROLL_SANDWICH] =
+    {
+        .name = _("Bread roll"),
+        .price = 20,
+        .holdEffect = HOLD_EFFECT_SP_ATTACK_UP,
+        .holdEffectParam = 4,
+        .description = sPetayaBerryDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+    },
+
+    [ITEM_DONUT_SANDWICH] =
+    {
+        .name = _("Donut"),
+        .price = 20,
+        .holdEffect = HOLD_EFFECT_SP_DEFENSE_UP,
+        .holdEffectParam = 4,
+        .description = sApicotBerryDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+    },
+
+    [ITEM_BAGUETTE_SANDWICH] =
+    {
+        .name = _("Baguette"),
+        .price = 20,
+        .holdEffect = HOLD_EFFECT_CRITICAL_UP,
+        .holdEffectParam = 4,
+        .description = sLansatBerryDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+    },
+
+    [ITEM_KEBAB_SANDWICH] =
+    {
+        .name = _("Kebab"),
+        .price = 20,
+        .holdEffect = HOLD_EFFECT_RANDOM_STAT_UP,
+        .holdEffectParam = 4,
+        .description = sStarfBerryDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+    },
 
 
 

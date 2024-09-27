@@ -5,6 +5,7 @@ Edgeville_MapScripts::
 Edgeville_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setflag FLAG_VISITED_EDGEVILLE
 	setvar VAR_EVOLUTION_MAP_STATE, 15
+	call RANDOM_EVENT_SANDWICH_LADY
 	return
 
 

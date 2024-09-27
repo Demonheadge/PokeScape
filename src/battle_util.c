@@ -1691,7 +1691,7 @@ u32 TrySetCantSelectMoveBattleScript(u32 battler)
             limitations++;
         }
     }
-    else if (holdEffect == HOLD_EFFECT_ASSAULT_VEST && IS_MOVE_STATUS(move) && move != MOVE_ME_FIRST)
+    else if ((holdEffect == HOLD_EFFECT_ASSAULT_VEST && IS_MOVE_STATUS(move) && move != MOVE_ME_FIRST) || (holdEffect == HOLD_EFFECT_SNELM && gBattleMoves[move].power == 0 && move != MOVE_ME_FIRST))
     {
         if (IsDynamaxed(gBattlerAttacker))
             gCurrentMove = MOVE_MAX_GUARD;
@@ -1794,7 +1794,7 @@ u8 CheckMoveLimitations(u32 battler, u8 unusableMoves, u16 check)
         else if (check & MOVE_LIMITATION_CHOICE_ITEM && HOLD_EFFECT_CHOICE(holdEffect) && *choicedMove != MOVE_NONE && *choicedMove != MOVE_UNAVAILABLE && *choicedMove != gBattleMons[battler].moves[i])
             unusableMoves |= gBitTable[i];
         // Assault Vest
-        else if (check & MOVE_LIMITATION_ASSAULT_VEST && holdEffect == HOLD_EFFECT_ASSAULT_VEST && IS_MOVE_STATUS(gBattleMons[battler].moves[i]) && gBattleMons[battler].moves[i] != MOVE_ME_FIRST)
+        else if (check & MOVE_LIMITATION_ASSAULT_VEST && (holdEffect == HOLD_EFFECT_ASSAULT_VEST || holdEffect == HOLD_EFFECT_SNELM) && IS_MOVE_STATUS(gBattleMons[battler].moves[i]) && gBattleMons[battler].moves[i] != MOVE_ME_FIRST)
             unusableMoves |= gBitTable[i];
         // Gravity
         else if (check & MOVE_LIMITATION_GRAVITY && IsGravityPreventingMove(gBattleMons[battler].moves[i]))
@@ -7122,6 +7122,8 @@ static u8 ItemEffectMoveEnd(u32 battler, u16 holdEffect)
     case HOLD_EFFECT_MIRROR_HERB:
         effect = TryConsumeMirrorHerb(battler, FALSE);
         break;
+    
+
     }
 
     return effect;
@@ -7672,6 +7674,33 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
             case HOLD_EFFECT_MIRROR_HERB:
                 effect = TryConsumeMirrorHerb(battler, TRUE);
                 break;
+
+            case HOLD_EFFECT_RANDOM_STAT_DOWN:
+                if(!moveTurn)
+                {
+                     i = Random() % 7;
+                     if (gBattleMons[battler].statStages[i+1] > MIN_STAT_STAGE)
+                    {
+                        PREPARE_STAT_BUFFER(gBattleTextBuff1, i + 1);
+
+                        gBattleTextBuff2[0] = B_BUFF_PLACEHOLDER_BEGIN;
+                        gBattleTextBuff2[1] = B_BUFF_STRING;
+                        gBattleTextBuff2[2] = STRINGID_STATSHARPLY;
+                        gBattleTextBuff2[3] = STRINGID_STATSHARPLY >> 8;
+                        gBattleTextBuff2[4] = B_BUFF_STRING;
+                        gBattleTextBuff2[5] = STRINGID_STATROSE;
+                        gBattleTextBuff2[6] = STRINGID_STATROSE >> 8;
+                        gBattleTextBuff2[7] = EOS;
+
+                        gEffectBattler = battler;
+                        SET_STATCHANGER(i + 1, 1, TRUE);
+                        gBattleScripting.animArg1 = 0x21 + i + 6;
+                        gBattleScripting.animArg2 = 0;
+                        BattleScriptExecute(BattleScript_RandomStatDown);
+                        effect = ITEM_STATS_CHANGE;
+                    }
+                }
+                break;
             }
 
             if (effect != 0)
@@ -7821,6 +7850,26 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
             GET_MOVE_TYPE(gCurrentMove, moveType);
             switch (battlerHoldEffect)
             {
+            case HOLD_EFFECT_DFS:
+                GET_MOVE_TYPE(gCurrentMove, moveType);
+                if ((moveType == TYPE_FIRE || moveType == TYPE_DRAGON)
+                && IsBattlerAlive(battler)
+                && TARGET_TURN_DAMAGED)
+                {
+                    gBattlescriptCurrInstr = BattleScript_AntiDragonShieldReducedDamage;
+                    effect = ITEM_EFFECT_OTHER;
+                }
+                break;
+            case HOLD_EFFECT_SPIRIT_SHIELD:
+                GET_MOVE_TYPE(gCurrentMove, moveType);
+                if ((moveType == TYPE_GHOST || moveType == TYPE_FAIRY)
+                && IsBattlerAlive(battler)
+                && TARGET_TURN_DAMAGED)
+                {
+                    gBattlescriptCurrInstr = BattleScript_SpiritShieldReducedDamage;
+                    effect = ITEM_EFFECT_OTHER;
+                }
+                break;
             case HOLD_EFFECT_AIR_BALLOON:
                 if (TARGET_TURN_DAMAGED)
                 {
@@ -9603,6 +9652,21 @@ static inline u32 CalcDefenseStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 
          && !(gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
          && !usesDefStat)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        break;
+    
+    case HOLD_EFFECT_SNELM:
+        if (usesDefStat)
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5)); 
+        break;
+    case HOLD_EFFECT_SPIRIT_SHIELD:
+        GET_MOVE_TYPE(gCurrentMove, moveType);
+        if(moveType == TYPE_GHOST|| moveType == TYPE_FAIRY)
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0)); //Decreases damage from Ghost and Fairy type moves by half.
+        break;
+    case HOLD_EFFECT_DFS:
+        GET_MOVE_TYPE(gCurrentMove, moveType);
+        if(moveType == TYPE_FIRE|| moveType == TYPE_DRAGON)
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0)); //Decreases damage from Dragon and Fire type moves by half.
         break;
     }
 

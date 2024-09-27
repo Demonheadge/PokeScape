@@ -1136,6 +1136,14 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_REPEL_TEA_2] = {gItemIcon_REPEL_TEA_2, gItemIconPalette_REPEL_TEA_2},
     [ITEM_REPEL_TEA_3] = {gItemIcon_REPEL_TEA_3, gItemIconPalette_REPEL_TEA_3},
     [ITEM_RING_OF_KINSHIP] = {gItemIcon_MegaRing, gItemIconPalette_MegaRing},
+
+    [ITEM_TRIANGLE_SANDWICH] = {gItemIcon_MegaRing, gItemIconPalette_MegaRing},
+    [ITEM_SQUARE_SANDWICH] = {gItemIcon_MegaRing, gItemIconPalette_MegaRing},
+    [ITEM_MEAT_PIE_SANDWICH] = {gItemIcon_MegaRing, gItemIconPalette_MegaRing},
+    [ITEM_BREAD_ROLL_SANDWICH] = {gItemIcon_MegaRing, gItemIconPalette_MegaRing},
+    [ITEM_BAGUETTE_SANDWICH] = {gItemIcon_MegaRing, gItemIconPalette_MegaRing},
+    [ITEM_DONUT_SANDWICH] = {gItemIcon_MegaRing, gItemIconPalette_MegaRing},
+    [ITEM_KEBAB_SANDWICH] = {gItemIcon_MegaRing, gItemIconPalette_MegaRing},
     // End Pokescape items
 
     // Return to field arrow

@@ -1928,6 +1928,9 @@ const u8 gText_BROWN_WATER[] =_("BROWN WATER");
 const u8 gText_PICKAXE[] =_("PICKAXE");
 const u8 gText_AXE[] =_("AXE");
 
+const u8 gText_BAGUETTE[] =_("BAGUETTE");
+const u8 gText_TRIANGLE_SANDWICH[] =_("TRIANGLE SANDWICH");
+
 //misc
 const u8 gText_NextMenu[] =_("Next");
 const u8 gText_YouAlreadyHaveThis[] =_("You already have this item.{PAUSE_UNTIL_PRESS}");
