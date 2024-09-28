@@ -268,7 +268,7 @@ script ITEM_RimmingtonMines_3
 script BATTLE_RimmingtonMines_Miner
 {
     trainerbattle_single(TRAINER_RimmingtonMines_Miner, format("Woah!\pYou startled me!"),format("I wasn't ready…"))
-    //namebox ("")
+    namebox ("MyMineNow")
     msgbox(format("Do you hear that faint singing in the distance?\pThese caves creep me out."))
 	hidenamebox
     release
@@ -278,7 +278,7 @@ script BATTLE_RimmingtonMines_Miner
 script BATTLE_RimmingtonMines_Ironman
 {
     trainerbattle_single(TRAINER_RimmingtonMines_Ironman, format("I've come to do some extra training but man these bugs are annoying!"),format("At least I am not a Hardcore Ironman…"))
-    //namebox ("")
+    namebox ("FE Lyfe")
     msgbox(format("There a worms everywhere, yuck!\pAt least I can get some decent experience from them."))
 	hidenamebox
     release
@@ -288,7 +288,7 @@ script BATTLE_RimmingtonMines_Ironman
 script BATTLE_RimmingtonMines_Slayer
 {
     trainerbattle_single(TRAINER_RimmingtonMines_Slayer, format("Oooh, I just got assigned a new Slayer task!\pYOU."),format("Mercy!"))
-    //namebox ("")
+    namebox ("SlayAllDay")
     msgbox(format("Looks like my next task is to go to the Bank…"))
 	hidenamebox
     release
@@ -312,7 +312,7 @@ script NPC_RimmingtonMines_WhiteKnight
 script BATTLE_RimmingtonMines_DRAGONBOT_1
 {
     trainerbattle_single(TRAINER_RimmingtonMines_DRAGONBOT_1, format("TARGET ACQUIRED!"),format("ERROR DETECTED!"))
-    namebox ("Bot")
+    namebox ("8a4rcfldi3")
     msgbox(format("ERROR DETECTED!"))
 	hidenamebox
     release
@@ -322,7 +322,7 @@ script BATTLE_RimmingtonMines_DRAGONBOT_1
 script BATTLE_RimmingtonMines_DRAGONBOT_2
 {
     trainerbattle_single(TRAINER_RimmingtonMines_DRAGONBOT_2, format("LOCATION UNKNOWN.\nRANDOM SCRIPT ACTIVATE."),format("TELEPORT INITIATE…"))
-    namebox ("Bot")
+    namebox ("9g2hfono0")
     msgbox(format("TELEPORTATION FAILED."))
 	hidenamebox
     release
@@ -332,7 +332,7 @@ script BATTLE_RimmingtonMines_DRAGONBOT_2
 script BATTLE_RimmingtonMines_Slayer_1
 {
     trainerbattle_single(TRAINER_RimmingtonMines_Slayer_1, format("Die Bot!"),format("I cannot believe I just lost to a bot…"))
-    //namebox ("")
+    namebox ("Sir Pugger")
     msgbox(format("Oh you are not a bot?\pI've been trying to get rid of these bots for the past few days, looks like they might be broken now though."))
 	hidenamebox
     release

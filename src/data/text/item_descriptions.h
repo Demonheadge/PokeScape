@@ -4175,7 +4175,52 @@ static const u8 sElementalPouchDesc[] = _(
     "A tool for \n"
     "catching Elemental\n"
     "MONSTERS.");
-	
+
+static const u8 sBlessedPouchDesc[] = _(
+    "This pouch's effect\n"
+    "is still a \n"
+    "cupholder.");
+
+static const u8 sLeatherPouchDesc[] = _(
+    "This pouch's effect\n"
+    "is still a \n"
+    "cupholder.");
+
+static const u8 sCatalyticPouchDesc[] = _(
+    "This pouch's effect\n"
+    "is still a \n"
+    "cupholder.");
+
+static const u8 sEmbroideredPouchDesc[] = _(
+    "This pouch's effect\n"
+    "is still a \n"
+    "cupholder.");
+
+static const u8 sSpidersilkPouchDesc[] = _(
+    "This pouch's effect\n"
+    "is still a \n"
+    "cupholder.");
+
+static const u8 sRoyalPouchDesc[] = _(
+    "This pouch's effect\n"
+    "is still a \n"
+    "cupholder.");
+
+static const u8 sImphidePouchDesc[] = _(
+    "This pouch's effect\n"
+    "is still a \n"
+    "cupholder.");
+
+static const u8 sGemPouchDesc[] = _(
+    "This pouch's effect\n"
+    "is still a \n"
+    "cupholder.");
+
+static const u8 sFishbowlPouchDesc[] = _(
+    "This pouch's effect\n"
+    "is still a \n"
+    "cupholder.");
+
 static const u8 sTALISMANDesc[] = _(
     "A strange Talisman\n"
     "that is attracted\n"
@@ -4508,7 +4553,7 @@ static const u8 sRingOfLifeDesc[] = _(
    
 static const u8 sRingOfWealthDesc[] = _(
     "Makes people\n"
-    "genereous after\n"
+    "generous after\n"
     "battle.");
   
 static const u8 sRockCakeDesc[] = _(
@@ -5208,3 +5253,33 @@ static const u8 sClueScrollToolsDesc[] = _(
     
 static const u8 sCupholderDesc[] = _(
     "This is a Cupholder.");
+
+// Lamps
+static const u8 sHPLampDesc[] = _(
+    "Raises the base HP\n"
+    "of one MONSTER.");
+
+static const u8 sAtkLampDesc[] = _(
+    "Raises the base\n"
+    "Attack stat of one\n"
+    "MONSTER.");
+
+static const u8 sDefLampDesc[] = _(
+    "Raises the base\n"
+    "Defense stat of\n"
+    "one MONSTER.");
+
+static const u8 sSpAtkLampDesc[] = _(
+    "Raises the base\n"
+    "Sp. Atk stat of one\n"
+    "MONSTER.");
+
+static const u8 sSpDefLampDesc[] = _(
+    "Raises the base\n"
+    "Sp. Def stat of one\n"
+    "MONSTER.");
+
+static const u8 sSpeedLampDesc[] = _(
+    "Raises the base\n"
+    "Speed stat of one\n"
+    "MONSTER.");

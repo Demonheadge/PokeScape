@@ -243,7 +243,7 @@ script NPC_FALADOR_GUARD_4
 	lock
 	faceplayer
     namebox ("Guard")
-	msgbox(format("Falador is a nice city, the white knights keeps us safe.\pStay vigilant adventurer."))
+	msgbox(format("Falador is a nice city, the White Knights keeps us safe.\pStay vigilant adventurer."))
     waitmessage
     hidenamebox
 	release
@@ -278,7 +278,7 @@ script NPC_FALADOR_GUARD_7
 {
 	lock
 	faceplayer
-    namebox ("Guard")
+    //namebox ("Guard")
 	msgbox(format("The guard looks nervous, you wonder why…"))
     waitmessage
     hidenamebox
@@ -309,7 +309,7 @@ script NPC_FALADOR_WHITEKNIGHT_2
 		msgbox(format("Sorry the Gym is closed until the disturbance at the Dwarven Mines are resolved.\pHuh?\nYou want to know where the Dwarven Mines are?\pThey are underneath us!\pIf you go to the east of town there you can find a small shack which leads to the mines."))
 	}
 	elif (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 115) {
-		msgbox(format("Welcome to the Faldor Gym!\pNow that the disturbance at the mines have been dealt with we can reopen."))
+		msgbox(format("Welcome to the Falador Gym!\pNow that the disturbance at the mines have been dealt with we can reopen."))
 	}
 	else {
 		msgbox(format("Past this bridge is Falador Castle!\pWhich is also the gym location for the MvM Championships."))
@@ -330,7 +330,7 @@ script NPC_FALADOR_WHITEKNIGHT_3
 		msgbox(format("Sorry but the gym is closed for a very important mission.\pIn the meantime you should go visit the Party room in the east of town.\pIt looks like a big castle, you cannot miss it."))
 	}
 	elif (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 115) {
-		msgbox(format("Welcome to the Faldor Gym!\pNow that the disturbance at the mines have been dealt with we can reopen."))
+		msgbox(format("Welcome to the Falador Gym!\pNow that the disturbance at the mines have been dealt with we can reopen."))
 	}
 	else {
 		msgbox(format("Sir Amik Varze is our town's gym leader."))
@@ -500,7 +500,7 @@ script NPC_FALADOR_APPRENTICE
 		{
 			goto(NPC_FALADOR_APPRENTICE_NO)
 		}
-		msgbox(format("Thank you so much!\pLet me just calculate the total…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}Alright!\pSo that comes to 5000gp.\pIs this okay with you?"), MSGBOX_YESNO)
+		msgbox(format("Thank you so much!\pLet me just calculate the total…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}Alright!\pSo that comes to 5,000gp.\pIs this okay with you?"), MSGBOX_YESNO)
 			if (!var(VAR_RESULT))
 			{
 				goto(NPC_FALADOR_APPRENTICE_NO)
@@ -663,7 +663,7 @@ script NPC_FALADOR_HAIRDRESSER_NPC
 	lock
 	faceplayer
     namebox ("RSMVer")
-	msgbox(format("Today im really feeling the dragoon hairstyle.\pIt will fix my love life for sure."))
+	msgbox(format("Today I'm really feeling the dragoon hairstyle.\pIt will fix my love life for sure."))
     waitmessage
     hidenamebox
 	release
@@ -728,7 +728,7 @@ script NPC_FALADOR_MYSTERIOUS_OLD_MAN
 	faceplayer
     namebox ("Mysterious Old Man")
 	msgbox(format("Oh hello again {PLAYER}. I am here to visit Falador in attempt to open these strange cubes. Here you have one"))
-    msgbox(format(" If you figure out how to open it please get in contact with me again."))
+    msgbox(format("If you figure out how to open it please get in contact with me again."))
     waitmessage
     hidenamebox
 	release
@@ -739,11 +739,11 @@ script NPC_FALADOR_MYSTERIOUS_OLD_MAN
 
 
 //FALADOR PARK
-script NPC_FALADOR_SirTiffyCachien
+script NPC_FALADOR_SirTiffyCashien
 {
 	lock
 	faceplayer
-    namebox ("Sir Tiffy Cachien")
+    namebox ("Sir Tiffy Cashien")
 	msgbox(format("I enjoy spending my time here at the park sitting on this bench."))
     waitmessage
     hidenamebox
@@ -948,8 +948,8 @@ script NPC_FALADOR_GEMSTORE_NPC_1
 {
 	lock
 	faceplayer
-    //namebox ("Guard")
-	msgbox(format("They say the gems from this store comes all the way from Shilo Village.\pThat's all the way over in Karamja!"))
+    namebox ("Druidess")
+	msgbox(format("They say the gems from this store come all the way from Shilo Village.\pThat's all the way over in Karamja!"))
     waitmessage
     hidenamebox
 	release
@@ -980,7 +980,7 @@ script NPC_FALADOR_BANK_NPC_2
 {
 	lock
 	faceplayer
-    //namebox ("Guard")
+    namebox ("AxMeAnythin")
 	msgbox(format("I got wiped out by Sir Amik.\pGuess my monsters just weren't strong enough."))
     waitmessage
     hidenamebox
@@ -1004,7 +1004,7 @@ script NPC_FALADOR_HOUSE_NPC_1
 {
 	lock
 	faceplayer
-    //namebox ("Guard")
+    namebox ("Woman")
 	msgbox(format("Dinner will be ready soon, will you be joining us?"))
     waitmessage
     hidenamebox
@@ -1016,7 +1016,7 @@ script NPC_FALADOR_HOUSE_NPC_2
 {
 	lock
 	faceplayer
-    //namebox ("Guard")
+    namebox ("Man")
 	msgbox(format("I don't know you but I am telling you, run!\pIt is too late for me but you can still run before the dinner is ready!\pHelp…"))
     waitmessage
     hidenamebox
@@ -1186,7 +1186,7 @@ script NPC_FALADOR_BLOCK_GUARD_1
 	lock
 	faceplayer
     namebox ("Guard")
-	msgbox(format("We've been informed that this shipment may contain Karmajan Rum.\pYou should inform Sir Amik Varze right away!"))
+	msgbox(format("We've been informed that this shipment may contain Karamjan Rum.\pYou should inform Sir Amik Varze right away!"))
     waitmessage
     hidenamebox
 	release
@@ -1197,7 +1197,7 @@ script NPC_FALADOR_BLOCK_GUARD_2
 	lock
 	faceplayer
     namebox ("Guard")
-	msgbox(format("Please stand back while we search these wares.\pWhile waiting you should visit the White Knights Castle."))
+	msgbox(format("Please stand back while we search these wares.\pWhile waiting you should visit the White Knights' Castle."))
     waitmessage
     hidenamebox
 	release

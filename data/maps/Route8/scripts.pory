@@ -113,6 +113,13 @@ script ROUTE8_SIGNPOST
 }
 
 
+script MAKEOVER_MAGE_SIGN
+{
+    msgbox(format("The Makeover Mage.\pChanging appearances since 2004."))
+    closemessage
+    end
+}
+
 
 //NPCS
 
@@ -138,7 +145,16 @@ script ROUTE8_MINER_3
     end
 }
 
-
+script NPC_MAKEOVER_MAGE
+{
+    faceplayer
+    namebox ("Peta")
+    msgbox(format("Hi adventurer, I'm Peta - affectionately known as the Makeover Mage.\pFor years I helped people change their gender, or even their skin colour, using a magical amulet I found in a Gazulibird nest.\pSince people started catching monsters, they lost interest in my services.\pI am currently working on adapting the amulet to let me change monsters' personalities!\pThis can affect how effective they are in battle, giving a boost to a specific stat at the cost of a penalty to another.\pI still need to work on the magic.. so it's not quite ready yet, but please come back soon!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
 
 
 //ITEMS

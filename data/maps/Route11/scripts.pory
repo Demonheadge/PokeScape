@@ -115,23 +115,32 @@ script NPC_MUDSKIPPERPOINT_THURGO {
 
 script BATTLE_MUDSKIPPERPOINT_SLAYER{
     trainerbattle_single(TRAINER_MUDSKIPPERPOINT_SLAYER, format("No!\pI left my explosive potions at the bank!"),format("This is such an xp waste!"))
-    msgbox(format("How am I meant to challenge the Morges to a battle without explosive potions and a full team of fainted monsters."))
+    namebox ("Slay4Hire")
+    msgbox(format("How am I meant to challenge the Mogres to a battle without explosive potions and a full team of fainted monsters."))
+    hidenamebox
     release
 }
+
 //Team: Shrimp. Rainbow fish Mudskiiper
 
 script BATTLE_MUDSKIPPERPOINT_FISHER_1{
     trainerbattle_single(TRAINER_MUDSKIPPERPOINT_FISHERMAN_1, format("Oh!\pLooks like I have snagged a big one in my net!"),format("Aww it got away…"))
+    namebox ("N0M0reLobs")
     msgbox(format("I heard that there was some sort of device that allows you to dive under the water.\pWhat I'd give to see how the Mudskippers live!"))
+    hidenamebox
     release
 }
+
 // Flatfish, Short finned eel, Cod
 
 script BATTLE_MUDSKIPPERPOINT_FISHER_2{
     trainerbattle_single(TRAINER_MUDSKIPPERPOINT_FISHERMAN_2, format("Do you know why they call this place Mudskipper Point?"),format("I am serious, why do they call this place Mudskipper Point?"))
+    namebox ("HarPWNu")
     msgbox(format("Oh now I get it.\pIt is because of all the Mudskippers right?"))
+    hidenamebox
     release
 }
+
 //Chinchompa, Chinchompa ,Turoth
 
 

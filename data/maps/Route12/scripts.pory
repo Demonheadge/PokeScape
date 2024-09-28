@@ -444,7 +444,36 @@ script NPC_ROUTE12_Goblin_2{
 }
 
 
+script BROKEN_DOOR
+{
+	msgbox(format("This door is broken beyond repair.\pThere's no way you could get it open."))
+	closemessage
+	end
+}
 
 
+//This is my attempt at a script for a cow battle that is repeatable but uncatchable for xp
+
+script ENCOUNTER_COW
+{
+	lock
+    namebox ("COW")
+    playmoncry(SPECIES_MILTANK, 0)
+	msgbox(format("MOOOOOOOO!!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+
+    if (flag(FLAG_BADGE01_GET) == TRUE) {
+        setwildbattle (SPECIES_COW, 8, ITEM_NONE)
+    else {
+        setwildbattle (SPECIES_CALF, 3, ITEM_NONE)
+    }
+	dowildbattleNoCatch
+    }
+    release
+	end
+}
 
 

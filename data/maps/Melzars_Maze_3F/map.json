@@ -203,7 +203,7 @@
       "x": 11,
       "y": 15,
       "elevation": 0,
-      "item": "ITEM_TEA",
+      "item": "ITEM_REPEL_TEA_1",
       "flag": "FLAG_TEMP_1"
     }
   ],

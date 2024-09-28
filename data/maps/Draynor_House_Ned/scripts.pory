@@ -163,7 +163,7 @@ script Story_Ned_Draynor {
     hidenamebox
     closemessage
     namebox("Sir Owen")
-    msgbox(format("I've come to inform you that a small crew and ship has been aquired, it is located south of the docks in Port Sarim."))
+    msgbox(format("I've come to inform you that a small crew and ship has been acquired, it is located south of the docks in Port Sarim."))
     hidenamebox
     closemessage
     namebox("Ned")

@@ -18,7 +18,7 @@ script NPC_FALADORPUB_BARMAID_1
 	lock
 	faceplayer
     namebox ("Emily")
-	msgbox(format("Our Asgarnian Ale is selling lot the hot cakes today.\pNo seriously, everyone is ordering hot cakes!"))
+	msgbox(format("Our Asgarnian Ale is selling like the hot cakes today.\pNo seriously, everyone is ordering hot cakes!"))
     waitmessage
     hidenamebox
 	release

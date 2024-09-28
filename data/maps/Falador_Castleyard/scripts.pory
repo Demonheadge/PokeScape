@@ -181,7 +181,7 @@ script NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT
     	{
             lock
             faceplayer
-            namebox ("WHITE KNIGHT")
+            namebox ("White Knight")
             msgbox(format("Welcome to the Falador Castle!"))
     	}
 		else
@@ -193,13 +193,13 @@ script NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT
             case 3: 
                 lock
                 faceplayer
-                namebox ("WHITE KNIGHT")
+                namebox ("White Knight")
                 msgbox(format("Sorry but the castle is closed for all MvM Championship participants, until the disturbance within the Dwarven mines is resolved.\pWhich also means do not go poking around the mines in the north east of town, past the Party Room.\pWe don't want you getting in danger."))
             case 4: 
             case 5: 
                 lock
                 faceplayer
-                namebox ("WHITE KNIGHT")
+                namebox ("White Knight")
                 msgbox(format("Welcome to the Falador Castle!"))
             }
 		}
@@ -213,7 +213,7 @@ script NPC_FALADORCASTLE_KNIGHT_CHAT_2
 {
     lock
     faceplayer
-    namebox ("WHITE KNIGHT")
+    namebox ("White Knight")
     msgbox(format("Are you an MvM challenger?\pOur castle was designed to confuse intruders and we decided to use that for our gym challenge too."))
     closemessage
     hidenamebox
@@ -225,8 +225,8 @@ script NPC_FALADORCASTLE_KNIGHT_CHAT_3
 {
     lock
     faceplayer
-    namebox ("WHITE KNIGHT")
-    msgbox(format("Up or Down, Left or Right.\pOur Castle will confuse even the most smartest Black Knights."))
+    namebox ("White Knight")
+    msgbox(format("Up or Down, Left or Right.\pOur Castle will confuse even the most intelligent Black Knights."))
     closemessage
     hidenamebox
     release
@@ -828,7 +828,7 @@ script BOOK_FALADORCASTLE_GUARD_INFO
 script SIGN_BLURITE_CUPBOARD
 {
 	lock
-	msgbox(format("It looks like there was once a picture in the cupboard but someone must of taken it."))
+	msgbox(format("It looks like there was once a picture in the cupboard but someone must have taken it."))
     closemessage
     hidenamebox
 	release

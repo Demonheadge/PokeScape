@@ -279,7 +279,7 @@ Story_Ned_Draynor_Text_8:
 
 Story_Ned_Draynor_Text_9:
 	.string "I've come to inform you that a small\n"
-	.string "crew and ship has been aquired, it is\l"
+	.string "crew and ship has been acquired, it is\l"
 	.string "located south of the docks in Port\l"
 	.string "Sarim.$"
 

@@ -176,9 +176,9 @@ script ITEM_LUMBRIDGE_PRISMATIC_STAR
     end
 }
 
-script ITEM_ROUTE1_DEATH_RUNE
+script ITEM_ROUTE1_WATER_RUNE
 {
-    finditem(ITEM_EARTH_RUNE)
+    finditem(ITEM_WATER_RUNE)
     end
 }
 

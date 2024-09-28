@@ -75,7 +75,7 @@ script SINKHOLE_NPC_FORGOTTENWARRIOR_1
 script SINKHOLE_NPC_TRADER
 {
     faceplayer
-    //namebox ("Smuggler")
+    namebox ("Smuggler")
     msgbox(format("I have been down here for years.\pIt is surprising to see a surface dweller here."))
     closemessage
     hidenamebox
@@ -87,7 +87,7 @@ script SINKHOLE_NPC_TRADER
 script SINKHOLE_NPC_FORGOTTENWARRIOR_2
 {
     faceplayer
-    //namebox ("RATBURGUS")
+    namebox ("???")
     msgbox(format("Hey thanks for opening the door earlier.\pBy the way, have you tried fishing here?\pThere are many monsters only exclusive to these dungeons."))
     closemessage
     hidenamebox
@@ -111,7 +111,7 @@ script BATTLE_SINKHOLE_NPC_FORGOTTENWARRIOR_1
 script ENCOUNTER_BEHEMOTH
 {
 	lock
-    faceplayer
+    //faceplayer
     namebox ("BEHEMOTH")
     playmoncry(SPECIES_EKANS, 0)
 	msgbox(format("BEEHEHEHEHHROAAH!!"))

@@ -1086,7 +1086,7 @@
 #define FLAG_ITEM_LUMBRIDGE_BREAD_2                                 0x3FE
 #define FLAG_ITEM_ROUTE1_BALL_OF_WOOL                               0x3FF
 #define FLAG_ITEM_LUMBRIDGE_CAKE                                    0x400
-#define FLAG_ITEM_ROUTE1_DEATH_RUNE                                 0x401
+#define FLAG_ITEM_ROUTE1_WATER_RUNE                                 0x401
 #define FLAG_ITEM_ROUTE1_BREAD                                      0x402
 #define FLAG_ITEM_ROUTE1_CHOCOLATE_SUNDAY                           0x403
 #define FLAG_ITEM_MILLLANEMILL_TM05                                 0x404

@@ -690,7 +690,7 @@ script NPC_RIMMINGTON_DemonAndStan{
                 waitmovement(0)
                 applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
                 namebox("Demonheadge")
-                msgbox(format("Its not Friday today."))
+                msgbox(format("It's not Friday today."))
                 waitmovement(0)
 				hidenamebox
 				release
@@ -698,7 +698,7 @@ script NPC_RIMMINGTON_DemonAndStan{
             case 2: 
                 applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
                 namebox("Demonheadge")
-                msgbox(format("Where is Orchy and Lukien?"))
+                msgbox(format("Where are Orchy and Lukien?"))
                 waitmovement(0)
                 applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
                 namebox("Hyper Stan")
@@ -714,7 +714,7 @@ script NPC_RIMMINGTON_DemonAndStan{
                 waitmovement(0)
                 applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
                 namebox("Demonheadge")
-                msgbox(format("Lets not have this conversation here man."))
+                msgbox(format("Let's not have this conversation here man."))
                 waitmovement(0)
                 hidenamebox
                 release
@@ -722,7 +722,7 @@ script NPC_RIMMINGTON_DemonAndStan{
             case 4: 
                 applymovement(OBJ_EVENT_ID_DEMONHEADGE, MOVE_DEMONHEADGE_1)
                 namebox("Demonheadge")
-                msgbox(format("Ok so tell me again the steps for the plan to kidnap zezimas cat…"))
+                msgbox(format("Ok so tell me again the steps for the plan to kidnap Zezima's cat…"))
                 waitmovement(0)
                 applymovement(OBJ_EVENT_ID_HYPERSTAN, MOVE_HYPERSTAN_1)
                 namebox("Hyper Stan")
@@ -1201,4 +1201,20 @@ script NPC_POH_HELLWIND{
     closemessage
     release
     end
+}
+
+
+script ANCHOVYBOOK {
+    lock
+    msgbox(format("There is a journal on the desk.\pDo you want to read it?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT)){
+            msgbox(format("Test #119: My quest to continue trialling different methods of evolving monsters continues.\pI have procured a couple of runes from a local merchant, and am going to attempt to see what effect some elemental runes have on this Anchovy someone left.\pPreviously I'd have ground it up and sieved out the bits to make an oil, but now they have more use in battling.\pAIR RUNES and WATER RUNES seem to have no effect.\pHm.\pIf the heat from cooking them helped to distil the oil, then I wonder what effect a FIRE RUNE would have on it...\pMore testing is required."))
+            closemessage
+        }
+        else {
+        msgbox(format("You decide to leave the journal for now."))
+           closemessage
+        }
+    release
+    end   
 }

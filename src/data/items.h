@@ -99,7 +99,7 @@ const struct Item gItems[] =
     {
         .name = _("BLESSED. P"),
         .price = 300,
-        .description = sHealBallDesc,
+        .description = sBlessedPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -111,7 +111,7 @@ const struct Item gItems[] =
     {
         .name = _("LEATHER. P"),
         .price = 1000,
-        .description = sNetBallDesc,
+        .description = sLeatherPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -123,7 +123,7 @@ const struct Item gItems[] =
     {
         .name = _("ELEMENTAL. P"),
         .price = 1000,
-        .description = sNestBallDesc,
+        .description = sElementalPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -135,7 +135,7 @@ const struct Item gItems[] =
     {
         .name = _("CATALYTIC. P"),
         .price = 1000,
-        .description = sDiveBallDesc,
+        .description = sCatalyticPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -147,7 +147,7 @@ const struct Item gItems[] =
     {
         .name = _("CRYSTAL. P"),
         .price = 20000,
-        .description = sDuskBallDesc,
+        .description = sCrystalPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -159,7 +159,7 @@ const struct Item gItems[] =
     {
         .name = _("ADAMANT. P"),
         .price = 1000,
-        .description = sTimerBallDesc,
+        .description = sAdamantPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -171,7 +171,7 @@ const struct Item gItems[] =
     {
         .name = _("MITHRIL. P"),
         .price = 1000,
-        .description = sQuickBallDesc,
+        .description = sMithrilPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -183,7 +183,7 @@ const struct Item gItems[] =
     {
         .name = _("AUGMENTED. P"),
         .price = 1000,
-        .description = sRepeatBallDesc,
+        .description = sAugmentedPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -195,7 +195,7 @@ const struct Item gItems[] =
     {
         .name = _("EMBROIDERED.P"),
         .price = 1000,
-        .description = sLuxuryBallDesc,
+        .description = sEmbroideredPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -207,7 +207,7 @@ const struct Item gItems[] =
     {
         .name = _("BARROWS. P"),
         .price = 0,
-        .description = sLevelBallDesc,
+        .description = sBarrowsPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -219,7 +219,7 @@ const struct Item gItems[] =
     {
         .name = _("SPIDERSILK. P"),
         .price = 0,
-        .description = sLureBallDesc,
+        .description = sSpidersilkPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -231,7 +231,7 @@ const struct Item gItems[] =
     {
         .name = _("ANCIENT. P"),
         .price = 0,
-        .description = sMoonBallDesc,
+        .description = sAncientPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -243,7 +243,7 @@ const struct Item gItems[] =
     {
         .name = _("ROYAL POUCH"),
         .price = 0,
-        .description = sFriendBallDesc,
+        .description = sRoyalPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -255,7 +255,7 @@ const struct Item gItems[] =
     {
         .name = _("MYSTIC POUCH"),
         .price = 0,
-        .description = sLoveBallDesc,
+        .description = sMysticPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -267,7 +267,7 @@ const struct Item gItems[] =
     {
         .name = _("DRAGONBANE. P"),
         .price = 0,
-        .description = sFastBallDesc,
+        .description = sDragonbanePouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -279,7 +279,7 @@ const struct Item gItems[] =
     {
         .name = _("GRANITE. P"),
         .price = 0,
-        .description = sHeavyBallDesc,
+        .description = sGranitePouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -291,7 +291,7 @@ const struct Item gItems[] =
     {
         .name = _("IMPHIDE. P"),
         .price = 0,
-        .description = sDreamBallDesc,
+        .description = sImphidePouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -303,7 +303,7 @@ const struct Item gItems[] =
     {
         .name = _("GEM POUCH"),
         .price = 0,
-        .description = sSafariBallDesc,
+        .description = sGemPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -315,7 +315,7 @@ const struct Item gItems[] =
     {
         .name = _("SPLITBARK. P"),
         .price = 0,
-        .description = sSportBallDesc,
+        .description = sSplitbarkPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -327,7 +327,7 @@ const struct Item gItems[] =
     {
         .name = _("BLACK. P"),
         .price = 0,
-        .description = sParkBallDesc,
+        .description = sBlackPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -339,7 +339,7 @@ const struct Item gItems[] =
     {
         .name = _("FISHBOWL. P"),
         .price = 0,
-        .description = sBeastBallDesc,
+        .description = sFishbowlPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
@@ -11266,7 +11266,7 @@ const struct Item gItems[] =
     {
         .name = _("ATK LAMP"),
         .price = 9800,
-        .description = sProteinDesc,
+        .description = sAtkLampDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .sort = ITEM_TYPE_STAT_BOOST,
@@ -11277,7 +11277,7 @@ const struct Item gItems[] =
     {
         .name = _("DEF LAMP"),
         .price = 9800,
-        .description = sIronDesc,
+        .description = sDefLampDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .sort = ITEM_TYPE_STAT_BOOST,
@@ -11288,7 +11288,7 @@ const struct Item gItems[] =
     {
         .name = _("HP LAMP"),
         .price = 9800,
-        .description = sCalciumDesc,
+        .description = sHPLampDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .sort = ITEM_TYPE_STAT_BOOST,
@@ -11299,7 +11299,7 @@ const struct Item gItems[] =
     {
         .name = _("SP. ATK LAMP"),
         .price = 9800,
-        .description = sCalciumDesc,
+        .description = sSpAtkLampDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .sort = ITEM_TYPE_STAT_BOOST,
@@ -11310,7 +11310,7 @@ const struct Item gItems[] =
     {
         .name = _("SP. DEF LAMP"),
         .price = 9800,
-        .description = sZincDesc,
+        .description = sSpDefLampDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .sort = ITEM_TYPE_STAT_BOOST,
@@ -11321,7 +11321,7 @@ const struct Item gItems[] =
     {
         .name = _("SPEED LAMP"),
         .price = 9800,
-        .description = sCarbosDesc,
+        .description = sSpeedLampDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .sort = ITEM_TYPE_STAT_BOOST,
