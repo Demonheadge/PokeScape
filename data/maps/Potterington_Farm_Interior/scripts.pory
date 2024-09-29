@@ -1,14 +1,12 @@
 const OBJ_EVENT_ID_GUTHIX = 5
 const OBJ_EVENT_ID_SARADOMIN = 4
 const OBJ_EVENT_ID_ZAMORAK = 2
-const OBJ_EVENT_ID_BAROO = 9
-const OBJ_EVENT_ID_PREZLEEK = 10
-const OBJ_EVENT_ID_ZEZIMA = 12
+
+const OBJ_EVENT_ID_ZAROS = 10
 const OBJ_EVENT_ID_GONTHORIAN = 6
-const OBJ_EVENT_ID_JMOD = 11
+const OBJ_EVENT_ID_JMOD = 9
 const OBJ_EVENT_ID_DEMONHEADGE = 7
 const OBJ_EVENT_ID_HYPERSTAN = 8
-const OBJ_EVENT_ID_PATTY = 14
 
 
 mapscripts Potterington_Farm_Interior_MapScripts {
@@ -24,78 +22,84 @@ script POTTERINGTON_FARM_STATE{
     setflag(FLAG_TEMP_1)
     setflag(FLAG_TEMP_2)
     setflag(FLAG_TEMP_3)
-    setflag(FLAG_TEMP_4)
+    
     setflag(FLAG_TEMP_5)
     setflag(FLAG_TEMP_6)
     setflag(FLAG_TEMP_7)
     setflag(FLAG_TEMP_8)
     setflag(FLAG_TEMP_9)
-    setflag(FLAG_TEMP_A)
+    
     removeobject(OBJ_EVENT_ID_GUTHIX)
     removeobject(OBJ_EVENT_ID_SARADOMIN)
     removeobject(OBJ_EVENT_ID_ZAMORAK)
-    removeobject(OBJ_EVENT_ID_PREZLEEK)
-    removeobject(OBJ_EVENT_ID_BAROO)
-    removeobject(OBJ_EVENT_ID_ZEZIMA)
+    
+    removeobject(OBJ_EVENT_ID_ZAROS)
     removeobject(OBJ_EVENT_ID_GONTHORIAN)
     removeobject(OBJ_EVENT_ID_JMOD)
     removeobject(OBJ_EVENT_ID_DEMONHEADGE)
     removeobject(OBJ_EVENT_ID_HYPERSTAN)
-    removeobject(OBJ_EVENT_ID_PATTY)
+    
+    
     
     //if ACHIEVEMENT FLAGS are achieved
-    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
-        {
+
+     
+    special(Is_InParty_CABBAGE)
+    if ((var(VAR_RESULT) == TRUE) || (flag(FLAG_RECEIVED_GUTHIX_EGG))) {
         clearflag(FLAG_TEMP_1)
         addobject(OBJ_EVENT_ID_GUTHIX)
+    }
+    else {
+        special(Is_InParty_GUTHIX)
+        if ((var(VAR_RESULT) == TRUE) || (flag(FLAG_RECEIVED_GUTHIX_EGG))) {
+            clearflag(FLAG_TEMP_1)
+            addobject(OBJ_EVENT_ID_GUTHIX)
         }
-    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
-        {
+    }
+    special(Is_InParty_SARADOMIN)
+    if ((var(VAR_RESULT) == TRUE) || (flag(FLAG_RECEIVED_SARADOMIN_EGG))) {
         clearflag(FLAG_TEMP_2)
         addobject(OBJ_EVENT_ID_SARADOMIN)
-        }
-    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
-        {
+    }
+    special(Is_InParty_ZAMORAK)
+    if ((var(VAR_RESULT) == TRUE) || (flag(FLAG_RECEIVED_ZAMORAK_EGG))) {
         clearflag(FLAG_TEMP_3)
         addobject(OBJ_EVENT_ID_ZAMORAK)
         }
-    checkitem (ITEM_TERRORBIRD_POUCH, 1)
-        if (var(VAR_RESULT))
-        {
-        clearflag(FLAG_TEMP_4)
-        addobject(OBJ_EVENT_ID_PREZLEEK)
-        addobject(OBJ_EVENT_ID_BAROO)
-        }
-    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
-        {
-        clearflag(FLAG_TEMP_5)
-        addobject(OBJ_EVENT_ID_ZEZIMA)
-        }
-    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
-        {
+    special(Is_InParty_BANDOS)
+    if (var(VAR_RESULT) == TRUE || (flag(FLAG_RECEIVED_BANDLING_EGG))) {
         clearflag(FLAG_TEMP_6)
         addobject(OBJ_EVENT_ID_GONTHORIAN)
-        }
-    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
-        {
-        clearflag(FLAG_TEMP_7)
-        addobject(OBJ_EVENT_ID_JMOD)
-        }
-    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
-        {
-        clearflag(FLAG_TEMP_8)
-        addobject(OBJ_EVENT_ID_DEMONHEADGE)
-        }
-    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
-        {
+    }
+    
+    special(Is_InParty_ZAROS)
+    if (var(VAR_RESULT) == TRUE || (flag(FLAG_RECEIVED_ZAROLING_EGG))) {
+        clearflag(FLAG_TEMP_5)
+        addobject(OBJ_EVENT_ID_ZAROS)
+    }
+
+
+
+
+
+
+
+
+
+
+    special(Is_InParty_hasHAT)
+    if (var(VAR_RESULT) == TRUE || (flag(FLAG_RECEIVED_RAVENLING_EGG))) {
+    clearflag(FLAG_TEMP_8)
+    addobject(OBJ_EVENT_ID_DEMONHEADGE)
+    }
+    special(Is_InParty_TZHAAR)
+    if (var(VAR_RESULT) == TRUE || (flag(FLAG_RECEIVED_BASILISK_EGG))) {
         clearflag(FLAG_TEMP_9)
         addobject(OBJ_EVENT_ID_HYPERSTAN)
-        }
-    if (flag(FLAG_EVILCHICKEN_DEFEATED)) 
-        {
-        clearflag(FLAG_TEMP_A)
-        addobject(OBJ_EVENT_ID_PATTY)
-        }
+    }
+
+    
+    
     
         
     release
@@ -250,35 +254,76 @@ script SCRIPT_EGG_NOROOM
 
 script POTTERINGTON_FARM_Zamorak 
 {
+    lock
     faceplayer
-    namebox ("Zamorak")
-    msgbox(format("I am a cupholder."))
-    closemessage
+    if (!flag(FLAG_RECEIVED_ZAMORAK_EGG)) {
+     
+        namebox ("Zamorak")
+        msgbox(format("Take this and use it to beat up that pesky Saradomin worshipers."))
+        closemessage
+        hidenamebox
+        //GIVE EGG
+        getpartysize
+        compare (VAR_RESULT, PARTY_SIZE)
+        goto_if_eq (SCRIPT_EGG_NOROOM)
+        setflag (FLAG_RECEIVED_ZAMORAK_EGG)
+        playfanfare (MUS_OBTAIN_ITEM)
+        msgbox(format("Obtained an EGG from Zamorak!"))
+        waitfanfare
+        giveegg (SPECIES_ZAMLING)
+        namebox ("Zamorak")
+        msgbox(format("Destroy them all!"))
+    }
+    else {
+        namebox ("Zamorak.")
+        msgbox(format("Cupholder"))
+    }
     hidenamebox
-    //GIVE EGG
-    release
-    end
+    closemessage
+	release
+	end
 }
 
 script POTTERINGTON_FARM_Saradomin 
 {
+    lock
     faceplayer
-    namebox ("Saradomin")
-    msgbox(format("I am a cupholder."))
-    closemessage
+    if (!flag(FLAG_RECEIVED_SARADOMIN_EGG)) {
+      
+        namebox ("Saradomin")
+        msgbox(format("I heard you were training monsters.\pThese might be useful for you."))
+        closemessage
+        hidenamebox
+        //GIVE EGG
+        getpartysize
+        compare (VAR_RESULT, PARTY_SIZE)
+        goto_if_eq (SCRIPT_EGG_NOROOM)
+        setflag (FLAG_RECEIVED_SARADOMIN_EGG)
+        playfanfare (MUS_OBTAIN_ITEM)
+        msgbox(format("Obtained an EGG from Saradomin!"))
+        waitfanfare
+        giveegg (SPECIES_SARALING)
+        namebox ("Saradomin")
+        msgbox(format("Train it well."))
+    }
+    else {
+        namebox ("Saradomin.")
+        msgbox(format("Cupholder"))
+    }
     hidenamebox
-    //GIVE EGG
-    release
-    end
+    closemessage
+	release
+	end
 }
 
 script POTTERINGTON_FARM_Guthix
 {
+    lock
+    faceplayer
     if (!flag(FLAG_RECEIVED_GUTHIX_EGG)) {
-        lock
-        faceplayer
+    
         namebox ("Guthix")
-        msgbox(format("Hello my name is GUTTTHHHIIXX!!!\pYou can have THHHISSS!"))
+        msgbox(format("My name is GUTTTHHHIIXX!!!\pYour monsters know about BALLAANNCCEE!\pSo you can have THHHISSS!"))
         closemessage
         hidenamebox
         //GIVE EGG
@@ -291,11 +336,11 @@ script POTTERINGTON_FARM_Guthix
         waitfanfare
         giveegg (SPECIES_GUTHLING)
         namebox ("Guthix")
-        msgbox(format("Look after it!"))
+        msgbox(format("EGGS ARE COOOOL!"))
     }
     else {
         namebox ("Guthix")
-        msgbox(format("Did you know grass is blue!!"))
+        msgbox(format("Did you know grass is blue!?"))
     }
     hidenamebox
     closemessage
@@ -305,105 +350,196 @@ script POTTERINGTON_FARM_Guthix
 
 script POTTERINGTON_FARM_Gonthorian
 {
+    lock
     faceplayer
-    namebox ("Gonthorian")
-    msgbox(format("I am a cupholder."))
-    closemessage
-    hidenamebox
-    //GIVE EGG
-    release
-    end
-}
-
-script POTTERINGTON_FARM_Zezima
-{
-    faceplayer
-    namebox ("Zezima")
-    msgbox(format("I am a cupholder."))
-    closemessage
-    hidenamebox
-    //GIVE EGG
-    release
-    end
-}
-
-
-script POTTERINGTON_FARM_Prezleek
-{
-    lockall
-    faceplayer
-    checkitem (ITEM_YAK_POUCH, 1)
-	if (!var(VAR_RESULT))
-	{
-        checkitem (ITEM_TERRORBIRD_POUCH, 1)
-        if (var(VAR_RESULT))
-        {
-            namebox ("Prezleek")
-            msgbox(format("Hello.\pWait…{PAUSE 16} What is that…?{PAUSE 16}\nA rideable Terrorbird?!\pUnbelieveable everyone knows Yaks are the best source of transportation."))
-            applymovement(OBJ_EVENT_ID_PREZLEEK, Movement_InteractFACELEFT)
-            waitmovement(0)
-            msgbox(format("Baroo, you agree with me right?"))
-            closemessage
-            hidenamebox
-            //applymovement(OBJ_EVENT_ID_BAROO, Movement_InteractFACERIGHT)
-            //waitmovement(0)
-            namebox ("Baroo")
-            msgbox(format("Baroooo, Baroo!"))
-            closemessage
-            hidenamebox
-            applymovement(OBJ_EVENT_ID_PREZLEEK, Movement_InteractFACEPLAYER)
-            waitmovement(0)
-            namebox ("Prezleek")
-            msgbox(format("See even Baroo agrees.\pHere have this."))
-            closemessage
-            hidenamebox
-            giveitem(ITEM_YAK_POUCH, 1)
-        }
+    if (!flag(FLAG_RECEIVED_BANDLING_EGG)) {
+    
+        namebox ("Gonthorian")
+        msgbox(format("Fish crackers!"))
+        closemessage
+        hidenamebox
+        //GIVE EGG
+        getpartysize
+        compare (VAR_RESULT, PARTY_SIZE)
+        goto_if_eq (SCRIPT_EGG_NOROOM)
+        setflag (FLAG_RECEIVED_BANDLING_EGG)
+        playfanfare (MUS_OBTAIN_ITEM)
+        msgbox(format("Obtained an EGG from Gonthorian!"))
+        waitfanfare
+        giveegg (SPECIES_BANDLING)
+        namebox ("Gonthorian")
+        msgbox(format("Look after it!"))
     }
-    namebox ("Prezleek")
-    msgbox(format("See aren't Yaks so much better than Terrorbirds?"))
-    closemessage
+    else {
+        namebox ("Gonthorian")
+        msgbox(format("CUPHOLDER"))
+    }
     hidenamebox
-    release
-    end   
+    closemessage
+	release
+	end
 }
 
-script POTTERINGTON_FARM_Baroo
+script POTTERINGTON_FARM_MysteriousFigure
 {
+    lock
     faceplayer
-    namebox ("Baroo")
-    //PLAY SOUND
-    msgbox(format("Baroo, baroo!"))
-    //WAITSOUND
-    closemessage
+    if (!flag(FLAG_RECEIVED_ZAROLING_EGG)) {
+        
+        namebox ("???")
+        msgbox(format("Greetings, I've come from the otherside of Gilenor.\pAlong my travels my dark lord asked me to pass this on to a person would I would meet here at this time and this date.\pHere take it."))
+        closemessage
+        hidenamebox
+        //GIVE EGG
+        getpartysize
+        compare (VAR_RESULT, PARTY_SIZE)
+        goto_if_eq (SCRIPT_EGG_NOROOM)
+        setflag (FLAG_RECEIVED_ZAROLING_EGG)
+        playfanfare (MUS_OBTAIN_ITEM)
+        msgbox(format("Obtained an EGG from the Mysterious Figure!"))
+        waitfanfare
+        giveegg (SPECIES_ZAROLING)
+        namebox ("???")
+        msgbox(format("The dark lord works in mysterious ways."))
+    }
+    else {
+        namebox ("???")
+        msgbox(format("The dark lord works in mysterious ways."))
+    }
     hidenamebox
-    release
-    end
+    closemessage
+	release
+	end
 }
+
+script POTTERINGTON_FARM_Barbarian
+{
+    lock
+    faceplayer
+    if (!flag(FLAG_RECEIVED_UNGODLING_EGG)) {
+    
+        namebox ("???")
+        msgbox(format("What is with all of these gods?!\pDisguesting.\pHere take this."))
+        closemessage
+        hidenamebox
+        //GIVE EGG
+        getpartysize
+        compare (VAR_RESULT, PARTY_SIZE)
+        goto_if_eq (SCRIPT_EGG_NOROOM)
+        setflag (FLAG_RECEIVED_UNGODLING_EGG)
+        playfanfare (MUS_OBTAIN_ITEM)
+        msgbox(format("Obtained an EGG from ???!"))
+        waitfanfare
+        giveegg (SPECIES_UNGODLING)
+        namebox ("???")
+        msgbox(format("REBEL WITH ME!"))
+    }
+    else {
+        namebox ("???")
+        msgbox(format("REBEL WITH ME!"))
+    }
+    hidenamebox
+    closemessage
+	release
+	end
+}
+
+script POTTERINGTON_FARM_Seren_Spirit
+{
+    lock
+    faceplayer
+    if (!flag(FLAG_RECEIVED_SERELING_EGG)) {
+        
+        //namebox ("Seren Spirit")
+        msgbox(format("The crystal shines brightly.\pA gift has appeared for you!"))
+        closemessage
+        hidenamebox
+        //GIVE EGG
+        getpartysize
+        compare (VAR_RESULT, PARTY_SIZE)
+        goto_if_eq (SCRIPT_EGG_NOROOM)
+        setflag (FLAG_RECEIVED_SERELING_EGG)
+        playfanfare (MUS_OBTAIN_ITEM)
+        msgbox(format("Obtained an EGG from the Seren Spirit!"))
+        waitfanfare
+        giveegg (SPECIES_SERELING)
+        //namebox ("Seren Spirit")
+        msgbox(format("The crystal goes back to roaming."))
+    }
+    else {
+        //namebox ("Seren Spirit")
+        msgbox(format("You attempt to capture the floating crystal but it gets away."))
+    }
+    hidenamebox
+    closemessage
+	release
+	end
+}
+
 
 
 script POTTERINGTON_FARM_Demonheadge
 {
+    lock
     faceplayer
-    namebox ("Demonheadge")
-    msgbox(format("I am a cupholder."))
-    closemessage
+    if (!flag(FLAG_RECEIVED_RAVENLING_EGG)) {
+     
+        namebox ("Demonheadge")
+        msgbox(format("That…{PAUSE 15}\nThat……\pTHAT HAT IS ABSOLUTLEY AMAZING!\pYour monster looks so cool just wearing it!\pHere I want you to have this!"))
+        closemessage
+        hidenamebox
+        //GIVE EGG
+        getpartysize
+        compare (VAR_RESULT, PARTY_SIZE)
+        goto_if_eq (SCRIPT_EGG_NOROOM)
+        setflag (FLAG_RECEIVED_RAVENLING_EGG)
+        playfanfare (MUS_OBTAIN_ITEM)
+        msgbox(format("Obtained an EGG from the Demonheadge!"))
+        waitfanfare
+        giveegg (SPECIES_RAVENLING)
+        namebox ("Demonheadge")
+        msgbox(format("Raven's are also pretty damn cool.\pLook after that egg!"))
+    }
+    else {
+        namebox ("Demonheadge")
+        msgbox(format("Hats are cool, but Raven's are pretty damn cool too."))
+    }
     hidenamebox
-    //GIVE EGG
-    release
-    end
+    closemessage
+	release
+	end
 }
 
 script POTTERINGTON_FARM_HyperStan
 {
+    lock
     faceplayer
-    namebox ("Hyper Stan")
-    msgbox(format("I am a cupholder."))
-    closemessage
+    if (!flag(FLAG_RECEIVED_BASILISK_EGG)) {
+     
+        namebox ("HyperStan")
+        msgbox(format("Ew what is that monster you have with you in your party!\pGet rid of it and take use this instead."))
+        closemessage
+        hidenamebox
+        //GIVE EGG
+        getpartysize
+        compare (VAR_RESULT, PARTY_SIZE)
+        goto_if_eq (SCRIPT_EGG_NOROOM)
+        setflag (FLAG_RECEIVED_BASILISK_EGG)
+        playfanfare (MUS_OBTAIN_ITEM)
+        msgbox(format("Obtained an EGG from the HyperStan!"))
+        waitfanfare
+        giveegg (SPECIES_BASILISK_BABY_FORM)
+        namebox ("HyperStan")
+        msgbox(format("You'll have to hatch it first.\pBut already as an egg it surpasses those monsters you have with you…"))
+    }
+    else {
+        namebox ("HyperStan")
+        msgbox(format("I hope you decided to get rid of those monsters you had."))
+    }
     hidenamebox
-    //GIVE EGG
-    release
-    end
+    closemessage
+	release
+	end
 }
 
 script POTTERINGTON_FARM_JagexMod
@@ -414,6 +550,27 @@ script POTTERINGTON_FARM_JagexMod
     closemessage
     hidenamebox
     //GIVE EGG
+    release
+    end
+}
+
+
+
+
+script POTTERINGTON_FARM_test
+{
+    faceplayer
+    namebox ("Demonheadge")
+
+    special(Is_InParty_hasHAT)
+    if (var(VAR_RESULT) == TRUE) {
+        msgbox(format("Your monsters are balanced in attack and defense."))
+    } else
+    {
+            msgbox(format("You do not have a baby yak."))
+    }
+    closemessage
+    hidenamebox
     release
     end
 }

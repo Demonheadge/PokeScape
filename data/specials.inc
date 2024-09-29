@@ -554,3 +554,19 @@ gSpecials::
 	def_special GetCurrentMap
 	def_special GetSeededResult
 	def_special GetTimeOfDaySpecial
+	def_special Is_InParty_TZHAAR
+	def_special Is_InParty_Swan
+	def_special Is_InParty_Balanced
+	def_special Is_InParty_hasHAT
+	def_special Is_InParty_CABBAGE
+	def_special Is_InParty_GOBLINFISH
+	def_special Is_InParty_ZAMORAK
+	def_special Is_InParty_SARADOMIN
+	def_special Is_InParty_GUTHIX
+	def_special Is_InParty_SEREN
+	def_special Is_InParty_ZAROS
+	def_special Is_InParty_BANDOS
+
+
+
+

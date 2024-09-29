@@ -1393,7 +1393,7 @@ script CRANDOR_VOLCANO_EARTHQUAKE_4 {
 	setvar(VAR_0x8007, 2) //SHAKE DELAY
     special(ShakeCamera)
     delay(60)
-
+    addvar(VAR_GAMEMODE_LEVEL_CAP, 3)
     setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 150)
     setvar(VAR_TEMP_E, 5)
 

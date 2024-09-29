@@ -11,23 +11,45 @@ Route4_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 
 
 ROUTE_4_STATE::
-	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
-	goto_if_eq ROUTE_4_STATE_1
 	removeobject 9
 	removeobject 11
 	setflag FLAG_TEMP_1F
-	return
-
+	setflag FLAG_TEMP_4
+	removeobject 19
+	removeobject 20
+	setflag FLAG_TEMP_A
+	removeobject 21
+	checkitem ITEM_TERRORBIRD_POUCH, 1
+	compare VAR_RESULT, 0
+	goto_if_ne ROUTE_4_STATE_2
 ROUTE_4_STATE_1:
-	switch VAR_POKESCAPE_STORYMODE_PROGRESS
-	case 100, ROUTE_4_STATE_6
-	case 101, ROUTE_4_STATE_6
-	removeobject 9
-	removeobject 11
-	setflag FLAG_TEMP_1F
+	special Is_InParty_SEREN
+	compare VAR_RESULT, TRUE
+	goto_if_eq ROUTE_4_STATE_5
+	goto_if_set FLAG_RECEIVED_SERELING_EGG, ROUTE_4_STATE_5
+ROUTE_4_STATE_4:
+	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
+	goto_if_eq ROUTE_4_STATE_9
 	return
 
-ROUTE_4_STATE_6:
+ROUTE_4_STATE_2:
+	clearflag FLAG_TEMP_4
+	addobject 19
+	addobject 20
+	goto ROUTE_4_STATE_1
+
+ROUTE_4_STATE_5:
+	clearflag FLAG_TEMP_A
+	addobject 21
+	goto ROUTE_4_STATE_4
+
+ROUTE_4_STATE_9:
+	switch VAR_POKESCAPE_STORYMODE_PROGRESS
+	case 100, ROUTE_4_STATE_12
+	case 101, ROUTE_4_STATE_12
+	return
+
+ROUTE_4_STATE_12:
 	addobject 9
 	addobject 11
 	clearflag FLAG_TEMP_1F
@@ -250,6 +272,58 @@ ROUTE4_Diviner::
 	end
 
 
+POTTERINGTON_FARM_Prezleek::
+	lockall
+	faceplayer
+	checkitem ITEM_YAK_POUCH, 1
+	compare VAR_RESULT, 0
+	goto_if_eq POTTERINGTON_FARM_Prezleek_2
+POTTERINGTON_FARM_Prezleek_1:
+	namebox POTTERINGTON_FARM_Prezleek_Text_0
+	msgbox POTTERINGTON_FARM_Prezleek_Text_6
+	closemessage
+	hidenamebox
+	release
+	end
+
+POTTERINGTON_FARM_Prezleek_2:
+	checkitem ITEM_TERRORBIRD_POUCH, 1
+	compare VAR_RESULT, 0
+	goto_if_ne POTTERINGTON_FARM_Prezleek_4
+	goto POTTERINGTON_FARM_Prezleek_1
+
+POTTERINGTON_FARM_Prezleek_4:
+	namebox POTTERINGTON_FARM_Prezleek_Text_0
+	msgbox POTTERINGTON_FARM_Prezleek_Text_1
+	applymovement 19, MOVEMENT_INTERACT_RIGHT
+	waitmovement 0
+	msgbox POTTERINGTON_FARM_Prezleek_Text_2
+	closemessage
+	hidenamebox
+	namebox POTTERINGTON_FARM_Prezleek_Text_3
+	msgbox POTTERINGTON_FARM_Prezleek_Text_4
+	closemessage
+	hidenamebox
+	applymovement 19, Movement_InteractFACEPLAYER
+	waitmovement 0
+	namebox POTTERINGTON_FARM_Prezleek_Text_0
+	msgbox POTTERINGTON_FARM_Prezleek_Text_5
+	closemessage
+	hidenamebox
+	giveitem ITEM_YAK_POUCH, 1
+	goto POTTERINGTON_FARM_Prezleek_1
+
+
+POTTERINGTON_FARM_Baroo::
+	faceplayer
+	namebox POTTERINGTON_FARM_Prezleek_Text_3
+	msgbox POTTERINGTON_FARM_Baroo_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 MuggerBattleRoute4_Text_0:
 	.string "Stand and deliver!$"
 
@@ -372,3 +446,33 @@ ROUTE4_Diviner_Text_1:
 	.string "while I am away.\p"
 	.string "Thankfully Potterington farm offered\n"
 	.string "to look after them while I am away.$"
+
+POTTERINGTON_FARM_Prezleek_Text_0:
+	.string "Prezleek$"
+
+POTTERINGTON_FARM_Prezleek_Text_1:
+	.string "Hello.\p"
+	.string "Wait…{PAUSE 16} What is that…?{PAUSE 16}\n"
+	.string "A rideable Terrorbird?!\p"
+	.string "Unbelieveable everyone knows Yaks are\n"
+	.string "the best source of transportation.$"
+
+POTTERINGTON_FARM_Prezleek_Text_2:
+	.string "Baroo, you agree with me right?$"
+
+POTTERINGTON_FARM_Prezleek_Text_3:
+	.string "Baroo$"
+
+POTTERINGTON_FARM_Prezleek_Text_4:
+	.string "Baroooo, Baroo!$"
+
+POTTERINGTON_FARM_Prezleek_Text_5:
+	.string "See even Baroo agrees.\p"
+	.string "Here have this.$"
+
+POTTERINGTON_FARM_Prezleek_Text_6:
+	.string "See aren't Yaks so much better than\n"
+	.string "Terrorbirds?$"
+
+POTTERINGTON_FARM_Baroo_Text_0:
+	.string "Baroo, baroo!$"

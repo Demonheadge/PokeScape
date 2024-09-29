@@ -26,16 +26,16 @@ script AsgarnianDungeon_B3F_STATE
             //setobjectxy(14, 23, 7)
             //setobjectxyperm(14, 23, 7)
         case 5:
+            clearflag(FLAG_TEMP_D)
+            addobject(14)
+            setmetatile(12,13,METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE,1) //SPARKLE
+            setmetatile(20,6,METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE,1) //SPARKLE
+            setmetatile(27,7,METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE,1) //SPARKLE
+            setmetatile(17,21,METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE,1) //SPARKLE
+            special(DrawWholeMapView) 
         case 10:
             clearflag(FLAG_TEMP_D)
             addobject(14)
-            //setobjectxy(14, 25, 5)
-            //setobjectxyperm(14, 25, 5)
-            setmetatile(12,13,919,1) //SPARKLE
-            setmetatile(20,6,919,1) //SPARKLE
-            setmetatile(27,7,919,1) //SPARKLE
-            setmetatile(17,21,919,1) //SPARKLE
-            special(DrawWholeMapView) 
         case 15:
             removeobject(14)
             setflag(FLAG_TEMP_D)
@@ -50,10 +50,10 @@ script AsgarnianDungeon_B3F_METATILES
             return
         case 5:
         case 10:
-            setmetatile(12,13,919,1) //SPARKLE
-            setmetatile(20,6,919,1) //SPARKLE
-            setmetatile(27,7,919,1) //SPARKLE
-            setmetatile(17,21,919,1) //SPARKLE
+            setmetatile(12,13,METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE,1) //SPARKLE
+            setmetatile(20,6,METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE,1) //SPARKLE
+            setmetatile(27,7,METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE,1) //SPARKLE
+            setmetatile(17,21,METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE,1) //SPARKLE
             special(DrawWholeMapView) 
         case 15:
             setmetatile(26, 4, 910, 0)
@@ -69,10 +69,10 @@ script DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_KEYS
         msgbox(format("{PLAYER} found the DUNGEON KEY."))
         waitfanfare
         closemessage
-        setmetatile(12,13,893,1) //
-        setmetatile(20,6,893,1) //
-        setmetatile(27,7,893,1) //
-        setmetatile(17,21,893,1) //
+        setmetatile(12,13,METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS,1) //
+        setmetatile(20,6,METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS,1) //
+        setmetatile(27,7,METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS,1) //
+        setmetatile(17,21,METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS,1) //
         special(DrawWholeMapView) 
     }
     end

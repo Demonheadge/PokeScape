@@ -4,9 +4,7 @@ VerdanturfTown_WandasHouse_MapScripts::
 VerdanturfTown_WandasHouse_EventScript_Wally::
 	lock
 	faceplayer
-	goto_if_set FLAG_WALLY_SPEECH, VerdanturfTown_WandasHouse_EventScript_WallyShortSpeech
-	msgbox VerdanturfTown_WandasHouse_Text_StrongerSpeech, MSGBOX_DEFAULT
-	setflag FLAG_WALLY_SPEECH
+
 	release
 	end
 
@@ -40,11 +38,7 @@ VerdanturfTown_WandasHouse_EventScript_WandasBoyfriend::
 
 VerdanturfTown_WandasHouse_EventScript_Wanda::
 	lock
-	faceplayer
-	goto_if_set FLAG_DEFEATED_LAVARIDGE_GYM, VerdanturfTown_WandasHouse_EventScript_WandaDontWorry
-	goto_if_set FLAG_DEFEATED_WALLY_MAUVILLE, VerdanturfTown_WandasHouse_EventScript_MeetWanda
-	msgbox VerdanturfTown_WandasHouse_Text_DontWorryAboutWally, MSGBOX_DEFAULT
-	release
+
 	end
 
 VerdanturfTown_WandasHouse_EventScript_MeetWanda::

@@ -384,6 +384,10 @@
 #define METATILE_LilycoveMuseum_Painting4_Left   0x262
 #define METATILE_LilycoveMuseum_Painting4_Right  0x263
 
+// gTileset_Lumbridge
+#define METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS          0x37D
+#define METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE  0x397
+
 // gTileset_Mauville
 #define METATILE_Mauville_DeepSand_BottomMid  0x259
 #define METATILE_Mauville_DeepSand_Center     0x251

@@ -219,15 +219,15 @@
 #define FLAG_DECORATION_14                   0xBB
 #define FLAG_RECEIVED_POKENAV                0xBC
 #define FLAG_RECIEVED_EX_EX_PARROT           0xBD   
-#define FLAG_DEFEATED_WALLY_MAUVILLE         0xBE
-#define FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F  0xBF
-#define FLAG_RECEIVED_SUN_STONE_MOSSDEEP     0xC0
-#define FLAG_WALLY_SPEECH                    0xC1
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1   0xC2 // Leftover from the RS version of Puzzle Room 7, functionally unused
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_2   0xC3 //
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_3   0xC4 //
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_4   0xC5 //
-#define FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_5   0xC6 //
+#define FLAG_RECEIVED_SARADOMIN_EGG          0xBE //FLAG_RECEIVED_GUTHIX_EGG //FLAG_DEFEATED_WALLY_MAUVILLE
+#define FLAG_RECEIVED_ZAMORAK_EGG            0xBF //FLAG_DEFEATED_GRUNT_SPACE_CENTER_1F
+#define FLAG_RECEIVED_BANDLING_EGG           0xC0 //FLAG_RECEIVED_SUN_STONE_MOSSDEEP
+#define FLAG_RECEIVED_ZAROLING_EGG           0xC1 //FLAG_WALLY_SPEECH
+#define FLAG_RECEIVED_SERELING_EGG           0xC2 // Leftover from the RS version of Puzzle Room 7, functionally unused
+#define FLAG_RECEIVED_UNGODLING_EGG          0xC3 //
+#define FLAG_RECEIVED_ARMALING_EGG           0xC4 //
+#define FLAG_RECEIVED_RAVENLING_EGG          0xC5 //
+#define FLAG_RECEIVED_BASILISK_EGG           0xC6 //
 #define FLAG_RUSTURF_TUNNEL_OPENED           0xC7
 #define FLAG_RECEIVED_RED_SCARF              0xC8
 #define FLAG_RECEIVED_BLUE_SCARF             0xC9
@@ -625,13 +625,13 @@
 #define FLAG_HIDDEN_ITEM_DRAYNORMANOR_3                         (FLAG_HIDDEN_ITEMS_START + 0x40)
 #define FLAG_HIDDEN_ITEM_DRAYNORMANOR_4                         (FLAG_HIDDEN_ITEMS_START + 0x5A)
 #define FLAG_HIDDEN_ITEM_DRAYNORMANOR_5                         (FLAG_HIDDEN_ITEMS_START + 0x5B)
-#define FLAG_HIDDEN_ITEM_ROUTE_110_REVIVE                       (FLAG_HIDDEN_ITEMS_START + 0x36)
-#define FLAG_HIDDEN_ITEM_ROUTE_110_GREAT_BALL                   (FLAG_HIDDEN_ITEMS_START + 0x35)
-#define FLAG_HIDDEN_ITEM_ROUTE_110_POKE_BALL                    (FLAG_HIDDEN_ITEMS_START + 0x41)
-#define FLAG_HIDDEN_ITEM_ROUTE_110_FULL_HEAL                    (FLAG_HIDDEN_ITEMS_START + 0x37)
-#define FLAG_HIDDEN_ITEM_ROUTE_111_STARDUST                     (FLAG_HIDDEN_ITEMS_START + 0x02)
-#define FLAG_HIDDEN_ITEM_ROUTE_111_PROTEIN                      (FLAG_HIDDEN_ITEMS_START + 0x38)
-#define FLAG_HIDDEN_ITEM_ROUTE_111_RARE_CANDY                   (FLAG_HIDDEN_ITEMS_START + 0x39)
+#define FLAG_HIDDEN_ITEM_MELZAR_1                               (FLAG_HIDDEN_ITEMS_START + 0x36)
+#define FLAG_HIDDEN_ITEM_MELZAR_2                               (FLAG_HIDDEN_ITEMS_START + 0x35)
+#define FLAG_HIDDEN_ITEM_MELZAR_3                               (FLAG_HIDDEN_ITEMS_START + 0x41)
+#define FLAG_HIDDEN_ITEM_MELZAR_4                               (FLAG_HIDDEN_ITEMS_START + 0x37)
+#define FLAG_HIDDEN_ITEM_MELZAR_5                               (FLAG_HIDDEN_ITEMS_START + 0x02)
+#define FLAG_HIDDEN_ITEM_MELZAR_6                               (FLAG_HIDDEN_ITEMS_START + 0x38)
+#define FLAG_HIDDEN_ITEM_MELZAR_7                               (FLAG_HIDDEN_ITEMS_START + 0x39)
 #define FLAG_HIDDEN_ITEM_ROUTE_113_ETHER                        (FLAG_HIDDEN_ITEMS_START + 0x03)
 #define FLAG_HIDDEN_ITEM_ROUTE_113_TM_32                        (FLAG_HIDDEN_ITEMS_START + 0x1E)
 #define FLAG_HIDDEN_ITEM_ROUTE_113_NUGGET                       (FLAG_HIDDEN_ITEMS_START + 0x62)

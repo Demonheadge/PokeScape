@@ -236,7 +236,7 @@
       "y": 7,
       "elevation": 0,
       "item": "ITEM_WATER_RUNE",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_HIDDEN_ITEM_MELZAR_1"
     },
     {
       "type": "hidden_item",
@@ -244,7 +244,7 @@
       "y": 17,
       "elevation": 0,
       "item": "ITEM_STAT_BEER",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_HIDDEN_ITEM_MELZAR_4"
     },
     {
       "type": "hidden_item",
@@ -252,7 +252,7 @@
       "y": 14,
       "elevation": 0,
       "item": "ITEM_LAMP_SPEED",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_HIDDEN_ITEM_MELZAR_2"
     },
     {
       "type": "hidden_item",
@@ -260,7 +260,7 @@
       "y": 24,
       "elevation": 0,
       "item": "ITEM_IRON_POUCH",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_HIDDEN_ITEM_MELZAR_3"
     },
     {
       "type": "sign",

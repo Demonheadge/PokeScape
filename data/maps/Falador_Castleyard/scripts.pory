@@ -448,6 +448,7 @@ script NPC_FALADORCASTLE_GYM_SIRAMIKVARZE {
         msgbox(format("That move is called Razor Shell, it is a very sharp move.\pHopefully it will help you on your journey."))
         closemessage
         hidenamebox
+        addvar(VAR_GAMEMODE_LEVEL_CAP, 5)
         setvar(VAR_POKESCAPE_FALADOR_STATE, 5)
         setflag(FLAG_BADGE02_GET)
         call(HIDDEN_GROTTO_RESET)

@@ -119,32 +119,6 @@
       "flag": "FLAG_TEMP_9"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_YAK",
-      "x": 3,
-      "y": 7,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "POTTERINGTON_FARM_Baroo",
-      "flag": "FLAG_TEMP_4"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_PREZLEEK",
-      "x": 6,
-      "y": 8,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "POTTERINGTON_FARM_Prezleek",
-      "flag": "FLAG_TEMP_4"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_JMOD",
       "x": 6,
       "y": 2,
@@ -158,7 +132,7 @@
       "flag": "FLAG_TEMP_7"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_ZEZIMA",
+      "graphics_id": "OBJ_EVENT_GFX_WIZARD_DARK",
       "x": 1,
       "y": 8,
       "elevation": 3,
@@ -167,7 +141,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "POTTERINGTON_FARM_Zezima",
+      "script": "POTTERINGTON_FARM_MysteriousFigure",
       "flag": "FLAG_TEMP_5"
     },
     {
@@ -182,19 +156,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "POTTERINGTON_FARM_Banker",
       "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_HAM_PATTY",
-      "x": 8,
-      "y": 10,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_TEMP_A"
     }
   ],
   "warp_events": [

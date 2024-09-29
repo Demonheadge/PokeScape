@@ -1,4 +1,7 @@
 const OBJ_EVENT_ID_DAYCAREWATCHER = 2
+const OBJ_EVENT_ID_PREZLEEK = 19
+const OBJ_EVENT_ID_BAROO = 20
+const OBJ_EVENT_ID_SEREN = 21
 
 mapscripts Route4_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
@@ -12,7 +15,34 @@ mapscripts Route4_MapScripts {
 
 
 
-script ROUTE_4_STATE{
+script ROUTE_4_STATE {
+//HAM
+    removeobject(9)
+    removeobject(11)
+    setflag(FLAG_TEMP_1F)
+//PREZLEEK
+    setflag(FLAG_TEMP_4)
+    removeobject(OBJ_EVENT_ID_PREZLEEK)
+    removeobject(OBJ_EVENT_ID_BAROO)
+//Seren
+    setflag(FLAG_TEMP_A)
+    removeobject(OBJ_EVENT_ID_SEREN)
+
+
+    checkitem (ITEM_TERRORBIRD_POUCH, 1)
+    if (var(VAR_RESULT))
+    {
+        clearflag(FLAG_TEMP_4)
+        addobject(OBJ_EVENT_ID_PREZLEEK)
+        addobject(OBJ_EVENT_ID_BAROO)
+    }
+
+    special(Is_InParty_SEREN)
+    if (var(VAR_RESULT) == TRUE || (flag(FLAG_RECEIVED_SERELING_EGG))) {
+        clearflag(FLAG_TEMP_A)
+        addobject(OBJ_EVENT_ID_SEREN)
+    }
+
     if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORYMODE
     {
         switch (var(VAR_POKESCAPE_STORYMODE_PROGRESS)){ 
@@ -23,28 +53,18 @@ script ROUTE_4_STATE{
                 clearflag(FLAG_TEMP_1F)
                 return
         }
-        removeobject(9)
-        removeobject(11)
-        setflag(FLAG_TEMP_1F)
-        return
-    }
-    else { //OPENWORLD MODE - REMOVE ALL STORYMODE OBJECTS
-        removeobject(9)
-        removeobject(11)
-        setflag(FLAG_TEMP_1F)
-        return
     }
 }
 
 
 script POTTERINGTON_FARM_OUTDOOR_STATE{
-        switch (var(VAR_POKESCAPE_POTTERINGTON_FARM_STATE)){ 
-            case 0: 
-                return
-            case 1: 
-                setobjectxyperm(OBJ_EVENT_ID_DAYCAREWATCHER,8,23)
-                return
-        }
+    switch (var(VAR_POKESCAPE_POTTERINGTON_FARM_STATE)){ 
+        case 0: 
+            return
+        case 1: 
+            setobjectxyperm(OBJ_EVENT_ID_DAYCAREWATCHER,8,23)
+            return
+    }
 }
 
 
@@ -237,6 +257,62 @@ script ROUTE4_Diviner
     faceplayer
     namebox ("Diviner")
     msgbox(format("I'm about to go on holiday and I need someone look after my Sheep and Wolf while I am away.\pThankfully Potterington farm offered to look after them while I am away."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
+
+script POTTERINGTON_FARM_Prezleek
+{
+    lockall
+    faceplayer
+    checkitem (ITEM_YAK_POUCH, 1)
+	if (!var(VAR_RESULT))
+	{
+        checkitem (ITEM_TERRORBIRD_POUCH, 1)
+        if (var(VAR_RESULT))
+        {
+            namebox ("Prezleek")
+            msgbox(format("Hello.\pWait…{PAUSE 16} What is that…?{PAUSE 16}\nA rideable Terrorbird?!\pUnbelieveable everyone knows Yaks are the best source of transportation."))
+            applymovement(OBJ_EVENT_ID_PREZLEEK, MOVEMENT_INTERACT_RIGHT)
+            waitmovement(0)
+            msgbox(format("Baroo, you agree with me right?"))
+            closemessage
+            hidenamebox
+            //applymovement(OBJ_EVENT_ID_BAROO, Movement_InteractFACERIGHT)
+            //waitmovement(0)
+            namebox ("Baroo")
+            msgbox(format("Baroooo, Baroo!"))
+            closemessage
+            hidenamebox
+            applymovement(OBJ_EVENT_ID_PREZLEEK, Movement_InteractFACEPLAYER)
+            waitmovement(0)
+            namebox ("Prezleek")
+            msgbox(format("See even Baroo agrees.\pHere have this."))
+            closemessage
+            hidenamebox
+            giveitem(ITEM_YAK_POUCH, 1)
+        }
+    }
+    namebox ("Prezleek")
+    msgbox(format("See aren't Yaks so much better than Terrorbirds?"))
+    closemessage
+    hidenamebox
+    release
+    end   
+}
+
+script POTTERINGTON_FARM_Baroo
+{
+    faceplayer
+    namebox ("Baroo")
+    //PLAY SOUND
+    msgbox(format("Baroo, baroo!"))
+    //WAITSOUND
     closemessage
     hidenamebox
     release

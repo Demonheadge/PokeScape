@@ -403,7 +403,7 @@ script NEWSLETTER_5 //FALADOR
 	faceplayer
 	msgbox(format("Newsletter Volume 5.\nGotta go fast!\pWould you like to read it?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT)) {
-	msgbox(format("Got sore feet?\n{PAUSE 15}Run energy drained?\pAgility level too low?\n{PAUSE 15}Well be exhausted no more!\pMy Terrorbird can fix that in a jiffy!\nCome see them in Rimmington.\p - Gnome boy Kevin"))
+	msgbox(format("Got sore feet?\n{PAUSE 15}Run energy drained?\pAgility level too low?\n{PAUSE 15}Well be exhausted no more!\pMy Terrorbird can fix that in a jiffy!\nCome see them in Rimmington.\p - Gnome boi Kevin"))
 	}
     closemessage
 	release

@@ -1309,7 +1309,7 @@ NEWSLETTER_5_Text_1:
 	.string "{PAUSE 15}Well be exhausted no more!\p"
 	.string "My Terrorbird can fix that in a jiffy!\n"
 	.string "Come see them in Rimmington.\p"
-	.string "- Gnome boy Kevin$"
+	.string "- Gnome boi Kevin$"
 
 NEWSLETTER_6_Text_0:
 	.string "Newsletter Volume 6.\n"

@@ -4345,3 +4345,417 @@ void GetTimeOfDaySpecial(void)
 	gSpecialVar_Result = GetTimeOfDay();
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*void Is_InParty_TZHAAR(void)
+{
+    u8 i;
+    u16 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        //if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        //{
+
+            //if (species == SPECIES_UNGODLING || species == SPECIES_UNGODBIRD || species == SPECIES_UNGODGEON)
+            //speciesName
+
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            if (gSpeciesInfo[species].speciesName[0] == SPECIES_BABY_YAK || gSpeciesInfo[species].types[1] == SPECIES_UNGODBIRD)
+            {
+                gSpecialVar_Result = TRUE;
+                return;
+            }
+        //}
+    }
+    gSpecialVar_Result = FALSE;
+}*/
+
+
+
+/*bool8 isMonAFrog(u16 species){
+
+	u16 eggSpecies2;
+	eggSpecies2 = GetEggSpecies(species);
+	if (eggSpecies2 == SPECIES_FROG_BALLOON_FORM || eggSpecies2 == SPECIES_FROG_BLOATED_FORM || eggSpecies2 == SPECIES_FROG_NORMAL_FORM || eggSpecies2 == SPECIES_GIANT_FROG_NORMAL_FORM || eggSpecies2 == SPECIES_GIANT_FROG_ROYAL_FORM || eggSpecies2 == SPECIES_FROGSPAWN) {
+		return TRUE;
+	}
+	else {
+		return FALSE;
+	}
+}*/
+
+/*void Is_InParty_TZHAAR(void) {
+    u8 i;
+    u16 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++) {
+        pokemon = &gPlayerParty[i];
+
+
+        species = GetMonData(pokemon, MON_DATA_SPECIES);
+        if (species == SPECIES_BABY_YAK) {
+            return TRUE;
+        }
+        else {
+            return FALSE;
+        }
+    }
+
+
+
+
+    
+}
+*/
+
+
+
+
+/*
+species = SanitizeSpeciesId(species);
+    if (gSpeciesInfo[species].speciesName[0] == 0)
+        return gSpeciesInfo[SPECIES_NONE].speciesName;
+    return gSpeciesInfo[species].speciesName;*/
+
+
+
+    /*void Is_InParty_TZHAAR(void)
+{
+    u8 i;
+    u16 species;
+    struct Pokemon *pokemon;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        pokemon = &gPlayerParty[i];
+        if (GetMonData(pokemon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(pokemon, MON_DATA_IS_EGG))
+        {
+            species = GetMonData(pokemon, MON_DATA_SPECIES);
+            //if (gSpeciesInfo[species].types[0] == TYPE_GRASS || gSpeciesInfo[species].types[1] == TYPE_GRASS)
+            //if (gSpeciesInfo[species].speciesName[0] == SPECIES_BABY_YAK)
+
+            if ((GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_BABY_YAK)
+            || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SARABIRD))
+            {
+                gSpecialVar_Result = TRUE;
+                return;
+            }
+        }
+    }
+    gSpecialVar_Result = FALSE;
+}*/
+
+
+void Is_InParty_TZHAAR(void)
+{
+    u8 i;
+    u8 partyCount = CalculatePlayerPartyCount();
+    for (i = 0; i < partyCount; i++)
+    {
+        if ((GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_TZ_KEK)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_TZ_KIH)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_TZ_KIH_SPIRIT_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_TZKAL_ZUK)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_TZREK_JAD)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_TZTOK_JAD)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_TZTOK_JAD_HD_MEGA_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_TZTOK_JAD_RS3_MEGA_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_KET_ZEK)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_TOK_XIL)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_KET_DILL)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_KET_ZEK)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_YT_HURKOT)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_YT_MEJKOT)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_JAL_AK)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_JAL_IMKOT)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_JAL_MEJRAH)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_JAL_XIL)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_JAL_NIB)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_JAL_ZEK)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_JALTOK_JAD))
+        {
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+                gSpecialVar_Result = TRUE;
+                return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+    return;
+}
+void Is_InParty_Swan(void)
+{
+    u8 i;
+    u8 partyCount = CalculatePlayerPartyCount();
+    for (i = 0; i < partyCount; i++)
+    {
+        if ((GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SWAN))
+        {
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+                gSpecialVar_Result = TRUE;
+                return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+    return;
+}
+
+void Is_InParty_Balanced(void)
+{
+    u8 i;
+    u8 partyCount = CalculatePlayerPartyCount();
+    for (i = 0; i < partyCount; i++)
+    {
+        if ((GetMonData(&gPlayerParty[i], MON_DATA_ATK, 0) == GetMonData(&gPlayerParty[i], MON_DATA_DEF, 0))
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPATK, 0) == GetMonData(&gPlayerParty[i], MON_DATA_SPDEF, 0))
+        )
+        {
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+                gSpecialVar_Result = TRUE;
+                return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+    return;
+}
+void Is_InParty_hasHAT(void)
+{
+    u8 i;
+    u8 partyCount = CalculatePlayerPartyCount();
+    for (i = 0; i < partyCount; i++)
+    {
+        if ((GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SPARKLES)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SPARKY)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_CAT_POST_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_PARTY_ROCK)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_PENGUIN_MCGRAW_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_GIANT_FROG_ROYAL_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_BLOODHOUND)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_CABBAGE_CRISPY_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_CROCODILE_UKUNDUKA_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SQUIRREL_AUSTRALIAN_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_IMPLING_KINGLY_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_IMPLING_LUCKY_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_DESSOURT)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_IMPLING_SNOW_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_IMPLING_WANDERING_FORM))
+        {
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+                gSpecialVar_Result = TRUE;
+                return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+    return;
+}
+void Is_InParty_CABBAGE(void)
+{
+    u8 i;
+    u8 partyCount = CalculatePlayerPartyCount();
+    for (i = 0; i < partyCount; i++)
+    {
+        if ((GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_CABBAGE)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_CABBAGE_CRISPY_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_CABBAGE_SHATTERED_WORLD_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_CABBAGE_SISTER_FORM))
+        {
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+                gSpecialVar_Result = TRUE;
+                return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+    return;
+}
+
+void Is_InParty_GOBLINFISH(void)
+{
+    u8 i;
+    u8 partyCount = CalculatePlayerPartyCount();
+    for (i = 0; i < partyCount; i++)
+    {
+        if ((GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_GOBLINFISH))
+        {
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+                gSpecialVar_Result = TRUE;
+                return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+    return;
+}
+
+
+
+
+
+
+
+void Is_InParty_ZAMORAK(void)
+{
+    u8 i;
+    u8 partyCount = CalculatePlayerPartyCount();
+    for (i = 0; i < partyCount; i++)
+    {
+        if ((GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_ZAMATRICE)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_HELLHOUND)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_HELLPUPPY)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_CAT_HELL_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_RAT_HELL_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SHELL_RAT)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_GIANT_RAT_HELL_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_BEHEMOTH_NORMAL_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_BEHEMOTH_ADOLSCENT_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SIEGE_BEAST)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SPIRIT_RANGER))
+        {
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+                gSpecialVar_Result = TRUE;
+                return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+    return;
+}
+void Is_InParty_SARADOMIN(void)
+{
+    u8 i;
+    u8 partyCount = CalculatePlayerPartyCount();
+    for (i = 0; i < partyCount; i++)
+    {
+        if ((GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SPIRIT_WARRIOR)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SARATRICE)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_STARLIGHT)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_GROWLER)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_UNICORN_STALLION_FORM))
+        {
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+                gSpecialVar_Result = TRUE;
+                return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+    return;
+}
+void Is_InParty_GUTHIX(void)
+{
+    u8 i;
+    u8 partyCount = CalculatePlayerPartyCount();
+    for (i = 0; i < partyCount; i++)
+    {
+        if ((GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_JUNA)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_GUTHATRICE)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_GUTHIXIAN_BUTTERFLY)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_VALLUTA)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_BALANCEELE)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_DERWEN)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_FIARA))
+        {
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+                gSpecialVar_Result = TRUE;
+                return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+    return;
+}
+
+void Is_InParty_SEREN(void)
+{
+    u8 i;
+    u8 partyCount = CalculatePlayerPartyCount();
+    for (i = 0; i < partyCount; i++)
+    {
+        if ((GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_RAVEN_CRYSTAL_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_IMPLING_CRYSTAL_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_CHINCHOMPA_CRYSTAL)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_BAT_GAUNTLET_CRYSTALLINE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_BAT_GAUNTLET_CORRUPTED_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_RAT_GAUNTLET_CRYSTALLINE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_RAT_GAUNTLET_CORRUPTED_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_BEAR_GAUNTLET_CRYSTALLINE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_BEAR_GAUNTLET_CORRUPTED_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_UNICORN_GAUNTLET_CRYSTALLINE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_UNICORN_GAUNTLET_CORRUPTED_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SCORPION_GAUNTLET_CORRUPTED_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SCORPION_GAUNTLET_CRYSTALLINE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_DARK_BEAST_GAUNTLET_CORRUPTED_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_DARK_BEAST_GAUNTLET_CRYSTALLINE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_GRENWALL)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_LIGHT_CREATURE)
+        )
+        {
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+                gSpecialVar_Result = TRUE;
+                return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+    return;
+}
+
+void Is_InParty_ZAROS(void)
+{
+    u8 i;
+    u8 partyCount = CalculatePlayerPartyCount();
+    for (i = 0; i < partyCount; i++)
+    {
+        if ((GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_RAVEN_CRYSTAL_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_IMPLING_CRYSTAL_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_CHINCHOMPA_CRYSTAL)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_BAT_GAUNTLET_CRYSTALLINE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_BAT_GAUNTLET_CORRUPTED_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_RAT_GAUNTLET_CRYSTALLINE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_RAT_GAUNTLET_CORRUPTED_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_BEAR_GAUNTLET_CRYSTALLINE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_BEAR_GAUNTLET_CORRUPTED_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_UNICORN_GAUNTLET_CRYSTALLINE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_UNICORN_GAUNTLET_CORRUPTED_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SCORPION_GAUNTLET_CORRUPTED_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SCORPION_GAUNTLET_CRYSTALLINE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_DARK_BEAST_GAUNTLET_CORRUPTED_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_DARK_BEAST_GAUNTLET_CRYSTALLINE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_GRENWALL)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_LIGHT_CREATURE)
+        )
+        {
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+                gSpecialVar_Result = TRUE;
+                return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+    return;
+}
+
+void Is_InParty_BANDOS(void)
+{
+    u8 i;
+    u8 partyCount = CalculatePlayerPartyCount();
+    for (i = 0; i < partyCount; i++)
+    {
+        if ((GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_MINOTAUR_NORMAL_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_MINOTAUR_REANIMATED_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_MINOTAUR_RUNE_FORM)
+        )
+        {
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+                gSpecialVar_Result = TRUE;
+                return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+    return;
+}

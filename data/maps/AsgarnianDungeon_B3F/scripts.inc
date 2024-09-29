@@ -16,8 +16,8 @@ AsgarnianDungeon_B3F_STATE::
 	switch VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE
 	case 0, AsgarnianDungeon_B3F_STATE_3
 	case 5, AsgarnianDungeon_B3F_STATE_4
-	case 10, AsgarnianDungeon_B3F_STATE_4
-	case 15, AsgarnianDungeon_B3F_STATE_5
+	case 10, AsgarnianDungeon_B3F_STATE_5
+	case 15, AsgarnianDungeon_B3F_STATE_6
 AsgarnianDungeon_B3F_STATE_1:
 	return
 
@@ -29,14 +29,19 @@ AsgarnianDungeon_B3F_STATE_3:
 AsgarnianDungeon_B3F_STATE_4:
 	clearflag FLAG_TEMP_D
 	addobject 14
-	setmetatile 12, 13, 919, 1
-	setmetatile 20, 6, 919, 1
-	setmetatile 27, 7, 919, 1
-	setmetatile 17, 21, 919, 1
+	setmetatile 12, 13, METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE, 1
+	setmetatile 20, 6, METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE, 1
+	setmetatile 27, 7, METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE, 1
+	setmetatile 17, 21, METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE, 1
 	special DrawWholeMapView
 	goto AsgarnianDungeon_B3F_STATE_1
 
 AsgarnianDungeon_B3F_STATE_5:
+	clearflag FLAG_TEMP_D
+	addobject 14
+	goto AsgarnianDungeon_B3F_STATE_1
+
+AsgarnianDungeon_B3F_STATE_6:
 	removeobject 14
 	setflag FLAG_TEMP_D
 	goto AsgarnianDungeon_B3F_STATE_1
@@ -54,10 +59,10 @@ AsgarnianDungeon_B3F_METATILES_2:
 	return
 
 AsgarnianDungeon_B3F_METATILES_3:
-	setmetatile 12, 13, 919, 1
-	setmetatile 20, 6, 919, 1
-	setmetatile 27, 7, 919, 1
-	setmetatile 17, 21, 919, 1
+	setmetatile 12, 13, METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE, 1
+	setmetatile 20, 6, METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE, 1
+	setmetatile 27, 7, METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE, 1
+	setmetatile 17, 21, METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE, 1
 	special DrawWholeMapView
 	return
 
@@ -79,10 +84,10 @@ DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_KEYS_2:
 	msgbox DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_KEYS_Text_0
 	waitfanfare
 	closemessage
-	setmetatile 12, 13, 893, 1
-	setmetatile 20, 6, 893, 1
-	setmetatile 27, 7, 893, 1
-	setmetatile 17, 21, 893, 1
+	setmetatile 12, 13, METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS, 1
+	setmetatile 20, 6, METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS, 1
+	setmetatile 27, 7, METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS, 1
+	setmetatile 17, 21, METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS, 1
 	special DrawWholeMapView
 	goto DUNGEONEERING_DOOR_AsgarnianDungeon_B3F_KEYS_1
 

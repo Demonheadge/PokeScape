@@ -188,7 +188,7 @@
       "y": 23,
       "elevation": 0,
       "item": "ITEM_CAKE",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_HIDDEN_ITEM_MELZAR_6"
     },
     {
       "type": "hidden_item",
@@ -196,7 +196,7 @@
       "y": 3,
       "elevation": 0,
       "item": "ITEM_LAMP_ATT",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_HIDDEN_ITEM_MELZAR_7"
     },
     {
       "type": "hidden_item",
@@ -204,7 +204,7 @@
       "y": 15,
       "elevation": 0,
       "item": "ITEM_REPEL_TEA_1",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_HIDDEN_ITEM_MELZAR_5"
     }
   ],
   "has_night_table": false

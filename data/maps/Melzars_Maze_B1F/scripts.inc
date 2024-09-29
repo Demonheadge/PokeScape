@@ -297,6 +297,7 @@ TRIGGER_Melzar_Maze_HAM_EVENT_BABE_13:
 	closemessage
 	hidenamebox
 	fadescreenswapbuffers FADE_TO_BLACK
+	addvar VAR_GAMEMODE_LEVEL_CAP, 2
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 110
 	removeobject 6
 	removeobject 7

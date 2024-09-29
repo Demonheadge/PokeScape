@@ -2425,9 +2425,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_SINKHOLE_NPC_FORGOTTENWARRIOR_1] =
     {
-        .trainerClass = TRAINER_CLASS_DARK,
+        .trainerClass = TRAINER_CLASS_FORGOTTEN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
-        .trainerPic = TRAINER_PIC_wizard_dark,
+        .trainerPic = TRAINER_PIC_forgotten_warrior_novice,
         .trainerName = _("WARRIOR"),
         .items = {},
         .doubleBattle = FALSE,
