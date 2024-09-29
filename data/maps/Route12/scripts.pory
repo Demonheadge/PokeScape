@@ -470,9 +470,11 @@ script ENCOUNTER_COW
     else {
         setwildbattle (SPECIES_CALF, 3, ITEM_NONE)
     }
-	dowildbattleNoCatch
+	dowildbattle
 	if (var(VAR_RESULT) == B_OUTCOME_WON || var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+		fadescreenswapbuffers(FADE_TO_BLACK)
 		removeobject (VAR_LAST_TALKED)
+		fadescreenswapbuffers(FADE_FROM_BLACK)
 	}
     release
 	end

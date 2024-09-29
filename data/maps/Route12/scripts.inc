@@ -387,7 +387,7 @@ ENCOUNTER_COW::
 	goto_if_set FLAG_BADGE01_GET, ENCOUNTER_COW_2
 	setwildbattle SPECIES_CALF, 3, ITEM_NONE
 ENCOUNTER_COW_1:
-	dowildbattleNoCatch
+	dowildbattle
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq ENCOUNTER_COW_6
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
@@ -401,7 +401,9 @@ ENCOUNTER_COW_2:
 	goto ENCOUNTER_COW_1
 
 ENCOUNTER_COW_6:
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_COW_5
 
 
