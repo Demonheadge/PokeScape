@@ -1226,6 +1226,23 @@ NPC_POH_HELLWIND::
 	end
 
 
+ANCHOVYBOOK::
+	lock
+	msgbox ANCHOVYBOOK_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne ANCHOVYBOOK_2
+	msgbox ANCHOVYBOOK_Text_2
+	closemessage
+ANCHOVYBOOK_1:
+	release
+	end
+
+ANCHOVYBOOK_2:
+	msgbox ANCHOVYBOOK_Text_1
+	closemessage
+	goto ANCHOVYBOOK_1
+
+
 NPC_RIMMINGTON_CustomsOfficer_Text_0:
 	.string "Officer$"
 
@@ -1605,10 +1622,10 @@ NPC_RIMMINGTON_DemonAndStan_Text_4:
 	.string "Was frogeel invited?$"
 
 NPC_RIMMINGTON_DemonAndStan_Text_5:
-	.string "Its not Friday today.$"
+	.string "It's not Friday today.$"
 
 NPC_RIMMINGTON_DemonAndStan_Text_6:
-	.string "Where is Orchy and Lukien?$"
+	.string "Where are Orchy and Lukien?$"
 
 NPC_RIMMINGTON_DemonAndStan_Text_7:
 	.string "Fishing.$"
@@ -1618,12 +1635,12 @@ NPC_RIMMINGTON_DemonAndStan_Text_8:
 	.string "your hat or-?$"
 
 NPC_RIMMINGTON_DemonAndStan_Text_9:
-	.string "Lets not have this conversation here\n"
+	.string "Let's not have this conversation here\n"
 	.string "man.$"
 
 NPC_RIMMINGTON_DemonAndStan_Text_10:
 	.string "Ok so tell me again the steps for the\n"
-	.string "plan to kidnap zezimas cat…$"
+	.string "plan to kidnap Zezima's cat…$"
 
 NPC_RIMMINGTON_DemonAndStan_Text_11:
 	.string "SHHHHH people are listening!$"
@@ -1882,3 +1899,30 @@ NPC_POH_HELLWIND_Text_0:
 NPC_POH_HELLWIND_Text_1:
 	.string "Nothing beats these house parties.\p"
 	.string "Except maybe making RSMVs.$"
+
+ANCHOVYBOOK_Text_0:
+	.string "There is a journal on the desk.\p"
+	.string "Do you want to read it?$"
+
+ANCHOVYBOOK_Text_1:
+	.string "Test 119: My quest to continue\n"
+	.string "trialling different methods of evolving\l"
+	.string "monsters continues.\p"
+	.string "I have procured a couple of runes from\n"
+	.string "a local merchant, and am going to\l"
+	.string "attempt to see what effect some\l"
+	.string "elemental runes have on this Anchovy\l"
+	.string "someone left.\p"
+	.string "Previously I'd have ground it up and\n"
+	.string "sieved out the bits to make an oil, but\l"
+	.string "now they have more use in battling.\p"
+	.string "AIR RUNES and WATER RUNES seem to have\n"
+	.string "no effect.\p"
+	.string "Hm.\p"
+	.string "If the heat from cooking them helped to\n"
+	.string "distil the oil, then I wonder what\l"
+	.string "effect a FIRE RUNE would have on it...\p"
+	.string "More testing is required.$"
+
+ANCHOVYBOOK_Text_2:
+	.string "You decide to leave the journal for now.$"

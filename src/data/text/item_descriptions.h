@@ -4802,11 +4802,6 @@ static const u8 sChocolateMilkDesc[] = _(
     "species of MONSTERs\n"
     "evolve.");
 
-static const u8 sSpeedLampDesc[] = _(
-    "A lamp left by a\n"
-    "Genie. Raises the\n"
-    "base SPEED stat.");
-
 static const u8 sEmptyBucketDesc[] = _(
     "An empty bucket.\n"
     "Nothing interesting\n"
@@ -5280,6 +5275,6 @@ static const u8 sSpDefLampDesc[] = _(
     "MONSTER.");
 
 static const u8 sSpeedLampDesc[] = _(
-    "Raises the base\n"
-    "Speed stat of one\n"
-    "MONSTER.");
+    "A lamp left by a\n"
+    "Genie. Raises the\n"
+    "base SPEED stat.");

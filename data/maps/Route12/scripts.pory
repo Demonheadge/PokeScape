@@ -457,23 +457,24 @@ script BROKEN_DOOR
 script ENCOUNTER_COW
 {
 	lock
-    namebox ("COW")
+    namebox ("Cow")
     playmoncry(SPECIES_MILTANK, 0)
 	msgbox(format("MOOOOOOOO!!"))
     waitmoncry
     hidenamebox
 	closemessage
 	delay(1)
-
     if (flag(FLAG_BADGE01_GET) == TRUE) {
         setwildbattle (SPECIES_COW, 8, ITEM_NONE)
+	}
     else {
         setwildbattle (SPECIES_CALF, 3, ITEM_NONE)
     }
 	dowildbattleNoCatch
-    }
+	if (var(VAR_RESULT) == B_OUTCOME_WON || var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+		removeobject (VAR_LAST_TALKED)
+	}
     release
 	end
 }
-
 

@@ -139,7 +139,7 @@ NPC_FALADORPUB_BARMAID_1_Text_0:
 	.string "Emily$"
 
 NPC_FALADORPUB_BARMAID_1_Text_1:
-	.string "Our Asgarnian Ale is selling lot the hot\n"
+	.string "Our Asgarnian Ale is selling like the hot\n"
 	.string "cakes today.\p"
 	.string "No seriously, everyone is ordering hot\n"
 	.string "cakes!$"

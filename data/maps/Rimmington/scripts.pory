@@ -1208,7 +1208,7 @@ script ANCHOVYBOOK {
     lock
     msgbox(format("There is a journal on the desk.\pDo you want to read it?"), MSGBOX_YESNO)
         if (var(VAR_RESULT)){
-            msgbox(format("Test #119: My quest to continue trialling different methods of evolving monsters continues.\pI have procured a couple of runes from a local merchant, and am going to attempt to see what effect some elemental runes have on this Anchovy someone left.\pPreviously I'd have ground it up and sieved out the bits to make an oil, but now they have more use in battling.\pAIR RUNES and WATER RUNES seem to have no effect.\pHm.\pIf the heat from cooking them helped to distil the oil, then I wonder what effect a FIRE RUNE would have on it...\pMore testing is required."))
+            msgbox(format("Test 119: My quest to continue trialling different methods of evolving monsters continues.\pI have procured a couple of runes from a local merchant, and am going to attempt to see what effect some elemental runes have on this Anchovy someone left.\pPreviously I'd have ground it up and sieved out the bits to make an oil, but now they have more use in battling.\pAIR RUNES and WATER RUNES seem to have no effect.\pHm.\pIf the heat from cooking them helped to distil the oil, then I wonder what effect a FIRE RUNE would have on it...\pMore testing is required."))
             closemessage
         }
         else {

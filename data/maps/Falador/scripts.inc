@@ -234,7 +234,6 @@ NPC_FALADOR_GUARD_6::
 NPC_FALADOR_GUARD_7::
 	lock
 	faceplayer
-	namebox NPC_FALADOR_GUARD_1_Text_0
 	msgbox NPC_FALADOR_GUARD_7_Text_0
 	waitmessage
 	hidenamebox
@@ -630,11 +629,11 @@ NPC_FALADOR_MYSTERIOUS_OLD_MAN::
 	end
 
 
-NPC_FALADOR_SirTiffyCachien::
+NPC_FALADOR_SirTiffyCashien::
 	lock
 	faceplayer
-	namebox NPC_FALADOR_SirTiffyCachien_Text_0
-	msgbox NPC_FALADOR_SirTiffyCachien_Text_1
+	namebox NPC_FALADOR_SirTiffyCashien_Text_0
+	msgbox NPC_FALADOR_SirTiffyCashien_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -781,7 +780,8 @@ NPC_FALADOR_BANK_NPC_1::
 NPC_FALADOR_GEMSTORE_NPC_1::
 	lock
 	faceplayer
-	msgbox NPC_FALADOR_GEMSTORE_NPC_1_Text_0
+	namebox NPC_FALADOR_GEMSTORE_NPC_1_Text_0
+	msgbox NPC_FALADOR_GEMSTORE_NPC_1_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -808,7 +808,8 @@ NPC_FALADOR_GEMSTORE_OWNER::
 NPC_FALADOR_BANK_NPC_2::
 	lock
 	faceplayer
-	msgbox NPC_FALADOR_BANK_NPC_2_Text_0
+	namebox NPC_FALADOR_BANK_NPC_2_Text_0
+	msgbox NPC_FALADOR_BANK_NPC_2_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -829,7 +830,8 @@ NPC_FALADOR_BANK_NPC_3::
 NPC_FALADOR_HOUSE_NPC_1::
 	lock
 	faceplayer
-	msgbox NPC_FALADOR_HOUSE_NPC_1_Text_0
+	namebox NPC_FALADOR_HOUSE_NPC_1_Text_0
+	msgbox NPC_FALADOR_HOUSE_NPC_1_Text_1
 	waitmessage
 	hidenamebox
 	release
@@ -839,6 +841,7 @@ NPC_FALADOR_HOUSE_NPC_1::
 NPC_FALADOR_HOUSE_NPC_2::
 	lock
 	faceplayer
+	namebox NPC_FALADOR_NPC_10_Text_0
 	msgbox NPC_FALADOR_HOUSE_NPC_2_Text_0
 	waitmessage
 	hidenamebox
@@ -1344,8 +1347,8 @@ NPC_FALADOR_NPC_4_Text_1:
 	.string "They cure monsters' status effects.$"
 
 NPC_FALADOR_GUARD_4_Text_0:
-	.string "Falador is a nice city, the white\n"
-	.string "knights keeps us safe.\p"
+	.string "Falador is a nice city, the White\n"
+	.string "Knights keeps us safe.\p"
 	.string "Stay vigilant adventurer.$"
 
 NPC_FALADOR_GUARD_5_Text_0:
@@ -1387,7 +1390,7 @@ NPC_FALADOR_WHITEKNIGHT_2_Text_0:
 	.string "the mines.$"
 
 NPC_FALADOR_WHITEKNIGHT_2_Text_1:
-	.string "Welcome to the Faldor Gym!\p"
+	.string "Welcome to the Falador Gym!\p"
 	.string "Now that the disturbance at the mines\n"
 	.string "have been dealt with we can reopen.$"
 
@@ -1505,7 +1508,7 @@ NPC_FALADOR_APPRENTICE_Text_2:
 	.string "Thank you so much!\p"
 	.string "Let me just calculate the\n"
 	.string "total…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}Alright!\p"
-	.string "So that comes to 5000gp.\p"
+	.string "So that comes to 5,000gp.\p"
 	.string "Is this okay with you?$"
 
 NPC_FALADOR_APPRENTICE_Text_3:
@@ -1571,7 +1574,7 @@ NPC_FALADOR_HAIRDRESSER_NPC_Text_0:
 	.string "RSMVer$"
 
 NPC_FALADOR_HAIRDRESSER_NPC_Text_1:
-	.string "Today im really feeling the dragoon\n"
+	.string "Today I'm really feeling the dragoon\n"
 	.string "hairstyle.\p"
 	.string "It will fix my love life for sure.$"
 
@@ -1620,10 +1623,10 @@ NPC_FALADOR_MYSTERIOUS_OLD_MAN_Text_2:
 	.string "If you figure out how to open it please\n"
 	.string "get in contact with me again.$"
 
-NPC_FALADOR_SirTiffyCachien_Text_0:
-	.string "Sir Tiffy Cachien$"
+NPC_FALADOR_SirTiffyCashien_Text_0:
+	.string "Sir Tiffy Cashien$"
 
-NPC_FALADOR_SirTiffyCachien_Text_1:
+NPC_FALADOR_SirTiffyCashien_Text_1:
 	.string "I enjoy spending my time here at the\n"
 	.string "park sitting on this bench.$"
 
@@ -1702,8 +1705,11 @@ NPC_FALADOR_BANK_NPC_1_Text_0:
 	.string "those six.$"
 
 NPC_FALADOR_GEMSTORE_NPC_1_Text_0:
-	.string "They say the gems from this store\n"
-	.string "comes all the way from Shilo Village.\p"
+	.string "Druidess$"
+
+NPC_FALADOR_GEMSTORE_NPC_1_Text_1:
+	.string "They say the gems from this store come\n"
+	.string "all the way from Shilo Village.\p"
 	.string "That's all the way over in Karamja!$"
 
 HERQUIN_DIARY_Text_0:
@@ -1727,6 +1733,9 @@ NPC_FALADOR_GEMSTORE_OWNER_Text_1:
 	.string "Please come again another time.$"
 
 NPC_FALADOR_BANK_NPC_2_Text_0:
+	.string "AxMeAnythin$"
+
+NPC_FALADOR_BANK_NPC_2_Text_1:
 	.string "I got wiped out by Sir Amik.\p"
 	.string "Guess my monsters just weren't strong\n"
 	.string "enough.$"
@@ -1739,6 +1748,9 @@ NPC_FALADOR_BANK_NPC_3_Text_0:
 	.string "I really miss it.$"
 
 NPC_FALADOR_HOUSE_NPC_1_Text_0:
+	.string "Woman$"
+
+NPC_FALADOR_HOUSE_NPC_1_Text_1:
 	.string "Dinner will be ready soon, will you be\n"
 	.string "joining us?$"
 
@@ -1756,7 +1768,7 @@ NPC_FALADOR_NPC_9_Text_0:
 
 NPC_FALADOR_BLOCK_GUARD_1_Text_0:
 	.string "We've been informed that this shipment\n"
-	.string "may contain Karmajan Rum.\p"
+	.string "may contain Karamjan Rum.\p"
 	.string "You should inform Sir Amik Varze right\n"
 	.string "away!$"
 
@@ -1764,7 +1776,7 @@ NPC_FALADOR_BLOCK_GUARD_2_Text_0:
 	.string "Please stand back while we search\n"
 	.string "these wares.\p"
 	.string "While waiting you should visit the White\n"
-	.string "Knights Castle.$"
+	.string "Knights' Castle.$"
 
 NPC_FALADOR_BLOCK_MERCHANT_Text_0:
 	.string "Merchant$"

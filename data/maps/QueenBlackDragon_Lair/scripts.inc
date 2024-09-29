@@ -186,7 +186,8 @@ ITEM_RimmingtonMines_3::
 
 BATTLE_RimmingtonMines_Miner::
 	trainerbattle_single TRAINER_RimmingtonMines_Miner, BATTLE_RimmingtonMines_Miner_Text_0, BATTLE_RimmingtonMines_Miner_Text_1
-	msgbox BATTLE_RimmingtonMines_Miner_Text_2
+	namebox BATTLE_RimmingtonMines_Miner_Text_2
+	msgbox BATTLE_RimmingtonMines_Miner_Text_3
 	hidenamebox
 	release
 	end
@@ -194,7 +195,8 @@ BATTLE_RimmingtonMines_Miner::
 
 BATTLE_RimmingtonMines_Ironman::
 	trainerbattle_single TRAINER_RimmingtonMines_Ironman, BATTLE_RimmingtonMines_Ironman_Text_0, BATTLE_RimmingtonMines_Ironman_Text_1
-	msgbox BATTLE_RimmingtonMines_Ironman_Text_2
+	namebox BATTLE_RimmingtonMines_Ironman_Text_2
+	msgbox BATTLE_RimmingtonMines_Ironman_Text_3
 	hidenamebox
 	release
 	end
@@ -202,7 +204,8 @@ BATTLE_RimmingtonMines_Ironman::
 
 BATTLE_RimmingtonMines_Slayer::
 	trainerbattle_single TRAINER_RimmingtonMines_Slayer, BATTLE_RimmingtonMines_Slayer_Text_0, BATTLE_RimmingtonMines_Slayer_Text_1
-	msgbox BATTLE_RimmingtonMines_Slayer_Text_2
+	namebox BATTLE_RimmingtonMines_Slayer_Text_2
+	msgbox BATTLE_RimmingtonMines_Slayer_Text_3
 	hidenamebox
 	release
 	end
@@ -229,8 +232,8 @@ BATTLE_RimmingtonMines_DRAGONBOT_1::
 
 BATTLE_RimmingtonMines_DRAGONBOT_2::
 	trainerbattle_single TRAINER_RimmingtonMines_DRAGONBOT_2, BATTLE_RimmingtonMines_DRAGONBOT_2_Text_0, BATTLE_RimmingtonMines_DRAGONBOT_2_Text_1
-	namebox BATTLE_RimmingtonMines_DRAGONBOT_1_Text_2
-	msgbox BATTLE_RimmingtonMines_DRAGONBOT_2_Text_2
+	namebox BATTLE_RimmingtonMines_DRAGONBOT_2_Text_2
+	msgbox BATTLE_RimmingtonMines_DRAGONBOT_2_Text_3
 	hidenamebox
 	release
 	end
@@ -238,7 +241,8 @@ BATTLE_RimmingtonMines_DRAGONBOT_2::
 
 BATTLE_RimmingtonMines_Slayer_1::
 	trainerbattle_single TRAINER_RimmingtonMines_Slayer_1, BATTLE_RimmingtonMines_Slayer_1_Text_0, BATTLE_RimmingtonMines_Slayer_1_Text_1
-	msgbox BATTLE_RimmingtonMines_Slayer_1_Text_2
+	namebox BATTLE_RimmingtonMines_Slayer_1_Text_2
+	msgbox BATTLE_RimmingtonMines_Slayer_1_Text_3
 	hidenamebox
 	release
 	end
@@ -269,6 +273,9 @@ BATTLE_RimmingtonMines_Miner_Text_1:
 	.string "I wasn't ready…$"
 
 BATTLE_RimmingtonMines_Miner_Text_2:
+	.string "MyMineNow$"
+
+BATTLE_RimmingtonMines_Miner_Text_3:
 	.string "Do you hear that faint singing in the\n"
 	.string "distance?\p"
 	.string "These caves creep me out.$"
@@ -281,6 +288,9 @@ BATTLE_RimmingtonMines_Ironman_Text_1:
 	.string "At least I am not a Hardcore Ironman…$"
 
 BATTLE_RimmingtonMines_Ironman_Text_2:
+	.string "FE Lyfe$"
+
+BATTLE_RimmingtonMines_Ironman_Text_3:
 	.string "There a worms everywhere, yuck!\p"
 	.string "At least I can get some decent\n"
 	.string "experience from them.$"
@@ -294,6 +304,9 @@ BATTLE_RimmingtonMines_Slayer_Text_1:
 	.string "Mercy!$"
 
 BATTLE_RimmingtonMines_Slayer_Text_2:
+	.string "SlayAllDay$"
+
+BATTLE_RimmingtonMines_Slayer_Text_3:
 	.string "Looks like my next task is to go to the\n"
 	.string "Bank…$"
 
@@ -314,7 +327,7 @@ BATTLE_RimmingtonMines_DRAGONBOT_1_Text_1:
 	.string "ERROR DETECTED!$"
 
 BATTLE_RimmingtonMines_DRAGONBOT_1_Text_2:
-	.string "Bot$"
+	.string "8a4rcfldi3$"
 
 BATTLE_RimmingtonMines_DRAGONBOT_2_Text_0:
 	.string "LOCATION UNKNOWN.\n"
@@ -324,6 +337,9 @@ BATTLE_RimmingtonMines_DRAGONBOT_2_Text_1:
 	.string "TELEPORT INITIATE…$"
 
 BATTLE_RimmingtonMines_DRAGONBOT_2_Text_2:
+	.string "9g2hfono0$"
+
+BATTLE_RimmingtonMines_DRAGONBOT_2_Text_3:
 	.string "TELEPORTATION FAILED.$"
 
 BATTLE_RimmingtonMines_Slayer_1_Text_0:
@@ -333,6 +349,9 @@ BATTLE_RimmingtonMines_Slayer_1_Text_1:
 	.string "I cannot believe I just lost to a bot…$"
 
 BATTLE_RimmingtonMines_Slayer_1_Text_2:
+	.string "Sir Pugger$"
+
+BATTLE_RimmingtonMines_Slayer_1_Text_3:
 	.string "Oh you are not a bot?\p"
 	.string "I've been trying to get rid of these\n"
 	.string "bots for the past few days, looks like\l"

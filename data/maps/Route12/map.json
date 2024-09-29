@@ -60,7 +60,7 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_COW",
+      "script": "ENCOUNTER_COW",
       "flag": "FLAG_TEMP_1"
     },
     {
@@ -73,8 +73,8 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_COW",
-      "flag": "FLAG_TEMP_2"
+      "script": "ENCOUNTER_COW",
+      "flag": "FLAG_TEMP_8"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_COW",
@@ -86,8 +86,8 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_COW",
-      "flag": "FLAG_TEMP_3"
+      "script": "ENCOUNTER_COW",
+      "flag": "FLAG_TEMP_7"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GOBLIN_1",
@@ -437,8 +437,8 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_COW",
-      "flag": "FLAG_TEMP_1"
+      "script": "ENCOUNTER_COW",
+      "flag": "FLAG_TEMP_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_COW",
@@ -450,34 +450,8 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_COW",
-      "flag": "FLAG_TEMP_1"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_COW",
-      "x": 26,
-      "y": 19,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 2,
-      "movement_range_y": 2,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_COW",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_COW",
-      "x": 32,
-      "y": 24,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 4,
-      "movement_range_y": 2,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
       "script": "ENCOUNTER_COW",
-      "flag": "0"
+      "flag": "FLAG_TEMP_3"
     }
   ],
   "warp_events": [

@@ -4435,7 +4435,6 @@ static const struct TrainerMon sParty_FALADOR_GYM_AMIKVARZE[] = {
     {
     .ability = ABILITY_DRIZZLE,
     .nature = NATURE_SASSY,
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 28,
     .species = SPECIES_BELTFISH,
     .moves = {MOVE_AQUA_JET, MOVE_MUD_BOMB, MOVE_WATER_PULSE, MOVE_CHARGE_BEAM}
@@ -4443,7 +4442,6 @@ static const struct TrainerMon sParty_FALADOR_GYM_AMIKVARZE[] = {
     {
     .ability = ABILITY_UNAWARE,
     .nature = NATURE_QUIRKY,
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 29,
     .species = SPECIES_MUDSKIPPER,
     .moves = {MOVE_RAIN_DANCE, MOVE_MUD_SHOT, MOVE_WHIRLPOOL, MOVE_AQUA_JET}
@@ -4451,7 +4449,6 @@ static const struct TrainerMon sParty_FALADOR_GYM_AMIKVARZE[] = {
     {
     .ability = ABILITY_SWIFT_SWIM,
     .nature = NATURE_MODEST,
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 30,
     .species = SPECIES_TROUT_NORMAL_FORM,
     .moves = {MOVE_RAIN_DANCE, MOVE_WATER_PULSE, MOVE_U_TURN, MOVE_ICE_BEAM}
@@ -4459,12 +4456,13 @@ static const struct TrainerMon sParty_FALADOR_GYM_AMIKVARZE[] = {
     {
     .ability = ABILITY_PINCERS,
     .nature = NATURE_JOLLY,
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 32,
     .species = SPECIES_GIANT_CRAB_RUMPUMPED_FORM,
     .moves = {MOVE_RAZOR_SHELL, MOVE_POISON_JAB, MOVE_TEETER_DANCE, MOVE_AERIAL_ACE}
     }
-};/*
+};
+
+/*
 static const struct TrainerMon sParty_LEADER_SIRAMIKVARZE_FINAL[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
@@ -5972,14 +5970,14 @@ static const struct TrainerMon sParty_MELZARSMAZE_HAM_ADMIN_BABE[] = {
     .ability = ABILITY_GOOSEBUMPS,
     .lvl = 27,
     .species = SPECIES_SPIDER_FEVER_FORM,
+    .moves = {MOVE_SPIDER_WEB, MOVE_INFESTATION, MOVE_ICE_FANG, MOVE_TOXIC_THREAD},
     },
-    .moves = {MOVE_SPIDER_WEB, MOVE_INFESTATION, MOVE_ICE_FANG, MOVE_TOXIC_THREAD}
     {
     .ability = ABILITY_SAP_SIPPER,
     .lvl = 28,
     .species = SPECIES_COW_STRAWBERRY_FORM,
-    },
     .moves = {MOVE_MILK_DRINK, MOVE_SEED_BOMB, MOVE_MAGNITUDE, MOVE_LEECH_SEED}
+    },
     {
     .ability = ABILITY_GALE_WINGS,
     .lvl = 30,
@@ -6097,17 +6095,14 @@ static const struct TrainerMon sParty_MELZARS_2F_TRAINER_2[] = {
 
 static const struct TrainerMon sParty_MELZARS_2F_TRAINER_3[] = {
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 24,
     .species = SPECIES_PIG,
-    }
+    },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 25,
     .species = SPECIES_ROOSTER_NORMAL_FORM,
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 25,
     .species = SPECIES_MACKERS,
     }

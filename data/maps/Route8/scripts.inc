@@ -97,6 +97,12 @@ ROUTE8_SIGNPOST::
 	end
 
 
+MAKEOVER_MAGE_SIGN::
+	msgbox MAKEOVER_MAGE_SIGN_Text_0
+	closemessage
+	end
+
+
 ROUTE8_MAN::
 	faceplayer
 	namebox ROUTE8_MAN_Text_0
@@ -111,6 +117,16 @@ ROUTE8_MINER_3::
 	faceplayer
 	namebox ROUTE8_MINER_3_Text_0
 	msgbox ROUTE8_MINER_3_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NPC_MAKEOVER_MAGE::
+	faceplayer
+	namebox NPC_MAKEOVER_MAGE_Text_0
+	msgbox NPC_MAKEOVER_MAGE_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -571,6 +587,10 @@ ROUTE8_SIGNPOST_Text_0:
 	.string "SOUTH to Rimmington.\p"
 	.string "EAST to FALADOR.$"
 
+MAKEOVER_MAGE_SIGN_Text_0:
+	.string "The Makeover Mage.\p"
+	.string "Changing appearances since 2004.$"
+
 ROUTE8_MAN_Text_0:
 	.string "Man$"
 
@@ -585,6 +605,31 @@ ROUTE8_MINER_3_Text_1:
 	.string "I wish they had a Bank here.\p"
 	.string "I have to make a trip all the way to\n"
 	.string "Falador if I want to heal my monsters.$"
+
+NPC_MAKEOVER_MAGE_Text_0:
+	.string "Peta$"
+
+NPC_MAKEOVER_MAGE_Text_1:
+	.string "Hi adventurer, I'm Peta -\n"
+	.string "affectionately known as the Makeover\l"
+	.string "Mage.\p"
+	.string "For years I helped people change their\n"
+	.string "gender, or even their skin colour, using\l"
+	.string "a magical amulet I found in a Gazulibird\l"
+	.string "nest.\p"
+	.string "Since people started catching\n"
+	.string "monsters, they lost interest in my\l"
+	.string "services.\p"
+	.string "I am currently working on adapting the\n"
+	.string "amulet to let me change monsters'\l"
+	.string "personalities!\p"
+	.string "This can affect how effective they are\n"
+	.string "in battle, giving a boost to a specific\l"
+	.string "stat at the cost of a penalty to\l"
+	.string "another.\p"
+	.string "I still need to work on the magic.. so\n"
+	.string "it's not quite ready yet, but please\l"
+	.string "come back soon!$"
 
 BATTLE_ROUTE8_THIEF_Text_0:
 	.string "Hi there, you wouldn't want some very\n"

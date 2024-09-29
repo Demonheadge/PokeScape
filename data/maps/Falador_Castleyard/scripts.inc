@@ -590,8 +590,8 @@ NPC_FALADORCASTLE_WHITEKNIGHT_1::
 NPC_FALADORCASTLE_WHITEKNIGHT_1_2:
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
-	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_1
+	namebox NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT_Text_0
+	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
 	hidenamebox
 	closemessage
 	release
@@ -600,8 +600,8 @@ NPC_FALADORCASTLE_WHITEKNIGHT_1_2:
 NPC_FALADORCASTLE_WHITEKNIGHT_1_3:
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
-	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_2
+	namebox NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT_Text_0
+	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_1
 	hidenamebox
 	closemessage
 	release
@@ -617,7 +617,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_2::
 NPC_FALADORCASTLE_WHITEKNIGHT_2_2:
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
+	namebox NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT_Text_0
 	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_2_Text_0
 	hidenamebox
 	closemessage
@@ -627,7 +627,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_2_2:
 NPC_FALADORCASTLE_WHITEKNIGHT_2_3:
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
+	namebox NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT_Text_0
 	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_2_Text_1
 	hidenamebox
 	closemessage
@@ -665,7 +665,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_4::
 NPC_FALADORCASTLE_WHITEKNIGHT_5::
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
+	namebox NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT_Text_0
 	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_5_Text_0
 	closemessage
 	hidenamebox
@@ -698,7 +698,7 @@ NPC_FALADORCASTLE_GUARD_1::
 NPC_FALADORCASTLE_WHITEKNIGHT_7::
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
+	namebox NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT_Text_0
 	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_7_Text_0
 	closemessage
 	hidenamebox
@@ -709,7 +709,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_7::
 NPC_FALADORCASTLE_WHITEKNIGHT_8::
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
+	namebox NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT_Text_0
 	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_8_Text_0
 	closemessage
 	hidenamebox
@@ -736,7 +736,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_9_2:
 NPC_FALADORCASTLE_WHITEKNIGHT_10::
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
+	namebox NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT_Text_0
 	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_10_Text_0
 	closemessage
 	hidenamebox
@@ -747,7 +747,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_10::
 NPC_FALADORCASTLE_WHITEKNIGHT_11::
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
+	namebox NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT_Text_0
 	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_11_Text_0
 	closemessage
 	hidenamebox
@@ -758,7 +758,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_11::
 NPC_FALADORCASTLE_WHITEKNIGHT_12::
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
+	namebox NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT_Text_0
 	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_12_Text_0
 	closemessage
 	hidenamebox
@@ -796,7 +796,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_13_3:
 NPC_FALADORCASTLE_WHITEKNIGHT_14::
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
+	namebox NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT_Text_0
 	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_14_Text_0
 	closemessage
 	hidenamebox
@@ -983,7 +983,7 @@ FALADORCASTLE_MOVEMENT_SQUIRE_3r:
 NPC_FALADORCASTLE_KNIGHT_9::
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0
+	namebox NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT_Text_0
 	msgbox NPC_FALADORCASTLE_KNIGHT_9_Text_0
 	closemessage
 	hidenamebox
@@ -1046,7 +1046,7 @@ NPC_FALADORCASTLE_QUEST_PART_2_Text_0:
 	.string "we can have a gym battle$"
 
 NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT_Text_0:
-	.string "WHITE KNIGHT$"
+	.string "White Knight$"
 
 NPC_FALADORCASTLE_QUEST_KNIGHT_CHAT_Text_1:
 	.string "Welcome to the Falador Castle!$"
@@ -1070,7 +1070,7 @@ NPC_FALADORCASTLE_KNIGHT_CHAT_2_Text_0:
 NPC_FALADORCASTLE_KNIGHT_CHAT_3_Text_0:
 	.string "Up or Down, Left or Right.\p"
 	.string "Our Castle will confuse even the most\n"
-	.string "smartest Black Knights.$"
+	.string "intelligent Black Knights.$"
 
 NPC_FALADORCASTLE_QUEST_PART_4_Text_0:
 	.string "Sir Amik Varze$"
@@ -1321,13 +1321,10 @@ NPC_FALADORCASTLE_GYM_BLACKKNIGHT_Text_1:
 	.string "make my blood boil.$"
 
 NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_0:
-	.string "White Knight$"
-
-NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_1:
 	.string "If you are looking for Amik then you\n"
 	.string "should probably head back inside.$"
 
-NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_2:
+NPC_FALADORCASTLE_WHITEKNIGHT_1_Text_1:
 	.string "Those Black Knights really grind my\n"
 	.string "gears, one of these days we will rid\l"
 	.string "them.$"
@@ -1480,7 +1477,7 @@ BOOK_FALADORCASTLE_GUARD_INFO_Text_0:
 
 SIGN_BLURITE_CUPBOARD_Text_0:
 	.string "It looks like there was once a picture\n"
-	.string "in the cupboard but someone must of\l"
+	.string "in the cupboard but someone must have\l"
 	.string "taken it.$"
 
 BOOK_FALADORCASTLE_SIRVYVIN_Text_0:

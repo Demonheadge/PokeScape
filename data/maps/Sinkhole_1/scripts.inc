@@ -66,7 +66,8 @@ SINKHOLE_NPC_FORGOTTENWARRIOR_1::
 
 SINKHOLE_NPC_TRADER::
 	faceplayer
-	msgbox SINKHOLE_NPC_TRADER_Text_0
+	namebox SINKHOLE_NPC_TRADER_Text_0
+	msgbox SINKHOLE_NPC_TRADER_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -75,7 +76,8 @@ SINKHOLE_NPC_TRADER::
 
 SINKHOLE_NPC_FORGOTTENWARRIOR_2::
 	faceplayer
-	msgbox SINKHOLE_NPC_FORGOTTENWARRIOR_2_Text_0
+	namebox SINKHOLE_NPC_FORGOTTENWARRIOR_2_Text_0
+	msgbox SINKHOLE_NPC_FORGOTTENWARRIOR_2_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -92,7 +94,6 @@ BATTLE_SINKHOLE_NPC_FORGOTTENWARRIOR_1::
 
 ENCOUNTER_BEHEMOTH::
 	lock
-	faceplayer
 	namebox ENCOUNTER_BEHEMOTH_Text_0
 	playmoncry SPECIES_EKANS, 0
 	msgbox ENCOUNTER_BEHEMOTH_Text_1
@@ -190,11 +191,17 @@ SINKHOLE_NPC_FORGOTTENWARRIOR_1_Text_1:
 	.string "It's kind of scary but cool.$"
 
 SINKHOLE_NPC_TRADER_Text_0:
+	.string "Smuggler$"
+
+SINKHOLE_NPC_TRADER_Text_1:
 	.string "I have been down here for years.\p"
 	.string "It is surprising to see a surface\n"
 	.string "dweller here.$"
 
 SINKHOLE_NPC_FORGOTTENWARRIOR_2_Text_0:
+	.string "???$"
+
+SINKHOLE_NPC_FORGOTTENWARRIOR_2_Text_1:
 	.string "Hey thanks for opening the door\n"
 	.string "earlier.\p"
 	.string "By the way, have you tried fishing here?\p"

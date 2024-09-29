@@ -369,6 +369,42 @@ NPC_ROUTE12_Goblin_2::
 	end
 
 
+BROKEN_DOOR::
+	msgbox BROKEN_DOOR_Text_0
+	closemessage
+	end
+
+
+ENCOUNTER_COW::
+	lock
+	namebox ENCOUNTER_COW_Text_0
+	playmoncry SPECIES_MILTANK, 0
+	msgbox ENCOUNTER_COW_Text_1
+	waitmoncry
+	hidenamebox
+	closemessage
+	delay 1
+	goto_if_set FLAG_BADGE01_GET, ENCOUNTER_COW_2
+	setwildbattle SPECIES_CALF, 3, ITEM_NONE
+ENCOUNTER_COW_1:
+	dowildbattleNoCatch
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq ENCOUNTER_COW_6
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq ENCOUNTER_COW_6
+ENCOUNTER_COW_5:
+	release
+	end
+
+ENCOUNTER_COW_2:
+	setwildbattle SPECIES_COW, 8, ITEM_NONE
+	goto ENCOUNTER_COW_1
+
+ENCOUNTER_COW_6:
+	removeobject VAR_LAST_TALKED
+	goto ENCOUNTER_COW_5
+
+
 Gillie_Groats_Text_0:
 	.string "Gillie Groats$"
 
@@ -543,3 +579,13 @@ NPC_ROUTE12_Fisherman_Text_1:
 
 NPC_ROUTE12_Goblin_2_Text_0:
 	.string "Me fishing.$"
+
+BROKEN_DOOR_Text_0:
+	.string "This door is broken beyond repair.\p"
+	.string "There's no way you could get it open.$"
+
+ENCOUNTER_COW_Text_0:
+	.string "Cow$"
+
+ENCOUNTER_COW_Text_1:
+	.string "MOOOOOOOO!!$"

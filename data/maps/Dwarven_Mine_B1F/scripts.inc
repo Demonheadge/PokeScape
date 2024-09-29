@@ -878,7 +878,7 @@ BATTLE_DWARVENMINES_DWARF_2_Text_0:
 	.string "land!$"
 
 BATTLE_DWARVENMINES_DWARF_2_Text_1:
-	.string "Theres no respect for racially\n"
+	.string "There's no respect for racially\n"
 	.string "established borders for you\l"
 	.string "adventurers.$"
 
@@ -888,7 +888,7 @@ BATTLE_DWARVENMINES_DWARF_2_Text_2:
 BATTLE_DWARVENMINES_DWARF_3_Text_0:
 	.string "They say deep down under this mountain\n"
 	.string "the rocks move.\p"
-	.string "Lets fight to that.$"
+	.string "Let's fight to that.$"
 
 BATTLE_DWARVENMINES_DWARF_3_Text_1:
 	.string "Maybe the ones who told the story were\n"

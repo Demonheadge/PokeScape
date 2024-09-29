@@ -99,21 +99,27 @@ NPC_MUDSKIPPERPOINT_THURGO::
 
 BATTLE_MUDSKIPPERPOINT_SLAYER::
 	trainerbattle_single TRAINER_MUDSKIPPERPOINT_SLAYER, BATTLE_MUDSKIPPERPOINT_SLAYER_Text_0, BATTLE_MUDSKIPPERPOINT_SLAYER_Text_1
-	msgbox BATTLE_MUDSKIPPERPOINT_SLAYER_Text_2
+	namebox BATTLE_MUDSKIPPERPOINT_SLAYER_Text_2
+	msgbox BATTLE_MUDSKIPPERPOINT_SLAYER_Text_3
+	hidenamebox
 	release
 	return
 
 
 BATTLE_MUDSKIPPERPOINT_FISHER_1::
 	trainerbattle_single TRAINER_MUDSKIPPERPOINT_FISHERMAN_1, BATTLE_MUDSKIPPERPOINT_FISHER_1_Text_0, BATTLE_MUDSKIPPERPOINT_FISHER_1_Text_1
-	msgbox BATTLE_MUDSKIPPERPOINT_FISHER_1_Text_2
+	namebox BATTLE_MUDSKIPPERPOINT_FISHER_1_Text_2
+	msgbox BATTLE_MUDSKIPPERPOINT_FISHER_1_Text_3
+	hidenamebox
 	release
 	return
 
 
 BATTLE_MUDSKIPPERPOINT_FISHER_2::
 	trainerbattle_single TRAINER_MUDSKIPPERPOINT_FISHERMAN_2, BATTLE_MUDSKIPPERPOINT_FISHER_2_Text_0, BATTLE_MUDSKIPPERPOINT_FISHER_2_Text_1
-	msgbox BATTLE_MUDSKIPPERPOINT_FISHER_2_Text_2
+	namebox BATTLE_MUDSKIPPERPOINT_FISHER_2_Text_2
+	msgbox BATTLE_MUDSKIPPERPOINT_FISHER_2_Text_3
+	hidenamebox
 	release
 	return
 
@@ -201,7 +207,10 @@ BATTLE_MUDSKIPPERPOINT_SLAYER_Text_1:
 	.string "This is such an xp waste!$"
 
 BATTLE_MUDSKIPPERPOINT_SLAYER_Text_2:
-	.string "How am I meant to challenge the Morges\n"
+	.string "Slay4Hire$"
+
+BATTLE_MUDSKIPPERPOINT_SLAYER_Text_3:
+	.string "How am I meant to challenge the Mogres\n"
 	.string "to a battle without explosive potions\l"
 	.string "and a full team of fainted monsters.$"
 
@@ -214,6 +223,9 @@ BATTLE_MUDSKIPPERPOINT_FISHER_1_Text_1:
 	.string "Aww it got away…$"
 
 BATTLE_MUDSKIPPERPOINT_FISHER_1_Text_2:
+	.string "N0M0reLobs$"
+
+BATTLE_MUDSKIPPERPOINT_FISHER_1_Text_3:
 	.string "I heard that there was some sort of\n"
 	.string "device that allows you to dive under\l"
 	.string "the water.\p"
@@ -229,6 +241,9 @@ BATTLE_MUDSKIPPERPOINT_FISHER_2_Text_1:
 	.string "Mudskipper Point?$"
 
 BATTLE_MUDSKIPPERPOINT_FISHER_2_Text_2:
+	.string "HarPWNu$"
+
+BATTLE_MUDSKIPPERPOINT_FISHER_2_Text_3:
 	.string "Oh now I get it.\p"
 	.string "It is because of all the Mudskippers\n"
 	.string "right?$"

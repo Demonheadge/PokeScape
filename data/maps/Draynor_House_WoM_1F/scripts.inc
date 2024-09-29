@@ -217,8 +217,8 @@ FOODFORMSBOOK_Text_1:
 	.string "Apparently this even extends to ENTS\n"
 	.string "and CABBAGES.\p"
 	.string "I don't fully believe that one though.\p"
-	.string "I wonder if that's just a rumour start\n"
-	.string "by Melzar..$"
+	.string "I wonder if that's just a rumour\n"
+	.string "started by Melzar..$"
 
 FOODFORMSBOOK_Text_2:
 	.string "You choose not to bother with the book.$"
