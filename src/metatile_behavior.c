@@ -1507,3 +1507,10 @@ bool8 MetatileBehavior_IsLockedDoor(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_IsWallClock(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_WALL_CLOCK)
+        return TRUE;
+    else
+        return FALSE;
+}

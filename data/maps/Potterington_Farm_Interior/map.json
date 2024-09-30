@@ -119,32 +119,6 @@
       "flag": "FLAG_TEMP_9"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_JMOD",
-      "x": 6,
-      "y": 2,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "POTTERINGTON_FARM_JagexMod",
-      "flag": "FLAG_TEMP_7"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_WIZARD_DARK",
-      "x": 1,
-      "y": 8,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "POTTERINGTON_FARM_MysteriousFigure",
-      "flag": "FLAG_TEMP_5"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_BANKER_M",
       "x": 11,
       "y": 4,

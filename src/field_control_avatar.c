@@ -432,6 +432,8 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
         return EventScript_RestBed;
     if (MetatileBehavior_IsLockedDoor(metatileBehavior) == TRUE)
         return EventScript_Locked_Door;
+    if (MetatileBehavior_IsWallClock(metatileBehavior) == TRUE)
+        return EventScript_CheckClock;
     if (MetatileBehavior_IsPlayerFacingTVScreen(metatileBehavior, direction) == TRUE)
         return EventScript_TV;
     if (MetatileBehavior_IsPC(metatileBehavior) == TRUE)

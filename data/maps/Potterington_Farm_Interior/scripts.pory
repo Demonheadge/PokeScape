@@ -4,7 +4,6 @@ const OBJ_EVENT_ID_ZAMORAK = 2
 
 
 const OBJ_EVENT_ID_GONTHORIAN = 6
-const OBJ_EVENT_ID_JMOD = 9
 const OBJ_EVENT_ID_DEMONHEADGE = 7
 const OBJ_EVENT_ID_HYPERSTAN = 8
 
@@ -24,7 +23,6 @@ script POTTERINGTON_FARM_STATE{
     setflag(FLAG_TEMP_3)
 
     setflag(FLAG_TEMP_6)
-    setflag(FLAG_TEMP_7)
     setflag(FLAG_TEMP_8)
     setflag(FLAG_TEMP_9)
     
@@ -34,7 +32,6 @@ script POTTERINGTON_FARM_STATE{
     
     
     removeobject(OBJ_EVENT_ID_GONTHORIAN)
-    removeobject(OBJ_EVENT_ID_JMOD)
     removeobject(OBJ_EVENT_ID_DEMONHEADGE)
     removeobject(OBJ_EVENT_ID_HYPERSTAN)
     

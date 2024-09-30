@@ -178,16 +178,15 @@ script Set_The_Needle_Clock
 
 
 
-
-raw `
-EventScript_CheckClock::
-	incrementgamestat GAME_STAT_CHECKED_CLOCK
-	fadescreenswapbuffers FADE_TO_BLACK
-	special Special_ViewWallClock
+script EventScript_CheckClock
+{
+	incrementgamestat (GAME_STAT_CHECKED_CLOCK)
+	fadescreenswapbuffers (FADE_TO_BLACK)
+	special (Special_ViewWallClock)
 	waitstate
 	releaseall
 	end
-`
+}
 
 
 

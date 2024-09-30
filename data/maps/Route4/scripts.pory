@@ -68,6 +68,12 @@ script ROUTE_4_STATE {
     removeobject(OBJ_EVENT_ID_SEREN)
     removeobject(OBJ_EVENT_ID_ZAROS)
     setflag(FLAG_TEMP_5)
+    removeobject(OBJ_EVENT_ID_TUMEKEN)
+    setflag(FLAG_TEMP_6)
+    removeobject(OBJ_EVENT_ID_GODLESS)
+    setflag(FLAG_TEMP_7)
+    removeobject(OBJ_EVENT_ID_ARMADYL)
+    setflag(FLAG_TEMP_8)
 
 
     checkitem (ITEM_TERRORBIRD_POUCH, 1)

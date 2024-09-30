@@ -407,6 +407,77 @@ ENCOUNTER_COW_6:
 	goto ENCOUNTER_COW_5
 
 
+BLOCK_Alkharid_Guards::
+	lock
+	faceplayer
+	goto_if_unset FLAG_BADGE04_GET, BLOCK_Alkharid_Guards_2
+BLOCK_Alkharid_Guards_1:
+	namebox BLOCK_Alkharid_Guards_Text_0
+	msgbox BLOCK_Alkharid_Guards_Text_1
+	closemessage
+	release
+	end
+
+BLOCK_Alkharid_Guards_2:
+	goto BLOCK_ALKHARID_GATE
+	goto BLOCK_Alkharid_Guards_1
+
+
+TRIGGER_ALKHARID_GATE::
+	applymovement 27, Movement_InteractFACEDOWN
+	applymovement 28, Movement_InteractFACEUP
+	waitmovement 0
+	goto_if_unset FLAG_BADGE04_GET, TRIGGER_ALKHARID_GATE_2
+TRIGGER_ALKHARID_GATE_1:
+	release
+	end
+
+TRIGGER_ALKHARID_GATE_2:
+	call BLOCK_ALKHARID_GATE
+	goto TRIGGER_ALKHARID_GATE_1
+
+
+BLOCK_ALKHARID_GATE::
+	lockall
+	namebox BLOCK_Alkharid_Guards_Text_0
+	applymovement 27, movement_BLOCK_ALKHARID_GATE_1
+	applymovement 28, movement_BLOCK_ALKHARID_GATE_2
+	waitmovement 0
+	msgbox BLOCK_ALKHARID_GATE_Text_0
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, movement_BLOCK_ALKHARID_GATE_3
+	applymovement 27, MOVEMENT_FACE_LEFT
+	applymovement 28, MOVEMENT_FACE_LEFT
+	waitmovement 0
+	return
+
+
+movement_BLOCK_ALKHARID_GATE_1:
+	face_down
+	step_end
+
+movement_BLOCK_ALKHARID_GATE_2:
+	face_up
+	step_end
+
+movement_BLOCK_ALKHARID_GATE_3:
+	walk_left
+	step_end
+
+ALKHARID_GATE_GUARD::
+	lockall
+	faceplayer
+	namebox ALKHARID_GATE_GUARD_Text_0
+	msgbox BLOCK_ALKHARID_GATE_Text_0
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, movement_BLOCK_ALKHARID_GATE_3
+	applymovement 27, MOVEMENT_FACE_LEFT
+	applymovement 28, MOVEMENT_FACE_LEFT
+	waitmovement 0
+	release
+	end
+
+
 Gillie_Groats_Text_0:
 	.string "Gillie Groats$"
 
@@ -591,3 +662,18 @@ ENCOUNTER_COW_Text_0:
 
 ENCOUNTER_COW_Text_1:
 	.string "MOOOOOOOO!!$"
+
+BLOCK_Alkharid_Guards_Text_0:
+	.string "Guards$"
+
+BLOCK_Alkharid_Guards_Text_1:
+	.string "That is the Al-Kharid Badge!\p"
+	.string "You may pass.$"
+
+BLOCK_ALKHARID_GATE_Text_0:
+	.string "Halt!\p"
+	.string "Only those whom possess the Al-Kharid\n"
+	.string "Badge may enter!$"
+
+ALKHARID_GATE_GUARD_Text_0:
+	.string "Guard$"

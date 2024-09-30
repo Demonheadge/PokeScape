@@ -56,6 +56,12 @@ ROUTE_4_STATE::
 	removeobject 21
 	removeobject 10
 	setflag FLAG_TEMP_5
+	removeobject 12
+	setflag FLAG_TEMP_6
+	removeobject 25
+	setflag FLAG_TEMP_7
+	removeobject 10
+	setflag FLAG_TEMP_8
 	checkitem ITEM_TERRORBIRD_POUCH, 1
 	compare VAR_RESULT, 0
 	goto_if_ne ROUTE_4_STATE_2

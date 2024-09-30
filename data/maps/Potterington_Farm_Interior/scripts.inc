@@ -12,14 +12,12 @@ POTTERINGTON_FARM_STATE::
 	setflag FLAG_TEMP_2
 	setflag FLAG_TEMP_3
 	setflag FLAG_TEMP_6
-	setflag FLAG_TEMP_7
 	setflag FLAG_TEMP_8
 	setflag FLAG_TEMP_9
 	removeobject 5
 	removeobject 4
 	removeobject 2
 	removeobject 6
-	removeobject 9
 	removeobject 7
 	removeobject 8
 	special Is_InParty_CABBAGE

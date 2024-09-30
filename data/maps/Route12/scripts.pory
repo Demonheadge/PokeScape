@@ -1,5 +1,5 @@
-const ALKHARID_GUARD_1_ID = 29
-const ALKHARID_GUARD_2_ID = 30
+const ALKHARID_GUARD_1_ID = 27
+const ALKHARID_GUARD_2_ID = 28
 
 mapscripts Route12_MapScripts{
 	MAP_SCRIPT_ON_TRANSITION{
@@ -480,3 +480,85 @@ script ENCOUNTER_COW
 	end
 }
 
+
+
+
+
+
+
+
+
+
+
+
+script BLOCK_Alkharid_Guards
+{
+	lock
+	faceplayer
+	if (!flag(FLAG_BADGE04_GET))
+        {
+			goto(BLOCK_ALKHARID_GATE)
+        }
+	namebox("Guards")
+	msgbox(format("That is the Al-Kharid Badge!\pYou may pass."))
+	closemessage
+	release
+	end
+}
+
+script TRIGGER_ALKHARID_GATE
+{
+	applymovement (ALKHARID_GUARD_1_ID,Movement_InteractFACEDOWN)
+	applymovement (ALKHARID_GUARD_2_ID,Movement_InteractFACEUP)
+	waitmovement (0)
+	if (!flag(FLAG_BADGE04_GET))
+        {
+			call(BLOCK_ALKHARID_GATE)
+        }
+	release
+	end
+}
+
+script BLOCK_ALKHARID_GATE
+{
+	lockall
+	namebox("Guards")
+	applymovement (ALKHARID_GUARD_1_ID,movement_BLOCK_ALKHARID_GATE_1)
+	applymovement (ALKHARID_GUARD_2_ID,movement_BLOCK_ALKHARID_GATE_2)
+	waitmovement (0)
+	msgbox(format("Halt!\pOnly those whom possess the Al-Kharid Badge may enter!"))
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER,movement_BLOCK_ALKHARID_GATE_3)
+	applymovement (ALKHARID_GUARD_1_ID,MOVEMENT_FACE_LEFT)
+	applymovement (ALKHARID_GUARD_2_ID,MOVEMENT_FACE_LEFT)
+	waitmovement (0)
+	return
+}
+
+movement movement_BLOCK_ALKHARID_GATE_1
+{
+	face_down
+}
+movement movement_BLOCK_ALKHARID_GATE_2
+{
+	face_up
+}
+movement movement_BLOCK_ALKHARID_GATE_3
+{
+	walk_left
+}
+
+script ALKHARID_GATE_GUARD
+{
+	lockall
+	faceplayer
+	namebox("Guard")
+	msgbox(format("Halt!\pOnly those whom possess the Al-Kharid Badge may enter!"))
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER,movement_BLOCK_ALKHARID_GATE_3)
+	applymovement (ALKHARID_GUARD_1_ID,MOVEMENT_FACE_LEFT)
+	applymovement (ALKHARID_GUARD_2_ID,MOVEMENT_FACE_LEFT)
+	waitmovement (0)
+	release
+	end
+}

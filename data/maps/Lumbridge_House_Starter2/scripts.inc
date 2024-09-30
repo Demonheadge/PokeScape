@@ -152,7 +152,6 @@ Set_The_Needle_Clock::
 	return
 
 
-
 EventScript_CheckClock::
 	incrementgamestat GAME_STAT_CHECKED_CLOCK
 	fadescreenswapbuffers FADE_TO_BLACK
@@ -160,6 +159,7 @@ EventScript_CheckClock::
 	waitstate
 	releaseall
 	end
+
 
 Mithrilman_FLAGS::
 	lock
