@@ -7340,7 +7340,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Basilisk = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cow = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_COW,
+    .paletteTag = OBJ_EVENT_PAL_YAK_COW,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -7376,25 +7376,25 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cow_Dairy = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Chicken = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_CHICKEN,
+    .paletteTag = OBJ_EVENT_PAL_CHICKENS,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 256,
+    .size = 128,
     .width = 16,
-    .height = 32,
-    .paletteSlot = 10,
+    .height = 16,
+    .paletteSlot = 2,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
     .disableReflectionPaletteLoad = FALSE,
     .tracks = TRACKS_FOOT,
-    .oam = &gObjectEventBaseOam_16x32,
-    .subspriteTables = sOamTables_16x32,
+    .oam = &gObjectEventBaseOam_16x16,
+    .subspriteTables = sOamTables_16x16,
     .anims = sAnimTable_Standard,
     .images = sPicTable_Chicken,
     .affineAnims = gDummySpriteAffineAnimTable
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Evil_Chicken = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_EVIL_CHICKEN,
+    .paletteTag = OBJ_EVENT_PAL_CHICKENS,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -7542,7 +7542,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pigzilla = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Yak = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_YAK,
+    .paletteTag = OBJ_EVENT_PAL_YAK_COW,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -7852,7 +7852,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Frogeel = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scorpion = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_SCORPION,
+    .paletteTag = OBJ_EVENT_PAL_PIRATE_SHIP,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -8003,7 +8003,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Strykewyrm_Leafy =
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Unicorn_White = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_UNICORN_WHITE,
+    .paletteTag = OBJ_EVENT_PAL_CHICKENS,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -8352,7 +8352,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Abyss_Portal = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Chair = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_CHAIR,
+    .paletteTag = OBJ_EVENT_PAL_YAK_COW,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 128,
     .width = 16,
@@ -9727,19 +9727,19 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dragon_Black = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_kreearra = {
 	.tileTag = TAG_NONE,
-	.paletteTag =  OBJ_EVENT_PAL_SMUGGLER,
+	.paletteTag =  OBJ_EVENT_PAL_CHICKENS,
 	.reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
 	.size = 512,
 	.width = 32,
 	.height = 32,
 	.paletteSlot = 2,
 	.shadowSize = SHADOW_SIZE_M,
-	.inanimate = FALSE,
+	.inanimate = TRUE,
 	.disableReflectionPaletteLoad = FALSE,
 	.tracks = TRACKS_FOOT,
 	.oam = &gObjectEventBaseOam_32x32,
 	.subspriteTables = sOamTables_32x32,
-	.anims = sAnimTable_Following,
+	.anims = sAnimTable_Idle,
 	.images =   sPicTable_kreearra, 
 	.affineAnims = gDummySpriteAffineAnimTable
 };
@@ -10725,5 +10725,24 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_pikkupstix = {
     .subspriteTables = sOamTables_16x32,
     .anims = sAnimTable_Standard,
     .images = sPicTable_pikkupstix,
+    .affineAnims = gDummySpriteAffineAnimTable
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_seren_spirit = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_SARADOMIN,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = 10,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_seren_spirit,
     .affineAnims = gDummySpriteAffineAnimTable
 };

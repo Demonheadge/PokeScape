@@ -2,6 +2,11 @@ const OBJ_EVENT_ID_DAYCAREWATCHER = 2
 const OBJ_EVENT_ID_PREZLEEK = 19
 const OBJ_EVENT_ID_BAROO = 20
 const OBJ_EVENT_ID_SEREN = 21
+const OBJ_EVENT_ID_ZAROS = 10
+const OBJ_EVENT_ID_TUMEKEN = 12
+const OBJ_EVENT_ID_GODLESS = 25
+const OBJ_EVENT_ID_ARMADYL = 10
+
 
 mapscripts Route4_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
@@ -12,6 +17,40 @@ mapscripts Route4_MapScripts {
     }
 }
 
+
+script GOD_FARM_TEST_TRIGGER {
+    clearflag(FLAG_TEMP_1)
+    clearflag(FLAG_TEMP_2)
+    clearflag(FLAG_TEMP_3)
+    clearflag(FLAG_TEMP_4)
+    clearflag(FLAG_TEMP_5)
+    clearflag(FLAG_TEMP_6)
+    clearflag(FLAG_TEMP_7)
+    clearflag(FLAG_TEMP_8)
+    clearflag(FLAG_TEMP_9)
+    clearflag(FLAG_TEMP_10)
+    clearflag(FLAG_TEMP_11)
+    clearflag(FLAG_TEMP_12)
+    clearflag(FLAG_TEMP_A)
+    addobject(20)
+    addobject(21)
+    addobject(10)
+    addobject(12)
+    addobject(25)
+    addobject(10)
+    addobject(1)
+    addobject(2)
+    addobject(3)
+    addobject(4)
+    addobject(5)
+    addobject(6)
+    addobject(7)
+    addobject(8)
+    addobject(9)
+    addobject(10)
+    addobject(11)
+    addobject(21)
+}
 
 
 
@@ -27,6 +66,8 @@ script ROUTE_4_STATE {
 //Seren
     setflag(FLAG_TEMP_A)
     removeobject(OBJ_EVENT_ID_SEREN)
+    removeobject(OBJ_EVENT_ID_ZAROS)
+    setflag(FLAG_TEMP_5)
 
 
     checkitem (ITEM_TERRORBIRD_POUCH, 1)
@@ -36,11 +77,30 @@ script ROUTE_4_STATE {
         addobject(OBJ_EVENT_ID_PREZLEEK)
         addobject(OBJ_EVENT_ID_BAROO)
     }
-
     special(Is_InParty_SEREN)
     if (var(VAR_RESULT) == TRUE || (flag(FLAG_RECEIVED_SERELING_EGG))) {
         clearflag(FLAG_TEMP_A)
         addobject(OBJ_EVENT_ID_SEREN)
+    }
+    special(Is_InParty_ZAROS)
+    if (var(VAR_RESULT) == TRUE || (flag(FLAG_RECEIVED_ZAROLING_EGG))) {
+        clearflag(FLAG_TEMP_5)
+        addobject(OBJ_EVENT_ID_ZAROS)
+    }
+    special(Is_InParty_TUMEKEN)
+    if (var(VAR_RESULT) == TRUE || (flag(FLAG_RECEIVED_TUMEKLING_EGG))) {
+        clearflag(FLAG_TEMP_6)
+        addobject(OBJ_EVENT_ID_TUMEKEN)
+    }
+    special(Is_InParty_GODLESS)
+    if (var(VAR_RESULT) == TRUE || (flag(FLAG_RECEIVED_UNGODLING_EGG))) {
+        clearflag(FLAG_TEMP_7)
+        addobject(OBJ_EVENT_ID_GODLESS)
+    }
+    special(Is_InParty_ARMADYL)
+    if (var(VAR_RESULT) == TRUE || (flag(FLAG_RECEIVED_ARMALING_EGG))) {
+        clearflag(FLAG_TEMP_8)
+        addobject(OBJ_EVENT_ID_ARMADYL)
     }
 
     if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORYMODE
@@ -317,4 +377,146 @@ script POTTERINGTON_FARM_Baroo
     hidenamebox
     release
     end
+}
+
+
+script POTTERINGTON_FARM_MysteriousFigure
+{
+    lock
+    faceplayer
+    if (!flag(FLAG_RECEIVED_ZAROLING_EGG)) {
+        
+        namebox ("???")
+        msgbox(format("Greetings, I've come from the otherside of Gilenor.\pAlong my travels my dark lord asked me to pass this on to a person would I would meet here at this time and this date.\pHere take it."))
+        closemessage
+        hidenamebox
+        //GIVE EGG
+        getpartysize
+        compare (VAR_RESULT, PARTY_SIZE)
+        goto_if_eq (SCRIPT_EGG_NOROOM)
+        setflag (FLAG_RECEIVED_ZAROLING_EGG)
+        playfanfare (MUS_OBTAIN_ITEM)
+        msgbox(format("Obtained an EGG from the Mysterious Figure!"))
+        waitfanfare
+        giveegg (SPECIES_ZAROLING)
+        namebox ("???")
+        msgbox(format("The dark lord works in mysterious ways."))
+    }
+    else {
+        namebox ("???")
+        msgbox(format("The dark lord works in mysterious ways."))
+    }
+    hidenamebox
+    closemessage
+	release
+	end
+}
+
+
+script POTTERINGTON_FARM_Camel
+{
+    lock
+    faceplayer
+    if (!flag(FLAG_RECEIVED_TUMEKLING_EGG)) {
+    
+        namebox ("Camel")
+        msgbox(format("Urrragghhh!!\pHawk tuah!"))
+        closemessage
+        hidenamebox
+        msgbox(format("The camel spits something at you."))
+        closemessage
+        hidenamebox
+        //GIVE EGG
+        getpartysize
+        compare (VAR_RESULT, PARTY_SIZE)
+        goto_if_eq (SCRIPT_EGG_NOROOM)
+        setflag (FLAG_RECEIVED_TUMEKLING_EGG)
+        playfanfare (MUS_OBTAIN_ITEM)
+        msgbox(format("Obtained an EGG from ???!"))
+        waitfanfare
+        giveegg (SPECIES_TUMEKLING)
+        namebox ("Camel")
+        msgbox(format("Hawwwwwwk-{PAUSE 30}\n…{PAUSE 15}Puah…{PAUSE 15}…"))
+        closemessage
+        hidenamebox
+        msgbox(format("The camel seems to have gotten a dry mouth now."))
+    }
+    else {
+        namebox ("Camel")
+        msgbox(format("Hawwwwwwk-{PAUSE 30}\n…{PAUSE 15}Puah…{PAUSE 15}…"))
+        closemessage
+        hidenamebox
+        msgbox(format("The camel tries to spit at you!\p…{PAUSE 15}…{PAUSE 15} But it's mouth is too dry."))
+    }
+    hidenamebox
+    closemessage
+	release
+	end
+}
+
+script POTTERINGTON_FARM_Barbarian
+{
+    lock
+    faceplayer
+    if (!flag(FLAG_RECEIVED_UNGODLING_EGG)) {
+    
+        namebox ("Holstein")
+        msgbox(format("What is with all of these gods at this farm?!\pDisguesting.\pHere take this."))
+        closemessage
+        hidenamebox
+        //GIVE EGG
+        getpartysize
+        compare (VAR_RESULT, PARTY_SIZE)
+        goto_if_eq (SCRIPT_EGG_NOROOM)
+        setflag (FLAG_RECEIVED_UNGODLING_EGG)
+        playfanfare (MUS_OBTAIN_ITEM)
+        msgbox(format("Obtained an EGG from Holstein!"))
+        waitfanfare
+        giveegg (SPECIES_UNGODLING)
+        namebox ("Holstein")
+        msgbox(format("REBEL WITH ME!"))
+    }
+    else {
+        namebox ("Holstein")
+        msgbox(format("REBEL WITH ME!\pDOWN WITH ALL THE GODS!"))
+    }
+    hidenamebox
+    closemessage
+	release
+	end
+}
+script POTTERINGTON_FARM_ARMADYL
+{
+    lock
+    faceplayer
+    if (!flag(FLAG_RECEIVED_ARMALING_EGG)) {
+        msgbox(format("It's a carrier pigeon!\pIt appears to have something for you."))
+        closemessage
+        hidenamebox
+        //GIVE EGG
+        getpartysize
+        compare (VAR_RESULT, PARTY_SIZE)
+        goto_if_eq (SCRIPT_EGG_NOROOM)
+        setflag (FLAG_RECEIVED_ARMALING_EGG)
+        playfanfare (MUS_OBTAIN_ITEM)
+        msgbox(format("Obtained an EGG from the pigeon!"))
+        waitfanfare
+        giveegg (SPECIES_UNGODLING)
+        msgbox(format("It came with a note attached.\p{PLAYER} I entr…st you w…th this egg.\nR…ise it well.\p- Fr…m Arm…d-\pThe rest of the words are too covered in bird poop to make out."))
+    }
+    else {
+        playmoncry(SPECIES_PIGEON, 1)
+        namebox ("Pigeon")
+        msgbox(format("Berr… Berrr…"))
+        waitmoncry
+        closemessage
+        hidenamebox
+        msgbox(format("The pigeon is too focused on eating the seeds on the ground."))
+        closemessage
+        hidenamebox
+    }
+    hidenamebox
+    closemessage
+	release
+	end
 }

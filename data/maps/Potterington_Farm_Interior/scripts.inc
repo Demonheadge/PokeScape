@@ -11,7 +11,6 @@ POTTERINGTON_FARM_STATE::
 	setflag FLAG_TEMP_1
 	setflag FLAG_TEMP_2
 	setflag FLAG_TEMP_3
-	setflag FLAG_TEMP_5
 	setflag FLAG_TEMP_6
 	setflag FLAG_TEMP_7
 	setflag FLAG_TEMP_8
@@ -19,7 +18,6 @@ POTTERINGTON_FARM_STATE::
 	removeobject 5
 	removeobject 4
 	removeobject 2
-	removeobject 10
 	removeobject 6
 	removeobject 9
 	removeobject 7
@@ -48,21 +46,16 @@ POTTERINGTON_FARM_STATE_16:
 	goto_if_eq POTTERINGTON_FARM_STATE_22
 	goto_if_set FLAG_RECEIVED_BANDLING_EGG, POTTERINGTON_FARM_STATE_22
 POTTERINGTON_FARM_STATE_21:
-	special Is_InParty_ZAROS
-	compare VAR_RESULT, TRUE
-	goto_if_eq POTTERINGTON_FARM_STATE_27
-	goto_if_set FLAG_RECEIVED_ZAROLING_EGG, POTTERINGTON_FARM_STATE_27
-POTTERINGTON_FARM_STATE_26:
 	special Is_InParty_hasHAT
 	compare VAR_RESULT, TRUE
-	goto_if_eq POTTERINGTON_FARM_STATE_32
-	goto_if_set FLAG_RECEIVED_RAVENLING_EGG, POTTERINGTON_FARM_STATE_32
-POTTERINGTON_FARM_STATE_31:
+	goto_if_eq POTTERINGTON_FARM_STATE_27
+	goto_if_set FLAG_RECEIVED_RAVENLING_EGG, POTTERINGTON_FARM_STATE_27
+POTTERINGTON_FARM_STATE_26:
 	special Is_InParty_TZHAAR
 	compare VAR_RESULT, TRUE
-	goto_if_eq POTTERINGTON_FARM_STATE_37
-	goto_if_set FLAG_RECEIVED_BASILISK_EGG, POTTERINGTON_FARM_STATE_37
-POTTERINGTON_FARM_STATE_36:
+	goto_if_eq POTTERINGTON_FARM_STATE_32
+	goto_if_set FLAG_RECEIVED_BASILISK_EGG, POTTERINGTON_FARM_STATE_32
+POTTERINGTON_FARM_STATE_31:
 	release
 	end
 
@@ -92,19 +85,14 @@ POTTERINGTON_FARM_STATE_22:
 	goto POTTERINGTON_FARM_STATE_21
 
 POTTERINGTON_FARM_STATE_27:
-	clearflag FLAG_TEMP_5
-	addobject 10
+	clearflag FLAG_TEMP_8
+	addobject 7
 	goto POTTERINGTON_FARM_STATE_26
 
 POTTERINGTON_FARM_STATE_32:
-	clearflag FLAG_TEMP_8
-	addobject 7
-	goto POTTERINGTON_FARM_STATE_31
-
-POTTERINGTON_FARM_STATE_37:
 	clearflag FLAG_TEMP_9
 	addobject 8
-	goto POTTERINGTON_FARM_STATE_36
+	goto POTTERINGTON_FARM_STATE_31
 
 
 EventScript_DaycareMan::
@@ -315,66 +303,6 @@ POTTERINGTON_FARM_Gonthorian_2:
 	namebox POTTERINGTON_FARM_Gonthorian_Text_0
 	msgbox POTTERINGTON_FARM_Gonthorian_Text_3
 	goto POTTERINGTON_FARM_Gonthorian_1
-
-
-POTTERINGTON_FARM_MysteriousFigure::
-	lock
-	faceplayer
-	goto_if_unset FLAG_RECEIVED_ZAROLING_EGG, POTTERINGTON_FARM_MysteriousFigure_2
-	namebox POTTERINGTON_FARM_MysteriousFigure_Text_0
-	msgbox POTTERINGTON_FARM_MysteriousFigure_Text_3
-POTTERINGTON_FARM_MysteriousFigure_1:
-	hidenamebox
-	closemessage
-	release
-	end
-
-POTTERINGTON_FARM_MysteriousFigure_2:
-	namebox POTTERINGTON_FARM_MysteriousFigure_Text_0
-	msgbox POTTERINGTON_FARM_MysteriousFigure_Text_1
-	closemessage
-	hidenamebox
-	getpartysize
-	compare VAR_RESULT, PARTY_SIZE
-	goto_if_eq SCRIPT_EGG_NOROOM
-	setflag FLAG_RECEIVED_ZAROLING_EGG
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox POTTERINGTON_FARM_MysteriousFigure_Text_2
-	waitfanfare
-	giveegg SPECIES_ZAROLING
-	namebox POTTERINGTON_FARM_MysteriousFigure_Text_0
-	msgbox POTTERINGTON_FARM_MysteriousFigure_Text_3
-	goto POTTERINGTON_FARM_MysteriousFigure_1
-
-
-POTTERINGTON_FARM_Barbarian::
-	lock
-	faceplayer
-	goto_if_unset FLAG_RECEIVED_UNGODLING_EGG, POTTERINGTON_FARM_Barbarian_2
-	namebox POTTERINGTON_FARM_MysteriousFigure_Text_0
-	msgbox POTTERINGTON_FARM_Barbarian_Text_2
-POTTERINGTON_FARM_Barbarian_1:
-	hidenamebox
-	closemessage
-	release
-	end
-
-POTTERINGTON_FARM_Barbarian_2:
-	namebox POTTERINGTON_FARM_MysteriousFigure_Text_0
-	msgbox POTTERINGTON_FARM_Barbarian_Text_0
-	closemessage
-	hidenamebox
-	getpartysize
-	compare VAR_RESULT, PARTY_SIZE
-	goto_if_eq SCRIPT_EGG_NOROOM
-	setflag FLAG_RECEIVED_UNGODLING_EGG
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox POTTERINGTON_FARM_Barbarian_Text_1
-	waitfanfare
-	giveegg SPECIES_UNGODLING
-	namebox POTTERINGTON_FARM_MysteriousFigure_Text_0
-	msgbox POTTERINGTON_FARM_Barbarian_Text_2
-	goto POTTERINGTON_FARM_Barbarian_1
 
 
 POTTERINGTON_FARM_Seren_Spirit::
@@ -619,36 +547,6 @@ POTTERINGTON_FARM_Gonthorian_Text_3:
 
 POTTERINGTON_FARM_Gonthorian_Text_4:
 	.string "CUPHOLDER$"
-
-POTTERINGTON_FARM_MysteriousFigure_Text_0:
-	.string "???$"
-
-POTTERINGTON_FARM_MysteriousFigure_Text_1:
-	.string "Greetings, I've come from the otherside\n"
-	.string "of Gilenor.\p"
-	.string "Along my travels my dark lord asked me\n"
-	.string "to pass this on to a person would I\l"
-	.string "would meet here at this time and this\l"
-	.string "date.\p"
-	.string "Here take it.$"
-
-POTTERINGTON_FARM_MysteriousFigure_Text_2:
-	.string "Obtained an EGG from the Mysterious\n"
-	.string "Figure!$"
-
-POTTERINGTON_FARM_MysteriousFigure_Text_3:
-	.string "The dark lord works in mysterious ways.$"
-
-POTTERINGTON_FARM_Barbarian_Text_0:
-	.string "What is with all of these gods?!\p"
-	.string "Disguesting.\p"
-	.string "Here take this.$"
-
-POTTERINGTON_FARM_Barbarian_Text_1:
-	.string "Obtained an EGG from ???!$"
-
-POTTERINGTON_FARM_Barbarian_Text_2:
-	.string "REBEL WITH ME!$"
 
 POTTERINGTON_FARM_Seren_Spirit_Text_0:
 	.string "The crystal shines brightly.\p"

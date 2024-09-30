@@ -566,6 +566,9 @@ gSpecials::
 	def_special Is_InParty_SEREN
 	def_special Is_InParty_ZAROS
 	def_special Is_InParty_BANDOS
+	def_special Is_InParty_TUMEKEN
+	def_special Is_InParty_GODLESS
+	def_special Is_InParty_ARMADYL
 
 
 

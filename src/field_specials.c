@@ -1409,21 +1409,7 @@ bool8 Special_AreLeadMonEVsMaxedOut(void)
 
 u8 TryUpdateRusturfTunnelState(void)
 {
-    if (!FlagGet(FLAG_RUSTURF_TUNNEL_OPENED)
-        && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(RUSTURF_TUNNEL)
-        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(RUSTURF_TUNNEL))
-    {
-        if (FlagGet(FLAG_HIDE_RUSTURF_TUNNEL_ROCK_1))
-        {
-            VarSet(VAR_RUSTURF_TUNNEL_STATE, 4);
-            return TRUE;
-        }
-        else if (FlagGet(FLAG_HIDE_RUSTURF_TUNNEL_ROCK_2))
-        {
-            VarSet(VAR_RUSTURF_TUNNEL_STATE, 5);
-            return TRUE;
-        }
-    }
+    
     return FALSE;
 }
 
@@ -4749,6 +4735,125 @@ void Is_InParty_BANDOS(void)
         if ((GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_MINOTAUR_NORMAL_FORM)
         || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_MINOTAUR_REANIMATED_FORM)
         || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_MINOTAUR_RUNE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_HARPY_EAGLE)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_ROC)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_VULTURE_RSHD_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_VULTURE_RS3_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_VULTURE_PINK_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_VULTURE_OSRS_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_VULTURE_BEARDED_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SOURHOG)
+        )
+        {
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+                gSpecialVar_Result = TRUE;
+                return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+    return;
+}
+
+
+void Is_InParty_TUMEKEN(void)
+{
+    u8 i;
+    u8 partyCount = CalculatePlayerPartyCount();
+    for (i = 0; i < partyCount; i++)
+    {
+        if ((GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_CROCODILE_ANKH_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_CROCODILE_NORMAL_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_CROCODILE_RED_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_CROCODILE_RED_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_ZEBAK)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_CAMEL)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_CAMEL_BANK_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_CAMEL_WARRIOR_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_UGHTANKI)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_KALPHITE_CORRUPTED_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_KALPHITE_DUNG_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_KALPHITE_GUARDIAN_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_KALPHITE_KING_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_KALPHITE_MARAUDER_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_KALPHITE_PARAGON_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_KALPHITE_QUEEN_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_GORILLA_AYUNI_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_GORILLA_ERUNI_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_GORILLA_LEEUNI_FORM)
+
+        )
+        {
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+                gSpecialVar_Result = TRUE;
+                return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+    return;
+}
+
+
+void Is_InParty_GODLESS(void)
+{
+    u8 i;
+    u8 partyCount = CalculatePlayerPartyCount();
+    for (i = 0; i < partyCount; i++)
+    {
+        if ((GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_PIGEON)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_PHEASANT)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SHEEP_WHITE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SHEEP_BLACK_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_PIG_SUMMONING_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_PIG_WAR_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_PIG_PACK_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_PIG_PRAYER_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_BROAV)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_HERBIBOAR)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_BULL_ELDER_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_COW_HARLEQUIN_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_DREADFOWL)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_ERNEST)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_PIGZILLA)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_TURKEY_FEMALE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_TURKEY_MALE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_TURKEY_PROTESTOR_FORM)
+        
+        )
+        {
+            if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+                gSpecialVar_Result = TRUE;
+                return;
+        }
+    }
+    gSpecialVar_Result = FALSE;
+    return;
+}
+
+
+void Is_InParty_ARMADYL(void)
+{
+    u8 i;
+    u8 partyCount = CalculatePlayerPartyCount();
+    for (i = 0; i < partyCount; i++)
+    {
+        if ((GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_PIGEON)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_PHEASANT)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_EVILCHICKEN)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_RAVEN_NORMAL_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_RAVEN_NEVERMORE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_MAGPIE)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_ROC)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_TOUCAN_TUAI_LEIT_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_TOUCAN_TENACIOUS_FEMALE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_TOUCAN_TENACIOUS_MALE_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_MACAW)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_PELICAN)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_HARPY_EAGLE)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SEAGULL_HATTENKRAPPER_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SEAGULL_KOPPENPLOPPEN_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_SEAGULL_STEVEN_FORM)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_ALBATROSS)
+        || (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) == SPECIES_IBIS)
         )
         {
             if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))

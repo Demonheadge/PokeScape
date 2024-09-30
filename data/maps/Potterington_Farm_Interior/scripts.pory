@@ -2,7 +2,7 @@ const OBJ_EVENT_ID_GUTHIX = 5
 const OBJ_EVENT_ID_SARADOMIN = 4
 const OBJ_EVENT_ID_ZAMORAK = 2
 
-const OBJ_EVENT_ID_ZAROS = 10
+
 const OBJ_EVENT_ID_GONTHORIAN = 6
 const OBJ_EVENT_ID_JMOD = 9
 const OBJ_EVENT_ID_DEMONHEADGE = 7
@@ -22,8 +22,7 @@ script POTTERINGTON_FARM_STATE{
     setflag(FLAG_TEMP_1)
     setflag(FLAG_TEMP_2)
     setflag(FLAG_TEMP_3)
-    
-    setflag(FLAG_TEMP_5)
+
     setflag(FLAG_TEMP_6)
     setflag(FLAG_TEMP_7)
     setflag(FLAG_TEMP_8)
@@ -33,7 +32,7 @@ script POTTERINGTON_FARM_STATE{
     removeobject(OBJ_EVENT_ID_SARADOMIN)
     removeobject(OBJ_EVENT_ID_ZAMORAK)
     
-    removeobject(OBJ_EVENT_ID_ZAROS)
+    
     removeobject(OBJ_EVENT_ID_GONTHORIAN)
     removeobject(OBJ_EVENT_ID_JMOD)
     removeobject(OBJ_EVENT_ID_DEMONHEADGE)
@@ -72,16 +71,9 @@ script POTTERINGTON_FARM_STATE{
         addobject(OBJ_EVENT_ID_GONTHORIAN)
     }
     
-    special(Is_InParty_ZAROS)
-    if (var(VAR_RESULT) == TRUE || (flag(FLAG_RECEIVED_ZAROLING_EGG))) {
-        clearflag(FLAG_TEMP_5)
-        addobject(OBJ_EVENT_ID_ZAROS)
-    }
+    
 
-
-
-
-
+    
 
 
 
@@ -380,69 +372,7 @@ script POTTERINGTON_FARM_Gonthorian
 	end
 }
 
-script POTTERINGTON_FARM_MysteriousFigure
-{
-    lock
-    faceplayer
-    if (!flag(FLAG_RECEIVED_ZAROLING_EGG)) {
-        
-        namebox ("???")
-        msgbox(format("Greetings, I've come from the otherside of Gilenor.\pAlong my travels my dark lord asked me to pass this on to a person would I would meet here at this time and this date.\pHere take it."))
-        closemessage
-        hidenamebox
-        //GIVE EGG
-        getpartysize
-        compare (VAR_RESULT, PARTY_SIZE)
-        goto_if_eq (SCRIPT_EGG_NOROOM)
-        setflag (FLAG_RECEIVED_ZAROLING_EGG)
-        playfanfare (MUS_OBTAIN_ITEM)
-        msgbox(format("Obtained an EGG from the Mysterious Figure!"))
-        waitfanfare
-        giveegg (SPECIES_ZAROLING)
-        namebox ("???")
-        msgbox(format("The dark lord works in mysterious ways."))
-    }
-    else {
-        namebox ("???")
-        msgbox(format("The dark lord works in mysterious ways."))
-    }
-    hidenamebox
-    closemessage
-	release
-	end
-}
 
-script POTTERINGTON_FARM_Barbarian
-{
-    lock
-    faceplayer
-    if (!flag(FLAG_RECEIVED_UNGODLING_EGG)) {
-    
-        namebox ("???")
-        msgbox(format("What is with all of these gods?!\pDisguesting.\pHere take this."))
-        closemessage
-        hidenamebox
-        //GIVE EGG
-        getpartysize
-        compare (VAR_RESULT, PARTY_SIZE)
-        goto_if_eq (SCRIPT_EGG_NOROOM)
-        setflag (FLAG_RECEIVED_UNGODLING_EGG)
-        playfanfare (MUS_OBTAIN_ITEM)
-        msgbox(format("Obtained an EGG from ???!"))
-        waitfanfare
-        giveegg (SPECIES_UNGODLING)
-        namebox ("???")
-        msgbox(format("REBEL WITH ME!"))
-    }
-    else {
-        namebox ("???")
-        msgbox(format("REBEL WITH ME!"))
-    }
-    hidenamebox
-    closemessage
-	release
-	end
-}
 
 script POTTERINGTON_FARM_Seren_Spirit
 {
