@@ -1413,6 +1413,8 @@ const u8 *const gMonFootprintTable[] =
     [SPECIES_CABBAGE_SHATTERED_WORLD_FORM] = gMonFootprint_Cabbage_Shattered_World_Form,
     [SPECIES_VULTURE_BEARDED_FORM] = gMonFootprint_Vulture_Bearded_Form,
     [SPECIES_KRYKET_BAT] = gMonFootprint_Kryket_Bat,
+    [SPECIES_HAR_AKEN] = gMonFootprint_Har_Aken,
+    [SPECIES_HAR_AKEN_TENTACLE] = gMonFootprint_Har_Aken_Tentacle,
 
 
 

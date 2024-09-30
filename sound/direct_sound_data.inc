@@ -10108,6 +10108,14 @@ Cry_Vulture_Bearded_Form::
 	.align 2
 Cry_Kryket_Bat::
 	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+	
+	.align 2
+Cry_Har_Aken::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+	
+	.align 2
+Cry_Har_Aken_Tentacle::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
 
 
 

@@ -460,12 +460,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_CHICK] =
 	{
-		.baseHP = 55,
+		.baseHP = 58,
 		.baseAttack = 37,
-		.baseDefense = 40,
-		.baseSpeed = 45,
+		.baseDefense = 67,
+		.baseSpeed = 37,
 		.baseSpAttack = 37,
-		.baseSpDefense = 37,
+		.baseSpDefense = 64,
 		.types = { TYPE_NORMAL, TYPE_FLYING },
 		.catchRate = 255,
 		.expYield = 45,
@@ -1623,12 +1623,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_CALF] =
 	{
-		.baseHP = 65,
+		.baseHP = 75,
 		.baseAttack = 50,
-		.baseDefense = 55,
+		.baseDefense = 64,
 		.baseSpeed = 35,
 		.baseSpAttack = 25,
-		.baseSpDefense = 21,
+		.baseSpDefense = 51,
 		.types = { TYPE_GROUND, TYPE_GROUND },
 		.catchRate = 255,
 		.expYield = 42,
@@ -2551,11 +2551,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 [SPECIES_RAT_NORMAL_FORM] =
 	{
 		.baseHP = 35,
-		.baseAttack = 45,
-		.baseDefense = 35,
-		.baseSpeed = 66,
-		.baseSpAttack = 35,
-		.baseSpDefense = 35,
+		.baseAttack = 55,
+		.baseDefense = 50,
+		.baseSpeed = 70,
+		.baseSpAttack = 45,
+		.baseSpDefense = 45,
 		.types = { TYPE_DARK, TYPE_DARK },
 		.catchRate = 255,
 		.expYield = 42,
@@ -2758,12 +2758,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_RAT_HELL_FORM] =
 	{
-		.baseHP = 40,
+		.baseHP = 60,
 		.baseAttack = 45,
-		.baseDefense = 40,
+		.baseDefense = 50,
 		.baseSpeed = 45,
 		.baseSpAttack = 45,
-		.baseSpDefense = 35,
+		.baseSpDefense = 55,
 		.types = { TYPE_DARK, TYPE_FIRE },
 		.catchRate = 120,
 		.expYield = 117,
@@ -2908,12 +2908,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_RAT_CRYPT_FORM] =
 	{
-		.baseHP = 40,
-		.baseAttack = 30,
-		.baseDefense = 40,
-		.baseSpeed = 30,
+		.baseHP = 70,
+		.baseAttack = 32,
+		.baseDefense = 65,
+		.baseSpeed = 40,
 		.baseSpAttack = 35,
-		.baseSpDefense = 35,
+		.baseSpDefense = 58,
 		.types = { TYPE_DARK, TYPE_DARK },
 		.catchRate = 120,
 		.expYield = 120,
@@ -3168,10 +3168,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 	{
 		.baseHP = 35,
 		.baseAttack = 55,
-		.baseDefense = 40,
+		.baseDefense = 52,
 		.baseSpeed = 50,
 		.baseSpAttack = 40,
-		.baseSpDefense = 30,
+		.baseSpDefense = 68,
 		.types = { TYPE_DARK, TYPE_DARK },
 		.catchRate = 120,
 		.expYield = 132,
@@ -3423,12 +3423,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_LAMB] =
 	{
-		.baseHP = 65,
+		.baseHP = 67,
 		.baseAttack = 34,
-		.baseDefense = 50,
+		.baseDefense = 67,
 		.baseSpeed = 40,
 		.baseSpAttack = 34,
-		.baseSpDefense = 28,
+		.baseSpDefense = 58,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 250,
 		.expYield = 31,
@@ -3638,7 +3638,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.catchRate = 90,
 		.expYield = 109,
 		.evYield_Defense = 2,
-		.genderRatio = PERCENT_FEMALE(50),
+		.genderRatio = PERCENT_FEMALE(0),
 		.eggCycles = 20,
 		.friendship = 70,
 		.growthRate = GROWTH_MEDIUM_SLOW,
@@ -3692,7 +3692,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.catchRate = 45,
 		.expYield = 124,
 		.evYield_Defense = 2,
-		.genderRatio = PERCENT_FEMALE(50),
+		.genderRatio = PERCENT_FEMALE(0),
 		.eggCycles = 20,
 		.friendship = 70,
 		.growthRate = GROWTH_MEDIUM_SLOW,
@@ -3831,12 +3831,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_GOAT_BILLY_FORM] =
 	{
-		.baseHP = 40,
+		.baseHP = 50,
 		.baseAttack = 60,
-		.baseDefense = 40,
-		.baseSpeed = 60,
+		.baseDefense = 55,
+		.baseSpeed = 65,
 		.baseSpAttack = 20,
-		.baseSpDefense = 45,
+		.baseSpDefense = 50,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 90,
 		.expYield = 105,
@@ -4042,12 +4042,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_SARDINE] =
 	{
-		.baseHP = 35,
-		.baseAttack = 35,
-		.baseDefense = 40,
-		.baseSpeed = 45,
-		.baseSpAttack = 55,
-		.baseSpDefense = 45,
+		.baseHP = 50,
+		.baseAttack = 45,
+		.baseDefense = 48,
+		.baseSpeed = 50,
+		.baseSpAttack = 57,
+		.baseSpDefense = 50,
 		.types = { TYPE_WATER, TYPE_WATER },
 		.catchRate = 255,
 		.expYield = 34,
@@ -4856,12 +4856,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_MACKEREL] =
 	{
-		.baseHP = 50,
-		.baseAttack = 30,
-		.baseDefense = 35,
-		.baseSpeed = 40,
+		.baseHP = 65,
+		.baseAttack = 40,
+		.baseDefense = 45,
+		.baseSpeed = 43,
 		.baseSpAttack = 55,
-		.baseSpDefense = 40,
+		.baseSpDefense = 55,
 		.types = { TYPE_WATER, TYPE_WATER },
 		.catchRate = 130,
 		.expYield = 94,
@@ -5267,9 +5267,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KARAMBWANJ] =
 	{
-		.baseHP = 50,
+		.baseHP = 60,
 		.baseAttack = 50,
-		.baseDefense = 50,
+		.baseDefense = 60,
 		.baseSpeed = 35,
 		.baseSpAttack = 45,
 		.baseSpDefense = 50,
@@ -5376,10 +5376,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 	{
 		.baseHP = 70,
 		.baseAttack = 35,
-		.baseDefense = 35,
+		.baseDefense = 55,
 		.baseSpeed = 60,
 		.baseSpAttack = 35,
-		.baseSpDefense = 40,
+		.baseSpDefense = 45,
 		.types = { TYPE_WATER, TYPE_WATER },
 		.catchRate = 110,
 		.expYield = 108,
@@ -5527,11 +5527,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_COD] =
 	{
-		.baseHP = 60,
-		.baseAttack = 40,
-		.baseDefense = 30,
-		.baseSpeed = 20,
-		.baseSpAttack = 40,
+		.baseHP = 68,
+		.baseAttack = 42,
+		.baseDefense = 55,
+		.baseSpeed = 30,
+		.baseSpAttack = 45,
 		.baseSpDefense = 60,
 		.types = { TYPE_WATER, TYPE_WATER },
 		.catchRate = 200,
@@ -5680,12 +5680,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_PIKE] =
 	{
-		.baseHP = 50,
+		.baseHP = 65,
 		.baseAttack = 50,
-		.baseDefense = 30,
-		.baseSpeed = 30,
-		.baseSpAttack = 40,
-		.baseSpDefense = 30,
+		.baseDefense = 55,
+		.baseSpeed = 35,
+		.baseSpAttack = 43,
+		.baseSpDefense = 55,
 		.types = { TYPE_WATER, TYPE_WATER },
 		.catchRate = 180,
 		.expYield = 53,
@@ -6135,12 +6135,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_CAVEFISH] =
 	{
-		.baseHP = 50,
-		.baseAttack = 50,
-		.baseDefense = 50,
-		.baseSpeed = 50,
-		.baseSpAttack = 35,
-		.baseSpDefense = 35,
+		.baseHP = 65,
+		.baseAttack = 70,
+		.baseDefense = 100,
+		.baseSpeed = 30,
+		.baseSpAttack = 67,
+		.baseSpDefense = 75,
 		.types = { TYPE_WATER, TYPE_ROCK },
 		.catchRate = 100,
 		.expYield = 123,
@@ -6238,10 +6238,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 	{
 		.baseHP = 60,
 		.baseAttack = 40,
-		.baseDefense = 45,
-		.baseSpeed = 30,
+		.baseDefense = 50,
+		.baseSpeed = 35,
 		.baseSpAttack = 55,
-		.baseSpDefense = 50,
+		.baseSpDefense = 65,
 		.types = { TYPE_ELECTRIC, TYPE_ELECTRIC },
 		.catchRate = 250,
 		.expYield = 52,
@@ -6345,11 +6345,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 [SPECIES_EEL_SACRED_FORM] =
 	{
 		.baseHP = 80,
-		.baseAttack = 72,
-		.baseDefense = 80,
-		.baseSpeed = 63,
-		.baseSpAttack = 125,
-		.baseSpDefense = 100,
+		.baseAttack = 70,
+		.baseDefense = 75,
+		.baseSpeed = 68,
+		.baseSpAttack = 130,
+		.baseSpDefense = 102,
 		.types = { TYPE_ELECTRIC, TYPE_GHOST },
 		.catchRate = 45,
 		.expYield = 131,
@@ -6451,7 +6451,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.baseDefense = 81,
 		.baseSpeed = 80,
 		.baseSpAttack = 125,
-		.baseSpDefense = 74,
+		.baseSpDefense = 79,
 		.types = { TYPE_ELECTRIC, TYPE_FIRE },
 		.catchRate = 45,
 		.expYield = 141,
@@ -6798,12 +6798,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_PIGLET] =
 	{
-		.baseHP = 80,
+		.baseHP = 90,
 		.baseAttack = 55,
-		.baseDefense = 30,
+		.baseDefense = 35,
 		.baseSpeed = 40,
 		.baseSpAttack = 46,
-		.baseSpDefense = 30,
+		.baseSpDefense = 35,
 		.types = { TYPE_GROUND, TYPE_GROUND },
 		.catchRate = 250,
 		.expYield = 151,
@@ -6957,12 +6957,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_PUPPY_PUP_FORM] =
 	{
-		.baseHP = 45,
+		.baseHP = 55,
 		.baseAttack = 45,
-		.baseDefense = 45,
+		.baseDefense = 60,
 		.baseSpeed = 45,
 		.baseSpAttack = 45,
-		.baseSpDefense = 45,
+		.baseSpDefense = 50,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 220,
 		.expYield = 43,
@@ -7020,12 +7020,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_PUPPY_MUTT_FORM] =
 	{
-		.baseHP = 45,
+		.baseHP = 55,
 		.baseAttack = 45,
-		.baseDefense = 45,
+		.baseDefense = 50,
 		.baseSpeed = 45,
 		.baseSpAttack = 45,
-		.baseSpDefense = 45,
+		.baseSpDefense = 60,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 220,
 		.expYield = 38,
@@ -7724,12 +7724,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KITTEN] =
 	{
-		.baseHP = 35,
+		.baseHP = 50,
 		.baseAttack = 60,
 		.baseDefense = 35,
 		.baseSpeed = 70,
 		.baseSpAttack = 30,
-		.baseSpDefense = 40,
+		.baseSpDefense = 55,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 255,
 		.expYield = 48,
@@ -7776,7 +7776,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_CAT_NORMAL_FORM] =
 	{
-		.baseHP = 40,
+		.baseHP = 60,
 		.baseAttack = 55,
 		.baseDefense = 50,
 		.baseSpeed = 90,
@@ -8893,11 +8893,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 [SPECIES_SCORPLING] =
 	{
 		.baseHP = 50,
-		.baseAttack = 35,
-		.baseDefense = 32,
-		.baseSpeed = 30,
+		.baseAttack = 55,
+		.baseDefense = 72,
+		.baseSpeed = 50,
 		.baseSpAttack = 21,
-		.baseSpDefense = 32,
+		.baseSpDefense = 53,
 		.types = { TYPE_BUG, TYPE_GROUND },
 		.catchRate = 255,
 		.expYield = 47,
@@ -9708,7 +9708,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.baseDefense = 50,
 		.baseSpeed = 50,
 		.baseSpAttack = 30,
-		.baseSpDefense = 40,
+		.baseSpDefense = 45,
 		.types = { TYPE_GRASS, TYPE_POISON },
 		.catchRate = 90,
 		.expYield = 47,
@@ -9958,12 +9958,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_RAVENLING] =
 	{
-		.baseHP = 35,
+		.baseHP = 55,
 		.baseAttack = 35,
-		.baseDefense = 30,
-		.baseSpeed = 45,
+		.baseDefense = 45,
+		.baseSpeed = 77,
 		.baseSpAttack = 30,
-		.baseSpDefense = 30,
+		.baseSpDefense = 58,
 		.types = { TYPE_DARK, TYPE_DARK },
 		.catchRate = 220,
 		.expYield = 52,
@@ -10309,8 +10309,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 [SPECIES_CHINCHOMPA_GREY_FORM] =
 	{
 		.baseHP = 50,
-		.baseAttack = 60,
-		.baseDefense = 20,
+		.baseAttack = 80,
+		.baseDefense = 50,
 		.baseSpeed = 70,
 		.baseSpAttack = 30,
 		.baseSpDefense = 20,
@@ -10364,8 +10364,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 [SPECIES_CHINCHOMPA_RED_FORM] =
 	{
 		.baseHP = 50,
-		.baseAttack = 60,
-		.baseDefense = 20,
+		.baseAttack = 80,
+		.baseDefense = 50,
 		.baseSpeed = 75,
 		.baseSpAttack = 30,
 		.baseSpDefense = 15,
@@ -10470,10 +10470,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 	{
 		.baseHP = 75,
 		.baseAttack = 65,
-		.baseDefense = 45,
+		.baseDefense = 55,
 		.baseSpeed = 40,
 		.baseSpAttack = 30,
-		.baseSpDefense = 30,
+		.baseSpDefense = 50,
 		.types = { TYPE_GROUND, TYPE_GROUND },
 		.catchRate = 200,
 		.expYield = 53,
@@ -10585,12 +10585,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_PENGLING] =
 	{
-		.baseHP = 50,
+		.baseHP = 70,
 		.baseAttack = 40,
-		.baseDefense = 30,
+		.baseDefense = 60,
 		.baseSpeed = 50,
 		.baseSpAttack = 40,
-		.baseSpDefense = 30,
+		.baseSpDefense = 40,
 		.types = { TYPE_ICE, TYPE_ICE },
 		.catchRate = 220,
 		.expYield = 52,
@@ -11552,9 +11552,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_BAT] =
 	{
-		.baseHP = 40,
+		.baseHP = 50,
 		.baseAttack = 55,
-		.baseDefense = 25,
+		.baseDefense = 45,
 		.baseSpeed = 55,
 		.baseSpAttack = 45,
 		.baseSpDefense = 50,
@@ -12265,12 +12265,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_PLANT_STRANGE_FORM] =
 	{
-		.baseHP = 50,
-		.baseAttack = 40,
-		.baseDefense = 50,
+		.baseHP = 65,
+		.baseAttack = 45,
+		.baseDefense = 60,
 		.baseSpeed = 20,
 		.baseSpAttack = 65,
-		.baseSpDefense = 50,
+		.baseSpDefense = 65,
 		.types = { TYPE_GRASS, TYPE_POISON },
 		.catchRate = 90,
 		.expYield = 121,
@@ -12515,8 +12515,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 	{
 		.baseHP = 60,
 		.baseAttack = 55,
-		.baseDefense = 50,
-		.baseSpeed = 20,
+		.baseDefense = 65,
+		.baseSpeed = 25,
 		.baseSpAttack = 45,
 		.baseSpDefense = 50,
 		.types = { TYPE_NORMAL, TYPE_GRASS },
@@ -14114,12 +14114,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_TZ_KIH] =
 	{
-		.baseHP = 40,
+		.baseHP = 45,
 		.baseAttack = 80,
-		.baseDefense = 20,
+		.baseDefense = 30,
 		.baseSpeed = 75,
 		.baseSpAttack = 35,
-		.baseSpDefense = 20,
+		.baseSpDefense = 35,
 		.types = { TYPE_ROCK, TYPE_FIRE },
 		.catchRate = 200,
 		.expYield = 54,
@@ -14518,12 +14518,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_TZREK_JAD] =
 	{
-		.baseHP = 50,
-		.baseAttack = 50,
-		.baseDefense = 60,
-		.baseSpeed = 35,
-		.baseSpAttack = 45,
-		.baseSpDefense = 30,
+		.baseHP = 80,
+		.baseAttack = 75,
+		.baseDefense = 85,
+		.baseSpeed = 57,
+		.baseSpAttack = 65,
+		.baseSpDefense = 70,
 		.types = { TYPE_FIRE, TYPE_GROUND },
 		.catchRate = 45,
 		.expYield = 130,
@@ -15024,12 +15024,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_DUCKLING] =
 	{
-		.baseHP = 60,
+		.baseHP = 73,
 		.baseAttack = 35,
-		.baseDefense = 40,
-		.baseSpeed = 50,
+		.baseDefense = 50,
+		.baseSpeed = 67,
 		.baseSpAttack = 25,
-		.baseSpDefense = 40,
+		.baseSpDefense = 50,
 		.types = { TYPE_WATER, TYPE_WATER },
 		.catchRate = 250,
 		.expYield = 42,
@@ -15284,7 +15284,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 	{
 		.baseHP = 69,
 		.baseAttack = 45,
-		.baseDefense = 40,
+		.baseDefense = 86,
 		.baseSpeed = 30,
 		.baseSpAttack = 30,
 		.baseSpDefense = 40,
@@ -15381,11 +15381,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_FLEDGLING] =
 	{
-		.baseHP = 30,
+		.baseHP = 45,
 		.baseAttack = 85,
-		.baseDefense = 35,
+		.baseDefense = 65,
 		.baseSpeed = 40,
-		.baseSpAttack = 35,
+		.baseSpAttack = 45,
 		.baseSpDefense = 35,
 		.types = { TYPE_WATER, TYPE_WATER },
 		.catchRate = 190,
@@ -16811,7 +16811,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_SPIDERLING] =
 	{
-		.baseHP = 30,
+		.baseHP = 60,
 		.baseAttack = 55,
 		.baseDefense = 55,
 		.baseSpeed = 55,
@@ -17524,12 +17524,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_CRAYFISH] =
 	{
-		.baseHP = 55,
+		.baseHP = 65,
 		.baseAttack = 55,
-		.baseDefense = 55,
-		.baseSpeed = 25,
-		.baseSpAttack = 30,
-		.baseSpDefense = 30,
+		.baseDefense = 75,
+		.baseSpeed = 30,
+		.baseSpAttack = 35,
+		.baseSpDefense = 40,
 		.types = { TYPE_WATER, TYPE_BUG },
 		.catchRate = 255,
 		.expYield = 47,
@@ -17575,9 +17575,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_SHRIMP] =
 	{
-		.baseHP = 60,
+		.baseHP = 75,
 		.baseAttack = 70,
-		.baseDefense = 60,
+		.baseDefense = 80,
 		.baseSpeed = 45,
 		.baseSpAttack = 40,
 		.baseSpDefense = 40,
@@ -17886,10 +17886,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 	{
 		.baseHP = 50,
 		.baseAttack = 75,
-		.baseDefense = 40,
+		.baseDefense = 80,
 		.baseSpeed = 25,
 		.baseSpAttack = 35,
-		.baseSpDefense = 25,
+		.baseSpDefense = 65,
 		.types = { TYPE_WATER, TYPE_WATER },
 		.catchRate = 255,
 		.expYield = 55,
@@ -17988,10 +17988,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 	{
 		.baseHP = 50,
 		.baseAttack = 75,
-		.baseDefense = 40,
+		.baseDefense = 80,
 		.baseSpeed = 25,
 		.baseSpAttack = 35,
-		.baseSpDefense = 25,
+		.baseSpDefense = 65,
 		.types = { TYPE_WATER, TYPE_WATER },
 		.catchRate = 255,
 		.expYield = 55,
@@ -18089,10 +18089,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 	{
 		.baseHP = 50,
 		.baseAttack = 75,
-		.baseDefense = 40,
+		.baseDefense = 80,
 		.baseSpeed = 25,
 		.baseSpAttack = 35,
-		.baseSpDefense = 25,
+		.baseSpDefense = 65,
 		.types = { TYPE_WATER, TYPE_POISON },
 		.catchRate = 255,
 		.expYield = 55,
@@ -18189,10 +18189,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 	{
 		.baseHP = 50,
 		.baseAttack = 35,
-		.baseDefense = 40,
+		.baseDefense = 80,
 		.baseSpeed = 25,
 		.baseSpAttack = 75,
-		.baseSpDefense = 25,
+		.baseSpDefense = 65,
 		.types = { TYPE_WATER, TYPE_DARK },
 		.catchRate = 255,
 		.expYield = 55,
@@ -18290,10 +18290,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 	{
 		.baseHP = 50,
 		.baseAttack = 35,
-		.baseDefense = 40,
+		.baseDefense = 80,
 		.baseSpeed = 75,
 		.baseSpAttack = 25,
-		.baseSpDefense = 25,
+		.baseSpDefense = 65,
 		.types = { TYPE_WATER, TYPE_WATER },
 		.catchRate = 255,
 		.expYield = 55,
@@ -18826,12 +18826,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_CRAWLER_CAVE_FORM] =
 	{
-		.baseHP = 60,
+		.baseHP = 76,
 		.baseAttack = 30,
-		.baseDefense = 25,
+		.baseDefense = 48,
 		.baseSpeed = 46,
 		.baseSpAttack = 45,
-		.baseSpDefense = 45,
+		.baseSpDefense = 55,
 		.types = { TYPE_POISON, TYPE_POISON },
 		.catchRate = 160,
 		.expYield = 60,
@@ -18981,10 +18981,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 	{
 		.baseHP = 70,
 		.baseAttack = 40,
-		.baseDefense = 65,
+		.baseDefense = 85,
 		.baseSpeed = 5,
-		.baseSpAttack = 15,
-		.baseSpDefense = 65,
+		.baseSpAttack = 25,
+		.baseSpDefense = 75,
 		.types = { TYPE_ROCK, TYPE_ROCK },
 		.catchRate = 200,
 		.expYield = 56,
@@ -19341,12 +19341,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_HERBERT] =
 	{
-		.baseHP = 65,
+		.baseHP = 85,
 		.baseAttack = 40,
-		.baseDefense = 75,
+		.baseDefense = 90,
 		.baseSpeed = 15,
 		.baseSpAttack = 40,
-		.baseSpDefense = 75,
+		.baseSpDefense = 90,
 		.types = { TYPE_ROCK, TYPE_GRASS },
 		.catchRate = 180,
 		.expYield = 67,
@@ -19444,12 +19444,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_CAVE_SLIME] =
 	{
-		.baseHP = 70,
+		.baseHP = 90,
 		.baseAttack = 40,
-		.baseDefense = 30,
+		.baseDefense = 40,
 		.baseSpeed = 10,
 		.baseSpAttack = 50,
-		.baseSpDefense = 55,
+		.baseSpDefense = 75,
 		.types = { TYPE_POISON, TYPE_POISON },
 		.catchRate = 200,
 		.expYield = 58,
@@ -19704,12 +19704,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_SALAMANDER_GREEN_FORM] =
 	{
-		.baseHP = 35,
+		.baseHP = 40,
 		.baseAttack = 35,
-		.baseDefense = 35,
+		.baseDefense = 40,
 		.baseSpeed = 55,
 		.baseSpAttack = 70,
-		.baseSpDefense = 40,
+		.baseSpDefense = 60,
 		.types = { TYPE_FIRE, TYPE_FIRE },
 		.catchRate = 255,
 		.expYield = 51,
@@ -19756,12 +19756,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_SALAMANDER_ORANGE_FORM] =
 	{
-		.baseHP = 45,
+		.baseHP = 55,
 		.baseAttack = 45,
-		.baseDefense = 45,
+		.baseDefense = 55,
 		.baseSpeed = 65,
 		.baseSpAttack = 85,
-		.baseSpDefense = 45,
+		.baseSpDefense = 75,
 		.types = { TYPE_FIRE, TYPE_FIRE },
 		.catchRate = 180,
 		.expYield = 61,
@@ -20066,12 +20066,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_BLOODVELD] =
 	{
-		.baseHP = 60,
+		.baseHP = 70,
 		.baseAttack = 45,
-		.baseDefense = 40,
+		.baseDefense = 49,
 		.baseSpeed = 34,
 		.baseSpAttack = 45,
-		.baseSpDefense = 40,
+		.baseSpDefense = 57,
 		.types = { TYPE_BUG, TYPE_BUG },
 		.catchRate = 190,
 		.expYield = 51,
@@ -21124,12 +21124,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_CHOMPY] =
 	{
-		.baseHP = 80,
+		.baseHP = 110,
 		.baseAttack = 50,
 		.baseDefense = 35,
 		.baseSpeed = 20,
 		.baseSpAttack = 35,
-		.baseSpDefense = 20,
+		.baseSpDefense = 50,
 		.types = { TYPE_NORMAL, TYPE_FLYING },
 		.catchRate = 255,
 		.expYield = 43,
@@ -21430,12 +21430,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_WOLF_JUVENILE_FORM] =
 	{
-		.baseHP = 50,
-		.baseAttack = 50,
-		.baseDefense = 30,
-		.baseSpeed = 50,
-		.baseSpAttack = 30,
-		.baseSpDefense = 40,
+		.baseHP = 55,
+		.baseAttack = 65,
+		.baseDefense = 45,
+		.baseSpeed = 70,
+		.baseSpAttack = 65,
+		.baseSpDefense = 50,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 220,
 		.expYield = 53,
@@ -22468,12 +22468,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_FOAL] =
 	{
-		.baseHP = 40,
+		.baseHP = 55,
 		.baseAttack = 40,
-		.baseDefense = 25,
+		.baseDefense = 35,
 		.baseSpeed = 40,
-		.baseSpAttack = 30,
-		.baseSpDefense = 25,
+		.baseSpAttack = 40,
+		.baseSpDefense = 90,
 		.types = { TYPE_FAIRY, TYPE_PSYCHIC },
 		.catchRate = 200,
 		.expYield = 53,
@@ -22526,7 +22526,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.baseDefense = 55,
 		.baseSpeed = 55,
 		.baseSpAttack = 50,
-		.baseSpDefense = 80,
+		.baseSpDefense = 100,
 		.types = { TYPE_FAIRY, TYPE_PSYCHIC },
 		.catchRate = 120,
 		.expYield = 86,
@@ -22828,11 +22828,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_PAWYA] =
 	{
-		.baseHP = 65,
-		.baseAttack = 90,
+		.baseHP = 45,
+		.baseAttack = 60,
 		.baseDefense = 50,
 		.baseSpeed = 100,
-		.baseSpAttack = 95,
+		.baseSpAttack = 65,
 		.baseSpDefense = 100,
 		.types = { TYPE_NORMAL, TYPE_GRASS },
 		.catchRate = 170,
@@ -22932,10 +22932,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 	{
 		.baseHP = 65,
 		.baseAttack = 70,
-		.baseDefense = 50,
+		.baseDefense = 70,
 		.baseSpeed = 30,
 		.baseSpAttack = 23,
-		.baseSpDefense = 32,
+		.baseSpDefense = 42,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 200,
 		.expYield = 42,
@@ -23954,12 +23954,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_HATCHLING] =
 	{
-		.baseHP = 30,
-		.baseAttack = 30,
-		.baseDefense = 20,
-		.baseSpeed = 30,
-		.baseSpAttack = 60,
-		.baseSpDefense = 20,
+		.baseHP = 40,
+		.baseAttack = 40,
+		.baseDefense = 35,
+		.baseSpeed = 40,
+		.baseSpAttack = 70,
+		.baseSpDefense = 30,
 		.types = { TYPE_DRAGON, TYPE_DRAGON },
 		.catchRate = 170,
 		.expYield = 49,
@@ -24010,9 +24010,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_DRAGONLING_GREEN_FORM] =
 	{
-		.baseHP = 40,
+		.baseHP = 70,
 		.baseAttack = 40,
-		.baseDefense = 35,
+		.baseDefense = 55,
 		.baseSpeed = 40,
 		.baseSpAttack = 70,
 		.baseSpDefense = 30,
@@ -24167,12 +24167,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_DRAGONLING_BLUE_FORM] =
 	{
-		.baseHP = 40,
+		.baseHP = 70,
 		.baseAttack = 40,
 		.baseDefense = 70,
 		.baseSpeed = 30,
-		.baseSpAttack = 35,
-		.baseSpDefense = 40,
+		.baseSpAttack = 40,
+		.baseSpDefense = 55,
 		.types = { TYPE_DRAGON, TYPE_WATER },
 		.catchRate = 160,
 		.expYield = 76,
@@ -24322,10 +24322,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_DRAGONLING_RED_FORM] =
 	{
-		.baseHP = 35,
+		.baseHP = 75,
 		.baseAttack = 70,
-		.baseDefense = 40,
-		.baseSpeed = 40,
+		.baseDefense = 45,
+		.baseSpeed = 45,
 		.baseSpAttack = 30,
 		.baseSpDefense = 40,
 		.types = { TYPE_FIRE, TYPE_DRAGON },
@@ -24476,11 +24476,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_DRAGONLING_BLACK_FORM] =
 	{
-		.baseHP = 35,
+		.baseHP = 75,
 		.baseAttack = 70,
-		.baseDefense = 40,
+		.baseDefense = 45,
 		.baseSpeed = 40,
-		.baseSpAttack = 30,
+		.baseSpAttack = 35,
 		.baseSpDefense = 40,
 		.types = { TYPE_DRAGON, TYPE_DARK },
 		.catchRate = 160,
@@ -24828,12 +24828,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_HAND_CREEPING_FORM] =
 	{
-		.baseHP = 30,
-		.baseAttack = 60,
-		.baseDefense = 30,
-		.baseSpeed = 45,
+		.baseHP = 50,
+		.baseAttack = 70,
+		.baseDefense = 50,
+		.baseSpeed = 55,
 		.baseSpAttack = 25,
-		.baseSpDefense = 30,
+		.baseSpDefense = 65,
 		.types = { TYPE_FIGHTING, TYPE_FIGHTING },
 		.catchRate = 220,
 		.expYield = 46,
@@ -25289,12 +25289,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_LILRASK] =
 	{
-		.baseHP = 60,
+		.baseHP = 75,
 		.baseAttack = 60,
-		.baseDefense = 30,
+		.baseDefense = 80,
 		.baseSpeed = 15,
 		.baseSpAttack = 25,
-		.baseSpDefense = 20,
+		.baseSpDefense = 50,
 		.types = { TYPE_GRASS, TYPE_GRASS },
 		.catchRate = 200,
 		.expYield = 57,
@@ -25491,12 +25491,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KEBBIT] =
 	{
-		.baseHP = 45,
-		.baseAttack = 35,
-		.baseDefense = 35,
-		.baseSpeed = 35,
-		.baseSpAttack = 35,
-		.baseSpDefense = 35,
+		.baseHP = 65,
+		.baseAttack = 45,
+		.baseDefense = 45,
+		.baseSpeed = 45,
+		.baseSpAttack = 45,
+		.baseSpDefense = 45,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 255,
 		.expYield = 31,
@@ -25544,12 +25544,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KEBBIT_POLAR_FORM] =
 	{
-		.baseHP = 50,
-		.baseAttack = 40,
-		.baseDefense = 35,
-		.baseSpeed = 45,
-		.baseSpAttack = 50,
-		.baseSpDefense = 40,
+		.baseHP = 70,
+		.baseAttack = 50,
+		.baseDefense = 55,
+		.baseSpeed = 55,
+		.baseSpAttack = 65,
+		.baseSpDefense = 55,
 		.types = { TYPE_NORMAL, TYPE_ICE },
 		.catchRate = 160,
 		.expYield = 61,
@@ -25645,12 +25645,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KEBBIT_SPOTTED_FORM] =
 	{
-		.baseHP = 40,
-		.baseAttack = 30,
-		.baseDefense = 30,
-		.baseSpeed = 90,
-		.baseSpAttack = 40,
-		.baseSpDefense = 30,
+		.baseHP = 70,
+		.baseAttack = 55,
+		.baseDefense = 40,
+		.baseSpeed = 95,
+		.baseSpAttack = 50,
+		.baseSpDefense = 40,
 		.types = { TYPE_NORMAL, TYPE_FIGHTING },
 		.catchRate = 160,
 		.expYield = 61,
@@ -25696,7 +25696,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KEBBIT_DARK_FORM] =
 	{
-		.baseHP = 45,
+		.baseHP = 80,
 		.baseAttack = 50,
 		.baseDefense = 35,
 		.baseSpeed = 100,
@@ -25748,7 +25748,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KEBBIT_DASHING_FORM] =
 	{
-		.baseHP = 65,
+		.baseHP = 90,
 		.baseAttack = 65,
 		.baseDefense = 65,
 		.baseSpeed = 170,
@@ -25797,12 +25797,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KEBBIT_WILD_FORM] =
 	{
-		.baseHP = 50,
-		.baseAttack = 40,
-		.baseDefense = 40,
-		.baseSpeed = 50,
-		.baseSpAttack = 40,
-		.baseSpDefense = 40,
+		.baseHP = 75,
+		.baseAttack = 55,
+		.baseDefense = 50,
+		.baseSpeed = 65,
+		.baseSpAttack = 55,
+		.baseSpDefense = 50,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 160,
 		.expYield = 61,
@@ -25850,12 +25850,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KEBBIT_PRICKLY_FORM] =
 	{
-		.baseHP = 60,
-		.baseAttack = 40,
-		.baseDefense = 70,
-		.baseSpeed = 50,
-		.baseSpAttack = 45,
-		.baseSpDefense = 50,
+		.baseHP = 85,
+		.baseAttack = 50,
+		.baseDefense = 80,
+		.baseSpeed = 60,
+		.baseSpAttack = 55,
+		.baseSpDefense = 60,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 160,
 		.expYield = 89,
@@ -25904,10 +25904,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 [SPECIES_KEBBIT_RAZOR_FORM] =
 	{
 		.baseHP = 100,
-		.baseAttack = 75,
+		.baseAttack = 95,
 		.baseDefense = 120,
 		.baseSpeed = 50,
-		.baseSpAttack = 50,
+		.baseSpAttack = 55,
 		.baseSpDefense = 80,
 		.types = { TYPE_NORMAL, TYPE_STEEL },
 		.catchRate = 130,
@@ -25952,9 +25952,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KEBBIT_BIG_FORM] =
 	{
-		.baseHP = 110,
+		.baseHP = 130,
 		.baseAttack = 90,
-		.baseDefense = 80,
+		.baseDefense = 85,
 		.baseSpeed = 60,
 		.baseSpAttack = 75,
 		.baseSpDefense = 60,
@@ -26001,12 +26001,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KEBBIT_DESERTDEVIL_FORM] =
 	{
-		.baseHP = 35,
-		.baseAttack = 35,
-		.baseDefense = 40,
-		.baseSpeed = 45,
-		.baseSpAttack = 30,
-		.baseSpDefense = 35,
+		.baseHP = 70,
+		.baseAttack = 55,
+		.baseDefense = 55,
+		.baseSpeed = 65,
+		.baseSpAttack = 40,
+		.baseSpDefense = 65,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 195,
 		.expYield = 41,
@@ -26053,12 +26053,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KEBBIT_FELDIP_WEASEL_FORM] =
 	{
-		.baseHP = 50,
+		.baseHP = 70,
 		.baseAttack = 30,
-		.baseDefense = 70,
-		.baseSpeed = 40,
-		.baseSpAttack = 40,
-		.baseSpDefense = 30,
+		.baseDefense = 80,
+		.baseSpeed = 70,
+		.baseSpAttack = 50,
+		.baseSpDefense = 50,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 160,
 		.expYield = 61,
@@ -26104,10 +26104,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KEBBIT_BARBED_FORM] =
 	{
-		.baseHP = 60,
-		.baseAttack = 40,
-		.baseDefense = 80,
-		.baseSpeed = 45,
+		.baseHP = 80,
+		.baseAttack = 45,
+		.baseDefense = 85,
+		.baseSpeed = 50,
 		.baseSpAttack = 50,
 		.baseSpDefense = 40,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
@@ -26155,12 +26155,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KEBBIT_DISEASED_FORM] =
 	{
-		.baseHP = 70,
+		.baseHP = 80,
 		.baseAttack = 65,
 		.baseDefense = 110,
-		.baseSpeed = 70,
+		.baseSpeed = 65,
 		.baseSpAttack = 100,
-		.baseSpDefense = 60,
+		.baseSpDefense = 80,
 		.types = { TYPE_NORMAL, TYPE_POISON },
 		.catchRate = 130,
 		.expYield = 131,
@@ -26204,12 +26204,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KEBBIT_CHOCOLATE_FORM] =
 	{
-		.baseHP = 80,
+		.baseHP = 90,
 		.baseAttack = 80,
 		.baseDefense = 65,
 		.baseSpeed = 80,
 		.baseSpAttack = 90,
-		.baseSpDefense = 80,
+		.baseSpDefense = 95,
 		.types = { TYPE_NORMAL, TYPE_FAIRY },
 		.catchRate = 130,
 		.expYield = 131,
@@ -26252,12 +26252,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_MONKEY_NORMAL_FORM] =
 	{
-		.baseHP = 30,
+		.baseHP = 45,
 		.baseAttack = 45,
-		.baseDefense = 23,
-		.baseSpeed = 85,
+		.baseDefense = 43,
+		.baseSpeed = 90,
 		.baseSpAttack = 40,
-		.baseSpDefense = 35,
+		.baseSpDefense = 45,
 		.types = { TYPE_FIGHTING, TYPE_FIGHTING },
 		.catchRate = 230,
 		.expYield = 42,
@@ -26509,12 +26509,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_MONKEY_HARMLESS_FORM] =
 	{
-		.baseHP = 50,
+		.baseHP = 60,
 		.baseAttack = 45,
-		.baseDefense = 35,
-		.baseSpeed = 75,
-		.baseSpAttack = 20,
-		.baseSpDefense = 33,
+		.baseDefense = 45,
+		.baseSpeed = 85,
+		.baseSpAttack = 25,
+		.baseSpDefense = 48,
 		.types = { TYPE_FIGHTING, TYPE_FIGHTING },
 		.catchRate = 200,
 		.expYield = 47,
@@ -26755,12 +26755,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_MONKEY_KARAMJA_BABY_FORM] =
 	{
-		.baseHP = 50,
-		.baseAttack = 65,
-		.baseDefense = 23,
-		.baseSpeed = 75,
+		.baseHP = 60,
+		.baseAttack = 68,
+		.baseDefense = 33,
+		.baseSpeed = 85,
 		.baseSpAttack = 20,
-		.baseSpDefense = 22,
+		.baseSpDefense = 42,
 		.types = { TYPE_FIGHTING, TYPE_NORMAL },
 		.catchRate = 200,
 		.expYield = 51,
@@ -26806,12 +26806,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_MONKEY_KARAMJA_ADULT_FORM] =
 	{
-		.baseHP = 65,
+		.baseHP = 80,
 		.baseAttack = 95,
 		.baseDefense = 60,
 		.baseSpeed = 120,
 		.baseSpAttack = 85,
-		.baseSpDefense = 60,
+		.baseSpDefense = 65,
 		.types = { TYPE_FIGHTING, TYPE_NORMAL },
 		.catchRate = 200,
 		.expYield = 89,
@@ -27057,11 +27057,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_CRABLING] =
 	{
-		.baseHP = 55,
-		.baseAttack = 30,
-		.baseDefense = 65,
+		.baseHP = 65,
+		.baseAttack = 40,
+		.baseDefense = 100,
 		.baseSpeed = 10,
-		.baseSpAttack = 10,
+		.baseSpAttack = 30,
 		.baseSpDefense = 30,
 		.types = { TYPE_WATER, TYPE_WATER },
 		.catchRate = 200,
@@ -27517,11 +27517,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 [SPECIES_CRAB_GRANITE_FORM] =
 	{
 		.baseHP = 75,
-		.baseAttack = 35,
-		.baseDefense = 75,
-		.baseSpeed = 15,
-		.baseSpAttack = 20,
-		.baseSpDefense = 30,
+		.baseAttack = 65,
+		.baseDefense = 95,
+		.baseSpeed = 20,
+		.baseSpAttack = 30,
+		.baseSpDefense = 35,
 		.types = { TYPE_ROCK, TYPE_WATER },
 		.catchRate = 90,
 		.expYield = 62,
@@ -27667,12 +27667,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_RABBIT] =
 	{
-		.baseHP = 50,
+		.baseHP = 60,
 		.baseAttack = 30,
-		.baseDefense = 25,
+		.baseDefense = 35,
 		.baseSpeed = 90,
 		.baseSpAttack = 35,
-		.baseSpDefense = 30,
+		.baseSpDefense = 50,
 		.types = { TYPE_FAIRY, TYPE_FAIRY },
 		.catchRate = 255,
 		.expYield = 59,
@@ -27971,8 +27971,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 	{
 		.baseHP = 45,
 		.baseAttack = 35,
-		.baseDefense = 35,
-		.baseSpeed = 60,
+		.baseDefense = 80,
+		.baseSpeed = 70,
 		.baseSpAttack = 35,
 		.baseSpDefense = 35,
 		.types = { TYPE_STEEL, TYPE_STEEL },
@@ -28220,10 +28220,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 	{
 		.baseHP = 50,
 		.baseAttack = 30,
-		.baseDefense = 50,
-		.baseSpeed = 80,
+		.baseDefense = 60,
+		.baseSpeed = 90,
 		.baseSpAttack = 30,
-		.baseSpDefense = 25,
+		.baseSpDefense = 55,
 		.types = { TYPE_GHOST, TYPE_GHOST },
 		.catchRate = 220,
 		.expYield = 52,
@@ -28372,7 +28372,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_DOBBIN] =
 	{
-		.baseHP = 40,
+		.baseHP = 60,
 		.baseAttack = 20,
 		.baseDefense = 40,
 		.baseSpeed = 120,
@@ -28734,12 +28734,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_MACKERS] =
 	{
-		.baseHP = 42,
-		.baseAttack = 42,
-		.baseDefense = 42,
-		.baseSpeed = 42,
-		.baseSpAttack = 42,
-		.baseSpDefense = 42,
+		.baseHP = 69,
+		.baseAttack = 69,
+		.baseDefense = 69,
+		.baseSpeed = 69,
+		.baseSpAttack = 69,
+		.baseSpDefense = 69,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 255,
 		.expYield = 70,
@@ -28939,12 +28939,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_TOUCAN_TENACIOUS_MALE_FORM] =
 	{
-		.baseHP = 50,
+		.baseHP = 65,
 		.baseAttack = 40,
-		.baseDefense = 50,
+		.baseDefense = 60,
 		.baseSpeed = 35,
 		.baseSpAttack = 35,
-		.baseSpDefense = 50,
+		.baseSpDefense = 75,
 		.types = { TYPE_FAIRY, TYPE_FLYING },
 		.catchRate = 200,
 		.expYield = 57,
@@ -28991,12 +28991,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_TOUCAN_TENACIOUS_FEMALE_FORM] =
 	{
-		.baseHP = 50,
+		.baseHP = 70,
 		.baseAttack = 35,
-		.baseDefense = 50,
-		.baseSpeed = 35,
+		.baseDefense = 55,
+		.baseSpeed = 40,
 		.baseSpAttack = 35,
-		.baseSpDefense = 55,
+		.baseSpDefense = 75,
 		.types = { TYPE_FAIRY, TYPE_FLYING },
 		.catchRate = 75,
 		.expYield = 57,
@@ -29090,12 +29090,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_JELLYFISH_BLUBBER_FORM] =
 	{
-		.baseHP = 100,
-		.baseAttack = 25,
-		.baseDefense = 15,
-		.baseSpeed = 10,
-		.baseSpAttack = 20,
-		.baseSpDefense = 85,
+		.baseHP = 103,
+		.baseAttack = 39,
+		.baseDefense = 29,
+		.baseSpeed = 13,
+		.baseSpAttack = 27,
+		.baseSpDefense = 90,
 		.types = { TYPE_WATER, TYPE_ELECTRIC },
 		.catchRate = 200,
 		.expYield = 61,
@@ -29193,10 +29193,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 	{
 		.baseHP = 20,
 		.baseAttack = 5,
-		.baseDefense = 15,
+		.baseDefense = 25,
 		.baseSpeed = 70,
 		.baseSpAttack = 95,
-		.baseSpDefense = 70,
+		.baseSpDefense = 85,
 		.types = { TYPE_PSYCHIC, TYPE_PSYCHIC },
 		.catchRate = 200,
 		.expYield = 67,
@@ -29250,7 +29250,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 	{
 		.baseHP = 25,
 		.baseAttack = 20,
-		.baseDefense = 20,
+		.baseDefense = 30,
 		.baseSpeed = 78,
 		.baseSpAttack = 125,
 		.baseSpDefense = 100,
@@ -29307,12 +29307,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_ESSENCE] =
 	{
-		.baseHP = 50,
-		.baseAttack = 60,
-		.baseDefense = 23,
+		.baseHP = 60,
+		.baseAttack = 35,
+		.baseDefense = 43,
 		.baseSpeed = 101,
 		.baseSpAttack = 155,
-		.baseSpDefense = 120,
+		.baseSpDefense = 130,
 		.types = { TYPE_PSYCHIC, TYPE_ELECTRIC },
 		.catchRate = 65,
 		.expYield = 134,
@@ -29570,7 +29570,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.catchRate = 85,
 		.expYield = 120,
 		.evYield_Defense = 2,
-		.genderRatio = PERCENT_FEMALE(50),
+		.genderRatio = PERCENT_FEMALE(0),
 		.eggCycles = 15,
 		.friendship = 70,
 		.growthRate = GROWTH_FAST,
@@ -30215,12 +30215,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_CABBAGE] =
 	{
-		.baseHP = 40,
-		.baseAttack = 40,
-		.baseDefense = 40,
-		.baseSpeed = 40,
-		.baseSpAttack = 40,
-		.baseSpDefense = 40,
+		.baseHP = 55,
+		.baseAttack = 50,
+		.baseDefense = 50,
+		.baseSpeed = 50,
+		.baseSpAttack = 50,
+		.baseSpDefense = 50,
 		.types = { TYPE_GRASS, TYPE_GRASS },
 		.catchRate = 200,
 		.expYield = 51,
@@ -30271,12 +30271,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_UGHTANKI] =
 	{
-		.baseHP = 70,
+		.baseHP = 85,
 		.baseAttack = 30,
-		.baseDefense = 50,
+		.baseDefense = 60,
 		.baseSpeed = 35,
-		.baseSpAttack = 35,
-		.baseSpDefense = 30,
+		.baseSpAttack = 40,
+		.baseSpDefense = 50,
 		.types = { TYPE_GROUND, TYPE_GROUND },
 		.catchRate = 200,
 		.expYield = 52,
@@ -30325,10 +30325,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 [SPECIES_CAMEL] =
 	{
 		.baseHP = 90,
-		.baseAttack = 55,
-		.baseDefense = 70,
-		.baseSpeed = 50,
-		.baseSpAttack = 60,
+		.baseAttack = 70,
+		.baseDefense = 75,
+		.baseSpeed = 55,
+		.baseSpAttack = 75,
 		.baseSpDefense = 75,
 		.types = { TYPE_GROUND, TYPE_GROUND },
 		.catchRate = 85,
@@ -30480,12 +30480,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KALPHITE_LARVA_FORM] =
 	{
-		.baseHP = 15,
-		.baseAttack = 20,
-		.baseDefense = 30,
+		.baseHP = 35,
+		.baseAttack = 40,
+		.baseDefense = 40,
 		.baseSpeed = 30,
-		.baseSpAttack = 15,
-		.baseSpDefense = 30,
+		.baseSpAttack = 25,
+		.baseSpDefense = 35,
 		.types = { TYPE_BUG, TYPE_BUG },
 		.catchRate = 230,
 		.expYield = 32,
@@ -30532,11 +30532,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KALPHITE_WORKER_FORM] =
 	{
-		.baseHP = 25,
+		.baseHP = 35,
 		.baseAttack = 55,
-		.baseDefense = 60,
+		.baseDefense = 65,
 		.baseSpeed = 60,
-		.baseSpAttack = 15,
+		.baseSpAttack = 35,
 		.baseSpDefense = 50,
 		.types = { TYPE_BUG, TYPE_BUG },
 		.catchRate = 200,
@@ -30584,12 +30584,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KALPHITE_SOLDIER_FORM] =
 	{
-		.baseHP = 55,
+		.baseHP = 65,
 		.baseAttack = 75,
-		.baseDefense = 70,
+		.baseDefense = 75,
 		.baseSpeed = 75,
-		.baseSpAttack = 35,
-		.baseSpDefense = 55,
+		.baseSpAttack = 45,
+		.baseSpDefense = 60,
 		.types = { TYPE_BUG, TYPE_BUG },
 		.catchRate = 150,
 		.expYield = 89,
@@ -31045,11 +31045,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KALPHITE_DUNG_FORM] =
 	{
-		.baseHP = 15,
-		.baseAttack = 20,
-		.baseDefense = 20,
+		.baseHP = 35,
+		.baseAttack = 30,
+		.baseDefense = 30,
 		.baseSpeed = 140,
-		.baseSpAttack = 15,
+		.baseSpAttack = 25,
 		.baseSpDefense = 40,
 		.types = { TYPE_BUG, TYPE_BUG },
 		.catchRate = 150,
@@ -34097,7 +34097,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_STRYKEWYRM_MINI_FORM] =
 	{
-		.baseHP = 55,
+		.baseHP = 75,
 		.baseAttack = 40,
 		.baseDefense = 40,
 		.baseSpeed = 70,
@@ -35097,9 +35097,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_IMP] =
 	{
-		.baseHP = 50,
+		.baseHP = 60,
 		.baseAttack = 50,
-		.baseDefense = 35,
+		.baseDefense = 45,
 		.baseSpeed = 50,
 		.baseSpAttack = 55,
 		.baseSpDefense = 55,
@@ -36734,12 +36734,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_IMPLING_BABY_FORM] =
 	{
-		.baseHP = 30,
+		.baseHP = 40,
 		.baseAttack = 30,
-		.baseDefense = 20,
+		.baseDefense = 30,
 		.baseSpeed = 70,
-		.baseSpAttack = 55,
-		.baseSpDefense = 60,
+		.baseSpAttack = 60,
+		.baseSpDefense = 70,
 		.types = { TYPE_FLYING, TYPE_FLYING },
 		.catchRate = 255,
 		.expYield = 53,
@@ -37347,12 +37347,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_VOID_LEECH] =
 	{
-		.baseHP = 50,
-		.baseAttack = 20,
-		.baseDefense = 20,
+		.baseHP = 60,
+		.baseAttack = 55,
+		.baseDefense = 55,
 		.baseSpeed = 20,
-		.baseSpAttack = 20,
-		.baseSpDefense = 20,
+		.baseSpAttack = 55,
+		.baseSpDefense = 55,
 		.types = { TYPE_BUG, TYPE_BUG },
 		.catchRate = 255,
 		.expYield = 41,
@@ -37851,7 +37851,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_ANCHOVY] =
 	{
-		.baseHP = 30,
+		.baseHP = 60,
 		.baseAttack = 50,
 		.baseDefense = 30,
 		.baseSpeed = 60,
@@ -37953,12 +37953,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_RED_EYE] =
 	{
-		.baseHP = 50,
-		.baseAttack = 30,
-		.baseDefense = 30,
+		.baseHP = 75,
+		.baseAttack = 45,
+		.baseDefense = 50,
 		.baseSpeed = 30,
-		.baseSpAttack = 30,
-		.baseSpDefense = 30,
+		.baseSpAttack = 40,
+		.baseSpDefense = 60,
 		.types = { TYPE_WATER, TYPE_WATER },
 		.catchRate = 250,
 		.expYield = 51,
@@ -38006,11 +38006,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 [SPECIES_FLATFISH] =
 	{
 		.baseHP = 80,
-		.baseAttack = 55,
+		.baseAttack = 65,
 		.baseDefense = 75,
 		.baseSpeed = 35,
-		.baseSpAttack = 30,
-		.baseSpDefense = 35,
+		.baseSpAttack = 50,
+		.baseSpDefense = 70,
 		.types = { TYPE_WATER, TYPE_WATER },
 		.catchRate = 45,
 		.expYield = 89,
@@ -38060,8 +38060,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.baseHP = 100,
 		.baseAttack = 85,
 		.baseDefense = 200,
-		.baseSpeed = 40,
-		.baseSpAttack = 30,
+		.baseSpeed = 50,
+		.baseSpAttack = 50,
 		.baseSpDefense = 40,
 		.types = { TYPE_WATER, TYPE_ROCK },
 		.catchRate = 45,
@@ -38105,10 +38105,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_MUDSKIPPER] =
 	{
-		.baseHP = 70,
+		.baseHP = 80,
 		.baseAttack = 55,
 		.baseDefense = 85,
-		.baseSpeed = 140,
+		.baseSpeed = 85,
 		.baseSpAttack = 40,
 		.baseSpDefense = 75,
 		.types = { TYPE_WATER, TYPE_GROUND },
@@ -42690,12 +42690,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_GLACOR_ENDURING_FORM] =
 	{
-		.baseHP = 50,
+		.baseHP = 70,
 		.baseAttack = 20,
-		.baseDefense = 40,
+		.baseDefense = 60,
 		.baseSpeed = 10,
 		.baseSpAttack = 100,
-		.baseSpDefense = 40,
+		.baseSpDefense = 80,
 		.types = { TYPE_ICE, TYPE_ICE },
 		.catchRate = 65,
 		.expYield = 54,
@@ -43589,12 +43589,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_THE_ILLUSIVE] =
 	{
-		.baseHP = 5,
-		.baseAttack = 5,
-		.baseDefense = 5,
+		.baseHP = 15,
+		.baseAttack = 15,
+		.baseDefense = 15,
 		.baseSpeed = 230,
-		.baseSpAttack = 5,
-		.baseSpDefense = 5,
+		.baseSpAttack = 15,
+		.baseSpDefense = 15,
 		.types = { TYPE_DARK, TYPE_PSYCHIC },
 		.catchRate = 25,
 		.expYield = 2,
@@ -43847,12 +43847,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_CHINCHOMPA_BABY] =
 	{
-		.baseHP = 20,
-		.baseAttack = 50,
-		.baseDefense = 20,
-		.baseSpeed = 20,
-		.baseSpAttack = 20,
-		.baseSpDefense = 20,
+		.baseHP = 30,
+		.baseAttack = 55,
+		.baseDefense = 50,
+		.baseSpeed = 50,
+		.baseSpAttack = 50,
+		.baseSpDefense = 50,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 120,
 		.expYield = 252,
@@ -43902,12 +43902,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_CHINCHOMPA_GREY_BABY] =
 	{
-		.baseHP = 30,
+		.baseHP = 55,
 		.baseAttack = 70,
-		.baseDefense = 30,
+		.baseDefense = 60,
 		.baseSpeed = 50,
 		.baseSpAttack = 30,
-		.baseSpDefense = 30,
+		.baseSpDefense = 50,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 120,
 		.expYield = 252,
@@ -43954,12 +43954,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_CHINCHOMPA_RED_BABY] =
 	{
-		.baseHP = 30,
+		.baseHP = 55,
 		.baseAttack = 90,
-		.baseDefense = 30,
+		.baseDefense = 60,
 		.baseSpeed = 30,
 		.baseSpAttack = 30,
-		.baseSpDefense = 30,
+		.baseSpDefense = 50,
 		.types = { TYPE_NORMAL, TYPE_NORMAL },
 		.catchRate = 120,
 		.expYield = 252,
@@ -46581,7 +46581,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MONSTER },
 		.abilities = { ABILITY_MAGMA_ARMOR, ABILITY_MAGMA_ARMOR, ABILITY_PRESSURE },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("TzTok Jad"),
+		.speciesName = _("TzTok-Jad"),
 		.cryId = CRY_TZTOK_JAD_HD_MEGA_FORM,
 		.natDexNum = NATIONAL_DEX_TZTOK_JAD_HD_MEGA_FORM,
 		.categoryName = _("Tzhaar"),
@@ -46631,7 +46631,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MONSTER },
 		.abilities = { ABILITY_MAGMA_ARMOR, ABILITY_MAGMA_ARMOR, ABILITY_PRESSURE },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("TzTok Jad"),
+		.speciesName = _("TzTok-Jad"),
 		.cryId = CRY_TZTOK_JAD_RS3_MEGA_FORM,
 		.natDexNum = NATIONAL_DEX_TZTOK_JAD_RS3_MEGA_FORM,
 		.categoryName = _("Tzhaar"),
@@ -47785,12 +47785,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_ENTLING] =
 	{
-		.baseHP = 20,
-		.baseAttack = 20,
-		.baseDefense = 20,
-		.baseSpeed = 20,
-		.baseSpAttack = 20,
-		.baseSpDefense = 20,
+		.baseHP = 50,
+		.baseAttack = 50,
+		.baseDefense = 50,
+		.baseSpeed = 50,
+		.baseSpAttack = 50,
+		.baseSpDefense = 50,
 		.types = { TYPE_GRASS, TYPE_GRASS },
 		.catchRate = 120,
 		.expYield = 120,
@@ -49011,15 +49011,16 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_MOTH_SUNLIGHT_FORM] =
 	{
-		.baseHP = 1,
-		.baseAttack = 1,
-		.baseDefense = 1,
-		.baseSpeed = 1,
-		.baseSpAttack = 1,
-		.baseSpDefense = 1,
+		.baseHP = 70,
+		.baseAttack = 60,
+		.baseDefense = 40,
+		.baseSpeed = 100,
+		.baseSpAttack = 95,
+		.baseSpDefense = 140,
 		.types = { TYPE_BUG, TYPE_BUG },
 		.catchRate = 25,
 		.expYield = 89,
+		.evYield_SpDefense = 2,
 		.genderRatio = PERCENT_FEMALE(50),
 		.eggCycles = 15,
 		.friendship = 30,
@@ -49056,15 +49057,16 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_MOTH_MOONLIGHT_FORM] =
 	{
-		.baseHP = 1,
-		.baseAttack = 1,
-		.baseDefense = 1,
-		.baseSpeed = 1,
-		.baseSpAttack = 1,
-		.baseSpDefense = 1,
+		.baseHP = 70,
+		.baseAttack = 60,
+		.baseDefense = 40,
+		.baseSpeed = 105,
+		.baseSpAttack = 90,
+		.baseSpDefense = 140,
 		.types = { TYPE_BUG, TYPE_BUG },
 		.catchRate = 25,
 		.expYield = 89,
+		.evYield_SpDefense = 2,
 		.genderRatio = PERCENT_FEMALE(50),
 		.eggCycles = 15,
 		.friendship = 30,
@@ -49110,6 +49112,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.types = { TYPE_ROCK, TYPE_ELECTRIC },
 		.catchRate = 1,
 		.expYield = 126,
+		.evYield_HP = 3,
+		.evYield_Attack = 3,
+		.evYield_Defense = 3,
+		.evYield_Speed = 3,
+		.evYield_SpAttack = 3,
+		.evYield_SpDefense = 3,
 		.genderRatio = MON_GENDERLESS,
 		.eggCycles = 20,
 		.friendship = 0,
@@ -49158,6 +49166,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.types = { TYPE_GHOST, TYPE_STEEL },
 		.catchRate = 45,
 		.expYield = 150,
+		.evYield_Attack = 1,
 		.evYield_Defense = 2,
 		.genderRatio = MON_GENDERLESS,
 		.eggCycles = 20,
@@ -49205,6 +49214,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.catchRate = 45,
 		.expYield = 150,
 		.evYield_Defense = 2,
+		.evYield_Speed = 1,
 		.genderRatio = MON_GENDERLESS,
 		.eggCycles = 20,
 		.friendship = 70,
@@ -49251,6 +49261,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.catchRate = 45,
 		.expYield = 150,
 		.evYield_Defense = 2,
+		.evYield_SpAttack = 1,
 		.genderRatio = MON_GENDERLESS,
 		.eggCycles = 20,
 		.friendship = 70,
@@ -50050,12 +50061,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_KALRAG] =
 	{
-		.baseHP = 86,
+		.baseHP = 96,
 		.baseAttack = 80,
-		.baseDefense = 83,
-		.baseSpeed = 81,
-		.baseSpAttack = 125,
-		.baseSpDefense = 95,
+		.baseDefense = 93,
+		.baseSpeed = 91,
+		.baseSpAttack = 135,
+		.baseSpDefense = 105,
 		.types = { TYPE_BUG, TYPE_ELECTRIC },
 		.catchRate = 45,
 		.expYield = 125,
@@ -50096,13 +50107,13 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_ANIMAWHAL] =
 	{
-		.baseHP = 1,
-		.baseAttack = 1,
-		.baseDefense = 1,
-		.baseSpeed = 1,
-		.baseSpAttack = 1,
-		.baseSpDefense = 1,
-		.types = { TYPE_NORMAL, TYPE_NORMAL },
+		.baseHP = 60,
+		.baseAttack = 60,
+		.baseDefense = 60,
+		.baseSpeed = 60,
+		.baseSpAttack = 60,
+		.baseSpDefense = 60,
+		.types = { TYPE_PSYCHIC, TYPE_PSYCHIC },
 		.catchRate = 200,
 		.expYield = 134,
 		.evYield_SpAttack = 2,
@@ -50113,7 +50124,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.itemCommon = ITEM_NONE,
 		.itemRare = ITEM_NONE,
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
-		.abilities = { ABILITY_MIMICRY, ABILITY_NONE, ABILITY_NONE },
+		.abilities = { ABILITY_MIMICRY, ABILITY_MIMICRY, ABILITY_NONE },
 		.bodyColor = BODY_COLOR_BLACK,
 		.speciesName = _("Animawhal"),
 		.cryId = CRY_ANIMAWHAL,
@@ -50145,13 +50156,13 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_ANIMASAURUS] =
 	{
-		.baseHP = 1,
-		.baseAttack = 1,
-		.baseDefense = 1,
-		.baseSpeed = 1,
-		.baseSpAttack = 1,
-		.baseSpDefense = 1,
-		.types = { TYPE_NORMAL, TYPE_NORMAL },
+		.baseHP = 90,
+		.baseAttack = 90,
+		.baseDefense = 90,
+		.baseSpeed = 90,
+		.baseSpAttack = 90,
+		.baseSpDefense = 90,
+		.types = { TYPE_PSYCHIC, TYPE_PSYCHIC },
 		.catchRate = 200,
 		.expYield = 167,
 		.evYield_SpAttack = 3,
@@ -50162,7 +50173,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.itemCommon = ITEM_NONE,
 		.itemRare = ITEM_NONE,
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
-		.abilities = { ABILITY_MIMICRY, ABILITY_NONE, ABILITY_NONE },
+		.abilities = { ABILITY_MIMICRY, ABILITY_MIMICRY, ABILITY_NONE },
 		.bodyColor = BODY_COLOR_BLACK,
 		.speciesName = _("Animasaur"),
 		.cryId = CRY_ANIMASAURUS,
@@ -50424,6 +50435,98 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Kryket_Bat),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 4,
+	},
+
+[SPECIES_HAR_AKEN] =
+	{
+		.baseHP = 200,
+		.baseAttack = 120,
+		.baseDefense = 100,
+		.baseSpeed = 30,
+		.baseSpAttack = 120,
+		.baseSpDefense = 100,
+		.types = { TYPE_FIRE, TYPE_ROCK },
+		.catchRate = 1,
+		.expYield = 160,
+		.evYield_HP = 3,
+		.genderRatio = MON_GENDERLESS,
+		.eggCycles = 20,
+		.friendship = 0,
+		.growthRate = GROWTH_SLOW,
+		.itemCommon = ITEM_NONE,
+		.itemRare = ITEM_NONE,
+		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
+		.abilities = { ABILITY_PRESSURE, ABILITY_PRESSURE, ABILITY_NONE },
+		.bodyColor = BODY_COLOR_BLACK,
+		.speciesName = _("Har-Aken"),
+		.cryId = CRY_HAR_AKEN,
+		.natDexNum = NATIONAL_DEX_HAR_AKEN,
+		.categoryName = _("Cupholder"),
+		.height = 0,
+		.weight = 0,
+		.description = COMPOUND_STRING(),
+		.pokemonScale = 256,
+		.pokemonOffset = 0,
+		.trainerScale = 256,
+		.trainerOffset = 0,
+		FRONT_PIC(Har_Aken, 64, 64),
+		.frontAnimFrames = sAnims_Har_Aken,
+		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+		BACK_PIC(Har_Aken, 64, 64),
+		.backPicYOffset = 0,
+		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+		PALETTES(Har_Aken),
+		ICON(Har_Aken, 0),
+		.footprint = gMonFootprint_Har_Aken,
+		LEARNSETS(Har_Aken),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
+	},
+
+[SPECIES_HAR_AKEN_TENTACLE] =
+	{
+		.baseHP = 100,
+		.baseAttack = 100,
+		.baseDefense = 70,
+		.baseSpeed = 60,
+		.baseSpAttack = 100,
+		.baseSpDefense = 70,
+		.types = { TYPE_FIRE, TYPE_ROCK },
+		.catchRate = 1,
+		.expYield = 130,
+		.evYield_HP = 2,
+		.genderRatio = MON_GENDERLESS,
+		.eggCycles = 20,
+		.friendship = 0,
+		.growthRate = GROWTH_SLOW,
+		.itemCommon = ITEM_NONE,
+		.itemRare = ITEM_NONE,
+		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
+		.abilities = { ABILITY_PRESSURE, ABILITY_PRESSURE, ABILITY_NONE },
+		.bodyColor = BODY_COLOR_BLACK,
+		.speciesName = _("Tentacle"),
+		.cryId = CRY_HAR_AKEN_TENTACLE,
+		.natDexNum = NATIONAL_DEX_HAR_AKEN_TENTACLE,
+		.categoryName = _("Cupholder"),
+		.height = 0,
+		.weight = 0,
+		.description = COMPOUND_STRING(),
+		.pokemonScale = 256,
+		.pokemonOffset = 0,
+		.trainerScale = 256,
+		.trainerOffset = 0,
+		FRONT_PIC(Har_Aken_Tentacle, 64, 64),
+		.frontAnimFrames = sAnims_Har_Aken_Tentacle,
+		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+		BACK_PIC(Har_Aken_Tentacle, 64, 64),
+		.backPicYOffset = 0,
+		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+		PALETTES(Har_Aken_Tentacle),
+		ICON(Har_Aken_Tentacle, 0),
+		.footprint = gMonFootprint_Har_Aken_Tentacle,
+		LEARNSETS(Har_Aken_Tentacle),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
 	},
 
 

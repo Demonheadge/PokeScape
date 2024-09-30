@@ -19756,6 +19756,20 @@ static const union AnimCmd sAnim_Kryket_Bat_1[] =
 	ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_Har_Aken_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_Har_Aken_Tentacle_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
 
 // Todo: use the Macro for these.
 static const union AnimCmd *const sAnims_Guthling[] ={
@@ -24756,6 +24770,16 @@ static const union AnimCmd *const sAnims_Vulture_Bearded_Form[] ={
 static const union AnimCmd *const sAnims_Kryket_Bat[] ={
 	sAnim_GeneralFrame0,
 	sAnim_Kryket_Bat_1,
+};
+
+static const union AnimCmd *const sAnims_Har_Aken[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Har_Aken_1,
+};
+
+static const union AnimCmd *const sAnims_Har_Aken_Tentacle[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Har_Aken_Tentacle_1,
 };
 
 

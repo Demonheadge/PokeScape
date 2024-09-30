@@ -5806,6 +5806,8 @@ cry Cry_Yak_Lumber_Form
 cry Cry_Cabbage_Shattered_World_Form
 cry Cry_Vulture_Bearded_Form
 cry Cry_Kryket_Bat
+cry Cry_Har_Aken
+cry Cry_Har_Aken_Tentacle
 
 cry_reverse Cry_Guthling
 cry_reverse Cry_Guthbird
@@ -6807,3 +6809,5 @@ cry_reverse Cry_Yak_Lumber_Form
 cry_reverse Cry_Cabbage_Shattered_World_Form
 cry_reverse Cry_Vulture_Bearded_Form
 cry_reverse Cry_Kryket_Bat
+cry_reverse Cry_Har_Aken
+cry_reverse Cry_Har_Aken_Tentacle

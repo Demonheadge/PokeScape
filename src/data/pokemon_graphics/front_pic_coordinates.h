@@ -7145,6 +7145,18 @@ const struct MonCoords gMonFrontPicCoords[] =
 		.y_offset = 0,
 	},
 
+	[SPECIES_HAR_AKEN] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+	[SPECIES_HAR_AKEN_TENTACLE] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
 
 
 

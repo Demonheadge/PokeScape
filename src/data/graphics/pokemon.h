@@ -17912,4 +17912,18 @@ const u32 gMonShinyPalette_Kryket_Bat[] = INCBIN_U32("graphics/pokescape_monster
 const u8 gMonIcon_Kryket_Bat[] = INCBIN_U8("graphics/pokescape_monsters/Kryket_Bat/icon.4bpp");
 const u8 gMonFootprint_Kryket_Bat[] = INCBIN_U8("graphics/pokescape_monsters/Kryket_Bat/footprint.1bpp");
 
+const u32 gMonFrontPic_Har_Aken[] = INCBIN_U32("graphics/pokescape_monsters/Har_Aken/anim_front.4bpp.lz");
+const u32 gMonPalette_Har_Aken[] = INCBIN_U32("graphics/pokescape_monsters/Har_Aken/normal.gbapal.lz");
+const u32 gMonBackPic_Har_Aken[] = INCBIN_U32("graphics/pokescape_monsters/Har_Aken/back.4bpp.lz");
+const u32 gMonShinyPalette_Har_Aken[] = INCBIN_U32("graphics/pokescape_monsters/Har_Aken/shiny.gbapal.lz");
+const u8 gMonIcon_Har_Aken[] = INCBIN_U8("graphics/pokescape_monsters/Har_Aken/icon.4bpp");
+const u8 gMonFootprint_Har_Aken[] = INCBIN_U8("graphics/pokescape_monsters/Har_Aken/footprint.1bpp");
+
+const u32 gMonFrontPic_Har_Aken_Tentacle[] = INCBIN_U32("graphics/pokescape_monsters/Har_Aken_Tentacle/anim_front.4bpp.lz");
+const u32 gMonPalette_Har_Aken_Tentacle[] = INCBIN_U32("graphics/pokescape_monsters/Har_Aken_Tentacle/normal.gbapal.lz");
+const u32 gMonBackPic_Har_Aken_Tentacle[] = INCBIN_U32("graphics/pokescape_monsters/Har_Aken_Tentacle/back.4bpp.lz");
+const u32 gMonShinyPalette_Har_Aken_Tentacle[] = INCBIN_U32("graphics/pokescape_monsters/Har_Aken_Tentacle/shiny.gbapal.lz");
+const u8 gMonIcon_Har_Aken_Tentacle[] = INCBIN_U8("graphics/pokescape_monsters/Har_Aken_Tentacle/icon.4bpp");
+const u8 gMonFootprint_Har_Aken_Tentacle[] = INCBIN_U8("graphics/pokescape_monsters/Har_Aken_Tentacle/footprint.1bpp");
+
 //POKESCAPE END
