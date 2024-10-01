@@ -53,6 +53,8 @@ static void TilesetAnim_PokeScape_Caves(u16);
 static void TilesetAnim_PokeScapeIndoors(u16);
 static void TilesetAnim_PokeScapeCaves(u16);
 static void TilesetAnim_PokeScapeCaves_Extra_1(u16);
+static void TilesetAnim_Lumbridge_Swamp_Caves(u16);
+
 //PokeScape End//
 
 static void QueueAnimTiles_General_Flower(u16);
@@ -97,6 +99,8 @@ static void QueueAnimTiles_Karamja_scorchfire1(u16);
 static void QueueAnimTiles_Karamja_scorchfire2(u16);
 static void QueueAnimTiles_Wilderness_Lava(u16);
 static void QueueAnimTiles_PokeScape_Caves_Lava(u16);
+static void QueueAnimTiles_Lumbridge_Swamp_Caves_SwampBubble(u16);
+static void QueueAnimTiles_Lumbridge_Swamp_Caves_Steam(u8);
 static void QueueAnimTiles_PokeScapeIndoors_Sparkle(u16);
 static void QueueAnimTiles_PokeScapeCaves_Lava(u16);
 static void QueueAnimTiles_PokeScapeCaves_SwampBubble(u16);
@@ -261,6 +265,30 @@ const u16 *const gTilesetAnims_PokeScape_Caves_Lava[] = {
     gTilesetAnims_PokeScape_Caves_Lava_Frame1,
     gTilesetAnims_PokeScape_Caves_Lava_Frame2,
     gTilesetAnims_PokeScape_Caves_Lava_Frame3
+};
+//SwampBubble
+const u16 gTilesetAnims_Lumbridge_Swamp_Caves_SwampBubble_Frame0[] = INCBIN_U16("data/tilesets/secondary/lumbridge_swamp_caves/anim/swampbubble/swampbubble_0.4bpp");
+const u16 gTilesetAnims_Lumbridge_Swamp_Caves_SwampBubble_Frame1[] = INCBIN_U16("data/tilesets/secondary/lumbridge_swamp_caves/anim/swampbubble/swampbubble_1.4bpp");
+const u16 gTilesetAnims_Lumbridge_Swamp_Caves_SwampBubble_Frame2[] = INCBIN_U16("data/tilesets/secondary/lumbridge_swamp_caves/anim/swampbubble/swampbubble_2.4bpp");
+const u16 gTilesetAnims_Lumbridge_Swamp_Caves_SwampBubble_Frame3[] = INCBIN_U16("data/tilesets/secondary/lumbridge_swamp_caves/anim/swampbubble/swampbubble_3.4bpp");
+
+const u16 *const gTilesetAnims_Lumbridge_Swamp_Caves_SwampBubble[] = {
+    gTilesetAnims_Lumbridge_Swamp_Caves_SwampBubble_Frame0,
+    gTilesetAnims_Lumbridge_Swamp_Caves_SwampBubble_Frame1,
+    gTilesetAnims_Lumbridge_Swamp_Caves_SwampBubble_Frame2,
+    gTilesetAnims_Lumbridge_Swamp_Caves_SwampBubble_Frame3
+};
+//steam
+const u16 gTilesetAnims_Lumbridge_Swamp_Caves_Steam_Frame0[] = INCBIN_U16("data/tilesets/secondary/lumbridge_swamp_caves/anim/steam/0.4bpp");
+const u16 gTilesetAnims_Lumbridge_Swamp_Caves_Steam_Frame1[] = INCBIN_U16("data/tilesets/secondary/lumbridge_swamp_caves/anim/steam/1.4bpp");
+const u16 gTilesetAnims_Lumbridge_Swamp_Caves_Steam_Frame2[] = INCBIN_U16("data/tilesets/secondary/lumbridge_swamp_caves/anim/steam/2.4bpp");
+const u16 gTilesetAnims_Lumbridge_Swamp_Caves_Steam_Frame3[] = INCBIN_U16("data/tilesets/secondary/lumbridge_swamp_caves/anim/steam/3.4bpp");
+
+const u16 *const gTilesetAnims_Lumbridge_Swamp_Caves_Steam[] = {
+    gTilesetAnims_Lumbridge_Swamp_Caves_Steam_Frame0,
+    gTilesetAnims_Lumbridge_Swamp_Caves_Steam_Frame1,
+    gTilesetAnims_Lumbridge_Swamp_Caves_Steam_Frame2,
+    gTilesetAnims_Lumbridge_Swamp_Caves_Steam_Frame3
 };
 
 const u16 gTilesetAnims_PokeScapeIndoors_Sparkle_Frame0[] = INCBIN_U16("data/tilesets/primary/PokeScapeIndoors/anim/sparkle/sparkle_anim_0.4bpp");
@@ -960,6 +988,13 @@ void InitTilesetAnim_PokeScape_Caves(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_PokeScape_Caves;
 }
 
+void InitTilesetAnim_Lumbridge_Swamp_Caves(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_Lumbridge_Swamp_Caves;
+}
+
 void InitTilesetAnim_PokeScapeCaves_Extra_1(void)
 {
     sSecondaryTilesetAnimCounter = 0;
@@ -1067,11 +1102,19 @@ static void TilesetAnim_PokeScape_Caves(u16 timer)
         QueueAnimTiles_PokeScape_Caves_Lava(timer / 16);
 }
 
+static void TilesetAnim_Lumbridge_Swamp_Caves(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_Lumbridge_Swamp_Caves_SwampBubble(timer / 16);
+    if (timer % 16 == 1)
+        QueueAnimTiles_Lumbridge_Swamp_Caves_Steam(timer / 16);
+}
+
 static void TilesetAnim_PokeScapeCaves_Extra_1(u16 timer)
 {
     if (timer % 16 == 0)
         QueueAnimTiles_PokeScapeCaves_Extra_1_GuthixTears(timer / 16);
-    if (timer % 16 == 0)
+    if (timer % 16 == 1)
         QueueAnimTiles_PokeScapeCaves_Sparkle(timer / 16);
 }
 //PokeScape//---------------
@@ -1142,6 +1185,19 @@ static void QueueAnimTiles_PokeScape_Caves_Lava(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_PokeScape_Caves_Lava);
     AppendTilesetAnimToBuffer(gTilesetAnims_PokeScape_Caves_Lava[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(931)), 4 * TILE_SIZE_4BPP);
+}
+static void QueueAnimTiles_Lumbridge_Swamp_Caves_SwampBubble(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_Lumbridge_Swamp_Caves_SwampBubble);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Lumbridge_Swamp_Caves_SwampBubble[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(778)), 4 * TILE_SIZE_4BPP);
+}
+static void QueueAnimTiles_Lumbridge_Swamp_Caves_Steam(u8 timer)
+{
+    u8 i = timer % ARRAY_COUNT(gTilesetAnims_Lumbridge_Swamp_Caves_Steam);
+    AppendTilesetAnimToBuffer(gTilesetAnims_Lumbridge_Swamp_Caves_Steam[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(794)), 4 * TILE_SIZE_4BPP);
+
+    //i = (timer + 2) % (int)ARRAY_COUNT(gTilesetAnims_Lumbridge_Swamp_Caves_Steam);
+    //AppendTilesetAnimToBuffer(gTilesetAnims_Lumbridge_Swamp_Caves_Steam[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 794)), 4 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_PokeScapeIndoors_Sparkle(u16 timer)

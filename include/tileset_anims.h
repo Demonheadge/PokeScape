@@ -41,6 +41,7 @@ void InitTilesetAnim_Wilderness(void);
 void InitTilesetAnim_PokeScape_Caves(void);
 void InitTilesetAnim_PokeScapeCaves(void);
 void InitTilesetAnim_PokeScapeCaves_Extra_1(void);
+void InitTilesetAnim_Lumbridge_Swamp_Caves(void);
 
 
 #endif // GUARD_TILESET_ANIMS_H

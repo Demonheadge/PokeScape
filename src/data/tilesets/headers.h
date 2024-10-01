@@ -1060,7 +1060,7 @@ const struct Tileset gTileset_Lumbridge_Swamp_Caves =
     .palettes = gTilesetPalettes_Lumbridge_Swamp_Caves,
     .metatiles = gMetatiles_Lumbridge_Swamp_Caves,
     .metatileAttributes = gMetatileAttributes_Lumbridge_Swamp_Caves,
-    .callback = NULL,
+    .callback = InitTilesetAnim_Lumbridge_Swamp_Caves,
 };
 
 const struct Tileset gTileset_Abyss =
