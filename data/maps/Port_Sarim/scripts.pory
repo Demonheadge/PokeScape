@@ -116,10 +116,25 @@ script PORTSARIM_STATE{
                 addobject(38)
                 clearflag(FLAG_TEMP_1D)
             case 130:
-                addobject(40)
+                addobject(OBJ_EVENT_ID_SIROWEN)
+                addobject(OBJ_EVENT_ID_NED)
                 clearflag(FLAG_TEMP_1C)
+                clearflag(FLAG_TEMP_19) //cabin boy
+                addobject(OBJ_EVENT_ID_CABINBOY)
     
         }
+
+        if ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 131)) {
+            setflag(FLAG_TEMP_19) //cabin boy
+            removeobject(OBJ_EVENT_ID_CABINBOY)
+            setflag(FLAG_TEMP_1B)
+            removeobject(OBJ_EVENT_ID_LADY_FALADOR)
+        }
+
+        
+
+
+
 
         //Wise Old Man
         if ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 105) && (var(VAR_WISE_OLD_MAN_RIVAL) == 5)) {
@@ -151,6 +166,8 @@ script PORTSARIM_STATE{
         removeobject(48)
         removeobject(49)
         setflag(FLAG_TEMP_9)
+        setflag(FLAG_TEMP_19) //cabin boy
+        removeobject(OBJ_EVENT_ID_CABINBOY)
         return
     }
 }

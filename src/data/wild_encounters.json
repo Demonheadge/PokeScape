@@ -32997,7 +32997,7 @@
           "map": "MAP_MELZARS_MAZE_2F",
           "base_label": "gMelzars_Maze_2F0",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 5,
             "mons": [
               {
                 "min_level": 16,
@@ -33066,7 +33066,7 @@
           "map": "MAP_MELZARS_MAZE_1F",
           "base_label": "gMelzars_Maze_1F0",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 5,
             "mons": [
               {
                 "min_level": 16,
@@ -33135,7 +33135,7 @@
           "map": "MAP_MELZARS_MAZE_3F",
           "base_label": "gMelzars_Maze_3F0",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 5,
             "mons": [
               {
                 "min_level": 17,
@@ -33204,7 +33204,7 @@
           "map": "MAP_MELZARS_MAZE_B1F",
           "base_label": "gMelzars_Maze_B1F0",
           "land_mons": {
-            "encounter_rate": 20,
+            "encounter_rate": 5,
             "mons": [
               {
                 "min_level": 18,

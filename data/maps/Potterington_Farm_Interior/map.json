@@ -168,14 +168,6 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "POTTERINGTON_FARM_BOOK_2"
-    },
-    {
-      "type": "sign",
-      "x": 6,
-      "y": 9,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "GOD_FARM_TEST_TRIGGER"
     }
   ],
   "has_night_table": false
