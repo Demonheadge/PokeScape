@@ -601,9 +601,9 @@ script BATTLE_DRAYNORMANOR_Trainer_6
 
 script BATTLE_DRAYNORMANOR_Trainer_7
 {
-    trainerbattle_single(TRAINER_DRAYNOR_MANOR_SKELETON_7, format("The skeleton loses an arm walking towards you."),format("The skeleton is franticly looking for his arm."))
+    trainerbattle_single(TRAINER_DRAYNOR_MANOR_SKELETON_7, format("The skeleton loses an arm walking towards you."),format("The skeleton is frantically looking for his arm."))
     //namebox ("CUPHOLDER")
-    msgbox(format("The skeleton is franticly looking for his arm."))
+    msgbox(format("The skeleton is frantically looking for his arm."))
     hidenamebox
     release
     end

@@ -6,7 +6,7 @@ mapscripts Lumbridge_House_Starter2_MapScripts {
         if (var(VAR_RESULT) == 0)
         {
             setvar(VAR_POKESCAPE_GAMEMODE_STATE, 0) //SETS STORY MODE.
-            addvar(VAR_GAMEMODE_LEVEL_CAP, 16)
+            call(GAMEMODE_set_inital_level_cap)
         }
         if (var(VAR_RESULT) == 1)
         {
@@ -19,6 +19,16 @@ mapscripts Lumbridge_House_Starter2_MapScripts {
         VAR_TEMP_0, 0: GAMEMODE_CHECK_NEWGAME_ITEMS
     ]
 }
+
+script GAMEMODE_set_inital_level_cap
+{
+    if (var(VAR_GAMEMODE_LEVEL_CAP) == 0)
+    {
+        addvar(VAR_GAMEMODE_LEVEL_CAP, 16)
+    }
+    return
+}
+
 
 
 script GAMEMODE_CHECK_NEWGAME_ITEMS

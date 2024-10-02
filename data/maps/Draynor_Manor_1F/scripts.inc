@@ -932,7 +932,7 @@ BATTLE_DRAYNORMANOR_Trainer_7_Text_0:
 	.string "towards you.$"
 
 BATTLE_DRAYNORMANOR_Trainer_7_Text_1:
-	.string "The skeleton is franticly looking for\n"
+	.string "The skeleton is frantically looking for\n"
 	.string "his arm.$"
 
 BATTLE_DRAYNORMANOR_Trainer_8_Text_0:

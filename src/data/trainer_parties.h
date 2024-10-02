@@ -4346,20 +4346,17 @@ static const struct TrainerMon sParty_KOUREND_CATACOMBS_TRAINER_11[] = {
 //#GYM - Lumbridge - Duke Horacio          
 static const struct TrainerMon sParty_LEADER_DUKE_1[] = { //STORYMODE
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 8,
+    .lvl = 11,
     .species = SPECIES_BABY_YAK,
     .moves = {MOVE_SLACK_OFF, MOVE_ABSORB, MOVE_TACKLE, MOVE_GROWL}
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 10,
     .species = SPECIES_PUPPY_MUTT_FORM,
     .moves = {MOVE_SLACK_OFF, MOVE_TACKLE, MOVE_HOWL, MOVE_GROWL}
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 9,
+    .lvl = 12,
     .species = SPECIES_ROOSTER_NORMAL_FORM,
     .moves = {MOVE_SLACK_OFF, MOVE_TACKLE, MOVE_FEATHER_DANCE, MOVE_PECK}
     }

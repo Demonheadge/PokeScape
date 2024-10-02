@@ -497,7 +497,7 @@
       "y": 25,
       "elevation": 0,
       "item": "ITEM_BREAD",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE12_1"
     }
   ],
   "has_night_table": false
