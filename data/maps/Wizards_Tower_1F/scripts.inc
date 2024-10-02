@@ -741,9 +741,17 @@ VAR_CHECKER_11:
 
 
 STORYMODE_VAR_CHECK::
+	buffernumberstring 0, VAR_POKESCAPE_STORYMODE_PROGRESS
+	msgbox STORYMODE_VAR_CHECK_Text_0
+	closemessage
+	buffernumberstring 0, VAR_WISE_OLD_MAN_RIVAL
+	msgbox STORYMODE_VAR_CHECK_Text_1
+	closemessage
+	setvar VAR_WISE_OLD_MAN_RIVAL, 5
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 105
 	addvar VAR_GAMEMODE_LEVEL_CAP, 10
 	buffernumberstring 0, VAR_GAMEMODE_LEVEL_CAP
-	msgbox STORYMODE_VAR_CHECK_Text_0
+	msgbox STORYMODE_VAR_CHECK_Text_2
 	closemessage
 	end
 
@@ -1028,5 +1036,12 @@ VAR_CHECKER_Text_8:
 	.string "8$"
 
 STORYMODE_VAR_CHECK_Text_0:
+	.string "Storymode Var is: {STR_VAR_1}.$"
+
+STORYMODE_VAR_CHECK_Text_1:
+	.string "VAR_WISE_OLD_MAN_RIVAL is:\n"
+	.string "{STR_VAR_1}.$"
+
+STORYMODE_VAR_CHECK_Text_2:
 	.string "VAR_GAMEMODE_LEVEL_CAP is:\n"
 	.string "{STR_VAR_1}.$"

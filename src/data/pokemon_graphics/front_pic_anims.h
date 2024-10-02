@@ -19770,6 +19770,43 @@ static const union AnimCmd sAnim_Har_Aken_Tentacle_1[] =
 	ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_Spirit_Fighter_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+static const union AnimCmd sAnim_Spirit_Archer_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+static const union AnimCmd sAnim_Spirit_Mystic_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+static const union AnimCmd sAnim_Spirit_Scout_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+static const union AnimCmd sAnim_Spirit_Knight_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+static const union AnimCmd sAnim_Spirit_Warmage_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
 
 // Todo: use the Macro for these.
 static const union AnimCmd *const sAnims_Guthling[] ={
@@ -24780,6 +24817,36 @@ static const union AnimCmd *const sAnims_Har_Aken[] ={
 static const union AnimCmd *const sAnims_Har_Aken_Tentacle[] ={
 	sAnim_GeneralFrame0,
 	sAnim_Har_Aken_Tentacle_1,
+};
+
+static const union AnimCmd *const sAnims_Spirit_Fighter[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Spirit_Fighter_1,
+};
+
+static const union AnimCmd *const sAnims_Spirit_Archer[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Spirit_Archer_1,
+};
+
+static const union AnimCmd *const sAnims_Spirit_Mystic[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Spirit_Mystic_1,
+};
+
+static const union AnimCmd *const sAnims_Spirit_Scout[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Spirit_Scout_1,
+};
+
+static const union AnimCmd *const sAnims_Spirit_Knight[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Spirit_Knight_1,
+};
+
+static const union AnimCmd *const sAnims_Spirit_Warmage[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Spirit_Warmage_1,
 };
 
 

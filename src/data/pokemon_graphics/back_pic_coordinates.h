@@ -7157,6 +7157,42 @@ const struct MonCoords gMonBackPicCoords[] =
 		.y_offset = 0,
 	},
 
+	[SPECIES_SPIRIT_FIGHTER] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+	[SPECIES_SPIRIT_ARCHER] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+	[SPECIES_SPIRIT_MYSTIC] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+	[SPECIES_SPIRIT_KNIGHT] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+	[SPECIES_SPIRIT_SCOUT] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+	[SPECIES_SPIRIT_WARMAGE] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
 
 
 

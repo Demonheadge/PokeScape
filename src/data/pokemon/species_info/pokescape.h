@@ -7,6 +7,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 
 
+
 [SPECIES_GUTHLING] =
 	{
 		.baseHP = 65,
@@ -439,7 +440,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"A herald of Saradomin. These owls align\n"
 			"themselves to wise individuals who\n"
-			"respects law and order above all else."),
+			"respect law and order above all else."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -608,8 +609,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 28.2,
 		.description = COMPOUND_STRING(
 			"While it is unclear how it is connected\n"
-			"to the evil chicken. They do share a\n"
-			"dreadfull magic attack."),
+			"to the Evil Chicken, they do share a\n"
+			"dreadful magic attack."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -656,7 +657,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 5.1,
 		.weight = 22.4,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Hardened from the streets of Varrock,\n"
+			"this chicken can often be seen fighting\n"
+			"a Stray Dog for scraps of food."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -708,8 +711,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 28.2,
 		.description = COMPOUND_STRING(
 			"This chicken adapted to underwater life\n"
-			"after its home was sunken to the bottom\n"
-			"of the ocean."),
+			"after its home was sunk to the bottom of\n"
+			"the ocean."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -756,7 +759,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 5.1,
 		.weight = 22.4,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"This chicken stowed away on a ship, and\n"
+			"has now adapted to the warmer Karamjan\n"
+			"climate."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -856,7 +861,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 5.1,
 		.weight = 22.4,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Initially stolen by goblins for food,\n"
+			"this chicken is now a devout follower of\n"
+			"the Big High War God."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -1008,7 +1015,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 5.1,
 		.weight = 21.0,
 		.description = COMPOUND_STRING(
-			"A coward went inside draynor manor as a\n"
+			"A coward went inside Draynor Manor as a\n"
 			"dare. Now his shape reflects his spirit."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -1056,7 +1063,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 5.1,
 		.weight = 22.3,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"As the inhabitants of Karamja are up\n"
+			"before sunrise to hunt, this rooster has\n"
+			"nothing to do. Due to this he's lost the\n"
+			"ability to crow at all."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -1106,8 +1116,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 17.5,
 		.weight = 113.2,
 		.description = COMPOUND_STRING(
-			"Strictly found inside the kharazi\n"
-			"jungle, their meat is used in the\n"
+			"Strictly found inside the Kharazi\n"
+			"Jungle, their meat is used in the\n"
 			"renowned 'oomlie wrap'."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -1155,7 +1165,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 5.1,
 		.weight = 22.3,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Instead of signalling the start of the\n"
+			"day, these roosters have been trained to\n"
+			"crow as a war cry for the Big High War\n"
+			"God Bandos."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -1254,7 +1267,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 5.1,
 		.weight = 22.3,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"The sounds of this rooster crowing are\n"
+			"drowned out by the constant drone of\n"
+			"adventurers coming and going from the\n"
+			"Grand Exchange."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -1353,9 +1369,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 5.1,
 		.weight = 13.5,
 		.description = COMPOUND_STRING(
-			"It is unclear wether it is a lizard or a\n"
-			"chicken. Nor what came first, the egg or\n"
-			"the lizard."),
+			"It is unclear whether it is a lizard or\n"
+			"a chicken. Nor what came first, the egg\n"
+			"or the lizard."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -1403,8 +1419,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 11.2,
 		.description = COMPOUND_STRING(
 			"Chickens who died, but became\n"
-			"reanimated. They mainly hail\n"
-			"fromMorytania."),
+			"reanimated. They mainly hail from\n"
+			"Morytania."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -1552,7 +1568,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"With a beak mightier than any others, it\n"
 			"faces any opponents on land or sea. One\n"
-			"of the homunculus's greatest creations."),
+			"of the Homunculus's greatest creations."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -1864,7 +1880,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 5157.4,
 		.description = COMPOUND_STRING(
 			"A cow who died in the ghastly lands of\n"
-			"Morytania. Do not drink it's milk."),
+			"Morytania. Do not drink its milk."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -2125,7 +2141,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 13.5,
 		.weight = 6984.9,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"An undead bovine who has lost its skin.\n"
+			"For some reason, this one is prone to\n"
+			"sneezing. How can something sneeze\n"
+			"without any lungs..?"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -2375,7 +2394,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 7406.4,
 		.description = COMPOUND_STRING(
 			"The cows of Sophanem and Menaphos were\n"
-			"cursed by the devourer, and are thus\n"
+			"cursed by the Devourer, and are thus\n"
 			"slowly awaiting death."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -2528,7 +2547,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 2607.6,
 		.description = COMPOUND_STRING(
 			"An experiment crossing the purity of a\n"
-			"unicorn, with the shape of a cow. It's\n"
+			"unicorn, with the shape of a cow. Its\n"
 			"purity it still in question."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -2735,9 +2754,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 7.4,
 		.weight = 102.5,
 		.description = COMPOUND_STRING(
-			"Iban, son of zamorak blessed these\n"
-			"beings. Making them stronger than\n"
-			"regular rats."),
+			"Iban, son of Zamorak, blessed these\n"
+			"beings making them stronger than regular\n"
+			"rats."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -2934,7 +2953,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 1.0,
 		.weight = 4.1,
 		.description = COMPOUND_STRING(
-			"The crypts of morytania warped these\n"
+			"The crypts of Morytania warped these\n"
 			"small rats, hardening their skills and\n"
 			"aggresion."),
 		.pokemonScale = 256,
@@ -3654,7 +3673,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Its horns signals its ready to fight\n"
+			"Its horns signals it's ready to fight\n"
 			"other males for dominance."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -3709,7 +3728,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 625.1,
 		.description = COMPOUND_STRING(
 			"Not as easily sheared as sheep, these\n"
-			"monsters enjoy to strike back at\n"
+			"monsters enjoy striking back at\n"
 			"unprepared adventurers."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -3858,7 +3877,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 10.2,
 		.weight = 499.0,
 		.description = COMPOUND_STRING(
-			"Known for eating mostly anything, these\n"
+			"Known for eating almost anything, these\n"
 			"goats are great for controlling\n"
 			"grasslands on the mountain."),
 		.pokemonScale = 256,
@@ -3969,7 +3988,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 499.0,
 		.description = COMPOUND_STRING(
 			"Their hooves are so expertly crafted,\n"
-			"they can climb even the steepes\n"
+			"they can climb even the steepest\n"
 			"mountain. Despite this, they are often\n"
 			"used for soup."),
 		.pokemonScale = 256,
@@ -4275,7 +4294,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 2.5,
 		.weight = 73.9,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"As they are much more agile than regular\n"
+			"Trout, these fish are often only caught\n"
+			"by those who have received Barbarian\n"
+			"training."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -4374,7 +4396,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 2.5,
 		.weight = 73.9,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Accustomed to a warmer climate, these\n"
+			"fish usually appear in rock pools by the\n"
+			"beach during the height of summer."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -4528,7 +4552,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"Often dropped on the ground by\n"
 			"adventurers. These fish often feel\n"
-			"lonely and alone."),
+			"lonely and neglected."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -4581,7 +4605,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 39.0,
 		.description = COMPOUND_STRING(
 			"When it is time to mate, these fish will\n"
-			"climb the baxtorian falls, avoiding the\n"
+			"climb the Baxtorian Falls, avoiding the\n"
 			"whirlpools, to find a mate."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -4732,7 +4756,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 2.5,
 		.weight = 39.0,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Scaling the Baxtorian Falls has left\n"
+			"these fish significantly more agile and\n"
+			"much more difficult to bait."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -4883,8 +4909,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 1.5,
 		.weight = 145.2,
 		.description = COMPOUND_STRING(
-			"During the reign of Captain Rabid Jack.\n"
-			"A man was filled to the brim with\n"
+			"During the reign of Captain Rabid Jack,\n"
+			"a man was filled to the brim with\n"
 			"mackerels as punishment."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -4936,7 +4962,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 2.0,
 		.weight = 204.1,
 		.description = COMPOUND_STRING(
-			"Despite it's name, it is not a cat. But\n"
+			"Despite its name, it is not a cat but\n"
 			"rather a fish. The whiskers threw marine\n"
 			"biologists off."),
 		.pokemonScale = 256,
@@ -5191,7 +5217,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 1.5,
 		.weight = 36.3,
 		.description = COMPOUND_STRING(
-			"A rare fish from the arc. It scours the\n"
+			"A rare fish from the Arc. It scours the\n"
 			"reef hiding from predators and looking\n"
 			"for food."),
 		.pokemonScale = 256,
@@ -5244,9 +5270,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 3.6,
 		.weight = 118.0,
 		.description = COMPOUND_STRING(
-			"Despite its ferocious look, it is\n"
-			"actully not a dangereous shark to humans\n"
-			"and prefer to hunt small fish."),
+			"Despite its ferocious look it is\n"
+			"actually not dangerous to humans,\n"
+			"preferring to hunt small fish."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -5453,7 +5479,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 122.5,
 		.description = COMPOUND_STRING(
 			"A fish so long it could be used as a\n"
-			"belt. Apparently this is how it got it's\n"
+			"belt. Apparently this is how it got its\n"
 			"name."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -6319,7 +6345,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 44.9,
 		.description = COMPOUND_STRING(
 			"It prefers the water in caves. It had\n"
-			"peace and solitude until the dorgeshuun\n"
+			"peace and solitude until the Dorgeshuun\n"
 			"realized their existence."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -6422,7 +6448,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"This fish can only survive in lava and\n"
 			"requires special methods to be caught.\n"
-			"One is needed to enter the heroes guild."),
+			"One is needed to enter the Heroes'\n"
+			"Guild."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -6475,8 +6502,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"An eel once feared as an eel from\n"
 			"Infernus, dimension of demons. No one\n"
-			"knows, or care for that since it tastes\n"
-			"delicious."),
+			"knows, or cares, if that's true since it\n"
+			"tastes delicious."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -6825,7 +6852,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 95.3,
 		.description = COMPOUND_STRING(
 			"These small things serve no real purpose\n"
-			"to farmer but to grow into mud\n"
+			"to farmers but to grow into mud\n"
 			"wrestlers."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -6845,7 +6872,6 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 21, SPECIES_PIG},
-			{EVO_FRIENDSHIP, 220, SPECIES_PIGZILLA},
 			{EVO_LEVEL_NIGHT, 32, SPECIES_BROAV}
 		),
 	},
@@ -6878,10 +6904,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 13.7,
 		.weight = 816.5,
 		.description = COMPOUND_STRING(
-			"Rumours has it that pigs have a purpose\n"
-			"beyond merely mud wrestling. But the\n"
-			"farmer who spread the rumour refused to\n"
-			"tell."),
+			"Rumour has it that pigs do have a\n"
+			"purpose beyond merely mud wrestling. But\n"
+			"the farmer who spread the rumour refused\n"
+			"to tell."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -6935,8 +6961,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The apex of all pigs. Its said no pig\n"
-			"has ever grown bigger than the pigzilla."),
+			"The apex of all pigs. It's said no pig\n"
+			"has ever grown bigger than the Pigzilla."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -7046,7 +7072,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 4.1,
 		.weight = 158.8,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Slightly less adorable than its\n"
+			"counterpart, this puppy spends all its\n"
+			"free time chewing anything in sight."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -7547,7 +7575,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 136.1,
 		.description = COMPOUND_STRING(
 			"A skeletal hellhound who served as the\n"
-			"lord of death, Harold's faithful\n"
+			"lord of Death, Harold's faithful\n"
 			"companion."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -7596,7 +7624,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 181.4,
 		.description = COMPOUND_STRING(
 			"When a puppy accidentally fell to the\n"
-			"infernal dimension, it comes back as a\n"
+			"infernal dimension, it came back as a\n"
 			"hellpuppy."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -7649,7 +7677,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 9.9,
 		.weight = 492.1,
 		.description = COMPOUND_STRING(
-			"A shakroth type demon from infernus.\n"
+			"A Shakroth type demon from Infernus.\n"
 			"They bite really hard if not fed."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -8072,7 +8100,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"When a cat eats too many hell rats, they\n"
 			"become a hellcat. Infused by the hell\n"
-			"rats infernal energy."),
+			"rats' infernal energy."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -8269,7 +8297,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"An evil tyrant of whom most who have\n"
 			"seen rarely survive. He takes slaves in\n"
-			"to put them trough cruel services like\n"
+			"to put them through cruel services like\n"
 			"uncooking fish."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -8730,7 +8758,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 185.5,
 		.description = COMPOUND_STRING(
 			"The different forms of strykewyrms are\n"
-			"well adapted and dangerous."),
+			"well adapted and dangerous. This one is\n"
+			"known for being so cold it numbs\n"
+			"adventurers hands."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -8777,7 +8807,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 15.7,
 		.weight = 185.5,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Inhabiting the jungles of the Feldip\n"
+			"Hills, these strykewrym have adapted to\n"
+			"develop a particularly potent poison as\n"
+			"a defence mechanism."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -8824,7 +8857,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 15.7,
 		.weight = 185.5,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"These monsters burrow under the sands of\n"
+			"the Kharidian Desert and burst out the\n"
+			"ground to attack unsuspecting victims."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -8871,7 +8906,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 15.7,
 		.weight = 185.5,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"A creature of pure fire, this monster\n"
+			"originates from the Lava Maze deep in\n"
+			"the Wilderness."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -9088,7 +9125,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 160.4,
 		.description = COMPOUND_STRING(
 			"The poison they produce is strong enough\n"
-			"to kill a kharidian sheikah."),
+			"to kill a Kharidian Sheikah."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -9233,7 +9270,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 14.5,
 		.weight = 160.4,
 		.description = COMPOUND_STRING(
-			"Scorpion corrupted by the devourer,\n"
+			"Scorpion corrupted by the Devourer,\n"
 			"granting it power at the loss of its\n"
 			"will."),
 		.pokemonScale = 256,
@@ -9333,7 +9370,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 160.4,
 		.description = COMPOUND_STRING(
 			"Uncorrupted, these scorpions find their\n"
-			"homes in the gauntlet."),
+			"homes in the Gauntlet."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -9429,7 +9466,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 14.5,
 		.weight = 160.4,
 		.description = COMPOUND_STRING(
-			"Generald Khazard's pet. It has been\n"
+			"General Khazard's pet. It has been\n"
 			"trained to fight his prisoners."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -10089,7 +10126,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 5.7,
 		.weight = 99.8,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Once upon a midnight dreary this ghastly\n"
+			"grim and ancient raven can be found\n"
+			"wandering from the nightly shore."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -10335,8 +10374,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 35.4,
 		.description = COMPOUND_STRING(
 			"Capable of running great lengths. All\n"
-			"barbers in Mishtalin uses them as\n"
-			"energy."),
+			"barbers in Misthalin use them as energy."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -11123,7 +11161,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Next to a pet rock its hard to tell\n"
+			"Next to a pet rock it's hard to tell\n"
 			"which one might pick up a stick."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -11269,7 +11307,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 68.0,
 		.description = COMPOUND_STRING(
 			"Used to be a real parrot but they are no\n"
-			"more, its gone, and it longs for the\n"
+			"more, it's gone, and it longs for the\n"
 			"fjords."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -11373,7 +11411,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 340.2,
 		.description = COMPOUND_STRING(
 			"A creature created by the magic of the\n"
-			"tooth fairy. They turn rotten if they\n"
+			"Tooth Fairy. They turn rotten if they\n"
 			"eat chocolate."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -11480,7 +11518,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 5.2,
 		.weight = 272.2,
 		.description = COMPOUND_STRING(
-			"Given to winners of the golden gnome\n"
+			"Given to winners of the Golden Gnome\n"
 			"awards. Most being for pity or lack of\n"
 			"competition."),
 		.pokemonScale = 256,
@@ -11530,7 +11568,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 8.0,
 		.weight = 31.8,
 		.description = COMPOUND_STRING(
-			"A tinsel snake celebrating christmas.\n"
+			"A tinsel snake celebrating Christmas.\n"
 			"They refuse to curl around a tree."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -11891,7 +11929,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 7.5,
 		.weight = 13.6,
 		.description = COMPOUND_STRING(
-			"Whenever it clings to it's enemies, it\n"
+			"Whenever it clings to its enemies, it\n"
 			"will not let go until it is full of\n"
 			"blood."),
 		.pokemonScale = 256,
@@ -12143,7 +12181,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 2.6,
 		.weight = 13.6,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Hatching from an egg already cracked by\n"
+			"the feet of reckless adventurers, this\n"
+			"baby phoenix is bitter and bad to the\n"
+			"bone."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -12244,7 +12285,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 6.0,
 		.weight = 122.5,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Arisen from the ashes, this phoenix vows\n"
+			"to burn down the homes of anyone who has\n"
+			"wronged it."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -12292,7 +12335,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"A plant that can grow anywhere. But if\n"
-			"the fruit isnt picked it will attack."),
+			"the fruit isn't picked it will attack."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -12396,7 +12439,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"A turnip so dastardly evil, not even\n"
 			"demons dare to go near it. It gives the\n"
-			"Evil chicken a run for its title."),
+			"Evil Chicken a run for its title."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -12492,7 +12535,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 2.9,
 		.weight = 81.6,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Their true form finally revealed, these\n"
+			"creatures are nefarious spies used by\n"
+			"Glouphrie the Untrusted."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -12705,7 +12750,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 17.6,
 		.weight = 925.3,
 		.description = COMPOUND_STRING(
-			"A Yak said to be holy and sacred. It's\n"
+			"A Yak said to be holy and sacred. Its\n"
 			"presence is an omen of good."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -13014,7 +13059,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 127.0,
 		.description = COMPOUND_STRING(
 			"A green egg corrupted to become a\n"
-			"guthatrice. Their view on balance is\n"
+			"Guthatrice. Their view on balance is\n"
 			"rocky at best."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -13161,7 +13206,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 127.0,
 		.description = COMPOUND_STRING(
 			"A black egg corrupted to become a\n"
-			"corxatrice. They get really sad when\n"
+			"Corxatrice. They get really sad when\n"
 			"they find shiny things and they turn to\n"
 			"stone."),
 		.pokemonScale = 256,
@@ -13359,7 +13404,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 68.0,
 		.description = COMPOUND_STRING(
 			"A sprout that changes its appearance\n"
-			"depending on the season."),
+			"depending on the season. By summer, its\n"
+			"leaves have matured and are now a rich\n"
+			"green colour."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -13406,7 +13453,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 5.7,
 		.weight = 68.0,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"A sprout that changes its appearance\n"
+			"depending on the season. In the spring,\n"
+			"its leaves resemble cherry blossoms."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -13453,7 +13502,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 5.7,
 		.weight = 68.0,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"A sprout that changes its appearance\n"
+			"depending on the season. In the winter\n"
+			"it sheds its leaves, ready to blossom\n"
+			"again in the spring."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -13500,7 +13552,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 5.7,
 		.weight = 68.0,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"A sprout that changes its appearance\n"
+			"depending on the season. In the autumn,\n"
+			"its leaves turn a golden brown before\n"
+			"they're shed for winter."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -13548,7 +13603,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 88.5,
 		.description = COMPOUND_STRING(
 			"A dragon made of runic energy. They are\n"
-			"known to sometimes steal adventurers\n"
+			"known to sometimes steal adventurers'\n"
 			"runes as snacks."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -14093,7 +14148,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"A titan from the abyss summoned by a\n"
 			"summoning obelisk. It's unclear if it\n"
-			"enjoys to serve others."),
+			"enjoys serving others."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -14141,7 +14196,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 63.5,
 		.description = COMPOUND_STRING(
 			"Smallest of the wild beings of the\n"
-			"tzhaar volcano. They fly around in the\n"
+			"TzHaar volcano. They fly around in the\n"
 			"fight caves."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -14193,8 +14248,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 10.3,
 		.weight = 362.9,
 		.description = COMPOUND_STRING(
-			"A fighter of the fight cave, they were\n"
-			"originally builders of the elder god\n"
+			"A fighter of the Fight Caves, they were\n"
+			"originally builders of the Elder God\n"
 			"Ful."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -14293,7 +14348,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"CUPHOLDER"),
+			"The spirit of a Tz-Kih brought to life\n"
+			"by a summoner. These creatures feed on\n"
+			"people's prayers."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -14340,7 +14397,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 17.3,
 		.weight = 839.1,
 		.description = COMPOUND_STRING(
-			"A plague upon the tzhaar volcano. These\n"
+			"A plague upon the TzHaar volcano. These\n"
 			"monsters are hunted for their meat but\n"
 			"are hard to catch."),
 		.pokemonScale = 256,
@@ -14394,7 +14451,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 29.9,
 		.weight = 1719.1,
 		.description = COMPOUND_STRING(
-			"A strong monster from the fight caves\n"
+			"A strong monster from the Fight Caves\n"
 			"capable of firing great balls of fire\n"
 			"from their bodies."),
 		.pokemonScale = 256,
@@ -14445,7 +14502,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"It's unknown for what reason, but these\n"
 			"monsters seem to heal stronger monsters\n"
-			"of the Tzhaar."),
+			"of the TzHaar."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -14496,8 +14553,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 1197.5,
 		.description = COMPOUND_STRING(
 			"Possessing great strength they are a\n"
-			"threat to any challenger of the fight\n"
-			"caves. They struggle with small spaces."),
+			"threat to any challenger of the Fight\n"
+			"Caves. They struggle with small spaces."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -14545,7 +14602,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 394.6,
 		.description = COMPOUND_STRING(
 			"A small creature that loves exploring\n"
-			"what lies beyond the tzhaar volcano."),
+			"what lies beyond the TzHaar volcano."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -14596,7 +14653,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 46.7,
 		.weight = 4554.1,
 		.description = COMPOUND_STRING(
-			"A monster and king of the fight caves.\n"
+			"A monster and king of the Fight Caves.\n"
 			"Warriors who beat one are presented with\n"
 			"a fire cape."),
 		.pokemonScale = 256,
@@ -15157,7 +15214,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 13.6,
 		.description = COMPOUND_STRING(
 			"Waddling along playfully through the\n"
-			"falador park. Some say they can grow to\n"
+			"Falador park. Some say they can grow to\n"
 			"enormous sizes."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -15460,8 +15517,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 154.2,
 		.description = COMPOUND_STRING(
 			"A monster that is the sworn enemy of the\n"
-			"Fremmenik. They hail from waterbirth\n"
-			"island."),
+			"Fremennik. They hail from Waterbirth\n"
+			"Island."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -15516,7 +15573,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 12.7,
 		.weight = 154.2,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Dagannoth whose sole purpose in life is\n"
+			"to guard the Dagannoth Mother."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -15620,7 +15678,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 32.4,
 		.weight = 2685.3,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Rumoured to fly on Northern winds, this\n"
+			"Dagannoth King known as 'Prime'\n"
+			"possesses innate magical abilities."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -15669,7 +15729,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 32.4,
 		.weight = 2685.3,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"The firstborn of the Dagannoth Kings,\n"
+			"this one is known as 'Rex'. He serves\n"
+			"his Queen by attacking enemies with\n"
+			"vicious claws."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -15719,7 +15782,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 32.4,
 		.weight = 2685.3,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Dagannoth Supreme's true form. His\n"
+			"ranged accuracy when shooting spikes at\n"
+			"adventurers is unmatched by any other\n"
+			"dagannoth."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -15769,7 +15835,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 32.4,
 		.weight = 2685.3,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Dagannoth Prime's true form. His magical\n"
+			"ability is so strong that he is immune\n"
+			"even to the dark art of necromancy."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -15819,7 +15887,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 32.4,
 		.weight = 2685.3,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Dagannoth Rex's true form. No other\n"
+			"dagannoth comes close to matching his\n"
+			"raw physical strength."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -15871,8 +15941,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 1977.7,
 		.description = COMPOUND_STRING(
 			"An elemental of pure chaotic energy. Its\n"
-			"powers and behaviour is unpredictable to\n"
-			"any enemy or friend alike."),
+			"powers and behaviour are unpredictable\n"
+			"to any enemy or friend alike."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -15922,7 +15992,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 19.9,
 		.weight = 1977.7,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Now emerged from the cloud it had\n"
+			"shrouded itself behind, but still as\n"
+			"unpredictable as ever. This is the true\n"
+			"manifestation of chaos."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -16075,7 +16148,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 6.3,
 		.weight = 90.7,
 		.description = COMPOUND_STRING(
-			"Used by bandosian warlords as weapons,\n"
+			"Used by Bandosian warlords as weapons,\n"
 			"their claws have felled many soldiers on\n"
 			"the battlefield."),
 		.pokemonScale = 256,
@@ -16126,7 +16199,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 10.4,
 		.description = COMPOUND_STRING(
 			"Hatched from a purple egg, its\n"
-			"motivations and goal is a mystery."),
+			"motivations and goal are a mystery."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -16689,7 +16762,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"A very gassy toad that has no ability to\n"
 			"move. Only being held down by the rock\n"
-			"its tied to. They hate their lives."),
+			"it's tied to. They hate their lives."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -17100,7 +17173,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 4.3,
 		.weight = 2.7,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"So big they almost seem unrealistic,\n"
+			"they lure adventurers closer to\n"
+			"investigate further. They then promptly\n"
+			"devour the adventurers whole."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -17154,7 +17230,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 68.0,
 		.description = COMPOUND_STRING(
 			"They lurk the ruins of Daemonheim. But\n"
-			"it is most known for posessing a hood\n"
+			"it is most known for possessing a hood\n"
 			"that makes you invisible."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -17202,7 +17278,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 12.0,
 		.weight = 68.0,
 		.description = COMPOUND_STRING(
-			"It's body is made of ice, making it one\n"
+			"Its body is made of ice, making it one\n"
 			"of very few cold-blooded insects."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -17250,7 +17326,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"CUPHOLDER"),
+			"A spider conjured by summoners. It is\n"
+			"often used by herblorists as a safe way\n"
+			"to scavenge for red spiders' eggs."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -17298,7 +17376,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0.9,
 		.description = COMPOUND_STRING(
 			"A really scary spider who loves webbing\n"
-			"houses for the spider queen. Not doing\n"
+			"houses for the Spider Queen. Not doing\n"
 			"so is an offense and will leave a spider\n"
 			"in your bathtub."),
 		.pokemonScale = 256,
@@ -17451,7 +17529,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"It finds its nest in the wilderness\n"
+			"It finds its nest in the Wilderness\n"
 			"where it awaits for unwitting prey to\n"
 			"ambush."),
 		.pokemonScale = 256,
@@ -18165,8 +18243,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 13.6,
 		.description = COMPOUND_STRING(
 			"A crab pumped full of rum under the\n"
-			"orders of Rabbid Jack. They are served\n"
-			"as a delicacy in Menaphos."),
+			"orders of Rabid Jack. They are served as\n"
+			"a delicacy in Menaphos."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -18213,7 +18291,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"A small adolscent crab posessing dark\n"
+			"A small adolescent crab possessing dark\n"
 			"power it will never unleash."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -18266,7 +18344,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"Crabs that are so elusive and rare that\n"
 			"even expert fishermen have trouble\n"
-			"fishing them. Or live long enough to\n"
+			"fishing them. Or living long enough to\n"
 			"return to the bank with them."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -18366,8 +18444,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"They fight with their pinchers for\n"
-			"rights to mate, but most end up eaten by\n"
+			"They fight with their pincers for rights\n"
+			"to mate, but most end up eaten by\n"
 			"sharks."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -18664,7 +18742,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"A small crab with a light coating of\n"
+			"salt. These are less sought after than\n"
+			"their crystal counterparts."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -18711,7 +18791,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"This small crab is covered in regular\n"
+			"salt crystals. The crystals are\n"
+			"harvested and used to make arc gumbo."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -18758,7 +18840,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"This small crab is covered in special,\n"
+			"golden, salt crystals. The crystals are\n"
+			"harvested and used to make the rare\n"
+			"delicacy shark soup."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -18805,7 +18890,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"A small crab carrying a golden idol on\n"
+			"its back. Adventurers often try to\n"
+			"obtain this to exchange it with\n"
+			"merchants."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -19005,7 +19093,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 2.2,
 		.weight = 13.6,
 		.description = COMPOUND_STRING(
-			"Small tortoises bred by the grand tree\n"
+			"Small tortoises bred by the Grand Tree\n"
 			"for use as mounts. They love cabbage."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -19218,7 +19306,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"A guardian of Guthix sent to fend off\n"
 			"the void invasion. It can finish off a\n"
-			"pest queen easily."),
+			"Pest Queen easily."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -19319,8 +19407,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Carrying a great fortune on its back,\n"
-			"fishermen perceives it as a sign of\n"
-			"luck."),
+			"fishermen perceive it as a sign of luck."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -19369,7 +19456,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"A small and plantlike being often\n"
-			"confused by a toad by passing\n"
+			"mistaken for a toad by passing\n"
 			"adventurers."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -19583,8 +19670,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 4.5,
 		.description = COMPOUND_STRING(
 			"A jelly so warped it could never be\n"
-			"served to anyone. It's insides are\n"
-			"beyond comprehension."),
+			"served to anyone. Its insides are beyond\n"
+			"comprehension."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -19887,7 +19974,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 1.2,
 		.weight = 25.4,
 		.description = COMPOUND_STRING(
-			"Found only in the wilderness, these\n"
+			"Found only in the Wilderness, these\n"
 			"salamanders are rarely hunted due to the\n"
 			"dangers of the Wilderness."),
 		.pokemonScale = 256,
@@ -20092,7 +20179,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 15.8,
 		.weight = 816.5,
 		.description = COMPOUND_STRING(
-			"One of the lower forms of Chtonian\n"
+			"One of the lower forms of Chthonian\n"
 			"demons. They hunger for blood their\n"
 			"entire lives."),
 		.pokemonScale = 256,
@@ -20200,7 +20287,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 16.8,
 		.weight = 916.3,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Their love of blood is so strong that\n"
+			"they have adapted to have even longer\n"
+			"tongues to be able to attack from\n"
+			"further away."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -20302,7 +20392,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 16.8,
 		.weight = 916.3,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"These mutated bloodvelds are superior to\n"
+			"their regular variants. Adventurers are\n"
+			"warned to stay clear of their tongues."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -20753,7 +20845,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 31.8,
 		.description = COMPOUND_STRING(
 			"Balancing atop its orb, it will stand\n"
-			"still even in the biggest of desert\n"
+			"still even during the biggest of desert\n"
 			"storms."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -21166,7 +21258,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Chompy, 0),
 		.footprint = gMonFootprint_Chompy,
 		LEARNSETS(Chompy),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 11,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_SPE_LT_SPDEF, 26, SPECIES_JUBBLY},
@@ -21566,7 +21658,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 11.6,
 		.weight = 612.3,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"These wolves are fearsome predators,\n"
+			"renowned for their fur. They are said to\n"
+			"serve a powerful wolf who wishes to eat\n"
+			"the sun."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -21617,7 +21712,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 11.6,
 		.weight = 612.3,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"A vicious wolf adapted to the harsh\n"
+			"landscape of White Wolf Mountain. They\n"
+			"have slain many inexperienced\n"
+			"adventurers."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -21668,7 +21766,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"CUPHOLDER"),
+			"A totally real red dragon, and not just\n"
+			"a wolf wearing a mask. Honest."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -21719,7 +21818,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 12.5,
 		.weight = 698.5,
 		.description = COMPOUND_STRING(
-			"A big and dangerous wolf from Arendar\n"
+			"A big and dangerous wolf from Arandar\n"
 			"gates. They sometimes come down to\n"
 			"Isafdar to hunt the unknowing."),
 		.pokemonScale = 256,
@@ -21768,7 +21867,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"CUPHOLDER"),
+			"A rare wolf native to the Kharazi\n"
+			"jungles. They have been hunted so much\n"
+			"that it is said there are only a handful\n"
+			"left in existence."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -21816,8 +21918,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 1079.6,
 		.description = COMPOUND_STRING(
 			"A big wolf said in the Fremennik Tales\n"
-			"to be a wolf capable of even swallowing\n"
-			"the sun."),
+			"to be capable of even swallowing the\n"
+			"sun."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -21864,7 +21966,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"CUPHOLDER"),
+			"Found throughout the Kharidian Desert,\n"
+			"this wolf's fur has adapted so that it\n"
+			"does not overheat in the blazing desert\n"
+			"heat."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -22027,7 +22132,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Fox, 2),
 		.footprint = gMonFootprint_Fox,
 		LEARNSETS(Fox),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 7,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_MOVE, MOVE_HEX, SPECIES_INARI},
@@ -22089,7 +22194,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Inari, 2),
 		.footprint = gMonFootprint_Inari,
 		LEARNSETS(Inari),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 6,
 		.enemyMonElevation = 0,
 	},
 
@@ -22230,7 +22335,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The next holds a egg which will one day\n"
+			"The nest holds a egg which will one day\n"
 			"hatch into a bird."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -22246,7 +22351,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Birds_Nest_God_Form, 0),
 		.footprint = gMonFootprint_Birds_Nest_God_Form,
 		LEARNSETS(Birds_Nest_God_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 18,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_NATURE_RUNE, SPECIES_GUTHLING},
@@ -22394,8 +22499,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 3.0,
 		.weight = 21.8,
 		.description = COMPOUND_STRING(
-			"It's wings are not ready to fly, yet it\n"
-			"hunts for goatweed all day."),
+			"Its wings are not ready to fly, yet it\n"
+			"hunts for goutweed all day."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -22410,7 +22515,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rocling, 0),
 		.footprint = gMonFootprint_Rocling,
 		LEARNSETS(Rocling),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 7,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 45, SPECIES_ROC}
@@ -22463,7 +22568,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Roc,
 		LEARNSETS(Roc),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 0,
+		.enemyMonElevation = 6,
 	},
 
 [SPECIES_FOAL] =
@@ -22564,7 +22669,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Unicorn_White_Form, 2),
 		.footprint = gMonFootprint_Unicorn_White_Form,
 		LEARNSETS(Unicorn_White_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_UNICORN_STALLION_FORM},
@@ -22652,7 +22757,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 1701.0,
 		.description = COMPOUND_STRING(
 			"A unicorn corrupted by the dark will of\n"
-			"man. It laughs at adventurers\n"
+			"man. It laughs at adventurers'\n"
 			"misfortunes."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -22668,7 +22773,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Unicorn_Black_Form, 2),
 		.footprint = gMonFootprint_Unicorn_Black_Form,
 		LEARNSETS(Unicorn_Black_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_UNICORN_REANIMATED_FORM},
@@ -22805,9 +22910,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 21.1,
 		.weight = 1973.1,
 		.description = COMPOUND_STRING(
-			"The bodyguard of Commander Zilyana.\n"
-			"Often annoyed, her employer is nicknamed\n"
-			"'Saradomin'."),
+			"The bodyguard of Commander Zilyana, she\n"
+			"is often annoyed that her employer is\n"
+			"nicknamed 'Saradomin'."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -23090,7 +23195,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bear_Reanimated_Form, 0),
 		.footprint = gMonFootprint_Bear_Reanimated_Form,
 		LEARNSETS(Bear_Reanimated_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 6,
 		.enemyMonElevation = 0,
 	},
 
@@ -23122,7 +23227,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 17.4,
 		.weight = 1755.4,
 		.description = COMPOUND_STRING(
-			"An uncorrupted bear from the gauntlet.\n"
+			"An uncorrupted bear from the Gauntlet.\n"
 			"Shining in pure crystalline light."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -23138,7 +23243,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bear_Gauntlet_Crystalline_Form, 1),
 		.footprint = gMonFootprint_Bear_Gauntlet_Crystalline_Form,
 		LEARNSETS(Bear_Gauntlet_Crystalline_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 6,
 		.enemyMonElevation = 0,
 	},
 
@@ -23187,7 +23292,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Callisto, 0),
 		.footprint = gMonFootprint_Callisto,
 		LEARNSETS(Callisto),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 6,
 		.enemyMonElevation = 0,
 	},
 
@@ -23236,7 +23341,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Polar_Bear_Normal_Form, 0),
 		.footprint = gMonFootprint_Polar_Bear_Normal_Form,
 		LEARNSETS(Polar_Bear_Normal_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 6,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 41, SPECIES_POLAR_BEAR_ARCTIC_FORM},
@@ -23340,7 +23445,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Polar_Bear_Arctic_Form, 2),
 		.footprint = gMonFootprint_Polar_Bear_Arctic_Form,
 		LEARNSETS(Polar_Bear_Arctic_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 4,
 		.enemyMonElevation = 0,
 	},
 
@@ -23389,7 +23494,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Polar_Bear_Nanuq_Form, 0),
 		.footprint = gMonFootprint_Polar_Bear_Nanuq_Form,
 		LEARNSETS(Polar_Bear_Nanuq_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 5,
 		.enemyMonElevation = 0,
 	},
 
@@ -23438,7 +23543,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bear_Grizzly_Form, 0),
 		.footprint = gMonFootprint_Bear_Grizzly_Form,
 		LEARNSETS(Bear_Grizzly_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 41, SPECIES_BEAR_ANGRY_FORM},
@@ -23541,7 +23646,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bear_Gauntlet_Corrupted_Form, 0),
 		.footprint = gMonFootprint_Bear_Gauntlet_Corrupted_Form,
 		LEARNSETS(Bear_Gauntlet_Corrupted_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 4,
 		.enemyMonElevation = 0,
 	},
 
@@ -23590,7 +23695,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bear_Angry_Form, 2),
 		.footprint = gMonFootprint_Bear_Angry_Form,
 		LEARNSETS(Bear_Angry_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 3,
 		.enemyMonElevation = 0,
 	},
 
@@ -24141,7 +24246,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 23.4,
 		.weight = 2630.8,
 		.description = COMPOUND_STRING(
-			"Scarred from battle, these dragon's are\n"
+			"Scarred from battle, these dragons are\n"
 			"battle hardened and stronger than the\n"
 			"regular kind."),
 		.pokemonScale = 256,
@@ -24158,7 +24263,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragon_Brutal_Green_Form, 1),
 		.footprint = gMonFootprint_Dragon_Brutal_Green_Form,
 		LEARNSETS(Dragon_Brutal_Green_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 5,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_ELVARG}
@@ -24209,7 +24314,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragonling_Blue_Form, 2),
 		.footprint = gMonFootprint_Dragonling_Blue_Form,
 		LEARNSETS(Dragonling_Blue_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 11,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 45, SPECIES_DRAGON_BLUE_FORM}
@@ -24261,7 +24366,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragon_Blue_Form, 2),
 		.footprint = gMonFootprint_Dragon_Blue_Form,
 		LEARNSETS(Dragon_Blue_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 7,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 65, SPECIES_DRAGON_BRUTAL_BLUE_FORM},
@@ -24316,7 +24421,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragon_Brutal_Blue_Form, 2),
 		.footprint = gMonFootprint_Dragon_Brutal_Blue_Form,
 		LEARNSETS(Dragon_Brutal_Blue_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 6,
 		.enemyMonElevation = 0,
 	},
 
@@ -24676,7 +24781,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Dragon_ThreeHeaded_Form, 1),
 		.footprint = gMonFootprint_Dragon_ThreeHeaded_Form,
 		LEARNSETS(Dragon_ThreeHeaded_Form),
-		.frontPicYOffset = 5,
+		.frontPicYOffset = 6,
 		.enemyMonElevation = 0,
 	},
 
@@ -24757,7 +24862,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 54.5,
 		.weight = 12188.0,
 		.description = COMPOUND_STRING(
-			"A 3-headed black dragon made by Kerapac.\n"
+			"A 3-headed black dragon made by Phalaks.\n"
 			"Its real name is Shakorexis."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -24806,7 +24911,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 15648.9,
 		.description = COMPOUND_STRING(
 			"The first dragon ever created, laid to\n"
-			"slumber as it serves to use anymore.\n"
+			"slumber as it serves no use anymore.\n"
 			"Grotworms have since infested it."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -25112,7 +25217,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 117.9,
 		.description = COMPOUND_STRING(
 			"A creature so persistent, only a broad\n"
-			"type of weapons could ever wish to harm\n"
+			"type of weapon could ever wish to harm\n"
 			"it."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -25167,7 +25272,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"A turoth grown to prime strength.\n"
 			"Stronger than others of its kind, it\n"
-			"will fight till its last breath to feed\n"
+			"will fight until its last breath to feed\n"
 			"itself."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -25216,8 +25321,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 331.1,
 		.description = COMPOUND_STRING(
 			"Its size is far larger than other\n"
-			"turoth's making it more dangereous. But\n"
-			"not that much dangereous."),
+			"turoths making it more dangerous. But\n"
+			"not that much dangerous."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -26182,7 +26287,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 63.5,
 		.description = COMPOUND_STRING(
 			"Being struck by disease, this kebbit\n"
-			"awaits for it's life to end. Possibly\n"
+			"waits for its life to end. Possibly\n"
 			"dragging more of its kind with it."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -26488,7 +26593,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 20.1,
 		.weight = 1714.6,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"One of the strongest gorillas on the Ape\n"
+			"Atoll, they have evolved to have\n"
+			"distinct blue faces to help them stand\n"
+			"out as superior."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -26636,7 +26744,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"The Devourer stripped Apmeken of her\n"
-			"sight, creating Ayuni"),
+			"sight, creating Ayuni."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -26683,8 +26791,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Apmekens lips and voice given shape in a\n"
-			"cruel avatar. Causing havock in the\n"
+			"Apmeken's lips and voice given shape in\n"
+			"a cruel avatar. Causing havoc in the\n"
 			"Desert."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -27194,9 +27302,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 20.6,
 		.weight = 839.1,
 		.description = COMPOUND_STRING(
-			"Far larger than it's smaller\n"
-			"counterpart, it has become a lot harder\n"
-			"to hide as a small rock."),
+			"Far larger than its smaller counterpart,\n"
+			"it has become a lot harder to hide as a\n"
+			"small rock."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -27211,7 +27319,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rock_Crab_Giant_Normal_Form, 0),
 		.footprint = gMonFootprint_Rock_Crab_Giant_Normal_Form,
 		LEARNSETS(Rock_Crab_Giant_Normal_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 3,
 		.enemyMonElevation = 0,
 	},
 
@@ -27394,7 +27502,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"In the warm desert its not uncommon to\n"
+			"In the warm desert it's not uncommon to\n"
 			"accidentally step on one."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -27442,7 +27550,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 7.2,
 		.weight = 322.1,
 		.description = COMPOUND_STRING(
-			"Mainly found in swamp's, they use\n"
+			"Mainly found in swamps, they use\n"
 			"whatever they can find as substitute\n"
 			"shells."),
 		.pokemonScale = 256,
@@ -27510,7 +27618,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rock_Crab_Giant_Swamp_Form, 1),
 		.footprint = gMonFootprint_Rock_Crab_Giant_Swamp_Form,
 		LEARNSETS(Rock_Crab_Giant_Swamp_Form),
-		.frontPicYOffset = 1,
+		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
 	},
 
@@ -27644,7 +27752,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 13.2,
 		.weight = 748.4,
 		.description = COMPOUND_STRING(
-			"A lobsters pretending to be a rock.\n"
+			"A lobster pretending to be a rock.\n"
 			"Except it wasn't a rock, it was a rock\n"
 			"lobster."),
 		.pokemonScale = 256,
@@ -27848,8 +27956,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 1179.3,
 		.description = COMPOUND_STRING(
 			"A feared monster of Morytania. It gets\n"
-			"it name from the talons it possesses\n"
-			"that has killed many adventurers."),
+			"its name from the talons it possesses\n"
+			"that have killed many adventurers."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -27896,7 +28004,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 20.2,
 		.weight = 1179.3,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Summoned using the essence of a regular\n"
+			"talon beast, these creatures are so\n"
+			"deadly it's said they can attack three\n"
+			"times in a single hit."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -28148,7 +28259,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 31.8,
 		.description = COMPOUND_STRING(
 			"An automation made of clockwork to mimic\n"
-			"mans best friend. They refuse to meow."),
+			"man's best friend. They refuse to meow."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -28571,12 +28682,27 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 			{EVO_LEVEL_ATK_GT_SPATK, 40, SPECIES_SPIRIT_WARRIOR},
 			{EVO_LEVEL_ATK_LT_SPATK, 40, SPECIES_SPIRIT_MAGE},
 			{EVO_LEVEL_ATK_EQ_SPATK, 40, SPECIES_SPIRIT_RANGER},
-			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_TOME_OF_STRENGTH, SPECIES_SPIRIT_WARRIOR},
-			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_TOME_OF_RANGED, SPECIES_SPIRIT_RANGER},
-			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_TOME_OF_MAGIC, SPECIES_SPIRIT_MAGE},
+			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_TOME_OF_STRENGTH, SPECIES_SPIRIT_FIGHTER},
+			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_TOME_OF_RANGED, SPECIES_SPIRIT_ARCHER},
+			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_TOME_OF_MAGIC, SPECIES_SPIRIT_MYSTIC},
+			{EVO_ITEM, ITEM_LAW_RUNE, SPECIES_SPIRIT_WARRIOR},
+			{EVO_ITEM, ITEM_CHAOS_RUNE, SPECIES_SPIRIT_MAGE},
+			{EVO_ITEM, ITEM_NATURE_RUNE, SPECIES_SPIRIT_RANGER},
+			{EVO_ITEM, ITEM_BODY_RUNE, SPECIES_SPIRIT_FIGHTER},
+			{EVO_ITEM, ITEM_ASTRAL_RUNE, SPECIES_SPIRIT_ARCHER},
+			{EVO_ITEM, ITEM_EARTH_RUNE, SPECIES_SPIRIT_MYSTIC},
+			{EVO_ITEM, ITEM_SOUL_RUNE, SPECIES_SPIRIT_KNIGHT},
+			{EVO_ITEM, ITEM_MIND_RUNE, SPECIES_SPIRIT_SCOUT},
+			{EVO_ITEM, ITEM_AIR_RUNE, SPECIES_SPIRIT_WARMAGE},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_SARAOWL, SPECIES_SPIRIT_WARRIOR},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_ZAMOHAWK, SPECIES_SPIRIT_RANGER},
-			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_ARMAFALCON, SPECIES_SPIRIT_MAGE}
+			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_GUTHRAPTOR, SPECIES_SPIRIT_MAGE},
+			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_BANDEAGLE, SPECIES_SPIRIT_FIGHTER},
+			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_SEREPEA, SPECIES_SPIRIT_ARCHER},
+			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_TUMEKIBIS, SPECIES_SPIRIT_MYSTIC},
+			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_ZARAVEN, SPECIES_SPIRIT_KNIGHT},
+			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_UNGODGEON, SPECIES_SPIRIT_SCOUT},
+			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_ARMAFALCON, SPECIES_SPIRIT_WARMAGE}
 		),
 	},
 
@@ -28763,7 +28889,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 			"Unrelated to the K.G.P. The turkeys are\n"
 			"trying to launch an attack on humans.\n"
 			"Humans don't care since it is\n"
-			"thanksgiving."),
+			"Thanksgiving."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -28867,7 +28993,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 14.5,
 		.weight = 131.5,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"These turkeys are larger and more\n"
+			"aggressive than their female\n"
+			"counterparts, constantly trying to evade\n"
+			"capture."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -28918,7 +29047,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 14.5,
 		.weight = 131.5,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"A turkey that has sought to end the\n"
+			"slaughter of its kind through peaceful\n"
+			"protest. It hasn't worked."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -29017,7 +29148,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 6.1,
 		.weight = 59.0,
 		.description = COMPOUND_STRING(
-			"Nothing Interesting Happens."),
+			"Just as tenacious, but even more cunning\n"
+			"than male toucans. They have\n"
+			"occasionally been spotted carrying\n"
+			"dismembered body parts."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -29539,7 +29673,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 			"Baron von Hattenkrapper. Sworn rival of\n"
 			"Count Ludvig Koppenploppen. Known as the\n"
 			"slayer of barrelchests on Bloodsplatter\n"
-			"island."),
+			"Isle."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -29588,7 +29722,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"Count Ludwig Koppenploppen. Sworn rival\n"
 			"to Baron von Hattenkrapper. Known to\n"
-			"have eaten many meals on The rock."),
+			"have eaten many meals on The Rock."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -29635,9 +29769,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 4.6,
 		.weight = 15.9,
 		.description = COMPOUND_STRING(
-			"Flightless, the bird has nothing but\n"
-			"it's own name that holds any value. It\n"
-			"fights with all it has."),
+			"Flightless, the bird has nothing but its\n"
+			"own name that holds any value. It fights\n"
+			"with all it has."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -29946,7 +30080,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"A cobra from the spirit realm. They can\n"
 			"corrupt eggs, making them into\n"
-			"cockatrice egg's"),
+			"cockatrice eggs."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -29995,7 +30129,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"Guardian of Guthix, this snake was set\n"
 			"to guard the residual sadness of Guthix\n"
-			"left in the rocks of lumbridge."),
+			"left in the rocks of Lumbridge."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -30193,7 +30327,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 771.1,
 		.description = COMPOUND_STRING(
 			"Made by Dr. Fenkenstrain, these\n"
-			"experiments are either sheep in wolf\n"
+			"experiments are either sheep in wolf's\n"
 			"clothing, or the opposite."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -30297,9 +30431,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"They roam the desert looking for\n"
-			"oasises, escaping kebab salesmen who\n"
-			"kill them."),
+			"They roam the desert looking for oases,\n"
+			"escaping kebab salesmen who kill them."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -30351,7 +30484,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"The hump on its back stores water and\n"
-			"moisture as fat. Allowing it to live in\n"
+			"moisture as fat, allowing it to live in\n"
 			"the desert."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -30663,8 +30796,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Kalphites from the spirit realm has a\n"
-			"stunning blue colour exoding glamour\n"
+			"Kalphites from the spirit realm have a\n"
+			"stunning blue colour exuding glamour\n"
 			"before they eat their prey alive."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -30869,7 +31002,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"A small set of kalphites were deemed\n"
-			"warped by the hive and was thus exiled.\n"
+			"warped by the hive and were thus exiled.\n"
 			"These were some of them."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -30922,7 +31055,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Giving in to the power and control of\n"
-			"the devourer the kalphite has lost all\n"
+			"the Devourer the kalphite has lost all\n"
 			"reason and will of its own."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -30971,8 +31104,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Outrider of its exiled clans they attack\n"
-			"anything they can see that isnt kalphite\n"
-			"shaped."),
+			"anything they can see that isn't\n"
+			"kalphite shaped."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -31124,7 +31257,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"The head of a slain kalphite reborn\n"
-			"anew. Only to be slain anew once more."),
+			"anew. Only to be slain once more."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -31222,7 +31355,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Corrupted beyond recognition the once\n"
-			"shining crystals now spark a stunning\n"
+			"shining crystals now sparkle a stunning\n"
 			"red."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -31270,8 +31403,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"A bat adornign beatifull crystals. It\n"
-			"has trouble flying due to their weight."),
+			"A bat adorned with beautiful crystals.\n"
+			"It has trouble flying due to their\n"
+			"weight."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -31369,7 +31503,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Its hard to corrupt what is already a\n"
+			"It's hard to corrupt what is already a\n"
 			"beast beyond control, but somehow the\n"
 			"Gauntlet did this."),
 		.pokemonScale = 256,
@@ -31421,8 +31555,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Its body adorned with crystal shining in\n"
-			"so many colours its hard to recognice it\n"
-			"as dark."),
+			"so many colours it's hard to recognise\n"
+			"it as dark."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -31523,7 +31657,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Beasts lurking near the temple of light.\n"
+			"Beasts lurking near the Temple of Light.\n"
 			"Apparently they herald the return of the\n"
 			"dark lord."),
 		.pokemonScale = 256,
@@ -31628,8 +31762,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Its head left intact but without a voice\n"
-			"to talk. Its unknown how intelligent it\n"
-			"remains but hopefully its mindless."),
+			"to talk. It's unknown how intelligent it\n"
+			"remains but hopefully it's mindless."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -31677,7 +31811,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Despite being a spider this spider is\n"
+			"Despite being a spider this creature is\n"
 			"strange because it has three joints\n"
 			"instead of two like regular spiders."),
 		.pokemonScale = 256,
@@ -31727,8 +31861,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"This huge beast posesses thick layers of\n"
-			"spores and rotten flesh protecting it\n"
+			"This huge beast possesses thick layers\n"
+			"of spores and rotten flesh protecting it\n"
 			"from harm."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -31828,7 +31962,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"A ramokee gave life to these otherwise\n"
+			"A Ramokee gave life to these otherwise\n"
 			"insignificant beings and they now work\n"
 			"at his command."),
 		.pokemonScale = 256,
@@ -31882,7 +32016,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Once posessed by a spirit the axe finds\n"
-			"a new use posessed by spores."),
+			"a new use possessed by spores."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -32086,7 +32220,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Chosen by the god Zamorak these beasts\n"
-			"laid waste to Saradomins armies in\n"
+			"laid waste to Saradomin's armies in\n"
 			"Lumbridge."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -32229,7 +32363,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"To controll it Bilrach and his armies\n"
+			"To control it Bilrach and his armies\n"
 			"bound this behemoth down with runic\n"
 			"energy to make it obey."),
 		.pokemonScale = 256,
@@ -32278,7 +32412,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Its body is so big it could not pass\n"
-			"entirely into Gielinor, were the portal\n"
+			"entirely into Gielinor; were the portal\n"
 			"to close it would die."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -32525,7 +32659,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Reanimated from its slumber or death,\n"
+			"Reanimated from its slumber of death,\n"
 			"the monkey now sees little use but to\n"
 			"die once more."),
 		.pokemonScale = 256,
@@ -32624,7 +32758,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"As it walks around the gauntlet its body\n"
+			"As it walks around the Gauntlet its body\n"
 			"shimmers with light until an adventurer\n"
 			"kills it."),
 		.pokemonScale = 256,
@@ -32877,8 +33011,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"They only lurk around lava giving them\n"
-			"their name, but its unknown why they are\n"
-			"in the Dragonkin Laboratories."),
+			"their name, but it's unknown why they\n"
+			"are in the Dragonkin Laboratories."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -33082,7 +33216,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"With one gigantic eye its said they can\n"
+			"With one gigantic eye it's said they can\n"
 			"see things human eyes can not."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -33336,9 +33470,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"It prefers to fasten itself in air above\n"
-			"alcoves, killing anything near it with\n"
-			"immense bursts of light."),
+			"It prefers to fasten itself in the air\n"
+			"above alcoves, killing anything near it\n"
+			"with immense bursts of light."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -33436,7 +33570,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Hailing from the gauntlet these\n"
+			"Hailing from the Gauntlet these\n"
 			"corrupted unicorns stand out from their\n"
 			"crystalline counterparts."),
 		.pokemonScale = 256,
@@ -33487,7 +33621,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Pure as the light that strikes them,\n"
-			"these crystalline unicorns walks around\n"
+			"these crystalline unicorns wander around\n"
 			"the Gauntlet."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -33535,7 +33669,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"They lead their young trough cave\n"
+			"They lead their young through cave\n"
 			"systems hunting for mice and other prey."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -33834,7 +33968,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"After the untimely death of Cerberus the\n"
-			"original temple guardian. Lycurgus was\n"
+			"original temple guardian, Lycurgus was\n"
 			"put in to guard Paterdomus."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -33930,7 +34064,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Celebrating the festivities of wintuber\n"
+			"Celebrating the festivities of Wintumber\n"
 			"this yak appears when the mood is jolly."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -34027,9 +34161,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Member of Saint Elsebeth Citharade. This\n"
+			"Member of Saint Elspeth Citharede. This\n"
 			"sister has taken the vow of silence for\n"
-			"Saradoming."),
+			"Saradomin."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -34123,9 +34257,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Since theyre practicly defenceless they\n"
-			"prefer to stay underground for most of\n"
-			"the day."),
+			"Since they're practically defenceless\n"
+			"they prefer to stay underground for most\n"
+			"of the day."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -34234,7 +34368,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"A very big crocodile lurking the\n"
-			"chambers of Xerosic. It is a very good\n"
+			"Chambers of Xeric. It is a very good\n"
 			"boy."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -34284,7 +34418,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"The magisters experimentation with souls\n"
 			"caused this crocodile to gain power in\n"
-			"trade for its will."),
+			"exchange for its will."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -34331,9 +34465,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The curse placed on Crondis taken\n"
-			"physical forme. It caused a vain and\n"
-			"gluttoneous feeling in Crondis."),
+			"The physical embodiment of the curse\n"
+			"placed on Crondis by Amascut. It caused\n"
+			"a vain and gluttonous feeling in\n"
+			"Crondis."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -34382,9 +34517,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"These demons once served Zaros but\n"
-			"seemed to have gone over to Zamorak by\n"
-			"the rebellion."),
+			"These demons once served Zaros but seem\n"
+			"to have gone over to Zamorak by the\n"
+			"rebellion."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -34432,8 +34567,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"The highly acidic fluids in its body\n"
-			"makes them more dangereous than any\n"
-			"other bloodsucker."),
+			"make them more dangerous than any other\n"
+			"bloodsucker."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -34530,7 +34665,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"CUPHOLDER"),
+			"These bloodveld have been twisted by\n"
+			"Amascut's corruption, making them even\n"
+			"deadlier and more bloodthirsty."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -34731,8 +34868,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"In their sack they keep the loot they\n"
-			"have stolen. They dont trust anyone to\n"
-			"see whats in there however."),
+			"have stolen. They don't trust anyone to\n"
+			"see what's in there however."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -34779,9 +34916,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"These buggers sneak into adventurers\n"
-			"bags to steal from them, but usually\n"
-			"ends up as their pets."),
+			"These buggers sneak into adventurers'\n"
+			"bags to steal from them, but usually end\n"
+			"up as their pets."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -34829,7 +34966,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Known to not care for anything because\n"
-			"its strong, ferocious and badass in\n"
+			"it's strong, ferocious and badass in\n"
 			"every way."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -34976,8 +35113,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Related tot he strange plant these\n"
-			"plants will grown violent if not pruned\n"
+			"Related to the strange plant these\n"
+			"plants will grow violent if not pruned\n"
 			"occasionally."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -35026,7 +35163,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The dragonkins experimentation on\n"
+			"The dragonkin's experimentation on\n"
 			"dragons caused them to make a breed\n"
 			"mixed of Dragon and Fairy."),
 		.pokemonScale = 256,
@@ -35044,7 +35181,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Klik,
 		LEARNSETS(Klik),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_JACKALOPE] =
@@ -35092,7 +35229,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Jackalope,
 		LEARNSETS(Jackalope),
 		.frontPicYOffset = 5,
-		.enemyMonElevation = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_IMP] =
@@ -35180,7 +35317,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 499.0,
 		.description = COMPOUND_STRING(
 			"A Byzroth demon. Once slaves in their\n"
-			"home realm. Now they fight for the god\n"
+			"home realm, they now fight for the God\n"
 			"of chaos."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -35375,7 +35512,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"They posess humans warping their\n"
+			"They possess humans warping their\n"
 			"appearence to slaughter everyone nearby."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -35473,9 +35610,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Theyre called greater demons due to\n"
-			"their wings and larger power, but so is\n"
-			"their cruelty."),
+			"They're called greater demons not just\n"
+			"due to their wings and larger power, but\n"
+			"also their cruelty."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -35525,7 +35662,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Said to at one point have destroyed over\n"
-			"1000 planes this demon rains thunder on\n"
+			"1,000 planes this demon rains thunder on\n"
 			"its enemies."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -35574,7 +35711,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Their flesh burns as theyre fused with\n"
+			"Their flesh burns as they're fused with\n"
 			"the draconic metal around them."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -35623,7 +35760,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"A demon once sealed by the ancestor of\n"
-			"todays Sir Prysin."),
+			"today's Sir Prysin."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -35720,7 +35857,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"A great tongue is a sign of nobility in\n"
-			"Infernus. But some claim its to excuse\n"
+			"Infernus. But some claim it's to excuse\n"
 			"their rather small horns."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -35769,9 +35906,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Known to some as Scourge of the light.\n"
+			"Known to some as Scourge of the Light.\n"
 			"Mostly because hailstorm and ice magic\n"
-			"clouds the sky near its appearence."),
+			"clouds the sky near its appearance."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -35820,8 +35957,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Carrying two large hammers this\n"
-			"Kalgerion demon is so strong it can bash\n"
-			"the fabric of planes."),
+			"Kal'Gerion demon is so strong it can\n"
+			"bash the fabric of planes."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -35917,8 +36054,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Black demons posess stronger power than\n"
-			"their red counterparts but turns out to\n"
+			"Black demons possess stronger power than\n"
+			"their red counterparts but turn out to\n"
 			"be equally cruel to others."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -36014,8 +36151,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Most known as the despoiler of Ullek. It\n"
-			"shoots fireballs on anything they can\n"
+			"Most known as the Despoiler of Ullek. It\n"
+			"shoots fireballs at anything they can\n"
 			"see."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -36063,8 +36200,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"A poisonous  demon once summoned by\n"
-			"gnomes to ambush a adventurer."),
+			"A poisonous demon once summoned by\n"
+			"gnomes to ambush an adventurer."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -36113,7 +36250,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"With immense control of the planes\n"
-			"around it this Kalgerion demon breaks\n"
+			"around it this Kal'Gerion demon breaks\n"
 			"the fabric of space at will."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -36258,8 +36395,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"They can only live where its cold, and\n"
-			"has since only been found in Ghorrock."),
+			"They can only live where it's cold, and\n"
+			"have since only been found in Ghorrock."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -36307,8 +36444,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Cotrolling immence power over coldness\n"
-			"it gets its name from chilling a mans\n"
+			"Controlling immense power over coldness\n"
+			"it gets its name from chilling a man's\n"
 			"blood to solid ice."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -36406,8 +36543,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"General of the Zamorakian army it\n"
-			"posesses immense strength to the point\n"
-			"hiding its name isnt important."),
+			"possesses immense strength to the point\n"
+			"hiding its name isn't important."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -36454,8 +36591,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 7.5,
 		.weight = 68.0,
 		.description = COMPOUND_STRING(
-			"A demon posessing the power of fire.\n"
-			"They fought for Zamorak in the god wars."),
+			"A demon possessing the power of fire.\n"
+			"They fought for Zamorak in the God Wars."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -36709,7 +36846,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 136.1,
 		.description = COMPOUND_STRING(
 			"Leader of icefiends. No heat is ever\n"
-			"seen in the vicinity of a Icelord."),
+			"seen in the vicinity of an Icelord."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -36782,8 +36919,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 			{EVO_LEVEL_RANDOM, 17, SPECIES_IMPLING_MAGPIE_FORM},
 			{EVO_LEVEL_RANDOM, 17, SPECIES_IMPLING_GOURMET_FORM},
 			{EVO_LEVEL_RANDOM, 17, SPECIES_IMPLING_YOUNG_FORM},
-			{EVO_LEVEL_RANDOM, 17, SPECIES_IMPLING_EARTH_FORM},
-			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_YAK_SNACK_FORM, SPECIES_IMPLING_GOURMET_FORM}
+			{EVO_LEVEL_RANDOM, 17, SPECIES_IMPLING_EARTH_FORM}
 		),
 	},
 
@@ -36815,7 +36951,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"If they see anythign shiny they will\n"
+			"If they see anything shiny they will\n"
 			"rush for it to pick it up."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -37029,7 +37165,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Penance_Spawn),
-		ICON(Penance_Spawn, 0),
+		ICON(Penance_Spawn, 2),
 		.footprint = gMonFootprint_Penance_Spawn,
 		LEARNSETS(Penance_Spawn),
 		.frontPicYOffset = 9,
@@ -37071,7 +37207,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"With its poisonous  breath its capable\n"
+			"With its poisonous breath it's capable\n"
 			"of healing fellow penances in battles."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -37084,7 +37220,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Penance_Healer),
-		ICON(Penance_Healer, 0),
+		ICON(Penance_Healer, 2),
 		.footprint = gMonFootprint_Penance_Healer,
 		LEARNSETS(Penance_Healer),
 		.frontPicYOffset = 0,
@@ -37136,7 +37272,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Penance_Ranger),
-		ICON(Penance_Ranger, 0),
+		ICON(Penance_Ranger, 2),
 		.footprint = gMonFootprint_Penance_Ranger,
 		LEARNSETS(Penance_Ranger),
 		.frontPicYOffset = 0,
@@ -37188,7 +37324,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Penance_Runner),
-		ICON(Penance_Runner, 0),
+		ICON(Penance_Runner, 2),
 		.footprint = gMonFootprint_Penance_Runner,
 		LEARNSETS(Penance_Runner),
 		.frontPicYOffset = 0,
@@ -37225,8 +37361,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"With its impeccable defence it brushes\n"
-			"of every form of attack but one specific\n"
-			"one."),
+			"off every form of attack but one\n"
+			"specific type."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -37238,7 +37374,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Penance_Fighter),
-		ICON(Penance_Fighter, 0),
+		ICON(Penance_Fighter, 2),
 		.footprint = gMonFootprint_Penance_Fighter,
 		LEARNSETS(Penance_Fighter),
 		.frontPicYOffset = 0,
@@ -37288,7 +37424,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Penance_Queen),
-		ICON(Penance_Queen, 0),
+		ICON(Penance_Queen, 2),
 		.footprint = gMonFootprint_Penance_Queen,
 		LEARNSETS(Penance_Queen),
 		.frontPicYOffset = 0,
@@ -37338,7 +37474,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Penance_King),
-		ICON(Penance_King, 0),
+		ICON(Penance_King, 2),
 		.footprint = gMonFootprint_Penance_King,
 		LEARNSETS(Penance_King),
 		.frontPicYOffset = 5,
@@ -37433,7 +37569,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Thousands of them might fly upon the sky\n"
-			"to rain fire upon the Void knights\n"
+			"to rain fire upon the Void Knights\n"
 			"closing their portals."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -37530,7 +37666,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Due to the brawlers immense body\n"
+			"Due to the brawlers' immense body\n"
 			"adventurers find it hard to slip past\n"
 			"them until they are dead."),
 		.pokemonScale = 256,
@@ -37580,7 +37716,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"The spines on their bodies can be shot\n"
-			"out as if arrows on a bow, mercilessly\n"
+			"out as if arrows from a bow, mercilessly\n"
 			"slaying their enemies."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -37629,8 +37765,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Inside their bodies lies highly unstable\n"
-			"chemical materials that explodes upon\n"
-			"its death."),
+			"chemical materials that explode upon its\n"
+			"death."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -37679,7 +37815,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Their long claws are specialized solely\n"
-			"to kill obstacles and reimustments as\n"
+			"to destroy obstacles and barricades as\n"
 			"opposed to living beings."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -37777,7 +37913,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"The closest envoys of the Void Queen\n"
-			"that serves the queen until death."),
+			"that serve the Queen until death."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -38031,8 +38167,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The shape of it body is flat in order to\n"
-			"minimize air and water pressure when\n"
+			"The shape of its body is flat in order\n"
+			"to minimize air and water pressure when\n"
 			"swimming."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -38083,8 +38219,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Named by Thok Thokson the Bouldabass\n"
-			"once chipped tooths upon being eaten."),
+			"Named by Thok Thokson after the\n"
+			"Bouldabass' stiff scales once chipped\n"
+			"Thok's tooth when he tried eating it."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -38149,6 +38286,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Mudskipper),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 4,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL, 43, SPECIES_BUNYIP}
+		),
 	},
 
 [SPECIES_BASILISK_BABY_FORM] =
@@ -38338,7 +38478,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Serving the Jormungard, these Basilisks\n"
+			"Serving the Jormungand, these Basilisks\n"
 			"are knights who will fight to the death\n"
 			"for their master."),
 		.pokemonScale = 256,
@@ -38443,7 +38583,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"Fresh meat is a rare sight in the crypt\n"
 			"it lives in, until people started\n"
-			"killing shades in Mo'orton atleast."),
+			"killing shades in Mort'ton at least."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -38539,9 +38679,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Moving swiftly and determined these\n"
-			"spiders can almost not be sensed until\n"
-			"they try to kill you."),
+			"Moving swiftly and with determination\n"
+			"these spiders can almost not be sensed\n"
+			"until they try to kill you."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -38842,7 +38982,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Master farmers argue wether a pig or a\n"
+			"Master farmers argue whether a pig or a\n"
 			"yak would be the ideal beast of burden."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -38891,7 +39031,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"The herbs growing on its body seems to\n"
-			"wary between specimens making each catch\n"
+			"vary between specimens making each catch\n"
 			"unique."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -38940,7 +39080,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Sacred clay inbues its body with\n"
+			"Sacred clay imbues its body with\n"
 			"capabilities beyond those of a regular\n"
 			"goat."),
 		.pokemonScale = 256,
@@ -39046,7 +39186,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Made of the strongest sacred clay, the\n"
-			"pristine qualities of its body has no\n"
+			"pristine qualities of its body have no\n"
 			"equal."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -39210,7 +39350,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Its true face is hidden in the mass of\n"
-			"moss and leaves on its upper body. Its\n"
+			"moss and leaves on its upper body. It's\n"
 			"shy in nature."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -39259,7 +39399,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The weight of its body exceeds 5 tons in\n"
+			"The weight of its body exceeds 5 tons of\n"
 			"pure iron. It attacks slowly but packs a\n"
 			"punch."),
 		.pokemonScale = 256,
@@ -39360,7 +39500,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Made entirely out of lava means wherever\n"
-			"it goes things melts. Due to this they\n"
+			"it goes things melt. Due to this they\n"
 			"prefer volcanoes."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -39461,7 +39601,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"They live their entire lives encased in\n"
 			"swampy tar. Duelling banjos sometimes\n"
-			"brings them out to fight."),
+			"bring them out to fight."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -39511,7 +39651,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"Despite looking cool and stoic they have\n"
 			"a violent nature making them highly\n"
-			"dangereous to hikers."),
+			"dangerous to hikers."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -39658,8 +39798,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Concentrated of pure dark energy\n"
-			"exprelled from the Corporeal beast. It\n"
+			"A concentrated mass of pure dark energy\n"
+			"expelled from the Corporeal Beast. It\n"
 			"attacks anything."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -39678,7 +39818,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
-			{EVO_LEVEL, 70, SPECIES_CORPOREAL_BEAST}
+			{EVO_LEVEL, 70, SPECIES_CORPOREAL_BEAST},
+			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_CORPOREAL_BEAST_ZANIK_FORM}
 		),
 	},
 
@@ -39711,8 +39852,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"It has no place in the real world, but\n"
-			"is rather a byproduct of the spirit\n"
-			"beast being killed in a world that\n"
+			"is rather a byproduct of the Spirit\n"
+			"Beast being killed in a world that\n"
 			"mirrors ours."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -39760,7 +39901,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"CUPHOLDER"),
+			"Dont question it."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -39807,7 +39948,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Some proclaim that if you dont clean up\n"
+			"Some proclaim that if you don't clean up\n"
 			"your compost it will turn into a compost\n"
 			"mound."),
 		.pokemonScale = 256,
@@ -39858,7 +39999,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Since they are trees they sense concepts\n"
-			"of time differently from humans. Its\n"
+			"of time differently from humans. It's\n"
 			"very slow winded."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -40071,7 +40212,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"Born warriors, their entire life\n"
 			"revolves around finding threats and then\n"
-			"getting rid of them, or die trying."),
+			"getting rid of them, or dying trying."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -40119,8 +40260,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Cockroaches warped in the Lumbridge\n"
-			"catacombs. Some say its no longer a part\n"
-			"of the hive."),
+			"catacombs. Some say it's no longer a\n"
+			"part of the hive."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -40169,7 +40310,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Guthix chose this earwig to guard where\n"
-			"The eye of Saradoming once stood."),
+			"the Eye of Saradomin once stood."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -40465,7 +40606,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Evil Bobs evil magic reanimated these\n"
+			"Evil Bob's evil magic reanimated these\n"
 			"balloons to work as prison guards in his\n"
 			"jail."),
 		.pokemonScale = 256,
@@ -40516,8 +40657,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"The true horror from the deep that\n"
-			"produces a brook that will destroy the\n"
-			"Fremmenik."),
+			"produces a brood that will destroy the\n"
+			"Fremennik."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -40718,7 +40859,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The dagannoths of the spirit realm lurks\n"
+			"The dagannoths of the spirit realm lurk\n"
 			"in deep seas trying to sink boats to eat\n"
 			"their innards."),
 		.pokemonScale = 256,
@@ -40769,7 +40910,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"The texture on its body is so hot and\n"
-			"solid wearing a weapon to fight it is\n"
+			"solid wielding a weapon to fight it is\n"
 			"too hard."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -40818,9 +40959,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Its entire body is made entirely of\n"
-			"bananas of which it wants to kill\n"
-			"everyone with."),
+			"Its whole body is made entirely of\n"
+			"bananas which it wants to kill everyone\n"
+			"with."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -41217,8 +41358,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The ill conceived experiment to make\n"
-			"bigger pigs trough magic created the\n"
+			"An ill conceived experiment to make\n"
+			"bigger pigs through magic created the\n"
 			"Sourhog."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -41267,7 +41408,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"The most handy dandy help a farmer could\n"
-			"wish for that always helps your work."),
+			"wish for that is always happy to help\n"
+			"out."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -41364,7 +41506,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"The mask of broken fingers is said to\n"
-			"show ones affinity for crawling hands."),
+			"show one's affinity for crawling hands."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -41414,7 +41556,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"To prove ones dominance over crawling\n"
+			"To prove one's dominance over crawling\n"
 			"hands, some players wear these on their\n"
 			"heads."),
 		.pokemonScale = 256,
@@ -41464,7 +41606,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Nobody knows how crawling hands got into\n"
-			"Daemonheim. Some think theyre just\n"
+			"Daemonheim. Some think they're just\n"
 			"giving a helping hand."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -41615,7 +41757,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"They are faster at swimming through mud\n"
-			"than walking on lands and hunts passing\n"
+			"than walking on land and hunt passing\n"
 			"humans."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -41663,7 +41805,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The herald of the zodiac. Its always in\n"
+			"The herald of the Zodiac. It's always in\n"
 			"some form of distress."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -41888,9 +42030,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_NATURE_AMPED, 35, SPECIES_IMPLING_NATURE_FORM},
+			{EVO_LEVEL_NATURE_LOW_KEY, 35, SPECIES_IMPLING_ECLECTIC_FORM},
 			{EVO_ITEM, ITEM_ASTRAL_RUNE, SPECIES_IMPLING_CRYSTAL_FORM},
-			{EVO_ITEM, ITEM_COSMIC_RUNE, SPECIES_IMPLING_WANDERING_FORM},
-			{EVO_LEVEL_NATURE_LOW_KEY, 35, SPECIES_IMPLING_ECLECTIC_FORM}
+			{EVO_ITEM, ITEM_COSMIC_RUNE, SPECIES_IMPLING_WANDERING_FORM}
 		),
 	},
 
@@ -42123,7 +42265,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"The peculiar taste of this impling is so\n"
-			"weird that some people dont notice it\n"
+			"weird that some people don't notice it\n"
 			"when they steal from them."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -42220,7 +42362,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"This implings lifestyle is sometimes\n"
+			"This impling's lifestyle is sometimes\n"
 			"compared to a druid that has returned to\n"
 			"a life of crime."),
 		.pokemonScale = 256,
@@ -42472,7 +42614,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"The acid produced from its glands is so\n"
-			"strong it can smelt steel armour."),
+			"strong it can melt steel armour."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -42569,8 +42711,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The veins on its body pumps as if it has\n"
-			"a pulse, its said this is its bloodlust\n"
+			"The veins on its body pumps as if it had\n"
+			"a pulse. It's said this is its bloodlust\n"
 			"erupting."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -42667,7 +42809,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Fiendishly rivalleous, they will even\n"
+			"Fiendishly rivalrous, they will even\n"
 			"defeat and eat their own mate if the\n"
 			"mate shows weakness."),
 		.pokemonScale = 256,
@@ -42913,7 +43055,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The strongest of all Glacors, Bik\n"
+			"The strongest of all Glacors, Wen\n"
 			"kidnapped it from its world to serve\n"
 			"their purpose."),
 		.pokemonScale = 256,
@@ -42962,7 +43104,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"From its body, vines protude. The vines\n"
+			"Vines protude from its body. The vines\n"
 			"have different medicinal properties."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -43015,7 +43157,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"The male jadinko gains huge masses of\n"
-			"muscles to better serve their queens\n"
+			"muscles to better serve their queen's\n"
 			"whims."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -43210,7 +43352,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"It gets its name from how it boldly\n"
-			"presses on even in the strongest winther\n"
+			"presses on even in the strongest winter\n"
 			"wind."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -43313,8 +43455,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Its coat burns as if its a real flame,\n"
-			"but is actually just aflame."),
+			"Its coat burns as if it's a real flame,\n"
+			"but it is actually just aflame."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -43413,7 +43555,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"A moth that charms its prey before it\n"
-			"feasts on their liquids. Unless its\n"
+			"feasts on their liquids. Unless it's\n"
 			"eaten first."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -43615,7 +43757,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The last of Cyrisius fears running away\n"
+			"The last of Cyrisius' fears running away\n"
 			"from its responsibility."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -43667,7 +43809,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Doubts spawned by the Inadequancy, they\n"
+			"Doubts spawned by the Inadequancy. They\n"
 			"spawn forever as Cyrisius doubts\n"
 			"himself."),
 		.pokemonScale = 256,
@@ -43717,8 +43859,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Thoughts of never being good enough\n"
-			"roams Cyrisuis mind as he battles the\n"
+			"Thoughts of never being good enough roam\n"
+			"Cyrisius' mind as he struggles with the\n"
 			"idea of battling."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -43771,7 +43913,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The untouchable materializes the fear of\n"
+			"The Untouchable materializes the fear of\n"
 			"not being strong enough to defeat even\n"
 			"the smallest of foes."),
 		.pokemonScale = 256,
@@ -44034,7 +44176,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Cobalt chinchompa are sometimes utilized\n"
-			"for fishing, it excells at killing its\n"
+			"for fishing, it excels at killing its\n"
 			"victims."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -44134,7 +44276,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Its mantle shines in crystalline colours\n"
-			"as its flung to its certain death."),
+			"as it's flung to its certain death."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -44182,7 +44324,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Since its larger and more independent,\n"
+			"Since it's larger and more independent,\n"
 			"this chinchompa will sometimes just, not\n"
 			"explode."),
 		.pokemonScale = 256,
@@ -44232,7 +44374,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"A chinchompa with mechanized parts so it\n"
-			"can go out in blaxes of glory harder\n"
+			"can go out in blazes of glory harder\n"
 			"than any other chinchompa."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -44330,7 +44472,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"They find their home in the deepest\n"
-			"Wilderness where local wildlife leaves\n"
+			"Wilderness where local wildlife leave\n"
 			"them alone due to their explosions."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -44428,7 +44570,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Being natures cleaning crew, Vultures\n"
+			"Being nature's cleaning crew, vultures\n"
 			"help the environment by getting rid of\n"
 			"corpses."),
 		.pokemonScale = 256,
@@ -44526,7 +44668,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Their featherless heads allows them to\n"
+			"Their featherless heads allow them to\n"
 			"stick their heads into carcasses without\n"
 			"blood sticking to them."),
 		.pokemonScale = 256,
@@ -44576,7 +44718,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"While often seen as many and disease\n"
-			"filled, they actually posesses strong\n"
+			"filled, they actually possess strong\n"
 			"immune systems to negate disease and\n"
 			"sickness."),
 		.pokemonScale = 256,
@@ -44627,7 +44769,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Their long ears are seen as endearing\n"
-			"for children who keeps them as pets."),
+			"for children who keep them as pets."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -44675,7 +44817,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Their short snouts causes breathing\n"
+			"Their short snouts cause breathing\n"
 			"problems making them almost kill\n"
 			"themselves in heat."),
 		.pokemonScale = 256,
@@ -44725,7 +44867,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Geneticly theyre very close to wolves\n"
+			"Genetically they're very close to wolves\n"
 			"and are thus used to do tasks best fit\n"
 			"for arctic terrain."),
 		.pokemonScale = 256,
@@ -45020,7 +45162,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"In the depths of the sea, these beings\n"
-			"lurks everywhere."),
+			"lurk everywhere."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -45070,8 +45212,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Far below the sea, these beings walks\n"
-			"and roams without a true purpose but to\n"
+			"Far below the sea, these beings walk and\n"
+			"roam without a true purpose but to\n"
 			"devour all."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -45119,7 +45261,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"-"),
+			"Created by Aliya when she sealed the\n"
+			"rift to the Scar, these guard and\n"
+			"protect it from invading abyssal\n"
+			"creatures."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -45168,7 +45313,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"Being left in the deep sea for too long\n"
 			"has caused corals to grow upon this\n"
-			"guardians body."),
+			"guardian's body."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -45264,7 +45409,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Baboons show their rear ends at their\n"
+			"Baboons show their rear ends to their\n"
 			"foes to intimidate them with strong\n"
 			"colours."),
 		.pokemonScale = 256,
@@ -45364,7 +45509,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.description = COMPOUND_STRING(
 			"It meditates several times a day to\n"
 			"attain its spiritual powers to unleash\n"
-			"it at its enemies."),
+			"them at its enemies."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -45461,7 +45606,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"Cursed to live once more, these baboons\n"
-			"are spitefull and lamented by its peers."),
+			"are spiteful and lamented by their\n"
+			"peers."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -45508,7 +45654,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"Theys erve little purpose but the whims\n"
+			"They serve little purpose but the whims\n"
 			"of their master. They have no free will\n"
 			"of their own."),
 		.pokemonScale = 256,
@@ -45557,9 +45703,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"When exposed to any sort of danger that\n"
-			"endangers its life, it will sometimes\n"
-			"try to drag its enemies down with it."),
+			"When exposed to any sort of conflict\n"
+			"that endangers its life, it will\n"
+			"sometimes try to drag its enemies down\n"
+			"with it."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -46051,9 +46198,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"King of all slimes that rules over all\n"
-			"slimes. Slimes do however not posess\n"
-			"much of whims and thus does nothing."),
+			"King of all slimes, and ruler over them.\n"
+			"Slimes however do not possess much whim\n"
+			"and thus do nothing."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -46149,9 +46296,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The rarest of all Zygomites, its said to\n"
-			"be so rare hardly anyone has seen it in\n"
-			"decades."),
+			"The rarest of all Zygomites. It's said\n"
+			"to be so rare hardly anyone has seen it\n"
+			"in decades."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -46247,7 +46394,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"The spore emitted from this Zygomite is\n"
-			"poisonous  and deadly to anything with\n"
+			"poisonous and deadly to anything with\n"
 			"lungs."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -46588,7 +46735,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"CUPHOLDER"),
+			"The most powerful creature in the TzHaar\n"
+			"Fight Caves, this monster is capable of\n"
+			"attacking with all three combat styles."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -46638,7 +46787,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"CUPHOLDER"),
+			"An extremely powerful obsidian fire\n"
+			"elemental. Defeating one is the only way\n"
+			"to access the TzHaar Fight Kiln."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -46688,7 +46839,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"A creature that lives between relams.\n"
+			"A creature that lives between realms.\n"
 			"Its face confuses all."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -46786,7 +46937,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"A creature infused with essence of the\n"
-			"god Tuska."),
+			"God Tuska."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -46833,8 +46984,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"A demon found deep within the depths of\n"
-			"Kourend. It's origins are unknown."),
+			"Once a general of Zamorak, this demon\n"
+			"eventually betrayed him, living within\n"
+			"the depths of the Kourend Catacombs to\n"
+			"escape his wrath."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -46933,7 +47086,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"CUPHOLDER"),
+			"Part of the rat king Scurrius, the\n"
+			"ranged head likes to throw stinky fur\n"
+			"balls at adventures to disorientate them\n"
+			"before eating them."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -46981,7 +47137,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"CUPHOLDER"),
+			"Despite being a much smaller part of the\n"
+			"whole rat king, some believe Scurrius'\n"
+			"mage head ultimately controls it."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -47078,7 +47236,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The lazy workforce of the easter bunny.\n"
+			"The lazy workforce of the Easter Bunny.\n"
 			"Paid to paint eggs all day, they snooze\n"
 			"off easily."),
 		.pokemonScale = 256,
@@ -47127,7 +47285,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"These implings only show up at christmas\n"
+			"These implings only show up at Christmas\n"
 			"time, purely to cause mischief."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -47175,8 +47333,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"This impling cant be caught, instead it\n"
-			"tells adventurers of Puro Puro."),
+			"This impling can't be caught, instead it\n"
+			"tells adventurers of its magical home\n"
+			"plane, Puro-Puro."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -47192,7 +47351,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Impling_Wandering_Form,
 		LEARNSETS(Impling_Wandering_Form),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 1,
+		.enemyMonElevation = 8,
 	},
 
 [SPECIES_IMPLING_GHOST_FORM] =
@@ -47224,7 +47383,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"These implings pick up necrotic energy\n"
-			"to store, but players always steals it."),
+			"to store, but adventurers always steal\n"
+			"it."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -47272,7 +47432,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The undead dragon, its missing one leg."),
+			"An undead dragon missing its front leg.\n"
+			"Abandoned for not being aggressive\n"
+			"enough, it seeks to change that with its\n"
+			"icy breath."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -47372,7 +47535,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.weight = 0,
 		.description = COMPOUND_STRING(
 			"If the fox stays with the hen then it\n"
-			"eats it, if the hen stays with the sack,\n"
+			"eats it. If the hen stays with the sack,\n"
 			"it eats it. If the fox stays with the\n"
 			"sack, nothing happens."),
 		.pokemonScale = 256,
@@ -47471,8 +47634,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"A salamander that only appears in Tecu.\n"
-			"Their tails are valued."),
+			"A salamander native to the continent of\n"
+			"Varlamore. Their tails are valued."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -47519,7 +47682,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"a small critter that runs when provoked.\n"
+			"A small critter that runs when provoked.\n"
 			"It can run at great speeds."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
@@ -47617,7 +47780,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The horns on this goat absorbs heat\n"
+			"The horns on this goat absorb heat\n"
 			"easily. It basks in sunlight when it\n"
 			"rests."),
 		.pokemonScale = 256,
@@ -47810,7 +47973,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.categoryName = _("Entling"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"The joyful spawn of an ent, these appear\n"
+			"randomly to ask adventurers to prune\n"
+			"them. They stun anyone who does not\n"
+			"prune them properly."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -47910,7 +48077,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 7.7,
 		.weight = 122.5,
 		.description = COMPOUND_STRING(
-			"CUPHOLDER"),
+			"This giant Wolpertinger appears so\n"
+			"fearsome it could scare away a pack of\n"
+			"trolls. Despite this, it's scared of\n"
+			"wolves."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -47961,7 +48131,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"CUPHOLDER"),
+			"The exposed inner core of the Flesh\n"
+			"Spoiler. It is immobile, but can still\n"
+			"be extremely deadly."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48004,7 +48176,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Fleshling"),
 		.cryId = CRY_FLESH_SPOILER_SPAWNLING,
 		.natDexNum = NATIONAL_DEX_FLESH_SPOILER_SPAWNLING,
-		.categoryName = _("Stalker"),
+		.categoryName = _("Spawnling"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
@@ -48053,10 +48225,13 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Gazer"),
 		.cryId = CRY_CAUSTIC_GAZER,
 		.natDexNum = NATIONAL_DEX_CAUSTIC_GAZER,
-		.categoryName = _("Stalker"),
+		.categoryName = _("Caustic"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"The venomous spawn of the Seeker of\n"
+			"Truth, it will do whatever it takes to\n"
+			"protect its master."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48099,10 +48274,14 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Iris"),
 		.cryId = CRY_IRIS_STALKER,
 		.natDexNum = NATIONAL_DEX_IRIS_STALKER,
-		.categoryName = _("Stalker"),
+		.categoryName = _("Iris"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"A stalker that has grown fond of an\n"
+			"adventurer and joined them willingly.\n"
+			"You feel as if you are being watched\n"
+			"whenever it is nearby, though."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48145,10 +48324,14 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Book"),
 		.cryId = CRY_ANIMATED_BOOK,
 		.natDexNum = NATIONAL_DEX_ANIMATED_BOOK,
-		.categoryName = _("Book"),
+		.categoryName = _("Animated"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"They say knowledge is power, but this\n"
+			"book took that too literally and the\n"
+			"arcane words within it brought it to\n"
+			"life."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48196,10 +48379,13 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Tome"),
 		.cryId = CRY_TOME_OF_STRENGTH,
 		.natDexNum = NATIONAL_DEX_TOME_OF_STRENGTH,
-		.categoryName = _("Book"),
+		.categoryName = _("Tome"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"An ancient tome of melee secrets\n"
+			"summoned by the only known librarimancer\n"
+			"in Gielinor."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48242,10 +48428,13 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Tome"),
 		.cryId = CRY_TOME_OF_RANGED,
 		.natDexNum = NATIONAL_DEX_TOME_OF_RANGED,
-		.categoryName = _("Book"),
+		.categoryName = _("Tome"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"This ancient tome contains ranged combat\n"
+			"secrets, and is part of Lexicus' Almanac\n"
+			"Army."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48288,10 +48477,13 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Tome"),
 		.cryId = CRY_TOME_OF_MAGIC,
 		.natDexNum = NATIONAL_DEX_TOME_OF_MAGIC,
-		.categoryName = _("Book"),
+		.categoryName = _("Tome"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"An ancient tome of arcane secrets. It\n"
+			"has been enchanted by Lexicus to attack\n"
+			"anyone who dares cross him."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48334,10 +48526,14 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Icefiend"),
 		.cryId = CRY_LUMINESCENT_ICEFIEND,
 		.natDexNum = NATIONAL_DEX_LUMINESCENT_ICEFIEND,
-		.categoryName = _("Fiend"),
+		.categoryName = _("Luminescent"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"A creature of pure ice, its body\n"
+			"sparkles whenever the light hits it. It\n"
+			"likes to lure in adventurers, and then\n"
+			"crush them under falling icicles."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48383,7 +48579,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.categoryName = _("Warped  "),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"Originating from the Spirit Plane, this\n"
+			"creature has been warped by its\n"
+			"proximity to The Rift beneath\n"
+			"Daemonheim."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48429,7 +48629,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.categoryName = _("Dino"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"A slow creature hunted by adventurers in\n"
+			"Daemonheim to use their skin for ranged\n"
+			"armour."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48475,7 +48678,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.categoryName = _("Dino"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48521,7 +48725,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.categoryName = _("Dino"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48567,7 +48772,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.categoryName = _("Dino"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48613,7 +48819,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.categoryName = _("Dino"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48659,7 +48866,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.categoryName = _("Dino"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48705,7 +48913,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.categoryName = _("Dino"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48751,7 +48960,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.categoryName = _("Dino"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48797,7 +49007,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.categoryName = _("Jelly"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48849,7 +49060,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.categoryName = _("Jelly"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48893,10 +49105,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Jelly"),
 		.cryId = CRY_JELLY_TROLLWEISS_FORM,
 		.natDexNum = NATIONAL_DEX_JELLY_TROLLWEISS_FORM,
-		.categoryName = _("Jelly"),
+		.categoryName = _("Ice cube"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48940,10 +49153,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Jelly"),
 		.cryId = CRY_JELLY_VITREOUS_FORM,
 		.natDexNum = NATIONAL_DEX_JELLY_VITREOUS_FORM,
-		.categoryName = _("Jelly"),
+		.categoryName = _("Vitreous"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -48987,10 +49201,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Jelly"),
 		.cryId = CRY_JELLY_WARPED_VITREOUS_FORM,
 		.natDexNum = NATIONAL_DEX_JELLY_WARPED_VITREOUS_FORM,
-		.categoryName = _("Jelly"),
+		.categoryName = _("Vitreous"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49033,10 +49248,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Moth"),
 		.cryId = CRY_MOTH_SUNLIGHT_FORM,
 		.natDexNum = NATIONAL_DEX_MOTH_SUNLIGHT_FORM,
-		.categoryName = _("Moth"),
+		.categoryName = _("Sunlight"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49079,10 +49295,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Moth"),
 		.cryId = CRY_MOTH_MOONLIGHT_FORM,
 		.natDexNum = NATIONAL_DEX_MOTH_MOONLIGHT_FORM,
-		.categoryName = _("Moth"),
+		.categoryName = _("Moonlight"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49130,10 +49347,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("StoneJas"),
 		.cryId = CRY_STONE_OF_JAS_MEGA_FORM,
 		.natDexNum = NATIONAL_DEX_STONE_OF_JAS_MEGA_FORM,
-		.categoryName = _("Rock"),
+		.categoryName = _("Cabbage"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49180,10 +49398,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Warrior"),
 		.cryId = CRY_SPIRIT_WARRIOR,
 		.natDexNum = NATIONAL_DEX_SPIRIT_WARRIOR,
-		.categoryName = _(""),
+		.categoryName = _("Warrior"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49199,17 +49418,17 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Spirit_Warrior,
 		LEARNSETS(Spirit_Warrior),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 5,
+		.enemyMonElevation = 7,
 	},
 
 [SPECIES_SPIRIT_RANGER] =
 	{
 		.baseHP = 75,
-		.baseAttack = 95,
-		.baseDefense = 95,
-		.baseSpeed = 95,
-		.baseSpAttack = 95,
-		.baseSpDefense = 95,
+		.baseAttack = 105,
+		.baseDefense = 80,
+		.baseSpeed = 105,
+		.baseSpAttack = 105,
+		.baseSpDefense = 80,
 		.types = { TYPE_GHOST, TYPE_STEEL },
 		.catchRate = 45,
 		.expYield = 150,
@@ -49227,10 +49446,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Ranger"),
 		.cryId = CRY_SPIRIT_RANGER,
 		.natDexNum = NATIONAL_DEX_SPIRIT_RANGER,
-		.categoryName = _(""),
+		.categoryName = _("Ranger"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49246,17 +49466,17 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Spirit_Ranger,
 		LEARNSETS(Spirit_Ranger),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SPIRIT_MAGE] =
 	{
 		.baseHP = 75,
-		.baseAttack = 80,
+		.baseAttack = 70,
 		.baseDefense = 115,
 		.baseSpeed = 70,
 		.baseSpAttack = 115,
-		.baseSpDefense = 95,
+		.baseSpDefense = 105,
 		.types = { TYPE_GHOST, TYPE_STEEL },
 		.catchRate = 45,
 		.expYield = 150,
@@ -49269,15 +49489,16 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.itemCommon = ITEM_NONE,
 		.itemRare = ITEM_NONE,
 		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
-		.abilities = { ABILITY_LEVITATE, ABILITY_LIGHT_METAL, ABILITY_NONE },
+		.abilities = { ABILITY_MAGIC_BOUNCE, ABILITY_LIGHT_METAL, ABILITY_NONE },
 		.bodyColor = BODY_COLOR_BLACK,
 		.speciesName = _("Mage"),
 		.cryId = CRY_SPIRIT_MAGE,
 		.natDexNum = NATIONAL_DEX_SPIRIT_MAGE,
-		.categoryName = _(""),
+		.categoryName = _("Mage"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49320,10 +49541,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Essling"),
 		.cryId = CRY_ESSLING,
 		.natDexNum = NATIONAL_DEX_ESSLING,
-		.categoryName = _(""),
+		.categoryName = _("Essence"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49376,10 +49598,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Esshound"),
 		.cryId = CRY_ESSHOUND,
 		.natDexNum = NATIONAL_DEX_ESSHOUND,
-		.categoryName = _(""),
+		.categoryName = _("Hound"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49422,10 +49645,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Esswraith"),
 		.cryId = CRY_ESSWRAITH,
 		.natDexNum = NATIONAL_DEX_ESSWRAITH,
-		.categoryName = _(""),
+		.categoryName = _("Wraith"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49468,10 +49692,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Eagle"),
 		.cryId = CRY_HARPY_EAGLE,
 		.natDexNum = NATIONAL_DEX_HARPY_EAGLE,
-		.categoryName = _(""),
+		.categoryName = _("Harpy"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49515,10 +49740,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Reborn"),
 		.cryId = CRY_REBORN_WARRIOR,
 		.natDexNum = NATIONAL_DEX_REBORN_WARRIOR,
-		.categoryName = _(""),
+		.categoryName = _("Reborn"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49562,10 +49788,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Reborn"),
 		.cryId = CRY_REBORN_RANGER,
 		.natDexNum = NATIONAL_DEX_REBORN_RANGER,
-		.categoryName = _(""),
+		.categoryName = _("Reborn"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49609,10 +49836,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Reborn"),
 		.cryId = CRY_REBORN_MAGE,
 		.natDexNum = NATIONAL_DEX_REBORN_MAGE,
-		.categoryName = _(""),
+		.categoryName = _("Reborn"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49655,10 +49883,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Jaguar"),
 		.cryId = CRY_JAGUAR_ORANGE_FORM,
 		.natDexNum = NATIONAL_DEX_JAGUAR_ORANGE_FORM,
-		.categoryName = _(""),
+		.categoryName = _("Jaguar"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49704,10 +49933,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Jaguar"),
 		.cryId = CRY_JAGUAR_BLACK_FORM,
 		.natDexNum = NATIONAL_DEX_JAGUAR_BLACK_FORM,
-		.categoryName = _(""),
+		.categoryName = _("Jaguar"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49751,10 +49981,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Tortle"),
 		.cryId = CRY_TORTLE,
 		.natDexNum = NATIONAL_DEX_TORTLE,
-		.categoryName = _(""),
+		.categoryName = _("Shelled"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49797,10 +50028,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Cockatrice"),
 		.cryId = CRY_COCKATRICE_OSRS_FORM,
 		.natDexNum = NATIONAL_DEX_COCKATRICE_OSRS_FORM,
-		.categoryName = _(""),
+		.categoryName = _("Cockatrice"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49847,10 +50079,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Cockatrice"),
 		.cryId = CRY_COCKATHRICE,
 		.natDexNum = NATIONAL_DEX_COCKATHRICE,
-		.categoryName = _(""),
+		.categoryName = _("Cockathrice"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49894,10 +50127,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Cockatrice"),
 		.cryId = CRY_COCKATRICE_MOONLIGHT,
 		.natDexNum = NATIONAL_DEX_COCKATRICE_MOONLIGHT,
-		.categoryName = _(""),
+		.categoryName = _("Moonlight"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49941,10 +50175,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Imp"),
 		.cryId = CRY_REVENANT_IMP,
 		.natDexNum = NATIONAL_DEX_REVENANT_IMP,
-		.categoryName = _(""),
+		.categoryName = _("Revenant"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -49991,10 +50226,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Dragon"),
 		.cryId = CRY_REVENANT_DRAGON,
 		.natDexNum = NATIONAL_DEX_REVENANT_DRAGON,
-		.categoryName = _(""),
+		.categoryName = _("Revenant"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -50037,10 +50273,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Maledictus"),
 		.cryId = CRY_MALEDICTUS,
 		.natDexNum = NATIONAL_DEX_MALEDICTUS,
-		.categoryName = _(""),
+		.categoryName = _("Convicted"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -50083,10 +50320,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Kalrag"),
 		.cryId = CRY_KALRAG,
 		.natDexNum = NATIONAL_DEX_KALRAG,
-		.categoryName = _(""),
+		.categoryName = _("Blessed"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -50129,10 +50367,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Animawhal"),
 		.cryId = CRY_ANIMAWHAL,
 		.natDexNum = NATIONAL_DEX_ANIMAWHAL,
-		.categoryName = _(""),
+		.categoryName = _("Puddle"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -50148,7 +50387,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Animawhal,
 		LEARNSETS(Animawhal),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 0,
+		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 50, SPECIES_ANIMASAURUS}
 		),
@@ -50178,10 +50417,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Animasaur"),
 		.cryId = CRY_ANIMASAURUS,
 		.natDexNum = NATIONAL_DEX_ANIMASAURUS,
-		.categoryName = _(""),
+		.categoryName = _("Abomination"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -50197,7 +50437,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Animasaurus,
 		LEARNSETS(Animasaurus),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 0,
+		.enemyMonElevation = 1,
 	},
 
 [SPECIES_SEA_TROLL_QUEEN] =
@@ -50225,10 +50465,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Sea Troll"),
 		.cryId = CRY_SEA_TROLL_QUEEN,
 		.natDexNum = NATIONAL_DEX_SEA_TROLL_QUEEN,
-		.categoryName = _(""),
+		.categoryName = _("Queen"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -50271,10 +50512,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Yak"),
 		.cryId = CRY_YAK_LUMBER_FORM,
 		.natDexNum = NATIONAL_DEX_YAK_LUMBER_FORM,
-		.categoryName = _(""),
+		.categoryName = _("Lumber"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -50321,10 +50563,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Cabbage"),
 		.cryId = CRY_CABBAGE_SHATTERED_WORLD_FORM,
 		.natDexNum = NATIONAL_DEX_CABBAGE_SHATTERED_WORLD_FORM,
-		.categoryName = _(""),
+		.categoryName = _("Cabbage"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -50368,10 +50611,13 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Vulture"),
 		.cryId = CRY_VULTURE_BEARDED_FORM,
 		.natDexNum = NATIONAL_DEX_VULTURE_BEARDED_FORM,
-		.categoryName = _(""),
+		.categoryName = _("Lammergeier"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"They pick up bones and crush them from\n"
+			"tall heights. Their diet is almost\n"
+			"entirely bones."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -50415,10 +50661,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Kryket Bat"),
 		.cryId = CRY_KRYKET_BAT,
 		.natDexNum = NATIONAL_DEX_KRYKET_BAT,
-		.categoryName = _(""),
+		.categoryName = _("Kryket"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"The most perfect and bestest bat in the\n"
+			"world according to everyone."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -50461,10 +50709,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Har-Aken"),
 		.cryId = CRY_HAR_AKEN,
 		.natDexNum = NATIONAL_DEX_HAR_AKEN,
-		.categoryName = _("Cupholder"),
+		.categoryName = _("Tzhaar"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -50507,10 +50756,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Tentacle"),
 		.cryId = CRY_HAR_AKEN_TENTACLE,
 		.natDexNum = NATIONAL_DEX_HAR_AKEN_TENTACLE,
-		.categoryName = _("Cupholder"),
+		.categoryName = _("Tzhaar"),
 		.height = 0,
 		.weight = 0,
-		.description = COMPOUND_STRING(),
+		.description = COMPOUND_STRING(
+			"cupholder"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -50527,6 +50777,294 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Har_Aken_Tentacle),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+	},
+
+[SPECIES_SPIRIT_FIGHTER] =
+	{
+		.baseHP = 85,
+		.baseAttack = 140,
+		.baseDefense = 115,
+		.baseSpeed = 45,
+		.baseSpAttack = 80,
+		.baseSpDefense = 85,
+		.types = { TYPE_GHOST, TYPE_STEEL },
+		.catchRate = 45,
+		.expYield = 150,
+		.evYield_Attack = 1,
+		.evYield_Defense = 2,
+		.genderRatio = MON_GENDERLESS,
+		.eggCycles = 20,
+		.friendship = 70,
+		.growthRate = GROWTH_MEDIUM_FAST,
+		.itemCommon = ITEM_NONE,
+		.itemRare = ITEM_NONE,
+		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
+		.abilities = { ABILITY_DEFIANT, ABILITY_HEAVY_METAL, ABILITY_NONE },
+		.bodyColor = BODY_COLOR_BLACK,
+		.speciesName = _(""),
+		.cryId = CRY_SPIRIT_FIGHTER,
+		.natDexNum = NATIONAL_DEX_SPIRIT_FIGHTER,
+		.categoryName = _("Spirit"),
+		.height = 0,
+		.weight = 0,
+		.description = COMPOUND_STRING(
+			"cupholder"),
+		.pokemonScale = 256,
+		.pokemonOffset = 0,
+		.trainerScale = 256,
+		.trainerOffset = 0,
+		FRONT_PIC(Spirit_Fighter, 64, 64),
+		.frontAnimFrames = sAnims_Spirit_Fighter,
+		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+		BACK_PIC(Spirit_Fighter, 64, 64),
+		.backPicYOffset = 0,
+		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+		PALETTES(Spirit_Fighter),
+		ICON(Spirit_Fighter, 0),
+		.footprint = gMonFootprint_Spirit_Fighter,
+		LEARNSETS(Spirit_Fighter),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
+	},
+
+[SPECIES_SPIRIT_ARCHER] =
+	{
+		.baseHP = 75,
+		.baseAttack = 95,
+		.baseDefense = 95,
+		.baseSpeed = 95,
+		.baseSpAttack = 95,
+		.baseSpDefense = 95,
+		.types = { TYPE_GHOST, TYPE_STEEL },
+		.catchRate = 45,
+		.expYield = 150,
+		.evYield_Defense = 2,
+		.evYield_Speed = 1,
+		.genderRatio = MON_GENDERLESS,
+		.eggCycles = 20,
+		.friendship = 70,
+		.growthRate = GROWTH_MEDIUM_FAST,
+		.itemCommon = ITEM_NONE,
+		.itemRare = ITEM_NONE,
+		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
+		.abilities = { ABILITY_SKILL_LINK, ABILITY_BATTLE_ARMOR, ABILITY_NONE },
+		.bodyColor = BODY_COLOR_BLACK,
+		.speciesName = _(""),
+		.cryId = CRY_SPIRIT_ARCHER,
+		.natDexNum = NATIONAL_DEX_SPIRIT_ARCHER,
+		.categoryName = _("Spirit"),
+		.height = 0,
+		.weight = 0,
+		.description = COMPOUND_STRING(
+			"cupholder"),
+		.pokemonScale = 256,
+		.pokemonOffset = 0,
+		.trainerScale = 256,
+		.trainerOffset = 0,
+		FRONT_PIC(Spirit_Archer, 64, 64),
+		.frontAnimFrames = sAnims_Spirit_Archer,
+		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+		BACK_PIC(Spirit_Archer, 64, 64),
+		.backPicYOffset = 0,
+		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+		PALETTES(Spirit_Archer),
+		ICON(Spirit_Archer, 0),
+		.footprint = gMonFootprint_Spirit_Archer,
+		LEARNSETS(Spirit_Archer),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
+	},
+
+[SPECIES_SPIRIT_MYSTIC] =
+	{
+		.baseHP = 75,
+		.baseAttack = 80,
+		.baseDefense = 95,
+		.baseSpeed = 70,
+		.baseSpAttack = 115,
+		.baseSpDefense = 115,
+		.types = { TYPE_GHOST, TYPE_STEEL },
+		.catchRate = 45,
+		.expYield = 150,
+		.evYield_Defense = 2,
+		.evYield_SpAttack = 1,
+		.genderRatio = MON_GENDERLESS,
+		.eggCycles = 20,
+		.friendship = 70,
+		.growthRate = GROWTH_MEDIUM_FAST,
+		.itemCommon = ITEM_NONE,
+		.itemRare = ITEM_NONE,
+		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
+		.abilities = { ABILITY_MAGICIAN, ABILITY_LIGHT_METAL, ABILITY_NONE },
+		.bodyColor = BODY_COLOR_BLACK,
+		.speciesName = _(""),
+		.cryId = CRY_SPIRIT_MYSTIC,
+		.natDexNum = NATIONAL_DEX_SPIRIT_MYSTIC,
+		.categoryName = _("Spirit"),
+		.height = 0,
+		.weight = 0,
+		.description = COMPOUND_STRING(
+			"cupholder"),
+		.pokemonScale = 256,
+		.pokemonOffset = 0,
+		.trainerScale = 256,
+		.trainerOffset = 0,
+		FRONT_PIC(Spirit_Mystic, 64, 64),
+		.frontAnimFrames = sAnims_Spirit_Mystic,
+		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+		BACK_PIC(Spirit_Mystic, 64, 64),
+		.backPicYOffset = 0,
+		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+		PALETTES(Spirit_Mystic),
+		ICON(Spirit_Mystic, 0),
+		.footprint = gMonFootprint_Spirit_Mystic,
+		LEARNSETS(Spirit_Mystic),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 4,
+	},
+
+[SPECIES_SPIRIT_KNIGHT] =
+	{
+		.baseHP = 85,
+		.baseAttack = 130,
+		.baseDefense = 115,
+		.baseSpeed = 35,
+		.baseSpAttack = 70,
+		.baseSpDefense = 115,
+		.types = { TYPE_GHOST, TYPE_STEEL },
+		.catchRate = 45,
+		.expYield = 150,
+		.evYield_Attack = 1,
+		.evYield_Defense = 2,
+		.genderRatio = MON_GENDERLESS,
+		.eggCycles = 20,
+		.friendship = 70,
+		.growthRate = GROWTH_MEDIUM_FAST,
+		.itemCommon = ITEM_NONE,
+		.itemRare = ITEM_NONE,
+		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
+		.abilities = { ABILITY_SHADOW_SHIELD, ABILITY_HEAVY_METAL, ABILITY_NONE },
+		.bodyColor = BODY_COLOR_BLACK,
+		.speciesName = _(""),
+		.cryId = CRY_SPIRIT_KNIGHT,
+		.natDexNum = NATIONAL_DEX_SPIRIT_KNIGHT,
+		.categoryName = _("Spirit"),
+		.height = 0,
+		.weight = 0,
+		.description = COMPOUND_STRING(
+			"cupholder"),
+		.pokemonScale = 256,
+		.pokemonOffset = 0,
+		.trainerScale = 256,
+		.trainerOffset = 0,
+		FRONT_PIC(Spirit_Knight, 64, 64),
+		.frontAnimFrames = sAnims_Spirit_Knight,
+		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+		BACK_PIC(Spirit_Knight, 64, 64),
+		.backPicYOffset = 0,
+		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+		PALETTES(Spirit_Knight),
+		ICON(Spirit_Knight, 0),
+		.footprint = gMonFootprint_Spirit_Knight,
+		LEARNSETS(Spirit_Knight),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
+	},
+
+[SPECIES_SPIRIT_SCOUT] =
+	{
+		.baseHP = 65,
+		.baseAttack = 100,
+		.baseDefense = 85,
+		.baseSpeed = 115,
+		.baseSpAttack = 100,
+		.baseSpDefense = 85,
+		.types = { TYPE_GHOST, TYPE_STEEL },
+		.catchRate = 45,
+		.expYield = 150,
+		.evYield_Defense = 2,
+		.evYield_Speed = 1,
+		.genderRatio = MON_GENDERLESS,
+		.eggCycles = 20,
+		.friendship = 70,
+		.growthRate = GROWTH_MEDIUM_FAST,
+		.itemCommon = ITEM_NONE,
+		.itemRare = ITEM_NONE,
+		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
+		.abilities = { ABILITY_SPEED_BOOST, ABILITY_BATTLE_ARMOR, ABILITY_NONE },
+		.bodyColor = BODY_COLOR_BLACK,
+		.speciesName = _(""),
+		.cryId = CRY_SPIRIT_SCOUT,
+		.natDexNum = NATIONAL_DEX_SPIRIT_SCOUT,
+		.categoryName = _("Spirit"),
+		.height = 0,
+		.weight = 0,
+		.description = COMPOUND_STRING(
+			"cupholder"),
+		.pokemonScale = 256,
+		.pokemonOffset = 0,
+		.trainerScale = 256,
+		.trainerOffset = 0,
+		FRONT_PIC(Spirit_Scout, 64, 64),
+		.frontAnimFrames = sAnims_Spirit_Scout,
+		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+		BACK_PIC(Spirit_Scout, 64, 64),
+		.backPicYOffset = 0,
+		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+		PALETTES(Spirit_Scout),
+		ICON(Spirit_Scout, 0),
+		.footprint = gMonFootprint_Spirit_Scout,
+		LEARNSETS(Spirit_Scout),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 0,
+	},
+
+[SPECIES_SPIRIT_WARMAGE] =
+	{
+		.baseHP = 65,
+		.baseAttack = 85,
+		.baseDefense = 90,
+		.baseSpeed = 95,
+		.baseSpAttack = 115,
+		.baseSpDefense = 100,
+		.types = { TYPE_GHOST, TYPE_STEEL },
+		.catchRate = 45,
+		.expYield = 150,
+		.evYield_Defense = 2,
+		.evYield_SpAttack = 1,
+		.genderRatio = MON_GENDERLESS,
+		.eggCycles = 20,
+		.friendship = 70,
+		.growthRate = GROWTH_MEDIUM_FAST,
+		.itemCommon = ITEM_NONE,
+		.itemRare = ITEM_NONE,
+		.eggGroups = { EGG_GROUP_MINERAL, EGG_GROUP_MINERAL },
+		.abilities = { ABILITY_LEVITATE, ABILITY_LIGHT_METAL, ABILITY_NONE },
+		.bodyColor = BODY_COLOR_BLACK,
+		.speciesName = _(""),
+		.cryId = CRY_SPIRIT_WARMAGE,
+		.natDexNum = NATIONAL_DEX_SPIRIT_WARMAGE,
+		.categoryName = _("Spirit"),
+		.height = 0,
+		.weight = 0,
+		.description = COMPOUND_STRING(
+			"cupholder"),
+		.pokemonScale = 256,
+		.pokemonOffset = 0,
+		.trainerScale = 256,
+		.trainerOffset = 0,
+		FRONT_PIC(Spirit_Warmage, 64, 64),
+		.frontAnimFrames = sAnims_Spirit_Warmage,
+		.frontAnimId = ANIM_V_JUMPS_H_JUMPS,
+		BACK_PIC(Spirit_Warmage, 64, 64),
+		.backPicYOffset = 0,
+		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
+		PALETTES(Spirit_Warmage),
+		ICON(Spirit_Warmage, 0),
+		.footprint = gMonFootprint_Spirit_Warmage,
+		LEARNSETS(Spirit_Warmage),
+		.frontPicYOffset = 0,
+		.enemyMonElevation = 6,
 	},
 
 

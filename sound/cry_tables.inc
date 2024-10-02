@@ -5808,6 +5808,13 @@ cry Cry_Vulture_Bearded_Form
 cry Cry_Kryket_Bat
 cry Cry_Har_Aken
 cry Cry_Har_Aken_Tentacle
+cry Cry_Spirit_Warmage
+cry Cry_Spirit_Knight
+cry Cry_Spirit_Scout
+cry Cry_Spirit_Mystic
+cry Cry_Spirit_Archer
+cry Cry_Spirit_Fighter
+
 
 cry_reverse Cry_Guthling
 cry_reverse Cry_Guthbird
@@ -6811,3 +6818,10 @@ cry_reverse Cry_Vulture_Bearded_Form
 cry_reverse Cry_Kryket_Bat
 cry_reverse Cry_Har_Aken
 cry_reverse Cry_Har_Aken_Tentacle
+cry_reverse Cry_Spirit_Fighter
+cry_reverse Cry_Spirit_Archer
+cry_reverse Cry_Spirit_Mystic
+cry_reverse Cry_Spirit_Scout
+cry_reverse Cry_Spirit_Knight
+cry_reverse Cry_Spirit_Warmage
+

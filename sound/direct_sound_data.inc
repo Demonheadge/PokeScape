@@ -10116,6 +10116,31 @@ Cry_Har_Aken::
 	.align 2
 Cry_Har_Aken_Tentacle::
 	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+		
+	.align 2
+Cry_Spirit_Fighter::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+		
+	.align 2
+Cry_Spirit_Archer::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+		
+	.align 2
+Cry_Spirit_Scout::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+		
+	.align 2
+Cry_Spirit_Mystic::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+		
+	.align 2
+Cry_Spirit_Knight::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+		
+	.align 2
+Cry_Spirit_Warmage::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+	
 
 
 

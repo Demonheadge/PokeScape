@@ -1415,6 +1415,12 @@ const u8 *const gMonFootprintTable[] =
     [SPECIES_KRYKET_BAT] = gMonFootprint_Kryket_Bat,
     [SPECIES_HAR_AKEN] = gMonFootprint_Har_Aken,
     [SPECIES_HAR_AKEN_TENTACLE] = gMonFootprint_Har_Aken_Tentacle,
+    [SPECIES_SPIRIT_FIGHTER] = gMonFootprint_Spirit_Fighter,
+    [SPECIES_SPIRIT_ARCHER] = gMonFootprint_Spirit_Archer,
+    [SPECIES_SPIRIT_MYSTIC] = gMonFootprint_Spirit_Mystic,
+    [SPECIES_SPIRIT_KNIGHT] = gMonFootprint_Spirit_Knight,
+    [SPECIES_SPIRIT_SCOUT] = gMonFootprint_Spirit_Scout,
+    [SPECIES_SPIRIT_WARMAGE] = gMonFootprint_Spirit_Warmage,
 
 
 

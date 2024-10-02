@@ -17926,4 +17926,45 @@ const u32 gMonShinyPalette_Har_Aken_Tentacle[] = INCBIN_U32("graphics/pokescape_
 const u8 gMonIcon_Har_Aken_Tentacle[] = INCBIN_U8("graphics/pokescape_monsters/Har_Aken_Tentacle/icon.4bpp");
 const u8 gMonFootprint_Har_Aken_Tentacle[] = INCBIN_U8("graphics/pokescape_monsters/Har_Aken_Tentacle/footprint.1bpp");
 
+const u32 gMonFrontPic_Spirit_Fighter[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Fighter/anim_front.4bpp.lz");
+const u32 gMonPalette_Spirit_Fighter[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Fighter/normal.gbapal.lz");
+const u32 gMonBackPic_Spirit_Fighter[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Fighter/back.4bpp.lz");
+const u32 gMonShinyPalette_Spirit_Fighter[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Fighter/shiny.gbapal.lz");
+const u8 gMonIcon_Spirit_Fighter[] = INCBIN_U8("graphics/pokescape_monsters/Spirit_Fighter/icon.4bpp");
+const u8 gMonFootprint_Spirit_Fighter[] = INCBIN_U8("graphics/pokescape_monsters/Spirit_Fighter/footprint.1bpp");
+
+const u32 gMonFrontPic_Spirit_Archer[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Archer/front.4bpp.lz");
+const u32 gMonPalette_Spirit_Archer[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Archer/normal.gbapal.lz");
+const u32 gMonBackPic_Spirit_Archer[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Archer/back.4bpp.lz");
+const u32 gMonShinyPalette_Spirit_Archer[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Archer/shiny.gbapal.lz");
+const u8 gMonIcon_Spirit_Archer[] = INCBIN_U8("graphics/pokescape_monsters/Spirit_Archer/icon.4bpp");
+const u8 gMonFootprint_Spirit_Archer[] = INCBIN_U8("graphics/pokescape_monsters/Spirit_Archer/footprint.1bpp");
+
+const u32 gMonFrontPic_Spirit_Mystic[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Mystic/front.4bpp.lz");
+const u32 gMonPalette_Spirit_Mystic[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Mystic/normal.gbapal.lz");
+const u32 gMonBackPic_Spirit_Mystic[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Mystic/back.4bpp.lz");
+const u32 gMonShinyPalette_Spirit_Mystic[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Mystic/shiny.gbapal.lz");
+const u8 gMonIcon_Spirit_Mystic[] = INCBIN_U8("graphics/pokescape_monsters/Spirit_Mystic/icon.4bpp");
+const u8 gMonFootprint_Spirit_Mystic[] = INCBIN_U8("graphics/pokescape_monsters/Spirit_Mystic/footprint.1bpp");
+
+const u32 gMonFrontPic_Spirit_Knight[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Knight/front.4bpp.lz");
+const u32 gMonPalette_Spirit_Knight[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Knight/normal.gbapal.lz");
+const u32 gMonBackPic_Spirit_Knight[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Knight/back.4bpp.lz");
+const u32 gMonShinyPalette_Spirit_Knight[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Knight/shiny.gbapal.lz");
+const u8 gMonIcon_Spirit_Knight[] = INCBIN_U8("graphics/pokescape_monsters/Spirit_Knight/icon.4bpp");
+const u8 gMonFootprint_Spirit_Knight[] = INCBIN_U8("graphics/pokescape_monsters/Spirit_Knight/footprint.1bpp");
+
+const u32 gMonFrontPic_Spirit_Scout[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Scout/front.4bpp.lz");
+const u32 gMonPalette_Spirit_Scout[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Scout/normal.gbapal.lz");
+const u32 gMonBackPic_Spirit_Scout[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Scout/back.4bpp.lz");
+const u32 gMonShinyPalette_Spirit_Scout[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Scout/shiny.gbapal.lz");
+const u8 gMonIcon_Spirit_Scout[] = INCBIN_U8("graphics/pokescape_monsters/Spirit_Scout/icon.4bpp");
+const u8 gMonFootprint_Spirit_Scout[] = INCBIN_U8("graphics/pokescape_monsters/Spirit_Scout/footprint.1bpp");
+
+const u32 gMonFrontPic_Spirit_Warmage[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Warmage/front.4bpp.lz");
+const u32 gMonPalette_Spirit_Warmage[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Warmage/normal.gbapal.lz");
+const u32 gMonBackPic_Spirit_Warmage[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Warmage/back.4bpp.lz");
+const u32 gMonShinyPalette_Spirit_Warmage[] = INCBIN_U32("graphics/pokescape_monsters/Spirit_Warmage/shiny.gbapal.lz");
+const u8 gMonIcon_Spirit_Warmage[] = INCBIN_U8("graphics/pokescape_monsters/Spirit_Warmage/icon.4bpp");
+const u8 gMonFootprint_Spirit_Warmage[] = INCBIN_U8("graphics/pokescape_monsters/Spirit_Warmage/footprint.1bpp");
 //POKESCAPE END
