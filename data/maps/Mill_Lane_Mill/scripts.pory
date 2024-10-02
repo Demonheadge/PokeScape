@@ -70,7 +70,7 @@ script GNOME_MILL_LANE_MILL{
     lock
     faceplayer
     namebox ("Avlafrim")
-    msgbox(format("Have you ever wish to fly of to the faroff locations of Pokescape?\pMeet new challenges and Monsters?\pHere is where I put my gnomecopter, but it needs repair.\pI need T.R.A.S.H. and then I can bring you to some places where I can land with my copter."))
+    msgbox(format("Have you ever wish to fly off to the faroff locations of Pokescape?\pMeet new challenges and Monsters?\pHere is where I put my gnomecopter, but it needs repair.\pI need T.R.A.S.H. and then I can bring you to some places where I can land with my copter."))
     msgbox(format("T.R.A.S.H. is the next generation of lightweight ropes.\pTriple Redundant Aero Super Hawser.\pHowever I am unsure where to get these.\pI am unused to Human Lands and as my Terrorbird broke a leg going back to the Grand Tree would take me forever!\pContinue your adventure and you might find T.R.A.S.H. on your path."))
     hidenamebox
     release

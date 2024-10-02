@@ -99,7 +99,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_F",
+      "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_M",
       "x": 30,
       "y": 22,
       "elevation": 0,
@@ -424,7 +424,7 @@
       "flag": "FLAG_TEMP_4"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_F",
+      "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_M",
       "x": 26,
       "y": 18,
       "elevation": 0,

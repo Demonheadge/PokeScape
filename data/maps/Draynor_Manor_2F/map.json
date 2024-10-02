@@ -76,8 +76,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ITEM_DRAYNORMANOR_TM43_PSYCHO_CUT",
-      "flag": "FLAG_ITEM_DRAYNORMANOR_TM43_PSYCHO_CUT"
+      "script": "ITEM_DRAYNORMANOR_TM55_HEX",
+      "flag": "FLAG_ITEM_DRAYNORMANOR_TM55_HEX"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SKELETON_1",

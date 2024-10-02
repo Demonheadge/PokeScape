@@ -684,7 +684,7 @@ script NPC_FALADORCASTLE_GUARD_1
 	lock
 	faceplayer
     namebox("Guard")
-	msgbox(format("Its a steep learning curve, but one day I will become a White Knight."))
+	msgbox(format("It's a steep learning curve, but one day I will become a White Knight."))
     closemessage
     hidenamebox
 	release
@@ -718,7 +718,7 @@ script NPC_FALADORCASTLE_WHITEKNIGHT_8
 script NPC_FALADORCASTLE_WHITEKNIGHT_9
 {
     trainerbattle_single(TRAINER_FALADOR_GYM_6, format("Looks like someone is a little lost, don't worry though I'll put you to rest."),format("Wow, I got wiped!\pAt least I will respawn here.") )
-    namebox("Sir ???")
+    namebox("Sir Atcha")
     if (!flag(FLAG_BADGE02_GET)) {
     msgbox(format("If you are tired of searching for Sir Amik Varze, might I suggest taking a rest?"))
     }
@@ -849,10 +849,10 @@ script BOOK_FALADORCASTLE_SIRVYVIN
 script BOOK_CRANDOR
 {
 	lock
-	msgbox(format("It's a book about the Isle of Crandor.\pRead it?"), MSGBOX_YESNO)
+	msgbox(format("It's a book about the Isle of Crandor.\pIt looks quite long.\pRead it?"), MSGBOX_YESNO)
     if (var(VAR_RESULT))
     { 
-        msgbox(format("Nothing interesting happens…"))
+        msgbox(format("Crandor was known throughout Gielinor for developing its own school of magic and possessing one of the largest libraries in the world.\pMost of the city was built on piers which extended out onto the sea, with a large market located in the central cove.\pDue to their naval prowess, being able to carefully navigate the dangerous reefs that surrounded the island, the inhabitants were able to sail to various ports around Gielinor and trade with Asgarnians, Misthalinians, gnomes, and even the Fremennik.\pDue to this, for some time it was considered to be an influential city-state with political importance rivalling that of Varrock and Falador.\pMany Crandorians even earned the right to be members of the Champions’ Guild.\pUnfortunately, one day one of their adventurers went too far and entered the volcano,\pdiscovering the lair of a ferocious dragon named Elvarg.\pEnraged that she had been awoken from her slumber, Elvarg fought the adventurer.\pThe dragon won the fight,\pbut it is said that the adventurer managed to leave her with a scar down her side before he perished.\pElvarg then emerged from the volcano setting the entirety of the island ablaze in a fit of fiery wrath.\pSeveral Crandorians fled to the shores near Rimmington and set up a camp there, but Elvarg pursued them and scorched that too.\pIt is said that only three mages survived the onslaught; Lozar, Thalzar, and Melzar.\pThankfully, Elvarg has never been seen on the mainland again\pthough it is thought that she continues to be active around Crandor.\pMany sailors will not go anywhere near it for fear of their ships being attacked."))
     }
     closemessage
     hidenamebox
