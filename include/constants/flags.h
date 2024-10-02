@@ -1112,7 +1112,7 @@
 #define FLAG_ITEM_DRAYNORMANOR_RUBBERTUBE                           0x418
 #define FLAG_ITEM_ROUTE12_EGG                                       0x419
 #define FLAG_ITEM_ROUTE12_PRAYER_POTION                             0x41A
-#define FLAG_ITEM_DRAYNORMANOR_TM43_PSYCHO_CUT                      0x41B
+#define FLAG_ITEM_DRAYNORMANOR_TM55_HEX                             0x41B
 #define FLAG_ITEM_ROUTE1_CHOC_SUNDAY                                0x41C
 #define FLAG_ITEM_ROUTE10_TM38                                      0x41D
 #define FLAG_ITEM_ROUTE10_PINEAPPLE_PUNCH                           0x41E
