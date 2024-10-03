@@ -14,7 +14,7 @@ Lumbridge_House_Starter2_MapScripts_MAP_SCRIPT_ON_LOAD_1:
 
 Lumbridge_House_Starter2_MapScripts_MAP_SCRIPT_ON_LOAD_2:
 	setvar VAR_POKESCAPE_GAMEMODE_STATE, 0
-	addvar VAR_GAMEMODE_LEVEL_CAP, 16
+	call GAMEMODE_set_inital_level_cap
 	goto Lumbridge_House_Starter2_MapScripts_MAP_SCRIPT_ON_LOAD_1
 
 Lumbridge_House_Starter2_MapScripts_MAP_SCRIPT_ON_LOAD_4:
@@ -24,6 +24,17 @@ Lumbridge_House_Starter2_MapScripts_MAP_SCRIPT_ON_LOAD_4:
 Lumbridge_House_Starter2_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_TEMP_0, 0, GAMEMODE_CHECK_NEWGAME_ITEMS
 	.2byte 0
+
+
+GAMEMODE_set_inital_level_cap::
+	compare VAR_GAMEMODE_LEVEL_CAP, 0
+	goto_if_eq GAMEMODE_set_inital_level_cap_2
+GAMEMODE_set_inital_level_cap_1:
+	return
+
+GAMEMODE_set_inital_level_cap_2:
+	addvar VAR_GAMEMODE_LEVEL_CAP, 16
+	goto GAMEMODE_set_inital_level_cap_1
 
 
 GAMEMODE_CHECK_NEWGAME_ITEMS::

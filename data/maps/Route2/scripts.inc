@@ -32,7 +32,6 @@ STORYMODE_STATE_ROUTE2::
 STORYMODE_STATE_ROUTE2_1:
 	removeobject 14
 	setflag FLAG_TEMP_1F
-	setvar VAR_WISE_OLD_MAN_RIVAL, 1
 	return
 
 

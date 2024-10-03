@@ -29,6 +29,7 @@ LIGHTHOUSE_2F_STATE_2:
 	setobjectmovementtype 6, MOVEMENT_TYPE_JOG_IN_PLACE_RIGHT
 	setobjectmovementtype 1, MOVEMENT_TYPE_JOG_IN_PLACE_RIGHT
 	setobjectxyperm 1, 13, 2
+	playbgm MUS_PS_ENCOUNTER_HAM, TRUE
 	special Overworld_PlaySpecialMapMusic
 	goto LIGHTHOUSE_2F_STATE_1
 

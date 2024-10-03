@@ -243,9 +243,18 @@ script HIDDEN_GROTTO_LEVELS {
         addvar(VAR_TEMP_E, 5)          
     }
     if (flag(FLAG_BADGE01_GET)) { //10 - 20
-        random(10) 
-        copyvar(VAR_TEMP_E, VAR_RESULT)
-        addvar(VAR_TEMP_E, 10)           
+        specialvar (VAR_RESULT, GetCurrentMap)
+        if (var(VAR_RESULT) == MAP_LUMBRIDGE_SWAMP_CAVES){ //8 - 13
+            random(5) 
+            copyvar(VAR_TEMP_E, VAR_RESULT)
+            addvar(VAR_TEMP_E, 8) 
+        }
+        else {
+            random(10) 
+            copyvar(VAR_TEMP_E, VAR_RESULT)
+            addvar(VAR_TEMP_E, 10) 
+        }
+                  
     }
     if (flag(FLAG_BADGE02_GET)) { //15 - 25
         random(10) 

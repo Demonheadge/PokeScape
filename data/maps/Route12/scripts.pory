@@ -457,6 +457,7 @@ script BROKEN_DOOR
 script ENCOUNTER_COW
 {
 	lock
+	faceplayer
     namebox ("Cow")
     playmoncry(SPECIES_MILTANK, 0)
 	msgbox(format("MOOOOOOOO!!"))

@@ -64,7 +64,7 @@ script Script_Maggie_1
     	end
 	}
 	msgbox(format("I hope you prepared chaself!"))
-	trainerbattle_no_intro(TRAINER_MAGGIE,format("Sweet, sweet victory."))
+	trainerbattle_no_intro(TRAINER_MAGGIE,format("What?! How couldcha!"))
 	msgbox(format("That was quite amusing don'tcha know.\pI have had far too many sweets, here."))
 	hidenamebox
 	giveitem (ITEM_PURPLE_SWEETS, 1)

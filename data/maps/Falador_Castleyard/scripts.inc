@@ -1375,7 +1375,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_6_Text_0:
 	.string "But it is even harder navigating it.$"
 
 NPC_FALADORCASTLE_GUARD_1_Text_0:
-	.string "Its a steep learning curve, but one day\n"
+	.string "It's a steep learning curve, but one day\n"
 	.string "I will become a White Knight.$"
 
 NPC_FALADORCASTLE_WHITEKNIGHT_7_Text_0:
@@ -1395,7 +1395,7 @@ NPC_FALADORCASTLE_WHITEKNIGHT_9_Text_1:
 	.string "At least I will respawn here.$"
 
 NPC_FALADORCASTLE_WHITEKNIGHT_9_Text_2:
-	.string "Sir ???$"
+	.string "Sir Atcha$"
 
 NPC_FALADORCASTLE_WHITEKNIGHT_9_Text_3:
 	.string "If you are tired of searching for Sir\n"
@@ -1494,10 +1494,60 @@ BOOK_FALADORCASTLE_SIRVYVIN_Text_0:
 
 BOOK_CRANDOR_Text_0:
 	.string "It's a book about the Isle of Crandor.\p"
+	.string "It looks quite long.\p"
 	.string "Read it?$"
 
 BOOK_CRANDOR_Text_1:
-	.string "Nothing interesting happens…$"
+	.string "Crandor was known throughout Gielinor\n"
+	.string "for developing its own school of magic\l"
+	.string "and possessing one of the largest\l"
+	.string "libraries in the world.\p"
+	.string "Most of the city was built on piers\n"
+	.string "which extended out onto the sea, with a\l"
+	.string "large market located in the central\l"
+	.string "cove.\p"
+	.string "Due to their naval prowess, being able\n"
+	.string "to carefully navigate the dangerous\l"
+	.string "reefs that surrounded the island, the\l"
+	.string "inhabitants were able to sail to various\l"
+	.string "ports around Gielinor and trade with\l"
+	.string "Asgarnians, Misthalinians, gnomes, and\l"
+	.string "even the Fremennik.\p"
+	.string "Due to this, for some time it was\n"
+	.string "considered to be an influential\l"
+	.string "city-state with political importance\l"
+	.string "rivalling that of Varrock and Falador.\p"
+	.string "Many Crandorians even earned the right\n"
+	.string "to be members of the Champions’ Guild.\p"
+	.string "Unfortunately, one day one of their\n"
+	.string "adventurers went too far and entered\l"
+	.string "the volcano,\p"
+	.string "discovering the lair of a ferocious\n"
+	.string "dragon named Elvarg.\p"
+	.string "Enraged that she had been awoken from\n"
+	.string "her slumber, Elvarg fought the\l"
+	.string "adventurer.\p"
+	.string "The dragon won the fight,\p"
+	.string "but it is said that the adventurer\n"
+	.string "managed to leave her with a scar down\l"
+	.string "her side before he perished.\p"
+	.string "Elvarg then emerged from the volcano\n"
+	.string "setting the entirety of the island\l"
+	.string "ablaze in a fit of fiery wrath.\p"
+	.string "Several Crandorians fled to the shores\n"
+	.string "near Rimmington and set up a camp\l"
+	.string "there, but Elvarg pursued them and\l"
+	.string "scorched that too.\p"
+	.string "It is said that only three mages\n"
+	.string "survived the onslaught; Lozar, Thalzar,\l"
+	.string "and Melzar.\p"
+	.string "Thankfully, Elvarg has never been seen\n"
+	.string "on the mainland again\p"
+	.string "though it is thought that she\n"
+	.string "continues to be active around Crandor.\p"
+	.string "Many sailors will not go anywhere near\n"
+	.string "it for fear of their ships being\l"
+	.string "attacked.$"
 
 NPC_FALADORCASTLE_COOK_Text_0:
 	.string "Cook$"

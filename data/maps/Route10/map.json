@@ -231,14 +231,14 @@
       "x": 12,
       "y": 35,
       "elevation": 0,
-      "weather": "COORD_EVENT_WEATHER_FOG_DIAGONAL"
+      "weather": "COORD_EVENT_WEATHER_SHADE"
     },
     {
       "type": "weather",
       "x": 11,
       "y": 35,
       "elevation": 0,
-      "weather": "COORD_EVENT_WEATHER_FOG_DIAGONAL"
+      "weather": "COORD_EVENT_WEATHER_SHADE"
     },
     {
       "type": "weather",
@@ -259,14 +259,14 @@
       "x": 8,
       "y": 27,
       "elevation": 0,
-      "weather": "COORD_EVENT_WEATHER_FOG_DIAGONAL"
+      "weather": "COORD_EVENT_WEATHER_SHADE"
     },
     {
       "type": "weather",
       "x": 9,
       "y": 27,
       "elevation": 0,
-      "weather": "COORD_EVENT_WEATHER_FOG_DIAGONAL"
+      "weather": "COORD_EVENT_WEATHER_SHADE"
     },
     {
       "type": "weather",
@@ -349,5 +349,5 @@
       "script": "ROUTE10_Gravestone_5"
     }
   ],
-  "has_night_table": false
+  "has_night_table": true
 }

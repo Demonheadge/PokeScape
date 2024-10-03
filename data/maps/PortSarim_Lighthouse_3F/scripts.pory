@@ -25,6 +25,7 @@ script LIGHTHOUSE_3F_STATE {
         removeobject(OBJ_EVENT_ID_MAP)
         setflag(FLAG_TEMP_F)
         setvar(VAR_TEMP_0, 1) //sets floor trigger
+        playbgm(MUS_PS_ENCOUNTER_HAM, TRUE)
         special(Overworld_PlaySpecialMapMusic)
     }
     else {
@@ -237,7 +238,7 @@ script LIGHTHOUSE_HAM_PATTY
     hidenamebox
     //fadescreenswapbuffers black
     fadescreenswapbuffers(FADE_TO_BLACK)
-    
+    fadedefaultbgm
     //call state after setting temp flags and shit.
     removeobject(4)
     removeobject(3)

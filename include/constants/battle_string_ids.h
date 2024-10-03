@@ -721,10 +721,13 @@
 #define STRINGID_ANTIDRAGONSHIELDREDUCEDAMAGE         719
 #define STRINGID_SPIRITSHIELDREDUCEDAMAGE             720
 #define STRINGID_EATINGSANDWICH                       721
+#define STRINGID_MAGGIE_MESSAGE_1                     722
+#define STRINGID_MAGGIE_MESSAGE_2                     723
+#define STRINGID_MAGGIE_MESSAGE_3                     724
 
 
 
-#define BATTLESTRINGS_VANILLA_END                     721
+#define BATTLESTRINGS_VANILLA_END                     724
 
 
 

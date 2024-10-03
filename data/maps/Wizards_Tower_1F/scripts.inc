@@ -747,9 +747,6 @@ STORYMODE_VAR_CHECK::
 	buffernumberstring 0, VAR_WISE_OLD_MAN_RIVAL
 	msgbox STORYMODE_VAR_CHECK_Text_1
 	closemessage
-	setvar VAR_WISE_OLD_MAN_RIVAL, 5
-	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 105
-	addvar VAR_GAMEMODE_LEVEL_CAP, 10
 	buffernumberstring 0, VAR_GAMEMODE_LEVEL_CAP
 	msgbox STORYMODE_VAR_CHECK_Text_2
 	closemessage

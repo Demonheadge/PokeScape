@@ -183,7 +183,7 @@ GNOME_MILL_LANE_MILL_Text_0:
 	.string "Avlafrim$"
 
 GNOME_MILL_LANE_MILL_Text_1:
-	.string "Have you ever wish to fly of to the\n"
+	.string "Have you ever wish to fly off to the\n"
 	.string "faroff locations of Pokescape?\p"
 	.string "Meet new challenges and Monsters?\p"
 	.string "Here is where I put my gnomecopter, but\n"

@@ -198,7 +198,7 @@ ROUTE4_TRIGGER1_DaycareWatcher::
 	applymovement 2, MOVEMENT_ROUTE4_NIECE_1
 	waitmovement 0
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
-	compare VAR_TEMP_2, 27
+	compare VAR_TEMP_2, 33
 	goto_if_eq ROUTE4_TRIGGER1_DaycareWatcher_2
 ROUTE4_TRIGGER1_DaycareWatcher_1:
 	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_UP
@@ -208,7 +208,7 @@ ROUTE4_TRIGGER1_DaycareWatcher_1:
 	closemessage
 	hidenamebox
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
-	compare VAR_TEMP_2, 27
+	compare VAR_TEMP_2, 33
 	goto_if_eq ROUTE4_TRIGGER1_DaycareWatcher_5
 ROUTE4_TRIGGER1_DaycareWatcher_4:
 	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_NIECE_4

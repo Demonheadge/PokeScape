@@ -377,6 +377,7 @@ BROKEN_DOOR::
 
 ENCOUNTER_COW::
 	lock
+	faceplayer
 	namebox ENCOUNTER_COW_Text_0
 	playmoncry SPECIES_MILTANK, 0
 	msgbox ENCOUNTER_COW_Text_1

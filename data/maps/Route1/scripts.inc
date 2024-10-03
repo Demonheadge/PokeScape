@@ -428,7 +428,7 @@ EvilChickenBattleScript::
 	playmoncry SPECIES_EVILCHICKEN, 0
 	msgbox EvilChickenBattleScript_Text_0
 	waitmoncry
-	setwildbattle SPECIES_EVILCHICKEN, 10, ITEM_NONE
+	setwildbattle SPECIES_EVILCHICKEN, 18, ITEM_NONE
 	dowildbattle
 	removeobject VAR_LAST_TALKED
 	setvar VAR_POKESCAPE_ERNEST_QUEST_STATE, 5

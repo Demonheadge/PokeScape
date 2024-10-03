@@ -160,7 +160,7 @@ Script_Maggie_1_Text_3:
 	.string "I hope you prepared chaself!$"
 
 Script_Maggie_1_Text_4:
-	.string "Sweet, sweet victory.$"
+	.string "What?! How couldcha!$"
 
 Script_Maggie_1_Text_5:
 	.string "That was quite amusing don'tcha know.\p"

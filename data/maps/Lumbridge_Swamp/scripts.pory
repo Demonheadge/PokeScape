@@ -124,6 +124,11 @@ script ITEM_LUMBRIDGESWAMP_ITEM_2
     finditem(ITEM_MITHRIL_POUCH)
     end
 }
+script ITEM_LUMBRIDGESWAMP_ITEM_3
+{
+    finditem(ITEM_CHOCOLATE_SUNDAY)
+    end
+}
 
 
 

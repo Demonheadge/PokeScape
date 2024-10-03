@@ -340,5 +340,5 @@
       "script": "ROUTE15_SIGNPOST"
     }
   ],
-  "has_night_table": false
+  "has_night_table": true
 }

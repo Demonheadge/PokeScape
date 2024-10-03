@@ -592,5 +592,5 @@
       "script": "HIDDEN_GROTTO_ENTRY"
     }
   ],
-  "has_night_table": false
+  "has_night_table": true
 }

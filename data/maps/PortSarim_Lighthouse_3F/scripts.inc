@@ -43,6 +43,7 @@ LIGHTHOUSE_3F_STATE_2:
 	removeobject 9
 	setflag FLAG_TEMP_F
 	setvar VAR_TEMP_0, 1
+	playbgm MUS_PS_ENCOUNTER_HAM, TRUE
 	special Overworld_PlaySpecialMapMusic
 	goto LIGHTHOUSE_3F_STATE_1
 
@@ -220,6 +221,7 @@ LIGHTHOUSE_HAM_PATTY::
 	closemessage
 	hidenamebox
 	fadescreenswapbuffers FADE_TO_BLACK
+	fadedefaultbgm
 	removeobject 4
 	removeobject 3
 	removeobject 6

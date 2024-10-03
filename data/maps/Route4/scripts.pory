@@ -188,7 +188,7 @@ script ROUTE4_TRIGGER1_DaycareWatcher
     waitmovement (0)
 
     getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
-    if (var(VAR_TEMP_2) == 27){
+    if (var(VAR_TEMP_2) == 33){
         applymovement(2, MOVEMENT_ROUTE4_NIECE_2)
         waitmovement (0)
     } 
@@ -202,7 +202,7 @@ script ROUTE4_TRIGGER1_DaycareWatcher
     hidenamebox
 
     getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
-    if (var(VAR_TEMP_2) == 27){
+    if (var(VAR_TEMP_2) == 33){
         applymovement(2, MOVEMENT_ROUTE4_NIECE_3)
         applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_ROUTE4_NIECE_3)
         waitmovement (0)

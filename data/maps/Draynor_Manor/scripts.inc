@@ -50,7 +50,7 @@ WizardsTower_DraynorManor_STATE_3:
 WizardsTower_DraynorManor_STATE_4:
 	clearflag FLAG_TEMP_1
 	addobject 1
-	setobjectxyperm 1, 16, 36
+	setobjectxyperm 1, 22, 36
 	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
 	setvar VAR_TEMP_0, 1
 	release
@@ -65,7 +65,7 @@ WizardsTower_DraynorManor_STATE_5:
 WizardsTower_DraynorManor_STATE_6:
 	clearflag FLAG_TEMP_1
 	addobject 1
-	setobjectxyperm 1, 14, 24
+	setobjectxyperm 1, 20, 24
 	setvar VAR_TEMP_0, 1
 	return
 
@@ -103,9 +103,9 @@ Movement_DraynorManor_Trees:
 
 HAM_EVENT_DraynorManor_DOOR_CALL::
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
-	compare VAR_TEMP_1, 14
+	compare VAR_TEMP_1, 20
 	goto_if_eq HAM_EVENT_DraynorManor_DOOR_CALL_1
-	compare VAR_TEMP_1, 15
+	compare VAR_TEMP_1, 21
 	goto_if_eq HAM_EVENT_DraynorManor_DOOR_CALL_2
 	compare VAR_TEMP_2, 41
 	goto_if_eq HAM_EVENT_DraynorManor_DOOR_CALL_3
@@ -286,7 +286,7 @@ HAM_EVENT_DraynorManor_MAIN_1::
 	closemessage
 	applymovement 1, Ariane_DraynorManor_1
 	waitmovement 0
-	opendoor 14, 17
+	opendoor 20, 17
 	waitdooranim
 	msgbox HAM_EVENT_DraynorManor_MAIN_1_Text_1
 	playSE SE_LEDGE
@@ -296,11 +296,11 @@ HAM_EVENT_DraynorManor_MAIN_1::
 
 
 HAM_EVENT_DraynorManor_MAIN_2::
-	closedoor 14, 17
+	closedoor 20, 17
 	waitdooranim
 	waitmovement 0
 	setvar VAR_POKESCAPE_WIZARDS_TOWER_STATE, 7
-	setobjectxyperm 1, 16, 36
+	setobjectxyperm 1, 22, 36
 	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_UP
 	release
 	end

@@ -845,6 +845,9 @@ static const u8 sText_ToragHammer[] =_("{B_ATK_NAME_WITH_PREFIX}'s {B_LAST_ITEM}
 static const u8 sText_Petrify[] =_("{B_SCR_ACTIVE_NAME_WITH_PREFIX}'s {B_SCR_ACTIVE_ABILITY}\nlowers {B_DEF_NAME_WITH_PREFIX}'s SPEED!");
 static const u8 sText_TooScared[] =_("{B_ATK_NAME_WITH_PREFIX}'s {B_LAST_ABILITY} makes\n{B_DEF_NAME_WITH_PREFIX} only able to attack!");
 static const u8 sText_FireShieldEnds[] = _("{B_DEF_NAME_WITH_PREFIX}'s fire shield\ndissipates!");
+static const u8 sText_AntiDragonShieldReducedDamage[] = _("The Dragonfire Shield reduced\nthe incoming damage.");
+static const u8 sText_SpiritShieldReducedDamage[] = _("The Spirit Shield reduced\nthe incoming damage.");
+static const u8 sText_EatingSandwich[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} happily\nconsumes the {B_LAST_ITEM}.\p{B_BUFF1} was boosted.\nHP was restored.");
 
 //trainer battle messages
 static const u8 sText_Demonheadge_BeforeFirstTurn[] = _("Oh, ho.\nYou dare approach me?!{PAUSE_UNTIL_PRESS}");
@@ -863,10 +866,16 @@ static const u8 sText_SandwichLady_SwitchIn[] = _("Oh dear…\pIt appears I'm do
 static const u8 sText_SandwichLady_LastHalfHp[] = _("I'm down to my last\nbaguette!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_SandwichLady_FirstSuperEffectiveHit[] = _("Hey, I didn't say you could\ndo that!{PAUSE_UNTIL_PRESS}");
 
-static const u8 sText_AntiDragonShieldReducedDamage[] = _("The Dragonfire Shield reduced\nthe incoming damage.");
-static const u8 sText_SpiritShieldReducedDamage[] = _("The Spirit Shield reduced\nthe incoming damage.");
+static const u8 sText_Maggie_BeforeFirstTurn[] = _("I can feel it now, this is going to be\na splentabulous battle!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_Maggie_SwitchIn[] = _("Now that wasn't very nice of cha!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_Maggie_PlayerLost[] = _("Sweet, sweet victory.\pI think cha should go back and train\ncha's monsters some more.{PAUSE_UNTIL_PRESS}");
 
-static const u8 sText_EatingSandwich[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} happily\nconsumes the {B_LAST_ITEM}.\p{B_BUFF1} was boosted.\nHP was restored.");
+
+
+
+
+
+
 
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
@@ -1589,7 +1598,11 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_SPIRITSHIELDREDUCEDAMAGE - BATTLESTRINGS_TABLE_START] = sText_SpiritShieldReducedDamage,
     [STRINGID_EATINGSANDWICH - BATTLESTRINGS_TABLE_START] = sText_EatingSandwich,
     
-    
+    [STRINGID_MAGGIE_MESSAGE_1 - BATTLESTRINGS_TABLE_START] = sText_Maggie_BeforeFirstTurn,
+    [STRINGID_MAGGIE_MESSAGE_2 - BATTLESTRINGS_TABLE_START] = sText_Maggie_SwitchIn,
+    [STRINGID_MAGGIE_MESSAGE_3 - BATTLESTRINGS_TABLE_START] = sText_Maggie_PlayerLost,
+
+
 };
 
 const u16 gTrainerUsedItemStringIds[] =
@@ -4215,7 +4228,12 @@ static const struct TrainerSlide sTrainerSlides[] =
         .msgFirstSuperEffectiveHit = sText_SandwichLady_FirstSuperEffectiveHit, //Hey, I didn't say you could do that!
     },
 
-    
+    {
+        .trainerId = TRAINER_MAGGIE,
+        .msgBeforeFirstTurn = sText_Maggie_BeforeFirstTurn,
+        .msgLastSwitchIn = sText_Maggie_SwitchIn,
+        .msgPlayerLost = sText_Maggie_PlayerLost,
+    },
 };
 
 

@@ -2,7 +2,7 @@
   "id": "MAP_LUMBRIDGE_GENERAL_STORE2",
   "name": "Lumbridge_GeneralStore2",
   "layout": "LAYOUT_LUMBRIDGE_GENERALSTORE2",
-  "music": "MUS_PS_LUMBRIDGE",
+  "music": "MUS_PS_GENERAL_STORE",
   "region_map_section": "MAPSEC_LUMBRIDGE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

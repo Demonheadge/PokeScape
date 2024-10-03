@@ -440,7 +440,7 @@ script NPC_PORTSARIM_CAPTIAN_TOBIAS
 
     elif (flag(FLAG_BADGE03_GET) == false) 
 	{
-        msgbox(format("Sorry but our boat has popped a leak.\pIt will be some time before it is repaired.\pYou should go visit the Party Room in Falador or something while you are waiting."))
+        msgbox(format("Sorry but our boat has popped a leak.\pIt will be some time before it is repaired.\pYou should go visit those House Parties in Rimmington or something while you are waiting."))
         hidenamebox
         release
         end

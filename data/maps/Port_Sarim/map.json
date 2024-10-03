@@ -835,5 +835,5 @@
       "script": "LOCKED_DOOR"
     }
   ],
-  "has_night_table": 0
+  "has_night_table": true
 }
