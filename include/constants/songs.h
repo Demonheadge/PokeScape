@@ -571,7 +571,7 @@
 #define	MUS_PS_VARROCK	            628
 #define	MUS_PS_ALKHARID	            629
 #define	MUS_PS_MUSA_POINT	        630
-#define	MUS_PS_TZHAAR	            631
+#define	MUS_PS_CUPHOLDER_1	            631
 #define	MUS_PS_BARBARIAN_VILLAGE    632
 #define	MUS_PS_EDGEVILLE	        633
 
@@ -621,8 +621,9 @@
 #define	MUS_PS_VS_WISE_OLD_MAN_RIVAL	670
 #define	MUS_PS_GODSLAYER	        671
 #define	MUS_PS_LUMBRIDGE_CASTLE	    672
+#define	MUS_PS_TZHAAR	            673
 
-#define END_MUS                     MUS_PS_LUMBRIDGE_CASTLE
+#define END_MUS                     MUS_PS_TZHAAR
 
 
 

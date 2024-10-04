@@ -634,7 +634,7 @@ gSongTable::
 	song MUS_PS_VARROCK, 0, 0
 	song MUS_PS_ALKHARID, 0, 0
 	song MUS_PS_MUSA_POINT, 0, 0
-	song MUS_PS_TZHAAR, 0, 0
+	song MUS_PS_CUPHOLDER_1, 0, 0
 	song MUS_PS_BARBARIAN_VILLAGE, 0, 0
 	song MUS_PS_EDGEVILLE, 0, 0
 			
@@ -679,6 +679,7 @@ gSongTable::
 	song MUS_PS_VS_WISE_OLD_MAN_RIVAL, 0, 0
 	song MUS_PS_GODSLAYER, 0, 0
 	song MUS_PS_LUMBRIDGE_CASTLE, 0, 0
+	song MUS_PS_TZHAAR, 0, 0
 
 	
     

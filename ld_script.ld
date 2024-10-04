@@ -1270,7 +1270,7 @@ SECTIONS {
         sound/songs/midi/MUS_PS_VARROCK.o(.rodata);
         sound/songs/midi/MUS_PS_ALKHARID.o(.rodata);
         sound/songs/midi/MUS_PS_MUSA_POINT.o(.rodata);
-        sound/songs/midi/MUS_PS_TZHAAR.o(.rodata);
+        sound/songs/midi/MUS_PS_CUPHOLDER_1.o(.rodata);
         sound/songs/midi/MUS_PS_BARBARIAN_VILLAGE.o(.rodata);
         sound/songs/midi/MUS_PS_EDGEVILLE.o(.rodata);
         sound/songs/midi/MUS_PS_ROUTE_LUMBRIDGE.o(.rodata);
@@ -1312,6 +1312,7 @@ SECTIONS {
         sound/songs/midi/MUS_PS_VS_WISE_OLD_MAN_RIVAL.o(.rodata);
         sound/songs/midi/MUS_PS_GODSLAYER.o(.rodata);
         sound/songs/midi/MUS_PS_LUMBRIDGE_CASTLE.o(.rodata);
+        sound/songs/midi/MUS_PS_TZHAAR.o(.rodata);
     } > ROM =0
 
 

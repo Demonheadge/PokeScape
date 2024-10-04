@@ -1187,8 +1187,8 @@ NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_2:
 	.string "Sorry but our boat has popped a leak.\p"
 	.string "It will be some time before it is\n"
 	.string "repaired.\p"
-	.string "You should go visit the Party Room in\n"
-	.string "Falador or something while you are\l"
+	.string "You should go visit those House Parties\n"
+	.string "in Rimmington or something while you are\l"
 	.string "waiting.$"
 
 NPC_PORTSARIM_CAPTIAN_TOBIAS_Text_3:

@@ -2,7 +2,7 @@
   "id": "MAP_TZHAAR_CAVES_5",
   "name": "Tzhaar_Caves_5",
   "layout": "LAYOUT_TZHAAR_CAVES_5",
-  "music": "MUS_PS_VS_CHAOS_TUNNELS",
+  "music": "MUS_PS_TZHAAR",
   "region_map_section": "MAPSEC_KARAMJA_VOLCANO",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

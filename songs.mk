@@ -1329,7 +1329,7 @@ $(MID_SUBDIR)/MUS_PS_ALKHARID.s: %.s: %.mid
 $(MID_SUBDIR)/MUS_PS_MUSA_POINT.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G193 -V100
 
-$(MID_SUBDIR)/MUS_PS_TZHAAR.s: %.s: %.mid
+$(MID_SUBDIR)/MUS_PS_CUPHOLDER_1.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G193 -V100
 
 $(MID_SUBDIR)/MUS_PS_BARBARIAN_VILLAGE.s: %.s: %.mid
@@ -1458,7 +1458,8 @@ $(MID_SUBDIR)/MUS_PS_GODSLAYER.s: %.s: %.mid
 $(MID_SUBDIR)/MUS_PS_LUMBRIDGE_CASTLE.s: %.s: %.mid
 	$(MID) $< $@ -E -R$(STD_REVERB) -G193 -V100
 
-
+$(MID_SUBDIR)/MUS_PS_TZHAAR.s: %.s: %.mid
+	$(MID) $< $@ -E -R$(STD_REVERB) -G193 -V100
 	
 
 

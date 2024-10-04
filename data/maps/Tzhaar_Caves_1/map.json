@@ -2,7 +2,7 @@
   "id": "MAP_TZHAAR_CAVES_1",
   "name": "Tzhaar_Caves_1",
   "layout": "LAYOUT_TZHAAR_CAVES_1",
-  "music": "MUS_PS_VICTORY_ROAD",
+  "music": "MUS_PS_TZHAAR",
   "region_map_section": "MAPSEC_KARAMJA_VOLCANO",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

@@ -4084,7 +4084,7 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
 	X(MUS_PS_VARROCK) \
 	X(MUS_PS_ALKHARID) \
 	X(MUS_PS_MUSA_POINT) \
-	X(MUS_PS_TZHAAR) \
+	X(MUS_PS_CUPHOLDER_1) \
 	X(MUS_PS_BARBARIAN_VILLAGE) \
 	X(MUS_PS_EDGEVILLE) \
 	X(MUS_PS_ROUTE_LUMBRIDGE) \
@@ -4126,6 +4126,7 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
 	X(MUS_PS_VS_WISE_OLD_MAN_RIVAL) \
 	X(MUS_PS_GODSLAYER) \
 	X(MUS_PS_LUMBRIDGE_CASTLE) \
+    X(MUS_PS_TZHAAR) \
 
 
 #define SOUND_LIST_SE \

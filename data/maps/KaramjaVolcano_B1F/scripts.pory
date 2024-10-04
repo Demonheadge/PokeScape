@@ -415,7 +415,7 @@ script PokeScapeSongList_VSBattles{
                 end
             case 11: 
                 namebox ("11")
-                playbgm (MUS_PS_TZHAAR, 1)
+                playbgm (MUS_PS_CUPHOLDER_1, 1)
                 setvar(VAR_POKESCAPE_MUSIC_STATE, 12)
                 msgbox(format("NOW PLAYING: TERRIBLE CAVERNS"))
                 hidenamebox

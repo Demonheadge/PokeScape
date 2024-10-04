@@ -2,7 +2,7 @@
   "id": "MAP_TZHAAR_FIGHT_CAVES",
   "name": "Tzhaar_FightCaves",
   "layout": "LAYOUT_TZHAAR_FIGHT_CAVES",
-  "music": "MUS_CAVE_OF_ORIGIN",
+  "music": "MUS_PS_TZHAAR",
   "region_map_section": "MAPSEC_KARAMJA_VOLCANO",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
