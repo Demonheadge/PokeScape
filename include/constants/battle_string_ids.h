@@ -724,10 +724,16 @@
 #define STRINGID_MAGGIE_MESSAGE_1                     722
 #define STRINGID_MAGGIE_MESSAGE_2                     723
 #define STRINGID_MAGGIE_MESSAGE_3                     724
+#define STRINGID_MELZAR_MESSAGE_1                     725
+#define STRINGID_MELZAR_MESSAGE_2                     726
+#define STRINGID_MELZAR_MESSAGE_3                     727
+#define STRINGID_MELZAR_MESSAGE_4                     728
+#define STRINGID_MELZAR_MESSAGE_5                     729
 
 
 
-#define BATTLESTRINGS_VANILLA_END                     724
+
+#define BATTLESTRINGS_VANILLA_END                     729
 
 
 

@@ -51,6 +51,7 @@ TRIGGER_WISEOLDMAN_RIVAL_2::
 	fadedefaultbgm
 	removeobject 1
 	setflag FLAG_TEMP_1F
+	addvar VAR_GAMEMODE_LEVEL_CAP, 2
 	setvar VAR_WISE_OLD_MAN_RIVAL, 15
 	fadescreenswapbuffers FADE_FROM_BLACK
 	release

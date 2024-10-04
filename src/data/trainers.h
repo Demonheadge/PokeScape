@@ -3896,7 +3896,7 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_MELZARSMAZE_MELZAR_THE_MAD] =
     {
-        .trainerClass = TRAINER_CLASS_NECROMANCER,
+        .trainerClass = TRAINER_CLASS_MELZAR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
         .trainerPic = TRAINER_PIC_wizard_dark,
         .trainerName = _("MELZAR"),
@@ -4525,7 +4525,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Dionysius"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_OMNISCIENT | AI_FLAG_ACE_POKEMON | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .aiFlags = AI_FLAG_OMNISCIENT | AI_FLAG_ACE_POKEMON | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT,
         .party = TRAINER_PARTY(sParty_WISE_OLD_MAN_2),
     },
 
@@ -4537,7 +4537,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("Dionysius"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_FLAG_OMNISCIENT | AI_FLAG_ACE_POKEMON | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .aiFlags = AI_FLAG_OMNISCIENT | AI_FLAG_ACE_POKEMON | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT,
         .party = TRAINER_PARTY(sParty_WISE_OLD_MAN_3),
     },
 

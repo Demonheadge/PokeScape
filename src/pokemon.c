@@ -6867,6 +6867,7 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_COUNT:
         case TRAINER_CLASS_WITCH:
         case TRAINER_CLASS_LEGEND:
+        case TRAINER_CLASS_MELZAR:
             return MUS_PS_VS_LEGENDARY;   //POKESCAPE
         case TRAINER_CLASS_LEADER:
             return MUS_PS_VS_GYM;   //POKESCAPE

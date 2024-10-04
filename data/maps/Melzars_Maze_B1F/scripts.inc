@@ -15,6 +15,8 @@ MELZARS_B1F_STATE::
 	goto_if_eq MELZARS_B1F_STATE_2
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 107
 	goto_if_eq MELZARS_B1F_STATE_3
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 110
+	goto_if_eq MELZARS_B1F_STATE_4
 	removeobject 2
 	removeobject 3
 	setflag FLAG_TEMP_1B
@@ -43,6 +45,17 @@ MELZARS_B1F_STATE_3:
 	setobjectxyperm 3, 7, 8
 	setvar VAR_TEMP_E, 1
 	playbgm MUS_PS_ENCOUNTER_HAM, TRUE
+	goto MELZARS_B1F_STATE_1
+
+MELZARS_B1F_STATE_4:
+	removeobject 2
+	removeobject 3
+	setflag FLAG_TEMP_1B
+	setflag FLAG_TEMP_1A
+	setflag FLAG_TEMP_1D
+	setflag FLAG_TEMP_1C
+	setvar VAR_TEMP_E, 1
+	playbgm MUS_PS_CAVE_F2P, TRUE
 	goto MELZARS_B1F_STATE_1
 
 
@@ -306,7 +319,7 @@ TRIGGER_Melzar_Maze_HAM_EVENT_BABE_13:
 	removeobject 2
 	setflag FLAG_TEMP_1D
 	setvar VAR_TEMP_5, 2
-	playbgm MUS_PS_CAVE_F2P, FALSE
+	call MELZARS_B1F_STATE
 	fadescreenswapbuffers FADE_FROM_BLACK
 	release
 	end

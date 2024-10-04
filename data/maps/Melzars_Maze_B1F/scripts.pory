@@ -29,6 +29,16 @@ script MELZARS_B1F_STATE {
 		setvar(VAR_TEMP_E, 1)
 		playbgm(MUS_PS_ENCOUNTER_HAM, TRUE)
 	} 
+	elif ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 110)) {
+		removeobject(2)
+        removeobject(3)
+		setflag(FLAG_TEMP_1B)
+		setflag(FLAG_TEMP_1A)
+		setflag(FLAG_TEMP_1D)
+		setflag(FLAG_TEMP_1C)
+		setvar(VAR_TEMP_E, 1)
+		playbgm(MUS_PS_CAVE_F2P, TRUE)
+	}
 	else {
 		removeobject(2)
         removeobject(3)
@@ -322,7 +332,7 @@ script TRIGGER_Melzar_Maze_HAM_EVENT_BABE {
 	removeobject(2)
 	setflag(FLAG_TEMP_1D)
 	setvar(VAR_TEMP_5, 2)
-	playbgm(MUS_PS_CAVE_F2P, FALSE)
+	call(MELZARS_B1F_STATE)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	release
 	end

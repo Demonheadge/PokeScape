@@ -1165,7 +1165,7 @@ movement MOVEMENT_FALADOR_WALK_UP {
 	face_up
 	delay_16 * 2
 	face_right
-
+	step_end
 }
 
 movement movement_falador_walk_sirowen {
