@@ -169,7 +169,7 @@ script TZHAAR_NPC_6
 {
     faceplayer
     namebox ("Tzhaar")
-    msgbox(format("To the north are our sacred Kilns.\pTo the west leads deep into the volcanos inferno.\pTo the south-east leads to the Fight Caves.\pTo the south leads to the island.\pSo many ways to go, which way will you take?"))
+    msgbox(format("To the north are our sacred Kilns.\pTo the west leads deep into the volcano's inferno.\pTo the south-east leads to the Fight Caves.\pTo the south leads to the island.\pSo many ways to go, which way will you take?"))
     closemessage
     hidenamebox
     release
@@ -283,9 +283,27 @@ script TZHAAR_NPC_13
 }
 
 
+script TZHAAR_NPC_14
+{
+    faceplayer
+    namebox ("Tzhaar")
+    msgbox(format("There are rumours of TzHaar who left our city centuries ago and settled in a volcano somewhere to the west.\pI wonder what life is like for them compared to here."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
 
-
-
+script TZHAAR_NPC_15
+{
+    faceplayer
+    namebox ("Tzhaar")
+    msgbox(format("We TzHaar place our eggs in the lava to uncover our ancestors' memories.\pBut some TzHaar placed eggs too deep and what hatched from the eggs were feral monsters who fought each other.\pI think they've now been locked away in separate tunnels for adventurers to try and tame."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
 
 
 //Would like to include some variable dialogue for after you have completed the Gym challenge? Maybe 'Ga'al not die in...caves like other Ga'al. All thanks to...you!'

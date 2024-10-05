@@ -50,7 +50,7 @@ const struct Item gItems[] =
     [ITEM_BRONZE_POUCH] =
     {
         .name = _("BRONZE. P"),
-        .price = 600,
+        .price = 200,
         .description = sBronzePouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
@@ -62,7 +62,7 @@ const struct Item gItems[] =
     [ITEM_IRON_POUCH] =
     {
         .name = _("IRON. P"),
-        .price = 800,
+        .price = 300,
         .description = sIronPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
@@ -71,11 +71,23 @@ const struct Item gItems[] =
         .secondaryId = ITEM_IRON_POUCH - FIRST_BALL,
     },
 
+    [ITEM_STEEL_POUCH] =
+    {
+        .name = _("STEEL. P"),
+        .price = 550,
+        .description = sSteelPouchDesc,
+        .pocket = POCKET_POKE_BALLS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .battleUsage = EFFECT_ITEM_THROW_BALL,
+        .secondaryId = ITEM_STEEL_POUCH - FIRST_BALL,
+    },
+
     [ITEM_DRAGON_POUCH] =
     {
         .name = _("DRAGON. P"),
         .price = 50000,
-        .description = sCrystalPouchDesc,
+        .description = sDragonPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,

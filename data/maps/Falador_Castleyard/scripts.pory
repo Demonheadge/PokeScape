@@ -774,7 +774,7 @@ script NPC_FALADORCASTLE_WHITEKNIGHT_13
 		case 4: 
 			lock
 			faceplayer
-			namebox("Sir Loin")
+			namebox("Sir Iyus Lee")
 			msgbox(format("You would think Sir Amik Varze would be here in the throne room wouldn't you?\pWell sorry to burst your bubble, but he isn't here."))
             hidenamebox
             closemessage
@@ -783,7 +783,7 @@ script NPC_FALADORCASTLE_WHITEKNIGHT_13
         case 5:
 			lock
 			faceplayer
-            namebox("Sir Loin")
+            namebox("Sir Iyus Lee")
 			msgbox(format("King Vallance?\pYeh, he is still alive and kicking.\pWe try our best to keep the bucket away from him."))
             hidenamebox
             closemessage

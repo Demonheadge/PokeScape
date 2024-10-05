@@ -268,7 +268,7 @@ script Friendship_Checker_Pikkupstix {
 	specialvar (VAR_RESULT, GetLeadMonFriendshipScore)
 	switch(var(VAR_RESULT)) {
 		case 0:
-			msgbox(format("It says that it hates you and everything you stand for.\pIt doesnt want to be your friend and that you're bad and should feel bad.\pTheres also a lot about your mother I left out.\pOverall im not sure if this monster likes you at all."))
+			msgbox(format("It says that it hates you and everything you stand for.\pIt doesnt want to be your friend and that you're bad and should feel bad.\pThere's also a lot about your mother I left out.\pOverall im not sure if this monster likes you at all."))
     		msgbox(format("FRIENDSHIP is: FRIENDSHIP NONE."))
 		case 1:
 			msgbox(format("This monster says it doesn't trust you and that if you wanted to be it's friend, why do you hardly bond with it?\pMaybe it thinks it would be better put in the wild like this?"))

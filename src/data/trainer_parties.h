@@ -4346,7 +4346,7 @@ static const struct TrainerMon sParty_KOUREND_CATACOMBS_TRAINER_11[] = {
 //#GYM - Lumbridge - Duke Horacio          
 static const struct TrainerMon sParty_LEADER_DUKE_1[] = { //STORYMODE
     {
-    .ev = TRAINER_PARTY_EVS(252, 4, 100, 0, 152, 0),
+    //.ev = TRAINER_PARTY_EVS(252, 4, 100, 0, 152, 0),
     .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
     .ability = ABILITY_THICK_FAT,
     .nature = NATURE_IMPISH,
@@ -4355,7 +4355,7 @@ static const struct TrainerMon sParty_LEADER_DUKE_1[] = { //STORYMODE
     .moves = {MOVE_SLACK_OFF, MOVE_ABSORB, MOVE_TACKLE, MOVE_LEECH_SEED}
     },
     {
-    .ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
+    //.ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
     .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
     .ability = ABILITY_INTIMIDATE,
     .nature = NATURE_HASTY,
