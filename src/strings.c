@@ -353,9 +353,9 @@ const u8 gText_InBagVar1[] = _("IN BAG: {STR_VAR_1}");
 const u8 gText_QuitShopping[] = _("Quit shopping.");
 const u8 gText_Var1CertainlyHowMany[] = _("{STR_VAR_1}? Certainly.\nHow many would you like?");
 const u8 gText_Var1CertainlyHowMany2[] = _("{STR_VAR_1}? Certainly.\nHow many would you like?");
-const u8 gText_Var1AndYouWantedVar2[] = _("{STR_VAR_1}? And you wanted {STR_VAR_2}?\nThat will be ¥{STR_VAR_3}.");
-const u8 gText_Var1IsItThatllBeVar2[] = _("{STR_VAR_1}, is it?\nThat'll be ¥{STR_VAR_2}. Do you want it?");
-const u8 gText_YouWantedVar1ThatllBeVar2[] = _("You wanted {STR_VAR_1}?\nThat'll be ¥{STR_VAR_2}. Will that be okay?");
+const u8 gText_Var1AndYouWantedVar2[] = _("{STR_VAR_1}? And you wanted {STR_VAR_2}?\nThat will be {STR_VAR_3} GP.");
+const u8 gText_Var1IsItThatllBeVar2[] = _("{STR_VAR_1}, is it?\nThat'll be {STR_VAR_2} GP. Do you want it?");
+const u8 gText_YouWantedVar1ThatllBeVar2[] = _("You wanted {STR_VAR_1}?\nThat'll be {STR_VAR_2} GP. Will that be okay?");
 const u8 gText_HereYouGoThankYou[] = _("Here you go!\nThank you very much.");
 const u8 gText_ThankYouIllSendItHome[] = _("Thank you!\nI'll send it to your home PC.");
 const u8 gText_ThanksIllSendItHome[] = _("Thanks!\nI'll send it to your PC at home.");
@@ -368,7 +368,7 @@ const u8 gText_ThrowInPremierBall[] = _("I'll throw in a PREMIER BALL, too.{PAUS
 const u8 gText_CantBuyKeyItem[] = _("{STR_VAR_2}? Oh, no.\nI can't buy that.{PAUSE_UNTIL_PRESS}");
 const u8 gText_HowManyToSell[] = _("{STR_VAR_2}?\nHow many would you like to sell?");
 const u8 gText_ICanPayVar1[] = _("I can pay {STR_VAR_1} GP.\nWould that be okay?");
-const u8 gText_TurnedOverVar1ForVar2[] = _("Turned over the {STR_VAR_2}\nand received ¥{STR_VAR_1}.");
+const u8 gText_TurnedOverVar1ForVar2[] = _("Turned over the {STR_VAR_2}\nand received {STR_VAR_1} GP.");
 const u8 gText_PokedollarVar1[] = _("{STR_VAR_1} GP");
 const u8 gText_Shift[] = _("SHIFT");
 const u8 gText_SendOut[] = _("SEND OUT");
@@ -1934,7 +1934,7 @@ const u8 gText_TRIANGLE_SANDWICH[] =_("TRIANGLE SANDWICH");
 //misc
 const u8 gText_NextMenu[] =_("Next");
 const u8 gText_YouAlreadyHaveThis[] =_("You already have this item.{PAUSE_UNTIL_PRESS}");
-const u8 gText_YouWantedThisTM[] =_("You want {STR_VAR_2}?\nThat will be ¥{STR_VAR_1}.");
+const u8 gText_YouWantedThisTM[] =_("You want {STR_VAR_2}?\nThat will be {STR_VAR_1} GP.");
 const u8 gText_NeedMoreBadges[] =_("You need more badges to do this.{PAUSE_UNTIL_PRESS}");
 
 
