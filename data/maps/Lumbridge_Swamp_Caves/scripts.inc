@@ -161,7 +161,7 @@ BATTLE_LUMBRIDGESWAMPCAVE_FISHERMAN_1_Text_0:
 	.string "me.$"
 
 BATTLE_LUMBRIDGESWAMPCAVE_FISHERMAN_1_Text_1:
-	.string "I hear somewhere in Kandarin theres a\n"
+	.string "I hear somewhere in Kandarin there's a\n"
 	.string "tower.\p"
 	.string "If you bring it a slimy eel and frog legs\n"
 	.string "it will create a legendary monster.$"

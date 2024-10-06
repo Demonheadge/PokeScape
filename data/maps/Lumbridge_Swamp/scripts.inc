@@ -428,7 +428,7 @@ Friendship_Checker_Pikkupstix_Text_2:
 	.string "everything you stand for.\p"
 	.string "It doesnt want to be your friend and\n"
 	.string "that you're bad and should feel bad.\p"
-	.string "Theres also a lot about your mother I\n"
+	.string "There's also a lot about your mother I\n"
 	.string "left out.\p"
 	.string "Overall im not sure if this monster likes\n"
 	.string "you at all.$"

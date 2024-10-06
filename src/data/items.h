@@ -70,7 +70,7 @@ const struct Item gItems[] =
         .battleUsage = EFFECT_ITEM_THROW_BALL,
         .secondaryId = ITEM_IRON_POUCH - FIRST_BALL,
     },
-
+/*
     [ITEM_STEEL_POUCH] =
     {
         .name = _("STEEL. P"),
@@ -80,9 +80,9 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_STEEL_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_IRON_POUCH - FIRST_BALL,
     },
-
+*/
     [ITEM_DRAGON_POUCH] =
     {
         .name = _("DRAGON. P"),

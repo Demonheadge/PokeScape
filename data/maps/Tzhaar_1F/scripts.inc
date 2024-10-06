@@ -259,6 +259,26 @@ TZHAAR_NPC_13::
 	end
 
 
+TZHAAR_NPC_14::
+	faceplayer
+	namebox STORYMODE_TZHAAR_NPC_Text_0
+	msgbox TZHAAR_NPC_14_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+TZHAAR_NPC_15::
+	faceplayer
+	namebox STORYMODE_TZHAAR_NPC_Text_0
+	msgbox TZHAAR_NPC_15_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 TZHAAR_OZAN::
 	faceplayer
 	namebox TZHAAR_OZAN_Text_0
@@ -429,7 +449,7 @@ TZHAAR_NPC_5_Text_0:
 TZHAAR_NPC_6_Text_0:
 	.string "To the north are our sacred Kilns.\p"
 	.string "To the west leads deep into the\n"
-	.string "volcanos inferno.\p"
+	.string "volcano's inferno.\p"
 	.string "To the south-east leads to the Fight\n"
 	.string "Caves.\p"
 	.string "To the south leads to the island.\p"
@@ -491,6 +511,23 @@ TZHAAR_NPC_13_Text_1:
 	.string "JalYt, beyond here the tunnels are\n"
 	.string "unstable and our kind may attack you.\p"
 	.string "Proceed at your own risk.$"
+
+TZHAAR_NPC_14_Text_0:
+	.string "There are rumours of TzHaar who left\n"
+	.string "our city centuries ago and settled in a\l"
+	.string "volcano somewhere to the west.\p"
+	.string "I wonder what life is like for them\n"
+	.string "compared to here.$"
+
+TZHAAR_NPC_15_Text_0:
+	.string "We TzHaar place our eggs in the lava to\n"
+	.string "uncover our ancestors' memories.\p"
+	.string "But some TzHaar placed eggs too deep\n"
+	.string "and what hatched from the eggs were\l"
+	.string "feral monsters who fought each other.\p"
+	.string "I think they've now been locked away in\n"
+	.string "separate tunnels for adventurers to\l"
+	.string "try and tame.$"
 
 TZHAAR_OZAN_Text_0:
 	.string "Ozan$"
