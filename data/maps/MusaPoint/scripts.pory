@@ -130,7 +130,7 @@ script NPC_LegendArts
 
 script SIGNPOST_MUSA_POINT
 {
-	msgbox(format("Musa Point - The best bannanas in all of Karamaja!"))
+	msgbox(format("Musa Point - The best bananas in all of Karamja!"))
     closemessage
 	end
 }
@@ -181,7 +181,7 @@ script NPC_MUSA_POINT_3
 	lock
 	faceplayer
     namebox ("Pirate")
-	msgbox(format("The Customs Officers constantly keep us under supervision, apparently they don't want Karamja Rum to reach the mainland.\pIts all a conspiracy to keep the White knights in power I tell you!"))
+	msgbox(format("The Customs Officers constantly keep us under supervision, apparently they don't want Karamjan Rum to reach the mainland.\pIt's all a conspiracy to keep the White Knights in power I tell you!"))
     closemessage
     hidenamebox
 	release
@@ -302,7 +302,7 @@ script NPC_MONKEY_BLOCK
 script BATTLE_MUSA_POINT_TRAINER_1
 {
     trainerbattle_single(TRAINER_MUSA_POINT_TRAINER_1, format("My Fishing level is 62."),format("I can only use quick chat."))
-    //namebox ("Cupholder")
+    namebox ("HelpImMuted")
     msgbox(format("I can only use quick chat."))
 	hidenamebox
     release
@@ -311,7 +311,7 @@ script BATTLE_MUSA_POINT_TRAINER_1
 script BATTLE_MUSA_POINT_TRAINER_2
 {
     trainerbattle_single(TRAINER_MUSA_POINT_TRAINER_2, format("Why am I here?\pFight me to find out!"),format("I love fishing but I cannot afford membership.\pThat is why I am here."))
-    //namebox ("Cupholder")
+    namebox ("Fishin4Bond")
     msgbox(format("I love fishing but I cannot afford membership.\pThat is why I am here."))
 	hidenamebox
     release
@@ -320,7 +320,7 @@ script BATTLE_MUSA_POINT_TRAINER_2
 script BATTLE_MUSA_POINT_TRAINER_3
 {
     trainerbattle_single(TRAINER_MUSA_POINT_TRAINER_3, format("Noob fishing spot tells me I need a higher fishing level to be here.\pNow I am angry!"),format("My fishing level is 14."))
-    //namebox ("Cupholder")
+    namebox ("New2this")
     msgbox(format("My fishing level is 14."))
 	hidenamebox
     release
@@ -329,7 +329,7 @@ script BATTLE_MUSA_POINT_TRAINER_3
 script BATTLE_MUSA_POINT_TRAINER_4
 {
     trainerbattle_single(TRAINER_MUSA_POINT_TRAINER_4, format("Life is like a fishing spot, you never know what you are going to get."),format("Unless you fish for lobsters, you only get lobsters like this."))
-    //namebox ("Cupholder")
+    namebox ("Lobs4Sale")
     msgbox(format("Life is like a fishing spot, you never know what you are going to get.\pUnless you fish for lobsters, you only get lobsters like this."))
 	hidenamebox
     release
@@ -578,24 +578,24 @@ script TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT {
 	msgbox(format("Well then, it truly has been awhile.\nYou look quite different since we last met."))
 	switch (var(VAR_WISE_OLD_MAN_RIVAL)) { 
 		case 10: // Last encounter was port sarim.
-			msgbox(format("It was a shame you didn't take me up on the offer to meet within Asganria Dungeon.\pIt cannot be helped I suppose.\pHow about we check just how much you have truly grown."))
+			msgbox(format("It was a shame you didn't take me up on the offer to meet within Asgarnia Dungeon.\pIt cannot be helped I suppose.\pHow about we check just how much you have truly grown."))
 		case 15: //Encountered optional within Asganria Dungeon
-			msgbox(format("By the way, did you end up meeting with Melzar?\pHow did that go, did he put up a good fight?\pThat man loves his cabbages.\pEnough, chit chat, this old man wants to see how much you've grown since our last enocunter!"))
+			msgbox(format("By the way, did you end up meeting with Melzar?\pHow did that go, did he put up a good fight?\pThat man loves his cabbages.\pEnough chit chat, this old man wants to see how much you've grown since our last encounter!"))
 		}
 	hidenamebox
 	closemessage
 	trainerbattle_no_intro(TRAINER_RIVAL_WISE_OLD_MAN_3, format("You are really getting this old man riled up.")) 
 	namebox("Wise Old Man")
-	msgbox(format("So you got stranded on Crandor, passed through volcano passage undereath Karamja Volcano, met with the Tzhaar and now you are here?\pYou certainly have been busy haven't you.\pYou should really take the MvM championship seriously, I think you might just make it to the end."))
+	msgbox(format("So you got stranded on Crandor, passed through a volcano passage underneath Karamja Volcano, met with the Tzhaar and now you are here?\pYou certainly have been busy haven't you.\pYou should really take the MvM championship seriously, I think you might just make it to the end."))
 	hidenamebox
 	closemessage
 	applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, movement_wom_musapoint_1)
 	waitmovement(0)
 	namebox("Wise Old Man")
-	msgbox(format("Although that might have to be put on hold for a bit as it seems someone was caught smuggling Karmaja Rum.\pAll of the boats are in lockdown until the matter is resolved.\pIf you don't want to wait around with me, I heard Luthas was selling a boat."))
+	msgbox(format("Although that might have to be put on hold for a bit as it seems someone was caught smuggling Karmajan Rum.\pAll of the boats are in lockdown until the matter is resolved.\pIf you don't want to wait around with me, I heard Luthas was selling a boat."))
 	applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, MOVEMENT_FACE_UP)
 	waitmovement(0)
-	msgbox(format("He lives in that shack just over there.\pGo give him a visit if your interested."))
+	msgbox(format("He lives in that shack just over there.\pGo give him a visit if you're interested."))
 	applymovement (OBJ_EVENT_ID_WISE_OLD_MAN, Common_Movement_FacePlayer)
 	waitmovement(0)
 	msgbox(format("Me?\pI think I might go visit the pub for a drink.\pI truly am looking forward to seeing your MvM championship progress.\pUntil next time {PLAYER}."))

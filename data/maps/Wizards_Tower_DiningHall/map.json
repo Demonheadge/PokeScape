@@ -236,7 +236,14 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 28,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "RUNE_EVOLUTIONS_NOTES"
+    }
   ],
   "has_night_table": false
 }

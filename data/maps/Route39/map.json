@@ -64,9 +64,9 @@
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "BATTLE_ROUTE39_TRAINER_4",
       "flag": "0"
     },
     {
@@ -222,7 +222,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_Route39_3",
       "flag": "0"
     },
     {
@@ -360,7 +360,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "TRIGGER_ROUTE_39_BLOCK"
     },
     {
       "type": "trigger",
@@ -369,7 +369,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "TRIGGER_ROUTE_39_BLOCK"
     },
     {
       "type": "trigger",
@@ -378,7 +378,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "TRIGGER_ROUTE_39_BLOCK"
     },
     {
       "type": "trigger",
@@ -387,7 +387,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "TRIGGER_ROUTE_39_BLOCK"
     },
     {
       "type": "trigger",
@@ -396,7 +396,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "TRIGGER_ROUTE_39_BLOCK"
     },
     {
       "type": "trigger",
@@ -405,7 +405,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "TRIGGER_ROUTE_39_BLOCK"
     }
   ],
   "bg_events": [
@@ -424,6 +424,22 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "TZHAAR_SIGNPOST_2"
+    },
+    {
+      "type": "hidden_item",
+      "x": 40,
+      "y": 34,
+      "elevation": 0,
+      "item": "HIDDEN_ITEM_ROUTE39_1",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE39_1"
+    },
+    {
+      "type": "hidden_item",
+      "x": 30,
+      "y": 16,
+      "elevation": 0,
+      "item": "ITEM_NONE",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE39_2"
     }
   ],
   "has_night_table": true

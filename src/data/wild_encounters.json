@@ -12366,28 +12366,28 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 30,
-                "max_level": 35,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_HERRING"
               },
               {
-                "min_level": 32,
-                "max_level": 37,
+                "min_level": 26,
+                "max_level": 31,
                 "species": "SPECIES_MACKEREL"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 27,
+                "max_level": 32,
                 "species": "SPECIES_TARPON"
               },
               {
-                "min_level": 36,
-                "max_level": 40,
+                "min_level": 28,
+                "max_level": 33,
                 "species": "SPECIES_CATFISH"
               },
               {
-                "min_level": 38,
-                "max_level": 40,
+                "min_level": 30,
+                "max_level": 35,
                 "species": "SPECIES_TARPON"
               }
             ]
@@ -12804,28 +12804,28 @@
             "encounter_rate": 80,
             "mons": [
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_MACKEREL"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 26,
+                "max_level": 31,
                 "species": "SPECIES_TARPON"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 27,
+                "max_level": 32,
                 "species": "SPECIES_BASS"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 28,
+                "max_level": 33,
                 "species": "SPECIES_CATFISH"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 30,
+                "max_level": 35,
                 "species": "SPECIES_JELLYFISH"
               }
             ]
@@ -17835,28 +17835,28 @@
             "encounter_rate": 4,
             "mons": [
               {
-                "min_level": 30,
-                "max_level": 35,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_HERRING"
               },
               {
-                "min_level": 32,
-                "max_level": 37,
+                "min_level": 26,
+                "max_level": 31,
                 "species": "SPECIES_MACKEREL"
               },
               {
-                "min_level": 33,
-                "max_level": 38,
+                "min_level": 27,
+                "max_level": 32,
                 "species": "SPECIES_BASS"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 28,
+                "max_level": 33,
                 "species": "SPECIES_JELLYFISH_BLUBBER_FORM"
               },
               {
-                "min_level": 36,
-                "max_level": 40,
+                "min_level": 30,
+                "max_level": 35,
                 "species": "SPECIES_SHARK_NORMAL_FORM"
               }
             ]
@@ -18297,28 +18297,28 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 31,
-                "max_level": 39,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_SEAGULL_NORMAL_FORM"
               },
               {
-                "min_level": 32,
-                "max_level": 40,
+                "min_level": 26,
+                "max_level": 31,
                 "species": "SPECIES_SEAGULL_NORMAL_FORM"
               },
               {
-                "min_level": 33,
-                "max_level": 40,
+                "min_level": 27,
+                "max_level": 32,
                 "species": "SPECIES_MANTA_RAY"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 28,
+                "max_level": 33,
                 "species": "SPECIES_ALBATROSS"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 30,
+                "max_level": 35,
                 "species": "SPECIES_SEA_TURTLE"
               }
             ]
@@ -23678,28 +23678,28 @@
             "encounter_rate": 4,
             "mons": [
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_SHRIMP"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 26,
+                "max_level": 31,
                 "species": "SPECIES_KARAMBWANJ"
               },
               {
-                "min_level": 37,
-                "max_level": 40,
+                "min_level": 27,
+                "max_level": 32,
                 "species": "SPECIES_LOBSTER_NORMAL_FORM"
               },
               {
-                "min_level": 38,
-                "max_level": 40,
+                "min_level": 28,
+                "max_level": 33,
                 "species": "SPECIES_SWORDFISH"
               },
               {
-                "min_level": 39,
-                "max_level": 40,
+                "min_level": 30,
+                "max_level": 35,
                 "species": "SPECIES_SHARK_NORMAL_FORM"
               }
             ]
@@ -23708,28 +23708,28 @@
             "encounter_rate": 30,
             "mons": [
               {
-                "min_level": 30,
-                "max_level": 35,
+                "min_level": 21,
+                "max_level": 25,
                 "species": "SPECIES_SHRIMP"
               },
               {
-                "min_level": 30,
-                "max_level": 35,
+                "min_level": 21,
+                "max_level": 25,
                 "species": "SPECIES_KARAMBWANJ"
               },
               {
-                "min_level": 35,
-                "max_level": 37,
+                "min_level": 23,
+                "max_level": 28,
                 "species": "SPECIES_ANCHOVY"
               },
               {
-                "min_level": 35,
-                "max_level": 37,
+                "min_level": 24,
+                "max_level": 29,
                 "species": "SPECIES_KARAMBWANJ"
               },
               {
-                "min_level": 35,
-                "max_level": 37,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_LOBSTER_NORMAL_FORM"
               },
               {
@@ -28901,28 +28901,28 @@
             "encounter_rate": 4,
             "mons": [
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_SHRIMP"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 26,
+                "max_level": 31,
                 "species": "SPECIES_HERRING"
               },
               {
-                "min_level": 37,
-                "max_level": 40,
+                "min_level": 27,
+                "max_level": 32,
                 "species": "SPECIES_LOBSTER_NORMAL_FORM"
               },
               {
-                "min_level": 38,
-                "max_level": 40,
+                "min_level": 28,
+                "max_level": 33,
                 "species": "SPECIES_SWORDFISH"
               },
               {
-                "min_level": 39,
-                "max_level": 40,
+                "min_level": 30,
+                "max_level": 35,
                 "species": "SPECIES_SHARK_NORMAL_FORM"
               }
             ]
@@ -28990,28 +28990,28 @@
             "encounter_rate": 4,
             "mons": [
               {
-                "min_level": 35,
-                "max_level": 45,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_SHRIMP"
               },
               {
-                "min_level": 35,
-                "max_level": 45,
+                "min_level": 26,
+                "max_level": 31,
                 "species": "SPECIES_HERRING"
               },
               {
-                "min_level": 40,
-                "max_level": 45,
+                "min_level": 27,
+                "max_level": 32,
                 "species": "SPECIES_LOBSTER_NORMAL_FORM"
               },
               {
-                "min_level": 40,
-                "max_level": 45,
+                "min_level": 28,
+                "max_level": 33,
                 "species": "SPECIES_SWORDFISH"
               },
               {
-                "min_level": 42,
-                "max_level": 45,
+                "min_level": 30,
+                "max_level": 35,
                 "species": "SPECIES_SHARK_NORMAL_FORM"
               }
             ]
@@ -29031,12 +29031,12 @@
               },
               {
                 "min_level": 35,
-                "max_level": 39,
+                "max_level": 37,
                 "species": "SPECIES_ANCHOVY"
               },
               {
                 "min_level": 35,
-                "max_level": 39,
+                "max_level": 37,
                 "species": "SPECIES_HERRING"
               },
               {
@@ -29045,28 +29045,28 @@
                 "species": "SPECIES_LOBSTER_NORMAL_FORM"
               },
               {
-                "min_level": 40,
-                "max_level": 45,
+                "min_level": 37,
+                "max_level": 40,
                 "species": "SPECIES_SWORDFISH"
               },
               {
-                "min_level": 40,
-                "max_level": 45,
+                "min_level": 37,
+                "max_level": 40,
                 "species": "SPECIES_LOBSTER_NORMAL_FORM"
               },
               {
-                "min_level": 40,
-                "max_level": 45,
+                "min_level": 37,
+                "max_level": 40,
                 "species": "SPECIES_LOBSTER_GIANT_FORM"
               },
               {
-                "min_level": 43,
-                "max_level": 45,
+                "min_level": 38,
+                "max_level": 40,
                 "species": "SPECIES_SHARK_NORMAL_FORM"
               },
               {
-                "min_level": 43,
-                "max_level": 45,
+                "min_level": 39,
+                "max_level": 40,
                 "species": "SPECIES_SHARK_GOLDEN_FORM"
               }
             ]
@@ -29079,28 +29079,28 @@
             "encounter_rate": 80,
             "mons": [
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_MACKEREL"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 26,
+                "max_level": 31,
                 "species": "SPECIES_TARPON"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 27,
+                "max_level": 32,
                 "species": "SPECIES_BASS"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 28,
+                "max_level": 33,
                 "species": "SPECIES_CATFISH"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 30,
+                "max_level": 35,
                 "species": "SPECIES_JELLYFISH"
               }
             ]
@@ -31243,28 +31243,28 @@
             "encounter_rate": 4,
             "mons": [
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_SHRIMP"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 26,
+                "max_level": 31,
                 "species": "SPECIES_HERRING"
               },
               {
-                "min_level": 37,
-                "max_level": 40,
+                "min_level": 27,
+                "max_level": 32,
                 "species": "SPECIES_LOBSTER_NORMAL_FORM"
               },
               {
-                "min_level": 38,
-                "max_level": 40,
+                "min_level": 28,
+                "max_level": 33,
                 "species": "SPECIES_SWORDFISH"
               },
               {
-                "min_level": 39,
-                "max_level": 40,
+                "min_level": 30,
+                "max_level": 35,
                 "species": "SPECIES_SHARK_NORMAL_FORM"
               }
             ]
@@ -31273,52 +31273,52 @@
             "encounter_rate": 30,
             "mons": [
               {
-                "min_level": 30,
-                "max_level": 35,
+                "min_level": 18,
+                "max_level": 25,
                 "species": "SPECIES_SHRIMP"
               },
               {
-                "min_level": 30,
-                "max_level": 35,
+                "min_level": 18,
+                "max_level": 25,
                 "species": "SPECIES_SARDINE"
               },
               {
-                "min_level": 35,
-                "max_level": 37,
+                "min_level": 24,
+                "max_level": 30,
                 "species": "SPECIES_ANCHOVY"
               },
               {
-                "min_level": 35,
-                "max_level": 37,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_HERRING"
               },
               {
-                "min_level": 35,
+                "min_level": 28,
+                "max_level": 35,
+                "species": "SPECIES_LOBSTER_NORMAL_FORM"
+              },
+              {
+                "min_level": 30,
+                "max_level": 36,
+                "species": "SPECIES_SWORDFISH"
+              },
+              {
+                "min_level": 32,
                 "max_level": 37,
                 "species": "SPECIES_LOBSTER_NORMAL_FORM"
               },
               {
-                "min_level": 37,
-                "max_level": 40,
-                "species": "SPECIES_SWORDFISH"
-              },
-              {
-                "min_level": 37,
-                "max_level": 40,
-                "species": "SPECIES_LOBSTER_NORMAL_FORM"
-              },
-              {
-                "min_level": 37,
-                "max_level": 40,
+                "min_level": 33,
+                "max_level": 38,
                 "species": "SPECIES_LOBSTER_GIANT_FORM"
               },
               {
-                "min_level": 38,
+                "min_level": 35,
                 "max_level": 40,
                 "species": "SPECIES_SHARK_NORMAL_FORM"
               },
               {
-                "min_level": 39,
+                "min_level": 37,
                 "max_level": 40,
                 "species": "SPECIES_SHARK_GOLDEN_FORM"
               }
@@ -31949,6 +31949,249 @@
                 "min_level": 23,
                 "max_level": 27,
                 "species": "SPECIES_YT_HURKOT"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_MUDSKIPPER_SOUND_3",
+          "base_label": "gMudskipper_Sound_30",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_SHRIMP"
+              },
+              {
+                "min_level": 26,
+                "max_level": 31,
+                "species": "SPECIES_HERRING"
+              },
+              {
+                "min_level": 27,
+                "max_level": 32,
+                "species": "SPECIES_LOBSTER_NORMAL_FORM"
+              },
+              {
+                "min_level": 28,
+                "max_level": 33,
+                "species": "SPECIES_SWORDFISH"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_SHARK_NORMAL_FORM"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_SHRIMP"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_SARDINE"
+              },
+              {
+                "min_level": 35,
+                "max_level": 37,
+                "species": "SPECIES_ANCHOVY"
+              },
+              {
+                "min_level": 35,
+                "max_level": 37,
+                "species": "SPECIES_HERRING"
+              },
+              {
+                "min_level": 35,
+                "max_level": 37,
+                "species": "SPECIES_LOBSTER_NORMAL_FORM"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_SWORDFISH"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_LOBSTER_NORMAL_FORM"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_LOBSTER_GIANT_FORM"
+              },
+              {
+                "min_level": 38,
+                "max_level": 40,
+                "species": "SPECIES_SHARK_NORMAL_FORM"
+              },
+              {
+                "min_level": 39,
+                "max_level": 40,
+                "species": "SPECIES_SHARK_GOLDEN_FORM"
+              }
+            ]
+          },
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 24,
+                "max_level": 27,
+                "species": "SPECIES_SEAGULL_NORMAL_FORM"
+              },
+              {
+                "min_level": 24,
+                "max_level": 27,
+                "species": "SPECIES_CRABLING"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_SEAGULL_NORMAL_FORM"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_CRABLING"
+              },
+              {
+                "min_level": 26,
+                "max_level": 29,
+                "species": "SPECIES_CRABLET_SECOND_FORM"
+              },
+              {
+                "min_level": 26,
+                "max_level": 29,
+                "species": "SPECIES_CRABLET_THIRD_FORM"
+              },
+              {
+                "min_level": 27,
+                "max_level": 30,
+                "species": "SPECIES_GIANT_CRAB_RED_FORM"
+              },
+              {
+                "min_level": 27,
+                "max_level": 30,
+                "species": "SPECIES_GIANT_CRAB_MOSS_FORM"
+              },
+              {
+                "min_level": 28,
+                "max_level": 31,
+                "species": "SPECIES_GIANT_CRAB_RUMPUMPED_FORM"
+              },
+              {
+                "min_level": 28,
+                "max_level": 31,
+                "species": "SPECIES_CRABLET_FORTH_FORM"
+              },
+              {
+                "min_level": 29,
+                "max_level": 32,
+                "species": "SPECIES_GIANT_CRAB_MOSS_FORM"
+              },
+              {
+                "min_level": 32,
+                "max_level": 35,
+                "species": "SPECIES_CRABLET_FIFTH_FORM"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_MUDSKIPPER_SOUND_1",
+          "base_label": "gMudskipper_Sound_10",
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_SHRIMP"
+              },
+              {
+                "min_level": 26,
+                "max_level": 31,
+                "species": "SPECIES_HERRING"
+              },
+              {
+                "min_level": 27,
+                "max_level": 32,
+                "species": "SPECIES_LOBSTER_NORMAL_FORM"
+              },
+              {
+                "min_level": 28,
+                "max_level": 33,
+                "species": "SPECIES_SWORDFISH"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_SHARK_NORMAL_FORM"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_SHRIMP"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_SARDINE"
+              },
+              {
+                "min_level": 35,
+                "max_level": 37,
+                "species": "SPECIES_ANCHOVY"
+              },
+              {
+                "min_level": 35,
+                "max_level": 37,
+                "species": "SPECIES_HERRING"
+              },
+              {
+                "min_level": 35,
+                "max_level": 37,
+                "species": "SPECIES_LOBSTER_NORMAL_FORM"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_SWORDFISH"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_LOBSTER_NORMAL_FORM"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_LOBSTER_GIANT_FORM"
+              },
+              {
+                "min_level": 38,
+                "max_level": 40,
+                "species": "SPECIES_SHARK_NORMAL_FORM"
+              },
+              {
+                "min_level": 39,
+                "max_level": 40,
+                "species": "SPECIES_SHARK_GOLDEN_FORM"
               }
             ]
           }
