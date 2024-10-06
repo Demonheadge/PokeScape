@@ -776,8 +776,8 @@ NPC_FALADORCASTLE_WHITEKNIGHT_13::
 NPC_FALADORCASTLE_WHITEKNIGHT_13_2:
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_GYM_TRAINER_4_Text_2
-	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_13_Text_0
+	namebox NPC_FALADORCASTLE_WHITEKNIGHT_13_Text_0
+	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_13_Text_1
 	hidenamebox
 	closemessage
 	release
@@ -786,8 +786,8 @@ NPC_FALADORCASTLE_WHITEKNIGHT_13_2:
 NPC_FALADORCASTLE_WHITEKNIGHT_13_3:
 	lock
 	faceplayer
-	namebox NPC_FALADORCASTLE_GYM_TRAINER_4_Text_2
-	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_13_Text_1
+	namebox NPC_FALADORCASTLE_WHITEKNIGHT_13_Text_0
+	msgbox NPC_FALADORCASTLE_WHITEKNIGHT_13_Text_2
 	hidenamebox
 	closemessage
 	release
@@ -1440,12 +1440,15 @@ NPC_FALADORCASTLE_WHITEKNIGHT_12_Text_0:
 	.string "openings!$"
 
 NPC_FALADORCASTLE_WHITEKNIGHT_13_Text_0:
+	.string "Sir Iyus Lee$"
+
+NPC_FALADORCASTLE_WHITEKNIGHT_13_Text_1:
 	.string "You would think Sir Amik Varze would be\n"
 	.string "here in the throne room wouldn't you?\p"
 	.string "Well sorry to burst your bubble, but he\n"
 	.string "isn't here.$"
 
-NPC_FALADORCASTLE_WHITEKNIGHT_13_Text_1:
+NPC_FALADORCASTLE_WHITEKNIGHT_13_Text_2:
 	.string "King Vallance?\p"
 	.string "Yeh, he is still alive and kicking.\p"
 	.string "We try our best to keep the bucket away\n"

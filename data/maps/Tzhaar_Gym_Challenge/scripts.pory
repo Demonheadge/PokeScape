@@ -531,11 +531,11 @@ script TZHAAR_TRAINERS_WAVES_1_GAAL
     random(3) 
 	switch (var(VAR_RESULT)) { 
         case 0: 
-            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_1, 0, format("intro text 1"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_1, 0, format("We TzHaar are made of solid obsidian.\pWe are stronger than you will ever be."), format("Obsidian may be sharp, but it shatters easily."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
         case 1: 
-            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_2, 0, format("intro text 2"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_2, 0, format("We TzHaar are forged in fire.\pYou don't stand a chance."), format("This JalYt burns brighter than the magma down here."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
         case 2: 
-            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_3, 0, format("intro text 3"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_3, 0, format("We TzHaar were born on the day the volcano shook the foundation of the earth.\pWe can withstand anything."), format("We can withstand earthquakes, but not your skill in battle."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
     } 
 }
 script TZHAAR_TRAINERS_WAVES_2_GAAL
@@ -543,17 +543,17 @@ script TZHAAR_TRAINERS_WAVES_2_GAAL
     random(6) 
 	switch (var(VAR_RESULT)) { 
         case 0: 
-            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_1, 0, format("intro text 1"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_1, 0, format("If I beat you, maybe Kimit-Kal will let me venture into the Kiln!"), format("Maybe one day I'll get my ancestor's memories back.."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
         case 1: 
-            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_2, 0, format("intro text 2"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_2, 0, format("We may have opened our home to the outsiders, but you'll never see below the surface."), format("You'll never pass the lava to access our city's inner areas!"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
         case 2: 
-            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_3, 0, format("intro text 3"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_3, 0, format("When Ful made the Elder Kiln, she made us with the strength to build and shape mountains.\pWhat strength did your god give you?"), format("Quite a lot by the looks of it.."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
         case 3: 
-            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_1, 0, format("intro text 1"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_1, 0, format("One day, I'd like to leave this place and explore the surface for myself."), format("It seems I need to be stronger before venturing out.."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
         case 4: 
-            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_2, 0, format("intro text 2"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_2, 0, format("Our roles in TzHaar society are decided at birth.\pI was destined to battle here, and beat you."), format("Perhaps my destiny was always to lose to you."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
         case 5: 
-            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_3, 0, format("intro text 3"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_3, 0, format("There were rumours long ago of a JalYt that was able to beat us.\pThat can't be true, you're too weak!"), format("Maybe there is some truth to those rumours.."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
     } 
 }
 

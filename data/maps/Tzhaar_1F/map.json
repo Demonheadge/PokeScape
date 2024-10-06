@@ -167,7 +167,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "TZHAAR_NPC_15",
       "flag": "0"
     },
     {
@@ -193,7 +193,7 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "TZHAAR_NPC_14",
       "flag": "0"
     },
     {

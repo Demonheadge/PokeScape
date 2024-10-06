@@ -16199,102 +16199,7 @@
         },
         {
           "map": "MAP_TZHAAR_FIGHT_CAVES",
-          "base_label": "gTzhaar_FightCaves0",
-          "land_mons": {
-            "encounter_rate": 20,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 100,
-                "species": "SPECIES_TZ_KEK"
-              },
-              {
-                "min_level": 5,
-                "max_level": 100,
-                "species": "SPECIES_TZ_KIH"
-              },
-              {
-                "min_level": 5,
-                "max_level": 100,
-                "species": "SPECIES_TZ_KIH_SPIRIT_FORM"
-              },
-              {
-                "min_level": 5,
-                "max_level": 100,
-                "species": "SPECIES_TZREK_JAD"
-              },
-              {
-                "min_level": 5,
-                "max_level": 100,
-                "species": "SPECIES_TZTOK_JAD"
-              },
-              {
-                "min_level": 5,
-                "max_level": 100,
-                "species": "SPECIES_TZKAL_ZUK"
-              },
-              {
-                "min_level": 5,
-                "max_level": 100,
-                "species": "SPECIES_JALTOK_JAD"
-              },
-              {
-                "min_level": 5,
-                "max_level": 100,
-                "species": "SPECIES_TOK_XIL"
-              },
-              {
-                "min_level": 5,
-                "max_level": 100,
-                "species": "SPECIES_TZTOK_JAD"
-              },
-              {
-                "min_level": 5,
-                "max_level": 100,
-                "species": "SPECIES_YT_HURKOT"
-              },
-              {
-                "min_level": 5,
-                "max_level": 100,
-                "species": "SPECIES_YT_MEJKOT"
-              },
-              {
-                "min_level": 5,
-                "max_level": 100,
-                "species": "SPECIES_JAL_MEJRAH"
-              }
-            ]
-          },
-          "water_mons": {
-            "encounter_rate": 0,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              }
-            ]
-          }
+          "base_label": "gTzhaar_FightCaves0"
         },
         {
           "map": "MAP_GIANT_MOLE_CAVE",
@@ -31975,6 +31880,75 @@
                 "min_level": 13,
                 "max_level": 18,
                 "species": "SPECIES_STRYKEWYRM_FREEZY_FORM"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_TZHAAR_CAVES_5",
+          "base_label": "gTzhaar_Caves_50",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 21,
+                "max_level": 24,
+                "species": "SPECIES_TZ_KIH"
+              },
+              {
+                "min_level": 21,
+                "max_level": 24,
+                "species": "SPECIES_JAL_MEJRAH"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_TZ_KIH"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_JAL_MEJRAH"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_TZ_KEK"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_GOLEM_TITAN"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_JAL_NIB"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_JAL_NIB"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_JAL_AK"
+              },
+              {
+                "min_level": 22,
+                "max_level": 25,
+                "species": "SPECIES_JAL_AK"
+              },
+              {
+                "min_level": 23,
+                "max_level": 27,
+                "species": "SPECIES_KET_DILL"
+              },
+              {
+                "min_level": 23,
+                "max_level": 27,
+                "species": "SPECIES_YT_HURKOT"
               }
             ]
           }
