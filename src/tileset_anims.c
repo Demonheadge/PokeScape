@@ -92,6 +92,8 @@ static void QueueAnimTiles_PokeScapeOutdoors_Water(u16);
 static void QueueAnimTiles_PokeScapeOutdoors_WaterRocks(u16);
 static void QueueAnimTiles_PokeScapeOutdoors_LogFire(u16);
 static void QueueAnimTiles_PokeScapeOutdoors_Flower(u16);
+static void QueueAnimTiles_PokeScapeOutdoors_WheatWhirlwind(u16);
+static void QueueAnimTiles_PokeScapeOutdoors_WheatWind(u16);
 static void QueueAnimTiles_Lumbridge_Fountain(u16);
 static void QueueAnimTiles_Wizards_Tower_Torch(u16);
 static void QueueAnimTiles_Wizards_Tower_Portal(u16);
@@ -153,6 +155,34 @@ const u16 *const gTilesetAnims_PokeScapeOutdoors_WaterRocks[] = {
     gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame5,
     gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame6,
     gTilesetAnims_PokeScapeOutdoors_WaterRocks_Frame7
+};
+
+const u16 gTilesetAnims_PokeScapeOutdoors_WheatWhirlwind_Frame0[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/WheatWhirlwind/0.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_WheatWhirlwind_Frame1[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/WheatWhirlwind/1.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_WheatWhirlwind_Frame2[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/WheatWhirlwind/2.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_WheatWhirlwind_Frame3[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/WheatWhirlwind/3.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_WheatWhirlwind_Frame4[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/WheatWhirlwind/4.4bpp");
+
+const u16 *const gTilesetAnims_PokeScapeOutdoors_WheatWhirlwind[] = {
+    gTilesetAnims_PokeScapeOutdoors_WheatWhirlwind_Frame0,
+    gTilesetAnims_PokeScapeOutdoors_WheatWhirlwind_Frame1,
+    gTilesetAnims_PokeScapeOutdoors_WheatWhirlwind_Frame2,
+    gTilesetAnims_PokeScapeOutdoors_WheatWhirlwind_Frame3,
+    gTilesetAnims_PokeScapeOutdoors_WheatWhirlwind_Frame4
+};
+
+const u16 gTilesetAnims_PokeScapeOutdoors_WheatWind_Frame0[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/WheatWind/0.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_WheatWind_Frame1[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/WheatWind/1.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_WheatWind_Frame2[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/WheatWind/2.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_WheatWind_Frame3[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/WheatWind/3.4bpp");
+const u16 gTilesetAnims_PokeScapeOutdoors_WheatWind_Frame4[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/WheatWind/4.4bpp");
+
+const u16 *const gTilesetAnims_PokeScapeOutdoors_WheatWind[] = {
+    gTilesetAnims_PokeScapeOutdoors_WheatWind_Frame0,
+    gTilesetAnims_PokeScapeOutdoors_WheatWind_Frame1,
+    gTilesetAnims_PokeScapeOutdoors_WheatWind_Frame2,
+    gTilesetAnims_PokeScapeOutdoors_WheatWind_Frame3,
+    gTilesetAnims_PokeScapeOutdoors_WheatWind_Frame4
 };
 
 const u16 gTilesetAnims_PokeScapeOutdoors_LogFire_Frame0[] = INCBIN_U16("data/tilesets/primary/PokeScapeOutdoors/anim/logfire/logfire_0.4bpp");
@@ -1048,6 +1078,10 @@ static void TilesetAnim_PokeScapeOutdoors(u16 timer)
         QueueAnimTiles_PokeScapeOutdoors_LogFire(timer >> 4);
     if (timer % 16 == 3)
         QueueAnimTiles_PokeScapeOutdoors_Flower(timer / 16);
+    if (timer % 8 == 4)
+        QueueAnimTiles_PokeScapeOutdoors_WheatWhirlwind(timer / 8);
+    if (timer % 8 == 5)
+        QueueAnimTiles_PokeScapeOutdoors_WheatWind(timer / 8);
 }
 
 static void TilesetAnim_PokeScapeIndoors(u16 timer)
@@ -1143,6 +1177,18 @@ static void QueueAnimTiles_PokeScapeOutdoors_Flower(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_PokeScapeOutdoors_Flower);
     AppendTilesetAnimToBuffer(gTilesetAnims_PokeScapeOutdoors_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(508)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_PokeScapeOutdoors_WheatWhirlwind(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_PokeScapeOutdoors_WheatWhirlwind); 
+    AppendTilesetAnimToBuffer(gTilesetAnims_PokeScapeOutdoors_WheatWhirlwind[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(460)), 12 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_PokeScapeOutdoors_WheatWind(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_PokeScapeOutdoors_WheatWind); 
+    AppendTilesetAnimToBuffer(gTilesetAnims_PokeScapeOutdoors_WheatWind[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(444)), 4 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_Karamja_scorchfire1(u16 timer)
