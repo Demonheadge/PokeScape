@@ -31956,6 +31956,71 @@
         {
           "map": "MAP_MUDSKIPPER_SOUND_3",
           "base_label": "gMudskipper_Sound_30",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 24,
+                "max_level": 27,
+                "species": "SPECIES_SEAGULL_NORMAL_FORM"
+              },
+              {
+                "min_level": 24,
+                "max_level": 27,
+                "species": "SPECIES_CRABLING"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_SEAGULL_NORMAL_FORM"
+              },
+              {
+                "min_level": 25,
+                "max_level": 28,
+                "species": "SPECIES_CRABLING"
+              },
+              {
+                "min_level": 26,
+                "max_level": 29,
+                "species": "SPECIES_CRABLET_SECOND_FORM"
+              },
+              {
+                "min_level": 26,
+                "max_level": 29,
+                "species": "SPECIES_CRABLET_THIRD_FORM"
+              },
+              {
+                "min_level": 27,
+                "max_level": 30,
+                "species": "SPECIES_GIANT_CRAB_RED_FORM"
+              },
+              {
+                "min_level": 27,
+                "max_level": 30,
+                "species": "SPECIES_GIANT_CRAB_MOSS_FORM"
+              },
+              {
+                "min_level": 28,
+                "max_level": 31,
+                "species": "SPECIES_GIANT_CRAB_RUMPUMPED_FORM"
+              },
+              {
+                "min_level": 28,
+                "max_level": 31,
+                "species": "SPECIES_CRABLET_FORTH_FORM"
+              },
+              {
+                "min_level": 29,
+                "max_level": 32,
+                "species": "SPECIES_GIANT_CRAB_MOSS_FORM"
+              },
+              {
+                "min_level": 32,
+                "max_level": 35,
+                "species": "SPECIES_CRABLET_FIFTH_FORM"
+              }
+            ]
+          },
           "water_mons": {
             "encounter_rate": 4,
             "mons": [
@@ -32038,71 +32103,6 @@
                 "min_level": 39,
                 "max_level": 40,
                 "species": "SPECIES_SHARK_GOLDEN_FORM"
-              }
-            ]
-          },
-          "land_mons": {
-            "encounter_rate": 20,
-            "mons": [
-              {
-                "min_level": 24,
-                "max_level": 27,
-                "species": "SPECIES_SEAGULL_NORMAL_FORM"
-              },
-              {
-                "min_level": 24,
-                "max_level": 27,
-                "species": "SPECIES_CRABLING"
-              },
-              {
-                "min_level": 25,
-                "max_level": 28,
-                "species": "SPECIES_SEAGULL_NORMAL_FORM"
-              },
-              {
-                "min_level": 25,
-                "max_level": 28,
-                "species": "SPECIES_CRABLING"
-              },
-              {
-                "min_level": 26,
-                "max_level": 29,
-                "species": "SPECIES_CRABLET_SECOND_FORM"
-              },
-              {
-                "min_level": 26,
-                "max_level": 29,
-                "species": "SPECIES_CRABLET_THIRD_FORM"
-              },
-              {
-                "min_level": 27,
-                "max_level": 30,
-                "species": "SPECIES_GIANT_CRAB_RED_FORM"
-              },
-              {
-                "min_level": 27,
-                "max_level": 30,
-                "species": "SPECIES_GIANT_CRAB_MOSS_FORM"
-              },
-              {
-                "min_level": 28,
-                "max_level": 31,
-                "species": "SPECIES_GIANT_CRAB_RUMPUMPED_FORM"
-              },
-              {
-                "min_level": 28,
-                "max_level": 31,
-                "species": "SPECIES_CRABLET_FORTH_FORM"
-              },
-              {
-                "min_level": 29,
-                "max_level": 32,
-                "species": "SPECIES_GIANT_CRAB_MOSS_FORM"
-              },
-              {
-                "min_level": 32,
-                "max_level": 35,
-                "species": "SPECIES_CRABLET_FIFTH_FORM"
               }
             ]
           }

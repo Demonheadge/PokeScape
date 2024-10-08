@@ -585,8 +585,8 @@
 #define FLAG_HIDDEN_ITEM_MUSA_POINT_4                           (FLAG_HIDDEN_ITEMS_START + 0x30)
 #define FLAG_HIDDEN_ITEM_KARAMJA_VOLCANO_1                      (FLAG_HIDDEN_ITEMS_START + 0x31)
 #define FLAG_HIDDEN_ITEM_LUMBRIDGE_FOREST_1                     (FLAG_HIDDEN_ITEMS_START + 0x4C)
-#define FLAG_HIDDEN_ITEM_ROUTE39_1                              (FLAG_HIDDEN_ITEMS_START + 0x4D)
-#define FLAG_HIDDEN_ITEM_ROUTE39_2                              (FLAG_HIDDEN_ITEMS_START + 0x1B)
+#define FLAG_HIDDEN_ITEM_TEMP_1                                 (FLAG_HIDDEN_ITEMS_START + 0x4D)
+#define FLAG_HIDDEN_ITEM_TEMP_2                                 (FLAG_HIDDEN_ITEMS_START + 0x1B)
 #define FLAG_HIDDEN_ITEM_TEMP_3                                 (FLAG_HIDDEN_ITEMS_START + 0x2B)
 #define FLAG_HIDDEN_ITEM_TEMP_4                                 (FLAG_HIDDEN_ITEMS_START + 0x4B)
 #define FLAG_HIDDEN_ITEM_TEMP_5                                 (FLAG_HIDDEN_ITEMS_START + 0x1D)
@@ -619,7 +619,6 @@
 #define FLAG_HIDDEN_ITEM_MUDSKIPPER_POINT_2                     (FLAG_HIDDEN_ITEMS_START + 0x2F)
 #define FLAG_HIDDEN_ITEM_MUDSKIPPER_POINT_3                     (FLAG_HIDDEN_ITEMS_START + 0x56)
 #define FLAG_HIDDEN_ITEM_VARROCK_SEWER_1                        (FLAG_HIDDEN_ITEMS_START + 0x32)
-
 #define FLAG_HIDDEN_ITEM_DRAYNORMANOR_1                         (FLAG_HIDDEN_ITEMS_START + 0x34)
 #define FLAG_HIDDEN_ITEM_DRAYNORMANOR_2                         (FLAG_HIDDEN_ITEMS_START + 0x33)
 #define FLAG_HIDDEN_ITEM_DRAYNORMANOR_3                         (FLAG_HIDDEN_ITEMS_START + 0x40)
@@ -633,8 +632,9 @@
 #define FLAG_HIDDEN_ITEM_MELZAR_6                               (FLAG_HIDDEN_ITEMS_START + 0x38)
 #define FLAG_HIDDEN_ITEM_MELZAR_7                               (FLAG_HIDDEN_ITEMS_START + 0x39)
 #define FLAG_HIDDEN_ITEM_ROUTE12_1                              (FLAG_HIDDEN_ITEMS_START + 0x03)
-#define FLAG_HIDDEN_ITEM_ROUTE_113_TM_32                        (FLAG_HIDDEN_ITEMS_START + 0x1E)
-#define FLAG_HIDDEN_ITEM_ROUTE_113_NUGGET                       (FLAG_HIDDEN_ITEMS_START + 0x62)
+#define FLAG_HIDDEN_ITEM_ROUTE39_1                              (FLAG_HIDDEN_ITEMS_START + 0x1E)
+#define FLAG_HIDDEN_ITEM_ROUTE39_2                              (FLAG_HIDDEN_ITEMS_START + 0x62)
+
 #define FLAG_HIDDEN_ITEM_ROUTE_114_CARBOS                       (FLAG_HIDDEN_ITEMS_START + 0x04)
 #define FLAG_HIDDEN_ITEM_ROUTE_113_REVIVE                       (FLAG_HIDDEN_ITEMS_START + 0x2A)
 #define FLAG_HIDDEN_ITEM_ROUTE_115_HEART_SCALE                  (FLAG_HIDDEN_ITEMS_START + 0x61)
@@ -1203,7 +1203,6 @@
 #define FLAG_ITEM_LUMBRIDGE_FOREST_3                                0x472 // Unused Flag
 #define FLAG_ITEM_EDGEVILLE_1                                       0x473
 #define FLAG_CHEAT_ITEM_PULSE_CORE                                  0x474
-
 #define FLAG_ITEM_KOUREND_CATACOMBS_1                               0x475
 #define FLAG_ITEM_KOUREND_CATACOMBS_2                               0x476
 #define FLAG_ITEM_KOUREND_CATACOMBS_3                               0x477
@@ -1241,10 +1240,10 @@
 #define FLAG_ITEM_CRANDOR_SPIRIT_SHARD                              0x49F // Unused Flag
 #define FLAG_ITEM_CRANDOR_CHOCOLATE_CAKE                            0x4A0 // Unused Flag
 #define FLAG_ITEM_CRANDOR_RUNE_POUCH                                0x4A1 // Unused Flag
-
 #define FLAG_ITEM_DRAYNORMANOR_TEA                                  0x493 // Unused Flag
 #define FLAG_ITEM_DRAYNORMANOR_POUCHES                              0x494 // Unused Flag
 #define FLAG_ITEM_LUMBRIDGESWAMP_ITEM_3                             0x495 // Unused Flag
+
 #define FLAG_UNUSED_4                                        0x496 // Unused Flag
 #define FLAG_UNUSED_5                                        0x497 // Unused Flag
 #define FLAG_UNUSED_6                                        0x498 // Unused Flag
@@ -1284,6 +1283,7 @@
 #define FLAG_ITEM_VARROCK_SEWERS_7                                  0x4B9 // Unused Flag
 #define FLAG_ITEM_VARROCK_SEWERS_8                                  0x4BA // Unused Flag
 #define FLAG_ITEM_VARROCK_SEWERS_9                                  0x4BB // Unused Flag
+
 #define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
 #define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
 #define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag

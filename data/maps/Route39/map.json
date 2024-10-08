@@ -430,7 +430,7 @@
       "x": 40,
       "y": 34,
       "elevation": 0,
-      "item": "HIDDEN_ITEM_ROUTE39_1",
+      "item": "ITEM_NATURE_RUNE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE39_1"
     },
     {
@@ -438,7 +438,7 @@
       "x": 30,
       "y": 16,
       "elevation": 0,
-      "item": "ITEM_NONE",
+      "item": "ITEM_PRAYER_POTION",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE39_2"
     }
   ],

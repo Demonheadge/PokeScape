@@ -65,17 +65,6 @@ script ITEM_ROUTE39_4
     end
 }
 
-script HIDDEN_ITEM_ROUTE39_1
-{
-    finditem(ITEM_NATURE_RUNE)
-    end
-}
-
-script HIDDEN_ITEM_ROUTE39_2
-{
-    finditem(ITEM_PRAYER_POTION)
-    end
-}
 
 //TRAINERS
 script BATTLE_ROUTE39_TRAINER_1
@@ -220,8 +209,4 @@ script TRIGGER_ROUTE_39_BLOCK
 movement movement_BLOCK_ROUTE_39
 {
 	walk_down
-}
-
-movement MOVEMENT_EXCLAMATIONMARK {
-    emote_exclamation_mark
 }
