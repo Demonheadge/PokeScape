@@ -70,7 +70,7 @@ movement Blockmovement_WhiteKnight{
 //TRAINERS
 script BATTLE_ROUTE24_MUGGER{
     trainerbattle_single(TRAINER_ROUTE24_MUGGER, format("Deliver and stand!"),format("Sorry I mixed that up, could you please be robbed again?\pNo?\pOk then…"))
-    namebox ("RSN")
+    namebox ("Mugger")
     msgbox(format("Sorry I mixed that up, could you please be robbed again?\pNo?\pOk then…"))
     hidenamebox
     release
@@ -88,7 +88,7 @@ script BATTLE_ROUTE24_WOODCUTTER_1{
 
 script BATTLE_ROUTE24_WOODCUTTER_2{
     trainerbattle_single(TRAINER_ROUTE24_WOODCUTTER_2, format("To chop down trees you need a hatchet like mine."),format("I bet you don't even have over 20 Woodcutting."))
-    namebox ("RSN")
+    namebox ("L0ggerh3ad")
     msgbox(format("I bet you don't even have over 20 Woodcutting."))
     hidenamebox
     release

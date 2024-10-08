@@ -65,7 +65,7 @@ BATTLE_ROUTE24_WOODCUTTER_1::
 
 BATTLE_ROUTE24_WOODCUTTER_2::
 	trainerbattle_single TRAINER_ROUTE24_WOODCUTTER_2, BATTLE_ROUTE24_WOODCUTTER_2_Text_0, BATTLE_ROUTE24_WOODCUTTER_2_Text_1
-	namebox BATTLE_ROUTE24_MUGGER_Text_2
+	namebox BATTLE_ROUTE24_WOODCUTTER_2_Text_2
 	msgbox BATTLE_ROUTE24_WOODCUTTER_2_Text_1
 	hidenamebox
 	release
@@ -165,7 +165,7 @@ BATTLE_ROUTE24_MUGGER_Text_1:
 	.string "Ok then…$"
 
 BATTLE_ROUTE24_MUGGER_Text_2:
-	.string "RSN$"
+	.string "Mugger$"
 
 BATTLE_ROUTE24_WOODCUTTER_1_Text_0:
 	.string "Woodcutting is more than just cutting\n"
@@ -185,6 +185,9 @@ BATTLE_ROUTE24_WOODCUTTER_2_Text_0:
 BATTLE_ROUTE24_WOODCUTTER_2_Text_1:
 	.string "I bet you don't even have over 20\n"
 	.string "Woodcutting.$"
+
+BATTLE_ROUTE24_WOODCUTTER_2_Text_2:
+	.string "L0ggerh3ad$"
 
 BATTLE_ROUTE24_GOBLIN_1_Text_0:
 	.string "Prepare for battle human!$"

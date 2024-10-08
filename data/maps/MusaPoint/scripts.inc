@@ -292,6 +292,7 @@ NPC_MONKEY_BLOCK::
 
 BATTLE_MUSA_POINT_TRAINER_1::
 	trainerbattle_single TRAINER_MUSA_POINT_TRAINER_1, BATTLE_MUSA_POINT_TRAINER_1_Text_0, BATTLE_MUSA_POINT_TRAINER_1_Text_1
+	namebox BATTLE_MUSA_POINT_TRAINER_1_Text_2
 	msgbox BATTLE_MUSA_POINT_TRAINER_1_Text_1
 	hidenamebox
 	release
@@ -300,6 +301,7 @@ BATTLE_MUSA_POINT_TRAINER_1::
 
 BATTLE_MUSA_POINT_TRAINER_2::
 	trainerbattle_single TRAINER_MUSA_POINT_TRAINER_2, BATTLE_MUSA_POINT_TRAINER_2_Text_0, BATTLE_MUSA_POINT_TRAINER_2_Text_1
+	namebox BATTLE_MUSA_POINT_TRAINER_2_Text_2
 	msgbox BATTLE_MUSA_POINT_TRAINER_2_Text_1
 	hidenamebox
 	release
@@ -308,6 +310,7 @@ BATTLE_MUSA_POINT_TRAINER_2::
 
 BATTLE_MUSA_POINT_TRAINER_3::
 	trainerbattle_single TRAINER_MUSA_POINT_TRAINER_3, BATTLE_MUSA_POINT_TRAINER_3_Text_0, BATTLE_MUSA_POINT_TRAINER_3_Text_1
+	namebox BATTLE_MUSA_POINT_TRAINER_3_Text_2
 	msgbox BATTLE_MUSA_POINT_TRAINER_3_Text_1
 	hidenamebox
 	release
@@ -316,7 +319,8 @@ BATTLE_MUSA_POINT_TRAINER_3::
 
 BATTLE_MUSA_POINT_TRAINER_4::
 	trainerbattle_single TRAINER_MUSA_POINT_TRAINER_4, BATTLE_MUSA_POINT_TRAINER_4_Text_0, BATTLE_MUSA_POINT_TRAINER_4_Text_1
-	msgbox BATTLE_MUSA_POINT_TRAINER_4_Text_2
+	namebox BATTLE_MUSA_POINT_TRAINER_4_Text_2
+	msgbox BATTLE_MUSA_POINT_TRAINER_4_Text_3
 	hidenamebox
 	release
 	end
@@ -1082,8 +1086,8 @@ NPC_LegendArts_Text_1:
 	.string "How did I get here?$"
 
 SIGNPOST_MUSA_POINT_Text_0:
-	.string "Musa Point - The best bannanas in all of\n"
-	.string "Karamaja!$"
+	.string "Musa Point - The best bananas in all of\n"
+	.string "Karamja!$"
 
 SIGNPOST_BOAT_FOR_SALE_Text_0:
 	.string "Boat for Sale!\p"
@@ -1110,10 +1114,10 @@ NPC_MUSA_POINT_2_Text_1:
 NPC_MUSA_POINT_3_Text_0:
 	.string "The Customs Officers constantly keep\n"
 	.string "us under supervision, apparently they\l"
-	.string "don't want Karamja Rum to reach the\l"
+	.string "don't want Karamjan Rum to reach the\l"
 	.string "mainland.\p"
-	.string "Its all a conspiracy to keep the White\n"
-	.string "knights in power I tell you!$"
+	.string "It's all a conspiracy to keep the White\n"
+	.string "Knights in power I tell you!$"
 
 NPC_MUSA_POINT_4_Text_0:
 	.string "Hunter$"
@@ -1195,6 +1199,9 @@ BATTLE_MUSA_POINT_TRAINER_1_Text_0:
 BATTLE_MUSA_POINT_TRAINER_1_Text_1:
 	.string "I can only use quick chat.$"
 
+BATTLE_MUSA_POINT_TRAINER_1_Text_2:
+	.string "HelpImMuted$"
+
 BATTLE_MUSA_POINT_TRAINER_2_Text_0:
 	.string "Why am I here?\p"
 	.string "Fight me to find out!$"
@@ -1204,6 +1211,9 @@ BATTLE_MUSA_POINT_TRAINER_2_Text_1:
 	.string "membership.\p"
 	.string "That is why I am here.$"
 
+BATTLE_MUSA_POINT_TRAINER_2_Text_2:
+	.string "Fishin4Bond$"
+
 BATTLE_MUSA_POINT_TRAINER_3_Text_0:
 	.string "Noob fishing spot tells me I need a\n"
 	.string "higher fishing level to be here.\p"
@@ -1211,6 +1221,9 @@ BATTLE_MUSA_POINT_TRAINER_3_Text_0:
 
 BATTLE_MUSA_POINT_TRAINER_3_Text_1:
 	.string "My fishing level is 14.$"
+
+BATTLE_MUSA_POINT_TRAINER_3_Text_2:
+	.string "New2this$"
 
 BATTLE_MUSA_POINT_TRAINER_4_Text_0:
 	.string "Life is like a fishing spot, you never\n"
@@ -1221,6 +1234,9 @@ BATTLE_MUSA_POINT_TRAINER_4_Text_1:
 	.string "get lobsters like this.$"
 
 BATTLE_MUSA_POINT_TRAINER_4_Text_2:
+	.string "Lobs4Sale$"
+
+BATTLE_MUSA_POINT_TRAINER_4_Text_3:
 	.string "Life is like a fishing spot, you never\n"
 	.string "know what you are going to get.\p"
 	.string "Unless you fish for lobsters, you only\n"
@@ -1431,7 +1447,7 @@ TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_1:
 
 TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_2:
 	.string "It was a shame you didn't take me up on\n"
-	.string "the offer to meet within Asganria\l"
+	.string "the offer to meet within Asgarnia\l"
 	.string "Dungeon.\p"
 	.string "It cannot be helped I suppose.\p"
 	.string "How about we check just how much you\n"
@@ -1443,9 +1459,9 @@ TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_3:
 	.string "How did that go, did he put up a good\n"
 	.string "fight?\p"
 	.string "That man loves his cabbages.\p"
-	.string "Enough, chit chat, this old man wants to\n"
+	.string "Enough chit chat, this old man wants to\n"
 	.string "see how much you've grown since our\l"
-	.string "last enocunter!$"
+	.string "last encounter!$"
 
 TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_4:
 	.string "You are really getting this old man riled\n"
@@ -1453,7 +1469,7 @@ TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_4:
 
 TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_5:
 	.string "So you got stranded on Crandor, passed\n"
-	.string "through volcano passage undereath\l"
+	.string "through a volcano passage underneath\l"
 	.string "Karamja Volcano, met with the Tzhaar\l"
 	.string "and now you are here?\p"
 	.string "You certainly have been busy haven't\n"
@@ -1465,7 +1481,7 @@ TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_5:
 TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_6:
 	.string "Although that might have to be put on\n"
 	.string "hold for a bit as it seems someone was\l"
-	.string "caught smuggling Karmaja Rum.\p"
+	.string "caught smuggling Karmajan Rum.\p"
 	.string "All of the boats are in lockdown until\n"
 	.string "the matter is resolved.\p"
 	.string "If you don't want to wait around with\n"
@@ -1473,7 +1489,7 @@ TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_6:
 
 TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_7:
 	.string "He lives in that shack just over there.\p"
-	.string "Go give him a visit if your interested.$"
+	.string "Go give him a visit if you're interested.$"
 
 TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT_Text_8:
 	.string "Me?\p"

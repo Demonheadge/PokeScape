@@ -753,6 +753,55 @@ STORYMODE_VAR_CHECK::
 	end
 
 
+RUNE_EVOLUTIONS_NOTES::
+	random 6
+	switch VAR_RESULT
+	case 0, RUNE_EVOLUTIONS_NOTES_3
+	case 1, RUNE_EVOLUTIONS_NOTES_4
+	case 2, RUNE_EVOLUTIONS_NOTES_5
+	case 3, RUNE_EVOLUTIONS_NOTES_6
+	case 4, RUNE_EVOLUTIONS_NOTES_7
+	case 5, RUNE_EVOLUTIONS_NOTES_8
+	case 6, RUNE_EVOLUTIONS_NOTES_9
+	release
+	end
+
+RUNE_EVOLUTIONS_NOTES_3:
+	msgbox RUNE_EVOLUTIONS_NOTES_Text_0
+	release
+	end
+
+RUNE_EVOLUTIONS_NOTES_4:
+	msgbox RUNE_EVOLUTIONS_NOTES_Text_0
+	release
+	end
+
+RUNE_EVOLUTIONS_NOTES_5:
+	msgbox RUNE_EVOLUTIONS_NOTES_Text_0
+	release
+	end
+
+RUNE_EVOLUTIONS_NOTES_6:
+	msgbox RUNE_EVOLUTIONS_NOTES_Text_0
+	release
+	end
+
+RUNE_EVOLUTIONS_NOTES_7:
+	msgbox RUNE_EVOLUTIONS_NOTES_Text_0
+	release
+	end
+
+RUNE_EVOLUTIONS_NOTES_8:
+	msgbox RUNE_EVOLUTIONS_NOTES_Text_0
+	release
+	end
+
+RUNE_EVOLUTIONS_NOTES_9:
+	msgbox RUNE_EVOLUTIONS_NOTES_Text_0
+	release
+	end
+
+
 WizardsTower_SEDRIDOR_Text_0:
 	.string "Sedridor$"
 
@@ -1042,3 +1091,15 @@ STORYMODE_VAR_CHECK_Text_1:
 STORYMODE_VAR_CHECK_Text_2:
 	.string "VAR_GAMEMODE_LEVEL_CAP is:\n"
 	.string "{STR_VAR_1}.$"
+
+RUNE_EVOLUTIONS_NOTES_Text_0:
+	.string "The bookcase contains various\n"
+	.string "research notes that Rick has written.\p"
+	.string "You choose one at random.\p"
+	.string "When local wildlife such as calves and\n"
+	.string "bulls are exposed to Chaos Runes, they\l"
+	.string "evolve into creatures that have only\l"
+	.string "otherwise ever been seen deep in the\l"
+	.string "tunnels below Barbarian Village.\p"
+	.string "I wonder what connection that place\n"
+	.string "has to Chaos Runes.$"

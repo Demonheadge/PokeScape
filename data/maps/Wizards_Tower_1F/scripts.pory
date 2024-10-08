@@ -818,7 +818,42 @@ script STORYMODE_VAR_CHECK {
     end
 }
 
+script RUNE_EVOLUTIONS_NOTES {
 
+ random(6)
+        switch (var(VAR_RESULT)) {
+            case 0: 
+                msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pWhen local wildlife such as calves and bulls are exposed to Chaos Runes, they evolve into creatures that have only otherwise ever been seen deep in the tunnels below Barbarian Village.\pI wonder what connection that place has to Chaos Runes."))
+                release
+		end
+            case 1: 
+                msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pWhen local wildlife such as calves and bulls are exposed to Chaos Runes, they evolve into creatures that have only otherwise ever been seen deep in the tunnels below Barbarian Village.\pI wonder what connection that place has to Chaos Runes."))
+                release
+		end
+            case 2: 
+                msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pWhen local wildlife such as calves and bulls are exposed to Chaos Runes, they evolve into creatures that have only otherwise ever been seen deep in the tunnels below Barbarian Village.\pI wonder what connection that place has to Chaos Runes."))
+                release
+		end
+            case 3: 
+                 msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pWhen local wildlife such as calves and bulls are exposed to Chaos Runes, they evolve into creatures that have only otherwise ever been seen deep in the tunnels below Barbarian Village.\pI wonder what connection that place has to Chaos Runes."))
+                		release
+				end
+            case 4: 
+                msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pWhen local wildlife such as calves and bulls are exposed to Chaos Runes, they evolve into creatures that have only otherwise ever been seen deep in the tunnels below Barbarian Village.\pI wonder what connection that place has to Chaos Runes."))
+                release
+		end
+            case 5: 
+                msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pWhen local wildlife such as calves and bulls are exposed to Chaos Runes, they evolve into creatures that have only otherwise ever been seen deep in the tunnels below Barbarian Village.\pI wonder what connection that place has to Chaos Runes."))
+                release
+		end
+            case 6: 
+                msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pWhen local wildlife such as calves and bulls are exposed to Chaos Runes, they evolve into creatures that have only otherwise ever been seen deep in the tunnels below Barbarian Village.\pI wonder what connection that place has to Chaos Runes."))
+                release
+		end
+        }
+	release
+	end
+}
 
 
 

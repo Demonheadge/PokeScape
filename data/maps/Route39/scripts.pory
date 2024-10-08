@@ -1,5 +1,6 @@
 const OBJ_EVENT_ID_PENGUIN_DND = 10
 const OBJ_EVENT_ID_PENGUIN = 9
+const OBJ_EVENT_ID_CAPTAIN = 16
 
 mapscripts Route39_MapScripts{
 	MAP_SCRIPT_ON_TRANSITION {
@@ -45,12 +46,12 @@ script ENCOUNTER_PENGUIN_BARREL_ROUTE39 {
 //ITEMS
 script ITEM_ROUTE39_1
 {
-    finditem(ITEM_PURPLE_SWEETS)
+    finditem(ITEM_CHOCOLATE_CAKE)
     end
 }
 script ITEM_ROUTE39_2
 {
-    finditem(ITEM_PURPLE_SWEETS)
+    finditem(ITEM_CHOCOLATE_SUNDAY)
     end
 }
 script ITEM_ROUTE39_3
@@ -60,7 +61,7 @@ script ITEM_ROUTE39_3
 }
 script ITEM_ROUTE39_4
 {
-    finditem(ITEM_PURPLE_SWEETS)
+    finditem(ITEM_STAT_BEER)
     end
 }
 
@@ -69,7 +70,7 @@ script ITEM_ROUTE39_4
 script BATTLE_ROUTE39_TRAINER_1
 {
     trainerbattle_single(TRAINER_ROUTE39_TRAINER_1, format("Stop right there! I be looking for me treasure."),format("The real treasure be this marvelleous bonding we be having."))
-    //namebox ("Cupholder")
+    namebox ("Gullstream")
     msgbox(format("The real treasure be this marvelleous bonding we be having."))
 	hidenamebox
     release
@@ -78,7 +79,7 @@ script BATTLE_ROUTE39_TRAINER_1
 script BATTLE_ROUTE39_TRAINER_2
 {
     trainerbattle_single(TRAINER_ROUTE39_TRAINER_2, format("If you want to get to Brimhaven, you will need to get through me stranger."),format("Right this way sir, follow the path and keep going west.\pHave a nice trip."))
-    //namebox ("Cupholder")
+    namebox ("Atimaar")
     msgbox(format("Right this way sir, follow the path and keep going west.\pHave a nice trip."))
 	hidenamebox
     release
@@ -87,7 +88,7 @@ script BATTLE_ROUTE39_TRAINER_2
 script BATTLE_ROUTE39_TRAINER_3
 {
     trainerbattle_single(TRAINER_ROUTE39_TRAINER_3, format("My prey shows itself before me!\pI shall feast on you tonight!"),format("Hold on, you are not a monster.\pYou do not even look tasty."))
-    //namebox ("Cupholder")
+    namebox ("Deerora")
     msgbox(format("Hold on, you are not a monster.\pYou do not even look tasty."))
 	hidenamebox
     release
@@ -96,8 +97,8 @@ script BATTLE_ROUTE39_TRAINER_3
 script BATTLE_ROUTE39_TRAINER_4
 {
     trainerbattle_single(TRAINER_ROUTE39_TRAINER_4, format("Stop! You are not taking my lesser demon spot!"),format("Oh you are not on a task?\pNever mind then"))
-    //namebox ("Cupholder")
-    msgbox(format("Oh you are not on a task?\pNever mind then"))
+    namebox ("E z Life")
+    msgbox(format("Oh you are not on a task?\pNever mind then."))
 	hidenamebox
     release
 	end
@@ -105,8 +106,8 @@ script BATTLE_ROUTE39_TRAINER_4
 script BATTLE_ROUTE39_TRAINER_5
 {
     trainerbattle_single(TRAINER_ROUTE39_TRAINER_5, format("The guide said, attack any enemies you may encounter.\pYou are going down!"),format("It didn't say anything about losing in the quest guide…"))
-    //namebox ("Cupholder")
-    msgbox(format("I can not do anything without the quest guide.\pI am a quester, so im incapable of independent thoughts."))
+    namebox ("GuideTheWay")
+    msgbox(format("I can not do anything without the quest guide.\pI am a quester, so I'm incapable of independent thoughts."))
 	hidenamebox
     release
 	end
@@ -114,7 +115,7 @@ script BATTLE_ROUTE39_TRAINER_5
 script BATTLE_ROUTE39_TRAINER_6
 {
     trainerbattle_single(TRAINER_ROUTE39_TRAINER_6, format("A true hunter never reveals themselves."),format("By revealing myself, I left myself weakened.\pMy bad…"))
-    //namebox ("Cupholder")
+    namebox ("Bearisa")
     msgbox(format("By revealing myself, I left myself weakened.\pMy bad…"))
 	hidenamebox
     release
@@ -123,7 +124,7 @@ script BATTLE_ROUTE39_TRAINER_6
 script BATTLE_ROUTE39_TRAINER_7
 {
     trainerbattle_single(TRAINER_ROUTE39_TRAINER_7, format("You will not pass."),format("You may pass."))
-    //namebox ("Cupholder")
+    namebox ("Humoyo")
     msgbox(format("You may pass."))
 	hidenamebox
     release
@@ -132,7 +133,7 @@ script BATTLE_ROUTE39_TRAINER_7
 script BATTLE_ROUTE39_TRAINER_8
 {
     trainerbattle_single(TRAINER_ROUTE39_TRAINER_8, format("You got a lot of guts coming into the jungle like this kid."),format("I had a lot of guts challenging a kid like you it seems."))
-    //namebox ("Cupholder")
+    namebox ("Trapelle")
     msgbox(format("I had a lot of guts challenging a kid like you it seems."))
 	hidenamebox
     release
@@ -163,4 +164,49 @@ script NPC_Route39_2
     hidenamebox
 	release
 	end
+}
+
+script NPC_Route39_3
+{
+	lock
+	faceplayer
+    namebox ("Captain")
+	msgbox(format("It's my job to guard the shores to make sure nobody tries to sail off with any illegal rum.\pI'm watching you, so don't even think about trying anything!"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+//This is my attempt at a trigger block for the route to the north (you already had the triggers but no script)
+
+script BLOCK_ROUTE_39
+{
+	lockall
+	namebox("Captain")
+    applymovement(OBJ_EVENT_ID_CAPTAIN, MOVEMENT_EXCLAMATIONMARK)
+	waitmovement (0)
+	msgbox(format("There's a deadly storm brewing beyond here!\pIt's far too dangerous to sail beyond this point!\pCome back once it has subsided."))
+	closemessage
+	applymovement (OBJ_EVENT_ID_PLAYER,movement_BLOCK_ROUTE_39)
+	waitmovement (0)
+	return
+}
+
+
+script TRIGGER_ROUTE_39_BLOCK
+{
+	if (!flag(FLAG_BADGE04_GET))
+        {
+			call(BLOCK_ROUTE_39)
+        }
+	release
+	end
+}
+
+//I don't know how what criteria you want this locked behind so I just went with the same badge as the Al Kharid one
+
+movement movement_BLOCK_ROUTE_39
+{
+	walk_down
 }
