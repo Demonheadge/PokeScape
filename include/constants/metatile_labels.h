@@ -537,6 +537,7 @@
 #define METATILE_PokeScapeOutdoors_GENERAL_SAND         0x0F9
 #define METATILE_PokeScapeOutdoors_LOCKED_DOOR          0x1F0
 #define METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE    0x001
+#define METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE    0x03F
 
 // gTileset_PokeScape_Caves
 #define METATILE_PokeScape_Caves_HARAKEN_POOL_L      0x2F0

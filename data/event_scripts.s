@@ -1510,3 +1510,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Tzhaar_HarAken/scripts.inc"
 
 	.include "data/maps/Draynor_House_PokeScaper/scripts.inc"
+
+	.include "data/maps/Puro_Puro1/scripts.inc"
+
+	.include "data/maps/Puro_Puro2/scripts.inc"
+
+	.include "data/maps/Puro_Puro3/scripts.inc"

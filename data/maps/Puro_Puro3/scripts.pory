@@ -1,0 +1,91 @@
+mapscripts Puro_Puro_3_MapScripts {
+
+}
+
+script ELNOCK_3{
+    lock
+    faceplayer
+    namebox("Elnock")
+    msgbox(format("The implings feed off our desire for things.\pThey collect what other creatures want, and somehow this feeds them.\pI wonder if this means that certain items make certain implings evolve..?"))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+//Hunter
+script PURO_HUNTER_3{
+    lock
+    faceplayer
+    namebox("Hunter")
+    msgbox(format("I tried smuggling in some imp boxes to help me catch myself some of the wandering imps.\pI heard they have magic powers and can send things to your bank!\pBut they didn't take too kindly to it and confiscated them when I got here..."))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+//Fairy
+script PURO_FAIRY_3{
+    lock
+    faceplayer
+    namebox("Fairy")
+    msgbox(format("Don't look so confused.\pWe fairies need these implings and the items they've stolen just as much as you humans do!"))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+//Ironman
+script PURO_IRONMAN_3{
+    lock
+    faceplayer
+    namebox("CanifisChump")
+    msgbox(format("Sssh, don't tell anyone but I secretly found a way for Ironmen to trade Lucky Implings!{PAUSE 15}What do you mean it has already been patched?\pAre you saying I have to..\pTrain Hunter normally now?{PAUSE 15}NOOOOOOOOOOOOOOOOO!!!"))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+//Imp
+script IMP_DEFENDER{
+    lock
+    faceplayer
+    namebox("Defender")
+    msgbox(format("Be free little implings!"))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+script ENCOUNTER_PURO_PURO_3
+{
+	lock
+	faceplayer
+    namebox ("Imp")
+    playmoncry(SPECIES_IMPIDIMP, 0)
+	msgbox(format("Teehee!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    setwildbattle (SPECIES_IMP, 26, ITEM_NONE)
+	dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_WON || var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+		fadescreenswapbuffers(FADE_TO_BLACK)
+		removeobject (VAR_LAST_TALKED)
+		fadescreenswapbuffers(FADE_FROM_BLACK)
+	}
+    release
+	end
+}
+
+//ITEMS
+script ITEM_PURO_PURO_3
+{
+    finditem(ITEM_RUNE_POUCH)
+    end
+}

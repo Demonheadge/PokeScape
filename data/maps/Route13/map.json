@@ -274,8 +274,8 @@
       "x": 7,
       "y": 24,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE13",
-      "dest_warp_id": "1"
+      "dest_map": "MAP_PURO_PURO3",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

@@ -501,6 +501,13 @@
       "elevation": 0,
       "dest_map": "MAP_HIDDEN_GROTTOS",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 54,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_PURO_PURO1",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

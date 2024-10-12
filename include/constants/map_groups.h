@@ -725,6 +725,9 @@
 #define MAP_ICE_MOUNTAIN                (43 | (36 << 8))
 #define MAP_ASGARNIAN_DUNGEON_B4F       (44 | (36 << 8))
 #define MAP_LUMBRIDGE_SWAMP_CAVES_WGS_5 (45 | (36 << 8))
+#define MAP_PURO_PURO1                  (46 | (36 << 8))
+#define MAP_PURO_PURO2                  (47 | (36 << 8))
+#define MAP_PURO_PURO3                  (48 | (36 << 8))
 
 // gMapGroup_PokescapeIndoorTutorialIsland
 #define MAP_TUTORIAL_ISLAND_LAB_UP   (0 | (37 << 8))

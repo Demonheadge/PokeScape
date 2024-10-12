@@ -26,7 +26,9 @@ mapscripts Route1_MapScripts {
 		else
 		{
 			call(OPENWORLD_STATE_ROUTE1)
-		}
+		}    
+        
+        call(PURO_PURO_EVENT_1)
     }
 
     //MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:Route1WarpCheck 
@@ -914,3 +916,22 @@ script BATTLE_AREA_TRAINER_3
     end
 }
 
+
+
+
+script PURO_PURO_EVENT_1 {
+	//Random chance for Puro Puro Event to spawn in wheat field on Route1.
+	random(20)
+	if (var(VAR_RESULT) == 1) {
+		clearflag(FLAG_TEMP_8)
+	}
+	else {
+		setflag(FLAG_TEMP_8)
+		setmetatile(54, 7, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0)
+        setmetatile(54, 8, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0)
+        setmetatile(54, 9, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0)
+	}
+	return
+}
+
+//Unsure how to get the wheat rustle animation?
