@@ -2,7 +2,7 @@
   "id": "MAP_PURO_PURO2",
   "name": "Puro_Puro2",
   "layout": "LAYOUT_PURO_PURO2",
-  "music": "MUS_DUMMY",
+  "music": "MUS_PS_GODSLAYER",
   "region_map_section": "MAPSEC_ROUTE_1",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -146,5 +146,6 @@
   ],
   "bg_events": [
 
-  ]
+  ],
+  "has_night_table": false
 }

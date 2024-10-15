@@ -4,7 +4,24 @@ Route13_MapScripts::
 
 Route13_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 16
+	call PURO_PURO_EVENT_3
 	return
+
+
+PURO_PURO_EVENT_3::
+	random 20
+	compare VAR_RESULT, 1
+	goto_if_eq PURO_PURO_EVENT_3_2
+	setflag FLAG_TEMP_8
+	setmetatile 7, 22, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
+	setmetatile 7, 23, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
+	setmetatile 7, 24, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
+PURO_PURO_EVENT_3_1:
+	return
+
+PURO_PURO_EVENT_3_2:
+	clearflag FLAG_TEMP_8
+	goto PURO_PURO_EVENT_3_1
 
 
 VARROCK_NPC_RATBURGUS::

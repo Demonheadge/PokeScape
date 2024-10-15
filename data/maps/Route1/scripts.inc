@@ -15,13 +15,15 @@ Route1_MapScripts_MAP_SCRIPT_ON_LOAD_1:
 Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 0
 	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
-	goto_if_eq Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	goto_if_eq Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 	call OPENWORLD_STATE_ROUTE1
+Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	call PURO_PURO_EVENT_1
 	return
 
-Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 	call STORYMODE_STATE_ROUTE1
-	return
+	goto Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 
 OPENWORLD_STATE_ROUTE1::
@@ -810,6 +812,22 @@ BATTLE_AREA_TRAINER_3::
 	hidenamebox
 	release
 	end
+
+
+PURO_PURO_EVENT_1::
+	random 20
+	compare VAR_RESULT, 1
+	goto_if_eq PURO_PURO_EVENT_1_2
+	setflag FLAG_TEMP_8
+	setmetatile 54, 7, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
+	setmetatile 54, 8, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
+	setmetatile 54, 9, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
+PURO_PURO_EVENT_1_1:
+	return
+
+PURO_PURO_EVENT_1_2:
+	clearflag FLAG_TEMP_8
+	goto PURO_PURO_EVENT_1_1
 
 
 NPC_DOG_Text_0:

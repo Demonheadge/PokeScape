@@ -1,4 +1,4 @@
-mapscripts Puro_Puro_3_MapScripts {
+mapscripts Puro_Puro3_MapScripts {
 
 }
 
@@ -49,17 +49,6 @@ script PURO_IRONMAN_3{
     end
 }
 
-//Imp
-script IMP_DEFENDER{
-    lock
-    faceplayer
-    namebox("Defender")
-    msgbox(format("Be free little implings!"))
-    hidenamebox
-    closemessage
-    release
-    end
-}
 
 script ENCOUNTER_PURO_PURO_3
 {

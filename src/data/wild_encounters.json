@@ -32210,26 +32210,6 @@
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_CHICK"
-              },
-              {
-                "min_level": 2,
-                "max_level": 4,
-                "species": "SPECIES_IMPLING_BABY_FORM"
-              },
-              {
-                "min_level": 2,
-                "max_level": 4,
-                "species": "SPECIES_PIGLET"
-              },
-              {
-                "min_level": 2,
-                "max_level": 4,
-                "species": "SPECIES_CHICK"
-              },
-              {
-                "min_level": 2,
-                "max_level": 4,
                 "species": "SPECIES_PIGLET"
               },
               {
@@ -32240,17 +32220,37 @@
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_CHICK"
+                "species": "SPECIES_MACKERS"
               },
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_RAT_NORMAL_FORM"
+                "species": "SPECIES_BABY_YAK"
               },
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_RAT_NORMAL_FORM"
+                "species": "SPECIES_GOAT_BILLY_FORM"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_IMPLING_MAGPIE_FORM"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_IMPLING_YOUNG_FORM"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_IMPLING_GOURMET_FORM"
+              },
+              {
+                "min_level": 2,
+                "max_level": 4,
+                "species": "SPECIES_IMPLING_EARTH_FORM"
               },
               {
                 "min_level": 2,
@@ -32260,7 +32260,7 @@
               {
                 "min_level": 3,
                 "max_level": 6,
-                "species": "SPECIES_IMPLING_YOUNG_FORM"
+                "species": "SPECIES_CABBAGE"
               }
             ]
           }
