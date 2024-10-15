@@ -1,0 +1,67 @@
+mapscripts Puro_Puro2_MapScripts {
+
+}
+
+script ELNOCK_2{
+    lock
+    faceplayer
+    namebox("Elnock")
+    msgbox(format("I got here the same way you did, I suspect.\pThrough a portal in a wheat field.\pI followed an impling back.\pI think they're related to imps, which is why imps are here too."))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+//Hunter
+script PURO_HUNTER_2{
+    lock
+    faceplayer
+    namebox("Hunter")
+    msgbox(format("I brought plenty of nets and jars to catch myself some implings.\p{PAUSE 15}What do you mean I have to use pouches?\pHow on Gielinor would it fit in there??"))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+//Ironman
+script PURO_SKILLER_2{
+    lock
+    faceplayer
+    namebox("Skiller")
+    msgbox(format("I rely on catching implings who might be holding Rings of Recoil to help me in battle.\pAs a skiller, I can't do magic and enchant my own.."))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+script ENCOUNTER_PURO_PURO_2
+{
+	lock
+	faceplayer
+    namebox ("Imp")
+    playmoncry(SPECIES_IMPIDIMP, 0)
+	msgbox(format("Teehee!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    setwildbattle (SPECIES_IMP, 18, ITEM_NONE)
+	dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_WON || var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+		fadescreenswapbuffers(FADE_TO_BLACK)
+		removeobject (VAR_LAST_TALKED)
+		fadescreenswapbuffers(FADE_FROM_BLACK)
+	}
+    release
+	end
+}
+
+//ITEMS
+script ITEM_PURO_PURO_2
+{
+    finditem(ITEM_ADAMANT_POUCH)
+    end
+}

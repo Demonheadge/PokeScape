@@ -5,6 +5,7 @@ Rimmington_MapScripts::
 Rimmington_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setflag FLAG_VISITED_RIMMINGTON
 	goto Rimmington_STATE
+	call PURO_PURO_EVENT_2
 	return
 
 
@@ -1241,6 +1242,22 @@ ANCHOVYBOOK_2:
 	msgbox ANCHOVYBOOK_Text_1
 	closemessage
 	goto ANCHOVYBOOK_1
+
+
+PURO_PURO_EVENT_2::
+	random 20
+	compare VAR_RESULT, 1
+	goto_if_eq PURO_PURO_EVENT_2_2
+	setflag FLAG_TEMP_8
+	setmetatile 48, 4, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
+	setmetatile 48, 5, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
+	setmetatile 48, 6, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
+PURO_PURO_EVENT_2_1:
+	return
+
+PURO_PURO_EVENT_2_2:
+	clearflag FLAG_TEMP_8
+	goto PURO_PURO_EVENT_2_1
 
 
 NPC_RIMMINGTON_CustomsOfficer_Text_0:

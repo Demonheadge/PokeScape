@@ -8690,6 +8690,36 @@
       "secondary_tileset": "gTileset_IndoorTowns1",
       "border_filepath": "data/layouts/Draynor_House_PokeScaper/border.bin",
       "blockdata_filepath": "data/layouts/Draynor_House_PokeScaper/map.bin"
+    },
+    {
+      "id": "LAYOUT_PURO_PURO1",
+      "name": "Puro_Puro1_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_Windmill",
+      "border_filepath": "data/layouts/Puro_Puro1/border.bin",
+      "blockdata_filepath": "data/layouts/Puro_Puro1/map.bin"
+    },
+    {
+      "id": "LAYOUT_PURO_PURO2",
+      "name": "Puro_Puro2_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_Windmill",
+      "border_filepath": "data/layouts/Puro_Puro2/border.bin",
+      "blockdata_filepath": "data/layouts/Puro_Puro2/map.bin"
+    },
+    {
+      "id": "LAYOUT_PURO_PURO3",
+      "name": "Puro_Puro3_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_Windmill",
+      "border_filepath": "data/layouts/Puro_Puro3/border.bin",
+      "blockdata_filepath": "data/layouts/Puro_Puro3/map.bin"
     }
   ]
 }

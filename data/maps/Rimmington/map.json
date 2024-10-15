@@ -525,6 +525,13 @@
       "elevation": 0,
       "dest_map": "MAP_POH_1",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 48,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_PURO_PURO2",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

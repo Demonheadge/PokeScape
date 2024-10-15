@@ -1,11 +1,26 @@
 mapscripts Route13_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setvar(VAR_EVOLUTION_MAP_STATE, 16) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+        
+        call(PURO_PURO_EVENT_3)
     }
 }
 
 
-
+script PURO_PURO_EVENT_3 {
+	//Random chance for Puro Puro Event to spawn in wheat field on Route13.
+	random(20)
+	if (var(VAR_RESULT) == 1) {
+		clearflag(FLAG_TEMP_8)
+	}
+	else {
+		setflag(FLAG_TEMP_8)
+		setmetatile(7, 22, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0)
+        setmetatile(7, 23, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0)
+        setmetatile(7, 24, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0)
+	}
+	return
+}
 
 
 

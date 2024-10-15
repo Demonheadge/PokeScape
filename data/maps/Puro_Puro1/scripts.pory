@@ -1,0 +1,128 @@
+mapscripts Puro_Puro1_MapScripts {
+
+}
+
+//NPCS:
+
+script IMMENIZZ{
+    random(4)
+        switch (var(VAR_RESULT)) {
+            case 0: 
+                lock
+    		    faceplayer
+    		    namebox("Immenizz")
+    		    msgbox(format("The aetheric thread connecting you to your own plane leads back to the wheat field where you came from.\pSo you will always go back to where you came from!"))
+   		        hidenamebox
+    		    closemessage
+    		    release
+    		    end
+
+            case 1: 
+                lock
+    		    faceplayer
+    		    namebox("Immenizz")
+    		    msgbox(format(" Here, solve this.{PAUSE 15}\pWhat, I thought all you humans loved these things!"))
+   		        hidenamebox
+    		    closemessage
+    		    release
+    		    end
+            
+            case 2: 
+                lock
+    		    faceplayer
+    		    namebox("Immenizz")
+    		    msgbox(format("This is my home, human!\pWhat do you have in your pockets?\pIs it something tasty?"))
+   		        hidenamebox
+    		    closemessage
+    		    release
+    		    end
+            
+            case 3: 
+                lock
+    		    faceplayer
+    		    namebox("Immenizz")
+    		    msgbox(format("We implings want things you people want.\pThey are so tasty to us!\pThe more you want them, the tastier they are!"))
+   		        hidenamebox
+    		    closemessage
+    		    release
+    		    end
+         }
+	release
+	end
+}
+
+script ELNOCK_1{
+    lock
+    faceplayer
+    namebox("Elnock")
+    msgbox(format("I bet you're wondering what a gnome is doing here.\pI'm an investigator.\pI'm watching the implings.\p{PAUSE 15}I'm not at liberty to say why."))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+//Hunter
+script PURO_HUNTER_1{
+    lock
+    faceplayer
+    namebox("Hunter")
+    msgbox(format("I was told that this was a good place to train Hunter!\pBut there's no birds or kebbits here to snare!"))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+//Ironman
+script PURO_IRONMAN_1{
+    lock
+    faceplayer
+    namebox("Ironman")
+    msgbox(format("I need to try and catch thousands of eclectic implings to stack medium clue scrolls and get myself a pair of Ranger boots!\p{PAUSE 15}But I've been here for hours and not seen a single eclectic impling..."))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+//Imp
+script IMP_DEFENDER{
+    lock
+    faceplayer
+    namebox("Defender")
+    msgbox(format("Be free little implings!"))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+script ENCOUNTER_PURO_PURO_1
+{
+	lock
+	faceplayer
+    namebox ("Imp")
+    playmoncry(SPECIES_IMPIDIMP, 0)
+	msgbox(format("Teehee!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    setwildbattle (SPECIES_IMP, 3, ITEM_NONE)
+	dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_WON || var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+		fadescreenswapbuffers(FADE_TO_BLACK)
+		removeobject (VAR_LAST_TALKED)
+		fadescreenswapbuffers(FADE_FROM_BLACK)
+	}
+    release
+	end
+}
+
+//ITEMS
+script ITEM_PURO_PURO_1
+{
+    finditem(ITEM_MITHRIL_POUCH)
+    end
+}
