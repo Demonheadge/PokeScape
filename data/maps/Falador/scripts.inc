@@ -665,8 +665,8 @@ NPC_FALADOR_NPC_5::
 NPC_FALADOR_NPC_6::
 	lock
 	faceplayer
-	namebox NPC_FALADOR_NPC_6_Text_0
-	msgbox NPC_FALADOR_NPC_6_Text_1
+	namebox NPC_FALADOR_NPC_5_Text_0
+	msgbox NPC_FALADOR_NPC_6_Text_0
 	waitmessage
 	hidenamebox
 	release
@@ -1624,19 +1624,20 @@ NPC_FALADOR_MYSTERIOUS_OLD_MAN_Text_2:
 	.string "get in contact with me again.$"
 
 NPC_FALADOR_SirTiffyCashien_Text_0:
-	.string "Sir Tiffy Cashien$"
+	.string "Tiffy Cashien$"
 
 NPC_FALADOR_SirTiffyCashien_Text_1:
 	.string "I enjoy spending my time here at the\n"
-	.string "park sitting on this bench.$"
+	.string "park sitting on this bench and feeding\l"
+	.string "the ducks.$"
 
 NPC_FALADOR_HESKEL_Text_0:
 	.string "Heskel$"
 
 NPC_FALADOR_HESKEL_Text_1:
-	.string "I wish someone would take over for me,\n"
-	.string "it has been days since I had my last\l"
-	.string "break.$"
+	.string "Gardening is actually my full time job.\p"
+	.string "I am here every day and night tending\n"
+	.string "to this lovely park.$"
 
 NPC_FALADOR_NPC_5_Text_0:
 	.string "Gardener$"
@@ -1647,9 +1648,6 @@ NPC_FALADOR_NPC_5_Text_1:
 	.string "My farming level is way too low.$"
 
 NPC_FALADOR_NPC_6_Text_0:
-	.string "Garden Supplier$"
-
-NPC_FALADOR_NPC_6_Text_1:
 	.string "If you are here to buy bagged trees to\n"
 	.string "sell them for a higher price, I regret to\l"
 	.string "inform you that I have increased the\l"
@@ -1659,11 +1657,11 @@ NPC_FALADOR_Wyson_Text_0:
 	.string "Wyson$"
 
 NPC_FALADOR_Wyson_Text_1:
-	.string "I heard some rumours about a giant mole\n"
-	.string "living somewhere in this area, and that\l"
-	.string "interacting with an object would get\l"
-	.string "you to it.\p"
-	.string "I am too scared to find out how though.$"
+	.string "Those pesky moles are so annoying!\p"
+	.string "They keep digging holes in the park and\n"
+	.string "eating the flowers!\p"
+	.string "It would be great if someone got rid of\n"
+	.string "them…$"
 
 Falador_TREE_Text_0:
 	.string "Mod Timbo$"

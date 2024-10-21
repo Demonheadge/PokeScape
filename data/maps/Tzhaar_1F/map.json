@@ -328,7 +328,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MITHRILMAN",
-      "x": 53,
+      "x": 52,
       "y": 30,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",

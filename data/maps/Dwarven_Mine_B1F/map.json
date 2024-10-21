@@ -380,8 +380,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCORPION",
-      "x": 51,
-      "y": 58,
+      "x": 50,
+      "y": 61,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
       "movement_range_x": 3,
@@ -393,8 +393,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SCORPION",
-      "x": 57,
-      "y": 66,
+      "x": 58,
+      "y": 65,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -407,7 +407,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SCORPION",
       "x": 49,
-      "y": 61,
+      "y": 67,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_DOWN_AND_UP",
       "movement_range_x": 2,
@@ -731,8 +731,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KNIGHT_WHITE_M",
-      "x": 59,
-      "y": 60,
+      "x": 60,
+      "y": 57,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 1,
@@ -861,8 +861,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 58,
-      "y": 56,
+      "x": 61,
+      "y": 57,
       "elevation": 0,
       "item": "ITEM_PURPLE_SWEETS",
       "flag": "FLAG_HIDDEN_ITEM_DWARVEN_MINES_2"

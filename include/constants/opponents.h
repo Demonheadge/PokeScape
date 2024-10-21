@@ -463,6 +463,7 @@
 #define TRAINER_LUKEINLIGHT                             457
 #define TRAINER_A_TWISTED_SMILE                         458
 #define TRAINER_SANDWICH_LADY_1                         459
+#define TRAINER_JMOD_FOWL                         460
 
 
 

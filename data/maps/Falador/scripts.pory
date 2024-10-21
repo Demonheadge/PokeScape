@@ -743,8 +743,8 @@ script NPC_FALADOR_SirTiffyCashien
 {
 	lock
 	faceplayer
-    namebox ("Sir Tiffy Cashien")
-	msgbox(format("I enjoy spending my time here at the park sitting on this bench."))
+    namebox ("Tiffy Cashien")
+	msgbox(format("I enjoy spending my time here at the park sitting on this bench and feeding the ducks."))
     waitmessage
     hidenamebox
 	release
@@ -757,7 +757,7 @@ script NPC_FALADOR_HESKEL
 	lock
 	faceplayer
     namebox ("Heskel")
-	msgbox(format("I wish someone would take over for me, it has been days since I had my last break."))
+	msgbox(format("Gardening is actually my full time job.\pI am here every day and night tending to this lovely park."))
     waitmessage
     hidenamebox
 	release
@@ -782,7 +782,7 @@ script NPC_FALADOR_NPC_6
 {
 	lock
 	faceplayer
-    namebox ("Garden Supplier")
+    namebox ("Gardener")
 	msgbox(format("If you are here to buy bagged trees to sell them for a higher price, I regret to inform you that I have increased the prices."))
     waitmessage
     hidenamebox
@@ -796,7 +796,7 @@ script NPC_FALADOR_Wyson
 	lock
 	faceplayer
     namebox ("Wyson")
-	msgbox(format("I heard some rumours about a giant mole living somewhere in this area, and that interacting with an object would get you to it.\pI am too scared to find out how though."))
+	msgbox(format("Those pesky moles are so annoying!\pThey keep digging holes in the park and eating the flowers!\pIt would be great if someone got rid of them…"))
     waitmessage
     hidenamebox
 	release

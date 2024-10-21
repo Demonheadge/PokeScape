@@ -13492,7 +13492,7 @@
               {
                 "min_level": 17,
                 "max_level": 22,
-                "species": "SPECIES_SPIDER_GIANT_FORM"
+                "species": "SPECIES_PIGEON"
               },
               {
                 "min_level": 17,
@@ -13502,12 +13502,12 @@
               {
                 "min_level": 18,
                 "max_level": 23,
-                "species": "SPECIES_BABY_MOLE"
+                "species": "SPECIES_RUBY_HARVEST"
               },
               {
                 "min_level": 18,
                 "max_level": 21,
-                "species": "SPECIES_IMP"
+                "species": "SPECIES_SQUIRREL"
               },
               {
                 "min_level": 16,
@@ -13517,32 +13517,32 @@
               {
                 "min_level": 19,
                 "max_level": 22,
-                "species": "SPECIES_DUCK_NORMAL_FORM"
+                "species": "SPECIES_KITTEN"
               },
               {
                 "min_level": 18,
                 "max_level": 22,
-                "species": "SPECIES_DUCKLING"
+                "species": "SPECIES_PLANT_STRANGE_FORM"
               },
               {
                 "min_level": 20,
                 "max_level": 22,
-                "species": "SPECIES_IMPLING_BABY_FORM"
+                "species": "SPECIES_RABBIT"
               },
               {
                 "min_level": 20,
                 "max_level": 23,
-                "species": "SPECIES_CROW"
+                "species": "SPECIES_BABY_MOLE"
               },
               {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_BIRD_NEST"
+                "min_level": 15,
+                "max_level": 22,
+                "species": "SPECIES_CAPYBARA"
               },
               {
                 "min_level": 20,
                 "max_level": 22,
-                "species": "SPECIES_DUCK_NORMAL_FORM"
+                "species": "SPECIES_BIRD_NEST"
               }
             ]
           },
@@ -13641,12 +13641,12 @@
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_PIGEON"
+                "species": "SPECIES_DUCKLING"
               },
               {
                 "min_level": 17,
                 "max_level": 22,
-                "species": "SPECIES_SPIDER_FEVER_FORM"
+                "species": "SPECIES_PIGEON"
               },
               {
                 "min_level": 17,
@@ -13656,47 +13656,47 @@
               {
                 "min_level": 18,
                 "max_level": 23,
-                "species": "SPECIES_KITTEN"
+                "species": "SPECIES_SAPPHIRE_GLACIALIS"
               },
               {
                 "min_level": 18,
                 "max_level": 21,
-                "species": "SPECIES_IMP"
+                "species": "SPECIES_COCKROACH_DRONE"
               },
               {
                 "min_level": 16,
                 "max_level": 21,
-                "species": "SPECIES_KITTEN"
+                "species": "SPECIES_BABY_MOLE"
               },
               {
                 "min_level": 19,
                 "max_level": 22,
-                "species": "SPECIES_DUCK_NORMAL_FORM"
+                "species": "SPECIES_KITTEN"
               },
               {
                 "min_level": 18,
                 "max_level": 22,
-                "species": "SPECIES_SWAN"
+                "species": "SPECIES_PLANT_STRANGE_FORM"
               },
               {
                 "min_level": 20,
                 "max_level": 22,
-                "species": "SPECIES_IMPLING_BABY_FORM"
+                "species": "SPECIES_FERRET"
               },
               {
                 "min_level": 20,
                 "max_level": 23,
-                "species": "SPECIES_RAVENLING"
+                "species": "SPECIES_BABY_MOLE"
               },
               {
-                "min_level": 5,
-                "max_level": 10,
-                "species": "SPECIES_BIRD_NEST"
+                "min_level": 15,
+                "max_level": 23,
+                "species": "SPECIES_CAPYBARA"
               },
               {
                 "min_level": 20,
                 "max_level": 22,
-                "species": "SPECIES_SWAN"
+                "species": "SPECIES_BIRD_NEST"
               }
             ]
           },
@@ -23630,7 +23630,7 @@
               {
                 "min_level": 21,
                 "max_level": 26,
-                "species": "SPECIES_SNAKE_NORMAL_FORM"
+                "species": "SPECIES_SCORPION_NORMAL_FORM"
               },
               {
                 "min_level": 21,
@@ -23645,12 +23645,12 @@
               {
                 "min_level": 21,
                 "max_level": 26,
-                "species": "SPECIES_SCORPION_NORMAL_FORM"
+                "species": "SPECIES_TOUCAN_TENACIOUS_MALE_FORM"
               },
               {
                 "min_level": 21,
                 "max_level": 26,
-                "species": "SPECIES_SCORPION_NORMAL_FORM"
+                "species": "SPECIES_TOUCAN_TENACIOUS_FEMALE_FORM"
               },
               {
                 "min_level": 21,
@@ -23784,7 +23784,7 @@
               {
                 "min_level": 21,
                 "max_level": 26,
-                "species": "SPECIES_SNAKE_NORMAL_FORM"
+                "species": "SPECIES_SCORPION_PIT_FORM"
               },
               {
                 "min_level": 21,
@@ -23799,22 +23799,22 @@
               {
                 "min_level": 21,
                 "max_level": 26,
-                "species": "SPECIES_SCORPION_PIT_FORM"
+                "species": "SPECIES_WOLF_NORMAL_FORM"
               },
               {
                 "min_level": 21,
                 "max_level": 26,
-                "species": "SPECIES_SCORPION_PIT_FORM"
+                "species": "SPECIES_WOLF_JUVENILE_FORM"
               },
               {
                 "min_level": 21,
                 "max_level": 26,
-                "species": "SPECIES_KURASK"
+                "species": "SPECIES_GIANT_BAT"
               },
               {
                 "min_level": 21,
                 "max_level": 26,
-                "species": "SPECIES_LILRASK"
+                "species": "SPECIES_PLANT_STRANGER_FORM"
               },
               {
                 "min_level": 21,

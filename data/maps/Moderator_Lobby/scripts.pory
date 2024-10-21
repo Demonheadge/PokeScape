@@ -117,3 +117,17 @@ script ModeratorLobby_JMOD_OWLY {
     release
 	end
 }
+
+
+
+script ModeratorLobby_JMOD_FOWL { 
+	lock
+	faceplayer
+    namebox("Mod Fowl")
+	msgbox(format("Don't talk to me or my son ever again!"))
+	hidenamebox
+	trainerbattle_no_intro(TRAINER_JMOD_FOWL, msgbox(format("…")))
+    hidenamebox
+    release
+	end
+}

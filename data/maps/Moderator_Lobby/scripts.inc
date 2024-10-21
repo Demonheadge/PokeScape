@@ -105,6 +105,18 @@ ModeratorLobby_JMOD_OWLY_4:
 	goto ModeratorLobby_JMOD_OWLY_1
 
 
+ModeratorLobby_JMOD_FOWL::
+	lock
+	faceplayer
+	namebox ModeratorLobby_JMOD_FOWL_Text_0
+	msgbox ModeratorLobby_JMOD_FOWL_Text_1
+	hidenamebox
+	trainerbattle_no_intro TRAINER_JMOD_FOWL, ModeratorLobby_JMOD_OWLY_Text_3
+	hidenamebox
+	release
+	end
+
+
 ModeratorLobby_JMOD_0_Text_0:
 	.string "Mod Meds$"
 
@@ -182,3 +194,9 @@ ModeratorLobby_JMOD_OWLY_Text_3:
 
 ModeratorLobby_JMOD_OWLY_Text_4:
 	.string "Here have this.$"
+
+ModeratorLobby_JMOD_FOWL_Text_0:
+	.string "Mod Fowl$"
+
+ModeratorLobby_JMOD_FOWL_Text_1:
+	.string "Don't talk to me or my son ever again!$"

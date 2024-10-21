@@ -7519,3 +7519,12 @@ static const struct TrainerMon sParty_SANDWICH_LADY_1[] = {
     //.moves = {MOVE_SANDSTORM, MOVE_SPIKES, MOVE_CRABHAMMER, MOVE_ROCK_WRECKER}
     },
 };
+
+
+static const struct TrainerMon sParty_JMOD_FOWL[] = {
+    {
+    .nickname = COMPOUND_STRING("Horses"),
+    .lvl = 40,
+    .species = SPECIES_CHICKEN_PESTILENCE_FORM,
+    },
+};
