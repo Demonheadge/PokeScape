@@ -5011,7 +5011,7 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_TZHAAR,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
-        .trainerPic = TRAINER_PIC_tzhaar_ket,
+        .trainerPic = TRAINER_PIC_tzhaar_ket_hd,
         .trainerName = _("Tzhaar-Ket"),
         .items = {},
         .doubleBattle = FALSE,

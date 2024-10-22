@@ -1019,6 +1019,14 @@ static const union AnimCmd *const sAnims_sandwich_lady[] ={
     sAnim_GeneralFrame0,
 };
 
+static const union AnimCmd *const sAnims_guard_varrock_pose[] ={
+    sAnim_GeneralFrame0,
+};
+
+static const union AnimCmd *const sAnims_tzhaar_ket_hd[] ={
+    sAnim_GeneralFrame0,
+};
+
 const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 {
     [TRAINER_PIC_HIKER] = sAnims_Hiker,
@@ -1277,4 +1285,6 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
     [TRAINER_PIC_sagittarian] = sAnims_sagittarian,
     [TRAINER_PIC_tzhaar_ket] = sAnims_tzhaar_ket,
     [TRAINER_PIC_sandwich_lady] = sAnims_sandwich_lady,
+    [TRAINER_PIC_guard_varrock_pose] = sAnims_guard_varrock_pose,
+    [TRAINER_PIC_tzhaar_ket_hd] = sAnims_tzhaar_ket_hd,
 };

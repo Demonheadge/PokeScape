@@ -273,6 +273,8 @@
 #define TRAINER_PIC_sagittarian				    252
 #define TRAINER_PIC_tzhaar_ket				    253
 #define TRAINER_PIC_sandwich_lady   		    254
+#define TRAINER_PIC_guard_varrock_pose   		255
+#define TRAINER_PIC_tzhaar_ket_hd   		    256
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
