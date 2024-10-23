@@ -2030,6 +2030,83 @@ const u8 gText_SideQuestMap_MusaPoint[] = _("Musa Point");
 const u8 gText_SubQuest_Banana_Boat_Name1[] = _("Deliver 10 Bananas.");
 const u8 gText_SubQuest_Banana_Boat_Name2[] = _("Deliver 30 Bananas.");
 const u8 gText_SubQuest_Banana_Boat_Name3[] = _("Deliver over 120 Bananas.");
+
+
+//MvM Championships
+const u8 gText_SideQuestName_MvM_Championships[] = _("MvM Championships");
+const u8 gText_SideQuestDesc_MvM_Championships[] = _("Participate in the MvM Championships.");
+const u8 gText_SideQuestDesc_Completed_MvM_Championships[] = _("Quest Completed!");
+const u8 gText_SubQuest_MvM_Championships_Name1[] = _("Defeated Duke Horacio.");
+const u8 gText_SubQuest_MvM_Championships_Name2[] = _("Defeated Sir Amik Varze.");
+const u8 gText_SubQuest_MvM_Championships_Name3[] = _("Defeated Kimit-Kal.");
+const u8 gText_SubQuest_MvM_Championships_Name4[] = _("Defeated Gunthor.");
+const u8 gText_SubQuest_MvM_Championships_Name5[] = _("Defeated Prince Ali.");
+const u8 gText_SubQuest_MvM_Championships_Name6[] = _("Defeated King Roald.");
+const u8 gText_SubQuest_MvM_Championships_Name7[] = _("Defeated Vannaka.");
+const u8 gText_SubQuest_MvM_Championships_Name8[] = _("Defeated Thok.");
+const u8 gText_SubQuest_MvM_Championships_Name9[] = _("Defeated Sir Tiffy Cashin.");
+const u8 gText_SubQuest_MvM_Championships_Name10[] = _("Defeated Zanik.");
+const u8 gText_SubQuest_MvM_Championships_Name11[] = _("Defeated Hazlemare.");
+const u8 gText_SubQuest_MvM_Championships_Name12[] = _("Defeated Hans.");
+const u8 gText_SubQuest_MvM_Championships_Name13[] = _("Defeated Dionysius.");
+
+const u8 gText_SubQuest_MvM_Championships_Desc1[] = _("Obtain the Lumbridge Badge.");
+const u8 gText_SubQuest_MvM_Championships_Desc2[] = _("Obtain the Falador Badge.");
+const u8 gText_SubQuest_MvM_Championships_Desc3[] = _("Obtain the Tzhaar Badge.");
+const u8 gText_SubQuest_MvM_Championships_Desc4[] = _("Obtain the Barbarian Badge.");
+const u8 gText_SubQuest_MvM_Championships_Desc5[] = _("Obtain the Al-Kharid Badge.");
+const u8 gText_SubQuest_MvM_Championships_Desc6[] = _("Obtain the Varrock Badge.");
+const u8 gText_SubQuest_MvM_Championships_Desc7[] = _("Obtain the Edgeville Badge.");
+const u8 gText_SubQuest_MvM_Championships_Desc8[] = _("Obtain the Daemonheim Badge.");
+const u8 gText_SubQuest_MvM_Championships_Desc9[] = _("You defeat Sir Tiffy Cashin\nof the Elite 4.");
+const u8 gText_SubQuest_MvM_Championships_Desc10[] = _("You defeat Zanik\nof the Elite 4.");
+const u8 gText_SubQuest_MvM_Championships_Desc11[] = _("You defeat Hazlemere\nof the Elite 4.");
+const u8 gText_SubQuest_MvM_Championships_Desc12[] = _("You defeat Hans\nof the Elite 4.");
+const u8 gText_SubQuest_MvM_Championships_Desc13[] = _("You defeat the Champion of Gilienor,\nWise Old Man, Dionysius.");
+
+const u8 gText_MapName_Falador[] = _("Falador");
+const u8 gText_MapName_Tzhaar[] = _("Tzhaar City");
+const u8 gText_MapName_Varrock[] = _("Varrock");
+const u8 gText_MapName_AlKharid[] = _("Al-Kharid");
+const u8 gText_MapName_Edgeville[] = _("Edgeville");
+const u8 gText_MapName_BarbarianVillage[] = _("Barbarian Village");
+const u8 gText_MapName_Daemonheim[] = _("Daemonheim");
+const u8 gText_MapName_WildernessCrater[] = _("Wilderness Crater");
+
+
+
+
+const u8 gText_SideQuestName_Main_Story[] = _("Main Story");
+const u8 gText_SideQuestDesc_Main_Story[] = _("Follow the story of PokeScape.");
+const u8 gText_SubQuest_Main_Story_Name1[] = _("Obtain your first Monster");
+const u8 gText_SubQuest_Main_Story_Desc1[] = _("You vistied Prof. Normal Tree\nin Lumbridge Castle.");
+const u8 gText_SubQuest_Main_Story_Name2[] = _("Obtain your first badge!");
+const u8 gText_SubQuest_Main_Story_Desc2[] = _("By helping out the Cook you were\nable to challenge the Duke\nto a battle and won!");
+const u8 gText_SubQuest_Main_Story_Name3[] = _("A strange encounter?");
+const u8 gText_SubQuest_Main_Story_Desc3[] = _("You met a strange, yet wise old man\nin the Lumbridge Forest.");
+const u8 gText_SubQuest_Main_Story_Name4[] = _("A thief shrouded in pink");
+const u8 gText_SubQuest_Main_Story_Desc4[] = _("You and Ariane chased a stranger\nthrough Draynor Manor.");
+const u8 gText_SubQuest_Main_Story_Name5[] = _("Raid on the Lighthouse!");
+const u8 gText_SubQuest_Main_Story_Desc5[] = _("You thwarted H.A.M from obtaining\na map peice in Port Sarim.");
+const u8 gText_SubQuest_Main_Story_Name6[] = _("Cabbage Chaos?");
+const u8 gText_SubQuest_Main_Story_Desc6[] = _("You prevented H.A.M from obtaining\na map peice in Melzars Maze.");
+const u8 gText_SubQuest_Main_Story_Name7[] = _("Disturbance in the Mines");
+const u8 gText_SubQuest_Main_Story_Desc7[] = _("You assisted the White Knights in\ncapturing H.A.M obtaining the final\nmap peice.");
+const u8 gText_SubQuest_Main_Story_Name8[] = _("Mission Accepted!");
+const u8 gText_SubQuest_Main_Story_Desc8[] = _("You accepted the mission to stop H.A.M.\nFirst you must find a captain to\nsail a ship.");
+const u8 gText_SubQuest_Main_Story_Name9[] = _("Dragon Sailor");
+const u8 gText_SubQuest_Main_Story_Desc9[] = _("You found a captain for the boat.\nAll that's left to do now is to set sail!");
+const u8 gText_SubQuest_Main_Story_Name10[] = _("Close one!");
+const u8 gText_SubQuest_Main_Story_Desc10[] = _("You escaped from the volcano just in\ntime. Best report back to the\nWhite Knights of Falador.");
+
+
+
+
+
+
+
+
+
 //names
 
 /*

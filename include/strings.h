@@ -3236,10 +3236,76 @@ extern const u8 gText_SubQuest_Banana_Boat_Name1[];
 extern const u8 gText_SubQuest_Banana_Boat_Name2[];
 extern const u8 gText_SubQuest_Banana_Boat_Name3[];
 
+//MvM Championships
+extern const u8 gText_SideQuestName_MvM_Championships[];
+extern const u8 gText_SideQuestDesc_MvM_Championships[];
+extern const u8 gText_SideQuestDesc_Completed_MvM_Championships[];
+extern const u8 gText_SubQuest_MvM_Championships_Name1[];
+extern const u8 gText_SubQuest_MvM_Championships_Name2[];
+extern const u8 gText_SubQuest_MvM_Championships_Name3[];
+extern const u8 gText_SubQuest_MvM_Championships_Name4[];
+extern const u8 gText_SubQuest_MvM_Championships_Name5[];
+extern const u8 gText_SubQuest_MvM_Championships_Name6[];
+extern const u8 gText_SubQuest_MvM_Championships_Name7[];
+extern const u8 gText_SubQuest_MvM_Championships_Name8[];
+extern const u8 gText_SubQuest_MvM_Championships_Name9[];
+extern const u8 gText_SubQuest_MvM_Championships_Name10[];
+extern const u8 gText_SubQuest_MvM_Championships_Name11[];
+extern const u8 gText_SubQuest_MvM_Championships_Name12[];
+extern const u8 gText_SubQuest_MvM_Championships_Name13[];
+extern const u8 gText_SubQuest_MvM_Championships_Desc1[];
+extern const u8 gText_SubQuest_MvM_Championships_Desc2[];
+extern const u8 gText_SubQuest_MvM_Championships_Desc3[];
+extern const u8 gText_SubQuest_MvM_Championships_Desc4[];
+extern const u8 gText_SubQuest_MvM_Championships_Desc5[];
+extern const u8 gText_SubQuest_MvM_Championships_Desc6[];
+extern const u8 gText_SubQuest_MvM_Championships_Desc7[];
+extern const u8 gText_SubQuest_MvM_Championships_Desc8[];
+extern const u8 gText_SubQuest_MvM_Championships_Desc9[];
+extern const u8 gText_SubQuest_MvM_Championships_Desc10[];
+extern const u8 gText_SubQuest_MvM_Championships_Desc11[];
+extern const u8 gText_SubQuest_MvM_Championships_Desc12[];
+extern const u8 gText_SubQuest_MvM_Championships_Desc13[];
+
+extern const u8 gText_MapName_Falador[];
+extern const u8 gText_MapName_Tzhaar[];
+extern const u8 gText_MapName_Varrock[];
+extern const u8 gText_MapName_AlKharid[];
+extern const u8 gText_MapName_Edgeville[];
+extern const u8 gText_MapName_BarbarianVillage[];
+extern const u8 gText_MapName_Daemonheim[];
+extern const u8 gText_MapName_WildernessCrater[];
+
+
+extern const u8 gText_SideQuestName_Main_Story[];
+extern const u8 gText_SideQuestDesc_Main_Story[];
+extern const u8 gText_SubQuest_Main_Story_Name1[];
+extern const u8 gText_SubQuest_Main_Story_Desc1[];
+extern const u8 gText_SubQuest_Main_Story_Name2[];
+extern const u8 gText_SubQuest_Main_Story_Desc2[];
+extern const u8 gText_SubQuest_Main_Story_Name3[];
+extern const u8 gText_SubQuest_Main_Story_Desc3[];
+extern const u8 gText_SubQuest_Main_Story_Name4[];
+extern const u8 gText_SubQuest_Main_Story_Desc4[];
+extern const u8 gText_SubQuest_Main_Story_Name5[];
+extern const u8 gText_SubQuest_Main_Story_Desc5[];
+extern const u8 gText_SubQuest_Main_Story_Name6[];
+extern const u8 gText_SubQuest_Main_Story_Desc6[];
+extern const u8 gText_SubQuest_Main_Story_Name7[];
+extern const u8 gText_SubQuest_Main_Story_Desc7[];
+extern const u8 gText_SubQuest_Main_Story_Name8[];
+extern const u8 gText_SubQuest_Main_Story_Desc8[];
+extern const u8 gText_SubQuest_Main_Story_Name9[];
+extern const u8 gText_SubQuest_Main_Story_Desc9[];
+extern const u8 gText_SubQuest_Main_Story_Name10[];
+extern const u8 gText_SubQuest_Main_Story_Desc10[];
+
+
 
 
 
 /*
+
 //names
 extern const u8 gText_SideQuestName_1[];
 extern const u8 gText_SideQuestName_2[];

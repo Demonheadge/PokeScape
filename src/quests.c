@@ -239,6 +239,8 @@ static const u8 sText_ColorGreen[] = _("{COLOR}{GREEN}");
 static const u8 sText_AZ[] = _(" A-Z");
 static const u8 sText_InProgress[] = _("In Progress");
 static const u8 sText_Delivered[] = _("Done");
+static const u8 sText_Got[] = _("Got");
+static const u8 sText_Done[] = _("Done");
 
 ///////////////////////////////////////////////////////////////////////////////
 //////////////////////BEGIN SUBQUEST CUSTOMIZATION/////////////////////////////
@@ -352,6 +354,127 @@ static const struct SubQuest sSubQuestsArtFight_Neitiznot[QUEST_ARTFIGHT_NEITIZN
 	      sText_Empty
 	),
 };*/
+
+static const struct SubQuest sSubQuests_MVM_CHAMPIONSHIPS[QUEST_MVM_CHAMPIONSHIPS_SUB_COUNT] =
+{
+	sub_quest(
+	      15,
+	      gText_SubQuest_MvM_Championships_Name1, 	//name
+	      gText_SubQuest_MvM_Championships_Desc1, 	//desc
+	      gText_MapName_Lumbridge,					//location
+	      OBJ_EVENT_GFX_GYMLEADER_DUKE_HORACIO,
+	      OBJECT,
+	      sText_Got
+	),
+	sub_quest(
+	      16,
+	      gText_SubQuest_MvM_Championships_Name2, 	//name
+	      gText_SubQuest_MvM_Championships_Desc2, 	//desc
+	      gText_MapName_Falador,					//location
+	      OBJ_EVENT_GFX_GYMLEADER_SIR_AMIK_VARZE,
+	      OBJECT,
+	      sText_Got
+	),
+	sub_quest(
+	      17,
+	      gText_SubQuest_MvM_Championships_Name3, 	//name
+	      gText_SubQuest_MvM_Championships_Desc3, 	//desc
+	      gText_MapName_Tzhaar,					//location
+	      OBJ_EVENT_GFX_TZHAAR_CHAMPION,
+	      OBJECT,
+	      sText_Got
+	),
+	sub_quest(
+	      18,
+	      gText_SubQuest_MvM_Championships_Name4, 	//name
+	      gText_SubQuest_MvM_Championships_Desc4, 	//desc
+	      gText_MapName_BarbarianVillage,					//location
+	      OBJ_EVENT_GFX_GYMLEADER_GUNTHOR,
+	      OBJECT,
+	      sText_Got
+	),
+	sub_quest(
+	      19,
+	      gText_SubQuest_MvM_Championships_Name5, 	//name
+	      gText_SubQuest_MvM_Championships_Desc5, 	//desc
+	      gText_MapName_AlKharid,					//location
+	      OBJ_EVENT_GFX_GYMLEADER_PRINCE_ALI,
+	      OBJECT,
+	      sText_Got
+	),
+	sub_quest(
+	      20,
+	      gText_SubQuest_MvM_Championships_Name6, 	//name
+	      gText_SubQuest_MvM_Championships_Desc6, 	//desc
+	      gText_MapName_Varrock,					//location
+	      OBJ_EVENT_GFX_GYMLEADER_KING_ROALD,
+	      OBJECT,
+	      sText_Got
+	),
+	sub_quest(
+	      21,
+	      gText_SubQuest_MvM_Championships_Name7, 	//name
+	      gText_SubQuest_MvM_Championships_Desc7, 	//desc
+	      gText_MapName_Edgeville,					//location
+	      OBJ_EVENT_GFX_GYMLEADER_VANNAKA,
+	      OBJECT,
+	      sText_Got
+	),
+	sub_quest(
+	      22,
+	      gText_SubQuest_MvM_Championships_Name8, 	//name
+	      gText_SubQuest_MvM_Championships_Desc8, 	//desc
+	      gText_MapName_Daemonheim,					//location
+	      OBJ_EVENT_GFX_THOK_ANGRY,
+	      OBJECT,
+	      sText_Got
+	),
+	sub_quest(
+	      23,
+	      gText_SubQuest_MvM_Championships_Name9, 	//name
+	      gText_SubQuest_MvM_Championships_Desc9, 	//desc
+	      gText_MapName_WildernessCrater,					//location
+	      OBJ_EVENT_GFX_KNIGHT_WHITE_SIRTIFFYCASHIN,
+	      OBJECT,
+	      sText_Got
+	),
+	sub_quest(
+	      24,
+	      gText_SubQuest_MvM_Championships_Name10, 	//name
+	      gText_SubQuest_MvM_Championships_Desc10, 	//desc
+	      gText_MapName_WildernessCrater,					//location
+	      OBJ_EVENT_GFX_ZANIK,
+	      OBJECT,
+	      sText_Done
+	),
+	sub_quest(
+	      25,
+	      gText_SubQuest_MvM_Championships_Name11, 	//name
+	      gText_SubQuest_MvM_Championships_Desc11, 	//desc
+	      gText_MapName_WildernessCrater,					//location
+	      OBJ_EVENT_GFX_HAZELMERE_2,
+	      OBJECT,
+	      sText_Done
+	),
+	sub_quest(
+	      26,
+	      gText_SubQuest_MvM_Championships_Name12, 	//name
+	      gText_SubQuest_MvM_Championships_Desc12, 	//desc
+	      gText_MapName_WildernessCrater,					//location
+	      OBJ_EVENT_GFX_HANS,
+	      OBJECT,
+	      sText_Done
+	),
+	sub_quest(
+	      27,
+	      gText_SubQuest_MvM_Championships_Name13, 	//name
+	      gText_SubQuest_MvM_Championships_Desc13, 	//desc
+	      gText_MapName_WildernessCrater,					//location
+	      OBJ_EVENT_GFX_GYMLEADER_WISE_OLD_MAN,
+	      OBJECT,
+	      sText_Done
+	),
+};
 
 static const struct SubQuest sSubQuests_COOKS_ASSISTANT[QUEST_COOKS_ASSISTANT_SUB_COUNT] =
 {
@@ -510,6 +633,100 @@ static const struct SubQuest sSubQuests_BANANA_BOAT[QUEST_BANANA_BOAT_SUB_COUNT]
 	),
 };
 
+static const struct SubQuest sSubQuests_MAIN_STORY[QUEST_MAIN_STORY_SUB_COUNT] =
+{
+	sub_quest(
+	      28,
+	      gText_SubQuest_Main_Story_Name1,
+	      gText_SubQuest_Main_Story_Desc1,
+	      gText_MapName_Lumbridge,
+	      ITEM_BANANA,
+	      ITEM,
+	      sText_Delivered
+	),
+	sub_quest(
+	      29,
+	      gText_SubQuest_Main_Story_Name2,
+	      gText_SubQuest_Main_Story_Desc2,
+	      gText_MapName_Lumbridge,
+	      ITEM_BANANA,
+	      ITEM,
+	      sText_Delivered
+	),
+	sub_quest(
+	      30,
+	      gText_SubQuest_Main_Story_Name3,
+	      gText_SubQuest_Main_Story_Desc3,
+	      gText_MapName_Lumbridge,
+	      ITEM_BANANA,
+	      ITEM,
+	      sText_Delivered
+	),
+	sub_quest(
+	      31,
+	      gText_SubQuest_Main_Story_Name4,
+	      gText_SubQuest_Main_Story_Desc4,
+	      gText_MapName_Lumbridge,
+	      ITEM_BANANA,
+	      ITEM,
+	      sText_Delivered
+	),
+	sub_quest(
+	      32,
+	      gText_SubQuest_Main_Story_Name5,
+	      gText_SubQuest_Main_Story_Desc5,
+	      gText_MapName_Lumbridge,
+	      ITEM_BANANA,
+	      ITEM,
+	      sText_Delivered
+	),
+	sub_quest(
+	      33,
+	      gText_SubQuest_Main_Story_Name6,
+	      gText_SubQuest_Main_Story_Desc6,
+	      gText_MapName_Lumbridge,
+	      ITEM_BANANA,
+	      ITEM,
+	      sText_Delivered
+	),
+	sub_quest(
+	      34,
+	      gText_SubQuest_Main_Story_Name7,
+	      gText_SubQuest_Main_Story_Desc7,
+	      gText_MapName_Lumbridge,
+	      ITEM_BANANA,
+	      ITEM,
+	      sText_Delivered
+	),
+	sub_quest(
+	      35,
+	      gText_SubQuest_Main_Story_Name8,
+	      gText_SubQuest_Main_Story_Desc8,
+	      gText_MapName_Lumbridge,
+	      ITEM_BANANA,
+	      ITEM,
+	      sText_Delivered
+	),
+	sub_quest(
+	      36,
+	      gText_SubQuest_Main_Story_Name9,
+	      gText_SubQuest_Main_Story_Desc9,
+	      gText_MapName_Lumbridge,
+	      ITEM_BANANA,
+	      ITEM,
+	      sText_Delivered
+	),
+	sub_quest(
+	      37,
+	      gText_SubQuest_Main_Story_Name10,
+	      gText_SubQuest_Main_Story_Desc10,
+	      gText_MapName_Lumbridge,
+	      ITEM_BANANA,
+	      ITEM,
+	      sText_Delivered
+	),
+};
+
 
 
 
@@ -536,6 +753,28 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 
 	///  THESE DETERMINE THE ORDER THINGS APPEAR IN THE QUEST JOURNAL.  ///
 
+	side_quest(
+	      gText_SideQuestName_Main_Story,
+	      gText_SideQuestDesc_Main_Story,
+	      gText_SideQuestDesc_Completed_Banana_Boat,
+	      gText_MapName_Lumbridge,
+	      ITEM_CRANDOR_MAP_FULL,
+	      ITEM,
+	      sSubQuests_MAIN_STORY,
+	      QUEST_MAIN_STORY_SUB_COUNT
+	),
+	side_quest(
+	      gText_SideQuestName_MvM_Championships,
+	      gText_SideQuestDesc_MvM_Championships,
+	      gText_SideQuestDesc_Completed_Banana_Boat,
+	      gText_MapName_WildernessCrater,
+	      ITEM_CRANDOR_MAP_FULL,
+	      ITEM,
+	      sSubQuests_MVM_CHAMPIONSHIPS,
+	      QUEST_MVM_CHAMPIONSHIPS_SUB_COUNT
+	),
+	
+	
 	side_quest( 									//Cooks Assistant
 	      gText_SideQuestName_CooksAssistant,
 	      gText_SideQuestDesc_CooksAssistant,
@@ -586,6 +825,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      sSubQuests_BANANA_BOAT,
 	      QUEST_BANANA_BOAT_SUB_COUNT
 	),
+	
 
 
 	

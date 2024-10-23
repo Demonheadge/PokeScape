@@ -111,6 +111,8 @@
 #define TRAINER_PIC_RS_BRENDAN            91
 #define TRAINER_PIC_RS_MAY                92
 //POKESCAPE
+
+
 #define TRAINER_PIC_a_nub_tot             93
 #define TRAINER_PIC_ariane                94
 #define TRAINER_PIC_count_draynor         95
