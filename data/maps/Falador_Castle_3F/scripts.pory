@@ -275,6 +275,7 @@ script QUEST_FALADORCASTLE_EVENT_AFTER_GYM //after the gym you get teleported to
 
     setvar(VAR_TEMP_B, 0)
     setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 125)
+    subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_MAIN_STORY, 7)
 
 	release
 	end

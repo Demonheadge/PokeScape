@@ -2101,7 +2101,16 @@ const u8 gText_SubQuest_Main_Story_Desc10[] = _("You escaped from the volcano ju
 
 
 
-
+const u8 gText_SideQuestName_MithrilmanQuest[] = _("Mithrilman Quest");
+const u8 gText_SideQuestDesc_MithrilmanQuest[] = _("Follow the story of Mithrilman.");
+const u8 gText_SubQuest_MithrilmanQuest_Name1[] = _("Thousts fatedst foe");
+const u8 gText_SubQuest_MithrilmanQuest_Desc1[] = _("You met the Mithrilman and wonder\nwhy he talks like that.");
+const u8 gText_SubQuest_MithrilmanQuest_Name2[] = _("Mightier than thatd swordst");
+const u8 gText_SubQuest_MithrilmanQuest_Desc2[] = _("You found the Mithrilman in Falador.\nHe still talks weird.");
+const u8 gText_SubQuest_MithrilmanQuest_Name3[] = _("A Hot encounterestd");
+const u8 gText_SubQuest_MithrilmanQuest_Desc3[] = _("Mithrilman is in the Karamja volcano.\nDoes he call lava, lavastedst?");
+const u8 gText_SubQuest_MithrilmanQuest_Name4[] = _("Mithril life crisis");
+const u8 gText_SubQuest_MithrilmanQuest_Desc4[] = _("");
 
 
 

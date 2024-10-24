@@ -370,6 +370,7 @@ script NPC_FALADORCASTLE_QUEST_PART_3
     removeobject(OBJ_EVENT_ID_QUEST_OWEN)
     setvar(VAR_POKESCAPE_FALADOR_STATE, 3)
     setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 115)
+    subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_MAIN_STORY, 6)
     clearflag(FLAG_TEMP_F)
     addobject(59)
     fadescreenswapbuffers(FADE_FROM_BLACK)

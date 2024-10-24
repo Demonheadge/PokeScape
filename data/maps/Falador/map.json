@@ -342,7 +342,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Mithrilman_FALADOR1",
-      "flag": "FLAG_MITHRILMAN2"
+      "flag": "FLAG_TEMP_1C"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SMITH",
@@ -913,18 +913,18 @@
       "x": 41,
       "y": 16,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "NULL"
+      "var": "VAR_MITHRILMAN_STATE",
+      "var_value": "5",
+      "script": "TRIGGER_Mithrilman_FALADOR"
     },
     {
       "type": "trigger",
       "x": 42,
       "y": 16,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "NULL"
+      "var": "VAR_MITHRILMAN_STATE",
+      "var_value": "5",
+      "script": "TRIGGER_Mithrilman_FALADOR"
     }
   ],
   "bg_events": [

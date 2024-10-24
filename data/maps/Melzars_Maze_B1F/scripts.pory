@@ -56,6 +56,7 @@ script Melzar_Maze_B1F_HAM_Patty {
 	msgbox(format("Hey so this script is unfinished, but count this as Melzars Maze section completed.\pNow go to Falador."))
 	closemessage
     setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 110) //AFTER MELZARS MAZE
+	subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_MAIN_STORY, 5)
 	end
 }
 
@@ -325,6 +326,7 @@ script TRIGGER_Melzar_Maze_HAM_EVENT_BABE {
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	addvar(VAR_GAMEMODE_LEVEL_CAP, 2)
 	setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 110) //AFTER MELZARS MAZE
+	subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_MAIN_STORY, 5)
 	removeobject(6)
 	removeobject(7)
 	removeobject(8)

@@ -3300,7 +3300,16 @@ extern const u8 gText_SubQuest_Main_Story_Desc9[];
 extern const u8 gText_SubQuest_Main_Story_Name10[];
 extern const u8 gText_SubQuest_Main_Story_Desc10[];
 
-
+extern const u8 gText_SideQuestName_MithrilmanQuest[];
+extern const u8 gText_SideQuestDesc_MithrilmanQuest[];
+extern const u8 gText_SubQuest_MithrilmanQuest_Name1[];
+extern const u8 gText_SubQuest_MithrilmanQuest_Desc1[];
+extern const u8 gText_SubQuest_MithrilmanQuest_Name2[];
+extern const u8 gText_SubQuest_MithrilmanQuest_Desc2[];
+extern const u8 gText_SubQuest_MithrilmanQuest_Name3[];
+extern const u8 gText_SubQuest_MithrilmanQuest_Desc3[];
+extern const u8 gText_SubQuest_MithrilmanQuest_Name4[];
+extern const u8 gText_SubQuest_MithrilmanQuest_Desc4[];
 
 
 

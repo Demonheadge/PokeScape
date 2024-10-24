@@ -198,8 +198,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_JMOD",
-      "x": 68,
-      "y": 12,
+      "x": 73,
+      "y": 0,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -276,8 +276,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RUNE_ARMOUR",
-      "x": 5,
-      "y": 32,
+      "x": 51,
+      "y": 31,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
       "movement_range_x": 3,
@@ -328,16 +328,16 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MITHRILMAN",
-      "x": 52,
-      "y": 30,
+      "x": 60,
+      "y": 5,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Mithrilman_TZHAAR1",
-      "flag": "0"
+      "flag": "FLAG_TEMP_1C"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TZHAAR_1",
@@ -426,6 +426,15 @@
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "TZHAAR_HEAL_ZONE"
+    },
+    {
+      "type": "trigger",
+      "x": 58,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_MITHRILMAN_STATE",
+      "var_value": "10",
+      "script": "TRIGGER_Mithrilman_TZHAAR"
     }
   ],
   "bg_events": [

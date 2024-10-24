@@ -63,6 +63,7 @@ Melzar_Maze_B1F_HAM_Patty::
 	msgbox Melzar_Maze_B1F_HAM_Patty_Text_0
 	closemessage
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 110
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MAIN_STORY, 5
 	end
 
 
@@ -312,6 +313,7 @@ TRIGGER_Melzar_Maze_HAM_EVENT_BABE_13:
 	fadescreenswapbuffers FADE_TO_BLACK
 	addvar VAR_GAMEMODE_LEVEL_CAP, 2
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 110
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MAIN_STORY, 5
 	removeobject 6
 	removeobject 7
 	removeobject 8

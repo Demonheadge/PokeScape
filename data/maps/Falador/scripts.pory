@@ -1071,8 +1071,12 @@ script NPC_FALADOR_NPC_9
 
 
 script FALADOR_QUEST_STATE{
-	if (!flag(FLAG_BADGE02_GET)) {
-		setflag(FLAG_MITHRILMAN2)
+
+	setflag(FLAG_TEMP_1C) 	//mithrilman
+	removeobject(23)		//mithrilman
+	if (var(VAR_MITHRILMAN_STATE) == 5) {
+		clearflag(FLAG_TEMP_1C)
+		addobject(23)
 	}
 	
 	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) < 114) { // before map 3 obtained in mines
@@ -1457,3 +1461,74 @@ script NPC_FALADOR_PARTYROOM_PETE
 	release
 	end
 }
+
+
+
+
+
+
+//MITHRILMAN ENCOUNTER 2--------
+
+script TRIGGER_Mithrilman_FALADOR {
+	lockall
+	playse(SE_PIN)
+	applymovement(23, Movement_Falador_Mithrilman_1)
+	waitmovement(0)
+	waitse
+	getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+		if (var(VAR_TEMP_1) == 41){
+			applymovement(23, Movement_Falador_Mithrilman_2)
+		} 
+		elif (var(VAR_TEMP_1) == 42){
+			applymovement(23, Movement_Falador_Mithrilman_3)
+		}
+	waitmovement(0)
+	goto(Mithrilman_FALADOR1)
+	end
+}
+movement Movement_Falador_Mithrilman_1 {
+	emote_exclamation_mark
+	face_down
+}
+movement Movement_Falador_Mithrilman_2 {
+	walk_right
+	walk_down * 2
+}
+movement Movement_Falador_Mithrilman_3 {
+	walk_right * 2
+	walk_down * 2
+}
+
+script Mithrilman_FALADOR1{
+    playbgm (MUS_ENCOUNTER_MAY, 1)
+    namebox ("Mithrilman")
+    msgbox(format("West meet again knave, howst fares thoughst adventure?\pThine has already beaten the whitest of knights, and provenst that Mithrilmen are superior to those of the whitest armour.\pDo thoust wonder why thine am in the park?\pThine am contemplating catching a duck for thine arsenal.\pWord sayst the pen is mightiest than the sword and pens be made from feathers.\pSo who else than the duck wouldst be mightyer than the sword?\pWhy donst thine show ye, knave, the power of onst without a sword?"))
+    hidenamebox
+    trainerbattle_no_intro(TRAINER_MITHRILMAN2,format("…"))
+    namebox("Mithrilman")
+    msgbox(format("I see troughst thoust clever trick knave, that duck in thest pond were mightyest than the sword.\p And thine not posessing sword or feather lost becaust of that?\pClever knave, very clever.\pThine am a Mithrilman and seest trough thee clever tricks, but as a Mithrilman, thine will accept this outcome.\pForst know."))
+    waitmessage
+	closemessage
+	fadescreenswapbuffers (FADE_TO_BLACK)
+	removeobject(23)
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+	playse(SE_PIN)
+	applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_QUESTIONMARK)
+	waitmovement(0)
+	waitse
+	msgbox(format("It appears Mithrilman dropped something while rushing off."))
+	finditem(ITEM_LAW_RUNE, 1)
+    setvar(VAR_MITHRILMAN_STATE, 10) //defetated falador
+	setflag(FLAG_TEMP_1C)
+	removeobject(23)
+	subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_MITHRILMAN_QUEST, 1)
+    savebgm(MUS_DUMMY)
+	fadedefaultbgm
+    release
+    end
+}
+//-----------------------------
+
+
+
+

@@ -5,6 +5,7 @@ Lumbridge_Castle_2_MapScripts::
 
 Lumbridge_Castle_2_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 1
+	call LUMBRIDGE_CASTLE_2_STATE
 	compare VAR_POKESCAPE_GAMEMODE_STATE, 1
 	goto_if_eq Lumbridge_Castle_2_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 	return
@@ -16,6 +17,19 @@ Lumbridge_Castle_2_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 Lumbridge_Castle_2_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_TEMP_A, 0, Lumbridge_Castle_Introduction
 	.2byte 0
+
+
+LUMBRIDGE_CASTLE_2_STATE::
+	setflag FLAG_TEMP_1F
+	removeobject 2
+	compare VAR_MITHRILMAN_STATE, 0
+	goto_if_eq LUMBRIDGE_CASTLE_2_STATE_1
+	return
+
+LUMBRIDGE_CASTLE_2_STATE_1:
+	clearflag FLAG_TEMP_1F
+	addobject 2
+	return
 
 
 OPENWORLD_STATE_HIDESTARTERS::
@@ -347,6 +361,8 @@ Lumbridge_Castle_Hans_1::
 	fadescreenswapbuffers FADE_FROM_BLACK
 	setflag FLAG_SYS_POKEDEX_GET
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 5
+	startquest QUEST_MAIN_STORY
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MAIN_STORY, 0
 	release
 	end
 
@@ -1144,7 +1160,8 @@ Mithrilman_LUMBRIDGE_TRIGGER_1:
 	return
 
 Mithrilman_LUMBRIDGE_TRIGGER_3:
-	goto_if_unset FLAG_MITHRILMAN1, Mithrilman_LUMBRIDGE_TRIGGER_1
+	compare VAR_MITHRILMAN_STATE, 0
+	goto_if_eq Mithrilman_LUMBRIDGE_TRIGGER_1
 	goto Mithrilman_LUMBRIDGE_TRIGGER_2
 
 Mithrilman_LUMBRIDGE_TRIGGER_4:
@@ -1251,8 +1268,11 @@ Mithrilman_LUMBRIDGE_STATE_3::
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 2
 	fadescreenswapbuffers FADE_FROM_BLACK
-	setflag FLAG_MITHRILMAN1
-	clearflag FLAG_MITHRILMAN2
+	setvar VAR_MITHRILMAN_STATE, 5
+	removeobject 2
+	startquest QUEST_MITHRILMAN_QUEST
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MITHRILMAN_QUEST, 0
+	setflag FLAG_TEMP_1F
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	release

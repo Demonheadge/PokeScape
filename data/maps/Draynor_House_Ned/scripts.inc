@@ -177,6 +177,7 @@ Story_Ned_Draynor::
 	hidenamebox
 	closemessage
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 130
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MAIN_STORY, 8
 	release
 	end
 

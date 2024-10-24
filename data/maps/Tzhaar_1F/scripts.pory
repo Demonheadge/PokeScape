@@ -10,6 +10,13 @@ mapscripts Tzhaar_1F_MapScripts {
 
 
 script TZHAAR_STATE {
+    setflag(FLAG_TEMP_1C) 	//mithrilman
+	removeobject(25)		//mithrilman
+	if (var(VAR_MITHRILMAN_STATE) == 10) {
+		clearflag(FLAG_TEMP_1C)
+		addobject(25)
+	}
+
     if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 150) {
         clearflag(FLAG_TEMP_1F)
     }
@@ -35,6 +42,7 @@ script STORYMODE_TZHAAR_NPC
     applymovement(26, HAM_EVENT_CRANDOR_VOLCANO_31)
     waitmovement(0)
     setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 155)
+    subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_MAIN_STORY, 9)
     setflag(FLAG_TEMP_1F)
     removeobject(26)
     setrespawn(HEAL_LOCATION_TZHAAR_1F)
@@ -417,4 +425,57 @@ script TZHAAR_SIGNPOST_2
 
 
 
+
+//MITHRILMAN ENCOUNTER 5--------
+script TRIGGER_Mithrilman_TZHAAR {
+    lockall
+	playse(SE_PIN)
+	applymovement(25, Movement_Tzhaar_Mithrilman_1)
+	waitmovement(0)
+	waitse
+	applymovement(25, Movement_Tzhaar_Mithrilman_2)
+	waitmovement(0)
+	goto(Mithrilman_TZHAAR1)
+	end
+}
+movement Movement_Tzhaar_Mithrilman_1 {
+	emote_exclamation_mark
+	face_left
+}
+movement Movement_Tzhaar_Mithrilman_2 {
+	walk_down
+    walk_left
+}
+
+
+
+script Mithrilman_TZHAAR1 {
+    playbgm (MUS_ENCOUNTER_MAY, 1)
+    namebox("Mithrilman")
+    msgbox(format("Fromst the scorching heats of the dunes to a pleasant vaction I see knave.\pGreetings.\pThoust must be here to battle the Tzhaar?\pAllow thine to grant yee some knowledge as thoust superior in battle provesst.\pFirst of thoust shouldn't use iron inside a volcano.\pIt would smelts and yee would end in malfigured armour.\pNot for the goodst of thoust body, mayhaps a battle helps thoust?\pWell yee should show thine your provess then, beware, for the heat of this battle will be nothing like the volcano!"))
+    trainerbattle_no_intro(TRAINER_MITHRILMAN5,format("…"))
+    namebox("Mithrilman")
+    msgbox(format("Thoust battle fair?\pJokest thine not, the heat from the volcano has malfigured mine gracious Mithril armour.\pWe shalt call this a draw for now, whilst thine seek a smith to fix thine armour.\pFare thoust less than well,\pKnave!"))
+    waitmessage
+	closemessage
+    hidenamebox
+	fadescreenswapbuffers (FADE_TO_BLACK)
+	removeobject(2)
+	fadescreenswapbuffers(FADE_FROM_BLACK)
+    setvar(VAR_MITHRILMAN_STATE, 15)
+    setflag(FLAG_TEMP_1C) 	//mithrilman
+	removeobject(25)		//mithrilman
+    subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_MITHRILMAN_QUEST, 2)
+    playse(SE_PIN)
+	applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_QUESTIONMARK)
+	waitmovement(0)
+	waitse
+	msgbox(format("Oh?\pMithrilman dropped something while in a hurry."))
+	finditem(ITEM_CHAOS_RUNE, 1)
+    savebgm(MUS_DUMMY)
+	fadedefaultbgm
+    release
+    end
+}
+//-----------------------------
 

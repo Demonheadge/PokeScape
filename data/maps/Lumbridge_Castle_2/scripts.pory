@@ -11,13 +11,24 @@ mapscripts Lumbridge_Castle_2_MapScripts{
     ]
 	MAP_SCRIPT_ON_TRANSITION {
         setvar(VAR_EVOLUTION_MAP_STATE, 1) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT,
-    
+		call(LUMBRIDGE_CASTLE_2_STATE)
+
 	if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 1) //if OPEN WORLD
     	{
             call(OPENWORLD_STATE_HIDESTARTERS) // Hide starter mon pouches
     	}
 	}
 
+}
+
+script LUMBRIDGE_CASTLE_2_STATE {
+	setflag(FLAG_TEMP_1F)
+	removeobject(OBJ_EVENT_ID_MITHRILMAN)
+
+	if (var(VAR_MITHRILMAN_STATE) == 0) { 
+		clearflag(FLAG_TEMP_1F)
+		addobject(OBJ_EVENT_ID_MITHRILMAN)
+	}
 }
 
 
@@ -330,6 +341,8 @@ script Lumbridge_Castle_Hans_1{
 	//setflag (FLAG_SYS_NATIONAL_DEX)
 	//special (EnableNationalPokedex)
 	setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 5) //Received Monster from Prof. Normal Tree
+	startquest (QUEST_MAIN_STORY)
+	subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_MAIN_STORY, 0)
 	release
 	end
 }
@@ -1080,7 +1093,7 @@ script Mithrilman_LUMBRIDGE {
 }
 
 script Mithrilman_LUMBRIDGE_TRIGGER {
-	if((var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE) == 1 && var(VAR_POKESCAPE_GAMEMODE_STATE) == 0 && flag(FLAG_MITHRILMAN1) == FALSE)){
+	if((var(VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE) == 1 && var(VAR_POKESCAPE_GAMEMODE_STATE) == 0 && var(VAR_MITHRILMAN_STATE) == 0)){
 		goto(Mithrilman_LUMBRIDGE_STATE_1)
 	}
 	else {
@@ -1176,8 +1189,11 @@ script Mithrilman_LUMBRIDGE_STATE_3{
 	fadescreenswapbuffers (FADE_TO_BLACK)
 	removeobject(2)
 	fadescreenswapbuffers(FADE_FROM_BLACK)
-    setflag (FLAG_MITHRILMAN1)
-    clearflag (FLAG_MITHRILMAN2)
+	setvar(VAR_MITHRILMAN_STATE, 5) //defetated lumbridge
+	removeobject(2)
+	startquest (QUEST_MITHRILMAN_QUEST)
+	subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_MITHRILMAN_QUEST, 0)
+	setflag(FLAG_TEMP_1F)
     savebgm(MUS_DUMMY)
 	fadedefaultbgm
     release

@@ -728,6 +728,49 @@ static const struct SubQuest sSubQuests_MAIN_STORY[QUEST_MAIN_STORY_SUB_COUNT] =
 };
 
 
+static const struct SubQuest sSubQuests_MITHRILMAN_QUEST[QUEST_MITHRILMAN_QUEST_SUB_COUNT] =
+{
+	sub_quest(
+	      38,
+	      gText_SubQuest_MithrilmanQuest_Name1,
+	      gText_SubQuest_MithrilmanQuest_Desc1,
+	      gText_MapName_Lumbridge,
+	      SPECIES_ZAROLING,
+	      PKMN,
+	      sText_Delivered
+	),
+	sub_quest(
+	      39,
+	      gText_SubQuest_MithrilmanQuest_Name2,
+	      gText_SubQuest_MithrilmanQuest_Desc2,
+	      gText_MapName_Falador,
+	      SPECIES_DUCK_NORMAL_FORM,
+	      PKMN,
+	      sText_Delivered
+	),
+	sub_quest(
+	      40,
+	      gText_SubQuest_MithrilmanQuest_Name3,
+	      gText_SubQuest_MithrilmanQuest_Desc3,
+	      gText_MapName_Tzhaar,
+	      SPECIES_TZ_KIH,
+	      PKMN,
+	      sText_Delivered
+	),
+	sub_quest(
+	      41,
+	      gText_SubQuest_MithrilmanQuest_Name4,
+	      gText_SubQuest_MithrilmanQuest_Desc4,
+	      gText_SideQuestMap_MusaPoint,
+	      ITEM_BANANA,
+	      ITEM,
+	      sText_Delivered
+	),
+};
+
+
+
+
 
 
 ////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
@@ -824,6 +867,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      ITEM,
 	      sSubQuests_BANANA_BOAT,
 	      QUEST_BANANA_BOAT_SUB_COUNT
+	),
+	side_quest(
+	      gText_SideQuestName_MithrilmanQuest,
+	      gText_SideQuestDesc_MithrilmanQuest,
+	      gText_SideQuestDesc_Completed_Banana_Boat,
+	      gText_MapName_Lumbridge,
+	      OBJ_EVENT_GFX_MITHRILMAN,
+	      OBJECT,
+	      sSubQuests_MITHRILMAN_QUEST,
+	      QUEST_MITHRILMAN_QUEST_SUB_COUNT
 	),
 	
 

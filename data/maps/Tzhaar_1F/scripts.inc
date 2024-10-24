@@ -14,12 +14,22 @@ Tzhaar_1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 
 
 TZHAAR_STATE::
+	setflag FLAG_TEMP_1C
+	removeobject 25
+	compare VAR_MITHRILMAN_STATE, 10
+	goto_if_eq TZHAAR_STATE_2
+TZHAAR_STATE_1:
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 150
-	goto_if_eq TZHAAR_STATE_1
+	goto_if_eq TZHAAR_STATE_4
 	setflag FLAG_TEMP_1F
 	return
 
-TZHAAR_STATE_1:
+TZHAAR_STATE_2:
+	clearflag FLAG_TEMP_1C
+	addobject 25
+	goto TZHAAR_STATE_1
+
+TZHAAR_STATE_4:
 	clearflag FLAG_TEMP_1F
 	return
 
@@ -40,6 +50,7 @@ STORYMODE_TZHAAR_NPC::
 	applymovement 26, HAM_EVENT_CRANDOR_VOLCANO_31
 	waitmovement 0
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 155
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MAIN_STORY, 9
 	setflag FLAG_TEMP_1F
 	removeobject 26
 	setrespawn HEAL_LOCATION_TZHAAR_1F
@@ -373,6 +384,57 @@ TZHAAR_SIGNPOST_2::
 	end
 
 
+TRIGGER_Mithrilman_TZHAAR::
+	lockall
+	playse SE_PIN
+	applymovement 25, Movement_Tzhaar_Mithrilman_1
+	waitmovement 0
+	waitse
+	applymovement 25, Movement_Tzhaar_Mithrilman_2
+	waitmovement 0
+	goto Mithrilman_TZHAAR1
+	end
+
+
+Movement_Tzhaar_Mithrilman_1:
+	emote_exclamation_mark
+	face_left
+	step_end
+
+Movement_Tzhaar_Mithrilman_2:
+	walk_down
+	walk_left
+	step_end
+
+Mithrilman_TZHAAR1::
+	playbgm MUS_ENCOUNTER_MAY, 1
+	namebox Mithrilman_TZHAAR1_Text_0
+	msgbox Mithrilman_TZHAAR1_Text_1
+	trainerbattle_no_intro TRAINER_MITHRILMAN5, Mithrilman_TZHAAR1_Text_2
+	namebox Mithrilman_TZHAAR1_Text_0
+	msgbox Mithrilman_TZHAAR1_Text_3
+	waitmessage
+	closemessage
+	hidenamebox
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject 2
+	fadescreenswapbuffers FADE_FROM_BLACK
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_QUESTIONMARK
+	waitmovement 0
+	waitse
+	msgbox Mithrilman_TZHAAR1_Text_4
+	finditem ITEM_CHAOS_RUNE, 1
+	setvar VAR_MITHRILMAN_STATE, 15
+	setflag FLAG_TEMP_1C
+	removeobject 25
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MITHRILMAN_QUEST, 2
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	release
+	end
+
+
 STORYMODE_TZHAAR_NPC_Text_0:
 	.string "Tzhaar$"
 
@@ -611,3 +673,43 @@ TZHAAR_SIGNPOST_2_Text_0:
 	.string "replaced with:\p"
 	.string "Tzhaar City, located inside this\n"
 	.string "volcano.$"
+
+Mithrilman_TZHAAR1_Text_0:
+	.string "Mithrilman$"
+
+Mithrilman_TZHAAR1_Text_1:
+	.string "Fromst the scorching heats of the\n"
+	.string "dunes to a pleasant vaction I see\l"
+	.string "knave.\p"
+	.string "Greetings.\p"
+	.string "Thoust must be here to battle the\n"
+	.string "Tzhaar?\p"
+	.string "Allow thine to grant yee some knowledge\n"
+	.string "as thoust superior in battle provesst.\p"
+	.string "First of thoust shouldn't use iron\n"
+	.string "inside a volcano.\p"
+	.string "It would smelts and yee would end in\n"
+	.string "malfigured armour.\p"
+	.string "Not for the goodst of thoust body,\n"
+	.string "mayhaps a battle helps thoust?\p"
+	.string "Well yee should show thine your provess\n"
+	.string "then, beware, for the heat of this\l"
+	.string "battle will be nothing like the volcano!$"
+
+Mithrilman_TZHAAR1_Text_2:
+	.string "…$"
+
+Mithrilman_TZHAAR1_Text_3:
+	.string "Thoust battle fair?\p"
+	.string "Jokest thine not, the heat from the\n"
+	.string "volcano has malfigured mine gracious\l"
+	.string "Mithril armour.\p"
+	.string "We shalt call this a draw for now, whilst\n"
+	.string "thine seek a smith to fix thine armour.\p"
+	.string "Fare thoust less than well,\p"
+	.string "Knave!$"
+
+Mithrilman_TZHAAR1_Text_4:
+	.string "Oh?\p"
+	.string "Mithrilman dropped something while in a\n"
+	.string "hurry.$"

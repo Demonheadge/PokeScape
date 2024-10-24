@@ -861,7 +861,10 @@ NPC_FALADOR_NPC_9::
 
 
 FALADOR_QUEST_STATE::
-	goto_if_unset FLAG_BADGE02_GET, FALADOR_QUEST_STATE_2
+	setflag FLAG_TEMP_1C
+	removeobject 23
+	compare VAR_MITHRILMAN_STATE, 5
+	goto_if_eq FALADOR_QUEST_STATE_2
 FALADOR_QUEST_STATE_1:
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 114
 	goto_if_lt FALADOR_QUEST_STATE_5
@@ -889,7 +892,8 @@ FALADOR_QUEST_STATE_10:
 	return
 
 FALADOR_QUEST_STATE_2:
-	setflag FLAG_MITHRILMAN2
+	clearflag FLAG_TEMP_1C
+	addobject 23
 	goto FALADOR_QUEST_STATE_1
 
 FALADOR_QUEST_STATE_5:
@@ -1266,6 +1270,78 @@ NPC_FALADOR_PARTYROOM_PETE::
 	msgbox NPC_FALADOR_PARTYROOM_PETE_Text_6
 	waitmessage
 	hidenamebox
+	release
+	end
+
+
+TRIGGER_Mithrilman_FALADOR::
+	lockall
+	playse SE_PIN
+	applymovement 23, Movement_Falador_Mithrilman_1
+	waitmovement 0
+	waitse
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	compare VAR_TEMP_1, 41
+	goto_if_eq TRIGGER_Mithrilman_FALADOR_2
+	compare VAR_TEMP_1, 42
+	goto_if_eq TRIGGER_Mithrilman_FALADOR_3
+TRIGGER_Mithrilman_FALADOR_1:
+	waitmovement 0
+	goto Mithrilman_FALADOR1
+	end
+
+TRIGGER_Mithrilman_FALADOR_2:
+	applymovement 23, Movement_Falador_Mithrilman_2
+	goto TRIGGER_Mithrilman_FALADOR_1
+
+TRIGGER_Mithrilman_FALADOR_3:
+	applymovement 23, Movement_Falador_Mithrilman_3
+	goto TRIGGER_Mithrilman_FALADOR_1
+
+
+Movement_Falador_Mithrilman_1:
+	emote_exclamation_mark
+	face_down
+	step_end
+
+Movement_Falador_Mithrilman_2:
+	walk_right
+	walk_down
+	walk_down
+	step_end
+
+Movement_Falador_Mithrilman_3:
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	step_end
+
+Mithrilman_FALADOR1::
+	playbgm MUS_ENCOUNTER_MAY, 1
+	namebox Mithrilman_FALADOR1_Text_0
+	msgbox Mithrilman_FALADOR1_Text_1
+	hidenamebox
+	trainerbattle_no_intro TRAINER_MITHRILMAN2, Mithrilman_FALADOR1_Text_2
+	namebox Mithrilman_FALADOR1_Text_0
+	msgbox Mithrilman_FALADOR1_Text_3
+	waitmessage
+	closemessage
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject 23
+	fadescreenswapbuffers FADE_FROM_BLACK
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_QUESTIONMARK
+	waitmovement 0
+	waitse
+	msgbox Mithrilman_FALADOR1_Text_4
+	finditem ITEM_LAW_RUNE, 1
+	setvar VAR_MITHRILMAN_STATE, 10
+	setflag FLAG_TEMP_1C
+	removeobject 23
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MITHRILMAN_QUEST, 1
+	savebgm MUS_DUMMY
+	fadedefaultbgm
 	release
 	end
 
@@ -1890,3 +1966,44 @@ NPC_FALADOR_PARTYROOM_PETE_Text_6:
 	.string "You can only dream to have an afro like\n"
 	.string "mine.\p"
 	.string "Party hard enough you might get one.$"
+
+Mithrilman_FALADOR1_Text_0:
+	.string "Mithrilman$"
+
+Mithrilman_FALADOR1_Text_1:
+	.string "West meet again knave, howst fares\n"
+	.string "thoughst adventure?\p"
+	.string "Thine has already beaten the whitest\n"
+	.string "of knights, and provenst that\l"
+	.string "Mithrilmen are superior to those of the\l"
+	.string "whitest armour.\p"
+	.string "Do thoust wonder why thine am in the\n"
+	.string "park?\p"
+	.string "Thine am contemplating catching a duck\n"
+	.string "for thine arsenal.\p"
+	.string "Word sayst the pen is mightiest than\n"
+	.string "the sword and pens be made from\l"
+	.string "feathers.\p"
+	.string "So who else than the duck wouldst be\n"
+	.string "mightyer than the sword?\p"
+	.string "Why donst thine show ye, knave, the\n"
+	.string "power of onst without a sword?$"
+
+Mithrilman_FALADOR1_Text_2:
+	.string "…$"
+
+Mithrilman_FALADOR1_Text_3:
+	.string "I see troughst thoust clever trick\n"
+	.string "knave, that duck in thest pond were\l"
+	.string "mightyest than the sword.\p"
+	.string "And thine not posessing sword or\n"
+	.string "feather lost becaust of that?\p"
+	.string "Clever knave, very clever.\p"
+	.string "Thine am a Mithrilman and seest trough\n"
+	.string "thee clever tricks, but as a Mithrilman,\l"
+	.string "thine will accept this outcome.\p"
+	.string "Forst know.$"
+
+Mithrilman_FALADOR1_Text_4:
+	.string "It appears Mithrilman dropped\n"
+	.string "something while rushing off.$"

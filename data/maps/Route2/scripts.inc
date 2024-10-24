@@ -413,6 +413,7 @@ TRIGGER_WISEOLDMAN_RIVAL_1_1:
 	removeobject 14
 	setflag FLAG_TEMP_1F
 	setvar VAR_WISE_OLD_MAN_RIVAL, 5
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MAIN_STORY, 2
 	release
 	end
 

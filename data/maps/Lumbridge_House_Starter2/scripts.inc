@@ -183,50 +183,20 @@ Mithrilman_FLAGS::
 	end
 
 
-Mithrilman_FALADOR1::
-	lock
-	faceplayer
-	playbgm MUS_ENCOUNTER_MAY, 1
-	namebox Mithrilman_FALADOR1_Text_0
-	msgbox Mithrilman_FALADOR1_Text_1
-	hidenamebox
-	trainerbattle_no_intro TRAINER_MITHRILMAN2, Mithrilman_FALADOR1_Text_2
-	goto Mithrilman_FALADOR2
-	return
-
-
-Mithrilman_FALADOR2::
-	lock
-	faceplayer
-	namebox Mithrilman_FALADOR1_Text_0
-	msgbox Mithrilman_FALADOR2_Text_0
-	waitmessage
-	closemessage
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject 23
-	fadescreenswapbuffers FADE_FROM_BLACK
-	setflag FLAG_MITHRILMAN2
-	clearflag FLAG_MITHRILMAN3
-	savebgm MUS_DUMMY
-	fadedefaultbgm
-	release
-	end
-
-
 Mithrilman_VARROCK1::
 	lock
 	faceplayer
 	playbgm MUS_ENCOUNTER_MAY, 1
-	namebox Mithrilman_FALADOR1_Text_0
-	msgbox Mithrilman_VARROCK1_Text_0
-	trainerbattle_single TRAINER_MITHRILMAN3, Mithrilman_VARROCK1_Text_1, Mithrilman_FALADOR1_Text_2, Mithrilman_VARROCK2
+	namebox Mithrilman_VARROCK1_Text_0
+	msgbox Mithrilman_VARROCK1_Text_1
+	trainerbattle_single TRAINER_MITHRILMAN3, Mithrilman_VARROCK1_Text_2, Mithrilman_VARROCK1_Text_3, Mithrilman_VARROCK2
 	return
 
 
 Mithrilman_VARROCK2::
 	lock
 	faceplayer
-	namebox Mithrilman_FALADOR1_Text_0
+	namebox Mithrilman_VARROCK1_Text_0
 	msgbox Mithrilman_VARROCK2_Text_0
 	waitmessage
 	closemessage
@@ -245,16 +215,16 @@ Mithrilman_ALKHARID1::
 	lock
 	faceplayer
 	playbgm MUS_ENCOUNTER_MAY, 1
-	namebox Mithrilman_FALADOR1_Text_0
+	namebox Mithrilman_VARROCK1_Text_0
 	msgbox Mithrilman_ALKHARID1_Text_0
-	trainerbattle_single TRAINER_MITHRILMAN4, Mithrilman_ALKHARID1_Text_1, Mithrilman_FALADOR1_Text_2, Mithrilman_ALKHARID2
+	trainerbattle_single TRAINER_MITHRILMAN4, Mithrilman_ALKHARID1_Text_1, Mithrilman_VARROCK1_Text_3, Mithrilman_ALKHARID2
 	return
 
 
 Mithrilman_ALKHARID2::
 	lock
 	faceplayer
-	namebox Mithrilman_FALADOR1_Text_0
+	namebox Mithrilman_VARROCK1_Text_0
 	msgbox Mithrilman_ALKHARID2_Text_0
 	closemessage
 	hidenamebox
@@ -262,7 +232,7 @@ Mithrilman_ALKHARID2::
 	waitmessage
 	closemessage
 	hidenamebox
-	namebox Mithrilman_FALADOR1_Text_0
+	namebox Mithrilman_VARROCK1_Text_0
 	msgbox Mithrilman_ALKHARID2_Text_1
 	waitmessage
 	closemessage
@@ -277,49 +247,20 @@ Mithrilman_ALKHARID2::
 	end
 
 
-Mithrilman_TZHAAR1::
-	lock
-	faceplayer
-	playbgm MUS_ENCOUNTER_MAY, 1
-	namebox Mithrilman_FALADOR1_Text_0
-	msgbox Mithrilman_TZHAAR1_Text_0
-	trainerbattle_single TRAINER_MITHRILMAN5, Mithrilman_TZHAAR1_Text_1, Mithrilman_FALADOR1_Text_2, Mithrilman_TZHAAR2
-	return
-
-
-Mithrilman_TZHAAR2::
-	lock
-	faceplayer
-	namebox Mithrilman_FALADOR1_Text_0
-	msgbox Mithrilman_TZHAAR2_Text_0
-	waitmessage
-	closemessage
-	hidenamebox
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject 2
-	fadescreenswapbuffers FADE_FROM_BLACK
-	setflag FLAG_MITHRILMAN5
-	clearflag FLAG_MITHRILMAN6
-	savebgm MUS_DUMMY
-	fadedefaultbgm
-	release
-	end
-
-
 Mithrilman_DRAYNOR1::
 	lock
 	faceplayer
 	playbgm MUS_ENCOUNTER_MAY, 1
-	namebox Mithrilman_FALADOR1_Text_0
+	namebox Mithrilman_VARROCK1_Text_0
 	msgbox Mithrilman_DRAYNOR1_Text_0
-	trainerbattle_single TRAINER_MITHRILMAN6, Mithrilman_DRAYNOR1_Text_1, Mithrilman_FALADOR1_Text_2, Mithrilman_DRAYNOR2
+	trainerbattle_single TRAINER_MITHRILMAN6, Mithrilman_DRAYNOR1_Text_1, Mithrilman_VARROCK1_Text_3, Mithrilman_DRAYNOR2
 	return
 
 
 Mithrilman_DRAYNOR2::
 	lock
 	faceplayer
-	namebox Mithrilman_FALADOR1_Text_0
+	namebox Mithrilman_VARROCK1_Text_0
 	msgbox Mithrilman_DRAYNOR2_Text_0
 	waitmessage
 	closemessage
@@ -338,7 +279,7 @@ Mithrilman_EDGEVILLE1::
 	goto_if_set FLAG_MITHRILMAN8, Mithrilman_EDGEVILLE1_1
 	lock
 	faceplayer
-	namebox Mithrilman_FALADOR1_Text_0
+	namebox Mithrilman_VARROCK1_Text_0
 	msgbox Mithrilman_EDGEVILLE1_Text_2
 	release
 	end
@@ -347,16 +288,16 @@ Mithrilman_EDGEVILLE1_1:
 	lock
 	faceplayer
 	playbgm MUS_ENCOUNTER_MAY, 1
-	namebox Mithrilman_FALADOR1_Text_0
+	namebox Mithrilman_VARROCK1_Text_0
 	msgbox Mithrilman_EDGEVILLE1_Text_0
-	trainerbattle_single TRAINER_MITHRILMAN7, Mithrilman_EDGEVILLE1_Text_1, Mithrilman_FALADOR1_Text_2, Mithrilman_EDGEVILLE2
+	trainerbattle_single TRAINER_MITHRILMAN7, Mithrilman_EDGEVILLE1_Text_1, Mithrilman_VARROCK1_Text_3, Mithrilman_EDGEVILLE2
 	return
 
 
 Mithrilman_EDGEVILLE2::
 	lock
 	faceplayer
-	namebox Mithrilman_FALADOR1_Text_0
+	namebox Mithrilman_VARROCK1_Text_0
 	msgbox Mithrilman_EDGEVILLE2_Text_0
 	waitmessage
 	closemessage
@@ -372,16 +313,16 @@ Mithrilman_WILDERNESS1::
 	lock
 	faceplayer
 	playbgm MUS_ENCOUNTER_MAY, 1
-	namebox Mithrilman_FALADOR1_Text_0
+	namebox Mithrilman_VARROCK1_Text_0
 	msgbox Mithrilman_WILDERNESS1_Text_0
-	trainerbattle_single TRAINER_MITHRILMAN8, Mithrilman_WILDERNESS1_Text_1, Mithrilman_FALADOR1_Text_2, Mithrilman_WILDERNESS2
+	trainerbattle_single TRAINER_MITHRILMAN8, Mithrilman_WILDERNESS1_Text_1, Mithrilman_VARROCK1_Text_3, Mithrilman_WILDERNESS2
 	return
 
 
 Mithrilman_WILDERNESS2::
 	lock
 	faceplayer
-	namebox Mithrilman_FALADOR1_Text_0
+	namebox Mithrilman_VARROCK1_Text_0
 	msgbox Mithrilman_WILDERNESS2_Text_0
 	waitmessage
 	closemessage
@@ -400,17 +341,17 @@ Mithrilman_WILDERNESSVOLCANO1::
 	lock
 	faceplayer
 	playbgm MUS_ENCOUNTER_MAY, 1
-	namebox Mithrilman_FALADOR1_Text_0
+	namebox Mithrilman_VARROCK1_Text_0
 	msgbox Mithrilman_WILDERNESSVOLCANO1_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, 1
 	goto_if_ne Mithrilman_WILDERNESSVOLCANO1_3
-	namebox Mithrilman_FALADOR1_Text_0
+	namebox Mithrilman_VARROCK1_Text_0
 	msgbox Mithrilman_WILDERNESSVOLCANO1_Text_2
-	trainerbattle_single TRAINER_MITHRILMAN9, Mithrilman_WILDERNESSVOLCANO1_Text_3, Mithrilman_FALADOR1_Text_2, Mithrilman_WILDERNESSVOLCANO2
+	trainerbattle_single TRAINER_MITHRILMAN9, Mithrilman_WILDERNESSVOLCANO1_Text_3, Mithrilman_VARROCK1_Text_3, Mithrilman_WILDERNESSVOLCANO2
 	return
 
 Mithrilman_WILDERNESSVOLCANO1_3:
-	namebox Mithrilman_FALADOR1_Text_0
+	namebox Mithrilman_VARROCK1_Text_0
 	msgbox Mithrilman_WILDERNESSVOLCANO1_Text_1
 	savebgm MUS_DUMMY
 	fadedefaultbgm
@@ -421,7 +362,7 @@ Mithrilman_WILDERNESSVOLCANO1_3:
 Mithrilman_WILDERNESSVOLCANO2::
 	lock
 	faceplayer
-	namebox Mithrilman_FALADOR1_Text_0
+	namebox Mithrilman_VARROCK1_Text_0
 	msgbox Mithrilman_WILDERNESSVOLCANO2_Text_0
 	waitmessage
 	closemessage
@@ -488,44 +429,10 @@ The_Needle_Clock_Text_3:
 Mithrilman_FLAGS_Text_0:
 	.string "MITHRILMEN FLAG SET!$"
 
-Mithrilman_FALADOR1_Text_0:
+Mithrilman_VARROCK1_Text_0:
 	.string "Mithrilman$"
 
-Mithrilman_FALADOR1_Text_1:
-	.string "West meet again knave, howst fares\n"
-	.string "thoughst adventure?\p"
-	.string "Thine has already beaten the whitest\n"
-	.string "of knights, and provenst that\l"
-	.string "Mithrilmen are superior to those of the\l"
-	.string "whitest armour.\p"
-	.string "Do thoust wonder why thine am in the\n"
-	.string "park?\p"
-	.string "Thine am contemplating catching a duck\n"
-	.string "for thine arsenal.\p"
-	.string "Word sayst the pen is mightiest than\n"
-	.string "the sword and pens be made from\l"
-	.string "feathers.\p"
-	.string "So who else than the duck wouldst be\n"
-	.string "mightyer than the sword?\p"
-	.string "Why donst thine show ye, knave, the\n"
-	.string "power of onst without a sword?$"
-
-Mithrilman_FALADOR1_Text_2:
-	.string "…$"
-
-Mithrilman_FALADOR2_Text_0:
-	.string "I see troughst thoust clever trick\n"
-	.string "knave, that duck in thest pond were\l"
-	.string "mightyest than the sword.\p"
-	.string "And thine not posessing sword or\n"
-	.string "feather lost becaust of that?\p"
-	.string "Clever knave, very clever.\p"
-	.string "Thine am a Mithrilman and seest trough\n"
-	.string "thee clever tricks, but as a Mithrilman,\l"
-	.string "thine will accept this outcome.\p"
-	.string "Forst know.$"
-
-Mithrilman_VARROCK1_Text_0:
+Mithrilman_VARROCK1_Text_1:
 	.string "We meet again knave.\p"
 	.string "How farest thee battle?\p"
 	.string "Thine?\p"
@@ -539,9 +446,12 @@ Mithrilman_VARROCK1_Text_0:
 	.string "pelter.\p"
 	.string "Thoust seems eager for a rematch?$"
 
-Mithrilman_VARROCK1_Text_1:
+Mithrilman_VARROCK1_Text_2:
 	.string "Alas knave, there is no ducks to save\n"
 	.string "thee this time.$"
+
+Mithrilman_VARROCK1_Text_3:
+	.string "…$"
 
 Mithrilman_VARROCK2_Text_0:
 	.string "Thine ears hurt, the pelter gave thine\n"
@@ -584,38 +494,6 @@ Mithrilman_ALKHARID2_Text_0:
 Mithrilman_ALKHARID2_Text_1:
 	.string "These lands be treacherous, someones\n"
 	.string "as feeble as thee be warned.$"
-
-Mithrilman_TZHAAR1_Text_0:
-	.string "Fromst the scorching heats of the\n"
-	.string "dunes to a pleasant vaction I see\l"
-	.string "knave.\p"
-	.string "Greetings.\p"
-	.string "Thoust must be here to battle the\n"
-	.string "Tzhaar?\p"
-	.string "Allow thine to grant yee some knowledge\n"
-	.string "as thoust superior in battle provesst.\p"
-	.string "First of thoust shouldn't use iron\n"
-	.string "inside a volcano.\p"
-	.string "It would smelts and yee would end in\n"
-	.string "malfigured armour.\p"
-	.string "Not for the goodst of thoust body.\p"
-	.string "Hmm?\p"
-	.string "Thine has already challenged the\n"
-	.string "Tzhaar?$"
-
-Mithrilman_TZHAAR1_Text_1:
-	.string "Well yee should show thine your provess\n"
-	.string "then, beware, for the heat of this\l"
-	.string "battle will be nothing like the volcano!$"
-
-Mithrilman_TZHAAR2_Text_0:
-	.string "Thoust battle fair?\p"
-	.string "Jokest thine not, the heat from the\n"
-	.string "volcano has malfigured mine gracious\l"
-	.string "Mithril armour.\p"
-	.string "We shalt call this a draw for now, whilst\n"
-	.string "thine seek a smith to fix thine armour.\p"
-	.string "Fare thoust well!$"
 
 Mithrilman_DRAYNOR1_Text_0:
 	.string "Wiseness is a praise upon us all.\p"
