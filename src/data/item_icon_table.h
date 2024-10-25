@@ -111,7 +111,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_SERIOUS_MINT] = {gItemIcon_Mint, gItemIconPalette_YellowMint},
     // Candy
     [ITEM_RARE_CANDY] = {gItemIcon_RareCandy, gItemIconPalette_RareCandy},
-    [ITEM_EXP_CANDY_XS] = {gItemIcon_ExpCandyXS, gItemIconPalette_ExpCandies},
+    [ITEM_EXP_CANDY_XS] = {gItemIcon_Purple_Sweets, gItemIconPalette_Purple_Sweets},
     [ITEM_EXP_CANDY_S] = {gItemIcon_ExpCandyS, gItemIconPalette_ExpCandies},
     [ITEM_EXP_CANDY_M] = {gItemIcon_ExpCandyM, gItemIconPalette_ExpCandies},
     [ITEM_EXP_CANDY_L] = {gItemIcon_ExpCandyL, gItemIconPalette_ExpCandies},

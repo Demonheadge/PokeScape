@@ -176,9 +176,6 @@ Mithrilman_FLAGS::
 	lock
 	faceplayer
 	msgbox Mithrilman_FLAGS_Text_0
-	setflag FLAG_MITHRILMAN1
-	setflag FLAG_MITHRILMAN2
-	setflag FLAG_MITHRILMAN3
 	release
 	end
 

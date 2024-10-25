@@ -65,6 +65,7 @@ Explorer_Jack_2_1:
 	setflag FLAG_SYS_QUEST_MENU_GET
 	additem ITEM_ROTTEN_POTATO
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 1
+	startquest QUEST_MAIN_STORY
 	release
 	end
 

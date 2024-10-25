@@ -229,9 +229,6 @@ script Mithrilman_FLAGS{
 	lock
 	faceplayer
 	msgbox(format("MITHRILMEN FLAG SET!"))
-    setflag (FLAG_MITHRILMAN1)
-    setflag (FLAG_MITHRILMAN2)
-    setflag (FLAG_MITHRILMAN3)
     release
     end
 }

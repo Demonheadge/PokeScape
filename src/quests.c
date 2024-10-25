@@ -640,8 +640,8 @@ static const struct SubQuest sSubQuests_MAIN_STORY[QUEST_MAIN_STORY_SUB_COUNT] =
 	      gText_SubQuest_Main_Story_Name1,
 	      gText_SubQuest_Main_Story_Desc1,
 	      gText_MapName_Lumbridge,
-	      ITEM_BANANA,
-	      ITEM,
+	      OBJ_EVENT_GFX_PROF_NORMAL_TREE,
+	      OBJECT,
 	      sText_Delivered
 	),
 	sub_quest(

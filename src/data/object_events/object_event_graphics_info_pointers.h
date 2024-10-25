@@ -575,6 +575,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ket_dill;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_jitterbug;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_pikkupstix;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_seren_spirit;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_a_nub_tot;
 
 //ORES
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CopperOre;
@@ -1162,6 +1163,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_JITTERBUG] =                     &gObjectEventGraphicsInfo_jitterbug,
     [OBJ_EVENT_GFX_PIKKUPSTIX] =                    &gObjectEventGraphicsInfo_pikkupstix,
     [OBJ_EVENT_GFX_SEREN_SPIRIT] =                  &gObjectEventGraphicsInfo_seren_spirit,
+    [OBJ_EVENT_GFX_A_NUB_TOT] =                     &gObjectEventGraphicsInfo_a_nub_tot,
 
 //ORES 
 	[OBJ_EVENT_GFX_COPPER_ORE] =          		    &gObjectEventGraphicsInfo_CopperOre,

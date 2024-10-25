@@ -8720,6 +8720,16 @@
       "secondary_tileset": "gTileset_Windmill",
       "border_filepath": "data/layouts/Puro_Puro3/border.bin",
       "blockdata_filepath": "data/layouts/Puro_Puro3/map.bin"
+    },
+    {
+      "id": "LAYOUT_LUMBRIDGE_HOUSE_5",
+      "name": "Lumbridge_House_5_Layout",
+      "width": 10,
+      "height": 8,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns1",
+      "border_filepath": "data/layouts/Lumbridge_House_5/border.bin",
+      "blockdata_filepath": "data/layouts/Lumbridge_House_5/map.bin"
     }
   ]
 }

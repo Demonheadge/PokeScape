@@ -1516,3 +1516,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Puro_Puro2/scripts.inc"
 
 	.include "data/maps/Puro_Puro3/scripts.inc"
+
+	.include "data/maps/Lumbridge_House_5/scripts.inc"

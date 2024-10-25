@@ -59,7 +59,7 @@ script Lumbridge_Bookshelf
 script Lumbridge_Bookshelf_2
 {
 	lock
-	msgbox(format("There is a Book about MvM Championships.\pMvM also known as Monster VS Monster.\pAdventurers gather from all around the world to battle it out atop the Wilderness Volcano to see who is the strongest of them all."))
+	msgbox(format("There is a Book about MvM Championships.\pMvM also known as Monster VS Monster.\pAdventurers gather from all around the world to battle it out within the depths of the Wilderness Crater to see who is the strongest of them all."))
 	release
 	end
 }
@@ -323,7 +323,7 @@ script Lumbridge_Castle_Hans_1{
 	applymovement(10, Movement_Hans_4)
 	waitmovement(0)
 	namebox ("Hans")
-	msgbox(format("{PLAYER}, before you go have you heard of the MvM championships?\pMvM, which stands for Monster VS Monster, is where trainers compete against each other in battle by using their monsters to fight for them.\pIf you wish to participate in the MvM Championships you must defeat 8 leaders from around Gielinor and make your way to the Wilderness Volcano.\pThe Duke is one of these 8 Leaders.\pIf you are interested you should pay him a visit."))
+	msgbox(format("{PLAYER}, before you go have you heard of the MvM championships?\pMvM, which stands for Monster VS Monster, is where trainers compete against each other in battle by using their monsters to fight for them.\pIf you wish to participate in the MvM Championships you must defeat 8 leaders from around Gielinor and make your way to the Wilderness Crater.\pThe Duke is one of these 8 Leaders.\pIf you are interested you should pay him a visit."))
 	msgbox(format("Oh, before I forget take these."))
 	waitmessage
 	hidenamebox
@@ -341,7 +341,7 @@ script Lumbridge_Castle_Hans_1{
 	//setflag (FLAG_SYS_NATIONAL_DEX)
 	//special (EnableNationalPokedex)
 	setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 5) //Received Monster from Prof. Normal Tree
-	startquest (QUEST_MAIN_STORY)
+	startquest (QUEST_MVM_CHAMPIONSHIPS)
 	subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_MAIN_STORY, 0)
 	release
 	end
@@ -1071,6 +1071,57 @@ script NPC_LUMBRIDGE_HARLAN
     namebox ("Harlan")
 	msgbox(format("The best offense is a great defence!\pYou should focus on defensive moves such as Barrier and Protect.\pThis strategy has helped me get to where I am today."))
     waitmessage
+    hidenamebox
+	closemessage
+	release
+	end
+}
+script NPC_LUMBRIDGE_MAGIC_TUTOR
+{
+	lock
+	faceplayer
+    namebox ("Mikasi")
+	msgbox(format("You should use moves that inflict status effects.\pSuch as the move Will-o-Wisp, which will apply a BURN your opponent which will damage them over time and reduce their attack by half."))
+    waitmessage
+    hidenamebox
+	closemessage
+	applymovement(3, Movement_InteractFACELEFT)
+	waitmovement(0)
+	release
+	end
+}
+script NPC_LUMBRIDGE_RANGED_TUTOR
+{
+	lock
+	faceplayer
+    namebox ("Nemarti")
+	msgbox(format("Do you know about type advantages?\pI love sniping out fighting-types with my flying-types!\pI've gotta be careful of electric-types though…"))
+    waitmessage
+    hidenamebox
+	closemessage
+	applymovement(2, Movement_InteractFACERIGHT)
+	waitmovement(0)
+	release
+	end
+}
+script NPC_PENGUIN_TRAINING
+{
+	lock
+    namebox ("Pengling")
+    playmoncry(SPECIES_PENGLING, 0)
+	msgbox(format("NOOT!"))
+    waitmoncry
+    hidenamebox
+	release
+	end
+}
+script NPC_RAVEN_TRAINING
+{
+	lock
+    namebox ("Ravenling")
+    playmoncry(SPECIES_RAVENLING, 0)
+	msgbox(format("TWITTER!"))
+    waitmoncry
     hidenamebox
 	release
 	end

@@ -1,9 +1,9 @@
 {
-  "id": "MAP_VARROCK_HOUSE_7",
-  "name": "Varrock_House_7",
-  "layout": "LAYOUT_VARROCK_HOUSE_7",
-  "music": "MUS_PS_VARROCK",
-  "region_map_section": "MAPSEC_VARROCK",
+  "id": "MAP_LUMBRIDGE_HOUSE_5",
+  "name": "Lumbridge_House_5",
+  "layout": "LAYOUT_LUMBRIDGE_HOUSE_5",
+  "music": "MUS_PS_LUMBRIDGE",
+  "region_map_section": "MAPSEC_LUMBRIDGE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -15,78 +15,91 @@
   "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_SUMMONER",
-      "x": 3,
-      "y": 5,
+      "graphics_id": "OBJ_EVENT_GFX_GUARD_FALADOR",
+      "x": 5,
+      "y": 2,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_TRAININGROOM_SUMMONER",
+      "script": "NPC_LUMBRIDGE_HARLAN",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_NOOB",
-      "x": 6,
-      "y": 7,
+      "graphics_id": "OBJ_EVENT_GFX_RANGER_F",
+      "x": 7,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_LUMBRIDGE_RANGED_TUTOR",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WIZARD_F",
+      "x": 3,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_LUMBRIDGE_MAGIC_TUTOR",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RAT",
+      "x": 4,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_RAT",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RAVEN",
+      "x": 8,
+      "y": 2,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_TRAININGROOM_NOOB",
+      "script": "NPC_RAVEN_TRAINING",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_IMP",
+      "graphics_id": "OBJ_EVENT_GFX_PENGUIN",
       "x": 2,
-      "y": 5,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_TRAININGROOM_IMP",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_RUNE_ARMOUR",
-      "x": 4,
-      "y": 3,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "SHOP_TM_VARROCK_MUSEUM",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_PKER_RUSHER",
-      "x": 7,
-      "y": 4,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_TRAININGROOM_RUSHER",
+      "script": "NPC_PENGUIN_TRAINING",
       "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 4,
-      "y": 8,
+      "x": 7,
+      "y": 6,
       "elevation": 0,
-      "dest_map": "MAP_VARROCK",
-      "dest_warp_id": "19"
+      "dest_map": "MAP_LUMBRIDGE",
+      "dest_warp_id": "14"
     }
   ],
   "coord_events": [
@@ -96,18 +109,18 @@
     {
       "type": "hidden_item",
       "x": 1,
-      "y": 7,
+      "y": 2,
       "elevation": 0,
       "item": "ITEM_EXP_CANDY_XS",
-      "flag": "FLAG_HIDDEN_ITEM_TRAINING_ROOM_3"
+      "flag": "FLAG_HIDDEN_ITEM_TRAINING_ROOM_2"
     },
     {
       "type": "hidden_item",
-      "x": 7,
-      "y": 5,
+      "x": 9,
+      "y": 4,
       "elevation": 0,
       "item": "ITEM_EXP_CANDY_XS",
-      "flag": "FLAG_HIDDEN_ITEM_TRAINING_ROOM_4"
+      "flag": "FLAG_HIDDEN_ITEM_TRAINING_ROOM_1"
     }
   ],
   "has_night_table": false

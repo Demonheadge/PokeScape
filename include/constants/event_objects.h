@@ -585,8 +585,9 @@
 #define OBJ_EVENT_GFX_JITTERBUG                 568
 #define OBJ_EVENT_GFX_PIKKUPSTIX                569
 #define OBJ_EVENT_GFX_SEREN_SPIRIT              570
+#define OBJ_EVENT_GFX_A_NUB_TOT                 571
 
-#define NUM_OBJ_EVENT_GFX                       (OBJ_EVENT_GFX_SEREN_SPIRIT + 1)
+#define NUM_OBJ_EVENT_GFX                       (OBJ_EVENT_GFX_A_NUB_TOT + 1)
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //
 // Object event graphics ids are 1 byte in size (max value of 255), and the dynamic

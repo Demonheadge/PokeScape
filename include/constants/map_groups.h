@@ -757,6 +757,7 @@
 #define MAP_LUMBRIDGE_HOUSE_3_2F       (18 | (38 << 8))
 #define MAP_LUMBRIDGE_CHURCH           (19 | (38 << 8))
 #define MAP_LUMBRIDGE_CASTLE_BASEMENT  (20 | (38 << 8))
+#define MAP_LUMBRIDGE_HOUSE_5          (21 | (38 << 8))
 
 // gMapGroup_PokescapeIndoorDraynor
 #define MAP_DRAYNOR_HOUSE_MORGAN_1F   (0 | (39 << 8))

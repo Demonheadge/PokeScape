@@ -1,5 +1,6 @@
 Lumbridge_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Lumbridge_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_LOAD, Lumbridge_MapScripts_MAP_SCRIPT_ON_LOAD
 	.byte 0
 
 Lumbridge_MapScripts_MAP_SCRIPT_ON_TRANSITION:
@@ -13,6 +14,23 @@ Lumbridge_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 Lumbridge_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	call STORYMODE_STATE_LUMBRIDGE
 	return
+
+Lumbridge_MapScripts_MAP_SCRIPT_ON_LOAD:
+	call LUMBRIDGE_STATE
+	return
+
+
+LUMBRIDGE_STATE::
+	removeobject 33
+	setflag FLAG_TEMP_1F
+	goto_if_unset FLAG_A_NUB_TOT_TUTORIAL, LUMBRIDGE_STATE_2
+LUMBRIDGE_STATE_1:
+	return
+
+LUMBRIDGE_STATE_2:
+	setmetatile 18, 8, METATILE_PokeScapeOutdoors_NOT_A_DOOR, 1
+	special DrawWholeMapView
+	goto LUMBRIDGE_STATE_1
 
 
 OPENWORLD_STATE_LUMBRIDGE::
@@ -856,6 +874,65 @@ Lumbridge_HAMDuo_2::
 	end
 
 
+A_NUB_TOT_LOCKED_DOOR_TUTORIAL::
+	goto_if_unset FLAG_A_NUB_TOT_TUTORIAL, A_NUB_TOT_LOCKED_DOOR_TUTORIAL_2
+A_NUB_TOT_LOCKED_DOOR_TUTORIAL_1:
+	end
+
+A_NUB_TOT_LOCKED_DOOR_TUTORIAL_2:
+	lockall
+	setmetatile 18, 8, METATILE_PokeScapeOutdoors_Door_General_R, 1
+	special DrawWholeMapView
+	delay 10
+	playse SE_DOOR
+	opendoor 18, 8
+	applymovement OBJ_EVENT_ID_PLAYER, ANUBTOT_1
+	waitmovement 0
+	addobject 33
+	clearflag FLAG_TEMP_1F
+	applymovement 33, ANUBTOT_2
+	waitmovement 0
+	delay 10
+	closedoor 18, 8
+	playbgm MUS_PS_WISE_OLD_MAN_THEME, 1
+	namebox A_NUB_TOT_LOCKED_DOOR_TUTORIAL_Text_0
+	msgbox A_NUB_TOT_LOCKED_DOOR_TUTORIAL_Text_1
+	closemessage
+	applymovement 33, ANUBTOT_3
+	waitmovement 0
+	fadedefaultbgm
+	setflag FLAG_A_NUB_TOT_TUTORIAL
+	removeobject 33
+	setflag FLAG_TEMP_1F
+	release
+	goto A_NUB_TOT_LOCKED_DOOR_TUTORIAL_1
+
+
+ANUBTOT_1:
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+	step_end
+
+ANUBTOT_2:
+	walk_down
+	step_end
+
+ANUBTOT_3:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
 CUPHOLDER_NPC_Text_0:
 	.string "I am currently a Cupholder with no\n"
 	.string "dialog.$"
@@ -1258,3 +1335,30 @@ Lumbridge_HAMDuo_2_Text_0:
 	.string "Did the forest get overgrown again?\p"
 	.string "Maybe we need to go find an axe to cut\n"
 	.string "back some of these trees..$"
+
+A_NUB_TOT_LOCKED_DOOR_TUTORIAL_Text_0:
+	.string "A Nub Tot$"
+
+A_NUB_TOT_LOCKED_DOOR_TUTORIAL_Text_1:
+	.string "Heya! My name is A Nub Tot, but everyone\n"
+	.string "calls me Tot.\p"
+	.string "Let me pass on some very important\n"
+	.string "advice to you that will help you on your\l"
+	.string "adventure.\p"
+	.string "The A BUTTON!\n"
+	.string "Yes, simply the A BUTTON!\p"
+	.string "The A BUTTON will give you all sorts of\n"
+	.string "knowledge in your travels!\p"
+	.string "Is there a RED BOOK in that bookcase?\n"
+	.string "Is that a LEVER that needs pulling?\p"
+	.string "What's that thing that is SPARKLING?\n"
+	.string "Is that DOOR LOCKED?\p"
+	.string "Are you lost and don't know where to\n"
+	.string "go?\p"
+	.string "Just use the A BUTTON!\p"
+	.string "And that is it, that is the wisdom I give\n"
+	.string "to you.\p"
+	.string "I hope you have an amazing adventure!\p"
+	.string "Nice meeting you!\p"
+	.string "And one final time.\n"
+	.string "Remember… the A BUTTON.$"

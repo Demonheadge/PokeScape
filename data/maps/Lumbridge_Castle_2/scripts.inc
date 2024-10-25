@@ -361,7 +361,7 @@ Lumbridge_Castle_Hans_1::
 	fadescreenswapbuffers FADE_FROM_BLACK
 	setflag FLAG_SYS_POKEDEX_GET
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 5
-	startquest QUEST_MAIN_STORY
+	startquest QUEST_MVM_CHAMPIONSHIPS
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MAIN_STORY, 0
 	release
 	end
@@ -1136,6 +1136,57 @@ NPC_LUMBRIDGE_HARLAN::
 	msgbox NPC_LUMBRIDGE_HARLAN_Text_1
 	waitmessage
 	hidenamebox
+	closemessage
+	release
+	end
+
+
+NPC_LUMBRIDGE_MAGIC_TUTOR::
+	lock
+	faceplayer
+	namebox NPC_LUMBRIDGE_MAGIC_TUTOR_Text_0
+	msgbox NPC_LUMBRIDGE_MAGIC_TUTOR_Text_1
+	waitmessage
+	hidenamebox
+	closemessage
+	applymovement 3, Movement_InteractFACELEFT
+	waitmovement 0
+	release
+	end
+
+
+NPC_LUMBRIDGE_RANGED_TUTOR::
+	lock
+	faceplayer
+	namebox NPC_LUMBRIDGE_RANGED_TUTOR_Text_0
+	msgbox NPC_LUMBRIDGE_RANGED_TUTOR_Text_1
+	waitmessage
+	hidenamebox
+	closemessage
+	applymovement 2, Movement_InteractFACERIGHT
+	waitmovement 0
+	release
+	end
+
+
+NPC_PENGUIN_TRAINING::
+	lock
+	namebox NPC_PENGUIN_TRAINING_Text_0
+	playmoncry SPECIES_PENGLING, 0
+	msgbox NPC_PENGUIN_TRAINING_Text_1
+	waitmoncry
+	hidenamebox
+	release
+	end
+
+
+NPC_RAVEN_TRAINING::
+	lock
+	namebox NPC_RAVEN_TRAINING_Text_0
+	playmoncry SPECIES_RAVENLING, 0
+	msgbox NPC_RAVEN_TRAINING_Text_1
+	waitmoncry
+	hidenamebox
 	release
 	end
 
@@ -1291,9 +1342,9 @@ Lumbridge_Bookshelf_2_Text_0:
 	.string "Championships.\p"
 	.string "MvM also known as Monster VS Monster.\p"
 	.string "Adventurers gather from all around the\n"
-	.string "world to battle it out atop the\l"
-	.string "Wilderness Volcano to see who is the\l"
-	.string "strongest of them all.$"
+	.string "world to battle it out within the depths\l"
+	.string "of the Wilderness Crater to see who is\l"
+	.string "the strongest of them all.$"
 
 Lumbridge_Castle_GUARD_Text_0:
 	.string "Brawn$"
@@ -1415,7 +1466,7 @@ Lumbridge_Castle_Hans_1_Text_0:
 	.string "If you wish to participate in the MvM\n"
 	.string "Championships you must defeat 8\l"
 	.string "leaders from around Gielinor and make\l"
-	.string "your way to the Wilderness Volcano.\p"
+	.string "your way to the Wilderness Crater.\p"
 	.string "The Duke is one of these 8 Leaders.\p"
 	.string "If you are interested you should pay\n"
 	.string "him a visit.$"
@@ -1631,6 +1682,39 @@ NPC_LUMBRIDGE_HARLAN_Text_1:
 	.string "such as Barrier and Protect.\p"
 	.string "This strategy has helped me get to\n"
 	.string "where I am today.$"
+
+NPC_LUMBRIDGE_MAGIC_TUTOR_Text_0:
+	.string "Mikasi$"
+
+NPC_LUMBRIDGE_MAGIC_TUTOR_Text_1:
+	.string "You should use moves that inflict\n"
+	.string "status effects.\p"
+	.string "Such as the move Will-o-Wisp, which will\n"
+	.string "apply a BURN your opponent which will\l"
+	.string "damage them over time and reduce their\l"
+	.string "attack by half.$"
+
+NPC_LUMBRIDGE_RANGED_TUTOR_Text_0:
+	.string "Nemarti$"
+
+NPC_LUMBRIDGE_RANGED_TUTOR_Text_1:
+	.string "Do you know about type advantages?\p"
+	.string "I love sniping out fighting-types with\n"
+	.string "my flying-types!\p"
+	.string "I've gotta be careful of electric-types\n"
+	.string "though…$"
+
+NPC_PENGUIN_TRAINING_Text_0:
+	.string "Pengling$"
+
+NPC_PENGUIN_TRAINING_Text_1:
+	.string "NOOT!$"
+
+NPC_RAVEN_TRAINING_Text_0:
+	.string "Ravenling$"
+
+NPC_RAVEN_TRAINING_Text_1:
+	.string "TWITTER!$"
 
 Mithrilman_LUMBRIDGE_STATE_2_Text_0:
 	.string "???$"

@@ -419,16 +419,16 @@ Mithrilman_TZHAAR1::
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject 2
 	fadescreenswapbuffers FADE_FROM_BLACK
+	setvar VAR_MITHRILMAN_STATE, 15
+	setflag FLAG_TEMP_1C
+	removeobject 25
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MITHRILMAN_QUEST, 2
 	playse SE_PIN
 	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_QUESTIONMARK
 	waitmovement 0
 	waitse
 	msgbox Mithrilman_TZHAAR1_Text_4
 	finditem ITEM_CHAOS_RUNE, 1
-	setvar VAR_MITHRILMAN_STATE, 15
-	setflag FLAG_TEMP_1C
-	removeobject 25
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MITHRILMAN_QUEST, 2
 	savebgm MUS_DUMMY
 	fadedefaultbgm
 	release

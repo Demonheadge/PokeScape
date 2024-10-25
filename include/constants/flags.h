@@ -90,7 +90,7 @@
 #define FLAG_UNUSED_0x040       0x40 // Unused Flag
 //END -- TRADE FLAGS
 
-#define FLAG_MITHRILMAN1        0x41 // Unused Flag
+#define FLAG_A_NUB_TOT_TUTORIAL 0x41 // Unused Flag
 #define FLAG_MITHRILMAN2        0x42 // Unused Flag
 #define FLAG_MITHRILMAN3        0x43 // Unused Flag
 #define FLAG_MITHRILMAN4        0x44 // Unused Flag
@@ -634,11 +634,11 @@
 #define FLAG_HIDDEN_ITEM_ROUTE12_1                              (FLAG_HIDDEN_ITEMS_START + 0x03)
 #define FLAG_HIDDEN_ITEM_ROUTE39_1                              (FLAG_HIDDEN_ITEMS_START + 0x1E)
 #define FLAG_HIDDEN_ITEM_ROUTE39_2                              (FLAG_HIDDEN_ITEMS_START + 0x62)
+#define FLAG_HIDDEN_ITEM_TRAINING_ROOM_1                        (FLAG_HIDDEN_ITEMS_START + 0x04)
+#define FLAG_HIDDEN_ITEM_TRAINING_ROOM_2                        (FLAG_HIDDEN_ITEMS_START + 0x2A)
+#define FLAG_HIDDEN_ITEM_TRAINING_ROOM_3                        (FLAG_HIDDEN_ITEMS_START + 0x61)
+#define FLAG_HIDDEN_ITEM_TRAINING_ROOM_4                        (FLAG_HIDDEN_ITEMS_START + 0x2D)
 
-#define FLAG_HIDDEN_ITEM_ROUTE_114_CARBOS                       (FLAG_HIDDEN_ITEMS_START + 0x04)
-#define FLAG_HIDDEN_ITEM_ROUTE_113_REVIVE                       (FLAG_HIDDEN_ITEMS_START + 0x2A)
-#define FLAG_HIDDEN_ITEM_ROUTE_115_HEART_SCALE                  (FLAG_HIDDEN_ITEMS_START + 0x61)
-#define FLAG_HIDDEN_ITEM_ROUTE_116_SUPER_POTION                 (FLAG_HIDDEN_ITEMS_START + 0x2D)
 #define FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES                (FLAG_HIDDEN_ITEMS_START + 0x60)
 #define FLAG_HIDDEN_ITEM_ROUTE_117_REPEL                        (FLAG_HIDDEN_ITEMS_START + 0x48)
 #define FLAG_HIDDEN_ITEM_ROUTE_118_HEART_SCALE                  (FLAG_HIDDEN_ITEMS_START + 0x42)

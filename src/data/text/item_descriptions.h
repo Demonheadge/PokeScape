@@ -543,27 +543,27 @@ static const u8 sRareCandyDesc[] = _(
 static const u8 sExpCandyXSDesc[] = _(
     "Gives a very small\n"
     "amount of Exp. to\n"
-    "a single Pokémon.");
+    "a single Monster.");
 
 static const u8 sExpCandySDesc[] = _(
     "Gives a small\n"
     "amount of Exp. to\n"
-    "a single Pokémon.");
+    "a single Monster.");
 
 static const u8 sExpCandyMDesc[] = _(
     "Gives a moderate\n"
     "amount of Exp. to\n"
-    "a single Pokémon.");
+    "a single Monster.");
 
 static const u8 sExpCandyLDesc[] = _(
     "Gives a large\n"
     "amount of Exp. to\n"
-    "a single Pokémon.");
+    "a single Monster.");
 
 static const u8 sExpCandyXLDesc[] = _(
     "Gives a very large\n"
     "amount of Exp. to\n"
-    "a single Pokémon.");
+    "a single Monster.");
 
 static const u8 sDynamaxCandyDesc[] = _(
     "Raises the Dynamax\n"

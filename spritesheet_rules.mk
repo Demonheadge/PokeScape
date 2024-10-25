@@ -1764,3 +1764,6 @@ $(OBJEVENTGFXDIR)/pokescape_overworlds/pikkupstix.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/pokescape_overworlds/seren_spirit.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/pokescape_overworlds/a_nub_tot.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4

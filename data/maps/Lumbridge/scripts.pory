@@ -4,6 +4,7 @@ const OBJ_EVENT_ID_BANKERGF = 3
 const OBJ_EVENT_ID_FISHERMAN = 23
 const OBJ_EVENT_ID_FARMER = 21
 const OBJ_EVENT_ID_BRIDGEMAN = 11
+const OBJ_EVENT_ID_A_NUB_TOT = 33
 
 mapscripts Lumbridge_MapScripts {
 
@@ -19,9 +20,31 @@ mapscripts Lumbridge_MapScripts {
 		{
 			call(OPENWORLD_STATE_LUMBRIDGE)
 		}
-		
     }
+	MAP_SCRIPT_ON_LOAD {
+		call(LUMBRIDGE_STATE)
+	}
 }
+
+
+
+
+
+script LUMBRIDGE_STATE
+{
+	removeobject(OBJ_EVENT_ID_A_NUB_TOT)
+	setflag(FLAG_TEMP_1F)
+	if (flag(FLAG_A_NUB_TOT_TUTORIAL) == FALSE) {
+		setmetatile(18,8,METATILE_PokeScapeOutdoors_NOT_A_DOOR, 1) 
+		special(DrawWholeMapView) 
+	}
+    return
+}
+
+
+
+
+
 
 
 
@@ -908,4 +931,49 @@ script Lumbridge_HAMDuo_2
 	//hidenamebox
 	release
 	end
+}
+
+
+script A_NUB_TOT_LOCKED_DOOR_TUTORIAL {
+	if (flag(FLAG_A_NUB_TOT_TUTORIAL) == FALSE) {
+		lockall
+		setmetatile(18,8,METATILE_PokeScapeOutdoors_Door_General_R, 1) 
+		special(DrawWholeMapView) 
+		delay(10)
+		playse(SE_DOOR)
+		opendoor(18, 8)
+		applymovement(OBJ_EVENT_ID_PLAYER, ANUBTOT_1)
+		waitmovement(0)
+		addobject(OBJ_EVENT_ID_A_NUB_TOT)
+		clearflag(FLAG_TEMP_1F)
+		applymovement(OBJ_EVENT_ID_A_NUB_TOT, ANUBTOT_2)
+		waitmovement(0)
+		delay(10)
+		closedoor(18, 8)
+		playbgm (MUS_PS_WISE_OLD_MAN_THEME, 1)
+		namebox ("A Nub Tot")
+		msgbox(format("Heya! My name is A Nub Tot, but everyone calls me Tot.\pLet me pass on some very important advice to you that will help you on your adventure.\pThe A BUTTON!\nYes, simply the A BUTTON!\pThe A BUTTON will give you all sorts of knowledge in your travels!\pIs there a RED BOOK in that bookcase?\nIs that a LEVER that needs pulling?\pWhat's that thing that is SPARKLING?\nIs that DOOR LOCKED?\pAre you lost and don't know where to go?\pJust use the A BUTTON!\pAnd that is it, that is the wisdom I give to you.\pI hope you have an amazing adventure!\pNice meeting you!\pAnd one final time.\nRemember… the A BUTTON."))
+		closemessage
+		applymovement(OBJ_EVENT_ID_A_NUB_TOT, ANUBTOT_3)
+		waitmovement(0)
+		fadedefaultbgm
+		setflag(FLAG_A_NUB_TOT_TUTORIAL)
+		removeobject(OBJ_EVENT_ID_A_NUB_TOT)
+		setflag(FLAG_TEMP_1F)
+		release 
+	}
+	end
+}
+
+movement ANUBTOT_1 {
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+}
+movement ANUBTOT_2 {
+	walk_down
+}
+movement ANUBTOT_3 {
+	walk_right * 6 
+	walk_up * 6 
 }
