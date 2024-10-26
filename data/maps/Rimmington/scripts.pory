@@ -11,7 +11,9 @@ mapscripts Rimmington_MapScripts{
 	MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_VISITED_RIMMINGTON)
         goto(Rimmington_STATE)
-        call(PURO_PURO_EVENT_2)
+    }
+    MAP_SCRIPT_ON_LOAD {
+        call(PURO_PURO_EVENT)
     }
 }
 
@@ -1222,17 +1224,38 @@ script ANCHOVYBOOK {
 
 
 
-script PURO_PURO_EVENT_2 {
-	//Random chance for Puro Puro Event to spawn in wheat field in Rimmington.
-	random(20)
-	if (var(VAR_RESULT) == 1) {
-		clearflag(FLAG_TEMP_8)
-	}
-	else {
-		setflag(FLAG_TEMP_8)
-		setmetatile(48, 4, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0)
-        setmetatile(48, 5, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0)
-        setmetatile(48, 6, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0)
-	}
+script PURO_PURO_EVENT_RIMMINGTON {
+    setmetatile(47, 3, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(48, 3, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(49, 3, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(50, 3, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(46, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(47, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(48, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(49, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(50, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(46, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(47, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(48, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(49, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(46, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(47, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(48, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(49, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(50, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(46, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(47, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(48, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(49, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(50, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(47, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(48, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(49, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+
+
+    setmetatile(48, 4, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_1, 0)
+    setmetatile(48, 5, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_2, 0)
+    setmetatile(48, 6, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_3, 0)
 	return
 }
+

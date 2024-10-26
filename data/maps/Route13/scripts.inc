@@ -1,27 +1,15 @@
 Route13_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route13_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_LOAD, Route13_MapScripts_MAP_SCRIPT_ON_LOAD
 	.byte 0
 
 Route13_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 16
-	call PURO_PURO_EVENT_3
 	return
 
-
-PURO_PURO_EVENT_3::
-	random 20
-	compare VAR_RESULT, 1
-	goto_if_eq PURO_PURO_EVENT_3_2
-	setflag FLAG_TEMP_8
-	setmetatile 7, 22, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
-	setmetatile 7, 23, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
-	setmetatile 7, 24, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
-PURO_PURO_EVENT_3_1:
+Route13_MapScripts_MAP_SCRIPT_ON_LOAD:
+	call PURO_PURO_EVENT
 	return
-
-PURO_PURO_EVENT_3_2:
-	clearflag FLAG_TEMP_8
-	goto PURO_PURO_EVENT_3_1
 
 
 VARROCK_NPC_RATBURGUS::
@@ -228,6 +216,13 @@ BATTLE_ROUTE17_TRAINER_2::
 	hidenamebox
 	release
 	end
+
+
+PURO_PURO_EVENT_ROUTE13::
+	setmetatile 7, 22, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_1, 0
+	setmetatile 7, 23, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_2, 0
+	setmetatile 7, 24, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_3, 0
+	return
 
 
 VARROCK_NPC_RATBURGUS_Text_0:

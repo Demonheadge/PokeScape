@@ -1,8 +1,16 @@
+const OBJ_EVENT_ID_LUCKY_IMPLING = 20
+
 mapscripts Route24_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setvar(VAR_EVOLUTION_MAP_STATE, 3) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+        call(RANDOM_EVENT_IMPLING)
+    }
+    MAP_SCRIPT_ON_LOAD {
+        call(PURO_PURO_EVENT)
     }
 }
+
+
 
 //SIGNPOST
 script ROUTE24_SIGNPOST
@@ -164,4 +172,35 @@ script BATTLE_ROUTE40_DIVINER {
     hidenamebox
     release
     end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+script PURO_PURO_EVENT_ROUTE24 {
+    setmetatile(15, 27, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(14, 28, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(15, 28, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(16, 28, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(17, 28, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(14, 29, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(15, 29, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(16, 29, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(17, 29, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(15, 30, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(16, 30, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(17, 30, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(18, 30, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(16, 28, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_1, 0)
+    setmetatile(16, 29, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_2, 0)
+    setmetatile(16, 30, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_3, 0)
+	return
 }

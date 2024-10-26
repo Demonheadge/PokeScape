@@ -1,56 +1,112 @@
 Puro_Puro1_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Puro_Puro1_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+Puro_Puro1_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	call RANDOM_EVENT_IMPLING
+	return
+
+
+RANDOM_EVENT_IMPLING::
+	random 20
+	compare VAR_RESULT, 1
+	goto_if_eq RANDOM_EVENT_IMPLING_2
+	setflag FLAG_TEMP_8
+	removeobject 16
+RANDOM_EVENT_IMPLING_1:
+	return
+
+RANDOM_EVENT_IMPLING_2:
+	clearflag FLAG_TEMP_8
+	addobject 16
+	goto RANDOM_EVENT_IMPLING_1
+
+
+PURO_PURO_EVENT::
+	random 2
+	compare VAR_RESULT, 1
+	goto_if_eq PURO_PURO_EVENT_2
+PURO_PURO_EVENT_1:
+	return
+
+PURO_PURO_EVENT_2:
+	specialvar VAR_RESULT, GetCurrentMap
+	compare VAR_RESULT, MAP_ROUTE1
+	goto_if_eq PURO_PURO_EVENT_4
+	compare VAR_RESULT, MAP_ROUTE24
+	goto_if_eq PURO_PURO_EVENT_5
+	compare VAR_RESULT, MAP_RIMMINGTON
+	goto_if_eq PURO_PURO_EVENT_6
+	compare VAR_RESULT, MAP_DRAYNOR
+	goto_if_eq PURO_PURO_EVENT_7
+	compare VAR_RESULT, MAP_ROUTE14
+	goto_if_eq PURO_PURO_EVENT_8
+	compare VAR_RESULT, MAP_ROUTE12
+	goto_if_eq PURO_PURO_EVENT_9
+	goto PURO_PURO_EVENT_1
+
+PURO_PURO_EVENT_4:
+	setdynamicwarp MAP_ROUTE1, 3
+	call PURO_PURO_EVENT_ROUTE1
+	goto PURO_PURO_EVENT_1
+
+PURO_PURO_EVENT_5:
+	setdynamicwarp MAP_ROUTE24, 1
+	call PURO_PURO_EVENT_ROUTE24
+	goto PURO_PURO_EVENT_1
+
+PURO_PURO_EVENT_6:
+	setdynamicwarp MAP_RIMMINGTON, 9
+	call PURO_PURO_EVENT_RIMMINGTON
+	goto PURO_PURO_EVENT_1
+
+PURO_PURO_EVENT_7:
+	setdynamicwarp MAP_DRAYNOR, 8
+	call PURO_PURO_EVENT_DRAYNOR
+	goto PURO_PURO_EVENT_1
+
+PURO_PURO_EVENT_8:
+	setdynamicwarp MAP_ROUTE13, 1
+	call PURO_PURO_EVENT_ROUTE13
+	goto PURO_PURO_EVENT_1
+
+PURO_PURO_EVENT_9:
+	setdynamicwarp MAP_ROUTE12, 1
+	call PURO_PURO_EVENT_ROUTE12
+	goto PURO_PURO_EVENT_1
 
 
 IMMENIZZ::
+	lock
+	faceplayer
+	namebox IMMENIZZ_Text_0
 	random 4
 	switch VAR_RESULT
 	case 0, IMMENIZZ_3
 	case 1, IMMENIZZ_4
 	case 2, IMMENIZZ_5
 	case 3, IMMENIZZ_6
+IMMENIZZ_1:
+	hidenamebox
+	closemessage
 	release
 	end
 
 IMMENIZZ_3:
-	lock
-	faceplayer
-	namebox IMMENIZZ_Text_0
 	msgbox IMMENIZZ_Text_1
-	hidenamebox
-	closemessage
-	release
-	end
+	goto IMMENIZZ_1
 
 IMMENIZZ_4:
-	lock
-	faceplayer
-	namebox IMMENIZZ_Text_0
 	msgbox IMMENIZZ_Text_2
-	hidenamebox
-	closemessage
-	release
-	end
+	goto IMMENIZZ_1
 
 IMMENIZZ_5:
-	lock
-	faceplayer
-	namebox IMMENIZZ_Text_0
 	msgbox IMMENIZZ_Text_3
-	hidenamebox
-	closemessage
-	release
-	end
+	goto IMMENIZZ_1
 
 IMMENIZZ_6:
-	lock
-	faceplayer
-	namebox IMMENIZZ_Text_0
 	msgbox IMMENIZZ_Text_4
-	hidenamebox
-	closemessage
-	release
-	end
+	goto IMMENIZZ_1
 
 
 ELNOCK_1::
@@ -97,11 +153,23 @@ IMP_DEFENDER::
 	end
 
 
+NPC_IMPLING::
+	lock
+	faceplayer
+	namebox NPC_IMPLING_Text_0
+	playmoncry SPECIES_IMPLING_BABY_FORM, 0
+	msgbox NPC_IMPLING_Text_1
+	waitmoncry
+	hidenamebox
+	release
+	end
+
+
 ENCOUNTER_PURO_PURO_1::
 	lock
 	faceplayer
 	namebox ENCOUNTER_PURO_PURO_1_Text_0
-	playmoncry SPECIES_IMPIDIMP, 0
+	playmoncry SPECIES_IMP, 0
 	msgbox ENCOUNTER_PURO_PURO_1_Text_1
 	waitmoncry
 	hidenamebox
@@ -124,9 +192,209 @@ ENCOUNTER_PURO_PURO_1_2:
 	goto ENCOUNTER_PURO_PURO_1_1
 
 
+ENCOUNTER_IMPLING_BABY::
+	lock
+	faceplayer
+	namebox NPC_IMPLING_Text_0
+	playmoncry SPECIES_IMPLING_BABY_FORM, 0
+	msgbox ENCOUNTER_IMPLING_BABY_Text_0
+	waitmoncry
+	hidenamebox
+	closemessage
+	delay 1
+	setwildbattle SPECIES_IMPLING_BABY_FORM, 5, ITEM_NONE
+	dowildbattle
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq ENCOUNTER_IMPLING_BABY_2
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq ENCOUNTER_IMPLING_BABY_2
+ENCOUNTER_IMPLING_BABY_1:
+	release
+	end
+
+ENCOUNTER_IMPLING_BABY_2:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_IMPLING_BABY_1
+
+
+ENCOUNTER_IMPLING_EARTH::
+	lock
+	faceplayer
+	namebox NPC_IMPLING_Text_0
+	playmoncry SPECIES_IMPLING_EARTH_FORM, 0
+	msgbox ENCOUNTER_IMPLING_BABY_Text_0
+	waitmoncry
+	hidenamebox
+	closemessage
+	delay 1
+	setwildbattle SPECIES_IMPLING_EARTH_FORM, 3, ITEM_NONE
+	dowildbattle
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq ENCOUNTER_IMPLING_EARTH_2
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq ENCOUNTER_IMPLING_EARTH_2
+ENCOUNTER_IMPLING_EARTH_1:
+	release
+	end
+
+ENCOUNTER_IMPLING_EARTH_2:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_IMPLING_EARTH_1
+
+
 ITEM_PURO_PURO_1::
 	finditem ITEM_MITHRIL_POUCH
 	end
+
+
+ENCOUNTER_LUCKY_IMPLING::
+	lock
+	faceplayer
+	namebox NPC_IMPLING_Text_0
+	playmoncry SPECIES_IMPLING_LUCKY_FORM, 0
+	msgbox ENCOUNTER_IMPLING_BABY_Text_0
+	waitmoncry
+	hidenamebox
+	closemessage
+	delay 1
+	setwildbattle SPECIES_IMPLING_LUCKY_FORM, 20, ITEM_NONE
+	dowildbattleNoCatch
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq ENCOUNTER_LUCKY_IMPLING_2
+	compare VAR_RESULT, B_OUTCOME_LOST
+	goto_if_eq ENCOUNTER_LUCKY_IMPLING_3
+	compare VAR_RESULT, B_OUTCOME_RAN
+	goto_if_eq ENCOUNTER_LUCKY_IMPLING_4
+ENCOUNTER_LUCKY_IMPLING_1:
+	hidenamebox
+	closemessage
+	release
+	end
+
+ENCOUNTER_LUCKY_IMPLING_2:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	msgbox ENCOUNTER_LUCKY_IMPLING_Text_0
+	call GIVE_RANDOM_ITEM_IMPLING
+	goto ENCOUNTER_LUCKY_IMPLING_1
+
+ENCOUNTER_LUCKY_IMPLING_3:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_LUCKY_IMPLING_1
+
+ENCOUNTER_LUCKY_IMPLING_4:
+	namebox NPC_IMPLING_Text_0
+	playmoncry SPECIES_IMPLING_LUCKY_FORM, 0
+	msgbox ENCOUNTER_LUCKY_IMPLING_Text_1
+	waitmoncry
+	hidenamebox
+	closemessage
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	msgbox ENCOUNTER_LUCKY_IMPLING_Text_2
+	goto ENCOUNTER_LUCKY_IMPLING_1
+
+
+GIVE_RANDOM_ITEM_IMPLING::
+	random 17
+	switch VAR_RESULT
+	case 0, GIVE_RANDOM_ITEM_IMPLING_3
+	case 1, GIVE_RANDOM_ITEM_IMPLING_4
+	case 2, GIVE_RANDOM_ITEM_IMPLING_5
+	case 3, GIVE_RANDOM_ITEM_IMPLING_6
+	case 4, GIVE_RANDOM_ITEM_IMPLING_7
+	case 5, GIVE_RANDOM_ITEM_IMPLING_8
+	case 6, GIVE_RANDOM_ITEM_IMPLING_9
+	case 7, GIVE_RANDOM_ITEM_IMPLING_10
+	case 8, GIVE_RANDOM_ITEM_IMPLING_11
+	case 9, GIVE_RANDOM_ITEM_IMPLING_12
+	case 10, GIVE_RANDOM_ITEM_IMPLING_13
+	case 11, GIVE_RANDOM_ITEM_IMPLING_14
+	case 12, GIVE_RANDOM_ITEM_IMPLING_15
+	case 13, GIVE_RANDOM_ITEM_IMPLING_16
+	case 14, GIVE_RANDOM_ITEM_IMPLING_17
+	case 15, GIVE_RANDOM_ITEM_IMPLING_18
+	case 16, GIVE_RANDOM_ITEM_IMPLING_19
+GIVE_RANDOM_ITEM_IMPLING_1:
+	return
+
+GIVE_RANDOM_ITEM_IMPLING_3:
+	giveitem ITEM_FLAX, 10
+	goto GIVE_RANDOM_ITEM_IMPLING_1
+
+GIVE_RANDOM_ITEM_IMPLING_4:
+	giveitem ITEM_SPIRIT_SHARD, 5
+	goto GIVE_RANDOM_ITEM_IMPLING_1
+
+GIVE_RANDOM_ITEM_IMPLING_5:
+	giveitem ITEM_RUNE_POUCH, 5
+	goto GIVE_RANDOM_ITEM_IMPLING_1
+
+GIVE_RANDOM_ITEM_IMPLING_6:
+	giveitem ITEM_BLACK_POUCH, 5
+	goto GIVE_RANDOM_ITEM_IMPLING_1
+
+GIVE_RANDOM_ITEM_IMPLING_7:
+	giveitem ITEM_BRONZE_POUCH, 20
+	goto GIVE_RANDOM_ITEM_IMPLING_1
+
+GIVE_RANDOM_ITEM_IMPLING_8:
+	giveitem ITEM_MYSTIC_POUCH, 3
+	goto GIVE_RANDOM_ITEM_IMPLING_1
+
+GIVE_RANDOM_ITEM_IMPLING_9:
+	giveitem ITEM_PURPLE_SWEETS, 5
+	goto GIVE_RANDOM_ITEM_IMPLING_1
+
+GIVE_RANDOM_ITEM_IMPLING_10:
+	giveitem ITEM_ADAMANT_POUCH, 5
+	goto GIVE_RANDOM_ITEM_IMPLING_1
+
+GIVE_RANDOM_ITEM_IMPLING_11:
+	giveitem ITEM_MINT_CAKE, 4
+	goto GIVE_RANDOM_ITEM_IMPLING_1
+
+GIVE_RANDOM_ITEM_IMPLING_12:
+	giveitem ITEM_HWEEN_MASK, 1
+	goto GIVE_RANDOM_ITEM_IMPLING_1
+
+GIVE_RANDOM_ITEM_IMPLING_13:
+	giveitem ITEM_MITHRIL_POUCH, 5
+	goto GIVE_RANDOM_ITEM_IMPLING_1
+
+GIVE_RANDOM_ITEM_IMPLING_14:
+	giveitem ITEM_NORMAL_POUCH, 30
+	goto GIVE_RANDOM_ITEM_IMPLING_1
+
+GIVE_RANDOM_ITEM_IMPLING_15:
+	giveitem ITEM_GRANITE_POUCH, 5
+	goto GIVE_RANDOM_ITEM_IMPLING_1
+
+GIVE_RANDOM_ITEM_IMPLING_16:
+	giveitem ITEM_DRAGONBANE_POUCH, 5
+	goto GIVE_RANDOM_ITEM_IMPLING_1
+
+GIVE_RANDOM_ITEM_IMPLING_17:
+	giveitem ITEM_DRAGON_POUCH, 1
+	goto GIVE_RANDOM_ITEM_IMPLING_1
+
+GIVE_RANDOM_ITEM_IMPLING_18:
+	giveitem ITEM_SPIRIT_CHARM, 1
+	goto GIVE_RANDOM_ITEM_IMPLING_1
+
+GIVE_RANDOM_ITEM_IMPLING_19:
+	giveitem ITEM_IRON_POUCH, 20
+deafult:
+	giveitem ITEM_EXP_CANDY_XS, 10
+	goto GIVE_RANDOM_ITEM_IMPLING_1
 
 
 IMMENIZZ_Text_0:
@@ -140,9 +408,9 @@ IMMENIZZ_Text_1:
 	.string "came from!$"
 
 IMMENIZZ_Text_2:
-	.string "Here, solve this.{PAUSE 15}\p"
-	.string "What, I thought all you humans loved\n"
-	.string "these things!$"
+	.string "Our realm occasionally shifts around.\p"
+	.string "If you see crop circles in other routes\n"
+	.string "or towns be sure to investigate them.$"
 
 IMMENIZZ_Text_3:
 	.string "This is my home, human!\p"
@@ -192,8 +460,26 @@ IMP_DEFENDER_Text_0:
 IMP_DEFENDER_Text_1:
 	.string "Be free little implings!$"
 
+NPC_IMPLING_Text_0:
+	.string "Impling$"
+
+NPC_IMPLING_Text_1:
+	.string "Teehehe!$"
+
 ENCOUNTER_PURO_PURO_1_Text_0:
 	.string "Imp$"
 
 ENCOUNTER_PURO_PURO_1_Text_1:
+	.string "Kekeke!$"
+
+ENCOUNTER_IMPLING_BABY_Text_0:
 	.string "Teehee!$"
+
+ENCOUNTER_LUCKY_IMPLING_Text_0:
+	.string "The impling dropped something…$"
+
+ENCOUNTER_LUCKY_IMPLING_Text_1:
+	.string "Teehee teehee!$"
+
+ENCOUNTER_LUCKY_IMPLING_Text_2:
+	.string "The impling teleported away…$"

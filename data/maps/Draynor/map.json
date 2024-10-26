@@ -588,6 +588,13 @@
       "elevation": 0,
       "dest_map": "MAP_DRAYNOR_HOUSE_POKE_SCAPER",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 47,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_PURO_PURO1",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

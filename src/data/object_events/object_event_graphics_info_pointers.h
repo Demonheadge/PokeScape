@@ -576,6 +576,10 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_jitterbug;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_pikkupstix;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_seren_spirit;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_a_nub_tot;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_impling_baby;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_impling_dragon;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_impling_earth;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_impling_essence;
 
 //ORES
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CopperOre;
@@ -1164,6 +1168,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_PIKKUPSTIX] =                    &gObjectEventGraphicsInfo_pikkupstix,
     [OBJ_EVENT_GFX_SEREN_SPIRIT] =                  &gObjectEventGraphicsInfo_seren_spirit,
     [OBJ_EVENT_GFX_A_NUB_TOT] =                     &gObjectEventGraphicsInfo_a_nub_tot,
+    [OBJ_EVENT_GFX_IMPLING_BABY] =                  &gObjectEventGraphicsInfo_impling_baby,
+    [OBJ_EVENT_GFX_IMPLING_DRAGON] =                &gObjectEventGraphicsInfo_impling_dragon,
+    [OBJ_EVENT_GFX_IMPLING_EARTH] =                 &gObjectEventGraphicsInfo_impling_earth,
+    [OBJ_EVENT_GFX_IMPLING_ESSENCE] =               &gObjectEventGraphicsInfo_impling_essence,
 
 //ORES 
 	[OBJ_EVENT_GFX_COPPER_ORE] =          		    &gObjectEventGraphicsInfo_CopperOre,

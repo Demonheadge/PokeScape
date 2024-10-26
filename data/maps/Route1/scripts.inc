@@ -4,6 +4,7 @@ Route1_MapScripts::
 	.byte 0
 
 Route1_MapScripts_MAP_SCRIPT_ON_LOAD:
+	call PURO_PURO_EVENT
 	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
 	goto_if_eq Route1_MapScripts_MAP_SCRIPT_ON_LOAD_1
 	return
@@ -15,15 +16,13 @@ Route1_MapScripts_MAP_SCRIPT_ON_LOAD_1:
 Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 0
 	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
-	goto_if_eq Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+	goto_if_eq Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 	call OPENWORLD_STATE_ROUTE1
-Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
-	call PURO_PURO_EVENT_1
 	return
 
-Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
+Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	call STORYMODE_STATE_ROUTE1
-	goto Route1_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	return
 
 
 OPENWORLD_STATE_ROUTE1::
@@ -814,20 +813,79 @@ BATTLE_AREA_TRAINER_3::
 	end
 
 
-PURO_PURO_EVENT_1::
-	random 20
-	compare VAR_RESULT, 1
-	goto_if_eq PURO_PURO_EVENT_1_2
-	setflag FLAG_TEMP_8
-	setmetatile 54, 7, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
-	setmetatile 54, 8, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
-	setmetatile 54, 9, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
-PURO_PURO_EVENT_1_1:
+PURO_PURO_EVENT_ROUTE1::
+	setmetatile 53, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 54, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 55, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 51, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 52, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 53, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 54, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 55, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 56, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 50, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 51, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 52, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 53, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 54, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 55, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 56, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 50, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 51, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 52, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 53, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 54, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 55, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 56, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 57, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 58, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 50, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 51, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 52, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 53, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 54, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 55, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 56, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 57, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 58, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 59, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 60, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 61, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 50, 9, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 51, 9, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 52, 9, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 53, 9, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 54, 9, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 55, 9, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 56, 9, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 57, 9, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 58, 9, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 59, 9, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 51, 10, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 52, 10, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 53, 10, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 54, 10, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 55, 10, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 56, 10, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 57, 10, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 58, 10, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 59, 10, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 52, 11, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 53, 11, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 54, 11, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 55, 11, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 56, 11, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 57, 11, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 58, 11, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 53, 12, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 54, 12, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 55, 12, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 56, 12, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 57, 12, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 54, 7, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_1, 0
+	setmetatile 54, 8, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_2, 0
+	setmetatile 54, 9, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_3, 0
 	return
-
-PURO_PURO_EVENT_1_2:
-	clearflag FLAG_TEMP_8
-	goto PURO_PURO_EVENT_1_1
 
 
 NPC_DOG_Text_0:

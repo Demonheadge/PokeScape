@@ -1,52 +1,83 @@
-mapscripts Puro_Puro1_MapScripts {
+const OBJ_EVENT_ID_LUCKY_IMPLING = 16
 
+mapscripts Puro_Puro1_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        call(RANDOM_EVENT_IMPLING)
+    }
 }
+
+script RANDOM_EVENT_IMPLING {
+	//Random chance for Impling Event to spawn on Route.
+	random(20)
+	if (var(VAR_RESULT) == 1) {
+		clearflag(FLAG_TEMP_8)
+		addobject(OBJ_EVENT_ID_LUCKY_IMPLING)
+	}
+	else {
+		setflag(FLAG_TEMP_8)
+		removeobject(OBJ_EVENT_ID_LUCKY_IMPLING)
+	}
+	return
+}
+
+script PURO_PURO_EVENT {
+	//Random chance for Puro Puro Event to spawn in wheat field.
+	random(2)
+	if (var(VAR_RESULT) == 1) {
+        specialvar (VAR_RESULT, GetCurrentMap)
+        if (var(VAR_RESULT) == MAP_ROUTE1) {
+            setdynamicwarp(MAP_ROUTE1, 3)
+            call(PURO_PURO_EVENT_ROUTE1)
+        }
+        elif (var(VAR_RESULT) == MAP_ROUTE24) {
+            setdynamicwarp(MAP_ROUTE24, 1)
+            call(PURO_PURO_EVENT_ROUTE24)
+        }
+        elif (var(VAR_RESULT) == MAP_RIMMINGTON) {
+            setdynamicwarp(MAP_RIMMINGTON, 9)
+            call(PURO_PURO_EVENT_RIMMINGTON)
+        }
+        elif (var(VAR_RESULT) == MAP_DRAYNOR) {
+            setdynamicwarp(MAP_DRAYNOR, 8)
+            call(PURO_PURO_EVENT_DRAYNOR)
+        }
+        elif (var(VAR_RESULT) == MAP_ROUTE14) {
+            setdynamicwarp(MAP_ROUTE13, 1)
+            call(PURO_PURO_EVENT_ROUTE13)
+        }
+        elif (var(VAR_RESULT) == MAP_ROUTE12) {
+            setdynamicwarp(MAP_ROUTE12, 1)
+            call(PURO_PURO_EVENT_ROUTE12)
+        }
+    }
+    return
+}
+
+
+
+
+
+
 
 //NPCS:
 
 script IMMENIZZ{
+    lock
+    faceplayer
+    namebox("Immenizz")
     random(4)
-        switch (var(VAR_RESULT)) {
-            case 0: 
-                lock
-    		    faceplayer
-    		    namebox("Immenizz")
-    		    msgbox(format("The aetheric thread connecting you to your own plane leads back to the wheat field where you came from.\pSo you will always go back to where you came from!"))
-   		        hidenamebox
-    		    closemessage
-    		    release
-    		    end
-
-            case 1: 
-                lock
-    		    faceplayer
-    		    namebox("Immenizz")
-    		    msgbox(format(" Here, solve this.{PAUSE 15}\pWhat, I thought all you humans loved these things!"))
-   		        hidenamebox
-    		    closemessage
-    		    release
-    		    end
-            
-            case 2: 
-                lock
-    		    faceplayer
-    		    namebox("Immenizz")
-    		    msgbox(format("This is my home, human!\pWhat do you have in your pockets?\pIs it something tasty?"))
-   		        hidenamebox
-    		    closemessage
-    		    release
-    		    end
-            
-            case 3: 
-                lock
-    		    faceplayer
-    		    namebox("Immenizz")
-    		    msgbox(format("We implings want things you people want.\pThey are so tasty to us!\pThe more you want them, the tastier they are!"))
-   		        hidenamebox
-    		    closemessage
-    		    release
-    		    end
-         }
+    switch (var(VAR_RESULT)) {
+        case 0: 
+            msgbox(format("The aetheric thread connecting you to your own plane leads back to the wheat field where you came from.\pSo you will always go back to where you came from!"))
+        case 1: 
+            msgbox(format("Our realm occasionally shifts around.\pIf you see crop circles in other routes or towns be sure to investigate them."))
+        case 2: 
+            msgbox(format("This is my home, human!\pWhat do you have in your pockets?\pIs it something tasty?"))
+        case 3: 
+            msgbox(format("We implings want things you people want.\pThey are so tasty to us!\pThe more you want them, the tastier they are!"))
+    }
+    hidenamebox
+    closemessage
 	release
 	end
 }
@@ -98,13 +129,26 @@ script IMP_DEFENDER{
     end
 }
 
+script NPC_IMPLING
+{
+	lock
+	faceplayer
+    namebox ("Impling")
+    playmoncry(SPECIES_IMPLING_BABY_FORM, 0)
+	msgbox(format("Teehehe!"))
+    waitmoncry
+    hidenamebox
+	release
+	end
+}
+
 script ENCOUNTER_PURO_PURO_1
 {
 	lock
 	faceplayer
     namebox ("Imp")
-    playmoncry(SPECIES_IMPIDIMP, 0)
-	msgbox(format("Teehee!"))
+    playmoncry(SPECIES_IMP, 0)
+	msgbox(format("Kekeke!"))
     waitmoncry
     hidenamebox
 	closemessage
@@ -120,9 +164,151 @@ script ENCOUNTER_PURO_PURO_1
 	end
 }
 
+script ENCOUNTER_IMPLING_BABY
+{
+	lock
+	faceplayer
+    namebox ("Impling")
+    playmoncry(SPECIES_IMPLING_BABY_FORM, 0)
+	msgbox(format("Teehee!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    setwildbattle (SPECIES_IMPLING_BABY_FORM, 5, ITEM_NONE)
+	dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_WON || var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+		fadescreenswapbuffers(FADE_TO_BLACK)
+		removeobject (VAR_LAST_TALKED)
+		fadescreenswapbuffers(FADE_FROM_BLACK)
+	}
+    release
+	end
+}
+
+script ENCOUNTER_IMPLING_EARTH
+{
+	lock
+	faceplayer
+    namebox ("Impling")
+    playmoncry(SPECIES_IMPLING_EARTH_FORM, 0)
+	msgbox(format("Teehee!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    setwildbattle (SPECIES_IMPLING_EARTH_FORM, 3, ITEM_NONE)
+	dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_WON || var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+		fadescreenswapbuffers(FADE_TO_BLACK)
+		removeobject (VAR_LAST_TALKED)
+		fadescreenswapbuffers(FADE_FROM_BLACK)
+	}
+    release
+	end
+}
 //ITEMS
 script ITEM_PURO_PURO_1
 {
     finditem(ITEM_MITHRIL_POUCH)
     end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script ENCOUNTER_LUCKY_IMPLING {
+    lock
+	faceplayer
+    namebox ("Impling")
+	playmoncry(SPECIES_IMPLING_LUCKY_FORM, 0)
+	msgbox(format("Teehee!"))
+	waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+	setwildbattle (SPECIES_IMPLING_LUCKY_FORM, 20, ITEM_NONE)
+	dowildbattleNoCatch
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+        fadescreenswapbuffers(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
+        msgbox(format("The impling dropped something…"))
+        call(GIVE_RANDOM_ITEM_IMPLING)
+	}
+    elif (var(VAR_RESULT) == B_OUTCOME_LOST) {
+		fadescreenswapbuffers(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
+	}
+    elif (var(VAR_RESULT) == B_OUTCOME_RAN) {
+        namebox ("Impling")
+        playmoncry(SPECIES_IMPLING_LUCKY_FORM, 0)
+        msgbox(format("Teehee teehee!"))
+        waitmoncry
+        hidenamebox
+        closemessage
+        fadescreenswapbuffers(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
+        msgbox(format("The impling teleported away…"))
+	}
+    hidenamebox
+    closemessage
+	release
+	end
+}
+
+
+script GIVE_RANDOM_ITEM_IMPLING {
+	random(17) 
+	switch (var(VAR_RESULT)) { 
+            case 0: 
+				giveitem(ITEM_FLAX, 10)
+			case 1: 
+				giveitem(ITEM_SPIRIT_SHARD, 5)
+			case 2: 
+				giveitem(ITEM_RUNE_POUCH, 5)
+			case 3: 
+				giveitem(ITEM_BLACK_POUCH, 5)
+			case 4: 
+				giveitem(ITEM_BRONZE_POUCH, 20)
+			case 5: 
+				giveitem(ITEM_MYSTIC_POUCH, 3)
+			case 6: 
+				giveitem(ITEM_PURPLE_SWEETS, 5)
+			case 7: 
+				giveitem(ITEM_ADAMANT_POUCH, 5)
+			case 8: 
+				giveitem(ITEM_MINT_CAKE, 4)
+			case 9: 
+				giveitem(ITEM_HWEEN_MASK, 1)
+			case 10: 
+				giveitem(ITEM_MITHRIL_POUCH, 5)
+			case 11: 
+				giveitem(ITEM_NORMAL_POUCH, 30)
+			case 12: 
+				giveitem(ITEM_GRANITE_POUCH, 5)
+			case 13: 
+				giveitem(ITEM_DRAGONBANE_POUCH, 5)
+			case 14: 
+				giveitem(ITEM_DRAGON_POUCH, 1)
+			case 15: 
+				giveitem(ITEM_SPIRIT_CHARM, 1)
+			case 16: 
+				giveitem(ITEM_IRON_POUCH, 20)
+            deafult:
+                giveitem(ITEM_EXP_CANDY_XS, 10)
+	}
+	return
 }

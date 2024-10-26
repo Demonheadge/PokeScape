@@ -10,6 +10,7 @@ Draynor_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	return
 
 Draynor_MapScripts_MAP_SCRIPT_ON_LOAD:
+	call PURO_PURO_EVENT
 	call WizardsTower_Draynor_STATE
 	call DRAYNOR_GUARD_STATE
 	return
@@ -481,6 +482,13 @@ NPC_Draynor_WiseOldMan::
 	hidenamebox
 	release
 	end
+
+
+PURO_PURO_EVENT_DRAYNOR::
+	setmetatile 47, 4, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_1, 0
+	setmetatile 47, 5, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_2, 0
+	setmetatile 47, 6, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_3, 0
+	return
 
 
 HAM_EVENT_Draynor_Text_0:

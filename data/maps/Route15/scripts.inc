@@ -4,6 +4,7 @@ Route15_MapScripts::
 
 Route15_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 16
+	call RANDOM_EVENT_IMPLING
 	return
 
 

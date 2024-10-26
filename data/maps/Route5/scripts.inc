@@ -1,5 +1,10 @@
 Route5_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route5_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+Route5_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	call RANDOM_EVENT_IMPLING
+	return
 
 
 BATTLE_ROUTE5_CAPTAINTOCK::

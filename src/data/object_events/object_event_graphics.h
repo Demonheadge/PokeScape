@@ -759,6 +759,10 @@ const u32 gObjectEventPic_jitterbug[] = INCBIN_U32("graphics/object_events/pics/
 const u32 gObjectEventPic_pikkupstix[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/pikkupstix.4bpp");
 const u32 gObjectEventPic_seren_spirit[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/seren_spirit.4bpp");
 const u32 gObjectEventPic_a_nub_tot[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/a_nub_tot.4bpp");
+const u32 gObjectEventPic_impling_baby[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/impling_baby.4bpp");
+const u32 gObjectEventPic_impling_dragon[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/impling_dragon.4bpp");
+const u32 gObjectEventPic_impling_earth[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/impling_earth.4bpp");
+const u32 gObjectEventPic_impling_essence[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/impling_essence.4bpp");
 //POKESCAPE PALETTES
 /*
 const u16 gObjectEventPalette_Skeleton_1[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/skeleton_1.gbapal");

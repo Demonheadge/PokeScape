@@ -1,9 +1,15 @@
 Route24_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route24_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_LOAD, Route24_MapScripts_MAP_SCRIPT_ON_LOAD
 	.byte 0
 
 Route24_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 3
+	call RANDOM_EVENT_IMPLING
+	return
+
+Route24_MapScripts_MAP_SCRIPT_ON_LOAD:
+	call PURO_PURO_EVENT
 	return
 
 
@@ -134,6 +140,26 @@ BATTLE_ROUTE40_DIVINER::
 	hidenamebox
 	release
 	end
+
+
+PURO_PURO_EVENT_ROUTE24::
+	setmetatile 15, 27, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 14, 28, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 15, 28, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 16, 28, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 17, 28, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 14, 29, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 15, 29, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 16, 29, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 17, 29, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 15, 30, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 16, 30, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 17, 30, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 18, 30, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 16, 28, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_1, 0
+	setmetatile 16, 29, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_2, 0
+	setmetatile 16, 30, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_3, 0
+	return
 
 
 ROUTE24_SIGNPOST_Text_0:

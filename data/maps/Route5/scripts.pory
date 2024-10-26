@@ -1,8 +1,10 @@
+const OBJ_EVENT_ID_LUCKY_IMPLING = 6
+
 mapscripts Route5_MapScripts {
-
+    MAP_SCRIPT_ON_TRANSITION {
+        call(RANDOM_EVENT_IMPLING)
+    }
 }
-
-
 
 script BATTLE_ROUTE5_CAPTAINTOCK{
     trainerbattle_single(TRAINER_ROUTE5_CAPTAINTOCK, format("Avast ye landlubber!\pPort Sarim be forward!"),format("Arrr… Hang the Jib…"))

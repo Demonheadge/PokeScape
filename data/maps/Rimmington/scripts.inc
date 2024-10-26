@@ -1,11 +1,15 @@
 Rimmington_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Rimmington_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_LOAD, Rimmington_MapScripts_MAP_SCRIPT_ON_LOAD
 	.byte 0
 
 Rimmington_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setflag FLAG_VISITED_RIMMINGTON
 	goto Rimmington_STATE
-	call PURO_PURO_EVENT_2
+	return
+
+Rimmington_MapScripts_MAP_SCRIPT_ON_LOAD:
+	call PURO_PURO_EVENT
 	return
 
 
@@ -1244,20 +1248,37 @@ ANCHOVYBOOK_2:
 	goto ANCHOVYBOOK_1
 
 
-PURO_PURO_EVENT_2::
-	random 20
-	compare VAR_RESULT, 1
-	goto_if_eq PURO_PURO_EVENT_2_2
-	setflag FLAG_TEMP_8
-	setmetatile 48, 4, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
-	setmetatile 48, 5, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
-	setmetatile 48, 6, METATILE_PokeScapeOutdoors_NORMAL_WHEAT_TILE, 0
-PURO_PURO_EVENT_2_1:
+PURO_PURO_EVENT_RIMMINGTON::
+	setmetatile 47, 3, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 48, 3, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 49, 3, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 50, 3, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 46, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 47, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 48, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 49, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 50, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 46, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 47, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 48, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 49, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 46, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 47, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 48, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 49, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 50, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 46, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 47, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 48, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 49, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 50, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 47, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 48, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 49, 8, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 48, 4, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_1, 0
+	setmetatile 48, 5, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_2, 0
+	setmetatile 48, 6, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_3, 0
 	return
-
-PURO_PURO_EVENT_2_2:
-	clearflag FLAG_TEMP_8
-	goto PURO_PURO_EVENT_2_1
 
 
 NPC_RIMMINGTON_CustomsOfficer_Text_0:

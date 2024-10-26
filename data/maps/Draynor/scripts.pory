@@ -6,6 +6,7 @@ mapscripts Draynor_MapScripts {
         call(WEATHER_CHANGE_AREA_DRAYNOR)
     }
     MAP_SCRIPT_ON_LOAD {
+        call(PURO_PURO_EVENT)
         call(WizardsTower_Draynor_STATE)
         call(DRAYNOR_GUARD_STATE)
         }
@@ -582,4 +583,11 @@ script NPC_Draynor_WiseOldMan{
     
 	
     
+script PURO_PURO_EVENT_DRAYNOR {
+    //unfinished. 
+    setmetatile(47, 4, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_1, 0)
+    setmetatile(47, 5, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_2, 0)
+    setmetatile(47, 6, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_3, 0)
+	return
+}
 

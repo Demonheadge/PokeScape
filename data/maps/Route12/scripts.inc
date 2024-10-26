@@ -1,5 +1,6 @@
 Route12_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route12_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_LOAD, Route12_MapScripts_MAP_SCRIPT_ON_LOAD
 	.byte 0
 
 Route12_MapScripts_MAP_SCRIPT_ON_TRANSITION:
@@ -11,6 +12,10 @@ Route12_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 
 Route12_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	call ROUTE12_STATE
+	return
+
+Route12_MapScripts_MAP_SCRIPT_ON_LOAD:
+	call PURO_PURO_EVENT
 	return
 
 
@@ -477,6 +482,13 @@ ALKHARID_GATE_GUARD::
 	waitmovement 0
 	release
 	end
+
+
+PURO_PURO_EVENT_ROUTE12::
+	setmetatile 31, 10, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_1, 0
+	setmetatile 31, 11, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_2, 0
+	setmetatile 31, 12, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_3, 0
+	return
 
 
 Gillie_Groats_Text_0:
