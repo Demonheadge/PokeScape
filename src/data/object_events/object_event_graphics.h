@@ -57,7 +57,7 @@ const u16 gObjectEventPal_Null29[16] = {};
 //const u32 gObjectEventPic_MayMachBike[] = INCBIN_U32("graphics/object_events/pics/people/may/mach_bike.4bpp");
 //const u32 gObjectEventPic_MayAcroBike[] = INCBIN_U32("graphics/object_events/pics/people/may/acro_bike.4bpp");
 //const u32 gObjectEventPic_MaySurfing[] = INCBIN_U32("graphics/object_events/pics/people/may/surfing.4bpp");
-const u32 gObjectEventPic_MayFieldMove[] = INCBIN_U32("graphics/object_events/pics/people/may/field_move.4bpp");
+//const u32 gObjectEventPic_MayFieldMove[] = INCBIN_U32("graphics/object_events/pics/people/may/field_move.4bpp");
 //const u32 gObjectEventPic_MayFishing[] = INCBIN_U32("graphics/object_events/pics/people/may/fishing.4bpp");
 const u32 gObjectEventPic_MayWatering[] = INCBIN_U32("graphics/object_events/pics/people/may/watering.4bpp");
 const u16 gObjectEventPal_Npc1[] = INCBIN_U16("graphics/object_events/palettes/npc_1.gbapal");
@@ -402,7 +402,7 @@ const u32 gObjectEventPic_MaySurfing[] = INCBIN_U32("graphics/object_events/pics
 const u32 gObjectEventPic_MayMachBike[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/protaganist_female/terrorbird.4bpp");
 const u32 gObjectEventPic_MayAcroBike[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/protaganist_female/yak.4bpp");
 const u32 gObjectEventPic_MayUnderwater[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/protaganist_female/underwater.4bpp");
-//const u32 gObjectEventPic_BrendanFieldMove[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/protaganist_male/field_move.4bpp");
+const u32 gObjectEventPic_MayFieldMove[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/protaganist_female/field_move.4bpp");
 
 
 
