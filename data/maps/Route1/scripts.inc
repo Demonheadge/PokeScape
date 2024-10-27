@@ -424,18 +424,6 @@ ChickenBattleScript3::
 	return
 
 
-EvilChickenBattleScript::
-	lock
-	playmoncry SPECIES_EVILCHICKEN, 0
-	msgbox EvilChickenBattleScript_Text_0
-	waitmoncry
-	setwildbattle SPECIES_EVILCHICKEN, 18, ITEM_NONE
-	dowildbattle
-	removeobject VAR_LAST_TALKED
-	setvar VAR_POKESCAPE_ERNEST_QUEST_STATE, 5
-	return
-
-
 ErnestAndVeronica::
 	compare VAR_POKESCAPE_GAMEMODE_STATE, 0
 	goto_if_eq ErnestAndVeronica_1
@@ -1109,10 +1097,6 @@ FeetfingersBattle_Text_2:
 
 ChickenBattleScript1_Text_0:
 	.string "BWAK!$"
-
-EvilChickenBattleScript_Text_0:
-	.string "BWAWWWK!\p"
-	.string "BEGONE {PLAYER}!$"
 
 ErnestAndVeronica_Text_0:
 	.string "Ernest$"

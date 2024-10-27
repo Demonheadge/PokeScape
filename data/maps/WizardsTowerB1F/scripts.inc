@@ -77,7 +77,7 @@ NPC_WizardsTowerB1F_Sedridor_5:
 	msgbox NPC_WizardsTowerB1F_Sedridor_Text_2
 	msgbox NPC_WizardsTowerB1F_Sedridor_Text_3
 	msgbox NPC_WizardsTowerB1F_Sedridor_Text_4
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_RUNE_MYSTERIES, SUB_QUEST_RUNEMYSTERIES_1
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_RUNE_MYSTERIES, 0
 	hidenamebox
 	closemessage
 	giveitem ITEM_TALISMAN_AIR, 1

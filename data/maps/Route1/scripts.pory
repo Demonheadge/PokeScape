@@ -512,18 +512,6 @@ script ChickenBattleScript3{
     release
 }
 
-script EvilChickenBattleScript{
-    lock
-    playmoncry(SPECIES_EVILCHICKEN, 0)
-    msgbox(format("BWAWWWK!\pBEGONE {PLAYER}!"))
-    waitmoncry
-    setwildbattle (SPECIES_EVILCHICKEN, 18, ITEM_NONE)
-    dowildbattle
-    removeobject (VAR_LAST_TALKED)
-    setvar(VAR_POKESCAPE_ERNEST_QUEST_STATE, 5)
-    //setflag (FLAG_EVILCHICKEN_DEFEATED)
-
-}
 
 
 

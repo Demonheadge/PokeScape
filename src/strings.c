@@ -1992,6 +1992,7 @@ const u8 gText_MapName_MillLaneMill[] = _("Mill Lane Mill");
 const u8 gText_MapName_Route1[] = _("Route 1");
 const u8 gText_MapName_Route12[] = _("Route 12");
 
+
 //Rune Mysteries
 const u8 gText_SideQuestName_RuneMysteries[] = _("Rune Mysteries");
 const u8 gText_SideQuestDesc_RuneMysteries[] = _("Deliver the mysterious Talisman\nto Archmage Sedridor in\nthe Wizards' Tower.");
@@ -2000,18 +2001,42 @@ const u8 gText_MapName_WizardsTower[] = _("Wizards' Tower");
 const u8 gText_SubQuest_RuneMysteries_1[] = _("Mysterious Talisman");
 const u8 gText_SubQuest1_Desc_RuneMysteries_1[] = _("You delivered the Talisman\nto Archmage Sedridor.");
 const u8 gText_SubQuest_RuneMysteries_2[] = _("Mysterious Ruins");
-const u8 gText_SubQuest1_Desc_RuneMysteries_2[] = _("You accessed the Ruins\nusing the Talisman.");
+const u8 gText_SubQuest1_Desc_RuneMysteries_2[] = _("You accessed some ruins\nusing a Talisman.");
 const u8 gText_SubQuest_RuneMysteries_3[] = _("Reported Findings");
 const u8 gText_SubQuest1_Desc_RuneMysteries_3[] = _("You reported everything you\nfound out to Duke Horacio.");
 const u8 gText_MapName_Route7[] = _("Route 7");
+const u8 gText_SubQuest_RuneMysteries_4[] = _("Air Altar");
+const u8 gText_SubQuest1_Desc_RuneMysteries_4[] = _("You found the Air Altar.");
+const u8 gText_SubQuest_RuneMysteries_5[] = _("Mind Altar");
+const u8 gText_SubQuest1_Desc_RuneMysteries_5[] = _("You found the Mind Altar.");
+const u8 gText_SubQuest_RuneMysteries_6[] = _("Water Altar");
+const u8 gText_SubQuest1_Desc_RuneMysteries_6[] = _("You found the Water Altar.");
+const u8 gText_SubQuest_RuneMysteries_7[] = _("Earth Altar");
+const u8 gText_SubQuest1_Desc_RuneMysteries_7[] = _("You found the Earth Altar.");
+const u8 gText_SubQuest_RuneMysteries_8[] = _("Fire Altar");
+const u8 gText_SubQuest1_Desc_RuneMysteries_8[] = _("You found the Fire Altar.");
+const u8 gText_SubQuest_RuneMysteries_9[] = _("Body Altar");
+const u8 gText_SubQuest1_Desc_RuneMysteries_9[] = _("You found the Body Altar.");
+const u8 gText_SubQuest_RuneMysteries_10[] = _("Elemental");
+const u8 gText_SubQuest1_Desc_RuneMysteries_10[] = _("You reported your findings\nto Archmage Sedridor.");
+const u8 gText_MapName_LumbridgeSwamp[] = _("Lumbridge Swamp");
+const u8 gText_MapName_Route28[] = _("Route 28");
+const u8 gText_MapName_Route17[] = _("Route 17");
+const u8 gText_MapName_Route23[] = _("Route 23");
+const u8 gText_MapName_Route33[] = _("Route 33");
+
 //Ernest the Chicken
 const u8 gText_SideQuestName_Ernest[] = _("Ernest the Chicken");
-const u8 gText_SideQuestDesc_Ernest[] = _("Help Prof.Oddenstein resurect Poly.");
+const u8 gText_SideQuestDesc_Ernest[] = _("Help Prof.Oddenstein with his\nexperiment.");
 const u8 gText_SideQuestDesc_Completed_Ernest[] = _("Quest Completed!");
 const u8 gText_SideQuestMap_Draynor_Manor[] = _("Draynor Manor");
 const u8 gText_SubQuest_Ernest_Name1[] = _("Oil Can");
 const u8 gText_SubQuest_Ernest_Name2[] = _("Rubber Tube");
 const u8 gText_SubQuest_Ernest_Name3[] = _("Pressure Gauge");
+const u8 gText_SubQuest_Ernest_Name4[] = _("Capture: Evil Chicken");
+const u8 gText_SubQuest_Ernest_Name5[] = _("Revived Poly");
+const u8 gText_SubQuest_Ernest_Desc4[] = _("You caught the Evil Chicken.");
+const u8 gText_SubQuest_Ernest_Desc5[] = _("With Prof. Oddenstien's help\nyou revived Poly.");
 
 //Kourend Slayer
 const u8 gText_SideQuestName_Kourend_Slayer[] = _("The Dark Totem");
@@ -2099,7 +2124,12 @@ const u8 gText_SubQuest_Main_Story_Desc9[] = _("You found a captain for the boat
 const u8 gText_SubQuest_Main_Story_Name10[] = _("Close one!");
 const u8 gText_SubQuest_Main_Story_Desc10[] = _("You escaped from the volcano just in\ntime. Best report back to the\nWhite Knights of Falador.");
 
-
+const u8 gText_MapName_DraynorManor[] = _("Draynor Manor");
+const u8 gText_MapName_LumbridgeForest[] = _("Lumbridge Forest");
+const u8 gText_MapName_PortSarim[] = _("Port Sarim");
+const u8 gText_MapName_MelzarsMaze[] = _("Melzars Maze");
+const u8 gText_MapName_DwarvenMines[] = _("Dwarven Mines");
+const u8 gText_MapName_Crandor[] = _("Crandor");
 
 const u8 gText_SideQuestName_MithrilmanQuest[] = _("Mithrilman Quest");
 const u8 gText_SideQuestDesc_MithrilmanQuest[] = _("Follow the story of Mithrilman.");

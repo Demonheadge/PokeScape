@@ -291,7 +291,7 @@ script ITEM_ROUTE12_BREAD
 
 script ITEM_ROUTE12_WIZARDS_BLIZZARD
 {
-    finditem(ITEM_WIZARDS_BLIZZARD)
+    finditem(ITEM_CHOCOLATE_SUNDAY)
     end
 }
 

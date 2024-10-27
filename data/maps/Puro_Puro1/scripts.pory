@@ -22,7 +22,7 @@ script RANDOM_EVENT_IMPLING {
 
 script PURO_PURO_EVENT {
 	//Random chance for Puro Puro Event to spawn in wheat field.
-	random(2)
+	random(20)
 	if (var(VAR_RESULT) == 1) {
         specialvar (VAR_RESULT, GetCurrentMap)
         if (var(VAR_RESULT) == MAP_ROUTE1) {

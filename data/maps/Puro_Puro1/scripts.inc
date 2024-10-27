@@ -23,7 +23,7 @@ RANDOM_EVENT_IMPLING_2:
 
 
 PURO_PURO_EVENT::
-	random 2
+	random 20
 	compare VAR_RESULT, 1
 	goto_if_eq PURO_PURO_EVENT_2
 PURO_PURO_EVENT_1:

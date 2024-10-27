@@ -584,7 +584,7 @@
     },
     {
       "x": 19,
-      "y": 12,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_DRAYNOR_HOUSE_POKE_SCAPER",
       "dest_warp_id": "0"
@@ -637,7 +637,7 @@
     },
     {
       "type": "sign",
-      "x": 20,
+      "x": 19,
       "y": 12,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

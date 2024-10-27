@@ -961,7 +961,7 @@ NPC_WIZARDSTOWER_Ellaron_Text_1:
 	.string "QUIET AROUND HERE! GO AWAY!$"
 
 NPC_WIZARDSTOWER_Onglewip_Text_0:
-	.string "Prof. Onglewip$"
+	.string "Prof.Onglewip$"
 
 NPC_WIZARDSTOWER_Onglewip_Text_1:
 	.string "Hello human.\p"

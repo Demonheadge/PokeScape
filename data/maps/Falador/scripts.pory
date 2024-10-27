@@ -586,7 +586,6 @@ script GiveMon_FALADOR_TransferredToPC_ANICHAIR{
 script GiveMon_FALADOR_ReceivedFanfare_ANICHAIR{
 	bufferspeciesname(1, SPECIES_ANICHAIR)
 	//removeobject LOCALID_BELDUM_BALL
-    //setvar(VAR_POKESCAPE_ERNEST_QUEST_STATE, 3)
 	playfanfare (MUS_OBTAIN_ITEM)
 	msgbox(format("{PLAYER} obtained a {STR_VAR_2}."))
 	waitmessage

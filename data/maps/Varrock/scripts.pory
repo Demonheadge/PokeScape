@@ -1182,7 +1182,6 @@ script GiveMon_VARROCK_TransferredToPC_KITTEN{
 script GiveMon_VARROCK_ReceivedFanfare_KITTEN{
 	bufferspeciesname(1, SPECIES_KITTEN)
 	//removeobject LOCALID_BELDUM_BALL
-    //setvar(VAR_POKESCAPE_ERNEST_QUEST_STATE, 3)
 	playfanfare (MUS_OBTAIN_ITEM)
 	msgbox(format("{PLAYER} obtained a {STR_VAR_2}."))
 	waitmessage

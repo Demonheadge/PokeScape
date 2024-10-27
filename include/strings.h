@@ -3208,6 +3208,25 @@ extern const u8 gText_SubQuest1_Desc_RuneMysteries_1[];
 extern const u8 gText_SubQuest1_Desc_RuneMysteries_2[];
 extern const u8 gText_SubQuest1_Desc_RuneMysteries_3[];
 extern const u8 gText_MapName_Route7[];
+extern const u8 gText_SubQuest_RuneMysteries_4[];
+extern const u8 gText_SubQuest1_Desc_RuneMysteries_4[];
+extern const u8 gText_SubQuest_RuneMysteries_5[];
+extern const u8 gText_SubQuest1_Desc_RuneMysteries_5[];
+extern const u8 gText_SubQuest_RuneMysteries_6[];
+extern const u8 gText_SubQuest1_Desc_RuneMysteries_6[];
+extern const u8 gText_SubQuest_RuneMysteries_7[];
+extern const u8 gText_SubQuest1_Desc_RuneMysteries_7[];
+extern const u8 gText_SubQuest_RuneMysteries_8[];
+extern const u8 gText_SubQuest1_Desc_RuneMysteries_8[];
+extern const u8 gText_SubQuest_RuneMysteries_9[];
+extern const u8 gText_SubQuest1_Desc_RuneMysteries_9[];
+extern const u8 gText_SubQuest_RuneMysteries_10[];
+extern const u8 gText_SubQuest1_Desc_RuneMysteries_10[];
+extern const u8 gText_MapName_LumbridgeSwamp[];
+extern const u8 gText_MapName_Route28[];
+extern const u8 gText_MapName_Route17[];
+extern const u8 gText_MapName_Route23[];
+extern const u8 gText_MapName_Route33[];
 
 //Quest - Ernest
 extern const u8 gText_SideQuestName_Ernest[];
@@ -3217,6 +3236,10 @@ extern const u8 gText_SideQuestMap_Draynor_Manor[];
 extern const u8 gText_SubQuest_Ernest_Name1[];
 extern const u8 gText_SubQuest_Ernest_Name2[];
 extern const u8 gText_SubQuest_Ernest_Name3[];
+extern const u8 gText_SubQuest_Ernest_Name4[];
+extern const u8 gText_SubQuest_Ernest_Name5[];
+extern const u8 gText_SubQuest_Ernest_Desc4[];
+extern const u8 gText_SubQuest_Ernest_Desc5[];
 
 //Quest - Kourend Slayer
 extern const u8 gText_SideQuestName_Kourend_Slayer[];
@@ -3276,6 +3299,12 @@ extern const u8 gText_MapName_BarbarianVillage[];
 extern const u8 gText_MapName_Daemonheim[];
 extern const u8 gText_MapName_WildernessCrater[];
 
+extern const u8 gText_MapName_DraynorManor[];
+extern const u8 gText_MapName_LumbridgeForest[];
+extern const u8 gText_MapName_PortSarim[];
+extern const u8 gText_MapName_MelzarsMaze[];
+extern const u8 gText_MapName_DwarvenMines[];
+extern const u8 gText_MapName_Crandor[];
 
 extern const u8 gText_SideQuestName_Main_Story[];
 extern const u8 gText_SideQuestDesc_Main_Story[];

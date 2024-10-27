@@ -22,10 +22,21 @@ script DRAYNOR_MANOR_3F_STATE {
 		setflag(FLAG_TEMP_1D)
 		setflag(FLAG_TEMP_1E)
 		setflag(FLAG_TEMP_1F)
+		setflag(FLAG_TEMP_1B)
 		removeobject(2)
 		removeobject(3)
 		removeobject(4)
 		removeobject(5)
+	}
+	elif (var(VAR_POKESCAPE_ERNEST_QUEST_STATE) == 6) {
+		subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_ERNEST_THE_CHICKEN, 3)
+		if (var(VAR_RESULT) == FALSE) {
+			removeobject(5)
+			setflag(FLAG_TEMP_1B)
+			setobjectxyperm(6, 8, 17)
+			addobject(6)
+			clearflag(FLAG_TEMP_18)
+		}
 	}
 }
 
@@ -101,7 +112,7 @@ script ITEM_DRAYNORMANOR_OILCAN
 {
     finditem(ITEM_OIL_CAN)
     closemessage
-	subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, SUB_QUEST_ERNESTTHECHICKEN_1)
+	subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, 0)
     end
 }
 
@@ -109,7 +120,7 @@ script ITEM_DRAYNORMANOR_RUBBERTUBE
 {
     finditem(ITEM_RUBBER_TUBE)
     closemessage
-	subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, SUB_QUEST_ERNESTTHECHICKEN_2)
+	subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, 1)
     end
 }
 
@@ -178,7 +189,7 @@ script SCRIPT_DraynorManor_Fountain {
             removeitem(ITEM_FISH_FOOD_POISONED)
             finditem(ITEM_PRESSURE_GAUGE)
             closemessage
-			subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, SUB_QUEST_ERNESTTHECHICKEN_3)
+			subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, 2)
 			end
 		}
 		else {
@@ -196,24 +207,28 @@ script SCRIPT_DraynorManor_Gravestone {
 	if (flag(FLAG_RECIEVED_EX_EX_PARROT) == FALSE) {
 		//checkitem (ITEM_TELEPORT_TOOL,1) //SPADE
 		//if (var(VAR_RESULT)){
+		msgbox(format("Would you like to dig up Polly?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT) == TRUE){
 			checkitem (ITEM_MAGICAL_CAGE,1)
-			if (var(VAR_RESULT)){
-				msgbox(format("Would you like to dig up Polly?"), MSGBOX_YESNO)
-				if (var(VAR_RESULT)){
+			if (var(VAR_RESULT)) {
 					msgbox(format("You dig up the corpse of an ex-parrot.\pYou place the body in the cage.\p…{PAUSE 15} …{PAUSE 15} The cage begins to glow."))
 					removeitem(ITEM_MAGICAL_CAGE)
 					msgbox(format("The ex-parrot comes to life!"))
 					call(EventScript_DraynorManor_ExExParrot)
 					closemessage
 					end
-				}
-				else {
-					msgbox(format("You dig up the corpse of an ex-parrot.\pBut have nowhere to put, so you bury it again.\pMaybe if you had a cage…"))
-					closemessage
-					end
-				}
 			}
-		//}
+			else {
+				msgbox(format("You dig up the corpse of an ex-parrot.\pBut have nowhere to put, so you bury it again.\pMaybe if you had a cage…"))
+				closemessage
+				end
+			}
+		}
+		else {
+			msgbox(format("You decide it is best to let Poly rest in peace."))
+			closemessage
+			end
+		}
 	}
 	else {
 		msgbox(format("Looks like someone looted this grave.\pHow could they…"))
@@ -280,7 +295,6 @@ script EventScript_DraynorManor_TransferredToPC_ExExParrot{
 script EventScript_DraynorManor_ReceivedFanfare_ExExParrot{
 	bufferspeciesname(1, SPECIES_EXEXPARROT)
 	//removeobject LOCALID_BELDUM_BALL
-    setvar(VAR_POKESCAPE_ERNEST_QUEST_STATE, 3)
 	playfanfare (MUS_OBTAIN_ITEM)
 	msgbox(format("{PLAYER} obtained a {STR_VAR_2}."))
 	waitmessage
@@ -290,6 +304,7 @@ script EventScript_DraynorManor_ReceivedFanfare_ExExParrot{
 }
 
 script EventScript_DraynorManor_Received_ExExParrot{
+	subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, 4)
 	setflag(FLAG_RECIEVED_EX_EX_PARROT)
     //msgbox(format("EVENT COMPLETE."))
 	releaseall
@@ -385,11 +400,11 @@ script NPC_DraynorManor_Oddenstein{
 
 		case 3: 
 			namebox ("Oddenstein")
-			msgbox(format("Perfect, thats an Ernest Chicken exactly what we needed!\pStand back let the experiment begin!"))
+			msgbox(format("Perfect, thats an Ernest Chicken exactly what we needed!\pStand back and let the experiment begin!"))
             closemessage
             hidenamebox
-
-
+			fadenewbgm(MUS_PS_KOUREND_CATACOMBS)
+			fadescreenswapbuffers(FADE_TO_BLACK)
 			getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
 			if (var(VAR_TEMP_2) == 3){
 				applymovement(OBJ_EVENT_ID_PLAYER, movement_ENEREST_CHICKEN_QUEST_1)
@@ -401,10 +416,19 @@ script NPC_DraynorManor_Oddenstein{
 
 
 			applymovement(ODDENSTEIN_ID, movement_ENEREST_CHICKEN_QUEST_3)
-			waitmovement(OBJ_EVENT_ID_PLAYER)
+			waitmovement(0)
+			//delay(20)
+			
 			applymovement(OBJ_EVENT_ID_PLAYER, movement_ENEREST_CHICKEN_QUEST_6)
 			waitmovement(OBJ_EVENT_ID_PLAYER)
-
+			setflag(FLAG_TEMP_1D)
+			setflag(FLAG_TEMP_1E)
+			setflag(FLAG_TEMP_1F)
+			removeobject(2)
+			removeobject(3)
+			removeobject(4)
+			removeobject(5)
+			fadescreenswapbuffers(FADE_FROM_BLACK)
 
 			special(SpawnCameraObject)
 			applymovement(OBJ_EVENT_ID_CAMERA, movement_ENEREST_CHICKEN_QUEST_5)
@@ -413,13 +437,7 @@ script NPC_DraynorManor_Oddenstein{
 
 
 			//fadescreenswapbuffers(FADE_TO_BLACK)
-			setflag(FLAG_TEMP_1D)
-			setflag(FLAG_TEMP_1E)
-			setflag(FLAG_TEMP_1F)
-			removeobject(2)
-			removeobject(3)
-			removeobject(4)
-			removeobject(5)
+			
 			namebox ("Oddenstein")
 			msgbox(format("Okay, first we place the chicken down."))
 			closemessage
@@ -435,12 +453,23 @@ script NPC_DraynorManor_Oddenstein{
 			//fadescreenswapbuffers(FADE_FROM_BLACK)
 			applymovement(ODDENSTEIN_ID, movement_ENEREST_CHICKEN_QUEST_4)
 			waitmovement(0)
-			applymovement(ODDENSTEIN_ID, MOVEMENT_INTERACT_RIGHT)
 			namebox ("Oddenstein")
 			msgbox(format("Then we press this button and fiddle with these doohickles…"))
-			waitmovement(0)
 			closemessage
 			hidenamebox
+			applymovement(ODDENSTEIN_ID, movement_ENEREST_CHICKEN_QUEST_8)
+			playse(SE_BANG)
+			waitmovement(0)
+			delay(10)
+			applymovement(ODDENSTEIN_ID, movement_ENEREST_CHICKEN_QUEST_8)
+			playse(SE_SELECT)
+			waitmovement(0)
+			delay(10)
+			applymovement(ODDENSTEIN_ID, movement_ENEREST_CHICKEN_QUEST_8)
+			playse(SE_TRUCK_DOOR)
+			waitmovement(0)
+			delay(30)
+			
 			applymovement(ODDENSTEIN_ID, Movement_InteractFACEDOWN)
 			waitmovement(0)
 
@@ -449,8 +478,9 @@ script NPC_DraynorManor_Oddenstein{
 			//applymovement(OBJ_EVENT_ID_CAMERA, movement_ENEREST_CHICKEN_QUEST_5)
 			//waitmovement(0)
 			delay(64)
+			fadeoutbgm(1)
 			namebox ("Oddenstein")
-			msgbox(format("Wait no!\nSomething is wrong!"))
+			msgbox(format("Wait!\nSomething is wrong!"))
 			closemessage
 			hidenamebox
 
@@ -469,11 +499,12 @@ script NPC_DraynorManor_Oddenstein{
 
 			//fadescreen(FADE_TO_BLACK)
 			applymovement(7, movement_chickentransform)
-			waitmovement(0)
+			delay(10)
 			namebox ("Oddenstein")
-			msgbox(format("Nooo!"))
+			msgbox(format("Oh nooo!"))
 			closemessage
 			hidenamebox
+			waitmovement(0)
 
 			
 
@@ -506,10 +537,17 @@ script NPC_DraynorManor_Oddenstein{
 			removeobject(7)
 			delay(32)
 			fadescreenswapbuffers(FADE_FROM_WHITE)
+			delay(30)
+			applymovement(ODDENSTEIN_ID, Movement_InteractFACELEFT)
+			waitmovement(0)
 			namebox ("Oddenstein")
 			msgbox(format("Drat my experiment has ended in failure!\pLet's call it there.\pPlease dispose of the failed experiment."))
 			closemessage
 			hidenamebox
+			applymovement(OBJ_EVENT_ID_CAMERA, movement_ENEREST_CHICKEN_QUEST_9)
+			waitmovement(0)
+			special(RemoveCameraObject)
+			fadeinbgm(1)
 			setvar(VAR_POKESCAPE_ERNEST_QUEST_STATE, 4)
             end
 
@@ -522,24 +560,94 @@ script NPC_DraynorManor_Oddenstein{
             end
 		case 5: 
             namebox ("Oddenstein")
-			msgbox(format("It is gone, thank you {PLAYER}."))
+			msgbox(format("Ah, thank you for disposing of that fowl creature.\pDispite my experiment ending in failure I would like you to have this."))
 			questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN)
 			hidenamebox
 			giveitem(ITEM_MINT_CAKE, 2)
 			setvar(VAR_POKESCAPE_ERNEST_QUEST_STATE, 6)
             closemessage
             hidenamebox
+			namebox ("Oddenstein")
+			msgbox(format("Thank you for your assistance with the experiment."))
+			closemessage
+            hidenamebox
 			release
             end
 		case 6: 
 			namebox ("Oddenstein")
-			msgbox(format("Thank you for your help."))
+			msgbox(format("Hello again {PLAYER}."))
+			subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_ERNEST_THE_CHICKEN, 4)
+			if (var(VAR_RESULT) == FALSE) {
+				checkitem (ITEM_MAGICAL_CAGE,1)
+				if (var(VAR_RESULT)){
+					msgbox(format("Oh that's Poly's CAGE!\nI used to have a parrot named Poly.\pShe loved that cage…\pShe has sadly passed from this world and her grave now rests in the backyard of the manor…"))
+				}
+				else {
+					msgbox(format("Oh by the way, have you seen a CAGE anywhere?\pI could have swore I left it in the room next to us somewhere but I haven't seen it in awhile."))
+				}
+			}
+			elif (var(VAR_RESULT) == TRUE) {
+				subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_ERNEST_THE_CHICKEN, 3)
+				if (var(VAR_RESULT) == FALSE) {
+					msgbox(format("By the way, it appears that ever since we experimented on that chicken it appears to keep coming back.\pIt would be great if you could get rid of it for me."))
+					hidenamebox
+					closemessage
+					release
+					end
+				}
+				subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_ERNEST_THE_CHICKEN, 4)
+				if (var(VAR_RESULT) == TRUE) {
+					msgbox(format("OMFG I CANNOT BELIEVE THIS!\pSOMEONE DUG UP MY POOR POLY!\pWhat kind of monster would disturb my poor Poly rest!"))
+				}
+			}
 			hidenamebox
 			closemessage
 			release
 			end
     }
 }
+
+
+script EvilChickenBattleScript{
+    lock
+    playmoncry(SPECIES_EVILCHICKEN, 0)
+    namebox("Evil Chicken")
+    msgbox(format("BWAWWWK!\pBEGONE {PLAYER}!"))
+    waitmoncry
+    closemessage
+    setwildbattle (SPECIES_EVILCHICKEN, 18, ITEM_NONE)
+    dowildbattle
+    if (var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
+        fadescreenswapbuffers(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+		if (var(VAR_POKESCAPE_ERNEST_QUEST_STATE) == 4) {
+			setvar(VAR_POKESCAPE_ERNEST_QUEST_STATE, 5)
+			subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, 3)
+		}
+		elif (var(VAR_POKESCAPE_ERNEST_QUEST_STATE) == 6) {
+			subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, 3)
+		}
+        fadescreenswapbuffers(FADE_FROM_BLACK)
+    }
+	if (var(VAR_RESULT) == B_OUTCOME_WON) {
+        fadescreenswapbuffers(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+		if (var(VAR_POKESCAPE_ERNEST_QUEST_STATE) == 4) {
+			setvar(VAR_POKESCAPE_ERNEST_QUEST_STATE, 5)
+		}
+        fadescreenswapbuffers(FADE_FROM_BLACK)
+    }
+    if (var(VAR_RESULT) == B_OUTCOME_RAN ) {
+        namebox ("Oddenstein")
+        msgbox(format("Don't listen to that failed experiment!\pCatch it or defeat it!\pDo something and get it out of my lab."))
+        closemessage
+        hidenamebox
+        release
+    }
+    end
+}
+
+
  
 movement movement_chickentransform {
 	levitate
@@ -572,7 +680,6 @@ movement movement_ENEREST_CHICKEN_QUEST_2 {
 	lock_facing_direction
 	walk_up
 	unlock_facing_direction
-	delay_16 * 2
 }
 movement movement_ENEREST_CHICKEN_QUEST_3 {
 	walk_left * 2
@@ -582,17 +689,23 @@ movement movement_ENEREST_CHICKEN_QUEST_4 {
 	walk_right * 2
 }
 movement movement_ENEREST_CHICKEN_QUEST_5 {
-	walk_slow_down * 4
+	walk_slow_down * 3
 }
 movement movement_ENEREST_CHICKEN_QUEST_6 {
 	delay_16 * 2
 	walk_left * 2
-	face_down
+	walk_down
 }
 movement movement_ENEREST_CHICKEN_QUEST_7 {
 	walk_down * 2
 }
 
+movement movement_ENEREST_CHICKEN_QUEST_8 {
+	walk_in_place_right
+}
+movement movement_ENEREST_CHICKEN_QUEST_9 {
+	walk_slow_up * 3
+}
 
 
 

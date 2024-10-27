@@ -99,7 +99,7 @@ script LIGHTHOUSE_2F_NPC_5
 {
 	lock
 	faceplayer
-    namebox ("Security Guard")
+    namebox ("SecurityGuard")
     if ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 100) || (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 101)) { 
 	    msgbox(format("Oh god! I only came here to give people tips on security!\pI'm not built for battling."))
     }

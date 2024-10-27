@@ -15,6 +15,8 @@ DRAYNOR_MANOR_3F_STATE::
 	setflag FLAG_TEMP_19
 	compare VAR_POKESCAPE_ERNEST_QUEST_STATE, 4
 	goto_if_eq DRAYNOR_MANOR_3F_STATE_1
+	compare VAR_POKESCAPE_ERNEST_QUEST_STATE, 6
+	goto_if_eq DRAYNOR_MANOR_3F_STATE_2
 	return
 
 DRAYNOR_MANOR_3F_STATE_1:
@@ -23,10 +25,25 @@ DRAYNOR_MANOR_3F_STATE_1:
 	setflag FLAG_TEMP_1D
 	setflag FLAG_TEMP_1E
 	setflag FLAG_TEMP_1F
+	setflag FLAG_TEMP_1B
 	removeobject 2
 	removeobject 3
 	removeobject 4
 	removeobject 5
+	return
+
+DRAYNOR_MANOR_3F_STATE_2:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_ERNEST_THE_CHICKEN, 3
+	compare VAR_RESULT, FALSE
+	goto_if_eq DRAYNOR_MANOR_3F_STATE_5
+	return
+
+DRAYNOR_MANOR_3F_STATE_5:
+	removeobject 5
+	setflag FLAG_TEMP_1B
+	setobjectxyperm 6, 8, 17
+	addobject 6
+	clearflag FLAG_TEMP_18
 	return
 
 
@@ -100,14 +117,14 @@ ITEM_DRAYNORMANOR_FISHFOOD::
 ITEM_DRAYNORMANOR_OILCAN::
 	finditem ITEM_OIL_CAN
 	closemessage
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, SUB_QUEST_ERNESTTHECHICKEN_1
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, 0
 	end
 
 
 ITEM_DRAYNORMANOR_RUBBERTUBE::
 	finditem ITEM_RUBBER_TUBE
 	closemessage
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, SUB_QUEST_ERNESTTHECHICKEN_2
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, 1
 	end
 
 
@@ -189,7 +206,7 @@ SCRIPT_DraynorManor_Fountain_17:
 	removeitem ITEM_FISH_FOOD_POISONED
 	finditem ITEM_PRESSURE_GAUGE
 	closemessage
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, SUB_QUEST_ERNESTTHECHICKEN_3
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, 2
 	end
 
 
@@ -197,26 +214,27 @@ SCRIPT_DraynorManor_Gravestone::
 	msgbox SCRIPT_DraynorManor_Gravestone_Text_0
 	closemessage
 	goto_if_unset FLAG_RECIEVED_EX_EX_PARROT, SCRIPT_DraynorManor_Gravestone_2
-	msgbox SCRIPT_DraynorManor_Gravestone_Text_5
+	msgbox SCRIPT_DraynorManor_Gravestone_Text_6
 	closemessage
-SCRIPT_DraynorManor_Gravestone_1:
 	end
 
 SCRIPT_DraynorManor_Gravestone_2:
-	checkitem ITEM_MAGICAL_CAGE, 1
-	compare VAR_RESULT, 0
-	goto_if_ne SCRIPT_DraynorManor_Gravestone_5
-	goto SCRIPT_DraynorManor_Gravestone_1
+	msgbox SCRIPT_DraynorManor_Gravestone_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, TRUE
+	goto_if_eq SCRIPT_DraynorManor_Gravestone_5
+	msgbox SCRIPT_DraynorManor_Gravestone_Text_5
+	closemessage
+	end
 
 SCRIPT_DraynorManor_Gravestone_5:
-	msgbox SCRIPT_DraynorManor_Gravestone_Text_1, MSGBOX_YESNO
+	checkitem ITEM_MAGICAL_CAGE, 1
 	compare VAR_RESULT, 0
-	goto_if_ne SCRIPT_DraynorManor_Gravestone_7
+	goto_if_ne SCRIPT_DraynorManor_Gravestone_8
 	msgbox SCRIPT_DraynorManor_Gravestone_Text_4
 	closemessage
 	end
 
-SCRIPT_DraynorManor_Gravestone_7:
+SCRIPT_DraynorManor_Gravestone_8:
 	msgbox SCRIPT_DraynorManor_Gravestone_Text_2
 	removeitem ITEM_MAGICAL_CAGE
 	msgbox SCRIPT_DraynorManor_Gravestone_Text_3
@@ -286,7 +304,6 @@ EventScript_DraynorManor_TransferredToPC_ExExParrot::
 
 EventScript_DraynorManor_ReceivedFanfare_ExExParrot::
 	bufferspeciesname 1, SPECIES_EXEXPARROT
-	setvar VAR_POKESCAPE_ERNEST_QUEST_STATE, 3
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox EventScript_DraynorManor_ReceivedFanfare_ExExParrot_Text_0
 	waitmessage
@@ -296,6 +313,7 @@ EventScript_DraynorManor_ReceivedFanfare_ExExParrot::
 
 
 EventScript_DraynorManor_Received_ExExParrot::
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, 4
 	setflag FLAG_RECIEVED_EX_EX_PARROT
 	releaseall
 	return
@@ -349,6 +367,8 @@ NPC_DraynorManor_Oddenstein_5:
 	msgbox NPC_DraynorManor_Oddenstein_Text_14
 	closemessage
 	hidenamebox
+	fadenewbgm MUS_PS_KOUREND_CATACOMBS
+	fadescreenswapbuffers FADE_TO_BLACK
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
 	compare VAR_TEMP_2, 3
 	goto_if_eq NPC_DraynorManor_Oddenstein_16
@@ -356,12 +376,9 @@ NPC_DraynorManor_Oddenstein_5:
 	goto_if_eq NPC_DraynorManor_Oddenstein_17
 NPC_DraynorManor_Oddenstein_15:
 	applymovement 1, movement_ENEREST_CHICKEN_QUEST_3
-	waitmovement OBJ_EVENT_ID_PLAYER
+	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, movement_ENEREST_CHICKEN_QUEST_6
 	waitmovement OBJ_EVENT_ID_PLAYER
-	special SpawnCameraObject
-	applymovement OBJ_EVENT_ID_CAMERA, movement_ENEREST_CHICKEN_QUEST_5
-	waitmovement 0
 	setflag FLAG_TEMP_1D
 	setflag FLAG_TEMP_1E
 	setflag FLAG_TEMP_1F
@@ -369,6 +386,10 @@ NPC_DraynorManor_Oddenstein_15:
 	removeobject 3
 	removeobject 4
 	removeobject 5
+	fadescreenswapbuffers FADE_FROM_BLACK
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, movement_ENEREST_CHICKEN_QUEST_5
+	waitmovement 0
 	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox NPC_DraynorManor_Oddenstein_Text_15
 	closemessage
@@ -380,15 +401,26 @@ NPC_DraynorManor_Oddenstein_15:
 	delay 64
 	applymovement 1, movement_ENEREST_CHICKEN_QUEST_4
 	waitmovement 0
-	applymovement 1, MOVEMENT_INTERACT_RIGHT
 	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox NPC_DraynorManor_Oddenstein_Text_16
-	waitmovement 0
 	closemessage
 	hidenamebox
+	applymovement 1, movement_ENEREST_CHICKEN_QUEST_8
+	playse SE_BANG
+	waitmovement 0
+	delay 10
+	applymovement 1, movement_ENEREST_CHICKEN_QUEST_8
+	playse SE_SELECT
+	waitmovement 0
+	delay 10
+	applymovement 1, movement_ENEREST_CHICKEN_QUEST_8
+	playse SE_TRUCK_DOOR
+	waitmovement 0
+	delay 30
 	applymovement 1, Movement_InteractFACEDOWN
 	waitmovement 0
 	delay 64
+	fadeoutbgm 1
 	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox NPC_DraynorManor_Oddenstein_Text_17
 	closemessage
@@ -406,11 +438,12 @@ NPC_DraynorManor_Oddenstein_15:
 	special ShakeCamera
 	waitstate
 	applymovement 7, movement_chickentransform
-	waitmovement 0
+	delay 10
 	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox NPC_DraynorManor_Oddenstein_Text_18
 	closemessage
 	hidenamebox
+	waitmovement 0
 	playse SE_ORB
 	special DoOrbEffect
 	delay 60
@@ -436,10 +469,17 @@ NPC_DraynorManor_Oddenstein_15:
 	removeobject 7
 	delay 32
 	fadescreenswapbuffers FADE_FROM_WHITE
+	delay 30
+	applymovement 1, Movement_InteractFACELEFT
+	waitmovement 0
 	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox NPC_DraynorManor_Oddenstein_Text_19
 	closemessage
 	hidenamebox
+	applymovement OBJ_EVENT_ID_CAMERA, movement_ENEREST_CHICKEN_QUEST_9
+	waitmovement 0
+	special RemoveCameraObject
+	fadeinbgm 1
 	setvar VAR_POKESCAPE_ERNEST_QUEST_STATE, 4
 	end
 
@@ -460,12 +500,22 @@ NPC_DraynorManor_Oddenstein_7:
 	setvar VAR_POKESCAPE_ERNEST_QUEST_STATE, 6
 	closemessage
 	hidenamebox
+	namebox NPC_DraynorManor_Chicken_1_Text_2
+	msgbox NPC_DraynorManor_Oddenstein_Text_22
+	closemessage
+	hidenamebox
 	release
 	end
 
 NPC_DraynorManor_Oddenstein_8:
 	namebox NPC_DraynorManor_Chicken_1_Text_2
-	msgbox NPC_DraynorManor_Oddenstein_Text_22
+	msgbox NPC_DraynorManor_Oddenstein_Text_23
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_ERNEST_THE_CHICKEN, 4
+	compare VAR_RESULT, FALSE
+	goto_if_eq NPC_DraynorManor_Oddenstein_21
+	compare VAR_RESULT, TRUE
+	goto_if_eq NPC_DraynorManor_Oddenstein_22
+NPC_DraynorManor_Oddenstein_20:
 	hidenamebox
 	closemessage
 	release
@@ -523,6 +573,99 @@ NPC_DraynorManor_Oddenstein_17:
 	applymovement OBJ_EVENT_ID_PLAYER, movement_ENEREST_CHICKEN_QUEST_2
 	goto NPC_DraynorManor_Oddenstein_15
 
+NPC_DraynorManor_Oddenstein_21:
+	checkitem ITEM_MAGICAL_CAGE, 1
+	compare VAR_RESULT, 0
+	goto_if_ne NPC_DraynorManor_Oddenstein_25
+	msgbox NPC_DraynorManor_Oddenstein_Text_25
+	goto NPC_DraynorManor_Oddenstein_20
+
+NPC_DraynorManor_Oddenstein_22:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_ERNEST_THE_CHICKEN, 3
+	compare VAR_RESULT, FALSE
+	goto_if_eq NPC_DraynorManor_Oddenstein_29
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_ERNEST_THE_CHICKEN, 4
+	compare VAR_RESULT, TRUE
+	goto_if_eq NPC_DraynorManor_Oddenstein_31
+	goto NPC_DraynorManor_Oddenstein_20
+
+NPC_DraynorManor_Oddenstein_25:
+	msgbox NPC_DraynorManor_Oddenstein_Text_24
+	goto NPC_DraynorManor_Oddenstein_20
+
+NPC_DraynorManor_Oddenstein_29:
+	msgbox NPC_DraynorManor_Oddenstein_Text_26
+	hidenamebox
+	closemessage
+	release
+	end
+
+NPC_DraynorManor_Oddenstein_31:
+	msgbox NPC_DraynorManor_Oddenstein_Text_27
+	goto NPC_DraynorManor_Oddenstein_20
+
+
+EvilChickenBattleScript::
+	lock
+	playmoncry SPECIES_EVILCHICKEN, 0
+	namebox EvilChickenBattleScript_Text_0
+	msgbox EvilChickenBattleScript_Text_1
+	waitmoncry
+	closemessage
+	setwildbattle SPECIES_EVILCHICKEN, 18, ITEM_NONE
+	dowildbattle
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq EvilChickenBattleScript_2
+EvilChickenBattleScript_1:
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq EvilChickenBattleScript_5
+EvilChickenBattleScript_4:
+	compare VAR_RESULT, B_OUTCOME_RAN
+	goto_if_eq EvilChickenBattleScript_13
+EvilChickenBattleScript_12:
+	end
+
+EvilChickenBattleScript_2:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	compare VAR_POKESCAPE_ERNEST_QUEST_STATE, 4
+	goto_if_eq EvilChickenBattleScript_8
+	compare VAR_POKESCAPE_ERNEST_QUEST_STATE, 6
+	goto_if_eq EvilChickenBattleScript_9
+EvilChickenBattleScript_7:
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto EvilChickenBattleScript_1
+
+EvilChickenBattleScript_5:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	compare VAR_POKESCAPE_ERNEST_QUEST_STATE, 4
+	goto_if_eq EvilChickenBattleScript_16
+EvilChickenBattleScript_15:
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto EvilChickenBattleScript_4
+
+EvilChickenBattleScript_8:
+	setvar VAR_POKESCAPE_ERNEST_QUEST_STATE, 5
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, 3
+	goto EvilChickenBattleScript_7
+
+EvilChickenBattleScript_9:
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN, 3
+	goto EvilChickenBattleScript_7
+
+EvilChickenBattleScript_13:
+	namebox NPC_DraynorManor_Chicken_1_Text_2
+	msgbox EvilChickenBattleScript_Text_2
+	closemessage
+	hidenamebox
+	release
+	goto EvilChickenBattleScript_12
+
+EvilChickenBattleScript_16:
+	setvar VAR_POKESCAPE_ERNEST_QUEST_STATE, 5
+	goto EvilChickenBattleScript_15
+
 
 movement_chickentransform:
 	levitate
@@ -568,8 +711,6 @@ movement_ENEREST_CHICKEN_QUEST_2:
 	lock_facing_direction
 	walk_up
 	unlock_facing_direction
-	delay_16
-	delay_16
 	step_end
 
 movement_ENEREST_CHICKEN_QUEST_3:
@@ -588,7 +729,6 @@ movement_ENEREST_CHICKEN_QUEST_5:
 	walk_slow_down
 	walk_slow_down
 	walk_slow_down
-	walk_slow_down
 	step_end
 
 movement_ENEREST_CHICKEN_QUEST_6:
@@ -596,12 +736,22 @@ movement_ENEREST_CHICKEN_QUEST_6:
 	delay_16
 	walk_left
 	walk_left
-	face_down
+	walk_down
 	step_end
 
 movement_ENEREST_CHICKEN_QUEST_7:
 	walk_down
 	walk_down
+	step_end
+
+movement_ENEREST_CHICKEN_QUEST_8:
+	walk_in_place_right
+	step_end
+
+movement_ENEREST_CHICKEN_QUEST_9:
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
 	step_end
 
 CooksAssistant_Check_OilCan::
@@ -861,6 +1011,10 @@ SCRIPT_DraynorManor_Gravestone_Text_4:
 	.string "Maybe if you had a cage…$"
 
 SCRIPT_DraynorManor_Gravestone_Text_5:
+	.string "You decide it is best to let Poly rest in\n"
+	.string "peace.$"
+
+SCRIPT_DraynorManor_Gravestone_Text_6:
 	.string "Looks like someone looted this grave.\p"
 	.string "How could they…$"
 
@@ -956,7 +1110,8 @@ NPC_DraynorManor_Oddenstein_Text_13:
 NPC_DraynorManor_Oddenstein_Text_14:
 	.string "Perfect, thats an Ernest Chicken\n"
 	.string "exactly what we needed!\p"
-	.string "Stand back let the experiment begin!$"
+	.string "Stand back and let the experiment\n"
+	.string "begin!$"
 
 NPC_DraynorManor_Oddenstein_Text_15:
 	.string "Okay, first we place the chicken down.$"
@@ -966,11 +1121,11 @@ NPC_DraynorManor_Oddenstein_Text_16:
 	.string "with these doohickles…$"
 
 NPC_DraynorManor_Oddenstein_Text_17:
-	.string "Wait no!\n"
+	.string "Wait!\n"
 	.string "Something is wrong!$"
 
 NPC_DraynorManor_Oddenstein_Text_18:
-	.string "Nooo!$"
+	.string "Oh nooo!$"
 
 NPC_DraynorManor_Oddenstein_Text_19:
 	.string "Drat my experiment has ended in\n"
@@ -983,10 +1138,57 @@ NPC_DraynorManor_Oddenstein_Text_20:
 	.string "Please dispose of that chicken.$"
 
 NPC_DraynorManor_Oddenstein_Text_21:
-	.string "It is gone, thank you {PLAYER}.$"
+	.string "Ah, thank you for disposing of that\n"
+	.string "fowl creature.\p"
+	.string "Dispite my experiment ending in failure\n"
+	.string "I would like you to have this.$"
 
 NPC_DraynorManor_Oddenstein_Text_22:
-	.string "Thank you for your help.$"
+	.string "Thank you for your assistance with the\n"
+	.string "experiment.$"
+
+NPC_DraynorManor_Oddenstein_Text_23:
+	.string "Hello again {PLAYER}.$"
+
+NPC_DraynorManor_Oddenstein_Text_24:
+	.string "Oh that's Poly's CAGE!\n"
+	.string "I used to have a parrot named Poly.\p"
+	.string "She loved that cage…\p"
+	.string "She has sadly passed from this world\n"
+	.string "and her grave now rests in the backyard\l"
+	.string "of the manor…$"
+
+NPC_DraynorManor_Oddenstein_Text_25:
+	.string "Oh by the way, have you seen a CAGE\n"
+	.string "anywhere?\p"
+	.string "I could have swore I left it in the room\n"
+	.string "next to us somewhere but I haven't\l"
+	.string "seen it in awhile.$"
+
+NPC_DraynorManor_Oddenstein_Text_26:
+	.string "By the way, it appears that ever since\n"
+	.string "we experimented on that chicken it\l"
+	.string "appears to keep coming back.\p"
+	.string "It would be great if you could get rid\n"
+	.string "of it for me.$"
+
+NPC_DraynorManor_Oddenstein_Text_27:
+	.string "OMFG I CANNOT BELIEVE THIS!\p"
+	.string "SOMEONE DUG UP MY POOR POLY!\p"
+	.string "What kind of monster would disturb my\n"
+	.string "poor Poly rest!$"
+
+EvilChickenBattleScript_Text_0:
+	.string "Evil Chicken$"
+
+EvilChickenBattleScript_Text_1:
+	.string "BWAWWWK!\p"
+	.string "BEGONE {PLAYER}!$"
+
+EvilChickenBattleScript_Text_2:
+	.string "Don't listen to that failed experiment!\p"
+	.string "Catch it or defeat it!\p"
+	.string "Do something and get it out of my lab.$"
 
 CooksAssistant_Check_OilCan_Text_0:
 	.string "You don't have the Oil Can.\p"

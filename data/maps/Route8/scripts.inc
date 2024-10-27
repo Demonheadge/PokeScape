@@ -346,6 +346,7 @@ ALTAR_AIR_ENTER_2:
 
 ALTAR_AIR_ENTER_5:
 	msgbox ALTAR_AIR_ENTER_Text_2
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_RUNE_MYSTERIES, 1
 	warp MAP_AIR_ALTAR, 1, 0, 0
 	closemessage
 	release

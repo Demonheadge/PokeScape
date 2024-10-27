@@ -391,7 +391,16 @@ ENCOUNTER_COW::
 	closemessage
 	delay 1
 	goto_if_set FLAG_BADGE01_GET, ENCOUNTER_COW_2
-	setwildbattle SPECIES_CALF, 3, ITEM_NONE
+	random 13
+	switch VAR_RESULT
+	case 0, ENCOUNTER_COW_11
+	case 1, ENCOUNTER_COW_11
+	case 2, ENCOUNTER_COW_11
+	case 3, ENCOUNTER_COW_12
+	case 6, ENCOUNTER_COW_13
+	case 7, ENCOUNTER_COW_13
+	case 9, ENCOUNTER_COW_14
+	setwildbattle SPECIES_CALF, 5, ITEM_NONE
 ENCOUNTER_COW_1:
 	dowildbattle
 	compare VAR_RESULT, B_OUTCOME_WON
@@ -403,7 +412,7 @@ ENCOUNTER_COW_5:
 	end
 
 ENCOUNTER_COW_2:
-	setwildbattle SPECIES_COW, 8, ITEM_NONE
+	setwildbattle SPECIES_COW, 10, ITEM_NONE
 	goto ENCOUNTER_COW_1
 
 ENCOUNTER_COW_6:
@@ -411,6 +420,22 @@ ENCOUNTER_COW_6:
 	removeobject VAR_LAST_TALKED
 	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_COW_5
+
+ENCOUNTER_COW_11:
+	setwildbattle SPECIES_CALF, 8, ITEM_NONE
+	goto ENCOUNTER_COW_1
+
+ENCOUNTER_COW_12:
+	setwildbattle SPECIES_COW, 5, ITEM_NONE
+	goto ENCOUNTER_COW_1
+
+ENCOUNTER_COW_13:
+	setwildbattle SPECIES_CALF, 10, ITEM_NONE
+	goto ENCOUNTER_COW_1
+
+ENCOUNTER_COW_14:
+	setwildbattle SPECIES_COW, 10, ITEM_NONE
+	goto ENCOUNTER_COW_1
 
 
 BLOCK_Alkharid_Guards::

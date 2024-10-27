@@ -314,7 +314,6 @@ script GiveMon_TransferredToPC_GOLDENGNOME{
 script GiveMon_ReceivedFanfare_GOLDENGNOME{
 	bufferspeciesname(1, SPECIES_GNOMEY)
 	//removeobject LOCALID_BELDUM_BALL
-    //setvar(VAR_POKESCAPE_ERNEST_QUEST_STATE, 3)
 	playfanfare (MUS_OBTAIN_ITEM)
 	msgbox(format("{PLAYER} obtained a {STR_VAR_2}."))
 	waitmessage

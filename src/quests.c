@@ -536,6 +536,69 @@ static const struct SubQuest sSubQuests_RUNE_MYSTERIES[QUEST_RUNE_MYSTERIES_SUB_
 	      OBJECT,
 	      sText_Found
 	),
+	sub_quest(
+	      42,
+	      gText_SubQuest_RuneMysteries_4,
+	      gText_SubQuest1_Desc_RuneMysteries_4,
+	      gText_MapName_Route7,
+	      ITEM_TALISMAN_AIR,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      43,
+	      gText_SubQuest_RuneMysteries_5,
+	      gText_SubQuest1_Desc_RuneMysteries_5,
+	      gText_MapName_Route33,
+	      ITEM_TALISMAN_MIND,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      44,
+	      gText_SubQuest_RuneMysteries_6,
+	      gText_SubQuest1_Desc_RuneMysteries_6,
+	      gText_MapName_LumbridgeSwamp,
+	      ITEM_TALISMAN_WATER,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      45,
+	      gText_SubQuest_RuneMysteries_7,
+	      gText_SubQuest1_Desc_RuneMysteries_7,
+	      gText_MapName_Route17,
+	      ITEM_TALISMAN_EARTH,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      46,
+	      gText_SubQuest_RuneMysteries_8,
+	      gText_SubQuest1_Desc_RuneMysteries_8,
+	      gText_MapName_Route28,
+	      ITEM_TALISMAN_FIRE,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      47,
+	      gText_SubQuest_RuneMysteries_9,
+	      gText_SubQuest1_Desc_RuneMysteries_9,
+	      gText_MapName_Route23,
+	      ITEM_TALISMAN_BODY,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      48,
+	      gText_SubQuest_RuneMysteries_10,
+	      gText_SubQuest1_Desc_RuneMysteries_10,
+	      gText_MapName_WizardsTower,
+	      OBJ_EVENT_GFX_WIZARD_ARCHMAGE,
+	      OBJECT,
+	      sText_Found
+	),
 
 };
 
@@ -566,6 +629,24 @@ static const struct SubQuest sSubQuests_ERNEST_THE_CHICKEN[QUEST_ERNEST_THE_CHIC
 	      gText_SubQuest_Ernest_Name2,
 	      gText_SideQuestMap_Draynor_Manor,
 	      ITEM_PRESSURE_GAUGE,
+	      ITEM,
+	      sText_Found
+	),
+	sub_quest(
+	      49,
+	      gText_SubQuest_Ernest_Name4,
+	      gText_SubQuest_Ernest_Desc4,
+	      gText_SideQuestMap_Draynor_Manor,
+	      SPECIES_EVILCHICKEN,
+	      PKMN,
+	      sText_Found
+	),
+	sub_quest(
+	      50,
+	      gText_SubQuest_Ernest_Name5,
+	      gText_SubQuest_Ernest_Desc5,
+	      gText_SideQuestMap_Draynor_Manor,
+	      ITEM_MAGICAL_CAGE,
 	      ITEM,
 	      sText_Found
 	),
@@ -649,34 +730,34 @@ static const struct SubQuest sSubQuests_MAIN_STORY[QUEST_MAIN_STORY_SUB_COUNT] =
 	      gText_SubQuest_Main_Story_Name2,
 	      gText_SubQuest_Main_Story_Desc2,
 	      gText_MapName_Lumbridge,
-	      ITEM_BANANA,
-	      ITEM,
+	      OBJ_EVENT_GFX_GYMLEADER_DUKE_HORACIO,
+	      OBJECT,
 	      sText_Delivered
 	),
 	sub_quest(
 	      30,
 	      gText_SubQuest_Main_Story_Name3,
 	      gText_SubQuest_Main_Story_Desc3,
-	      gText_MapName_Lumbridge,
-	      ITEM_BANANA,
-	      ITEM,
+	      gText_MapName_LumbridgeForest,
+	      OBJ_EVENT_GFX_GYMLEADER_WISE_OLD_MAN,
+	      OBJECT,
 	      sText_Delivered
 	),
 	sub_quest(
 	      31,
 	      gText_SubQuest_Main_Story_Name4,
 	      gText_SubQuest_Main_Story_Desc4,
-	      gText_MapName_Lumbridge,
-	      ITEM_BANANA,
-	      ITEM,
+	      gText_MapName_DraynorManor,
+	      OBJ_EVENT_GFX_HAM_GRUNT_M,
+	      OBJECT,
 	      sText_Delivered
 	),
 	sub_quest(
 	      32,
 	      gText_SubQuest_Main_Story_Name5,
 	      gText_SubQuest_Main_Story_Desc5,
-	      gText_MapName_Lumbridge,
-	      ITEM_BANANA,
+	      gText_MapName_PortSarim,
+	      ITEM_CRANDOR_MAP_PIECE1,
 	      ITEM,
 	      sText_Delivered
 	),
@@ -684,8 +765,8 @@ static const struct SubQuest sSubQuests_MAIN_STORY[QUEST_MAIN_STORY_SUB_COUNT] =
 	      33,
 	      gText_SubQuest_Main_Story_Name6,
 	      gText_SubQuest_Main_Story_Desc6,
-	      gText_MapName_Lumbridge,
-	      ITEM_BANANA,
+	      gText_MapName_MelzarsMaze,
+	      ITEM_CRANDOR_MAP_PIECE2,
 	      ITEM,
 	      sText_Delivered
 	),
@@ -693,8 +774,8 @@ static const struct SubQuest sSubQuests_MAIN_STORY[QUEST_MAIN_STORY_SUB_COUNT] =
 	      34,
 	      gText_SubQuest_Main_Story_Name7,
 	      gText_SubQuest_Main_Story_Desc7,
-	      gText_MapName_Lumbridge,
-	      ITEM_BANANA,
+	      gText_MapName_DwarvenMines,
+	      ITEM_CRANDOR_MAP_PIECE3,
 	      ITEM,
 	      sText_Delivered
 	),
@@ -702,8 +783,8 @@ static const struct SubQuest sSubQuests_MAIN_STORY[QUEST_MAIN_STORY_SUB_COUNT] =
 	      35,
 	      gText_SubQuest_Main_Story_Name8,
 	      gText_SubQuest_Main_Story_Desc8,
-	      gText_MapName_Lumbridge,
-	      ITEM_BANANA,
+	      gText_MapName_Falador,
+	      ITEM_CRANDOR_MAP_FULL,
 	      ITEM,
 	      sText_Delivered
 	),
@@ -711,18 +792,18 @@ static const struct SubQuest sSubQuests_MAIN_STORY[QUEST_MAIN_STORY_SUB_COUNT] =
 	      36,
 	      gText_SubQuest_Main_Story_Name9,
 	      gText_SubQuest_Main_Story_Desc9,
-	      gText_MapName_Lumbridge,
-	      ITEM_BANANA,
-	      ITEM,
+	      gText_MapName_PortSarim,
+	      OBJ_EVENT_GFX_SHIP_1,
+	      OBJECT,
 	      sText_Delivered
 	),
 	sub_quest(
 	      37,
 	      gText_SubQuest_Main_Story_Name10,
 	      gText_SubQuest_Main_Story_Desc10,
-	      gText_MapName_Lumbridge,
-	      ITEM_BANANA,
-	      ITEM,
+	      gText_MapName_Crandor,
+	      OBJ_EVENT_GFX_ELVARG,
+	      OBJECT,
 	      sText_Delivered
 	),
 };

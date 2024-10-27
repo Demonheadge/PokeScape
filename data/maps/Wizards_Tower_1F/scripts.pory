@@ -535,7 +535,7 @@ script NPC_WIZARDSTOWER_Onglewip
 {
 	lock
 	faceplayer
-    namebox ("Prof. Onglewip")
+    namebox ("Prof.Onglewip")
 	msgbox(format("Hello human.\pI am here to study what type of Magic the Human Wizards here use in battle."))
     waitmessage
     hidenamebox

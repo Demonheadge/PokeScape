@@ -12323,7 +12323,22 @@
               {
                 "min_level": 5,
                 "max_level": 7,
-                "species": "SPECIES_CROW"
+                "species": "SPECIES_PUPPY_PUP_FORM"
+              },
+              {
+                "min_level": 5,
+                "max_level": 7,
+                "species": "SPECIES_PUPPY_PUP_FORM"
+              },
+              {
+                "min_level": 5,
+                "max_level": 7,
+                "species": "SPECIES_KITTEN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 7,
+                "species": "SPECIES_KITTEN"
               },
               {
                 "min_level": 5,
@@ -12333,27 +12348,12 @@
               {
                 "min_level": 5,
                 "max_level": 7,
-                "species": "SPECIES_IMPLING_BABY_FORM"
+                "species": "SPECIES_RAVENLING"
               },
               {
                 "min_level": 5,
                 "max_level": 7,
-                "species": "SPECIES_CROW"
-              },
-              {
-                "min_level": 5,
-                "max_level": 7,
-                "species": "SPECIES_CROW"
-              },
-              {
-                "min_level": 5,
-                "max_level": 7,
-                "species": "SPECIES_CROW"
-              },
-              {
-                "min_level": 5,
-                "max_level": 7,
-                "species": "SPECIES_CROW"
+                "species": "SPECIES_RAVENLING"
               },
               {
                 "min_level": 5,
@@ -12542,7 +12542,22 @@
               {
                 "min_level": 5,
                 "max_level": 7,
-                "species": "SPECIES_RAVENLING"
+                "species": "SPECIES_PUPPY_MUTT_FORM"
+              },
+              {
+                "min_level": 5,
+                "max_level": 7,
+                "species": "SPECIES_PUPPY_MUTT_FORM"
+              },
+              {
+                "min_level": 5,
+                "max_level": 7,
+                "species": "SPECIES_KITTEN"
+              },
+              {
+                "min_level": 5,
+                "max_level": 7,
+                "species": "SPECIES_KITTEN"
               },
               {
                 "min_level": 5,
@@ -12552,27 +12567,12 @@
               {
                 "min_level": 5,
                 "max_level": 7,
-                "species": "SPECIES_IMPLING_BABY_FORM"
+                "species": "SPECIES_CROW"
               },
               {
                 "min_level": 5,
                 "max_level": 7,
-                "species": "SPECIES_RAVENLING"
-              },
-              {
-                "min_level": 5,
-                "max_level": 7,
-                "species": "SPECIES_RAVENLING"
-              },
-              {
-                "min_level": 5,
-                "max_level": 7,
-                "species": "SPECIES_RAVENLING"
-              },
-              {
-                "min_level": 5,
-                "max_level": 7,
-                "species": "SPECIES_RAVENLING"
+                "species": "SPECIES_CROW"
               },
               {
                 "min_level": 5,
@@ -14655,7 +14655,7 @@
               {
                 "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_GIANT_RAT_CRYPT_FORM"
+                "species": "SPECIES_RAT_CRYPT_FORM"
               },
               {
                 "min_level": 2,
@@ -16307,64 +16307,64 @@
             "encounter_rate": 5,
             "mons": [
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 9,
+                "max_level": 13,
                 "species": "SPECIES_SPARKLES"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 9,
+                "max_level": 13,
+                "species": "SPECIES_IMP"
+              },
+              {
+                "min_level": 9,
+                "max_level": 13,
+                "species": "SPECIES_SPIDERLING"
+              },
+              {
+                "min_level": 9,
+                "max_level": 13,
                 "species": "SPECIES_SPARKLES"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 9,
+                "max_level": 13,
+                "species": "SPECIES_IMP"
+              },
+              {
+                "min_level": 9,
+                "max_level": 13,
                 "species": "SPECIES_SPARKLES"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 9,
+                "max_level": 13,
                 "species": "SPECIES_SPARKLES"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 9,
+                "max_level": 13,
                 "species": "SPECIES_SPARKLES"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 9,
+                "max_level": 13,
+                "species": "SPECIES_IMP"
+              },
+              {
+                "min_level": 9,
+                "max_level": 13,
                 "species": "SPECIES_SPARKLES"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
+                "min_level": 9,
+                "max_level": 13,
                 "species": "SPECIES_SPARKLES"
               },
               {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_SPARKLES"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_SPARKLES"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_SPARKLES"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_SPARKLES"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_SPARKLES"
+                "min_level": 9,
+                "max_level": 13,
+                "species": "SPECIES_EEK"
               }
             ]
           }

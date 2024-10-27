@@ -204,7 +204,7 @@ LIGHTHOUSE_2F_NPC_4_Text_0:
 	.string "That's probably not a good sign.$"
 
 LIGHTHOUSE_2F_NPC_5_Text_0:
-	.string "Security Guard$"
+	.string "SecurityGuard$"
 
 LIGHTHOUSE_2F_NPC_5_Text_1:
 	.string "Oh god! I only came here to give people\n"
