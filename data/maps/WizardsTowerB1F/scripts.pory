@@ -88,12 +88,53 @@ script NPC_WizardsTowerB1F_Sedridor{
         end
     }
 
-    checkitem(ITEM_TALISMAN_AIR, 1)
-    if (var(VAR_RESULT)){
-        msgbox(format("Hello {PLAYER}, have you visited those mysterious altars?\pThe Air altar is located south of Falador on Route 7."))
-        hidenamebox
-        closemessage
-        release
-        end
+
+    subquestmenu (QUEST_MENU_CHECK_COMPLETE, QUEST_RUNE_MYSTERIES, 2) //reported sedridor
+    if (var(VAR_RESULT) == FALSE) {
+        subquestmenu (QUEST_MENU_CHECK_COMPLETE, QUEST_RUNE_MYSTERIES, 1)
+        if (var(VAR_RESULT) == FALSE) {
+            msgbox(format("Hello {PLAYER}, have you visited those mysterious altars?\pThe Air altar is located south of Falador on Route 7."))   
+        }
+        elif (var(VAR_RESULT) == TRUE) {
+            msgbox(format("So {PLAYER}, have you visited an altar?\pWhat did you discover?\pOoh ho ho! So monsters that regularly evolve using Runes can evolve on the Altars without requiring the Runes?\pHow interesting!\pI wonder if the other altars are like that…\pIf its not too much trouble would you be able to go and investigate the other altars for me?\pThere is information on their locations in some of the books around the tower.\pReport back to me once you have discovered some more!"))
+            subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_RUNE_MYSTERIES, 2)
+        }
     }
+    elif (var(VAR_RESULT) == TRUE) {
+        msgbox(format("Hello {PLAYER}, have you found anymore of those mysterious altars?\pI believe there is a book around the tower somewhere detailing their locations.\pBut you'll have to find the Talismans on your own."))
+        
+        subquestmenu (QUEST_MENU_CHECK_COMPLETE, QUEST_RUNE_MYSTERIES, 3) //reported duke
+        if (var(VAR_RESULT) == FALSE) {
+            msgbox(format("By the way, have you reported back to the Duke?\pI'm sure he is eager to know about these Talismans and Altars."))
+        }
+    }
+
+
+    hidenamebox
+    closemessage
+    release
+    end
 }
+
+
+script BOOK_ALTAR_LOCATIONS {
+    random(6) 
+	switch (var(VAR_RESULT)) { 
+        case 0:  
+            msgbox(format("It has been discovered that a mysterious altar is south of Falador."))
+        case 1:  
+            msgbox(format("Rumour has it there is a mysterious altar in the Lumbridge Swamp."))
+        case 2:  
+            msgbox(format("West of Varrock there appears to be many stone ruins, could an altar be nearby?"))
+        case 3:  
+            msgbox(format("An adventurer once mentioned some sort of ruins north of Goblin Village, could this be an altar?"))
+        case 4:  
+            msgbox(format("The barbarians in Gunnars Ground often appear to be using rune stone as wheatstones to polish their swords.\pWhere are they getting these from?"))
+        case 5:  
+            msgbox(format("It would make sense that with the amount of stones in the Alkharidian desert there may be an altar located within this region."))
+    }
+    closemessage
+    end
+}
+
+

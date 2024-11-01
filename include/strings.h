@@ -3222,6 +3222,8 @@ extern const u8 gText_SubQuest_RuneMysteries_9[];
 extern const u8 gText_SubQuest1_Desc_RuneMysteries_9[];
 extern const u8 gText_SubQuest_RuneMysteries_10[];
 extern const u8 gText_SubQuest1_Desc_RuneMysteries_10[];
+extern const u8 gText_SubQuest_RuneMysteries_11[];
+extern const u8 gText_SubQuest1_Desc_RuneMysteries_11[];
 extern const u8 gText_MapName_LumbridgeSwamp[];
 extern const u8 gText_MapName_Route28[];
 extern const u8 gText_MapName_Route17[];

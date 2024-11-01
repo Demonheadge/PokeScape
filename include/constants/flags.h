@@ -1243,8 +1243,8 @@
 #define FLAG_ITEM_DRAYNORMANOR_TEA                                  0x493 // Unused Flag
 #define FLAG_ITEM_DRAYNORMANOR_POUCHES                              0x494 // Unused Flag
 #define FLAG_ITEM_LUMBRIDGESWAMP_ITEM_3                             0x495 // Unused Flag
+#define FLAG_ITEM_AIRALTAR_1                                        0x496 // Unused Flag
 
-#define FLAG_UNUSED_4                                        0x496 // Unused Flag
 #define FLAG_UNUSED_5                                        0x497 // Unused Flag
 #define FLAG_UNUSED_6                                        0x498 // Unused Flag
 #define FLAG_UNUSED_7                                        0x499 // Unused Flag

@@ -2020,6 +2020,8 @@ const u8 gText_SubQuest1_Desc_RuneMysteries_9[] = _("You found the Body Altar.")
 const u8 gText_SubQuest_RuneMysteries_10[] = _("Elemental");
 const u8 gText_SubQuest1_Desc_RuneMysteries_10[] = _("You reported your findings\nto Archmage Sedridor.");
 const u8 gText_MapName_LumbridgeSwamp[] = _("Lumbridge Swamp");
+const u8 gText_SubQuest_RuneMysteries_11[] = _("Reported Findings");
+const u8 gText_SubQuest1_Desc_RuneMysteries_11[] = _("You reported everything you\nfound out to Archmage Sedridor.");
 const u8 gText_MapName_Route28[] = _("Route 28");
 const u8 gText_MapName_Route17[] = _("Route 17");
 const u8 gText_MapName_Route23[] = _("Route 23");
@@ -2036,7 +2038,7 @@ const u8 gText_SubQuest_Ernest_Name3[] = _("Pressure Gauge");
 const u8 gText_SubQuest_Ernest_Name4[] = _("Capture: Evil Chicken");
 const u8 gText_SubQuest_Ernest_Name5[] = _("Revived Poly");
 const u8 gText_SubQuest_Ernest_Desc4[] = _("You caught the Evil Chicken.");
-const u8 gText_SubQuest_Ernest_Desc5[] = _("With Prof. Oddenstien's help\nyou revived Poly.");
+const u8 gText_SubQuest_Ernest_Desc5[] = _("You revived Prof. Oddenstien's\nparrot.");
 
 //Kourend Slayer
 const u8 gText_SideQuestName_Kourend_Slayer[] = _("The Dark Totem");

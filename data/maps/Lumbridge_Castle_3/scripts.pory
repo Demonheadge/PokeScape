@@ -144,19 +144,42 @@ script NPC_DUKE_1{
         end
     }
     else {
-        checkitem(ITEM_TALISMAN_MYSTERY, 1) //RUNE MYSTERIES
-        if (var(VAR_RESULT)){
-            msgbox(format("Have you been to see the Archmage about that Talisman yet?"))
-            msgbox(format("Wizards' Tower is located south of Draynor Village.\pYou can get there through Lumbridge Swamp to the south of here.\pReturn to me once you've delivered the Talisman and I'll give you something for your troubles."))
+        subquestmenu (QUEST_MENU_CHECK_COMPLETE, QUEST_RUNE_MYSTERIES, 3) //reported duke
+        if (var(VAR_RESULT) == FALSE) {
+
+            subquestmenu (QUEST_MENU_CHECK_COMPLETE, QUEST_RUNE_MYSTERIES, 2) //reported sedridor
+            if (var(VAR_RESULT) == TRUE) {
+                msgbox(format("What's that?\nMysterious Altars?\pHow fascinating! I'll have to keep my ears out for more information regarding these.\pThank you for looking into this for me.\pHere I would like to reward you with these."))  
+                closemessage
+                hidenamebox
+                giveitem(ITEM_PURPLE_SWEETS, 5)
+                giveitem(ITEM_EARTH_RUNE, 1)
+                giveitem(ITEM_GRANITE_POUCH, 5)
+                namebox("Duke Horacio")
+                msgbox(format("Thank you and don't be a stranger you are welcome in Lumbridge anytime!"))
+                closemessage
+                subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_RUNE_MYSTERIES, 3)
+                questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_RUNE_MYSTERIES)
+                release
+                end
+            }
+            elif (var(VAR_RESULT) == FALSE) {
+                //checkitem(ITEM_TALISMAN_MYSTERY, 1) //RUNE MYSTERIES
+                //if (var(VAR_RESULT)){
+                    msgbox(format("Have you been to see the Archmage about that Talisman yet?"))
+                    msgbox(format("Wizards' Tower is located south of Draynor Village.\pYou can get there through Lumbridge Swamp to the south of here.\pReturn to me once you've delivered the Talisman and I'll give you something for your troubles."))
+                //}
+            }
+
         }
-        else {
-            msgbox(format("You fought well earlier!\n I look forward to a rematch."))
+        elif (var(VAR_RESULT) == TRUE) {
+            msgbox(format("Good to see you again {PLAYER}.\pI look forward to a rematch one day."))
         }
         closemessage
         hidenamebox
+        release
+        end
     }
-    release
-    end
 }
 
 

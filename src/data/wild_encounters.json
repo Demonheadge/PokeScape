@@ -27331,7 +27331,12 @@
               {
                 "min_level": 10,
                 "max_level": 16,
-                "species": "SPECIES_FERRET"
+                "species": "SPECIES_PHEASANT"
+              },
+              {
+                "min_level": 10,
+                "max_level": 16,
+                "species": "SPECIES_PURE"
               },
               {
                 "min_level": 10,
@@ -27341,12 +27346,7 @@
               {
                 "min_level": 10,
                 "max_level": 16,
-                "species": "SPECIES_RUBY_HARVEST"
-              },
-              {
-                "min_level": 10,
-                "max_level": 16,
-                "species": "SPECIES_PIGEON"
+                "species": "SPECIES_RUNE_GUARDIAN"
               },
               {
                 "min_level": 10,
@@ -27361,12 +27361,12 @@
               {
                 "min_level": 10,
                 "max_level": 16,
-                "species": "SPECIES_CROW"
+                "species": "SPECIES_ESSLING"
               },
               {
                 "min_level": 10,
                 "max_level": 16,
-                "species": "SPECIES_RAVENLING"
+                "species": "SPECIES_TURKEY_MALE_FORM"
               },
               {
                 "min_level": 10,
@@ -27376,12 +27376,12 @@
               {
                 "min_level": 10,
                 "max_level": 20,
-                "species": "SPECIES_VULTLING"
+                "species": "SPECIES_ANIMAWHAL"
               },
               {
                 "min_level": 10,
                 "max_level": 15,
-                "species": "SPECIES_DRAUGEN"
+                "species": "SPECIES_ORIGAMI_BALLOON"
               }
             ]
           }

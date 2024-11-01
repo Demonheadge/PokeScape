@@ -1,0 +1,87 @@
+
+
+mapscripts Air_Altar_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION { 
+		if (var(VAR_SAFARI_ZONE_STATE) == 0) 
+		{
+			setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_2)
+		}
+		else 
+		{
+			
+		}
+
+    }
+} 
+
+
+
+
+script AIRALTAR_RUNECRAFTER
+{
+    faceplayer
+    namebox ("Runecrafter")
+    msgbox(format("I really LOVE Runecrafting!\pHuh? My rune essence just turned into a blob monster?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+script ITEM_AIRALTAR_1
+{
+    finditem(ITEM_RUNE_ESSENCE)
+    end
+}
+
+
+script AIR_ALTAR
+{
+   lock
+   msgbox(format("The Altar is radiating AIR energy."))
+   goto(ALTAR_EVOLUTION)
+}
+script WATER_ALTAR
+{
+   lock
+   msgbox(format("The Altar is radiating WATER energy."))
+   goto(ALTAR_EVOLUTION)
+}
+script EARTH_ALTAR
+{
+   lock
+   msgbox(format("The Altar is radiating EARTH energy."))
+   goto(ALTAR_EVOLUTION)
+}
+script FIRE_ALTAR
+{
+   lock
+   msgbox(format("The Altar is radiating FIRE energy."))
+   goto(ALTAR_EVOLUTION)
+}
+script MIND_ALTAR
+{
+   lock
+   msgbox(format("The Altar is radiating MIND energy."))
+   goto(ALTAR_EVOLUTION)
+}
+script BODY_ALTAR
+{
+   lock
+   msgbox(format("The Altar is radiating BODY energy."))
+   goto(ALTAR_EVOLUTION)
+}
+
+
+script ALTAR_EVOLUTION
+{
+    msgbox(format("Your monsters seem drawn to the altar.\pWould you like them to touch it?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT)){
+                tryspecialevo(EVO_ITEM, TRUE, TRUE)
+            }
+    closemessage
+    end 
+}

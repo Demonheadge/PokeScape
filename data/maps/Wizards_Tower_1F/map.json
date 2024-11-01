@@ -211,6 +211,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NPC_WIZARDSTOWER_Book_4"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BOOK_ALTAR_LOCATIONS"
     }
   ],
   "has_night_table": false

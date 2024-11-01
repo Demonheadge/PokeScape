@@ -5979,6 +5979,44 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                 if (evolutionItem == EVO_WATER_SCROLL)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
+
+
+            case EVO_ITEM:
+                if (evolutionItem == EVO_ITEM) {
+                    currentMap = ((gSaveBlock1Ptr->location.mapGroup) << 8 | gSaveBlock1Ptr->location.mapNum);
+                    if (currentMap == MAP_AIR_ALTAR) {
+                        if (evolutions[i].param == ITEM_AIR_RUNE) {
+                            targetSpecies = evolutions[i].targetSpecies;
+                        }
+                    }
+                    if (currentMap == MAP_WATER_ALTAR) {
+                        if (evolutions[i].param == ITEM_WATER_RUNE) {
+                            targetSpecies = evolutions[i].targetSpecies;
+                        }
+                    }
+                    if (currentMap == MAP_EARTH_ALTAR) {
+                        if (evolutions[i].param == ITEM_EARTH_RUNE) {
+                            targetSpecies = evolutions[i].targetSpecies;
+                        }
+                    }
+                    if (currentMap == MAP_FIRE_ALTAR) {
+                        if (evolutions[i].param == ITEM_FIRE_RUNE) {
+                            targetSpecies = evolutions[i].targetSpecies;
+                        }
+                    }
+                    if (currentMap == MAP_MIND_ALTAR) {
+                        if (evolutions[i].param == ITEM_MIND_RUNE) {
+                            targetSpecies = evolutions[i].targetSpecies;
+                        }
+                    }
+                    if (currentMap == MAP_BODY_ALTAR) {
+                        if (evolutions[i].param == ITEM_BODY_RUNE) {
+                            targetSpecies = evolutions[i].targetSpecies;
+                        }
+                    }
+                }
+                break;
+
             }
         }
         break;

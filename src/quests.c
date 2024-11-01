@@ -528,6 +528,15 @@ static const struct SubQuest sSubQuests_RUNE_MYSTERIES[QUEST_RUNE_MYSTERIES_SUB_
 	      sText_Found
 	),
 	sub_quest(
+	      51,
+	      gText_SubQuest_RuneMysteries_11,
+	      gText_SubQuest1_Desc_RuneMysteries_11,
+	      gText_MapName_WizardsTower,
+	      OBJ_EVENT_GFX_WIZARD_ARCHMAGE,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
 	      5,
 	      gText_SubQuest_RuneMysteries_3,
 	      gText_SubQuest1_Desc_RuneMysteries_3,

@@ -131,18 +131,19 @@ NPC_DUKE_1::
 	lock
 	faceplayer
 	namebox TRIGGER_GYM_DUKE_Text_0
-	goto_if_unset FLAG_BADGE01_GET, NPC_DUKE_1_2
-	checkitem ITEM_TALISMAN_MYSTERY, 1
-	compare VAR_RESULT, 0
-	goto_if_ne NPC_DUKE_1_6
-	msgbox NPC_DUKE_1_Text_3
-NPC_DUKE_1_5:
+	goto_if_unset FLAG_BADGE01_GET, NPC_DUKE_1_1
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_RUNE_MYSTERIES, 3
+	compare VAR_RESULT, FALSE
+	goto_if_eq NPC_DUKE_1_5
+	compare VAR_RESULT, TRUE
+	goto_if_eq NPC_DUKE_1_6
+NPC_DUKE_1_4:
 	closemessage
 	hidenamebox
 	release
 	end
 
-NPC_DUKE_1_2:
+NPC_DUKE_1_1:
 	msgbox NPC_DUKE_1_Text_0
 	closemessage
 	hidenamebox
@@ -157,10 +158,37 @@ NPC_DUKE_1_2:
 	release
 	end
 
+NPC_DUKE_1_5:
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_RUNE_MYSTERIES, 2
+	compare VAR_RESULT, TRUE
+	goto_if_eq NPC_DUKE_1_9
+	compare VAR_RESULT, FALSE
+	goto_if_eq NPC_DUKE_1_10
+	goto NPC_DUKE_1_4
+
 NPC_DUKE_1_6:
+	msgbox NPC_DUKE_1_Text_5
+	goto NPC_DUKE_1_4
+
+NPC_DUKE_1_9:
 	msgbox NPC_DUKE_1_Text_1
+	closemessage
+	hidenamebox
+	giveitem ITEM_PURPLE_SWEETS, 5
+	giveitem ITEM_EARTH_RUNE, 1
+	giveitem ITEM_GRANITE_POUCH, 5
+	namebox TRIGGER_GYM_DUKE_Text_0
 	msgbox NPC_DUKE_1_Text_2
-	goto NPC_DUKE_1_5
+	closemessage
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_RUNE_MYSTERIES, 3
+	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_RUNE_MYSTERIES
+	release
+	end
+
+NPC_DUKE_1_10:
+	msgbox NPC_DUKE_1_Text_3
+	msgbox NPC_DUKE_1_Text_4
+	goto NPC_DUKE_1_4
 
 
 LUMBRIDGE_GYM_GUARD_1::
@@ -317,10 +345,24 @@ NPC_DUKE_1_Text_0:
 	.string "I shall be waiting!$"
 
 NPC_DUKE_1_Text_1:
+	.string "What's that?\n"
+	.string "Mysterious Altars?\p"
+	.string "How fascinating! I'll have to keep my\n"
+	.string "ears out for more information regarding\l"
+	.string "these.\p"
+	.string "Thank you for looking into this for me.\p"
+	.string "Here I would like to reward you with\n"
+	.string "these.$"
+
+NPC_DUKE_1_Text_2:
+	.string "Thank you and don't be a stranger you\n"
+	.string "are welcome in Lumbridge anytime!$"
+
+NPC_DUKE_1_Text_3:
 	.string "Have you been to see the Archmage\n"
 	.string "about that Talisman yet?$"
 
-NPC_DUKE_1_Text_2:
+NPC_DUKE_1_Text_4:
 	.string "Wizards' Tower is located south of\n"
 	.string "Draynor Village.\p"
 	.string "You can get there through Lumbridge\n"
@@ -329,9 +371,9 @@ NPC_DUKE_1_Text_2:
 	.string "Talisman and I'll give you something for\l"
 	.string "your troubles.$"
 
-NPC_DUKE_1_Text_3:
-	.string "You fought well earlier!\n"
-	.string "I look forward to a rematch.$"
+NPC_DUKE_1_Text_5:
+	.string "Good to see you again {PLAYER}.\p"
+	.string "I look forward to a rematch one day.$"
 
 LUMBRIDGE_GYM_GUARD_1_Text_0:
 	.string "Guard$"
