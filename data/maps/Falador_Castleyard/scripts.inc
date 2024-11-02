@@ -62,6 +62,11 @@ FALADORCASTLE_QUEST_STATE_4:
 	return
 
 
+ITEM_FALADOR_COURTYARD_1::
+	finditem ITEM_SPIRIT_CHARM
+	end
+
+
 NPC_FALADORCASTLE_QUEST_PART_1::
 	lock
 	namebox NPC_FALADORCASTLE_QUEST_PART_1_Text_0
@@ -369,6 +374,7 @@ NPC_FALADORCASTLE_GYM_TRAINER_2::
 NPC_FALADORCASTLE_GYM_TRAINER_2_1:
 	hidenamebox
 	closemessage
+	release
 	end
 
 NPC_FALADORCASTLE_GYM_TRAINER_2_2:
@@ -515,6 +521,7 @@ SetGymTrainers_FALADOR::
 	settrainerflag TRAINER_FALADOR_GYM_3
 	settrainerflag TRAINER_FALADOR_GYM_4
 	settrainerflag TRAINER_FALADOR_GYM_5
+	settrainerflag TRAINER_FALADOR_GYM_6
 	return
 
 

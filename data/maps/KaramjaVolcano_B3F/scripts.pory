@@ -1432,12 +1432,12 @@ movement HAM_EVENT_CRANDOR_VOLCANO_25 {
 movement HAM_EVENT_CRANDOR_VOLCANO_26 {
     walk_fast_down * 3
     walk_fast_left * 3
-    walk_fast_down
+    walk_fast_down * 2
 }
 movement HAM_EVENT_CRANDOR_VOLCANO_27 {
     walk_fast_down * 4
     walk_fast_left * 3
-    walk_fast_down
+    walk_fast_down * 2
 }
 
 

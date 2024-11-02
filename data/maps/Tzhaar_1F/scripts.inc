@@ -19,8 +19,10 @@ TZHAAR_STATE::
 	compare VAR_MITHRILMAN_STATE, 10
 	goto_if_eq TZHAAR_STATE_2
 TZHAAR_STATE_1:
+	goto_if_set FLAG_TZHAAR_FOLLOW_GYM_INFO, TZHAAR_STATE_5
+TZHAAR_STATE_4:
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 150
-	goto_if_eq TZHAAR_STATE_4
+	goto_if_eq TZHAAR_STATE_7
 	setflag FLAG_TEMP_1F
 	return
 
@@ -29,7 +31,11 @@ TZHAAR_STATE_2:
 	addobject 25
 	goto TZHAAR_STATE_1
 
-TZHAAR_STATE_4:
+TZHAAR_STATE_5:
+	setobjectxyperm 19, 4, 32
+	goto TZHAAR_STATE_4
+
+TZHAAR_STATE_7:
 	clearflag FLAG_TEMP_1F
 	return
 
@@ -113,14 +119,151 @@ TZHAAR_GYM_NPC::
 TZHAAR_NPC_1::
 	faceplayer
 	namebox STORYMODE_TZHAAR_NPC_Text_0
-	msgbox TZHAAR_NPC_1_Text_0
-	msgbox TZHAAR_NPC_1_Text_1
-	msgbox TZHAAR_NPC_1_Text_2
+	goto_if_unset FLAG_TZHAAR_FOLLOW_GYM_INFO, TZHAAR_NPC_1_2
+	random 3
+	switch VAR_RESULT
+	case 0, TZHAAR_NPC_1_9
+	case 1, TZHAAR_NPC_1_10
+	case 2, TZHAAR_NPC_1_11
+TZHAAR_NPC_1_7:
 	closemessage
 	hidenamebox
+TZHAAR_NPC_1_1:
 	release
 	end
 
+TZHAAR_NPC_1_2:
+	msgbox TZHAAR_NPC_1_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne TZHAAR_NPC_1_5
+	goto TZHAAR_NPC_1_1
+
+TZHAAR_NPC_1_5:
+	msgbox TZHAAR_NPC_1_Text_1
+	closemessage
+	hidenamebox
+	applymovement 19, MOVEMENT_TZHAAR_GYMWALK_1
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	compare VAR_TEMP_1, 14
+	goto_if_eq TZHAAR_NPC_1_13
+	compare VAR_TEMP_1, 16
+	goto_if_eq TZHAAR_NPC_1_14
+	compare VAR_TEMP_2, 25
+	goto_if_eq TZHAAR_NPC_1_15
+TZHAAR_NPC_1_12:
+	waitmovement 0
+	msgbox TZHAAR_NPC_1_Text_2
+	closemessage
+	hidenamebox
+	applymovement 19, MOVEMENT_TZHAAR_GYMWALK_6
+	waitmovement 0
+	setflag FLAG_TZHAAR_FOLLOW_GYM_INFO
+	goto TZHAAR_NPC_1_1
+
+TZHAAR_NPC_1_9:
+	msgbox TZHAAR_NPC_1_Text_3
+	goto TZHAAR_NPC_1_7
+
+TZHAAR_NPC_1_10:
+	msgbox TZHAAR_NPC_1_Text_4
+	goto TZHAAR_NPC_1_7
+
+TZHAAR_NPC_1_11:
+	msgbox TZHAAR_NPC_1_Text_5
+	goto TZHAAR_NPC_1_7
+
+TZHAAR_NPC_1_13:
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_TZHAAR_GYMWALK_3
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_TZHAAR_GYMWALK_5
+	goto TZHAAR_NPC_1_12
+
+TZHAAR_NPC_1_14:
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_TZHAAR_GYMWALK_2
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_TZHAAR_GYMWALK_5
+	goto TZHAAR_NPC_1_12
+
+TZHAAR_NPC_1_15:
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_TZHAAR_GYMWALK_4
+	goto TZHAAR_NPC_1_12
+
+
+MOVEMENT_TZHAAR_GYMWALK_1:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_left
+	walk_down
+	walk_left
+	walk_down
+	walk_left
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	face_right
+	step_end
+
+MOVEMENT_TZHAAR_GYMWALK_2:
+	walk_left
+	step_end
+
+MOVEMENT_TZHAAR_GYMWALK_3:
+	walk_right
+	step_end
+
+MOVEMENT_TZHAAR_GYMWALK_4:
+	lock_facing_direction
+	walk_left
+	unlock_facing_direction
+	walk_right
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_left
+	walk_down
+	walk_left
+	walk_down
+	walk_left
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+MOVEMENT_TZHAAR_GYMWALK_5:
+	walk_down
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_left
+	walk_down
+	walk_left
+	walk_down
+	walk_left
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+MOVEMENT_TZHAAR_GYMWALK_6:
+	walk_down
+	walk_down
+	face_up
+	step_end
 
 TZHAAR_NPC_2::
 	lock
@@ -410,7 +553,7 @@ Mithrilman_TZHAAR1::
 	playbgm MUS_ENCOUNTER_MAY, 1
 	namebox Mithrilman_TZHAAR1_Text_0
 	msgbox Mithrilman_TZHAAR1_Text_1
-	trainerbattle_no_intro TRAINER_MITHRILMAN5, Mithrilman_TZHAAR1_Text_2
+	trainerbattle_no_intro TRAINER_MITHRILMAN3, Mithrilman_TZHAAR1_Text_2
 	namebox Mithrilman_TZHAAR1_Text_0
 	msgbox Mithrilman_TZHAAR1_Text_3
 	waitmessage
@@ -477,15 +620,35 @@ TZHAAR_NPC_1_Text_0:
 	.string "Our strongest participate in what you\n"
 	.string "call MvM Championships.\p"
 	.string "We even have a gym located down this\n"
-	.string "corridor.$"
+	.string "corridor.\p"
+	.string "Would you like me to show you?$"
 
 TZHAAR_NPC_1_Text_1:
-	.string "Would you like me to show you?$"
+	.string "Okay Jalyt, follow me.$"
 
 TZHAAR_NPC_1_Text_2:
 	.string "Here we are this is the Tzhaar Gym, our\n"
 	.string "champion is one of the strongest\l"
-	.string "Tzhaar!$"
+	.string "Tzhaar!\p"
+	.string "I will be over here if you have anymore\n"
+	.string "questions about the gym.$"
+
+TZHAAR_NPC_1_Text_3:
+	.string "The Tzhaar Gym challenge has 5 waves\n"
+	.string "you must battle through before you can\l"
+	.string "battle our champion.$"
+
+TZHAAR_NPC_1_Text_4:
+	.string "Our champion knows a move that will do\n"
+	.string "double damage if your monsters are\l"
+	.string "burnt.\p"
+	.string "So watch out for that!$"
+
+TZHAAR_NPC_1_Text_5:
+	.string "Our Fight Caves are basically just a\n"
+	.string "harder version of the gym challenge.\p"
+	.string "But in order to participate in them you\n"
+	.string "must first have our gym badge.$"
 
 TZHAAR_NPC_2_Text_0:
 	.string "Through here is the Elder Kiln.\p"
@@ -551,7 +714,7 @@ TZHAAR_NPC_RUNE_ARMOUR_Text_0:
 	.string "Choob$"
 
 TZHAAR_NPC_RUNE_ARMOUR_Text_1:
-	.string "This gym challenge is so hard.\p"
+	.string "These Fight Caves are so hard.\p"
 	.string "I keep getting 1-hit…$"
 
 TZHAAR_NPC_12_Text_0:

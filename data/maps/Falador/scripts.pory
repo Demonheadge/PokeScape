@@ -1375,7 +1375,7 @@ script NPC_FALADOR_STORY_WHITE_KNIGHT_4
 	lock
 	faceplayer
     namebox ("White Knight")
-	msgbox(format(""))
+	msgbox(format("Have you visited any battle pubs?\pDid you know you can challenge people to battles once per day for some cool rewards?"))
     waitmessage
     hidenamebox
 	release

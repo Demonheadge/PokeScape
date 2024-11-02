@@ -343,7 +343,7 @@ script HAM_ROUTE9_MELZARS_2{
     lock
 	faceplayer
 	namebox("H.A.M GRUNT")
-    msgbox(format("Where is she?\pEveryone has already gone in to look for the map."))
+    msgbox(format("Where are they?\pEveryone has already gone in to look for the map."))
     hidenamebox
 	closemessage
 	release

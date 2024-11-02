@@ -69,6 +69,46 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ALTAR_AIR_ENTER"
+    },
+    {
+      "type": "sign",
+      "x": 22,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ALTAR_AIR_ENTER"
+    },
+    {
+      "type": "sign",
+      "x": 24,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ALTAR_AIR_ENTER"
+    },
+    {
+      "type": "sign",
+      "x": 24,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ALTAR_AIR_ENTER"
+    },
+    {
+      "type": "sign",
+      "x": 23,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ALTAR_AIR_ENTER"
+    },
+    {
+      "type": "sign",
+      "x": 22,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ALTAR_AIR_ENTER"
     }
   ],
   "has_night_table": true

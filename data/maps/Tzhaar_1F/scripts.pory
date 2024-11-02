@@ -17,6 +17,12 @@ script TZHAAR_STATE {
 		addobject(25)
 	}
 
+    if (flag(FLAG_TZHAAR_FOLLOW_GYM_INFO) == TRUE) {
+		setobjectxyperm(19, 4, 32)
+	}
+
+    
+
     if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 150) {
         clearflag(FLAG_TEMP_1F)
     }
@@ -111,13 +117,104 @@ script TZHAAR_NPC_1
 {
     faceplayer
     namebox ("Tzhaar")
-    msgbox(format("We Tzhaar are strong.\pOur strongest participate in what you call MvM Championships.\pWe even have a gym located down this corridor."))
-    msgbox(format("Would you like me to show you?"))
-    msgbox(format("Here we are this is the Tzhaar Gym, our champion is one of the strongest Tzhaar!"))
-    closemessage
-    hidenamebox
+    if (flag(FLAG_TZHAAR_FOLLOW_GYM_INFO) == FALSE) {
+        msgbox(format("We Tzhaar are strong.\pOur strongest participate in what you call MvM Championships.\pWe even have a gym located down this corridor.\pWould you like me to show you?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT)) {
+            msgbox(format("Okay Jalyt, follow me."))
+            closemessage
+            hidenamebox
+            applymovement(19, MOVEMENT_TZHAAR_GYMWALK_1)
+
+            getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+            if (var(VAR_TEMP_1) == 14){
+                applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_TZHAAR_GYMWALK_3)
+                waitmovement(OBJ_EVENT_ID_PLAYER)
+                applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_TZHAAR_GYMWALK_5)
+            } 
+            elif (var(VAR_TEMP_1) == 16){
+                applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_TZHAAR_GYMWALK_2)
+                waitmovement(OBJ_EVENT_ID_PLAYER)
+                applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_TZHAAR_GYMWALK_5)
+            }
+            elif (var(VAR_TEMP_2) == 25) {
+                applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_TZHAAR_GYMWALK_4)
+            }
+            waitmovement(0)
+
+            msgbox(format("Here we are this is the Tzhaar Gym, our champion is one of the strongest Tzhaar!\pI will be over here if you have anymore questions about the gym."))
+            closemessage
+            hidenamebox
+            applymovement(19, MOVEMENT_TZHAAR_GYMWALK_6)
+            waitmovement(0)
+            setflag(FLAG_TZHAAR_FOLLOW_GYM_INFO)
+        }
+    }
+    else {
+        random(3) 
+        switch (var(VAR_RESULT)) { 
+            case 0: 
+                msgbox(format("The Tzhaar Gym challenge has 5 waves you must battle through before you can battle our champion."))
+            case 1: 
+                msgbox(format("Our champion knows a move that will do double damage if your monsters are burnt.\pSo watch out for that!"))
+            case 2: 
+                msgbox(format("Our Fight Caves are basically just a harder version of the gym challenge.\pBut in order to participate in them you must first have our gym badge."))
+        }
+        closemessage
+        hidenamebox
+    }
     release
     end
+}
+movement MOVEMENT_TZHAAR_GYMWALK_1 {
+    walk_down * 2
+    walk_left * 3
+    walk_down
+    walk_left
+    walk_down
+    walk_left
+    walk_down
+    walk_left
+    walk_down
+    walk_left * 5
+    face_right
+}
+movement MOVEMENT_TZHAAR_GYMWALK_2 {
+    walk_left
+}
+movement MOVEMENT_TZHAAR_GYMWALK_3 {
+    walk_right
+}
+movement MOVEMENT_TZHAAR_GYMWALK_4 {
+    lock_facing_direction
+    walk_left
+    unlock_facing_direction
+    walk_right
+    walk_down * 1
+    walk_left * 3
+    walk_down
+    walk_left
+    walk_down
+    walk_left
+    walk_down
+    walk_left
+    walk_down
+    walk_left * 4
+}
+movement MOVEMENT_TZHAAR_GYMWALK_5 {
+    walk_down * 2
+    walk_left * 3
+    walk_down
+    walk_left
+    walk_down
+    walk_left
+    walk_down
+    walk_left
+    walk_down
+    walk_left * 4
+}
+movement MOVEMENT_TZHAAR_GYMWALK_6 {
+    walk_down * 2
+    face_up
 }
 
 script TZHAAR_NPC_2
@@ -247,7 +344,7 @@ script TZHAAR_NPC_RUNE_ARMOUR
     lock
     faceplayer
     namebox ("Choob")
-    msgbox(format("This gym challenge is so hard.\pI keep getting 1-hit…"))
+    msgbox(format("These Fight Caves are so hard.\pI keep getting 1-hit…"))
     closemessage
     hidenamebox
     release
@@ -453,7 +550,7 @@ script Mithrilman_TZHAAR1 {
     playbgm (MUS_ENCOUNTER_MAY, 1)
     namebox("Mithrilman")
     msgbox(format("Fromst the scorching heats of the dunes to a pleasant vaction I see knave.\pGreetings.\pThoust must be here to battle the Tzhaar?\pAllow thine to grant yee some knowledge as thoust superior in battle provesst.\pFirst of thoust shouldn't use iron inside a volcano.\pIt would smelts and yee would end in malfigured armour.\pNot for the goodst of thoust body, mayhaps a battle helps thoust?\pWell yee should show thine your provess then, beware, for the heat of this battle will be nothing like the volcano!"))
-    trainerbattle_no_intro(TRAINER_MITHRILMAN5,format("…"))
+    trainerbattle_no_intro(TRAINER_MITHRILMAN3,format("…"))
     namebox("Mithrilman")
     msgbox(format("Thoust battle fair?\pJokest thine not, the heat from the volcano has malfigured mine gracious Mithril armour.\pWe shalt call this a draw for now, whilst thine seek a smith to fix thine armour.\pFare thoust less than well,\pKnave!"))
     waitmessage
@@ -461,10 +558,10 @@ script Mithrilman_TZHAAR1 {
     hidenamebox
 	fadescreenswapbuffers (FADE_TO_BLACK)
 	removeobject(2)
-	fadescreenswapbuffers(FADE_FROM_BLACK)
     setvar(VAR_MITHRILMAN_STATE, 15)
     setflag(FLAG_TEMP_1C) 	//mithrilman
 	removeobject(25)		//mithrilman
+	fadescreenswapbuffers(FADE_FROM_BLACK)
     subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_MITHRILMAN_QUEST, 2)
     playse(SE_PIN)
 	applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_QUESTIONMARK)

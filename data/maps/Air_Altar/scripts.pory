@@ -29,6 +29,16 @@ script AIRALTAR_RUNECRAFTER
     release
     end
 }
+script AIRALTAR_RUNECRAFTER_2
+{
+    faceplayer
+    namebox ("Runecrafter")
+    msgbox(format("Woah! My giant rat just evolved from touching the Altar!\pWhy did that happen I wonder?"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
 
 
 script ITEM_AIRALTAR_1

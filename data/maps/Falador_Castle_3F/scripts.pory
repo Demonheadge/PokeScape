@@ -192,14 +192,14 @@ script QUEST_FALADORCASTLE_EVENT_AFTER_GYM //after the gym you get teleported to
     waitmovement(0)
     
 //Sir Tiffy
-    namebox ("Sir Tiffy Cashien")
+    namebox ("Tiffy Cashien")
     msgbox(format("May I take a look at those?\pHmm…{PAUSE 15}\nThis is…"))
     closemessage
     hidenamebox
     playse(SE_PIN)
     applymovement(OBJ_EVENT_ID_SIR_TIFFY, MOVEMENT_EXCLAMATIONMARK)
     applymovement(OBJ_EVENT_ID_SIR_OWEN, Movement_InteractFACERIGHT)
-    namebox ("Sir Tiffy Cashien")
+    namebox ("Tiffy Cashien")
     msgbox(format("You must be pulling my leg!\pThis is a map to the lost island Crandor!"))
     closemessage
     hidenamebox
@@ -215,7 +215,7 @@ script QUEST_FALADORCASTLE_EVENT_AFTER_GYM //after the gym you get teleported to
 
 //Sir Tiffy
     applymovement(OBJ_EVENT_ID_SIR_TIFFY, Movement_InteractFACEDOWN)
-    namebox ("Sir Tiffy Cashien")
+    namebox ("Tiffy Cashien")
     msgbox(format("30 years ago, Crandor used to be a thriving city full of adventurers and mages but one day we lost all contact with them.\pThere must be something on the Island they want."))
     //30 years ago, Crandor used to be a thriving city full of adventurers and mages but one day we lost all contact with them.
     //To this day no one has figured out what happened, as sailing to the island has been next to impossible due to the harsh seas.
@@ -245,13 +245,13 @@ script QUEST_FALADORCASTLE_EVENT_AFTER_GYM //after the gym you get teleported to
     applymovement(OBJ_EVENT_ID_SIR_TIFFY, movement_falador_postgym_9)
     waitmovement(0)
 
-    namebox ("Sir Tiffy Cashien")
+    namebox ("Tiffy Cashien")
     msgbox(format("Actually there may be someone who can help.\pCaptain Ned.\pHe used to be one of the best sailors back in the day but has since retired in Draynor Village.\pIf anyone has the knowledge and experience to get there, it'll be him."))
     closemessage
     hidenamebox
     applymovement(OBJ_EVENT_ID_SIR_TIFFY, MOVEMENT_INTERACT_DOWN)
     waitmovement(0)
-    namebox ("Sir Tiffy Cashien")
+    namebox ("Tiffy Cashien")
     msgbox(format("Here {PLAYER} I assembled the map pieces for you.\pYou'll be needing the map if you want to convince Ned to sail again."))
     closemessage
     hidenamebox

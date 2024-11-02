@@ -8730,6 +8730,16 @@
       "secondary_tileset": "gTileset_IndoorTowns1",
       "border_filepath": "data/layouts/Lumbridge_House_5/border.bin",
       "blockdata_filepath": "data/layouts/Lumbridge_House_5/map.bin"
+    },
+    {
+      "id": "LAYOUT_FALADOR_HOUSE_1",
+      "name": "Falador_House_1_Layout",
+      "width": 12,
+      "height": 8,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns1",
+      "border_filepath": "data/layouts/Falador_House_1/border.bin",
+      "blockdata_filepath": "data/layouts/Falador_House_1/map.bin"
     }
   ]
 }

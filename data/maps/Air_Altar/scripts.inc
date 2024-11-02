@@ -23,6 +23,16 @@ AIRALTAR_RUNECRAFTER::
 	end
 
 
+AIRALTAR_RUNECRAFTER_2::
+	faceplayer
+	namebox AIRALTAR_RUNECRAFTER_Text_0
+	msgbox AIRALTAR_RUNECRAFTER_2_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 ITEM_AIRALTAR_1::
 	finditem ITEM_RUNE_ESSENCE
 	end
@@ -90,6 +100,11 @@ AIRALTAR_RUNECRAFTER_Text_1:
 	.string "I really LOVE Runecrafting!\p"
 	.string "Huh? My rune essence just turned into a\n"
 	.string "blob monster?$"
+
+AIRALTAR_RUNECRAFTER_2_Text_0:
+	.string "Woah! My giant rat just evolved from\n"
+	.string "touching the Altar!\p"
+	.string "Why did that happen I wonder?$"
 
 AIR_ALTAR_Text_0:
 	.string "The Altar is radiating AIR energy.$"

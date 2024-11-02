@@ -74,6 +74,11 @@ script FALADORCASTLE_QUEST_STATE{
 	}
 }
 
+script ITEM_FALADOR_COURTYARD_1
+{
+    finditem(ITEM_SPIRIT_CHARM)
+    end
+}
 
 //IGNORE
 script NPC_FALADORCASTLE_QUEST_PART_1
@@ -374,6 +379,7 @@ script NPC_FALADORCASTLE_GYM_TRAINER_2 {
     }
     hidenamebox
     closemessage
+    release
     end
 }
 //Sir Pryce
@@ -501,6 +507,7 @@ script SetGymTrainers_FALADOR {
     settrainerflag(TRAINER_FALADOR_GYM_3)
     settrainerflag(TRAINER_FALADOR_GYM_4)
     settrainerflag(TRAINER_FALADOR_GYM_5)
+    settrainerflag(TRAINER_FALADOR_GYM_6)
     return
 }
 

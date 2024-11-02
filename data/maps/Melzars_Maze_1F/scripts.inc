@@ -467,6 +467,6 @@ HAM_ROUTE9_MELZARS_1_Text_3:
 	.string "Where is everyone?$"
 
 HAM_ROUTE9_MELZARS_2_Text_0:
-	.string "Where is she?\p"
+	.string "Where are they?\p"
 	.string "Everyone has already gone in to look\n"
 	.string "for the map.$"

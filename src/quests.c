@@ -802,7 +802,7 @@ static const struct SubQuest sSubQuests_MAIN_STORY[QUEST_MAIN_STORY_SUB_COUNT] =
 	      gText_SubQuest_Main_Story_Name9,
 	      gText_SubQuest_Main_Story_Desc9,
 	      gText_MapName_PortSarim,
-	      OBJ_EVENT_GFX_SHIP_1,
+	      OBJ_EVENT_GFX_PIRATE_SHIP,
 	      OBJECT,
 	      sText_Delivered
 	),

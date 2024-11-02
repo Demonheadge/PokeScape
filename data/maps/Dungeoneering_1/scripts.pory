@@ -1185,7 +1185,7 @@ script DungeonInteractions_Object1 {
         case 3: //RANDOM DUNGEONEERING ITEM
             goto(DungeonInteractions_TrainerBattle)
         case 4: //RANDOM DUNGEONEERING ITEM
-            goto(EventScript_New_RockSmash)
+            goto(EventScript_RockSmash)
         }  
     end
 }
@@ -1201,7 +1201,7 @@ script DungeonInteractions_Object2 {
         case 3: //RANDOM DUNGEONEERING ITEM
             goto(DungeonInteractions_TrainerBattle)
         case 4: //RANDOM DUNGEONEERING ITEM
-            goto(EventScript_New_RockSmash)
+            goto(EventScript_RockSmash)
         }  
     end
 }
@@ -1217,7 +1217,7 @@ script DungeonInteractions_Object3 {
         case 3: //RANDOM DUNGEONEERING ITEM
             goto(DungeonInteractions_TrainerBattle)
         case 4: //RANDOM DUNGEONEERING ITEM
-            goto(EventScript_New_RockSmash)
+            goto(EventScript_RockSmash)
         }  
     end
 }
@@ -1233,7 +1233,7 @@ script DungeonInteractions_Object4 {
         case 3: //RANDOM DUNGEONEERING ITEM
             goto(DungeonInteractions_TrainerBattle)
         case 4: //RANDOM DUNGEONEERING ITEM
-            goto(EventScript_New_RockSmash)
+            goto(EventScript_RockSmash)
         }  
     end
 }
@@ -1249,7 +1249,7 @@ script DungeonInteractions_Object5 {
         case 3: //RANDOM DUNGEONEERING ITEM
             goto(DungeonInteractions_TrainerBattle)
         case 4: //RANDOM DUNGEONEERING ITEM
-            goto(EventScript_New_RockSmash)
+            goto(EventScript_RockSmash)
         }  
     end
 }
@@ -1265,7 +1265,7 @@ script DungeonInteractions_Object6 {
         case 3: //RANDOM DUNGEONEERING ITEM
             goto(DungeonInteractions_TrainerBattle)
         case 4: //RANDOM DUNGEONEERING ITEM
-            goto(EventScript_New_RockSmash)
+            goto(EventScript_RockSmash)
         }  
     end
 }
@@ -1281,7 +1281,7 @@ script DungeonInteractions_Object7 {
         case 3: //RANDOM DUNGEONEERING ITEM
             goto(DungeonInteractions_TrainerBattle)
         case 4: //RANDOM DUNGEONEERING ITEM
-            goto(EventScript_New_RockSmash)
+            goto(EventScript_RockSmash)
         }  
     end
 }
@@ -1297,7 +1297,7 @@ script DungeonInteractions_Object8 {
         case 3: //RANDOM DUNGEONEERING ITEM
             goto(DungeonInteractions_TrainerBattle)
         case 4: //RANDOM DUNGEONEERING ITEM
-            goto(EventScript_New_RockSmash)
+            goto(EventScript_RockSmash)
         }  
     end
 }
@@ -1313,7 +1313,7 @@ script DungeonInteractions_Object9 {
         case 3: //RANDOM DUNGEONEERING ITEM
             goto(DungeonInteractions_TrainerBattle)
         case 4: //RANDOM DUNGEONEERING ITEM
-            goto(EventScript_New_RockSmash)
+            goto(EventScript_RockSmash)
         }  
     end
 }
@@ -1329,7 +1329,7 @@ script DungeonInteractions_Object10 {
         case 3: //RANDOM DUNGEONEERING ITEM
             goto(DungeonInteractions_TrainerBattle)
         case 4: //RANDOM DUNGEONEERING ITEM
-            goto(EventScript_New_RockSmash)
+            goto(EventScript_RockSmash)
         }  
     end
 }
@@ -1345,7 +1345,7 @@ script DungeonInteractions {
         case 3: //RANDOM DUNGEONEERING ITEM
             goto(DungeonInteractions_TrainerBattle)
         case 4: //RANDOM DUNGEONEERING ITEM
-            goto(EventScript_New_RockSmash)
+            goto(EventScript_RockSmash)
         }  
     end
 }

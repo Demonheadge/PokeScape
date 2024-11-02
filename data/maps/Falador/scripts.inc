@@ -1207,7 +1207,7 @@ NPC_FALADOR_STORY_WHITE_KNIGHT_4::
 	lock
 	faceplayer
 	namebox NPC_FALADOR_WHITEKNIGHT_1_Text_0
-	msgbox NPC_FALADOR_NPC_8_Text_0
+	msgbox NPC_FALADOR_STORY_WHITE_KNIGHT_4_Text_0
 	waitmessage
 	hidenamebox
 	release
@@ -1910,6 +1910,12 @@ NPC_FALADOR_STORY_WHITE_KNIGHT_3_Text_0:
 	.string "Welcome to Falador!\p"
 	.string "The MvM gym is located in Falador castle\n"
 	.string "south of the main square.$"
+
+NPC_FALADOR_STORY_WHITE_KNIGHT_4_Text_0:
+	.string "Have you visited any battle pubs?\p"
+	.string "Did you know you can challenge people\n"
+	.string "to battles once per day for some cool\l"
+	.string "rewards?$"
 
 NPC_FALADOR_STORY_WHITE_KNIGHT_5_Text_0:
 	.string "I have been assigned to this position.\p"

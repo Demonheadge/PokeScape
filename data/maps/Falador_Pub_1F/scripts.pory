@@ -52,30 +52,63 @@ script NPC_FALADORPUB_BARMAID_3
 
 
 
-script NPC_FALADORPUB_NPC1
-{
+
+script NPC_FALADORPUB_NPC1 { 
 	lock
 	faceplayer
-    namebox ("Guard")
+    namebox("Guard")
 	msgbox(format("Today was a rough day.\pSeven of my friends were killed and then the perpetrator lit fireworks over his head before he ran off.\pI hate this job."))
-    waitmessage
+	hidenamebox
+	if (flag(FLAG_PUB_TRAINER_10) == false) 
+	{
+		msgbox(format("Do you wish to challenge them to a battle?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT))
+			{
+				hidenamebox
+				setflag(FLAG_PUB_TRAINER_10)
+				trainerbattle_no_intro(TRAINER_PUB_FALADOR_2, msgbox(format("…")))
+				namebox("Guard")
+				msgbox(format("Wow, today just keeps getting worse and worse."))
+				hidenamebox
+				call(GIVE_RANDOM_ITEM)
+			}
+	}
     hidenamebox
-	release
+    release
 	end
 }
 
 
-script NPC_FALADORPUB_NPC2
-{
+
+script NPC_FALADORPUB_NPC2 { 
 	lock
 	faceplayer
     namebox ("White Knight")
 	msgbox(format("Some guy named Sir Theodore made a big hassle at work.\pApparently cleaning duty is not in accords with the ways of the White Knight code."))
-    waitmessage
+	hidenamebox
+	if (flag(FLAG_PUB_TRAINER_11) == false) 
+	{
+		msgbox(format("Do you wish to challenge them to a battle?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT))
+			{
+				hidenamebox
+				setflag(FLAG_PUB_TRAINER_11)
+				trainerbattle_no_intro(TRAINER_PUB_FALADOR_1, msgbox(format("…")))
+				namebox ("White Knight")
+				msgbox(format("You are strong, take this."))
+				hidenamebox
+				call(GIVE_RANDOM_ITEM)
+			}
+	}
     hidenamebox
-	release
+    release
 	end
 }
+
+
+
+
+
 
 script NPC_FALADORPUB_NPC3
 {
@@ -131,17 +164,34 @@ script NPC_FALADORPUB_NPC7
 	release
 	end
 }
-script NPC_FALADORPUB_NPC8
-{
+
+
+
+script NPC_FALADORPUB_NPC8 {
 	lock
 	faceplayer
     namebox ("Black Knight")
 	msgbox(format("Scram!\pI cannot hear what they are saying at that table if you are here annoying me!"))
-    waitmessage
+	hidenamebox
+	if (flag(FLAG_PUB_TRAINER_9) == false) 
+	{
+		msgbox(format("Do you wish to challenge them to a battle?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT))
+			{
+				hidenamebox
+				setflag(FLAG_PUB_TRAINER_9)
+				trainerbattle_no_intro(TRAINER_PUB_FALADOR_3, msgbox(format("…")))
+				namebox ("Black Knight")
+				msgbox(format("Take this and get out of here."))
+				hidenamebox
+				call(GIVE_RANDOM_ITEM)
+			}
+	}
     hidenamebox
-	release
+    release
 	end
 }
+
 
 
 

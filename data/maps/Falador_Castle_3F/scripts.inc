@@ -334,7 +334,7 @@ QUEST_FALADORCASTLE_EVENT_AFTER_GYM_Text_2:
 	.string "pieces?$"
 
 QUEST_FALADORCASTLE_EVENT_AFTER_GYM_Text_3:
-	.string "Sir Tiffy Cashien$"
+	.string "Tiffy Cashien$"
 
 QUEST_FALADORCASTLE_EVENT_AFTER_GYM_Text_4:
 	.string "May I take a look at those?\p"

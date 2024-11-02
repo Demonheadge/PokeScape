@@ -463,7 +463,11 @@
 #define TRAINER_LUKEINLIGHT                             457
 #define TRAINER_A_TWISTED_SMILE                         458
 #define TRAINER_SANDWICH_LADY_1                         459
-#define TRAINER_JMOD_FOWL                         460
+#define TRAINER_JMOD_FOWL                               460
+#define TRAINER_PUB_FALADOR_1                           461
+#define TRAINER_PUB_FALADOR_2                           462
+#define TRAINER_PUB_FALADOR_3                           463
+
 
 
 
@@ -472,7 +476,7 @@
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      (TRAINER_HELLWIND + 1)
+#define TRAINERS_COUNT                      (TRAINER_PUB_FALADOR_3 + 1)
 #define MAX_TRAINERS_COUNT                  864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

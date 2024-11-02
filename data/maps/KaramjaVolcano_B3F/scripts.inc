@@ -1409,6 +1409,7 @@ HAM_EVENT_CRANDOR_VOLCANO_26:
 	walk_fast_left
 	walk_fast_left
 	walk_fast_down
+	walk_fast_down
 	step_end
 
 HAM_EVENT_CRANDOR_VOLCANO_27:
@@ -1419,6 +1420,7 @@ HAM_EVENT_CRANDOR_VOLCANO_27:
 	walk_fast_left
 	walk_fast_left
 	walk_fast_left
+	walk_fast_down
 	walk_fast_down
 	step_end
 

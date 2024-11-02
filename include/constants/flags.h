@@ -157,7 +157,7 @@
 #define FLAG_MET_PRETTY_PETAL_SHOP_OWNER     0x7F
 #define FLAG_ENABLE_ROXANNE_FIRST_CALL       0x80 // Set after defeating Brawly. This will activate a call with Roxanne in order to register her.
 #define FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN  0x81
-#define FLAG_DEFEATED_RIVAL_ROUTE103         0x82
+#define FLAG_TZHAAR_FOLLOW_GYM_INFO          0x82
 #define FLAG_RECEIVED_DOLL_LANETTE           0x83
 #define FLAG_RECEIVED_POTION_OLDALE          0x84
 #define FLAG_RECEIVED_AMULET_COIN            0x85
@@ -1286,8 +1286,8 @@
 #define FLAG_ITEM_PURO_PURO_1                                       0x4BC // Unused Flag
 #define FLAG_ITEM_PURO_PURO_2                                       0x4BD // Unused Flag
 #define FLAG_ITEM_PURO_PURO_3                                       0x4BE // Unused Flag
+#define FLAG_ITEM_FALADOR_COURTYARD_1                               0x4BF // Unused Flag
 
-#define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
 #define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag
 #define FLAG_UNUSED_0x4C1                                           0x4C1 // Unused Flag
 #define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag
@@ -1624,7 +1624,6 @@
 #define FLAG_UNUSED_0x93B                           (DAILY_FLAGS_START + 0x1B) // PUB TRAINER 7
 #define FLAG_UNUSED_0x93C                           (DAILY_FLAGS_START + 0x1C) // PUB TRAINER 8
 #define FLAG_GOODIE_BAG                             (DAILY_FLAGS_START + 0x1D) // NIGHTMARERH GOODIE BAG
-
 #define FLAG_HIDDEN_GROTTO_1                        (DAILY_FLAGS_START + 0x1E) // Unused Flag
 #define FLAG_HIDDEN_GROTTO_2                        (DAILY_FLAGS_START + 0x1F) // Unused Flag
 #define FLAG_HIDDEN_GROTTO_3                        (DAILY_FLAGS_START + 0x20) // Unused Flag
@@ -1633,19 +1632,18 @@
 #define FLAG_HIDDEN_GROTTO_6                        (DAILY_FLAGS_START + 0x23) // Unused Flag
 #define FLAG_HIDDEN_GROTTO_7                        (DAILY_FLAGS_START + 0x24) // Unused Flag
 #define FLAG_HIDDEN_GROTTO_8                        (DAILY_FLAGS_START + 0x25) // Unused Flag
-
-#define FLAG_UNUSED_0x946                           (DAILY_FLAGS_START + 0x26) // Unused Flag
-#define FLAG_UNUSED_0x947                           (DAILY_FLAGS_START + 0x27) // Unused Flag
-#define FLAG_UNUSED_0x948                           (DAILY_FLAGS_START + 0x28) // Unused Flag
-#define FLAG_UNUSED_0x949                           (DAILY_FLAGS_START + 0x29) // Unused Flag
-#define FLAG_UNUSED_0x94A                           (DAILY_FLAGS_START + 0x2A) // Unused Flag
-#define FLAG_UNUSED_0x94B                           (DAILY_FLAGS_START + 0x2B) // Unused Flag
-#define FLAG_UNUSED_0x94C                           (DAILY_FLAGS_START + 0x2C) // Unused Flag
-#define FLAG_UNUSED_0x94D                           (DAILY_FLAGS_START + 0x2D) // Unused Flag
-#define FLAG_UNUSED_0x94E                           (DAILY_FLAGS_START + 0x2E) // Unused Flag
-#define FLAG_UNUSED_0x94F                           (DAILY_FLAGS_START + 0x2F) // Unused Flag
-#define FLAG_UNUSED_0x950                           (DAILY_FLAGS_START + 0x30) // Unused Flag
-#define FLAG_UNUSED_0x951                           (DAILY_FLAGS_START + 0x31) // Unused Flag
+#define FLAG_PUB_TRAINER_9                          (DAILY_FLAGS_START + 0x26) // Unused Flag
+#define FLAG_PUB_TRAINER_10                         (DAILY_FLAGS_START + 0x27) // Unused Flag
+#define FLAG_PUB_TRAINER_11                         (DAILY_FLAGS_START + 0x28) // Unused Flag
+#define FLAG_PUB_TRAINER_12                         (DAILY_FLAGS_START + 0x29) // Unused Flag
+#define FLAG_PUB_TRAINER_13                         (DAILY_FLAGS_START + 0x2A) // Unused Flag
+#define FLAG_PUB_TRAINER_14                         (DAILY_FLAGS_START + 0x2B) // Unused Flag
+#define FLAG_PUB_TRAINER_15                         (DAILY_FLAGS_START + 0x2C) // Unused Flag
+#define FLAG_PUB_TRAINER_16                         (DAILY_FLAGS_START + 0x2D) // Unused Flag
+#define FLAG_PUB_TRAINER_17                         (DAILY_FLAGS_START + 0x2E) // Unused Flag
+#define FLAG_PUB_TRAINER_18                         (DAILY_FLAGS_START + 0x2F) // Unused Flag
+#define FLAG_PUB_TRAINER_19                         (DAILY_FLAGS_START + 0x30) // Unused Flag
+#define FLAG_PUB_TRAINER_20                         (DAILY_FLAGS_START + 0x31) // Unused Flag
 #define FLAG_UNUSED_0x952                           (DAILY_FLAGS_START + 0x32) // Unused Flag
 #define FLAG_UNUSED_0x953                           (DAILY_FLAGS_START + 0x33) // Unused Flag
 #define FLAG_UNUSED_0x954                           (DAILY_FLAGS_START + 0x34) // Unused Flag

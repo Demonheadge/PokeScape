@@ -44,10 +44,28 @@ NPC_FALADORPUB_NPC1::
 	faceplayer
 	namebox NPC_FALADORPUB_NPC1_Text_0
 	msgbox NPC_FALADORPUB_NPC1_Text_1
-	waitmessage
+	hidenamebox
+	goto_if_unset FLAG_PUB_TRAINER_10, NPC_FALADORPUB_NPC1_2
+NPC_FALADORPUB_NPC1_1:
 	hidenamebox
 	release
 	end
+
+NPC_FALADORPUB_NPC1_2:
+	msgbox NPC_FALADORPUB_NPC1_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NPC_FALADORPUB_NPC1_4
+	goto NPC_FALADORPUB_NPC1_1
+
+NPC_FALADORPUB_NPC1_4:
+	hidenamebox
+	setflag FLAG_PUB_TRAINER_10
+	trainerbattle_no_intro TRAINER_PUB_FALADOR_2, NPC_FALADORPUB_NPC1_Text_3
+	namebox NPC_FALADORPUB_NPC1_Text_0
+	msgbox NPC_FALADORPUB_NPC1_Text_4
+	hidenamebox
+	call GIVE_RANDOM_ITEM
+	goto NPC_FALADORPUB_NPC1_1
 
 
 NPC_FALADORPUB_NPC2::
@@ -55,10 +73,28 @@ NPC_FALADORPUB_NPC2::
 	faceplayer
 	namebox NPC_FALADORPUB_NPC2_Text_0
 	msgbox NPC_FALADORPUB_NPC2_Text_1
-	waitmessage
+	hidenamebox
+	goto_if_unset FLAG_PUB_TRAINER_11, NPC_FALADORPUB_NPC2_2
+NPC_FALADORPUB_NPC2_1:
 	hidenamebox
 	release
 	end
+
+NPC_FALADORPUB_NPC2_2:
+	msgbox NPC_FALADORPUB_NPC1_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NPC_FALADORPUB_NPC2_4
+	goto NPC_FALADORPUB_NPC2_1
+
+NPC_FALADORPUB_NPC2_4:
+	hidenamebox
+	setflag FLAG_PUB_TRAINER_11
+	trainerbattle_no_intro TRAINER_PUB_FALADOR_1, NPC_FALADORPUB_NPC1_Text_3
+	namebox NPC_FALADORPUB_NPC2_Text_0
+	msgbox NPC_FALADORPUB_NPC2_Text_2
+	hidenamebox
+	call GIVE_RANDOM_ITEM
+	goto NPC_FALADORPUB_NPC2_1
 
 
 NPC_FALADORPUB_NPC3::
@@ -118,10 +154,28 @@ NPC_FALADORPUB_NPC8::
 	faceplayer
 	namebox NPC_FALADORPUB_NPC8_Text_0
 	msgbox NPC_FALADORPUB_NPC8_Text_1
-	waitmessage
+	hidenamebox
+	goto_if_unset FLAG_PUB_TRAINER_9, NPC_FALADORPUB_NPC8_2
+NPC_FALADORPUB_NPC8_1:
 	hidenamebox
 	release
 	end
+
+NPC_FALADORPUB_NPC8_2:
+	msgbox NPC_FALADORPUB_NPC1_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NPC_FALADORPUB_NPC8_4
+	goto NPC_FALADORPUB_NPC8_1
+
+NPC_FALADORPUB_NPC8_4:
+	hidenamebox
+	setflag FLAG_PUB_TRAINER_9
+	trainerbattle_no_intro TRAINER_PUB_FALADOR_3, NPC_FALADORPUB_NPC1_Text_3
+	namebox NPC_FALADORPUB_NPC8_Text_0
+	msgbox NPC_FALADORPUB_NPC8_Text_2
+	hidenamebox
+	call GIVE_RANDOM_ITEM
+	goto NPC_FALADORPUB_NPC8_1
 
 
 PUBCRAWL_FALADOR::
@@ -168,6 +222,17 @@ NPC_FALADORPUB_NPC1_Text_1:
 	.string "his head before he ran off.\p"
 	.string "I hate this job.$"
 
+NPC_FALADORPUB_NPC1_Text_2:
+	.string "Do you wish to challenge them to a\n"
+	.string "battle?$"
+
+NPC_FALADORPUB_NPC1_Text_3:
+	.string "…$"
+
+NPC_FALADORPUB_NPC1_Text_4:
+	.string "Wow, today just keeps getting worse\n"
+	.string "and worse.$"
+
 NPC_FALADORPUB_NPC2_Text_0:
 	.string "White Knight$"
 
@@ -177,6 +242,9 @@ NPC_FALADORPUB_NPC2_Text_1:
 	.string "Apparently cleaning duty is not in\n"
 	.string "accords with the ways of the White\l"
 	.string "Knight code.$"
+
+NPC_FALADORPUB_NPC2_Text_2:
+	.string "You are strong, take this.$"
 
 NPC_FALADORPUB_NPC3_Text_0:
 	.string "Pker$"
@@ -215,6 +283,9 @@ NPC_FALADORPUB_NPC8_Text_1:
 	.string "Scram!\p"
 	.string "I cannot hear what they are saying at\n"
 	.string "that table if you are here annoying me!$"
+
+NPC_FALADORPUB_NPC8_Text_2:
+	.string "Take this and get out of here.$"
 
 PUBCRAWL_FALADOR_Text_0:
 	.string "Barbarian$"
