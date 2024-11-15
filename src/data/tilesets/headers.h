@@ -1243,3 +1243,14 @@ const struct Tileset gTileset_PokeScapeCaves_Extra_1 =
     .metatileAttributes = gMetatileAttributes_PokeScapeCaves_Extra_1,
     .callback = InitTilesetAnim_PokeScapeCaves_Extra_1,
 };
+
+const struct Tileset gTileset_Lighthouse =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Lighthouse,
+    .palettes = gTilesetPalettes_Lighthouse,
+    .metatiles = gMetatiles_Lighthouse,
+    .metatileAttributes = gMetatileAttributes_Lighthouse,
+    .callback = NULL,
+};

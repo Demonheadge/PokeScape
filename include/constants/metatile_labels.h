@@ -360,6 +360,9 @@
 #define METATILE_Lavaridge_NormalGrass          0x206
 #define METATILE_Lavaridge_RockWall             0x274
 
+// gTileset_Lighthouse
+#define METATILE_Lighthouse_SKY_DAY  0x368
+
 // gTileset_Lilycove
 #define METATILE_Lilycove_Door             0x246
 #define METATILE_Lilycove_Door_DeptStore   0x30C

@@ -7977,7 +7977,7 @@
       "width": 24,
       "height": 24,
       "primary_tileset": "gTileset_PokeScapeIndoors",
-      "secondary_tileset": "gTileset_Bank",
+      "secondary_tileset": "gTileset_Lighthouse",
       "border_filepath": "data/layouts/PortSarim_Lighthouse_3F/border.bin",
       "blockdata_filepath": "data/layouts/PortSarim_Lighthouse_3F/map.bin"
     },

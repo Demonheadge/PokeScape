@@ -1,4 +1,8 @@
 mapscripts PortSarim_Lighthouse_3F_MapScripts {
+    MAP_SCRIPT_ON_LOAD 
+    {
+        call(LIGHTHOUSE_METATILES)
+    }
     MAP_SCRIPT_ON_TRANSITION {
         call(LIGHTHOUSE_3F_STATE)
     }
@@ -46,6 +50,92 @@ script LIGHTHOUSE_3F_STATE {
     }
     return
 }
+
+
+
+script LIGHTHOUSE_METATILES {
+	special(GetTimeOfDaySpecial)
+	switch (var(VAR_RESULT)) {
+		case 0:
+		case 1:
+			setmetatile(0, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(1, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(2, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(3, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(4, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(5, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(6, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(7, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(8, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(9, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(10, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(11, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(12, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(13, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(14, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(15, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(16, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(17, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(18, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(19, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(20, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(21, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(22, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(23, 0, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(0, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(1, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(2, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(8, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(9, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(10, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(11, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(12, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(13, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(14, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(15, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(16, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(17, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(18, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(19, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(20, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(21, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(22, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(23, 1, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(0, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(1, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(2, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(8, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(9, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(10, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(11, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(12, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(13, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(14, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(15, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(16, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(17, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(18, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(19, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(20, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(21, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(22, 2, METATILE_Lighthouse_SKY_DAY, 0)
+            setmetatile(23, 2, METATILE_Lighthouse_SKY_DAY, 0)
+	}
+    return
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //NPCS
 script LIGHTHOUSE_3F_NPC_1
