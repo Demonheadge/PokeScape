@@ -24011,6 +24011,61 @@
                 "species": "SPECIES_NONE"
               }
             ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_EEL_LAVA_FORM"
+              },
+              {
+                "min_level": 27,
+                "max_level": 30,
+                "species": "SPECIES_PYREFIEND"
+              },
+              {
+                "min_level": 27,
+                "max_level": 30,
+                "species": "SPECIES_EEL_LAVA_FORM"
+              },
+              {
+                "min_level": 27,
+                "max_level": 32,
+                "species": "SPECIES_PYREFIEND"
+              },
+              {
+                "min_level": 27,
+                "max_level": 35,
+                "species": "SPECIES_DRAGONLING_RED_FORM"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_EEL_LAVA_FORM"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_REBORN_MAGE"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_REBORN_MAGE"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_REBORN_RANGER"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_EEL_INFERNAL_FORM"
+              }
+            ]
           }
         },
         {
@@ -24207,6 +24262,61 @@
                 "min_level": 26,
                 "max_level": 31,
                 "species": "SPECIES_ROCK_STRANGE_FORM"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_EEL_LAVA_FORM"
+              },
+              {
+                "min_level": 27,
+                "max_level": 30,
+                "species": "SPECIES_PYREFIEND"
+              },
+              {
+                "min_level": 27,
+                "max_level": 30,
+                "species": "SPECIES_EEL_LAVA_FORM"
+              },
+              {
+                "min_level": 27,
+                "max_level": 32,
+                "species": "SPECIES_PYREFIEND"
+              },
+              {
+                "min_level": 27,
+                "max_level": 35,
+                "species": "SPECIES_DRAGONLING_RED_FORM"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_EEL_LAVA_FORM"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_REBORN_MAGE"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_REBORN_MAGE"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_REBORN_RANGER"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_EEL_INFERNAL_FORM"
               }
             ]
           }
@@ -31951,6 +32061,61 @@
                 "species": "SPECIES_YT_HURKOT"
               }
             ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_EEL_LAVA_FORM"
+              },
+              {
+                "min_level": 27,
+                "max_level": 30,
+                "species": "SPECIES_TZ_KIH"
+              },
+              {
+                "min_level": 27,
+                "max_level": 30,
+                "species": "SPECIES_EEL_LAVA_FORM"
+              },
+              {
+                "min_level": 27,
+                "max_level": 32,
+                "species": "SPECIES_TZ_KIH"
+              },
+              {
+                "min_level": 27,
+                "max_level": 35,
+                "species": "SPECIES_PYREFIEND"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_EEL_LAVA_FORM"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_REBORN_MAGE"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_REBORN_MAGE"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_REBORN_RANGER"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_EEL_INFERNAL_FORM"
+              }
+            ]
           }
         },
         {
@@ -32399,6 +32564,124 @@
                 "min_level": 28,
                 "max_level": 33,
                 "species": "SPECIES_IMPLING_LUCKY_FORM"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_TZHAAR_1F",
+          "base_label": "gTzhaar_1F0",
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_EEL_LAVA_FORM"
+              },
+              {
+                "min_level": 27,
+                "max_level": 30,
+                "species": "SPECIES_TZ_KIH"
+              },
+              {
+                "min_level": 27,
+                "max_level": 30,
+                "species": "SPECIES_EEL_LAVA_FORM"
+              },
+              {
+                "min_level": 27,
+                "max_level": 32,
+                "species": "SPECIES_TZ_KIH"
+              },
+              {
+                "min_level": 27,
+                "max_level": 35,
+                "species": "SPECIES_PYREFIEND"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_EEL_LAVA_FORM"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_REBORN_MAGE"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_REBORN_MAGE"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_REBORN_RANGER"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_EEL_INFERNAL_FORM"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_KARAMJA_VOLCANO_B1F",
+          "base_label": "gKaramjaVolcano_B1F0",
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_EEL_LAVA_FORM"
+              },
+              {
+                "min_level": 27,
+                "max_level": 30,
+                "species": "SPECIES_PYREFIEND"
+              },
+              {
+                "min_level": 27,
+                "max_level": 30,
+                "species": "SPECIES_EEL_LAVA_FORM"
+              },
+              {
+                "min_level": 27,
+                "max_level": 32,
+                "species": "SPECIES_PYREFIEND"
+              },
+              {
+                "min_level": 27,
+                "max_level": 35,
+                "species": "SPECIES_DRAGONLING_RED_FORM"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_EEL_LAVA_FORM"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_REBORN_MAGE"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_REBORN_MAGE"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_REBORN_RANGER"
+              },
+              {
+                "min_level": 28,
+                "max_level": 40,
+                "species": "SPECIES_EEL_INFERNAL_FORM"
               }
             ]
           }

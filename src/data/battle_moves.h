@@ -14762,11 +14762,11 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SLICE_DICE] =
     {
-        .effect = EFFECT_SLICE_DICE,
-        .power = 50,
+        .effect = EFFECT_TRIPLE_KICK,
+        .power = 30,
         .type = TYPE_DRAGON,
-        .accuracy = 100,
-        .pp = 10,
+        .accuracy = 85,
+        .pp = 5,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 1,
@@ -14774,9 +14774,10 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .makesContact = TRUE,
         .highCritRatio = TRUE,
         .slicingMove = TRUE,
+        .strikeCount = 4,
         .zMoveEffect = 0
     },
-
+    
     [MOVE_ZAMORAK_FLAMES] =
     {
         .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,

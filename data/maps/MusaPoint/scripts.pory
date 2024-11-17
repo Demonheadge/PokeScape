@@ -507,23 +507,21 @@ script NEWSLETTER_13
 
 script EventScript_BananaTree{
     msgbox(format("There are a bunch of Bananas on this tree!"))
-    random(2)
+    random(3)
     if (var(VAR_RESULT) == 0) {
-        msgbox(format("You picked a Banana!"))
-        giveitem(ITEM_BANANA, 1)
+        msgbox(format("You failed to pick a Banana…"))
     }
 	else {
-		msgbox(format("You failed to pick a Banana…"))
+		msgbox(format("You picked a Banana!"))
+        giveitem(ITEM_BANANA, 1)
 	}
 	closemessage
 	end
 }
 
 script EventScript_BananaGround{
-	random(6)
+	random(8)
 	switch (var(VAR_RESULT)){ 
-		case 0:
-			giveitem(ITEM_BANANA, 1)
 		case 1:
 			msgbox(format("This banana smells."))
 		case 2:
@@ -534,6 +532,8 @@ script EventScript_BananaGround{
 			msgbox(format("As you reach for the banana you sense the gaze a monkey in the distance.\pYou decide to leave it."))
 		case 5:
 			msgbox(format("Ew, looks like someone stepped on this banana."))
+		default:
+			giveitem(ITEM_BANANA, 1)
 	}
 	closemessage
 	end
@@ -887,6 +887,7 @@ script LUTHAS_QUEST_PART_5 {
 			closemessage
 			hidenamebox
 			//give mon
+			call(EventScript_GiftMonster_Banana)
 			msgbox(format("I hope you will keep assisting me in the future."))
 			setvar(VAR_BANANA_BOAT_QUEST, 25)
 			subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_BANANA_BOAT, 3)
@@ -1011,3 +1012,72 @@ script QUEST_TESTER {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+script EventScript_GiftMonster_Banana {
+    setvar(VAR_TEMP_1, SPECIES_AGRITHNANA)
+    givemon (SPECIES_AGRITHNANA, 30, ITEM_NONE)
+	goto(EventScript_GiftMonster_Start)
+}
+
+
+
+script EventScript_GiftMonster_Start {
+    compare(VAR_RESULT, 0)
+	goto_if_eq(EventScript_GiftMonster_SendParty)
+    compare(VAR_RESULT, 1)
+	goto_if_eq(EventScript_GiftMonster_SendPC)
+    goto(Common_EventScript_NoMoreRoomForPokemon)
+    end
+}
+
+script EventScript_GiftMonster_SendParty{
+	call(EventScript_GiftMonster_ReceivedFanfare)
+	msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+    compare(VAR_RESULT, NO)
+	goto_if_eq(EventScript_GiftMonster_Received)
+	call(Common_EventScript_GetGiftMonPartySlot)
+	call(Common_EventScript_NameReceivedPartyMon)
+	goto(EventScript_GiftMonster_Received)
+	end
+}
+
+script EventScript_GiftMonster_SendPC {
+	call(EventScript_GiftMonster_ReceivedFanfare)
+	msgbox(format("Would you like to give your monster a nickname?"), MSGBOX_YESNO)
+    compare(VAR_RESULT, NO)
+	goto_if_eq(EventScript_GiftMonster_TransferredToPC)
+	call (Common_EventScript_NameReceivedBoxMon)
+	goto (EventScript_GiftMonster_TransferredToPC)
+	end
+}
+
+script EventScript_GiftMonster_TransferredToPC{
+	call (Common_EventScript_TransferredToPC)
+	goto (EventScript_GiftMonster_Received)
+	end
+}
+
+script EventScript_GiftMonster_ReceivedFanfare{
+	bufferspeciesname(1, VAR_TEMP_1)
+	playfanfare (MUS_OBTAIN_ITEM)
+	msgbox(format("{PLAYER} obtained a {STR_VAR_2}."))
+	waitmessage
+	waitfanfare
+	bufferspeciesname(0, VAR_TEMP_1)
+	return
+}
+
+script EventScript_GiftMonster_Received{
+	releaseall
+	return
+}

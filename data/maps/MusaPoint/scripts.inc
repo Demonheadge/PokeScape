@@ -499,54 +499,50 @@ NEWSLETTER_13_2:
 
 EventScript_BananaTree::
 	msgbox EventScript_BananaTree_Text_0
-	random 2
+	random 3
 	compare VAR_RESULT, 0
 	goto_if_eq EventScript_BananaTree_2
 	msgbox EventScript_BananaTree_Text_2
+	giveitem ITEM_BANANA, 1
 EventScript_BananaTree_1:
 	closemessage
 	end
 
 EventScript_BananaTree_2:
 	msgbox EventScript_BananaTree_Text_1
-	giveitem ITEM_BANANA, 1
 	goto EventScript_BananaTree_1
 
 
 EventScript_BananaGround::
-	random 6
+	random 8
 	switch VAR_RESULT
-	case 0, EventScript_BananaGround_3
-	case 1, EventScript_BananaGround_4
-	case 2, EventScript_BananaGround_5
-	case 3, EventScript_BananaGround_6
-	case 4, EventScript_BananaGround_7
-	case 5, EventScript_BananaGround_8
+	case 1, EventScript_BananaGround_3
+	case 2, EventScript_BananaGround_4
+	case 3, EventScript_BananaGround_5
+	case 4, EventScript_BananaGround_6
+	case 5, EventScript_BananaGround_7
+	giveitem ITEM_BANANA, 1
 EventScript_BananaGround_1:
 	closemessage
 	end
 
 EventScript_BananaGround_3:
-	giveitem ITEM_BANANA, 1
-	goto EventScript_BananaGround_1
-
-EventScript_BananaGround_4:
 	msgbox EventScript_BananaGround_Text_0
 	goto EventScript_BananaGround_1
 
-EventScript_BananaGround_5:
+EventScript_BananaGround_4:
 	msgbox EventScript_BananaGround_Text_1
 	goto EventScript_BananaGround_1
 
-EventScript_BananaGround_6:
+EventScript_BananaGround_5:
 	msgbox EventScript_BananaGround_Text_2
 	goto EventScript_BananaGround_1
 
-EventScript_BananaGround_7:
+EventScript_BananaGround_6:
 	msgbox EventScript_BananaGround_Text_3
 	goto EventScript_BananaGround_1
 
-EventScript_BananaGround_8:
+EventScript_BananaGround_7:
 	msgbox EventScript_BananaGround_Text_4
 	goto EventScript_BananaGround_1
 
@@ -993,6 +989,7 @@ LUTHAS_QUEST_PART_5_7:
 	msgbox LUTHAS_QUEST_PART_5_Text_2
 	closemessage
 	hidenamebox
+	call EventScript_GiftMonster_Banana
 	msgbox LUTHAS_QUEST_PART_5_Text_3
 	setvar VAR_BANANA_BOAT_QUEST, 25
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_BANANA_BOAT, 3
@@ -1108,6 +1105,64 @@ QUEST_TESTER_2:
 QUEST_TESTER_5:
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MVM_CHAMPIONSHIPS, 0
 	goto QUEST_TESTER_4
+
+
+EventScript_GiftMonster_Banana::
+	setvar VAR_TEMP_1, SPECIES_AGRITHNANA
+	givemon SPECIES_AGRITHNANA, 30, ITEM_NONE
+	goto EventScript_GiftMonster_Start
+	return
+
+
+EventScript_GiftMonster_Start::
+	compare VAR_RESULT, 0
+	goto_if_eq EventScript_GiftMonster_SendParty
+	compare VAR_RESULT, 1
+	goto_if_eq EventScript_GiftMonster_SendPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+
+EventScript_GiftMonster_SendParty::
+	call EventScript_GiftMonster_ReceivedFanfare
+	msgbox EventScript_GiftMonster_SendParty_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq EventScript_GiftMonster_Received
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto EventScript_GiftMonster_Received
+	end
+
+
+EventScript_GiftMonster_SendPC::
+	call EventScript_GiftMonster_ReceivedFanfare
+	msgbox EventScript_GiftMonster_SendParty_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq EventScript_GiftMonster_TransferredToPC
+	call Common_EventScript_NameReceivedBoxMon
+	goto EventScript_GiftMonster_TransferredToPC
+	end
+
+
+EventScript_GiftMonster_TransferredToPC::
+	call Common_EventScript_TransferredToPC
+	goto EventScript_GiftMonster_Received
+	end
+
+
+EventScript_GiftMonster_ReceivedFanfare::
+	bufferspeciesname 1, VAR_TEMP_1
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox EventScript_GiftMonster_ReceivedFanfare_Text_0
+	waitmessage
+	waitfanfare
+	bufferspeciesname 0, VAR_TEMP_1
+	return
+
+
+EventScript_GiftMonster_Received::
+	releaseall
+	return
 
 
 NPC_MUSAPOINT_SAILOR_Text_0:
@@ -1457,10 +1512,10 @@ EventScript_BananaTree_Text_0:
 	.string "tree!$"
 
 EventScript_BananaTree_Text_1:
-	.string "You picked a Banana!$"
+	.string "You failed to pick a Banana…$"
 
 EventScript_BananaTree_Text_2:
-	.string "You failed to pick a Banana…$"
+	.string "You picked a Banana!$"
 
 EventScript_BananaGround_Text_0:
 	.string "This banana smells.$"
@@ -1695,3 +1750,10 @@ QUEST_TESTER_Text_0:
 
 QUEST_TESTER_Text_1:
 	.string "Obtain Lumbridge Badge?$"
+
+EventScript_GiftMonster_SendParty_Text_0:
+	.string "Would you like to give your monster a\n"
+	.string "nickname?$"
+
+EventScript_GiftMonster_ReceivedFanfare_Text_0:
+	.string "{PLAYER} obtained a {STR_VAR_2}.$"

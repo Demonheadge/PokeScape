@@ -131,6 +131,7 @@ static const u8 sTileBitAttributes[NUM_METATILE_BEHAVIORS] =
     [MB_VERTICAL_RAIL]                   = TILE_FLAG_UNUSED,
     [MB_HORIZONTAL_RAIL]                 = TILE_FLAG_UNUSED,
     [MB_WHEAT]                           = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
+    [MB_LAVA]                            = TILE_FLAG_UNUSED | TILE_FLAG_HAS_ENCOUNTERS,
 };
 
 bool8 MetatileBehavior_IsATile(u8 metatileBehavior)
@@ -1176,6 +1177,14 @@ bool8 MetatileBehavior_IsSurfableFishableWater(u8 metatileBehavior)
       || metatileBehavior == MB_WESTWARD_CURRENT
       || metatileBehavior == MB_NORTHWARD_CURRENT
       || metatileBehavior == MB_SOUTHWARD_CURRENT))
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsSurfableFishableLava(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_LAVA)
         return TRUE;
     else
         return FALSE;

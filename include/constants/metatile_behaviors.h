@@ -89,7 +89,7 @@
 #define MB_UNUSED_55 0x55
 #define MB_UNUSED_56 0x56
 #define MB_UNUSED_57 0x57
-#define MB_UNUSED_58 0x58
+#define MB_LAVA 0x58
 #define MB_UNUSED_59 0x59
 #define MB_UNUSED_5A 0x5A
 #define MB_UNUSED_5B 0x5B

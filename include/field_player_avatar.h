@@ -72,5 +72,6 @@ u8 GetLeftSideStairsDirection(u8 direction);
 // qol_field_moves
 void PlayerAvatarTransition_Surfing(struct ObjectEvent *); 
 void ForcePlayerToPerformMovementAction(void);
+bool8 IsPlayerFacingSurfableFishableLava(void);
 
 #endif // GUARD_FIELD_PLAYER_AVATAR_H

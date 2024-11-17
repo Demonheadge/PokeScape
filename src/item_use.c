@@ -365,12 +365,16 @@ static bool32 CanFish(void)
     {
         if (IsPlayerFacingSurfableFishableWater())
             return TRUE;
+        if (IsPlayerFacingSurfableFishableLava())
+            return TRUE;
     }
     else
     {
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior) && MapGridGetCollisionAt(x, y) == 0)
             return TRUE;
         if (MetatileBehavior_IsBridgeOverWaterNoEdge(tileBehavior) == TRUE)
+            return TRUE;
+        if (MetatileBehavior_IsSurfableFishableLava(tileBehavior) == TRUE)
             return TRUE;
     }
 

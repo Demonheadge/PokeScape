@@ -4813,12 +4813,17 @@ BattleScript_PartyHealEnd::
 BattleScript_EffectTripleKick::
 	attackcanceler
 	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
-	jumpifmove MOVE_TRIPLE_AXEL BS_TripleAxel
+	jumpifmove MOVE_TRIPLE_AXEL, BS_TripleAxel
+	jumpifmove MOVE_SLICE_DICE, BattleScript_SliceDice
 	addbyte sTRIPLE_KICK_POWER, 10 @ triple kick gets +10 power
 	goto BattleScript_HitFromAtkString
 
 BS_TripleAxel:
 	addbyte sTRIPLE_KICK_POWER, 20 @ triple axel gets +20 power
+	goto BattleScript_HitFromAtkString
+
+BattleScript_SliceDice:
+	addbyte sTRIPLE_KICK_POWER, 30 @ slicedice gets +30 power
 	goto BattleScript_HitFromAtkString
 
 BattleScript_EffectThief::
