@@ -712,6 +712,18 @@ script BARROWS_GUTHAN {
     end
 }
 
+script BARROWS_SLISKE {
+    lock
+    faceplayer
+    namebox("Sliske")
+    msgbox(format("Muahahahaha!\pOh Gawkie, you think you have what it takes to take me on?\pI think not!\pGet'em Boys!!"))
+    hidenamebox
+    closemessage
+    //trainerbattle_no_intro(TRAINER_BARROWS_GUTHAN, msgbox(format("That was a very enjoyable battle!")))
+    release
+    end
+}
+
 
 script TEST_BATTLE {
     lock

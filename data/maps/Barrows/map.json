@@ -16,8 +16,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_BARROWS_VERAC",
-      "x": 22,
-      "y": 26,
+      "x": 17,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -29,8 +29,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BARROWS_AHRIM",
-      "x": 15,
-      "y": 20,
+      "x": 14,
+      "y": 23,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -42,8 +42,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BARROWS_DHAROK",
-      "x": 12,
-      "y": 26,
+      "x": 15,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -55,8 +55,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BARROWS_GUTHAN",
-      "x": 7,
-      "y": 18,
+      "x": 13,
+      "y": 24,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -68,8 +68,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BARROWS_KARIL",
-      "x": 18,
-      "y": 13,
+      "x": 19,
+      "y": 24,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -81,8 +81,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BARROWS_TORAG",
-      "x": 24,
-      "y": 18,
+      "x": 18,
+      "y": 23,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -94,15 +94,15 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BARROWS_SILSKE",
-      "x": 12,
-      "y": 33,
+      "x": 16,
+      "y": 23,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BARROWS_SLISKE",
       "flag": "0"
     }
   ],

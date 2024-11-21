@@ -625,6 +625,17 @@ BARROWS_GUTHAN::
 	end
 
 
+BARROWS_SLISKE::
+	lock
+	faceplayer
+	namebox BARROWS_SLISKE_Text_0
+	msgbox BARROWS_SLISKE_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+
 TEST_BATTLE::
 	lock
 	faceplayer
@@ -798,6 +809,16 @@ BARROWS_GUTHAN_Text_1:
 
 BARROWS_GUTHAN_Text_2:
 	.string "That was a very enjoyable battle!$"
+
+BARROWS_SLISKE_Text_0:
+	.string "Sliske$"
+
+BARROWS_SLISKE_Text_1:
+	.string "Muahahahaha!\p"
+	.string "Oh Gawkie, you think you have what it\n"
+	.string "takes to take me on?\p"
+	.string "I think not!\p"
+	.string "Get'em Boys!!$"
 
 TEST_BATTLE_Text_0:
 	.string "TEST$"

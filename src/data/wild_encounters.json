@@ -23982,36 +23982,6 @@
               }
             ]
           },
-          "rock_smash_mons": {
-            "encounter_rate": 0,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              }
-            ]
-          },
           "fishing_mons": {
             "encounter_rate": 30,
             "mons": [
@@ -24064,6 +24034,36 @@
                 "min_level": 28,
                 "max_level": 40,
                 "species": "SPECIES_EEL_INFERNAL_FORM"
+              }
+            ]
+          },
+          "rock_smash_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
+              },
+              {
+                "min_level": 5,
+                "max_level": 5,
+                "species": "SPECIES_NONE"
               }
             ]
           }
@@ -24235,36 +24235,6 @@
               }
             ]
           },
-          "rock_smash_mons": {
-            "encounter_rate": 0,
-            "mons": [
-              {
-                "min_level": 24,
-                "max_level": 29,
-                "species": "SPECIES_ROCK_CRAB_SAND_FORM"
-              },
-              {
-                "min_level": 24,
-                "max_level": 29,
-                "species": "SPECIES_ROCK_CRAB_AMMONITE_FORM"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_ROCK_CRAB_GIANT_SAND_FORM"
-              },
-              {
-                "min_level": 25,
-                "max_level": 30,
-                "species": "SPECIES_ROCK_CRAB_GIANT_AMMONITE_FORM"
-              },
-              {
-                "min_level": 26,
-                "max_level": 31,
-                "species": "SPECIES_ROCK_STRANGE_FORM"
-              }
-            ]
-          },
           "fishing_mons": {
             "encounter_rate": 30,
             "mons": [
@@ -24317,6 +24287,36 @@
                 "min_level": 28,
                 "max_level": 40,
                 "species": "SPECIES_EEL_INFERNAL_FORM"
+              }
+            ]
+          },
+          "rock_smash_mons": {
+            "encounter_rate": 0,
+            "mons": [
+              {
+                "min_level": 24,
+                "max_level": 29,
+                "species": "SPECIES_ROCK_CRAB_SAND_FORM"
+              },
+              {
+                "min_level": 24,
+                "max_level": 29,
+                "species": "SPECIES_ROCK_CRAB_AMMONITE_FORM"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_ROCK_CRAB_GIANT_SAND_FORM"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_ROCK_CRAB_GIANT_AMMONITE_FORM"
+              },
+              {
+                "min_level": 26,
+                "max_level": 31,
+                "species": "SPECIES_ROCK_STRANGE_FORM"
               }
             ]
           }
@@ -32008,7 +32008,7 @@
               {
                 "min_level": 21,
                 "max_level": 24,
-                "species": "SPECIES_JAL_MEJRAH"
+                "species": "SPECIES_TZ_KEK"
               },
               {
                 "min_level": 22,
@@ -32018,7 +32018,7 @@
               {
                 "min_level": 22,
                 "max_level": 25,
-                "species": "SPECIES_JAL_MEJRAH"
+                "species": "SPECIES_GOLEM_TITAN"
               },
               {
                 "min_level": 22,
@@ -32033,22 +32033,22 @@
               {
                 "min_level": 22,
                 "max_level": 25,
-                "species": "SPECIES_JAL_NIB"
+                "species": "SPECIES_PYREFIEND"
               },
               {
                 "min_level": 22,
                 "max_level": 25,
-                "species": "SPECIES_JAL_NIB"
+                "species": "SPECIES_YT_HURKOT"
               },
               {
                 "min_level": 22,
                 "max_level": 25,
-                "species": "SPECIES_JAL_AK"
+                "species": "SPECIES_HELLPUPPY"
               },
               {
                 "min_level": 22,
                 "max_level": 25,
-                "species": "SPECIES_JAL_AK"
+                "species": "SPECIES_RAT_HELL_FORM"
               },
               {
                 "min_level": 23,
@@ -32058,7 +32058,7 @@
               {
                 "min_level": 23,
                 "max_level": 27,
-                "species": "SPECIES_YT_HURKOT"
+                "species": "SPECIES_SPIDER_LAVA_FORM"
               }
             ]
           },
@@ -32083,7 +32083,7 @@
               {
                 "min_level": 27,
                 "max_level": 32,
-                "species": "SPECIES_TZ_KIH"
+                "species": "SPECIES_TZ_KEK"
               },
               {
                 "min_level": 27,
@@ -32098,17 +32098,17 @@
               {
                 "min_level": 28,
                 "max_level": 40,
-                "species": "SPECIES_REBORN_MAGE"
+                "species": "SPECIES_PYRELORD"
               },
               {
                 "min_level": 28,
                 "max_level": 40,
-                "species": "SPECIES_REBORN_MAGE"
+                "species": "SPECIES_TOK_XIL"
               },
               {
                 "min_level": 28,
                 "max_level": 40,
-                "species": "SPECIES_REBORN_RANGER"
+                "species": "SPECIES_YT_HURKOT"
               },
               {
                 "min_level": 28,
@@ -32607,17 +32607,17 @@
               {
                 "min_level": 28,
                 "max_level": 40,
-                "species": "SPECIES_REBORN_MAGE"
+                "species": "SPECIES_TZ_KEK"
               },
               {
                 "min_level": 28,
                 "max_level": 40,
-                "species": "SPECIES_REBORN_MAGE"
+                "species": "SPECIES_TOK_XIL"
               },
               {
                 "min_level": 28,
                 "max_level": 40,
-                "species": "SPECIES_REBORN_RANGER"
+                "species": "SPECIES_YT_HURKOT"
               },
               {
                 "min_level": 28,

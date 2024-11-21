@@ -1,0 +1,28 @@
+mapscripts Tzhaar_Caves_5_MapScripts {
+}
+
+
+script BATTLE_TZHAAR_CAVES_TRAINER_1
+{
+    trainerbattle_single(TRAINER_MUSA_POINT_TRAINER_1, format(""),format(""))
+    msgbox(format(""))
+	hidenamebox
+    release
+	end
+}
+script BATTLE_TZHAAR_CAVES_TRAINER_2
+{
+    trainerbattle_single(TRAINER_MUSA_POINT_TRAINER_1, format(""),format(""))
+    msgbox(format(""))
+	hidenamebox
+    release
+	end
+}
+script BATTLE_TZHAAR_CAVES_TRAINER_3
+{
+    trainerbattle_single(TRAINER_MUSA_POINT_TRAINER_1, format(""),format(""))
+    msgbox(format(""))
+	hidenamebox
+    release
+	end
+}
