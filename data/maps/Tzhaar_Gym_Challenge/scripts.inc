@@ -61,7 +61,8 @@ FIGHT_CAVES_QUIT_1:
 FIGHT_CAVES_QUIT_2:
 	closemessage
 	call FIGHT_CAVES_RESTRICTIONS_OFF
-	warp MAP_TZHAAR_FIGHT_CAVES, 0
+	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 10
+	warp MAP_TZHAAR_FIGHT_CAVES, 1
 	waitstate
 	goto FIGHT_CAVES_QUIT_1
 
@@ -1021,11 +1022,9 @@ GYMLEADER_TZHAAR_CHAMPION::
 	namebox GYMLEADER_TZHAAR_CHAMPION_Text_0
 	msgbox GYMLEADER_TZHAAR_CHAMPION_Text_4
 	hidenamebox
-	giveitem ITEM_TM48, 1
+	giveitem ITEM_TM15, 1
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
-	playbgm MUS_PS_ALKHARID, 0
-	savebgm MUS_PS_ALKHARID
 	namebox GYMLEADER_TZHAAR_CHAMPION_Text_0
 	msgbox GYMLEADER_TZHAAR_CHAMPION_Text_5
 	addvar VAR_GAMEMODE_LEVEL_CAP, 2
@@ -1035,6 +1034,8 @@ GYMLEADER_TZHAAR_CHAMPION::
 	call HIDDEN_GROTTO_RESET
 	addvar VAR_GAMEMODE_LEVEL_SCALING, 1
 	msgbox GYMLEADER_TZHAAR_CHAMPION_Text_6
+	hidenamebox
+	closemessage
 	call FIGHT_CAVES_FINISHED
 	release
 	end
@@ -1098,14 +1099,14 @@ FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE_4:
 FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE_5:
 	setvar VAR_TEMP_E, 4
 	call FIGHTCAVES_WAVE_TRANSITION
-	setvar VAR_TEMP_F, 1
-	call FIGHTCAVES_SET_SPAWN_LOCATION_1
-	addobject 1
-	clearflag FLAG_TEMP_1
 	setvar VAR_TEMP_F, 4
 	call FIGHTCAVES_SET_SPAWN_LOCATION_2
 	addobject 4
 	clearflag FLAG_TEMP_4
+	setvar VAR_TEMP_F, 6
+	call FIGHTCAVES_SET_SPAWN_LOCATION_1
+	addobject 6
+	clearflag FLAG_TEMP_6
 	return
 
 FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE_6:
@@ -1553,9 +1554,7 @@ GYMLEADER_TZHAAR_CHAMPION_Text_4:
 	.string "Also have this Scroll.$"
 
 GYMLEADER_TZHAAR_CHAMPION_Text_5:
-	.string "That move is called Power Gem.\p"
-	.string "It sparkles just as all our precious\n"
-	.string "Gems around the palace do.$"
+	.string "That move is called Lava Plume.$"
 
 GYMLEADER_TZHAAR_CHAMPION_Text_6:
 	.string "Now let us return outside.$"

@@ -446,7 +446,15 @@ script NPC_PORTSARIM_CAPTIAN_TOBIAS
         end
     }
     elif(flag(FLAG_BADGE03_GET) == true) { //&& (var(VAR_KARMAJA_SAILORS_STATE) == 0)
-        msgbox(format("Is your name {PLAYER}?\pI have received word that you are participating in the MvM Championships, is this correct?\pUsually our services cost 30gp but we have a deal with the Championship League that allows all participants to travel for free!\pSo…{PAUSE 15}…  Ahem!"))
+        if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 155) {
+            msgbox(format("Our repairs are almost finished.\pMaybe you should visit Falador Castle or finish up an important task or something.\pAfter that I'm sure our boat will be repaired."))
+            hidenamebox
+            release
+            end
+        }
+        else {
+            msgbox(format("Is your name {PLAYER}?\pI have received word that you are participating in the MvM Championships, is this correct?\pUsually our services cost 30gp but we have a deal with the Championship League that allows all participants to travel for free!\pSo…{PAUSE 15}…  Ahem!"))
+        }
         //Set var for KARMAJA_SAILORS_STATE
         //setvar(KARMAJA_SAILORS_STATE, 5)
     }

@@ -13958,7 +13958,7 @@
               {
                 "min_level": 11,
                 "max_level": 17,
-                "species": "SPECIES_FOAL"
+                "species": "SPECIES_SNAKE_SEA_FORM"
               },
               {
                 "min_level": 12,
@@ -14102,7 +14102,7 @@
               {
                 "min_level": 12,
                 "max_level": 17,
-                "species": "SPECIES_WINSTON"
+                "species": "SPECIES_SNAKE_SEA_FORM"
               },
               {
                 "min_level": 12,
@@ -14112,7 +14112,7 @@
               {
                 "min_level": 12,
                 "max_level": 17,
-                "species": "SPECIES_FOAL"
+                "species": "SPECIES_WINSTON"
               },
               {
                 "min_level": 12,
@@ -18605,17 +18605,17 @@
             "encounter_rate": 4,
             "mons": [
               {
-                "min_level": 35,
-                "max_level": 45,
+                "min_level": 32,
+                "max_level": 40,
+                "species": "SPECIES_MUDSKIPPER"
+              },
+              {
+                "min_level": 33,
+                "max_level": 42,
                 "species": "SPECIES_MUDSKIPPER"
               },
               {
                 "min_level": 35,
-                "max_level": 45,
-                "species": "SPECIES_MUDSKIPPER"
-              },
-              {
-                "min_level": 40,
                 "max_level": 45,
                 "species": "SPECIES_MUDSKIPPER"
               },
@@ -18759,17 +18759,17 @@
             "encounter_rate": 4,
             "mons": [
               {
-                "min_level": 35,
-                "max_level": 45,
+                "min_level": 32,
+                "max_level": 40,
+                "species": "SPECIES_MUDSKIPPER"
+              },
+              {
+                "min_level": 33,
+                "max_level": 42,
                 "species": "SPECIES_MUDSKIPPER"
               },
               {
                 "min_level": 35,
-                "max_level": 45,
-                "species": "SPECIES_MUDSKIPPER"
-              },
-              {
-                "min_level": 40,
                 "max_level": 45,
                 "species": "SPECIES_MUDSKIPPER"
               },
@@ -29186,7 +29186,7 @@
           "map": "MAP_BAY_OF_SARIM",
           "base_label": "gBay_of_Sarim0",
           "water_mons": {
-            "encounter_rate": 80,
+            "encounter_rate": 4,
             "mons": [
               {
                 "min_level": 25,

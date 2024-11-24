@@ -893,6 +893,12 @@ static const struct MenuAction MultichoiceList_SANDWICH[] =
     {gText_BAGUETTE},
     {gText_TRIANGLE_SANDWICH},
 };
+static const struct MenuAction MultichoiceList_TZHAAR_FIGHTCAVES[] =
+{
+    {gText_Challenge},
+    {gText_Info},
+    {gText_Exit},
+};
 
 
 
@@ -1040,6 +1046,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_SCURRIUS]			       = MULTICHOICE(MultichoiceList_SCURRIUS),
     [MULTI_AXES]			           = MULTICHOICE(MultichoiceList_AXES),
     [MULTI_SANDWICH]			       = MULTICHOICE(MultichoiceList_SANDWICH),
+    [MULTI_TZHAAR_FIGHTCAVES]		   = MULTICHOICE(MultichoiceList_TZHAAR_FIGHTCAVES),
 };
 
 const u8 *const gStdStrings[] =

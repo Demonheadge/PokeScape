@@ -68,7 +68,8 @@ script FIGHT_CAVES_QUIT {
     {
         closemessage
         call(FIGHT_CAVES_RESTRICTIONS_OFF)
-        warp(MAP_TZHAAR_FIGHT_CAVES, 0)
+        setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 10)
+        warp(MAP_TZHAAR_FIGHT_CAVES, 1)
         waitstate
     }
     else {
@@ -975,13 +976,13 @@ script GYMLEADER_TZHAAR_CHAMPION {
     namebox("Kimit-Kal")
     msgbox(format("Also have this Scroll."))
     hidenamebox
-    giveitem (ITEM_TM48, 1) //Power Gem.
+    giveitem (ITEM_TM15, 1) //Power Gem.
     compare(VAR_RESULT, FALSE)
     goto_if_eq(Common_EventScript_ShowBagIsFull)
-    playbgm(MUS_PS_ALKHARID, 0)
-    savebgm(MUS_PS_ALKHARID)
+    //playbgm(MUS_PS_ALKHARID, 0)
+    //savebgm(MUS_PS_ALKHARID)
     namebox("Kimit-Kal")
-    msgbox(format("That move is called Power Gem.\pIt sparkles just as all our precious Gems around the palace do."))
+    msgbox(format("That move is called Lava Plume."))
     addvar(VAR_GAMEMODE_LEVEL_CAP, 2)
     setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 30)
     setflag(FLAG_BADGE03_GET)
@@ -989,6 +990,8 @@ script GYMLEADER_TZHAAR_CHAMPION {
     call(HIDDEN_GROTTO_RESET)
     addvar(VAR_GAMEMODE_LEVEL_SCALING, 1) //INCREASES LEVEL SCALING & SHOPS
     msgbox(format("Now let us return outside."))
+    hidenamebox
+    closemessage
     call(FIGHT_CAVES_FINISHED)
     release
     end
@@ -1054,14 +1057,18 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         case 4: //begin WAVE 4
             setvar(VAR_TEMP_E, 4) //WAVE: 4
             call(FIGHTCAVES_WAVE_TRANSITION)
-            setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
-            call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
-            addobject(OBJ_EVENT_ID_TZKIH_1)
-            clearflag(FLAG_TEMP_1)
+            //setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
+            //call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
+            //addobject(OBJ_EVENT_ID_TZKIH_1)
+            //clearflag(FLAG_TEMP_1)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_4) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_2) //LOCATION (2)
             addobject(OBJ_EVENT_ID_GAAL_4) 
             clearflag(FLAG_TEMP_4)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_KET_6) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_KET_6) 
+            clearflag(FLAG_TEMP_6)
         case 6: //begin WAVE 5
             setvar(VAR_TEMP_E, 5) //WAVE: 5
             call(FIGHTCAVES_WAVE_TRANSITION)

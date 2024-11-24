@@ -19,18 +19,14 @@ Tzhaar_HarAken_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 
 FIGHT_CAVES_RESTRICTIONS_ON::
 	setflag FLAG_TOGGLE_NO_CATCHING
-	msgbox FIGHT_CAVES_RESTRICTIONS_ON_Text_0
 	setflag FLAG_TOGGLE_NO_BAG_USE
-	msgbox FIGHT_CAVES_RESTRICTIONS_ON_Text_1
 	closemessage
 	return
 
 
 FIGHT_CAVES_RESTRICTIONS_OFF::
 	clearflag FLAG_TOGGLE_NO_CATCHING
-	msgbox FIGHT_CAVES_RESTRICTIONS_OFF_Text_0
 	clearflag FLAG_TOGGLE_NO_BAG_USE
-	msgbox FIGHT_CAVES_RESTRICTIONS_OFF_Text_1
 	closemessage
 	return
 
@@ -43,10 +39,9 @@ FIGHT_CAVES_START::
 
 
 FIGHT_CAVES_FINISHED::
-	msgbox FIGHT_CAVES_FINISHED_Text_0
 	closemessage
 	call FIGHT_CAVES_RESTRICTIONS_OFF
-	warp MAP_TZHAAR_FIGHT_CAVES, 0
+	warp MAP_TZHAAR_FIGHT_CAVES, 1
 	waitstate
 	end
 
@@ -325,22 +320,6 @@ ENCOUNTER_HAR_AKEN_4:
 	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_HAR_AKEN_1
 
-
-FIGHT_CAVES_RESTRICTIONS_ON_Text_0:
-	.string "Catching is disabled.$"
-
-FIGHT_CAVES_RESTRICTIONS_ON_Text_1:
-	.string "Bag is disabled.$"
-
-FIGHT_CAVES_RESTRICTIONS_OFF_Text_0:
-	.string "Catching is enabled.$"
-
-FIGHT_CAVES_RESTRICTIONS_OFF_Text_1:
-	.string "Bag is enabled.$"
-
-FIGHT_CAVES_FINISHED_Text_0:
-	.string "Cave completed.\n"
-	.string "Teleporting out…$"
 
 HARAKEN_START_Text_0:
 	.string "WAVE: HAR-AKEN.$"

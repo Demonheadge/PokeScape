@@ -4,10 +4,30 @@ mapscripts Tzhaar_FightCaves_MapScripts {
 
     MAP_SCRIPT_ON_TRANSITION 
     {
-
+        
     }
+
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_POKESCAPE_TZHAAR_GYM_QUEST, 10: TZHAAR_GYM_ROOM_LOST // If you lose or retire from the Gym Challenge.
+    ]
     
 }
+
+
+script TZHAAR_GYM_ROOM_LOST {
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+    waitmovement(0)
+    namebox("Kimit-Kal")
+    msgbox(format("Us Tzhaar have proven Victorious this time.\pCome back and challenge us again when you are ready."))
+    setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1)
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+
+
 
 
 script NPC_TZHAAR_GYM_TOKHAAR
@@ -15,26 +35,23 @@ script NPC_TZHAAR_GYM_TOKHAAR
     lock
     faceplayer
     namebox("TokHaar-Hok")
-
-
-
     switch (var(VAR_POKESCAPE_TZHAAR_GYM_QUEST)){ 
 		case 0:
 			msgbox(format("Welcome to the Elder Kiln, MvM Challenger.\pI am TokHaar-Hok.\pIf you want the Tzhaar Gym badge you must defeat me.\pBut before that you must prove yourself against TzTok-Jad within the Fight Caves."))
-            setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 2)
+            //setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 2)
         case 1:
             msgbox(format("Would you like to start your Fight Caves gym challenge?"), MSGBOX_YESNO)
             if (var(VAR_RESULT))
             {
             msgbox(format("Very well, Ga'al will escort you to the caves."))
-            setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 3)
+            //setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 3)
             }
         case 18:
             msgbox(format("Pathetic, to think you would panic and run from the fight caves!\pTry again but next time don't run away like a coward."))
-            setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1)
+            //setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1)
         case 19:
             msgbox(format("Impressive, well done MvM Challenger.\pYou defeated TzTok-Jad and the Fight Caves.\pYou may now challenge me, I will give you time to prepare.\pCome back when you are ready to face me."))
-            setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 20)
+            //setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 20)
         case 20: 
             msgbox(format("Are you ready for your battle against me?"), MSGBOX_YESNO)
             if (var(VAR_RESULT))
@@ -56,11 +73,11 @@ script NPC_TZHAAR_GYM_TOKHAAR
             giveitem (ITEM_TM48, 1) //Power Gem.
             compare(VAR_RESULT, FALSE)
             goto_if_eq(Common_EventScript_ShowBagIsFull)
-            playbgm(MUS_PS_ALKHARID, 0)
-            savebgm(MUS_PS_ALKHARID)
+            //playbgm(MUS_PS_ALKHARID, 0)
+            //savebgm(MUS_PS_ALKHARID)
             namebox("TokHaar-Hok")
             msgbox(format("That move is called Power Gem.\pIt sparkles just as all our precious Gems around the palace do."))
-            setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 30)
+            //setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 30)
             setflag(FLAG_BADGE05_GET)
             subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_MVM_CHAMPIONSHIPS, 4)
             call(HIDDEN_GROTTO_RESET)
@@ -117,7 +134,7 @@ script ENCOUNTER_JAD_GYM {
 	dowildbattleNoCatch
 	if (var(VAR_RESULT) == B_OUTCOME_WON) {
         fadescreenswapbuffers(FADE_TO_BLACK)
-		setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 19)
+		//setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 19)
         setflag(FLAG_TEMP_1)
         removeobject(OBJ_EVENT_ID_TZTOKJAD)
         fadescreenswapbuffers(FADE_FROM_BLACK)
@@ -127,7 +144,7 @@ script ENCOUNTER_JAD_GYM {
 	}
 	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) { // Cannot catch with dowildbattleNoCatch
         fadescreenswapbuffers(FADE_TO_BLACK)
-		setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 20)
+		//setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 20)
         setflag(FLAG_TEMP_1)
         removeobject(OBJ_EVENT_ID_TZTOKJAD)
         fadescreenswapbuffers(FADE_FROM_BLACK)
@@ -136,7 +153,7 @@ script ENCOUNTER_JAD_GYM {
 	}
     elif (var(VAR_RESULT) == B_OUTCOME_LOST) {
         fadescreenswapbuffers(FADE_TO_BLACK)
-		setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1) 
+		//setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1) 
         fadescreenswapbuffers(FADE_FROM_BLACK)
 		closemessage
 		end
@@ -154,7 +171,7 @@ script ENCOUNTER_JAD_GYM {
         msgbox(format("The cave has caved in."))
         closemessage
   
-		setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 18) 
+		//setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 18) 
 
         warp(MAP_TZHAAR_CAVES_1, 0, 0, 0)
 		end
@@ -208,32 +225,106 @@ script NPC_TZHAAR_GYM_LEADER
     if (var(VAR_POKESCAPE_TZHAAR_GYM_QUEST) == 0) {
         msgbox(format("Welcome to the Mor-Ul-Rek Gym.\nI am Kimit-Kal.\pIf the Tzhaar Badge is what you seek, then you must participate in our Gym Challenge.\pBattle your way through 5 Waves of my brethren then defeat me in battle."))
         setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1)
-    }
-    if (var(VAR_POKESCAPE_TZHAAR_GYM_QUEST) == 1) {
         msgbox(format("Would you like to start your Gym challenge?"), MSGBOX_YESNO)
         if (var(VAR_RESULT))
         {
-        msgbox(format("Very well, Ga'al will escort you to the caves."))
-        closemessage
-        hidenamebox
-        setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 5)
-        //applymovement to tzhaar.
-        namebox("Ga'al")
-        msgbox(format("Follow me."))
-        hidenamebox
-        //warp()
-        call(FIGHT_CAVES_START)
+            call(TZHAAR_GYMCHALLENGE_START)
+        }
+        else {
+            hidenamebox
+            closemessage
+            release
+            end
+        }
+    }
+    if (var(VAR_POKESCAPE_TZHAAR_GYM_QUEST) == 1) {
+        msgbox(format("You return JalYt, would you like to start your Gym challenge?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT))
+        {
+            call(TZHAAR_GYMCHALLENGE_START)
         }
     }
 
     if (var(VAR_POKESCAPE_TZHAAR_GYM_QUEST) == 10) {// If you lose the Gym Challenge.
-        msgbox(format("Us Tzhaar have proven Victorious this time.\pCome back and challenge us again when you are ready."))
+        msgbox(format("It seems us Tzhaar have proven victorious this time.\pCome back and challenge us again when you are ready."))
         setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1)
+    }
+
+    if (var(VAR_POKESCAPE_TZHAAR_GYM_QUEST) == 30) {
+        msgbox(format("Congratulations on your victory JalYt.\pIf you wish to prove yourself even more you should visit our Fight Caves in the westside of our city.\pOtherwise we wish you to have glorious battles in your future MvM Challenges."))
     }
     hidenamebox
     closemessage
     release
     end
+}
+
+script TZHAAR_GYMCHALLENGE_START {
+    msgbox(format("Very well, Ga'al will escort you to the caves."))
+    closemessage
+    hidenamebox
+    setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 10)
+    //applymovement to tzhaar.
+    
+
+    applymovement(2, Movement_TZHAAR_ESCORT_1)
+    applymovement(3, Movement_TZHAAR_ESCORT_2)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEDOWN)
+    waitmovement(0)
+    namebox("Ga'al")
+    msgbox(format("Guh, follow us."))
+    hidenamebox
+    closemessage
+    applymovement(3, Movement_TZHAAR_ESCORT_3)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_TZHAAR_ESCORT_4)
+    applymovement(2, Movement_TZHAAR_ESCORT_5)
+    waitmovement(0)
+    
+    waitmovement(0)
+    //warp()
+    call(FIGHT_CAVES_START)
+    return
+}
+
+movement Movement_TZHAAR_ESCORT_1 {
+    walk_left
+    delay_16
+    face_up
+}
+
+movement Movement_TZHAAR_ESCORT_2 {
+    walk_right * 2
+    face_up
+}
+
+
+movement Movement_TZHAAR_ESCORT_3 {
+    walk_left * 1
+    face_right
+    delay_16
+    walk_left * 2
+    walk_up * 3
+    walk_right * 3
+    walk_up * 2
+    set_invisible
+}
+movement Movement_TZHAAR_ESCORT_4 {
+    delay_16
+    walk_down
+    walk_left * 3
+    walk_up * 3
+    walk_right * 3
+    walk_up * 2
+    set_invisible
+}
+movement Movement_TZHAAR_ESCORT_5 {
+    delay_16 * 2
+    walk_left * 4
+    walk_up * 3
+    walk_right * 3
+    walk_up * 2
+    set_invisible
 }
 
 
@@ -242,6 +333,61 @@ script NPC_TZHAAR_GYM_LEADER
 
 
 
+script TRIGGER_TZHAAR_GYM_LEADER
+{
+    lockall
+    applymovement(1, Movement_InteractFACEUP)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEDOWN)
+    waitmovement(0)
+    namebox("Kimit-Kal")
+    msgbox(format("JalYt, you may not enter.\pOnly those who are participating in the Gym Challenge may enter that cave."))
+    closemessage
+    hidenamebox
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_LOCK_WALK_DOWN)
+    applymovement(1, Movement_InteractFACEDOWN)
+    waitmovement(0)
+    releaseall
+    end
+}
+
+movement Movement_LOCK_WALK_DOWN
+{
+    lock_facing_direction
+    walk_down
+    unlock_facing_direction
+} 
 
 
+script NPC_TZHAAR_GYM_GAAL_1
+{
+    lock
+    faceplayer
+    namebox("Ga'al")
+    if (flag(FLAG_BADGE03_GET) == TRUE) {
+        msgbox(format("The Fight Caves have the same rules as this gym challenge.\pIt's just a lot harder."))
+    }
+    else {
+        msgbox(format("In this gym challenge you may not use any items from your bag during battle.\pYou are also not allow to capture our brethern."))
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
+script NPC_TZHAAR_GYM_GAAL_2
+{
+    lock
+    faceplayer
+    namebox("Ga'al")
+    if (flag(FLAG_BADGE03_GET) == TRUE) {
+        msgbox(format("Congratulations on your victory JalYt.\pYou should try out the Fight Caves!"))
+    }
+    else {
+        msgbox(format("In this gym challenge you must battle through 5 waves and defeat our champion, Kimit-Kal."))
+    }
+    closemessage
+    hidenamebox
+    release
+    end
+}
 

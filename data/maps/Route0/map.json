@@ -301,5 +301,5 @@
       "flag": "FLAG_TEMP_1"
     }
   ],
-  "has_night_table": true
+  "has_night_table": false
 }

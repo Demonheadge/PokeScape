@@ -3,9 +3,63 @@ const OBJ_EVENT_ID_PENGUIN = 8
 
 mapscripts MudskipperPoint_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+        call(MUDSKIPPER_POINT_STATE)
         call(PENGUIN_EVENT)
     }
 }
+
+script MUDSKIPPER_POINT_STATE {
+    setflag(FLAG_TEMP_F)
+    removeobject(9)
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 155) {
+        clearflag(FLAG_TEMP_F)
+        addobject(9)
+    }
+    return
+}
+
+script STORY_NPC_MUDSKIPPER_POINT_SIRTHEODORE {
+    lockall
+    faceplayer
+    namebox ("Sir Theodore")
+    msgbox(format("{PLAYER}?!\pWow is that really you?!\pWe were worried when we lost contact with you and Ned.\pSpeaking of which, where is Ned?"))
+    hidenamebox
+    closemessage
+    delay(30)
+    msgbox(format("…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}"))
+    hidenamebox
+    closemessage
+    playse(SE_LEDGE)
+    applymovement(9, MOVEMENT_EXCLAMATIONMARK_JUMP_LOCK)
+    namebox ("Sir Theodore")
+    msgbox(format("WHAT!?\pYOU JUST LEFT HIM ON CRANDOR?!"))
+    waitmovement(0)
+    msgbox(format("We must report back to Sir Amik Varze in Falador right away and organise a resuce mission!!"))
+    hidenamebox
+    closemessage
+    namebox ("Sir Theodore")
+    msgbox(format("Would you like to travel to Falador with me?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)) {
+        msgbox(format("Alright, to Falador with great haste!"))
+        closemessage
+        hidenamebox
+        msgbox(format("NOTE: THIS IS THE END OF THE POKESCAPE DEMO, FROM HERE ON OUT YOU ARE WELCOME TO EXPLORE UNTIL THE NEXT UPDATE!\pTHANK YOU FOR PLAYING!"))
+        warp(MAP_FALADOR_CASTLE_3F, 3)
+        waitstate
+    }
+    closemessage
+    hidenamebox
+    releaseall
+    end
+}
+
+movement MOVEMENT_EXCLAMATIONMARK_JUMP_LOCK {
+    emote_exclamation_mark
+    lock_facing_direction
+    jump_in_place_down
+    unlock_facing_direction
+}
+
 
 script ENCOUNTER_PENGUIN_BARREL_MUDSKIPPER_POINT {
 	lock

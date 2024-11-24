@@ -15,17 +15,17 @@ mapscripts Tzhaar_HarAken_MapScripts {
 
 script FIGHT_CAVES_RESTRICTIONS_ON {
     setflag(FLAG_TOGGLE_NO_CATCHING)
-    msgbox(format("Catching is disabled."))
+    //msgbox(format("Catching is disabled."))
     setflag(FLAG_TOGGLE_NO_BAG_USE)
-    msgbox(format("Bag is disabled."))
+    //msgbox(format("Bag is disabled."))
     closemessage
     return
 }
 script FIGHT_CAVES_RESTRICTIONS_OFF {
     clearflag(FLAG_TOGGLE_NO_CATCHING)
-    msgbox(format("Catching is enabled."))
+    //msgbox(format("Catching is enabled."))
     clearflag(FLAG_TOGGLE_NO_BAG_USE)
-    msgbox(format("Bag is enabled."))
+    //msgbox(format("Bag is enabled."))
     closemessage
     return
 }
@@ -37,10 +37,10 @@ script FIGHT_CAVES_START {
 }
 
 script FIGHT_CAVES_FINISHED {
-    msgbox(format("Cave completed.\nTeleporting out…"))
+    //msgbox(format("Cave completed.\nTeleporting out…"))
     closemessage
     call(FIGHT_CAVES_RESTRICTIONS_OFF)
-    warp(MAP_TZHAAR_FIGHT_CAVES, 0)
+    warp(MAP_TZHAAR_FIGHT_CAVES, 1)
     waitstate
     end
 }

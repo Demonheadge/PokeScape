@@ -122,5 +122,5 @@
       "script": "DUNGEON_SIGN"
     }
   ],
-  "has_night_table": true
+  "has_night_table": false
 }

@@ -1,9 +1,26 @@
 Tzhaar_FightCaves_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Tzhaar_FightCaves_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Tzhaar_FightCaves_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
 Tzhaar_FightCaves_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	return
+
+Tzhaar_FightCaves_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_POKESCAPE_TZHAAR_GYM_QUEST, 10, TZHAAR_GYM_ROOM_LOST
+	.2byte 0
+
+
+TZHAAR_GYM_ROOM_LOST::
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP
+	waitmovement 0
+	namebox TZHAAR_GYM_ROOM_LOST_Text_0
+	msgbox TZHAAR_GYM_ROOM_LOST_Text_1
+	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1
+	hidenamebox
+	closemessage
+	release
+	end
 
 
 NPC_TZHAAR_GYM_TOKHAAR::
@@ -25,7 +42,6 @@ NPC_TZHAAR_GYM_TOKHAAR_1:
 
 NPC_TZHAAR_GYM_TOKHAAR_3:
 	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_1
-	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 2
 	goto NPC_TZHAAR_GYM_TOKHAAR_1
 
 NPC_TZHAAR_GYM_TOKHAAR_4:
@@ -36,12 +52,10 @@ NPC_TZHAAR_GYM_TOKHAAR_4:
 
 NPC_TZHAAR_GYM_TOKHAAR_5:
 	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_4
-	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1
 	goto NPC_TZHAAR_GYM_TOKHAAR_1
 
 NPC_TZHAAR_GYM_TOKHAAR_6:
 	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_5
-	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 20
 	goto NPC_TZHAAR_GYM_TOKHAAR_1
 
 NPC_TZHAAR_GYM_TOKHAAR_7:
@@ -56,7 +70,6 @@ NPC_TZHAAR_GYM_TOKHAAR_8:
 
 NPC_TZHAAR_GYM_TOKHAAR_9:
 	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_3
-	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 3
 	goto NPC_TZHAAR_GYM_TOKHAAR_1
 
 NPC_TZHAAR_GYM_TOKHAAR_11:
@@ -76,11 +89,8 @@ NPC_TZHAAR_GYM_TOKHAAR_11:
 	giveitem ITEM_TM48, 1
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_ShowBagIsFull
-	playbgm MUS_PS_ALKHARID, 0
-	savebgm MUS_PS_ALKHARID
 	namebox NPC_TZHAAR_GYM_TOKHAAR_Text_0
 	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_11
-	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 30
 	setflag FLAG_BADGE05_GET
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MVM_CHAMPIONSHIPS, 4
 	call HIDDEN_GROTTO_RESET
@@ -135,7 +145,6 @@ ENCOUNTER_JAD_GYM::
 
 ENCOUNTER_JAD_GYM_2:
 	fadescreenswapbuffers FADE_TO_BLACK
-	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 19
 	setflag FLAG_TEMP_1
 	removeobject 11
 	fadescreenswapbuffers FADE_FROM_BLACK
@@ -145,7 +154,6 @@ ENCOUNTER_JAD_GYM_2:
 
 ENCOUNTER_JAD_GYM_3:
 	fadescreenswapbuffers FADE_TO_BLACK
-	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 20
 	setflag FLAG_TEMP_1
 	removeobject 11
 	fadescreenswapbuffers FADE_FROM_BLACK
@@ -154,7 +162,6 @@ ENCOUNTER_JAD_GYM_3:
 
 ENCOUNTER_JAD_GYM_4:
 	fadescreenswapbuffers FADE_TO_BLACK
-	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1
 	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	end
@@ -169,7 +176,6 @@ ENCOUNTER_JAD_GYM_5:
 	msgbox ENCOUNTER_JAD_GYM_Text_4
 	msgbox ENCOUNTER_JAD_GYM_Text_5
 	closemessage
-	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 18
 	warp MAP_TZHAAR_CAVES_1, 0, 0, 0
 	end
 
@@ -186,7 +192,7 @@ BATTLE_MOD_SARNIE::
 NPC_TZHAAR_GYM_LEADER::
 	lock
 	faceplayer
-	namebox NPC_TZHAAR_GYM_LEADER_Text_0
+	namebox TZHAAR_GYM_ROOM_LOST_Text_0
 	compare VAR_POKESCAPE_TZHAAR_GYM_QUEST, 0
 	goto_if_eq NPC_TZHAAR_GYM_LEADER_2
 NPC_TZHAAR_GYM_LEADER_1:
@@ -194,40 +200,202 @@ NPC_TZHAAR_GYM_LEADER_1:
 	goto_if_eq NPC_TZHAAR_GYM_LEADER_5
 NPC_TZHAAR_GYM_LEADER_4:
 	compare VAR_POKESCAPE_TZHAAR_GYM_QUEST, 10
-	goto_if_eq NPC_TZHAAR_GYM_LEADER_8
-NPC_TZHAAR_GYM_LEADER_7:
+	goto_if_eq NPC_TZHAAR_GYM_LEADER_11
+NPC_TZHAAR_GYM_LEADER_10:
+	compare VAR_POKESCAPE_TZHAAR_GYM_QUEST, 30
+	goto_if_eq NPC_TZHAAR_GYM_LEADER_16
+NPC_TZHAAR_GYM_LEADER_15:
 	hidenamebox
 	closemessage
 	release
 	end
 
 NPC_TZHAAR_GYM_LEADER_2:
-	msgbox NPC_TZHAAR_GYM_LEADER_Text_1
+	msgbox NPC_TZHAAR_GYM_LEADER_Text_0
 	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1
-	goto NPC_TZHAAR_GYM_LEADER_1
+	msgbox NPC_TZHAAR_GYM_LEADER_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NPC_TZHAAR_GYM_LEADER_7
+	hidenamebox
+	closemessage
+	release
+	end
 
 NPC_TZHAAR_GYM_LEADER_5:
 	msgbox NPC_TZHAAR_GYM_LEADER_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne NPC_TZHAAR_GYM_LEADER_10
+	goto_if_ne NPC_TZHAAR_GYM_LEADER_13
 	goto NPC_TZHAAR_GYM_LEADER_4
 
-NPC_TZHAAR_GYM_LEADER_8:
-	msgbox NPC_TZHAAR_GYM_LEADER_Text_5
-	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1
-	goto NPC_TZHAAR_GYM_LEADER_7
+NPC_TZHAAR_GYM_LEADER_7:
+	call TZHAAR_GYMCHALLENGE_START
+	goto NPC_TZHAAR_GYM_LEADER_1
 
-NPC_TZHAAR_GYM_LEADER_10:
+NPC_TZHAAR_GYM_LEADER_11:
+	msgbox NPC_TZHAAR_GYM_LEADER_Text_3
+	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1
+	goto NPC_TZHAAR_GYM_LEADER_10
+
+NPC_TZHAAR_GYM_LEADER_13:
+	call TZHAAR_GYMCHALLENGE_START
+	goto NPC_TZHAAR_GYM_LEADER_4
+
+NPC_TZHAAR_GYM_LEADER_16:
+	msgbox NPC_TZHAAR_GYM_LEADER_Text_4
+	goto NPC_TZHAAR_GYM_LEADER_15
+
+
+TZHAAR_GYMCHALLENGE_START::
 	msgbox NPC_TZHAAR_GYM_TOKHAAR_Text_3
 	closemessage
 	hidenamebox
-	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 5
-	namebox NPC_TZHAAR_GYM_LEADER_Text_3
-	msgbox NPC_TZHAAR_GYM_LEADER_Text_4
+	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 10
+	applymovement 2, Movement_TZHAAR_ESCORT_1
+	applymovement 3, Movement_TZHAAR_ESCORT_2
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACEDOWN
+	waitmovement 0
+	namebox TZHAAR_GYMCHALLENGE_START_Text_0
+	msgbox TZHAAR_GYMCHALLENGE_START_Text_1
 	hidenamebox
+	closemessage
+	applymovement 3, Movement_TZHAAR_ESCORT_3
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_TZHAAR_ESCORT_4
+	applymovement 2, Movement_TZHAAR_ESCORT_5
+	waitmovement 0
+	waitmovement 0
 	call FIGHT_CAVES_START
-	goto NPC_TZHAAR_GYM_LEADER_4
+	return
 
+
+Movement_TZHAAR_ESCORT_1:
+	walk_left
+	delay_16
+	face_up
+	step_end
+
+Movement_TZHAAR_ESCORT_2:
+	walk_right
+	walk_right
+	face_up
+	step_end
+
+Movement_TZHAAR_ESCORT_3:
+	walk_left
+	face_right
+	delay_16
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	set_invisible
+	step_end
+
+Movement_TZHAAR_ESCORT_4:
+	delay_16
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	set_invisible
+	step_end
+
+Movement_TZHAAR_ESCORT_5:
+	delay_16
+	delay_16
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_right
+	walk_right
+	walk_right
+	walk_up
+	walk_up
+	set_invisible
+	step_end
+
+TRIGGER_TZHAAR_GYM_LEADER::
+	lockall
+	applymovement 1, Movement_InteractFACEUP
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACEDOWN
+	waitmovement 0
+	namebox TZHAAR_GYM_ROOM_LOST_Text_0
+	msgbox TRIGGER_TZHAAR_GYM_LEADER_Text_0
+	closemessage
+	hidenamebox
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_LOCK_WALK_DOWN
+	applymovement 1, Movement_InteractFACEDOWN
+	waitmovement 0
+	releaseall
+	end
+
+
+Movement_LOCK_WALK_DOWN:
+	lock_facing_direction
+	walk_down
+	unlock_facing_direction
+	step_end
+
+NPC_TZHAAR_GYM_GAAL_1::
+	lock
+	faceplayer
+	namebox TZHAAR_GYMCHALLENGE_START_Text_0
+	goto_if_set FLAG_BADGE03_GET, NPC_TZHAAR_GYM_GAAL_1_2
+	msgbox NPC_TZHAAR_GYM_GAAL_1_Text_1
+NPC_TZHAAR_GYM_GAAL_1_1:
+	closemessage
+	hidenamebox
+	release
+	end
+
+NPC_TZHAAR_GYM_GAAL_1_2:
+	msgbox NPC_TZHAAR_GYM_GAAL_1_Text_0
+	goto NPC_TZHAAR_GYM_GAAL_1_1
+
+
+NPC_TZHAAR_GYM_GAAL_2::
+	lock
+	faceplayer
+	namebox TZHAAR_GYMCHALLENGE_START_Text_0
+	goto_if_set FLAG_BADGE03_GET, NPC_TZHAAR_GYM_GAAL_2_2
+	msgbox NPC_TZHAAR_GYM_GAAL_2_Text_1
+NPC_TZHAAR_GYM_GAAL_2_1:
+	closemessage
+	hidenamebox
+	release
+	end
+
+NPC_TZHAAR_GYM_GAAL_2_2:
+	msgbox NPC_TZHAAR_GYM_GAAL_2_Text_0
+	goto NPC_TZHAAR_GYM_GAAL_2_1
+
+
+TZHAAR_GYM_ROOM_LOST_Text_0:
+	.string "Kimit-Kal$"
+
+TZHAAR_GYM_ROOM_LOST_Text_1:
+	.string "Us Tzhaar have proven Victorious this\n"
+	.string "time.\p"
+	.string "Come back and challenge us again when\n"
+	.string "you are ready.$"
 
 NPC_TZHAAR_GYM_TOKHAAR_Text_0:
 	.string "TokHaar-Hok$"
@@ -339,9 +507,6 @@ BATTLE_MOD_SARNIE_Text_3:
 	.string "You could get a Fire Cape like me.$"
 
 NPC_TZHAAR_GYM_LEADER_Text_0:
-	.string "Kimit-Kal$"
-
-NPC_TZHAAR_GYM_LEADER_Text_1:
 	.string "Welcome to the Mor-Ul-Rek Gym.\n"
 	.string "I am Kimit-Kal.\p"
 	.string "If the Tzhaar Badge is what you seek,\n"
@@ -350,18 +515,55 @@ NPC_TZHAAR_GYM_LEADER_Text_1:
 	.string "Battle your way through 5 Waves of my\n"
 	.string "brethren then defeat me in battle.$"
 
-NPC_TZHAAR_GYM_LEADER_Text_2:
+NPC_TZHAAR_GYM_LEADER_Text_1:
 	.string "Would you like to start your Gym\n"
 	.string "challenge?$"
 
+NPC_TZHAAR_GYM_LEADER_Text_2:
+	.string "You return JalYt, would you like to\n"
+	.string "start your Gym challenge?$"
+
 NPC_TZHAAR_GYM_LEADER_Text_3:
-	.string "Ga'al$"
-
-NPC_TZHAAR_GYM_LEADER_Text_4:
-	.string "Follow me.$"
-
-NPC_TZHAAR_GYM_LEADER_Text_5:
-	.string "Us Tzhaar have proven Victorious this\n"
-	.string "time.\p"
+	.string "It seems us Tzhaar have proven\n"
+	.string "victorious this time.\p"
 	.string "Come back and challenge us again when\n"
 	.string "you are ready.$"
+
+NPC_TZHAAR_GYM_LEADER_Text_4:
+	.string "Congratulations on your victory JalYt.\p"
+	.string "If you wish to prove yourself even more\n"
+	.string "you should visit our Fight Caves in the\l"
+	.string "westside of our city.\p"
+	.string "Otherwise we wish you to have glorious\n"
+	.string "battles in your future MvM Challenges.$"
+
+TZHAAR_GYMCHALLENGE_START_Text_0:
+	.string "Ga'al$"
+
+TZHAAR_GYMCHALLENGE_START_Text_1:
+	.string "Guh, follow us.$"
+
+TRIGGER_TZHAAR_GYM_LEADER_Text_0:
+	.string "JalYt, you may not enter.\p"
+	.string "Only those who are participating in the\n"
+	.string "Gym Challenge may enter that cave.$"
+
+NPC_TZHAAR_GYM_GAAL_1_Text_0:
+	.string "The Fight Caves have the same rules as\n"
+	.string "this gym challenge.\p"
+	.string "It's just a lot harder.$"
+
+NPC_TZHAAR_GYM_GAAL_1_Text_1:
+	.string "In this gym challenge you may not use\n"
+	.string "any items from your bag during battle.\p"
+	.string "You are also not allow to capture our\n"
+	.string "brethern.$"
+
+NPC_TZHAAR_GYM_GAAL_2_Text_0:
+	.string "Congratulations on your victory JalYt.\p"
+	.string "You should try out the Fight Caves!$"
+
+NPC_TZHAAR_GYM_GAAL_2_Text_1:
+	.string "In this gym challenge you must battle\n"
+	.string "through 5 waves and defeat our\l"
+	.string "champion, Kimit-Kal.$"

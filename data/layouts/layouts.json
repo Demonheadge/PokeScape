@@ -5354,8 +5354,8 @@
     {
       "id": "LAYOUT_TZHAAR_FIGHT_CAVES",
       "name": "Tzhaar_FightCaves_Layout",
-      "width": 40,
-      "height": 40,
+      "width": 14,
+      "height": 14,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_PokeScape_Caves",
       "border_filepath": "data/layouts/Tzhaar_FightCaves/border.bin",

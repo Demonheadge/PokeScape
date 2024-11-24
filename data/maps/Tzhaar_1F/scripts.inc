@@ -99,10 +99,35 @@ TZHAAR_FIGHTCAVES_NPC::
 	faceplayer
 	namebox STORYMODE_TZHAAR_NPC_Text_0
 	msgbox TZHAAR_FIGHTCAVES_NPC_Text_0
+	goto_if_set FLAG_BADGE03_GET, TZHAAR_FIGHTCAVES_NPC_2
+	msgbox TZHAAR_FIGHTCAVES_NPC_Text_6
+TZHAAR_FIGHTCAVES_NPC_1:
 	closemessage
 	hidenamebox
 	release
 	end
+
+TZHAAR_FIGHTCAVES_NPC_2:
+	msgbox TZHAAR_FIGHTCAVES_NPC_Text_1
+	multichoicedefault 1, 0, MULTI_TZHAAR_FIGHTCAVES, 0, 0
+	switch VAR_RESULT
+	case 0, TZHAAR_FIGHTCAVES_NPC_6
+	case 1, TZHAAR_FIGHTCAVES_NPC_7
+	case 2, TZHAAR_FIGHTCAVES_NPC_8
+	goto TZHAAR_FIGHTCAVES_NPC_1
+
+TZHAAR_FIGHTCAVES_NPC_6:
+	msgbox TZHAAR_FIGHTCAVES_NPC_Text_2
+	msgbox TZHAAR_FIGHTCAVES_NPC_Text_3
+	goto TZHAAR_FIGHTCAVES_NPC_1
+
+TZHAAR_FIGHTCAVES_NPC_7:
+	msgbox TZHAAR_FIGHTCAVES_NPC_Text_4
+	goto TZHAAR_FIGHTCAVES_NPC_1
+
+TZHAAR_FIGHTCAVES_NPC_8:
+	msgbox TZHAAR_FIGHTCAVES_NPC_Text_5
+	goto TZHAAR_FIGHTCAVES_NPC_1
 
 
 TZHAAR_GYM_NPC::
@@ -605,8 +630,33 @@ TRIGGER_TZHAAR_GYM_GAAL_1_Text_0:
 	.string "Tzhaar City.$"
 
 TZHAAR_FIGHTCAVES_NPC_Text_0:
-	.string "Welcome to the Tzhaar Fight Caves!\p"
-	.string "Only those with the Tzhaar badge may\n"
+	.string "Welcome to the Tzhaar Fight Caves!$"
+
+TZHAAR_FIGHTCAVES_NPC_Text_1:
+	.string "What would you like to do?$"
+
+TZHAAR_FIGHTCAVES_NPC_Text_2:
+	.string "Good luck JalYt!$"
+
+TZHAAR_FIGHTCAVES_NPC_Text_3:
+	.string "SORRY THIS FEATURE IS CURRENTLY WIP.$"
+
+TZHAAR_FIGHTCAVES_NPC_Text_4:
+	.string "Our Fight Caves consist of 63 rounds of\n"
+	.string "constant battles with our brethern,\l"
+	.string "getting harder the higher the wave.\p"
+	.string "Your goal is to make it to the end of\n"
+	.string "the waves.\p"
+	.string "If you lose, you must start again from\n"
+	.string "the beginning.\p"
+	.string "If you do you will be rewarded and known\n"
+	.string "as a champion amoung us Tzhaar.$"
+
+TZHAAR_FIGHTCAVES_NPC_Text_5:
+	.string "Very well.$"
+
+TZHAAR_FIGHTCAVES_NPC_Text_6:
+	.string "Only those with the Tzhaar Badge may\n"
 	.string "enter.$"
 
 TZHAAR_GYM_NPC_Text_0:
@@ -627,7 +677,7 @@ TZHAAR_NPC_1_Text_1:
 	.string "Okay Jalyt, follow me.$"
 
 TZHAAR_NPC_1_Text_2:
-	.string "Here we are this is the Tzhaar Gym, our\n"
+	.string "Here we are, this is the Tzhaar Gym. Our\n"
 	.string "champion is one of the strongest\l"
 	.string "Tzhaar!\p"
 	.string "I will be over here if you have anymore\n"

@@ -93,7 +93,25 @@ script TZHAAR_FIGHTCAVES_NPC
 {
     faceplayer
     namebox ("Tzhaar")
-    msgbox(format("Welcome to the Tzhaar Fight Caves!\pOnly those with the Tzhaar badge may enter."))
+    msgbox(format("Welcome to the Tzhaar Fight Caves!"))
+    if (flag(FLAG_BADGE03_GET) == TRUE) {
+        msgbox(format("What would you like to do?"))
+        multichoicedefault (1, 0, MULTI_TZHAAR_FIGHTCAVES, 0, 0)
+        switch (var(VAR_RESULT))
+        {
+            case 0:
+                msgbox(format("Good luck JalYt!"))
+                msgbox(format("SORRY THIS FEATURE IS CURRENTLY WIP."))
+                //call(TZHAAR_GYMCHALLENGE_START)
+            case 1:
+                msgbox(format("Our Fight Caves consist of 63 rounds of constant battles with our brethern, getting harder the higher the wave.\pYour goal is to make it to the end of the waves.\pIf you lose, you must start again from the beginning.\pIf you do you will be rewarded and known as a champion amoung us Tzhaar."))
+            case 2:
+                msgbox(format("Very well."))
+        }
+    }
+    else {
+        msgbox(format("Only those with the Tzhaar Badge may enter."))
+    }
     closemessage
     hidenamebox
     release
@@ -141,7 +159,7 @@ script TZHAAR_NPC_1
             }
             waitmovement(0)
 
-            msgbox(format("Here we are this is the Tzhaar Gym, our champion is one of the strongest Tzhaar!\pI will be over here if you have anymore questions about the gym."))
+            msgbox(format("Here we are, this is the Tzhaar Gym. Our champion is one of the strongest Tzhaar!\pI will be over here if you have anymore questions about the gym."))
             closemessage
             hidenamebox
             applymovement(19, MOVEMENT_TZHAAR_GYMWALK_6)

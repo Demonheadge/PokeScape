@@ -6937,40 +6937,40 @@ static const struct TrainerMon sParty_DWARVENMINES_TRAINER_1[] = {
 
 static const struct TrainerMon sParty_GYM_LEADER_TZHAAR_CHAMPION_1[] = {
     {
-    //.ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
-    //.iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ability = ABILITY_FLAME_BODY,
     .lvl = 35,
     .species = SPECIES_TZ_KIH_SPIRIT_FORM,
     .moves = {MOVE_TZ_TOK_ZEK, MOVE_HEAT_WAVE, MOVE_WHIRLWIND, MOVE_SUNNY_DAY}
     },
     {
-    //.ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
-    //.iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ability = ABILITY_FLAME_BODY,
     .lvl = 35,
     .species = SPECIES_REBORN_WARRIOR,
     .moves = {MOVE_LAVA_PLUME, MOVE_ROCK_WRECKER, MOVE_PROTECT, MOVE_SUNNY_DAY}
     },
     {
-    //.ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
-    //.iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ability = ABILITY_MAGMA_ARMOR,
     .lvl = 35,
     .species = SPECIES_TZREK_JAD,
     .moves = {MOVE_MAGMA_STORM, MOVE_STOMPING_TANTRUM, MOVE_BULK_UP, MOVE_TZ_TOK_ZEK}
     },
     {
-    //.ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
-    //.iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ability = ABILITY_FLAME_BODY,
     .lvl = 35,
     .species = SPECIES_TOK_XIL,
     .moves = {MOVE_SUNNY_DAY, MOVE_THOUSAND_ARROWS, MOVE_LAVA_PLUME, MOVE_SOLAR_BEAM}
     },
     {
-    //.ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
-    //.iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ability = ABILITY_MAGICIAN,
     .lvl = 35,
     .species = SPECIES_YT_MEJKOT,
@@ -7387,11 +7387,11 @@ static const struct TrainerMon sParty_CRANDOR_HAM_ADMIN_PATTY[] = {
 
 static const struct TrainerMon sParty_SAILING_PIRATE_1[] = {
     {
-    .lvl = 15,
+    .lvl = 36,
     .species = SPECIES_BASS,
     },
     {
-    .lvl = 15,
+    .lvl = 35,
     .species = SPECIES_SEERFISH,
     }
 };

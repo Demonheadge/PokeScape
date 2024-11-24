@@ -139,6 +139,7 @@
 #define MULTI_SCURRIUS                     125
 #define MULTI_AXES                         126
 #define MULTI_SANDWICH                     127
+#define MULTI_TZHAAR_FIGHTCAVES            128
 
 
 // Lilycove SS Tidal Multichoice Selections
