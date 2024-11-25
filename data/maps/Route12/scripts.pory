@@ -45,8 +45,8 @@ script OPENWORLD_STATE_ROUTE12 {
 }
 
 script ROUTE12_STATE{
-	if (flag(FLAG_BADGE02_GET)){
-            setobjectxyperm(16,29,9)
+	if (flag(FLAG_BADGE04_GET)){
+            setobjectxyperm(16,32,5)
 			setobjectmovementtype(16,MOVEMENT_TYPE_LOOK_AROUND)
             setobjectxyperm(14,30,14)
 			setobjectmovementtype(14,MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
@@ -236,7 +236,7 @@ script BLOCK_Route12_Farmer {
     namebox("Farmer")
 	if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
     {
-		if (!flag(FLAG_BADGE02_GET)){
+		if (!flag(FLAG_BADGE04_GET)){
 			msgbox(format("Urgh, I wish the goblins would stop messing with my sheep!"))
 			hidenamebox
 			closemessage

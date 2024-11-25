@@ -35,6 +35,8 @@ FALADORCASTLE_3F_STATE::
 	goto_if_eq FALADORCASTLE_3F_STATE_2
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 125
 	goto_if_eq FALADORCASTLE_3F_STATE_3
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 155
+	goto_if_ge FALADORCASTLE_3F_STATE_4
 	removeobject 4
 	removeobject 5
 	removeobject 6
@@ -43,6 +45,8 @@ FALADORCASTLE_3F_STATE::
 	removeobject 9
 	removeobject 10
 	setflag FLAG_TEMP_1F
+	setflag FLAG_TEMP_1D
+	setflag FLAG_TEMP_1C
 	setobjectxyperm 1, 3, 2
 	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_DOWN
 FALADORCASTLE_3F_STATE_1:
@@ -86,6 +90,24 @@ FALADORCASTLE_3F_STATE_3:
 	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT
 	removeobject 2
 	removeobject 3
+	setflag FLAG_TEMP_1E
+	goto FALADORCASTLE_3F_STATE_1
+
+FALADORCASTLE_3F_STATE_4:
+	clearflag FLAG_TEMP_1F
+	addobject 4
+	addobject 6
+	addobject 7
+	addobject 8
+	addobject 9
+	setobjectxyperm 4, 18, 4
+	setobjectxyperm 1, 19, 4
+	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype 1, MOVEMENT_TYPE_FACE_LEFT
+	removeobject 2
+	removeobject 3
+	removeobject 5
+	setflag FLAG_TEMP_1F
 	setflag FLAG_TEMP_1E
 	goto FALADORCASTLE_3F_STATE_1
 
@@ -272,11 +294,24 @@ FALADORCASTLE_3F_SIRTHEO::
 	lock
 	faceplayer
 	namebox FALADORCASTLE_3F_SIRTHEO_Text_0
-	msgbox FALADORCASTLE_3F_SIRTHEO_Text_1
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 155
+	goto_if_eq FALADORCASTLE_3F_SIRTHEO_2
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 160
+	goto_if_eq FALADORCASTLE_3F_SIRTHEO_3
+	msgbox FALADORCASTLE_3F_SIRTHEO_Text_3
+FALADORCASTLE_3F_SIRTHEO_1:
 	hidenamebox
 	closemessage
 	release
 	end
+
+FALADORCASTLE_3F_SIRTHEO_2:
+	msgbox FALADORCASTLE_3F_SIRTHEO_Text_1
+	goto FALADORCASTLE_3F_SIRTHEO_1
+
+FALADORCASTLE_3F_SIRTHEO_3:
+	msgbox FALADORCASTLE_3F_SIRTHEO_Text_2
+	goto FALADORCASTLE_3F_SIRTHEO_1
 
 
 FALADORCASTLE_3F_SIRTIFFY::
@@ -308,6 +343,25 @@ FALADORCASTLE_3F_SIRAMIKVARZE::
 	msgbox FALADORCASTLE_3F_SIRAMIKVARZE_Text_0
 	hidenamebox
 	closemessage
+	release
+	end
+
+
+STORY_FALADORCASTLE_3F_SIRAMIKVARZE_REPORTING_BACK::
+	msgbox STORY_FALADORCASTLE_3F_SIRAMIKVARZE_REPORTING_BACK_Text_0
+	hidenamebox
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_INTERACT_UP
+	waitmovement 0
+	namebox QUEST_FALADORCASTLE_EVENT_AFTER_GYM_Text_6
+	msgbox STORY_FALADORCASTLE_3F_SIRAMIKVARZE_REPORTING_BACK_Text_1
+	hidenamebox
+	closemessage
+	giveitem ITEM_FLY_TOOL
+	namebox QUEST_FALADORCASTLE_EVENT_AFTER_GYM_Text_6
+	msgbox STORY_FALADORCASTLE_3F_SIRAMIKVARZE_REPORTING_BACK_Text_2
+	closemessage
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 160
 	release
 	end
 
@@ -403,6 +457,16 @@ FALADORCASTLE_3F_SIRTHEO_Text_0:
 	.string "Sir Theodore$"
 
 FALADORCASTLE_3F_SIRTHEO_Text_1:
+	.string "{PLAYER} you should imform Sir Amik\n"
+	.string "Varze of what happened.$"
+
+FALADORCASTLE_3F_SIRTHEO_Text_2:
+	.string "So there's a secret tunnel under\n"
+	.string "Karmaja Volcano to Crandor…\p"
+	.string "Now we can organise a squad to go\n"
+	.string "retrieve Ned from Crandor!$"
+
+FALADORCASTLE_3F_SIRTHEO_Text_3:
 	.string "Roger that sir, I shall go and procure a\n"
 	.string "ship at the Port Sarim docks.$"
 
@@ -424,3 +488,31 @@ FALADORCASTLE_3F_SIRAMIKVARZE_Text_0:
 	.string "Crandor.\p"
 	.string "We will be in contact once we have\n"
 	.string "organised a vessel.$"
+
+STORY_FALADORCASTLE_3F_SIRAMIKVARZE_REPORTING_BACK_Text_0:
+	.string "{PLAYER} you are back!\p"
+	.string "What happened we lost contact with\n"
+	.string "you.$"
+
+STORY_FALADORCASTLE_3F_SIRAMIKVARZE_REPORTING_BACK_Text_1:
+	.string "I see…\p"
+	.string "This is troubling indeed.\p"
+	.string "This sounds like a job for the Temple\n"
+	.string "Knights, I will have to inform Sir Tiffy\l"
+	.string "Cachien at once.\p"
+	.string "Don't worry they will take over from\n"
+	.string "here, but if you do hear anything else\l"
+	.string "about H.A.M please do let us know.\p"
+	.string "Oh and please take this as thanks for\n"
+	.string "helping us.$"
+
+STORY_FALADORCASTLE_3F_SIRAMIKVARZE_REPORTING_BACK_Text_2:
+	.string "I'm sure that will come in handy for your\n"
+	.string "MvM journey.\p"
+	.string "Speaking of which, theres a gym\n"
+	.string "north-east of here at Barbarian\l"
+	.string "Village.\p"
+	.string "They have a stronghold full of strong\n"
+	.string "monsters, so maybe you could get some\l"
+	.string "training done there.\p"
+	.string "Best of luck!$"

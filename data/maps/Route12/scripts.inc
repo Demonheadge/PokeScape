@@ -30,11 +30,11 @@ OPENWORLD_STATE_ROUTE12::
 
 
 ROUTE12_STATE::
-	goto_if_set FLAG_BADGE02_GET, ROUTE12_STATE_1
+	goto_if_set FLAG_BADGE04_GET, ROUTE12_STATE_1
 	return
 
 ROUTE12_STATE_1:
-	setobjectxyperm 16, 29, 9
+	setobjectxyperm 16, 32, 5
 	setobjectmovementtype 16, MOVEMENT_TYPE_LOOK_AROUND
 	setobjectxyperm 14, 30, 14
 	setobjectmovementtype 14, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT
@@ -199,7 +199,7 @@ BLOCK_Route12_Farmer::
 	end
 
 BLOCK_Route12_Farmer_1:
-	goto_if_unset FLAG_BADGE02_GET, BLOCK_Route12_Farmer_5
+	goto_if_unset FLAG_BADGE04_GET, BLOCK_Route12_Farmer_5
 	msgbox BLOCK_Route12_Farmer_Text_2
 	hidenamebox
 	closemessage

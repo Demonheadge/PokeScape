@@ -162,7 +162,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
       "x": 14,
-      "y": 8,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -304,8 +304,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_IMPLING_ESSENCE",
-      "x": 19,
-      "y": 23,
+      "x": 20,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_JOG_IN_PLACE_DOWN",
       "movement_range_x": 4,

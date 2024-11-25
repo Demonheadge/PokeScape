@@ -64,7 +64,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FALADORCASTLE_3F_SIRTHEO",
-      "flag": "FLAG_TEMP_1F"
+      "flag": "FLAG_TEMP_1D"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SIR_OWEN",
@@ -90,7 +90,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NPC_FALADORCASTLE_GYM_BLACKKNIGHT",
-      "flag": "FLAG_TEMP_1F"
+      "flag": "FLAG_TEMP_1C"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KNIGHT_BLACK_M",
@@ -103,7 +103,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NPC_FALADORCASTLE_GYM_BLACKKNIGHT",
-      "flag": "FLAG_TEMP_1F"
+      "flag": "FLAG_TEMP_1C"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_M",
@@ -116,7 +116,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NPC_FALADORCASTLE_GYM_HAM",
-      "flag": "FLAG_TEMP_1F"
+      "flag": "FLAG_TEMP_1C"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_HAM_GRUNT_M",
@@ -129,7 +129,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NPC_FALADORCASTLE_GYM_HAM",
-      "flag": "FLAG_TEMP_1F"
+      "flag": "FLAG_TEMP_1C"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KNIGHT_WHITE_SIRTIFFYCASHIN",

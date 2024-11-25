@@ -73,6 +73,23 @@ script FALADORCASTLE_3F_STATE {
         removeobject(3)
         setflag(FLAG_TEMP_1E)
     }
+    elif (var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 155) { // After Musa Point. Reporting back.
+        clearflag(FLAG_TEMP_1F)
+        addobject(OBJ_EVENT_ID_SIR_THEODORE)
+        addobject(6)
+        addobject(7)
+        addobject(8)
+        addobject(9)
+        setobjectxyperm(OBJ_EVENT_ID_SIR_THEODORE, 18, 4)
+        setobjectxyperm(OBJ_EVENT_ID_SIR_AMIK_VARZE, 19, 4)
+        setobjectmovementtype(OBJ_EVENT_ID_SIR_THEODORE, MOVEMENT_TYPE_FACE_RIGHT)
+        setobjectmovementtype(OBJ_EVENT_ID_SIR_AMIK_VARZE, MOVEMENT_TYPE_FACE_LEFT)
+        removeobject(2)
+        removeobject(3)
+        removeobject(OBJ_EVENT_ID_SIR_OWEN)
+        setflag(FLAG_TEMP_1F)
+        setflag(FLAG_TEMP_1E)
+    }
     else {
         removeobject(OBJ_EVENT_ID_SIR_THEODORE)
         removeobject(OBJ_EVENT_ID_SIR_OWEN)
@@ -82,6 +99,8 @@ script FALADORCASTLE_3F_STATE {
         removeobject(9)
         removeobject(OBJ_EVENT_ID_SIR_TIFFY)
         setflag(FLAG_TEMP_1F)
+        setflag(FLAG_TEMP_1D) //theo
+        setflag(FLAG_TEMP_1C) //HAM & Knights
         setobjectxyperm(OBJ_EVENT_ID_SIR_AMIK_VARZE, 3, 2) 
         setobjectmovementtype(OBJ_EVENT_ID_SIR_AMIK_VARZE, MOVEMENT_TYPE_FACE_DOWN)
     }
@@ -290,7 +309,15 @@ script FALADORCASTLE_3F_SIRTHEO{
     lock
 	faceplayer
 	namebox("Sir Theodore")
-    msgbox(format("Roger that sir, I shall go and procure a ship at the Port Sarim docks."))
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 155) { // After Musa Point. Reporting back.
+        msgbox(format("{PLAYER} you should imform Sir Amik Varze of what happened."))
+    }
+    elif (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 160) { // After Musa Point. Reporting back.
+        msgbox(format("So there's a secret tunnel under Karmaja Volcano to Crandor…\pNow we can organise a squad to go retrieve Ned from Crandor!"))
+    }
+    else {
+        msgbox(format("Roger that sir, I shall go and procure a ship at the Port Sarim docks."))
+    }
     hidenamebox
 	closemessage
 	release
@@ -327,5 +354,26 @@ script FALADORCASTLE_3F_SIRAMIKVARZE{
     hidenamebox
 	closemessage
 	release
+	end
+}
+
+script STORY_FALADORCASTLE_3F_SIRAMIKVARZE_REPORTING_BACK{
+    msgbox(format("{PLAYER} you are back!\pWhat happened we lost contact with you."))
+    hidenamebox
+	closemessage
+    
+    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_INTERACT_UP)
+    waitmovement(0)
+    namebox("Sir Amik Varze")
+    msgbox(format("I see…\pThis is troubling indeed.\pThis sounds like a job for the Temple Knights, I will have to inform Sir Tiffy Cachien at once.\pDon't worry they will take over from here, but if you do hear anything else about H.A.M please do let us know.\pOh and please take this as thanks for helping us."))
+    hidenamebox
+	closemessage
+    giveitem(ITEM_FLY_TOOL)
+    namebox("Sir Amik Varze")
+    msgbox(format("I'm sure that will come in handy for your MvM journey.\pSpeaking of which, theres a gym north-east of here at Barbarian Village.\pThey have a stronghold full of strong monsters, so maybe you could get some training done there.\pBest of luck!"))
+	closemessage
+    setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 160)
+    //ADD INFO TO QUESTS MAIN STORY
+    release
 	end
 }

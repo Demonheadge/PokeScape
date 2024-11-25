@@ -9,7 +9,7 @@ mapscripts MusaPoint_Pub_1F_MapScripts {
 
 
 script MUSAPOINT_PUB_STATE {
-    if (var(VAR_WISE_OLD_MAN_RIVAL) == 20) { //Post Karamaja Gym, 
+    if ((var(VAR_WISE_OLD_MAN_RIVAL) == 20) && (var(VAR_POKESCAPE_STORYMODE_PROGRESS) < 160)) { //Post Karamaja Gym, 
         addobject(OBJ_EVENT_ID_WISE_OLD_MAN)
         clearflag(FLAG_TEMP_1F)
     }

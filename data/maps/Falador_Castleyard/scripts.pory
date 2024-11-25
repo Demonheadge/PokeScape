@@ -427,6 +427,9 @@ script NPC_FALADORCASTLE_GYM_SIRAMIKVARZE {
         release
         end
     }
+    elif (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 155) { // After Musa Point. Reporting back.
+        call(STORY_FALADORCASTLE_3F_SIRAMIKVARZE_REPORTING_BACK)
+    }
     elif (!flag(FLAG_BADGE02_GET)){
         if (var(VAR_POKESCAPE_GAMEMODE_STATE) == 0) //if STORY
     	{
@@ -470,7 +473,7 @@ script NPC_FALADORCASTLE_GYM_SIRAMIKVARZE {
         end
     }
     namebox("Sir Amik Varze")
-    msgbox(format("I recommend that you make your way to Al Kharid or Varrock for your next MvM gym challenge.\pUnless you would like to become a white knight instead?"))
+    msgbox(format("I recommend that you make your way to Barbarian Village for your next MvM gym challenge.\pUnless you would like to become a white knight instead?"))
     hidenamebox
     release
     end

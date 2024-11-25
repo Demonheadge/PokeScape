@@ -359,8 +359,10 @@ EventScript_New_RockSmash::
 EventScript_RockSmash_POKESCAPE::
 	lockall
 	checkitem ITEM_ROCKSMASH_TOOL, 1
-	goto_if_eq VAR_RESULT, FALSE, EventScript_CantSmashRock
-	bufferitemname 0, ITEM_ROCKSMASH_TOOL
+	compare VAR_RESULT, 0
+	goto_if_eq EventScript_RockSmash_POKESCAPE_2
+EventScript_RockSmash_POKESCAPE_1:
+	setfieldeffectargument 0, VAR_RESULT
 	msgbox EventScript_RockSmash_POKESCAPE_Text_0, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_CancelSmash
 	closemessage
@@ -368,6 +370,58 @@ EventScript_RockSmash_POKESCAPE::
 	waitstate
 	goto EventScript_SmashRock_POKESCAPE
 	end
+
+EventScript_RockSmash_POKESCAPE_2:
+	checkitem ITEM_BRONZEPICKAXE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq EventScript_RockSmash_POKESCAPE_4
+	goto EventScript_RockSmash_POKESCAPE_1
+
+EventScript_RockSmash_POKESCAPE_4:
+	checkitem ITEM_IRONPICKAXE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq EventScript_RockSmash_POKESCAPE_6
+	goto EventScript_RockSmash_POKESCAPE_1
+
+EventScript_RockSmash_POKESCAPE_6:
+	checkitem ITEM_STEELPICKAXE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq EventScript_RockSmash_POKESCAPE_8
+	goto EventScript_RockSmash_POKESCAPE_1
+
+EventScript_RockSmash_POKESCAPE_8:
+	checkitem ITEM_BLACKPICKAXE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq EventScript_RockSmash_POKESCAPE_10
+	goto EventScript_RockSmash_POKESCAPE_1
+
+EventScript_RockSmash_POKESCAPE_10:
+	checkitem ITEM_MITHRILPICKAXE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq EventScript_RockSmash_POKESCAPE_12
+	goto EventScript_RockSmash_POKESCAPE_1
+
+EventScript_RockSmash_POKESCAPE_12:
+	checkitem ITEM_ADAMANTPICKAXE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq EventScript_RockSmash_POKESCAPE_14
+	goto EventScript_RockSmash_POKESCAPE_1
+
+EventScript_RockSmash_POKESCAPE_14:
+	checkitem ITEM_RUNEPICKAXE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq EventScript_RockSmash_POKESCAPE_16
+	goto EventScript_RockSmash_POKESCAPE_1
+
+EventScript_RockSmash_POKESCAPE_16:
+	checkitem ITEM_DRAGON_PICKAXE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq EventScript_RockSmash_POKESCAPE_18
+	goto EventScript_RockSmash_POKESCAPE_1
+
+EventScript_RockSmash_POKESCAPE_18:
+	goto_if_eq EventScript_CantSmashRock
+	goto EventScript_RockSmash_POKESCAPE_1
 
 
 EventScript_SmashRock_POKESCAPE::
@@ -517,8 +571,7 @@ NPC_GOBLINCHEIFS_Text_1:
 
 EventScript_RockSmash_POKESCAPE_Text_0:
 	.string "This rock appears to be breakable.\n"
-	.string "Would you like to use the\l"
-	.string "{STR_VAR_1}?$"
+	.string "Would you like to use the PICKAXE?$"
 
 EventScript_SmashRock_POKESCAPE_Text_0:
 	.string "EventScript_SmashRock_POKESCAPE$"
