@@ -22,6 +22,11 @@ script CRANDOR_STATE {
         clearflag(FLAG_TEMP_1E) //ham
         setflag(FLAG_TEMP_1F) //elvarg
     }
+    elif (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 160) {
+        setflag(FLAG_TEMP_1E) //ham
+        setflag(FLAG_TEMP_1F) //elvarg
+        setflag(FLAG_TEMP_1B) //ned
+    }
     else {
         setflag(FLAG_TEMP_1E) //ham
         setflag(FLAG_TEMP_1F) //elvarg

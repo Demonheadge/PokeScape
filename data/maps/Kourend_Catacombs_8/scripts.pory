@@ -204,7 +204,7 @@ script ENCOUNTER_ABYSSAL_DEMON
 	lock
     faceplayer
     namebox ("ABYSSAL DEMON")
-    playmoncry(SPECIES_URSARING, 0)
+    playmoncry(SPECIES_ABYSSAL_DEMON_FORM, 0)
 	msgbox(format("WIZZZLE!"))
     waitmoncry
     hidenamebox
@@ -237,7 +237,7 @@ script ENCOUNTER_SLIME
 	lock
     faceplayer
     namebox ("SLIME")
-    playmoncry(SPECIES_URSARING, 0)
+    playmoncry(SPECIES_CAVE_SLIME, 0)
 	msgbox(format("GLOOOP! GOOP!"))
     waitmoncry
     hidenamebox
@@ -272,7 +272,7 @@ script ENCOUNTER_ROCKCRAB
 {
 	lock
     namebox ("ROCK CRAB")
-    playmoncry(SPECIES_URSARING, 0)
+    playmoncry(SPECIES_ROCK_CRAB_NORMAL_FORM, 0)
 	msgbox(format("SNIP SNIP!"))
     waitmoncry
     hidenamebox
@@ -304,7 +304,7 @@ script ENCOUNTER_DRAGON_BLACK
 {
 	lock
     namebox ("DRAGON")
-    playmoncry(SPECIES_URSARING, 0)
+    playmoncry(SPECIES_DRAGON_BLACK_FORM, 0)
 	msgbox(format("RAWR!"))
     waitmoncry
     hidenamebox
@@ -329,7 +329,7 @@ script ENCOUNTER_DRAGON_RED
 {
 	lock
     namebox ("DRAGON")
-    playmoncry(SPECIES_URSARING, 0)
+    playmoncry(SPECIES_DRAGON_RED_FORM, 0)
 	msgbox(format("RAWR!"))
     waitmoncry
     hidenamebox
@@ -354,7 +354,7 @@ script ENCOUNTER_DRAGON_BLUE
 {
 	lock
     namebox ("DRAGON")
-    playmoncry(SPECIES_URSARING, 0)
+    playmoncry(SPECIES_DRAGON_BLUE_FORM, 0)
 	msgbox(format("RAWR!"))
     waitmoncry
     hidenamebox
@@ -379,7 +379,7 @@ script ENCOUNTER_DRAGON_GREEN
 {
 	lock
     namebox ("DRAGON")
-    playmoncry(SPECIES_URSARING, 0)
+    playmoncry(SPECIES_DRAGON_GREEN_FORM, 0)
 	msgbox(format("RAWR!"))
     waitmoncry
     hidenamebox
@@ -404,7 +404,7 @@ script ENCOUNTER_BASILISK
 {
 	lock
     namebox ("BASILISK")
-    playmoncry(SPECIES_URSARING, 0)
+    playmoncry(SPECIES_BASILISK_KNIGHT_FORM, 0)
 	msgbox(format("KYARROOW!"))
     waitmoncry
     hidenamebox
@@ -431,7 +431,7 @@ script ENCOUNTER_GREATER_DEMON
 	lock
     faceplayer
     namebox ("GREATER DEMON")
-    playmoncry(SPECIES_EKANS, 0)
+    playmoncry(SPECIES_DEMON_GREATER_TONGUE_FORM, 0)
 	msgbox(format("RAOUGH!"))
     waitmoncry
     hidenamebox
@@ -495,6 +495,33 @@ script ENCOUNTER_MONKEY_QUEST
             giveitem(ITEM_BANANA, 5)
     }
     closemessage
+    release
+	end
+}
+
+script ENCOUNTER_SNOW_IMP
+{
+	lock
+    faceplayer
+    namebox ("SNOW IMP")
+    playmoncry(SPECIES_SNOW_IMP, 0)
+	msgbox(format("Sneez kek Kek!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    setwildbattle (SPECIES_SNOW_IMP, 30, ITEM_NONE)
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+        case B_OUTCOME_CAUGHT:
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+    }
     release
 	end
 }

@@ -340,13 +340,13 @@ script ENCOUNTER_GIANT_MOLE
 	lock
 	//msgbox(format("As you approach the Giant Mole, it attacks!"))
     namebox ("GIANT MOLE")
-    playmoncry(SPECIES_EKANS, 0)
+    playmoncry(SPECIES_GIANT_MOLE, 0)
 	msgbox(format("SNEEEEEE!"))
     waitmoncry
     hidenamebox
 	closemessage
 	delay(1)
-	setwildbattle (SPECIES_GIANT_MOLE, 30, ITEM_NONE)
+	setwildbattle (SPECIES_GIANT_MOLE, 40, ITEM_NONE)
     special(BattleSetup_StartLegendaryBattle)
 	//dowildbattle
     if (var(VAR_RESULT) == B_OUTCOME_WON) { //DEFEATED, Can still encounter again.

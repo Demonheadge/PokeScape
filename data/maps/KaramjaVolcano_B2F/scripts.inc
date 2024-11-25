@@ -21,14 +21,10 @@ KaramjaVolcano_STATE2::
 	return
 
 KaramjaVolcano_STATE2_2:
-	playbgm MUS_PS_ENCOUNTER_HAM, 1
-	savebgm MUS_PS_ENCOUNTER_HAM
 	release
 	end
 
 KaramjaVolcano_STATE2_3:
-	playbgm MUS_PS_ENCOUNTER_HAM, 1
-	savebgm MUS_PS_ENCOUNTER_HAM
 	release
 	end
 

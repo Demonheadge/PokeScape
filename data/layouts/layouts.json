@@ -8740,6 +8740,16 @@
       "secondary_tileset": "gTileset_IndoorTowns1",
       "border_filepath": "data/layouts/Falador_House_1/border.bin",
       "blockdata_filepath": "data/layouts/Falador_House_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_GOBLIN_VILLAGE_HOUSE_4",
+      "name": "GoblinVillage_House_4_Layout",
+      "width": 8,
+      "height": 8,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns1",
+      "border_filepath": "data/layouts/GoblinVillage_House_4/border.bin",
+      "blockdata_filepath": "data/layouts/GoblinVillage_House_4/map.bin"
     }
   ]
 }

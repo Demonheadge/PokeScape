@@ -1057,6 +1057,7 @@
 #define MAP_UNGAEL                              (87 | (50 << 8))
 #define MAP_VARLAMORE                           (88 | (50 << 8))
 #define MAP_BARB_STRONGHOLD_B4F_MURAL           (89 | (50 << 8))
+#define MAP_GOBLIN_VILLAGE_HOUSE_4              (90 | (50 << 8))
 
 #define MAP_GROUPS_COUNT 51
 

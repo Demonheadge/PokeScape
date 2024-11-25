@@ -1520,3 +1520,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Lumbridge_House_5/scripts.inc"
 
 	.include "data/maps/Falador_House_1/scripts.inc"
+
+	.include "data/maps/GoblinVillage_House_4/scripts.inc"

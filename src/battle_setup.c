@@ -581,6 +581,13 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_MEW:
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
         break;
+    case SPECIES_GIANT_MOLE:
+    case SPECIES_ELVARG:
+        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_PS_VS_LEGENDARY);
+        break;
+    case SPECIES_CHAOS_ELE:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_PS_VS_CHAOS_ELEMENTAL);
+        break;
     }
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);

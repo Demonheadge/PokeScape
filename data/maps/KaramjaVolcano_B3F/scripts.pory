@@ -15,6 +15,14 @@ mapscripts KaramjaVolcano_B3F_MapScripts {
         }
 }
 
+script CHAOS_ELEMENTAL_MURAL_CRANDOR {
+    lock
+    msgbox(format("It is a mural depicting some sort of creature.\pIt seems to have the power to open something but the mural is too damaged to make out."))
+    closemessage
+    release
+    end
+}
+
 
 
 script KaramjaVolcano_B3F_STATE {
@@ -521,45 +529,58 @@ script NPC_KaramjaVolcano_HAM_EVENT2
 
 
 
-script ELVARG_KaramjaVolcano
+
+
+script ENCOUNTER_ELVARG
 {
-    lock
-	//faceplayer
-    setvar(VAR_0x8004, 0)  //vertical pan
-	setvar(VAR_0x8005, 3)  //horizontal pan
-    setvar(VAR_0x8006, 8) //NUM SHAKES
-	setvar(VAR_0x8007, 2) //SHAKE DELAY
-    special(ShakeCamera)
-    delay(20)
-    setvar(VAR_0x8004, 0)  //vertical pan
-	setvar(VAR_0x8005, 3)  //horizontal pan
-    setvar(VAR_0x8006, 8) //NUM SHAKES
-	setvar(VAR_0x8007, 2) //SHAKE DELAY
-    special(ShakeCamera)
-    delay(20)
-    setvar(VAR_0x8004, 0)  //vertical pan
-	setvar(VAR_0x8005, 3)  //horizontal pan
-    setvar(VAR_0x8006, 8) //NUM SHAKES
-	setvar(VAR_0x8007, 2) //SHAKE DELAY
-    special(ShakeCamera)
-    delay(20)
-    playmoncry(SPECIES_LUGIA, 2)
+	lock
+    delay(32)
+    setvar (VAR_0x8004, 1  @ vertical pan)
+	setvar (VAR_0x8005, 1  @ horizontal pan)
+	setvar (VAR_0x8006, 8  @ num shakes)
+	setvar (VAR_0x8007, 3  @ shake delay)
+	special (ShakeCamera)
+    delay(60)
+    setvar (VAR_0x8004, 1  @ vertical pan)
+	setvar (VAR_0x8005, 1  @ horizontal pan)
+	setvar (VAR_0x8006, 8  @ num shakes)
+	setvar (VAR_0x8007, 3  @ shake delay)
+	special (ShakeCamera)
+    delay(60)
+    setvar (VAR_0x8004, 1  @ vertical pan)
+	setvar (VAR_0x8005, 1  @ horizontal pan)
+	setvar (VAR_0x8006, 8  @ num shakes)
+	setvar (VAR_0x8007, 3  @ shake delay)
+	special (ShakeCamera)
+    delay(60)
     namebox ("ELVARG")
-    msgbox(format("ROOOOOOAAAARRRR!!!"))
+    playmoncry(SPECIES_ELVARG, 0)
+    //applymovement(17, Movement_InteractFACELEFT)
+    //waitmovement(0)
+	msgbox(format("ROOOOOOAAAARRRR!!!"))
     waitmoncry
     hidenamebox
-    closemessage
-    delay(20)
-	setvar(VAR_0x8004, SPECIES_ELVARG)
-	setvar(VAR_0x8005, 40  @ level)
-	setvar(VAR_0x8006, ITEM_NONE)
-	special(CreateEnemyEventMon)
-	setflag(FLAG_SYS_CTRL_OBJ_DELETE)
-	special(BattleSetup_StartLegendaryBattle)
-	waitstate
-	setflag(FLAG_ELVARG)
-    removeobject(17)
-	release
+	closemessage
+	delay(32)
+	setwildbattle (SPECIES_ELVARG, 40, ITEM_NONE)
+    special(BattleSetup_StartLegendaryBattle)
+    waitstate
+    if (var(VAR_RESULT) == B_OUTCOME_WON) { //DEFEATED, Can still encounter again.
+        fadescreenswapbuffers(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
+        msgbox(format("Elvarg seems to have flown off."))
+        closemessage
+	}
+	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) { //CAPTURED! Cannot encounter again.
+        fadescreenswapbuffers(FADE_TO_BLACK)
+        setflag(FLAG_ELVARG)
+        removeobject (VAR_LAST_TALKED)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
+        msgbox(format("After capturing Elvarg the cavern goes quiet…"))
+        closemessage
+	}
+    release
 	end
 }
 
@@ -571,13 +592,13 @@ script ENCOUNTER_LESSERDEMON_KARAMJA_1 {
 	lock
 	faceplayer
     namebox ("Lesser Demon")
-	playmoncry(SPECIES_EKANS, 0)
+	playmoncry(SPECIES_DEMON_LESSER_OSRS_FORM, 0)
 	msgbox(format("GWARAKU!"))
 	waitmoncry
     hidenamebox
 	closemessage
 	delay(1)
-	setwildbattle (SPECIES_DEMON_LESSER_OSRS_FORM, 15, ITEM_NONE)
+	setwildbattle (SPECIES_DEMON_LESSER_OSRS_FORM, 30, ITEM_NONE)
 	dowildbattle
 	if (var(VAR_RESULT) == B_OUTCOME_WON) {
         fadescreenswapbuffers(FADE_TO_BLACK)
@@ -606,13 +627,13 @@ script ENCOUNTER_LESSERDEMON_KARAMJA_2 {
 	lock
 	faceplayer
     namebox ("Lesser Demon")
-	playmoncry(SPECIES_EKANS, 0)
+	playmoncry(SPECIES_DEMON_LESSER_OSRS_FORM, 0)
 	msgbox(format("GWARAKU!"))
 	waitmoncry
     hidenamebox
 	closemessage
 	delay(1)
-	setwildbattle (SPECIES_DEMON_LESSER_OSRS_FORM, 15, ITEM_NONE)
+	setwildbattle (SPECIES_DEMON_LESSER_OSRS_FORM, 30, ITEM_NONE)
 	dowildbattle
 	if (var(VAR_RESULT) == B_OUTCOME_WON) {
         fadescreenswapbuffers(FADE_TO_BLACK)

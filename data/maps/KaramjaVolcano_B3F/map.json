@@ -232,7 +232,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ELVARG_KaramjaVolcano",
+      "script": "ENCOUNTER_ELVARG",
       "flag": "FLAG_ELVARG"
     },
     {
@@ -632,7 +632,14 @@
     }
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 24,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CHAOS_ELEMENTAL_MURAL_CRANDOR"
+    }
   ],
   "has_night_table": false
 }

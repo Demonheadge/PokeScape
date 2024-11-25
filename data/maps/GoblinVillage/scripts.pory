@@ -178,6 +178,15 @@ script NPC_GOBLINVILLAGE_GOBLIN_COOK{
     release
     end
 }
+script NPC_GOBLINVILLAGE_RAT{
+    lock
+    faceplayer
+    namebox ("Goblin")
+    msgbox(format("Me live here with me rats.\pThey best except when they steal me food."))
+    hidenamebox
+    release
+    end
+}
 
 
 
@@ -211,6 +220,31 @@ script BATTLE_DEMONHEADGE2{
     namebox ("Demonheadge")
     msgbox(format("What do you think about dem apples!"))
     hidenamebox
+    release
+    end
+}
+
+
+script BATTLE_LOPENDEBANK {
+    lock
+    delay(30)
+    playse(SE_PIN)
+    applymovement(1, MOVEMENT_EXCLAMATIONMARK_FACEPLAYER)
+    waitmovement(0)
+    namebox("Lopendebank")
+    msgbox(format("Aeeyyye!\pPlease don't ban me!\pOh, are you looking for a battle?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+        trainerbattle_no_intro(TRAINER_LOPENDEBANK, msgbox(format("OMG pls don't ban me pl0x!")))
+        namebox ("Lopendebank")
+        msgbox(format("I am apart of team PokeScaper.\pKeep your eyes out as we are everywhere.\pNow if you will excuse me I am going back to making memes."))
+    }
+    else {
+        msgbox(format("Oh, okay. If you'll excuse me I have memes to make and bans to avoid."))
+    }
+    hidenamebox
+	closemessage
+    applymovement(1, Movement_InteractFACEUP)
+    waitmovement(0)
     release
     end
 }

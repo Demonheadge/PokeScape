@@ -384,13 +384,13 @@ NPC_GIANT_MOLE_12:
 ENCOUNTER_GIANT_MOLE::
 	lock
 	namebox ENCOUNTER_GIANT_MOLE_Text_0
-	playmoncry SPECIES_EKANS, 0
+	playmoncry SPECIES_GIANT_MOLE, 0
 	msgbox ENCOUNTER_GIANT_MOLE_Text_1
 	waitmoncry
 	hidenamebox
 	closemessage
 	delay 1
-	setwildbattle SPECIES_GIANT_MOLE, 30, ITEM_NONE
+	setwildbattle SPECIES_GIANT_MOLE, 40, ITEM_NONE
 	special BattleSetup_StartLegendaryBattle
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq ENCOUNTER_GIANT_MOLE_2

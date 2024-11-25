@@ -2677,55 +2677,57 @@ static const struct TrainerMon sParty_ROUTE23_TRAINER_4[] = {
 static const struct TrainerMon sParty_RimmingtonMines_DRAGONBOT_1[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 31,
+    .lvl = 37,
     .species = SPECIES_DRAGONLING_BLACK_FORM,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 35,
+    .lvl = 39,
     .species = SPECIES_HATCHLING,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 32,
-    .species = SPECIES_DRAGONLING_BLACK_FORM,
+    .lvl = 37,
+    .species = SPECIES_SPIDER_SPIRIT_FORM,
     }
 };
 
 static const struct TrainerMon sParty_RimmingtonMines_DRAGONBOT_2[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 32,
+    .lvl = 37,
     .species = SPECIES_TUROTH,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 33,
-    .species = SPECIES_TUROTH,
+    .lvl = 36,
+    .species = SPECIES_BIG_TUROTH,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 35,
+    .lvl = 39,
     .species = SPECIES_HATCHLING,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 34,
-    .species = SPECIES_HATCHLING,
+    .lvl = 37,
+    .species = SPECIES_DRAGONLING_BLACK_FORM,
     }
 };
 
 static const struct TrainerMon sParty_RimmingtonMines_Slayer_1[] = {
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 36,
+    .lvl = 39,
     .species = SPECIES_BUNYIP,
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 35,
-    .species = SPECIES_BUNYIP,
-    }
+    .lvl = 37,
+    .species = SPECIES_HELLHOUND,
+    },
+    {
+    .lvl = 39,
+    .species = SPECIES_KURASK,
+    },
 };
 
 static const struct TrainerMon sParty_Varrock_Max[] = {
@@ -7677,4 +7679,12 @@ static const struct TrainerMon sParty_ROUTE33_ZAMORAK4[] = {
     .species = SPECIES_SPIDER_TEMPLE_FORM,
     }
 };
+
+static const struct TrainerMon sParty_Lopendebank[] = {
+    {
+    .lvl = 40,
+    .species = SPECIES_REVENANT_IMP,
+    },
+};
+
 

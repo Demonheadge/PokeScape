@@ -43,7 +43,7 @@ ITEM_ROUTE24_3::
 
 
 ITEM_ROUTE24_4::
-	finditem ITEM_TALISMAN_MIND
+	finditem ITEM_MIND_RUNE
 	end
 
 
@@ -147,6 +147,16 @@ NPC_GOBLINVILLAGE_GOBLIN_COOK::
 	end
 
 
+NPC_GOBLINVILLAGE_RAT::
+	lock
+	faceplayer
+	namebox NPC_GOBLINVILLAGE_RAT_Text_0
+	msgbox NPC_GOBLINVILLAGE_RAT_Text_1
+	hidenamebox
+	release
+	end
+
+
 BATTLE_DEMONHEADGE::
 	faceplayer
 	namebox BATTLE_DEMONHEADGE_Text_0
@@ -173,6 +183,32 @@ BATTLE_DEMONHEADGE2::
 	hidenamebox
 	release
 	end
+
+
+BATTLE_LOPENDEBANK::
+	lock
+	delay 30
+	playse SE_PIN
+	applymovement 1, MOVEMENT_EXCLAMATIONMARK_FACEPLAYER
+	waitmovement 0
+	namebox BATTLE_LOPENDEBANK_Text_0
+	msgbox BATTLE_LOPENDEBANK_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne BATTLE_LOPENDEBANK_2
+	msgbox BATTLE_LOPENDEBANK_Text_4
+BATTLE_LOPENDEBANK_1:
+	hidenamebox
+	closemessage
+	applymovement 1, Movement_InteractFACEUP
+	waitmovement 0
+	release
+	end
+
+BATTLE_LOPENDEBANK_2:
+	trainerbattle_no_intro TRAINER_LOPENDEBANK, BATTLE_LOPENDEBANK_Text_2
+	namebox BATTLE_LOPENDEBANK_Text_0
+	msgbox BATTLE_LOPENDEBANK_Text_3
+	goto BATTLE_LOPENDEBANK_1
 
 
 NPC_GOBLINVILLAGE_GOBLIN_1_Text_0:
@@ -247,6 +283,14 @@ NPC_GOBLINVILLAGE_GOBLIN_COOK_Text_1:
 	.string "goblins.\p"
 	.string "Goblins saying me food is best.$"
 
+NPC_GOBLINVILLAGE_RAT_Text_0:
+	.string "Goblin$"
+
+NPC_GOBLINVILLAGE_RAT_Text_1:
+	.string "Me live here with me rats.\p"
+	.string "They best except when they steal me\n"
+	.string "food.$"
+
 BATTLE_DEMONHEADGE_Text_0:
 	.string "DEMONHEADGE$"
 
@@ -280,3 +324,25 @@ BATTLE_DEMONHEADGE2_Text_1:
 
 BATTLE_DEMONHEADGE2_Text_2:
 	.string "What do you think about dem apples!$"
+
+BATTLE_LOPENDEBANK_Text_0:
+	.string "Lopendebank$"
+
+BATTLE_LOPENDEBANK_Text_1:
+	.string "Aeeyyye!\p"
+	.string "Please don't ban me!\p"
+	.string "Oh, are you looking for a battle?$"
+
+BATTLE_LOPENDEBANK_Text_2:
+	.string "OMG pls don't ban me pl0x!$"
+
+BATTLE_LOPENDEBANK_Text_3:
+	.string "I am apart of team PokeScaper.\p"
+	.string "Keep your eyes out as we are\n"
+	.string "everywhere.\p"
+	.string "Now if you will excuse me I am going\n"
+	.string "back to making memes.$"
+
+BATTLE_LOPENDEBANK_Text_4:
+	.string "Oh, okay. If you'll excuse me I have\n"
+	.string "memes to make and bans to avoid.$"

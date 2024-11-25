@@ -209,7 +209,7 @@ ENCOUNTER_ABYSSAL_DEMON::
 	lock
 	faceplayer
 	namebox ENCOUNTER_ABYSSAL_DEMON_Text_0
-	playmoncry SPECIES_URSARING, 0
+	playmoncry SPECIES_ABYSSAL_DEMON_FORM, 0
 	msgbox ENCOUNTER_ABYSSAL_DEMON_Text_1
 	waitmoncry
 	hidenamebox
@@ -249,7 +249,7 @@ ENCOUNTER_SLIME::
 	lock
 	faceplayer
 	namebox ENCOUNTER_SLIME_Text_0
-	playmoncry SPECIES_URSARING, 0
+	playmoncry SPECIES_CAVE_SLIME, 0
 	msgbox ENCOUNTER_SLIME_Text_1
 	waitmoncry
 	hidenamebox
@@ -294,7 +294,7 @@ ENCOUNTER_SLIME_10:
 ENCOUNTER_ROCKCRAB::
 	lock
 	namebox ENCOUNTER_ROCKCRAB_Text_0
-	playmoncry SPECIES_URSARING, 0
+	playmoncry SPECIES_ROCK_CRAB_NORMAL_FORM, 0
 	msgbox ENCOUNTER_ROCKCRAB_Text_1
 	waitmoncry
 	hidenamebox
@@ -335,7 +335,7 @@ ENCOUNTER_ROCKCRAB_10:
 ENCOUNTER_DRAGON_BLACK::
 	lock
 	namebox ENCOUNTER_DRAGON_BLACK_Text_0
-	playmoncry SPECIES_URSARING, 0
+	playmoncry SPECIES_DRAGON_BLACK_FORM, 0
 	msgbox ENCOUNTER_DRAGON_BLACK_Text_1
 	waitmoncry
 	hidenamebox
@@ -366,7 +366,7 @@ ENCOUNTER_DRAGON_BLACK_4:
 ENCOUNTER_DRAGON_RED::
 	lock
 	namebox ENCOUNTER_DRAGON_BLACK_Text_0
-	playmoncry SPECIES_URSARING, 0
+	playmoncry SPECIES_DRAGON_RED_FORM, 0
 	msgbox ENCOUNTER_DRAGON_BLACK_Text_1
 	waitmoncry
 	hidenamebox
@@ -397,7 +397,7 @@ ENCOUNTER_DRAGON_RED_4:
 ENCOUNTER_DRAGON_BLUE::
 	lock
 	namebox ENCOUNTER_DRAGON_BLACK_Text_0
-	playmoncry SPECIES_URSARING, 0
+	playmoncry SPECIES_DRAGON_BLUE_FORM, 0
 	msgbox ENCOUNTER_DRAGON_BLACK_Text_1
 	waitmoncry
 	hidenamebox
@@ -428,7 +428,7 @@ ENCOUNTER_DRAGON_BLUE_4:
 ENCOUNTER_DRAGON_GREEN::
 	lock
 	namebox ENCOUNTER_DRAGON_BLACK_Text_0
-	playmoncry SPECIES_URSARING, 0
+	playmoncry SPECIES_DRAGON_GREEN_FORM, 0
 	msgbox ENCOUNTER_DRAGON_BLACK_Text_1
 	waitmoncry
 	hidenamebox
@@ -459,7 +459,7 @@ ENCOUNTER_DRAGON_GREEN_4:
 ENCOUNTER_BASILISK::
 	lock
 	namebox ENCOUNTER_BASILISK_Text_0
-	playmoncry SPECIES_URSARING, 0
+	playmoncry SPECIES_BASILISK_KNIGHT_FORM, 0
 	msgbox ENCOUNTER_BASILISK_Text_1
 	waitmoncry
 	hidenamebox
@@ -491,7 +491,7 @@ ENCOUNTER_GREATER_DEMON::
 	lock
 	faceplayer
 	namebox ENCOUNTER_GREATER_DEMON_Text_0
-	playmoncry SPECIES_EKANS, 0
+	playmoncry SPECIES_DEMON_GREATER_TONGUE_FORM, 0
 	msgbox ENCOUNTER_GREATER_DEMON_Text_1
 	waitmoncry
 	hidenamebox
@@ -578,6 +578,38 @@ ENCOUNTER_MONKEY_QUEST_4:
 	goto ENCOUNTER_MONKEY_QUEST_1
 
 
+ENCOUNTER_SNOW_IMP::
+	lock
+	faceplayer
+	namebox ENCOUNTER_SNOW_IMP_Text_0
+	playmoncry SPECIES_SNOW_IMP, 0
+	msgbox ENCOUNTER_SNOW_IMP_Text_1
+	waitmoncry
+	hidenamebox
+	closemessage
+	delay 1
+	setwildbattle SPECIES_SNOW_IMP, 30, ITEM_NONE
+	dowildbattle
+	switch VAR_RESULT
+	case B_OUTCOME_WON, ENCOUNTER_SNOW_IMP_3
+	case B_OUTCOME_CAUGHT, ENCOUNTER_SNOW_IMP_4
+ENCOUNTER_SNOW_IMP_1:
+	release
+	end
+
+ENCOUNTER_SNOW_IMP_3:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_SNOW_IMP_1
+
+ENCOUNTER_SNOW_IMP_4:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_SNOW_IMP_1
+
+
 SKOTIZO_TRIGGER_Text_0:
 	.string "The Dark Totem in your backpack starts\n"
 	.string "to react to the crystal.\p"
@@ -658,3 +690,9 @@ ENCOUNTER_MONKEY_QUEST_Text_2:
 
 ENCOUNTER_MONKEY_QUEST_Text_3:
 	.string "The monkey dropped some bananas.$"
+
+ENCOUNTER_SNOW_IMP_Text_0:
+	.string "SNOW IMP$"
+
+ENCOUNTER_SNOW_IMP_Text_1:
+	.string "Sneez kek Kek!$"

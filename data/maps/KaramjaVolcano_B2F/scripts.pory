@@ -17,13 +17,13 @@ script KaramjaVolcano_STATE2{
         switch (var(VAR_POKESCAPE_KARAMJAVOLCANO_STATE)){ 
             case 0:
             case 1: 
-                playbgm (MUS_PS_ENCOUNTER_HAM, 1)
-                savebgm(MUS_PS_ENCOUNTER_HAM)
+                //playbgm (MUS_PS_ENCOUNTER_HAM, 1)
+                //savebgm(MUS_PS_ENCOUNTER_HAM)
                 release
                 end
             case 2: 
-                playbgm (MUS_PS_ENCOUNTER_HAM, 1)
-                savebgm(MUS_PS_ENCOUNTER_HAM)
+                //playbgm (MUS_PS_ENCOUNTER_HAM, 1)
+                //savebgm(MUS_PS_ENCOUNTER_HAM)
                 release
                 end
             case 3: 

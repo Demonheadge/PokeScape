@@ -41,13 +41,13 @@ ENCOUNTER_VORKATH::
 	waitmovement 0
 	delay 60
 	namebox ENCOUNTER_VORKATH_Text_0
-	playmoncry SPECIES_TZTOK_JAD_RS3_MEGA_FORM, 0
+	playmoncry SPECIES_VORKATH, 0
 	msgbox ENCOUNTER_VORKATH_Text_1
 	waitmoncry
 	hidenamebox
 	closemessage
 	delay 32
-	setwildbattle SPECIES_FROGEEL, 60, ITEM_NONE
+	setwildbattle SPECIES_VORKATH, 70, ITEM_NONE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	compare VAR_RESULT, B_OUTCOME_WON
