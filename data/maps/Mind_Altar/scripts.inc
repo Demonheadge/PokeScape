@@ -1,2 +1,14 @@
 Mind_Altar_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Mind_Altar_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+Mind_Altar_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	compare VAR_SAFARI_ZONE_STATE, 0
+	goto_if_eq Mind_Altar_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	return
+
+Mind_Altar_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+	setflag FLAG_TEMP_1
+	setflag FLAG_TEMP_2
+	return
+

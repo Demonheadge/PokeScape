@@ -1,0 +1,18 @@
+
+
+mapscripts Mind_Altar_MapScripts {
+
+	MAP_SCRIPT_ON_TRANSITION { 
+		if (var(VAR_SAFARI_ZONE_STATE) == 0) 
+		{
+			setflag(FLAG_TEMP_1)
+         setflag(FLAG_TEMP_2)
+		}
+		else 
+		{
+			
+		}
+    }
+} 
+
+

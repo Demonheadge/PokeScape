@@ -425,8 +425,6 @@ EventScript_RockSmash_POKESCAPE_18:
 
 
 EventScript_SmashRock_POKESCAPE::
-	msgbox EventScript_SmashRock_POKESCAPE_Text_0
-	closemessage
 	applymovement VAR_LAST_TALKED, Movement_SmashRock
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
@@ -572,6 +570,3 @@ NPC_GOBLINCHEIFS_Text_1:
 EventScript_RockSmash_POKESCAPE_Text_0:
 	.string "This rock appears to be breakable.\n"
 	.string "Would you like to use the PICKAXE?$"
-
-EventScript_SmashRock_POKESCAPE_Text_0:
-	.string "EventScript_SmashRock_POKESCAPE$"

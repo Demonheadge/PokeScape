@@ -3677,31 +3677,31 @@ static const struct TrainerMon sParty_ROUTE29_TRAINER_5[] = {
 static const struct TrainerMon sParty_ROUTE33_GOBLIN1[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 24,
+    .lvl = 38,
     .species = SPECIES_CHICKEN_BANDOSIAN_FORM,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 23,
+    .lvl = 37,
     .species = SPECIES_BANDLING,
     }
 };
 static const struct TrainerMon sParty_ROUTE33_GOBLIN2[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 24,
+    .lvl = 38,
     .species = SPECIES_GOAT_CLAY_FORM,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 22,
+    .lvl = 37,
     .species = SPECIES_GOAT_MOUNTAIN_FORM,
     }
 };
 static const struct TrainerMon sParty_ROUTE33_ZAMORAK1[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 24,
+    .lvl = 38,
     .species = SPECIES_ZAMATRICE,
     }
 };
@@ -7628,3 +7628,53 @@ static const struct TrainerMon sParty_PUB_FALADOR_3[] = {
     .species = SPECIES_DARK_CORE,
     }
 };
+static const struct TrainerMon sParty_ROUTE33_RUNECRAFTER[] = {
+    {
+    .lvl = 38,
+    .species = SPECIES_ESSLING,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_ESSHOUND,
+    },
+    {
+    .lvl = 37,
+    .species = SPECIES_RUNE,
+    }
+};
+
+static const struct TrainerMon sParty_ROUTE33_ZAMORAK2[] = {
+    {
+    .lvl = 38,
+    .species = SPECIES_ABYSSAL_GUARDIAN,
+    },
+    {
+    .lvl = 37,
+    .species = SPECIES_DOUBT,
+    },
+    {
+    .lvl = 38,
+    .species = SPECIES_DEMON_GREATER_TONGUE_FORM,
+    }
+};
+static const struct TrainerMon sParty_ROUTE33_ZAMORAK3[] = {
+    {
+    .lvl = 37,
+    .species = SPECIES_BLOODVELD_INSATIABLE_PHYSICAL_FORM,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_SMOKEDEVIL,
+    },
+    {
+    .lvl = 38,
+    .species = SPECIES_DEMON_GREATER_OSRS_FORM,
+    }
+};
+static const struct TrainerMon sParty_ROUTE33_ZAMORAK4[] = {
+    {
+    .lvl = 39,
+    .species = SPECIES_SPIDER_TEMPLE_FORM,
+    }
+};
+

@@ -63,7 +63,7 @@ script ITEM_ROUTE24_3
 
 script ITEM_ROUTE24_4
 {
-    finditem(ITEM_TALISMAN_MIND)
+    finditem(ITEM_MIND_RUNE)
     end
 }
 

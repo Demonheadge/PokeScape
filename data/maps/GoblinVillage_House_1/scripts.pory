@@ -486,8 +486,8 @@ script EventScript_RockSmash_POKESCAPE
 
 script EventScript_SmashRock_POKESCAPE
 {
-  msgbox(format("EventScript_SmashRock_POKESCAPE"))
-  closemessage
+  //msgbox(format("EventScript_SmashRock_POKESCAPE"))
+  //closemessage
   applymovement (VAR_LAST_TALKED, Movement_SmashRock)
 	waitmovement (0)
 	removeobject (VAR_LAST_TALKED)

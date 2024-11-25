@@ -1447,7 +1447,7 @@ DungeonInteractions_Object1_6:
 	goto DungeonInteractions_Object1_1
 
 DungeonInteractions_Object1_7:
-	goto EventScript_RockSmash
+	goto EventScript_RockSmash_POKESCAPE
 	goto DungeonInteractions_Object1_1
 
 
@@ -1477,7 +1477,7 @@ DungeonInteractions_Object2_6:
 	goto DungeonInteractions_Object2_1
 
 DungeonInteractions_Object2_7:
-	goto EventScript_RockSmash
+	goto EventScript_RockSmash_POKESCAPE
 	goto DungeonInteractions_Object2_1
 
 
@@ -1507,7 +1507,7 @@ DungeonInteractions_Object3_6:
 	goto DungeonInteractions_Object3_1
 
 DungeonInteractions_Object3_7:
-	goto EventScript_RockSmash
+	goto EventScript_RockSmash_POKESCAPE
 	goto DungeonInteractions_Object3_1
 
 
@@ -1537,7 +1537,7 @@ DungeonInteractions_Object4_6:
 	goto DungeonInteractions_Object4_1
 
 DungeonInteractions_Object4_7:
-	goto EventScript_RockSmash
+	goto EventScript_RockSmash_POKESCAPE
 	goto DungeonInteractions_Object4_1
 
 
@@ -1567,7 +1567,7 @@ DungeonInteractions_Object5_6:
 	goto DungeonInteractions_Object5_1
 
 DungeonInteractions_Object5_7:
-	goto EventScript_RockSmash
+	goto EventScript_RockSmash_POKESCAPE
 	goto DungeonInteractions_Object5_1
 
 
@@ -1597,7 +1597,7 @@ DungeonInteractions_Object6_6:
 	goto DungeonInteractions_Object6_1
 
 DungeonInteractions_Object6_7:
-	goto EventScript_RockSmash
+	goto EventScript_RockSmash_POKESCAPE
 	goto DungeonInteractions_Object6_1
 
 
@@ -1627,7 +1627,7 @@ DungeonInteractions_Object7_6:
 	goto DungeonInteractions_Object7_1
 
 DungeonInteractions_Object7_7:
-	goto EventScript_RockSmash
+	goto EventScript_RockSmash_POKESCAPE
 	goto DungeonInteractions_Object7_1
 
 
@@ -1657,7 +1657,7 @@ DungeonInteractions_Object8_6:
 	goto DungeonInteractions_Object8_1
 
 DungeonInteractions_Object8_7:
-	goto EventScript_RockSmash
+	goto EventScript_RockSmash_POKESCAPE
 	goto DungeonInteractions_Object8_1
 
 
@@ -1687,7 +1687,7 @@ DungeonInteractions_Object9_6:
 	goto DungeonInteractions_Object9_1
 
 DungeonInteractions_Object9_7:
-	goto EventScript_RockSmash
+	goto EventScript_RockSmash_POKESCAPE
 	goto DungeonInteractions_Object9_1
 
 
@@ -1717,7 +1717,7 @@ DungeonInteractions_Object10_6:
 	goto DungeonInteractions_Object10_1
 
 DungeonInteractions_Object10_7:
-	goto EventScript_RockSmash
+	goto EventScript_RockSmash_POKESCAPE
 	goto DungeonInteractions_Object10_1
 
 
@@ -1747,7 +1747,7 @@ DungeonInteractions_6:
 	goto DungeonInteractions_1
 
 DungeonInteractions_7:
-	goto EventScript_RockSmash
+	goto EventScript_RockSmash_POKESCAPE
 	goto DungeonInteractions_1
 
 

@@ -2620,9 +2620,9 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_ROUTE33_ZAMORAK1] =
     {
-        .trainerClass = TRAINER_CLASS_DARK,
+        .trainerClass = TRAINER_CLASS_ZAMORAK,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
-        .trainerPic = TRAINER_PIC_wizard_dark,
+        .trainerPic = TRAINER_PIC_wizard_zamorak,
         .trainerName = _("WIZARD"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5103,6 +5103,52 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
         .party = TRAINER_PARTY(sParty_PUB_FALADOR_3),
+    },
+
+    [TRAINER_ROUTE33_RUNECRAFTER] =
+    {
+        .trainerClass = TRAINER_CLASS_RUNECRAFTER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .trainerPic = TRAINER_PIC_runecrafter,
+        .trainerName = _("CUPHOLDER"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_ROUTE33_RUNECRAFTER),
+    },
+
+    [TRAINER_ROUTE33_ZAMORAK2] =
+    {
+        .trainerClass = TRAINER_CLASS_ZAMORAK,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_wizard_zamorak,
+        .trainerName = _("MONK"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_ROUTE33_ZAMORAK2),
+    },
+    [TRAINER_ROUTE33_ZAMORAK3] =
+    {
+        .trainerClass = TRAINER_CLASS_ZAMORAK,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_wizard_zamorak,
+        .trainerName = _("MONK"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_ROUTE33_ZAMORAK3),
+    },
+    [TRAINER_ROUTE33_ZAMORAK4] =
+    {
+        .trainerClass = TRAINER_CLASS_ZAMORAK,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_wizard_zamorak,
+        .trainerName = _("MONK"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_ROUTE33_ZAMORAK4),
     },
 
 

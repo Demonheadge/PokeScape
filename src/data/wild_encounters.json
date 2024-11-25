@@ -26374,63 +26374,63 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 19,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_BEAR_CUB"
               },
               {
-                "min_level": 19,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_GOAT_BILLY_FORM"
               },
               {
-                "min_level": 19,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_RAT_KING_FORM"
               },
               {
-                "min_level": 19,
-                "max_level": 25,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_BEAR_CUB"
               },
               {
-                "min_level": 19,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_GOAT_BILLY_FORM"
               },
               {
-                "min_level": 19,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_RAT_KING_FORM"
               },
               {
-                "min_level": 19,
-                "max_level": 25,
-                "species": "SPECIES_IMPLING_EARTH_FORM"
-              },
-              {
-                "min_level": 19,
-                "max_level": 24,
-                "species": "SPECIES_RAT_NORMAL_FORM"
-              },
-              {
-                "min_level": 19,
-                "max_level": 24,
-                "species": "SPECIES_GIANT_RAT_KING_FORM"
-              },
-              {
-                "min_level": 19,
-                "max_level": 25,
-                "species": "SPECIES_RACOON"
-              },
-              {
-                "min_level": 19,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 33,
                 "species": "SPECIES_GOAT_CLAY_FORM"
               },
               {
-                "min_level": 19,
-                "max_level": 25,
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_RAT_NORMAL_FORM"
+              },
+              {
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_GIANT_RAT_KING_FORM"
+              },
+              {
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_RACOON"
+              },
+              {
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_GOAT_CLAY_FORM"
+              },
+              {
+                "min_level": 26,
+                "max_level": 33,
                 "species": "SPECIES_SPIRIT_RANGER"
               }
             ]
@@ -26443,63 +26443,63 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 19,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_BEAR_CUB"
               },
               {
-                "min_level": 19,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_GOAT_BILLY_FORM"
               },
               {
-                "min_level": 19,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_RAT_KING_FORM"
               },
               {
-                "min_level": 19,
-                "max_level": 25,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_BEAR_CUB"
               },
               {
-                "min_level": 19,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_GOAT_BILLY_FORM"
               },
               {
-                "min_level": 19,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_RAT_KING_FORM"
               },
               {
-                "min_level": 19,
-                "max_level": 25,
-                "species": "SPECIES_IMPLING_YOUNG_FORM"
-              },
-              {
-                "min_level": 19,
-                "max_level": 24,
-                "species": "SPECIES_RAT_CRYPT_FORM"
-              },
-              {
-                "min_level": 19,
-                "max_level": 24,
-                "species": "SPECIES_GIANT_RAT_KING_FORM"
-              },
-              {
-                "min_level": 19,
-                "max_level": 25,
-                "species": "SPECIES_BEAVER"
-              },
-              {
-                "min_level": 19,
-                "max_level": 24,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_GOAT_CLAY_FORM"
               },
               {
-                "min_level": 19,
-                "max_level": 25,
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_RAT_CRYPT_FORM"
+              },
+              {
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_GIANT_RAT_KING_FORM"
+              },
+              {
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_BEAVER"
+              },
+              {
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_GOAT_CLAY_FORM"
+              },
+              {
+                "min_level": 26,
+                "max_level": 33,
                 "species": "SPECIES_SPIRIT_RANGER"
               }
             ]
@@ -27503,64 +27503,64 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 20,
-                "max_level": 40,
-                "species": "SPECIES_LIGHT_CREATURE"
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_COCKROACH_WORKER"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_SPIDER_FEVER_FORM"
+              },
+              {
+                "min_level": 26,
+                "max_level": 33,
                 "species": "SPECIES_PURE"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
-                "species": "SPECIES_PURE"
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_GOAT_CLAY_FORM"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
-                "species": "SPECIES_CAVE_SLIME"
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_RUNE_GUARDIAN"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
-                "species": "SPECIES_CAVE_SLIME"
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_TOOTHS"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_CREATURE_CUTE_FORM"
+              },
+              {
+                "min_level": 26,
+                "max_level": 34,
+                "species": "SPECIES_ESSLING"
+              },
+              {
+                "min_level": 26,
+                "max_level": 34,
+                "species": "SPECIES_ESSHOUND"
+              },
+              {
+                "min_level": 26,
+                "max_level": 34,
                 "species": "SPECIES_RUNE"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
-                "species": "SPECIES_STALKER"
+                "min_level": 26,
+                "max_level": 34,
+                "species": "SPECIES_ANIMAWHAL"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
-                "species": "SPECIES_STALKER"
-              },
-              {
-                "min_level": 20,
-                "max_level": 40,
-                "species": "SPECIES_FOX"
-              },
-              {
-                "min_level": 20,
-                "max_level": 40,
-                "species": "SPECIES_SNEAKRPEEP"
-              },
-              {
-                "min_level": 20,
-                "max_level": 40,
-                "species": "SPECIES_SOULSEEKER"
-              },
-              {
-                "min_level": 20,
-                "max_level": 40,
-                "species": "SPECIES_RUE"
+                "min_level": 26,
+                "max_level": 34,
+                "species": "SPECIES_LIGHT_CREATURE"
               }
             ]
           }

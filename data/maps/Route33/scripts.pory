@@ -7,7 +7,7 @@ mapscripts Route33_MapScripts {
 //ITEMS
 script ITEM_ROUTE33_1
 {
-    finditem(ITEM_LINZAHAMMER)
+    finditem(ITEM_SUPER_PRAYER_POTION)
     end
 }
 
@@ -49,6 +49,112 @@ script BATTLE_ROUTE33_GOBLIN2 // GOBLIN 2
     trainerbattle_single(TRAINER_ROUTE33_GOBLIN2, format("Stupid red hoomans they so noisy!"),format("Red hoomans make lots of noise."))
     //namebox ("")
     msgbox(format("Red hoomans make lots of noise.\pMe want to get rid of them."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_ROUTE33_RUNECRAFTER 
+{
+    trainerbattle_single(TRAINER_ROUTE33_RUNECRAFTER, format("I'm looking for a Mind Talisman, do you have one!?"),format("How will I ever get my Runecrafting level up…"))
+    //namebox ("")
+    msgbox(format("I've been looking for a Mind Talisman so I can get into this Altar, but I've had no luck finding one.\pMaybe those Zamorakians have an idea."))
+	hidenamebox
+    release
+	end
+}
+
+
+
+
+script ZAMORAK_WIZARDS_EVENT
+{
+    lock
+    msgbox(format("There appears to be some wine and a Talisman on the table.\pSeeing as there is no need to take the wine, would you like to take the Talisman?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+        closemessage
+        
+        delay(15)
+        applymovement(2, MOVEMENT_CHAOS_TEMPLE_ZAMORAK_2)
+        applymovement(3, MOVEMENT_CHAOS_TEMPLE_ZAMORAK_1)
+        waitmovement(0)
+        playse(SE_LEDGE)
+        applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_EXCLAMATIONMARK_JUMP_LEFT)
+        waitse
+        
+        waitmovement(0)
+        //namebox ("Zamorak Monk")
+        //BATTLE
+        playbgm(MUS_PS_ENCOUNTER_PKER, 0)
+        namebox ("Zamorak Monk")
+        msgbox(format("Hands off!\pThat is ours!"))
+        trainerbattle_two_trainers(TRAINER_ROUTE33_ZAMORAK2, msgbox(format("Monk: Just don't touch our wine!")), TRAINER_ROUTE33_ZAMORAK3, msgbox(format("Monk: Urgh take that Talisman and leave!")))
+        namebox ("Zamorak Monk")
+        msgbox(format("Fine take that stupid Talisman but leave our wine alone."))
+        hidenamebox
+        closemessage
+        
+        applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+        waitmovement(0)
+        removeobject(1)
+        finditem(ITEM_TALISMAN_MIND)
+        setflag(FLAG_MIND_TALISMAN)
+
+        applymovement(2, MOVEMENT_CHAOS_TEMPLE_ZAMORAK_3)
+        applymovement(3, MOVEMENT_CHAOS_TEMPLE_ZAMORAK_4)
+        waitmovement(0)
+    }
+    release
+    end
+}
+
+
+movement MOVEMENT_CHAOS_TEMPLE_ZAMORAK_1 {
+    walk_fast_right * 2
+    walk_fast_up
+    walk_fast_right * 1
+}
+movement MOVEMENT_CHAOS_TEMPLE_ZAMORAK_2 {
+    walk_fast_up * 2
+    walk_fast_right * 1
+    face_up
+}
+movement MOVEMENT_CHAOS_TEMPLE_ZAMORAK_3 {
+    walk_slow_left
+    walk_slow_down * 2
+}
+movement MOVEMENT_CHAOS_TEMPLE_ZAMORAK_4 {
+    walk_slow_left * 1
+    walk_slow_down
+    walk_slow_left * 2
+}
+
+
+script NPC_ROUTE33_ZAMORAK_MONK_1
+{
+    lock
+    faceplayer
+    namebox("Zamorak Monk")
+    msgbox(format("Get out only those who worship Zamorak are welcome here."))
+    hidenamebox
+    release
+    end
+}
+script NPC_ROUTE33_ZAMORAK_MONK_2
+{
+    lock
+    faceplayer
+    namebox("Zamorak Monk")
+    msgbox(format("We make our own wine and then get our lord to bless it.\pIt is hard work but it tastes so good!"))
+    hidenamebox
+    release
+    end
+}
+script BATTLE_ROUTE33_ZAMORAK4 
+{
+    trainerbattle_single(TRAINER_ROUTE33_ZAMORAK4, format("Who are you!?\pYour kind isn't weclome here!"),format("I guess you can look around for a bit…"))
+    //namebox ("")
+    msgbox(format("Can I interest you in becoming a follower of our lord of chaos?"))
 	hidenamebox
     release
 	end

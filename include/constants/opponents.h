@@ -467,6 +467,10 @@
 #define TRAINER_PUB_FALADOR_1                           461
 #define TRAINER_PUB_FALADOR_2                           462
 #define TRAINER_PUB_FALADOR_3                           463
+#define TRAINER_ROUTE33_RUNECRAFTER                     464
+#define TRAINER_ROUTE33_ZAMORAK2					    465
+#define TRAINER_ROUTE33_ZAMORAK3					    466
+#define TRAINER_ROUTE33_ZAMORAK4					    467
 
 
 
@@ -476,7 +480,7 @@
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      (TRAINER_PUB_FALADOR_3 + 1)
+#define TRAINERS_COUNT                      (TRAINER_ROUTE33_ZAMORAK4 + 1)
 #define MAX_TRAINERS_COUNT                  864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H
