@@ -5161,6 +5161,17 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
         .party = TRAINER_PARTY(sParty_Lopendebank), 
     },
+    [TRAINER_ROUTE2_TRAINER_8] =
+    {
+        .trainerClass = TRAINER_CLASS_DIVINER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_divination,
+        .trainerName = _(""),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_ROUTE2_TRAINER_8),
+    },
 
 
 

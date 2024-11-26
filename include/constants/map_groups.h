@@ -871,6 +871,7 @@
 #define MAP_BARBARIAN_VILLAGE_GYM_HALL (0 | (44 << 8))
 #define MAP_BARBARIAN_VILLAGE_HOUSE_1  (1 | (44 << 8))
 #define MAP_BARBARIAN_VILLAGE_HOUSE_2  (2 | (44 << 8))
+#define MAP_BARBARIAN_VILLAGE_HOUSE_3  (3 | (44 << 8))
 
 // gMapGroup_PokescapeIndoorAlkharid
 #define MAP_ALKHARID_GYM_1F_R1      (0 | (45 << 8))

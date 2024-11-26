@@ -72,40 +72,40 @@ script NPC_BARB_BLOCKADE_1
     }
     if (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE) == 0)
     {
-        msgbox(format("Only the strong may enter our longhall!\pYou should probably leave if you know what is good for you."))
-        if (flag(FLAG_BADGE01_GET) && flag(FLAG_BADGE02_GET) && flag(FLAG_BADGE03_GET) && flag(FLAG_BADGE04_GET) && flag(FLAG_BADGE05_GET))
-        {
-            msgbox(format("Ohhoho!!\pImpressive you have at least four Badges.\pYou may pass, we shall watch your battle and cheer for your victory!"))
-            hidenamebox
-            closemessage
+        //msgbox(format("Only the strong may enter our longhall!\pYou should probably leave if you know what is good for you."))
+        //if (flag(FLAG_BADGE01_GET) && flag(FLAG_BADGE02_GET) && flag(FLAG_BADGE03_GET) && flag(FLAG_BADGE04_GET) && flag(FLAG_BADGE05_GET))
+        //{
+        //    msgbox(format("Ohhoho!!\pImpressive you have at least four Badges.\pYou may pass, we shall watch your battle and cheer for your victory!"))
+        //    hidenamebox
+        //    closemessage
+        //}
+        //else
+        //{
+        //    hidenamebox
+        //    closemessage
+       //     msgbox(format("It is recommended that you have at least 4 Gym Badges attempting our Gym.\pAre you sure you would like to challenge the Gym?"), MSGBOX_YESNO)
+        msgbox(format("Only the strong may enter our longhall!\pYou should probably leave if you know what is good for you.\pWhat?\pAre you sure you would like to challenge our Gym?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT)){
+            namebox ("Barbarian")
+            msgbox(format("Ohho, so this challenger thinks they have what it takes to beat our Chieftain?\pThis will be entertaining to watch, very well.\pYou may pass."))
         }
         else
         {
+            namebox ("Barbarian")
+            msgbox(format("That's what we thought come back when you are stronger!"))
             hidenamebox
             closemessage
-            msgbox(format("It is recommended that you have at least 4 Gym Badges attempting our Gym.\pAre you sure you would like to challenge the Gym?"), MSGBOX_YESNO)
-			if (var(VAR_RESULT)){
-                namebox ("Barbarian")
-                msgbox(format("Ohho, so this challenger thinks they have what it takes to beat our Chieftain?\pThis will be entertaining to watch, very well.\pYou may pass."))
-            }
-            else
-            {
-                namebox ("Barbarian")
-                msgbox(format("Come back when you are stronger!"))
-                hidenamebox
-                closemessage
-                release
-                end
-            }
-        }
-            hidenamebox
-            closemessage
-            applymovement(OBJ_EVENT_ID_BARBARIAN_BLOCK_1, BARBARIANVILLAGE_BLOCK_1)
-            applymovement(OBJ_EVENT_ID_BARBARIAN_BLOCK_2, BARBARIANVILLAGE_BLOCK_2)
-            waitmovement(0)
-            setvar(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE, 1)
             release
             end
+        }
+        hidenamebox
+        closemessage
+        applymovement(OBJ_EVENT_ID_BARBARIAN_BLOCK_1, BARBARIANVILLAGE_BLOCK_1)
+        applymovement(OBJ_EVENT_ID_BARBARIAN_BLOCK_2, BARBARIANVILLAGE_BLOCK_2)
+        waitmovement(0)
+        setvar(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE, 1)
+        release
+        end
     }
 
     if (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE) == 1)
@@ -363,6 +363,28 @@ script SHOP_HELMET_BARBARIANVILLAGE
 	release
 	end
 }
+
+script NPC_BARBARIANVILLAGE_NPC7
+{
+    lock
+    faceplayer
+    namebox("Barbarian")
+    msgbox(format("You look tired, feel free to take a rest here."))
+    hidenamebox
+    release
+    end
+}
+script NPC_BARBARIANVILLAGE_NPC8
+{
+    lock
+    faceplayer
+    namebox("Fremennik")
+    msgbox(format("I've travelled all the way here from Rellekka.\pMy goal is to make friendly relations with our barbarian brothers in Gunnar's Ground.\pWhere is Rellekka?\pIt's far, far north-west of here in the Fremennik Province.\pMaybe one day you can visit it."))
+    hidenamebox
+    release
+    end
+}
+
 
 
 

@@ -372,8 +372,39 @@ script STORY_FALADORCASTLE_3F_SIRAMIKVARZE_REPORTING_BACK{
     namebox("Sir Amik Varze")
     msgbox(format("I'm sure that will come in handy for your MvM journey.\pSpeaking of which, theres a gym north-east of here at Barbarian Village.\pThey have a stronghold full of strong monsters, so maybe you could get some training done there.\pBest of luck!"))
 	closemessage
+    addvar(VAR_GAMEMODE_LEVEL_CAP, 2)
     setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 160)
     //ADD INFO TO QUESTS MAIN STORY
     release
 	end
+}
+
+script LEVEL_CAP_INCREASE {
+    buffernumberstring(0, VAR_GAMEMODE_LEVEL_CAP)
+    msgbox(format("VAR_GAMEMODE_LEVEL_CAP is: {STR_VAR_1}."))
+    
+    msgbox(format("Increase level cap by 1?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        addvar(VAR_GAMEMODE_LEVEL_CAP, 1)
+        buffernumberstring(0, VAR_GAMEMODE_LEVEL_CAP)
+        msgbox(format("VAR_GAMEMODE_LEVEL_CAP is: {STR_VAR_1}."))
+    }
+    msgbox(format("Increase level cap by 10?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        addvar(VAR_GAMEMODE_LEVEL_CAP, 10)
+        buffernumberstring(0, VAR_GAMEMODE_LEVEL_CAP)
+        msgbox(format("VAR_GAMEMODE_LEVEL_CAP is: {STR_VAR_1}."))
+    }
+    msgbox(format("Reset level cap to 0?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        setvar(VAR_GAMEMODE_LEVEL_CAP, 0)
+        buffernumberstring(0, VAR_GAMEMODE_LEVEL_CAP)
+        msgbox(format("VAR_GAMEMODE_LEVEL_CAP is: {STR_VAR_1}."))
+    }
+    closemessage
+    release
+    end
 }

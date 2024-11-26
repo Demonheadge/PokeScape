@@ -69,11 +69,11 @@ NPC_BARB_BLOCKADE_1::
 	goto_if_eq NPC_BARB_BLOCKADE_1_8
 NPC_BARB_BLOCKADE_1_7:
 	compare VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE, 2
-	goto_if_eq NPC_BARB_BLOCKADE_1_23
-NPC_BARB_BLOCKADE_1_22:
+	goto_if_eq NPC_BARB_BLOCKADE_1_15
+NPC_BARB_BLOCKADE_1_14:
 	compare VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE, 3
-	goto_if_eq NPC_BARB_BLOCKADE_1_29
-NPC_BARB_BLOCKADE_1_28:
+	goto_if_eq NPC_BARB_BLOCKADE_1_18
+NPC_BARB_BLOCKADE_1_17:
 	hidenamebox
 	closemessage
 	release
@@ -86,23 +86,18 @@ NPC_BARB_BLOCKADE_1_2:
 	end
 
 NPC_BARB_BLOCKADE_1_5:
-	msgbox NPC_BARB_BLOCKADE_1_Text_2
-	goto_if_set FLAG_BADGE01_GET, NPC_BARB_BLOCKADE_1_14
-NPC_BARB_BLOCKADE_1_12:
-	hidenamebox
-	closemessage
-	msgbox NPC_BARB_BLOCKADE_1_Text_4, MSGBOX_YESNO
+	msgbox NPC_BARB_BLOCKADE_1_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne NPC_BARB_BLOCKADE_1_25
+	goto_if_ne NPC_BARB_BLOCKADE_1_11
 	namebox NPC_BARB_BLOCKADE_1_Text_0
-	msgbox NPC_BARB_BLOCKADE_1_Text_6
+	msgbox NPC_BARB_BLOCKADE_1_Text_4
 	hidenamebox
 	closemessage
 	release
 	end
 
 NPC_BARB_BLOCKADE_1_8:
-	msgbox NPC_BARB_BLOCKADE_1_Text_7
+	msgbox NPC_BARB_BLOCKADE_1_Text_5
 	goto NPC_BARB_BLOCKADE_1_7
 
 NPC_BARB_BLOCKADE_1_10:
@@ -116,39 +111,17 @@ NPC_BARB_BLOCKADE_1_10:
 	end
 
 NPC_BARB_BLOCKADE_1_11:
+	namebox NPC_BARB_BLOCKADE_1_Text_0
 	msgbox NPC_BARB_BLOCKADE_1_Text_3
-	hidenamebox
-	closemessage
 	goto NPC_BARB_BLOCKADE_1_10
 
-NPC_BARB_BLOCKADE_1_13:
-	goto_if_set FLAG_BADGE03_GET, NPC_BARB_BLOCKADE_1_18
-	goto NPC_BARB_BLOCKADE_1_12
-
-NPC_BARB_BLOCKADE_1_14:
-	goto_if_set FLAG_BADGE02_GET, NPC_BARB_BLOCKADE_1_13
-	goto NPC_BARB_BLOCKADE_1_12
-
-NPC_BARB_BLOCKADE_1_17:
-	goto_if_set FLAG_BADGE05_GET, NPC_BARB_BLOCKADE_1_11
-	goto NPC_BARB_BLOCKADE_1_12
+NPC_BARB_BLOCKADE_1_15:
+	msgbox NPC_BARB_BLOCKADE_1_Text_6
+	goto NPC_BARB_BLOCKADE_1_14
 
 NPC_BARB_BLOCKADE_1_18:
-	goto_if_set FLAG_BADGE04_GET, NPC_BARB_BLOCKADE_1_17
-	goto NPC_BARB_BLOCKADE_1_12
-
-NPC_BARB_BLOCKADE_1_23:
-	msgbox NPC_BARB_BLOCKADE_1_Text_8
-	goto NPC_BARB_BLOCKADE_1_22
-
-NPC_BARB_BLOCKADE_1_25:
-	namebox NPC_BARB_BLOCKADE_1_Text_0
-	msgbox NPC_BARB_BLOCKADE_1_Text_5
-	goto NPC_BARB_BLOCKADE_1_10
-
-NPC_BARB_BLOCKADE_1_29:
-	msgbox NPC_BARB_BLOCKADE_1_Text_9
-	goto NPC_BARB_BLOCKADE_1_28
+	msgbox NPC_BARB_BLOCKADE_1_Text_7
+	goto NPC_BARB_BLOCKADE_1_17
 
 
 BARBARIANVILLAGE_BLOCK_1:
@@ -317,6 +290,26 @@ SHOP_HELMET_BARBARIANVILLAGE::
 	end
 
 
+NPC_BARBARIANVILLAGE_NPC7::
+	lock
+	faceplayer
+	namebox NPC_BARB_BLOCKADE_1_Text_0
+	msgbox NPC_BARBARIANVILLAGE_NPC7_Text_0
+	hidenamebox
+	release
+	end
+
+
+NPC_BARBARIANVILLAGE_NPC8::
+	lock
+	faceplayer
+	namebox NPC_BARBARIANVILLAGE_NPC8_Text_0
+	msgbox NPC_BARBARIANVILLAGE_NPC8_Text_1
+	hidenamebox
+	release
+	end
+
+
 NPC_BARB_BLOCKADE_1_Text_0:
 	.string "Barbarian$"
 
@@ -327,22 +320,12 @@ NPC_BARB_BLOCKADE_1_Text_1:
 NPC_BARB_BLOCKADE_1_Text_2:
 	.string "Only the strong may enter our longhall!\p"
 	.string "You should probably leave if you know\n"
-	.string "what is good for you.$"
+	.string "what is good for you.\p"
+	.string "What?\p"
+	.string "Are you sure you would like to challenge\n"
+	.string "our Gym?$"
 
 NPC_BARB_BLOCKADE_1_Text_3:
-	.string "Ohhoho!!\p"
-	.string "Impressive you have at least four\n"
-	.string "Badges.\p"
-	.string "You may pass, we shall watch your\n"
-	.string "battle and cheer for your victory!$"
-
-NPC_BARB_BLOCKADE_1_Text_4:
-	.string "It is recommended that you have at\n"
-	.string "least 4 Gym Badges attempting our Gym.\p"
-	.string "Are you sure you would like to challenge\n"
-	.string "the Gym?$"
-
-NPC_BARB_BLOCKADE_1_Text_5:
 	.string "Ohho, so this challenger thinks they\n"
 	.string "have what it takes to beat our\l"
 	.string "Chieftain?\p"
@@ -350,17 +333,18 @@ NPC_BARB_BLOCKADE_1_Text_5:
 	.string "well.\p"
 	.string "You may pass.$"
 
-NPC_BARB_BLOCKADE_1_Text_6:
-	.string "Come back when you are stronger!$"
+NPC_BARB_BLOCKADE_1_Text_4:
+	.string "That's what we thought come back when\n"
+	.string "you are stronger!$"
 
-NPC_BARB_BLOCKADE_1_Text_7:
+NPC_BARB_BLOCKADE_1_Text_5:
 	.string "Good luck on your gym challenge.$"
 
-NPC_BARB_BLOCKADE_1_Text_8:
+NPC_BARB_BLOCKADE_1_Text_6:
 	.string "We knew you would be struggling but\n"
 	.string "good luck on your gym challenge.$"
 
-NPC_BARB_BLOCKADE_1_Text_9:
+NPC_BARB_BLOCKADE_1_Text_7:
 	.string "You defeated our Chieftain!\p"
 	.string "We are impressed, well done!$"
 
@@ -506,3 +490,21 @@ SHOP_HELMET_BARBARIANVILLAGE_Text_1:
 
 SHOP_HELMET_BARBARIANVILLAGE_Text_2:
 	.string "Thank you, come again!$"
+
+NPC_BARBARIANVILLAGE_NPC7_Text_0:
+	.string "You look tired, feel free to take a rest\n"
+	.string "here.$"
+
+NPC_BARBARIANVILLAGE_NPC8_Text_0:
+	.string "Fremennik$"
+
+NPC_BARBARIANVILLAGE_NPC8_Text_1:
+	.string "I've travelled all the way here from\n"
+	.string "Rellekka.\p"
+	.string "My goal is to make friendly relations\n"
+	.string "with our barbarian brothers in Gunnar's\l"
+	.string "Ground.\p"
+	.string "Where is Rellekka?\p"
+	.string "It's far, far north-west of here in the\n"
+	.string "Fremennik Province.\p"
+	.string "Maybe one day you can visit it.$"

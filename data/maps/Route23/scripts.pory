@@ -37,7 +37,7 @@ script ENCOUNTER_PENGUIN_ROCK_ROUTE23 {
 
 
 script ROUTE23_STATE {
-	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 150) { //If progressed far enough in story mode. *change 150 to correct progress.
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 200) { //If progressed far enough in story mode. *change 200 to correct progress.
 		addobject(11)
 		addobject(10)
 		clearflag(FLAG_TEMP_1F)

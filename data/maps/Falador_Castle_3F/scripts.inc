@@ -361,9 +361,48 @@ STORY_FALADORCASTLE_3F_SIRAMIKVARZE_REPORTING_BACK::
 	namebox QUEST_FALADORCASTLE_EVENT_AFTER_GYM_Text_6
 	msgbox STORY_FALADORCASTLE_3F_SIRAMIKVARZE_REPORTING_BACK_Text_2
 	closemessage
+	addvar VAR_GAMEMODE_LEVEL_CAP, 2
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 160
 	release
 	end
+
+
+LEVEL_CAP_INCREASE::
+	buffernumberstring 0, VAR_GAMEMODE_LEVEL_CAP
+	msgbox LEVEL_CAP_INCREASE_Text_0
+	msgbox LEVEL_CAP_INCREASE_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne LEVEL_CAP_INCREASE_2
+LEVEL_CAP_INCREASE_1:
+	msgbox LEVEL_CAP_INCREASE_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne LEVEL_CAP_INCREASE_5
+LEVEL_CAP_INCREASE_4:
+	msgbox LEVEL_CAP_INCREASE_Text_3, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne LEVEL_CAP_INCREASE_8
+LEVEL_CAP_INCREASE_7:
+	closemessage
+	release
+	end
+
+LEVEL_CAP_INCREASE_2:
+	addvar VAR_GAMEMODE_LEVEL_CAP, 1
+	buffernumberstring 0, VAR_GAMEMODE_LEVEL_CAP
+	msgbox LEVEL_CAP_INCREASE_Text_0
+	goto LEVEL_CAP_INCREASE_1
+
+LEVEL_CAP_INCREASE_5:
+	addvar VAR_GAMEMODE_LEVEL_CAP, 10
+	buffernumberstring 0, VAR_GAMEMODE_LEVEL_CAP
+	msgbox LEVEL_CAP_INCREASE_Text_0
+	goto LEVEL_CAP_INCREASE_4
+
+LEVEL_CAP_INCREASE_8:
+	setvar VAR_GAMEMODE_LEVEL_CAP, 0
+	buffernumberstring 0, VAR_GAMEMODE_LEVEL_CAP
+	msgbox LEVEL_CAP_INCREASE_Text_0
+	goto LEVEL_CAP_INCREASE_7
 
 
 QUEST_FALADORCASTLE_EVENT_AFTER_GYM_Text_0:
@@ -516,3 +555,16 @@ STORY_FALADORCASTLE_3F_SIRAMIKVARZE_REPORTING_BACK_Text_2:
 	.string "monsters, so maybe you could get some\l"
 	.string "training done there.\p"
 	.string "Best of luck!$"
+
+LEVEL_CAP_INCREASE_Text_0:
+	.string "VAR_GAMEMODE_LEVEL_CAP is:\n"
+	.string "{STR_VAR_1}.$"
+
+LEVEL_CAP_INCREASE_Text_1:
+	.string "Increase level cap by 1?$"
+
+LEVEL_CAP_INCREASE_Text_2:
+	.string "Increase level cap by 10?$"
+
+LEVEL_CAP_INCREASE_Text_3:
+	.string "Reset level cap to 0?$"

@@ -356,6 +356,16 @@ script BATTLE_ROUTE2_Trainer_7
     end
 }
 
+script BATTLE_ROUTE2_Trainer_8
+{
+    trainerbattle_single(TRAINER_ROUTE2_TRAINER_8, format("The anima in this area is strong, do you feel it?"),format("You feel it too! The anima is strong with you!"))
+    namebox ("Diviner")
+    msgbox(format("Can you smell it in the air? In your bones? The tingle! Yes thats the anima!"))
+    hidenamebox
+    release
+    end
+}
+
 
 
 script NPC_ROUTE2_BLACK_KNIGHT{

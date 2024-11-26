@@ -8750,6 +8750,16 @@
       "secondary_tileset": "gTileset_IndoorTowns1",
       "border_filepath": "data/layouts/GoblinVillage_House_4/border.bin",
       "blockdata_filepath": "data/layouts/GoblinVillage_House_4/map.bin"
+    },
+    {
+      "id": "LAYOUT_BARBARIAN_VILLAGE_HOUSE_3",
+      "name": "BarbarianVillage_House_3_Layout",
+      "width": 12,
+      "height": 12,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns2",
+      "border_filepath": "data/layouts/BarbarianVillage_House_3/border.bin",
+      "blockdata_filepath": "data/layouts/BarbarianVillage_House_3/map.bin"
     }
   ]
 }

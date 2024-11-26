@@ -23001,64 +23001,64 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 20,
-                "max_level": 25,
+                "min_level": 27,
+                "max_level": 34,
                 "species": "SPECIES_RUNE"
               },
               {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_PURE"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_SAPPHIRE_GLACIALIS"
               },
               {
-                "min_level": 21,
-                "max_level": 25,
-                "species": "SPECIES_RABBIT"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_FOAL"
               },
               {
-                "min_level": 21,
-                "max_level": 26,
-                "species": "SPECIES_PURE"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_BIRD_NEST"
               },
               {
-                "min_level": 22,
-                "max_level": 26,
-                "species": "SPECIES_RABBIT"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_MAGPIE"
               },
               {
-                "min_level": 22,
-                "max_level": 26,
-                "species": "SPECIES_RUNE"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_WOLF_WHITE_FORM"
               },
               {
-                "min_level": 22,
-                "max_level": 27,
-                "species": "SPECIES_RUNE"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_JADINKO"
               },
               {
-                "min_level": 23,
-                "max_level": 27,
-                "species": "SPECIES_RABBIT"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_RAVEN_NORMAL_FORM"
               },
               {
-                "min_level": 23,
-                "max_level": 27,
-                "species": "SPECIES_RUNE"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_LIGHT_CREATURE"
               },
               {
-                "min_level": 24,
-                "max_level": 28,
+                "min_level": 27,
+                "max_level": 34,
                 "species": "SPECIES_TOOTHS"
               },
               {
-                "min_level": 24,
-                "max_level": 28,
-                "species": "SPECIES_LIGHT_CREATURE"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_CREATURE_CUTE_FORM"
               },
               {
-                "min_level": 25,
-                "max_level": 28,
-                "species": "SPECIES_LIGHT_CREATURE"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_MACAW"
               }
             ]
           }
@@ -23070,64 +23070,64 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 20,
-                "max_level": 25,
+                "min_level": 27,
+                "max_level": 34,
                 "species": "SPECIES_RUNE"
               },
               {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_PURE"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_BLACK_WARLOCK"
               },
               {
-                "min_level": 21,
-                "max_level": 25,
-                "species": "SPECIES_RABBIT"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_FOAL"
               },
               {
-                "min_level": 21,
-                "max_level": 26,
-                "species": "SPECIES_PURE"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_BIRD_NEST"
               },
               {
-                "min_level": 22,
-                "max_level": 26,
-                "species": "SPECIES_RABBIT"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_MAGPIE"
               },
               {
-                "min_level": 22,
-                "max_level": 26,
-                "species": "SPECIES_RUNE"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_WOLF_WHITE_FORM"
               },
               {
-                "min_level": 22,
-                "max_level": 27,
-                "species": "SPECIES_RUNE"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_JADINKO"
               },
               {
-                "min_level": 23,
-                "max_level": 27,
-                "species": "SPECIES_RABBIT"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_RAVEN_NEVERMORE_FORM"
               },
               {
-                "min_level": 23,
-                "max_level": 27,
-                "species": "SPECIES_RUNE"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_LIGHT_CREATURE"
               },
               {
-                "min_level": 24,
-                "max_level": 28,
+                "min_level": 27,
+                "max_level": 34,
                 "species": "SPECIES_TOOTHS"
               },
               {
-                "min_level": 24,
-                "max_level": 28,
-                "species": "SPECIES_LIGHT_CREATURE"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_CREATURE_CUTE_FORM"
               },
               {
-                "min_level": 25,
-                "max_level": 28,
-                "species": "SPECIES_LIGHT_CREATURE"
+                "min_level": 27,
+                "max_level": 34,
+                "species": "SPECIES_MACAW"
               }
             ]
           }
@@ -23139,63 +23139,63 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 18,
-                "max_level": 23,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_BEAR_CUB"
               },
               {
-                "min_level": 18,
-                "max_level": 23,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_GOAT_BILLY_FORM"
               },
               {
-                "min_level": 19,
-                "max_level": 24,
-                "species": "SPECIES_SQUIRREL"
-              },
-              {
-                "min_level": 19,
-                "max_level": 24,
-                "species": "SPECIES_SQUIRREL"
-              },
-              {
-                "min_level": 19,
-                "max_level": 24,
-                "species": "SPECIES_FERRET"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_BEAR_CUB"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_FOAL"
               },
               {
-                "min_level": 21,
-                "max_level": 26,
-                "species": "SPECIES_RACOON"
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_SCORPION_NORMAL_FORM"
               },
               {
-                "min_level": 22,
-                "max_level": 26,
-                "species": "SPECIES_RACOON"
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_SQUIRREL"
               },
               {
-                "min_level": 24,
-                "max_level": 27,
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_BEAR_CUB"
+              },
+              {
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_CHINCHOMPA_GREY_BABY"
+              },
+              {
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_CHINCHOMPA_RED_BABY"
+              },
+              {
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_BEAVER"
+              },
+              {
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_RABBIT"
               },
               {
-                "min_level": 24,
-                "max_level": 27,
-                "species": "SPECIES_GOAT_CLAY_FORM"
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_BEAR_NORMAL_FORM"
               },
               {
-                "min_level": 24,
-                "max_level": 27,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_GOAT_MOUNTAIN_FORM"
               }
             ]
@@ -23204,28 +23204,28 @@
             "encounter_rate": 80,
             "mons": [
               {
-                "min_level": 18,
-                "max_level": 25,
+                "min_level": 26,
+                "max_level": 33,
                 "species": "SPECIES_ROCK_CRAB_NORMAL_FORM"
               },
               {
-                "min_level": 18,
-                "max_level": 25,
+                "min_level": 26,
+                "max_level": 33,
                 "species": "SPECIES_SCORPLING"
               },
               {
-                "min_level": 19,
-                "max_level": 25,
+                "min_level": 26,
+                "max_level": 33,
                 "species": "SPECIES_ROCK_CRAB_NORMAL_FORM"
               },
               {
-                "min_level": 20,
-                "max_level": 25,
+                "min_level": 26,
+                "max_level": 33,
                 "species": "SPECIES_MINITRICE"
               },
               {
-                "min_level": 20,
-                "max_level": 25,
+                "min_level": 26,
+                "max_level": 33,
                 "species": "SPECIES_PET_ROCK"
               }
             ]
@@ -23238,64 +23238,64 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 18,
-                "max_level": 23,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_BEAR_CUB"
               },
               {
-                "min_level": 18,
-                "max_level": 23,
-                "species": "SPECIES_SCORPLING"
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_GOAT_BILLY_FORM"
               },
               {
-                "min_level": 19,
-                "max_level": 24,
-                "species": "SPECIES_SCORPION_NORMAL_FORM"
-              },
-              {
-                "min_level": 19,
-                "max_level": 24,
-                "species": "SPECIES_SCORPION_PIT_FORM"
-              },
-              {
-                "min_level": 19,
-                "max_level": 24,
-                "species": "SPECIES_BEAVER"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
-                "species": "SPECIES_BEAR_CUB"
-              },
-              {
-                "min_level": 20,
-                "max_level": 25,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_FOAL"
               },
               {
-                "min_level": 21,
-                "max_level": 26,
-                "species": "SPECIES_GIANT_BEAVER"
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_SCORPION_PIT_FORM"
               },
               {
-                "min_level": 22,
-                "max_level": 26,
-                "species": "SPECIES_GIANT_BEAVER"
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_FERRET"
               },
               {
-                "min_level": 24,
-                "max_level": 27,
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_BEAR_CUB"
+              },
+              {
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_CHINCHOMPA_GREY_BABY"
+              },
+              {
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_CHINCHOMPA_RED_BABY"
+              },
+              {
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_RACOON"
+              },
+              {
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_FOX"
               },
               {
-                "min_level": 24,
-                "max_level": 27,
-                "species": "SPECIES_GOAT_CLAY_FORM"
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_BEAR_GRIZZLY_FORM"
               },
               {
-                "min_level": 24,
-                "max_level": 27,
-                "species": "SPECIES_IMPLING_SPIRIT_FORM"
+                "min_level": 26,
+                "max_level": 32,
+                "species": "SPECIES_GOAT_MOUNTAIN_FORM"
               }
             ]
           },
@@ -23303,28 +23303,28 @@
             "encounter_rate": 80,
             "mons": [
               {
-                "min_level": 18,
-                "max_level": 25,
+                "min_level": 26,
+                "max_level": 33,
                 "species": "SPECIES_ROCK_CRAB_NORMAL_FORM"
               },
               {
-                "min_level": 18,
-                "max_level": 25,
+                "min_level": 26,
+                "max_level": 33,
                 "species": "SPECIES_SCORPLING"
               },
               {
-                "min_level": 19,
-                "max_level": 25,
+                "min_level": 26,
+                "max_level": 33,
                 "species": "SPECIES_ROCK_CRAB_NORMAL_FORM"
               },
               {
-                "min_level": 20,
-                "max_level": 25,
+                "min_level": 26,
+                "max_level": 33,
                 "species": "SPECIES_MINITRICE"
               },
               {
-                "min_level": 20,
-                "max_level": 25,
+                "min_level": 26,
+                "max_level": 33,
                 "species": "SPECIES_PET_ROCK"
               }
             ]

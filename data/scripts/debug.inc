@@ -77,6 +77,7 @@ Debug_EventScript_Script_2::
 	end
 
 Debug_EventScript_Script_3::
+	goto(LEVEL_CAP_INCREASE)
 	end
 
 Debug_EventScript_Script_4::

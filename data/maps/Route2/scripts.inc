@@ -364,6 +364,15 @@ BATTLE_ROUTE2_Trainer_7::
 	end
 
 
+BATTLE_ROUTE2_Trainer_8::
+	trainerbattle_single TRAINER_ROUTE2_TRAINER_8, BATTLE_ROUTE2_Trainer_8_Text_0, BATTLE_ROUTE2_Trainer_8_Text_1
+	namebox BATTLE_ROUTE2_Trainer_8_Text_2
+	msgbox BATTLE_ROUTE2_Trainer_8_Text_3
+	hidenamebox
+	release
+	end
+
+
 NPC_ROUTE2_BLACK_KNIGHT::
 	lock
 	faceplayer
@@ -615,6 +624,21 @@ BATTLE_ROUTE2_Trainer_6_Text_2:
 
 BATTLE_ROUTE2_Trainer_7_Text_0:
 	.string "…$"
+
+BATTLE_ROUTE2_Trainer_8_Text_0:
+	.string "The anima in this area is strong, do you\n"
+	.string "feel it?$"
+
+BATTLE_ROUTE2_Trainer_8_Text_1:
+	.string "You feel it too! The anima is strong\n"
+	.string "with you!$"
+
+BATTLE_ROUTE2_Trainer_8_Text_2:
+	.string "Diviner$"
+
+BATTLE_ROUTE2_Trainer_8_Text_3:
+	.string "Can you smell it in the air? In your\n"
+	.string "bones? The tingle! Yes thats the anima!$"
 
 NPC_ROUTE2_BLACK_KNIGHT_Text_0:
 	.string "Black Knight$"

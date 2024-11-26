@@ -362,7 +362,7 @@ NPC_BARBGYM_BARBARIAN_2::
 	closemessage
 	hidenamebox
 	fadescreenswapbuffers FADE_TO_BLACK
-	setflag FLAG_BADGE06_GET
+	setflag FLAG_BADGE04_GET
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MVM_CHAMPIONSHIPS, 5
 	call HIDDEN_GROTTO_RESET
 	addvar VAR_GAMEMODE_LEVEL_SCALING, 1
@@ -588,22 +588,37 @@ BARBARIAN_GYM_NPC_7::
 
 BARBARIAN_GYM_NPC_GUNTHOR::
 	lock
+	goto_if_unset FLAG_BADGE04_GET, BARBARIAN_GYM_NPC_GUNTHOR_2
 	faceplayer
 	namebox NPC_BARBGYM_BARBARIAN_2_Text_22
-	msgbox BARBARIAN_GYM_NPC_GUNTHOR_Text_0
+	msgbox BARBARIAN_GYM_NPC_GUNTHOR_Text_2
+BARBARIAN_GYM_NPC_GUNTHOR_1:
 	hidenamebox
 	release
 	end
+
+BARBARIAN_GYM_NPC_GUNTHOR_2:
+	namebox NPC_BARBGYM_BARBARIAN_2_Text_22
+	msgbox BARBARIAN_GYM_NPC_GUNTHOR_Text_0
+	hidenamebox
+	msgbox BARBARIAN_GYM_NPC_GUNTHOR_Text_1
+	goto BARBARIAN_GYM_NPC_GUNTHOR_1
 
 
 BARBARIAN_GYM_NPC_ATLAS::
 	lock
 	faceplayer
 	namebox NPC_BARBGYM_BARBARIAN_2_Text_5
-	msgbox BARBARIAN_GYM_NPC_ATLAS_Text_0
+	goto_if_unset FLAG_BADGE04_GET, BARBARIAN_GYM_NPC_ATLAS_2
+	msgbox BARBARIAN_GYM_NPC_ATLAS_Text_1
+BARBARIAN_GYM_NPC_ATLAS_1:
 	hidenamebox
 	release
 	end
+
+BARBARIAN_GYM_NPC_ATLAS_2:
+	msgbox BARBARIAN_GYM_NPC_ATLAS_Text_0
+	goto BARBARIAN_GYM_NPC_ATLAS_1
 
 
 NPC_BARBGYM_BARBARIAN_1_Text_0:
@@ -794,6 +809,7 @@ BARBARIAN_GYM_NPC_5_Text_0:
 	.string "allowed to evolve our monsters.$"
 
 BARBARIAN_GYM_NPC_6_Text_0:
+	.string "YEEEEEEEEAARRRGGGGHHHHHHHH!!!!\p"
 	.string "The move Brutal Swing is pretty brutal!$"
 
 BARBARIAN_GYM_NPC_7_Text_0:
@@ -801,6 +817,13 @@ BARBARIAN_GYM_NPC_7_Text_0:
 	.string "the stronghold.$"
 
 BARBARIAN_GYM_NPC_GUNTHOR_Text_0:
+	.string "RAAAGGGGGUUHHAHAHAHA!!$"
+
+BARBARIAN_GYM_NPC_GUNTHOR_Text_1:
+	.string "He seems to be enjoying shouting\n"
+	.string "warcries with the other barbarians.$"
+
+BARBARIAN_GYM_NPC_GUNTHOR_Text_2:
 	.string "RAAAGGGGGUUHH!\p"
 	.string "Hello {PLAYER}, I await our rematch!\p"
 	.string "But now is too soon.\p"
@@ -808,5 +831,9 @@ BARBARIAN_GYM_NPC_GUNTHOR_Text_0:
 	.string "week battle.$"
 
 BARBARIAN_GYM_NPC_ATLAS_Text_0:
+	.string "Bahahahaha! Looks like we have another\n"
+	.string "challenger.$"
+
+BARBARIAN_GYM_NPC_ATLAS_Text_1:
 	.string "If you are up for a challenge you should\n"
 	.string "enter our stronghold.$"
