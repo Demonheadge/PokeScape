@@ -25,7 +25,7 @@
     },
     {
       "map": "MAP_GOBLIN_VILLAGE",
-      "offset": -2,
+      "offset": 0,
       "direction": "left"
     },
     {
@@ -40,7 +40,7 @@
     },
     {
       "map": "MAP_ICE_MOUNTAIN",
-      "offset": 0,
+      "offset": -2,
       "direction": "up"
     }
   ],

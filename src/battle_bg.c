@@ -720,6 +720,24 @@ const struct BattleBackground sBattleTerrainTable[] =
         .entryTilemap = gBattleTerrainAnimTilemap_POKESCAPE_GRASS,
         .palette = gBattleTerrainPalette_POKESCAPE_GRASS,
     },
+
+    [BATTLE_TERRAIN_POKESCAPE_TZHAAR] =
+    {
+        .tileset = gBattleTerrainTiles_POKESCAPE_TZHAAR,
+        .tilemap = gBattleTerrainTilemap_POKESCAPE_TZHAAR,
+        .entryTileset = gBattleTerrainAnimTiles_POKESCAPE_TZHAAR,
+        .entryTilemap = gBattleTerrainAnimTilemap_POKESCAPE_TZHAAR,
+        .palette = gBattleTerrainPalette_POKESCAPE_TZHAAR,
+    },
+
+    [BATTLE_TERRAIN_POKESCAPE_TZHAAR_LAVA] =
+    {
+        .tileset = gBattleTerrainTiles_POKESCAPE_TZHAAR_LAVA,
+        .tilemap = gBattleTerrainTilemap_POKESCAPE_TZHAAR_LAVA,
+        .entryTileset = gBattleTerrainAnimTiles_POKESCAPE_TZHAAR_LAVA,
+        .entryTilemap = gBattleTerrainAnimTilemap_POKESCAPE_TZHAAR_LAVA,
+        .palette = gBattleTerrainPalette_POKESCAPE_TZHAAR_LAVA,
+    },
 };
 
 static void UNUSED CB2_UnusedBattleInit(void);

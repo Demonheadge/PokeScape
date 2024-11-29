@@ -122,7 +122,17 @@ const u32 gBattleTerrainTilemap_POKESCAPE_GRASS[] = INCBIN_U32("graphics/battle_
 const u32 gBattleTerrainAnimTiles_POKESCAPE_GRASS[] = INCBIN_U32("graphics/battle_terrain/pokescape_grass/anim_tiles.4bpp.lz");
 const u32 gBattleTerrainAnimTilemap_POKESCAPE_GRASS[] = INCBIN_U32("graphics/battle_terrain/pokescape_grass/anim_map.bin.lz");
 
+const u32 gBattleTerrainTiles_POKESCAPE_TZHAAR[] = INCBIN_U32("graphics/battle_terrain/pokescape_tzhaar_ground/tiles.4bpp.lz");
+const u32 gBattleTerrainPalette_POKESCAPE_TZHAAR[] = INCBIN_U32("graphics/battle_terrain/pokescape_tzhaar_ground/palette.gbapal.lz");
+const u32 gBattleTerrainTilemap_POKESCAPE_TZHAAR[] = INCBIN_U32("graphics/battle_terrain/pokescape_tzhaar_ground/map.bin.lz");
+const u32 gBattleTerrainAnimTiles_POKESCAPE_TZHAAR[] = INCBIN_U32("graphics/battle_terrain/pokescape_tzhaar_ground/anim_tiles.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_POKESCAPE_TZHAAR[] = INCBIN_U32("graphics/battle_terrain/pokescape_tzhaar_ground/anim_map.bin.lz");
 
+const u32 gBattleTerrainTiles_POKESCAPE_TZHAAR_LAVA[] = INCBIN_U32("graphics/battle_terrain/pokescape_tzhaar_lava/tiles.4bpp.lz");
+const u32 gBattleTerrainPalette_POKESCAPE_TZHAAR_LAVA[] = INCBIN_U32("graphics/battle_terrain/pokescape_tzhaar_lava/palette.gbapal.lz");
+const u32 gBattleTerrainTilemap_POKESCAPE_TZHAAR_LAVA[] = INCBIN_U32("graphics/battle_terrain/pokescape_tzhaar_lava/map.bin.lz");
+const u32 gBattleTerrainAnimTiles_POKESCAPE_TZHAAR_LAVA[] = INCBIN_U32("graphics/battle_terrain/pokescape_tzhaar_lava/anim_tiles.4bpp.lz");
+const u32 gBattleTerrainAnimTilemap_POKESCAPE_TZHAAR_LAVA[] = INCBIN_U32("graphics/battle_terrain/pokescape_tzhaar_lava/anim_map.bin.lz");
 
 
 

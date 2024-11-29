@@ -736,9 +736,13 @@ u8 BattleSetup_GetTerrainId(void)
 	case MAP_TYPE_WILDERNESS:
 		if (MetatileBehavior_IsTallGrass(tileBehavior))
 			return BATTLE_TERRAIN_POKESCAPE_WILDERNESS;
+        return BATTLE_TERRAIN_POKESCAPE_WILDERNESS;
     case MAP_TYPE_BARROWS:
-		if (MetatileBehavior_IsTallGrass(tileBehavior))
-			return BATTLE_TERRAIN_POKESCAPE_BARROWS;
+        return BATTLE_TERRAIN_POKESCAPE_BARROWS;
+    case MAP_TYPE_TZHAAR:
+        if (MetatileBehavior_IsSurfableFishableLava(tileBehavior))
+			return BATTLE_TERRAIN_POKESCAPE_TZHAAR_LAVA;
+        return BATTLE_TERRAIN_POKESCAPE_TZHAAR;
 	case MAP_TYPE_ROUTE:
 		if (MetatileBehavior_IsTallGrass(tileBehavior))
 			return BATTLE_TERRAIN_GRASS;

@@ -244,34 +244,33 @@ script BATTLE_ROUTE8_WIZARD_FIRE{
     release
 }
 
-script BATTLE_ROUTE8_WIZARD_MALIGNIUS_MORTIFER{
-    checktrainerflag(TRAINER_ROUTE8_WIZARD_MALIGNIUS_MORTIFER)
-		if (!var(VAR_RESULT))
-		{	
-            trainerbattle_single(TRAINER_ROUTE8_WIZARD_MALIGNIUS_MORTIFER, format("Impressive…\pYou got past the 4 elemental lame wizards.\pI'll have you know my skill is on a completely different level to them.\pI hope you are prepared for I will turn you into a mushroom, and then maybe have mushroom soup for dinner!"),format("Impossible!"))
-            namebox ("Malignius")
-            msgbox(format("Impossible!\pI have never lost a battle before.\pYou are strong adventurer, I will give you that…\pHere as a reward for defeating me take this."))
-            hidenamebox
-            closemessage
-            giveitem(ITEM_STAFF_OF_EARTH, 1)
-            namebox ("Malignius")
-            msgbox(format("You can go away now.\pIf you do not I may have second thoughts about having mushroom soup."))
-            hidenamebox
-            closemessage
-            release
-            end
-        }
-        else
-        {
-            lock
-            faceplayer
-            namebox ("Malignius")
-            msgbox(format("You can go away now.\pIf you do not I may have second thoughts about having mushroom soup."))
-            hidenamebox
-            closemessage
-            release
-            end
-        }
+script BATTLE_ROUTE8_WIZARD_MALIGNIUS_MORTIFER {
+    if (flag(FLAG_MALIGNIUS_BATTLE)) {
+        trainerbattle_single(TRAINER_ROUTE8_WIZARD_MALIGNIUS_MORTIFER, format("Impressive…\pYou got past the 4 elemental lame wizards.\pI'll have you know my skill is on a completely different level to them.\pI hope you are prepared for I will turn you into a mushroom, and then maybe have mushroom soup for dinner!"),format("Impossible!"))
+        namebox ("Malignius")
+        msgbox(format("Impossible!\pI have never lost a battle before.\pYou are strong adventurer, I will give you that…\pHere as a reward for defeating me take this."))
+        hidenamebox
+        closemessage
+        giveitem(ITEM_STAFF_OF_EARTH, 1)
+        namebox ("Malignius")
+        msgbox(format("You can go away now.\pIf you do not I may have second thoughts about having mushroom soup."))
+        hidenamebox
+        closemessage
+        setflag(FLAG_MALIGNIUS_BATTLE)
+        release
+        end
+    }
+    else
+    {
+        lock
+        faceplayer
+        namebox ("Malignius")
+        msgbox(format("You can go away now.\pIf you do not I may have second thoughts about having mushroom soup."))
+        hidenamebox
+        closemessage
+        release
+        end
+    }
 }
 
 

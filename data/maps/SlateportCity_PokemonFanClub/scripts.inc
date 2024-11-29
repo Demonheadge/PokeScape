@@ -51,12 +51,7 @@ SlateportCity_PokemonFanClub_EventScript_GiveRedScarf::
 	end
 
 SlateportCity_PokemonFanClub_EventScript_GiveBlueScarf::
-	checkitemspace ITEM_BLUE_SCARF
-	goto_if_eq VAR_RESULT, FALSE, SlateportCity_PokemonFanClub_EventScript_NoRoomForScarf
-	msgbox SlateportCity_PokemonFanClub_Text_MonMostImpressiveGiveItThis, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_BLUE_SCARF
-	giveitem ITEM_BLUE_SCARF
-	msgbox SlateportCity_PokemonFanClub_Text_ExplainBlueScarf, MSGBOX_DEFAULT
+	
 	release
 	end
 

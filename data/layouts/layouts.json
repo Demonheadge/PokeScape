@@ -4975,7 +4975,7 @@
       "id": "LAYOUT_GOBLIN_VILLAGE",
       "name": "GoblinVillage_Layout",
       "width": 44,
-      "height": 40,
+      "height": 38,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_GoblinVillage",
       "border_filepath": "data/layouts/GoblinVillage/border.bin",
@@ -8194,7 +8194,7 @@
     {
       "id": "LAYOUT_ICE_MOUNTAIN",
       "name": "Ice_Mountain_Layout",
-      "width": 30,
+      "width": 62,
       "height": 30,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_Ice_Mountain",
