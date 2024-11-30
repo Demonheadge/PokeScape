@@ -7702,3 +7702,42 @@ static const struct TrainerMon sParty_ROUTE2_TRAINER_8[] = {
     }
 };
 
+
+
+
+static const struct TrainerMon sParty_TZHAAR_CAVES_TRAINER_1[] = {
+    {
+    .lvl = 36,
+    .species = SPECIES_PYREFIEND,
+    .heldItem = ITEM_NONE
+    },
+    {
+    .lvl = 35,
+    .species = SPECIES_KET_ZEK,
+    .heldItem = ITEM_NONE
+    }
+};
+
+static const struct TrainerMon sParty_TZHAAR_CAVES_TRAINER_2[] = {
+    {
+    .lvl = 35,
+    .species = SPECIES_JAL_MEJRAH,
+    .heldItem = ITEM_NONE
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_TZ_KIH,
+    .heldItem = ITEM_NONE
+    }
+};
+
+static const struct TrainerMon sParty_TZHAAR_CAVES_TRAINER_3[] = {
+    {
+    .lvl = 35,
+    .species = SPECIES_YT_MEJKOT,
+    .heldItem = ITEM_NONE
+    }
+};
+
+
+

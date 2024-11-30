@@ -6,7 +6,7 @@
   "region_map_section": "MAPSEC_KARAMJA_VOLCANO",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_UNDERGROUND",
+  "map_type": "MAP_TYPE_TZHAAR",
   "allow_cycling": false,
   "allow_escaping": true,
   "allow_running": true,
@@ -37,7 +37,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "BATTLE_TZHAAR_CAVES_TRAINER_2",
+      "script": "BATTLE_TZHAAR_CAVES_TRAINER_3",
       "flag": "0"
     },
     {
@@ -327,7 +327,7 @@
       "flag": "FLAG_TEMP_1B"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_TZHAAR_3",
+      "graphics_id": "OBJ_EVENT_GFX_TZHAAR_4",
       "x": 34,
       "y": 36,
       "elevation": 0,
@@ -336,7 +336,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "BATTLE_TZHAAR_CAVES_TRAINER_3",
+      "script": "BATTLE_TZHAAR_CAVES_TRAINER_2",
       "flag": "0"
     }
   ],

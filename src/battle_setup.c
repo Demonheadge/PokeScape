@@ -698,10 +698,14 @@ static void CB2_EndScriptedWildBattle(void)
 u8 BattleSetup_GetTerrainId(void)
 {
     u16 tileBehavior;
+    u16 tileBehaviorInFront;
     s16 x, y;
+    s16 a, b;
 
+    GetXYCoordsOneStepInFrontOfPlayer(&a, &b);
     PlayerGetDestCoords(&x, &y);
     tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
+    tileBehaviorInFront = MapGridGetMetatileBehaviorAt(a, b);
 
     //if (MetatileBehavior_IsTallGrass(tileBehavior))
     //    return BATTLE_TERRAIN_GRASS;
@@ -740,7 +744,7 @@ u8 BattleSetup_GetTerrainId(void)
     case MAP_TYPE_BARROWS:
         return BATTLE_TERRAIN_POKESCAPE_BARROWS;
     case MAP_TYPE_TZHAAR:
-        if (MetatileBehavior_IsSurfableFishableLava(tileBehavior))
+        if (MetatileBehavior_IsSurfableFishableLava(tileBehaviorInFront))
 			return BATTLE_TERRAIN_POKESCAPE_TZHAAR_LAVA;
         return BATTLE_TERRAIN_POKESCAPE_TZHAAR;
 	case MAP_TYPE_ROUTE:

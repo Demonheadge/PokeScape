@@ -978,6 +978,9 @@ extern const u32 gBattleTerrainAnimTiles_POKESCAPE_TZHAAR_LAVA[];
 extern const u32 gBattleTerrainAnimTilemap_POKESCAPE_TZHAAR_LAVA[];
 extern const u32 gBattleTerrainPalette_POKESCAPE_TZHAAR_LAVA[];
 
+extern const u32 gBattleTerrainPalette_POKESCAPE_TOKHAAR[];
+
+
 // Pokédex
 extern const u32 gPokedexInterface_Gfx[];
 extern const u16 gPokedexBgHoenn_Pal[];

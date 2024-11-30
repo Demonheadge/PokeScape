@@ -938,6 +938,14 @@ void DrawMainBattleBackground(void)
             LZDecompressVram(gBattleTerrainTilemap_Building, (void *)(BG_SCREEN_ADDR(26)));
             LoadCompressedPalette(gBattleTerrainPalette_Frontier, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
             break;
+        case MAP_BATTLE_SCENE_TOKHAAR:
+            LZDecompressVram(sBattleTerrainTable[gBattleTerrain].tileset, (void *)(BG_CHAR_ADDR(2)));
+            LZDecompressVram(sBattleTerrainTable[gBattleTerrain].tilemap, (void *)(BG_SCREEN_ADDR(26)));    
+            if (gBattleTerrain == BATTLE_TERRAIN_POKESCAPE_TZHAAR)
+                    LoadCompressedPalette(gBattleTerrainPalette_POKESCAPE_TOKHAAR, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
+            else if (gBattleTerrain == BATTLE_TERRAIN_POKESCAPE_TZHAAR_LAVA)
+                    LoadCompressedPalette(gBattleTerrainPalette_POKESCAPE_TOKHAAR, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
+            break;
         }
     }
 }
@@ -1294,6 +1302,11 @@ void DrawBattleEntryBackground(void)
             LZDecompressVram(sBattleTerrainTable[gBattleTerrain].entryTileset, (void *)(BG_CHAR_ADDR(1)));
             LZDecompressVram(sBattleTerrainTable[gBattleTerrain].entryTilemap, (void *)(BG_SCREEN_ADDR(28)));
         }
+        else if (GetCurrentMapBattleScene() == MAP_BATTLE_SCENE_TOKHAAR)
+        {
+            LZDecompressVram(gBattleTerrainAnimTiles_POKESCAPE_TZHAAR_LAVA, (void *)(BG_CHAR_ADDR(1)));
+            LZDecompressVram(gBattleTerrainAnimTilemap_POKESCAPE_TZHAAR_LAVA, (void *)(BG_SCREEN_ADDR(28)));
+        }
         else
         {
             LZDecompressVram(gBattleTerrainAnimTiles_Building, (void *)(BG_CHAR_ADDR(1)));
@@ -1382,6 +1395,9 @@ bool8 LoadChosenBattleElement(u8 caseId)
             case MAP_BATTLE_SCENE_FRONTIER:
                 LZDecompressVram(gBattleTerrainTiles_Building, (void *)(BG_CHAR_ADDR(2)));
                 break;
+            case MAP_BATTLE_SCENE_TOKHAAR:
+                LZDecompressVram(gBattleTerrainTiles_POKESCAPE_TZHAAR, (void *)(BG_CHAR_ADDR(2)));
+                break;
             }
         }
         break;
@@ -1443,6 +1459,9 @@ bool8 LoadChosenBattleElement(u8 caseId)
                 break;
             case MAP_BATTLE_SCENE_FRONTIER:
                 LZDecompressVram(gBattleTerrainTilemap_Building, (void *)(BG_SCREEN_ADDR(26)));
+                break;
+            case MAP_BATTLE_SCENE_TOKHAAR:
+                LZDecompressVram(gBattleTerrainTilemap_POKESCAPE_TZHAAR, (void *)(BG_SCREEN_ADDR(26)));
                 break;
             }
         }
@@ -1531,6 +1550,9 @@ bool8 LoadChosenBattleElement(u8 caseId)
                 break;
             case MAP_BATTLE_SCENE_FRONTIER:
                 LoadCompressedPalette(gBattleTerrainPalette_Frontier, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
+                break;
+            case MAP_BATTLE_SCENE_TOKHAAR:
+                LoadCompressedPalette(gBattleTerrainPalette_POKESCAPE_TOKHAAR, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
                 break;
             }
         }

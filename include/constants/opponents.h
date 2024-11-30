@@ -472,6 +472,10 @@
 #define TRAINER_ROUTE33_ZAMORAK3					    466
 #define TRAINER_ROUTE33_ZAMORAK4					    467
 #define TRAINER_ROUTE2_TRAINER_8					    468
+#define TRAINER_TZHAAR_CAVES_TRAINER_1					469
+#define TRAINER_TZHAAR_CAVES_TRAINER_2					470
+#define TRAINER_TZHAAR_CAVES_TRAINER_3					471
+
 
 
 
@@ -482,7 +486,7 @@
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      (TRAINER_ROUTE2_TRAINER_8 + 1)
+#define TRAINERS_COUNT                      (TRAINER_TZHAAR_CAVES_TRAINER_3 + 1)
 #define MAX_TRAINERS_COUNT                  864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

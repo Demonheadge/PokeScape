@@ -134,7 +134,7 @@ const u32 gBattleTerrainTilemap_POKESCAPE_TZHAAR_LAVA[] = INCBIN_U32("graphics/b
 const u32 gBattleTerrainAnimTiles_POKESCAPE_TZHAAR_LAVA[] = INCBIN_U32("graphics/battle_terrain/pokescape_tzhaar_lava/anim_tiles.4bpp.lz");
 const u32 gBattleTerrainAnimTilemap_POKESCAPE_TZHAAR_LAVA[] = INCBIN_U32("graphics/battle_terrain/pokescape_tzhaar_lava/anim_map.bin.lz");
 
-
+const u32 gBattleTerrainPalette_POKESCAPE_TOKHAAR[] = INCBIN_U32("graphics/battle_terrain/pokescape_tzhaar_ground/tokhaar_palette.gbapal.lz");
 
 
 
