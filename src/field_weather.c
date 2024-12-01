@@ -474,7 +474,7 @@ static void ApplyColorMap(u8 startPalIndex, u8 numPalettes, s8 colorMapIndex)
         colorMapIndex--;
         palOffset = PLTT_ID(startPalIndex);
         UpdateAltBgPalettes(palettes & PALETTES_BG);
-        if (!(colorMapIndex > 3) && MapHasNaturalLight(gMapHeader.mapType))
+        if (!(colorMapIndex > 3) && (MapHasNaturalLight(gMapHeader.mapType) || MapIsInPerpetualDarkness(gMapHeader.mapLayoutId)))
             UpdatePalettesWithTime(palettes);
         else
             CpuFastCopy(gPlttBufferUnfaded + palOffset, gPlttBufferFaded + palOffset, PLTT_SIZE_4BPP * numPalettes);
@@ -542,7 +542,7 @@ static void ApplyColorMap(u8 startPalIndex, u8 numPalettes, s8 colorMapIndex)
     }
     else
     {
-        if (MapHasNaturalLight(gMapHeader.mapType))
+        if (MapHasNaturalLight(gMapHeader.mapType) || MapIsInPerpetualDarkness(gMapHeader.mapLayoutId))
         {
             u32 palettes = ((1 << numPalettes) - 1) << startPalIndex;
             UpdateAltBgPalettes(palettes & PALETTES_BG);
@@ -783,10 +783,13 @@ void FadeScreen(u8 mode, s8 delay)
             gWeatherPtr->fadeScreenCounter = 0;
         else
         {
-            if (MapHasNaturalLight(gMapHeader.mapType))
+            if (MapHasNaturalLight(gMapHeader.mapType) || MapIsInPerpetualDarkness(gMapHeader.mapLayoutId))
             {
                 UpdateAltBgPalettes(PALETTES_BG);
-                BeginTimeOfDayPaletteFade(PALETTES_ALL, delay, 16, 0, (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time0], (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time1], currentTimeBlend.weight, fadeColor);
+                if (MapIsInPerpetualDarkness(gMapHeader.mapLayoutId))
+                    BeginTimeOfDayPaletteFade(PALETTES_ALL, delay, 16, 0, (struct BlendSettings *)&gTimeOfDayBlend[TIME_OF_DAY_NIGHT], (struct BlendSettings *)&gTimeOfDayBlend[TIME_OF_DAY_NIGHT], currentTimeBlend.weight, fadeColor);
+                else
+                    BeginTimeOfDayPaletteFade(PALETTES_ALL, delay, 16, 0, (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time0], (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time1], currentTimeBlend.weight, fadeColor);
             }
             else
                 BeginNormalPaletteFade(PALETTES_ALL, delay, 16, 0, fadeColor);

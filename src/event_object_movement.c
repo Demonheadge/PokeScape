@@ -2179,6 +2179,11 @@ void UpdateLightSprite(struct Sprite *sprite)
             Weather_SetBlendCoeffs(12, 12);
             sprite->invisible = FALSE;
         }
+        else if (MapIsInPerpetualDarkness(gMapHeader.mapLayoutId))
+        {
+            Weather_SetBlendCoeffs(12, 12);
+            sprite->invisible = FALSE;
+        }
         else
         {
             sprite->invisible = TRUE;

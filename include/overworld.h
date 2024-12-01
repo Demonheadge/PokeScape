@@ -173,5 +173,7 @@ u8 UpdateTimeOfDay(void);
 bool8 MapHasNaturalLight(u8 mapType);
 void UpdateAltBgPalettes(u16 palettes);
 void UpdatePalettesWithTime(u32);
+bool8 MapIsInPerpetualDarkness(u16 mapLayoutId);
+
 
 #endif // GUARD_OVERWORLD_H

@@ -1594,12 +1594,23 @@ bool8 MapHasNaturalLight(u8 mapType)
     return mapType == MAP_TYPE_TOWN || mapType == MAP_TYPE_CITY || mapType == MAP_TYPE_ROUTE || mapType == MAP_TYPE_OCEAN_ROUTE || mapType == MAP_TYPE_WILDERNESS;
 }
 
+bool8 MapIsInPerpetualDarkness(u16 mapLayoutId)
+{
+    return mapLayoutId == LAYOUT_LUMBRIDGE_SWAMP_CAVES_JUNA 
+    || mapLayoutId == LAYOUT_LUMBRIDGE_SWAMP_CAVES_WGS_1
+    || mapLayoutId == LAYOUT_LUMBRIDGE_SWAMP_CAVES_WGS_2
+    || mapLayoutId == LAYOUT_LUMBRIDGE_SWAMP_CAVES_WGS_3
+    || mapLayoutId == LAYOUT_LUMBRIDGE_SWAMP_CAVES_WGS_4
+    || mapLayoutId == LAYOUT_LUMBRIDGE_SWAMP_CAVES_WGS_5
+    ;
+}
+
 void UpdateAltBgPalettes(u16 palettes)
 {
     const struct Tileset *primary = gMapHeader.mapLayout->primaryTileset;
     const struct Tileset *secondary = gMapHeader.mapLayout->secondaryTileset;
     u32 i = 1;
-    if (!MapHasNaturalLight(gMapHeader.mapType))
+    if (!MapHasNaturalLight(gMapHeader.mapType) || !MapIsInPerpetualDarkness(gMapHeader.mapLayoutId))
         return;
     palettes &= ~((1 << NUM_PALS_IN_PRIMARY) - 1) | primary->swapPalettes;
     palettes &= ((1 << NUM_PALS_IN_PRIMARY) - 1) | (secondary->swapPalettes << NUM_PALS_IN_PRIMARY);
@@ -1621,9 +1632,11 @@ void UpdateAltBgPalettes(u16 palettes)
     }
 }
 
+
+
 void UpdatePalettesWithTime(u32 palettes)
 {
-    if (MapHasNaturalLight(gMapHeader.mapType))
+    if (MapHasNaturalLight(gMapHeader.mapType) || MapIsInPerpetualDarkness(gMapHeader.mapLayoutId))
     {
         u32 i;
         u32 mask = 1 << 16;
@@ -1635,19 +1648,25 @@ void UpdatePalettesWithTime(u32 palettes)
         palettes &= 0xFFFF1FFF;
         if (!palettes)
             return;
-        TimeMixPalettes(palettes, gPlttBufferUnfaded, gPlttBufferFaded, (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time0], (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time1], currentTimeBlend.weight);
+        if (MapIsInPerpetualDarkness(gMapHeader.mapLayoutId))
+            TimeMixPalettes(palettes, gPlttBufferUnfaded, gPlttBufferFaded, (struct BlendSettings *)&gTimeOfDayBlend[TIME_OF_DAY_NIGHT], (struct BlendSettings *)&gTimeOfDayBlend[TIME_OF_DAY_NIGHT], currentTimeBlend.weight);
+        else
+            TimeMixPalettes(palettes, gPlttBufferUnfaded, gPlttBufferFaded, (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time0], (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time1], currentTimeBlend.weight);
     }
 }
 
 u8 UpdateSpritePaletteWithTime(u8 paletteNum)
 {
-    if (MapHasNaturalLight(gMapHeader.mapType))
+    if (MapHasNaturalLight(gMapHeader.mapType) || MapIsInPerpetualDarkness(gMapHeader.mapLayoutId))
     {
         u16 offset;
         if (GetSpritePaletteTagByPaletteNum(paletteNum) >> 15)
             return paletteNum;
         offset = (paletteNum + 16) << 4;
-        TimeMixPalettes(1, gPlttBufferUnfaded + offset, gPlttBufferFaded + offset, (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time0], (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time1], currentTimeBlend.weight);
+        if (MapIsInPerpetualDarkness(gMapHeader.mapLayoutId))
+            TimeMixPalettes(1, gPlttBufferUnfaded + offset, gPlttBufferFaded + offset, (struct BlendSettings *)&gTimeOfDayBlend[TIME_OF_DAY_NIGHT], (struct BlendSettings *)&gTimeOfDayBlend[TIME_OF_DAY_NIGHT], currentTimeBlend.weight);
+        else
+            TimeMixPalettes(1, gPlttBufferUnfaded + offset, gPlttBufferFaded + offset, (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time0], (struct BlendSettings *)&gTimeOfDayBlend[currentTimeBlend.time1], currentTimeBlend.weight);
     }
     return paletteNum;
 }
