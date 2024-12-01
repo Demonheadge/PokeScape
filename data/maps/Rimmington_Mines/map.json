@@ -234,7 +234,7 @@
     },
     {
       "type": "hidden_item",
-      "x": 35,
+      "x": 37,
       "y": 3,
       "elevation": 3,
       "item": "ITEM_PINEAPPLE_PUNCH",
