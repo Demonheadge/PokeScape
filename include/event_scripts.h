@@ -396,6 +396,7 @@ extern const u8 EventScript_UseWaterfallFieldEffect[];
 extern const u8 EventScript_UseDiveTool[];
 extern const u8 EventScript_AskTeleportTool[];
 extern const u8 EventScript_USE_FLASH[];
+extern const u8 EventScript_RockSmash_POKESCAPE[];
 //End qol_field_moves
 
 //player pc

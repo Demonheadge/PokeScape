@@ -1642,7 +1642,7 @@ void ItemUseOutOfBattle_FlashTool(u8 taskId)
 static void ItemUseOnFieldCB_RockSmashTool(u8 taskId)
 {
     LockPlayerFieldControls();
-    ScriptContext_SetupScript(EventScript_UseRockSmashTool);
+    ScriptContext_SetupScript(EventScript_RockSmash_POKESCAPE); //EventScript_UseRockSmashTool
     DestroyTask(taskId);
 }
 

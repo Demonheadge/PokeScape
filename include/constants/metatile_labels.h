@@ -556,6 +556,7 @@
 #define METATILE_PokeScape_Caves_LAVA_POOL_DOWN      0x2D9
 #define METATILE_PokeScape_Caves_LAVA_POOL_L         0x2E2
 #define METATILE_PokeScape_Caves_LAVA_POOL_R         0x2E0
+#define METATILE_PokeScape_Caves_NO_WILD_ENCOUNTERS  0x3F4
 #define METATILE_PokeScape_Caves_TENTACLE_POOL_DOWN  0x300
 #define METATILE_PokeScape_Caves_TENTACLE_POOL_L     0x2F9
 #define METATILE_PokeScape_Caves_TENTACLE_POOL_R     0x2F8

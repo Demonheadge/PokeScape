@@ -425,7 +425,7 @@ u32 UseRockSmash(u32 fieldMoveStatus)
     else if(fieldMoveStatus == FIELD_MOVE_POKEMON)
         ScriptContext_SetupScript(EventScript_UseRockSmash);
     else if(fieldMoveStatus == FIELD_MOVE_TOOL)
-        ScriptContext_SetupScript(EventScript_UseRockSmashTool);
+        ScriptContext_SetupScript(EventScript_RockSmash_POKESCAPE); //EventScript_UseRockSmashTool  
 
     FlagSet(FLAG_SYS_USE_ROCK_SMASH);
     return COLLISION_START_ROCK_SMASH;

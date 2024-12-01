@@ -22800,12 +22800,12 @@
               {
                 "min_level": 25,
                 "max_level": 33,
-                "species": "SPECIES_BUNYIP"
+                "species": "SPECIES_KURASK_KING_FORM"
               },
               {
                 "min_level": 25,
                 "max_level": 33,
-                "species": "SPECIES_BUNYIP"
+                "species": "SPECIES_DARK_BEAST_NORMAL_FORM"
               }
             ]
           },
