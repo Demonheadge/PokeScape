@@ -98,6 +98,7 @@ script NPC_MUSAPOINT_SAILOR
 		{
 			msgbox(format("All aboard!\lWe set sail for Port Sarim!"))
 			warp (MAP_PORT_SARIM,8,0,0)
+			waitstate
 		}
 		else
 		{

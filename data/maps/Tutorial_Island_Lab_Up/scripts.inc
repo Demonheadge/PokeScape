@@ -286,11 +286,13 @@ FreeStarterChoice_23:
 
 TutorialIslandExitWarpFree::
 	warp MAP_LUMBRIDGE_HOUSE_STARTER2, 255, 5, 3
+	waitstate
 	return
 
 
 TutorialIslandExitWarpMembers::
 	warp MAP_VARROCK, 255, 28, 12
+	waitstate
 	return
 
 

@@ -347,6 +347,7 @@ script SAFARI_ZONE_ALTAR_STATE{
             special (ExitSafariMode)
             warp (MAP_ABYSSAL_REALM_1,11,0,0)
     }
+    waitstate
     release
     end
 }    

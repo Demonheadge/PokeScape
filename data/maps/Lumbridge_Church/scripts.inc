@@ -242,7 +242,7 @@ Cheat_Menu_Shop_Medicine:
     .2byte ITEM_PINEAPPLE_PUNCH 
     .2byte ITEM_WIZARDS_BLIZZARD
 
-    .2byte ITEM_POTION_HP 
+    .2byte ITEM_POTION_ACC 
     .2byte ITEM_POTION_ATT 
     .2byte ITEM_POTION_DEF 
     .2byte ITEM_POTION_SPATT

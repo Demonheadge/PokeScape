@@ -671,7 +671,7 @@ VARROCK_NPC_Apothecary::
 
     .align 2
 ApothecaryVarrock:
-    .2byte ITEM_POTION_HP
+    .2byte ITEM_POTION_ACC
     .2byte ITEM_POTION_ATT
     .2byte ITEM_POTION_DEF
     .2byte ITEM_POTION_SPATT

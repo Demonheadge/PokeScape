@@ -11165,80 +11165,85 @@ const struct Item gItems[] =
         .battleUsage = EFFECT_ITEM_REVIVE,
         .flingPower = 30,
     },
-    
-    [ITEM_BLUEBERRY_SPECIAL] =
-    {
-        .name = _("BLUEBERRY SP"),
-        .price = 500,
-        .holdEffectParam = 40,
-        .description = sBlueberrySpecialDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_HEALTH_RECOVERY,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_RESTORE_HP,
-    },
 
-    [ITEM_CHOCOLATE_SUNDAY] =
+    [ITEM_CHOCOLATE_SUNDAY] = //ANTIDOTE
     {
         .name = _("CHOC SUNDAY"),
-        .price = 250,
-        .holdEffectParam = 20,
+        .price = 200,
         .description = sChocolateSundayDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_HEALTH_RECOVERY,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_RESTORE_HP,
-    },
-
-    [ITEM_DRUNK_DRAGON] =
-    {
-        .name = _("DRUNK DRAGON"),
-        .price = 250,
-        .description = sDrunkDragonDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
         .sort = ITEM_TYPE_STATUS_RECOVERY,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .flingPower = 30,
     },
-
-    [ITEM_FRUIT_BLAST] =
-    {
-        .name = _("FRUIT BLAST"),
-        .price = 250,
-        .description = sFruitBlastDesc,
-        .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
-    },
-
-    [ITEM_PINEAPPLE_PUNCH] =
+    
+    [ITEM_PINEAPPLE_PUNCH] = //Paralyze Heal
     {
         .name = _("P.APPLE PUNCH"),
-        .price = 250,
+        .price = 200,
         .description = sPineapplePunchDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .sort = ITEM_TYPE_STATUS_RECOVERY,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .flingPower = 30,
     },
 
-    [ITEM_WIZARDS_BLIZZARD] =
+    [ITEM_DRUNK_DRAGON] = //BURN HEAL
+    {
+        .name = _("DRUNK DRAGON"),
+        .price = 200,
+        .description = sDrunkDragonDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .sort = ITEM_TYPE_STATUS_RECOVERY,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .flingPower = 30,
+    },
+
+    [ITEM_WIZARDS_BLIZZARD] = //Ice Heal
     {
         .name = _("WIZZ BLIZZ"),
-        .price = 250,
+        .price = 200,
         .description = sWizardsBlizzardDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .sort = ITEM_TYPE_STATUS_RECOVERY,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .flingPower = 30,
     },
+
+    [ITEM_FRUIT_BLAST] = //Awakening
+    {
+        .name = _("FRUIT BLAST"),
+        .price = 200,
+        .description = sFruitBlastDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .sort = ITEM_TYPE_STATUS_RECOVERY,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .flingPower = 30,
+    },
+
+    [ITEM_BLUEBERRY_SPECIAL] = //FULL HEAL
+    {
+        .name = _("BLUEBERRY SP"),
+        .price = 400,
+        .description = sBlueberrySpecialDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .sort = ITEM_TYPE_STATUS_RECOVERY,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .flingPower = 30,
+    },
+
 
     [ITEM_PURPLE_SWEETS] =
     {
@@ -11342,7 +11347,7 @@ const struct Item gItems[] =
 
 #define X_ITEM_STAGES (B_X_ITEMS_BUFF >= GEN_7) ? 2 : 1
 
-    [ITEM_POTION_HP] =
+    [ITEM_POTION_ACC] =
     {
         .name = _("ACC POTION"),
         .price = 950,

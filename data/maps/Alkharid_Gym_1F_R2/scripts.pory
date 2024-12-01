@@ -317,46 +317,108 @@ script ALKHARID_MUSIC_TEST {
 
 
 
-
-
-
-
-
-
-
-
-
-
-//move re learner wip
-script MOVERELEARNER_NPC
+script EventScript_USE_FLASH
 {
-    faceplayer
-    //namebox ("")
-    msgbox(format("Would you like re-learn a move that you've forgotten?"), MSGBOX_YESNO)
-		if (var(VAR_RESULT)){
-			msgbox(format("Please select a Monster you wish to relearn a move with."))
-	        special (ChooseMonForMoveRelearner)
-	        waitstate
-            special (IsSelectedMonEgg)
-            compare (VAR_RESULT, TRUE)
-            goto_if_eq (FallarborTown_MoveRelearnersHouse_EventScript_CantTeachEgg)
-            compare (VAR_0x8005, 0)
-            goto_if_eq (FallarborTown_MoveRelearnersHouse_EventScript_NoMoveToTeachMon)
-            goto (FallarborTown_MoveRelearnersHouse_EventScript_ChooseMove)
-            closemessage
-			end
-		}
-		else {
-            closemessage
-			end
-		}
-
-    //hidenamebox
-    release
-    end
+    bufferitemname (STR_VAR_2, ITEM_FLASH_TOOL)
+    msgbox(format("Would you like to use the {STR_VAR_2}?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+        closemessage
+        playse(SE_M_REFLECT)
+        setflag(FLAG_SYS_USE_FLASH)
+        goto(EventScript_UseFlashTool)
+        animateflash (1)
+        setflashlevel (1)
+        delay (40)
+        msgbox (Text_PlayerUsedFieldTool, MSGBOX_DEFAULT)
+        closemessage
+        playbgm(MUS_ABANDONED_SHIP, 0)
+        //fadedefaultbgm
+        end
+    }
+    else {
+        closemessage
+        end
+    }
 }
 
 
+
+
+
+
+script NAME_RATER_NPC
+{
+    msgbox(format("Would you like to rename your MONSTER?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+        msgbox(format("Please select which MONSTER you would like to rename."))
+        goto(SlateportCity_NameRatersHouse_EventScript_ChooseMonToRate)
+    }
+    else {
+        goto(UTILITY_TOOLS)
+    }
+}
+
+script MOVE_DELETER_NPC
+{
+    msgbox(format("Would you like your MONSTER to forget a move?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+        msgbox(format("Please select a MONSTER you wish to have their moves forgotten."))
+        goto(LilycoveCity_MoveDeletersHouse_EventScript_ChooseMonAndMoveToForget)
+    }
+    else {
+        goto(UTILITY_TOOLS)
+    }
+}
+
+script MOVE_RELEARNER_NPC
+{
+    msgbox(format("Would you like your MONSTER to re-learn a move that it's forgotten?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+        msgbox(format("Please select a MONSTER you wish to relearn a move with."))
+        special (ChooseMonForMoveRelearner)
+        waitstate
+        goto_if_eq (VAR_0x8004, PARTY_NOTHING_CHOSEN, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithHeartScale)
+        special (IsSelectedMonEgg)
+        compare (VAR_RESULT, TRUE)
+        goto_if_eq (FallarborTown_MoveRelearnersHouse_EventScript_CantTeachEgg)
+        compare (VAR_0x8005, 0)
+        goto_if_eq (FallarborTown_MoveRelearnersHouse_EventScript_NoMoveToTeachMon)
+        goto (FallarborTown_MoveRelearnersHouse_EventScript_ChooseMove)
+        closemessage
+        end
+    }
+    else {
+        goto(UTILITY_TOOLS)
+    }
+}
+
+script UTILITY_NPC
+{
+    lock
+    faceplayer
+    namebox ("Druid")
+    goto(UTILITY_TOOLS)
+}
+
+script UTILITY_TOOLS
+{
+    msgbox(format("What would you like to do?"))
+    multichoicedefault (1, 0, MULTI_UTILITY, 0, 0)
+    switch (var(VAR_RESULT))
+    {
+        case 0:
+            goto(NAME_RATER_NPC)
+        case 1:
+            goto(MOVE_DELETER_NPC)
+        case 2:
+            goto(MOVE_RELEARNER_NPC)
+    }
+    
+    closemessage
+    hidenamebox
+    release
+    end
+}
 
 
 

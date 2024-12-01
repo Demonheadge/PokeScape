@@ -111,6 +111,7 @@ UNGAEL_Fremennik_Sailor_1:
 UNGAEL_Fremennik_Sailor_2:
 	msgbox UNGAEL_Fremennik_Sailor_Text_1
 	warp MAP_RELLEKKA, 6, 0, 0
+	waitstate
 	goto UNGAEL_Fremennik_Sailor_1
 
 
@@ -161,6 +162,7 @@ RELEKKA_Ungael_Sailor_2:
 RELEKKA_Ungael_Sailor_5:
 	msgbox RELEKKA_Ungael_Sailor_Text_3
 	warp MAP_UNGAEL, 0, 0, 0
+	waitstate
 	goto RELEKKA_Ungael_Sailor_4
 
 

@@ -466,8 +466,9 @@ script RIMMINGTON_WELL {
             msgbox(format("Would you like to climb into the well?"), MSGBOX_YESNO)
                 if (var(VAR_RESULT)){
                     msgbox(format("You climb down the well."))
-                    warp (MAP_RIMMINGTON_MINES_B2F,0,0,0)
                     closemessage
+                    warp (MAP_RIMMINGTON_MINES_B2F,0,0,0)
+                    waitstate
                     release
                     end
                 }
@@ -497,6 +498,7 @@ script RIMMINGTON_HOUSE_PORTAL{
         case 1:
             msgbox(format("Going to Cursed You's House."))
             warp (MAP_POH_1,0,0,0)
+            waitstate
             end
         case 2:
             msgbox(format("Going to FaladorEvent House."))
@@ -908,6 +910,7 @@ script POH_HOUSE_PORTAL{
 
     msgbox(format("Now leaving the house."))
     warp (MAP_RIMMINGTON,8,0,0)
+    waitstate
     release
     end
 }

@@ -70,6 +70,7 @@ script GE_TRADE_WARP
                 //warpteleport2 (MAP_OLDALE_TOWN_POKEMON_CENTER_2F,0,0,0)
                 //warpmossdeepgym (MAP_OLDALE_TOWN_POKEMON_CENTER_2F,0,0,0)
                 warp (MAP_OLDALE_TOWN_POKEMON_CENTER_2F,3,0,0)
+                waitstate
                 closemessage
                 release
                 end

@@ -601,7 +601,7 @@
       "x": 41,
       "y": 5,
       "elevation": 0,
-      "item": "ITEM_POTION_HP",
+      "item": "ITEM_POTION_ACC",
       "flag": "FLAG_HIDDEN_ITEM_TEMP_10"
     },
     {

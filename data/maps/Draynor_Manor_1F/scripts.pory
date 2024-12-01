@@ -307,6 +307,7 @@ script TRIGGER_ARIANE_DRAYNORMANOR_1F_1 {
         }
         
         destroyfollower
+        waitstate
     }
     else {
         closemessage
@@ -398,6 +399,7 @@ script TRIGGER_ARIANE_DRAYNORMANOR_1F_6 {
         setvar(VAR_TEMP_9, 1)
         warp(MAP_DRAYNOR_MANOR_CRYPT, 0, 0, 0)
         destroyfollower
+        waitstate
     }
     release
     end

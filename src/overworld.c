@@ -859,6 +859,8 @@ if (I_VS_SEEKER_CHARGING != 0)
 
     if (gMapHeader.regionMapSectionId != sLastMapSectionId)
         ShowMapNamePopup();
+    
+    //TryUseFlash(); // qol_field_moves
 }
 
 static void LoadMapFromWarp(bool32 a1)
@@ -915,6 +917,7 @@ if (I_VS_SEEKER_CHARGING != 0)
         UpdateTVScreensOnMap(gBackupMapLayout.width, gBackupMapLayout.height);
         InitSecretBaseAppearance(TRUE);
     }
+    //TryUseFlash(); // qol_field_moves
 }
 
 void ResetInitialPlayerAvatarState(void)
@@ -1027,7 +1030,7 @@ void SetDefaultFlashLevel(void)
         gSaveBlock1Ptr->flashLevel = 1;
     else
         gSaveBlock1Ptr->flashLevel = gMaxFlashLevel - 1;
-    TryUseFlash(); // qol_field_moves
+    //TryUseFlash(); // qol_field_moves
 }
 
 void SetFlashLevel(s32 flashLevel)

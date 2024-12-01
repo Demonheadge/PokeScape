@@ -40,6 +40,7 @@ RAC_QUEST_SAIL_MAN_8:
 	setvar VAR_TEMP_8, 0
 	call RAC_BOAT
 	warp MAP_JATIZSO, 0, 0, 0
+	waitstate
 	goto RAC_QUEST_SAIL_MAN_7
 
 
@@ -76,6 +77,7 @@ RAC_QUEST_SAIL_WOMAN_8:
 	setvar VAR_TEMP_8, 1
 	call RAC_BOAT
 	warp MAP_NEITIZNOT, 0, 0, 0
+	waitstate
 	goto RAC_QUEST_SAIL_WOMAN_7
 
 

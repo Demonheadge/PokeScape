@@ -395,6 +395,7 @@ extern const u8 EventScript_UseWaterfallTool[];
 extern const u8 EventScript_UseWaterfallFieldEffect[];
 extern const u8 EventScript_UseDiveTool[];
 extern const u8 EventScript_AskTeleportTool[];
+extern const u8 EventScript_USE_FLASH[];
 //End qol_field_moves
 
 //player pc

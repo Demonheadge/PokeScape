@@ -99,6 +99,7 @@ script NPC_TZHAAR_GYM_WAVE_1
     msgbox(format("All Tzhaar have been defeated.\pWAVE 1 COMPLETE, MOVING TO NEXT WAVE."))
     closemessage
     warp(MAP_TZHAAR_CAVES_1, 3, 0, 0)
+    waitstate
     end
 }
 script NPC_TZHAAR_GYM_WAVE_2
@@ -107,6 +108,7 @@ script NPC_TZHAAR_GYM_WAVE_2
     msgbox(format("All Tzhaar have been defeated.\pWAVE 2 COMPLETE, MOVING TO NEXT WAVE."))
     closemessage
     warp(MAP_TZHAAR_CAVES_1, 4, 0, 0)
+    waitstate
     end
 }
 script NPC_TZHAAR_GYM_WAVE_3
@@ -115,6 +117,7 @@ script NPC_TZHAAR_GYM_WAVE_3
     msgbox(format("TzTok Jad has been defeated.\pWAVE 3 COMPLETE, Exiting Caves."))
     closemessage
     warp(MAP_TZHAAR_CAVES_1, 0, 0, 0)
+    waitstate
     end
 }
 
@@ -174,6 +177,7 @@ script ENCOUNTER_JAD_GYM {
 		//setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 18) 
 
         warp(MAP_TZHAAR_CAVES_1, 0, 0, 0)
+        waitstate
 		end
 	}
 	end

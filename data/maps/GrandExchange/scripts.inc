@@ -75,6 +75,7 @@ GE_TRADE_WARP_2:
 	closemessage
 	hidenamebox
 	warp MAP_OLDALE_TOWN_POKEMON_CENTER_2F, 3, 0, 0
+	waitstate
 	closemessage
 	release
 	end

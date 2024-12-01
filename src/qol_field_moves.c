@@ -348,9 +348,10 @@ static void FieldCallback_UseFlashMove(void)
 void FldEff_UseFlashTool(void)
 {
     HideMapNamePopUpWindow();
-    PlaySE(SE_M_REFLECT);
-    FlagSet(FLAG_SYS_USE_FLASH);
-    ScriptContext_SetupScript(EventScript_UseFlashTool);
+    ScriptContext_SetupScript(EventScript_USE_FLASH);
+    //PlaySE(SE_M_REFLECT);
+    //FlagSet(FLAG_SYS_USE_FLASH);
+    //ScriptContext_SetupScript(EventScript_UseFlashTool);
 }
 
 u32 CanUseFlash(void)

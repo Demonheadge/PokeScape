@@ -267,10 +267,12 @@ script FreeStarterChoice{
 
 script TutorialIslandExitWarpFree{
 	warp (MAP_LUMBRIDGE_HOUSE_STARTER2,255, 5 , 3)
+	waitstate
 }
 
 script TutorialIslandExitWarpMembers{
 	warp (MAP_VARROCK,255, 28 , 12)
+	waitstate
 }
 
 movement ClockMoveLeft{

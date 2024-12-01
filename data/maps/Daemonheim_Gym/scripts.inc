@@ -46,6 +46,7 @@ THOK_GYM_CHALLENGE_STATE_1::
 	waitmovement 0
 	playse SE_WARP_OUT
 	warp MAP_DAEMONHEIM, 2, 0, 0
+	waitstate
 	return
 
 THOK_GYM_CHALLENGE_STATE_1_2:

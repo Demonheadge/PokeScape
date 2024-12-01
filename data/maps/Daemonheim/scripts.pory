@@ -60,6 +60,7 @@ script THOK_GYM_CHALLENGE_STATE_2 {
     waitmovement(0)
     setvar(VAR_POKESCAPE_DAEMONHEIM_GYM_QUEST, 10)
     warp(MAP_DUNGEONEERING_LOBBY, 0, 0, 0)
+    waitstate
 }
 
 

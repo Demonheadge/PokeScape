@@ -465,6 +465,7 @@ script NPC_PORTSARIM_CAPTIAN_TOBIAS
         waitmessage
         hidenamebox
         warp (MAP_MUSA_POINT,2,0,0)
+        waitstate
     }
     else
     {

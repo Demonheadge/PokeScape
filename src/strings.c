@@ -1931,6 +1931,10 @@ const u8 gText_AXE[] =_("AXE");
 const u8 gText_BAGUETTE[] =_("BAGUETTE");
 const u8 gText_TRIANGLE_SANDWICH[] =_("TRIANGLE SANDWICH");
 
+const u8 gText_RenameMon[] =_("RENAME A MONSTER");
+const u8 gText_ReLearnMove[] =_("FORGET A MOVE");
+const u8 gText_ForgetMove[] =_("RELEARN A MOVE");
+
 //misc
 const u8 gText_NextMenu[] =_("Next");
 const u8 gText_YouAlreadyHaveThis[] =_("You already have this item.{PAUSE_UNTIL_PRESS}");

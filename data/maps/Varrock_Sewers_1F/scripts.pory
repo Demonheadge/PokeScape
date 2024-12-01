@@ -441,6 +441,7 @@ script TELEPORT_LEAVE_ABYSS
     if (var(VAR_RESULT)){
         msgbox(format("As you step into the rift the world around you starts to shimmer."))
         warp (MAP_VARROCK,56,23)
+        waitstate
     }
     closemessage
     release

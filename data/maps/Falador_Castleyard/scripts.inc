@@ -507,6 +507,7 @@ QUEST_FALADORCASTLE_GYM_SIRTHEO::
 	closemessage
 	hidenamebox
 	warp MAP_FALADOR_CASTLE_3F, 3, 0, 0
+	waitstate
 	release
 	end
 

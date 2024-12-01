@@ -103,6 +103,7 @@ NPC_TZHAAR_GYM_WAVE_1::
 	msgbox NPC_TZHAAR_GYM_WAVE_1_Text_0
 	closemessage
 	warp MAP_TZHAAR_CAVES_1, 3, 0, 0
+	waitstate
 	end
 
 
@@ -111,6 +112,7 @@ NPC_TZHAAR_GYM_WAVE_2::
 	msgbox NPC_TZHAAR_GYM_WAVE_2_Text_0
 	closemessage
 	warp MAP_TZHAAR_CAVES_1, 4, 0, 0
+	waitstate
 	end
 
 
@@ -119,6 +121,7 @@ NPC_TZHAAR_GYM_WAVE_3::
 	msgbox NPC_TZHAAR_GYM_WAVE_3_Text_0
 	closemessage
 	warp MAP_TZHAAR_CAVES_1, 0, 0, 0
+	waitstate
 	end
 
 
@@ -177,6 +180,7 @@ ENCOUNTER_JAD_GYM_5:
 	msgbox ENCOUNTER_JAD_GYM_Text_5
 	closemessage
 	warp MAP_TZHAAR_CAVES_1, 0, 0, 0
+	waitstate
 	end
 
 

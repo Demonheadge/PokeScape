@@ -33,6 +33,7 @@ ROUTE_10_STATE_6:
 
 
 ROUTE10_Pirate::
+	lock
 	faceplayer
 	namebox ROUTE10_Pirate_Text_0
 	msgbox ROUTE10_Pirate_Text_1
@@ -43,6 +44,7 @@ ROUTE10_Pirate::
 
 
 ROUTE10_DragonBot::
+	lock
 	faceplayer
 	namebox ROUTE10_DragonBot_Text_0
 	msgbox ROUTE10_DragonBot_Text_1
@@ -53,6 +55,7 @@ ROUTE10_DragonBot::
 
 
 ROUTE10_SirRebrum::
+	lock
 	faceplayer
 	namebox ROUTE10_SirRebrum_Text_0
 	msgbox ROUTE10_SirRebrum_Text_1
@@ -63,6 +66,7 @@ ROUTE10_SirRebrum::
 
 
 ROUTE10_WhiteKnight_1::
+	lock
 	faceplayer
 	namebox ROUTE10_WhiteKnight_1_Text_0
 	msgbox ROUTE10_WhiteKnight_1_Text_1
@@ -73,6 +77,7 @@ ROUTE10_WhiteKnight_1::
 
 
 ROUTE10_WhiteKnight_2::
+	lock
 	faceplayer
 	namebox ROUTE10_WhiteKnight_1_Text_0
 	msgbox ROUTE10_WhiteKnight_2_Text_0

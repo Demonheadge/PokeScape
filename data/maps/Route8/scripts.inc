@@ -255,8 +255,9 @@ ABYSSALRIFT_Route8_ENTER::
 
 ABYSSALRIFT_Route8_ENTER_2:
 	msgbox ABYSSALRIFT_Route8_ENTER_Text_1
-	warp MAP_ABYSSAL_REALM_2, 0, 0, 0
 	closemessage
+	warp MAP_ABYSSAL_REALM_2, 0, 0, 0
+	waitstate
 	release
 	end
 
@@ -271,8 +272,9 @@ ABYSSALRIFT_Route8_RETURN::
 
 ABYSSALRIFT_Route8_RETURN_2:
 	msgbox ABYSSALRIFT_Route8_ENTER_Text_1
-	warp MAP_ROUTE8, 0, 0, 0
 	closemessage
+	warp MAP_ROUTE8, 0, 0, 0
+	waitstate
 	release
 	end
 
@@ -295,6 +297,7 @@ ABYSSALRIFT_Mazcab_ENTER::
 ABYSSALRIFT_Mazcab_ENTER_2:
 	msgbox ABYSSALRIFT_Route8_ENTER_Text_1
 	warp MAP_MAZCAB_OTOT, 0, 0, 0
+	waitstate
 	closemessage
 	release
 	end
@@ -311,6 +314,7 @@ ABYSSALRIFT_Mazcab_RETURN::
 ABYSSALRIFT_Mazcab_RETURN_2:
 	msgbox ABYSSALRIFT_Route8_ENTER_Text_1
 	warp MAP_ABYSSAL_REALM_1, 10, 0, 0
+	waitstate
 	closemessage
 	release
 	end
@@ -348,6 +352,7 @@ ALTAR_AIR_ENTER_5:
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_RUNE_MYSTERIES, 1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_RUNE_MYSTERIES, 4
 	warp MAP_AIR_ALTAR, 1, 0, 0
+	waitstate
 	closemessage
 	release
 	end
@@ -374,6 +379,7 @@ ALTAR_MIND_ENTER_5:
 	msgbox ALTAR_MIND_ENTER_Text_1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_RUNE_MYSTERIES, 5
 	warp MAP_MIND_ALTAR, 1, 0, 0
+	waitstate
 	closemessage
 	release
 	end
@@ -400,6 +406,7 @@ ALTAR_WATER_ENTER_5:
 	msgbox ALTAR_WATER_ENTER_Text_1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_RUNE_MYSTERIES, 6
 	warp MAP_WATER_ALTAR, 1, 0, 0
+	waitstate
 	closemessage
 	release
 	end
@@ -426,6 +433,7 @@ ALTAR_EARTH_ENTER_5:
 	msgbox ALTAR_EARTH_ENTER_Text_1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_RUNE_MYSTERIES, 7
 	warp MAP_EARTH_ALTAR, 1, 0, 0
+	waitstate
 	closemessage
 	release
 	end
@@ -452,6 +460,7 @@ ALTAR_FIRE_ENTER_5:
 	msgbox ALTAR_FIRE_ENTER_Text_1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_RUNE_MYSTERIES, 8
 	warp MAP_FIRE_ALTAR, 1, 0, 0
+	waitstate
 	closemessage
 	release
 	end
@@ -478,6 +487,7 @@ ALTAR_BODY_ENTER_5:
 	msgbox ALTAR_BODY_ENTER_Text_1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_RUNE_MYSTERIES, 9
 	warp MAP_BODY_ALTAR, 1, 0, 0
+	waitstate
 	closemessage
 	release
 	end
@@ -556,6 +566,7 @@ PEST_CONTROL_ENTER_2:
 	closemessage
 	msgbox PEST_CONTROL_ENTER_Text_2
 	warp MAP_MINIGAME_1, 0, 0, 0
+	waitstate
 	closemessage
 	release
 	end
@@ -577,6 +588,7 @@ PEST_CONTROL_RETURN_2:
 	closemessage
 	msgbox PEST_CONTROL_ENTER_Text_2
 	warp MAP_PORT_SARIM, 9, 0, 0
+	waitstate
 	closemessage
 	release
 	end

@@ -285,21 +285,66 @@ ALKHARID_MUSIC_TEST::
 	end
 
 
-MOVERELEARNER_NPC::
-	faceplayer
-	msgbox MOVERELEARNER_NPC_Text_0, MSGBOX_YESNO
+EventScript_USE_FLASH::
+	bufferitemname STR_VAR_2, ITEM_FLASH_TOOL
+	msgbox EventScript_USE_FLASH_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne MOVERELEARNER_NPC_2
+	goto_if_ne EventScript_USE_FLASH_1
 	closemessage
 	end
 
-	release
+EventScript_USE_FLASH_1:
+	closemessage
+	playse SE_M_REFLECT
+	setflag FLAG_SYS_USE_FLASH
+	goto EventScript_UseFlashTool
+	animateflash 1
+	setflashlevel 1
+	delay 40
+	msgbox Text_PlayerUsedFieldTool, MSGBOX_DEFAULT
+	closemessage
+	playbgm MUS_ABANDONED_SHIP, 0
 	end
 
-MOVERELEARNER_NPC_2:
-	msgbox MOVERELEARNER_NPC_Text_1
+
+NAME_RATER_NPC::
+	msgbox NAME_RATER_NPC_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NAME_RATER_NPC_1
+	goto UTILITY_TOOLS
+	return
+
+NAME_RATER_NPC_1:
+	msgbox NAME_RATER_NPC_Text_1
+	goto SlateportCity_NameRatersHouse_EventScript_ChooseMonToRate
+	return
+
+
+MOVE_DELETER_NPC::
+	msgbox MOVE_DELETER_NPC_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne MOVE_DELETER_NPC_1
+	goto UTILITY_TOOLS
+	return
+
+MOVE_DELETER_NPC_1:
+	msgbox MOVE_DELETER_NPC_Text_1
+	goto LilycoveCity_MoveDeletersHouse_EventScript_ChooseMonAndMoveToForget
+	return
+
+
+MOVE_RELEARNER_NPC::
+	msgbox MOVE_RELEARNER_NPC_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne MOVE_RELEARNER_NPC_1
+	goto UTILITY_TOOLS
+	return
+
+MOVE_RELEARNER_NPC_1:
+	msgbox MOVE_RELEARNER_NPC_Text_1
 	special ChooseMonForMoveRelearner
 	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithHeartScale
 	special IsSelectedMonEgg
 	compare VAR_RESULT, TRUE
 	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_CantTeachEgg
@@ -308,6 +353,40 @@ MOVERELEARNER_NPC_2:
 	goto FallarborTown_MoveRelearnersHouse_EventScript_ChooseMove
 	closemessage
 	end
+
+
+UTILITY_NPC::
+	lock
+	faceplayer
+	namebox UTILITY_NPC_Text_0
+	goto UTILITY_TOOLS
+	return
+
+
+UTILITY_TOOLS::
+	msgbox UTILITY_TOOLS_Text_0
+	multichoicedefault 1, 0, MULTI_UTILITY, 0, 0
+	switch VAR_RESULT
+	case 0, UTILITY_TOOLS_3
+	case 1, UTILITY_TOOLS_4
+	case 2, UTILITY_TOOLS_5
+UTILITY_TOOLS_1:
+	closemessage
+	hidenamebox
+	release
+	end
+
+UTILITY_TOOLS_3:
+	goto NAME_RATER_NPC
+	goto UTILITY_TOOLS_1
+
+UTILITY_TOOLS_4:
+	goto MOVE_DELETER_NPC
+	goto UTILITY_TOOLS_1
+
+UTILITY_TOOLS_5:
+	goto MOVE_RELEARNER_NPC
+	goto UTILITY_TOOLS_1
 
 
 GYM_NPC_0::
@@ -731,13 +810,38 @@ ALKHARID_MUSIC_TEST_Text_0:
 ALKHARID_MUSIC_TEST_Text_1:
 	.string "AAAAAA!!!$"
 
-MOVERELEARNER_NPC_Text_0:
-	.string "Would you like re-learn a move that\n"
-	.string "you've forgotten?$"
+EventScript_USE_FLASH_Text_0:
+	.string "Would you like to use the\n"
+	.string "{STR_VAR_2}?$"
 
-MOVERELEARNER_NPC_Text_1:
-	.string "Please select a Monster you wish to\n"
+NAME_RATER_NPC_Text_0:
+	.string "Would you like to rename your MONSTER?$"
+
+NAME_RATER_NPC_Text_1:
+	.string "Please select which MONSTER you would\n"
+	.string "like to rename.$"
+
+MOVE_DELETER_NPC_Text_0:
+	.string "Would you like your MONSTER to forget a\n"
+	.string "move?$"
+
+MOVE_DELETER_NPC_Text_1:
+	.string "Please select a MONSTER you wish to\n"
+	.string "have their moves forgotten.$"
+
+MOVE_RELEARNER_NPC_Text_0:
+	.string "Would you like your MONSTER to re-learn\n"
+	.string "a move that it's forgotten?$"
+
+MOVE_RELEARNER_NPC_Text_1:
+	.string "Please select a MONSTER you wish to\n"
 	.string "relearn a move with.$"
+
+UTILITY_NPC_Text_0:
+	.string "Druid$"
+
+UTILITY_TOOLS_Text_0:
+	.string "What would you like to do?$"
 
 GYM_NPC_0_Text_0:
 	.string "The prince has gone back to the throne\n"

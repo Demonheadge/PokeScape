@@ -529,8 +529,9 @@ RIMMINGTON_WELL_2:
 
 RIMMINGTON_WELL_6:
 	msgbox RIMMINGTON_WELL_Text_2
-	warp MAP_RIMMINGTON_MINES_B2F, 0, 0, 0
 	closemessage
+	warp MAP_RIMMINGTON_MINES_B2F, 0, 0, 0
+	waitstate
 	release
 	end
 
@@ -555,6 +556,7 @@ RIMMINGTON_HOUSE_PORTAL_3:
 RIMMINGTON_HOUSE_PORTAL_4:
 	msgbox RIMMINGTON_HOUSE_PORTAL_Text_2
 	warp MAP_POH_1, 0, 0, 0
+	waitstate
 	end
 
 RIMMINGTON_HOUSE_PORTAL_5:
@@ -970,6 +972,7 @@ MOVE_HYPERSTAN_1:
 POH_HOUSE_PORTAL::
 	msgbox POH_HOUSE_PORTAL_Text_0
 	warp MAP_RIMMINGTON, 8, 0, 0
+	waitstate
 	release
 	end
 

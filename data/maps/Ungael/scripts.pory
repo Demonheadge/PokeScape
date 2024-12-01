@@ -101,6 +101,7 @@ script UNGAEL_Fremennik_Sailor {
         //applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_BOARD_BOAT_DOWN)
         //waitmovement(0)
         warp(MAP_RELLEKKA, 6, 0, 0)
+        waitstate
     }
     else {
         msgbox(format("Be wary, danger lurks on this island.\pIt's not too late to turn back."))
@@ -155,6 +156,7 @@ script RELEKKA_Ungael_Sailor {
         //applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_BOARD_BOAT_UP)
         //waitmovement(0)
         warp(MAP_UNGAEL, 0, 0, 0)
+        waitstate
     }
     else {
         msgbox(format("Wise choice.\pUngael is a dangerous place."))
