@@ -4945,7 +4945,7 @@
       "id": "LAYOUT_BARBARIAN_VILLAGE",
       "name": "BarbarianVillage_Layout",
       "width": 28,
-      "height": 42,
+      "height": 44,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_Barbarian_Village",
       "border_filepath": "data/layouts/BarbarianVillage/border.bin",
@@ -6114,7 +6114,7 @@
     {
       "id": "LAYOUT_ROUTE40",
       "name": "Route40_Layout",
-      "width": 16,
+      "width": 18,
       "height": 10,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_Barbarian_Village",

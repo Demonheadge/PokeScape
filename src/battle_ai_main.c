@@ -4755,6 +4755,8 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
     case EFFECT_TAILWIND:
         if (GetBattlerSideSpeedAverage(battlerAtk) < GetBattlerSideSpeedAverage(battlerDef))
             ADJUST_SCORE(2);
+        if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_EXTEND_TAILWIND) //WIP
+            ADJUST_SCORE(1);
         break;
     case EFFECT_LUCKY_CHANT:
         if (!isDoubleBattle)

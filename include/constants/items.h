@@ -1370,8 +1370,19 @@
 #define ITEM_SQUARE_SANDWICH	    (FINAL_VANILLA_ITEM + 265 )
 #define ITEM_TRIANGLE_SANDWICH	    (FINAL_VANILLA_ITEM + 266 )
 
+#define ITEM_BOOK_OF_GUTHIX	        (FINAL_VANILLA_ITEM + 267 )
+#define ITEM_BOOK_OF_SARADOMIN	    (FINAL_VANILLA_ITEM + 268 )
+#define ITEM_BOOK_OF_ZAMORAK	    (FINAL_VANILLA_ITEM + 269 )
+#define ITEM_BOOK_OF_TUMEKEN	    (FINAL_VANILLA_ITEM + 270 )
+#define ITEM_BOOK_OF_SEREN	        (FINAL_VANILLA_ITEM + 271 )
+#define ITEM_BOOK_OF_ZAROS	        (FINAL_VANILLA_ITEM + 272 )
+#define ITEM_BOOK_OF_BANDOS	        (FINAL_VANILLA_ITEM + 273 )
+#define ITEM_BOOK_OF_ARMADYL	    (FINAL_VANILLA_ITEM + 274 )
 
-#define ITEMS_COUNT 1082
+
+
+
+#define ITEMS_COUNT 1091
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
@@ -1448,6 +1459,11 @@
 #define EFFECT_ITEM_REVIVE                  9
 #define EFFECT_ITEM_RESTORE_PP              10
 #define EFFECT_ITEM_INCREASE_ALL_STATS      11
+#define EFFECT_ITEM_HEAL_AND_INCREASE_STAT  12
+#define EFFECT_ITEM_HEAL_AND_INCREASE_STAT_TO_MAX  13
+
+
+
 
 // Enigma Berry dummy constant
 #define EFFECT_ITEM_ENIGMA_BERRY_EREADER    1

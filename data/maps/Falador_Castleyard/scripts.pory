@@ -919,18 +919,6 @@ script NPC_FALADORCASTLE_COOK
 
 
 
-//ROUTE 23
-script NPC_ROUTE23_DWARF_ROCKS
-{
-	lock
-	faceplayer
-    namebox ("DWARF")
-	msgbox(format("If only those goblins did not steal our pickaxe supplies.\pThen I could easily clear this rockslide."))
-    closemessage
-    hidenamebox
-	release
-	end
-}
 
 //ROUTE 24
 
@@ -938,7 +926,7 @@ script NPC_ROUTE24_DORIC
 {
 	lock
 	faceplayer
-    namebox ("DORIC")
+    namebox ("Doric")
 	msgbox(format("Hello traveller, I was wondering if you could get me some Iron ore.\pYou see, suddenly all ya human-folk are obsessed with Ironman mode and I want in.{PAUSE 15}\pWhat does that mean I have to get it myself?\pNonsense!\pStop kidding around and get this old dwarf some iron ore.\pI will reward you of course!"))
     closemessage
     hidenamebox

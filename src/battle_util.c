@@ -4046,7 +4046,7 @@ static const u16 sWeatherFlagsInfo[][3] =
     [ENUM_WEATHER_SUN_PRIMAL] = {B_WEATHER_SUN_PRIMAL, B_WEATHER_SUN_PRIMAL, HOLD_EFFECT_HEAT_ROCK},
     [ENUM_WEATHER_SANDSTORM] = {B_WEATHER_SANDSTORM_TEMPORARY, B_WEATHER_SANDSTORM_PERMANENT, HOLD_EFFECT_SMOOTH_ROCK},
     [ENUM_WEATHER_HAIL] = {B_WEATHER_HAIL_TEMPORARY, B_WEATHER_HAIL_PERMANENT, HOLD_EFFECT_ICY_ROCK},
-    [ENUM_WEATHER_STRONG_WINDS] = {B_WEATHER_STRONG_WINDS, B_WEATHER_STRONG_WINDS, HOLD_EFFECT_NONE},
+    [ENUM_WEATHER_STRONG_WINDS] = {B_WEATHER_STRONG_WINDS, B_WEATHER_STRONG_WINDS, HOLD_EFFECT_EXTEND_TAILWIND},
     [ENUM_WEATHER_SNOW] = {B_WEATHER_SNOW_TEMPORARY, B_WEATHER_SNOW_PERMANENT, HOLD_EFFECT_ICY_ROCK},
 };
 
@@ -4084,7 +4084,7 @@ bool32 TryChangeBattleWeather(u32 battler, u32 weatherEnumId, bool32 viaAbility)
     else if (!(gBattleWeather & (sWeatherFlagsInfo[weatherEnumId][0] | sWeatherFlagsInfo[weatherEnumId][1])))
     {
         gBattleWeather = (sWeatherFlagsInfo[weatherEnumId][0]);
-        if (GetBattlerHoldEffect(battler, TRUE) == sWeatherFlagsInfo[weatherEnumId][2])
+        if (GetBattlerHoldEffect(battler, TRUE) == (sWeatherFlagsInfo[weatherEnumId][2] || HOLD_EFFECT_WEATHER_EXTENDER))
             gWishFutureKnock.weatherDuration = 8;
         else
             gWishFutureKnock.weatherDuration = 5;
@@ -7410,6 +7410,13 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                 BattleScriptPushCursorAndCallback(BattleScript_BerserkGeneRet);
                 effect = ITEM_STATS_CHANGE;
                 break;
+            case HOLD_EFFECT_REMOVE_WEATHER:
+            if (TryChangeBattleWeather(battler, ENUM_WEATHER_NONE, TRUE))
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_RemoveWeather);
+                effect++;
+            }
+            break;
             }
             if (effect != 0)
             {
@@ -7701,6 +7708,7 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
                     }
                 }
                 break;
+            
             }
 
             if (effect != 0)
@@ -7850,6 +7858,8 @@ u8 ItemBattleEffects(u8 caseID, u32 battler, bool32 moveTurn)
             GET_MOVE_TYPE(gCurrentMove, moveType);
             switch (battlerHoldEffect)
             {
+            
+
             case HOLD_EFFECT_DFS:
                 GET_MOVE_TYPE(gCurrentMove, moveType);
                 if ((moveType == TYPE_FIRE || moveType == TYPE_DRAGON)

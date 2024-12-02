@@ -1,6 +1,11 @@
 Route23_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Route23_MapScripts_MAP_SCRIPT_ON_LOAD
 	map_script MAP_SCRIPT_ON_TRANSITION, Route23_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+Route23_MapScripts_MAP_SCRIPT_ON_LOAD:
+	call ROUTE23_METATILES
+	return
 
 Route23_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 3
@@ -41,26 +46,75 @@ ENCOUNTER_PENGUIN_ROCK_ROUTE23_2:
 	goto ENCOUNTER_PENGUIN_ROCK_ROUTE23_1
 
 
-ROUTE23_STATE::
+ROUTE23_METATILES::
+	goto_if_set FLAG_ROCKS_ROUTE23, ROUTE23_METATILES_2
+ROUTE23_METATILES_1:
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 200
-	goto_if_ge ROUTE23_STATE_1
-	removeobject 11
-	removeobject 10
-	setflag FLAG_TEMP_1F
+	goto_if_ge ROUTE23_METATILES_5
+ROUTE23_METATILES_4:
 	return
 
-ROUTE23_STATE_1:
+ROUTE23_METATILES_2:
+	setmetatile 8, 10, METATILE_PokeScapeOutdoors_DIRT_PATH_MIDDLE, 0
+	setmetatile 10, 10, METATILE_PokeScapeOutdoors_DIRT_PATH_MIDDLE, 0
+	goto ROUTE23_METATILES_1
+
+ROUTE23_METATILES_5:
+	setmetatile 30, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 31, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 32, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 33, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 32, 8, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 33, 8, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	goto ROUTE23_METATILES_4
+
+
+ROUTE23_STATE::
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 200
+	goto_if_ge ROUTE23_STATE_2
 	addobject 11
 	addobject 10
 	clearflag FLAG_TEMP_1F
+ROUTE23_STATE_1:
+	goto_if_set FLAG_ROCKS_ROUTE23, ROUTE23_STATE_5
 	return
+
+ROUTE23_STATE_2:
+	removeobject 11
+	removeobject 10
+	setflag FLAG_TEMP_1F
+	goto ROUTE23_STATE_1
+
+ROUTE23_STATE_5:
+	setflag FLAG_TEMP_1
+	removeobject 8
+	setobjectmovementtype 5, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT
+	setobjectxyperm 5, 12, 10
+	return
+
+
+NPC_ROUTE23_DWARF_ROCKS::
+	lock
+	faceplayer
+	namebox NPC_ROUTE23_DWARF_ROCKS_Text_0
+	goto_if_unset FLAG_ROCKS_ROUTE23, NPC_ROUTE23_DWARF_ROCKS_2
+	msgbox NPC_ROUTE23_DWARF_ROCKS_Text_2
+NPC_ROUTE23_DWARF_ROCKS_1:
+	closemessage
+	hidenamebox
+	release
+	end
+
+NPC_ROUTE23_DWARF_ROCKS_2:
+	msgbox NPC_ROUTE23_DWARF_ROCKS_Text_1
+	goto NPC_ROUTE23_DWARF_ROCKS_1
 
 
 NPC_ROUTE23_BLOCKADE_DWARVES::
 	lock
 	faceplayer
-	namebox NPC_ROUTE23_BLOCKADE_DWARVES_Text_0
-	msgbox NPC_ROUTE23_BLOCKADE_DWARVES_Text_1
+	namebox NPC_ROUTE23_DWARF_ROCKS_Text_0
+	msgbox NPC_ROUTE23_BLOCKADE_DWARVES_Text_0
 	waitmessage
 	hidenamebox
 	release
@@ -183,16 +237,107 @@ SCRIPT_PHEONIX_EGG_NOROOM::
 	end
 
 
+ROUTE23_RockSmash::
+	lockall
+	checkitem ITEM_ROCKSMASH_TOOL, 1
+	compare VAR_RESULT, 0
+	goto_if_eq ROUTE23_RockSmash_2
+ROUTE23_RockSmash_1:
+	setfieldeffectargument 0, VAR_RESULT
+	msgbox ROUTE23_RockSmash_Text_0, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_CancelSmash
+	closemessage
+	dofieldeffect FLDEFF_USE_ROCK_SMASH
+	waitstate
+	applymovement VAR_LAST_TALKED, Movement_SmashRock
+	waitmovement 0
+	removeobject VAR_LAST_TALKED
+	releaseall
+	playse SE_PIN
+	applymovement 5, MOVEMENT_EXCLAMATIONMARK_FACEPLAYER
+	waitmovement 0
+	msgbox ROUTE23_RockSmash_Text_1
+	closemessage
+	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_RIGHT
+	setflag FLAG_ROCKS_ROUTE23
+	releaseall
+	end
+
+ROUTE23_RockSmash_2:
+	checkitem ITEM_BRONZEPICKAXE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq ROUTE23_RockSmash_4
+	goto ROUTE23_RockSmash_1
+
+ROUTE23_RockSmash_4:
+	checkitem ITEM_IRONPICKAXE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq ROUTE23_RockSmash_6
+	goto ROUTE23_RockSmash_1
+
+ROUTE23_RockSmash_6:
+	checkitem ITEM_STEELPICKAXE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq ROUTE23_RockSmash_8
+	goto ROUTE23_RockSmash_1
+
+ROUTE23_RockSmash_8:
+	checkitem ITEM_BLACKPICKAXE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq ROUTE23_RockSmash_10
+	goto ROUTE23_RockSmash_1
+
+ROUTE23_RockSmash_10:
+	checkitem ITEM_MITHRILPICKAXE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq ROUTE23_RockSmash_12
+	goto ROUTE23_RockSmash_1
+
+ROUTE23_RockSmash_12:
+	checkitem ITEM_ADAMANTPICKAXE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq ROUTE23_RockSmash_14
+	goto ROUTE23_RockSmash_1
+
+ROUTE23_RockSmash_14:
+	checkitem ITEM_RUNEPICKAXE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq ROUTE23_RockSmash_16
+	goto ROUTE23_RockSmash_1
+
+ROUTE23_RockSmash_16:
+	checkitem ITEM_DRAGON_PICKAXE, 1
+	compare VAR_RESULT, 0
+	goto_if_eq ROUTE23_RockSmash_18
+	goto ROUTE23_RockSmash_1
+
+ROUTE23_RockSmash_18:
+	goto_if_eq EventScript_CantSmashRock
+	goto ROUTE23_RockSmash_1
+
+
 ENCOUNTER_PENGUIN_ROCK_ROUTE23_Text_0:
 	.string "Penguin$"
 
 ENCOUNTER_PENGUIN_ROCK_ROUTE23_Text_1:
 	.string "Noot! Noot!$"
 
-NPC_ROUTE23_BLOCKADE_DWARVES_Text_0:
+NPC_ROUTE23_DWARF_ROCKS_Text_0:
 	.string "Dwarf$"
 
-NPC_ROUTE23_BLOCKADE_DWARVES_Text_1:
+NPC_ROUTE23_DWARF_ROCKS_Text_1:
+	.string "If only those goblins did not steal our\n"
+	.string "pickaxe supplies.\p"
+	.string "Then I could easily clear this\n"
+	.string "rockslide.$"
+
+NPC_ROUTE23_DWARF_ROCKS_Text_2:
+	.string "This pathway is now completely clear\n"
+	.string "from the rockslide.\p"
+	.string "Adventurers like yourself can now\n"
+	.string "travel freely through these mountains.$"
+
+NPC_ROUTE23_BLOCKADE_DWARVES_Text_0:
 	.string "There has been a landslide on Ice\n"
 	.string "Mountain, we are currently cleaning up.\p"
 	.string "Come back later.$"
@@ -314,3 +459,12 @@ SCRIPT_PHEONIX_EGG_KICK_Text_2:
 SCRIPT_PHEONIX_EGG_NOROOM_Text_0:
 	.string "But sadly you have no room in your\n"
 	.string "party for the egg.$"
+
+ROUTE23_RockSmash_Text_0:
+	.string "This rock appears to be breakable.\n"
+	.string "Would you like to use the PICKAXE?$"
+
+ROUTE23_RockSmash_Text_1:
+	.string "Hey you cleared the rockslide!\p"
+	.string "Now travellers can get through.\p"
+	.string "Thank you for that!$"

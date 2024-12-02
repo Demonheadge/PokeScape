@@ -834,6 +834,7 @@ static const u8 sText_HurtByTheSeaOfFire[] = _("{B_ATK_TEAM1} {B_ATK_NAME_WITH_P
 static const u8 sText_TheSeaOfFireDisappeared[] = _("The sea of fire around {B_ATK_TEAM2}\nteam disappeared!");
 static const u8 sText_SwampEnvelopedSide[] = _("A swamp enveloped\n{B_DEF_TEAM2} team!");
 static const u8 sText_TheSwampDisappeared[] = _("The swamp around {B_ATK_TEAM2}\nteam disappeared!");
+static const u8 sText_WeatherDisapearedBook[] = _("The effects of weather disappeared\ndue to the Book of Balance.");
 
 //Pokescape Start
 static const u8 sText_CantRunFromRat[] = _("DON'T EVEN THINK ABOUT RUNNING\nFROM A RAT!!");
@@ -1611,6 +1612,8 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_MELZAR_MESSAGE_3 - BATTLESTRINGS_TABLE_START] = sText_Melzar_LastLowHp,
     [STRINGID_MELZAR_MESSAGE_4 - BATTLESTRINGS_TABLE_START] = sText_Melzar_FirstDown,
     [STRINGID_MELZAR_MESSAGE_5 - BATTLESTRINGS_TABLE_START] = sText_Melzar_PlayerLost,
+
+    [STRINGID_REMOVEWEATHERBOOK - BATTLESTRINGS_TABLE_START] = sText_WeatherDisapearedBook,
 
 
 

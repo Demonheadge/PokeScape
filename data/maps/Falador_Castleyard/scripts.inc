@@ -885,17 +885,6 @@ NPC_FALADORCASTLE_COOK::
 	end
 
 
-NPC_ROUTE23_DWARF_ROCKS::
-	lock
-	faceplayer
-	namebox NPC_ROUTE23_DWARF_ROCKS_Text_0
-	msgbox NPC_ROUTE23_DWARF_ROCKS_Text_1
-	closemessage
-	hidenamebox
-	release
-	end
-
-
 NPC_ROUTE24_DORIC::
 	lock
 	faceplayer
@@ -1577,17 +1566,8 @@ NPC_FALADORCASTLE_COOK_Text_1:
 	.string "What did I cook?\p"
 	.string "Uh, I think it was some Anchovies.$"
 
-NPC_ROUTE23_DWARF_ROCKS_Text_0:
-	.string "DWARF$"
-
-NPC_ROUTE23_DWARF_ROCKS_Text_1:
-	.string "If only those goblins did not steal our\n"
-	.string "pickaxe supplies.\p"
-	.string "Then I could easily clear this\n"
-	.string "rockslide.$"
-
 NPC_ROUTE24_DORIC_Text_0:
-	.string "DORIC$"
+	.string "Doric$"
 
 NPC_ROUTE24_DORIC_Text_1:
 	.string "Hello traveller, I was wondering if you\n"

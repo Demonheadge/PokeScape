@@ -13729,12 +13729,25 @@ const struct Item gItems[] =
 
 
 
-/*
+
 // Weather Rocks
+
+    [ITEM_BOOK_OF_GUTHIX] = 
+    {
+        .name = _("BALANCE BOOK"),
+        .price = 4000,
+        .holdEffect = HOLD_EFFECT_REMOVE_WEATHER,     // HOLD_EFFECT_WEATHER_EXTENDER
+        .description = sBalanceBookDesc, 
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_HELD_ITEM,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 60,
+    },
 
     [ITEM_BOOK_OF_SARADOMIN] = //damp rock
     {
-        .name = _("Damp Book"),
+        .name = _("WISDOM BOOK"),
         .price = 4000,
         .holdEffect = HOLD_EFFECT_DAMP_ROCK,
         .description = sDampRockDesc,
@@ -13747,7 +13760,7 @@ const struct Item gItems[] =
 
     [ITEM_BOOK_OF_ZAMORAK] = //Heat rock
     {
-        .name = _("Heat Book"),
+        .name = _("CHAOS BOOK"),
         .price = 4000,
         .holdEffect = HOLD_EFFECT_HEAT_ROCK,
         .description = sHeatRockDesc,
@@ -13758,9 +13771,9 @@ const struct Item gItems[] =
         .flingPower = 60,
     },
 
-    [ITEM_BOOK_OF_] = // smooth rock
+    [ITEM_BOOK_OF_TUMEKEN] = // smooth rock
     {
-        .name = _("Smooth Book"),
+        .name = _("SANDY BOOK"),
         .price = 4000,
         .holdEffect = HOLD_EFFECT_SMOOTH_ROCK,
         .description = sSmoothRockDesc,
@@ -13773,7 +13786,7 @@ const struct Item gItems[] =
 
     [ITEM_BOOK_OF_SEREN] = //icy rock 
     {
-        .name = _("Icy Book"), 
+        .name = _("LIGHT BOOK"), 
         .price = 4000,
         .holdEffect = HOLD_EFFECT_ICY_ROCK,
         .description = sIcyRockDesc,
@@ -13784,110 +13797,146 @@ const struct Item gItems[] =
         .flingPower = 40,
     },
 
+    [ITEM_BOOK_OF_BANDOS] = 
+    {
+        .name = _("WAR BOOK"),
+        .price = 4000,
+        .holdEffect = HOLD_EFFECT_UTILITY_UMBRELLA,        
+        .description = sSturdyBookDesc, 
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_HELD_ITEM,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 60,
+    },
 
-*/
+    [ITEM_BOOK_OF_ZAROS] = //
+    {
+        .name = _("DARK BOOK"),
+        .price = 4000,
+        .holdEffect = HOLD_EFFECT_LIGHT_CLAY, //  
+        .description = sBarrierBookDesc, 
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_HELD_ITEM,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 60,
+    },
 
-
+    [ITEM_BOOK_OF_ARMADYL] = //
+    {
+        .name = _("LAW BOOK"),
+        .price = 4000,
+        .holdEffect = HOLD_EFFECT_EXTEND_TAILWIND,        
+        .description = sWindyBookDesc, 
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_HELD_ITEM,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 60,
+    },
 
 //SANDWICHES
 
-    [ITEM_TRIANGLE_SANDWICH] =
+    [ITEM_TRIANGLE_SANDWICH] = //atk
     {
-        .name = _("T. Sandwich"),
-        .price = 20,
-        .holdEffect = HOLD_EFFECT_ATTACK_UP,
-        .holdEffectParam = 4,
-        .description = sLiechiBerryDesc,
-        .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
+        .name = _("T. SANDWICH"),
+        .price = 1000,
+        .holdEffectParam = 1,
+        .description = sTriangleSandwichDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .sort = ITEM_TYPE_HEALTH_RECOVERY,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .battleUsage = EFFECT_ITEM_HEAL_AND_INCREASE_STAT,
         .flingPower = 10,
     },
 
-    [ITEM_SQUARE_SANDWICH] =
+    [ITEM_SQUARE_SANDWICH] = //def
     {
-        .name = _("S. Sandwich"),
-        .price = 20,
-        .holdEffect = HOLD_EFFECT_DEFENSE_UP,
-        .holdEffectParam = 4,
-        .description = sGanlonBerryDesc,
-        .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
+        .name = _("S. SANDWICH"),
+        .price = 1000,
+        .holdEffectParam = 1,
+        .description = sSquareSandwichDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .sort = ITEM_TYPE_HEALTH_RECOVERY,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .battleUsage = EFFECT_ITEM_HEAL_AND_INCREASE_STAT,
         .flingPower = 10,
     },
 
-    [ITEM_MEAT_PIE_SANDWICH] =
+    [ITEM_MEAT_PIE_SANDWICH] = //spatk
     {
-        .name = _("Meat Pie"),
-        .price = 20,
-        .holdEffect = HOLD_EFFECT_SPEED_UP,
-        .holdEffectParam = 4,
-        .description = sSalacBerryDesc,
-        .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
+        .name = _("MEAT PIE"),
+        .price = 1000,
+        .holdEffectParam = 1,
+        .description = sMeatPieSandwichDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .sort = ITEM_TYPE_HEALTH_RECOVERY,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .battleUsage = EFFECT_ITEM_HEAL_AND_INCREASE_STAT,
         .flingPower = 10,
     },
 
-    [ITEM_BREAD_ROLL_SANDWICH] =
+    [ITEM_DONUT_SANDWICH] = //spdef
     {
-        .name = _("Bread roll"),
-        .price = 20,
-        .holdEffect = HOLD_EFFECT_SP_ATTACK_UP,
-        .holdEffectParam = 4,
-        .description = sPetayaBerryDesc,
-        .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
+        .name = _("DONUT"),
+        .price = 1000,
+        .holdEffectParam = 1,
+        .description = sDonutSandwichDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .sort = ITEM_TYPE_HEALTH_RECOVERY,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .battleUsage = EFFECT_ITEM_HEAL_AND_INCREASE_STAT,
         .flingPower = 10,
     },
 
-    [ITEM_DONUT_SANDWICH] =
+    [ITEM_BREAD_ROLL_SANDWICH] = //speed
     {
-        .name = _("Donut"),
-        .price = 20,
-        .holdEffect = HOLD_EFFECT_SP_DEFENSE_UP,
-        .holdEffectParam = 4,
-        .description = sApicotBerryDesc,
-        .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
+        .name = _("BREAD ROLL"),
+        .price = 1000,
+        .holdEffectParam = 1,
+        .description = sBreadRollSandwichDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .sort = ITEM_TYPE_HEALTH_RECOVERY,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .battleUsage = EFFECT_ITEM_HEAL_AND_INCREASE_STAT,
         .flingPower = 10,
     },
 
-    [ITEM_BAGUETTE_SANDWICH] =
+    [ITEM_KEBAB_SANDWICH] = //acc?
     {
-        .name = _("Baguette"),
-        .price = 20,
-        .holdEffect = HOLD_EFFECT_CRITICAL_UP,
-        .holdEffectParam = 4,
-        .description = sLansatBerryDesc,
-        .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
+        .name = _("KEBAB"),
+        .price = 1000,
+        .holdEffectParam = 1,
+        .description = sKebabSandwichDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .sort = ITEM_TYPE_HEALTH_RECOVERY,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .battleUsage = EFFECT_ITEM_HEAL_AND_INCREASE_STAT,
         .flingPower = 10,
     },
 
-    [ITEM_KEBAB_SANDWICH] =
+    [ITEM_BAGUETTE_SANDWICH] =  //all
     {
-        .name = _("Kebab"),
-        .price = 20,
-        .holdEffect = HOLD_EFFECT_RANDOM_STAT_UP,
-        .holdEffectParam = 4,
-        .description = sStarfBerryDesc,
-        .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
+        .name = _("BAGUETTE"),
+        .price = 50000,
+        .holdEffectParam = 2,
+        .description = sBaguetteSandwichDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .sort = ITEM_TYPE_HEALTH_RECOVERY,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .battleUsage = EFFECT_ITEM_HEAL_AND_INCREASE_STAT_TO_MAX,
         .flingPower = 10,
     },
+
+    
 
 
 

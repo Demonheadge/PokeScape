@@ -729,11 +729,11 @@
 #define STRINGID_MELZAR_MESSAGE_3                     727
 #define STRINGID_MELZAR_MESSAGE_4                     728
 #define STRINGID_MELZAR_MESSAGE_5                     729
+#define STRINGID_REMOVEWEATHERBOOK                    730
 
 
 
-
-#define BATTLESTRINGS_VANILLA_END                     729
+#define BATTLESTRINGS_VANILLA_END                     730
 
 
 

@@ -15,14 +15,19 @@
   "connections": [
     {
       "map": "MAP_ROUTE23",
-      "offset": -44,
+      "offset": -42,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_BARBARIAN_VILLAGE",
+      "offset": 10,
       "direction": "up"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_DIVINER",
-      "x": 2,
+      "x": 4,
       "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -35,7 +40,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
-      "x": 15,
+      "x": 17,
       "y": 2,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -48,7 +53,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PHOENIX_EGG",
-      "x": 6,
+      "x": 8,
       "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",

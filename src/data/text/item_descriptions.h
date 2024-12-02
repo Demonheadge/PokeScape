@@ -5278,3 +5278,52 @@ static const u8 sSpeedLampDesc[] = _(
     "A lamp left by a\n"
     "Genie. Raises the\n"
     "base SPEED stat.");
+
+static const u8 sSturdyBookDesc[] = _(
+    "Protects the holder\n"
+    "from weather\n"
+    "effects.");
+
+static const u8 sBarrierBookDesc[] = _(
+    "Extends the length\n"
+    "of Barrier Moves if\n"
+    "used by the holder.");
+
+static const u8 sWindyBookDesc[] = _(
+    "Extends the length\n"
+    "of Tailwind if used\n"
+    "by the holder.");
+
+static const u8 sBalanceBookDesc[] = _(
+    "Removes all active\n"
+    "weather effects\n"
+    "on the field.");
+
+static const u8 sTriangleSandwichDesc[] = _(
+    "Heals a small amount\n"
+    "and raises Attack\n"
+    "when eaten in battle.");
+static const u8 sSquareSandwichDesc[] = _(
+    "Heals a small amount\n"
+    "and raises Defense\n"
+    "when eaten in battle.");
+static const u8 sMeatPieSandwichDesc[] = _(
+    "Heals a small amount\n"
+    "and raises SpAtk\n"
+    "when eaten in battle.");
+static const u8 sDonutSandwichDesc[] = _(
+    "Heals a small amount\n"
+    "and raises SpDef\n"
+    "when eaten in battle.");
+static const u8 sBreadRollSandwichDesc[] = _(
+    "Heals a small amount\n"
+    "and raises Speed\n"
+    "when eaten in battle.");
+static const u8 sKebabSandwichDesc[] = _(
+    "Heals a small amount\n"
+    "and raises Accuracy\n"
+    "when eaten in battle.");
+static const u8 sBaguetteSandwichDesc[] = _(
+    "Fully heals a monster\n"
+    "and raises all stats\n"
+    "for the active battler.");

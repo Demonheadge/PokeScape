@@ -527,6 +527,7 @@
 #define METATILE_PokeScapeIndoors_CUPBOARD_SPARKLE         0x190
 
 // gTileset_PokeScapeOutdoors
+#define METATILE_PokeScapeOutdoors_DIRT_PATH_MIDDLE     0x0B6
 #define METATILE_PokeScapeOutdoors_Door_Bank_L          0x13A
 #define METATILE_PokeScapeOutdoors_Door_Bank_R          0x135
 #define METATILE_PokeScapeOutdoors_Door_GeneralStore_L  0x12C

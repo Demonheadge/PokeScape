@@ -32,6 +32,11 @@
       "map": "MAP_EDGEVILLE",
       "offset": 12,
       "direction": "up"
+    },
+    {
+      "map": "MAP_ROUTE40",
+      "offset": -10,
+      "direction": "down"
     }
   ],
   "object_events": [

@@ -25,7 +25,10 @@ gBattlescriptsForUsingItem::
 	.4byte BattleScript_ItemRestoreHP                @ EFFECT_ITEM_REVIVE
 	.4byte BattleScript_ItemRestorePP                @ EFFECT_ITEM_RESTORE_PP
 	.4byte BattleScript_ItemIncreaseAllStats         @ EFFECT_ITEM_INCREASE_ALL_STATS
+	.4byte BattleScript_ItemHealAndIncreaseStat      @ EFFECT_ITEM_HEAL_AND_INCREASE_STAT
+	.4byte BattleScript_ItemFullHealAndIncreaseAllStatsToMax      @ EFFECT_ITEM_HEAL_AND_INCREASE_STAT_TO_MAX
 
+	
 	.align 2
 gBattlescriptsForSafariActions::
 	.4byte BattleScript_ActionWatchesCarefully
@@ -90,6 +93,26 @@ BattleScript_ItemHealAndCureStatus::
 	itemrestorehp BattleScript_ItemCureStatusAfterItemMsg
 	call BattleScript_ItemRestoreHPRet
 	goto BattleScript_ItemCureStatusAfterItemMsg
+
+BattleScript_ItemHealAndIncreaseStat::
+	call BattleScript_UseItemMessage
+	itemincreasestat
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_ItemEnd
+	setgraphicalstatchangevalues
+	playanimation BS_ATTACKER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	itemrestorehp BattleScript_ItemRestoreHPEnd
+	call BattleScript_ItemRestoreHPRet
+	end
+
+BattleScript_ItemFullHealAndIncreaseAllStatsToMax::
+	call BattleScript_UseItemMessage
+	call BattleScript_AllStatsUpToMax
+	itemrestorehp BattleScript_ItemRestoreHPEnd
+	call BattleScript_ItemRestoreHPRet
+	end
+	
 
 BattleScript_ItemIncreaseStat::
 	call BattleScript_UseItemMessage
