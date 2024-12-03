@@ -550,6 +550,8 @@ extern const u8 BattleScript_AntiDragonShieldReducedDamage[];
 extern const u8 BattleScript_SpiritShieldReducedDamage[];
 extern const u8 BattleScript_EatingSandwich[];
 extern const u8 BattleScript_RemoveWeather[];
+extern const u8 BattleScript_TzhaarHeat[];
+extern const u8 BattleScript_TzhaarHeatLava[];
 
 
 

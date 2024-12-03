@@ -730,10 +730,13 @@
 #define STRINGID_MELZAR_MESSAGE_4                     728
 #define STRINGID_MELZAR_MESSAGE_5                     729
 #define STRINGID_REMOVEWEATHERBOOK                    730
+#define STRINGID_TZHAAR_WEATHER_1                     731
+#define STRINGID_TZHAAR_WEATHER_2                     732
 
 
 
-#define BATTLESTRINGS_VANILLA_END                     730
+
+#define BATTLESTRINGS_VANILLA_END                     732
 
 
 

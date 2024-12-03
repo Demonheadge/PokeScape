@@ -2248,9 +2248,18 @@ u8 DoFieldEndTurnEffects(void)
                 }
                 else
                 {
-                    gBattlescriptCurrInstr = BattleScript_SunlightContinues;
+                    if (gBattleTerrain == BATTLE_TERRAIN_POKESCAPE_TZHAAR) 
+                    {
+                        gBattlescriptCurrInstr = BattleScript_TzhaarHeat;
+                    }
+                    else if (gBattleTerrain == BATTLE_TERRAIN_POKESCAPE_TZHAAR_LAVA) 
+                    {
+                        gBattlescriptCurrInstr = BattleScript_TzhaarHeatLava;
+                    }
+                    else {
+                        gBattlescriptCurrInstr = BattleScript_SunlightContinues;
+                    }
                 }
-
                 BattleScriptExecute(gBattlescriptCurrInstr);
                 effect++;
             }
@@ -4091,6 +4100,7 @@ bool32 TryChangeBattleWeather(u32 battler, u32 weatherEnumId, bool32 viaAbility)
         ShouldChangeFormInWeather(battler);
         return TRUE;
     }
+    
     return FALSE;
 }
 
@@ -4346,12 +4356,39 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 break;
             }
         }
+
+        if (gBattleTerrain == BATTLE_TERRAIN_POKESCAPE_TZHAAR) {
+            if (TryChangeBattleWeather(battler, ENUM_WEATHER_SUN, TRUE))
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_TzhaarHeat);
+                effect++;
+                break;
+            }
+        } 
+        else if (gBattleTerrain == BATTLE_TERRAIN_POKESCAPE_TZHAAR_LAVA) {
+            if (TryChangeBattleWeather(battler, ENUM_WEATHER_SUN_PRIMAL, TRUE))
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_TzhaarHeatLava);
+                effect++;
+                break;
+            }
+        } 
+        else if (gTrainerBattleOpponent_A == TRAINER_GYM_LEADER_TZHAAR_CHAMPION_1)
+            if (TryChangeBattleWeather(battler, ENUM_WEATHER_SUN_PRIMAL, TRUE))
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_TzhaarHeatLava);
+                effect++;
+                break;
+            }
+
         if (effect != 0)
         {
             gBattleCommunication[MULTISTRING_CHOOSER] = GetCurrentWeather();
             BattleScriptPushCursorAndCallback(BattleScript_OverworldWeatherStarts);
         }
+        
         break;
+        
     case ABILITYEFFECT_ON_SWITCHIN: // 0
         gBattleScripting.battler = battler;
         switch (gLastUsedAbility)

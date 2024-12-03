@@ -11075,8 +11075,21 @@ BattleScript_SpiritShieldReducedDamage::
 	waitmessage B_WAIT_TIME_LONG
 	end2
 
-
 BattleScript_EatingSandwich::
 	printstring STRINGID_EATINGSANDWICH
 	waitmessage B_WAIT_TIME_LONG
 	end2
+
+BattleScript_TzhaarHeat::
+	printstring STRINGID_TZHAAR_WEATHER_1
+	waitmessage B_WAIT_TIME_LONG
+	playanimation BS_ATTACKER, B_ANIM_SUN_CONTINUES
+	call BattleScript_ActivateWeatherAbilities
+	end3
+
+BattleScript_TzhaarHeatLava::
+	printstring STRINGID_TZHAAR_WEATHER_2
+	waitmessage B_WAIT_TIME_LONG
+	playanimation BS_ATTACKER, B_ANIM_SUN_CONTINUES
+	call BattleScript_ActivateWeatherAbilities
+	end3
