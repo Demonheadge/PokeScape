@@ -15,7 +15,7 @@
   "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "graphics_id": "OBJ_EVENT_GFX_RAC_BONBUN",
       "x": 59,
       "y": 5,
       "elevation": 3,
@@ -24,11 +24,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "HIDDEN_GROTTO_INTERACT",
+      "script": "ENCOUNTER_RANDOM",
       "flag": "FLAG_HIDDEN_GROTTO_4"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "graphics_id": "OBJ_EVENT_GFX_RAC_BONBUN",
       "x": 40,
       "y": 6,
       "elevation": 3,
@@ -37,11 +37,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "HIDDEN_GROTTO_INTERACT",
+      "script": "ENCOUNTER_RANDOM",
       "flag": "FLAG_HIDDEN_GROTTO_3"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "graphics_id": "OBJ_EVENT_GFX_RAC_BONBUN",
       "x": 6,
       "y": 6,
       "elevation": 3,
@@ -50,11 +50,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "HIDDEN_GROTTO_INTERACT",
+      "script": "ENCOUNTER_RANDOM",
       "flag": "FLAG_HIDDEN_GROTTO_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "graphics_id": "OBJ_EVENT_GFX_RAC_BONBUN",
       "x": 24,
       "y": 5,
       "elevation": 3,
@@ -63,11 +63,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "HIDDEN_GROTTO_INTERACT",
+      "script": "ENCOUNTER_RANDOM",
       "flag": "FLAG_HIDDEN_GROTTO_2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "graphics_id": "OBJ_EVENT_GFX_RAC_BONBUN",
       "x": 6,
       "y": 27,
       "elevation": 3,
@@ -76,11 +76,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "HIDDEN_GROTTO_INTERACT",
+      "script": "ENCOUNTER_RANDOM",
       "flag": "FLAG_HIDDEN_GROTTO_5"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "graphics_id": "OBJ_EVENT_GFX_RAC_BONBUN",
       "x": 23,
       "y": 29,
       "elevation": 3,
@@ -89,11 +89,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "HIDDEN_GROTTO_INTERACT",
+      "script": "ENCOUNTER_RANDOM",
       "flag": "FLAG_HIDDEN_GROTTO_6"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "graphics_id": "OBJ_EVENT_GFX_RAC_BONBUN",
       "x": 40,
       "y": 27,
       "elevation": 3,
@@ -102,11 +102,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "HIDDEN_GROTTO_INTERACT",
+      "script": "ENCOUNTER_RANDOM",
       "flag": "FLAG_HIDDEN_GROTTO_7"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "graphics_id": "OBJ_EVENT_GFX_RAC_BONBUN",
       "x": 55,
       "y": 29,
       "elevation": 3,
@@ -115,7 +115,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "HIDDEN_GROTTO_INTERACT",
+      "script": "ENCOUNTER_RANDOM",
       "flag": "FLAG_HIDDEN_GROTTO_8"
     },
     {
@@ -128,7 +128,46 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "HIDDEN_GROTTO_INTERACT",
+      "script": "ENCOUNTER_RANDOM",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RAC_BONBUN",
+      "x": 6,
+      "y": 50,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ENCOUNTER_RANDOM",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RAC_BONBUN",
+      "x": 23,
+      "y": 51,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ENCOUNTER_RANDOM",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_RAC_BONBUN",
+      "x": 55,
+      "y": 51,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ENCOUNTER_RANDOM",
       "flag": "0"
     }
   ],

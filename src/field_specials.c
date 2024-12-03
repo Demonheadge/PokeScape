@@ -1673,10 +1673,20 @@ u32 GetCurrentMap(void)
     return (gSaveBlock1Ptr->location.mapGroup << 8) | gSaveBlock1Ptr->location.mapNum;
 }
 
-u32 GetSeededResult(void)
+u32 GetSeededResult(void) //Used for Dungeoneering.
 {
     u32 mapId = gSaveBlock1Ptr->location.mapNum;
     u32 result = (VarGet(VAR_SEED) ^ mapId) % VarGet(VAR_TEMP_9);
+    return result;
+}
+
+u32 GetSeededResultLessRandom(void) //Used for things like the Grottos.
+{
+    u16 max = VarGet(VAR_TEMP_9);
+    u16 result = ((VarGet(VAR_SEED) ^ (max * 31)) + max) % max;
+
+    //u16 result = (Random() % 100);
+    //u32 result = (VarGet(VAR_SEED) % VarGet(VAR_TEMP_9)); //Determines which Mon you encounter.
     return result;
 }
 

@@ -251,7 +251,7 @@ RandomiseSeed_Weather::
 	random 128
 	copyvar VAR_SEED, VAR_RESULT
 	setvar VAR_TEMP_9, 10
-	specialvar VAR_STORE_SEED_RESULT, GetSeededResult
+	specialvar VAR_STORE_SEED_RESULT, GetSeededResultLessRandom
 	buffernumberstring STR_VAR_3, VAR_STORE_SEED_RESULT
 	msgbox RandomiseSeed_Weather_Text_0
 	closemessage

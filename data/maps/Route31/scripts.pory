@@ -262,7 +262,7 @@ script RandomiseSeed_Weather { // VAR_SEED % VAR_TEMP_9.
 	random(128)
     copyvar(VAR_SEED, VAR_RESULT)
 	setvar(VAR_TEMP_9, 10)
-    specialvar (VAR_STORE_SEED_RESULT, GetSeededResult)
+    specialvar (VAR_STORE_SEED_RESULT, GetSeededResultLessRandom)
 
 
 	//buffernumberstring(STR_VAR_3, VAR_SEED) 
