@@ -61,7 +61,7 @@ u32 GetLastUsedSprayType(void)
     if (IS_LAST_USED_LURE(VarGet(VAR_REPEL_STEP_COUNT)))
         return ITEM_LURE;
     else
-        return ITEM_REPEL;
+        return ITEM_REPEL_TEA_1;
 }
 
 u32 SetSprayMenuCursorPosition(int currentSpray, int count)

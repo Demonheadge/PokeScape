@@ -11,6 +11,8 @@ EventScript_BufferSprayName::
 	specialvar LOCAL_VAR_SPRAY_TYPE, GetLastUsedSprayType
 	compare LOCAL_VAR_SPRAY_TYPE, ITEM_REPEL
 	goto_if_eq EventScript_BufferSprayName_2
+	compare LOCAL_VAR_SPRAY_TYPE, ITEM_REPEL_TEA_1
+	goto_if_eq EventScript_BufferSprayName_3
 	bufferitemname STR_VAR_1, ITEM_LURE
 EventScript_BufferSprayName_1:
 	return
@@ -19,6 +21,9 @@ EventScript_BufferSprayName_2:
 	bufferitemname STR_VAR_1, ITEM_REPEL
 	goto EventScript_BufferSprayName_1
 
+EventScript_BufferSprayName_3:
+	bufferitemname STR_VAR_1, ITEM_REPEL_TEA_1
+	goto EventScript_BufferSprayName_1
 
 EventScript_SprayWoreOff::
 	lock
