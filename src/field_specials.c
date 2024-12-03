@@ -4326,20 +4326,15 @@ void PreparePartyForSkyBattle(void)
     CompactPartySlots();
 }
 
-void GetTimeOfDaySpecial(void)
+/*void GetTimeOfDaySpecial_OLD(void)
 {
 	gSpecialVar_Result = GetTimeOfDay();
+}*/
+
+void GetTimeOfDaySpecial(void)
+{
+    gSpecialVar_Result = UpdateTimeOfDay();
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

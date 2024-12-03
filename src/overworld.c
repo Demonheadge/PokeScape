@@ -1526,9 +1526,21 @@ void CB1_Overworld(void)
 const struct BlendSettings gTimeOfDayBlend[] =
 {
     [TIME_OF_DAY_NIGHT] = {.coeff = 10, .blendColor = TINT_NIGHT, .isTint = TRUE},
-    [TIME_OF_DAY_TWILIGHT] = {.coeff = 4, .blendColor = 0xA8B0E0, .isTint = TRUE},
+    [TIME_OF_DAY_MORNING] = {.coeff = 4, .blendColor = 0xA8B0E0, .isTint = TRUE},
     [TIME_OF_DAY_DAY] = {.coeff = 0, .blendColor = 0},
+    [TIME_OF_DAY_EVENING] = {.coeff = 4, .blendColor = 0xA8B0E0, .isTint = TRUE},
 };
+
+
+
+
+
+
+
+
+
+
+
 
 u8 UpdateTimeOfDay(void)
 {
@@ -1537,6 +1549,188 @@ u8 UpdateTimeOfDay(void)
     hours = gLocalTime.hours;
     minutes = gLocalTime.minutes;
 
+    if (hours < 1)
+    { // night
+        currentTimeBlend.weight = 256;
+        currentTimeBlend.altWeight = 0;
+        gTimeOfDay = currentTimeBlend.time0 = currentTimeBlend.time1 = TIME_OF_DAY_NIGHT;
+    }
+    else if (hours < 2)
+    { // night->twilight
+        currentTimeBlend.time0 = TIME_OF_DAY_NIGHT;
+        currentTimeBlend.time1 = TIME_OF_DAY_MORNING;
+        currentTimeBlend.weight = 0;
+        currentTimeBlend.altWeight = (256 - currentTimeBlend.weight) / 2;
+        gTimeOfDay = TIME_OF_DAY_MORNING;
+    }
+    else if (hours < 3)
+    { // twilight->day
+        currentTimeBlend.time0 = TIME_OF_DAY_MORNING;
+        currentTimeBlend.time1 = TIME_OF_DAY_DAY;
+        currentTimeBlend.weight = 0;
+        currentTimeBlend.altWeight = (256 - currentTimeBlend.weight) / 2 + 128;
+        gTimeOfDay = TIME_OF_DAY_DAY;
+    }
+    else if (hours < 4)
+    { // day
+        currentTimeBlend.weight = currentTimeBlend.altWeight = 256;
+        gTimeOfDay = currentTimeBlend.time0 = currentTimeBlend.time1 = TIME_OF_DAY_DAY;
+    }
+    else if (hours < 5)
+    { // day->twilight
+        currentTimeBlend.time0 = TIME_OF_DAY_DAY;
+        currentTimeBlend.time1 = TIME_OF_DAY_EVENING;
+        currentTimeBlend.weight = 0;
+        currentTimeBlend.altWeight = currentTimeBlend.weight / 2 + 128;
+        gTimeOfDay = TIME_OF_DAY_EVENING;
+    }
+    else if (hours < 6)
+    { // twilight->night
+        currentTimeBlend.time0 = TIME_OF_DAY_EVENING;
+        currentTimeBlend.time1 = TIME_OF_DAY_NIGHT;
+        currentTimeBlend.weight = 0;
+        currentTimeBlend.altWeight = currentTimeBlend.weight / 2;
+        gTimeOfDay = TIME_OF_DAY_NIGHT;
+    }
+    else if (hours < 7)
+    { // night
+        currentTimeBlend.weight = 256;
+        currentTimeBlend.altWeight = 0;
+        gTimeOfDay = currentTimeBlend.time0 = currentTimeBlend.time1 = TIME_OF_DAY_NIGHT;
+    }
+    else if (hours < 8)
+    { // night->twilight
+        currentTimeBlend.time0 = TIME_OF_DAY_NIGHT;
+        currentTimeBlend.time1 = TIME_OF_DAY_MORNING;
+        currentTimeBlend.weight = 0;
+        currentTimeBlend.altWeight = (256 - currentTimeBlend.weight) / 2;
+        gTimeOfDay = TIME_OF_DAY_MORNING;
+    }
+    else if (hours < 9)
+    { // twilight->day
+        currentTimeBlend.time0 = TIME_OF_DAY_MORNING;
+        currentTimeBlend.time1 = TIME_OF_DAY_DAY;
+        currentTimeBlend.weight = 0;
+        currentTimeBlend.altWeight = (256 - currentTimeBlend.weight) / 2 + 128;
+        gTimeOfDay = TIME_OF_DAY_DAY;
+    }
+    else if (hours < 10)
+    { // day
+        currentTimeBlend.weight = currentTimeBlend.altWeight = 256;
+        gTimeOfDay = currentTimeBlend.time0 = currentTimeBlend.time1 = TIME_OF_DAY_DAY;
+    }
+    else if (hours < 11)
+    { // day->twilight
+        currentTimeBlend.time0 = TIME_OF_DAY_DAY;
+        currentTimeBlend.time1 = TIME_OF_DAY_EVENING;
+        currentTimeBlend.weight = 0;
+        currentTimeBlend.altWeight = currentTimeBlend.weight / 2 + 128;
+        gTimeOfDay = TIME_OF_DAY_EVENING;
+    }
+    else if (hours < 12)
+    { // twilight->night
+        currentTimeBlend.time0 = TIME_OF_DAY_EVENING;
+        currentTimeBlend.time1 = TIME_OF_DAY_NIGHT;
+        currentTimeBlend.weight = 0;
+        currentTimeBlend.altWeight = currentTimeBlend.weight / 2;
+        gTimeOfDay = TIME_OF_DAY_NIGHT;
+    }
+    else if (hours < 13)
+    { // night
+        currentTimeBlend.weight = 256;
+        currentTimeBlend.altWeight = 0;
+        gTimeOfDay = currentTimeBlend.time0 = currentTimeBlend.time1 = TIME_OF_DAY_NIGHT;
+    }
+    else if (hours < 14)
+    { // night->twilight
+        currentTimeBlend.time0 = TIME_OF_DAY_NIGHT;
+        currentTimeBlend.time1 = TIME_OF_DAY_MORNING;
+        currentTimeBlend.weight = 0;
+        currentTimeBlend.altWeight = (256 - currentTimeBlend.weight) / 2;
+        gTimeOfDay = TIME_OF_DAY_MORNING;
+    }
+    else if (hours < 15)
+    { // twilight->day
+        currentTimeBlend.time0 = TIME_OF_DAY_MORNING;
+        currentTimeBlend.time1 = TIME_OF_DAY_DAY;
+        currentTimeBlend.weight = 0;
+        currentTimeBlend.altWeight = (256 - currentTimeBlend.weight) / 2 + 128;
+        gTimeOfDay = TIME_OF_DAY_DAY;
+    }
+    else if (hours < 16)
+    { // day
+        currentTimeBlend.weight = currentTimeBlend.altWeight = 256;
+        gTimeOfDay = currentTimeBlend.time0 = currentTimeBlend.time1 = TIME_OF_DAY_DAY;
+    }
+    else if (hours < 17)
+    { // day->twilight
+        currentTimeBlend.time0 = TIME_OF_DAY_DAY;
+        currentTimeBlend.time1 = TIME_OF_DAY_EVENING;
+        currentTimeBlend.weight = 0;
+        currentTimeBlend.altWeight = currentTimeBlend.weight / 2 + 128;
+        gTimeOfDay = TIME_OF_DAY_EVENING;
+    }
+    else if (hours < 18)
+    { // twilight->night
+        currentTimeBlend.time0 = TIME_OF_DAY_EVENING;
+        currentTimeBlend.time1 = TIME_OF_DAY_NIGHT;
+        currentTimeBlend.weight = 0;
+        currentTimeBlend.altWeight = currentTimeBlend.weight / 2;
+        gTimeOfDay = TIME_OF_DAY_NIGHT;
+    }
+    else if (hours < 19)
+    { // night
+        currentTimeBlend.weight = 256;
+        currentTimeBlend.altWeight = 0;
+        gTimeOfDay = currentTimeBlend.time0 = currentTimeBlend.time1 = TIME_OF_DAY_NIGHT;
+    }
+    else if (hours < 20)
+    { // night->twilight
+        currentTimeBlend.time0 = TIME_OF_DAY_NIGHT;
+        currentTimeBlend.time1 = TIME_OF_DAY_MORNING;
+        currentTimeBlend.weight = 0;
+        currentTimeBlend.altWeight = (256 - currentTimeBlend.weight) / 2;
+        gTimeOfDay = TIME_OF_DAY_MORNING;
+    }
+    else if (hours < 21)
+    { // twilight->day
+        currentTimeBlend.time0 = TIME_OF_DAY_MORNING;
+        currentTimeBlend.time1 = TIME_OF_DAY_DAY;
+        currentTimeBlend.weight = 0;
+        currentTimeBlend.altWeight = (256 - currentTimeBlend.weight) / 2 + 128;
+        gTimeOfDay = TIME_OF_DAY_DAY;
+    }
+    else if (hours < 22)
+    { // day
+        currentTimeBlend.weight = currentTimeBlend.altWeight = 256;
+        gTimeOfDay = currentTimeBlend.time0 = currentTimeBlend.time1 = TIME_OF_DAY_DAY;
+    }
+    else if (hours < 23)
+    { // day->twilight
+        currentTimeBlend.time0 = TIME_OF_DAY_DAY;
+        currentTimeBlend.time1 = TIME_OF_DAY_EVENING;
+        currentTimeBlend.weight = 0;
+        currentTimeBlend.altWeight = currentTimeBlend.weight / 2 + 128;
+        gTimeOfDay = TIME_OF_DAY_EVENING;
+    }
+    else if (hours < 24)
+    { // twilight->night
+        currentTimeBlend.time0 = TIME_OF_DAY_EVENING;
+        currentTimeBlend.time1 = TIME_OF_DAY_NIGHT;
+        currentTimeBlend.weight = 0;
+        currentTimeBlend.altWeight = currentTimeBlend.weight / 2;
+        gTimeOfDay = TIME_OF_DAY_NIGHT;
+    }
+    else
+    { // , night
+        currentTimeBlend.weight = 256;
+        currentTimeBlend.altWeight = 0;
+        gTimeOfDay = currentTimeBlend.time0 = currentTimeBlend.time1 = TIME_OF_DAY_NIGHT;
+    }
+    return gTimeOfDay;
+
+
+/*
     if (hours < 5)
     { // night
         currentTimeBlend.weight = 256;
@@ -1586,7 +1780,7 @@ u8 UpdateTimeOfDay(void)
         currentTimeBlend.altWeight = 0;
         gTimeOfDay = currentTimeBlend.time0 = currentTimeBlend.time1 = TIME_OF_DAY_NIGHT;
     }
-    return gTimeOfDay;
+    return gTimeOfDay;*/
 }
 
 bool8 MapHasNaturalLight(u8 mapType)

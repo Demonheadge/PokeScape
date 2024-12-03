@@ -12,10 +12,13 @@
 #include "overworld.h"
 #include "wallclock.h"
 #include "constants/form_change_types.h"
+#include "random.h"
 
 static void UpdatePerDay(struct Time *localTime);
 static void UpdatePerMinute(struct Time *localTime);
 static void FormChangeTimeUpdate();
+void PokeScape_CallDailyEvents();
+static u32 GetSeededResultWeather();
 
 void InitTimeBasedEvents(void)
 {
@@ -72,6 +75,7 @@ static void UpdatePerMinute(struct Time *localTime)
             BerryTreeTimeUpdate(minutes);
             gSaveBlock2Ptr->lastBerryTreeUpdate = *localTime;
             FormChangeTimeUpdate();
+            PokeScape_CallDailyEvents();
         }
     }
 }
@@ -102,4 +106,58 @@ void StartWallClock(void)
 {
     SetMainCallback2(CB2_StartWallClock);
     gMain.savedCallback = ReturnFromStartWallClock;
+}
+
+u32 GetSeededResultWeather(void)
+{
+    u16 randomSEED = (Random() % 128);
+    u32 result = (randomSEED % 10);
+    VarSet(VAR_STORE_WEATHER_SEED_RESULT, result);
+    return result;
+}
+
+extern const u8 RandomiseSeed_Weather[];
+void PokeScape_CallDailyEvents(int result)
+{
+    UpdateTimeOfDay();
+    if (gTimeOfDay == TIME_OF_DAY_MORNING) { // sets daily flag and does functions.
+        if (FlagGet(FLAG_POKESCAPE_TIME_RESET_NIGHT) == TRUE) { //Resets NIGHT flag.
+            FlagClear(FLAG_POKESCAPE_TIME_RESET_NIGHT);
+        }
+        if (FlagGet(FLAG_POKESCAPE_TIME_RESET_MORNING) == FALSE) { //MORNING EVENTS
+            GetSeededResultWeather();
+            FlagSet(FLAG_POKESCAPE_TIME_RESET_MORNING);
+        }
+    }
+    else if (gTimeOfDay == TIME_OF_DAY_NIGHT) { 
+        if (FlagGet(FLAG_POKESCAPE_TIME_RESET_MORNING) == TRUE) { //Resets MORNING flag.
+            FlagClear(FLAG_POKESCAPE_TIME_RESET_MORNING);
+        }
+        if (FlagGet(FLAG_POKESCAPE_TIME_RESET_DAY) == TRUE) { //Resets DAY flag.
+            FlagClear(FLAG_POKESCAPE_TIME_RESET_DAY);
+        }
+        if (FlagGet(FLAG_POKESCAPE_TIME_RESET_EVENING) == TRUE) { //Resets EVENING flag.
+            FlagClear(FLAG_POKESCAPE_TIME_RESET_EVENING);
+        }
+        if (FlagGet(FLAG_POKESCAPE_TIME_RESET_NIGHT) == FALSE) { //NIGHT EVENTS
+            GetSeededResultWeather();
+            VarSet(VAR_STORE_SEED_RESULT, result);
+            FlagSet(FLAG_POKESCAPE_TIME_RESET_NIGHT);
+        }
+    }
+    else if (gTimeOfDay == TIME_OF_DAY_EVENING) { // sets daily flag and does functions.
+        if (FlagGet(FLAG_POKESCAPE_TIME_RESET_EVENING) == FALSE) { //EVENING EVENTS
+            GetSeededResultWeather();
+            VarSet(VAR_STORE_SEED_RESULT, result);
+            FlagSet(FLAG_POKESCAPE_TIME_RESET_EVENING);
+        }
+    }
+    else if (gTimeOfDay == TIME_OF_DAY_DAY) { // sets daily flag and does functions.
+        if (FlagGet(FLAG_POKESCAPE_TIME_RESET_DAY) == FALSE) { //DAY EVENTS
+            GetSeededResultWeather();
+            VarSet(VAR_STORE_SEED_RESULT, result);
+            FlagSet(FLAG_POKESCAPE_TIME_RESET_DAY);
+        }
+    }
+
 }

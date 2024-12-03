@@ -6,7 +6,7 @@
   "region_map_section": "MAPSEC_ABYSS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_UNDERGROUND",
+  "map_type": "MAP_TYPE_TOWN",
   "allow_cycling": true,
   "allow_escaping": true,
   "allow_running": true,
@@ -414,7 +414,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "GET_TIME_OF_DAY",
+      "script": "GET_TIME_OF_DAY_old",
       "flag": "0"
     },
     {
@@ -428,6 +428,32 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WEATHER_CHANGE_AREA_MUSAPOINT",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DRAGON_ARMOUR",
+      "x": 37,
+      "y": 58,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GET_TIME_OF_DAY",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ABYSSAL_DEMON",
+      "x": 31,
+      "y": 61,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CHECK_TIME_OF_DAY_EVENT_TRIGGERED",
       "flag": "0"
     }
   ],
