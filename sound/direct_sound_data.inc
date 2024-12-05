@@ -8704,7 +8704,7 @@ Cry_Stalker::
 	.incbin "sound/direct_sound_samples/cries/natu.bin"
 
 	.align 2
-Cry_Soulseeker::
+Cry_Soulgazer::
 	.incbin "sound/direct_sound_samples/cries/xatu.bin"
 
 	.align 2
@@ -10140,7 +10140,126 @@ Cry_Spirit_Knight::
 	.align 2
 Cry_Spirit_Warmage::
 	.incbin "sound/direct_sound_samples/cries/swinub.bin"
-	
+
+	.align 2
+Cry_Pomapoo::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Jadinko_Mutated::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Jadinko_Ferocious::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Jadinko_Draconic::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Jadinko_Carrion::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Jadinko_Shadow::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Jadinko_Guthix::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Jadinko_Zamorak::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Jadinko_Saradomin::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Max_Golem::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Flesh_Crawler::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Zygomite_OSRS::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Zygomite_OSRS_Ancient::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Zygomite_RSHD_Mutated::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Zygomite_Gloomshroom::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Snail::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Rockslug_RSHD::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Rockslug_OSRS::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Seaslug::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Seaslug_Prince::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Snail_Giant_OSRS::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Snail_Giant_RS3::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Snail_Thorny::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Snail_Ravenous::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Snail_Bruise_OSRS::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Snail_Bark_OSRS::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Snail_Blood_RS3::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Snail_Ochre_RS3::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Snail_Myre_RS3::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
+
+	.align 2
+Cry_Mother_Mallum::
+	.incbin "sound/direct_sound_samples/cries/swinub.bin"
 
 
 

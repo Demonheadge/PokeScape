@@ -1064,7 +1064,7 @@ const struct CompressedSpriteSheet gMonStillFrontPicTable[] =
     SPECIES_SPRITE(SPIDER_LAVA_FORM, gMonStillFrontPic_Spider_Lava_Form),
     SPECIES_SPRITE(SPIDER_SHADOW_FORM, gMonStillFrontPic_Spider_Shadow_Form),
     SPECIES_SPRITE(STALKER, gMonStillFrontPic_Stalker),
-    SPECIES_SPRITE(SOULSEEKER, gMonStillFrontPic_Soulseeker),
+    SPECIES_SPRITE(SOULGAZER, gMonStillFrontPic_Soulgazer),
     SPECIES_SPRITE(STALKER_SENTINEL_FORM, gMonStillFrontPic_Stalker_Sentinel_Form),
     SPECIES_SPRITE(NIGHT_GAZER, gMonStillFrontPic_Night_Gazer),
     SPECIES_SPRITE(PLANE_FREEZER, gMonStillFrontPic_Plane_Freezer),

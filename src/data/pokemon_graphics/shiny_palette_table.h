@@ -1061,7 +1061,7 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
     SPECIES_SHINY_PAL(SPIDER_LAVA_FORM, gMonShinyPalette_Spider_Lava_Form),
     SPECIES_SHINY_PAL(SPIDER_SHADOW_FORM, gMonShinyPalette_Spider_Shadow_Form),
     SPECIES_SHINY_PAL(STALKER, gMonShinyPalette_Stalker),
-    SPECIES_SHINY_PAL(SOULSEEKER, gMonShinyPalette_Soulseeker),
+    SPECIES_SHINY_PAL(SOULGAZER, gMonShinyPalette_Soulgazer),
     SPECIES_SHINY_PAL(STALKER_SENTINEL_FORM, gMonShinyPalette_Stalker_Sentinel_Form),
     SPECIES_SHINY_PAL(NIGHT_GAZER, gMonShinyPalette_Night_Gazer),
     SPECIES_SHINY_PAL(PLANE_FREEZER, gMonShinyPalette_Plane_Freezer),

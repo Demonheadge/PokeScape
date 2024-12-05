@@ -5306,7 +5306,7 @@ const struct MonCoords gMonBackPicCoords[] =
 		.size = 0x0,
 		.y_offset = 0,
 	},
-	[SPECIES_SOULSEEKER] =
+	[SPECIES_SOULGAZER] =
 	{
 		.size = 0x0,
 		.y_offset = 0,
@@ -7192,6 +7192,216 @@ const struct MonCoords gMonBackPicCoords[] =
 		.size = 0x0,
 		.y_offset = 0,
 	},
+
+	[SPECIES_POMAPOO] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_JADINKO_MUTATED] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_JADINKO_FEROCIOUS] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_JADINKO_DRACONIC] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_JADINKO_CARRION] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_JADINKO_SHADOW] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_JADINKO_GUTHIX] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_JADINKO_ZAMORAK] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_JADINKO_SARADOMIN] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_MAX_GOLEM] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_FLESH_CRAWLER] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_ZYGOMITE_OSRS] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_ZYGOMITE_OSRS_ANCIENT] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_ZYGOMITE_RSHD_MUTATED] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_ZYGOMITE_GLOOMSHROOM] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_SNAIL] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_ROCKSLUG_RSHD] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_ROCKSLUG_OSRS] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_SEASLUG] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_SEASLUG_PRINCE] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_SNAIL_GIANT_OSRS] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_SNAIL_GIANT_RS3] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_SNAIL_THORNY] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_SNAIL_RAVENOUS] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_SNAIL_BRUISE_OSRS] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_SNAIL_BARK_OSRS] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_SNAIL_BLOOD_RS3] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_SNAIL_OCHRE_RS3] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_SNAIL_MYRE_RS3] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
+
+	[SPECIES_MOTHER_MALLUM] =
+	{
+		.size = 0x0,
+		.y_offset = 0,
+	},
+
 
 
 

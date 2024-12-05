@@ -17292,7 +17292,7 @@ static const union AnimCmd sAnim_Stalker_1[] =
 	ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_Soulseeker_1[] =
+static const union AnimCmd sAnim_Soulgazer_1[] =
 {
 	ANIMCMD_FRAME(1, 40),
 	ANIMCMD_FRAME(0, 5),
@@ -19806,6 +19806,247 @@ static const union AnimCmd sAnim_Spirit_Warmage_1[] =
 	ANIMCMD_FRAME(0, 5),
 	ANIMCMD_END,
 };
+
+static const union AnimCmd sAnim_Pomapoo_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Jadinko_Mutated_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Jadinko_Ferocious_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Jadinko_Draconic_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Jadinko_Carrion_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Jadinko_Shadow_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Jadinko_Guthix_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Jadinko_Zamorak_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Jadinko_Saradomin_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Max_Golem_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Flesh_Crawler_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Zygomite_OSRS_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Zygomite_OSRS_Ancient_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Zygomite_RSHD_Mutated_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Zygomite_Gloomshroom_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Snail_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Rockslug_RSHD_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Rockslug_OSRS_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Seaslug_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Seaslug_Prince_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Snail_Giant_OSRS_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Snail_Giant_RS3_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Snail_Thorny_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Snail_Ravenous_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Snail_Bruise_OSRS_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Snail_Bark_OSRS_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Snail_Blood_RS3_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Snail_Ochre_RS3_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Snail_Myre_RS3_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
+static const union AnimCmd sAnim_Mother_Mallum_1[] =
+{
+	ANIMCMD_FRAME(1, 40),
+	ANIMCMD_FRAME(0, 5),
+	ANIMCMD_END,
+};
+
+
 
 
 // Todo: use the Macro for these.
@@ -23049,9 +23290,9 @@ static const union AnimCmd *const sAnims_Stalker[] ={
 	sAnim_Stalker_1,
 };
 
-static const union AnimCmd *const sAnims_Soulseeker[] ={
+static const union AnimCmd *const sAnims_Soulgazer[] ={
 	sAnim_GeneralFrame0,
-	sAnim_Soulseeker_1,
+	sAnim_Soulgazer_1,
 };
 
 static const union AnimCmd *const sAnims_Stalker_Sentinel_Form[] ={
@@ -24847,6 +25088,156 @@ static const union AnimCmd *const sAnims_Spirit_Knight[] ={
 static const union AnimCmd *const sAnims_Spirit_Warmage[] ={
 	sAnim_GeneralFrame0,
 	sAnim_Spirit_Warmage_1,
+};
+
+static const union AnimCmd *const sAnims_Pomapoo[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Pomapoo_1,
+};
+
+static const union AnimCmd *const sAnims_Jadinko_Mutated[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Jadinko_Mutated_1,
+};
+
+static const union AnimCmd *const sAnims_Jadinko_Ferocious[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Jadinko_Ferocious_1,
+};
+
+static const union AnimCmd *const sAnims_Jadinko_Draconic[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Jadinko_Draconic_1,
+};
+
+static const union AnimCmd *const sAnims_Jadinko_Carrion[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Jadinko_Carrion_1,
+};
+
+static const union AnimCmd *const sAnims_Jadinko_Shadow[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Jadinko_Shadow_1,
+};
+
+static const union AnimCmd *const sAnims_Jadinko_Guthix[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Jadinko_Guthix_1,
+};
+
+static const union AnimCmd *const sAnims_Jadinko_Zamorak[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Jadinko_Zamorak_1,
+};
+
+static const union AnimCmd *const sAnims_Jadinko_Saradomin[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Jadinko_Saradomin_1,
+};
+
+static const union AnimCmd *const sAnims_Max_Golem[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Max_Golem_1,
+};
+
+static const union AnimCmd *const sAnims_Flesh_Crawler[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Flesh_Crawler_1,
+};
+
+static const union AnimCmd *const sAnims_Zygomite_OSRS[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Zygomite_OSRS_1,
+};
+
+static const union AnimCmd *const sAnims_Zygomite_OSRS_Ancient[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Zygomite_OSRS_Ancient_1,
+};
+
+static const union AnimCmd *const sAnims_Zygomite_RSHD_Mutated[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Zygomite_RSHD_Mutated_1,
+};
+
+static const union AnimCmd *const sAnims_Zygomite_Gloomshroom[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Zygomite_Gloomshroom_1,
+};
+
+static const union AnimCmd *const sAnims_Snail[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Snail_1,
+};
+
+static const union AnimCmd *const sAnims_Rockslug_RSHD[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Rockslug_RSHD_1,
+};
+
+static const union AnimCmd *const sAnims_Rockslug_OSRS[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Rockslug_OSRS_1,
+};
+
+static const union AnimCmd *const sAnims_Seaslug[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Seaslug_1,
+};
+
+static const union AnimCmd *const sAnims_Seaslug_Prince[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Seaslug_Prince_1,
+};
+
+static const union AnimCmd *const sAnims_Snail_Giant_OSRS[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Snail_Giant_OSRS_1,
+};
+
+static const union AnimCmd *const sAnims_Snail_Giant_RS3[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Snail_Giant_RS3_1,
+};
+
+static const union AnimCmd *const sAnims_Snail_Thorny[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Snail_Thorny_1,
+};
+
+static const union AnimCmd *const sAnims_Snail_Ravenous[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Snail_Ravenous_1,
+};
+
+static const union AnimCmd *const sAnims_Snail_Bruise_OSRS[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Snail_Bruise_OSRS_1,
+};
+
+static const union AnimCmd *const sAnims_Snail_Bark_OSRS[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Snail_Bark_OSRS_1,
+};
+
+static const union AnimCmd *const sAnims_Snail_Blood_RS3[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Snail_Blood_RS3_1,
+};
+
+static const union AnimCmd *const sAnims_Snail_Ochre_RS3[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Snail_Ochre_RS3_1,
+};
+
+static const union AnimCmd *const sAnims_Snail_Myre_RS3[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Snail_Myre_RS3_1,
+};
+
+static const union AnimCmd *const sAnims_Mother_Mallum[] ={
+	sAnim_GeneralFrame0,
+	sAnim_Mother_Mallum_1,
 };
 
 
