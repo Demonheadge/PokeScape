@@ -17,6 +17,11 @@
 #include "wild_encounter.h"
 #include "constants/rgb.h"
 #include "constants/metatile_behaviors.h"
+#include "random.h"
+#include "event_data.h"
+
+
+
 
 struct ConnectionFlags
 {
@@ -48,6 +53,9 @@ static bool8 SkipCopyingMetatileFromSavedMap(u16 *mapBlock, u16 mapWidth, u8 yMo
 static const struct MapConnection *GetIncomingConnection(u8 direction, int x, int y);
 static bool8 IsPosInIncomingConnectingMap(u8 direction, int x, int y, const struct MapConnection *connection);
 static bool8 IsCoordInIncomingConnectingMap(int coord, int srcMax, int destMax, int offset);
+static void PokeScape_CallDailyEvents();
+static void GetSeededResultWeather();
+static void GetSeededResultGrotto();
 
 static inline u16 GetBorderBlockAt(int x, int y)
 {
@@ -70,6 +78,7 @@ void InitMap(void)
     gChainFishingStreak = 0;
     InitMapLayoutData(&gMapHeader);
     SetOccupiedSecretBaseEntranceMetatiles(gMapHeader.events);
+    PokeScape_CallDailyEvents();
     RunOnLoadMapScript();
 }
 
@@ -971,5 +980,100 @@ void LoadMapTilesetPalettes(struct MapLayout const *mapLayout)
     {
         LoadPrimaryTilesetPalette(mapLayout);
         LoadSecondaryTilesetPalette(mapLayout, FALSE);
+    }
+}
+
+
+
+
+
+static void GetSeededResultWeather(void)
+{
+    u16 randomSEED = (Random() % 128);
+    u32 result = (randomSEED % 10);
+    VarSet(VAR_STORE_WEATHER_SEED_RESULT, result);
+    //return result;
+}
+
+static void PokeScape_Reset_HiddenGrottos(void)
+{
+    FlagClear(FLAG_HIDDEN_GROTTO_1);
+    FlagClear(FLAG_HIDDEN_GROTTO_2);
+    FlagClear(FLAG_HIDDEN_GROTTO_3);
+    FlagClear(FLAG_HIDDEN_GROTTO_4);
+    FlagClear(FLAG_HIDDEN_GROTTO_5);
+    FlagClear(FLAG_HIDDEN_GROTTO_6);
+    FlagClear(FLAG_HIDDEN_GROTTO_7);
+    FlagClear(FLAG_HIDDEN_GROTTO_8);
+    FlagClear(FLAG_GOODIE_BAG);
+}
+
+static void GetSeededResultGrotto(void)
+{
+    u16 randomSEED = (Random() % 128);
+    u16 max = 25; //Determines which Mon you encounter.
+    u16 result = ((randomSEED ^ (max * 31)) + max) % max;
+    VarSet(VAR_STORE_SEED_RESULT, result);
+    max = 100; //Determines which pool %.
+    result = ((randomSEED ^ (max * 31)) + max) % max;
+    VarSet(VAR_STORE_GROTTO_SEED_RESULT, result);
+
+    /*u16 randomSEED = (Random() % 128);
+    u32 result = (randomSEED % 25); //Determines which Mon you encounter.
+    VarSet(VAR_STORE_SEED_RESULT, result);
+    randomSEED = (Random() % 128);
+    result = (randomSEED % 100); //Determines which Mon you encounter.
+    VarSet(VAR_STORE_GROTTO_SEED_RESULT, result);*/
+    //return result;
+}
+
+extern const u8 RandomiseSeed_Weather[];
+static void PokeScape_CallDailyEvents(void)
+{
+    UpdateTimeOfDay();
+    if (gTimeOfDay == TIME_OF_DAY_MORNING) { // sets daily flag and does functions.
+        if (FlagGet(FLAG_POKESCAPE_TIME_RESET_NIGHT) == TRUE) { //Resets NIGHT flag.
+            FlagClear(FLAG_POKESCAPE_TIME_RESET_NIGHT);
+        }
+        if (FlagGet(FLAG_POKESCAPE_TIME_RESET_MORNING) == FALSE) { //MORNING EVENTS
+            GetSeededResultWeather();
+            GetSeededResultGrotto();
+            PokeScape_Reset_HiddenGrottos();
+            FlagSet(FLAG_POKESCAPE_TIME_RESET_MORNING);
+        }
+    }
+
+    else if (gTimeOfDay == TIME_OF_DAY_NIGHT) { 
+        if (FlagGet(FLAG_POKESCAPE_TIME_RESET_MORNING) == TRUE) { //Resets MORNING flag.
+            FlagClear(FLAG_POKESCAPE_TIME_RESET_MORNING);
+        }
+        if (FlagGet(FLAG_POKESCAPE_TIME_RESET_DAY) == TRUE) { //Resets DAY flag.
+            FlagClear(FLAG_POKESCAPE_TIME_RESET_DAY);
+        }
+        if (FlagGet(FLAG_POKESCAPE_TIME_RESET_EVENING) == TRUE) { //Resets EVENING flag.
+            FlagClear(FLAG_POKESCAPE_TIME_RESET_EVENING);
+        }
+        if (FlagGet(FLAG_POKESCAPE_TIME_RESET_NIGHT) == FALSE) { //NIGHT EVENTS
+            GetSeededResultWeather();
+            GetSeededResultGrotto();
+            PokeScape_Reset_HiddenGrottos();
+            FlagSet(FLAG_POKESCAPE_TIME_RESET_NIGHT);
+        }
+    }
+    else if (gTimeOfDay == TIME_OF_DAY_EVENING) { // sets daily flag and does functions.
+        if (FlagGet(FLAG_POKESCAPE_TIME_RESET_EVENING) == FALSE) { //EVENING EVENTS
+            GetSeededResultWeather();
+            GetSeededResultGrotto();
+            PokeScape_Reset_HiddenGrottos();
+            FlagSet(FLAG_POKESCAPE_TIME_RESET_EVENING);
+        }
+    }
+    else if (gTimeOfDay == TIME_OF_DAY_DAY) { // sets daily flag and does functions.
+        if (FlagGet(FLAG_POKESCAPE_TIME_RESET_DAY) == FALSE) { //DAY EVENTS
+            GetSeededResultWeather();
+            GetSeededResultGrotto();
+            PokeScape_Reset_HiddenGrottos();
+            FlagSet(FLAG_POKESCAPE_TIME_RESET_DAY);
+        }
     }
 }
