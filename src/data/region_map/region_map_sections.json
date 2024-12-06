@@ -3,8 +3,8 @@
     {
       "map_section": "MAPSEC_ABYSS",
       "name": "Abyssal Realm",
-      "x": 19,
-      "y": 0,
+      "x": 2,
+      "y": 5,
       "width": 1,
       "height": 1
     },
@@ -19,7 +19,7 @@
     {
       "map_section": "MAPSEC_ASGARNIAN_DUNGEON",
       "name": "Asgarnian Dungeon",
-      "x": 10,
+      "x": 11,
       "y": 13,
       "width": 1,
       "height": 1
@@ -51,8 +51,8 @@
     {
       "map_section": "MAPSEC_DUNGEON_SINKHOLE",
       "name": "Sinkhole",
-      "x": 19,
-      "y": 0,
+      "x": 2,
+      "y": 6,
       "width": 1,
       "height": 1
     },
@@ -102,7 +102,7 @@
       "x": 2,
       "y": 13,
       "width": 1,
-      "height": 1
+      "height": 2
     },
     {
       "map_section": "MAPSEC_LUMBRIDGE",
@@ -371,7 +371,7 @@
     {
       "map_section": "MAPSEC_ROUTE_31",
       "name": "Route 31",
-      "x": 18,
+      "x": 0,
       "y": 0,
       "width": 1,
       "height": 1
@@ -523,10 +523,10 @@
     {
       "map_section": "MAPSEC_VARROCK",
       "name": "Varrock",
-      "x": 21,
-      "y": 3,
-      "width": 2,
-      "height": 2
+      "x": 20,
+      "y": 2,
+      "width": 3,
+      "height": 3
     },
     {
       "map_section": "MAPSEC_WILDERNESS",
@@ -564,6 +564,54 @@
       "map_section": "MAPSEC_ICE_MOUNTAIN",
       "name": "Ice Mountain",
       "x": 12,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_MOR_UL_REK",
+      "name": "Mor Ul Rek",
+      "x": 2,
+      "y": 13,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_LUMBRIDGE_SWAMP_CAVES",
+      "name": "Swamp Caves",
+      "x": 17,
+      "y": 12,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_MUDSKIPPER_SOUND",
+      "name": "Mudskipper Sound",
+      "x": 6,
+      "y": 13,
+      "width": 4,
+      "height": 2
+    },
+    {
+      "map_section": "MAPSEC_BAY_OF_SARIM",
+      "name": "Bay of Sarim",
+      "x": 11,
+      "y": 13,
+      "width": 2,
+      "height": 2
+    },
+    {
+      "map_section": "MAPSEC_GROTTO",
+      "name": "Hidden Grotto",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "map_section": "MAPSEC_DAEMONHEIM",
+      "name": "Daemonheim",
+      "x": 1,
       "y": 0,
       "width": 1,
       "height": 1

@@ -3,7 +3,7 @@
   "name": "HiddenGrottos",
   "layout": "LAYOUT_HIDDEN_GROTTOS",
   "music": "MUS_PS_FOREST_F2P",
-  "region_map_section": "MAPSEC_TUTORIAL_ISLAND",
+  "region_map_section": "MAPSEC_GROTTO",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",

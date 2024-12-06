@@ -5167,7 +5167,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Druid_3 = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Maggie = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_MAGGIE,
+    .paletteTag = OBJ_EVENT_PAL_WENDY,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -5816,7 +5816,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Banker_M = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_General_Store_Clerk = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_GENERAL_STORE_CLERK,
+    .paletteTag = OBJ_EVENT_PAL_NOOB,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -6214,7 +6214,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man_1 = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman_1 = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_WOMAN_1,
+    .paletteTag = OBJ_EVENT_PAL_WENDY,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -6341,7 +6341,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mercher = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fisherman = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_FISHERMAN,
+    .paletteTag = OBJ_EVENT_PAL_NOOB,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -6413,12 +6413,12 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Farmer_M = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Farmer_F = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_FARMER_F,
+    .paletteTag = OBJ_EVENT_PAL_GYMLEADER_SIR_AMIK_VARZE,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
     .height = 32,
-    .paletteSlot = 10,
+    .paletteSlot = 9,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
     .disableReflectionPaletteLoad = FALSE,

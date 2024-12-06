@@ -3,7 +3,7 @@
   "name": "Crandor_SeaRoute",
   "layout": "LAYOUT_CRANDOR_SEA_ROUTE",
   "music": "MUS_PS_SURFING",
-  "region_map_section": "MAPSEC_MUSA_POINT",
+  "region_map_section": "MAPSEC_CRANDOR",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",

@@ -370,6 +370,7 @@
 #define EVO_MOVE_TYPE                   107
 #define EVO_ITEM_HOLD_MALE              108
 #define EVO_ITEM_HOLD_FEMALE            109
+#define EVO_LEVEL_WEATHER_WET           110
 
 
 // Evolution 'modes,' for GetEvolutionTargetSpecies

@@ -3,7 +3,7 @@
   "name": "Bay_of_Sarim",
   "layout": "LAYOUT_BAY_OF_SARIM",
   "music": "MUS_GSC_ROUTE38",
-  "region_map_section": "MAPSEC_MUDSKIPPER_POINT",
+  "region_map_section": "MAPSEC_BAY_OF_SARIM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_OCEAN_ROUTE",

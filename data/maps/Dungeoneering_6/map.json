@@ -3,7 +3,7 @@
   "name": "Dungeoneering_6",
   "layout": "LAYOUT_DUNGEONEERING_6",
   "music": "MUS_ABANDONED_SHIP",
-  "region_map_section": "MAPSEC_TUTORIAL_ISLAND",
+  "region_map_section": "MAPSEC_DAEMONHEIM",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",

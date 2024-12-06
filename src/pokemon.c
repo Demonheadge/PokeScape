@@ -4664,23 +4664,23 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_FRIENDSHIP_DAY:
-                if (GetTimeOfDay() != TIME_NIGHT && friendship >= FRIENDSHIP_EVO_THRESHOLD)
+                if (UpdateTimeOfDay() != TIME_OF_DAY_NIGHT && friendship >= FRIENDSHIP_EVO_THRESHOLD)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_LEVEL_DAY:
-                if (GetTimeOfDay() != TIME_NIGHT && evolutions[i].param <= level)
+                if (UpdateTimeOfDay() != TIME_OF_DAY_NIGHT && evolutions[i].param <= level)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_FRIENDSHIP_NIGHT:
-                if (GetTimeOfDay() == TIME_NIGHT && friendship >= FRIENDSHIP_EVO_THRESHOLD)
+                if (UpdateTimeOfDay() == TIME_OF_DAY_NIGHT && friendship >= FRIENDSHIP_EVO_THRESHOLD)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_LEVEL_NIGHT:
-                if (GetTimeOfDay() == TIME_NIGHT && evolutions[i].param <= level)
+                if (UpdateTimeOfDay() == TIME_OF_DAY_NIGHT && evolutions[i].param <= level)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_ITEM_HOLD_NIGHT:
-                if (GetTimeOfDay() == TIME_NIGHT && heldItem == evolutions[i].param)
+                if (UpdateTimeOfDay() == TIME_OF_DAY_NIGHT && heldItem == evolutions[i].param)
                 {
                     heldItem = ITEM_NONE;
                     SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
@@ -4688,7 +4688,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                 }
                 break;
             case EVO_ITEM_HOLD_DAY:
-                if (GetTimeOfDay() != TIME_NIGHT && heldItem == evolutions[i].param)
+                if (UpdateTimeOfDay() != TIME_OF_DAY_NIGHT && heldItem == evolutions[i].param)
                 {
                     heldItem = ITEM_NONE;
                     SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
@@ -5892,7 +5892,13 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
             case EVO_LEVEL_WEATHER_ABNORMAL:
                     j = GetCurrentWeather();
                     if (evolutions[i].param <= level
-                    && (j == WEATHER_ABNORMAL))
+                    && (j == WEATHER_ABNORMAL || j == WEATHER_SHADE))
+                        targetSpecies = evolutions[i].targetSpecies;
+                    break;
+            case EVO_LEVEL_WEATHER_WET:
+                    j = GetCurrentWeather();
+                    if (evolutions[i].param <= level
+                    && (j == WEATHER_RAIN || j == WEATHER_RAIN_THUNDERSTORM || WEATHER_DOWNPOUR))
                         targetSpecies = evolutions[i].targetSpecies;
                     break;
 
@@ -5957,11 +5963,11 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_ITEM_NIGHT:
-                if (GetTimeOfDay() == TIME_NIGHT && evolutions[i].param == evolutionItem)
+                if (UpdateTimeOfDay() == TIME_OF_DAY_NIGHT && evolutions[i].param == evolutionItem)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             case EVO_ITEM_DAY:
-                if (GetTimeOfDay() != TIME_NIGHT && evolutions[i].param == evolutionItem)
+                if (UpdateTimeOfDay() != TIME_OF_DAY_NIGHT && evolutions[i].param == evolutionItem)
                     targetSpecies = evolutions[i].targetSpecies;
                 break;
             }
@@ -7741,11 +7747,11 @@ u16 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, u16 method, u32 
                         switch (formChanges[i].param2)
                         {
                         case DAY:
-                            if (GetTimeOfDay() != TIME_NIGHT)
+                            if (UpdateTimeOfDay() != TIME_OF_DAY_NIGHT)
                                 targetSpecies = formChanges[i].targetSpecies;
                             break;
                         case NIGHT:
-                            if (GetTimeOfDay() == TIME_NIGHT)
+                            if (UpdateTimeOfDay() == TIME_OF_DAY_NIGHT)
                                 targetSpecies = formChanges[i].targetSpecies;
                             break;
                         default:
@@ -7783,11 +7789,11 @@ u16 GetFormChangeTargetSpeciesBoxMon(struct BoxPokemon *boxMon, u16 method, u32 
                     switch (formChanges[i].param1)
                     {
                     case DAY:
-                        if (GetTimeOfDay() != TIME_NIGHT)
+                        if (UpdateTimeOfDay() != TIME_OF_DAY_NIGHT)
                             targetSpecies = formChanges[i].targetSpecies;
                         break;
                     case NIGHT:
-                        if (GetTimeOfDay() == TIME_NIGHT)
+                        if (UpdateTimeOfDay() == TIME_OF_DAY_NIGHT)
                             targetSpecies = formChanges[i].targetSpecies;
                         break;
                     }

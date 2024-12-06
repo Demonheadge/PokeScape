@@ -15214,7 +15214,7 @@
               {
                 "min_level": 7,
                 "max_level": 10,
-                "species": "SPECIES_FROG_NORMAL_FORM"
+                "species": "SPECIES_ENTLING"
               },
               {
                 "min_level": 7,
@@ -15282,8 +15282,8 @@
             "mons": [
               {
                 "min_level": 7,
-                "max_level": 9,
-                "species": "SPECIES_SNAKE_NORMAL_FORM"
+                "max_level": 10,
+                "species": "SPECIES_ENTLING"
               },
               {
                 "min_level": 7,
@@ -15298,12 +15298,12 @@
               {
                 "min_level": 7,
                 "max_level": 9,
-                "species": "SPECIES_LILRASK"
+                "species": "SPECIES_CHOMPY"
               },
               {
                 "min_level": 7,
                 "max_level": 9,
-                "species": "SPECIES_ENTLING"
+                "species": "SPECIES_ZYGOMITE"
               },
               {
                 "min_level": 7,
@@ -15313,22 +15313,22 @@
               {
                 "min_level": 7,
                 "max_level": 9,
-                "species": "SPECIES_CAVE_SLIME"
-              },
-              {
-                "min_level": 7,
-                "max_level": 9,
-                "species": "SPECIES_GIANT_RAT_CRYPT_FORM"
-              },
-              {
-                "min_level": 7,
-                "max_level": 9,
-                "species": "SPECIES_SPIDER_FEVER_FORM"
+                "species": "SPECIES_CHOMPY"
               },
               {
                 "min_level": 7,
                 "max_level": 9,
                 "species": "SPECIES_COCKROACH_DRONE"
+              },
+              {
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_SPIDER_GIANT_FORM"
+              },
+              {
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_RUBY_HARVEST"
               },
               {
                 "min_level": 7,
@@ -17812,7 +17812,7 @@
               {
                 "min_level": 8,
                 "max_level": 12,
-                "species": "SPECIES_FERRET"
+                "species": "SPECIES_ENTLING"
               },
               {
                 "min_level": 8,
@@ -17966,7 +17966,7 @@
               {
                 "min_level": 8,
                 "max_level": 12,
-                "species": "SPECIES_BEAVER"
+                "species": "SPECIES_ENTLING"
               },
               {
                 "min_level": 8,

@@ -3,7 +3,7 @@
   "name": "Lumbridge_Swamp_Caves_WGS_5",
   "layout": "LAYOUT_LUMBRIDGE_SWAMP_CAVES_WGS_5",
   "music": "MUS_PS_CAVE_F2P",
-  "region_map_section": "MAPSEC_LUMBRIDGE_SWAMP",
+  "region_map_section": "MAPSEC_LUMBRIDGE_SWAMP_CAVES",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

@@ -466,7 +466,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 
 #define OBJ_EVENT_PAL_DRUID_2 0x1131
 #define OBJ_EVENT_PAL_DRUID_3 0x1132
-#define OBJ_EVENT_PAL_MAGGIE 0x1133
+//#define OBJ_EVENT_PAL_MAGGIE 0x1133
 #define OBJ_EVENT_PAL_WENDY 0x1134
 #define OBJ_EVENT_PAL_HAM_JOHANHUS 0x1135
 #define OBJ_EVENT_PAL_HAM_SIGMUND_1 0x1136
@@ -499,7 +499,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_KNIGHT_BLACK_DAQUARIUS 0x115D
 #define OBJ_EVENT_PAL_BANKER_F 0x115E
 #define OBJ_EVENT_PAL_BANKER_M 0x115F
-#define OBJ_EVENT_PAL_GENERAL_STORE_CLERK 0x1160
+//#define OBJ_EVENT_PAL_GENERAL_STORE_CLERK 0x1160
 #define OBJ_EVENT_PAL_GUARD_KHAZARD 0x1161
 #define OBJ_EVENT_PAL_GUARD_FALADOR 0x1162
 #define OBJ_EVENT_PAL_GUARD_ALKHAIRD 0x1163
@@ -521,7 +521,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_BARROWS_GUTHAN 0x1173
 #define OBJ_EVENT_PAL_BARROWS_SILSKE 0x1174
 #define OBJ_EVENT_PAL_MAN_1 0x1175
-#define OBJ_EVENT_PAL_WOMAN_1 0x1176
+//#define OBJ_EVENT_PAL_WOMAN_1 0x1176
 //SKILLS
 #define OBJ_EVENT_PAL_GRACEFUL 0x1177
 #define OBJ_EVENT_PAL_CHEF 0x1178
@@ -529,11 +529,11 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_WOODCUTTER 0x117A
 #define OBJ_EVENT_PAL_SUMMONER 0x117B
 #define OBJ_EVENT_PAL_MERCHER 0x117C
-#define OBJ_EVENT_PAL_FISHERMAN 0x117D
+//#define OBJ_EVENT_PAL_FISHERMAN 0x117D
 #define OBJ_EVENT_PAL_HUNTER_M 0x117E
 #define OBJ_EVENT_PAL_HUNTER_F 0x117F
 #define OBJ_EVENT_PAL_FARMER_M 0x1180
-#define OBJ_EVENT_PAL_FARMER_F 0x1181
+//#define OBJ_EVENT_PAL_FARMER_F 0x1181
 #define OBJ_EVENT_PAL_NOOB 0x1183
 #define OBJ_EVENT_PAL_QUESTER 0x1184
 #define OBJ_EVENT_PAL_JMOD 0x1185
@@ -761,7 +761,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     
     {gObjectEventPalette_Druid_2, OBJ_EVENT_PAL_DRUID_2},
     {gObjectEventPalette_Druid_3, OBJ_EVENT_PAL_DRUID_3},
-    {gObjectEventPalette_Maggie, OBJ_EVENT_PAL_MAGGIE},
+    //{gObjectEventPalette_Maggie, OBJ_EVENT_PAL_MAGGIE},
     {gObjectEventPalette_Wendy, OBJ_EVENT_PAL_WENDY},
     {gObjectEventPalette_HAM_Johanhus, OBJ_EVENT_PAL_HAM_JOHANHUS},
     {gObjectEventPalette_HAM_Sigmund_1, OBJ_EVENT_PAL_HAM_SIGMUND_1},
@@ -810,7 +810,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Knight_Black_Daquarius, OBJ_EVENT_PAL_KNIGHT_BLACK_DAQUARIUS},
     {gObjectEventPalette_Banker_F, OBJ_EVENT_PAL_BANKER_F},
     {gObjectEventPalette_Banker_M, OBJ_EVENT_PAL_BANKER_M},
-    {gObjectEventPalette_General_Store_Clerk, OBJ_EVENT_PAL_GENERAL_STORE_CLERK},
+    //{gObjectEventPalette_General_Store_Clerk, OBJ_EVENT_PAL_GENERAL_STORE_CLERK},
     {gObjectEventPalette_Guard_Khazard, OBJ_EVENT_PAL_GUARD_KHAZARD},
     {gObjectEventPalette_Guard_Falador, OBJ_EVENT_PAL_GUARD_FALADOR},
     {gObjectEventPalette_Guard_Alkhaird, OBJ_EVENT_PAL_GUARD_ALKHAIRD},
@@ -832,7 +832,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Barrows_Guthan, OBJ_EVENT_PAL_BARROWS_GUTHAN},
     {gObjectEventPalette_Barrows_Silske, OBJ_EVENT_PAL_BARROWS_SILSKE},
     {gObjectEventPalette_Man_1, OBJ_EVENT_PAL_MAN_1},
-    {gObjectEventPalette_Woman_1, OBJ_EVENT_PAL_WOMAN_1},
+    //{gObjectEventPalette_Woman_1, OBJ_EVENT_PAL_WOMAN_1},
 //SKILLS
     {gObjectEventPalette_Graceful, OBJ_EVENT_PAL_GRACEFUL},
     {gObjectEventPalette_Chef, OBJ_EVENT_PAL_CHEF},
@@ -840,11 +840,11 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Woodcutter, OBJ_EVENT_PAL_WOODCUTTER},
     {gObjectEventPalette_Summoner, OBJ_EVENT_PAL_SUMMONER},
     {gObjectEventPalette_Mercher, OBJ_EVENT_PAL_MERCHER},
-    {gObjectEventPalette_Fisherman, OBJ_EVENT_PAL_FISHERMAN},
+    //{gObjectEventPalette_Fisherman, OBJ_EVENT_PAL_FISHERMAN},
     {gObjectEventPalette_Hunter_M, OBJ_EVENT_PAL_HUNTER_M},
     {gObjectEventPalette_Hunter_F, OBJ_EVENT_PAL_HUNTER_F},
     {gObjectEventPalette_Farmer_M, OBJ_EVENT_PAL_FARMER_M},
-    {gObjectEventPalette_Farmer_F, OBJ_EVENT_PAL_FARMER_F},
+    //{gObjectEventPalette_Farmer_F, OBJ_EVENT_PAL_FARMER_F},
     //
     {gObjectEventPalette_Noob, OBJ_EVENT_PAL_NOOB},
     {gObjectEventPalette_Quester, OBJ_EVENT_PAL_QUESTER},

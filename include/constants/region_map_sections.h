@@ -188,7 +188,13 @@
 #define	MAPSEC_TRAINER_HILL	            0xB7		
 //
 #define	MAPSEC_CRANDOR            		0xB8	
-#define	MAPSEC_ICE_MOUNTAIN            	0xB9	
+#define	MAPSEC_ICE_MOUNTAIN            	0xB9
+#define	MAPSEC_GROTTO            	    0xBA
+#define	MAPSEC_MOR_UL_REK            	0xBB
+#define	MAPSEC_LUMBRIDGE_SWAMP_CAVES   	0xBC
+#define	MAPSEC_BAY_OF_SARIM   	        0xBD
+#define	MAPSEC_MUDSKIPPER_SOUND	        0xBE
+#define	MAPSEC_DAEMONHEIM	            0xBF	
 
 #define MAPSEC_NONE                     0xFB
 #define MAPSEC_ENDMAPSEC                0xFC

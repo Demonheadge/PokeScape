@@ -46,16 +46,14 @@ SetClock::
 
 Explorer_Jack_2::
 	namebox Explorer_Jack_1_Text_0
-	gettime
-	compare VAR_0x8000, 7
-	goto_if_lt Explorer_Jack_2_2
-	compare VAR_0x8000, 21
-	goto_if_ge Explorer_Jack_2_2
-	compare VAR_0x8000, 12
-	goto_if_lt Explorer_Jack_2_3
-	msgbox Explorer_Jack_2_Text_2
+	special GetTimeOfDaySpecial
+	switch VAR_RESULT
+	case 0, Explorer_Jack_2_3
+	case 1, Explorer_Jack_2_4
+	case 2, Explorer_Jack_2_5
+	case 3, Explorer_Jack_2_6
 Explorer_Jack_2_1:
-	msgbox Explorer_Jack_2_Text_3
+	msgbox Explorer_Jack_2_Text_4
 	closemessage
 	hidenamebox
 	applymovement 1, Movement_Explorer_Jack_2
@@ -69,12 +67,20 @@ Explorer_Jack_2_1:
 	release
 	end
 
-Explorer_Jack_2_2:
+Explorer_Jack_2_3:
 	msgbox Explorer_Jack_2_Text_0
 	goto Explorer_Jack_2_1
 
-Explorer_Jack_2_3:
+Explorer_Jack_2_4:
 	msgbox Explorer_Jack_2_Text_1
+	goto Explorer_Jack_2_1
+
+Explorer_Jack_2_5:
+	msgbox Explorer_Jack_2_Text_2
+	goto Explorer_Jack_2_1
+
+Explorer_Jack_2_6:
+	msgbox Explorer_Jack_2_Text_3
 	goto Explorer_Jack_2_1
 
 
@@ -338,9 +344,10 @@ Explorer_Jack_1_Text_0:
 
 Explorer_Jack_1_Text_1:
 	.string "You're awake!\p"
-	.string "Do you know what time it is?$"
+	.string "Do you know what time it is?!$"
 
 Explorer_Jack_2_Text_0:
+	.string "It's quite late.\p"
 	.string "Are you sure you don't want to go back\n"
 	.string "to bed?$"
 
@@ -349,9 +356,13 @@ Explorer_Jack_2_Text_1:
 	.string "usually oversleep.$"
 
 Explorer_Jack_2_Text_2:
-	.string "It's about time you got up.$"
+	.string "That's right it's time to start the day.$"
 
 Explorer_Jack_2_Text_3:
+	.string "It's about time you got up, you've been\n"
+	.string "sleeping all day.$"
+
+Explorer_Jack_2_Text_4:
 	.string "Anyhow, I've got some news for you.\p"
 	.string "Apparently a famous researcher is\n"
 	.string "currently visiting the Duke in\l"

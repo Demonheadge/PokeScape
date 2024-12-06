@@ -16,7 +16,7 @@ script Explorer_Jack_1
             applymovement(1, Movement_Explorer_Jack_1)
             waitmovement (0)
             namebox ("Explorer Jack")
-            msgbox(format("You're awake!\pDo you know what time it is?"))
+            msgbox(format("You're awake!\pDo you know what time it is?!"))
             goto (SetClock)
             hidenamebox
             setvar(VAR_TEMP_0, 1)
@@ -47,14 +47,18 @@ script SetClock
 
 script Explorer_Jack_2 {
 	namebox ("Explorer Jack")
-    gettime
-    if (var(VAR_0x8000) < 7 || var(VAR_0x8000) >= 21) {
-        msgbox(format("Are you sure you don't want to go back to bed?"))
-    } elif (var(VAR_0x8000) < 12) {
-        msgbox(format("I am surprised you're up this early, you usually oversleep."))
-    } else {
-        msgbox(format("It's about time you got up."))
-    }
+
+    special(GetTimeOfDaySpecial)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			msgbox(format("It's quite late.\pAre you sure you don't want to go back to bed?"))
+		case 1:
+			msgbox(format("I am surprised you're up this early, you usually oversleep."))
+		case 2:
+			msgbox(format("That's right it's time to start the day."))
+		case 3:
+			msgbox(format("It's about time you got up, you've been sleeping all day."))
+	}
 	msgbox(format("Anyhow, I've got some news for you.\pApparently a famous researcher is currently visiting the Duke in Lumbridge Castle and I heard he is giving out Monsters to anyone who can help him with a quest!\pI think you should go pay him a visit seeing as you've always had a fondness for adventures."))
 	closemessage
 	hidenamebox

@@ -853,20 +853,20 @@ const u16 gObjectEventPalette_Barrows_Torag[] = INCBIN_U16("graphics/object_even
 const u16 gObjectEventPalette_Barrows_Guthan[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/barrows_guthan.gbapal");
 const u16 gObjectEventPalette_Barrows_Silske[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/barrows_silske.gbapal");
 const u16 gObjectEventPalette_Man_1[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/man_1.gbapal");
-const u16 gObjectEventPalette_Woman_1[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/woman_1.gbapal");
+//const u16 gObjectEventPalette_Woman_1[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/woman_1.gbapal");
 const u16 gObjectEventPalette_Graceful[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/graceful.gbapal");
 const u16 gObjectEventPalette_Chef[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/chef.gbapal");
 const u16 gObjectEventPalette_Firemaker[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/firemaker.gbapal");
 const u16 gObjectEventPalette_Woodcutter[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/woodcutter.gbapal");
 const u16 gObjectEventPalette_Summoner[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/summoner.gbapal");
 const u16 gObjectEventPalette_Mercher[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/mercher.gbapal");
-const u16 gObjectEventPalette_Fisherman[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/fisherman.gbapal");
+//const u16 gObjectEventPalette_Fisherman[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/fisherman.gbapal");
 const u16 gObjectEventPalette_Hunter_M[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/hunter_m.gbapal");
 const u16 gObjectEventPalette_Hunter_F[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/hunter_f.gbapal");
 const u16 gObjectEventPalette_Farmer_M[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/farmer_m.gbapal");
 const u16 gObjectEventPalette_Farmer_F[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/farmer_f.gbapal");
 //
-const u16 gObjectEventPalette_Noob[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/noob.gbapal");
+
 const u16 gObjectEventPalette_Quester[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/quester.gbapal");
 const u16 gObjectEventPalette_Jmod[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/jmod.gbapal");
 //const u16 gObjectEventPalette_DnD[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/dnd.gbapal");
@@ -1023,6 +1023,7 @@ const u16 gObjectEventPalette_TZHAAR[] = INCBIN_U16("graphics/object_events/pale
 const u16 gObjectEventPalette_Druid_1[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/druid1.gbapal");
 const u16 gObjectEventPalette_YAK_COW[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/YAK_COW.gbapal");
 const u16 gObjectEventPalette_CHICKENS[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/CHICKENS.gbapal");
+const u16 gObjectEventPalette_Noob[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/noob.gbapal");
 
 /*
 const u16 gObjectEventPalette_RAC_BATS[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/rac_bats.gbapal");

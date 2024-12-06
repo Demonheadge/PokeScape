@@ -3,7 +3,7 @@
   "name": "Route0",
   "layout": "LAYOUT_ROUTE0",
   "music": "MUS_PS_ROUTE_WILDERNESS",
-  "region_map_section": "MAPSEC_WILDERNESS",
+  "region_map_section": "MAPSEC_DAEMONHEIM",
   "requires_flash": false,
   "weather": "WEATHER_SNOW",
   "map_type": "MAP_TYPE_ROUTE",
