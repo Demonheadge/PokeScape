@@ -338,7 +338,13 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 3,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_HIDDEN_GROTTOS",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
 
@@ -351,6 +357,22 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "ROUTE15_SIGNPOST"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "HIDDEN_GROTTO_ENTRY"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "HIDDEN_GROTTO_ENTRY"
     }
   ],
   "has_night_table": true

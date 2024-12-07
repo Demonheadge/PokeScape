@@ -72,6 +72,15 @@ PENGUIN_EVENT_CANADA_GRRL::
 	end
 
 
+BATTLE_PENGUIN_EVENT_CANADA_GRRL::
+	trainerbattle_single TRAINER_ROUTE18_TRAINER_2, BATTLE_PENGUIN_EVENT_CANADA_GRRL_Text_0, BATTLE_PENGUIN_EVENT_CANADA_GRRL_Text_1
+	namebox PENGUIN_EVENT_CANADA_GRRL_Text_0
+	msgbox PENGUIN_EVENT_CANADA_GRRL_Text_1
+	hidenamebox
+	release
+	end
+
+
 NPC_ROUTE18_NPC1::
 	lock
 	faceplayer
@@ -85,15 +94,6 @@ NPC_ROUTE18_NPC1::
 BATTLE_ROUTE18_TRAINER1::
 	trainerbattle_single TRAINER_ROUTE18_TRAINER_1, BATTLE_ROUTE18_TRAINER1_Text_0, BATTLE_ROUTE18_TRAINER1_Text_1
 	msgbox BATTLE_ROUTE18_TRAINER1_Text_2
-	hidenamebox
-	release
-	end
-
-
-BATTLE_ROUTE18_TRAINER2::
-	trainerbattle_single TRAINER_ROUTE18_TRAINER_2, BATTLE_ROUTE18_TRAINER2_Text_0, BATTLE_ROUTE18_TRAINER2_Text_1
-	namebox PENGUIN_EVENT_CANADA_GRRL_Text_0
-	msgbox BATTLE_ROUTE18_TRAINER2_Text_2
 	hidenamebox
 	release
 	end
@@ -191,6 +191,12 @@ PENGUIN_EVENT_CANADA_GRRL_Text_1:
 	.string "area.\p"
 	.string "Have you spotted any?$"
 
+BATTLE_PENGUIN_EVENT_CANADA_GRRL_Text_0:
+	.string "SPOTTED!$"
+
+BATTLE_PENGUIN_EVENT_CANADA_GRRL_Text_1:
+	.string "Oh wait, you aren't a penguin.$"
+
 NPC_ROUTE18_NPC1_Text_0:
 	.string ".$"
 
@@ -205,17 +211,6 @@ BATTLE_ROUTE18_TRAINER1_Text_1:
 BATTLE_ROUTE18_TRAINER1_Text_2:
 	.string "Talk to me after I have finished my\n"
 	.string "dailies.$"
-
-BATTLE_ROUTE18_TRAINER2_Text_0:
-	.string "SPOTTED!$"
-
-BATTLE_ROUTE18_TRAINER2_Text_1:
-	.string "Oh wait, you aren't a penguin.$"
-
-BATTLE_ROUTE18_TRAINER2_Text_2:
-	.string "I heard there was a Penguin in this area\n"
-	.string "but all I see are cats.\p"
-	.string "Have you seen any?$"
 
 BATTLE_ROUTE18_TRAINER3_Text_0:
 	.string "1001 OAK LOGS.\p"

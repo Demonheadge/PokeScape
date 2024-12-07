@@ -72,20 +72,17 @@ ROUTE23_METATILES_5:
 ROUTE23_STATE::
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 200
 	goto_if_ge ROUTE23_STATE_2
-	addobject 11
-	addobject 10
-	clearflag FLAG_TEMP_1F
 ROUTE23_STATE_1:
-	goto_if_set FLAG_ROCKS_ROUTE23, ROUTE23_STATE_5
+	goto_if_set FLAG_ROCKS_ROUTE23, ROUTE23_STATE_4
 	return
 
 ROUTE23_STATE_2:
 	removeobject 11
 	removeobject 10
-	setflag FLAG_TEMP_1F
+	setflag FLAG_TEMP_1E
 	goto ROUTE23_STATE_1
 
-ROUTE23_STATE_5:
+ROUTE23_STATE_4:
 	setflag FLAG_TEMP_1
 	removeobject 8
 	setobjectmovementtype 5, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT
@@ -115,8 +112,11 @@ NPC_ROUTE23_BLOCKADE_DWARVES::
 	faceplayer
 	namebox NPC_ROUTE23_DWARF_ROCKS_Text_0
 	msgbox NPC_ROUTE23_BLOCKADE_DWARVES_Text_0
-	waitmessage
+	closemessage
 	hidenamebox
+	applymovement 11, Movement_InteractFACEUP
+	applymovement 10, Movement_InteractFACEUP
+	waitmovement 0
 	release
 	end
 
@@ -258,7 +258,9 @@ ROUTE23_RockSmash_1:
 	waitmovement 0
 	msgbox ROUTE23_RockSmash_Text_1
 	closemessage
+	applymovement 5, Movement_InteractFACERIGHT
 	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_RIGHT
+	waitmovement 0
 	setflag FLAG_ROCKS_ROUTE23
 	releaseall
 	end
@@ -314,6 +316,29 @@ ROUTE23_RockSmash_16:
 ROUTE23_RockSmash_18:
 	goto_if_eq EventScript_CantSmashRock
 	goto ROUTE23_RockSmash_1
+
+
+NPC_ROUTE20_SIR_TIFFY::
+	lock
+	applymovement 10, MOVEMENT_INTERACT_RIGHT
+	namebox NPC_ROUTE20_SIR_TIFFY_Text_0
+	msgbox NPC_ROUTE20_SIR_TIFFY_Text_1
+	waitmovement 0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NPC_ROUTE20_TEMPLE_KNIGHT::
+	lock
+	faceplayer
+	namebox NPC_ROUTE20_TEMPLE_KNIGHT_Text_0
+	msgbox NPC_ROUTE20_TEMPLE_KNIGHT_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
 
 
 ENCOUNTER_PENGUIN_ROCK_ROUTE23_Text_0:
@@ -468,3 +493,23 @@ ROUTE23_RockSmash_Text_1:
 	.string "Hey you cleared the rockslide!\p"
 	.string "Now travellers can get through.\p"
 	.string "Thank you for that!$"
+
+NPC_ROUTE20_SIR_TIFFY_Text_0:
+	.string "Tiffy Cashin$"
+
+NPC_ROUTE20_SIR_TIFFY_Text_1:
+	.string "Be on the look out for the H.A.M and the\n"
+	.string "Black Knights.\p"
+	.string "There have been reports that they have\n"
+	.string "been spotted in this area.$"
+
+NPC_ROUTE20_TEMPLE_KNIGHT_Text_0:
+	.string "Temple Knight$"
+
+NPC_ROUTE20_TEMPLE_KNIGHT_Text_1:
+	.string "Sorry adventurer, but you'll have to\n"
+	.string "turn around and go back.\p"
+	.string "We Temple Knights are currently in the\n"
+	.string "middle of an operation.\p"
+	.string "Why not go battle the gym in Barbarian\n"
+	.string "Village while you wait for us to finish.$"

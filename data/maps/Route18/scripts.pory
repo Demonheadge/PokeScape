@@ -68,6 +68,16 @@ script PENGUIN_EVENT_CANADA_GRRL //Canada Grrl
 }
 
 
+script BATTLE_PENGUIN_EVENT_CANADA_GRRL //Canada Grrl
+{
+    trainerbattle_single(TRAINER_ROUTE18_TRAINER_2, format("SPOTTED!"),format("Oh wait, you aren't a penguin."))
+    namebox ("Canada Grrl")
+    //msgbox(format("I heard there was a Penguin in this area but all I see are cats.\pHave you seen any?"))
+    msgbox(format("I heard there was a Penguin in this area.\pHave you spotted any?"))
+	hidenamebox
+    release
+	end
+}
 
 
 
@@ -167,15 +177,6 @@ script BATTLE_ROUTE18_TRAINER1 // AGILITY
 	end
 }
 
-script BATTLE_ROUTE18_TRAINER2 //Canada Grrl
-{
-    trainerbattle_single(TRAINER_ROUTE18_TRAINER_2, format("SPOTTED!"),format("Oh wait, you aren't a penguin."))
-    namebox ("Canada Grrl")
-    msgbox(format("I heard there was a Penguin in this area but all I see are cats.\pHave you seen any?"))
-	hidenamebox
-    release
-	end
-}
 
 script BATTLE_ROUTE18_TRAINER3 //BOT
 {

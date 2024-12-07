@@ -9,7 +9,7 @@ mapscripts BarbarianVillage_GymHall_MapScripts {
 
     MAP_SCRIPT_ON_TRANSITION 
     {
-        call(BarbarianVillage_GYM_RESTART)
+        //call(BarbarianVillage_GYM_RESTART)
         goto(BarbarianVillage_GYM_STATE)
     }
     
@@ -17,7 +17,7 @@ mapscripts BarbarianVillage_GymHall_MapScripts {
 
 script BarbarianVillage_GYM_RESTART 
 {
-    if (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE) == 2)
+    if (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE) == 5)
     {
         setvar(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE, 1)
     }
@@ -39,7 +39,8 @@ script BarbarianVillage_GYM_STATE{
                 removeobject(9)
                 setflag(FLAG_TEMP_1)
                 setflag(FLAG_TEMP_2)
-        case 1: 
+        case 1:
+        case 5: 
                 removeobject(OBJ_EVENT_ID_LITARA)
                 removeobject(OBJ_EVENT_ID_MITHRILMAN)
                 setflag(FLAG_TEMP_1)
@@ -73,6 +74,10 @@ script BarbarianVillage_GYM_STATE{
                 addobject(9)
                 setobjectxyperm(9, 1, 13)
                 setobjectmovementtype(9, MOVEMENT_TYPE_FACE_RIGHT)
+
+                addobject(13) //HANS
+                setobjectxyperm(13, 4, 14)
+                setobjectmovementtype(13, MOVEMENT_TYPE_FACE_UP)
                   
                 addobject(OBJ_EVENT_ID_ATLAS)
                 setobjectxyperm(OBJ_EVENT_ID_ATLAS, 2, 16)
@@ -85,6 +90,9 @@ script BarbarianVillage_GYM_STATE{
                 //setobjectxy(OBJ_EVENT_ID_MITHRILMAN, 1, 6)
                 //setobjectxyperm(OBJ_EVENT_ID_MITHRILMAN, 1, 6)
                 //setobjectmovementtype(OBJ_EVENT_ID_MITHRILMAN, MOVEMENT_TYPE_FACE_RIGHT)
+                removeobject(12)
+                removeobject(7)
+                setflag(FLAG_TEMP_3)
 
                 addobject(3)
                 setobjectxy(3, 2, 7)
@@ -126,6 +134,10 @@ script BarbarianVillage_GYM_STATE{
                 setobjectxyperm(8, 7, 8)
                 setobjectmovementtype(8, MOVEMENT_TYPE_FACE_UP)
 
+                addobject(13)
+                setobjectxy(13, 8, 8)
+                setobjectxyperm(13, 8, 8)
+                setobjectmovementtype(13, MOVEMENT_TYPE_FACE_UP)
 
                 applymovement(OBJ_EVENT_ID_GUNTHOR, MOVEMENT_FACE_UP)
                 applymovement(OBJ_EVENT_ID_LITARA, MOVEMENT_FACE_UP)
@@ -133,7 +145,7 @@ script BarbarianVillage_GYM_STATE{
                 applymovement(4, MOVEMENT_FACE_UP)
                 applymovement(5, MOVEMENT_FACE_LEFT)
                 applymovement(OBJ_EVENT_ID_ATLAS, MOVEMENT_FACE_LEFT)
-                applymovement(7, MOVEMENT_FACE_UP)
+                applymovement(13, MOVEMENT_FACE_UP) //hans
                 applymovement(8, MOVEMENT_FACE_UP)
                 applymovement(9, MOVEMENT_FACE_RIGHT)
                 applymovement(OBJ_EVENT_ID_MITHRILMAN, MOVEMENT_FACE_RIGHT)
@@ -174,6 +186,10 @@ script BarbarianVillage_GYM_STATE{
                 addobject(9)
                 setobjectxyperm(9, 1, 13)
                 setobjectmovementtype(9, MOVEMENT_TYPE_FACE_RIGHT)
+
+                //addobject(13) //HANS
+                //setobjectxyperm(13, 4, 14)
+                //setobjectmovementtype(13, MOVEMENT_TYPE_FACE_UP)
                   
                 addobject(OBJ_EVENT_ID_ATLAS)
                 setobjectxyperm(OBJ_EVENT_ID_ATLAS, 2, 16)
@@ -214,14 +230,24 @@ script NPC_BARBGYM_BARBARIAN_1
     lock
     faceplayer
     namebox("Haakon")
-    if (flag(FLAG_BADGE06_GET) == TRUE) {
+    
+
+    if (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE) == 5)
+    {
+        call(BarbarianVillage_GYM_RESTART)
+        msgbox(format("Ohoho, back for more?\pLet me introduce things again…"))
+    }
+
+
+    
+    if (flag(FLAG_BADGE04_GET) == TRUE) {
         msgbox(format("Your battle was impressive!\pYou are now a honorary Barbarian!\pYou should go see Litara about accessing our Stronghold."))
         hidenamebox
         closemessage
         release
         end
     }
-    
+
     msgbox(format("Welcome to the Gym of Barbarian Village! Otherwise known as Gunnarsgrunn.\pHere we do things differently compared to other gyms.\pYou must battle in three back to back to back battles without breaks before being able to challenge our Gym Leader, Gunthor.\pAre you ready to start your gym challenge?!"), MSGBOX_YESNO)
 			if (var(VAR_RESULT))
             { 
@@ -269,9 +295,8 @@ script NPC_BARBGYM_BARBARIAN_2
     msgbox(format("My brothers and sisters!\pToday we have a special show for you all!\pA challenger has decided to challenge us to an MvM Championship battle!"))
     hidenamebox
     closemessage
-    playse (SE_M_ENCORE2)
 
-    call (ContestHall_EventScript_VObjectAudienceLookAround)
+    call (BARBARIAN_GYM_AUDIENCE_CHEER)
     
     namebox("Haakon")
     msgbox(format("I won't keep you waiting any longer."))
@@ -282,9 +307,8 @@ script NPC_BARBGYM_BARBARIAN_2
     msgbox(format("In this corner we have the challenger known simply as {PLAYER}!"))
     hidenamebox
     closemessage
-    playse (SE_M_ENCORE2)
 
-    call (ContestHall_EventScript_VObjectAudienceLookAround)
+    call (BARBARIAN_GYM_AUDIENCE_CHEER)
     
     applymovement(OBJ_EVENT_ID_HAAKON, MOVEMENT_FACE_RIGHT)
     waitmovement(0)
@@ -293,9 +317,8 @@ script NPC_BARBGYM_BARBARIAN_2
     applymovement(OBJ_EVENT_ID_ATLAS, BARBARIAN_GYM_MOVEMENT_5)
     playse (SE_LEDGE)
     waitmovement(0)
-    playse (SE_M_ENCORE2)
     
-    call (ContestHall_EventScript_VObjectAudienceLookAround)
+    call (BARBARIAN_GYM_AUDIENCE_CHEER)
 
     applymovement(OBJ_EVENT_ID_HAAKON, MOVEMENT_FACE_DOWN)
     waitmovement(0)
@@ -311,14 +334,13 @@ script NPC_BARBGYM_BARBARIAN_2
     applymovement(OBJ_EVENT_ID_ATLAS, MOVEMENT_WALK_LEFT)
     applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_RIGHT)
     waitmovement(0)
-    trainerbattle_no_intro(TRAINER_BARBARIAN_GYM_TRAINER_1, msgbox(format("Well done but it is still too early to celebrate there still remains three more battles.")))
+    call(BARBARIAN_GYM_BATTLE_ATLAS)
     namebox("Haakon")
     msgbox(format("And the winner is…{PAUSE 15}…{PAUSE 15}{PLAYER}!"))
     hidenamebox
     closemessage
-    playse (SE_M_ENCORE2)
 
-    call (ContestHall_EventScript_VObjectAudienceLookAround)
+    call (BARBARIAN_GYM_AUDIENCE_CHEER)
 
     applymovement(OBJ_EVENT_ID_PLAYER, BARBARIAN_GYM_MOVEMENT_10)
     applymovement(OBJ_EVENT_ID_ATLAS, BARBARIAN_GYM_MOVEMENT_8)
@@ -339,14 +361,13 @@ script NPC_BARBGYM_BARBARIAN_2
     applymovement(OBJ_EVENT_ID_LITARA, MOVEMENT_WALK_LEFT)
     applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_RIGHT)
     waitmovement(0)
-    trainerbattle_no_intro(TRAINER_BARBARIAN_GYM_TRAINER_2, msgbox(format("If you win this I may allow you access to our stronghold.")))
+    call(BARBARIAN_GYM_BATTLE_LITARA)
     namebox("Haakon")
     msgbox(format("And the winner is…{PAUSE 15}…{PAUSE 15}{PLAYER}!\pWow they are on fire!"))
     closemessage
     hidenamebox
-    playse (SE_M_ENCORE2)
 
-    call (ContestHall_EventScript_VObjectAudienceLookAround)
+    call (BARBARIAN_GYM_AUDIENCE_CHEER)
 
     applymovement(OBJ_EVENT_ID_PLAYER, BARBARIAN_GYM_MOVEMENT_10)
     applymovement(OBJ_EVENT_ID_LITARA, BARBARIAN_GYM_MOVEMENT_11)
@@ -357,17 +378,15 @@ script NPC_BARBGYM_BARBARIAN_2
     msgbox(format("The time has come for the third and final battle before facing our Chieftain.\pYour challenger is no other than…{PAUSE 15}…{PAUSE 15} ME!"))
     hidenamebox
     closemessage
-    playse (SE_M_ENCORE2)
 
-    call (ContestHall_EventScript_VObjectAudienceLookAround)
+    call (BARBARIAN_GYM_AUDIENCE_CHEER)
 
     namebox("Haakon")
     msgbox(format("Thats right my brother and sisters it is none other than me Haakon!"))
     hidenamebox
     closemessage
-    playse (SE_M_ENCORE2)
 
-    call (ContestHall_EventScript_VObjectAudienceLookAround)
+    call (BARBARIAN_GYM_AUDIENCE_CHEER)
 
     msgbox(format("HAAKON!{PAUSE 15} HAAKON!{PAUSE 15} HAAKON!"))
     delay(15)
@@ -383,14 +402,13 @@ script NPC_BARBGYM_BARBARIAN_2
     msgbox(format("YARRRRRGGGHHHH!"))
     hidenamebox
     closemessage
-    trainerbattle_no_intro(TRAINER_BARBARIAN_GYM_TRAINER_3, msgbox(format("ARRGHH-HAHAHA!")))
+    call(BARBARIAN_GYM_BATTLE_HAAKON)
     namebox("Haakon")
     msgbox(format("And the winner is…{PAUSE 15}…{PAUSE 15}{PLAYER}!"))
     hidenamebox
     closemessage
-    playse (SE_M_ENCORE2)
 
-    call (ContestHall_EventScript_VObjectAudienceLookAround)
+    call (BARBARIAN_GYM_AUDIENCE_CHEER)
 
     applymovement(OBJ_EVENT_ID_HAAKON, MOVEMENT_FACE_DOWN)
     waitmovement(0)
@@ -398,9 +416,8 @@ script NPC_BARBGYM_BARBARIAN_2
     msgbox(format("They have done it my brother and sisters!\pThey have bested all of us.\pAll that remains between them and their Gym Badge is the one and only one of the strongest in all of the MvM Championships!\pGive it up for our Chieftain… {PAUSE 15}GUNTHOR!!!"))
     hidenamebox
     closemessage
-    playse (SE_M_ENCORE2)
 
-    call (ContestHall_EventScript_VObjectAudienceLookAround)
+    call (BARBARIAN_GYM_AUDIENCE_CHEER)
 
     applymovement(OBJ_EVENT_ID_HAAKON, BARBARIAN_GYM_MOVEMENT_6)
     applymovement(OBJ_EVENT_ID_GUNTHOR, BARBARIAN_GYM_MOVEMENT_12)
@@ -412,14 +429,13 @@ script NPC_BARBGYM_BARBARIAN_2
     msgbox(format("Lets not waste any more time chit chatting I am itching for this fight!"))
     closemessage
     hidenamebox
-    call(GYM_BATTLE_GUNTHOR)
+    call(BARBARIAN_GYM_BATTLE_GUNTHOR)
     namebox("Haakon")
     msgbox(format("My brothers and sisters…{PAUSE 15} I cannot believe it!\pThe winner is…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}{PLAYER}!!!!!!!!"))
     hidenamebox
     //EVERYONE CHEERS WOOOOyigdighaiushg
-    playse (SE_M_ENCORE2)
 
-    call (ContestHall_EventScript_VObjectAudienceLookAround)
+    call (BARBARIAN_GYM_AUDIENCE_CHEER)
 
     special(RemoveCameraObject)             
     special(SpawnCameraObject)
@@ -599,6 +615,14 @@ movement BARBARIAN_GYM_MOVEMENT_13{
 	step_end
 }
 
+movement BARBARIAN_GYM_MOVEMENT_CAMERA_RESET{
+    walk_faster_up * 2
+    walk_faster_left * 1
+    walk_faster_left * 1
+    walk_faster_down * 4
+	step_end
+}
+
 
 
 
@@ -699,3 +723,182 @@ script BARBARIAN_GYM_NPC_ATLAS{
     end
 }
 
+
+
+script BARBARIAN_GYM_AUDIENCE_CHEER {
+    playse (SE_M_ENCORE2)
+    applymovement (8, MOVEMENT_BARBARIAN_GYM_AUDIENCE_RIGHT_UP)
+    applymovement (5, MOVEMENT_BARBARIAN_GYM_AUDIENCE_UP_LEFT)
+    waitmovement (0)
+    applymovement (13, MOVEMENT_BARBARIAN_GYM_AUDIENCE_LEFT_UP)
+    delay(10)
+	applymovement (9, MOVEMENT_BARBARIAN_GYM_AUDIENCE_DOWN_RIGHT)
+    delay(10)
+	applymovement (3, MOVEMENT_BARBARIAN_GYM_AUDIENCE_UP_RIGHT)
+    delay(10)
+	applymovement (4, MOVEMENT_BARBARIAN_GYM_AUDIENCE_LEFT_UP)
+    delay(10)
+    applymovement (13, MOVEMENT_BARBARIAN_GYM_AUDIENCE_LEFT_UP)
+    applymovement (8, MOVEMENT_BARBARIAN_GYM_AUDIENCE_RIGHT_UP)
+	waitmovement (0)
+    waitse
+    return
+}
+
+movement MOVEMENT_BARBARIAN_GYM_AUDIENCE_RIGHT_UP {
+    face_right
+	delay_16
+    face_up
+    delay_16
+    face_right
+	delay_16
+	face_up
+	step_end
+}
+movement MOVEMENT_BARBARIAN_GYM_AUDIENCE_LEFT_UP {
+    face_left
+	delay_16
+    face_up
+    delay_16
+    face_left
+	delay_16
+	face_up
+	step_end
+}
+
+movement MOVEMENT_BARBARIAN_GYM_AUDIENCE_DOWN_LEFT {
+    face_down
+	delay_16
+    face_left
+    delay_16
+    face_down
+	delay_16
+	face_left
+	step_end
+}
+movement MOVEMENT_BARBARIAN_GYM_AUDIENCE_DOWN_RIGHT {
+    face_down
+	delay_16
+    face_right
+    delay_16
+    face_down
+	delay_16
+	face_right
+	step_end
+}
+movement MOVEMENT_BARBARIAN_GYM_AUDIENCE_UP_RIGHT {
+    face_up
+	delay_16
+    face_right
+    delay_16
+    face_up
+	delay_16
+	face_right
+	step_end
+}
+movement MOVEMENT_BARBARIAN_GYM_AUDIENCE_UP_LEFT {
+    face_up
+	delay_16
+    face_left
+    delay_16
+    face_up
+	delay_16
+	face_left
+	step_end
+}
+
+
+
+
+
+script BARBARIAN_GYM_BATTLE_ATLAS {
+    trainerbattle_no_intro_no_whiteout(TRAINER_BARBARIAN_GYM_TRAINER_1, msgbox(format("Well done but it is still too early to celebrate there still remains three more battles.")))
+    specialvar (VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_LOST) {
+        special (HealPlayerParty)
+        namebox("Haakon")
+        msgbox(format("And the winner is…{PAUSE 15}…{PAUSE 15}ATLAS!"))
+        closemessage
+        hidenamebox
+        call (BARBARIAN_GYM_AUDIENCE_CHEER)
+        call(BARBARIAN_GYM_LOST_GYM_CHALLENGE)
+        release
+        end
+    }
+    return
+}
+script BARBARIAN_GYM_BATTLE_LITARA {
+    trainerbattle_no_intro_no_whiteout(TRAINER_BARBARIAN_GYM_TRAINER_2, msgbox(format("If you win this I may allow you access to our stronghold."))) //Litara
+    specialvar (VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_LOST) {
+        special (HealPlayerParty)
+        namebox("Haakon")
+        msgbox(format("And the winner is…{PAUSE 15}…{PAUSE 15}LITARA!"))
+        closemessage
+        hidenamebox
+        call (BARBARIAN_GYM_AUDIENCE_CHEER)
+        call(BARBARIAN_GYM_LOST_GYM_CHALLENGE)
+        release
+        end
+    }
+    return
+}
+script BARBARIAN_GYM_BATTLE_HAAKON {
+    trainerbattle_no_intro_no_whiteout(TRAINER_BARBARIAN_GYM_TRAINER_3, msgbox(format("ARRGHH-HAHAHA!"))) //haakon
+    specialvar (VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_LOST) {
+        special (HealPlayerParty)
+        namebox("Haakon")
+        msgbox(format("And the winner is…{PAUSE 15}…{PAUSE 15}LITARA!"))
+        closemessage
+        hidenamebox
+        call (BARBARIAN_GYM_AUDIENCE_CHEER)
+        call(BARBARIAN_GYM_LOST_GYM_CHALLENGE)
+        release
+        end
+    }
+    return
+}
+
+script BARBARIAN_GYM_BATTLE_GUNTHOR {
+    trainerbattle_no_intro_no_whiteout(TRAINER_BARBARIAN_GYM_GUNTHOR, msgbox(format("ARAGGHHHARH!\pBattles like this is what I live for and why I decided to become a Gym Leader!")))
+    specialvar (VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_LOST) {
+        special (HealPlayerParty)
+        namebox("Haakon")
+        msgbox(format("And the winner is…{PAUSE 15}…{PAUSE 15}OUR CHAMPION GUNTHOR!!!"))
+        closemessage
+        hidenamebox
+        call (BARBARIAN_GYM_AUDIENCE_CHEER)
+        call(BARBARIAN_GYM_LOST_GYM_CHALLENGE)
+        release
+        end
+    }
+    return
+}
+
+
+script BARBARIAN_GYM_LOST_GYM_CHALLENGE {           
+    namebox("Haakon")
+    msgbox(format("Which means {PLAYER} is defeated and gym challenge is over!\pThank you for watching my brothers and sisters!\pMay we continue to stand victorious!"))
+    closemessage
+    hidenamebox
+    call (BARBARIAN_GYM_AUDIENCE_CHEER)
+    
+    //fadescreenswapbuffers(FADE_TO_BLACK)
+    //special(RemoveCameraObject)
+    //special(SpawnCameraObject)
+    //applymovement(OBJ_EVENT_ID_CAMERA, BARBARIAN_GYM_MOVEMENT_CAMERA_RESET)
+    //waitmovement(OBJ_EVENT_ID_CAMERA)
+    //setflag(FLAG_TEMP_1) //hides mithrilman
+    setvar(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE, 5) //lost the gym challenge.
+    //call(BarbarianVillage_GYM_STATE)
+    
+    //setobjectxy(OBJ_EVENT_ID_PLAYER, 4, 8)
+    warp(MAP_BARBARIAN_VILLAGE_GYM_HALL, 4, 8)
+    //applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+    //waitmovement(0)
+    //special(RemoveCameraObject)
+    //fadescreenswapbuffers(FADE_FROM_BLACK)
+    return
+}

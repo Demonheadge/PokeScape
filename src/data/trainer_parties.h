@@ -3038,17 +3038,14 @@ static const struct TrainerMon sParty_ROUTE19_TRAINER_1[] = {
 
 static const struct TrainerMon sParty_BARBARIAN_GYM_TRAINER_1[] = {
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 45,
     .species = SPECIES_BEAR_NORMAL_FORM,
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 46,
     .species = SPECIES_OOMLIE,
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 50,
     .species = SPECIES_FERRET,
     }
@@ -3056,17 +3053,14 @@ static const struct TrainerMon sParty_BARBARIAN_GYM_TRAINER_1[] = {
 
 static const struct TrainerMon sParty_BARBARIAN_GYM_TRAINER_2[] = {
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 46,
     .species = SPECIES_WOLF_FENRIS_FORM,
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 50,
     .species = SPECIES_CAVE_BUG,
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 46,
     .species = SPECIES_CATABLEPON,
     }
@@ -3074,22 +3068,18 @@ static const struct TrainerMon sParty_BARBARIAN_GYM_TRAINER_2[] = {
 
 static const struct TrainerMon sParty_BARBARIAN_GYM_TRAINER_3[] = {
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 46,
     .species = SPECIES_MINOTAUR_NORMAL_FORM,
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 45,
     .species = SPECIES_WOLF_NORMAL_FORM,
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 50,
     .species = SPECIES_KURASK,
     },
     {
-    //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .lvl = 47,
     .species = SPECIES_BULL,
     }

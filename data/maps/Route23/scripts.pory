@@ -59,17 +59,12 @@ script ROUTE23_METATILES {
 
 
 script ROUTE23_STATE {
-	
 	//REMOVE DRAWVES CLEARING THE ROCKSLIDE.
-	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 200) { //If progressed far enough in story mode. *change 200 to correct progress.
+	//If EQUAL or MORE than 'x' then remove the objects.
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 200) { // if EQUAL or MORE THAN 200 //If progressed far enough in story mode. *change 200 to correct progress.
 		removeobject(11)
 		removeobject(10)
-		setflag(FLAG_TEMP_1F)
-	}
-	else {
-		addobject(11)
-		addobject(10)
-		clearflag(FLAG_TEMP_1F)
+		setflag(FLAG_TEMP_1E)
 	}
 	if (flag(FLAG_ROCKS_ROUTE23) == TRUE) {
 		setflag(FLAG_TEMP_1)
@@ -113,8 +108,11 @@ script NPC_ROUTE23_BLOCKADE_DWARVES
 	faceplayer
     namebox ("Dwarf")
 	msgbox(format("There has been a landslide on Ice Mountain, we are currently cleaning up.\pCome back later."))
-    waitmessage
+    closemessage
     hidenamebox
+	applymovement(11, Movement_InteractFACEUP)
+	applymovement(10, Movement_InteractFACEUP)
+	waitmovement(0)
 	release
 	end
 }
@@ -301,8 +299,41 @@ script ROUTE23_RockSmash
 	waitmovement (0)
 	msgbox(format("Hey you cleared the rockslide!\pNow travellers can get through.\pThank you for that!"))
 	closemessage
+	applymovement(5, Movement_InteractFACERIGHT)
 	setobjectmovementtype(5, MOVEMENT_TYPE_FACE_RIGHT)
+	waitmovement(0)
 	setflag(FLAG_ROCKS_ROUTE23)
 	releaseall
+	end
+}
+
+
+
+
+
+
+//ROUTE 20
+//STORY EVENT
+script NPC_ROUTE20_SIR_TIFFY
+{
+	lock
+	applymovement(10, MOVEMENT_INTERACT_RIGHT)
+    namebox ("Tiffy Cashin")
+    msgbox(format("Be on the look out for the H.A.M and the Black Knights.\pThere have been reports that they have been spotted in this area."))
+	waitmovement(0)
+    closemessage
+    hidenamebox
+	release
+	end
+}
+script NPC_ROUTE20_TEMPLE_KNIGHT
+{
+	lock
+	faceplayer
+    namebox ("Temple Knight")
+    msgbox(format("Sorry adventurer, but you'll have to turn around and go back.\pWe Temple Knights are currently in the middle of an operation.\pWhy not go battle the gym in Barbarian Village while you wait for us to finish."))
+    closemessage
+    hidenamebox
+	release
 	end
 }

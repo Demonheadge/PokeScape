@@ -1005,6 +1005,10 @@ static void PokeScape_Reset_HiddenGrottos(void)
     FlagClear(FLAG_HIDDEN_GROTTO_6);
     FlagClear(FLAG_HIDDEN_GROTTO_7);
     FlagClear(FLAG_HIDDEN_GROTTO_8);
+    FlagClear(FLAG_HIDDEN_GROTTO_9);
+    FlagClear(FLAG_HIDDEN_GROTTO_10);
+    FlagClear(FLAG_HIDDEN_GROTTO_11);
+    FlagClear(FLAG_HIDDEN_GROTTO_12);
     FlagClear(FLAG_GOODIE_BAG);
 }
 

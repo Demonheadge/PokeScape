@@ -792,29 +792,87 @@ script HAM_EVENT_Ariane1
 
 
 script STORYMODE_VAR_CHECK {
-	
-	//setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 105)
-	buffernumberstring(0, VAR_POKESCAPE_STORYMODE_PROGRESS)
-    msgbox(format("Storymode Var is: {STR_VAR_1}."))
+	buffernumberstring(STR_VAR_1, VAR_POKESCAPE_STORYMODE_PROGRESS)
+	buffernumberstring(STR_VAR_2, VAR_WISE_OLD_MAN_RIVAL)
+    msgbox(format("STORYMODE_PROGRESS: {STR_VAR_1}.\nVAR_WISE_OLD_MAN_RIVAL: {STR_VAR_2}."))
 	closemessage
-
-
-	//setvar(VAR_WISE_OLD_MAN_RIVAL, 5)
-	buffernumberstring(0, VAR_WISE_OLD_MAN_RIVAL)
-    msgbox(format("VAR_WISE_OLD_MAN_RIVAL is: {STR_VAR_1}."))
+	msgbox(format("Would you like to edit these?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        goto(STORYMODE_VAR_EDIT)
+    }
 	closemessage
-
-	
-	
-	//setvar(VAR_WISE_OLD_MAN_RIVAL, 5)
-	//setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 105)
-
-
-	//setvar(VAR_GAMEMODE_LEVEL_CAP, 31)
-	//addvar(VAR_GAMEMODE_LEVEL_CAP, 10)
-	buffernumberstring(0, VAR_GAMEMODE_LEVEL_CAP)
-    msgbox(format("VAR_GAMEMODE_LEVEL_CAP is: {STR_VAR_1}."))
-	closemessage
+    end
+}
+script STORYMODE_VAR_EDIT {
+	//STORYMODE
+    buffernumberstring(STR_VAR_1, VAR_POKESCAPE_STORYMODE_PROGRESS)
+    msgbox(format("VAR_POKESCAPE_STORYMODE_PROGRESS: {STR_VAR_1}."))
+    msgbox(format("Increase STORYMODE_PROGRESS by 1?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        addvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 5)
+        buffernumberstring(0, VAR_POKESCAPE_STORYMODE_PROGRESS)
+        msgbox(format("VAR_POKESCAPE_STORYMODE_PROGRESS: {STR_VAR_1}."))
+		closemessage
+		release
+		end
+    }
+    msgbox(format("Increase STORYMODE_PROGRESS by 10?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        addvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 10)
+        buffernumberstring(0, VAR_POKESCAPE_STORYMODE_PROGRESS)
+        msgbox(format("VAR_POKESCAPE_STORYMODE_PROGRESS: {STR_VAR_1}."))
+		closemessage
+		release
+		end
+    }
+    msgbox(format("Reset STORYMODE_PROGRESS to 0?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 0)
+        buffernumberstring(0, VAR_POKESCAPE_STORYMODE_PROGRESS)
+        msgbox(format("VAR_POKESCAPE_STORYMODE_PROGRESS: {STR_VAR_1}."))
+		closemessage
+		release
+		end
+    }
+	//WOM
+	buffernumberstring(STR_VAR_2, VAR_WISE_OLD_MAN_RIVAL)
+    msgbox(format("VAR_WISE_OLD_MAN_RIVAL: {STR_VAR_2}."))
+    msgbox(format("Increase VAR_WISE_OLD_MAN_RIVAL by 1?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        addvar(VAR_WISE_OLD_MAN_RIVAL, 5)
+        buffernumberstring(0, VAR_WISE_OLD_MAN_RIVAL)
+        msgbox(format("VAR_WISE_OLD_MAN_RIVAL: {STR_VAR_2}."))
+		closemessage
+		release
+		end
+    }
+    msgbox(format("Increase VAR_WISE_OLD_MAN_RIVAL by 10?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        addvar(VAR_WISE_OLD_MAN_RIVAL, 10)
+        buffernumberstring(0, VAR_WISE_OLD_MAN_RIVAL)
+        msgbox(format("VAR_WISE_OLD_MAN_RIVAL: {STR_VAR_2}."))
+		closemessage
+		release
+		end
+    }
+    msgbox(format("Reset VAR_WISE_OLD_MAN_RIVAL to 0?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        setvar(VAR_WISE_OLD_MAN_RIVAL, 0)
+        buffernumberstring(0, VAR_WISE_OLD_MAN_RIVAL)
+        msgbox(format("VAR_WISE_OLD_MAN_RIVAL: {STR_VAR_2}."))
+		closemessage
+		release
+		end
+    }
+    closemessage
+    release
     end
 }
 

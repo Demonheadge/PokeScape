@@ -88,7 +88,7 @@ script NPC_MUSAPOINT_SAILOR
 {
 	lock
     namebox ("Officer")
-	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 155) { //Post Karamaja Gym,  //FLIP >
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 155) { //Post Karamaja Gym,  
 		msgbox(format("I've confiscated your Karamja Rum.\pYou're in for da cage now."))
 	}
 	else {
@@ -237,7 +237,7 @@ script NPC_MUSA_POINT_8
 	lock
 	faceplayer
     namebox ("Officer")
-	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 155) { //Post Karamaja Gym, //FLIP >
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 155) { //Post Karamaja Gym, 
 		msgbox(format("Sorry we've had an incident of someone trying to smuggle some Rum to the mainland.\pOur ships won't be sailing for some time while we check the cargo."))
 	}
 	else {

@@ -22,6 +22,22 @@ mapscripts BarbarianVillage_MapScripts {
 
 
 script STORYMODE_STATE_BARBARIAN_VILLAGE {
+
+    if ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 160) && (flag(FLAG_BADGE04_GET))) {  
+        addobject(16)
+        setobjectxyperm(16, 12, 29)
+        setobjectxy(16, 12, 29)
+        
+        //check which door
+        setobjectxyperm(2, 12, 17) //litara
+        setobjectxy(2, 12, 17)
+        //leave door with player, walk downwards to show stronghold.
+        //Wait player, before you leave let me show you to our stronghold.
+        //black knight runs out, 
+        //liktara, who was that they werent allowed in there!
+	}
+
+
 	switch (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE)){ 
 		case 0: 
             //Block the Gym entry until the gym is explained to the player.
@@ -30,6 +46,7 @@ script STORYMODE_STATE_BARBARIAN_VILLAGE {
             setobjectxyperm(OBJ_EVENT_ID_BARBARIAN_BLOCK_2,12,19)
 			setobjectmovementtype(OBJ_EVENT_ID_BARBARIAN_BLOCK_2,MOVEMENT_TYPE_FACE_DOWN)
             return
+        case 5:
         case 1:
         case 2:
             return
@@ -39,6 +56,8 @@ script STORYMODE_STATE_BARBARIAN_VILLAGE {
 			setobjectmovementtype(2,MOVEMENT_TYPE_FACE_UP)
             return
     }
+
+
 }
 script OPENWORLDMODE_STATE_BARBARIAN_VILLAGE {
     if (flag(FLAG_BADGE06_GET) == TRUE) {
@@ -112,7 +131,7 @@ script NPC_BARB_BLOCKADE_1
     {
         msgbox(format("Good luck on your gym challenge."))
     }
-    if (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE) == 2)
+    if ((var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE) == 2) || (var(VAR_POKESCAPE_BARBARIAN_VILLAGE_STATE) == 5))
     {
         msgbox(format("We knew you would be struggling but good luck on your gym challenge."))
     }
@@ -230,7 +249,7 @@ script NPC_BARBARIANVILLAGE_NPC3
     lock
     faceplayer
     namebox("Barbarian")
-    msgbox(format("We don't need no Banks to heal our Monsters in our Village.\pThat is the path of a weakling."))
+    msgbox(format("We don't need no Banks to heal our Monsters in our Village.\pThat is the path of a weakling!\pAlthough if you are tired I suppose you could rest in our visitors hall."))
     hidenamebox
     release
     end
@@ -364,16 +383,7 @@ script SHOP_HELMET_BARBARIANVILLAGE
 	end
 }
 
-script NPC_BARBARIANVILLAGE_NPC7
-{
-    lock
-    faceplayer
-    namebox("Barbarian")
-    msgbox(format("You look tired, feel free to take a rest here."))
-    hidenamebox
-    release
-    end
-}
+
 script NPC_BARBARIANVILLAGE_NPC8
 {
     lock

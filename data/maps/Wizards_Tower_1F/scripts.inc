@@ -741,15 +741,95 @@ VAR_CHECKER_11:
 
 
 STORYMODE_VAR_CHECK::
-	buffernumberstring 0, VAR_POKESCAPE_STORYMODE_PROGRESS
+	buffernumberstring STR_VAR_1, VAR_POKESCAPE_STORYMODE_PROGRESS
+	buffernumberstring STR_VAR_2, VAR_WISE_OLD_MAN_RIVAL
 	msgbox STORYMODE_VAR_CHECK_Text_0
 	closemessage
+	msgbox STORYMODE_VAR_CHECK_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne STORYMODE_VAR_CHECK_2
+STORYMODE_VAR_CHECK_1:
+	closemessage
+	end
+
+STORYMODE_VAR_CHECK_2:
+	goto STORYMODE_VAR_EDIT
+	goto STORYMODE_VAR_CHECK_1
+
+
+STORYMODE_VAR_EDIT::
+	buffernumberstring STR_VAR_1, VAR_POKESCAPE_STORYMODE_PROGRESS
+	msgbox STORYMODE_VAR_EDIT_Text_0
+	msgbox STORYMODE_VAR_EDIT_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne STORYMODE_VAR_EDIT_2
+	msgbox STORYMODE_VAR_EDIT_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne STORYMODE_VAR_EDIT_5
+	msgbox STORYMODE_VAR_EDIT_Text_3, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne STORYMODE_VAR_EDIT_8
+	buffernumberstring STR_VAR_2, VAR_WISE_OLD_MAN_RIVAL
+	msgbox STORYMODE_VAR_EDIT_Text_4
+	msgbox STORYMODE_VAR_EDIT_Text_5, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne STORYMODE_VAR_EDIT_11
+	msgbox STORYMODE_VAR_EDIT_Text_6, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne STORYMODE_VAR_EDIT_14
+	msgbox STORYMODE_VAR_EDIT_Text_7, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne STORYMODE_VAR_EDIT_17
+	closemessage
+	release
+	end
+
+STORYMODE_VAR_EDIT_2:
+	addvar VAR_POKESCAPE_STORYMODE_PROGRESS, 5
+	buffernumberstring 0, VAR_POKESCAPE_STORYMODE_PROGRESS
+	msgbox STORYMODE_VAR_EDIT_Text_0
+	closemessage
+	release
+	end
+
+STORYMODE_VAR_EDIT_5:
+	addvar VAR_POKESCAPE_STORYMODE_PROGRESS, 10
+	buffernumberstring 0, VAR_POKESCAPE_STORYMODE_PROGRESS
+	msgbox STORYMODE_VAR_EDIT_Text_0
+	closemessage
+	release
+	end
+
+STORYMODE_VAR_EDIT_8:
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 0
+	buffernumberstring 0, VAR_POKESCAPE_STORYMODE_PROGRESS
+	msgbox STORYMODE_VAR_EDIT_Text_0
+	closemessage
+	release
+	end
+
+STORYMODE_VAR_EDIT_11:
+	addvar VAR_WISE_OLD_MAN_RIVAL, 5
 	buffernumberstring 0, VAR_WISE_OLD_MAN_RIVAL
-	msgbox STORYMODE_VAR_CHECK_Text_1
+	msgbox STORYMODE_VAR_EDIT_Text_4
 	closemessage
-	buffernumberstring 0, VAR_GAMEMODE_LEVEL_CAP
-	msgbox STORYMODE_VAR_CHECK_Text_2
+	release
+	end
+
+STORYMODE_VAR_EDIT_14:
+	addvar VAR_WISE_OLD_MAN_RIVAL, 10
+	buffernumberstring 0, VAR_WISE_OLD_MAN_RIVAL
+	msgbox STORYMODE_VAR_EDIT_Text_4
 	closemessage
+	release
+	end
+
+STORYMODE_VAR_EDIT_17:
+	setvar VAR_WISE_OLD_MAN_RIVAL, 0
+	buffernumberstring 0, VAR_WISE_OLD_MAN_RIVAL
+	msgbox STORYMODE_VAR_EDIT_Text_4
+	closemessage
+	release
 	end
 
 
@@ -1082,15 +1162,36 @@ VAR_CHECKER_Text_8:
 	.string "8$"
 
 STORYMODE_VAR_CHECK_Text_0:
-	.string "Storymode Var is: {STR_VAR_1}.$"
+	.string "STORYMODE_PROGRESS: {STR_VAR_1}.\n"
+	.string "VAR_WISE_OLD_MAN_RIVAL: {STR_VAR_2}.$"
 
 STORYMODE_VAR_CHECK_Text_1:
-	.string "VAR_WISE_OLD_MAN_RIVAL is:\n"
+	.string "Would you like to edit these?$"
+
+STORYMODE_VAR_EDIT_Text_0:
+	.string "VAR_POKESCAPE_STORYMODE_PROGRESS:\n"
 	.string "{STR_VAR_1}.$"
 
-STORYMODE_VAR_CHECK_Text_2:
-	.string "VAR_GAMEMODE_LEVEL_CAP is:\n"
-	.string "{STR_VAR_1}.$"
+STORYMODE_VAR_EDIT_Text_1:
+	.string "Increase STORYMODE_PROGRESS by 1?$"
+
+STORYMODE_VAR_EDIT_Text_2:
+	.string "Increase STORYMODE_PROGRESS by 10?$"
+
+STORYMODE_VAR_EDIT_Text_3:
+	.string "Reset STORYMODE_PROGRESS to 0?$"
+
+STORYMODE_VAR_EDIT_Text_4:
+	.string "VAR_WISE_OLD_MAN_RIVAL: {STR_VAR_2}.$"
+
+STORYMODE_VAR_EDIT_Text_5:
+	.string "Increase VAR_WISE_OLD_MAN_RIVAL by 1?$"
+
+STORYMODE_VAR_EDIT_Text_6:
+	.string "Increase VAR_WISE_OLD_MAN_RIVAL by 10?$"
+
+STORYMODE_VAR_EDIT_Text_7:
+	.string "Reset VAR_WISE_OLD_MAN_RIVAL to 0?$"
 
 RUNE_EVOLUTIONS_NOTES_Text_0:
 	.string "The bookcase contains various\n"

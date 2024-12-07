@@ -1,1 +1,31 @@
-mapscripts BarbarianVillage_House_3_MapScripts {}
+mapscripts BarbarianVillage_House_3_MapScripts {
+    MAP_SCRIPT_ON_LOAD { //ON LOAD FOR MAP TILES
+        call(Barbarian_Village_VistorHall_OnTransition)
+    }
+}
+
+script Barbarian_Village_VistorHall_OnTransition {
+    setrespawn(HEAL_LOCATION_BARBARIAN_VILLAGE)
+    return
+}
+
+
+
+
+script NPC_BARBARIANVILLAGE_NPC7
+{
+    lock
+    faceplayer
+    namebox("Barbarian")
+    msgbox(format("You look tired, you should take a rest."))
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    playfanfare (MUS_HEAL)
+	waitfanfare
+	special (HealPlayerParty)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    msgbox(format("That's better, you and your MONSTERS are looking much more refreshed!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
