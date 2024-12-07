@@ -6974,7 +6974,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Prof_Normal_Tree =
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Straven = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_STRAVEN,
+    .paletteTag = OBJ_EVENT_PAL_GREYPAL,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -10241,7 +10241,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_eddimu = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_dungeoneer_1 = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_RAC_PALETTE_3,
+    .paletteTag = OBJ_EVENT_PAL_DUNGEONEERING_2,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -10295,7 +10295,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_gorajo_2 = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_forgotten_mage = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_RAC_PALETTE_3,
+    .paletteTag = OBJ_EVENT_PAL_DUNGEONEERING_2,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -10313,7 +10313,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_forgotten_mage = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_forgotten_ranger = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_RAC_PALETTE_3,
+    .paletteTag = OBJ_EVENT_PAL_DUNGEONEERING_2,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -10367,7 +10367,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_knight_ardy = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_romeo = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_RAC_PALETTE_3,
+    .paletteTag = OBJ_EVENT_PAL_HAIRDRESSER,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -10385,7 +10385,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_romeo = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_swampletics = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_RAC_PALETTE_3,
+    .paletteTag = OBJ_EVENT_PAL_GREYPAL,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
