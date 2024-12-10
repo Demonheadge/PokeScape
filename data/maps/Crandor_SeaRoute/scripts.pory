@@ -60,7 +60,7 @@ script CRANDOR_SHIP_SCENE
     //special(TeleportCamera)
     
     //playbgm(MUS_PS_SURFING, 0)
-    applymovement(OBJ_EVENT_ID_PLAYER, movement_setinvisible)
+    applymovement(OBJ_EVENT_ID_PLAYER, movement_walk_slow_left10)
     applymovement(OBJ_EVENT_ID_SHIP, movement_crandor_ship)
     waitmovement(0)
     
@@ -250,10 +250,11 @@ script CRANDOR_SHIP_SCENE
 }
 
 movement movement_setinvisible {
-    //set_invisible
+    set_invisible
+}
+movement movement_walk_slow_left10 {
     walk_slow_left * 10
 }
-
 movement movement_crandor_ship {
     levitate
     walk_slow_left * 10

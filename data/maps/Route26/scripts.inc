@@ -30,8 +30,7 @@ ENCOUNTER_PENGUIN_BOX_ROUTE26_1:
 
 ENCOUNTER_PENGUIN_BOX_ROUTE26_2:
 	fadescreenswapbuffers FADE_TO_BLACK
-	setflag FLAG_TEMP_8
-	setflag FLAG_TEMP_9
+	setflag FLAG_PENGUIN_HUNT_ON_ROUTE
 	removeobject 11
 	removeobject 12
 	savebgm MUS_DUMMY

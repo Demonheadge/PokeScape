@@ -51,7 +51,7 @@ CRANDOR_SHIP_SCENE::
 	removeobject 2
 	setobjectxyperm 1, 34, 14
 	setobjectxyperm 2, 26, 8
-	applymovement OBJ_EVENT_ID_PLAYER, movement_setinvisible
+	applymovement OBJ_EVENT_ID_PLAYER, movement_walk_slow_left10
 	applymovement 3, movement_crandor_ship
 	waitmovement 0
 	namebox CRANDOR_SHIP_SCENE_Text_0
@@ -220,6 +220,10 @@ CRANDOR_SHIP_SCENE::
 
 
 movement_setinvisible:
+	set_invisible
+	step_end
+
+movement_walk_slow_left10:
 	walk_slow_left
 	walk_slow_left
 	walk_slow_left

@@ -1,5 +1,7 @@
 const OBJ_EVENT_ID_BARBARIAN_BLOCK_1 = 6
 const OBJ_EVENT_ID_BARBARIAN_BLOCK_2 = 7
+const OBJ_EVENT_ID_BLACK_KNIGHT = 16
+const OBJ_EVENT_ID_LITARA = 2
 
 mapscripts BarbarianVillage_MapScripts {
     MAP_SCRIPT_ON_TRANSITION { 
@@ -15,8 +17,125 @@ mapscripts BarbarianVillage_MapScripts {
             call(OPENWORLDMODE_STATE_BARBARIAN_VILLAGE)
     	}
     }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_TEMP_B, 1: BARBARIANVILLAGE_STORYMODE_EVENT
+    ]
 }
 
+
+
+
+script BARBARIANVILLAGE_STORYMODE_EVENT
+{
+    lock
+    removeobject(OBJ_EVENT_ID_LITARA)
+    removeobject(OBJ_EVENT_ID_BLACK_KNIGHT)
+    delay(30)
+    playse(SE_DOOR)
+    getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+    if (var(VAR_TEMP_1) == 12) {
+        opendoor(11, 17)
+        delay(20)
+        setobjectxyperm(OBJ_EVENT_ID_LITARA, 11, 17) //litara
+        setobjectxy(OBJ_EVENT_ID_LITARA, 11, 17)
+        addobject(OBJ_EVENT_ID_LITARA)
+        showobjectat (OBJ_EVENT_ID_LITARA, MAP_BARBARIAN_VILLAGE)
+        applymovement(OBJ_EVENT_ID_LITARA, MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_1)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT)
+        waitmovement(0)
+        closedoor(11 , 17)
+    }
+    elif (var(VAR_TEMP_1) == 11) {
+        opendoor(12, 17)
+        delay(20)
+        setobjectxyperm(OBJ_EVENT_ID_LITARA, 12, 17) //litara
+        setobjectxy(OBJ_EVENT_ID_LITARA, 12, 17)
+        addobject(OBJ_EVENT_ID_LITARA)
+        showobjectat (OBJ_EVENT_ID_LITARA, MAP_BARBARIAN_VILLAGE)
+        applymovement(OBJ_EVENT_ID_LITARA, MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_1)
+        waitmovement(0)
+        applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+        waitmovement(0)
+        closedoor(12 , 17)
+    }
+    namebox("Litara")
+    msgbox(format("Wait {PLAYER}, before you leave allow me to show you our stronghold."))
+    hidenamebox
+    closemessage
+    applymovement(OBJ_EVENT_ID_LITARA, MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_2)
+    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_2)
+    waitmovement(0)
+    getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+    if (var(VAR_TEMP_1) == 12) {
+        applymovement(OBJ_EVENT_ID_LITARA, Movement_InteractFACERIGHT)
+        applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT)
+    }
+    elif (var(VAR_TEMP_1) == 11) {
+        applymovement(OBJ_EVENT_ID_LITARA, Movement_InteractFACELEFT)
+        applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+    }
+    waitmovement(0)
+    namebox("Litara")
+    msgbox(format("Our stronghold is located down this ladder."))
+    hidenamebox
+    closemessage
+    playse(SE_PIN)
+    applymovement(OBJ_EVENT_ID_LITARA, MOVEMENT_EXCLAMATIONMARK_FACE_DOWN)
+    applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_EXCLAMATIONMARK_FACE_DOWN)
+    waitmovement(0)
+    waitse
+    addobject(OBJ_EVENT_ID_BLACK_KNIGHT)
+    setobjectxyperm(OBJ_EVENT_ID_BLACK_KNIGHT, 12, 29)
+    setobjectxy(OBJ_EVENT_ID_BLACK_KNIGHT, 12, 29)
+    applymovement(OBJ_EVENT_ID_BLACK_KNIGHT, MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_3)
+    delay(60)
+    applymovement(OBJ_EVENT_ID_LITARA, Movement_InteractFACELEFT)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT)
+    waitmovement(OBJ_EVENT_ID_BLACK_KNIGHT)
+    //remove knight
+    getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+    if (var(VAR_TEMP_1) == 12) {
+        applymovement(OBJ_EVENT_ID_LITARA, Movement_InteractFACERIGHT)
+        applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT)
+    }
+    elif (var(VAR_TEMP_1) == 11) {
+        applymovement(OBJ_EVENT_ID_LITARA, Movement_InteractFACELEFT)
+        applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+    }
+    namebox("Litara")
+    msgbox(format("Who was that they werent allowed in there!"))
+    hidenamebox
+    closemessage
+    setvar(VAR_TEMP_B, 0)
+    //SET STORYMODE VAR
+    setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 165)
+    release
+    end
+}
+
+movement MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_1 {
+    face_down
+    set_visible
+    walk_down
+    face_player
+    step_end
+}
+movement MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_2 {
+    walk_down * 8
+    step_end
+}
+movement MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_3 {
+    face_up
+    set_visible
+    walk_fast_up
+    walk_fast_left
+    walk_fast_up
+    walk_fast_left * 4
+    walk_fast_down * 2
+    walk_fast_left * 5
+    step_end
+}
 
 
 
@@ -24,17 +143,7 @@ mapscripts BarbarianVillage_MapScripts {
 script STORYMODE_STATE_BARBARIAN_VILLAGE {
 
     if ((var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 160) && (flag(FLAG_BADGE04_GET))) {  
-        addobject(16)
-        setobjectxyperm(16, 12, 29)
-        setobjectxy(16, 12, 29)
-        
-        //check which door
-        setobjectxyperm(2, 12, 17) //litara
-        setobjectxy(2, 12, 17)
-        //leave door with player, walk downwards to show stronghold.
-        //Wait player, before you leave let me show you to our stronghold.
-        //black knight runs out, 
-        //liktara, who was that they werent allowed in there!
+        setvar(VAR_TEMP_B, 1)
 	}
 
 
@@ -52,18 +161,18 @@ script STORYMODE_STATE_BARBARIAN_VILLAGE {
             return
         case 3:
             //Allows access to the Stronghold.
-            setobjectxyperm(2,13,27)
-			setobjectmovementtype(2,MOVEMENT_TYPE_FACE_UP)
+            setobjectxyperm(OBJ_EVENT_ID_LITARA,13,27)
+			setobjectmovementtype(OBJ_EVENT_ID_LITARA,MOVEMENT_TYPE_FACE_UP)
             return
     }
 
 
 }
 script OPENWORLDMODE_STATE_BARBARIAN_VILLAGE {
-    if (flag(FLAG_BADGE06_GET) == TRUE) {
+    if (flag(FLAG_BADGE04_GET) == TRUE) {
         //Allows access to the Stronghold.
-        setobjectxyperm(2,13,27)
-        setobjectmovementtype(2,MOVEMENT_TYPE_FACE_UP)
+        setobjectxyperm(OBJ_EVENT_ID_LITARA,13,27)
+        setobjectmovementtype(OBJ_EVENT_ID_LITARA,MOVEMENT_TYPE_FACE_UP)
         return
     }
 }

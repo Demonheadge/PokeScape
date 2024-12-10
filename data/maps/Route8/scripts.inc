@@ -80,8 +80,7 @@ ENCOUNTER_PENGUIN_BUSH_ROUTE8_1:
 
 ENCOUNTER_PENGUIN_BUSH_ROUTE8_2:
 	fadescreenswapbuffers FADE_TO_BLACK
-	setflag FLAG_TEMP_8
-	setflag FLAG_TEMP_9
+	setflag FLAG_PENGUIN_HUNT_ON_ROUTE
 	removeobject 28
 	removeobject 27
 	savebgm MUS_DUMMY

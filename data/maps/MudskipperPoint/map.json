@@ -129,10 +129,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PENGUIN_EVENT_CANADA_GRRL",
-      "flag": "FLAG_TEMP_8"
+      "flag": "FLAG_PENGUIN_HUNT_ON_ROUTE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PENGUIN_ROCK",
+      "graphics_id": "OBJ_EVENT_GFX_PENGUIN_BARREL",
       "x": 34,
       "y": 23,
       "elevation": 0,
@@ -142,7 +142,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ENCOUNTER_PENGUIN_BARREL_MUDSKIPPER_POINT",
-      "flag": "FLAG_TEMP_9"
+      "flag": "FLAG_PENGUIN_HUNT_ON_ROUTE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KNIGHT_WHITE_M",

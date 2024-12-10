@@ -30,8 +30,7 @@ ENCOUNTER_PENGUIN_CACTUS_ROUTE28_1:
 
 ENCOUNTER_PENGUIN_CACTUS_ROUTE28_2:
 	fadescreenswapbuffers FADE_TO_BLACK
-	setflag FLAG_TEMP_8
-	setflag FLAG_TEMP_9
+	setflag FLAG_PENGUIN_HUNT_ON_ROUTE
 	removeobject 14
 	removeobject 13
 	savebgm MUS_DUMMY

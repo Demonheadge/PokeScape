@@ -29,8 +29,7 @@ ENCOUNTER_PENGUIN_BUSH_ROUTE18_1:
 
 ENCOUNTER_PENGUIN_BUSH_ROUTE18_2:
 	fadescreenswapbuffers FADE_TO_BLACK
-	setflag FLAG_TEMP_8
-	setflag FLAG_TEMP_9
+	setflag FLAG_PENGUIN_HUNT_ON_ROUTE
 	removeobject 10
 	removeobject 16
 	savebgm MUS_DUMMY
@@ -41,22 +40,15 @@ ENCOUNTER_PENGUIN_BUSH_ROUTE18_2:
 
 
 PENGUIN_EVENT::
+	setflag FLAG_PENGUIN_HUNT_ON_ROUTE
 	random 20
 	compare VAR_RESULT, 1
 	goto_if_eq PENGUIN_EVENT_2
-	setflag FLAG_TEMP_8
-	setflag FLAG_TEMP_9
-	removeobject 10
-	removeobject 16
-	clearflag FLAG_PENGUIN_HUNT_ON_ROUTE
 PENGUIN_EVENT_1:
-	return
+	end
 
 PENGUIN_EVENT_2:
-	clearflag FLAG_TEMP_8
-	clearflag FLAG_TEMP_9
-	addobject 10
-	addobject 16
+	clearflag FLAG_PENGUIN_HUNT_ON_ROUTE
 	playbgm MUS_PS_TERRORBIRD, TRUE
 	savebgm MUS_PS_TERRORBIRD
 	goto PENGUIN_EVENT_1

@@ -197,7 +197,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ENCOUNTER_PENGUIN_CACTUS_ROUTE28",
-      "flag": "FLAG_TEMP_9"
+      "flag": "FLAG_PENGUIN_HUNT_ON_ROUTE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DND",
@@ -210,7 +210,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "BATTLE_PENGUIN_EVENT_CANADA_GRRL",
-      "flag": "FLAG_TEMP_8"
+      "flag": "FLAG_PENGUIN_HUNT_ON_ROUTE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RUNECRAFTER_YELLOW",
@@ -277,14 +277,6 @@
       "type": "sign",
       "x": 10,
       "y": 20,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
-    },
-    {
-      "type": "sign",
-      "x": 24,
-      "y": 39,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NULL"

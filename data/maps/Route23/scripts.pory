@@ -2,16 +2,68 @@ const OBJ_EVENT_ID_PENGUIN_DND = 14
 const OBJ_EVENT_ID_PENGUIN = 13
 
 mapscripts Route23_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+        //setvar(VAR_EVOLUTION_MAP_STATE, 3) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
+		call(ROUTE23_STATE)
+		call(PENGUIN_EVENT)
+	}
 	MAP_SCRIPT_ON_LOAD 
     {
         call(ROUTE23_METATILES)
     }
-	MAP_SCRIPT_ON_TRANSITION {
-        setvar(VAR_EVOLUTION_MAP_STATE, 3) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
-		call(ROUTE23_STATE)
-		call(PENGUIN_EVENT)
+}
+
+
+script ROUTE23_METATILES {
+	if (flag(FLAG_ROCKS_ROUTE23) == TRUE) { //Post Karamaja Gym, 
+		setmetatile(8, 10, METATILE_PokeScapeOutdoors_DIRT_PATH_MIDDLE, 0) 
+		setmetatile(10, 10, METATILE_PokeScapeOutdoors_DIRT_PATH_MIDDLE, 0) 
+		//special(DrawWholeMapView)  // DO NOT USE WITH : ON_LOAD
+	}
+	//REMOVE THE ROCKSLIDE.
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 165) { //If progressed far enough in story mode. *change 200 to correct progress.
+		setmetatile(30, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+		setmetatile(31, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+		setmetatile(32, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+		setmetatile(33, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+		setmetatile(32, 8, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+		setmetatile(33, 8, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
+	}
+	return
+}
+
+
+script ROUTE23_STATE {
+    setflag(FLAG_TEMP_1D)
+    removeobject(16)
+    removeobject(17)
+    removeobject(18)
+    removeobject(19)
+    removeobject(20)
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 165)
+    {
+        clearflag(FLAG_TEMP_1D)
+		addobject(16)
+		addobject(17)
+		addobject(18)
+		addobject(19)
+		addobject(20)
+    }
+	//REMOVE DRAWVES CLEARING THE ROCKSLIDE.
+	//If EQUAL or MORE than 'x' then remove the objects.
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 165) { // if EQUAL or MORE THAN 200 //If progressed far enough in story mode. *change 200 to correct progress.
+		removeobject(11)
+		removeobject(10)
+		setflag(FLAG_TEMP_1E)
+	}
+	if (flag(FLAG_ROCKS_ROUTE23) == TRUE) {
+		setflag(FLAG_TEMP_1)
+		removeobject(8)
+		setobjectmovementtype(5, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
+		setobjectxyperm(5, 12, 10)
 	}
 }
+
 
 script ENCOUNTER_PENGUIN_ROCK_ROUTE23 {
 	lock
@@ -27,8 +79,7 @@ script ENCOUNTER_PENGUIN_ROCK_ROUTE23 {
 	dowildbattle
     if (var(VAR_RESULT) == B_OUTCOME_WON || var(VAR_RESULT) == B_OUTCOME_CAUGHT) {
         fadescreenswapbuffers(FADE_TO_BLACK)
-        setflag(FLAG_TEMP_8)
-        setflag(FLAG_TEMP_9)
+		setflag(FLAG_PENGUIN_HUNT_ON_ROUTE)
         removeobject(OBJ_EVENT_ID_PENGUIN_DND)
         removeobject(OBJ_EVENT_ID_PENGUIN)
 		savebgm(MUS_DUMMY) //<- IMPORTANT
@@ -39,40 +90,6 @@ script ENCOUNTER_PENGUIN_ROCK_ROUTE23 {
     end
 }
 
-script ROUTE23_METATILES {
-	if (flag(FLAG_ROCKS_ROUTE23) == TRUE) { //Post Karamaja Gym, 
-		setmetatile(8, 10, METATILE_PokeScapeOutdoors_DIRT_PATH_MIDDLE, 0) 
-		setmetatile(10, 10, METATILE_PokeScapeOutdoors_DIRT_PATH_MIDDLE, 0) 
-		//special(DrawWholeMapView)  // DO NOT USE WITH : ON_LOAD
-	}
-	//REMOVE THE ROCKSLIDE.
-	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 200) { //If progressed far enough in story mode. *change 200 to correct progress.
-		setmetatile(30, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
-		setmetatile(31, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
-		setmetatile(32, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
-		setmetatile(33, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
-		setmetatile(32, 8, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
-		setmetatile(33, 8, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0)
-	}
-	return
-}
-
-
-script ROUTE23_STATE {
-	//REMOVE DRAWVES CLEARING THE ROCKSLIDE.
-	//If EQUAL or MORE than 'x' then remove the objects.
-	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 200) { // if EQUAL or MORE THAN 200 //If progressed far enough in story mode. *change 200 to correct progress.
-		removeobject(11)
-		removeobject(10)
-		setflag(FLAG_TEMP_1E)
-	}
-	if (flag(FLAG_ROCKS_ROUTE23) == TRUE) {
-		setflag(FLAG_TEMP_1)
-		removeobject(8)
-		setobjectmovementtype(5, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
-		setobjectxyperm(5, 12, 10)
-	}
-}
 
 
 

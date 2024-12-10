@@ -30,8 +30,7 @@ ENCOUNTER_PENGUIN_ROCK_ROUTE47_1:
 
 ENCOUNTER_PENGUIN_ROCK_ROUTE47_2:
 	fadescreenswapbuffers FADE_TO_BLACK
-	setflag FLAG_TEMP_8
-	setflag FLAG_TEMP_9
+	setflag FLAG_PENGUIN_HUNT_ON_ROUTE
 	removeobject 1
 	removeobject 2
 	savebgm MUS_DUMMY

@@ -394,7 +394,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ENCOUNTER_PENGUIN_BUSH_ROUTE8",
-      "flag": "FLAG_TEMP_9"
+      "flag": "FLAG_PENGUIN_HUNT_ON_ROUTE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DND",
@@ -407,7 +407,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PENGUIN_EVENT_CANADA_GRRL",
-      "flag": "FLAG_TEMP_8"
+      "flag": "FLAG_PENGUIN_HUNT_ON_ROUTE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",

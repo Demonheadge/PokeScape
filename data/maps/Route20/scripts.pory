@@ -1,0 +1,34 @@
+mapscripts Route20_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION 
+    {
+        goto(ROUTE20_STATE)
+    }
+}
+
+script ROUTE20_STATE {
+    setflag(FLAG_TEMP_1F)
+    setflag(FLAG_TEMP_1E)
+    removeobject(9)
+    removeobject(10)
+    removeobject(11)
+    removeobject(12)
+    removeobject(13)
+    
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 160)
+    {
+        clearflag(FLAG_TEMP_1F)
+        clearflag(FLAG_TEMP_1E)
+        addobject(9)
+        addobject(10)
+        addobject(11)
+        addobject(12)
+        addobject(13)
+    }
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 165)
+    {
+        clearflag(FLAG_TEMP_1E)
+        addobject(11)
+        addobject(12)
+    }
+
+}

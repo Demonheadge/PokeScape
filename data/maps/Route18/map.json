@@ -173,7 +173,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "BATTLE_PENGUIN_EVENT_CANADA_GRRL",
-      "flag": "FLAG_TEMP_8"
+      "flag": "FLAG_PENGUIN_HUNT_ON_ROUTE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAT_BLACK",
@@ -241,7 +241,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_PENGUIN_ROCK",
+      "graphics_id": "OBJ_EVENT_GFX_PENGUIN_BUSH",
       "x": 9,
       "y": 23,
       "elevation": 3,
@@ -251,7 +251,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ENCOUNTER_PENGUIN_BUSH_ROUTE18",
-      "flag": "FLAG_TEMP_9"
+      "flag": "FLAG_PENGUIN_HUNT_ON_ROUTE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GUARD_VARROCK_1",

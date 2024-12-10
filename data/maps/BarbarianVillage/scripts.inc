@@ -1,6 +1,7 @@
 BarbarianVillage_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, BarbarianVillage_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	map_script MAP_SCRIPT_ON_LOAD, BarbarianVillage_MapScripts_MAP_SCRIPT_ON_LOAD
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, BarbarianVillage_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
 BarbarianVillage_MapScripts_MAP_SCRIPT_ON_TRANSITION:
@@ -22,6 +23,154 @@ BarbarianVillage_MapScripts_MAP_SCRIPT_ON_LOAD_2:
 	call OPENWORLDMODE_STATE_BARBARIAN_VILLAGE
 	return
 
+BarbarianVillage_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_TEMP_B, 1, BARBARIANVILLAGE_STORYMODE_EVENT
+	.2byte 0
+
+
+BARBARIANVILLAGE_STORYMODE_EVENT::
+	lock
+	removeobject 2
+	removeobject 16
+	delay 30
+	playse SE_DOOR
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	compare VAR_TEMP_1, 12
+	goto_if_eq BARBARIANVILLAGE_STORYMODE_EVENT_2
+	compare VAR_TEMP_1, 11
+	goto_if_eq BARBARIANVILLAGE_STORYMODE_EVENT_3
+BARBARIANVILLAGE_STORYMODE_EVENT_1:
+	namebox BARBARIANVILLAGE_STORYMODE_EVENT_Text_0
+	msgbox BARBARIANVILLAGE_STORYMODE_EVENT_Text_1
+	hidenamebox
+	closemessage
+	applymovement 2, MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_2
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_2
+	waitmovement 0
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	compare VAR_TEMP_1, 12
+	goto_if_eq BARBARIANVILLAGE_STORYMODE_EVENT_7
+	compare VAR_TEMP_1, 11
+	goto_if_eq BARBARIANVILLAGE_STORYMODE_EVENT_8
+BARBARIANVILLAGE_STORYMODE_EVENT_6:
+	waitmovement 0
+	namebox BARBARIANVILLAGE_STORYMODE_EVENT_Text_0
+	msgbox BARBARIANVILLAGE_STORYMODE_EVENT_Text_2
+	hidenamebox
+	closemessage
+	playse SE_PIN
+	applymovement 2, MOVEMENT_EXCLAMATIONMARK_FACE_DOWN
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_EXCLAMATIONMARK_FACE_DOWN
+	waitmovement 0
+	waitse
+	addobject 16
+	setobjectxyperm 16, 12, 29
+	setobjectxy 16, 12, 29
+	applymovement 16, MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_3
+	delay 60
+	applymovement 2, Movement_InteractFACELEFT
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT
+	waitmovement 16
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	compare VAR_TEMP_1, 12
+	goto_if_eq BARBARIANVILLAGE_STORYMODE_EVENT_12
+	compare VAR_TEMP_1, 11
+	goto_if_eq BARBARIANVILLAGE_STORYMODE_EVENT_13
+BARBARIANVILLAGE_STORYMODE_EVENT_11:
+	namebox BARBARIANVILLAGE_STORYMODE_EVENT_Text_0
+	msgbox BARBARIANVILLAGE_STORYMODE_EVENT_Text_3
+	hidenamebox
+	closemessage
+	setvar VAR_TEMP_B, 0
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 165
+	release
+	end
+
+BARBARIANVILLAGE_STORYMODE_EVENT_2:
+	opendoor 11, 17
+	delay 20
+	setobjectxyperm 2, 11, 17
+	setobjectxy 2, 11, 17
+	addobject 2
+	showobjectat 2, MAP_BARBARIAN_VILLAGE
+	applymovement 2, MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_1
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT
+	waitmovement 0
+	closedoor 11, 17
+	goto BARBARIANVILLAGE_STORYMODE_EVENT_1
+
+BARBARIANVILLAGE_STORYMODE_EVENT_3:
+	opendoor 12, 17
+	delay 20
+	setobjectxyperm 2, 12, 17
+	setobjectxy 2, 12, 17
+	addobject 2
+	showobjectat 2, MAP_BARBARIAN_VILLAGE
+	applymovement 2, MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_1
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT
+	waitmovement 0
+	closedoor 12, 17
+	goto BARBARIANVILLAGE_STORYMODE_EVENT_1
+
+BARBARIANVILLAGE_STORYMODE_EVENT_7:
+	applymovement 2, Movement_InteractFACERIGHT
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT
+	goto BARBARIANVILLAGE_STORYMODE_EVENT_6
+
+BARBARIANVILLAGE_STORYMODE_EVENT_8:
+	applymovement 2, Movement_InteractFACELEFT
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT
+	goto BARBARIANVILLAGE_STORYMODE_EVENT_6
+
+BARBARIANVILLAGE_STORYMODE_EVENT_12:
+	applymovement 2, Movement_InteractFACERIGHT
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT
+	goto BARBARIANVILLAGE_STORYMODE_EVENT_11
+
+BARBARIANVILLAGE_STORYMODE_EVENT_13:
+	applymovement 2, Movement_InteractFACELEFT
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT
+	goto BARBARIANVILLAGE_STORYMODE_EVENT_11
+
+
+MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_1:
+	face_down
+	set_visible
+	walk_down
+	face_player
+	step_end
+
+MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_2:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_3:
+	face_up
+	set_visible
+	walk_fast_up
+	walk_fast_left
+	walk_fast_up
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
 
 STORYMODE_STATE_BARBARIAN_VILLAGE::
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 160
@@ -36,11 +185,7 @@ STORYMODE_STATE_BARBARIAN_VILLAGE_1:
 	return
 
 STORYMODE_STATE_BARBARIAN_VILLAGE_2:
-	addobject 16
-	setobjectxyperm 16, 12, 29
-	setobjectxy 16, 12, 29
-	setobjectxyperm 2, 12, 17
-	setobjectxy 2, 12, 17
+	setvar VAR_TEMP_B, 1
 	goto STORYMODE_STATE_BARBARIAN_VILLAGE_1
 
 STORYMODE_STATE_BARBARIAN_VILLAGE_3:
@@ -64,7 +209,7 @@ STORYMODE_STATE_BARBARIAN_VILLAGE_9:
 
 
 OPENWORLDMODE_STATE_BARBARIAN_VILLAGE::
-	goto_if_set FLAG_BADGE06_GET, OPENWORLDMODE_STATE_BARBARIAN_VILLAGE_1
+	goto_if_set FLAG_BADGE04_GET, OPENWORLDMODE_STATE_BARBARIAN_VILLAGE_1
 	return
 
 OPENWORLDMODE_STATE_BARBARIAN_VILLAGE_1:
@@ -155,16 +300,16 @@ BARBARIANVILLAGE_BLOCK_2:
 NPC_BARBARIANVILLAGE_DUNGEONGIRL::
 	lock
 	faceplayer
-	namebox NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_0
+	namebox BARBARIANVILLAGE_STORYMODE_EVENT_Text_0
 	goto_if_set FLAG_BADGE06_GET, NPC_BARBARIANVILLAGE_DUNGEONGIRL_2
-	msgbox NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_2
+	msgbox NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_1
 NPC_BARBARIANVILLAGE_DUNGEONGIRL_1:
 	hidenamebox
 	release
 	end
 
 NPC_BARBARIANVILLAGE_DUNGEONGIRL_2:
-	msgbox NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_1
+	msgbox NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_0
 	goto NPC_BARBARIANVILLAGE_DUNGEONGIRL_1
 
 
@@ -318,6 +463,21 @@ NPC_BARBARIANVILLAGE_NPC8::
 	end
 
 
+BARBARIANVILLAGE_STORYMODE_EVENT_Text_0:
+	.string "Litara$"
+
+BARBARIANVILLAGE_STORYMODE_EVENT_Text_1:
+	.string "Wait {PLAYER}, before you leave allow\n"
+	.string "me to show you our stronghold.$"
+
+BARBARIANVILLAGE_STORYMODE_EVENT_Text_2:
+	.string "Our stronghold is located down this\n"
+	.string "ladder.$"
+
+BARBARIANVILLAGE_STORYMODE_EVENT_Text_3:
+	.string "Who was that they werent allowed in\n"
+	.string "there!$"
+
 NPC_BARB_BLOCKADE_1_Text_0:
 	.string "Barbarian$"
 
@@ -357,9 +517,6 @@ NPC_BARB_BLOCKADE_1_Text_7:
 	.string "We are impressed, well done!$"
 
 NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_0:
-	.string "Litara$"
-
-NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_1:
 	.string "You have proved yourself a barbarian in\n"
 	.string "name and spirit!\p"
 	.string "I grant you access to use our\n"
@@ -367,7 +524,7 @@ NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_1:
 	.string "The monsters found within are very\n"
 	.string "strong, so have fun training!$"
 
-NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_2:
+NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_1:
 	.string "Only once you have proved yourself a\n"
 	.string "barbarian are you allowed to use our\l"
 	.string "dungeon for training.$"

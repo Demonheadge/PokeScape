@@ -1,16 +1,77 @@
 Route23_MapScripts::
-	map_script MAP_SCRIPT_ON_LOAD, Route23_MapScripts_MAP_SCRIPT_ON_LOAD
 	map_script MAP_SCRIPT_ON_TRANSITION, Route23_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_LOAD, Route23_MapScripts_MAP_SCRIPT_ON_LOAD
 	.byte 0
+
+Route23_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	call ROUTE23_STATE
+	call PENGUIN_EVENT
+	return
 
 Route23_MapScripts_MAP_SCRIPT_ON_LOAD:
 	call ROUTE23_METATILES
 	return
 
-Route23_MapScripts_MAP_SCRIPT_ON_TRANSITION:
-	setvar VAR_EVOLUTION_MAP_STATE, 3
-	call ROUTE23_STATE
-	call PENGUIN_EVENT
+
+ROUTE23_METATILES::
+	goto_if_set FLAG_ROCKS_ROUTE23, ROUTE23_METATILES_2
+ROUTE23_METATILES_1:
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 165
+	goto_if_ge ROUTE23_METATILES_5
+ROUTE23_METATILES_4:
+	return
+
+ROUTE23_METATILES_2:
+	setmetatile 8, 10, METATILE_PokeScapeOutdoors_DIRT_PATH_MIDDLE, 0
+	setmetatile 10, 10, METATILE_PokeScapeOutdoors_DIRT_PATH_MIDDLE, 0
+	goto ROUTE23_METATILES_1
+
+ROUTE23_METATILES_5:
+	setmetatile 30, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 31, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 32, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 33, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 32, 8, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	setmetatile 33, 8, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
+	goto ROUTE23_METATILES_4
+
+
+ROUTE23_STATE::
+	setflag FLAG_TEMP_1D
+	removeobject 16
+	removeobject 17
+	removeobject 18
+	removeobject 19
+	removeobject 20
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 165
+	goto_if_eq ROUTE23_STATE_2
+ROUTE23_STATE_1:
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 165
+	goto_if_ge ROUTE23_STATE_5
+ROUTE23_STATE_4:
+	goto_if_set FLAG_ROCKS_ROUTE23, ROUTE23_STATE_7
+	return
+
+ROUTE23_STATE_2:
+	clearflag FLAG_TEMP_1D
+	addobject 16
+	addobject 17
+	addobject 18
+	addobject 19
+	addobject 20
+	goto ROUTE23_STATE_1
+
+ROUTE23_STATE_5:
+	removeobject 11
+	removeobject 10
+	setflag FLAG_TEMP_1E
+	goto ROUTE23_STATE_4
+
+ROUTE23_STATE_7:
+	setflag FLAG_TEMP_1
+	removeobject 8
+	setobjectmovementtype 5, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT
+	setobjectxyperm 5, 12, 10
 	return
 
 
@@ -35,8 +96,7 @@ ENCOUNTER_PENGUIN_ROCK_ROUTE23_1:
 
 ENCOUNTER_PENGUIN_ROCK_ROUTE23_2:
 	fadescreenswapbuffers FADE_TO_BLACK
-	setflag FLAG_TEMP_8
-	setflag FLAG_TEMP_9
+	setflag FLAG_PENGUIN_HUNT_ON_ROUTE
 	removeobject 14
 	removeobject 13
 	savebgm MUS_DUMMY
@@ -44,50 +104,6 @@ ENCOUNTER_PENGUIN_ROCK_ROUTE23_2:
 	fadescreenswapbuffers FADE_FROM_BLACK
 	closemessage
 	goto ENCOUNTER_PENGUIN_ROCK_ROUTE23_1
-
-
-ROUTE23_METATILES::
-	goto_if_set FLAG_ROCKS_ROUTE23, ROUTE23_METATILES_2
-ROUTE23_METATILES_1:
-	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 200
-	goto_if_ge ROUTE23_METATILES_5
-ROUTE23_METATILES_4:
-	return
-
-ROUTE23_METATILES_2:
-	setmetatile 8, 10, METATILE_PokeScapeOutdoors_DIRT_PATH_MIDDLE, 0
-	setmetatile 10, 10, METATILE_PokeScapeOutdoors_DIRT_PATH_MIDDLE, 0
-	goto ROUTE23_METATILES_1
-
-ROUTE23_METATILES_5:
-	setmetatile 30, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
-	setmetatile 31, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
-	setmetatile 32, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
-	setmetatile 33, 7, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
-	setmetatile 32, 8, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
-	setmetatile 33, 8, METATILE_PokeScapeOutdoors_NORMAL_GRASS_TILE, 0
-	goto ROUTE23_METATILES_4
-
-
-ROUTE23_STATE::
-	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 200
-	goto_if_ge ROUTE23_STATE_2
-ROUTE23_STATE_1:
-	goto_if_set FLAG_ROCKS_ROUTE23, ROUTE23_STATE_4
-	return
-
-ROUTE23_STATE_2:
-	removeobject 11
-	removeobject 10
-	setflag FLAG_TEMP_1E
-	goto ROUTE23_STATE_1
-
-ROUTE23_STATE_4:
-	setflag FLAG_TEMP_1
-	removeobject 8
-	setobjectmovementtype 5, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT
-	setobjectxyperm 5, 12, 10
-	return
 
 
 NPC_ROUTE23_DWARF_ROCKS::
