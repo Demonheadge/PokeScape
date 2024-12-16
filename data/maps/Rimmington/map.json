@@ -42,6 +42,11 @@
       "map": "MAP_MUDSKIPPER_SOUND_2",
       "offset": 42,
       "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE39",
+      "offset": -53,
+      "direction": "down"
     }
   ],
   "object_events": [

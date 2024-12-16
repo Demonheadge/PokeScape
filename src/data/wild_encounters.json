@@ -11702,7 +11702,7 @@
               {
                 "min_level": 5,
                 "max_level": 7,
-                "species": "SPECIES_RAT_NORMAL_FORM"
+                "species": "SPECIES_SNAIL"
               },
               {
                 "min_level": 4,
@@ -11856,7 +11856,7 @@
               {
                 "min_level": 5,
                 "max_level": 7,
-                "species": "SPECIES_RAT_CRYPT_FORM"
+                "species": "SPECIES_SNAIL"
               },
               {
                 "min_level": 4,
@@ -12945,7 +12945,7 @@
               {
                 "min_level": 10,
                 "max_level": 14,
-                "species": "SPECIES_IMPLING_PIRATE_FORM"
+                "species": "SPECIES_PLANT_STRANGE_FORM"
               },
               {
                 "min_level": 10,
@@ -16418,17 +16418,17 @@
               {
                 "min_level": 6,
                 "max_level": 8,
-                "species": "SPECIES_CAVE_SLIME"
+                "species": "SPECIES_CROCODILE_NORMAL_FORM"
+              },
+              {
+                "min_level": 6,
+                "max_level": 8,
+                "species": "SPECIES_SNAIL"
               },
               {
                 "min_level": 6,
                 "max_level": 8,
                 "species": "SPECIES_GIANT_FROG_NORMAL_FORM"
-              },
-              {
-                "min_level": 6,
-                "max_level": 8,
-                "species": "SPECIES_FLEDGLING"
               },
               {
                 "min_level": 6,
@@ -16607,12 +16607,12 @@
               {
                 "min_level": 6,
                 "max_level": 8,
-                "species": "SPECIES_CROCODILE_NORMAL_FORM"
+                "species": "SPECIES_SNAIL"
               },
               {
                 "min_level": 6,
                 "max_level": 8,
-                "species": "SPECIES_FLEDGLING"
+                "species": "SPECIES_CROCODILE_NORMAL_FORM"
               },
               {
                 "min_level": 6,
@@ -17981,7 +17981,7 @@
               {
                 "min_level": 11,
                 "max_level": 14,
-                "species": "SPECIES_ZYGOMITE_ZANARIAN_FORM"
+                "species": "SPECIES_ZYGOMITE"
               }
             ]
           },
@@ -19621,7 +19621,7 @@
               {
                 "min_level": 9,
                 "max_level": 15,
-                "species": "SPECIES_BAT"
+                "species": "SPECIES_SNAIL"
               },
               {
                 "min_level": 9,
@@ -21278,12 +21278,12 @@
               {
                 "min_level": 10,
                 "max_level": 15,
-                "species": "SPECIES_PENGLING"
+                "species": "SPECIES_CHINCHOMPA_BABY"
               },
               {
                 "min_level": 10,
                 "max_level": 15,
-                "species": "SPECIES_RACOON"
+                "species": "SPECIES_FOAL"
               }
             ]
           }
@@ -21347,12 +21347,12 @@
               {
                 "min_level": 10,
                 "max_level": 15,
-                "species": "SPECIES_PENGLING"
+                "species": "SPECIES_CHINCHOMPA_BABY"
               },
               {
                 "min_level": 10,
                 "max_level": 15,
-                "species": "SPECIES_BEAVER"
+                "species": "SPECIES_FOAL"
               }
             ]
           }

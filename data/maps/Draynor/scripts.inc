@@ -158,10 +158,11 @@ Draynor_Diango_2:
 	compare VAR_RESULT, 0
 	goto_if_eq Draynor_Diango_6
 Draynor_Diango_5:
-	goto_if_unset FLAG_DIANGO_GIFT_DRAGONKITE, Draynor_Diango_8
-	goto_if_unset FLAG_DIANGO_GIFT_FROGEELBURGER, Draynor_Diango_9
+	goto_if_unset FLAG_DIANGO_GIFT_SPARKLES24, Draynor_Diango_8
+	goto_if_unset FLAG_DIANGO_GIFT_DRAGONKITE, Draynor_Diango_9
+	goto_if_unset FLAG_DIANGO_GIFT_FROGEELBURGER, Draynor_Diango_10
 	compare VAR_POKESCAPE_GOLDENGNOMES, 0
-	goto_if_eq Draynor_Diango_10
+	goto_if_eq Draynor_Diango_11
 	msgbox Draynor_Diango_Text_5
 	goto Draynor_Diango_1
 
@@ -170,14 +171,18 @@ Draynor_Diango_6:
 	goto Draynor_Diango_5
 
 Draynor_Diango_8:
-	call GIFT_DRAGONKITE
+	call GIFT_SPARKLES24
 	goto Draynor_Diango_1
 
 Draynor_Diango_9:
-	call GIFT_FROGEELBURGER
+	call GIFT_DRAGONKITE
 	goto Draynor_Diango_1
 
 Draynor_Diango_10:
+	call GIFT_FROGEELBURGER
+	goto Draynor_Diango_1
+
+Draynor_Diango_11:
 	msgbox Draynor_Diango_Text_4
 	call GOLDENGNOME_EVENT_START
 	goto Draynor_Diango_1
@@ -202,6 +207,15 @@ GIFT_FROGEELBURGER::
 	setflag FLAG_DIANGO_GIFT_FROGEELBURGER
 	msgbox GIFT_DRAGONKITE_Text_1
 	msgbox GIFT_FROGEELBURGER_Text_1
+	return
+
+
+GIFT_SPARKLES24::
+	msgbox GIFT_DRAGONKITE_Text_0
+	call EventScript_GiftMonster_SPARKLES24
+	setflag FLAG_DIANGO_GIFT_SPARKLES24
+	msgbox GIFT_DRAGONKITE_Text_1
+	msgbox GIFT_SPARKLES24_Text_0
 	return
 
 
@@ -254,6 +268,13 @@ EventScript_GiveMon_ReceivedFanfare_Dragonkite::
 
 
 EventScript_GiveMon_Received_Dragonkite::
+	return
+
+
+EventScript_GiftMonster_SPARKLES24::
+	setvar VAR_TEMP_1, SPECIES_SPARKLES
+	giveshinymon SPECIES_SPARKLES, 5, ITEM_DONUT_SANDWICH, 0
+	goto EventScript_GiftMonster_Start
 	return
 
 
@@ -547,6 +568,10 @@ GIFT_FROGEELBURGER_Text_1:
 	.string "Thank you for playing PokeScape.\p"
 	.string "Check out our website and discord\n"
 	.string "server for the latest updates.$"
+
+GIFT_SPARKLES24_Text_0:
+	.string "Happy Holidays 2024.\n"
+	.string "- PokeScape$"
 
 EventScript_GiveMon_SendParty_Dragonkite_Text_0:
 	.string "Would you like to give your monster a\n"

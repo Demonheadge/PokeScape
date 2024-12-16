@@ -282,6 +282,15 @@ script ENCOUNTER_ROCKCRAB
     if ((var(VAR_RESULT) == MAP_KOUREND_CATACOMBS_3) || (var(VAR_RESULT) == MAP_KOUREND_CATACOMBS_4)){
         setwildbattle (SPECIES_ROCK_CRAB_GIANT_SAND_FORM, 50, ITEM_NONE)
     }
+    elif ( (var(VAR_RESULT) == MAP_MUDSKIPPER_POINT) || (var(VAR_RESULT) == MAP_ROUTE11) || (var(VAR_RESULT) == MAP_ROUTE9) ) {
+        random(2) // will get rid of getcurrentmap varresult unless changed
+	    switch (var(VAR_RESULT)) { 
+            case 0: 
+                setwildbattle (SPECIES_ROCK_CRAB_SAND_FORM, 15, ITEM_NONE)
+            case 1: 
+                setwildbattle (SPECIES_CRAB_GRANITE_FORM, 15, ITEM_NONE)
+        }
+    }
     else {
         setwildbattle (SPECIES_ROCK_CRAB_NORMAL_FORM, 20, ITEM_NONE)
     }

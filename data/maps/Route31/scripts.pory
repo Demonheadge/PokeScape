@@ -493,17 +493,17 @@ script WEATHER_CHANGE_AREA_DRAYNOR
 {
 	special(GetTimeOfDaySpecial)
 	switch (var(VAR_RESULT)) {
-		case 0:
-			setweather (WEATHER_SHADE)
-			doweather
-		case 1:
-			setweather (WEATHER_SHADE)
-			doweather
-		case 2:
+		case 0: //night
 			setweather (WEATHER_NONE)
 			doweather
-		case 3:
+		case 1: //morning
 			setweather (WEATHER_NONE)
+			doweather
+		case 2: //day
+			setweather (WEATHER_SHADE)
+			doweather
+		case 3: //evening
+			setweather (WEATHER_SHADE)
 			doweather
 		
 		default:

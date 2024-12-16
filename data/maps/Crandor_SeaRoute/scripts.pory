@@ -5,7 +5,7 @@ const OBJ_EVENT_ID_SHIP = 3
 
 mapscripts Crandor_SeaRoute_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        call(WEATHER_CHANGE_SEA_ROUTES_ROUGH)
+        call(WEATHER_CHANGE_SEA_ROUTES_ROUGH) // if storymode == 130 dont activate
         call(CRANDOR_SEAROUTE_STATE)
     }
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
