@@ -1757,4 +1757,4 @@ EventScript_GiftMonster_SendParty_Text_0:
 	.string "nickname?$"
 
 EventScript_GiftMonster_ReceivedFanfare_Text_0:
-	.string "{PLAYER} obtained a {STR_VAR_2}.$"
+	.string "{PLAYER} obtained {STR_VAR_2}.$"

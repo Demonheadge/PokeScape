@@ -10956,11 +10956,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_PENGUIN_MCGRAW_FORM] =
 	{
-		.baseHP = 75,
-		.baseAttack = 85,
+		.baseHP = 65,
+		.baseAttack = 75,
 		.baseDefense = 45,
-		.baseSpeed = 110,
-		.baseSpAttack = 95,
+		.baseSpeed = 100,
+		.baseSpAttack = 85,
 		.baseSpDefense = 70,
 		.types = { TYPE_ICE, TYPE_WATER },
 		.catchRate = 45,
@@ -11199,7 +11199,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penguin_Disguise_Rock_Form, 2),
 		.footprint = gMonFootprint_Penguin_Disguise_Rock_Form,
 		LEARNSETS(Penguin_Disguise_Rock_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 10,
 		.enemyMonElevation = 0,
 	},
 
@@ -11295,7 +11295,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Penguin_Disguise_Box_Form, 2),
 		.footprint = gMonFootprint_Penguin_Disguise_Box_Form,
 		LEARNSETS(Penguin_Disguise_Box_Form),
-		.frontPicYOffset = 5,
+		.frontPicYOffset = 11,
 		.enemyMonElevation = 0,
 	},
 
@@ -12325,7 +12325,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Phoenix_Reborn_Form,
 		LEARNSETS(Phoenix_Reborn_Form),
 		.frontPicYOffset = 2,
-		.enemyMonElevation = 1,
+		.enemyMonElevation = 6,
 	},
 
 [SPECIES_PLANT_STRANGE_FORM] =
@@ -15977,7 +15977,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Chaos_Ele,
 		LEARNSETS(Chaos_Ele),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 1,
+		.enemyMonElevation = 6,
 		.formSpeciesIdTable = sChaosElementalFormSpeciesIdTable,
 		.formChangeTable = sChaosElementalFormChangeTable,
 	},
@@ -16030,7 +16030,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Chaos_Ele_Mega_Form,
 		LEARNSETS(Chaos_Ele_Mega_Form),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 3,
+		.enemyMonElevation = 7,
 		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sChaosElementalFormSpeciesIdTable,
 		.formChangeTable = sChaosElementalFormChangeTable,
@@ -16340,7 +16340,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Zaraven,
 		LEARNSETS(Zaraven),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 1,
+		.enemyMonElevation = 4,
 	},
 
 [SPECIES_SERELING] =
@@ -20933,7 +20933,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Tumekibis, 0),
 		.footprint = gMonFootprint_Tumekibis,
 		LEARNSETS(Tumekibis),
-		.frontPicYOffset = 6,
+		.frontPicYOffset = 4,
 		.enemyMonElevation = 0,
 	},
 
@@ -21180,7 +21180,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Durzag, 0),
 		.footprint = gMonFootprint_Durzag,
 		LEARNSETS(Durzag),
-		.frontPicYOffset = 4,
+		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
 	},
 
@@ -21433,7 +21433,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Terrorbird_Normal_Form, 1),
 		.footprint = gMonFootprint_Terrorbird_Normal_Form,
 		LEARNSETS(Terrorbird_Normal_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 3,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_SPIRIT_CHARM, SPECIES_TERRORBIRD_SPIRIT_FORM},
@@ -21487,7 +21487,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Terrorbird_Warped_Form, 2),
 		.footprint = gMonFootprint_Terrorbird_Warped_Form,
 		LEARNSETS(Terrorbird_Warped_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 7,
 		.enemyMonElevation = 0,
 	},
 
@@ -21802,7 +21802,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rover, 0),
 		.footprint = gMonFootprint_Rover,
 		LEARNSETS(Rover),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 9,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 40, SPECIES_WOLF_CAVE_FORM},
@@ -21855,7 +21855,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolf_Dire_Form, 2),
 		.footprint = gMonFootprint_Wolf_Dire_Form,
 		LEARNSETS(Wolf_Dire_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
 	},
 
@@ -21954,7 +21954,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolf_Skoll_Form, 2),
 		.footprint = gMonFootprint_Wolf_Skoll_Form,
 		LEARNSETS(Wolf_Skoll_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
 	},
 
@@ -22004,7 +22004,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolf_Desert_Form, 2),
 		.footprint = gMonFootprint_Wolf_Desert_Form,
 		LEARNSETS(Wolf_Desert_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
 	},
 
@@ -22052,7 +22052,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolf_Hati_Hati, 2),
 		.footprint = gMonFootprint_Wolf_Hati_Hati,
 		LEARNSETS(Wolf_Hati_Hati),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 3,
 		.enemyMonElevation = 0,
 	},
 
@@ -22101,7 +22101,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Wolf_Spirit_Form, 0),
 		.footprint = gMonFootprint_Wolf_Spirit_Form,
 		LEARNSETS(Wolf_Spirit_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 3,
 		.enemyMonElevation = 0,
 		.formSpeciesIdTable = sWolfSpiritFormSpeciesIdTable,
 		.formChangeTable = sWolfSpiritFormChangeTable,
@@ -22152,7 +22152,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Fox, 0),
 		.footprint = gMonFootprint_Fox,
 		LEARNSETS(Fox),
-		.frontPicYOffset = 7,
+		.frontPicYOffset = 6,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_MOVE, MOVE_HEX, SPECIES_INARI},
@@ -22309,7 +22309,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Bird_Nest, 2),
 		.footprint = gMonFootprint_Bird_Nest,
 		LEARNSETS(Bird_Nest),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 16,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_PERSONALITY_ONE, 10, SPECIES_PIGEON},
@@ -28778,11 +28778,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_YAK_LUMBER_FORM, SPECIES_COMPOST_MOUND},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_BEAVER, SPECIES_COMPOST_MOUND},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_GIANT_BEAVER, SPECIES_COMPOST_MOUND},
+			{EVO_LEVEL_DEATH, 35, SPECIES_COMPOST_MOUND},
 			{EVO_LEVEL_WEATHER_HOT, 30, SPECIES_SPROUTLING_SUMMER_FORM},
 			{EVO_LEVEL_WEATHER_WET, 30, SPECIES_SPROUTLING_SPRING_FORM},
 			{EVO_LEVEL_WEATHER_COLD, 30, SPECIES_SPROUTLING_WINTER_FORM},
 			{EVO_LEVEL_WEATHER_DUSTY, 30, SPECIES_SPROUTLING_AUTUMN_FORM}
-
 		),
 	},
 
@@ -28827,7 +28827,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Jadinko),
-		ICON(Jadinko, 0),
+		ICON(Jadinko, 1),
 		.footprint = gMonFootprint_Jadinko,
 		LEARNSETS(Jadinko),
 		.frontPicYOffset = 11,
@@ -29143,7 +29143,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
-			{EVO_LEVEL, 32, SPECIES_TOUCAN_TUAI_LEIT_FORM}
+			{EVO_LEVEL, 32, SPECIES_TOUCAN_TUAI_LEIT_FORM},
+			{EVO_ITEM, ITEM_NATURE_RUNE, SPECIES_MACAW}
 		),
 	},
 
@@ -29196,7 +29197,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 1,
 		.evolutions = EVOLUTION(
-			{EVO_LEVEL, 32, SPECIES_TOUCAN_TUAI_LEIT_FORM}
+			{EVO_LEVEL, 32, SPECIES_TOUCAN_TUAI_LEIT_FORM},
+			{EVO_ITEM, ITEM_NATURE_RUNE, SPECIES_MACAW}
 		),
 	},
 
@@ -37791,7 +37793,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.itemCommon = ITEM_NONE,
 		.itemRare = ITEM_NONE,
 		.eggGroups = { EGG_GROUP_BUG, EGG_GROUP_AMORPHOUS },
-		.abilities = { ABILITY_PASTEL_VEIL, ABILITY_AFTERMATH, ABILITY_NONE },
+		.abilities = { ABILITY_PASTEL_VEIL, ABILITY_TOXIC_DEBRIS, ABILITY_NONE },
 		.bodyColor = BODY_COLOR_BLACK,
 		.speciesName = _("Splatter"),
 		.cryId = CRY_VOID_SPLATTER,
@@ -37864,7 +37866,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Void_Ravager),
-		ICON(Void_Ravager, 0),
+		ICON(Void_Ravager, 2),
 		.footprint = gMonFootprint_Void_Ravager,
 		LEARNSETS(Void_Ravager),
 		.frontPicYOffset = 6,
@@ -37913,7 +37915,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Void_Spinner),
-		ICON(Void_Spinner, 0),
+		ICON(Void_Spinner, 2),
 		.footprint = gMonFootprint_Void_Spinner,
 		LEARNSETS(Void_Spinner),
 		.frontPicYOffset = 0,
@@ -38165,7 +38167,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Red_Eye),
-		ICON(Red_Eye, 0),
+		ICON(Red_Eye, 1),
 		.footprint = gMonFootprint_Red_Eye,
 		LEARNSETS(Red_Eye),
 		.frontPicYOffset = 5,
@@ -38217,7 +38219,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Flatfish),
-		ICON(Flatfish, 0),
+		ICON(Flatfish, 1),
 		.footprint = gMonFootprint_Flatfish,
 		LEARNSETS(Flatfish),
 		.frontPicYOffset = 0,
@@ -38269,7 +38271,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Bouldabass),
-		ICON(Bouldabass, 0),
+		ICON(Bouldabass, 1),
 		.footprint = gMonFootprint_Bouldabass,
 		LEARNSETS(Bouldabass),
 		.frontPicYOffset = 0,
@@ -38475,7 +38477,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Basilisk_OSRS_Form),
-		ICON(Basilisk_OSRS_Form, 0),
+		ICON(Basilisk_OSRS_Form, 1),
 		.footprint = gMonFootprint_Basilisk_OSRS_Form,
 		LEARNSETS(Basilisk_OSRS_Form),
 		.frontPicYOffset = 3,
@@ -38528,7 +38530,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Basilisk_Knight_Form),
-		ICON(Basilisk_Knight_Form, 0),
+		ICON(Basilisk_Knight_Form, 2),
 		.footprint = gMonFootprint_Basilisk_Knight_Form,
 		LEARNSETS(Basilisk_Knight_Form),
 		.frontPicYOffset = 1,
@@ -38576,7 +38578,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Spider_Ungael_Form),
-		ICON(Spider_Ungael_Form, 0),
+		ICON(Spider_Ungael_Form, 2),
 		.footprint = gMonFootprint_Spider_Ungael_Form,
 		LEARNSETS(Spider_Ungael_Form),
 		.frontPicYOffset = 14,
@@ -38631,7 +38633,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Spider_Crypt_Form),
-		ICON(Spider_Crypt_Form, 0),
+		ICON(Spider_Crypt_Form, 1),
 		.footprint = gMonFootprint_Spider_Crypt_Form,
 		LEARNSETS(Spider_Crypt_Form),
 		.frontPicYOffset = 4,
@@ -38729,7 +38731,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Spider_ApeAtoll_Form),
-		ICON(Spider_ApeAtoll_Form, 0),
+		ICON(Spider_ApeAtoll_Form, 1),
 		.footprint = gMonFootprint_Spider_ApeAtoll_Form,
 		LEARNSETS(Spider_ApeAtoll_Form),
 		.frontPicYOffset = 2,
@@ -38778,7 +38780,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Catablepon),
-		ICON(Catablepon, 0),
+		ICON(Catablepon, 1),
 		.footprint = gMonFootprint_Catablepon,
 		LEARNSETS(Catablepon),
 		.frontPicYOffset = 0,
@@ -39031,7 +39033,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Pig_Pack_Form),
-		ICON(Pig_Pack_Form, 0),
+		ICON(Pig_Pack_Form, 1),
 		.footprint = gMonFootprint_Pig_Pack_Form,
 		LEARNSETS(Pig_Pack_Form),
 		.frontPicYOffset = 3,
@@ -39080,7 +39082,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Herbiboar),
-		ICON(Herbiboar, 0),
+		ICON(Herbiboar, 1),
 		.footprint = gMonFootprint_Herbiboar,
 		LEARNSETS(Herbiboar),
 		.frontPicYOffset = 4,
@@ -39130,7 +39132,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Goat_Clay_Form),
-		ICON(Goat_Clay_Form, 0),
+		ICON(Goat_Clay_Form, 1),
 		.footprint = gMonFootprint_Goat_Clay_Form,
 		LEARNSETS(Goat_Clay_Form),
 		.frontPicYOffset = 6,
@@ -39182,7 +39184,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Goat_SacredClay_Form),
-		ICON(Goat_SacredClay_Form, 0),
+		ICON(Goat_SacredClay_Form, 1),
 		.footprint = gMonFootprint_Goat_SacredClay_Form,
 		LEARNSETS(Goat_SacredClay_Form),
 		.frontPicYOffset = 3,
@@ -39284,7 +39286,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Shadeel),
-		ICON(Shadeel, 0),
+		ICON(Shadeel, 1),
 		.footprint = gMonFootprint_Shadeel,
 		LEARNSETS(Shadeel),
 		.frontPicYOffset = 0,
@@ -39413,6 +39415,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Moss_Titan),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_FIRE_TITAN}
+		),
 	},
 
 [SPECIES_IRON_TITAN] =
@@ -39563,6 +39568,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Lava_Titan),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_ITEM, ITEM_WATER_RUNE, SPECIES_OBSIDIAN_GOLEM}
+		),
 	},
 
 [SPECIES_OBSIDIAN_GOLEM] =
@@ -39713,6 +39721,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Ice_Titan),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_GEYSIR_TITAN}
+		),
 	},
 
 [SPECIES_FIRE_TITAN] =
@@ -42569,7 +42580,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Impling_Spirit_Form,
 		LEARNSETS(Impling_Spirit_Form),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 1,
+		.enemyMonElevation = 7,
 	},
 
 [SPECIES_ARAXYTE_BABY] =
@@ -43178,8 +43189,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 			{EVO_ITEM, ITEM_CHAOS_RUNE, SPECIES_JADINKO_ZAMORAK},
 			{EVO_ITEM, ITEM_LAW_RUNE, SPECIES_JADINKO_SARADOMIN},
 			{EVO_ITEM, ITEM_AIR_RUNE, SPECIES_JADINKO_GUTHIX},
+			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_GUTHRAPTOR, SPECIES_JADINKO_GUTHIX},
 			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_JADINKO_ZAMORAK},
-			{EVO_ITEM, ITEM_WATER_RUNE, SPECIES_JADINKO_SARADOMIN}
+			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_ZAMOHAWK, SPECIES_JADINKO_ZAMORAK},
+			{EVO_ITEM, ITEM_WATER_RUNE, SPECIES_JADINKO_SARADOMIN},
+			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_SARAOWL, SPECIES_JADINKO_SARADOMIN}
 		),
 	},
 
@@ -44849,7 +44863,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Beagle, 2),
 		.footprint = gMonFootprint_Beagle,
 		LEARNSETS(Beagle),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 8,
 		.enemyMonElevation = 0,
 	},
 
@@ -44899,7 +44913,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pug, 2),
 		.footprint = gMonFootprint_Pug,
 		LEARNSETS(Pug),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 8,
 		.enemyMonElevation = 0,
 	},
 
@@ -44949,7 +44963,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Huskie, 1),
 		.footprint = gMonFootprint_Huskie,
 		LEARNSETS(Huskie),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
 	},
 
@@ -44999,7 +45013,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Shiba, 0),
 		.footprint = gMonFootprint_Shiba,
 		LEARNSETS(Shiba),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 7,
 		.enemyMonElevation = 0,
 	},
 
@@ -46247,7 +46261,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.catchRate = 45,
 		.expYield = 153,
 		.evYield_HP = 3,
-		.genderRatio = PERCENT_FEMALE(50),
+		.genderRatio = PERCENT_FEMALE(0),
 		.eggCycles = 20,
 		.friendship = 70,
 		.growthRate = GROWTH_FAST,
@@ -46936,7 +46950,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.catchRate = 45,
 		.expYield = 153,
 		.evYield_HP = 3,
-		.genderRatio = PERCENT_FEMALE(50),
+		.genderRatio = PERCENT_FEMALE(100),
 		.eggCycles = 20,
 		.friendship = 70,
 		.growthRate = GROWTH_FAST,
@@ -48057,7 +48071,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Entling, 1),
 		.footprint = gMonFootprint_Entling,
 		LEARNSETS(Entling),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 5,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 30, SPECIES_ENT},
@@ -49989,7 +50003,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.catchRate = 45,
 		.expYield = 121,
 		.evYield_Attack = 2,
-		.genderRatio = PERCENT_FEMALE(100),
+		.genderRatio = PERCENT_FEMALE(50),
 		.eggCycles = 20,
 		.friendship = 70,
 		.growthRate = GROWTH_MEDIUM_SLOW,
@@ -50040,7 +50054,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.catchRate = 45,
 		.expYield = 121,
 		.evYield_Attack = 2,
-		.genderRatio = PERCENT_FEMALE(100),
+		.genderRatio = PERCENT_FEMALE(50),
 		.eggCycles = 20,
 		.friendship = 70,
 		.growthRate = GROWTH_MEDIUM_SLOW,
@@ -50494,7 +50508,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.catchRate = 200,
 		.expYield = 134,
 		.evYield_SpAttack = 2,
-		.genderRatio = PERCENT_FEMALE(50),
+		.genderRatio = MON_GENDERLESS,
 		.eggCycles = 15,
 		.friendship = 20,
 		.growthRate = GROWTH_MEDIUM_FAST,
@@ -50527,7 +50541,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Animawhal,
 		LEARNSETS(Animawhal),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 1,
+		.enemyMonElevation = 8,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 50, SPECIES_ANIMASAURUS}
 		),
@@ -50545,7 +50559,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.catchRate = 200,
 		.expYield = 167,
 		.evYield_SpAttack = 3,
-		.genderRatio = PERCENT_FEMALE(50),
+		.genderRatio = MON_GENDERLESS,
 		.eggCycles = 15,
 		.friendship = 20,
 		.growthRate = GROWTH_MEDIUM_FAST,
@@ -50579,7 +50593,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Animasaurus,
 		LEARNSETS(Animasaurus),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 1,
+		.enemyMonElevation = 0,
 	},
 
 [SPECIES_SEA_TROLL_QUEEN] =
@@ -50977,7 +50991,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Spirit_Fighter,
 		LEARNSETS(Spirit_Fighter),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 0,
+		.enemyMonElevation = 5,
 	},
 
 [SPECIES_SPIRIT_ARCHER] =
@@ -51027,7 +51041,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Spirit_Archer,
 		LEARNSETS(Spirit_Archer),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 0,
+		.enemyMonElevation = 5,
 	},
 
 [SPECIES_SPIRIT_MYSTIC] =
@@ -51078,7 +51092,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Spirit_Mystic,
 		LEARNSETS(Spirit_Mystic),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 0,
+		.enemyMonElevation = 5,
 	},
 
 [SPECIES_SPIRIT_KNIGHT] =
@@ -51129,7 +51143,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Spirit_Knight,
 		LEARNSETS(Spirit_Knight),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 0,
+		.enemyMonElevation = 4,
 	},
 
 [SPECIES_SPIRIT_SCOUT] =
@@ -51180,7 +51194,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Spirit_Scout,
 		LEARNSETS(Spirit_Scout),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 0,
+		.enemyMonElevation = 6,
 	},
 
 [SPECIES_SPIRIT_WARMAGE] =
@@ -51230,7 +51244,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.footprint = gMonFootprint_Spirit_Warmage,
 		LEARNSETS(Spirit_Warmage),
 		.frontPicYOffset = 0,
-		.enemyMonElevation = 0,
+		.enemyMonElevation = 6,
 	},
 
 [SPECIES_POMAPOO] =
@@ -51276,7 +51290,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Pomapoo, 2),
 		.footprint = gMonFootprint_Pomapoo,
 		LEARNSETS(Pomapoo),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 7,
 		.enemyMonElevation = 0,
 	},
 
@@ -51531,7 +51545,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.expYield = 101,
 		.evYield_HP = 1,
 		.evYield_Speed = 1,
-		.genderRatio = PERCENT_FEMALE(50),
+		.genderRatio = PERCENT_FEMALE(100),
 		.eggCycles = 20,
 		.friendship = 120,
 		.growthRate = GROWTH_FLUCTUATING,
@@ -51579,7 +51593,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.expYield = 101,
 		.evYield_Attack = 1,
 		.evYield_Speed = 1,
-		.genderRatio = PERCENT_FEMALE(50),
+		.genderRatio = PERCENT_FEMALE(100),
 		.eggCycles = 20,
 		.friendship = 120,
 		.growthRate = GROWTH_FLUCTUATING,
@@ -51627,7 +51641,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.expYield = 101,
 		.evYield_Speed = 1,
 		.evYield_SpAttack = 1,
-		.genderRatio = PERCENT_FEMALE(50),
+		.genderRatio = PERCENT_FEMALE(100),
 		.eggCycles = 20,
 		.friendship = 120,
 		.growthRate = GROWTH_FLUCTUATING,
@@ -51679,7 +51693,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.evYield_Speed = 1,
 		.evYield_SpAttack = 1,
 		.evYield_SpDefense = 1,
-		.genderRatio = PERCENT_FEMALE(50),
+		.genderRatio = MON_GENDERLESS,
 		.eggCycles = 20,
 		.friendship = 120,
 		.growthRate = GROWTH_FLUCTUATING,
@@ -51707,7 +51721,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Max_Golem),
-		ICON(Max_Golem, 0),
+		ICON(Max_Golem, 2),
 		.footprint = gMonFootprint_Max_Golem,
 		LEARNSETS(Max_Golem),
 		.frontPicYOffset = 0,
@@ -52000,10 +52014,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Snail),
-		ICON(Snail, 0),
+		ICON(Snail, 1),
 		.footprint = gMonFootprint_Snail,
 		LEARNSETS(Snail),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 13,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_EARTH_RUNE, SPECIES_ROCKSLUG_RSHD},
@@ -52121,7 +52135,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.types = { TYPE_BUG, TYPE_WATER },
 		.catchRate = 120,
 		.expYield = 69,
-		.evYield_SpAttack = 2,
+		.evYield_SpAttack = 1,
 		.genderRatio = PERCENT_FEMALE(50),
 		.eggCycles = 15,
 		.friendship = 70,
@@ -52172,8 +52186,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.types = { TYPE_BUG, TYPE_WATER },
 		.catchRate = 45,
 		.expYield = 125,
-		.evYield_Defense = 2,
-		.genderRatio = PERCENT_FEMALE(50),
+		.evYield_SpAttack = 2,
+		.genderRatio = PERCENT_FEMALE(0),
 		.eggCycles = 15,
 		.friendship = 70,
 		.growthRate = GROWTH_FAST,
@@ -52229,7 +52243,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_BUG, EGG_GROUP_AMORPHOUS },
 		.abilities = { ABILITY_GOOEY, ABILITY_SHELL_ARMOR, ABILITY_NONE },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("GiantSnail"),
+		.speciesName = _("Snail"),
 		.cryId = CRY_SNAIL_GIANT_OSRS,
 		.natDexNum = NATIONAL_DEX_SNAIL_GIANT_OSRS,
 		.categoryName = _("Snail"),
@@ -52248,10 +52262,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Snail_Giant_OSRS),
-		ICON(Snail_Giant_OSRS, 0),
+		ICON(Snail_Giant_OSRS, 1),
 		.footprint = gMonFootprint_Snail_Giant_OSRS,
 		LEARNSETS(Snail_Giant_OSRS),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 7,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_ASTRAL_RUNE, SPECIES_SNAIL_RAVENOUS},
@@ -52282,7 +52296,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_BUG, EGG_GROUP_AMORPHOUS },
 		.abilities = { ABILITY_GOOEY, ABILITY_SHELL_ARMOR, ABILITY_NONE },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("GiantSnail"),
+		.speciesName = _("Snail"),
 		.cryId = CRY_SNAIL_GIANT_RS3,
 		.natDexNum = NATIONAL_DEX_SNAIL_GIANT_RS3,
 		.categoryName = _("Snail"),
@@ -52301,10 +52315,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Snail_Giant_RS3),
-		ICON(Snail_Giant_RS3, 0),
+		ICON(Snail_Giant_RS3, 1),
 		.footprint = gMonFootprint_Snail_Giant_RS3,
 		LEARNSETS(Snail_Giant_RS3),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 11,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_BLOOD_RUNE, SPECIES_SNAIL_OCHRE_RS3},
@@ -52357,7 +52371,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Snail_Thorny, 0),
 		.footprint = gMonFootprint_Snail_Thorny,
 		LEARNSETS(Snail_Thorny),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 4,
 		.enemyMonElevation = 0,
 	},
 
@@ -52401,10 +52415,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Snail_Ravenous),
-		ICON(Snail_Ravenous, 0),
+		ICON(Snail_Ravenous, 2),
 		.footprint = gMonFootprint_Snail_Ravenous,
 		LEARNSETS(Snail_Ravenous),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 5,
 		.enemyMonElevation = 0,
 	},
 
@@ -52448,10 +52462,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Snail_Bruise_OSRS),
-		ICON(Snail_Bruise_OSRS, 0),
+		ICON(Snail_Bruise_OSRS, 2),
 		.footprint = gMonFootprint_Snail_Bruise_OSRS,
 		LEARNSETS(Snail_Bruise_OSRS),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
 	},
 
@@ -52498,7 +52512,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Snail_Bark_OSRS, 0),
 		.footprint = gMonFootprint_Snail_Bark_OSRS,
 		LEARNSETS(Snail_Bark_OSRS),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 6,
 		.enemyMonElevation = 0,
 	},
 
@@ -52545,7 +52559,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Snail_Blood_RS3, 0),
 		.footprint = gMonFootprint_Snail_Blood_RS3,
 		LEARNSETS(Snail_Blood_RS3),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 5,
 		.enemyMonElevation = 0,
 	},
 
@@ -52589,10 +52603,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Snail_Ochre_RS3),
-		ICON(Snail_Ochre_RS3, 0),
+		ICON(Snail_Ochre_RS3, 1),
 		.footprint = gMonFootprint_Snail_Ochre_RS3,
 		LEARNSETS(Snail_Ochre_RS3),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 7,
 		.enemyMonElevation = 0,
 	},
 
@@ -52636,26 +52650,27 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Snail_Myre_RS3),
-		ICON(Snail_Myre_RS3, 0),
+		ICON(Snail_Myre_RS3, 1),
 		.footprint = gMonFootprint_Snail_Myre_RS3,
 		LEARNSETS(Snail_Myre_RS3),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 7,
 		.enemyMonElevation = 0,
 	},
 
 [SPECIES_MOTHER_MALLUM] =
 	{
 		.baseHP = 120,
-		.baseAttack = 94,
+		.baseAttack = 104,
 		.baseDefense = 115,
 		.baseSpeed = 2,
-		.baseSpAttack = 139,
+		.baseSpAttack = 129,
 		.baseSpDefense = 130,
 		.types = { TYPE_BUG, TYPE_WATER },
 		.catchRate = 45,
 		.expYield = 125,
-		.evYield_Defense = 2,
-		.genderRatio = PERCENT_FEMALE(50),
+		.evYield_SpAttack = 2,
+		.evYield_SpDefense = 1,
+		.genderRatio = PERCENT_FEMALE(100),
 		.eggCycles = 15,
 		.friendship = 70,
 		.growthRate = GROWTH_FAST,

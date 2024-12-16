@@ -17235,7 +17235,7 @@
               {
                 "min_level": 26,
                 "max_level": 30,
-                "species": "SPECIES_FOAL"
+                "species": "SPECIES_COCKROACH_DRONE"
               },
               {
                 "min_level": 26,
@@ -17250,7 +17250,7 @@
               {
                 "min_level": 27,
                 "max_level": 31,
-                "species": "SPECIES_BEAR_CUB"
+                "species": "SPECIES_COCKROACH_WORKER"
               },
               {
                 "min_level": 28,
@@ -17304,7 +17304,7 @@
               {
                 "min_level": 26,
                 "max_level": 30,
-                "species": "SPECIES_FOAL"
+                "species": "SPECIES_COCKROACH_DRONE"
               },
               {
                 "min_level": 26,
@@ -17319,7 +17319,7 @@
               {
                 "min_level": 27,
                 "max_level": 31,
-                "species": "SPECIES_BEAR_CUB"
+                "species": "SPECIES_COCKROACH_WORKER"
               },
               {
                 "min_level": 28,
