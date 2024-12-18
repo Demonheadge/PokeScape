@@ -5228,3 +5228,18 @@ const struct Trainer gTrainers[] = {
 #define TRAINER_SANDWICH_LADY_1                         459
 */
 };
+
+const struct TrainerFightCaves gTrainersFightCaves[] = {
+    [TRAINER_FIGHT_CAVES_POOL_1_TRAINER_1] =
+    {
+        .trainerClass = TRAINER_CLASS_LEADER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_tzhaar,
+        .trainerName = _("Kimit-Kal"), //Champion of Familars.
+        .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .pool = TRAINER_PARTY_FIGHT_CAVES(sParty_FIGHT_CAVES_POOL_1),
+        .poolSize = 10,
+    },
+};
