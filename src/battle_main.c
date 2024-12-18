@@ -2086,7 +2086,7 @@ u8 CreateNPCTrainerPartyFromTrainerFightCaves(struct Pokemon *party, const struc
     ZeroEnemyPartyMons();
     for (i = 0; i < monsCount; i++)
     {
-        u8 poolIndex = GetPoolIndex(trainer->poolSize, i, &chosenSpecies[0], trainer);
+        u8 poolIndex = GetPoolIndex(trainer->poolSize, i + 1, &chosenSpecies[0], trainer);
         s32 ball = -1;
         u32 personalityHash = GeneratePartyHashFightCaves(trainer, i);
         const struct TrainerMon *poolData = trainer->pool;
@@ -2142,17 +2142,18 @@ u8 CreateNPCTrainerPartyFromTrainerFightCaves(struct Pokemon *party, const struc
             if (ability >= maxAbilities)
                 ability = 0;
         }
-        else
-        {
-            const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[poolData[poolIndex].species];
-            ability = personalityHash % 3;
-            while (speciesInfo->abilities[ability] == ABILITY_NONE)
-            {
-                ability--;
-            }
-        }
+        // else
+        // {
+        //     const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[poolData[poolIndex].species];
+        //     ability = personalityHash % 3;
+        //     while (speciesInfo->abilities[ability] == ABILITY_NONE)
+        //     {
+        //         ability--;
+        //     }
+        // }
+        ability = Random() % 2;
         SetMonData(&party[i], MON_DATA_ABILITY_NUM, &ability);
-        SetMonData(&party[i], MON_DATA_FRIENDSHIP, &(poolData[poolIndex].friendship));
+        // SetMonData(&party[i], MON_DATA_FRIENDSHIP, &(poolData[poolIndex].friendship));
         if (poolData[poolIndex].ball != ITEM_NONE)
         {
             ball = poolData[poolIndex].ball;
@@ -2190,7 +2191,7 @@ u8 CreateNPCTrainerPartyFromTrainerFightCaves(struct Pokemon *party, const struc
         //     SetMonData(&party[i], MON_DATA_POKEBALL, &ball);
         // }
     }
-    FixIllusionPartyPos(party, 6);
+    // FixIllusionPartyPos(party, 6);
 
     return 6; // trainer->partySize;
 }

@@ -3285,7 +3285,8 @@ static const u8 *BattleStringGetOpponentNameByTrainerId(u16 trainerId, u8 *text,
     }
     else
     {
-        toCpy = gTrainers[trainerId].trainerName;
+        if (FlagGet(FLAG_TZHAAR_RANDOM)) toCpy = gTrainersFightCaves[trainerId].trainerName;
+        else toCpy = gTrainers[trainerId].trainerName;
     }
 
     return toCpy;
@@ -3373,7 +3374,8 @@ static const u8 *BattleStringGetOpponentClassByTrainerId(u16 trainerId)
     else if (gBattleTypeFlags & BATTLE_TYPE_EREADER_TRAINER)
         toCpy = gTrainerClassNames[GetEreaderTrainerClassId()];
     else
-        toCpy = gTrainerClassNames[gTrainers[trainerId].trainerClass];
+        if (FlagGet(FLAG_TZHAAR_RANDOM)) toCpy = gTrainerClassNames[gTrainersFightCaves[trainerId].trainerClass];
+        else toCpy = gTrainerClassNames[gTrainers[trainerId].trainerClass];
 
     return toCpy;
 }
