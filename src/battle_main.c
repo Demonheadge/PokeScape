@@ -1942,7 +1942,7 @@ u8 GetPoolIndex(u8 poolSize, u8 currNumMons, u16 *chosenSpecies, const struct Tr
     bool8 foundIndex = FALSE;
     while (!foundIndex)
     {
-        rnd = Random32() % poolSize;
+        rnd = Random() % poolSize;
         foundSpecies = trainer->pool[rnd].species;
         for (index = 0; index < currNumMons; index++)
         {
@@ -2081,7 +2081,7 @@ u8 CreateNPCTrainerPartyFromTrainerFightCaves(struct Pokemon *party, const struc
 {
     u32 personalityValue;
     s32 i;
-    u8 monsCount = 6; // trainer->partySize;
+    u8 monsCount = VarGet(VAR_POKESCAPE_TZHAAR_PARTY_SIZE); // trainer->partySize;
     u16 chosenSpecies[6] = {0, 0, 0, 0, 0, 0};
     ZeroEnemyPartyMons();
     for (i = 0; i < monsCount; i++)
@@ -2193,7 +2193,7 @@ u8 CreateNPCTrainerPartyFromTrainerFightCaves(struct Pokemon *party, const struc
     }
     // FixIllusionPartyPos(party, 6);
 
-    return 6; // trainer->partySize;
+    return VarGet(VAR_POKESCAPE_TZHAAR_PARTY_SIZE); // trainer->partySize;
 }
 
 static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)

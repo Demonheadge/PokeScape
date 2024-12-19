@@ -178,7 +178,7 @@
 #define VAR_STORE_GROTTO_SEED_RESULT         0x409E // VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE
 #define VAR_MOSSDEEP_SPACE_CENTER_STATE      0x409F
 #define VAR_SLATEPORT_HARBOR_STATE           0x40A0
-#define VAR_UNUSED_0x40A1                    0x40A1 // Unused var
+#define VAR_POKESCAPE_TZHAAR_PARTY_SIZE      0x40A1 // Unused var VAR_UNUSED_0x40A1
 #define VAR_SEAFLOOR_CAVERN_STATE            0x40A2
 #define VAR_CABLE_CAR_STATION_STATE          0x40A3
 #define VAR_SAFARI_ZONE_STATE                0x40A4  // 0: In or out of SZ, 1: Player exiting SZ, 2: Player entering SZ
