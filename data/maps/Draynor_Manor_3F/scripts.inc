@@ -1232,7 +1232,7 @@ NPC_DraynorManor_Fisherman_Text_2:
 NPC_DraynorManor_Fisherman_Text_3:
 	.string "Where did you get that fish food from?\p"
 	.string "Hopefully you didn't get it from the\n"
-	.string "kitchen, theres a bunch of poisons in\l"
+	.string "kitchen, there's a bunch of poisons in\l"
 	.string "there.$"
 
 NPC_DraynorManor_Fisherman_Text_4:

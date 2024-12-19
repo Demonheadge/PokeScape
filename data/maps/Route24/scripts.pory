@@ -105,7 +105,7 @@ script BATTLE_ROUTE24_WOODCUTTER_2{
 
 script BATTLE_ROUTE24_GOBLIN_1{
     trainerbattle_single(TRAINER_ROUTE24_GOBLIN_1, format("Prepare for battle human!"),format("Human prepare well."))
-    //namebox ("")
+    namebox ("Cleansbane")
     msgbox(format("Human prepare well."))
     hidenamebox
     release
@@ -167,7 +167,7 @@ script NPC_ROUTE24_NPC_2{
 //ROUTE 40
 script BATTLE_ROUTE40_DIVINER {
     trainerbattle_single(TRAINER_ROUTE40_DIVINER, format("I feel a strange power emanating from these rock formations."),format("I feel it!\nIt makes me feel all tingly!"))
-    namebox ("DIVINER")
+    namebox ("Nyx")
     msgbox(format("You feel it too don't you?\pThe strange power emanating from these rocks."))
     hidenamebox
     release

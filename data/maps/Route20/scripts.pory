@@ -31,4 +31,12 @@ script ROUTE20_STATE {
         addobject(12)
     }
 
+
+}
+
+
+script ITEM_ROUTE20
+{
+    finditem(ITEM_WOOLBALL)
+    end
 }

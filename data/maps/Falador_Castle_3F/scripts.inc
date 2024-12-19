@@ -538,7 +538,7 @@ STORY_FALADORCASTLE_3F_SIRAMIKVARZE_REPORTING_BACK_Text_1:
 	.string "This is troubling indeed.\p"
 	.string "This sounds like a job for the Temple\n"
 	.string "Knights, I will have to inform Sir Tiffy\l"
-	.string "Cachien at once.\p"
+	.string "Cashien at once.\p"
 	.string "Don't worry they will take over from\n"
 	.string "here, but if you do hear anything else\l"
 	.string "about H.A.M please do let us know.\p"
@@ -548,7 +548,7 @@ STORY_FALADORCASTLE_3F_SIRAMIKVARZE_REPORTING_BACK_Text_1:
 STORY_FALADORCASTLE_3F_SIRAMIKVARZE_REPORTING_BACK_Text_2:
 	.string "I'm sure that will come in handy for your\n"
 	.string "MvM journey.\p"
-	.string "Speaking of which, theres a gym\n"
+	.string "Speaking of which, there's a gym\n"
 	.string "north-east of here at Barbarian\l"
 	.string "Village.\p"
 	.string "They have a stronghold full of strong\n"

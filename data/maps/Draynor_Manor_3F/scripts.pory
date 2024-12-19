@@ -560,7 +560,7 @@ script NPC_DraynorManor_Oddenstein{
             end
 		case 5: 
             namebox ("Oddenstein")
-			msgbox(format("Ah, thank you for disposing of that fowl creature.\pDispite my experiment ending in failure I would like you to have this."))
+			msgbox(format("Ah, thank you for disposing of that fowl creature.\pDespite my experiment ending in failure I would like you to have this."))
 			questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_ERNEST_THE_CHICKEN)
 			hidenamebox
 			giveitem(ITEM_MINT_CAKE, 2)
@@ -580,7 +580,7 @@ script NPC_DraynorManor_Oddenstein{
 			if (var(VAR_RESULT) == FALSE) {
 				checkitem (ITEM_MAGICAL_CAGE,1)
 				if (var(VAR_RESULT)){
-					msgbox(format("Oh that's Poly's CAGE!\nI used to have a parrot named Poly.\pShe loved that cage…\pShe has sadly passed from this world and her grave now rests in the backyard of the manor…"))
+					msgbox(format("Oh that's Polly's CAGE!\nI used to have a parrot named Polly.\pShe loved that cage…\pShe has sadly passed from this world and her grave now rests in the backyard of the manor…"))
 				}
 				else {
 					msgbox(format("Oh by the way, have you seen a CAGE anywhere?\pI could have swore I left it in the room next to us somewhere but I haven't seen it in awhile."))
@@ -597,7 +597,7 @@ script NPC_DraynorManor_Oddenstein{
 				}
 				subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_ERNEST_THE_CHICKEN, 4)
 				if (var(VAR_RESULT) == TRUE) {
-					msgbox(format("OMFG I CANNOT BELIEVE THIS!\pSOMEONE DUG UP MY POOR POLY!\pWhat kind of monster would disturb my poor Poly rest!"))
+					msgbox(format("OMFG I CANNOT BELIEVE THIS!\pSOMEONE DUG UP MY POOR POLLY!\pWhat kind of monster would disturb my poor Polly's rest!"))
 				}
 			}
 			hidenamebox
@@ -791,7 +791,7 @@ script NPC_DraynorManor_Fisherman{
     }
 	checkitem (ITEM_FISH_FOOD,1)
 	if (var(VAR_RESULT)){
-		msgbox(format("Where did you get that fish food from?\pHopefully you didn't get it from the kitchen, theres a bunch of poisons in there."))
+		msgbox(format("Where did you get that fish food from?\pHopefully you didn't get it from the kitchen, there's a bunch of poisons in there."))
 		hidenamebox
 		closemessage
 		release

@@ -34,7 +34,7 @@ script STORY_NPC_MUDSKIPPER_POINT_SIRTHEODORE {
     namebox ("Sir Theodore")
     msgbox(format("WHAT!?\pYOU JUST LEFT HIM ON CRANDOR?!"))
     waitmovement(0)
-    msgbox(format("We must report back to Sir Amik Varze in Falador right away and organise a resuce mission!!"))
+    msgbox(format("We must report back to Sir Amik Varze in Falador right away and organise a rescue mission!!"))
     hidenamebox
     closemessage
     namebox ("Sir Theodore")

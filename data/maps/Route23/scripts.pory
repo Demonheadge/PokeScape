@@ -142,6 +142,7 @@ script NPC_ROUTE23_BLOCKADE_DWARVES
 script BATTLE_ROUTE23_TRAINER_1
 {
     trainerbattle_single(TRAINER_ROUTE23_TRAINER_1, format("My cart just broke down, I've sent an adventurer off to fix it.\pWhile I wait lets have a battle!"),format("Thanks for passing the time with me."))
+    namebox ("Thorfinn")
     msgbox(format("There have been lots of landslides around Ice Mountain lately, I am not sure what has been causing them."))
 	hidenamebox
     release
@@ -150,6 +151,7 @@ script BATTLE_ROUTE23_TRAINER_1
 script BATTLE_ROUTE23_TRAINER_2
 {
     trainerbattle_single(TRAINER_ROUTE23_TRAINER_2, format("YARRRRR!\pHear my war cry it is battle time!"),format("YAWWOOOOOCH!"))
+	namebox ("Sivert")
     msgbox(format("RRAAAAUUUUGGGHH!\pThat was a good battle!\pRAAAUUUUUGH!"))
 	hidenamebox
     release
@@ -176,7 +178,8 @@ script BATTLE_ROUTE23_TRAINER_BARB_COUPLE_2
 script BATTLE_ROUTE23_TRAINER_3
 {
     trainerbattle_single(TRAINER_ROUTE23_TRAINER_3, format("You think you have what it takes to enter our village?\pI think not."),format("That sparkle in your eye!\pYou know the true ways of the barbarians."))
-    msgbox(format("That sparkle in your eye!\pYou know the true ways of the barbarians."))
+    namebox ("Hildegard")
+	msgbox(format("That sparkle in your eye!\pYou know the true ways of the barbarians."))
 	hidenamebox
     release
 	end
@@ -314,8 +317,10 @@ script ROUTE23_RockSmash
 	playse(SE_PIN)
 	applymovement (5, MOVEMENT_EXCLAMATIONMARK_FACEPLAYER)
 	waitmovement (0)
-	msgbox(format("Hey you cleared the rockslide!\pNow travellers can get through.\pThank you for that!"))
+	namebox ("Dwarf")
+	msgbox(format("Hey, you cleared the rockslide!\pNow travellers can get through.\pThank you for that!"))
 	closemessage
+	hidenamebox
 	applymovement(5, Movement_InteractFACERIGHT)
 	setobjectmovementtype(5, MOVEMENT_TYPE_FACE_RIGHT)
 	waitmovement(0)
@@ -335,7 +340,7 @@ script NPC_ROUTE20_SIR_TIFFY
 {
 	lock
 	applymovement(10, MOVEMENT_INTERACT_RIGHT)
-    namebox ("Tiffy Cashin")
+    namebox ("Tiffy Cashien")
     msgbox(format("Be on the look out for the H.A.M and the Black Knights.\pThere have been reports that they have been spotted in this area."))
 	waitmovement(0)
     closemessage

@@ -365,12 +365,12 @@ script STORY_FALADORCASTLE_3F_SIRAMIKVARZE_REPORTING_BACK{
     applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_INTERACT_UP)
     waitmovement(0)
     namebox("Sir Amik Varze")
-    msgbox(format("I see…\pThis is troubling indeed.\pThis sounds like a job for the Temple Knights, I will have to inform Sir Tiffy Cachien at once.\pDon't worry they will take over from here, but if you do hear anything else about H.A.M please do let us know.\pOh and please take this as thanks for helping us."))
+    msgbox(format("I see…\pThis is troubling indeed.\pThis sounds like a job for the Temple Knights, I will have to inform Sir Tiffy Cashien at once.\pDon't worry they will take over from here, but if you do hear anything else about H.A.M please do let us know.\pOh and please take this as thanks for helping us."))
     hidenamebox
 	closemessage
     giveitem(ITEM_FLY_TOOL)
     namebox("Sir Amik Varze")
-    msgbox(format("I'm sure that will come in handy for your MvM journey.\pSpeaking of which, theres a gym north-east of here at Barbarian Village.\pThey have a stronghold full of strong monsters, so maybe you could get some training done there.\pBest of luck!"))
+    msgbox(format("I'm sure that will come in handy for your MvM journey.\pSpeaking of which, there's a gym north-east of here at Barbarian Village.\pThey have a stronghold full of strong monsters, so maybe you could get some training done there.\pBest of luck!"))
 	closemessage
     addvar(VAR_GAMEMODE_LEVEL_CAP, 2)
     setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 160)

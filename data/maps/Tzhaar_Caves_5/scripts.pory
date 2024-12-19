@@ -4,24 +4,24 @@ mapscripts Tzhaar_Caves_5_MapScripts {
 
 script BATTLE_TZHAAR_CAVES_TRAINER_1
 {
-    trainerbattle_single(TRAINER_TZHAAR_CAVES_TRAINER_1, format(""),format(""))
-    msgbox(format(""))
+    trainerbattle_single(TRAINER_TZHAAR_CAVES_TRAINER_1, format("Deep inside these caves lie the Elder Kiln.\pIt is no place for JalYt like you."),format("Perhaps JalYt like you are just right to help us out."))
+    msgbox(format("Eggs are hatching without memories.\pWe need these to find our place in society, otherwise we just endlessly wander these halls or die in the Fight Pits."))
 	hidenamebox
     release
 	end
 }
 script BATTLE_TZHAAR_CAVES_TRAINER_2
 {
-    trainerbattle_single(TRAINER_TZHAAR_CAVES_TRAINER_2, format(""),format(""))
-    msgbox(format(""))
+    trainerbattle_single(TRAINER_TZHAAR_CAVES_TRAINER_2, format("It is not safe for JalYt down here.\pYou must leave now."),format("You may have beaten me, but you should still turn back while you can.."))
+    msgbox(format("I've heard rumours that there is an ancient hivemind living in the lava down here somewhere.\pCould that really be true?"))
 	hidenamebox
     release
 	end
 }
 script BATTLE_TZHAAR_CAVES_TRAINER_3
 {
-    trainerbattle_single(TRAINER_TZHAAR_CAVES_TRAINER_3, format(""),format(""))
-    msgbox(format(""))
+    trainerbattle_single(TRAINER_TZHAAR_CAVES_TRAINER_3, format("I think the caves down here are too hot, which is why our eggs aren't hatching properly.\pIt's far too hot for a JalYt like you!"),format("Oh, maybe it's too cold and that's why the eggs aren't hatching.."))
+    msgbox(format("We TzHaar have no way of teaching new skills, so the Ga'al that hatch are no good for society other than for battling.."))
 	hidenamebox
     release
 	end

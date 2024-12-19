@@ -1285,8 +1285,8 @@
 #define FLAG_ITEM_PURO_PURO_2                                       0x4BD // Unused Flag
 #define FLAG_ITEM_PURO_PURO_3                                       0x4BE // Unused Flag
 #define FLAG_ITEM_FALADOR_COURTYARD_1                               0x4BF // Unused Flag
+#define FLAG_ITEM_ROUTE20                                           0x4C0 // Unused Flag
 
-#define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag
 #define FLAG_UNUSED_0x4C1                                           0x4C1 // Unused Flag
 #define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag
 #define FLAG_UNUSED_0x4C3                                           0x4C3 // Unused Flag

@@ -16,7 +16,7 @@ script NPC_ROUTE33_NPC1
 {
     lock
     faceplayer
-    //namebox("")
+    namebox("Zamorak Mage")
     msgbox(format("Begone!\pStay away unless you worship Zamorak."))
     hidenamebox
     release
@@ -37,7 +37,7 @@ script BATTLE_ROUTE33_ZAMORAK1 // ZAMORAK MAGE
 script BATTLE_ROUTE33_GOBLIN1 // GOBLIN 1
 {
     trainerbattle_single(TRAINER_ROUTE33_GOBLIN1, format("Hooman, why are you out here?!"),format("Hooman no answer question."))
-    //namebox ("")
+    namebox ("Slomgrom")
     msgbox(format("Hooman no answer question.\pWhy is hooman out here?!"))
 	hidenamebox
     release
@@ -47,7 +47,7 @@ script BATTLE_ROUTE33_GOBLIN1 // GOBLIN 1
 script BATTLE_ROUTE33_GOBLIN2 // GOBLIN 2
 {
     trainerbattle_single(TRAINER_ROUTE33_GOBLIN2, format("Stupid red hoomans they so noisy!"),format("Red hoomans make lots of noise."))
-    //namebox ("")
+    namebox ("Grogli")
     msgbox(format("Red hoomans make lots of noise.\pMe want to get rid of them."))
 	hidenamebox
     release
@@ -57,7 +57,7 @@ script BATTLE_ROUTE33_GOBLIN2 // GOBLIN 2
 script BATTLE_ROUTE33_RUNECRAFTER 
 {
     trainerbattle_single(TRAINER_ROUTE33_RUNECRAFTER, format("I'm looking for a Mind Talisman, do you have one!?"),format("How will I ever get my Runecrafting level up…"))
-    //namebox ("")
+    namebox ("RunMeEssPlz")
     msgbox(format("I've been looking for a Mind Talisman so I can get into this Altar, but I've had no luck finding one.\pMaybe those Zamorakians have an idea."))
 	hidenamebox
     release

@@ -597,11 +597,11 @@ script TZHAAR_TRAINERS_WAVES_LOW_KET
     random(3) 
 	switch (var(VAR_RESULT)) { 
         case 0: 
-            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_1, 0, format("intro text 1"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_1, 0, format("You think you're a hardened adventurer?\pTrust me when I say our obsidian bodies are harder."), format("Our bodies may be hard, but you fight even harder.."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
         case 1: 
-            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_2, 0, format("intro text 2"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_2, 0, format("You are not trusted enough to make it into the inner core of the city."), format("Perhaps one day you will see our grand central inferno."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
         case 2: 
-            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_3, 0, format("intro text 3"), format("lose text"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_3, 0, format("JalYt like you are not capable of withstanding the heat down here."), format("Maybe it is me who cannot stand the heat of battle!"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
     } 
 }
 

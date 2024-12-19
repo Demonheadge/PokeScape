@@ -877,7 +877,7 @@ static const u8 sText_Maggie_PlayerLost[] = _("Sweet, sweet victory.\pI think ch
 static const u8 sText_Melzar_BeforeFirstTurn[] = _("Let me drink my tea in peace!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_Melzar_SwitchIn[] = _("By the power of custard!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_Melzar_LastLowHp[] = _("Leave me alone, I need to feed my\npet rock!{PAUSE_UNTIL_PRESS}");
-static const u8 sText_Melzar_FirstDown[] = _("Cabbage stew!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_Melzar_PlayerMonUnaffected[] = _("Cabbage stew!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_Melzar_PlayerLost[] = _("Feel the wrath of my feet!{PAUSE_UNTIL_PRESS}");
 
 
@@ -1612,7 +1612,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_MELZAR_MESSAGE_1 - BATTLESTRINGS_TABLE_START] = sText_Melzar_BeforeFirstTurn,
     [STRINGID_MELZAR_MESSAGE_2 - BATTLESTRINGS_TABLE_START] = sText_Melzar_SwitchIn,
     [STRINGID_MELZAR_MESSAGE_3 - BATTLESTRINGS_TABLE_START] = sText_Melzar_LastLowHp,
-    [STRINGID_MELZAR_MESSAGE_4 - BATTLESTRINGS_TABLE_START] = sText_Melzar_FirstDown,
+    [STRINGID_MELZAR_MESSAGE_4 - BATTLESTRINGS_TABLE_START] = sText_Melzar_PlayerMonUnaffected,
     [STRINGID_MELZAR_MESSAGE_5 - BATTLESTRINGS_TABLE_START] = sText_Melzar_PlayerLost,
 
     [STRINGID_REMOVEWEATHERBOOK - BATTLESTRINGS_TABLE_START] = sText_WeatherDisapearedBook,
@@ -4257,7 +4257,7 @@ static const struct TrainerSlide sTrainerSlides[] =
         .msgBeforeFirstTurn = sText_Melzar_BeforeFirstTurn, //Let me drink my tea in peace!
         .msgLastSwitchIn = sText_Melzar_SwitchIn, //By the power of custard!
         .msgLastLowHp = sText_Melzar_LastLowHp, //Leave me alone, I need to feed my pet rock!
-        .msgFirstDown = sText_Melzar_FirstDown, //Cabbage stew!
+        .msgPlayerMonUnaffected = sText_Melzar_PlayerMonUnaffected, //Cabbage stew!
         .msgPlayerLost = sText_Melzar_PlayerLost, //Feel the wrath of my feet!
     },
 };

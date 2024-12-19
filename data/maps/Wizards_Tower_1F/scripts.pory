@@ -885,27 +885,27 @@ script RUNE_EVOLUTIONS_NOTES {
                 release
 		end
             case 1: 
-                msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pWhen local wildlife such as calves and bulls are exposed to Chaos Runes, they evolve into creatures that have only otherwise ever been seen deep in the tunnels below Barbarian Village.\pI wonder what connection that place has to Chaos Runes."))
+                msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pFire Runes appear to have some connection to an otherworldly plane of hellfire, as exposing kittens, puppies, and even rats to them turns them into demonic forms that burn with the fires of hell itself."))
                 release
 		end
             case 2: 
-                msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pWhen local wildlife such as calves and bulls are exposed to Chaos Runes, they evolve into creatures that have only otherwise ever been seen deep in the tunnels below Barbarian Village.\pI wonder what connection that place has to Chaos Runes."))
+                msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pIt appears that puppies have some of the most runic evolutions of any monster I have encountered.\pThese also vary depending on the type of dog you expose to the stone.\pFor example, a pup exposed to an Air Rune evolves into a Labrador.\pHowever, if you expose a mutt to the same rune?\pIt turns into a Greyhound.\pCompletely different!."))
                 release
 		end
             case 3: 
-                 msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pWhen local wildlife such as calves and bulls are exposed to Chaos Runes, they evolve into creatures that have only otherwise ever been seen deep in the tunnels below Barbarian Village.\pI wonder what connection that place has to Chaos Runes."))
+                 msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pZamorakian mages say that sometimes death itself is powerful enough to evolve a monster.\pFor those adventurers who don't want to put their monsters through that, Death Runes appear to have the same effect for evolution.\pThey are extremely rare though, as nobody seems to be able to find the Altar to make more."))
                 		release
 				end
             case 4: 
-                msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pWhen local wildlife such as calves and bulls are exposed to Chaos Runes, they evolve into creatures that have only otherwise ever been seen deep in the tunnels below Barbarian Village.\pI wonder what connection that place has to Chaos Runes."))
+                msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pWe once had adventurers stay in the tower with their Pet Rock.\pThey didn't stay long though, as someone left a Law Rune lying around and the Pet Rock evolved into a Party Rock!\pIt kept the whole tower up all night long, partying over and over.."))
                 release
 		end
             case 5: 
-                msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pWhen local wildlife such as calves and bulls are exposed to Chaos Runes, they evolve into creatures that have only otherwise ever been seen deep in the tunnels below Barbarian Village.\pI wonder what connection that place has to Chaos Runes."))
+                msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pThere are runes said to hail from one of Gielinor's moons, which are imbued with the energy of the cosmos.\pI've only ever been able to document a single evolution from one of these Cosmic Runes, but it turned the Magpie Impling who stole it into a Lucky Impling that vanished before I could catch it for myself.."))
                 release
 		end
             case 6: 
-                msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pWhen local wildlife such as calves and bulls are exposed to Chaos Runes, they evolve into creatures that have only otherwise ever been seen deep in the tunnels below Barbarian Village.\pI wonder what connection that place has to Chaos Runes."))
+                msgbox(format("The bookcase contains various research notes that Rick has written.\pYou choose one at random.\pAll of the essence creatures around the tower like Pure, Rune, Essling, and even the Rune Guardians all have their own unique interactions with runestones.\pI still need to find more unusual runes to see what other evolutions are out there."))
                 release
 		end
         }
