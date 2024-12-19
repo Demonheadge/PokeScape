@@ -327,15 +327,17 @@ CHAMPION_BATTLE_WISE_OLD_MAN::
 
 testbattle_tzhaar::
 	setflag FLAG_TZHAAR_RANDOM
-	call RANDOM_PARTY_SIZE
 	trainerbattle_no_intro TRAINER_FIGHT_CAVES_POOL_1_TRAINER_1, BATTLE_TEST_CUPHOLDER_Text_2
 	clearflag FLAG_TZHAAR_RANDOM
 	return
 
 
 RANDOM_PARTY_SIZE::
-	random 6
-	switch VAR_RESULT
+	random 128
+	copyvar VAR_SEED, VAR_RESULT
+	setvar VAR_TEMP_9, 6
+	specialvar VAR_STORE_SEED_RESULT, GetSeededResultLessRandom
+	switch VAR_STORE_SEED_RESULT
 	case 0, RANDOM_PARTY_SIZE_3
 	case 1, RANDOM_PARTY_SIZE_4
 	case 2, RANDOM_PARTY_SIZE_5
@@ -343,6 +345,9 @@ RANDOM_PARTY_SIZE::
 	case 4, RANDOM_PARTY_SIZE_7
 	case 5, RANDOM_PARTY_SIZE_8
 RANDOM_PARTY_SIZE_1:
+	buffernumberstring STR_VAR_3, VAR_STORE_SEED_RESULT
+	msgbox RANDOM_PARTY_SIZE_Text_0
+	closemessage
 	return
 
 RANDOM_PARTY_SIZE_3:
@@ -533,3 +538,6 @@ GYM_BATTLE_GUNTHOR_Text_0:
 GYM_BATTLE_VANNAKA_Text_0:
 	.string "Haha, congratulations! You have\n"
 	.string "completed your slayer task.$"
+
+RANDOM_PARTY_SIZE_Text_0:
+	.string "VAR SEEDEDRESULT is {STR_VAR_3} .$"

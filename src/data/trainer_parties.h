@@ -7740,10 +7740,20 @@ static const struct TrainerMon sParty_FIGHT_CAVES_POOL_1[] = {
     .moves = {MOVE_TZ_TOK_ZEK, MOVE_HEAT_WAVE, MOVE_WHIRLWIND, MOVE_SUNNY_DAY}
     },
     {
+    .nickname = COMPOUND_STRING("Mini-marm"),
+    .isShiny = TRUE,
     .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ability = ABILITY_FLAME_BODY,
-    .lvl = 1,
+    .lvl = 2,
+    .species = SPECIES_TZ_KIH_SPIRIT_FORM,
+    .moves = {MOVE_TZ_TOK_ZEK, MOVE_HEAT_WAVE, MOVE_WHIRLWIND, MOVE_SUNNY_DAY}
+    },
+    {
+    .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+    .ability = ABILITY_FLAME_BODY,
+    .lvl = 3,
     .species = SPECIES_REBORN_WARRIOR,
     .moves = {MOVE_LAVA_PLUME, MOVE_ROCK_WRECKER, MOVE_PROTECT, MOVE_SUNNY_DAY}
     },
@@ -7751,7 +7761,7 @@ static const struct TrainerMon sParty_FIGHT_CAVES_POOL_1[] = {
     .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ability = ABILITY_MAGMA_ARMOR,
-    .lvl = 1,
+    .lvl = 4,
     .species = SPECIES_TZREK_JAD,
     .moves = {MOVE_MAGMA_STORM, MOVE_STOMPING_TANTRUM, MOVE_BULK_UP, MOVE_TZ_TOK_ZEK}
     },
@@ -7759,7 +7769,7 @@ static const struct TrainerMon sParty_FIGHT_CAVES_POOL_1[] = {
     .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ability = ABILITY_FLAME_BODY,
-    .lvl = 1,
+    .lvl = 5,
     .species = SPECIES_TOK_XIL,
     .moves = {MOVE_SUNNY_DAY, MOVE_THOUSAND_ARROWS, MOVE_LAVA_PLUME, MOVE_SOLAR_BEAM}
     },
@@ -7767,7 +7777,7 @@ static const struct TrainerMon sParty_FIGHT_CAVES_POOL_1[] = {
     .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ability = ABILITY_MAGICIAN,
-    .lvl = 1,
+    .lvl = 6,
     .species = SPECIES_YT_MEJKOT,
     .moves = {MOVE_TZ_TOK_ZEK, MOVE_LAVA_PLUME, MOVE_ANCIENT_POWER, MOVE_ENERGY_BALL}
     },
@@ -7775,7 +7785,7 @@ static const struct TrainerMon sParty_FIGHT_CAVES_POOL_1[] = {
     .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ability = ABILITY_MAGICIAN,
-    .lvl = 1,
+    .lvl = 7,
     .species = SPECIES_GUTHBIRD,
     .moves = {MOVE_TZ_TOK_ZEK, MOVE_LAVA_PLUME, MOVE_ANCIENT_POWER, MOVE_ENERGY_BALL}
     },
@@ -7783,7 +7793,7 @@ static const struct TrainerMon sParty_FIGHT_CAVES_POOL_1[] = {
     .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ability = ABILITY_FLAME_BODY,
-    .lvl = 1,
+    .lvl = 8,
     .species = SPECIES_FROG_BALLOON_FORM,
     .moves = {MOVE_TZ_TOK_ZEK, MOVE_HEAT_WAVE, MOVE_WHIRLWIND, MOVE_SUNNY_DAY}
     },
@@ -7791,7 +7801,7 @@ static const struct TrainerMon sParty_FIGHT_CAVES_POOL_1[] = {
     .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ability = ABILITY_FLAME_BODY,
-    .lvl = 1,
+    .lvl = 9,
     .species = SPECIES_GANODERMIC_BEAST,
     .moves = {MOVE_TZ_TOK_ZEK, MOVE_HEAT_WAVE, MOVE_WHIRLWIND, MOVE_SUNNY_DAY}
     },
@@ -7799,7 +7809,7 @@ static const struct TrainerMon sParty_FIGHT_CAVES_POOL_1[] = {
     .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ability = ABILITY_FLAME_BODY,
-    .lvl = 1,
+    .lvl = 10,
     .species = SPECIES_SAILFISH,
     .moves = {MOVE_TZ_TOK_ZEK, MOVE_HEAT_WAVE, MOVE_WHIRLWIND, MOVE_SUNNY_DAY}
     },
@@ -7807,7 +7817,7 @@ static const struct TrainerMon sParty_FIGHT_CAVES_POOL_1[] = {
     .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ability = ABILITY_FLAME_BODY,
-    .lvl = 1,
+    .lvl = 11,
     .species = SPECIES_LARUPIA_SPIRIT_FORM,
     .moves = {MOVE_TZ_TOK_ZEK, MOVE_HEAT_WAVE, MOVE_WHIRLWIND, MOVE_SUNNY_DAY}
     },
@@ -7815,7 +7825,7 @@ static const struct TrainerMon sParty_FIGHT_CAVES_POOL_1[] = {
     .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ability = ABILITY_FLAME_BODY,
-    .lvl = 1,
+    .lvl = 12,
     .species = SPECIES_COW_UNDEAD_FORM,
     .moves = {MOVE_TZ_TOK_ZEK, MOVE_HEAT_WAVE, MOVE_WHIRLWIND, MOVE_SUNNY_DAY}
     },
@@ -7823,7 +7833,7 @@ static const struct TrainerMon sParty_FIGHT_CAVES_POOL_1[] = {
     .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .ability = ABILITY_FLAME_BODY,
-    .lvl = 1,
+    .lvl = 13,
     .species = SPECIES_CAUSTIC_GAZER,
     .moves = {MOVE_TZ_TOK_ZEK, MOVE_HEAT_WAVE, MOVE_WHIRLWIND, MOVE_SUNNY_DAY}
     },

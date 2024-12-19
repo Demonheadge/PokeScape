@@ -1938,15 +1938,17 @@ u8 GetPoolIndex(u8 poolSize, u8 currNumMons, u16 *chosenSpecies, const struct Tr
 {
     u16 foundSpecies;
     u8 rnd;
+    u8 foundarray;
     u8 index;
     bool8 foundIndex = FALSE;
     while (!foundIndex)
     {
         rnd = Random() % poolSize;
         foundSpecies = trainer->pool[rnd].species;
-        for (index = 0; index < currNumMons; index++)
+        foundarray = trainer->pool[rnd].lvl;
+        for (index = 0; index < currNumMons; index++) //prevents same mons from appearing twice.
         {
-            if (foundSpecies == chosenSpecies[index])
+            if (foundarray == chosenSpecies[index])
                 break;
         }
         if (index == currNumMons)

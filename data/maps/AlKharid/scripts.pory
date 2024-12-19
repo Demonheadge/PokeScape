@@ -407,15 +407,23 @@ script CHAMPION_BATTLE_WISE_OLD_MAN
 script testbattle_tzhaar
 {
     setflag (FLAG_TZHAAR_RANDOM) // SET TO BE ABLE TO HAVE THE RANDOMISED BATTLES.
-    call(RANDOM_PARTY_SIZE)
+    //call(RANDOM_PARTY_SIZE)
 	trainerbattle_no_intro (TRAINER_FIGHT_CAVES_POOL_1_TRAINER_1, format("I lost."))
     clearflag (FLAG_TZHAAR_RANDOM) // ALWAYS UNSET AFTER THE FIGHTCAVES.
 	return
 }
 
 script RANDOM_PARTY_SIZE {
-    random(6)
-    switch (var(VAR_RESULT)) { 
+
+    random(128)
+    copyvar(VAR_SEED, VAR_RESULT)
+	setvar(VAR_TEMP_9, 6)
+    specialvar (VAR_STORE_SEED_RESULT, GetSeededResultLessRandom)
+
+
+    //add the random seed var
+    //random(6)
+    switch (var(VAR_STORE_SEED_RESULT)) { 
         case 0: 
             setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 1)
         case 1:
@@ -429,6 +437,9 @@ script RANDOM_PARTY_SIZE {
         case 5:
             setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 6)
     }
+    buffernumberstring(STR_VAR_3, VAR_STORE_SEED_RESULT) 
+    msgbox(format("VAR SEEDEDRESULT is {STR_VAR_3} ."))
+    closemessage
     return
 } 
 
