@@ -39,6 +39,8 @@
 #include "constants/trainers.h"
 #include "trainer_hill.h"
 #include "test_runner.h"
+#include "constants/flags.h"
+#include "event_data.h"
 
 static void OpponentHandleLoadMonSprite(u32 battler);
 static void OpponentHandleSwitchInAnim(u32 battler);
@@ -461,7 +463,8 @@ static u32 OpponentGetTrainerPicId(u32 battlerId)
     }
     else
     {
-        trainerPicId = gTrainers[gTrainerBattleOpponent_A].trainerPic;
+        if (FlagGet(FLAG_TZHAAR_RANDOM)) trainerPicId = gTrainersFightCaves[gTrainerBattleOpponent_A].trainerPic;
+        else trainerPicId = gTrainers[gTrainerBattleOpponent_A].trainerPic;
     }
 
     return trainerPicId;
