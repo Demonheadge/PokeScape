@@ -332,6 +332,12 @@ testbattle_tzhaar::
 	return
 
 
+reset_tzhaar::
+	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 0
+	clearflag FLAG_BADGE03_GET
+	return
+
+
 RANDOM_PARTY_SIZE::
 	random 128
 	copyvar VAR_SEED, VAR_RESULT

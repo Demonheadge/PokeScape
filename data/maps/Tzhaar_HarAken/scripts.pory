@@ -18,6 +18,7 @@ script FIGHT_CAVES_RESTRICTIONS_ON {
     //msgbox(format("Catching is disabled."))
     setflag(FLAG_TOGGLE_NO_BAG_USE)
     //msgbox(format("Bag is disabled."))
+    setflag (FLAG_TZHAAR_RANDOM) // SET TO BE ABLE TO HAVE THE RANDOMISED BATTLES.
     closemessage
     return
 }
@@ -26,6 +27,7 @@ script FIGHT_CAVES_RESTRICTIONS_OFF {
     //msgbox(format("Catching is enabled."))
     clearflag(FLAG_TOGGLE_NO_BAG_USE)
     //msgbox(format("Bag is enabled."))
+    clearflag (FLAG_TZHAAR_RANDOM) // ALWAYS UNSET AFTER THE FIGHTCAVES.
     closemessage
     return
 }

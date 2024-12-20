@@ -6936,7 +6936,7 @@ static const struct TrainerMon sParty_GYM_LEADER_TZHAAR_CHAMPION_1[] = {
     .ability = ABILITY_FLAME_BODY,
     .lvl = 35,
     .species = SPECIES_TZ_KIH_SPIRIT_FORM,
-    .moves = {MOVE_TZ_TOK_ZEK, MOVE_HEAT_WAVE, MOVE_WHIRLWIND, MOVE_SUNNY_DAY}
+    .moves = {MOVE_TZ_TOK_ZEK, MOVE_HEAT_WAVE, MOVE_WHIRLWIND, MOVE_WILL_O_WISP}
     },
     {
     .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
@@ -6944,7 +6944,7 @@ static const struct TrainerMon sParty_GYM_LEADER_TZHAAR_CHAMPION_1[] = {
     .ability = ABILITY_FLAME_BODY,
     .lvl = 35,
     .species = SPECIES_REBORN_WARRIOR,
-    .moves = {MOVE_LAVA_PLUME, MOVE_ROCK_WRECKER, MOVE_PROTECT, MOVE_SUNNY_DAY}
+    .moves = {MOVE_LAVA_PLUME, MOVE_ROCK_WRECKER, MOVE_PROTECT, MOVE_WILL_O_WISP}
     },
     {
     .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
@@ -6960,7 +6960,7 @@ static const struct TrainerMon sParty_GYM_LEADER_TZHAAR_CHAMPION_1[] = {
     .ability = ABILITY_FLAME_BODY,
     .lvl = 35,
     .species = SPECIES_TOK_XIL,
-    .moves = {MOVE_SUNNY_DAY, MOVE_THOUSAND_ARROWS, MOVE_LAVA_PLUME, MOVE_SOLAR_BEAM}
+    .moves = {MOVE_WILL_O_WISP, MOVE_THOUSAND_ARROWS, MOVE_LAVA_PLUME, MOVE_SOLAR_BEAM}
     },
     {
     .ev = TRAINER_PARTY_EVS(10, 252, 0, 0, 4, 242),
@@ -7836,5 +7836,213 @@ static const struct TrainerMon sParty_FIGHT_CAVES_POOL_1[] = {
     .lvl = 13,
     .species = SPECIES_CAUSTIC_GAZER,
     .moves = {MOVE_TZ_TOK_ZEK, MOVE_HEAT_WAVE, MOVE_WHIRLWIND, MOVE_SUNNY_DAY}
+    },
+};
+
+//TZHAAR GYM CHALLENGE POOL
+static const struct TrainerMon sParty_POOL_1_GymChallenge[] = {
+    {
+    .lvl = 1,
+    .species = SPECIES_TZ_KIH,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_HEAT_WAVE, MOVE_SMOKESCREEN, MOVE_STEALTH_ROCK, MOVE_WILL_O_WISP}
+    },
+    {
+    .lvl = 2,
+    .species = SPECIES_TZ_KIH,
+    .heldItem = ITEM_TINDERBOX,
+    .moves = {MOVE_TZ_TOK_ZEK, MOVE_POWER_GEM, MOVE_LAVA_PLUME, MOVE_WILL_O_WISP}
+    },
+    {
+    .lvl = 3,
+    .species = SPECIES_TZ_KIH,
+    .heldItem = ITEM_BOOK_OF_ZAMORAK,
+    .moves = {MOVE_HEAT_WAVE, MOVE_ENERGY_BALL, MOVE_STEALTH_ROCK, MOVE_SUNNY_DAY}
+    },
+    {
+    .lvl = 4,
+    .species = SPECIES_TZ_KEK,
+    .heldItem = ITEM_MITHRIL_SCIMITAR,
+    .moves = {MOVE_TORMENT, MOVE_STEALTH_ROCK, MOVE_ACID_ARMOR, MOVE_WILL_O_WISP}
+    },
+    {
+    .lvl = 5,
+    .species = SPECIES_TZ_KEK,
+    .heldItem = ITEM_TINDERBOX,
+    .moves = {MOVE_TZ_TOK_ZEK, MOVE_LAVA_PLUME, MOVE_EARTH_POWER, MOVE_WILL_O_WISP}
+    },
+    {
+    .lvl = 6,
+    .species = SPECIES_TZ_KEK,
+    .heldItem = ITEM_DRUID_POUCH,
+    .moves = {MOVE_SOLARBEAM, MOVE_LAVA_PLUME, MOVE_EARTH_POWER, MOVE_SUNNY_DAY}
+    },
+    {
+    .lvl = 7,
+    .species = SPECIES_TOK_XIL,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_TZ_TOK_ZEK, MOVE_SPIKE_CANNON, MOVE_EARTH_POWER, MOVE_WILL_O_WISP}
+    },
+    {
+    .lvl = 8,
+    .species = SPECIES_TOK_XIL,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ACID_ARMOR, MOVE_SPIKE_CANNON, MOVE_ANCIENT_POWER, MOVE_STEALTH_ROCK}
+    },
+    {
+    .lvl = 9,
+    .species = SPECIES_KET_DILL,
+    .heldItem = ITEM_DRAGON_CLAWS,
+    .moves = {MOVE_SPIKES, MOVE_IRON_DEFENSE, MOVE_EARTHQUAKE, MOVE_ROAR}
+    },
+    {
+    .lvl = 10,
+    .species = SPECIES_KET_DILL,
+    .heldItem = ITEM_ROCKCAKE,
+    .moves = {MOVE_ROTOTILLER, MOVE_DIG, MOVE_MUD_SLAP, MOVE_ROCK_SMASH}
+    },
+    {
+    .lvl = 11,
+    .species = SPECIES_YT_HURKOT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_TZ_TOK_ZEK, MOVE_RECOVER, MOVE_STOMPING_TANTRUM, MOVE_WILL_O_WISP}
+    },
+    {
+    .lvl = 12,
+    .species = SPECIES_YT_HURKOT,
+    .heldItem = ITEM_BOOK_OF_ZAMORAK,
+    .moves = {MOVE_SOLARBEAM, MOVE_RECOVER, MOVE_SUNNY_DAY, MOVE_WILL_O_WISP}
+    },
+    {
+    .lvl = 13,
+    .species = SPECIES_YT_HURKOT,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_IRON_DEFENSE, MOVE_RECOVER, MOVE_POWER_GEM, MOVE_WILL_O_WISP}
+    },
+    {
+    .lvl = 14,
+    .species = SPECIES_KET_ZEK,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_TZ_TOK_ZEK, MOVE_ROCK_SLIDE, MOVE_FIRE_SPIN, MOVE_MUD_SHOT}
+    },
+    {
+    .lvl = 15,
+    .species = SPECIES_KET_ZEK,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SPIKES, MOVE_ROAR, MOVE_REVENGE, MOVE_ENERGY_BALL}
+    },
+    {
+    .lvl = 16,
+    .species = SPECIES_EEL_LAVA_FORM,
+    .heldItem = ITEM_TINDERBOX,
+    .moves = {MOVE_INFERNO, MOVE_LAVA_PLUME, MOVE_PARABOLIC_CHARGE, MOVE_THUNDER_WAVE}
+    },
+    {
+    .lvl = 17,
+    .species = SPECIES_PYREFIEND,
+    .heldItem = ITEM_MITHRIL_SCIMITAR,
+    .moves = {MOVE_SMOKESCREEN, MOVE_VENGEANCE, MOVE_HEX, MOVE_WILL_O_WISP}
+    },
+    {
+    .lvl = 18,
+    .species = SPECIES_PYREFIEND,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_GRUDGE, MOVE_VENGEANCE, MOVE_SHADOW_CLAW, MOVE_WILL_O_WISP}
+    },
+    {
+    .lvl = 19,
+    .species = SPECIES_PYRELORD,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_GRUDGE, MOVE_BONE_RUSH, MOVE_SHADOW_CLAW, MOVE_WILL_O_WISP}
+    },
+    {
+    .lvl = 20,
+    .species = SPECIES_SPIDER_LAVA_FORM,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_LEECH_LIFE, MOVE_MAGMA_STORM, MOVE_SPIDER_WEB, MOVE_LAVA_PLUME}
+    },
+    {
+    .lvl = 21,
+    .species = SPECIES_REBORN_WARRIOR,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_LAVA_PLUME, MOVE_ROCK_WRECKER, MOVE_PROTECT, MOVE_WILL_O_WISP}
+    },
+    {
+    .lvl = 22,
+    .species = SPECIES_REBORN_MAGE,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_LAVA_PLUME, MOVE_ROCK_WRECKER, MOVE_PROTECT, MOVE_WILL_O_WISP}
+    },
+    {
+    .lvl = 23,
+    .species = SPECIES_REBORN_RANGER,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_LAVA_PLUME, MOVE_ROCK_WRECKER, MOVE_PROTECT, MOVE_WILL_O_WISP}
+    },
+    {
+    .lvl = 24,
+    .species = SPECIES_GOLEM_TITAN,
+    .heldItem = ITEM_FIGHTER_BOOTS,
+    .moves = {MOVE_EARTH_POWER, MOVE_POWER_UP_PUNCH, MOVE_BULK_UP, MOVE_IRON_DEFENSE}
+    },
+    {
+    .lvl = 25,
+    .species = SPECIES_GOLEM_TITAN,
+    .heldItem = ITEM_PHOENIX_NECKLACE,
+    .moves = {MOVE_SUPERPOWER, MOVE_POWER_UP_PUNCH, MOVE_MUD_SLAP, MOVE_LAVA_PLUME}
+    },
+    {
+    .lvl = 26,
+    .species = SPECIES_OBSIDIAN_GOLEM,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_ROCK_WRECKER, MOVE_POWER_UP_PUNCH, MOVE_HEADBUTT, MOVE_EARTH_POWER}
+    },
+    {
+    .lvl = 27,
+    .species = SPECIES_TZ_KIH,
+    },
+    {
+    .lvl = 28,
+    .species = SPECIES_TZ_KIH,
+    },
+    {
+    .lvl = 29,
+    .species = SPECIES_TZ_KIH,
+    },
+    {
+    .lvl = 30,
+    .species = SPECIES_TZ_KEK,
+    },
+    {
+    .lvl = 31,
+    .species = SPECIES_TZ_KEK,
+    },
+    {
+    .lvl = 32,
+    .species = SPECIES_TZ_KEK,
+    },
+    {
+    .lvl = 33,
+    .species = SPECIES_TOK_XIL,
+    },
+    {
+    .lvl = 34,
+    .species = SPECIES_TOK_XIL,
+    },
+    {
+    .lvl = 35,
+    .species = SPECIES_KET_DILL,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_KET_DILL,
+    },
+    {
+    .lvl = 37,
+    .species = SPECIES_YT_HURKOT,
+    },
+    {
+    .lvl = 38,
+    .species = SPECIES_YT_HURKOT,
     },
 };

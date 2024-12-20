@@ -413,6 +413,16 @@ script testbattle_tzhaar
 	return
 }
 
+
+script reset_tzhaar
+{
+    setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 0)
+    clearflag(FLAG_BADGE03_GET)
+
+    //setflag(FLAG_SUPPRESS_SPEAKER_NAME) //Doesn't allow the trainer name to show.
+}
+
+
 script RANDOM_PARTY_SIZE {
 
     random(128)
@@ -442,4 +452,11 @@ script RANDOM_PARTY_SIZE {
     closemessage
     return
 } 
+
+
+
+
+
+
+
 

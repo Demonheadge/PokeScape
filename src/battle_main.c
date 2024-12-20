@@ -1937,18 +1937,16 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
 u8 GetPoolIndex(u8 poolSize, u8 currNumMons, u16 *chosenSpecies, const struct TrainerFightCaves *trainer)
 {
     u16 foundSpecies;
-    u8 rnd;
-    u8 foundarray;
+    u16 rnd;
     u8 index;
     bool8 foundIndex = FALSE;
     while (!foundIndex)
     {
-        rnd = Random() % poolSize;
-        foundSpecies = trainer->pool[rnd].species;
-        foundarray = trainer->pool[rnd].lvl;
+        rnd = Random() % poolSize; 
+        foundSpecies = trainer->pool[rnd].lvl;
         for (index = 0; index < currNumMons; index++) //prevents same mons from appearing twice.
         {
-            if (foundarray == chosenSpecies[index])
+            if (foundSpecies == chosenSpecies[index])
                 break;
         }
         if (index == currNumMons)
@@ -1957,7 +1955,7 @@ u8 GetPoolIndex(u8 poolSize, u8 currNumMons, u16 *chosenSpecies, const struct Tr
     return rnd;
 }
 
-static void FixIllusionPartyPos(struct Pokemon *party, u32 partySize)
+static void FixIllusionPartyPos(struct Pokemon *party, u32 partySize) //Illusion Ability fix.
 {
     struct Pokemon tempMon;
     u16 lastMonSpecies = GetMonData(&party[partySize - 1], MON_DATA_SPECIES);
@@ -2096,7 +2094,7 @@ u8 CreateNPCTrainerPartyFromTrainerFightCaves(struct Pokemon *party, const struc
         u32 fixedOtId = 0;
         u32 ability = 0;
 
-        chosenSpecies[i] = poolData[poolIndex].species;
+        chosenSpecies[i] = poolData[poolIndex].lvl; //prevents same mons from appearing twice. //CHANGE MORE IN GetPoolIndex.
 
         if (trainer->doubleBattle == TRUE)
             personalityValue = 0x80;
@@ -2203,7 +2201,9 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
     u8 retVal;
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
-    if (FlagGet(FLAG_TZHAAR_RANDOM)) retVal = CreateNPCTrainerPartyFromTrainerFightCaves(party, &gTrainersFightCaves[trainerNum]);
+    if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && FlagGet(FLAG_TZHAAR_RANDOM)) {
+        retVal = CreateNPCTrainerPartyFromTrainerFightCaves(party, &gTrainersFightCaves[trainerNum]);
+    } 
     else {
         retVal = CreateNPCTrainerPartyFromTrainer(party, &gTrainers[trainerNum], firstTrainer, gBattleTypeFlags);
         if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && !(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER

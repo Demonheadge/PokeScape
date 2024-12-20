@@ -5228,7 +5228,12 @@ const struct Trainer gTrainers[] = {
 #define TRAINER_SANDWICH_LADY_1                         459
 */
 };
+//END OF TRAINERS
 
+
+
+
+//START OF POOLS
 const struct TrainerFightCaves gTrainersFightCaves[] = {
     [TRAINER_FIGHT_CAVES_POOL_1_TRAINER_1] =
     {
@@ -5239,7 +5244,70 @@ const struct TrainerFightCaves gTrainersFightCaves[] = {
         .items = {ITEM_CHOCOLATE_CAKE, ITEM_CHOCOLATE_CAKE, ITEM_POTION_SPDEF, ITEM_BLUEBERRY_SPECIAL},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
-        .pool = TRAINER_PARTY_FIGHT_CAVES(sParty_FIGHT_CAVES_POOL_1), //There should always be more than 6 mons in the pool.
-        .poolSize = 12, //The pool size must always be more than 6. (That way if there are 6 mons in the party it will have mons to pull from. Otherwise it will crash.)
+        .pool = TRAINER_PARTY_FIGHT_CAVES(sParty_POOL_1_GymChallenge), //There should always be more than 6 mons in the pool.
+        .poolSize = 38, //The pool size must always be more than 6. (That way if there are 6 mons in the party it will have mons to pull from. Otherwise it will crash.)
     },
+
+//TZHAAR GYM CHALLENGE
+[TRAINER_TZHAAR_GYMCHALLENGE_KET_HD] =
+    {
+        .trainerClass = TRAINER_CLASS_TZHAAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .trainerPic = TRAINER_PIC_tzhaar_ket_hd,
+        .trainerName = _("Tzhaar-Ket"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .pool = TRAINER_PARTY_FIGHT_CAVES(sParty_POOL_1_GymChallenge), //There should always be more than 6 mons in the pool.
+        .poolSize = 38, //The pool size must always be more than 6. (That way if there are 6 mons in the party it will have mons to pull from. Otherwise it will crash.)
+    },
+
+//FIGHT CAVES 
+[TRAINER_FIGHTCAVES_LOW_KET_HD] =
+    {
+        .trainerClass = TRAINER_CLASS_TZHAAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .trainerPic = TRAINER_PIC_tzhaar_ket_hd,
+        .trainerName = _("Tzhaar-Ket"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .pool = TRAINER_PARTY_FIGHT_CAVES(sParty_POOL_1_GymChallenge), //There should always be more than 6 mons in the pool.
+        .poolSize = 38, //The pool size must always be more than 6. (That way if there are 6 mons in the party it will have mons to pull from. Otherwise it will crash.)
+    },
+[TRAINER_FIGHTCAVES_MED_KET_HD] =
+    {
+        .trainerClass = TRAINER_CLASS_TZHAAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .trainerPic = TRAINER_PIC_tzhaar_ket_hd,
+        .trainerName = _("Tzhaar-Ket"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .pool = TRAINER_PARTY_FIGHT_CAVES(sParty_POOL_1_GymChallenge), //There should always be more than 6 mons in the pool.
+        .poolSize = 38, //The pool size must always be more than 6. (That way if there are 6 mons in the party it will have mons to pull from. Otherwise it will crash.)
+    },
+[TRAINER_FIGHTCAVES_HIGH_KET_HD] =
+    {
+        .trainerClass = TRAINER_CLASS_TZHAAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .trainerPic = TRAINER_PIC_tzhaar_ket_hd,
+        .trainerName = _("Tzhaar-Ket"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .pool = TRAINER_PARTY_FIGHT_CAVES(sParty_POOL_1_GymChallenge), //There should always be more than 6 mons in the pool.
+        .poolSize = 38, //The pool size must always be more than 6. (That way if there are 6 mons in the party it will have mons to pull from. Otherwise it will crash.)
+    },
+
+
+
+
+
+
+
+
+
+
+
 };
