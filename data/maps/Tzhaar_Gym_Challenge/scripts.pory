@@ -518,7 +518,7 @@ script ENCOUNTER_YT_HURKOT {
 
 
 
-script WAVE_LEVELS {
+script WAVE_LEVELS { //This sets the levels of the monsters of each wave.
     switch(var(VAR_TEMP_E)){
         case 0:
         case 1:
@@ -568,6 +568,10 @@ script WAVE_LEVELS {
 //-------------------------------------------------------------------------
 //-------------------------------------------------------------------------
 
+
+//----------------------------------//
+//        TRAINER - GA'AL           //
+//----------------------------------//
 script ENCOUNTER_TZHAAR_TRAINER_GAAL {
     lock
     faceplayer
@@ -577,35 +581,71 @@ script ENCOUNTER_TZHAAR_TRAINER_GAAL {
         case 3: //WAVE 3
         case 4: //WAVE 4
         case 5: //WAVE 5
-            call(TZHAAR_TRAINERS_WAVES_1_GAAL)
+            if (!flag(FLAG_BADGE03_GET)) {
+                call(Gaal_TRAINERS_TZHAAR_GYMCHALLENGE)
+            }
+            else {
+                call(TZHAAR_TRAINERS_WAVES_1_GAAL)
+            }
         case 6: 
         case 7: 
         case 8: 
         case 9: 
         case 10:
-            call(TZHAAR_TRAINERS_WAVES_2_GAAL)
+            call(TZHAAR_TRAINERS_WAVES_2_GAAL) //todo
         case 11:
         case 12:
         case 13:
         case 14:
         case 15:
-            call(TZHAAR_TRAINERS_WAVES_1_GAAL)
+            call(TZHAAR_TRAINERS_WAVES_1_GAAL) //todo
         case 16:
         case 17:
         case 18:
         case 19:
         case 20:
-            call(TZHAAR_TRAINERS_WAVES_1_GAAL)
+            call(TZHAAR_TRAINERS_WAVES_1_GAAL) //todo
         case 21:
         case 22:
         case 23:
         case 24:
         case 25: 
-            call(TZHAAR_TRAINERS_WAVES_1_GAAL)
+            call(TZHAAR_TRAINERS_WAVES_1_GAAL) //todo
     }
     return
 }
-script TZHAAR_TRAINERS_WAVES_1_GAAL
+
+script Gaal_TRAINERS_TZHAAR_GYMCHALLENGE
+{
+    random(12) 
+	switch (var(VAR_RESULT)) { 
+        case 0: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("We TzHaar will now engage you in battle!"), format("We TzHaar have lost."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 1: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("Is this heat too much for you?"), format("I'm melting!"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 2: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("You think you can defeat us?"), format("We admit defeat."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 3: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("Halt JalYt!"), format("TzHaar Halt…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 4: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("We are forged in the flames therefore we are stronger."), format("JalYt is stronger than us."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 5: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("We TzHaar are made of solid obsidian.\pWe are stronger than you will ever be."), format("Obsidian may be sharp, but it shatters easily."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 6: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("We TzHaar are forged in fire.\pYou don't stand a chance."), format("This JalYt burns brighter than the magma down here."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 7: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("We TzHaar were born on the day the volcano shook the foundation of the earth.\pWe can withstand anything."), format("We can withstand earthquakes, but not your skill in battle."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 8: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("RAAAGGUUHH!"), format("AWWARUGH…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 9: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("Turn to Tokkul you will!"), format("Turn to Tokkul we have…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 10: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("This will be your last gym challenge!"), format("Nevermind, this was our last gym challenge…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 11:
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("If I beat you, maybe Kimit-Kal will let me venture into the Kiln!"), format("Maybe one day I'll get my ancestor's memories back.."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+    } 
+}
+script TZHAAR_TRAINERS_WAVES_1_GAAL //todo
 {
     random(3) 
 	switch (var(VAR_RESULT)) { 
@@ -617,7 +657,7 @@ script TZHAAR_TRAINERS_WAVES_1_GAAL
             trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_3, 0, format("We TzHaar were born on the day the volcano shook the foundation of the earth.\pWe can withstand anything."), format("We can withstand earthquakes, but not your skill in battle."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
     } 
 }
-script TZHAAR_TRAINERS_WAVES_2_GAAL
+script TZHAAR_TRAINERS_WAVES_2_GAAL //todo
 {
     random(6) 
 	switch (var(VAR_RESULT)) { 
@@ -636,6 +676,11 @@ script TZHAAR_TRAINERS_WAVES_2_GAAL
     } 
 }
 
+
+
+//----------------------------------//
+//        TRAINER - KET OSRS        //
+//----------------------------------//
 script ENCOUNTER_TZHAAR_TRAINER_KET {
     lock
     faceplayer
@@ -650,7 +695,12 @@ script ENCOUNTER_TZHAAR_TRAINER_KET {
         case 8: 
         case 9: 
         case 10:
-            call(TZHAAR_TRAINERS_WAVES_LOW_KET)
+            if (!flag(FLAG_BADGE03_GET)) {
+                call(OSRSKet_TRAINERS_TZHAAR_GYMCHALLENGE)
+            }
+            else {
+                call(TZHAAR_TRAINERS_WAVES_LOW_KET) //Todo
+            }
         case 11:
         case 12:
         case 13:
@@ -666,11 +716,41 @@ script ENCOUNTER_TZHAAR_TRAINER_KET {
         case 23:
         case 24:
         case 25: 
-            call(TZHAAR_TRAINERS_WAVES_LOW_KET)
+            call(TZHAAR_TRAINERS_WAVES_LOW_KET) //Todo
     }
     return
 }
-script TZHAAR_TRAINERS_WAVES_LOW_KET
+script OSRSKet_TRAINERS_TZHAAR_GYMCHALLENGE
+{
+    random(12) 
+	switch (var(VAR_RESULT)) { 
+        case 0: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("We TzHaar will now engage you in battle!"), format("We TzHaar have lost."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 1: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("Is this heat too much for you?"), format("I'm melting!"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 2: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("You think you can defeat us?"), format("We admit defeat."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 3: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("Halt JalYt!"), format("TzHaar Halt…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 4: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("We are forged in the flames therefore we are stronger."), format("JalYt is stronger than us."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 5: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("We TzHaar are made of solid obsidian.\pWe are stronger than you will ever be."), format("Obsidian may be sharp, but it shatters easily."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 6: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("We TzHaar are forged in fire.\pYou don't stand a chance."), format("This JalYt burns brighter than the magma down here."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 7: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("We TzHaar were born on the day the volcano shook the foundation of the earth.\pWe can withstand anything."), format("We can withstand earthquakes, but not your skill in battle."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 8: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("RAAAGGUUHH!"), format("AWWARUGH…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 9: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("Turn to Tokkul you will!"), format("Turn to Tokkul we have…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 10: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("This will be your last gym challenge!"), format("Nevermind, this was our last gym challenge…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 11:
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("If I beat you, maybe Kimit-Kal will let me venture into the Kiln!"), format("Maybe one day I'll get my ancestor's memories back.."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+    } 
+}
+script TZHAAR_TRAINERS_WAVES_LOW_KET  //Todo
 {
     random(3) 
 	switch (var(VAR_RESULT)) { 
@@ -692,7 +772,9 @@ script TZHAAR_TRAINERS_WAVES_LOW_KET
 
 
 
-
+//----------------------------------//
+//        TRAINER - KET HD          //
+//----------------------------------//
 script ENCOUNTER_TZHAAR_TRAINER_HDKET {
     lock
     faceplayer
@@ -727,17 +809,18 @@ script ENCOUNTER_TZHAAR_TRAINER_HDKET {
         case 22:
         case 23:
         case 24:
-        case 25: 
             call(HDKet_TRAINERS_FIGHTCAVES_MED)
+        case 25: 
+            call(HDKet_TRAINERS_FIGHTCAVES_HIGH)
     }
     return
 }
 script HDKet_TRAINERS_TZHAAR_GYMCHALLENGE
 {
-    random(11) 
+    random(12) 
 	switch (var(VAR_RESULT)) { 
         case 0: 
-            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_1, 0, format("We TzHaar will now engage you in battle!"), format("We TzHaar have lost."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_HD, 0, format("We TzHaar will now engage you in battle!"), format("We TzHaar have lost."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
         case 1: 
             trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_HD, 0, format("Is this heat too much for you?"), format("I'm melting!"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
         case 2: 
@@ -758,6 +841,8 @@ script HDKet_TRAINERS_TZHAAR_GYMCHALLENGE
             trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_HD, 0, format("Turn to Tokkul you will!"), format("Turn to Tokkul we have…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
         case 10: 
             trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_HD, 0, format("This will be your last gym challenge!"), format("Nevermind, this was our last gym challenge…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 11:
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_HD, 0, format("If I beat you, maybe Kimit-Kal will let me venture into the Kiln!"), format("Maybe one day I'll get my ancestor's memories back.."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
     } 
 }
 script HDKet_TRAINERS_FIGHTCAVES_LOW
@@ -869,6 +954,10 @@ script SetGymTrainers_FIGHTCAVE {
     settrainerflag(TRAINER_FIGHTCAVES_MED_KET_HD)
     settrainerflag(TRAINER_FIGHTCAVES_HIGH_KET_HD)
 
+    settrainerflag(TRAINER_FIGHTCAVES_HIGH_KET_OSRS)
+    settrainerflag(TRAINER_TZHAAR_GYMCHALLENGE_GAAL)
+    
+
     return
 }
 script ClearGymTrainers_FIGHTCAVE {   
@@ -884,7 +973,9 @@ script ClearGymTrainers_FIGHTCAVE {
     cleartrainerflag(TRAINER_FIGHTCAVES_MED_KET_HD)
     cleartrainerflag(TRAINER_FIGHTCAVES_HIGH_KET_HD)
 
-    
+    cleartrainerflag(TRAINER_FIGHTCAVES_HIGH_KET_OSRS)
+    cleartrainerflag(TRAINER_TZHAAR_GYMCHALLENGE_GAAL)
+
     return
 }
 
@@ -1640,6 +1731,7 @@ script GYM_CHALLENGE_CHECK_IF_GOTO_NEXT_WAVE {
 // FIGHTCAVES_SET_SPAWN_LOCATION_X - Choose a location for the Object to spawn. "X" being for each npcs are spawning in the wave. To prevent them from spawning on top of eachother.
 // Addobject & Clearflag of the object you wish to spawn in.
 // VAR_POKESCAPE_TZHAAR_PARTY_SIZE - Sets the amount of mons in a randomised trainer's party.
+// VAR_TEMP_B - The levels of the monsters.
 
 script TZHAAR_GYM_CHALLENGE_WAVES_CONTROL {
     switch(var(VAR_TEMP_C)){

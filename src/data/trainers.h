@@ -5252,9 +5252,33 @@ const struct TrainerFightCaves gTrainersFightCaves[] = {
 [TRAINER_TZHAAR_GYMCHALLENGE_KET_HD] =
     {
         .trainerClass = TRAINER_CLASS_TZHAAR,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
         .trainerPic = TRAINER_PIC_tzhaar_ket_hd,
         .trainerName = _("Tzhaar-Ket"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .pool = TRAINER_PARTY_FIGHT_CAVES(sParty_POOL_1_GymChallenge), //There should always be more than 6 mons in the pool.
+        .poolSize = 38, //The pool size must always be more than 6. (That way if there are 6 mons in the party it will have mons to pull from. Otherwise it will crash.)
+    },
+[TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS] =
+    {
+        .trainerClass = TRAINER_CLASS_TZHAAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_tzhaar_ket,
+        .trainerName = _("Tzhaar-Ket"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .pool = TRAINER_PARTY_FIGHT_CAVES(sParty_POOL_1_GymChallenge), //There should always be more than 6 mons in the pool.
+        .poolSize = 38, //The pool size must always be more than 6. (That way if there are 6 mons in the party it will have mons to pull from. Otherwise it will crash.)
+    },
+[TRAINER_TZHAAR_GYMCHALLENGE_GAAL] =
+    {
+        .trainerClass = TRAINER_CLASS_TZHAAR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .trainerPic = TRAINER_PIC_ga_al,
+        .trainerName = _("Ga'al"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
