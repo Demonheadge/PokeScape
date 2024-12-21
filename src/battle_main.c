@@ -5391,7 +5391,12 @@ static void HandleEndTurn_BattleWon(void)
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && !(gBattleTypeFlags & BATTLE_TYPE_LINK))
     {
         BattleStopLowHpSound();
-        gBattlescriptCurrInstr = BattleScript_LocalTrainerBattleWon;
+        if (FlagGet(FLAG_TZHAAR_RANDOM) == TRUE) {
+            gBattlescriptCurrInstr = BattleScript_TzhaarTrainerBattleWon;
+        }
+        else {
+            gBattlescriptCurrInstr = BattleScript_LocalTrainerBattleWon;
+        }
 
         switch (gTrainers[gTrainerBattleOpponent_A].trainerClass)
         {
@@ -5417,7 +5422,13 @@ static void HandleEndTurn_BattleWon(void)
     }
     else
     {
-        gBattlescriptCurrInstr = BattleScript_PayDayMoneyAndPickUpItems;
+        
+        if (FlagGet(FLAG_TZHAAR_RANDOM) == TRUE) {
+            gBattlescriptCurrInstr = BattleScript_TzhaarWildBattleWon;
+        }
+        else {
+            gBattlescriptCurrInstr = BattleScript_PayDayMoneyAndPickUpItems;
+        }
     }
 
     gBattleMainFunc = HandleEndTurn_FinishBattle;
@@ -5453,7 +5464,12 @@ static void HandleEndTurn_BattleLost(void)
     }
     else
     {
-        gBattlescriptCurrInstr = BattleScript_LocalBattleLost;
+        if (FlagGet(FLAG_TZHAAR_RANDOM) == TRUE) {
+            gBattlescriptCurrInstr = BattleScript_TzhaarBattleLost;
+        }
+        else {
+            gBattlescriptCurrInstr = BattleScript_LocalBattleLost;
+        }
     }
 
     gBattleMainFunc = HandleEndTurn_FinishBattle;

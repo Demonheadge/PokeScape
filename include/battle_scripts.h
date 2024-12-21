@@ -552,6 +552,9 @@ extern const u8 BattleScript_EatingSandwich[];
 extern const u8 BattleScript_RemoveWeather[];
 extern const u8 BattleScript_TzhaarHeat[];
 extern const u8 BattleScript_TzhaarHeatLava[];
+extern const u8 BattleScript_TzhaarTrainerBattleWon[];
+extern const u8 BattleScript_TzhaarBattleLost[];
+extern const u8 BattleScript_TzhaarWildBattleWon[];
 
 
 

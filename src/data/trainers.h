@@ -5252,7 +5252,7 @@ const struct TrainerFightCaves gTrainersFightCaves[] = {
 [TRAINER_TZHAAR_GYMCHALLENGE_KET_HD] =
     {
         .trainerClass = TRAINER_CLASS_TZHAAR,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
         .trainerPic = TRAINER_PIC_tzhaar_ket_hd,
         .trainerName = _("Tzhaar-Ket"),
         .items = {},
@@ -5264,7 +5264,7 @@ const struct TrainerFightCaves gTrainersFightCaves[] = {
 [TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS] =
     {
         .trainerClass = TRAINER_CLASS_TZHAAR,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
         .trainerPic = TRAINER_PIC_tzhaar_ket,
         .trainerName = _("Tzhaar-Ket"),
         .items = {},
@@ -5276,7 +5276,7 @@ const struct TrainerFightCaves gTrainersFightCaves[] = {
 [TRAINER_TZHAAR_GYMCHALLENGE_GAAL] =
     {
         .trainerClass = TRAINER_CLASS_TZHAAR,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
         .trainerPic = TRAINER_PIC_ga_al,
         .trainerName = _("Ga'al"),
         .items = {},
@@ -5290,7 +5290,7 @@ const struct TrainerFightCaves gTrainersFightCaves[] = {
 [TRAINER_FIGHTCAVES_LOW_KET_HD] =
     {
         .trainerClass = TRAINER_CLASS_TZHAAR,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
         .trainerPic = TRAINER_PIC_tzhaar_ket_hd,
         .trainerName = _("Tzhaar-Ket"),
         .items = {},
@@ -5302,7 +5302,7 @@ const struct TrainerFightCaves gTrainersFightCaves[] = {
 [TRAINER_FIGHTCAVES_MED_KET_HD] =
     {
         .trainerClass = TRAINER_CLASS_TZHAAR,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
         .trainerPic = TRAINER_PIC_tzhaar_ket_hd,
         .trainerName = _("Tzhaar-Ket"),
         .items = {},
@@ -5314,7 +5314,7 @@ const struct TrainerFightCaves gTrainersFightCaves[] = {
 [TRAINER_FIGHTCAVES_HIGH_KET_HD] =
     {
         .trainerClass = TRAINER_CLASS_TZHAAR,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_SKILLER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
         .trainerPic = TRAINER_PIC_tzhaar_ket_hd,
         .trainerName = _("Tzhaar-Ket"),
         .items = {},

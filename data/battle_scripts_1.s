@@ -11093,3 +11093,38 @@ BattleScript_TzhaarHeatLava::
 	playanimation BS_ATTACKER, B_ANIM_SUN_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
+
+
+
+
+BattleScript_TzhaarTrainerBattleWon::
+	printstring STRINGID_PLAYERDEFEATEDTRAINER1
+	trainerslidein BS_ATTACKER
+	waitstate
+	printstring STRINGID_TRAINER1LOSETEXT
+	gettokkul
+	printstring STRINGID_PLAYERGOTTOKKUL
+	waitmessage B_WAIT_TIME_LONG
+	end2
+BattleScript_TzhaarWildBattleWon::
+	givepaydaymoney
+	pickup
+	gettokkul
+	printstring STRINGID_PLAYERGOTTOKKUL
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
+BattleScript_TzhaarBattleLost::
+	jumpifbattletype BATTLE_TYPE_TRAINER, BattleScript_TzhaarBattleLostEnd
+	trytrainerslideplayerlostmsg
+	printstring STRINGID_PLAYERWHITEOUT
+	waitmessage B_WAIT_TIME_LONG
+	end2
+BattleScript_TzhaarBattleLostEnd::
+	trytrainerslideplayerlostmsg
+	printstring STRINGID_PLAYERLOSTTOENEMYTRAINER
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
+
+

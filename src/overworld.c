@@ -427,6 +427,8 @@ void Overworld_ResetStateAfterDigEscRope(void)
     FlagClear(B_FLAG_NO_CATCHING);
     FlagClear(B_FLAG_DYNAMAX_BATTLE);
     FlagClear(B_FLAG_SKY_BATTLE);
+    //PokeScape
+    FlagClear(FLAG_TZHAAR_RANDOM);
 }
 #endif
 
