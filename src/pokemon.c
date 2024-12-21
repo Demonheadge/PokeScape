@@ -6302,6 +6302,8 @@ u8 GetTrainerEncounterMusicId(u16 trainerOpponentId)
         return GetTrainerEncounterMusicIdInBattlePyramid(trainerOpponentId);
     else if (InTrainerHillChallenge())
         return GetTrainerEncounterMusicIdInTrainerHill(trainerOpponentId);
+    else if (FlagGet(FLAG_TZHAAR_RANDOM) == TRUE) 
+        return TRAINER_FIGHT_CAVES_ENCOUNTER_MUSIC(trainerOpponentId);
     else
         return TRAINER_ENCOUNTER_MUSIC(trainerOpponentId);
 }

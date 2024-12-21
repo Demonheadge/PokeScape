@@ -183,12 +183,17 @@ movement ENTER_FIGHT_CAVES {
     face_down
 }
 
-script FIGHTCAVES_WAVE_TRANSITION {
+script FIGHTCAVES_WAVE_TRANSITION_START {
     //fadescreenswapbuffers
     fadescreenswapbuffers(FADE_TO_BLACK)
     buffernumberstring(0, VAR_TEMP_E)
     msgbox(format("WAVE: {STR_VAR_1}"))
 	closemessage
+    //fadescreenswapbuffers(FADE_FROM_BLACK)
+    return
+}
+
+script FIGHTCAVES_WAVE_TRANSITION_END {
     fadescreenswapbuffers(FADE_FROM_BLACK)
     return
 }
@@ -205,6 +210,8 @@ script ENEMY_TZKIH_1 {
     else {
         call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
     }
+    release
+    end
 }
 script ENEMY_TZKIH_2 {
     call(ENCOUNTER_TZ_KIH)
@@ -217,6 +224,8 @@ script ENEMY_TZKIH_2 {
     else {
         call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
     }
+    release
+    end
 }
 script ENEMY_TZKIH_3 {
     call(ENCOUNTER_TZ_KIH)
@@ -229,6 +238,8 @@ script ENEMY_TZKIH_3 {
     else {
         call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
     }
+    release
+    end
 }
 script ENEMY_GAAL_4 {   //TRAINER
     call(TZHAAR_WAVES_PARTY_SIZE)
@@ -257,6 +268,8 @@ script ENEMY_KEK_8 {
     else {
         call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
     }
+    release
+    end
 }
 script ENEMY_KEK_9 {
     call(ENCOUNTER_TZ_KEK)
@@ -269,6 +282,8 @@ script ENEMY_KEK_9 {
     else {
         call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
     }
+    release
+    end
 }
 script ENEMY_CHAMPION_A {
 
@@ -277,7 +292,7 @@ script ENEMY_CHAMPION_A {
         goto(GYMLEADER_TZHAAR_CHAMPION)
     }
     else { //if has badge
-
+        //todo
     }
     removeobject(OBJ_EVENT_ID_CHAMPION_A)
     setflag(FLAG_TEMP_A)
@@ -288,6 +303,8 @@ script ENEMY_CHAMPION_A {
     else {
         call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
     }
+    release
+    end
 }
 
 script ENEMY_KETDILL_B {
@@ -300,6 +317,8 @@ script ENEMY_KETDILL_B {
     else {
         call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
     }
+    release
+    end
 }
 script ENEMY_TOKXIL_C {
     call(ENCOUNTER_TOK_XIL)
@@ -311,6 +330,8 @@ script ENEMY_TOKXIL_C {
     else {
         call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
     }
+    release
+    end
 }
 script ENEMY_YTHURKOT_D {
     call(ENCOUNTER_YT_HURKOT)
@@ -322,6 +343,8 @@ script ENEMY_YTHURKOT_D {
     else {
         call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
     }
+    release
+    end
 }
 script ENEMY_YTHURKOT_E {
     call(ENCOUNTER_YT_HURKOT)
@@ -333,6 +356,8 @@ script ENEMY_YTHURKOT_E {
     else {
         call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
     }
+    release
+    end
 }
 
 script ENEMY_TZREKJAD_F {
@@ -345,6 +370,8 @@ script ENEMY_TZREKJAD_F {
     else {
         call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
     }
+    release
+    end
 }
 script ENEMY_HDKET_10 {   //TRAINER
     call(TZHAAR_WAVES_PARTY_SIZE)
@@ -1380,14 +1407,14 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
     switch(var(VAR_TEMP_C)){
 		case 0: //begin WAVE 1
             setvar(VAR_TEMP_E, 1) //WAVE: 1
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
             clearflag(FLAG_TEMP_1)
         case 1: //begin WAVE 2
             setvar(VAR_TEMP_E, 2) //WAVE: 2
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1398,14 +1425,14 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
             clearflag(FLAG_TEMP_8)
         case 3: //begin WAVE 3
             setvar(VAR_TEMP_E, 3) //WAVE: 3
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_4) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_GAAL_4) 
             clearflag(FLAG_TEMP_4)
         case 4: //begin WAVE 4
             setvar(VAR_TEMP_E, 4) //WAVE: 4
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             //setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             //call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             //addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1420,7 +1447,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
             clearflag(FLAG_TEMP_6)
         case 6: //begin WAVE 5
             setvar(VAR_TEMP_E, 5) //WAVE: 5
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
 
             if (!flag(FLAG_BADGE03_GET)) {
                 setvar(VAR_TEMP_F, OBJ_EVENT_ID_CHAMPION_A) //OBJECT TO SPAWN.
@@ -1441,7 +1468,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
 
         case 7: //begin WAVE 6
             setvar(VAR_TEMP_E, 6) 
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KEK_8) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KEK_8)
@@ -1453,7 +1480,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 9: //begin WAVE 7
             setvar(VAR_TEMP_E, 7) 
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1469,7 +1496,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 12: //begin WAVE 8
             setvar(VAR_TEMP_E, 8)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KET_6) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KET_6) 
@@ -1482,7 +1509,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 14: //begin WAVE 9
             setvar(VAR_TEMP_E, 9)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KET_6) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KET_6) 
@@ -1494,7 +1521,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 16: //begin WAVE 10
             setvar(VAR_TEMP_E, 10)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KETDILL_B) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KETDILL_B) 
@@ -1502,7 +1529,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 17: //begin WAVE 11
             setvar(VAR_TEMP_E, 11)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1514,7 +1541,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 19: //begin WAVE 12
             setvar(VAR_TEMP_E, 12)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_4) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_GAAL_4) 
@@ -1526,7 +1553,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 21: //begin WAVE 13
             setvar(VAR_TEMP_E, 13)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KETDILL_B) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KETDILL_B) 
@@ -1538,7 +1565,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 23: //begin WAVE 14
             setvar(VAR_TEMP_E, 14)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1558,7 +1585,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 27: //begin WAVE 15
             setvar(VAR_TEMP_E, 15)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TOKXIL_C) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TOKXIL_C) 
@@ -1566,7 +1593,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 28: //begin WAVE 16
             setvar(VAR_TEMP_E, 16)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1578,7 +1605,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 30: //begin WAVE 17
             setvar(VAR_TEMP_E, 17)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1594,7 +1621,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 33: //begin WAVE 18
             setvar(VAR_TEMP_E, 18)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KETDILL_B) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KETDILL_B) 
@@ -1606,7 +1633,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 35: //begin WAVE 19
             setvar(VAR_TEMP_E, 19)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_YTHURKOT_D) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_YTHURKOT_D)
@@ -1618,7 +1645,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 38: //begin WAVE 20 -- FIRE CAPE REWARD
             setvar(VAR_TEMP_E, 20)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZREKJAD_F) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_SPECIAL) //LOCATION (SPECIAL)
             addobject(OBJ_EVENT_ID_TZREKJAD_F)
@@ -1651,14 +1678,14 @@ script GYM_CHALLENGE_CHECK_IF_GOTO_NEXT_WAVE {
     switch(var(VAR_TEMP_C)){
 		case 0: //begin WAVE 1
             setvar(VAR_TEMP_E, 1) //WAVE: 1
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
             clearflag(FLAG_TEMP_1)
         case 1: //begin WAVE 2
             setvar(VAR_TEMP_E, 2) //WAVE: 2
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1669,14 +1696,14 @@ script GYM_CHALLENGE_CHECK_IF_GOTO_NEXT_WAVE {
             clearflag(FLAG_TEMP_8)
         case 3: //begin WAVE 3
             setvar(VAR_TEMP_E, 3) //WAVE: 3
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_4) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_GAAL_4) //   TRAINER: TOK-XIL
             clearflag(FLAG_TEMP_4)
         case 4: //begin WAVE 4
             setvar(VAR_TEMP_E, 4) //WAVE: 4
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_5) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_GAAL_5) //   TRAINER: KET-DILL
@@ -1691,7 +1718,7 @@ script GYM_CHALLENGE_CHECK_IF_GOTO_NEXT_WAVE {
             clearflag(FLAG_TEMP_1)
         case 7: //begin WAVE 5
             setvar(VAR_TEMP_E, 5) //WAVE: 5
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             addobject(OBJ_EVENT_ID_CHAMPION_A)
             clearflag(FLAG_TEMP_A)   
     }
@@ -1731,7 +1758,7 @@ script GYM_CHALLENGE_CHECK_IF_GOTO_NEXT_WAVE {
 // VAR_TEMP_C - The amount of monsters defeated in the wave. (Wave_Control) will check When "x" number of mons are defeated to see if it can go to the next wave.  e.g. wave 5, might need 23 monsters defeated so VAR_TEMP_C will need to be 23 in order to start wave 6.
 // After each monster is defeated it will try to call the (Wave_Control) script to see if it can move onto the next wave.
 // VAR_TEMP_E - Set what the current WAVE is.
-// FIGHTCAVES_WAVE_TRANSITION - Give Info about next wave starting.
+// FIGHTCAVES_WAVE_TRANSITION_START - Give Info about next wave starting.
 // VAR_TEMP_F - Load object into the VAR to set it's spawning position.
 // FIGHTCAVES_SET_SPAWN_LOCATION_X - Choose a location for the Object to spawn. "X" being for each npcs are spawning in the wave. To prevent them from spawning on top of eachother.
 // Addobject & Clearflag of the object you wish to spawn in.
@@ -1742,14 +1769,15 @@ script TZHAAR_GYM_CHALLENGE_WAVES_CONTROL {
     switch(var(VAR_TEMP_C)){
 		case 0: //begin WAVE 1
             setvar(VAR_TEMP_E, 1) //WAVE: 1
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
             clearflag(FLAG_TEMP_1)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
         case 1: //begin WAVE 2
             setvar(VAR_TEMP_E, 2) //WAVE: 2
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1758,16 +1786,18 @@ script TZHAAR_GYM_CHALLENGE_WAVES_CONTROL {
             call(FIGHTCAVES_SET_SPAWN_LOCATION_2) //LOCATION (2)
             addobject(OBJ_EVENT_ID_KEK_8)
             clearflag(FLAG_TEMP_8)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
         case 3: //begin WAVE 3
             setvar(VAR_TEMP_E, 3) //WAVE: 3
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_4) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_GAAL_4) 
             clearflag(FLAG_TEMP_4)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
         case 4: //begin WAVE 4
             setvar(VAR_TEMP_E, 4) //WAVE: 4
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1776,16 +1806,18 @@ script TZHAAR_GYM_CHALLENGE_WAVES_CONTROL {
             call(FIGHTCAVES_SET_SPAWN_LOCATION_2) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KET_HD_10)
             clearflag(FLAG_TEMP_10)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
         case 6: //begin WAVE 5
             setvar(VAR_TEMP_E, 5) //WAVE: 5
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KET_6) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KET_6) 
             clearflag(FLAG_TEMP_6)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
         case 7: //begin WAVE 6
             setvar(VAR_TEMP_E, 6) 
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KEK_8) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KEK_8)
@@ -1794,16 +1826,18 @@ script TZHAAR_GYM_CHALLENGE_WAVES_CONTROL {
             call(FIGHTCAVES_SET_SPAWN_LOCATION_2) //LOCATION (2)
             addobject(OBJ_EVENT_ID_GAAL_4) 
             clearflag(FLAG_TEMP_4)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
         case 9: //begin WAVE 7
             setvar(VAR_TEMP_E, 7) 
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KETDILL_B) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KETDILL_B)
             clearflag(FLAG_TEMP_B)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
         case 10: //begin WAVE 8
             setvar(VAR_TEMP_E, 8)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KET_HD_10) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KET_HD_10) 
@@ -1812,9 +1846,10 @@ script TZHAAR_GYM_CHALLENGE_WAVES_CONTROL {
             call(FIGHTCAVES_SET_SPAWN_LOCATION_2) //LOCATION (2)
             addobject(OBJ_EVENT_ID_GAAL_4) 
             clearflag(FLAG_TEMP_4)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
         case 12: //begin WAVE 9
             setvar(VAR_TEMP_E, 9)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KET_6) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KET_6) 
@@ -1823,13 +1858,15 @@ script TZHAAR_GYM_CHALLENGE_WAVES_CONTROL {
             call(FIGHTCAVES_SET_SPAWN_LOCATION_2) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KET_HD_10) 
             clearflag(FLAG_TEMP_10)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
         case 14: //begin WAVE 10 //GYM LEADER
             setvar(VAR_TEMP_E, 10)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_CHAMPION_A) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_SPECIAL) //LOCATION (1)
             addobject(OBJ_EVENT_ID_CHAMPION_A)
             clearflag(FLAG_TEMP_A)  
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
     }
 }
 

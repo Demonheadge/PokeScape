@@ -22,11 +22,16 @@ GIVE_TOKKUL::
 
 
 TZHAAR_GYM_ROOM_POST_WIN::
-	msgbox TZHAAR_GYM_ROOM_POST_WIN_Text_0
-	setvar VAR_TEMP_E, 5000
-	call GIVE_TOKKUL
+	namebox TZHAAR_GYM_ROOM_POST_WIN_Text_0
 	msgbox TZHAAR_GYM_ROOM_POST_WIN_Text_1
 	closemessage
+	hidenamebox
+	setvar VAR_TEMP_E, 5000
+	call GIVE_TOKKUL
+	namebox TZHAAR_GYM_ROOM_POST_WIN_Text_0
+	msgbox TZHAAR_GYM_ROOM_POST_WIN_Text_2
+	closemessage
+	hidenamebox
 	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 35
 	release
 	end
@@ -35,8 +40,8 @@ TZHAAR_GYM_ROOM_POST_WIN::
 TZHAAR_GYM_ROOM_LOST::
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP
 	waitmovement 0
-	namebox TZHAAR_GYM_ROOM_LOST_Text_0
-	msgbox TZHAAR_GYM_ROOM_LOST_Text_1
+	namebox TZHAAR_GYM_ROOM_POST_WIN_Text_0
+	msgbox TZHAAR_GYM_ROOM_LOST_Text_0
 	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1
 	hidenamebox
 	closemessage
@@ -217,7 +222,7 @@ BATTLE_MOD_SARNIE::
 NPC_TZHAAR_GYM_LEADER::
 	lock
 	faceplayer
-	namebox TZHAAR_GYM_ROOM_LOST_Text_0
+	namebox TZHAAR_GYM_ROOM_POST_WIN_Text_0
 	compare VAR_POKESCAPE_TZHAAR_GYM_QUEST, 0
 	goto_if_eq NPC_TZHAAR_GYM_LEADER_2
 NPC_TZHAAR_GYM_LEADER_1:
@@ -364,7 +369,7 @@ TRIGGER_TZHAAR_GYM_LEADER::
 	applymovement 1, Movement_InteractFACEUP
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACEDOWN
 	waitmovement 0
-	namebox TZHAAR_GYM_ROOM_LOST_Text_0
+	namebox TZHAAR_GYM_ROOM_POST_WIN_Text_0
 	msgbox TRIGGER_TZHAAR_GYM_LEADER_Text_0
 	closemessage
 	hidenamebox
@@ -416,16 +421,19 @@ NPC_TZHAAR_GYM_GAAL_2_2:
 
 
 GIVE_TOKKUL_Text_0:
-	.string "PLAYER OBTAINED {STR_VAR_1}\n"
-	.string "TOKKUL.$"
+	.string "{PLAYER} obtained\n"
+	.string "{STR_VAR_1} TOKKUL.$"
 
 TZHAAR_GYM_ROOM_POST_WIN_Text_0:
+	.string "Kimit-Kal$"
+
+TZHAAR_GYM_ROOM_POST_WIN_Text_1:
 	.string "Congratulations on your victory JalYt.\p"
 	.string "Please accept before you go please\n"
 	.string "accept this Tokkul as an extra reward\l"
 	.string "for defeating our gym.$"
 
-TZHAAR_GYM_ROOM_POST_WIN_Text_1:
+TZHAAR_GYM_ROOM_POST_WIN_Text_2:
 	.string "If you wish to prove yourself even more\n"
 	.string "you should visit our Fight Caves in the\l"
 	.string "westside of our city.\p"
@@ -433,9 +441,6 @@ TZHAAR_GYM_ROOM_POST_WIN_Text_1:
 	.string "battles in your future MvM Challenges.$"
 
 TZHAAR_GYM_ROOM_LOST_Text_0:
-	.string "Kimit-Kal$"
-
-TZHAAR_GYM_ROOM_LOST_Text_1:
 	.string "Us Tzhaar have proven Victorious this\n"
 	.string "time.\p"
 	.string "Come back and challenge us again when\n"

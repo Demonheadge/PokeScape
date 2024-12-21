@@ -85,6 +85,7 @@ struct TrainerFightCaves
 };
 
 #define TRAINER_ENCOUNTER_MUSIC(trainer)((gTrainers[trainer].encounterMusic_gender & 0x7F))
+#define TRAINER_FIGHT_CAVES_ENCOUNTER_MUSIC(trainer)((gTrainersFightCaves[trainer].encounterMusic_gender & 0x7F))
 
 extern const u16 gMinigameDigits_Pal[];
 extern const u32 gMinigameDigits_Gfx[];
