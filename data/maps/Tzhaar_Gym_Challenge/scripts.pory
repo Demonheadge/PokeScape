@@ -1802,11 +1802,11 @@ script TZHAAR_GYM_CHALLENGE_WAVES_CONTROL {
             setvar(VAR_TEMP_E, 2) //WAVE: 2
             call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
-            call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_2) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
             clearflag(FLAG_TEMP_1)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KEK_8) //OBJECT TO SPAWN.
-            call(FIGHTCAVES_SET_SPAWN_LOCATION_2) //LOCATION (2)
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_3) //LOCATION (2)
             addobject(OBJ_EVENT_ID_KEK_8)
             clearflag(FLAG_TEMP_8)
             call(FIGHTCAVES_WAVE_TRANSITION_END)
@@ -1814,7 +1814,7 @@ script TZHAAR_GYM_CHALLENGE_WAVES_CONTROL {
             setvar(VAR_TEMP_E, 3) //WAVE: 3
             call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_4) //OBJECT TO SPAWN.
-            call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_4) //LOCATION (1)
             addobject(OBJ_EVENT_ID_GAAL_4) 
             clearflag(FLAG_TEMP_4)
             call(FIGHTCAVES_WAVE_TRANSITION_END)
@@ -1834,7 +1834,7 @@ script TZHAAR_GYM_CHALLENGE_WAVES_CONTROL {
             setvar(VAR_TEMP_E, 5) //WAVE: 5
             call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KET_6) //OBJECT TO SPAWN.
-            call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_3) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KET_6) 
             clearflag(FLAG_TEMP_6)
             call(FIGHTCAVES_WAVE_TRANSITION_END)
@@ -1842,11 +1842,11 @@ script TZHAAR_GYM_CHALLENGE_WAVES_CONTROL {
             setvar(VAR_TEMP_E, 6) 
             call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KEK_8) //OBJECT TO SPAWN.
-            call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_4) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KEK_8)
             clearflag(FLAG_TEMP_8)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_4) //OBJECT TO SPAWN.
-            call(FIGHTCAVES_SET_SPAWN_LOCATION_2) //LOCATION (2)
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (2)
             addobject(OBJ_EVENT_ID_GAAL_4) 
             clearflag(FLAG_TEMP_4)
             call(FIGHTCAVES_WAVE_TRANSITION_END)
@@ -1854,7 +1854,7 @@ script TZHAAR_GYM_CHALLENGE_WAVES_CONTROL {
             setvar(VAR_TEMP_E, 7) 
             call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KETDILL_B) //OBJECT TO SPAWN.
-            call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_2) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KETDILL_B)
             clearflag(FLAG_TEMP_B)
             call(FIGHTCAVES_WAVE_TRANSITION_END)
@@ -1862,11 +1862,11 @@ script TZHAAR_GYM_CHALLENGE_WAVES_CONTROL {
             setvar(VAR_TEMP_E, 8)
             call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KET_HD_10) //OBJECT TO SPAWN.
-            call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_3) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KET_HD_10) 
             clearflag(FLAG_TEMP_10)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_4) //OBJECT TO SPAWN.
-            call(FIGHTCAVES_SET_SPAWN_LOCATION_2) //LOCATION (2)
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_4) //LOCATION (2)
             addobject(OBJ_EVENT_ID_GAAL_4) 
             clearflag(FLAG_TEMP_4)
             call(FIGHTCAVES_WAVE_TRANSITION_END)

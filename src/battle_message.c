@@ -3287,7 +3287,7 @@ static const u8 *BattleStringGetOpponentNameByTrainerId(u16 trainerId, u8 *text,
     }
     else
     {
-        if (FlagGet(FLAG_TZHAAR_RANDOM)) toCpy = gTrainersFightCaves[trainerId].trainerName;
+        if (FlagGet(FLAG_TZHAAR_RANDOM)) toCpy = gTrainersFightCaves[trainerId].trainerName; //todo
         else toCpy = gTrainers[trainerId].trainerName;
     }
 

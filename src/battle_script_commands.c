@@ -4251,7 +4251,13 @@ static void Cmd_getexp(void)
                     && !gBattleStruct->wildVictorySong)
                 {
                     BattleStopLowHpSound();
-                    PlayBGM(MUS_VICTORY_WILD); //  MUS_PS_TRAINER_VICTORY
+                    
+                    if (FlagGet(FLAG_TZHAAR_RANDOM) == TRUE) {
+                        PlayBGM(MUS_PS_TRAINER_VICTORY);
+                    }
+                    else {
+                        PlayBGM(MUS_VICTORY_WILD); //  MUS_PS_TRAINER_VICTORY
+                    }
                     gBattleStruct->wildVictorySong++;
                 }
 
