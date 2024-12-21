@@ -2093,6 +2093,13 @@ u8 CreateNPCTrainerPartyFromTrainerFightCaves(struct Pokemon *party, const struc
         u32 otIdType = OT_ID_RANDOM_NO_SHINY;
         u32 fixedOtId = 0;
         u32 ability = 0;
+        u8 customlevel = poolData[poolIndex].lvl;
+        u8 lvlPoolRnd = 0;
+
+        if (FlagGet(FLAG_POKESCAPE_USECUSTOM_POOL_LEVEL) == TRUE) {
+            lvlPoolRnd = Random() % VarGet(VAR_TEMP_B); 
+            customlevel = (VarGet(VAR_TEMP_A) + lvlPoolRnd);
+        }
 
         chosenSpecies[i] = poolData[poolIndex].lvl; //prevents same mons from appearing twice. //CHANGE MORE IN GetPoolIndex.
 
@@ -2116,7 +2123,7 @@ u8 CreateNPCTrainerPartyFromTrainerFightCaves(struct Pokemon *party, const struc
             otIdType = OT_ID_PRESET;
             fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
         }
-        CreateMon(&party[i], poolData[poolIndex].species, poolData[poolIndex].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
+        CreateMon(&party[i], poolData[poolIndex].species, customlevel, 0, TRUE, personalityValue, otIdType, fixedOtId);
         SetMonData(&party[i], MON_DATA_HELD_ITEM, &poolData[poolIndex].heldItem);
 
         CustomTrainerPartyAssignMoves(&party[i], &poolData[poolIndex]);

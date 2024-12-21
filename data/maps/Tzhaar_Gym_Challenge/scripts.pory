@@ -243,18 +243,22 @@ script ENEMY_TZKIH_3 {
 }
 script ENEMY_GAAL_4 {   //TRAINER
     call(TZHAAR_WAVES_PARTY_SIZE)
+    call(WAVE_LEVELS)
     call(ENCOUNTER_TZHAAR_TRAINER_GAAL)
 }
 script ENEMY_GAAL_5 {   //TRAINER
     call(TZHAAR_WAVES_PARTY_SIZE)
+    call(WAVE_LEVELS)
     call(ENCOUNTER_TZHAAR_TRAINER_GAAL)
 }
 script ENEMY_KET_6 {   //TRAINER
     call(TZHAAR_WAVES_PARTY_SIZE)
+    call(WAVE_LEVELS)
     call(ENCOUNTER_TZHAAR_TRAINER_KET)
 }
 script ENEMY_KET_7 {   //TRAINER
     call(TZHAAR_WAVES_PARTY_SIZE)
+    call(WAVE_LEVELS)
     call(ENCOUNTER_TZHAAR_TRAINER_KET)
 }
 script ENEMY_KEK_8 {
@@ -375,10 +379,12 @@ script ENEMY_TZREKJAD_F {
 }
 script ENEMY_HDKET_10 {   //TRAINER
     call(TZHAAR_WAVES_PARTY_SIZE)
+    call(WAVE_LEVELS)
     call(ENCOUNTER_TZHAAR_TRAINER_HDKET)
 }
 script ENEMY_HDKET_11 {   //TRAINER
     call(TZHAAR_WAVES_PARTY_SIZE)
+    call(WAVE_LEVELS)
     call(ENCOUNTER_TZHAAR_TRAINER_HDKET)
 }
 
@@ -411,7 +417,7 @@ script ENCOUNTER_TZ_KIH {
     }
     else { // if fightcaves
         call(WAVE_LEVELS)
-        setwildbattle (SPECIES_TZ_KIH, VAR_TEMP_B, ITEM_FIRECAPE) 
+        setwildbattle (SPECIES_TZ_KIH, VAR_CUSTOM_TRAINERPOOL_LEVEL, ITEM_FIRECAPE) 
     }
 	dowildbattle
     switch(var(VAR_RESULT)){
@@ -446,7 +452,7 @@ script ENCOUNTER_TZ_KEK {
     }
     else { // if fightcaves
         call(WAVE_LEVELS)
-        setwildbattle (SPECIES_TZ_KEK, VAR_TEMP_B, ITEM_FIRECAPE) 
+        setwildbattle (SPECIES_TZ_KEK, VAR_CUSTOM_TRAINERPOOL_LEVEL, ITEM_FIRECAPE) 
     }
 	dowildbattle
     switch(var(VAR_RESULT)){
@@ -482,7 +488,7 @@ script ENCOUNTER_KET_DILL {
     }
     else { // if fightcaves
         call(WAVE_LEVELS)
-        setwildbattle (SPECIES_KET_DILL, VAR_TEMP_B, ITEM_FIRECAPE) 
+        setwildbattle (SPECIES_KET_DILL, VAR_CUSTOM_TRAINERPOOL_LEVEL, ITEM_FIRECAPE) 
     }
 	dowildbattle
     switch(var(VAR_RESULT)){
@@ -512,7 +518,7 @@ script ENCOUNTER_TOK_XIL {
 	closemessage
 	delay(1)
     call(WAVE_LEVELS)
-    setwildbattle (SPECIES_TOK_XIL, VAR_TEMP_B, ITEM_FIRECAPE) 
+    setwildbattle (SPECIES_TOK_XIL, VAR_CUSTOM_TRAINERPOOL_LEVEL, ITEM_FIRECAPE) 
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
@@ -534,7 +540,7 @@ script ENCOUNTER_YT_HURKOT {
 	closemessage
 	delay(1)
     call(WAVE_LEVELS)
-    setwildbattle (SPECIES_YT_HURKOT, VAR_TEMP_B, ITEM_FIRECAPE) 
+    setwildbattle (SPECIES_YT_HURKOT, VAR_CUSTOM_TRAINERPOOL_LEVEL, ITEM_FIRECAPE) 
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
@@ -548,7 +554,16 @@ script ENCOUNTER_YT_HURKOT {
 
 
 
-
+script mathtest {
+    setvar(VAR_TEMP_A, 30) //base level.
+    setvar(VAR_TEMP_B, 6)  //amount of randomness
+    random(VAR_TEMP_B) 
+    copyvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_RESULT) //Copy it out of TEMP_A to be used elsewhere.
+    addvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_TEMP_A) // Add A + B(result) = The intended Level. into TEMP_A.
+    buffernumberstring(0, VAR_CUSTOM_TRAINERPOOL_LEVEL)
+    msgbox(format("VAR_CUSTOM_TRAINERPOOL_LEVEL: {STR_VAR_1}"))
+	closemessage
+}
 
 
 script WAVE_LEVELS { //This sets the levels of the monsters of each wave.
@@ -564,33 +579,41 @@ script WAVE_LEVELS { //This sets the levels of the monsters of each wave.
         case 8:
         case 9:
 		case 10: // 30 - 35
-            random(5) 
-            copyvar(VAR_TEMP_B, VAR_RESULT)
-            addvar(VAR_TEMP_B, 30)
+            setvar(VAR_TEMP_A, 30) //base level.
+            setvar(VAR_TEMP_B, 6)  //amount of randomness 0,1,2,3,4,5
+            random(VAR_TEMP_B) 
+            copyvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_RESULT) //Copy it out of TEMP_A to be used elsewhere.
+            addvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_TEMP_A) // Add A + B(result) = The intended Level. into TEMP_A.
         case 11:
         case 12:
         case 13:
         case 14:
         case 15: // 35 - 40
-            random(5) 
-            copyvar(VAR_TEMP_B, VAR_RESULT)
-            addvar(VAR_TEMP_B, 35)
+            setvar(VAR_TEMP_A, 35) //base level.
+            setvar(VAR_TEMP_B, 6)  //amount of randomness 0,1,2,3,4,5
+            random(VAR_TEMP_B) 
+            copyvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_RESULT) //Copy it out of TEMP_A to be used elsewhere.
+            addvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_TEMP_A) // Add A + B(result) = The intended Level. into TEMP_A.
         case 16:
         case 17:
         case 18:
         case 19:
         case 20: // 40 - 50
-            random(5) 
-            copyvar(VAR_TEMP_B, VAR_RESULT)
-            addvar(VAR_TEMP_B, 40)
+            setvar(VAR_TEMP_A, 40) //base level.
+            setvar(VAR_TEMP_B, 11)  //amount of randomness 0,1,2,3,4,5
+            random(VAR_TEMP_B) 
+            copyvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_RESULT) //Copy it out of TEMP_A to be used elsewhere.
+            addvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_TEMP_A) // Add A + B(result) = The intended Level. into TEMP_A.
         case 21:
         case 22:
         case 23:
         case 24:
         case 25: // 50 - 60
-            random(5) 
-            copyvar(VAR_TEMP_B, VAR_RESULT)
-            addvar(VAR_TEMP_B, 50)
+            setvar(VAR_TEMP_A, 50) //base level.
+            setvar(VAR_TEMP_B, 11)  //amount of randomness 0,1,2,3,4,5
+            random(VAR_TEMP_B) 
+            copyvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_RESULT) //Copy it out of TEMP_A to be used elsewhere.
+            addvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_TEMP_A) // Add A + B(result) = The intended Level. into TEMP_A.
     }
     return
 }
@@ -1157,7 +1180,7 @@ script RANDOM_ENEMY_SPAWN {
         }
     }
 //SPAWN LIST (B)
-    elif (var(VAR_TEMP_B) == 1) {
+    elif (var(VAR_CUSTOM_TRAINERPOOL_LEVEL) == 1) {
         random(2)
         switch (var(VAR_RESULT)) {
             case 0:
@@ -1763,7 +1786,7 @@ script GYM_CHALLENGE_CHECK_IF_GOTO_NEXT_WAVE {
 // FIGHTCAVES_SET_SPAWN_LOCATION_X - Choose a location for the Object to spawn. "X" being for each npcs are spawning in the wave. To prevent them from spawning on top of eachother.
 // Addobject & Clearflag of the object you wish to spawn in.
 // VAR_POKESCAPE_TZHAAR_PARTY_SIZE - Sets the amount of mons in a randomised trainer's party.
-// VAR_TEMP_B - The levels of the monsters.
+// VAR_CUSTOM_TRAINERPOOL_LEVEL - The levels of the monsters.
 
 script TZHAAR_GYM_CHALLENGE_WAVES_CONTROL {
     switch(var(VAR_TEMP_C)){

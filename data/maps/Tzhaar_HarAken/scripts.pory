@@ -19,6 +19,7 @@ script FIGHT_CAVES_RESTRICTIONS_ON {
     setflag(FLAG_TOGGLE_NO_BAG_USE)
     //msgbox(format("Bag is disabled."))
     setflag (FLAG_TZHAAR_RANDOM) // SET TO BE ABLE TO HAVE THE RANDOMISED BATTLES.
+    setflag(FLAG_POKESCAPE_USECUSTOM_POOL_LEVEL) //Enable this if using the randomised WAVE levels.
     closemessage
     return
 }
@@ -28,6 +29,7 @@ script FIGHT_CAVES_RESTRICTIONS_OFF {
     clearflag(FLAG_TOGGLE_NO_BAG_USE)
     //msgbox(format("Bag is enabled."))
     clearflag (FLAG_TZHAAR_RANDOM) // ALWAYS UNSET AFTER THE FIGHTCAVES.
+    clearflag(FLAG_POKESCAPE_USECUSTOM_POOL_LEVEL)
     closemessage
     return
 }
