@@ -363,6 +363,12 @@ const u8 gBattleBackgroundTerrainNames[][26] =
     [BATTLE_TERRAIN_CAVE]       = _("NORMAL - CAVE            "),
     [BATTLE_TERRAIN_BUILDING]   = _("NORMAL - BUILDING        "),
     [BATTLE_TERRAIN_PLAIN]      = _("NORMAL - PLAIN           "),
+    [BATTLE_TERRAIN_POKESCAPE_WILDERNESS]   = _("NORMAL - WILDERNESS    "),
+    [BATTLE_TERRAIN_POKESCAPE_WHEAT]        = _("NORMAL - WHEAT         "),
+    [BATTLE_TERRAIN_POKESCAPE_BARROWS]      = _("NORMAL - BARROWS       "),
+    [BATTLE_TERRAIN_POKESCAPE_GRASS]        = _("NORMAL - GRASS         "),
+    [BATTLE_TERRAIN_POKESCAPE_TZHAAR]       = _("NORMAL - TZHAAR        "),
+    [BATTLE_TERRAIN_POKESCAPE_TZHAAR_LAVA]  = _("NORMAL - LAVA          "),
 };
 //Function declarations
 static void PrintDigitChars(struct PokemonDebugMenu *data);
@@ -926,8 +932,10 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
     {
         if (increment)
         {
-            if (data->battleTerrain == BATTLE_TERRAIN_PLAIN)
+            if (data->battleTerrain == BATTLE_TERRAIN_POKESCAPE_TZHAAR_LAVA)
                 data->battleBgType += 1;
+            else if (data->battleTerrain == BATTLE_TERRAIN_PLAIN)
+                data->battleTerrain += 13;
             else
                 data->battleTerrain += 1;
         }
@@ -935,6 +943,8 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
         {
             if (data->battleTerrain == BATTLE_TERRAIN_GRASS)
                 data->battleBgType = MAP_BATTLE_SCENE_RAYQUAZA;
+            else if (data->battleTerrain == BATTLE_TERRAIN_POKESCAPE_WILDERNESS)
+                data->battleTerrain -= 13;
             else
                 data->battleTerrain -= 1;
         }
@@ -946,7 +956,7 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
         else
         {
             data->battleBgType = MAP_BATTLE_SCENE_NORMAL;
-            data->battleTerrain = BATTLE_TERRAIN_PLAIN;
+            data->battleTerrain = BATTLE_TERRAIN_POKESCAPE_TZHAAR_LAVA;
         }
     }
     else if (data->battleBgType == MAP_BATTLE_SCENE_RAYQUAZA)

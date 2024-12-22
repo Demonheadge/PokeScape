@@ -5085,7 +5085,8 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                         || (currentMap ==  MAP_KARAMJA_VOLCANO_B1F )
                         || (currentMap ==  MAP_KARAMJA_VOLCANO_B2F )
                         || (currentMap ==  MAP_KARAMJA_VOLCANO_B3F )
-                        || (currentMap ==  MAP_TZHAAR_1F )
+                        || (currentMap ==  MAP_MOR_UL_REK )
+                        || (currentMap ==  MAP_TZHAAR_GYM_ROOM )
                         || (currentMap ==  MAP_TZHAAR_FIGHT_CAVES )
                         || (currentMap ==  MAP_TZHAAR_CAVES_1 )
                         || (currentMap ==  MAP_TZHAAR_CAVES_2 )
@@ -5112,7 +5113,8 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                         || (currentMap ==  MAP_KARAMJA_VOLCANO_B1F )
                         || (currentMap ==  MAP_KARAMJA_VOLCANO_B2F )
                         || (currentMap ==  MAP_KARAMJA_VOLCANO_B3F )
-                        || (currentMap ==  MAP_TZHAAR_1F )
+                        || (currentMap ==  MAP_MOR_UL_REK )
+                        || (currentMap ==  MAP_TZHAAR_GYM_ROOM )
                         || (currentMap ==  MAP_TZHAAR_FIGHT_CAVES )
                         || (currentMap ==  MAP_TZHAAR_CAVES_1 )
                         || (currentMap ==  MAP_TZHAAR_CAVES_2 )
@@ -5139,7 +5141,8 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
                         || (currentMap ==  MAP_KARAMJA_VOLCANO_B1F )
                         || (currentMap ==  MAP_KARAMJA_VOLCANO_B2F )
                         || (currentMap ==  MAP_KARAMJA_VOLCANO_B3F )
-                        || (currentMap ==  MAP_TZHAAR_1F )
+                        || (currentMap ==  MAP_MOR_UL_REK )
+                        || (currentMap ==  MAP_TZHAAR_GYM_ROOM )
                         || (currentMap ==  MAP_TZHAAR_FIGHT_CAVES )
                         || (currentMap ==  MAP_TZHAAR_CAVES_1 )
                         || (currentMap ==  MAP_TZHAAR_CAVES_2 )
@@ -6302,6 +6305,8 @@ u8 GetTrainerEncounterMusicId(u16 trainerOpponentId)
         return GetTrainerEncounterMusicIdInBattlePyramid(trainerOpponentId);
     else if (InTrainerHillChallenge())
         return GetTrainerEncounterMusicIdInTrainerHill(trainerOpponentId);
+    else if (FlagGet(FLAG_TZHAAR_RANDOM) == TRUE) 
+        return TRAINER_FIGHT_CAVES_ENCOUNTER_MUSIC(trainerOpponentId);
     else
         return TRAINER_ENCOUNTER_MUSIC(trainerOpponentId);
 }

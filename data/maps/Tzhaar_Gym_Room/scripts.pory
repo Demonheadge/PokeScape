@@ -1,6 +1,6 @@
 const OBJ_EVENT_ID_TZTOKJAD = 11
 
-mapscripts Tzhaar_FightCaves_MapScripts {
+mapscripts Tzhaar_Gym_Room_MapScripts {
 
     MAP_SCRIPT_ON_TRANSITION 
     {
@@ -9,10 +9,35 @@ mapscripts Tzhaar_FightCaves_MapScripts {
 
     MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_POKESCAPE_TZHAAR_GYM_QUEST, 10: TZHAAR_GYM_ROOM_LOST // If you lose or retire from the Gym Challenge.
+        VAR_POKESCAPE_TZHAAR_GYM_QUEST, 30: TZHAAR_GYM_ROOM_POST_WIN //When you win the gym badge.
     ]
     
 }
 
+script GIVE_TOKKUL {
+    buffernumberstring(0, VAR_TEMP_E)
+    playfanfare(MUS_OBTAIN_B_POINTS)
+    msgbox(format("{PLAYER} obtained\n{STR_VAR_1} TOKKUL."))
+    waitfanfare
+	closemessage
+    return
+}
+
+script TZHAAR_GYM_ROOM_POST_WIN {
+    namebox("Kimit-Kal")
+    msgbox(format("Congratulations on your victory JalYt.\pPlease accept before you go please accept this Tokkul as an extra reward for defeating our gym."))
+    closemessage
+    hidenamebox
+    setvar(VAR_TEMP_E, 5000)
+    call(GIVE_TOKKUL)
+    namebox("Kimit-Kal")
+    msgbox(format("If you wish to prove yourself even more you should visit our Fight Caves in the westside of our city.\pOtherwise we wish you to have glorious battles in your future MvM Challenges."))
+    closemessage
+    hidenamebox
+    setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 35)
+    release
+    end
+}
 
 script TZHAAR_GYM_ROOM_LOST {
     applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
@@ -254,7 +279,7 @@ script NPC_TZHAAR_GYM_LEADER
         setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1)
     }
 
-    if (var(VAR_POKESCAPE_TZHAAR_GYM_QUEST) == 30) {
+    if ((var(VAR_POKESCAPE_TZHAAR_GYM_QUEST) == 30) || (var(VAR_POKESCAPE_TZHAAR_GYM_QUEST) == 35))  {
         msgbox(format("Congratulations on your victory JalYt.\pIf you wish to prove yourself even more you should visit our Fight Caves in the westside of our city.\pOtherwise we wish you to have glorious battles in your future MvM Challenges."))
     }
     hidenamebox

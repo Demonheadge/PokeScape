@@ -5332,14 +5332,14 @@
       "blockdata_filepath": "data/layouts/Kalphite_Caves_B3F/map.bin"
     },
     {
-      "id": "LAYOUT_TZHAAR_1F",
-      "name": "Tzhaar_1F_Layout",
+      "id": "LAYOUT_MOR_UL_REK",
+      "name": "Mor_Ul_Rek_Layout",
       "width": 80,
       "height": 40,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_PokeScape_Caves",
-      "border_filepath": "data/layouts/Tzhaar_1F/border.bin",
-      "blockdata_filepath": "data/layouts/Tzhaar_1F/map.bin"
+      "border_filepath": "data/layouts/Mor_Ul_Rek/border.bin",
+      "blockdata_filepath": "data/layouts/Mor_Ul_Rek/map.bin"
     },
     {
       "id": "LAYOUT_GIANT_MOLE_CAVE",
@@ -5352,14 +5352,14 @@
       "blockdata_filepath": "data/layouts/Giant_Mole_Cave/map.bin"
     },
     {
-      "id": "LAYOUT_TZHAAR_FIGHT_CAVES",
-      "name": "Tzhaar_FightCaves_Layout",
+      "id": "LAYOUT_TZHAAR_GYM_ROOM",
+      "name": "Tzhaar_Gym_Room_Layout",
       "width": 14,
       "height": 14,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_PokeScape_Caves",
-      "border_filepath": "data/layouts/Tzhaar_FightCaves/border.bin",
-      "blockdata_filepath": "data/layouts/Tzhaar_FightCaves/map.bin"
+      "border_filepath": "data/layouts/Tzhaar_Gym_Room/border.bin",
+      "blockdata_filepath": "data/layouts/Tzhaar_Gym_Room/map.bin"
     },
     {
       "id": "LAYOUT_ROUTE39",
@@ -8760,6 +8760,16 @@
       "secondary_tileset": "gTileset_IndoorTowns2",
       "border_filepath": "data/layouts/BarbarianVillage_House_3/border.bin",
       "blockdata_filepath": "data/layouts/BarbarianVillage_House_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_TZHAAR_FIGHT_CAVES",
+      "name": "Tzhaar_Fight_Caves_Layout",
+      "width": 30,
+      "height": 32,
+      "primary_tileset": "gTileset_PokeScapeOutdoors",
+      "secondary_tileset": "gTileset_PokeScape_Caves",
+      "border_filepath": "data/layouts/Tzhaar_Fight_Caves/border.bin",
+      "blockdata_filepath": "data/layouts/Tzhaar_Fight_Caves/map.bin"
     }
   ]
 }

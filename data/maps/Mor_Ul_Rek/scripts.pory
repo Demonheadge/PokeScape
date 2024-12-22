@@ -1,4 +1,4 @@
-mapscripts Tzhaar_1F_MapScripts {
+mapscripts Mor_Ul_Rek_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setvar(VAR_EVOLUTION_MAP_STATE, 8) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
         call(TZHAAR_STATE)
@@ -32,7 +32,7 @@ script TZHAAR_STATE {
 }
 
 script TZHAAR_HEAL_ZONE {
-    setrespawn(HEAL_LOCATION_TZHAAR_1F)
+    setrespawn(HEAL_LOCATION_MOR_UL_REK)
     setvar(VAR_TEMP_0, 1)
     end
 }
@@ -51,7 +51,7 @@ script STORYMODE_TZHAAR_NPC
     subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_MAIN_STORY, 9)
     setflag(FLAG_TEMP_1F)
     removeobject(26)
-    setrespawn(HEAL_LOCATION_TZHAAR_1F)
+    setrespawn(HEAL_LOCATION_MOR_UL_REK)
     release
     end
 }

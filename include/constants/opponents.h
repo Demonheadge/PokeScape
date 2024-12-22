@@ -475,6 +475,14 @@
 #define TRAINER_TZHAAR_CAVES_TRAINER_1					469
 #define TRAINER_TZHAAR_CAVES_TRAINER_2					470
 #define TRAINER_TZHAAR_CAVES_TRAINER_3					471
+#define TRAINER_FIGHT_CAVES_POOL_1_TRAINER_1			472
+#define TRAINER_TZHAAR_GYMCHALLENGE_KET_HD			    473
+#define TRAINER_FIGHTCAVES_LOW_KET_HD			        474
+#define TRAINER_FIGHTCAVES_MED_KET_HD			        475
+#define TRAINER_FIGHTCAVES_HIGH_KET_HD			        476
+#define TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS			477
+#define TRAINER_TZHAAR_GYMCHALLENGE_GAAL			    478
+
 
 
 
@@ -486,7 +494,7 @@
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      (TRAINER_TZHAAR_CAVES_TRAINER_3 + 1)
+#define TRAINERS_COUNT                      (TRAINER_TZHAAR_GYMCHALLENGE_GAAL + 1)
 #define MAX_TRAINERS_COUNT                  864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

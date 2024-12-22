@@ -1,21 +1,47 @@
-Tzhaar_FightCaves_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Tzhaar_FightCaves_MapScripts_MAP_SCRIPT_ON_TRANSITION
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, Tzhaar_FightCaves_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
+Tzhaar_Gym_Room_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Tzhaar_Gym_Room_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Tzhaar_Gym_Room_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
-Tzhaar_FightCaves_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+Tzhaar_Gym_Room_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	return
 
-Tzhaar_FightCaves_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+Tzhaar_Gym_Room_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_POKESCAPE_TZHAAR_GYM_QUEST, 10, TZHAAR_GYM_ROOM_LOST
+	map_script_2 VAR_POKESCAPE_TZHAAR_GYM_QUEST, 30, TZHAAR_GYM_ROOM_POST_WIN
 	.2byte 0
+
+
+GIVE_TOKKUL::
+	buffernumberstring 0, VAR_TEMP_E
+	playfanfare MUS_OBTAIN_B_POINTS
+	msgbox GIVE_TOKKUL_Text_0
+	waitfanfare
+	closemessage
+	return
+
+
+TZHAAR_GYM_ROOM_POST_WIN::
+	namebox TZHAAR_GYM_ROOM_POST_WIN_Text_0
+	msgbox TZHAAR_GYM_ROOM_POST_WIN_Text_1
+	closemessage
+	hidenamebox
+	setvar VAR_TEMP_E, 5000
+	call GIVE_TOKKUL
+	namebox TZHAAR_GYM_ROOM_POST_WIN_Text_0
+	msgbox TZHAAR_GYM_ROOM_POST_WIN_Text_2
+	closemessage
+	hidenamebox
+	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 35
+	release
+	end
 
 
 TZHAAR_GYM_ROOM_LOST::
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP
 	waitmovement 0
-	namebox TZHAAR_GYM_ROOM_LOST_Text_0
-	msgbox TZHAAR_GYM_ROOM_LOST_Text_1
+	namebox TZHAAR_GYM_ROOM_POST_WIN_Text_0
+	msgbox TZHAAR_GYM_ROOM_LOST_Text_0
 	setvar VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1
 	hidenamebox
 	closemessage
@@ -196,7 +222,7 @@ BATTLE_MOD_SARNIE::
 NPC_TZHAAR_GYM_LEADER::
 	lock
 	faceplayer
-	namebox TZHAAR_GYM_ROOM_LOST_Text_0
+	namebox TZHAAR_GYM_ROOM_POST_WIN_Text_0
 	compare VAR_POKESCAPE_TZHAAR_GYM_QUEST, 0
 	goto_if_eq NPC_TZHAAR_GYM_LEADER_2
 NPC_TZHAAR_GYM_LEADER_1:
@@ -207,6 +233,8 @@ NPC_TZHAAR_GYM_LEADER_4:
 	goto_if_eq NPC_TZHAAR_GYM_LEADER_11
 NPC_TZHAAR_GYM_LEADER_10:
 	compare VAR_POKESCAPE_TZHAAR_GYM_QUEST, 30
+	goto_if_eq NPC_TZHAAR_GYM_LEADER_16
+	compare VAR_POKESCAPE_TZHAAR_GYM_QUEST, 35
 	goto_if_eq NPC_TZHAAR_GYM_LEADER_16
 NPC_TZHAAR_GYM_LEADER_15:
 	hidenamebox
@@ -341,7 +369,7 @@ TRIGGER_TZHAAR_GYM_LEADER::
 	applymovement 1, Movement_InteractFACEUP
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACEDOWN
 	waitmovement 0
-	namebox TZHAAR_GYM_ROOM_LOST_Text_0
+	namebox TZHAAR_GYM_ROOM_POST_WIN_Text_0
 	msgbox TRIGGER_TZHAAR_GYM_LEADER_Text_0
 	closemessage
 	hidenamebox
@@ -392,10 +420,27 @@ NPC_TZHAAR_GYM_GAAL_2_2:
 	goto NPC_TZHAAR_GYM_GAAL_2_1
 
 
-TZHAAR_GYM_ROOM_LOST_Text_0:
+GIVE_TOKKUL_Text_0:
+	.string "{PLAYER} obtained\n"
+	.string "{STR_VAR_1} TOKKUL.$"
+
+TZHAAR_GYM_ROOM_POST_WIN_Text_0:
 	.string "Kimit-Kal$"
 
-TZHAAR_GYM_ROOM_LOST_Text_1:
+TZHAAR_GYM_ROOM_POST_WIN_Text_1:
+	.string "Congratulations on your victory JalYt.\p"
+	.string "Please accept before you go please\n"
+	.string "accept this Tokkul as an extra reward\l"
+	.string "for defeating our gym.$"
+
+TZHAAR_GYM_ROOM_POST_WIN_Text_2:
+	.string "If you wish to prove yourself even more\n"
+	.string "you should visit our Fight Caves in the\l"
+	.string "westside of our city.\p"
+	.string "Otherwise we wish you to have glorious\n"
+	.string "battles in your future MvM Challenges.$"
+
+TZHAAR_GYM_ROOM_LOST_Text_0:
 	.string "Us Tzhaar have proven Victorious this\n"
 	.string "time.\p"
 	.string "Come back and challenge us again when\n"

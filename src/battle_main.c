@@ -1882,6 +1882,13 @@ static u32 GeneratePartyHash(const struct Trainer *trainer, u32 i)
     return Crc32B(buffer, n);
 }
 
+static u32 GeneratePartyHashFightCaves(const struct TrainerFightCaves *trainer, u32 i)
+{
+    const u8 *buffer = (const u8 *) &trainer->pool[i];
+    u32 n = sizeof(*trainer->pool);
+    return Crc32B(buffer, n);
+}
+
 void ModifyPersonalityForNature(u32 *personality, u32 newNature)
 {
     u32 nature = GetNatureFromPersonality(*personality);
@@ -1924,6 +1931,47 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
     {
         SetMonData(mon, MON_DATA_MOVE1 + j, &partyEntry->moves[j]);
         SetMonData(mon, MON_DATA_PP1 + j, &gBattleMoves[partyEntry->moves[j]].pp);
+    }
+}
+
+u8 GetPoolIndex(u8 poolSize, u8 currNumMons, u16 *chosenSpecies, const struct TrainerFightCaves *trainer)
+{
+    u16 foundSpecies;
+    u16 rnd;
+    u8 index;
+    bool8 foundIndex = FALSE;
+    while (!foundIndex)
+    {
+        rnd = Random() % poolSize; 
+        foundSpecies = trainer->pool[rnd].lvl;
+        for (index = 0; index < currNumMons; index++) //prevents same mons from appearing twice.
+        {
+            if (foundSpecies == chosenSpecies[index])
+                break;
+        }
+        if (index == currNumMons)
+            foundIndex = TRUE;
+    }
+    return rnd;
+}
+
+static void FixIllusionPartyPos(struct Pokemon *party, u32 partySize) //Illusion Ability fix.
+{
+    struct Pokemon tempMon;
+    u16 lastMonSpecies = GetMonData(&party[partySize - 1], MON_DATA_SPECIES);
+    if (lastMonSpecies == 571 || lastMonSpecies == 1003)
+    {
+        for (u32 i = 1; i < partySize - 2; i++)
+        {
+            u16 currSpecies = GetMonData(&party[i], MON_DATA_SPECIES);
+            if (currSpecies != 571 && currSpecies != 1003)
+            {
+                tempMon = party[partySize - 1];
+                party[partySize - 1] = party[i];
+                party[i] = tempMon;
+                break;
+            }
+        }
     }
 }
 
@@ -2029,18 +2077,148 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
     return trainer->partySize;
 }
 
+u8 CreateNPCTrainerPartyFromTrainerFightCaves(struct Pokemon *party, const struct TrainerFightCaves *trainer)
+{
+    u32 personalityValue;
+    s32 i;
+    u8 monsCount = VarGet(VAR_POKESCAPE_TZHAAR_PARTY_SIZE); // trainer->partySize;
+    u16 chosenSpecies[6] = {0, 0, 0, 0, 0, 0};
+    ZeroEnemyPartyMons();
+    for (i = 0; i < monsCount; i++)
+    {
+        u8 poolIndex = GetPoolIndex(trainer->poolSize, i + 1, &chosenSpecies[0], trainer);
+        s32 ball = -1;
+        u32 personalityHash = GeneratePartyHashFightCaves(trainer, i);
+        const struct TrainerMon *poolData = trainer->pool;
+        u32 otIdType = OT_ID_RANDOM_NO_SHINY;
+        u32 fixedOtId = 0;
+        u32 ability = 0;
+        u8 customlevel = poolData[poolIndex].lvl;
+        u8 lvlPoolRnd = 0;
+
+        if (FlagGet(FLAG_POKESCAPE_USECUSTOM_POOL_LEVEL) == TRUE) {
+            lvlPoolRnd = Random() % VarGet(VAR_TEMP_B); 
+            customlevel = (VarGet(VAR_TEMP_A) + lvlPoolRnd);
+        }
+
+        chosenSpecies[i] = poolData[poolIndex].lvl; //prevents same mons from appearing twice. //CHANGE MORE IN GetPoolIndex.
+
+        if (trainer->doubleBattle == TRUE)
+            personalityValue = 0x80;
+        else if (trainer->encounterMusic_gender & F_TRAINER_FEMALE)
+            personalityValue = 0x78; // Use personality more likely to result in a female Pokémon
+        else
+            personalityValue = 0x88; // Use personality more likely to result in a male Pokémon
+
+        personalityValue += personalityHash << 8;
+        if (poolData[poolIndex].gender == TRAINER_MON_MALE)
+            personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_MALE, poolData[poolIndex].species);
+        else if (poolData[poolIndex].gender == TRAINER_MON_FEMALE)
+            personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(MON_FEMALE, poolData[poolIndex].species);
+        // else if (poolData[poolIndex].gender == TRAINER_MON_RANDOM_GENDER)
+        //     personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(Random() & 1 ? MON_MALE : MON_FEMALE, poolData[poolIndex].species);
+        // ModifyPersonalityForNature(&personalityValue, poolData[poolIndex].nature);
+        if (poolData[poolIndex].isShiny)
+        {
+            otIdType = OT_ID_PRESET;
+            fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
+        }
+        CreateMon(&party[i], poolData[poolIndex].species, customlevel, 0, TRUE, personalityValue, otIdType, fixedOtId);
+        SetMonData(&party[i], MON_DATA_HELD_ITEM, &poolData[poolIndex].heldItem);
+
+        CustomTrainerPartyAssignMoves(&party[i], &poolData[poolIndex]);
+        SetMonData(&party[i], MON_DATA_IVS, &(poolData[poolIndex].iv));
+        if (poolData[poolIndex].ev != NULL)
+        {
+            SetMonData(&party[i], MON_DATA_HP_EV, &(poolData[poolIndex].ev[0]));
+            SetMonData(&party[i], MON_DATA_ATK_EV, &(poolData[poolIndex].ev[1]));
+            SetMonData(&party[i], MON_DATA_DEF_EV, &(poolData[poolIndex].ev[2]));
+            SetMonData(&party[i], MON_DATA_SPATK_EV, &(poolData[poolIndex].ev[3]));
+            SetMonData(&party[i], MON_DATA_SPDEF_EV, &(poolData[poolIndex].ev[4]));
+            SetMonData(&party[i], MON_DATA_SPEED_EV, &(poolData[poolIndex].ev[5]));
+        }
+        if (poolData[poolIndex].ability != ABILITY_NONE)
+        {
+            const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[poolData[poolIndex].species];
+            u32 maxAbilities = ARRAY_COUNT(speciesInfo->abilities);
+            for (ability = 0; ability < maxAbilities; ++ability)
+            {
+                if (speciesInfo->abilities[ability] == poolData[poolIndex].ability)
+                    break;
+            }
+            if (ability >= maxAbilities)
+                ability = 0;
+        }
+        // else
+        // {
+        //     const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[poolData[poolIndex].species];
+        //     ability = personalityHash % 3;
+        //     while (speciesInfo->abilities[ability] == ABILITY_NONE)
+        //     {
+        //         ability--;
+        //     }
+        // }
+        ability = Random() % 2;
+        SetMonData(&party[i], MON_DATA_ABILITY_NUM, &ability);
+        // SetMonData(&party[i], MON_DATA_FRIENDSHIP, &(poolData[poolIndex].friendship));
+        if (poolData[poolIndex].ball != ITEM_NONE)
+        {
+            ball = poolData[poolIndex].ball;
+            SetMonData(&party[i], MON_DATA_POKEBALL, &ball);
+        }
+        if (poolData[poolIndex].nickname != NULL)
+        {
+            SetMonData(&party[i], MON_DATA_NICKNAME, poolData[poolIndex].nickname);
+        }
+        // if (poolData[poolIndex].isShiny)
+        // {
+        //     u32 data = TRUE;
+        //     SetMonData(&party[i], MON_DATA_IS_SHINY, &data);
+        // }
+        // if (poolData[poolIndex].dynamaxLevel > 0)
+        // {
+        //     u32 data = poolData[poolIndex].dynamaxLevel;
+        //     SetMonData(&party[i], MON_DATA_DYNAMAX_LEVEL, &data);
+        // }
+        // if (poolData[poolIndex].gigantamaxFactor)
+        // {
+        //     u32 data = poolData[poolIndex].gigantamaxFactor;
+        //     SetMonData(&party[i], MON_DATA_GIGANTAMAX_FACTOR, &data);
+        // }
+        // if (poolData[poolIndex].teraType > 0)
+        // {
+        //     u32 data = poolData[poolIndex].teraType;
+        //     SetMonData(&party[i], MON_DATA_TERA_TYPE, &data);
+        // }
+        CalculateMonStats(&party[i]);
+
+        // if (B_TRAINER_CLASS_POKE_BALLS >= GEN_7 && ball == -1)
+        // {
+        //     ball = gTrainerClasses[trainer->trainerClass].ball ?: ITEM_POKE_BALL;
+        //     SetMonData(&party[i], MON_DATA_POKEBALL, &ball);
+        // }
+    }
+    // FixIllusionPartyPos(party, 6);
+
+    return VarGet(VAR_POKESCAPE_TZHAAR_PARTY_SIZE); // trainer->partySize;
+}
+
 static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)
 {
     u8 retVal;
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
-    retVal = CreateNPCTrainerPartyFromTrainer(party, &gTrainers[trainerNum], firstTrainer, gBattleTypeFlags);
-
-    if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && !(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER
-                                                                        | BATTLE_TYPE_EREADER_TRAINER
-                                                                        | BATTLE_TYPE_TRAINER_HILL)))
-    {
-        gBattleTypeFlags |= gTrainers[trainerNum].doubleBattle;
+    if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && FlagGet(FLAG_TZHAAR_RANDOM)) {
+        retVal = CreateNPCTrainerPartyFromTrainerFightCaves(party, &gTrainersFightCaves[trainerNum]);
+    } 
+    else {
+        retVal = CreateNPCTrainerPartyFromTrainer(party, &gTrainers[trainerNum], firstTrainer, gBattleTypeFlags);
+        if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && !(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER
+                                                                            | BATTLE_TYPE_EREADER_TRAINER
+                                                                            | BATTLE_TYPE_TRAINER_HILL)))
+        {
+            gBattleTypeFlags |= gTrainers[trainerNum].doubleBattle;
+        }
     }
     return retVal;
 }
@@ -5220,7 +5398,12 @@ static void HandleEndTurn_BattleWon(void)
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && !(gBattleTypeFlags & BATTLE_TYPE_LINK))
     {
         BattleStopLowHpSound();
-        gBattlescriptCurrInstr = BattleScript_LocalTrainerBattleWon;
+        if (FlagGet(FLAG_TZHAAR_RANDOM) == TRUE) {
+            gBattlescriptCurrInstr = BattleScript_TzhaarTrainerBattleWon;
+        }
+        else {
+            gBattlescriptCurrInstr = BattleScript_LocalTrainerBattleWon;
+        }
 
         switch (gTrainers[gTrainerBattleOpponent_A].trainerClass)
         {
@@ -5240,13 +5423,24 @@ static void HandleEndTurn_BattleWon(void)
             PlayBGM(MUS_VICTORY_GYM_LEADER);
             break;
         default:
-            PlayBGM(MUS_VICTORY_TRAINER);
+            if (FlagGet(FLAG_TZHAAR_RANDOM) == TRUE) {
+                PlayBGM(MUS_PS_TRAINER_VICTORY);
+            }
+            else {
+                PlayBGM(MUS_VICTORY_TRAINER);
+            }
             break;
         }
     }
     else
     {
-        gBattlescriptCurrInstr = BattleScript_PayDayMoneyAndPickUpItems;
+        
+        if (FlagGet(FLAG_TZHAAR_RANDOM) == TRUE) {
+            gBattlescriptCurrInstr = BattleScript_TzhaarWildBattleWon;
+        }
+        else {
+            gBattlescriptCurrInstr = BattleScript_PayDayMoneyAndPickUpItems;
+        }
     }
 
     gBattleMainFunc = HandleEndTurn_FinishBattle;
@@ -5282,7 +5476,12 @@ static void HandleEndTurn_BattleLost(void)
     }
     else
     {
-        gBattlescriptCurrInstr = BattleScript_LocalBattleLost;
+        if (FlagGet(FLAG_TZHAAR_RANDOM) == TRUE) {
+            gBattlescriptCurrInstr = BattleScript_TzhaarBattleLost;
+        }
+        else {
+            gBattlescriptCurrInstr = BattleScript_LocalBattleLost;
+        }
     }
 
     gBattleMainFunc = HandleEndTurn_FinishBattle;

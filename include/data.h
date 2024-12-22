@@ -53,6 +53,7 @@ struct TrainerMon
 };
 
 #define TRAINER_PARTY(partyArray) partyArray, .partySize = ARRAY_COUNT(partyArray)
+#define TRAINER_PARTY_FIGHT_CAVES(partyArray) partyArray, .partySize = 6
 
 struct Trainer
 {
@@ -68,7 +69,23 @@ struct Trainer
     /*0x1F*/ u8 partySize;
 };
 
+struct TrainerFightCaves
+{
+    /*0x00*/ u32 aiFlags;
+    /*0x04*/ const struct TrainerMon *pool;
+    /*0x08*/ u16 items[MAX_TRAINER_ITEMS];
+    /*0x10*/ u8 trainerClass;
+    /*0x11*/ u8 encounterMusic_gender; // last bit is gender
+    /*0x12*/ u16 trainerPic;
+    /*0x13*/ u8 trainerName[TRAINER_NAME_LENGTH + 1];
+    /*0x1E*/ bool8 doubleBattle:1;
+             u8 padding:7;
+    /*0x1F*/ u8 partySize;
+    /*0x20*/ u8 poolSize;
+};
+
 #define TRAINER_ENCOUNTER_MUSIC(trainer)((gTrainers[trainer].encounterMusic_gender & 0x7F))
+#define TRAINER_FIGHT_CAVES_ENCOUNTER_MUSIC(trainer)((gTrainersFightCaves[trainer].encounterMusic_gender & 0x7F))
 
 extern const u16 gMinigameDigits_Pal[];
 extern const u32 gMinigameDigits_Gfx[];
@@ -102,6 +119,7 @@ extern const struct CompressedSpriteSheet gTrainerBackPicTable[]; // functionall
 extern const struct CompressedSpritePalette gTrainerBackPicPaletteTable[];
 
 extern const struct Trainer gTrainers[];
+extern const struct TrainerFightCaves gTrainersFightCaves[];
 extern const u8 gTrainerClassNames[][13];
 extern const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1];
 extern const u8 *const gZMoveNames[];

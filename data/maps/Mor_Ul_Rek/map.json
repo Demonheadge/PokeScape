@@ -1,7 +1,7 @@
 {
-  "id": "MAP_TZHAAR_1F",
-  "name": "Tzhaar_1F",
-  "layout": "LAYOUT_TZHAAR_1F",
+  "id": "MAP_MOR_UL_REK",
+  "name": "Mor_Ul_Rek",
+  "layout": "LAYOUT_MOR_UL_REK",
   "music": "MUS_PS_TZHAAR",
   "region_map_section": "MAPSEC_MOR_UL_REK",
   "requires_flash": false,
@@ -391,14 +391,14 @@
       "x": 4,
       "y": 28,
       "elevation": 0,
-      "dest_map": "MAP_TZHAAR_FIGHT_CAVES",
+      "dest_map": "MAP_TZHAAR_GYM_ROOM",
       "dest_warp_id": "0"
     },
     {
       "x": 72,
       "y": 11,
       "elevation": 0,
-      "dest_map": "MAP_TZHAAR_1F",
+      "dest_map": "MAP_MOR_UL_REK",
       "dest_warp_id": "0"
     },
     {

@@ -880,6 +880,7 @@ static const u8 sText_Melzar_LastLowHp[] = _("Leave me alone, I need to feed my\
 static const u8 sText_Melzar_PlayerMonUnaffected[] = _("Cabbage stew!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_Melzar_PlayerLost[] = _("Feel the wrath of my feet!{PAUSE_UNTIL_PRESS}");
 
+static const u8 sText_PlayerGotTokkul[] = _("{B_PLAYER_NAME} got {B_BUFF1} TOKKUL\nfor winning!\p");
 
 
 
@@ -1618,6 +1619,7 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_REMOVEWEATHERBOOK - BATTLESTRINGS_TABLE_START] = sText_WeatherDisapearedBook,
     [STRINGID_TZHAAR_WEATHER_1 - BATTLESTRINGS_TABLE_START] = sText_TzhaarWeather1,
     [STRINGID_TZHAAR_WEATHER_2 - BATTLESTRINGS_TABLE_START] = sText_TzhaarWeather2,
+    [STRINGID_PLAYERGOTTOKKUL - BATTLESTRINGS_TABLE_START] = sText_PlayerGotTokkul,
 
 
 };
@@ -3285,7 +3287,8 @@ static const u8 *BattleStringGetOpponentNameByTrainerId(u16 trainerId, u8 *text,
     }
     else
     {
-        toCpy = gTrainers[trainerId].trainerName;
+        if (FlagGet(FLAG_TZHAAR_RANDOM)) toCpy = gTrainersFightCaves[trainerId].trainerName; //todo
+        else toCpy = gTrainers[trainerId].trainerName;
     }
 
     return toCpy;
@@ -3373,7 +3376,8 @@ static const u8 *BattleStringGetOpponentClassByTrainerId(u16 trainerId)
     else if (gBattleTypeFlags & BATTLE_TYPE_EREADER_TRAINER)
         toCpy = gTrainerClassNames[GetEreaderTrainerClassId()];
     else
-        toCpy = gTrainerClassNames[gTrainers[trainerId].trainerClass];
+        if (FlagGet(FLAG_TZHAAR_RANDOM)) toCpy = gTrainerClassNames[gTrainersFightCaves[trainerId].trainerClass];
+        else toCpy = gTrainerClassNames[gTrainers[trainerId].trainerClass];
 
     return toCpy;
 }

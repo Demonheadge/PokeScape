@@ -13,6 +13,8 @@ const OBJ_EVENT_ID_TOKXIL_C = 12
 const OBJ_EVENT_ID_YTHURKOT_D = 13
 const OBJ_EVENT_ID_YTHURKOT_E = 14
 const OBJ_EVENT_ID_TZREKJAD_F = 15
+const OBJ_EVENT_ID_KET_HD_10 = 16
+const OBJ_EVENT_ID_KET_HD_11 = 17
 
 
 mapscripts Tzhaar_Gym_Challenge_MapScripts {
@@ -58,6 +60,10 @@ script TZHAAR_GYM_CHALLENGE_STATE {
     setflag(FLAG_TEMP_E)
     removeobject(OBJ_EVENT_ID_TZREKJAD_F)
     setflag(FLAG_TEMP_F)
+    removeobject(OBJ_EVENT_ID_KET_HD_10)
+    setflag(FLAG_TEMP_10)
+    removeobject(OBJ_EVENT_ID_KET_HD_11)
+    setflag(FLAG_TEMP_11)
 }
 
 
@@ -69,7 +75,7 @@ script FIGHT_CAVES_QUIT {
         closemessage
         call(FIGHT_CAVES_RESTRICTIONS_OFF)
         setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 10)
-        warp(MAP_TZHAAR_FIGHT_CAVES, 1)
+        warp(MAP_TZHAAR_GYM_ROOM, 1)
         waitstate
     }
     else {
@@ -159,7 +165,13 @@ script CHALLENGE_START {
     setvar(VAR_TEMP_D, 1)
     applymovement(OBJ_EVENT_ID_PLAYER, ENTER_FIGHT_CAVES)
     waitmovement(0)
-    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    if (!flag(FLAG_BADGE03_GET)) {
+        setrespawn(HEAL_LOCATION_TZHAAR_GYM_ROOM)
+        call(TZHAAR_GYM_CHALLENGE_WAVES_CONTROL)
+    }
+    else {
+        call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    }
     release
     end
 }
@@ -171,12 +183,17 @@ movement ENTER_FIGHT_CAVES {
     face_down
 }
 
-script FIGHTCAVES_WAVE_TRANSITION {
+script FIGHTCAVES_WAVE_TRANSITION_START {
     //fadescreenswapbuffers
     fadescreenswapbuffers(FADE_TO_BLACK)
     buffernumberstring(0, VAR_TEMP_E)
     msgbox(format("WAVE: {STR_VAR_1}"))
 	closemessage
+    //fadescreenswapbuffers(FADE_FROM_BLACK)
+    return
+}
+
+script FIGHTCAVES_WAVE_TRANSITION_END {
     fadescreenswapbuffers(FADE_FROM_BLACK)
     return
 }
@@ -187,32 +204,61 @@ script ENEMY_TZKIH_1 {
     removeobject(OBJ_EVENT_ID_TZKIH_1)
     setflag(FLAG_TEMP_1)
     addvar(VAR_TEMP_C, 1)
-    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    if (!flag(FLAG_BADGE03_GET)) {
+        call(TZHAAR_GYM_CHALLENGE_WAVES_CONTROL)
+    }
+    else {
+        call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    }
+    release
+    end
 }
 script ENEMY_TZKIH_2 {
     call(ENCOUNTER_TZ_KIH)
     removeobject(OBJ_EVENT_ID_TZKIH_2)
     setflag(FLAG_TEMP_2)
     addvar(VAR_TEMP_C, 1)
-    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    if (!flag(FLAG_BADGE03_GET)) {
+        call(TZHAAR_GYM_CHALLENGE_WAVES_CONTROL)
+    }
+    else {
+        call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    }
+    release
+    end
 }
 script ENEMY_TZKIH_3 {
     call(ENCOUNTER_TZ_KIH)
     removeobject(OBJ_EVENT_ID_TZKIH_3)
     setflag(FLAG_TEMP_3)
     addvar(VAR_TEMP_C, 1)
-    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    if (!flag(FLAG_BADGE03_GET)) {
+        call(TZHAAR_GYM_CHALLENGE_WAVES_CONTROL)
+    }
+    else {
+        call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    }
+    release
+    end
 }
-script ENEMY_GAAL_4 {
+script ENEMY_GAAL_4 {   //TRAINER
+    call(TZHAAR_WAVES_PARTY_SIZE)
+    call(WAVE_LEVELS)
     call(ENCOUNTER_TZHAAR_TRAINER_GAAL)
 }
-script ENEMY_GAAL_5 {
+script ENEMY_GAAL_5 {   //TRAINER
+    call(TZHAAR_WAVES_PARTY_SIZE)
+    call(WAVE_LEVELS)
     call(ENCOUNTER_TZHAAR_TRAINER_GAAL)
 }
-script ENEMY_KET_6 {
+script ENEMY_KET_6 {   //TRAINER
+    call(TZHAAR_WAVES_PARTY_SIZE)
+    call(WAVE_LEVELS)
     call(ENCOUNTER_TZHAAR_TRAINER_KET)
 }
-script ENEMY_KET_7 {
+script ENEMY_KET_7 {   //TRAINER
+    call(TZHAAR_WAVES_PARTY_SIZE)
+    call(WAVE_LEVELS)
     call(ENCOUNTER_TZHAAR_TRAINER_KET)
 }
 script ENEMY_KEK_8 {
@@ -220,55 +266,126 @@ script ENEMY_KEK_8 {
     removeobject(OBJ_EVENT_ID_KEK_8)
     setflag(FLAG_TEMP_8)
     addvar(VAR_TEMP_C, 1)
-    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    if (!flag(FLAG_BADGE03_GET)) {
+        call(TZHAAR_GYM_CHALLENGE_WAVES_CONTROL)
+    }
+    else {
+        call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    }
+    release
+    end
 }
 script ENEMY_KEK_9 {
     call(ENCOUNTER_TZ_KEK)
     removeobject(OBJ_EVENT_ID_KEK_9)
     setflag(FLAG_TEMP_9)
     addvar(VAR_TEMP_C, 1)
-    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    if (!flag(FLAG_BADGE03_GET)) {
+        call(TZHAAR_GYM_CHALLENGE_WAVES_CONTROL)
+    }
+    else {
+        call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    }
+    release
+    end
 }
 script ENEMY_CHAMPION_A {
-    //if badge not obtained.
-    call(GYMLEADER_TZHAAR_CHAMPION)
-    //if has badge
+
+    if (!flag(FLAG_BADGE03_GET)) {//if badge not obtained.
+        clearflag(FLAG_TZHAAR_RANDOM)
+        goto(GYMLEADER_TZHAAR_CHAMPION)
+    }
+    else { //if has badge
+        //todo
+    }
     removeobject(OBJ_EVENT_ID_CHAMPION_A)
     setflag(FLAG_TEMP_A)
     addvar(VAR_TEMP_C, 1)
-    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    if (!flag(FLAG_BADGE03_GET)) {
+        call(TZHAAR_GYM_CHALLENGE_WAVES_CONTROL)
+    }
+    else {
+        call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    }
+    release
+    end
 }
 
 script ENEMY_KETDILL_B {
     call(ENCOUNTER_KET_DILL)
     removeobject(VAR_LAST_TALKED)
     addvar(VAR_TEMP_C, 1)
-    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    if (!flag(FLAG_BADGE03_GET)) {
+        call(TZHAAR_GYM_CHALLENGE_WAVES_CONTROL)
+    }
+    else {
+        call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    }
+    release
+    end
 }
 script ENEMY_TOKXIL_C {
     call(ENCOUNTER_TOK_XIL)
     removeobject(VAR_LAST_TALKED)
     addvar(VAR_TEMP_C, 1)
-    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    if (!flag(FLAG_BADGE03_GET)) {
+        call(TZHAAR_GYM_CHALLENGE_WAVES_CONTROL)
+    }
+    else {
+        call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    }
+    release
+    end
 }
 script ENEMY_YTHURKOT_D {
     call(ENCOUNTER_YT_HURKOT)
     removeobject(VAR_LAST_TALKED)
     addvar(VAR_TEMP_C, 1)
-    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    if (!flag(FLAG_BADGE03_GET)) {
+        call(TZHAAR_GYM_CHALLENGE_WAVES_CONTROL)
+    }
+    else {
+        call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    }
+    release
+    end
 }
 script ENEMY_YTHURKOT_E {
     call(ENCOUNTER_YT_HURKOT)
     removeobject(VAR_LAST_TALKED)
     addvar(VAR_TEMP_C, 1)
-    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    if (!flag(FLAG_BADGE03_GET)) {
+        call(TZHAAR_GYM_CHALLENGE_WAVES_CONTROL)
+    }
+    else {
+        call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    }
+    release
+    end
 }
 
 script ENEMY_TZREKJAD_F {
-    call(ENCOUNTER_YT_HURKOT)
+    call(ENCOUNTER_YT_HURKOT) //change to jad
     removeobject(VAR_LAST_TALKED)
     addvar(VAR_TEMP_C, 1)
-    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    if (!flag(FLAG_BADGE03_GET)) {
+        call(TZHAAR_GYM_CHALLENGE_WAVES_CONTROL)
+    }
+    else {
+        call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    }
+    release
+    end
+}
+script ENEMY_HDKET_10 {   //TRAINER
+    call(TZHAAR_WAVES_PARTY_SIZE)
+    call(WAVE_LEVELS)
+    call(ENCOUNTER_TZHAAR_TRAINER_HDKET)
+}
+script ENEMY_HDKET_11 {   //TRAINER
+    call(TZHAAR_WAVES_PARTY_SIZE)
+    call(WAVE_LEVELS)
+    call(ENCOUNTER_TZHAAR_TRAINER_HDKET)
 }
 
 
@@ -300,7 +417,7 @@ script ENCOUNTER_TZ_KIH {
     }
     else { // if fightcaves
         call(WAVE_LEVELS)
-        setwildbattle (SPECIES_TZ_KIH, VAR_TEMP_B, ITEM_FIRECAPE) 
+        setwildbattle (SPECIES_TZ_KIH, VAR_CUSTOM_TRAINERPOOL_LEVEL, ITEM_FIRECAPE) 
     }
 	dowildbattle
     switch(var(VAR_RESULT)){
@@ -335,7 +452,7 @@ script ENCOUNTER_TZ_KEK {
     }
     else { // if fightcaves
         call(WAVE_LEVELS)
-        setwildbattle (SPECIES_TZ_KEK, VAR_TEMP_B, ITEM_FIRECAPE) 
+        setwildbattle (SPECIES_TZ_KEK, VAR_CUSTOM_TRAINERPOOL_LEVEL, ITEM_FIRECAPE) 
     }
 	dowildbattle
     switch(var(VAR_RESULT)){
@@ -371,7 +488,7 @@ script ENCOUNTER_KET_DILL {
     }
     else { // if fightcaves
         call(WAVE_LEVELS)
-        setwildbattle (SPECIES_KET_DILL, VAR_TEMP_B, ITEM_FIRECAPE) 
+        setwildbattle (SPECIES_KET_DILL, VAR_CUSTOM_TRAINERPOOL_LEVEL, ITEM_FIRECAPE) 
     }
 	dowildbattle
     switch(var(VAR_RESULT)){
@@ -401,7 +518,7 @@ script ENCOUNTER_TOK_XIL {
 	closemessage
 	delay(1)
     call(WAVE_LEVELS)
-    setwildbattle (SPECIES_TOK_XIL, VAR_TEMP_B, ITEM_FIRECAPE) 
+    setwildbattle (SPECIES_TOK_XIL, VAR_CUSTOM_TRAINERPOOL_LEVEL, ITEM_FIRECAPE) 
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
@@ -423,7 +540,7 @@ script ENCOUNTER_YT_HURKOT {
 	closemessage
 	delay(1)
     call(WAVE_LEVELS)
-    setwildbattle (SPECIES_YT_HURKOT, VAR_TEMP_B, ITEM_FIRECAPE) 
+    setwildbattle (SPECIES_YT_HURKOT, VAR_CUSTOM_TRAINERPOOL_LEVEL, ITEM_FIRECAPE) 
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
@@ -437,10 +554,19 @@ script ENCOUNTER_YT_HURKOT {
 
 
 
+script mathtest {
+    setvar(VAR_TEMP_A, 30) //base level.
+    setvar(VAR_TEMP_B, 6)  //amount of randomness
+    random(VAR_TEMP_B) 
+    copyvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_RESULT) //Copy it out of TEMP_A to be used elsewhere.
+    addvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_TEMP_A) // Add A + B(result) = The intended Level. into TEMP_A.
+    buffernumberstring(0, VAR_CUSTOM_TRAINERPOOL_LEVEL)
+    msgbox(format("VAR_CUSTOM_TRAINERPOOL_LEVEL: {STR_VAR_1}"))
+	closemessage
+}
 
 
-
-script WAVE_LEVELS {
+script WAVE_LEVELS { //This sets the levels of the monsters of each wave.
     switch(var(VAR_TEMP_E)){
         case 0:
         case 1:
@@ -453,33 +579,41 @@ script WAVE_LEVELS {
         case 8:
         case 9:
 		case 10: // 30 - 35
-            random(5) 
-            copyvar(VAR_TEMP_B, VAR_RESULT)
-            addvar(VAR_TEMP_B, 30)
+            setvar(VAR_TEMP_A, 30) //base level.
+            setvar(VAR_TEMP_B, 6)  //amount of randomness 0,1,2,3,4,5
+            random(VAR_TEMP_B) 
+            copyvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_RESULT) //Copy it out of TEMP_A to be used elsewhere.
+            addvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_TEMP_A) // Add A + B(result) = The intended Level. into TEMP_A.
         case 11:
         case 12:
         case 13:
         case 14:
         case 15: // 35 - 40
-            random(5) 
-            copyvar(VAR_TEMP_B, VAR_RESULT)
-            addvar(VAR_TEMP_B, 35)
+            setvar(VAR_TEMP_A, 35) //base level.
+            setvar(VAR_TEMP_B, 6)  //amount of randomness 0,1,2,3,4,5
+            random(VAR_TEMP_B) 
+            copyvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_RESULT) //Copy it out of TEMP_A to be used elsewhere.
+            addvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_TEMP_A) // Add A + B(result) = The intended Level. into TEMP_A.
         case 16:
         case 17:
         case 18:
         case 19:
         case 20: // 40 - 50
-            random(5) 
-            copyvar(VAR_TEMP_B, VAR_RESULT)
-            addvar(VAR_TEMP_B, 40)
+            setvar(VAR_TEMP_A, 40) //base level.
+            setvar(VAR_TEMP_B, 11)  //amount of randomness 0,1,2,3,4,5
+            random(VAR_TEMP_B) 
+            copyvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_RESULT) //Copy it out of TEMP_A to be used elsewhere.
+            addvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_TEMP_A) // Add A + B(result) = The intended Level. into TEMP_A.
         case 21:
         case 22:
         case 23:
         case 24:
         case 25: // 50 - 60
-            random(5) 
-            copyvar(VAR_TEMP_B, VAR_RESULT)
-            addvar(VAR_TEMP_B, 50)
+            setvar(VAR_TEMP_A, 50) //base level.
+            setvar(VAR_TEMP_B, 11)  //amount of randomness 0,1,2,3,4,5
+            random(VAR_TEMP_B) 
+            copyvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_RESULT) //Copy it out of TEMP_A to be used elsewhere.
+            addvar(VAR_CUSTOM_TRAINERPOOL_LEVEL, VAR_TEMP_A) // Add A + B(result) = The intended Level. into TEMP_A.
     }
     return
 }
@@ -490,6 +624,10 @@ script WAVE_LEVELS {
 //-------------------------------------------------------------------------
 //-------------------------------------------------------------------------
 
+
+//----------------------------------//
+//        TRAINER - GA'AL           //
+//----------------------------------//
 script ENCOUNTER_TZHAAR_TRAINER_GAAL {
     lock
     faceplayer
@@ -499,35 +637,70 @@ script ENCOUNTER_TZHAAR_TRAINER_GAAL {
         case 3: //WAVE 3
         case 4: //WAVE 4
         case 5: //WAVE 5
-            call(TZHAAR_TRAINERS_WAVES_1_GAAL)
         case 6: 
         case 7: 
         case 8: 
         case 9: 
         case 10:
-            call(TZHAAR_TRAINERS_WAVES_2_GAAL)
+            if (!flag(FLAG_BADGE03_GET)) {
+                call(Gaal_TRAINERS_TZHAAR_GYMCHALLENGE)
+            }
+            else {
+                call(TZHAAR_TRAINERS_WAVES_1_GAAL)
+            }
         case 11:
         case 12:
         case 13:
         case 14:
         case 15:
-            call(TZHAAR_TRAINERS_WAVES_1_GAAL)
+            call(TZHAAR_TRAINERS_WAVES_1_GAAL) //todo
         case 16:
         case 17:
         case 18:
         case 19:
         case 20:
-            call(TZHAAR_TRAINERS_WAVES_1_GAAL)
+            call(TZHAAR_TRAINERS_WAVES_1_GAAL) //todo
         case 21:
         case 22:
         case 23:
         case 24:
         case 25: 
-            call(TZHAAR_TRAINERS_WAVES_1_GAAL)
+            call(TZHAAR_TRAINERS_WAVES_1_GAAL) //todo
     }
     return
 }
-script TZHAAR_TRAINERS_WAVES_1_GAAL
+
+script Gaal_TRAINERS_TZHAAR_GYMCHALLENGE
+{
+    random(12) 
+	switch (var(VAR_RESULT)) { 
+        case 0: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("We TzHaar will now engage you in battle!"), format("We TzHaar have lost."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 1: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("Is this heat too much for you?"), format("I'm melting!"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 2: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("You think you can defeat us?"), format("We admit defeat."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 3: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("Halt JalYt!"), format("TzHaar Halt…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 4: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("We are forged in the flames therefore we are stronger."), format("JalYt is stronger than us."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 5: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("We TzHaar are made of solid obsidian.\pWe are stronger than you will ever be."), format("Obsidian may be sharp, but it shatters easily."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 6: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("We TzHaar are forged in fire.\pYou don't stand a chance."), format("This JalYt burns brighter than the magma down here."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 7: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("We TzHaar were born on the day the volcano shook the foundation of the earth.\pWe can withstand anything."), format("We can withstand earthquakes, but not your skill in battle."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 8: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("RAAAGGUUHH!"), format("AWWARUGH…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 9: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("Turn to Tokkul you will!"), format("Turn to Tokkul we have…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 10: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("This will be your last gym challenge!"), format("Nevermind, this was our last gym challenge…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 11:
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_GAAL, 0, format("If I beat you, maybe Kimit-Kal will let me venture into the Kiln!"), format("Maybe one day I'll get my ancestor's memories back.."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+    } 
+}
+script TZHAAR_TRAINERS_WAVES_1_GAAL //todo
 {
     random(3) 
 	switch (var(VAR_RESULT)) { 
@@ -539,7 +712,7 @@ script TZHAAR_TRAINERS_WAVES_1_GAAL
             trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_GAAL_3, 0, format("We TzHaar were born on the day the volcano shook the foundation of the earth.\pWe can withstand anything."), format("We can withstand earthquakes, but not your skill in battle."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
     } 
 }
-script TZHAAR_TRAINERS_WAVES_2_GAAL
+script TZHAAR_TRAINERS_WAVES_2_GAAL //todo
 {
     random(6) 
 	switch (var(VAR_RESULT)) { 
@@ -558,6 +731,11 @@ script TZHAAR_TRAINERS_WAVES_2_GAAL
     } 
 }
 
+
+
+//----------------------------------//
+//        TRAINER - KET OSRS        //
+//----------------------------------//
 script ENCOUNTER_TZHAAR_TRAINER_KET {
     lock
     faceplayer
@@ -572,7 +750,12 @@ script ENCOUNTER_TZHAAR_TRAINER_KET {
         case 8: 
         case 9: 
         case 10:
-            call(TZHAAR_TRAINERS_WAVES_LOW_KET)
+            if (!flag(FLAG_BADGE03_GET)) {
+                call(OSRSKet_TRAINERS_TZHAAR_GYMCHALLENGE)
+            }
+            else {
+                call(TZHAAR_TRAINERS_WAVES_LOW_KET) //Todo
+            }
         case 11:
         case 12:
         case 13:
@@ -588,11 +771,41 @@ script ENCOUNTER_TZHAAR_TRAINER_KET {
         case 23:
         case 24:
         case 25: 
-            call(TZHAAR_TRAINERS_WAVES_LOW_KET)
+            call(TZHAAR_TRAINERS_WAVES_LOW_KET) //Todo
     }
     return
 }
-script TZHAAR_TRAINERS_WAVES_LOW_KET
+script OSRSKet_TRAINERS_TZHAAR_GYMCHALLENGE
+{
+    random(12) 
+	switch (var(VAR_RESULT)) { 
+        case 0: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("We TzHaar will now engage you in battle!"), format("We TzHaar have lost."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 1: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("Is this heat too much for you?"), format("I'm melting!"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 2: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("You think you can defeat us?"), format("We admit defeat."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 3: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("Halt JalYt!"), format("TzHaar Halt…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 4: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("We are forged in the flames therefore we are stronger."), format("JalYt is stronger than us."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 5: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("We TzHaar are made of solid obsidian.\pWe are stronger than you will ever be."), format("Obsidian may be sharp, but it shatters easily."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 6: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("We TzHaar are forged in fire.\pYou don't stand a chance."), format("This JalYt burns brighter than the magma down here."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 7: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("We TzHaar were born on the day the volcano shook the foundation of the earth.\pWe can withstand anything."), format("We can withstand earthquakes, but not your skill in battle."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 8: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("RAAAGGUUHH!"), format("AWWARUGH…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 9: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("Turn to Tokkul you will!"), format("Turn to Tokkul we have…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 10: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("This will be your last gym challenge!"), format("Nevermind, this was our last gym challenge…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 11:
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS, 0, format("If I beat you, maybe Kimit-Kal will let me venture into the Kiln!"), format("Maybe one day I'll get my ancestor's memories back.."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+    } 
+}
+script TZHAAR_TRAINERS_WAVES_LOW_KET  //Todo
 {
     random(3) 
 	switch (var(VAR_RESULT)) { 
@@ -605,6 +818,168 @@ script TZHAAR_TRAINERS_WAVES_LOW_KET
     } 
 }
 
+
+
+
+
+
+
+
+
+
+//----------------------------------//
+//        TRAINER - KET HD          //
+//----------------------------------//
+script ENCOUNTER_TZHAAR_TRAINER_HDKET {
+    lock
+    faceplayer
+    switch(var(VAR_TEMP_E)){  //VAR E = WAVE NUMBER
+        case 1: //WAVE 1
+        case 2: //WAVE 2
+        case 3: //WAVE 3
+        case 4: //WAVE 4
+        case 5: //WAVE 5
+        case 6: 
+        case 7: 
+        case 8: 
+        case 9: 
+        case 10:
+            if (!flag(FLAG_BADGE03_GET)) {
+                call(HDKet_TRAINERS_TZHAAR_GYMCHALLENGE)
+            }
+            else {
+                call(HDKet_TRAINERS_FIGHTCAVES_LOW)
+            }
+        case 11:
+        case 12:
+        case 13:
+        case 14:
+        case 15:
+        case 16:
+        case 17:
+        case 18:
+        case 19:
+        case 20:
+        case 21:
+        case 22:
+        case 23:
+        case 24:
+            call(HDKet_TRAINERS_FIGHTCAVES_MED)
+        case 25: 
+            call(HDKet_TRAINERS_FIGHTCAVES_HIGH)
+    }
+    return
+}
+script HDKet_TRAINERS_TZHAAR_GYMCHALLENGE
+{
+    random(12) 
+	switch (var(VAR_RESULT)) { 
+        case 0: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_HD, 0, format("We TzHaar will now engage you in battle!"), format("We TzHaar have lost."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 1: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_HD, 0, format("Is this heat too much for you?"), format("I'm melting!"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 2: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_HD, 0, format("You think you can defeat us?"), format("We admit defeat."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 3: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_HD, 0, format("Halt JalYt!"), format("TzHaar Halt…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 4: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_HD, 0, format("We are forged in the flames therefore we are stronger."), format("JalYt is stronger than us."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 5: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_HD, 0, format("We TzHaar are made of solid obsidian.\pWe are stronger than you will ever be."), format("Obsidian may be sharp, but it shatters easily."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 6: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_HD, 0, format("We TzHaar are forged in fire.\pYou don't stand a chance."), format("This JalYt burns brighter than the magma down here."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 7: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_HD, 0, format("We TzHaar were born on the day the volcano shook the foundation of the earth.\pWe can withstand anything."), format("We can withstand earthquakes, but not your skill in battle."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 8: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_HD, 0, format("RAAAGGUUHH!"), format("AWWARUGH…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 9: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_HD, 0, format("Turn to Tokkul you will!"), format("Turn to Tokkul we have…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 10: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_HD, 0, format("This will be your last gym challenge!"), format("Nevermind, this was our last gym challenge…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 11:
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_GYMCHALLENGE_KET_HD, 0, format("If I beat you, maybe Kimit-Kal will let me venture into the Kiln!"), format("Maybe one day I'll get my ancestor's memories back.."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+    } 
+}
+script HDKet_TRAINERS_FIGHTCAVES_LOW
+{
+    random(10) 
+	switch (var(VAR_RESULT)) { 
+        case 0: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_LOW_KET_HD, 0, format("We TzHaar will now engage you in battle!"), format("We TzHaar have lost."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 1: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_LOW_KET_HD, 0, format("Is this heat too much for you?"), format("I'm melting!"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 2: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_LOW_KET_HD, 0, format("You think you can defeat us?"), format("We admit defeat."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 3: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_LOW_KET_HD, 0, format("Halt JalYt!"), format("TzHaar Halt…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 4: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_LOW_KET_HD, 0, format("We are forged in the flames therefore we are stronger."), format("JalYt is stronger than us."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 5: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_LOW_KET_HD, 0, format("We TzHaar are made of solid obsidian.\pWe are stronger than you will ever be."), format("Obsidian may be sharp, but it shatters easily."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 6: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_LOW_KET_HD, 0, format("We TzHaar are forged in fire.\pYou don't stand a chance."), format("This JalYt burns brighter than the magma down here."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 7: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_LOW_KET_HD, 0, format("We TzHaar were born on the day the volcano shook the foundation of the earth.\pWe can withstand anything."), format("We can withstand earthquakes, but not your skill in battle."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 8: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_LOW_KET_HD, 0, format("RAAAGGUUHH!"), format("AWWARUGH…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 9: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_LOW_KET_HD, 0, format("Turn to Tokkul you will!"), format("Turn to Tokkul we have…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+    } 
+}
+script HDKet_TRAINERS_FIGHTCAVES_MED
+{
+    random(10) 
+	switch (var(VAR_RESULT)) { 
+        case 0: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_MED_KET_HD, 0, format("We TzHaar will now engage you in battle!"), format("We TzHaar have lost."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 1: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_MED_KET_HD, 0, format("Is this heat too much for you?"), format("I'm melting!"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 2: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_MED_KET_HD, 0, format("You think you can defeat us?"), format("We admit defeat."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 3: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_MED_KET_HD, 0, format("Halt JalYt!"), format("TzHaar Halt…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 4: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_MED_KET_HD, 0, format("We are forged in the flames therefore we are stronger."), format("JalYt is stronger than us."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 5: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_MED_KET_HD, 0, format("We TzHaar are made of solid obsidian.\pWe are stronger than you will ever be."), format("Obsidian may be sharp, but it shatters easily."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 6: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_MED_KET_HD, 0, format("We TzHaar are forged in fire.\pYou don't stand a chance."), format("This JalYt burns brighter than the magma down here."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 7: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_MED_KET_HD, 0, format("We TzHaar were born on the day the volcano shook the foundation of the earth.\pWe can withstand anything."), format("We can withstand earthquakes, but not your skill in battle."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 8: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_MED_KET_HD, 0, format("RAAAGGUUHH!"), format("AWWARUGH…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 9: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_MED_KET_HD, 0, format("Turn to Tokkul you will!"), format("Turn to Tokkul we have…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+    } 
+}
+script HDKet_TRAINERS_FIGHTCAVES_HIGH
+{
+    random(10) 
+	switch (var(VAR_RESULT)) { 
+        case 0: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_HIGH_KET_HD, 0, format("We TzHaar will now engage you in battle!"), format("We TzHaar have lost."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 1: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_HIGH_KET_HD, 0, format("Is this heat too much for you?"), format("I'm melting!"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 2: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_HIGH_KET_HD, 0, format("You think you can defeat us?"), format("We admit defeat."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 3: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_HIGH_KET_HD, 0, format("Halt JalYt!"), format("TzHaar Halt…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 4: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_HIGH_KET_HD, 0, format("We are forged in the flames therefore we are stronger."), format("JalYt is stronger than us."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 5: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_HIGH_KET_HD, 0, format("We TzHaar are made of solid obsidian.\pWe are stronger than you will ever be."), format("Obsidian may be sharp, but it shatters easily."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 6: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_HIGH_KET_HD, 0, format("We TzHaar are forged in fire.\pYou don't stand a chance."), format("This JalYt burns brighter than the magma down here."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 7: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_HIGH_KET_HD, 0, format("We TzHaar were born on the day the volcano shook the foundation of the earth.\pWe can withstand anything."), format("We can withstand earthquakes, but not your skill in battle."), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 8: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_HIGH_KET_HD, 0, format("RAAAGGUUHH!"), format("AWWARUGH…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+        case 9: 
+            trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_FIGHTCAVES_HIGH_KET_HD, 0, format("Turn to Tokkul you will!"), format("Turn to Tokkul we have…"), CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO)
+    } 
+}
+
+
 //-------------------------------------------------------------------------
 //-------------------------------------------------------------------------
 
@@ -613,7 +988,12 @@ script CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO {
     removeobject(VAR_LAST_TALKED)
     addvar(VAR_TEMP_C, 1)
     call(ClearGymTrainers_FIGHTCAVE)
-    call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    if (!flag(FLAG_BADGE03_GET)) {
+        call(TZHAAR_GYM_CHALLENGE_WAVES_CONTROL)
+    }
+    else {
+        call(FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE)
+    }
 }
 
 script SetGymTrainers_FIGHTCAVE {   
@@ -623,6 +1003,16 @@ script SetGymTrainers_FIGHTCAVE {
     settrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_1)
     settrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_2)
     settrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_3)
+
+    settrainerflag(TRAINER_TZHAAR_GYMCHALLENGE_KET_HD)
+    settrainerflag(TRAINER_FIGHTCAVES_LOW_KET_HD)
+    settrainerflag(TRAINER_FIGHTCAVES_MED_KET_HD)
+    settrainerflag(TRAINER_FIGHTCAVES_HIGH_KET_HD)
+
+    settrainerflag(TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS)
+    settrainerflag(TRAINER_TZHAAR_GYMCHALLENGE_GAAL)
+    
+
     return
 }
 script ClearGymTrainers_FIGHTCAVE {   
@@ -632,6 +1022,15 @@ script ClearGymTrainers_FIGHTCAVE {
     cleartrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_1)
     cleartrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_2)
     cleartrainerflag(TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_3)
+
+    cleartrainerflag(TRAINER_TZHAAR_GYMCHALLENGE_KET_HD)
+    cleartrainerflag(TRAINER_FIGHTCAVES_LOW_KET_HD)
+    cleartrainerflag(TRAINER_FIGHTCAVES_MED_KET_HD)
+    cleartrainerflag(TRAINER_FIGHTCAVES_HIGH_KET_HD)
+
+    cleartrainerflag(TRAINER_TZHAAR_GYMCHALLENGE_KET_OSRS)
+    cleartrainerflag(TRAINER_TZHAAR_GYMCHALLENGE_GAAL)
+
     return
 }
 
@@ -781,7 +1180,7 @@ script RANDOM_ENEMY_SPAWN {
         }
     }
 //SPAWN LIST (B)
-    elif (var(VAR_TEMP_B) == 1) {
+    elif (var(VAR_CUSTOM_TRAINERPOOL_LEVEL) == 1) {
         random(2)
         switch (var(VAR_RESULT)) {
             case 0:
@@ -976,7 +1375,7 @@ script GYMLEADER_TZHAAR_CHAMPION {
     namebox("Kimit-Kal")
     msgbox(format("Also have this Scroll."))
     hidenamebox
-    giveitem (ITEM_TM15, 1) //Power Gem.
+    giveitem (ITEM_TM15, 1) //Lava Plume
     compare(VAR_RESULT, FALSE)
     goto_if_eq(Common_EventScript_ShowBagIsFull)
     //playbgm(MUS_PS_ALKHARID, 0)
@@ -1031,14 +1430,14 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
     switch(var(VAR_TEMP_C)){
 		case 0: //begin WAVE 1
             setvar(VAR_TEMP_E, 1) //WAVE: 1
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
             clearflag(FLAG_TEMP_1)
         case 1: //begin WAVE 2
             setvar(VAR_TEMP_E, 2) //WAVE: 2
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1049,14 +1448,14 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
             clearflag(FLAG_TEMP_8)
         case 3: //begin WAVE 3
             setvar(VAR_TEMP_E, 3) //WAVE: 3
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_4) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_GAAL_4) 
             clearflag(FLAG_TEMP_4)
         case 4: //begin WAVE 4
             setvar(VAR_TEMP_E, 4) //WAVE: 4
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             //setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             //call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             //addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1071,7 +1470,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
             clearflag(FLAG_TEMP_6)
         case 6: //begin WAVE 5
             setvar(VAR_TEMP_E, 5) //WAVE: 5
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
 
             if (!flag(FLAG_BADGE03_GET)) {
                 setvar(VAR_TEMP_F, OBJ_EVENT_ID_CHAMPION_A) //OBJECT TO SPAWN.
@@ -1092,7 +1491,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
 
         case 7: //begin WAVE 6
             setvar(VAR_TEMP_E, 6) 
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KEK_8) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KEK_8)
@@ -1104,7 +1503,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 9: //begin WAVE 7
             setvar(VAR_TEMP_E, 7) 
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1120,7 +1519,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 12: //begin WAVE 8
             setvar(VAR_TEMP_E, 8)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KET_6) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KET_6) 
@@ -1133,7 +1532,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 14: //begin WAVE 9
             setvar(VAR_TEMP_E, 9)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KET_6) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KET_6) 
@@ -1145,7 +1544,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 16: //begin WAVE 10
             setvar(VAR_TEMP_E, 10)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KETDILL_B) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KETDILL_B) 
@@ -1153,7 +1552,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 17: //begin WAVE 11
             setvar(VAR_TEMP_E, 11)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1165,7 +1564,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 19: //begin WAVE 12
             setvar(VAR_TEMP_E, 12)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_4) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_GAAL_4) 
@@ -1177,7 +1576,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 21: //begin WAVE 13
             setvar(VAR_TEMP_E, 13)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KETDILL_B) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KETDILL_B) 
@@ -1189,7 +1588,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 23: //begin WAVE 14
             setvar(VAR_TEMP_E, 14)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1209,7 +1608,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 27: //begin WAVE 15
             setvar(VAR_TEMP_E, 15)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TOKXIL_C) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TOKXIL_C) 
@@ -1217,7 +1616,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 28: //begin WAVE 16
             setvar(VAR_TEMP_E, 16)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1229,7 +1628,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 30: //begin WAVE 17
             setvar(VAR_TEMP_E, 17)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1245,7 +1644,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 33: //begin WAVE 18
             setvar(VAR_TEMP_E, 18)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_KETDILL_B) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_KETDILL_B) 
@@ -1257,7 +1656,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 35: //begin WAVE 19
             setvar(VAR_TEMP_E, 19)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_YTHURKOT_D) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_YTHURKOT_D)
@@ -1269,7 +1668,7 @@ script FIGHT_CAVES_CHECK_IF_GOTO_NEXT_WAVE {
         
         case 38: //begin WAVE 20 -- FIRE CAPE REWARD
             setvar(VAR_TEMP_E, 20)
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZREKJAD_F) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_SPECIAL) //LOCATION (SPECIAL)
             addobject(OBJ_EVENT_ID_TZREKJAD_F)
@@ -1302,14 +1701,14 @@ script GYM_CHALLENGE_CHECK_IF_GOTO_NEXT_WAVE {
     switch(var(VAR_TEMP_C)){
 		case 0: //begin WAVE 1
             setvar(VAR_TEMP_E, 1) //WAVE: 1
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
             clearflag(FLAG_TEMP_1)
         case 1: //begin WAVE 2
             setvar(VAR_TEMP_E, 2) //WAVE: 2
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_TZKIH_1)
@@ -1320,14 +1719,14 @@ script GYM_CHALLENGE_CHECK_IF_GOTO_NEXT_WAVE {
             clearflag(FLAG_TEMP_8)
         case 3: //begin WAVE 3
             setvar(VAR_TEMP_E, 3) //WAVE: 3
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_4) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_GAAL_4) //   TRAINER: TOK-XIL
             clearflag(FLAG_TEMP_4)
         case 4: //begin WAVE 4
             setvar(VAR_TEMP_E, 4) //WAVE: 4
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_5) //OBJECT TO SPAWN.
             call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
             addobject(OBJ_EVENT_ID_GAAL_5) //   TRAINER: KET-DILL
@@ -1342,8 +1741,312 @@ script GYM_CHALLENGE_CHECK_IF_GOTO_NEXT_WAVE {
             clearflag(FLAG_TEMP_1)
         case 7: //begin WAVE 5
             setvar(VAR_TEMP_E, 5) //WAVE: 5
-            call(FIGHTCAVES_WAVE_TRANSITION)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
             addobject(OBJ_EVENT_ID_CHAMPION_A)
             clearflag(FLAG_TEMP_A)   
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//----------------------------------//
+//        GYM CHALLENGE WAVES       //
+//----------------------------------//
+
+// VAR_TEMP_C - The amount of monsters defeated in the wave. (Wave_Control) will check When "x" number of mons are defeated to see if it can go to the next wave.  e.g. wave 5, might need 23 monsters defeated so VAR_TEMP_C will need to be 23 in order to start wave 6.
+// After each monster is defeated it will try to call the (Wave_Control) script to see if it can move onto the next wave.
+// VAR_TEMP_E - Set what the current WAVE is.
+// FIGHTCAVES_WAVE_TRANSITION_START - Give Info about next wave starting.
+// VAR_TEMP_F - Load object into the VAR to set it's spawning position.
+// FIGHTCAVES_SET_SPAWN_LOCATION_X - Choose a location for the Object to spawn. "X" being for each npcs are spawning in the wave. To prevent them from spawning on top of eachother.
+// Addobject & Clearflag of the object you wish to spawn in.
+// VAR_POKESCAPE_TZHAAR_PARTY_SIZE - Sets the amount of mons in a randomised trainer's party.
+// VAR_CUSTOM_TRAINERPOOL_LEVEL - The levels of the monsters.
+
+script TZHAAR_GYM_CHALLENGE_WAVES_CONTROL {
+    switch(var(VAR_TEMP_C)){
+		case 0: //begin WAVE 1
+            setvar(VAR_TEMP_E, 1) //WAVE: 1
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_TZKIH_1)
+            clearflag(FLAG_TEMP_1)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
+        case 1: //begin WAVE 2
+            setvar(VAR_TEMP_E, 2) //WAVE: 2
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_2) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_TZKIH_1)
+            clearflag(FLAG_TEMP_1)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_KEK_8) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_3) //LOCATION (2)
+            addobject(OBJ_EVENT_ID_KEK_8)
+            clearflag(FLAG_TEMP_8)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
+        case 3: //begin WAVE 3
+            setvar(VAR_TEMP_E, 3) //WAVE: 3
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_4) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_4) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_GAAL_4) 
+            clearflag(FLAG_TEMP_4)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
+        case 4: //begin WAVE 4
+            setvar(VAR_TEMP_E, 4) //WAVE: 4
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_TZKIH_1) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_TZKIH_1)
+            clearflag(FLAG_TEMP_1)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_KET_HD_10) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_2) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_KET_HD_10)
+            clearflag(FLAG_TEMP_10)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
+        case 6: //begin WAVE 5
+            setvar(VAR_TEMP_E, 5) //WAVE: 5
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_KET_6) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_3) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_KET_6) 
+            clearflag(FLAG_TEMP_6)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
+        case 7: //begin WAVE 6
+            setvar(VAR_TEMP_E, 6) 
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_KEK_8) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_4) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_KEK_8)
+            clearflag(FLAG_TEMP_8)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_4) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (2)
+            addobject(OBJ_EVENT_ID_GAAL_4) 
+            clearflag(FLAG_TEMP_4)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
+        case 9: //begin WAVE 7
+            setvar(VAR_TEMP_E, 7) 
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_KETDILL_B) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_2) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_KETDILL_B)
+            clearflag(FLAG_TEMP_B)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
+        case 10: //begin WAVE 8
+            setvar(VAR_TEMP_E, 8)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_KET_HD_10) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_3) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_KET_HD_10) 
+            clearflag(FLAG_TEMP_10)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_GAAL_4) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_4) //LOCATION (2)
+            addobject(OBJ_EVENT_ID_GAAL_4) 
+            clearflag(FLAG_TEMP_4)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
+        case 12: //begin WAVE 9
+            setvar(VAR_TEMP_E, 9)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_KET_6) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_1) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_KET_6) 
+            clearflag(FLAG_TEMP_6)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_KET_HD_10) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_2) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_KET_HD_10) 
+            clearflag(FLAG_TEMP_10)
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
+        case 14: //begin WAVE 10 //GYM LEADER
+            setvar(VAR_TEMP_E, 10)
+            call(FIGHTCAVES_WAVE_TRANSITION_START)
+            setvar(VAR_TEMP_F, OBJ_EVENT_ID_CHAMPION_A) //OBJECT TO SPAWN.
+            call(FIGHTCAVES_SET_SPAWN_LOCATION_SPECIAL) //LOCATION (1)
+            addobject(OBJ_EVENT_ID_CHAMPION_A)
+            clearflag(FLAG_TEMP_A)  
+            call(FIGHTCAVES_WAVE_TRANSITION_END)
+    }
+}
+
+            
+
+//----------------------------------//
+//       PARTY SIZE CONTROLLER      //
+//----------------------------------//
+script TZHAAR_WAVES_PARTY_SIZE {
+    switch(var(VAR_TEMP_E)) { //CURRENT WAVE
+		case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+            random(2)
+            switch (var(VAR_RESULT)) { 
+                case 0: 
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 1)
+                case 1:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 2)
+            }
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+            random(3)
+            switch (var(VAR_RESULT)) { 
+                case 0: 
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 1)
+                case 1:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 2)
+                case 2:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 3)
+            }
+        case 11:
+        case 12:
+        case 13:
+        case 14:
+        case 15:
+            random(4)
+            switch (var(VAR_RESULT)) { 
+                case 0: 
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 1)
+                case 1:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 2)
+                case 2:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 3)
+                case 3:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 4)
+            }
+        case 16:
+        case 17:
+        case 18:
+        case 19:
+        case 20:
+            random(5)
+            switch (var(VAR_RESULT)) { 
+                case 0: 
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 1)
+                case 1:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 2)
+                case 2:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 3)
+                case 3:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 4)
+                case 4:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 5)
+            }
+        case 21:
+        case 22:
+        case 23:
+        case 24:
+        case 25:
+            random(6)
+            switch (var(VAR_RESULT)) { 
+                case 0: 
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 1)
+                case 1:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 2)
+                case 2:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 3)
+                case 3:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 4)
+                case 4:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 5)
+                case 5:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 6)
+            }
+        case 26:
+        case 27:
+        case 28:
+        case 29:
+        case 30:
+            random(5)
+            switch (var(VAR_RESULT)) { 
+                case 0: 
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 2)
+                case 1:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 3)
+                case 2:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 4)
+                case 3:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 5)
+                case 4:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 6)
+            }
+        case 31:
+        case 32:
+        case 33:
+        case 34:
+        case 35:
+            random(4)
+            switch (var(VAR_RESULT)) { 
+                case 0: 
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 3)
+                case 1:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 4)
+                case 2:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 5)
+                case 3:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 6)
+            }
+        case 36:
+        case 37:
+        case 38:
+        case 39:
+        case 40:
+            random(3)
+            switch (var(VAR_RESULT)) { 
+                case 0: 
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 4)
+                case 1:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 5)
+                case 2:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 6)
+            }
+        case 41:
+        case 42:
+        case 43:
+        case 44:
+        case 45:
+            random(2)
+            switch (var(VAR_RESULT)) { 
+                case 0: 
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 5)
+                case 1:
+                    setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 6)
+            }
+        case 46:
+        case 47:
+        case 48:
+        case 49:
+        case 50:
+            setvar(VAR_POKESCAPE_TZHAAR_PARTY_SIZE, 6)
+    }
+    return
+} 

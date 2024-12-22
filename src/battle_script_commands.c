@@ -580,7 +580,7 @@ static void Cmd_setuserstatus3(void);
 static void Cmd_assistattackselect(void);
 static void Cmd_trysetmagiccoat(void);
 static void Cmd_trysetsnatch(void);
-static void Cmd_unused2(void);
+static void Cmd_gettokkul(void);
 static void Cmd_switchoutabilities(void);
 static void Cmd_jumpifhasnohp(void);
 static void Cmd_getsecretpowereffect(void);
@@ -839,7 +839,7 @@ void (* const gBattleScriptingCommandsTable[])(void) =
     Cmd_assistattackselect,                      //0xDE
     Cmd_trysetmagiccoat,                         //0xDF
     Cmd_trysetsnatch,                            //0xE0
-    Cmd_unused2,                                 //0xE1
+    Cmd_gettokkul,                               //0xE1
     Cmd_switchoutabilities,                      //0xE2
     Cmd_jumpifhasnohp,                           //0xE3
     Cmd_getsecretpowereffect,                    //0xE4
@@ -4251,7 +4251,13 @@ static void Cmd_getexp(void)
                     && !gBattleStruct->wildVictorySong)
                 {
                     BattleStopLowHpSound();
-                    PlayBGM(MUS_VICTORY_WILD); //  MUS_PS_TRAINER_VICTORY
+                    
+                    if (FlagGet(FLAG_TZHAAR_RANDOM) == TRUE) {
+                        PlayBGM(MUS_PS_TRAINER_VICTORY);
+                    }
+                    else {
+                        PlayBGM(MUS_VICTORY_WILD); //  MUS_PS_TRAINER_VICTORY
+                    }
                     gBattleStruct->wildVictorySong++;
                 }
 
@@ -14386,10 +14392,6 @@ static void Cmd_trysetsnatch(void)
     }
 }
 
-static void Cmd_unused2(void)
-{
-}
-
 static void Cmd_switchoutabilities(void)
 {
     CMD_ARGS(u8 battler);
@@ -16656,5 +16658,25 @@ void BS_SetPhotonGeyserCategory(void)
 {
     NATIVE_ARGS();
     gBattleStruct->swapDamageCategory = (GetSplitBasedOnStats(gBattlerAttacker) == SPLIT_PHYSICAL);
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+static void Cmd_gettokkul(void)
+{
+    CMD_ARGS();
+
+    u32 tokkul;
+    u8 trainerPartySize = VarGet(VAR_POKESCAPE_TZHAAR_PARTY_SIZE);
+
+    if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && !(gBattleTypeFlags & BATTLE_TYPE_LINK))
+    {
+        tokkul = (trainerPartySize * 10);
+    }
+    else {
+        tokkul = 10;
+    }
+    VarSet(VAR_POKESCAPE_TOKKUL_CURRENCY, (VAR_POKESCAPE_TOKKUL_CURRENCY + tokkul));
+    
+    PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff1, 5, tokkul);
     gBattlescriptCurrInstr = cmd->nextInstr;
 }

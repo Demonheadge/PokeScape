@@ -2425,3 +2425,7 @@
 	.macro freestuff battler:req
 	various \battler, VARIOUS_FREE_STUFF
 	.endm
+
+	.macro gettokkul
+	.byte 0xE1
+	.endm

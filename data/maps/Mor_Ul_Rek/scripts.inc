@@ -1,14 +1,14 @@
-Tzhaar_1F_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Tzhaar_1F_MapScripts_MAP_SCRIPT_ON_TRANSITION
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, Tzhaar_1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
+Mor_Ul_Rek_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Mor_Ul_Rek_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Mor_Ul_Rek_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
-Tzhaar_1F_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+Mor_Ul_Rek_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 8
 	call TZHAAR_STATE
 	return
 
-Tzhaar_1F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+Mor_Ul_Rek_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_POKESCAPE_STORYMODE_PROGRESS, 150, STORYMODE_TZHAAR_NPC
 	.2byte 0
 
@@ -41,7 +41,7 @@ TZHAAR_STATE_7:
 
 
 TZHAAR_HEAL_ZONE::
-	setrespawn HEAL_LOCATION_TZHAAR_1F
+	setrespawn HEAL_LOCATION_MOR_UL_REK
 	setvar VAR_TEMP_0, 1
 	end
 
@@ -59,7 +59,7 @@ STORYMODE_TZHAAR_NPC::
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_MAIN_STORY, 9
 	setflag FLAG_TEMP_1F
 	removeobject 26
-	setrespawn HEAL_LOCATION_TZHAAR_1F
+	setrespawn HEAL_LOCATION_MOR_UL_REK
 	release
 	end
 

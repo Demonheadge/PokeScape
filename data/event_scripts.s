@@ -1162,9 +1162,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Kalphite_Caves_B1F/scripts.inc"
 	.include "data/maps/Kalphite_Caves_B2F/scripts.inc"
 	.include "data/maps/Kalphite_Caves_B3F/scripts.inc"
-	.include "data/maps/Tzhaar_1F/scripts.inc"
+	.include "data/maps/Mor_Ul_Rek/scripts.inc"
 	.include "data/maps/Giant_Mole_Cave/scripts.inc"
-	.include "data/maps/Tzhaar_FightCaves/scripts.inc"
+	.include "data/maps/Tzhaar_Gym_Room/scripts.inc"
 	.include "data/maps/Route39/scripts.inc"
 	.include "data/maps/Varrock_House_1/scripts.inc"
 	.include "data/maps/Varrock_House_1_Up/scripts.inc"
@@ -1524,3 +1524,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/GoblinVillage_House_4/scripts.inc"
 
 	.include "data/maps/BarbarianVillage_House_3/scripts.inc"
+
+	.include "data/maps/Tzhaar_Fight_Caves/scripts.inc"
