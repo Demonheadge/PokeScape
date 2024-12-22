@@ -140,7 +140,7 @@
       "x": 3,
       "y": 3,
       "elevation": 0,
-      "item": "ITEM_ELEMENTAL_POUCH",
+      "item": "ITEM_POUCH_ELEMENTAL",
       "flag": "FLAG_HIDDEN_ITEM_DRAYNORMANOR_3"
     }
   ],

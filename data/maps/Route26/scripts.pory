@@ -104,6 +104,6 @@ script ROUTE26_SUPER_PRAYER_POTION
 
 script ROUTE26_ADAMANT_POUCH
 {
-    finditem(ITEM_ADAMANT_POUCH)
+    finditem(ITEM_POUCH_ADAMANT)
     end
 }

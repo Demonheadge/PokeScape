@@ -144,7 +144,7 @@ script ITEM_DWARVENMINES_1
 }
 script ITEM_DWARVENMINES_2
 {
-    finditem(ITEM_GRANITE_POUCH)
+    finditem(ITEM_POUCH_GRANITE)
     end
 }
 script ITEM_DWARVENMINES_3

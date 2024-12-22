@@ -33,342 +33,246 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
 
-// Poké Balls
+// Poké Balls / Pouches
 
-    [ITEM_NORMAL_POUCH] =
+    [ITEM_POUCH] =
     {
         .name = _("POUCH"),
-        .price = 200,
+        .price = 100,
         .description = sNormalPouchDesc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_NORMAL_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_POUCH - FIRST_BALL,
     },
 
-    [ITEM_BRONZE_POUCH] =
+    [ITEM_POUCH_BRONZE] =
     {
-        .name = _("BRONZE. P"),
-        .price = 200,
-        .description = sBronzePouchDesc,
+        .name = _("BRONZE POUCH"),
+        .price = 100,
+        .description = sPouch_Bronze_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_BRONZE_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_POUCH_BRONZE - FIRST_BALL,
     },
 
-    [ITEM_IRON_POUCH] =
+    [ITEM_POUCH_IRON] =
     {
-        .name = _("IRON. P"),
-        .price = 300,
-        .description = sIronPouchDesc,
-        .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
-        .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_IRON_POUCH - FIRST_BALL,
-    },
-/*
-    [ITEM_STEEL_POUCH] =
-    {
-        .name = _("STEEL. P"),
-        .price = 550,
-        .description = sSteelPouchDesc,
-        .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
-        .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_IRON_POUCH - FIRST_BALL,
-    },
-*/
-    [ITEM_DRAGON_POUCH] =
-    {
-        .name = _("DRAGON. P"),
-        .price = 50000,
-        .description = sDragonPouchDesc,
-        .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
-        .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_DRAGON_POUCH - FIRST_BALL,
-    },
-
-    [ITEM_PREMIER_BALL] =
-    {
-        .name = _("Premier Ball"),
-        .price = 20,
-        .description = sPremierBallDesc,
-        .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
-        .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_PREMIER_BALL - FIRST_BALL,
-    },
-
-    [ITEM_BLESSED_POUCH] =
-    {
-        .name = _("BLESSED. P"),
-        .price = 300,
-        .description = sBlessedPouchDesc,
-        .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
-        .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_BLESSED_POUCH - FIRST_BALL,
-    },
-
-    [ITEM_LEATHER_POUCH] =
-    {
-        .name = _("LEATHER. P"),
+        .name = _("IRON POUCH"),
         .price = 1000,
-        .description = sLeatherPouchDesc,
+        .description = sPouch_Iron_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_LEATHER_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_POUCH_IRON - FIRST_BALL,
     },
 
-    [ITEM_ELEMENTAL_POUCH] =
+    [ITEM_POUCH_STEEL] =
     {
-        .name = _("ELEMENTAL. P"),
+        .name = _("STEEL POUCH"),
+        .price = 250,
+        .description = sPouch_Steel_Desc,
+        .pocket = POCKET_POKE_BALLS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .battleUsage = EFFECT_ITEM_THROW_BALL,
+        .secondaryId = ITEM_POUCH_STEEL - FIRST_BALL,
+    },
+
+    [ITEM_POUCH_MITHRIL] =
+    {
+        .name = _("MITHRIL POUCH"),
         .price = 1000,
-        .description = sElementalPouchDesc,
+        .description = sPouch_Mithril_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_ELEMENTAL_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_POUCH_MITHRIL - FIRST_BALL,
     },
 
-    [ITEM_CATALYTIC_POUCH] =
+    [ITEM_POUCH_ADAMANT] =
     {
-        .name = _("CATALYTIC. P"),
+        .name = _("ADAMANT POUCH"),
         .price = 1000,
-        .description = sCatalyticPouchDesc,
+        .description = sPouch_Adamant_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_CATALYTIC_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_POUCH_ADAMANT - FIRST_BALL,
     },
 
-    [ITEM_CRYSTAL_POUCH] =
+    [ITEM_POUCH_RUNE] =
     {
-        .name = _("CRYSTAL. P"),
-        .price = 20000,
-        .description = sCrystalPouchDesc,
+        .name = _("RUNE POUCH"),
+        .price = 500,
+        .description = sPouch_Rune_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_CRYSTAL_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_POUCH_RUNE - FIRST_BALL,
     },
 
-    [ITEM_ADAMANT_POUCH] =
+    [ITEM_POUCH_DRAGON] =
     {
-        .name = _("ADAMANT. P"),
+        .name = _("DRAGON POUCH"),
+        .price = 10000,
+        .description = sPouch_Dragon_Desc,
+        .pocket = POCKET_POKE_BALLS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .battleUsage = EFFECT_ITEM_THROW_BALL,
+        .secondaryId = ITEM_POUCH_DRAGON - FIRST_BALL,
+    },
+
+    [ITEM_POUCH_CRYSTAL] =
+    {
+        .name = _("CRYSTAL POUCH"),
+        .price = 10000,
+        .description = sPouch_Crystal_Desc,
+        .pocket = POCKET_POKE_BALLS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .battleUsage = EFFECT_ITEM_THROW_BALL,
+        .secondaryId = ITEM_POUCH_CRYSTAL - FIRST_BALL,
+    },
+
+    [ITEM_POUCH_BLACK] =
+    {
+        .name = _("BLACK POUCH"),
         .price = 1000,
-        .description = sAdamantPouchDesc,
+        .description = sPouch_Black_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_ADAMANT_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_POUCH_BLACK - FIRST_BALL,
     },
 
-    [ITEM_MITHRIL_POUCH] =
+    [ITEM_POUCH_WHITE] =
     {
-        .name = _("MITHRIL. P"),
+        .name = _("WHITE POUCH"),
         .price = 1000,
-        .description = sMithrilPouchDesc,
+        .description = sPouch_White_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_MITHRIL_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_POUCH_WHITE - FIRST_BALL,
     },
 
-    [ITEM_AUGMENTED_POUCH] =
+    [ITEM_POUCH_ELEMENTAL] =
     {
-        .name = _("AUGMENTED. P"),
+        .name = _("ELEMENTAL P."),
         .price = 1000,
-        .description = sAugmentedPouchDesc,
+        .description = sPouch_Elemental_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_AUGMENTED_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_POUCH_ELEMENTAL - FIRST_BALL,
     },
 
-    [ITEM_EMBROIDERED_POUCH] =
+    [ITEM_POUCH_CATALYTIC] =
     {
-        .name = _("EMBROIDERED.P"),
+        .name = _("CATALYTIC P."),
         .price = 1000,
-        .description = sEmbroideredPouchDesc,
+        .description = sPouch_Catalytic_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_EMBROIDERED_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_POUCH_CATALYTIC - FIRST_BALL,
     },
 
-    [ITEM_BARROWS_POUCH] =
+    [ITEM_POUCH_BANE] =
     {
-        .name = _("BARROWS. P"),
-        .price = 0,
-        .description = sBarrowsPouchDesc,
+        .name = _("BANE POUCH"),
+        .price = 1000,
+        .description = sPouch_Bane_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_BARROWS_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_POUCH_BANE - FIRST_BALL,
     },
 
-    [ITEM_SPIDERSILK_POUCH] =
+    [ITEM_POUCH_AUGMENTED] =
     {
-        .name = _("SPIDERSILK. P"),
-        .price = 0,
-        .description = sSpidersilkPouchDesc,
+        .name = _("GIZMO POUCH"),
+        .price = 1000,
+        .description = sPouch_Augmented_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_SPIDERSILK_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_POUCH_AUGMENTED - FIRST_BALL,
     },
 
-    [ITEM_ANCIENT_POUCH] =
+    [ITEM_POUCH_ANCIENT] =
     {
-        .name = _("ANCIENT. P"),
-        .price = 0,
-        .description = sAncientPouchDesc,
+        .name = _("ANCIENT POUCH"),
+        .price = 1000,
+        .description = sPouch_Ancient_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_ANCIENT_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_POUCH_ANCIENT - FIRST_BALL,
     },
 
-    [ITEM_ROYAL_POUCH] =
+    [ITEM_POUCH_BARROWS] =
     {
-        .name = _("ROYAL POUCH"),
-        .price = 0,
-        .description = sRoyalPouchDesc,
+        .name = _("BLIGHT POUCH"),
+        .price = 1000,
+        .description = sPouch_Barrows_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_ROYAL_POUCH - FIRST_BALL,
+        .secondaryId = ITEM_POUCH_BARROWS - FIRST_BALL,
     },
 
-    [ITEM_MYSTIC_POUCH] =
+    [ITEM_POUCH_GRANITE] =
+    {
+        .name = _("GRANITE POUCH"),
+        .price = 1000,
+        .description = sPouch_Granite_Desc,
+        .pocket = POCKET_POKE_BALLS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .battleUsage = EFFECT_ITEM_THROW_BALL,
+        .secondaryId = ITEM_POUCH_GRANITE - FIRST_BALL,
+    },
+
+    [ITEM_POUCH_SPLITBARK] =
+    {
+        .name = _("BARK POUCH"),
+        .price = 1000,
+        .description = sPouch_Splitbark_Desc,
+        .pocket = POCKET_POKE_BALLS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .battleUsage = EFFECT_ITEM_THROW_BALL,
+        .secondaryId = ITEM_POUCH_SPLITBARK - FIRST_BALL,
+    },
+
+    [ITEM_POUCH_MYSTIC] =
     {
         .name = _("MYSTIC POUCH"),
-        .price = 0,
-        .description = sMysticPouchDesc,
+        .price = 200,
+        .description = sPouch_Mystic_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .sort = ITEM_TYPE_UNSORTABLE,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_MYSTIC_POUCH - FIRST_BALL,
-    },
-
-    [ITEM_DRAGONBANE_POUCH] =
-    {
-        .name = _("DRAGONBANE. P"),
-        .price = 0,
-        .description = sDragonbanePouchDesc,
-        .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
-        .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_DRAGONBANE_POUCH - FIRST_BALL,
-    },
-
-    [ITEM_GRANITE_POUCH] =
-    {
-        .name = _("GRANITE. P"),
-        .price = 0,
-        .description = sGranitePouchDesc,
-        .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
-        .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_GRANITE_POUCH - FIRST_BALL,
-    },
-
-    [ITEM_IMPHIDE_POUCH] =
-    {
-        .name = _("IMPHIDE. P"),
-        .price = 0,
-        .description = sImphidePouchDesc,
-        .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
-        .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_IMPHIDE_POUCH - FIRST_BALL,
-    },
-
-    [ITEM_GEM_POUCH] =
-    {
-        .name = _("GEM POUCH"),
-        .price = 0,
-        .description = sGemPouchDesc,
-        .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
-        .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_GEM_POUCH - FIRST_BALL,
-    },
-
-    [ITEM_SPLITBARK_POUCH] =
-    {
-        .name = _("SPLITBARK. P"),
-        .price = 0,
-        .description = sSplitbarkPouchDesc,
-        .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
-        .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_SPLITBARK_POUCH - FIRST_BALL,
-    },
-
-    [ITEM_BLACK_POUCH] =
-    {
-        .name = _("BLACK. P"),
-        .price = 0,
-        .description = sBlackPouchDesc,
-        .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
-        .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_BLACK_POUCH - FIRST_BALL,
-    },
-
-    [ITEM_FISHBOWL_POUCH] =
-    {
-        .name = _("FISHBOWL. P"),
-        .price = 0,
-        .description = sFishbowlPouchDesc,
-        .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
-        .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_FISHBOWL_POUCH - FIRST_BALL,
-    },
-
-    [ITEM_CHERISH_BALL] =
-    {
-        .name = _("Cherish Ball"),
-        .price = 0,
-        .description = sCherishBallDesc,
-        .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_USE_BAG_MENU,
-        .sort = ITEM_TYPE_UNSORTABLE,
-        .battleUsage = EFFECT_ITEM_THROW_BALL,
-        .secondaryId = ITEM_CHERISH_BALL - FIRST_BALL,
+        .secondaryId = ITEM_POUCH_MYSTIC - FIRST_BALL,
     },
 
 // Medicine

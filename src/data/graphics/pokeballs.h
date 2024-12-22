@@ -135,3 +135,9 @@ const u32 gInterfacePal_AncientPouch[] = INCBIN_U32("graphics/balls/ancient_pouc
 
 const u32 gInterfaceGfx_ElementalPouch[] = INCBIN_U32("graphics/balls/elemental_pouch.4bpp.lz");
 const u32 gInterfacePal_ElementalPouch[] = INCBIN_U32("graphics/balls/elemental_pouch.gbapal.lz");
+
+const u32 gInterfaceGfx_WhitePouch[] = INCBIN_U32("graphics/balls/white_pouch.4bpp.lz");
+const u32 gInterfacePal_WhitePouch[] = INCBIN_U32("graphics/balls/white_pouch.gbapal.lz");
+
+const u32 gInterfaceGfx_CatalyticPouch[] = INCBIN_U32("graphics/balls/catalytic_pouch.4bpp.lz");
+const u32 gInterfacePal_CatalyticPouch[] = INCBIN_U32("graphics/balls/catalytic_pouch.gbapal.lz");

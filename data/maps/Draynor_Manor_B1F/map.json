@@ -167,7 +167,7 @@
       "x": 4,
       "y": 6,
       "elevation": 0,
-      "item": "ITEM_MITHRIL_POUCH",
+      "item": "ITEM_POUCH_MITHRIL",
       "flag": "FLAG_HIDDEN_ITEM_DRAYNORMANOR_5"
     }
   ],

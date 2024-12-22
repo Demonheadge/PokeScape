@@ -5,7 +5,7 @@ Tutorial_Island_Shop_MapScripts::
 Tutorial_Island_Shop_EventScript_Clerk::
 	lock
 	faceplayer
-	checkitem ITEM_BRONZE_POUCH, 1
+	checkitem ITEM_POUCH_BRONZE, 1
 	compare VAR_RESULT, 0
 	goto_if_eq Tutorial_Island_Shop_EventScript_Clerk_1
 	msgbox Tutorial_Island_Shop_EventScript_Clerk_Text_3
@@ -18,7 +18,7 @@ Tutorial_Island_Shop_EventScript_Clerk::
 Tutorial_Island_Shop_EventScript_Clerk_1:
 	msgbox Tutorial_Island_Shop_EventScript_Clerk_Text_0
 	msgbox Tutorial_Island_Shop_EventScript_Clerk_Text_1
-	giveitem ITEM_BRONZE_POUCH, 1
+	giveitem ITEM_POUCH_BRONZE, 1
 	msgbox Tutorial_Island_Shop_EventScript_Clerk_Text_2
 	release
 	return
@@ -27,7 +27,7 @@ Tutorial_Island_Shop_EventScript_Clerk_1:
 
 	.align 2
 	Tutorial_Island_Shop_Pokemart:
-	.2byte ITEM_BRONZE_POUCH
+	.2byte ITEM_POUCH_BRONZE
 	.2byte ITEM_EMPTY_BUCKET
 	.2byte ITEM_EMPTY_POT
 	.2byte ITEM_NONE

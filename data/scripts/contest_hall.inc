@@ -43,7 +43,7 @@ LilycoveCity_ContestLobby_EventScript_PickUpPrize::
 	end
 
 LilycoveCity_ContestLobby_EventScript_GiveLuxuryBallAtCounter::
-	giveitem ITEM_EMBROIDERED_POUCH
+	giveitem ITEM_POUCH_ANCIENT
 	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_ContestLobby_EventScript_NoRoomForLuxuryBallAtCounter
 	setvar VAR_CONTEST_PRIZE_PICKUP, 0
 	closemessage
@@ -1150,7 +1150,7 @@ ContestHall_EventScript_NoRoomForLuxuryBall::
 	return
 
 ContestHall_EventScript_GiveLuxuryBall::
-	giveitem ITEM_EMBROIDERED_POUCH
+	giveitem ITEM_POUCH_ANCIENT
 	goto_if_eq VAR_RESULT, FALSE, ContestHall_EventScript_NoRoomForLuxuryBall
 	lockall
 	msgbox ContestHall_Text_CongratsPleaseCompeteAgain, MSGBOX_DEFAULT

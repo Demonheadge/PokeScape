@@ -461,7 +461,7 @@
       "x": 20,
       "y": 7,
       "elevation": 3,
-      "item": "ITEM_GRANITE_POUCH",
+      "item": "ITEM_POUCH_GRANITE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE8_3"
     },
     {

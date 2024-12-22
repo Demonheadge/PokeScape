@@ -117,6 +117,12 @@ extern const u32 gInterfacePal_AncientPouch[];
 extern const u32 gInterfaceGfx_ElementalPouch[];
 extern const u32 gInterfacePal_ElementalPouch[];
 
+extern const u32 gInterfaceGfx_WhitePouch[];
+extern const u32 gInterfacePal_WhitePouch[];
+
+extern const u32 gInterfaceGfx_CatalyticPouch[];
+extern const u32 gInterfacePal_CatalyticPouch[];
+
 //pokescape pokeballs
 extern const u32 gItemIconPalette_NormalPouch[];
 extern const u32 gItemIcon_NormalPouch[];
@@ -171,6 +177,12 @@ extern const u32 gItemIcon_AncientPouch[];
 
 extern const u32 gItemIconPalette_ElementalPouch[];
 extern const u32 gItemIcon_ElementalPouch[];
+
+extern const u32 gItemIconPalette_WhitePouch[];
+extern const u32 gItemIcon_WhitePouch[];
+
+extern const u32 gItemIconPalette_CatalyticPouch[];
+extern const u32 gItemIcon_CatalyticPouch[];
 
 // pokemon gfx
 extern const u16 gMonIconPalettes[][16];

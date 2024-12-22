@@ -65,7 +65,7 @@ MODTIMBO_STATE_3:
 
 
 ITEM_FALADOR_1::
-	finditem ITEM_ADAMANT_POUCH
+	finditem ITEM_POUCH_ADAMANT
 	end
 
 

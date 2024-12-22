@@ -25,9 +25,9 @@ LilycoveCity_DepartmentStore_2F_EventScript_ClerkLeft::
 
 	.align 2
 LilycoveCity_DepartmentStore_2F_Pokemart1:
-	.2byte ITEM_NORMAL_POUCH
-	.2byte ITEM_NORMAL_POUCH
-	.2byte ITEM_NORMAL_POUCH
+	.2byte ITEM_POUCH
+	.2byte ITEM_POUCH
+	.2byte ITEM_POUCH
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_FULL_HEAL
 	.2byte ITEM_ANTIDOTE

@@ -108,7 +108,7 @@
       "x": 15,
       "y": 2,
       "elevation": 0,
-      "item": "ITEM_BLACK_POUCH",
+      "item": "ITEM_POUCH_BLACK",
       "flag": "FLAG_HIDDEN_ITEM_TEMP_6"
     }
   ],

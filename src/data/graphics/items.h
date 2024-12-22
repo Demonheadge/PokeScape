@@ -2219,6 +2219,11 @@ const u32 gItemIconPalette_AncientPouch[] = INCBIN_U32("graphics/items/pokescape
 const u32 gItemIcon_ElementalPouch[] = INCBIN_U32("graphics/items/pokescape_icons/elemental_pouch.4bpp.lz");
 const u32 gItemIconPalette_ElementalPouch[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/elemental_pouch.gbapal.lz");
 
+const u32 gItemIcon_WhitePouch[] = INCBIN_U32("graphics/items/pokescape_icons/white_pouch.4bpp.lz");
+const u32 gItemIconPalette_WhitePouch[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/white_pouch.gbapal.lz");
+
+const u32 gItemIcon_CatalyticPouch[] = INCBIN_U32("graphics/items/pokescape_icons/catalytic_pouch.4bpp.lz");
+const u32 gItemIconPalette_CatalyticPouch[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/catalytic_pouch.gbapal.lz");
 
 //pokescape key items
 const u32 gItemIcon_Pickaxe[] = INCBIN_U32("graphics/items/pokescape_icons/pickaxe.4bpp.lz");

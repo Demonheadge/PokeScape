@@ -109,7 +109,7 @@ LumSwampSign::
 
 
 ITEM_LUMBRIDGESWAMP_ITEM_2::
-	finditem ITEM_MITHRIL_POUCH
+	finditem ITEM_POUCH_MITHRIL
 	end
 
 

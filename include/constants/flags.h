@@ -1123,7 +1123,7 @@
 #define FLAG_ITEM_ROUTE9_TM54_MUD_BOMB                              0x425
 #define FLAG_ITEM_ROUTE9_EARTH_RUNE                                 0x426
 #define FLAG_ITEM_ROUTE9_CABBAGE                                    0x427
-#define FLAG_ITEM_ROUTE8_ITEM_MITHRIL_POUCH                         0x428
+#define FLAG_ITEM_ROUTE8_ITEM_POUCH_MITHRIL                         0x428
 #define FLAG_ITEM_ROUTE8_ITEM_FLAX                                  0x429
 #define FLAG_ITEM_ROUTE8_ITEM_PRAYER_POTION                         0x42A
 #define FLAG_ITEM_LUMBRIDGESWAMP_ITEM_SPIRIT_SHARD                  0x42B

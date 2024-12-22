@@ -29,7 +29,7 @@ ITEM_AsgarnianDungeon_3::
 
 
 ITEM_AsgarnianDungeon_4::
-	finditem ITEM_ELEMENTAL_POUCH
+	finditem ITEM_POUCH_ELEMENTAL
 	end
 
 

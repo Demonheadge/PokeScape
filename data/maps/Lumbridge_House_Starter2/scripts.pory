@@ -57,7 +57,7 @@ script GAMEMODE_CHECK_NEWGAME_ITEMS
             msgbox(format("Obtained a load of useful items."))
             waitfanfare
             additem (ITEM_ROTTEN_POTATO)
-            additem (ITEM_NORMAL_POUCH, 10)
+            additem (ITEM_POUCH, 10)
             additem (ITEM_MAP)
             additem (ITEM_ITEMFINDER)
             additem (ITEM_SMALL_NET)

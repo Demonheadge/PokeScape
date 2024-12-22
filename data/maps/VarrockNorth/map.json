@@ -511,7 +511,7 @@
       "x": 21,
       "y": 8,
       "elevation": 3,
-      "item": "ITEM_DRAGON_POUCH",
+      "item": "ITEM_POUCH_DRAGON",
       "flag": "FLAG_UNUSED_0x29F"
     },
     {

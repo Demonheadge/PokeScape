@@ -30,7 +30,7 @@ OldaleTown_Mart_ExpandedItems::
 
 	.align 2
 OldaleTown_Mart_Pokemart_Expanded:
-	.2byte ITEM_NORMAL_POUCH
+	.2byte ITEM_POUCH
 	.2byte ITEM_POTION
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL

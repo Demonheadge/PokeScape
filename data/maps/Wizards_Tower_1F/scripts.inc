@@ -852,32 +852,32 @@ RUNE_EVOLUTIONS_NOTES_3:
 	end
 
 RUNE_EVOLUTIONS_NOTES_4:
-	msgbox RUNE_EVOLUTIONS_NOTES_Text_0
+	msgbox RUNE_EVOLUTIONS_NOTES_Text_1
 	release
 	end
 
 RUNE_EVOLUTIONS_NOTES_5:
-	msgbox RUNE_EVOLUTIONS_NOTES_Text_0
+	msgbox RUNE_EVOLUTIONS_NOTES_Text_2
 	release
 	end
 
 RUNE_EVOLUTIONS_NOTES_6:
-	msgbox RUNE_EVOLUTIONS_NOTES_Text_0
+	msgbox RUNE_EVOLUTIONS_NOTES_Text_3
 	release
 	end
 
 RUNE_EVOLUTIONS_NOTES_7:
-	msgbox RUNE_EVOLUTIONS_NOTES_Text_0
+	msgbox RUNE_EVOLUTIONS_NOTES_Text_4
 	release
 	end
 
 RUNE_EVOLUTIONS_NOTES_8:
-	msgbox RUNE_EVOLUTIONS_NOTES_Text_0
+	msgbox RUNE_EVOLUTIONS_NOTES_Text_5
 	release
 	end
 
 RUNE_EVOLUTIONS_NOTES_9:
-	msgbox RUNE_EVOLUTIONS_NOTES_Text_0
+	msgbox RUNE_EVOLUTIONS_NOTES_Text_6
 	release
 	end
 
@@ -1204,3 +1204,85 @@ RUNE_EVOLUTIONS_NOTES_Text_0:
 	.string "tunnels below Barbarian Village.\p"
 	.string "I wonder what connection that place\n"
 	.string "has to Chaos Runes.$"
+
+RUNE_EVOLUTIONS_NOTES_Text_1:
+	.string "The bookcase contains various\n"
+	.string "research notes that Rick has written.\p"
+	.string "You choose one at random.\p"
+	.string "Fire Runes appear to have some\n"
+	.string "connection to an otherworldly plane of\l"
+	.string "hellfire, as exposing kittens, puppies,\l"
+	.string "and even rats to them turns them into\l"
+	.string "demonic forms that burn with the fires\l"
+	.string "of hell itself.$"
+
+RUNE_EVOLUTIONS_NOTES_Text_2:
+	.string "The bookcase contains various\n"
+	.string "research notes that Rick has written.\p"
+	.string "You choose one at random.\p"
+	.string "It appears that puppies have some of\n"
+	.string "the most runic evolutions of any\l"
+	.string "monster I have encountered.\p"
+	.string "These also vary depending on the type\n"
+	.string "of dog you expose to the stone.\p"
+	.string "For example, a pup exposed to an Air\n"
+	.string "Rune evolves into a Labrador.\p"
+	.string "However, if you expose a mutt to the\n"
+	.string "same rune?\p"
+	.string "It turns into a Greyhound.\p"
+	.string "Completely different!.$"
+
+RUNE_EVOLUTIONS_NOTES_Text_3:
+	.string "The bookcase contains various\n"
+	.string "research notes that Rick has written.\p"
+	.string "You choose one at random.\p"
+	.string "Zamorakian mages say that sometimes\n"
+	.string "death itself is powerful enough to\l"
+	.string "evolve a monster.\p"
+	.string "For those adventurers who don't want\n"
+	.string "to put their monsters through that,\l"
+	.string "Death Runes appear to have the same\l"
+	.string "effect for evolution.\p"
+	.string "They are extremely rare though, as\n"
+	.string "nobody seems to be able to find the\l"
+	.string "Altar to make more.$"
+
+RUNE_EVOLUTIONS_NOTES_Text_4:
+	.string "The bookcase contains various\n"
+	.string "research notes that Rick has written.\p"
+	.string "You choose one at random.\p"
+	.string "We once had adventurers stay in the\n"
+	.string "tower with their Pet Rock.\p"
+	.string "They didn't stay long though, as\n"
+	.string "someone left a Law Rune lying around\l"
+	.string "and the Pet Rock evolved into a Party\l"
+	.string "Rock!\p"
+	.string "It kept the whole tower up all night\n"
+	.string "long, partying over and over..$"
+
+RUNE_EVOLUTIONS_NOTES_Text_5:
+	.string "The bookcase contains various\n"
+	.string "research notes that Rick has written.\p"
+	.string "You choose one at random.\p"
+	.string "There are runes said to hail from one of\n"
+	.string "Gielinor's moons, which are imbued with\l"
+	.string "the energy of the cosmos.\p"
+	.string "I've only ever been able to document a\n"
+	.string "single evolution from one of these\l"
+	.string "Cosmic Runes, but it turned the Magpie\l"
+	.string "Impling who stole it into a Lucky\l"
+	.string "Impling that vanished before I could\l"
+	.string "catch it for myself..$"
+
+RUNE_EVOLUTIONS_NOTES_Text_6:
+	.string "The bookcase contains various\n"
+	.string "research notes that Rick has written.\p"
+	.string "You choose one at random.\p"
+	.string "All of the essence creatures around\n"
+	.string "the tower like Pure, Rune, Essling, and\l"
+	.string "even the Rune Guardians all have their\l"
+	.string "own unique interactions with\l"
+	.string "runestones.\p"
+	.string "I still need to find more unusual runes\n"
+	.string "to see what other evolutions are out\l"
+	.string "there.$"

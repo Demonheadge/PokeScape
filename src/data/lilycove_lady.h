@@ -278,12 +278,12 @@ static const u16 sQuizLadyPrizes[] =
     ITEM_WATMEL_BERRY,
     ITEM_BELUE_BERRY,
     ITEM_DURIN_BERRY,
-    ITEM_EMBROIDERED_POUCH,
+    ITEM_POUCH_ANCIENT,
     ITEM_BIG_PEARL,
     ITEM_STAR_PIECE,
     ITEM_RARE_CANDY,
     ITEM_RARE_CANDY,
-    ITEM_PREMIER_BALL
+    ITEM_POUCH
 };
 
 // Favor Lady data
@@ -330,8 +330,8 @@ static const u16 sFavorLadyAcceptedItems_Roundish[] =
     ITEM_GREPA_BERRY,
     ITEM_MAGOST_BERRY,
     ITEM_WATMEL_BERRY,
-    ITEM_NORMAL_POUCH,
-    ITEM_IRON_POUCH,
+    ITEM_POUCH,
+    ITEM_POUCH_IRON,
     ITEM_NONE
 };
 
@@ -374,8 +374,8 @@ static const u16 sFavorLadyAcceptedItems_Shiny[] =
     ITEM_TWISTED_SPOON,
     ITEM_SILVER_POWDER,
     ITEM_BRIGHT_POWDER,
-    ITEM_EMBROIDERED_POUCH,
-    ITEM_PREMIER_BALL,
+    ITEM_POUCH_ANCIENT,
+    ITEM_POUCH,
     ITEM_NONE
 };
 
@@ -421,7 +421,7 @@ static const u16 *const sFavorLadyAcceptedItemLists[] =
 
 static const u16 sFavorLadyPrizes[] =
 {
-    ITEM_EMBROIDERED_POUCH,
+    ITEM_POUCH_ANCIENT,
     ITEM_NUGGET,
     ITEM_PROTEIN,
     ITEM_HEART_SCALE,

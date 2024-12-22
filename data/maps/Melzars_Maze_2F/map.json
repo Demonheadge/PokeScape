@@ -259,7 +259,7 @@
       "x": 13,
       "y": 24,
       "elevation": 0,
-      "item": "ITEM_IRON_POUCH",
+      "item": "ITEM_POUCH_IRON",
       "flag": "FLAG_HIDDEN_ITEM_MELZAR_3"
     },
     {

@@ -174,7 +174,7 @@ script ITEM_CRANDOR_CHOCOLATE_CAKE
 
 script ITEM_CRANDOR_RUNE_POUCH
 {
-    finditem(ITEM_RUNE_POUCH)
+    finditem(ITEM_POUCH_RUNE)
     end
 }
 

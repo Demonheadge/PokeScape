@@ -28,7 +28,7 @@ ITEM_ROUTE15_1::
 
 
 ITEM_ROUTE15_2::
-	finditem ITEM_AUGMENTED_POUCH
+	finditem ITEM_POUCH_AUGMENTED
 	end
 
 
@@ -78,7 +78,7 @@ ITEM_ROUTE28_1::
 
 
 ITEM_ROUTE28_2::
-	finditem ITEM_ADAMANT_POUCH
+	finditem ITEM_POUCH_ADAMANT
 	end
 
 
@@ -88,6 +88,6 @@ ITEM_ALKHARID_1::
 
 
 ITEM_ROUTE19_1::
-	finditem ITEM_ADAMANT_POUCH
+	finditem ITEM_POUCH_ADAMANT
 	end
 

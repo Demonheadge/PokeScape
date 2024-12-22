@@ -51,7 +51,7 @@ script TAVERLEY_DUNGEON
 
 script ITEM_ROUTE_35_MITHRIL_POUCH
 {
-    finditem(ITEM_MITHRIL_POUCH)
+    finditem(ITEM_POUCH_MITHRIL)
     end
 }
 

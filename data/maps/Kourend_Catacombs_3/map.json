@@ -271,7 +271,7 @@
       "x": 23,
       "y": 14,
       "elevation": 3,
-      "item": "ITEM_BLACK_POUCH",
+      "item": "ITEM_POUCH_BLACK",
       "flag": "FLAG_TEMP_8"
     },
     {

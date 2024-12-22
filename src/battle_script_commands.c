@@ -1090,7 +1090,7 @@ static const struct PickupItem sPickupTable[] =
     { ITEM_MINT_CAKE,           {   _,   _,   1,   4,   4,   4,   4,   5,   4,   5, } },
     { ITEM_MINT_CAKE,           {   _,   _,   _,   4,   4,   4,   4,   7,   9,   9, } },
     { ITEM_MINT_CAKE,           {   _,   _,   _,   _,   1,   1,   4,   5,   4,   5, } },
-    { ITEM_CRYSTAL_POUCH,       {   _,   _,   _,   _,   _,   _,   1,   1,   4,   5, } },
+    { ITEM_POUCH_CRYSTAL,       {   _,   _,   _,   _,   _,   _,   1,   1,   4,   5, } },
     { ITEM_LIFE_RUNE,           {   _,   _,   _,   _,   _,   _,   _,   1,   1,   1, } },
 };
 
@@ -1101,12 +1101,12 @@ static const u16 sPickupItems[] =
     ITEM_BREAD,
     ITEM_CHOCOLATE_SUNDAY,
     ITEM_CAKE,
-    ITEM_MITHRIL_POUCH,
+    ITEM_POUCH_MITHRIL,
     ITEM_BODY_RUNE,
     ITEM_FLAX,
     ITEM_WIZARDS_BLIZZARD,
     ITEM_CABBAGE,
-    ITEM_RUNE_POUCH,
+    ITEM_POUCH_RUNE,
     ITEM_CHOCOLATE_CAKE,
     ITEM_PURPLE_SWEETS,
     ITEM_LAMP_ATT,
@@ -1127,7 +1127,7 @@ static const u16 sRarePickupItems[] =
     ITEM_MINT_CAKE,
     ITEM_SOUL_RUNE,
     ITEM_HWEEN_MASK,
-    ITEM_CRYSTAL_POUCH,
+    ITEM_POUCH_CRYSTAL,
     ITEM_SANTA_HAT,
     ITEM_SARADOMIN_BREW,
     ITEM_PARTY_HAT,
@@ -14925,135 +14925,176 @@ static void Cmd_handleballthrow(void)
 
         if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].isUltraBeast)
         {
-            if (gLastUsedItem == ITEM_FISHBOWL_POUCH)
+            /*if (gLastUsedItem == ITEM_FISHBOWL_POUCH)
                 ballMultiplier = 500;
             else
-                ballMultiplier = 10;
+                ballMultiplier = 10;*/
         }
         else
         {
             switch (gLastUsedItem)
             {
-            case ITEM_BRONZE_POUCH:
-                ballMultiplier = 150;
-                break;
-            case ITEM_IRON_POUCH:
-                ballMultiplier = 200;
-                break;
-            case ITEM_LEATHER_POUCH:
+                ////////////////////////////
+            
+                case ITEM_POUCH:
+                    ballMultiplier = 100;
+                    break;
+
+                case ITEM_POUCH_BRONZE:
+                    ballMultiplier = 100;
+                    break;
+
+                case ITEM_POUCH_IRON:
+                    if (GetCurrentMapType() == MAP_TYPE_UNDERWATER
+                        || (B_DIVE_BALL_MODIFIER >= GEN_4 && (gIsFishingEncounter || gIsSurfingEncounter)))
+                        ballMultiplier = 400;
+                    break;
+
+                case ITEM_POUCH_STEEL:
+                    ballMultiplier = 150;
+                    break;
+
+                case ITEM_POUCH_MITHRIL:
+                    if (gBattleResults.battleTurnCounter == 0)
+                        ballMultiplier = (B_QUICK_BALL_MODIFIER >= GEN_5 ? 500 : 400);
+                    break;
+
+                case ITEM_POUCH_ADAMANT:
+                    ballMultiplier = 100 + (gBattleResults.battleTurnCounter * (B_TIMER_BALL_MODIFIER >= GEN_5 ? 30 : 10));
+                    if (ballMultiplier > 400)
+                        ballMultiplier = 400;
+                    break;
+
+                case ITEM_POUCH_RUNE:
+                    ballMultiplier = 200;
+                    break;
+
+                case ITEM_POUCH_CRYSTAL:
+                    if (IsMonShiny(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]]))
+                    ballMultiplier = 800;
+                    break;
+
+                case ITEM_POUCH_BLACK:
+                    i = UpdateTimeOfDay();
+                    if (i == TIME_OF_DAY_EVENING || i == TIME_OF_DAY_NIGHT || gMapHeader.cave || gMapHeader.mapType == MAP_TYPE_UNDERGROUND || gMapHeader.mapType == MAP_TYPE_WILDERNESS)
+                        ballMultiplier = (B_DUSK_BALL_MODIFIER >= GEN_7 ? 300 : 350);
+                    break;
+
+                case ITEM_POUCH_WHITE:
+                    i = UpdateTimeOfDay();
+                    if (i == TIME_OF_DAY_MORNING || i == TIME_OF_DAY_DAY || gMapHeader.mapType == MAP_TYPE_INDOOR)
+                        ballMultiplier = (B_DUSK_BALL_MODIFIER >= GEN_7 ? 300 : 350);
+                    break;
+
+                case ITEM_POUCH_ELEMENTAL:
+                    if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[0] == 
+                    (TYPE_WATER | TYPE_FIRE | TYPE_GRASS | TYPE_ROCK | TYPE_GROUND | TYPE_FLYING) ||
+                    gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[1] == 
+                    (TYPE_WATER | TYPE_FIRE | TYPE_GRASS | TYPE_ROCK | TYPE_GROUND | TYPE_FLYING))
+                    ballMultiplier = 400;
+                    break;
+
+                case ITEM_POUCH_CATALYTIC:
+                    if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[0] == 
+                    (TYPE_GHOST | TYPE_POISON | TYPE_BUG | TYPE_FIGHTING | TYPE_ELECTRIC | TYPE_ICE) ||
+                    gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[1] == 
+                    (TYPE_GHOST | TYPE_POISON | TYPE_BUG | TYPE_FIGHTING | TYPE_ELECTRIC | TYPE_ICE))
+                    ballMultiplier = 400;
+                    break;
+
+                case ITEM_POUCH_BANE:
+                    if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[0] == 
+                    (TYPE_DRAGON | TYPE_FAIRY | TYPE_DARK | TYPE_NORMAL | TYPE_STEEL | TYPE_PSYCHIC) ||
+                    gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[1] == 
+                    (TYPE_DRAGON | TYPE_FAIRY | TYPE_DARK | TYPE_NORMAL | TYPE_STEEL | TYPE_PSYCHIC))
+                    ballMultiplier = 400;
+                    break;
+
+                case ITEM_POUCH_AUGMENTED:
+                    if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[gBattlerTarget].species), FLAG_GET_CAUGHT))
+                        ballMultiplier = (B_REPEAT_BALL_MODIFIER >= GEN_7 ? 350 : 300);
+                    break;
+
+                case ITEM_POUCH_ANCIENT:
+                    ballMultiplier = 100;
+                    break;
+
+                case ITEM_POUCH_BARROWS:
+                    if (gBattleMons[gBattlerAttacker].level >= 4 * gBattleMons[gBattlerTarget].level)
+                        ballMultiplier = 800;
+                    else if (gBattleMons[gBattlerAttacker].level > 2 * gBattleMons[gBattlerTarget].level)
+                        ballMultiplier = 400;
+                    else if (gBattleMons[gBattlerAttacker].level > gBattleMons[gBattlerTarget].level)
+                        ballMultiplier = 200;
+                    break;
+
+                case ITEM_POUCH_GRANITE:
+                    i = GetSpeciesWeight(gBattleMons[gBattlerTarget].species);
+                    if (B_HEAVY_BALL_MODIFIER >= GEN_7)
+                    {
+                        if (i < 1000)
+                            ballAddition = -20;
+                        else if (i < 2000)
+                            ballAddition = 0;
+                        else if (i < 3000)
+                            ballAddition = 20;
+                        else
+                            ballAddition = 30;
+                    }
+                    else if (B_HEAVY_BALL_MODIFIER >= GEN_4)
+                    {
+                        if (i < 2048)
+                            ballAddition = -20;
+                        else if (i < 3072)
+                            ballAddition = 20;
+                        else if (i < 4096)
+                            ballAddition = 30;
+                        else
+                            ballAddition = 40;
+                    }
+                    else
+                    {
+                        if (i < 1024)
+                            ballAddition = -20;
+                        else if (i < 2048)
+                            ballAddition = 0;
+                        else if (i < 3072)
+                            ballAddition = 20;
+                        else if (i < 4096)
+                            ballAddition = 30;
+                        else
+                            ballAddition = 40;
+                    }
+                    break;
+
+                case ITEM_POUCH_SPLITBARK:
+                    if (gBattleMons[gBattlerTarget].status1 & 
+                    (STATUS1_SLEEP | STATUS1_FREEZE | STATUS1_POISON | STATUS1_BURN | 
+                    STATUS1_PARALYSIS | STATUS1_TOXIC_POISON | STATUS1_FROSTBITE))
+                    ballMultiplier = 400;
+                    break;
+
+                case ITEM_POUCH_MYSTIC:
+                    ballMultiplier = 100;
+                    break;
+                
+
+
+
+
+                ////////////////////////////
+            /*case ITEM_LEATHER_POUCH:
                 if (IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_WATER) || IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_BUG))
                     ballMultiplier = B_NET_BALL_MODIFIER >= GEN_7 ? 350 : 300;
                 break;
-            case ITEM_ADAMANT_POUCH:
-                ballMultiplier = 100 + (gBattleResults.battleTurnCounter * (B_TIMER_BALL_MODIFIER >= GEN_5 ? 30 : 10));
-                if (ballMultiplier > 400)
-                    ballMultiplier = 400;
-                break;
-            case ITEM_BARROWS_POUCH:
-                if (gBattleMons[gBattlerAttacker].level >= 4 * gBattleMons[gBattlerTarget].level)
-                    ballMultiplier = 800;
-                else if (gBattleMons[gBattlerAttacker].level > 2 * gBattleMons[gBattlerTarget].level)
-                    ballMultiplier = 400;
-                else if (gBattleMons[gBattlerAttacker].level > gBattleMons[gBattlerTarget].level)
-                    ballMultiplier = 200;
-                break;
-            case ITEM_SPIDERSILK_POUCH:
-                if (gIsFishingEncounter)
-                    ballMultiplier = (B_LURE_BALL_MODIFIER >= GEN_7 ? 500 : 300);
-                break;
-            case ITEM_GRANITE_POUCH:
-                i = GetSpeciesWeight(gBattleMons[gBattlerTarget].species);
-                if (B_HEAVY_BALL_MODIFIER >= GEN_7)
-                {
-                    if (i < 1000)
-                        ballAddition = -20;
-                    else if (i < 2000)
-                        ballAddition = 0;
-                    else if (i < 3000)
-                        ballAddition = 20;
-                    else
-                        ballAddition = 30;
-                }
-                else if (B_HEAVY_BALL_MODIFIER >= GEN_4)
-                {
-                    if (i < 2048)
-                        ballAddition = -20;
-                    else if (i < 3072)
-                        ballAddition = 20;
-                    else if (i < 4096)
-                        ballAddition = 30;
-                    else
-                        ballAddition = 40;
-                }
-                else
-                {
-                    if (i < 1024)
-                        ballAddition = -20;
-                    else if (i < 2048)
-                        ballAddition = 0;
-                    else if (i < 3072)
-                        ballAddition = 20;
-                    else if (i < 4096)
-                        ballAddition = 30;
-                    else
-                        ballAddition = 40;
-                }
-                break;
-            case ITEM_GEM_POUCH:
-                if (IsMonShiny(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]]))
-                ballMultiplier = 600;
-                break;
-            case ITEM_CRYSTAL_POUCH:
+            case ITEM_POUCH_CRYSTAL:
                 if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].isLegendary)
-                ballMultiplier = 400;
-                break;
-            case ITEM_SPLITBARK_POUCH:
-                if (gBattleMons[gBattlerTarget].status1 & 
-                (STATUS1_SLEEP | STATUS1_FREEZE | STATUS1_POISON | STATUS1_BURN | 
-                STATUS1_PARALYSIS | STATUS1_TOXIC_POISON | STATUS1_FROSTBITE))
                 ballMultiplier = 400;
                 break;
             case ITEM_IMPHIDE_POUCH:
                 if (gBattleMons[gBattlerTarget].item)
                 ballMultiplier = 600;
-                break;
-            case ITEM_CATALYTIC_POUCH:
-                if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[0] == 
-                (TYPE_GHOST | TYPE_POISON | TYPE_BUG | TYPE_FIGHTING | TYPE_ELECTRIC | TYPE_ICE) ||
-                gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[1] == 
-                (TYPE_GHOST | TYPE_POISON | TYPE_BUG | TYPE_FIGHTING | TYPE_ELECTRIC | TYPE_ICE))
-                ballMultiplier = 400;
-                break;
-            case ITEM_ELEMENTAL_POUCH:
-                if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[0] == 
-                (TYPE_WATER | TYPE_FIRE | TYPE_GRASS | TYPE_ROCK | TYPE_GROUND | TYPE_FLYING) ||
-                gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[1] == 
-                (TYPE_WATER | TYPE_FIRE | TYPE_GRASS | TYPE_ROCK | TYPE_GROUND | TYPE_FLYING))
-                ballMultiplier = 400;
-                break;
-            case ITEM_AUGMENTED_POUCH:
-                if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[0] == TYPE_STEEL || 
-                gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[1] == TYPE_STEEL)
-                ballMultiplier = 400;
-                break;
-            case ITEM_ANCIENT_POUCH:
-                if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[0] == TYPE_DARK || 
-                gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[1] == TYPE_DARK)
-                ballMultiplier = 400;
-                break;
-            case ITEM_MYSTIC_POUCH:
-                if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[0] == TYPE_FAIRY || 
-                gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[1] == TYPE_FAIRY)
-                ballMultiplier = 400;
-                break;
-            case ITEM_DRAGONBANE_POUCH:
-                if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[0] == TYPE_DRAGON || 
-                gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[1] == TYPE_DRAGON)
-                ballMultiplier = 400;
-                break;
-            case ITEM_FISHBOWL_POUCH:
-                ballMultiplier = 10;
-                break;
+                break;*/
             }
         }
 
@@ -15088,7 +15129,7 @@ static void Cmd_handleballthrow(void)
             else
                 gBattleCommunication[MULTISTRING_CHOOSER] = 1;
 
-            if (gLastUsedItem == ITEM_BLESSED_POUCH)
+            if (gLastUsedItem == ITEM_POUCH_MYSTIC)
             {
                 MonRestorePP(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]]);
                 HealStatusConditions(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], STATUS1_ANY, gBattlerTarget);
@@ -15114,7 +15155,7 @@ static void Cmd_handleballthrow(void)
                 maxShakes = BALL_3_SHAKES_SUCCESS;
             }
 
-            if (gLastUsedItem == ITEM_DRAGON_POUCH)
+            if (gLastUsedItem == ITEM_POUCH_DRAGON)
             {
                 shakes = maxShakes;
             }
@@ -15142,7 +15183,7 @@ static void Cmd_handleballthrow(void)
                 else
                     gBattleCommunication[MULTISTRING_CHOOSER] = 1;
 
-                if (gLastUsedItem == ITEM_BLESSED_POUCH)
+                if (gLastUsedItem == ITEM_POUCH_MYSTIC)
                 {
                     MonRestorePP(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]]);
                     HealStatusConditions(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], STATUS1_ANY, gBattlerTarget);

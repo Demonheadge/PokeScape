@@ -147,7 +147,7 @@ script ITEM_LUMBRIDGE_BREAD_1
 
 script ITEM_LUMBRIDGE_STEEL_POUCH
 {
-    finditem(ITEM_MITHRIL_POUCH)
+    finditem(ITEM_POUCH_MITHRIL)
     end
 }
 
@@ -213,7 +213,7 @@ script ITEM_MILLLANEMILL_TM05
 
 script ITEM_MILLLANEMILL_MITHRIL_POUCH
 {
-    finditem(ITEM_MITHRIL_POUCH)
+    finditem(ITEM_POUCH_MITHRIL)
     end
 }
 
@@ -255,7 +255,7 @@ script ITEM_ROUTE2_MAGIC_POTION
 
 script ITEM_ROUTE2_RUNE_POUCH
 {
-    finditem(ITEM_RUNE_POUCH)
+    finditem(ITEM_POUCH_RUNE)
     end
 }
 
@@ -384,6 +384,6 @@ script ITEM_DRAYNORMANOR_TEA
 }
 script ITEM_DRAYNORMANOR_POUCHES
 {
-    finditem(ITEM_NORMAL_POUCH, 5)
+    finditem(ITEM_POUCH, 5)
     end
 }

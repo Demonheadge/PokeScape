@@ -125,7 +125,7 @@
       "x": 18,
       "y": 4,
       "elevation": 3,
-      "item": "ITEM_ANCIENT_POUCH",
+      "item": "ITEM_POUCH_ANCIENT",
       "flag": "FLAG_HIDDEN_ITEM_AsgarnianDungeon_1"
     },
     {

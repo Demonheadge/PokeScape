@@ -28,7 +28,7 @@ ITEM_GOBLIN_VILLAGE_4::
 
 
 ITEM_ROUTE24_1::
-	finditem ITEM_STEEL_POUCH, 5
+	finditem ITEM_POUCH_MITHRIL, 5
 	end
 
 

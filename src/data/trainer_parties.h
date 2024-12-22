@@ -6848,7 +6848,7 @@ static const struct TrainerMon sParty_VARROCK_TRAINING_ROOM_RUSHER[] = {
 
 static const struct TrainerMon sParty_DAEMONHEIM_GYM_THOK[] = {
     {
-    .ball = ITEM_RUNE_POUCH,
+    .ball = ITEM_POUCH_RUNE,
     .heldItem = ITEM_SPIRITSHIELD,
     .nature = TRAINER_PARTY_NATURE(NATURE_ADAMANT),
     .gender = TRAINER_MON_MALE,
@@ -6894,7 +6894,7 @@ static const struct TrainerMon sParty_DAEMONHEIM_GYM_THOK[] = {
     },
     {
     .nickname = COMPOUND_STRING("Mini-marm"),
-    .ball = ITEM_NORMAL_POUCH,
+    .ball = ITEM_POUCH_ANCIENT,
     .heldItem = ITEM_BLOODFURY,
     .friendship = 255,
     .gender = TRAINER_MON_MALE,

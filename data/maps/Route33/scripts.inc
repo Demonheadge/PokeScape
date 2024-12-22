@@ -15,7 +15,8 @@ ITEM_ROUTE33_1::
 NPC_ROUTE33_NPC1::
 	lock
 	faceplayer
-	msgbox NPC_ROUTE33_NPC1_Text_0
+	namebox NPC_ROUTE33_NPC1_Text_0
+	msgbox NPC_ROUTE33_NPC1_Text_1
 	hidenamebox
 	release
 	end
@@ -31,7 +32,8 @@ BATTLE_ROUTE33_ZAMORAK1::
 
 BATTLE_ROUTE33_GOBLIN1::
 	trainerbattle_single TRAINER_ROUTE33_GOBLIN1, BATTLE_ROUTE33_GOBLIN1_Text_0, BATTLE_ROUTE33_GOBLIN1_Text_1
-	msgbox BATTLE_ROUTE33_GOBLIN1_Text_2
+	namebox BATTLE_ROUTE33_GOBLIN1_Text_2
+	msgbox BATTLE_ROUTE33_GOBLIN1_Text_3
 	hidenamebox
 	release
 	end
@@ -39,7 +41,8 @@ BATTLE_ROUTE33_GOBLIN1::
 
 BATTLE_ROUTE33_GOBLIN2::
 	trainerbattle_single TRAINER_ROUTE33_GOBLIN2, BATTLE_ROUTE33_GOBLIN2_Text_0, BATTLE_ROUTE33_GOBLIN2_Text_1
-	msgbox BATTLE_ROUTE33_GOBLIN2_Text_2
+	namebox BATTLE_ROUTE33_GOBLIN2_Text_2
+	msgbox BATTLE_ROUTE33_GOBLIN2_Text_3
 	hidenamebox
 	release
 	end
@@ -47,7 +50,8 @@ BATTLE_ROUTE33_GOBLIN2::
 
 BATTLE_ROUTE33_RUNECRAFTER::
 	trainerbattle_single TRAINER_ROUTE33_RUNECRAFTER, BATTLE_ROUTE33_RUNECRAFTER_Text_0, BATTLE_ROUTE33_RUNECRAFTER_Text_1
-	msgbox BATTLE_ROUTE33_RUNECRAFTER_Text_2
+	namebox BATTLE_ROUTE33_RUNECRAFTER_Text_2
+	msgbox BATTLE_ROUTE33_RUNECRAFTER_Text_3
 	hidenamebox
 	release
 	end
@@ -147,6 +151,9 @@ BATTLE_ROUTE33_ZAMORAK4::
 
 
 NPC_ROUTE33_NPC1_Text_0:
+	.string "Zamorak Mage$"
+
+NPC_ROUTE33_NPC1_Text_1:
 	.string "Begone!\p"
 	.string "Stay away unless you worship Zamorak.$"
 
@@ -165,6 +172,9 @@ BATTLE_ROUTE33_GOBLIN1_Text_1:
 	.string "Hooman no answer question.$"
 
 BATTLE_ROUTE33_GOBLIN1_Text_2:
+	.string "Slomgrom$"
+
+BATTLE_ROUTE33_GOBLIN1_Text_3:
 	.string "Hooman no answer question.\p"
 	.string "Why is hooman out here?!$"
 
@@ -175,6 +185,9 @@ BATTLE_ROUTE33_GOBLIN2_Text_1:
 	.string "Red hoomans make lots of noise.$"
 
 BATTLE_ROUTE33_GOBLIN2_Text_2:
+	.string "Grogli$"
+
+BATTLE_ROUTE33_GOBLIN2_Text_3:
 	.string "Red hoomans make lots of noise.\p"
 	.string "Me want to get rid of them.$"
 
@@ -187,6 +200,9 @@ BATTLE_ROUTE33_RUNECRAFTER_Text_1:
 	.string "level up…$"
 
 BATTLE_ROUTE33_RUNECRAFTER_Text_2:
+	.string "RunMeEssPlz$"
+
+BATTLE_ROUTE33_RUNECRAFTER_Text_3:
 	.string "I've been looking for a Mind Talisman so\n"
 	.string "I can get into this Altar, but I've had\l"
 	.string "no luck finding one.\p"

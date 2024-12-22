@@ -328,8 +328,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ITEM_ROUTE8_ITEM_MITHRIL_POUCH",
-      "flag": "FLAG_ITEM_ROUTE8_ITEM_MITHRIL_POUCH"
+      "script": "ITEM_ROUTE8_ITEM_POUCH_MITHRIL",
+      "flag": "FLAG_ITEM_ROUTE8_ITEM_POUCH_MITHRIL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",

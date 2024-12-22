@@ -140,7 +140,7 @@
       "x": 11,
       "y": 9,
       "elevation": 3,
-      "item": "ITEM_DRAGONBANE_POUCH",
+      "item": "ITEM_POUCH_BANE",
       "flag": "FLAG_HIDDEN_ITEM_TEMP_20"
     }
   ],

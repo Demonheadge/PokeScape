@@ -350,7 +350,7 @@ Lumbridge_Castle_Hans_1::
 	waitmessage
 	hidenamebox
 	closemessage
-	giveitem ITEM_NORMAL_POUCH, 10
+	giveitem ITEM_POUCH, 10
 	namebox LeftDoorScript_Text_0
 	msgbox Lumbridge_Castle_Hans_1_Text_2
 	hidenamebox

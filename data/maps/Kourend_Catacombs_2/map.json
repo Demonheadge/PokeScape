@@ -341,7 +341,7 @@
       "x": 36,
       "y": 9,
       "elevation": 3,
-      "item": "ITEM_ELEMENTAL_POUCH",
+      "item": "ITEM_POUCH_ELEMENTAL",
       "flag": "FLAG_HIDDEN_ITEM_TEMP_8"
     },
     {
@@ -357,7 +357,7 @@
       "x": 12,
       "y": 18,
       "elevation": 3,
-      "item": "ITEM_ANCIENT_POUCH",
+      "item": "ITEM_POUCH_ANCIENT",
       "flag": "FLAG_HIDDEN_ITEM_TEMP_5"
     },
     {

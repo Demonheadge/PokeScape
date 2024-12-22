@@ -84,7 +84,7 @@ script MODTIMBO_STATE{
 //HIDDEN ITEMS:
 script ITEM_FALADOR_1
 {
-    finditem(ITEM_ADAMANT_POUCH)
+    finditem(ITEM_POUCH_ADAMANT)
     end
 }
 script ITEM_FALADOR_2

@@ -186,7 +186,7 @@
       "x": 24,
       "y": 22,
       "elevation": 0,
-      "item": "ITEM_BLACK_POUCH",
+      "item": "ITEM_POUCH_BLACK",
       "flag": "FLAG_HIDDEN_ITEM_DRAYNORMANOR_2"
     }
   ],

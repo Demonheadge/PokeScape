@@ -80,6 +80,7 @@ BATTLE_ROUTE24_WOODCUTTER_2::
 
 BATTLE_ROUTE24_GOBLIN_1::
 	trainerbattle_single TRAINER_ROUTE24_GOBLIN_1, BATTLE_ROUTE24_GOBLIN_1_Text_0, BATTLE_ROUTE24_GOBLIN_1_Text_1
+	namebox BATTLE_ROUTE24_GOBLIN_1_Text_2
 	msgbox BATTLE_ROUTE24_GOBLIN_1_Text_1
 	hidenamebox
 	release
@@ -175,11 +176,10 @@ NPC_ROUTE24_BLOCKADE_1_Text_0:
 	.string "White Knight$"
 
 NPC_ROUTE24_BLOCKADE_1_Text_1:
-	.string "Sorry you need to be a member to access\n"
-	.string "past here.\p"
-	.string "What is a member?\p"
-	.string "A member is someone who has obtained\n"
-	.string "all of the badges in F2P.$"
+	.string "Beyond here is too dangerous due to\n"
+	.string "the Trolls invading Burthorpe.\p"
+	.string "Only members of the White Knights may\n"
+	.string "pass.$"
 
 BATTLE_ROUTE24_MUGGER_Text_0:
 	.string "Deliver and stand!$"
@@ -220,6 +220,9 @@ BATTLE_ROUTE24_GOBLIN_1_Text_0:
 
 BATTLE_ROUTE24_GOBLIN_1_Text_1:
 	.string "Human prepare well.$"
+
+BATTLE_ROUTE24_GOBLIN_1_Text_2:
+	.string "Cleansbane$"
 
 BATTLE_ROUTE24_GOBLIN_2_Text_0:
 	.string "Stay out of village smelly human!$"
@@ -283,7 +286,7 @@ BATTLE_ROUTE40_DIVINER_Text_1:
 	.string "It makes me feel all tingly!$"
 
 BATTLE_ROUTE40_DIVINER_Text_2:
-	.string "DIVINER$"
+	.string "Nyx$"
 
 BATTLE_ROUTE40_DIVINER_Text_3:
 	.string "You feel it too don't you?\p"

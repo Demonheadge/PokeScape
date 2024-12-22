@@ -1511,7 +1511,7 @@ script GIVE_RANDOM_ITEM_DUNGEONEERING {
 			case 4: 
 				finditem(ITEM_STAT_BEER, 1)
 			case 5: 
-				finditem(ITEM_CRYSTAL_POUCH, 1)
+				finditem(ITEM_POUCH_CRYSTAL, 1)
 			case 6: 
 				finditem(ITEM_PURPLE_SWEETS, 1)
 			case 7: 
@@ -1525,11 +1525,11 @@ script GIVE_RANDOM_ITEM_DUNGEONEERING {
 			case 11: 
 				finditem(ITEM_DRAGON_SCIMITAR, 1)
 			case 12: 
-				finditem(ITEM_ELEMENTAL_POUCH, 5)
+				finditem(ITEM_POUCH_ELEMENTAL, 5)
 			case 13: 
-				finditem(ITEM_BLACK_POUCH, 15)
+				finditem(ITEM_POUCH_BLACK, 15)
 			case 14: 
-				finditem(ITEM_NORMAL_POUCH, 20)
+				finditem(ITEM_POUCH, 20)
 			case 15: 
 				finditem(ITEM_SPIRIT_CHARM, 1)
 			case 16: 
@@ -1547,7 +1547,7 @@ script GIVE_RANDOM_ITEM_DUNGEONEERING {
             case 22: 
 				finditem(ITEM_CABBAGE, 1)
             case 23: 
-				finditem(ITEM_DRAGON_POUCH, 1)
+				finditem(ITEM_POUCH_DRAGON, 1)
             case 24: 
 				finditem(ITEM_GRANITE_MAUL, 1)
             case 25: 

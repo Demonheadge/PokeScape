@@ -74,7 +74,7 @@ ENCOUNTER_PURO_PURO_3_2:
 
 
 ITEM_PURO_PURO_3::
-	finditem ITEM_RUNE_POUCH
+	finditem ITEM_POUCH_RUNE
 	end
 
 

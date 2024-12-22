@@ -139,7 +139,8 @@ NPC_ROUTE23_BLOCKADE_DWARVES::
 
 BATTLE_ROUTE23_TRAINER_1::
 	trainerbattle_single TRAINER_ROUTE23_TRAINER_1, BATTLE_ROUTE23_TRAINER_1_Text_0, BATTLE_ROUTE23_TRAINER_1_Text_1
-	msgbox BATTLE_ROUTE23_TRAINER_1_Text_2
+	namebox BATTLE_ROUTE23_TRAINER_1_Text_2
+	msgbox BATTLE_ROUTE23_TRAINER_1_Text_3
 	hidenamebox
 	release
 	end
@@ -147,7 +148,8 @@ BATTLE_ROUTE23_TRAINER_1::
 
 BATTLE_ROUTE23_TRAINER_2::
 	trainerbattle_single TRAINER_ROUTE23_TRAINER_2, BATTLE_ROUTE23_TRAINER_2_Text_0, BATTLE_ROUTE23_TRAINER_2_Text_1
-	msgbox BATTLE_ROUTE23_TRAINER_2_Text_2
+	namebox BATTLE_ROUTE23_TRAINER_2_Text_2
+	msgbox BATTLE_ROUTE23_TRAINER_2_Text_3
 	hidenamebox
 	release
 	end
@@ -173,6 +175,7 @@ BATTLE_ROUTE23_TRAINER_BARB_COUPLE_2::
 
 BATTLE_ROUTE23_TRAINER_3::
 	trainerbattle_single TRAINER_ROUTE23_TRAINER_3, BATTLE_ROUTE23_TRAINER_3_Text_0, BATTLE_ROUTE23_TRAINER_3_Text_1
+	namebox BATTLE_ROUTE23_TRAINER_3_Text_2
 	msgbox BATTLE_ROUTE23_TRAINER_3_Text_1
 	hidenamebox
 	release
@@ -272,8 +275,10 @@ ROUTE23_RockSmash_1:
 	playse SE_PIN
 	applymovement 5, MOVEMENT_EXCLAMATIONMARK_FACEPLAYER
 	waitmovement 0
+	namebox NPC_ROUTE23_DWARF_ROCKS_Text_0
 	msgbox ROUTE23_RockSmash_Text_1
 	closemessage
+	hidenamebox
 	applymovement 5, Movement_InteractFACERIGHT
 	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_RIGHT
 	waitmovement 0
@@ -392,6 +397,9 @@ BATTLE_ROUTE23_TRAINER_1_Text_1:
 	.string "Thanks for passing the time with me.$"
 
 BATTLE_ROUTE23_TRAINER_1_Text_2:
+	.string "Thorfinn$"
+
+BATTLE_ROUTE23_TRAINER_1_Text_3:
 	.string "There have been lots of landslides\n"
 	.string "around Ice Mountain lately, I am not\l"
 	.string "sure what has been causing them.$"
@@ -404,6 +412,9 @@ BATTLE_ROUTE23_TRAINER_2_Text_1:
 	.string "YAWWOOOOOCH!$"
 
 BATTLE_ROUTE23_TRAINER_2_Text_2:
+	.string "Sivert$"
+
+BATTLE_ROUTE23_TRAINER_2_Text_3:
 	.string "RRAAAAUUUUGGGHH!\p"
 	.string "That was a good battle!\p"
 	.string "RAAAUUUUUGH!$"
@@ -448,6 +459,9 @@ BATTLE_ROUTE23_TRAINER_3_Text_1:
 	.string "That sparkle in your eye!\p"
 	.string "You know the true ways of the\n"
 	.string "barbarians.$"
+
+BATTLE_ROUTE23_TRAINER_3_Text_2:
+	.string "Hildegard$"
 
 BATTLE_ROUTE23_TRAINER_4_Text_0:
 	.string "You want to go to Edgeville?\p"
@@ -506,12 +520,12 @@ ROUTE23_RockSmash_Text_0:
 	.string "Would you like to use the PICKAXE?$"
 
 ROUTE23_RockSmash_Text_1:
-	.string "Hey you cleared the rockslide!\p"
+	.string "Hey, you cleared the rockslide!\p"
 	.string "Now travellers can get through.\p"
 	.string "Thank you for that!$"
 
 NPC_ROUTE20_SIR_TIFFY_Text_0:
-	.string "Tiffy Cashin$"
+	.string "Tiffy Cashien$"
 
 NPC_ROUTE20_SIR_TIFFY_Text_1:
 	.string "Be on the look out for the H.A.M and the\n"

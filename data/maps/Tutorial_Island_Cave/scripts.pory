@@ -42,9 +42,9 @@ script RatArenaCantLeave{
 script KevinItemsTest{
 	lock
 	faceplayer
-	giveitem (ITEM_NORMAL_POUCH, 10)
+	giveitem (ITEM_POUCH, 10)
 	giveitem (ITEM_RARE_CANDY, 10)
-	giveitem (ITEM_ELEMENTAL_POUCH, 1)
+	giveitem (ITEM_POUCH_ELEMENTAL, 1)
 	msgbox(format("Here take these!\pWhy do I have this rotten potato?\n No reason…"))
 	release
 }
@@ -56,21 +56,21 @@ script CraftPouchStart{
 	msgbox("Hi there!\pWould you like to craft a pouch?", MSGBOX_YESNO)
 	if (var(VAR_RESULT))
 	{
-		checkitem (ITEM_NORMAL_POUCH, 1)
+		checkitem (ITEM_POUCH, 1)
 		if(var(VAR_RESULT)){
 			checkitem (ITEM_RARE_CANDY, 1)
 			if(var(VAR_RESULT)){
 				random (3)
 				if (var(VAR_RESULT) == 2){
-					removeitem (ITEM_NORMAL_POUCH, 1)
+					removeitem (ITEM_POUCH, 1)
 					removeitem (ITEM_RARE_CANDY, 1)
-					giveitem (ITEM_AUGMENTED_POUCH, 1)
+					giveitem (ITEM_POUCH_AUGMENTED, 1)
 					msgbox("Congrats! You made an augmented pouch!")
 					release
 				}
 				else{
 					msgbox("Sorry you suck! You get nothing!")
-					removeitem (ITEM_NORMAL_POUCH, 1)
+					removeitem (ITEM_POUCH, 1)
 					removeitem (ITEM_RARE_CANDY, 1)
 					release
 				}
@@ -99,7 +99,7 @@ script PouchCraftMenu {
 	msgbox("Would you like to craft a pouch?", MSGBOX_YESNO)
 	if (var(VAR_RESULT))
 	{
-		checkitem (ITEM_NORMAL_POUCH, 1)
+		checkitem (ITEM_POUCH, 1)
 		if (var(VAR_RESULT)){
 			release
 			scrollingmultichoice (0, 1, 1, 5, TRUE)
@@ -110,9 +110,9 @@ script PouchCraftMenu {
 					if(var(VAR_RESULT))
 					{
 						
-						removeitem (ITEM_NORMAL_POUCH, 1)
+						removeitem (ITEM_POUCH, 1)
 						removeitem (ITEM_RARE_CANDY, 1)
-						giveitem (ITEM_BRONZE_POUCH, 1)
+						giveitem (ITEM_POUCH_BRONZE, 1)
 						msgbox("You made a bronze pouch!")
 						release
 					}
@@ -125,9 +125,9 @@ script PouchCraftMenu {
 					checkitem (ITEM_RARE_CANDY, 1)
 					if(var(VAR_RESULT))
 					{
-						removeitem (ITEM_NORMAL_POUCH, 1)
+						removeitem (ITEM_POUCH, 1)
 						removeitem (ITEM_RARE_CANDY, 1)
-						giveitem (ITEM_IRON_POUCH, 1)
+						giveitem (ITEM_POUCH_IRON, 1)
 						msgbox("You made an iron pouch!")
 						release
 					
@@ -142,9 +142,9 @@ script PouchCraftMenu {
 					checkitem (ITEM_RARE_CANDY, 1)
 					if(var(VAR_RESULT))
 					{
-						removeitem (ITEM_NORMAL_POUCH, 1)
+						removeitem (ITEM_POUCH, 1)
 						removeitem (ITEM_RARE_CANDY, 1)
-						giveitem (ITEM_STEEL_POUCH, 1)
+						giveitem (ITEM_POUCH_STEEL, 1)
 						msgbox("You made a steel pouch!")
 						release
 					
@@ -159,9 +159,9 @@ script PouchCraftMenu {
 					checkitem (ITEM_RARE_CANDY, 1)
 					if(var(VAR_RESULT))
 					{
-						removeitem (ITEM_NORMAL_POUCH, 1)
+						removeitem (ITEM_POUCH, 1)
 						removeitem (ITEM_RARE_CANDY, 1)
-						giveitem (ITEM_BLACK_POUCH, 1)
+						giveitem (ITEM_POUCH_BLACK, 1)
 						msgbox("You made a black pouch!")
 						release
 					
@@ -176,9 +176,9 @@ script PouchCraftMenu {
 					checkitem (ITEM_RARE_CANDY, 1)
 					if(var(VAR_RESULT))
 					{
-						removeitem (ITEM_NORMAL_POUCH, 1)
+						removeitem (ITEM_POUCH, 1)
 						removeitem (ITEM_RARE_CANDY, 1)
-						giveitem (ITEM_MITHRIL_POUCH, 1)
+						giveitem (ITEM_POUCH_MITHRIL, 1)
 						msgbox("You made a mithril pouch!")
 						release
 					
@@ -193,9 +193,9 @@ script PouchCraftMenu {
 					checkitem (ITEM_RARE_CANDY, 1)
 					if(var(VAR_RESULT))
 					{
-						removeitem (ITEM_NORMAL_POUCH, 1)
+						removeitem (ITEM_POUCH, 1)
 						removeitem (ITEM_RARE_CANDY, 1)
-						giveitem (ITEM_ADAMANT_POUCH, 1)
+						giveitem (ITEM_POUCH_ADAMANT, 1)
 						msgbox("You made an adamant pouch!")
 						release
 					
@@ -210,9 +210,9 @@ script PouchCraftMenu {
 					checkitem (ITEM_RARE_CANDY, 1)
 					if(var(VAR_RESULT))
 					{
-						removeitem (ITEM_NORMAL_POUCH, 1)
+						removeitem (ITEM_POUCH, 1)
 						removeitem (ITEM_RARE_CANDY, 1)
-						giveitem (ITEM_RUNE_POUCH, 1)
+						giveitem (ITEM_POUCH_RUNE, 1)
 						msgbox("You made a rune pouch!")
 						release
 					
@@ -227,9 +227,9 @@ script PouchCraftMenu {
 					checkitem (ITEM_RARE_CANDY, 1)
 					if(var(VAR_RESULT))
 					{
-						removeitem (ITEM_NORMAL_POUCH, 1)
+						removeitem (ITEM_POUCH, 1)
 						removeitem (ITEM_RARE_CANDY, 1)
-						giveitem (ITEM_DRAGON_POUCH, 1)
+						giveitem (ITEM_POUCH_DRAGON, 1)
 						msgbox("You made a dragon pouch!")
 						release
 					
@@ -245,9 +245,9 @@ script PouchCraftMenu {
 					checkitem (ITEM_RARE_CANDY, 1)
 					if(var(VAR_RESULT))
 					{
-						removeitem (ITEM_NORMAL_POUCH, 1)
+						removeitem (ITEM_POUCH, 1)
 						removeitem (ITEM_RARE_CANDY, 1)
-						giveitem (ITEM_ANCIENT_POUCH, 1)
+						giveitem (ITEM_POUCH_ANCIENT, 1)
 						msgbox("You made an ancient pouch!")
 						release
 					
@@ -262,9 +262,9 @@ script PouchCraftMenu {
 					checkitem (ITEM_RARE_CANDY, 1)
 					if(var(VAR_RESULT))
 					{
-						removeitem (ITEM_NORMAL_POUCH, 1)
+						removeitem (ITEM_POUCH, 1)
 						removeitem (ITEM_RARE_CANDY, 1)
-						giveitem (ITEM_AUGMENTED_POUCH, 1)
+						giveitem (ITEM_POUCH_AUGMENTED, 1)
 						msgbox("You made an augmented pouch!")
 						release
 					
@@ -279,9 +279,9 @@ script PouchCraftMenu {
 					checkitem (ITEM_RARE_CANDY, 1)
 					if(var(VAR_RESULT))
 					{
-						removeitem (ITEM_NORMAL_POUCH, 1)
+						removeitem (ITEM_POUCH, 1)
 						removeitem (ITEM_RARE_CANDY, 1)
-						giveitem (ITEM_BARROWS_POUCH, 1)
+						giveitem (ITEM_POUCH_BARROWS, 1)
 						msgbox("You made a barrows pouch!")
 						release
 					
@@ -296,9 +296,9 @@ script PouchCraftMenu {
 					checkitem (ITEM_RARE_CANDY, 1)
 					if(var(VAR_RESULT))
 					{
-						removeitem (ITEM_NORMAL_POUCH, 1)
+						removeitem (ITEM_POUCH, 1)
 						removeitem (ITEM_RARE_CANDY, 1)
-						giveitem (ITEM_CRYSTAL_POUCH, 1)
+						giveitem (ITEM_POUCH_CRYSTAL, 1)
 						msgbox("You made a crystal pouch!")
 						release
 					
@@ -313,9 +313,9 @@ script PouchCraftMenu {
 					checkitem (ITEM_RARE_CANDY, 1)
 					if(var(VAR_RESULT))
 					{
-						removeitem (ITEM_NORMAL_POUCH, 1)
+						removeitem (ITEM_POUCH, 1)
 						removeitem (ITEM_RARE_CANDY, 1)
-						giveitem (ITEM_DRAGONBANE_POUCH, 1)
+						giveitem (ITEM_POUCH_BANE, 1)
 						msgbox("You made a dragonbane pouch!")
 						release
 					
@@ -330,9 +330,9 @@ script PouchCraftMenu {
 					checkitem (ITEM_RARE_CANDY, 1)
 					if(var(VAR_RESULT))
 					{
-						removeitem (ITEM_NORMAL_POUCH, 1)
+						removeitem (ITEM_POUCH, 1)
 						removeitem (ITEM_RARE_CANDY, 1)
-						giveitem (ITEM_ELEMENTAL_POUCH, 1)
+						giveitem (ITEM_POUCH_ELEMENTAL, 1)
 						msgbox("You made an elemental pouch!")
 						release
 					
@@ -347,9 +347,9 @@ script PouchCraftMenu {
 					checkitem (ITEM_RARE_CANDY, 1)
 					if(var(VAR_RESULT))
 					{
-						removeitem (ITEM_NORMAL_POUCH, 1)
+						removeitem (ITEM_POUCH, 1)
 						removeitem (ITEM_RARE_CANDY, 1)
-						giveitem (ITEM_GRANITE_POUCH, 1)
+						giveitem (ITEM_POUCH_GRANITE, 1)
 						msgbox("You made a granite pouch!")
 						release
 					
@@ -364,9 +364,9 @@ script PouchCraftMenu {
 					checkitem (ITEM_RARE_CANDY, 1)
 					if(var(VAR_RESULT))
 					{
-						removeitem (ITEM_NORMAL_POUCH, 1)
+						removeitem (ITEM_POUCH, 1)
 						removeitem (ITEM_RARE_CANDY, 1)
-						giveitem (ITEM_MYSTIC_POUCH, 1)
+						giveitem (ITEM_POUCH_MYSTIC, 1)
 						msgbox("You made a mystic pouch!")
 						release
 					

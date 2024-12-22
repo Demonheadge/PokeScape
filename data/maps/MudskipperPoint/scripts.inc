@@ -125,7 +125,7 @@ STORY_NPC_MUDSKIPPER_POINT_SIRTHEODORE_Text_3:
 STORY_NPC_MUDSKIPPER_POINT_SIRTHEODORE_Text_4:
 	.string "We must report back to Sir Amik Varze in\n"
 	.string "Falador right away and organise a\l"
-	.string "resuce mission!!$"
+	.string "rescue mission!!$"
 
 STORY_NPC_MUDSKIPPER_POINT_SIRTHEODORE_Text_5:
 	.string "Would you like to travel to Falador with\n"

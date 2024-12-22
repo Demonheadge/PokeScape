@@ -1140,7 +1140,7 @@ NPC_DraynorManor_Oddenstein_Text_20:
 NPC_DraynorManor_Oddenstein_Text_21:
 	.string "Ah, thank you for disposing of that\n"
 	.string "fowl creature.\p"
-	.string "Dispite my experiment ending in failure\n"
+	.string "Despite my experiment ending in failure\n"
 	.string "I would like you to have this.$"
 
 NPC_DraynorManor_Oddenstein_Text_22:
@@ -1151,8 +1151,8 @@ NPC_DraynorManor_Oddenstein_Text_23:
 	.string "Hello again {PLAYER}.$"
 
 NPC_DraynorManor_Oddenstein_Text_24:
-	.string "Oh that's Poly's CAGE!\n"
-	.string "I used to have a parrot named Poly.\p"
+	.string "Oh that's Polly's CAGE!\n"
+	.string "I used to have a parrot named Polly.\p"
 	.string "She loved that cage…\p"
 	.string "She has sadly passed from this world\n"
 	.string "and her grave now rests in the backyard\l"
@@ -1174,9 +1174,9 @@ NPC_DraynorManor_Oddenstein_Text_26:
 
 NPC_DraynorManor_Oddenstein_Text_27:
 	.string "OMFG I CANNOT BELIEVE THIS!\p"
-	.string "SOMEONE DUG UP MY POOR POLY!\p"
+	.string "SOMEONE DUG UP MY POOR POLLY!\p"
 	.string "What kind of monster would disturb my\n"
-	.string "poor Poly rest!$"
+	.string "poor Polly's rest!$"
 
 EvilChickenBattleScript_Text_0:
 	.string "Evil Chicken$"

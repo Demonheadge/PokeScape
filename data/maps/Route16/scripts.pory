@@ -41,7 +41,7 @@ script ITEM_ROUTE15_1
 }
 script ITEM_ROUTE15_2
 {
-    finditem(ITEM_AUGMENTED_POUCH)
+    finditem(ITEM_POUCH_AUGMENTED)
     end
 }
 script ITEM_ROUTE15_3
@@ -84,7 +84,7 @@ script ITEM_ROUTE14_1
 }
 
 //ITEMS ROUTE29
-//HIDDEN ITEMS: 3 items, ITEM_SPIRIT_SHARD, ITEM_GRANITE_POUCH, ITEM_SPIRIT_SHARD
+//HIDDEN ITEMS: 3 items, ITEM_SPIRIT_SHARD, ITEM_POUCH_GRANITE, ITEM_SPIRIT_SHARD
 //
 script ITEM_ROUTE29_1
 {
@@ -107,7 +107,7 @@ script ITEM_ROUTE28_1
 }
 script ITEM_ROUTE28_2
 {
-    finditem(ITEM_ADAMANT_POUCH)
+    finditem(ITEM_POUCH_ADAMANT)
     end
 }
 
@@ -126,6 +126,6 @@ script ITEM_ALKHARID_1
 //
 script ITEM_ROUTE19_1
 {
-    finditem(ITEM_ADAMANT_POUCH)
+    finditem(ITEM_POUCH_ADAMANT)
     end
 }

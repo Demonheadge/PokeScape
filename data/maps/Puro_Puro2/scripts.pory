@@ -62,6 +62,6 @@ script ENCOUNTER_PURO_PURO_2
 //ITEMS
 script ITEM_PURO_PURO_2
 {
-    finditem(ITEM_ADAMANT_POUCH)
+    finditem(ITEM_POUCH_ADAMANT)
     end
 }

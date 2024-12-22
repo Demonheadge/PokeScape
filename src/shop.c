@@ -1166,7 +1166,7 @@ static void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
         PlaySE(SE_SELECT);
 
         // Purchasing 10+ Poke Balls gets the player a Premier Ball
-        if (tItemId == ITEM_NORMAL_POUCH && tItemCount >= 10 && AddBagItem(ITEM_PREMIER_BALL, 1) == TRUE)
+        if ((tItemId == ITEM_POUCH_BRONZE || tItemId == ITEM_POUCH_STEEL || tItemId == ITEM_POUCH_RUNE) && tItemCount >= 10 && AddBagItem(ITEM_POUCH, 1) == TRUE)
             BuyMenuDisplayMessage(taskId, gText_ThrowInPremierBall, BuyMenuReturnToItemList);
         else
             BuyMenuReturnToItemList(taskId);

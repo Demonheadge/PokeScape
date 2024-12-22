@@ -227,6 +227,19 @@ SHOP_LOWE::
 	end
 
 
+SHOP_SPECIAL_POUCHES::
+	lock
+	faceplayer
+	namebox SHOP_SPECIAL_POUCHES_Text_0
+	msgbox SHOP_SPECIAL_POUCHES_Text_1
+	waitmessage
+	hidenamebox
+	pokemart STORE_SpecialPouches
+	msgbox GeneralStore_LUMBRIDGE_Text_2
+	release
+	end
+
+
 
     .align 2
 STORE_ArcheryStore:
@@ -287,16 +300,16 @@ STORE_RuneStore_4:
 
     .align 2
 STORE_SpecialPouches:
-    .2byte ITEM_NORMAL_POUCH
-    .2byte ITEM_BLACK_POUCH
-    .2byte ITEM_SPLITBARK_POUCH
-	.2byte ITEM_DRAGONBANE_POUCH
-    .2byte ITEM_AUGMENTED_POUCH
-    .2byte ITEM_MYSTIC_POUCH
-    .2byte ITEM_BARROWS_POUCH
-    .2byte ITEM_GRANITE_POUCH
-    .2byte ITEM_ANCIENT_POUCH
-    .2byte ITEM_ELEMENTAL_POUCH
+    .2byte ITEM_POUCH
+    .2byte ITEM_POUCH_IRON
+    .2byte ITEM_POUCH_MITHRIL
+	.2byte ITEM_POUCH_ADAMANT
+    .2byte ITEM_POUCH_AUGMENTED
+    .2byte ITEM_POUCH_MYSTIC
+    .2byte ITEM_POUCH_SPLITBARK
+    .2byte ITEM_POUCH_GRANITE
+    .2byte ITEM_POUCH_ANCIENT
+    .2byte ITEM_POUCH_ELEMENTAL
     .2byte ITEM_NONE
     release
     end
@@ -398,8 +411,7 @@ STORE_FarmingSupplies:
 
     .align 2
 STORE_GeneralStore_0:
-    .2byte ITEM_BRONZE_POUCH
-    .2byte ITEM_IRON_POUCH
+    .2byte ITEM_POUCH_BRONZE
     .2byte ITEM_BREAD
 	.2byte ITEM_WIZARDS_BLIZZARD
     .2byte ITEM_CHOCOLATE_SUNDAY
@@ -415,9 +427,8 @@ STORE_GeneralStore_0:
 
     .align 2
 STORE_GeneralStore_1:
-    .2byte ITEM_BRONZE_POUCH
-    .2byte ITEM_IRON_POUCH
-    .2byte ITEM_STEEL_POUCH
+    .2byte ITEM_POUCH_BRONZE
+    .2byte ITEM_POUCH_STEEL
     .2byte ITEM_BREAD
     .2byte ITEM_CAKE
 	.2byte ITEM_WIZARDS_BLIZZARD
@@ -434,10 +445,8 @@ STORE_GeneralStore_1:
 
     .align 2
 STORE_GeneralStore_2:
-    .2byte ITEM_BRONZE_POUCH
-    .2byte ITEM_IRON_POUCH
-    .2byte ITEM_STEEL_POUCH
-    .2byte ITEM_MITHRIL_POUCH
+    .2byte ITEM_POUCH_BRONZE
+    .2byte ITEM_POUCH_STEEL
     .2byte ITEM_BREAD
     .2byte ITEM_CAKE
 	.2byte ITEM_WIZARDS_BLIZZARD
@@ -455,11 +464,9 @@ STORE_GeneralStore_2:
 
     .align 2
 STORE_GeneralStore_3:
-    .2byte ITEM_BRONZE_POUCH
-    .2byte ITEM_IRON_POUCH
-    .2byte ITEM_STEEL_POUCH
-    .2byte ITEM_MITHRIL_POUCH
-    .2byte ITEM_ADAMANT_POUCH
+    .2byte ITEM_POUCH_BRONZE
+    .2byte ITEM_POUCH_STEEL
+    .2byte ITEM_POUCH_RUNE
     .2byte ITEM_BREAD
     .2byte ITEM_CAKE
 	.2byte ITEM_WIZARDS_BLIZZARD
@@ -480,12 +487,9 @@ STORE_GeneralStore_3:
 
     .align 2
 STORE_GeneralStore_4:
-    .2byte ITEM_BRONZE_POUCH
-    .2byte ITEM_IRON_POUCH
-    .2byte ITEM_STEEL_POUCH
-    .2byte ITEM_MITHRIL_POUCH
-    .2byte ITEM_ADAMANT_POUCH
-    .2byte ITEM_RUNE_POUCH
+    .2byte ITEM_POUCH_BRONZE
+    .2byte ITEM_POUCH_STEEL
+    .2byte ITEM_POUCH_RUNE
     .2byte ITEM_BREAD
     .2byte ITEM_CAKE
     .2byte ITEM_CHOCOLATE_CAKE
@@ -622,3 +626,11 @@ SHOP_LOWE_Text_1:
 
 SHOP_LOWE_Text_2:
 	.string "Thank you, come again.$"
+
+SHOP_SPECIAL_POUCHES_Text_0:
+	.string "???$"
+
+SHOP_SPECIAL_POUCHES_Text_1:
+	.string "Welcome to my store, I have pouches\n"
+	.string "that you cannot buy anywhere else!\p"
+	.string "How may I help you today?$"

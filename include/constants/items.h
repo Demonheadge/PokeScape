@@ -4,44 +4,74 @@
 #define ITEM_NONE 0
 
 // Poké Balls
-#define ITEM_NORMAL_POUCH 1 // Regular
-#define ITEM_BRONZE_POUCH 2 // Great
-#define ITEM_IRON_POUCH 3 // Ultra
-#define ITEM_DRAGON_POUCH 4 // Master
-#define ITEM_PREMIER_BALL 5
+/*
+#define ITEM_POUCH 1 // Regular
+#define ITEM_POUCH_BRONZE 2 // Great
+#define ITEM_POUCH_IRON 3 // Ultra
+#define ITEM_POUCH_DRAGON 4 // Master
+#define ITEM_POUCH 5 //Premier
 #define ITEM_BLESSED_POUCH 6 // Heal
 #define ITEM_LEATHER_POUCH 7 // Net
-#define ITEM_ELEMENTAL_POUCH 8 // Nest
+#define ITEM_POUCH_ELEMENTAL 8 // Nest
 #define ITEM_CATALYTIC_POUCH 9 // Dive
-#define ITEM_CRYSTAL_POUCH 10 // Dusk
-#define ITEM_ADAMANT_POUCH 11 // Timer
-#define ITEM_MITHRIL_POUCH 12 // Quick
-#define ITEM_AUGMENTED_POUCH 13 // Repeat
+#define ITEM_POUCH_CRYSTAL 10 // Dusk
+#define ITEM_POUCH_ADAMANT 11 // Timer
+#define ITEM_POUCH_MITHRIL 12 // Quick
+#define ITEM_POUCH_AUGMENTED 13 // Repeat
 #define ITEM_EMBROIDERED_POUCH 14 // Luxury
-#define ITEM_BARROWS_POUCH 15 // Level
+#define ITEM_POUCH_BARROWS 15 // Level
 #define ITEM_SPIDERSILK_POUCH 16 // Lure
-#define ITEM_ANCIENT_POUCH 17 // Moon
+#define ITEM_POUCH_ANCIENT 17 // Moon
 #define ITEM_ROYAL_POUCH 18 // Friend
-#define ITEM_MYSTIC_POUCH 19 // Love
-#define ITEM_DRAGONBANE_POUCH 20 // Fast
-#define ITEM_GRANITE_POUCH 21 // Heavy
+#define ITEM_POUCH_MYSTIC 19 // Love
+#define ITEM_POUCH_BANE 20 // Fast
+#define ITEM_POUCH_GRANITE 21 // Heavy
 #define ITEM_IMPHIDE_POUCH 22 // Dream
 #define ITEM_GEM_POUCH 23 // Safari
-#define ITEM_SPLITBARK_POUCH 24 // Sport
-#define ITEM_BLACK_POUCH 25 // Park
+#define ITEM_POUCH_SPLITBARK 24 // Sport
+#define ITEM_POUCH_BLACK 25 // Park
 #define ITEM_FISHBOWL_POUCH 26 // Beast
 #define ITEM_CHERISH_BALL 27
 
-#define ITEM_STEEL_POUCH ITEM_BRONZE_POUCH
-#define ITEM_RUNE_POUCH ITEM_IRON_POUCH
+#define ITEM_POUCH_STEEL ITEM_POUCH_BRONZE
+#define ITEM_POUCH_RUNE ITEM_POUCH_IRON
+*/
+
+#define ITEM_POUCH              1   //  Premier     //  Pouch
+#define ITEM_POUCH_BRONZE       2   //  Regular     //  Pouch
+#define ITEM_POUCH_IRON         3   //  Lure        //  Lure Pouch
+#define ITEM_POUCH_STEEL        4   //  Great       //  Great Pouch
+#define ITEM_POUCH_MITHRIL      5   //  Quick       //  Quick Pouch
+#define ITEM_POUCH_ADAMANT      6   //  Timer       //  Timer Pouch
+#define ITEM_POUCH_RUNE         7   //  Ultra       //  Ultra Pouch
+#define ITEM_POUCH_DRAGON       8   //  Master      //  Master Pouch
+#define ITEM_POUCH_CRYSTAL      9   //              //  Shiny Pouch
+#define ITEM_POUCH_BLACK        10  //  Dusk        //  Dark Pouch
+#define ITEM_POUCH_WHITE        11  //              //  Light Pouch
+#define ITEM_POUCH_ELEMENTAL    12  //              //  Elemental Pouch
+#define ITEM_POUCH_CATALYTIC    13  //              //  Catalytic Pouch
+#define ITEM_POUCH_BANE         14  //              //  Bane Pouch
+#define ITEM_POUCH_AUGMENTED    15  //  Repeat      //  Repeat Pouch
+#define ITEM_POUCH_ANCIENT      16  //  Luxury      //  Luxury Pouch
+#define ITEM_POUCH_BARROWS      17  //  Level       //  Level Pouch
+#define ITEM_POUCH_GRANITE      18  //  Heavy       //  Heavy Pouch
+#define ITEM_POUCH_SPLITBARK    19  //              //  Status Pouch
+#define ITEM_POUCH_MYSTIC       20  //  Heal        //  Heal Pouch
+#define ITEM_POUCH_CUPHOLDER_1  21
+#define ITEM_POUCH_CUPHOLDER_2  22
+#define ITEM_POUCH_CUPHOLDER_3  23
+#define ITEM_POUCH_CUPHOLDER_4  24
+#define ITEM_POUCH_CUPHOLDER_5  25
+#define ITEM_POUCH_CUPHOLDER_6  26
+#define ITEM_POUCH_CUPHOLDER_7  27
 
 // Note: If moving ball IDs around, updating FIRST_BALL/LAST_BALL is not sufficient
 //       Several places expect the ball IDs to be first and contiguous (e.g. MON_DATA_POKEBALL)
 //       If adding new balls, it's easiest to insert them after the last ball and increment the below IDs (and removing ITEM_034 for example)
-#define FIRST_BALL ITEM_NORMAL_POUCH
-#define LAST_BALL  ITEM_CHERISH_BALL
+#define FIRST_BALL ITEM_POUCH
+#define LAST_BALL  ITEM_POUCH_MYSTIC
 
-#define VANILLA_ITEM_START              ITEM_CHERISH_BALL       
+#define VANILLA_ITEM_START              ITEM_POUCH_CUPHOLDER_7       
 // Medicine
 #define ITEM_POTION                     (VANILLA_ITEM_START + 1 )
 #define ITEM_SUPER_POTION               (VANILLA_ITEM_START + 2 )

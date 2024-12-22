@@ -328,7 +328,7 @@ script Lumbridge_Castle_Hans_1{
 	waitmessage
 	hidenamebox
 	closemessage
-	giveitem(ITEM_NORMAL_POUCH, 10)
+	giveitem(ITEM_POUCH, 10)
 	namebox ("Hans")
 	msgbox(format("These are Pouches, you can capture monsters with them.\pAnyway, all the best on your adventure {PLAYER}, I'm sure I'll see you around."))
 	hidenamebox

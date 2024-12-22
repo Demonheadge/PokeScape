@@ -90,6 +90,8 @@ static u16 GetBattlerPokeballItemId(u8 battlerId);
 #define GFX_TAG_GRANITEPOUCH 55027
 #define GFX_TAG_ANCIENTPOUCH 55028
 #define GFX_TAG_ELEMENTALPOUCH 55029
+#define GFX_TAG_WHITEPOUCH 55030
+#define GFX_TAG_CATALYTICPOUCH 55031
 
 const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
 {
@@ -139,6 +141,8 @@ const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
 	[BALL_GRANITEPOUCH]     = {gInterfaceGfx_GranitePouch,      384, GFX_TAG_GRANITEPOUCH},
 	[BALL_ANCIENTPOUCH]     = {gInterfaceGfx_AncientPouch,      384, GFX_TAG_ANCIENTPOUCH},
 	[BALL_ELEMENTALPOUCH]   = {gInterfaceGfx_ElementalPouch,    384, GFX_TAG_ELEMENTALPOUCH},
+    [BALL_WHITEPOUCH]       = {gInterfaceGfx_WhitePouch,        384, GFX_TAG_WHITEPOUCH},
+    [BALL_CATALYTICPOUCH]   = {gInterfaceGfx_CatalyticPouch,    384, GFX_TAG_CATALYTICPOUCH},
 };
 
 const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
@@ -188,6 +192,9 @@ const struct CompressedSpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
 	[BALL_GRANITEPOUCH]     = {gInterfacePal_GranitePouch,      GFX_TAG_GRANITEPOUCH},
 	[BALL_ANCIENTPOUCH]     = {gInterfacePal_AncientPouch,      GFX_TAG_ANCIENTPOUCH},
 	[BALL_ELEMENTALPOUCH]   = {gInterfacePal_ElementalPouch,    GFX_TAG_ELEMENTALPOUCH},
+    [BALL_WHITEPOUCH]       = {gInterfacePal_WhitePouch,        GFX_TAG_WHITEPOUCH},
+    [BALL_CATALYTICPOUCH]   = {gInterfacePal_CatalyticPouch,    GFX_TAG_CATALYTICPOUCH},
+
 
 };
 
@@ -757,6 +764,28 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
         .affineAnims = sAffineAnim_BallRotate,
         .callback = SpriteCB_BallThrow,
     },
+    [BALL_WHITEPOUCH] =
+	{
+        .tileTag = GFX_TAG_WHITEPOUCH,
+        .paletteTag = GFX_TAG_WHITEPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+    [BALL_CATALYTICPOUCH] =
+	{
+        .tileTag = GFX_TAG_CATALYTICPOUCH,
+        .paletteTag = GFX_TAG_CATALYTICPOUCH,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+
+    
 };
 
 #define tFrames          data[0]

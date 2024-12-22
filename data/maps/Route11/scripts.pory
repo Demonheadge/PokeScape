@@ -56,13 +56,13 @@ script ITEM_ROUTE11_ITEM_1
 
 script ITEM_ROUTE11_ITEM_2
 {
-    finditem(ITEM_MITHRIL_POUCH)
+    finditem(ITEM_POUCH_MITHRIL)
     end
 }
 
 script ITEM_ROUTE11_ITEM_3
 {
-    finditem(ITEM_CRYSTAL_POUCH)
+    finditem(ITEM_POUCH_CRYSTAL)
     end
 }
 

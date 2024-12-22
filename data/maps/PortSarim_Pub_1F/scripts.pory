@@ -159,11 +159,11 @@ script GIVE_RANDOM_ITEM {
 			case 11: 
 				giveitem(ITEM_EMPTY_BUCKET, 1)
 			case 12: 
-				giveitem(ITEM_GRANITE_POUCH, 5)
+				giveitem(ITEM_POUCH_GRANITE, 5)
 			case 13: 
-				giveitem(ITEM_BLACK_POUCH, 10)
+				giveitem(ITEM_POUCH_BLACK, 10)
 			case 14: 
-				giveitem(ITEM_NORMAL_POUCH, 20)
+				giveitem(ITEM_POUCH, 20)
 			case 15: 
 				giveitem(ITEM_SPIRIT_CHARM, 1)
 			case 16: 

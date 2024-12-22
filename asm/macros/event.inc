@@ -1746,7 +1746,7 @@
 	.2byte \category
 	.endm
 
-	@ Writes the name of the specified item to the specified buffer. If 'item' is a Berry or ITEM_NORMAL_POUCH
+	@ Writes the name of the specified item to the specified buffer. If 'item' is a Berry or ITEM_POUCH
 	@ and if the quantity is 2 or more, the buffered string will be pluralized ("IES" or "S" appended).
 	@ If the specified item is >= ITEMS_COUNT then the name of ITEM_NONE ("????????") is buffered instead.
 	.macro bufferitemnameplural stringVarId:req, item:req, quantity:req

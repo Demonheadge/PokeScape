@@ -398,7 +398,7 @@
       "x": 33,
       "y": 1,
       "elevation": 3,
-      "item": "ITEM_ANCIENT_POUCH",
+      "item": "ITEM_POUCH_ANCIENT",
       "flag": "FLAG_HIDDEN_ITEM_TEMP_15"
     },
     {
@@ -406,7 +406,7 @@
       "x": 78,
       "y": 9,
       "elevation": 3,
-      "item": "ITEM_RUNE_POUCH",
+      "item": "ITEM_POUCH_RUNE",
       "flag": "FLAG_HIDDEN_ITEM_TEMP_17"
     },
     {

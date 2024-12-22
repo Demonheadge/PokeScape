@@ -70,7 +70,7 @@ void static (*const sVerdanturfTentFuncs[])(void) =
     [VERDANTURF_TENT_FUNC_GIVE_PRIZE]         = GiveVerdanturfTentPrize
 };
 
-static const u16 sVerdanturfTentRewards[] = {ITEM_ELEMENTAL_POUCH};
+static const u16 sVerdanturfTentRewards[] = {ITEM_POUCH_ELEMENTAL};
 
 void static (*const sFallarborTentFuncs[])(void) =
 {

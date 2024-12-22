@@ -543,7 +543,7 @@ static void CreateShedinja(u16 preEvoSpecies, struct Pokemon *mon)
 {
     u32 data = 0;
     #if P_SHEDINJA_BALL >= GEN_4
-        u16 ball = ITEM_NORMAL_POUCH;
+        u16 ball = ITEM_POUCH;
     #endif
     const struct Evolution *evolutions = GetSpeciesEvolutions(preEvoSpecies);
 

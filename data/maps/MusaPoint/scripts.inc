@@ -219,8 +219,8 @@ NPC_MUSA_POINT_6::
 NPC_MUSA_POINT_7::
 	lock
 	faceplayer
-	namebox NPC_MUSA_POINT_7_Text_0
-	msgbox NPC_MUSA_POINT_7_Text_1
+	namebox NPC_MUSA_POINT_6_Text_0
+	msgbox NPC_MUSA_POINT_7_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -1241,7 +1241,7 @@ NPC_MUSA_POINT_5_Text_0:
 	.string "… Or was I…$"
 
 NPC_MUSA_POINT_6_Text_0:
-	.string "Woman$"
+	.string "Man$"
 
 NPC_MUSA_POINT_6_Text_1:
 	.string "The banana farm is the pride and joy of\n"
@@ -1250,9 +1250,6 @@ NPC_MUSA_POINT_6_Text_1:
 	.string "keeping us a landmark really.$"
 
 NPC_MUSA_POINT_7_Text_0:
-	.string "Man$"
-
-NPC_MUSA_POINT_7_Text_1:
 	.string "Welcome to Karamja.\p"
 	.string "Make sure to prepare some anti-poisons\n"
 	.string "and some choc-sunday's for your\l"

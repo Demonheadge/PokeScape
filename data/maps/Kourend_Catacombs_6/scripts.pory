@@ -8,12 +8,12 @@ mapscripts Kourend_Catacombs_6_MapScripts {
 
 script ITEM_Catacombs_of_Kourend_1
 {
-    finditem(ITEM_DRAGON_POUCH)
+    finditem(ITEM_POUCH_DRAGON)
     end
 }
 script ITEM_Catacombs_of_Kourend_2
 {
-    finditem(ITEM_ANCIENT_POUCH)
+    finditem(ITEM_POUCH_ANCIENT)
     end
 }
 script ITEM_Catacombs_of_Kourend_3
@@ -62,11 +62,11 @@ script FIND_RANDOM_ITEM_KOUREND {
 			case 11: 
 				finditem(ITEM_DRAGON_SCIMITAR, 1)
 			case 12: 
-				finditem(ITEM_ELEMENTAL_POUCH, 5)
+				finditem(ITEM_POUCH_ELEMENTAL, 5)
 			case 13: 
-				finditem(ITEM_BLACK_POUCH, 5)
+				finditem(ITEM_POUCH_BLACK, 5)
 			case 14: 
-				finditem(ITEM_NORMAL_POUCH, 10)
+				finditem(ITEM_POUCH, 10)
 			case 15: 
 				finditem(ITEM_SPIRIT_CHARM, 1)
 			case 16: 
@@ -80,7 +80,7 @@ script FIND_RANDOM_ITEM_KOUREND {
             case 20: 
 				finditem(ITEM_PARTY_HAT, 1)
             case 21: 
-				finditem(ITEM_ANCIENT_POUCH, 1)
+				finditem(ITEM_POUCH_ANCIENT, 1)
             case 22: 
 				finditem(ITEM_CABBAGE, 1)
             case 23: 

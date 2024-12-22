@@ -5327,3 +5327,87 @@ static const u8 sBaguetteSandwichDesc[] = _(
     "Fully heals a monster\n"
     "and raises all stats\n"
     "for the active battler.");
+
+
+
+
+static const u8 sPouch_Desc[] = _(
+    "Used for catching\n"
+    "wild monsters.\n"
+    "");
+static const u8 sPouch_Bronze_Desc[] = _(
+    "A basic pouch\n"
+    "used for catching\n"
+    "wild monsters.");
+static const u8 sPouch_Iron_Desc[] = _(
+    "A Pouch that is good\n"
+    "for monsters caught\n"
+    "in the sea.");
+static const u8 sPouch_Steel_Desc[] = _(
+    "A great pouch\n"
+    "used for catching\n"
+    "wild monsters.");
+static const u8 sPouch_Mithril_Desc[] = _(
+    "A Pouch that is very\n"
+    "effective if thrown\n"
+    "on the first turn.");
+static const u8 sPouch_Adamant_Desc[] = _(
+    "A Pouch that is very\n"
+    "effective the longer\n"
+    "the battle lasts.");
+static const u8 sPouch_Rune_Desc[] = _(
+    "An excellent pouch\n"
+    "used for catching\n"
+    "wild monsters.");
+static const u8 sPouch_Dragon_Desc[] = _(
+    "A pouch that\n"
+    "catches a monster\n"
+    "without fail.");
+static const u8 sPouch_Crystal_Desc[] = _(
+    "A Pouch that is very\n"
+    "effective on special\n"
+    "coloured monsters.");
+static const u8 sPouch_Black_Desc[] = _(
+    "A Pouch that is more\n"
+    "effective in dark\n"
+    "places.");
+static const u8 sPouch_White_Desc[] = _(
+    "A Pouch that is more\n"
+    "effective in bright\n"
+    "places.");
+static const u8 sPouch_Elemental_Desc[] = _(
+    "A Pouch that is very\n"
+    "effective on Elemental\n"
+    "infused monsters.");
+static const u8 sPouch_Catalytic_Desc[] = _(
+    "A Pouch that is very\n"
+    "effective on Catalytic\n"
+    "infused monsters.");
+static const u8 sPouch_Bane_Desc[] = _(
+    "A Pouch that is very\n"
+    "effective on Banite\n"
+    "infused monsters.");
+static const u8 sPouch_Augmented_Desc[] = _(
+    "A Pouch that works\n"
+    "better on monsters\n"
+    "caught before.");
+static const u8 sPouch_Barrows_Desc[] = _(
+    "A Pouch that works\n"
+    "better on lower\n"
+    "level monsters.");
+static const u8 sPouch_Granite_Desc[] = _(
+    "A Pouch that is very\n"
+    "effective on heavier\n"
+    "monsters.");
+static const u8 sPouch_Splitbark_Desc[] = _(
+    "A Pouch that is very\n"
+    "effective if a\n"
+    "monster is unwell.");
+static const u8 sPouch_Mystic_Desc[] = _(
+    "A Pouch that\n"
+    "restores a monsters\n"
+    "health when caught.");
+static const u8 sPouch_Ancient_Desc[] = _(
+    "A strange Pouch that\n"
+    "seems to bind and force\n"
+    "better friendship.");

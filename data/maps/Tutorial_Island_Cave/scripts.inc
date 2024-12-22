@@ -45,9 +45,9 @@ RatArenaCantLeave::
 KevinItemsTest::
 	lock
 	faceplayer
-	giveitem ITEM_NORMAL_POUCH, 10
+	giveitem ITEM_POUCH, 10
 	giveitem ITEM_RARE_CANDY, 10
-	giveitem ITEM_ELEMENTAL_POUCH, 1
+	giveitem ITEM_POUCH_ELEMENTAL, 1
 	msgbox KevinItemsTest_Text_0
 	release
 	return
@@ -64,7 +64,7 @@ CraftPouchStart::
 	return
 
 CraftPouchStart_1:
-	checkitem ITEM_NORMAL_POUCH, 1
+	checkitem ITEM_POUCH, 1
 	compare VAR_RESULT, 0
 	goto_if_ne CraftPouchStart_4
 	msgbox CraftPouchStart_Text_3
@@ -82,15 +82,15 @@ CraftPouchStart_7:
 	compare VAR_RESULT, 2
 	goto_if_eq CraftPouchStart_9
 	msgbox CraftPouchStart_Text_2
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
 	release
 	return
 
 CraftPouchStart_9:
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_AUGMENTED_POUCH, 1
+	giveitem ITEM_POUCH_AUGMENTED, 1
 	msgbox CraftPouchStart_Text_1
 	release
 	return
@@ -110,7 +110,7 @@ PouchCraftMenu_1:
 	return
 
 PouchCraftMenu_2:
-	checkitem ITEM_NORMAL_POUCH, 1
+	checkitem ITEM_POUCH, 1
 	compare VAR_RESULT, 0
 	goto_if_ne PouchCraftMenu_5
 	msgbox PouchCraftMenu_Text_19
@@ -272,129 +272,129 @@ PouchCraftMenu_25:
 	goto PouchCraftMenu_1
 
 PouchCraftMenu_26:
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_BRONZE_POUCH, 1
+	giveitem ITEM_POUCH_BRONZE, 1
 	msgbox PouchCraftMenu_Text_2
 	release
 	goto PouchCraftMenu_1
 
 PouchCraftMenu_29:
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_IRON_POUCH, 1
+	giveitem ITEM_POUCH_IRON, 1
 	msgbox PouchCraftMenu_Text_4
 	release
 	goto PouchCraftMenu_1
 
 PouchCraftMenu_32:
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_STEEL_POUCH, 1
+	giveitem ITEM_POUCH_STEEL, 1
 	msgbox PouchCraftMenu_Text_5
 	release
 	goto PouchCraftMenu_1
 
 PouchCraftMenu_35:
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_BLACK_POUCH, 1
+	giveitem ITEM_POUCH_BLACK, 1
 	msgbox PouchCraftMenu_Text_6
 	release
 	goto PouchCraftMenu_1
 
 PouchCraftMenu_38:
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_MITHRIL_POUCH, 1
+	giveitem ITEM_POUCH_MITHRIL, 1
 	msgbox PouchCraftMenu_Text_7
 	release
 	goto PouchCraftMenu_1
 
 PouchCraftMenu_41:
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_ADAMANT_POUCH, 1
+	giveitem ITEM_POUCH_ADAMANT, 1
 	msgbox PouchCraftMenu_Text_8
 	release
 	goto PouchCraftMenu_1
 
 PouchCraftMenu_44:
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_RUNE_POUCH, 1
+	giveitem ITEM_POUCH_RUNE, 1
 	msgbox PouchCraftMenu_Text_9
 	release
 	goto PouchCraftMenu_1
 
 PouchCraftMenu_47:
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_DRAGON_POUCH, 1
+	giveitem ITEM_POUCH_DRAGON, 1
 	msgbox PouchCraftMenu_Text_10
 	release
 	goto PouchCraftMenu_1
 
 PouchCraftMenu_50:
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_ANCIENT_POUCH, 1
+	giveitem ITEM_POUCH_ANCIENT, 1
 	msgbox PouchCraftMenu_Text_11
 	release
 	goto PouchCraftMenu_1
 
 PouchCraftMenu_53:
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_AUGMENTED_POUCH, 1
+	giveitem ITEM_POUCH_AUGMENTED, 1
 	msgbox PouchCraftMenu_Text_12
 	release
 	goto PouchCraftMenu_1
 
 PouchCraftMenu_56:
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_BARROWS_POUCH, 1
+	giveitem ITEM_POUCH_BARROWS, 1
 	msgbox PouchCraftMenu_Text_13
 	release
 	goto PouchCraftMenu_1
 
 PouchCraftMenu_59:
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_CRYSTAL_POUCH, 1
+	giveitem ITEM_POUCH_CRYSTAL, 1
 	msgbox PouchCraftMenu_Text_14
 	release
 	goto PouchCraftMenu_1
 
 PouchCraftMenu_62:
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_DRAGONBANE_POUCH, 1
+	giveitem ITEM_POUCH_BANE, 1
 	msgbox PouchCraftMenu_Text_15
 	release
 	goto PouchCraftMenu_1
 
 PouchCraftMenu_65:
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_ELEMENTAL_POUCH, 1
+	giveitem ITEM_POUCH_ELEMENTAL, 1
 	msgbox PouchCraftMenu_Text_16
 	release
 	goto PouchCraftMenu_1
 
 PouchCraftMenu_68:
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_GRANITE_POUCH, 1
+	giveitem ITEM_POUCH_GRANITE, 1
 	msgbox PouchCraftMenu_Text_17
 	release
 	goto PouchCraftMenu_1
 
 PouchCraftMenu_71:
-	removeitem ITEM_NORMAL_POUCH, 1
+	removeitem ITEM_POUCH, 1
 	removeitem ITEM_RARE_CANDY, 1
-	giveitem ITEM_MYSTIC_POUCH, 1
+	giveitem ITEM_POUCH_MYSTIC, 1
 	msgbox PouchCraftMenu_Text_18
 	release
 	goto PouchCraftMenu_1

@@ -210,7 +210,7 @@ script ENCOUNTER_IMPLING_EARTH
 //ITEMS
 script ITEM_PURO_PURO_1
 {
-    finditem(ITEM_MITHRIL_POUCH)
+    finditem(ITEM_POUCH_MITHRIL)
     end
 }
 
@@ -278,35 +278,35 @@ script GIVE_RANDOM_ITEM_IMPLING {
 			case 1: 
 				giveitem(ITEM_SPIRIT_SHARD, 5)
 			case 2: 
-				giveitem(ITEM_RUNE_POUCH, 5)
+				giveitem(ITEM_POUCH_RUNE, 5)
 			case 3: 
-				giveitem(ITEM_BLACK_POUCH, 5)
+				giveitem(ITEM_POUCH_BLACK, 5)
 			case 4: 
-				giveitem(ITEM_BRONZE_POUCH, 20)
+				giveitem(ITEM_POUCH_BRONZE, 20)
 			case 5: 
-				giveitem(ITEM_MYSTIC_POUCH, 3)
+				giveitem(ITEM_POUCH_MYSTIC, 3)
 			case 6: 
 				giveitem(ITEM_PURPLE_SWEETS, 5)
 			case 7: 
-				giveitem(ITEM_ADAMANT_POUCH, 5)
+				giveitem(ITEM_POUCH_ADAMANT, 5)
 			case 8: 
 				giveitem(ITEM_MINT_CAKE, 4)
 			case 9: 
 				giveitem(ITEM_HWEEN_MASK, 1)
 			case 10: 
-				giveitem(ITEM_MITHRIL_POUCH, 5)
+				giveitem(ITEM_POUCH_MITHRIL, 5)
 			case 11: 
-				giveitem(ITEM_NORMAL_POUCH, 30)
+				giveitem(ITEM_POUCH, 30)
 			case 12: 
-				giveitem(ITEM_GRANITE_POUCH, 5)
+				giveitem(ITEM_POUCH_GRANITE, 5)
 			case 13: 
-				giveitem(ITEM_DRAGONBANE_POUCH, 5)
+				giveitem(ITEM_POUCH_BANE, 5)
 			case 14: 
-				giveitem(ITEM_DRAGON_POUCH, 1)
+				giveitem(ITEM_POUCH_DRAGON, 1)
 			case 15: 
 				giveitem(ITEM_SPIRIT_CHARM, 1)
 			case 16: 
-				giveitem(ITEM_IRON_POUCH, 20)
+				giveitem(ITEM_POUCH_IRON, 20)
             deafult:
                 giveitem(ITEM_EXP_CANDY_XS, 10)
 	}
