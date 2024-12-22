@@ -2,7 +2,7 @@
   "id": "MAP_TZHAAR_CAVES_4",
   "name": "Tzhaar_Caves_4",
   "layout": "LAYOUT_TZHAAR_CAVES_4",
-  "music": "MUS_DUMMY",
+  "music": "MUS_PS_TZHAAR",
   "region_map_section": "MAPSEC_MOR_UL_REK",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

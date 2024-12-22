@@ -496,7 +496,7 @@
       "x": 22,
       "y": 6,
       "elevation": 0,
-      "dest_map": "MAP_TZHAAR_1F",
+      "dest_map": "MAP_MOR_UL_REK",
       "dest_warp_id": "3"
     },
     {
@@ -699,7 +699,7 @@
       "x": 66,
       "y": 22,
       "elevation": 0,
-      "dest_map": "MAP_TZHAAR_1F",
+      "dest_map": "MAP_MOR_UL_REK",
       "dest_warp_id": "0"
     },
     {

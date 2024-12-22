@@ -1004,15 +1004,16 @@
     "Route63"
   ],
   "gMapGroup_PokescapeIndoorTzhaar": [
-    "Tzhaar_1F",
-    "Tzhaar_FightCaves",
+    "Mor_Ul_Rek",
+    "Tzhaar_Gym_Room",
     "Tzhaar_Caves_1",
     "Tzhaar_Caves_2",
     "Tzhaar_Caves_3",
     "Tzhaar_Caves_4",
     "Tzhaar_Caves_5",
     "Tzhaar_Gym_Challenge",
-    "Tzhaar_HarAken"
+    "Tzhaar_HarAken",
+    "Tzhaar_Fight_Caves"
   ],
   "gMapGroup_PokescapeIndoorVarious": [
     "Route1_House_Fred",

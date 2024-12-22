@@ -1,12 +1,12 @@
-Tzhaar_FightCaves_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Tzhaar_FightCaves_MapScripts_MAP_SCRIPT_ON_TRANSITION
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, Tzhaar_FightCaves_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
+Tzhaar_Gym_Room_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Tzhaar_Gym_Room_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Tzhaar_Gym_Room_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
-Tzhaar_FightCaves_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+Tzhaar_Gym_Room_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	return
 
-Tzhaar_FightCaves_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+Tzhaar_Gym_Room_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	map_script_2 VAR_POKESCAPE_TZHAAR_GYM_QUEST, 10, TZHAAR_GYM_ROOM_LOST
 	map_script_2 VAR_POKESCAPE_TZHAAR_GYM_QUEST, 30, TZHAAR_GYM_ROOM_POST_WIN
 	.2byte 0

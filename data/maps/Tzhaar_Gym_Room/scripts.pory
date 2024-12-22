@@ -1,6 +1,6 @@
 const OBJ_EVENT_ID_TZTOKJAD = 11
 
-mapscripts Tzhaar_FightCaves_MapScripts {
+mapscripts Tzhaar_Gym_Room_MapScripts {
 
     MAP_SCRIPT_ON_TRANSITION 
     {

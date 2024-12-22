@@ -241,7 +241,7 @@
       "x": 6,
       "y": 20,
       "elevation": 0,
-      "dest_map": "MAP_TZHAAR_FIGHT_CAVES",
+      "dest_map": "MAP_TZHAAR_GYM_ROOM",
       "dest_warp_id": "1"
     }
   ],

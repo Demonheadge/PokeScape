@@ -1409,7 +1409,7 @@ CRANDOR_VOLCANO_EARTHQUAKE_4::
 	applymovement OBJ_EVENT_ID_PLAYER, HAM_EVENT_CRANDOR_VOLCANO_27
 	delay 60
 	clearflag FLAG_SYS_ENCOUNTER
-	warp MAP_TZHAAR_1F, 0
+	warp MAP_MOR_UL_REK, 0
 	waitstate
 	release
 	end

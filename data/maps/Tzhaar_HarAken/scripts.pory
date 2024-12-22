@@ -44,7 +44,7 @@ script FIGHT_CAVES_FINISHED {
     //msgbox(format("Cave completed.\nTeleporting out…"))
     closemessage
     call(FIGHT_CAVES_RESTRICTIONS_OFF)
-    warp(MAP_TZHAAR_FIGHT_CAVES, 1)
+    warp(MAP_TZHAAR_GYM_ROOM, 1)
     waitstate
     end
 }

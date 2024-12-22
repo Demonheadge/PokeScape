@@ -16198,8 +16198,8 @@
           }
         },
         {
-          "map": "MAP_TZHAAR_FIGHT_CAVES",
-          "base_label": "gTzhaar_FightCaves0"
+          "map": "MAP_TZHAAR_GYM_ROOM",
+          "base_label": "gTzhaar_Gym_Room0"
         },
         {
           "map": "MAP_GIANT_MOLE_CAVE",
@@ -32346,8 +32346,8 @@
           }
         },
         {
-          "map": "MAP_TZHAAR_1F",
-          "base_label": "gTzhaar_1F0",
+          "map": "MAP_MOR_UL_REK",
+          "base_label": "gMor_Ul_Rek0",
           "fishing_mons": {
             "encounter_rate": 30,
             "mons": [

@@ -75,7 +75,7 @@ script FIGHT_CAVES_QUIT {
         closemessage
         call(FIGHT_CAVES_RESTRICTIONS_OFF)
         setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 10)
-        warp(MAP_TZHAAR_FIGHT_CAVES, 1)
+        warp(MAP_TZHAAR_GYM_ROOM, 1)
         waitstate
     }
     else {
@@ -166,7 +166,7 @@ script CHALLENGE_START {
     applymovement(OBJ_EVENT_ID_PLAYER, ENTER_FIGHT_CAVES)
     waitmovement(0)
     if (!flag(FLAG_BADGE03_GET)) {
-        setrespawn(HEAL_LOCATION_TZHAAR_FIGHT_CAVES)
+        setrespawn(HEAL_LOCATION_TZHAAR_GYM_ROOM)
         call(TZHAAR_GYM_CHALLENGE_WAVES_CONTROL)
     }
     else {
