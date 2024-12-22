@@ -231,7 +231,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_TRIBEMEN_3",
+      "graphics_id": "OBJ_EVENT_GFX_TRIBEMEN_1",
       "x": 5,
       "y": 21,
       "elevation": 3,
@@ -359,32 +359,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ENCOUNTER_MONKEY_QUEST",
       "flag": "FLAG_TEMP_1B"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_ABYSSAL_DEMON",
-      "x": 10,
-      "y": 32,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "CHECK_TIME_OF_DAY_EVENT_TRIGGERED",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
-      "x": 9,
-      "y": 34,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Check_RandomiseSeed_Weather",
-      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SEAGULL",

@@ -147,7 +147,7 @@ script ITEM_LUMBRIDGE_BREAD_1
 
 script ITEM_LUMBRIDGE_STEEL_POUCH
 {
-    finditem(ITEM_STEEL_POUCH)
+    finditem(ITEM_MITHRIL_POUCH)
     end
 }
 

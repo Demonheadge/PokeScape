@@ -849,7 +849,7 @@ script BARBARIAN_GYM_BATTLE_HAAKON {
     if (var(VAR_RESULT) == B_OUTCOME_LOST) {
         special (HealPlayerParty)
         namebox("Haakon")
-        msgbox(format("And the winner is…{PAUSE 15}…{PAUSE 15}LITARA!"))
+        msgbox(format("And the winner is…{PAUSE 15}…{PAUSE 15}HAAKON!"))
         closemessage
         hidenamebox
         call (BARBARIAN_GYM_AUDIENCE_CHEER)

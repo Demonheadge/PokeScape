@@ -214,7 +214,7 @@ script NPC_MUSA_POINT_6
 {
 	lock
 	faceplayer
-    namebox ("Woman")
+    namebox ("Man")
 	msgbox(format("The banana farm is the pride and joy of Musa Point.\pThat or the bar is the only thing keeping us a landmark really."))
     closemessage
     hidenamebox

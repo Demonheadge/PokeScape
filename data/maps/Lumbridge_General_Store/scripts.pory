@@ -423,7 +423,7 @@ raw `
 STORE_GeneralStore_1:
     .2byte ITEM_BRONZE_POUCH
     .2byte ITEM_IRON_POUCH
-    .2byte ITEM_STEEL_POUCH
+    //.2byte ITEM_STEEL_POUCH
     .2byte ITEM_BREAD
     .2byte ITEM_CAKE
 	.2byte ITEM_WIZARDS_BLIZZARD
@@ -443,7 +443,7 @@ raw `
 STORE_GeneralStore_2:
     .2byte ITEM_BRONZE_POUCH
     .2byte ITEM_IRON_POUCH
-    .2byte ITEM_STEEL_POUCH
+    //.2byte ITEM_STEEL_POUCH
     .2byte ITEM_MITHRIL_POUCH
     .2byte ITEM_BREAD
     .2byte ITEM_CAKE
@@ -465,7 +465,7 @@ raw `
 STORE_GeneralStore_3:
     .2byte ITEM_BRONZE_POUCH
     .2byte ITEM_IRON_POUCH
-    .2byte ITEM_STEEL_POUCH
+    //.2byte ITEM_STEEL_POUCH
     .2byte ITEM_MITHRIL_POUCH
     .2byte ITEM_ADAMANT_POUCH
     .2byte ITEM_BREAD
@@ -491,7 +491,7 @@ raw `
 STORE_GeneralStore_4:
     .2byte ITEM_BRONZE_POUCH
     .2byte ITEM_IRON_POUCH
-    .2byte ITEM_STEEL_POUCH
+    //.2byte ITEM_STEEL_POUCH
     .2byte ITEM_MITHRIL_POUCH
     .2byte ITEM_ADAMANT_POUCH
     .2byte ITEM_RUNE_POUCH

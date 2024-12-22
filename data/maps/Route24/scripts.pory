@@ -32,7 +32,8 @@ script NPC_ROUTE24_BLOCKADE_1
     lock
     faceplayer
     namebox("White Knight")
-    msgbox(format("Sorry you need to be a member to access past here.\pWhat is a member?\pA member is someone who has obtained all of the badges in F2P."))
+    msgbox(format("Beyond here is too dangerous due to the Trolls invading Burthorpe.\pOnly members of the White Knights may pass."))
+    //msgbox(format("Sorry you need to be a Member to access past here.\pWhat is a member?\pA member is someone who has obtained all of the badges in F2P."))
     hidenamebox
     release
     end
@@ -42,7 +43,8 @@ script BLOCK_ROUTE24_BLOCKADE_WHITEKNIGHT
 {
         lock
         namebox("White Knight")
-        msgbox(format("Sorry you need to be a member to access past here.\pWhat is a member?\pA member is someone who has obtained all of the badges in F2P."))
+        msgbox(format("Beyond here is too dangerous due to the Trolls invading Burthorpe.\pOnly members of the White Knights may pass."))
+        //msgbox(format("Sorry you need to be a member to access past here.\pWhat is a member?\pA member is someone who has obtained all of the badges in F2P."))
 		closemessage
         hidenamebox
         applymovement(OBJ_EVENT_ID_PLAYER, Blockmovement_WhiteKnight)
