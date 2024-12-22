@@ -38,3 +38,8 @@ ROUTE20_STATE_4:
 	addobject 12
 	return
 
+
+ITEM_ROUTE20::
+	finditem ITEM_WOOLBALL
+	end
+

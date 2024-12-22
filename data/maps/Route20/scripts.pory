@@ -30,10 +30,7 @@ script ROUTE20_STATE {
         addobject(11)
         addobject(12)
     }
-
-
 }
-
 
 script ITEM_ROUTE20
 {

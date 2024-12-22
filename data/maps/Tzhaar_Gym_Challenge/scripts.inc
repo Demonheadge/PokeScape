@@ -1000,11 +1000,11 @@ TZHAAR_TRAINERS_WAVES_LOW_KET_2:
 	return
 
 TZHAAR_TRAINERS_WAVES_LOW_KET_3:
-	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_2, 0, TZHAAR_TRAINERS_WAVES_LOW_KET_Text_2, TZHAAR_TRAINERS_WAVES_LOW_KET_Text_1, CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_2, 0, TZHAAR_TRAINERS_WAVES_LOW_KET_Text_2, TZHAAR_TRAINERS_WAVES_LOW_KET_Text_3, CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO
 	return
 
 TZHAAR_TRAINERS_WAVES_LOW_KET_4:
-	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_3, 0, TZHAAR_TRAINERS_WAVES_LOW_KET_Text_3, TZHAAR_TRAINERS_WAVES_LOW_KET_Text_1, CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_TZHAAR_FIGHTCAVES_LOW_KET_3, 0, TZHAAR_TRAINERS_WAVES_LOW_KET_Text_4, TZHAAR_TRAINERS_WAVES_LOW_KET_Text_5, CONTINUE_AFTER_BATTLE_REMOVE_LASTTALKEDTO
 	return
 
 
@@ -2551,16 +2551,30 @@ TZHAAR_TRAINERS_WAVES_2_GAAL_Text_9:
 	.string "rumours..$"
 
 TZHAAR_TRAINERS_WAVES_LOW_KET_Text_0:
-	.string "intro text 1$"
+	.string "You think you're a hardened\n"
+	.string "adventurer?\p"
+	.string "Trust me when I say our obsidian bodies\n"
+	.string "are harder.$"
 
 TZHAAR_TRAINERS_WAVES_LOW_KET_Text_1:
-	.string "lose text$"
+	.string "Our bodies may be hard, but you fight\n"
+	.string "even harder..$"
 
 TZHAAR_TRAINERS_WAVES_LOW_KET_Text_2:
-	.string "intro text 2$"
+	.string "You are not trusted enough to make it\n"
+	.string "into the inner core of the city.$"
 
 TZHAAR_TRAINERS_WAVES_LOW_KET_Text_3:
-	.string "intro text 3$"
+	.string "Perhaps one day you will see our grand\n"
+	.string "central inferno.$"
+
+TZHAAR_TRAINERS_WAVES_LOW_KET_Text_4:
+	.string "JalYt like you are not capable of\n"
+	.string "withstanding the heat down here.$"
+
+TZHAAR_TRAINERS_WAVES_LOW_KET_Text_5:
+	.string "Maybe it is me who cannot stand the\n"
+	.string "heat of battle!$"
 
 TZHAAR_GYM_CHALLENGE_WAVE1_Text_0:
 	.string "WAVE 1.$"
