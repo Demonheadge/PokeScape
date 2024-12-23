@@ -5249,6 +5249,115 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_TRAINER_ICE_MOUNTAIN_BLACK_KNIGHT_1),
     },
 
+//Bay of Sarim
+
+    [TRAINER_SARIM_BAY_PIRATE_1] =
+    {
+        .trainerClass = TRAINER_CLASS_PIRATE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_pirate,
+        .trainerName = _("Stormbreaker"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TRAINER_SARIM_BAY_PIRATE_1),
+    },
+
+    [TRAINER_SARIM_BAY_PIRATE_2] =
+    {
+        .trainerClass = TRAINER_CLASS_PIRATE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_pirate,
+        .trainerName = _("Dreadnought"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TRAINER_SARIM_BAY_PIRATE_2),
+    },
+
+    [TRAINER_SARIM_BAY_PIRATE_3] =
+    {
+        .trainerClass = TRAINER_CLASS_PIRATE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_pirate,
+        .trainerName = _("Rumrunner"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TRAINER_SARIM_BAY_PIRATE_3),
+    },
+
+    [TRAINER_SARIM_BAY_PIRATE_4] =
+    {
+        .trainerClass = TRAINER_CLASS_PIRATE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_pirate,
+        .trainerName = _("Calypso"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TRAINER_SARIM_BAY_PIRATE_4),
+    },
+
+    [TRAINER_SARIM_BAY_PIRATE_5] =
+    {
+        .trainerClass = TRAINER_CLASS_PIRATE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_pirate,
+        .trainerName = _("Ravenwood"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TRAINER_SARIM_BAY_PIRATE_5),
+    },
+
+    [TRAINER_SARIM_BAY_PIRATE_6] =
+    {
+        .trainerClass = TRAINER_CLASS_PIRATE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_pirate,
+        .trainerName = _("Whisperwind"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TRAINER_SARIM_BAY_PIRATE_6),
+    },
+
+    [TRAINER_SARIM_BAY_PIRATE_7] =
+    {
+        .trainerClass = TRAINER_CLASS_PIRATE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_pirate,
+        .trainerName = _("Patchwork"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TRAINER_SARIM_BAY_PIRATE_7),
+    },
+
+    [TRAINER_SARIM_BAY_SAILOR_1] =
+    {
+        .trainerClass = TRAINER_CLASS_SAILOR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_sailor,
+        .trainerName = _("Caspian"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TRAINER_SARIM_BAY_SAILOR_1),
+    },
+
+    [TRAINER_SARIM_BAY_SAILOR_2] =
+    {
+        .trainerClass = TRAINER_CLASS_SAILOR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_sailor,
+        .trainerName = _("Erasmus"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TRAINER_SARIM_BAY_SAILOR_2),
+    },
 
 /*
     #define TRAINER_HELLWIND                                445

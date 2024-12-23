@@ -485,7 +485,15 @@
 #define TRAINER_PUB_MUSA_1              			    479
 #define TRAINER_ICE_MOUNTAIN_HUNTER                     480
 #define TRAINER_ICE_MOUNTAIN_BLACK_KNIGHT_1             481
-
+#define TRAINER_SARIM_BAY_PIRATE_1                      482
+#define TRAINER_SARIM_BAY_PIRATE_2                      483
+#define TRAINER_SARIM_BAY_PIRATE_3                      484
+#define TRAINER_SARIM_BAY_PIRATE_4                      485
+#define TRAINER_SARIM_BAY_PIRATE_5                      486
+#define TRAINER_SARIM_BAY_PIRATE_6                      487
+#define TRAINER_SARIM_BAY_PIRATE_7                      488
+#define TRAINER_SARIM_BAY_SAILOR_1                      489
+#define TRAINER_SARIM_BAY_SAILOR_2                      490
 
 
 

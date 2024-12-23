@@ -8087,3 +8087,112 @@ static const struct TrainerMon TRAINER_ICE_MOUNTAIN_BLACK_KNIGHT_1[] = {
     .species = SPECIES_MINOTAUR_NORMAL_FORM,
     }
 };
+
+//Bay of Sarim
+
+static const struct TrainerMon sParty_TRAINER_SARIM_BAY_PIRATE_1[] = {
+    {
+    .lvl = 35,
+    .species = SPECIES_BRINE_RAT,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_CHICKEN_DIVING_FORM,
+    }
+};
+
+static const struct TrainerMon sParty_TRAINER_SARIM_BAY_PIRATE_2[] = {
+    {
+    .lvl = 35,
+    .species = SPECIES_VILE_FISH,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_SHEEP_PIRATE_FORM,
+    }
+};
+
+static const struct TrainerMon sParty_TRAINER_SARIM_BAY_PIRATE_3[] = {
+    {
+    .lvl = 36,
+    .species = SPECIES_RED_EYE,
+    },
+    {
+    .lvl = 37,
+    .species = SPECIES_ALBATROSS,
+    }
+};
+
+static const struct TrainerMon sParty_TRAINER_SARIM_BAY_PIRATE_4[] = {
+    {
+    .lvl = 36,
+    .species = SPECIES_VILE_FISH,
+    },
+    {
+    .lvl = 37,
+    .species = SPECIES_BRINE_RAT,
+    }
+};
+
+static const struct TrainerMon sParty_TRAINER_SARIM_BAY_PIRATE_5[] = {
+    {
+    .lvl = 38,
+    .species = SPECIES_CAT_SUNKEN_FORM,
+    }
+};
+
+static const struct TrainerMon sParty_TRAINER_SARIM_BAY_PIRATE_6[] = {
+    {
+    .lvl = 37,
+    .species = SPECIES_CHICKEN_DIVING_FORM,
+    },
+    {
+    .lvl = 37,
+    .species = SPECIES_EEL_MOTTLED_FORM,
+    }
+};
+
+static const struct TrainerMon sParty_TRAINER_SARIM_BAY_PIRATE_7[] = {
+    {
+    .lvl = 36,
+    .species = SPECIES_HERRING,
+    },
+    {
+    .lvl = 37,
+    .species = SPECIES_TROUT_NORMAL_FORM,
+    },
+    {
+    .lvl = 38,
+    .species = SPECIES_ALBATROSS,
+    }
+};
+
+static const struct TrainerMon sParty_TRAINER_SARIM_BAY_SAILOR_1[] = {
+    {
+    .lvl = 36,
+    .species = SPECIES_BASS,
+    },
+    {
+    .lvl = 33,
+    .species = SPECIES_SALMON_NORMAL_FORM,
+    },
+    {
+    .lvl = 37,
+    .species = SPECIES_MONKFISH_NORMAL_FORM,
+    }
+};
+
+static const struct TrainerMon sParty_TRAINER_SARIM_BAY_SAILOR_2[] = {
+    {
+    .lvl = 36,
+    .species = SPECIES_CATFISH,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_WHITEFISH,
+    },
+    {
+    .lvl = 37,
+    .species = SPECIES_CAVEFISH,
+    }
+};
