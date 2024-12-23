@@ -8770,6 +8770,16 @@
       "secondary_tileset": "gTileset_PokeScape_Caves",
       "border_filepath": "data/layouts/Tzhaar_Fight_Caves/border.bin",
       "blockdata_filepath": "data/layouts/Tzhaar_Fight_Caves/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE8_MAKEOVER_MAGE_2F",
+      "name": "Route8_MakeoverMage_2F_Layout",
+      "width": 10,
+      "height": 12,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns1",
+      "border_filepath": "data/layouts/Route8_MakeoverMage_2F/border.bin",
+      "blockdata_filepath": "data/layouts/Route8_MakeoverMage_2F/map.bin"
     }
   ]
 }

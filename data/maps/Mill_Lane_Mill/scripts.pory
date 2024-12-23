@@ -15,6 +15,10 @@ mapscripts Mill_Lane_Mill_MapScripts {
     } 
 
     
+	MAP_SCRIPT_ON_LOAD {
+        call(PURO_PURO_EVENT)
+    }
+    
     
 }
 
@@ -189,6 +193,21 @@ script MillLaneMill_Item_WHEAT5{
 }
 
 
+script PURO_PURO_EVENT_MILL_LANE_MILL {
+	setmetatile(5, 19, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(5, 20, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(5, 21, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(5, 22, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(6, 22, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+ 	setmetatile(7, 19, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(7, 20, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(7, 21, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(7, 22, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(6, 19, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_1, 0)
+    setmetatile(6, 20, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_2, 0)
+    setmetatile(6, 21, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_3, 0)
+	return
+}
 
 
 

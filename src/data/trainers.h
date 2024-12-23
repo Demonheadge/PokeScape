@@ -2026,7 +2026,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_FISHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
         .trainerPic = TRAINER_PIC_fisher,
-        .trainerName = _(""),
+        .trainerName = _("TrawlerSux"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
@@ -2038,7 +2038,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_FISHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
         .trainerPic = TRAINER_PIC_fisher,
-        .trainerName = _(""),
+        .trainerName = _("MastrBaitr"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
@@ -2050,7 +2050,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_FISHER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
         .trainerPic = TRAINER_PIC_fisher,
-        .trainerName = _(""),
+        .trainerName = _("Hurley"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
@@ -2062,7 +2062,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_SKILLER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
         .trainerPic = TRAINER_PIC_skiller,
-        .trainerName = _(""),
+        .trainerName = _("Lvl3Foreva"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
@@ -2074,7 +2074,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_DUO,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
         .trainerPic = TRAINER_PIC_cook_fm_duo,
-        .trainerName = _(" & "),
+        .trainerName = _("COOK & FIREMAKER"),
         .items = {},
         .doubleBattle = TRUE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
@@ -2086,7 +2086,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_CHEF,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
         .trainerPic = TRAINER_PIC_cook,
-        .trainerName = _(""),
+        .trainerName = _("Marc0Pierre"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
@@ -5208,6 +5208,20 @@ const struct Trainer gTrainers[] = {
     },
 
 
+
+//Musa Point Pub
+
+    [TRAINER_PUB_MUSA_1] =
+    {
+        .trainerClass = TRAINER_CLASS_SAILOR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_sailor,
+        .trainerName = _("Mooney"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TRAINER_PUB_MUSA_1),
+    },
 
 
 /*

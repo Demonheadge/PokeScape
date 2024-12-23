@@ -39,6 +39,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NPC_BARBARIANVILLAGE_NPC8",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BANKER_M",
+      "x": 3,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "BARBARIAN_VILLAGE_Banker",
+      "flag": "0"
     }
   ],
   "warp_events": [

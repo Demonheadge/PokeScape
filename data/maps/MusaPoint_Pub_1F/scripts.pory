@@ -57,9 +57,36 @@ script NPC_MUSA_POINT_Pub_Sailer
 	lock
 	faceplayer
     namebox ("Sailor")
-	msgbox(format("Hey mate, you caught any of those lobsters?\pDid you know lobsters evolve differently depending on the weather in their environment?"))
+	msgbox(format(""))
     closemessage
     hidenamebox
 	release
+	end
+}
+
+
+script script NPC_MUSA_POINT_Pub_Sailor
+{ 
+	lock
+	faceplayer
+    namebox("Sailor")
+	msgbox(format("Hey mate, you caught any of those lobsters?\pDid you know lobsters evolve differently depending on the weather in their environment?"))
+	hidenamebox
+	if (flag(FLAG_PUB_TRAINER_12) == false) 
+	{
+		msgbox(format("Do you wish to challenge them to a battle?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT))
+			{
+				hidenamebox
+				setflag(FLAG_PUB_TRAINER_12)
+				trainerbattle_no_intro(TRAINER_PUB_MUSA_1, msgbox(format("…")))
+				namebox("Sailor")
+				msgbox(format("Maybe if we got some more unusual weather on Karamja I'd have a evolved my lobster into something stronger."))
+				hidenamebox
+				call(GIVE_RANDOM_ITEM)
+			}
+	}
+    hidenamebox
+    release
 	end
 }

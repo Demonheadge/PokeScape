@@ -62,7 +62,7 @@ const struct Item gItems[] =
     [ITEM_POUCH_IRON] =
     {
         .name = _("IRON POUCH"),
-        .price = 1000,
+        .price = 150,
         .description = sPouch_Iron_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
@@ -86,7 +86,7 @@ const struct Item gItems[] =
     [ITEM_POUCH_MITHRIL] =
     {
         .name = _("MITHRIL POUCH"),
-        .price = 1000,
+        .price = 500,
         .description = sPouch_Mithril_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
@@ -98,7 +98,7 @@ const struct Item gItems[] =
     [ITEM_POUCH_ADAMANT] =
     {
         .name = _("ADAMANT POUCH"),
-        .price = 1000,
+        .price = 800,
         .description = sPouch_Adamant_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
@@ -110,7 +110,7 @@ const struct Item gItems[] =
     [ITEM_POUCH_RUNE] =
     {
         .name = _("RUNE POUCH"),
-        .price = 500,
+        .price = 600,
         .description = sPouch_Rune_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
@@ -206,7 +206,7 @@ const struct Item gItems[] =
     [ITEM_POUCH_AUGMENTED] =
     {
         .name = _("GIZMO POUCH"),
-        .price = 1000,
+        .price = 200,
         .description = sPouch_Augmented_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,

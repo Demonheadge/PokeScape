@@ -806,6 +806,7 @@
 #define MAP_MELZARS_MAZE_2F             (12 | (41 << 8))
 #define MAP_MELZARS_MAZE_3F             (13 | (41 << 8))
 #define MAP_MELZARS_MAZE_B1F            (14 | (41 << 8))
+#define MAP_ROUTE8_MAKEOVER_MAGE_2F     (15 | (41 << 8))
 
 // gMapGroup_PokescapeIndoorFalador
 #define MAP_FALADOR_HAIRDRESSERS     (0 | (42 << 8))

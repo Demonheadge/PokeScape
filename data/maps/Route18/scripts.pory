@@ -265,7 +265,7 @@ script NPC_ROUTE19_GOBLIN_2
 script BATTLE_ROUTE19_TRAINER1 // GUARD
 {
     trainerbattle_single(TRAINER_ROUTE19_TRAINER_1, format("I hope you brought a chefs hat, because you are not getting in without one."),format("No, you cannot have mine."))
-    //namebox ("")
+    namebox ("Marc0Pierre")
     msgbox(format("To access the Cooking Guild you will need either a chefs hat or be a maxed out your Cooking skill.\pYou look like you have neither of those so bad luck for you."))
 	hidenamebox
     release

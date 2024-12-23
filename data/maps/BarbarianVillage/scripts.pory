@@ -404,7 +404,7 @@ script NPC_ROUTE20_NPC1
 script BATTLE_ROUTE20_FISHERMAN_1
 {
     trainerbattle_single(TRAINER_ROUTE20_TRAINER_1, format("If you look carefully in the water you can see a rainbow."),format("So these Rainbow Fish are why you can see a rainbow in the river."))
-    //namebox ("")
+    namebox ("TrawlerSux")
     msgbox(format("So these Rainbow Fish are why you can see a rainbow in the river."))
 	hidenamebox
     release
@@ -415,7 +415,7 @@ script BATTLE_ROUTE20_FISHERMAN_1
 script BATTLE_ROUTE20_FISHERMAN_2
 {
     trainerbattle_single(TRAINER_ROUTE20_TRAINER_2, format("You just scared away my catch!"),format("I just ran out of feathers…"))
-    //namebox ("")
+    namebox ("MastrBaitr")
     msgbox(format("Fly fishing is great!\pMuch better than regular net fishing."))
 	hidenamebox
     release
@@ -425,7 +425,7 @@ script BATTLE_ROUTE20_FISHERMAN_2
 script BATTLE_ROUTE20_FISHERMAN_3
 {
     trainerbattle_single(TRAINER_ROUTE20_TRAINER_3, format("I caught these fishing in a dungeon.\pI'd like to see how good they are in battle!"),format("I may have lost but I now understand the strength of these little guys."))
-    //namebox ("")
+    namebox ("Hurley")
     msgbox(format("If you are interested where I got these from you should take a visit to the cavern by Mudskipper point."))
 	hidenamebox
     release
@@ -435,7 +435,7 @@ script BATTLE_ROUTE20_FISHERMAN_3
 script BATTLE_ROUTE20_SKILLER
 {
     trainerbattle_single(TRAINER_ROUTE20_TRAINER_4, format("Fishing is great, I could do this all day."),format("You should do some fishing too."))
-    //namebox ("")
+    namebox ("Lvl3Foreva")
     msgbox(format("You should do some fishing too.\pYou would never know what rare fish you could find until you try."))
 	hidenamebox
     release
@@ -498,14 +498,25 @@ script NPC_BARBARIANVILLAGE_NPC8
     lock
     faceplayer
     namebox("Fremennik")
+
+    if (!flag(FLAG_RECEIVED_TM47)) { //
+        msgbox(format("I've travelled all the way here from Rellekka.\pMy goal is to make friendly relations with our barbarian brothers in Gunnar's Ground."))
+        msgbox(format("You may not be a barbarian, but as the first person to talk to me since I got here let me share with you something from my homeland."))
+        hidenamebox
+        giveitem(ITEM_TM47, 1) // Lunar Dance
+        namebox("Fremennik")
+        msgbox(format("Any monster that uses that move will faint instantly, but whatever monster you send in next will have all of their health restored and they will be cured of any status condition.\pIt is a reminder that sometimes in battle, sacrifices need to be made.."))
+        setflag(FLAG_RECEIVED_TM47)
+        hidenamebox
+        release
+        end
+    }
+    
     msgbox(format("I've travelled all the way here from Rellekka.\pMy goal is to make friendly relations with our barbarian brothers in Gunnar's Ground.\pWhere is Rellekka?\pIt's far, far north-west of here in the Fremennik Province.\pMaybe one day you can visit it."))
     hidenamebox
     release
-    end
+	end
 }
-
-
-
 
 
 

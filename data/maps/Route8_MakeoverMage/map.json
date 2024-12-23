@@ -35,6 +35,13 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE8",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 6,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE8_MAKEOVER_MAGE_2F",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

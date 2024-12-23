@@ -41,13 +41,17 @@ script PURO_PURO_EVENT {
             setdynamicwarp(MAP_DRAYNOR, 8)
             call(PURO_PURO_EVENT_DRAYNOR)
         }
-        elif (var(VAR_RESULT) == MAP_ROUTE14) {
+        elif (var(VAR_RESULT) == MAP_ROUTE13) {
             setdynamicwarp(MAP_ROUTE13, 1)
             call(PURO_PURO_EVENT_ROUTE13)
         }
         elif (var(VAR_RESULT) == MAP_ROUTE12) {
             setdynamicwarp(MAP_ROUTE12, 1)
             call(PURO_PURO_EVENT_ROUTE12)
+        }
+            elif (var(VAR_RESULT) == MAP_MILL_LANE_MILL) {
+            setdynamicwarp(MAP_MILL_LANE_MILL, 2)
+            call(PURO_PURO_EVENT_MILL_LANE_MILL)
         }
     }
     return

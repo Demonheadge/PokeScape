@@ -29,3 +29,13 @@ script NPC_BARBARIANVILLAGE_NPC7
     release
     end
 }
+
+
+script BARBARIAN_VILLAGE_Banker {
+    
+	faceplayer
+    namebox ("Banker")
+    msgbox(format("The barbarians refused to let the Bank of Gielinor build an official branch in their village.\pI'm still here to look after your items and monsters for you though.\pHow may I help you today?"))
+	waitmessage
+    goto(BANK_OPTIONS)
+}

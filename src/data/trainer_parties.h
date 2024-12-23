@@ -8046,3 +8046,16 @@ static const struct TrainerMon sParty_POOL_1_GymChallenge[] = {
     .species = SPECIES_YT_HURKOT,
     },
 };
+
+//Musa Point Pub
+
+static const struct TrainerMon sParty_TRAINER_PUB_MUSA_1[] = {
+    {
+    .lvl = 37,
+    .species = SPECIES_LOBSTER_NORMAL_FORM,
+    },
+    {
+    .lvl = 38,
+    .species = SPECIES_LOBSTER_NORMAL_FORM,
+    }
+};

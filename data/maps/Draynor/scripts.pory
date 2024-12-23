@@ -425,7 +425,7 @@ script Draynor_AGGIE{
 
     if (!flag(FLAG_RECEIVED_TM63)) { //
         msgbox(format("Would you be interested in any dyes?"))
-        msgbox(format("Oh! You are one of those adventuers that fight with Monsters.\pHere I might have something to help with that."))
+        msgbox(format("Oh! You are one of those adventurers that fight with Monsters.\pHere I might have something to help with that."))
         hidenamebox
         giveitem(ITEM_TM63, 1) // Trick or treat
         namebox("Aggie")
@@ -595,7 +595,15 @@ script NPC_Draynor_WiseOldMan{
 	
     
 script PURO_PURO_EVENT_DRAYNOR {
-    //unfinished. 
+    setmetatile(48, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(48, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(48, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(48, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(47, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(46, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(46, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(46, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
+    setmetatile(46, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0)
     setmetatile(47, 4, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_1, 0)
     setmetatile(47, 5, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_2, 0)
     setmetatile(47, 6, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_3, 0)

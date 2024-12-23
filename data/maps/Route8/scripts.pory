@@ -176,7 +176,11 @@ script ITEM_ROUTE8_ITEM_PRAYER_POTION
     end
 }
 
-
+script ITEM_MAKEOVER_MAGE_ITEM_CAKE
+{
+    finditem(ITEM_CAKE)
+    end
+}
 
 
 
