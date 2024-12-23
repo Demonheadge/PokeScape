@@ -5,3 +5,189 @@ MAP_SCRIPT_ON_TRANSITION {
         call(WEATHER_CHANGE_AREA_ICE_MOUNTAIN)
 	}
 }
+
+//NPCs
+
+script NPC_ORACLE {
+    random(16)
+        switch (var(VAR_RESULT)) {
+            case 0: 
+                lock
+    		faceplayer
+		namebox("Oracle")
+                msgbox(format("Beware the cabbage.\pIt is both green AND leafy."))
+                hidenamebox
+		release
+		end
+            case 1: 
+                lock
+    		faceplayer
+		namebox("Oracle")
+                msgbox(format("The light at the end of the tunnel is the demon-infested lava pit."))
+                hidenamebox
+		release
+		end
+            case 2: 
+                lock
+    		faceplayer
+		namebox("Oracle")
+                msgbox(format("Who guards the guardsmen?"))
+                hidenamebox
+		release
+		end
+            case 3: 
+                lock
+    		faceplayer
+		namebox("Oracle")
+
+                if (!flag(FLAG_RECEIVED_TM51)) {
+                msgbox(format("Sometimes you get lucky, sometimes you don't."))
+                hidenamebox
+                giveitem(ITEM_TM51, 1) // Icicle Crash
+                namebox("Oracle")
+                msgbox(format("A monster using this move harshly drops icicles on their target.\pIf you're lucky, it can even cause flinching."))
+                setflag(FLAG_RECEIVED_TM51)
+                hidenamebox
+                release
+                end
+                }
+                msgbox(format("Sometimes you get lucky, sometimes you don't."))
+                hidenamebox
+                release
+	        end
+             case 4: 
+                lock
+    		faceplayer
+		namebox("Oracle")
+                msgbox(format("Many secrets are buried under this land."))
+                hidenamebox
+		release
+		end
+            case 5: 
+                lock
+    		faceplayer
+		namebox("Oracle")
+                msgbox(format("They say that ham does not mix well with other kinds of meat."))
+                hidenamebox
+		release
+		end
+            case 6: 
+                lock
+    		faceplayer
+		namebox("Oracle")
+                msgbox(format("Is it time to wake up? I am not sure.."))
+                hidenamebox
+		release
+		end
+            case 7: 
+                lock
+    		faceplayer
+		namebox("Oracle")
+                msgbox(format("The great snake of Guthix guards more than she knows."))
+                hidenamebox
+		release
+		end
+            case 8: 
+                lock
+    		faceplayer
+		namebox("Oracle")
+                msgbox(format("A woodchuck does not chuck wood."))
+                hidenamebox
+		release
+		end
+            case 9: 
+                lock
+    		faceplayer
+		namebox("Oracle")
+                msgbox(format("Do not fear the chaos.\pEmbrace it."))
+                hidenamebox
+		release
+		end
+            case 10: 
+                lock
+    		faceplayer
+		namebox("Oracle")
+                msgbox(format("Too many cooks spoil the anchovy pizza."))
+                hidenamebox
+		release
+		end
+            case 11: 
+                lock
+    		faceplayer
+		namebox("Oracle")
+                msgbox(format("He who uses the power of custard mixes it with his tears."))
+                hidenamebox
+		release
+		end
+            case 12: 
+                lock
+    		faceplayer
+		namebox("Oracle")
+                msgbox(format("The final dream will reach its full potential."))
+                hidenamebox
+		release
+		end
+            case 13: 
+                lock
+    		faceplayer
+		namebox("Oracle")
+                msgbox(format("The last shall become the first."))
+                hidenamebox
+		release
+		end
+            case 14: 
+                lock
+    		faceplayer
+		namebox("Oracle")
+                msgbox(format("Pies...they're great, aren't they?"))
+                hidenamebox
+		release
+		end
+            case 15: 
+                lock
+    		faceplayer
+		namebox("Oracle")
+                msgbox(format("I'm not in the mood."))
+                hidenamebox
+		release
+		end
+        }
+	release
+	end
+}
+
+
+
+script BATTLE_ICE_MOUNTAIN_HUNTER
+{
+    trainerbattle_single(TRAINER_ICE_MOUNTAIN_HUNTER, format("I've travelled for hundreds of miles to find some rare hunter monsters in the frozen mountains, but you're the most exciting thing I've seen up here."),format("Brr, what a frosty reception.."))
+    namebox ("0nTheHunt")
+    msgbox(format("Oh well, there are no hunter monsters up here but at least our battle has warmed me up!"))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_ICE_MOUNTAIN_BLACK_KNIGHT_1
+{
+    trainerbattle_single(TRAINER_ICE_MOUNTAIN_BLACK_KNIGHT_1, format("That's far enough."),format("You might have beaten me, but you'll never make it inside our fortress."))
+    namebox ("Black Knight")
+    msgbox(format("Nobody without a set of our armour gets inside our fortress!"))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_ICE_MOUNTAIN_BLACK_KNIGHT
+{
+    msgbox(format("The Black Knight stares off into the distance as if you're not even there."))
+    release
+    end
+}
+
+script SIGN_ICE_MOUNTAIN_DOOR
+{
+    msgbox(format("The door is sealed shut."))
+    release
+    end
+}

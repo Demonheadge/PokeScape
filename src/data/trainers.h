@@ -5223,6 +5223,32 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_TRAINER_PUB_MUSA_1),
     },
 
+//Ice Mountain
+
+    [TRAINER_ICE_MOUNTAIN_HUNTER] =
+    {
+        .trainerClass = TRAINER_CLASS_HUNTER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_hunter_m,
+        .trainerName = _("0nTheHunt"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TRAINER_ICE_MOUNTAIN_HUNTER),
+    },
+
+    [TRAINER_ICE_MOUNTAIN_BLACK_KNIGHT_1] =
+    {
+        .trainerClass = TRAINER_CLASS_BLACK_KNIGHT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_black_knight_m,
+        .trainerName = _(""),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TRAINER_ICE_MOUNTAIN_BLACK_KNIGHT_1),
+    },
+
 
 /*
     #define TRAINER_HELLWIND                                445

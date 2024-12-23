@@ -8059,3 +8059,31 @@ static const struct TrainerMon sParty_TRAINER_PUB_MUSA_1[] = {
     .species = SPECIES_LOBSTER_NORMAL_FORM,
     }
 };
+
+//Ice Mountain
+
+static const struct TrainerMon sParty_TRAINER_ICE_MOUNTAIN_HUNTER[] = {
+    {
+    .lvl = 40,
+    .species = SPECIES_GRAAHK_NORMAL_FORM,
+    },
+    {
+    .lvl = 41,
+    .species = SPECIES_LARUPIA_NORMAL_FORM,
+    }
+};
+
+static const struct TrainerMon TRAINER_ICE_MOUNTAIN_BLACK_KNIGHT_1[] = {
+    {
+    .lvl = 39,
+    .species = SPECIES_CROW,
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_GIANT_BAT,
+    },
+    {
+    .lvl = 41,
+    .species = SPECIES_MINOTAUR_NORMAL_FORM,
+    }
+};
