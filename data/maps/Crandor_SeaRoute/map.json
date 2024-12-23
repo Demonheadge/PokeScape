@@ -2,7 +2,7 @@
   "id": "MAP_CRANDOR_SEA_ROUTE",
   "name": "Crandor_SeaRoute",
   "layout": "LAYOUT_CRANDOR_SEA_ROUTE",
-  "music": "MUS_PS_SURFING",
+  "music": "MUS_GSC_ROUTE38",
   "region_map_section": "MAPSEC_CRANDOR",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -81,8 +81,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PIRATE_1",
-      "x": 64,
-      "y": 17,
+      "x": 65,
+      "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 3,
@@ -167,7 +167,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_SEAGULL",
       "flag": "0"
     },
     {
@@ -180,7 +180,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_SEAGULL",
       "flag": "0"
     },
     {
@@ -193,7 +193,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_SEAGULL",
       "flag": "0"
     },
     {
@@ -206,25 +206,31 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_SEAGULL",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SEAGULL",
-      "x": 72,
-      "y": 27,
+      "x": 71,
+      "y": 26,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_SEAGULL",
       "flag": "0"
     }
   ],
   "warp_events": [
-
+    {
+      "x": 63,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_CRANDOR_SEA_ROUTE",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
 

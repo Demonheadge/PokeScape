@@ -1523,3 +1523,11 @@ bool8 MetatileBehavior_IsWallClock(u8 metatileBehavior)
     else
         return FALSE;
 }
+
+bool8 MetatileBehavior_IsWhirlpool(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_WHIRLPOOL)
+        return TRUE;
+    else
+        return FALSE;
+}

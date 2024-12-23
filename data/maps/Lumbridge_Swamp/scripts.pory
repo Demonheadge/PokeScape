@@ -246,7 +246,85 @@ script EventScript_Locked_Door
 	end
 }
 
+script EventScript_Whirlpool
+{
+	lockall
+	applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_WHIRLPOOL)
+	playse (SE_M_WHIRLPOOL)
+	delay(40)
+	playse(SE_M_DIVE)
 
+	specialvar (VAR_RESULT, GetCurrentMap)
+    if (var(VAR_RESULT) == MAP_CRANDOR_SEA_ROUTE) {
+		getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+    	if ((var(VAR_TEMP_1) == 52 && var(VAR_TEMP_2) == 26) ||
+		(var(VAR_TEMP_1) == 53 && var(VAR_TEMP_2) == 24) ||
+		(var(VAR_TEMP_1) == 55 && var(VAR_TEMP_2) == 25) ||
+		(var(VAR_TEMP_1) == 56 && var(VAR_TEMP_2) == 24) ||
+		(var(VAR_TEMP_1) == 58 && var(VAR_TEMP_2) == 27) ||
+		(var(VAR_TEMP_1) == 61 && var(VAR_TEMP_2) == 25) ) {
+			warpsilent(MAP_ROUTE39, 1, 0, 0)
+		}
+		else {
+			warpsilent(MAP_CRANDOR_SEA_ROUTE, 0, 0, 0)
+		} 
+    }
+	else { //default warp.
+		warpsilent(MAP_ROUTE39, 1, 0, 0)
+	}
+	waitstate
+	releaseall
+	end
+}
+
+
+movement MOVEMENT_WHIRLPOOL {
+	face_down
+	delay_4
+	face_left
+	delay_4
+	face_up
+	delay_4
+	face_right
+	delay_4
+	face_down
+	delay_4
+	face_left
+	delay_4
+	face_up
+	delay_4
+	face_right
+	delay_4
+	
+	face_down
+	delay_4
+	face_left
+	delay_4
+	face_up
+	delay_4
+	face_right
+	delay_4
+
+	face_down
+	delay_1
+	face_left
+	delay_1
+	face_up
+	delay_1
+	face_right
+	delay_1
+	face_down
+	delay_1
+	face_left
+	delay_1
+	face_up
+	delay_1
+	face_right
+	delay_1
+	face_down
+
+	step_end
+}
 
 
 

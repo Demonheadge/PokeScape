@@ -170,6 +170,8 @@ bool8 MetatileBehavior_IsBananaTree(u8);
 bool8 MetatileBehavior_IsLockedDoor(u8);
 bool8 MetatileBehavior_IsWallClock(u8);
 bool8 MetatileBehavior_IsSurfableFishableLava(u8);
+bool8 MetatileBehavior_IsWhirlpool(u8);
+
 
 
 
