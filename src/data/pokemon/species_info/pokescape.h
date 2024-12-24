@@ -1777,7 +1777,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.eggGroups = { EGG_GROUP_FIELD, EGG_GROUP_LIFE },
 		.abilities = { ABILITY_THICK_FAT, ABILITY_BATTLE_ARMOR, ABILITY_THICK_FAT },
 		.bodyColor = BODY_COLOR_BLACK,
-		.speciesName = _("Super"),
+		.speciesName = _("Super Cow"),
 		.cryId = CRY_SUPER_COW,
 		.natDexNum = NATIONAL_DEX_SUPER_COW,
 		.categoryName = _("Super Cow"),
@@ -7036,7 +7036,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_HELLPUPPY},
 			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_MUNCHER},
-			{EVO_LEVEL_DEATH, 15, SPECIES_MUNCHER},
+			{EVO_LEVEL_DEATH, 18, SPECIES_MUNCHER},
 			{EVO_ITEM, ITEM_WATER_RUNE, SPECIES_DALMATIAN},
 			{EVO_ITEM, ITEM_AIR_RUNE, SPECIES_LABRADOR},
 			{EVO_ITEM, ITEM_EARTH_RUNE, SPECIES_TERRIER},
@@ -8388,7 +8388,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_TZREK_JAD, SPECIES_MAX_GOLEM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_TORTLE, SPECIES_MAX_GOLEM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_SAILFISH, SPECIES_MAX_GOLEM}
-		),
+			),
 		.formSpeciesIdTable = sStoneOfJasFormSpeciesIdTable,
 		.formChangeTable = sStoneOfJasFormChangeTable,
 	},
@@ -39616,7 +39616,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.backPicYOffset = 0,
 		.backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
 		PALETTES(Obsidian_Golem),
-		ICON(Obsidian_Golem, 0),
+		ICON(Obsidian_Golem, 2),
 		.footprint = gMonFootprint_Obsidian_Golem,
 		LEARNSETS(Obsidian_Golem),
 		.frontPicYOffset = 0,
@@ -50222,9 +50222,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"The superior version of its species.\n"
-			"It's gaze is strong enough to petrify\n"
-			"even rocks."),
+			"The superior version of its species. Its\n"
+			"gaze is strong enough to petrify even\n"
+			"rocks."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -51275,7 +51275,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"Often mistaken for a teddy bear due to\n"
+			"their fur, this fluffy monster is\n"
+			"capable of infatuating anyone they meet\n"
+			"with their overwhelming cuteness."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -51323,7 +51326,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"As vines sometimes grow mutations, so\n"
+			"does the jadinko living by their roots."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -51371,7 +51375,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"The most ferocious of male jadinkos gets\n"
+			"to guard their queen."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -51418,7 +51423,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"Embodying all aspects of a dragon this\n"
+			"Jadinko is everything a dragon is except\n"
+			"being a dragon"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -51466,7 +51473,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"The smell of this Jadinko is so\n"
+			"repugnant that being near one is like\n"
+			"breathing in the scent of death itself."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -51513,7 +51522,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"Connected to the shadow realm this\n"
+			"Jadinko is clouded in mystery and\n"
+			"brooding misery."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -51561,7 +51572,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"A Jadinko channeling the divine power of\n"
+			"Guthix. God of nature."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -51609,7 +51621,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"Channeling the power of chaos. This\n"
+			"Jadinko represents Zamorak."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -51657,7 +51670,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"The God of order emanates his power\n"
+			"through this Jadinko. The Saradomin\n"
+			"Jadinko."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -51709,7 +51724,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"When a player has reached its maximum\n"
+			"efficiency in all skills. They may\n"
+			"create this golem to showcase their\n"
+			"power."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -51756,7 +51774,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"Their unending hunger has them scourge\n"
+			"the Stronghold of Security for any\n"
+			"resemblence of food."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -51803,7 +51823,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"Hailing from Gielinor's moon, Zanaris,\n"
+			"these creatures are known for their\n"
+			"vicious magical headbutt attacks."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -51850,11 +51872,13 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Zygomite"),
 		.cryId = CRY_ZYGOMITE_OSRS_ANCIENT,
 		.natDexNum = NATIONAL_DEX_ZYGOMITE_OSRS_ANCIENT,
-		.categoryName = _("Zygomite"),
+		.categoryName = _("Ancient"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"These mushrooms have been warped by the\n"
+			"unusual soil on Fossil Island to become\n"
+			"even more deadly."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -51897,11 +51921,14 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Zygomite"),
 		.cryId = CRY_ZYGOMITE_RSHD_MUTATED,
 		.natDexNum = NATIONAL_DEX_ZYGOMITE_RSHD_MUTATED,
-		.categoryName = _("Zygomite"),
+		.categoryName = _("Mutated"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"These bouncy fungus are harmless until\n"
+			"provoked by adventurers testing\n"
+			"experimental sprays. No wonder they're\n"
+			"so angry!"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -51944,11 +51971,13 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Zygomite"),
 		.cryId = CRY_ZYGOMITE_GLOOMSHROOM,
 		.natDexNum = NATIONAL_DEX_ZYGOMITE_GLOOMSHROOM,
-		.categoryName = _("Zygomite"),
+		.categoryName = _("Gloom"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"A zygomite that has been carefully\n"
+			"domesticated to produce fruit for potion\n"
+			"making. They're real fun guys now."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -52002,7 +52031,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"It has been documented that a snail in\n"
+			"top shape can reach a velocity of 0.020\n"
+			"miles per hour."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -52051,11 +52082,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Rockslug"),
 		.cryId = CRY_ROCKSLUG_RSHD,
 		.natDexNum = NATIONAL_DEX_ROCKSLUG_RSHD,
-		.categoryName = _("Slug"),
+		.categoryName = _("Rockslug"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"Its thick hide is rock like to the point\n"
+			"it cant be penetrated without salt."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -52101,11 +52133,13 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Rockslug"),
 		.cryId = CRY_ROCKSLUG_OSRS,
 		.natDexNum = NATIONAL_DEX_ROCKSLUG_OSRS,
-		.categoryName = _("Slug"),
+		.categoryName = _("Rockslug"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"A large and feral rock slug that has\n"
+			"grown harder and stronger than its\n"
+			"brethren"),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -52148,11 +52182,13 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Sea Slug"),
 		.cryId = CRY_SEASLUG,
 		.natDexNum = NATIONAL_DEX_SEASLUG,
-		.categoryName = _("Slug"),
+		.categoryName = _("Seaslug"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"A slug forming a hivemind of Mother\n"
+			"Mallum. Its psychic powers lets it\n"
+			"enslave the minds of others."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -52167,7 +52203,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Seaslug, 0),
 		.footprint = gMonFootprint_Seaslug,
 		LEARNSETS(Seaslug),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 14,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 32, SPECIES_SEASLUG_PRINCE},
@@ -52199,11 +52235,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Prince"),
 		.cryId = CRY_SEASLUG_PRINCE,
 		.natDexNum = NATIONAL_DEX_SEASLUG_PRINCE,
-		.categoryName = _("Slug"),
+		.categoryName = _("Prince"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"When a sea slug grows to immense powers\n"
+			"it becomes a herald of royalty."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -52218,7 +52255,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Seaslug_Prince, 0),
 		.footprint = gMonFootprint_Seaslug_Prince,
 		LEARNSETS(Seaslug_Prince),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 5,
 		.enemyMonElevation = 0,
 	},
 
@@ -52246,11 +52283,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Snail"),
 		.cryId = CRY_SNAIL_GIANT_OSRS,
 		.natDexNum = NATIONAL_DEX_SNAIL_GIANT_OSRS,
-		.categoryName = _("Snail"),
+		.categoryName = _("Giant"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"Its shell is gigantic and has protective\n"
+			"propertive equal to a very large snail."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -52299,11 +52337,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Snail"),
 		.cryId = CRY_SNAIL_GIANT_RS3,
 		.natDexNum = NATIONAL_DEX_SNAIL_GIANT_RS3,
-		.categoryName = _("Snail"),
+		.categoryName = _("Giant"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"This giant snail is found in Morytania\n"
+			"where it's eaten as food."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -52352,11 +52391,13 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Snail"),
 		.cryId = CRY_SNAIL_THORNY,
 		.natDexNum = NATIONAL_DEX_SNAIL_THORNY,
-		.categoryName = _("Snail"),
+		.categoryName = _("Thorny"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"In the spirit realm, these snails act as\n"
+			"predators for summoners who wrongly\n"
+			"enters their realm."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -52399,11 +52440,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Snail"),
 		.cryId = CRY_SNAIL_RAVENOUS,
 		.natDexNum = NATIONAL_DEX_SNAIL_RAVENOUS,
-		.categoryName = _("Snail"),
+		.categoryName = _("Ravenous"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"A snail from the spirit realm known for\n"
+			"spewing acid on its enemies."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -52446,11 +52488,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Snail"),
 		.cryId = CRY_SNAIL_BRUISE_OSRS,
 		.natDexNum = NATIONAL_DEX_SNAIL_BRUISE_OSRS,
-		.categoryName = _("Snail"),
+		.categoryName = _("Bruise"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"The fatty meat of these snails is a\n"
+			"delicacy in Ardougne."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -52493,11 +52536,13 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Snail"),
 		.cryId = CRY_SNAIL_BARK_OSRS,
 		.natDexNum = NATIONAL_DEX_SNAIL_BARK_OSRS,
-		.categoryName = _("Snail"),
+		.categoryName = _("Bark"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"The Bark snail gets its name from a\n"
+			"drunk adventurer thinking it was a tree\n"
+			"and justifying it as a bark like snail."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -52540,11 +52585,13 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Snail"),
 		.cryId = CRY_SNAIL_BLOOD_RS3,
 		.natDexNum = NATIONAL_DEX_SNAIL_BLOOD_RS3,
-		.categoryName = _("Snail"),
+		.categoryName = _("Blood"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"The pointy tipped shell it carries on\n"
+			"its back is a prized token of great\n"
+			"fashion in certain circles."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -52587,11 +52634,14 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Snail"),
 		.cryId = CRY_SNAIL_OCHRE_RS3,
 		.natDexNum = NATIONAL_DEX_SNAIL_OCHRE_RS3,
-		.categoryName = _("Snail"),
+		.categoryName = _("Ochre"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"Making a helmet out of its shell is said\n"
+			"to give happiness. As is selling it for\n"
+			"high prices to dimwitted free to play\n"
+			"players."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -52634,11 +52684,13 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Snail"),
 		.cryId = CRY_SNAIL_MYRE_RS3,
 		.natDexNum = NATIONAL_DEX_SNAIL_MYRE_RS3,
-		.categoryName = _("Snail"),
+		.categoryName = _("Myre"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"The shell it carries has protective\n"
+			"properties similar to taping a turtle on\n"
+			"your head as a helmet."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
@@ -52682,11 +52734,13 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.speciesName = _("Mallum"),
 		.cryId = CRY_MOTHER_MALLUM,
 		.natDexNum = NATIONAL_DEX_MOTHER_MALLUM,
-		.categoryName = _("Slug"),
+		.categoryName = _("Tyrant"),
 		.height = 0,
 		.weight = 0,
 		.description = COMPOUND_STRING(
-			"cupholder"),
+			"Trapped for ages due to her power.\n"
+			"Mother Mallum is a force feared by the\n"
+			"temple knights."),
 		.pokemonScale = 256,
 		.pokemonOffset = 0,
 		.trainerScale = 256,
