@@ -3038,49 +3038,49 @@ static const struct TrainerMon sParty_ROUTE19_TRAINER_1[] = {
 
 static const struct TrainerMon sParty_BARBARIAN_GYM_TRAINER_1[] = {
     {
-    .lvl = 45,
+    .lvl = 36,
     .species = SPECIES_BEAR_NORMAL_FORM,
     },
     {
-    .lvl = 46,
+    .lvl = 36,
     .species = SPECIES_OOMLIE,
     },
     {
-    .lvl = 50,
+    .lvl = 37,
     .species = SPECIES_FERRET,
     }
 };
 
 static const struct TrainerMon sParty_BARBARIAN_GYM_TRAINER_2[] = {
     {
-    .lvl = 46,
+    .lvl = 37,
     .species = SPECIES_WOLF_FENRIS_FORM,
     },
     {
-    .lvl = 50,
+    .lvl = 37,
     .species = SPECIES_CAVE_BUG,
     },
     {
-    .lvl = 46,
+    .lvl = 38,
     .species = SPECIES_CATABLEPON,
     }
 };
 
 static const struct TrainerMon sParty_BARBARIAN_GYM_TRAINER_3[] = {
     {
-    .lvl = 46,
+    .lvl = 38,
     .species = SPECIES_MINOTAUR_NORMAL_FORM,
     },
     {
-    .lvl = 45,
+    .lvl = 38,
     .species = SPECIES_WOLF_NORMAL_FORM,
     },
     {
-    .lvl = 50,
+    .lvl = 39,
     .species = SPECIES_KURASK,
     },
     {
-    .lvl = 47,
+    .lvl = 40,
     .species = SPECIES_BULL,
     }
 };
@@ -4598,7 +4598,7 @@ static const struct TrainerMon sParty_BARBARIAN_GYM_GUNTHOR[] = {
     //.ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .ability = ABILITY_ANGER_POINT,
-    .lvl = 48,
+    .lvl = 40,
     .species = SPECIES_UNICORN_ANGRY_FORM,
     .moves = {MOVE_MEGAHORN, MOVE_RAGE, MOVE_CLOSE_COMBAT, MOVE_RECOVER}
     },
@@ -4606,7 +4606,7 @@ static const struct TrainerMon sParty_BARBARIAN_GYM_GUNTHOR[] = {
     //.ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .ability = ABILITY_STRONG_JAW,
-    .lvl = 48,
+    .lvl = 41,
     .species = SPECIES_ANGRY_RAT,
     .moves = {MOVE_VENGEANCE, MOVE_POWER_TRIP, MOVE_HYPER_FANG, MOVE_BULK_UP}
     },
@@ -4614,7 +4614,7 @@ static const struct TrainerMon sParty_BARBARIAN_GYM_GUNTHOR[] = {
     //.ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .ability = ABILITY_VITAL_SPIRIT,
-    .lvl = 49,
+    .lvl = 41,
     .species = SPECIES_CAT_WILY_FORM,
     .moves = {MOVE_SLICE_DICE, MOVE_REVENGE, MOVE_ENDURE, MOVE_BULK_UP}
     },
@@ -4622,7 +4622,7 @@ static const struct TrainerMon sParty_BARBARIAN_GYM_GUNTHOR[] = {
     //.ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .ability = ABILITY_FLUFFY,
-    .lvl = 47,
+    .lvl = 42,
     .species = SPECIES_SOURHOG,
     .moves = {MOVE_PAIN_SPLIT, MOVE_SUPERPOWER, MOVE_ODOR_SLEUTH, MOVE_BULK_UP}
     },
@@ -4630,7 +4630,7 @@ static const struct TrainerMon sParty_BARBARIAN_GYM_GUNTHOR[] = {
     //.ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
     .ability = ABILITY_ANGER_POINT,
-    .lvl = 52,
+    .lvl = 42,
     .species = SPECIES_BEAR_GRIZZLY_FORM,
     .moves = {MOVE_SLICE_DICE, MOVE_CRUNCH, MOVE_YAWN, MOVE_BULK_UP}
     }
