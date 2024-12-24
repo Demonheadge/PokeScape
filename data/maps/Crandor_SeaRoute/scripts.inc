@@ -51,6 +51,7 @@ CRANDOR_SHIP_SCENE::
 	removeobject 2
 	setobjectxyperm 1, 34, 14
 	setobjectxyperm 2, 26, 8
+	playbgm MUS_PS_SURFING, 0
 	applymovement OBJ_EVENT_ID_PLAYER, movement_walk_slow_left10
 	applymovement 3, movement_crandor_ship
 	waitmovement 0

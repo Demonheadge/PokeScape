@@ -14946,8 +14946,12 @@ static void Cmd_handleballthrow(void)
 
                 case ITEM_POUCH_IRON:
                     if (GetCurrentMapType() == MAP_TYPE_UNDERWATER
-                        || (B_DIVE_BALL_MODIFIER >= GEN_4 && (gIsFishingEncounter || gIsSurfingEncounter)))
+                        || (B_DIVE_BALL_MODIFIER >= GEN_4 && (gIsFishingEncounter || gIsSurfingEncounter))) {
                         ballMultiplier = 400;
+                        }
+                        else {
+                            ballMultiplier = 100;
+                        }
                     break;
 
                 case ITEM_POUCH_STEEL:
@@ -14955,8 +14959,12 @@ static void Cmd_handleballthrow(void)
                     break;
 
                 case ITEM_POUCH_MITHRIL:
-                    if (gBattleResults.battleTurnCounter == 0)
-                        ballMultiplier = (B_QUICK_BALL_MODIFIER >= GEN_5 ? 500 : 400);
+                    if (gBattleResults.battleTurnCounter == 0) {
+                        ballMultiplier = 400;
+                    }
+                    else {
+                        ballMultiplier = 100;
+                    }
                     break;
 
                 case ITEM_POUCH_ADAMANT:
@@ -14976,43 +14984,67 @@ static void Cmd_handleballthrow(void)
 
                 case ITEM_POUCH_BLACK:
                     i = UpdateTimeOfDay();
-                    if (i == TIME_OF_DAY_EVENING || i == TIME_OF_DAY_NIGHT || gMapHeader.cave || gMapHeader.mapType == MAP_TYPE_UNDERGROUND || gMapHeader.mapType == MAP_TYPE_WILDERNESS)
-                        ballMultiplier = (B_DUSK_BALL_MODIFIER >= GEN_7 ? 300 : 350);
+                    if (i == TIME_OF_DAY_EVENING || i == TIME_OF_DAY_NIGHT || gMapHeader.cave || gMapHeader.mapType == MAP_TYPE_UNDERGROUND || gMapHeader.mapType == MAP_TYPE_WILDERNESS) {
+                        ballMultiplier = 300;
+                    }
+                    else {
+                        ballMultiplier = 100;
+                    }
                     break;
 
                 case ITEM_POUCH_WHITE:
                     i = UpdateTimeOfDay();
-                    if (i == TIME_OF_DAY_MORNING || i == TIME_OF_DAY_DAY || gMapHeader.mapType == MAP_TYPE_INDOOR)
-                        ballMultiplier = (B_DUSK_BALL_MODIFIER >= GEN_7 ? 300 : 350);
+                    if (i == TIME_OF_DAY_MORNING || i == TIME_OF_DAY_DAY || gMapHeader.mapType == MAP_TYPE_INDOOR) {
+                        ballMultiplier = 300;
+                    }
+                    else {
+                        ballMultiplier = 100;
+                    }
                     break;
 
                 case ITEM_POUCH_ELEMENTAL:
                     if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[0] == 
                     (TYPE_WATER | TYPE_FIRE | TYPE_GRASS | TYPE_ROCK | TYPE_GROUND | TYPE_FLYING) ||
                     gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[1] == 
-                    (TYPE_WATER | TYPE_FIRE | TYPE_GRASS | TYPE_ROCK | TYPE_GROUND | TYPE_FLYING))
-                    ballMultiplier = 400;
+                    (TYPE_WATER | TYPE_FIRE | TYPE_GRASS | TYPE_ROCK | TYPE_GROUND | TYPE_FLYING)) {
+                        ballMultiplier = 400;
+                    }
+                    else {
+                        ballMultiplier = 100;
+                    }
                     break;
 
                 case ITEM_POUCH_CATALYTIC:
                     if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[0] == 
                     (TYPE_GHOST | TYPE_POISON | TYPE_BUG | TYPE_FIGHTING | TYPE_ELECTRIC | TYPE_ICE) ||
                     gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[1] == 
-                    (TYPE_GHOST | TYPE_POISON | TYPE_BUG | TYPE_FIGHTING | TYPE_ELECTRIC | TYPE_ICE))
-                    ballMultiplier = 400;
+                    (TYPE_GHOST | TYPE_POISON | TYPE_BUG | TYPE_FIGHTING | TYPE_ELECTRIC | TYPE_ICE)) {
+                        ballMultiplier = 400;
+                    }
+                    else {
+                        ballMultiplier = 100;
+                    }
                     break;
 
                 case ITEM_POUCH_BANE:
                     if (gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[0] == 
                     (TYPE_DRAGON | TYPE_FAIRY | TYPE_DARK | TYPE_NORMAL | TYPE_STEEL | TYPE_PSYCHIC) ||
                     gSpeciesInfo[gBattleMons[gBattlerTarget].species].types[1] == 
-                    (TYPE_DRAGON | TYPE_FAIRY | TYPE_DARK | TYPE_NORMAL | TYPE_STEEL | TYPE_PSYCHIC))
-                    ballMultiplier = 400;
+                    (TYPE_DRAGON | TYPE_FAIRY | TYPE_DARK | TYPE_NORMAL | TYPE_STEEL | TYPE_PSYCHIC)) {
+                        ballMultiplier = 400;
+                    }
+                    else {
+                        ballMultiplier = 100;
+                    }
                     break;
 
                 case ITEM_POUCH_AUGMENTED:
-                    if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[gBattlerTarget].species), FLAG_GET_CAUGHT))
-                        ballMultiplier = (B_REPEAT_BALL_MODIFIER >= GEN_7 ? 350 : 300);
+                    if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[gBattlerTarget].species), FLAG_GET_CAUGHT)) {
+                        ballMultiplier = 300;
+                    }
+                    else {
+                        ballMultiplier = 100;
+                    }
                     break;
 
                 case ITEM_POUCH_ANCIENT:
@@ -15070,8 +15102,12 @@ static void Cmd_handleballthrow(void)
                 case ITEM_POUCH_SPLITBARK:
                     if (gBattleMons[gBattlerTarget].status1 & 
                     (STATUS1_SLEEP | STATUS1_FREEZE | STATUS1_POISON | STATUS1_BURN | 
-                    STATUS1_PARALYSIS | STATUS1_TOXIC_POISON | STATUS1_FROSTBITE))
-                    ballMultiplier = 400;
+                    STATUS1_PARALYSIS | STATUS1_TOXIC_POISON | STATUS1_FROSTBITE)) {
+                        ballMultiplier = 400;
+                    }
+                    else {
+                        ballMultiplier = 100;
+                    }
                     break;
 
                 case ITEM_POUCH_MYSTIC:

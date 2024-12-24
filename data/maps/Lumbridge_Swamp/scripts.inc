@@ -220,6 +220,123 @@ EventScript_Locked_Door::
 	end
 
 
+EventScript_Whirlpool::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WHIRLPOOL
+	playse SE_M_WHIRLPOOL
+	delay 40
+	playse SE_M_DIVE
+	specialvar VAR_RESULT, GetCurrentMap
+	compare VAR_RESULT, MAP_CRANDOR_SEA_ROUTE
+	goto_if_eq EventScript_Whirlpool_2
+	warpsilent MAP_ROUTE39, 1, 0, 0
+EventScript_Whirlpool_1:
+	waitstate
+	releaseall
+	end
+
+EventScript_Whirlpool_2:
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	compare VAR_TEMP_1, 52
+	goto_if_eq EventScript_Whirlpool_8
+EventScript_Whirlpool_7:
+	compare VAR_TEMP_1, 53
+	goto_if_eq EventScript_Whirlpool_12
+EventScript_Whirlpool_11:
+	compare VAR_TEMP_1, 55
+	goto_if_eq EventScript_Whirlpool_16
+EventScript_Whirlpool_15:
+	compare VAR_TEMP_1, 56
+	goto_if_eq EventScript_Whirlpool_20
+EventScript_Whirlpool_19:
+	compare VAR_TEMP_1, 58
+	goto_if_eq EventScript_Whirlpool_24
+EventScript_Whirlpool_23:
+	compare VAR_TEMP_1, 61
+	goto_if_eq EventScript_Whirlpool_27
+EventScript_Whirlpool_6:
+	warpsilent MAP_CRANDOR_SEA_ROUTE, 0, 0, 0
+	goto EventScript_Whirlpool_1
+
+EventScript_Whirlpool_5:
+	warpsilent MAP_ROUTE39, 1, 0, 0
+	goto EventScript_Whirlpool_1
+
+EventScript_Whirlpool_8:
+	compare VAR_TEMP_2, 26
+	goto_if_eq EventScript_Whirlpool_5
+	goto EventScript_Whirlpool_7
+
+EventScript_Whirlpool_12:
+	compare VAR_TEMP_2, 24
+	goto_if_eq EventScript_Whirlpool_5
+	goto EventScript_Whirlpool_11
+
+EventScript_Whirlpool_16:
+	compare VAR_TEMP_2, 25
+	goto_if_eq EventScript_Whirlpool_5
+	goto EventScript_Whirlpool_15
+
+EventScript_Whirlpool_20:
+	compare VAR_TEMP_2, 24
+	goto_if_eq EventScript_Whirlpool_5
+	goto EventScript_Whirlpool_19
+
+EventScript_Whirlpool_24:
+	compare VAR_TEMP_2, 27
+	goto_if_eq EventScript_Whirlpool_5
+	goto EventScript_Whirlpool_23
+
+EventScript_Whirlpool_27:
+	compare VAR_TEMP_2, 25
+	goto_if_eq EventScript_Whirlpool_5
+	goto EventScript_Whirlpool_6
+
+
+MOVEMENT_WHIRLPOOL:
+	face_down
+	delay_4
+	face_left
+	delay_4
+	face_up
+	delay_4
+	face_right
+	delay_4
+	face_down
+	delay_4
+	face_left
+	delay_4
+	face_up
+	delay_4
+	face_right
+	delay_4
+	face_down
+	delay_4
+	face_left
+	delay_4
+	face_up
+	delay_4
+	face_right
+	delay_4
+	face_down
+	delay_1
+	face_left
+	delay_1
+	face_up
+	delay_1
+	face_right
+	delay_1
+	face_down
+	delay_1
+	face_left
+	delay_1
+	face_up
+	delay_1
+	face_right
+	delay_1
+	face_down
+	step_end
+
 Friendship_Checker_Pikkupstix::
 	lock
 	faceplayer

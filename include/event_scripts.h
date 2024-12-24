@@ -583,6 +583,8 @@ extern const u8 EventScript_DG_SPINNING_WHEEL[];
 extern const u8 EventScript_BananaTree[];
 extern const u8 EventScript_Locked_Door[];
 extern const u8 EventScript_CheckClock[];
+extern const u8 EventScript_Whirlpool[];
+
 
 // Secret Base
 extern const u8 SecretBase_EventScript_PC[];

@@ -110,6 +110,9 @@ static void QueueAnimTiles_PokeScapeCaves_Waterfall(u16);
 static void QueueAnimTiles_PokeScapeCaves_LogFire(u16);
 static void QueueAnimTiles_PokeScapeCaves_Sparkle(u16);
 static void QueueAnimTiles_PokeScapeCaves_Extra_1_GuthixTears(u16);
+static void QueueAnimTiles_Karamja_water_current(u16);
+static void QueueAnimTiles_Karamja_water_shallow(u16);
+static void QueueAnimTiles_Karamja_water_whirlpool(u16);
 
 //PokeScape End//
 
@@ -267,6 +270,59 @@ const u16 *const gTilesetAnims_Karamja_scorchfire2[] = {
     gTilesetAnims_Karamja_scorchfire2_Frame1,
     gTilesetAnims_Karamja_scorchfire2_Frame2,
     gTilesetAnims_Karamja_scorchfire2_Frame3
+};
+
+const u16 gTilesetAnims_Karamja_water_current_Frame0[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_current/0.4bpp");
+const u16 gTilesetAnims_Karamja_water_current_Frame1[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_current/1.4bpp");
+const u16 gTilesetAnims_Karamja_water_current_Frame2[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_current/2.4bpp");
+const u16 gTilesetAnims_Karamja_water_current_Frame3[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_current/3.4bpp");
+const u16 gTilesetAnims_Karamja_water_current_Frame4[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_current/4.4bpp");
+const u16 gTilesetAnims_Karamja_water_current_Frame5[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_current/5.4bpp");
+const u16 gTilesetAnims_Karamja_water_current_Frame6[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_current/6.4bpp");
+const u16 gTilesetAnims_Karamja_water_current_Frame7[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_current/7.4bpp");
+const u16 *const gTilesetAnims_Karamja_water_current[] = {
+    gTilesetAnims_Karamja_water_current_Frame0,
+    gTilesetAnims_Karamja_water_current_Frame1,
+    gTilesetAnims_Karamja_water_current_Frame2,
+    gTilesetAnims_Karamja_water_current_Frame3,
+    gTilesetAnims_Karamja_water_current_Frame4,
+    gTilesetAnims_Karamja_water_current_Frame5,
+    gTilesetAnims_Karamja_water_current_Frame6,
+    gTilesetAnims_Karamja_water_current_Frame7
+};
+
+const u16 gTilesetAnims_Karamja_water_shallow_Frame0[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_shallow/0.4bpp");
+const u16 gTilesetAnims_Karamja_water_shallow_Frame1[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_shallow/1.4bpp");
+const u16 gTilesetAnims_Karamja_water_shallow_Frame2[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_shallow/2.4bpp");
+const u16 gTilesetAnims_Karamja_water_shallow_Frame3[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_shallow/3.4bpp");
+const u16 gTilesetAnims_Karamja_water_shallow_Frame4[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_shallow/4.4bpp");
+const u16 gTilesetAnims_Karamja_water_shallow_Frame5[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_shallow/5.4bpp");
+const u16 gTilesetAnims_Karamja_water_shallow_Frame6[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_shallow/6.4bpp");
+const u16 gTilesetAnims_Karamja_water_shallow_Frame7[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_shallow/7.4bpp");
+const u16 *const gTilesetAnims_Karamja_water_shallow[] = {
+    gTilesetAnims_Karamja_water_shallow_Frame0,
+    gTilesetAnims_Karamja_water_shallow_Frame1,
+    gTilesetAnims_Karamja_water_shallow_Frame2,
+    gTilesetAnims_Karamja_water_shallow_Frame3,
+    gTilesetAnims_Karamja_water_shallow_Frame4,
+    gTilesetAnims_Karamja_water_shallow_Frame5,
+    gTilesetAnims_Karamja_water_shallow_Frame6,
+    gTilesetAnims_Karamja_water_shallow_Frame7
+};
+
+const u16 gTilesetAnims_Karamja_water_whirlpool_Frame0[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_whirlpool/0.4bpp");
+const u16 gTilesetAnims_Karamja_water_whirlpool_Frame1[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_whirlpool/1.4bpp");
+const u16 gTilesetAnims_Karamja_water_whirlpool_Frame2[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_whirlpool/2.4bpp");
+const u16 gTilesetAnims_Karamja_water_whirlpool_Frame3[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_whirlpool/3.4bpp");
+const u16 gTilesetAnims_Karamja_water_whirlpool_Frame4[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_whirlpool/4.4bpp");
+const u16 gTilesetAnims_Karamja_water_whirlpool_Frame5[] = INCBIN_U16("data/tilesets/secondary/karamja/anim/water_whirlpool/5.4bpp");
+const u16 *const gTilesetAnims_Karamja_water_whirlpool[] = {
+    gTilesetAnims_Karamja_water_whirlpool_Frame0,
+    gTilesetAnims_Karamja_water_whirlpool_Frame1,
+    gTilesetAnims_Karamja_water_whirlpool_Frame2,
+    gTilesetAnims_Karamja_water_whirlpool_Frame3,
+    gTilesetAnims_Karamja_water_whirlpool_Frame4,
+    gTilesetAnims_Karamja_water_whirlpool_Frame5
 };
 
 const u16 gTilesetAnims_Wilderness_Lava_Frame0[] = INCBIN_U16("data/tilesets/secondary/wilderness/anim/lava/0.4bpp");
@@ -1118,10 +1174,16 @@ static void TilesetAnim_Wizards_Tower(u16 timer)
 
 static void TilesetAnim_Karamja(u16 timer)
 {
-    if (timer % 8 == 0)
-        QueueAnimTiles_Karamja_scorchfire1(timer / 8);
+    if (timer % 16 == 0)
+        QueueAnimTiles_Karamja_water_shallow(timer >> 4);
     if (timer % 8 == 1)
+        QueueAnimTiles_Karamja_scorchfire1(timer / 8);
+    if (timer % 8 == 2)
         QueueAnimTiles_Karamja_scorchfire2(timer / 8);
+    if (timer % 16 == 3)
+        QueueAnimTiles_Karamja_water_current(timer >> 4);
+    if (timer % 16 == 4)
+        QueueAnimTiles_Karamja_water_whirlpool(timer >> 4);
 }
 
 static void TilesetAnim_Wilderness(u16 timer)
@@ -1201,6 +1263,22 @@ static void QueueAnimTiles_Karamja_scorchfire2(u16 timer)
 {
     u16 i = timer % 4; 
     AppendTilesetAnimToBuffer(gTilesetAnims_Karamja_scorchfire2[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(524)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Karamja_water_current(u16 timer)
+{
+    u16 i = timer % 8; 
+    AppendTilesetAnimToBuffer(gTilesetAnims_Karamja_water_current[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(768)), 16 * TILE_SIZE_4BPP);
+}
+static void QueueAnimTiles_Karamja_water_shallow(u16 timer)
+{
+    u16 i = timer % 8;  
+    AppendTilesetAnimToBuffer(gTilesetAnims_Karamja_water_shallow[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(760)), 8 * TILE_SIZE_4BPP);
+}
+static void QueueAnimTiles_Karamja_water_whirlpool(u16 timer)
+{
+    u16 i = timer % 4; 
+    AppendTilesetAnimToBuffer(gTilesetAnims_Karamja_water_whirlpool[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(828)), 4 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_Lumbridge_Fountain(u16 timer)

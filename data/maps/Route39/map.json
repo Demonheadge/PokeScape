@@ -355,6 +355,13 @@
       "elevation": 0,
       "dest_map": "MAP_KARAMJA_VOLCANO_B1F",
       "dest_warp_id": "2"
+    },
+    {
+      "x": 31,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE39",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

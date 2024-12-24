@@ -37,6 +37,17 @@ NPC1_MILL_LANE_MILL::
 	end
 
 
+NPC2_MILL_LANE_MILL::
+	lock
+	faceplayer
+	namebox NPC2_MILL_LANE_MILL_Text_0
+	msgbox NPC2_MILL_LANE_MILL_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+
 BEEFY_BILL_MILL_LANE_MILL::
 	lock
 	faceplayer
@@ -189,6 +200,14 @@ NPC1_MILL_LANE_MILL_Text_1:
 	.string "This is the Mill Lane Mill.\p"
 	.string "The Miller family has produced flour for\n"
 	.string "generations!$"
+
+NPC2_MILL_LANE_MILL_Text_0:
+	.string "Farmer Jake$"
+
+NPC2_MILL_LANE_MILL_Text_1:
+	.string "These implings keep taunting me!\p"
+	.string "All I want to do is have a chill day\n"
+	.string "slacking off after losing to the Duke.$"
 
 BEEFY_BILL_MILL_LANE_MILL_Text_0:
 	.string "W. Whitebred$"

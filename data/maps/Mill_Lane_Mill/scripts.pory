@@ -42,6 +42,16 @@ script NPC1_MILL_LANE_MILL{
     end
 }
 
+script NPC2_MILL_LANE_MILL{
+    lock
+    faceplayer
+    namebox ("Farmer Jake")
+    msgbox(format("These implings keep taunting me!\pAll I want to do is have a chill day slacking off after losing to the Duke."))
+    hidenamebox
+    closemessage
+    release
+    end
+}
 
 script BEEFY_BILL_MILL_LANE_MILL {
     lock
