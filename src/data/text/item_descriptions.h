@@ -5328,7 +5328,7 @@ static const u8 sBaguetteSandwichDesc[] = _(
     "and raises all stats\n"
     "for the active battler.");
 static const u8 sChocolateBarSandwichDesc[] = _(
-    "A good mid-battle snack\n"
+    "A good battle snack\n"
     "for those who need a\n"
     "little energy hit.");
 

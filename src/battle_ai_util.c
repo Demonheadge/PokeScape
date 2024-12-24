@@ -3489,6 +3489,7 @@ bool32 ShouldRestoreHpBerry(u32 battlerAtk, u32 item)
     switch (item)
     {
     case ITEM_ORAN_BERRY:
+    case ITEM_CHOCOLATE_BAR_SANDWICH:
         if (gBattleMons[battlerAtk].maxHP <= 50)
             return TRUE;    // Only worth it in the early game
         return FALSE;
