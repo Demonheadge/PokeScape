@@ -4410,7 +4410,7 @@ static const struct TrainerMon sParty_LEADER_DUKE_1[] = { //STORYMODE
     },
     {
     //.ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 0, 252),
-    .iv = TRAINER_PARTY_IVS(10, 10, 10, 10, 10, 10),
+    .iv = TRAINER_PARTY_IVS(10, 0, 10, 10, 10, 10),
     .ability = ABILITY_INTIMIDATE,
     .nature = NATURE_LONELY,
     .lvl = 13,
@@ -6692,7 +6692,7 @@ static const struct TrainerMon sParty_WISE_OLD_MAN_1[] = { //LUMBRIDGE FOREST
     .ability = ABILITY_FLAME_BODY,
     .nature = NATURE_HASTY,
     .moves = {MOVE_PECK, MOVE_SAND_ATTACK, MOVE_FLAME_BURST, MOVE_WILL_O_WISP},
-    .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 0, 252),
+    .ev = TRAINER_PARTY_EVS(252, 100, 0, 152, 0, 4),
     .iv = TRAINER_PARTY_IVS(16, 16, 16, 16, 16, 16),
     .lvl = 15,
     .species = SPECIES_PHOENLING_REBIRTH_FORM,
