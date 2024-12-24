@@ -163,7 +163,8 @@ NPC_ROUTE19_GOBLIN_2::
 
 BATTLE_ROUTE19_TRAINER1::
 	trainerbattle_single TRAINER_ROUTE19_TRAINER_1, BATTLE_ROUTE19_TRAINER1_Text_0, BATTLE_ROUTE19_TRAINER1_Text_1
-	msgbox BATTLE_ROUTE19_TRAINER1_Text_2
+	namebox BATTLE_ROUTE19_TRAINER1_Text_2
+	msgbox BATTLE_ROUTE19_TRAINER1_Text_3
 	hidenamebox
 	release
 	end
@@ -292,6 +293,9 @@ BATTLE_ROUTE19_TRAINER1_Text_1:
 	.string "No, you cannot have mine.$"
 
 BATTLE_ROUTE19_TRAINER1_Text_2:
+	.string "Marc0Pierre$"
+
+BATTLE_ROUTE19_TRAINER1_Text_3:
 	.string "To access the Cooking Guild you will\n"
 	.string "need either a chefs hat or be a maxed\l"
 	.string "out your Cooking skill.\p"

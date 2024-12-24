@@ -62,7 +62,7 @@ script NPC_PortSarimPub_Pirate_1 { // PUB TRAINER 1
 script NPC_PortSarimPub_Pirate_2 {	// PUB TRAINER 2
 	lock
 	faceplayer
-    namebox("PIRATE POPEYE")
+    namebox("AyePatch")
 	msgbox(format("AYE!\pThis is Port Sarim's Battle Pub."))
 	hidenamebox
 	if (flag(FLAG_UNUSED_0x936) == false) 
@@ -73,7 +73,7 @@ script NPC_PortSarimPub_Pirate_2 {	// PUB TRAINER 2
 				hidenamebox
 				setflag(FLAG_UNUSED_0x936)
 				trainerbattle_no_intro(TRAINER_PUB_SARIM_2, msgbox(format("…")))
-				namebox("PIRATE POPEYE")
+				namebox("AyePatch")
 				msgbox(format("Yaarr, take this."))
 				hidenamebox
 				call(GIVE_RANDOM_ITEM)

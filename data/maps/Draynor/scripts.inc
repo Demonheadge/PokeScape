@@ -506,6 +506,15 @@ NPC_Draynor_WiseOldMan::
 
 
 PURO_PURO_EVENT_DRAYNOR::
+	setmetatile 48, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 48, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 48, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 48, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 47, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 46, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 46, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 46, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 46, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 47, 4, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_1, 0
 	setmetatile 47, 5, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_2, 0
 	setmetatile 47, 6, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_3, 0
@@ -641,7 +650,7 @@ Draynor_AGGIE_Text_1:
 	.string "Would you be interested in any dyes?$"
 
 Draynor_AGGIE_Text_2:
-	.string "Oh! You are one of those adventuers\n"
+	.string "Oh! You are one of those adventurers\n"
 	.string "that fight with Monsters.\p"
 	.string "Here I might have something to help\n"
 	.string "with that.$"

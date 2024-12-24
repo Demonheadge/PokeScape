@@ -382,6 +382,7 @@ NPC_ROUTE20_NPC1::
 
 BATTLE_ROUTE20_FISHERMAN_1::
 	trainerbattle_single TRAINER_ROUTE20_TRAINER_1, BATTLE_ROUTE20_FISHERMAN_1_Text_0, BATTLE_ROUTE20_FISHERMAN_1_Text_1
+	namebox BATTLE_ROUTE20_FISHERMAN_1_Text_2
 	msgbox BATTLE_ROUTE20_FISHERMAN_1_Text_1
 	hidenamebox
 	release
@@ -390,7 +391,8 @@ BATTLE_ROUTE20_FISHERMAN_1::
 
 BATTLE_ROUTE20_FISHERMAN_2::
 	trainerbattle_single TRAINER_ROUTE20_TRAINER_2, BATTLE_ROUTE20_FISHERMAN_2_Text_0, BATTLE_ROUTE20_FISHERMAN_2_Text_1
-	msgbox BATTLE_ROUTE20_FISHERMAN_2_Text_2
+	namebox BATTLE_ROUTE20_FISHERMAN_2_Text_2
+	msgbox BATTLE_ROUTE20_FISHERMAN_2_Text_3
 	hidenamebox
 	release
 	end
@@ -398,7 +400,8 @@ BATTLE_ROUTE20_FISHERMAN_2::
 
 BATTLE_ROUTE20_FISHERMAN_3::
 	trainerbattle_single TRAINER_ROUTE20_TRAINER_3, BATTLE_ROUTE20_FISHERMAN_3_Text_0, BATTLE_ROUTE20_FISHERMAN_3_Text_1
-	msgbox BATTLE_ROUTE20_FISHERMAN_3_Text_2
+	namebox BATTLE_ROUTE20_FISHERMAN_3_Text_2
+	msgbox BATTLE_ROUTE20_FISHERMAN_3_Text_3
 	hidenamebox
 	release
 	end
@@ -406,7 +409,8 @@ BATTLE_ROUTE20_FISHERMAN_3::
 
 BATTLE_ROUTE20_SKILLER::
 	trainerbattle_single TRAINER_ROUTE20_TRAINER_4, BATTLE_ROUTE20_SKILLER_Text_0, BATTLE_ROUTE20_SKILLER_Text_1
-	msgbox BATTLE_ROUTE20_SKILLER_Text_2
+	namebox BATTLE_ROUTE20_SKILLER_Text_2
+	msgbox BATTLE_ROUTE20_SKILLER_Text_3
 	hidenamebox
 	release
 	end
@@ -457,7 +461,20 @@ NPC_BARBARIANVILLAGE_NPC8::
 	lock
 	faceplayer
 	namebox NPC_BARBARIANVILLAGE_NPC8_Text_0
+	goto_if_unset FLAG_RECEIVED_TM47, NPC_BARBARIANVILLAGE_NPC8_2
+	msgbox NPC_BARBARIANVILLAGE_NPC8_Text_4
+	hidenamebox
+	release
+	end
+
+NPC_BARBARIANVILLAGE_NPC8_2:
 	msgbox NPC_BARBARIANVILLAGE_NPC8_Text_1
+	msgbox NPC_BARBARIANVILLAGE_NPC8_Text_2
+	hidenamebox
+	giveitem ITEM_TM47, 1
+	namebox NPC_BARBARIANVILLAGE_NPC8_Text_0
+	msgbox NPC_BARBARIANVILLAGE_NPC8_Text_3
+	setflag FLAG_RECEIVED_TM47
 	hidenamebox
 	release
 	end
@@ -579,6 +596,9 @@ BATTLE_ROUTE20_FISHERMAN_1_Text_1:
 	.string "So these Rainbow Fish are why you can\n"
 	.string "see a rainbow in the river.$"
 
+BATTLE_ROUTE20_FISHERMAN_1_Text_2:
+	.string "TrawlerSux$"
+
 BATTLE_ROUTE20_FISHERMAN_2_Text_0:
 	.string "You just scared away my catch!$"
 
@@ -586,6 +606,9 @@ BATTLE_ROUTE20_FISHERMAN_2_Text_1:
 	.string "I just ran out of feathers…$"
 
 BATTLE_ROUTE20_FISHERMAN_2_Text_2:
+	.string "MastrBaitr$"
+
+BATTLE_ROUTE20_FISHERMAN_2_Text_3:
 	.string "Fly fishing is great!\p"
 	.string "Much better than regular net fishing.$"
 
@@ -599,6 +622,9 @@ BATTLE_ROUTE20_FISHERMAN_3_Text_1:
 	.string "the strength of these little guys.$"
 
 BATTLE_ROUTE20_FISHERMAN_3_Text_2:
+	.string "Hurley$"
+
+BATTLE_ROUTE20_FISHERMAN_3_Text_3:
 	.string "If you are interested where I got these\n"
 	.string "from you should take a visit to the\l"
 	.string "cavern by Mudskipper point.$"
@@ -610,6 +636,9 @@ BATTLE_ROUTE20_SKILLER_Text_1:
 	.string "You should do some fishing too.$"
 
 BATTLE_ROUTE20_SKILLER_Text_2:
+	.string "Lvl3Foreva$"
+
+BATTLE_ROUTE20_SKILLER_Text_3:
 	.string "You should do some fishing too.\p"
 	.string "You would never know what rare fish you\n"
 	.string "could find until you try.$"
@@ -662,6 +691,28 @@ NPC_BARBARIANVILLAGE_NPC8_Text_0:
 	.string "Fremennik$"
 
 NPC_BARBARIANVILLAGE_NPC8_Text_1:
+	.string "I've travelled all the way here from\n"
+	.string "Rellekka.\p"
+	.string "My goal is to make friendly relations\n"
+	.string "with our barbarian brothers in Gunnar's\l"
+	.string "Ground.$"
+
+NPC_BARBARIANVILLAGE_NPC8_Text_2:
+	.string "You may not be a barbarian, but as the\n"
+	.string "first person to talk to me since I got\l"
+	.string "here let me share with you something\l"
+	.string "from my homeland.$"
+
+NPC_BARBARIANVILLAGE_NPC8_Text_3:
+	.string "Any monster that uses that move will\n"
+	.string "faint instantly, but whatever monster\l"
+	.string "you send in next will have all of their\l"
+	.string "health restored and they will be cured\l"
+	.string "of any status condition.\p"
+	.string "It is a reminder that sometimes in\n"
+	.string "battle, sacrifices need to be made..$"
+
+NPC_BARBARIANVILLAGE_NPC8_Text_4:
 	.string "I've travelled all the way here from\n"
 	.string "Rellekka.\p"
 	.string "My goal is to make friendly relations\n"

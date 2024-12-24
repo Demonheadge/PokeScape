@@ -65,7 +65,7 @@ script NPC_MUSA_POINT_Pub_Sailer
 }
 
 
-script script NPC_MUSA_POINT_Pub_Sailor
+script NPC_MUSA_POINT_Pub_Sailor
 { 
 	lock
 	faceplayer

@@ -1258,16 +1258,13 @@ PURO_PURO_EVENT_RIMMINGTON::
 	setmetatile 50, 3, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 46, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 47, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
-	setmetatile 48, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 49, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 50, 4, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 46, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 47, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
-	setmetatile 48, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 49, 5, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 46, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 47, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
-	setmetatile 48, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 49, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 50, 6, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 46, 7, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0

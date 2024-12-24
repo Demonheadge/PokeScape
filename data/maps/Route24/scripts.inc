@@ -147,14 +147,11 @@ PURO_PURO_EVENT_ROUTE24::
 	setmetatile 15, 27, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 14, 28, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 15, 28, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
-	setmetatile 16, 28, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 17, 28, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 14, 29, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 15, 29, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
-	setmetatile 16, 29, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 17, 29, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 15, 30, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
-	setmetatile 16, 30, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 17, 30, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 18, 30, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
 	setmetatile 16, 28, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_1, 0

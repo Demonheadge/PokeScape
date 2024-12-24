@@ -8073,7 +8073,7 @@ static const struct TrainerMon sParty_TRAINER_ICE_MOUNTAIN_HUNTER[] = {
     }
 };
 
-static const struct TrainerMon TRAINER_ICE_MOUNTAIN_BLACK_KNIGHT_1[] = {
+static const struct TrainerMon sParty_TRAINER_ICE_MOUNTAIN_BLACK_KNIGHT_1[] = {
     {
     .lvl = 39,
     .species = SPECIES_CROW,

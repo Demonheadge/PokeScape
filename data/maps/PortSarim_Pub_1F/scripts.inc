@@ -351,7 +351,7 @@ NPC_PortSarimPub_Pirate_1_Text_4:
 	.string "I guess I owe you this.$"
 
 NPC_PortSarimPub_Pirate_2_Text_0:
-	.string "PIRATE POPEYE$"
+	.string "AyePatch$"
 
 NPC_PortSarimPub_Pirate_2_Text_1:
 	.string "AYE!\p"

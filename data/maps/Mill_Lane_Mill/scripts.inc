@@ -1,5 +1,6 @@
 Mill_Lane_Mill_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Mill_Lane_Mill_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_LOAD, Mill_Lane_Mill_MapScripts_MAP_SCRIPT_ON_LOAD
 	.byte 0
 
 Mill_Lane_Mill_MapScripts_MAP_SCRIPT_ON_TRANSITION:
@@ -13,6 +14,10 @@ Mill_Lane_Mill_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	clearflag FLAG_ITEM_REPEATABLE_ITEM_8
 	clearflag FLAG_ITEM_REPEATABLE_ITEM_9
 	setvar VAR_EVOLUTION_MAP_STATE, 1
+	return
+
+Mill_Lane_Mill_MapScripts_MAP_SCRIPT_ON_LOAD:
+	call PURO_PURO_EVENT
 	return
 
 
@@ -155,6 +160,22 @@ MillLaneMill_Item_WHEAT5_1:
 	setflag FLAG_ITEM_REPEATABLE_ITEM_5
 	release
 	end
+
+
+PURO_PURO_EVENT_MILL_LANE_MILL::
+	setmetatile 5, 19, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 5, 20, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 5, 21, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 5, 22, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 6, 22, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 7, 19, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 7, 20, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 7, 21, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 7, 22, METATILE_PokeScapeOutdoors_SHAKING_WHEAT, 0
+	setmetatile 6, 19, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_1, 0
+	setmetatile 6, 20, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_2, 0
+	setmetatile 6, 21, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_3, 0
+	return
 
 
 SIGN_MILL_LANE_MILL_Text_0:

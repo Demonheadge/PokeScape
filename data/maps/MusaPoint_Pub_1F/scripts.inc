@@ -70,6 +70,35 @@ NPC_MUSA_POINT_Pub_Sailer::
 	end
 
 
+NPC_MUSA_POINT_Pub_Sailor::
+	lock
+	faceplayer
+	namebox NPC_MUSA_POINT_Pub_Sailer_Text_0
+	msgbox NPC_MUSA_POINT_Pub_Sailor_Text_0
+	hidenamebox
+	goto_if_unset FLAG_PUB_TRAINER_12, NPC_MUSA_POINT_Pub_Sailor_2
+NPC_MUSA_POINT_Pub_Sailor_1:
+	hidenamebox
+	release
+	end
+
+NPC_MUSA_POINT_Pub_Sailor_2:
+	msgbox NPC_MUSA_POINT_Pub_Sailor_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NPC_MUSA_POINT_Pub_Sailor_4
+	goto NPC_MUSA_POINT_Pub_Sailor_1
+
+NPC_MUSA_POINT_Pub_Sailor_4:
+	hidenamebox
+	setflag FLAG_PUB_TRAINER_12
+	trainerbattle_no_intro TRAINER_PUB_MUSA_1, NPC_MUSA_POINT_Pub_Sailor_Text_2
+	namebox NPC_MUSA_POINT_Pub_Sailer_Text_0
+	msgbox NPC_MUSA_POINT_Pub_Sailor_Text_3
+	hidenamebox
+	call GIVE_RANDOM_ITEM
+	goto NPC_MUSA_POINT_Pub_Sailor_1
+
+
 BANK_MUSA_POINT_Text_0:
 	.string "Banker$"
 
@@ -100,8 +129,23 @@ NPC_MUSA_POINT_Pub_Sailer_Text_0:
 	.string "Sailor$"
 
 NPC_MUSA_POINT_Pub_Sailer_Text_1:
+	.string "$"
+
+NPC_MUSA_POINT_Pub_Sailor_Text_0:
 	.string "Hey mate, you caught any of those\n"
 	.string "lobsters?\p"
 	.string "Did you know lobsters evolve\n"
 	.string "differently depending on the weather\l"
 	.string "in their environment?$"
+
+NPC_MUSA_POINT_Pub_Sailor_Text_1:
+	.string "Do you wish to challenge them to a\n"
+	.string "battle?$"
+
+NPC_MUSA_POINT_Pub_Sailor_Text_2:
+	.string "…$"
+
+NPC_MUSA_POINT_Pub_Sailor_Text_3:
+	.string "Maybe if we got some more unusual\n"
+	.string "weather on Karamja I'd have a evolved\l"
+	.string "my lobster into something stronger.$"
