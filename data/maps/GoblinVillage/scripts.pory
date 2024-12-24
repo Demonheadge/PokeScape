@@ -19,7 +19,7 @@ mapscripts GoblinVillage_MapScripts {
 
 script ITEM_GOBLIN_VILLAGE_1
 {
-    finditem(ITEM_LAMP_ATT)
+    finditem(ITEM_BOOK_OF_BANDOS) //ITEM_LAMP_ATT
     end
 }
 
@@ -249,7 +249,42 @@ script BATTLE_LOPENDEBANK {
     end
 }
 
+script BATTLE_ATWISTEDSMILE {
+    lock
+    playse(SE_PIN)
+    applymovement(1, MOVEMENT_EXCLAMATIONMARK_FACEPLAYER)
+    waitmovement(0)
+    namebox("Twisted Smile")
+    msgbox(format("Oh hello there, Amber and I were about to go for a walk around the park.\pBut I suppose I could fit in a quick battle.\pIf that is what you are after?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+        trainerbattle_no_intro(TRAINER_A_TWISTED_SMILE, msgbox(format("Haha that was a fun warm-up before our walk!")))
+        namebox ("Twisted Smile")
+        msgbox(format("I am apart of team PokeScaper.\pKeep your eyes out as we are everywhere.\pNow if you will excuse me Amber and I have to get ready to go out."))
+    }
+    else {
+        msgbox(format("Oh, okay. Amber and I will continue getting ready to go out to Falador Park."))
+    }
+    hidenamebox
+	closemessage
+    applymovement(1, Movement_InteractFACERIGHT)
+    waitmovement(0)
+    release
+    end
+}
 
+
+script NPC_AMBER
+{
+	lock
+	faceplayer
+    namebox ("Amber")
+    playmoncry(SPECIES_POMAPOO, 0)
+	msgbox(format("Yip, Yiip!"))
+    waitmoncry
+    hidenamebox
+	release
+	end
+}
 
 
 

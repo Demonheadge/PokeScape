@@ -573,7 +573,7 @@ ENCOUNTER_DOG_4:
 ENCOUNTER_UNICORN::
 	lock
 	namebox ENCOUNTER_UNICORN_Text_0
-	playmoncry SPECIES_PONYTA, 0
+	playmoncry SPECIES_UNICORN_WHITE_FORM, 0
 	msgbox ENCOUNTER_UNICORN_Text_1
 	waitmoncry
 	hidenamebox

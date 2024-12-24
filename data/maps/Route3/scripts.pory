@@ -17,7 +17,35 @@ script ITEM_ROUTE3_BREAD
     end
 }
 
+script ITEM_ROUTE3_REPEL_TEA
+{
+    finditem(ITEM_REPEL_TEA_1)
+    end
+}
 
+script ITEM_BARBARIAN_VILLAGE_1
+{
+    finditem(ITEM_BODY_RUNE)
+    end
+}
+
+script ITEM_BARBARIAN_VILLAGE_2
+{
+    finditem(ITEM_POUCH_ANCIENT)
+    end
+}
+
+script ITEM_BARBARIAN_VILLAGE_3
+{
+    finditem(ITEM_REPEL_TEA_2)
+    end
+}
+
+script ITEM_MUDSKIPPER_SOUND_1
+{
+    finditem(ITEM_SPIRIT_CHARM)
+    end
+}
 
 
 script BATTLE_ROUTE3_Trainer_2
@@ -134,4 +162,50 @@ script NPC_CAT_TROGS
     hidenamebox
 	release
 	end
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+script BATTLE_MUDSKIPPERSOUND2_TRAINER_1
+{
+    trainerbattle_single(TRAINER_MUDSKIPPERSOUND2_TRAINER_1, format("Where am I?\pI don't remember logging out here.\pAlso what am I wearing?!"),format("Why is all my money gone!?!!?"))
+
+    msgbox(format("I think… I've been hacked…"))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+script BATTLE_MUDSKIPPERSOUND2_TRAINER_2
+{
+    trainerbattle_single(TRAINER_MUDSKIPPERSOUND2_TRAINER_2, format("This area is flowing with spiritual power! Can you feel it!?"),format("Oooom…"))
+
+    msgbox(format("I wonder how to get into the dungeon.\pI think that's where I'm feeling the spiritual power coming from."))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+script BATTLE_MUDSKIPPERSOUND2_TRAINER_3
+{
+    trainerbattle_single(TRAINER_MUDSKIPPERSOUND2_TRAINER_3, format("My boat crashed and now I'm stranded!"),format("I'm going to be stuck here forever…"))
+    msgbox(format("I would send for help but as you know I'm an Ironman.\pWhich means… Urgh… I might as well call myself 'LittleIsle locked Ironman' from now on…"))
+    hidenamebox
+    closemessage
+    release
+    end
 }

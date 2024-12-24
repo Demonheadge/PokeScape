@@ -119,7 +119,7 @@ script ITEM_RIMMINGTON_4
 
 script ITEM_RIMMINGTON_5
 {
-    finditem(ITEM_LAMP_SPATT)
+    finditem(ITEM_TRIANGLE_SANDWICH)
     end
 }
 

@@ -231,7 +231,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
+      "graphics_id": "OBJ_EVENT_GFX_SEAGULL",
       "x": 27,
       "y": 1,
       "elevation": 0,
@@ -367,8 +367,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 29,
-      "y": 1,
+      "x": 26,
+      "y": 2,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
@@ -376,8 +376,8 @@
     },
     {
       "type": "trigger",
-      "x": 30,
-      "y": 1,
+      "x": 26,
+      "y": 2,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
@@ -385,8 +385,8 @@
     },
     {
       "type": "trigger",
-      "x": 31,
-      "y": 1,
+      "x": 26,
+      "y": 2,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
@@ -394,8 +394,8 @@
     },
     {
       "type": "trigger",
-      "x": 32,
-      "y": 1,
+      "x": 26,
+      "y": 2,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
@@ -403,8 +403,8 @@
     },
     {
       "type": "trigger",
-      "x": 33,
-      "y": 1,
+      "x": 26,
+      "y": 2,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
@@ -412,8 +412,8 @@
     },
     {
       "type": "trigger",
-      "x": 34,
-      "y": 1,
+      "x": 26,
+      "y": 2,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",

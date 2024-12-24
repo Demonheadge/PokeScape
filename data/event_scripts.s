@@ -1528,3 +1528,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Tzhaar_Fight_Caves/scripts.inc"
 
 	.include "data/maps/Route8_MakeoverMage_2F/scripts.inc"
+
+	.include "data/maps/Cooking_Guild/scripts.inc"

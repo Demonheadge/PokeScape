@@ -12,6 +12,31 @@ ITEM_ROUTE3_BREAD::
 	end
 
 
+ITEM_ROUTE3_REPEL_TEA::
+	finditem ITEM_REPEL_TEA_1
+	end
+
+
+ITEM_BARBARIAN_VILLAGE_1::
+	finditem ITEM_BODY_RUNE
+	end
+
+
+ITEM_BARBARIAN_VILLAGE_2::
+	finditem ITEM_POUCH_ANCIENT
+	end
+
+
+ITEM_BARBARIAN_VILLAGE_3::
+	finditem ITEM_REPEL_TEA_2
+	end
+
+
+ITEM_MUDSKIPPER_SOUND_1::
+	finditem ITEM_SPIRIT_CHARM
+	end
+
+
 BATTLE_ROUTE3_Trainer_2::
 	trainerbattle_single TRAINER_ROUTE3_TRAINER_2, BATTLE_ROUTE3_Trainer_2_Text_0, BATTLE_ROUTE3_Trainer_2_Text_1
 	msgbox BATTLE_ROUTE3_Trainer_2_Text_2
@@ -117,6 +142,33 @@ NPC_CAT_TROGS::
 	end
 
 
+BATTLE_MUDSKIPPERSOUND2_TRAINER_1::
+	trainerbattle_single TRAINER_MUDSKIPPERSOUND2_TRAINER_1, BATTLE_MUDSKIPPERSOUND2_TRAINER_1_Text_0, BATTLE_MUDSKIPPERSOUND2_TRAINER_1_Text_1
+	msgbox BATTLE_MUDSKIPPERSOUND2_TRAINER_1_Text_2
+	hidenamebox
+	closemessage
+	release
+	end
+
+
+BATTLE_MUDSKIPPERSOUND2_TRAINER_2::
+	trainerbattle_single TRAINER_MUDSKIPPERSOUND2_TRAINER_2, BATTLE_MUDSKIPPERSOUND2_TRAINER_2_Text_0, BATTLE_MUDSKIPPERSOUND2_TRAINER_2_Text_1
+	msgbox BATTLE_MUDSKIPPERSOUND2_TRAINER_2_Text_2
+	hidenamebox
+	closemessage
+	release
+	end
+
+
+BATTLE_MUDSKIPPERSOUND2_TRAINER_3::
+	trainerbattle_single TRAINER_MUDSKIPPERSOUND2_TRAINER_3, BATTLE_MUDSKIPPERSOUND2_TRAINER_3_Text_0, BATTLE_MUDSKIPPERSOUND2_TRAINER_3_Text_1
+	msgbox BATTLE_MUDSKIPPERSOUND2_TRAINER_3_Text_2
+	hidenamebox
+	closemessage
+	release
+	end
+
+
 BATTLE_ROUTE3_Trainer_2_Text_0:
 	.string "I'm going to give this whole battle with\n"
 	.string "a monster thing a try!$"
@@ -206,3 +258,39 @@ NPC_CAT_TROGS_Text_0:
 
 NPC_CAT_TROGS_Text_1:
 	.string "Meeoow…$"
+
+BATTLE_MUDSKIPPERSOUND2_TRAINER_1_Text_0:
+	.string "Where am I?\p"
+	.string "I don't remember logging out here.\p"
+	.string "Also what am I wearing?!$"
+
+BATTLE_MUDSKIPPERSOUND2_TRAINER_1_Text_1:
+	.string "Why is all my money gone!?!!?$"
+
+BATTLE_MUDSKIPPERSOUND2_TRAINER_1_Text_2:
+	.string "I think… I've been hacked…$"
+
+BATTLE_MUDSKIPPERSOUND2_TRAINER_2_Text_0:
+	.string "This area is flowing with spiritual\n"
+	.string "power! Can you feel it!?$"
+
+BATTLE_MUDSKIPPERSOUND2_TRAINER_2_Text_1:
+	.string "Oooom…$"
+
+BATTLE_MUDSKIPPERSOUND2_TRAINER_2_Text_2:
+	.string "I wonder how to get into the dungeon.\p"
+	.string "I think that's where I'm feeling the\n"
+	.string "spiritual power coming from.$"
+
+BATTLE_MUDSKIPPERSOUND2_TRAINER_3_Text_0:
+	.string "My boat crashed and now I'm stranded!$"
+
+BATTLE_MUDSKIPPERSOUND2_TRAINER_3_Text_1:
+	.string "I'm going to be stuck here forever…$"
+
+BATTLE_MUDSKIPPERSOUND2_TRAINER_3_Text_2:
+	.string "I would send for help but as you know\n"
+	.string "I'm an Ironman.\p"
+	.string "Which means… Urgh… I might as well call\n"
+	.string "myself 'LittleIsle locked Ironman' from\l"
+	.string "now on…$"

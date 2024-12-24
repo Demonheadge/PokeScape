@@ -6844,7 +6844,7 @@
     {
       "id": "LAYOUT_MINIGAME_1",
       "name": "Minigame_1_Layout",
-      "width": 30,
+      "width": 34,
       "height": 30,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_Karamja",
@@ -8780,6 +8780,16 @@
       "secondary_tileset": "gTileset_IndoorTowns1",
       "border_filepath": "data/layouts/Route8_MakeoverMage_2F/border.bin",
       "blockdata_filepath": "data/layouts/Route8_MakeoverMage_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_COOKING_GUILD",
+      "name": "Cooking_Guild_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_Windmill",
+      "border_filepath": "data/layouts/Cooking_Guild/border.bin",
+      "blockdata_filepath": "data/layouts/Cooking_Guild/map.bin"
     }
   ]
 }

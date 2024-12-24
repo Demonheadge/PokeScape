@@ -7674,9 +7674,29 @@ static const struct TrainerMon sParty_ROUTE33_ZAMORAK4[] = {
 
 static const struct TrainerMon sParty_Lopendebank[] = {
     {
-    .lvl = 40,
-    .species = SPECIES_REVENANT_IMP,
+    .lvl = 35,
+    .species = SPECIES_SHADOW_HOUND,
     },
+    {
+    .lvl = 35,
+    .species = SPECIES_EEL_SACRED_FORM,
+    },
+    {
+    .lvl = 35,
+    .species = SPECIES_AIRUT,
+    },
+    {
+    .lvl = 35,
+    .species = SPECIES_CROCODILE_ANKH_FORM,
+    },
+    {
+    .lvl = 35,
+    .species = SPECIES_ANCHOVY_PIZZA_FORM,
+    },
+    {
+    .lvl = 35,
+    .species = SPECIES_CAMEL_WARRIOR_FORM,
+    }
 };
 
 static const struct TrainerMon sParty_ROUTE2_TRAINER_8[] = {
@@ -8194,5 +8214,58 @@ static const struct TrainerMon sParty_TRAINER_SARIM_BAY_SAILOR_2[] = {
     {
     .lvl = 37,
     .species = SPECIES_CAVEFISH,
+    }
+};
+
+static const struct TrainerMon sParty_TRAINER_A_TWISTED_SMILE[] = {
+    {
+    .lvl = 30,
+    .species = SPECIES_POMAPOO,
+    .gender = TRAINER_MON_FEMALE,
+    .nickname = COMPOUND_STRING("Amber"),
+    }
+};
+
+
+static const struct TrainerMon sParty_MUDSKIPPERSOUND2_TRAINER_1[] = {
+    {
+    .lvl = 36,
+    .species = SPECIES_DRAGON_GREEN_FORM,
+    },
+    {
+    .lvl = 37,
+    .species = SPECIES_SPOOKAXE,
+    }
+};
+static const struct TrainerMon sParty_MUDSKIPPERSOUND2_TRAINER_2[] = {
+    {
+    .lvl = 36,
+    .species = SPECIES_SPIDER_SPIRIT_FORM,
+    },
+    {
+    .lvl = 35,
+    .species = SPECIES_KALPHITE_SPIRIT_FORM,
+    },
+    {
+    .lvl = 37,
+    .species = SPECIES_WOLF_SPIRIT_FORM,
+    },
+};
+static const struct TrainerMon sParty_MUDSKIPPERSOUND2_TRAINER_3[] = {
+    {
+    .lvl = 36,
+    .species = SPECIES_GLACOR_ENDURING_FORM,
+    },
+    {
+    .lvl = 35,
+    .species = SPECIES_WARPED_RAT,
+    },
+    {
+    .lvl = 36,
+    .species = SPECIES_JUBBLY,
+    },
+    {
+    .lvl = 35,
+    .species = SPECIES_CAVE_BUG,
     }
 };

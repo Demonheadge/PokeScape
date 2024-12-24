@@ -324,6 +324,21 @@ STORE_SandwichLady:
 
 
     .align 2
+STORE_SandwichLady_2:
+    .2byte ITEM_DONUT_SANDWICH
+    .2byte ITEM_KEBAB_SANDWICH
+    .2byte ITEM_SQUARE_SANDWICH
+    .2byte ITEM_MEAT_PIE_SANDWICH
+    .2byte ITEM_TRIANGLE_SANDWICH
+    .2byte ITEM_BREAD_ROLL_SANDWICH
+    .2byte ITEM_CHOCOLATE_BAR_SANDWICH
+    .2byte ITEM_BAGUETTE_SANDWICH
+    .2byte ITEM_NONE
+    release
+    end
+
+
+    .align 2
 STORE_TM_1:
     .2byte ITEM_TM01_SUNNY_DAY
     .2byte ITEM_TM02_RAIN_DANCE

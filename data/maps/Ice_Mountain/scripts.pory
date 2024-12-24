@@ -41,15 +41,15 @@ script NPC_ORACLE {
 		namebox("Oracle")
 
                 if (!flag(FLAG_RECEIVED_TM51)) {
-                msgbox(format("Sometimes you get lucky, sometimes you don't."))
-                hidenamebox
-                giveitem(ITEM_TM51, 1) // Icicle Crash
-                namebox("Oracle")
-                msgbox(format("A monster using this move harshly drops icicles on their target.\pIf you're lucky, it can even cause flinching."))
-                setflag(FLAG_RECEIVED_TM51)
-                hidenamebox
-                release
-                end
+                        msgbox(format("Sometimes you get lucky, sometimes you don't."))
+                        hidenamebox
+                        giveitem(ITEM_TM51, 1) // Icicle Crash
+                        namebox("Oracle")
+                        msgbox(format("A monster using this move harshly drops icicles on their target.\pIf you're lucky, it can even cause flinching."))
+                        setflag(FLAG_RECEIVED_TM51)
+                        hidenamebox
+                        release
+                        end
                 }
                 msgbox(format("Sometimes you get lucky, sometimes you don't."))
                 hidenamebox

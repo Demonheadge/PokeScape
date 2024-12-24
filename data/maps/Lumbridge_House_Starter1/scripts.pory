@@ -183,7 +183,7 @@ script ITEM_LUMBRIDGE_PRISMATIC_STAR
 
 script ITEM_ROUTE1_WATER_RUNE
 {
-    finditem(ITEM_WATER_RUNE)
+    finditem(ITEM_EARTH_RUNE)
     end
 }
 
@@ -201,7 +201,7 @@ script ITEM_ROUTE1_BREAD
 
 script ITEM_ROUTE1_CHOCOLATE_SUNDAY
 {
-    finditem(ITEM_CHOCOLATE_SUNDAY)
+    finditem(ITEM_DONUT_SANDWICH)
     end
 }
 
@@ -335,7 +335,7 @@ script ITEM_DRAYNORMANOR_TM55_HEX
 //WIZARDS TOWER
 script ITEM_WIZARDSTOWER_AIR_RUNE_2
 {
-    finditem(ITEM_AIR_RUNE)
+    finditem(ITEM_BODY_RUNE)
     end
 }
 

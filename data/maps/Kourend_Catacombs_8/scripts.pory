@@ -543,3 +543,31 @@ script ENCOUNTER_SNOW_IMP
     release
 	end
 }
+
+script ENCOUNTER_UNICORN_BARB
+{
+	lock
+    faceplayer
+    namebox ("UNICORN")
+    playmoncry(SPECIES_UNICORN_WHITE_FORM, 0)
+	msgbox(format("NeEeehHHaAyY!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    setwildbattle (SPECIES_UNICORN_WHITE_FORM, 30, ITEM_NONE)
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+        case B_OUTCOME_CAUGHT:
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+    }
+    release
+	end
+}
+

@@ -8,7 +8,7 @@ GoblinVillage_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 
 
 ITEM_GOBLIN_VILLAGE_1::
-	finditem ITEM_LAMP_ATT
+	finditem ITEM_BOOK_OF_BANDOS
 	end
 
 
@@ -211,6 +211,43 @@ BATTLE_LOPENDEBANK_2:
 	goto BATTLE_LOPENDEBANK_1
 
 
+BATTLE_ATWISTEDSMILE::
+	lock
+	playse SE_PIN
+	applymovement 1, MOVEMENT_EXCLAMATIONMARK_FACEPLAYER
+	waitmovement 0
+	namebox BATTLE_ATWISTEDSMILE_Text_0
+	msgbox BATTLE_ATWISTEDSMILE_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne BATTLE_ATWISTEDSMILE_2
+	msgbox BATTLE_ATWISTEDSMILE_Text_4
+BATTLE_ATWISTEDSMILE_1:
+	hidenamebox
+	closemessage
+	applymovement 1, Movement_InteractFACERIGHT
+	waitmovement 0
+	release
+	end
+
+BATTLE_ATWISTEDSMILE_2:
+	trainerbattle_no_intro TRAINER_A_TWISTED_SMILE, BATTLE_ATWISTEDSMILE_Text_2
+	namebox BATTLE_ATWISTEDSMILE_Text_0
+	msgbox BATTLE_ATWISTEDSMILE_Text_3
+	goto BATTLE_ATWISTEDSMILE_1
+
+
+NPC_AMBER::
+	lock
+	faceplayer
+	namebox NPC_AMBER_Text_0
+	playmoncry SPECIES_POMAPOO, 0
+	msgbox NPC_AMBER_Text_1
+	waitmoncry
+	hidenamebox
+	release
+	end
+
+
 NPC_GOBLINVILLAGE_GOBLIN_1_Text_0:
 	.string "Dulleyes$"
 
@@ -346,3 +383,35 @@ BATTLE_LOPENDEBANK_Text_3:
 BATTLE_LOPENDEBANK_Text_4:
 	.string "Oh, okay. If you'll excuse me I have\n"
 	.string "memes to make and bans to avoid.$"
+
+BATTLE_ATWISTEDSMILE_Text_0:
+	.string "Twisted Smile$"
+
+BATTLE_ATWISTEDSMILE_Text_1:
+	.string "Oh hello there, Amber and I were about\n"
+	.string "to go for a walk around the park.\p"
+	.string "But I suppose I could fit in a quick\n"
+	.string "battle.\p"
+	.string "If that is what you are after?$"
+
+BATTLE_ATWISTEDSMILE_Text_2:
+	.string "Haha that was a fun warm-up before our\n"
+	.string "walk!$"
+
+BATTLE_ATWISTEDSMILE_Text_3:
+	.string "I am apart of team PokeScaper.\p"
+	.string "Keep your eyes out as we are\n"
+	.string "everywhere.\p"
+	.string "Now if you will excuse me Amber and I\n"
+	.string "have to get ready to go out.$"
+
+BATTLE_ATWISTEDSMILE_Text_4:
+	.string "Oh, okay. Amber and I will continue\n"
+	.string "getting ready to go out to Falador\l"
+	.string "Park.$"
+
+NPC_AMBER_Text_0:
+	.string "Amber$"
+
+NPC_AMBER_Text_1:
+	.string "Yip, Yiip!$"

@@ -107,6 +107,21 @@ NPC_SANDWICH_LADY_LUMBRIDGE::
 	end
 
 
+NPC_SANDWICH_LADY_COOKING_GUILD::
+	lock
+	faceplayer
+	namebox NPC_SANDWICH_LADY_Text_0
+	msgbox NPC_SANDWICH_LADY_COOKING_GUILD_Text_0
+	pokemart STORE_SandwichLady_2
+	lock
+	namebox NPC_SANDWICH_LADY_Text_0
+	msgbox NPC_SANDWICH_LADY_LUMBRIDGE_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 BATTLE_SANDWICH_LADY::
 	cleartrainerflag TRAINER_SANDWICH_LADY_1
 	trainerbattle_no_intro TRAINER_SANDWICH_LADY_1, BATTLE_SANDWICH_LADY_Text_0
@@ -1304,6 +1319,11 @@ NPC_SANDWICH_LADY_LUMBRIDGE_Text_1:
 	.string "Thanks! By the way, I travel around a\n"
 	.string "lot!\p"
 	.string "So keep your eyes peeled for me.$"
+
+NPC_SANDWICH_LADY_COOKING_GUILD_Text_0:
+	.string "Hello deary, I am selling a bunch of\n"
+	.string "fresh sandwiches.\p"
+	.string "Can I interest you in any?$"
 
 BATTLE_SANDWICH_LADY_Text_0:
 	.string "My poor sandwiches…$"

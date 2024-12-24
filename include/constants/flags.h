@@ -256,7 +256,7 @@
 #define FLAG_RECEIVED_STARTER_DOLL           0xE2
 #define FLAG_RECEIVED_GOOD_ROD               0xE3
 #define FLAG_REGI_DOORS_OPENED               0xE4
-#define FLAG_RECEIVED_TM27                   0xE5
+#define FLAG_SEA_TROLL                       0xE5 //FLAG_SEA_TROLL FLAG_RECEIVED_TM27
 #define FLAG_RECEIVED_TM36                   0xE6
 #define FLAG_RECEIVED_TM05                   0xE7
 #define FLAG_RECEIVED_TM19                   0xE8
@@ -1242,11 +1242,10 @@
 #define FLAG_ITEM_DRAYNORMANOR_POUCHES                              0x494 // Unused Flag
 #define FLAG_ITEM_LUMBRIDGESWAMP_ITEM_3                             0x495 // Unused Flag
 #define FLAG_ITEM_AIRALTAR_1                                        0x496 // Unused Flag
-
-#define FLAG_UNUSED_5                                        0x497 // Unused Flag
-#define FLAG_UNUSED_6                                        0x498 // Unused Flag
-#define FLAG_UNUSED_7                                        0x499 // Unused Flag
-#define FLAG_UNUSED_8                                        0x49A // Unused Flag
+#define FLAG_ITEM_ROUTE3_REPEL_TEA                                  0x497 // Unused Flag
+#define FLAG_ITEM_BARBARIAN_VILLAGE_1                               0x498 // Unused Flag
+#define FLAG_ITEM_BARBARIAN_VILLAGE_2                               0x499 // Unused Flag
+#define FLAG_ITEM_BARBARIAN_VILLAGE_3                               0x49A // Unused Flag
 
 #define FLAG_ITEM_VARROCK_POTIONSTORE                               0x49B // Unused Flag
 #define FLAG_ITEM_VARROCK_CLOTHESSTORE                              0x49C // Unused Flag
@@ -1287,13 +1286,13 @@
 #define FLAG_ITEM_FALADOR_COURTYARD_1                               0x4BF // Unused Flag
 #define FLAG_ITEM_ROUTE20                                           0x4C0 // Unused Flag
 #define FLAG_ITEM_MAKEOVER_MAGE_ITEM_CAKE                           0x4C1 // Unused Flag
+#define FLAG_ITEM_FALADOR_COURTYARD_2                               0x4C2 // Unused Flag
+#define FLAG_ITEM_SHANTY_PASS_1                                     0x4C3 // Unused Flag
+#define FLAG_ITEM_ROUTE_7                                           0x4C4 // Unused Flag
+#define FLAG_ITEM_MUDSKIPPER_SOUND_1                                0x4C5 // Unused Flag
+#define FLAG_ITEM_CRANDOR_SEA_ROUTE_1                               0x4C6 // Unused Flag
+#define FLAG_ITEM_CRANDOR_SEA_ROUTE_2                               0x4C7 // Unused Flag
 
-#define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag
-#define FLAG_UNUSED_0x4C3                                           0x4C3 // Unused Flag
-#define FLAG_UNUSED_0x4C4                                           0x4C4 // Unused Flag
-#define FLAG_UNUSED_0x4C5                                           0x4C5 // Unused Flag
-#define FLAG_UNUSED_0x4C6                                           0x4C6 // Unused Flag
-#define FLAG_UNUSED_0x4C7                                           0x4C7 // Unused Flag
 #define FLAG_UNUSED_0x4C8                                           0x4C8 // Unused Flag
 #define FLAG_UNUSED_0x4C9                                           0x4C9 // Unused Flag
 #define FLAG_UNUSED_0x4CA                                           0x4CA // Unused Flag

@@ -106,6 +106,20 @@ script NPC_SANDWICH_LADY_LUMBRIDGE {
     release
     end
 }
+script NPC_SANDWICH_LADY_COOKING_GUILD {
+    lock
+    faceplayer
+    namebox("Sandwich Lady")
+    msgbox(format("Hello deary, I am selling a bunch of fresh sandwiches.\pCan I interest you in any?"))
+    pokemart (STORE_SandwichLady_2)
+    lock
+    namebox("Sandwich Lady")
+    msgbox(format("Thanks! By the way, I travel around a lot!\pSo keep your eyes peeled for me."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
 
 
 

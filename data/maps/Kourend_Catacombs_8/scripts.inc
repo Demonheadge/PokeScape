@@ -644,6 +644,38 @@ ENCOUNTER_SNOW_IMP_4:
 	goto ENCOUNTER_SNOW_IMP_1
 
 
+ENCOUNTER_UNICORN_BARB::
+	lock
+	faceplayer
+	namebox ENCOUNTER_UNICORN_BARB_Text_0
+	playmoncry SPECIES_UNICORN_WHITE_FORM, 0
+	msgbox ENCOUNTER_UNICORN_BARB_Text_1
+	waitmoncry
+	hidenamebox
+	closemessage
+	delay 1
+	setwildbattle SPECIES_UNICORN_WHITE_FORM, 30, ITEM_NONE
+	dowildbattle
+	switch VAR_RESULT
+	case B_OUTCOME_WON, ENCOUNTER_UNICORN_BARB_3
+	case B_OUTCOME_CAUGHT, ENCOUNTER_UNICORN_BARB_4
+ENCOUNTER_UNICORN_BARB_1:
+	release
+	end
+
+ENCOUNTER_UNICORN_BARB_3:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_UNICORN_BARB_1
+
+ENCOUNTER_UNICORN_BARB_4:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_UNICORN_BARB_1
+
+
 SKOTIZO_TRIGGER_Text_0:
 	.string "The Dark Totem in your backpack starts\n"
 	.string "to react to the crystal.\p"
@@ -730,3 +762,9 @@ ENCOUNTER_SNOW_IMP_Text_0:
 
 ENCOUNTER_SNOW_IMP_Text_1:
 	.string "Sneez kek Kek!$"
+
+ENCOUNTER_UNICORN_BARB_Text_0:
+	.string "UNICORN$"
+
+ENCOUNTER_UNICORN_BARB_Text_1:
+	.string "NeEeehHHaAyY!$"
