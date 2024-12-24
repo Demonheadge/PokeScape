@@ -4165,23 +4165,23 @@ static const struct TrainerMon sParty_ROUTE39_TRAINER_8[] = {
 static const struct TrainerMon sParty_LUMBRIDGESWAMPCAVE_4[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 33,
-    .species = SPECIES_COCKATRICE,
+    .lvl = 10,
+    .species = SPECIES_MINITRICE,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 34,
-    .species = SPECIES_VULTURE,
+    .lvl = 12,
+    .species = SPECIES_VULTLING,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 33,
-    .species = SPECIES_SNAKE_SEA_FORM,
+    .lvl = 8,
+    .species = SPECIES_DUST_DEVIL,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 35,
-    .species = SPECIES_RACOON,
+    .lvl = 9,
+    .species = SPECIES_HAND_CRAWLING_FORM,
     }
 };
 static const struct TrainerMon sParty_LUMBRIDGESWAMPCAVE_5[] = {
@@ -4209,18 +4209,18 @@ static const struct TrainerMon sParty_LUMBRIDGESWAMPCAVE_5[] = {
 static const struct TrainerMon sParty_LUMBRIDGESWAMPCAVE_6[] = {
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 36,
-    .species = SPECIES_MINITRICE,
+    .lvl = 11,
+    .species = SPECIES_CROCODILE_NORMAL_FORM,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 32,
+    .lvl = 10,
     .species = SPECIES_TUROTH,
     },
     {
     //.iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
-    .lvl = 33,
-    .species = SPECIES_KURASK,
+    .lvl = 12,
+    .species = SPECIES_LILRASK,
     }
 };
 //musa point

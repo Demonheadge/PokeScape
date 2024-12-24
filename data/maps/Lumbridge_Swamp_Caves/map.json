@@ -55,8 +55,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 52,
-      "y": 12,
+      "x": 55,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -68,8 +68,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
-      "x": 51,
-      "y": 13,
+      "x": 53,
+      "y": 10,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -224,14 +224,14 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PVMER",
-      "x": 26,
-      "y": 42,
+      "x": 34,
+      "y": 37,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "6",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "BATTLE_LUMBRIDGESWAMPCAVE_6",
       "flag": "0"
     },
@@ -284,7 +284,7 @@
       "movement_range_y": 10,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ENCOUNTER_SLIME",
       "flag": "0"
     },
     {
@@ -297,7 +297,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ENCOUNTER_SLIME",
       "flag": "0"
     },
     {
@@ -310,7 +310,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ENCOUNTER_SLIME",
       "flag": "0"
     }
   ],
@@ -380,6 +380,15 @@
       "y": 11,
       "elevation": 0,
       "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "ENCOUNTER_WALL_CREATURE"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_7",
       "var_value": "0",
       "script": "ENCOUNTER_WALL_CREATURE"
     }
