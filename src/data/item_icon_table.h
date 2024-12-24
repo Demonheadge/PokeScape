@@ -1145,6 +1145,9 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_BOOK_OF_ZAROS] = {gItemIcon_BookOfZaros, gItemIconPalette_BookOfZaros},
     [ITEM_BOOK_OF_BANDOS] = {gItemIcon_BookOfBandos, gItemIconPalette_BookOfBandos},
     [ITEM_BOOK_OF_ARMADYL] = {gItemIcon_BookOfArmadyl, gItemIconPalette_BookOfArmadyl},
+    [ITEM_CHOCOLATE_BAR_SANDWICH] = {gItemIcon_ChocolateBarSandwich, gItemIconPalette_ChocolateBarSandwich},
+
+    
 
 
     // End Pokescape items

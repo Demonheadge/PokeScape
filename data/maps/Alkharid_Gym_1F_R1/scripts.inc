@@ -454,4 +454,4 @@ ITEM_SAFARI_ZONE_POUCH_Text_0:
 	.string "You found extra Pouches!$"
 
 POKESCAPE_CURRENT_VERSION_Text_0:
-	.string "PokeScape Version 1.6.0$"
+	.string "PokeScape Version 2.0.0$"

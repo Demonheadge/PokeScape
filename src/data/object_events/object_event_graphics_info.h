@@ -5221,7 +5221,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HAM_Johanhus = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HAM_Sigmund_1 = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_HAM_SIGMUND_1,
+    .paletteTag = OBJ_EVENT_PAL_HAM,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -5257,7 +5257,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HAM_Sigmund_2 = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HAM_Patty = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_HAM_PATTY,
+    .paletteTag = OBJ_EVENT_PAL_HAM,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -5275,7 +5275,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HAM_Patty = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HAM_Babe = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_HAM_PATTY,
+    .paletteTag = OBJ_EVENT_PAL_HAM,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -5293,7 +5293,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HAM_Babe = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HAM_Deacon = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_HAM_DEACON,
+    .paletteTag = OBJ_EVENT_PAL_HAM,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -5311,7 +5311,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HAM_Deacon = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HAM_Grunt_M = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_HAM_GRUNT_M,
+    .paletteTag = OBJ_EVENT_PAL_HAM,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -5329,7 +5329,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HAM_Grunt_M = {
 };
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HAM_Grunt_F = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_HAM_GRUNT_F,
+    .paletteTag = OBJ_EVENT_PAL_HAM,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
@@ -10840,5 +10840,24 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_impling_essence = 
     .subspriteTables = sOamTables_16x32,
     .anims = sAnimTable_Standard,
     .images = sPicTable_impling_essence,
+    .affineAnims = gDummySpriteAffineAnimTable
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_sandwich_lady = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_HAM,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = 10,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .disableReflectionPaletteLoad = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_sandwich_lady,
     .affineAnims = gDummySpriteAffineAnimTable
 };

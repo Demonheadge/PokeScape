@@ -92,6 +92,21 @@ NPC_SANDWICH_LADY_4:
 	goto NPC_SANDWICH_LADY_1
 
 
+NPC_SANDWICH_LADY_LUMBRIDGE::
+	lock
+	faceplayer
+	namebox NPC_SANDWICH_LADY_Text_0
+	msgbox NPC_SANDWICH_LADY_LUMBRIDGE_Text_0
+	pokemart STORE_SandwichLady
+	lock
+	namebox NPC_SANDWICH_LADY_Text_0
+	msgbox NPC_SANDWICH_LADY_LUMBRIDGE_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 BATTLE_SANDWICH_LADY::
 	cleartrainerflag TRAINER_SANDWICH_LADY_1
 	trainerbattle_no_intro TRAINER_SANDWICH_LADY_1, BATTLE_SANDWICH_LADY_Text_0
@@ -1276,6 +1291,19 @@ NPC_SANDWICH_LADY_Text_5:
 NPC_SANDWICH_LADY_Text_6:
 	.string "Hope that fills you up!\p"
 	.string "Toodle-oo!$"
+
+NPC_SANDWICH_LADY_LUMBRIDGE_Text_0:
+	.string "Hello deary, are you participating in\n"
+	.string "the MvM Championships?\p"
+	.string "Here's a tip, monsters LOVE chocolate!\p"
+	.string "Funnily enough I am selling chocolate\n"
+	.string "bars.\p"
+	.string "Can I interest you in any?$"
+
+NPC_SANDWICH_LADY_LUMBRIDGE_Text_1:
+	.string "Thanks! By the way, I travel around a\n"
+	.string "lot!\p"
+	.string "So keep your eyes peeled for me.$"
 
 BATTLE_SANDWICH_LADY_Text_0:
 	.string "My poor sandwiches…$"

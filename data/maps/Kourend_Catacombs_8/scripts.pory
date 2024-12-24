@@ -254,7 +254,7 @@ script ENCOUNTER_SLIME
         random(10) // will get rid of getcurrentmap varresult unless changed
 	    switch (var(VAR_RESULT)) { 
             case 9: 
-                setwildbattle (SPECIES_LIL_GLOOP, 10, ITEM_NONE)
+                setwildbattle (SPECIES_SLIME_LILGLOOP, 10, ITEM_NONE)
             default: 
                 setwildbattle (SPECIES_CAVE_SLIME, 10, ITEM_NONE)
         }

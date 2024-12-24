@@ -310,7 +310,14 @@ STORE_SpecialPouches:
     release
     end
 `
-
+raw `
+    .align 2
+STORE_SandwichLady:
+    .2byte ITEM_CHOCOLATE_BAR_SANDWICH
+    .2byte ITEM_NONE
+    release
+    end
+`
 
 ///TM Shops
 //Wizards' Tower

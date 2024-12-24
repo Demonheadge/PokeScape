@@ -590,8 +590,9 @@
 #define OBJ_EVENT_GFX_IMPLING_DRAGON            573
 #define OBJ_EVENT_GFX_IMPLING_EARTH             574
 #define OBJ_EVENT_GFX_IMPLING_ESSENCE           575
+#define OBJ_EVENT_GFX_SANDWICH_LADY             576
 
-#define NUM_OBJ_EVENT_GFX                       (OBJ_EVENT_GFX_IMPLING_ESSENCE + 1)
+#define NUM_OBJ_EVENT_GFX                       (OBJ_EVENT_GFX_SANDWICH_LADY + 1)
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //
 // Object event graphics ids are 1 byte in size (max value of 255), and the dynamic

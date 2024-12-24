@@ -316,6 +316,14 @@ STORE_SpecialPouches:
 
 
     .align 2
+STORE_SandwichLady:
+    .2byte ITEM_CHOCOLATE_BAR_SANDWICH
+    .2byte ITEM_NONE
+    release
+    end
+
+
+    .align 2
 STORE_TM_1:
     .2byte ITEM_TM01_SUNNY_DAY
     .2byte ITEM_TM02_RAIN_DANCE

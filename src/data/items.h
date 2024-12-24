@@ -11007,7 +11007,7 @@ const struct Item gItems[] =
 	[ITEM_BREAD] = 
     {
         .name = _("BREAD"),
-        .price = 300,
+        .price = 200,
         .holdEffectParam = 20,
         .description = sBreadDesc,
         .pocket = POCKET_ITEMS,
@@ -13837,6 +13837,21 @@ const struct Item gItems[] =
         .sort = ITEM_TYPE_HEALTH_RECOVERY,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .battleUsage = EFFECT_ITEM_HEAL_AND_INCREASE_STAT_TO_MAX,
+        .flingPower = 10,
+    },
+
+    [ITEM_CHOCOLATE_BAR_SANDWICH] =
+    {
+        .name = _("CHOCOLATE BAR"),
+        .price = 200,
+        .holdEffect = HOLD_EFFECT_RESTORE_HP,
+        .holdEffectParam = 10,
+        .description = sChocolateBarSandwichDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_RESTORE_HP,
         .flingPower = 10,
     },
 

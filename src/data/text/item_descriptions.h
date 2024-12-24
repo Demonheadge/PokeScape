@@ -5327,7 +5327,10 @@ static const u8 sBaguetteSandwichDesc[] = _(
     "Fully heals a monster\n"
     "and raises all stats\n"
     "for the active battler.");
-
+static const u8 sChocolateBarSandwichDesc[] = _(
+    "A good mid-battle snack\n"
+    "for those who need a\n"
+    "little energy hit.");
 
 
 

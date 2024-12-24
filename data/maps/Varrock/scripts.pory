@@ -91,6 +91,24 @@ script NPC_SANDWICH_LADY {
     end
 }
 
+
+script NPC_SANDWICH_LADY_LUMBRIDGE {
+    lock
+    faceplayer
+    namebox("Sandwich Lady")
+    msgbox(format("Hello deary, are you participating in the MvM Championships?\pHere's a tip, monsters LOVE chocolate!\pFunnily enough I am selling chocolate bars.\pCan I interest you in any?"))
+    pokemart (STORE_SandwichLady)
+    lock
+    namebox("Sandwich Lady")
+    msgbox(format("Thanks! By the way, I travel around a lot!\pSo keep your eyes peeled for me."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+
+
 script BATTLE_SANDWICH_LADY {
     cleartrainerflag(TRAINER_SANDWICH_LADY_1)
     trainerbattle_no_intro(TRAINER_SANDWICH_LADY_1, msgbox(format("My poor sandwiches…")))
