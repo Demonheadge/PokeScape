@@ -10,8 +10,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ### Removed
 
 
+## [2.0.1] - 0-0-2025
+### Added
+### Fixed
+### Removed
 
-## [2.0.0] - 16-12-2024
+
+## [2.0.0] - 24-12-2024
 
 ### Added
 
@@ -40,6 +45,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 - New Battle Scenes / Transitions.
 - Updated & New Music.
 - Added more Cupholders.
+
+### Removed
+ - The ability to view evolutions in the EVO's tab of the Pokedex/Bestiary. This is to prevent a potential game crash.
 
 ## INFORMATION:
 4 Badges obtainable if you follow play STORYMODE. The Story ends after the 4th badge.
