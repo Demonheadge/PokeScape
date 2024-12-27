@@ -176,6 +176,8 @@
 #define MON_FEMALE     0xFE
 #define MON_GENDERLESS 0xFF
 
+#define HIDDEN_NATURE_NONE      0  // 25 natures. not 0xFF to conserve bits
+
 // Constants for AdjustFriendship
 #define FRIENDSHIP_EVENT_GROW_LEVEL       0
 #define FRIENDSHIP_EVENT_VITAMIN          1 // unused, handled by PokemonUseItemEffects

@@ -1766,3 +1766,9 @@ void ItemUseOutOfBattle_PokescapeMap(u8 taskId)
 }
 
 #undef tUsingRegisteredKeyItem
+
+void ItemUseOutOfBattle_Mint(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_Mint;
+    SetUpItemUseCallback(taskId);
+}

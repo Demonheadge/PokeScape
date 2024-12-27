@@ -103,6 +103,7 @@ void MoveDeleterChooseMoveToForget(void);
 // Start qol_field_moves
 // These are all moved from src/party_menu.c
 u8 CanMonLearnTMTutor(struct Pokemon *, u16, u8);
+void ItemUseCB_Mint(u8 taskId, TaskFunc task);
 
 enum {
     CAN_LEARN_MOVE,

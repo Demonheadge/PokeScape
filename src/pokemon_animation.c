@@ -579,7 +579,7 @@ void LaunchAnimationTaskForBackSprite(struct Sprite *sprite, u8 backAnimSet)
     nature = GetNature(&gPlayerParty[gBattlerPartyIndexes[battlerId]]);
 
     // * 3 below because each back anim has 3 variants depending on nature
-    animId = 3 * backAnimSet + sBackAnimNatureModTable[nature];
+    animId = 3 * backAnimSet + gNaturesInfo[nature].backAnim;
     gTasks[taskId].tAnimId = sBackAnimationIds[animId];
 }
 

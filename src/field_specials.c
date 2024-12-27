@@ -2863,7 +2863,7 @@ void ShowNatureGirlMessage(void)
         gSpecialVar_0x8004 = 0;
 
     nature = GetNature(&gPlayerParty[gSpecialVar_0x8004]);
-    ShowFieldMessage(sNatureGirlMessages[nature]);
+    ShowFieldMessage(gNaturesInfo[nature].natureGirlMessage);
 }
 
 void UpdateFrontierGambler(u16 daysSince)
