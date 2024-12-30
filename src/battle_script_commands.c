@@ -1893,13 +1893,25 @@ static void Cmd_ppreduce(void)
         {
             if (GetBattlerSide(i) != GetBattlerSide(gBattlerAttacker) && IsBattlerAlive(i))
                 ppToDeduct += (GetBattlerAbility(i) == ABILITY_PRESSURE);
+            if (GetBattlerSide(i) != GetBattlerSide(gBattlerAttacker) && GetBattlerHoldEffect(i, TRUE) == HOLD_EFFECT_PRESSURE)
+                    ppToDeduct ++;
         }
     }
     else if (moveTarget != MOVE_TARGET_OPPONENTS_FIELD)
     {
         if (gBattlerAttacker != gBattlerTarget && GetBattlerAbility(gBattlerTarget) == ABILITY_PRESSURE)
              ppToDeduct++;
+        if (gBattlerAttacker != gBattlerTarget && GetBattlerHoldEffect(gBattlerTarget, TRUE) == HOLD_EFFECT_PRESSURE)
+        {
+            ppToDeduct++;
+        }
     }
+    /*
+    //Reduces the Holders PP by an extra amount.
+    if (GetBattlerHoldEffect(gBattlerAttacker, TRUE) == HOLD_EFFECT_GODSWORD){
+        ppToDeduct ++;
+    }
+    */
 
     if (!(gHitMarker & (HITMARKER_NO_PPDEDUCT | HITMARKER_NO_ATTACKSTRING)) && gBattleMons[gBattlerAttacker].pp[gCurrMovePos])
     {
@@ -1922,6 +1934,8 @@ static void Cmd_ppreduce(void)
             MarkBattlerForControllerExec(gBattlerAttacker);
         }
     }
+
+    
 
     gHitMarker &= ~HITMARKER_NO_PPDEDUCT;
     gBattlescriptCurrInstr = cmd->nextInstr;
@@ -5447,6 +5461,11 @@ static void Cmd_moveend(void)
             break;
         case MOVEEND_ABILITIES_ATTACKER: // Poison Touch, possibly other in the future
             if (AbilityBattleEffects(ABILITYEFFECT_MOVE_END_ATTACKER, gBattlerAttacker, 0, 0, 0))
+                effect = TRUE;
+            gBattleScripting.moveendState++;
+            break;
+        case MOVEEND_KARIL:
+            if (ItemBattleEffects(ITEMEFFECT_KARIL, 0, FALSE))
                 effect = TRUE;
             gBattleScripting.moveendState++;
             break;

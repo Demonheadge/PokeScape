@@ -135,7 +135,27 @@ script Explorer_Jack_3 {
 //---------------------------------
 script CHEAT_ITEM_PULSE_CORE
 {
-    finditem(ITEM_PULSE_CORE)
+    checkitem(ITEM_PULSE_CORE, 1)
+    if (var(VAR_RESULT)) {
+        finditem(ITEM_PRISMATIC_STAR)
+        applymovement(1, Movement_InteractFACEDOWN)
+        waitmovement (0)
+        namebox ("Explorer Jack")
+        msgbox(format("A Prismatic Star will gain a little bit of boosted experience to the monster holding it during battles.\pGive it to a monster to hold."))
+        closemessage
+        hidenamebox
+    }
+    else {
+        finditem(ITEM_PULSE_CORE)
+        applymovement(1, Movement_InteractFACEDOWN)
+        waitmovement (0)
+        namebox ("Explorer Jack")
+        msgbox(format("A Pulse Core will help your monsters share a little bit of extra experience after battles.\pToggle it on in the key items."))
+        closemessage
+        hidenamebox
+    }
+    applymovement(1, Movement_InteractFACEUP)
+    waitmovement (0)
     end
 }
 

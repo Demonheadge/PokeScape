@@ -647,16 +647,26 @@ script NPC_WIZARDSTOWER_PulseCore
 		msgbox(format("Oh?{PAUSE 15}\nWhat is that shiny rock?\pWait a minute, that is not suppose to be in there let me see."))
 		applymovement(2 rinsit_2)
 		waitmovement(0)
-		msgbox(format("{PAUSE 15}…{PAUSE 15}…{PAUSE 15}…\pAh… this is a Pulse Core."))
+		msgbox(format("{PAUSE 15}…{PAUSE 15}…{PAUSE 15}…\pAh…ahaha…"))
 		applymovement(2 rinsit_3)
 		waitmovement(0)
 		msgbox(format("Here you can have it."))
 		hidenamebox
-		giveitem(ITEM_PULSE_CORE, 1)
-		namebox ("Rinsit")
-		msgbox(format("A Pulse Core will help your monsters gain a little bit of extra experience after battles.\pI am sure you will find a use for it."))
-		waitmessage
-		hidenamebox
+		checkitem(ITEM_PULSE_CORE, 1)
+		if (var(VAR_RESULT)) {
+			giveitem(ITEM_PRISMATIC_STAR, 1)
+			namebox ("Rinsit")
+			msgbox(format("That is a Prismatic Star.\pIt will help your monsters gain a little bit of boosted experience to the monster holding it during battles.\pI am sure you will find a use for it."))
+			waitmessage
+			hidenamebox
+		}
+		else {
+			giveitem(ITEM_PULSE_CORE, 1)
+			namebox ("Rinsit")
+			msgbox(format("That is a Pulse Core.\pIt will share a little bit of extra experience after battles for your team.\pI am sure you will find a use for it."))
+			waitmessage
+			hidenamebox
+		}
 		setflag(FLAG_RECEIVED_PULSECORE)
 		release
 		end

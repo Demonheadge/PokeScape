@@ -800,6 +800,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "VARSETTER"
+    },
+    {
+      "type": "sign",
+      "x": 39,
+      "y": 54,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TEST_POKESCAPE"
     }
   ],
   "has_night_table": false

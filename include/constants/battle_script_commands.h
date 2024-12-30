@@ -322,7 +322,8 @@
 #define MOVEEND_SAME_MOVE_TURNS                   36
 #define MOVEEND_CLEAR_BITS                        37
 #define MOVEEND_VENGEANCE_CHECK                   38
-#define MOVEEND_COUNT                             39
+#define MOVEEND_KARIL                             39
+#define MOVEEND_COUNT                             40
 
 // switch cases
 #define B_SWITCH_NORMAL     0

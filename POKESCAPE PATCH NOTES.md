@@ -13,6 +13,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 ## [2.0.1] - 0-0-2025
 ### Added
 ### Fixed
+ - Updated Version number.
+ - Changed Rinist's & Explorer Jack's Pulse Core items to give a Primsmatic Star if the Pulse Core was already obtained.
+ - Added MB_REST function to the Wizards Tower beds.
+ - Fixed PokeScape abilties. (Need testing.)
+ - Fixed PokeScape hold-items. (Need testing.)
+
 ### Removed
 
 

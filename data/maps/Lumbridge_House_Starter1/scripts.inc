@@ -130,8 +130,30 @@ Explorer_Jack_3_4:
 
 
 CHEAT_ITEM_PULSE_CORE::
+	checkitem ITEM_PULSE_CORE, 1
+	compare VAR_RESULT, 0
+	goto_if_ne CHEAT_ITEM_PULSE_CORE_2
 	finditem ITEM_PULSE_CORE
+	applymovement 1, Movement_InteractFACEDOWN
+	waitmovement 0
+	namebox Explorer_Jack_1_Text_0
+	msgbox CHEAT_ITEM_PULSE_CORE_Text_1
+	closemessage
+	hidenamebox
+CHEAT_ITEM_PULSE_CORE_1:
+	applymovement 1, Movement_InteractFACEUP
+	waitmovement 0
 	end
+
+CHEAT_ITEM_PULSE_CORE_2:
+	finditem ITEM_PRISMATIC_STAR
+	applymovement 1, Movement_InteractFACEDOWN
+	waitmovement 0
+	namebox Explorer_Jack_1_Text_0
+	msgbox CHEAT_ITEM_PULSE_CORE_Text_0
+	closemessage
+	hidenamebox
+	goto CHEAT_ITEM_PULSE_CORE_1
 
 
 ITEM_LUMBRIDGE_BREAD_1::
@@ -389,3 +411,15 @@ Explorer_Jack_3_Text_2:
 	.string "MvM Championships battle is held.\p"
 	.string "The current Leader of our town is Duke\n"
 	.string "Horacio.$"
+
+CHEAT_ITEM_PULSE_CORE_Text_0:
+	.string "A Prismatic Star will gain a little bit of\n"
+	.string "boosted experience to the monster\l"
+	.string "holding it during battles.\p"
+	.string "Give it to a monster to hold.$"
+
+CHEAT_ITEM_PULSE_CORE_Text_1:
+	.string "A Pulse Core will help your monsters\n"
+	.string "share a little bit of extra experience\l"
+	.string "after battles.\p"
+	.string "Toggle it on in the key items.$"
