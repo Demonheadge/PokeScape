@@ -12905,7 +12905,7 @@ const struct Item gItems[] =
     [ITEM_ROTTEN_POTATO] =
     {
         .name = _("ROTTEN POTATO"),
-        .price = 2100,
+        .price = 0,
         .description = sUnstuckDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -12947,7 +12947,7 @@ const struct Item gItems[] =
         .fieldUseFunc = ItemUseOutOfBattle_Function,
 */
         .name = _("PULSE CORE"),
-        .price = 3000,
+        .price = 0,
         .holdEffect = HOLD_EFFECT_EXP_SHARE,
         .description = sExpShareDesc,
         .pocket = I_EXP_SHARE_ITEM >= GEN_6 ? POCKET_KEY_ITEMS : POCKET_ITEMS,

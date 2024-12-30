@@ -1,3 +1,5 @@
+const OBJ_EVENT_ID_DUKE = 13
+
 mapscripts Lumbridge_Castle_1_MapScripts {
 
 	MAP_SCRIPT_ON_LOAD {
@@ -31,6 +33,12 @@ script LUMBRIDGE_GYM_OUTSIDE_STATE {
 		setobjectxyperm(3,24,23)
 		setobjectmovementtype(3,MOVEMENT_TYPE_FACE_DOWN_UP_AND_LEFT)
 		return
+	}
+	if (var(VAR_POKESCAPE_LUMBRIDGE_GYM_QUEST) == 0) { //BEFORE STARTING GYM CHALLENGE - UNSURE WHETHER THIS WILL WORK
+			//HIDE DUKE
+            removeobject (OBJ_EVENT_ID_DUKE)
+			setflag(FLAG_TEMP_1)
+			return
 	}
 	if (var(VAR_POKESCAPE_LUMBRIDGE_GYM_QUEST) == 1) { //START GYM CHALLENGE
 		setobjectxyperm(7,14,8)
