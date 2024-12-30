@@ -3421,6 +3421,11 @@ static const u8 sTzTokRekDescription[] = _(
     "Does double damage if the\n"
     "foe is burned.");
 
+static const u8 sBwakBwakDescription[] = _(
+    "Lowers the target's Defense\n"
+    "by 2 stages.");
+
+
 #undef BINDING_TURNS
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
@@ -4298,4 +4303,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_SEREN_SHINE - 1] = sSerenShineDescription,
     [MOVE_GODLESS_REBEL - 1] = sGodlessRebelDescription,
     [MOVE_TZ_TOK_ZEK - 1] = sTzTokRekDescription,
+    [MOVE_BAWK_BAWK - 1] = sBwakBwakDescription,
 };
