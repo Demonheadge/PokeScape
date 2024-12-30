@@ -45,7 +45,7 @@ script GeneralStore_DRAYNOR {
     lock
     faceplayer
     namebox("Clerk")
-    msgbox(format("Welcome to the Drayor Markets.\pHow may I help you?"))
+    msgbox(format("Welcome to the Draynor Markets.\pHow may I help you?"))
     waitmessage
     call(GeneralStoreShopScript)
     msgbox("Thank you, come again!")

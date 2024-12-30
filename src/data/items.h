@@ -13039,163 +13039,169 @@ const struct Item gItems[] =
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
     },
 
-    [ITEM_APPLE] =
+    [ITEM_APPLE] = //Micle Berry
     {
         .name = _("APPLE"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
+        .holdEffect = HOLD_EFFECT_MICLE_BERRY,
+        .holdEffectParam = 4,
         .description = sAppleDesc,
         .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
     },
 
-    [ITEM_BANANA] =
+    [ITEM_BANANA] = //Salac Berry
     {
         .name = _("BANANA"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
+        .holdEffect = HOLD_EFFECT_SPEED_UP,
+        .holdEffectParam = 4,
         .description = sBananaDesc,
         .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
     },
 
-    [ITEM_CADAVABERRY] =
+    [ITEM_CADAVABERRY] = //Leppa Berry
     {
         .name = _("CADAVA"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
+        .holdEffect = HOLD_EFFECT_RESTORE_PP,
+        .holdEffectParam = 10,
         .description = sCadavaberryDesc,
         .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .type = ITEM_USE_PARTY_MENU_MOVES,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_PPRecovery,
+        .battleUsage = EFFECT_ITEM_RESTORE_PP,
+        .flingPower = 10,
     },
 
-    [ITEM_COCONUT] =
+    [ITEM_COCONUT] = //Starf Berry
     {
         .name = _("COCONUT"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
+        .holdEffect = HOLD_EFFECT_RANDOM_STAT_UP,
+        .holdEffectParam = 4,
         .description = sCoconutDesc,
         .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
     },
 
-    [ITEM_CORN] =
+    [ITEM_CORN] = //Qualot Berry
     {
         .name = _("CORN"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
-        .description = sCupholderDesc,
+        .description = sCornDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_ReduceEV,
+        .flingPower = 10,
     },
 
-    [ITEM_GARLIC] =
+    [ITEM_GARLIC] = //Liechi Berry
     {
         .name = _("GARLIC"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
-        .description = sCupholderDesc,
+        .holdEffect = HOLD_EFFECT_ATTACK_UP,
+        .holdEffectParam = 4,
+        .description = sGarlicDesc,
         .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
     },
 
-    [ITEM_GRAPES] =
+    [ITEM_GRAPES] = //Petaya Berry
     {
         .name = _("GRAPES"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
-        .description = sCupholderDesc,
+        .holdEffect = HOLD_EFFECT_SP_ATTACK_UP,
+        .holdEffectParam = 4,
+        .description = sGrapesDesc,
         .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
     },
 
-    [ITEM_JANGERBERRY] =
+    [ITEM_JANGERBERRY] = //Hondew Berry
     {
         .name = _("JANGERBERRY"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
-        .description = sCupholderDesc,
+        .description = sJangerberryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_ReduceEV,
+        .flingPower = 10,
     },
 
-    [ITEM_LEMON] =
+    [ITEM_LEMON] = //Cheri Berry
     {
         .name = _("LEMON"),
         .price = 20,
         .holdEffect = HOLD_EFFECT_CURE_PAR,
-        .description = sCupholderDesc,
+        .description = sLemonDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
+        .sort = ITEM_TYPE_UNSORTABLE,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .flingPower = 10,
     },
 
-    [ITEM_ONION] =
+    [ITEM_ONION] = //Pomeg Berry
     {
         .name = _("ONION"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
-        .description = sCupholderDesc,
+        .description = sOnionDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_ReduceEV,
+        .flingPower = 10,
     },
 
-    [ITEM_ORANGE] =
+    [ITEM_ORANGE] = //Lum Berry
     {
         .name = _("ORANGE"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
-        .description = sCupholderDesc,
+        .holdEffect = HOLD_EFFECT_CURE_STATUS,
+        .description = sOrangeDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
+        .sort = ITEM_TYPE_UNSORTABLE,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .flingPower = 10,
     },
 
-    [ITEM_PINEAPPLE] =
+    [ITEM_PINEAPPLE] = //Rowap Berry
     {
         .name = _("PINEAPPLE"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
-        .description = sCupholderDesc,
+        .holdEffect = HOLD_EFFECT_ROWAP_BERRY,
+        .description = sPineappleDesc,
         .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
     },
 
-    [ITEM_POISONIVYBERRY] =
+    [ITEM_POISONIVYBERRY] = //NOT ON THE LIST
     {
         .name = _("IVY BERRY"),
         .price = 20,
@@ -13208,96 +13214,252 @@ const struct Item gItems[] =
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
     },
 
-    [ITEM_POTATO] =
+    [ITEM_POTATO] = //Pecha Berry
     {
         .name = _("POTATO"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
-        .description = sCupholderDesc,
+        .holdEffect = HOLD_EFFECT_CURE_PSN,
+        .description = sPotatoDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
+        .sort = ITEM_TYPE_UNSORTABLE,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .flingPower = 10,
     },
 
-    [ITEM_REDBERRY] =
+    [ITEM_REDBERRY] = //Apicot Berry
     {
-        .name = _("RED BERRY"),
+        .name = _("REDBERRY"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
-        .description = sCupholderDesc,
+        .holdEffect = HOLD_EFFECT_SP_DEFENSE_UP,
+        .holdEffectParam = 4,
+        .description = sRedberryDesc,
         .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
     },
 
-    [ITEM_STRAWBERRY] =
+    [ITEM_STRAWBERRY] = //Ganlon Berry
     {
         .name = _("STRAWBERRY"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
-        .description = sCupholderDesc,
+        .holdEffect = HOLD_EFFECT_DEFENSE_UP,
+        .holdEffectParam = 4,
+        .description = sStrawberryDesc,
         .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
     },
 
-    [ITEM_TOMATO] =
+[ITEM_TOMATO] = //Tamato Berry
     {
         .name = _("TOMATO"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
-        .description = sCupholderDesc,
+        .description = sTomatoDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_ReduceEV,
+        .flingPower = 10,
     },
 
-    [ITEM_TURNIP] =
+    [ITEM_TURNIP] = //Persim Berry
     {
         .name = _("TURNIP"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
-        .description = sCupholderDesc,
+        .holdEffect = HOLD_EFFECT_CURE_CONFUSION,
+        .description = sTurnipDesc,
         .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .flingPower = 10,
     },
 
-    [ITEM_WATERMELON] =
+    [ITEM_WATERMELON] = //Rawst Berry
     {
         .name = _("WATERMELON"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
-        .description = sCupholderDesc,
+        .holdEffect = HOLD_EFFECT_CURE_BRN,
+        .description = sWatermelonDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
+        .sort = ITEM_TYPE_UNSORTABLE,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .flingPower = 10,
     },
 
-    [ITEM_WHITEBERRY] =
+    [ITEM_WHITEBERRY] = //Aspear Berry
     {
-        .name = _("WHITE BERRY"),
+        .name = _("WHITEBERRY"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_CURE_PAR,
-        .description = sCupholderDesc,
+        .holdEffect = HOLD_EFFECT_CURE_FRZ,
+        .description = sWhiteberryDesc,
         .pocket = POCKET_BERRIES,
         .type = ITEM_USE_PARTY_MENU,
-        .sort = ITEM_TYPE_STATUS_RECOVERY,
+        .sort = ITEM_TYPE_UNSORTABLE,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .flingPower = 10,
     },
+
+    [ITEM_PAPAYA] = //Lansat Berry - NEW - NEEDS TO MAKE SURE IT LINKS TO SPRITES ETC
+    {
+        .name = _("PAPAYA"),
+        .price = 20,
+        .holdEffect = HOLD_EFFECT_CRITICAL_UP,
+        .holdEffectParam = 4,
+        .description = sPapayaDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+    },
+
+    [ITEM_DWELLBERRY] = //Chesto Berry - NEW - NEEDS TO MAKE SURE IT LINKS TO SPRITES ETC
+    {
+        .name = _("DWELLBERRY"),
+        .price = 20,
+        .holdEffect = HOLD_EFFECT_CURE_SLP,
+        .description = sDwellberryDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_PARTY_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_CURE_STATUS,
+        .flingPower = 10,
+    },
+
+    [ITEM_COFFEEBEAN] = //Custap Berry - NEW - NEEDS TO MAKE SURE IT LINKS TO SPRITES ETC
+    {
+        .name = _("COFFEE BEAN"),
+        .price = 20,
+        .holdEffect = HOLD_EFFECT_CUSTAP_BERRY,
+        .holdEffectParam = 4,
+        .description = sCoffeeBeanDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+    },
+
+    [ITEM_POISON_IVY] = //Jaboca Berry - NEW - NEEDS TO MAKE SURE IT LINKS TO SPRITES ETC - POSSIBLY CHANGE ITEM NAME ETC DEPENDING ON SPRITE
+    {
+        .name = _("POISON IVY"),
+        .price = 20,
+        .holdEffect = HOLD_EFFECT_JABOCA_BERRY,
+        .description = sPoisonIvyDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+    },
+
+    [ITEM_BLUEBERRY] = //Kelpsy Berry - NEW - NEEDS TO MAKE SURE IT LINKS TO SPRITES ETC
+    {
+        .name = _("BLUEBERRY"),
+        .price = 20,
+        .description = sBlueberryDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_PARTY_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_ReduceEV,
+        .flingPower = 10,
+    },
+
+    [ITEM_CHEESE] = //Grepa Berry - NEW - NEEDS TO MAKE SURE IT LINKS TO SPRITES ETC
+    {
+        .name = _("CHEESE"),
+        .price = 20,
+        .description = sCheeseDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_PARTY_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_ReduceEV,
+        .flingPower = 10,
+    },
+
+    [ITEM_GLOOP_SOUP] = //Mago Berry - NEW - NEEDS TO MAKE SURE IT LINKS TO SPRITES ETC
+    {
+        .name = _("GLOOP SOUP"),
+        .price = 20,
+        .holdEffect = HOLD_EFFECT_CONFUSE_SWEET,
+        .holdEffectParam = CONFUSE_BERRY_HEAL_FRACTION,
+        .description = sGloopSoupDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+    },
+
+    [ITEM_FINGERS] = //Iapapa Berry - NEW - NEEDS TO MAKE SURE IT LINKS TO SPRITES ETC
+    {
+        .name = _("FINGERS"),
+        .price = 20,
+        .holdEffect = HOLD_EFFECT_CONFUSE_SOUR,
+        .holdEffectParam = CONFUSE_BERRY_HEAL_FRACTION,
+        .description = sFingersDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+    },
+
+    [ITEM_BAT_SHISH] = //Aguav Berry - NEW - NEEDS TO MAKE SURE IT LINKS TO SPRITES ETC
+    {
+        .name = _("BAT SHISH"),
+        .price = 20,
+        .holdEffect = HOLD_EFFECT_CONFUSE_BITTER,
+        .holdEffectParam = CONFUSE_BERRY_HEAL_FRACTION,
+        .description = sBatShishDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+    },
+
+    [ITEM_FROGBURGER] = //Wiki Berry - NEW - NEEDS TO MAKE SURE IT LINKS TO SPRITES ETC
+    {
+        .name = _("FROGBURGER"),
+        .price = 20,
+        .holdEffect = HOLD_EFFECT_CONFUSE_DRY,
+        .holdEffectParam = CONFUSE_BERRY_HEAL_FRACTION,
+        .description = sFrogburgerDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+    },
+
+    [ITEM_EEL_SUSHI] = //Figy Berry - NEW - NEEDS TO MAKE SURE IT LINKS TO SPRITES ETC
+    {
+        .name = _("EEL SUHSI"),
+        .price = 20,
+        .holdEffect = HOLD_EFFECT_CONFUSE_SPICY,
+        .holdEffectParam = CONFUSE_BERRY_HEAL_FRACTION,
+        .description = sEelSushiDesc,
+        .pocket = POCKET_BERRIES,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_UNSORTABLE,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+    },
+
+
 
 
 // Cooks Assistant Quest
@@ -13505,7 +13667,7 @@ const struct Item gItems[] =
     {
         .name = _("CHEESE"),
         .price = 0,
-        .description = sCheeseDesc,
+        .description = sScurriusCheeseDesc,
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

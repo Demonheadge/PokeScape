@@ -4341,17 +4341,155 @@ static const u8 sCabbageDesc[] = _(
     "Brassica. Heals a\n"
     "paralyzed MONSTER.");
 
-static const u8 sAppleDesc[] = _(
-    "This is a Cupholder.");
+static const u8 sOnionDesc[] = _(
+    "Makes a MONSTER\n"
+    "friendly but lowers\n"
+    "base HP.");
+
+static const u8 sBlueberryDesc[] = _(
+    "Makes a MONSTER\n"
+    "friendly but lowers\n"
+    "base Attack.");
+
+static const u8 sCornDesc[] = _(
+    "Makes a MONSTER\n"
+    "friendly but lowers\n"
+    "base Defense.");
+
+static const u8 sJangerberryDesc[] = _(
+    "Makes a MONSTER\n"
+    "friendly but lowers\n"
+    "base Sp. Atk.");
+
+static const u8 sCheeseDesc[] = _(
+    "Makes a MONSTER\n"
+    "friendly but lowers\n"
+    "base Sp. Def.");
+
+static const u8 sTomatoDesc[] = _(
+    "Makes a MONSTER\n"
+    "friendly but lowers\n"
+    "base Speed.");
+
+static const u8 sGarlicDesc[] = _(
+    "A hold item that\n"
+    "raises Attack in\n"
+    "a pinch.");
+
+static const u8 sStrawberryDesc[] = _(
+    "A hold item that\n"
+    "raises Defense in\n"
+    "a pinch.");
 
 static const u8 sBananaDesc[] = _(
-    "This is a Cupholder.");
+    "A hold item that\n"
+    "raises Speed in\n"
+    "a pinch.");
 
-static const u8 sCadavaberryDesc[] = _(
-    "This is a Cupholder.");
+static const u8 sGrapesDesc[] = _(
+    "A hold item that\n"
+    "raises Sp. Atk in\n"
+    "a pinch.");
+
+static const u8 sRedberryDesc[] = _(
+    "A hold item that\n"
+    "raises Sp. Def in\n"
+    "a pinch.");
+
+static const u8 sPapayaDesc[] = _(
+    "A hold item that\n"
+    "ups the critical-\n"
+    "hit rate in a pinch.");
 
 static const u8 sCoconutDesc[] = _(
-    "This is a Cupholder.");
+    "A hold item that\n"
+    "sharply boosts a\n"
+    "stat in a pinch.");
+
+static const u8 sAppleDesc[] = _(
+    "When held, it ups\n"
+    "the Accuracy of a\n"
+    "move in a pinch.");
+
+static const u8 sCoffeeBeanDesc[] = _(
+    "It allows a MONSTER\n"
+    "in a pinch to move\n"
+    "first just once.");
+
+static const u8 sPoisonIvyDesc[] = _(
+    "If hit by a physical\n"
+    "move, it will hurt\n"
+    "the attacker a bit.");
+
+static const u8 sPineappleDesc[] = _(
+    "If hit by a special\n"
+    "move, it will hurt\n"
+    "the attacker a bit.");
+
+static const u8 sLemonDesc[] = _(
+    "A hold item that\n"
+    "heals paralysis\n"
+    "in battle.");
+
+static const u8 sDwellberryDesc[] = _(
+    "A hold item that\n"
+    "awakens a MONSTER\n"
+    "in battle.");
+
+static const u8 sPotatoDesc[] = _(
+    "A hold item that\n"
+    "heals poisoning\n"
+    "in battle.");
+
+static const u8 sWatermelonDesc[] = _(
+    "A hold item that\n"
+    "heals a burn in\n"
+    "battle.");
+
+static const u8 sWhiteberryDesc[] = _(
+    "A hold item that\n"
+    "defrosts a MONSTER\n"
+    "in battle.");
+
+static const u8 sCadavaberryDesc[] = _(
+    "A hold item that\n"
+    "restores 10 PP in\n"
+    "battle.");
+
+static const u8 sTurnipDesc[] = _(
+    "A hold item that\n"
+    "heals confusion\n"
+    "in battle.");
+
+static const u8 sOrangeDesc[] = _(
+    "A hold item that\n"
+    "heals any status\n"
+    "problem in battle.");
+
+static const u8 sEelShushiDesc[] = _(
+    "A hold item that\n"
+    "restores HP but\n"
+    "may confuse.");
+
+static const u8 sFrogburgerDesc[] = _(
+    "A hold item that\n"
+    "restores HP but\n"
+    "may confuse.");
+
+static const u8 sGloopSoupDesc[] = _(
+    "A hold item that\n"
+    "restores HP but\n"
+    "may confuse.");
+
+static const u8 sBatShishDesc[] = _(
+    "A hold item that\n"
+    "restores HP but\n"
+    "may confuse.");
+
+static const u8 sFingersDesc[] = _(
+    "A hold item that\n"
+    "restores HP but\n"
+    "may confuse.");
 
 //POKESCAPE SPECIAL ITEMS
 
@@ -5201,7 +5339,7 @@ static const u8 sCrandorPieceDesc[] = _(
     "leading to an\n"
     "unknown location.");
     
-static const u8 sCheeseDesc[] = _(
+static const u8 sScurriusCheeseDesc[] = _(
     "Some sewer cheese.\n"
     "It seems like it\n"
     "may be sentient.");
