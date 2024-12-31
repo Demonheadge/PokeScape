@@ -4651,8 +4651,8 @@ static const u8 sAkriaeMaceDesc[] = _(
 
 static const u8 sDFSDesc[] = _(
     "Decreases damage\n"
-    "from Dragon\n"
-    "type moves.");
+    "from Dragon &\n"
+    "Fire type moves.");
 
 static const u8 sPhoenixNeckDesc[] = _(
     "Holds the user\n"

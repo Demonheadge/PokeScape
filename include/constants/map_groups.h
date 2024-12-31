@@ -867,6 +867,7 @@
 #define MAP_VARROCK_HOUSE_7           (30 | (43 << 8))
 #define MAP_VARROCK_HOUSE_8           (31 | (43 << 8))
 #define MAP_VARROCK_HOUSE_9           (32 | (43 << 8))
+#define MAP_VARROCK_HOUSE_10          (33 | (43 << 8))
 
 // gMapGroup_PokescapeIndoorBarbarianVillage
 #define MAP_BARBARIAN_VILLAGE_GYM_HALL (0 | (44 << 8))

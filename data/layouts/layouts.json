@@ -8790,6 +8790,16 @@
       "secondary_tileset": "gTileset_Windmill",
       "border_filepath": "data/layouts/Cooking_Guild/border.bin",
       "blockdata_filepath": "data/layouts/Cooking_Guild/map.bin"
+    },
+    {
+      "id": "LAYOUT_VARROCK_HOUSE_10",
+      "name": "Varrock_House_10_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns2",
+      "border_filepath": "data/layouts/Varrock_House_10/border.bin",
+      "blockdata_filepath": "data/layouts/Varrock_House_10/map.bin"
     }
   ]
 }

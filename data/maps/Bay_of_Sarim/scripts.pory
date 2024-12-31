@@ -137,3 +137,27 @@ script TEST_POKESCAPE_ITEMS {
     giveitem(ITEM_BLUEBOATER, 1)
     return
 }
+
+script MOVE_TUTOR_SILVERLIGHT {
+    lock
+    msgbox(format("The legendary Silverlight sword begins to glow!"))
+    closemessage
+    //setvar (VAR_0x8005, MOVE_SILVERLIGHT)
+    setvar (VAR_0x8005, MOVE_SOLAR_BLADE)
+	call (MOVE_TUTOR_OpenPartyMenu)
+    if (var(VAR_RESULT) == 0) {
+        msgbox(format("As you step away the sword dims once more."))
+        release
+        end
+    }
+    msgbox(format("Your monster was infused with the power of the sword."))
+    release
+    end
+}
+
+script MOVE_TUTOR_OpenPartyMenu {
+    special (ChooseMonForMoveTutor)
+	waitstate
+	lock
+	return
+}

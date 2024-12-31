@@ -16234,7 +16234,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
 
 //PokeScape Moves
-    [MOVE_BAWK_BAWK] =
+    [MOVE_BAWK_BAWK] = //todo anims
     {
         .effect = EFFECT_DEFENSE_DOWN_2,
         .power = 0,
@@ -16250,4 +16250,143 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .magicCoatAffected = TRUE,
         .soundMove = TRUE,
     },
+
+    [MOVE_OVERLOAD] = //todo anims
+    {
+        .effect = EFFECT_OVERLOAD,
+        .power = 0,
+        .type = TYPE_POISON,
+        .accuracy = 0,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_RECOVER_HP,
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+    },
+
+    [MOVE_TELE_BLOCK] = //todo anims
+    {
+        .effect = EFFECT_MEAN_LOOK,
+        .power = 0,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
+        .ignoresProtect = TRUE,
+        .magicCoatAffected = TRUE,
+    },
+
+    [MOVE_DRAGONFIRE] = //todo anims
+    {
+        .effect = EFFECT_RECHARGE,
+        .power = 150,
+        .type = TYPE_DRAGON,
+        .accuracy = 90,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .ignoresKingsRock = B_UPDATED_MOVE_FLAGS < GEN_3,
+    },
+
+    [MOVE_SILVERLIGHT] =  //todo anims
+    {
+        .effect = EFFECT_SILVERLIGHT,
+        .power = 95,
+        .type = TYPE_FAIRY,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+    },
+
+    [MOVE_DARKLIGHT] =  //todo anims
+    {
+        .effect = EFFECT_SILVERLIGHT,
+        .power = 95,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+    },
+
+    [MOVE_ARCLIGHT] =  //todo anims
+    {
+        .effect = EFFECT_SILVERLIGHT,
+        .power = 95,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+    },
+    
+    [MOVE_EMBERLIGHT] =  //todo anims
+    {
+        .effect = EFFECT_SILVERLIGHT,
+        .power = 95,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+    },
+
+    [MOVE_IBAN_BLAST] = //todo anims
+    {
+        .effect = EFFECT_RANDOM_STAT_DOWN,
+        .power = 90,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 30,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 };

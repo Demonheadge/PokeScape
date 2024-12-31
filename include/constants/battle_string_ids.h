@@ -733,12 +733,12 @@
 #define STRINGID_TZHAAR_WEATHER_1                     731
 #define STRINGID_TZHAAR_WEATHER_2                     732
 #define STRINGID_PLAYERGOTTOKKUL                      733
+#define STRINGID_CUTHPINCREASEDSTATS                  734
 
 
 
 
-
-#define BATTLESTRINGS_VANILLA_END                     733
+#define BATTLESTRINGS_VANILLA_END                     734
 
 
 

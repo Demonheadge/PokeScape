@@ -452,9 +452,10 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectHealBlockHit			  @ EFFECT_HEAL_BLOCK_HIT
 	.4byte BattleScript_EffectAuroraVeilHit			  @ EFFECT_AURORA_VEIL_HIT
 	.4byte BattleScript_EffectHit                     @ EFFECT_DOUBLE_DAMAGE_IF_BURN
-	.4byte BattleScript_KarilCrossbow
-	.4byte BattleScript_AhrimStaff
-	.4byte BattleScript_ToragHammer
+	.4byte BattleScript_EffectOverload                @ EFFECT_OVERLOAD
+	.4byte BattleScript_EffectSilverlight             @ EFFECT_SILVERLIGHT
+	.4byte BattleScript_EffectRandomStatDown          @ EFFECT_RANDOM_STAT_DOWN
+	
 	
 
 BattleScript_EffectGlaiveRush::
@@ -3727,31 +3728,31 @@ BattleScript_StatUpMsg::
 	waitmessage B_WAIT_TIME_LONG
 	return
 
-BattleScript_EffectAttackDown:
+BattleScript_EffectAttackDown::
 	setstatchanger STAT_ATK, 1, TRUE
 	goto BattleScript_EffectStatDown
 
-BattleScript_EffectDefenseDown:
+BattleScript_EffectDefenseDown::
 	setstatchanger STAT_DEF, 1, TRUE
 	goto BattleScript_EffectStatDown
 
-BattleScript_EffectSpeedDown:
+BattleScript_EffectSpeedDown::
 	setstatchanger STAT_SPEED, 1, TRUE
 	goto BattleScript_EffectStatDown
 
-BattleScript_EffectAccuracyDown:
+BattleScript_EffectAccuracyDown::
 	setstatchanger STAT_ACC, 1, TRUE
 	goto BattleScript_EffectStatDown
 
-BattleScript_EffectSpecialAttackDown:
+BattleScript_EffectSpecialAttackDown::
 	setstatchanger STAT_SPATK, 1, TRUE
 	goto BattleScript_EffectStatDown
 
-BattleScript_EffectSpecialDefenseDown:
+BattleScript_EffectSpecialDefenseDown::
 	setstatchanger STAT_SPDEF, 1, TRUE
 	goto BattleScript_EffectStatDown
 
-BattleScript_EffectEvasionDown:
+BattleScript_EffectEvasionDown::
 	setstatchanger STAT_EVASION, 1, TRUE
 BattleScript_EffectStatDown:
 	attackcanceler
@@ -11136,3 +11137,69 @@ BattleScript_AvernicActivates::
 	printstring STRINGID_ATTACKERSSTATFELL
 	waitmessage 0x40
 	return
+
+BattleScript_EffectOverload::
+	attackcanceler
+	attackstring
+	ppreduce
+	maxattackhalvehp BattleScript_ButItFailed
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE
+	attackanimation
+	waitanimation
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	call BattleScript_AllStatsUpOverload
+	printstring STRINGID_CUTHPINCREASEDSTATS
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_AllStatsUpOverload::
+	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_ATK, MAX_STAT_STAGE, BattleScript_AllStatsUpAtkOverload
+	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_DEF, MAX_STAT_STAGE, BattleScript_AllStatsUpAtkOverload
+	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_SPEED, MAX_STAT_STAGE, BattleScript_AllStatsUpAtkOverload
+	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_SPATK, MAX_STAT_STAGE, BattleScript_AllStatsUpAtkOverload
+	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_SPDEF, MAX_STAT_STAGE, BattleScript_AllStatsUpRetOverload
+BattleScript_AllStatsUpAtkOverload::
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_ATK | BIT_DEF | BIT_SPEED | BIT_SPATK | BIT_SPDEF, 0
+	setstatchanger STAT_ATK, 2, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_AllStatsUpDefOverload
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_AllStatsUpDefOverload::
+	setstatchanger STAT_DEF, 2, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_AllStatsUpSpeedOverload
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_AllStatsUpSpeedOverload::
+	setstatchanger STAT_SPEED, 2, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_AllStatsUpSpAtkOverload
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_AllStatsUpSpAtkOverload::
+	setstatchanger STAT_SPATK, 2, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_AllStatsUpSpDefOverload
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_AllStatsUpSpDefOverload::
+	setstatchanger STAT_SPDEF, 2, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | STAT_CHANGE_ALLOW_PTR, BattleScript_AllStatsUpRetOverload
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_AllStatsUpRetOverload::
+	return
+
+
+BattleScript_EffectSilverlight::
+	jumpiftype BS_TARGET, TYPE_DARK, BattleScript_EffectSilverlight_Burned
+	goto BattleScript_EffectHit
+
+BattleScript_EffectSilverlight_Burned::
+	setmoveeffect MOVE_EFFECT_BURN
+	goto BattleScript_EffectHit
+	end
+
+BattleScript_EffectRandomStatDown::
+	setmoveeffect MOVE_EFFECT_RANDOM_STAT_DOWN
+	goto BattleScript_EffectHit
+
