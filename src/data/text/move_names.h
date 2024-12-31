@@ -872,6 +872,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_SEREN_SHINE]= _("Seren Shine"),
     [MOVE_GODLESS_REBEL] = _("Godless Rebel"),
     [MOVE_TZ_TOK_ZEK] = _("Tz-Tok-Zek"),
+    [MOVE_BAWK_BAWK] = _("Bawk Bawk!"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("Max Guard"),
     [MOVE_MAX_STRIKE] = _("Max Strike"),
@@ -1801,6 +1802,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_SEREN_SHINE]= _("Seren Shine"),
     [MOVE_GODLESS_REBEL] = _("Godlss Rebel"),
     [MOVE_TZ_TOK_ZEK] = _("Tz-Tok-Zek"),
+    [MOVE_BAWK_BAWK] = _("Bawk Bawk!"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("M-Guard"),
     [MOVE_MAX_STRIKE] = _("M-Strike"),

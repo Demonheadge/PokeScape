@@ -5359,10 +5359,58 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_TRAINER_SARIM_BAY_SAILOR_2),
     },
 
+    [TRAINER_A_TWISTED_SMILE] =
+    {
+        .trainerClass = TRAINER_CLASS_POKESCAPER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_twisted,
+        .trainerName = _("Twisted"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_TRAINER_A_TWISTED_SMILE),
+    },
+
+    
+    [TRAINER_MUDSKIPPERSOUND2_TRAINER_1] =
+    {
+        .trainerClass = TRAINER_CLASS_NOOB,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_bot_dragon_slayer,
+        .trainerName = _("T1nYP3eP33"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_MUDSKIPPERSOUND2_TRAINER_1),
+    },
+    [TRAINER_MUDSKIPPERSOUND2_TRAINER_2] =
+    {
+        .trainerClass = TRAINER_CLASS_SUMMONER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_summoner,
+        .trainerName = _("FamFeel3r"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_MUDSKIPPERSOUND2_TRAINER_2),
+    },
+    [TRAINER_MUDSKIPPERSOUND2_TRAINER_3] =
+    {
+        .trainerClass = TRAINER_CLASS_IRONMAN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_ironman,
+        .trainerName = _("IsleL0cked"),
+        .items = {},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
+        .party = TRAINER_PARTY(sParty_MUDSKIPPERSOUND2_TRAINER_3),
+    },
+
+
+
 /*
     #define TRAINER_HELLWIND                                445
 #define TRAINER_HYPER_STAN                              446
-#define TRAINER_LOPENDEBANK                             447
 #define TRAINER_CHASE                                   448
 #define TRAINER_ORCHY                                   449
 #define TRAINER_MRKALIUS                                450
@@ -5373,11 +5421,23 @@ const struct Trainer gTrainers[] = {
 #define TRAINER_SUDO_BASH                               455
 #define TRAINER_JITTERBUG                               456
 #define TRAINER_LUKEINLIGHT                             457
-#define TRAINER_A_TWISTED_SMILE                         458
-#define TRAINER_SANDWICH_LADY_1                         459
 */
 };
 //END OF TRAINERS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

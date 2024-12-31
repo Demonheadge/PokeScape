@@ -777,15 +777,14 @@ const u8 *const gItemEffectTable[ITEMS_COUNT] =
     //[ITEM_DIRE_HIT]           = gItemEffect_DireHit,
     //[ITEM_GUARD_SPEC]         = gItemEffect_GuardSpec,
 
-    [ITEM_TRIANGLE_SANDWICH]       = gItemEffect_TriangleSandwich,  //atk
-    [ITEM_SQUARE_SANDWICH]       = gItemEffect_SquareSandwich,    //def
-    [ITEM_BREAD_ROLL_SANDWICH]       = gItemEffect_BreadRollSandwich, //speed
-    [ITEM_MEAT_PIE_SANDWICH]       = gItemEffect_MeatPieSandwich, //spatk
-    [ITEM_DONUT_SANDWICH]       = gItemEffect_DonutSandwich, //spdef
-    [ITEM_BAGUETTE_SANDWICH]       = gItemEffect_BaguetteSandwich, //all
-    [ITEM_KEBAB_SANDWICH]       = gItemEffect_KebabSandwich, //acc
-
-
+    [ITEM_TRIANGLE_SANDWICH]        = gItemEffect_TriangleSandwich,  //atk
+    [ITEM_SQUARE_SANDWICH]          = gItemEffect_SquareSandwich,    //def
+    [ITEM_BREAD_ROLL_SANDWICH]      = gItemEffect_BreadRollSandwich, //speed
+    [ITEM_MEAT_PIE_SANDWICH]        = gItemEffect_MeatPieSandwich, //spatk
+    [ITEM_DONUT_SANDWICH]           = gItemEffect_DonutSandwich, //spdef
+    [ITEM_BAGUETTE_SANDWICH]        = gItemEffect_BaguetteSandwich, //all
+    [ITEM_KEBAB_SANDWICH]           = gItemEffect_KebabSandwich, //acc
+    [ITEM_CHOCOLATE_BAR_SANDWICH]   = gItemEffect_OranBerry, //10hp restore at half hp.
 
 };
 

@@ -595,7 +595,7 @@ NPC_WIZARDSTOWER_PulseCore::
 	applymovement 2, rinsit_1
 	waitmovement 0
 	namebox NPC_WIZARDSTOWER_Rinsit_Text_0
-	msgbox NPC_WIZARDSTOWER_PulseCore_Text_7
+	msgbox NPC_WIZARDSTOWER_PulseCore_Text_8
 	waitmessage
 	hidenamebox
 	release
@@ -623,11 +623,15 @@ NPC_WIZARDSTOWER_PulseCore_4:
 	waitmovement 0
 	msgbox NPC_WIZARDSTOWER_PulseCore_Text_5
 	hidenamebox
+	checkitem ITEM_PULSE_CORE, 1
+	compare VAR_RESULT, 0
+	goto_if_ne NPC_WIZARDSTOWER_PulseCore_9
 	giveitem ITEM_PULSE_CORE, 1
 	namebox NPC_WIZARDSTOWER_Rinsit_Text_0
-	msgbox NPC_WIZARDSTOWER_PulseCore_Text_6
+	msgbox NPC_WIZARDSTOWER_PulseCore_Text_7
 	waitmessage
 	hidenamebox
+NPC_WIZARDSTOWER_PulseCore_8:
 	setflag FLAG_RECEIVED_PULSECORE
 	release
 	end
@@ -635,6 +639,14 @@ NPC_WIZARDSTOWER_PulseCore_4:
 NPC_WIZARDSTOWER_PulseCore_5:
 	msgbox NPC_WIZARDSTOWER_PulseCore_Text_1
 	goto NPC_WIZARDSTOWER_PulseCore_4
+
+NPC_WIZARDSTOWER_PulseCore_9:
+	giveitem ITEM_PRISMATIC_STAR, 1
+	namebox NPC_WIZARDSTOWER_Rinsit_Text_0
+	msgbox NPC_WIZARDSTOWER_PulseCore_Text_6
+	waitmessage
+	hidenamebox
+	goto NPC_WIZARDSTOWER_PulseCore_8
 
 
 rinsit_1:
@@ -1109,18 +1121,25 @@ NPC_WIZARDSTOWER_PulseCore_Text_3:
 
 NPC_WIZARDSTOWER_PulseCore_Text_4:
 	.string "{PAUSE 15}…{PAUSE 15}…{PAUSE 15}…\p"
-	.string "Ah… this is a Pulse Core.$"
+	.string "Ah…ahaha…$"
 
 NPC_WIZARDSTOWER_PulseCore_Text_5:
 	.string "Here you can have it.$"
 
 NPC_WIZARDSTOWER_PulseCore_Text_6:
-	.string "A Pulse Core will help your monsters\n"
-	.string "gain a little bit of extra experience\l"
-	.string "after battles.\p"
+	.string "That is a Prismatic Star.\p"
+	.string "It will help your monsters gain a little\n"
+	.string "bit of boosted experience to the\l"
+	.string "monster holding it during battles.\p"
 	.string "I am sure you will find a use for it.$"
 
 NPC_WIZARDSTOWER_PulseCore_Text_7:
+	.string "That is a Pulse Core.\p"
+	.string "It will share a little bit of extra\n"
+	.string "experience after battles for your team.\p"
+	.string "I am sure you will find a use for it.$"
+
+NPC_WIZARDSTOWER_PulseCore_Text_8:
 	.string "Hey!\p"
 	.string "Don't touch my bag of rocks!\p"
 	.string "I mean Runes, not rocks!$"

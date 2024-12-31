@@ -4522,6 +4522,8 @@ extern const u32 gItemIcon_BookOfBandos[];
 extern const u32 gItemIconPalette_BookOfBandos[];
 extern const u32 gItemIcon_BookOfArmadyl[];
 extern const u32 gItemIconPalette_BookOfArmadyl[];
+extern const u32 gItemIcon_ChocolateBarSandwich[];
+extern const u32 gItemIconPalette_ChocolateBarSandwich[];
 
 // ernest quest
 extern const u32 gItemIcon_FishFood[];

@@ -89,13 +89,13 @@ script ITEM_LUMBRIDGESWAMPCAVE_ITEM_1
 
 script ITEM_LUMBRIDGESWAMPCAVE_ITEM_2
 {
-    finditem(ITEM_SPIRIT_SHARD)
+    finditem(ITEM_WATER_RUNE)
     end
 }
 
 script ITEM_LUMBRIDGESWAMPCAVE_ITEM_3
 {
-    finditem(ITEM_SPIRIT_SHARD)
+    finditem(ITEM_BOOK_OF_GUTHIX)
     end
 }
 

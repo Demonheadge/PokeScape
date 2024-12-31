@@ -2880,6 +2880,9 @@ const u32 gItemIconPalette_BookOfBandos[] = INCBIN_U32("graphics/items/pokescape
 const u32 gItemIcon_BookOfArmadyl[] = INCBIN_U32("graphics/items/pokescape_icons/book_armadyl.4bpp.lz");
 const u32 gItemIconPalette_BookOfArmadyl[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/book_armadyl.gbapal.lz");
 
+const u32 gItemIcon_ChocolateBarSandwich[] = INCBIN_U32("graphics/items/pokescape_icons/chocolate_bar_sandwich.4bpp.lz");
+const u32 gItemIconPalette_ChocolateBarSandwich[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/chocolate_bar_sandwich.gbapal.lz");
+
 
 
 

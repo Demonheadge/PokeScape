@@ -415,7 +415,7 @@ script ENCOUNTER_DOG {
 script ENCOUNTER_UNICORN {
     lock
     namebox ("UNICORN")
-	playmoncry(SPECIES_PONYTA, 0)
+	playmoncry(SPECIES_UNICORN_WHITE_FORM, 0)
 	msgbox(format("NEIIIGH!"))
 	waitmoncry
     hidenamebox

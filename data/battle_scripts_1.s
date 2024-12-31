@@ -11127,4 +11127,12 @@ BattleScript_TzhaarBattleLostEnd::
 	end2
 
 
-
+BattleScript_AvernicActivates::
+	pause 0x20
+	call BattleScript_AbilityPopUp
+	statbuffchange MOVE_EFFECT_AFFECTS_USER | MOVE_EFFECT_CERTAIN, NULL
+	setgraphicalstatchangevalues
+	playanimation BS_ABILITY_BATTLER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printstring STRINGID_ATTACKERSSTATFELL
+	waitmessage 0x40
+	return

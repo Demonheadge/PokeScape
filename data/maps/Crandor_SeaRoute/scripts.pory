@@ -25,6 +25,10 @@ script CRANDOR_SEAROUTE_STATE {
         setflag(FLAG_TEMP_11)
         setflag(FLAG_TEMP_13)
     }
+    if (flag(FLAG_SEA_TROLL) == TRUE) {
+        setflag(FLAG_TEMP_1)
+        removeobject(5)
+    }
     return
 }
 
@@ -441,3 +445,82 @@ script CRANDOR_EVENT_PORTSARIM_CABIN_BOY {
     end
 }
 
+script STRANDED_CABIN_BOY {
+    lock
+    faceplayer
+    namebox("Cabin Boy")
+    msgbox(format("{PLAYER}…\nIs… that you?\pI washed up here…\pPlease help me get home…"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script ITEM_CRANDOR_SEA_ROUTE_1
+{
+    finditem(ITEM_CHAOS_RUNE)
+    end
+}
+script ITEM_CRANDOR_SEA_ROUTE_2
+{
+    finditem(ITEM_CHAOS_RUNE)
+    end
+}
+
+
+script ENCOUNTER_SEA_TROLL
+{
+	lock
+    delay(32)
+    setvar (VAR_0x8004, 1  @ vertical pan)
+	setvar (VAR_0x8005, 1  @ horizontal pan)
+	setvar (VAR_0x8006, 8  @ num shakes)
+	setvar (VAR_0x8007, 3  @ shake delay)
+	special (ShakeCamera)
+    delay(60)
+    setvar (VAR_0x8004, 1  @ vertical pan)
+	setvar (VAR_0x8005, 1  @ horizontal pan)
+	setvar (VAR_0x8006, 8  @ num shakes)
+	setvar (VAR_0x8007, 3  @ shake delay)
+	special (ShakeCamera)
+    delay(60)
+    setvar (VAR_0x8004, 1  @ vertical pan)
+	setvar (VAR_0x8005, 1  @ horizontal pan)
+	setvar (VAR_0x8006, 8  @ num shakes)
+	setvar (VAR_0x8007, 3  @ shake delay)
+	special (ShakeCamera)
+    delay(60)
+    playse(SE_M_DIVE)
+    waitse
+    namebox ("Sea Troll")
+    playmoncry(SPECIES_SEA_TROLL_QUEEN, 0)
+    //applymovement(17, Movement_InteractFACELEFT)
+    //waitmovement(0)
+	msgbox(format("Skkrrraaaaawwooor!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(32)
+	setwildbattle (SPECIES_SEA_TROLL_QUEEN, 40, ITEM_NONE)
+    special(BattleSetup_StartLegendaryBattle)
+    waitstate
+    if (var(VAR_RESULT) == B_OUTCOME_WON) { //DEFEATED, Can still encounter again.
+        fadescreenswapbuffers(FADE_TO_BLACK)
+        removeobject (VAR_LAST_TALKED)
+        playse(SE_M_DIVE)
+        waitse
+        fadescreenswapbuffers(FADE_FROM_BLACK)
+        msgbox(format("The Sea Troll seems to have gone into hiding."))
+        closemessage
+	}
+	elif (var(VAR_RESULT) == B_OUTCOME_CAUGHT) { //CAPTURED! Cannot encounter again.
+        fadescreenswapbuffers(FADE_TO_BLACK)
+        setflag(FLAG_SEA_TROLL)
+        removeobject (VAR_LAST_TALKED)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
+        msgbox(format("After capturing the Sea Troll the ocean seems slightly more calm…"))
+        closemessage
+	}
+    release
+	end
+}

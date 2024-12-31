@@ -135,7 +135,27 @@ script Explorer_Jack_3 {
 //---------------------------------
 script CHEAT_ITEM_PULSE_CORE
 {
-    finditem(ITEM_PULSE_CORE)
+    checkitem(ITEM_PULSE_CORE, 1)
+    if (var(VAR_RESULT)) {
+        finditem(ITEM_PRISMATIC_STAR)
+        applymovement(1, Movement_InteractFACEDOWN)
+        waitmovement (0)
+        namebox ("Explorer Jack")
+        msgbox(format("A Prismatic Star will gain a little bit of boosted experience to the monster holding it during battles.\pGive it to a monster to hold."))
+        closemessage
+        hidenamebox
+    }
+    else {
+        finditem(ITEM_PULSE_CORE)
+        applymovement(1, Movement_InteractFACEDOWN)
+        waitmovement (0)
+        namebox ("Explorer Jack")
+        msgbox(format("A Pulse Core will help your monsters share a little bit of extra experience after battles.\pToggle it on in the key items."))
+        closemessage
+        hidenamebox
+    }
+    applymovement(1, Movement_InteractFACEUP)
+    waitmovement (0)
     end
 }
 
@@ -183,7 +203,7 @@ script ITEM_LUMBRIDGE_PRISMATIC_STAR
 
 script ITEM_ROUTE1_WATER_RUNE
 {
-    finditem(ITEM_WATER_RUNE)
+    finditem(ITEM_EARTH_RUNE)
     end
 }
 
@@ -201,7 +221,7 @@ script ITEM_ROUTE1_BREAD
 
 script ITEM_ROUTE1_CHOCOLATE_SUNDAY
 {
-    finditem(ITEM_CHOCOLATE_SUNDAY)
+    finditem(ITEM_DONUT_SANDWICH)
     end
 }
 
@@ -335,7 +355,7 @@ script ITEM_DRAYNORMANOR_TM55_HEX
 //WIZARDS TOWER
 script ITEM_WIZARDSTOWER_AIR_RUNE_2
 {
-    finditem(ITEM_AIR_RUNE)
+    finditem(ITEM_BODY_RUNE)
     end
 }
 

@@ -94,3 +94,46 @@ script BATTLE_SARIM_BAY_SAILOR_2
     release
     end
 }
+
+
+
+
+
+
+
+
+script TEST_POKESCAPE {
+    msgbox(format("Open the Debug menu in battle and change the abilities on the mon if needed."))
+    call(TEST_POKESCAPE_ABILITYS)
+    msgbox(format("Give hold items to the mons."))
+    call(TEST_POKESCAPE_ITEMS)
+    closemessage
+    release
+    end
+}
+
+script TEST_POKESCAPE_ABILITYS {
+    giveshinymon (SPECIES_MALEDICTUS, 50, ITEM_NONE, 0)
+    giveshinymon (SPECIES_BANDEAGLE, 50, ITEM_NONE, 0)
+    giveshinymon (SPECIES_SEREPEA, 50, ITEM_NONE, 0)
+    giveshinymon (SPECIES_FLESH_SPOILER_NAKED_FORM, 50, ITEM_NONE, 0)
+    giveshinymon (SPECIES_ARMAFALCON, 50, ITEM_NONE, 0)
+    giveshinymon (SPECIES_DEMON_TORMENTED_FORM, 50, ITEM_NONE, 0)
+    giveshinymon (SPECIES_SARACHNIS, 50, ITEM_NONE, 0)
+    return
+}
+
+script TEST_POKESCAPE_ITEMS {
+    giveitem(ITEM_DHAROKAXE, 1)
+    giveitem(ITEM_AHRIMSTAFF, 1)
+    giveitem(ITEM_KARILCROSSBOW, 1)
+    giveitem(ITEM_VERACFLAIL, 1)
+    giveitem(ITEM_TORAGHAMMER, 1)
+    giveitem(ITEM_GUTHANSPEAR, 1)
+    giveitem(ITEM_AKRISAEMACE, 1)
+    giveitem(ITEM_GODSWORD, 1)
+    giveitem(ITEM_SNELM, 1)
+    giveitem(ITEM_SPIRITSHIELD, 1)
+    giveitem(ITEM_BLUEBOATER, 1)
+    return
+}

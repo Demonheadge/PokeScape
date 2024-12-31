@@ -68,7 +68,7 @@
       "movement_range_y": 8,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "9",
-      "script": "BATTLE_ROUTE0_TRAINER_4",
+      "script": "BATTLE_SARIM_BAY_SAILOR_1",
       "flag": "0"
     },
     {
@@ -81,7 +81,7 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "6",
-      "script": "BATTLE_ROUTE0_TRAINER_4",
+      "script": "BATTLE_SARIM_BAY_PIRATE_3",
       "flag": "0"
     },
     {
@@ -94,7 +94,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "6",
-      "script": "BATTLE_ROUTE0_TRAINER_4",
+      "script": "BATTLE_SARIM_BAY_PIRATE_5",
       "flag": "0"
     },
     {
@@ -107,7 +107,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "6",
-      "script": "BATTLE_ROUTE0_TRAINER_4",
+      "script": "BATTLE_SARIM_BAY_PIRATE_4",
       "flag": "0"
     },
     {
@@ -120,7 +120,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "6",
-      "script": "BATTLE_ROUTE0_TRAINER_4",
+      "script": "BATTLE_SARIM_BAY_PIRATE_6",
       "flag": "0"
     },
     {
@@ -133,7 +133,7 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "6",
-      "script": "BATTLE_ROUTE0_TRAINER_4",
+      "script": "BATTLE_SARIM_BAY_PIRATE_2",
       "flag": "0"
     },
     {
@@ -146,7 +146,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "6",
-      "script": "BATTLE_ROUTE0_TRAINER_4",
+      "script": "BATTLE_SARIM_BAY_PIRATE_1",
       "flag": "0"
     },
     {
@@ -159,7 +159,7 @@
       "movement_range_y": 8,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "9",
-      "script": "BATTLE_ROUTE0_TRAINER_4",
+      "script": "BATTLE_SARIM_BAY_SAILOR_2",
       "flag": "0"
     },
     {
@@ -172,7 +172,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "6",
-      "script": "BATTLE_ROUTE0_TRAINER_4",
+      "script": "BATTLE_SARIM_BAY_PIRATE_7",
       "flag": "0"
     }
   ],

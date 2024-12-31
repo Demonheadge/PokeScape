@@ -89,6 +89,42 @@ BATTLE_SARIM_BAY_SAILOR_2::
 	end
 
 
+TEST_POKESCAPE::
+	msgbox TEST_POKESCAPE_Text_0
+	call TEST_POKESCAPE_ABILITYS
+	msgbox TEST_POKESCAPE_Text_1
+	call TEST_POKESCAPE_ITEMS
+	closemessage
+	release
+	end
+
+
+TEST_POKESCAPE_ABILITYS::
+	giveshinymon SPECIES_MALEDICTUS, 50, ITEM_NONE, 0
+	giveshinymon SPECIES_BANDEAGLE, 50, ITEM_NONE, 0
+	giveshinymon SPECIES_SEREPEA, 50, ITEM_NONE, 0
+	giveshinymon SPECIES_FLESH_SPOILER_NAKED_FORM, 50, ITEM_NONE, 0
+	giveshinymon SPECIES_ARMAFALCON, 50, ITEM_NONE, 0
+	giveshinymon SPECIES_DEMON_TORMENTED_FORM, 50, ITEM_NONE, 0
+	giveshinymon SPECIES_SARACHNIS, 50, ITEM_NONE, 0
+	return
+
+
+TEST_POKESCAPE_ITEMS::
+	giveitem ITEM_DHAROKAXE, 1
+	giveitem ITEM_AHRIMSTAFF, 1
+	giveitem ITEM_KARILCROSSBOW, 1
+	giveitem ITEM_VERACFLAIL, 1
+	giveitem ITEM_TORAGHAMMER, 1
+	giveitem ITEM_GUTHANSPEAR, 1
+	giveitem ITEM_AKRISAEMACE, 1
+	giveitem ITEM_GODSWORD, 1
+	giveitem ITEM_SNELM, 1
+	giveitem ITEM_SPIRITSHIELD, 1
+	giveitem ITEM_BLUEBOATER, 1
+	return
+
+
 BATTLE_SARIM_BAY_PIRATE_1_Text_0:
 	.string "I've sailed through some of the\n"
 	.string "harshest seas you can imagine.\p"
@@ -243,3 +279,11 @@ BATTLE_SARIM_BAY_SAILOR_2_Text_3:
 	.string "ocean instead.\p"
 	.string "If only more adventurers were able to\n"
 	.string "start sailing..$"
+
+TEST_POKESCAPE_Text_0:
+	.string "Open the Debug menu in battle and\n"
+	.string "change the abilities on the mon if\l"
+	.string "needed.$"
+
+TEST_POKESCAPE_Text_1:
+	.string "Give hold items to the mons.$"

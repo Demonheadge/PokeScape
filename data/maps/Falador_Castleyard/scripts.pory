@@ -79,6 +79,21 @@ script ITEM_FALADOR_COURTYARD_1
     finditem(ITEM_SPIRIT_CHARM)
     end
 }
+script ITEM_FALADOR_COURTYARD_2
+{
+    finditem(ITEM_BOOK_OF_SARADOMIN)
+    end
+}
+script ITEM_SHANTY_PASS_1
+{
+    finditem(ITEM_BOOK_OF_TUMEKEN)
+    end
+}
+script ITEM_ROUTE_7
+{
+    finditem(ITEM_BOOK_OF_ARMADYL)
+    end
+}
 
 //IGNORE
 script NPC_FALADORCASTLE_QUEST_PART_1

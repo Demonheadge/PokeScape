@@ -16231,4 +16231,23 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .split = SPLIT_PHYSICAL,
         .argument = MAX_EFFECT_BYPASS_PROTECT, //EFFECT TODO
     },
+
+
+//PokeScape Moves
+    [MOVE_BAWK_BAWK] =
+    {
+        .effect = EFFECT_DEFENSE_DOWN_2,
+        .power = 0,
+        .type = TYPE_FLYING,
+        .accuracy = 95,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_ATK_UP_1,
+        .ignoresSubstitute = B_UPDATED_MOVE_FLAGS >= GEN_6,
+        .magicCoatAffected = TRUE,
+        .soundMove = TRUE,
+    },
 };

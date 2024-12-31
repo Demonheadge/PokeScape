@@ -260,13 +260,15 @@ ENCOUNTER_SLIME::
 	goto_if_eq ENCOUNTER_SLIME_2
 	compare VAR_RESULT, MAP_KOUREND_CATACOMBS_3
 	goto_if_eq ENCOUNTER_SLIME_3
+	compare VAR_RESULT, MAP_LUMBRIDGE_SWAMP_CAVES
+	goto_if_eq ENCOUNTER_SLIME_4
 	setwildbattle SPECIES_CAVE_SLIME, 20, ITEM_NONE
 ENCOUNTER_SLIME_1:
 	dowildbattle
 	switch VAR_RESULT
-	case B_OUTCOME_WON, ENCOUNTER_SLIME_9
-	case B_OUTCOME_CAUGHT, ENCOUNTER_SLIME_10
-ENCOUNTER_SLIME_7:
+	case B_OUTCOME_WON, ENCOUNTER_SLIME_11
+	case B_OUTCOME_CAUGHT, ENCOUNTER_SLIME_12
+ENCOUNTER_SLIME_9:
 	release
 	end
 
@@ -278,17 +280,28 @@ ENCOUNTER_SLIME_3:
 	setwildbattle SPECIES_JELLY_NORMAL_FORM, 50, ITEM_NONE
 	goto ENCOUNTER_SLIME_1
 
-ENCOUNTER_SLIME_9:
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject VAR_LAST_TALKED
-	fadescreenswapbuffers FADE_FROM_BLACK
-	goto ENCOUNTER_SLIME_7
+ENCOUNTER_SLIME_4:
+	random 10
+	switch VAR_RESULT
+	case 9, ENCOUNTER_SLIME_14
+	setwildbattle SPECIES_CAVE_SLIME, 10, ITEM_NONE
+	goto ENCOUNTER_SLIME_1
 
-ENCOUNTER_SLIME_10:
+ENCOUNTER_SLIME_11:
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
 	fadescreenswapbuffers FADE_FROM_BLACK
-	goto ENCOUNTER_SLIME_7
+	goto ENCOUNTER_SLIME_9
+
+ENCOUNTER_SLIME_12:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_SLIME_9
+
+ENCOUNTER_SLIME_14:
+	setwildbattle SPECIES_SLIME_LILGLOOP, 10, ITEM_NONE
+	goto ENCOUNTER_SLIME_1
 
 
 ENCOUNTER_ROCKCRAB::
@@ -631,6 +644,38 @@ ENCOUNTER_SNOW_IMP_4:
 	goto ENCOUNTER_SNOW_IMP_1
 
 
+ENCOUNTER_UNICORN_BARB::
+	lock
+	faceplayer
+	namebox ENCOUNTER_UNICORN_BARB_Text_0
+	playmoncry SPECIES_UNICORN_WHITE_FORM, 0
+	msgbox ENCOUNTER_UNICORN_BARB_Text_1
+	waitmoncry
+	hidenamebox
+	closemessage
+	delay 1
+	setwildbattle SPECIES_UNICORN_WHITE_FORM, 30, ITEM_NONE
+	dowildbattle
+	switch VAR_RESULT
+	case B_OUTCOME_WON, ENCOUNTER_UNICORN_BARB_3
+	case B_OUTCOME_CAUGHT, ENCOUNTER_UNICORN_BARB_4
+ENCOUNTER_UNICORN_BARB_1:
+	release
+	end
+
+ENCOUNTER_UNICORN_BARB_3:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_UNICORN_BARB_1
+
+ENCOUNTER_UNICORN_BARB_4:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_UNICORN_BARB_1
+
+
 SKOTIZO_TRIGGER_Text_0:
 	.string "The Dark Totem in your backpack starts\n"
 	.string "to react to the crystal.\p"
@@ -717,3 +762,9 @@ ENCOUNTER_SNOW_IMP_Text_0:
 
 ENCOUNTER_SNOW_IMP_Text_1:
 	.string "Sneez kek Kek!$"
+
+ENCOUNTER_UNICORN_BARB_Text_0:
+	.string "UNICORN$"
+
+ENCOUNTER_UNICORN_BARB_Text_1:
+	.string "NeEeehHHaAyY!$"

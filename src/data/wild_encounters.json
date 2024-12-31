@@ -12958,28 +12958,28 @@
             "encounter_rate": 80,
             "mons": [
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_MACKEREL"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_TARPON"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_BASS"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_BELTFISH"
               },
               {
-                "min_level": 35,
-                "max_level": 40,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_JELLYFISH"
               }
             ]
@@ -23698,63 +23698,63 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 32,
-                "max_level": 39,
+                "min_level": 29,
+                "max_level": 36,
                 "species": "SPECIES_IMP"
               },
               {
-                "min_level": 32,
-                "max_level": 39,
+                "min_level": 29,
+                "max_level": 36,
                 "species": "SPECIES_GIANT_BAT"
               },
               {
-                "min_level": 32,
-                "max_level": 39,
+                "min_level": 29,
+                "max_level": 36,
                 "species": "SPECIES_GIANT_BAT"
               },
               {
-                "min_level": 32,
-                "max_level": 39,
+                "min_level": 29,
+                "max_level": 36,
                 "species": "SPECIES_DEMON_LESSER_TONGUE_FORM"
               },
               {
-                "min_level": 32,
-                "max_level": 39,
+                "min_level": 29,
+                "max_level": 36,
                 "species": "SPECIES_DEMON_LESSER_OSRS_FORM"
               },
               {
-                "min_level": 32,
-                "max_level": 39,
+                "min_level": 29,
+                "max_level": 36,
                 "species": "SPECIES_DEMON_LESSER_OSRS_FORM"
               },
               {
-                "min_level": 32,
-                "max_level": 39,
+                "min_level": 29,
+                "max_level": 36,
                 "species": "SPECIES_BAT"
               },
               {
-                "min_level": 32,
-                "max_level": 39,
+                "min_level": 29,
+                "max_level": 36,
                 "species": "SPECIES_DEMON_LESSER_OSRS_FORM"
               },
               {
-                "min_level": 32,
-                "max_level": 39,
+                "min_level": 29,
+                "max_level": 36,
                 "species": "SPECIES_DEMON_LESSER_TONGUE_FORM"
               },
               {
-                "min_level": 32,
-                "max_level": 39,
+                "min_level": 29,
+                "max_level": 36,
                 "species": "SPECIES_DEMON_LESSER_TONGUE_FORM"
               },
               {
-                "min_level": 32,
-                "max_level": 39,
+                "min_level": 29,
+                "max_level": 36,
                 "species": "SPECIES_GOLEM_TITAN"
               },
               {
-                "min_level": 32,
-                "max_level": 39,
+                "min_level": 29,
+                "max_level": 36,
                 "species": "SPECIES_REBORN_MAGE"
               }
             ]

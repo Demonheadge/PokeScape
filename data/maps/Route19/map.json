@@ -98,17 +98,17 @@
     },
     {
       "x": 16,
-      "y": 8,
+      "y": 9,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE19_COOKING_GUILD",
+      "dest_map": "MAP_COOKING_GUILD",
       "dest_warp_id": "0"
     },
     {
       "x": 17,
-      "y": 8,
+      "y": 9,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE19_COOKING_GUILD",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_COOKING_GUILD",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
@@ -125,16 +125,16 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 16,
-      "y": 9,
+      "x": 15,
+      "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LOCKED_DOOR"
     },
     {
       "type": "sign",
-      "x": 17,
-      "y": 9,
+      "x": 18,
+      "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LOCKED_DOOR"

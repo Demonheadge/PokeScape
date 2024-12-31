@@ -22,16 +22,18 @@ CHAOS_ELEMENTAL_MURAL_CRANDOR::
 
 KaramjaVolcano_B3F_STATE::
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 140
-	goto_if_eq KaramjaVolcano_B3F_STATE_1
+	goto_if_eq KaramjaVolcano_B3F_STATE_2
 	setflag FLAG_TEMP_1F
 	setflag FLAG_TEMP_1E
 	setflag FLAG_TEMP_1D
 	setflag FLAG_TEMP_1C
+KaramjaVolcano_B3F_STATE_1:
+	goto_if_set FLAG_ELVARG, KaramjaVolcano_B3F_STATE_5
 	return
 
-KaramjaVolcano_B3F_STATE_1:
+KaramjaVolcano_B3F_STATE_2:
 	setvar VAR_TEMP_F, 1
-	setflag FLAG_ELVARG
+	setflag FLAG_TEMP_8
 	setflag FLAG_TEMP_1
 	setflag FLAG_TEMP_2
 	setflag FLAG_TEMP_3
@@ -48,6 +50,11 @@ KaramjaVolcano_B3F_STATE_1:
 	setflag FLAG_TEMP_C
 	setflag FLAG_TEMP_1D
 	setflag FLAG_TEMP_1B
+	goto KaramjaVolcano_B3F_STATE_1
+
+KaramjaVolcano_B3F_STATE_5:
+	removeobject 17
+	setflag FLAG_TEMP_8
 	return
 
 
@@ -65,7 +72,7 @@ KaramjaVolcano_STATE3::
 	return
 
 KaramjaVolcano_STATE3_2:
-	setflag FLAG_ELVARG
+	setflag FLAG_TEMP_8
 	setflag FLAG_TEMP_4
 	setflag FLAG_TEMP_5
 	removeobject 15
@@ -312,7 +319,7 @@ NPC_KaramjaVolcano_HAM_EVENT1::
 	removeobject 16
 	hidenamebox
 	closemessage
-	clearflag FLAG_ELVARG
+	clearflag FLAG_TEMP_8
 	addobject 17
 	fadescreenswapbuffers FADE_FROM_BLACK
 	delay 20
@@ -878,7 +885,7 @@ Crandor_Event_Volcano_1:
 	setvar VAR_0x8007, 2
 	special ShakeCamera
 	delay 40
-	clearflag FLAG_ELVARG
+	clearflag FLAG_TEMP_8
 	addobject 17
 	fadescreen FADE_FROM_BLACK
 	playmoncry SPECIES_ELVARG, 2
