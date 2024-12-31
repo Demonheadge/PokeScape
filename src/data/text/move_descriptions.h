@@ -494,7 +494,7 @@ static const u8 sBideDescription[] = _(
 
 static const u8 sMetronomeDescription[] = _(
     "Waggles a finger to use any\n"
-    "Pokémon move at random.");
+    "Monster's move at random.");
 
 static const u8 sMirrorMoveDescription[] = _(
     "Counters the foe's attack\n"
@@ -801,7 +801,7 @@ static const u8 sDestinyBondDescription[] = _(
     "is also made to faint.");
 
 static const u8 sPerishSongDescription[] = _(
-    "Any Pokémon hearing this\n"
+    "Any Monster hearing this\n"
     "song faints in 3 turns.");
 
 static const u8 sIcyWindDescription[] = _(
@@ -1029,7 +1029,7 @@ static const u8 sWhirlpoolDescription[] = _(
     "a whirlpool for "BINDING_TURNS" turns.");
 
 static const u8 sBeatUpDescription[] = _(
-    "Summons party Pokémon to\n"
+    "Summons party Monsters to\n"
     "join in the attack.");
 
 static const u8 sFakeOutDescription[] = _(
@@ -1201,7 +1201,7 @@ static const u8 sArmThrustDescription[] = _(
     "strike the foe 2 to 5 times.");
 
 static const u8 sCamouflageDescription[] = _(
-    "Alters the Pokémon's type\n"
+    "Alters the Monster's type\n"
     "depending on the location.");
 
 static const u8 sTailGlowDescription[] = _(
@@ -1221,7 +1221,7 @@ static const u8 sFeatherDanceDescription[] = _(
     "to sharply reduce Attack.");
 
 static const u8 sTeeterDanceDescription[] = _(
-    "Confuses all Pokémon on\n"
+    "Confuses all Monsters on\n"
     "the scene.");
 
 static const u8 sBlazeKickDescription[] = _(
@@ -1749,7 +1749,7 @@ static const u8 sDefogDescription[] = _(
     "lowers evasion.");
 
 static const u8 sTrickRoomDescription[] = _(
-    "Slower Pokémon get to move\n"
+    "Slower Monsters get to move\n"
     "first for 5 turns.");
 
 static const u8 sDracoMeteorDescription[] = _(
@@ -2214,7 +2214,7 @@ static const u8 sBelchDescription[] = _(
 
 static const u8 sRototillerDescription[] = _(
     "Ups the Attack and Sp. Atk\n"
-    "of Grass-type Pokémon.");
+    "of Grass-type Monsters.");
 
 static const u8 sStickyWebDescription[] = _(
     "Weaves a sticky net that\n"
@@ -2237,7 +2237,7 @@ static const u8 sIonDelugeDescription[] = _(
     "moves with charged atoms.");
 
 static const u8 sParabolicChargeDescription[] = _(
-    "Damages adjacent Pokémon and\n"
+    "Damages adjacent Monsters and\n"
     "heals up by half of it.");
 
 static const u8 sForestsCurseDescription[] = _(
@@ -2274,7 +2274,7 @@ static const u8 sCraftyShieldDescription[] = _(
 
 static const u8 sFlowerShieldDescription[] = _(
     "Raises the Defense of\n"
-    "Grass-type Pokémon.");
+    "Grass-type Monsters.");
 
 static const u8 sGrassyTerrainDescription[] = _(
     "The ground turns to grass\n"
@@ -2346,7 +2346,7 @@ static const u8 sSpikyShieldDescription[] = _(
 
 static const u8 sAromaticMistDescription[] = _(
     "Raises the Sp. Def of a\n"
-    "partner Pokémon.");
+    "partner Monster.");
 
 static const u8 sEerieImpulseDescription[] = _(
     "Exposes the foe to a pulse\n"
@@ -2486,7 +2486,7 @@ static const u8 sLeafageDescription[] = _(
 
 static const u8 sSpotlightDescription[] = _(
     "Makes the foe attack the\n"
-    "spotlighted Pokémon.");
+    "spotlighted Monster.");
 
 static const u8 sToxicThreadDescription[] = _(
     "Attacks with a thread that\n"
@@ -2746,8 +2746,8 @@ static const u8 sDragonDartsDescription[] = _(
     "targets are hit once each.");
 
 static const u8 sTeatimeDescription[] = _(
-    "All Pokémon have teatime\n"
-    "and eat their Berries.");
+    "All Monsters have teatime\n"
+    "and eat their Goodies.");
 
 static const u8 sOctolockDescription[] = _(
     "Traps the foe to lower Def\n"
@@ -2907,7 +2907,7 @@ static const u8 sPoltergeistDescription[] = _(
 
 static const u8 sCorrosiveGasDescription[] = _(
     "Highly acidic gas melts items\n"
-    "held by surrounding Pokémon.");
+    "held by surrounding Monsters.");
 
 static const u8 sCoachingDescription[] = _(
     "Properly coaches allies to\n"
@@ -2915,7 +2915,7 @@ static const u8 sCoachingDescription[] = _(
 
 static const u8 sFlipTurnDescription[] = _(
     "Attacks and rushes back to\n"
-    "switch with a party Pokémon.");
+    "switch with a party Monster.");
 
 static const u8 sTripleAxelDescription[] = _(
     "A 3-kick attack that gets\n"
@@ -3425,6 +3425,169 @@ static const u8 sBwakBwakDescription[] = _(
     "Lowers the target's Defense\n"
     "by 2 stages.");
 
+static const u8 sLiquefyDescription[] = _(
+    "A strike of water that raises\n"
+    "the user's Attack.");
+
+static const u8 sConfuseDescription[] = _(
+    "A basic spell that can\n"
+    "confuse the foe.");
+
+static const u8 sAnalyseDescription[] = _(
+    "Magically negate a foe's\n"
+    "effort to raise their evasion.");
+
+static const u8 sAlchemyDescription[] = _(
+    "Harness the power of magic to\n"
+    "obtain money after a battle.");
+
+static const u8 sSnareDescription[] = _(
+    "A weak spell that binds a foe\n"
+    "for "BINDING_TURNS" turns.");
+
+static const u8 sEntangleDescription[] = _(
+    "A strong spell that binds a foe\n"
+    "for "BINDING_TURNS" turns.");
+
+static const u8 sPunctureDescription[] = _(
+    "Attack twice in quick succession\n"
+    "with a chance to poison the foe.");
+
+static const u8 sIceRushDescription[] = _(
+    "A weak ice spell that has a\n"
+    "chance to freeze the target.");
+
+static const u8 sIceBurstDescription[] = _(
+    "A weak ice spell that hits both\n"
+    "enemies with a chance to freeze.");
+
+static const u8 sIceBlitzDescription[] = _(
+    "A strong ice spell that has a\n"
+    "chance to freeze the target.");
+
+static const u8 sBloodRushDescription[] = _(
+    "A weak blood spell that has a\n"
+    "chance to restore health.");
+
+static const u8 sBloodBurstDescription[] = _(
+    "A weak blood spell that hits both\n"
+    "enemies with a chance restore health.");
+
+static const u8 sBloodBlitzDescription[] = _(
+    "A strong blood spell that has a\n"
+    "chance to restore health.");
+
+static const u8 sSmokeRushDescription[] = _(
+    "A weak smoke spell that has a\n"
+    "chance to lower accuracy.");
+
+static const u8 sSmokeBurstDescription[] = _(
+    "A weak smoke spell that hits both\n"
+    "enemies with a chance to lower accuracy.");
+
+static const u8 sSmokeBlitzDescription[] = _(
+    "A strong smoke spell that has a\n"
+    "chance to lower accuracy.");
+
+static const u8 sShadowRushDescription[] = _(
+    "A weak shadow spell that has a\n"
+    "chance to raise evasion.");
+
+static const u8 sShadowBurstDescription[] = _(
+    "A weak shadow spell that hits both\n"
+    "enemies with a chance to raise evasion.");
+
+static const u8 sShadowBlitzDescription[] = _(
+    "A strong shadow spell that has a\n"
+    "chance to raise evasion.");
+
+static const u8 sCureGroupDescription[] = _(
+    "A spell that cures the user and all\n"
+    "party monsters of any ailments.");
+
+static const u8 sSmiteDescription[] = _(
+    "Uses the power of prayer to reduce the\n"
+    "PP of the move the enemy used last.");
+
+static const u8 sRetributionDescription[] = _(
+    "If the user faints, the divine power of\n"
+    "prayer makes the foe faint too.");
+
+static const u8 sMischiefDescription[] = _(
+    "Using their cunning, the impling steals\n"
+    "the foe's held item.");
+
+static const u8 sRodentBiteDescription[] = _(
+    "Viciously bite the foe. If they are holding a\n"
+    "Goodie, the user eats it and gains its effect.");
+
+static const u8 sCallToArmsDescription[] = _(
+    "Attack the foe then escape through the\n"
+    "Void and swap out with another Monster.");
+
+static const u8 sPetrifyingGazeDescription[] = _(
+    "The cockatrice's piercing gaze damages\n"
+    "and harshly lowers the speed of all foes.");
+
+static const u8 sWindStrikeDescription[] = _(
+    "The weakest of all the air spells.\n"
+    "Powered up when not very effective.");
+
+static const u8 sWindBlastDescription[] = _(
+    "A moderately strong air spell.\n"
+    "Powered up when not very effective.");
+
+static const u8 sWindWaveDescription[] = _(
+    "A fairly strong air spell.\n"
+    "Powered up when not very effective.");
+
+static const u8 sWindSurgeDescription[] = _(
+    "The strongest of all the air spells.\n"
+    "Powered up when not very effective.");
+
+static const u8 sCrumbleUndeadDescription[] = _(
+    "This spell is incredibly powerful, but\n"
+    "only affects GHOST type Monsters.");
+
+static const u8 sCurePlantDescription[] = _(
+    "Restores half a GRASS type Monsters HP or\n"
+    "fully heals the HP of any PLANT Monsters .");
+
+static const u8 sBaconBlastDescription[] = _(
+    "Fires deadly bacon at an enemy Monster.\n"
+    "Has a chance to burn or cause sleep.");
+
+static const u8 sTitansConstitutionDescription[] = _(
+    "Sharply raises the users Defence and\n"
+    "increases their Special Defence stats.");
+
+static const u8 sConspiracyDescription[] = _(
+    "Sharply raises the users Special Attack\n"
+    "and increases their Speed stats.");
+
+static const u8 sCommitteeStrikeDescription[] = _(
+    "If this faints a Monster, raise the users\n"
+    "Defence and Special Defence stats.");
+
+static const u8 sCarapaceHardenDescription[] = _(
+    "The user hardens their shell to increase\n"
+    "their Defence stat and critical hit chance.");
+
+static const u8 sSharkbrewDescription[] = _(
+    "Restore up to three-quarters of your HP\n"
+    "at the cost of lowering your Attack stat.");
+
+static const u8 sExcaliburDescription[] = _(
+    "For Camelot! Increase your Special Defence stat\n"
+    "then restore some HP on the next turn.");
+
+static const u8 sSnelmShowoffDescription[] = _(
+    "Increase your Special Defence stat\n"
+    "and lower the enemy Monsters accuracy.");
+
+static const u8 sEnergyDrainDescription[] = _(
+    "Lowers the targets Speed stat and\n"
+    "prevents them from escaping or switching.");
 
 #undef BINDING_TURNS
 
@@ -4304,4 +4467,45 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_GODLESS_REBEL - 1] = sGodlessRebelDescription,
     [MOVE_TZ_TOK_ZEK - 1] = sTzTokRekDescription,
     [MOVE_BAWK_BAWK - 1] = sBwakBwakDescription,
+    [MOVE_LIQUEFY - 1] = sLiquefyDescription,
+    [MOVE_CONFUSE - 1] = sConfuseDescription,
+    [MOVE_ANALYSE - 1] = sAnalyseDescription,
+    [MOVE_ALCHEMY - 1] = sAlchemyDescription,
+    [MOVE_SNARE - 1] = sSnareDescription,
+    [MOVE_ENTANGLE - 1] = sEntangleDescription,
+    [MOVE_PUNCTURE - 1] = sPunctureDescription,
+    [MOVE_ICE_RUSH - 1] = sIceRushDescription,
+    [MOVE_ICE_BURST - 1] = sIceBurstDescription,
+    [MOVE_ICE_BLITZ - 1] = sIceBlitzDescription,
+    [MOVE_BLOOD_RUSH - 1] = sBloodRushDescription,
+    [MOVE_BLOOD_BURST - 1] = sBloodBurstDescription,
+    [MOVE_BLOOD_BLITZ - 1] = sBloodBlitzDescription,
+    [MOVE_SMOKE_RUSH - 1] = sSmokeRushDescription,
+    [MOVE_SMOKE_BURST - 1] = sSmokeBurstDescription,
+    [MOVE_SMOKE_BLITZ - 1] = sSmokeBlitzDescription,
+    [MOVE_SHADOW_RUSH - 1] = sShadowRushDescription,
+    [MOVE_SHADOW_BURST - 1] = sShadowBurstDescription,
+    [MOVE_SHADOW_BLITZ - 1] = sShadowBlitzDescription,
+    [MOVE_CURE_GROUP - 1] = sCureGroupDescription,
+    [MOVE_SMITE - 1] = sSmiteDescription,
+    [MOVE_RETRIBUTION - 1] = sRetributionDescription,
+    [MOVE_MISCHIEF - 1] = sMischiefDescription,
+    [MOVE_RODENT_BITE - 1] = sRodentBiteDescription,
+    [MOVE_CALL_TO_ARMS - 1] = sCallToArmsDescription,
+    [MOVE_PETRIFYING_GAZE - 1] = sPetrifyingGazeDescription,
+    [MOVE_WIND_STRIKE - 1] = sWindStrikeDescription,
+    [MOVE_WIND_BLAST - 1] = sWindBlastDescription,
+    [MOVE_WIND_WAVE - 1] = sWindWaveDescription,
+    [MOVE_WIND_SURGE - 1] = sWindSurgeDescription,
+    [MOVE_CRUMBLE_UNDEAD - 1] = sCrumbleUndeadDescription,
+    [MOVE_CURE_PLANT - 1] = sCurePlantDescription,
+    [MOVE_BACON_BLAST - 1] = sBaconBlastDescription,
+    [MOVE_TITANS_CONSTITUTION - 1] = sTitansConstitutionDescription,
+    [MOVE_CONSPIRACY - 1] = sConspiracyDescription,
+    [MOVE_COMMITTEE_STRIKE - 1] = sCommitteeStrikeDescription,
+    [MOVE_CARAPACE_HARDEN - 1] = sCarapaceHardenDescription,
+    [MOVE_SHARKBREW - 1] = sSharkbrewDescription,
+    [MOVE_EXCALIBUR - 1] = sExcaliburDescription,
+    [MOVE_SNELM_SHOWOFF - 1] = sSnelmShowoffDescription,
+    [MOVE_ENERGY_DRAIN - 1] = sEnergyDrainDescription,
 };

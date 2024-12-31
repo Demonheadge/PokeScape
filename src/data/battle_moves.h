@@ -14829,7 +14829,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .power = 90,
         .type = TYPE_ICE,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 10,
         .secondaryEffectChance = 30,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
@@ -14844,14 +14844,15 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .power = 90,
         .type = TYPE_BUG,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 10,
         .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
+        .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .split = SPLIT_SPECIAL,
         .sheerForceBoost = TRUE,
         .argument = 75,
         .zMoveEffect = 0
+        .healBlockBanned = B_HEAL_BLOCKING >= GEN_6,
     },
 
     [MOVE_VENGEANCE] = 
@@ -15035,6 +15036,643 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .makesContact = TRUE,
         .zMoveEffect = Z_EFFECT_NONE,
     },
+
+    [MOVE_LIQUEFY] =
+    {
+        .effect = EFFECT_ATTACK_UP_HIT,
+        .power = 40,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
+        .slicingMove = TRUE,
+        .sheerForceBoost = TRUE,
+    },
+
+    [MOVE_CONFUSE] =
+    {
+        .effect = EFFECT_CONFUSE,
+        .power = 0,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
+        .magicCoatAffected = TRUE,
+    },
+
+    [MOVE_ANALYSE] =
+    {
+        #if B_UPDATED_MOVE_DATA >= GEN_5
+            .accuracy = 0,
+        #else
+            .accuracy = 100,
+        #endif
+        .effect = EFFECT_FORESIGHT,
+        .power = 0,
+        .type = TYPE_PSYCHIC,
+        .pp = 40,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_BOOST_CRITS,
+        .magicCoatAffected = B_UPDATED_MOVE_FLAGS >= GEN_5,
+        .ignoresSubstitute = TRUE,
+    },
+
+    [MOVE_ALCHEMY] =
+    {
+        .effect = EFFECT_PAY_DAY,
+        .power = 0,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 30,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_SNARE] =
+    {
+        .accuracy = 90,
+        .effect = EFFECT_TRAP,
+        .power = 35,
+        .type = TYPE_GRASS,
+        .pp = 10,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
+        .ignoresKingsRock = B_UPDATED_MOVE_FLAGS < GEN_3,
+    },
+
+    [MOVE_ENTANGLE] =
+    {
+        .accuracy = 90,
+        .effect = EFFECT_TRAP,
+        .power = 75,
+        .type = TYPE_GRASS,
+        .pp = 10,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
+        .ignoresKingsRock = B_UPDATED_MOVE_FLAGS < GEN_3,
+    },
+
+    [MOVE_PUNCTURE] =
+    {
+        .effect = EFFECT_POISON_HIT,
+        .power = 50,
+        .type = TYPE_DRAGON,
+        .accuracy = 95,
+        .pp = 10,
+        .secondaryEffectChance = 30,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
+        .strikeCount = 2,
+    },
+
+    [MOVE_ICE_RUSH] =
+    {
+        .effect = EFFECT_FREEZE_HIT,
+        .power = 40,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .sheerForceBoost = TRUE,
+    },
+
+    [MOVE_ICE_BURST] =
+    {
+        .effect = EFFECT_FREEZE_HIT,
+        .power = 35,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .sheerForceBoost = TRUE,
+    },
+
+    [MOVE_ICE_BLITZ] =
+    {
+        .effect = EFFECT_FREEZE_HIT,
+        .power = 95,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 30,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .sheerForceBoost = TRUE,
+    },
+
+    [MOVE_BLOOD_RUSH] =
+    {
+        .effect = EFFECT_ABSORB,
+        .power = 40,
+        .type = TYPE_BUG,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .sheerForceBoost = TRUE,
+	    .healBlockBanned = B_HEAL_BLOCKING >= GEN_6,
+    },
+
+    [MOVE_BLOOD_BURST] =
+    {
+        .effect = EFFECT_ABSORB,
+	    .power = 35,
+        .type = TYPE_BUG,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .sheerForceBoost = TRUE,
+	    .healBlockBanned = B_HEAL_BLOCKING >= GEN_6,
+    },
+
+    [MOVE_BLOOD_BLITZ] =
+    {
+        .effect = EFFECT_ABSORB,
+        .power = 95,
+        .type = TYPE_BUG,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 30,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .sheerForceBoost = TRUE,
+	    .healBlockBanned = B_HEAL_BLOCKING >= GEN_6,
+    },
+
+    [MOVE_SMOKE_RUSH] =
+    {
+        .effect = EFFECT_ACCURACY_DOWN_HIT,
+        .power = 40,
+        .type = TYPE_POISON,
+        .pp = 15,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .sheerForceBoost = TRUE,
+    },
+
+    [MOVE_SMOKE_BURST] =
+    {
+        .effect = EFFECT_ACCURACY_DOWN_HIT,
+	    .power = 35,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .sheerForceBoost = TRUE,
+    },
+
+    [MOVE_SMOKE_BLITZ] =
+    {
+        .effect = EFFECT_ACCURACY_DOWN_HIT,
+        .power = 95,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 30,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .sheerForceBoost = TRUE,
+    },
+
+    [MOVE_SHADOW_RUSH] =
+    {
+        .effect = EFFECT_EVASION_UP_HIT,
+        .power = 40,
+        .type = TYPE_GHOST,
+        .pp = 15,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .sheerForceBoost = TRUE,
+    },
+
+    [MOVE_SHADOW_BURST] =
+    {
+        .effect = EFFECT_EVASION_UP_HIT,
+	    .power = 35,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 10,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .sheerForceBoost = TRUE,
+    },
+
+    [MOVE_SHADOW_BLITZ] =
+    {
+        .effect = EFFECT_EVASION_UP_HIT,
+        .power = 95,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 30,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .sheerForceBoost = TRUE,
+    },
+
+    [MOVE_CURE_GROUP] =
+    {
+        .effect = EFFECT_HEAL_BELL,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER | MOVE_TARGET_ALLY,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_RECOVER_HP,
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .ignoresSubstitute = TRUE,
+        .mirrorMoveBanned = TRUE,
+    },
+
+    [MOVE_SMITE] =
+    {
+        .effect = EFFECT_SPITE,
+        .power = 0,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 90,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_RECOVER_HP,
+        .magicCoatAffected = B_UPDATED_MOVE_FLAGS >= GEN_5,
+        .ignoresSubstitute = TRUE,
+        .ignoresProtect = (B_UPDATED_MOVE_FLAGS >= GEN_6) || (B_UPDATED_MOVE_FLAGS <= GEN_3),
+    },
+
+    [MOVE_RETRIBUTION] =
+    {
+        .effect = EFFECT_DESTINY_BOND,
+        .power = 0,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 0,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_FOLLOW_ME,
+        .ignoresProtect = TRUE,
+        .ignoresSubstitute = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+    },
+
+    [MOVE_MISCHIEF] =
+    {
+        .effect = EFFECT_THIEF,
+        .power = 80
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 15
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
+        .ignoresKingsRock = B_UPDATED_MOVE_FLAGS < GEN_5, // && B_UPDATED_MOVE_FLAGS > GEN_2
+        .meFirstBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+    },
+
+    [MOVE_RODENT_BITE] =
+    {
+        .effect = EFFECT_BUG_BITE,
+        .power = 100,
+        .type = TYPE_DARK,
+        .accuracy = 90,
+        .pp = 10,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .makesContact = TRUE,
+        .bitingMove = TRUE,
+    },
+
+    [MOVE_CALL_TO_ARMS] =
+    {
+        .effect = EFFECT_HIT_ESCAPE,
+        .power = 60,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_PETRIFYING_GAZE] =
+    {
+        .effect = EFFECT_SPEED_DOWN_2_HIT, //I know EFFECT_SPEED_DOWN_2 works but am unsure whether this works in conjunction with HIT?
+	    .power = 60,
+        .type = TYPE_ROCK,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .sheerForceBoost = TRUE,
+    },
+
+    [MOVE_WIND_STRIKE] =
+    {
+        .effect = EFFECT_HIT, //NEEDS IMPLEMENTING
+	    .power = 35,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 30,
+        .secondaryEffectChance = 0, //NEEDS UPDATING WHEN EFFECT ADDED
+        .target = MOVE_TARGET_SELECTED
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .windMove = TRUE,
+    },
+
+    [MOVE_WIND_BLAST] =
+    {
+        .effect = EFFECT_HIT, //NEEDS IMPLEMENTING
+	    .power = 55,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 0, //NEEDS UPDATING WHEN EFFECT ADDED
+        .target = MOVE_TARGET_SELECTED
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .windMove = TRUE,
+    },
+
+    [MOVE_WIND_WAVE] =
+    {
+        .effect = EFFECT_HIT, //NEEDS IMPLEMENTING
+	    .power = 90,
+        .type = TYPE_FLYING,
+        .accuracy = 95,
+        .pp = 10,
+        .secondaryEffectChance = 0, //NEEDS UPDATING WHEN EFFECT ADDED
+        .target = MOVE_TARGET_SELECTED
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .windMove = TRUE,
+    },
+
+    [MOVE_WIND_SURGE] =
+    {
+        .effect = EFFECT_HIT, //NEEDS IMPLEMENTING
+	    .power = 110,
+        .type = TYPE_FLYING,
+        .accuracy = 80,
+        .pp = 5,
+        .secondaryEffectChance = 0, //NEEDS UPDATING WHEN EFFECT ADDED
+        .target = MOVE_TARGET_SELECTED
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .windMove = TRUE,
+    },
+
+    [MOVE_CRUMBLE_UNDEAD] =
+    {
+        .effect = EFFECT_HIT, //NEEDS IMPLEMENTING
+	    .power = 200,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 0, //NEEDS UPDATING WHEN EFFECT ADDED
+        .target = MOVE_TARGET_SELECTED
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_CURE_PLANT] =
+    {
+        .effect = EFFECT_HIT, //NEEDS IMPLEMENTING
+	    .power = 0,
+        .type = TYPE_GRASS,
+        .accuracy = 0,
+        .pp = 5,
+        .secondaryEffectChance = 0, //NEEDS UPDATING WHEN EFFECT ADDED
+        .target = MOVE_TARGET_USER
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_BACON_BLAST] =
+    {
+        .effect = EFFECT_HIT, //NEEDS IMPLEMENTING
+	    .power = 70,
+        .type = TYPE_GROUND,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0, //NEEDS UPDATING WHEN EFFECT ADDED
+        .target = MOVE_TARGET_SELECTED
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_TITANS_CONSTITUTION] =
+    {
+        .effect = EFFECT_HIT, //NEEDS IMPLEMENTING
+	    .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 20,
+        .secondaryEffectChance = 0, //NEEDS UPDATING WHEN EFFECT ADDED
+        .target = MOVE_TARGET_USER
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .snatchAffected = TRUE,
+    },
+
+    [MOVE_CONSPIRACY] =
+    {
+        .effect = EFFECT_HIT, //NEEDS IMPLEMENTING
+	    .power = 0,
+        .type = TYPE_ICE,
+        .accuracy = 0,
+        .pp = 20,
+        .secondaryEffectChance = 0, //NEEDS UPDATING WHEN EFFECT ADDED
+        .target = MOVE_TARGET_USER
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .snatchAffected = TRUE,
+    },
+
+    [MOVE_COMMITTEE_STRIKE] =
+    {
+        .effect = EFFECT_HIT, //NEEDS IMPLEMENTING
+	    .power = 90,
+        .type = TYPE_GROUND,
+        .accuracy = 90,
+        .pp = 10,
+        .secondaryEffectChance = 0, //NEEDS UPDATING WHEN EFFECT ADDED
+        .target = MOVE_TARGET_SELECTED
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_CARAPACE_HARDEN] =
+    {
+        .effect = EFFECT_HIT, //NEEDS IMPLEMENTING
+	    .power = 0,
+        .type = TYPE_BUG,
+        .accuracy = 0,
+        .pp = 20,
+        .secondaryEffectChance = 0, //NEEDS UPDATING WHEN EFFECT ADDED
+        .target = MOVE_TARGET_USER
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .snatchAffected = TRUE,
+    },
+
+    [MOVE_SHARKBREW] =
+    {
+        .effect = EFFECT_HIT, //NEEDS IMPLEMENTING
+	    .power = 0,
+        .type = TYPE_POISON,
+        .accuracy = 0,
+        .pp = 5,
+        .secondaryEffectChance = 0, //NEEDS UPDATING WHEN EFFECT ADDED
+        .target = MOVE_TARGET_USER
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_NONE,
+        .healBlockBanned = TRUE,
+        .snatchAffected = B_UPDATED_MOVE_FLAGS >= GEN_5,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+    },
+
+    [MOVE_EXCALIBUR] =
+    {
+        .effect = EFFECT_HIT, //NEEDS IMPLEMENTING
+	    .power = 0,
+        .type = TYPE_FIGHTING,
+        .accuracy = 0,
+        .pp = 10,
+        .secondaryEffectChance = 0, //NEEDS UPDATING WHEN EFFECT ADDED
+        .target = MOVE_TARGET_USER
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_SNELM_SHOWOFF] =
+    {
+        .effect = EFFECT_HIT, //NEEDS IMPLEMENTING
+	    .power = 0,
+        .type = TYPE_BUG,
+        .accuracy = 0,
+        .pp = 20,
+        .secondaryEffectChance = 0, //NEEDS UPDATING WHEN EFFECT ADDED
+        .target = MOVE_TARGET_USER //MAY NEED UPDATING AS IT AFFECTS BOTH USER AND TARGET?
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_ENERGY_DRAIN] =
+    {
+        .effect = EFFECT_HIT, //NEEDS IMPLEMENTING
+	    .power = 60,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0, //NEEDS UPDATING WHEN EFFECT ADDED
+        .target = MOVE_TARGET_SELECTED
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
 
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
