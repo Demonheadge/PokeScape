@@ -910,27 +910,27 @@ gBattleAnims_Moves::
 	.4byte Move_CONFUSE
 	.4byte Move_ANALYSE
 	.4byte Move_ALCHEMY
-	.4byte Move_CALL_TO_ARMS
-	.4byte Move_RODENT_BITE
-	.4byte Move_MISCHIEF
-	.4byte Move_RETRIBUTION
-	.4byte Move_SMITE
-	.4byte Move_CURE_GROUP
-	.4byte Move_SHADOW_BLITZ
-	.4byte Move_SHADOW_BURST
-	.4byte Move_SHADOW_RUSH
-	.4byte Move_SMOKE_BLITZ
-	.4byte Move_SMOKE_BURST
-	.4byte Move_SMOKE_RUSH
-	.4byte Move_BLOOD_BLITZ
-	.4byte Move_BLOOD_BURST
-	.4byte Move_BLOOD_RUSH
-	.4byte Move_ICE_BLITZ
-	.4byte Move_ICE_BURST
-	.4byte Move_ICE_RUSH
-	.4byte Move_PUNCTURE
-	.4byte Move_ENTANGLE
 	.4byte Move_SNARE
+	.4byte Move_ENTANGLE
+	.4byte Move_PUNCTURE
+	.4byte Move_ICE_RUSH
+	.4byte Move_ICE_BURST
+	.4byte Move_ICE_BLITZ
+	.4byte Move_BLOOD_RUSH
+	.4byte Move_BLOOD_BURST
+	.4byte Move_BLOOD_BLITZ
+	.4byte Move_SMOKE_RUSH
+	.4byte Move_SMOKE_BURST
+	.4byte Move_SMOKE_BLITZ
+	.4byte Move_SHADOW_RUSH
+	.4byte Move_SHADOW_BURST
+	.4byte Move_SHADOW_BLITZ
+	.4byte Move_CURE_GROUP
+	.4byte Move_SMITE
+	.4byte Move_RETRIBUTION
+	.4byte Move_MISCHIEF
+	.4byte Move_RODENT_BITE
+	.4byte Move_CALL_TO_ARMS
 	.4byte Move_PETRIFYING_GAZE
 	.4byte Move_WIND_STRIKE
 	.4byte Move_WIND_BLAST
@@ -947,8 +947,8 @@ gBattleAnims_Moves::
 	.4byte Move_EXCALIBUR
 	.4byte Move_SNELM_SHOWOFF
 	.4byte Move_ENERGY_DRAIN
-	
-	
+
+
 @@@@ Z MOVES
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -34225,39 +34225,101 @@ Move_IBAN_BLAST:
 	blendoff
 	end
 
-
-
-
 Move_LIQUEFY:
+	goto Move_SILVERLIGHT
+
 Move_CONFUSE:
+	loadspritegfx ANIM_TAG_YELLOW_BALL
+	monbg ANIM_DEF_PARTNER
+	fadetobg BG_GHOST
+	waitbgfadein
+	createvisualtask SoundTask_AdjustPanningVar, 2, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, 2, 0
+	createvisualtask AnimTask_BlendColorCycleByTag, 2, ANIM_TAG_YELLOW_BALL, 0, 6, 0, 14, RGB(31, 10, 0)
+	createsprite gConfuseRayBallBounceSpriteTemplate, ANIM_TARGET, 2, 28, 0, 288
+	waitforvisualfinish
+	setalpha 8, 8
+	playsewithpan SE_M_STRING_SHOT2, SOUND_PAN_TARGET
+	createsprite gConfuseRayBallSpiralSpriteTemplate, ANIM_TARGET, 2, 0, -16
+	waitforvisualfinish
+	delay 0
+	blendoff
+	clearmonbg ANIM_DEF_PARTNER
+	restorebg
+	waitbgfadein
+	end
+
 Move_ANALYSE:
+	loadspritegfx ANIM_TAG_EYE
+	monbg ANIM_DEF_PARTNER
+	playsewithpan SE_M_PSYBEAM, SOUND_PAN_ATTACKER
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 1, 0, 16, RGB_BLACK
+	loopsewithpan SE_M_CONFUSE_RAY, SOUND_PAN_TARGET, 15, 4
+	waitplaysewithpan SE_M_LEER, SOUND_PAN_TARGET, 85
+	createsprite gMeanLookEyeSpriteTemplate, ANIM_ATTACKER, 2
+	delay 120
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, F_PAL_BG, 2, 16, 0, RGB_BLACK
+	delay 30
+	clearmonbg ANIM_DEF_PARTNER
+	waitforvisualfinish
+	end
+
 Move_ALCHEMY:
-Move_CALL_TO_ARMS:
-Move_RODENT_BITE:
-Move_MISCHIEF:
-Move_RETRIBUTION:
-Move_SMITE:
-Move_CURE_GROUP:
-Move_SHADOW_BLITZ:
-Move_SHADOW_BURST:
-Move_SHADOW_RUSH:
-Move_SMOKE_BLITZ:
-Move_SMOKE_BURST:
-Move_SMOKE_RUSH:
-Move_BLOOD_BLITZ:
-Move_BLOOD_BURST:
-Move_BLOOD_RUSH:
-Move_ICE_BLITZ:
-Move_ICE_BURST:
-Move_ICE_RUSH:
-Move_PUNCTURE:
-Move_ENTANGLE:
+	goto Move_HEADBUTT
+
 Move_SNARE:
+	goto Move_BIND
+
+Move_ENTANGLE:
+	goto Move_BIND
+
+Move_PUNCTURE:
+	goto Move_HEADBUTT
+
+Move_ICE_RUSH:
+	goto Move_ICE_BARRAGE
+
+Move_ICE_BURST:
+	goto Move_ICE_BARRAGE
+
+Move_ICE_BLITZ:
+	goto Move_ICE_BARRAGE
+
+Move_BLOOD_RUSH:
+	goto Move_BLOOD_BARRAGE
+
+Move_BLOOD_BURST:
+	goto Move_BLOOD_BARRAGE
+
+Move_BLOOD_BLITZ:
+	goto Move_BLOOD_BARRAGE
+
+Move_SMOKE_RUSH:
+Move_SMOKE_BURST:
+Move_SMOKE_BLITZ:
+	goto Move_SMOKE_BARRAGE
+
+Move_SHADOW_RUSH:
+Move_SHADOW_BURST:
+Move_SHADOW_BLITZ:
+	goto Move_SHADOW_BARRAGE
+
+Move_CURE_GROUP:
+Move_SMITE:
+Move_RETRIBUTION:
+Move_MISCHIEF:
+Move_RODENT_BITE:
+Move_CALL_TO_ARMS:
+	goto Move_HEADBUTT
+
 Move_PETRIFYING_GAZE:
+	goto Move_HEADBUTT
+
 Move_WIND_STRIKE:
 Move_WIND_BLAST:
 Move_WIND_WAVE:
 Move_WIND_SURGE:
+	goto Move_RAZOR_WIND
+
 Move_CRUMBLE_UNDEAD:
 Move_CURE_PLANT:
 Move_BACON_BLAST:
@@ -34269,4 +34331,4 @@ Move_SHARKBREW:
 Move_EXCALIBUR:
 Move_SNELM_SHOWOFF:
 Move_ENERGY_DRAIN:
-	end
+	goto Move_HEADBUTT
