@@ -3588,6 +3588,25 @@ static const u8 sSnelmShowoffDescription[] = _(
 static const u8 sEnergyDrainDescription[] = _(
     "Lowers the targets Speed stat and\n"
     "prevents them from escaping or switching.");
+static const u8 sOverloadDescription[] = _(
+    "Sharply increases stats\n"
+    "while sacrificing HP.");
+
+static const u8 sTeleBlockDescription[] = _(
+    "Casts a spell which\n"
+    "prevents escaping.");
+
+static const u8 sDragonfireDescription[] = _(
+    "Powerful dragon flames which\n"
+    "leaves the user exhausted.");
+
+static const u8 sSilverlightDescription[] = _(
+    "Energy from a legendary sword\n"
+    "which burns Dark Types.");
+
+static const u8 sIbanBlastDescription[] = _(
+    "A power blast that has a\n"
+    "chance to lower a random stat.");
 
 #undef BINDING_TURNS
 
@@ -4467,6 +4486,14 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_GODLESS_REBEL - 1] = sGodlessRebelDescription,
     [MOVE_TZ_TOK_ZEK - 1] = sTzTokRekDescription,
     [MOVE_BAWK_BAWK - 1] = sBwakBwakDescription,
+    [MOVE_OVERLOAD - 1] = sOverloadDescription,
+    [MOVE_TELE_BLOCK - 1] = sTeleBlockDescription,
+    [MOVE_DRAGONFIRE - 1] = sDragonfireDescription,
+    [MOVE_SILVERLIGHT - 1] = sSilverlightDescription,
+    [MOVE_DARKLIGHT - 1] = sSilverlightDescription,
+    [MOVE_ARCLIGHT - 1] = sSilverlightDescription,
+    [MOVE_EMBERLIGHT - 1] = sSilverlightDescription,
+    [MOVE_IBAN_BLAST - 1] = sIbanBlastDescription,
     [MOVE_LIQUEFY - 1] = sLiquefyDescription,
     [MOVE_CONFUSE - 1] = sConfuseDescription,
     [MOVE_ANALYSE - 1] = sAnalyseDescription,
@@ -4508,4 +4535,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_EXCALIBUR - 1] = sExcaliburDescription,
     [MOVE_SNELM_SHOWOFF - 1] = sSnelmShowoffDescription,
     [MOVE_ENERGY_DRAIN - 1] = sEnergyDrainDescription,
+    
 };

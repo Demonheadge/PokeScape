@@ -851,37 +851,28 @@ static const u8 sText_FireShieldEnds[] = _("{B_DEF_NAME_WITH_PREFIX}'s fire shie
 static const u8 sText_AntiDragonShieldReducedDamage[] = _("The Dragonfire Shield reduced\nthe incoming damage.");
 static const u8 sText_SpiritShieldReducedDamage[] = _("The Spirit Shield reduced\nthe incoming damage.");
 static const u8 sText_EatingSandwich[] = _("{B_SCR_ACTIVE_NAME_WITH_PREFIX} happily\nconsumes the {B_LAST_ITEM}.\p{B_BUFF1} was boosted.\nHP was restored.");
-
-//trainer battle messages
 static const u8 sText_Demonheadge_BeforeFirstTurn[] = _("Oh, ho.\nYou dare approach me?!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_Demonheadge_MegaEvolves[] = _("I've got one up on Sigmund!\pI shall be the first Trainer\nin PokeScape to MEGA EVOLVE!!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_Demonheadge_PlayerMonUnaffected[] = _("Oh please, come back when you've\nlearnt your type weakness.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_Demonheadge_FirstSTABMove[] = _("Ow! Now thats a STAB wound.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_Demonheadge_PlayerLost[] = _("It seems I have won this fight.\pBack to Lumbridge for you.{PAUSE_UNTIL_PRESS}");
-
-
 static const u8 sText_CountDraynor_BeforeFirstTurn[] = _("I will drain you dry!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_CountDraynor_SwitchIn[] = _("We fight till the last drop.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_CountDraynor_PlayerLost[] = _("Pathetic human.{PAUSE_UNTIL_PRESS}");
-
 static const u8 sText_SandwichLady_BeforeFirstTurn[] = _("You should have picked the\ntriangle sandwich.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_SandwichLady_SwitchIn[] = _("Oh dear…\pIt appears I'm down to\nmy last monster.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_SandwichLady_LastHalfHp[] = _("I'm down to my last\nbaguette!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_SandwichLady_FirstSuperEffectiveHit[] = _("Hey, I didn't say you could\ndo that!{PAUSE_UNTIL_PRESS}");
-
 static const u8 sText_Maggie_BeforeFirstTurn[] = _("I can feel it now, this is going to be\na splentabulous battle!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_Maggie_SwitchIn[] = _("Now that wasn't very nice of cha!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_Maggie_PlayerLost[] = _("Sweet, sweet victory.\pI think cha should go back and train\ncha's monsters some more.{PAUSE_UNTIL_PRESS}");
-
-
 static const u8 sText_Melzar_BeforeFirstTurn[] = _("Let me drink my tea in peace!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_Melzar_SwitchIn[] = _("By the power of custard!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_Melzar_LastLowHp[] = _("Leave me alone, I need to feed my\npet rock!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_Melzar_PlayerMonUnaffected[] = _("Cabbage stew!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_Melzar_PlayerLost[] = _("Feel the wrath of my feet!{PAUSE_UNTIL_PRESS}");
-
 static const u8 sText_PlayerGotTokkul[] = _("{B_PLAYER_NAME} got {B_BUFF1} TOKKUL\nfor winning!\p");
-
+static const u8 sText_CutHPIncreasedStats[] = _("{B_ATK_NAME_WITH_PREFIX} increased it's\nstats at the cost of it's health!");
 
 
 
@@ -1585,41 +1576,34 @@ const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
     [STRINGID_PETRIFY - BATTLESTRINGS_TABLE_START] = sText_Petrify,
     [STRINGID_TOOSCARED - BATTLESTRINGS_TABLE_START] = sText_TooScared,
     [STRINGID_FIRESHIELDENDS - BATTLESTRINGS_TABLE_START] = sText_FireShieldEnds,
-
-    //TRAINER MESSAGES
     [STRINGID_DEMONHEADGE_MESSAGE_1 - BATTLESTRINGS_TABLE_START] = sText_Demonheadge_BeforeFirstTurn,
     [STRINGID_DEMONHEADGE_MESSAGE_2 - BATTLESTRINGS_TABLE_START] = sText_Demonheadge_MegaEvolves,
     [STRINGID_DEMONHEADGE_MESSAGE_3 - BATTLESTRINGS_TABLE_START] = sText_Demonheadge_PlayerMonUnaffected,
     [STRINGID_DEMONHEADGE_MESSAGE_4 - BATTLESTRINGS_TABLE_START] = sText_Demonheadge_FirstSTABMove,
     [STRINGID_DEMONHEADGE_MESSAGE_5 - BATTLESTRINGS_TABLE_START] = sText_Demonheadge_PlayerLost,
-
     [STRINGID_COUNTDRAYNOR_MESSAGE_1 - BATTLESTRINGS_TABLE_START] = sText_CountDraynor_BeforeFirstTurn,
     [STRINGID_COUNTDRAYNOR_MESSAGE_2 - BATTLESTRINGS_TABLE_START] = sText_CountDraynor_SwitchIn,
     [STRINGID_COUNTDRAYNOR_MESSAGE_3 - BATTLESTRINGS_TABLE_START] = sText_CountDraynor_PlayerLost,
-
     [STRINGID_SANDWICHLADY_MESSAGE_1 - BATTLESTRINGS_TABLE_START] = sText_SandwichLady_BeforeFirstTurn,
     [STRINGID_SANDWICHLADY_MESSAGE_2 - BATTLESTRINGS_TABLE_START] = sText_SandwichLady_SwitchIn,
     [STRINGID_SANDWICHLADY_MESSAGE_3 - BATTLESTRINGS_TABLE_START] = sText_SandwichLady_LastHalfHp,
     [STRINGID_SANDWICHLADY_MESSAGE_4 - BATTLESTRINGS_TABLE_START] = sText_SandwichLady_FirstSuperEffectiveHit,
-
     [STRINGID_ANTIDRAGONSHIELDREDUCEDAMAGE - BATTLESTRINGS_TABLE_START] = sText_AntiDragonShieldReducedDamage,
     [STRINGID_SPIRITSHIELDREDUCEDAMAGE - BATTLESTRINGS_TABLE_START] = sText_SpiritShieldReducedDamage,
     [STRINGID_EATINGSANDWICH - BATTLESTRINGS_TABLE_START] = sText_EatingSandwich,
-    
     [STRINGID_MAGGIE_MESSAGE_1 - BATTLESTRINGS_TABLE_START] = sText_Maggie_BeforeFirstTurn,
     [STRINGID_MAGGIE_MESSAGE_2 - BATTLESTRINGS_TABLE_START] = sText_Maggie_SwitchIn,
     [STRINGID_MAGGIE_MESSAGE_3 - BATTLESTRINGS_TABLE_START] = sText_Maggie_PlayerLost,
-
     [STRINGID_MELZAR_MESSAGE_1 - BATTLESTRINGS_TABLE_START] = sText_Melzar_BeforeFirstTurn,
     [STRINGID_MELZAR_MESSAGE_2 - BATTLESTRINGS_TABLE_START] = sText_Melzar_SwitchIn,
     [STRINGID_MELZAR_MESSAGE_3 - BATTLESTRINGS_TABLE_START] = sText_Melzar_LastLowHp,
     [STRINGID_MELZAR_MESSAGE_4 - BATTLESTRINGS_TABLE_START] = sText_Melzar_PlayerMonUnaffected,
     [STRINGID_MELZAR_MESSAGE_5 - BATTLESTRINGS_TABLE_START] = sText_Melzar_PlayerLost,
-
     [STRINGID_REMOVEWEATHERBOOK - BATTLESTRINGS_TABLE_START] = sText_WeatherDisapearedBook,
     [STRINGID_TZHAAR_WEATHER_1 - BATTLESTRINGS_TABLE_START] = sText_TzhaarWeather1,
     [STRINGID_TZHAAR_WEATHER_2 - BATTLESTRINGS_TABLE_START] = sText_TzhaarWeather2,
     [STRINGID_PLAYERGOTTOKKUL - BATTLESTRINGS_TABLE_START] = sText_PlayerGotTokkul,
+    [STRINGID_CUTHPINCREASEDSTATS - BATTLESTRINGS_TABLE_START] = sText_CutHPIncreasedStats,
 
 
 };

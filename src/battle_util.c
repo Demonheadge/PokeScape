@@ -9916,6 +9916,9 @@ static inline u32 CalcDefenseStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 
         GET_MOVE_TYPE(gCurrentMove, moveType);
         if(moveType == TYPE_FIRE|| moveType == TYPE_DRAGON)
             modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(2.0)); //Decreases damage from Dragon and Fire type moves by half.
+        if (gCurrentMove == MOVE_DRAGONFIRE) {
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(4.0));
+        }
         break;
     }
 

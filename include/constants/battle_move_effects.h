@@ -431,11 +431,16 @@
 #define EFFECT_HEAL_BLOCK_HIT               422
 #define EFFECT_AURORA_VEIL_HIT              423
 #define EFFECT_DOUBLE_DAMAGE_IF_BURN        424
+#define EFFECT_OVERLOAD                     425
+#define EFFECT_SILVERLIGHT                  426
+#define EFFECT_RANDOM_STAT_DOWN             427
+
+
 
 
 
 #define LAST_VANILLA_MOVE                   EFFECT_SANDSTORM_HIT //EFFECT_RAGE_FIST
 
-#define NUM_BATTLE_MOVE_EFFECTS             424
+#define NUM_BATTLE_MOVE_EFFECTS             427
 
 #endif  // GUARD_CONSTANTS_BATTLE_MOVE_EFFECTS_H

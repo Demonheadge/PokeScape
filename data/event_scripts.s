@@ -1530,3 +1530,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route8_MakeoverMage_2F/scripts.inc"
 
 	.include "data/maps/Cooking_Guild/scripts.inc"
+
+	.include "data/maps/Varrock_House_10/scripts.inc"

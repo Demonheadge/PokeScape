@@ -125,6 +125,31 @@ TEST_POKESCAPE_ITEMS::
 	return
 
 
+MOVE_TUTOR_SILVERLIGHT::
+	lock
+	msgbox MOVE_TUTOR_SILVERLIGHT_Text_0
+	closemessage
+	setvar VAR_0x8005, MOVE_SOLAR_BLADE
+	call MOVE_TUTOR_OpenPartyMenu
+	compare VAR_RESULT, 0
+	goto_if_eq MOVE_TUTOR_SILVERLIGHT_2
+	msgbox MOVE_TUTOR_SILVERLIGHT_Text_2
+	release
+	end
+
+MOVE_TUTOR_SILVERLIGHT_2:
+	msgbox MOVE_TUTOR_SILVERLIGHT_Text_1
+	release
+	end
+
+
+MOVE_TUTOR_OpenPartyMenu::
+	special ChooseMonForMoveTutor
+	waitstate
+	lock
+	return
+
+
 BATTLE_SARIM_BAY_PIRATE_1_Text_0:
 	.string "I've sailed through some of the\n"
 	.string "harshest seas you can imagine.\p"
@@ -287,3 +312,15 @@ TEST_POKESCAPE_Text_0:
 
 TEST_POKESCAPE_Text_1:
 	.string "Give hold items to the mons.$"
+
+MOVE_TUTOR_SILVERLIGHT_Text_0:
+	.string "The legendary Silverlight sword begins\n"
+	.string "to glow!$"
+
+MOVE_TUTOR_SILVERLIGHT_Text_1:
+	.string "As you step away the sword dims once\n"
+	.string "more.$"
+
+MOVE_TUTOR_SILVERLIGHT_Text_2:
+	.string "Your monster was infused with the\n"
+	.string "power of the sword.$"

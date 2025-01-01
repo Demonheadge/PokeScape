@@ -678,7 +678,7 @@ void (* const gBattleScriptingCommandsTable[])(void) =
     Cmd_end,                                     //0x3D
     Cmd_end2,                                    //0x3E
     Cmd_end3,                                    //0x3F
-    Cmd_unused5,                 //0x40
+    Cmd_unused5,                 //0x40 
     Cmd_call,                                    //0x41
     Cmd_setroost,                                //0x42
     Cmd_jumpifabilitypresent,                    //0x43
@@ -3752,6 +3752,27 @@ void SetMoveEffect(bool32 primary, u32 certain)
                     gBattlescriptCurrInstr = BattleScript_SyrupBombActivates;
                 }
                 break;
+            case MOVE_EFFECT_RANDOM_STAT_DOWN:
+            i = Random() % 6;
+            if (i == 0) {
+                gBattlescriptCurrInstr = BattleScript_EffectAttackDown;
+            }
+            else if (i == 1) {
+                gBattlescriptCurrInstr = BattleScript_EffectDefenseDown;
+            }
+            else if (i == 2) {
+                gBattlescriptCurrInstr = BattleScript_EffectAccuracyDown;
+            }
+            else if (i == 3) {
+                gBattlescriptCurrInstr = BattleScript_EffectSpecialAttackDown;
+            }
+            else if (i == 4) {
+                gBattlescriptCurrInstr = BattleScript_EffectSpecialDefenseDown;
+            }
+            else if (i == 5) {
+                gBattlescriptCurrInstr = BattleScript_EffectSpeedDown;
+            }
+            break;
             }
         }
     }
@@ -13419,7 +13440,8 @@ static void Cmd_setsunny(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
-// Belly Drum
+// Belly Drum 
+// Overload
 static void Cmd_maxattackhalvehp(void)
 {
     CMD_ARGS(const u8 *failInstr);
@@ -13429,20 +13451,43 @@ static void Cmd_maxattackhalvehp(void)
     if (!(GetNonDynamaxMaxHP(gBattlerAttacker) / 2))
         halfHp = 1;
 
-    // Belly Drum fails if the user's current HP is less than half its maximum, or if the user's Attack is already at +6 (even if the user has Contrary).
-    if (gBattleMons[gBattlerAttacker].statStages[STAT_ATK] < MAX_STAT_STAGE
-        && gBattleMons[gBattlerAttacker].hp > halfHp)
-    {
-        gBattleMons[gBattlerAttacker].statStages[STAT_ATK] = MAX_STAT_STAGE;
-        gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
-        if (gBattleMoveDamage == 0)
-            gBattleMoveDamage = 1;
+    if (gCurrentMove == MOVE_OVERLOAD) {
+        // If HP is less than half it fails.
+        if (gBattleMons[gBattlerAttacker].hp > halfHp)
+        {
+            SET_STATCHANGER(STAT_ATK, 2, FALSE);
+            SET_STATCHANGER(STAT_DEF, 2, FALSE);
+            SET_STATCHANGER(STAT_SPATK, 2, FALSE);
+            SET_STATCHANGER(STAT_SPDEF, 2, FALSE);
+            SET_STATCHANGER(STAT_SPEED, 2, FALSE);
+            gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
+            if (gBattleMoveDamage == 0)
+                gBattleMoveDamage = 1;
 
-        gBattlescriptCurrInstr = cmd->nextInstr;
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        }
+        else
+        {
+            gBattlescriptCurrInstr = cmd->failInstr;
+        }
     }
-    else
-    {
-        gBattlescriptCurrInstr = cmd->failInstr;
+
+    if (gCurrentMove == MOVE_BELLY_DRUM) {
+        // Belly Drum fails if the user's current HP is less than half its maximum, or if the user's Attack is already at +6 (even if the user has Contrary).
+        if (gBattleMons[gBattlerAttacker].statStages[STAT_ATK] < MAX_STAT_STAGE
+            && gBattleMons[gBattlerAttacker].hp > halfHp)
+        {
+            gBattleMons[gBattlerAttacker].statStages[STAT_ATK] = MAX_STAT_STAGE;
+            gBattleMoveDamage = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
+            if (gBattleMoveDamage == 0)
+                gBattleMoveDamage = 1;
+
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        }
+        else
+        {
+            gBattlescriptCurrInstr = cmd->failInstr;
+        }
     }
 }
 
@@ -16776,3 +16821,4 @@ static void Cmd_gettokkul(void)
     PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff1, 5, tokkul);
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
+

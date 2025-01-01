@@ -556,6 +556,13 @@ extern const u8 BattleScript_TzhaarTrainerBattleWon[];
 extern const u8 BattleScript_TzhaarBattleLost[];
 extern const u8 BattleScript_TzhaarWildBattleWon[];
 
+extern const u8 BattleScript_EffectAttackDown[];
+extern const u8 BattleScript_EffectDefenseDown[];
+extern const u8 BattleScript_EffectSpeedDown[];
+extern const u8 BattleScript_EffectSpecialAttackDown[];
+extern const u8 BattleScript_EffectSpecialDefenseDown[];
+extern const u8 BattleScript_EffectAccuracyDown[];
+
 
 
 #endif // GUARD_BATTLE_SCRIPTS_H
