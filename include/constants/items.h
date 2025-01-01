@@ -1410,12 +1410,20 @@
 #define ITEM_BOOK_OF_ARMADYL	    (FINAL_VANILLA_ITEM + 274 )
 
 #define ITEM_CHOCOLATE_BAR_SANDWICH (FINAL_VANILLA_ITEM + 275 )
+#define ITEM_PAPAYA                 (FINAL_VANILLA_ITEM + 276 )
+#define ITEM_DWELLBERRY             (FINAL_VANILLA_ITEM + 277 )
+#define ITEM_COFFEEBEAN             (FINAL_VANILLA_ITEM + 278 )
+#define ITEM_POISON_IVY             (FINAL_VANILLA_ITEM + 279 )
+#define ITEM_BLUEBERRY              (FINAL_VANILLA_ITEM + 280 )
+#define ITEM_CHEESE                 (FINAL_VANILLA_ITEM + 281 )
+#define ITEM_GLOOP_SOUP             (FINAL_VANILLA_ITEM + 282 )
+#define ITEM_FINGERS                (FINAL_VANILLA_ITEM + 283 )
+#define ITEM_BAT_SHISH              (FINAL_VANILLA_ITEM + 284 )
+#define ITEM_FROGBURGER             (FINAL_VANILLA_ITEM + 285 )
+#define ITEM_EEL_SUSHI              (FINAL_VANILLA_ITEM + 286 )
 
 
-
-
-
-#define ITEMS_COUNT 1091
+#define ITEMS_COUNT 1102
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

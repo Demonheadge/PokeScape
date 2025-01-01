@@ -1147,7 +1147,19 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_BOOK_OF_ARMADYL] = {gItemIcon_BookOfArmadyl, gItemIconPalette_BookOfArmadyl},
     [ITEM_CHOCOLATE_BAR_SANDWICH] = {gItemIcon_ChocolateBarSandwich, gItemIconPalette_ChocolateBarSandwich},
 
-    
+
+    [ITEM_PAPAYA] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
+    [ITEM_DWELLBERRY] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
+    [ITEM_COFFEEBEAN] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
+    [ITEM_POISON_IVY] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
+    [ITEM_BLUEBERRY] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
+    [ITEM_CHEESE] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
+    [ITEM_GLOOP_SOUP] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
+    [ITEM_FINGERS] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
+    [ITEM_BAT_SHISH] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
+    [ITEM_FROGBURGER] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
+    [ITEM_EEL_SUSHI] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
+
 
 
     // End Pokescape items

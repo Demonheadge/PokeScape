@@ -555,7 +555,7 @@ GeneralStore_LUMBRIDGE_Text_2:
 	.string "Thank you, come again!$"
 
 GeneralStore_DRAYNOR_Text_0:
-	.string "Welcome to the Drayor Markets.\p"
+	.string "Welcome to the Draynor Markets.\p"
 	.string "How may I help you?$"
 
 GeneralStore_FALADOR_Text_0:

@@ -4466,7 +4466,7 @@ static const u8 sOrangeDesc[] = _(
     "heals any status\n"
     "problem in battle.");
 
-static const u8 sEelShushiDesc[] = _(
+static const u8 sEelSushiDesc[] = _(
     "A hold item that\n"
     "restores HP but\n"
     "may confuse.");
