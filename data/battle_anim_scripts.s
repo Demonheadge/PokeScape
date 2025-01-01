@@ -906,6 +906,47 @@ gBattleAnims_Moves::
 	.4byte Move_ARCLIGHT
 	.4byte Move_EMBERLIGHT
 	.4byte Move_IBAN_BLAST
+	.4byte Move_LIQUEFY
+	.4byte Move_CONFUSE
+	.4byte Move_ANALYSE
+	.4byte Move_ALCHEMY
+	.4byte Move_CALL_TO_ARMS
+	.4byte Move_RODENT_BITE
+	.4byte Move_MISCHIEF
+	.4byte Move_RETRIBUTION
+	.4byte Move_SMITE
+	.4byte Move_CURE_GROUP
+	.4byte Move_SHADOW_BLITZ
+	.4byte Move_SHADOW_BURST
+	.4byte Move_SHADOW_RUSH
+	.4byte Move_SMOKE_BLITZ
+	.4byte Move_SMOKE_BURST
+	.4byte Move_SMOKE_RUSH
+	.4byte Move_BLOOD_BLITZ
+	.4byte Move_BLOOD_BURST
+	.4byte Move_BLOOD_RUSH
+	.4byte Move_ICE_BLITZ
+	.4byte Move_ICE_BURST
+	.4byte Move_ICE_RUSH
+	.4byte Move_PUNCTURE
+	.4byte Move_ENTANGLE
+	.4byte Move_SNARE
+	.4byte Move_PETRIFYING_GAZE
+	.4byte Move_WIND_STRIKE
+	.4byte Move_WIND_BLAST
+	.4byte Move_WIND_WAVE
+	.4byte Move_WIND_SURGE
+	.4byte Move_CRUMBLE_UNDEAD
+	.4byte Move_CURE_PLANT
+	.4byte Move_BACON_BLAST
+	.4byte Move_TITANS_CONSTITUTION
+	.4byte Move_CONSPIRACY
+	.4byte Move_COMMITTEE_STRIKE
+	.4byte Move_CARAPACE_HARDEN
+	.4byte Move_SHARKBREW
+	.4byte Move_EXCALIBUR
+	.4byte Move_SNELM_SHOWOFF
+	.4byte Move_ENERGY_DRAIN
 	
 	
 @@@@ Z MOVES
@@ -34182,4 +34223,50 @@ Move_IBAN_BLAST:
 	waitforvisualfinish
 	clearmonbg ANIM_TARGET
 	blendoff
+	end
+
+
+
+
+Move_LIQUEFY:
+Move_CONFUSE:
+Move_ANALYSE:
+Move_ALCHEMY:
+Move_CALL_TO_ARMS:
+Move_RODENT_BITE:
+Move_MISCHIEF:
+Move_RETRIBUTION:
+Move_SMITE:
+Move_CURE_GROUP:
+Move_SHADOW_BLITZ:
+Move_SHADOW_BURST:
+Move_SHADOW_RUSH:
+Move_SMOKE_BLITZ:
+Move_SMOKE_BURST:
+Move_SMOKE_RUSH:
+Move_BLOOD_BLITZ:
+Move_BLOOD_BURST:
+Move_BLOOD_RUSH:
+Move_ICE_BLITZ:
+Move_ICE_BURST:
+Move_ICE_RUSH:
+Move_PUNCTURE:
+Move_ENTANGLE:
+Move_SNARE:
+Move_PETRIFYING_GAZE:
+Move_WIND_STRIKE:
+Move_WIND_BLAST:
+Move_WIND_WAVE:
+Move_WIND_SURGE:
+Move_CRUMBLE_UNDEAD:
+Move_CURE_PLANT:
+Move_BACON_BLAST:
+Move_TITANS_CONSTITUTION:
+Move_CONSPIRACY:
+Move_COMMITTEE_STRIKE:
+Move_CARAPACE_HARDEN:
+Move_SHARKBREW:
+Move_EXCALIBUR:
+Move_SNELM_SHOWOFF:
+Move_ENERGY_DRAIN:
 	end
