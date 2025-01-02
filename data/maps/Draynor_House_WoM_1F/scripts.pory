@@ -42,7 +42,7 @@ script FOODFORMSBOOK {
     lock
     msgbox(format("You skim over lots of very dull sounding book titles until you see one called: 'Dionysius and the Chocolate Cake Factory'.\pWould you like to read it?"), MSGBOX_YESNO)
         if (var(VAR_RESULT)){
-            msgbox(format("One of the more unusual monster evolutions that I have come across on my travels have involved food.\pThey say not to feed dogs chocolate,\pbut CATS, TURKEYS, and YAKS all love CHOCOLATE CAKE.\pIt has to be CHOCOLATE CAKE though, the regular kind just won't do.\pEven more exotic creatures like DESERT DEVIL KEBBITS, MINITRICE,\pCAVE SLIME, and JELLIES love it too.\pI wonder if that's because they can't normally get hold of the stuff!\pEither way, their love of CHOCOLATE CAKE is so powerful that it'll let them evolve into entirely new forms.\pApparently this even extends to ENTS and CABBAGES.\pI don't fully believe that one though.\pI wonder if that's just a rumour started by Melzar.."))
+            msgbox(format("One of the more unusual monster evolutions that I have come across on my travels have involved food.\pThey say not to feed dogs chocolate,\pbut CATS and YAKS absolutely love CHOCOLATE.\pIt can be in any form - a CHOCOLATE BAR,\pa CHOC SUNDAY,\por a CHOCOLATE CAKE!\pEven more exotic creatures like DESERT DEVIL KEBBITS, MINITRICE,\pCAVE SLIME, and JELLIES love it too.\pI wonder if that's because they can't normally get hold of the stuff!\pEither way, their love of CHOCOLATE is so powerful that it'll let them evolve into entirely new forms if they're holding it while they level up.\pApparently this even extends to CABBAGES.\pI don't fully believe that one though.\pI wonder if that's just a rumour started by Melzar.."))
             closemessage
         }
         else {
