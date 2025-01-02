@@ -12040,7 +12040,7 @@ const struct Item gItems[] =
     [ITEM_VERACFLAIL] =
     {
         .name = _("VERAC FLAIL"),
-        .price = 100,
+        .price = 0,
         .holdEffect = HOLD_EFFECT_VERAC,
         .description = sVeracFlailDesc,
         .pocket = POCKET_ITEMS,
@@ -12052,7 +12052,7 @@ const struct Item gItems[] =
     [ITEM_DHAROKAXE] =
     {
         .name = _("DHAROK AXE"),
-        .price = 100,
+        .price = 0,
         .holdEffect = HOLD_EFFECT_DHAROK,
         .description = sDharokaxeDesc,
         .pocket = POCKET_ITEMS,
@@ -12064,7 +12064,7 @@ const struct Item gItems[] =
     [ITEM_KARILCROSSBOW] =
     {
         .name = _("KARIL XBOW"),
-        .price = 20000,
+        .price = 0,
         .holdEffect = HOLD_EFFECT_KARIL,
         .description = sKarilXBowDesc,
         .pocket = POCKET_ITEMS,
@@ -12076,7 +12076,7 @@ const struct Item gItems[] =
     [ITEM_AHRIMSTAFF] =
     {
         .name = _("AHRIM STAFF"),
-        .price = 100,
+        .price = 0,
         .holdEffect = HOLD_EFFECT_AHRIM,
         .description = sahrimStaffDesc,
         .pocket = POCKET_ITEMS,
@@ -12088,7 +12088,7 @@ const struct Item gItems[] =
     [ITEM_TORAGHAMMER] =
     {
         .name = _("TORAG HAMMER"),
-        .price = 100,
+        .price = 0,
         .holdEffect = HOLD_EFFECT_TORAG,
         .description = sToragHammerDesc,
         .pocket = POCKET_ITEMS,
@@ -12233,7 +12233,7 @@ const struct Item gItems[] =
     [ITEM_WATERFALL_TOOL] =
     {
         .name = _("GRAPPLE"),
-        .price = 50000,
+        .price = 0,
         .importance = 1,
         .description = sGrappleDesc,
         .pocket = POCKET_KEY_ITEMS,
@@ -12371,7 +12371,7 @@ const struct Item gItems[] =
     [ITEM_LOVELETTER] =
     {
         .name = _("LOVE LETTER"),
-        .price = 200,
+        .price = 0,
         .description = sElementalPouchDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -12382,7 +12382,7 @@ const struct Item gItems[] =
     [ITEM_RESEARCHNOTES] =
     {
         .name = _("ABYSSAL NOTES"),
-        .price = 200,
+        .price = 0,
         .description = sElementalPouchDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -12405,7 +12405,7 @@ const struct Item gItems[] =
     [ITEM_STAKE] =
     {
         .name = _("STAKE"),
-        .price = 200,
+        .price = 0,
         .description = sElementalPouchDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -12416,7 +12416,7 @@ const struct Item gItems[] =
     [ITEM_TALISMAN_EARTH] =
     {
         .name = _("EARTH TALLY"),
-        .price = 200,
+        .price = 0,
         .description = sTALISMANDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -12427,7 +12427,7 @@ const struct Item gItems[] =
     [ITEM_TALISMAN_FIRE] =
     {
         .name = _("FIRE TALLY"),
-        .price = 200,
+        .price = 0,
         .description = sTALISMANDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -12438,7 +12438,7 @@ const struct Item gItems[] =
     [ITEM_TALISMAN_LAW] =
     {
         .name = _("LAW TALLY"),
-        .price = 200,
+        .price = 0,
         .description = sTALISMANDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -12449,7 +12449,7 @@ const struct Item gItems[] =
     [ITEM_TALISMAN_MIND] =
     {
         .name = _("MIND TALLY"),
-        .price = 200,
+        .price = 0,
         .description = sTALISMANDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -12460,7 +12460,7 @@ const struct Item gItems[] =
     [ITEM_TALISMAN_NATURE] =
     {
         .name = _("NATURE TALLY"),
-        .price = 200,
+        .price = 0,
         .description = sTALISMANDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -12471,7 +12471,7 @@ const struct Item gItems[] =
     [ITEM_TALISMAN_SOUL] =
     {
         .name = _("SOUL TALLY"),
-        .price = 200,
+        .price = 0,
         .description = sTALISMANDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -12482,7 +12482,7 @@ const struct Item gItems[] =
     [ITEM_TALISMAN_WATER] =
     {
         .name = _("WATER TALLY"),
-        .price = 200,
+        .price = 0,
         .description = sTALISMANDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -12493,7 +12493,7 @@ const struct Item gItems[] =
     [ITEM_TALISMAN_AIR] =
     {
         .name = _("AIR TALLY"),
-        .price = 200,
+        .price = 0,
         .description = sTALISMANDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -12504,7 +12504,7 @@ const struct Item gItems[] =
     [ITEM_TALISMAN_CHAOS] =
     {
         .name = _("CHAOS TALLY"),
-        .price = 200,
+        .price = 0,
         .description = sTALISMANDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -12515,7 +12515,7 @@ const struct Item gItems[] =
     [ITEM_TALISMAN_COSMIC] =
     {
         .name = _("COSMIC TALLY"),
-        .price = 200,
+        .price = 0,
         .description = sTALISMANDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
@@ -12526,7 +12526,7 @@ const struct Item gItems[] =
     [ITEM_TALISMAN_BODY] =
     {
         .name = _("BODY TALLY"),
-        .price = 200,
+        .price = 0,
         .description = sTALISMANDesc,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,

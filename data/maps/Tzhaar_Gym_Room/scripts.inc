@@ -561,7 +561,7 @@ NPC_TZHAAR_GYM_LEADER_Text_0:
 	.string "If the Tzhaar Badge is what you seek,\n"
 	.string "then you must participate in our Gym\l"
 	.string "Challenge.\p"
-	.string "Battle your way through 5 Waves of my\n"
+	.string "Battle your way through 10 Waves of my\n"
 	.string "brethren then defeat me in battle.$"
 
 NPC_TZHAAR_GYM_LEADER_Text_1:
@@ -614,5 +614,5 @@ NPC_TZHAAR_GYM_GAAL_2_Text_0:
 
 NPC_TZHAAR_GYM_GAAL_2_Text_1:
 	.string "In this gym challenge you must battle\n"
-	.string "through 5 waves and defeat our\l"
+	.string "through 10 waves and defeat our\l"
 	.string "champion, Kimit-Kal.$"

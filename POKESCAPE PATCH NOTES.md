@@ -29,6 +29,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
  - Fixed an invisble water rune spawn in Wizards' Tower.
  - If the player already has a Pulse Core a Primsatic Star will be given instead. (Wizards' Tower / Lumbridge)
  - Fixed an issue with sparkling ice in Asgarnia dungeon.
+ - Fixed an issue with Zaros Beckon.
+ - Fixed incorrect text across the game.
+ - Fixed an issue where you would leave Karamja Volcano where HAM Gunt 6 would run away, only to come back after re-entering before the HAM event is completed.
+ - Prevented some KEY ITEMS from being sold at the general store.
 
 ### Removed
  - Removed the Woodcutting trees at Wizards' Tower.

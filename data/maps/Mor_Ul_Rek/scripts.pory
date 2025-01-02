@@ -171,7 +171,7 @@ script TZHAAR_NPC_1
         random(3) 
         switch (var(VAR_RESULT)) { 
             case 0: 
-                msgbox(format("The Tzhaar Gym challenge has 5 waves you must battle through before you can battle our champion."))
+                msgbox(format("The Tzhaar Gym challenge has 10 waves you must battle through before you can battle our champion."))
             case 1: 
                 msgbox(format("Our champion knows a move that will do double damage if your monsters are burnt.\pSo watch out for that!"))
             case 2: 

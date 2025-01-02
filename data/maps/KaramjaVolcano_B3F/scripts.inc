@@ -50,12 +50,20 @@ KaramjaVolcano_B3F_STATE_2:
 	setflag FLAG_TEMP_C
 	setflag FLAG_TEMP_1D
 	setflag FLAG_TEMP_1B
+	checktrainerflag TRAINER_KARAMJAVOLCANO_HAM_GRUNT_6
+	compare VAR_RESULT, TRUE
+	goto_if_eq KaramjaVolcano_B3F_STATE_7
 	goto KaramjaVolcano_B3F_STATE_1
 
 KaramjaVolcano_B3F_STATE_5:
 	removeobject 17
 	setflag FLAG_TEMP_8
 	return
+
+KaramjaVolcano_B3F_STATE_7:
+	removeobject 36
+	setflag FLAG_TEMP_1C
+	goto KaramjaVolcano_B3F_STATE_1
 
 
 KaramjaVolcano_STATE3::

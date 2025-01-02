@@ -48,21 +48,19 @@ script KaramjaVolcano_B3F_STATE {
         setflag(FLAG_TEMP_1D)
         //-- ----- --
         setflag(FLAG_TEMP_1B) //Post event trainers
+
+        checktrainerflag(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_6)
+        if (var(VAR_RESULT) == TRUE) { 
+            removeobject(36)
+            setflag(FLAG_TEMP_1C)   //Ham grunt
+        }
     }
     else {
 //During HAM story.
-    setflag(FLAG_TEMP_1F)   //HAM GRUNTS
-    setflag(FLAG_TEMP_1E)   //HAM ADMINS
-    setflag(FLAG_TEMP_1D)   //TZHAAR
-    setflag(FLAG_TEMP_1C)   //Ham grunt
-    //NOTES
-    //Walk on Trigger, walk over to event. There are no breakable rocks during ham event.
-    //There are less metatile rocks around the cave during ham event.
-    //After ham event rocks start falling.
-    //Should do a run out of cave sequence. See if you can disable wild encounters during this time.
-    //Possibly restrict bag/menu usage during this time.
-    //Could just be an automatic run cutscene.
-    //Run into Tzhaar.
+        setflag(FLAG_TEMP_1F)   //HAM GRUNTS
+        setflag(FLAG_TEMP_1E)   //HAM ADMINS
+        setflag(FLAG_TEMP_1D)   //TZHAAR
+        setflag(FLAG_TEMP_1C)   //Ham grunt
     }
     if (flag(FLAG_ELVARG) == TRUE) {
         removeobject(17)

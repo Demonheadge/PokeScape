@@ -252,7 +252,7 @@ script NPC_TZHAAR_GYM_LEADER
     namebox("Kimit-Kal")
 
     if (var(VAR_POKESCAPE_TZHAAR_GYM_QUEST) == 0) {
-        msgbox(format("Welcome to the Mor-Ul-Rek Gym.\nI am Kimit-Kal.\pIf the Tzhaar Badge is what you seek, then you must participate in our Gym Challenge.\pBattle your way through 5 Waves of my brethren then defeat me in battle."))
+        msgbox(format("Welcome to the Mor-Ul-Rek Gym.\nI am Kimit-Kal.\pIf the Tzhaar Badge is what you seek, then you must participate in our Gym Challenge.\pBattle your way through 10 Waves of my brethren then defeat me in battle."))
         setvar(VAR_POKESCAPE_TZHAAR_GYM_QUEST, 1)
         msgbox(format("Would you like to start your Gym challenge?"), MSGBOX_YESNO)
         if (var(VAR_RESULT))
@@ -412,7 +412,7 @@ script NPC_TZHAAR_GYM_GAAL_2
         msgbox(format("Congratulations on your victory JalYt.\pYou should try out the Fight Caves!"))
     }
     else {
-        msgbox(format("In this gym challenge you must battle through 5 waves and defeat our champion, Kimit-Kal."))
+        msgbox(format("In this gym challenge you must battle through 10 waves and defeat our champion, Kimit-Kal."))
     }
     closemessage
     hidenamebox

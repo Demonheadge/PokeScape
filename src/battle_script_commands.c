@@ -6231,7 +6231,13 @@ static void Cmd_sethealblock(void)
 
     if (gStatuses3[gBattlerTarget] & STATUS3_HEAL_BLOCK)
     {
-        gBattlescriptCurrInstr = cmd->failInstr;
+        if (gCurrentMove == MOVE_ZAROS_BECKON) { //skips failed and prevented from healing string.
+            gBattlescriptCurrInstr++;
+            BattleScriptPush(cmd->nextInstr);
+        }
+        else {
+            gBattlescriptCurrInstr = cmd->failInstr;
+        }
     }
     else
     {

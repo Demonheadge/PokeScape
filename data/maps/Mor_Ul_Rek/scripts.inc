@@ -684,7 +684,7 @@ TZHAAR_NPC_1_Text_2:
 	.string "questions about the gym.$"
 
 TZHAAR_NPC_1_Text_3:
-	.string "The Tzhaar Gym challenge has 5 waves\n"
+	.string "The Tzhaar Gym challenge has 10 waves\n"
 	.string "you must battle through before you can\l"
 	.string "battle our champion.$"
 
