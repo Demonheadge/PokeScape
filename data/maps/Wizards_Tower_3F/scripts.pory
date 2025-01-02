@@ -11,12 +11,8 @@ mapscripts Wizards_Tower_3F_MapScripts{
 script LESSERDEMON_STATE{
 	switch (var(VAR_POKESCAPE_LESSERDEMON_STATE)){ 
 		case 0: 
+		case 1:
 			end
-    	case 1: 
-            //DEMON was defeated but not caught!
-			clearflag(FLAG_TEMP_A)
-            addobject (OBJ_EVENT_ID_LESSERDEMON)
-            end
 		case 2: 
             //DEMON was caught!
 			setflag(FLAG_TEMP_A)
@@ -41,7 +37,7 @@ script NPC_WIZARDSTOWER_LESSERDEMON_GATE
     lock
     msgbox(format("As you approach the gate the Demon attacks you!"))
     namebox ("Lesser Demon")
-	playmoncry(SPECIES_EKANS, 0)
+	playmoncry(SPECIES_DEMON_LESSER_OSRS_FORM, 0)
 	msgbox(format("RAOUGH!"))
 	waitmoncry
     hidenamebox
@@ -78,7 +74,7 @@ script ENCOUNTER_LESSERDEMON {
 	dowildbattle
 	if (var(VAR_RESULT) == B_OUTCOME_WON) {
         fadescreenswapbuffers(FADE_TO_BLACK)
-		setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 1)
+		setvar(VAR_POKESCAPE_LESSERDEMON_STATE, 0)
         setflag(FLAG_TEMP_A)
         removeobject (OBJ_EVENT_ID_LESSERDEMON)
         fadescreenswapbuffers(FADE_FROM_BLACK)

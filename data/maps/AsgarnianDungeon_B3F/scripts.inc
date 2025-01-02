@@ -51,8 +51,8 @@ AsgarnianDungeon_B3F_METATILES::
 	switch VAR_DUNGEONEERING_DOOR_AsgarnianDungeon_STATE
 	case 0, AsgarnianDungeon_B3F_METATILES_2
 	case 5, AsgarnianDungeon_B3F_METATILES_3
-	case 10, AsgarnianDungeon_B3F_METATILES_3
-	case 15, AsgarnianDungeon_B3F_METATILES_4
+	case 10, AsgarnianDungeon_B3F_METATILES_4
+	case 15, AsgarnianDungeon_B3F_METATILES_5
 	return
 
 AsgarnianDungeon_B3F_METATILES_2:
@@ -67,6 +67,9 @@ AsgarnianDungeon_B3F_METATILES_3:
 	return
 
 AsgarnianDungeon_B3F_METATILES_4:
+	return
+
+AsgarnianDungeon_B3F_METATILES_5:
 	setmetatile 26, 4, 910, 0
 	special DrawWholeMapView
 	return

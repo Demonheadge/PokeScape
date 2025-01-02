@@ -12015,32 +12015,32 @@
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_SPIDERLING"
+                "species": "SPECIES_COCKROACH_DRONE"
               },
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_RAT_NORMAL_FORM"
+                "species": "SPECIES_HAND_CREEPING_FORM"
               },
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_RAT_NORMAL_FORM"
+                "species": "SPECIES_HAND_CREEPING_FORM"
               },
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_SPIDERLING"
+                "species": "SPECIES_RAT_CRYPT_FORM"
               },
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_RAT_NORMAL_FORM"
+                "species": "SPECIES_DOBBIN"
               },
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_SPIDERLING"
+                "species": "SPECIES_ORIGAMI_BALLOON"
               },
               {
                 "min_level": 1,
@@ -12048,9 +12048,9 @@
                 "species": "SPECIES_IMP"
               },
               {
-                "min_level": 4,
+                "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_IMP"
+                "species": "SPECIES_DEAD_TREE"
               }
             ]
           },
@@ -12154,7 +12154,7 @@
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_SPIDERLING"
+                "species": "SPECIES_COCKROACH_DRONE"
               },
               {
                 "min_level": 2,
@@ -12174,27 +12174,27 @@
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_RAT_CRYPT_FORM"
+                "species": "SPECIES_HAND_CREEPING_FORM"
               },
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_RAT_CRYPT_FORM"
+                "species": "SPECIES_HAND_CREEPING_FORM"
               },
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_SPIDERLING"
+                "species": "SPECIES_RAT_NORMAL_FORM"
               },
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_RAT_CRYPT_FORM"
+                "species": "SPECIES_DOBBIN"
               },
               {
                 "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_SPIDERLING"
+                "species": "SPECIES_ORIGAMI_BALLOON"
               },
               {
                 "min_level": 1,
@@ -12202,9 +12202,9 @@
                 "species": "SPECIES_IMP"
               },
               {
-                "min_level": 4,
+                "min_level": 2,
                 "max_level": 4,
-                "species": "SPECIES_IMP"
+                "species": "SPECIES_DEAD_TREE"
               }
             ]
           },

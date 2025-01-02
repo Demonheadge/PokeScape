@@ -49,12 +49,13 @@ script AsgarnianDungeon_B3F_METATILES
 		case 0:
             return
         case 5:
-        case 10:
             setmetatile(12,13,METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE,1) //SPARKLE
             setmetatile(20,6,METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE,1) //SPARKLE
             setmetatile(27,7,METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE,1) //SPARKLE
             setmetatile(17,21,METATILE_Lumbridge_Swamp_Caves_ICE_ROCKS_SPAKRLE,1) //SPARKLE
             special(DrawWholeMapView) 
+        case 10:
+            return
         case 15:
             setmetatile(26, 4, 910, 0)
             special(DrawWholeMapView) 

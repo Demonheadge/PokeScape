@@ -12,20 +12,35 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## [2.0.1] - 0-0-2025
 ### Added
+ - Added many new custom moves. (Need testing.)
+ - Added a one off catch, Snow Imp encounter to Wizards' Tower.
+ - Reworked Lumbridge Graveyard encounter table.
+ - Added Rat encounters to Lumbridge.
+ - Added a Mind Rune Spawn to Wizards' Tower.
+ - Added a bunch more shiny sprites.
+ - Added new food that mostly use Berry effects. (Needs testing.)
+
 ### Fixed
  - Updated Version number.
  - Changed Rinist's & Explorer Jack's Pulse Core items to give a Primsmatic Star if the Pulse Core was already obtained.
  - Added MB_REST function to the Wizards Tower beds.
  - Fixed PokeScape abilties. (Need testing.)
  - Fixed PokeScape hold-items. (Need testing.)
+ - Fixed an invisble water rune spawn in Wizards' Tower.
+ - If the player already has a Pulse Core a Primsatic Star will be given instead. (Wizards' Tower / Lumbridge)
+ - Fixed an issue with sparkling ice in Asgarnia dungeon.
 
 ### Removed
+ - Removed the Woodcutting trees at Wizards' Tower.
+ - Disabled EVO page in the bestiary. (Temp bug fix.)
+
+
+
 
 
 ## [2.0.0] - 24-12-2024
 
 ### Added
-
 - Reworked STORY-MODE. There is now a brand new story to play! (Different from previous versions of PokeScape.)
 - Temporarly Disabled OPENWORLD-MODE.
 - Hundreds of new PokeScape Monsters!

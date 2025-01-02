@@ -555,12 +555,20 @@ NPC_WIZARDSTOWER_Rick::
 NPC_WIZARDSTOWER_SnowImp::
 	lock
 	faceplayer
+	goto_if_unset FLAG_CAPTURED_SNOWIMP, NPC_WIZARDSTOWER_SnowImp_2
+NPC_WIZARDSTOWER_SnowImp_1:
 	namebox NPC_WIZARDSTOWER_SnowImp_Text_0
+	playmoncry SPECIES_SNOW_IMP, 0
 	msgbox NPC_WIZARDSTOWER_SnowImp_Text_1
+	waitmoncry
 	waitmessage
 	hidenamebox
 	release
 	end
+
+NPC_WIZARDSTOWER_SnowImp_2:
+	goto ENCOUNTER_SNOW_IMP
+	goto NPC_WIZARDSTOWER_SnowImp_1
 
 
 NPC_WIZARDSTOWER_Rinsit::
@@ -1086,7 +1094,7 @@ NPC_WIZARDSTOWER_SnowImp_Text_0:
 	.string "Snow Imp$"
 
 NPC_WIZARDSTOWER_SnowImp_Text_1:
-	.string "Kekeke!$"
+	.string "Snezkekeke!$"
 
 NPC_WIZARDSTOWER_Rinsit_Text_0:
 	.string "Rinsit$"

@@ -528,7 +528,13 @@ script ENCOUNTER_SNOW_IMP
     hidenamebox
 	closemessage
 	delay(1)
-    setwildbattle (SPECIES_SNOW_IMP, 30, ITEM_NONE)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    if (var(VAR_RESULT) == MAP_WIZARDS_TOWER_DINING_HALL) {
+        setwildbattle (SPECIES_SNOW_IMP, 5, ITEM_NONE)
+    }
+    else {
+        setwildbattle (SPECIES_SNOW_IMP, 30, ITEM_NONE)
+    }
 	dowildbattle
     switch(var(VAR_RESULT)){
 		case B_OUTCOME_WON:
@@ -537,6 +543,10 @@ script ENCOUNTER_SNOW_IMP
             fadescreenswapbuffers(FADE_FROM_BLACK)
         case B_OUTCOME_CAUGHT:
             fadescreenswapbuffers(FADE_TO_BLACK)
+            specialvar (VAR_RESULT, GetCurrentMap)
+            if (var(VAR_RESULT) == MAP_WIZARDS_TOWER_DINING_HALL) {
+                setflag(FLAG_CAPTURED_SNOWIMP)
+            }
             removeobject (VAR_LAST_TALKED)
             fadescreenswapbuffers(FADE_FROM_BLACK)
     }
@@ -571,3 +581,36 @@ script ENCOUNTER_UNICORN_BARB
 	end
 }
 
+
+script ENCOUNTER_RAT
+{
+	lock
+    faceplayer
+    namebox ("RAT")
+    playmoncry(SPECIES_GIANT_RAT_NORMAL_FORM, 0)
+	msgbox(format("Squeek!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    if (var(VAR_RESULT) == MAP_LUMBRIDGE) {
+        setwildbattle (SPECIES_RAT_NORMAL_FORM, 5, ITEM_NONE)
+    }
+    else {
+        setwildbattle (SPECIES_GIANT_RAT_NORMAL_FORM, 30, ITEM_NONE)
+    }
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+        case B_OUTCOME_CAUGHT:
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+    }
+    release
+	end
+}

@@ -584,8 +584,13 @@ script NPC_WIZARDSTOWER_SnowImp
 {
 	lock
 	faceplayer
+	if (flag(FLAG_CAPTURED_SNOWIMP) == FALSE) {
+		goto(ENCOUNTER_SNOW_IMP)
+	}
     namebox ("Snow Imp")
-	msgbox(format("Kekeke!"))
+	playmoncry(SPECIES_SNOW_IMP, 0)
+	msgbox(format("Snezkekeke!"))
+    waitmoncry
     waitmessage
     hidenamebox
 	release

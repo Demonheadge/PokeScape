@@ -207,6 +207,12 @@ script ITEM_ROUTE1_WATER_RUNE
     end
 }
 
+script ITEM_LUMBRIDGE_FIRE_RUNE
+{
+    finditem(ITEM_FIRE_RUNE)
+    end
+}
+
 script ITEM_ROUTE1_CHOC_SUNDAY
 {
     finditem(ITEM_CHOCOLATE_SUNDAY)
@@ -355,9 +361,16 @@ script ITEM_DRAYNORMANOR_TM55_HEX
 //WIZARDS TOWER
 script ITEM_WIZARDSTOWER_AIR_RUNE_2
 {
+    finditem(ITEM_MIND_RUNE)
+    end
+}
+
+script ITEM_WIZARDSTOWER_RUNE_3
+{
     finditem(ITEM_BODY_RUNE)
     end
 }
+
 
 script ITEM_ROUTE4_FLAX
 {

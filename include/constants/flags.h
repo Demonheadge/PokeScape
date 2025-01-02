@@ -238,7 +238,7 @@
 #define FLAG_GOT_BASEMENT_KEY_FROM_WATTSON   0xD0
 #define FLAG_POKESCAPE_USECUSTOM_POOL_LEVEL  0xD1 //FLAG_GOT_TM24_FROM_WATTSON
 #define FLAG_FAN_CLUB_STRENGTH_SHARED        0xD2 // Set when you rate the strength of another trainer in Lilycove's Trainer Fan Club.
-#define FLAG_DEFEATED_RIVAL_RUSTBORO         0xD3
+#define FLAG_CAPTURED_SNOWIMP                0xD3 //FLAG_DEFEATED_RIVAL_RUSTBORO
 #define FLAG_RECEIVED_RED_OR_BLUE_ORB        0xD4
 #define FLAG_RECEIVED_PREMIER_BALL_RUSTBORO  0xD5
 #define FLAG_ENABLE_WALLY_MATCH_CALL         0xD6
@@ -1246,7 +1246,6 @@
 #define FLAG_ITEM_BARBARIAN_VILLAGE_1                               0x498 // Unused Flag
 #define FLAG_ITEM_BARBARIAN_VILLAGE_2                               0x499 // Unused Flag
 #define FLAG_ITEM_BARBARIAN_VILLAGE_3                               0x49A // Unused Flag
-
 #define FLAG_ITEM_VARROCK_POTIONSTORE                               0x49B // Unused Flag
 #define FLAG_ITEM_VARROCK_CLOTHESSTORE                              0x49C // Unused Flag
 #define FLAG_ITEM_CRANDOR_CABBAGE                                   0x49D // Unused Flag
@@ -1292,9 +1291,9 @@
 #define FLAG_ITEM_MUDSKIPPER_SOUND_1                                0x4C5 // Unused Flag
 #define FLAG_ITEM_CRANDOR_SEA_ROUTE_1                               0x4C6 // Unused Flag
 #define FLAG_ITEM_CRANDOR_SEA_ROUTE_2                               0x4C7 // Unused Flag
+#define FLAG_ITEM_WIZARDSTOWER_RUNE_3                               0x4C8 // Unused Flag
+#define FLAG_ITEM_LUMBRIDGE_FIRE_RUNE                               0x4C9 // Unused Flag
 
-#define FLAG_UNUSED_0x4C8                                           0x4C8 // Unused Flag
-#define FLAG_UNUSED_0x4C9                                           0x4C9 // Unused Flag
 #define FLAG_UNUSED_0x4CA                                           0x4CA // Unused Flag
 #define FLAG_UNUSED_0x4CB                                           0x4CB // Unused Flag
 #define FLAG_UNUSED_0x4CC                                           0x4CC // Unused Flag

@@ -622,26 +622,42 @@ ENCOUNTER_SNOW_IMP::
 	hidenamebox
 	closemessage
 	delay 1
+	specialvar VAR_RESULT, GetCurrentMap
+	compare VAR_RESULT, MAP_WIZARDS_TOWER_DINING_HALL
+	goto_if_eq ENCOUNTER_SNOW_IMP_2
 	setwildbattle SPECIES_SNOW_IMP, 30, ITEM_NONE
+ENCOUNTER_SNOW_IMP_1:
 	dowildbattle
 	switch VAR_RESULT
-	case B_OUTCOME_WON, ENCOUNTER_SNOW_IMP_3
-	case B_OUTCOME_CAUGHT, ENCOUNTER_SNOW_IMP_4
-ENCOUNTER_SNOW_IMP_1:
+	case B_OUTCOME_WON, ENCOUNTER_SNOW_IMP_7
+	case B_OUTCOME_CAUGHT, ENCOUNTER_SNOW_IMP_8
+ENCOUNTER_SNOW_IMP_5:
 	release
 	end
 
-ENCOUNTER_SNOW_IMP_3:
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject VAR_LAST_TALKED
-	fadescreenswapbuffers FADE_FROM_BLACK
+ENCOUNTER_SNOW_IMP_2:
+	setwildbattle SPECIES_SNOW_IMP, 5, ITEM_NONE
 	goto ENCOUNTER_SNOW_IMP_1
 
-ENCOUNTER_SNOW_IMP_4:
+ENCOUNTER_SNOW_IMP_7:
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
 	fadescreenswapbuffers FADE_FROM_BLACK
-	goto ENCOUNTER_SNOW_IMP_1
+	goto ENCOUNTER_SNOW_IMP_5
+
+ENCOUNTER_SNOW_IMP_8:
+	fadescreenswapbuffers FADE_TO_BLACK
+	specialvar VAR_RESULT, GetCurrentMap
+	compare VAR_RESULT, MAP_WIZARDS_TOWER_DINING_HALL
+	goto_if_eq ENCOUNTER_SNOW_IMP_10
+ENCOUNTER_SNOW_IMP_9:
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_SNOW_IMP_5
+
+ENCOUNTER_SNOW_IMP_10:
+	setflag FLAG_CAPTURED_SNOWIMP
+	goto ENCOUNTER_SNOW_IMP_9
 
 
 ENCOUNTER_UNICORN_BARB::
@@ -674,6 +690,46 @@ ENCOUNTER_UNICORN_BARB_4:
 	removeobject VAR_LAST_TALKED
 	fadescreenswapbuffers FADE_FROM_BLACK
 	goto ENCOUNTER_UNICORN_BARB_1
+
+
+ENCOUNTER_RAT::
+	lock
+	faceplayer
+	namebox ENCOUNTER_RAT_Text_0
+	playmoncry SPECIES_GIANT_RAT_NORMAL_FORM, 0
+	msgbox ENCOUNTER_RAT_Text_1
+	waitmoncry
+	hidenamebox
+	closemessage
+	delay 1
+	specialvar VAR_RESULT, GetCurrentMap
+	compare VAR_RESULT, MAP_LUMBRIDGE
+	goto_if_eq ENCOUNTER_RAT_2
+	setwildbattle SPECIES_GIANT_RAT_NORMAL_FORM, 30, ITEM_NONE
+ENCOUNTER_RAT_1:
+	dowildbattle
+	switch VAR_RESULT
+	case B_OUTCOME_WON, ENCOUNTER_RAT_7
+	case B_OUTCOME_CAUGHT, ENCOUNTER_RAT_8
+ENCOUNTER_RAT_5:
+	release
+	end
+
+ENCOUNTER_RAT_2:
+	setwildbattle SPECIES_RAT_NORMAL_FORM, 5, ITEM_NONE
+	goto ENCOUNTER_RAT_1
+
+ENCOUNTER_RAT_7:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_RAT_5
+
+ENCOUNTER_RAT_8:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_RAT_5
 
 
 SKOTIZO_TRIGGER_Text_0:
@@ -768,3 +824,9 @@ ENCOUNTER_UNICORN_BARB_Text_0:
 
 ENCOUNTER_UNICORN_BARB_Text_1:
 	.string "NeEeehHHaAyY!$"
+
+ENCOUNTER_RAT_Text_0:
+	.string "RAT$"
+
+ENCOUNTER_RAT_Text_1:
+	.string "Squeek!$"
