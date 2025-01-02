@@ -81,6 +81,7 @@ Debug_EventScript_Script_3::
 	end
 
 Debug_EventScript_Script_4::
+	goto(TOKKUL_CHECK)
 	end
 
 Debug_EventScript_Script_5::

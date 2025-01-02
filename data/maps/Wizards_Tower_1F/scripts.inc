@@ -760,12 +760,57 @@ VAR_CHECKER_11:
 	end
 
 
+TOKKUL_CHECK::
+	buffernumberstring STR_VAR_1, VAR_POKESCAPE_TOKKUL_CURRENCY
+	msgbox TOKKUL_CHECK_Text_0
+	closemessage
+	msgbox TOKKUL_CHECK_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne TOKKUL_CHECK_2
+TOKKUL_CHECK_1:
+	closemessage
+	release
+	end
+
+TOKKUL_CHECK_2:
+	goto VAR_EDIT_TOKKUL
+	goto TOKKUL_CHECK_1
+
+
+VAR_EDIT_TOKKUL::
+	msgbox VAR_EDIT_TOKKUL_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne VAR_EDIT_TOKKUL_2
+	msgbox VAR_EDIT_TOKKUL_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne VAR_EDIT_TOKKUL_5
+	closemessage
+	release
+	end
+
+VAR_EDIT_TOKKUL_2:
+	setvar VAR_POKESCAPE_TOKKUL_CURRENCY, 0
+	buffernumberstring 0, VAR_POKESCAPE_TOKKUL_CURRENCY
+	msgbox TOKKUL_CHECK_Text_0
+	closemessage
+	release
+	end
+
+VAR_EDIT_TOKKUL_5:
+	addvar VAR_POKESCAPE_TOKKUL_CURRENCY, 1000
+	buffernumberstring 0, VAR_POKESCAPE_TOKKUL_CURRENCY
+	msgbox TOKKUL_CHECK_Text_0
+	closemessage
+	release
+	end
+
+
 STORYMODE_VAR_CHECK::
 	buffernumberstring STR_VAR_1, VAR_POKESCAPE_STORYMODE_PROGRESS
 	buffernumberstring STR_VAR_2, VAR_WISE_OLD_MAN_RIVAL
 	msgbox STORYMODE_VAR_CHECK_Text_0
 	closemessage
-	msgbox STORYMODE_VAR_CHECK_Text_1, MSGBOX_YESNO
+	msgbox TOKKUL_CHECK_Text_1, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne STORYMODE_VAR_CHECK_2
 STORYMODE_VAR_CHECK_1:
@@ -1188,12 +1233,21 @@ VAR_CHECKER_Text_7:
 VAR_CHECKER_Text_8:
 	.string "8$"
 
+TOKKUL_CHECK_Text_0:
+	.string "You have: {STR_VAR_1} TOKKUL.$"
+
+TOKKUL_CHECK_Text_1:
+	.string "Would you like to edit these?$"
+
+VAR_EDIT_TOKKUL_Text_0:
+	.string "Set TOKKUL to 0?$"
+
+VAR_EDIT_TOKKUL_Text_1:
+	.string "Add 1000 TOKKUL?$"
+
 STORYMODE_VAR_CHECK_Text_0:
 	.string "STORYMODE_PROGRESS: {STR_VAR_1}.\n"
 	.string "VAR_WISE_OLD_MAN_RIVAL: {STR_VAR_2}.$"
-
-STORYMODE_VAR_CHECK_Text_1:
-	.string "Would you like to edit these?$"
 
 STORYMODE_VAR_EDIT_Text_0:
 	.string "VAR_POKESCAPE_STORYMODE_PROGRESS:\n"

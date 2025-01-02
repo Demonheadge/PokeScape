@@ -2285,3 +2285,26 @@
 	.2byte \trainer_b
 	.4byte \lose_text_b
 	.endm
+
+	@ Opens the Pokemart system, offering the specified products for sale.
+	@ Products should be a list of .2byte item values preceded by an .align 2
+	.macro pokemarttokkulshop products:req
+	.byte 0xf1
+	.4byte \products
+	.endm
+
+	@ Adds value to the player's money. If adding 'value' money would exceed MAX_MONEY, the player's money is set to MAX_MONEY.
+	@ If 'disable' is set to anything but 0 then this command does nothing.
+	.macro addtokkul value:req, disable=0
+	.byte 0x90
+	.4byte \value
+	.byte \disable
+	.endm
+
+	@ Subtracts value from the player's money. If the player has less than 'value' money, their money is set to 0.
+	@ If 'disable' is set to anything but 0 then this command does nothing.
+	.macro removetokkul value:req, disable=0
+	.byte 0x91
+	.4byte \value
+	.byte \disable
+	.endm

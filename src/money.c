@@ -85,6 +85,14 @@ bool8 IsEnoughMoney(u32 *moneyPtr, u32 cost)
         return FALSE;
 }
 
+bool8 IsEnoughTokkul(u32 tokkul, u32 cost)
+{
+    if (tokkul >= cost)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 void AddMoney(u32 *moneyPtr, u32 toAdd)
 {
     u32 toSet = GetMoney(moneyPtr);
@@ -118,6 +126,44 @@ void RemoveMoney(u32 *moneyPtr, u32 toSub)
     SetMoney(moneyPtr, toSet);
 }
 
+void SetTokkul(u32 *tokkulPtr, u32 newValue)
+{
+    *tokkulPtr = newValue;
+}
+
+void RemoveTokkul(u32 *tokkulPtr, u32 toSub)
+{
+    u32 toSet = *tokkulPtr;
+
+    // can't subtract more than you already have
+    if (toSet < toSub)
+        toSet = 0;
+    else
+        toSet -= toSub;
+
+    SetTokkul(tokkulPtr, toSet);
+}
+
+void AddTokkul(u32 *tokkulPtr, u32 toAdd)
+{
+    u32 toSet = *tokkulPtr;
+
+    // can't have more money than MAX
+    if (toSet + toAdd > MAX_MONEY)
+    {
+        toSet = MAX_MONEY;
+    }
+    else
+    {
+        toSet += toAdd;
+        // check overflow, can't have less money after you receive more
+        if (toSet < *tokkulPtr)
+            toSet = MAX_MONEY;
+    }
+
+    SetTokkul(tokkulPtr, toSet);
+}
+
 bool8 IsEnoughForCostInVar0x8005(void)
 {
     return IsEnoughMoney(&gSaveBlock1Ptr->money, gSpecialVar_0x8005);
@@ -131,6 +177,11 @@ void SubtractMoneyFromVar0x8005(void)
 void PrintMoneyAmountInMoneyBox(u8 windowId, int amount, u8 speed)
 {
     PrintMoneyAmount(windowId, 30, 1, amount, speed);
+}
+
+void PrintTokkulAmountInTokkulBox(u8 windowId, int amount, u8 speed)
+{
+    PrintTokkulAmount(windowId, 30, 1, amount, speed);
 }
 
 void PrintMoneyAmount(u8 windowId, u8 x, u8 y, int amount, u8 speed)
@@ -147,6 +198,23 @@ void PrintMoneyAmount(u8 windowId, u8 x, u8 y, int amount, u8 speed)
         *(txtPtr++) = CHAR_SPACER;
 
     StringExpandPlaceholders(txtPtr, gText_PokedollarVar1);
+    //StringExpandPlaceholders(txtPtr, gText_Tokkul);
+    AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar4, x, y, speed, NULL);
+}
+void PrintTokkulAmount(u8 windowId, u8 x, u8 y, int amount, u8 speed)
+{
+    u8 *txtPtr;
+    s32 strLength;
+
+    ConvertIntToDecimalStringN(gStringVar1, amount, STR_CONV_MODE_LEFT_ALIGN, 6);
+
+    strLength = 6 - StringLength(gStringVar1);
+    txtPtr = gStringVar4;
+
+    while (strLength-- > 0)
+        *(txtPtr++) = CHAR_SPACER;
+
+    StringExpandPlaceholders(txtPtr, gText_Tokkul);
     AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar4, x, y, speed, NULL);
 }
 
@@ -155,10 +223,19 @@ void PrintMoneyAmountInMoneyBoxWithBorder(u8 windowId, u16 tileStart, u8 pallete
     DrawStdFrameWithCustomTileAndPalette(windowId, FALSE, tileStart, pallete);
     PrintMoneyAmountInMoneyBox(windowId, amount, 0);
 }
+void PrintTokkulAmountInTokkulBoxWithBorder(u8 windowId, u16 tileStart, u8 pallete, int amount)
+{
+    DrawStdFrameWithCustomTileAndPalette(windowId, FALSE, tileStart, pallete);
+    PrintTokkulAmountInTokkulBox(windowId, amount, 0);
+}
 
 void ChangeAmountInMoneyBox(int amount)
 {
     PrintMoneyAmountInMoneyBox(sMoneyBoxWindowId, amount, 0);
+}
+void ChangeAmountInTokkulBox(int amount)
+{
+    PrintTokkulAmountInTokkulBox(sMoneyBoxWindowId, amount, 0);
 }
 
 void DrawMoneyBox(int amount, u8 x, u8 y)
@@ -171,6 +248,18 @@ void DrawMoneyBox(int amount, u8 x, u8 y)
     PutWindowTilemap(sMoneyBoxWindowId);
     CopyWindowToVram(sMoneyBoxWindowId, COPYWIN_MAP);
     PrintMoneyAmountInMoneyBoxWithBorder(sMoneyBoxWindowId, 0x214, 14, amount);
+    AddMoneyLabelObject((8 * x) + 19, (8 * y) + 11);
+}
+void DrawTokkulBox(int amount, u8 x, u8 y)
+{
+    struct WindowTemplate template;
+
+    SetWindowTemplateFields(&template, 0, x + 1, y + 1, 10, 2, 15, 8);
+    sMoneyBoxWindowId = AddWindow(&template);
+    FillWindowPixelBuffer(sMoneyBoxWindowId, PIXEL_FILL(0));
+    PutWindowTilemap(sMoneyBoxWindowId);
+    CopyWindowToVram(sMoneyBoxWindowId, COPYWIN_MAP);
+    PrintTokkulAmountInTokkulBoxWithBorder(sMoneyBoxWindowId, 0x214, 14, amount);
     AddMoneyLabelObject((8 * x) + 19, (8 * y) + 11);
 }
 

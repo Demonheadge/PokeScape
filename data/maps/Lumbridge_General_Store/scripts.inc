@@ -42,6 +42,35 @@ GeneralStoreShopScript_7:
 	return
 
 
+SHOP_TOKKUL::
+	lock
+	faceplayer
+	setflag FLAG_A_NUB_TOT_TUTORIAL
+	namebox SHOP_TOKKUL_Text_0
+	msgbox SHOP_TOKKUL_Text_1
+	waitmessage
+	pokemarttokkulshop STORE_GeneralStore_4
+	msgbox SHOP_TOKKUL_Text_2
+	clearflag FLAG_A_NUB_TOT_TUTORIAL
+	release
+	end
+
+
+
+    .align 2
+STORE_TokStore:
+    .2byte DECOR_SMALL_DESK
+	.2byte DECOR_POKEMON_DESK
+	.2byte DECOR_HEAVY_DESK
+	.2byte DECOR_RAGGED_DESK
+	.2byte DECOR_COMFORT_DESK
+	.2byte DECOR_BRICK_DESK
+	.2byte DECOR_CAMP_DESK
+	.2byte DECOR_HARD_DESK
+	.2byte DECOR_NONE
+	release
+	end
+
 GeneralStore_LUMBRIDGE::
 	lock
 	faceplayer
@@ -543,6 +572,16 @@ STORE_cocktails:
     .2byte ITEM_NONE
     release
     end
+
+SHOP_TOKKUL_Text_0:
+	.string "Tz-ShopKeeps$"
+
+SHOP_TOKKUL_Text_1:
+	.string "Welcome to the Tokkul store.\p"
+	.string "How may I help you?$"
+
+SHOP_TOKKUL_Text_2:
+	.string "TzGtfo.$"
 
 GeneralStore_LUMBRIDGE_Text_0:
 	.string "Clerk$"

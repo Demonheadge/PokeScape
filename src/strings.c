@@ -1213,7 +1213,7 @@ const u8 gText_PkmnFainted_FldPsn[] = _("{STR_VAR_1} survived the poisoning.\nTh
 const u8 gText_Marco[] = _("MARCO");
 const u8 gText_TrainerCardName[] = _("NAME: ");
 const u8 gText_TrainerCardIDNo[] = _("IDNo.");
-const u8 gText_TrainerCardMoney[] = _("MONEY");
+const u8 gText_TrainerCardMoney[] = _("MONEY:");
 const u8 gText_PokeDollar[] = _("¥"); // Unused
 const u8 gText_TrainerCardPokedex[] = _("BESTIARY");
 const u8 gText_EmptyString6[] = _("");
@@ -2409,3 +2409,7 @@ const u8 gText_ElementalShield_Desc [] = _("Increases defence but locks\nmonster
 const u8 gText_GraniteMaul_Desc [] = _("Increases the power of\nRock-type moves.");
 const u8 gText_KrakenTentacle_Desc [] = _("Applies poison to the monsters moves.");
 
+const u8 gText_TrainerCardTokkul[] = _("TOKKUL:");
+const u8 gText_TrainerCardSlayerPoints[] = _("SLAYER POINTS:");
+const u8 gText_SlayerPoints[] = _("{STR_VAR_1} SP");
+const u8 gText_Tokkul[] = _("{STR_VAR_1} TKL");

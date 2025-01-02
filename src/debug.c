@@ -462,7 +462,7 @@ static const u8 sDebugText_Cancel[] =           _("Cancel");
 static const u8 sDebugText_Util_Script_1[] =               _("STORYMODE_VAR_CHECK");
 static const u8 sDebugText_Util_Script_2[] =               _("SLAYER VAR CHECK");
 static const u8 sDebugText_Util_Script_3[] =               _("LEVEL CAP");
-static const u8 sDebugText_Util_Script_4[] =               _("Script 4");
+static const u8 sDebugText_Util_Script_4[] =               _("TOKKUL");
 static const u8 sDebugText_Util_Script_5[] =               _("Script 5");
 static const u8 sDebugText_Util_Script_6[] =               _("Script 6");
 static const u8 sDebugText_Util_Script_7[] =               _("Script 7");
@@ -3726,6 +3726,7 @@ static void DebugAction_Give_Pokemon_ComplexCreateMon(u8 taskId) //https://githu
 static void DebugAction_Give_MaxMoney(u8 taskId)
 {
     SetMoney(&gSaveBlock1Ptr->money, MAX_MONEY);
+    SetTokkul(&gSaveBlock1Ptr->tokkul, MAX_MONEY);
 }
 
 static void DebugAction_Give_MaxCoins(u8 taskId)

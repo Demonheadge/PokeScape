@@ -241,6 +241,7 @@ gScriptCmdTable::
     .4byte ScrCmd_destroyfollower					@ 0xee
     .4byte ScrCmd_facefollower						@ 0xef
     .4byte ScrCmd_checkfollower						@ 0xf0
+	.4byte ScrCmd_pokemarttokkulshop                @ 0xf1
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

@@ -2413,6 +2413,16 @@ void ShowScrollableMultichoice(void)
         task->tKeepOpenAfterSelect = FALSE;
         task->tTaskId = taskId;
         break;
+    case SCROLL_TOKKUL_SHOP:
+        task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
+        task->tNumItems = 16;
+        task->tLeft = 14;
+        task->tTop = 1;
+        task->tWidth = 15;
+        task->tHeight = 12;
+        task->tKeepOpenAfterSelect = FALSE;
+        task->tTaskId = taskId;
+        break;
     default:
         gSpecialVar_Result = MULTI_B_PRESSED;
         DestroyTask(taskId);
@@ -2575,6 +2585,25 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_Exit
     },
     [SCROLL_SLAYER_REWARD_SHOP] =
+    {
+        gText_DarkTotemTop,
+        gText_DarkTotemMiddle,
+        gText_DarkTotemBottom,
+        gText_AncientShard,
+        gText_Overload,
+        gText_SaradominBrew,
+        gText_PhoenixNecklace,
+        gText_AbyssalWhip,
+        gText_DragonfireShield,
+        gText_DragonClaws,
+        gText_DragonDaggerP,
+        gText_DragonScimitar,
+        gText_ElementalShield,
+        gText_GraniteMaul,
+        gText_KrakenTentacle,
+        gText_Exit
+    },
+    [SCROLL_TOKKUL_SHOP] =
     {
         gText_DarkTotemTop,
         gText_DarkTotemMiddle,
@@ -3077,6 +3106,10 @@ static void FillFrontierExchangeCornerWindowAndItemIcon(u16 menu, u16 selection)
             AddTextPrinterParameterized2(0, FONT_NORMAL, sSlayerShopItemDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
             ShowFrontierExchangeCornerItemIcon(sSlayerShopItems[selection]);
             break;
+        case SCROLL_TOKKUL_SHOP:
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sSlayerShopItemDescriptions[selection], 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            ShowFrontierExchangeCornerItemIcon(sSlayerShopItems[selection]);
+            break;
         }
     }
 }
@@ -3106,6 +3139,7 @@ static void HideFrontierExchangeCornerItemIcon(u16 menu, u16 unused)
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR:
         case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
         case SCROLL_SLAYER_REWARD_SHOP:
+        case SCROLL_TOKKUL_SHOP:
             FieldEffectFreeGraphicsResources(&gSprites[sScrollableMultichoice_ItemSpriteId]);
             break;
         }

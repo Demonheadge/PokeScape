@@ -26,6 +26,38 @@ script GeneralStoreShopScript {
 }
 
 
+script SHOP_TOKKUL {
+    //pokemartdecoration FortreeCity_DecorationShop_PokemartDecor_Desks
+    lock
+	faceplayer
+    setflag(FLAG_A_NUB_TOT_TUTORIAL)
+    namebox("Tz-ShopKeeps")
+    msgbox(format("Welcome to the Tokkul store.\pHow may I help you?"))
+	waitmessage
+	pokemarttokkulshop (STORE_GeneralStore_4)
+	msgbox(format("TzGtfo."))
+    clearflag(FLAG_A_NUB_TOT_TUTORIAL)
+	release
+	end
+    //pokemartdecoration (STORE_GeneralStore_0) 
+}
+
+raw `
+    .align 2
+STORE_TokStore:
+    .2byte DECOR_SMALL_DESK
+	.2byte DECOR_POKEMON_DESK
+	.2byte DECOR_HEAVY_DESK
+	.2byte DECOR_RAGGED_DESK
+	.2byte DECOR_COMFORT_DESK
+	.2byte DECOR_BRICK_DESK
+	.2byte DECOR_CAMP_DESK
+	.2byte DECOR_HARD_DESK
+	.2byte DECOR_NONE
+	release
+	end
+`
+
 
 ///GENERAL STORE SCRIPTS
 

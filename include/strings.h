@@ -3596,5 +3596,10 @@ extern const u8	gText_DragonScimitar_Desc[];
 extern const u8	gText_ElementalShield_Desc[];
 extern const u8	gText_GraniteMaul_Desc[];
 extern const u8	gText_KrakenTentacle_Desc[];
+extern const u8 gText_TrainerCardTokkul[];
+extern const u8 gText_TrainerCardSlayerPoints[];
+extern const u8 gText_SlayerPoints[];
+extern const u8 gText_Tokkul[];
+
 
 #endif // GUARD_STRINGS_H
