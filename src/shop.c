@@ -1150,8 +1150,16 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
 
     if (AdjustQuantityAccordingToDPadInput(&tItemCount, sShopData->maxQuantity) == TRUE)
     {
-        sShopData->totalCost = (ItemId_GetPrice(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
-        BuyMenuPrintItemQuantityAndPrice(taskId);
+        if (sMartInfo.martType == MART_TYPE_TOKKUL)
+        {
+            sShopData->totalCost = (ItemId_GetPriceTokkul(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
+            BuyMenuPrintItemQuantityAndPrice(taskId);
+        }
+        else
+        {
+            sShopData->totalCost = (ItemId_GetPrice(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
+            BuyMenuPrintItemQuantityAndPrice(taskId);
+        }
     }
     else
     {
@@ -1300,7 +1308,9 @@ static void BuyMenuPrintItemQuantityAndPrice(u8 taskId)
     s16 *data = gTasks[taskId].data;
 
     FillWindowPixelBuffer(WIN_QUANTITY_PRICE, PIXEL_FILL(1));
-    PrintMoneyAmount(WIN_QUANTITY_PRICE, 30, 1, sShopData->totalCost, TEXT_SKIP_DRAW);
+    if (sMartInfo.martType == MART_TYPE_TOKKUL)
+        PrintTokkulAmount(WIN_QUANTITY_PRICE, 24, 1, sShopData->totalCost, TEXT_SKIP_DRAW);
+    else PrintMoneyAmount(WIN_QUANTITY_PRICE, 30, 1, sShopData->totalCost, TEXT_SKIP_DRAW);
     ConvertIntToDecimalStringN(gStringVar1, tItemCount, STR_CONV_MODE_LEADING_ZEROS, BAG_ITEM_CAPACITY_DIGITS);
     StringExpandPlaceholders(gStringVar4, gText_xVar1);
     BuyMenuPrint(WIN_QUANTITY_PRICE, gStringVar4, 0, 1, 0, COLORID_NORMAL);
