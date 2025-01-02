@@ -181,7 +181,7 @@ void PrintMoneyAmountInMoneyBox(u8 windowId, int amount, u8 speed)
 
 void PrintTokkulAmountInTokkulBox(u8 windowId, int amount, u8 speed)
 {
-    PrintTokkulAmount(windowId, 30, 1, amount, speed);
+    PrintTokkulAmount(windowId, 24, 1, amount, speed);
 }
 
 void PrintMoneyAmount(u8 windowId, u8 x, u8 y, int amount, u8 speed)

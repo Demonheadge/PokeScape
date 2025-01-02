@@ -2308,3 +2308,12 @@
 	.4byte \value
 	.byte \disable
 	.endm
+
+	@ Creates a window showing how much Tokkul the player has.
+	@ If 'disable' is set to anything but 0 then this command does nothing.
+	.macro showtokkulbox x:req, y:req, disable=0
+	.byte 0x93
+	.byte \x
+	.byte \y
+	.byte \disable
+	.endm
