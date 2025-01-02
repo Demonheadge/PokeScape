@@ -22,6 +22,7 @@ struct Item
     u8 sort:5;
     u8 battleUsage;
     u8 flingPower;
+    u16 tokkulcost;
 };
 
 struct BagPocket
@@ -77,6 +78,7 @@ u8 ItemId_GetSecondaryId(u16 itemId);
 u32 ItemId_GetFlingPower(u32 itemId);
 u32 GetItemStatus1Mask(u16 itemId);
 u32 GetItemStatus2Mask(u16 itemId);
+u16 ItemId_GetPriceTokkul(u16 itemId);
 
 /* Expands to:
  * enum

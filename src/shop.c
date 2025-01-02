@@ -648,7 +648,7 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
         {
             ConvertIntToDecimalStringN(
                 gStringVar1,
-                ItemId_GetPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT),
+                ItemId_GetPriceTokkul(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT),
                 STR_CONV_MODE_LEFT_ALIGN,
                 5);
         }
@@ -664,7 +664,15 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
         if (ItemId_GetImportance(itemId) && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1)))
             StringCopy(gStringVar4, gText_SoldOut);
         else
-            StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
+            if (sMartInfo.martType == MART_TYPE_TOKKUL)
+            {
+                StringExpandPlaceholders(gStringVar4, gText_Tokkul);
+            }
+            else {
+                StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
+            }
+            
+
         x = GetStringRightAlignXOffset(FONT_NARROW, gStringVar4, 120);
         AddTextPrinterParameterized4(windowId, FONT_NARROW, x, y, 0, 0, sShopBuyMenuTextColors[COLORID_ITEM_LIST], TEXT_SKIP_DRAW, gStringVar4);
     }
@@ -1031,7 +1039,7 @@ static void Task_BuyMenu(u8 taskId)
             if (sMartInfo.martType == MART_TYPE_NORMAL)
                 sShopData->totalCost = (ItemId_GetPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT));
             else if (sMartInfo.martType == MART_TYPE_TOKKUL)
-                sShopData->totalCost = (ItemId_GetPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT));
+                sShopData->totalCost = (ItemId_GetPriceTokkul(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT));
             else
                 sShopData->totalCost = gDecorations[itemId].price;
 
@@ -1072,7 +1080,7 @@ static void Task_BuyMenu(u8 taskId)
                         ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
                         StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2);
                         tItemCount = 1;
-                        sShopData->totalCost = (ItemId_GetPrice(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
+                        sShopData->totalCost = (ItemId_GetPriceTokkul(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
                         BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
                     }
                     else if (ItemId_GetPocket(itemId) == POCKET_TM_HM)

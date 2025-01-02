@@ -51,6 +51,7 @@ const struct Item gItems[] =
     {
         .name = _("BRONZE POUCH"),
         .price = 100,
+        .tokkulcost = 10000,
         .description = sPouch_Bronze_Desc,
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,

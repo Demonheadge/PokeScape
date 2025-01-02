@@ -198,7 +198,6 @@ void PrintMoneyAmount(u8 windowId, u8 x, u8 y, int amount, u8 speed)
         *(txtPtr++) = CHAR_SPACER;
 
     StringExpandPlaceholders(txtPtr, gText_PokedollarVar1);
-    //StringExpandPlaceholders(txtPtr, gText_Tokkul);
     AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar4, x, y, speed, NULL);
 }
 void PrintTokkulAmount(u8 windowId, u8 x, u8 y, int amount, u8 speed)

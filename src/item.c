@@ -884,6 +884,11 @@ u16 ItemId_GetPrice(u16 itemId)
     return gItems[SanitizeItemId(itemId)].price;
 }
 
+u16 ItemId_GetPriceTokkul(u16 itemId)
+{
+    return gItems[SanitizeItemId(itemId)].tokkulcost;
+}
+
 u32 ItemId_GetHoldEffect(u32 itemId)
 {
     return gItems[SanitizeItemId(itemId)].holdEffect;
