@@ -34,6 +34,7 @@
 #include "data.h"
 #include "confetti_util.h"
 #include "constants/rgb.h"
+#include "outfit_menu.h"
 
 #define HALL_OF_FAME_MAX_TEAMS 30
 #define TAG_CONFETTI 1001
@@ -694,11 +695,12 @@ static void Task_Hof_WaitToDisplayPlayer(u8 taskId)
 
 static void Task_Hof_DisplayPlayer(u8 taskId)
 {
+    u16 picId = GetPlayerTrainerPicIdByOutfitGenderType(gSaveBlock2Ptr->currOutfitId, gSaveBlock2Ptr->playerGender, 0);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
     ShowBg(0);
     ShowBg(1);
     ShowBg(3);
-    gTasks[taskId].tPlayerSpriteID = CreateTrainerPicSprite(PlayerGenderToFrontTrainerPicId_Debug(gSaveBlock2Ptr->playerGender, TRUE), TRUE, 120, 72, 6, TAG_NONE);
+    gTasks[taskId].tPlayerSpriteID = CreateTrainerPicSprite(picId, TRUE, 120, 72, 6, TAG_NONE);
     AddWindow(&sHof_WindowTemplate);
     LoadWindowGfx(1, gSaveBlock2Ptr->optionsWindowFrameType, 0x21D, BG_PLTT_ID(13));
     LoadPalette(GetTextWindowPalette(1), BG_PLTT_ID(14), PLTT_SIZE_4BPP);

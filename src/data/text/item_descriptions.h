@@ -5469,7 +5469,10 @@ static const u8 sChocolateBarSandwichDesc[] = _(
     "A good battle snack\n"
     "for those who need a\n"
     "little energy hit.");
-
+static const u8 sOutfitBoxDesc[] = _(
+    "A box for storing\n"
+    "your collections of\n"
+    "Outfits safely.");
 
 
 static const u8 sPouch_Desc[] = _(

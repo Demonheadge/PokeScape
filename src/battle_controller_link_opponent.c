@@ -28,6 +28,7 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "recorded_battle.h"
+#include "outfit_menu.h"
 
 static void LinkOpponentHandleLoadMonSprite(u32 battler);
 static void LinkOpponentHandleSwitchInAnim(u32 battler);
@@ -428,7 +429,17 @@ static void LinkOpponentHandleDrawTrainerPic(u32 battler)
             }
             else
             {
-                trainerPicId = PlayerGenderToFrontTrainerPicId(gLinkPlayers[GetBattlerMultiplayerId(battler)].gender);
+                //! neverRead was set to 0 by vanilla, we use it to our
+                //! advantage so that our game won't freak out as much
+                //! we also defaults to 0 if the player has an outfit
+                //! our game don't
+                u8 outfit = gLinkPlayers[GetBattlerMultiplayerId(battler)].currOutfitId;
+                u8 gender = gLinkPlayers[GetBattlerMultiplayerId(battler)].gender;
+
+                if (outfit < OUTFIT_COUNT)
+                    trainerPicId = GetPlayerTrainerPicIdByOutfitGenderType(outfit, gender, 0);
+                else
+                    trainerPicId = PlayerGenderToFrontTrainerPicId(gLinkPlayers[GetBattlerMultiplayerId(battler)].gender);
             }
         }
     }
@@ -457,7 +468,17 @@ static void LinkOpponentHandleDrawTrainerPic(u32 battler)
         }
         else
         {
-            trainerPicId = PlayerGenderToFrontTrainerPicId(gLinkPlayers[GetMultiplayerId() ^ BIT_SIDE].gender);
+            //! neverRead was set to 0 by vanilla, we use it to our
+            //! advantage so that our game won't freak out as much
+            //! we also defaults to 0 if the player has an outfit
+            //! our game don't
+            u8 outfit = gLinkPlayers[GetMultiplayerId() ^ BIT_SIDE].currOutfitId;
+            u8 gender = gLinkPlayers[GetMultiplayerId() ^ BIT_SIDE].gender;
+
+            if (outfit < OUTFIT_COUNT)
+                trainerPicId = GetPlayerTrainerPicIdByOutfitGenderType(outfit, gender, 0);
+            else
+                trainerPicId = PlayerGenderToFrontTrainerPicId(gender);
         }
     }
 

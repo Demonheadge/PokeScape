@@ -17,6 +17,7 @@
 #include "constants/easy_chat.h"
 #include "constants/trainer_hill.h"
 #include "config/save.h"
+#include "constants/outfits.h"
 
 // Prevent cross-jump optimization.
 #define BLOCK_CROSS_JUMP asm("");
@@ -119,6 +120,7 @@
 #define NUM_DEX_FLAG_BYTES ROUND_BITS_TO_BYTES(POKEMON_SLOTS_NUMBER)
 #define NUM_FLAG_BYTES ROUND_BITS_TO_BYTES(FLAGS_COUNT)
 #define NUM_TRENDY_SAYING_BYTES ROUND_BITS_TO_BYTES(NUM_TRENDY_SAYINGS)
+#define NUM_OUTFIT_OWNED_BYTES ROUND_BITS_TO_BYTES(OUTFIT_COUNT)
 
 // Calls m0/m1/.../m8 depending on how many arguments are passed.
 #define VARARG_8(m, ...) CAT(m, NARG_8(__VA_ARGS__))(__VA_ARGS__)
@@ -564,6 +566,9 @@ struct SaveBlock2
     u8 questData[QUEST_FLAGS_COUNT * QUEST_STATES];
     u8 subQuests[SUB_FLAGS_COUNT];
     u8 GameMode:1;
+    u16 playerBike:1;
+    u16 currOutfitId:4;
+    u16 outfits[NUM_OUTFIT_OWNED_BYTES];
 }; 
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;

@@ -24,6 +24,7 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "constants/rgb.h"
+#include "outfit_menu.h"
 
 #define PALTAG_UNUSED_MUGSHOT 0x100A
 
@@ -2783,16 +2784,15 @@ static void HBlankCB_Mugshots(void)
 static void Mugshots_CreateTrainerPics(struct Task *task)
 {
     struct Sprite *opponentSprite, *playerSprite;
+    //u32 trainerPicId = GetTrainerPicFromId(gTrainerBattleOpponent_A);
+    u32 playerPicId = GetPlayerTrainerPicIdByOutfitGenderType(gSaveBlock2Ptr->currOutfitId, gSaveBlock2Ptr->playerGender, 0);
 
     s16 mugshotId = task->tMugshotId;
     task->tOpponentSpriteId = CreateTrainerSprite(sMugshotsTrainerPicIDsTable[mugshotId],
                                                   sMugshotsOpponentCoords[mugshotId][0] - 32,
                                                   sMugshotsOpponentCoords[mugshotId][1] + 42,
                                                   0, gDecompressionBuffer);
-    task->tPlayerSpriteId = CreateTrainerSprite(PlayerGenderToFrontTrainerPicId(gSaveBlock2Ptr->playerGender),
-                                                DISPLAY_WIDTH + 32,
-                                                106,
-                                                0, gDecompressionBuffer);
+    task->tPlayerSpriteId = CreateTrainerSprite(playerPicId, DISPLAY_WIDTH + 32, 106, 0, gDecompressionBuffer);
 
     opponentSprite = &gSprites[task->tOpponentSpriteId];
     playerSprite = &gSprites[task->tPlayerSpriteId];

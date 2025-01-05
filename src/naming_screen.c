@@ -1393,13 +1393,45 @@ static void NamingScreen_NoIcon(void)
 
 }
 
+/*
+ * @note:
+ * If you were using the player naming screen somewhere else besides the birch
+ * speech, uncomment the codes in the function below.
+ * This will make this function to use the monPersonality param in DoNamingScreen as
+ * the specified outfit id to be used to show the correct obj for the player.
+ * 
+ * So, for example, if you want it to show the player's current outfit instead of
+ * DEFAULT_OUTFIT, change this:
+ * DoNamingScreen(NAMING_SCREEN_PLAYER,
+ *                gSaveBlock2Ptr->playerName,
+ *                gSaveBlock2Ptr->playerGender,
+ *                0, 
+ *                0,
+ *                CB2_NewGameBirchSpeech_ReturnFromNamingScreen);
+ * To this:
+ * DoNamingScreen(NAMING_SCREEN_PLAYER,
+ *                gSaveBlock2Ptr->playerName,
+ *                gSaveBlock2Ptr->playerGender,
+ *                0, 
+ *                gSaveBlock2Ptr->currOutfitId,
+ *                CB2_NewGameBirchSpeech_ReturnFromNamingScreen);
+ * 
+ * You can specify a specific outfit too, like so:
+ * DoNamingScreen(NAMING_SCREEN_PLAYER,
+ *                gSaveBlock2Ptr->playerName,
+ *                gSaveBlock2Ptr->playerGender,
+ *                0, 
+ *                OUTFIT_UNUSUAL_RED,
+ *                CB2_NewGameBirchSpeech_ReturnFromNamingScreen);
+ */
 static void NamingScreen_CreatePlayerIcon(void)
 {
-    u16 rivalGfxId;
+    u16 gfxId = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(DEFAULT_OUTFIT, PLAYER_AVATAR_STATE_NORMAL, gSaveBlock2Ptr->playerGender);
     u8 spriteId;
+    // u32 outfit = sNamingScreen->monPersonality;
 
-    rivalGfxId = GetRivalAvatarGraphicsIdByStateIdAndGender(PLAYER_AVATAR_STATE_NORMAL, sNamingScreen->monSpecies);
-    spriteId = CreateObjectGraphicsSprite(rivalGfxId, SpriteCallbackDummy, 56, 37, 0);
+    // gfxId = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(outfit, PLAYER_AVATAR_STATE_NORMAL, gSaveBlock2Ptr->playerGender);
+    spriteId = CreateObjectGraphicsSprite(gfxId, SpriteCallbackDummy, 56, 37, 0);
     gSprites[spriteId].oam.priority = 3;
     StartSpriteAnim(&gSprites[spriteId], ANIM_STD_GO_SOUTH);
 }

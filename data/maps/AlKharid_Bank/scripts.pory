@@ -8,3 +8,43 @@ script AlKharid_Bank_OnTransition {
     setrespawn(HEAL_LOCATION_AL_KHARID)
     return
 }
+
+
+script Outfits {
+    giveitem(ITEM_OUTFIT_BOX, 1)
+    unlockoutfit(3) //OUTFIT_UNUSUAL_RED
+    unlockoutfit(4)
+    closemessage
+    release
+    end
+}
+
+script SHOP_CLOTHES {
+    //pokemartdecoration FortreeCity_DecorationShop_PokemartDecor_Desks
+    lock
+	faceplayer
+    namebox("Tz-ShopKeeps")
+    msgbox(format("Welcome to the Clothes shop.\pHow may I help you?"))
+	waitmessage
+    pokemartoutfit (STORE_clothes)
+	//pokemarttokkulshop (STORE_GeneralStore_4)
+	msgbox(format("TzGtfo."))
+	release
+	end
+    //pokemartdecoration (STORE_GeneralStore_0) 
+}
+
+
+
+raw `
+    .align 2
+STORE_clothes:
+	.2byte OUTFIT_USUAL_GREEN
+    .2byte OUTFIT_UNUSUAL_RED
+    .2byte OUTFIT_HAM
+    .2byte OUTFIT_BRONZE_ARMOUR
+    .2byte OUTFIT_GUARD
+    .2byte OUTFIT_NONE
+    release
+    end
+`

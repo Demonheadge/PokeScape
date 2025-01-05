@@ -47,11 +47,13 @@
 #include "quests.h"
 #include "constants/items.h"
 #include "constants/heal_locations.h"
+#include "outfit_menu.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 
 static void ClearFrontierRecord(void);
 static void ResetMiniGamesRecords(void);
+static void ResetOutfitData(void);
 static void WarpToLUMBRIDGE(void);
 static void WarpToFALADOR(void);
 static void WarpToVARROCK(void);
@@ -178,6 +180,7 @@ void Sav2_ClearSetDefault(void)
 {
     ClearSav2();
     SetDefaultOptions();
+    ResetOutfitData();
 }
 
 void ResetMenuAndMonGlobals(void)
@@ -188,6 +191,13 @@ void ResetMenuAndMonGlobals(void)
     ZeroEnemyPartyMons();
     ResetBagScrollPositions();
     ResetPokeblockScrollPositions();
+}
+
+static void ResetOutfitData(void)
+{
+    memset(gSaveBlock2Ptr->outfits, 0, sizeof(gSaveBlock2Ptr->outfits));
+    UnlockOutfit(DEFAULT_OUTFIT);
+    gSaveBlock2Ptr->currOutfitId = DEFAULT_OUTFIT;
 }
 
 void NewGameInitData(void)
@@ -247,6 +257,7 @@ void NewGameInitData(void)
     WipeTrainerNameRecords();
     ResetTrainerHillResults();
     ResetContestLinkResults();
+    ResetOutfitData();
     QuestMenu_ResetMenuSaveData();
     memset(&gSaveBlock2Ptr->follower, 0, sizeof(gSaveBlock2Ptr->follower));
     

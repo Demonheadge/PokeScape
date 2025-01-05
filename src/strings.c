@@ -2413,3 +2413,5 @@ const u8 gText_TrainerCardTokkul[] = _("TOKKUL:");
 const u8 gText_TrainerCardSlayerPoints[] = _("SLAYER POINTS:");
 const u8 gText_SlayerPoints[] = _("{STR_VAR_1} SP");
 const u8 gText_Tokkul[] = _("{STR_VAR_1} TKL");
+const u8 gText_YouWantedVar1OutfitThatllBeVar2[] = _("You wanted that {STR_VAR_1} OUTFIT?\nThat'll be ¥{STR_VAR_2}. Will that be okay?");
+const u8 gText_HereIsTheOutfitThankYou[] = _("Here is the OUTFIT!\nThank you very much.");

@@ -345,6 +345,7 @@ SECTIONS {
         src/expansion_intro.o(.text);
         src/quests.o(.text);
         src/follow_me.o(.text);
+        src/outfit_menu.o(.text);
     } > ROM =0
 
     script_data :
@@ -714,6 +715,7 @@ SECTIONS {
         src/expansion_intro.o(.rodata);
         src/quests.o(.rodata);
         src/follow_me.o(.rodata);
+        src/outfit_menu.o(.rodata);
     } > ROM =0
 
     song_data :

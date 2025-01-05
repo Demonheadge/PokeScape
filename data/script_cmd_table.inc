@@ -242,6 +242,10 @@ gScriptCmdTable::
     .4byte ScrCmd_facefollower						@ 0xef
     .4byte ScrCmd_checkfollower						@ 0xf0
 	.4byte ScrCmd_pokemarttokkulshop                @ 0xf1
+	.4byte ScrCmd_toggleoutfit                      @ 0xf2
+	.4byte ScrCmd_getoutfitstatus                   @ 0xf3
+	.4byte ScrCmd_bufferoutfitstr                   @ 0xf4
+	.4byte ScrCmd_pokemartoutfit                    @ 0xf5
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

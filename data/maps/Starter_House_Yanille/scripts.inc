@@ -61,7 +61,7 @@ Follower_Frogeel_1:
 
 Follower_Frogeel_2:
 	loadword 0, Following_Frogeel
-	setfollower 2, 0x100
+	setfollower VAR_LAST_TALKED, 0x100
 	msgbox Follower_Frogeel_Text_1
 	msgbox Follower_Frogeel_Text_3
 	goto Follower_Frogeel_1

@@ -45,6 +45,7 @@ void FieldUseFunc_VsSeeker(u8 taskId);
 void Task_ItemUse_CloseMessageBoxAndReturnToField_VsSeeker(u8 taskId);
 void ItemUseOutOfBattle_PokescapeMap(u8);
 void ItemUseOutOfBattle_Function(u8);
+void ItemUseOutOfBattle_OutfitBox(u8);
 
 enum {
     BALL_THROW_UNABLE_TWO_MONS,

@@ -1421,9 +1421,9 @@
 #define ITEM_BAT_SHISH              (FINAL_VANILLA_ITEM + 284 )
 #define ITEM_FROGBURGER             (FINAL_VANILLA_ITEM + 285 )
 #define ITEM_EEL_SUSHI              (FINAL_VANILLA_ITEM + 286 )
+#define ITEM_OUTFIT_BOX             (FINAL_VANILLA_ITEM + 287 )
 
-
-#define ITEMS_COUNT 1102
+#define ITEMS_COUNT 1103
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

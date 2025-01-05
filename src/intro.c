@@ -26,6 +26,7 @@
 #include "expansion_intro.h"
 #include "constants/rgb.h"
 #include "constants/battle_anim.h"
+#include "outfit_menu.h"
 
 /*
     The intro is grouped into the following scenes
@@ -1160,6 +1161,11 @@ void CB2_InitCopyrightScreenAfterBootup(void)
         LoadGameSave(SAVE_NORMAL);
         if (gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_CORRUPT)
             Sav2_ClearSetDefault();
+        if (gSaveBlock2Ptr->currOutfitId == OUTFIT_NONE)
+        {
+            UnlockOutfit(DEFAULT_OUTFIT);
+            gSaveBlock2Ptr->currOutfitId = DEFAULT_OUTFIT;
+        }
         SetPokemonCryStereo(gSaveBlock2Ptr->optionsSound);
         InitHeap(gHeap, HEAP_SIZE);
     }

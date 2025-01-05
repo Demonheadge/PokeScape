@@ -387,7 +387,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_TZHAAR_CHAMPION",
+      "graphics_id": "OBJ_EVENT_GFX_MAY_NORMAL",
       "x": 7,
       "y": 25,
       "elevation": 0,
@@ -396,11 +396,37 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SHOP_TOKKUL",
+      "script": "Follower_Frogeel",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TZHAAR_CHAMPION",
+      "x": 6,
+      "y": 25,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Follower_Frogeel",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1",
+      "x": 9,
+      "y": 25,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SHOP_CLOTHES",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AZURILL",
       "x": 8,
       "y": 25,
       "elevation": 0,
@@ -409,7 +435,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "GeneralStoreShopScript",
+      "script": "Outfits",
       "flag": "0"
     }
   ],

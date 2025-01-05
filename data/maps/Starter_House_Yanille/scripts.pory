@@ -52,7 +52,7 @@ script Follower_Frogeel {
     if (var(VAR_RESULT))
     { 
         loadword(0, Following_Frogeel)
-        setfollower(2, 0x100)
+        setfollower(VAR_LAST_TALKED, 0x100)
         msgbox(format("AAAAAAAAAAAAAAAAAAA!"))
         msgbox(format("Frogeel is now following you."))
     }
@@ -60,7 +60,6 @@ script Follower_Frogeel {
     closemessage
     release
     end
-
 }
 script Following_Frogeel {
     msgbox(format("Tell Frogeel to stop following you?"), MSGBOX_YESNO)

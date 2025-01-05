@@ -462,6 +462,8 @@ u8 GetSidewaysStairsCollision(struct ObjectEvent *objectEvent, u8 dir, u8 curren
 bool8 MovementAction_EmoteX_Step0(struct ObjectEvent *, struct Sprite *);
 bool8 MovementAction_EmoteDoubleExclamationMark_Step0(struct ObjectEvent *, struct Sprite *);
 
+const struct SpritePalette *GetObjectEventPaletteFromTag(u16 tag);
+
 // follow me
 u16 GetMiniStepCount(u8 speed);
 void RunMiniStep(struct Sprite *sprite, u8 speed, u8 currentFrame);
