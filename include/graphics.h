@@ -384,6 +384,7 @@ extern const u8 gTrainerBackPic_RubySapphireBrendan[];
 extern const u8 gTrainerBackPic_RubySapphireMay[];
 extern const u8 gTrainerBackPic_Wally[];
 extern const u8 gTrainerBackPic_Steven[];
+extern const u8 gTrainerBackPic_Zanik[];
 
 extern const u32 gTrainerBackPicPalette_Red[];
 extern const u32 gTrainerBackPicPalette_Leaf[];
@@ -576,6 +577,7 @@ extern const u32 gTrainerPalette_protaganist_f[];
 extern const u32 gTrainerPalette_protaganist_m[];
 extern const u32 gTrainerPalette_protaganist_f_back[];
 extern const u32 gTrainerPalette_protaganist_m_back[];
+extern const u32 gTrainerPalette_zanik_back[];
 
 extern const u32 gTrainerPalette_raptor[];
 extern const u32 gTrainerPalette_sigmund[];

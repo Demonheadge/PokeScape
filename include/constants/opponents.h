@@ -497,7 +497,7 @@
 #define TRAINER_MUDSKIPPERSOUND2_TRAINER_1              491
 #define TRAINER_MUDSKIPPERSOUND2_TRAINER_2              492
 #define TRAINER_MUDSKIPPERSOUND2_TRAINER_3              493
-
+#define TRAINER_ZANIK_HAM                               494
 
 
 
@@ -507,7 +507,7 @@
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      (TRAINER_MUDSKIPPERSOUND2_TRAINER_3 + 1)
+#define TRAINERS_COUNT                      (TRAINER_ZANIK_HAM + 1)
 #define MAX_TRAINERS_COUNT                  864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H
