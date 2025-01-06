@@ -1105,7 +1105,7 @@ script multipartnerBattle_Zanik {
 		closemessage
 		hidenamebox
 		setflag(FLAG_PARTNER_BATTLE)
-		
+		//setvar (VAR_UNUSED_0x8014, TRAINER_ZANIK_HAM)
 		setvar (VAR_PARTNER_TRAINER, TRAINER_ZANIK_HAM)
 		setvar (VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_ZANIK)
 		release

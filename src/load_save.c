@@ -171,11 +171,26 @@ void SavePlayerParty(void)
 void LoadPlayerParty(void)
 {
     int i;
+    bool32 multiBattle = FlagGet(FLAG_PARTNER_BATTLE);
 
     gPlayerPartyCount = gSaveBlock1Ptr->playerPartyCount;
 
     for (i = 0; i < PARTY_SIZE; i++)
+    {
+        u32 data;
+
+        if (multiBattle)
+        {
+            data = GetMonData(&gPlayerParty[i], MON_DATA_EXP);
+            SetMonData(&gSaveBlock1Ptr->playerParty[i], MON_DATA_EXP, &data);
+            /*data = GetMonData(&gPlayerParty[i].maxHP, MON_DATA_HP);
+            SetMonData(&gSaveBlock1Ptr->playerParty[i], MON_DATA_HP, &data);
+            data = GetMonData(&gPlayerParty[i].status, MON_DATA_STATUS);
+            SetMonData(&gSaveBlock1Ptr->playerParty[i], MON_DATA_STATUS, &data);*/
+        }
+
         gPlayerParty[i] = gSaveBlock1Ptr->playerParty[i];
+    }
 }
 
 void SaveObjectEvents(void)

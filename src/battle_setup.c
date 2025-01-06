@@ -371,15 +371,9 @@ void BattleSetup_StartWildBattle(void)
 {
     if (GetSafariZoneFlag())
         DoSafariBattle();
-    else if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) {
-        u8 i;
-        //SAVES the last 3 mons in the players party.
-        gSaveBlock1Ptr->playerPartyCount = gPlayerPartyCount;
-        for (i = 3; i < 6; i++)
-        {
-            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES))
-                gSaveBlock1Ptr->playerParty[i] = gPlayerParty[i];
-        }
+    else if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) 
+    {
+        SavePlayerParty();
         VarSet (VAR_0x8004, SPECIAL_BATTLE_MULTI);
         VarSet (VAR_0x8005, MULTI_BATTLE_2_VS_WILD);
         DoSpecialTrainerBattle();
@@ -390,15 +384,9 @@ void BattleSetup_StartWildBattle(void)
 
 void BattleSetup_StartDoubleWildBattle(void)
 {
-    if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) {
-        u8 i;
-        //SAVES the last 3 mons in the players party.
-        gSaveBlock1Ptr->playerPartyCount = gPlayerPartyCount;
-        for (i = 3; i < 6; i++)
-        {
-            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES))
-                gSaveBlock1Ptr->playerParty[i] = gPlayerParty[i];
-        }
+    if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) 
+    {
+        SavePlayerParty();
         VarSet (VAR_0x8004, SPECIAL_BATTLE_MULTI);
         VarSet (VAR_0x8005, MULTI_BATTLE_2_VS_WILD);
         DoSpecialTrainerBattle();
@@ -1449,6 +1437,12 @@ void BattleSetup_StartTrainerBattle(void)
             FillHillTrainerParty();
 
         SetHillTrainerFlag();
+    }
+    else if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) {
+        VarSet (VAR_0x8004, SPECIAL_BATTLE_MULTI);
+        VarSet (VAR_0x8005, MULTI_BATTLE_2_VS_1);
+        gMain.savedCallback = CB2_EndTrainerBattle;
+        DoSpecialTrainerBattle();
     }
 
     sNoOfPossibleTrainerRetScripts = gNoOfApproachingTrainers;

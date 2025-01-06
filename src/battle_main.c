@@ -5544,13 +5544,7 @@ static void HandleEndTurn_FinishBattle(void)
     if (gCurrentActionFuncId == B_ACTION_TRY_FINISH || gCurrentActionFuncId == B_ACTION_FINISHED)
     {
         if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) { 
-            //LOADS the last 3 mons in the players party.
-            gPlayerPartyCount = gSaveBlock1Ptr->playerPartyCount;
-            for (i = 3; i < 6; i++)
-            {
-                if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES))
-                    gPlayerParty[i] = gSaveBlock1Ptr->playerParty[i];
-            }
+            LoadPlayerParty();
         }
 
         if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK
