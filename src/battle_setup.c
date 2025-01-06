@@ -49,6 +49,7 @@
 #include "constants/trainers.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "constants/battle_tower.h"
 
 enum {
     TRANSITION_TYPE_NORMAL,
@@ -370,12 +371,38 @@ void BattleSetup_StartWildBattle(void)
 {
     if (GetSafariZoneFlag())
         DoSafariBattle();
+    else if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) {
+        u8 i;
+        //SAVES the last 3 mons in the players party.
+        gSaveBlock1Ptr->playerPartyCount = gPlayerPartyCount;
+        for (i = 3; i < 6; i++)
+        {
+            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES))
+                gSaveBlock1Ptr->playerParty[i] = gPlayerParty[i];
+        }
+        VarSet (VAR_0x8004, SPECIAL_BATTLE_MULTI);
+        VarSet (VAR_0x8005, MULTI_BATTLE_2_VS_WILD);
+        DoSpecialTrainerBattle();
+    }
     else
         DoStandardWildBattle(FALSE);
 }
 
 void BattleSetup_StartDoubleWildBattle(void)
 {
+    if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) {
+        u8 i;
+        //SAVES the last 3 mons in the players party.
+        gSaveBlock1Ptr->playerPartyCount = gPlayerPartyCount;
+        for (i = 3; i < 6; i++)
+        {
+            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES))
+                gSaveBlock1Ptr->playerParty[i] = gPlayerParty[i];
+        }
+        VarSet (VAR_0x8004, SPECIAL_BATTLE_MULTI);
+        VarSet (VAR_0x8005, MULTI_BATTLE_2_VS_WILD);
+        DoSpecialTrainerBattle();
+    }
     DoStandardWildBattle(TRUE);
 }
 
@@ -391,8 +418,14 @@ static void DoStandardWildBattle(bool32 isDouble)
     StopPlayerAvatar();
     gMain.savedCallback = CB2_EndWildBattle;
     gBattleTypeFlags = 0;
-    if (isDouble)
-        gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
+    if (isDouble) {
+        if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) {
+            gBattleTypeFlags = BATTLE_TYPE_DOUBLE | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
+        }
+        else {
+            gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
+        }
+    }
     if (InBattlePyramid())
     {
         VarSet(VAR_TEMP_E, 0);

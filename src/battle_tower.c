@@ -39,6 +39,7 @@
 #include "constants/trainers.h"
 #include "constants/event_objects.h"
 #include "constants/moves.h"
+#include "load_save.h"
 
 extern const u8 MossdeepCity_SpaceCenter_2F_EventScript_MaxieTrainer[];
 extern const u8 MossdeepCity_SpaceCenter_2F_EventScript_TabithaTrainer[];
@@ -2205,8 +2206,8 @@ void DoSpecialTrainerBattle(void)
             gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
         }
 
-        gPartnerSpriteId = VarGet(gSpecialVar_0x8007);
-        gPartnerTrainerId = VarGet(gSpecialVar_0x8006) + TRAINER_CUSTOM_PARTNER;
+        gPartnerSpriteId = VarGet(VAR_PARTNER_SPRITE);
+        gPartnerTrainerId = VarGet(VAR_PARTNER_TRAINER) + TRAINER_CUSTOM_PARTNER;
         FillPartnerParty(gPartnerTrainerId);
         CreateTask(Task_StartBattleAfterTransition, 1);
         PlayMapChosenOrBattleBGM(0);
