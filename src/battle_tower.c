@@ -2050,6 +2050,9 @@ static void HandleSpecialTrainerBattleEnd(void)
     }
 
     SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+    if (VarGet(VAR_0x8005) == MULTI_BATTLE_2_VS_1) {
+        SetBattledTrainersFlags();
+    }
 }
 
 static void Task_StartBattleAfterTransition(u8 taskId)

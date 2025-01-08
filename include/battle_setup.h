@@ -74,5 +74,6 @@ void BattleSetup_StartTrainerBattle_Debug(void);
 s32 TrainerIdToRematchTableId(const struct RematchTrainer *table, u16 trainerId);
 s32 FirstBattleTrainerIdToRematchTableId(const struct RematchTrainer *table, u16 trainerId);
 u16 GetRematchTrainerIdFromTable(const struct RematchTrainer *table, u16 firstBattleTrainerId);
+void SetBattledTrainersFlags(void);
 
 #endif // GUARD_BATTLE_SETUP_H
