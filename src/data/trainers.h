@@ -5411,11 +5411,23 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_SIGNATURE_HERO,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
         .trainerPic = TRAINER_PIC_zanik_ham,
-        .trainerName = _("ZANIK"),
+        .trainerName = _("Zanik"),
         .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = TRAINER_PARTY(sParty_ZANIK_HAM),
+    },
+
+    [TRAINER_ARIANE_1] =
+    {
+        .trainerClass = TRAINER_CLASS_SIGNATURE_HERO,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_ariane,
+        .trainerName = _("Ariane"),
+        .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_ARIANE_1),
     },
 
 

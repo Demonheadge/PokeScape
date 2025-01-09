@@ -17,6 +17,7 @@
 #define TRAINER_STEVEN_PARTNER              3075
 #define TRAINER_CUSTOM_PARTNER              3076
 #define TRAINER_ZANIK_PARTNER               3077
+#define TRAINER_ARIANE_PARTNER              3078
 
 #define TRAINER_PIC_HIKER                  0
 #define TRAINER_PIC_AQUA_GRUNT_M           1
@@ -289,6 +290,7 @@
 #define TRAINER_BACK_PIC_WALLY                  6
 #define TRAINER_BACK_PIC_STEVEN                 7
 #define TRAINER_BACK_PIC_ZANIK                  8
+#define TRAINER_BACK_PIC_ARIANE                 9
 
 #define FACILITY_CLASS_HIKER                 0x0
 #define FACILITY_CLASS_AQUA_GRUNT_M          0x1

@@ -8280,3 +8280,15 @@ static const struct TrainerMon sParty_ZANIK_HAM[] = {
     .species = SPECIES_TOME_OF_RANGED,
     }
 };
+
+static const struct TrainerMon sParty_ARIANE_1[] = {
+    {
+    .lvl = 18,
+    .species = SPECIES_ANIMATED_BOOK,
+    },
+    {
+    .lvl = 19,
+    .species = SPECIES_RUNE,
+    }
+};
+

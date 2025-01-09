@@ -1121,7 +1121,16 @@ script multipartnerBattle_Zanik {
 script Following_Zanik {
 	lock
 	facefollower
-	namebox("Zanik")
+	if (var(VAR_PARTNER_SPRITE) == TRAINER_BACK_PIC_ARIANE) { //chance to a switch case later
+		namebox("Zanik")
+	}
+	elif (var(VAR_PARTNER_SPRITE) == TRAINER_BACK_PIC_ZANIK) {
+		namebox("Zanik")
+	}
+	else {
+		namebox("???")
+	}
+	
 	msgbox(format("Did you want to encounter two wild monsters at once?"), MSGBOX_YESNO)
     if (var(VAR_RESULT))
     { 
@@ -1145,4 +1154,34 @@ script Following_Zanik {
     end
 }
 
+script multipartnerBattle_Ariane {
+
+    lock
+    faceplayer
+    namebox("Ariane")
+	msgbox(format("May we adventure together?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+        loadword(0, Following_Zanik)
+		setfollower(24, 0x100)
+		closemessage
+		hidenamebox
+		playfanfare(MUS_OBTAIN_SYMBOL)
+		msgbox(format("ARIANE JOINS THE PARTY!"))
+		waitfanfare
+		closemessage
+		hidenamebox
+		setflag(FLAG_PARTNER_BATTLE)
+		//setvar (VAR_UNUSED_0x8014, TRAINER_ZANIK_HAM)
+		setvar (VAR_PARTNER_TRAINER, TRAINER_ARIANE_1)
+		setvar (VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_ARIANE)
+		release
+		end
+    }
+	msgbox(format("Maybe some other time then…"))
+    hidenamebox
+    closemessage
+    release
+    end
+}
 

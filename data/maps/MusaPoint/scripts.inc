@@ -1199,32 +1199,75 @@ multipartnerBattle_Zanik_2:
 Following_Zanik::
 	lock
 	facefollower
-	namebox multipartnerBattle_Zanik_Text_0
-	msgbox Following_Zanik_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, 0
-	goto_if_ne Following_Zanik_2
+	compare VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_ARIANE
+	goto_if_eq Following_Zanik_2
+	compare VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_ZANIK
+	goto_if_eq Following_Zanik_3
+	namebox Following_Zanik_Text_0
+Following_Zanik_1:
 	msgbox Following_Zanik_Text_1, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_ne Following_Zanik_5
-Following_Zanik_4:
+	goto_if_ne Following_Zanik_8
+	msgbox Following_Zanik_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne Following_Zanik_11
+Following_Zanik_10:
 	hidenamebox
 	closemessage
 	release
 	end
 
 Following_Zanik_2:
+	namebox multipartnerBattle_Zanik_Text_0
+	goto Following_Zanik_1
+
+Following_Zanik_3:
+	namebox multipartnerBattle_Zanik_Text_0
+	goto Following_Zanik_1
+
+Following_Zanik_8:
 	setflag FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES
 	hidenamebox
 	closemessage
 	release
 	end
 
-Following_Zanik_5:
-	msgbox Following_Zanik_Text_2
+Following_Zanik_11:
+	msgbox Following_Zanik_Text_3
 	clearflag FLAG_PARTNER_BATTLE
 	clearflag FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES
 	destroyfollower
-	goto Following_Zanik_4
+	goto Following_Zanik_10
+
+
+multipartnerBattle_Ariane::
+	lock
+	faceplayer
+	namebox multipartnerBattle_Ariane_Text_0
+	msgbox multipartnerBattle_Zanik_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne multipartnerBattle_Ariane_2
+	msgbox multipartnerBattle_Zanik_Text_3
+	hidenamebox
+	closemessage
+	release
+	end
+
+multipartnerBattle_Ariane_2:
+	loadword 0, Following_Zanik
+	setfollower 24, 0x100
+	closemessage
+	hidenamebox
+	playfanfare MUS_OBTAIN_SYMBOL
+	msgbox multipartnerBattle_Ariane_Text_1
+	waitfanfare
+	closemessage
+	hidenamebox
+	setflag FLAG_PARTNER_BATTLE
+	setvar VAR_PARTNER_TRAINER, TRAINER_ARIANE_1
+	setvar VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_ARIANE
+	release
+	end
 
 
 NPC_MUSAPOINT_SAILOR_Text_0:
@@ -1830,14 +1873,23 @@ multipartnerBattle_Zanik_Text_3:
 	.string "Maybe some other time then…$"
 
 Following_Zanik_Text_0:
+	.string "???$"
+
+Following_Zanik_Text_1:
 	.string "Did you want to encounter two wild\n"
 	.string "monsters at once?$"
 
-Following_Zanik_Text_1:
+Following_Zanik_Text_2:
 	.string "What's wrong {PLAYER}?\p"
 	.string "Did you want to stop our adventure?$"
 
-Following_Zanik_Text_2:
+Following_Zanik_Text_3:
 	.string "Oh, that's a shame I was having so much\n"
 	.string "fun…\p"
 	.string "See you around…$"
+
+multipartnerBattle_Ariane_Text_0:
+	.string "Ariane$"
+
+multipartnerBattle_Ariane_Text_1:
+	.string "ARIANE JOINS THE PARTY!$"
