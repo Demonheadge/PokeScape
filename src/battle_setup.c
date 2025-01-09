@@ -49,6 +49,7 @@
 #include "constants/trainers.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "constants/battle_tower.h"
 
 enum {
     TRANSITION_TYPE_NORMAL,
@@ -84,11 +85,8 @@ static void TryUpdateGymLeaderRematchFromTrainer(void);
 static void CB2_GiveStarter(void);
 static void CB2_StartFirstBattle(void);
 static void CB2_EndFirstBattle(void);
-static void SaveChangesToPlayerParty(void);
 static void HandleBattleVariantEndParty(void);
-static bool8 BattleHasNoWhiteout(void);
 static void CB2_EndTrainerBattle(void);
-static bool32 IsPlayerDefeated(u32 battleOutcome);
 #if FREE_MATCH_CALL == FALSE
 static u16 GetRematchTrainerId(u16 trainerId);
 #endif //FREE_MATCH_CALL
@@ -370,12 +368,26 @@ void BattleSetup_StartWildBattle(void)
 {
     if (GetSafariZoneFlag())
         DoSafariBattle();
+    else if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) 
+    {
+        TryPartnerBattle();
+        VarSet (VAR_0x8004, SPECIAL_BATTLE_MULTI);
+        VarSet (VAR_0x8005, MULTI_BATTLE_2_VS_WILD);
+        DoSpecialTrainerBattle();
+    }
     else
         DoStandardWildBattle(FALSE);
 }
 
 void BattleSetup_StartDoubleWildBattle(void)
 {
+    if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) 
+    {
+        TryPartnerBattle();
+        VarSet (VAR_0x8004, SPECIAL_BATTLE_MULTI);
+        VarSet (VAR_0x8005, MULTI_BATTLE_2_VS_WILD);
+        DoSpecialTrainerBattle();
+    }
     DoStandardWildBattle(TRUE);
 }
 
@@ -391,8 +403,14 @@ static void DoStandardWildBattle(bool32 isDouble)
     StopPlayerAvatar();
     gMain.savedCallback = CB2_EndWildBattle;
     gBattleTypeFlags = 0;
-    if (isDouble)
-        gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
+    if (isDouble) {
+        if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) {
+            gBattleTypeFlags = BATTLE_TYPE_DOUBLE | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
+        }
+        else {
+            gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
+        }
+    }
     if (InBattlePyramid())
     {
         VarSet(VAR_TEMP_E, 0);
@@ -646,7 +664,7 @@ void StartRegiBattle(void)
     TryUpdateGymLeaderRematchFromWild();
 }
 
-static void DowngradeBadPoison(void)
+void DowngradeBadPoison(void)
 {
     u8 i;
     u32 status = STATUS1_POISON;
@@ -1081,7 +1099,7 @@ static u16 GetTrainerBFlag(void)
     return TRAINER_FLAGS_START + gTrainerBattleOpponent_B;
 }
 
-static bool32 IsPlayerDefeated(u32 battleOutcome)
+bool32 IsPlayerDefeated(u32 battleOutcome)
 {
     switch (battleOutcome)
     {
@@ -1350,7 +1368,7 @@ bool8 GetTrainerFlag(void)
         return FlagGet(GetTrainerAFlag());
 }
 
-static void SetBattledTrainersFlags(void)
+void SetBattledTrainersFlags(void)
 {
     if (gTrainerBattleOpponent_B != 0)
         FlagSet(GetTrainerBFlag());
@@ -1417,6 +1435,12 @@ void BattleSetup_StartTrainerBattle(void)
 
         SetHillTrainerFlag();
     }
+    else if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) {
+        TryPartnerBattle();
+        VarSet (VAR_0x8004, SPECIAL_BATTLE_MULTI);
+        VarSet (VAR_0x8005, MULTI_BATTLE_2_VS_1);
+        DoSpecialTrainerBattle();
+    }
 
     sNoOfPossibleTrainerRetScripts = gNoOfApproachingTrainers;
     gNoOfApproachingTrainers = 0;
@@ -1445,7 +1469,7 @@ void BattleSetup_StartTrainerBattle_Debug(void)
     ScriptContext_Stop();
 }
 
-static void SaveChangesToPlayerParty(void)
+void SaveChangesToPlayerParty(void)
 {
     u8 i = 0, j = 0;
     u8 participatedPokemon = VarGet(B_VAR_SKY_BATTLE);
@@ -1468,7 +1492,7 @@ static void HandleBattleVariantEndParty(void)
     FlagClear(B_FLAG_SKY_BATTLE);
 }
 
-static bool8 BattleHasNoWhiteout()
+bool8 BattleHasNoWhiteout()
 {
     if (gTrainerBattleMode == TRAINER_BATTLE_NO_WHITEOUT_CONTINUE_SCRIPT || gTrainerBattleMode == TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT)
         return TRUE;

@@ -8269,3 +8269,26 @@ static const struct TrainerMon sParty_MUDSKIPPERSOUND2_TRAINER_3[] = {
     .species = SPECIES_CAVE_BUG,
     }
 };
+
+static const struct TrainerMon sParty_ZANIK_HAM[] = {
+    {
+    .lvl = 36,
+    .species = SPECIES_EEL_SACRED_FORM,
+    },
+    {
+    .lvl = 35,
+    .species = SPECIES_TOME_OF_RANGED,
+    }
+};
+
+static const struct TrainerMon sParty_ARIANE_1[] = {
+    {
+    .lvl = 18,
+    .species = SPECIES_ANIMATED_BOOK,
+    },
+    {
+    .lvl = 19,
+    .species = SPECIES_RUNE,
+    }
+};
+

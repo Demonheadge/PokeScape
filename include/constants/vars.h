@@ -268,9 +268,9 @@
 #define VAR_BANANA_COUNT                     0x40F8 // Unused Var
 #define VAR_BANANA_BOAT_QUEST                0x40F9 // Unused Var
 #define VAR_POTTERINGTON_FARM                0x40FA // Unused Var
-#define VAR_UNUSED_0x40FB                    0x40FB // Unused Var
-#define VAR_UNUSED_0x40FC                    0x40FC // Unused Var
-#define VAR_UNUSED_0x40FD                    0x40FD // Unused Var
+#define VAR_PARTNER_TRAINER                    0x40FB // Unused Var
+#define VAR_PARTNER_SPRITE                    0x40FC // Unused Var
+#define VAR_SKY_BATTLE                       0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                    0x40FE // Unused Var
 #define VAR_CUSTOM_TRAINERPOOL_LEVEL         0x40FF // Unused Var  // VAR_UNUSED_0x40FF 
 

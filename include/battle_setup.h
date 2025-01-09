@@ -74,5 +74,12 @@ void BattleSetup_StartTrainerBattle_Debug(void);
 s32 TrainerIdToRematchTableId(const struct RematchTrainer *table, u16 trainerId);
 s32 FirstBattleTrainerIdToRematchTableId(const struct RematchTrainer *table, u16 trainerId);
 u16 GetRematchTrainerIdFromTable(const struct RematchTrainer *table, u16 firstBattleTrainerId);
+void SetBattledTrainersFlags(void);
+void DowngradeBadPoison(void);
+bool8 BattleHasNoWhiteout(void);
+bool32 IsPlayerDefeated(u32 battleOutcome);
+void SaveChangesToPlayerParty(void);
+void TryPartnerBattle(void);
+void PreparePartyForPartnerBattle(void);
 
 #endif // GUARD_BATTLE_SETUP_H
