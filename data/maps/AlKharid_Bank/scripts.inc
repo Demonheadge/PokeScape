@@ -41,6 +41,8 @@ STORE_clothes:
     .2byte OUTFIT_HAM
     .2byte OUTFIT_BRONZE_ARMOUR
     .2byte OUTFIT_GUARD
+    .2byte OUTFIT_ZANIK
+    .2byte OUTFIT_ARIANE
     .2byte OUTFIT_NONE
     release
     end
