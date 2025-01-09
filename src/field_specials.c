@@ -68,6 +68,7 @@
 #include "constants/metatile_labels.h"
 #include "palette.h"
 #include "battle_util.h"
+#include "battle_setup.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -4347,6 +4348,46 @@ void TrySkyBattle(void)
         }
     }
     gSpecialVar_Result = FALSE;
+}
+
+void TryPartnerBattle(void)
+{
+    int i;
+
+    for (i = 0; i < CalculatePlayerPartyCount(); i++)
+    {
+        struct Pokemon* pokemon = &gPlayerParty[i];
+        if (CanMonParticipateInPartnerBattle(pokemon) && GetMonData(pokemon, MON_DATA_HP, NULL) > 0)
+        {
+            PreparePartyForPartnerBattle();
+            return;
+        }
+    }
+    return;
+}
+void PreparePartyForPartnerBattle(void)
+{
+    int i, participatingPokemonSlot = 0, maxPartyMons = 0;
+    u8 partyCount = CalculatePlayerPartyCount();
+
+    FlagSet(B_FLAG_SKY_BATTLE);
+    SavePlayerParty();
+
+    for (i = 0; i < partyCount; i++)
+    {
+        struct Pokemon* pokemon = &gPlayerParty[i];
+        
+        if (maxPartyMons >= 3)
+            ZeroMonData(pokemon);
+        else if (CanMonParticipateInPartnerBattle(pokemon) && GetMonData(pokemon, MON_DATA_HP, NULL) > 0) {
+            maxPartyMons += 1;
+            participatingPokemonSlot += 1 << i;
+        }
+        else
+            ZeroMonData(pokemon);
+    }
+    VarSet(B_VAR_SKY_BATTLE,participatingPokemonSlot);
+    CompactPartySlots();
 }
 
 void PreparePartyForSkyBattle(void)

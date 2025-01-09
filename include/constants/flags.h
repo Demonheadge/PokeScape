@@ -1328,7 +1328,7 @@
 #define FLAG_UNUSED_0x4E9                                           0x4E9 // Unused Flag
 #define FLAG_UNUSED_0x4EA                                           0x4EA // Unused Flag
 #define FLAG_UNUSED_0x4EB                                           0x4EB // Unused Flag
-#define FLAG_UNUSED_0x4EC                                           0x4EC // Unused Flag
+#define FLAG_SKY_BATTLE                                             0x4EC // Unused Flag
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL                     0x4ED // Unused Flag
 #define FLAG_RESCUED_BIRCH                                          0x4EE // Unused Flag
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS                              0x4EF // Unused Flag

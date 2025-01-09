@@ -2041,17 +2041,26 @@ static void HandleSpecialTrainerBattleEnd(void)
         CopyEReaderTrainerFarewellMessage();
         break;
     case SPECIAL_BATTLE_MULTI:
-        for (i = 0; i < 3; i++)
-        {
-            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES))
-                gSaveBlock1Ptr->playerParty[i] = gPlayerParty[i];
-        }
         break;
     }
 
-    SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
-    if (VarGet(VAR_0x8005) == MULTI_BATTLE_2_VS_1) {
-        SetBattledTrainersFlags();
+    if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) {
+        SaveChangesToPlayerParty();
+        LoadPlayerParty();
+        FlagClear(B_FLAG_SKY_BATTLE);
+
+        if (IsPlayerDefeated(gBattleOutcome) == TRUE)
+        {
+            if ((!NoAliveMonsForPlayer()) || BattleHasNoWhiteout())
+                SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+            else
+                SetMainCallback2(CB2_WhiteOut);
+        }
+        else {
+            SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+            DowngradeBadPoison();
+            SetBattledTrainersFlags();
+        }
     }
 }
 
