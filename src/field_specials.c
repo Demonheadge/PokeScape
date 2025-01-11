@@ -69,6 +69,7 @@
 #include "palette.h"
 #include "battle_util.h"
 #include "battle_setup.h"
+#include "outfit_menu.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -4934,3 +4935,26 @@ void Is_InParty_ARMADYL(void)
     gSpecialVar_Result = FALSE;
     return;
 }
+
+
+void OutfitMenu(void)
+{
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        OpenOutfitMenu(CB2_ReturnToField);
+    }
+}
+void MakeoverMage(void)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        gSaveBlock2Ptr->playerGender = FEMALE;
+    else
+        gSaveBlock2Ptr->playerGender = MALE;
+    ScriptContext_Enable();
+    CB2_ReturnToField();
+}
+
+
+
+

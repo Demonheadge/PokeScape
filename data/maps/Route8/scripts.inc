@@ -125,10 +125,27 @@ ROUTE8_MINER_3::
 NPC_MAKEOVER_MAGE::
 	faceplayer
 	namebox NPC_MAKEOVER_MAGE_Text_0
-	msgbox NPC_MAKEOVER_MAGE_Text_1
+	msgbox NPC_MAKEOVER_MAGE_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NPC_MAKEOVER_MAGE_2
+NPC_MAKEOVER_MAGE_1:
 	closemessage
 	hidenamebox
 	release
+	end
+
+NPC_MAKEOVER_MAGE_2:
+	msgbox NPC_MAKEOVER_MAGE_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NPC_MAKEOVER_MAGE_4
+	goto NPC_MAKEOVER_MAGE_1
+
+NPC_MAKEOVER_MAGE_4:
+	msgbox NPC_MAKEOVER_MAGE_Text_3
+	special MakeoverMage
+	msgbox NPC_MAKEOVER_MAGE_Text_4
+	closemessage
+	hidenamebox
 	end
 
 
@@ -632,26 +649,20 @@ NPC_MAKEOVER_MAGE_Text_0:
 	.string "Peta$"
 
 NPC_MAKEOVER_MAGE_Text_1:
-	.string "Hi adventurer, I'm Peta -\n"
-	.string "affectionately known as the Makeover\l"
-	.string "Mage.\p"
-	.string "For years I helped people change their\n"
-	.string "gender, or even their skin colour, using\l"
-	.string "a magical amulet I found in a Gazulibird\l"
-	.string "nest.\p"
-	.string "Since people started catching\n"
-	.string "monsters, they lost interest in my\l"
-	.string "services.\p"
-	.string "I am currently working on adapting the\n"
-	.string "amulet to let me change monsters'\l"
-	.string "personalities!\p"
-	.string "This can affect how effective they are\n"
-	.string "in battle, giving a boost to a specific\l"
-	.string "stat at the cost of a penalty to\l"
-	.string "another.\p"
-	.string "I still need to work on the magic.. so\n"
-	.string "it's not quite ready yet, but please\l"
-	.string "come back soon!$"
+	.string "Hello, I am the Makerover Mage.\p"
+	.string "Would you like to change your gender?$"
+
+NPC_MAKEOVER_MAGE_Text_2:
+	.string "Your monsters may no longer recognize\n"
+	.string "you as their master, are you sure you\l"
+	.string "want to change your gender?$"
+
+NPC_MAKEOVER_MAGE_Text_3:
+	.string "{PAUSE 32}1, {PAUSE 15}2, and{PAUSE 15}… {PAUSE 15}… {PAUSE 15}… {PAUSE 15}{PLAY_SE SE_BALL_BOUNCE_1}Poof!$"
+
+NPC_MAKEOVER_MAGE_Text_4:
+	.string "Come back again if you wish to change\n"
+	.string "your gender again.$"
 
 BATTLE_ROUTE8_THIEF_Text_0:
 	.string "Hi there, you wouldn't want some very\n"

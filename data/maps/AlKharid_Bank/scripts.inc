@@ -33,6 +33,30 @@ SHOP_CLOTHES::
 	end
 
 
+CHECK_OUTFIT_BOX::
+	checkitem ITEM_OUTFIT_BOX, 1
+	compare VAR_RESULT, 0
+	goto_if_ne CHECK_OUTFIT_BOX_2
+CHECK_OUTFIT_BOX_1:
+	return
+
+CHECK_OUTFIT_BOX_2:
+	msgbox CHECK_OUTFIT_BOX_Text_0
+	goto CHECK_OUTFIT_BOX_1
+
+
+EventScript_ChangeOutfit::
+	msgbox EventScript_ChangeOutfit_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne EventScript_ChangeOutfit_2
+	closemessage
+	return
+
+EventScript_ChangeOutfit_2:
+	special OutfitMenu
+	end
+
+
 
     .align 2
 STORE_clothes:
@@ -43,6 +67,31 @@ STORE_clothes:
     .2byte OUTFIT_GUARD
     .2byte OUTFIT_ZANIK
     .2byte OUTFIT_ARIANE
+    .2byte OUTFIT_BARBARIAN
+    .2byte OUTFIT_FARMER
+    .2byte OUTFIT_RSMV
+    .2byte OUTFIT_WIZARD
+    .2byte OUTFIT_DEMONHEADGE
+    .2byte OUTFIT_HYPERSTAN
+    .2byte OUTFIT_TWISTED_SMILE
+    .2byte OUTFIT_NONE
+    release
+    end
+
+
+    .align 2
+STORE_CLOTHES_THESSALIA:
+    .2byte OUTFIT_FARMER
+    .2byte OUTFIT_RSMV
+    .2byte OUTFIT_WIZARD
+    .2byte OUTFIT_NONE
+    release
+    end
+
+
+    .align 2
+STORE_CLOTHES_BARBARIAN:
+    .2byte OUTFIT_BARBARIAN
     .2byte OUTFIT_NONE
     release
     end
@@ -56,3 +105,9 @@ SHOP_CLOTHES_Text_1:
 
 SHOP_CLOTHES_Text_2:
 	.string "TzGtfo.$"
+
+CHECK_OUTFIT_BOX_Text_0:
+	.string "Oh you should see Thessalia in Varrock.$"
+
+EventScript_ChangeOutfit_Text_0:
+	.string "Would you like to change your outfit?$"

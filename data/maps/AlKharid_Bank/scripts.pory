@@ -34,6 +34,26 @@ script SHOP_CLOTHES {
     //pokemartdecoration (STORE_GeneralStore_0) 
 }
 
+script CHECK_OUTFIT_BOX {
+    checkitem (ITEM_OUTFIT_BOX, 1)
+	if (var(VAR_RESULT)){
+        msgbox(format("Oh you should see Thessalia in Varrock."))
+    }
+    return
+}
+
+
+script EventScript_ChangeOutfit {
+    msgbox(format("Would you like to change your outfit?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+        special(OutfitMenu)
+        end
+    }
+    closemessage
+    return
+}
+
+
 
 
 raw `
@@ -46,7 +66,35 @@ STORE_clothes:
     .2byte OUTFIT_GUARD
     .2byte OUTFIT_ZANIK
     .2byte OUTFIT_ARIANE
+    .2byte OUTFIT_BARBARIAN
+    .2byte OUTFIT_FARMER
+    .2byte OUTFIT_RSMV
+    .2byte OUTFIT_WIZARD
+    .2byte OUTFIT_DEMONHEADGE
+    .2byte OUTFIT_HYPERSTAN
+    .2byte OUTFIT_TWISTED_SMILE
     .2byte OUTFIT_NONE
     release
     end
 `
+
+raw `
+    .align 2
+STORE_CLOTHES_THESSALIA:
+    .2byte OUTFIT_FARMER
+    .2byte OUTFIT_RSMV
+    .2byte OUTFIT_WIZARD
+    .2byte OUTFIT_NONE
+    release
+    end
+`
+
+raw `
+    .align 2
+STORE_CLOTHES_BARBARIAN:
+    .2byte OUTFIT_BARBARIAN
+    .2byte OUTFIT_NONE
+    release
+    end
+`
+

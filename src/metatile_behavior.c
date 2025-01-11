@@ -1500,6 +1500,14 @@ bool8 MetatileBehavior_IsRestBed(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_ChangeOutfit(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_CHANGE_OUTFIT)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 bool8 MetatileBehavior_IsBananaTree(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_BANNANA_TREE)

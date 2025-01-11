@@ -570,6 +570,8 @@ gSpecials::
 	def_special Is_InParty_GODLESS
 	def_special Is_InParty_ARMADYL
 	def_special GetSeededResultLessRandom
+	def_special OutfitMenu
+	def_special MakeoverMage
 
 
 

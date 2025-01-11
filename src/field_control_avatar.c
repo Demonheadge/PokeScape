@@ -430,6 +430,8 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
         return EventScript_BananaTree;
     if (MetatileBehavior_IsRestBed(metatileBehavior) == TRUE)
         return EventScript_RestBed;
+    if (MetatileBehavior_ChangeOutfit(metatileBehavior) == TRUE)
+        return EventScript_ChangeOutfit;
     if (MetatileBehavior_IsLockedDoor(metatileBehavior) == TRUE)
         return EventScript_Locked_Door;
     if (MetatileBehavior_IsWallClock(metatileBehavior) == TRUE)

@@ -95,7 +95,7 @@
 #define MB_UNUSED_5B 0x5B
 #define MB_UNUSED_5C 0x5C
 #define MB_UNUSED_5D 0x5D
-#define MB_UNUSED_5E 0x5E
+#define MB_CHANGE_OUTFIT 0x5E
 #define MB_UNUSED_5F 0x5F
 #define MB_NON_ANIMATED_DOOR 0x60
 #define MB_LADDER 0x61

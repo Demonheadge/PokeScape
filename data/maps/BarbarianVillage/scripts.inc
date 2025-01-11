@@ -439,7 +439,9 @@ NPC_BARBARIANVILLAGE_NPC6::
 	faceplayer
 	namebox NPC_BARB_BLOCKADE_1_Text_0
 	msgbox NPC_BARBARIANVILLAGE_NPC6_Text_0
-	hidenamebox
+	waitmessage
+	pokemartoutfit STORE_CLOTHES_BARBARIAN
+	msgbox NPC_BARBARIANVILLAGE_NPC6_Text_1
 	release
 	end
 
@@ -676,6 +678,9 @@ NPC_BARBARIANVILLAGE_NPC6_Text_0:
 	.string "I make all the clothes for our village.\p"
 	.string "But don't tell anyone that I get my\n"
 	.string "supplies from Thessalia in Varrock.$"
+
+NPC_BARBARIANVILLAGE_NPC6_Text_1:
+	.string "See you later!$"
 
 SHOP_HELMET_BARBARIANVILLAGE_Text_0:
 	.string "Peska$"

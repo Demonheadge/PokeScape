@@ -607,8 +607,9 @@ VARROCK_NPC_Thessalia::
 	faceplayer
 	namebox VARROCK_NPC_Thessalia_Text_0
 	msgbox VARROCK_NPC_Thessalia_Text_1
-	closemessage
-	hidenamebox
+	waitmessage
+	pokemartoutfit STORE_CLOTHES_THESSALIA
+	msgbox VARROCK_NPC_Thessalia_Text_2
 	release
 	end
 
@@ -1681,13 +1682,20 @@ VARROCK_NPC_Thessalia_Text_0:
 	.string "Thessalia$"
 
 VARROCK_NPC_Thessalia_Text_1:
-	.string "Hello, I can change your outfit for you.\p"
-	.string "But you will have to come back later.$"
+	.string "Can I intrest you in any outfits?$"
+
+VARROCK_NPC_Thessalia_Text_2:
+	.string "See you later!$"
 
 VARROCK_NPC_ThessaliaGrandma_Text_0:
 	.string "Iffie$"
 
 VARROCK_NPC_ThessaliaGrandma_Text_1:
+	.string "Zzz…\p"
+	.string "Oh sorry sweety I must have dozed off.\p"
+	.string "You can use this wardrobe to change\n"
+	.string "your outfit.\p"
+	.string "…{PAUSE 15}…\p"
 	.string "Zzz…$"
 
 VARROCK_NPC_SWORDSHOP_1_Text_0:

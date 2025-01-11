@@ -674,9 +674,10 @@ script VARROCK_NPC_Thessalia
 {
     faceplayer
     namebox ("Thessalia")
-    msgbox(format("Hello, I can change your outfit for you.\pBut you will have to come back later."))
-    closemessage
-    hidenamebox
+    msgbox(format("Can I intrest you in any outfits?"))
+    waitmessage
+    pokemartoutfit (STORE_CLOTHES_THESSALIA)
+    msgbox(format("See you later!"))
     release
     end
 }
@@ -685,7 +686,7 @@ script VARROCK_NPC_ThessaliaGrandma
 {
     faceplayer
     namebox ("Iffie")
-    msgbox(format("Zzz…"))
+    msgbox(format("Zzz…\pOh sorry sweety I must have dozed off.\pYou can use this wardrobe to change your outfit.\p…{PAUSE 15}…\pZzz…"))
     closemessage
     hidenamebox
     release

@@ -584,7 +584,7 @@ extern const u8 EventScript_BananaTree[];
 extern const u8 EventScript_Locked_Door[];
 extern const u8 EventScript_CheckClock[];
 extern const u8 EventScript_Whirlpool[];
-
+extern const u8 EventScript_ChangeOutfit[];
 
 // Secret Base
 extern const u8 SecretBase_EventScript_PC[];

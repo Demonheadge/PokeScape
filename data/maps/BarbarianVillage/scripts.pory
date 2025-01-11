@@ -473,9 +473,11 @@ script NPC_BARBARIANVILLAGE_NPC6
     faceplayer
     namebox("Barbarian")
     msgbox(format("I make all the clothes for our village.\pBut don't tell anyone that I get my supplies from Thessalia in Varrock."))
-    hidenamebox
-    release
-    end
+    waitmessage
+    pokemartoutfit (STORE_CLOTHES_BARBARIAN)
+    msgbox(format("See you later!"))
+	release
+	end
 }
 
 script SHOP_HELMET_BARBARIANVILLAGE
