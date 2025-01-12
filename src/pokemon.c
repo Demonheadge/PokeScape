@@ -5904,7 +5904,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
             case EVO_LEVEL_WEATHER_HOT:
                     j = GetCurrentWeather();
                     if (evolutions[i].param <= level
-                    && (j == WEATHER_SUNNY_CLOUDS || j == WEATHER_DROUGHT))
+                    && (j == WEATHER_SUNNY || j == WEATHER_SUNNY_CLOUDS || j == WEATHER_DROUGHT))
                         targetSpecies = evolutions[i].targetSpecies;
                     break;
             case EVO_LEVEL_WEATHER_DUSTY:
@@ -5916,7 +5916,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
             case EVO_LEVEL_WEATHER_ABNORMAL:
                     j = GetCurrentWeather();
                     if (evolutions[i].param <= level
-                    && (j == WEATHER_ABNORMAL || j == WEATHER_SHADE))
+                    && (j == WEATHER_ABNORMAL || j == WEATHER_SHADE || j == WEATHER_FOG_DIAGONAL || j == WEATHER_FOG_HORIZONTAL))
                         targetSpecies = evolutions[i].targetSpecies;
                     break;
             case EVO_LEVEL_WEATHER_WET:

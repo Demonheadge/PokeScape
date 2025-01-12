@@ -425,6 +425,27 @@ script WEATHER_CHANGE_AREA_ICE_MOUNTAIN
 	return
 }
 
+script WEATHER_CHANGE_ASGARNIA_SOUTH
+{
+	switch (var(VAR_STORE_WEATHER_SEED_RESULT)) { 
+		case 2: 
+		case 3: 
+			setweather (WEATHER_RAIN)
+			doweather
+		case 4:
+			setweather (WEATHER_DOWNPOUR)
+			doweather
+		case 7:
+		case 8:
+			setweather (WEATHER_SUNNY)
+			doweather
+		default:
+			setweather (WEATHER_NONE)
+			doweather
+	}
+	return
+}
+
 script WEATHER_GETCURRENTMAP {
 	specialvar (VAR_RESULT, GetCurrentMap)
 	if (var(VAR_RESULT) == MAP_ICE_MOUNTAIN) {
