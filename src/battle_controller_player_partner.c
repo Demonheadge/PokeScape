@@ -314,6 +314,12 @@ static void PlayerPartnerHandleDrawTrainerPic(u32 battler)
         xPos = 90;
         yPos = (8 - gTrainerBackPicCoords[trainerPicId].size) * 4 + 80;
     }
+    else if (gPartnerTrainerId == TRAINER_OWEN_PARTNER)
+    {
+        trainerPicId = TRAINER_BACK_PIC_OWEN;
+        xPos = 90;
+        yPos = (8 - gTrainerBackPicCoords[trainerPicId].size) * 4 + 80;
+    }
     else if (gPartnerTrainerId >= TRAINER_CUSTOM_PARTNER)
     {
         trainerPicId = gPartnerSpriteId;
@@ -457,6 +463,8 @@ static void PlayerPartnerHandleIntroTrainerBallThrow(u32 battler)
         trainerPal = gTrainerBackPicPaletteTable[TRAINER_BACK_PIC_ZANIK].data;
     else if (gPartnerTrainerId == TRAINER_ARIANE_PARTNER)
         trainerPal = gTrainerBackPicPaletteTable[TRAINER_BACK_PIC_ARIANE].data;
+    else if (gPartnerTrainerId == TRAINER_OWEN_PARTNER)
+        trainerPal = gTrainerBackPicPaletteTable[TRAINER_BACK_PIC_OWEN].data;
     else if (gPartnerTrainerId >= TRAINER_CUSTOM_PARTNER) // Custom multi battle.
         trainerPal = gTrainerBackPicPaletteTable[gPartnerSpriteId].data;
     else if (IsAiVsAiBattle())

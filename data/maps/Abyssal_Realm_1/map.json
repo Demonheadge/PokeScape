@@ -468,6 +468,45 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "testbattle_tzhaar",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SIR_OWEN",
+      "x": 53,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "multipartnerBattle_SirOwen",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ZANIK",
+      "x": 53,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "multipartnerBattle_Zanik",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ARIANE",
+      "x": 52,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "multipartnerBattle_Ariane",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -771,6 +810,20 @@
       "elevation": 0,
       "dest_map": "MAP_RIMMINGTON",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 55,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_ABYSSAL_REALM_1",
+      "dest_warp_id": "44"
+    },
+    {
+      "x": 49,
+      "y": 31,
+      "elevation": 0,
+      "dest_map": "MAP_ABYSSAL_REALM_1",
+      "dest_warp_id": "43"
     }
   ],
   "coord_events": [
