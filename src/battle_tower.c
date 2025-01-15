@@ -2044,7 +2044,7 @@ static void HandleSpecialTrainerBattleEnd(void)
         break;
     }
 
-    if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) {
+    /*if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) {
         SaveChangesToPlayerParty();
         LoadPlayerParty();
         FlagClear(B_FLAG_SKY_BATTLE);
@@ -2061,7 +2061,7 @@ static void HandleSpecialTrainerBattleEnd(void)
             DowngradeBadPoison();
             SetBattledTrainersFlags();
         }
-    }
+    }*/
 }
 
 static void Task_StartBattleAfterTransition(u8 taskId)
@@ -2072,6 +2072,14 @@ static void Task_StartBattleAfterTransition(u8 taskId)
         SetMainCallback2(CB2_InitBattle);
         DestroyTask(taskId);
     }
+}
+
+void DoPartnerBattle(void)
+{
+    gPartnerSpriteId = VarGet(VAR_PARTNER_SPRITE);
+    gPartnerTrainerId = VarGet(VAR_PARTNER_TRAINER) + TRAINER_CUSTOM_PARTNER;
+    FillPartnerParty(gPartnerTrainerId);
+    return;
 }
 
 void DoSpecialTrainerBattle(void)

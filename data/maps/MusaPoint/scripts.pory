@@ -1105,7 +1105,6 @@ script multipartnerBattle_Zanik {
 		closemessage
 		hidenamebox
 		setflag(FLAG_PARTNER_BATTLE)
-		//setvar (VAR_UNUSED_0x8014, TRAINER_ZANIK_HAM)
 		setvar (VAR_PARTNER_TRAINER, TRAINER_ZANIK_HAM)
 		setvar (VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_ZANIK)
 		release
@@ -1172,7 +1171,6 @@ script multipartnerBattle_Ariane {
 		closemessage
 		hidenamebox
 		setflag(FLAG_PARTNER_BATTLE)
-		//setvar (VAR_UNUSED_0x8014, TRAINER_ZANIK_HAM)
 		setvar (VAR_PARTNER_TRAINER, TRAINER_ARIANE_1)
 		setvar (VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_ARIANE)
 		release
@@ -1204,7 +1202,6 @@ script multipartnerBattle_SirOwen {
 		closemessage
 		hidenamebox
 		setflag(FLAG_PARTNER_BATTLE)
-		//setvar (VAR_UNUSED_0x8014, TRAINER_ZANIK_HAM)
 		setvar (VAR_PARTNER_TRAINER, TRAINER_SIR_OWEN_1)
 		setvar (VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_OWEN)
 		release
