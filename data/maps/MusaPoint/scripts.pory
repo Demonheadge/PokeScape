@@ -1213,3 +1213,12 @@ script multipartnerBattle_SirOwen {
     release
     end
 }
+
+
+script FOLLOWER_REMOVE {
+	clearflag(FLAG_PARTNER_BATTLE)
+	clearflag(FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES)
+	destroyfollower
+	waitstate
+	return
+}

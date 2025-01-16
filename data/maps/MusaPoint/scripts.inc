@@ -1300,6 +1300,14 @@ multipartnerBattle_SirOwen_2:
 	end
 
 
+FOLLOWER_REMOVE::
+	clearflag FLAG_PARTNER_BATTLE
+	clearflag FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES
+	destroyfollower
+	waitstate
+	return
+
+
 NPC_MUSAPOINT_SAILOR_Text_0:
 	.string "Officer$"
 
