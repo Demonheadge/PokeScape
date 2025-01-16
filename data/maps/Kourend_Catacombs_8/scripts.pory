@@ -84,8 +84,8 @@ script SKOTIZO_TRIGGER {
 script ENCOUNTER_SKOTIZO
 {
 	lock
-    namebox ("SKOTIZO")
-    playmoncry(SPECIES_URSARING, 0)
+    namebox ("Skotizo")
+    playmoncry(SPECIES_SKOTIZO, 0)
 	msgbox(format("ROOOARR!"))
     waitmoncry
     hidenamebox
@@ -203,7 +203,7 @@ script ENCOUNTER_ABYSSAL_DEMON
 {
 	lock
     faceplayer
-    namebox ("ABYSSAL DEMON")
+    namebox ("Abyssal Demon")
     playmoncry(SPECIES_ABYSSAL_DEMON_FORM, 0)
 	msgbox(format("WIZZZLE!"))
     waitmoncry
@@ -236,7 +236,7 @@ script ENCOUNTER_SLIME
 {
 	lock
     faceplayer
-    namebox ("SLIME")
+    namebox ("Slime")
     playmoncry(SPECIES_CAVE_SLIME, 0)
 	msgbox(format("GLOOOP! GOOP!"))
     waitmoncry
@@ -280,7 +280,7 @@ script ENCOUNTER_SLIME
 script ENCOUNTER_ROCKCRAB
 {
 	lock
-    namebox ("ROCK CRAB")
+    namebox ("Rock Crab")
     playmoncry(SPECIES_ROCK_CRAB_NORMAL_FORM, 0)
 	msgbox(format("SNIP SNIP!"))
     waitmoncry
@@ -321,7 +321,7 @@ script ENCOUNTER_ROCKCRAB
 script ENCOUNTER_DRAGON_BLACK
 {
 	lock
-    namebox ("DRAGON")
+    namebox ("Dragon")
     playmoncry(SPECIES_DRAGON_BLACK_FORM, 0)
 	msgbox(format("RAWR!"))
     waitmoncry
@@ -346,7 +346,7 @@ script ENCOUNTER_DRAGON_BLACK
 script ENCOUNTER_DRAGON_RED
 {
 	lock
-    namebox ("DRAGON")
+    namebox ("Dragon")
     playmoncry(SPECIES_DRAGON_RED_FORM, 0)
 	msgbox(format("RAWR!"))
     waitmoncry
@@ -371,7 +371,7 @@ script ENCOUNTER_DRAGON_RED
 script ENCOUNTER_DRAGON_BLUE
 {
 	lock
-    namebox ("DRAGON")
+    namebox ("Dragon")
     playmoncry(SPECIES_DRAGON_BLUE_FORM, 0)
 	msgbox(format("RAWR!"))
     waitmoncry
@@ -396,7 +396,7 @@ script ENCOUNTER_DRAGON_BLUE
 script ENCOUNTER_DRAGON_GREEN
 {
 	lock
-    namebox ("DRAGON")
+    namebox ("Dragon")
     playmoncry(SPECIES_DRAGON_GREEN_FORM, 0)
 	msgbox(format("RAWR!"))
     waitmoncry
@@ -421,7 +421,7 @@ script ENCOUNTER_DRAGON_GREEN
 script ENCOUNTER_BASILISK
 {
 	lock
-    namebox ("BASILISK")
+    namebox ("Basilisk")
     playmoncry(SPECIES_BASILISK_KNIGHT_FORM, 0)
 	msgbox(format("KYARROOW!"))
     waitmoncry
@@ -448,7 +448,7 @@ script ENCOUNTER_GREATER_DEMON
 {
 	lock
     faceplayer
-    namebox ("GREATER DEMON")
+    namebox ("Greater Demon")
     playmoncry(SPECIES_DEMON_GREATER_TONGUE_FORM, 0)
 	msgbox(format("RAOUGH!"))
     waitmoncry
@@ -487,7 +487,7 @@ script ENCOUNTER_MONKEY_QUEST
 {
 	lock
     faceplayer
-    namebox ("MONKEY")
+    namebox ("Monkey")
     playmoncry(SPECIES_MONKEY_NORMAL_FORM, 0)
 	msgbox(format("EEEKK OOK AAAK!!"))
     waitmoncry
@@ -521,7 +521,7 @@ script ENCOUNTER_SNOW_IMP
 {
 	lock
     faceplayer
-    namebox ("SNOW IMP")
+    namebox ("Snow Imp")
     playmoncry(SPECIES_SNOW_IMP, 0)
 	msgbox(format("Sneez kek Kek!"))
     waitmoncry
@@ -558,7 +558,7 @@ script ENCOUNTER_UNICORN_BARB
 {
 	lock
     faceplayer
-    namebox ("UNICORN")
+    namebox ("Unicorn")
     playmoncry(SPECIES_UNICORN_WHITE_FORM, 0)
 	msgbox(format("NeEeehHHaAyY!"))
     waitmoncry
@@ -582,11 +582,81 @@ script ENCOUNTER_UNICORN_BARB
 }
 
 
+script ENCOUNTER_CHAIR
+{
+	lock
+    faceplayer
+    namebox ("???")
+    playmoncry(SPECIES_ANICHAIR, 0)
+	msgbox(format("The chair attacks you!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    setwildbattle (SPECIES_ANICHAIR, 10, ITEM_NONE)
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+        case B_OUTCOME_CAUGHT:
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+    }
+    release
+	end
+}
+
+script ENCOUNTER_GHOST
+{
+	lock
+    faceplayer
+    namebox ("???")
+    playmoncry(SPECIES_DOBBIN, 0)
+	msgbox(format("Something attacks you!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    random(8)
+	    switch (var(VAR_RESULT)) { 
+            case 0: 
+            case 1:
+                setwildbattle (SPECIES_DOBBIN, 10, ITEM_NONE)
+            case 2: 
+            case 3:
+            case 4:
+                setwildbattle (SPECIES_TOY_MOUSE, 10, ITEM_NONE)
+            case 5: 
+            case 6:
+                setwildbattle (SPECIES_ORIGAMI_BALLOON, 10, ITEM_NONE)
+            case 7: 
+                setwildbattle (SPECIES_ANIMOUR, 10, ITEM_NONE)
+            default: 
+                setwildbattle (SPECIES_DOBBIN, 10, ITEM_NONE)
+        }
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+        case B_OUTCOME_CAUGHT:
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+    }
+    release
+	end
+}
+
 script ENCOUNTER_RAT
 {
 	lock
     faceplayer
-    namebox ("RAT")
+    namebox ("Rat")
     playmoncry(SPECIES_GIANT_RAT_NORMAL_FORM, 0)
 	msgbox(format("Squeek!"))
     waitmoncry
@@ -594,8 +664,14 @@ script ENCOUNTER_RAT
 	closemessage
 	delay(1)
     specialvar (VAR_RESULT, GetCurrentMap)
-    if (var(VAR_RESULT) == MAP_LUMBRIDGE) {
-        setwildbattle (SPECIES_RAT_NORMAL_FORM, 5, ITEM_NONE)
+    if ((var(VAR_RESULT) == MAP_LUMBRIDGE) || (var(VAR_RESULT) == MAP_LUMBRIDGE_SWAMP) || (var(VAR_RESULT) == MAP_LUMBRIDGE_FOREST)) {
+        random(20) // will get rid of getcurrentmap varresult unless changed
+	    switch (var(VAR_RESULT)) { 
+            case 7: 
+                setwildbattle (SPECIES_GIANT_RAT_NORMAL_FORM, 8, ITEM_NONE)
+            default: 
+                setwildbattle (SPECIES_RAT_NORMAL_FORM, 5, ITEM_NONE)
+        }
     }
     else {
         setwildbattle (SPECIES_GIANT_RAT_NORMAL_FORM, 30, ITEM_NONE)
@@ -614,3 +690,143 @@ script ENCOUNTER_RAT
     release
 	end
 }
+
+
+script ENCOUNTER_SHEEP
+{
+	lock
+    faceplayer
+    namebox ("Sheep")
+    playmoncry(SPECIES_SHEEP_WHITE_FORM, 0)
+	msgbox(format("Baaa!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    if ((var(VAR_RESULT) == MAP_ROUTE1) || (var(VAR_RESULT) == MAP_MILL_LANE_MILL) || (var(VAR_RESULT) == MAP_LUMBRIDGE_FOREST)) {
+        random(20) // will get rid of getcurrentmap varresult unless changed
+	    switch (var(VAR_RESULT)) { 
+            case 5: 
+                setwildbattle (SPECIES_SHEEP_WHITE_FORM, 8, ITEM_NONE)
+            case 7: 
+                setwildbattle (SPECIES_RAM_FLUFFY_FORM, 8, ITEM_NONE)
+            default: 
+                setwildbattle (SPECIES_LAMB, 5, ITEM_NONE)
+        }
+    }
+    else {
+        random(1) // will get rid of getcurrentmap varresult unless changed
+	    switch (var(VAR_RESULT)) { 
+            case 0: 
+                setwildbattle (SPECIES_SHEEP_WHITE_FORM, 10, ITEM_NONE)
+            case 1: 
+                setwildbattle (SPECIES_RAM_FLUFFY_FORM, 10, ITEM_NONE)
+        }
+    }
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+        case B_OUTCOME_CAUGHT:
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+    }
+    release
+	end
+}
+
+
+script ENCOUNTER_CHICKEN
+{
+	lock
+    faceplayer
+    namebox ("Chicken")
+    playmoncry(SPECIES_CHICKEN_NORMAL_FORM, 0)
+	msgbox(format("Bawk!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    specialvar (VAR_RESULT, GetCurrentMap)
+    if ((var(VAR_RESULT) == MAP_ROUTE1) || (var(VAR_RESULT) == MAP_ROUTE12)) {
+        random(20) // will get rid of getcurrentmap varresult unless changed
+	    switch (var(VAR_RESULT)) { 
+            case 5: 
+                setwildbattle (SPECIES_CHICKEN_NORMAL_FORM, 8, ITEM_NONE)
+            case 7: 
+                setwildbattle (SPECIES_CHICKEN_NORMAL_FORM, 8, ITEM_NONE)
+            default: 
+                setwildbattle (SPECIES_CHICK, 5, ITEM_NONE)
+        }
+    }
+    else {
+        random(1) // will get rid of getcurrentmap varresult unless changed
+	    switch (var(VAR_RESULT)) { 
+            case 0: 
+                setwildbattle (SPECIES_CHICKEN_NORMAL_FORM, 10, ITEM_NONE)
+            case 1: 
+                setwildbattle (SPECIES_CHICKEN_NORMAL_FORM, 10, ITEM_NONE)
+        }
+    }
+	dowildbattle
+    switch(var(VAR_RESULT)){
+		case B_OUTCOME_WON:
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+        case B_OUTCOME_CAUGHT:
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            removeobject (VAR_LAST_TALKED)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+    }
+    release
+	end
+}
+
+
+script ENCOUNTER_COW
+{
+	lock
+	faceplayer
+    namebox ("Cow")
+    playmoncry(SPECIES_COW, 0)
+	msgbox(format("MOOOOOOOO!!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    if (flag(FLAG_BADGE01_GET) == TRUE) {
+        setwildbattle (SPECIES_COW, 10, ITEM_NONE)
+	}
+    else {
+		random(13) 
+		switch (var(VAR_RESULT)) { 
+			case 0: 
+			case 1: 
+			case 2: 
+				setwildbattle (SPECIES_CALF, 8, ITEM_NONE)
+			case 3: 
+				setwildbattle (SPECIES_COW, 5, ITEM_NONE)
+			case 6: 
+			case 7: 
+				setwildbattle (SPECIES_CALF, 10, ITEM_NONE)
+			case 9: 
+				setwildbattle (SPECIES_COW, 10, ITEM_NONE)
+			default: 
+				setwildbattle (SPECIES_CALF, 5, ITEM_NONE)
+		}  
+    }
+	dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_WON || var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+		fadescreenswapbuffers(FADE_TO_BLACK)
+		removeobject (VAR_LAST_TALKED)
+		fadescreenswapbuffers(FADE_FROM_BLACK)
+	}
+    release
+	end
+}
+

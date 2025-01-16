@@ -2965,4 +2965,7 @@ const u32 gItemIconPalette_PartyHat[] = INCBIN_U32("graphics/items/pokescape_ico
 
 const u32 gItemIcon_ClueScrollTools[] = INCBIN_U32("graphics/items/pokescape_icons/ClueScrollTools.4bpp.lz");
 const u32 gItemIconPalette_ClueScrollTools[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/ClueScrollTools.gbapal.lz");
+
+const u32 gItemIcon_dwellberry[] = INCBIN_U32("graphics/items/pokescape_icons/dwellberry.4bpp.lz");
+const u32 gItemIconPalette_dwellberry[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/dwellberry.gbapal.lz");
 //------

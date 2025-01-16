@@ -134,8 +134,10 @@ script HAM_EVENT_DRAYNORMANOR_1F {
 			    waitmovement(0)
                 applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_LEFT)
 			    waitmovement(0)
+                namebox("Ariane")
                 msgbox(format("Pssh!\pI'm not scared, what do you take me for?"))
                 hidenamebox
+                closemessage
             //RAT
                 applymovement(6, Movement_DraynorManor_Entry_Rat)
                 playmoncry(SPECIES_RAT_NORMAL_FORM, 1)
@@ -168,12 +170,10 @@ script HAM_EVENT_DRAYNORMANOR_1F {
                 waitfanfare
                 closemessage
                 hidenamebox
-
                 checkfollower
                 if (var(VAR_RESULT)) {
                     call(FOLLOWER_REMOVE)
                 }
-
                 setflag(FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES)
                 setflag(FLAG_PARTNER_BATTLE)
                 setvar (VAR_PARTNER_TRAINER, TRAINER_ARIANE_1)
@@ -211,6 +211,14 @@ script HAM_EVENT_DRAYNORMANOR_1F {
                 waitfanfare
                 closemessage
                 hidenamebox
+                checkfollower
+                if (var(VAR_RESULT)) {
+                    call(FOLLOWER_REMOVE)
+                }
+                setflag(FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES)
+                setflag(FLAG_PARTNER_BATTLE)
+                setvar (VAR_PARTNER_TRAINER, TRAINER_ARIANE_1)
+                setvar (VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_ARIANE)
                 loadword(0, FOLLOWING_Ariane)
                 setfollower(17, 0x80)
                 setvar(VAR_TEMP_A, 1) //Sets triggers for leaving.
@@ -527,9 +535,69 @@ script NPC_DraynorManor_Witch{
 
 script NPC_DraynorManor_Chair{
     lock
-    msgbox(format("It's a chair."))
+    random(15)
+    switch (var(VAR_RESULT)) { 
+        case 0: 
+        case 1: 
+        case 2: 
+        case 3: 
+        case 4: 
+        case 5: 
+        case 6: 
+            goto(ENCOUNTER_CHAIR)
+    }
+    msgbox(format("It's just a chair."))
     hidenamebox
 	closemessage
+	release
+	end
+}
+
+script NPC_DraynorManor_Chair1{
+    lock
+    msgbox(format("It's just a chair."))
+    hidenamebox
+	closemessage
+	release
+	end
+}
+
+
+script NPC_PIANO{
+    lock
+    msgbox(format("Play the Piano?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+        specialvar (VAR_RESULT, GetCurrentMap)
+        if (var(VAR_RESULT) == MAP_DRAYNOR_MANOR_2F) {
+            goto(NPC_SKELETON_PIANO)
+        }
+        closemessage
+        delay(15)
+        random(8)
+        switch (var(VAR_RESULT)) { 
+            case 0: 
+                playse(SE_NOTE_A)
+            case 1: 
+                playse(SE_NOTE_B)
+            case 2: 
+                playse(SE_NOTE_C)
+            case 3: 
+                playse(SE_NOTE_D)
+            case 4: 
+                playse(SE_NOTE_E)
+            case 5: 
+                playse(SE_NOTE_F)
+            case 6: 
+                playse(SE_NOTE_G)
+            case 7: 
+                playse(SE_NOTE_C_HIGH)
+                waitse
+                goto(ENCOUNTER_GHOST)
+        }
+        waitse
+    }
+    closemessage
 	release
 	end
 }
@@ -543,6 +611,34 @@ script NPC_DraynorManor_Skeleton_1{
 	closemessage
 	release
 	end
+}
+
+script NPC_SKELETON_PIANO {
+    closemessage
+    playse(SE_NOTE_A)
+    waitse
+    playse(SE_NOTE_B)
+    waitse
+    playse(SE_NOTE_B)
+    waitse
+    playse(SE_NOTE_C)
+    waitse
+    playse(SE_NOTE_A)
+    waitse
+    playse(SE_NOTE_D)
+    waitse
+    playse(SE_NOTE_A)
+    waitse
+    playse(SE_NOTE_G)
+    waitse
+    applymovement(6, MOVEMENT_SHOCKED_FACEPLAYER)
+    waitmovement(0)
+    namebox("Skeleton")
+    msgbox(format("Yo that's pretty groovy.\pSay you know that piano downstairs?\pThere's a broken note on it that angers many of the monsters in the manor, so be careful."))
+    hidenamebox
+	closemessage
+    release
+    end
 }
 
 

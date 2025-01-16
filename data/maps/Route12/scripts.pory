@@ -181,27 +181,29 @@ script NPC_LUMBRIDGE_CHICKEN{
 			end
 		}
 		else {
-            lock
-            faceplayer
-            namebox("Chicken")
-			playmoncry(SPECIES_CHICKEN_NORMAL_FORM, 0)
-			msgbox(format("Bwwaak!"))
-			waitmoncry
-			hidenamebox
-            release
-            end
+			goto(ENCOUNTER_CHICKEN)
+            //lock
+            //faceplayer
+            //namebox("Chicken")
+			//playmoncry(SPECIES_CHICKEN_NORMAL_FORM, 0)
+			//msgbox(format("Bwwaak!"))
+			//waitmoncry
+			//hidenamebox
+            //release
+            //end
         }
     }
     else {
-        lock
-        faceplayer
-        namebox("Chicken")
-		playmoncry(SPECIES_TORCHIC, 0)
-		msgbox(format("Bwwaak!"))
-		waitmoncry
-		hidenamebox
-        release
-        end
+		goto(ENCOUNTER_CHICKEN)
+        //lock
+        //faceplayer
+        //namebox("Chicken")
+		//playmoncry(SPECIES_CHICKEN_NORMAL_FORM, 0)
+		//msgbox(format("Bwwaak!"))
+		//waitmoncry
+		//hidenamebox
+        //release
+        //end
 	}
 }
 
@@ -451,53 +453,6 @@ script BROKEN_DOOR
 {
 	msgbox(format("This door is broken beyond repair.\pThere's no way you could get it open."))
 	closemessage
-	end
-}
-
-
-//This is my attempt at a script for a cow battle that is repeatable but uncatchable for xp
-
-script ENCOUNTER_COW
-{
-	lock
-	faceplayer
-    namebox ("Cow")
-    playmoncry(SPECIES_MILTANK, 0)
-	msgbox(format("MOOOOOOOO!!"))
-    waitmoncry
-    hidenamebox
-	closemessage
-	delay(1)
-    if (flag(FLAG_BADGE01_GET) == TRUE) {
-        setwildbattle (SPECIES_COW, 10, ITEM_NONE)
-	}
-    else {
-		random(13) 
-		switch (var(VAR_RESULT)) { 
-			case 0: 
-			case 1: 
-			case 2: 
-				setwildbattle (SPECIES_CALF, 8, ITEM_NONE)
-			case 3: 
-				setwildbattle (SPECIES_COW, 5, ITEM_NONE)
-			case 6: 
-			case 7: 
-				setwildbattle (SPECIES_CALF, 10, ITEM_NONE)
-			case 9: 
-				setwildbattle (SPECIES_COW, 10, ITEM_NONE)
-			default: 
-				setwildbattle (SPECIES_CALF, 5, ITEM_NONE)
-		} 
-		
-        
-    }
-	dowildbattle
-	if (var(VAR_RESULT) == B_OUTCOME_WON || var(VAR_RESULT) == B_OUTCOME_CAUGHT){
-		fadescreenswapbuffers(FADE_TO_BLACK)
-		removeobject (VAR_LAST_TALKED)
-		fadescreenswapbuffers(FADE_FROM_BLACK)
-	}
-    release
 	end
 }
 

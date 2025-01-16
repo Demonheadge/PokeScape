@@ -275,6 +275,9 @@ script LUMBRIDGE_SWAMP_CAVES_CHECK_PLAYER_STAND {
     elif ((var(VAR_TEMP_F) == 52) && (var(VAR_TEMP_D) == 35)){
         setvar(VAR_TEMP_A, 1)
     }
+    elif ((var(VAR_TEMP_F) == 31) && (var(VAR_TEMP_D) == 10)){
+        setvar(VAR_TEMP_7, 1)
+    }
     special(DrawWholeMapView) 
     return
 }

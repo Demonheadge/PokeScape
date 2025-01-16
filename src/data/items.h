@@ -13072,7 +13072,7 @@ const struct Item gItems[] =
     {
         .name = _("CADAVA"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_RESTORE_PP,
+        .holdEffect = HOLD_EFFECT_RESTORE_PP, // Add poisoned effect.
         .holdEffectParam = 10,
         .description = sCadavaberryDesc,
         .pocket = POCKET_BERRIES,
