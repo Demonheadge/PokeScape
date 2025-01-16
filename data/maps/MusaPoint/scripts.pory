@@ -1096,7 +1096,7 @@ script multipartnerBattle_Zanik {
     if (var(VAR_RESULT))
     { 
         loadword(0, Following_Zanik)
-		setfollower(25, 0x100)
+		setfollower(37, 0x100)
 		closemessage
 		hidenamebox
 		playfanfare(MUS_OBTAIN_SYMBOL)
@@ -1105,7 +1105,6 @@ script multipartnerBattle_Zanik {
 		closemessage
 		hidenamebox
 		setflag(FLAG_PARTNER_BATTLE)
-		//setvar (VAR_UNUSED_0x8014, TRAINER_ZANIK_HAM)
 		setvar (VAR_PARTNER_TRAINER, TRAINER_ZANIK_HAM)
 		setvar (VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_ZANIK)
 		release
@@ -1163,7 +1162,7 @@ script multipartnerBattle_Ariane {
     if (var(VAR_RESULT))
     { 
         loadword(0, Following_Zanik)
-		setfollower(24, 0x100)
+		setfollower(38, 0x100)
 		closemessage
 		hidenamebox
 		playfanfare(MUS_OBTAIN_SYMBOL)
@@ -1172,7 +1171,6 @@ script multipartnerBattle_Ariane {
 		closemessage
 		hidenamebox
 		setflag(FLAG_PARTNER_BATTLE)
-		//setvar (VAR_UNUSED_0x8014, TRAINER_ZANIK_HAM)
 		setvar (VAR_PARTNER_TRAINER, TRAINER_ARIANE_1)
 		setvar (VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_ARIANE)
 		release
@@ -1185,3 +1183,42 @@ script multipartnerBattle_Ariane {
     end
 }
 
+
+script multipartnerBattle_SirOwen {
+
+    lock
+    faceplayer
+    namebox("Sir Owen")
+	msgbox(format("May we adventure together?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+        loadword(0, Following_Zanik)
+		setfollower(36, 0x100)
+		closemessage
+		hidenamebox
+		playfanfare(MUS_OBTAIN_SYMBOL)
+		msgbox(format("SIR OWEN JOINS THE PARTY!"))
+		waitfanfare
+		closemessage
+		hidenamebox
+		setflag(FLAG_PARTNER_BATTLE)
+		setvar (VAR_PARTNER_TRAINER, TRAINER_SIR_OWEN_1)
+		setvar (VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_OWEN)
+		release
+		end
+    }
+	msgbox(format("Maybe some other time then…"))
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+
+script FOLLOWER_REMOVE {
+	clearflag(FLAG_PARTNER_BATTLE)
+	clearflag(FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES)
+	destroyfollower
+	waitstate
+	return
+}

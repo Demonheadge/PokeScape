@@ -6347,8 +6347,11 @@ static void Cmd_switchinanim(void)
                                  | BATTLE_TYPE_EREADER_TRAINER
                                  | BATTLE_TYPE_RECORDED_LINK
                                  | BATTLE_TYPE_TRAINER_HILL
-                                 | BATTLE_TYPE_FRONTIER)))
-        HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[battler].species), FLAG_SET_SEEN, gBattleMons[battler].personality);
+                                 | BATTLE_TYPE_FRONTIER))) {
+        DebugPrintf("Setting seen flag for species: %d", gBattleMons[battler].species);                            
+        if (gBattleMons[battler].species != 0)
+            HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[battler].species), FLAG_SET_SEEN, gBattleMons[battler].personality);
+                                 }
 
     gAbsentBattlerFlags &= ~(gBitTable[battler]);
 

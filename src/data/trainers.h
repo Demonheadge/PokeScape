@@ -5430,6 +5430,17 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_ARIANE_1),
     },
 
+    [TRAINER_SIR_OWEN_1] =
+    {
+        .trainerClass = TRAINER_CLASS_SIGNATURE_HERO,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_sir_owen,
+        .trainerName = _("Sir Owen"),
+        .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_SIR_OWEN_1),
+    },
 
 /*
     #define TRAINER_HELLWIND                                445

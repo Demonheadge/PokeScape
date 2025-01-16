@@ -368,26 +368,12 @@ void BattleSetup_StartWildBattle(void)
 {
     if (GetSafariZoneFlag())
         DoSafariBattle();
-    else if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) 
-    {
-        TryPartnerBattle();
-        VarSet (VAR_0x8004, SPECIAL_BATTLE_MULTI);
-        VarSet (VAR_0x8005, MULTI_BATTLE_2_VS_WILD);
-        DoSpecialTrainerBattle();
-    }
     else
         DoStandardWildBattle(FALSE);
 }
 
 void BattleSetup_StartDoubleWildBattle(void)
 {
-    if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) 
-    {
-        TryPartnerBattle();
-        VarSet (VAR_0x8004, SPECIAL_BATTLE_MULTI);
-        VarSet (VAR_0x8005, MULTI_BATTLE_2_VS_WILD);
-        DoSpecialTrainerBattle();
-    }
     DoStandardWildBattle(TRUE);
 }
 
@@ -401,16 +387,20 @@ static void DoStandardWildBattle(bool32 isDouble)
     LockPlayerFieldControls();
     FreezeObjectEvents();
     StopPlayerAvatar();
+    bool32 isPartnerBattle = FlagGet(FLAG_PARTNER_BATTLE);
     gMain.savedCallback = CB2_EndWildBattle;
     gBattleTypeFlags = 0;
+
     if (isDouble) {
-        if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) {
-            gBattleTypeFlags = BATTLE_TYPE_DOUBLE | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
-        }
-        else {
-            gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
-        }
+        gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
     }
+    if (isPartnerBattle) 
+    {
+        TryPartnerBattle();
+        DoPartnerBattle();
+        gBattleTypeFlags = BATTLE_TYPE_DOUBLE | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
+    }
+    
     if (InBattlePyramid())
     {
         VarSet(VAR_TEMP_E, 0);
@@ -681,6 +671,12 @@ static void CB2_EndWildBattle(void)
 {
     CpuFill16(0, (void *)(BG_PLTT), BG_PLTT_SIZE);
     ResetOamRange(0, 128);
+
+    if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) {
+        SaveChangesToPlayerParty();
+        LoadPlayerParty();
+        FlagClear(B_FLAG_SKY_BATTLE);
+    }
 
     if (IsPlayerDefeated(gBattleOutcome) == TRUE && !InBattlePyramid() && !InBattlePike())
     {
@@ -1397,7 +1393,19 @@ void ClearTrainerFlag(u16 trainerId)
 
 void BattleSetup_StartTrainerBattle(void)
 {
-    if (gNoOfApproachingTrainers == 2)
+    bool32 isPartnerBattle = FlagGet(FLAG_PARTNER_BATTLE);
+
+    if (isPartnerBattle) {
+        TryPartnerBattle();
+        DoPartnerBattle();
+        if (gNoOfApproachingTrainers == 2)
+            gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
+        else {
+            gTrainerBattleOpponent_B = 0xFFFF;
+            gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
+        }
+    }
+    else if (gNoOfApproachingTrainers == 2)
         gBattleTypeFlags = (BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_TRAINER);
     else
         gBattleTypeFlags = (BATTLE_TYPE_TRAINER);
@@ -1434,12 +1442,6 @@ void BattleSetup_StartTrainerBattle(void)
             FillHillTrainerParty();
 
         SetHillTrainerFlag();
-    }
-    else if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) {
-        TryPartnerBattle();
-        VarSet (VAR_0x8004, SPECIAL_BATTLE_MULTI);
-        VarSet (VAR_0x8005, MULTI_BATTLE_2_VS_1);
-        DoSpecialTrainerBattle();
     }
 
     sNoOfPossibleTrainerRetScripts = gNoOfApproachingTrainers;

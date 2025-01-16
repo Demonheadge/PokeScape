@@ -1181,7 +1181,7 @@ multipartnerBattle_Zanik::
 
 multipartnerBattle_Zanik_2:
 	loadword 0, Following_Zanik
-	setfollower 25, 0x100
+	setfollower 37, 0x100
 	closemessage
 	hidenamebox
 	playfanfare MUS_OBTAIN_SYMBOL
@@ -1255,7 +1255,7 @@ multipartnerBattle_Ariane::
 
 multipartnerBattle_Ariane_2:
 	loadword 0, Following_Zanik
-	setfollower 24, 0x100
+	setfollower 38, 0x100
 	closemessage
 	hidenamebox
 	playfanfare MUS_OBTAIN_SYMBOL
@@ -1268,6 +1268,44 @@ multipartnerBattle_Ariane_2:
 	setvar VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_ARIANE
 	release
 	end
+
+
+multipartnerBattle_SirOwen::
+	lock
+	faceplayer
+	namebox multipartnerBattle_SirOwen_Text_0
+	msgbox multipartnerBattle_Zanik_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne multipartnerBattle_SirOwen_2
+	msgbox multipartnerBattle_Zanik_Text_3
+	hidenamebox
+	closemessage
+	release
+	end
+
+multipartnerBattle_SirOwen_2:
+	loadword 0, Following_Zanik
+	setfollower 36, 0x100
+	closemessage
+	hidenamebox
+	playfanfare MUS_OBTAIN_SYMBOL
+	msgbox multipartnerBattle_SirOwen_Text_1
+	waitfanfare
+	closemessage
+	hidenamebox
+	setflag FLAG_PARTNER_BATTLE
+	setvar VAR_PARTNER_TRAINER, TRAINER_SIR_OWEN_1
+	setvar VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_OWEN
+	release
+	end
+
+
+FOLLOWER_REMOVE::
+	clearflag FLAG_PARTNER_BATTLE
+	clearflag FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES
+	destroyfollower
+	waitstate
+	return
 
 
 NPC_MUSAPOINT_SAILOR_Text_0:
@@ -1893,3 +1931,9 @@ multipartnerBattle_Ariane_Text_0:
 
 multipartnerBattle_Ariane_Text_1:
 	.string "ARIANE JOINS THE PARTY!$"
+
+multipartnerBattle_SirOwen_Text_0:
+	.string "Sir Owen$"
+
+multipartnerBattle_SirOwen_Text_1:
+	.string "SIR OWEN JOINS THE PARTY!$"

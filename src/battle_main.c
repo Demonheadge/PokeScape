@@ -478,7 +478,10 @@ void CB2_InitBattle(void)
     AllocateMonSpritesGfx();
     RecordedBattle_ClearFrontierPassFlag();
 
-    if (gBattleTypeFlags & BATTLE_TYPE_MULTI)
+    if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) { //Skips the multibattle intro section.
+        CB2_InitBattleInternal();
+    }
+    else if (gBattleTypeFlags & BATTLE_TYPE_MULTI)
     {
         if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
         {
@@ -3858,7 +3861,9 @@ static void DoBattleIntro(void)
                                           | BATTLE_TYPE_RECORDED_LINK
                                           | BATTLE_TYPE_TRAINER_HILL)))
                 {
-                    HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[battler].species), FLAG_SET_SEEN, gBattleMons[battler].personality);
+                    DebugPrintf("Setting seen flag for species: %d", gBattleMons[battler].species);  
+                    if (gBattleMons[battler].species != 0)
+                        HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[battler].species), FLAG_SET_SEEN, gBattleMons[battler].personality);
                 }
             }
 
