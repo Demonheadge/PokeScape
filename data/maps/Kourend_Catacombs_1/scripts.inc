@@ -434,8 +434,19 @@ ROTTEN_POTATO_TELEPORT::
 	end
 
 ROTTEN_POTATO_TELEPORT_2:
-	msgbox ROTTEN_POTATO_TELEPORT_Text_2
+	specialvar VAR_RESULT, GetCurrentMap
+	compare VAR_RESULT, MAP_KARAMJA_VOLCANO_B3F
+	goto_if_eq ROTTEN_POTATO_TELEPORT_5
+	msgbox ROTTEN_POTATO_TELEPORT_Text_4
 	goto EventScript_FieldWhiteOut
+	release
+	end
+
+ROTTEN_POTATO_TELEPORT_5:
+	namebox ROTTEN_POTATO_TELEPORT_Text_2
+	msgbox ROTTEN_POTATO_TELEPORT_Text_3
+	closemessage
+	hidenamebox
 	release
 	end
 
@@ -527,6 +538,21 @@ ROTTEN_POTATO_TELEPORT_Text_1:
 	.string "This will cause you to whiteout.$"
 
 ROTTEN_POTATO_TELEPORT_Text_2:
+	.string "Demonheadge$"
+
+ROTTEN_POTATO_TELEPORT_Text_3:
+	.string "Ahem, hello {PLAYER}.\p"
+	.string "I can see you are trying to escape from\n"
+	.string "here, but if you do that means you will\l"
+	.string "softlock the game or break some sort of\l"
+	.string "content.\p"
+	.string "For that I shall not allow you to\n"
+	.string "teleport out.\p"
+	.string "If you are actually stuck then reach\n"
+	.string "out to me on discord or socials and I'll\l"
+	.string "do my best to help.$"
+
+ROTTEN_POTATO_TELEPORT_Text_4:
 	.string "As you bite into the rotten potato you\n"
 	.string "and your team feel the touch of the\l"
 	.string "PokeScape gods.\p"

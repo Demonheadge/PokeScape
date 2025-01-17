@@ -11279,7 +11279,7 @@
               {
                 "min_level": 2,
                 "max_level": 3,
-                "species": "SPECIES_FOX"
+                "species": "SPECIES_RABBIT"
               },
               {
                 "min_level": 3,
@@ -11503,7 +11503,7 @@
               {
                 "min_level": 3,
                 "max_level": 3,
-                "species": "SPECIES_FOX"
+                "species": "SPECIES_RABBIT"
               },
               {
                 "min_level": 2,
@@ -14276,7 +14276,7 @@
               {
                 "min_level": 2,
                 "max_level": 3,
-                "species": "SPECIES_RABBIT"
+                "species": "SPECIES_FOX"
               },
               {
                 "min_level": 2,
@@ -14490,7 +14490,7 @@
               {
                 "min_level": 2,
                 "max_level": 3,
-                "species": "SPECIES_RABBIT"
+                "species": "SPECIES_FOX"
               },
               {
                 "min_level": 2,
@@ -15288,7 +15288,7 @@
               {
                 "min_level": 7,
                 "max_level": 9,
-                "species": "SPECIES_SPIDERLING"
+                "species": "SPECIES_COCKROACH_DRONE"
               },
               {
                 "min_level": 7,
@@ -15323,12 +15323,12 @@
               {
                 "min_level": 7,
                 "max_level": 9,
-                "species": "SPECIES_SPIDER_GIANT_FORM"
+                "species": "SPECIES_SPIDER_HUGE_FORM"
               },
               {
                 "min_level": 7,
                 "max_level": 9,
-                "species": "SPECIES_RUBY_HARVEST"
+                "species": "SPECIES_SNAIL"
               },
               {
                 "min_level": 7,
@@ -16602,7 +16602,7 @@
               {
                 "min_level": 6,
                 "max_level": 8,
-                "species": "SPECIES_CAVE_SLIME"
+                "species": "SPECIES_CROCODILE_NORMAL_FORM"
               },
               {
                 "min_level": 6,
@@ -16612,7 +16612,7 @@
               {
                 "min_level": 6,
                 "max_level": 8,
-                "species": "SPECIES_CROCODILE_NORMAL_FORM"
+                "species": "SPECIES_GIANT_FROG_NORMAL_FORM"
               },
               {
                 "min_level": 6,

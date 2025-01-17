@@ -25015,7 +25015,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Hand_Creeping_Form, 0),
 		.footprint = gMonFootprint_Hand_Creeping_Form,
 		LEARNSETS(Hand_Creeping_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 15,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 24, SPECIES_HAND_CRAWLING_FORM},
@@ -40208,7 +40208,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Cockroach_Drone, 1),
 		.footprint = gMonFootprint_Cockroach_Drone,
 		LEARNSETS(Cockroach_Drone),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 11,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 23, SPECIES_COCKROACH_WORKER},

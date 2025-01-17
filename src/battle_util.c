@@ -11645,6 +11645,19 @@ bool8 CanMonParticipateInSkyBattle(struct Pokemon *mon)
     return FALSE;
 }
 
+bool8 CanMonParticipateInPartnerBattle(struct Pokemon *mon)
+{
+    u16 species = GetMonData(mon, MON_DATA_SPECIES);
+    u16 monAbilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM, NULL);
+    bool8 monIsValidAndNotEgg = GetMonData(mon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(mon, MON_DATA_IS_EGG);
+
+    if ((monIsValidAndNotEgg))
+    {
+        return TRUE;
+    }
+    return FALSE;
+}
+
 bool8 IsMonBannedFromSkyBattles(u16 species)
 {
     switch (species)

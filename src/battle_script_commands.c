@@ -4463,7 +4463,7 @@ bool32 NoAliveMonsForPlayer(void)
     u32 maxI = PARTY_SIZE;
     u32 HP_count = 0;
 
-    if (B_MULTI_BATTLE_WHITEOUT < GEN_4 && gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER))
+    if (gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER))
         maxI = MULTI_PARTY_SIZE;
 
     // Get total HP for the player's party to determine if the player has lost
@@ -6347,8 +6347,11 @@ static void Cmd_switchinanim(void)
                                  | BATTLE_TYPE_EREADER_TRAINER
                                  | BATTLE_TYPE_RECORDED_LINK
                                  | BATTLE_TYPE_TRAINER_HILL
-                                 | BATTLE_TYPE_FRONTIER)))
-        HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[battler].species), FLAG_SET_SEEN, gBattleMons[battler].personality);
+                                 | BATTLE_TYPE_FRONTIER))) {
+        DebugPrintf("Setting seen flag for species: %d", gBattleMons[battler].species);                            
+        if (gBattleMons[battler].species != 0)
+            HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[battler].species), FLAG_SET_SEEN, gBattleMons[battler].personality);
+                                 }
 
     gAbsentBattlerFlags &= ~(gBitTable[battler]);
 

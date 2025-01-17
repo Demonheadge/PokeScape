@@ -39,6 +39,7 @@
 #include "constants/trainers.h"
 #include "constants/event_objects.h"
 #include "constants/moves.h"
+#include "load_save.h"
 
 extern const u8 MossdeepCity_SpaceCenter_2F_EventScript_MaxieTrainer[];
 extern const u8 MossdeepCity_SpaceCenter_2F_EventScript_TabithaTrainer[];
@@ -2040,15 +2041,27 @@ static void HandleSpecialTrainerBattleEnd(void)
         CopyEReaderTrainerFarewellMessage();
         break;
     case SPECIAL_BATTLE_MULTI:
-        for (i = 0; i < 3; i++)
-        {
-            if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES))
-                gSaveBlock1Ptr->playerParty[i] = gPlayerParty[i];
-        }
         break;
     }
 
-    SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+    /*if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) {
+        SaveChangesToPlayerParty();
+        LoadPlayerParty();
+        FlagClear(B_FLAG_SKY_BATTLE);
+
+        if (IsPlayerDefeated(gBattleOutcome) == TRUE)
+        {
+            if ((!NoAliveMonsForPlayer()) || BattleHasNoWhiteout())
+                SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+            else
+                SetMainCallback2(CB2_WhiteOut);
+        }
+        else {
+            SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+            DowngradeBadPoison();
+            SetBattledTrainersFlags();
+        }
+    }*/
 }
 
 static void Task_StartBattleAfterTransition(u8 taskId)
@@ -2059,6 +2072,14 @@ static void Task_StartBattleAfterTransition(u8 taskId)
         SetMainCallback2(CB2_InitBattle);
         DestroyTask(taskId);
     }
+}
+
+void DoPartnerBattle(void)
+{
+    gPartnerSpriteId = VarGet(VAR_PARTNER_SPRITE);
+    gPartnerTrainerId = VarGet(VAR_PARTNER_TRAINER) + TRAINER_CUSTOM_PARTNER;
+    FillPartnerParty(gPartnerTrainerId);
+    return;
 }
 
 void DoSpecialTrainerBattle(void)
@@ -2205,8 +2226,8 @@ void DoSpecialTrainerBattle(void)
             gBattleTypeFlags = BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER;
         }
 
-        gPartnerSpriteId = VarGet(gSpecialVar_0x8007);
-        gPartnerTrainerId = VarGet(gSpecialVar_0x8006) + TRAINER_CUSTOM_PARTNER;
+        gPartnerSpriteId = VarGet(VAR_PARTNER_SPRITE);
+        gPartnerTrainerId = VarGet(VAR_PARTNER_TRAINER) + TRAINER_CUSTOM_PARTNER;
         FillPartnerParty(gPartnerTrainerId);
         CreateTask(Task_StartBattleAfterTransition, 1);
         PlayMapChosenOrBattleBGM(0);

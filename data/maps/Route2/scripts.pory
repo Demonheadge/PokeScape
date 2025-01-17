@@ -284,13 +284,28 @@ script NPC_ROUTE2_Wizard
     end
 }
 
+script CONTINUE_AFTER_BATTLE_ROUTE2_SKILLER {
+    namebox ("H0w2Typ3")
+    msgbox(format("Awh man, really…\nBack to Lumbridge for me…"))
+    hidenamebox
+    closemessage
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    setflag(FLAG_TEMP_1C)
+    removeobject(13)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    release
+    end
+}
+
 
 script BATTLE_ROUTE2_Trainer_1
 {
-    trainerbattle_single(TRAINER_ROUTE2_TRAINER_1, format("Please no!\pI'm so close to the Bank I don't want to be sent back to Lumbridge!"),format("Nooo!\pBack to Lumbridge I go!"))
+    trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_ROUTE2_TRAINER_1, 0, format("Please no!\pI'm so close to the Bank I don't want to be sent back to Lumbridge!"), format("Nooo!\pBack to Lumbridge I go!"), CONTINUE_AFTER_BATTLE_ROUTE2_SKILLER)
+    //trainerbattle_single(TRAINER_ROUTE2_TRAINER_1, format("Please no!\pI'm so close to the Bank I don't want to be sent back to Lumbridge!"),format("Nooo!\pBack to Lumbridge I go!"))
     //namebox ("H0w2Typ3")
     msgbox(format("If the swamp wasn't hard enough, there was also a forest to pass through!?\pThis is too much for a skiller…"))
     hidenamebox
+    closemessage
     release
     end
 }

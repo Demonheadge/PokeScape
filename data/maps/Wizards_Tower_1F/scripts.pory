@@ -614,7 +614,7 @@ script NPC_WIZARDSTOWER_RuneGuardian
 {
 	lock
 	faceplayer
-	playmoncry(SPECIES_UNOWN, 0)
+	playmoncry(SPECIES_RUNE_GUARDIAN, 0)
     namebox ("Rune Guardian")
 	msgbox(format("Btttz, btzz!"))
 	waitmoncry

@@ -140,8 +140,10 @@ HAM_EVENT_DRAYNORMANOR_1F_5:
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_LEFT
 	waitmovement 0
+	namebox HAM_EVENT_DRAYNORMANOR_1F_Text_0
 	msgbox HAM_EVENT_DRAYNORMANOR_1F_Text_2
 	hidenamebox
+	closemessage
 	applymovement 6, Movement_DraynorManor_Entry_Rat
 	playmoncry SPECIES_RAT_NORMAL_FORM, 1
 	namebox HAM_EVENT_DRAYNORMANOR_1F_Text_3
@@ -169,6 +171,14 @@ HAM_EVENT_DRAYNORMANOR_1F_5:
 	waitfanfare
 	closemessage
 	hidenamebox
+	checkfollower
+	compare VAR_RESULT, 0
+	goto_if_ne HAM_EVENT_DRAYNORMANOR_1F_16
+HAM_EVENT_DRAYNORMANOR_1F_15:
+	setflag FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES
+	setflag FLAG_PARTNER_BATTLE
+	setvar VAR_PARTNER_TRAINER, TRAINER_ARIANE_1
+	setvar VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_ARIANE
 	loadword 0, FOLLOWING_Ariane
 	setfollower 17, 0x80
 	setvar VAR_TEMP_A, 1
@@ -193,6 +203,14 @@ HAM_EVENT_DRAYNORMANOR_1F_10:
 	waitfanfare
 	closemessage
 	hidenamebox
+	checkfollower
+	compare VAR_RESULT, 0
+	goto_if_ne HAM_EVENT_DRAYNORMANOR_1F_19
+HAM_EVENT_DRAYNORMANOR_1F_18:
+	setflag FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES
+	setflag FLAG_PARTNER_BATTLE
+	setvar VAR_PARTNER_TRAINER, TRAINER_ARIANE_1
+	setvar VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_ARIANE
 	loadword 0, FOLLOWING_Ariane
 	setfollower 17, 0x80
 	setvar VAR_TEMP_A, 1
@@ -218,6 +236,14 @@ HAM_EVENT_DRAYNORMANOR_1F_12:
 	applymovement 17, MOVEMENT_WALKLEFT
 	waitmovement 0
 	goto HAM_EVENT_DRAYNORMANOR_1F_10
+
+HAM_EVENT_DRAYNORMANOR_1F_16:
+	call FOLLOWER_REMOVE
+	goto HAM_EVENT_DRAYNORMANOR_1F_15
+
+HAM_EVENT_DRAYNORMANOR_1F_19:
+	call FOLLOWER_REMOVE
+	goto HAM_EVENT_DRAYNORMANOR_1F_18
 
 
 Movement_DraynorManor_Entry_1:
@@ -359,8 +385,7 @@ TRIGGER_ARIANE_DRAYNORMANOR_1F_1_1:
 	compare VAR_TEMP_1, 25
 	goto_if_eq TRIGGER_ARIANE_DRAYNORMANOR_1F_1_6
 TRIGGER_ARIANE_DRAYNORMANOR_1F_1_4:
-	destroyfollower
-	waitstate
+	call FOLLOWER_REMOVE
 	return
 
 TRIGGER_ARIANE_DRAYNORMANOR_1F_1_5:
@@ -476,8 +501,7 @@ TRIGGER_ARIANE_DRAYNORMANOR_1F_6_2:
 	delay 32
 	setvar VAR_TEMP_9, 1
 	warp MAP_DRAYNOR_MANOR_CRYPT, 0, 0, 0
-	destroyfollower
-	waitstate
+	call FOLLOWER_REMOVE
 	goto TRIGGER_ARIANE_DRAYNORMANOR_1F_6_1
 
 
@@ -588,6 +612,29 @@ NPC_DraynorManor_Witch::
 
 NPC_DraynorManor_Chair::
 	lock
+	random 15
+	switch VAR_RESULT
+	case 0, NPC_DraynorManor_Chair_3
+	case 1, NPC_DraynorManor_Chair_3
+	case 2, NPC_DraynorManor_Chair_3
+	case 3, NPC_DraynorManor_Chair_3
+	case 4, NPC_DraynorManor_Chair_3
+	case 5, NPC_DraynorManor_Chair_3
+	case 6, NPC_DraynorManor_Chair_3
+NPC_DraynorManor_Chair_1:
+	msgbox NPC_DraynorManor_Chair_Text_0
+	hidenamebox
+	closemessage
+	release
+	end
+
+NPC_DraynorManor_Chair_3:
+	goto ENCOUNTER_CHAIR
+	goto NPC_DraynorManor_Chair_1
+
+
+NPC_DraynorManor_Chair1::
+	lock
 	msgbox NPC_DraynorManor_Chair_Text_0
 	hidenamebox
 	closemessage
@@ -595,11 +642,109 @@ NPC_DraynorManor_Chair::
 	end
 
 
+NPC_PIANO::
+	lock
+	msgbox NPC_PIANO_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NPC_PIANO_2
+NPC_PIANO_1:
+	closemessage
+	release
+	end
+
+NPC_PIANO_2:
+	specialvar VAR_RESULT, GetCurrentMap
+	compare VAR_RESULT, MAP_DRAYNOR_MANOR_2F
+	goto_if_eq NPC_PIANO_5
+NPC_PIANO_4:
+	closemessage
+	delay 15
+	random 8
+	switch VAR_RESULT
+	case 0, NPC_PIANO_9
+	case 1, NPC_PIANO_10
+	case 2, NPC_PIANO_11
+	case 3, NPC_PIANO_12
+	case 4, NPC_PIANO_13
+	case 5, NPC_PIANO_14
+	case 6, NPC_PIANO_15
+	case 7, NPC_PIANO_16
+NPC_PIANO_7:
+	waitse
+	goto NPC_PIANO_1
+
+NPC_PIANO_5:
+	goto NPC_SKELETON_PIANO
+	goto NPC_PIANO_4
+
+NPC_PIANO_9:
+	playse SE_NOTE_A
+	goto NPC_PIANO_7
+
+NPC_PIANO_10:
+	playse SE_NOTE_B
+	goto NPC_PIANO_7
+
+NPC_PIANO_11:
+	playse SE_NOTE_C
+	goto NPC_PIANO_7
+
+NPC_PIANO_12:
+	playse SE_NOTE_D
+	goto NPC_PIANO_7
+
+NPC_PIANO_13:
+	playse SE_NOTE_E
+	goto NPC_PIANO_7
+
+NPC_PIANO_14:
+	playse SE_NOTE_F
+	goto NPC_PIANO_7
+
+NPC_PIANO_15:
+	playse SE_NOTE_G
+	goto NPC_PIANO_7
+
+NPC_PIANO_16:
+	playse SE_NOTE_C_HIGH
+	waitse
+	goto ENCOUNTER_GHOST
+	goto NPC_PIANO_7
+
+
 NPC_DraynorManor_Skeleton_1::
 	lock
 	faceplayer
 	namebox NPC_DraynorManor_Skeleton_1_Text_0
 	msgbox NPC_DraynorManor_Skeleton_1_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+
+NPC_SKELETON_PIANO::
+	closemessage
+	playse SE_NOTE_A
+	waitse
+	playse SE_NOTE_B
+	waitse
+	playse SE_NOTE_B
+	waitse
+	playse SE_NOTE_C
+	waitse
+	playse SE_NOTE_A
+	waitse
+	playse SE_NOTE_D
+	waitse
+	playse SE_NOTE_A
+	waitse
+	playse SE_NOTE_G
+	waitse
+	applymovement 6, MOVEMENT_SHOCKED_FACEPLAYER
+	waitmovement 0
+	namebox NPC_DraynorManor_Skeleton_1_Text_0
+	msgbox NPC_SKELETON_PIANO_Text_0
 	hidenamebox
 	closemessage
 	release
@@ -868,7 +1013,10 @@ NPC_DraynorManor_Witch_Text_1:
 	.string "save you from how toxic that stuff is!$"
 
 NPC_DraynorManor_Chair_Text_0:
-	.string "It's a chair.$"
+	.string "It's just a chair.$"
+
+NPC_PIANO_Text_0:
+	.string "Play the Piano?$"
 
 NPC_DraynorManor_Skeleton_1_Text_0:
 	.string "Skeleton$"
@@ -876,6 +1024,13 @@ NPC_DraynorManor_Skeleton_1_Text_0:
 NPC_DraynorManor_Skeleton_1_Text_1:
 	.string "I would really like to play the piano.\p"
 	.string "But I have nobody to play with.$"
+
+NPC_SKELETON_PIANO_Text_0:
+	.string "Yo that's pretty groovy.\p"
+	.string "Say you know that piano downstairs?\p"
+	.string "There's a broken note on it that angers\n"
+	.string "many of the monsters in the manor, so\l"
+	.string "be careful.$"
 
 BATTLE_DRAYNORMANOR_Trainer_1_Text_0:
 	.string "The skeleton stares deep into your\n"

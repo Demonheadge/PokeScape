@@ -1149,7 +1149,7 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
 
 
     [ITEM_PAPAYA] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
-    [ITEM_DWELLBERRY] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
+    [ITEM_DWELLBERRY] = {gItemIcon_dwellberry, gItemIconPalette_dwellberry},
     [ITEM_COFFEEBEAN] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
     [ITEM_POISON_IVY] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
     [ITEM_BLUEBERRY] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},

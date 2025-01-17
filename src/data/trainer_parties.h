@@ -6712,8 +6712,8 @@ static const struct TrainerMon sParty_WISE_OLD_MAN_1[] = { //LUMBRIDGE FOREST
     .ability = ABILITY_STRONG_JAW,
     .nature = NATURE_SERIOUS,
     .moves = {MOVE_DRAGON_RAGE, MOVE_BITE, MOVE_FOCUS_ENERGY, MOVE_HORN_ATTACK},
-    .ev = TRAINER_PARTY_EVS(104, 252, 0, 0, 0, 152),
-    .iv = TRAINER_PARTY_IVS(16, 16, 16, 16, 16, 16),
+    .ev = TRAINER_PARTY_EVS(104, 252, 0, 0, 0, 0),
+    .iv = TRAINER_PARTY_IVS(16, 16, 16, 16, 16, 0),
     .lvl = 15,
     .species = SPECIES_HATCHLING,
     .heldItem = ITEM_NONE
@@ -6725,7 +6725,7 @@ static const struct TrainerMon sParty_WISE_OLD_MAN_1[] = { //LUMBRIDGE FOREST
     .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 0, 252),
     .iv = TRAINER_PARTY_IVS(16, 16, 16, 16, 16, 16),
     .gender = TRAINER_MON_MALE,
-    .lvl = 17,
+    .lvl = 16,
     .species = SPECIES_PUPPY_MUTT_FORM,
     .heldItem = ITEM_NONE
     },
@@ -8267,5 +8267,43 @@ static const struct TrainerMon sParty_MUDSKIPPERSOUND2_TRAINER_3[] = {
     {
     .lvl = 35,
     .species = SPECIES_CAVE_BUG,
+    }
+};
+
+static const struct TrainerMon sParty_ZANIK_HAM[] = {
+    {
+    .lvl = 36,
+    .species = SPECIES_EEL_SACRED_FORM,
+    },
+    {
+    .lvl = 35,
+    .species = SPECIES_TOME_OF_RANGED,
+    }
+};
+
+static const struct TrainerMon sParty_ARIANE_1[] = {
+    {
+    .lvl = 18,
+    .species = SPECIES_ANIMATED_BOOK,
+    },
+    {
+    .lvl = 19,
+    .species = SPECIES_RUNE,
+    }
+};
+
+
+static const struct TrainerMon sParty_SIR_OWEN_1[] = {
+    {
+    .lvl = 40,
+    .species = SPECIES_SPIRIT_WARRIOR,
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_UNICORN_REANIMATED_FORM,
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_SHADOW_HOUND,
     }
 };

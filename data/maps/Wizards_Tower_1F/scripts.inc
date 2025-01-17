@@ -585,7 +585,7 @@ NPC_WIZARDSTOWER_Rinsit::
 NPC_WIZARDSTOWER_RuneGuardian::
 	lock
 	faceplayer
-	playmoncry SPECIES_UNOWN, 0
+	playmoncry SPECIES_RUNE_GUARDIAN, 0
 	namebox NPC_WIZARDSTOWER_RuneGuardian_Text_0
 	msgbox NPC_WIZARDSTOWER_RuneGuardian_Text_1
 	waitmoncry

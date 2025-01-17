@@ -64,6 +64,12 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "cable_club.h"
+#include "battle_tower.h"
+#include "constants/battle_tower.h"
+#include "constants/battle_frontier.h"
+#include "constants/frontier_util.h"
+#include "constants/trainers.h"
+#include "frontier_util.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
 extern const struct WindowTemplate *const gBattleWindowTemplates[];
@@ -472,7 +478,10 @@ void CB2_InitBattle(void)
     AllocateMonSpritesGfx();
     RecordedBattle_ClearFrontierPassFlag();
 
-    if (gBattleTypeFlags & BATTLE_TYPE_MULTI)
+    if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) { //Skips the multibattle intro section.
+        CB2_InitBattleInternal();
+    }
+    else if (gBattleTypeFlags & BATTLE_TYPE_MULTI)
     {
         if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
         {
@@ -3852,7 +3861,9 @@ static void DoBattleIntro(void)
                                           | BATTLE_TYPE_RECORDED_LINK
                                           | BATTLE_TYPE_TRAINER_HILL)))
                 {
-                    HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[battler].species), FLAG_SET_SEEN, gBattleMons[battler].personality);
+                    DebugPrintf("Setting seen flag for species: %d", gBattleMons[battler].species);  
+                    if (gBattleMons[battler].species != 0)
+                        HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[battler].species), FLAG_SET_SEEN, gBattleMons[battler].personality);
                 }
             }
 
@@ -5537,6 +5548,7 @@ static void HandleEndTurn_FinishBattle(void)
 
     if (gCurrentActionFuncId == B_ACTION_TRY_FINISH || gCurrentActionFuncId == B_ACTION_FINISHED)
     {
+
         if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK
                                   | BATTLE_TYPE_RECORDED_LINK
                                   | BATTLE_TYPE_FIRST_BATTLE

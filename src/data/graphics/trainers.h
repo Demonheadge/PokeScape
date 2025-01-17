@@ -287,6 +287,9 @@ const u8 gTrainerBackPic_RubySapphireBrendan[] = INCBIN_U8("graphics/trainers/ba
 const u8 gTrainerBackPic_RubySapphireMay[] = INCBIN_U8("graphics/trainers/back_pics/may_rs.4bpp");
 const u8 gTrainerBackPic_Wally[] = INCBIN_U8("graphics/trainers/back_pics/wally.4bpp");
 const u8 gTrainerBackPic_Steven[] = INCBIN_U8("graphics/trainers/back_pics/steven.4bpp");
+const u8 gTrainerBackPic_Zanik[] = INCBIN_U8("graphics/trainers/pokescape/back_pics/zanik.4bpp");
+const u8 gTrainerBackPic_Ariane[] = INCBIN_U8("graphics/trainers/pokescape/back_pics/ariane.4bpp");
+const u8 gTrainerBackPic_Owen[] = INCBIN_U8("graphics/trainers/pokescape/back_pics/owen.4bpp");
 
 const u32 gTrainerBackPicPalette_Red[] = INCBIN_U32("graphics/trainers/back_pics/red.gbapal.lz");
 const u32 gTrainerBackPicPalette_Leaf[] = INCBIN_U32("graphics/trainers/back_pics/leaf.gbapal.lz");
@@ -477,6 +480,9 @@ const u32 gTrainerPalette_protaganist_f[] = INCBIN_U32("graphics/trainers/pokesc
 const u32 gTrainerPalette_protaganist_m[] = INCBIN_U32("graphics/trainers/pokescape/palettes/protaganist_m.gbapal.lz");
 const u32 gTrainerPalette_protaganist_f_back[] = INCBIN_U32("graphics/trainers/pokescape/palettes/protaganist_f_back.gbapal.lz");
 const u32 gTrainerPalette_protaganist_m_back[] = INCBIN_U32("graphics/trainers/pokescape/palettes/protaganist_m_back.gbapal.lz");
+const u32 gTrainerPalette_zanik_back[] = INCBIN_U32("graphics/trainers/pokescape/palettes/zanik_back.gbapal.lz");
+const u32 gTrainerPalette_Ariane_back[] = INCBIN_U32("graphics/trainers/pokescape/palettes/ariane_back.gbapal.lz");
+const u32 gTrainerPalette_Owen_back[] = INCBIN_U32("graphics/trainers/pokescape/palettes/owen_back.gbapal.lz");
 
 const u32 gTrainerPalette_raptor[] = INCBIN_U32("graphics/trainers/pokescape/palettes/raptor.gbapal.lz");
 const u32 gTrainerPalette_sigmund[] = INCBIN_U32("graphics/trainers/pokescape/palettes/sigmund.gbapal.lz");

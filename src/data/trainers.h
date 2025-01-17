@@ -3063,8 +3063,8 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_POKESCAPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
-        .trainerPic = TRAINER_PIC_SoffanQuo,
-        .trainerName = _("CUPHOLDER"),
+        .trainerPic = TRAINER_PIC_slayer,
+        .trainerName = _("XxSlayexX"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
@@ -3074,9 +3074,9 @@ const struct Trainer gTrainers[] = {
     [TRAINER_LUMBRIDGESWAMPCAVE_5] =
     {
         .trainerClass = TRAINER_CLASS_POKESCAPER,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
-        .trainerPic = TRAINER_PIC_SoffanQuo,
-        .trainerName = _("CUPHOLDER"),
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_fisher,
+        .trainerName = _("D33pL0n3r"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
@@ -3087,8 +3087,8 @@ const struct Trainer gTrainers[] = {
     {
         .trainerClass = TRAINER_CLASS_POKESCAPER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
-        .trainerPic = TRAINER_PIC_SoffanQuo,
-        .trainerName = _("CUPHOLDER"),
+        .trainerPic = TRAINER_PIC_slayer,
+        .trainerName = _("BCPKing420"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
@@ -5406,7 +5406,41 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_MUDSKIPPERSOUND2_TRAINER_3),
     },
 
+    [TRAINER_ZANIK_HAM] =
+    {
+        .trainerClass = TRAINER_CLASS_SIGNATURE_HERO,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_zanik_ham,
+        .trainerName = _("Zanik"),
+        .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_ZANIK_HAM),
+    },
 
+    [TRAINER_ARIANE_1] =
+    {
+        .trainerClass = TRAINER_CLASS_SIGNATURE_HERO,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_ariane,
+        .trainerName = _("Ariane"),
+        .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_ARIANE_1),
+    },
+
+    [TRAINER_SIR_OWEN_1] =
+    {
+        .trainerClass = TRAINER_CLASS_SIGNATURE_HERO,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_sir_owen,
+        .trainerName = _("Sir Owen"),
+        .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .party = TRAINER_PARTY(sParty_SIR_OWEN_1),
+    },
 
 /*
     #define TRAINER_HELLWIND                                445

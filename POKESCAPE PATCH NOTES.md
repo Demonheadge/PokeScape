@@ -19,6 +19,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
  - Added a Mind Rune Spawn to Wizards' Tower.
  - Added a bunch more shiny sprites.
  - Added new food that mostly use Berry effects. (Needs testing.)
+ - Added Dwellberry sprites.
+ - Updated and added more static encounters.
+ - Added berries to beefy bill's store.
+ - Tweaked Draynor Manor's Ariane event & added more scripts.
 
 ### Fixed
  - Updated Version number.
@@ -33,6 +37,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
  - Fixed incorrect text across the game.
  - Fixed an issue where you would leave Karamja Volcano where HAM Gunt 6 would run away, only to come back after re-entering before the HAM event is completed.
  - Prevented some KEY ITEMS from being sold at the general store.
+ - Items used or stolen in battle are now correctly removed after the battle.
+ - Cows in the lumbridge Cow field now have the correct sound effects.
+ - Fixed some front sprite heights.
+ - Night time encounters now function in Lumbridge forest.
+ - Fixed Lumbridge Swamp Caves wall encounter.
+ - Updated Trainers in Lumbridge Swamp Caves.
+ - Made it so you can no longer use dig/escape ropes/teleport/rotten potato to escape the Crandor Volcano event.
 
 ### Removed
  - Removed the Woodcutting trees at Wizards' Tower.

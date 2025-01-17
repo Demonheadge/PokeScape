@@ -357,6 +357,15 @@ script ROTTEN_POTATO_TELEPORT {
 
     msgbox(format("Only use this if you are stuck.\pThis will cause you to whiteout."), MSGBOX_YESNO)
     if (var(VAR_RESULT)){
+            specialvar (VAR_RESULT, GetCurrentMap)
+            if ((var(VAR_RESULT) == MAP_KARAMJA_VOLCANO_B3F)) {
+                namebox("Demonheadge")
+                msgbox(format("Ahem, hello {PLAYER}.\pI can see you are trying to escape from here, but if you do that means you will softlock the game or break some sort of content.\pFor that I shall not allow you to teleport out.\pIf you are actually stuck then reach out to me on discord or socials and I'll do my best to help." ))
+                closemessage
+                hidenamebox
+                release
+                end
+            }
             msgbox(format("As you bite into the rotten potato you and your team feel the touch of the PokeScape gods.\pIt was too much for you."))
             goto(EventScript_FieldWhiteOut)
             release

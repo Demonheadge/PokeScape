@@ -240,8 +240,8 @@
 #define FLAG_FAN_CLUB_STRENGTH_SHARED        0xD2 // Set when you rate the strength of another trainer in Lilycove's Trainer Fan Club.
 #define FLAG_CAPTURED_SNOWIMP                0xD3 //FLAG_DEFEATED_RIVAL_RUSTBORO
 #define FLAG_RECEIVED_RED_OR_BLUE_ORB        0xD4
-#define FLAG_RECEIVED_PREMIER_BALL_RUSTBORO  0xD5
-#define FLAG_ENABLE_WALLY_MATCH_CALL         0xD6
+#define FLAG_PARTNER_BATTLE                  0xD5 //FLAG_RECEIVED_PREMIER_BALL_RUSTBORO
+#define FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES  0xD6 // FLAG_ENABLE_WALLY_MATCH_CALL
 #define FLAG_ENABLE_SCOTT_MATCH_CALL         0xD7
 #define FLAG_ENABLE_MOM_MATCH_CALL           0xD8
 #define FLAG_MET_DIVING_TREASURE_HUNTER      0xD9
@@ -1328,7 +1328,7 @@
 #define FLAG_UNUSED_0x4E9                                           0x4E9 // Unused Flag
 #define FLAG_UNUSED_0x4EA                                           0x4EA // Unused Flag
 #define FLAG_UNUSED_0x4EB                                           0x4EB // Unused Flag
-#define FLAG_UNUSED_0x4EC                                           0x4EC // Unused Flag
+#define FLAG_SKY_BATTLE                                             0x4EC // Unused Flag
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL                     0x4ED // Unused Flag
 #define FLAG_RESCUED_BIRCH                                          0x4EE // Unused Flag
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS                              0x4EF // Unused Flag

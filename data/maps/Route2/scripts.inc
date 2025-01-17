@@ -305,10 +305,24 @@ NPC_ROUTE2_Wizard::
 	end
 
 
+CONTINUE_AFTER_BATTLE_ROUTE2_SKILLER::
+	namebox CONTINUE_AFTER_BATTLE_ROUTE2_SKILLER_Text_0
+	msgbox CONTINUE_AFTER_BATTLE_ROUTE2_SKILLER_Text_1
+	hidenamebox
+	closemessage
+	fadescreenswapbuffers FADE_TO_BLACK
+	setflag FLAG_TEMP_1C
+	removeobject 13
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+
 BATTLE_ROUTE2_Trainer_1::
-	trainerbattle_single TRAINER_ROUTE2_TRAINER_1, BATTLE_ROUTE2_Trainer_1_Text_0, BATTLE_ROUTE2_Trainer_1_Text_1
+	trainerbattle TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_ROUTE2_TRAINER_1, 0, BATTLE_ROUTE2_Trainer_1_Text_0, BATTLE_ROUTE2_Trainer_1_Text_1, CONTINUE_AFTER_BATTLE_ROUTE2_SKILLER
 	msgbox BATTLE_ROUTE2_Trainer_1_Text_2
 	hidenamebox
+	closemessage
 	release
 	end
 
@@ -549,6 +563,13 @@ NPC_ROUTE2_Wizard_Text_1:
 	.string "They say that there are hidden floors\n"
 	.string "within the Wizards' Tower.\p"
 	.string "I've never found them though.$"
+
+CONTINUE_AFTER_BATTLE_ROUTE2_SKILLER_Text_0:
+	.string "H0w2Typ3$"
+
+CONTINUE_AFTER_BATTLE_ROUTE2_SKILLER_Text_1:
+	.string "Awh man, really…\n"
+	.string "Back to Lumbridge for me…$"
 
 BATTLE_ROUTE2_Trainer_1_Text_0:
 	.string "Please no!\p"

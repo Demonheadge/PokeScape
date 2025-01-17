@@ -252,5 +252,6 @@ u32 CalcSecondaryEffectChance(u32 battler, u8 secondaryEffectChance, u16 moveEff
 u8 GetBattlerType(u32 battler, u8 typeIndex);
 bool8 CanMonParticipateInSkyBattle(struct Pokemon *mon);
 bool8 IsMonBannedFromSkyBattles(u16 species);
+bool8 CanMonParticipateInPartnerBattle(struct Pokemon *mon);
 
 #endif // GUARD_BATTLE_UTIL_H

@@ -1377,6 +1377,33 @@ static const struct SpriteTemplate sTrainerBackSpriteTemplates[] =
         .affineAnims = gAffineAnims_BattleSpritePlayerSide,
         .callback = SpriteCB_BattleSpriteStartSlideLeft,
     },
+    [TRAINER_BACK_PIC_ZANIK] = {
+        .tileTag = TAG_NONE,
+        .paletteTag = 0,
+        .oam = &gOamData_BattleSpritePlayerSide,
+        .anims = NULL,
+        .images = gTrainerBackPicTable_Zanik,
+        .affineAnims = gAffineAnims_BattleSpritePlayerSide,
+        .callback = SpriteCB_BattleSpriteStartSlideLeft,
+    },
+    [TRAINER_BACK_PIC_ARIANE] = {
+        .tileTag = TAG_NONE,
+        .paletteTag = 0,
+        .oam = &gOamData_BattleSpritePlayerSide,
+        .anims = NULL,
+        .images = gTrainerBackPicTable_Ariane,
+        .affineAnims = gAffineAnims_BattleSpritePlayerSide,
+        .callback = SpriteCB_BattleSpriteStartSlideLeft,
+    },
+    [TRAINER_BACK_PIC_OWEN] = {
+        .tileTag = TAG_NONE,
+        .paletteTag = 0,
+        .oam = &gOamData_BattleSpritePlayerSide,
+        .anims = NULL,
+        .images = gTrainerBackPicTable_Owen,
+        .affineAnims = gAffineAnims_BattleSpritePlayerSide,
+        .callback = SpriteCB_BattleSpriteStartSlideLeft,
+    },
 };
 
 #define NUM_SECRET_BASE_CLASSES 5
@@ -3539,6 +3566,9 @@ u8 GiveMonToPlayer(struct Pokemon *mon)
     if (i >= PARTY_SIZE)
         return CopyMonToPC(mon);
 
+    if (FlagGet(FLAG_PARTNER_BATTLE) == TRUE) {
+        return CopyMonToPC(mon);
+    }
     CopyMon(&gPlayerParty[i], mon, sizeof(*mon));
     gPlayerPartyCount = i + 1;
     return MON_GIVEN_TO_PARTY;
@@ -5883,7 +5913,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
             case EVO_LEVEL_WEATHER_HOT:
                     j = GetCurrentWeather();
                     if (evolutions[i].param <= level
-                    && (j == WEATHER_SUNNY_CLOUDS || j == WEATHER_DROUGHT))
+                    && (j == WEATHER_SUNNY || j == WEATHER_SUNNY_CLOUDS || j == WEATHER_DROUGHT))
                         targetSpecies = evolutions[i].targetSpecies;
                     break;
             case EVO_LEVEL_WEATHER_DUSTY:
@@ -5895,7 +5925,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 mode, u16 evolutionItem, s
             case EVO_LEVEL_WEATHER_ABNORMAL:
                     j = GetCurrentWeather();
                     if (evolutions[i].param <= level
-                    && (j == WEATHER_ABNORMAL || j == WEATHER_SHADE))
+                    && (j == WEATHER_ABNORMAL || j == WEATHER_SHADE || j == WEATHER_FOG_DIAGONAL || j == WEATHER_FOG_HORIZONTAL))
                         targetSpecies = evolutions[i].targetSpecies;
                     break;
             case EVO_LEVEL_WEATHER_WET:
