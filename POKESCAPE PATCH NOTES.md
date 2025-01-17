@@ -43,6 +43,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
  - Night time encounters now function in Lumbridge forest.
  - Fixed Lumbridge Swamp Caves wall encounter.
  - Updated Trainers in Lumbridge Swamp Caves.
+ - Made it so you can no longer use dig/escape ropes/teleport/rotten potato to escape the Crandor Volcano event.
 
 ### Removed
  - Removed the Woodcutting trees at Wizards' Tower.
