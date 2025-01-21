@@ -103,7 +103,15 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_9",
+      "var_value": "0",
+      "script": "TRIGGER_ARIANE_DRAYNORMANOR_B1F_1"
+    }
   ],
   "bg_events": [
     {

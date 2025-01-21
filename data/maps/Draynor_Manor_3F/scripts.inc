@@ -386,6 +386,10 @@ NPC_DraynorManor_Oddenstein_15:
 	removeobject 3
 	removeobject 4
 	removeobject 5
+	checkfollower
+	compare VAR_RESULT, 0
+	goto_if_ne NPC_DraynorManor_Oddenstein_26
+NPC_DraynorManor_Oddenstein_25:
 	fadescreenswapbuffers FADE_FROM_BLACK
 	special SpawnCameraObject
 	applymovement OBJ_EVENT_ID_CAMERA, movement_ENEREST_CHICKEN_QUEST_5
@@ -576,31 +580,37 @@ NPC_DraynorManor_Oddenstein_17:
 NPC_DraynorManor_Oddenstein_21:
 	checkitem ITEM_MAGICAL_CAGE, 1
 	compare VAR_RESULT, 0
-	goto_if_ne NPC_DraynorManor_Oddenstein_25
+	goto_if_ne NPC_DraynorManor_Oddenstein_28
 	msgbox NPC_DraynorManor_Oddenstein_Text_25
 	goto NPC_DraynorManor_Oddenstein_20
 
 NPC_DraynorManor_Oddenstein_22:
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_ERNEST_THE_CHICKEN, 3
 	compare VAR_RESULT, FALSE
-	goto_if_eq NPC_DraynorManor_Oddenstein_29
+	goto_if_eq NPC_DraynorManor_Oddenstein_32
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_ERNEST_THE_CHICKEN, 4
 	compare VAR_RESULT, TRUE
-	goto_if_eq NPC_DraynorManor_Oddenstein_31
+	goto_if_eq NPC_DraynorManor_Oddenstein_34
 	goto NPC_DraynorManor_Oddenstein_20
 
-NPC_DraynorManor_Oddenstein_25:
+NPC_DraynorManor_Oddenstein_26:
+	setobjectxy OBJ_EVENT_ID_FOLLOWER, 7, 3
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACEDOWN
+	waitmovement 0
+	goto NPC_DraynorManor_Oddenstein_25
+
+NPC_DraynorManor_Oddenstein_28:
 	msgbox NPC_DraynorManor_Oddenstein_Text_24
 	goto NPC_DraynorManor_Oddenstein_20
 
-NPC_DraynorManor_Oddenstein_29:
+NPC_DraynorManor_Oddenstein_32:
 	msgbox NPC_DraynorManor_Oddenstein_Text_26
 	hidenamebox
 	closemessage
 	release
 	end
 
-NPC_DraynorManor_Oddenstein_31:
+NPC_DraynorManor_Oddenstein_34:
 	msgbox NPC_DraynorManor_Oddenstein_Text_27
 	goto NPC_DraynorManor_Oddenstein_20
 

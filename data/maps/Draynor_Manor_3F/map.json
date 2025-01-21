@@ -109,7 +109,7 @@
   "warp_events": [
     {
       "x": 1,
-      "y": 9,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_DRAYNOR_MANOR_2F",
       "dest_warp_id": "1"

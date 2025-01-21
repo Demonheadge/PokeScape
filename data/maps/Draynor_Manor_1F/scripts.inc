@@ -28,15 +28,24 @@ STORYMODE_STATE_DRAYNORMANOR_1F::
 	setmetatile 13, 2, METATILE_PokeScapeIndoors_CUPBOARD_ITEMS, 1
 	special DrawWholeMapView
 STORYMODE_STATE_DRAYNORMANOR_1F_1:
+	setflag FLAG_TEMP_1E
+	removeobject 18
+	switch VAR_POKESCAPE_STORYMODE_PROGRESS
+	case 20, STORYMODE_STATE_DRAYNORMANOR_1F_7
+	case 25, STORYMODE_STATE_DRAYNORMANOR_1F_7
+	case 26, STORYMODE_STATE_DRAYNORMANOR_1F_8
+	case 27, STORYMODE_STATE_DRAYNORMANOR_1F_9
+	case 28, STORYMODE_STATE_DRAYNORMANOR_1F_10
+STORYMODE_STATE_DRAYNORMANOR_1F_5:
 	checkfollower
 	compare VAR_RESULT, 0
-	goto_if_ne STORYMODE_STATE_DRAYNORMANOR_1F_6
+	goto_if_ne STORYMODE_STATE_DRAYNORMANOR_1F_12
 	removeobject 17
 	setflag FLAG_TEMP_1F
-STORYMODE_STATE_DRAYNORMANOR_1F_5:
+STORYMODE_STATE_DRAYNORMANOR_1F_11:
 	switch VAR_POKESCAPE_WIZARDS_TOWER_STATE
-	case 8, STORYMODE_STATE_DRAYNORMANOR_1F_11
-STORYMODE_STATE_DRAYNORMANOR_1F_9:
+	case 8, STORYMODE_STATE_DRAYNORMANOR_1F_17
+STORYMODE_STATE_DRAYNORMANOR_1F_15:
 	return
 
 STORYMODE_STATE_DRAYNORMANOR_1F_2:
@@ -46,22 +55,255 @@ STORYMODE_STATE_DRAYNORMANOR_1F_2:
 	special DrawWholeMapView
 	goto STORYMODE_STATE_DRAYNORMANOR_1F_1
 
-STORYMODE_STATE_DRAYNORMANOR_1F_6:
-	setvar VAR_TEMP_A, 1
+STORYMODE_STATE_DRAYNORMANOR_1F_7:
+	clearflag FLAG_TEMP_1E
+	addobject 18
+	setobjectxyperm 18, 18, 20
 	goto STORYMODE_STATE_DRAYNORMANOR_1F_5
 
-STORYMODE_STATE_DRAYNORMANOR_1F_11:
-	checkfollower
-	compare VAR_RESULT, 0
-	goto_if_eq STORYMODE_STATE_DRAYNORMANOR_1F_12
-	goto STORYMODE_STATE_DRAYNORMANOR_1F_9
+STORYMODE_STATE_DRAYNORMANOR_1F_8:
+	setflag FLAG_TEMP_1E
+	removeobject 18
+	goto STORYMODE_STATE_DRAYNORMANOR_1F_5
+
+STORYMODE_STATE_DRAYNORMANOR_1F_9:
+	setflag FLAG_TEMP_1E
+	removeobject 18
+	goto STORYMODE_STATE_DRAYNORMANOR_1F_5
+
+STORYMODE_STATE_DRAYNORMANOR_1F_10:
+	clearflag FLAG_TEMP_1E
+	addobject 18
+	setobjectxyperm 18, 35, 18
+	goto STORYMODE_STATE_DRAYNORMANOR_1F_5
 
 STORYMODE_STATE_DRAYNORMANOR_1F_12:
+	setvar VAR_TEMP_A, 1
+	goto STORYMODE_STATE_DRAYNORMANOR_1F_11
+
+STORYMODE_STATE_DRAYNORMANOR_1F_17:
+	checkfollower
+	compare VAR_RESULT, 0
+	goto_if_eq STORYMODE_STATE_DRAYNORMANOR_1F_18
+	goto STORYMODE_STATE_DRAYNORMANOR_1F_15
+
+STORYMODE_STATE_DRAYNORMANOR_1F_18:
 	addobject 17
 	clearflag FLAG_TEMP_1F
 	setvar VAR_TEMP_B, 1
-	goto STORYMODE_STATE_DRAYNORMANOR_1F_9
+	goto STORYMODE_STATE_DRAYNORMANOR_1F_15
 
+
+DraynorManor_HAM_GRUNT::
+	switch VAR_POKESCAPE_STORYMODE_PROGRESS
+	case 25, DraynorManor_HAM_GRUNT_2
+	case 26, DraynorManor_HAM_GRUNT_3
+	case 27, DraynorManor_HAM_GRUNT_4
+	case 28, DraynorManor_HAM_GRUNT_5
+	return
+
+DraynorManor_HAM_GRUNT_2:
+	delay 15
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_DraynorManor_Chase_1
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_2
+	waitmovement 0
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	msgbox DraynorManor_HAM_GRUNT_Text_1
+	hidenamebox
+	closemessage
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, Movement_DraynorManor_Camera_1
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACEDOWN
+	applymovement 18, Movement_DraynorManor_Chase_4
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_3
+	waitmovement OBJ_EVENT_ID_CAMERA
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	msgbox DraynorManor_HAM_GRUNT_Text_2
+	hidenamebox
+	closemessage
+	playse SE_BIKE_HOP
+	waitse
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_5
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	msgbox DraynorManor_HAM_GRUNT_Text_3
+	hidenamebox
+	closemessage
+	waitmovement 0
+	applymovement 18, Movement_DraynorManor_Chase_6
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_7
+	waitmovement 0
+	delay 60
+	playse SE_PIN
+	applymovement 18, Movement_DraynorManor_Chase_8
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_8
+	waitmovement 0
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	msgbox DraynorManor_HAM_GRUNT_Text_4
+	hidenamebox
+	closemessage
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_10
+	applymovement 18, Movement_DraynorManor_Chase_9
+	applymovement OBJ_EVENT_ID_CAMERA, Movement_DraynorManor_Camera_2
+	waitmovement 0
+	setobjectxy 18, 22, 11
+	setobjectxyperm 18, 22, 11
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_11
+	waitmovement 0
+	applymovement 18, Movement_DraynorManor_Chase_12
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	msgbox DraynorManor_HAM_GRUNT_Text_5
+	hidenamebox
+	closemessage
+	waitmovement 0
+	special RemoveCameraObject
+	setflag FLAG_TEMP_1E
+	removeobject 18
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 26
+	return
+
+DraynorManor_HAM_GRUNT_3:
+	namebox DraynorManor_HAM_GRUNT_Text_6
+	msgbox DraynorManor_HAM_GRUNT_Text_7
+	hidenamebox
+	closemessage
+	playse SE_PIN
+	applymovement 11, MOVEMENT_EXCLAMATIONMARK_FACEPLAYER
+	waitmovement 0
+	delay 30
+	applymovement 11, Movement_DraynorManor_Chase_13
+	waitmovement 0
+	facefollower
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	msgbox DraynorManor_HAM_GRUNT_Text_8
+	hidenamebox
+	closemessage
+	setobjectxyperm 11, 14, 19
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 27
+	return
+
+DraynorManor_HAM_GRUNT_4:
+	setflag FLAG_TEMP_1E
+	removeobject 11
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 28
+	return
+
+DraynorManor_HAM_GRUNT_5:
+	setflag FLAG_TEMP_1E
+	removeobject 18
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 29
+	return
+
+
+Movement_DraynorManor_Chase_1:
+	face_right
+	lock_facing_direction
+	walk_left
+	unlock_facing_direction
+	step_end
+
+Movement_DraynorManor_Chase_2:
+	emote_exclamation_mark
+	walk_down
+	step_end
+
+Movement_DraynorManor_Chase_3:
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Movement_DraynorManor_Chase_4:
+	face_right
+	step_end
+
+Movement_DraynorManor_Chase_5:
+	emote_question_mark
+	step_end
+
+Movement_DraynorManor_Chase_6:
+	face_left
+	step_end
+
+Movement_DraynorManor_Chase_7:
+	face_right
+	step_end
+
+Movement_DraynorManor_Chase_8:
+	lock_facing_direction
+	emote_exclamation_mark
+	jump_in_place_down
+	unlock_facing_direction
+	step_end
+
+Movement_DraynorManor_Chase_9:
+	walk_fast_left
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+Movement_DraynorManor_Chase_10:
+	walk_fast_left
+	walk_fast_left
+	walk_fast_up
+	walk_fast_left
+	face_right
+	step_end
+
+Movement_DraynorManor_Chase_11:
+	walk_fast_right
+	walk_fast_right
+	walk_up
+	face_player
+	step_end
+
+Movement_DraynorManor_Chase_12:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+Movement_DraynorManor_Camera_1:
+	walk_slow_down
+	walk_slow_down
+	walk_slow_down
+	step_end
+
+Movement_DraynorManor_Camera_2:
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	step_end
+
+Movement_DraynorManor_Chase_13:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	step_end
 
 DraynorManor_Lever_STATE::
 	switch VAR_POKESCAPE_DRAYNORMANOR_LEVER_STATE
@@ -132,22 +374,22 @@ HAM_EVENT_DRAYNORMANOR_1F_5:
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_DOWN
 	waitmovement 0
-	namebox HAM_EVENT_DRAYNORMANOR_1F_Text_0
-	msgbox HAM_EVENT_DRAYNORMANOR_1F_Text_1
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	msgbox HAM_EVENT_DRAYNORMANOR_1F_Text_0
 	closemessage
 	hidenamebox
 	applymovement 17, Movement_DraynorManor_Entry_4
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_LEFT
 	waitmovement 0
-	namebox HAM_EVENT_DRAYNORMANOR_1F_Text_0
-	msgbox HAM_EVENT_DRAYNORMANOR_1F_Text_2
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	msgbox HAM_EVENT_DRAYNORMANOR_1F_Text_1
 	hidenamebox
 	closemessage
 	applymovement 6, Movement_DraynorManor_Entry_Rat
 	playmoncry SPECIES_RAT_NORMAL_FORM, 1
-	namebox HAM_EVENT_DRAYNORMANOR_1F_Text_3
-	msgbox HAM_EVENT_DRAYNORMANOR_1F_Text_4
+	namebox HAM_EVENT_DRAYNORMANOR_1F_Text_2
+	msgbox HAM_EVENT_DRAYNORMANOR_1F_Text_3
 	waitmovement 0
 	removeobject 6
 	setflag FLAG_TEMP_19
@@ -155,19 +397,19 @@ HAM_EVENT_DRAYNORMANOR_1F_5:
 	playse SE_LEDGE
 	applymovement 17, MOVEMENT_EXCLAMATIONMARK_JUMP_UP
 	waitmovement 0
-	namebox HAM_EVENT_DRAYNORMANOR_1F_Text_0
-	msgbox HAM_EVENT_DRAYNORMANOR_1F_Text_5
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	msgbox HAM_EVENT_DRAYNORMANOR_1F_Text_4
 	applymovement 17, Movement_DraynorManor_Entry_5
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_DOWN
 	waitmovement 0
-	msgbox HAM_EVENT_DRAYNORMANOR_1F_Text_6
+	msgbox HAM_EVENT_DRAYNORMANOR_1F_Text_5
 	closemessage
 	hidenamebox
 	setvar VAR_POKESCAPE_WIZARDS_TOWER_STATE, 8
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 25
 	playfanfare MUS_OBTAIN_SYMBOL
-	msgbox HAM_EVENT_DRAYNORMANOR_1F_Text_7
+	msgbox HAM_EVENT_DRAYNORMANOR_1F_Text_6
 	waitfanfare
 	closemessage
 	hidenamebox
@@ -195,11 +437,11 @@ HAM_EVENT_DRAYNORMANOR_1F_4:
 HAM_EVENT_DRAYNORMANOR_1F_10:
 	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_RIGHT
 	waitmovement 0
-	namebox HAM_EVENT_DRAYNORMANOR_1F_Text_0
-	msgbox HAM_EVENT_DRAYNORMANOR_1F_Text_8
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	msgbox HAM_EVENT_DRAYNORMANOR_1F_Text_7
 	hidenamebox
 	playfanfare MUS_OBTAIN_SYMBOL
-	msgbox HAM_EVENT_DRAYNORMANOR_1F_Text_7
+	msgbox HAM_EVENT_DRAYNORMANOR_1F_Text_6
 	waitfanfare
 	closemessage
 	hidenamebox
@@ -301,69 +543,96 @@ Movement_DraynorManor_Entry_Rat:
 	step_end
 
 FOLLOWING_Ariane::
-	namebox HAM_EVENT_DRAYNORMANOR_1F_Text_0
+	namebox DraynorManor_HAM_GRUNT_Text_0
 	facefollower
+	specialvar VAR_RESULT, GetCurrentMap
+	compare VAR_RESULT, MAP_DRAYNOR_MANOR_B1F
+	goto_if_eq FOLLOWING_Ariane_2
 	random 9
 	switch VAR_RESULT
-	case 0, FOLLOWING_Ariane_3
-	case 1, FOLLOWING_Ariane_4
-	case 2, FOLLOWING_Ariane_5
-	case 3, FOLLOWING_Ariane_6
-	case 4, FOLLOWING_Ariane_7
-	case 5, FOLLOWING_Ariane_8
-	case 6, FOLLOWING_Ariane_9
-	case 7, FOLLOWING_Ariane_10
-	case 8, FOLLOWING_Ariane_11
-FOLLOWING_Ariane_1:
+	case 0, FOLLOWING_Ariane_6
+	case 1, FOLLOWING_Ariane_7
+	case 2, FOLLOWING_Ariane_8
+	case 3, FOLLOWING_Ariane_9
+	case 4, FOLLOWING_Ariane_10
+	case 5, FOLLOWING_Ariane_11
+	case 6, FOLLOWING_Ariane_12
+	case 7, FOLLOWING_Ariane_13
+	case 8, FOLLOWING_Ariane_14
+FOLLOWING_Ariane_4:
 	hidenamebox
 	closemessage
 	release
 	end
 
-FOLLOWING_Ariane_3:
-	msgbox FOLLOWING_Ariane_Text_0
-	goto FOLLOWING_Ariane_1
-
-FOLLOWING_Ariane_4:
-	msgbox FOLLOWING_Ariane_Text_1
-	goto FOLLOWING_Ariane_1
-
-FOLLOWING_Ariane_5:
-	msgbox FOLLOWING_Ariane_Text_2
-	goto FOLLOWING_Ariane_1
+FOLLOWING_Ariane_2:
+	random 3
+	switch VAR_RESULT
+	case 0, FOLLOWING_Ariane_17
+	case 1, FOLLOWING_Ariane_18
+	case 2, FOLLOWING_Ariane_19
+FOLLOWING_Ariane_15:
+	hidenamebox
+	closemessage
+	release
+	end
 
 FOLLOWING_Ariane_6:
 	msgbox FOLLOWING_Ariane_Text_3
+	goto FOLLOWING_Ariane_4
+
+FOLLOWING_Ariane_7:
+	msgbox FOLLOWING_Ariane_Text_4
+	goto FOLLOWING_Ariane_4
+
+FOLLOWING_Ariane_8:
+	msgbox FOLLOWING_Ariane_Text_5
+	goto FOLLOWING_Ariane_4
+
+FOLLOWING_Ariane_9:
+	msgbox FOLLOWING_Ariane_Text_6
 	playse SE_LEDGE
 	applymovement 17, MOVEMENT_EXCLAMATIONMARK_JUMP_UP
 	waitmovement 0
-	msgbox FOLLOWING_Ariane_Text_4
-	goto FOLLOWING_Ariane_1
-
-FOLLOWING_Ariane_7:
-	msgbox FOLLOWING_Ariane_Text_5
-	goto FOLLOWING_Ariane_1
-
-FOLLOWING_Ariane_8:
-	msgbox FOLLOWING_Ariane_Text_6
-	goto FOLLOWING_Ariane_1
-
-FOLLOWING_Ariane_9:
 	msgbox FOLLOWING_Ariane_Text_7
-	goto FOLLOWING_Ariane_1
+	goto FOLLOWING_Ariane_4
 
 FOLLOWING_Ariane_10:
 	msgbox FOLLOWING_Ariane_Text_8
-	goto FOLLOWING_Ariane_1
+	goto FOLLOWING_Ariane_4
 
 FOLLOWING_Ariane_11:
 	msgbox FOLLOWING_Ariane_Text_9
-	goto FOLLOWING_Ariane_1
+	goto FOLLOWING_Ariane_4
+
+FOLLOWING_Ariane_12:
+	msgbox FOLLOWING_Ariane_Text_10
+	goto FOLLOWING_Ariane_4
+
+FOLLOWING_Ariane_13:
+	msgbox FOLLOWING_Ariane_Text_11
+	goto FOLLOWING_Ariane_4
+
+FOLLOWING_Ariane_14:
+	msgbox FOLLOWING_Ariane_Text_12
+	goto FOLLOWING_Ariane_4
+
+FOLLOWING_Ariane_17:
+	msgbox FOLLOWING_Ariane_Text_0
+	goto FOLLOWING_Ariane_15
+
+FOLLOWING_Ariane_18:
+	msgbox FOLLOWING_Ariane_Text_1
+	goto FOLLOWING_Ariane_15
+
+FOLLOWING_Ariane_19:
+	msgbox FOLLOWING_Ariane_Text_2
+	goto FOLLOWING_Ariane_15
 
 
 TRIGGER_ARIANE_DRAYNORMANOR_1F_1::
 	facefollower
-	namebox HAM_EVENT_DRAYNORMANOR_1F_Text_0
+	namebox DraynorManor_HAM_GRUNT_Text_0
 	msgbox TRIGGER_ARIANE_DRAYNORMANOR_1F_1_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne TRIGGER_ARIANE_DRAYNORMANOR_1F_1_1
@@ -410,7 +679,7 @@ TRIGGER_ARIANE_DRAYNORMANOR_1F_2_2:
 	playse SE_LEDGE
 	applymovement OBJ_EVENT_ID_FOLLOWER, MOVEMENT_EXCLAMATIONMARK_JUMP_LEFT
 	waitmovement 0
-	namebox HAM_EVENT_DRAYNORMANOR_1F_Text_0
+	namebox DraynorManor_HAM_GRUNT_Text_0
 	msgbox TRIGGER_ARIANE_DRAYNORMANOR_1F_2_Text_0
 	closemessage
 	hidenamebox
@@ -432,7 +701,7 @@ TRIGGER_ARIANE_DRAYNORMANOR_1F_3_2:
 	waitmovement 0
 	delay 32
 	facefollower
-	namebox HAM_EVENT_DRAYNORMANOR_1F_Text_0
+	namebox DraynorManor_HAM_GRUNT_Text_0
 	msgbox TRIGGER_ARIANE_DRAYNORMANOR_1F_3_Text_0
 	closemessage
 	hidenamebox
@@ -450,7 +719,7 @@ TRIGGER_ARIANE_DRAYNORMANOR_1F_4_1:
 
 TRIGGER_ARIANE_DRAYNORMANOR_1F_4_2:
 	facefollower
-	namebox HAM_EVENT_DRAYNORMANOR_1F_Text_0
+	namebox DraynorManor_HAM_GRUNT_Text_0
 	msgbox TRIGGER_ARIANE_DRAYNORMANOR_1F_4_Text_0
 	closemessage
 	hidenamebox
@@ -470,8 +739,8 @@ TRIGGER_ARIANE_DRAYNORMANOR_1F_5_1:
 
 TRIGGER_ARIANE_DRAYNORMANOR_1F_5_2:
 	facefollower
-	namebox HAM_EVENT_DRAYNORMANOR_1F_Text_0
-	msgbox TRIGGER_ARIANE_DRAYNORMANOR_1F_5_Text_0
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	msgbox FOLLOWING_Ariane_Text_0
 	closemessage
 	hidenamebox
 	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_RIGHT
@@ -490,8 +759,13 @@ TRIGGER_ARIANE_DRAYNORMANOR_1F_6_1:
 
 TRIGGER_ARIANE_DRAYNORMANOR_1F_6_2:
 	facefollower
-	namebox HAM_EVENT_DRAYNORMANOR_1F_Text_0
-	msgbox TRIGGER_ARIANE_DRAYNORMANOR_1F_6_Text_0
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	switch VAR_POKESCAPE_STORYMODE_PROGRESS
+	case 25, TRIGGER_ARIANE_DRAYNORMANOR_1F_6_6
+	case 26, TRIGGER_ARIANE_DRAYNORMANOR_1F_6_6
+	case 27, TRIGGER_ARIANE_DRAYNORMANOR_1F_6_6
+	case 28, TRIGGER_ARIANE_DRAYNORMANOR_1F_6_6
+	msgbox TRIGGER_ARIANE_DRAYNORMANOR_1F_6_Text_1
 	closemessage
 	hidenamebox
 	applymovement OBJ_EVENT_ID_FOLLOWER, MOVEMENT_WALK_RIGHT
@@ -503,6 +777,31 @@ TRIGGER_ARIANE_DRAYNORMANOR_1F_6_2:
 	warp MAP_DRAYNOR_MANOR_CRYPT, 0, 0, 0
 	call FOLLOWER_REMOVE
 	goto TRIGGER_ARIANE_DRAYNORMANOR_1F_6_1
+
+TRIGGER_ARIANE_DRAYNORMANOR_1F_6_6:
+	msgbox TRIGGER_ARIANE_DRAYNORMANOR_1F_6_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+TRIGGER_ARIANE_DRAYNORMANOR_B1F_1::
+	checkfollower
+	compare VAR_RESULT, 0
+	goto_if_ne TRIGGER_ARIANE_DRAYNORMANOR_B1F_1_2
+TRIGGER_ARIANE_DRAYNORMANOR_B1F_1_1:
+	setvar VAR_TEMP_9, 1
+	end
+
+TRIGGER_ARIANE_DRAYNORMANOR_B1F_1_2:
+	facefollower
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	msgbox TRIGGER_ARIANE_DRAYNORMANOR_B1F_1_Text_0
+	closemessage
+	hidenamebox
+	release
+	goto TRIGGER_ARIANE_DRAYNORMANOR_B1F_1_1
 
 
 NPC_DraynorManor_Ava::
@@ -841,74 +1140,113 @@ SIGN_DRAYNORMANOR_LEVER_1_3:
 	end
 
 
-HAM_EVENT_DRAYNORMANOR_1F_Text_0:
+DraynorManor_HAM_GRUNT_Text_0:
 	.string "Ariane$"
 
-HAM_EVENT_DRAYNORMANOR_1F_Text_1:
+DraynorManor_HAM_GRUNT_Text_1:
+	.string "Oooh!\p"
+	.string "Is that an item!?$"
+
+DraynorManor_HAM_GRUNT_Text_2:
+	.string "I wonder what it is…$"
+
+DraynorManor_HAM_GRUNT_Text_3:
+	.string "…Huh?$"
+
+DraynorManor_HAM_GRUNT_Text_4:
+	.string "EEEEEEEEEEK!!$"
+
+DraynorManor_HAM_GRUNT_Text_5:
+	.string "EEEK!\n"
+	.string "That was him!\p"
+	.string "Quick lets give chase!$"
+
+DraynorManor_HAM_GRUNT_Text_6:
+	.string "???$"
+
+DraynorManor_HAM_GRUNT_Text_7:
+	.string "…{PAUSE 15}…HUFF…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}…PUFF…{PAUSE 15}…{PAUSE 15}$"
+
+DraynorManor_HAM_GRUNT_Text_8:
+	.string "I think we are wearing him out, lets get\n"
+	.string "him!$"
+
+HAM_EVENT_DRAYNORMANOR_1F_Text_0:
 	.string "…{PAUSE 32}…{PAUSE 32}…\n"
 	.string "He… Hey you…\p"
 	.string "Can… can we go together?$"
 
-HAM_EVENT_DRAYNORMANOR_1F_Text_2:
+HAM_EVENT_DRAYNORMANOR_1F_Text_1:
 	.string "Pssh!\p"
 	.string "I'm not scared, what do you take me for?$"
 
-HAM_EVENT_DRAYNORMANOR_1F_Text_3:
+HAM_EVENT_DRAYNORMANOR_1F_Text_2:
 	.string "Rat$"
 
-HAM_EVENT_DRAYNORMANOR_1F_Text_4:
+HAM_EVENT_DRAYNORMANOR_1F_Text_3:
 	.string "Squeeek!$"
 
-HAM_EVENT_DRAYNORMANOR_1F_Text_5:
+HAM_EVENT_DRAYNORMANOR_1F_Text_4:
 	.string "Eeek!$"
 
-HAM_EVENT_DRAYNORMANOR_1F_Text_6:
+HAM_EVENT_DRAYNORMANOR_1F_Text_5:
 	.string "Okay, maybe I am a little scared…\p"
 	.string "You lead the way.$"
 
-HAM_EVENT_DRAYNORMANOR_1F_Text_7:
+HAM_EVENT_DRAYNORMANOR_1F_Text_6:
 	.string "ARIANE JOINS THE PARTY!$"
 
-HAM_EVENT_DRAYNORMANOR_1F_Text_8:
+HAM_EVENT_DRAYNORMANOR_1F_Text_7:
 	.string "…{PAUSE 32}…{PAUSE 32}…\n"
 	.string "He… Hey you came back…\p"
 	.string "Can… can we please go together?\p"
 	.string "I'm scared.$"
 
 FOLLOWING_Ariane_Text_0:
-	.string "This place is 2spooky4me!$"
+	.string "As mysterious as this is, we are looking\n"
+	.string "for the pink man.\p"
+	.string "Not some lever side quest.$"
 
 FOLLOWING_Ariane_Text_1:
-	.string "Where do you think the pink guy went?$"
+	.string "We should probably go back upstairs…$"
 
 FOLLOWING_Ariane_Text_2:
+	.string "Eww… it stinks of old oil cans down here.$"
+
+FOLLOWING_Ariane_Text_3:
+	.string "This place is 2spooky4me!$"
+
+FOLLOWING_Ariane_Text_4:
+	.string "Where do you think the pink guy went?$"
+
+FOLLOWING_Ariane_Text_5:
 	.string "Hey my name is Ariane, what is yours?\p"
 	.string "…{PAUSE 32}{PLAYER}?\n"
 	.string "That's a cute name.$"
 
-FOLLOWING_Ariane_Text_3:
+FOLLOWING_Ariane_Text_6:
 	.string "You know what?\p"
 	.string "With you here this place isn't as scary.$"
 
-FOLLOWING_Ariane_Text_4:
+FOLLOWING_Ariane_Text_7:
 	.string "EEK!\n"
 	.string "What was that!?$"
 
-FOLLOWING_Ariane_Text_5:
+FOLLOWING_Ariane_Text_8:
 	.string "What's with all of these weird-looking\n"
 	.string "chickens around the place?$"
 
-FOLLOWING_Ariane_Text_6:
+FOLLOWING_Ariane_Text_9:
 	.string "We haven't checked the basement yet,\n"
 	.string "we should look there.$"
 
-FOLLOWING_Ariane_Text_7:
+FOLLOWING_Ariane_Text_10:
 	.string "Did…{PAUSE 32} that armour just move?!$"
 
-FOLLOWING_Ariane_Text_8:
+FOLLOWING_Ariane_Text_11:
 	.string "How can anyone even live here…$"
 
-FOLLOWING_Ariane_Text_9:
+FOLLOWING_Ariane_Text_12:
 	.string "Eeek!\p"
 	.string "I think I just saw a ghost!$"
 
@@ -933,15 +1271,22 @@ TRIGGER_ARIANE_DRAYNORMANOR_1F_4_Text_0:
 	.string "I doubt he would be outside.\p"
 	.string "Lets go look elsewhere.$"
 
-TRIGGER_ARIANE_DRAYNORMANOR_1F_5_Text_0:
-	.string "As mysterious as this is, we are looking\n"
-	.string "for the pink man.\p"
-	.string "Not some lever side quest.$"
-
 TRIGGER_ARIANE_DRAYNORMANOR_1F_6_Text_0:
-	.string "Uh…{PAUSE 32} Actually on second thoughts I'll\n"
-	.string "stay up here.\p"
-	.string "You check down there without me.$"
+	.string "Eek! I'm getting some sinister vibes\n"
+	.string "from down there, maybe we could look\l"
+	.string "around the rest of the manor before we\l"
+	.string "look down there.$"
+
+TRIGGER_ARIANE_DRAYNORMANOR_1F_6_Text_1:
+	.string "Uh…{PAUSE 32} I know he ran down there, but that\n"
+	.string "basement is giving of some serious\l"
+	.string "sinister vibes.\p"
+	.string "I think I'll stay up here while you go\n"
+	.string "ahead.$"
+
+TRIGGER_ARIANE_DRAYNORMANOR_B1F_1_Text_0:
+	.string "I feel like the pink man isn't down here.\p"
+	.string "We should probably turn back.$"
 
 NPC_DraynorManor_Ava_Text_0:
 	.string "Ava$"

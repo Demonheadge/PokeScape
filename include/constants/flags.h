@@ -1293,8 +1293,8 @@
 #define FLAG_ITEM_CRANDOR_SEA_ROUTE_2                               0x4C7 // Unused Flag
 #define FLAG_ITEM_WIZARDSTOWER_RUNE_3                               0x4C8 // Unused Flag
 #define FLAG_ITEM_LUMBRIDGE_FIRE_RUNE                               0x4C9 // Unused Flag
+#define FLAG_ITEM_DRAYNORMANOR_TEA_2                                0x4CA // Unused Flag
 
-#define FLAG_UNUSED_0x4CA                                           0x4CA // Unused Flag
 #define FLAG_UNUSED_0x4CB                                           0x4CB // Unused Flag
 #define FLAG_UNUSED_0x4CC                                           0x4CC // Unused Flag
 #define FLAG_UNUSED_0x4CD                                           0x4CD // Unused Flag

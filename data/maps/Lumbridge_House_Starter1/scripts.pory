@@ -356,6 +356,11 @@ script ITEM_DRAYNORMANOR_TM55_HEX
     finditem(ITEM_TM55_HEX)
     end
 }
+script ITEM_DRAYNORMANOR_TEA_2
+{
+    finditem(ITEM_REPEL_TEA_1)
+    end
+}
 
 
 //WIZARDS TOWER
