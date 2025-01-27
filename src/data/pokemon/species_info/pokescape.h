@@ -4472,6 +4472,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Sailfish),
 		.frontPicYOffset = 2,
 		.enemyMonElevation = 1,
+		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sSailfishFormSpeciesIdTable,
 		.formChangeTable = sSailfishFormChangeTable,
 	},
@@ -7701,6 +7702,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Hellhound),
 		.frontPicYOffset = 1,
 		.enemyMonElevation = 0,
+		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sHellhoundFormSpeciesIdTable,
 		.formChangeTable = sHellhoundFormChangeTable,
 	},
@@ -8399,6 +8401,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_TORTLE, SPECIES_MAX_GOLEM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_SAILFISH, SPECIES_MAX_GOLEM}
 		),
+		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sStoneOfJasFormSpeciesIdTable,
 		.formChangeTable = sStoneOfJasFormChangeTable,
 	},
@@ -8804,6 +8807,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Strykewyrm_Freezy_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.formSpeciesIdTable = sStrykewyrmFormSpeciesIdTable,
+		.formChangeTable = sStrykewyrmFormChangeTable,
 	},
 
 [SPECIES_STRYKEWYRM_LEAFY_FORM] =
@@ -8854,6 +8859,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Strykewyrm_Leafy_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.formSpeciesIdTable = sStrykewyrmFormSpeciesIdTable,
+		.formChangeTable = sStrykewyrmFormChangeTable,
 	},
 
 [SPECIES_STRYKEWYRM_SANDY_FORM] =
@@ -8903,6 +8910,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Strykewyrm_Sandy_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.formSpeciesIdTable = sStrykewyrmFormSpeciesIdTable,
+		.formChangeTable = sStrykewyrmFormChangeTable,
 	},
 
 [SPECIES_STRYKEWYRM_WILDY_FORM] =
@@ -8952,6 +8961,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Strykewyrm_Wildy_Form),
 		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
+		.formSpeciesIdTable = sStrykewyrmFormSpeciesIdTable,
+		.formChangeTable = sStrykewyrmFormChangeTable,
 	},
 
 [SPECIES_SCORPLING] =
@@ -11592,7 +11603,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.itemCommon = ITEM_NONE,
 		.itemRare = ITEM_NONE,
 		.eggGroups = { EGG_GROUP_AMORPHOUS, EGG_GROUP_AMORPHOUS },
-		.abilities = { ABILITY_MARVEL_SCALE, ABILITY_NONE, ABILITY_ILLUMINATE },
+		.abilities = { ABILITY_MARVEL_SCALE, ABILITY_MARVEL_SCALE, ABILITY_ILLUMINATE },
 		.bodyColor = BODY_COLOR_BLACK,
 		.speciesName = _("Sparkles"),
 		.cryId = CRY_SPARKLES,
@@ -12538,6 +12549,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Creature_Cute_Form),
 		.frontPicYOffset = 11,
 		.enemyMonElevation = 0,
+		.formSpeciesIdTable = sCuteCreatureFormSpeciesIdTable,
+		.formChangeTable = sCuteCreatureFormChangeTable,
 	},
 
 [SPECIES_CREATURE_EVIL_FORM] =
@@ -14116,6 +14129,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Abyssal_Lurker_Form),
 		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL, 42, SPECIES_ABYSSAL_PARASITE_FORM}
+		),
 	},
 
 [SPECIES_ABYSSAL_WALKER_FORM] =
@@ -14723,6 +14739,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(TzTok_Jad),
 		.frontPicYOffset = 3,
 		.enemyMonElevation = 0,
+		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sTzTokJadFormSpeciesIdTable,
 		.formChangeTable = sTzTokJadFormChangeTable,
 	},
@@ -15697,6 +15714,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Dagannoth_King_Range_Form),
 		.frontPicYOffset = 4,
 		.enemyMonElevation = 0,
+		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sDagannothKingFormSpeciesIdTable,
 		.formChangeTable = sDagannothKingFormChangeTable,
 	},
@@ -15748,6 +15766,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Dagannoth_King_Magic_Form),
 		.frontPicYOffset = 3,
 		.enemyMonElevation = 0,
+		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sDagannothKingFormSpeciesIdTable,
 		.formChangeTable = sDagannothKingFormChangeTable,
 	},
@@ -15800,6 +15819,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Dagannoth_King_Melee_Form),
 		.frontPicYOffset = 4,
 		.enemyMonElevation = 0,
+		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sDagannothKingFormSpeciesIdTable,
 		.formChangeTable = sDagannothKingFormChangeTable,
 	},
@@ -15853,9 +15873,6 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Dagannoth_King_Range_Mega_Form),
 		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
-		.isMegaEvolution = TRUE,
-		.formSpeciesIdTable = sDagannothKingFormSpeciesIdTable,
-		.formChangeTable = sDagannothKingFormChangeTable,
 	},
 
 [SPECIES_DAGANNOTH_KING_MAGIC_MEGA_FORM] =
@@ -15905,9 +15922,6 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Dagannoth_King_Magic_Mega_Form),
 		.frontPicYOffset = 3,
 		.enemyMonElevation = 0,
-		.isMegaEvolution = TRUE,
-		.formSpeciesIdTable = sDagannothKingFormSpeciesIdTable,
-		.formChangeTable = sDagannothKingFormChangeTable,
 	},
 
 [SPECIES_DAGANNOTH_KING_MELEE_MEGA_FORM] =
@@ -15957,9 +15971,6 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Dagannoth_King_Melee_Mega_Form),
 		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
-		.isMegaEvolution = TRUE,
-		.formSpeciesIdTable = sDagannothKingFormSpeciesIdTable,
-		.formChangeTable = sDagannothKingFormChangeTable,
 	},
 
 [SPECIES_CHAOS_ELE] =
@@ -16010,6 +16021,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Chaos_Ele),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 6,
+		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sChaosElementalFormSpeciesIdTable,
 		.formChangeTable = sChaosElementalFormChangeTable,
 	},
@@ -16063,9 +16075,6 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Chaos_Ele_Mega_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 7,
-		.isMegaEvolution = TRUE,
-		.formSpeciesIdTable = sChaosElementalFormSpeciesIdTable,
-		.formChangeTable = sChaosElementalFormChangeTable,
 	},
 
 [SPECIES_BANDLING] =
@@ -22142,6 +22151,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Wolf_Spirit_Form),
 		.frontPicYOffset = 3,
 		.enemyMonElevation = 0,
+		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sWolfSpiritFormSpeciesIdTable,
 		.formChangeTable = sWolfSpiritFormChangeTable,
 	},
@@ -27942,6 +27952,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Wolperting),
 		.frontPicYOffset = 8,
 		.enemyMonElevation = 0,
+		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sWolpertingerFormSpeciesIdTable,
 		.formChangeTable = sWolpertingerFormChangeTable,
 	},
@@ -31008,6 +31019,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Kalphite_Queen_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sKalphiteQueenFormSpeciesIdTable,
 		.formChangeTable = sKalphiteQueenFormChangeTable,
 	},
@@ -31059,9 +31071,6 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Kalphite_Queen_Mega_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 4,
-		.isMegaEvolution = TRUE,
-		.formSpeciesIdTable = sKalphiteQueenFormSpeciesIdTable,
-		.formChangeTable = sKalphiteQueenFormChangeTable,
 	},
 
 [SPECIES_KALPHITE_PARAGON_FORM] =
@@ -33530,6 +33539,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Flesh_Spoiler_Covered_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 4,
+		.formSpeciesIdTable = sFleshSpoilerFormSpeciesIdTable,
+		.formChangeTable = sFleshSpoilerFormChangeTable,
 	},
 
 [SPECIES_SHADOW_FORGER] =
@@ -41439,6 +41450,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Wall_Beast),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 1,
+		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sWallBeastFormSpeciesIdTable,
 		.formChangeTable = sWallBeastFormChangeTable,
 	},
@@ -41488,9 +41500,6 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Wall_Beast_Mega_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
-		.isMegaEvolution = TRUE,
-		.formSpeciesIdTable = sWallBeastFormSpeciesIdTable,
-		.formChangeTable = sWallBeastFormChangeTable,
 	},
 
 [SPECIES_SOURHOG] =
@@ -43187,6 +43196,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Glacor),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 6,
+		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sGlacorFormSpeciesIdTable,
 		.formChangeTable = sGlacorFormChangeTable,
 	},
@@ -43713,6 +43723,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Guthixian_Butterfly),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 1,
+		.isMegaEvolution = TRUE,
 		.formSpeciesIdTable = sGuthixianButterflyFormSpeciesIdTable,
 		.formChangeTable = sGuthixianButterflyFormChangeTable,
 	},
@@ -46748,6 +46759,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Zulrah_Serpentine_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.formSpeciesIdTable = sZulrahFormSpeciesIdTable,
+		.formChangeTable = sZulrahFormChangeTable,
 	},
 
 [SPECIES_ZULRAH_MAGMA_FORM] =
@@ -46798,6 +46811,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Zulrah_Magma_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.formSpeciesIdTable = sZulrahFormSpeciesIdTable,
+		.formChangeTable = sZulrahFormChangeTable,
 	},
 
 [SPECIES_ZULRAH_TANZANITE_FORM] =
@@ -46846,6 +46861,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Zulrah_Tanzanite_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.formSpeciesIdTable = sZulrahFormSpeciesIdTable,
+		.formChangeTable = sZulrahFormChangeTable,
 	},
 
 [SPECIES_PIG_SUMMONING_FORM] =
@@ -46944,9 +46961,6 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(TzTok_Jad_HD_Mega_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
-		.isMegaEvolution = TRUE,
-		.formSpeciesIdTable = sTzTokJadFormSpeciesIdTable,
-		.formChangeTable = sTzTokJadFormChangeTable,
 	},
 
 [SPECIES_TZTOK_JAD_RS3_MEGA_FORM] =
@@ -46996,9 +47010,6 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(TzTok_Jad_RS3_Mega_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
-		.isMegaEvolution = TRUE,
-		.formSpeciesIdTable = sTzTokJadFormSpeciesIdTable,
-		.formChangeTable = sTzTokJadFormChangeTable,
 	},
 
 [SPECIES_ABYSSAL_GUARDIAN] =
@@ -48289,9 +48300,6 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Wolpertinger_Mega_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
-		.isMegaEvolution = TRUE,
-		.formSpeciesIdTable = sWolpertingerFormSpeciesIdTable,
-		.formChangeTable = sWolpertingerFormChangeTable,
 	},
 
 [SPECIES_FLESH_SPOILER_NAKED_FORM] =
@@ -48594,6 +48602,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Tome_of_Strength),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 10,
+		.formSpeciesIdTable = sTomeFormSpeciesIdTable,
+		.formChangeTable = sTomeFormChangeTable,
 	},
 
 [SPECIES_TOME_OF_RANGED] =
@@ -48643,6 +48653,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Tome_of_Ranged),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 10,
+		.formSpeciesIdTable = sTomeFormSpeciesIdTable,
+		.formChangeTable = sTomeFormChangeTable,
 	},
 
 [SPECIES_TOME_OF_MAGIC] =
@@ -48692,6 +48704,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Tome_of_Magic),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 10,
+		.formSpeciesIdTable = sTomeFormSpeciesIdTable,
+		.formChangeTable = sTomeFormChangeTable,
 	},
 
 [SPECIES_LUMINESCENT_ICEFIEND] =
@@ -49608,9 +49622,6 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Stone_of_Jas_Mega_Form),
 		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
-		.isMegaEvolution = TRUE,
-		.formSpeciesIdTable = sStoneOfJasFormSpeciesIdTable,
-		.formChangeTable = sStoneOfJasFormChangeTable,
 	},
 
 [SPECIES_SPIRIT_WARRIOR] =
