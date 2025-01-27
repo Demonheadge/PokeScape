@@ -1498,10 +1498,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.baseAttack = 125,
 		.baseDefense = 85,
 		.baseSpeed = 95,
-		.baseSpAttack = 100,
+		.baseSpAttack = 120,
 		.baseSpDefense = 85,
 		.types = { TYPE_DARK, TYPE_FLYING },
-		.catchRate = 50,
+		.catchRate = 3,
 		.expYield = 152,
 		.evYield_Speed = 1,
 		.evYield_SpAttack = 2,
@@ -1512,7 +1512,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.itemCommon = ITEM_NONE,
 		.itemRare = ITEM_NONE,
 		.eggGroups = { EGG_GROUP_FLYING, EGG_GROUP_LIFE },
-		.abilities = { ABILITY_INTIMIDATE, ABILITY_PRESSURE, ABILITY_COMPETITIVE },
+		.abilities = { ABILITY_INTIMIDATE, ABILITY_INTIMIDATE, ABILITY_COMPETITIVE },
 		.bodyColor = BODY_COLOR_BLACK,
 		.speciesName = _("Chicken"),
 		.cryId = CRY_EVILCHICKEN,
@@ -6315,9 +6315,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_EARTH_RUNE, SPECIES_EEL_CAVE_FORM},
 			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_EEL_LAVA_FORM},
-			{EVO_LEVEL, 26, SPECIES_EEL_MOTTLED_FORM},
-			{EVO_LEVEL_UNDERGROUND, 33, SPECIES_VILE_FISH},
-			{EVO_ITEM, ITEM_WATER_RUNE, SPECIES_EEL_SHORT_FINNED_FORM}
+			{EVO_ITEM, ITEM_WATER_RUNE, SPECIES_EEL_MOTTLED_FORM},
+			{EVO_LEVEL_NIGHT, 26, SPECIES_VILE_FISH},
+			{EVO_LEVEL_DAY, 26, SPECIES_EEL_SHORT_FINNED_FORM}
 		),
 	},
 
@@ -6877,7 +6877,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 21, SPECIES_PIG},
-			{EVO_LEVEL_NIGHT, 32, SPECIES_BROAV}
+			{EVO_LEVEL_NIGHT, 21, SPECIES_BROAV}
 		),
 	},
 
@@ -8387,6 +8387,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 			{EVO_ITEM, ITEM_MIND_RUNE, SPECIES_SLAGILITH},
 			{EVO_ITEM, ITEM_EARTH_RUNE, SPECIES_ROCK_STRANGE_FORM},
 			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_ROCK_GOLDEN_FORM},
+			{EVO_ITEM_HOLD, ITEM_PARTY_HAT, SPECIES_PARTY_ROCK},
 			{EVO_ITEM, ITEM_LAW_RUNE, SPECIES_PARTY_ROCK},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_IMPLING_LUCKY_FORM, SPECIES_MAX_GOLEM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_DEMON_KALGERION_FORM, SPECIES_MAX_GOLEM},
@@ -8397,7 +8398,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_TZREK_JAD, SPECIES_MAX_GOLEM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_TORTLE, SPECIES_MAX_GOLEM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_SAILFISH, SPECIES_MAX_GOLEM}
-			),
+		),
 		.formSpeciesIdTable = sStoneOfJasFormSpeciesIdTable,
 		.formChangeTable = sStoneOfJasFormChangeTable,
 	},
@@ -9914,6 +9915,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_GIANT_MOLE},
+			{EVO_ITEM, ITEM_CHAOS_RUNE, SPECIES_VOID_RAVAGER},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_VOID_LEECH, SPECIES_VOID_RAVAGER}
 		),
 	},
@@ -13718,7 +13720,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.baseSpeed = 20,
 		.baseSpAttack = 65,
 		.baseSpDefense = 70,
-		.types = { TYPE_GRASS, TYPE_GRASS },
+		.types = { TYPE_FAIRY, TYPE_GRASS },
 		.catchRate = 45,
 		.expYield = 67,
 		.evYield_SpDefense = 2,
@@ -13808,6 +13810,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Abyssaling),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_MOVE, MOVE_TELEPORT, SPECIES_ABYSSAL_MINION_FORM}
+		),
 	},
 
 [SPECIES_ABYSSAL_MINION_FORM] =
@@ -13857,6 +13862,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Abyssal_Minion_Form),
 		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL, 36, SPECIES_ABYSSAL_DEMON_FORM},
+			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_SPECIES_ABYSSAL_DEMON_REANIMATED_FORM}
+		),
 	},
 
 [SPECIES_ABYSSAL_DEMON_FORM] =
@@ -14005,6 +14014,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Abyssal_Leech_Form),
 		.frontPicYOffset = 5,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL, 34, SPECIES_ABYSSAL_WALKER_FORM},
+			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_ABYSSAL_DEEPSEA_LEECH, SPECIES_ABYSSAL_DEEPSEA_LEECH},
+			{EVO_ITEM, ITEM_WATER_RUNE, SPECIES_ABYSSAL_DEEPSEA_LEECH}
+		),
 	},
 
 [SPECIES_ABYSSAL_PARASITE_FORM] =
@@ -14150,6 +14164,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Abyssal_Walker_Form),
 		.frontPicYOffset = 1,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL, 48, SPECIES_ABYSSAL_GUARDIAN_FORM}
+		),
 	},
 
 [SPECIES_ABYSSAL_TITAN_FORM] =
@@ -19614,8 +19631,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 24, SPECIES_JELLY_NORMAL_FORM},
 			{EVO_LEVEL_NIGHT, 24, SPECIES_JELLY_ALTERNATE_FORM},
-			{EVO_LEVEL_GHOST_TYPE_MON_IN_PARTY, 24, SPECIES_ABBYSPECTR},
-			{EVO_LEVEL_DARK_TYPE_MON_IN_PARTY, 24, SPECIES_SLIME_LILGLOOP},
+			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_ABBYSPECTR},
+			{EVO_ITEM, ITEM_CHAOS_RUNE, SPECIES_SLIME_LILGLOOP},
 			{EVO_ITEM_HOLD, ITEM_CHOCOLATE_CAKE, SPECIES_KARAMEL},
 			{EVO_ITEM_HOLD, ITEM_CHOCOLATE_BAR_SANDWICH, SPECIES_KARAMEL},
 			{EVO_ITEM_HOLD, ITEM_CHOCOLATE_SUNDAY, SPECIES_KARAMEL},
@@ -21302,8 +21319,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.frontPicYOffset = 11,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
-			{EVO_LEVEL_SPE_LT_SPDEF, 26, SPECIES_JUBBLY},
-			{EVO_LEVEL_SPE_GT_SPDEF, 26, SPECIES_TERRORBIRD_NORMAL_FORM}
+			{EVO_LEVEL, 26, SPECIES_JUBBLY},
+			{EVO_ITEM, ITEM_AIR_RUNE, SPECIES_TERRORBIRD_NORMAL_FORM},
+			{EVO_ITEM, ITEM_BODY_RUNE, SPECIES_TERRORBIRD_NORMAL_FORM}
 		),
 	},
 
@@ -22177,7 +22195,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_MOVE, MOVE_HEX, SPECIES_INARI},
-			{EVO_LEVEL_NIGHT, 30, SPECIES_FOX_RECRUITMENTDRIVE},
+			{EVO_LEVEL, 30, SPECIES_FOX_RECRUITMENTDRIVE},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_ROOSTER_NORMAL_FORM, SPECIES_FOX_RECRUITMENTDRIVE},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_ROOSTER_KARAMJA_FORM, SPECIES_FOX_RECRUITMENTDRIVE},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_ROOSTER_BANDOSIAN_FORM, SPECIES_FOX_RECRUITMENTDRIVE},
@@ -24148,6 +24166,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 			{EVO_ITEM_HOLD, ITEM_BLUE_SCALE, SPECIES_DRAGONLING_BLUE_FORM},
 			{EVO_ITEM_HOLD, ITEM_RED_SCALE, SPECIES_DRAGONLING_RED_FORM},
 			{EVO_ITEM_HOLD, ITEM_BLACK_SCALE, SPECIES_DRAGONLING_BLACK_FORM},
+			{EVO_ITEM, ITEM_NATURE_RUNE, SPECIES_DRAGONLING_GREEN_FORM},
+			{EVO_ITEM, ITEM_BODY_RUNE, SPECIES_DRAGONLING_BLUE_FORM},
+			{EVO_ITEM, ITEM_CHAOS_RUNE, SPECIES_DRAGONLING_RED_FORM},
+			{EVO_ITEM, ITEM_MIND_RUNE, SPECIES_DRAGONLING_BLACK_FORM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_MALEDICTUS, SPECIES_REVENANT_DRAGON}
 		),
 	},
@@ -24253,7 +24275,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 65, SPECIES_DRAGON_BRUTAL_GREEN_FORM},
-			{EVO_ITEM, ITEM_NATURE_RUNE, SPECIES_DRAGON_THREEHEADED_FORM}
+			{EVO_ITEM, ITEM_SOUL_RUNE, SPECIES_DRAGON_THREEHEADED_FORM}
 		),
 	},
 
@@ -24665,8 +24687,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
-			{EVO_LEVEL, 45, SPECIES_DRAGON_BLACK_FORM},
-			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_REVENANT_DRAGON}
+			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_REVENANT_DRAGON},
+			{EVO_LEVEL, 45, SPECIES_DRAGON_BLACK_FORM}
 		),
 	},
 
@@ -24826,12 +24848,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 
 [SPECIES_ELVARG] =
 	{
-		.baseHP = 90,
-		.baseAttack = 110,
-		.baseDefense = 95,
+		.baseHP = 85,
+		.baseAttack = 135,
+		.baseDefense = 85,
 		.baseSpeed = 105,
 		.baseSpAttack = 110,
-		.baseSpDefense = 90,
+		.baseSpDefense = 80,
 		.types = { TYPE_DRAGON, TYPE_FLYING },
 		.catchRate = 35,
 		.expYield = 242,
@@ -24843,7 +24865,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.itemCommon = ITEM_NONE,
 		.itemRare = ITEM_NONE,
 		.eggGroups = { EGG_GROUP_DRAGON, EGG_GROUP_DRAGON },
-		.abilities = { ABILITY_INTIMIDATE, ABILITY_MARVEL_SCALE, ABILITY_SHELL_ARMOR },
+		.abilities = { ABILITY_DRAGONS_MAW, ABILITY_DRAGONS_MAW, ABILITY_SHELL_ARMOR },
 		.bodyColor = BODY_COLOR_BLACK,
 		.speciesName = _("Elvarg"),
 		.cryId = CRY_ELVARG,
@@ -26448,7 +26470,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.frontPicYOffset = 8,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
-			{EVO_MOVE_TYPE, TYPE_FLYING, SPECIES_MONKEY_NINJA_FORM},
+			{EVO_MOVE, MOVE_MAT_BLOCK, SPECIES_MONKEY_NINJA_FORM},
 			{EVO_LEVEL_DAY, 40, SPECIES_GORILLA_NORMAL_FORM},
 			{EVO_LEVEL_NIGHT, 40, SPECIES_GORILLA_ANCIENT_FORM},
 			{EVO_LEVEL_GHOST_TYPE_MON_IN_PARTY, 40, SPECIES_MONKEY_ZOMBIE_FORM},
@@ -28674,6 +28696,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(DragonKite),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 1,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL, 69, SPECIES_DRAGONLING_RED_FORM}
+		),
 	},
 
 [SPECIES_ANIMOUR] =
@@ -28803,6 +28828,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_BEAVER, SPECIES_COMPOST_MOUND},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_GIANT_BEAVER, SPECIES_COMPOST_MOUND},
 			{EVO_LEVEL_DEATH, 35, SPECIES_COMPOST_MOUND},
+			{EVO_ITEM, ITEM_TEAR_OF_GUTHIX, SPECIES_DERWEN},
 			{EVO_LEVEL_WEATHER_HOT, 30, SPECIES_SPROUTLING_SUMMER_FORM},
 			{EVO_LEVEL_WEATHER_WET, 30, SPECIES_SPROUTLING_SPRING_FORM},
 			{EVO_LEVEL_WEATHER_COLD, 30, SPECIES_SPROUTLING_WINTER_FORM},
@@ -31688,7 +31714,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
-			{EVO_LEVEL, 40, SPECIES_DARK_BEAST_NORMAL_FORM}
+			{EVO_LEVEL, 55, SPECIES_DARK_BEAST_NORMAL_FORM}
 		),
 	},
 
@@ -34398,6 +34424,10 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 38, SPECIES_CROCODILE_MUTADILE_FORM},
 			{EVO_ITEM, ITEM_SOUL_RUNE, SPECIES_CROCODILE_ANKH_FORM},
+			{EVO_ITEM_HOLD, ITEM_CHOCOLATE_CAKE, SPECIES_CROCODILE_UKUNDUKA_FORM},
+			{EVO_ITEM_HOLD, ITEM_CHOCOLATE_BAR_SANDWICH, SPECIES_CROCODILE_UKUNDUKA_FORM},
+			{EVO_ITEM_HOLD, ITEM_CHOCOLATE_SUNDAY, SPECIES_CROCODILE_UKUNDUKA_FORM},
+			{EVO_ITEM_HOLD, ITEM_CHOCOLATE_MILK, SPECIES_CROCODILE_UKUNDUKA_FORM},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_BEHEMOTH_GLUTTONOUS_FORM, SPECIES_CROCODILE_UKUNDUKA_FORM},
 			{EVO_ITEM, ITEM_WATER_RUNE, SPECIES_CROCODILE_RED_FORM},
 			{EVO_ITEM, ITEM_CHAOS_RUNE, SPECIES_ZEBAK}
@@ -35400,6 +35430,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Demon_Lesser_RS3_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL, 35, SPECIES_DEMON_GREATER_RS3_FORM}
+		),
 	},
 
 [SPECIES_DEMON_GREATER_RS3_FORM] =
@@ -35449,6 +35482,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Demon_Greater_RS3_Form),
 		.frontPicYOffset = 1,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL_DAY, 50, SPECIES_DEMON_KALGERION_FORM},
+			{EVO_LEVEL_NIGHT, 50, SPECIES_DEMON_RIPPER_FORM},
+			{EVO_ITEM, ITEM_CHAOS_RUNE, SPECIES_DEMON_THUNDEREOUS_FORM}
+		),
 	},
 
 [SPECIES_DEMON_KALGERION_FORM] =
@@ -35644,6 +35682,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Demon_Lesser_OSRS_Form),
 		.frontPicYOffset = 4,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL, 35, SPECIES_DEMON_GREATER_OSRS_FORM}
+		),
 	},
 
 [SPECIES_DEMON_GREATER_OSRS_FORM] =
@@ -35694,6 +35735,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Demon_Greater_OSRS_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL_DAY, 50, SPECIES_DEMON_TORMENTED_FORM},
+			{EVO_LEVEL_NIGHT, 50, SPECIES_DEMON_TSTANON_FORM},
+			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_DELRITH}
+		),
 	},
 
 [SPECIES_DEMON_TSTANON_FORM] =
@@ -35891,6 +35937,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Demon_Lesser_Tongue_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL, 35, SPECIES_DEMON_GREATER_TONGUE_FORM}
+		),
 	},
 
 [SPECIES_DEMON_GREATER_TONGUE_FORM] =
@@ -35941,6 +35990,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
+			{EVO_LEVEL_DAY, 50, SPECIES_DEMON_ZAKLN_FORM},
+			{EVO_LEVEL_NIGHT, 50, SPECIES_DEMON_PUMMELER_FORM},
 			{EVO_ITEM_HOLD, ITEM_CHOCOLATE_CAKE, SPECIES_DEMON_CHOCOLATE_FORM},
 			{EVO_ITEM_HOLD, ITEM_CHOCOLATE_BAR_SANDWICH, SPECIES_DEMON_CHOCOLATE_FORM},
 			{EVO_ITEM_HOLD, ITEM_CHOCOLATE_SUNDAY, SPECIES_DEMON_CHOCOLATE_FORM},
@@ -36144,6 +36195,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Demon_Lesser_Black_Form),
 		.frontPicYOffset = 4,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL, 35, SPECIES_DEMON_GREATER_BLACK_FORM}
+		),
 	},
 
 [SPECIES_DEMON_GREATER_BLACK_FORM] =
@@ -36192,6 +36246,12 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Demon_Greater_Black_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL_DAY, 50, SPECIES_DEMON_BALFRUG_FORM},
+			{EVO_LEVEL_NIGHT, 50, SPECIES_DEMON_JUNGLE_FORM},
+			{EVO_ITEM, ITEM_MIND_RUNE, SPECIES_DEMON_RIFTSPLITTER_FORM},
+			{EVO_ITEM, ITEM_LIFE_RUNE, SPECIES_SKOTIZO}
+		),
 	},
 
 [SPECIES_DEMON_BALFRUG_FORM] =
@@ -36387,6 +36447,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Snow_Imp),
 		.frontPicYOffset = 4,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL, 35, SPECIES_DEMON_ICE_OSRS_FORM}
+		),
 	},
 
 [SPECIES_DEMON_ICE_OSRS_FORM] =
@@ -36436,6 +36499,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Demon_Ice_OSRS_Form),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL_DAY, 50, SPECIES_DEMON_ICE_RS3_FORM},
+			{EVO_LEVEL_NIGHT, 50, SPECIES_DEMON_BLOODCHILLER_FORM},
+			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_DEMON_REANIMATED_FORM}
+		),
 	},
 
 [SPECIES_DEMON_ICE_RS3_FORM] =
@@ -39035,7 +39103,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.baseSpeed = 35,
 		.baseSpAttack = 75,
 		.baseSpDefense = 100,
-		.types = { TYPE_GROUND, TYPE_POISON },
+		.types = { TYPE_GROUND, TYPE_GROUND },
 		.catchRate = 120,
 		.expYield = 150,
 		.evYield_HP = 3,
@@ -40058,6 +40126,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Compost_Mound),
 		.frontPicYOffset = 3,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_ITEM, ITEM_NATURE_RUNE, SPECIES_EVILTURNIP}
+		),
 	},
 
 [SPECIES_ENT] =
@@ -40109,7 +40180,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
-			{EVO_ITEM, ITEM_NATURE_RUNE, SPECIES_DERWEN},
+			{EVO_ITEM, ITEM_TEAR_OF_GUTHIX, SPECIES_DERWEN},
 			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_DEAD_TREE}
 		),
 	},
@@ -40463,6 +40534,11 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Cave_Bug),
 		.frontPicYOffset = 4,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL, 37, SPECIES_FLESH_CRAWLER},
+			{EVO_ITEM, ITEM_TEAR_OF_GUTHIX, SPECIES_FIARA},
+			{EVO_ITEM, ITEM_AIR_RUNE, SPECIES_MALCOLM}
+		),
 	},
 
 [SPECIES_MALCOLM] =
@@ -42668,8 +42744,8 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 			{EVO_LEVEL_ATK_EQ_SPATK, 28, SPECIES_ARAXYTE_ACIDIC},
 			{EVO_LEVEL_ATK_LT_SPATK, 28, SPECIES_ARAXYTE_MIRRORBACK},
 			{EVO_LEVEL_ATK_GT_SPATK, 28, SPECIES_ARAXYTE_PULSING},
-			{EVO_LEVEL_MALE, 80, SPECIES_ARAXXOR},
-			{EVO_LEVEL_FEMALE, 80, SPECIES_ARAXXI}
+			{EVO_LEVEL_MALE, 90, SPECIES_ARAXXOR},
+			{EVO_LEVEL_FEMALE, 90, SPECIES_ARAXXI}
 		),
 	},
 
@@ -43223,7 +43299,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 			{EVO_ITEM, ITEM_NATURE_RUNE, SPECIES_JADINKO_GUTHIX},
 			{EVO_ITEM, ITEM_CHAOS_RUNE, SPECIES_JADINKO_ZAMORAK},
 			{EVO_ITEM, ITEM_LAW_RUNE, SPECIES_JADINKO_SARADOMIN},
-			{EVO_ITEM, ITEM_AIR_RUNE, SPECIES_JADINKO_GUTHIX},
+			{EVO_ITEM, ITEM_EARTH_RUNE, SPECIES_JADINKO_GUTHIX},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_GUTHRAPTOR, SPECIES_JADINKO_GUTHIX},
 			{EVO_ITEM, ITEM_FIRE_RUNE, SPECIES_JADINKO_ZAMORAK},
 			{EVO_SPECIFIC_MON_IN_PARTY, SPECIES_ZAMOHAWK, SPECIES_JADINKO_ZAMORAK},
@@ -46390,7 +46466,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.baseSpeed = 40,
 		.baseSpAttack = 100,
 		.baseSpDefense = 120,
-		.types = { TYPE_GRASS, TYPE_FAIRY },
+		.types = { TYPE_FAIRY, TYPE_GRASS },
 		.catchRate = 45,
 		.expYield = 154,
 		.evYield_SpDefense = 2,
@@ -46439,7 +46515,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.baseSpeed = 20,
 		.baseSpAttack = 115,
 		.baseSpDefense = 160,
-		.types = { TYPE_GRASS, TYPE_FAIRY },
+		.types = { TYPE_FAIRY, TYPE_GRASS },
 		.catchRate = 45,
 		.expYield = 154,
 		.evYield_SpDefense = 2,
@@ -46487,7 +46563,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.baseSpeed = 40,
 		.baseSpAttack = 120,
 		.baseSpDefense = 100,
-		.types = { TYPE_GRASS, TYPE_POISON },
+		.types = { TYPE_FAIRY, TYPE_POISON },
 		.catchRate = 45,
 		.expYield = 154,
 		.evYield_SpDefense = 2,
@@ -46536,7 +46612,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.baseSpeed = 30,
 		.baseSpAttack = 100,
 		.baseSpDefense = 100,
-		.types = { TYPE_GRASS, TYPE_GHOST },
+		.types = { TYPE_FAIRY, TYPE_GHOST },
 		.catchRate = 45,
 		.expYield = 154,
 		.evYield_SpDefense = 2,
@@ -46584,7 +46660,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.baseSpeed = 20,
 		.baseSpAttack = 110,
 		.baseSpDefense = 130,
-		.types = { TYPE_GRASS, TYPE_ROCK },
+		.types = { TYPE_FAIRY, TYPE_ROCK },
 		.catchRate = 45,
 		.expYield = 154,
 		.evYield_SpDefense = 2,
@@ -48465,9 +48541,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 10,
 		.evolutions = EVOLUTION(
-			{EVO_LEVEL_ATK_EQ_SPATK, 35, SPECIES_TOME_OF_RANGED},
-			{EVO_LEVEL_ATK_LT_SPATK, 35, SPECIES_TOME_OF_MAGIC},
-			{EVO_LEVEL_ATK_GT_SPATK, 35, SPECIES_TOME_OF_STRENGTH}
+			{EVO_LEVEL_ATK_EQ_SPATK, 28, SPECIES_TOME_OF_RANGED},
+			{EVO_LEVEL_ATK_LT_SPATK, 28, SPECIES_TOME_OF_MAGIC},
+			{EVO_LEVEL_ATK_GT_SPATK, 28, SPECIES_TOME_OF_STRENGTH}
 		),
 	},
 
@@ -48765,6 +48841,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Submastyx),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL, 32, SPECIES_SPINOMASTYX}
+		),
 	},
 
 [SPECIES_PARAMASTYX] =
@@ -48814,6 +48893,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Paramastyx),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL, 32, SPECIES_GALLIMASTYX}
+		),
 	},
 
 [SPECIES_ARCHAEMASTYX] =
@@ -48863,6 +48945,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Archaemastyx),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL, 32, SPECIES_STEGOMASTYX}
+		),
 	},
 
 [SPECIES_DROMOMASTYX] =
@@ -48912,6 +48997,9 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		LEARNSETS(Dromomastyx),
 		.frontPicYOffset = 0,
 		.enemyMonElevation = 0,
+		.evolutions = EVOLUTION(
+			{EVO_LEVEL, 32, SPECIES_MEGAMASTYX}
+		),
 	},
 
 [SPECIES_SPINOMASTYX] =
@@ -51841,7 +51929,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.baseSpeed = 20,
 		.baseSpAttack = 80,
 		.baseSpDefense = 90,
-		.types = { TYPE_GRASS, TYPE_GRASS },
+		.types = { TYPE_FAIRY, TYPE_POISON },
 		.catchRate = 45,
 		.expYield = 101,
 		.evYield_SpDefense = 2,
@@ -51894,7 +51982,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.baseSpeed = 20,
 		.baseSpAttack = 80,
 		.baseSpDefense = 130,
-		.types = { TYPE_GRASS, TYPE_ROCK },
+		.types = { TYPE_FAIRY, TYPE_ROCK },
 		.catchRate = 45,
 		.expYield = 154,
 		.evYield_SpDefense = 2,
@@ -51943,7 +52031,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.baseSpeed = 20,
 		.baseSpAttack = 80,
 		.baseSpDefense = 120,
-		.types = { TYPE_GRASS, TYPE_POISON },
+		.types = { TYPE_FAIRY, TYPE_POISON },
 		.catchRate = 45,
 		.expYield = 154,
 		.evYield_SpDefense = 2,
@@ -51993,7 +52081,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.baseSpeed = 40,
 		.baseSpAttack = 80,
 		.baseSpDefense = 90,
-		.types = { TYPE_GRASS, TYPE_GRASS },
+		.types = { TYPE_FAIRY, TYPE_GRASS },
 		.catchRate = 45,
 		.expYield = 101,
 		.evYield_SpDefense = 2,
