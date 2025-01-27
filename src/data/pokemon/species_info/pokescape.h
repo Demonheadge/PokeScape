@@ -13864,7 +13864,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 36, SPECIES_ABYSSAL_DEMON_FORM},
-			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_SPECIES_ABYSSAL_DEMON_REANIMATED_FORM}
+			{EVO_ITEM, ITEM_DEATH_RUNE, SPECIES_ABYSSAL_DEMON_REANIMATED_FORM}
 		),
 	},
 
@@ -14165,7 +14165,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		.frontPicYOffset = 1,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
-			{EVO_LEVEL, 48, SPECIES_ABYSSAL_GUARDIAN_FORM}
+			{EVO_LEVEL, 48, SPECIES_ABYSSAL_GUARDIAN}
 		),
 	},
 
