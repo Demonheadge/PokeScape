@@ -72,9 +72,9 @@ script STORYMODE_STATE_DRAYNORMANOR_1F {
 }
 
 script DraynorManor_HAM_GRUNT {
+    lock
     switch (var(VAR_POKESCAPE_STORYMODE_PROGRESS)){ 
             case 25: 
-
                 delay(15)
                 playse(SE_PIN)
                 applymovement(OBJ_EVENT_ID_PLAYER, Movement_DraynorManor_Chase_1)
@@ -136,19 +136,27 @@ script DraynorManor_HAM_GRUNT {
                 removeobject(18) //HAM
                 setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 26)
             case 26: 
+                applymovement(8, Movement_InteractFACEUP)
+			    waitmovement(0)
+                delay(30)
+                applymovement(8, Movement_InteractFACEDOWN)
+			    waitmovement(0)
                 namebox("???")
-                msgbox(format("…{PAUSE 15}…HUFF…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}…PUFF…{PAUSE 15}…{PAUSE 15}"))
+                msgbox(format("…{PAUSE 15}…{PAUSE 15}…Did that chair{PAUSE 15}…\p{PAUSE 15}…{PAUSE 15}…{PAUSE 15}just move{PAUSE 15}…?"))
                 hidenamebox
                 closemessage
                 playse(SE_PIN)
                 applymovement(11, MOVEMENT_EXCLAMATIONMARK_FACEPLAYER)
 			    waitmovement(0)
-                delay(30)
+                namebox("???")
+                msgbox(format("Aaak!"))
+                hidenamebox
+                closemessage
                 applymovement(11, Movement_DraynorManor_Chase_13)
 			    waitmovement(0)
                 facefollower
                 namebox("Ariane")
-                msgbox(format("I think we are wearing him out, lets get him!"))
+                msgbox(format("I think we are wearing him out, let's get him!"))
                 hidenamebox
                 closemessage
                 setobjectxyperm(11, 14, 19)
@@ -163,6 +171,8 @@ script DraynorManor_HAM_GRUNT {
                 removeobject(18) //HAM
                 setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 29)
     }
+    release
+    end
 }
 
 movement Movement_DraynorManor_Chase_1 {
@@ -241,6 +251,12 @@ movement Movement_DraynorManor_Chase_13 {
     step_end
 }
 
+movement Movement_DraynorManor_Chase_14 {
+    face_up
+    delay_16 * 3
+    face_right
+    step_end
+}
 
 script DraynorManor_Lever_STATE{
         switch (var(VAR_POKESCAPE_DRAYNORMANOR_LEVER_STATE)){ 

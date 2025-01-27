@@ -1,0 +1,20 @@
+mapscripts Draynor_Manor_2F_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION {
+        call(DRAYNOR_MANOR_2F_STATE)
+    }
+}
+
+script DRAYNOR_MANOR_2F_STATE {
+    setflag(FLAG_TEMP_1E) 
+    removeobject(11) //HAM
+    switch (var(VAR_POKESCAPE_STORYMODE_PROGRESS)){ 
+            case 26: 
+                clearflag(FLAG_TEMP_1E)
+                addobject(11) //HAM
+            case 27: 
+                clearflag(FLAG_TEMP_1E)
+                addobject(11) //HAM
+                setobjectxyperm(11, 14, 19)
+    }
+}

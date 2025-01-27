@@ -95,14 +95,17 @@ STORYMODE_STATE_DRAYNORMANOR_1F_18:
 
 
 DraynorManor_HAM_GRUNT::
+	lock
 	switch VAR_POKESCAPE_STORYMODE_PROGRESS
-	case 25, DraynorManor_HAM_GRUNT_2
-	case 26, DraynorManor_HAM_GRUNT_3
-	case 27, DraynorManor_HAM_GRUNT_4
-	case 28, DraynorManor_HAM_GRUNT_5
-	return
+	case 25, DraynorManor_HAM_GRUNT_3
+	case 26, DraynorManor_HAM_GRUNT_4
+	case 27, DraynorManor_HAM_GRUNT_5
+	case 28, DraynorManor_HAM_GRUNT_6
+DraynorManor_HAM_GRUNT_1:
+	release
+	end
 
-DraynorManor_HAM_GRUNT_2:
+DraynorManor_HAM_GRUNT_3:
 	delay 15
 	playse SE_PIN
 	applymovement OBJ_EVENT_ID_PLAYER, Movement_DraynorManor_Chase_1
@@ -160,9 +163,14 @@ DraynorManor_HAM_GRUNT_2:
 	setflag FLAG_TEMP_1E
 	removeobject 18
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 26
-	return
+	goto DraynorManor_HAM_GRUNT_1
 
-DraynorManor_HAM_GRUNT_3:
+DraynorManor_HAM_GRUNT_4:
+	applymovement 8, Movement_InteractFACEUP
+	waitmovement 0
+	delay 30
+	applymovement 8, Movement_InteractFACEDOWN
+	waitmovement 0
 	namebox DraynorManor_HAM_GRUNT_Text_6
 	msgbox DraynorManor_HAM_GRUNT_Text_7
 	hidenamebox
@@ -170,29 +178,32 @@ DraynorManor_HAM_GRUNT_3:
 	playse SE_PIN
 	applymovement 11, MOVEMENT_EXCLAMATIONMARK_FACEPLAYER
 	waitmovement 0
-	delay 30
+	namebox DraynorManor_HAM_GRUNT_Text_6
+	msgbox DraynorManor_HAM_GRUNT_Text_8
+	hidenamebox
+	closemessage
 	applymovement 11, Movement_DraynorManor_Chase_13
 	waitmovement 0
 	facefollower
 	namebox DraynorManor_HAM_GRUNT_Text_0
-	msgbox DraynorManor_HAM_GRUNT_Text_8
+	msgbox DraynorManor_HAM_GRUNT_Text_9
 	hidenamebox
 	closemessage
 	setobjectxyperm 11, 14, 19
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 27
-	return
-
-DraynorManor_HAM_GRUNT_4:
-	setflag FLAG_TEMP_1E
-	removeobject 11
-	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 28
-	return
+	goto DraynorManor_HAM_GRUNT_1
 
 DraynorManor_HAM_GRUNT_5:
 	setflag FLAG_TEMP_1E
+	removeobject 11
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 28
+	goto DraynorManor_HAM_GRUNT_1
+
+DraynorManor_HAM_GRUNT_6:
+	setflag FLAG_TEMP_1E
 	removeobject 18
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 29
-	return
+	goto DraynorManor_HAM_GRUNT_1
 
 
 Movement_DraynorManor_Chase_1:
@@ -303,6 +314,14 @@ Movement_DraynorManor_Chase_13:
 	walk_fast_left
 	walk_fast_left
 	walk_fast_left
+	step_end
+
+Movement_DraynorManor_Chase_14:
+	face_up
+	delay_16
+	delay_16
+	delay_16
+	face_right
 	step_end
 
 DraynorManor_Lever_STATE::
@@ -1165,10 +1184,14 @@ DraynorManor_HAM_GRUNT_Text_6:
 	.string "???$"
 
 DraynorManor_HAM_GRUNT_Text_7:
-	.string "…{PAUSE 15}…HUFF…{PAUSE 15}…{PAUSE 15}…{PAUSE 15}…PUFF…{PAUSE 15}…{PAUSE 15}$"
+	.string "…{PAUSE 15}…{PAUSE 15}…Did that chair{PAUSE 15}…\p"
+	.string "{PAUSE 15}…{PAUSE 15}…{PAUSE 15}just move{PAUSE 15}…?$"
 
 DraynorManor_HAM_GRUNT_Text_8:
-	.string "I think we are wearing him out, lets get\n"
+	.string "Aaak!$"
+
+DraynorManor_HAM_GRUNT_Text_9:
+	.string "I think we are wearing him out, let's get\n"
 	.string "him!$"
 
 HAM_EVENT_DRAYNORMANOR_1F_Text_0:
