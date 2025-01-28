@@ -15254,7 +15254,7 @@
               {
                 "min_level": 7,
                 "max_level": 9,
-                "species": "SPECIES_SPIDER_GIANT_FORM"
+                "species": "SPECIES_JADINKO"
               },
               {
                 "min_level": 7,
@@ -15264,7 +15264,7 @@
               {
                 "min_level": 7,
                 "max_level": 9,
-                "species": "SPECIES_JADINKO"
+                "species": "SPECIES_SPIDER_GIANT_FORM"
               },
               {
                 "min_level": 7,
@@ -15323,7 +15323,7 @@
               {
                 "min_level": 7,
                 "max_level": 9,
-                "species": "SPECIES_SPIDER_HUGE_FORM"
+                "species": "SPECIES_JADINKO"
               },
               {
                 "min_level": 7,
@@ -15333,7 +15333,7 @@
               {
                 "min_level": 7,
                 "max_level": 9,
-                "species": "SPECIES_JADINKO"
+                "species": "SPECIES_SPIDER_HUGE_FORM"
               },
               {
                 "min_level": 7,
@@ -18731,12 +18731,12 @@
               {
                 "min_level": 14,
                 "max_level": 19,
-                "species": "SPECIES_CROW"
+                "species": "SPECIES_KEBBIT_WILD_FORM"
               },
               {
                 "min_level": 14,
                 "max_level": 19,
-                "species": "SPECIES_KEBBIT_WILD_FORM"
+                "species": "SPECIES_JADINKO_COMMON_FORM"
               },
               {
                 "min_level": 14,
@@ -18751,7 +18751,7 @@
               {
                 "min_level": 14,
                 "max_level": 19,
-                "species": "SPECIES_JADINKO"
+                "species": "SPECIES_PLANT_STRANGE_FORM"
               }
             ]
           },
@@ -18915,12 +18915,12 @@
               {
                 "min_level": 14,
                 "max_level": 19,
-                "species": "SPECIES_RAVENLING"
+                "species": "SPECIES_KEBBIT_DARK_FORM"
               },
               {
                 "min_level": 14,
                 "max_level": 19,
-                "species": "SPECIES_KEBBIT_DARK_FORM"
+                "species": "SPECIES_JADINKO_MALE_FORM"
               },
               {
                 "min_level": 14,
@@ -18935,7 +18935,7 @@
               {
                 "min_level": 14,
                 "max_level": 19,
-                "species": "SPECIES_JADINKO_COMMON_FORM"
+                "species": "SPECIES_PLANT_STRANGE_FORM"
               }
             ]
           },
@@ -19104,7 +19104,7 @@
               {
                 "min_level": 13,
                 "max_level": 18,
-                "species": "SPECIES_SQUIRREL"
+                "species": "SPECIES_JADINKO"
               },
               {
                 "min_level": 13,
@@ -21263,7 +21263,7 @@
               {
                 "min_level": 10,
                 "max_level": 14,
-                "species": "SPECIES_BEAVER"
+                "species": "SPECIES_JADINKO"
               },
               {
                 "min_level": 10,
@@ -21332,7 +21332,7 @@
               {
                 "min_level": 10,
                 "max_level": 14,
-                "species": "SPECIES_RACOON"
+                "species": "SPECIES_JADINKO"
               },
               {
                 "min_level": 10,
@@ -21936,7 +21936,7 @@
               {
                 "min_level": 25,
                 "max_level": 30,
-                "species": "SPECIES_GUTHIXIAN_BUTTERFLY"
+                "species": "SPECIES_BLACK_WARLOCK"
               },
               {
                 "min_level": 25,
@@ -22185,7 +22185,7 @@
               {
                 "min_level": 15,
                 "max_level": 25,
-                "species": "SPECIES_DRAUGEN"
+                "species": "SPECIES_SNOW_KNIGHT"
               },
               {
                 "min_level": 20,
@@ -23402,7 +23402,7 @@
               {
                 "min_level": 21,
                 "max_level": 26,
-                "species": "SPECIES_MONKEY_NORMAL_FORM"
+                "species": "SPECIES_JADINKO_COMMON_FORM"
               },
               {
                 "min_level": 21,
@@ -23556,7 +23556,7 @@
               {
                 "min_level": 21,
                 "max_level": 26,
-                "species": "SPECIES_MONKEY_HARMLESS_FORM"
+                "species": "SPECIES_JADINKO_MALE_FORM"
               },
               {
                 "min_level": 21,

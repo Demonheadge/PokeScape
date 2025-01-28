@@ -363,6 +363,14 @@ UTILITY_NPC::
 	return
 
 
+UTILITY_NPC_TZHAAR::
+	lock
+	faceplayer
+	namebox UTILITY_NPC_TZHAAR_Text_0
+	goto UTILITY_TOOLS
+	return
+
+
 UTILITY_TOOLS::
 	msgbox UTILITY_TOOLS_Text_0
 	multichoicedefault 1, 0, MULTI_UTILITY, 0, 0
@@ -839,6 +847,9 @@ MOVE_RELEARNER_NPC_Text_1:
 
 UTILITY_NPC_Text_0:
 	.string "Druid$"
+
+UTILITY_NPC_TZHAAR_Text_0:
+	.string "Tzhaar$"
 
 UTILITY_TOOLS_Text_0:
 	.string "What would you like to do?$"
