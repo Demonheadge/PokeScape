@@ -23,6 +23,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
  - Updated and added more static encounters.
  - Added berries to beefy bill's store.
  - Tweaked Draynor Manor's Ariane event & added more scripts.
+ - Added form changes.
+ - Added a Utilties NPC to the Tzhaar Bank.
 
 ### Fixed
  - Updated Version number.
@@ -44,6 +46,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
  - Fixed Lumbridge Swamp Caves wall encounter.
  - Updated Trainers in Lumbridge Swamp Caves.
  - Made it so you can no longer use dig/escape ropes/teleport/rotten potato to escape the Crandor Volcano event.
+ - Blocking in Route 11 fixed.
+ - Removed Strength boulder from Karamaja Volcano.
+ - Rimmington is indeed in the west and not the east of the port sarim lighthouse jail.
+ - Fixed a bunch of missing evolutions due to a converter issue.
+ - Fixed the stupid Dark Void issue.
+ - Fixed missing collision to the water rocks on route 8 and 9.
+ 
+ 
 
 ### Removed
  - Removed the Woodcutting trees at Wizards' Tower.

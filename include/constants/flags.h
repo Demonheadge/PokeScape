@@ -1295,7 +1295,7 @@
 #define FLAG_ITEM_LUMBRIDGE_FIRE_RUNE                               0x4C9 // Unused Flag
 #define FLAG_ITEM_DRAYNORMANOR_TEA_2                                0x4CA // Unused Flag
 
-#define FLAG_UNUSED_0x4CB                                           0x4CB // Unused Flag
+#define FLAG_ITEM_KARAMJA_VOLCANO_4                                 0x4CB // Unused Flag
 #define FLAG_UNUSED_0x4CC                                           0x4CC // Unused Flag
 #define FLAG_UNUSED_0x4CD                                           0x4CD // Unused Flag
 #define FLAG_UNUSED_0x4CE                                           0x4CE // Unused Flag
