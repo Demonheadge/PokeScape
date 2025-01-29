@@ -1211,15 +1211,15 @@ const u8 gText_PkmnFainted_FldPsn[] = _("{STR_VAR_1} survived the poisoning.\nTh
 #endif
 
 const u8 gText_Marco[] = _("MARCO");
-const u8 gText_TrainerCardName[] = _("NAME: ");
+const u8 gText_TrainerCardName[] = _("");
 const u8 gText_TrainerCardIDNo[] = _("IDNo.");
 const u8 gText_TrainerCardMoney[] = _("MONEY:");
 const u8 gText_PokeDollar[] = _("¥"); // Unused
-const u8 gText_TrainerCardPokedex[] = _("BESTIARY");
+const u8 gText_TrainerCardPokedex[] = _("BESTIARY:");
 const u8 gText_EmptyString6[] = _("");
 const u8 gText_Colon2[] = _(":");
 const u8 gText_Points[] = _(" points"); // Unused
-const u8 gText_TrainerCardTime[] = _("TIME");
+const u8 gText_TrainerCardTime[] = _("PLAY TIME:");
 const u8 gJPText_BattlePoints[] = _("ゲ-ムポイント"); // Unused. Name presumed, translation is Game Points
 const u8 gText_Var1sTrainerCard[] = _("{STR_VAR_1}'s TRAINER CARD");
 const u8 gText_HallOfFameDebut[] = _("HALL OF FAME DEBUT  ");

@@ -10185,11 +10185,6 @@ Move_THOUSAND_ARROWS::
 	setalpha 14, 8
 	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, F_PAL_BG, 0x1, 0x0, 0xC, 0x0
 	waitforvisualfinish
-	createsprite gThousandArrowsGreenChargeTemplate, ANIM_ATTACKER, 2, 0x0
-	playsewithpan SE_M_CHARGE, SOUND_PAN_ATTACKER
-	delay 0x18
-	playsewithpan SE_M_CHARGE, SOUND_PAN_ATTACKER
-	delay 0x18
 	call ThousandArrowsHexes
 	call ThousandArrowsHexes
 	call ThousandArrowsHexes
@@ -10197,11 +10192,6 @@ Move_THOUSAND_ARROWS::
 	call ThousandArrowsHexes
 	call ThousandArrowsHexes
 	call ThousandArrowsHexes
-	createsprite gThousandArrowsGreenDischargeTemplate, ANIM_ATTACKER, 2, 0x0, 0x10, 0x10
-	delay 0x2
-	createsprite gThousandArrowsGreenDischargeTemplate, ANIM_ATTACKER, 2, 0x0, 0xfff0, 0xfff0
-	playsewithpan SE_M_THUNDERBOLT2, SOUND_PAN_ATTACKER
-	waitforvisualfinish
 	delay 0x30
 	createvisualtask AnimTask_HorizontalShake, 5, ANIM_PLAYER_RIGHT, 10, 0x32
 	createvisualtask AnimTask_HorizontalShake, 5, ANIM_PLAYER_LEFT, 10, 0x32

@@ -189,6 +189,8 @@ static const u16 sTrainerCardSticker3_Pal[]      = INCBIN_U16("graphics/trainer_
 static const u16 sTrainerCardSticker4_Pal[]      = INCBIN_U16("graphics/trainer_card/frlg/stickers4.gbapal");
 static const u32 sHoennTrainerCardBadges_Gfx[]   = INCBIN_U32("graphics/trainer_card/badges.4bpp.lz");
 static const u32 sKantoTrainerCardBadges_Gfx[]   = INCBIN_U32("graphics/trainer_card/frlg/badges.4bpp.lz");
+static const u16 sTrainerCardPokeScape_Pal[]     = INCBIN_U16("graphics/trainer_card/pokescape_trainercard.gbapal");
+static const u16 sPokeScapeText_Pal[]            = INCBIN_U16("graphics/trainer_card/pokescape_text.gbapal");
 
 static const struct BgTemplate sTrainerCardBgTemplates[4] =
 {
@@ -243,17 +245,17 @@ static const struct WindowTemplate sTrainerCardWindowTemplates[] =
     },
     [WIN_CARD_TEXT] = {
         .bg = 1,
-        .tilemapLeft = 1,
-        .tilemapTop = 1,
+        .tilemapLeft = 0,
+        .tilemapTop = 0,
         .width = 28,
         .height = 18,
-        .paletteNum = 15,
+        .paletteNum = 10,
         .baseBlock = 0x1,
     },
     [WIN_TRAINER_PIC] = {
         .bg = 3,
         .tilemapLeft = 19,
-        .tilemapTop = 5,
+        .tilemapTop = 2,
         .width = 9,
         .height = 10,
         .paletteNum = 8,
@@ -280,9 +282,30 @@ static const u16 *const sKantoTrainerCardPals[] =
     sKantoTrainerCardGold_Pal,   // 4 stars
 };
 
+#define TEXT_COLOR_POKESCAPE_TRANSPARENT    0x0
+#define TEXT_COLOR_POKESCAPE_BLACK          0x1
+#define TEXT_COLOR_POKESCAPE_ORANGE         0x2
+#define TEXT_COLOR_POKESCAPE_YELLOW         0x3
+#define TEXT_COLOR_POKESCAPE_4              0x4
+#define TEXT_COLOR_POKESCAPE_5              0x5
+#define TEXT_COLOR_POKESCAPE_6              0x6
+#define TEXT_COLOR_POKESCAPE_7              0x7
+#define TEXT_COLOR_POKESCAPE_8              0x8
+#define TEXT_COLOR_POKESCAPE_9              0x9
+#define TEXT_COLOR_POKESCAPE_10             0xA 
+#define TEXT_COLOR_POKESCAPE_11             0xB 
+#define TEXT_COLOR_POKESCAPE_12             0xC 
+#define TEXT_COLOR_POKESCAPE_13             0xD 
+#define TEXT_COLOR_POKESCAPE_14             0xE 
+#define TEXT_COLOR_POKESCAPE_15             0xF 
+
+static const u8 sTextColor_PokeScape_Orange[] = {TEXT_COLOR_POKESCAPE_TRANSPARENT, TEXT_COLOR_POKESCAPE_ORANGE, TEXT_COLOR_POKESCAPE_BLACK};
+static const u8 sTextColor_PokeScape_Yellow[] = {TEXT_COLOR_POKESCAPE_TRANSPARENT, TEXT_COLOR_POKESCAPE_YELLOW, TEXT_COLOR_POKESCAPE_BLACK};
+
 static const u8 sTrainerCardTextColors[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY};
 static const u8 sTrainerCardStatColors[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_RED, TEXT_COLOR_LIGHT_RED};
 static const u8 sTimeColonInvisibleTextColors[6] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_TRANSPARENT, TEXT_COLOR_TRANSPARENT};
+
 
 static const u8 sTrainerPicOffset[2][GENDER_COUNT][2] =
 {
@@ -417,7 +440,7 @@ static void Task_TrainerCard(u8 taskId)
         if (gWirelessCommType == 1 && gReceivedRemoteLinkPlayers == TRUE)
         {
             LoadWirelessStatusIndicatorSpriteGfx();
-            CreateWirelessStatusIndicatorSprite(DISPLAY_WIDTH - 10, DISPLAY_HEIGHT - 10);
+            CreateWirelessStatusIndicatorSprite(DISPLAY_WIDTH - 12, DISPLAY_HEIGHT - 12);
         }
         BlendPalettes(PALETTES_ALL, 16, sData->blendColor);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, sData->blendColor);
@@ -443,13 +466,13 @@ static void Task_TrainerCard(u8 taskId)
             DrawTrainerCardWindow(WIN_CARD_TEXT);
             sData->timeColonNeedDraw = FALSE;
         }
-        if (JOY_NEW(A_BUTTON))
+        /*if (JOY_NEW(A_BUTTON))
         {
             FlipTrainerCard();
             PlaySE(SE_RG_CARD_FLIP);
             sData->mainState = STATE_WAIT_FLIP_TO_BACK;
         }
-        else if (JOY_NEW(B_BUTTON))
+        else*/ if (JOY_NEW(B_BUTTON))
         {
             if (gReceivedRemoteLinkPlayers && sData->isLink && InUnionRoom() == TRUE)
             {
@@ -548,8 +571,14 @@ static bool8 LoadCardGfx(void)
     case 2:
         if (!sData->isLink)
         {
+            
             if (sData->cardType != CARD_TYPE_FRLG)
-                LZ77UnCompWram(gHoennTrainerCardFront_Tilemap, sData->frontTilemap);
+                if (!FlagGet(FLAG_ENABLE_P2P_BADGES)) {
+                    LZ77UnCompWram(gTrainerCard_F2P_Front_Tilemap, sData->frontTilemap);
+                }
+                else {
+                    LZ77UnCompWram(gTrainerCard_P2P_Front_Tilemap, sData->frontTilemap);
+                }
             else
                 LZ77UnCompWram(gKantoTrainerCardFront_Tilemap, sData->frontTilemap);
         }
@@ -1003,15 +1032,18 @@ static void BufferTextsVarsForCardPage2(void)
 
 static void PrintNameOnCardFront(void)
 {
+    s32 xOffset;
+    u8 top;
     u8 buffer[32];
     u8 *txtPtr;
     txtPtr = StringCopy(buffer, gText_TrainerCardName);
+
+    xOffset = GetStringRightAlignXOffset(FONT_SMALL, txtPtr, 59);
+    top = (22 - 13);
+
     StringCopy(txtPtr, sData->trainerCard.playerName);
     ConvertInternationalString(txtPtr, sData->language);
-    if (sData->cardType == CARD_TYPE_FRLG)
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 28, sTrainerCardTextColors, TEXT_SKIP_DRAW, buffer);
-    else
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 16, 25, sTrainerCardTextColors, TEXT_SKIP_DRAW, buffer);
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, xOffset, top, sTextColor_PokeScape_Orange, TEXT_SKIP_DRAW, buffer);
 }
 
 static void PrintIdOnCard(void)
@@ -1022,18 +1054,8 @@ static void PrintIdOnCard(void)
     u32 top;
     txtPtr = StringCopy(buffer, gText_TrainerCardIDNo);
     ConvertIntToDecimalStringN(txtPtr, sData->trainerCard.trainerId, STR_CONV_MODE_LEADING_ZEROS, 5);
-    if (sData->cardType == CARD_TYPE_FRLG)
-    {
-        xPos = GetStringCenterAlignXOffset(FONT_NORMAL, buffer, 80) + 132;
-        top = 9;
-    }
-    else
-    {
-        xPos = GetStringCenterAlignXOffset(FONT_NORMAL, buffer, 96) + 120;
-        top = 9;
-    }
 
-    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, xPos, top, sTrainerCardTextColors, TEXT_SKIP_DRAW, buffer);
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, 160, (89 - 12), sTextColor_PokeScape_Orange, TEXT_SKIP_DRAW, buffer);
 }
 
 static void PrintMoneyOnCard(void)
@@ -1041,41 +1063,27 @@ static void PrintMoneyOnCard(void)
     s32 xOffset;
     u8 top;
 
-    if (!sData->isHoenn)
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, 20, 56, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardMoney);
-    else
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, 16, 40, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardMoney);
-
+//MONEY
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, 24, (67 - 12), sTextColor_PokeScape_Orange, TEXT_SKIP_DRAW, gText_TrainerCardMoney);
     ConvertIntToDecimalStringN(gStringVar1, sData->trainerCard.money, STR_CONV_MODE_LEFT_ALIGN, 6);
     StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
-    if (!sData->isHoenn)
-    {
-        xOffset = GetStringRightAlignXOffset(FONT_SMALL, gStringVar4, 144);
-        top = 56;
-    }
-    else
-    {
-        xOffset = GetStringRightAlignXOffset(FONT_SMALL, gStringVar4, 128);
-        top = 40;
-    }
-    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, xOffset, top, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
-
-
-
-//SLAYER POINTS
-    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, 16, 50, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardSlayerPoints);
-    ConvertIntToDecimalStringN(gStringVar1, gSaveBlock2Ptr->frontier.battlePoints, STR_CONV_MODE_LEFT_ALIGN, 6);
-    StringExpandPlaceholders(gStringVar4, gText_SlayerPoints);
-    xOffset = GetStringRightAlignXOffset(FONT_SMALL, gStringVar4, 128);
-    top = 50;
-    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, xOffset, top, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
+    xOffset = GetStringRightAlignXOffset(FONT_SMALL, gStringVar4, 135);
+    top = (67 - 12);
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, xOffset, top, sTextColor_PokeScape_Yellow, TEXT_SKIP_DRAW, gStringVar4);
 //TOKKUL
-    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, 16, 60, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardTokkul);
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, 24, (77 - 12), sTextColor_PokeScape_Orange, TEXT_SKIP_DRAW, gText_TrainerCardTokkul);
     ConvertIntToDecimalStringN(gStringVar1, gSaveBlock1Ptr->tokkul, STR_CONV_MODE_LEFT_ALIGN, 6);
     StringExpandPlaceholders(gStringVar4, gText_Tokkul); //change to tokkul
-    xOffset = GetStringRightAlignXOffset(FONT_SMALL, gStringVar4, 128);
-    top = 60;
-    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, xOffset, top, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
+    xOffset = GetStringRightAlignXOffset(FONT_SMALL, gStringVar4, 135);
+    top = (77 - 12);
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, xOffset, top, sTextColor_PokeScape_Yellow, TEXT_SKIP_DRAW, gStringVar4);
+//SLAYER POINTS
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, 24, (87 - 12), sTextColor_PokeScape_Orange, TEXT_SKIP_DRAW, gText_TrainerCardSlayerPoints);
+    ConvertIntToDecimalStringN(gStringVar1, gSaveBlock2Ptr->frontier.battlePoints, STR_CONV_MODE_LEFT_ALIGN, 6);
+    StringExpandPlaceholders(gStringVar4, gText_SlayerPoints);
+    xOffset = GetStringRightAlignXOffset(FONT_SMALL, gStringVar4, 135);
+    top = (87 - 12);
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, xOffset, top, sTextColor_PokeScape_Yellow, TEXT_SKIP_DRAW, gStringVar4);
 }
 
 static u16 GetCaughtMonsCount(void)
@@ -1092,26 +1100,15 @@ static void PrintPokedexOnCard(void)
     u8 top;
     if (FlagGet(FLAG_SYS_POKEDEX_GET))
     {
-        if (!sData->isHoenn)
-            AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, 20, 72, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardPokedex);
-        else
-            AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, 16, 73, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardPokedex);
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, 24, (49 - 12), sTextColor_PokeScape_Orange, TEXT_SKIP_DRAW, gText_TrainerCardPokedex);
         StringCopy(ConvertIntToDecimalStringN(gStringVar4, sData->trainerCard.caughtMonsCount, STR_CONV_MODE_LEFT_ALIGN, 4), gText_EmptyString6);
-        if (!sData->isHoenn)
-        {
-            xOffset = GetStringRightAlignXOffset(FONT_SMALL, gStringVar4, 144);
-            top = 72;
-        }
-        else
-        {
-            xOffset = GetStringRightAlignXOffset(FONT_SMALL, gStringVar4, 128);
-            top = 73;
-        }
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, xOffset, top, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
+        xOffset = GetStringRightAlignXOffset(FONT_SMALL, gStringVar4, 135);
+        top = (49 - 12);
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, xOffset, top, sTextColor_PokeScape_Yellow, TEXT_SKIP_DRAW, gStringVar4);
     }
 }
 
-static const u8 *const sTimeColonTextColors[] = {sTrainerCardTextColors, sTimeColonInvisibleTextColors};
+static const u8 *const sTimeColonTextColors[] = {sTextColor_PokeScape_Yellow, sTimeColonInvisibleTextColors};
 
 static void PrintTimeOnCard(void)
 {
@@ -1120,10 +1117,7 @@ static void PrintTimeOnCard(void)
     s32 width;
     u32 x, y, totalWidth;
 
-    if (!sData->isHoenn)
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, 20, 88, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardTime);
-    else
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, 16, 89, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardTime);
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, 24, (39 - 12), sTextColor_PokeScape_Orange, TEXT_SKIP_DRAW, gText_TrainerCardTime);
 
     if (sData->isLink)
     {
@@ -1142,7 +1136,9 @@ static void PrintTimeOnCard(void)
         minutes = 59;
     width = GetStringWidth(FONT_NORMAL, gText_Colon2, 0);
 
-    if (!sData->isHoenn)
+    x = 137;
+    y = (39 - 12);
+    /*if (!sData->isHoenn)
     {
         x = 144;
         y = 88;
@@ -1151,18 +1147,18 @@ static void PrintTimeOnCard(void)
     {
         x = 128;
         y = 89;
-    }
+    }*/
     totalWidth = width + 30;
     x -= totalWidth;
 
-    FillWindowPixelRect(WIN_CARD_TEXT, PIXEL_FILL(0), x, y, totalWidth, 15);
+    FillWindowPixelRect(WIN_CARD_TEXT, PIXEL_FILL(0), x, (y - 1), totalWidth, 15);
     ConvertIntToDecimalStringN(gStringVar4, hours, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, x, y, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, x, y, sTextColor_PokeScape_Yellow, TEXT_SKIP_DRAW, gStringVar4);
     x += 18;
-    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, x, y, sTimeColonTextColors[sData->timeColonInvisible], TEXT_SKIP_DRAW, gText_Colon2);
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, (x - 3), y, sTimeColonTextColors[sData->timeColonInvisible], TEXT_SKIP_DRAW, gText_Colon2);
     x += width;
     ConvertIntToDecimalStringN(gStringVar4, minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
-    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, x, y, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
+    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SMALL, x, y, sTextColor_PokeScape_Yellow, TEXT_SKIP_DRAW, gStringVar4);
 }
 
 static void PrintProfilePhraseOnCard(void)
@@ -1449,7 +1445,8 @@ static u8 SetCardBgsAndPals(void)
     case 2:
         if (sData->cardType != CARD_TYPE_FRLG)
         {
-            LoadPalette(sHoennTrainerCardPals[sData->trainerCard.stars], BG_PLTT_ID(0), 3 * PLTT_SIZE_4BPP);
+            LoadPalette(sTrainerCardPokeScape_Pal, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
+            //LoadPalette(sHoennTrainerCardPals[sData->trainerCard.stars], BG_PLTT_ID(0), 3 * PLTT_SIZE_4BPP);
             LoadPalette(sHoennTrainerCardBadges_Pal, BG_PLTT_ID(3), PLTT_SIZE_4BPP);
             if (sData->trainerCard.gender != MALE)
                 LoadPalette(sHoennTrainerCardFemaleBg_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
@@ -1462,6 +1459,7 @@ static u8 SetCardBgsAndPals(void)
                 LoadPalette(sKantoTrainerCardFemaleBg_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
         }
         LoadPalette(sTrainerCardStar_Pal, BG_PLTT_ID(4), PLTT_SIZE_4BPP);
+        LoadPalette(sPokeScapeText_Pal, BG_PLTT_ID(10), PLTT_SIZE_4BPP);
         break;
     case 3:
         SetBgTilemapBuffer(0, sData->cardTilemapBuffer);
@@ -1528,12 +1526,23 @@ static void DrawStarsAndBadgesOnCard(void)
         x = 4;
         for (i = 0; i < NUM_BADGES; i++, tileNum += 2, x += 3)
         {
-            if (sData->badgeCount[i])
-            {
-                FillBgTilemapBufferRect(3, tileNum, x, 15, 1, 1, palNum);
-                FillBgTilemapBufferRect(3, tileNum + 1, x + 1, 15, 1, 1, palNum);
-                FillBgTilemapBufferRect(3, tileNum + 16, x, 16, 1, 1, palNum);
-                FillBgTilemapBufferRect(3, tileNum + 17, x + 1, 16, 1, 1, palNum);
+            if (!FlagGet(FLAG_ENABLE_P2P_BADGES)) {
+                if (sData->badgeCount[i])
+                {
+                    FillBgTilemapBufferRect(3, tileNum, x, 16, 1, 1, palNum); //1st Badge Start location.
+                    FillBgTilemapBufferRect(3, tileNum + 1, x + 1, 16, 1, 1, palNum);
+                    FillBgTilemapBufferRect(3, tileNum + 16, x, 17, 1, 1, palNum);
+                    FillBgTilemapBufferRect(3, tileNum + 17, x + 1, 17, 1, 1, palNum);
+                }
+            }
+            else {
+                if (sData->badgeCount[i])
+                {
+                    FillBgTilemapBufferRect(3, tileNum, x, 13, 1, 1, palNum); //1st Badge Start location.
+                    FillBgTilemapBufferRect(3, tileNum + 1, x + 1, 13, 1, 1, palNum);
+                    FillBgTilemapBufferRect(3, tileNum + 16, x, 14, 1, 1, palNum);
+                    FillBgTilemapBufferRect(3, tileNum + 17, x + 1, 14, 1, 1, palNum);
+                }
             }
         }
     }

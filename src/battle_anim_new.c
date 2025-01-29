@@ -1823,8 +1823,8 @@ const struct SpriteTemplate gThousandArrowsGreenChargeTemplate =
 
 const struct SpriteTemplate gThousandArrowsGreenHexTemplate =
 {
-    .tileTag = ANIM_TAG_VERTICAL_HEX,
-    .paletteTag = ANIM_TAG_ZYGARDE_HEXES,
+    .tileTag = ANIM_TAG_NEEDLE,
+    .paletteTag = ANIM_TAG_LEAF,
     .oam = &gOamData_AffineOff_ObjNormal_16x16,
     .anims = gRazorLeafParticleAnimTable,
     .images = NULL,

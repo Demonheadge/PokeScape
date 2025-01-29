@@ -848,6 +848,16 @@ script VAR_EDIT_TOKKUL {
 
 
 script STORYMODE_VAR_CHECK {
+	msgbox(format("Toggle P2P Badges?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+		if (!flag(FLAG_ENABLE_P2P_BADGES)) {
+			setflag(FLAG_ENABLE_P2P_BADGES)
+		}
+		else {
+			clearflag(FLAG_ENABLE_P2P_BADGES)
+		}
+    }
 	buffernumberstring(STR_VAR_1, VAR_POKESCAPE_STORYMODE_PROGRESS)
 	buffernumberstring(STR_VAR_2, VAR_WISE_OLD_MAN_RIVAL)
     msgbox(format("STORYMODE_PROGRESS: {STR_VAR_1}.\nVAR_WISE_OLD_MAN_RIVAL: {STR_VAR_2}."))
