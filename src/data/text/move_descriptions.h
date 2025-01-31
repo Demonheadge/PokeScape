@@ -3341,10 +3341,6 @@ static const u8 sChaoticRiftDescription[] = _(
     "Opens a chaotic rift.\n"
     "Type matchups get weird!.");
 
-static const u8 sSaradominStrikeDescription[] = _(
-    "Strikes your foe with the power.\n"
-    "of Saradomin. Lowers PP of target.");
-
 static const u8 sSwordStrikeDescription[] = _(
     "Strike forth with a mighty blade.\n"
     "High critical ratio.");
@@ -3353,13 +3349,17 @@ static const u8 sSliceDiceDescription[] = _(
     "Rapidly strikes the foe with razor\n"
     "sharp claws. Always hits 4 times.");
 
+static const u8 sSaradominStrikeDescription[] = _(
+    "Strikes your foe with the power.\n"
+    "of Saradomin. May lower targets SPEED.");
+
 static const u8 sZamorakFlamesDescription[] = _(
     "Strike your foe with the power of\n"
-    "Zamorak. Lowers targets SPATK.");
+    "Zamorak. May lower targets SPATK.");
 
 static const u8 sGuthixClawsDescription[] = _(
     "Strike your foe with the power of\n"
-    "Zamorak. Lowers targets SPATK.");
+    "Guthix. May lower targets SPDEF.");
 
 static const u8 sPolyporeStrikeDescription[] = _(
     "Send forth a ball of nature.\n"

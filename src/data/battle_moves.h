@@ -14725,23 +14725,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = 0
     },
 
-    [MOVE_SARADOMIN_STRIKE] =
-    {
-        .effect = EFFECT_SARADOMIN_STRIKE,
-        .power = 90,
-        .type = TYPE_WATER,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .argument = TYPE_ELECTRIC,
-        .ignoresKingsRock = TRUE,
-        .damagesAirborneDoubleDamage = TRUE,
-        .zMoveEffect = 0
-    },
-
     [MOVE_SWORD_STRIKE] =
     {
         .effect = EFFECT_HIT,
@@ -14777,6 +14760,24 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .strikeCount = 4,
         .zMoveEffect = 0
     },
+
+    [MOVE_SARADOMIN_STRIKE] =
+    {
+        .effect = EFFECT_SPEED_DOWN_HIT, //EFFECT_SARADOMIN_STRIKE
+        .power = 90,
+        .type = TYPE_WATER,
+        .accuracy = 90,
+        .pp = 10,
+        .secondaryEffectChance = 50,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        //.argument = TYPE_ELECTRIC,
+        //.ignoresKingsRock = TRUE,
+        //.damagesAirborneDoubleDamage = TRUE,
+        .sheerForceBoost = TRUE,
+        .zMoveEffect = 0
+    },
     
     [MOVE_ZAMORAK_FLAMES] =
     {
@@ -14805,67 +14806,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .split = SPLIT_SPECIAL,
         .sheerForceBoost = TRUE,
-        .zMoveEffect = 0
-    },
-
-    [MOVE_POLYPORE_STRIKE] =
-    {
-        .effect = EFFECT_PARALYZE_HIT,
-        .power = 90,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .sheerForceBoost = TRUE,
-        .zMoveEffect = 0
-    },
-
-    [MOVE_ICE_BARRAGE] = 
-        {
-        .effect = EFFECT_FREEZE_HIT,
-        .power = 90,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .sheerForceBoost = TRUE,
-        .zMoveEffect = 0
-    },
-
-    [MOVE_BLOOD_BARRAGE] = 
-        {
-        .effect = EFFECT_ABSORB,
-        .power = 90,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .sheerForceBoost = TRUE,
-        .argument = 75,
-        .zMoveEffect = 0,
-        .healBlockBanned = TRUE,
-    },
-
-    [MOVE_VENGEANCE] = 
-        {
-        .effect = EFFECT_VENGEANCE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .split = SPLIT_STATUS,
         .zMoveEffect = 0
     },
 
@@ -14900,65 +14840,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .sheerForceBoost = TRUE,
         .damagesAirborneDoubleDamage = TRUE,
         .windMove = TRUE,
-        .zMoveEffect = 0
-    },
-
-    [MOVE_SMOKE_BARRAGE] = 
-    {
-        .effect = EFFECT_ACCURACY_DOWN_HIT,
-        .power = 90,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .sheerForceBoost = TRUE,
-        .zMoveEffect = 0
-    },
-
-    [MOVE_SHADOW_BARRAGE] = 
-    {
-        .effect = EFFECT_EVASION_UP_HIT,
-        .power = 90,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .sheerForceBoost = TRUE,
-        .zMoveEffect = 0
-    },
-
-    [MOVE_TELEGRAB] =
-    {
-        .effect = EFFECT_THIEF,
-        .power = 50,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 25,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = 0
-    },
-
-    [MOVE_FREE_STUFF] =
-    {
-        .effect = EFFECT_FREE_STUFF,
-        .power = 40,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .danceMove = TRUE,
         .zMoveEffect = 0
     },
 
@@ -15022,6 +14903,126 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = 0
     },
 
+    [MOVE_SMOKE_BARRAGE] = 
+    {
+        .effect = EFFECT_ACCURACY_DOWN_HIT,
+        .power = 90,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 30,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .sheerForceBoost = TRUE,
+        .zMoveEffect = 0
+    },
+
+    [MOVE_SHADOW_BARRAGE] = 
+    {
+        .effect = EFFECT_EVASION_UP_HIT,
+        .power = 90,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 30,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .sheerForceBoost = TRUE,
+        .zMoveEffect = 0
+    },
+
+    [MOVE_TELEGRAB] =
+    {
+        .effect = EFFECT_THIEF,
+        .power = 50,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 25,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .zMoveEffect = 0
+    },
+
+    [MOVE_FREE_STUFF] =
+    {
+        .effect = EFFECT_FREE_STUFF,
+        .power = 40,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 20,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .danceMove = TRUE,
+        .zMoveEffect = 0
+    },
+
+    [MOVE_POLYPORE_STRIKE] =
+    {
+        .effect = EFFECT_PARALYZE_HIT,
+        .power = 90,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 30,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .sheerForceBoost = TRUE,
+        .zMoveEffect = 0
+    },
+
+    [MOVE_ICE_BARRAGE] = 
+        {
+        .effect = EFFECT_FREEZE_HIT,
+        .power = 90,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 30,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .sheerForceBoost = TRUE,
+        .zMoveEffect = 0
+    },
+
+    [MOVE_BLOOD_BARRAGE] = 
+        {
+        .effect = EFFECT_ABSORB,
+        .power = 90,
+        .type = TYPE_BUG,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 30,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .sheerForceBoost = TRUE,
+        .argument = 75,
+        .zMoveEffect = 0,
+        .healBlockBanned = TRUE,
+    },
+
+    [MOVE_VENGEANCE] = 
+        {
+        .effect = EFFECT_VENGEANCE,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = 0
+    },
+    
     [MOVE_TZ_TOK_ZEK] =
     {
         .power = 65,
