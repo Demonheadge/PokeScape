@@ -25,6 +25,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
  - Tweaked Draynor Manor's Ariane event & added more scripts.
  - Added form changes.
  - Added a Utilties NPC to the Tzhaar Bank.
+ - Updated Party Menu Screen
+ - Updated Egg Icon.
 
 ### Fixed
  - Updated Version number.

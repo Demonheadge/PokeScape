@@ -304,6 +304,7 @@ static void CreatePartyMonStatusSpriteParameterized(u16, u8, struct PartyMenuBox
 // These next 4 functions are essentially redundant with the above 4
 // The only difference is that rather than receive the data directly they retrieve it from the mon struct
 static void CreatePartyMonHeldItemSprite(struct Pokemon *, struct PartyMenuBox *);
+//static void CreatePartyMonShinySprite(struct Pokemon *, struct PartyMenuBox *);
 static void CreatePartyMonPokeballSprite(struct Pokemon *, struct PartyMenuBox *);
 static void CreatePartyMonIconSprite(struct Pokemon *, struct PartyMenuBox *, u32);
 static void CreatePartyMonStatusSprite(struct Pokemon *, struct PartyMenuBox *);
@@ -1220,7 +1221,7 @@ static void CreatePartyMonSprites(u8 slot)
         {
             CreatePartyMonIconSpriteParameterized(gMultiPartnerParty[actualSlot].species, gMultiPartnerParty[actualSlot].personality, &sPartyMenuBoxes[slot], 0);
             CreatePartyMonHeldItemSpriteParameterized(gMultiPartnerParty[actualSlot].species, gMultiPartnerParty[actualSlot].heldItem, &sPartyMenuBoxes[slot]);
-            CreatePartyMonPokeballSpriteParameterized(gMultiPartnerParty[actualSlot].species, &sPartyMenuBoxes[slot]);
+            //CreatePartyMonPokeballSpriteParameterized(gMultiPartnerParty[actualSlot].species, &sPartyMenuBoxes[slot]);
             if (gMultiPartnerParty[actualSlot].hp == 0)
                 status = AILMENT_FNT;
             else
@@ -1232,7 +1233,8 @@ static void CreatePartyMonSprites(u8 slot)
     {
         CreatePartyMonIconSprite(&gPlayerParty[slot], &sPartyMenuBoxes[slot], slot);
         CreatePartyMonHeldItemSprite(&gPlayerParty[slot], &sPartyMenuBoxes[slot]);
-        CreatePartyMonPokeballSprite(&gPlayerParty[slot], &sPartyMenuBoxes[slot]);
+        //CreatePartyMonShinySprite(&gPlayerParty[slot], &sPartyMenuBoxes[slot]);
+        //CreatePartyMonPokeballSprite(&gPlayerParty[slot], &sPartyMenuBoxes[slot]);
         CreatePartyMonStatusSprite(&gPlayerParty[slot], &sPartyMenuBoxes[slot]);
     }
 }
@@ -1263,7 +1265,7 @@ static void CreateCancelConfirmPokeballSprites(void)
         }
         else
         {
-            sPartyMenuInternal->spriteIdCancelPokeball = CreatePokeballButtonSprite(198, 148);
+            //sPartyMenuInternal->spriteIdCancelPokeball = CreatePokeballButtonSprite(198, 148);
         }
         AnimatePartySlot(gPartyMenu.slotId, 1);
     }
@@ -1285,9 +1287,9 @@ void AnimatePartySlot(u8 slot, u8 animNum)
         return;
     case PARTY_SIZE: // Confirm
         if (animNum == 0)
-            SetBgTilemapPalette(1, 23, 16, 7, 2, 1);
+            SetBgTilemapPalette(1, 23, 16, 7, 2, 0);
         else
-            SetBgTilemapPalette(1, 23, 16, 7, 2, 2);
+            SetBgTilemapPalette(1, 23, 16, 7, 2, 1);
         spriteId = sPartyMenuInternal->spriteIdConfirmPokeball;
         break;
     case PARTY_SIZE + 1: // Cancel
@@ -1295,17 +1297,17 @@ void AnimatePartySlot(u8 slot, u8 animNum)
         if (!sPartyMenuInternal->chooseHalf)
         {
             if (animNum == 0)
-                SetBgTilemapPalette(1, 23, 17, 7, 2, 1);
+                SetBgTilemapPalette(1, 23, 17, 7, 2, 0);
             else
-                SetBgTilemapPalette(1, 23, 17, 7, 2, 2);
+                SetBgTilemapPalette(1, 23, 17, 7, 2, 1);
         }
         else if (animNum == 0)
         {
-            SetBgTilemapPalette(1, 23, 18, 7, 2, 1);
+            SetBgTilemapPalette(1, 23, 18, 7, 2, 0);
         }
         else
         {
-            SetBgTilemapPalette(1, 23, 18, 7, 2, 2);
+            SetBgTilemapPalette(1, 23, 18, 7, 2, 1);
         }
         spriteId = sPartyMenuInternal->spriteIdCancelPokeball;
         break;
@@ -2246,7 +2248,8 @@ static void LoadPartyMenuWindows(void)
         FillWindowPixelBuffer(i, PIXEL_FILL(0));
     LoadUserWindowBorderGfx(0, 0x4F, BG_PLTT_ID(13));
     LoadPalette(GetOverworldTextboxPalettePtr(), BG_PLTT_ID(14), PLTT_SIZE_4BPP);
-    LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    //LoadPalette(gPokeScapeMenuPalette, BG_PLTT_ID(12), PLTT_SIZE_4BPP);
+    //LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
 }
 
 static void CreateCancelConfirmWindows(bool8 chooseHalf)
@@ -2262,8 +2265,8 @@ static void CreateCancelConfirmWindows(bool8 chooseHalf)
         {
             confirmWindowId = AddWindow(&sConfirmButtonWindowTemplate);
             FillWindowPixelBuffer(confirmWindowId, PIXEL_FILL(0));
-            mainOffset = GetStringCenterAlignXOffset(FONT_SMALL, gMenuText_Confirm, 48);
-            AddTextPrinterParameterized4(confirmWindowId, FONT_SMALL, mainOffset, 1, 0, 0, sFontColorTable[0], TEXT_SKIP_DRAW, gMenuText_Confirm);
+            mainOffset = GetStringCenterAlignXOffset(FONT_SMALL, gMenuText_Confirm, 46);
+            AddTextPrinterParameterized4(confirmWindowId, FONT_SMALL, mainOffset, 1, 0, 0, sFontColorTable[7], TEXT_SKIP_DRAW, gMenuText_Confirm);
             PutWindowTilemap(confirmWindowId);
             CopyWindowToVram(confirmWindowId, COPYWIN_GFX);
             cancelWindowId = AddWindow(&sMultiCancelButtonWindowTemplate);
@@ -2279,13 +2282,13 @@ static void CreateCancelConfirmWindows(bool8 chooseHalf)
         // Branches are functionally identical. Second branch is never reached, Spin Trade wasnt fully implemented
         if (gPartyMenu.menuType != PARTY_MENU_TYPE_SPIN_TRADE)
         {
-            mainOffset = GetStringCenterAlignXOffset(FONT_SMALL, gText_Cancel, 48);
-            AddTextPrinterParameterized3(cancelWindowId, FONT_SMALL, mainOffset + offset, 1, sFontColorTable[0], TEXT_SKIP_DRAW, gText_Cancel);
+            mainOffset = GetStringCenterAlignXOffset(FONT_SMALL, gText_Cancel, 46);
+            AddTextPrinterParameterized3(cancelWindowId, FONT_SMALL, mainOffset + offset, 1, sFontColorTable[7], TEXT_SKIP_DRAW, gText_Cancel);
         }
         else
         {
-            mainOffset = GetStringCenterAlignXOffset(FONT_SMALL, gText_Cancel2, 48);
-            AddTextPrinterParameterized3(cancelWindowId, FONT_SMALL, mainOffset + offset, 1, sFontColorTable[0], TEXT_SKIP_DRAW, gText_Cancel2);
+            mainOffset = GetStringCenterAlignXOffset(FONT_SMALL, gText_Cancel2, 46);
+            AddTextPrinterParameterized3(cancelWindowId, FONT_SMALL, mainOffset + offset, 1, sFontColorTable[7], TEXT_SKIP_DRAW, gText_Cancel2);
         }
         PutWindowTilemap(cancelWindowId);
         CopyWindowToVram(cancelWindowId, COPYWIN_GFX);
@@ -2353,13 +2356,27 @@ static void DrawEmptySlot(u8 windowId)
     LoadPalette(GetPartyMenuPalBufferPtr(paletteIds[2]), paletteOffsets[2] + palOffset, PLTT_SIZEOF(1));  \
 }
 
+#define LOAD_PARTY_BOX_PAL_2(paletteIds, paletteOffsets)                                                  \
+{                                                                                                         \
+    LoadPalette(GetPartyMenuPalBufferPtr(paletteIds[0]), paletteOffsets[0] + palOffset, PLTT_SIZEOF(1));  \
+    LoadPalette(GetPartyMenuPalBufferPtr(paletteIds[1]), paletteOffsets[1] + palOffset, PLTT_SIZEOF(1));  \
+}
+
+#define LOAD_PARTY_BOX_PAL_4(paletteIds, paletteOffsets)                                                  \
+{                                                                                                         \
+    LoadPalette(GetPartyMenuPalBufferPtr(paletteIds[0]), paletteOffsets[0] + palOffset, PLTT_SIZEOF(1));  \
+    LoadPalette(GetPartyMenuPalBufferPtr(paletteIds[1]), paletteOffsets[1] + palOffset, PLTT_SIZEOF(1));  \
+    LoadPalette(GetPartyMenuPalBufferPtr(paletteIds[2]), paletteOffsets[2] + palOffset, PLTT_SIZEOF(1));  \
+    LoadPalette(GetPartyMenuPalBufferPtr(paletteIds[3]), paletteOffsets[3] + palOffset, PLTT_SIZEOF(1));  \
+}
+
 static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
 {
     u8 palOffset = BG_PLTT_ID(GetWindowAttribute(menuBox->windowId, WINDOW_PALETTE_NUM));
 
     if (palFlags & PARTY_PAL_NO_MON)
     {
-        LOAD_PARTY_BOX_PAL(sPartyBoxNoMonPalIds, sPartyBoxNoMonPalOffsets);
+        LOAD_PARTY_BOX_PAL_2(sPartyBoxNoMonPalIds, sPartyBox_PalOffsets_NoMon);
     }
     else if (palFlags & PARTY_PAL_TO_SOFTBOIL)
     {
@@ -2383,12 +2400,12 @@ static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
     {
         if (palFlags & PARTY_PAL_SELECTED)
         {
-            LOAD_PARTY_BOX_PAL(sPartyBoxSelectedForActionPalIds1, sPartyBoxPalOffsets1);
+            LOAD_PARTY_BOX_PAL(sPartyBoxSelectedForActionPalIds1, sPartyBox_PalOffsets_Selection);
             LOAD_PARTY_BOX_PAL(sPartyBoxCurrSelectionPalIds2, sPartyBoxPalOffsets2);
         }
         else
         {
-            LOAD_PARTY_BOX_PAL(sPartyBoxSelectedForActionPalIds1, sPartyBoxPalOffsets1);
+            LOAD_PARTY_BOX_PAL(sPartyBoxSelectedForActionPalIds1, sPartyBox_PalOffsets_Selection);
             LOAD_PARTY_BOX_PAL(sPartyBoxSelectedForActionPalIds2, sPartyBoxPalOffsets2);
         }
     }
@@ -2396,12 +2413,12 @@ static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
     {
         if (palFlags & PARTY_PAL_SELECTED)
         {
-            LOAD_PARTY_BOX_PAL(sPartyBoxCurrSelectionFaintedPalIds, sPartyBoxPalOffsets1);
+            LOAD_PARTY_BOX_PAL(sPartyBoxCurrSelectionFaintedPalIds, sPartyBox_PalOffsets_Selection);
             LOAD_PARTY_BOX_PAL(sPartyBoxCurrSelectionPalIds2, sPartyBoxPalOffsets2);
         }
         else
         {
-            LOAD_PARTY_BOX_PAL(sPartyBoxFaintedPalIds1, sPartyBoxPalOffsets1);
+            LOAD_PARTY_BOX_PAL(sPartyBoxFaintedPalIds1, sPartyBox_PalOffsets_Selection);
             LOAD_PARTY_BOX_PAL(sPartyBoxFaintedPalIds2, sPartyBoxPalOffsets2);
         }
     }
@@ -2420,19 +2437,20 @@ static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
     }
     else if (palFlags & PARTY_PAL_SELECTED)
     {
-        LOAD_PARTY_BOX_PAL(sPartyBoxCurrSelectionPalIds1, sPartyBoxPalOffsets1);
+        LOAD_PARTY_BOX_PAL_4(sPartyBoxCurrSelectionPalIds1, sPartyBox_PalOffsets_Selection);
         LOAD_PARTY_BOX_PAL(sPartyBoxCurrSelectionPalIds2, sPartyBoxPalOffsets2);
     }
     else
     {
-        LOAD_PARTY_BOX_PAL(sPartyBoxEmptySlotPalIds1, sPartyBoxPalOffsets1);
+        LOAD_PARTY_BOX_PAL_4(sPartyBoxEmptySlotPalIds1, sPartyBox_PalOffsets_Selection);
         LOAD_PARTY_BOX_PAL(sPartyBoxEmptySlotPalIds2, sPartyBoxPalOffsets2);
     }
 }
 
 static void DisplayPartyPokemonBarDetail(u8 windowId, const u8 *str, u8 color, const u8 *align)
 {
-    AddTextPrinterParameterized3(windowId, FONT_SMALL, align[0], align[1], sFontColorTable[color], 0, str);
+    //Edits overall text for party screen.
+    AddTextPrinterParameterized3(windowId, FONT_SMALL, align[0], align[1], sFontColorTable[color], 0, str); //sFontColorTable[color]
 }
 
 static void DisplayPartyPokemonNickname(struct Pokemon *mon, struct PartyMenuBox *menuBox, u8 c)
@@ -2444,7 +2462,10 @@ static void DisplayPartyPokemonNickname(struct Pokemon *mon, struct PartyMenuBox
         if (c == 1)
             menuBox->infoRects->blitFunc(menuBox->windowId, menuBox->infoRects->dimensions[0] >> 3, menuBox->infoRects->dimensions[1] >> 3, menuBox->infoRects->dimensions[2] >> 3, menuBox->infoRects->dimensions[3] >> 3, FALSE);
         GetMonNickname(mon, nickname);
-        DisplayPartyPokemonBarDetail(menuBox->windowId, nickname, 0, menuBox->infoRects->dimensions);
+        if (IsMonShiny(mon))
+            DisplayPartyPokemonBarDetail(menuBox->windowId, nickname, 7, menuBox->infoRects->dimensions);
+        else
+            DisplayPartyPokemonBarDetail(menuBox->windowId, nickname, 6, menuBox->infoRects->dimensions);
     }
 }
 
@@ -2468,7 +2489,7 @@ static void DisplayPartyPokemonLevel(u8 level, struct PartyMenuBox *menuBox)
     ConvertIntToDecimalStringN(gStringVar2, level, STR_CONV_MODE_LEFT_ALIGN, 3);
     StringCopy(gStringVar1, gText_LevelSymbol);
     StringAppend(gStringVar1, gStringVar2);
-    DisplayPartyPokemonBarDetail(menuBox->windowId, gStringVar1, 0, &menuBox->infoRects->dimensions[4]);
+    DisplayPartyPokemonBarDetail(menuBox->windowId, gStringVar1, 6, &menuBox->infoRects->dimensions[4]);
 }
 
 static void DisplayPartyPokemonGenderNidoranCheck(struct Pokemon *mon, struct PartyMenuBox *menuBox, u8 c)
@@ -2521,7 +2542,7 @@ static void DisplayParty4DigitsHP(struct PartyMenuBox *menuBox, const u8 *str, c
 
     memcpy(newAligns, origAlings, sizeof(newAligns));
     newAligns[0] -= toSub; // x, so that the hp fits
-    DisplayPartyPokemonBarDetail(menuBox->windowId, str, 0, newAligns);
+    DisplayPartyPokemonBarDetail(menuBox->windowId, str, 6, newAligns);
 }
 
 static void DisplayPartyPokemonHP(u16 hp, u16 maxhp, struct PartyMenuBox *menuBox)
@@ -2535,7 +2556,7 @@ static void DisplayPartyPokemonHP(u16 hp, u16 maxhp, struct PartyMenuBox *menuBo
     if (fourDigits)
         DisplayParty4DigitsHP(menuBox, gStringVar1, &menuBox->infoRects->dimensions[12], 10);
     else
-        DisplayPartyPokemonBarDetail(menuBox->windowId, gStringVar1, 0, &menuBox->infoRects->dimensions[12]);
+        DisplayPartyPokemonBarDetail(menuBox->windowId, gStringVar1, 6, &menuBox->infoRects->dimensions[12]);
 }
 
 static void DisplayPartyPokemonMaxHPCheck(struct Pokemon *mon, struct PartyMenuBox *menuBox, u8 c)
@@ -2560,7 +2581,7 @@ static void DisplayPartyPokemonMaxHP(u16 maxhp, struct PartyMenuBox *menuBox)
     if (fourDigits)
         DisplayParty4DigitsHP(menuBox, gStringVar1, &menuBox->infoRects->dimensions[16], 5);
     else
-        DisplayPartyPokemonBarDetail(menuBox->windowId, gStringVar1, 0, &menuBox->infoRects->dimensions[16]);
+        DisplayPartyPokemonBarDetail(menuBox->windowId, gStringVar1, 6, &menuBox->infoRects->dimensions[16]);
 }
 
 static void DisplayPartyPokemonHPBarCheck(struct Pokemon *mon, struct PartyMenuBox *menuBox)
@@ -4307,6 +4328,12 @@ static void SpriteCB_HeldItem(struct Sprite *sprite)
         sprite->y = gSprites[otherSpriteId].y + gSprites[otherSpriteId].y2;
     }
 }
+
+/*static void CreatePartyMonShinySprite(struct Pokemon *mon, struct PartyMenuBox *menuBox)
+{
+    if (IsMonShiny(mon))
+        menuBox->pokeballSpriteId = CreateSprite(&sSpriteTemplate_MenuPokeball, menuBox->spriteCoords[6], menuBox->spriteCoords[7], 8);
+}*/
 
 static void CreatePartyMonPokeballSprite(struct Pokemon *mon, struct PartyMenuBox *menuBox)
 {

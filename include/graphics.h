@@ -2735,6 +2735,7 @@ extern const u32 gBattlePyramidBagInterface_Pal[];
 extern const u16 gBattlePyramidFloor_Pal[][16];
 
 extern const u16 gStandardMenuPalette[];
+extern const u16 gPokeScapeMenuPalette[];
 
 //extern const u32 gTitleScreenEmeraldVersionGfx[];
 extern const u32 gTitleScreenPressStartGfx[];
