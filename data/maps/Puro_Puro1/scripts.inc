@@ -8,7 +8,7 @@ Puro_Puro1_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 
 
 RANDOM_EVENT_IMPLING::
-	random 20
+	random 15
 	compare VAR_RESULT, 1
 	goto_if_eq RANDOM_EVENT_IMPLING_2
 	setflag FLAG_TEMP_8
@@ -23,7 +23,7 @@ RANDOM_EVENT_IMPLING_2:
 
 
 PURO_PURO_EVENT::
-	random 20
+	random 10
 	compare VAR_RESULT, 1
 	goto_if_eq PURO_PURO_EVENT_2
 PURO_PURO_EVENT_1:

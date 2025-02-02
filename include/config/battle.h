@@ -248,4 +248,10 @@
 #define B_NEW_IMPACT_PALETTE            TRUE    // If set to TRUE, it updates the basic 'hit' palette.
 #define B_NEW_SURF_PARTICLE_PALETTE     TRUE    // If set to TRUE, it updates Surf's wave palette.
 
+// Battle Move Info
+#define B_BATTLE_MOVE_INFO             TRUE       // If set to TRUE, adds a battle info menu while pressing L in the move selection menu.
+#define B_BATTLE_MOVE_INFO_BUTTON      L_BUTTON   // Interchangeable with L_BUTTON or R_BUTTON only since all other buttons are used in the move selection menu.
+#define B_UPDATED_BATTLE_MOVE_INFO     FALSE      // If set to TRUE, battle move info will show the real base power and accuracy of moves after ability, stat and item modifier.
+
+
 #endif // GUARD_CONFIG_BATTLE_H

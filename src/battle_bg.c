@@ -26,6 +26,7 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "constants/battle_anim.h"
+#include "config/battle.h"
 
 // .rodata
 static const u16 sUnrefArray[] = {0x0300, 0x0000}; //OamData?
@@ -186,7 +187,7 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .bg = 0,
         .tilemapLeft = 2,
         .tilemapTop = 55,
-        .width = 16,    //for z move names
+        .width = 8,    //for z move names
         .height = 2,
         .paletteNum = 5,
         .baseBlock = 0x0300,
@@ -198,16 +199,16 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .width = 8,
         .height = 2,
         .paletteNum = 5,
-        .baseBlock = 0x0318,
+        .baseBlock = 0x0310,
     },
     [B_WIN_MOVE_NAME_3] = {
         .bg = 0,
         .tilemapLeft = 2,
         .tilemapTop = 57,
-        .width = 16,    //for z effect descriptions
+        .width = 8,    //for z effect descriptions
         .height = 2,
         .paletteNum = 5,
-        .baseBlock = 0x0328,
+        .baseBlock = 0x0320,
     },
     [B_WIN_MOVE_NAME_4] = {
         .bg = 0,
@@ -216,7 +217,7 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .width = 8,
         .height = 2,
         .paletteNum = 5,
-        .baseBlock = 0x0340,
+        .baseBlock = 0x0330,
     },
     [B_WIN_PP] = {
         .bg = 0,
