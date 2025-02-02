@@ -252,8 +252,32 @@ EventScript_Whirlpool_19:
 	compare VAR_TEMP_1, 58
 	goto_if_eq EventScript_Whirlpool_24
 EventScript_Whirlpool_23:
+	compare VAR_TEMP_1, 69
+	goto_if_eq EventScript_Whirlpool_28
+EventScript_Whirlpool_27:
+	compare VAR_TEMP_1, 74
+	goto_if_eq EventScript_Whirlpool_32
+EventScript_Whirlpool_31:
+	compare VAR_TEMP_1, 70
+	goto_if_eq EventScript_Whirlpool_36
+EventScript_Whirlpool_35:
+	compare VAR_TEMP_1, 74
+	goto_if_eq EventScript_Whirlpool_40
+EventScript_Whirlpool_39:
+	compare VAR_TEMP_1, 76
+	goto_if_eq EventScript_Whirlpool_44
+EventScript_Whirlpool_43:
+	compare VAR_TEMP_1, 69
+	goto_if_eq EventScript_Whirlpool_48
+EventScript_Whirlpool_47:
+	compare VAR_TEMP_1, 77
+	goto_if_eq EventScript_Whirlpool_52
+EventScript_Whirlpool_51:
+	compare VAR_TEMP_1, 26
+	goto_if_eq EventScript_Whirlpool_56
+EventScript_Whirlpool_55:
 	compare VAR_TEMP_1, 61
-	goto_if_eq EventScript_Whirlpool_27
+	goto_if_eq EventScript_Whirlpool_59
 EventScript_Whirlpool_6:
 	warpsilent MAP_CRANDOR_SEA_ROUTE, 0, 0, 0
 	goto EventScript_Whirlpool_1
@@ -287,7 +311,47 @@ EventScript_Whirlpool_24:
 	goto_if_eq EventScript_Whirlpool_5
 	goto EventScript_Whirlpool_23
 
-EventScript_Whirlpool_27:
+EventScript_Whirlpool_28:
+	compare VAR_TEMP_2, 27
+	goto_if_eq EventScript_Whirlpool_5
+	goto EventScript_Whirlpool_27
+
+EventScript_Whirlpool_32:
+	compare VAR_TEMP_2, 27
+	goto_if_eq EventScript_Whirlpool_5
+	goto EventScript_Whirlpool_31
+
+EventScript_Whirlpool_36:
+	compare VAR_TEMP_2, 29
+	goto_if_eq EventScript_Whirlpool_5
+	goto EventScript_Whirlpool_35
+
+EventScript_Whirlpool_40:
+	compare VAR_TEMP_2, 29
+	goto_if_eq EventScript_Whirlpool_5
+	goto EventScript_Whirlpool_39
+
+EventScript_Whirlpool_44:
+	compare VAR_TEMP_2, 26
+	goto_if_eq EventScript_Whirlpool_5
+	goto EventScript_Whirlpool_43
+
+EventScript_Whirlpool_48:
+	compare VAR_TEMP_2, 18
+	goto_if_eq EventScript_Whirlpool_5
+	goto EventScript_Whirlpool_47
+
+EventScript_Whirlpool_52:
+	compare VAR_TEMP_2, 17
+	goto_if_eq EventScript_Whirlpool_5
+	goto EventScript_Whirlpool_51
+
+EventScript_Whirlpool_56:
+	compare VAR_TEMP_2, 4
+	goto_if_eq EventScript_Whirlpool_5
+	goto EventScript_Whirlpool_55
+
+EventScript_Whirlpool_59:
 	compare VAR_TEMP_2, 25
 	goto_if_eq EventScript_Whirlpool_5
 	goto EventScript_Whirlpool_6
