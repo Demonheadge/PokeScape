@@ -194,6 +194,7 @@ DraynorManor_HAM_GRUNT_4:
 	goto DraynorManor_HAM_GRUNT_1
 
 DraynorManor_HAM_GRUNT_5:
+	trainerbattle_no_intro TRAINER_DRAYNORMANOR_HAM, DraynorManor_HAM_GRUNT_Text_10
 	setflag FLAG_TEMP_1E
 	removeobject 11
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 28
@@ -1193,6 +1194,9 @@ DraynorManor_HAM_GRUNT_Text_8:
 DraynorManor_HAM_GRUNT_Text_9:
 	.string "I think we are wearing him out, let's get\n"
 	.string "him!$"
+
+DraynorManor_HAM_GRUNT_Text_10:
+	.string "No way…\pTwo against one is just not fair…$"
 
 HAM_EVENT_DRAYNORMANOR_1F_Text_0:
 	.string "…{PAUSE 32}…{PAUSE 32}…\n"

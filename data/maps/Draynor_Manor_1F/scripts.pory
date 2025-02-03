@@ -163,6 +163,7 @@ script DraynorManor_HAM_GRUNT {
                 setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 27)
             case 27: 
                 //battle
+                trainerbattle_no_intro(TRAINER_DRAYNORMANOR_HAM, "No way…\pTwo against one is just not fair…")
                 setflag(FLAG_TEMP_1E) 
                 removeobject(11) //HAM upstairs
                 setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 28)

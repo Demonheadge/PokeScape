@@ -5442,6 +5442,21 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_SIR_OWEN_1),
     },
 
+    [TRAINER_DRAYNORMANOR_HAM] =
+    {
+        .trainerClass = TRAINER_CLASS_HAM_GRUNT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HAM,
+        .trainerPic = TRAINER_PIC_ham_grunt_m,
+        .trainerName = _("GRUNT"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_DraynorManor_HAM),
+    },
+
+
+    
+
 /*
     #define TRAINER_HELLWIND                                445
 #define TRAINER_HYPER_STAN                              446

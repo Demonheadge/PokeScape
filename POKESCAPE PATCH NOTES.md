@@ -28,6 +28,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
  - Updated Party Menu Screen
  - Updated Egg Icon.
  - Added a MOVE INFO button to the battle screen. (Press L when selecting a move.)
+  - Added more Grottos. 
 
 ### Fixed
  - Updated Version number.
@@ -56,6 +57,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
  - Fixed the stupid Dark Void issue.
  - Fixed missing collision to the water rocks on route 8 and 9.
  - Changed the chance of Random events spawning. (1/20 - Sandwich Lady, 1/15 - Impling Spawn, 1/15 Penguin Spawn, 1/10 - PuroPuro.)
+ - Early Game Buffs to trainers
+ - Adjusted gaining Friendship values.
 
 ### Removed
  - Removed the Woodcutting trees at Wizards' Tower.

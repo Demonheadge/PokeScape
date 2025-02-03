@@ -15239,7 +15239,7 @@
               {
                 "min_level": 7,
                 "max_level": 9,
-                "species": "SPECIES_PLANT_STRANGE_FORM"
+                "species": "SPECIES_JADINKO"
               },
               {
                 "min_level": 7,
@@ -15249,7 +15249,7 @@
               {
                 "min_level": 7,
                 "max_level": 9,
-                "species": "SPECIES_GIANT_RAT_NORMAL_FORM"
+                "species": "SPECIES_COCKROACH_DRONE"
               },
               {
                 "min_level": 7,
@@ -15308,7 +15308,7 @@
               {
                 "min_level": 7,
                 "max_level": 9,
-                "species": "SPECIES_PLANT_STRANGE_FORM"
+                "species": "SPECIES_JADINKO"
               },
               {
                 "min_level": 7,
@@ -15560,7 +15560,7 @@
               {
                 "min_level": 3,
                 "max_level": 6,
-                "species": "SPECIES_CALF"
+                "species": "SPECIES_PUPPY_PUP_FORM"
               },
               {
                 "min_level": 2,
@@ -15585,7 +15585,7 @@
               {
                 "min_level": 2,
                 "max_level": 6,
-                "species": "SPECIES_IMPLING_BABY_FORM"
+                "species": "SPECIES_BABY_YAK"
               },
               {
                 "min_level": 3,
@@ -15595,7 +15595,7 @@
               {
                 "min_level": 3,
                 "max_level": 5,
-                "species": "SPECIES_PIGLET"
+                "species": "SPECIES_BABY_YAK"
               },
               {
                 "min_level": 2,
@@ -15605,12 +15605,12 @@
               {
                 "min_level": 4,
                 "max_level": 5,
-                "species": "SPECIES_BABY_YAK"
+                "species": "SPECIES_MACKERS"
               },
               {
                 "min_level": 4,
                 "max_level": 7,
-                "species": "SPECIES_BABY_YAK"
+                "species": "SPECIES_MACKERS"
               }
             ]
           }
@@ -15699,7 +15699,7 @@
               {
                 "min_level": 2,
                 "max_level": 5,
-                "species": "SPECIES_KITTEN"
+                "species": "SPECIES_PIGLET"
               },
               {
                 "min_level": 3,
@@ -15719,17 +15719,17 @@
               {
                 "min_level": 2,
                 "max_level": 6,
-                "species": "SPECIES_IMPLING_BABY_FORM"
-              },
-              {
-                "min_level": 3,
-                "max_level": 5,
                 "species": "SPECIES_FERRET"
               },
               {
                 "min_level": 3,
                 "max_level": 5,
                 "species": "SPECIES_FERRET"
+              },
+              {
+                "min_level": 3,
+                "max_level": 5,
+                "species": "SPECIES_BABY_YAK"
               },
               {
                 "min_level": 2,
@@ -15739,7 +15739,7 @@
               {
                 "min_level": 4,
                 "max_level": 5,
-                "species": "SPECIES_BABY_YAK"
+                "species": "SPECIES_MACKERS"
               },
               {
                 "min_level": 4,

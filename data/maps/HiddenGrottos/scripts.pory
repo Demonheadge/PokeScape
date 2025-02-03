@@ -25,6 +25,7 @@ script HIDDEN_GROTTO_ENTRY {
         goto_if_eq (VAR_RESULT, MAP_ROUTE10, HIDDEN_GROTTO_WARP_ROUTE_10)
         goto_if_eq (VAR_RESULT, MAP_ROUTE40, HIDDEN_GROTTO_WARP_ROUTE_40)
         goto_if_eq (VAR_RESULT, MAP_ROUTE30, HIDDEN_GROTTO_WARP_ROUTE_30)
+        goto_if_eq (VAR_RESULT, MAP_LUMBRIDGE_SWAMP, HIDDEN_GROTTO_WARP_LUMBRIDGE_SWAMP)
     }  
     closemessage
     release
@@ -72,6 +73,10 @@ script HIDDEN_GROTTO_WARP_ROUTE_40 {
 }
 script HIDDEN_GROTTO_WARP_ROUTE_30 {
     warp(MAP_HIDDEN_GROTTOS, 11, 0, 0)
+    waitstate
+}
+script HIDDEN_GROTTO_WARP_LUMBRIDGE_SWAMP {
+    warp(MAP_HIDDEN_GROTTOS, 12, 0, 0)
     waitstate
 }
 

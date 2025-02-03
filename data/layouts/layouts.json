@@ -7704,8 +7704,8 @@
     {
       "id": "LAYOUT_HIDDEN_GROTTOS",
       "name": "HiddenGrottos_Layout",
-      "width": 64,
-      "height": 60,
+      "width": 82,
+      "height": 64,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_Lumbridge_Swamp",
       "border_filepath": "data/layouts/HiddenGrottos/border.bin",
