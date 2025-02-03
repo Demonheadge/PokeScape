@@ -440,6 +440,40 @@ NPC_Draynor_Noob_WillowTree::
 	end
 
 
+NPC_Draynor_Woodcutter_WillowTree::
+	lock
+	faceplayer
+	namebox NPC_Draynor_Woodcutter_WillowTree_Text_0
+	goto_if_unset FLAG_GIFT_BIRDS_NEST, NPC_Draynor_Woodcutter_WillowTree_2
+NPC_Draynor_Woodcutter_WillowTree_1:
+	msgbox NPC_Draynor_Woodcutter_WillowTree_Text_3
+	closemessage
+	hidenamebox
+	release
+	end
+
+NPC_Draynor_Woodcutter_WillowTree_2:
+	msgbox NPC_Draynor_Woodcutter_WillowTree_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne NPC_Draynor_Woodcutter_WillowTree_4
+	msgbox NPC_Draynor_Woodcutter_WillowTree_Text_2
+	goto NPC_Draynor_Woodcutter_WillowTree_1
+
+NPC_Draynor_Woodcutter_WillowTree_4:
+	hidenamebox
+	closemessage
+	call EventScript_GiftMonster_BirdNest
+	setflag FLAG_GIFT_BIRDS_NEST
+	goto NPC_Draynor_Woodcutter_WillowTree_1
+
+
+EventScript_GiftMonster_BirdNest::
+	setvar VAR_TEMP_1, SPECIES_BIRD_NEST
+	givemon SPECIES_BIRD_NEST, 5, ITEM_LUCKYRABBITFOOT
+	goto EventScript_GiftMonster_Start
+	return
+
+
 Draynor_Morgan::
 	switch VAR_POKESCAPE_WIZARDS_TOWER_STATE
 	case 0, Draynor_Morgan_2
@@ -703,6 +737,23 @@ NPC_Draynor_Noob_WillowTree_Text_1:
 	.string "thrown out of the Wizards' Tower for\l"
 	.string "being Zamorakians and now I cannot\l"
 	.string "play by the willow trees.$"
+
+NPC_Draynor_Woodcutter_WillowTree_Text_0:
+	.string "Woodcutter$"
+
+NPC_Draynor_Woodcutter_WillowTree_Text_1:
+	.string "I found this Bird Nest but my inventory\n"
+	.string "is full of Willow logs.\p"
+	.string "Do you want it?$"
+
+NPC_Draynor_Woodcutter_WillowTree_Text_2:
+	.string "Hmm…\p"
+	.string "I guess I'll just leave it on the ground\n"
+	.string "then.$"
+
+NPC_Draynor_Woodcutter_WillowTree_Text_3:
+	.string "Birds Nests are so interesting, you\n"
+	.string "never know what will hatch from them.$"
 
 Draynor_Morgan_Text_0:
 	.string "Morgan$"
