@@ -2,91 +2,148 @@
 
 ```md
 ## How to update
+
 - If you haven't set up a remote, run the command `git remote add RHH https://github.com/rh-hideout/pokeemerald-expansion`.
 - Once you have your remote set up, run the command `git pull RHH expansion/1.Y.Z`.
 ```
 
-## 🌋 *IMPORTANT CHANGES* 🌋
-* We deleted the whole repo LOL by @AsparagusEduardo in https://github.com/rh-hideout/pokeemerald-expansion/pull/3367
+## 🌋 _IMPORTANT CHANGES_ 🌋
+
+- We deleted the whole repo LOL by @AsparagusEduardo in https://github.com/rh-hideout/pokeemerald-expansion/pull/3367
 
 ## 🧬 General 🧬
+
 ### Added
-* N/A
+
+- N/A
+
 ### Changed
-* N/A
+
+- N/A
+
 ### Fixed
-* N/A
+
+- N/A
 
 ## 🐉 Pokémon 🐉
-### Added
-* N/A
-### Changed
-* N/A
-### Fixed
-* N/A
 
-## ⚔️ Battle General ⚔️ ##
 ### Added
-* N/A
+
+- N/A
+
 ### Changed
-* N/A
+
+- N/A
+
 ### Fixed
-* N/A
+
+- N/A
+
+## ⚔️ Battle General ⚔️
+
+### Added
+
+- N/A
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- N/A
 
 ## 🤹 Moves 🤹
+
 ### Added
-* N/A
+
+- N/A
+
 ### Changed
-* N/A
+
+- N/A
+
 ### Fixed
-* N/A
+
+- N/A
 
 ## 🎭 Abilities 🎭
+
 ### Added
-* N/A
+
+- N/A
+
 ### Changed
-* N/A
+
+- N/A
+
 ### Fixed
-* N/A
+
+- N/A
 
 ## 🧶 Items 🧶
+
 ### Added
-* N/A
+
+- N/A
+
 ### Changed
-* N/A
+
+- N/A
+
 ### Fixed
-* N/A
+
+- N/A
 
 ## 🤖 Battle AI 🤖
+
 ### Added
-* N/A
+
+- N/A
+
 ### Changed
-* N/A
+
+- N/A
+
 ### Fixed
-* N/A
+
+- N/A
 
 ## 🧹 Other Cleanup 🧹
+
 ### Added
-* N/A
+
+- N/A
+
 ### Changed
-* N/A
+
+- N/A
+
 ### Fixed
-* N/A
+
+- N/A
 
 ## 🧪 Test Runner 🧪
+
 ### Added
-* N/A
+
+- N/A
+
 ### Changed
-* N/A
+
+- N/A
+
 ### Fixed
-* N/A
+
+- N/A
 
 ## 📦 Pret merges 📦
-* N/A
 
+- N/A
 
 ## New Contributors
-* Tony
+
+- Tony
 
 **Full Changelog**: https://github.com/rh-hideout/pokeemerald-expansion/compare/expansion/1.Y.Z...expansion/1.Y.Z
 
