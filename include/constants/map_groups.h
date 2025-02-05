@@ -1063,6 +1063,9 @@
 #define MAP_BARB_STRONGHOLD_B4F_MURAL           (89 | (50 << 8))
 #define MAP_GOBLIN_VILLAGE_HOUSE_4              (90 | (50 << 8))
 #define MAP_COOKING_GUILD                       (91 | (50 << 8))
+#define MAP_BLACK_KNIGHTS_FORTRESS_1            (92 | (50 << 8))
+#define MAP_BLACK_KNIGHTS_FORTRESS_2            (93 | (50 << 8))
+#define MAP_BLACK_KNIGHTS_FORTRESS_3            (94 | (50 << 8))
 
 #define MAP_GROUPS_COUNT 51
 

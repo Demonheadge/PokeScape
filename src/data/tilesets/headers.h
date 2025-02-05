@@ -1254,3 +1254,14 @@ const struct Tileset gTileset_Lighthouse =
     .metatileAttributes = gMetatileAttributes_Lighthouse,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_IndoorTowns3 =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_IndoorTowns3,
+    .palettes = gTilesetPalettes_IndoorTowns3,
+    .metatiles = gMetatiles_IndoorTowns3,
+    .metatileAttributes = gMetatileAttributes_IndoorTowns3,
+    .callback = NULL,
+};

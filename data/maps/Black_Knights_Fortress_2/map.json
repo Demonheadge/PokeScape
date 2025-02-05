@@ -1,0 +1,28 @@
+{
+  "id": "MAP_BLACK_KNIGHTS_FORTRESS_2",
+  "name": "Black_Knights_Fortress_2",
+  "layout": "LAYOUT_BLACK_KNIGHTS_FORTRESS_2",
+  "music": "MUS_PS_KOUREND_CATACOMBS",
+  "region_map_section": "MAPSEC_ICE_MOUNTAIN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}

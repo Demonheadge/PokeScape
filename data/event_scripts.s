@@ -1532,3 +1532,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Cooking_Guild/scripts.inc"
 
 	.include "data/maps/Varrock_House_10/scripts.inc"
+
+	.include "data/maps/Black_Knights_Fortress_1/scripts.inc"
+
+	.include "data/maps/Black_Knights_Fortress_2/scripts.inc"
+
+	.include "data/maps/Black_Knights_Fortress_3/scripts.inc"

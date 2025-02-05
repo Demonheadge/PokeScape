@@ -8800,6 +8800,36 @@
       "secondary_tileset": "gTileset_IndoorTowns2",
       "border_filepath": "data/layouts/Varrock_House_10/border.bin",
       "blockdata_filepath": "data/layouts/Varrock_House_10/map.bin"
+    },
+    {
+      "id": "LAYOUT_BLACK_KNIGHTS_FORTRESS_1",
+      "name": "Black_Knights_Fortress_1_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns2",
+      "border_filepath": "data/layouts/Black_Knights_Fortress_1/border.bin",
+      "blockdata_filepath": "data/layouts/Black_Knights_Fortress_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_BLACK_KNIGHTS_FORTRESS_2",
+      "name": "Black_Knights_Fortress_2_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns2",
+      "border_filepath": "data/layouts/Black_Knights_Fortress_2/border.bin",
+      "blockdata_filepath": "data/layouts/Black_Knights_Fortress_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_BLACK_KNIGHTS_FORTRESS_3",
+      "name": "Black_Knights_Fortress_3_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_PokeScapeIndoors",
+      "secondary_tileset": "gTileset_IndoorTowns3",
+      "border_filepath": "data/layouts/Black_Knights_Fortress_3/border.bin",
+      "blockdata_filepath": "data/layouts/Black_Knights_Fortress_3/map.bin"
     }
   ]
 }
