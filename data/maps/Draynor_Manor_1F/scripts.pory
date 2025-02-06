@@ -141,14 +141,14 @@ script DraynorManor_HAM_GRUNT {
                 delay(30)
                 applymovement(8, Movement_InteractFACEDOWN)
 			    waitmovement(0)
-                namebox("???")
+                namebox("H.A.M. Grunt")
                 msgbox(format("…{PAUSE 15}…{PAUSE 15}…Did that chair{PAUSE 15}…\p{PAUSE 15}…{PAUSE 15}…{PAUSE 15}just move{PAUSE 15}…?"))
                 hidenamebox
                 closemessage
                 playse(SE_PIN)
                 applymovement(11, MOVEMENT_EXCLAMATIONMARK_FACEPLAYER)
 			    waitmovement(0)
-                namebox("???")
+                namebox("H.A.M. Grunt")
                 msgbox(format("Aaak!"))
                 hidenamebox
                 closemessage

@@ -133,7 +133,7 @@ script HAM_EVENT_Route2_MAIN_1{
     lockall
     playbgm (MUS_PS_ENCOUNTER_HAM, 1)
     applymovement(2, HAM_Movement5_1)
-    namebox("H.A.M. member")
+    namebox("H.A.M. Grunt")
     msgbox(format("Move!\nGet out of my way!"))
     hidenamebox
     closemessage
@@ -148,7 +148,7 @@ script HAM_EVENT_Route2_MAIN_1{
     applymovement(1, HAM_Movement5_2)
     applymovement(2, HAM_Movement5_3)
     waitmovement(0)
-    namebox("H.A.M. member")
+    namebox("H.A.M. Grunt")
     msgbox(format("Ayyyyeeeeek!"))
     hidenamebox
     closemessage

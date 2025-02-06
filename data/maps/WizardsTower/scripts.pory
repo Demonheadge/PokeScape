@@ -85,7 +85,7 @@ script HAM_EVENT_WizardsTower_3{
     lockall
     playSE(SE_PIN)
     applymovement(5,HamMemberSuprised)
-    namebox("H.A.M. member")
+    namebox("H.A.M. Grunt")
     msgbox(format("You'll never catch me!"))
     hidenamebox
     release

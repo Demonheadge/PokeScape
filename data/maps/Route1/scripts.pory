@@ -645,7 +645,7 @@ script HAM_EVENT_Route1_MAIN_1{
     lockall
     playbgm (MUS_PS_ENCOUNTER_HAM, 1)
     applymovement(23, HAM_Movement7_1)
-    namebox("H.A.M. member")
+    namebox("H.A.M. Grunt")
     msgbox(format("Get out of my way!\pI need to get to Port Sarim!"))
     hidenamebox
     closemessage
@@ -661,7 +661,7 @@ script HAM_EVENT_Route1_MAIN_1{
     hidenamebox
     waitmovement(0)
     applymovement(23, HAM_Movement7_1)
-    namebox("H.A.M. member")
+    namebox("H.A.M. Grunt")
     msgbox(format("Urgh!\pWhy does everyone insist on getting in my way!"))
     hidenamebox
     closemessage
@@ -706,7 +706,7 @@ script HAM_EVENT_Route1_TRIGGER_2 {
 script HAM_EVENT_Route1_MAIN_2{
     applymovement(23, HAM_Movement7_5)
     waitmovement(0)
-    namebox("H.A.M. member")
+    namebox("H.A.M. Grunt")
     msgbox(format("Urrrrgh!\pYou are persistent!\pLeave me alone!"))
     hidenamebox
     closemessage
@@ -780,7 +780,7 @@ movement HAM_Movement7_7 {
 
 script ArianeChaseHamEvent7{
     lockall
-    namebox("H.A.M. member")
+    namebox("H.A.M. Grunt")
     msgbox(format("Get out of my way! you're blocking the path!"))
     hidenamebox
     namebox("Ernest")
@@ -790,7 +790,7 @@ script ArianeChaseHamEvent7{
     msgbox(format("Let's just avoid that creepy manor from now on."))
     hidenamebox
     msgbox(format("Kissing noises"))
-    namebox("H.A.M. member")
+    namebox("H.A.M. Grunt")
     msgbox(format("I SAID GET OUT OF THE WAY!!"))
     hidenamebox
     release
@@ -808,7 +808,7 @@ script ArianeChaseHamEvent7{
     namebox("Ariane")
     msgbox(format("Stop thief! There is nowhere left for you to run!"))
     hidenamebox
-    namebox("H.A.M. member")
+    namebox("H.A.M. Grunt")
     msgbox(format("UGH! This dumb couple keeps blocking my way… but there is still the manor!"))
     hidenamebox
     release
