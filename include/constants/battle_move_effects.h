@@ -434,6 +434,8 @@
 #define EFFECT_OVERLOAD                     425
 #define EFFECT_SILVERLIGHT                  426
 #define EFFECT_RANDOM_STAT_DOWN             427
+#define EFFECT_BERSERK                      428
+
 
 
 

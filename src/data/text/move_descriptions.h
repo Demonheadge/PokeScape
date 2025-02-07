@@ -3588,6 +3588,7 @@ static const u8 sSnelmShowoffDescription[] = _(
 static const u8 sEnergyDrainDescription[] = _(
     "Lowers the targets Speed stat and\n"
     "prevents them from escaping or switching.");
+
 static const u8 sOverloadDescription[] = _(
     "Sharply increases stats\n"
     "while sacrificing HP.");
@@ -3607,6 +3608,11 @@ static const u8 sSilverlightDescription[] = _(
 static const u8 sIbanBlastDescription[] = _(
     "A power blast that has a\n"
     "chance to lower a random stat.");
+
+static const u8 sBerserkDescription[] = _(
+    "Raises Atk, Def & Speed stats.\n"
+    "Lowers SpDef.");
+    
 
 #undef BINDING_TURNS
 
@@ -4535,5 +4541,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_EXCALIBUR - 1] = sExcaliburDescription,
     [MOVE_SNELM_SHOWOFF - 1] = sSnelmShowoffDescription,
     [MOVE_ENERGY_DRAIN - 1] = sEnergyDrainDescription,
-    
+    [MOVE_BERSERK - 1] = sBerserkDescription,    
 };

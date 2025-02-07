@@ -417,8 +417,8 @@ static const struct TrainerMon sParty_MITHRILMAN2[] = {
 static const struct TrainerMon sParty_MITHRILMAN3[] = {
     {
     .species = SPECIES_GOLEM_TITAN,
-    .lvl = 32,
-    .nature = NATURE_BOLD,
+    .lvl = 34,
+    .nature = NATURE_HARDY,
     .ability = ABILITY_SOLID_ROCK,
     .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 252, 0),
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -427,7 +427,7 @@ static const struct TrainerMon sParty_MITHRILMAN3[] = {
     {
     .species = SPECIES_MINITRICE,
     .lvl = 34,
-    .nature = NATURE_MODEST,
+    .nature = NATURE_HARDY,
     .ability = ABILITY_PETRIFY,
     .ev = TRAINER_PARTY_EVS(252, 0, 0, 252, 0, 0),
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
@@ -440,11 +440,11 @@ static const struct TrainerMon sParty_MITHRILMAN3[] = {
     .ability = ABILITY_PRANKSTER,
     .ev = TRAINER_PARTY_EVS(56, 100, 0, 100, 0, 252),
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .moves = {MOVE_SHADOW_SNEAK, MOVE_NASTY_PLOT, MOVE_VENGEANCE, MOVE_PSYCHIC_FANGS}
+    .moves = {MOVE_SHADOW_SNEAK, MOVE_CHIP_AWAY, MOVE_SNARL, MOVE_PSYCHIC_FANGS}
     },
     {
     .species = SPECIES_ANIMOUR,
-    .lvl = 34,
+    .lvl = 35,
     .nature = NATURE_SERIOUS,
     .ability = ABILITY_STURDY,
     .ev = TRAINER_PARTY_EVS(0, 252, 4, 0, 0, 252),
@@ -452,13 +452,13 @@ static const struct TrainerMon sParty_MITHRILMAN3[] = {
     .moves = {MOVE_SACRED_SWORD, MOVE_SHADOW_CLAW, MOVE_WILL_O_WISP, MOVE_IRON_HEAD}
     },
     {
-    .species = SPECIES_ZAROBIRD,
-    .lvl = 36,
+    .species = SPECIES_ZARAVEN,
+    .lvl = 38,
     .nature = NATURE_NAIVE,
     .ability = ABILITY_EMPTY_LORD,
     .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 0, 252),
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-    .moves = {MOVE_ZAROS_BECKON, MOVE_PSYCHIC, MOVE_CALM_MIND, MOVE_PLUCK}
+    .moves = {MOVE_BADDY_BAD, MOVE_PSYCHIC, MOVE_WILL_O_WISP, MOVE_PLUCK}
     },
 };
 
@@ -3947,30 +3947,30 @@ static const struct TrainerMon sParty_FALADOR_GYM_AMIKVARZE[] = {
     {
     .ability = ABILITY_DRIZZLE,
     .nature = NATURE_SASSY,
-    .lvl = 28,
+    .lvl = 30,
     .species = SPECIES_BELTFISH,
-    .moves = {MOVE_AQUA_JET, MOVE_MUD_BOMB, MOVE_WATER_PULSE, MOVE_CHARGE_BEAM}
+    .moves = {MOVE_AQUA_JET, MOVE_MUD_BOMB, MOVE_U_TURN, MOVE_CHARGE_BEAM}
     },
     {
     .ability = ABILITY_UNAWARE,
     .nature = NATURE_QUIRKY,
-    .lvl = 29,
+    .lvl = 33,
     .species = SPECIES_MUDSKIPPER,
-    .moves = {MOVE_RAIN_DANCE, MOVE_MUD_SHOT, MOVE_WHIRLPOOL, MOVE_AQUA_JET}
+    .moves = {MOVE_RAIN_DANCE, MOVE_MUD_BOMB, MOVE_MUD_SLAP, MOVE_AQUA_JET}
     },
     {
-    .ability = ABILITY_SWIFT_SWIM,
-    .nature = NATURE_MODEST,
-    .lvl = 30,
-    .species = SPECIES_TROUT_NORMAL_FORM,
-    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_PULSE, MOVE_U_TURN, MOVE_ICE_BEAM}
+    .ability = ABILITY_SHARPNESS,
+    .nature = NATURE_ADAMANT,
+    .lvl = 32,
+    .species = SPECIES_SWORDFISH,
+    .moves = {MOVE_SWORD_STRIKE, MOVE_RAZOR_SHELL, MOVE_SACRED_SWORD, MOVE_AERIAL_ACE}
     },
     {
     .ability = ABILITY_PINCERS,
     .nature = NATURE_JOLLY,
-    .lvl = 32,
+    .lvl = 34,
     .species = SPECIES_GIANT_CRAB_RUMPUMPED_FORM,
-    .moves = {MOVE_RAZOR_SHELL, MOVE_POISON_JAB, MOVE_TEETER_DANCE, MOVE_AERIAL_ACE}
+    .moves = {MOVE_RAZOR_SHELL, MOVE_POISON_JAB, MOVE_TEETER_DANCE, MOVE_X_SCISSOR}
     }
 };
 
@@ -4050,39 +4050,49 @@ static const struct TrainerMon sParty_ALKHARID_GYM_PRINCE_ALI[] = {
 //Gunthor        #GYM - Barbarian Village
 static const struct TrainerMon sParty_BARBARIAN_GYM_GUNTHOR[] = {
     {
-    //.ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
-    .ability = ABILITY_ANGER_POINT,
-    .lvl = 40,
+    //.ev = TRAINER_PARTY_EVS(4, 252, 0, 0, 0, 252),
+    //.iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
+    .ability = ABILITY_GRIM_NEIGH,
+    .lvl = 42,
     .species = SPECIES_UNICORN_ANGRY_FORM,
-    .moves = {MOVE_MEGAHORN, MOVE_RAGE, MOVE_CLOSE_COMBAT, MOVE_RECOVER}
+    .nature = NATURE_LONELY,
+    .moves = {MOVE_MEGAHORN, MOVE_BERSERK, MOVE_CLOSE_COMBAT, MOVE_SWORD_STRIKE}
     },
     {
-    //.ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
+    //.ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
+    //.iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
     .ability = ABILITY_STRONG_JAW,
-    .lvl = 41,
+    .lvl = 44,
     .species = SPECIES_ANGRY_RAT,
-    .moves = {MOVE_VENGEANCE, MOVE_POWER_TRIP, MOVE_HYPER_FANG, MOVE_BULK_UP}
+    .nature = NATURE_HASTY,
+    .moves = {MOVE_CRUNCH, MOVE_BERSERK, MOVE_HEAD_SMASH, MOVE_CLOSE_COMBAT}
     },
     {
-    //.ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
-    .ability = ABILITY_VITAL_SPIRIT,
+    //.ev = TRAINER_PARTY_EVS(0, 252, 4, 0, 0, 252),
+    //.iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
+    .ability = ABILITY_GUTS,
     .lvl = 41,
     .species = SPECIES_CAT_WILY_FORM,
-    .moves = {MOVE_SLICE_DICE, MOVE_REVENGE, MOVE_ENDURE, MOVE_BULK_UP}
+    .nature = NATURE_NAUGHTY,
+    .moves = {MOVE_SLICE_DICE, MOVE_BERSERK, MOVE_CLOSE_COMBAT, MOVE_NIGHT_SLASH}
     },
     {
-    //.ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
+    //.ev = TRAINER_PARTY_EVS(252, 252, 0, 0, 0, 4),
+    //.iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
     .ability = ABILITY_FLUFFY,
     .lvl = 42,
-    .species = SPECIES_SOURHOG,
-    .moves = {MOVE_PAIN_SPLIT, MOVE_SUPERPOWER, MOVE_ODOR_SLEUTH, MOVE_BULK_UP}
+    .species = SPECIES_BEAR_ANGRY_FORM,
+    .nature = NATURE_IMPISH,
+    .moves = {MOVE_BERSERK, MOVE_SUPERPOWER, MOVE_THRASH, MOVE_FINAL_GAMBIT}
     },
     {
-    //.ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
-    .ability = ABILITY_ANGER_POINT,
+    //.ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
+    //.iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 0, 31),
+    .ability = ABILITY_INTIMIDATE,
     .lvl = 42,
-    .species = SPECIES_BEAR_GRIZZLY_FORM,
-    .moves = {MOVE_SLICE_DICE, MOVE_CRUNCH, MOVE_YAWN, MOVE_BULK_UP}
+    .species = SPECIES_KENDALL,
+    .nature = NATURE_NAIVE,
+    .moves = {MOVE_SLASH, MOVE_BERSERK, MOVE_DRAIN_PUNCH, MOVE_VOLT_TACKLE}
     }
 };
 
