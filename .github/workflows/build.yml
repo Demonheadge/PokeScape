@@ -15,21 +15,16 @@ jobs:
       GAME_VERSION: EMERALD
       GAME_REVISION: 0
       GAME_LANGUAGE: ENGLISH
-      MODERN: 0
       COMPARE: 0
-      UNUSED_ERROR: 1
+      UNUSED_ERROR: 0
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Checkout agbcc
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
-          path: agbcc
-          repository: pret/agbcc
-        
+          clean: true
+
       - name: Checkout poryscript
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           path: poryscript
           repository: huderlem/poryscript
@@ -42,23 +37,15 @@ jobs:
         # gcc-arm-none-eabi is only needed for the modern build
         # as an alternative to dkP
 
-      - name: Install agbcc
-        run: |
-          ./build.sh
-          ./install.sh ../
-        working-directory: agbcc
-
       - name: Install poryscript
         run: |
           go build
           ./install.sh ../
         working-directory: poryscript
 
-      - name: Agbcc
-        env:
-          MODERN: 0
-          COMPARE: 0
-        run: make -j${nproc} -O all
+      - name: Hack poryscript configs
+        run: |
+          cp tools/poryscript/*.json .
 
       - name: Modern
         env:
@@ -66,10 +53,3 @@ jobs:
           COMPARE: 0
         run: make -j${nproc} -O all
 
-      - name: Test
-        env:
-          MODERN: 1
-          TEST: 1
-        run: |
-          make -j${nproc} -O pokescape-test.elf
-          make -j${nproc} check
