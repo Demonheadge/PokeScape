@@ -1109,7 +1109,7 @@ ErnestAndVeronica_Text_13:
 	.string "I don't want to go.$"
 
 HAM_EVENT_Route1_MAIN_1_Text_0:
-	.string "H.A.M. member$"
+	.string "H.A.M. Grunt$"
 
 HAM_EVENT_Route1_MAIN_1_Text_1:
 	.string "Get out of my way!\p"

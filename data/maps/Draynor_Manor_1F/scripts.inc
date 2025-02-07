@@ -1182,7 +1182,7 @@ DraynorManor_HAM_GRUNT_Text_5:
 	.string "Quick lets give chase!$"
 
 DraynorManor_HAM_GRUNT_Text_6:
-	.string "???$"
+	.string "H.A.M. Grunt$"
 
 DraynorManor_HAM_GRUNT_Text_7:
 	.string "…{PAUSE 15}…{PAUSE 15}…Did that chair{PAUSE 15}…\p"

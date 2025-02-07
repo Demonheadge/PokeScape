@@ -534,7 +534,7 @@ HAM_EVENT_WizardsTower_4_Text_1:
 	.string "I wonder if he went this way?$"
 
 HAM_EVENT_Route2_MAIN_1_Text_0:
-	.string "H.A.M. member$"
+	.string "H.A.M. Grunt$"
 
 HAM_EVENT_Route2_MAIN_1_Text_1:
 	.string "Move!\n"

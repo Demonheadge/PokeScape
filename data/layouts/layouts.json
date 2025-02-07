@@ -8804,10 +8804,10 @@
     {
       "id": "LAYOUT_BLACK_KNIGHTS_FORTRESS_1",
       "name": "Black_Knights_Fortress_1_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 80,
+      "height": 80,
       "primary_tileset": "gTileset_PokeScapeIndoors",
-      "secondary_tileset": "gTileset_IndoorTowns2",
+      "secondary_tileset": "gTileset_IndoorTowns3",
       "border_filepath": "data/layouts/Black_Knights_Fortress_1/border.bin",
       "blockdata_filepath": "data/layouts/Black_Knights_Fortress_1/map.bin"
     },
