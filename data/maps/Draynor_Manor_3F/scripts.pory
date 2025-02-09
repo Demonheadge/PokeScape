@@ -352,11 +352,11 @@ script NPC_DraynorManor_Oddenstein{
 			namebox ("Oddenstein")
 			msgbox(format("Have you found the parts?"), MSGBOX_YESNO)
 			if (var(VAR_RESULT)){
-				namebox ("Oddenstein")
 				msgbox(format("Let me check…"))
 				call(CooksAssistant_Check_OilCan)
 				call(CooksAssistant_Check_PressureGauge)
 				call(CooksAssistant_Check_RubberTube)
+				namebox ("Oddenstein")
 				msgbox(format("It looks like you have everything!\pAllow me to take those off your hands."))
 				closemessage
 				hidenamebox

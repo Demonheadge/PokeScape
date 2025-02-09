@@ -243,6 +243,18 @@ NPC_PIG::
 	end
 
 
+NPC_CHICKEN::
+	lock
+	faceplayer
+	namebox NPC_CHICKEN_Text_0
+	playmoncry SPECIES_CHICKEN_NORMAL_FORM, 0
+	msgbox NPC_CHICKEN_Text_1
+	waitmoncry
+	hidenamebox
+	release
+	end
+
+
 SIGN_ROUTE1_1::
 	lock
 	msgbox SIGN_ROUTE1_1_Text_0
@@ -893,6 +905,12 @@ NPC_PIG_Text_0:
 NPC_PIG_Text_1:
 	.string "OINK!$"
 
+NPC_CHICKEN_Text_0:
+	.string "Chicken$"
+
+NPC_CHICKEN_Text_1:
+	.string "Bwak Bwak!$"
+
 SIGN_ROUTE1_1_Text_0:
 	.string "Fred's Farm.$"
 
@@ -999,7 +1017,7 @@ Wartfoot_Route1_Battle_Text_0:
 	.string "Brown armour best!$"
 
 Wartfoot_Route1_Battle_Text_1:
-	.string "Um… My brown armour in the wash.$"
+	.string "Um… Wartfoot brown armour in the wash.$"
 
 Wartfoot_Route1_Battle_Text_2:
 	.string "Me like brown armour, but now it dirty.$"

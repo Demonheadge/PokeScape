@@ -218,7 +218,7 @@ POTTERINGTON_FARM_Saradomin::
 	faceplayer
 	goto_if_unset FLAG_RECEIVED_SARADOMIN_EGG, POTTERINGTON_FARM_Saradomin_2
 	namebox POTTERINGTON_FARM_Saradomin_Text_4
-	msgbox POTTERINGTON_FARM_Zamorak_Text_5
+	msgbox POTTERINGTON_FARM_Saradomin_Text_5
 POTTERINGTON_FARM_Saradomin_1:
 	hidenamebox
 	closemessage
@@ -276,16 +276,19 @@ POTTERINGTON_FARM_Guthix_2:
 POTTERINGTON_FARM_Gonthorian::
 	lock
 	faceplayer
-	goto_if_unset FLAG_RECEIVED_BANDLING_EGG, POTTERINGTON_FARM_Gonthorian_2
-	namebox POTTERINGTON_FARM_Gonthorian_Text_0
-	msgbox POTTERINGTON_FARM_Gonthorian_Text_4
-POTTERINGTON_FARM_Gonthorian_1:
-	hidenamebox
-	closemessage
+	goto_if_unset FLAG_RECEIVED_BANDLING_EGG, POTTERINGTON_FARM_Gonthorian_1
+	random 6
+	switch VAR_RESULT
+	case 0, POTTERINGTON_FARM_Gonthorian_6
+	case 1, POTTERINGTON_FARM_Gonthorian_7
+	case 2, POTTERINGTON_FARM_Gonthorian_8
+	case 3, POTTERINGTON_FARM_Gonthorian_9
+	case 4, POTTERINGTON_FARM_Gonthorian_10
+	case 5, POTTERINGTON_FARM_Gonthorian_11
 	release
 	end
 
-POTTERINGTON_FARM_Gonthorian_2:
+POTTERINGTON_FARM_Gonthorian_1:
 	namebox POTTERINGTON_FARM_Gonthorian_Text_0
 	msgbox POTTERINGTON_FARM_Gonthorian_Text_1
 	closemessage
@@ -300,7 +303,61 @@ POTTERINGTON_FARM_Gonthorian_2:
 	giveegg SPECIES_BANDLING
 	namebox POTTERINGTON_FARM_Gonthorian_Text_0
 	msgbox POTTERINGTON_FARM_Gonthorian_Text_3
-	goto POTTERINGTON_FARM_Gonthorian_1
+	return
+
+POTTERINGTON_FARM_Gonthorian_6:
+	lock
+	faceplayer
+	namebox POTTERINGTON_FARM_Gonthorian_Text_0
+	msgbox POTTERINGTON_FARM_Gonthorian_Text_4
+	hidenamebox
+	release
+	end
+
+POTTERINGTON_FARM_Gonthorian_7:
+	lock
+	faceplayer
+	namebox POTTERINGTON_FARM_Gonthorian_Text_0
+	msgbox POTTERINGTON_FARM_Gonthorian_Text_5
+	hidenamebox
+	release
+	end
+
+POTTERINGTON_FARM_Gonthorian_8:
+	lock
+	faceplayer
+	namebox POTTERINGTON_FARM_Gonthorian_Text_0
+	msgbox POTTERINGTON_FARM_Gonthorian_Text_6
+	hidenamebox
+	release
+	end
+
+POTTERINGTON_FARM_Gonthorian_9:
+	lock
+	faceplayer
+	namebox POTTERINGTON_FARM_Gonthorian_Text_0
+	msgbox POTTERINGTON_FARM_Gonthorian_Text_7
+	hidenamebox
+	release
+	end
+
+POTTERINGTON_FARM_Gonthorian_10:
+	lock
+	faceplayer
+	namebox POTTERINGTON_FARM_Gonthorian_Text_0
+	msgbox POTTERINGTON_FARM_Gonthorian_Text_8
+	hidenamebox
+	release
+	end
+
+POTTERINGTON_FARM_Gonthorian_11:
+	lock
+	faceplayer
+	namebox POTTERINGTON_FARM_Gonthorian_Text_0
+	msgbox POTTERINGTON_FARM_Gonthorian_Text_9
+	hidenamebox
+	release
+	end
 
 
 POTTERINGTON_FARM_Seren_Spirit::
@@ -495,7 +552,8 @@ POTTERINGTON_FARM_Zamorak_Text_4:
 	.string "Zamorak.$"
 
 POTTERINGTON_FARM_Zamorak_Text_5:
-	.string "Cupholder$"
+	.string "I hope you find strength through\n"
+	.string "chaos.$"
 
 POTTERINGTON_FARM_Saradomin_Text_0:
 	.string "Saradomin$"
@@ -512,6 +570,10 @@ POTTERINGTON_FARM_Saradomin_Text_3:
 
 POTTERINGTON_FARM_Saradomin_Text_4:
 	.string "Saradomin.$"
+
+POTTERINGTON_FARM_Saradomin_Text_5:
+	.string "May that egg help guide you on your\n"
+	.string "path.$"
 
 POTTERINGTON_FARM_Guthix_Text_0:
 	.string "Guthix$"
@@ -544,7 +606,44 @@ POTTERINGTON_FARM_Gonthorian_Text_3:
 	.string "Look after it!$"
 
 POTTERINGTON_FARM_Gonthorian_Text_4:
-	.string "CUPHOLDER$"
+	.string "It is I, Gonthorian!\p"
+	.string "I'm the slayer of dragons!\p"
+	.string "The caster of ancient magic!\p"
+	.string "Seducer of woman!\p"
+	.string "And eater of goldfish crackers.$"
+
+POTTERINGTON_FARM_Gonthorian_Text_5:
+	.string "It is I, Gonthorian!\p"
+	.string "Killer of demons!\p"
+	.string "Completer of really hard quests!\p"
+	.string "Lover of Will Smith movies!$"
+
+POTTERINGTON_FARM_Gonthorian_Text_6:
+	.string "It is I, Gonthorian!\p"
+	.string "Destroyer of beasts!\p"
+	.string "Fisher of trout!\p"
+	.string "Cooker of...$"
+
+POTTERINGTON_FARM_Gonthorian_Text_7:
+	.string "It is I, Gonthorian!\p"
+	.string "Annihilator of all that is evil!\p"
+	.string "Surfer of really rad waves at the\n"
+	.string "beach!\p"
+	.string "Fixer of unanimous household\n"
+	.string "appliances!$"
+
+POTTERINGTON_FARM_Gonthorian_Text_8:
+	.string "It is I, Gonthorian!\p"
+	.string "Conqueror of kingdoms!\p"
+	.string "Tweeter of what I am doing!\p"
+	.string "Enjoyer of the show King of Queens.$"
+
+POTTERINGTON_FARM_Gonthorian_Text_9:
+	.string "It is I, Gonthorian!\p"
+	.string "Protector of Falador!!\p"
+	.string "Keeper of wisdom!\p"
+	.string "Creator of Kraft Dinner\p"
+	.string "...On a regular basis$"
 
 POTTERINGTON_FARM_Seren_Spirit_Text_0:
 	.string "The crystal shines brightly.\p"

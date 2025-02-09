@@ -146,6 +146,7 @@ BATTLE_LUMBRIDGEFOREST_WOODCUTTER1::
 
 BATTLE_LUMBRIDGEFOREST_TRAINER_1::
 	trainerbattle_single TRAINER_LUMBRIDGEFOREST_TRAINER_1, BATTLE_LUMBRIDGEFOREST_TRAINER_1_Text_0, BATTLE_LUMBRIDGEFOREST_TRAINER_1_Text_1
+	namebox BATTLE_LUMBRIDGEFOREST_TRAINER_1_Text_2
 	msgbox BATTLE_LUMBRIDGEFOREST_TRAINER_1_Text_1
 	hidenamebox
 	release
@@ -236,7 +237,7 @@ NPC_LUMBRIDGE_FOREST_3_Text_1:
 	.string "Hahaha you dare talk to a mighty wizard\n"
 	.string "such as myself?\p"
 	.string "I bet you can't even cast windstrike\n"
-	.string "yet amateur!$"
+	.string "yet noob!$"
 
 NPC_LUMBRIDGE_FOREST_4_Text_0:
 	.string "Archer$"
@@ -291,6 +292,9 @@ BATTLE_LUMBRIDGEFOREST_TRAINER_1_Text_0:
 BATTLE_LUMBRIDGEFOREST_TRAINER_1_Text_1:
 	.string "I would jump for joy, except I seem to\n"
 	.string "have lost this battle.$"
+
+BATTLE_LUMBRIDGEFOREST_TRAINER_1_Text_2:
+	.string "Mugger$"
 
 BATTLE_LUMBRIDGEFOREST_TRAINER_2_Text_0:
 	.string "Me and me friend destroyed the path\n"

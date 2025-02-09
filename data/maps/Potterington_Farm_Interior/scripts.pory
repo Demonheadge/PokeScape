@@ -398,7 +398,7 @@ script POTTERINGTON_FARM_Gonthorian
                 lock
     		    faceplayer
 		        namebox("Gonthorian")
-                msgbox(format("It is I, Gonthorian!\pConqueror of kingdoms!\pTweeter of what I am doing!\pEnjoyer of the show King of Queens.))
+                msgbox(format("It is I, Gonthorian!\pConqueror of kingdoms!\pTweeter of what I am doing!\pEnjoyer of the show King of Queens."))
                 hidenamebox
 		        release
 		        end

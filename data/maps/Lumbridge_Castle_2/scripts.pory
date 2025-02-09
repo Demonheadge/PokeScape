@@ -702,7 +702,7 @@ script QUEST_Cooks_Assistant_STATE{
 				startquest (QUEST_COOKS_ASSISTANT)
 				namebox ("Cook")
 				msgbox(format("Oh, thank you, thank you!\pI need an egg, some milk, and some flour.\pFor the eggs you should check out the chicken farms, around Lumbridge.\pYou can get some milk from the Cow Field, east of Lumbridge.\pYou should ask someone at the Windmill if they can give you some flour, north of Lumbridge."))
-				msgbox(format("Oh...\nBefore you go."))
+				msgbox(format("Oh…\nBefore you go."))
 				hidenamebox
 				giveitem (ITEM_MAP)
 				namebox ("Cook")

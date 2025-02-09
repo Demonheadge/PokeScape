@@ -545,6 +545,7 @@ NPC_DraynorManor_Oddenstein_12:
 	call CooksAssistant_Check_OilCan
 	call CooksAssistant_Check_PressureGauge
 	call CooksAssistant_Check_RubberTube
+	namebox NPC_DraynorManor_Chicken_1_Text_2
 	msgbox NPC_DraynorManor_Oddenstein_Text_10
 	closemessage
 	hidenamebox
