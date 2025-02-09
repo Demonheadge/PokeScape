@@ -1114,7 +1114,7 @@
 #define FLAG_ITEM_ROUTE1_CHOC_SUNDAY                                0x41C
 #define FLAG_ITEM_ROUTE10_TM38                                      0x41D
 #define FLAG_ITEM_ROUTE10_PINEAPPLE_PUNCH                           0x41E
-#define FLAG_ITEM_ROUTE3_BREAD                                      0x41F
+#define FLAG_ITEM_ROUTE3_CORN                                       0x41F
 #define FLAG_ITEM_WIZARDSTOWER_AIR_RUNE_2                           0x420
 #define FLAG_ITEM_ROUTE4_FLAX                                       0x421
 #define FLAG_ITEM_PORTSARIM_BLUEBERRY_SPECIAL                       0x422

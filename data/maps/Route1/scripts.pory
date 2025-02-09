@@ -407,7 +407,7 @@ script ROUTE1_FarmerFred
 
 script Wartfoot_Route1_Battle
 {
-    trainerbattle_single(TRAINER_GOBLIN_1_ROUTE1, "Brown armour best!","Um… My brown armour in the wash.")
+    trainerbattle_single(TRAINER_GOBLIN_1_ROUTE1, "Brown armour best!","Um… Wartfoot brown armour in the wash.")
     //namebox ("WartFoot")
     msgbox("Me like brown armour, but now it dirty.")
     hidenamebox

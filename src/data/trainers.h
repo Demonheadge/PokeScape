@@ -868,7 +868,7 @@ const struct Trainer gTrainers[] = {
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,
-        .party = TRAINER_PARTY(sParty_ROUTE5_CAPTIANTOCK),
+        .party = TRAINER_PARTY(sParty_ROUTE5_CAPTAINTOCK),
     },
 
     [TRAINER_ROUTE5_WOODCUTTER] =
@@ -2440,7 +2440,7 @@ const struct Trainer gTrainers[] = {
         .trainerClass = TRAINER_CLASS_MUGGER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
         .trainerPic = TRAINER_PIC_mugger,
-        .trainerName = _("Cr1mAnEl"),
+        .trainerName = _("Leo"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE,

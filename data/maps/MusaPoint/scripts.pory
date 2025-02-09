@@ -620,7 +620,10 @@ script TRIGGER_WISEOLDMAN_RIVAL_MUSAPOINT {
 	removeobject(OBJ_EVENT_ID_WISE_OLD_MAN)
 	setflag(FLAG_TEMP_1F)
 	closedoor(18,32)
-	setvar(VAR_WISE_OLD_MAN_RIVAL, 20) //Karmaja event completed.
+	if (var(VAR_WISE_OLD_MAN_RIVAL) == 10) {
+		addvar(VAR_GAMEMODE_LEVEL_CAP, 2)
+	}
+	setvar(VAR_WISE_OLD_MAN_RIVAL, 20) //Karamja event completed.
 	setvar(VAR_TEMP_F, 0)
 	savebgm(MUS_DUMMY)
 	fadedefaultbgm

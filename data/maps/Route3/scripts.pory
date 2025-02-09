@@ -11,9 +11,9 @@ mapscripts Route3_MapScripts{
 
 //ITEMS
 
-script ITEM_ROUTE3_BREAD
+script ITEM_ROUTE3_CORN
 {
-    finditem(ITEM_BREAD)
+    finditem(ITEM_CORN)
     end
 }
 
