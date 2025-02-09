@@ -77,7 +77,7 @@
 #define	MAPSEC_LUMBRIDGE_SWAMP_CAVES   	0x49
 #define	MAPSEC_BAY_OF_SARIM   	        0x4A
 #define	MAPSEC_MUDSKIPPER_SOUND	        0x4B
-#define	MAPSEC_DAEMONHEIM	            0x4C	
+#define	MAPSEC_DAEMONHEIM	            0x4C
 
 //below are broken, place above if wanting to add new ones.
 #define	MAPSEC_MISTHALIN	            0x4D

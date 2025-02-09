@@ -290,7 +290,18 @@ script NPC_PIG
 	end
 }
 
-
+script NPC_CHICKEN
+{
+	lock
+	faceplayer
+    namebox ("Chicken")
+    playmoncry(SPECIES_CHICKEN_NORMAL_FORM, 0)
+	msgbox(format("Bwak Bwak!"))
+    waitmoncry
+    hidenamebox
+	release
+	end
+}
 
 
 script SIGN_ROUTE1_1

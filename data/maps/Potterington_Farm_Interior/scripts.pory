@@ -265,7 +265,7 @@ script POTTERINGTON_FARM_Zamorak
     }
     else {
         namebox ("Zamorak.")
-        msgbox(format("Cupholder"))
+        msgbox(format("I hope you find strength through chaos."))
     }
     hidenamebox
     closemessage
@@ -297,7 +297,7 @@ script POTTERINGTON_FARM_Saradomin
     }
     else {
         namebox ("Saradomin.")
-        msgbox(format("Cupholder"))
+        msgbox(format("May that egg help guide you on your path."))
     }
     hidenamebox
     closemessage
@@ -360,16 +360,61 @@ script POTTERINGTON_FARM_Gonthorian
         msgbox(format("Look after it!"))
     }
     else {
-        namebox ("Gonthorian")
-        msgbox(format("CUPHOLDER"))
-    }
-    hidenamebox
-    closemessage
+        random(6)
+        switch (var(VAR_RESULT)) {
+            case 0: 
+                lock
+    		    faceplayer
+		        namebox("Gonthorian")
+                msgbox(format("It is I, Gonthorian!\pI'm the slayer of dragons!\pThe caster of ancient magic!\pSeducer of woman!\pAnd eater of goldfish crackers."))
+                hidenamebox
+		        release
+		        end
+            case 1: 
+                lock
+    		    faceplayer
+		        namebox("Gonthorian")
+                msgbox(format("It is I, Gonthorian!\pKiller of demons!\pCompleter of really hard quests!\pLover of Will Smith movies!"))
+                hidenamebox
+		        release
+		        end
+             case 2: 
+                lock
+    		    faceplayer
+		        namebox("Gonthorian")
+                msgbox(format("It is I, Gonthorian!\pDestroyer of beasts!\pFisher of trout!\pCooker of..."))
+                hidenamebox
+		        release
+		        end
+            case 3: 
+                lock
+    		    faceplayer
+		        namebox("Gonthorian")
+                msgbox(format("It is I, Gonthorian!\pAnnihilator of all that is evil!\pSurfer of really rad waves at the beach!\pFixer of unanimous household appliances!"))
+                hidenamebox
+		        release
+		        end
+            case 4: 
+                lock
+    		    faceplayer
+		        namebox("Gonthorian")
+                msgbox(format("It is I, Gonthorian!\pConqueror of kingdoms!\pTweeter of what I am doing!\pEnjoyer of the show King of Queens.))
+                hidenamebox
+		        release
+		        end
+            case 5: 
+                lock
+    		    faceplayer
+		        namebox("Gonthorian")
+                msgbox(format("It is I, Gonthorian!\pProtector of Falador!!\pKeeper of wisdom!\pCreator of Kraft Dinner\p...On a regular basis"))
+                hidenamebox
+		        release
+		        end
+        }
 	release
 	end
+    }
 }
-
-
 
 script POTTERINGTON_FARM_Seren_Spirit
 {
