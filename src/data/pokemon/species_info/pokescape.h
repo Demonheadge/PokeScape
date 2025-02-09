@@ -13777,7 +13777,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zygomite, 0),
 		.footprint = gMonFootprint_Zygomite,
 		LEARNSETS(Zygomite),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 12,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 28, SPECIES_ZYGOMITE_GLOOMSHROOM},
@@ -43338,7 +43338,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jadinko_Common_Form, 1),
 		.footprint = gMonFootprint_Jadinko_Common_Form,
 		LEARNSETS(Jadinko_Common_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 8,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 35, SPECIES_JADINKO_DRACONIC},
@@ -46560,7 +46560,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zygomite_Magical_Form, 2),
 		.footprint = gMonFootprint_Zygomite_Magical_Form,
 		LEARNSETS(Zygomite_Magical_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
 	},
 
@@ -46608,7 +46608,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zygomite_Zanarian_Form, 2),
 		.footprint = gMonFootprint_Zygomite_Zanarian_Form,
 		LEARNSETS(Zygomite_Zanarian_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 4,
 		.enemyMonElevation = 0,
 	},
 
@@ -46657,7 +46657,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zygomite_Arcspore_Form, 2),
 		.footprint = gMonFootprint_Zygomite_Arcspore_Form,
 		LEARNSETS(Zygomite_Arcspore_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 5,
 		.enemyMonElevation = 0,
 	},
 
@@ -46705,7 +46705,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zygomite_Daemoncap_Form, 2),
 		.footprint = gMonFootprint_Zygomite_Daemoncap_Form,
 		LEARNSETS(Zygomite_Daemoncap_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 8,
 		.enemyMonElevation = 0,
 	},
 
@@ -46754,7 +46754,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zygomite_Ancient_Form, 1),
 		.footprint = gMonFootprint_Zygomite_Ancient_Form,
 		LEARNSETS(Zygomite_Ancient_Form),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 8,
 		.enemyMonElevation = 0,
 	},
 
@@ -51586,7 +51586,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jadinko_Ferocious, 0),
 		.footprint = gMonFootprint_Jadinko_Ferocious,
 		LEARNSETS(Jadinko_Ferocious),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
 	},
 
@@ -51635,7 +51635,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jadinko_Draconic, 0),
 		.footprint = gMonFootprint_Jadinko_Draconic,
 		LEARNSETS(Jadinko_Draconic),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 5,
 		.enemyMonElevation = 0,
 	},
 
@@ -51734,7 +51734,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jadinko_Shadow, 2),
 		.footprint = gMonFootprint_Jadinko_Shadow,
 		LEARNSETS(Jadinko_Shadow),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 7,
 		.enemyMonElevation = 0,
 	},
 
@@ -51783,7 +51783,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jadinko_Guthix, 1),
 		.footprint = gMonFootprint_Jadinko_Guthix,
 		LEARNSETS(Jadinko_Guthix),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
 	},
 
@@ -51832,7 +51832,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jadinko_Zamorak, 0),
 		.footprint = gMonFootprint_Jadinko_Zamorak,
 		LEARNSETS(Jadinko_Zamorak),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 2,
 		.enemyMonElevation = 0,
 	},
 
@@ -51882,7 +51882,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Jadinko_Saradomin, 0),
 		.footprint = gMonFootprint_Jadinko_Saradomin,
 		LEARNSETS(Jadinko_Saradomin),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 5,
 		.enemyMonElevation = 0,
 	},
 
@@ -51986,7 +51986,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Flesh_Crawler, 2),
 		.footprint = gMonFootprint_Flesh_Crawler,
 		LEARNSETS(Flesh_Crawler),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 9,
 		.enemyMonElevation = 0,
 	},
 
@@ -52035,7 +52035,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zygomite_OSRS, 1),
 		.footprint = gMonFootprint_Zygomite_OSRS,
 		LEARNSETS(Zygomite_OSRS),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 6,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 41, SPECIES_ZYGOMITE_RSHD_MUTATED},
@@ -52187,7 +52187,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Zygomite_Gloomshroom, 0),
 		.footprint = gMonFootprint_Zygomite_Gloomshroom,
 		LEARNSETS(Zygomite_Gloomshroom),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 8,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL_DAY, 41, SPECIES_ZYGOMITE_MAGICAL_FORM},
@@ -52297,7 +52297,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rockslug_RSHD, 1),
 		.footprint = gMonFootprint_Rockslug_RSHD,
 		LEARNSETS(Rockslug_RSHD),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 13,
 		.enemyMonElevation = 0,
 		.evolutions = EVOLUTION(
 			{EVO_LEVEL, 32, SPECIES_ROCKSLUG_OSRS}
@@ -52349,7 +52349,7 @@ const struct SpeciesInfo gSpeciesInfoPokescape[] =
 		ICON(Rockslug_OSRS, 2),
 		.footprint = gMonFootprint_Rockslug_OSRS,
 		LEARNSETS(Rockslug_OSRS),
-		.frontPicYOffset = 0,
+		.frontPicYOffset = 10,
 		.enemyMonElevation = 0,
 	},
 
