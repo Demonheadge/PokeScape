@@ -141,7 +141,13 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 46,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_BLACK_KNIGHTS_FORTRESS_1",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
 
@@ -149,8 +155,8 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 46,
-      "y": 5,
+      "x": 55,
+      "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SIGN_ICE_MOUNTAIN_DOOR"

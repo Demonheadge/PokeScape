@@ -739,7 +739,7 @@ static void InheritPokeball(struct Pokemon *egg, struct BoxPokemon *father, stru
     {
         if (fatherSpecies == motherSpecies)
             inheritBall = (Random() % 2 == 0 ? motherBall : fatherBall);
-        else if (motherSpecies != SPECIES_DITTO)
+        else if (motherSpecies != SPECIES_DITTO || motherSpecies != SPECIES_CABBAGE)
             inheritBall = motherBall;
         else
             inheritBall = fatherBall;
@@ -758,7 +758,7 @@ static void InheritAbility(struct Pokemon *egg, struct BoxPokemon *father, struc
     u8 motherSpecies = GetBoxMonData(mother, MON_DATA_SPECIES);
     u8 inheritAbility = motherAbility;
 
-    if (motherSpecies == SPECIES_DITTO)
+    if (motherSpecies == SPECIES_DITTO || motherSpecies == SPECIES_CABBAGE)
     {
         if (P_ABILITY_INHERITANCE >= GEN_6)
             inheritAbility = fatherAbility;
@@ -1086,7 +1086,7 @@ static u16 DetermineEggSpeciesAndParentSlots(struct DayCare *daycare, u8 *parent
     for (i = 0; i < DAYCARE_MON_COUNT; i++)
     {
         species[i] = GetBoxMonData(&daycare->mons[i].mon, MON_DATA_SPECIES);
-        if (species[i] == SPECIES_DITTO)
+        if (species[i] == SPECIES_DITTO || species[i] == SPECIES_CABBAGE)
         {
             parentSlots[0] = i ^ 1;
             parentSlots[1] = i;
