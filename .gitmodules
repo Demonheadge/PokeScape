@@ -4,3 +4,6 @@
 [submodule "tools/pokeemerald"]
 	path = tools/pokeemerald
 	url = https://github.com/pret/pokeemerald.git
+[submodule "tools/poryscript"]
+	path = tools/poryscript
+	url = https://github.com/huderlem/poryscript.git

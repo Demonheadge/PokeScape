@@ -461,7 +461,7 @@ static u8 PaletteStruct_GetPalNum(u16 id)
 
 static u8 UpdateTimeOfDayPaletteFade(void)
 {
-    u8 paletteNum;
+    //u8 paletteNum;
     u16 paletteOffset;
     u16 selectedPalettes;
     u16 timePalettes = 0;

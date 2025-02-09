@@ -9767,7 +9767,8 @@ static inline u32 CalcDefenseStat(u32 move, u32 battlerAtk, u32 battlerDef, u32 
     u8 defStage;
     u32 defStat, def, spDef;
     uq4_12_t modifier;
-    u32 itemId, holdEffect;
+    //u32 itemId;
+    u32 holdEffect;
 
     if (gFieldStatuses & STATUS_FIELD_WONDER_ROOM) // the defense stats are swapped
     {
@@ -11647,11 +11648,11 @@ bool8 CanMonParticipateInSkyBattle(struct Pokemon *mon)
 
 bool8 CanMonParticipateInPartnerBattle(struct Pokemon *mon)
 {
-    u16 species = GetMonData(mon, MON_DATA_SPECIES);
-    u16 monAbilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM, NULL);
+    //u16 species = GetMonData(mon, MON_DATA_SPECIES);
+    //u16 monAbilityNum = GetMonData(mon, MON_DATA_ABILITY_NUM, NULL);
     bool8 monIsValidAndNotEgg = GetMonData(mon, MON_DATA_SANITY_HAS_SPECIES) && !GetMonData(mon, MON_DATA_IS_EGG);
 
-    if ((monIsValidAndNotEgg))
+    if (monIsValidAndNotEgg)
     {
         return TRUE;
     }

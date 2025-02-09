@@ -161,7 +161,7 @@ void ClearContinueGameWarpStatus2(void)
 void SavePlayerParty(void)
 {
     int i;
-    bool32 multiBattle = FlagGet(FLAG_PARTNER_BATTLE);
+    //bool32 multiBattle = FlagGet(FLAG_PARTNER_BATTLE);
 
     gSaveBlock1Ptr->playerPartyCount = gPlayerPartyCount;
 
@@ -172,7 +172,7 @@ void SavePlayerParty(void)
 void LoadPlayerParty(void)
 {
     int i;
-    bool32 multiBattle = FlagGet(FLAG_PARTNER_BATTLE);
+    //bool32 multiBattle = FlagGet(FLAG_PARTNER_BATTLE);
 
     gPlayerPartyCount = gSaveBlock1Ptr->playerPartyCount;
 
