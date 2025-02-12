@@ -362,7 +362,8 @@ generated: $(AUTO_GEN_TARGETS)
 %.gbapal: %.png ; $(GFX) $< $@
 %.lz: % ; $(GFX) $< $@
 %.rl: % ; $(GFX) $< $@
-data/%.inc: data/%.pory; $(PORYSCRIPT) -i $< -o $@ -fc $(PORYDIR)/font_config.json -cc $(PORYDIR)/command_config.json
+# -i == input poryscript file, -o == output script file, -lm=false == disables line markers
+data/%.inc: data/%.pory; $(PORYSCRIPT) -i $< -o $@ -lm=false -fc $(PORYDIR)/font_config.json -cc $(PORYDIR)/command_config.json
 
 clean-generated:
 	-rm -f $(AUTO_GEN_TARGETS)
