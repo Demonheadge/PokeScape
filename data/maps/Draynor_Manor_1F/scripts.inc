@@ -166,45 +166,153 @@ DraynorManor_HAM_GRUNT_3:
 	goto DraynorManor_HAM_GRUNT_1
 
 DraynorManor_HAM_GRUNT_4:
-	applymovement 8, Movement_InteractFACEUP
-	waitmovement 0
-	delay 30
-	applymovement 8, Movement_InteractFACEDOWN
-	waitmovement 0
-	namebox DraynorManor_HAM_GRUNT_Text_6
-	msgbox DraynorManor_HAM_GRUNT_Text_7
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	msgbox DraynorManor_HAM_GRUNT_Text_6
+	hidenamebox
+	closemessage
+	namebox DraynorManor_HAM_GRUNT_Text_7
+	msgbox DraynorManor_HAM_GRUNT_Text_8
 	hidenamebox
 	closemessage
 	playse SE_PIN
 	applymovement 11, MOVEMENT_EXCLAMATIONMARK_FACEPLAYER
 	waitmovement 0
-	namebox DraynorManor_HAM_GRUNT_Text_6
-	msgbox DraynorManor_HAM_GRUNT_Text_8
+	namebox DraynorManor_HAM_GRUNT_Text_7
+	msgbox DraynorManor_HAM_GRUNT_Text_9
 	hidenamebox
 	closemessage
 	applymovement 11, Movement_DraynorManor_Chase_13
 	waitmovement 0
 	facefollower
 	namebox DraynorManor_HAM_GRUNT_Text_0
-	msgbox DraynorManor_HAM_GRUNT_Text_9
+	msgbox DraynorManor_HAM_GRUNT_Text_10
 	hidenamebox
 	closemessage
+	setobjectxy 11, 14, 19
 	setobjectxyperm 11, 14, 19
+	setobjectmovementtype 11, MOVEMENT_TYPE_LOOK_AROUND
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 27
 	goto DraynorManor_HAM_GRUNT_1
 
 DraynorManor_HAM_GRUNT_5:
-	trainerbattle_no_intro TRAINER_DRAYNORMANOR_HAM, DraynorManor_HAM_GRUNT_Text_10
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	compare VAR_TEMP_1, 17
+	goto_if_eq DraynorManor_HAM_GRUNT_8
+	compare VAR_TEMP_1, 16
+	goto_if_eq DraynorManor_HAM_GRUNT_9
+	compare VAR_TEMP_1, 15
+	goto_if_eq DraynorManor_HAM_GRUNT_10
+DraynorManor_HAM_GRUNT_7:
+	waitmovement 0
+	applymovement 11, Movement_InteractFACEPLAYER
+	waitmovement 0
+	namebox DraynorManor_HAM_GRUNT_Text_11
+	msgbox DraynorManor_HAM_GRUNT_Text_12
+	hidenamebox
+	closemessage
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	msgbox DraynorManor_HAM_GRUNT_Text_13
+	hidenamebox
+	closemessage
+	namebox DraynorManor_HAM_GRUNT_Text_11
+	msgbox DraynorManor_HAM_GRUNT_Text_14
+	hidenamebox
+	closemessage
+	namebox DraynorManor_HAM_GRUNT_Text_11
+	msgbox DraynorManor_HAM_GRUNT_Text_15
+	hidenamebox
+	closemessage
+	applymovement 11, Movement_DraynorManor_Chase_16
+	waitmovement 0
+	playse SE_WALL_HIT
+	applymovement 11, Movement_DraynorManor_Chase_17
+	waitmovement 0
+	applymovement 3, Movement_DraynorManor_Chase_15
+	waitmovement 0
+	playse SE_LEDGE
+	applymovement 11, Movement_DraynorManor_Chase_18
+	waitmovement 0
+	waitse
+	playse SE_FLEE
+	applymovement 11, Movement_DraynorManor_Chase_19
+	delay 45
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACERIGHT
+	delay 10
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACEUP
+	waitmovement 0
+	delay 60
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACEDOWN
+	waitmovement 0
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	msgbox DraynorManor_HAM_GRUNT_Text_16
+	hidenamebox
+	closemessage
 	setflag FLAG_TEMP_1E
 	removeobject 11
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 28
 	goto DraynorManor_HAM_GRUNT_1
 
 DraynorManor_HAM_GRUNT_6:
+	applymovement 11, Movement_InteractFACEUP
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_DraynorManor_Chase_21
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	compare VAR_TEMP_1, 34
+	goto_if_eq DraynorManor_HAM_GRUNT_15
+	compare VAR_TEMP_1, 35
+	goto_if_eq DraynorManor_HAM_GRUNT_16
+	compare VAR_TEMP_1, 36
+	goto_if_eq DraynorManor_HAM_GRUNT_17
+DraynorManor_HAM_GRUNT_14:
+	waitmovement 0
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	msgbox DraynorManor_HAM_GRUNT_Text_17
+	hidenamebox
+	closemessage
+	namebox DraynorManor_HAM_GRUNT_Text_11
+	msgbox DraynorManor_HAM_GRUNT_Text_18
+	hidenamebox
+	closemessage
+	playse SE_WALL_HIT
+	applymovement 18, Movement_DraynorManor_Chase_23
+	waitmovement 0
+	namebox DraynorManor_HAM_GRUNT_Text_0
+	msgbox DraynorManor_HAM_GRUNT_Text_19
+	hidenamebox
+	closemessage
 	setflag FLAG_TEMP_1E
 	removeobject 18
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 29
 	goto DraynorManor_HAM_GRUNT_1
+
+DraynorManor_HAM_GRUNT_8:
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_DraynorManor_Chase_20_1
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_20_1
+	goto DraynorManor_HAM_GRUNT_7
+
+DraynorManor_HAM_GRUNT_9:
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_DraynorManor_Chase_20_2
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_20_2
+	goto DraynorManor_HAM_GRUNT_7
+
+DraynorManor_HAM_GRUNT_10:
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_DraynorManor_Chase_20_3
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_20_3
+	goto DraynorManor_HAM_GRUNT_7
+
+DraynorManor_HAM_GRUNT_15:
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_22_1
+	goto DraynorManor_HAM_GRUNT_14
+
+DraynorManor_HAM_GRUNT_16:
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_22_2
+	goto DraynorManor_HAM_GRUNT_14
+
+DraynorManor_HAM_GRUNT_17:
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_22_3
+	goto DraynorManor_HAM_GRUNT_14
 
 
 Movement_DraynorManor_Chase_1:
@@ -323,6 +431,116 @@ Movement_DraynorManor_Chase_14:
 	delay_16
 	delay_16
 	face_right
+	step_end
+
+Movement_DraynorManor_Chase_15:
+	reveal_trainer
+	step_end
+
+Movement_DraynorManor_Chase_16:
+	face_right
+	lock_facing_direction
+	walk_slow_left
+	delay_16
+	walk_slow_left
+	delay_16
+	unlock_facing_direction
+	walk_faster_left
+	step_end
+
+Movement_DraynorManor_Chase_17:
+	lock_facing_direction
+	slide_right
+	jump_in_place_right
+	unlock_facing_direction
+	delay_16
+	face_left
+	delay_16
+	step_end
+
+Movement_DraynorManor_Chase_18:
+	emote_exclamation_mark
+	jump_in_place_left
+	step_end
+
+Movement_DraynorManor_Chase_19:
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+Movement_DraynorManor_Chase_20_1:
+	walk_down
+	walk_left
+	walk_down
+	walk_left
+	face_left
+	step_end
+
+Movement_DraynorManor_Chase_20_2:
+	walk_down
+	walk_down
+	walk_left
+	face_left
+	step_end
+
+Movement_DraynorManor_Chase_20_3:
+	walk_down
+	walk_down
+	face_left
+	step_end
+
+Movement_DraynorManor_Chase_21:
+	walk_down
+	step_end
+
+Movement_DraynorManor_Chase_22_1:
+	walk_down
+	walk_right
+	walk_down
+	step_end
+
+Movement_DraynorManor_Chase_22_2:
+	walk_down
+	walk_right
+	walk_down
+	step_end
+
+Movement_DraynorManor_Chase_22_3:
+	walk_down
+	walk_left
+	walk_down
+	step_end
+
+Movement_DraynorManor_Chase_23:
+	walk_fast_right
+	lock_facing_direction
+	slide_left
+	jump_in_place_left
+	unlock_facing_direction
+	delay_16
+	face_up
+	delay_16
+	delay_16
+	delay_16
+	walk_fast_right
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	set_invisible
 	step_end
 
 DraynorManor_Lever_STATE::
@@ -1128,8 +1346,8 @@ BATTLE_DRAYNORMANOR_Trainer_7::
 
 
 BATTLE_DRAYNORMANOR_Trainer_8::
-	trainerbattle_single TRAINER_DRAYNOR_MANOR_SKELETON_8, BATTLE_DRAYNORMANOR_Trainer_8_Text_0, BATTLE_DRAYNORMANOR_Trainer_8_Text_1
-	msgbox BATTLE_DRAYNORMANOR_Trainer_8_Text_2
+	trainerbattle_single TRAINER_DRAYNOR_MANOR_SKELETON_8, DraynorManor_HAM_GRUNT_Text_19, BATTLE_DRAYNORMANOR_Trainer_8_Text_0
+	msgbox BATTLE_DRAYNORMANOR_Trainer_8_Text_1
 	hidenamebox
 	release
 	end
@@ -1182,21 +1400,60 @@ DraynorManor_HAM_GRUNT_Text_5:
 	.string "Quick lets give chase!$"
 
 DraynorManor_HAM_GRUNT_Text_6:
-	.string "H.A.M. Grunt$"
+	.string "{PLAYER} that's him!$"
 
 DraynorManor_HAM_GRUNT_Text_7:
-	.string "…{PAUSE 15}…{PAUSE 15}…Did that chair{PAUSE 15}…\p"
-	.string "{PAUSE 15}…{PAUSE 15}…{PAUSE 15}just move{PAUSE 15}…?$"
+	.string "H.A.M. Grunt$"
 
 DraynorManor_HAM_GRUNT_Text_8:
-	.string "Aaak!$"
+	.string "…{PAUSE 15}…{PAUSE 15}…$"
 
 DraynorManor_HAM_GRUNT_Text_9:
-	.string "I think we are wearing him out, let's get\n"
-	.string "him!$"
+	.string "Aaak!$"
 
 DraynorManor_HAM_GRUNT_Text_10:
-	.string "No way…\pTwo against one is just not fair…$"
+	.string "Quick after him!$"
+
+DraynorManor_HAM_GRUNT_Text_11:
+	.string "H.A.M Grunt$"
+
+DraynorManor_HAM_GRUNT_Text_12:
+	.string "Man you guys are persistent!\p"
+	.string "I am a proud member of H.A.M and I will\n"
+	.string "not be intimidated by the likes of you!$"
+
+DraynorManor_HAM_GRUNT_Text_13:
+	.string "Ham?\p"
+	.string "The stuff you put on a sandwich?$"
+
+DraynorManor_HAM_GRUNT_Text_14:
+	.string "Not ham! {PAUSE 15}H-{PAUSE 15}A-{PAUSE 15}M!\n"
+	.string "It stands for Humans Against Monsters!\p"
+	.string "Our goal is to rid the world of those\n"
+	.string "foul beasts!\p"
+	.string "Now get out of my way!$"
+
+DraynorManor_HAM_GRUNT_Text_15:
+	.string "You both are really scary.\p"
+	.string "But I am more afraid of what my bosses\n"
+	.string "will do to me if I don't deliver these\l"
+	.string "goods!\p"
+	.string "So I will risk it all!$"
+
+DraynorManor_HAM_GRUNT_Text_16:
+	.string "He ran off again, is that all he can do?\p"
+	.string "Let's check back downstairs.$"
+
+DraynorManor_HAM_GRUNT_Text_17:
+	.string "This is becoming quite tiresome.\p"
+	.string "Would you just stop and hand over the\n"
+	.string "book you stole?$"
+
+DraynorManor_HAM_GRUNT_Text_18:
+	.string "No I must escape!$"
+
+DraynorManor_HAM_GRUNT_Text_19:
+	.string "…$"
 
 HAM_EVENT_DRAYNORMANOR_1F_Text_0:
 	.string "…{PAUSE 32}…{PAUSE 32}…\n"
@@ -1465,12 +1722,9 @@ BATTLE_DRAYNORMANOR_Trainer_7_Text_1:
 	.string "his arm.$"
 
 BATTLE_DRAYNORMANOR_Trainer_8_Text_0:
-	.string "…$"
-
-BATTLE_DRAYNORMANOR_Trainer_8_Text_1:
 	.string "…………Hi.$"
 
-BATTLE_DRAYNORMANOR_Trainer_8_Text_2:
+BATTLE_DRAYNORMANOR_Trainer_8_Text_1:
 	.string "………………Hi.$"
 
 SIGN_DRAYNORMANOR_LEVER_1_Text_0:

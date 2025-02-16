@@ -135,14 +135,13 @@ script DraynorManor_HAM_GRUNT {
                 setflag(FLAG_TEMP_1E) 
                 removeobject(18) //HAM
                 setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 26)
-            case 26: 
-                applymovement(8, Movement_InteractFACEUP)
-			    waitmovement(0)
-                delay(30)
-                applymovement(8, Movement_InteractFACEDOWN)
-			    waitmovement(0)
+            case 26:
+                namebox("Ariane")
+                msgbox(format("{PLAYER} that's him!"))
+                hidenamebox
+                closemessage
                 namebox("H.A.M. Grunt")
-                msgbox(format("…{PAUSE 15}…{PAUSE 15}…Did that chair{PAUSE 15}…\p{PAUSE 15}…{PAUSE 15}…{PAUSE 15}just move{PAUSE 15}…?"))
+                msgbox(format("…{PAUSE 15}…{PAUSE 15}…"))
                 hidenamebox
                 closemessage
                 playse(SE_PIN)
@@ -156,18 +155,108 @@ script DraynorManor_HAM_GRUNT {
 			    waitmovement(0)
                 facefollower
                 namebox("Ariane")
-                msgbox(format("I think we are wearing him out, let's get him!"))
+                msgbox(format("Quick after him!"))
                 hidenamebox
                 closemessage
+                setobjectxy(11, 14, 19)
                 setobjectxyperm(11, 14, 19)
+                setobjectmovementtype(11, MOVEMENT_TYPE_LOOK_AROUND)
                 setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 27)
             case 27: 
                 //battle
-                trainerbattle_no_intro(TRAINER_DRAYNORMANOR_HAM, "No way…\pTwo against one is just not fair…")
+                getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+                if (var(VAR_TEMP_1) == 17){
+                    applymovement(OBJ_EVENT_ID_PLAYER, Movement_DraynorManor_Chase_20_1)
+                    applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_20_1)
+                } 
+                elif (var(VAR_TEMP_1) == 16){
+                    applymovement(OBJ_EVENT_ID_PLAYER, Movement_DraynorManor_Chase_20_2)
+                    applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_20_2)
+                }
+                elif (var(VAR_TEMP_1) == 15){
+                    applymovement(OBJ_EVENT_ID_PLAYER, Movement_DraynorManor_Chase_20_3)
+                    applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_20_3)
+                }
+                waitmovement(0)
+                applymovement(11, Movement_InteractFACEPLAYER)
+			    waitmovement(0)
+                namebox("H.A.M Grunt")
+                msgbox(format("Man you guys are persistent!\pI am a proud member of H.A.M and I will not be intimidated by the likes of you!"))
+                hidenamebox
+                closemessage
+                namebox("Ariane")
+                msgbox(format("Ham?\pThe stuff you put on a sandwich?"))
+                hidenamebox
+                closemessage
+                namebox("H.A.M Grunt")
+                msgbox(format("Not ham! {PAUSE 15}H-{PAUSE 15}A-{PAUSE 15}M!\nIt stands for Humans Against Monsters!\pOur goal is to rid the world of those foul beasts!\pNow get out of my way!"))
+                hidenamebox
+                closemessage
+                //trainerbattle_no_intro(TRAINER_DRAYNORMANOR_HAM, "No way…\pTwo against one is just not fair…")
+                namebox("H.A.M Grunt")
+                msgbox(format("You both are really scary.\pBut I am more afraid of what my bosses will do to me if I don't deliver these goods!\pSo I will risk it all!"))
+                hidenamebox
+                closemessage
+                applymovement(11, Movement_DraynorManor_Chase_16)
+			    waitmovement(0)
+                playse(SE_WALL_HIT)
+                applymovement(11, Movement_DraynorManor_Chase_17)
+			    waitmovement(0)
+                applymovement(3, Movement_DraynorManor_Chase_15) //skeleton reveal
+			    waitmovement(0)
+                playse(SE_LEDGE)
+                applymovement(11, Movement_DraynorManor_Chase_18)
+                waitmovement(0)
+                waitse
+                playse(SE_FLEE)
+                applymovement(11, Movement_DraynorManor_Chase_19)
+                delay(45)
+                applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+                applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACERIGHT)
+			    delay(10)
+                applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+                applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACEUP)
+                waitmovement(0)
+                delay(60)
+                applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+                applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACEDOWN)
+                waitmovement(0)
+                namebox("Ariane")
+                msgbox(format("He ran off again, is that all he can do?\pLet's check back downstairs."))
+                hidenamebox
+                closemessage
                 setflag(FLAG_TEMP_1E) 
                 removeobject(11) //HAM upstairs
                 setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 28)
             case 28: 
+                applymovement(11, Movement_InteractFACEUP)
+                applymovement(OBJ_EVENT_ID_PLAYER, Movement_DraynorManor_Chase_21)
+                getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+                if (var(VAR_TEMP_1) == 34){
+                    applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_22_1)
+                } 
+                elif (var(VAR_TEMP_1) == 35){
+                    applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_22_2)
+                }
+                elif (var(VAR_TEMP_1) == 36){
+                    applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_DraynorManor_Chase_22_3)
+                }
+                waitmovement(0)
+                namebox("Ariane")
+                msgbox(format("This is becoming quite tiresome.\pWould you just stop and hand over the book you stole?"))
+                hidenamebox
+                closemessage
+                namebox("H.A.M Grunt")
+                msgbox(format("No I must escape!"))
+                hidenamebox
+                closemessage
+                playse(SE_WALL_HIT)
+                applymovement(18, Movement_DraynorManor_Chase_23)
+			    waitmovement(0)
+                namebox("Ariane")
+                msgbox(format("…"))
+                hidenamebox
+                closemessage
                 setflag(FLAG_TEMP_1E) 
                 removeobject(18) //HAM
                 setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 29)
@@ -175,6 +264,7 @@ script DraynorManor_HAM_GRUNT {
     release
     end
 }
+
 
 movement Movement_DraynorManor_Chase_1 {
     face_right
@@ -258,6 +348,101 @@ movement Movement_DraynorManor_Chase_14 {
     face_right
     step_end
 }
+movement Movement_DraynorManor_Chase_15 {
+    reveal_trainer
+    step_end
+}
+movement Movement_DraynorManor_Chase_16 {
+    face_right
+    lock_facing_direction
+    walk_slow_left
+    delay_16
+    walk_slow_left
+    delay_16
+    unlock_facing_direction
+    walk_faster_left
+    step_end
+}
+movement Movement_DraynorManor_Chase_17 {
+    lock_facing_direction
+    slide_right
+    //jump_special_right
+    //jump_right
+    jump_in_place_right
+    unlock_facing_direction
+    delay_16
+    face_left
+    delay_16
+    step_end
+}
+movement Movement_DraynorManor_Chase_18 {
+    emote_exclamation_mark
+    jump_in_place_left
+    step_end
+}
+movement Movement_DraynorManor_Chase_19 {
+    walk_fast_down
+    walk_fast_right * 4
+    walk_fast_up * 10
+    step_end
+}
+movement Movement_DraynorManor_Chase_20_1 {
+    walk_down
+    walk_left
+    walk_down
+    walk_left
+    face_left
+    step_end
+}
+movement Movement_DraynorManor_Chase_20_2 {
+    walk_down * 2
+    walk_left
+    face_left
+    step_end
+}
+movement Movement_DraynorManor_Chase_20_3 {
+    walk_down * 2
+    face_left
+    step_end
+}
+movement Movement_DraynorManor_Chase_21 {
+    walk_down
+    step_end
+}
+movement Movement_DraynorManor_Chase_22_1 {
+    walk_down
+    walk_right
+    walk_down
+    step_end
+}
+movement Movement_DraynorManor_Chase_22_2 {
+    walk_down
+    walk_right
+    walk_down
+    step_end
+}
+movement Movement_DraynorManor_Chase_22_3 {
+    walk_down
+    walk_left
+    walk_down
+    step_end
+}
+movement Movement_DraynorManor_Chase_23 {
+    walk_fast_right
+    lock_facing_direction
+    slide_left
+    jump_in_place_left
+    unlock_facing_direction
+    delay_16
+    face_up
+    delay_16 * 3
+    walk_fast_right
+    walk_fast_down * 3
+    walk_fast_left
+    set_invisible
+    step_end
+}
+
 
 script DraynorManor_Lever_STATE{
         switch (var(VAR_POKESCAPE_DRAYNORMANOR_LEVER_STATE)){ 
@@ -402,10 +587,6 @@ script HAM_EVENT_DRAYNORMANOR_1F {
                     applymovement(17, MOVEMENT_WALKLEFT)
 			        waitmovement(0)
                 }
-
-                
-
-
                 applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_FACE_RIGHT)
 			    waitmovement(0)
                 namebox("Ariane")

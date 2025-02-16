@@ -183,6 +183,33 @@
       "var": "VAR_POKESCAPE_STORYMODE_PROGRESS",
       "var_value": "26",
       "script": "DraynorManor_HAM_GRUNT"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_POKESCAPE_STORYMODE_PROGRESS",
+      "var_value": "27",
+      "script": "DraynorManor_HAM_GRUNT"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_POKESCAPE_STORYMODE_PROGRESS",
+      "var_value": "27",
+      "script": "DraynorManor_HAM_GRUNT"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_POKESCAPE_STORYMODE_PROGRESS",
+      "var_value": "27",
+      "script": "DraynorManor_HAM_GRUNT"
     }
   ],
   "bg_events": [

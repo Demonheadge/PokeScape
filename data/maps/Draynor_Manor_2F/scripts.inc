@@ -18,11 +18,13 @@ DRAYNOR_MANOR_2F_STATE::
 DRAYNOR_MANOR_2F_STATE_2:
 	clearflag FLAG_TEMP_1E
 	addobject 11
+	setobjectmovementtype 11, MOVEMENT_TYPE_FACE_UP
 	return
 
 DRAYNOR_MANOR_2F_STATE_3:
 	clearflag FLAG_TEMP_1E
 	addobject 11
 	setobjectxyperm 11, 14, 19
+	setobjectmovementtype 11, MOVEMENT_TYPE_LOOK_AROUND
 	return
 

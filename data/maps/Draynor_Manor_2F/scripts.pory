@@ -12,9 +12,11 @@ script DRAYNOR_MANOR_2F_STATE {
             case 26: 
                 clearflag(FLAG_TEMP_1E)
                 addobject(11) //HAM
+                setobjectmovementtype(11, MOVEMENT_TYPE_FACE_UP)
             case 27: 
                 clearflag(FLAG_TEMP_1E)
                 addobject(11) //HAM
                 setobjectxyperm(11, 14, 19)
+                setobjectmovementtype(11, MOVEMENT_TYPE_LOOK_AROUND)
     }
 }
