@@ -182,7 +182,7 @@ script BKFORT_1F_NPC_7
 	lock
     faceplayer
     namebox ("Guard")
-    msgbox(format("I am a Cupholder."))
+    msgbox(format("Don't mind me, I am just staying out of the way.\pThat way I can't mess anything up again..."))
     closemessage
     hidenamebox
     release
@@ -193,24 +193,68 @@ script BKFORT_1F_NPC_8
 {
 	lock
     faceplayer
-    namebox ("Quester")
-    msgbox(format("I am a Cupholder."))
+    namebox ("Guard")
+    msgbox(format("I hate being posted here!\pI can hear the screams of the prisoners from the basement...{PAUSE15}\pJust makes me really sad I'm not the one down there torturing them..."))
     closemessage
     hidenamebox
     release
     end
 }
 
-script BKFORT_1F_LENSIG
+script BKFORT_1F_NPC_9
 {
 	lock
     faceplayer
-    namebox ("Lensig")
-    msgbox(format("I am a Cupholder."))
+    namebox ("Qu3stL0ck")
+    msgbox(format("Whoever wrote this guide is an idiot!\pIt clearly says bring a cabbage, but this witch wants a MONSTER Cabbage and not the item!\pI'm going to have to trek all the way back to a Bank now..."))
     closemessage
     hidenamebox
     release
     end
+}
+
+script BKFORT_1F_LENSIG {
+	lock
+	faceplayer
+	namebox ("Lensig")
+	if (!(flag(FLAG_BKFORT_TRADE_1))){
+		setvar (VAR_0x8008, INGAME_TRADE_CABBAGE)
+		copyvar (VAR_0x8004, VAR_0x8008)
+        specialvar (VAR_RESULT, GetInGameTradeSpeciesInfo)
+        copyvar (VAR_0x8009, VAR_RESULT)
+        msgbox(format("That snivelling goblin is useless.\pIf I don't get a Cabbage soon, I'll never be able to finish...\pSay, do you happen to have a Cabbage?\pWould you like to trade one for my cat?"), MSGBOX_YESNO)
+	      	if (var(VAR_RESULT)){
+            	special (ChoosePartyMon)
+            	waitstate
+            	copyvar (VAR_0x800A, VAR_0x8004)
+            	if(!(var(VAR_0x8004) == 255)){
+                	copyvar(VAR_0x8005, VAR_0x800A)
+                	specialvar (VAR_RESULT, GetTradeSpecies)
+                	copyvar(VAR_0x800B, VAR_RESULT)
+					if (var(VAR_RESULT) == VAR_0x8009){
+						copyvar(VAR_0x8004, VAR_0x8008)
+						copyvar(VAR_0x8005, VAR_0x800A)
+						special(CreateInGameTradePokemon)
+						special(DoInGameTradeScene)
+						waitstate
+						msgbox(format("AHAHAHAHAH!\pYES!\pFinally, I can complete the ritual!"))
+						setflag(FLAG_BKFORT_TRADE_1)
+                	}
+                else{
+                    msgbox("Sorry, only a Cabbage can complete the ritual.")
+                	}
+				}
+            }
+			else{
+				msgbox(format("Well, please come back if you change your mind."))
+			}
+		}
+		else {
+		msgbox("I really need that Cabbage.\pCome back if you change your mind.")
+		}
+		hidenamebox
+	release
+	end
 }
 
 script BKFORT_1F_BOOK

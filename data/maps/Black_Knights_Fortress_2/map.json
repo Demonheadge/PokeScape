@@ -594,8 +594,8 @@
       "x": 26,
       "y": 5,
       "elevation": 0,
-      "item": "ITEM_NONE",
-      "flag": "FLAG_TEMP_1"
+      "item": "ITEM_CABBAGE",
+      "flag": "FLAG_HIDDEN_ITEM_BKFORT_CABBAGE"
     },
     {
       "type": "hidden_item",

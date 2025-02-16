@@ -72,7 +72,7 @@
 
 //START -- TRADE FLAGS
 #define FLAG_LUMBRIDGE_TRADE_1  0x30 // Unused Flag
-#define FLAG_UNUSED_31          0x31 // Unused Flag
+#define FLAG_BKFORT_TRADE_1     0x31 // Unused Flag
 #define FLAG_UNUSED_32          0x32 // Unused Flag
 #define FLAG_UNUSED_33          0x33 // Unused Flag
 #define FLAG_UNUSED_34          0x34 // Unused Flag
@@ -636,8 +636,8 @@
 #define FLAG_HIDDEN_ITEM_TRAINING_ROOM_2                        (FLAG_HIDDEN_ITEMS_START + 0x2A)
 #define FLAG_HIDDEN_ITEM_TRAINING_ROOM_3                        (FLAG_HIDDEN_ITEMS_START + 0x61)
 #define FLAG_HIDDEN_ITEM_TRAINING_ROOM_4                        (FLAG_HIDDEN_ITEMS_START + 0x2D)
+#define FLAG_HIDDEN_ITEM_BKFORT_CABBAGE                         (FLAG_HIDDEN_ITEMS_START + 0x60)
 
-#define FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES                (FLAG_HIDDEN_ITEMS_START + 0x60)
 #define FLAG_HIDDEN_ITEM_ROUTE_117_REPEL                        (FLAG_HIDDEN_ITEMS_START + 0x48)
 #define FLAG_HIDDEN_ITEM_ROUTE_118_HEART_SCALE                  (FLAG_HIDDEN_ITEMS_START + 0x42)
 #define FLAG_HIDDEN_ITEM_ROUTE_118_IRON                         (FLAG_HIDDEN_ITEMS_START + 0x43)
@@ -1307,8 +1307,8 @@
 #define FLAG_ITEM_BKFORT_2F_ITEM6                                   0x4D5 // Unused Flag
 #define FLAG_ITEM_BKFORT_2F_ITEM7                                   0x4D6 // Unused Flag
 #define FLAG_ITEM_BKFORT_2F_ITEM8                                   0x4D7 // Unused Flag
+#define FLAG_ITEM_ROUTE21_ITEM1                                     0x4D8 // Unused Flag
 
-#define FLAG_UNUSED_0x4D8                                           0x4D8 // Unused Flag
 #define FLAG_UNUSED_0x4D9                                           0x4D9 // Unused Flag
 #define FLAG_UNUSED_0x4DA                                           0x4DA // Unused Flag
 #define FLAG_UNUSED_0x4DB                                           0x4DB // Unused Flag

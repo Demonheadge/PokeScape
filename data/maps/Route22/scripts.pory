@@ -1,0 +1,15 @@
+mapscripts Route22_MapScripts {
+
+}
+
+//BATTLE
+
+script BATTLE_ROUTE22_TRAINER_1
+{
+    trainerbattle_single(TRAINER_ROUTE22_TRAINER_1, format("I can squeeze in a quick battle."),format("Now I'm out of breath.\pMy training regimen is ruined."))
+    namebox ("Point Zero")
+    msgbox(format("Now I'm out of breath.\pMy training regimen is ruined."))
+	hidenamebox
+    release
+	end
+}

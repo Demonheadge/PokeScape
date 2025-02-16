@@ -7364,10 +7364,42 @@ static const struct TrainerMon sParty_TRAINER_SARIM_BAY_SAILOR_2[] = {
 
 static const struct TrainerMon sParty_TRAINER_A_TWISTED_SMILE[] = {
     {
-    .lvl = 30,
+    .lvl = 31,
+    .species = SPECIES_PONG,
+    .ability = ABILITY_PUNK_ROCK
+    .nature = NATURE_MODEST
+    .gender = TRAINER_MON_MALE,
+    .nickname = COMPOUND_STRING("Pingu"),
+    .moves = {MOVE_PSYCHIC_NOISE, MOVE_ICY_WIND, MOVE_DRUM_BEATING, MOVE_NASTY_PLOT}
+    },
+    {
+    .lvl = 32,
+    .species = SPECIES_SPIRIT_MYSTIC,
+    .ability = ABILITY_MAGICIAN
+    .nickname = COMPOUND_STRING("Knightmare"),
+    .moves = {MOVE_SACRED_SWORD, MOVE_GRUDGE, MOVE_WILL_O_WISP, MOVE_HEX}
+    },
+    {
+    .lvl = 32,
+    .species = SPECIES_SALAMANDER_RED_FORM,
+    .ability = ABILITY_FLASH_FIRE
+    .nickname = COMPOUND_STRING("Draco"),
+    .moves = {MOVE_FLAMETHROWER, MOVE_DISARMING_VOICE, MOVE_TOXIC, MOVE_SMOKESCREEN}
+    },
+    {
+    .lvl = 33,
+    .species = SPECIES_ALBATROSS,
+    .ability = ABILITY_GALE_WINGS
+    .nickname = COMPOUND_STRING("Rime"),
+    .moves = {MOVE_BUG_BITE, MOVE_WATER_PULSE, MOVE_WING_ATTACK, MOVE_ROOST}
+    },
+    {
+    .lvl = 34,
     .species = SPECIES_POMAPOO,
+    .ability = ABILITY_OPPORTUNIST
     .gender = TRAINER_MON_FEMALE,
     .nickname = COMPOUND_STRING("Amber"),
+    .moves = {MOVE_CRUNCH, MOVE_SAND_ATTACK, MOVE_HEART_STAMP, MOVE_HONE_CLAWS}
     }
 };
 
@@ -7639,19 +7671,19 @@ static const struct TrainerMon sParty_BlackKnight_Necro1[] = {
 static const struct TrainerMon sParty_BlackKnight_Necro2[] = {
     {
     .lvl = 42,
-    .species = SPECIES_DEMON_LESSER_TONGUE_FORM,
+    .species = SPECIES_IMPLING_ZOMBIE_FORM,
     },
     {
     .lvl = 42,
-    .species = SPECIES_DEMON_LESSER_RS3_FORM,
+    .species = SPECIES_IMPLING_GHOST_FORM,
     },
     {
     .lvl = 43,
-    .species = SPECIES_DEMON_ICE_OSRS_FORM,
+    .species = SPECIES_HEADLESS_BEAST,
     },
     {
     .lvl = 43,
-    .species = SPECIES_DEMON_GREATER_BLACK_FORM,
+    .species = SPECIES_IMPLING_NINJA_FORM,
     }
 };
 
@@ -7699,5 +7731,79 @@ static const struct TrainerMon sParty_Lord_Daquarius[] = {
     .ev = TRAINER_PARTY_EVS(0, 124, 0, 126, 0, 252),
     .species = SPECIES_SPIRIT_RANGER,
     .moves = {MOVE_KINGS_SHIELD, MOVE_ZAMORAK_FLAMES, MOVE_SPIRIT_SHACKLE, MOVE_IRON_HEAD}
+    }
+};
+
+static const struct TrainerMon sParty_Route21_Trainer_1[] = {
+    {
+    .lvl = 44,
+    .species = SPECIES_SPORAXE,
+    },
+    {
+    .lvl = 44,
+    .species = SPECIES_MINOTAUR_RUNE_FORM,
+    }
+};
+
+static const struct TrainerMon sParty_Route21_Trainer_2[] = {
+    {
+    .lvl = 44,
+    .species = SPECIES_DEAD_TREE,
+    },
+    {
+    .lvl = 44,
+    .species = SPECIES_ENT,
+    },
+    {
+    .lvl = 44,
+    .species = SPECIES_COMPOST_MOUND,
+    },
+    {
+    .lvl = 45,
+    .species = SPECIES_BEAVER,
+    }
+};
+
+static const struct TrainerMon sParty_Route22_Trainer_1[] = {
+    {
+    .lvl = 45,
+    .species = SPECIES_ROCKY,
+    }
+};
+
+static const struct TrainerMon sParty_Route20_Trainer_1[] = {
+    {
+    .lvl = 44,
+    .species = SPECIES_SHARK_NORMAL_FORM,
+    },
+    {
+    .lvl = 44,
+    .species = SPECIES_SHARK_NORMAL_FORM,
+    },
+    {
+    .lvl = 44,
+    .species = SPECIES_RAINBOW,
+    }
+};
+
+static const struct TrainerMon sParty_Route20_Trainer_2[] = {
+    {
+    .lvl = 44,
+    .species = SPECIES_ESSENCE,
+    },
+    {
+    .lvl = 44,
+    .species = SPECIES_ESSHOUND,
+    }
+};
+
+static const struct TrainerMon sParty_Route20_Trainer_3[] = {
+    {
+    .lvl = 44,
+    .species = SPECIES_WOLF_SPIRIT_FORM,
+    },
+    {
+    .lvl = 44,
+    .species = SPECIES_DAGANNOTH_SPIRIT_FORM,
     }
 };

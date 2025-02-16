@@ -514,6 +514,12 @@
 #define TRAINER_BLACKKNIGHT_NECRO_2                     508
 #define TRAINER_BLACKKNIGHT_ELITE_1                     509
 #define TRAINER_LORD_DAQUARIUS                          510
+#define TRAINER_ROUTE21_TRAINER_1                       511
+#define TRAINER_ROUTE21_TRAINER_2                       512
+#define TRAINER_ROUTE22_TRAINER_1                       513
+#define TRAINER_ROUTE20_TRAINER_1                       514
+#define TRAINER_ROUTE20_TRAINER_2                       515
+#define TRAINER_ROUTE20_TRAINER_3                       516
 
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows

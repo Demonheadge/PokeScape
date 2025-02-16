@@ -5610,6 +5610,74 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Lord_Daquarius),
     },
 
+    [TRAINER_ROUTE21_TRAINER_1] =
+    {
+        .trainerClass = TRAINER_CLASS_WOODCUTTER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_woodcutter,
+        .trainerName = _("Ax3edSeries"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_Route21_Trainer_1),
+    },
+
+    [TRAINER_ROUTE21_TRAINER_2] =
+    {
+        .trainerClass = TRAINER_CLASS_WOODCUTTER,
+        .encounterMusic_gender = TRAINER_PIC_woodcutter,
+        .trainerName = _("W00dFeller"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_Route21_Trainer_2),
+    },
+
+    [TRAINER_ROUTE22_TRAINER_1] =
+    {
+        .trainerClass = TRAINER_CLASS_AGILE,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_graceful,
+        .trainerName = _("Point Zero"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_Route22_Trainer_1),
+    },
+
+    [TRAINER_ROUTE20_TRAINER_1] =
+    {
+        .trainerClass = TRAINER_CLASS_FISHER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_fisher,
+        .trainerName = _("BaitNSwitch"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_Route20_Trainer_1),
+    },
+
+    [TRAINER_ROUTE20_TRAINER_2] =
+    {
+        .trainerClass = TRAINER_CLASS_RUNECRAFTER,
+        .encounterMusic_gender = TRAINER_PIC_runecrafter,
+        .trainerName = _("NatsW40"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_Route20_Trainer_2),
+    },
+
+    [TRAINER_ROUTE20_TRAINER_3] =
+    {
+        .trainerClass = TRAINER_CLASS_SUMMONER,
+        .encounterMusic_gender = TRAINER_PIC_summoner,
+        .trainerName = _("Srift"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_Route20_Trainer_3),
+    },
 
 /*
     #define TRAINER_HELLWIND                                445

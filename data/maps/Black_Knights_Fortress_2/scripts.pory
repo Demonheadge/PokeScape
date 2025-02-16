@@ -216,7 +216,7 @@ script BKFORT_2F_NPC_4 //Guard by entrance and item
 {
     faceplayer
     namebox ("Guard")
-    msgbox(format("I am a Cupholder."))
+    msgbox(format("I am so tired I could go for another nap..."))
     closemessage
     hidenamebox
     release
@@ -227,7 +227,7 @@ script BKFORT_2F_NPC_5 //Dark Wizard in South
 {
     faceplayer
     namebox ("Dark Wizard")
-    msgbox(format("I am a Cupholder."))
+    msgbox(format("Do you think I look...\pEvil enough?\pI'm worried that my robes are a bit washed out now and they're only grey instead of black.\pI don't want to get kicked out because of it!"))
     closemessage
     hidenamebox
     release
@@ -237,7 +237,7 @@ script BKFORT_2F_NPC_5 //Dark Wizard in South
 script BKFORT_2F_NPC_6 //Zamorak Wizard in Hallway
 {
     faceplayer
-    namebox ("Zamorak Wizard")
+    namebox ("Zammy Wizard")
     msgbox(format("One of the eggs was blessed by Zamorak himself and the first Hawk was born..."))
     closemessage
     hidenamebox
@@ -249,7 +249,7 @@ script BKFORT_2F_NPC_7 //Necromancer in main hall
 {
     faceplayer
     namebox ("Necromancer")
-    msgbox(format("I am a Cupholder."))
+    msgbox(format("White Knights don't do it for me.\pOnce you go Black Knight, you're never going back you know."))
     closemessage
     hidenamebox
     release
@@ -260,7 +260,7 @@ script BKFORT_2F_NPC_8 //Top left Black Knight in main hall
 {
     faceplayer
     namebox ("Black Knight")
-    msgbox(format("I am a Cupholder."))
+    msgbox(format("Elite Black knights are the true heroes of the Kinshra.\pWe even work with the Mahjarrats."))
     closemessage
     hidenamebox
     release
@@ -271,7 +271,7 @@ script BKFORT_2F_NPC_9 //Top right Black Knight in main hall
 {
     faceplayer
     namebox ("Black Knight")
-    msgbox(format("I am a Cupholder."))
+    msgbox(format("You have a lot of nerve coming into here solely to ruin my mealtime.\pBegone!"))
     closemessage
     hidenamebox
     release
@@ -282,7 +282,7 @@ script BKFORT_2F_NPC_10 //Black Knight on right in main hall
 {
     faceplayer
     namebox ("Black Knight")
-    msgbox(format("I am a Cupholder."))
+    msgbox(format("One day I will be an Elite Black Knight and get a really cool name!\pEugene just doesn't cut it as a Black Knight."))
     closemessage
     hidenamebox
     release
@@ -293,7 +293,7 @@ script BKFORT_2F_NPC_11 //First of two guards in main hall
 {
     faceplayer
     namebox ("Guard")
-    msgbox(format("I am a Cupholder."))
+    msgbox(format("I tried to hit on the girl over there, but she said guard is hardly an occupation.\pGuess I need a promotion before I can settle down."))
     closemessage
     hidenamebox
     release
@@ -315,7 +315,7 @@ script BKFORT_2F_NPC_13 //Chef
 {
     faceplayer
     namebox ("Chef")
-    msgbox(format("I am a Cupholder."))
+    msgbox(format("Become a chef, they said.\pStart your own catering business, they said.\pNobody said anything about having to live in a creepy fortress serving food to an army of mercenaries!\pIt's too late for me to even leave now, I've seen too much..."))
     closemessage
     hidenamebox
     release
@@ -337,7 +337,7 @@ script BKFORT_2F_NPC_15 //Dark Wizard in Chapel
 {
     faceplayer
     namebox ("Dark Wizard")
-    msgbox(format("I am a Cupholder."))
+    msgbox(format("I mostly come here for the free ceremonial Wine of Zamorak.\pSelling it helps to feed my family."))
     closemessage
     hidenamebox
     release
@@ -358,7 +358,7 @@ script BKFORT_2F_NPC_16 //Necromancer in Chapel
 script BKFORT_2F_NPC_17 //Left Zamorak Wizard in Chapel
 {
     faceplayer
-    namebox ("Zamorak Wizard")
+    namebox ("Zammy Wizard")
     msgbox(format("From the blood of the Fallen, we shall create Wine of Zamorak."))
     closemessage
     hidenamebox
@@ -369,7 +369,7 @@ script BKFORT_2F_NPC_17 //Left Zamorak Wizard in Chapel
 script BKFORT_2F_NPC_18 //Right Zamorak Wizard in Chapel
 {
     faceplayer
-    namebox ("Zamorak Wizard")
+    namebox ("Zammy Wizard")
     msgbox(format("When gravity falls and earth becomes sky, fear the beast with just one eye."))
     closemessage
     hidenamebox
@@ -380,8 +380,8 @@ script BKFORT_2F_NPC_18 //Right Zamorak Wizard in Chapel
 script BKFORT_2F_NPC_19 //PVMer in Chapel
 {
     faceplayer
-    namebox ("Cupholder")
-    msgbox(format("I am a Cupholder."))
+    namebox ("GIM Frankie")
+    msgbox(format("Hold on...{PAUSE15}\pThis isn't White Knight's castle.\pDrat!\pWrong quest guide..."))
     closemessage
     hidenamebox
     release
@@ -392,7 +392,7 @@ script BKFORT_2F_NPC_20 //Black Knight in Chapel
 {
     faceplayer
     namebox ("Black Knight")
-    msgbox(format("I am a Cupholder."))
+    msgbox(format("Zamorak, my lord, please make me good at swordfighting.\pZamorak, my lord, please make me good at swordfighting.\pZamorak, my lord, please make me good at swordfighting.\pZamorak, my lord, PLEASE make me good at swordfighting!"))
     closemessage
     hidenamebox
     release
@@ -454,7 +454,7 @@ script ITEM_BKFORT_2F_ITEM1
 
 script ITEM_BKFORT_2F_ITEM2
 {
-    finditem(ITEM_POUCH_BLACK)
+    finditem(ITEM_FRUIT_BLAST)
     end
 }
 
