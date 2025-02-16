@@ -149,7 +149,7 @@ script BLACK_KNIGHT_QUIZ_7 //Fall
     checktrainerflag(TRAINER_BLACKKNIGHT_FALL)
     if (var(VAR_RESULT) == TRUE)
     {
-        msgbox(format("Hail Daquarius.{PAUSE15}\pYou may pass."))
+        msgbox(format("Hail Daquarius.{PAUSE 15}\pYou may pass."))
         closemessage
         hidenamebox
     }
@@ -183,7 +183,7 @@ script BKFORT_2F_NPC_1 //Goblin in kitchen
 {
     faceplayer
     namebox ("Greldo")
-    msgbox(format("Me need Draynor cabbageth.\p{PAUSE15}They tayth-tee, me hope thilly Black Knight not eat it or green lady be very angry."))
+    msgbox(format("Me need Draynor cabbageth.\p{PAUSE 15}They tayth-tee, me hope thilly Black Knight not eat it or green lady be very angry."))
     closemessage
     hidenamebox
     release
@@ -205,7 +205,7 @@ script BKFORT_2F_NPC_3 //South-western most Black Knight in main room
 {
     faceplayer
     namebox ("Black Knight")
-    msgbox(format("Can I ask you a question?\pWhat do you think about puns?{PAUSE15}\pLook, I hate the White Knights as much as everyone else but I really do think they nailed the whole naming thing.\pImagine if we had names like that...\pLike Jack, or Chap!\pMaybe I should bring it up next council meeting..."))
+    msgbox(format("Can I ask you a question?\pWhat do you think about puns?{PAUSE 15}\pLook, I hate the White Knights as much as everyone else but I really do think they nailed the whole naming thing.\pImagine if we had names like that...\pLike Jack, or Chap!\pMaybe I should bring it up next council meeting..."))
     closemessage
     hidenamebox
     release
@@ -448,48 +448,48 @@ script NPC_ZAMOHAWK
 
 script ITEM_BKFORT_2F_ITEM1
 {
-    finditem(ITEM_BLACK_POUCH)
+    finditem(ITEM_POUCH_BLACK)
     end
 }
 
 script ITEM_BKFORT_2F_ITEM2
 {
-    finditem(ITEM_BLACK_POUCH)
+    finditem(ITEM_POUCH_BLACK)
     end
 }
 
 script ITEM_BKFORT_2F_ITEM3
 {
-    finditem(ITEM_BLACK_POUCH)
+    finditem(ITEM_POUCH_BLACK)
     end
 }
 
 script ITEM_BKFORT_2F_ITEM4
 {
-    finditem(ITEM_BLACK_POUCH)
+    finditem(ITEM_POUCH_BLACK)
     end
 }
 
 script ITEM_BKFORT_2F_ITEM5
 {
-    finditem(ITEM_BLACK_POUCH)
+    finditem(ITEM_POUCH_BLACK)
     end
 }
 
 script ITEM_BKFORT_2F_ITEM6
 {
-    finditem(ITEM_BLACK_POUCH)
+    finditem(ITEM_POUCH_BLACK)
     end
 }
 
 script ITEM_BKFORT_2F_ITEM7
 {
-    finditem(ITEM_BLACK_POUCH)
+    finditem(ITEM_POUCH_BLACK)
     end
 }
 
 script ITEM_BKFORT_2F_ITEM8
 {
-    finditem(ITEM_BLACK_POUCH)
+    finditem(ITEM_POUCH_BLACK)
     end
 }

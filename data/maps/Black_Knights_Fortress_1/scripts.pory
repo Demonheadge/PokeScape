@@ -226,18 +226,18 @@ script BKFORT_1F_BOOK
 
 script ITEM_BKFORT_1F_ITEM1
 {
-    finditem(ITEM_BLACK_POUCH)
+    finditem(ITEM_POUCH_BLACK)
     end
 }
 
 script ITEM_BKFORT_1F_ITEM2
 {
-    finditem(ITEM_BLACK_POUCH)
+    finditem(ITEM_POUCH_BLACK)
     end
 }
 
 script ITEM_BKFORT_1F_ITEM3
 {
-    finditem(ITEM_BLACK_POUCH)
+    finditem(ITEM_POUCH_BLACK)
     end
 }

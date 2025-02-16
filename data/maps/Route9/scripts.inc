@@ -138,6 +138,15 @@ BATTLE_ROUTE9_CHEF::
 	return
 
 
+BATTLE_ROUTE9_ITSWILL::
+	trainerbattle_single TRAINER_ROUTE9_ITSWILL, BATTLE_ROUTE9_ITSWILL_Text_0, BATTLE_ROUTE9_ITSWILL_Text_1
+	namebox BATTLE_ROUTE9_ITSWILL_Text_2
+	msgbox BATTLE_ROUTE9_ITSWILL_Text_3
+	hidenamebox
+	release
+	return
+
+
 ROUTE9_SIGNPOST_Text_0:
 	.string "Rimmington Mines.\p"
 	.string "Beware of recent earthquakes.$"
@@ -236,3 +245,19 @@ BATTLE_ROUTE9_CHEF_Text_1:
 BATTLE_ROUTE9_CHEF_Text_2:
 	.string "Slimes are pretty neat, I use them in my\n"
 	.string "cooking sometimes.$"
+
+BATTLE_ROUTE9_ITSWILL_Text_0:
+	.string "Stay back, this place is dangerous!$"
+
+BATTLE_ROUTE9_ITSWILL_Text_1:
+	.string "Maybe you're strong enough to beat\n"
+	.string "her...$"
+
+BATTLE_ROUTE9_ITSWILL_Text_2:
+	.string "ItsWill$"
+
+BATTLE_ROUTE9_ITSWILL_Text_3:
+	.string "Be careful...\p"
+	.string "There's a girl dressed in all pink in\n"
+	.string "there.{PAUSE 15}\p"
+	.string "She beat my ass hard$"

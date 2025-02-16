@@ -457,13 +457,17 @@ NPC_Draynor_Woodcutter_WillowTree_2:
 	compare VAR_RESULT, 0
 	goto_if_ne NPC_Draynor_Woodcutter_WillowTree_4
 	msgbox NPC_Draynor_Woodcutter_WillowTree_Text_2
-	goto NPC_Draynor_Woodcutter_WillowTree_1
+	closemessage
+	hidenamebox
+	release
+	end
 
 NPC_Draynor_Woodcutter_WillowTree_4:
 	hidenamebox
 	closemessage
 	call EventScript_GiftMonster_BirdNest
 	setflag FLAG_GIFT_BIRDS_NEST
+	namebox NPC_Draynor_Woodcutter_WillowTree_Text_0
 	goto NPC_Draynor_Woodcutter_WillowTree_1
 
 
