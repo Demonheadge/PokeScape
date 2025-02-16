@@ -24,7 +24,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_1F_NPC_5",
       "flag": "0"
     },
     {
@@ -37,7 +37,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_1F_NPC_4",
       "flag": "0"
     },
     {
@@ -63,7 +63,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_1F_NPC_6",
       "flag": "0"
     },
     {
@@ -76,7 +76,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_1F_NPC_3",
       "flag": "0"
     },
     {
@@ -89,7 +89,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BLACK_KNIGHT_QUIZ_2",
       "flag": "0"
     },
     {
@@ -102,7 +102,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BLACK_KNIGHT_QUIZ_2",
       "flag": "0"
     },
     {
@@ -167,7 +167,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_DOG",
       "flag": "0"
     },
     {
@@ -180,7 +180,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_DOG",
       "flag": "0"
     },
     {
@@ -193,7 +193,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_DOG",
       "flag": "0"
     },
     {
@@ -206,8 +206,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_BKFORT_1F_ITEM2",
+      "flag": "FLAG_ITEM_BKFORT_1F_ITEM2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
@@ -219,8 +219,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_BKFORT_1F_ITEM3",
+      "flag": "FLAG_ITEM_BKFORT_1F_ITEM3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
@@ -245,8 +245,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_BKFORT_1F_ITEM1",
+      "flag": "FLAG_ITEM_BKFORT_1F_ITEM1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GUARD_FALADOR",
@@ -258,7 +258,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_1F_NPC_2",
       "flag": "0"
     },
     {
@@ -271,7 +271,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_1F_NPC_1",
       "flag": "0"
     }
   ],
@@ -333,7 +333,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "BLACK_KNIGHT_QUIZ_2"
     },
     {
       "type": "trigger",
@@ -355,7 +355,22 @@
     }
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 19,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BKFORT_1F_BOOK"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 19,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "BKFORT_1F_BOOK"
+    }
   ],
   "has_night_table": false
 }

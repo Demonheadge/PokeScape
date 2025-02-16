@@ -64,23 +64,32 @@ static const struct TrainerMon sParty_Goblin3[] = {
 
 static const struct TrainerMon sParty_Farmer_Route1[] = {
     {
-    .lvl = 12,
+    .lvl = 15,
     .species = SPECIES_CALF,
     },
     {
-    .lvl = 13,
+    .lvl = 15,
+    .species = SPECIES_LAMB,
+    },
+    {
+    .lvl = 16,
     .species = SPECIES_CALF,
     }
 };
 
 static const struct TrainerMon sParty_ROUTE1_Goblin4[] = {
     {
-    .lvl = 13,
-    .species = SPECIES_SPIDERLING,
+    .lvl = 15,
+    .species = SPECIES_SPIDER_GIANT_FORM,
     .heldItem = ITEM_NONE
     },
     {
-    .lvl = 12,
+    .lvl = 15,
+    .species = SPECIES_CAVE_SLIME,
+    .heldItem = ITEM_NONE
+    },
+    {
+    .lvl = 16,
     .species = SPECIES_FROG_NORMAL_FORM,
     .heldItem = ITEM_NONE
     }
@@ -7464,5 +7473,231 @@ static const struct TrainerMon sParty_DraynorManor_HAM[] = {
     {
     .lvl = 16,
     .species = SPECIES_PIG,
+    }
+};
+
+static const struct TrainerMon sParty_Route9_ItsWill[] = {
+    {
+    .lvl = 22,
+    .species = SPECIES_SLIME_LILGLOOP,
+    },
+    {
+    .lvl = 22,
+    .species = SPECIES_FOX_RECRUITMENTDRIVE,
+    },
+    {
+    .lvl = 23,
+    .species = SPECIES_TOME_OF_STRENGTH,
+    }
+};
+
+static const struct TrainerMon sParty_ModestSamuel[] = {
+    {
+    .lvl = 5,
+    .species = SPECIES_SPIDERLING,
+    },
+    {
+    .lvl = 6,
+    .species = SPECIES_SPIDERLING,
+    },
+    {
+    .lvl = 6,
+    .species = SPECIES_SPIDERLING,
+    },
+    {
+    .lvl = 6,
+    .species = SPECIES_SPIDERLING,
+    .isShiny = TRUE,
+    .nickname = COMPOUND_STRING("Ryxku"),    
+    }
+};
+
+static const struct TrainerMon sParty_BlackKnight_Mare[] = {
+    {
+    .lvl = 42,
+    .species = SPECIES_UNICORN_BLACK_FORM,
+    },
+    {
+    .lvl = 42,
+    .species = SPECIES_GIANT_RAT_DUNGEON_FORM,
+    },
+    {
+    .lvl = 42,
+    .species = SPECIES_ALBINO_BAT,
+    }
+};
+
+static const struct TrainerMon sParty_BlackKnight_Laimp[] = {
+    {
+    .lvl = 40,
+    .species = SPECIES_WOLF_FENRIS_FORM,
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_WOLF_FENRIS_FORM,
+    },
+    {
+    .lvl = 41,
+    .species = SPECIES_WOLF_DIRE_FORM,
+    }
+};
+
+static const struct TrainerMon sParty_BlackKnight_Taim[] = {
+    {
+    .lvl = 41,
+    .species = SPECIES_SHEEP_BLACK_FORM,
+    },
+    {
+    .lvl = 41,
+    .species = SPECIES_JELLY_ALTERNATE_FORM,
+    },
+    {
+    .lvl = 42,
+    .species = SPECIES_LOBSTER_OBSIDIAN_FORM,
+    },
+    {
+    .lvl = 42,
+    .species = SPECIES_SHEEP_BLACK_FORM,
+    }
+};
+
+static const struct TrainerMon sParty_BlackKnight_Laif[] = {
+    {
+    .lvl = 42,
+    .species = SPECIES_HARPY_EAGLE,
+    },
+    {
+    .lvl = 42,
+    .species = SPECIES_HUSKIE,
+    },
+    {
+    .lvl = 43,
+    .species = SPECIES_DEMON_GREATER_RS3_FORM,
+    }
+};
+
+static const struct TrainerMon sParty_BlackKnight_Fall[] = {
+    {
+    .lvl = 44,
+    .species = SPECIES_DEMON_GREATER_OSRS_FORM,
+    },
+    {
+    .lvl = 44,
+    .species = SPECIES_DEMON_ICE_OSRS_FORM,
+    }
+};
+
+static const struct TrainerMon sParty_BlackKnight_Skool[] = { //Not currently in use
+    {
+    .lvl = 45,
+    .species = SPECIES_DEMON_LESSER_RS3_FORM,
+    },
+    {
+    .lvl = 45,
+    .species = SPECIES_SHEEP_BLACK_FORM,
+    },
+    {
+    .lvl = 45,
+    .species = SPECIES_GIANT_RAT_BLESSED_FORM,
+    }
+};
+
+static const struct TrainerMon sParty_BlackKnight_Sift[] = { //Not currently in use
+    {
+    .lvl = 45,
+    .species = SPECIES_BABY_MOLE,
+    },
+    {
+    .lvl = 45,
+    .species = SPECIES_TALONBEAST_NAIL_FORM,
+    },
+    {
+    .lvl = 45,
+    .species = SPECIES_BIG_SNAKE_SEA_FORM,
+    },
+    {
+    .lvl = 45,
+    .species = SPECIES_LARUPIA_NORMAL_FORM,
+    }
+};
+
+static const struct TrainerMon sParty_BlackKnight_Necro1[] = {
+    {
+    .lvl = 40,
+    .species = SPECIES_CROW,
+    },
+    {
+    .lvl = 41,
+    .species = SPECIES_RAVEN_NORMAL_FORM,
+    },
+    {
+    .lvl = 41,
+    .species = SPECIES_RAVEN_NEVERMORE_FORM,
+    }
+};
+
+static const struct TrainerMon sParty_BlackKnight_Necro2[] = {
+    {
+    .lvl = 42,
+    .species = SPECIES_DEMON_LESSER_TONGUE_FORM,
+    },
+    {
+    .lvl = 42,
+    .species = SPECIES_DEMON_LESSER_RS3_FORM,
+    },
+    {
+    .lvl = 43,
+    .species = SPECIES_DEMON_ICE_OSRS_FORM,
+    },
+    {
+    .lvl = 43,
+    .species = SPECIES_DEMON_GREATER_BLACK_FORM,
+    }
+};
+
+static const struct TrainerMon sParty_BlackKnight_Elite1[] = {
+    {
+    .lvl = 42,
+    .nature = NATURE_BOLD,
+    .ability = ABILITY_AVERNIC,
+    .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 4, 0),
+    .species = SPECIES_DEMON_GREATER_BLACK_FORM,
+    .moves = {MOVE_SCREECH, MOVE_DARK_PULSE, MOVE_TAILWIND, MOVE_DRAINING_KISS}
+    },
+    {
+    .lvl = 43,
+    .nature = NATURE_SASSY,
+    .ability = ABILITY_DARK_AURA,
+    .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 252, 0),
+    .species = SPECIES_EVILTURNIP,
+    .moves = {MOVE_CHARM, MOVE_PETAL_BLIZZARD, MOVE_CRUNCH, MOVE_LEECH_SEED}
+    }
+};
+
+static const struct TrainerMon sParty_Lord_Daquarius[] = {
+    {
+    .lvl = 42,
+    .friendship = 0,
+    .nature = NATURE_ADAMANT,
+    .ability = ABILITY_MOXIE,
+    .ev = TRAINER_PARTY_EVS(4, 0, 0, 252, 0, 252),
+    .species = SPECIES_SHEEP_BLACK_FORM,
+    .moves = {MOVE_DARKEST_LARIAT, MOVE_FRUSTRATION, MOVE_PLAY_ROUGH, MOVE_POWER_TRIP}
+    },
+    {
+    .lvl = 42,
+    .nature = NATURE_BRAVE,
+    .ability = ABILITY_DARK_AURA,
+    .ev = TRAINER_PARTY_EVS(252, 252, 4, 0, 0, 0),
+    .species = SPECIES_DARK_BEAST_NORMAL_FORM,
+    .moves = {MOVE_CRUNCH, MOVE_MEGAHORN, MOVE_FIRE_FANG, MOVE_KNOCK_OFF}
+    },
+    {
+    .lvl = 43,
+    .nature = NATURE_NAIVE,
+    .ability = ABILITY_LONG_REACH,
+    .ev = TRAINER_PARTY_EVS(0, 124, 0, 126, 0, 252),
+    .species = SPECIES_SPIRIT_RANGER,
+    .moves = {MOVE_KINGS_SHIELD, MOVE_ZAMORAK_FLAMES, MOVE_SPIRIT_SHACKLE, MOVE_IRON_HEAD}
     }
 };

@@ -5454,8 +5454,162 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_DraynorManor_HAM),
     },
 
+    [TRAINER_ROUTE9_ITSWILL] =
+    {
+        .trainerClass = TRAINER_CLASS_SLAYER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_slayer,
+        .trainerName = _("ItsWill"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_Route9_ItsWill),
+    },
 
-    
+    [TRAINER_MODESTSAMUEL] = //Still a WIP
+    {
+        .trainerClass = TRAINER_CLASS_SLAYER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_slayer,
+        .trainerName = _("Samuel"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_ModestSamuel),
+    },
+
+    [TRAINER_BLACKKNIGHT_MARE] =
+    {
+        .trainerClass = TRAINER_CLASS_BLACK_KNIGHT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_black_knight_m,
+        .trainerName = _("Mare"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BlackKnight_Mare),
+    },
+
+    [TRAINER_BLACKKNIGHT_LAIMP] =
+    {
+        .trainerClass = TRAINER_CLASS_BLACK_KNIGHT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_black_knight_m,
+        .trainerName = _("Laimp"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BlackKnight_Laimp),
+    },
+
+    [TRAINER_BLACKKNIGHT_TAIM] =
+    {
+        .trainerClass = TRAINER_CLASS_BLACK_KNIGHT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_black_knight_m,
+        .trainerName = _("Taim"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BlackKnight_Taim),
+    },
+
+    [TRAINER_BLACKKNIGHT_LAIF] =
+    {
+        .trainerClass = TRAINER_CLASS_BLACK_KNIGHT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_black_knight_m,
+        .trainerName = _("Laif"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BlackKnight_Laif),
+    },
+
+    [TRAINER_BLACKKNIGHT_FALL] = 
+    {
+        .trainerClass = TRAINER_CLASS_BLACK_KNIGHT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_black_knight_m,
+        .trainerName = _("Fall"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BlackKnight_Fall),
+    },
+
+    [TRAINER_BLACKKNIGHT_SKOOL] = //Not currently in use
+    {
+        .trainerClass = TRAINER_CLASS_BLACK_KNIGHT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_black_knight_m,
+        .trainerName = _("Skool"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BlackKnight_Skool),
+    },
+
+    [TRAINER_BLACKKNIGHT_SIFT] = //Not currently in use
+    {
+        .trainerClass = TRAINER_CLASS_BLACK_KNIGHT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_black_knight_m,
+        .trainerName = _("Sift"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BlackKnight_Sift),
+    },
+
+    [TRAINER_BLACKKNIGHT_NECRO_1] =
+    {
+        .trainerClass = TRAINER_CLASS_NECROMANCER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_necromancer,
+        .trainerName = _("Ravenna"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BlackKnight_Necro1),
+    },
+
+    [TRAINER_BLACKKNIGHT_NECRO_2] =
+    {
+        .trainerClass = TRAINER_CLASS_NECROMANCER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_necromancer,
+        .trainerName = _("Seraphina"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BlackKnight_Necro2),
+    },
+
+    [TRAINER_BLACKKNIGHT_ELITE_1] =
+    {
+        .trainerClass = TRAINER_CLASS_BLACK_KNIGHT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_black_knight_m,
+        .trainerName = _("Elite"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BlackKnight_Elite1),
+    },
+
+    [TRAINER_LORD_DAQUARIUS] =
+    {
+        .trainerClass = TRAINER_CLASS_BLACK_KNIGHT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_black_knight_m,
+        .trainerName = _("Daquarius"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_Lord_Daquarius),
+    },
+
 
 /*
     #define TRAINER_HELLWIND                                445

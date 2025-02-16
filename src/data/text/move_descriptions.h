@@ -3374,8 +3374,8 @@ static const u8 sBloodBarrageDescription[] = _(
     "Steals a large amount of health.");
 
 static const u8 sVengeanceDescription[] = _(
-    "Strike the target with blood magic.\n"
-    "Steals a large amount of health.");
+    "Reflect some of the damage taken\n"
+    "back at the enemy.");
 
 static const u8 sArmadylStormDescription[] = _(
     "Strike the target with armadyls winds.\n"
@@ -3386,12 +3386,12 @@ static const u8 sTumekenStormDescription[] = _(
     "Sets up a sandstorm.");
 
 static const u8 sSmokeBarrageDescription[] = _(
-    "Strike with the force of the desert.\n"
-    "Sets up a sandstorm.");
+    "Strike both enemies with strong smoke\n"
+    "magic. May lower accuracy.");
 
 static const u8 sShadowBarrageDescription[] = _(
-    "Strike with the force of the desert.\n"
-    "Sets up a sandstorm.");
+    "Strike both enemies with strong shadow\n"
+    "magic. May raise evasion.");
 
 static const u8 sTelegrabDescription[] = _(
     "Casts a spell to retrieve an item.\n"

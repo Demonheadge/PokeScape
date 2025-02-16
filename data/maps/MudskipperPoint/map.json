@@ -226,7 +226,7 @@
       "y": 26,
       "elevation": 0,
       "item": "ITEM_PURPLE_SWEETS",
-      "flag": "FLAG_HIDDEN_ITEM_MUDSKIPPER_POINT_1"
+      "flag": "FLAG_HIDDEN_ITEM_MUDSKIPPER_POINT_2"
     },
     {
       "type": "hidden_item",
@@ -234,7 +234,7 @@
       "y": 22,
       "elevation": 0,
       "item": "ITEM_PURPLE_SWEETS",
-      "flag": "FLAG_HIDDEN_ITEM_MUDSKIPPER_POINT_1"
+      "flag": "FLAG_HIDDEN_ITEM_MUDSKIPPER_POINT_3"
     }
   ],
   "has_night_table": true

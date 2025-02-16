@@ -156,7 +156,13 @@ script BATTLE_ROUTE9_CHEF{
 
 
 
-
+script BATTLE_ROUTE9_ITSWILL{
+    trainerbattle_single(TRAINER_ROUTE9_ITSWILL, format("Stay back, this place is dangerous!"),format("Maybe you're strong enough to beat her..."))
+    namebox ("ItsWill")
+    msgbox(format("Be careful...\pThere's a girl dressed in all pink in there.{PAUSE 15}\pShe beat my ass hard"))
+    hidenamebox
+    release
+}
 
 
 

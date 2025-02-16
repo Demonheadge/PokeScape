@@ -1,0 +1,495 @@
+mapscripts Black_Knights_Fortress_2_MapScripts {
+
+}
+
+script BLACK_KNIGHT_QUIZ_3 //Necromancer
+{
+    lockall
+    namebox("Necromancer")
+    checktrainerflag(TRAINER_BLACKKNIGHT_NECRO_1)
+    if (var(VAR_RESULT) == TRUE)
+    {
+        msgbox(format("You may continue through."))
+        closemessage
+        hidenamebox
+    }
+    else 
+    {
+        msgbox(format("I hope you've studied, as that's the only way you're getting through here.\pTell me..."))
+        msgbox(format("The first Black Knight was Lord Sanafin Valzin."), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == FALSE)
+        {
+            msgbox(format("Guess you White Knights don't read your history.\pTime to die!\pMaybe I'll even resurrect you as my pets after..."))
+            closemessage
+            hidenamebox
+            call(CAUGHT_BY_BLACK_KNIGHTS)
+            playbgm(MUS_PS_ENCOUNTER_KNIGHTS, FALSE)
+            trainerbattle_no_intro(TRAINER_BLACKKNIGHT_NECRO_1, msgbox(format("…")))
+        }
+        else {
+            msgbox(format("Yes, she was the daughter of the Varrockian Duke.\pYou know your history well."))
+            closemessage
+            hidenamebox
+            settrainerflag(TRAINER_BLACKKNIGHT_NECRO_1)
+        }
+    }
+    releaseall
+    end
+}
+
+script BLACK_KNIGHT_QUIZ_4 //Taim
+{
+    lockall
+    namebox("Black Knight")
+    checktrainerflag(TRAINER_BLACKKNIGHT_TAIM)
+    if (var(VAR_RESULT) == TRUE)
+    {
+        msgbox(format("Phew, it's just you two.\pEveryone's on edge around here at the moment."))
+        closemessage
+        hidenamebox
+    }
+    else 
+    {
+        msgbox(format("Sorry. Increased security means you need to answer a question before passing.\pIt'll be easy...\pif you're a true Black Knight!"))
+        msgbox(format("The first Black Knights were allies of King Wallace?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == TRUE)
+        {
+            msgbox(format("WRONG!!\pThe current ill King is a loser, and we refuse his service.\pPick up a book sometime you noob.\pPrepare for battle!"))
+            closemessage
+            hidenamebox
+            call(CAUGHT_BY_BLACK_KNIGHTS)
+            playbgm(MUS_PS_ENCOUNTER_KNIGHTS, FALSE)
+            trainerbattle_no_intro(TRAINER_BLACKKNIGHT_TAIM, msgbox(format("…")))
+        }
+        else {
+            msgbox(format("Correct\pWe were allies of King Raddallin. Not Wallace."))
+            closemessage
+            hidenamebox
+            settrainerflag(TRAINER_BLACKKNIGHT_TAIM)
+        }
+    }
+    releaseall
+    end
+}
+
+script BLACK_KNIGHT_QUIZ_5 //Laif
+{
+    lockall
+    namebox("Black Knight")
+    checktrainerflag(TRAINER_BLACKKNIGHT_LAIF)
+    if (var(VAR_RESULT) == TRUE)
+    {
+        msgbox(format("Black armour never goes out of style!\pYou both suit it."))
+        closemessage
+        hidenamebox
+    }
+    else 
+    {
+        msgbox(format("Before you go any further..."))
+        msgbox(format("Black and red is a great colour combination."), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == FALSE)
+        {
+            msgbox(format("That is White Knight talk!\pI bet you don't even steal candy from babies.\pPrepare to die!"))
+            closemessage
+            hidenamebox
+            call(CAUGHT_BY_BLACK_KNIGHTS)
+            playbgm(MUS_PS_ENCOUNTER_KNIGHTS, FALSE)
+            trainerbattle_no_intro(TRAINER_BLACKKNIGHT_LAIF, msgbox(format("…")))
+        }
+        else {
+            msgbox(format("Heck yeah!"))
+            closemessage
+            hidenamebox
+            settrainerflag(TRAINER_BLACKKNIGHT_LAIF)
+        }
+    }
+    releaseall
+    end
+}
+
+script BLACK_KNIGHT_QUIZ_6 //UPDATE AND ADD Necromancer
+{
+    lockall
+    namebox("Necromancer")
+    checktrainerflag(TRAINER_BLACKKNIGHT_NECRO_2)
+    if (var(VAR_RESULT) == TRUE)
+    {
+        msgbox(format("Solus Dellagar will burn for what he did."))
+        closemessage
+        hidenamebox
+    }
+    else 
+    {
+        msgbox(format("You know the drill by now...\pAnswer the question, and you can keep going."))
+        msgbox(format("The Zamorakian mage Solus Dellagar is a close ally of the Black Knights."), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == TRUE)
+        {
+            msgbox(format("Blasphemy!\pSolus Dellagar is a treacherous leech who betrayed us.\pYou're an imposter, and I'll gladly be the one to stop you."))
+            closemessage
+            hidenamebox
+            call(CAUGHT_BY_BLACK_KNIGHTS)
+            playbgm(MUS_PS_ENCOUNTER_KNIGHTS, FALSE)
+            trainerbattle_no_intro(TRAINER_BLACKKNIGHT_NECRO_2, msgbox(format("…")))
+        }
+        else {
+            msgbox(format("That's right!\pThe only good thing those White Knights have ever done was apprehend and exile that traitor."))
+            closemessage
+            hidenamebox
+            settrainerflag(TRAINER_BLACKKNIGHT_NECRO_2)
+        }
+    }
+    releaseall
+    end
+}
+
+script BLACK_KNIGHT_QUIZ_7 //Fall
+{
+    lockall
+    namebox("Black Knight")
+    checktrainerflag(TRAINER_BLACKKNIGHT_FALL)
+    if (var(VAR_RESULT) == TRUE)
+    {
+        msgbox(format("Hail Daquarius.{PAUSE15}\pYou may pass."))
+        closemessage
+        hidenamebox
+    }
+    else 
+    {
+        msgbox(format("Before you can go through here, tell me one thing."))
+        msgbox(format("The current leader of the Black Knights is Lord Daquarius."), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == FALSE)
+        {
+            msgbox(format("You are one of those Iban exiles aren't you?\pYou won't leave here alive!"))
+            closemessage
+            hidenamebox
+            call(CAUGHT_BY_BLACK_KNIGHTS)
+            playbgm(MUS_PS_ENCOUNTER_KNIGHTS, FALSE)
+            trainerbattle_no_intro(TRAINER_BLACKKNIGHT_FALL, msgbox(format("…")))
+        }
+        else {
+            msgbox(format("Hail Daquarius."))
+            closemessage
+            hidenamebox
+            settrainerflag(TRAINER_BLACKKNIGHT_FALL)
+        }
+    }
+    releaseall
+    end
+}
+
+//NPCs
+
+script BKFORT_2F_NPC_1 //Goblin in kitchen
+{
+    faceplayer
+    namebox ("Greldo")
+    msgbox(format("Me need Draynor cabbageth.\p{PAUSE15}They tayth-tee, me hope thilly Black Knight not eat it or green lady be very angry."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_2 //Western most Black Knight in main room
+{
+    faceplayer
+    namebox ("Black Knight")
+    msgbox(format("People wouldn't be so afraid of us if we were White Knights..."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_3 //South-western most Black Knight in main room
+{
+    faceplayer
+    namebox ("Black Knight")
+    msgbox(format("Can I ask you a question?\pWhat do you think about puns?{PAUSE15}\pLook, I hate the White Knights as much as everyone else but I really do think they nailed the whole naming thing.\pImagine if we had names like that...\pLike Jack, or Chap!\pMaybe I should bring it up next council meeting..."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_4 //Guard by entrance and item
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("I am a Cupholder."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_5 //Dark Wizard in South
+{
+    faceplayer
+    namebox ("Dark Wizard")
+    msgbox(format("I am a Cupholder."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_6 //Zamorak Wizard in Hallway
+{
+    faceplayer
+    namebox ("Zamorak Wizard")
+    msgbox(format("One of the eggs was blessed by Zamorak himself and the first Hawk was born..."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_7 //Necromancer in main hall
+{
+    faceplayer
+    namebox ("Necromancer")
+    msgbox(format("I am a Cupholder."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_8 //Top left Black Knight in main hall
+{
+    faceplayer
+    namebox ("Black Knight")
+    msgbox(format("I am a Cupholder."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_9 //Top right Black Knight in main hall
+{
+    faceplayer
+    namebox ("Black Knight")
+    msgbox(format("I am a Cupholder."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_10 //Black Knight on right in main hall
+{
+    faceplayer
+    namebox ("Black Knight")
+    msgbox(format("I am a Cupholder."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_11 //First of two guards in main hall
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("I am a Cupholder."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_12 //Second of two guards in main hall
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("Ughhhhhh\pI was so hungry I snuck into the kitchen and ate a whole cabbage!\pBut now I feel really sick..."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_13 //Chef
+{
+    faceplayer
+    namebox ("Chef")
+    msgbox(format("I am a Cupholder."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_14 //Head Zamorak Wizard
+{
+    faceplayer
+    namebox ("Marius")
+    msgbox(format("It is my duty to bestow Zamorak's blessing upon his servants.\pRemove your helmet, and I shall administer the mark."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_15 //Dark Wizard in Chapel
+{
+    faceplayer
+    namebox ("Dark Wizard")
+    msgbox(format("I am a Cupholder."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_16 //Necromancer in Chapel
+{
+    faceplayer
+    namebox ("Necromancer")
+    msgbox(format("Zamorak o domine, Dona eis requiem."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_17 //Left Zamorak Wizard in Chapel
+{
+    faceplayer
+    namebox ("Zamorak Wizard")
+    msgbox(format("From the blood of the Fallen, we shall create Wine of Zamorak."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_18 //Right Zamorak Wizard in Chapel
+{
+    faceplayer
+    namebox ("Zamorak Wizard")
+    msgbox(format("When gravity falls and earth becomes sky, fear the beast with just one eye."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_19 //PVMer in Chapel
+{
+    faceplayer
+    namebox ("Cupholder")
+    msgbox(format("I am a Cupholder."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_2F_NPC_20 //Black Knight in Chapel
+{
+    faceplayer
+    namebox ("Black Knight")
+    msgbox(format("I am a Cupholder."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script NPC_HELLCAT {
+    random(3)
+        switch (var(VAR_RESULT)) {
+            case 0: 
+                lock
+    		    faceplayer
+		        namebox("Hellcat")
+                msgbox(format("Hiss!"))
+                hidenamebox
+		        release
+		        end
+            case 1: 
+                lock
+    		    faceplayer
+		        namebox("Hellcat")
+                msgbox(format("Meeeooow!"))
+                hidenamebox
+		        release
+		        end
+            case 2: 
+                lock
+    		    faceplayer
+		        namebox("Hellcat")
+                msgbox(format("MeeeoooooW!"))
+                hidenamebox
+		        release
+		        end
+        }
+	release
+	end
+}
+
+script NPC_ZAMOHAWK
+{
+	lock
+	faceplayer
+    namebox ("Zamohawk")
+    playmoncry(SPECIES_ZAMOHAWK, 0)
+	msgbox(format("Kee-eeeee-arr"))
+    waitmoncry
+    hidenamebox
+	release
+	end
+}
+
+//ITEMS
+
+script ITEM_BKFORT_2F_ITEM1
+{
+    finditem(ITEM_BLACK_POUCH)
+    end
+}
+
+script ITEM_BKFORT_2F_ITEM2
+{
+    finditem(ITEM_BLACK_POUCH)
+    end
+}
+
+script ITEM_BKFORT_2F_ITEM3
+{
+    finditem(ITEM_BLACK_POUCH)
+    end
+}
+
+script ITEM_BKFORT_2F_ITEM4
+{
+    finditem(ITEM_BLACK_POUCH)
+    end
+}
+
+script ITEM_BKFORT_2F_ITEM5
+{
+    finditem(ITEM_BLACK_POUCH)
+    end
+}
+
+script ITEM_BKFORT_2F_ITEM6
+{
+    finditem(ITEM_BLACK_POUCH)
+    end
+}
+
+script ITEM_BKFORT_2F_ITEM7
+{
+    finditem(ITEM_BLACK_POUCH)
+    end
+}
+
+script ITEM_BKFORT_2F_ITEM8
+{
+    finditem(ITEM_BLACK_POUCH)
+    end
+}

@@ -19,20 +19,20 @@ script CAUGHT_BY_BLACK_KNIGHTS
     return
 }
 
-script BLACK_KNIGHT_QUIZ_1
+script BLACK_KNIGHT_QUIZ_1 //Laimp
 {
     lockall
     namebox("Black Knight")
-    checktrainerflag(TRAINER_A_TWISTED_SMILE)
+    checktrainerflag(TRAINER_BLACKKNIGHT_LAIMP)
     if (var(VAR_RESULT) == TRUE)
     {
-        msgbox(format("Oh it is you two again, carry on."))
+        msgbox(format("Oh, it is you two again, carry on."))
         closemessage
         hidenamebox
     }
     else 
     {
-        msgbox(format("HALT!!"))
+        msgbox(format("Stop right there!\pWe have important guests and due to this we have increased security.\pYou will have to answer some questions so we know you are truly loyal to our cause!!"))
         msgbox(format("Black Knights are better than White Knights?"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == FALSE)
         {
@@ -41,16 +41,203 @@ script BLACK_KNIGHT_QUIZ_1
             hidenamebox
             call(CAUGHT_BY_BLACK_KNIGHTS)
             playbgm(MUS_PS_ENCOUNTER_KNIGHTS, FALSE)
-            trainerbattle_no_intro(TRAINER_A_TWISTED_SMILE, msgbox(format("…")))
+            trainerbattle_no_intro(TRAINER_BLACKKNIGHT_LAIMP, msgbox(format("…")))
         }
         else {
             msgbox(format("Correct. We are way better than those pansies."))
             closemessage
             hidenamebox
-            settrainerflag(TRAINER_A_TWISTED_SMILE)
+            settrainerflag(TRAINER_BLACKKNIGHT_LAIMP)
         }
     }
     releaseall
     end
 }
 
+script BLACK_KNIGHT_QUIZ_2 //Mare
+{
+    lockall
+    namebox("Black Knight")
+    checktrainerflag(TRAINER_BLACKKNIGHT_MARE)
+    if (var(VAR_RESULT) == TRUE)
+    {
+        msgbox(format("Make sure to stab the prisoners if they get too close to the bars."))
+        closemessage
+        hidenamebox
+    }
+    else 
+    {
+        msgbox(format("Only true Black Knights could ever be allowed to speak to the prisoners.\pProve your loyalty and you may descend!"))
+        msgbox(format("Sir Owen Sonde and Sir Tiffy Cashien smells."), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == FALSE)
+        {
+            hidenamebox
+            namebox("Sir Owen")
+            msgbox(format("Damn right, prepare to battle Black Knight!"))
+            closemessage
+            hidenamebox
+            call(CAUGHT_BY_BLACK_KNIGHTS)
+            playbgm(MUS_PS_ENCOUNTER_KNIGHTS, FALSE)
+            trainerbattle_no_intro(TRAINER_BLACKKNIGHT_MARE, msgbox(format("…")))
+        }
+        else {
+            msgbox(format("Haha, yeah, they really do. Heh."))
+            closemessage
+            hidenamebox
+            namebox("Sir Owen")
+            msgbox(format(".....\p{PLAYER}, something within me felt like we should have taken a loss here...."))
+            closemessage
+            hidenamebox
+            settrainerflag(TRAINER_BLACKKNIGHT_MARE)
+        }
+    }
+    releaseall
+    end
+}
+
+//NPCs
+
+script BKFORT_DOG
+{
+    faceplayer
+    msgbox(format("The dog looks at you and starts to growl.\pMaybe you should leave it alone."))
+    closemessage
+    release
+    end
+}
+
+script BKFORT_1F_NPC_1
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("Don't even think about causing any trouble today.\pWe're on high alert!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_NPC_2
+{
+    lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("An important guest arrived not too long ago!\pI think he headed upstairs to have a meeting with the boss."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_NPC_3
+{
+    lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("I can't believe I did all that training and instead of fighting in a war, I'm running around trying to find a damn cabbage for a crazy person!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_NPC_4
+{
+	lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("Out of everything in Gielinor, why did they have to choose dogs as guard animals!\pI'm deathly allergic!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_NPC_5
+{
+	lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("I don't know if this special guest was cosplaying or just had poor fashion sense but they were dressed entirely in pink..."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_NPC_6
+{
+	lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("I just really want to finish my book, and for the two characters to get their happy ever after.\pIt has been giving me hope that one day I might have the courage to pursue my love..."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_NPC_7
+{
+	lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("I am a Cupholder."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_NPC_8
+{
+	lock
+    faceplayer
+    namebox ("Quester")
+    msgbox(format("I am a Cupholder."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_LENSIG
+{
+	lock
+    faceplayer
+    namebox ("Lensig")
+    msgbox(format("I am a Cupholder."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_BOOK
+{
+	lock
+    msgbox(format("The book tells a story of a romance between two youths from feuding families.\pYou're sure it will have a happy ending."))
+    closemessage
+    release
+    end
+}
+
+//ITEMS
+
+script ITEM_BKFORT_1F_ITEM1
+{
+    finditem(ITEM_BLACK_POUCH)
+    end
+}
+
+script ITEM_BKFORT_1F_ITEM2
+{
+    finditem(ITEM_BLACK_POUCH)
+    end
+}
+
+script ITEM_BKFORT_1F_ITEM3
+{
+    finditem(ITEM_BLACK_POUCH)
+    end
+}

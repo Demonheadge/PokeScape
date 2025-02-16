@@ -501,8 +501,19 @@
 #define TRAINER_ARIANE_1                                495
 #define TRAINER_SIR_OWEN_1                              496
 #define TRAINER_DRAYNORMANOR_HAM                        497
-
-
+#define TRAINER_ROUTE9_ITSWILL                          498 
+#define TRAINER_MODESTSAMUEL                            499
+#define TRAINER_BLACKKNIGHT_MARE                        500
+#define TRAINER_BLACKKNIGHT_LAIMP                       501
+#define TRAINER_BLACKKNIGHT_TAIM                        502
+#define TRAINER_BLACKKNIGHT_LAIF                        503
+#define TRAINER_BLACKKNIGHT_FALL                        504
+#define TRAINER_BLACKKNIGHT_SKOOL                       505 //Not currently in use
+#define TRAINER_BLACKKNIGHT_SIFT                        506 //Not currently in use
+#define TRAINER_BLACKKNIGHT_NECRO_1                     507
+#define TRAINER_BLACKKNIGHT_NECRO_2                     508
+#define TRAINER_BLACKKNIGHT_ELITE_1                     509
+#define TRAINER_LORD_DAQUARIUS                          510
 
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows

@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_10",
       "flag": "0"
     },
     {
@@ -37,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_9",
       "flag": "0"
     },
     {
@@ -50,7 +50,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_8",
       "flag": "0"
     },
     {
@@ -63,7 +63,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_3",
       "flag": "0"
     },
     {
@@ -76,7 +76,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_2",
       "flag": "0"
     },
     {
@@ -89,7 +89,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_7",
       "flag": "0"
     },
     {
@@ -102,7 +102,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_11",
       "flag": "0"
     },
     {
@@ -115,7 +115,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_12",
       "flag": "0"
     },
     {
@@ -128,7 +128,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BLACK_KNIGHT_QUIZ_3",
       "flag": "0"
     },
     {
@@ -141,7 +141,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BLACK_KNIGHT_QUIZ_4",
       "flag": "0"
     },
     {
@@ -149,12 +149,12 @@
       "x": 12,
       "y": 23,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BLACK_KNIGHT_QUIZ_6",
       "flag": "0"
     },
     {
@@ -167,7 +167,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_14",
       "flag": "0"
     },
     {
@@ -180,7 +180,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_19",
       "flag": "0"
     },
     {
@@ -193,7 +193,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BLACK_KNIGHT_QUIZ_7",
       "flag": "0"
     },
     {
@@ -202,11 +202,11 @@
       "y": 24,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
-      "movement_range_x": 0,
+      "movement_range_x": 10,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_6",
       "flag": "0"
     },
     {
@@ -219,7 +219,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_17",
       "flag": "0"
     },
     {
@@ -232,7 +232,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_18",
       "flag": "0"
     },
     {
@@ -245,7 +245,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_20",
       "flag": "0"
     },
     {
@@ -258,7 +258,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_16",
       "flag": "0"
     },
     {
@@ -271,7 +271,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_13",
       "flag": "0"
     },
     {
@@ -284,7 +284,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_15",
       "flag": "0"
     },
     {
@@ -297,7 +297,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_5",
       "flag": "0"
     },
     {
@@ -310,7 +310,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_ZAMOHAWK",
       "flag": "0"
     },
     {
@@ -318,12 +318,12 @@
       "x": 23,
       "y": 28,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
       "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_HELLCAT",
       "flag": "0"
     },
     {
@@ -331,12 +331,12 @@
       "x": 29,
       "y": 29,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_HELLCAT",
       "flag": "0"
     },
     {
@@ -349,7 +349,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_1",
       "flag": "0"
     },
     {
@@ -362,7 +362,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BLACK_KNIGHT_QUIZ_5",
       "flag": "0"
     },
     {
@@ -375,7 +375,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BKFORT_2F_NPC_4",
       "flag": "0"
     },
     {
@@ -388,8 +388,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_BKFORT_2F_ITEM5",
+      "flag": "FLAG_ITEM_BKFORT_2F_ITEM5"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
@@ -401,8 +401,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_BKFORT_2F_ITEM4",
+      "flag": "FLAG_ITEM_BKFORT_2F_ITEM4"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
@@ -414,8 +414,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_BKFORT_2F_ITEM1",
+      "flag": "FLAG_ITEM_BKFORT_2F_ITEM1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
@@ -427,8 +427,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_BKFORT_2F_ITEM3",
+      "flag": "FLAG_ITEM_BKFORT_2F_ITEM3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
@@ -440,8 +440,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_BKFORT_2F_ITEM2",
+      "flag": "FLAG_ITEM_BKFORT_2F_ITEM2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
@@ -453,8 +453,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_BKFORT_2F_ITEM6",
+      "flag": "FLAG_ITEM_BKFORT_2F_ITEM6"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
@@ -466,8 +466,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_BKFORT_2F_ITEM7",
+      "flag": "FLAG_ITEM_BKFORT_2F_ITEM7"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
@@ -479,8 +479,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_BKFORT_2F_ITEM8",
+      "flag": "FLAG_ITEM_BKFORT_2F_ITEM8"
     }
   ],
   "warp_events": [
@@ -507,7 +507,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "BLACK_KNIGHT_QUIZ_3"
     },
     {
       "type": "trigger",
@@ -516,7 +516,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "BLACK_KNIGHT_QUIZ_3"
     },
     {
       "type": "trigger",
@@ -525,7 +525,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "BLACK_KNIGHT_QUIZ_4"
     },
     {
       "type": "trigger",
@@ -534,7 +534,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "BLACK_KNIGHT_QUIZ_4"
     },
     {
       "type": "trigger",
@@ -543,7 +543,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "BLACK_KNIGHT_QUIZ_5"
     },
     {
       "type": "trigger",
@@ -552,7 +552,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "BLACK_KNIGHT_QUIZ_5"
     },
     {
       "type": "trigger",
@@ -561,7 +561,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "BLACK_KNIGHT_QUIZ_7"
     },
     {
       "type": "trigger",
@@ -570,7 +570,16 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "BLACK_KNIGHT_QUIZ_7"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "BLACK_KNIGHT_QUIZ_6"
     }
   ],
   "bg_events": [
