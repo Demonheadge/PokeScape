@@ -341,7 +341,13 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 22,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_BLACK_KNIGHTS_FORTRESS_1",
+      "dest_warp_id": "2"
+    }
   ],
   "coord_events": [
 

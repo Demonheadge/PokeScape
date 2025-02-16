@@ -9,4 +9,48 @@ script ITEM_BLACKKNIGHTS_FORTRESS_1
     end
 }
 
+script CAUGHT_BY_BLACK_KNIGHTS
+{
+    namebox("Sir Owen")
+    msgbox(format("Our cover is blown {PLAYER}!\nQuick prepare for battle!"))
+    closemessage
+    hidenamebox
+    //changes outfits
+    return
+}
+
+script BLACK_KNIGHT_QUIZ_1
+{
+    lockall
+    namebox("Black Knight")
+    checktrainerflag(TRAINER_A_TWISTED_SMILE)
+    if (var(VAR_RESULT) == TRUE)
+    {
+        msgbox(format("Oh it is you two again, carry on."))
+        closemessage
+        hidenamebox
+    }
+    else 
+    {
+        msgbox(format("HALT!!"))
+        msgbox(format("Black Knights are better than White Knights?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == FALSE)
+        {
+            msgbox(format("That is Faladorian talk.\pPrepare for battle scum!"))
+            closemessage
+            hidenamebox
+            call(CAUGHT_BY_BLACK_KNIGHTS)
+            playbgm(MUS_PS_ENCOUNTER_KNIGHTS, FALSE)
+            trainerbattle_no_intro(TRAINER_A_TWISTED_SMILE, msgbox(format("…")))
+        }
+        else {
+            msgbox(format("Correct. We are way better than those pansies."))
+            closemessage
+            hidenamebox
+            settrainerflag(TRAINER_A_TWISTED_SMILE)
+        }
+    }
+    releaseall
+    end
+}
 
