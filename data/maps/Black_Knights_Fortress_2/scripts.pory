@@ -381,7 +381,7 @@ script BKFORT_2F_NPC_19 //PVMer in Chapel
 {
     faceplayer
     namebox ("GIM Frankie")
-    msgbox(format("Hold on...{PAUSE15}\pThis isn't White Knight's castle.\pDrat!\pWrong quest guide..."))
+    msgbox(format("Hold on...{PAUSE 15}\pThis isn't White Knight's castle.\pDrat!\pWrong quest guide..."))
     closemessage
     hidenamebox
     release

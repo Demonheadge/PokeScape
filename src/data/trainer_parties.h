@@ -7366,8 +7366,8 @@ static const struct TrainerMon sParty_TRAINER_A_TWISTED_SMILE[] = {
     {
     .lvl = 31,
     .species = SPECIES_PONG,
-    .ability = ABILITY_PUNK_ROCK
-    .nature = NATURE_MODEST
+    .ability = ABILITY_PUNK_ROCK,
+    .nature = NATURE_MODEST,
     .gender = TRAINER_MON_MALE,
     .nickname = COMPOUND_STRING("Pingu"),
     .moves = {MOVE_PSYCHIC_NOISE, MOVE_ICY_WIND, MOVE_DRUM_BEATING, MOVE_NASTY_PLOT}
@@ -7375,28 +7375,28 @@ static const struct TrainerMon sParty_TRAINER_A_TWISTED_SMILE[] = {
     {
     .lvl = 32,
     .species = SPECIES_SPIRIT_MYSTIC,
-    .ability = ABILITY_MAGICIAN
+    .ability = ABILITY_MAGICIAN,
     .nickname = COMPOUND_STRING("Knightmare"),
     .moves = {MOVE_SACRED_SWORD, MOVE_GRUDGE, MOVE_WILL_O_WISP, MOVE_HEX}
     },
     {
     .lvl = 32,
     .species = SPECIES_SALAMANDER_RED_FORM,
-    .ability = ABILITY_FLASH_FIRE
+    .ability = ABILITY_FLASH_FIRE,
     .nickname = COMPOUND_STRING("Draco"),
     .moves = {MOVE_FLAMETHROWER, MOVE_DISARMING_VOICE, MOVE_TOXIC, MOVE_SMOKESCREEN}
     },
     {
     .lvl = 33,
     .species = SPECIES_ALBATROSS,
-    .ability = ABILITY_GALE_WINGS
+    .ability = ABILITY_GALE_WINGS,
     .nickname = COMPOUND_STRING("Rime"),
     .moves = {MOVE_BUG_BITE, MOVE_WATER_PULSE, MOVE_WING_ATTACK, MOVE_ROOST}
     },
     {
     .lvl = 34,
     .species = SPECIES_POMAPOO,
-    .ability = ABILITY_OPPORTUNIST
+    .ability = ABILITY_OPPORTUNIST,
     .gender = TRAINER_MON_FEMALE,
     .nickname = COMPOUND_STRING("Amber"),
     .moves = {MOVE_CRUNCH, MOVE_SAND_ATTACK, MOVE_HEART_STAMP, MOVE_HONE_CLAWS}
@@ -7771,7 +7771,7 @@ static const struct TrainerMon sParty_Route22_Trainer_1[] = {
     }
 };
 
-static const struct TrainerMon sParty_Route20_Trainer_1[] = {
+static const struct TrainerMon sParty_Route20_Trainer_5[] = {
     {
     .lvl = 44,
     .species = SPECIES_SHARK_NORMAL_FORM,
@@ -7786,7 +7786,7 @@ static const struct TrainerMon sParty_Route20_Trainer_1[] = {
     }
 };
 
-static const struct TrainerMon sParty_Route20_Trainer_2[] = {
+static const struct TrainerMon sParty_Route20_Trainer_6[] = {
     {
     .lvl = 44,
     .species = SPECIES_ESSENCE,
@@ -7797,7 +7797,7 @@ static const struct TrainerMon sParty_Route20_Trainer_2[] = {
     }
 };
 
-static const struct TrainerMon sParty_Route20_Trainer_3[] = {
+static const struct TrainerMon sParty_Route20_Trainer_7[] = {
     {
     .lvl = 44,
     .species = SPECIES_WOLF_SPIRIT_FORM,

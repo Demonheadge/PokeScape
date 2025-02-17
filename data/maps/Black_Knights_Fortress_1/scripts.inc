@@ -177,8 +177,19 @@ BKFORT_1F_NPC_7::
 BKFORT_1F_NPC_8::
 	lock
 	faceplayer
-	namebox BKFORT_1F_NPC_8_Text_0
-	msgbox BKFORT_1F_NPC_7_Text_0
+	namebox BKFORT_1F_NPC_1_Text_0
+	msgbox BKFORT_1F_NPC_8_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+BKFORT_1F_NPC_9::
+	lock
+	faceplayer
+	namebox BKFORT_1F_NPC_9_Text_0
+	msgbox BKFORT_1F_NPC_9_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -189,11 +200,50 @@ BKFORT_1F_LENSIG::
 	lock
 	faceplayer
 	namebox BKFORT_1F_LENSIG_Text_0
-	msgbox BKFORT_1F_NPC_7_Text_0
-	closemessage
+	goto_if_unset FLAG_BKFORT_TRADE_1, BKFORT_1F_LENSIG_2
+	msgbox BKFORT_1F_LENSIG_Text_5
+BKFORT_1F_LENSIG_1:
 	hidenamebox
 	release
 	end
+
+BKFORT_1F_LENSIG_2:
+	setvar VAR_0x8008, INGAME_TRADE_CABBAGE
+	copyvar VAR_0x8004, VAR_0x8008
+	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
+	copyvar VAR_0x8009, VAR_RESULT
+	msgbox BKFORT_1F_LENSIG_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne BKFORT_1F_LENSIG_5
+	msgbox BKFORT_1F_LENSIG_Text_4
+	goto BKFORT_1F_LENSIG_1
+
+BKFORT_1F_LENSIG_5:
+	special ChoosePartyMon
+	waitstate
+	copyvar VAR_0x800A, VAR_0x8004
+	compare VAR_0x8004, 255
+	goto_if_ne BKFORT_1F_LENSIG_8
+	goto BKFORT_1F_LENSIG_1
+
+BKFORT_1F_LENSIG_8:
+	copyvar VAR_0x8005, VAR_0x800A
+	specialvar VAR_RESULT, GetTradeSpecies
+	copyvar VAR_0x800B, VAR_RESULT
+	compare VAR_RESULT, VAR_0x8009
+	goto_if_eq BKFORT_1F_LENSIG_10
+	msgbox BKFORT_1F_LENSIG_Text_3
+	goto BKFORT_1F_LENSIG_1
+
+BKFORT_1F_LENSIG_10:
+	copyvar VAR_0x8004, VAR_0x8008
+	copyvar VAR_0x8005, VAR_0x800A
+	special CreateInGameTradePokemon
+	special DoInGameTradeScene
+	waitstate
+	msgbox BKFORT_1F_LENSIG_Text_2
+	setflag FLAG_BKFORT_TRADE_1
+	goto BKFORT_1F_LENSIG_1
 
 
 BKFORT_1F_BOOK::
@@ -326,13 +376,53 @@ BKFORT_1F_NPC_6_Text_0:
 	.string "love...$"
 
 BKFORT_1F_NPC_7_Text_0:
-	.string "I am a Cupholder.$"
+	.string "Don't mind me, I am just staying out of\n"
+	.string "the way.\p"
+	.string "That way I can't mess anything up\n"
+	.string "again...$"
 
 BKFORT_1F_NPC_8_Text_0:
-	.string "Quester$"
+	.string "I hate being posted here!\p"
+	.string "I can hear the screams of the prisoners\n"
+	.string "from the basement...{PAUSE 15}\p"
+	.string "Just makes me really sad I'm not the one\n"
+	.string "down there torturing them...$"
+
+BKFORT_1F_NPC_9_Text_0:
+	.string "Qu3stL0ck$"
+
+BKFORT_1F_NPC_9_Text_1:
+	.string "Whoever wrote this guide is an idiot!\p"
+	.string "It clearly says bring a cabbage, but\n"
+	.string "this witch wants a MONSTER Cabbage and\l"
+	.string "not the item!\p"
+	.string "I'm going to have to trek all the way\n"
+	.string "back to a Bank now...$"
 
 BKFORT_1F_LENSIG_Text_0:
 	.string "Lensig$"
+
+BKFORT_1F_LENSIG_Text_1:
+	.string "That snivelling goblin is useless.\p"
+	.string "If I don't get a Cabbage soon, I'll never\n"
+	.string "be able to finish...\p"
+	.string "Say, do you happen to have a Cabbage?\p"
+	.string "Would you like to trade one for my cat?$"
+
+BKFORT_1F_LENSIG_Text_2:
+	.string "AHAHAHAHAH!\p"
+	.string "YES!\p"
+	.string "Finally, I can complete the ritual!$"
+
+BKFORT_1F_LENSIG_Text_3:
+	.string "Sorry, only a Cabbage can complete the ritual.$"
+
+BKFORT_1F_LENSIG_Text_4:
+	.string "Well, please come back if you change\n"
+	.string "your mind.$"
+
+BKFORT_1F_LENSIG_Text_5:
+	.string "I really need that Cabbage.\pCome back if you change your mind.$"
 
 BKFORT_1F_BOOK_Text_0:
 	.string "The book tells a story of a romance\n"

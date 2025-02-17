@@ -194,7 +194,7 @@ script BKFORT_1F_NPC_8
 	lock
     faceplayer
     namebox ("Guard")
-    msgbox(format("I hate being posted here!\pI can hear the screams of the prisoners from the basement...{PAUSE15}\pJust makes me really sad I'm not the one down there torturing them..."))
+    msgbox(format("I hate being posted here!\pI can hear the screams of the prisoners from the basement...{PAUSE 15}\pJust makes me really sad I'm not the one down there torturing them..."))
     closemessage
     hidenamebox
     release

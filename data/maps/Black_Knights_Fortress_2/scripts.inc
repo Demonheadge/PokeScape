@@ -215,7 +215,7 @@ BKFORT_2F_NPC_4::
 BKFORT_2F_NPC_5::
 	faceplayer
 	namebox BKFORT_2F_NPC_5_Text_0
-	msgbox BKFORT_2F_NPC_4_Text_1
+	msgbox BKFORT_2F_NPC_5_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -235,7 +235,7 @@ BKFORT_2F_NPC_6::
 BKFORT_2F_NPC_7::
 	faceplayer
 	namebox BLACK_KNIGHT_QUIZ_3_Text_0
-	msgbox BKFORT_2F_NPC_4_Text_1
+	msgbox BKFORT_2F_NPC_7_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -245,7 +245,7 @@ BKFORT_2F_NPC_7::
 BKFORT_2F_NPC_8::
 	faceplayer
 	namebox BLACK_KNIGHT_QUIZ_4_Text_0
-	msgbox BKFORT_2F_NPC_4_Text_1
+	msgbox BKFORT_2F_NPC_8_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -255,7 +255,7 @@ BKFORT_2F_NPC_8::
 BKFORT_2F_NPC_9::
 	faceplayer
 	namebox BLACK_KNIGHT_QUIZ_4_Text_0
-	msgbox BKFORT_2F_NPC_4_Text_1
+	msgbox BKFORT_2F_NPC_9_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -265,7 +265,7 @@ BKFORT_2F_NPC_9::
 BKFORT_2F_NPC_10::
 	faceplayer
 	namebox BLACK_KNIGHT_QUIZ_4_Text_0
-	msgbox BKFORT_2F_NPC_4_Text_1
+	msgbox BKFORT_2F_NPC_10_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -275,7 +275,7 @@ BKFORT_2F_NPC_10::
 BKFORT_2F_NPC_11::
 	faceplayer
 	namebox BKFORT_2F_NPC_4_Text_0
-	msgbox BKFORT_2F_NPC_4_Text_1
+	msgbox BKFORT_2F_NPC_11_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -295,7 +295,7 @@ BKFORT_2F_NPC_12::
 BKFORT_2F_NPC_13::
 	faceplayer
 	namebox BKFORT_2F_NPC_13_Text_0
-	msgbox BKFORT_2F_NPC_4_Text_1
+	msgbox BKFORT_2F_NPC_13_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -315,7 +315,7 @@ BKFORT_2F_NPC_14::
 BKFORT_2F_NPC_15::
 	faceplayer
 	namebox BKFORT_2F_NPC_5_Text_0
-	msgbox BKFORT_2F_NPC_4_Text_1
+	msgbox BKFORT_2F_NPC_15_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -355,7 +355,7 @@ BKFORT_2F_NPC_18::
 BKFORT_2F_NPC_19::
 	faceplayer
 	namebox BKFORT_2F_NPC_19_Text_0
-	msgbox BKFORT_2F_NPC_4_Text_1
+	msgbox BKFORT_2F_NPC_19_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -365,7 +365,7 @@ BKFORT_2F_NPC_19::
 BKFORT_2F_NPC_20::
 	faceplayer
 	namebox BLACK_KNIGHT_QUIZ_4_Text_0
-	msgbox BKFORT_2F_NPC_4_Text_1
+	msgbox BKFORT_2F_NPC_20_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -427,7 +427,7 @@ ITEM_BKFORT_2F_ITEM1::
 
 
 ITEM_BKFORT_2F_ITEM2::
-	finditem ITEM_POUCH_BLACK
+	finditem ITEM_FRUIT_BLAST
 	end
 
 
@@ -615,17 +615,55 @@ BKFORT_2F_NPC_4_Text_0:
 	.string "Guard$"
 
 BKFORT_2F_NPC_4_Text_1:
-	.string "I am a Cupholder.$"
+	.string "I am so tired I could go for another\n"
+	.string "nap...$"
 
 BKFORT_2F_NPC_5_Text_0:
 	.string "Dark Wizard$"
 
+BKFORT_2F_NPC_5_Text_1:
+	.string "Do you think I look...\p"
+	.string "Evil enough?\p"
+	.string "I'm worried that my robes are a bit\n"
+	.string "washed out now and they're only grey\l"
+	.string "instead of black.\p"
+	.string "I don't want to get kicked out because\n"
+	.string "of it!$"
+
 BKFORT_2F_NPC_6_Text_0:
-	.string "Zamorak Wizard$"
+	.string "Zammy Wizard$"
 
 BKFORT_2F_NPC_6_Text_1:
 	.string "One of the eggs was blessed by Zamorak\n"
 	.string "himself and the first Hawk was born...$"
+
+BKFORT_2F_NPC_7_Text_0:
+	.string "White Knights don't do it for me.\p"
+	.string "Once you go Black Knight, you're never\n"
+	.string "going back you know.$"
+
+BKFORT_2F_NPC_8_Text_0:
+	.string "Elite Black knights are the true heroes\n"
+	.string "of the Kinshra.\p"
+	.string "We even work with the Mahjarrats.$"
+
+BKFORT_2F_NPC_9_Text_0:
+	.string "You have a lot of nerve coming into here\n"
+	.string "solely to ruin my mealtime.\p"
+	.string "Begone!$"
+
+BKFORT_2F_NPC_10_Text_0:
+	.string "One day I will be an Elite Black Knight\n"
+	.string "and get a really cool name!\p"
+	.string "Eugene just doesn't cut it as a Black\n"
+	.string "Knight.$"
+
+BKFORT_2F_NPC_11_Text_0:
+	.string "I tried to hit on the girl over there,\n"
+	.string "but she said guard is hardly an\l"
+	.string "occupation.\p"
+	.string "Guess I need a promotion before I can\n"
+	.string "settle down.$"
 
 BKFORT_2F_NPC_12_Text_0:
 	.string "Ughhhhhh\p"
@@ -636,6 +674,16 @@ BKFORT_2F_NPC_12_Text_0:
 BKFORT_2F_NPC_13_Text_0:
 	.string "Chef$"
 
+BKFORT_2F_NPC_13_Text_1:
+	.string "Become a chef, they said.\p"
+	.string "Start your own catering business, they\n"
+	.string "said.\p"
+	.string "Nobody said anything about having to\n"
+	.string "live in a creepy fortress serving food\l"
+	.string "to an army of mercenaries!\p"
+	.string "It's too late for me to even leave now,\n"
+	.string "I've seen too much...$"
+
 BKFORT_2F_NPC_14_Text_0:
 	.string "Marius$"
 
@@ -644,6 +692,11 @@ BKFORT_2F_NPC_14_Text_1:
 	.string "blessing upon his servants.\p"
 	.string "Remove your helmet, and I shall\n"
 	.string "administer the mark.$"
+
+BKFORT_2F_NPC_15_Text_0:
+	.string "I mostly come here for the free\n"
+	.string "ceremonial Wine of Zamorak.\p"
+	.string "Selling it helps to feed my family.$"
 
 BKFORT_2F_NPC_16_Text_0:
 	.string "Zamorak o domine, Dona eis requiem.$"
@@ -657,7 +710,23 @@ BKFORT_2F_NPC_18_Text_0:
 	.string "sky, fear the beast with just one eye.$"
 
 BKFORT_2F_NPC_19_Text_0:
-	.string "Cupholder$"
+	.string "GIM Frankie$"
+
+BKFORT_2F_NPC_19_Text_1:
+	.string "Hold on...{PAUSE 15}\p"
+	.string "This isn't White Knight's castle.\p"
+	.string "Drat!\p"
+	.string "Wrong quest guide...$"
+
+BKFORT_2F_NPC_20_Text_0:
+	.string "Zamorak, my lord, please make me good at\n"
+	.string "swordfighting.\p"
+	.string "Zamorak, my lord, please make me good at\n"
+	.string "swordfighting.\p"
+	.string "Zamorak, my lord, please make me good at\n"
+	.string "swordfighting.\p"
+	.string "Zamorak, my lord, PLEASE make me good\n"
+	.string "at swordfighting!$"
 
 NPC_HELLCAT_Text_0:
 	.string "Hellcat$"

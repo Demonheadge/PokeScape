@@ -517,9 +517,9 @@
 #define TRAINER_ROUTE21_TRAINER_1                       511
 #define TRAINER_ROUTE21_TRAINER_2                       512
 #define TRAINER_ROUTE22_TRAINER_1                       513
-#define TRAINER_ROUTE20_TRAINER_1                       514
-#define TRAINER_ROUTE20_TRAINER_2                       515
-#define TRAINER_ROUTE20_TRAINER_3                       516
+#define TRAINER_ROUTE20_TRAINER_5                       514
+#define TRAINER_ROUTE20_TRAINER_6                       515
+#define TRAINER_ROUTE20_TRAINER_7                       516
 
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
