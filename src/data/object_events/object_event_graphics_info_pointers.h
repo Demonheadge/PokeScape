@@ -581,6 +581,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_impling_dra
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_impling_earth;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_impling_essence;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_sandwich_lady;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_evildave;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_eliteblack;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_oddenstein;
 
 //ORES
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CopperOre;
@@ -1174,6 +1177,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_IMPLING_EARTH] =                 &gObjectEventGraphicsInfo_impling_earth,
     [OBJ_EVENT_GFX_IMPLING_ESSENCE] =               &gObjectEventGraphicsInfo_impling_essence,
     [OBJ_EVENT_GFX_SANDWICH_LADY] =                 &gObjectEventGraphicsInfo_sandwich_lady,
+    [OBJ_EVENT_GFX_EVIL_DAVE] =                     &gObjectEventGraphicsInfo_evildave,
+    [OBJ_EVENT_GFX_ELITE_BLACK_KNIGHT] =            &gObjectEventGraphicsInfo_eliteblack,
+    [OBJ_EVENT_GFX_ODDENSTEIN] =                    &gObjectEventGraphicsInfo_oddenstein,
 
 //ORES 
 	[OBJ_EVENT_GFX_COPPER_ORE] =          		    &gObjectEventGraphicsInfo_CopperOre,
