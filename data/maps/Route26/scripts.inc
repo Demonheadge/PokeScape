@@ -5,8 +5,48 @@ Route26_MapScripts::
 Route26_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 3
 	call WEATHER_CHANGE_AREA_ICE_MOUNTAIN
+	call ROUTE26_STATE
 	call PENGUIN_EVENT
 	return
+
+
+ROUTE26_STATE::
+	setflag FLAG_TEMP_1E
+	setflag FLAG_TEMP_1F
+	removeobject 13
+	removeobject 6
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 175
+	goto_if_eq ROUTE26_STATE_2
+ROUTE26_STATE_1:
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 180
+	goto_if_eq ROUTE26_STATE_5
+ROUTE26_STATE_4:
+	return
+
+ROUTE26_STATE_2:
+	clearflag FLAG_TEMP_1E
+	clearflag FLAG_TEMP_1F
+	addobject 13
+	addobject 6
+	goto ROUTE26_STATE_1
+
+ROUTE26_STATE_5:
+	clearflag FLAG_TEMP_1E
+	addobject 13
+	setobjectxyperm 13, 8, 7
+	goto ROUTE26_STATE_4
+
+
+TRIGGER_STORYMODE_EVENT_ROUTE26::
+	lockall
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_0
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_1
+	setflag FLAG_TEMP_1F
+	removeobject 6
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 180
+	call multipartnerBattle_SirOwen
+	releaseall
+	end
 
 
 ENCOUNTER_PENGUIN_BOX_ROUTE26::
@@ -92,6 +132,12 @@ ROUTE26_ADAMANT_POUCH::
 	finditem ITEM_POUCH_ADAMANT
 	end
 
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_Text_0:
+	.string "Help me kill this black knight!$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_Text_1:
+	.string "{PLAYER} we should go together!$"
 
 ENCOUNTER_PENGUIN_BOX_ROUTE26_Text_0:
 	.string "Penguin$"

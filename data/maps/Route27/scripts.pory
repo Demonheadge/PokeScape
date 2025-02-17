@@ -1,8 +1,44 @@
 mapscripts Route27_MapScripts{
 	MAP_SCRIPT_ON_TRANSITION {
+        call(ROUTE27_STATE)
         //setvar(VAR_EVOLUTION_MAP_STATE, 15) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
 	}
 }
+
+
+script ROUTE27_STATE {
+    setflag(FLAG_TEMP_1E) //Hide only sir owen
+    setflag(FLAG_TEMP_1F)
+    removeobject(7)
+    removeobject(8)
+    removeobject(9)
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 170)
+    {
+        clearflag(FLAG_TEMP_1E)
+        clearflag(FLAG_TEMP_1F)
+		addobject(7)
+		addobject(8)
+		addobject(9)
+    }
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 175)
+    {
+        clearflag(FLAG_TEMP_1F)
+		addobject(8)
+		addobject(9)
+    }
+}
+
+script TRIGGER_STORYMODE_EVENT_ROUTE27 {
+	lockall
+	msgbox(format("Look it's {PLAYER}!"))
+	msgbox(format("Im going to ice mountain, you stay here!"))
+	setflag(FLAG_TEMP_1E) //Hide only sir owen
+    removeobject(7)
+	setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 175)
+	releaseall
+	end
+}
+
 
 
 //NPCS

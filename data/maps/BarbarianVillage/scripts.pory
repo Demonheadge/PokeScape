@@ -108,6 +108,8 @@ script BARBARIANVILLAGE_STORYMODE_EVENT
     hidenamebox
     closemessage
     setvar(VAR_TEMP_B, 0)
+    setflag(FLAG_TEMP_1F)
+    removeobject(OBJ_EVENT_ID_BLACK_KNIGHT)
     //SET STORYMODE VAR
     setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 165)
     release

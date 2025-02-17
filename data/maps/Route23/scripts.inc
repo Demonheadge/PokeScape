@@ -75,6 +75,21 @@ ROUTE23_STATE_7:
 	return
 
 
+TRIGGER_STORYMODE_EVENT_ROUTE23::
+	lockall
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_0
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_1
+	setflag FLAG_TEMP_1D
+	removeobject 16
+	removeobject 17
+	removeobject 18
+	removeobject 19
+	removeobject 20
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 170
+	releaseall
+	end
+
+
 ENCOUNTER_PENGUIN_ROCK_ROUTE23::
 	lock
 	faceplayer
@@ -361,6 +376,12 @@ NPC_ROUTE20_TEMPLE_KNIGHT::
 	release
 	end
 
+
+TRIGGER_STORYMODE_EVENT_ROUTE23_Text_0:
+	.string "Look it's {PLAYER}!$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE23_Text_1:
+	.string "Okay lets go north!$"
 
 ENCOUNTER_PENGUIN_ROCK_ROUTE23_Text_0:
 	.string "Penguin$"

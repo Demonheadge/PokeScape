@@ -82,6 +82,8 @@ BARBARIANVILLAGE_STORYMODE_EVENT_11:
 	hidenamebox
 	closemessage
 	setvar VAR_TEMP_B, 0
+	setflag FLAG_TEMP_1F
+	removeobject 16
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 165
 	release
 	end

@@ -3,7 +3,47 @@ Route27_MapScripts::
 	.byte 0
 
 Route27_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	call ROUTE27_STATE
 	return
+
+
+ROUTE27_STATE::
+	setflag FLAG_TEMP_1E
+	setflag FLAG_TEMP_1F
+	removeobject 7
+	removeobject 8
+	removeobject 9
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 170
+	goto_if_eq ROUTE27_STATE_2
+ROUTE27_STATE_1:
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 175
+	goto_if_eq ROUTE27_STATE_4
+	return
+
+ROUTE27_STATE_2:
+	clearflag FLAG_TEMP_1E
+	clearflag FLAG_TEMP_1F
+	addobject 7
+	addobject 8
+	addobject 9
+	goto ROUTE27_STATE_1
+
+ROUTE27_STATE_4:
+	clearflag FLAG_TEMP_1F
+	addobject 8
+	addobject 9
+	return
+
+
+TRIGGER_STORYMODE_EVENT_ROUTE27::
+	lockall
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE27_Text_0
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE27_Text_1
+	setflag FLAG_TEMP_1E
+	removeobject 7
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 175
+	releaseall
+	end
 
 
 NPC_ROUTE27_1::
@@ -60,6 +100,12 @@ BATTLE_ROUTE27_TRAINER_4::
 	release
 	end
 
+
+TRIGGER_STORYMODE_EVENT_ROUTE27_Text_0:
+	.string "Look it's {PLAYER}!$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE27_Text_1:
+	.string "Im going to ice mountain, you stay here!$"
 
 NPC_ROUTE27_1_Text_0:
 	.string "Monk$"

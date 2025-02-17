@@ -5,8 +5,42 @@ mapscripts Route26_MapScripts{
 	MAP_SCRIPT_ON_TRANSITION {
         setvar(VAR_EVOLUTION_MAP_STATE, 3) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
         call(WEATHER_CHANGE_AREA_ICE_MOUNTAIN)
+        call(ROUTE26_STATE)
         call(PENGUIN_EVENT)
 	}
+}
+
+script ROUTE26_STATE {
+    setflag(FLAG_TEMP_1E) //Hide only sir owen
+    setflag(FLAG_TEMP_1F)
+    removeobject(13)
+    removeobject(6)
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 175)
+    {
+        clearflag(FLAG_TEMP_1E)
+        clearflag(FLAG_TEMP_1F)
+		addobject(13)
+		addobject(6)
+    }
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 180)
+    {
+        clearflag(FLAG_TEMP_1E)
+		addobject(13)
+        setobjectxyperm(13, 8, 7)
+    }
+    return
+}
+
+script TRIGGER_STORYMODE_EVENT_ROUTE26 {
+	lockall
+	msgbox(format("Help me kill this black knight!"))
+	msgbox(format("{PLAYER} we should go together!"))
+	setflag(FLAG_TEMP_1F)
+    removeobject(6)
+	setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 180)
+    call(multipartnerBattle_SirOwen)
+	releaseall
+	end
 }
 
 script ENCOUNTER_PENGUIN_BOX_ROUTE26 {
