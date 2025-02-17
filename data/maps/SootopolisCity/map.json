@@ -129,7 +129,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_GROUDON"
+      "flag": "NULL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KYOGRE_SIDE",
@@ -142,7 +142,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_KYOGRE"
+      "flag": "NULL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RAYQUAZA",
@@ -155,7 +155,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "0x0",
-      "flag": "FLAG_HIDE_SOOTOPOLIS_CITY_RAYQUAZA"
+      "flag": "NULL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MANIAC",

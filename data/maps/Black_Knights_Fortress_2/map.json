@@ -12,13 +12,7 @@
   "allow_running": true,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": [
-    {
-      "map": "MAP_BLACK_KNIGHTS_FORTRESS_1",
-      "offset": 0,
-      "direction": "right"
-    }
-  ],
+  "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_KNIGHT_BLACK_M",
@@ -34,7 +28,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_KNIGHT_ARDY",
+      "graphics_id": "OBJ_EVENT_GFX_ELITE_BLACK_KNIGHT",
       "x": 17,
       "y": 3,
       "elevation": 0,
@@ -47,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_KNIGHT_ARDY",
+      "graphics_id": "OBJ_EVENT_GFX_ELITE_BLACK_KNIGHT",
       "x": 15,
       "y": 3,
       "elevation": 0,
@@ -511,81 +505,81 @@
       "x": 5,
       "y": 13,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_3",
       "var_value": "0",
-      "script": "BLACK_KNIGHT_QUIZ_3"
+      "script": "TRIGGER_BLACK_KNIGHT_QUIZ_3"
     },
     {
       "type": "trigger",
       "x": 6,
       "y": 13,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_3",
       "var_value": "0",
-      "script": "BLACK_KNIGHT_QUIZ_3"
+      "script": "TRIGGER_BLACK_KNIGHT_QUIZ_3"
     },
     {
       "type": "trigger",
       "x": 4,
       "y": 20,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_4",
       "var_value": "0",
-      "script": "BLACK_KNIGHT_QUIZ_4"
+      "script": "TRIGGER_BLACK_KNIGHT_QUIZ_4"
     },
     {
       "type": "trigger",
       "x": 5,
       "y": 20,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_4",
       "var_value": "0",
-      "script": "BLACK_KNIGHT_QUIZ_4"
+      "script": "TRIGGER_BLACK_KNIGHT_QUIZ_4"
     },
     {
       "type": "trigger",
       "x": 5,
       "y": 27,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_5",
       "var_value": "0",
-      "script": "BLACK_KNIGHT_QUIZ_5"
+      "script": "TRIGGER_BLACK_KNIGHT_QUIZ_5"
     },
     {
       "type": "trigger",
       "x": 6,
       "y": 27,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_5",
       "var_value": "0",
-      "script": "BLACK_KNIGHT_QUIZ_5"
+      "script": "TRIGGER_BLACK_KNIGHT_QUIZ_5"
     },
     {
       "type": "trigger",
       "x": 15,
       "y": 20,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_7",
       "var_value": "0",
-      "script": "BLACK_KNIGHT_QUIZ_7"
+      "script": "TRIGGER_BLACK_KNIGHT_QUIZ_7"
     },
     {
       "type": "trigger",
       "x": 16,
       "y": 20,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_7",
       "var_value": "0",
-      "script": "BLACK_KNIGHT_QUIZ_7"
+      "script": "TRIGGER_BLACK_KNIGHT_QUIZ_7"
     },
     {
       "type": "trigger",
       "x": 10,
       "y": 24,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_6",
       "var_value": "0",
-      "script": "BLACK_KNIGHT_QUIZ_6"
+      "script": "TRIGGER_BLACK_KNIGHT_QUIZ_6"
     }
   ],
   "bg_events": [

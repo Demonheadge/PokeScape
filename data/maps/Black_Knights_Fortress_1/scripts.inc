@@ -16,12 +16,20 @@ CAUGHT_BY_BLACK_KNIGHTS::
 	return
 
 
+TRIGGER_BLACK_KNIGHT_QUIZ_1::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT
+	waitmovement 0
+	goto BLACK_KNIGHT_QUIZ_1
+	return
+
+
 BLACK_KNIGHT_QUIZ_1::
 	lockall
+	applymovement 11, Movement_InteractFACEPLAYER
+	waitmovement 0
 	namebox BLACK_KNIGHT_QUIZ_1_Text_0
-	checktrainerflag TRAINER_BLACKKNIGHT_LAIMP
-	compare VAR_RESULT, TRUE
-	goto_if_eq BLACK_KNIGHT_QUIZ_1_2
+	goto_if_set FLAG_BKF_QUIZ_1, BLACK_KNIGHT_QUIZ_1_2
 	msgbox BLACK_KNIGHT_QUIZ_1_Text_2
 	msgbox BLACK_KNIGHT_QUIZ_1_Text_3, MSGBOX_YESNO
 	compare VAR_RESULT, FALSE
@@ -29,8 +37,9 @@ BLACK_KNIGHT_QUIZ_1::
 	msgbox BLACK_KNIGHT_QUIZ_1_Text_6
 	closemessage
 	hidenamebox
-	settrainerflag TRAINER_BLACKKNIGHT_LAIMP
+	setflag FLAG_BKF_QUIZ_1
 BLACK_KNIGHT_QUIZ_1_1:
+	setvar VAR_TEMP_1, 1
 	releaseall
 	end
 
@@ -50,12 +59,21 @@ BLACK_KNIGHT_QUIZ_1_5:
 	goto BLACK_KNIGHT_QUIZ_1_1
 
 
+TRIGGER_BLACK_KNIGHT_QUIZ_2::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT
+	waitmovement 0
+	goto BLACK_KNIGHT_QUIZ_2
+	return
+
+
 BLACK_KNIGHT_QUIZ_2::
 	lockall
+	applymovement 6, Movement_InteractFACEPLAYER
+	applymovement 7, Movement_InteractFACEPLAYER
+	waitmovement 0
 	namebox BLACK_KNIGHT_QUIZ_1_Text_0
-	checktrainerflag TRAINER_BLACKKNIGHT_MARE
-	compare VAR_RESULT, TRUE
-	goto_if_eq BLACK_KNIGHT_QUIZ_2_2
+	goto_if_set FLAG_BKF_QUIZ_2, BLACK_KNIGHT_QUIZ_2_2
 	msgbox BLACK_KNIGHT_QUIZ_2_Text_1
 	msgbox BLACK_KNIGHT_QUIZ_2_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, FALSE
@@ -67,8 +85,9 @@ BLACK_KNIGHT_QUIZ_2::
 	msgbox BLACK_KNIGHT_QUIZ_2_Text_5
 	closemessage
 	hidenamebox
-	settrainerflag TRAINER_BLACKKNIGHT_MARE
+	setflag FLAG_BKF_QUIZ_2
 BLACK_KNIGHT_QUIZ_2_1:
+	setvar VAR_TEMP_2, 1
 	releaseall
 	end
 
@@ -280,6 +299,7 @@ BLACK_KNIGHT_QUIZ_1_Text_0:
 	.string "Black Knight$"
 
 BLACK_KNIGHT_QUIZ_1_Text_1:
+	.string "Stop right there!\p"
 	.string "Oh, it is you two again, carry on.$"
 
 BLACK_KNIGHT_QUIZ_1_Text_2:

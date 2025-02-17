@@ -1047,13 +1047,13 @@
 #define FLAG_HIDE_ROUTE_119_KECLEON_2                               0x3DE
 #define FLAG_HIDE_ROUTE_101_BOY                                     0x3DF
 #define FLAG_HIDE_WEATHER_INSTITUTE_2F_AQUA_GRUNT_M                 0x3E0
-#define FLAG_HIDE_LILYCOVE_POKEMON_CENTER_CONTEST_LADY_MON          0x3E1
-#define FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY                       0x3E2
-#define FLAG_HIDE_PETALBURG_CITY_SCOTT                              0x3E3
-#define FLAG_HIDE_SOOTOPOLIS_CITY_RAYQUAZA                          0x3E4
-#define FLAG_HIDE_SOOTOPOLIS_CITY_KYOGRE                            0x3E5
-#define FLAG_HIDE_SOOTOPOLIS_CITY_GROUDON                           0x3E6
-#define FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT                0x3E7
+#define FLAG_BKF_QUIZ_1                                             0x3E1 //FLAG_HIDE_LILYCOVE_POKEMON_CENTER_CONTEST_LADY_MON
+#define FLAG_BKF_QUIZ_2                                             0x3E2 //FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY
+#define FLAG_BKF_QUIZ_3                                             0x3E3 //FLAG_HIDE_PETALBURG_CITY_SCOTT
+#define FLAG_BKF_QUIZ_4                                             0x3E4 //FLAG_HIDE_SOOTOPOLIS_CITY_RAYQUAZA
+#define FLAG_BKF_QUIZ_5                                             0x3E5 //FLAG_HIDE_SOOTOPOLIS_CITY_KYOGRE
+#define FLAG_BKF_QUIZ_6                                             0x3E6 //FLAG_HIDE_SOOTOPOLIS_CITY_GROUDON
+#define FLAG_BKF_QUIZ_7                                             0x3E7 //FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT
 
 // Item Ball Flags
 #define FLAG_ITEM_LUMBRIDGE_1                                       0x3E8

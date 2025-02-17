@@ -2,12 +2,20 @@ mapscripts Black_Knights_Fortress_2_MapScripts {
 
 }
 
+
+script TRIGGER_BLACK_KNIGHT_QUIZ_3 {
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT)
+    waitmovement(0)
+    goto(BLACK_KNIGHT_QUIZ_3)
+}
 script BLACK_KNIGHT_QUIZ_3 //Necromancer
 {
     lockall
+    applymovement(9, Movement_InteractFACEPLAYER)
+    waitmovement(0)
     namebox("Necromancer")
-    checktrainerflag(TRAINER_BLACKKNIGHT_NECRO_1)
-    if (var(VAR_RESULT) == TRUE)
+    if (flag(FLAG_BKF_QUIZ_3) == TRUE)
     {
         msgbox(format("You may continue through."))
         closemessage
@@ -30,19 +38,28 @@ script BLACK_KNIGHT_QUIZ_3 //Necromancer
             msgbox(format("Yes, she was the daughter of the Varrockian Duke.\pYou know your history well."))
             closemessage
             hidenamebox
-            settrainerflag(TRAINER_BLACKKNIGHT_NECRO_1)
+            setflag(FLAG_BKF_QUIZ_3)
         }
     }
+    setvar(VAR_TEMP_3, 1)
     releaseall
     end
 }
 
+
+script TRIGGER_BLACK_KNIGHT_QUIZ_4 {
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+    waitmovement(0)
+    goto(BLACK_KNIGHT_QUIZ_4)
+}
 script BLACK_KNIGHT_QUIZ_4 //Taim
 {
     lockall
+    applymovement(10, Movement_InteractFACEPLAYER)
+    waitmovement(0)
     namebox("Black Knight")
-    checktrainerflag(TRAINER_BLACKKNIGHT_TAIM)
-    if (var(VAR_RESULT) == TRUE)
+    if (flag(FLAG_BKF_QUIZ_4) == TRUE)
     {
         msgbox(format("Phew, it's just you two.\pEveryone's on edge around here at the moment."))
         closemessage
@@ -65,19 +82,27 @@ script BLACK_KNIGHT_QUIZ_4 //Taim
             msgbox(format("Correct\pWe were allies of King Raddallin. Not Wallace."))
             closemessage
             hidenamebox
-            settrainerflag(TRAINER_BLACKKNIGHT_TAIM)
+            setflag(FLAG_BKF_QUIZ_4)
         }
     }
+    setvar(VAR_TEMP_4, 1)
     releaseall
     end
 }
 
+script TRIGGER_BLACK_KNIGHT_QUIZ_5 {
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT)
+    waitmovement(0)
+    goto(BLACK_KNIGHT_QUIZ_5)
+}
 script BLACK_KNIGHT_QUIZ_5 //Laif
 {
     lockall
+    applymovement(27, Movement_InteractFACEPLAYER)
+    waitmovement(0)
     namebox("Black Knight")
-    checktrainerflag(TRAINER_BLACKKNIGHT_LAIF)
-    if (var(VAR_RESULT) == TRUE)
+    if (flag(FLAG_BKF_QUIZ_5) == TRUE)
     {
         msgbox(format("Black armour never goes out of style!\pYou both suit it."))
         closemessage
@@ -100,19 +125,27 @@ script BLACK_KNIGHT_QUIZ_5 //Laif
             msgbox(format("Heck yeah!"))
             closemessage
             hidenamebox
-            settrainerflag(TRAINER_BLACKKNIGHT_LAIF)
+            setflag(FLAG_BKF_QUIZ_5)
         }
     }
+    setvar(VAR_TEMP_5, 1)
     releaseall
     end
 }
 
+script TRIGGER_BLACK_KNIGHT_QUIZ_6 {
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+    waitmovement(0)
+    goto(BLACK_KNIGHT_QUIZ_6)
+}
 script BLACK_KNIGHT_QUIZ_6 //UPDATE AND ADD Necromancer
 {
     lockall
+    applymovement(11, Movement_InteractFACEPLAYER)
+    waitmovement(0)
     namebox("Necromancer")
-    checktrainerflag(TRAINER_BLACKKNIGHT_NECRO_2)
-    if (var(VAR_RESULT) == TRUE)
+    if (flag(FLAG_BKF_QUIZ_6) == TRUE)
     {
         msgbox(format("Solus Dellagar will burn for what he did."))
         closemessage
@@ -135,19 +168,27 @@ script BLACK_KNIGHT_QUIZ_6 //UPDATE AND ADD Necromancer
             msgbox(format("That's right!\pThe only good thing those White Knights have ever done was apprehend and exile that traitor."))
             closemessage
             hidenamebox
-            settrainerflag(TRAINER_BLACKKNIGHT_NECRO_2)
+            setflag(FLAG_BKF_QUIZ_6)
         }
     }
+    setvar(VAR_TEMP_6, 1)
     releaseall
     end
 }
 
+script TRIGGER_BLACK_KNIGHT_QUIZ_7 {
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+    waitmovement(0)
+    goto(BLACK_KNIGHT_QUIZ_7)
+}
 script BLACK_KNIGHT_QUIZ_7 //Fall
 {
     lockall
+    applymovement(14, Movement_InteractFACEPLAYER)
+    waitmovement(0)
     namebox("Black Knight")
-    checktrainerflag(TRAINER_BLACKKNIGHT_FALL)
-    if (var(VAR_RESULT) == TRUE)
+    if (flag(FLAG_BKF_QUIZ_7) == TRUE)
     {
         msgbox(format("Hail Daquarius.{PAUSE 15}\pYou may pass."))
         closemessage
@@ -170,9 +211,10 @@ script BLACK_KNIGHT_QUIZ_7 //Fall
             msgbox(format("Hail Daquarius."))
             closemessage
             hidenamebox
-            settrainerflag(TRAINER_BLACKKNIGHT_FALL)
+            setflag(FLAG_BKF_QUIZ_7)
         }
     }
+    setvar(VAR_TEMP_7, 1)
     releaseall
     end
 }

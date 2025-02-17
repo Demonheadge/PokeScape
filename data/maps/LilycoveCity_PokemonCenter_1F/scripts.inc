@@ -18,11 +18,11 @@ LilycoveCity_PokemonCenter_1F_EventScript_SetLilycoveLadyGfx::
 	end
 
 LilycoveCity_PokemonCenter_1F_EventScript_HideContestLadyMon::
-	setflag FLAG_HIDE_LILYCOVE_POKEMON_CENTER_CONTEST_LADY_MON
+
 	end
 
 LilycoveCity_PokemonCenter_1F_EventScript_ShowContestLadyMon::
-	clearflag FLAG_HIDE_LILYCOVE_POKEMON_CENTER_CONTEST_LADY_MON
+
 	end
 
 LilycoveCity_PokemonCenter_1F_EventScript_Nurse::

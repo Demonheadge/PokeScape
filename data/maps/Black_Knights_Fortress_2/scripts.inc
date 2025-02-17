@@ -2,12 +2,20 @@ Black_Knights_Fortress_2_MapScripts::
 	.byte 0
 
 
+TRIGGER_BLACK_KNIGHT_QUIZ_3::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT
+	waitmovement 0
+	goto BLACK_KNIGHT_QUIZ_3
+	return
+
+
 BLACK_KNIGHT_QUIZ_3::
 	lockall
+	applymovement 9, Movement_InteractFACEPLAYER
+	waitmovement 0
 	namebox BLACK_KNIGHT_QUIZ_3_Text_0
-	checktrainerflag TRAINER_BLACKKNIGHT_NECRO_1
-	compare VAR_RESULT, TRUE
-	goto_if_eq BLACK_KNIGHT_QUIZ_3_2
+	goto_if_set FLAG_BKF_QUIZ_3, BLACK_KNIGHT_QUIZ_3_2
 	msgbox BLACK_KNIGHT_QUIZ_3_Text_2
 	msgbox BLACK_KNIGHT_QUIZ_3_Text_3, MSGBOX_YESNO
 	compare VAR_RESULT, FALSE
@@ -15,8 +23,9 @@ BLACK_KNIGHT_QUIZ_3::
 	msgbox BLACK_KNIGHT_QUIZ_3_Text_6
 	closemessage
 	hidenamebox
-	settrainerflag TRAINER_BLACKKNIGHT_NECRO_1
+	setflag FLAG_BKF_QUIZ_3
 BLACK_KNIGHT_QUIZ_3_1:
+	setvar VAR_TEMP_3, 1
 	releaseall
 	end
 
@@ -36,12 +45,20 @@ BLACK_KNIGHT_QUIZ_3_5:
 	goto BLACK_KNIGHT_QUIZ_3_1
 
 
+TRIGGER_BLACK_KNIGHT_QUIZ_4::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT
+	waitmovement 0
+	goto BLACK_KNIGHT_QUIZ_4
+	return
+
+
 BLACK_KNIGHT_QUIZ_4::
 	lockall
+	applymovement 10, Movement_InteractFACEPLAYER
+	waitmovement 0
 	namebox BLACK_KNIGHT_QUIZ_4_Text_0
-	checktrainerflag TRAINER_BLACKKNIGHT_TAIM
-	compare VAR_RESULT, TRUE
-	goto_if_eq BLACK_KNIGHT_QUIZ_4_2
+	goto_if_set FLAG_BKF_QUIZ_4, BLACK_KNIGHT_QUIZ_4_2
 	msgbox BLACK_KNIGHT_QUIZ_4_Text_2
 	msgbox BLACK_KNIGHT_QUIZ_4_Text_3, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
@@ -49,8 +66,9 @@ BLACK_KNIGHT_QUIZ_4::
 	msgbox BLACK_KNIGHT_QUIZ_4_Text_5
 	closemessage
 	hidenamebox
-	settrainerflag TRAINER_BLACKKNIGHT_TAIM
+	setflag FLAG_BKF_QUIZ_4
 BLACK_KNIGHT_QUIZ_4_1:
+	setvar VAR_TEMP_4, 1
 	releaseall
 	end
 
@@ -70,12 +88,20 @@ BLACK_KNIGHT_QUIZ_4_5:
 	goto BLACK_KNIGHT_QUIZ_4_1
 
 
+TRIGGER_BLACK_KNIGHT_QUIZ_5::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT
+	waitmovement 0
+	goto BLACK_KNIGHT_QUIZ_5
+	return
+
+
 BLACK_KNIGHT_QUIZ_5::
 	lockall
+	applymovement 27, Movement_InteractFACEPLAYER
+	waitmovement 0
 	namebox BLACK_KNIGHT_QUIZ_4_Text_0
-	checktrainerflag TRAINER_BLACKKNIGHT_LAIF
-	compare VAR_RESULT, TRUE
-	goto_if_eq BLACK_KNIGHT_QUIZ_5_2
+	goto_if_set FLAG_BKF_QUIZ_5, BLACK_KNIGHT_QUIZ_5_2
 	msgbox BLACK_KNIGHT_QUIZ_5_Text_1
 	msgbox BLACK_KNIGHT_QUIZ_5_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, FALSE
@@ -83,8 +109,9 @@ BLACK_KNIGHT_QUIZ_5::
 	msgbox BLACK_KNIGHT_QUIZ_5_Text_4
 	closemessage
 	hidenamebox
-	settrainerflag TRAINER_BLACKKNIGHT_LAIF
+	setflag FLAG_BKF_QUIZ_5
 BLACK_KNIGHT_QUIZ_5_1:
+	setvar VAR_TEMP_5, 1
 	releaseall
 	end
 
@@ -104,12 +131,20 @@ BLACK_KNIGHT_QUIZ_5_5:
 	goto BLACK_KNIGHT_QUIZ_5_1
 
 
+TRIGGER_BLACK_KNIGHT_QUIZ_6::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP
+	waitmovement 0
+	goto BLACK_KNIGHT_QUIZ_6
+	return
+
+
 BLACK_KNIGHT_QUIZ_6::
 	lockall
+	applymovement 11, Movement_InteractFACEPLAYER
+	waitmovement 0
 	namebox BLACK_KNIGHT_QUIZ_3_Text_0
-	checktrainerflag TRAINER_BLACKKNIGHT_NECRO_2
-	compare VAR_RESULT, TRUE
-	goto_if_eq BLACK_KNIGHT_QUIZ_6_2
+	goto_if_set FLAG_BKF_QUIZ_6, BLACK_KNIGHT_QUIZ_6_2
 	msgbox BLACK_KNIGHT_QUIZ_6_Text_1
 	msgbox BLACK_KNIGHT_QUIZ_6_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, TRUE
@@ -117,8 +152,9 @@ BLACK_KNIGHT_QUIZ_6::
 	msgbox BLACK_KNIGHT_QUIZ_6_Text_4
 	closemessage
 	hidenamebox
-	settrainerflag TRAINER_BLACKKNIGHT_NECRO_2
+	setflag FLAG_BKF_QUIZ_6
 BLACK_KNIGHT_QUIZ_6_1:
+	setvar VAR_TEMP_6, 1
 	releaseall
 	end
 
@@ -138,12 +174,20 @@ BLACK_KNIGHT_QUIZ_6_5:
 	goto BLACK_KNIGHT_QUIZ_6_1
 
 
+TRIGGER_BLACK_KNIGHT_QUIZ_7::
+	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT
+	waitmovement 0
+	goto BLACK_KNIGHT_QUIZ_7
+	return
+
+
 BLACK_KNIGHT_QUIZ_7::
 	lockall
+	applymovement 14, Movement_InteractFACEPLAYER
+	waitmovement 0
 	namebox BLACK_KNIGHT_QUIZ_4_Text_0
-	checktrainerflag TRAINER_BLACKKNIGHT_FALL
-	compare VAR_RESULT, TRUE
-	goto_if_eq BLACK_KNIGHT_QUIZ_7_2
+	goto_if_set FLAG_BKF_QUIZ_7, BLACK_KNIGHT_QUIZ_7_2
 	msgbox BLACK_KNIGHT_QUIZ_7_Text_1
 	msgbox BLACK_KNIGHT_QUIZ_7_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, FALSE
@@ -151,8 +195,9 @@ BLACK_KNIGHT_QUIZ_7::
 	msgbox BLACK_KNIGHT_QUIZ_7_Text_4
 	closemessage
 	hidenamebox
-	settrainerflag TRAINER_BLACKKNIGHT_FALL
+	setflag FLAG_BKF_QUIZ_7
 BLACK_KNIGHT_QUIZ_7_1:
+	setvar VAR_TEMP_7, 1
 	releaseall
 	end
 

@@ -19,14 +19,22 @@ script CAUGHT_BY_BLACK_KNIGHTS
     return
 }
 
+script TRIGGER_BLACK_KNIGHT_QUIZ_1 {
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT)
+    waitmovement(0)
+    goto(BLACK_KNIGHT_QUIZ_1)
+}
+
 script BLACK_KNIGHT_QUIZ_1 //Laimp
 {
     lockall
+    applymovement(11, Movement_InteractFACEPLAYER)
+    waitmovement(0)
     namebox("Black Knight")
-    checktrainerflag(TRAINER_BLACKKNIGHT_LAIMP)
-    if (var(VAR_RESULT) == TRUE)
+    if (flag(FLAG_BKF_QUIZ_1) == TRUE)
     {
-        msgbox(format("Oh, it is you two again, carry on."))
+        msgbox(format("Stop right there!\pOh, it is you two again, carry on."))
         closemessage
         hidenamebox
     }
@@ -47,19 +55,29 @@ script BLACK_KNIGHT_QUIZ_1 //Laimp
             msgbox(format("Correct. We are way better than those pansies."))
             closemessage
             hidenamebox
-            settrainerflag(TRAINER_BLACKKNIGHT_LAIMP)
+            setflag(FLAG_BKF_QUIZ_1)
         }
     }
+    setvar(VAR_TEMP_1, 1)
     releaseall
     end
 }
 
+
+script TRIGGER_BLACK_KNIGHT_QUIZ_2 {
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT)
+    waitmovement(0)
+    goto(BLACK_KNIGHT_QUIZ_2)
+}
 script BLACK_KNIGHT_QUIZ_2 //Mare
 {
     lockall
+    applymovement(6, Movement_InteractFACEPLAYER)
+    applymovement(7, Movement_InteractFACEPLAYER)
+    waitmovement(0)
     namebox("Black Knight")
-    checktrainerflag(TRAINER_BLACKKNIGHT_MARE)
-    if (var(VAR_RESULT) == TRUE)
+    if (flag(FLAG_BKF_QUIZ_2) == TRUE)
     {
         msgbox(format("Make sure to stab the prisoners if they get too close to the bars."))
         closemessage
@@ -88,9 +106,10 @@ script BLACK_KNIGHT_QUIZ_2 //Mare
             msgbox(format(".....\p{PLAYER}, something within me felt like we should have taken a loss here...."))
             closemessage
             hidenamebox
-            settrainerflag(TRAINER_BLACKKNIGHT_MARE)
+            setflag(FLAG_BKF_QUIZ_2)
         }
     }
+    setvar(VAR_TEMP_2, 1)
     releaseall
     end
 }
