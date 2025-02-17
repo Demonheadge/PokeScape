@@ -999,3 +999,25 @@ script RUNE_EVOLUTIONS_NOTES {
 
 
 
+script TOGGLE_BATTLE_SPEED {
+	msgbox(format("Increase VAR_BATTLE_SPEED by 1?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        addvar(VAR_BATTLE_SPEED, 1)
+        buffernumberstring(STR_VAR_1, VAR_BATTLE_SPEED)
+        msgbox(format("VAR_BATTLE_SPEED: {STR_VAR_1}."))
+		closemessage
+		release
+		end
+    }
+	msgbox(format("Reset VAR_BATTLE_SPEED to 0?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+		setvar(VAR_BATTLE_SPEED, 0)
+		buffernumberstring(STR_VAR_1, VAR_BATTLE_SPEED)
+		msgbox(format("VAR_BATTLE_SPEED: {STR_VAR_1}."))
+		closemessage
+		release
+		end
+	}
+}

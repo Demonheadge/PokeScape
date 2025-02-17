@@ -972,6 +972,32 @@ RUNE_EVOLUTIONS_NOTES_9:
 	end
 
 
+TOGGLE_BATTLE_SPEED::
+	msgbox TOGGLE_BATTLE_SPEED_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne TOGGLE_BATTLE_SPEED_2
+	msgbox TOGGLE_BATTLE_SPEED_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne TOGGLE_BATTLE_SPEED_4
+	return
+
+TOGGLE_BATTLE_SPEED_2:
+	addvar VAR_BATTLE_SPEED, 1
+	buffernumberstring STR_VAR_1, VAR_BATTLE_SPEED
+	msgbox TOGGLE_BATTLE_SPEED_Text_1
+	closemessage
+	release
+	end
+
+TOGGLE_BATTLE_SPEED_4:
+	setvar VAR_BATTLE_SPEED, 0
+	buffernumberstring STR_VAR_1, VAR_BATTLE_SPEED
+	msgbox TOGGLE_BATTLE_SPEED_Text_1
+	closemessage
+	release
+	end
+
+
 WizardsTower_SEDRIDOR_Text_0:
 	.string "Sedridor$"
 
@@ -1398,3 +1424,12 @@ RUNE_EVOLUTIONS_NOTES_Text_6:
 	.string "I still need to find more unusual runes\n"
 	.string "to see what other evolutions are out\l"
 	.string "there.$"
+
+TOGGLE_BATTLE_SPEED_Text_0:
+	.string "Increase VAR_BATTLE_SPEED by 1?$"
+
+TOGGLE_BATTLE_SPEED_Text_1:
+	.string "VAR_BATTLE_SPEED: {STR_VAR_1}.$"
+
+TOGGLE_BATTLE_SPEED_Text_2:
+	.string "Reset VAR_BATTLE_SPEED to 0?$"
