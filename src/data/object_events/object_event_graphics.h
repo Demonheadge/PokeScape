@@ -764,6 +764,10 @@ const u32 gObjectEventPic_impling_dragon[] = INCBIN_U32("graphics/object_events/
 const u32 gObjectEventPic_impling_earth[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/impling_earth.4bpp");
 const u32 gObjectEventPic_impling_essence[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/impling_essence.4bpp");
 const u32 gObjectEventPic_sandwich_lady[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/sandwich_lady.4bpp");
+const u32 gObjectEventPic_evildave[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/evildave.4bpp");
+const u32 gObjectEventPic_eliteblack[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/eliteblack.4bpp");
+const u32 gObjectEventPic_oddenstein[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/oddenstein.4bpp");
+
 //POKESCAPE PALETTES
 /*
 const u16 gObjectEventPalette_Skeleton_1[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/skeleton_1.gbapal");
@@ -1028,6 +1032,8 @@ const u16 gObjectEventPalette_Noob[] = INCBIN_U16("graphics/object_events/palett
 const u16 gObjectEventPalette_Hairdresser[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/hairdresser.gbapal");
 const u16 gObjectEventPalette_DUNGEONEERING_2[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/dungeoneering_2.gbapal");
 const u16 gObjectEventPalette_GREYPAL[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/greypalette.gbapal");
+const u16 gObjectEventPalette_ELITEBLACK[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/eliteblack_palette.gbapal");
+
 
 /*
 const u16 gObjectEventPalette_RAC_BATS[] = INCBIN_U16("graphics/object_events/pics/pokescape_overworlds/rac_bats.gbapal");
