@@ -14018,6 +14018,17 @@ const struct Item gItems[] =
         .flingPower = 10,
     },
 
+    [ITEM_COMMORB] =
+    {
+        .name = _("COMMORB"),
+        .price = 0,
+        .description = sCOMMORB_Desc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_KEY_ITEM,
+        .fieldUseFunc = ItemUseOutOfBattle_Function,
+    },
+
     
 
 

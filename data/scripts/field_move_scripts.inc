@@ -686,6 +686,9 @@ EventScript_RING_OF_KINSHIP::
 	goto RING_OF_KINSHIP_TELEPORT
 	end
 
+EventScript_COMMORB::
+	goto COMMORB_FUNCTION
+	end
 	
 
 Text_CantDive:

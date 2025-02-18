@@ -77,18 +77,53 @@ ROUTE23_STATE_7:
 
 TRIGGER_STORYMODE_EVENT_ROUTE23::
 	lockall
-	msgbox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_0
-	msgbox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_1
 	setflag FLAG_TEMP_1D
 	removeobject 16
 	removeobject 17
-	removeobject 18
 	removeobject 19
 	removeobject 20
+	applymovement 18, Movement_STORY_R23_1
+	waitmovement 0
+	namebox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_0
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_1
+	hidenamebox
+	closemessage
+	namebox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_0
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_2
+	hidenamebox
+	closemessage
+	namebox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_0
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_3
+	hidenamebox
+	closemessage
+	giveitem ITEM_COMMORB, 1
+	namebox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_0
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_4
+	hidenamebox
+	closemessage
+	namebox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_0
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_5
+	hidenamebox
+	closemessage
+	namebox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_0
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_6
+	hidenamebox
+	closemessage
+	setflag FLAG_TEMP_1F
+	removeobject 18
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 170
 	releaseall
 	end
 
+
+Movement_STORY_R23_1:
+	face_down
+	emote_exclamation_mark
+	delay_16
+	delay_16
+	walk_down
+	walk_down
+	step_end
 
 ENCOUNTER_PENGUIN_ROCK_ROUTE23::
 	lock
@@ -357,8 +392,8 @@ ROUTE23_RockSmash_18:
 NPC_ROUTE20_SIR_TIFFY::
 	lock
 	applymovement 10, MOVEMENT_INTERACT_RIGHT
-	namebox NPC_ROUTE20_SIR_TIFFY_Text_0
-	msgbox NPC_ROUTE20_SIR_TIFFY_Text_1
+	namebox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_0
+	msgbox NPC_ROUTE20_SIR_TIFFY_Text_0
 	waitmovement 0
 	closemessage
 	hidenamebox
@@ -377,11 +412,80 @@ NPC_ROUTE20_TEMPLE_KNIGHT::
 	end
 
 
+COMMORB_FUNCTION::
+	lockall
+	playse SE_POKENAV_CALL
+	msgbox COMMORB_FUNCTION_Text_0
+	waitse
+	random 3
+	compare VAR_RESULT, 0
+	goto_if_eq COMMORB_FUNCTION_2
+COMMORB_FUNCTION_1:
+	switch VAR_POKESCAPE_STORYMODE_PROGRESS
+	case 170, COMMORB_FUNCTION_6
+	case 175, COMMORB_FUNCTION_6
+	case 180, COMMORB_FUNCTION_7
+	case 185, COMMORB_FUNCTION_7
+	msgbox COMMORB_FUNCTION_Text_4
+COMMORB_FUNCTION_4:
+	closemessage
+	hidenamebox
+	releaseall
+	end
+
+COMMORB_FUNCTION_2:
+	playse SE_POKENAV_CALL
+	msgbox COMMORB_FUNCTION_Text_1
+	waitse
+	goto COMMORB_FUNCTION_1
+
+COMMORB_FUNCTION_6:
+	namebox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_0
+	msgbox COMMORB_FUNCTION_Text_2
+	goto COMMORB_FUNCTION_4
+
+COMMORB_FUNCTION_7:
+	namebox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_0
+	msgbox COMMORB_FUNCTION_Text_3
+	goto COMMORB_FUNCTION_4
+
+
 TRIGGER_STORYMODE_EVENT_ROUTE23_Text_0:
-	.string "Look it's {PLAYER}!$"
+	.string "Tiffy Cashien$"
 
 TRIGGER_STORYMODE_EVENT_ROUTE23_Text_1:
-	.string "Okay lets go north!$"
+	.string "Oho, good to see you {PLAYER}.\p"
+	.string "What brings you here?$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE23_Text_2:
+	.string "A black knight?\p"
+	.string "Well what a coincidence, Sir Owen and\n"
+	.string "the Temple knights are currently\l"
+	.string "investigating just that.\p"
+	.string "Say why don't you join them.\p"
+	.string "I'll contact them using my handy\n"
+	.string "Comm-Orb and let them know you will be\l"
+	.string "joining them.$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE23_Text_3:
+	.string "Speaking of which, you should probably\n"
+	.string "have one.$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE23_Text_4:
+	.string "That Comm-Orb will allow us to\n"
+	.string "communicate across great distances\l"
+	.string "and provide you with our support.$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE23_Text_5:
+	.string "Now, if you follow this path it will lead\n"
+	.string "you to Ice Mountain.\p"
+	.string "The Temple Knights should be there.$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE23_Text_6:
+	.string "I am on my way back to Falador.\p"
+	.string "Remember if you need anything just use\n"
+	.string "the Comm-Orb to contact me.\p"
+	.string "Goodbye {PLAYER}.$"
 
 ENCOUNTER_PENGUIN_ROCK_ROUTE23_Text_0:
 	.string "Penguin$"
@@ -546,9 +650,6 @@ ROUTE23_RockSmash_Text_1:
 	.string "Thank you for that!$"
 
 NPC_ROUTE20_SIR_TIFFY_Text_0:
-	.string "Tiffy Cashien$"
-
-NPC_ROUTE20_SIR_TIFFY_Text_1:
 	.string "Be on the look out for the H.A.M and the\n"
 	.string "Black Knights.\p"
 	.string "There have been reports that they have\n"
@@ -564,3 +665,31 @@ NPC_ROUTE20_TEMPLE_KNIGHT_Text_1:
 	.string "middle of an operation.\p"
 	.string "Why not go battle the gym in Barbarian\n"
 	.string "Village while you wait for us to finish.$"
+
+COMMORB_FUNCTION_Text_0:
+	.string "Communicating - please wait{PAUSE 32}.{PAUSE 32}.{PAUSE 32}.$"
+
+COMMORB_FUNCTION_Text_1:
+	.string "Connection Lost.\p"
+	.string "Please wait - attempting to\n"
+	.string "reestablish{PAUSE 32}.{PAUSE 32}.{PAUSE 32}.$"
+
+COMMORB_FUNCTION_Text_2:
+	.string "This is Sir Tiffy Cashien, report.\p"
+	.string ".{PAUSE 32}.{PAUSE 32}.\n"
+	.string "{PLAYER}?\p"
+	.string "I'm glad you have got the orb working\n"
+	.string "chap, but you probably should be\l"
+	.string "heading towards Ice Mountain to meet\l"
+	.string "up with Sir Owen and the Temple Knights.\p"
+	.string "Sir Tiffy Cashien -over.$"
+
+COMMORB_FUNCTION_Text_3:
+	.string "Sir Owen has informed me that you both\n"
+	.string "took out a Black Knight.\p"
+	.string "You should investigate Ice Mountain\n"
+	.string "with him for any suspicious behaviour.\p"
+	.string "Sir Tiffy Cashien -over.$"
+
+COMMORB_FUNCTION_Text_4:
+	.string "There was no response…$"

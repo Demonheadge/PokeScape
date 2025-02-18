@@ -4592,6 +4592,8 @@ extern const u32 gItemIcon_ClueScrollTools[];
 extern const u32 gItemIconPalette_ClueScrollTools[];
 extern const u32 gItemIcon_dwellberry[];
 extern const u32 gItemIconPalette_dwellberry[];
+extern const u32 gItemIcon_COMMORB[];
+extern const u32 gItemIconPalette_COMMORB[];
 
 // pokescape crops
 extern const u32 gBerryPic_Cabbage[];

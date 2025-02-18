@@ -66,17 +66,59 @@ script ROUTE23_STATE {
 
 script TRIGGER_STORYMODE_EVENT_ROUTE23 {
 	lockall
-	msgbox(format("Look it's {PLAYER}!"))
-	msgbox(format("Okay lets go north!"))
+	//Sir Owen and white knights walk off to the north.
+
 	setflag(FLAG_TEMP_1D)
     removeobject(16)
     removeobject(17)
-    removeobject(18)
     removeobject(19)
     removeobject(20)
+
+	applymovement(18, Movement_STORY_R23_1)
+	waitmovement(0)
+
+	namebox("Tiffy Cashien")
+	msgbox(format("Oho, good to see you {PLAYER}.\pWhat brings you here?"))
+	hidenamebox
+	closemessage
+	//interact
+	namebox("Tiffy Cashien")
+	msgbox(format("A black knight?\pWell what a coincidence, Sir Owen and the Temple knights are currently investigating just that.\pSay why don't you join them.\pI'll contact them using my handy Comm-Orb and let them know you will be joining them."))
+	hidenamebox
+	closemessage
+	namebox("Tiffy Cashien")
+	msgbox(format("Speaking of which, you should probably have one."))
+	hidenamebox
+	closemessage
+	giveitem(ITEM_COMMORB, 1)
+	//give player a Comm-Orb - to communicate the mission details.
+	namebox("Tiffy Cashien")
+	msgbox(format("That Comm-Orb will allow us to communicate across great distances and provide you with our support."))
+	hidenamebox
+	closemessage
+	//face north
+	namebox("Tiffy Cashien")
+	msgbox(format("Now, if you follow this path it will lead you to Ice Mountain.\pThe Temple Knights should be there."))
+	hidenamebox
+	closemessage
+	//faceplayer
+	namebox("Tiffy Cashien")
+	msgbox(format("I am on my way back to Falador.\pRemember if you need anything just use the Comm-Orb to contact me.\pGoodbye {PLAYER}."))
+	hidenamebox
+	closemessage
+	
+	setflag(FLAG_TEMP_1F)
+    removeobject(18)
 	setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 170)
 	releaseall
 	end
+}
+
+movement Movement_STORY_R23_1 {
+	face_down
+	emote_exclamation_mark
+	delay_16 * 2
+	walk_down * 2
 }
 
 
@@ -372,5 +414,39 @@ script NPC_ROUTE20_TEMPLE_KNIGHT
     closemessage
     hidenamebox
 	release
+	end
+}
+
+
+
+script COMMORB_FUNCTION
+{
+	lockall
+	playse(SE_POKENAV_CALL)
+	msgbox(format("Communicating - please wait{PAUSE 32}.{PAUSE 32}.{PAUSE 32}."))
+	waitse
+	random(3)
+	if (var(VAR_RESULT) == 0) {
+		playse(SE_POKENAV_CALL)
+		msgbox(format("Connection Lost.\pPlease wait - attempting to reestablish{PAUSE 32}.{PAUSE 32}.{PAUSE 32}."))
+		waitse
+	}
+
+	switch (var(VAR_POKESCAPE_STORYMODE_PROGRESS))
+	{
+		case 170:
+		case 175:
+			namebox("Tiffy Cashien")
+			msgbox(format("This is Sir Tiffy Cashien, report.\p.{PAUSE 32}.{PAUSE 32}.\n{PLAYER}?\pI'm glad you have got the orb working chap, but you probably should be heading towards Ice Mountain to meet up with Sir Owen and the Temple Knights.\pSir Tiffy Cashien -over."))
+		case 180:
+		case 185:
+			namebox("Tiffy Cashien")
+			msgbox(format("Sir Owen has informed me that you both took out a Black Knight.\pYou should investigate Ice Mountain with him for any suspicious behaviour.\pSir Tiffy Cashien -over."))
+		default:
+			msgbox(format("There was no response…"))
+	}	
+	closemessage
+	hidenamebox
+	releaseall
 	end
 }
