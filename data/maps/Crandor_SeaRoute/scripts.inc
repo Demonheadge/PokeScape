@@ -193,7 +193,7 @@ CRANDOR_SHIP_SCENE::
 	setvar VAR_0x8006, 8 @ num shakes
 	setvar VAR_0x8007, 3 @ shake delay
 	special ShakeCamera
-	setmetatile 25, 8, 834, 0
+	setmetatile 24, 9, 834, 0
 	special DrawWholeMapView
 	waitstate
 	namebox CRANDOR_SHIP_SCENE_Text_2

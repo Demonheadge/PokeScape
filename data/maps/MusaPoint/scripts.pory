@@ -1222,6 +1222,189 @@ script FOLLOWER_REMOVE {
 	clearflag(FLAG_PARTNER_BATTLE)
 	clearflag(FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES)
 	destroyfollower
-	waitstate
+	//waitstate
 	return
+}
+
+
+script CHECK_FOLLOWER_SIROWEN {
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 180) {
+		checkfollower
+		if (var(VAR_RESULT)) {
+			lockall
+			namebox("Sir Owen")
+			msgbox(format("{PLAYER} our investigation is on Ice Mountain.\pOr do you wish to part ways?"), MSGBOX_YESNO)
+			if (var(VAR_RESULT))
+			{ 
+				msgbox(format("Very well, you take a quick retreat and I will stand guard here."))
+				closemessage
+				hidenamebox
+				call(FOLLOWER_REMOVE)
+				clearflag(FLAG_TEMP_1E)
+				addobject(13)
+				applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN)
+				waitmovement(0)
+			}
+			else {
+				closemessage
+				hidenamebox
+				applymovement (OBJ_EVENT_ID_FOLLOWER, MOVEMENT_WALK_UP)
+				applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_UP)
+				waitmovement(0)
+			}
+			releaseall
+		}
+		else {
+			goto(SetFollower_SirOwen)
+		}
+	}
+	end
+}
+
+
+
+
+script SetFollower_SirOwen {
+    lockall
+    faceplayer
+    namebox("Sir Owen")
+	msgbox(format("What do you say me and you team up and show these Black Knights just what we are made off?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    { 
+		hidenamebox
+		//SIR OWEN JOINS THE PARTY and Follows!
+		playfanfare(MUS_OBTAIN_SYMBOL)
+		msgbox(format("Lead the charge!\nSir Owen Sonde is on your side!"))
+		waitfanfare
+		closemessage
+		hidenamebox
+		setflag(FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES)
+		setflag(FLAG_PARTNER_BATTLE)
+		setvar (VAR_PARTNER_TRAINER, TRAINER_SIR_OWEN_1)
+		setvar (VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_OWEN)
+		loadword(0, FOLLOWING_SirOwen)
+		setfollower(13, 0x80)
+
+		namebox("Sir Owen")
+		msgbox(format("May Saradomin guide us!"))
+		closemessage
+		hidenamebox
+		applymovement (OBJ_EVENT_ID_FOLLOWER, MOVEMENT_WALK_UP)
+		applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_UP)
+		waitmovement(0)
+		releaseall
+		end
+    }
+	msgbox(format("Oh… I see.\nThats a big dissapointing.\pThought we had a heroic thing going here…"))
+    hidenamebox
+    closemessage
+    releaseall
+    end
+}
+
+
+script FOLLOWING_SirOwen {
+    namebox("Sir Owen")
+    facefollower 
+//It is more common for special dialogue than this common dialogue. 1/5
+	random(5)
+	switch (var(VAR_RESULT)) {
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+			specialvar (VAR_RESULT, GetCurrentMap)
+			if (var(VAR_RESULT) == MAP_ICE_MOUNTAIN) {
+				goto(SIR_OWEN_DIALOGUE_ICE_MOUNTAIN)
+			}
+			elif (var(VAR_RESULT) == MAP_BLACK_KNIGHTS_FORTRESS_1) {
+				goto(SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS)
+			}
+			else {
+				goto(SIR_OWEN_DIALOGUE_COMMON)
+			}
+		default:
+			goto(SIR_OWEN_DIALOGUE_COMMON)
+	}
+}
+
+script SIR_OWEN_DIALOGUE_COMMON {
+	random(11)
+	switch (var(VAR_RESULT)) {
+		case 0:
+			msgbox(format("So you saw a Black Knight run out of the barbarian's stronghold?\pHow Strange…"))
+		case 1:
+			msgbox(format("Oh by the way, we had a team resuce Ned.\pWe still cannot believe you just left him there though."))
+		case 2:
+			msgbox(format("I wonder what happened to the Cabin Boy that went to Crandor with you and Ned."))
+		case 3:
+			msgbox(format("The Black Knights have been a pain in our side for as long as I can remember."))
+		case 4:
+			msgbox(format("May Saradomin's light guide us."))
+		case 5:
+			msgbox(format("{PLAYER} are you a believer in Saradomin?"))
+		case 6:
+			msgbox(format("Oh you met Ariane?\nShe got into trouble?\pThat sounds like her."))
+		case 7:
+			msgbox(format("I used to be a White knight, but I shot someone with a bow.\pSir Amik threw me out…\pLuckily Sir Tiffy Cashien took me in to the Temple knights.\pIt is a minor difference, but it matters."))
+		case 8:
+			msgbox(format("My arm? It is a long story.\pMaybe someday we will have time."))
+		case 9:
+			msgbox(format("My arm?\nNo I dont know a troll like that."))
+		case 10:
+			msgbox(format("Stand with me {PLAYER}.\pWe will prevail!"))
+	}
+	hidenamebox
+	closemessage
+	release
+	end
+}
+script SIR_OWEN_DIALOGUE_ICE_MOUNTAIN {
+	random(6)
+	switch (var(VAR_RESULT)) {
+	case 0:
+		msgbox(format("Brrr… It's quite cold."))
+	case 1:
+		msgbox(format("We are looking for any suspicious behavour keep your eyes peeled!"))
+	case 2:
+		msgbox(format("I think there is something atop of that mountain."))
+	case 3:
+		msgbox(format("They say the Orcale is located somewhere on this mountain."))
+	case 4:
+		msgbox(format("Watch out, we don't want to fall down these cliffs."))
+	case 5:
+		playse(SE_LEDGE)
+		applymovement(17, MOVEMENT_EXCLAMATIONMARK_JUMP_UP)
+		waitmovement(0)
+		msgbox(format("Aaaah!\p…{PAUSE 15}… Don't mind me, I just slipped on some ice…"))
+	}
+	hidenamebox
+	closemessage
+	release
+	end
+}
+script SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS {
+	random(8)
+	switch (var(VAR_RESULT)) {
+	case 0:
+		msgbox(format("Careful {PLAYER} we don't want them to suspect us."))
+	case 1:
+		msgbox(format("I cannot believe this hideout was just located on the other side of Ice Mountain this entire time!"))
+	case 2:
+		msgbox(format("We should send a mission update to the other Temple Knights.\pWe might need backup…"))
+	case 3:
+		msgbox(format("I wonder what their plan is."))
+	case 4:
+		msgbox(format("We should find whoever is in charge of this place."))
+	case 5:
+		msgbox(format("Surely we just continue going up.\pWe'll find some information eventually."))
+	case 6:
+		msgbox(format("These Black knights dont know when to quit."))
+	case 7:
+		msgbox(format("We know of another hideout for the Black Knights, it is actually deep underground.\pThis is just an outpost compared to that."))
+	}
+	hidenamebox
+	closemessage
+	release
+	end
 }

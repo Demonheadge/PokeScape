@@ -30,8 +30,21 @@ script ROUTE27_STATE {
 
 script TRIGGER_STORYMODE_EVENT_ROUTE27 {
 	lockall
-	msgbox(format("Look it's {PLAYER}!"))
-	msgbox(format("Im going to ice mountain, you stay here!"))
+	namebox ("Sir Owen")
+    msgbox(format("I need you both to stay here in case of a flank."))
+    closemessage
+    hidenamebox
+    //! faceplayer
+    namebox ("Sir Owen")
+    msgbox(format("Oh {PLAYER} that was quick.\pSir Tiffy Cashien just informed me by commorb that you were tagging along on this mission."))
+    closemessage
+    hidenamebox
+    //face north
+    namebox ("Sir Owen")
+    msgbox(format("Let's go, we must make haste to Ice Mountain."))
+    closemessage
+    hidenamebox
+
 	setflag(FLAG_TEMP_1E) //Hide only sir owen
     removeobject(7)
 	setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 175)

@@ -35,6 +35,7 @@ script ROUTE23_METATILES {
 
 script ROUTE23_STATE {
     setflag(FLAG_TEMP_1D)
+	setflag(FLAG_TEMP_1F)
     removeobject(16)
     removeobject(17)
     removeobject(18)
@@ -43,6 +44,7 @@ script ROUTE23_STATE {
     if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 165)
     {
         clearflag(FLAG_TEMP_1D)
+		clearflag(FLAG_TEMP_1F)
 		addobject(16)
 		addobject(17)
 		addobject(18)

@@ -11,40 +11,72 @@ Route26_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 
 
 ROUTE26_STATE::
-	setflag FLAG_TEMP_1E
+	goto_if_unset FLAG_PARTNER_BATTLE, ROUTE26_STATE_2
+ROUTE26_STATE_1:
 	setflag FLAG_TEMP_1F
-	removeobject 13
 	removeobject 6
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 175
-	goto_if_eq ROUTE26_STATE_2
-ROUTE26_STATE_1:
-	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 180
 	goto_if_eq ROUTE26_STATE_5
 ROUTE26_STATE_4:
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 180
+	goto_if_eq ROUTE26_STATE_8
+ROUTE26_STATE_7:
 	return
 
 ROUTE26_STATE_2:
-	clearflag FLAG_TEMP_1E
-	clearflag FLAG_TEMP_1F
-	addobject 13
-	addobject 6
+	setflag FLAG_TEMP_1E
+	removeobject 13
 	goto ROUTE26_STATE_1
 
 ROUTE26_STATE_5:
+	goto_if_unset FLAG_PARTNER_BATTLE, ROUTE26_STATE_11
+ROUTE26_STATE_10:
+	clearflag FLAG_TEMP_1F
+	addobject 6
+	goto ROUTE26_STATE_4
+
+ROUTE26_STATE_8:
+	goto_if_unset FLAG_PARTNER_BATTLE, ROUTE26_STATE_13
+	goto ROUTE26_STATE_7
+
+ROUTE26_STATE_11:
+	clearflag FLAG_TEMP_1E
+	addobject 13
+	goto ROUTE26_STATE_10
+
+ROUTE26_STATE_13:
 	clearflag FLAG_TEMP_1E
 	addobject 13
 	setobjectxyperm 13, 8, 7
-	goto ROUTE26_STATE_4
+	goto ROUTE26_STATE_7
 
 
 TRIGGER_STORYMODE_EVENT_ROUTE26::
 	lockall
-	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_0
-	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_1
+	applymovement 13, Movement_InteractFACEDOWN
+	waitmovement 0
+	namebox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_0
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq TRIGGER_STORYMODE_EVENT_ROUTE26_2
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_3
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_4
+	closemessage
+	hidenamebox
 	setflag FLAG_TEMP_1F
 	removeobject 6
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 180
-	call multipartnerBattle_SirOwen
+	call SetFollower_SirOwen
+	releaseall
+	end
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_2:
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_2
+	closemessage
+	hidenamebox
+	applymovement 13, Movement_InteractFACEUP
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN
+	waitmovement 0
 	releaseall
 	end
 
@@ -134,10 +166,20 @@ ROUTE26_ADAMANT_POUCH::
 
 
 TRIGGER_STORYMODE_EVENT_ROUTE26_Text_0:
-	.string "Help me kill this black knight!$"
+	.string "Sir Owen$"
 
 TRIGGER_STORYMODE_EVENT_ROUTE26_Text_1:
-	.string "{PLAYER} we should go together!$"
+	.string "{PLAYER}! Mind lending me a hand!\p"
+	.string "This guy is not playing fair!$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_Text_2:
+	.string "Call for backup while I hold them off!$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_Text_3:
+	.string "Let us fight him fairly then!$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_Text_4:
+	.string "Thank you {PLAYER}.$"
 
 ENCOUNTER_PENGUIN_BOX_ROUTE26_Text_0:
 	.string "Penguin$"

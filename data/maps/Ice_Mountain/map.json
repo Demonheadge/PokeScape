@@ -63,12 +63,12 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KNIGHT_BLACK_F",
-      "x": 46,
+      "x": 45,
       "y": 2,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "BATTLE_ICE_MOUNTAIN_BLACK_KNIGHT_1",
@@ -76,7 +76,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GUARD_FALADOR",
-      "x": 44,
+      "x": 45,
       "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -89,7 +89,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GUARD_FALADOR",
-      "x": 48,
+      "x": 47,
       "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -102,15 +102,15 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GUARD_FALADOR",
-      "x": 39,
-      "y": 12,
+      "x": 33,
+      "y": 14,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "GUARD_M",
       "flag": "0"
     },
     {
@@ -138,6 +138,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_TEMP_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GUARD_FALADOR",
+      "x": 35,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GUARD_F",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -150,7 +163,69 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_POKESCAPE_STORYMODE_PROGRESS",
+      "var_value": "185",
+      "script": "TRIGGER_STORYMODE_EVENT_ICE_MOUNTAIN_GUARDS"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_POKESCAPE_STORYMODE_PROGRESS",
+      "var_value": "185",
+      "script": "TRIGGER_STORYMODE_EVENT_ICE_MOUNTAIN_GUARDS"
+    },
+    {
+      "type": "trigger",
+      "x": 46,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_POKESCAPE_STORYMODE_PROGRESS",
+      "var_value": "185",
+      "script": "TRIGGER_STORYMODE_EVENT_ICE_MOUNTAIN_GUARDS"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_POKESCAPE_STORYMODE_PROGRESS",
+      "var_value": "180",
+      "script": "TRIGGER_STORYMODE_EVENT_ICE_MOUNTAIN_BKF"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_POKESCAPE_STORYMODE_PROGRESS",
+      "var_value": "180",
+      "script": "TRIGGER_STORYMODE_EVENT_ICE_MOUNTAIN_BKF"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_POKESCAPE_STORYMODE_PROGRESS",
+      "var_value": "180",
+      "script": "TRIGGER_STORYMODE_EVENT_ICE_MOUNTAIN_BKF"
+    }
   ],
   "bg_events": [
     {

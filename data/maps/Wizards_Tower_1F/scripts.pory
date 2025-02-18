@@ -875,8 +875,9 @@ script STORYMODE_VAR_EDIT {
 	msgbox(format("Set custom story-test values?"), MSGBOX_YESNO)
     if (var(VAR_RESULT))
     {
-		setflag(FLAG_BADGE04_GET)
-        setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 160)
+		setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 130) // CRANDOR SCENE
+		//setflag(FLAG_BADGE04_GET) // BKF START
+        //setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 160) // BKF START
         buffernumberstring(0, VAR_POKESCAPE_STORYMODE_PROGRESS)
         msgbox(format("VAR_POKESCAPE_STORYMODE_PROGRESS: {STR_VAR_1}."))
 		closemessage

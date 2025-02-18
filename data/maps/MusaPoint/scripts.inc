@@ -1311,8 +1311,272 @@ FOLLOWER_REMOVE::
 	clearflag FLAG_PARTNER_BATTLE
 	clearflag FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES
 	destroyfollower
-	waitstate
 	return
+
+
+CHECK_FOLLOWER_SIROWEN::
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 180
+	goto_if_eq CHECK_FOLLOWER_SIROWEN_2
+CHECK_FOLLOWER_SIROWEN_1:
+	end
+
+CHECK_FOLLOWER_SIROWEN_2:
+	checkfollower
+	compare VAR_RESULT, 0
+	goto_if_ne CHECK_FOLLOWER_SIROWEN_4
+	goto SetFollower_SirOwen
+	goto CHECK_FOLLOWER_SIROWEN_1
+
+CHECK_FOLLOWER_SIROWEN_4:
+	lockall
+	namebox multipartnerBattle_SirOwen_Text_0
+	msgbox CHECK_FOLLOWER_SIROWEN_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne CHECK_FOLLOWER_SIROWEN_8
+	closemessage
+	hidenamebox
+	applymovement OBJ_EVENT_ID_FOLLOWER, MOVEMENT_WALK_UP
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_UP
+	waitmovement 0
+CHECK_FOLLOWER_SIROWEN_7:
+	releaseall
+	goto CHECK_FOLLOWER_SIROWEN_1
+
+CHECK_FOLLOWER_SIROWEN_8:
+	msgbox CHECK_FOLLOWER_SIROWEN_Text_1
+	closemessage
+	hidenamebox
+	call FOLLOWER_REMOVE
+	clearflag FLAG_TEMP_1E
+	addobject 13
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN
+	waitmovement 0
+	goto CHECK_FOLLOWER_SIROWEN_7
+
+
+SetFollower_SirOwen::
+	lockall
+	faceplayer
+	namebox multipartnerBattle_SirOwen_Text_0
+	msgbox SetFollower_SirOwen_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne SetFollower_SirOwen_2
+	msgbox SetFollower_SirOwen_Text_3
+	hidenamebox
+	closemessage
+	releaseall
+	end
+
+SetFollower_SirOwen_2:
+	hidenamebox
+	playfanfare MUS_OBTAIN_SYMBOL
+	msgbox SetFollower_SirOwen_Text_1
+	waitfanfare
+	closemessage
+	hidenamebox
+	setflag FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES
+	setflag FLAG_PARTNER_BATTLE
+	setvar VAR_PARTNER_TRAINER, TRAINER_SIR_OWEN_1
+	setvar VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_OWEN
+	loadword 0, FOLLOWING_SirOwen
+	setfollower 13, 0x80
+	namebox multipartnerBattle_SirOwen_Text_0
+	msgbox SetFollower_SirOwen_Text_2
+	closemessage
+	hidenamebox
+	applymovement OBJ_EVENT_ID_FOLLOWER, MOVEMENT_WALK_UP
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_UP
+	waitmovement 0
+	releaseall
+	end
+
+
+FOLLOWING_SirOwen::
+	namebox multipartnerBattle_SirOwen_Text_0
+	facefollower
+	random 5
+	switch VAR_RESULT
+	case 0, FOLLOWING_SirOwen_2
+	case 1, FOLLOWING_SirOwen_2
+	case 2, FOLLOWING_SirOwen_2
+	case 3, FOLLOWING_SirOwen_2
+	goto SIR_OWEN_DIALOGUE_COMMON
+	return
+
+FOLLOWING_SirOwen_2:
+	specialvar VAR_RESULT, GetCurrentMap
+	compare VAR_RESULT, MAP_ICE_MOUNTAIN
+	goto_if_eq FOLLOWING_SirOwen_4
+	compare VAR_RESULT, MAP_BLACK_KNIGHTS_FORTRESS_1
+	goto_if_eq FOLLOWING_SirOwen_5
+	goto SIR_OWEN_DIALOGUE_COMMON
+	return
+
+FOLLOWING_SirOwen_4:
+	goto SIR_OWEN_DIALOGUE_ICE_MOUNTAIN
+	return
+
+FOLLOWING_SirOwen_5:
+	goto SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS
+	return
+
+
+SIR_OWEN_DIALOGUE_COMMON::
+	random 11
+	switch VAR_RESULT
+	case 0, SIR_OWEN_DIALOGUE_COMMON_3
+	case 1, SIR_OWEN_DIALOGUE_COMMON_4
+	case 2, SIR_OWEN_DIALOGUE_COMMON_5
+	case 3, SIR_OWEN_DIALOGUE_COMMON_6
+	case 4, SIR_OWEN_DIALOGUE_COMMON_7
+	case 5, SIR_OWEN_DIALOGUE_COMMON_8
+	case 6, SIR_OWEN_DIALOGUE_COMMON_9
+	case 7, SIR_OWEN_DIALOGUE_COMMON_10
+	case 8, SIR_OWEN_DIALOGUE_COMMON_11
+	case 9, SIR_OWEN_DIALOGUE_COMMON_12
+	case 10, SIR_OWEN_DIALOGUE_COMMON_13
+SIR_OWEN_DIALOGUE_COMMON_1:
+	hidenamebox
+	closemessage
+	release
+	end
+
+SIR_OWEN_DIALOGUE_COMMON_3:
+	msgbox SIR_OWEN_DIALOGUE_COMMON_Text_0
+	goto SIR_OWEN_DIALOGUE_COMMON_1
+
+SIR_OWEN_DIALOGUE_COMMON_4:
+	msgbox SIR_OWEN_DIALOGUE_COMMON_Text_1
+	goto SIR_OWEN_DIALOGUE_COMMON_1
+
+SIR_OWEN_DIALOGUE_COMMON_5:
+	msgbox SIR_OWEN_DIALOGUE_COMMON_Text_2
+	goto SIR_OWEN_DIALOGUE_COMMON_1
+
+SIR_OWEN_DIALOGUE_COMMON_6:
+	msgbox SIR_OWEN_DIALOGUE_COMMON_Text_3
+	goto SIR_OWEN_DIALOGUE_COMMON_1
+
+SIR_OWEN_DIALOGUE_COMMON_7:
+	msgbox SIR_OWEN_DIALOGUE_COMMON_Text_4
+	goto SIR_OWEN_DIALOGUE_COMMON_1
+
+SIR_OWEN_DIALOGUE_COMMON_8:
+	msgbox SIR_OWEN_DIALOGUE_COMMON_Text_5
+	goto SIR_OWEN_DIALOGUE_COMMON_1
+
+SIR_OWEN_DIALOGUE_COMMON_9:
+	msgbox SIR_OWEN_DIALOGUE_COMMON_Text_6
+	goto SIR_OWEN_DIALOGUE_COMMON_1
+
+SIR_OWEN_DIALOGUE_COMMON_10:
+	msgbox SIR_OWEN_DIALOGUE_COMMON_Text_7
+	goto SIR_OWEN_DIALOGUE_COMMON_1
+
+SIR_OWEN_DIALOGUE_COMMON_11:
+	msgbox SIR_OWEN_DIALOGUE_COMMON_Text_8
+	goto SIR_OWEN_DIALOGUE_COMMON_1
+
+SIR_OWEN_DIALOGUE_COMMON_12:
+	msgbox SIR_OWEN_DIALOGUE_COMMON_Text_9
+	goto SIR_OWEN_DIALOGUE_COMMON_1
+
+SIR_OWEN_DIALOGUE_COMMON_13:
+	msgbox SIR_OWEN_DIALOGUE_COMMON_Text_10
+	goto SIR_OWEN_DIALOGUE_COMMON_1
+
+
+SIR_OWEN_DIALOGUE_ICE_MOUNTAIN::
+	random 6
+	switch VAR_RESULT
+	case 0, SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_3
+	case 1, SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_4
+	case 2, SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_5
+	case 3, SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_6
+	case 4, SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_7
+	case 5, SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_8
+SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_1:
+	hidenamebox
+	closemessage
+	release
+	end
+
+SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_3:
+	msgbox SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_Text_0
+	goto SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_1
+
+SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_4:
+	msgbox SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_Text_1
+	goto SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_1
+
+SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_5:
+	msgbox SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_Text_2
+	goto SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_1
+
+SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_6:
+	msgbox SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_Text_3
+	goto SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_1
+
+SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_7:
+	msgbox SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_Text_4
+	goto SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_1
+
+SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_8:
+	playse SE_LEDGE
+	applymovement 17, MOVEMENT_EXCLAMATIONMARK_JUMP_UP
+	waitmovement 0
+	msgbox SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_Text_5
+	goto SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_1
+
+
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS::
+	random 8
+	switch VAR_RESULT
+	case 0, SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_3
+	case 1, SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_4
+	case 2, SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_5
+	case 3, SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_6
+	case 4, SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_7
+	case 5, SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_8
+	case 6, SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_9
+	case 7, SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_10
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_1:
+	hidenamebox
+	closemessage
+	release
+	end
+
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_3:
+	msgbox SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_Text_0
+	goto SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_1
+
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_4:
+	msgbox SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_Text_1
+	goto SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_1
+
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_5:
+	msgbox SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_Text_2
+	goto SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_1
+
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_6:
+	msgbox SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_Text_3
+	goto SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_1
+
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_7:
+	msgbox SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_Text_4
+	goto SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_1
+
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_8:
+	msgbox SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_Text_5
+	goto SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_1
+
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_9:
+	msgbox SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_Text_6
+	goto SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_1
+
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_10:
+	msgbox SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_Text_7
+	goto SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_1
 
 
 NPC_MUSAPOINT_SAILOR_Text_0:
@@ -1944,3 +2208,141 @@ multipartnerBattle_SirOwen_Text_0:
 
 multipartnerBattle_SirOwen_Text_1:
 	.string "SIR OWEN JOINS THE PARTY!$"
+
+CHECK_FOLLOWER_SIROWEN_Text_0:
+	.string "{PLAYER} our investigation is on Ice\n"
+	.string "Mountain.\p"
+	.string "Or do you wish to part ways?$"
+
+CHECK_FOLLOWER_SIROWEN_Text_1:
+	.string "Very well, you take a quick retreat and\n"
+	.string "I will stand guard here.$"
+
+SetFollower_SirOwen_Text_0:
+	.string "What do you say me and you team up and\n"
+	.string "show these Black Knights just what we\l"
+	.string "are made off?$"
+
+SetFollower_SirOwen_Text_1:
+	.string "Lead the charge!\n"
+	.string "Sir Owen Sonde is on your side!$"
+
+SetFollower_SirOwen_Text_2:
+	.string "May Saradomin guide us!$"
+
+SetFollower_SirOwen_Text_3:
+	.string "Oh… I see.\n"
+	.string "Thats a big dissapointing.\p"
+	.string "Thought we had a heroic thing going\n"
+	.string "here…$"
+
+SIR_OWEN_DIALOGUE_COMMON_Text_0:
+	.string "So you saw a Black Knight run out of the\n"
+	.string "barbarian's stronghold?\p"
+	.string "How Strange…$"
+
+SIR_OWEN_DIALOGUE_COMMON_Text_1:
+	.string "Oh by the way, we had a team resuce Ned.\p"
+	.string "We still cannot believe you just left\n"
+	.string "him there though.$"
+
+SIR_OWEN_DIALOGUE_COMMON_Text_2:
+	.string "I wonder what happened to the Cabin\n"
+	.string "Boy that went to Crandor with you and\l"
+	.string "Ned.$"
+
+SIR_OWEN_DIALOGUE_COMMON_Text_3:
+	.string "The Black Knights have been a pain in\n"
+	.string "our side for as long as I can remember.$"
+
+SIR_OWEN_DIALOGUE_COMMON_Text_4:
+	.string "May Saradomin's light guide us.$"
+
+SIR_OWEN_DIALOGUE_COMMON_Text_5:
+	.string "{PLAYER} are you a believer in\n"
+	.string "Saradomin?$"
+
+SIR_OWEN_DIALOGUE_COMMON_Text_6:
+	.string "Oh you met Ariane?\n"
+	.string "She got into trouble?\p"
+	.string "That sounds like her.$"
+
+SIR_OWEN_DIALOGUE_COMMON_Text_7:
+	.string "I used to be a White knight, but I shot\n"
+	.string "someone with a bow.\p"
+	.string "Sir Amik threw me out…\p"
+	.string "Luckily Sir Tiffy Cashien took me in to\n"
+	.string "the Temple knights.\p"
+	.string "It is a minor difference, but it matters.$"
+
+SIR_OWEN_DIALOGUE_COMMON_Text_8:
+	.string "My arm? It is a long story.\p"
+	.string "Maybe someday we will have time.$"
+
+SIR_OWEN_DIALOGUE_COMMON_Text_9:
+	.string "My arm?\n"
+	.string "No I dont know a troll like that.$"
+
+SIR_OWEN_DIALOGUE_COMMON_Text_10:
+	.string "Stand with me {PLAYER}.\p"
+	.string "We will prevail!$"
+
+SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_Text_0:
+	.string "Brrr… It's quite cold.$"
+
+SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_Text_1:
+	.string "We are looking for any suspicious\n"
+	.string "behavour keep your eyes peeled!$"
+
+SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_Text_2:
+	.string "I think there is something atop of that\n"
+	.string "mountain.$"
+
+SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_Text_3:
+	.string "They say the Orcale is located\n"
+	.string "somewhere on this mountain.$"
+
+SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_Text_4:
+	.string "Watch out, we don't want to fall down\n"
+	.string "these cliffs.$"
+
+SIR_OWEN_DIALOGUE_ICE_MOUNTAIN_Text_5:
+	.string "Aaaah!\p"
+	.string "…{PAUSE 15}… Don't mind me, I just slipped on some\n"
+	.string "ice…$"
+
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_Text_0:
+	.string "Careful {PLAYER} we don't want them\n"
+	.string "to suspect us.$"
+
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_Text_1:
+	.string "I cannot believe this hideout was just\n"
+	.string "located on the other side of Ice\l"
+	.string "Mountain this entire time!$"
+
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_Text_2:
+	.string "We should send a mission update to the\n"
+	.string "other Temple Knights.\p"
+	.string "We might need backup…$"
+
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_Text_3:
+	.string "I wonder what their plan is.$"
+
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_Text_4:
+	.string "We should find whoever is in charge of\n"
+	.string "this place.$"
+
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_Text_5:
+	.string "Surely we just continue going up.\p"
+	.string "We'll find some information eventually.$"
+
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_Text_6:
+	.string "These Black knights dont know when to\n"
+	.string "quit.$"
+
+SIR_OWEN_DIALOGUE_BLACK_KNIGHT_FORTRESS_Text_7:
+	.string "We know of another hideout for the\n"
+	.string "Black Knights, it is actually deep\l"
+	.string "underground.\p"
+	.string "This is just an outpost compared to\n"
+	.string "that.$"

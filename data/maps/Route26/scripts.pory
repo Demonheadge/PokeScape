@@ -11,34 +11,59 @@ mapscripts Route26_MapScripts{
 }
 
 script ROUTE26_STATE {
-    setflag(FLAG_TEMP_1E) //Hide only sir owen
+
+     if (!flag(FLAG_PARTNER_BATTLE)) {
+        setflag(FLAG_TEMP_1E)
+        removeobject(13)
+    }
     setflag(FLAG_TEMP_1F)
-    removeobject(13)
     removeobject(6)
     if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 175)
     {
-        clearflag(FLAG_TEMP_1E)
+        if (!flag(FLAG_PARTNER_BATTLE)) {
+            clearflag(FLAG_TEMP_1E)
+            addobject(13)
+        }
         clearflag(FLAG_TEMP_1F)
-		addobject(13)
 		addobject(6)
     }
     if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 180)
     {
-        clearflag(FLAG_TEMP_1E)
-		addobject(13)
-        setobjectxyperm(13, 8, 7)
+        if (!flag(FLAG_PARTNER_BATTLE)) {
+            clearflag(FLAG_TEMP_1E)
+            addobject(13)
+            setobjectxyperm(13, 8, 7)
+        }
     }
     return
 }
 
 script TRIGGER_STORYMODE_EVENT_ROUTE26 {
 	lockall
-	msgbox(format("Help me kill this black knight!"))
-	msgbox(format("{PLAYER} we should go together!"))
+    applymovement (13, Movement_InteractFACEDOWN)
+    waitmovement(0)
+	namebox("Sir Owen")
+    msgbox(format("{PLAYER}! Mind lending me a hand!\pThis guy is not playing fair!"), MSGBOX_YESNO)
+    if (!var(VAR_RESULT))
+    {
+        msgbox(format("Call for backup while I hold them off!"))
+        closemessage
+        hidenamebox
+        applymovement (13, Movement_InteractFACEUP)
+        applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN)
+        waitmovement(0)
+        releaseall
+        end
+    }
+    msgbox(format("Let us fight him fairly then!"))
+    //BATTLE
+    msgbox(format("Thank you {PLAYER}."))
+    closemessage
+    hidenamebox
 	setflag(FLAG_TEMP_1F)
     removeobject(6)
 	setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 180)
-    call(multipartnerBattle_SirOwen)
+    call(SetFollower_SirOwen)
 	releaseall
 	end
 }

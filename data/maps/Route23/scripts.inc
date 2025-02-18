@@ -38,6 +38,7 @@ ROUTE23_METATILES_5:
 
 ROUTE23_STATE::
 	setflag FLAG_TEMP_1D
+	setflag FLAG_TEMP_1F
 	removeobject 16
 	removeobject 17
 	removeobject 18
@@ -54,6 +55,7 @@ ROUTE23_STATE_4:
 
 ROUTE23_STATE_2:
 	clearflag FLAG_TEMP_1D
+	clearflag FLAG_TEMP_1F
 	addobject 16
 	addobject 17
 	addobject 18

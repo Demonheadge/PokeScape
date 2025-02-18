@@ -37,8 +37,18 @@ ROUTE27_STATE_4:
 
 TRIGGER_STORYMODE_EVENT_ROUTE27::
 	lockall
-	msgbox TRIGGER_STORYMODE_EVENT_ROUTE27_Text_0
+	namebox TRIGGER_STORYMODE_EVENT_ROUTE27_Text_0
 	msgbox TRIGGER_STORYMODE_EVENT_ROUTE27_Text_1
+	closemessage
+	hidenamebox
+	namebox TRIGGER_STORYMODE_EVENT_ROUTE27_Text_0
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE27_Text_2
+	closemessage
+	hidenamebox
+	namebox TRIGGER_STORYMODE_EVENT_ROUTE27_Text_0
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE27_Text_3
+	closemessage
+	hidenamebox
 	setflag FLAG_TEMP_1E
 	removeobject 7
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 175
@@ -102,10 +112,21 @@ BATTLE_ROUTE27_TRAINER_4::
 
 
 TRIGGER_STORYMODE_EVENT_ROUTE27_Text_0:
-	.string "Look it's {PLAYER}!$"
+	.string "Sir Owen$"
 
 TRIGGER_STORYMODE_EVENT_ROUTE27_Text_1:
-	.string "Im going to ice mountain, you stay here!$"
+	.string "I need you both to stay here in case of\n"
+	.string "a flank.$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE27_Text_2:
+	.string "Oh {PLAYER} that was quick.\p"
+	.string "Sir Tiffy Cashien just informed me by\n"
+	.string "commorb that you were tagging along on\l"
+	.string "this mission.$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE27_Text_3:
+	.string "Let's go, we must make haste to Ice\n"
+	.string "Mountain.$"
 
 NPC_ROUTE27_1_Text_0:
 	.string "Monk$"

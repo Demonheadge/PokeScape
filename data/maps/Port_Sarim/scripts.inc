@@ -977,7 +977,7 @@ CRANDOR_EVENT_PORTSARIM_NED_4:
 	applymovement 39, MOVEMENT_PORTSARIM_CRANDOR_SAIL_6
 	delay 120
 	special RemoveCameraObject
-	warp MAP_CRANDOR_SEA_ROUTE, 0, 72, 7
+	warp MAP_CRANDOR_SEA_ROUTE, 72, 7
 	waitstate
 	end
 
