@@ -1050,8 +1050,8 @@ static void PrintIdOnCard(void)
 {
     u8 buffer[32];
     u8 *txtPtr;
-    s32 xPos;
-    u32 top;
+    //s32 xPos;
+    //u32 top;
     txtPtr = StringCopy(buffer, gText_TrainerCardIDNo);
     ConvertIntToDecimalStringN(txtPtr, sData->trainerCard.trainerId, STR_CONV_MODE_LEADING_ZEROS, 5);
 
