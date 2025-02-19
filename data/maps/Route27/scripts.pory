@@ -1,3 +1,5 @@
+const SIR_OWEN_ID = 7
+
 mapscripts Route27_MapScripts{
 	MAP_SCRIPT_ON_TRANSITION {
         call(ROUTE27_STATE)
@@ -34,16 +36,24 @@ script TRIGGER_STORYMODE_EVENT_ROUTE27 {
     msgbox(format("I need you both to stay here in case of a flank."))
     closemessage
     hidenamebox
-    //! faceplayer
+	applymovement (SIR_OWEN_ID,movement_SIR_OWEN_1)
+	waitmovement (0)
     namebox ("Sir Owen")
-    msgbox(format("Oh {PLAYER} that was quick.\pSir Tiffy Cashien just informed me by commorb that you were tagging along on this mission."))
+    msgbox(format("Oh {PLAYER}, that was quick.\pSir Tiffy Cashien just informed me by Commorb that you were tagging along on this mission."))
     closemessage
     hidenamebox
-    //face north
+	applymovement (SIR_OWEN_ID,movement_SIR_OWEN_2)
+	waitmovement (0)
     namebox ("Sir Owen")
     msgbox(format("Let's go, we must make haste to Ice Mountain."))
     closemessage
     hidenamebox
+	applymovement (SIR_OWEN_ID,movement_SIR_OWEN_4)
+	waitmovement (0)
+    namebox ("Sir Owen")
+    msgbox(format("I shall scout ahead and make sure there's not an ambush waiting for us.\pDon't keep me waiting too long!"))
+    closemessage
+
 
 	setflag(FLAG_TEMP_1E) //Hide only sir owen
     removeobject(7)
@@ -52,7 +62,25 @@ script TRIGGER_STORYMODE_EVENT_ROUTE27 {
 	end
 }
 
+movement movement_SIR_OWEN_1
+{
+	face_left
+}
 
+movement movement_SIR_OWEN_2
+{
+	walk_left
+}
+
+movement movement_SIR_OWEN_3
+{
+	face_up
+}
+
+movement movement_SIR_OWEN_4
+{
+    walk_fast_up * 6
+}
 
 //NPCS
 script NPC_ROUTE27_1
@@ -78,11 +106,35 @@ script NPC_ROUTE27_2
 	end
 }
 
+script NPC_TEMPLE_KNIGHT_1
+{
+	lock
+	faceplayer
+    namebox ("Temple Knight")
+	msgbox(format("Don't worry {PLAYER}, we'll make sure no Black Knights get through."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_TEMPLE_KNIGHT_2
+{
+	lock
+	faceplayer
+    namebox ("Temple Knight")
+	msgbox(format("We are protected by the Gaze of Saradomin.\pWe will not let evil prevail here."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
 //TRAINERS
 script BATTLE_ROUTE27_TRAINER_1
 {
     trainerbattle_single(TRAINER_ROUTE27_TRAINER_1, format("Stan and deliver!"),format("Wait it is stand?\pSorry, I am new at this."))
-    namebox ("Stan the Mugger")
+    namebox ("Stan")
     msgbox(format("Wait it is stand?\pSorry, I am new at this."))
 	hidenamebox
     release
@@ -91,17 +143,17 @@ script BATTLE_ROUTE27_TRAINER_1
 script BATTLE_ROUTE27_TRAINER_2
 {
     trainerbattle_single(TRAINER_ROUTE27_TRAINER_2, format("Waiting for an Evil Tree to spawn, it will show up soon."),format("Hmm… Maybe I got the wrong location."))
-    //namebox ("Cupholder")
-    msgbox(format("Hmm… Maybe I got the wrong location."))
+    namebox ("Lumb3rJake")
+    msgbox(format("You've not seen any Evil Trees around here, have you?\pHmm… Maybe I got the wrong location."))
 	hidenamebox
     release
 	end
 }
 script BATTLE_ROUTE27_TRAINER_3
 {
-    trainerbattle_single(TRAINER_ROUTE27_TRAINER_3, format("This is Ice Mountain, the path to the Dwarven Mines."),format("This is Ice Mountain, the path to the Dwarven Mines."))
-    //namebox ("Cupholder")
-    msgbox(format("This is Ice Mountain, the path to the Dwarven Mines."))
+    trainerbattle_single(TRAINER_ROUTE27_TRAINER_3, format("It's mostly dwarves around here, not many humans brave the cold of Ice Mountain."),format("You're tough, just like us dwarves!"))
+    namebox ("Kifric")
+    msgbox(format("If you keep following this path north, you'll get to Ice Mountain.\pYou're much better off going south though.\pThe Dwarven Mines are there.\pYou'll get a much more friendly welcome."))
 	hidenamebox
     release
 	end
@@ -109,7 +161,7 @@ script BATTLE_ROUTE27_TRAINER_3
 script BATTLE_ROUTE27_TRAINER_4
 {
     trainerbattle_single(TRAINER_ROUTE27_TRAINER_4, format("You stay away from Ice Mountain, you hear me?!"),format("Stay away!"))
-    //namebox ("Cupholder")
+    namebox ("Black Knight")
     msgbox(format("If you know what is best then you should stay away from Ice Mountain."))
 	hidenamebox
     release

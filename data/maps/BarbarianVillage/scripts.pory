@@ -104,7 +104,7 @@ script BARBARIANVILLAGE_STORYMODE_EVENT
         applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
     }
     namebox("Litara")
-    msgbox(format("Who was that they werent allowed in there!"))
+    msgbox(format("Who was that, they weren't allowed in there!"))
     hidenamebox
     closemessage
     setvar(VAR_TEMP_B, 0)

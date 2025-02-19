@@ -51,17 +51,72 @@ script NPC_DWARVENMINES_NPC4
 	end
 }
 
+script NPC_DWARVENMINES_NULODION
+{
+    lock
+    faceplayer
+    namebox ("Nulodion")
+	msgbox(format("You want to buy a dwarven multicannon?\pI'm afraid I can't sell them to just anyone!\pThey're a closely guarded secret.\pPerhaps if you'd done something to help the dwarves I could consider it..."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DWARVENMINES_NPC5
+{
+    lock
+    faceplayer
+    namebox ("Dwarf")
+	msgbox(format("This is a rest hall for weary miners to have power naps in after long shifts.\p{PAUSE 15}You can use one of the beds to rest too, if you'd like.\pJust try not to break them!"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DWARVENMINES_NPC6
+{
+    lock
+    faceplayer
+    namebox ("Dwarf")
+	msgbox(format("I heard somewhere that it was good to whistle while you work...\pbut all that did was make the other miners grumpy!\pDoing it makes me happy, but I'm too bashful to deal with the arguments."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DWARVENMINES_NPC7
+{
+    lock
+    faceplayer
+    namebox ("Dwarf")
+	msgbox(format("Time for work again already?\pUgh, no, please...\pJust five more minutes in bed!"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script GeneralStore_DWARVENMINES {
+    lock
+    faceplayer
+    namebox("Clerk")
+    msgbox(format("Oh, we don't normally get human customers!\pWelcome to the Dwarven Mines General Store.\pHow may I help you?"))
+    waitmessage
+    call(GeneralStoreShopScript)
+    msgbox("Thank you, come again!")
+    release
+}
+
 //Signs
 
 script DWARVENMINES_SIGNPOST
 {
-    msgbox(format("WEST to Crafting Guild.\pSOUTH to Rimmington.\pEAST to FALADOR."))
+    msgbox(format("NORTH to Ice Mountain.\pBe wary of vicious ice monsters and humans dressed in all black."))
     closemessage
     end
 }
-
-
-
-
 
 

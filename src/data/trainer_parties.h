@@ -7807,3 +7807,22 @@ static const struct TrainerMon sParty_Route20_Trainer_7[] = {
     .species = SPECIES_DAGANNOTH_SPIRIT_FORM,
     }
 };
+
+static const struct TrainerMon sParty_Route26_Black_Knight[] = {
+    {
+    .lvl = 40,
+    .species = SPECIES_UNICORN_BLACK_FORM,
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_DEMON_LESSER_BLACK_FORM,
+    },
+    {
+    .lvl = 41,
+    .species = SPECIES_BLACK_WARLOCK,
+    },
+    {
+    .lvl = 41,
+    .species = SPECIES_SHEEP_BLACK_FORM,
+    }
+};

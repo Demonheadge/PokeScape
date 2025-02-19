@@ -70,6 +70,12 @@ script TRIGGER_STORYMODE_EVENT_ROUTE23 {
 	lockall
 	//Sir Owen and white knights walk off to the north.
 
+	applymovement (19,movement_WHITEKNIGHTEXIT_1)
+	applymovement (16,movement_WHITEKNIGHTEXIT_2)
+	applymovement (20,movement_WHITEKNIGHTEXIT_3)
+	applymovement (17,movement_WHITEKNIGHTEXIT_4)
+	waitmovement(0)
+
 	setflag(FLAG_TEMP_1D)
     removeobject(16)
     removeobject(17)
@@ -85,7 +91,7 @@ script TRIGGER_STORYMODE_EVENT_ROUTE23 {
 	closemessage
 	//interact
 	namebox("Tiffy Cashien")
-	msgbox(format("A black knight?\pWell what a coincidence, Sir Owen and the Temple knights are currently investigating just that.\pSay why don't you join them.\pI'll contact them using my handy Comm-Orb and let them know you will be joining them."))
+	msgbox(format("A Black Knight?\pWell, what a coincidence! Sir Owen and the Temple Knights are currently investigating just that dontchaknow.\pSay, why don't you join them.\pI'll contact them using my handy Comm-Orb and let them know you will be joining them."))
 	hidenamebox
 	closemessage
 	namebox("Tiffy Cashien")
@@ -95,20 +101,31 @@ script TRIGGER_STORYMODE_EVENT_ROUTE23 {
 	giveitem(ITEM_COMMORB, 1)
 	//give player a Comm-Orb - to communicate the mission details.
 	namebox("Tiffy Cashien")
-	msgbox(format("That Comm-Orb will allow us to communicate across great distances and provide you with our support."))
+	msgbox(format("That Commorb will allow us to communicate across great distances and provide you with our support."))
 	hidenamebox
 	closemessage
 	//face north
+
+	applymovement(18, Movement_STORY_R23_2)
+	waitmovement(0)
+
 	namebox("Tiffy Cashien")
 	msgbox(format("Now, if you follow this path it will lead you to Ice Mountain.\pThe Temple Knights should be there."))
 	hidenamebox
 	closemessage
+
+	applymovement(18, Movement_STORY_R23_3)
+	waitmovement(0)
+
 	//faceplayer
 	namebox("Tiffy Cashien")
-	msgbox(format("I am on my way back to Falador.\pRemember if you need anything just use the Comm-Orb to contact me.\pGoodbye {PLAYER}."))
+	msgbox(format("I am on my way back to Falador.\pRemember if you need anything just use the Commorb to contact me.\pJolly good to see you again {PLAYER}.\pTa-ta for now!"))
 	hidenamebox
 	closemessage
-	
+
+	applymovement(18, Movement_STORY_R23_4)
+	waitmovement(0)
+
 	setflag(FLAG_TEMP_1F)
     removeobject(18)
 	setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 170)
@@ -123,6 +140,51 @@ movement Movement_STORY_R23_1 {
 	walk_down * 2
 }
 
+movement Movement_STORY_R23_2 {
+	face_up
+}
+
+movement Movement_STORY_R23_3 {
+	face_down
+}
+
+movement Movement_STORY_R23_4 {
+	face_up
+	walk_up * 2
+	face_left
+	walk_left * 10
+}
+
+movement movement_WHITEKNIGHTEXIT_1 //far right knight
+{
+	face_up
+	walk_up * 3
+}
+
+movement movement_WHITEKNIGHTEXIT_2 //second from right knight
+{
+	face_up
+	walk_up * 4
+}
+
+movement movement_WHITEKNIGHTEXIT_3 //far left knight
+{
+	face_right
+	walk_right * 3
+	face_up
+	walk_up * 4
+}
+
+movement movement_WHITEKNIGHTEXIT_4 //sir owen
+{
+	face_down
+	delay_4
+	walk_down
+	face_right
+	walk_right * 3
+	face_up
+	walk_up * 4
+}
 
 script ENCOUNTER_PENGUIN_ROCK_ROUTE23 {
 	lock

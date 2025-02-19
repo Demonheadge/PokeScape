@@ -392,7 +392,7 @@ script NEWSLETTER_4 //ALKHARID
 	faceplayer
 	msgbox(format("Newsletter Volume 4.\nMysterious Mounds.\pWould you like to read it?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT)) {
-	msgbox(format("Shh, the ground.\nIt moves ever so slightly.\pBe careful as Wyrms are buried deep within the sands!\pThey change type depending on their enviorment.\pSome say you can force these changes to happen with magic.\pI shall continue to track them.\nAnd you should too.\p - Strykewyrm Jim."))
+	msgbox(format("Shh, the ground.\nIt moves ever so slightly.\pBe careful as Wyrms are buried deep within the sands!\pThey change type depending on their environment.\pSome say you can force these changes to happen with magic.\pI shall continue to track them.\nAnd you should too.\p - Strykewyrm Jim."))
 	}
     closemessage
 	release
@@ -448,13 +448,13 @@ script NEWSLETTER_8 //PORT SARIM
 }
 
 
-script NEWSLETTER_9
+script NEWSLETTER_9 //Dwarven Mines
 {
 	lock
 	faceplayer
-	msgbox(format("Newsletter Volume 9.\n???.\pWould you like to read it?"), MSGBOX_YESNO)
+	msgbox(format("Newsletter Volume 9.\nMysterious Strangers.\pWould you like to read it?"), MSGBOX_YESNO)
 	if (var(VAR_RESULT)) {
-	msgbox(format("?\p - ???"))
+	msgbox(format("Mysterious figures have been spotted in and around Potterington Farm!\pThere are rumours circulating that they possess some kind of magical ability and only make themselves visible to adventurers with specific monsters in their parties.\pWhat are these monsters?\pNobody knows for certain, but apparently one of the mysterious visitors really, really likes hats..."))
 	}
     closemessage
 	release
@@ -1268,7 +1268,7 @@ script SetFollower_SirOwen {
     lockall
     faceplayer
     namebox("Sir Owen")
-	msgbox(format("What do you say me and you team up and show these Black Knights just what we are made off?"), MSGBOX_YESNO)
+	msgbox(format("What do you say me and you team up and show these Black Knights just what we are made of?"), MSGBOX_YESNO)
     if (var(VAR_RESULT))
     { 
 		hidenamebox
@@ -1295,7 +1295,7 @@ script SetFollower_SirOwen {
 		releaseall
 		end
     }
-	msgbox(format("Oh… I see.\nThats a big dissapointing.\pThought we had a heroic thing going here…"))
+	msgbox(format("Oh… I see.\nThat's a bit disappointing.\pThought we had a heroic thing going here…"))
     hidenamebox
     closemessage
     releaseall

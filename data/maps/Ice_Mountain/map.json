@@ -235,6 +235,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SIGN_ICE_MOUNTAIN_DOOR"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CAMDOZAAL_BLOCK"
     }
   ],
   "has_night_table": false
