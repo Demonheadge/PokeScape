@@ -118,6 +118,7 @@ script BLACK_KNIGHT_QUIZ_2 //Mare
 
 script BKFORT_DOG
 {
+    lock
     faceplayer
     msgbox(format("The dog looks at you and starts to growl.\pMaybe you should leave it alone."))
     closemessage
@@ -127,6 +128,7 @@ script BKFORT_DOG
 
 script BKFORT_1F_NPC_1
 {
+    lock
     faceplayer
     namebox ("Guard")
     msgbox(format("Don't even think about causing any trouble today.\pWe're on high alert!"))

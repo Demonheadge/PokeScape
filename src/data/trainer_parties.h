@@ -7826,3 +7826,33 @@ static const struct TrainerMon sParty_Route26_Black_Knight[] = {
     .species = SPECIES_SHEEP_BLACK_FORM,
     }
 };
+
+static const struct TrainerMon sParty_IceMountain_Guard1[] = {
+    {
+    .lvl = 38,
+    .species = SPECIES_MINOTAUR_NORMAL_FORM,
+    },
+    {
+    .lvl = 39,
+    .species = SPECIES_SHEEP_BLACK_FORM,
+    },
+    {
+    .lvl = 40,
+    .species = SPECIES_GOAT_MOUNTAIN_FORM,
+    }
+};
+
+static const struct TrainerMon sParty_IceMountain_Guard2[] = {
+    {
+    .lvl = 38,
+    .species = SPECIES_SHEEP_BLACK_FORM,
+    },
+    {
+    .lvl = 39,
+    .species = SPECIES_GOAT_BILLY_FORM,
+    },
+    {
+    .lvl = 41,
+    .species = SPECIES_MINOTAUR_NORMAL_FORM,
+    }
+};

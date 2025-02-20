@@ -48,12 +48,13 @@ script TRIGGER_STORYMODE_EVENT_ROUTE27 {
     msgbox(format("Let's go, we must make haste to Ice Mountain."))
     closemessage
     hidenamebox
-	applymovement (SIR_OWEN_ID,movement_SIR_OWEN_4)
+	applymovement (SIR_OWEN_ID,movement_SIR_OWEN_3)
 	waitmovement (0)
     namebox ("Sir Owen")
     msgbox(format("I shall scout ahead and make sure there's not an ambush waiting for us.\pDon't keep me waiting too long!"))
     closemessage
-
+	applymovement (SIR_OWEN_ID,movement_SIR_OWEN_4)
+	waitmovement (0)
 
 	setflag(FLAG_TEMP_1E) //Hide only sir owen
     removeobject(7)

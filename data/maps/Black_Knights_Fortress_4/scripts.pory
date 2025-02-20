@@ -1,0 +1,226 @@
+mapscripts Black_Knights_Fortress_4_MapScripts {
+
+}
+
+
+//NPCS
+
+script BKFORT_4F_NPC_1
+{
+    lock
+    faceplayer
+    namebox ("Black Knight")
+    msgbox(format("In this oppressive work environment, the only thing that keeps me safe is the daily maintenance of this potted plant here.\pSustaining it with life keeps my mental health alive."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_4F_NPC_2
+{
+    lock
+    faceplayer
+    namebox ("Elite Knight")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_4F_NPC_3
+{
+    lock
+    faceplayer
+    namebox ("Black Knight")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_4F_NPC_4
+{
+    lock
+    faceplayer
+    namebox ("Black Knight")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_4F_NPC_5
+{
+    lock
+    faceplayer
+    namebox ("Black Knight")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_4F_NPC_6
+{
+    lock
+    faceplayer
+    namebox ("Black Knight")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_4F_NPC_7
+{
+    lock
+    faceplayer
+    namebox ("Elite Knight")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_4F_NPC_8
+{
+    lock
+    faceplayer
+    namebox ("Elite Knight")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_4F_NPC_9
+{
+    lock
+    faceplayer
+    namebox ("Elite Knight")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_4F_NPC_10
+{
+    lock
+    faceplayer
+    namebox ("Sigmund")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_4F_NPC_11
+{
+    lock
+    faceplayer
+    namebox ("Daquarius")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+//MISC
+
+script BKFORT_4F_PLANT
+{
+	lock
+    msgbox(format("It shows signs of withering."))
+    closemessage
+    release
+    end
+}
+
+script BKFORT_4F_BOOK_1
+{
+    lock
+	msgbox(format("There is a book on the table telling the history of the Kinshra.\pWould you like to read it?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT))
+        { 
+            msgbox(format("Volume 1.\pOur Order was founded in year 4 of the 5th age by Lord Sanafin Valzin.\pShe hoped that her influence as a noblewoman would one day give rise to a Kingdom that followed the ideals of Zamorak.\pBlinded by their pagan faith, the White Knights denounced our Order and banished us from the Kingdom.\pIn return we declared open war on Asgarnia and it's illegitimate pretender of a king, Raddallin."))
+        }
+    closemessage
+	release
+	end
+}
+
+script BKFORT_4F_BOOK_2
+{
+    lock
+	msgbox(format("There is a book on the shelf telling some of the history of the Kinshra.\pWould you like to read it?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT))
+        { 
+            msgbox(format("Volume 2.\pSome years later, an alliance was made with the mage Solus Dellagar.\pTogether, we launched an attack on Edgeville to expand our territory and show the King of Misthalin that we were not be trifled with.\pUnfortunately, the White Knights arrived to defend them and the Dellagar stabbed us in the back, murdering Kinshra and White Knight alike.\pThe death toll was in the thousands by the time we finally disarmed and exiled the traitor, but the White Knights took all the credit!"))
+        }
+    closemessage
+	release
+	end
+}
+
+script BKFORT_4F_BOOK_3
+{
+    lock
+	msgbox(format("A book on the Kinshra catches your eye.\pWould you like to read it?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT))
+        { 
+            msgbox(format("Volume ??\pPossible future plans.\pLocate a tomb in the north, and use the power within to raise an army of the undead.\p{PAUSE 15}Enslave some druids in Taverley, and use their magic to bolster our monsters.\p{PAUSE 15}Resume contact with the witch in the west to capture a King Arthur and take over Camelot.\p{PAUSE 15}Prevent the White Knights from retrieving the Holy Grail.\pUse the Humans Against Monsters organisation to locate a monster of immense power capable of...\p{PAUSE 15}The rest of the page appears to have been hurriedly torn out."))
+        }
+    closemessage
+	release
+	end
+}
+
+//ITEMS
+
+script ITEM_BKFORT_4F_ITEM1
+{
+    finditem(ITEM_POUCH_BLACK)
+    end
+}
+
+script ITEM_BKFORT_4F_ITEM2
+{
+    finditem(ITEM_POUCH_BLACK)
+    end
+}
+
+script ITEM_BKFORT_4F_ITEM3
+{
+    finditem(ITEM_POUCH_BLACK)
+    end
+}
+
+script ITEM_BKFORT_4F_ITEM4
+{
+    finditem(ITEM_POUCH_BLACK)
+    end
+}
+
+script ITEM_BKFORT_4F_ITEM5
+{
+    finditem(ITEM_POUCH_BLACK)
+    end
+}
+
+script ITEM_BKFORT_4F_ITEM6
+{
+    finditem(ITEM_POUCH_BLACK)
+    end
+}

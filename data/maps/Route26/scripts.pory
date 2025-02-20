@@ -57,19 +57,36 @@ script TRIGGER_STORYMODE_EVENT_ROUTE26 {
         end
     }
     msgbox(format("Let us fight him fairly then!"))
+	applymovement (13, MOVEMENT_FACE_UP)
     setflag(FLAG_PARTNER_BATTLE)
     setvar (VAR_PARTNER_TRAINER, TRAINER_SIR_OWEN_1)
 	setvar (VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_OWEN)
     trainerbattle_no_intro(TRAINER_ROUTE26_BLACK_KNIGHT, format("Urgh, I could have stopped one of you but not both..."))
-    msgbox(format("Thank you {PLAYER}."))
-    closemessage
-    hidenamebox
     applymovement (BLACKKNIGHT_ID,movement_BLACKKNIGHT_1)
 	waitmovement (0)
 	setflag(FLAG_TEMP_1F)
     removeobject(6)
+    applymovement (13, MOVEMENT_WALK_UP)
+	applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_UP * 2)
+    applymovement (13, MOVEMENT_FACE_DOWN)
+    msgbox(format("Thank you {PLAYER}.\pI think it would be wise for us to continue on foot together in case we encounter any more enemy resistance."))
+    closemessage
+    hidenamebox
+	playfanfare(MUS_OBTAIN_SYMBOL)
+	msgbox(format("Lead the charge!\nSir Owen Sonde is on your side!"))
+	waitfanfare
+	closemessage
+	setflag(FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES)
+    loadword(0, FOLLOWING_SirOwen)
+	setfollower(13, 0x80)
+	namebox("Sir Owen")
+	msgbox(format("May Saradomin guide us!"))
+	closemessage
+	hidenamebox
+	applymovement (OBJ_EVENT_ID_FOLLOWER, MOVEMENT_WALK_UP)
+	applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_UP)
+	waitmovement(0)
 	setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 180)
-    call(SetFollower_SirOwen)
 	releaseall
 	end
 }

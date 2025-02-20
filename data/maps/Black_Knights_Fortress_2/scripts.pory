@@ -223,6 +223,7 @@ script BLACK_KNIGHT_QUIZ_7 //Fall
 
 script BKFORT_2F_NPC_1 //Goblin in kitchen
 {
+    lock
     faceplayer
     namebox ("Greldo")
     msgbox(format("Me need Draynor cabbageth.\p{PAUSE 15}They tayth-tee, me hope thilly Black Knight not eat it or green lady be very angry."))
@@ -234,6 +235,7 @@ script BKFORT_2F_NPC_1 //Goblin in kitchen
 
 script BKFORT_2F_NPC_2 //Western most Black Knight in main room
 {
+    lock
     faceplayer
     namebox ("Black Knight")
     msgbox(format("People wouldn't be so afraid of us if we were White Knights..."))
@@ -245,6 +247,7 @@ script BKFORT_2F_NPC_2 //Western most Black Knight in main room
 
 script BKFORT_2F_NPC_3 //South-western most Black Knight in main room
 {
+    lock
     faceplayer
     namebox ("Black Knight")
     msgbox(format("Can I ask you a question?\pWhat do you think about puns?{PAUSE 15}\pLook, I hate the White Knights as much as everyone else but I really do think they nailed the whole naming thing.\pImagine if we had names like that...\pLike Jack, or Chap!\pMaybe I should bring it up next council meeting..."))
@@ -256,6 +259,7 @@ script BKFORT_2F_NPC_3 //South-western most Black Knight in main room
 
 script BKFORT_2F_NPC_4 //Guard by entrance and item
 {
+    lock
     faceplayer
     namebox ("Guard")
     msgbox(format("I am so tired I could go for another nap..."))
@@ -267,6 +271,7 @@ script BKFORT_2F_NPC_4 //Guard by entrance and item
 
 script BKFORT_2F_NPC_5 //Dark Wizard in South
 {
+    lock
     faceplayer
     namebox ("Dark Wizard")
     msgbox(format("Do you think I look...\pEvil enough?\pI'm worried that my robes are a bit washed out now and they're only grey instead of black.\pI don't want to get kicked out because of it!"))
@@ -278,6 +283,7 @@ script BKFORT_2F_NPC_5 //Dark Wizard in South
 
 script BKFORT_2F_NPC_6 //Zamorak Wizard in Hallway
 {
+    lock
     faceplayer
     namebox ("Zammy Wizard")
     msgbox(format("One of the eggs was blessed by Zamorak himself and the first Hawk was born..."))
@@ -289,6 +295,7 @@ script BKFORT_2F_NPC_6 //Zamorak Wizard in Hallway
 
 script BKFORT_2F_NPC_7 //Necromancer in main hall
 {
+    lock
     faceplayer
     namebox ("Necromancer")
     msgbox(format("White Knights don't do it for me.\pOnce you go Black Knight, you're never going back you know."))
@@ -300,6 +307,7 @@ script BKFORT_2F_NPC_7 //Necromancer in main hall
 
 script BKFORT_2F_NPC_8 //Top left Black Knight in main hall
 {
+    lock
     faceplayer
     namebox ("Black Knight")
     msgbox(format("Elite Black knights are the true heroes of the Kinshra.\pWe even work with the Mahjarrats."))
@@ -311,6 +319,7 @@ script BKFORT_2F_NPC_8 //Top left Black Knight in main hall
 
 script BKFORT_2F_NPC_9 //Top right Black Knight in main hall
 {
+    lock
     faceplayer
     namebox ("Black Knight")
     msgbox(format("You have a lot of nerve coming into here solely to ruin my mealtime.\pBegone!"))
@@ -322,6 +331,7 @@ script BKFORT_2F_NPC_9 //Top right Black Knight in main hall
 
 script BKFORT_2F_NPC_10 //Black Knight on right in main hall
 {
+    lock
     faceplayer
     namebox ("Black Knight")
     msgbox(format("One day I will be an Elite Black Knight and get a really cool name!\pEugene just doesn't cut it as a Black Knight."))
@@ -333,6 +343,7 @@ script BKFORT_2F_NPC_10 //Black Knight on right in main hall
 
 script BKFORT_2F_NPC_11 //First of two guards in main hall
 {
+    lock
     faceplayer
     namebox ("Guard")
     msgbox(format("I tried to hit on the girl over there, but she said guard is hardly an occupation.\pGuess I need a promotion before I can settle down."))
@@ -344,6 +355,7 @@ script BKFORT_2F_NPC_11 //First of two guards in main hall
 
 script BKFORT_2F_NPC_12 //Second of two guards in main hall
 {
+    lock
     faceplayer
     namebox ("Guard")
     msgbox(format("Ughhhhhh\pI was so hungry I snuck into the kitchen and ate a whole cabbage!\pBut now I feel really sick..."))
@@ -355,6 +367,7 @@ script BKFORT_2F_NPC_12 //Second of two guards in main hall
 
 script BKFORT_2F_NPC_13 //Chef
 {
+    lock
     faceplayer
     namebox ("Chef")
     msgbox(format("Become a chef, they said.\pStart your own catering business, they said.\pNobody said anything about having to live in a creepy fortress serving food to an army of mercenaries!\pIt's too late for me to even leave now, I've seen too much..."))
@@ -366,6 +379,7 @@ script BKFORT_2F_NPC_13 //Chef
 
 script BKFORT_2F_NPC_14 //Head Zamorak Wizard
 {
+    lock
     faceplayer
     namebox ("Marius")
     msgbox(format("It is my duty to bestow Zamorak's blessing upon his servants.\pRemove your helmet, and I shall administer the mark."))
@@ -377,6 +391,7 @@ script BKFORT_2F_NPC_14 //Head Zamorak Wizard
 
 script BKFORT_2F_NPC_15 //Dark Wizard in Chapel
 {
+    lock
     faceplayer
     namebox ("Dark Wizard")
     msgbox(format("I mostly come here for the free ceremonial Wine of Zamorak.\pSelling it helps to feed my family."))
@@ -388,6 +403,7 @@ script BKFORT_2F_NPC_15 //Dark Wizard in Chapel
 
 script BKFORT_2F_NPC_16 //Necromancer in Chapel
 {
+    lock
     faceplayer
     namebox ("Necromancer")
     msgbox(format("Zamorak o domine, Dona eis requiem."))
@@ -399,6 +415,7 @@ script BKFORT_2F_NPC_16 //Necromancer in Chapel
 
 script BKFORT_2F_NPC_17 //Left Zamorak Wizard in Chapel
 {
+    lock
     faceplayer
     namebox ("Zammy Wizard")
     msgbox(format("From the blood of the Fallen, we shall create Wine of Zamorak."))
@@ -410,6 +427,7 @@ script BKFORT_2F_NPC_17 //Left Zamorak Wizard in Chapel
 
 script BKFORT_2F_NPC_18 //Right Zamorak Wizard in Chapel
 {
+    lock
     faceplayer
     namebox ("Zammy Wizard")
     msgbox(format("When gravity falls and earth becomes sky, fear the beast with just one eye."))
@@ -421,6 +439,7 @@ script BKFORT_2F_NPC_18 //Right Zamorak Wizard in Chapel
 
 script BKFORT_2F_NPC_19 //PVMer in Chapel
 {
+    lock
     faceplayer
     namebox ("GIM Frankie")
     msgbox(format("Hold on...{PAUSE 15}\pThis isn't White Knight's castle.\pDrat!\pWrong quest guide..."))
@@ -432,6 +451,7 @@ script BKFORT_2F_NPC_19 //PVMer in Chapel
 
 script BKFORT_2F_NPC_20 //Black Knight in Chapel
 {
+    lock
     faceplayer
     namebox ("Black Knight")
     msgbox(format("Zamorak, my lord, please make me good at swordfighting.\pZamorak, my lord, please make me good at swordfighting.\pZamorak, my lord, please make me good at swordfighting.\pZamorak, my lord, PLEASE make me good at swordfighting!"))

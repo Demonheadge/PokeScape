@@ -521,6 +521,8 @@
 #define TRAINER_ROUTE20_TRAINER_6                       515
 #define TRAINER_ROUTE20_TRAINER_7                       516
 #define TRAINER_ROUTE26_BLACK_KNIGHT                    517
+#define TRAINER_ICE_MOUNTAIN_GUARD_1                    518
+#define TRAINER_ICE_MOUNTAIN_GUARD_2                    519
 
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows

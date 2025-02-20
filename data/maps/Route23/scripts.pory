@@ -91,7 +91,7 @@ script TRIGGER_STORYMODE_EVENT_ROUTE23 {
 	closemessage
 	//interact
 	namebox("Tiffy Cashien")
-	msgbox(format("A Black Knight?\pWell, what a coincidence! Sir Owen and the Temple Knights are currently investigating just that dontchaknow.\pSay, why don't you join them.\pI'll contact them using my handy Comm-Orb and let them know you will be joining them."))
+	msgbox(format("A Black Knight?\pWell, what a coincidence! Sir Owen and the Temple Knights are currently investigating just that dontchaknow.\pSay, why don't you join them.\pI'll contact them using my handy Commorb and let them know you will be joining them."))
 	hidenamebox
 	closemessage
 	namebox("Tiffy Cashien")
@@ -178,7 +178,7 @@ movement movement_WHITEKNIGHTEXIT_3 //far left knight
 movement movement_WHITEKNIGHTEXIT_4 //sir owen
 {
 	face_down
-	delay_4
+	delay_8
 	walk_down
 	face_right
 	walk_right * 3

@@ -199,39 +199,54 @@ script SIGN_ICE_MOUNTAIN_DOOR
 script TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY {
 	lockall
 	//check for outfit.
-	//if storymode {}
-	applymovement (BKGUARD_1_ID,movement_BK_FORT_GUARD)
-	applymovement (BKGUARD_2_ID,movement_BK_FORT_GUARD)
-	applymovement (OBJ_EVENT_ID_FOLLOWER, MOVEMENT_LOCKFACING_JUMP_SPECIAL_DOWN)
-	applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_LOCKFACING_JUMP_SPECIAL_DOWN)
-	waitmovement(0)
-	namebox ("Guard B")
-	msgbox(format("Hey, you are not a guard!"))
-	closemessage
-	hidenamebox
-	namebox ("Guard D")
-	msgbox(format("Yeah, neither of you are guards."))
-	closemessage
-	hidenamebox
-	namebox ("Guard B")
-	msgbox(format("Sorry, but you've got to at least be a guard to pass through here.\pOtherwise if we let you in we would be in trouble!"))
-	closemessage
-	hidenamebox
-	namebox ("Guard D")
-	msgbox(format("Yeah, so don't go off around the corner and dress up as guard now.\pWe would see right through you if you did."))
-	closemessage
-	hidenamebox
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 186) {
+	
+		applymovement (BKGUARD_1_ID,movement_BK_FORT_GUARD)
+		applymovement (BKGUARD_2_ID,movement_BK_FORT_GUARD)
+		applymovement (OBJ_EVENT_ID_FOLLOWER, MOVEMENT_LOCKFACING_JUMP_SPECIAL_DOWN)
+		applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_LOCKFACING_JUMP_SPECIAL_DOWN)
+		waitmovement(0)
+		namebox ("Guard B")
+		msgbox(format("Hey, you are not a guard!"))
+		closemessage
+		hidenamebox
+		namebox ("Guard D")
+		msgbox(format("Yeah, neither of you are guards."))
+		closemessage
+		hidenamebox
+		namebox ("Guard B")
+		msgbox(format("Sorry, but you've got to at least be a guard to pass through here.\pOtherwise if we let you in we would be in trouble!"))
+		closemessage
+		hidenamebox
+		namebox ("Guard D")
+		msgbox(format("Yeah, so don't go off around the corner and dress up as guard now.\pWe would see right through you if you did."))
+		closemessage
+		hidenamebox
 
-	applymovement (OBJ_EVENT_ID_FOLLOWER, MOVEMENT_LOCKFACING_WALK_DOWN)
-	applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN)
-	waitmovement(0)
-	namebox ("Sir Owen")
-	msgbox(format("Hmm... We are going to have to get a guard uniform from somewhere.\pLet us retreat momentarily while we think of something."))
-	closemessage
-	hidenamebox
-	setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 185)
-	releaseall
-	end
+		applymovement (OBJ_EVENT_ID_FOLLOWER, MOVEMENT_LOCKFACING_WALK_DOWN)
+		applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN)
+		waitmovement(0)
+		namebox ("Sir Owen")
+		msgbox(format("Hmm... We are going to have to get a guard uniform from somewhere.\pLet us retreat momentarily while we think of something."))
+		closemessage
+		hidenamebox
+		setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 185)
+		releaseall
+		end
+		}
+
+	else {
+		namebox ("Guard B")
+		msgbox(format("Be careful in there!\pThere's an important guest inside."))
+		closemessage
+		hidenamebox
+		namebox ("Guard D")
+		msgbox(format("Security inside has been increased.\pRemember your Black Knight history and you'll be fine, though."))
+		closemessage
+		hidenamebox
+		releaseall
+		end
+		}
 }
 
 movement MOVEMENT_LOCKFACING_WALK_DOWN {
@@ -293,7 +308,7 @@ script EVENT_ICE_MOUNTAIN_GUARDS {
 	msgbox(format("AAAAH!\pWhat are you doing!?"))
 	closemessage
 	hidenamebox
-	//Battle
+	trainerbattle_two_trainers(TRAINER_ICE_MOUNTAIN_GUARD_1, msgbox(format("Guard: W-what are you doing with that sword?")), TRAINER_ICE_MOUNTAIN_GUARD_2, msgbox(format("Guard: OW! My head!")))
 	namebox ("Sir Owen")
 	msgbox(format("Quick let's take their gear before they wake up."))
 	closemessage
@@ -301,7 +316,7 @@ script EVENT_ICE_MOUNTAIN_GUARDS {
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	//change outfit
 	//make guards nude
-	//setmetatile(x, y, SNOW_LOGFIRE_OUT, TRUE)
+	setmetatile(34, 14, SNOW_LOGFIRE_OUT, TRUE)
 	//map refresh
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	namebox ("Sir Owen")
