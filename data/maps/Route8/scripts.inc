@@ -142,10 +142,10 @@ NPC_MAKEOVER_MAGE_2:
 
 NPC_MAKEOVER_MAGE_4:
 	msgbox NPC_MAKEOVER_MAGE_Text_3
-	special MakeoverMage
 	msgbox NPC_MAKEOVER_MAGE_Text_4
 	closemessage
 	hidenamebox
+	special MakeoverMage
 	end
 
 
