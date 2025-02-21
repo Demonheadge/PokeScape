@@ -60,13 +60,33 @@ TRIGGER_STORYMODE_EVENT_ROUTE26::
 	compare VAR_RESULT, 0
 	goto_if_eq TRIGGER_STORYMODE_EVENT_ROUTE26_2
 	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_3
-	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_4
-	closemessage
-	hidenamebox
+	applymovement 13, MOVEMENT_FACE_UP
+	setflag FLAG_PARTNER_BATTLE
+	setvar VAR_PARTNER_TRAINER, TRAINER_SIR_OWEN_1
+	setvar VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_OWEN
+	trainerbattle_no_intro TRAINER_ROUTE26_BLACK_KNIGHT, TRIGGER_STORYMODE_EVENT_ROUTE26_Text_4
+	applymovement 6, movement_BLACKKNIGHT_1
+	waitmovement 0
 	setflag FLAG_TEMP_1F
 	removeobject 6
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_5
+	closemessage
+	hidenamebox
+	playfanfare MUS_OBTAIN_SYMBOL
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_6
+	waitfanfare
+	closemessage
+	setflag FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES
+	loadword 0, FOLLOWING_SirOwen
+	setfollower 13, 0x80
+	namebox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_0
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_7
+	closemessage
+	hidenamebox
+	applymovement OBJ_EVENT_ID_FOLLOWER, MOVEMENT_WALK_UP
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_UP
+	waitmovement 0
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 180
-	call SetFollower_SirOwen
 	releaseall
 	end
 
@@ -80,6 +100,14 @@ TRIGGER_STORYMODE_EVENT_ROUTE26_2:
 	releaseall
 	end
 
+
+movement_BLACKKNIGHT_1:
+	emote_exclamation_mark
+	walk_slow_up
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	step_end
 
 ENCOUNTER_PENGUIN_BOX_ROUTE26::
 	lock
@@ -169,7 +197,7 @@ TRIGGER_STORYMODE_EVENT_ROUTE26_Text_0:
 	.string "Sir Owen$"
 
 TRIGGER_STORYMODE_EVENT_ROUTE26_Text_1:
-	.string "{PLAYER}! Mind lending me a hand!\p"
+	.string "{PLAYER}! Mind lending me a hand?\p"
 	.string "This guy is not playing fair!$"
 
 TRIGGER_STORYMODE_EVENT_ROUTE26_Text_2:
@@ -179,7 +207,21 @@ TRIGGER_STORYMODE_EVENT_ROUTE26_Text_3:
 	.string "Let us fight him fairly then!$"
 
 TRIGGER_STORYMODE_EVENT_ROUTE26_Text_4:
-	.string "Thank you {PLAYER}.$"
+	.string "Urgh, I could have stopped one of you\n"
+	.string "but not both...$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_Text_5:
+	.string "Thank you {PLAYER}.\p"
+	.string "I think it would be wise for us to\n"
+	.string "continue on foot together in case we\l"
+	.string "encounter any more enemy resistance.$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_Text_6:
+	.string "Lead the charge!\n"
+	.string "Sir Owen Sonde is on your side!$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_Text_7:
+	.string "May Saradomin guide us!$"
 
 ENCOUNTER_PENGUIN_BOX_ROUTE26_Text_0:
 	.string "Penguin$"

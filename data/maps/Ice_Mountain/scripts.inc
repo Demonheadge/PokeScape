@@ -205,8 +205,8 @@ BATTLE_ICE_MOUNTAIN_BLACK_KNIGHT_1::
 	end
 
 
-NPC_ICE_MOUNTAIN_BLACK_KNIGHT::
-	msgbox NPC_ICE_MOUNTAIN_BLACK_KNIGHT_Text_0
+NPC_ICE_MOUNTAIN_GUARD::
+	msgbox NPC_ICE_MOUNTAIN_GUARD_Text_0
 	release
 	end
 
@@ -219,6 +219,25 @@ SIGN_ICE_MOUNTAIN_DOOR::
 
 TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY::
 	lockall
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 186
+	goto_if_le TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_1
+	namebox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_0
+	msgbox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_8
+	closemessage
+	hidenamebox
+	namebox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_2
+	msgbox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_9
+	closemessage
+	hidenamebox
+	releaseall
+	end
+
+TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_1:
+	applymovement 4, movement_BK_FORT_GUARD
+	applymovement 5, movement_BK_FORT_GUARD
+	applymovement OBJ_EVENT_ID_FOLLOWER, MOVEMENT_LOCKFACING_JUMP_SPECIAL_DOWN
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_LOCKFACING_JUMP_SPECIAL_DOWN
+	waitmovement 0
 	namebox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_0
 	msgbox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_1
 	closemessage
@@ -251,6 +270,16 @@ MOVEMENT_LOCKFACING_WALK_DOWN:
 	lock_facing_direction
 	walk_down
 	unlock_facing_direction
+	step_end
+
+MOVEMENT_LOCKFACING_JUMP_SPECIAL_DOWN:
+	lock_facing_direction
+	jump_special_down
+	unlock_facing_direction
+	step_end
+
+movement_BK_FORT_GUARD:
+	emote_exclamation_mark
 	step_end
 
 TRIGGER_STORYMODE_EVENT_ICE_MOUNTAIN_BKF::
@@ -298,14 +327,16 @@ EVENT_ICE_MOUNTAIN_GUARDS::
 	msgbox EVENT_ICE_MOUNTAIN_GUARDS_Text_3
 	closemessage
 	hidenamebox
+	trainerbattle_two_trainers TRAINER_ICE_MOUNTAIN_GUARD_1, EVENT_ICE_MOUNTAIN_GUARDS_Text_4, TRAINER_ICE_MOUNTAIN_GUARD_2, EVENT_ICE_MOUNTAIN_GUARDS_Text_5
 	namebox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_6
-	msgbox EVENT_ICE_MOUNTAIN_GUARDS_Text_4
+	msgbox EVENT_ICE_MOUNTAIN_GUARDS_Text_6
 	closemessage
 	hidenamebox
 	fadescreenswapbuffers FADE_TO_BLACK
+	setmetatile 34, 14, METATILE_Ice_Mountain_SNOW_LOGFIRE_OUT, TRUE
 	fadescreenswapbuffers FADE_FROM_BLACK
 	namebox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_6
-	msgbox EVENT_ICE_MOUNTAIN_GUARDS_Text_5
+	msgbox EVENT_ICE_MOUNTAIN_GUARDS_Text_7
 	closemessage
 	hidenamebox
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 187
@@ -359,6 +390,12 @@ GUARD_F_2:
 GUARD_F_3:
 	msgbox GUARD_F_Text_0
 	goto GUARD_F_1
+
+
+CAMDOZAAL_BLOCK::
+	msgbox CAMDOZAAL_BLOCK_Text_0
+	closemessage
+	end
 
 
 NPC_ORACLE_Text_0:
@@ -458,9 +495,9 @@ BATTLE_ICE_MOUNTAIN_BLACK_KNIGHT_1_Text_3:
 	.string "Nobody without a set of our armour gets\n"
 	.string "inside our fortress!$"
 
-NPC_ICE_MOUNTAIN_BLACK_KNIGHT_Text_0:
-	.string "The Black Knight stares off into the\n"
-	.string "distance as if you're not even there.$"
+NPC_ICE_MOUNTAIN_GUARD_Text_0:
+	.string "The guard stares off into the distance\n"
+	.string "as if you're not even there.$"
 
 SIGN_ICE_MOUNTAIN_DOOR_Text_0:
 	.string "The door is sealed shut.$"
@@ -469,7 +506,7 @@ TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_0:
 	.string "Guard B$"
 
 TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_1:
-	.string "Hey, You are not a guard!$"
+	.string "Hey, you are not a guard!$"
 
 TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_2:
 	.string "Guard D$"
@@ -478,10 +515,10 @@ TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_3:
 	.string "Yeah, neither of you are guards.$"
 
 TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_4:
-	.string "Sorry, but you got to be at least be a\n"
+	.string "Sorry, but you've got to at least be a\n"
 	.string "guard to pass through here.\p"
 	.string "Otherwise if we let you in we would be in\n"
-	.string "trouble.$"
+	.string "trouble!$"
 
 TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_5:
 	.string "Yeah, so don't go off around the corner\n"
@@ -498,10 +535,19 @@ TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_7:
 	.string "Let us retreat momentarily while we\n"
 	.string "think of something.$"
 
+TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_8:
+	.string "Be careful in there!\p"
+	.string "There's an important guest inside.$"
+
+TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_9:
+	.string "Security inside has been increased.\p"
+	.string "Remember your Black Knight history and\n"
+	.string "you'll be fine, though.$"
+
 TRIGGER_STORYMODE_EVENT_ICE_MOUNTAIN_BKF_Text_0:
 	.string "{PLAYER} look!\p"
 	.string "That's a fortress!\p"
-	.string "Lets take a closer look!$"
+	.string "Let's take a closer look!$"
 
 TRIGGER_STORYMODE_EVENT_ICE_MOUNTAIN_GUARDS_Text_0:
 	.string "Psst {PLAYER}, look up there.$"
@@ -514,7 +560,7 @@ EVENT_ICE_MOUNTAIN_GUARDS_Text_0:
 	.string "Guard M$"
 
 EVENT_ICE_MOUNTAIN_GUARDS_Text_1:
-	.string "Hey who are you two?\p"
+	.string "Hey, who are you two?\p"
 	.string "Wait you're a White Knight!$"
 
 EVENT_ICE_MOUNTAIN_GUARDS_Text_2:
@@ -525,17 +571,24 @@ EVENT_ICE_MOUNTAIN_GUARDS_Text_3:
 	.string "What are you doing!?$"
 
 EVENT_ICE_MOUNTAIN_GUARDS_Text_4:
-	.string "Quick lets take their gear before they\n"
-	.string "wake up.$"
+	.string "Guard: W-what are you doing with that\n"
+	.string "sword?$"
 
 EVENT_ICE_MOUNTAIN_GUARDS_Text_5:
+	.string "Guard: OW! My head!$"
+
+EVENT_ICE_MOUNTAIN_GUARDS_Text_6:
+	.string "Quick let's take their gear before they\n"
+	.string "wake up.$"
+
+EVENT_ICE_MOUNTAIN_GUARDS_Text_7:
 	.string "Right, this should get us through the\n"
 	.string "gate.\p"
 	.string "Although I do feel a bit bad for leaving\n"
-	.string "them out in the cold.$"
+	.string "them out in the cold...$"
 
 GUARD_M_Text_0:
-	.string "There is no response they're\n"
+	.string "There is no response as they're\n"
 	.string "unconscious.$"
 
 GUARD_M_Text_1:
@@ -555,3 +608,10 @@ GUARD_F_Text_1:
 	.string "It's freezing.\p"
 	.string "Being stuck on this guard shift out in\n"
 	.string "the cold is killing me.$"
+
+CAMDOZAAL_BLOCK_Text_0:
+	.string "There is a solid chunk of ice blocking\n"
+	.string "the cave entrance.\p"
+	.string "You see no way to climb over or around\n"
+	.string "it, and it's too tough for your pickaxe\l"
+	.string "to break it.$"

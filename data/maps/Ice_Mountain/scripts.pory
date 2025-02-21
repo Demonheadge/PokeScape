@@ -316,7 +316,7 @@ script EVENT_ICE_MOUNTAIN_GUARDS {
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	//change outfit
 	//make guards nude
-	setmetatile(34, 14, SNOW_LOGFIRE_OUT, TRUE)
+	setmetatile(34, 14, METATILE_Ice_Mountain_SNOW_LOGFIRE_OUT, TRUE) 
 	//map refresh
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	namebox ("Sir Owen")

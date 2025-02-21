@@ -66,9 +66,9 @@ script TRIGGER_STORYMODE_EVENT_ROUTE26 {
 	waitmovement (0)
 	setflag(FLAG_TEMP_1F)
     removeobject(6)
-    applymovement (13, MOVEMENT_WALK_UP)
-	applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_UP * 2)
-    applymovement (13, MOVEMENT_FACE_DOWN)
+    //applymovement (13, MOVEMENT_WALK_UP)
+	//applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_UP)
+    //applymovement (13, MOVEMENT_FACE_DOWN)
     msgbox(format("Thank you {PLAYER}.\pI think it would be wise for us to continue on foot together in case we encounter any more enemy resistance."))
     closemessage
     hidenamebox

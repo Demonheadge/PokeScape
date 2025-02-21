@@ -334,6 +334,10 @@
 #define METATILE_GoblinVillage_Door_Goblin_L  0x229
 #define METATILE_GoblinVillage_Door_Goblin_R  0x228
 
+// gTileset_Ice_Mountain
+#define METATILE_Ice_Mountain_SNOW_LOGFIRE_ON   0x2B4
+#define METATILE_Ice_Mountain_SNOW_LOGFIRE_OUT  0x2B5
+
 // gTileset_InsideOfTruck
 #define METATILE_InsideOfTruck_DoorClosedFloor_Bottom  0x21D
 #define METATILE_InsideOfTruck_DoorClosedFloor_Mid     0x215

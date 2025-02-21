@@ -46,6 +46,62 @@ NPC_DWARVENMINES_NPC4::
 	end
 
 
+NPC_DWARVENMINES_NULODION::
+	lock
+	faceplayer
+	namebox NPC_DWARVENMINES_NULODION_Text_0
+	msgbox NPC_DWARVENMINES_NULODION_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NPC_DWARVENMINES_NPC5::
+	lock
+	faceplayer
+	namebox NPC_DWARVENMINES_NPC2_Text_0
+	msgbox NPC_DWARVENMINES_NPC5_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NPC_DWARVENMINES_NPC6::
+	lock
+	faceplayer
+	namebox NPC_DWARVENMINES_NPC2_Text_0
+	msgbox NPC_DWARVENMINES_NPC6_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NPC_DWARVENMINES_NPC7::
+	lock
+	faceplayer
+	namebox NPC_DWARVENMINES_NPC2_Text_0
+	msgbox NPC_DWARVENMINES_NPC7_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+GeneralStore_DWARVENMINES::
+	lock
+	faceplayer
+	namebox GeneralStore_DWARVENMINES_Text_0
+	msgbox GeneralStore_DWARVENMINES_Text_1
+	waitmessage
+	call GeneralStoreShopScript
+	msgbox GeneralStore_DWARVENMINES_Text_2
+	release
+	return
+
+
 DWARVENMINES_SIGNPOST::
 	msgbox DWARVENMINES_SIGNPOST_Text_0
 	closemessage
@@ -92,7 +148,51 @@ NPC_DWARVENMINES_NPC4_Text_0:
 	.string "Maybe that would be more profitable\n"
 	.string "though..$"
 
+NPC_DWARVENMINES_NULODION_Text_0:
+	.string "Nulodion$"
+
+NPC_DWARVENMINES_NULODION_Text_1:
+	.string "You want to buy a dwarven multicannon?\p"
+	.string "I'm afraid I can't sell them to just\n"
+	.string "anyone!\p"
+	.string "They're a closely guarded secret.\p"
+	.string "Perhaps if you'd done something to help\n"
+	.string "the dwarves I could consider it...$"
+
+NPC_DWARVENMINES_NPC5_Text_0:
+	.string "This is a rest hall for weary miners to\n"
+	.string "have power naps in after long shifts.\p"
+	.string "{PAUSE 15}You can use one of the beds to rest\n"
+	.string "too, if you'd like.\p"
+	.string "Just try not to break them!$"
+
+NPC_DWARVENMINES_NPC6_Text_0:
+	.string "I heard somewhere that it was good to\n"
+	.string "whistle while you work...\p"
+	.string "but all that did was make the other\n"
+	.string "miners grumpy!\p"
+	.string "Doing it makes me happy, but I'm too\n"
+	.string "bashful to deal with the arguments.$"
+
+NPC_DWARVENMINES_NPC7_Text_0:
+	.string "Time for work again already?\p"
+	.string "Ugh, no, please...\p"
+	.string "Just five more minutes in bed!$"
+
+GeneralStore_DWARVENMINES_Text_0:
+	.string "Clerk$"
+
+GeneralStore_DWARVENMINES_Text_1:
+	.string "Oh, we don't normally get human\n"
+	.string "customers!\p"
+	.string "Welcome to the Dwarven Mines General\n"
+	.string "Store.\p"
+	.string "How may I help you?$"
+
+GeneralStore_DWARVENMINES_Text_2:
+	.string "Thank you, come again!$"
+
 DWARVENMINES_SIGNPOST_Text_0:
-	.string "WEST to Crafting Guild.\p"
-	.string "SOUTH to Rimmington.\p"
-	.string "EAST to FALADOR.$"
+	.string "NORTH to Ice Mountain.\p"
+	.string "Be wary of vicious ice monsters and\n"
+	.string "humans dressed in all black.$"
