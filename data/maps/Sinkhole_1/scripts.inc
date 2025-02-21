@@ -180,7 +180,7 @@ DAMAGED_LADDER_Text_0:
 	.string "The ladder is too damaged to use it.$"
 
 SINKHOLE_NPC_FORGOTTENWARRIOR_1_Text_0:
-	.string "Forgotten Warrior$"
+	.string "Forgotten War.$"
 
 SINKHOLE_NPC_FORGOTTENWARRIOR_1_Text_1:
 	.string "There are many sinkhole dungeons like\n"

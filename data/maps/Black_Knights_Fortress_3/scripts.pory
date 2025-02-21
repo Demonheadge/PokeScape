@@ -1,0 +1,262 @@
+mapscripts Black_Knights_Fortress_3_MapScripts {
+
+}
+
+//NPCS
+
+script BKFORT_3F_NPC_1
+{
+    lock
+    faceplayer
+    namebox ("Black Knight")
+    msgbox(format("Heh, you want to get a jab in at the prisoner too?\pI heard there are some weapons fresh off the forge that could do with being tested on someone like this!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_2
+{
+    lock
+    faceplayer
+    namebox ("Black Knight")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_3
+{
+    lock
+    faceplayer
+    namebox ("Sir Gawain")
+    msgbox(format("For the last time...\pI AM NOT A WHITE KNIGHT!\pI AM A KNIGHT OF THE ROUND TABLE!\p{PAUSE 15}Very well, the King will save me..."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_4
+{
+    lock
+    faceplayer
+    namebox ("Hill Giant")
+    msgbox(format("Wait...\pDo...\pdo not...\pflig...\pfight.\pWant...\pno, need...\pyour help.\pPlease..."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_5
+{
+    lock
+    faceplayer
+    namebox ("Dungeonletic")
+    msgbox(format("Meet Dungeonletics, my Black Knights Fortress dungeon locked Ultimate Ironman.\pAfter recently maxing my Ultimate Ironman I decided to up the ante to forge my own journey from scratch.\pNo banking, no trading, but this time I can't leave this jail cell.\pAll leading up to eventually taking on one of PokeScape's biggest challenges...\pTagging Stan in the Discord and not getting banned."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_6
+{
+    lock
+    faceplayer
+    namebox ("Goebie")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_7
+{
+    lock
+    msgbox(format("No matter how hard you try, you can't seem to get their attention.\pThey just keep walking into the wall, over and over and over again..."))
+    closemessage
+    release
+    end
+}
+
+script BKFORT_3F_NPC_8
+{
+    lock
+    faceplayer
+    namebox ("Skeleton")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_9
+{
+    lock
+    faceplayer
+    namebox ("Worldbearer")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_10
+{
+    lock
+    faceplayer
+    namebox ("Forgotten War.")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_11
+{
+    lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_12
+{
+    lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_13
+{
+    lock
+    faceplayer
+    namebox ("Blacksmith")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_14
+{
+    lock
+    faceplayer
+    namebox ("Black Knight")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_15
+{
+    lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_16
+{
+    lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("Boy, when I joined the exchange program between the Khazard Guard and the Black Knights guard, I never expected these guys to be even more intense than the General!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_17
+{
+    lock
+    faceplayer
+    namebox ("Durial321")
+    msgbox(format("Those blasted White Knights stopped me from engaging in the biggest massacre Gielinor had ever seen...\pWith the strength of the Kinshra behind me, I swear I will have my revenge."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_18
+{
+    lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_19
+{
+    lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_3F_NPC_20
+{
+    lock
+    faceplayer
+    namebox ("Lesser Demon")
+    msgbox(format("Gwuaaahhh!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+//ITEMS
+
+script ITEM_BKFORT_3F_ITEM1
+{
+    finditem(ITEM_POUCH_BLACK)
+    end
+}
+
+script ITEM_BKFORT_3F_ITEM2
+{
+    finditem(ITEM_POUCH_BLACK)
+    end
+}
+
+script ITEM_BKFORT_3F_ITEM3
+{
+    finditem(ITEM_POUCH_BLACK)
+    end
+}

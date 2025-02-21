@@ -500,16 +500,36 @@
 #define TRAINER_ZANIK_HAM                               494
 #define TRAINER_ARIANE_1                                495
 #define TRAINER_SIR_OWEN_1                              496
-
-
-
+#define TRAINER_DRAYNORMANOR_HAM                        497
+#define TRAINER_ROUTE9_ITSWILL                          498 
+#define TRAINER_MODESTSAMUEL                            499
+#define TRAINER_BLACKKNIGHT_MARE                        500
+#define TRAINER_BLACKKNIGHT_LAIMP                       501
+#define TRAINER_BLACKKNIGHT_TAIM                        502
+#define TRAINER_BLACKKNIGHT_LAIF                        503
+#define TRAINER_BLACKKNIGHT_FALL                        504
+#define TRAINER_BLACKKNIGHT_SKOOL                       505 //Not currently in use
+#define TRAINER_BLACKKNIGHT_SIFT                        506 //Not currently in use
+#define TRAINER_BLACKKNIGHT_NECRO_1                     507
+#define TRAINER_BLACKKNIGHT_NECRO_2                     508
+#define TRAINER_BLACKKNIGHT_ELITE_1                     509
+#define TRAINER_LORD_DAQUARIUS                          510
+#define TRAINER_ROUTE21_TRAINER_1                       511
+#define TRAINER_ROUTE21_TRAINER_2                       512
+#define TRAINER_ROUTE22_TRAINER_1                       513
+#define TRAINER_ROUTE20_TRAINER_5                       514
+#define TRAINER_ROUTE20_TRAINER_6                       515
+#define TRAINER_ROUTE20_TRAINER_7                       516
+#define TRAINER_ROUTE26_BLACK_KNIGHT                    517
+#define TRAINER_ICE_MOUNTAIN_GUARD_1                    518
+#define TRAINER_ICE_MOUNTAIN_GUARD_2                    519
 
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      (TRAINER_SIR_OWEN_1 + 1)
+#define TRAINERS_COUNT                      (TRAINER_DRAYNORMANOR_HAM + 1)
 #define MAX_TRAINERS_COUNT                  864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

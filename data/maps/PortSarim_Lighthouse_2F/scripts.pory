@@ -74,7 +74,7 @@ script LIGHTHOUSE_2F_NPC_3
         lock
 	    faceplayer
         namebox ("Jailer")
-        msgbox(format("You should go visit Rimmington to the east.\pThey throw the best house parties!"))
+        msgbox(format("You should go visit Rimmington to the west.\pThey throw the best house parties!"))
     }
     else {
         lock

@@ -614,7 +614,7 @@ script NPC_WIZARDSTOWER_RuneGuardian
 {
 	lock
 	faceplayer
-	playmoncry(SPECIES_UNOWN, 0)
+	playmoncry(SPECIES_RUNE_GUARDIAN, 0)
     namebox ("Rune Guardian")
 	msgbox(format("Btttz, btzz!"))
 	waitmoncry
@@ -848,6 +848,7 @@ script VAR_EDIT_TOKKUL {
 
 
 script STORYMODE_VAR_CHECK {
+	
 	buffernumberstring(STR_VAR_1, VAR_POKESCAPE_STORYMODE_PROGRESS)
 	buffernumberstring(STR_VAR_2, VAR_WISE_OLD_MAN_RIVAL)
     msgbox(format("STORYMODE_PROGRESS: {STR_VAR_1}.\nVAR_WISE_OLD_MAN_RIVAL: {STR_VAR_2}."))
@@ -857,10 +858,34 @@ script STORYMODE_VAR_CHECK {
     {
         goto(STORYMODE_VAR_EDIT)
     }
+	msgbox(format("Toggle P2P Badges?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+		if (!flag(FLAG_ENABLE_P2P_BADGES)) {
+			setflag(FLAG_ENABLE_P2P_BADGES)
+		}
+		else {
+			clearflag(FLAG_ENABLE_P2P_BADGES)
+		}
+    }
 	closemessage
     end
 }
 script STORYMODE_VAR_EDIT {
+	msgbox(format("Set custom story-test values?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+		setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 130) // CRANDOR SCENE
+		//setflag(FLAG_BADGE04_GET) // BKF START
+        //setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 160) // BKF START
+        buffernumberstring(0, VAR_POKESCAPE_STORYMODE_PROGRESS)
+        msgbox(format("VAR_POKESCAPE_STORYMODE_PROGRESS: {STR_VAR_1}."))
+		closemessage
+		release
+		end
+    }
+
+
 	//STORYMODE
     buffernumberstring(STR_VAR_1, VAR_POKESCAPE_STORYMODE_PROGRESS)
     msgbox(format("VAR_POKESCAPE_STORYMODE_PROGRESS: {STR_VAR_1}."))
@@ -975,3 +1000,25 @@ script RUNE_EVOLUTIONS_NOTES {
 
 
 
+script TOGGLE_BATTLE_SPEED {
+	msgbox(format("Increase VAR_BATTLE_SPEED by 1?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        addvar(VAR_BATTLE_SPEED, 1)
+        buffernumberstring(STR_VAR_1, VAR_BATTLE_SPEED)
+        msgbox(format("VAR_BATTLE_SPEED: {STR_VAR_1}."))
+		closemessage
+		release
+		end
+    }
+	msgbox(format("Reset VAR_BATTLE_SPEED to 0?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+		setvar(VAR_BATTLE_SPEED, 0)
+		buffernumberstring(STR_VAR_1, VAR_BATTLE_SPEED)
+		msgbox(format("VAR_BATTLE_SPEED: {STR_VAR_1}."))
+		closemessage
+		release
+		end
+	}
+}

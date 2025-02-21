@@ -86,7 +86,7 @@ script NPC_LUMBRIDGE_FOREST_3
 	lock
 	faceplayer
     namebox ("Wizard")
-	msgbox(format("Hahaha you dare talk to a mighty wizard such as myself?\pI bet you can't even cast windstrike yet amateur!"))
+	msgbox(format("Hahaha you dare talk to a mighty wizard such as myself?\pI bet you can't even cast windstrike yet noob!"))
     closemessage
     hidenamebox
 	release
@@ -167,7 +167,7 @@ script BATTLE_LUMBRIDGEFOREST_WOODCUTTER1
 script BATTLE_LUMBRIDGEFOREST_TRAINER_1
 { //mugger
     trainerbattle_single(TRAINER_LUMBRIDGEFOREST_TRAINER_1, format("I am going to jump out and attack you now."),format("I would jump for joy, except I seem to have lost this battle."))
-    //namebox ("Mugger")
+    namebox ("Mugger")
     msgbox(format("I would jump for joy, except I seem to have lost this battle."))
 	hidenamebox
     release

@@ -5,9 +5,109 @@ Route26_MapScripts::
 Route26_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 3
 	call WEATHER_CHANGE_AREA_ICE_MOUNTAIN
+	call ROUTE26_STATE
 	call PENGUIN_EVENT
 	return
 
+
+ROUTE26_STATE::
+	goto_if_unset FLAG_PARTNER_BATTLE, ROUTE26_STATE_2
+ROUTE26_STATE_1:
+	setflag FLAG_TEMP_1F
+	removeobject 6
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 175
+	goto_if_eq ROUTE26_STATE_5
+ROUTE26_STATE_4:
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 180
+	goto_if_eq ROUTE26_STATE_8
+ROUTE26_STATE_7:
+	return
+
+ROUTE26_STATE_2:
+	setflag FLAG_TEMP_1E
+	removeobject 13
+	goto ROUTE26_STATE_1
+
+ROUTE26_STATE_5:
+	goto_if_unset FLAG_PARTNER_BATTLE, ROUTE26_STATE_11
+ROUTE26_STATE_10:
+	clearflag FLAG_TEMP_1F
+	addobject 6
+	goto ROUTE26_STATE_4
+
+ROUTE26_STATE_8:
+	goto_if_unset FLAG_PARTNER_BATTLE, ROUTE26_STATE_13
+	goto ROUTE26_STATE_7
+
+ROUTE26_STATE_11:
+	clearflag FLAG_TEMP_1E
+	addobject 13
+	goto ROUTE26_STATE_10
+
+ROUTE26_STATE_13:
+	clearflag FLAG_TEMP_1E
+	addobject 13
+	setobjectxyperm 13, 8, 7
+	goto ROUTE26_STATE_7
+
+
+TRIGGER_STORYMODE_EVENT_ROUTE26::
+	lockall
+	applymovement 13, Movement_InteractFACEDOWN
+	waitmovement 0
+	namebox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_0
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq TRIGGER_STORYMODE_EVENT_ROUTE26_2
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_3
+	applymovement 13, MOVEMENT_FACE_UP
+	setflag FLAG_PARTNER_BATTLE
+	setvar VAR_PARTNER_TRAINER, TRAINER_SIR_OWEN_1
+	setvar VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_OWEN
+	trainerbattle_no_intro TRAINER_ROUTE26_BLACK_KNIGHT, TRIGGER_STORYMODE_EVENT_ROUTE26_Text_4
+	applymovement 6, movement_BLACKKNIGHT_1
+	waitmovement 0
+	setflag FLAG_TEMP_1F
+	removeobject 6
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_5
+	closemessage
+	hidenamebox
+	playfanfare MUS_OBTAIN_SYMBOL
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_6
+	waitfanfare
+	closemessage
+	setflag FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES
+	loadword 0, FOLLOWING_SirOwen
+	setfollower 13, 0x80
+	namebox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_0
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_7
+	closemessage
+	hidenamebox
+	applymovement OBJ_EVENT_ID_FOLLOWER, MOVEMENT_WALK_UP
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_UP
+	waitmovement 0
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 180
+	releaseall
+	end
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_2:
+	msgbox TRIGGER_STORYMODE_EVENT_ROUTE26_Text_2
+	closemessage
+	hidenamebox
+	applymovement 13, Movement_InteractFACEUP
+	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN
+	waitmovement 0
+	releaseall
+	end
+
+
+movement_BLACKKNIGHT_1:
+	emote_exclamation_mark
+	walk_slow_up
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	step_end
 
 ENCOUNTER_PENGUIN_BOX_ROUTE26::
 	lock
@@ -92,6 +192,36 @@ ROUTE26_ADAMANT_POUCH::
 	finditem ITEM_POUCH_ADAMANT
 	end
 
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_Text_0:
+	.string "Sir Owen$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_Text_1:
+	.string "{PLAYER}! Mind lending me a hand?\p"
+	.string "This guy is not playing fair!$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_Text_2:
+	.string "Call for backup while I hold them off!$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_Text_3:
+	.string "Let us fight him fairly then!$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_Text_4:
+	.string "Urgh, I could have stopped one of you\n"
+	.string "but not both...$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_Text_5:
+	.string "Thank you {PLAYER}.\p"
+	.string "I think it would be wise for us to\n"
+	.string "continue on foot together in case we\l"
+	.string "encounter any more enemy resistance.$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_Text_6:
+	.string "Lead the charge!\n"
+	.string "Sir Owen Sonde is on your side!$"
+
+TRIGGER_STORYMODE_EVENT_ROUTE26_Text_7:
+	.string "May Saradomin guide us!$"
 
 ENCOUNTER_PENGUIN_BOX_ROUTE26_Text_0:
 	.string "Penguin$"

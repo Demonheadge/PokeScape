@@ -187,7 +187,7 @@ LIGHTHOUSE_2F_NPC_3_Text_0:
 
 LIGHTHOUSE_2F_NPC_3_Text_1:
 	.string "You should go visit Rimmington to the\n"
-	.string "east.\p"
+	.string "west.\p"
 	.string "They throw the best house parties!$"
 
 LIGHTHOUSE_2F_NPC_3_Text_2:

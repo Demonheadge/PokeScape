@@ -429,9 +429,9 @@ TZHAAR_GYM_ROOM_POST_WIN_Text_0:
 
 TZHAAR_GYM_ROOM_POST_WIN_Text_1:
 	.string "Congratulations on your victory JalYt.\p"
-	.string "Please accept before you go please\n"
-	.string "accept this Tokkul as an extra reward\l"
-	.string "for defeating our gym.$"
+	.string "Before you go, please accept this\n"
+	.string "Tokkul as an extra reward for defeating\l"
+	.string "our gym.$"
 
 TZHAAR_GYM_ROOM_POST_WIN_Text_2:
 	.string "If you wish to prove yourself even more\n"

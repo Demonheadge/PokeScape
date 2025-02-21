@@ -104,10 +104,12 @@ script BARBARIANVILLAGE_STORYMODE_EVENT
         applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
     }
     namebox("Litara")
-    msgbox(format("Who was that they werent allowed in there!"))
+    msgbox(format("Who was that, they weren't allowed in there!"))
     hidenamebox
     closemessage
     setvar(VAR_TEMP_B, 0)
+    setflag(FLAG_TEMP_1F)
+    removeobject(OBJ_EVENT_ID_BLACK_KNIGHT)
     //SET STORYMODE VAR
     setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 165)
     release

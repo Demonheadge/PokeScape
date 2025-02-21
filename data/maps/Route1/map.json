@@ -152,7 +152,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NPC_LUMBRIDGE_CHICKEN",
-      "flag": "FLAG_CHICKEN1_HIDE"
+      "flag": "FLAG_TEMP_5"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CHICKEN",
@@ -165,7 +165,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NPC_LUMBRIDGE_CHICKEN",
-      "flag": "FLAG_CHICKEN3_HIDE"
+      "flag": "FLAG_TEMP_7"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CHICKEN",
@@ -178,7 +178,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NPC_LUMBRIDGE_CHICKEN",
-      "flag": "FLAG_CHICKEN2_HIDE"
+      "flag": "FLAG_TEMP_6"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EVIL_CHICKEN",
@@ -242,8 +242,8 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_SHEEP",
-      "flag": "0"
+      "script": "ENCOUNTER_SHEEP",
+      "flag": "FLAG_TEMP_9"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SHEEP",
@@ -255,8 +255,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_SHEEP",
-      "flag": "0"
+      "script": "ENCOUNTER_SHEEP",
+      "flag": "FLAG_TEMP_8"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SHEEP",
@@ -268,8 +268,8 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NPC_SHEEP",
-      "flag": "0"
+      "script": "ENCOUNTER_SHEEP",
+      "flag": "FLAG_TEMP_10"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",

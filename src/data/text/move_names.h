@@ -922,6 +922,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_EXCALIBUR] = _("Excalibur"),
     [MOVE_SNELM_SHOWOFF] = _("Snelm Showoff"),
     [MOVE_ENERGY_DRAIN] = _("Energy Drain"),
+    [MOVE_BERSERK] = _("Berserk"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("Max Guard"),
     [MOVE_MAX_STRIKE] = _("Max Strike"),
@@ -1901,6 +1902,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_EXCALIBUR] = _("Excalibur"),
     [MOVE_SNELM_SHOWOFF] = _("Snelm Showoff"),
     [MOVE_ENERGY_DRAIN] = _("Energy Drain"),
+    [MOVE_BERSERK] = _("Berserk"),
     // Max Moves
     [MOVE_MAX_GUARD] = _("M-Guard"),
     [MOVE_MAX_STRIKE] = _("M-Strike"),

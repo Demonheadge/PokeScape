@@ -1842,3 +1842,38 @@ static const u16 sStoneOfJasFormSpeciesIdTable[] = {
     SPECIES_STONE_OF_JAS_MEGA_FORM,
     FORM_SPECIES_END,
 };
+
+static const u16 sCuteCreatureFormSpeciesIdTable[] = {
+    SPECIES_CREATURE_CUTE_FORM,
+    SPECIES_CREATURE_EVIL_FORM,
+    FORM_SPECIES_END,
+};
+
+static const u16 sZulrahFormSpeciesIdTable[] = {
+    SPECIES_ZULRAH_MAGMA_FORM,
+    SPECIES_ZULRAH_SERPENTINE_FORM,
+    SPECIES_ZULRAH_TANZANITE_FORM,
+    FORM_SPECIES_END,
+};
+
+static const u16 sFleshSpoilerFormSpeciesIdTable[] = {
+    SPECIES_FLESH_SPOILER_COVERED_FORM,
+    SPECIES_FLESH_SPOILER_NAKED_FORM,
+    FORM_SPECIES_END,
+};
+
+static const u16 sTomeFormSpeciesIdTable[] = {
+    SPECIES_TOME_OF_MAGIC,
+    SPECIES_TOME_OF_RANGED,
+    SPECIES_TOME_OF_STRENGTH,
+    FORM_SPECIES_END,
+};
+
+static const u16 sStrykewyrmFormSpeciesIdTable[] = {
+    SPECIES_STRYKEWYRM_FREEZY_FORM,
+    SPECIES_STRYKEWYRM_LEAFY_FORM,
+    SPECIES_STRYKEWYRM_SANDY_FORM,
+    SPECIES_STRYKEWYRM_WILDY_FORM,
+    FORM_SPECIES_END,
+};
+

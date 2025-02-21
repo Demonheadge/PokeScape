@@ -53,3 +53,8 @@ script ITEM_KARAMJA_VOLCANO_3
     finditem(ITEM_PURPLE_SWEETS)
     end
 }
+script ITEM_KARAMJA_VOLCANO_4
+{
+    finditem(ITEM_PURPLE_SWEETS)
+    end
+}

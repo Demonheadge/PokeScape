@@ -13072,7 +13072,7 @@ const struct Item gItems[] =
     {
         .name = _("CADAVA"),
         .price = 20,
-        .holdEffect = HOLD_EFFECT_RESTORE_PP,
+        .holdEffect = HOLD_EFFECT_RESTORE_PP, // Add poisoned effect.
         .holdEffectParam = 10,
         .description = sCadavaberryDesc,
         .pocket = POCKET_BERRIES,
@@ -14027,6 +14027,17 @@ const struct Item gItems[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_OutfitBox,
+    },
+    
+    [ITEM_COMMORB] =
+    {
+        .name = _("COMMORB"),
+        .price = 0,
+        .description = sCOMMORB_Desc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .sort = ITEM_TYPE_KEY_ITEM,
+        .fieldUseFunc = ItemUseOutOfBattle_Function,
     },
 
     

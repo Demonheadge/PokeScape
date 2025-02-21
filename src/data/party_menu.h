@@ -118,6 +118,8 @@ static const u8 sFontColorTable[][3] =
     {TEXT_COLOR_WHITE,       TEXT_COLOR_DARK_GRAY,  TEXT_COLOR_LIGHT_GRAY}, // Selection actions
     {TEXT_COLOR_WHITE,       TEXT_COLOR_BLUE,       TEXT_COLOR_LIGHT_BLUE}, // Field moves
     {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},  // Unused
+    {TEXT_COLOR_TRANSPARENT, 3,      1},
+    {TEXT_COLOR_TRANSPARENT, 14,      1},
 };
 
 static const struct WindowTemplate sSinglePartyMenuWindowTemplate[] =
@@ -133,7 +135,7 @@ static const struct WindowTemplate sSinglePartyMenuWindowTemplate[] =
     },
     { // Party mon 2
         .bg = 0,
-        .tilemapLeft = 12,
+        .tilemapLeft = 11,
         .tilemapTop = 1,
         .width = 18,
         .height = 3,
@@ -142,7 +144,7 @@ static const struct WindowTemplate sSinglePartyMenuWindowTemplate[] =
     },
     { // Party mon 3
         .bg = 0,
-        .tilemapLeft = 12,
+        .tilemapLeft = 11,
         .tilemapTop = 4,
         .width = 18,
         .height = 3,
@@ -151,7 +153,7 @@ static const struct WindowTemplate sSinglePartyMenuWindowTemplate[] =
     },
     { // Party mon 4
         .bg = 0,
-        .tilemapLeft = 12,
+        .tilemapLeft = 11,
         .tilemapTop = 7,
         .width = 18,
         .height = 3,
@@ -160,7 +162,7 @@ static const struct WindowTemplate sSinglePartyMenuWindowTemplate[] =
     },
     { // Party mon 5
         .bg = 0,
-        .tilemapLeft = 12,
+        .tilemapLeft = 11,
         .tilemapTop = 10,
         .width = 18,
         .height = 3,
@@ -169,7 +171,7 @@ static const struct WindowTemplate sSinglePartyMenuWindowTemplate[] =
     },
     { // Party mon 6
         .bg = 0,
-        .tilemapLeft = 12,
+        .tilemapLeft = 11,
         .tilemapTop = 13,
         .width = 18,
         .height = 3,
@@ -602,31 +604,34 @@ static const u8 sSlotTilemap_WideNoHP[]  = INCBIN_U8("graphics/party_menu/slot_w
 static const u8 sSlotTilemap_WideEmpty[] = INCBIN_U8("graphics/party_menu/slot_wide_empty.bin");
 
 // Palette offsets
+static const u8 sPartyBox_PalOffsets_NoMon[] = {4, 6};
+static const u8 sPartyBox_PalOffsets_Selection[] = {4, 5, 6, 7};
+static const u8 sHPBarPalOffsets[] = {8, 9};
 static const u8 sGenderPalOffsets[] = {11, 12};
-static const u8 sHPBarPalOffsets[] = {9, 10};
-static const u8 sPartyBoxPalOffsets1[] = {4, 5, 6};
-static const u8 sPartyBoxPalOffsets2[] = {1, 7, 8};
-static const u8 sPartyBoxNoMonPalOffsets[] = {1, 11, 12};
+static const u8 sPartyBoxPalOffsets1[] = {0, 0, 0};
+static const u8 sPartyBoxPalOffsets2[] = {0, 0, 0};
+static const u8 sPartyBoxNoMonPalOffsets[] = {0, 0, 0};
 
 // Palette ids
-static const u8 sGenderMalePalIds[] = {59, 60};
-static const u8 sGenderFemalePalIds[] = {75, 76};
+static const u8 sPartyBoxNoMonPalIds[] = {4, 6}; // No Mons - Empty
+static const u8 sPartyBoxEmptySlotPalIds1[] = {4, 5, 6, 7}; // De-Selected
+static const u8 sPartyBoxEmptySlotPalIds2[] = {49, 55, 56}; 
+static const u8 sPartyBoxCurrSelectionPalIds1[] = {20, 21, 22, 23}; // Selected
+static const u8 sPartyBoxCurrSelectionPalIds2[] = {97, 103, 104};
 static const u8 sHPBarGreenPalIds[] = {57, 58};
 static const u8 sHPBarYellowPalIds[] = {73, 74};
 static const u8 sHPBarRedPalIds[] = {89, 90};
-static const u8 sPartyBoxEmptySlotPalIds1[] = {52, 53, 54};
-static const u8 sPartyBoxMultiPalIds1[] = {68, 69, 70};
-static const u8 sPartyBoxFaintedPalIds1[] = {84, 85, 86};
-static const u8 sPartyBoxCurrSelectionPalIds1[] = {116, 117, 118};
-static const u8 sPartyBoxCurrSelectionMultiPalIds[] = {132, 133, 134};
-static const u8 sPartyBoxCurrSelectionFaintedPalIds[] = {148, 149, 150};
-static const u8 sPartyBoxSelectedForActionPalIds1[] = {100, 101, 102};
-static const u8 sPartyBoxEmptySlotPalIds2[] = {49, 55, 56};
-static const u8 sPartyBoxMultiPalIds2[] = {65, 71, 72};
+static const u8 sGenderMalePalIds[] = {59, 60};
+static const u8 sGenderFemalePalIds[] = {75, 76};
+static const u8 sPartyBoxFaintedPalIds1[] = {116, 117, 118, 0}; // Fainted
+static const u8 sPartyBoxCurrSelectionFaintedPalIds[] = {119, 116, 118}; // Fainted - Selected
 static const u8 sPartyBoxFaintedPalIds2[] = {81, 87, 88};
-static const u8 sPartyBoxCurrSelectionPalIds2[] = {97, 103, 104};
+static const u8 sPartyBoxMultiPalIds1[] = {68, 69, 70};
+static const u8 sPartyBoxMultiPalIds2[] = {65, 71, 72};
+static const u8 sPartyBoxCurrSelectionMultiPalIds[] = {132, 133, 134};
+static const u8 sPartyBoxSelectedForActionPalIds1[] = {100, 101, 102, 0}; // Switch
 static const u8 sPartyBoxSelectedForActionPalIds2[] = {161, 167, 168};
-static const u8 sPartyBoxNoMonPalIds[] = {17, 27, 28};
+
 
 static const u8 *const sActionStringTable[] =
 {

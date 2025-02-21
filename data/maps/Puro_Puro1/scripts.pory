@@ -8,7 +8,7 @@ mapscripts Puro_Puro1_MapScripts {
 
 script RANDOM_EVENT_IMPLING {
 	//Random chance for Impling Event to spawn on Route.
-	random(20)
+	random(15)
 	if (var(VAR_RESULT) == 1) {
 		clearflag(FLAG_TEMP_8)
 		addobject(OBJ_EVENT_ID_LUCKY_IMPLING)
@@ -22,7 +22,7 @@ script RANDOM_EVENT_IMPLING {
 
 script PURO_PURO_EVENT {
 	//Random chance for Puro Puro Event to spawn in wheat field.
-	random(20)
+	random(10)
 	if (var(VAR_RESULT) == 1) {
         specialvar (VAR_RESULT, GetCurrentMap)
         if (var(VAR_RESULT) == MAP_ROUTE1) {

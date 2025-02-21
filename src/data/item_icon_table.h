@@ -1129,7 +1129,6 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_REPEL_TEA_2] = {gItemIcon_REPEL_TEA_2, gItemIconPalette_REPEL_TEA_2},
     [ITEM_REPEL_TEA_3] = {gItemIcon_REPEL_TEA_3, gItemIconPalette_REPEL_TEA_3},
     [ITEM_RING_OF_KINSHIP] = {gItemIcon_MegaRing, gItemIconPalette_MegaRing},
-
     [ITEM_TRIANGLE_SANDWICH] = {gItemIcon_TriangleSandwich, gItemIconPalette_TriangleSandwich},
     [ITEM_SQUARE_SANDWICH] = {gItemIcon_SquareSandwich, gItemIconPalette_SquareSandwich},
     [ITEM_MEAT_PIE_SANDWICH] = {gItemIcon_MeatPie, gItemIconPalette_MeatPie},
@@ -1146,10 +1145,8 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_BOOK_OF_BANDOS] = {gItemIcon_BookOfBandos, gItemIconPalette_BookOfBandos},
     [ITEM_BOOK_OF_ARMADYL] = {gItemIcon_BookOfArmadyl, gItemIconPalette_BookOfArmadyl},
     [ITEM_CHOCOLATE_BAR_SANDWICH] = {gItemIcon_ChocolateBarSandwich, gItemIconPalette_ChocolateBarSandwich},
-
-
     [ITEM_PAPAYA] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
-    [ITEM_DWELLBERRY] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
+    [ITEM_DWELLBERRY] = {gItemIcon_dwellberry, gItemIconPalette_dwellberry},
     [ITEM_COFFEEBEAN] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
     [ITEM_POISON_IVY] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
     [ITEM_BLUEBERRY] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
@@ -1161,6 +1158,8 @@ const u32 *const gItemIconTable[ITEMS_COUNT + 1][2] =
     [ITEM_EEL_SUSHI] = {gItemIcon_BerserkGene, gItemIconPalette_BerserkGene},
 
     [ITEM_OUTFIT_BOX] = {gItemIcon_OutfitBox, gItemIconPalette_OutfitBox},
+    [ITEM_COMMORB] = {gItemIcon_COMMORB, gItemIconPalette_COMMORB},
+
 
     // End Pokescape items
 

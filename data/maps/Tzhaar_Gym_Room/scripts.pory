@@ -25,7 +25,7 @@ script GIVE_TOKKUL {
 
 script TZHAAR_GYM_ROOM_POST_WIN {
     namebox("Kimit-Kal")
-    msgbox(format("Congratulations on your victory JalYt.\pPlease accept before you go please accept this Tokkul as an extra reward for defeating our gym."))
+    msgbox(format("Congratulations on your victory JalYt.\pBefore you go, please accept this Tokkul as an extra reward for defeating our gym."))
     closemessage
     hidenamebox
     setvar(VAR_TEMP_E, 5000)

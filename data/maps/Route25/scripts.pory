@@ -12,7 +12,7 @@ mapscripts Route25_MapScripts{
 script BATTLE_ROUTE25_TRAINER_1
 {
     trainerbattle_single(TRAINER_ROUTE25_TRAINER_1, format("I hate birds so much.\pDo you have some?"),format("I want this bird out of my party, how do I release it?"))
-    //namebox ("Cupholder")
+    namebox ("M1tchBr3nner")
     msgbox(format("I want this bird out of my party, how do I release it?"))
 	hidenamebox
     release
@@ -21,7 +21,7 @@ script BATTLE_ROUTE25_TRAINER_1
 script BATTLE_ROUTE25_TRAINER_2
 {
     trainerbattle_single(TRAINER_ROUTE25_TRAINER_2, format("How many treasure hunter keys do you have noob?!"),format("I brought all my levels with p2w and I still do not have all the best in slot mons."))
-    //namebox ("Cupholder")
+    namebox ("RedPencil14")
     msgbox(format("I brought all my levels with p2w and I still do not have all the best in slot mons."))
 	hidenamebox
     release
@@ -30,7 +30,7 @@ script BATTLE_ROUTE25_TRAINER_2
 script BATTLE_ROUTE25_TRAINER_3
 {
     trainerbattle_single(TRAINER_ROUTE25_TRAINER_3, format("I was on my way to do some Runecrafting, have you seen the Altar?"),format("Even if I find the Altar I don't have the correct Talisman for it."))
-    //namebox ("Cupholder")
+    //namebox ("Korin65")
     msgbox(format("Even if I find the Altar I don't have the correct Talisman for it.\pI wonder where I can find it."))
 	hidenamebox
     release

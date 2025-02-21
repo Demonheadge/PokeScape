@@ -275,7 +275,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .backPicYOffset = 20,
         .palette = gMonPalette_Egg,
         .shinyPalette = gMonPalette_Egg,
-        ICON(Egg, 1),
+        ICON(Egg, 2),
     },
 
     /* You may add any custom species below this point based on the following structure: */

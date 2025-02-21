@@ -133,7 +133,7 @@ script HAM_EVENT_Route2_MAIN_1{
     lockall
     playbgm (MUS_PS_ENCOUNTER_HAM, 1)
     applymovement(2, HAM_Movement5_1)
-    namebox("H.A.M. member")
+    namebox("H.A.M. Grunt")
     msgbox(format("Move!\nGet out of my way!"))
     hidenamebox
     closemessage
@@ -148,7 +148,7 @@ script HAM_EVENT_Route2_MAIN_1{
     applymovement(1, HAM_Movement5_2)
     applymovement(2, HAM_Movement5_3)
     waitmovement(0)
-    namebox("H.A.M. member")
+    namebox("H.A.M. Grunt")
     msgbox(format("Ayyyyeeeeek!"))
     hidenamebox
     closemessage
@@ -284,13 +284,28 @@ script NPC_ROUTE2_Wizard
     end
 }
 
+script CONTINUE_AFTER_BATTLE_ROUTE2_SKILLER {
+    namebox ("H0w2Typ3")
+    msgbox(format("Awh man, really…\nBack to Lumbridge for me…"))
+    hidenamebox
+    closemessage
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    setflag(FLAG_TEMP_1C)
+    removeobject(13)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    release
+    end
+}
+
 
 script BATTLE_ROUTE2_Trainer_1
 {
-    trainerbattle_single(TRAINER_ROUTE2_TRAINER_1, format("Please no!\pI'm so close to the Bank I don't want to be sent back to Lumbridge!"),format("Nooo!\pBack to Lumbridge I go!"))
+    trainerbattle (TRAINER_BATTLE_CONTINUE_SCRIPT, TRAINER_ROUTE2_TRAINER_1, 0, format("Please no!\pI'm so close to the Bank I don't want to be sent back to Lumbridge!"), format("Nooo!\pBack to Lumbridge I go!"), CONTINUE_AFTER_BATTLE_ROUTE2_SKILLER)
+    //trainerbattle_single(TRAINER_ROUTE2_TRAINER_1, format("Please no!\pI'm so close to the Bank I don't want to be sent back to Lumbridge!"),format("Nooo!\pBack to Lumbridge I go!"))
     //namebox ("H0w2Typ3")
     msgbox(format("If the swamp wasn't hard enough, there was also a forest to pass through!?\pThis is too much for a skiller…"))
     hidenamebox
+    closemessage
     release
     end
 }

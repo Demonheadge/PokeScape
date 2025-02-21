@@ -4516,6 +4516,7 @@ static s32 AI_CheckViability(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
         IncreaseStatUpScore(battlerAtk, battlerDef, STAT_DEF, &score);
         break;
     case EFFECT_SHELL_SMASH:
+    case EFFECT_BERSERK:
         if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_RESTORE_STATS)
             ADJUST_SCORE(1);
 
@@ -4983,6 +4984,7 @@ static s32 AI_SetupFirstTurn(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
     case EFFECT_GEOMANCY:
     case EFFECT_VICTORY_DANCE:
     case EFFECT_HIT_SET_ENTRY_HAZARD:
+    case EFFECT_BERSERK:
         ADJUST_SCORE(2);
         break;
     default:

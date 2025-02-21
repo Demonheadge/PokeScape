@@ -262,6 +262,14 @@ script EventScript_Whirlpool
 		(var(VAR_TEMP_1) == 55 && var(VAR_TEMP_2) == 25) ||
 		(var(VAR_TEMP_1) == 56 && var(VAR_TEMP_2) == 24) ||
 		(var(VAR_TEMP_1) == 58 && var(VAR_TEMP_2) == 27) ||
+		(var(VAR_TEMP_1) == 69 && var(VAR_TEMP_2) == 27) ||
+		(var(VAR_TEMP_1) == 74 && var(VAR_TEMP_2) == 27) ||
+		(var(VAR_TEMP_1) == 70 && var(VAR_TEMP_2) == 29) ||
+		(var(VAR_TEMP_1) == 74 && var(VAR_TEMP_2) == 29) ||
+		(var(VAR_TEMP_1) == 76 && var(VAR_TEMP_2) == 26) ||
+		(var(VAR_TEMP_1) == 69 && var(VAR_TEMP_2) == 18) ||
+		(var(VAR_TEMP_1) == 77 && var(VAR_TEMP_2) == 17) ||
+		(var(VAR_TEMP_1) == 26 && var(VAR_TEMP_2) == 4)  ||
 		(var(VAR_TEMP_1) == 61 && var(VAR_TEMP_2) == 25) ) {
 			warpsilent(MAP_ROUTE39, 1, 0, 0)
 		}

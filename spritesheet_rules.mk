@@ -1784,3 +1784,12 @@ $(OBJEVENTGFXDIR)/pokescape_overworlds/impling_essence.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/pokescape_overworlds/sandwich_lady.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/pokescape_overworlds/evildave.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/pokescape_overworlds/eliteblack.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/pokescape_overworlds/oddenstein.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4

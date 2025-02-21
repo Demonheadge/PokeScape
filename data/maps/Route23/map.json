@@ -237,10 +237,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KNIGHT_WHITE_F",
-      "x": 29,
-      "y": 13,
+      "x": 32,
+      "y": 11,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -272,12 +272,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_1D"
+      "flag": "FLAG_TEMP_1F"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KNIGHT_WHITE_M",
-      "x": 31,
-      "y": 15,
+      "x": 33,
+      "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -289,8 +289,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KNIGHT_WHITE_M",
-      "x": 26,
-      "y": 10,
+      "x": 29,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -314,20 +314,20 @@
     {
       "type": "trigger",
       "x": 30,
-      "y": 11,
+      "y": 13,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "NULL"
+      "var": "VAR_POKESCAPE_STORYMODE_PROGRESS",
+      "var_value": "165",
+      "script": "TRIGGER_STORYMODE_EVENT_ROUTE23"
     },
     {
       "type": "trigger",
       "x": 31,
-      "y": 11,
+      "y": 13,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "NULL"
+      "var": "VAR_POKESCAPE_STORYMODE_PROGRESS",
+      "var_value": "165",
+      "script": "TRIGGER_STORYMODE_EVENT_ROUTE23"
     }
   ],
   "bg_events": [

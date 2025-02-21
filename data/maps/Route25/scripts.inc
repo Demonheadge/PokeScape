@@ -8,6 +8,7 @@ Route25_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 
 BATTLE_ROUTE25_TRAINER_1::
 	trainerbattle_single TRAINER_ROUTE25_TRAINER_1, BATTLE_ROUTE25_TRAINER_1_Text_0, BATTLE_ROUTE25_TRAINER_1_Text_1
+	namebox BATTLE_ROUTE25_TRAINER_1_Text_2
 	msgbox BATTLE_ROUTE25_TRAINER_1_Text_1
 	hidenamebox
 	release
@@ -16,6 +17,7 @@ BATTLE_ROUTE25_TRAINER_1::
 
 BATTLE_ROUTE25_TRAINER_2::
 	trainerbattle_single TRAINER_ROUTE25_TRAINER_2, BATTLE_ROUTE25_TRAINER_2_Text_0, BATTLE_ROUTE25_TRAINER_2_Text_1
+	namebox BATTLE_ROUTE25_TRAINER_2_Text_2
 	msgbox BATTLE_ROUTE25_TRAINER_2_Text_1
 	hidenamebox
 	release
@@ -38,6 +40,9 @@ BATTLE_ROUTE25_TRAINER_1_Text_1:
 	.string "I want this bird out of my party, how do\n"
 	.string "I release it?$"
 
+BATTLE_ROUTE25_TRAINER_1_Text_2:
+	.string "M1tchBr3nner$"
+
 BATTLE_ROUTE25_TRAINER_2_Text_0:
 	.string "How many treasure hunter keys do you\n"
 	.string "have noob?!$"
@@ -46,6 +51,9 @@ BATTLE_ROUTE25_TRAINER_2_Text_1:
 	.string "I brought all my levels with p2w and I\n"
 	.string "still do not have all the best in slot\l"
 	.string "mons.$"
+
+BATTLE_ROUTE25_TRAINER_2_Text_2:
+	.string "RedPencil14$"
 
 BATTLE_ROUTE25_TRAINER_3_Text_0:
 	.string "I was on my way to do some\n"

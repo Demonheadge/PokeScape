@@ -1,0 +1,33 @@
+mapscripts Route21_MapScripts {
+
+}
+
+//BATTLES
+
+script BATTLE_ROUTE21_TRAINER_1
+{
+    trainerbattle_single(TRAINER_ROUTE21_TRAINER_1, format("Well then, looks like someone is about to get the axe!"),format("Looks like that someone was me..."))
+    namebox ("Ax3edSeries")
+    msgbox(format("My favourite series is getting the axe.\pI'm trying to vent my anger at this game.\pYou are making it really hard to process my anger!"))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_ROUTE21_TRAINER_2
+{
+    trainerbattle_single(TRAINER_ROUTE21_TRAINER_2, format("I have a dream.\pTo chop down every single tree in Gielinor."),format("Alas, it is I who was felled!"))
+    namebox ("W00dFeller")
+    msgbox(format("Don't you think it's weird how it takes ages to farm trees, but that they grow back so quickly once you've chopped them down?"))
+	hidenamebox
+    release
+	end
+}
+
+//ITEMS
+
+script ITEM_ROUTE21_ITEM1
+{
+    finditem(ITEM_POUCH_MITHRIL)
+    end
+}

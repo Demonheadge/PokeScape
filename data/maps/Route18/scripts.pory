@@ -38,7 +38,7 @@ script PENGUIN_EVENT {
 	//Random chance for Penguin Event to spawn on Route.
     setflag(FLAG_PENGUIN_HUNT_ON_ROUTE)
     
-	random(20)
+	random(15)
 	if (var(VAR_RESULT) == 1) {
         clearflag(FLAG_PENGUIN_HUNT_ON_ROUTE)
 		playbgm(MUS_PS_TERRORBIRD, TRUE)

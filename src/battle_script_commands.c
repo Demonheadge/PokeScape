@@ -2377,7 +2377,13 @@ static void Cmd_datahpupdate(void)
             u32 side = GetBattlerSide(battler);
             if (gBattleStruct->changedSpecies[side][gBattlerPartyIndexes[battler]] == SPECIES_NONE)
                 gBattleStruct->changedSpecies[side][gBattlerPartyIndexes[battler]] = gBattleMons[battler].species;
-            gBattleMons[battler].species = SPECIES_MIMIKYU_BUSTED;
+            /*if (gBattleMons[battler].species == SPECIES_MIMIKYU_DISGUISED) {
+                gBattleMons[battler].species = SPECIES_MIMIKYU_BUSTED;
+            }
+            else if (gBattleMons[battler].species == SPECIES_CREATURE_CUTE_FORM) {
+                gBattleMons[battler].species = SPECIES_CREATURE_EVIL_FORM;
+            }*/
+            gBattleMons[battler].species = SPECIES_CREATURE_EVIL_FORM;
             BattleScriptPush(cmd->nextInstr);
             gBattlescriptCurrInstr = BattleScript_TargetFormChange;
             return;
@@ -14783,14 +14789,19 @@ bool32 DoesSubstituteBlockMove(u32 battlerAtk, u32 battlerDef, u32 move)
 
 bool32 DoesDisguiseBlockMove(u32 battlerAtk, u32 battlerDef, u32 move)
 {
-    if (gBattleMons[battlerDef].species != SPECIES_MIMIKYU_DISGUISED
+    if (//gBattleMons[battlerDef].species != SPECIES_MIMIKYU_DISGUISED
+        gBattleMons[battlerDef].species != SPECIES_CREATURE_CUTE_FORM
         || gBattleMons[battlerDef].status2 & STATUS2_TRANSFORMED
         || IS_MOVE_STATUS(move)
         || gHitMarker & HITMARKER_IGNORE_DISGUISE
-        || GetBattlerAbility(battlerDef) != ABILITY_DISGUISE)
-        return FALSE;
-    else
+        || GetBattlerAbility(battlerDef) != ABILITY_DISGUISE) {
+            DebugPrintf("Disguise is false!");
+            return FALSE;
+        }
+    else {
+        DebugPrintf("Disguise is true!");
         return TRUE;
+    }
 }
 
 static void Cmd_jumpifsubstituteblocks(void)

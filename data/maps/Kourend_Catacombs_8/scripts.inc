@@ -101,7 +101,7 @@ SKOTIZO_TRIGGER_8:
 ENCOUNTER_SKOTIZO::
 	lock
 	namebox ENCOUNTER_SKOTIZO_Text_0
-	playmoncry SPECIES_URSARING, 0
+	playmoncry SPECIES_SKOTIZO, 0
 	msgbox ENCOUNTER_SKOTIZO_Text_1
 	waitmoncry
 	hidenamebox
@@ -692,6 +692,97 @@ ENCOUNTER_UNICORN_BARB_4:
 	goto ENCOUNTER_UNICORN_BARB_1
 
 
+ENCOUNTER_CHAIR::
+	lock
+	faceplayer
+	namebox ENCOUNTER_CHAIR_Text_0
+	playmoncry SPECIES_ANICHAIR, 0
+	msgbox ENCOUNTER_CHAIR_Text_1
+	waitmoncry
+	hidenamebox
+	closemessage
+	delay 1
+	setwildbattle SPECIES_ANICHAIR, 10, ITEM_NONE
+	dowildbattle
+	switch VAR_RESULT
+	case B_OUTCOME_WON, ENCOUNTER_CHAIR_3
+	case B_OUTCOME_CAUGHT, ENCOUNTER_CHAIR_4
+ENCOUNTER_CHAIR_1:
+	release
+	end
+
+ENCOUNTER_CHAIR_3:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_CHAIR_1
+
+ENCOUNTER_CHAIR_4:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_CHAIR_1
+
+
+ENCOUNTER_GHOST::
+	lock
+	faceplayer
+	namebox ENCOUNTER_CHAIR_Text_0
+	playmoncry SPECIES_DOBBIN, 0
+	msgbox ENCOUNTER_GHOST_Text_0
+	waitmoncry
+	hidenamebox
+	closemessage
+	delay 1
+	random 8
+	switch VAR_RESULT
+	case 0, ENCOUNTER_GHOST_3
+	case 1, ENCOUNTER_GHOST_3
+	case 2, ENCOUNTER_GHOST_4
+	case 3, ENCOUNTER_GHOST_4
+	case 4, ENCOUNTER_GHOST_4
+	case 5, ENCOUNTER_GHOST_5
+	case 6, ENCOUNTER_GHOST_5
+	case 7, ENCOUNTER_GHOST_6
+	setwildbattle SPECIES_DOBBIN, 10, ITEM_NONE
+ENCOUNTER_GHOST_1:
+	dowildbattle
+	switch VAR_RESULT
+	case B_OUTCOME_WON, ENCOUNTER_GHOST_10
+	case B_OUTCOME_CAUGHT, ENCOUNTER_GHOST_11
+ENCOUNTER_GHOST_8:
+	release
+	end
+
+ENCOUNTER_GHOST_3:
+	setwildbattle SPECIES_DOBBIN, 10, ITEM_NONE
+	goto ENCOUNTER_GHOST_1
+
+ENCOUNTER_GHOST_4:
+	setwildbattle SPECIES_TOY_MOUSE, 10, ITEM_NONE
+	goto ENCOUNTER_GHOST_1
+
+ENCOUNTER_GHOST_5:
+	setwildbattle SPECIES_ORIGAMI_BALLOON, 10, ITEM_NONE
+	goto ENCOUNTER_GHOST_1
+
+ENCOUNTER_GHOST_6:
+	setwildbattle SPECIES_ANIMOUR, 10, ITEM_NONE
+	goto ENCOUNTER_GHOST_1
+
+ENCOUNTER_GHOST_10:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_GHOST_8
+
+ENCOUNTER_GHOST_11:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_GHOST_8
+
+
 ENCOUNTER_RAT::
 	lock
 	faceplayer
@@ -705,31 +796,232 @@ ENCOUNTER_RAT::
 	specialvar VAR_RESULT, GetCurrentMap
 	compare VAR_RESULT, MAP_LUMBRIDGE
 	goto_if_eq ENCOUNTER_RAT_2
+	compare VAR_RESULT, MAP_LUMBRIDGE_SWAMP
+	goto_if_eq ENCOUNTER_RAT_2
+	compare VAR_RESULT, MAP_LUMBRIDGE_FOREST
+	goto_if_eq ENCOUNTER_RAT_2
 	setwildbattle SPECIES_GIANT_RAT_NORMAL_FORM, 30, ITEM_NONE
 ENCOUNTER_RAT_1:
 	dowildbattle
 	switch VAR_RESULT
-	case B_OUTCOME_WON, ENCOUNTER_RAT_7
-	case B_OUTCOME_CAUGHT, ENCOUNTER_RAT_8
-ENCOUNTER_RAT_5:
+	case B_OUTCOME_WON, ENCOUNTER_RAT_11
+	case B_OUTCOME_CAUGHT, ENCOUNTER_RAT_12
+ENCOUNTER_RAT_9:
 	release
 	end
 
 ENCOUNTER_RAT_2:
+	random 20
+	switch VAR_RESULT
+	case 7, ENCOUNTER_RAT_14
 	setwildbattle SPECIES_RAT_NORMAL_FORM, 5, ITEM_NONE
 	goto ENCOUNTER_RAT_1
 
-ENCOUNTER_RAT_7:
+ENCOUNTER_RAT_11:
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
 	fadescreenswapbuffers FADE_FROM_BLACK
-	goto ENCOUNTER_RAT_5
+	goto ENCOUNTER_RAT_9
 
-ENCOUNTER_RAT_8:
+ENCOUNTER_RAT_12:
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
 	fadescreenswapbuffers FADE_FROM_BLACK
-	goto ENCOUNTER_RAT_5
+	goto ENCOUNTER_RAT_9
+
+ENCOUNTER_RAT_14:
+	setwildbattle SPECIES_GIANT_RAT_NORMAL_FORM, 8, ITEM_NONE
+	goto ENCOUNTER_RAT_1
+
+
+ENCOUNTER_SHEEP::
+	lock
+	faceplayer
+	namebox ENCOUNTER_SHEEP_Text_0
+	playmoncry SPECIES_SHEEP_WHITE_FORM, 0
+	msgbox ENCOUNTER_SHEEP_Text_1
+	waitmoncry
+	hidenamebox
+	closemessage
+	delay 1
+	specialvar VAR_RESULT, GetCurrentMap
+	compare VAR_RESULT, MAP_ROUTE1
+	goto_if_eq ENCOUNTER_SHEEP_2
+	compare VAR_RESULT, MAP_MILL_LANE_MILL
+	goto_if_eq ENCOUNTER_SHEEP_2
+	compare VAR_RESULT, MAP_LUMBRIDGE_FOREST
+	goto_if_eq ENCOUNTER_SHEEP_2
+	random 1
+	switch VAR_RESULT
+	case 0, ENCOUNTER_SHEEP_18
+	case 1, ENCOUNTER_SHEEP_19
+ENCOUNTER_SHEEP_1:
+	dowildbattle
+	switch VAR_RESULT
+	case B_OUTCOME_WON, ENCOUNTER_SHEEP_11
+	case B_OUTCOME_CAUGHT, ENCOUNTER_SHEEP_12
+ENCOUNTER_SHEEP_9:
+	release
+	end
+
+ENCOUNTER_SHEEP_2:
+	random 20
+	switch VAR_RESULT
+	case 5, ENCOUNTER_SHEEP_14
+	case 7, ENCOUNTER_SHEEP_15
+	setwildbattle SPECIES_LAMB, 5, ITEM_NONE
+	goto ENCOUNTER_SHEEP_1
+
+ENCOUNTER_SHEEP_11:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_SHEEP_9
+
+ENCOUNTER_SHEEP_12:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_SHEEP_9
+
+ENCOUNTER_SHEEP_14:
+	setwildbattle SPECIES_SHEEP_WHITE_FORM, 8, ITEM_NONE
+	goto ENCOUNTER_SHEEP_1
+
+ENCOUNTER_SHEEP_15:
+	setwildbattle SPECIES_RAM_FLUFFY_FORM, 8, ITEM_NONE
+	goto ENCOUNTER_SHEEP_1
+
+ENCOUNTER_SHEEP_18:
+	setwildbattle SPECIES_SHEEP_WHITE_FORM, 10, ITEM_NONE
+	goto ENCOUNTER_SHEEP_1
+
+ENCOUNTER_SHEEP_19:
+	setwildbattle SPECIES_RAM_FLUFFY_FORM, 10, ITEM_NONE
+	goto ENCOUNTER_SHEEP_1
+
+
+ENCOUNTER_CHICKEN::
+	lock
+	faceplayer
+	namebox ENCOUNTER_CHICKEN_Text_0
+	playmoncry SPECIES_CHICKEN_NORMAL_FORM, 0
+	msgbox ENCOUNTER_CHICKEN_Text_1
+	waitmoncry
+	hidenamebox
+	closemessage
+	delay 1
+	specialvar VAR_RESULT, GetCurrentMap
+	compare VAR_RESULT, MAP_ROUTE1
+	goto_if_eq ENCOUNTER_CHICKEN_2
+	compare VAR_RESULT, MAP_ROUTE12
+	goto_if_eq ENCOUNTER_CHICKEN_2
+	random 1
+	switch VAR_RESULT
+	case 0, ENCOUNTER_CHICKEN_16
+	case 1, ENCOUNTER_CHICKEN_17
+ENCOUNTER_CHICKEN_1:
+	dowildbattle
+	switch VAR_RESULT
+	case B_OUTCOME_WON, ENCOUNTER_CHICKEN_9
+	case B_OUTCOME_CAUGHT, ENCOUNTER_CHICKEN_10
+ENCOUNTER_CHICKEN_7:
+	release
+	end
+
+ENCOUNTER_CHICKEN_2:
+	random 20
+	switch VAR_RESULT
+	case 5, ENCOUNTER_CHICKEN_12
+	case 7, ENCOUNTER_CHICKEN_13
+	setwildbattle SPECIES_CHICK, 5, ITEM_NONE
+	goto ENCOUNTER_CHICKEN_1
+
+ENCOUNTER_CHICKEN_9:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_CHICKEN_7
+
+ENCOUNTER_CHICKEN_10:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_CHICKEN_7
+
+ENCOUNTER_CHICKEN_12:
+	setwildbattle SPECIES_CHICKEN_NORMAL_FORM, 8, ITEM_NONE
+	goto ENCOUNTER_CHICKEN_1
+
+ENCOUNTER_CHICKEN_13:
+	setwildbattle SPECIES_CHICKEN_NORMAL_FORM, 8, ITEM_NONE
+	goto ENCOUNTER_CHICKEN_1
+
+ENCOUNTER_CHICKEN_16:
+	setwildbattle SPECIES_CHICKEN_NORMAL_FORM, 10, ITEM_NONE
+	goto ENCOUNTER_CHICKEN_1
+
+ENCOUNTER_CHICKEN_17:
+	setwildbattle SPECIES_CHICKEN_NORMAL_FORM, 10, ITEM_NONE
+	goto ENCOUNTER_CHICKEN_1
+
+
+ENCOUNTER_COW::
+	lock
+	faceplayer
+	namebox ENCOUNTER_COW_Text_0
+	playmoncry SPECIES_COW, 0
+	msgbox ENCOUNTER_COW_Text_1
+	waitmoncry
+	hidenamebox
+	closemessage
+	delay 1
+	goto_if_set FLAG_BADGE01_GET, ENCOUNTER_COW_2
+	random 13
+	switch VAR_RESULT
+	case 0, ENCOUNTER_COW_11
+	case 1, ENCOUNTER_COW_11
+	case 2, ENCOUNTER_COW_11
+	case 3, ENCOUNTER_COW_12
+	case 6, ENCOUNTER_COW_13
+	case 7, ENCOUNTER_COW_13
+	case 9, ENCOUNTER_COW_14
+	setwildbattle SPECIES_CALF, 5, ITEM_NONE
+ENCOUNTER_COW_1:
+	dowildbattle
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq ENCOUNTER_COW_6
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq ENCOUNTER_COW_6
+ENCOUNTER_COW_5:
+	release
+	end
+
+ENCOUNTER_COW_2:
+	setwildbattle SPECIES_COW, 10, ITEM_NONE
+	goto ENCOUNTER_COW_1
+
+ENCOUNTER_COW_6:
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	goto ENCOUNTER_COW_5
+
+ENCOUNTER_COW_11:
+	setwildbattle SPECIES_CALF, 8, ITEM_NONE
+	goto ENCOUNTER_COW_1
+
+ENCOUNTER_COW_12:
+	setwildbattle SPECIES_COW, 5, ITEM_NONE
+	goto ENCOUNTER_COW_1
+
+ENCOUNTER_COW_13:
+	setwildbattle SPECIES_CALF, 10, ITEM_NONE
+	goto ENCOUNTER_COW_1
+
+ENCOUNTER_COW_14:
+	setwildbattle SPECIES_COW, 10, ITEM_NONE
+	goto ENCOUNTER_COW_1
 
 
 SKOTIZO_TRIGGER_Text_0:
@@ -746,7 +1038,7 @@ SKOTIZO_TRIGGER_Text_2:
 	.string "giant monster!$"
 
 ENCOUNTER_SKOTIZO_Text_0:
-	.string "SKOTIZO$"
+	.string "Skotizo$"
 
 ENCOUNTER_SKOTIZO_Text_1:
 	.string "ROOOARR!$"
@@ -766,43 +1058,43 @@ ENCOUNTER_SKOTIZO_Text_4:
 	.string "teleported away from battle.$"
 
 ENCOUNTER_ABYSSAL_DEMON_Text_0:
-	.string "ABYSSAL DEMON$"
+	.string "Abyssal Demon$"
 
 ENCOUNTER_ABYSSAL_DEMON_Text_1:
 	.string "WIZZZLE!$"
 
 ENCOUNTER_SLIME_Text_0:
-	.string "SLIME$"
+	.string "Slime$"
 
 ENCOUNTER_SLIME_Text_1:
 	.string "GLOOOP! GOOP!$"
 
 ENCOUNTER_ROCKCRAB_Text_0:
-	.string "ROCK CRAB$"
+	.string "Rock Crab$"
 
 ENCOUNTER_ROCKCRAB_Text_1:
 	.string "SNIP SNIP!$"
 
 ENCOUNTER_DRAGON_BLACK_Text_0:
-	.string "DRAGON$"
+	.string "Dragon$"
 
 ENCOUNTER_DRAGON_BLACK_Text_1:
 	.string "RAWR!$"
 
 ENCOUNTER_BASILISK_Text_0:
-	.string "BASILISK$"
+	.string "Basilisk$"
 
 ENCOUNTER_BASILISK_Text_1:
 	.string "KYARROOW!$"
 
 ENCOUNTER_GREATER_DEMON_Text_0:
-	.string "GREATER DEMON$"
+	.string "Greater Demon$"
 
 ENCOUNTER_GREATER_DEMON_Text_1:
 	.string "RAOUGH!$"
 
 ENCOUNTER_MONKEY_QUEST_Text_0:
-	.string "MONKEY$"
+	.string "Monkey$"
 
 ENCOUNTER_MONKEY_QUEST_Text_1:
 	.string "EEEKK OOK AAAK!!$"
@@ -814,19 +1106,46 @@ ENCOUNTER_MONKEY_QUEST_Text_3:
 	.string "The monkey dropped some bananas.$"
 
 ENCOUNTER_SNOW_IMP_Text_0:
-	.string "SNOW IMP$"
+	.string "Snow Imp$"
 
 ENCOUNTER_SNOW_IMP_Text_1:
 	.string "Sneez kek Kek!$"
 
 ENCOUNTER_UNICORN_BARB_Text_0:
-	.string "UNICORN$"
+	.string "Unicorn$"
 
 ENCOUNTER_UNICORN_BARB_Text_1:
 	.string "NeEeehHHaAyY!$"
 
+ENCOUNTER_CHAIR_Text_0:
+	.string "???$"
+
+ENCOUNTER_CHAIR_Text_1:
+	.string "The chair attacks you!$"
+
+ENCOUNTER_GHOST_Text_0:
+	.string "Something attacks you!$"
+
 ENCOUNTER_RAT_Text_0:
-	.string "RAT$"
+	.string "Rat$"
 
 ENCOUNTER_RAT_Text_1:
 	.string "Squeek!$"
+
+ENCOUNTER_SHEEP_Text_0:
+	.string "Sheep$"
+
+ENCOUNTER_SHEEP_Text_1:
+	.string "Baaa!$"
+
+ENCOUNTER_CHICKEN_Text_0:
+	.string "Chicken$"
+
+ENCOUNTER_CHICKEN_Text_1:
+	.string "Bawk!$"
+
+ENCOUNTER_COW_Text_0:
+	.string "Cow$"
+
+ENCOUNTER_COW_Text_1:
+	.string "MOOOOOOOO!!$"

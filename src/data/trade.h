@@ -1048,6 +1048,22 @@ static const struct InGameTrade sIngameTrades[] =
         .sheen = 10,
         .requestedSpecies = SPECIES_GIANT_RAT_NORMAL_FORM
     },
+    [INGAME_TRADE_CABBAGE] =
+    {
+        .nickname = _("DAWN"),
+        .species = SPECIES_CAT_PURPLE_FORM,
+        .ivs = {4, 5, 4, 5, 4, 4},
+        .abilityNum = 0,
+        .otId = 27482,
+        .moves = {MOVE_NONE, 0, 0, 0},
+        .personality = 0x00,
+        .heldItem = ITEM_NONE,
+        .mailNum = -1,
+        .otName = _("Lensig"),
+        .otGender = FEMALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_CABBAGE
+    },
 };
 
 static const u16 sIngameTradeMail[][MAIL_WORDS_COUNT + 1] =

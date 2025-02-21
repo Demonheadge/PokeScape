@@ -7,8 +7,8 @@ Route3_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	return
 
 
-ITEM_ROUTE3_BREAD::
-	finditem ITEM_BREAD
+ITEM_ROUTE3_CORN::
+	finditem ITEM_CORN
 	end
 
 

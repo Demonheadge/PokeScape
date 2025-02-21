@@ -136,29 +136,15 @@ NPC_DAIRYCOW_4:
 NPC_LUMBRIDGE_CHICKEN::
 	compare VAR_POKESCAPE_COOKS_ASSISTANT_QUEST_STATE, 1
 	goto_if_eq NPC_LUMBRIDGE_CHICKEN_1
-	lock
-	faceplayer
-	namebox NPC_LUMBRIDGE_CHICKEN_Text_0
-	playmoncry SPECIES_TORCHIC, 0
-	msgbox NPC_LUMBRIDGE_CHICKEN_Text_5
-	waitmoncry
-	hidenamebox
-	release
-	end
+	goto ENCOUNTER_CHICKEN
+	return
 
 NPC_LUMBRIDGE_CHICKEN_1:
 	checkitem ITEM_SUPER_LARGE_EGG, 1
 	compare VAR_RESULT, 0
 	goto_if_eq NPC_LUMBRIDGE_CHICKEN_4
-	lock
-	faceplayer
-	namebox NPC_LUMBRIDGE_CHICKEN_Text_0
-	playmoncry SPECIES_CHICKEN_NORMAL_FORM, 0
-	msgbox NPC_LUMBRIDGE_CHICKEN_Text_5
-	waitmoncry
-	hidenamebox
-	release
-	end
+	goto ENCOUNTER_CHICKEN
+	return
 
 NPC_LUMBRIDGE_CHICKEN_4:
 	lock
@@ -380,64 +366,6 @@ BROKEN_DOOR::
 	end
 
 
-ENCOUNTER_COW::
-	lock
-	faceplayer
-	namebox ENCOUNTER_COW_Text_0
-	playmoncry SPECIES_MILTANK, 0
-	msgbox ENCOUNTER_COW_Text_1
-	waitmoncry
-	hidenamebox
-	closemessage
-	delay 1
-	goto_if_set FLAG_BADGE01_GET, ENCOUNTER_COW_2
-	random 13
-	switch VAR_RESULT
-	case 0, ENCOUNTER_COW_11
-	case 1, ENCOUNTER_COW_11
-	case 2, ENCOUNTER_COW_11
-	case 3, ENCOUNTER_COW_12
-	case 6, ENCOUNTER_COW_13
-	case 7, ENCOUNTER_COW_13
-	case 9, ENCOUNTER_COW_14
-	setwildbattle SPECIES_CALF, 5, ITEM_NONE
-ENCOUNTER_COW_1:
-	dowildbattle
-	compare VAR_RESULT, B_OUTCOME_WON
-	goto_if_eq ENCOUNTER_COW_6
-	compare VAR_RESULT, B_OUTCOME_CAUGHT
-	goto_if_eq ENCOUNTER_COW_6
-ENCOUNTER_COW_5:
-	release
-	end
-
-ENCOUNTER_COW_2:
-	setwildbattle SPECIES_COW, 10, ITEM_NONE
-	goto ENCOUNTER_COW_1
-
-ENCOUNTER_COW_6:
-	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject VAR_LAST_TALKED
-	fadescreenswapbuffers FADE_FROM_BLACK
-	goto ENCOUNTER_COW_5
-
-ENCOUNTER_COW_11:
-	setwildbattle SPECIES_CALF, 8, ITEM_NONE
-	goto ENCOUNTER_COW_1
-
-ENCOUNTER_COW_12:
-	setwildbattle SPECIES_COW, 5, ITEM_NONE
-	goto ENCOUNTER_COW_1
-
-ENCOUNTER_COW_13:
-	setwildbattle SPECIES_CALF, 10, ITEM_NONE
-	goto ENCOUNTER_COW_1
-
-ENCOUNTER_COW_14:
-	setwildbattle SPECIES_COW, 10, ITEM_NONE
-	goto ENCOUNTER_COW_1
-
-
 BLOCK_Alkharid_Guards::
 	lock
 	faceplayer
@@ -595,9 +523,6 @@ NPC_LUMBRIDGE_CHICKEN_Text_3:
 NPC_LUMBRIDGE_CHICKEN_Text_4:
 	.string "The chicken laid an egg!$"
 
-NPC_LUMBRIDGE_CHICKEN_Text_5:
-	.string "Bwwaak!$"
-
 SIGN_ROUTE12_Text_0:
 	.string "NORTH to Varrock\p"
 	.string "WEST to Lumbridge\p"
@@ -716,12 +641,6 @@ NPC_ROUTE12_Goblin_2_Text_0:
 BROKEN_DOOR_Text_0:
 	.string "This door is broken beyond repair.\p"
 	.string "There's no way you could get it open.$"
-
-ENCOUNTER_COW_Text_0:
-	.string "Cow$"
-
-ENCOUNTER_COW_Text_1:
-	.string "MOOOOOOOO!!$"
 
 BLOCK_Alkharid_Guards_Text_0:
 	.string "Guards$"

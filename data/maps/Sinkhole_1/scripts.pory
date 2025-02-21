@@ -64,7 +64,7 @@ script DAMAGED_LADDER
 script SINKHOLE_NPC_FORGOTTENWARRIOR_1
 {
     faceplayer
-    namebox ("Forgotten Warrior")
+    namebox ("Forgotten War.")
     msgbox(format("There are many sinkhole dungeons like this around the world.\pThere is also a place in Daemonheim where the dungeons are randomised upon entry.\pIt's kind of scary but cool."))
     closemessage
     hidenamebox

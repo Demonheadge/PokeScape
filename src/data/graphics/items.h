@@ -2883,7 +2883,8 @@ const u32 gItemIconPalette_BookOfArmadyl[] = INCBIN_U32("graphics/items/pokescap
 const u32 gItemIcon_ChocolateBarSandwich[] = INCBIN_U32("graphics/items/pokescape_icons/chocolate_bar_sandwich.4bpp.lz");
 const u32 gItemIconPalette_ChocolateBarSandwich[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/chocolate_bar_sandwich.gbapal.lz");
 
-
+const u32 gItemIcon_COMMORB[] = INCBIN_U32("graphics/items/pokescape_icons/commorb.4bpp.lz");
+const u32 gItemIconPalette_COMMORB[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/commorb.gbapal.lz");
 
 
 
@@ -2982,4 +2983,6 @@ const u32 gItemIconPalette_OutfitBox[] = INCBIN_U32("graphics/items/icon_palette
 
 
 
+const u32 gItemIcon_dwellberry[] = INCBIN_U32("graphics/items/pokescape_icons/dwellberry.4bpp.lz");
+const u32 gItemIconPalette_dwellberry[] = INCBIN_U32("graphics/items/pokescape_icon_palettes/dwellberry.gbapal.lz");
 //------

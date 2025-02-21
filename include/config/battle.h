@@ -146,7 +146,7 @@
 #define B_X_ITEMS_BUFF              GEN_LATEST // In Gen7+, the X Items raise a stat by 2 stages instead of 1.
 #define B_MENTAL_HERB               GEN_LATEST // In Gen5+, the Mental Herb cures Taunt, Encore, Torment, Heal Block, and Disable in addition to Infatuation from before.
 #define B_TRAINERS_KNOCK_OFF_ITEMS  TRUE       // If TRUE, trainers can steal/swap your items (non-berries are restored after battle). In vanilla games trainers cannot steal items.
-#define B_RESTORE_HELD_BATTLE_ITEMS TRUE       // In Gen9 all non berry items are restored after battle.
+#define B_RESTORE_HELD_BATTLE_ITEMS FALSE       // In Gen9 all non berry items are restored after battle.
 #define B_SOUL_DEW_BOOST            GEN_LATEST // In Gens3-6, Soul Dew boosts Latis' Sp. Atk and Sp. Def. In Gen7+ it boosts the power of their Psychic and Dragon type moves instead.
 #define B_NET_BALL_MODIFIER         GEN_LATEST // In Gen7+, Net Ball's catch multiplier is x5 instead of x3.
 #define B_DIVE_BALL_MODIFIER        GEN_LATEST // In Gen4+, Dive Ball's effectiveness increases by when Surfing or Fishing.
@@ -247,5 +247,11 @@
 #define B_NEW_MORNING_SUN_STAR_PARTICLE TRUE    // If set to TRUE, it updates Morning Sun's star particles.
 #define B_NEW_IMPACT_PALETTE            TRUE    // If set to TRUE, it updates the basic 'hit' palette.
 #define B_NEW_SURF_PARTICLE_PALETTE     TRUE    // If set to TRUE, it updates Surf's wave palette.
+
+// Battle Move Info
+#define B_BATTLE_MOVE_INFO             TRUE       // If set to TRUE, adds a battle info menu while pressing L in the move selection menu.
+#define B_BATTLE_MOVE_INFO_BUTTON      L_BUTTON   // Interchangeable with L_BUTTON or R_BUTTON only since all other buttons are used in the move selection menu.
+#define B_UPDATED_BATTLE_MOVE_INFO     FALSE      // If set to TRUE, battle move info will show the real base power and accuracy of moves after ability, stat and item modifier.
+#define B_BATTLE_SPEED                 VAR_BATTLE_SPEED // Usage with a variable
 
 #endif // GUARD_CONFIG_BATTLE_H

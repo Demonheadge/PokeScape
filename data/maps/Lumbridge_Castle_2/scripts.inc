@@ -1536,7 +1536,7 @@ QUEST_Cooks_Assistant_STATE_Text_2:
 	.string "of Lumbridge.$"
 
 QUEST_Cooks_Assistant_STATE_Text_3:
-	.string "Oh..\n"
+	.string "Oh…\n"
 	.string "Before you go.$"
 
 QUEST_Cooks_Assistant_STATE_Text_4:

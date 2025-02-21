@@ -947,6 +947,7 @@ gBattleAnims_Moves::
 	.4byte Move_EXCALIBUR
 	.4byte Move_SNELM_SHOWOFF
 	.4byte Move_ENERGY_DRAIN
+	.4byte Move_BERSERK
 
 
 @@@@ Z MOVES
@@ -10185,11 +10186,6 @@ Move_THOUSAND_ARROWS::
 	setalpha 14, 8
 	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, F_PAL_BG, 0x1, 0x0, 0xC, 0x0
 	waitforvisualfinish
-	createsprite gThousandArrowsGreenChargeTemplate, ANIM_ATTACKER, 2, 0x0
-	playsewithpan SE_M_CHARGE, SOUND_PAN_ATTACKER
-	delay 0x18
-	playsewithpan SE_M_CHARGE, SOUND_PAN_ATTACKER
-	delay 0x18
 	call ThousandArrowsHexes
 	call ThousandArrowsHexes
 	call ThousandArrowsHexes
@@ -10197,11 +10193,6 @@ Move_THOUSAND_ARROWS::
 	call ThousandArrowsHexes
 	call ThousandArrowsHexes
 	call ThousandArrowsHexes
-	createsprite gThousandArrowsGreenDischargeTemplate, ANIM_ATTACKER, 2, 0x0, 0x10, 0x10
-	delay 0x2
-	createsprite gThousandArrowsGreenDischargeTemplate, ANIM_ATTACKER, 2, 0x0, 0xfff0, 0xfff0
-	playsewithpan SE_M_THUNDERBOLT2, SOUND_PAN_ATTACKER
-	waitforvisualfinish
 	delay 0x30
 	createvisualtask AnimTask_HorizontalShake, 5, ANIM_PLAYER_RIGHT, 10, 0x32
 	createvisualtask AnimTask_HorizontalShake, 5, ANIM_PLAYER_LEFT, 10, 0x32
@@ -34332,3 +34323,28 @@ Move_EXCALIBUR:
 Move_SNELM_SHOWOFF:
 Move_ENERGY_DRAIN:
 	goto Move_HEADBUTT
+
+Move_BERSERK:
+
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_ROCKS
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	playsewithpan SE_M_SCRATCH, SOUND_PAN_ATTACKER
+	delay 10
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x1, 0x1
+	createsprite gFistFootSpriteTemplate, ANIM_ATTACKER, 3, 0x0, 0x0, 0x8, 0x1, 0x0
+	playsewithpan SE_M_ICY_WIND, SOUND_PAN_TARGET
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 5, 1
+	waitforvisualfinish
+	playsewithpan SE_M_BUBBLE, SOUND_PAN_TARGET
+	createsprite gShellSmashPurpleRocksSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x14, 0x18, 0xe, 0x2
+	createsprite gShellSmashPurpleRocksSpriteTemplate, ANIM_ATTACKER, 2, 0x5, 0x0, 0xffec, 0x18, 0xe, 0x1
+	createsprite gShellSmashPurpleRocksSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x5, 0x14, 0xffe8, 0xe, 0x2
+	createsprite gShellSmashPurpleRocksSpriteTemplate, ANIM_ATTACKER, 2, 0xfffb, 0x0, 0xffec, 0xffe8, 0xe, 0x2
+	createsprite gShellSmashPurpleRocksSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0xfffb, 0x1e, 0x12, 0x8, 0x2
+	createsprite gShellSmashPurpleRocksSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x1e, 0xffee, 0x8, 0x2
+	createsprite gShellSmashPurpleRocksSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0xffe2, 0x12, 0x8, 0x2
+	createsprite gShellSmashPurpleRocksSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0xffe2, 0xffee, 0x8, 0x2
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 0, 3, 7, 1
+	waitforvisualfinish
+	end

@@ -356,6 +356,7 @@ script NPC_DraynorManor_Oddenstein{
 				call(CooksAssistant_Check_OilCan)
 				call(CooksAssistant_Check_PressureGauge)
 				call(CooksAssistant_Check_RubberTube)
+				namebox ("Oddenstein")
 				msgbox(format("It looks like you have everything!\pAllow me to take those off your hands."))
 				closemessage
 				hidenamebox
@@ -428,6 +429,12 @@ script NPC_DraynorManor_Oddenstein{
 			removeobject(3)
 			removeobject(4)
 			removeobject(5)
+			checkfollower
+			if (var(VAR_RESULT)) {
+				setobjectxy(OBJ_EVENT_ID_FOLLOWER, 7, 3)
+				applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACEDOWN)
+				waitmovement(0)
+			}
 			fadescreenswapbuffers(FADE_FROM_BLACK)
 
 			special(SpawnCameraObject)

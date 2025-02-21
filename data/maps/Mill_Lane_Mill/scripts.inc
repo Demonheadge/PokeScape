@@ -64,11 +64,25 @@ BEEFY_BILL_MILL_LANE_MILL::
 
     .align 2
 GeneralStoreBeefyBill:
-    .2byte ITEM_EMPTY_BUCKET
-    .2byte ITEM_EMPTY_POT
+    .2byte ITEM_CADAVABERRY
+    .2byte ITEM_DWELLBERRY
+    .2byte ITEM_JANGERBERRY
+    .2byte ITEM_WHITEBERRY
     .2byte ITEM_REDBERRY
-    .2byte ITEM_WHEAT
-    .2byte ITEM_WATER_BUCKET
+    .2byte ITEM_EMPTY_BUCKET
+    .2byte ITEM_NONE
+    release
+    end
+
+
+    .align 2
+StoreFarmingFoods:
+    .2byte ITEM_POTATO
+    .2byte ITEM_ONION
+    .2byte ITEM_TOMATO
+    .2byte ITEM_CORN
+    .2byte ITEM_WATERMELON
+    .2byte ITEM_TURNIP
     .2byte ITEM_NONE
     release
     end

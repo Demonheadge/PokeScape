@@ -3341,10 +3341,6 @@ static const u8 sChaoticRiftDescription[] = _(
     "Opens a chaotic rift.\n"
     "Type matchups get weird!.");
 
-static const u8 sSaradominStrikeDescription[] = _(
-    "Strikes your foe with the power.\n"
-    "of Saradomin. Lowers PP of target.");
-
 static const u8 sSwordStrikeDescription[] = _(
     "Strike forth with a mighty blade.\n"
     "High critical ratio.");
@@ -3353,13 +3349,17 @@ static const u8 sSliceDiceDescription[] = _(
     "Rapidly strikes the foe with razor\n"
     "sharp claws. Always hits 4 times.");
 
+static const u8 sSaradominStrikeDescription[] = _(
+    "Strikes your foe with the power.\n"
+    "of Saradomin. May lower targets SPEED.");
+
 static const u8 sZamorakFlamesDescription[] = _(
     "Strike your foe with the power of\n"
-    "Zamorak. Lowers targets SPATK.");
+    "Zamorak. May lower targets SPATK.");
 
 static const u8 sGuthixClawsDescription[] = _(
     "Strike your foe with the power of\n"
-    "Zamorak. Lowers targets SPATK.");
+    "Guthix. May lower targets SPDEF.");
 
 static const u8 sPolyporeStrikeDescription[] = _(
     "Send forth a ball of nature.\n"
@@ -3374,8 +3374,8 @@ static const u8 sBloodBarrageDescription[] = _(
     "Steals a large amount of health.");
 
 static const u8 sVengeanceDescription[] = _(
-    "Strike the target with blood magic.\n"
-    "Steals a large amount of health.");
+    "Reflect some of the damage taken\n"
+    "back at the enemy.");
 
 static const u8 sArmadylStormDescription[] = _(
     "Strike the target with armadyls winds.\n"
@@ -3386,12 +3386,12 @@ static const u8 sTumekenStormDescription[] = _(
     "Sets up a sandstorm.");
 
 static const u8 sSmokeBarrageDescription[] = _(
-    "Strike with the force of the desert.\n"
-    "Sets up a sandstorm.");
+    "Strike both enemies with strong smoke\n"
+    "magic. May lower accuracy.");
 
 static const u8 sShadowBarrageDescription[] = _(
-    "Strike with the force of the desert.\n"
-    "Sets up a sandstorm.");
+    "Strike both enemies with strong shadow\n"
+    "magic. May raise evasion.");
 
 static const u8 sTelegrabDescription[] = _(
     "Casts a spell to retrieve an item.\n"
@@ -3588,6 +3588,7 @@ static const u8 sSnelmShowoffDescription[] = _(
 static const u8 sEnergyDrainDescription[] = _(
     "Lowers the targets Speed stat and\n"
     "prevents them from escaping or switching.");
+
 static const u8 sOverloadDescription[] = _(
     "Sharply increases stats\n"
     "while sacrificing HP.");
@@ -3607,6 +3608,11 @@ static const u8 sSilverlightDescription[] = _(
 static const u8 sIbanBlastDescription[] = _(
     "A power blast that has a\n"
     "chance to lower a random stat.");
+
+static const u8 sBerserkDescription[] = _(
+    "Raises Atk, Def & Speed stats.\n"
+    "Lowers SpDef.");
+    
 
 #undef BINDING_TURNS
 
@@ -4535,5 +4541,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_EXCALIBUR - 1] = sExcaliburDescription,
     [MOVE_SNELM_SHOWOFF - 1] = sSnelmShowoffDescription,
     [MOVE_ENERGY_DRAIN - 1] = sEnergyDrainDescription,
-    
+    [MOVE_BERSERK - 1] = sBerserkDescription,    
 };

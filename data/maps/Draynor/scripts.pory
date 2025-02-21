@@ -515,7 +515,39 @@ script NPC_Draynor_Noob_WillowTree{
 	end
 }
 
+script NPC_Draynor_Woodcutter_WillowTree{
+	lock
+	faceplayer
+    namebox("Woodcutter")
+    if (!flag(FLAG_GIFT_BIRDS_NEST)) {
+        msgbox(format("I found this Bird Nest but my inventory is full of Willow logs.\pDo you want it?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT)){
+            hidenamebox
+            closemessage
+            call(EventScript_GiftMonster_BirdNest)
+            setflag(FLAG_GIFT_BIRDS_NEST)
+            namebox("Woodcutter")
+        }
+        else {
+            msgbox(format("Hmm…\pI guess I'll just leave it on the ground then."))
+            closemessage
+            hidenamebox
+            release
+            end
+        }
+    }
+    msgbox(format("Birds Nests are so interesting, you never know what will hatch from them."))
+    closemessage
+    hidenamebox
+    release
+	end
+}
 
+script EventScript_GiftMonster_BirdNest {
+    setvar(VAR_TEMP_1, SPECIES_BIRD_NEST)
+    givemon (SPECIES_BIRD_NEST, 5, ITEM_LUCKYRABBITFOOT)
+	goto(EventScript_GiftMonster_Start)
+}
 
 
 

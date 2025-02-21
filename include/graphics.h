@@ -2737,6 +2737,7 @@ extern const u32 gBattlePyramidBagInterface_Pal[];
 extern const u16 gBattlePyramidFloor_Pal[][16];
 
 extern const u16 gStandardMenuPalette[];
+extern const u16 gPokeScapeMenuPalette[];
 
 //extern const u32 gTitleScreenEmeraldVersionGfx[];
 extern const u32 gTitleScreenPressStartGfx[];
@@ -3932,7 +3933,8 @@ extern const u32 gKantoTrainerCard_Gfx[];
 extern const u32 gKantoTrainerCardBg_Tilemap[];
 extern const u32 gHoennTrainerCardBack_Tilemap[];
 extern const u32 gKantoTrainerCardBack_Tilemap[];
-extern const u32 gHoennTrainerCardFront_Tilemap[];
+extern const u32 gTrainerCard_F2P_Front_Tilemap[];
+extern const u32 gTrainerCard_P2P_Front_Tilemap[];
 extern const u32 gKantoTrainerCardFront_Tilemap[];
 extern const u32 gHoennTrainerCardFrontLink_Tilemap[];
 extern const u32 gKantoTrainerCardFrontLink_Tilemap[];
@@ -4590,7 +4592,10 @@ extern const u32 gItemIcon_Whistle[];
 extern const u32 gItemIconPalette_Whistle[];
 extern const u32 gItemIcon_ClueScrollTools[];
 extern const u32 gItemIconPalette_ClueScrollTools[];
-
+extern const u32 gItemIcon_dwellberry[];
+extern const u32 gItemIconPalette_dwellberry[];
+extern const u32 gItemIcon_COMMORB[];
+extern const u32 gItemIconPalette_COMMORB[];
 
 // pokescape crops
 extern const u32 gBerryPic_Cabbage[];

@@ -1,0 +1,308 @@
+mapscripts Black_Knights_Fortress_1_MapScripts {
+
+}
+
+script ITEM_BLACKKNIGHTS_FORTRESS_1
+{
+    finditem(ITEM_CABBAGE, 1)
+    closemessage
+    end
+}
+
+script CAUGHT_BY_BLACK_KNIGHTS
+{
+    namebox("Sir Owen")
+    msgbox(format("Our cover is blown {PLAYER}!\nQuick prepare for battle!"))
+    closemessage
+    hidenamebox
+    //changes outfits
+    return
+}
+
+script TRIGGER_BLACK_KNIGHT_QUIZ_1 {
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT)
+    waitmovement(0)
+    goto(BLACK_KNIGHT_QUIZ_1)
+}
+
+script BLACK_KNIGHT_QUIZ_1 //Laimp
+{
+    lockall
+    applymovement(11, Movement_InteractFACEPLAYER)
+    waitmovement(0)
+    namebox("Black Knight")
+    if (flag(FLAG_BKF_QUIZ_1) == TRUE)
+    {
+        msgbox(format("Stop right there!\pOh, it is you two again, carry on."))
+        closemessage
+        hidenamebox
+    }
+    else 
+    {
+        msgbox(format("Stop right there!\pWe have important guests and due to this we have increased security.\pYou will have to answer some questions so we know you are truly loyal to our cause!!"))
+        msgbox(format("Black Knights are better than White Knights?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == FALSE)
+        {
+            msgbox(format("That is Faladorian talk.\pPrepare for battle scum!"))
+            closemessage
+            hidenamebox
+            call(CAUGHT_BY_BLACK_KNIGHTS)
+            playbgm(MUS_PS_ENCOUNTER_KNIGHTS, FALSE)
+            trainerbattle_no_intro(TRAINER_BLACKKNIGHT_LAIMP, msgbox(format("…")))
+        }
+        else {
+            msgbox(format("Correct. We are way better than those pansies."))
+            closemessage
+            hidenamebox
+            setflag(FLAG_BKF_QUIZ_1)
+        }
+    }
+    setvar(VAR_TEMP_1, 1)
+    releaseall
+    end
+}
+
+
+script TRIGGER_BLACK_KNIGHT_QUIZ_2 {
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT)
+    waitmovement(0)
+    goto(BLACK_KNIGHT_QUIZ_2)
+}
+script BLACK_KNIGHT_QUIZ_2 //Mare
+{
+    lockall
+    applymovement(6, Movement_InteractFACEPLAYER)
+    applymovement(7, Movement_InteractFACEPLAYER)
+    waitmovement(0)
+    namebox("Black Knight")
+    if (flag(FLAG_BKF_QUIZ_2) == TRUE)
+    {
+        msgbox(format("Make sure to stab the prisoners if they get too close to the bars."))
+        closemessage
+        hidenamebox
+    }
+    else 
+    {
+        msgbox(format("Only true Black Knights could ever be allowed to speak to the prisoners.\pProve your loyalty and you may descend!"))
+        msgbox(format("Sir Owen Sonde and Sir Tiffy Cashien smells."), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == FALSE)
+        {
+            hidenamebox
+            namebox("Sir Owen")
+            msgbox(format("Damn right, prepare to battle Black Knight!"))
+            closemessage
+            hidenamebox
+            call(CAUGHT_BY_BLACK_KNIGHTS)
+            playbgm(MUS_PS_ENCOUNTER_KNIGHTS, FALSE)
+            trainerbattle_no_intro(TRAINER_BLACKKNIGHT_MARE, msgbox(format("…")))
+        }
+        else {
+            msgbox(format("Haha, yeah, they really do. Heh."))
+            closemessage
+            hidenamebox
+            namebox("Sir Owen")
+            msgbox(format(".....\p{PLAYER}, something within me felt like we should have taken a loss here...."))
+            closemessage
+            hidenamebox
+            setflag(FLAG_BKF_QUIZ_2)
+        }
+    }
+    setvar(VAR_TEMP_2, 1)
+    releaseall
+    end
+}
+
+//NPCs
+
+script BKFORT_DOG
+{
+    lock
+    faceplayer
+    msgbox(format("The dog looks at you and starts to growl.\pMaybe you should leave it alone."))
+    closemessage
+    release
+    end
+}
+
+script BKFORT_1F_NPC_1
+{
+    lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("Don't even think about causing any trouble today.\pWe're on high alert!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_NPC_2
+{
+    lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("An important guest arrived not too long ago!\pI think he headed upstairs to have a meeting with the boss."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_NPC_3
+{
+    lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("I can't believe I did all that training and instead of fighting in a war, I'm running around trying to find a damn cabbage for a crazy person!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_NPC_4
+{
+	lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("Out of everything in Gielinor, why did they have to choose dogs as guard animals!\pI'm deathly allergic!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_NPC_5
+{
+	lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("I don't know if this special guest was cosplaying or just had poor fashion sense but they were dressed entirely in pink..."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_NPC_6
+{
+	lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("I just really want to finish my book, and for the two characters to get their happy ever after.\pIt has been giving me hope that one day I might have the courage to pursue my love..."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_NPC_7
+{
+	lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("Don't mind me, I am just staying out of the way.\pThat way I can't mess anything up again..."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_NPC_8
+{
+	lock
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("I hate being posted here!\pI can hear the screams of the prisoners from the basement...{PAUSE 15}\pJust makes me really sad I'm not the one down there torturing them..."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_NPC_9
+{
+	lock
+    faceplayer
+    namebox ("Qu3stL0ck")
+    msgbox(format("Whoever wrote this guide is an idiot!\pIt clearly says bring a cabbage, but this witch wants a MONSTER Cabbage and not the item!\pI'm going to have to trek all the way back to a Bank now..."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script BKFORT_1F_LENSIG {
+	lock
+	faceplayer
+	namebox ("Lensig")
+	if (!(flag(FLAG_BKFORT_TRADE_1))){
+		setvar (VAR_0x8008, INGAME_TRADE_CABBAGE)
+		copyvar (VAR_0x8004, VAR_0x8008)
+        specialvar (VAR_RESULT, GetInGameTradeSpeciesInfo)
+        copyvar (VAR_0x8009, VAR_RESULT)
+        msgbox(format("That snivelling goblin is useless.\pIf I don't get a Cabbage soon, I'll never be able to finish...\pSay, do you happen to have a Cabbage?\pWould you like to trade one for my cat?"), MSGBOX_YESNO)
+	      	if (var(VAR_RESULT)){
+            	special (ChoosePartyMon)
+            	waitstate
+            	copyvar (VAR_0x800A, VAR_0x8004)
+            	if(!(var(VAR_0x8004) == 255)){
+                	copyvar(VAR_0x8005, VAR_0x800A)
+                	specialvar (VAR_RESULT, GetTradeSpecies)
+                	copyvar(VAR_0x800B, VAR_RESULT)
+					if (var(VAR_RESULT) == VAR_0x8009){
+						copyvar(VAR_0x8004, VAR_0x8008)
+						copyvar(VAR_0x8005, VAR_0x800A)
+						special(CreateInGameTradePokemon)
+						special(DoInGameTradeScene)
+						waitstate
+						msgbox(format("AHAHAHAHAH!\pYES!\pFinally, I can complete the ritual!"))
+						setflag(FLAG_BKFORT_TRADE_1)
+                	}
+                else{
+                    msgbox("Sorry, only a Cabbage can complete the ritual.")
+                	}
+				}
+            }
+			else{
+				msgbox(format("Well, please come back if you change your mind."))
+			}
+		}
+		else {
+		msgbox("I really need that Cabbage.\pCome back if you change your mind.")
+		}
+		hidenamebox
+	release
+	end
+}
+
+script BKFORT_1F_BOOK
+{
+	lock
+    msgbox(format("The book tells a story of a romance between two youths from feuding families.\pYou're sure it will have a happy ending."))
+    closemessage
+    release
+    end
+}
+
+//ITEMS
+
+script ITEM_BKFORT_1F_ITEM1
+{
+    finditem(ITEM_POUCH_BLACK)
+    end
+}
+
+script ITEM_BKFORT_1F_ITEM2
+{
+    finditem(ITEM_POUCH_BLACK)
+    end
+}
+
+script ITEM_BKFORT_1F_ITEM3
+{
+    finditem(ITEM_POUCH_BLACK)
+    end
+}

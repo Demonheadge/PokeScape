@@ -5555,3 +5555,8 @@ static const u8 sPouch_Ancient_Desc[] = _(
     "A strange pouch that\n"
     "seems to bind and force\n"
     "better friendship.");
+
+static const u8 sCOMMORB_Desc[] = _(
+    "An orb that contacts\n"
+    "the White Knights.\n"
+    "");

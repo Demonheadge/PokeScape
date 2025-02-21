@@ -585,7 +585,7 @@ NPC_WIZARDSTOWER_Rinsit::
 NPC_WIZARDSTOWER_RuneGuardian::
 	lock
 	faceplayer
-	playmoncry SPECIES_UNOWN, 0
+	playmoncry SPECIES_RUNE_GUARDIAN, 0
 	namebox NPC_WIZARDSTOWER_RuneGuardian_Text_0
 	msgbox NPC_WIZARDSTOWER_RuneGuardian_Text_1
 	waitmoncry
@@ -814,6 +814,10 @@ STORYMODE_VAR_CHECK::
 	compare VAR_RESULT, 0
 	goto_if_ne STORYMODE_VAR_CHECK_2
 STORYMODE_VAR_CHECK_1:
+	msgbox STORYMODE_VAR_CHECK_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne STORYMODE_VAR_CHECK_5
+STORYMODE_VAR_CHECK_4:
 	closemessage
 	end
 
@@ -821,78 +825,98 @@ STORYMODE_VAR_CHECK_2:
 	goto STORYMODE_VAR_EDIT
 	goto STORYMODE_VAR_CHECK_1
 
+STORYMODE_VAR_CHECK_5:
+	goto_if_unset FLAG_ENABLE_P2P_BADGES, STORYMODE_VAR_CHECK_7
+	clearflag FLAG_ENABLE_P2P_BADGES
+	goto STORYMODE_VAR_CHECK_4
+
+STORYMODE_VAR_CHECK_7:
+	setflag FLAG_ENABLE_P2P_BADGES
+	goto STORYMODE_VAR_CHECK_4
+
 
 STORYMODE_VAR_EDIT::
-	buffernumberstring STR_VAR_1, VAR_POKESCAPE_STORYMODE_PROGRESS
-	msgbox STORYMODE_VAR_EDIT_Text_0
-	msgbox STORYMODE_VAR_EDIT_Text_1, MSGBOX_YESNO
+	msgbox STORYMODE_VAR_EDIT_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne STORYMODE_VAR_EDIT_2
+	buffernumberstring STR_VAR_1, VAR_POKESCAPE_STORYMODE_PROGRESS
+	msgbox STORYMODE_VAR_EDIT_Text_1
 	msgbox STORYMODE_VAR_EDIT_Text_2, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne STORYMODE_VAR_EDIT_5
 	msgbox STORYMODE_VAR_EDIT_Text_3, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne STORYMODE_VAR_EDIT_8
-	buffernumberstring STR_VAR_2, VAR_WISE_OLD_MAN_RIVAL
-	msgbox STORYMODE_VAR_EDIT_Text_4
-	msgbox STORYMODE_VAR_EDIT_Text_5, MSGBOX_YESNO
+	msgbox STORYMODE_VAR_EDIT_Text_4, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne STORYMODE_VAR_EDIT_11
+	buffernumberstring STR_VAR_2, VAR_WISE_OLD_MAN_RIVAL
+	msgbox STORYMODE_VAR_EDIT_Text_5
 	msgbox STORYMODE_VAR_EDIT_Text_6, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne STORYMODE_VAR_EDIT_14
 	msgbox STORYMODE_VAR_EDIT_Text_7, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_ne STORYMODE_VAR_EDIT_17
+	msgbox STORYMODE_VAR_EDIT_Text_8, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne STORYMODE_VAR_EDIT_20
 	closemessage
 	release
 	end
 
 STORYMODE_VAR_EDIT_2:
-	addvar VAR_POKESCAPE_STORYMODE_PROGRESS, 5
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 130
 	buffernumberstring 0, VAR_POKESCAPE_STORYMODE_PROGRESS
-	msgbox STORYMODE_VAR_EDIT_Text_0
+	msgbox STORYMODE_VAR_EDIT_Text_1
 	closemessage
 	release
 	end
 
 STORYMODE_VAR_EDIT_5:
-	addvar VAR_POKESCAPE_STORYMODE_PROGRESS, 10
+	addvar VAR_POKESCAPE_STORYMODE_PROGRESS, 5
 	buffernumberstring 0, VAR_POKESCAPE_STORYMODE_PROGRESS
-	msgbox STORYMODE_VAR_EDIT_Text_0
+	msgbox STORYMODE_VAR_EDIT_Text_1
 	closemessage
 	release
 	end
 
 STORYMODE_VAR_EDIT_8:
-	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 0
+	addvar VAR_POKESCAPE_STORYMODE_PROGRESS, 10
 	buffernumberstring 0, VAR_POKESCAPE_STORYMODE_PROGRESS
-	msgbox STORYMODE_VAR_EDIT_Text_0
+	msgbox STORYMODE_VAR_EDIT_Text_1
 	closemessage
 	release
 	end
 
 STORYMODE_VAR_EDIT_11:
-	addvar VAR_WISE_OLD_MAN_RIVAL, 5
-	buffernumberstring 0, VAR_WISE_OLD_MAN_RIVAL
-	msgbox STORYMODE_VAR_EDIT_Text_4
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 0
+	buffernumberstring 0, VAR_POKESCAPE_STORYMODE_PROGRESS
+	msgbox STORYMODE_VAR_EDIT_Text_1
 	closemessage
 	release
 	end
 
 STORYMODE_VAR_EDIT_14:
-	addvar VAR_WISE_OLD_MAN_RIVAL, 10
+	addvar VAR_WISE_OLD_MAN_RIVAL, 5
 	buffernumberstring 0, VAR_WISE_OLD_MAN_RIVAL
-	msgbox STORYMODE_VAR_EDIT_Text_4
+	msgbox STORYMODE_VAR_EDIT_Text_5
 	closemessage
 	release
 	end
 
 STORYMODE_VAR_EDIT_17:
+	addvar VAR_WISE_OLD_MAN_RIVAL, 10
+	buffernumberstring 0, VAR_WISE_OLD_MAN_RIVAL
+	msgbox STORYMODE_VAR_EDIT_Text_5
+	closemessage
+	release
+	end
+
+STORYMODE_VAR_EDIT_20:
 	setvar VAR_WISE_OLD_MAN_RIVAL, 0
 	buffernumberstring 0, VAR_WISE_OLD_MAN_RIVAL
-	msgbox STORYMODE_VAR_EDIT_Text_4
+	msgbox STORYMODE_VAR_EDIT_Text_5
 	closemessage
 	release
 	end
@@ -943,6 +967,32 @@ RUNE_EVOLUTIONS_NOTES_8:
 
 RUNE_EVOLUTIONS_NOTES_9:
 	msgbox RUNE_EVOLUTIONS_NOTES_Text_6
+	release
+	end
+
+
+TOGGLE_BATTLE_SPEED::
+	msgbox TOGGLE_BATTLE_SPEED_Text_0, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne TOGGLE_BATTLE_SPEED_2
+	msgbox TOGGLE_BATTLE_SPEED_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_ne TOGGLE_BATTLE_SPEED_4
+	return
+
+TOGGLE_BATTLE_SPEED_2:
+	addvar VAR_BATTLE_SPEED, 1
+	buffernumberstring STR_VAR_1, VAR_BATTLE_SPEED
+	msgbox TOGGLE_BATTLE_SPEED_Text_1
+	closemessage
+	release
+	end
+
+TOGGLE_BATTLE_SPEED_4:
+	setvar VAR_BATTLE_SPEED, 0
+	buffernumberstring STR_VAR_1, VAR_BATTLE_SPEED
+	msgbox TOGGLE_BATTLE_SPEED_Text_1
+	closemessage
 	release
 	end
 
@@ -1249,29 +1299,35 @@ STORYMODE_VAR_CHECK_Text_0:
 	.string "STORYMODE_PROGRESS: {STR_VAR_1}.\n"
 	.string "VAR_WISE_OLD_MAN_RIVAL: {STR_VAR_2}.$"
 
+STORYMODE_VAR_CHECK_Text_1:
+	.string "Toggle P2P Badges?$"
+
 STORYMODE_VAR_EDIT_Text_0:
+	.string "Set custom story-test values?$"
+
+STORYMODE_VAR_EDIT_Text_1:
 	.string "VAR_POKESCAPE_STORYMODE_PROGRESS:\n"
 	.string "{STR_VAR_1}.$"
 
-STORYMODE_VAR_EDIT_Text_1:
+STORYMODE_VAR_EDIT_Text_2:
 	.string "Increase STORYMODE_PROGRESS by 1?$"
 
-STORYMODE_VAR_EDIT_Text_2:
+STORYMODE_VAR_EDIT_Text_3:
 	.string "Increase STORYMODE_PROGRESS by 10?$"
 
-STORYMODE_VAR_EDIT_Text_3:
+STORYMODE_VAR_EDIT_Text_4:
 	.string "Reset STORYMODE_PROGRESS to 0?$"
 
-STORYMODE_VAR_EDIT_Text_4:
+STORYMODE_VAR_EDIT_Text_5:
 	.string "VAR_WISE_OLD_MAN_RIVAL: {STR_VAR_2}.$"
 
-STORYMODE_VAR_EDIT_Text_5:
+STORYMODE_VAR_EDIT_Text_6:
 	.string "Increase VAR_WISE_OLD_MAN_RIVAL by 1?$"
 
-STORYMODE_VAR_EDIT_Text_6:
+STORYMODE_VAR_EDIT_Text_7:
 	.string "Increase VAR_WISE_OLD_MAN_RIVAL by 10?$"
 
-STORYMODE_VAR_EDIT_Text_7:
+STORYMODE_VAR_EDIT_Text_8:
 	.string "Reset VAR_WISE_OLD_MAN_RIVAL to 0?$"
 
 RUNE_EVOLUTIONS_NOTES_Text_0:
@@ -1367,3 +1423,12 @@ RUNE_EVOLUTIONS_NOTES_Text_6:
 	.string "I still need to find more unusual runes\n"
 	.string "to see what other evolutions are out\l"
 	.string "there.$"
+
+TOGGLE_BATTLE_SPEED_Text_0:
+	.string "Increase VAR_BATTLE_SPEED by 1?$"
+
+TOGGLE_BATTLE_SPEED_Text_1:
+	.string "VAR_BATTLE_SPEED: {STR_VAR_1}.$"
+
+TOGGLE_BATTLE_SPEED_Text_2:
+	.string "Reset VAR_BATTLE_SPEED to 0?$"

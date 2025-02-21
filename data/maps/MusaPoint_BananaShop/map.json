@@ -30,7 +30,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MONKEY",
       "x": 2,
-      "y": 4,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
       "movement_range_x": 1,

@@ -400,6 +400,14 @@ script UTILITY_NPC
     goto(UTILITY_TOOLS)
 }
 
+script UTILITY_NPC_TZHAAR
+{
+    lock
+    faceplayer
+    namebox ("Tzhaar")
+    goto(UTILITY_TOOLS)
+}
+
 script UTILITY_TOOLS
 {
     msgbox(format("What would you like to do?"))

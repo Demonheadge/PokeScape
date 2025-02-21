@@ -82,6 +82,8 @@ BARBARIANVILLAGE_STORYMODE_EVENT_11:
 	hidenamebox
 	closemessage
 	setvar VAR_TEMP_B, 0
+	setflag FLAG_TEMP_1F
+	removeobject 16
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 165
 	release
 	end
@@ -494,7 +496,7 @@ BARBARIANVILLAGE_STORYMODE_EVENT_Text_2:
 	.string "ladder.$"
 
 BARBARIANVILLAGE_STORYMODE_EVENT_Text_3:
-	.string "Who was that they werent allowed in\n"
+	.string "Who was that, they weren't allowed in\n"
 	.string "there!$"
 
 NPC_BARB_BLOCKADE_1_Text_0:

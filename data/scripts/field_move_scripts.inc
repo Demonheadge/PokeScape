@@ -550,9 +550,9 @@ EventScript_CancelStrength::
 	end
 
 Text_WantToStrength:
-	.string "It's a big boulder, but a POKéMON\n"
+	.string "It's a big boulder, but the BATTLEAXE\n"
 	.string "may be able to push it aside.\p"
-	.string "Would you like to use STRENGTH?$"
+	.string "Would you like to use the BATTLEAXE?$"
 
 Text_MonUsedStrength:
 	.string "{STR_VAR_1} used STRENGTH!\p"
@@ -560,12 +560,12 @@ Text_MonUsedStrength:
 	.string "possible to move boulders around!$"
 
 Text_CantStrength:
-	.string "It's a big boulder, but a POKéMON\n"
-	.string "may be able to push it aside.$"
+	.string "It's a big boulder. Something sturdy like a\n"
+	.string "Battleaxe may be able to push it aside.$"
 
 Text_StrengthActivated:
-	.string "STRENGTH made it possible to move\n"
-	.string "boulders around.$"
+	.string "The BATTLEAXE made it possible to\n"
+	.string "move boulders around.$"
 
 EventScript_UseWaterfall::
 	lockall
@@ -686,6 +686,9 @@ EventScript_RING_OF_KINSHIP::
 	goto RING_OF_KINSHIP_TELEPORT
 	end
 
+EventScript_COMMORB::
+	goto COMMORB_FUNCTION
+	end
 	
 
 Text_CantDive:

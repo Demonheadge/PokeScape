@@ -34,7 +34,7 @@ script VARROCK_STATE {
 
 script RANDOM_EVENT_SANDWICH_LADY {
 	//Random chance for SANDWICH LADY Event to spawn in MAP.
-	random(30)
+	random(20)
 	if (var(VAR_RESULT) == 1) {
 		clearflag(FLAG_SANDWICH_LADY)
 		addobject(OBJ_EVENT_ID_SANDWICH_LADY)

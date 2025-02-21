@@ -85,6 +85,7 @@ Debug_EventScript_Script_4::
 	end
 
 Debug_EventScript_Script_5::
+	goto(TOGGLE_BATTLE_SPEED)
 	end
 
 Debug_EventScript_Script_6::

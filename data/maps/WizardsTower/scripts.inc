@@ -283,7 +283,7 @@ HAM_EVENT_WizardsTower_3_Text_0:
 	.string "Stop right there thief!$"
 
 HAM_EVENT_WizardsTower_3_Text_1:
-	.string "H.A.M. member$"
+	.string "H.A.M. Grunt$"
 
 HAM_EVENT_WizardsTower_3_Text_2:
 	.string "You'll never catch me!$"

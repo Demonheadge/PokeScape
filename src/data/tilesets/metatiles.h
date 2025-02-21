@@ -318,3 +318,6 @@ const u16 gMetatileAttributes_PokeScapeCaves_Extra_1[] = INCBIN_U16("data/tilese
 
 const u16 gMetatiles_Lighthouse[] = INCBIN_U16("data/tilesets/secondary/lighthouse/metatiles.bin");
 const u16 gMetatileAttributes_Lighthouse[] = INCBIN_U16("data/tilesets/secondary/lighthouse/metatile_attributes.bin");
+
+const u16 gMetatiles_IndoorTowns3[] = INCBIN_U16("data/tilesets/secondary/indoor_towns_3/metatiles.bin");
+const u16 gMetatileAttributes_IndoorTowns3[] = INCBIN_U16("data/tilesets/secondary/indoor_towns_3/metatile_attributes.bin");
