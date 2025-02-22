@@ -15,60 +15,30 @@ jobs:
       GAME_VERSION: EMERALD
       GAME_REVISION: 0
       GAME_LANGUAGE: ENGLISH
-      MODERN: 0
       COMPARE: 0
       UNUSED_ERROR: 1
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Checkout agbcc
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
-          path: agbcc
-          repository: pret/agbcc
-        
-      - name: Checkout poryscript
-        uses: actions/checkout@v2
-        with:
-          path: poryscript
-          repository: huderlem/poryscript
+          submodules: 'true'
 
       - name: Install binutils
         run: |
           sudo apt update
-          sudo apt install -y build-essential libpng-dev libelf-dev golang
+          sudo apt install -y build-essential libgtk-3-dev pkg-config libpng-dev libelf-dev golang
         # build-essential, git, and libpng-dev are already installed
         # gcc-arm-none-eabi is only needed for the modern build
         # as an alternative to dkP
 
-      - name: Install agbcc
-        run: |
-          ./build.sh
-          ./install.sh ../
-        working-directory: agbcc
-
-      - name: Install poryscript
-        run: |
-          go build
-          ./install.sh ../
-        working-directory: poryscript
-
-      - name: Agbcc
+      - name: ROM
         env:
-          MODERN: 0
           COMPARE: 0
-        run: make -j${nproc} -O all
-
-      - name: Modern
-        env:
-          MODERN: 1
-          COMPARE: 0
-        run: make -j${nproc} -O all
+        run: |
+          make -j${nproc} -O all
 
       - name: Test
         env:
-          MODERN: 1
           TEST: 1
         run: |
           make -j${nproc} -O pokescape-test.elf

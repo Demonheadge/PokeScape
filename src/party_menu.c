@@ -299,18 +299,18 @@ static void DisplayPartyPokemonMaxHP(u16, struct PartyMenuBox *);
 static void DisplayPartyPokemonHPBar(u16, u16, struct PartyMenuBox *);
 static void CreatePartyMonIconSpriteParameterized(u16, u32, struct PartyMenuBox *, u8);
 static void CreatePartyMonHeldItemSpriteParameterized(u16, u16, struct PartyMenuBox *);
-static void CreatePartyMonPokeballSpriteParameterized(u16, struct PartyMenuBox *);
+//static void CreatePartyMonPokeballSpriteParameterized(u16, struct PartyMenuBox *);
 static void CreatePartyMonStatusSpriteParameterized(u16, u8, struct PartyMenuBox *);
 // These next 4 functions are essentially redundant with the above 4
 // The only difference is that rather than receive the data directly they retrieve it from the mon struct
 static void CreatePartyMonHeldItemSprite(struct Pokemon *, struct PartyMenuBox *);
 //static void CreatePartyMonShinySprite(struct Pokemon *, struct PartyMenuBox *);
-static void CreatePartyMonPokeballSprite(struct Pokemon *, struct PartyMenuBox *);
+//static void CreatePartyMonPokeballSprite(struct Pokemon *, struct PartyMenuBox *);
 static void CreatePartyMonIconSprite(struct Pokemon *, struct PartyMenuBox *, u32);
 static void CreatePartyMonStatusSprite(struct Pokemon *, struct PartyMenuBox *);
 static u8 CreateSmallPokeballButtonSprite(u8, u8);
 static void DrawCancelConfirmButtons(void);
-static u8 CreatePokeballButtonSprite(u8, u8);
+//static u8 CreatePokeballButtonSprite(u8, u8);
 static void AnimateSelectedPartyIcon(u8, u8);
 static void PartyMenuStartSpriteAnim(u8, u8);
 static u8 GetPartyBoxPaletteFlags(u8, u8);
@@ -389,8 +389,8 @@ static void Task_SpinTradeYesNo(u8);
 static void Task_HandleSpinTradeYesNoInput(u8);
 static void Task_CancelAfterAorBPress(u8);
 static void DisplayFieldMoveExitAreaMessage(u8);
-static void DisplayCantUseFlashMessage(void);
-static void DisplayCantUseSurfMessage(void);
+//static void DisplayCantUseFlashMessage(void);
+//static void DisplayCantUseSurfMessage(void);
 static void Task_FieldMoveExitAreaYesNo(u8);
 static void Task_HandleFieldMoveExitAreaYesNoInput(u8);
 static void Task_FieldMoveWaitForFade(u8);
@@ -503,10 +503,10 @@ static void CursorCb_CatalogFan(u8);
 static void CursorCb_CatalogMower(u8);
 static void CursorCb_ChangeForm(u8);
 static void CursorCb_ChangeAbility(u8);
-static bool8 SetUpFieldMove_Surf(void);
-static bool8 SetUpFieldMove_Fly(void);
-static bool8 SetUpFieldMove_Waterfall(void);
-static bool8 SetUpFieldMove_Dive(void);
+//static bool8 SetUpFieldMove_Surf(void);
+//static bool8 SetUpFieldMove_Fly(void);
+//static bool8 SetUpFieldMove_Waterfall(void);
+//static bool8 SetUpFieldMove_Dive(void);
 void TryItemHoldFormChange(struct Pokemon *mon);
 static void ShowMoveSelectWindow(u8 slot);
 static void Task_HandleWhichMoveInput(u8 taskId);
@@ -4044,21 +4044,21 @@ static void Task_CancelAfterAorBPress(u8 taskId)
         CursorCb_Cancel1(taskId);
 }
 
-static void DisplayCantUseFlashMessage(void)
+/*static void DisplayCantUseFlashMessage(void)
 {
     if (FlagGet(FLAG_SYS_USE_FLASH) == TRUE)
         DisplayPartyMenuStdMessage(PARTY_MSG_ALREADY_IN_USE);
     else
         DisplayPartyMenuStdMessage(PARTY_MSG_CANT_USE_HERE);
-}
+}*/
 
-static void FieldCallback_Surf(void)
+/*static void FieldCallback_Surf(void)
 {
     gFieldEffectArguments[0] = GetCursorSelectionMonId();
     FieldEffectStart(FLDEFF_USE_SURF);
-}
+}*/
 
-static bool8 SetUpFieldMove_Surf(void)
+/*static bool8 SetUpFieldMove_Surf(void)
 {
     if (!CheckFollowerFlag(FOLLOWER_FLAG_CAN_SURF))
         return FALSE;
@@ -4070,17 +4070,17 @@ static bool8 SetUpFieldMove_Surf(void)
         return TRUE;
     }
     return FALSE;
-}
+}*/
 
-static void DisplayCantUseSurfMessage(void)
+/*static void DisplayCantUseSurfMessage(void)
 {
     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
         DisplayPartyMenuStdMessage(PARTY_MSG_ALREADY_SURFING);
     else
         DisplayPartyMenuStdMessage(PARTY_MSG_CANT_SURF_HERE);
-}
+}*/
 
-static bool8 SetUpFieldMove_Fly(void)
+/*static bool8 SetUpFieldMove_Fly(void)
 {
     if (!CheckFollowerFlag(FOLLOWER_FLAG_CAN_LEAVE_ROUTE))
         return FALSE;
@@ -4089,20 +4089,20 @@ static bool8 SetUpFieldMove_Fly(void)
         return TRUE;
     else
         return FALSE;
-}
+}*/
 
 void CB2_ReturnToPartyMenuFromFlyMap(void)
 {
     InitPartyMenu(PARTY_MENU_TYPE_FIELD, PARTY_LAYOUT_SINGLE, PARTY_ACTION_CHOOSE_MON, TRUE, PARTY_MSG_CHOOSE_MON, Task_HandleChooseMonInput, CB2_ReturnToFieldWithOpenMenu);
 }
 
-static void FieldCallback_Waterfall(void)
+/*static void FieldCallback_Waterfall(void)
 {
     gFieldEffectArguments[0] = GetCursorSelectionMonId();
     FieldEffectStart(FLDEFF_USE_WATERFALL);
-}
+}*/
 
-static bool8 SetUpFieldMove_Waterfall(void)
+/*static bool8 SetUpFieldMove_Waterfall(void)
 {
     s16 x, y;
 
@@ -4117,15 +4117,15 @@ static bool8 SetUpFieldMove_Waterfall(void)
         return TRUE;
     }
     return FALSE;
-}
+}*/
 
-static void FieldCallback_Dive(void)
+/*static void FieldCallback_Dive(void)
 {
     gFieldEffectArguments[0] = GetCursorSelectionMonId();
     FieldEffectStart(FLDEFF_USE_DIVE);
-}
+}*/
 
-static bool8 SetUpFieldMove_Dive(void)
+/*static bool8 SetUpFieldMove_Dive(void)
 {
     if (!CheckFollowerFlag(FOLLOWER_FLAG_CAN_DIVE))
         return FALSE;
@@ -4138,7 +4138,7 @@ static bool8 SetUpFieldMove_Dive(void)
         return TRUE;
     }
     return FALSE;
-}
+}*/
 
 static void CreatePartyMonIconSprite(struct Pokemon *mon, struct PartyMenuBox *menuBox, u32 slot)
 {
@@ -4335,29 +4335,29 @@ static void SpriteCB_HeldItem(struct Sprite *sprite)
         menuBox->pokeballSpriteId = CreateSprite(&sSpriteTemplate_MenuPokeball, menuBox->spriteCoords[6], menuBox->spriteCoords[7], 8);
 }*/
 
-static void CreatePartyMonPokeballSprite(struct Pokemon *mon, struct PartyMenuBox *menuBox)
+/*static void CreatePartyMonPokeballSprite(struct Pokemon *mon, struct PartyMenuBox *menuBox)
 {
     if (GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE)
         menuBox->pokeballSpriteId = CreateSprite(&sSpriteTemplate_MenuPokeball, menuBox->spriteCoords[6], menuBox->spriteCoords[7], 8);
-}
+}*/
 
-static void CreatePartyMonPokeballSpriteParameterized(u16 species, struct PartyMenuBox *menuBox)
+/*static void CreatePartyMonPokeballSpriteParameterized(u16 species, struct PartyMenuBox *menuBox)
 {
     if (species != SPECIES_NONE)
     {
         menuBox->pokeballSpriteId = CreateSprite(&sSpriteTemplate_MenuPokeball, menuBox->spriteCoords[6], menuBox->spriteCoords[7], 8);
         gSprites[menuBox->pokeballSpriteId].oam.priority = 0;
     }
-}
+}*/
 
-// For Cancel when Confirm isnt present
+/*For Cancel when Confirm isn't present
 static u8 CreatePokeballButtonSprite(u8 x, u8 y)
 {
     u8 spriteId = CreateSprite(&sSpriteTemplate_MenuPokeball, x, y, 8);
 
     gSprites[spriteId].oam.priority = 2;
     return spriteId;
-}
+}*/
 
 // For Confirm and Cancel when both are present
 static u8 CreateSmallPokeballButtonSprite(u8 x, u8 y)

@@ -19,8 +19,8 @@
 *.fwjpnfont
 sound/**/*.bin
 sound/songs/midi/*.s
-tools/agbcc
-tools/poryscript
+tools/poryscript/poryscript
+tools/flips/flips
 *.map
 *.bat
 *.dump
