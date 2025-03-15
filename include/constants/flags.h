@@ -1317,10 +1317,10 @@
 #define FLAG_ITEM_BKFORT_3F_ITEM1                                   0x4DF // Unused Flag
 #define FLAG_ITEM_BKFORT_3F_ITEM2                                   0x4E0 // Unused Flag
 #define FLAG_ITEM_BKFORT_3F_ITEM3                                   0x4E1 // Unused Flag
+#define FLAG_ITEM_DIGSITE_EARTH_TALISMAN                            0x4E2 // Unused Flag
+#define FLAG_ITEM_ALKHARID_FIRE_TALISMAN                            0x4E3 // Unused Flag
+#define FLAG_ITEM_DWARVENMINES_BODY_TALISMAN                        0x4E4 // Unused Flag
 
-#define FLAG_UNUSED_0x4E2                                           0x4E2 // Unused Flag
-#define FLAG_UNUSED_0x4E3                                           0x4E3 // Unused Flag
-#define FLAG_UNUSED_0x4E4                                           0x4E4 // Unused Flag
 #define FLAG_UNUSED_0x4E5                                           0x4E5 // Unused Flag
 #define FLAG_UNUSED_0x4E6                                           0x4E6 // Unused Flag
 #define FLAG_UNUSED_0x4E7                                           0x4E7 // Unused Flag

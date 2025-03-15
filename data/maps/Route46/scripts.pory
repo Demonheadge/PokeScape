@@ -85,3 +85,23 @@ script PLACEHOLDER_ITEM_DIGSITE_3
 	release
 	end
 }
+
+
+script ITEM_DIGSITE_EARTH_TALISMAN
+{
+    finditem(ITEM_TALISMAN_EARTH)
+    end
+}
+
+script ITEM_ALKHARID_FIRE_TALISMAN
+{
+    finditem(ITEM_TALISMAN_FIRE)
+    end
+}
+
+script ITEM_DWARVENMINES_BODY_TALISMAN
+{
+    finditem(ITEM_TALISMAN_BODY)
+    end
+}
+
