@@ -64,7 +64,7 @@ script NPC_WizardsTowerB1F_Sedridor{
         msgbox(format("Hello {PLAYER}, I heard from Ariane that you gave chase into Draynor Manor.\pIt's a shame that they got away but it cannot be helped.\pHere I would like you to have this for your troubles."))
         hidenamebox
         closemessage
-        giveitem(ITEM_SPIRIT_SHARD, 5)
+        giveitem(ITEM_SPIRIT_CHARM, 1)
         setvar(VAR_POKESCAPE_WIZARDS_TOWER_STATE, 11)
         release
         end

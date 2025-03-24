@@ -165,7 +165,7 @@ script LIGHTHOUSE_GUARD_2
 
 script BATTLE_LIGHTHOUSE_TRAINER_1
 {
-    trainerbattle_single(TRAINER_LIGHTHOUSE_TRAINER_1, format("I couldn't stop your friends before they forced their way upstairs, but I'll make sure I stop you!"),format("What do you mean you're not with them?"))
+    trainerbattle_single(TRAINER_LIGHTHOUSE_TRAINER_1, format("I couldn't stop your friends before they forced their way upstairs, but I'll make sure to stop you!"),format("What do you mean you're not with them?"))
     namebox ("Dave")
     msgbox(format("What do you mean you're not with them?"))
 	hidenamebox

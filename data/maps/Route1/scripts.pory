@@ -458,7 +458,7 @@ script MudbeardBattle{
 }
 
 script Route1FarmerBattle{
-    trainerbattle_single(TRAINER_FARMER_ROUTE1,format("Cor blimey what are ye doing on me lands!"),format("Its not really my lands yet."))
+    trainerbattle_single(TRAINER_FARMER_ROUTE1,format("Cor blimey what are ye doing on me lands!"),format("It's not really my lands yet."))
     //namebox ("John")
     msgbox("It's not really my lands yet.")
     hidenamebox
