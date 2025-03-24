@@ -2983,18 +2983,6 @@ static const struct SpriteFrameImage sPicTable_Guard_Varrock_1[] = {
     overworld_frame(gObjectEventPic_Guard_Varrock_1, 2, 4, 8),
 };
 
-static const struct SpriteFrameImage sPicTable_Guard_Varrock_2[] = {
-    overworld_frame(gObjectEventPic_Guard_Varrock_2, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Guard_Varrock_2, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Guard_Varrock_2, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Guard_Varrock_2, 2, 4, 3),
-    overworld_frame(gObjectEventPic_Guard_Varrock_2, 2, 4, 4),
-    overworld_frame(gObjectEventPic_Guard_Varrock_2, 2, 4, 5),
-    overworld_frame(gObjectEventPic_Guard_Varrock_2, 2, 4, 6),
-    overworld_frame(gObjectEventPic_Guard_Varrock_2, 2, 4, 7),
-    overworld_frame(gObjectEventPic_Guard_Varrock_2, 2, 4, 8),
-};
-
 static const struct SpriteFrameImage sPicTable_Guard_Varrock_3[] = {
     overworld_frame(gObjectEventPic_Guard_Varrock_3, 2, 4, 0),
     overworld_frame(gObjectEventPic_Guard_Varrock_3, 2, 4, 1),
@@ -5858,6 +5846,17 @@ static const struct SpriteFrameImage sPicTable_oddenstein[] = {
     overworld_frame(gObjectEventPic_oddenstein, 2, 4, 8),
 };
 
+static const struct SpriteFrameImage sPicTable_cabinboy[] = {
+    overworld_frame(gObjectEventPic_cabinboy, 2, 4, 0),
+    overworld_frame(gObjectEventPic_cabinboy, 2, 4, 1),
+    overworld_frame(gObjectEventPic_cabinboy, 2, 4, 2),
+    overworld_frame(gObjectEventPic_cabinboy, 2, 4, 3),
+    overworld_frame(gObjectEventPic_cabinboy, 2, 4, 4),
+    overworld_frame(gObjectEventPic_cabinboy, 2, 4, 5),
+    overworld_frame(gObjectEventPic_cabinboy, 2, 4, 6),
+    overworld_frame(gObjectEventPic_cabinboy, 2, 4, 7),
+    overworld_frame(gObjectEventPic_cabinboy, 2, 4, 8),
+};
 
 
 
@@ -5942,3 +5941,95 @@ static const struct SpriteFrameImage sPicTable_BaneOre[] = {
 };
 
 extern const struct SpriteFrameImage sPicTable_BallLight[];
+
+
+static const struct SpriteFrameImage sPicTable_sailing_1[] = {
+    overworld_frame(gObjectEventPic_sailing_1, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_1, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_1, 4, 4, 2),
+    overworld_frame(gObjectEventPic_sailing_1, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_1, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_1, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_1, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_1, 4, 4, 2),
+    overworld_frame(gObjectEventPic_sailing_1, 4, 4, 2),
+};
+static const struct SpriteFrameImage sPicTable_sailing_2[] = {
+    overworld_frame(gObjectEventPic_sailing_2, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_2, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_2, 4, 4, 2),
+    overworld_frame(gObjectEventPic_sailing_2, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_2, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_2, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_2, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_2, 4, 4, 2),
+    overworld_frame(gObjectEventPic_sailing_2, 4, 4, 2),
+};
+static const struct SpriteFrameImage sPicTable_sailing_3[] = {
+    overworld_frame(gObjectEventPic_sailing_3, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_3, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_3, 4, 4, 2),
+    overworld_frame(gObjectEventPic_sailing_3, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_3, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_3, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_3, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_3, 4, 4, 2),
+    overworld_frame(gObjectEventPic_sailing_3, 4, 4, 2),
+};
+static const struct SpriteFrameImage sPicTable_sailing_4[] = {
+    overworld_frame(gObjectEventPic_sailing_4, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_4, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_4, 4, 4, 2),
+    overworld_frame(gObjectEventPic_sailing_4, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_4, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_4, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_4, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_4, 4, 4, 2),
+    overworld_frame(gObjectEventPic_sailing_4, 4, 4, 2),
+};
+static const struct SpriteFrameImage sPicTable_sailing_5[] = {
+    overworld_frame(gObjectEventPic_sailing_5, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_5, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_5, 4, 4, 2),
+    overworld_frame(gObjectEventPic_sailing_5, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_5, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_5, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_5, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_5, 4, 4, 2),
+    overworld_frame(gObjectEventPic_sailing_5, 4, 4, 2),
+};
+static const struct SpriteFrameImage sPicTable_sailing_6[] = {
+    overworld_frame(gObjectEventPic_sailing_6, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_6, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_6, 4, 4, 2),
+    overworld_frame(gObjectEventPic_sailing_6, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_6, 4, 4, 0),
+    overworld_frame(gObjectEventPic_sailing_6, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_6, 4, 4, 1),
+    overworld_frame(gObjectEventPic_sailing_6, 4, 4, 2),
+    overworld_frame(gObjectEventPic_sailing_6, 4, 4, 2),
+};
+
+
+static const struct SpriteFrameImage sPicTable_Guard_Nude[] = {
+    obj_frame_tiles(gObjectEventPic_Guard_Nude),
+    obj_frame_tiles(gObjectEventPic_Guard_Nude),
+    obj_frame_tiles(gObjectEventPic_Guard_Nude),
+    obj_frame_tiles(gObjectEventPic_Guard_Nude),
+    obj_frame_tiles(gObjectEventPic_Guard_Nude),
+    obj_frame_tiles(gObjectEventPic_Guard_Nude),
+    obj_frame_tiles(gObjectEventPic_Guard_Nude),
+    obj_frame_tiles(gObjectEventPic_Guard_Nude),
+    obj_frame_tiles(gObjectEventPic_Guard_Nude),
+};
+static const struct SpriteFrameImage sPicTable_Guard_Varrock_2[] = {
+    obj_frame_tiles(gObjectEventPic_Guard_Varrock_2),
+    obj_frame_tiles(gObjectEventPic_Guard_Varrock_2),
+    obj_frame_tiles(gObjectEventPic_Guard_Varrock_2),
+    obj_frame_tiles(gObjectEventPic_Guard_Varrock_2),
+    obj_frame_tiles(gObjectEventPic_Guard_Varrock_2),
+    obj_frame_tiles(gObjectEventPic_Guard_Varrock_2),
+    obj_frame_tiles(gObjectEventPic_Guard_Varrock_2),
+    obj_frame_tiles(gObjectEventPic_Guard_Varrock_2),
+    obj_frame_tiles(gObjectEventPic_Guard_Varrock_2),
+};
