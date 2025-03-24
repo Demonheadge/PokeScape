@@ -584,6 +584,14 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_sandwich_la
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_evildave;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_eliteblack;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_oddenstein;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_cabinboy;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_sailing_1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_sailing_2;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_sailing_3;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_sailing_4;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_sailing_5;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_sailing_6;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Guard_Nude;
 
 //ORES
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CopperOre;
@@ -1180,6 +1188,14 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_EVIL_DAVE] =                     &gObjectEventGraphicsInfo_evildave,
     [OBJ_EVENT_GFX_ELITE_BLACK_KNIGHT] =            &gObjectEventGraphicsInfo_eliteblack,
     [OBJ_EVENT_GFX_ODDENSTEIN] =                    &gObjectEventGraphicsInfo_oddenstein,
+    [OBJ_EVENT_GFX_CABINBOY] =                      &gObjectEventGraphicsInfo_cabinboy,
+    [OBJ_EVENT_GFX_SAILING_1] =                     &gObjectEventGraphicsInfo_sailing_1,
+    [OBJ_EVENT_GFX_SAILING_2] =                     &gObjectEventGraphicsInfo_sailing_2,
+    [OBJ_EVENT_GFX_SAILING_3] =                     &gObjectEventGraphicsInfo_sailing_3,
+    [OBJ_EVENT_GFX_SAILING_4] =                     &gObjectEventGraphicsInfo_sailing_4,
+    [OBJ_EVENT_GFX_SAILING_5] =                     &gObjectEventGraphicsInfo_sailing_5,
+    [OBJ_EVENT_GFX_SAILING_6] =                     &gObjectEventGraphicsInfo_sailing_6,
+    [OBJ_EVENT_GFX_GUARD_NUDE] =                    &gObjectEventGraphicsInfo_Guard_Nude,
 
 //ORES 
 	[OBJ_EVENT_GFX_COPPER_ORE] =          		    &gObjectEventGraphicsInfo_CopperOre,

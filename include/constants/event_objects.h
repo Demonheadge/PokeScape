@@ -594,8 +594,17 @@
 #define OBJ_EVENT_GFX_EVIL_DAVE                 577
 #define OBJ_EVENT_GFX_ELITE_BLACK_KNIGHT        578
 #define OBJ_EVENT_GFX_ODDENSTEIN                579
+#define OBJ_EVENT_GFX_CABINBOY                  580
+#define OBJ_EVENT_GFX_SAILING_1                 581
+#define OBJ_EVENT_GFX_SAILING_2                 582
+#define OBJ_EVENT_GFX_SAILING_3                 583
+#define OBJ_EVENT_GFX_SAILING_4                 584
+#define OBJ_EVENT_GFX_SAILING_5                 585
+#define OBJ_EVENT_GFX_SAILING_6                 586
+#define OBJ_EVENT_GFX_GUARD_NUDE		        587
 
-#define NUM_OBJ_EVENT_GFX                       (OBJ_EVENT_GFX_ODDENSTEIN + 1)
+
+#define NUM_OBJ_EVENT_GFX                       (OBJ_EVENT_GFX_GUARD_NUDE + 1)
 // NOTE: By default, the max value for NUM_OBJ_EVENT_GFX is 239.
 //
 // Object event graphics ids are 1 byte in size (max value of 255), and the dynamic

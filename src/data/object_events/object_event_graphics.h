@@ -767,6 +767,14 @@ const u32 gObjectEventPic_sandwich_lady[] = INCBIN_U32("graphics/object_events/p
 const u32 gObjectEventPic_evildave[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/evildave.4bpp");
 const u32 gObjectEventPic_eliteblack[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/eliteblack.4bpp");
 const u32 gObjectEventPic_oddenstein[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/oddenstein.4bpp");
+const u32 gObjectEventPic_cabinboy[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/cabinboy.4bpp");
+const u32 gObjectEventPic_sailing_1[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/sailing_1.4bpp");
+const u32 gObjectEventPic_sailing_2[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/sailing_2.4bpp");
+const u32 gObjectEventPic_sailing_3[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/sailing_3.4bpp");
+const u32 gObjectEventPic_sailing_4[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/sailing_4.4bpp");
+const u32 gObjectEventPic_sailing_5[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/sailing_5.4bpp");
+const u32 gObjectEventPic_sailing_6[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/sailing_6.4bpp");
+const u32 gObjectEventPic_Guard_Nude[] = INCBIN_U32("graphics/object_events/pics/pokescape_overworlds/guard_nude.4bpp");
 
 //POKESCAPE PALETTES
 /*
@@ -1033,6 +1041,7 @@ const u16 gObjectEventPalette_Hairdresser[] = INCBIN_U16("graphics/object_events
 const u16 gObjectEventPalette_DUNGEONEERING_2[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/dungeoneering_2.gbapal");
 const u16 gObjectEventPalette_GREYPAL[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/greypalette.gbapal");
 const u16 gObjectEventPalette_ELITEBLACK[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/eliteblack_palette.gbapal");
+const u16 gObjectEventPalette_SAILING[] = INCBIN_U16("graphics/object_events/palettes/PokeScape_Palettes/sailing.gbapal");
 
 
 /*
