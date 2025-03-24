@@ -232,7 +232,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_BARGE_GUARD",
       "flag": "0"
     },
     {
@@ -240,12 +240,12 @@
       "x": 20,
       "y": 22,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 5,
+      "movement_range_y": 5,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_DIGSITE_WORKER_1",
       "flag": "0"
     },
     {
@@ -258,7 +258,7 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_DIGSITE_STUDENT",
       "flag": "0"
     },
     {
@@ -297,20 +297,20 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_DIGSITE_ARCHAEOLOGIST_1",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GNOME_CHILD",
-      "x": 4,
+      "x": 5,
       "y": 12,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 3,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_CAPTAIN_ERRDO",
       "flag": "0"
     },
     {
@@ -336,8 +336,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_DIGSITE_ITEM_2",
+      "flag": "FLAG_ITEM_DIGSITE_ITEM_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -362,8 +362,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_DIGSITE_ITEM_1",
+      "flag": "FLAG_ITEM_DIGSITE_ITEM_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
@@ -375,8 +375,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "ITEM_DIGSITE_ITEM_3",
+      "flag": "FLAG_ITEM_DIGSITE_ITEM_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -403,6 +403,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MINER",
+      "x": 26,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_WORKER_BLOCK",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ARCHAEOLOGIST",
+      "x": 15,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NPC_ARCHAEOLOGIST_BLOCK",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -418,7 +444,142 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 15,
+      "y": 27,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SIGN_DIGSITE_LEVEL_3"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SIGN_DIGSITE_LEVEL_2"
+    },
+    {
+      "type": "sign",
+      "x": 29,
+      "y": 24,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SIGN_DIGSITE_LEVEL_1"
+    },
+    {
+      "type": "sign",
+      "x": 27,
+      "y": 31,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SIGN_DIGSITE_LEVEL_0"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 19,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SIGN_DIGSITE_MISC"
+    },
+    {
+      "type": "sign",
+      "x": 35,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DIGSITE_ANIMAL_SKULLS"
+    },
+    {
+      "type": "sign",
+      "x": 26,
+      "y": 23,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DIGSITE_ANIMAL_SKULLS"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DIGSITE_ANIMAL_BONES"
+    },
+    {
+      "type": "sign",
+      "x": 35,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DIGSITE_ANIMAL_BONES"
+    },
+    {
+      "type": "sign",
+      "x": 33,
+      "y": 16,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DIGSITE_ANIMAL_BONES"
+    },
+    {
+      "type": "sign",
+      "x": 33,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DIGSITE_ANIMAL_BONES"
+    },
+    {
+      "type": "sign",
+      "x": 15,
+      "y": 26,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DIGSITE_ANIMAL_BONES"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 28,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DIGSITE_ANIMAL_BONES"
+    },
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 32,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DIGSITE_ANIMAL_BONES"
+    },
+    {
+      "type": "sign",
+      "x": 15,
+      "y": 31,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DIGSITE_ANIMAL_BONES"
+    },
+    {
+      "type": "sign",
+      "x": 25,
+      "y": 28,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DIGSITE_ANIMAL_BONES"
+    },
+    {
+      "type": "sign",
+      "x": 26,
+      "y": 24,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "DIGSITE_ANIMAL_BONES"
+    }
   ],
   "has_night_table": false
 }

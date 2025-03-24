@@ -1,0 +1,181 @@
+mapscripts Digsite_MapScripts {
+
+}
+
+//NPCs
+
+script NPC_WORKER_BLOCK
+{
+	lock
+	faceplayer
+    namebox ("Worker")
+	msgbox(format("Sorry, this ladder is off limits.\pSomeone fell down it and broke their leg, so we are waiting on a health and safety assessment before we let anyone else down there.\p{PAUSE15}Yes, that also means we have to wait until we can rescue them!"))
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DIGSITE_WORKER_1
+{
+	lock
+	faceplayer
+    namebox ("Worker")
+	msgbox(format("...{PAUSE15}Hey, what happened to the animal skull I found earlier!{PAUSE15}And my specimen brush!\pDo these pockets have holes in them?"))
+    hidenamebox
+	release
+	end
+}
+
+script NPC_ARCHAEOLOGIST_BLOCK
+{
+	lock
+	faceplayer
+    namebox ("Archaeologist")
+	msgbox(format("I'm sorry adventurer.\pWithout a certificate showing that you have passed level 3 in your Earth Science exams, I cannot possibly let you into this excavation site.\pIt's for experienced archaeologists only!"))
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DIGSITE_ARCHAEOLOGIST_1
+{
+	lock
+	faceplayer
+    namebox ("Archaeologist")
+	msgbox(format("Did you know that during the Second Age, this area was once known as Senntisten?\pIt was thought to be the capital of the Zarosian Empire.\pSome adventurer stumbled upon an ancient talisman and stone tablet in the ruins beneath us, so now we are excavating the site to see what else we can find!"))
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DIGSITE_ARCHAEOLOGIST_2
+{
+	lock
+	faceplayer
+    namebox ("Archaeologist")
+	msgbox(format("I am a Cupholder."))
+    hidenamebox
+	release
+	end
+}
+
+script NPC_BARGE_GUARD
+{
+	lock
+	faceplayer
+    namebox ("Barge Guard")
+	msgbox(format("I am afraid the barge is already on its way to Fossil Island.\pPlease come back later.\p{PAUSE15}Also, no sailing in the canal!\pIt must be kept clear for the barge!"))
+    hidenamebox
+	release
+	end
+}
+
+script NPC_CAPTAIN_ERRDO
+{
+	lock
+	faceplayer
+    namebox ("Capt. Errdo")
+	msgbox(format("How embarassing...\pThere was a bit of a technical issue when attempting to land and, well, I don't think I can fix this.\pIt looks like I'll be heading back by foot!"))
+    hidenamebox
+	release
+	end
+}
+
+script NPC_DIGSITE_STUDENT
+{
+	lock
+	faceplayer
+    namebox ("Student")
+	msgbox(format("I lost my teddy.\pThey were my lucky mascot...\p{PAUSE15}But then I caught a really cool monster I've never seen before, so maybe they can be my new lucky mascot instead!"))
+    hidenamebox
+	release
+	end
+}
+
+//SIGNS
+
+script SIGN_DIGSITE_LEVEL_0
+{
+	lock
+	msgbox(format("Training digs.\pPlease remember your trowel."))
+	release
+	end
+}
+
+script SIGN_DIGSITE_LEVEL_1
+{
+	lock
+	msgbox(format("Level 1 digs.\pLeather gloves and boots must be worn at all times."))
+	release
+	end
+}
+
+script SIGN_DIGSITE_LEVEL_2
+{
+	lock
+	msgbox(format("Level 2 digs.\pFor rock pick use ONLY!"))
+	release
+	end
+}
+
+script SIGN_DIGSITE_LEVEL_3
+{
+	lock
+	msgbox(format("Level 3 digs.\pPlease clean any samples found, and only carry them in specimen jars.\pAdditional jars can be collected from the Exam Centre."))
+	release
+	end
+}
+
+script SIGN_DIGSITE_MISC
+{
+	lock
+	msgbox(format("Whatever was previously on the sign has hasilty been painted over and now reads: SENNTISTEN DIGSITE.\pExperienced archaeologists ONLY!"))
+	release
+	end
+}
+
+//ITEMS
+
+script ITEM_DIGSITE_ITEM_1
+{
+    finditem(ITEM_TM_SHADOW_BONE)
+    end
+}
+
+script ITEM_DIGSITE_ITEM_2
+{
+    finditem(ITEM_BOOK_OF_ZAROS)
+    end
+}
+
+script ITEM_DIGSITE_ITEM_3
+{
+    finditem(ITEM_SPIRIT_CHARM)
+    end
+}
+
+script DIGSITE_ANIMAL_SKULLS
+{
+	lock
+	msgbox(format("It is a fragile looking animal skull.\pYou're worried it may be damaged if handled without the proper equipment and decide to leave it alone."))
+	release
+	end
+}
+
+script DIGSITE_ANIMAL_BONES {
+    lock
+    random(4)
+    switch (var(VAR_RESULT)) {
+        case 0: 
+            msgbox(format("You don't have any of the proper equipment for handling old bones.\pBetter leave these for the professionals."))
+        case 1: 
+            msgbox(format("Unfortunately, the pile of bones is not a skeleton in disguise waiting to battle.\pHow boring."))
+        case 2: 
+            msgbox(format("These bones look ancient.\pYou decide not to touch them, just in case they're cursed."))
+        case 3: 
+            msgbox(format("It belongs in a museum!"))
+    }
+    closemessage
+    release
+    end
+}

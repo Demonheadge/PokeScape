@@ -357,7 +357,16 @@ script JUNA_TOXIC_WATER{
 
 
 
-
+script JUNA_PLACEHOLDER
+{
+    lock
+    namebox ("Juna")
+    msgbox(format("Oh...\pan adventurer...\pI have been waiting here three thousand years, guarding the Tears of Guthix.\pI serve my master faithfully, but I am bored and you are the first person I have seen in so very long...\pCome back when you have experienced more of the world, and tell me...\pa story..."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
 
 
 
