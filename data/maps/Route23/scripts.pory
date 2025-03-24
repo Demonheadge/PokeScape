@@ -82,7 +82,13 @@ script TRIGGER_STORYMODE_EVENT_ROUTE23 {
     removeobject(19)
     removeobject(20)
 
-	applymovement(18, Movement_STORY_R23_1)
+	getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+    if (var(VAR_TEMP_1) == 30) {
+		applymovement(18, Movement_STORY_R23_1_left)
+	}
+	elif (var(VAR_TEMP_1) == 31) {
+		applymovement(18, Movement_STORY_R23_1_right)
+	}
 	waitmovement(0)
 
 	namebox("Tiffy Cashien")
@@ -133,11 +139,19 @@ script TRIGGER_STORYMODE_EVENT_ROUTE23 {
 	end
 }
 
-movement Movement_STORY_R23_1 {
+movement Movement_STORY_R23_1_right {
 	face_down
 	emote_exclamation_mark
 	delay_16 * 2
 	walk_down * 2
+}
+movement Movement_STORY_R23_1_left {
+	face_down
+	emote_exclamation_mark
+	delay_16 * 2
+	walk_down * 2
+	walk_left
+	face_down
 }
 
 movement Movement_STORY_R23_2 {
@@ -178,7 +192,7 @@ movement movement_WHITEKNIGHTEXIT_3 //far left knight
 movement movement_WHITEKNIGHTEXIT_4 //sir owen
 {
 	face_down
-	delay_8
+	delay_16 * 2
 	walk_down
 	face_right
 	walk_right * 3

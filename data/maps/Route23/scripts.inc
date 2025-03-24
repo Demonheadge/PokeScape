@@ -79,12 +79,22 @@ ROUTE23_STATE_7:
 
 TRIGGER_STORYMODE_EVENT_ROUTE23::
 	lockall
+	applymovement 19, movement_WHITEKNIGHTEXIT_1
+	applymovement 16, movement_WHITEKNIGHTEXIT_2
+	applymovement 20, movement_WHITEKNIGHTEXIT_3
+	applymovement 17, movement_WHITEKNIGHTEXIT_4
+	waitmovement 0
 	setflag FLAG_TEMP_1D
 	removeobject 16
 	removeobject 17
 	removeobject 19
 	removeobject 20
-	applymovement 18, Movement_STORY_R23_1
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	compare VAR_TEMP_1, 30
+	goto_if_eq TRIGGER_STORYMODE_EVENT_ROUTE23_2
+	compare VAR_TEMP_1, 31
+	goto_if_eq TRIGGER_STORYMODE_EVENT_ROUTE23_3
+TRIGGER_STORYMODE_EVENT_ROUTE23_1:
 	waitmovement 0
 	namebox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_0
 	msgbox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_1
@@ -103,28 +113,121 @@ TRIGGER_STORYMODE_EVENT_ROUTE23::
 	msgbox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_4
 	hidenamebox
 	closemessage
+	applymovement 18, Movement_STORY_R23_2
+	waitmovement 0
 	namebox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_0
 	msgbox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_5
 	hidenamebox
 	closemessage
+	applymovement 18, Movement_STORY_R23_3
+	waitmovement 0
 	namebox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_0
 	msgbox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_6
 	hidenamebox
 	closemessage
+	applymovement 18, Movement_STORY_R23_4
+	waitmovement 0
 	setflag FLAG_TEMP_1F
 	removeobject 18
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 170
 	releaseall
 	end
 
+TRIGGER_STORYMODE_EVENT_ROUTE23_2:
+	applymovement 18, Movement_STORY_R23_1_left
+	goto TRIGGER_STORYMODE_EVENT_ROUTE23_1
 
-Movement_STORY_R23_1:
+TRIGGER_STORYMODE_EVENT_ROUTE23_3:
+	applymovement 18, Movement_STORY_R23_1_right
+	goto TRIGGER_STORYMODE_EVENT_ROUTE23_1
+
+
+Movement_STORY_R23_1_right:
 	face_down
 	emote_exclamation_mark
 	delay_16
 	delay_16
 	walk_down
 	walk_down
+	step_end
+
+Movement_STORY_R23_1_left:
+	face_down
+	emote_exclamation_mark
+	delay_16
+	delay_16
+	walk_down
+	walk_down
+	walk_left
+	face_down
+	step_end
+
+Movement_STORY_R23_2:
+	face_up
+	step_end
+
+Movement_STORY_R23_3:
+	face_down
+	step_end
+
+Movement_STORY_R23_4:
+	face_up
+	walk_up
+	walk_up
+	face_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+movement_WHITEKNIGHTEXIT_1:
+	face_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+movement_WHITEKNIGHTEXIT_2:
+	face_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+movement_WHITEKNIGHTEXIT_3:
+	face_right
+	walk_right
+	walk_right
+	walk_right
+	face_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+movement_WHITEKNIGHTEXIT_4:
+	face_down
+	delay_16
+	delay_16
+	walk_down
+	face_right
+	walk_right
+	walk_right
+	walk_right
+	face_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	step_end
 
 ENCOUNTER_PENGUIN_ROCK_ROUTE23::
@@ -460,13 +563,13 @@ TRIGGER_STORYMODE_EVENT_ROUTE23_Text_1:
 	.string "What brings you here?$"
 
 TRIGGER_STORYMODE_EVENT_ROUTE23_Text_2:
-	.string "A black knight?\p"
-	.string "Well what a coincidence, Sir Owen and\n"
-	.string "the Temple knights are currently\l"
-	.string "investigating just that.\p"
-	.string "Say why don't you join them.\p"
+	.string "A Black Knight?\p"
+	.string "Well, what a coincidence! Sir Owen and\n"
+	.string "the Temple Knights are currently\l"
+	.string "investigating just that dontchaknow.\p"
+	.string "Say, why don't you join them.\p"
 	.string "I'll contact them using my handy\n"
-	.string "Comm-Orb and let them know you will be\l"
+	.string "Commorb and let them know you will be\l"
 	.string "joining them.$"
 
 TRIGGER_STORYMODE_EVENT_ROUTE23_Text_3:
@@ -474,7 +577,7 @@ TRIGGER_STORYMODE_EVENT_ROUTE23_Text_3:
 	.string "have one.$"
 
 TRIGGER_STORYMODE_EVENT_ROUTE23_Text_4:
-	.string "That Comm-Orb will allow us to\n"
+	.string "That Commorb will allow us to\n"
 	.string "communicate across great distances\l"
 	.string "and provide you with our support.$"
 
@@ -486,8 +589,9 @@ TRIGGER_STORYMODE_EVENT_ROUTE23_Text_5:
 TRIGGER_STORYMODE_EVENT_ROUTE23_Text_6:
 	.string "I am on my way back to Falador.\p"
 	.string "Remember if you need anything just use\n"
-	.string "the Comm-Orb to contact me.\p"
-	.string "Goodbye {PLAYER}.$"
+	.string "the Commorb to contact me.\p"
+	.string "Jolly good to see you again {PLAYER}.\p"
+	.string "Ta-ta for now!$"
 
 ENCOUNTER_PENGUIN_ROCK_ROUTE23_Text_0:
 	.string "Penguin$"

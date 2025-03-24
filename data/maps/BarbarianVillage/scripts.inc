@@ -494,7 +494,7 @@ BARBARIANVILLAGE_STORYMODE_EVENT_Text_2:
 	.string "ladder.$"
 
 BARBARIANVILLAGE_STORYMODE_EVENT_Text_3:
-	.string "Who was that they werent allowed in\n"
+	.string "Who was that, they weren't allowed in\n"
 	.string "there!$"
 
 NPC_BARB_BLOCKADE_1_Text_0:

@@ -725,6 +725,8 @@ const u8 *const gItemEffectTable[ITEMS_COUNT] =
     [ITEM_VANILLA_MILK]		            = gItemEffect_EvoItem,
     [ITEM_STRAWBERRY_MILK]              = gItemEffect_EvoItem,
     [ITEM_CHOCOLATE_MILK]               = gItemEffect_EvoItem,
+    [ITEM_BANANA]                       = gItemEffect_EvoItem,
+    
 
     // Medicine
     [ITEM_BREAD]                        = gItemEffect_Potion,

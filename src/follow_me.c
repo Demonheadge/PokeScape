@@ -157,11 +157,22 @@ void FollowMe_TryRemoveFollowerOnWhiteOut(void)
 {
     if (gSaveBlock2Ptr->follower.inProgress)
     {
-        if (gSaveBlock2Ptr->follower.flags & FOLLOWER_FLAG_CLEAR_ON_WHITE_OUT)
+        if (gSaveBlock2Ptr->follower.flags & FOLLOWER_FLAG_CLEAR_ON_WHITE_OUT) {
             gSaveBlock2Ptr->follower.inProgress = FALSE;
+            PartnerBattle_TryRemovePartnerBattleOnWhiteOut(); //Clear the partner battle.
+        }
         else
             FollowMe_WarpSetEnd();
     }
+    else {
+        PartnerBattle_TryRemovePartnerBattleOnWhiteOut(); //Clear the partner battle.
+    }
+}
+
+void PartnerBattle_TryRemovePartnerBattleOnWhiteOut(void)
+{
+    FlagClear(FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES);
+    FlagClear(FLAG_PARTNER_BATTLE);
 }
 
 static u8 GetFollowerMapObjId(void)

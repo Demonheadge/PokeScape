@@ -42,8 +42,16 @@ script TRIGGER_STORYMODE_EVENT_ROUTE27 {
     msgbox(format("Oh {PLAYER}, that was quick.\pSir Tiffy Cashien just informed me by Commorb that you were tagging along on this mission."))
     closemessage
     hidenamebox
-	applymovement (SIR_OWEN_ID,movement_SIR_OWEN_2)
-	waitmovement (0)
+
+    getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+    if (var(VAR_TEMP_2) == 30) {
+		applymovement (SIR_OWEN_ID,movement_SIR_OWEN_2_up)
+	}
+	elif (var(VAR_TEMP_2) == 31) {
+		applymovement (SIR_OWEN_ID,movement_SIR_OWEN_2_down)
+	}
+	waitmovement(0)
+
     namebox ("Sir Owen")
     msgbox(format("Let's go, we must make haste to Ice Mountain."))
     closemessage
@@ -68,8 +76,13 @@ movement movement_SIR_OWEN_1
 	face_left
 }
 
-movement movement_SIR_OWEN_2
+movement movement_SIR_OWEN_2_up
 {
+	walk_left
+}
+movement movement_SIR_OWEN_2_down
+{
+    walk_down
 	walk_left
 }
 

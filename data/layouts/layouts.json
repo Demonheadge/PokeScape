@@ -8437,7 +8437,7 @@
       "width": 40,
       "height": 36,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_AlKharid",
       "border_filepath": "data/layouts/Digsite/border.bin",
       "blockdata_filepath": "data/layouts/Digsite/map.bin"
     },

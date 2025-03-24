@@ -218,6 +218,7 @@ BLACK_KNIGHT_QUIZ_7_5:
 
 
 BKFORT_2F_NPC_1::
+	lock
 	faceplayer
 	namebox BKFORT_2F_NPC_1_Text_0
 	msgbox BKFORT_2F_NPC_1_Text_1
@@ -228,6 +229,7 @@ BKFORT_2F_NPC_1::
 
 
 BKFORT_2F_NPC_2::
+	lock
 	faceplayer
 	namebox BLACK_KNIGHT_QUIZ_4_Text_0
 	msgbox BKFORT_2F_NPC_2_Text_0
@@ -238,6 +240,7 @@ BKFORT_2F_NPC_2::
 
 
 BKFORT_2F_NPC_3::
+	lock
 	faceplayer
 	namebox BLACK_KNIGHT_QUIZ_4_Text_0
 	msgbox BKFORT_2F_NPC_3_Text_0
@@ -248,6 +251,7 @@ BKFORT_2F_NPC_3::
 
 
 BKFORT_2F_NPC_4::
+	lock
 	faceplayer
 	namebox BKFORT_2F_NPC_4_Text_0
 	msgbox BKFORT_2F_NPC_4_Text_1
@@ -258,6 +262,7 @@ BKFORT_2F_NPC_4::
 
 
 BKFORT_2F_NPC_5::
+	lock
 	faceplayer
 	namebox BKFORT_2F_NPC_5_Text_0
 	msgbox BKFORT_2F_NPC_5_Text_1
@@ -268,6 +273,7 @@ BKFORT_2F_NPC_5::
 
 
 BKFORT_2F_NPC_6::
+	lock
 	faceplayer
 	namebox BKFORT_2F_NPC_6_Text_0
 	msgbox BKFORT_2F_NPC_6_Text_1
@@ -278,6 +284,7 @@ BKFORT_2F_NPC_6::
 
 
 BKFORT_2F_NPC_7::
+	lock
 	faceplayer
 	namebox BLACK_KNIGHT_QUIZ_3_Text_0
 	msgbox BKFORT_2F_NPC_7_Text_0
@@ -288,6 +295,7 @@ BKFORT_2F_NPC_7::
 
 
 BKFORT_2F_NPC_8::
+	lock
 	faceplayer
 	namebox BLACK_KNIGHT_QUIZ_4_Text_0
 	msgbox BKFORT_2F_NPC_8_Text_0
@@ -298,6 +306,7 @@ BKFORT_2F_NPC_8::
 
 
 BKFORT_2F_NPC_9::
+	lock
 	faceplayer
 	namebox BLACK_KNIGHT_QUIZ_4_Text_0
 	msgbox BKFORT_2F_NPC_9_Text_0
@@ -308,6 +317,7 @@ BKFORT_2F_NPC_9::
 
 
 BKFORT_2F_NPC_10::
+	lock
 	faceplayer
 	namebox BLACK_KNIGHT_QUIZ_4_Text_0
 	msgbox BKFORT_2F_NPC_10_Text_0
@@ -318,6 +328,7 @@ BKFORT_2F_NPC_10::
 
 
 BKFORT_2F_NPC_11::
+	lock
 	faceplayer
 	namebox BKFORT_2F_NPC_4_Text_0
 	msgbox BKFORT_2F_NPC_11_Text_0
@@ -328,6 +339,7 @@ BKFORT_2F_NPC_11::
 
 
 BKFORT_2F_NPC_12::
+	lock
 	faceplayer
 	namebox BKFORT_2F_NPC_4_Text_0
 	msgbox BKFORT_2F_NPC_12_Text_0
@@ -338,6 +350,7 @@ BKFORT_2F_NPC_12::
 
 
 BKFORT_2F_NPC_13::
+	lock
 	faceplayer
 	namebox BKFORT_2F_NPC_13_Text_0
 	msgbox BKFORT_2F_NPC_13_Text_1
@@ -348,6 +361,7 @@ BKFORT_2F_NPC_13::
 
 
 BKFORT_2F_NPC_14::
+	lock
 	faceplayer
 	namebox BKFORT_2F_NPC_14_Text_0
 	msgbox BKFORT_2F_NPC_14_Text_1
@@ -358,6 +372,7 @@ BKFORT_2F_NPC_14::
 
 
 BKFORT_2F_NPC_15::
+	lock
 	faceplayer
 	namebox BKFORT_2F_NPC_5_Text_0
 	msgbox BKFORT_2F_NPC_15_Text_0
@@ -368,6 +383,7 @@ BKFORT_2F_NPC_15::
 
 
 BKFORT_2F_NPC_16::
+	lock
 	faceplayer
 	namebox BLACK_KNIGHT_QUIZ_3_Text_0
 	msgbox BKFORT_2F_NPC_16_Text_0
@@ -378,6 +394,7 @@ BKFORT_2F_NPC_16::
 
 
 BKFORT_2F_NPC_17::
+	lock
 	faceplayer
 	namebox BKFORT_2F_NPC_6_Text_0
 	msgbox BKFORT_2F_NPC_17_Text_0
@@ -388,6 +405,7 @@ BKFORT_2F_NPC_17::
 
 
 BKFORT_2F_NPC_18::
+	lock
 	faceplayer
 	namebox BKFORT_2F_NPC_6_Text_0
 	msgbox BKFORT_2F_NPC_18_Text_0
@@ -398,6 +416,7 @@ BKFORT_2F_NPC_18::
 
 
 BKFORT_2F_NPC_19::
+	lock
 	faceplayer
 	namebox BKFORT_2F_NPC_19_Text_0
 	msgbox BKFORT_2F_NPC_19_Text_1
@@ -408,6 +427,7 @@ BKFORT_2F_NPC_19::
 
 
 BKFORT_2F_NPC_20::
+	lock
 	faceplayer
 	namebox BLACK_KNIGHT_QUIZ_4_Text_0
 	msgbox BKFORT_2F_NPC_20_Text_0

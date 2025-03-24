@@ -1822,7 +1822,7 @@ NEWSLETTER_4_Text_1:
 	.string "Be careful as Wyrms are buried deep\n"
 	.string "within the sands!\p"
 	.string "They change type depending on their\n"
-	.string "enviorment.\p"
+	.string "environment.\p"
 	.string "Some say you can force these changes\n"
 	.string "to happen with magic.\p"
 	.string "I shall continue to track them.\n"
@@ -1899,12 +1899,21 @@ NEWSLETTER_8_Text_1:
 
 NEWSLETTER_9_Text_0:
 	.string "Newsletter Volume 9.\n"
-	.string "???.\p"
+	.string "Mysterious Strangers.\p"
 	.string "Would you like to read it?$"
 
 NEWSLETTER_9_Text_1:
-	.string "?\p"
-	.string "- ???$"
+	.string "Mysterious figures have been spotted\n"
+	.string "in and around Potterington Farm!\p"
+	.string "There are rumours circulating that they\n"
+	.string "possess some kind of magical ability\l"
+	.string "and only make themselves visible to\l"
+	.string "adventurers with specific monsters in\l"
+	.string "their parties.\p"
+	.string "What are these monsters?\p"
+	.string "Nobody knows for certain, but\n"
+	.string "apparently one of the mysterious\l"
+	.string "visitors really, really likes hats...$"
 
 NEWSLETTER_13_Text_0:
 	.string "Newsletter Volume 13.\p"
@@ -2221,7 +2230,7 @@ CHECK_FOLLOWER_SIROWEN_Text_1:
 SetFollower_SirOwen_Text_0:
 	.string "What do you say me and you team up and\n"
 	.string "show these Black Knights just what we\l"
-	.string "are made off?$"
+	.string "are made of?$"
 
 SetFollower_SirOwen_Text_1:
 	.string "Lead the charge!\n"
@@ -2232,7 +2241,7 @@ SetFollower_SirOwen_Text_2:
 
 SetFollower_SirOwen_Text_3:
 	.string "Oh… I see.\n"
-	.string "Thats a big dissapointing.\p"
+	.string "That's a bit disappointing.\p"
 	.string "Thought we had a heroic thing going\n"
 	.string "here…$"
 

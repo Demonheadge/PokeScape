@@ -110,6 +110,7 @@ BLACK_KNIGHT_QUIZ_2_5:
 
 
 BKFORT_DOG::
+	lock
 	faceplayer
 	msgbox BKFORT_DOG_Text_0
 	closemessage
@@ -118,6 +119,7 @@ BKFORT_DOG::
 
 
 BKFORT_1F_NPC_1::
+	lock
 	faceplayer
 	namebox BKFORT_1F_NPC_1_Text_0
 	msgbox BKFORT_1F_NPC_1_Text_1

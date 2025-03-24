@@ -17,6 +17,11 @@
       "map": "MAP_ROUTE46",
       "offset": 7,
       "direction": "left"
+    },
+    {
+      "map": "MAP_DIGSITE",
+      "offset": -29,
+      "direction": "left"
     }
   ],
   "object_events": [
