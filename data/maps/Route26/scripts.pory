@@ -41,6 +41,7 @@ script ROUTE26_STATE {
 
 script TRIGGER_STORYMODE_EVENT_ROUTE26 {
 	lockall
+    applymovement (OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
     applymovement (13, Movement_InteractFACEDOWN)
     waitmovement(0)
 	namebox("Sir Owen")
@@ -58,6 +59,7 @@ script TRIGGER_STORYMODE_EVENT_ROUTE26 {
     }
     msgbox(format("Let us fight him fairly then!"))
 	applymovement (13, MOVEMENT_FACE_UP)
+    setflag(FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES)
     setflag(FLAG_PARTNER_BATTLE)
     setvar (VAR_PARTNER_TRAINER, TRAINER_SIR_OWEN_1)
 	setvar (VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_OWEN)
@@ -76,7 +78,7 @@ script TRIGGER_STORYMODE_EVENT_ROUTE26 {
 	msgbox(format("Lead the charge!\nSir Owen Sonde is on your side!"))
 	waitfanfare
 	closemessage
-	setflag(FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES)
+	
     loadword(0, FOLLOWING_SirOwen)
 	setfollower(13, 0x80)
 	namebox("Sir Owen")

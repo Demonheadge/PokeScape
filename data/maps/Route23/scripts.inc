@@ -89,7 +89,12 @@ TRIGGER_STORYMODE_EVENT_ROUTE23::
 	removeobject 17
 	removeobject 19
 	removeobject 20
-	applymovement 18, Movement_STORY_R23_1
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	compare VAR_TEMP_1, 30
+	goto_if_eq TRIGGER_STORYMODE_EVENT_ROUTE23_2
+	compare VAR_TEMP_1, 31
+	goto_if_eq TRIGGER_STORYMODE_EVENT_ROUTE23_3
+TRIGGER_STORYMODE_EVENT_ROUTE23_1:
 	waitmovement 0
 	namebox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_0
 	msgbox TRIGGER_STORYMODE_EVENT_ROUTE23_Text_1
@@ -128,14 +133,33 @@ TRIGGER_STORYMODE_EVENT_ROUTE23::
 	releaseall
 	end
 
+TRIGGER_STORYMODE_EVENT_ROUTE23_2:
+	applymovement 18, Movement_STORY_R23_1_left
+	goto TRIGGER_STORYMODE_EVENT_ROUTE23_1
 
-Movement_STORY_R23_1:
+TRIGGER_STORYMODE_EVENT_ROUTE23_3:
+	applymovement 18, Movement_STORY_R23_1_right
+	goto TRIGGER_STORYMODE_EVENT_ROUTE23_1
+
+
+Movement_STORY_R23_1_right:
 	face_down
 	emote_exclamation_mark
 	delay_16
 	delay_16
 	walk_down
 	walk_down
+	step_end
+
+Movement_STORY_R23_1_left:
+	face_down
+	emote_exclamation_mark
+	delay_16
+	delay_16
+	walk_down
+	walk_down
+	walk_left
+	face_down
 	step_end
 
 Movement_STORY_R23_2:
@@ -192,7 +216,8 @@ movement_WHITEKNIGHTEXIT_3:
 
 movement_WHITEKNIGHTEXIT_4:
 	face_down
-	delay_8
+	delay_16
+	delay_16
 	walk_down
 	face_right
 	walk_right

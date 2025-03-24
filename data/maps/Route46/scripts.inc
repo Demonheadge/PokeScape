@@ -77,6 +77,21 @@ PLACEHOLDER_ITEM_DIGSITE_3::
 	end
 
 
+ITEM_DIGSITE_EARTH_TALISMAN::
+	finditem ITEM_TALISMAN_EARTH
+	end
+
+
+ITEM_ALKHARID_FIRE_TALISMAN::
+	finditem ITEM_TALISMAN_FIRE
+	end
+
+
+ITEM_DWARVENMINES_BODY_TALISMAN::
+	finditem ITEM_TALISMAN_BODY
+	end
+
+
 BATTLE_ROUTE_46_TRAINER_1_Text_0:
 	.string "You won't believe what happened!\p"
 	.string "Whilst excavating nearby, I found the\n"

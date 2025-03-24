@@ -47,7 +47,12 @@ TRIGGER_STORYMODE_EVENT_ROUTE27::
 	msgbox TRIGGER_STORYMODE_EVENT_ROUTE27_Text_2
 	closemessage
 	hidenamebox
-	applymovement 7, movement_SIR_OWEN_2
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	compare VAR_TEMP_2, 30
+	goto_if_eq TRIGGER_STORYMODE_EVENT_ROUTE27_2
+	compare VAR_TEMP_2, 31
+	goto_if_eq TRIGGER_STORYMODE_EVENT_ROUTE27_3
+TRIGGER_STORYMODE_EVENT_ROUTE27_1:
 	waitmovement 0
 	namebox TRIGGER_STORYMODE_EVENT_ROUTE27_Text_0
 	msgbox TRIGGER_STORYMODE_EVENT_ROUTE27_Text_3
@@ -66,12 +71,25 @@ TRIGGER_STORYMODE_EVENT_ROUTE27::
 	releaseall
 	end
 
+TRIGGER_STORYMODE_EVENT_ROUTE27_2:
+	applymovement 7, movement_SIR_OWEN_2_up
+	goto TRIGGER_STORYMODE_EVENT_ROUTE27_1
+
+TRIGGER_STORYMODE_EVENT_ROUTE27_3:
+	applymovement 7, movement_SIR_OWEN_2_down
+	goto TRIGGER_STORYMODE_EVENT_ROUTE27_1
+
 
 movement_SIR_OWEN_1:
 	face_left
 	step_end
 
-movement_SIR_OWEN_2:
+movement_SIR_OWEN_2_up:
+	walk_left
+	step_end
+
+movement_SIR_OWEN_2_down:
+	walk_down
 	walk_left
 	step_end
 
