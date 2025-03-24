@@ -74,7 +74,7 @@ NPC_WizardsTowerB1F_Sedridor_2:
 	msgbox NPC_WizardsTowerB1F_Sedridor_Text_1
 	hidenamebox
 	closemessage
-	giveitem ITEM_SPIRIT_SHARD, 5
+	giveitem ITEM_SPIRIT_CHARM, 1
 	setvar VAR_POKESCAPE_WIZARDS_TOWER_STATE, 11
 	release
 	end

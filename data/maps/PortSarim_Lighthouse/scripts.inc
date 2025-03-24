@@ -313,7 +313,7 @@ LIGHTHOUSE_GUARD_2_Text_1:
 BATTLE_LIGHTHOUSE_TRAINER_1_Text_0:
 	.string "I couldn't stop your friends before\n"
 	.string "they forced their way upstairs, but I'll\l"
-	.string "make sure I stop you!$"
+	.string "make sure to stop you!$"
 
 BATTLE_LIGHTHOUSE_TRAINER_1_Text_1:
 	.string "What do you mean you're not with them?$"
