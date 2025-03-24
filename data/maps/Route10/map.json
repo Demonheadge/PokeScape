@@ -200,6 +200,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NPC_PORTSARIM_BLOCKADE_HAM_2",
       "flag": "FLAG_TEMP_1F"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_KNIGHT_WHITE_M",
+      "x": 12,
+      "y": 24,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ROUTE10_SirAcknis",
+      "flag": "0"
     }
   ],
   "warp_events": [
