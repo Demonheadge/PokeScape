@@ -218,8 +218,9 @@ DraynorManor_HAM_GRUNT_7:
 	msgbox DraynorManor_HAM_GRUNT_Text_14
 	hidenamebox
 	closemessage
+	trainerbattle_no_intro TRAINER_DRAYNORMANOR_HAM, DraynorManor_HAM_GRUNT_Text_15
 	namebox DraynorManor_HAM_GRUNT_Text_11
-	msgbox DraynorManor_HAM_GRUNT_Text_15
+	msgbox DraynorManor_HAM_GRUNT_Text_16
 	hidenamebox
 	closemessage
 	applymovement 11, Movement_DraynorManor_Chase_16
@@ -247,7 +248,7 @@ DraynorManor_HAM_GRUNT_7:
 	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACEDOWN
 	waitmovement 0
 	namebox DraynorManor_HAM_GRUNT_Text_0
-	msgbox DraynorManor_HAM_GRUNT_Text_16
+	msgbox DraynorManor_HAM_GRUNT_Text_17
 	hidenamebox
 	closemessage
 	setflag FLAG_TEMP_1E
@@ -268,18 +269,18 @@ DraynorManor_HAM_GRUNT_6:
 DraynorManor_HAM_GRUNT_14:
 	waitmovement 0
 	namebox DraynorManor_HAM_GRUNT_Text_0
-	msgbox DraynorManor_HAM_GRUNT_Text_17
+	msgbox DraynorManor_HAM_GRUNT_Text_18
 	hidenamebox
 	closemessage
 	namebox DraynorManor_HAM_GRUNT_Text_11
-	msgbox DraynorManor_HAM_GRUNT_Text_18
+	msgbox DraynorManor_HAM_GRUNT_Text_19
 	hidenamebox
 	closemessage
 	playse SE_WALL_HIT
 	applymovement 18, Movement_DraynorManor_Chase_23
 	waitmovement 0
 	namebox DraynorManor_HAM_GRUNT_Text_0
-	msgbox DraynorManor_HAM_GRUNT_Text_19
+	msgbox DraynorManor_HAM_GRUNT_Text_20
 	hidenamebox
 	closemessage
 	setflag FLAG_TEMP_1E
@@ -1346,7 +1347,7 @@ BATTLE_DRAYNORMANOR_Trainer_7::
 
 
 BATTLE_DRAYNORMANOR_Trainer_8::
-	trainerbattle_single TRAINER_DRAYNOR_MANOR_SKELETON_8, DraynorManor_HAM_GRUNT_Text_19, BATTLE_DRAYNORMANOR_Trainer_8_Text_0
+	trainerbattle_single TRAINER_DRAYNOR_MANOR_SKELETON_8, DraynorManor_HAM_GRUNT_Text_20, BATTLE_DRAYNORMANOR_Trainer_8_Text_0
 	msgbox BATTLE_DRAYNORMANOR_Trainer_8_Text_1
 	hidenamebox
 	release
@@ -1434,25 +1435,28 @@ DraynorManor_HAM_GRUNT_Text_14:
 	.string "Now get out of my way!$"
 
 DraynorManor_HAM_GRUNT_Text_15:
+	.string "No way…\pTwo against one is just not fair…$"
+
+DraynorManor_HAM_GRUNT_Text_16:
 	.string "You both are really scary.\p"
 	.string "But I am more afraid of what my bosses\n"
 	.string "will do to me if I don't deliver these\l"
 	.string "goods!\p"
 	.string "So I will risk it all!$"
 
-DraynorManor_HAM_GRUNT_Text_16:
+DraynorManor_HAM_GRUNT_Text_17:
 	.string "He ran off again, is that all he can do?\p"
 	.string "Let's check back downstairs.$"
 
-DraynorManor_HAM_GRUNT_Text_17:
+DraynorManor_HAM_GRUNT_Text_18:
 	.string "This is becoming quite tiresome.\p"
 	.string "Would you just stop and hand over the\n"
 	.string "book you stole?$"
 
-DraynorManor_HAM_GRUNT_Text_18:
+DraynorManor_HAM_GRUNT_Text_19:
 	.string "No I must escape!$"
 
-DraynorManor_HAM_GRUNT_Text_19:
+DraynorManor_HAM_GRUNT_Text_20:
 	.string "…$"
 
 HAM_EVENT_DRAYNORMANOR_1F_Text_0:
@@ -1498,7 +1502,7 @@ FOLLOWING_Ariane_Text_2:
 	.string "Eww… it stinks of old oil cans down here.$"
 
 FOLLOWING_Ariane_Text_3:
-	.string "This place is 2spooky4me!$"
+	.string "This place really gives me the creeps!$"
 
 FOLLOWING_Ariane_Text_4:
 	.string "Where do you think the pink guy went?$"

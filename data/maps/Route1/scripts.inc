@@ -383,7 +383,7 @@ MudbeardBattle::
 
 Route1FarmerBattle::
 	trainerbattle_single TRAINER_FARMER_ROUTE1, Route1FarmerBattle_Text_0, Route1FarmerBattle_Text_1
-	msgbox Route1FarmerBattle_Text_2
+	msgbox Route1FarmerBattle_Text_1
 	hidenamebox
 	release
 	return
@@ -1056,9 +1056,6 @@ Route1FarmerBattle_Text_0:
 	.string "lands!$"
 
 Route1FarmerBattle_Text_1:
-	.string "Its not really my lands yet.$"
-
-Route1FarmerBattle_Text_2:
 	.string "It's not really my lands yet.$"
 
 FeetfingersBattle_Text_0:

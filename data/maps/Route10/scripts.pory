@@ -96,7 +96,7 @@ script ROUTE10_WhiteKnight_2
     end
 }
 
-script ROUTE10_SirAcknis
+script ROUTE10_WhiteKnight_3
 {
     lock
     faceplayer
@@ -109,67 +109,30 @@ script ROUTE10_SirAcknis
 }
 
 script ROUTE10_SirAcknis {
+    lock
+    faceplayer
+    namebox("Sir Acknis")
     random(7)
-        switch (var(VAR_RESULT)) {
-            case 0: 
-                lock
-    		faceplayer
-		namebox("Sir Acknis")
-                msgbox(format("Have you heard of Sir Owen Sonde?\pWhen he was young, his mother was captured by a Kinshra raiding party.\pDespite being so young, he tried to protect her and got a scar in the process..\pHis bravery inspired me to become a White Knight myself!"))
-                hidenamebox
-		release
-		end
-            case 1: 
-                lock
-    		faceplayer
-		namebox("Sir Acknis")
-                msgbox(format("Our leader, Sir Amik Varze, also manages the Kingdom of Asgarnia.\pHow he has time to run the Falador gym too is beyond me!"))
-                hidenamebox
-		release
-		end
-            case 2: 
-                lock
-    		faceplayer
-		namebox("Sir Acknis")
-                msgbox(format("There was a White Knight called Sir Theodore who grew up south-west of here in Rimmington.\pNobody is quite sure what happened to him though."))
-                hidenamebox
-		release
-		end
-            case 3: 
-                lock
-    		faceplayer
-		namebox("Sir Acknis")
-                msgbox(format("If you're ever in Falador, please visit the park.\pOur head of recruitment can be found sitting on a bench there, drinking cups of tea.\pI've never seen anybody refill his cup though...\pI wonder if it's enchanted..."))
-                hidenamebox
-		release
-	    end
-             case 4: 
-                lock
-    		faceplayer
-		namebox("Sir Acknis")
-                msgbox(format("You can tell what rank a White Knight is by the colour cloth on our armour.\pFor example, mine is blue because I am a Partisan.\pWe also have some Proselytes with us today for training and their cloth is yellow."))
-                hidenamebox
-		release
-		end
-            case 5: 
-                lock
-    		faceplayer
-		namebox("Sir Acknis")
-                msgbox(format("Our armourer, Sir Vyvin, lost his eye to some lunatic that lived in the Wilderness while defending Falador!\pSupposedly they fought with sharp teeth and nails rather than monsters!"))
-                hidenamebox
-		release
-		end
-            case 6: 
-                lock
-    		faceplayer
-		namebox("Sir Acknis")
-                msgbox(format("The Herald, Sir Renitee, focuses more on people's family heritage and painting now than anything combat related.\pNow that I think about it, I'm not even sure how that makes him qualified to be a White Knight..."))
-                hidenamebox
-		release
-		end
-        }
-	release
-	end
+    switch (var(VAR_RESULT)) {
+        case 0: 
+            msgbox(format("Have you heard of Sir Owen Sonde?\pWhen he was young, his mother was captured by a Kinshra raiding party.\pDespite being so young, he tried to protect her and got a scar in the process..\pHis bravery inspired me to become a White Knight myself!"))
+        case 1: 
+            msgbox(format("Our leader, Sir Amik Varze, also manages the Kingdom of Asgarnia.\pHow he has time to run the Falador gym too is beyond me!"))
+        case 2: 
+            msgbox(format("There was a White Knight called Sir Theodore who grew up south-west of here in Rimmington.\pNobody is quite sure what happened to him though."))
+        case 3: 
+            msgbox(format("If you're ever in Falador, please visit the park.\pOur head of recruitment can be found sitting on a bench there, drinking cups of tea.\pI've never seen anybody refill his cup though...\pI wonder if it's enchanted..."))
+            case 4: 
+            msgbox(format("You can tell what rank a White Knight is by the colour cloth on our armour.\pFor example, mine is blue because I am a Partisan.\pWe also have some Proselytes with us today for training and their cloth is yellow."))
+        case 5: 
+            msgbox(format("Our armourer, Sir Vyvin, lost his eye to some lunatic that lived in the Wilderness while defending Falador!\pSupposedly they fought with sharp teeth and nails rather than monsters!"))
+        case 6: 
+            msgbox(format("The Herald, Sir Renitee, focuses more on people's family heritage and painting now than anything combat related.\pNow that I think about it, I'm not even sure how that makes him qualified to be a White Knight..."))
+    }
+    hidenamebox
+    closemessage
+    release
+    end
 }
 
 
