@@ -4835,7 +4835,7 @@
       "id": "LAYOUT_ROUTE14",
       "name": "Route14_Layout",
       "width": 20,
-      "height": 66,
+      "height": 34,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
       "secondary_tileset": "gTileset_Varrock",
       "border_filepath": "data/layouts/Route14/border.bin",
@@ -5144,10 +5144,10 @@
     {
       "id": "LAYOUT_ROUTE36",
       "name": "Route36_Layout",
-      "width": 10,
-      "height": 10,
+      "width": 20,
+      "height": 32,
       "primary_tileset": "gTileset_PokeScapeOutdoors",
-      "secondary_tileset": "gTileset_Falador",
+      "secondary_tileset": "gTileset_Lumbridge",
       "border_filepath": "data/layouts/Route36/border.bin",
       "blockdata_filepath": "data/layouts/Route36/map.bin"
     },
