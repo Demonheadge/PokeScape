@@ -7124,8 +7124,8 @@
     {
       "id": "LAYOUT_BARB_STRONGHOLD_B4F",
       "name": "Barb_Stronghold_B4F_Layout",
-      "width": 30,
-      "height": 20,
+      "width": 48,
+      "height": 40,
       "primary_tileset": "gTileset_PokeScapeCaves",
       "secondary_tileset": "gTileset_PokeScapeCaves_Extra_1",
       "border_filepath": "data/layouts/Barb_Stronghold_B4F/border.bin",
