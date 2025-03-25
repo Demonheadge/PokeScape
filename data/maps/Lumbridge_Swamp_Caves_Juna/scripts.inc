@@ -370,8 +370,34 @@ JUNA_TOXIC_WATER::
 	end
 
 
+JUNA_PLACEHOLDER::
+	lock
+	namebox JUNA_PLACEHOLDER_Text_0
+	msgbox JUNA_PLACEHOLDER_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 JUNA_POOL_ALL_FLAGS_Text_0:
 	.string "BEEP BOOP.$"
 
 JUNA_TOXIC_WATER_Text_0:
 	.string "This water is too toxic to pass.$"
+
+JUNA_PLACEHOLDER_Text_0:
+	.string "Juna$"
+
+JUNA_PLACEHOLDER_Text_1:
+	.string "Oh...\p"
+	.string "an adventurer...\p"
+	.string "I have been waiting here three\n"
+	.string "thousand years, guarding the Tears of\l"
+	.string "Guthix.\p"
+	.string "I serve my master faithfully, but I am\n"
+	.string "bored and you are the first person I\l"
+	.string "have seen in so very long...\p"
+	.string "Come back when you have experienced\n"
+	.string "more of the world, and tell me...\p"
+	.string "a story...$"

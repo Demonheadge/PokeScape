@@ -9,7 +9,7 @@ script NPC_WORKER_BLOCK
 	lock
 	faceplayer
     namebox ("Worker")
-	msgbox(format("Sorry, this ladder is off limits.\pSomeone fell down it and broke their leg, so we are waiting on a health and safety assessment before we let anyone else down there.\p{PAUSE15}Yes, that also means we have to wait until we can rescue them!"))
+	msgbox(format("Sorry, this ladder is off limits.\pSomeone fell down it and broke their leg, so we are waiting on a health and safety assessment before we let anyone else down there.\p{PAUSE 15}Yes, that also means we have to wait until we can rescue them!"))
     hidenamebox
 	release
 	end
@@ -20,7 +20,7 @@ script NPC_DIGSITE_WORKER_1
 	lock
 	faceplayer
     namebox ("Worker")
-	msgbox(format("...{PAUSE15}Hey, what happened to the animal skull I found earlier!{PAUSE15}And my specimen brush!\pDo these pockets have holes in them?"))
+	msgbox(format("...{PAUSE 15}Hey, what happened to the animal skull I found earlier!{PAUSE 15}And my specimen brush!\pDo these pockets have holes in them?"))
     hidenamebox
 	release
 	end
@@ -64,7 +64,7 @@ script NPC_BARGE_GUARD
 	lock
 	faceplayer
     namebox ("Barge Guard")
-	msgbox(format("I am afraid the barge is already on its way to Fossil Island.\pPlease come back later.\p{PAUSE15}Also, no sailing in the canal!\pIt must be kept clear for the barge!"))
+	msgbox(format("I am afraid the barge is already on its way to Fossil Island.\pPlease come back later.\p{PAUSE 15}Also, no sailing in the canal!\pIt must be kept clear for the barge!"))
     hidenamebox
 	release
 	end
@@ -86,7 +86,7 @@ script NPC_DIGSITE_STUDENT
 	lock
 	faceplayer
     namebox ("Student")
-	msgbox(format("I lost my teddy.\pThey were my lucky mascot...\p{PAUSE15}But then I caught a really cool monster I've never seen before, so maybe they can be my new lucky mascot instead!"))
+	msgbox(format("I lost my teddy.\pThey were my lucky mascot...\p{PAUSE 15}But then I caught a really cool monster I've never seen before, so maybe they can be my new lucky mascot instead!"))
     hidenamebox
 	release
 	end

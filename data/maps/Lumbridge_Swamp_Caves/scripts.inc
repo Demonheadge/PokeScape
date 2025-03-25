@@ -140,6 +140,17 @@ BATTLE_LUMBRIDGESWAMPCAVE_6::
 	end
 
 
+LUMBRIDGESWAMPCAVE_ZANIK::
+	lock
+	faceplayer
+	namebox LUMBRIDGESWAMPCAVE_ZANIK_Text_0
+	msgbox LUMBRIDGESWAMPCAVE_ZANIK_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 LumbridgeSwampCaves_WallBeasts_Text_0:
 	.string "Something jumps out of the wall towards\n"
 	.string "you!$"
@@ -208,3 +219,11 @@ BATTLE_LUMBRIDGESWAMPCAVE_6_Text_0:
 
 BATTLE_LUMBRIDGESWAMPCAVE_6_Text_1:
 	.string "Kill all the slimes!!$"
+
+LUMBRIDGESWAMPCAVE_ZANIK_Text_0:
+	.string "Zanik$"
+
+LUMBRIDGESWAMPCAVE_ZANIK_Text_1:
+	.string "I'm afraid that it's too dangerous for\n"
+	.string "humans to take this route.\p"
+	.string "Only goblins are able to pass through!$"

@@ -217,7 +217,7 @@ NPC_WizardsTowerB1F_Sedridor_Text_7:
 	.string "How interesting!\p"
 	.string "I wonder if the other altars are like\n"
 	.string "that…\p"
-	.string "If its not too much trouble would you\n"
+	.string "If it's not too much trouble would you\n"
 	.string "be able to go and investigate the other\l"
 	.string "altars for me?\p"
 	.string "There is information on their locations\n"
@@ -261,11 +261,11 @@ BOOK_ALTAR_LOCATIONS_Text_3:
 BOOK_ALTAR_LOCATIONS_Text_4:
 	.string "The barbarians in Gunnars Ground often\n"
 	.string "appear to be using rune stone as\l"
-	.string "wheatstones to polish their swords.\p"
+	.string "whetstones to polish their swords.\p"
 	.string "Where are they getting these from?$"
 
 BOOK_ALTAR_LOCATIONS_Text_5:
 	.string "It would make sense that with the\n"
-	.string "amount of stones in the Alkharidian\l"
+	.string "amount of stones in the Kharidian\l"
 	.string "desert there may be an altar located\l"
 	.string "within this region.$"

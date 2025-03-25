@@ -90,6 +90,17 @@ NPC_DWARVENMINES_NPC7::
 	end
 
 
+NPC_DWARVENMINES_ENGINEER::
+	lock
+	faceplayer
+	namebox NPC_DWARVENMINES_ENGINEER_Text_0
+	msgbox NPC_DWARVENMINES_ENGINEER_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 GeneralStore_DWARVENMINES::
 	lock
 	faceplayer
@@ -178,6 +189,17 @@ NPC_DWARVENMINES_NPC7_Text_0:
 	.string "Time for work again already?\p"
 	.string "Ugh, no, please...\p"
 	.string "Just five more minutes in bed!$"
+
+NPC_DWARVENMINES_ENGINEER_Text_0:
+	.string "Engineer$"
+
+NPC_DWARVENMINES_ENGINEER_Text_1:
+	.string "It's hard work repairing these\n"
+	.string "multicannons all day long.\p"
+	.string "I don't know why they only run for 25\n"
+	.string "minutes at a time before they break!\p"
+	.string "Dwarven engineering usually is much\n"
+	.string "more reliable than that, I swear..!$"
 
 GeneralStore_DWARVENMINES_Text_0:
 	.string "Clerk$"
