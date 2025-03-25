@@ -47,6 +47,11 @@
       "map": "MAP_ROUTE22",
       "offset": 48,
       "direction": "up"
+    },
+    {
+      "map": "MAP_ROUTE36",
+      "offset": 2,
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -364,8 +369,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
-      "x": 30,
-      "y": 23,
+      "x": 32,
+      "y": 22,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -494,10 +499,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILING_6",
-      "x": 76,
-      "y": 5,
+      "x": 70,
+      "y": 10,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_DOWN_AND_UP",
+      "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
       "movement_range_x": 8,
       "movement_range_y": 8,
       "trainer_type": "TRAINER_TYPE_NONE",
