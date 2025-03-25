@@ -1127,7 +1127,17 @@ script NPC_RAVEN_TRAINING
 	end
 }
 
-
+script NPC_LUMBRIDGE_REGIONEVOS
+{
+	lock
+	faceplayer
+    namebox ("Newb")
+	msgbox(format("Woah, did you know that some monsters evolve into different things depending on where in Gielinor they are?"))
+    hidenamebox
+	closemessage
+	release
+	end
+}
 
 
 //-----------------------------------------------------------------------

@@ -977,3 +977,46 @@ movement ANUBTOT_3 {
 	walk_right * 6 
 	walk_up * 6 
 }
+
+
+//Graveyard
+
+script Lumbridge_GRAVEYARD_SIGN_1
+{
+	lock
+	msgbox(format("RIP 'Thick Lum'.\pGone before its time."))
+	release
+	end
+}
+
+script Lumbridge_GRAVEYARD_SIGN_2
+{
+	lock
+	msgbox(format("The grave is simply marked with the letter 'J'.\pThere is a tattered scroll with the number 17 written on it, along with a bloody harpoon.\pYou decide it's best to leave that alone..."))
+	release
+	end
+}
+
+script Lumbridge_GRAVEYARD_SIGN_3
+{
+	lock
+	msgbox(format("Lumbridge Graveyard.\pPlease respect the graves while searching for monsters."))
+	release
+	end
+}
+
+script Lumbridge_GRAVEYARD_SIGN_4
+{
+	lock
+	msgbox(format("In loving memory of Duchess Oriana of Lumbridge."))
+	release
+	end
+}
+
+script Lumbridge_GRAVEYARD_SIGN_5
+{
+	lock
+	msgbox(format("Note to adventurers.\pThe restless ghost has been released from the world, and the mausoleum is now closed off to the public."))
+	release
+	end
+}

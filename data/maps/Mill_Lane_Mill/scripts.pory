@@ -115,7 +115,7 @@ script Trainer1_MillLaneMill_Battle
 {
     trainerbattle_double(TRAINER_TRAINER1_MILLLANEMILL, format("Have you seen any Kebbits around here?"),format("I need to get a higher hunting level…"),format("I would love to have a double battle with you."))
     namebox ("Kebbie")
-    msgbox(format("Since you beat me, I'll tell you a little about what I've read about Kebbits.\pThe ones around here apparently evolve at level 15.\pIf they have higher speed than defence, then they'll evolve into Wild Kebbits.\pIf they have higher speed than defence, then they'll evolve into Spotted Kebbits.\pAnd if both of those stats are the same, they'll evolve into Polar Kebbits.\pI need to train Hunter more to learn about how they evolve from there, though."))
+    msgbox(format("If you want to know more about Kebbits, try speaking to my mentor.\pHe should be around here somewhere."))
     hidenamebox
     release
     end
@@ -237,5 +237,40 @@ script PURO_PURO_EVENT_MILL_LANE_MILL {
 
 
 
+	
+script MODEST_SAMUEL_Battle
+{
+    trainerbattle_single(TRAINER_MODESTSAMUEL, format("Oh, sorry, I was looking around here for a new friend to add to my party.\pDid you want to battle?"),format("It doesn't matter that we lost.\pMy monsters did their best!"))
+    namebox ("Samuel")
+    msgbox(format("Win or lose, I'll always battle with my favourite monsters."))
+    hidenamebox
+    release
+    end
+}
 
-			
+script MILL_LANE_MILL_HUNTER_NPC {
+    lock
+    faceplayer
+    namebox("Chymp")
+    random(7)
+    switch (var(VAR_RESULT)) {
+        case 0: 
+            msgbox(format("The kebbits you can catch around here evolve at level 15.\pIf they have higher speed than defence, then they'll evolve into Wild Kebbits.\pIf they have higher speed than defence, then they'll evolve into Spotted Kebbits.\pAnd if both of those stats are the same, they'll evolve into Polar Kebbits.\p"))
+        case 1: 
+            msgbox(format("I really, really love Kebbits!\pI'm happy to share my knowledge with you if you want to keep talking."))
+        case 2: 
+            msgbox(format("Did you know that there are 15 different types of kebbits?\pThey're all NORMAL type, but sometimes when they evolve they gain a secondary typing.\pYou'll have to discover those for yourself!"))
+        case 3: 
+            msgbox(format("If you teach a Barbed Kebbit a POISON move, it starts to look very ill.\pI love Kebbits too much to do it myself."))
+        case 4: 
+            msgbox(format("Desert Devil Kebbits LOVE chocolate.\pIf you feed them something chocolatey, they'll evolve into a very unique type of Kebbit."))
+        case 5: 
+            msgbox(format("Prickly Kebbits have different evolutions depending on whether you level them up during the day or at night.\pTry it out and see which type you prefer."))
+        case 6: 
+            msgbox(format("Spotted and Wild Kebbits evolve more quickly than Polar Kebbits.\pKeep this in mind when training yours up."))
+    }
+    hidenamebox
+    closemessage
+    release
+    end
+}

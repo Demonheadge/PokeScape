@@ -88,7 +88,7 @@ script ITEM_AsgarnianDungeon_5
 script BATTLE_AsgarnianDungeon_MUGGER_1
 {
     trainerbattle_single(TRAINER_AsgarnianDungeon_MUGGER_1, format("No I will not return the gp I just pickpocketed from you."),format("Fine here, have your gp back."))
-    namebox ("IWill4StealU")
+    namebox ("Robert")
     msgbox(format("Not many people come down here due the dangerous monsters further in."))
 	hidenamebox
     release

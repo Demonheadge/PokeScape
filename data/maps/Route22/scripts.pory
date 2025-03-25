@@ -13,3 +13,21 @@ script BATTLE_ROUTE22_TRAINER_1
     release
 	end
 }
+
+script BATTLE_ROUTE22_TRAINER_2
+{
+    trainerbattle_single(TRAINER_ROUTE22_TRAINER_2, format("I flew here on the back of an eagle to hunt the local wildlife!"),format("Were you not impressed?"))
+    namebox ("Quaffle8")
+    msgbox(format("Now, uh, how do I call the eagle back..?\pIt has flown away and I don't know how to swim."))
+	hidenamebox
+    release
+	end
+}
+
+//ITEMS
+
+script ITEM_ROUTE22
+{
+    finditem(ITEM_POUCH_RUNE)
+    end
+}
