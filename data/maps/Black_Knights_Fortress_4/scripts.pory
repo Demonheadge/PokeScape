@@ -1,7 +1,31 @@
 mapscripts Black_Knights_Fortress_4_MapScripts {
 
+    MAP_SCRIPT_ON_LOAD {
+        call(STORYMODE_STATE_BKFORT_4F)
+        }
+
 }
 
+script STORYMODE_STATE_BKFORT_4F {
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 192) {                        //check if they have already interacted with the middle Knights 
+        setflag(FLAG_TEMP_1E)                                                  //if yes, this script gets rid of the ones in the middle and spawns the ones in the moved position
+        removeobject(7)                                                        //Right Black Knight before it has moved
+        removeobject(8)                                                        //Left Black Knight before it has moved
+        addobject(19)                                                          //Right Black Knight after it has moved
+        addobject(20)                                                          //Left Black Knight after it has moved
+        setobjectxyperm(19, 20, 21)
+        setobjectxyperm(20, 10, 21)
+        special(DrawWholeMapView)
+    }
+    else {                                                                     //if not, it removes the Knights in the moved position
+        setflag(FLAG_TEMP_1E) 
+        removeobject(19)                                                       //Right Black Knight after it has moved
+        removeobject(20)                                                       //Left Black Knight after it has moved
+        setobjectxyperm(19, 20, 21)
+        setobjectxyperm(20, 10, 21)
+        special(DrawWholeMapView)
+    }
+}
 
 //NPCS
 
@@ -29,48 +53,47 @@ script BKFORT_4F_NPC_2
     end
 }
 
-script BKFORT_4F_NPC_3
+script BKFORT_4F_NPC_3 //Left middle Black Knight
 {
     lock
     faceplayer
     namebox ("Black Knight")
-    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    msgbox(format("I'm not even supposed to have duty on this floor today, but someone was sick.\pI'm no good at battling.\pJust leave me here to admire this candlestick and pretend you never saw me."))
     closemessage
     hidenamebox
     release
     end
 }
 
-script BKFORT_4F_NPC_4
+script BKFORT_4F_NPC_4 //Right middle Black Knight
 {
     lock
-    faceplayer
     namebox ("Black Knight")
-    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    msgbox(format("Please don't look at me.\pI don't want any trouble.\pI am just going to look in these boxes, and if anybody asks you snuck past me..."))
     closemessage
     hidenamebox
     release
     end
 }
 
-script BKFORT_4F_NPC_5
+script BKFORT_4F_NPC_5 //Left Black Knight in front of treasure room
 {
     lock
     faceplayer
     namebox ("Black Knight")
-    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    msgbox(format("In this room are all the treasures that we've stolen from raids we've been on over the years.\pIf you take them from us, then that makes you thieves too!"))
     closemessage
     hidenamebox
     release
     end
 }
 
-script BKFORT_4F_NPC_6
+script BKFORT_4F_NPC_6 //Right Black Knight in front of treasure room
 {
     lock
     faceplayer
     namebox ("Black Knight")
-    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    msgbox(format("Back up will be here soon and they'll stop you!\p{PAUSE15}They are coming, right..?"))
     closemessage
     hidenamebox
     release
@@ -223,4 +246,343 @@ script ITEM_BKFORT_4F_ITEM6
 {
     finditem(ITEM_POUCH_BLACK)
     end
+}
+
+//WIP
+
+script TRIGGER_BLACK_KNIGHT_4F_1 {
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 187) {                        //check storymode var, if less than post fight then enable 
+        lockall
+        applymovement(11, MOVEMENT_WALK_DOWN)                                  // moves Elite Knight forward one step to player and Sir Owen
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)                                    //check where player is so Sir Owen walks to the correct place
+        if (var(VAR_TEMP_1) == 15) {
+		applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_STORY_BKFORT_4F_1_right) //move Sir Owen to be beside the player
+	    }
+        if (var(VAR_TEMP_1) == 16) {
+		applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_STORY_BKFORT_4F_1_left)  //move Sir Owen to be beside the player
+	    }
+	    elif (var(VAR_TEMP_1) == 17) {
+		applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_STORY_BKFORT_4F_1_left)  //move Sir Owen to be beside the player
+	    }
+        waitmovement(0)
+        namebox("Black Knight")
+        msgbox(format("The knights on the lower floors may not be the most intelligent, but I see right through your disguises.\pThere's no need to pretend anymore, you won't be making it past me to our Lord."))
+        closemessage
+        hidenamebox
+        call(CAUGHT_BY_BLACK_KNIGHTS_FINAL)
+        playbgm(MUS_PS_ENCOUNTER_KNIGHTS, FALSE)
+        trainerbattle_no_intro(TRAINER_BLACKKNIGHT_ELITE_2, msgbox(format("…")))
+		setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 190)
+        releaseall
+        end
+        }
+	else {                                                                     //try to make sure it doesn't trigger after the fight has already been done 
+		end
+		}
+}
+
+movement Movement_STORY_BKFORT_4F_1_left {
+	face_left
+    walk_left
+    face_up
+    walk_up
+}
+
+movement Movement_STORY_BKFORT_4F_1_right {
+	face_right
+    walk_right
+    face_up
+    walk_up
+}
+
+script CAUGHT_BY_BLACK_KNIGHTS_FINAL
+{
+    //changes outfits
+    applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACEPLAYER)
+    facefollower
+    waitmovement(0)
+    namebox("Sir Owen")
+    msgbox(format("No talking our way out of this one {PLAYER}!"))
+    closemessage
+    hidenamebox
+    applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACEUP)
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+    waitmovement(0)
+    namebox("Sir Owen")
+    msgbox(format("For Saradomin!"))
+    closemessage
+    hidenamebox
+    return
+}
+
+script TRIGGER_BLACK_KNIGHT_4F_2 {
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 190) {                        //check storymode var, if just after previous fight then enable otherwise skip 
+        lockall
+        applymovement(7, MOVEMENT_EXCLAMATIONMARK_JUMP_UP)                     //right Black Knight
+        applymovement(8, MOVEMENT_EXCLAMATIONMARK_JUMP_UP)                     //left Black Knight
+        applymovement(7, Movement_STORY_BKFORT_4F_2_right)                     //right Black Knight
+        applymovement(8, Movement_STORY_BKFORT_4F_2_left)                      //left Black Knight
+        waitmovement(0)
+		setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 191)
+        releaseall
+        end
+        }
+	else {                                                                     //try to make sure it doesn't trigger multiple times
+		end
+		}
+}
+
+movement Movement_STORY_BKFORT_4F_2_left {
+    face_left
+	run_left
+    face_down
+    run_down
+    face_left
+    run_left * 3
+    face_up
+    run_up
+}
+
+movement Movement_STORY_BKFORT_4F_2_right {
+    face_right
+	run_right * 2
+}
+
+script TRIGGER_BLACK_KNIGHT_4F_TREASURE {
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 191) {                        //should only trigger if done during the Fortress event, no Knights if post event?
+        lockall
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)                                    //check where player is so Sir Owen walks to the correct place
+        if (var(VAR_TEMP_1) == 1) {
+		applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_STORY_BKFORT_4F_1_right) //move Sir Owen to be beside the player
+	    }
+        if (var(VAR_TEMP_1) == 2) {
+		applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_STORY_BKFORT_4F_1_left)  //move Sir Owen to be beside the player
+	    }
+	    elif (var(VAR_TEMP_1) == 3) {
+		applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_STORY_BKFORT_4F_1_left)  //move Sir Owen to be beside the player
+	    }
+        applymovement(5, MOVEMENT_FACE_DOWN)
+        applymovement(6, MOVEMENT_FACE_DOWN)
+        waitmovement(0)
+        namebox("Black Knight")
+        msgbox(format("You aren't welcome here.\pWe can't let you through.\pIf you insist on trying to get past us, we'll have to battle you.\pIs that really what you want?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == TRUE)
+        {
+            msgbox(format("You have chosen... poorly."))
+            closemessage
+            hidenamebox
+            playbgm(MUS_PS_ENCOUNTER_KNIGHTS, FALSE)
+            trainerbattle_two_trainers(TRAINER_BLACKKNIGHT_SKOOL, msgbox(format("Skool: Maybe we were the ones who chose poorly...")), TRAINER_BLACKKNIGHT_SIFT, msgbox(format("Sift: Oh, I am definitely getting fired for this!")))
+            setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 192)
+            releaseall
+            end    
+        }
+        else {
+            msgbox(format("Good answer.\pNow leave us alone."))
+            closemessage
+            hidenamebox
+            applymovement(OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN)
+            applymovement(OBJ_EVENT_ID_FOLLOWER, MOVEMENT_WALK_DOWN)
+            waitmovement(0)
+            releaseall
+            end
+        }
+	else {                                                                     //try to make sure it doesn't trigger after the fight has been done
+		end
+		}
+    }   
+}
+
+script TRIGGER_BLACK_KNIGHT_4F_FINAL {
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 191) {                        //check storymode var, if less than post fight then trigger it
+        lockall
+        applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_STORY_BKFORT_4F_1_right) // Sir Owen beside the player
+        facefollower
+        applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACEPLAYER)
+        waitmovement(0)
+        namebox("Sir Owen")
+        msgbox(format("{PLAYER}, I can hear voices inside.\pLet's see if we can listen in and find out what they're up to without blowing our cover any further."))
+        closemessage
+        hidenamebox        
+        applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACEUP)
+        applymovement(OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+        waitmovement(0)
+        special(SpawnCameraObject)
+        applymovement(OBJ_EVENT_ID_CAMERA, movement_BK_Fort_camera_1)
+        waitmovement(0)
+        applymovement(17, Movement_FACE_UP)
+        namebox("Black Knight")
+        msgbox(format("...There was something carved into the wall down there too, sir. It looked importa-"))
+        waitmovement(0)
+        closemessage
+        hidenamebox 
+        applymovement(17, Movement_FACE_DOWN)                      //Black Knight faces Sigmund
+        namebox("Sigmund")
+        msgbox(format("That mural is of no concern to you. We have already studied it extensively.\p{PAUSE15}Now, where is the artefact?"))
+        closemessage
+        hidenamebox 
+        namebox("Lord Daquarius")
+        msgbox(format("Here, as promised."))
+        closemessage
+        hidenamebox 
+        addobject(18)                                              //Adding artefact to table
+        clearflag(FLAG_TEMP_F)
+        namebox("Lord Daquarius")
+        msgbox(format("My knight barely escaped that cave with his life.\pI really hope this piece of rock is worth the trouble, Sigmund."))
+        closemessage
+        hidenamebox 
+        delay(60)
+        removeobject(18)                                           //Removing artefact to table
+        setflag(FLAG_TEMP_F)
+        namebox("Sigmund")
+        msgbox(format("Finally, after all this time, an honest to Saradomin fragment of the Stone of Ja-"))
+        closemessage
+        hidenamebox 
+        applymovement(2, Movement_FACE_DOWN)                      //Sigmund looks down towards the door
+        namebox("Sigmund")
+        msgbox(format("What was that?"))
+        applymovement(2, MOVEMENT_ACTION_EMOTE_QUESTION_MARK)     //Sigmund question mark
+        applymovement(1, MOVEMENT_ACTION_EMOTE_QUESTION_MARK)     //Lord Daquarius question mark
+        applymovement(17, MOVEMENT_ACTION_EMOTE_QUESTION_MARK)    //Black Knight question mark
+        applymovement(3, MOVEMENT_ACTION_EMOTE_QUESTION_MARK)     //Left Elite Black Knight question mark
+        applymovement(4, MOVEMENT_ACTION_EMOTE_QUESTION_MARK)     //Right Elite Black Knight question mark
+        closemessage
+        hidenamebox 
+        waitmovement(0)
+        namebox("Sigmund")
+        msgbox(format("What was that?"))
+        closemessage
+        hidenamebox
+        applymovement(OBJ_EVENT_ID_PLAYER, Movement_STORY_BKFORT_4F_3_player)    //Camera pans down slightly and centres back on the player and Owen as they are escorted in by an Elite Guard
+        applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_STORY_BKFORT_4F_3_owen)
+        applymovement(OBJ_EVENT_ID_CAMERA, movement_BK_Fort_camera_2) 
+        waitmovement(0)           
+        special(RemoveCameraObject)
+        namebox("Elite Knight")                                     //Need to add this NPC in and code them following
+        msgbox(format("Sorry to interrupt, but we caught these two eavesdropping outside."))
+        closemessage
+        hidenamebox 
+        namebox("Lord Daquarius")
+        msgbox(format("A White Knight?\pSo soon?\pI anticipated this, but thought we would have more time.\p{PAUSE15}No matter.\pThey'll never leave this place alive to tell anybody what they might have heard anyway."))
+        closemessage
+        hidenamebox 
+        applymovement(2, Movement_FACE_UP)     //Sigmund faces Lord D
+        namebox("Sigmund")
+        msgbox(format("I think it's time I left."))
+        waitmovement(0)
+        closemessage
+        hidenamebox 
+        namebox("Lord Daquarius")
+        msgbox(format("Sigmund, will you still hold up your end of our deal?"))
+        closemessage
+        hidenamebox 
+        namebox("Sigmund")
+        msgbox(format("Yes, once we have accomplished our goal of ridding the world of all monsters we will turn our attention to the pests that plague you."))
+        closemessage
+        hidenamebox 
+        namebox("Lord Daquarius")
+        msgbox(format("Excellent.\pPlease, escort Sigmund and the artefact out of the castle and to safety."))
+        closemessage
+        hidenamebox
+        applymovement(17, Movement_FACE_UP)                      //Black Knight faces Lord D
+        namebox("Black Knight")
+        msgbox(format("Sir, there are guards posted across the bridge towards Varrock.\pWe can't go via Falador either, there will be too many White Knights."))
+        closemessage
+        hidenamebox
+        namebox("Lord Daquarius")
+        msgbox(format("Very well.\pSigmund, please take this armour and head to Edgeville.\pWe have a contact there who will assist you.\pAs long as you're wearing black, he'll be more than happy to help.\pJust be sure to tell him how EVIL your plans are."))
+        closemessage
+        hidenamebox
+//Sigmund, the Black Knight and all but one Elite Knight leaves
+        applymovement(2, Movement_STORY_BKFORT_4F_3_Sigmund)         //Sigmund 
+        applymovement(17, Movement_STORY_BKFORT_4F_3_Black_Knight)   //Black Knight 
+        applymovement(3, Movement_STORY_BKFORT_4F_3_Elite_Knight_1)  //Left Elite Black Knight 
+        waitmovement(0)    
+//Lord D and the other Elite Black Knight walk around the table  
+        applymovement(1, MOVEMENT_ACTION_EMOTE_QUESTION_MARK)     //Lord Daquarius
+        namebox("Lord Daquarius")
+        msgbox(format("Now to dispose of you two."))
+        closemessage
+        hidenamebox
+        applymovement(4, MOVEMENT_ACTION_EMOTE_QUESTION_MARK)     //Right Elite Black Knight 
+        waitmovement(0)
+        trainerbattle_two_trainers(TRAINER_LORD_DAQUARIUS, msgbox(format("Daquarius: All that matters is that Sigmund escaped.")), TRAINER_BLACKKNIGHT_ELITE_1, msgbox(format("Elite Knight: ...")))
+        setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 195)
+        applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACEPLAYER)
+        namebox("Sir Owen")
+        msgbox(format("Excellent work {PLAYER}."))
+        closemessage
+        hidenamebox
+        applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_FACE_UP)
+        namebox("Lord Daquarius")
+        msgbox(format("Once Sigmund has control over...\pWell, I think it would be better for you to just wait and witness it yourself.\pYou can lock me up, but you can't stop what's coming."))
+        closemessage
+        hidenamebox
+        releaseall
+        end    
+        }
+	else {                                                                     //try to make sure it doesn't trigger after the fight has already been done 
+		end
+		}
+}
+
+movement movement_BK_Fort_camera_1 {
+    walk_up * 6
+    walk_right * 2
+    delay_16
+}
+
+movement movement_BK_Fort_camera_2 {
+    walk_down * 2
+    delay_16
+}
+
+movement Movement_STORY_BKFORT_4F_3_player {
+    walk_up * 4
+	walk_right * 2
+    face_up
+}
+
+movement Movement_STORY_BKFORT_4F_3_owen {
+    walk_right
+    walk_up * 4
+	walk_right
+    face_up
+}
+
+movement Movement_STORY_BKFORT_4F_3_Sigmund {
+    face_left
+    walk_left * 2
+    face_down
+	walk_down * 7
+}
+
+movement Movement_STORY_BKFORT_4F_3_Black_Knight {
+    face_down
+    run_down * 8
+}
+
+movement Movement_STORY_BKFORT_4F_3_Elite_Knight_1 {   //Left Elite Knight
+    delay_16
+    walk_down * 11
+}
+
+movement Movement_STORY_BKFORT_4F_3_Elite_Knight_2 { //Right Black Knight
+    walk_down * 4
+    face_left
+    walk_left
+}
+
+movement Movement_STORY_BKFORT_4F_3_Elite_Knight_3 {    //Need to code him in, this is the one who escorts the player in
+    walk_up * 4
+	walk_right * 2
+    face_up
+}
+
+movement Movement_STORY_BKFORT_4F_3_Lord_D {
+    face_left
+    walk_left * 2
+    face_down
+    walk_down * 4
+    face_right
 }

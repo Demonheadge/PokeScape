@@ -407,7 +407,7 @@ script HAM_LESSER_DEMON_EVENT {
     hidenamebox
 	closemessage
 	delay(1)
-	setwildbattle (SPECIES_DEMON_LESSER_TONGUE_FORM, 25, ITEM_NONE)
+	setwildbattle (SPECIES_DEMON_LESSER_TONGUE_FORM, 27, ITEM_NONE)
 	dowildbattle
 	if (var(VAR_RESULT) == B_OUTCOME_RAN) {
         namebox ("Babe")

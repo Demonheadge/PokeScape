@@ -5538,7 +5538,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_BlackKnight_Fall),
     },
 
-    [TRAINER_BLACKKNIGHT_SKOOL] = //Not currently in use
+    [TRAINER_BLACKKNIGHT_SKOOL] = 
     {
         .trainerClass = TRAINER_CLASS_BLACK_KNIGHT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
@@ -5550,7 +5550,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_BlackKnight_Skool),
     },
 
-    [TRAINER_BLACKKNIGHT_SIFT] = //Not currently in use
+    [TRAINER_BLACKKNIGHT_SIFT] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_KNIGHT,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
@@ -5608,6 +5608,18 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
         .party = TRAINER_PARTY(sParty_Lord_Daquarius),
+    },
+
+    [TRAINER_BLACKKNIGHT_ELITE_2] =
+    {
+        .trainerClass = TRAINER_CLASS_BLACK_KNIGHT,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_black_knight_m,
+        .trainerName = _("Elite"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BlackKnight_Elite2),
     },
 
     [TRAINER_ROUTE21_TRAINER_1] =

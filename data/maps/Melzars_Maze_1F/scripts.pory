@@ -117,7 +117,7 @@ script MELZARS_1F_RATS_QUEST {
 			random(VAR_TEMP_F)
 			switch (var(VAR_RESULT)) {
 			case 0: 
-				setwildbattle(SPECIES_GIANT_RAT_NORMAL_FORM, 15, ITEM_NONE)
+				setwildbattle(SPECIES_GIANT_RAT_NORMAL_FORM, 20, ITEM_NONE)
 				dowildbattle
 				if ((var(VAR_RESULT) == B_OUTCOME_WON) || (var(VAR_RESULT) == B_OUTCOME_CAUGHT)) {
 					removeobject(VAR_LAST_TALKED)
@@ -134,7 +134,7 @@ script MELZARS_1F_RATS_QUEST {
 			case 2: 
 			case 3: 
 			case 4: 
-				setwildbattle(SPECIES_GIANT_RAT_NORMAL_FORM, 15, ITEM_NONE)
+				setwildbattle(SPECIES_GIANT_RAT_NORMAL_FORM, 20, ITEM_NONE)
 				dowildbattle
 				if ((var(VAR_RESULT) == B_OUTCOME_WON) || (var(VAR_RESULT) == B_OUTCOME_CAUGHT)) {
 					removeobject(VAR_LAST_TALKED)
