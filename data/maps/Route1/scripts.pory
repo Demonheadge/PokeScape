@@ -401,17 +401,62 @@ script ROUTE1_FarmerFred
 }
 
 
+script ROUTE1_FARMER_NPC {
+    lock
+    faceplayer
+    namebox("Farmer")
+    random(4)
+    switch (var(VAR_RESULT)) {
+        case 0: 
+            msgbox(format("Did you know that pigs use mud to regulate their temperature?\pThat's a fun fact to help you remember that all pigs are GROUND type."))
+        case 1: 
+            msgbox(format("Although they're too heavy to do it for long distances, chickens can flap their wings to fly for short distances.\pAll chickens are FLYING type."))
+        case 2: 
+            msgbox(format("Cows are constantly moving while grazing, and can cover huge distances in one day.\pAlthough they love to eat grass, remember that all cows are GROUND type so they don't fare well against it in battle!"))
+        case 3: 
+            msgbox(format("Unlike humans, sheep have rectangular pupils allowing them to see almost everything around them without turning their head.\pAlthough this is very strange, almost all sheep are NORMAL type."))
+    }
+    hidenamebox
+    closemessage
+    release
+    end
+}
 
+script ROUTE1_BOAT_1
+{
+	lock
+    faceplayer
+    namebox("Awenix")
+	msgbox(format("I am a Cupholder"))
+    hidenamebox
+    closemessage
+	release
+	end
+}
 
+script ROUTE1_BOAT_2
+{
+	lock
+    faceplayer
+    namebox("Gelo Ball")
+	msgbox(format("I am a Cupholder"))
+    hidenamebox
+    closemessage
+	release
+	end
+}
 
-
-
-
-
-
-
-
-
+script ROUTE1_BOAT_3
+{
+	lock
+    faceplayer
+    namebox("Trickool")
+	msgbox(format("Different routes seem to have different fish in them.\pIf you're looking for a specific type, try sailing around in different locations.\pI've heard that some are only available underground!"))
+    hidenamebox
+    closemessage
+	release
+	end
+}
 
 
 //TRAINER BATTLES-----------------------------------------

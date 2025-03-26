@@ -36,7 +36,7 @@ script ROUTE20_STATE {
 
 script BATTLE_ROUTE20_TRAINER_1
 {
-    trainerbattle_single(TRAINER_ROUTE20_TRAINER_1, format("Hey, does this canoe lead to a runecrafting altar?"),format("It leads to Al Kharid?\pFire runes it is then."))
+    trainerbattle_single(TRAINER_ROUTE20_TRAINER_6, format("Hey, does this canoe lead to a runecrafting altar?"),format("It leads to Al Kharid?\pFire runes it is then."))
     namebox ("NatsW40")
     msgbox(format("It leads to Al Kharid?\pFire runes it is then."))
 	hidenamebox
@@ -46,7 +46,7 @@ script BATTLE_ROUTE20_TRAINER_1
 
 script BATTLE_ROUTE20_TRAINER_2
 {
-    trainerbattle_single(TRAINER_ROUTE20_TRAINER_2, format("Fishing in a canoe is awesome!"),format("Sailing will revolutionise fishing forever dude."))
+    trainerbattle_single(TRAINER_ROUTE20_TRAINER_5, format("Fishing in a canoe is awesome!"),format("Sailing will revolutionise fishing forever dude."))
     namebox ("BaitNSwitch")
     msgbox(format("Sailing will revolutionise fishing forever dude."))
 	hidenamebox
@@ -56,7 +56,7 @@ script BATTLE_ROUTE20_TRAINER_2
 
 script BATTLE_ROUTE20_TRAINER_3
 {
-    trainerbattle_single(TRAINER_ROUTE20_TRAINER_3, format("I summoned this canoe."),format("You don't seem to be that impressed..."))
+    trainerbattle_single(TRAINER_ROUTE20_TRAINER_7, format("I summoned this canoe."),format("You don't seem to be that impressed..."))
     namebox ("Srift")
     msgbox(format("I don't know where this canoe is going.\pI don't know how to steer.\pI'm running out of food.\pHow do I summon this canoe to shore?\pPlease dont leave me, I am dying!"))
 	hidenamebox

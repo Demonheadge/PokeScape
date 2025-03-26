@@ -468,7 +468,7 @@
       "movement_range_y": 8,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_ROUTE12_BOAT_2",
       "flag": "0"
     },
     {
@@ -481,7 +481,7 @@
       "movement_range_y": 6,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_ROUTE12_BOAT_1",
       "flag": "0"
     },
     {
@@ -559,7 +559,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_ROUTE12_BRONZEMAN",
       "flag": "0"
     },
     {
@@ -572,7 +572,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "NULL",
+      "script": "NPC_ROUTE12_NOOB",
       "flag": "0"
     },
     {
@@ -598,7 +598,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_ROUTE12_SAILING",
       "flag": "0"
     },
     {
@@ -624,7 +624,7 @@
       "movement_range_y": 4,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_ROUTE12_IRONMAN",
       "flag": "0"
     }
   ],

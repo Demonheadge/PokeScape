@@ -1327,6 +1327,7 @@
 #define FLAG_ITEM_ROUTE46_2                                         0x4E9 // Unused Flag
 #define FLAG_ITEM_ROUTE46_3                                         0x4EA // Unused Flag
 #define FLAG_ITEM_ROUTE46_4                                         0x4EB // Unused Flag
+#define FLAG_ITEM_ROUTE22                                           0x4F9 // Unused Flag
 
 #define FLAG_SKY_BATTLE                                             0x4EC // Unused Flag
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL                     0x4ED // Unused Flag

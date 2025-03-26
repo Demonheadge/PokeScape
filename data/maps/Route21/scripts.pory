@@ -24,6 +24,16 @@ script BATTLE_ROUTE21_TRAINER_2
 	end
 }
 
+script BATTLE_ROUTE21_TRAINER_3
+{
+    trainerbattle_single(TRAINER_ROUTE21_TRAINER_3, format("Arrr, I'll cleave ye to the brisket!"),format("Grrr, curses upon ye bilge-sucking scurvy dog."))
+    namebox ("Kristoffer")
+    msgbox(format("Shiver me timbers!\pLooks like I'll be the one feeding the fish..."))
+	hidenamebox
+    release
+	end
+}
+
 //ITEMS
 
 script ITEM_ROUTE21_ITEM1

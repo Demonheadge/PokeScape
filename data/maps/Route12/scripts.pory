@@ -568,3 +568,85 @@ script PURO_PURO_EVENT_ROUTE12 {
     setmetatile(31, 12, METATILE_PokeScapeOutdoors_TELEPORT_WHEAT_3, 0)
 	return
 }
+
+script NPC_ROUTE12_IRONMAN {
+    lock
+    faceplayer
+    namebox("Limpwurt")
+    random(7)
+    switch (var(VAR_RESULT)) {
+        case 0: 
+            msgbox(format("I got 99 Woodcutting with a steel axe without ever leaving Lumbridge!\pI think I'm the reason Bob is out of axes.\pNow where is that Woodcutting Tutor with my cape..."))
+        case 1: 
+            msgbox(format("With how my routes rolled, it took me 2 years to finish Cook's Assistant."))
+        case 2: 
+            msgbox(format("I rolled Al Kharid as my next route, but since then the guards have blocked access to anybody without the badge.\pI probably should have done that before I left, but I came back here to train!"))
+        case 3: 
+            msgbox(format("I'm an extreme one route ironman.\pThat means before I can leave this route, I must complete all of the highest level skilling challenges,\pdo all available achievement diary tasks,\pobtain all unique monster drops,\pand obtain all unique items on a route.\p{PAUSE15}What do you mean there are no achievement diaries?!"))
+        case 4: 
+            msgbox(format("The extreme part of a extreme one route ironman means absolutely no exceptions to my rules!"))
+        case 5: 
+            msgbox(format("I smelted so many bronze bars in the Lumbridge Furnace that I think I broke it...\pApparently they've had to send a dwarf all the way from near Falador to fix it."))
+        case 6: 
+            msgbox(format("There's a gnome near the windmill that is looking for an item.\pDo you have any idea where it could be?\pI can't roll my next route until I find it.\p{PAUSE15}...\p{PAUSE15}I... must... find... it!"))
+    }
+    hidenamebox
+    closemessage
+    release
+    end
+}
+
+script NPC_ROUTE12_BRONZEMAN {
+    lock
+	faceplayer
+	namebox("Br0nzem4n")
+    msgbox(format("Everyone kept saying that to battle, I had to catch a monster.\pBut no matter how much I run after it, I can't seem to keep this cow still long enough!{PAUSE15}Wait, what's a pouch..?"))
+    hidenamebox
+	closemessage
+	release
+	end
+}
+
+script NPC_ROUTE12_NOOB {
+    lock
+	faceplayer
+	namebox("Big Nub56")
+    msgbox(format("Where is varok?"))
+    hidenamebox
+	closemessage
+	release
+	end
+}
+
+script NPC_ROUTE12_SAILING {
+    lock
+	faceplayer
+	namebox("MonKeeDLoof")
+    msgbox(format("Once I've saved up enough coins to buy myself a boat, I'm going to set sail and never look back.\pOne day my crew and I will be known as the Straw Boater Pirates!"))
+    hidenamebox
+	closemessage
+	release
+	end
+}
+
+script NPC_ROUTE12_BOAT_1 {
+    lock
+	faceplayer
+	namebox("L0st2theS3a")
+    msgbox(format("I picked up a courier task to deliver from lobsters from Musa Point to Catherby.\pI have absolutely no idea how I ended up here, though.\pI just got caught up in the currents...\pI'm just continuing to follow them and hoping for the best."))
+    hidenamebox
+	closemessage
+	release
+	end
+}
+
+script NPC_ROUTE12_BOAT_2 {
+    lock
+	faceplayer
+	namebox("DaveyJay5")
+    msgbox(format("I heard rumours of an unusual sea creature causing a disturbance north of Musa Point.\pIt has churned up the sea so much that the currents there are out of control and causing boats to veer wildly off course.\pBe careful if you do ever venture out that way."))
+    hidenamebox
+	closemessage
+	release
+	end
+}
