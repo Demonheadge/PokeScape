@@ -96,7 +96,7 @@ script NPC_WizardsTowerB1F_Sedridor{
             msgbox(format("Hello {PLAYER}, have you visited those mysterious altars?\pThe Air altar is located south of Falador on Route 7."))   
         }
         elif (var(VAR_RESULT) == TRUE) {
-            msgbox(format("So {PLAYER}, have you visited an altar?\pWhat did you discover?\pOoh ho ho! So monsters that regularly evolve using Runes can evolve on the Altars without requiring the Runes?\pHow interesting!\pI wonder if the other altars are like that…\pIf its not too much trouble would you be able to go and investigate the other altars for me?\pThere is information on their locations in some of the books around the tower.\pReport back to me once you have discovered some more!"))
+            msgbox(format("So {PLAYER}, have you visited an altar?\pWhat did you discover?\pOoh ho ho! So monsters that regularly evolve using Runes can evolve on the Altars without requiring the Runes?\pHow interesting!\pI wonder if the other altars are like that…\pIf it's not too much trouble would you be able to go and investigate the other altars for me?\pThere is information on their locations in some of the books around the tower.\pReport back to me once you have discovered some more!"))
             subquestmenu (QUEST_MENU_COMPLETE_QUEST, QUEST_RUNE_MYSTERIES, 2)
         }
     }
@@ -129,9 +129,9 @@ script BOOK_ALTAR_LOCATIONS {
         case 3:  
             msgbox(format("An adventurer once mentioned some sort of ruins north of Goblin Village, could this be an altar?"))
         case 4:  
-            msgbox(format("The barbarians in Gunnars Ground often appear to be using rune stone as wheatstones to polish their swords.\pWhere are they getting these from?"))
+            msgbox(format("The barbarians in Gunnars Ground often appear to be using rune stone as whetstones to polish their swords.\pWhere are they getting these from?"))
         case 5:  
-            msgbox(format("It would make sense that with the amount of stones in the Alkharidian desert there may be an altar located within this region."))
+            msgbox(format("It would make sense that with the amount of stones in the Kharidian desert there may be an altar located within this region."))
     }
     closemessage
     end

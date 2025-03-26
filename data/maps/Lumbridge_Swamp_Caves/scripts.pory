@@ -173,3 +173,17 @@ script BATTLE_LUMBRIDGESWAMPCAVE_6
     release
 	end
 }
+
+//Miscellanous
+
+script LUMBRIDGESWAMPCAVE_ZANIK
+{
+    lock
+    faceplayer
+    namebox ("Zanik")
+    msgbox(format("I'm afraid that it's too dangerous for humans to take this route.\pOnly goblins are able to pass through!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}

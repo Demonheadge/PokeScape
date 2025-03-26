@@ -76,6 +76,36 @@ ROUTE20_BLOCKADE::
 	end
 
 
+ROUTE20_FISHERMAN::
+	faceplayer
+	namebox ROUTE20_FISHERMAN_Text_0
+	msgbox ROUTE20_FISHERMAN_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+ROUTE20_VARROCK_GUARD_1::
+	faceplayer
+	namebox ROUTE20_VARROCK_GUARD_1_Text_0
+	msgbox ROUTE20_VARROCK_GUARD_1_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+ROUTE20_VARROCK_GUARD_2::
+	faceplayer
+	namebox ROUTE20_VARROCK_GUARD_1_Text_0
+	msgbox ROUTE20_VARROCK_GUARD_2_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
 ITEM_ROUTE20::
 	finditem ITEM_WOOLBALL
 	end
@@ -126,3 +156,29 @@ ROUTE20_BLOCKADE_Text_1:
 	.string "the water.\p"
 	.string "Move along and I will let you pass once\n"
 	.string "I find it.$"
+
+ROUTE20_FISHERMAN_Text_0:
+	.string "Fisherman$"
+
+ROUTE20_FISHERMAN_Text_1:
+	.string "I tried sailing up the river to see\n"
+	.string "whether I'd have better odds of\l"
+	.string "catching rare fish...\p"
+	.string "but I don't think fishing here is any\n"
+	.string "different to fishing on land!$"
+
+ROUTE20_VARROCK_GUARD_1_Text_0:
+	.string "Guard$"
+
+ROUTE20_VARROCK_GUARD_1_Text_1:
+	.string "Varrock is closed off to all visitors at\n"
+	.string "the moment, by decree of King Roald\l"
+	.string "himself.\p"
+	.string "We will re-open access once things are\n"
+	.string "safe again.$"
+
+ROUTE20_VARROCK_GUARD_2_Text_0:
+	.string "We've been asked by the White Knights\n"
+	.string "not to let anybody through while they\l"
+	.string "investigate what's going on over in the\l"
+	.string "west.$"

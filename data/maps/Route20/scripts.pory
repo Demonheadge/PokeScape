@@ -77,6 +77,39 @@ script ROUTE20_BLOCKADE
     end
 }
 
+script ROUTE20_FISHERMAN
+{
+    faceplayer
+    namebox ("Fisherman")
+    msgbox(format("I tried sailing up the river to see whether I'd have better odds of catching rare fish...\pbut I don't think fishing here is any different to fishing on land!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script ROUTE20_VARROCK_GUARD_1
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("Varrock is closed off to all visitors at the moment, by decree of King Roald himself.\pWe will re-open access once things are safe again."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script ROUTE20_VARROCK_GUARD_2
+{
+    faceplayer
+    namebox ("Guard")
+    msgbox(format("We've been asked by the White Knights not to let anybody through while they investigate what's going on over in the west."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
 //ITEM
 
 script ITEM_ROUTE20

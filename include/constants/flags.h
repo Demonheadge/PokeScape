@@ -1320,14 +1320,14 @@
 #define FLAG_ITEM_DIGSITE_EARTH_TALISMAN                            0x4E2 // Unused Flag
 #define FLAG_ITEM_ALKHARID_FIRE_TALISMAN                            0x4E3 // Unused Flag
 #define FLAG_ITEM_DWARVENMINES_BODY_TALISMAN                        0x4E4 // Unused Flag
+#define FLAG_ITEM_DIGSITE_ITEM_1                                    0x4E5 // Unused Flag
+#define FLAG_ITEM_DIGSITE_ITEM_2                                    0x4E6 // Unused Flag
+#define FLAG_ITEM_DIGSITE_ITEM_3                                    0x4E7 // Unused Flag
+#define FLAG_ITEM_ROUTE46_1                                         0x4E8 // Unused Flag
+#define FLAG_ITEM_ROUTE46_2                                         0x4E9 // Unused Flag
+#define FLAG_ITEM_ROUTE46_3                                         0x4EA // Unused Flag
+#define FLAG_ITEM_ROUTE46_4                                         0x4EB // Unused Flag
 
-#define FLAG_UNUSED_0x4E5                                           0x4E5 // Unused Flag
-#define FLAG_UNUSED_0x4E6                                           0x4E6 // Unused Flag
-#define FLAG_UNUSED_0x4E7                                           0x4E7 // Unused Flag
-#define FLAG_UNUSED_0x4E8                                           0x4E8 // Unused Flag
-#define FLAG_UNUSED_0x4E9                                           0x4E9 // Unused Flag
-#define FLAG_UNUSED_0x4EA                                           0x4EA // Unused Flag
-#define FLAG_UNUSED_0x4EB                                           0x4EB // Unused Flag
 #define FLAG_SKY_BATTLE                                             0x4EC // Unused Flag
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL                     0x4ED // Unused Flag
 #define FLAG_RESCUED_BIRCH                                          0x4EE // Unused Flag

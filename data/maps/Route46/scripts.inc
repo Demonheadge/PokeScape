@@ -35,10 +35,50 @@ ROUTE46_STUDENT::
 	end
 
 
-ROUTE46_ARCHAEOLOGIST::
+ROUTE46_ARCHAEOLOGIST_1::
 	faceplayer
 	namebox BATTLE_ROUTE_46_TRAINER_1_Text_2
-	msgbox ROUTE46_ARCHAEOLOGIST_Text_0
+	msgbox ROUTE46_ARCHAEOLOGIST_1_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+ROUTE46_ARCHAEOLOGIST_2::
+	faceplayer
+	namebox BATTLE_ROUTE_46_TRAINER_1_Text_2
+	msgbox ROUTE46_ARCHAEOLOGIST_2_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+ROUTE46_ARCHAEOLOGIST_3::
+	faceplayer
+	namebox BATTLE_ROUTE_46_TRAINER_1_Text_2
+	msgbox ROUTE46_ARCHAEOLOGIST_3_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+ROUTE46_ARCHAEOLOGIST_4::
+	faceplayer
+	namebox BATTLE_ROUTE_46_TRAINER_1_Text_2
+	msgbox ROUTE46_ARCHAEOLOGIST_4_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+ROUTE46_PANNING_GUIDE::
+	faceplayer
+	namebox ROUTE46_PANNING_GUIDE_Text_0
+	msgbox ROUTE46_PANNING_GUIDE_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -53,27 +93,23 @@ DIGSITE_SIGN::
 	end
 
 
-PLACEHOLDER_ITEM_DIGSITE_1::
-	lock
-	faceplayer
-	msgbox PLACEHOLDER_ITEM_DIGSITE_1_Text_0
-	release
+ITEM_ROUTE46_1::
+	finditem ITEM_BREAD
 	end
 
 
-PLACEHOLDER_ITEM_DIGSITE_2::
-	lock
-	faceplayer
-	msgbox PLACEHOLDER_ITEM_DIGSITE_2_Text_0
-	release
+ITEM_ROUTE46_2::
+	finditem ITEM_BREAD
 	end
 
 
-PLACEHOLDER_ITEM_DIGSITE_3::
-	lock
-	faceplayer
-	msgbox PLACEHOLDER_ITEM_DIGSITE_3_Text_0
-	release
+ITEM_ROUTE46_3::
+	finditem ITEM_BREAD
+	end
+
+
+ITEM_ROUTE46_4::
+	finditem ITEM_BREAD
 	end
 
 
@@ -127,7 +163,7 @@ ROUTE46_STUDENT_Text_1:
 	.string "I'm too busy studying for my Earth\n"
 	.string "Sciences exam to talk more right now.$"
 
-ROUTE46_ARCHAEOLOGIST_Text_0:
+ROUTE46_ARCHAEOLOGIST_1_Text_0:
 	.string "I'm not really supposed to say\n"
 	.string "anything, but...\p"
 	.string "We think we have discovered the ruins\n"
@@ -135,27 +171,34 @@ ROUTE46_ARCHAEOLOGIST_Text_0:
 	.string "I heard that the Museum Curator is\n"
 	.string "coming down personally to inspect them!$"
 
+ROUTE46_ARCHAEOLOGIST_2_Text_0:
+	.string "Stay away from the ruins to the north.\p"
+	.string "I'm going to explore them to find\n"
+	.string "anything important so I can become\l"
+	.string "famous.$"
+
+ROUTE46_ARCHAEOLOGIST_3_Text_0:
+	.string "I grew up thinking archaeology was fun,\n"
+	.string "but there are a distinct lack of rolling\l"
+	.string "boulders or, well, any kind of action\l"
+	.string "really...$"
+
+ROUTE46_ARCHAEOLOGIST_4_Text_0:
+	.string "I might be skilled at excavating ruins,\n"
+	.string "but I'm hopeless with any other kind of\l"
+	.string "skills.\p"
+	.string "I can't even light this fire!$"
+
+ROUTE46_PANNING_GUIDE_Text_0:
+	.string "Panning Guide$"
+
+ROUTE46_PANNING_GUIDE_Text_1:
+	.string "If you find any gold while panning, make\n"
+	.string "sure you take it to the archaeological\l"
+	.string "expert up in the museum storage\l"
+	.string "facility.$"
+
 DIGSITE_SIGN_Text_0:
 	.string "Anyone wishing to do any work on the\n"
 	.string "digsite must first prove they have\l"
 	.string "passed all 3 Earth Science exams.$"
-
-PLACEHOLDER_ITEM_DIGSITE_1_Text_0:
-	.string "It is a fragile looking animal skull.\p"
-	.string "You're worried it may be damaged if\n"
-	.string "handled without the proper equipment\l"
-	.string "and decide to leave it alone.$"
-
-PLACEHOLDER_ITEM_DIGSITE_2_Text_0:
-	.string "You rummage through the pile of items.\p"
-	.string "Unfortunately all you can find are\n"
-	.string "broken arrow shafts and pieces of\l"
-	.string "damaged armour.\p"
-	.string "This must be the archaeologist's\n"
-	.string "discarded item pile.$"
-
-PLACEHOLDER_ITEM_DIGSITE_3_Text_0:
-	.string "You find a panning tray laying beside\n"
-	.string "the river bed.\p"
-	.string "You have no idea how to use it, so leave\n"
-	.string "it where it is for now.$"

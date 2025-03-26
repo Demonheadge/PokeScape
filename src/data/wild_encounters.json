@@ -24760,7 +24760,7 @@
             ]
           },
           "rock_smash_mons": {
-            "encounter_rate": 0,
+            "encounter_rate": 100,
             "mons": [
               {
                 "min_level": 30,
@@ -24859,7 +24859,7 @@
             ]
           },
           "rock_smash_mons": {
-            "encounter_rate": 0,
+            "encounter_rate": 100,
             "mons": [
               {
                 "min_level": 30,
@@ -27160,94 +27160,64 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 26,
+                "max_level": 30,
                 "species": "SPECIES_PET_ROCK"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 26,
+                "max_level": 31,
                 "species": "SPECIES_WINSTON"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 27,
+                "max_level": 32,
                 "species": "SPECIES_CAVE_SLIME"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 27,
+                "max_level": 32,
                 "species": "SPECIES_WINSTON"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 28,
+                "max_level": 33,
                 "species": "SPECIES_PET_ROCK"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 28,
+                "max_level": 33,
                 "species": "SPECIES_MINITRICE"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 29,
+                "max_level": 34,
                 "species": "SPECIES_BEHEMOTH_NORMAL_FORM"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 29,
+                "max_level": 34,
                 "species": "SPECIES_GOLEM_TITAN"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 30,
+                "max_level": 35,
                 "species": "SPECIES_TORTOISE_NORMAL_FORM"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 30,
+                "max_level": 35,
                 "species": "SPECIES_ROCK_CRAB_NORMAL_FORM"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 31,
+                "max_level": 36,
                 "species": "SPECIES_BASILISK_BABY_FORM"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 31,
+                "max_level": 36,
                 "species": "SPECIES_SLAGILITH"
-              }
-            ]
-          },
-          "rock_smash_mons": {
-            "encounter_rate": 0,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
               }
             ]
           }
@@ -27259,94 +27229,64 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 25,
+                "max_level": 30,
                 "species": "SPECIES_KITTEN"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 25,
+                "max_level": 31,
                 "species": "SPECIES_PUPPY_PUP_FORM"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_PUPPY_MUTT_FORM"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 26,
+                "max_level": 32,
                 "species": "SPECIES_PUPPY_MUTT_FORM"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 27,
+                "max_level": 33,
                 "species": "SPECIES_SLIME_LILGLOOP"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 27,
+                "max_level": 33,
                 "species": "SPECIES_PHEASANT"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 28,
+                "max_level": 34,
                 "species": "SPECIES_CAT_NORMAL_FORM"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 28,
+                "max_level": 34,
                 "species": "SPECIES_CAT_NORMAL_FORM"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 29,
+                "max_level": 35,
                 "species": "SPECIES_BABY_YAK"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 29,
+                "max_level": 35,
                 "species": "SPECIES_BABY_YAK"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 30,
+                "max_level": 36,
                 "species": "SPECIES_SLIME_KING"
               },
               {
-                "min_level": 20,
-                "max_level": 40,
+                "min_level": 30,
+                "max_level": 36,
                 "species": "SPECIES_CAT_LAZY_FORM"
-              }
-            ]
-          },
-          "rock_smash_mons": {
-            "encounter_rate": 0,
-            "mons": [
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
-              },
-              {
-                "min_level": 5,
-                "max_level": 5,
-                "species": "SPECIES_NONE"
               }
             ]
           }
@@ -29702,7 +29642,7 @@
           "map": "MAP_EDGEVILLE",
           "base_label": "gEdgeville0",
           "land_mons": {
-            "encounter_rate": 0,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 35,
@@ -29856,7 +29796,7 @@
           "map": "MAP_EDGEVILLE",
           "base_label": "gEdgeville1_Night",
           "land_mons": {
-            "encounter_rate": 0,
+            "encounter_rate": 20,
             "mons": [
               {
                 "min_level": 35,
@@ -30502,7 +30442,7 @@
             ]
           },
           "fishing_mons": {
-            "encounter_rate": 30,
+            "encounter_rate": 100,
             "mons": [
               {
                 "min_level": 25,
@@ -32245,6 +32185,95 @@
                 "min_level": 35,
                 "max_level": 38,
                 "species": "SPECIES_SPIDER_ICE_FORM"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_DIGSITE",
+          "base_label": "gDigsite0",
+          "fishing_mons": {
+            "encounter_rate": 100,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_SARDINE"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_SHRIMP"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_HERRING"
+              },
+              {
+                "min_level": 32,
+                "max_level": 35,
+                "species": "SPECIES_ANCHOVY"
+              },
+              {
+                "min_level": 33,
+                "max_level": 35,
+                "species": "SPECIES_BASS"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_STURGEON"
+              },
+              {
+                "min_level": 35,
+                "max_level": 40,
+                "species": "SPECIES_SALMON_NORMAL_FORM"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_CATFISH"
+              },
+              {
+                "min_level": 37,
+                "max_level": 40,
+                "species": "SPECIES_SHARK_NORMAL_FORM"
+              },
+              {
+                "min_level": 38,
+                "max_level": 40,
+                "species": "SPECIES_SHARK_BARON_FORM"
+              }
+            ]
+          },
+          "rock_smash_mons": {
+            "encounter_rate": 100,
+            "mons": [
+              {
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_ROCK_CRAB_NORMAL_FORM"
+              },
+              {
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_SCORPLING"
+              },
+              {
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_ROCK_CRAB_NORMAL_FORM"
+              },
+              {
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_MINITRICE"
+              },
+              {
+                "min_level": 26,
+                "max_level": 33,
+                "species": "SPECIES_PET_ROCK"
               }
             ]
           }

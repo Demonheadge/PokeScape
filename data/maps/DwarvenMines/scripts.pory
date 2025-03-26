@@ -99,6 +99,18 @@ script NPC_DWARVENMINES_NPC7
 	end
 }
 
+script NPC_DWARVENMINES_ENGINEER
+{
+    lock
+    faceplayer
+    namebox ("Engineer")
+	msgbox(format("It's hard work repairing these multicannons all day long.\pI don't know why they only run for 25 minutes at a time before they break!\pDwarven engineering usually is much more reliable than that, I swear..!"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
 script GeneralStore_DWARVENMINES {
     lock
     faceplayer

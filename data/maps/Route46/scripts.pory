@@ -37,11 +37,55 @@ script ROUTE46_STUDENT
     end
 }
 
-script ROUTE46_ARCHAEOLOGIST
+script ROUTE46_ARCHAEOLOGIST_1
 {
     faceplayer
     namebox ("Archaeologist")
     msgbox(format("I'm not really supposed to say anything, but...\pWe think we have discovered the ruins of an ancient civilisation!\pI heard that the Museum Curator is coming down personally to inspect them!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script ROUTE46_ARCHAEOLOGIST_2
+{
+    faceplayer
+    namebox ("Archaeologist")
+    msgbox(format("Stay away from the ruins to the north.\pI'm going to explore them to find anything important so I can become famous."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script ROUTE46_ARCHAEOLOGIST_3
+{
+    faceplayer
+    namebox ("Archaeologist")
+    msgbox(format("I grew up thinking archaeology was fun, but there are a distinct lack of rolling boulders or, well, any kind of action really..."))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script ROUTE46_ARCHAEOLOGIST_4
+{
+    faceplayer
+    namebox ("Archaeologist")
+    msgbox(format("I might be skilled at excavating ruins, but I'm hopeless with any other kind of skills.\pI can't even light this fire!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script ROUTE46_PANNING_GUIDE
+{
+    faceplayer
+    namebox ("Panning Guide")
+    msgbox(format("If you find any gold while panning, make sure you take it to the archaeological expert up in the museum storage facility."))
     closemessage
     hidenamebox
     release
@@ -59,33 +103,29 @@ script DIGSITE_SIGN
 	end
 }
 
-script PLACEHOLDER_ITEM_DIGSITE_1
+script ITEM_ROUTE46_1
 {
-	lock
-	faceplayer
-	msgbox(format("It is a fragile looking animal skull. \pYou're worried it may be damaged if handled without the proper equipment and decide to leave it alone."))
-	release
-	end
+    finditem(ITEM_BREAD)
+    end
 }
 
-script PLACEHOLDER_ITEM_DIGSITE_2
+script ITEM_ROUTE46_2
 {
-	lock
-	faceplayer
-	msgbox(format("You rummage through the pile of items. \pUnfortunately all you can find are broken arrow shafts and pieces of damaged armour. \pThis must be the archaeologist's discarded item pile."))
-	release
-	end
+    finditem(ITEM_BREAD)
+    end
 }
 
-script PLACEHOLDER_ITEM_DIGSITE_3
+script ITEM_ROUTE46_3
 {
-	lock
-	faceplayer
-	msgbox(format("You find a panning tray laying beside the river bed. \pYou have no idea how to use it, so leave it where it is for now."))
-	release
-	end
+    finditem(ITEM_BREAD)
+    end
 }
 
+script ITEM_ROUTE46_4
+{
+    finditem(ITEM_BREAD)
+    end
+}
 
 script ITEM_DIGSITE_EARTH_TALISMAN
 {
