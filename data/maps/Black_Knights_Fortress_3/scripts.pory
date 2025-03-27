@@ -90,7 +90,7 @@ script BKFORT_3F_NPC_8
     lock
     faceplayer
     namebox ("Skeleton")
-    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    msgbox(format("The skeleton stares at you.\pIt can see you looking at the item behind it, but it clearly has no intention of handing it over."))
     closemessage
     hidenamebox
     release
@@ -102,7 +102,7 @@ script BKFORT_3F_NPC_9
     lock
     faceplayer
     namebox ("Worldbearer")
-    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    msgbox(format("Yildoi!\pAlnaasdzoh klesh yetsan."))
     closemessage
     hidenamebox
     release
@@ -114,7 +114,7 @@ script BKFORT_3F_NPC_10
     lock
     faceplayer
     namebox ("Forgotten War.")
-    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    msgbox(format("This place is even more bleak than the dungeons back home."))
     closemessage
     hidenamebox
     release
@@ -150,7 +150,7 @@ script BKFORT_3F_NPC_13
     lock
     faceplayer
     namebox ("Blacksmith")
-    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    msgbox(format("Do you know how difficult it is to smelt enough black armour to keep up with demand?"))
     closemessage
     hidenamebox
     release
@@ -160,13 +160,44 @@ script BKFORT_3F_NPC_13
 script BKFORT_3F_NPC_14
 {
     lock
-    faceplayer
     namebox ("Black Knight")
-    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    msgbox(format("I am Black Knight Sergeant Tyme, your drill instructor.\pFrom now on you will speak only when spoken to, and the first and last words out of your mouths will be 'Sir'.\pDo you maggots understand that?"))
     closemessage
     hidenamebox
+    applymovement(2, MOVEMENT_FACE_RIGHT)
+    applymovement(4, MOVEMENT_FACE_RIGHT)
+    applymovement(3, MOVEMENT_FACE_LEFT)
+    applymovement(5, MOVEMENT_FACE_LEFT)
+    waitmovement(0)
+    namebox ("Guards")
+    msgbox(format("Sir, yes Sir."))
+    closemessage
+    hidenamebox
+    namebox ("Black Knight")
+    msgbox(format("I can't hear you."))
+    closemessage
+    hidenamebox 
+    applymovement(2, MOVEMENT_EXCLAMATIONMARK_JUMP_RIGHT)
+    applymovement(4, MOVEMENT_EXCLAMATIONMARK_JUMP_RIGHT)
+    applymovement(3, MOVEMENT_EXCLAMATIONMARK_JUMP_LEFT)
+    applymovement(5, MOVEMENT_EXCLAMATIONMARK_JUMP_LEFT)
+    waitmovement(0) 
+    namebox ("Guards")
+    msgbox(format("SIR, YES SIR!"))
+    closemessage
+    hidenamebox
+    applymovement(2, MOVEMENT_FACE_LEFT)
+    applymovement(4, MOVEMENT_FACE_LEFT)
+    applymovement(3, MOVEMENT_FACE_RIGHT)
+    applymovement(5, MOVEMENT_FACE_RIGHT)
+    waitmovement(0)          
     release
     end
+}
+
+movement MOVEMENT_EXCLAMATIONMARK_JUMP_RIGHT {
+    emote_exclamation_mark
+    jump_in_place_right
 }
 
 script BKFORT_3F_NPC_15
@@ -222,7 +253,7 @@ script BKFORT_3F_NPC_19
     lock
     faceplayer
     namebox ("Guard")
-    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    msgbox(format("Uhhhh, am I halucinating or is that a freaking DEMON training over there?!"))
     closemessage
     hidenamebox
     release

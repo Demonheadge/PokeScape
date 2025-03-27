@@ -1,0 +1,59 @@
+mapscripts Edgeville_Bank_MapScripts {
+
+}
+
+script BankDepositBox {
+    lock
+    msgbox(format("You have no idea how depositing monsters in this box would get them safely to your bank instead of anybody elses.\pYou're better off speaking to a banker."))
+    waitmessage
+    release
+    end
+}
+
+script NPC_EDGEVILLE_BANK_1 //DHAROKER
+{
+	lock
+	faceplayer
+    namebox ("K A B o0 M")
+	msgbox(format("Beyond here is the Wilderness.\pI'd suggest steering clear of it if I were you.\pSomeone might mug you and take your stuff.."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_EDGEVILLE_BANK_2 //Noob
+{
+	lock
+	faceplayer
+    namebox ("Ry4nInnit")
+	msgbox(format("A couple of people made friends with me and convinced me to head into the Wilderness with them to find some rare monsters!\pBut they weren't friendly after all, and I lost all my stuff..."))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_EDGEVILLE_BANK_3 //Runecrafter
+{
+	lock
+	faceplayer
+    namebox ("AltarCarbon")
+	msgbox(format("Have you visited any of the Runecrafting Altars yet?\pThere are ones both to the west AND east of here!\pWhich one should I visit first?"))
+    closemessage
+    hidenamebox
+	release
+	end
+}
+
+script NPC_EDGEVILLE_BANK_4 //Rusher
+{
+	lock
+	faceplayer
+    namebox ("Kifek")
+	msgbox(format("I levelled up my chick in the Wilderness and it evolved into some weird looking chicken.\pI've never seen one like it before!\pIt could shoot lightning!"))
+    closemessage
+    hidenamebox
+	release
+	end
+}

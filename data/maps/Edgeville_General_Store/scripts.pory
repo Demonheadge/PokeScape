@@ -1,0 +1,26 @@
+mapscripts Edgeville_General_Store_MapScripts {
+
+}
+
+
+script GeneralStore_EDGEVILLE {
+    lock
+    faceplayer
+    namebox("Clerk")
+    msgbox(format("Welcome to Edgeville General Store.\pHow may I help you?"))
+    waitmessage
+    call(GeneralStoreShopScript)
+    msgbox("Thank you, come again!")
+    release
+}
+
+script GeneralStore_EDGEVILLE_CLERK {
+    lock
+    faceplayer
+    namebox("Clerk")
+    msgbox(format("WE DON'T HAVE ANY PK SUPPLIES!\pOh, sorry, we're not used to seeing genuine customers!\pWelcome to Edgeville General Store.\pHow may I help you?"))
+    waitmessage
+    call(GeneralStoreShopScript)
+    msgbox("Thank you, come again!")
+    release
+}

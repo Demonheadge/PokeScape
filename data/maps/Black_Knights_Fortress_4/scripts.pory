@@ -220,31 +220,31 @@ script ITEM_BKFORT_4F_ITEM1
 
 script ITEM_BKFORT_4F_ITEM2
 {
-    finditem(ITEM_POUCH_BLACK)
+    finditem(ITEM_BRONZEHELMET)
     end
 }
 
 script ITEM_BKFORT_4F_ITEM3
 {
-    finditem(ITEM_POUCH_BLACK)
+    finditem(ITEM_TM_REVENGE)
     end
 }
 
 script ITEM_BKFORT_4F_ITEM4
 {
-    finditem(ITEM_POUCH_BLACK)
+    finditem(ITEM_CHAOS_RUNE)
     end
 }
 
 script ITEM_BKFORT_4F_ITEM5
 {
-    finditem(ITEM_POUCH_BLACK)
+    finditem(ITEM_BODY_RUNE)
     end
 }
 
 script ITEM_BKFORT_4F_ITEM6
 {
-    finditem(ITEM_POUCH_BLACK)
+    finditem(ITEM_MITHRIL_SCIMITAR)
     end
 }
 
