@@ -203,6 +203,63 @@ PURO_PURO_EVENT_MILL_LANE_MILL::
 	return
 
 
+MODEST_SAMUEL_Battle::
+	trainerbattle_single TRAINER_MODESTSAMUEL, MODEST_SAMUEL_Battle_Text_0, MODEST_SAMUEL_Battle_Text_1
+	namebox MODEST_SAMUEL_Battle_Text_2
+	msgbox MODEST_SAMUEL_Battle_Text_3
+	hidenamebox
+	release
+	end
+
+
+MILL_LANE_MILL_HUNTER_NPC::
+	lock
+	faceplayer
+	namebox MILL_LANE_MILL_HUNTER_NPC_Text_0
+	random 7
+	switch VAR_RESULT
+	case 0, MILL_LANE_MILL_HUNTER_NPC_3
+	case 1, MILL_LANE_MILL_HUNTER_NPC_4
+	case 2, MILL_LANE_MILL_HUNTER_NPC_5
+	case 3, MILL_LANE_MILL_HUNTER_NPC_6
+	case 4, MILL_LANE_MILL_HUNTER_NPC_7
+	case 5, MILL_LANE_MILL_HUNTER_NPC_8
+	case 6, MILL_LANE_MILL_HUNTER_NPC_9
+MILL_LANE_MILL_HUNTER_NPC_1:
+	hidenamebox
+	closemessage
+	release
+	end
+
+MILL_LANE_MILL_HUNTER_NPC_3:
+	msgbox MILL_LANE_MILL_HUNTER_NPC_Text_1
+	goto MILL_LANE_MILL_HUNTER_NPC_1
+
+MILL_LANE_MILL_HUNTER_NPC_4:
+	msgbox MILL_LANE_MILL_HUNTER_NPC_Text_2
+	goto MILL_LANE_MILL_HUNTER_NPC_1
+
+MILL_LANE_MILL_HUNTER_NPC_5:
+	msgbox MILL_LANE_MILL_HUNTER_NPC_Text_3
+	goto MILL_LANE_MILL_HUNTER_NPC_1
+
+MILL_LANE_MILL_HUNTER_NPC_6:
+	msgbox MILL_LANE_MILL_HUNTER_NPC_Text_4
+	goto MILL_LANE_MILL_HUNTER_NPC_1
+
+MILL_LANE_MILL_HUNTER_NPC_7:
+	msgbox MILL_LANE_MILL_HUNTER_NPC_Text_5
+	goto MILL_LANE_MILL_HUNTER_NPC_1
+
+MILL_LANE_MILL_HUNTER_NPC_8:
+	msgbox MILL_LANE_MILL_HUNTER_NPC_Text_6
+	goto MILL_LANE_MILL_HUNTER_NPC_1
+
+MILL_LANE_MILL_HUNTER_NPC_9:
+	msgbox MILL_LANE_MILL_HUNTER_NPC_Text_7
+	goto MILL_LANE_MILL_HUNTER_NPC_1
+
+
 SIGN_MILL_LANE_MILL_Text_0:
 	.string "Mill Lane Mill.\p"
 	.string "The finest flour in all of Gielinor.$"
@@ -271,10 +328,39 @@ Trainer1_MillLaneMill_Battle_Text_3:
 	.string "Kebbie$"
 
 Trainer1_MillLaneMill_Battle_Text_4:
-	.string "Since you beat me, I'll tell you a little\n"
-	.string "about what I've read about Kebbits.\p"
-	.string "The ones around here apparently evolve\n"
-	.string "at level 15.\p"
+	.string "If you want to know more about Kebbits,\n"
+	.string "try speaking to my mentor.\p"
+	.string "He should be around here somewhere.$"
+
+MillLaneMill_Item_WHEAT1_Text_0:
+	.string "You search the sack…\p"
+	.string "…$"
+
+MillLaneMill_Item_WHEAT1_Text_1:
+	.string "The sack is empty.$"
+
+MODEST_SAMUEL_Battle_Text_0:
+	.string "Oh, sorry, I was looking around here for\n"
+	.string "a new friend to add to my party.\p"
+	.string "Did you want to battle?$"
+
+MODEST_SAMUEL_Battle_Text_1:
+	.string "It doesn't matter that we lost.\p"
+	.string "My monsters did their best!$"
+
+MODEST_SAMUEL_Battle_Text_2:
+	.string "Samuel$"
+
+MODEST_SAMUEL_Battle_Text_3:
+	.string "Win or lose, I'll always battle with my\n"
+	.string "favourite monsters.$"
+
+MILL_LANE_MILL_HUNTER_NPC_Text_0:
+	.string "Chymp$"
+
+MILL_LANE_MILL_HUNTER_NPC_Text_1:
+	.string "The kebbits you can catch around here\n"
+	.string "evolve at level 15.\p"
 	.string "If they have higher speed than\n"
 	.string "defence, then they'll evolve into Wild\l"
 	.string "Kebbits.\p"
@@ -283,13 +369,43 @@ Trainer1_MillLaneMill_Battle_Text_4:
 	.string "Spotted Kebbits.\p"
 	.string "And if both of those stats are the\n"
 	.string "same, they'll evolve into Polar Kebbits.\p"
-	.string "I need to train Hunter more to learn\n"
-	.string "about how they evolve from there,\l"
-	.string "though.$"
+	.string "$"
 
-MillLaneMill_Item_WHEAT1_Text_0:
-	.string "You search the sack…\p"
-	.string "…$"
+MILL_LANE_MILL_HUNTER_NPC_Text_2:
+	.string "I really, really love Kebbits!\p"
+	.string "I'm happy to share my knowledge with\n"
+	.string "you if you want to keep talking.$"
 
-MillLaneMill_Item_WHEAT1_Text_1:
-	.string "The sack is empty.$"
+MILL_LANE_MILL_HUNTER_NPC_Text_3:
+	.string "Did you know that there are 15\n"
+	.string "different types of kebbits?\p"
+	.string "They're all NORMAL type, but sometimes\n"
+	.string "when they evolve they gain a secondary\l"
+	.string "typing.\p"
+	.string "You'll have to discover those for\n"
+	.string "yourself!$"
+
+MILL_LANE_MILL_HUNTER_NPC_Text_4:
+	.string "If you teach a Barbed Kebbit a POISON\n"
+	.string "move, it starts to look very ill.\p"
+	.string "I love Kebbits too much to do it myself.$"
+
+MILL_LANE_MILL_HUNTER_NPC_Text_5:
+	.string "Desert Devil Kebbits LOVE chocolate.\p"
+	.string "If you feed them something chocolatey,\n"
+	.string "they'll evolve into a very unique type\l"
+	.string "of Kebbit.$"
+
+MILL_LANE_MILL_HUNTER_NPC_Text_6:
+	.string "Prickly Kebbits have different\n"
+	.string "evolutions depending on whether you\l"
+	.string "level them up during the day or at\l"
+	.string "night.\p"
+	.string "Try it out and see which type you\n"
+	.string "prefer.$"
+
+MILL_LANE_MILL_HUNTER_NPC_Text_7:
+	.string "Spotted and Wild Kebbits evolve more\n"
+	.string "quickly than Polar Kebbits.\p"
+	.string "Keep this in mind when training yours\n"
+	.string "up.$"

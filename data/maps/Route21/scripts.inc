@@ -20,6 +20,15 @@ BATTLE_ROUTE21_TRAINER_2::
 	end
 
 
+BATTLE_ROUTE21_TRAINER_3::
+	trainerbattle_single TRAINER_ROUTE21_TRAINER_3, BATTLE_ROUTE21_TRAINER_3_Text_0, BATTLE_ROUTE21_TRAINER_3_Text_1
+	namebox BATTLE_ROUTE21_TRAINER_3_Text_2
+	msgbox BATTLE_ROUTE21_TRAINER_3_Text_3
+	hidenamebox
+	release
+	end
+
+
 ITEM_ROUTE21_ITEM1::
 	finditem ITEM_POUCH_MITHRIL
 	end
@@ -58,3 +67,18 @@ BATTLE_ROUTE21_TRAINER_2_Text_3:
 	.string "ages to farm trees, but that they grow\l"
 	.string "back so quickly once you've chopped\l"
 	.string "them down?$"
+
+BATTLE_ROUTE21_TRAINER_3_Text_0:
+	.string "Arrr, I'll cleave ye to the brisket!$"
+
+BATTLE_ROUTE21_TRAINER_3_Text_1:
+	.string "Grrr, curses upon ye bilge-sucking\n"
+	.string "scurvy dog.$"
+
+BATTLE_ROUTE21_TRAINER_3_Text_2:
+	.string "Kristoffer$"
+
+BATTLE_ROUTE21_TRAINER_3_Text_3:
+	.string "Shiver me timbers!\p"
+	.string "Looks like I'll be the one feeding the\n"
+	.string "fish...$"

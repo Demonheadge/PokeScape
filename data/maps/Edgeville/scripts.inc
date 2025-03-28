@@ -92,8 +92,8 @@ NPC_EDGEVILLE_6::
 NPC_EDGEVILLE_7::
 	lock
 	faceplayer
-	namebox NPC_EDGEVILLE_4_Text_0
-	msgbox NPC_EDGEVILLE_7_Text_0
+	namebox NPC_EDGEVILLE_7_Text_0
+	msgbox NPC_EDGEVILLE_7_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -127,6 +127,61 @@ NPC_EDGEVILLE_10::
 	faceplayer
 	namebox NPC_EDGEVILLE_9_Text_0
 	msgbox NPC_EDGEVILLE_10_Text_0
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NPC_EDGEVILLE_11::
+	lock
+	faceplayer
+	namebox NPC_EDGEVILLE_11_Text_0
+	msgbox NPC_EDGEVILLE_11_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NPC_EDGEVILLE_12::
+	lock
+	faceplayer
+	namebox NPC_EDGEVILLE_12_Text_0
+	msgbox NPC_EDGEVILLE_12_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NPC_EDGEVILLE_13::
+	lock
+	faceplayer
+	namebox NPC_EDGEVILLE_13_Text_0
+	msgbox NPC_EDGEVILLE_13_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NPC_EDGEVILLE_14::
+	lock
+	faceplayer
+	namebox NPC_EDGEVILLE_14_Text_0
+	msgbox NPC_EDGEVILLE_14_Text_1
+	closemessage
+	hidenamebox
+	release
+	end
+
+
+NPC_EDGEVILLE_15::
+	lock
+	faceplayer
+	namebox NPC_EDGEVILLE_15_Text_0
+	msgbox NPC_EDGEVILLE_15_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -383,6 +438,7 @@ ITEM_EDGEVILLE_INDOOR_2::
 NPC_EDGEVILLE_HOUSE_NPC_1::
 	lock
 	faceplayer
+	namebox NPC_EDGEVILLE_8_Text_0
 	msgbox NPC_EDGEVILLE_HOUSE_NPC_1_Text_0
 	closemessage
 	hidenamebox
@@ -393,6 +449,7 @@ NPC_EDGEVILLE_HOUSE_NPC_1::
 NPC_EDGEVILLE_HOUSE_NPC_2::
 	lock
 	faceplayer
+	namebox NPC_EDGEVILLE_8_Text_0
 	msgbox NPC_EDGEVILLE_HOUSE_NPC_2_Text_0
 	closemessage
 	hidenamebox
@@ -403,6 +460,7 @@ NPC_EDGEVILLE_HOUSE_NPC_2::
 NPC_EDGEVILLE_HOUSE_NPC_3::
 	lock
 	faceplayer
+	namebox NPC_EDGEVILLE_8_Text_0
 	msgbox NPC_EDGEVILLE_HOUSE_NPC_3_Text_0
 	closemessage
 	hidenamebox
@@ -413,6 +471,7 @@ NPC_EDGEVILLE_HOUSE_NPC_3::
 NPC_EDGEVILLE_HOUSE_NPC_4::
 	lock
 	faceplayer
+	namebox NPC_EDGEVILLE_8_Text_0
 	msgbox NPC_EDGEVILLE_HOUSE_NPC_4_Text_0
 	closemessage
 	hidenamebox
@@ -423,6 +482,7 @@ NPC_EDGEVILLE_HOUSE_NPC_4::
 NPC_EDGEVILLE_HOUSE_NPC_5::
 	lock
 	faceplayer
+	namebox NPC_EDGEVILLE_8_Text_0
 	msgbox NPC_EDGEVILLE_HOUSE_NPC_5_Text_0
 	closemessage
 	hidenamebox
@@ -466,7 +526,8 @@ NPC_EDGEVILLE_HOUSE_NPC_8::
 NPC_EDGEVILLE_HOUSE_NPC_9::
 	lock
 	faceplayer
-	msgbox NPC_EDGEVILLE_HOUSE_NPC_9_Text_0
+	namebox NPC_EDGEVILLE_HOUSE_NPC_9_Text_0
+	msgbox NPC_EDGEVILLE_HOUSE_NPC_9_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -476,7 +537,8 @@ NPC_EDGEVILLE_HOUSE_NPC_9::
 NPC_EDGEVILLE_HOUSE_NPC_10::
 	lock
 	faceplayer
-	msgbox NPC_EDGEVILLE_HOUSE_NPC_9_Text_0
+	namebox NPC_EDGEVILLE_HOUSE_NPC_10_Text_0
+	msgbox NPC_EDGEVILLE_HOUSE_NPC_10_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -638,6 +700,9 @@ NPC_EDGEVILLE_6_Text_1:
 	.string "own!$"
 
 NPC_EDGEVILLE_7_Text_0:
+	.string "Ironman$"
+
+NPC_EDGEVILLE_7_Text_1:
 	.string "I hear some monsters only evolve in\n"
 	.string "certain areas.\p"
 	.string "For instance, one of my chickens\n"
@@ -668,6 +733,60 @@ NPC_EDGEVILLE_10_Text_0:
 	.string "Let this be a fair warning. If you cause\n"
 	.string "any trouble, we will lock you up and only\l"
 	.string "feed you bread and water.$"
+
+NPC_EDGEVILLE_11_Text_0:
+	.string "Noob$"
+
+NPC_EDGEVILLE_11_Text_1:
+	.string "My canoe sank when I got here and I\n"
+	.string "don't know how to make a new one.$"
+
+NPC_EDGEVILLE_12_Text_0:
+	.string "xXPKChampXx$"
+
+NPC_EDGEVILLE_12_Text_1:
+	.string "There used to be a lever here to\n"
+	.string "teleport you deep into the Wilderness!\p"
+	.string "It was amazing, you could catch noobs\n"
+	.string "off guard and teleblock them so they\l"
+	.string "couldn't escape.\p"
+	.string "Sadly Vannaka decided it was too\n"
+	.string "dangerous and had it removed.$"
+
+NPC_EDGEVILLE_13_Text_0:
+	.string "Alistair$"
+
+NPC_EDGEVILLE_13_Text_1:
+	.string "I finally got my hands on the Book o'\n"
+	.string "Piracy by Cap'n Hook-Hand Morrisane.\p"
+	.string "I've never been like the other pirates\n"
+	.string "and was hoping it would help me to fit\l"
+	.string "in, but I don't understand a single word\l"
+	.string "of this!\p"
+	.string "What does 'Cap'n, the gunners be a\n"
+	.string "bunch of scurvy dogs' mean?\p"
+	.string "I'll never be a real pirate at this rate.$"
+
+NPC_EDGEVILLE_14_Text_0:
+	.string "Pegasos9$"
+
+NPC_EDGEVILLE_14_Text_1:
+	.string "Have you heard of a pub called The\n"
+	.string "Pandemonium?\p"
+	.string "I met an adventurer in Port Sarim who\n"
+	.string "said they were doing a delivery for them\l"
+	.string "and they came across a bright pink\l"
+	.string "troll.\p"
+	.string "Or was it purple?\p"
+	.string "Either way, I bet it was a shiny!$"
+
+NPC_EDGEVILLE_15_Text_0:
+	.string "Got Minnows$"
+
+NPC_EDGEVILLE_15_Text_1:
+	.string "Where are all the minnows?\p"
+	.string "I've sailed around Gielinor and haven't\n"
+	.string "been able to catch a single one!$"
 
 EDGEVILLE_SIGN_1_Text_0:
 	.string "North to Edgeville.\p"
@@ -847,7 +966,23 @@ NPC_EDGEVILLE_HOUSE_NPC_8_Text_1:
 	.string "Wilderness to PK and get filthy rich!$"
 
 NPC_EDGEVILLE_HOUSE_NPC_9_Text_0:
-	.string "Hello, I am a Cupholder.$"
+	.string "Engineer$"
+
+NPC_EDGEVILLE_HOUSE_NPC_9_Text_1:
+	.string "Sorry, the furnace is currently broken.\p"
+	.string "Too many adventurers were trying to\n"
+	.string "dump ores in at the same time.\p"
+	.string "A furnace needs to be significantly\n"
+	.string "hotter to smelt gold than bronze!\p"
+	.string "When will they learn...$"
+
+NPC_EDGEVILLE_HOUSE_NPC_10_Text_0:
+	.string "SitnSkill$"
+
+NPC_EDGEVILLE_HOUSE_NPC_10_Text_1:
+	.string "Aw man, how am I meant to smelt more\n"
+	.string "ores now?\p"
+	.string "I can't cast Superheat Item...$"
 
 BATTLE_EDGEVILLE_GYM_1_Text_0:
 	.string "My current slayer task is Skeletons.\p"

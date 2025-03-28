@@ -143,7 +143,7 @@ BATTLE_AsgarnianDungeon_MUGGER_1_Text_1:
 	.string "Fine here, have your gp back.$"
 
 BATTLE_AsgarnianDungeon_MUGGER_1_Text_2:
-	.string "IWill4StealU$"
+	.string "Robert$"
 
 BATTLE_AsgarnianDungeon_MUGGER_1_Text_3:
 	.string "Not many people come down here due the\n"

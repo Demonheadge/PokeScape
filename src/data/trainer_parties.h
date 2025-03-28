@@ -2014,8 +2014,8 @@ static const struct TrainerMon sParty_DWARVENMINES_SKILLER[] = {
     {
     .lvl = 40,
     .species = SPECIES_PET_ROCK,
-    .heldItem = ITEM_NONE
-    .moves = {MOVE_PROTECT, MOVE_HARDEN, MOVE_SHORE_UP, MOVE_PLAY_NICE}
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_PROTECT, MOVE_HARDEN, MOVE_SHORE_UP, MOVE_PLAY_NICE},
     }
 };
 
@@ -2023,12 +2023,12 @@ static const struct TrainerMon sParty_DWARVENMINES_MINER[] = {
     {
     .lvl = 31,
     .species = SPECIES_GIANT_BAT,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     },
     {
     .lvl = 31,
     .species = SPECIES_SCORPION_PIT_FORM,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     }
 };
 
@@ -2036,12 +2036,12 @@ static const struct TrainerMon sParty_DWARVENMINES_DWARF_1[] = {
     {
     .lvl = 30,
     .species = SPECIES_SCORPION_POISON_FORM,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     },
     {
     .lvl = 31,
     .species = SPECIES_TORTOISE_NORMAL_FORM,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     }
 };
 
@@ -2049,12 +2049,12 @@ static const struct TrainerMon sParty_DWARVENMINES_DWARF_2[] = {
     {
     .lvl = 21,
     .species = SPECIES_TORTOISE_WAR_FORM,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     },
     {
     .lvl = 23,
-    .species = SPECIES_SPOOKAXE
-    .heldItem = ITEM_NONE
+    .species = SPECIES_SPOOKAXE,
+    .heldItem = ITEM_NONE,
     }
 };
 
@@ -2062,17 +2062,17 @@ static const struct TrainerMon sParty_DWARVENMINES_DWARF_3[] = {
     {
     .lvl = 31,
     .species = SPECIES_WALL_BEAST,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     },
     {
     .lvl = 32,
     .species = SPECIES_GIANT_BAT,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     },
     {
     .lvl = 32,
     .species = SPECIES_SPIDER_UNGAEL_FORM,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     },
 };
 
@@ -2080,17 +2080,17 @@ static const struct TrainerMon sParty_DWARVENMINES_DWARF_4[] = {
     {
     .lvl = 30,
     .species = SPECIES_CAVEFISH,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     },
     {
     .lvl = 31,
     .species = SPECIES_CAVEFISH,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     },
     {
     .lvl = 32,
     .species = SPECIES_ROCKTAIL,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     }
 };
 
@@ -2100,23 +2100,23 @@ static const struct TrainerMon sParty_FALADOR_GYM_1[] = {
     {
     .lvl = 30,
     .species = SPECIES_TROUT_NORMAL_FORM,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     },
     {
     .lvl = 32,
     .species = SPECIES_DALMATIAN,
-    .heldItem = ITEM_NONE
-    .moves = {MOVE_DIG, MOVE_CRUNCH, MOVE_AQUA_TAIL, MOVE_AQUA_JET}
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_DIG, MOVE_CRUNCH, MOVE_AQUA_TAIL, MOVE_AQUA_JET},
     },
     {
     .lvl = 33,
     .species = SPECIES_SNAKE_SEA_FORM,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     },
     {
     .lvl = 33,
     .species = SPECIES_JADINKO_SARADOMIN,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     }
 };
 
@@ -2124,32 +2124,32 @@ static const struct TrainerMon sParty_FALADOR_GYM_2[] = {
     {
     .lvl = 22,
     .species = SPECIES_DUCKLING,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     },
     {
     .lvl = 22,
     .species = SPECIES_DUCKLING,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     },
     {
     .lvl = 24,
     .species = SPECIES_DUCK_NORMAL_FORM,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     },
     {
     .lvl = 24,
     .species = SPECIES_DUCK_NORMAL_FORM,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     },
     {
     .lvl = 24,
     .species = SPECIES_DUCK_NORMAL_FORM,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     },
     {
     .lvl = 24,
     .species = SPECIES_DUCK_NORMAL_FORM,
-    .heldItem = ITEM_NONE
+    .heldItem = ITEM_NONE,
     }
 };
 
