@@ -1546,10 +1546,10 @@ const struct BlendSettings gTimeOfDayBlend[] =
 
 u8 UpdateTimeOfDay(void)
 {
-    s32 hours, minutes;
+    s32 hours;
     RtcCalcLocalTime();
     hours = gLocalTime.hours;
-    minutes = gLocalTime.minutes;
+    //s32 minutes = gLocalTime.minutes;
 
     if (hours < 1)
     { // night
