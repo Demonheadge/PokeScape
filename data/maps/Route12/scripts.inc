@@ -466,6 +466,109 @@ PURO_PURO_EVENT_ROUTE12::
 	return
 
 
+NPC_ROUTE12_IRONMAN::
+	lock
+	faceplayer
+	namebox NPC_ROUTE12_IRONMAN_Text_0
+	random 7
+	switch VAR_RESULT
+	case 0, NPC_ROUTE12_IRONMAN_3
+	case 1, NPC_ROUTE12_IRONMAN_4
+	case 2, NPC_ROUTE12_IRONMAN_5
+	case 3, NPC_ROUTE12_IRONMAN_6
+	case 4, NPC_ROUTE12_IRONMAN_7
+	case 5, NPC_ROUTE12_IRONMAN_8
+	case 6, NPC_ROUTE12_IRONMAN_9
+NPC_ROUTE12_IRONMAN_1:
+	hidenamebox
+	closemessage
+	release
+	end
+
+NPC_ROUTE12_IRONMAN_3:
+	msgbox NPC_ROUTE12_IRONMAN_Text_1
+	goto NPC_ROUTE12_IRONMAN_1
+
+NPC_ROUTE12_IRONMAN_4:
+	msgbox NPC_ROUTE12_IRONMAN_Text_2
+	goto NPC_ROUTE12_IRONMAN_1
+
+NPC_ROUTE12_IRONMAN_5:
+	msgbox NPC_ROUTE12_IRONMAN_Text_3
+	goto NPC_ROUTE12_IRONMAN_1
+
+NPC_ROUTE12_IRONMAN_6:
+	msgbox NPC_ROUTE12_IRONMAN_Text_4
+	goto NPC_ROUTE12_IRONMAN_1
+
+NPC_ROUTE12_IRONMAN_7:
+	msgbox NPC_ROUTE12_IRONMAN_Text_5
+	goto NPC_ROUTE12_IRONMAN_1
+
+NPC_ROUTE12_IRONMAN_8:
+	msgbox NPC_ROUTE12_IRONMAN_Text_6
+	goto NPC_ROUTE12_IRONMAN_1
+
+NPC_ROUTE12_IRONMAN_9:
+	msgbox NPC_ROUTE12_IRONMAN_Text_7
+	goto NPC_ROUTE12_IRONMAN_1
+
+
+NPC_ROUTE12_BRONZEMAN::
+	lock
+	faceplayer
+	namebox NPC_ROUTE12_BRONZEMAN_Text_0
+	msgbox NPC_ROUTE12_BRONZEMAN_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+
+NPC_ROUTE12_NOOB::
+	lock
+	faceplayer
+	namebox NPC_ROUTE12_NOOB_Text_0
+	msgbox NPC_ROUTE12_NOOB_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+
+NPC_ROUTE12_SAILING::
+	lock
+	faceplayer
+	namebox NPC_ROUTE12_SAILING_Text_0
+	msgbox NPC_ROUTE12_SAILING_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+
+NPC_ROUTE12_BOAT_1::
+	lock
+	faceplayer
+	namebox NPC_ROUTE12_BOAT_1_Text_0
+	msgbox NPC_ROUTE12_BOAT_1_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+
+NPC_ROUTE12_BOAT_2::
+	lock
+	faceplayer
+	namebox NPC_ROUTE12_BOAT_2_Text_0
+	msgbox NPC_ROUTE12_BOAT_2_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+
 Gillie_Groats_Text_0:
 	.string "Gillie Groats$"
 
@@ -656,3 +759,112 @@ BLOCK_ALKHARID_GATE_Text_0:
 
 ALKHARID_GATE_GUARD_Text_0:
 	.string "Guard$"
+
+NPC_ROUTE12_IRONMAN_Text_0:
+	.string "Limpwurt$"
+
+NPC_ROUTE12_IRONMAN_Text_1:
+	.string "I got 99 Woodcutting with a steel axe\n"
+	.string "without ever leaving Lumbridge!\p"
+	.string "I think I'm the reason Bob is out of\n"
+	.string "axes.\p"
+	.string "Now where is that Woodcutting Tutor\n"
+	.string "with my cape...$"
+
+NPC_ROUTE12_IRONMAN_Text_2:
+	.string "With how my routes rolled, it took me 2\n"
+	.string "years to finish Cook's Assistant.$"
+
+NPC_ROUTE12_IRONMAN_Text_3:
+	.string "I rolled Al Kharid as my next route, but\n"
+	.string "since then the guards have blocked\l"
+	.string "access to anybody without the badge.\p"
+	.string "I probably should have done that\n"
+	.string "before I left, but I came back here to\l"
+	.string "train!$"
+
+NPC_ROUTE12_IRONMAN_Text_4:
+	.string "I'm an extreme one route ironman.\p"
+	.string "That means before I can leave this\n"
+	.string "route, I must complete all of the\l"
+	.string "highest level skilling challenges,\p"
+	.string "do all available achievement diary\n"
+	.string "tasks,\p"
+	.string "obtain all unique monster drops,\p"
+	.string "and obtain all unique items on a route.\p"
+	.string "{PAUSE 15}What do you mean there are no\n"
+	.string "achievement diaries?!$"
+
+NPC_ROUTE12_IRONMAN_Text_5:
+	.string "The extreme part of a extreme one\n"
+	.string "route ironman means absolutely no\l"
+	.string "exceptions to my rules!$"
+
+NPC_ROUTE12_IRONMAN_Text_6:
+	.string "I smelted so many bronze bars in the\n"
+	.string "Lumbridge Furnace that I think I broke\l"
+	.string "it...\p"
+	.string "Apparently they've had to send a dwarf\n"
+	.string "all the way from near Falador to fix it.$"
+
+NPC_ROUTE12_IRONMAN_Text_7:
+	.string "There's a gnome near the windmill that\n"
+	.string "is looking for an item.\p"
+	.string "Do you have any idea where it could be?\p"
+	.string "I can't roll my next route until I find\n"
+	.string "it.\p"
+	.string "{PAUSE 15}...\p"
+	.string "{PAUSE 15}I... must... find... it!$"
+
+NPC_ROUTE12_BRONZEMAN_Text_0:
+	.string "Br0nzem4n$"
+
+NPC_ROUTE12_BRONZEMAN_Text_1:
+	.string "Everyone kept saying that to battle, I\n"
+	.string "had to catch a monster.\p"
+	.string "But no matter how much I run after it, I\n"
+	.string "can't seem to keep this cow still long\l"
+	.string "enough!{PAUSE 15}Wait, what's a pouch..?$"
+
+NPC_ROUTE12_NOOB_Text_0:
+	.string "Big Nub56$"
+
+NPC_ROUTE12_NOOB_Text_1:
+	.string "Where is varok?$"
+
+NPC_ROUTE12_SAILING_Text_0:
+	.string "MonKeeDLoof$"
+
+NPC_ROUTE12_SAILING_Text_1:
+	.string "Once I've saved up enough coins to buy\n"
+	.string "myself a boat, I'm going to set sail and\l"
+	.string "never look back.\p"
+	.string "One day my crew and I will be known as\n"
+	.string "the Straw Boater Pirates!$"
+
+NPC_ROUTE12_BOAT_1_Text_0:
+	.string "L0st2theS3a$"
+
+NPC_ROUTE12_BOAT_1_Text_1:
+	.string "I picked up a courier task to deliver\n"
+	.string "from lobsters from Musa Point to\l"
+	.string "Catherby.\p"
+	.string "I have absolutely no idea how I ended\n"
+	.string "up here, though.\p"
+	.string "I just got caught up in the currents...\p"
+	.string "I'm just continuing to follow them and\n"
+	.string "hoping for the best.$"
+
+NPC_ROUTE12_BOAT_2_Text_0:
+	.string "DaveyJay5$"
+
+NPC_ROUTE12_BOAT_2_Text_1:
+	.string "I heard rumours of an unusual sea\n"
+	.string "creature causing a disturbance north\l"
+	.string "of Musa Point.\p"
+	.string "It has churned up the sea so much that\n"
+	.string "the currents there are out of control\l"
+	.string "and causing boats to veer wildly off\l"
+	.string "course.\p"
+	.string "Be careful if you do ever venture out\n"
+	.string "that way.$"

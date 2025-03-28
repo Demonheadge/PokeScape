@@ -80,7 +80,7 @@ BKFORT_3F_NPC_8::
 	lock
 	faceplayer
 	namebox BKFORT_3F_NPC_8_Text_0
-	msgbox BKFORT_3F_NPC_2_Text_0
+	msgbox BKFORT_3F_NPC_8_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -91,7 +91,7 @@ BKFORT_3F_NPC_9::
 	lock
 	faceplayer
 	namebox BKFORT_3F_NPC_9_Text_0
-	msgbox BKFORT_3F_NPC_2_Text_0
+	msgbox BKFORT_3F_NPC_9_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -102,7 +102,7 @@ BKFORT_3F_NPC_10::
 	lock
 	faceplayer
 	namebox BKFORT_3F_NPC_10_Text_0
-	msgbox BKFORT_3F_NPC_2_Text_0
+	msgbox BKFORT_3F_NPC_10_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -135,7 +135,7 @@ BKFORT_3F_NPC_13::
 	lock
 	faceplayer
 	namebox BKFORT_3F_NPC_13_Text_0
-	msgbox BKFORT_3F_NPC_2_Text_0
+	msgbox BKFORT_3F_NPC_13_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -144,14 +144,45 @@ BKFORT_3F_NPC_13::
 
 BKFORT_3F_NPC_14::
 	lock
-	faceplayer
 	namebox BKFORT_3F_NPC_1_Text_0
-	msgbox BKFORT_3F_NPC_2_Text_0
+	msgbox BKFORT_3F_NPC_14_Text_0
 	closemessage
 	hidenamebox
+	applymovement 2, MOVEMENT_FACE_RIGHT
+	applymovement 4, MOVEMENT_FACE_RIGHT
+	applymovement 3, MOVEMENT_FACE_LEFT
+	applymovement 5, MOVEMENT_FACE_LEFT
+	waitmovement 0
+	namebox BKFORT_3F_NPC_14_Text_1
+	msgbox BKFORT_3F_NPC_14_Text_2
+	closemessage
+	hidenamebox
+	namebox BKFORT_3F_NPC_1_Text_0
+	msgbox BKFORT_3F_NPC_14_Text_3
+	closemessage
+	hidenamebox
+	applymovement 2, MOVEMENT_EXCLAMATIONMARK_JUMP_RIGHT
+	applymovement 4, MOVEMENT_EXCLAMATIONMARK_JUMP_RIGHT
+	applymovement 3, MOVEMENT_EXCLAMATIONMARK_JUMP_LEFT
+	applymovement 5, MOVEMENT_EXCLAMATIONMARK_JUMP_LEFT
+	waitmovement 0
+	namebox BKFORT_3F_NPC_14_Text_1
+	msgbox BKFORT_3F_NPC_14_Text_4
+	closemessage
+	hidenamebox
+	applymovement 2, MOVEMENT_FACE_LEFT
+	applymovement 4, MOVEMENT_FACE_LEFT
+	applymovement 3, MOVEMENT_FACE_RIGHT
+	applymovement 5, MOVEMENT_FACE_RIGHT
+	waitmovement 0
 	release
 	end
 
+
+MOVEMENT_EXCLAMATIONMARK_JUMP_RIGHT:
+	emote_exclamation_mark
+	jump_in_place_right
+	step_end
 
 BKFORT_3F_NPC_15::
 	lock
@@ -201,7 +232,7 @@ BKFORT_3F_NPC_19::
 	lock
 	faceplayer
 	namebox BKFORT_3F_NPC_11_Text_0
-	msgbox BKFORT_3F_NPC_2_Text_0
+	msgbox BKFORT_3F_NPC_19_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -304,17 +335,56 @@ BKFORT_3F_NPC_7_Text_0:
 BKFORT_3F_NPC_8_Text_0:
 	.string "Skeleton$"
 
+BKFORT_3F_NPC_8_Text_1:
+	.string "The skeleton stares at you.\p"
+	.string "It can see you looking at the item\n"
+	.string "behind it, but it clearly has no\l"
+	.string "intention of handing it over.$"
+
 BKFORT_3F_NPC_9_Text_0:
 	.string "Worldbearer$"
 
+BKFORT_3F_NPC_9_Text_1:
+	.string "Yildoi!\p"
+	.string "Alnaasdzoh klesh yetsan.$"
+
 BKFORT_3F_NPC_10_Text_0:
 	.string "Forgotten War.$"
+
+BKFORT_3F_NPC_10_Text_1:
+	.string "This place is even more bleak than the\n"
+	.string "dungeons back home.$"
 
 BKFORT_3F_NPC_11_Text_0:
 	.string "Guard$"
 
 BKFORT_3F_NPC_13_Text_0:
 	.string "Blacksmith$"
+
+BKFORT_3F_NPC_13_Text_1:
+	.string "Do you know how difficult it is to smelt\n"
+	.string "enough black armour to keep up with\l"
+	.string "demand?$"
+
+BKFORT_3F_NPC_14_Text_0:
+	.string "I am Black Knight Sergeant Tyme, your\n"
+	.string "drill instructor.\p"
+	.string "From now on you will speak only when\n"
+	.string "spoken to, and the first and last words\l"
+	.string "out of your mouths will be 'Sir'.\p"
+	.string "Do you maggots understand that?$"
+
+BKFORT_3F_NPC_14_Text_1:
+	.string "Guards$"
+
+BKFORT_3F_NPC_14_Text_2:
+	.string "Sir, yes Sir.$"
+
+BKFORT_3F_NPC_14_Text_3:
+	.string "I can't hear you.$"
+
+BKFORT_3F_NPC_14_Text_4:
+	.string "SIR, YES SIR!$"
 
 BKFORT_3F_NPC_16_Text_0:
 	.string "Boy, when I joined the exchange program\n"
@@ -332,6 +402,10 @@ BKFORT_3F_NPC_17_Text_1:
 	.string "Gielinor had ever seen...\p"
 	.string "With the strength of the Kinshra behind\n"
 	.string "me, I swear I will have my revenge.$"
+
+BKFORT_3F_NPC_19_Text_0:
+	.string "Uhhhh, am I halucinating or is that a\n"
+	.string "freaking DEMON training over there?!$"
 
 BKFORT_3F_NPC_20_Text_0:
 	.string "Lesser Demon$"

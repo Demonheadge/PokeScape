@@ -347,6 +347,72 @@ ROUTE1_FarmerFred::
 	end
 
 
+ROUTE1_FARMER_NPC::
+	lock
+	faceplayer
+	namebox BLOCK_ROUTE1_FARMER_Text_0
+	random 4
+	switch VAR_RESULT
+	case 0, ROUTE1_FARMER_NPC_3
+	case 1, ROUTE1_FARMER_NPC_4
+	case 2, ROUTE1_FARMER_NPC_5
+	case 3, ROUTE1_FARMER_NPC_6
+ROUTE1_FARMER_NPC_1:
+	hidenamebox
+	closemessage
+	release
+	end
+
+ROUTE1_FARMER_NPC_3:
+	msgbox ROUTE1_FARMER_NPC_Text_0
+	goto ROUTE1_FARMER_NPC_1
+
+ROUTE1_FARMER_NPC_4:
+	msgbox ROUTE1_FARMER_NPC_Text_1
+	goto ROUTE1_FARMER_NPC_1
+
+ROUTE1_FARMER_NPC_5:
+	msgbox ROUTE1_FARMER_NPC_Text_2
+	goto ROUTE1_FARMER_NPC_1
+
+ROUTE1_FARMER_NPC_6:
+	msgbox ROUTE1_FARMER_NPC_Text_3
+	goto ROUTE1_FARMER_NPC_1
+
+
+ROUTE1_BOAT_1::
+	lock
+	faceplayer
+	namebox ROUTE1_BOAT_1_Text_0
+	msgbox ROUTE1_BOAT_1_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+
+ROUTE1_BOAT_2::
+	lock
+	faceplayer
+	namebox ROUTE1_BOAT_2_Text_0
+	msgbox ROUTE1_BOAT_1_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+
+ROUTE1_BOAT_3::
+	lock
+	faceplayer
+	namebox ROUTE1_BOAT_3_Text_0
+	msgbox ROUTE1_BOAT_3_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+
 Wartfoot_Route1_Battle::
 	trainerbattle_single TRAINER_GOBLIN_1_ROUTE1, Wartfoot_Route1_Battle_Text_0, Wartfoot_Route1_Battle_Text_1
 	msgbox Wartfoot_Route1_Battle_Text_2
@@ -1012,6 +1078,56 @@ ROUTE1_FarmerFred_Text_1:
 	.string "I don't much care for magic.\p"
 	.string "Maybe you could try it and see what\n"
 	.string "happens?$"
+
+ROUTE1_FARMER_NPC_Text_0:
+	.string "Did you know that pigs use mud to\n"
+	.string "regulate their temperature?\p"
+	.string "That's a fun fact to help you remember\n"
+	.string "that all pigs are GROUND type.$"
+
+ROUTE1_FARMER_NPC_Text_1:
+	.string "Although they're too heavy to do it for\n"
+	.string "long distances, chickens can flap their\l"
+	.string "wings to fly for short distances.\p"
+	.string "All chickens are FLYING type.$"
+
+ROUTE1_FARMER_NPC_Text_2:
+	.string "Cows are constantly moving while\n"
+	.string "grazing, and can cover huge distances\l"
+	.string "in one day.\p"
+	.string "Although they love to eat grass,\n"
+	.string "remember that all cows are GROUND type\l"
+	.string "so they don't fare well against it in\l"
+	.string "battle!$"
+
+ROUTE1_FARMER_NPC_Text_3:
+	.string "Unlike humans, sheep have rectangular\n"
+	.string "pupils allowing them to see almost\l"
+	.string "everything around them without turning\l"
+	.string "their head.\p"
+	.string "Although this is very strange, almost\n"
+	.string "all sheep are NORMAL type.$"
+
+ROUTE1_BOAT_1_Text_0:
+	.string "Awenix$"
+
+ROUTE1_BOAT_1_Text_1:
+	.string "I am a Cupholder$"
+
+ROUTE1_BOAT_2_Text_0:
+	.string "Gelo Ball$"
+
+ROUTE1_BOAT_3_Text_0:
+	.string "Trickool$"
+
+ROUTE1_BOAT_3_Text_1:
+	.string "Different routes seem to have\n"
+	.string "different fish in them.\p"
+	.string "If you're looking for a specific type,\n"
+	.string "try sailing around in different\l"
+	.string "locations.\p"
+	.string "I've heard that some are only available\n"
+	.string "underground!$"
 
 Wartfoot_Route1_Battle_Text_0:
 	.string "Brown armour best!$"

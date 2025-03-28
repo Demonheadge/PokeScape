@@ -1191,6 +1191,17 @@ NPC_RAVEN_TRAINING::
 	end
 
 
+NPC_LUMBRIDGE_REGIONEVOS::
+	lock
+	faceplayer
+	namebox NPC_LUMBRIDGE_REGIONEVOS_Text_0
+	msgbox NPC_LUMBRIDGE_REGIONEVOS_Text_1
+	hidenamebox
+	closemessage
+	release
+	end
+
+
 Mithrilman_LUMBRIDGE::
 	lock
 	faceplayer
@@ -1715,6 +1726,14 @@ NPC_RAVEN_TRAINING_Text_0:
 
 NPC_RAVEN_TRAINING_Text_1:
 	.string "TWITTER!$"
+
+NPC_LUMBRIDGE_REGIONEVOS_Text_0:
+	.string "Newb$"
+
+NPC_LUMBRIDGE_REGIONEVOS_Text_1:
+	.string "Woah, did you know that some monsters\n"
+	.string "evolve into different things depending\l"
+	.string "on where in Gielinor they are?$"
 
 Mithrilman_LUMBRIDGE_STATE_2_Text_0:
 	.string "???$"

@@ -933,6 +933,41 @@ ANUBTOT_3:
 	walk_up
 	step_end
 
+Lumbridge_GRAVEYARD_SIGN_1::
+	lock
+	msgbox Lumbridge_GRAVEYARD_SIGN_1_Text_0
+	release
+	end
+
+
+Lumbridge_GRAVEYARD_SIGN_2::
+	lock
+	msgbox Lumbridge_GRAVEYARD_SIGN_2_Text_0
+	release
+	end
+
+
+Lumbridge_GRAVEYARD_SIGN_3::
+	lock
+	msgbox Lumbridge_GRAVEYARD_SIGN_3_Text_0
+	release
+	end
+
+
+Lumbridge_GRAVEYARD_SIGN_4::
+	lock
+	msgbox Lumbridge_GRAVEYARD_SIGN_4_Text_0
+	release
+	end
+
+
+Lumbridge_GRAVEYARD_SIGN_5::
+	lock
+	msgbox Lumbridge_GRAVEYARD_SIGN_5_Text_0
+	release
+	end
+
+
 CUPHOLDER_NPC_Text_0:
 	.string "I am currently a Cupholder with no\n"
 	.string "dialog.$"
@@ -1362,3 +1397,31 @@ A_NUB_TOT_LOCKED_DOOR_TUTORIAL_Text_1:
 	.string "Nice meeting you!\p"
 	.string "And one final time.\n"
 	.string "Remember… the A BUTTON.$"
+
+Lumbridge_GRAVEYARD_SIGN_1_Text_0:
+	.string "RIP 'Thick Lum'.\p"
+	.string "Gone before its time.$"
+
+Lumbridge_GRAVEYARD_SIGN_2_Text_0:
+	.string "The grave is simply marked with the\n"
+	.string "letter 'J'.\p"
+	.string "There is a tattered scroll with the\n"
+	.string "number 17 written on it, along with a\l"
+	.string "bloody harpoon.\p"
+	.string "You decide it's best to leave that\n"
+	.string "alone...$"
+
+Lumbridge_GRAVEYARD_SIGN_3_Text_0:
+	.string "Lumbridge Graveyard.\p"
+	.string "Please respect the graves while\n"
+	.string "searching for monsters.$"
+
+Lumbridge_GRAVEYARD_SIGN_4_Text_0:
+	.string "In loving memory of Duchess Oriana of\n"
+	.string "Lumbridge.$"
+
+Lumbridge_GRAVEYARD_SIGN_5_Text_0:
+	.string "Note to adventurers.\p"
+	.string "The restless ghost has been released\n"
+	.string "from the world, and the mausoleum is now\l"
+	.string "closed off to the public.$"

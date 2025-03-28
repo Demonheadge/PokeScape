@@ -441,7 +441,7 @@ HAM_LESSER_DEMON_EVENT::
 	hidenamebox
 	closemessage
 	delay 1
-	setwildbattle SPECIES_DEMON_LESSER_TONGUE_FORM, 25, ITEM_NONE
+	setwildbattle SPECIES_DEMON_LESSER_TONGUE_FORM, 27, ITEM_NONE
 	dowildbattle
 	compare VAR_RESULT, B_OUTCOME_RAN
 	goto_if_eq HAM_LESSER_DEMON_EVENT_2

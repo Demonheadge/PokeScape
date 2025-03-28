@@ -582,13 +582,13 @@ script NPC_ROUTE12_IRONMAN {
         case 2: 
             msgbox(format("I rolled Al Kharid as my next route, but since then the guards have blocked access to anybody without the badge.\pI probably should have done that before I left, but I came back here to train!"))
         case 3: 
-            msgbox(format("I'm an extreme one route ironman.\pThat means before I can leave this route, I must complete all of the highest level skilling challenges,\pdo all available achievement diary tasks,\pobtain all unique monster drops,\pand obtain all unique items on a route.\p{PAUSE15}What do you mean there are no achievement diaries?!"))
+            msgbox(format("I'm an extreme one route ironman.\pThat means before I can leave this route, I must complete all of the highest level skilling challenges,\pdo all available achievement diary tasks,\pobtain all unique monster drops,\pand obtain all unique items on a route.\p{PAUSE 15}What do you mean there are no achievement diaries?!"))
         case 4: 
             msgbox(format("The extreme part of a extreme one route ironman means absolutely no exceptions to my rules!"))
         case 5: 
             msgbox(format("I smelted so many bronze bars in the Lumbridge Furnace that I think I broke it...\pApparently they've had to send a dwarf all the way from near Falador to fix it."))
         case 6: 
-            msgbox(format("There's a gnome near the windmill that is looking for an item.\pDo you have any idea where it could be?\pI can't roll my next route until I find it.\p{PAUSE15}...\p{PAUSE15}I... must... find... it!"))
+            msgbox(format("There's a gnome near the windmill that is looking for an item.\pDo you have any idea where it could be?\pI can't roll my next route until I find it.\p{PAUSE 15}...\p{PAUSE 15}I... must... find... it!"))
     }
     hidenamebox
     closemessage
@@ -600,7 +600,7 @@ script NPC_ROUTE12_BRONZEMAN {
     lock
 	faceplayer
 	namebox("Br0nzem4n")
-    msgbox(format("Everyone kept saying that to battle, I had to catch a monster.\pBut no matter how much I run after it, I can't seem to keep this cow still long enough!{PAUSE15}Wait, what's a pouch..?"))
+    msgbox(format("Everyone kept saying that to battle, I had to catch a monster.\pBut no matter how much I run after it, I can't seem to keep this cow still long enough!{PAUSE 15}Wait, what's a pouch..?"))
     hidenamebox
 	closemessage
 	release
