@@ -5747,6 +5747,127 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_IceMountain_Guard2),
     },
 
+    [TRAINER_BARB_STRONGHOLD_B1F_TRAINER_1] = //Wizard
+    {
+        .trainerClass = TRAINER_CLASS_WIZARD,
+        .encounterMusic_gender = TRAINER_PIC_wizard_m,
+        .trainerName = _("Equinox"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BarbStrongholdB1F_Trainer1),
+    },
+
+    [TRAINER_BARB_STRONGHOLD_B1F_TRAINER_2] = //Ranger
+    {
+        .trainerClass = TRAINER_CLASS_RANGER,
+        .encounterMusic_gender = TRAINER_PIC_ranger_robin,
+        .trainerName = _("Is Ranged"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BarbStrongholdB1F_Trainer2),
+    },
+
+    [TRAINER_BARB_STRONGHOLD_B1F_TRAINER_3] = //Ironman
+    {
+        .trainerClass = TRAINER_CLASS_IRONMAN,
+        .encounterMusic_gender = TRAINER_PIC_ironman,
+        .trainerName = _("GIM Shibby"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BarbStrongholdB1F_Trainer3),
+    },
+
+    [TRAINER_BARB_STRONGHOLD_B2F_TRAINER_1] = //Archaeologist
+    {
+        .trainerClass = TRAINER_CLASS_ARCHAEOLOGIST,
+        .encounterMusic_gender = TRAINER_PIC_Archaeologist,
+        .trainerName = _("D Attenbr0"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BarbStrongholdB2F_Trainer1),
+    },
+
+    [TRAINER_BARB_STRONGHOLD_B2F_TRAINER_2] = //Barbarian
+    {
+        .trainerClass = TRAINER_CLASS_BARBARIAN,
+        .encounterMusic_gender = TRAINER_PIC_barbarian_m,
+        .trainerName = _("Ragnar"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BarbStrongholdB2F_Trainer2),
+    },
+
+    [TRAINER_BARB_STRONGHOLD_B2F_TRAINER_3] = //Agile
+    {
+        .trainerClass = TRAINER_CLASS_AGILE,
+        .encounterMusic_gender = TRAINER_PIC_graceful,
+        .trainerName = _("Sanic91"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BarbStrongholdB2F_Trainer3),
+    },
+
+    [TRAINER_BARB_STRONGHOLD_B3F_TRAINER_1] = //Wizard
+    {
+        .trainerClass = TRAINER_CLASS_WIZARD,
+        .encounterMusic_gender = TRAINER_PIC_wizard_f,
+        .trainerName = _("Thecatra"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BarbStrongholdB3F_Trainer1),
+    },
+
+    [TRAINER_BARB_STRONGHOLD_B3F_TRAINER_2] = //Ranger
+    {
+        .trainerClass = TRAINER_CLASS_BARBARIAN,
+        .encounterMusic_gender = TRAINER_PIC_barbarian_m,
+        .trainerName = _("Lightwind"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BarbStrongholdB3F_Trainer2),
+    },
+
+    [TRAINER_BARB_STRONGHOLD_B3F_TRAINER_3] = //Rune Armour
+    {
+        .trainerClass = TRAINER_CLASS_NOOB,
+        .encounterMusic_gender = TRAINER_PIC_noob_rune,
+        .trainerName = _("Shh Llama91"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BarbStrongholdB3F_Trainer3),
+    },
+
+    [TRAINER_BARB_STRONGHOLD_B3F_TRAINER_4] = //Melee
+    {
+        .trainerClass = TRAINER_CLASS_BOT,
+        .encounterMusic_gender = TRAINER_PIC_bot_dragon_slayer,
+        .trainerName = _("8a4rcfld76"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BarbStrongholdB3F_Trainer4),
+    },
+
+    [TRAINER_BARB_STRONGHOLD_B3F_TRAINER_5] = //Fisherman
+    {
+        .trainerClass = TRAINER_CLASS_FISHER,
+        .encounterMusic_gender = TRAINER_PIC_fisher,
+        .trainerName = _("ChonkyCorgi"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BarbStrongholdB3F_Trainer5),
+    },
+
 /*
     #define TRAINER_HELLWIND                                445
 #define TRAINER_HYPER_STAN                              446

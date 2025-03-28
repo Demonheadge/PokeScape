@@ -1,0 +1,82 @@
+mapscripts Barb_Stronghold_B3F_MapScripts {
+
+}
+
+//NPCs
+
+script NPC_BARB_STRONGHOLD_B3F_NPC_1
+{
+    lock
+    faceplayer
+    namebox("Cupholder")
+    msgbox(format("I am a Cupholder."))
+    hidenamebox
+    release
+    end
+}
+
+//TRAINERS
+
+script BATTLE_BARB_STRONGHOLD_B3F_TRAINER_1 //Wizard
+{
+    trainerbattle_single(TRAINER_BARB_STRONGHOLD_B3F_TRAINER_1, format("You there, can you hear the magic calling out to you too?"),format("Sorry, I was distracted by the whispers."))
+    namebox ("Thecatra")
+    msgbox(format("You can feel it, can't you?\pThere is an incredible amount of chaos energy down here."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_BARB_STRONGHOLD_B3F_TRAINER_2 //Ranger
+{
+    trainerbattle_single(TRAINER_BARB_STRONGHOLD_B3F_TRAINER_2, format("I am here in search of rare monsters, how about you?"),format("Looks like you're on a mission of your own!"))
+    namebox ("Lightwind")
+    msgbox(format("I've heard there are unique forms of chicken hiding on each floor of this place.\pHave you managed to find any of them yet?"))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_BARB_STRONGHOLD_B3F_TRAINER_3 //Rune Armour
+{
+    trainerbattle_single(TRAINER_BARB_STRONGHOLD_B3F_TRAINER_3, format("Not another trainer!\pI'm running out of supplies..."),format("I might have won if I could have healed my monsters more."))
+    namebox ("Shh Llama91")
+    msgbox(format("I keep going round in circles hoping I'll find some more healing items, but I haven't found any in a long time."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_BARB_STRONGHOLD_B4F_TRAINER_4 //Melee
+{
+    trainerbattle_single(TRAINER_BARB_STRONGHOLD_B3F_TRAINER_4, format("ERROR: NO GREEN DRAGONS DETECTED.\pENGAGING NEXT CLOSEST ENEMY."),format("ERROR: NO HP LEFT IN PARTY MONSTERS."))
+    namebox ("8a4rcfld76")
+    msgbox(format("ERROR: NO HP LEFT IN PARTY MONSTERS.\pUSER INPUT REQUIRED TO CONTINUE SCRIPT."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_BARB_STRONGHOLD_B4F_TRAINER_5 //Fisherman
+{
+    trainerbattle_single(TRAINER_BARB_STRONGHOLD_B3F_TRAINER_5, format("Fishing requires both patience and quiet, and thanks to you now I have neither!"),format("Now leave me be."))
+    namebox ("ChonkyCorgi")
+    msgbox(format("I just want to try and catch myself some new monsters.\pPlease don't keep disturbing me..."))
+    hidenamebox
+    release
+    end
+}
+
+//ITEMS
+
+script ITEM_BARB_STRONGHOLD_B3F_1 //Not implemented; to check which flags can be used
+{
+    finditem(ITEM_CHOCOLATE_CAKE)
+    end
+}
+
+script ITEM_BARB_STRONGHOLD_B3F_2 //Not implemented; to check which flags can be used
+{
+    finditem(ITEM_CHOCOLATE_CAKE)
+    end
+}

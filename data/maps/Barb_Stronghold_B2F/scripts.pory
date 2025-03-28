@@ -1,0 +1,115 @@
+mapscripts Barb_Stronghold_B2F_MapScripts {
+
+}
+
+//NPCs
+
+script NPC_BARB_STRONGHOLD_B2F_NPC_1
+{
+    lock
+    faceplayer
+    namebox("Run Laps")
+    msgbox(format("I heard that there's a continent to the west where adventurers can run around the bones of a colossal monster!\pI came down here to see if there was anything similar, but none of the bones are big enough to run on.\pWhat a disappointment!"))
+    closemessage
+    hidenamebox
+    release
+    end
+}
+
+script NPC_BARB_STRONGHOLD_B2F_NPC_2
+{
+    lock
+    msgbox(format("The skeleton looks at peace.\pYou decide not to disturb it."))
+    closemessage
+    release
+    end
+}
+
+//TRAINERS
+
+script BATTLE_BARB_STRONGHOLD_B2F_TRAINER_1 //Archaeologist
+{
+    trainerbattle_single(TRAINER_BARB_STRONGHOLD_B2F_TRAINER_1, format("Ah, here we have an extraordinary creature with imposing, jaw-like pincers...\pUgh, you scared it off!"),format("Fascinating, perhaps the real discovery here is you.."))
+    namebox ("D Attenbr0")
+    msgbox(format("I was hiding to surreptitiously study the flesh crawlers.\pDid you know that their mandibles, although strong enough to lift and carry, are used primarily for combat?\pThey could be used so much more effectively if we didn't just treat them like monsters."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_BARB_STRONGHOLD_B2F_TRAINER_2 //Barbarian
+{
+    trainerbattle_single(TRAINER_BARB_STRONGHOLD_B2F_TRAINER_2, format("Barbarians like myself train our entire lives for the honour of entering this dungeon."),format("I see why you were also given that honour."))
+    namebox ("Ragnar")
+    msgbox(format("If you've been allowed to enter this dungeon, I suppose that makes you an honorary barbarian."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_BARB_STRONGHOLD_B2F_TRAINER_3 //Agility
+{
+    trainerbattle_single(TRAINER_BARB_STRONGHOLD_B2F_TRAINER_3, format("AAAAHHHH, DON'T LET IT GET ME!"),format("NOOOOOOOOOOO!"))
+    namebox ("Sanic91")
+    msgbox(format("You made me lose all my momentum.\pNow that stupid flesh crawler is going to get me, and I'll lose all my coins..."))
+    hidenamebox
+    release
+    end
+}
+
+//ITEMS
+
+script ITEM_BARB_STRONGHOLD_B2F_1 //Not implemented; to check which flags can be used
+{
+    finditem(ITEM_CHOCOLATE_CAKE)
+    end
+}
+
+script ITEM_BARB_STRONGHOLD_B2F_2 //Not implemented; to check which flags can be used
+{
+    finditem(ITEM_CHOCOLATE_CAKE)
+    end
+}
+
+script ENCOUNTER_FLESH_CRAWLER
+{
+	lock
+	faceplayer
+    namebox ("Flesh Crawler")
+    playmoncry(SPECIES_FLESH_CRAWLER, 0)
+	msgbox(format("Hisssssss!"))
+    waitmoncry
+    hidenamebox
+	closemessage
+	delay(1)
+    random(13) 
+		switch (var(VAR_RESULT)) { 
+			case 0: 
+			    setwildbattle (SPECIES_FLESH_CRAWLER, 26, ITEM_NONE)
+			case 1:
+                setwildbattle (SPECIES_FLESH_CRAWLER, 27, ITEM_NONE) 
+			case 2: 
+				setwildbattle (SPECIES_FLESH_CRAWLER, 28, ITEM_NONE)
+			case 3: 
+				setwildbattle (SPECIES_FLESH_CRAWLER, 29, ITEM_NONE)
+			case 6:
+                setwildbattle (SPECIES_FLESH_CRAWLER, 30, ITEM_NONE) 
+			case 7: 
+				setwildbattle (SPECIES_FLESH_CRAWLER, 31, ITEM_NONE)
+			case 9: 
+				setwildbattle (SPECIES_FLESH_CRAWLER, 32, ITEM_NONE)
+			case 10: 
+				setwildbattle (SPECIES_FLESH_CRAWLER, 33, ITEM_NONE)
+			default: 
+				setwildbattle (SPECIES_FLESH_CRAWLER, 25, ITEM_NONE)
+		}  
+
+    dowildbattle
+	if (var(VAR_RESULT) == B_OUTCOME_WON || var(VAR_RESULT) == B_OUTCOME_CAUGHT){
+		fadescreenswapbuffers(FADE_TO_BLACK)
+		removeobject (VAR_LAST_TALKED)
+		fadescreenswapbuffers(FADE_FROM_BLACK)
+	}
+    release
+	end
+}
