@@ -18,11 +18,16 @@ script NPC_BARBARIANVILLAGE_NPC7
     faceplayer
     namebox("Barbarian")
     msgbox(format("You look tired, you should take a rest."))
+    closemessage
+    hidenamebox
+    msgbox(format("The barbarian throw you into a bed and you take a rest."))
+    closemessage    
     fadescreenswapbuffers(FADE_TO_BLACK)
     playfanfare (MUS_HEAL)
 	waitfanfare
 	special (HealPlayerParty)
     fadescreenswapbuffers(FADE_FROM_BLACK)
+    namebox("Barbarian")
     msgbox(format("That's better, you and your MONSTERS are looking much more refreshed!"))
     closemessage
     hidenamebox
