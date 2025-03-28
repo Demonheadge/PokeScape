@@ -172,7 +172,20 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 4,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_BARB_STRONGHOLD_B2F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 24,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_BARB_STRONGHOLD_B4F",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
 

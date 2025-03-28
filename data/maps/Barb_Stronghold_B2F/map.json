@@ -332,14 +332,14 @@
       "x": 43,
       "y": 24,
       "elevation": 0,
-      "dest_map": "MAP_BARB_STRONGHOLD_B2F",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_BARB_STRONGHOLD_B1F",
+      "dest_warp_id": "1"
     },
     {
       "x": 26,
       "y": 13,
       "elevation": 0,
-      "dest_map": "MAP_BARB_STRONGHOLD_B2F",
+      "dest_map": "MAP_BARB_STRONGHOLD_B3F",
       "dest_warp_id": "0"
     }
   ],
