@@ -448,7 +448,7 @@ script NPC_BARBGYM_BARBARIAN_2
     namebox("Gunthor")
     msgbox(format("Well done {PLAYER}, I haven't enjoyed myself in a battle like that in years!\pHere I would like you to have this, it is one of my favourite moves."))
     hidenamebox
-    giveitem(ITEM_TM66_BRUTAL_SWING)
+    giveitem(ITEM_TM60_BULK_UP)
     namebox("Gunthor")
     msgbox(format("And of course we cannot forget this, the main reason you are here today.\pHere you go {PLAYER} I proudly award you this Gym Badge and also hereby declare you an honorary Barbarian!"))
     hidenamebox

@@ -189,7 +189,7 @@ script BATTLE_KaramjaVolcano_HAM_1
 
 script BATTLE_KaramjaVolcano_HAM_2
 {
-    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_2, format("We've set up camp here.\pI really shouldn't let you go any further."),format("Oh bother..."))
+    trainerbattle_single(TRAINER_KARAMJAVOLCANO_HAM_GRUNT_2, format("I really shouldn't let you go any further."),format("Oh bother..."))
     namebox ("H.A.M Grunt")
     msgbox(format("Look, if I'm honest, I just joined H.A.M because I liked the robes and wanted to make a few friends...\pI didn't really sign up for mass genocide, but it's too late to back out now."))
     hidenamebox

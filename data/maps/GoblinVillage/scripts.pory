@@ -236,10 +236,10 @@ script BATTLE_LOPENDEBANK {
     if (var(VAR_RESULT)){
         trainerbattle_no_intro(TRAINER_LOPENDEBANK, msgbox(format("OMG pls don't ban me pl0x!")))
         namebox ("Lopendebank")
-        msgbox(format("I am apart of team PokeScaper.\pKeep your eyes out as we are everywhere.\pNow if you will excuse me I am going back to making memes."))
+        msgbox(format("I am apart of team PokeScaper.\pKeep your eyes out as we are everywhere.\pNow if you will excuse me I have got a lot of things to not read."))
     }
     else {
-        msgbox(format("Oh, okay. If you'll excuse me I have memes to make and bans to avoid."))
+        msgbox(format("Oh, okay. If you'll excuse me I have got a lot of things to not read."))
     }
     hidenamebox
 	closemessage

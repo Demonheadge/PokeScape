@@ -169,6 +169,16 @@ script GeneralStore_TZHAAR {
     msgbox("Come again.")
     release
 }
+script GeneralStore_TZHAAR_Human {
+    lock
+    faceplayer
+    namebox("Clerk")
+    msgbox(format("It's so hot down here...\pWelcome to the Tzhaar General Store.\pHow may I help you?"))
+    waitmessage
+    call(GeneralStoreShopScript)
+    msgbox("Thank you, come again!")
+    release
+}
 
 
 ///STORE SCRIPTS
