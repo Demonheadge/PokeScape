@@ -402,11 +402,6 @@ TRIGGER_BLACK_KNIGHT_4F_TREASURE_12:
 
 
 TRIGGER_BLACK_KNIGHT_4F_FINAL::
-	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 191
-	goto_if_le TRIGGER_BLACK_KNIGHT_4F_FINAL_1
-	end
-
-TRIGGER_BLACK_KNIGHT_4F_FINAL_1:
 	lockall
 	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_STORY_BKFORT_4F_1_right
 	facefollower
@@ -453,11 +448,11 @@ TRIGGER_BLACK_KNIGHT_4F_FINAL_1:
 	applymovement 2, Movement_InteractFACEDOWN
 	namebox BKFORT_4F_NPC_10_Text_0
 	msgbox TRIGGER_BLACK_KNIGHT_4F_FINAL_Text_7
-	applymovement 2, MOVEMENT_ACTION_EMOTE_QUESTION_MARK
-	applymovement 1, MOVEMENT_ACTION_EMOTE_QUESTION_MARK
-	applymovement 17, MOVEMENT_ACTION_EMOTE_QUESTION_MARK
-	applymovement 3, MOVEMENT_ACTION_EMOTE_QUESTION_MARK
-	applymovement 4, MOVEMENT_ACTION_EMOTE_QUESTION_MARK
+	applymovement 2, movement_BKF_Questionmarks
+	applymovement 1, movement_BKF_Questionmarks
+	applymovement 17, movement_BKF_Questionmarks
+	applymovement 3, movement_BKF_Questionmarks
+	applymovement 4, movement_BKF_Questionmarks
 	closemessage
 	hidenamebox
 	waitmovement 0
@@ -509,12 +504,12 @@ TRIGGER_BLACK_KNIGHT_4F_FINAL_1:
 	applymovement 17, Movement_STORY_BKFORT_4F_3_Black_Knight
 	applymovement 3, Movement_STORY_BKFORT_4F_3_Elite_Knight_1
 	waitmovement 0
-	applymovement 1, MOVEMENT_ACTION_EMOTE_QUESTION_MARK
+	applymovement 1, movement_BKF_Questionmarks
 	namebox TRIGGER_BLACK_KNIGHT_4F_FINAL_Text_3
 	msgbox TRIGGER_BLACK_KNIGHT_4F_FINAL_Text_16
 	closemessage
 	hidenamebox
-	applymovement 4, MOVEMENT_ACTION_EMOTE_QUESTION_MARK
+	applymovement 4, movement_BKF_Questionmarks
 	waitmovement 0
 	trainerbattle_two_trainers TRAINER_LORD_DAQUARIUS, TRIGGER_BLACK_KNIGHT_4F_FINAL_Text_17, TRAINER_BLACKKNIGHT_ELITE_1, TRIGGER_BLACK_KNIGHT_4F_FINAL_Text_18
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 195
@@ -640,6 +635,10 @@ Movement_STORY_BKFORT_4F_3_Lord_D:
 	walk_down
 	walk_down
 	face_right
+	step_end
+
+movement_BKF_Questionmarks:
+	emote_question_mark
 	step_end
 
 BKFORT_4F_NPC_1_Text_0:

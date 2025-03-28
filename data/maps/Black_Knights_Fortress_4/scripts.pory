@@ -393,7 +393,6 @@ script TRIGGER_BLACK_KNIGHT_4F_TREASURE {
 }
 
 script TRIGGER_BLACK_KNIGHT_4F_FINAL {
-	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 191) {                        //check storymode var, if less than post fight then trigger it
         lockall
         applymovement(OBJ_EVENT_ID_FOLLOWER, Movement_STORY_BKFORT_4F_1_right) // Sir Owen beside the player
         facefollower
@@ -440,11 +439,11 @@ script TRIGGER_BLACK_KNIGHT_4F_FINAL {
         applymovement(2, Movement_InteractFACEDOWN)                      //Sigmund looks down towards the door
         namebox("Sigmund")
         msgbox(format("What was that?"))
-        applymovement(2, MOVEMENT_ACTION_EMOTE_QUESTION_MARK)     //Sigmund question mark
-        applymovement(1, MOVEMENT_ACTION_EMOTE_QUESTION_MARK)     //Lord Daquarius question mark
-        applymovement(17, MOVEMENT_ACTION_EMOTE_QUESTION_MARK)    //Black Knight question mark
-        applymovement(3, MOVEMENT_ACTION_EMOTE_QUESTION_MARK)     //Left Elite Black Knight question mark
-        applymovement(4, MOVEMENT_ACTION_EMOTE_QUESTION_MARK)     //Right Elite Black Knight question mark
+        applymovement(2, movement_BKF_Questionmarks)     //Sigmund question mark
+        applymovement(1, movement_BKF_Questionmarks)     //Lord Daquarius question mark
+        applymovement(17, movement_BKF_Questionmarks)    //Black Knight question mark
+        applymovement(3, movement_BKF_Questionmarks)     //Left Elite Black Knight question mark
+        applymovement(4, movement_BKF_Questionmarks)     //Right Elite Black Knight question mark
         closemessage
         hidenamebox 
         waitmovement(0)
@@ -498,12 +497,12 @@ script TRIGGER_BLACK_KNIGHT_4F_FINAL {
         applymovement(3, Movement_STORY_BKFORT_4F_3_Elite_Knight_1)  //Left Elite Black Knight 
         waitmovement(0)    
 //Lord D and the other Elite Black Knight walk around the table  
-        applymovement(1, MOVEMENT_ACTION_EMOTE_QUESTION_MARK)     //Lord Daquarius
+        applymovement(1, movement_BKF_Questionmarks)     //Lord Daquarius
         namebox("Lord Daquarius")
         msgbox(format("Now to dispose of you two."))
         closemessage
         hidenamebox
-        applymovement(4, MOVEMENT_ACTION_EMOTE_QUESTION_MARK)     //Right Elite Black Knight 
+        applymovement(4, movement_BKF_Questionmarks)     //Right Elite Black Knight 
         waitmovement(0)
         trainerbattle_two_trainers(TRAINER_LORD_DAQUARIUS, msgbox(format("Daquarius: All that matters is that Sigmund escaped.")), TRAINER_BLACKKNIGHT_ELITE_1, msgbox(format("Elite Knight: ...")))
         setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 195)
@@ -518,11 +517,7 @@ script TRIGGER_BLACK_KNIGHT_4F_FINAL {
         closemessage
         hidenamebox
         releaseall
-        end    
-        }
-	else {                                                                     //try to make sure it doesn't trigger after the fight has already been done 
-		end
-		}
+        end
 }
 
 movement movement_BK_Fort_camera_1 {
@@ -585,3 +580,9 @@ movement Movement_STORY_BKFORT_4F_3_Lord_D {
     walk_down * 4
     face_right
 }
+
+
+movement movement_BKF_Questionmarks {
+    emote_question_mark
+}
+
