@@ -47,7 +47,7 @@ script BATTLE_BARB_STRONGHOLD_B3F_TRAINER_3 //Rune Armour
     end
 }
 
-script BATTLE_BARB_STRONGHOLD_B4F_TRAINER_4 //Melee
+script BATTLE_BARB_STRONGHOLD_B3F_TRAINER_4 //Melee
 {
     trainerbattle_single(TRAINER_BARB_STRONGHOLD_B3F_TRAINER_4, format("ERROR: NO GREEN DRAGONS DETECTED.\pENGAGING NEXT CLOSEST ENEMY."),format("ERROR: NO HP LEFT IN PARTY MONSTERS."))
     namebox ("8a4rcfld76")
@@ -57,7 +57,7 @@ script BATTLE_BARB_STRONGHOLD_B4F_TRAINER_4 //Melee
     end
 }
 
-script BATTLE_BARB_STRONGHOLD_B4F_TRAINER_5 //Fisherman
+script BATTLE_BARB_STRONGHOLD_B3F_TRAINER_5 //Fisherman
 {
     trainerbattle_single(TRAINER_BARB_STRONGHOLD_B3F_TRAINER_5, format("Fishing requires both patience and quiet, and thanks to you now I have neither!"),format("Now leave me be."))
     namebox ("ChonkyCorgi")

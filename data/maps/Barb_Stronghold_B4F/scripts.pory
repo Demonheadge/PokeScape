@@ -1,0 +1,83 @@
+mapscripts Barb_Stronghold_B4F_MapScripts {
+
+}
+
+//NPCs
+
+script NPC_BARB_STRONGHOLD_B4F_NPC_1
+{
+    lock
+    msgbox(format("The skeleton points down the hallways and mutters in a whispering voice..."))
+    namebox("Skeleton")
+    msgbox(format("One...\pWay..."))
+    hidenamebox
+    release
+    end
+}
+
+script NPC_BARB_STRONGHOLD_B4F_NPC_2
+{
+    lock
+    faceplayer
+    namebox("MeGoFace")
+    msgbox(format("I hate puzzles like moving boulders.\pTo make it worse these boulders go back in place when you return to another floor.\pGAAAHHH! So frustrating!"))
+    hidenamebox
+    release
+    end
+}
+
+//TRAINERS
+
+script BATTLE_BARB_STRONGHOLD_B4F_TRAINER_1 //Summoner
+{
+    trainerbattle_single(TRAINER_BARB_STRONGHOLD_B4F_TRAINER_1, format("You think your monsters are cool?\pPrepare to face the might of a summoner!"),format("Not mighty enough..."))
+    namebox ("Salm0n")
+    msgbox(format("Summoning is a good skill.\pDon't let oldschool tell you otherwise.\pWe have pets!"))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_BARB_STRONGHOLD_B4F_TRAINER_2 //Warrior
+{
+    trainerbattle_single(TRAINER_BARB_STRONGHOLD_B4F_TRAINER_2, format("This is the death floor.\pNot enough death here for me personally.\pWe can fix that."),format("My enthusiasm is dead now."))
+    namebox ("S0uka")
+    msgbox(format("My enthusiasm is dead now."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_BARB_STRONGHOLD_B4F_TRAINER_3 //Wizard
+{
+    trainerbattle_single(TRAINER_BARB_STRONGHOLD_B4F_TRAINER_3, format("I have been walking in circles for days.\pWhen will I get to the end of this dungeon?"),format("Am I at the end now?"))
+    namebox ("V4At1")
+    msgbox(format("Stop walking in circles?\pWhy don't you mind your own business."))
+    hidenamebox
+    release
+    end
+}
+
+script BATTLE_BARB_STRONGHOLD_B4F_TRAINER_4 //Ironman
+{
+    trainerbattle_single(TRAINER_BARB_STRONGHOLD_B4F_TRAINER_4, format("The boots in this place are said to be legen-\pWait for it...\pThey are essential for my progress."),format("-dary!"))
+    namebox ("McC0ppin")
+    msgbox(format("I restrict myself to not wear boots from now on.\pRestrictions make this game more fun anyway."))
+    hidenamebox
+    release
+    end
+}
+
+//ITEMS
+
+script ITEM_BARB_STRONGHOLD_B4F_1 //Not implemented; to check which flags can be used
+{
+    finditem(ITEM_CHOCOLATE_CAKE)
+    end
+}
+
+script ITEM_BARB_STRONGHOLD_B4F_2 //Not implemented; to check which flags can be used
+{
+    finditem(ITEM_CHOCOLATE_CAKE)
+    end
+}

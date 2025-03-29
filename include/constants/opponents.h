@@ -537,13 +537,19 @@
 #define TRAINER_BARB_STRONGHOLD_B3F_TRAINER_3           531
 #define TRAINER_BARB_STRONGHOLD_B3F_TRAINER_4           532
 #define TRAINER_BARB_STRONGHOLD_B3F_TRAINER_5           533
-
+#define TRAINER_BARB_STRONGHOLD_B4F_TRAINER_1           534
+#define TRAINER_BARB_STRONGHOLD_B4F_TRAINER_2           535
+#define TRAINER_BARB_STRONGHOLD_B4F_TRAINER_3           536
+#define TRAINER_BARB_STRONGHOLD_B4F_TRAINER_4           537
+#define TRAINER_DRAYNOR_SEWERS3_TRAINER_1               538
+#define TRAINER_DRAYNOR_SEWERS3_TRAINER_2               539
+#define TRAINER_DRAYNOR_SEWERS3_TRAINER_3               540
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                      (TRAINER_BARB_STRONGHOLD_B3F_TRAINER_4 + 1)
+#define TRAINERS_COUNT                      (TRAINER_BARB_STRONGHOLD_B4F_TRAINER_4 + 1)
 #define MAX_TRAINERS_COUNT                  864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

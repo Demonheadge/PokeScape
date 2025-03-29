@@ -1,0 +1,8 @@
+mapscripts Draynor_House_Morgan_2F_MapScripts {
+
+    MAP_SCRIPT_ON_TRANSITION{
+    clearflag(FLAG_ITEM_REPEATABLE_ITEM_6)
+
+    } 
+
+}

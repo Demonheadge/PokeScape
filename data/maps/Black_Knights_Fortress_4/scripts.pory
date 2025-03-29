@@ -214,13 +214,13 @@ script BKFORT_4F_BOOK_3
 
 script ITEM_BKFORT_4F_ITEM1
 {
-    finditem(ITEM_POUCH_BLACK)
+    finditem(ITEM_STAT_MOONLIGHT_MEAD)
     end
 }
 
 script ITEM_BKFORT_4F_ITEM2
 {
-    finditem(ITEM_BRONZEHELMET)
+    finditem(ITEM_PHOENIX_NECKLACE)
     end
 }
 

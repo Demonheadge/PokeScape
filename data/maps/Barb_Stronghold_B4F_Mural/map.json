@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NPC_BARB_STRONGHOLD_B4F_Mural_NPC",
       "flag": "0"
     }
   ],
@@ -47,7 +47,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "NPC_BARB_STRONGHOLD_B4F_Mural"
     },
     {
       "type": "sign",
@@ -55,7 +55,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "NPC_BARB_STRONGHOLD_B4F_Mural"
     },
     {
       "type": "sign",
@@ -63,7 +63,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "NPC_BARB_STRONGHOLD_B4F_Mural"
     },
     {
       "type": "sign",
@@ -71,7 +71,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "NPC_BARB_STRONGHOLD_B4F_Mural"
     }
   ],
   "has_night_table": false

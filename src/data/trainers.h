@@ -5466,7 +5466,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_Route9_ItsWill),
     },
 
-    [TRAINER_MODESTSAMUEL] = //Still a WIP
+    [TRAINER_MODESTSAMUEL] = 
     {
         .trainerClass = TRAINER_CLASS_SLAYER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
@@ -5637,7 +5637,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ROUTE21_TRAINER_2] =
     {
         .trainerClass = TRAINER_CLASS_WOODCUTTER,
-        .encounterMusic_gender = TRAINER_PIC_woodcutter,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_woodcutter,
         .trainerName = _("W00dFeller"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5648,7 +5649,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ROUTE21_TRAINER_3] =
     {
         .trainerClass = TRAINER_CLASS_PIRATE,
-        .encounterMusic_gender = TRAINER_PIC_pirate,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_pirate,
         .trainerName = _("Kristoffer"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5695,7 +5697,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ROUTE20_TRAINER_6] =
     {
         .trainerClass = TRAINER_CLASS_RUNECRAFTER,
-        .encounterMusic_gender = TRAINER_PIC_runecrafter,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_runecrafter,
         .trainerName = _("NatsW40"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5706,7 +5709,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ROUTE20_TRAINER_7] =
     {
         .trainerClass = TRAINER_CLASS_SUMMONER,
-        .encounterMusic_gender = TRAINER_PIC_summoner,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_summoner,
         .trainerName = _("Srift"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5717,7 +5721,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ROUTE26_BLACK_KNIGHT] =
     {
         .trainerClass = TRAINER_CLASS_BLACK_KNIGHT,
-        .encounterMusic_gender = TRAINER_PIC_black_knight_m,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_black_knight_m,
         .trainerName = _(""),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5728,7 +5733,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ICE_MOUNTAIN_GUARD_1] =
     {
         .trainerClass = TRAINER_CLASS_GUARD,
-        .encounterMusic_gender = TRAINER_PIC_guard_falador,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_guard_falador,
         .trainerName = _(""),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5739,7 +5745,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ICE_MOUNTAIN_GUARD_2] =
     {
         .trainerClass = TRAINER_CLASS_GUARD,
-        .encounterMusic_gender = TRAINER_PIC_guard_falador,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_guard_falador,
         .trainerName = _(""),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5750,7 +5757,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_BARB_STRONGHOLD_B1F_TRAINER_1] = //Wizard
     {
         .trainerClass = TRAINER_CLASS_WIZARD,
-        .encounterMusic_gender = TRAINER_PIC_wizard_m,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_wizard_m,
         .trainerName = _("Equinox"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5761,7 +5769,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_BARB_STRONGHOLD_B1F_TRAINER_2] = //Ranger
     {
         .trainerClass = TRAINER_CLASS_RANGER,
-        .encounterMusic_gender = TRAINER_PIC_ranger_robin,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_ranger_robin,
         .trainerName = _("Is Ranged"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5772,7 +5781,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_BARB_STRONGHOLD_B1F_TRAINER_3] = //Ironman
     {
         .trainerClass = TRAINER_CLASS_IRONMAN,
-        .encounterMusic_gender = TRAINER_PIC_ironman,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_ironman,
         .trainerName = _("GIM Shibby"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5783,7 +5793,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_BARB_STRONGHOLD_B2F_TRAINER_1] = //Archaeologist
     {
         .trainerClass = TRAINER_CLASS_ARCHAEOLOGIST,
-        .encounterMusic_gender = TRAINER_PIC_Archaeologist,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_Archaeologist,
         .trainerName = _("D Attenbr0"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5794,7 +5805,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_BARB_STRONGHOLD_B2F_TRAINER_2] = //Barbarian
     {
         .trainerClass = TRAINER_CLASS_BARBARIAN,
-        .encounterMusic_gender = TRAINER_PIC_barbarian_m,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_barbarian_m,
         .trainerName = _("Ragnar"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5805,7 +5817,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_BARB_STRONGHOLD_B2F_TRAINER_3] = //Agile
     {
         .trainerClass = TRAINER_CLASS_AGILE,
-        .encounterMusic_gender = TRAINER_PIC_graceful,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_graceful,
         .trainerName = _("Sanic91"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5816,7 +5829,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_BARB_STRONGHOLD_B3F_TRAINER_1] = //Wizard
     {
         .trainerClass = TRAINER_CLASS_WIZARD,
-        .encounterMusic_gender = TRAINER_PIC_wizard_f,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_wizard_f,
         .trainerName = _("Thecatra"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5827,7 +5841,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_BARB_STRONGHOLD_B3F_TRAINER_2] = //Ranger
     {
         .trainerClass = TRAINER_CLASS_BARBARIAN,
-        .encounterMusic_gender = TRAINER_PIC_barbarian_m,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_barbarian_m,
         .trainerName = _("Lightwind"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5838,7 +5853,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_BARB_STRONGHOLD_B3F_TRAINER_3] = //Rune Armour
     {
         .trainerClass = TRAINER_CLASS_NOOB,
-        .encounterMusic_gender = TRAINER_PIC_noob_rune,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_noob_rune,
         .trainerName = _("Shh Llama91"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5849,7 +5865,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_BARB_STRONGHOLD_B3F_TRAINER_4] = //Melee
     {
         .trainerClass = TRAINER_CLASS_BOT,
-        .encounterMusic_gender = TRAINER_PIC_bot_dragon_slayer,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_bot_dragon_slayer,
         .trainerName = _("8a4rcfld76"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
@@ -5860,12 +5877,97 @@ const struct Trainer gTrainers[] = {
     [TRAINER_BARB_STRONGHOLD_B3F_TRAINER_5] = //Fisherman
     {
         .trainerClass = TRAINER_CLASS_FISHER,
-        .encounterMusic_gender = TRAINER_PIC_fisher,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_fisher,
         .trainerName = _("ChonkyCorgi"),
         .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
         .party = TRAINER_PARTY(sParty_BarbStrongholdB3F_Trainer5),
+    },
+
+    [TRAINER_BARB_STRONGHOLD_B4F_TRAINER_1] = //Summoner
+    {
+        .trainerClass = TRAINER_CLASS_SUMMONER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_summoner,
+        .trainerName = _("Salm0n"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BarbStrongholdB4F_Trainer1),
+    },
+
+    [TRAINER_BARB_STRONGHOLD_B4F_TRAINER_2] = //Warrior - to check trainer pic as none for warrior/dragon armour I can see?
+    {
+        .trainerClass = TRAINER_CLASS_WARRIOR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_slayer,
+        .trainerName = _("S0uka"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BarbStrongholdB4F_Trainer2),
+    },
+
+    [TRAINER_BARB_STRONGHOLD_B4F_TRAINER_3] = //Wizard
+    {
+        .trainerClass = TRAINER_CLASS_WIZARD,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_wizard_m,
+        .trainerName = _("V4At1"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BarbStrongholdB4F_Trainer3),
+    },
+
+    [TRAINER_BARB_STRONGHOLD_B3F_TRAINER_4] = //Ironman
+    {
+        .trainerClass = TRAINER_CLASS_IRONMAN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_ironman,
+        .trainerName = _("McC0ppin"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_BarbStrongholdB4F_Trainer4),
+    },
+
+    [TRAINER_DRAYNOR_SEWERS3_TRAINER_1] = //Mugger
+    {
+        .trainerClass = TRAINER_CLASS_MUGGER,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_PKER,
+        .trainerPic = TRAINER_PIC_mugger,
+        .trainerName = _("Colten"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_DraynorSewers3_Trainer1),
+    },
+
+    [TRAINER_DRAYNOR_SEWERS3_TRAINER_2] = //Bronzeman
+    {
+        .trainerClass = TRAINER_CLASS_NOOB,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_CHOOB,
+        .trainerPic = TRAINER_PIC_lukien,
+        .trainerName = _("Draven"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_DraynorSewers3_Trainer2),
+    },
+
+    [TRAINER_DRAYNOR_SEWERS3_TRAINER_3] = //Mystic
+    {
+        .trainerClass = TRAINER_CLASS_WIZARD,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,
+        .trainerPic = TRAINER_PIC_mage_mystic,
+        .trainerName = _("Transcended"),
+        .items = {ITEM_NONE, ITEM_NONE, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_PREFER_STRONGEST_MOVE | AI_FLAG_HP_AWARE | AI_FLAG_CHECK_BAD_MOVE,
+        .party = TRAINER_PARTY(sParty_DraynorSewers3_Trainer3),
     },
 
 /*

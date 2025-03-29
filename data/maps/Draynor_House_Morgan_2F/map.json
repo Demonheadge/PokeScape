@@ -41,7 +41,22 @@
 
   ],
   "bg_events": [
-
+    {
+      "type": "hidden_item",
+      "x": 7,
+      "y": 1,
+      "elevation": 0,
+      "item": "ITEM_GARLIC",
+      "flag": "FLAG_ITEM_REPEATABLE_ITEM_9"
+    },
+    {
+      "type": "hidden_item",
+      "x": 8,
+      "y": 1,
+      "elevation": 0,
+      "item": "ITEM_GARLIC",
+      "flag": "FLAG_ITEM_REPEATABLE_ITEM_9"
+    }
   ],
   "has_night_table": false
 }

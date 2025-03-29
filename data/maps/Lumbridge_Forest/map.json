@@ -558,6 +558,13 @@
       "elevation": 0,
       "dest_map": "MAP_LUMBRIDGE",
       "dest_warp_id": "17"
+    },
+    {
+      "x": 20,
+      "y": 28,
+      "elevation": 0,
+      "dest_map": "MAP_DRAYNOR_SEWERS_3",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

@@ -4,10 +4,36 @@ mapscripts Draynor_House_WoM_2F_MapScripts {
 
 //Signs
 
-script WOM_BED
+script WOM_BED_RIGHT
 {
 	lock
-	msgbox(format("It's a fairly ordinary bed, but...\p{PAUSE 15}Was that a hand!?\pYou decide it's best not to try to sleep in this bed."))
+	msgbox(format("It's a fairly ordinary bed, but..."))
+	applymovement (OBJ_EVENT_ID_PLAYER, WOM_BED_RIGHT)
+    waitmovement(0)
+	msgbox(format("Was that a hand!?\p{PAUSE 15}You decide it's best not to try to sleep in this bed."))
 	release
 	end
+}
+
+movement WOM_BED_RIGHT {
+    emote_exclamation_mark
+    jump_special_right
+    face_left
+}
+
+script WOM_BED_BOTTOM
+{
+	lock
+	msgbox(format("It's a fairly ordinary bed, but..."))
+	applymovement (OBJ_EVENT_ID_PLAYER, WOM_BED_BOTTOM)
+    waitmovement(0)
+	msgbox(format("Was that a hand!?\p{PAUSE 15}You decide it's best not to try to sleep in this bed."))
+	release
+	end
+}
+
+movement WOM_BED_BOTTOM {
+    emote_exclamation_mark
+    jump_special_down
+    face_up
 }

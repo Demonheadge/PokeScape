@@ -1,0 +1,26 @@
+mapscripts Draynor_Sewers_4_MapScripts {
+
+}
+
+//NPCs
+
+script NPC_DRAYNOR_SEWERS_RUANTUN {
+    lock
+    faceplayer
+    namebox("Ruantun")
+    random(4)
+    switch (var(VAR_RESULT)) {
+        case 0: 
+            msgbox(format("You ssshould not be down here..."))
+        case 1: 
+            msgbox(format("Beingsss sssuch as myssself cannot abide in the light...\pIt is in the darknesss where we find our homesss..."))
+        case 2: 
+            msgbox(format("Thisss isss where I belong..."))
+        case 3: 
+            msgbox(format("Beware of crocodilesss in the water..."))
+    }
+    hidenamebox
+    closemessage
+    release
+    end
+}

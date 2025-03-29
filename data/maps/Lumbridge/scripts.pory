@@ -428,7 +428,7 @@ script NPC_LumbridgeBridge
 	lock
 	faceplayer
 	namebox("Fisherman")
-	msgbox(format("Is it just me or is this really long?\pNah I must be imagining it."))
+	msgbox(format("Is it just me or is this really long?\pNah, I must be imagining it.\p{PAUSE 15}Wait, I'm SURE the river used to be wider than this..."))
 	release
 	end
 }
@@ -1019,4 +1019,55 @@ script Lumbridge_GRAVEYARD_SIGN_5
 	msgbox(format("Note to adventurers.\pThe restless ghost has been released from the world, and the mausoleum is now closed off to the public."))
 	release
 	end
+}
+
+script Lumbridge_River_NPC1
+{
+	lock
+	faceplayer
+	namebox ("Sailor")
+	msgbox(format("The River Lum used to be the second longest river in Gielinor, second only to the River Dougne.\pYou used to be able to paddle from here all the way up to the Wilderness!\pIt became too dangerous to travel there though, so they had to block the route beyond Edgeville."))
+	hidenamebox
+	release
+	end
+}
+
+script Lumbridge_River_NPC2
+{
+	lock
+	faceplayer
+	namebox ("b4nana m4n")
+	msgbox(format("There's a single, small island just north of here with a solitary oak tree on it.\pI wonder how it got there."))
+	hidenamebox
+	release
+	end
+}
+
+script Lumbridge_River_NPC3 {
+    lock
+    faceplayer
+    namebox("Finta5tic")
+    random(8)
+    switch (var(VAR_RESULT)) {
+        case 0: 
+            msgbox(format("This is a good plaice to go fishing."))
+        case 1: 
+            msgbox(format("I'd tell you what I just caught, but I'm too shellfish to share."))
+        case 2: 
+            msgbox(format("If you find any rare fish, could you let minnow?"))
+        case 3: 
+            msgbox(format("You’re krilling me with these sea-rious vibes..."))
+        case 4: 
+            msgbox(format("Speak up, I'm hard of herring."))
+        case 5: 
+            msgbox(format("Sorry, I can't talk right now.\pI have a haddock."))
+        case 6: 
+            msgbox(format("Do you like my fish puns?\pEh, I guess they cod be betta."))
+        case 7: 
+            msgbox(format("You think you know some better fish puns?\pI seriously trout it."))
+    }
+    hidenamebox
+    closemessage
+    release
+    end
 }

@@ -1,0 +1,182 @@
+mapscripts Draynor_Sewers_3_MapScripts {
+
+}
+
+//NPCs
+
+script NPC_DRAYNOR_SEWERS_3_NPC_1
+{
+	lock
+	faceplayer
+    namebox ("Fadeddemons")
+	msgbox(format("Be careful not to get too close to that wall...\pSomething just tried attacking me!"))
+    hidenamebox
+	closemessage
+	release
+	end
+}
+
+script NPC_DRAYNOR_SEWERS_3_NPC_2
+{
+	lock
+	faceplayer
+    namebox ("PurpleDog6")
+	msgbox(format("Where do I get a pickaxe so I can break these rocks?\pAnd how do I move that heavy one up there!\pThere's no way I could push it on my own..."))
+    hidenamebox
+	closemessage
+	release
+	end
+}
+
+script NPC_DRAYNOR_SEWERS_3_NPC_3
+{
+	lock
+	faceplayer
+	applymovement(5, movement_BKF_Questionmarks)
+	waitmovement (0)
+    namebox ("Qwesty")
+	msgbox(format("I could have sworn the quest guide mentioned a vampyre around here..."))
+    hidenamebox
+	closemessage
+	release
+	end
+}
+
+//TRAINERS
+
+script BATTLE_DRAYNOR_SEWERS3_1 //Mugger
+{
+    trainerbattle_single(TRAINER_DRAYNOR_SEWERS3_TRAINER_1, format("Your money, or your wife!"),format("Oh, it's supposed to be 'life'?"))
+    namebox ("Colten")
+    msgbox(format("I used to be a highwayman, you know.\pPosted at the crossroads just north of here.\pUnfortunately, people didn't take too kindly to that and drove me to flee down here instead.\pI can't believe people would intimidate someone like that..."))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_DRAYNOR_SEWERS3_2 //Bronzeman
+{
+    trainerbattle_single(TRAINER_DRAYNOR_SEWERS3_TRAINER_2, format("These sewers used to scare me as a child, but look at me now.\pI'm fearless!"),format("Perhaps there are some things I should still be scared of - like you!"))
+    namebox ("Draven")
+    msgbox(format("I can see some light from up there.\pI wonder where that ladder leads to?"))
+	hidenamebox
+    release
+	end
+}
+
+script BATTLE_DRAYNOR_SEWERS3_3 //Mystic
+{
+    trainerbattle_single(TRAINER_DRAYNOR_SEWERS3_TRAINER_3, format("I grew tired of the limitations imposed by those in the Wizards' Tower.\pBehold the true power of a mystic!"),format("Ugh, maybe I do still have some stuff to learn..."))
+    namebox ("Transcended")
+    msgbox(format("Maybe regular magic just isn't that strong.\pPerhaps I should give necromancy a try..."))
+	hidenamebox
+    release
+	end
+}
+
+//ITEMS
+
+script ITEM_DRAYNOR_SEWERS3_1       //I've not implemented this yet until we sort the flags out
+{
+    finditem(ITEM_CAKE)
+    end
+}
+
+script TEMP_ITEM_DRAYNOR_SEWERS3_1 
+{
+	lock
+	msgbox(format("It's empty!\pUnfortunately, it looks like rats have eaten the pouch's contents."))
+	closemessage
+	release
+	end
+}
+
+//WALL ENCOUNTER
+
+script ENCOUNTER_WALL_DRAYNOR_SEWERS {                         //I know you have a script for wall beasts but I didn't want to mess with it
+    lockall
+    applymovement(OBJ_EVENT_ID_PLAYER, Movement_WallBeast)
+    playSE(SE_LEDGE)
+    msgbox(format("Something jumps out of the wall towards you!"))
+    waitmovement(0)
+    call(DRAYNOR_SEWERS_ENCOUNTERS)
+    dowildbattle
+    switch(var(VAR_RESULT)){
+        case B_OUTCOME_WON:
+        case B_OUTCOME_CAUGHT:
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            setmetatile(8,5,556,1)
+            setmetatile(9,5,556,1)
+            setvar(VAR_TEMP_0, 1)
+            special(DrawWholeMapView) 
+            return
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+    }
+    release
+	end
+}
+
+script DRAYNOR_SEWERS_ENCOUNTERS
+{
+    call(HIDDEN_GROTTO_LEVELS)
+    random(20)
+    switch (var(VAR_RESULT)) {
+        case 5: 
+            setwildbattle(SPECIES_CAVE_SLIME, VAR_TEMP_E, ITEM_NONE)
+        case 6: 
+        case 7: 
+        case 8: 
+            setwildbattle(SPECIES_BAT, VAR_TEMP_E, ITEM_NONE)
+        case 9: 
+        case 10: 
+            setwildbattle(SPECIES_RAT_CRYPT_FORM, VAR_TEMP_E, ITEM_NONE)
+        case 11: 
+        case 12: 
+        case 13: 
+            setwildbattle(SPECIES_SPIDER_GIANT_FORM, VAR_TEMP_E, ITEM_NONE)
+        case 14:
+        case 15:
+        case 16: 
+            setwildbattle(SPECIES_HAND_CREEPING_FORM, VAR_TEMP_E, ITEM_NONE)
+        default:
+            setwildbattle(SPECIES_RAT_NORMAL_FORM, VAR_TEMP_E, ITEM_NONE)
+    }
+    return
+}
+
+script VARROCK_SEWERS_1F_CHECK_PLAYER_STAND {
+    getplayerxy(VAR_TEMP_F, VAR_TEMP_D)
+    if ((var(VAR_TEMP_F) == 15) && (var(VAR_TEMP_D) == 30)){
+
+    }
+    elif ((var(VAR_TEMP_F) == 8) && (var(VAR_TEMP_D) == 25)){
+        setmetatile(8,24,726,1)
+        setvar(VAR_TEMP_1, 1)
+    }
+    elif ((var(VAR_TEMP_F) == 21) && (var(VAR_TEMP_D) == 29)){
+        setmetatile(21,28,726,1)
+        setvar(VAR_TEMP_2, 1)
+    }
+    elif ((var(VAR_TEMP_F) == 30) && (var(VAR_TEMP_D) == 28)){
+        setmetatile(30,27,726,1)
+        setvar(VAR_TEMP_3, 1)
+    }
+    elif ((var(VAR_TEMP_F) == 23) && (var(VAR_TEMP_D) == 13)){
+        setmetatile(23,12,726,1)
+        setvar(VAR_TEMP_4, 1)
+    }
+    elif ((var(VAR_TEMP_F) == 19) && (var(VAR_TEMP_D) == 6)){
+        setmetatile(19,5,726,1)
+        setvar(VAR_TEMP_5, 1)
+    }
+    elif ((var(VAR_TEMP_F) == 10) && (var(VAR_TEMP_D) == 3)){
+        setmetatile(10,2,726,1)
+        setvar(VAR_TEMP_6, 1)
+    }
+    elif ((var(VAR_TEMP_F) == 8) && (var(VAR_TEMP_D) == 3)){
+        setmetatile(8,2,726,1)
+        setvar(VAR_TEMP_7, 1)
+    }
+    special(DrawWholeMapView) 
+    return
+}

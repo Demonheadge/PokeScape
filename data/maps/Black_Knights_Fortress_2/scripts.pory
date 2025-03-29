@@ -510,7 +510,7 @@ script NPC_ZAMOHAWK
 
 script ITEM_BKFORT_2F_ITEM1
 {
-    finditem(ITEM_POUCH_BLACK)
+    finditem(ITEM_MIND_RUNE)
     end
 }
 
@@ -522,36 +522,36 @@ script ITEM_BKFORT_2F_ITEM2
 
 script ITEM_BKFORT_2F_ITEM3
 {
-    finditem(ITEM_POUCH_BLACK)
+    finditem(ITEM_POTATO)
     end
 }
 
 script ITEM_BKFORT_2F_ITEM4
 {
-    finditem(ITEM_POUCH_BLACK)
+    finditem(ITEM_COSMIC_RUNE)
     end
 }
 
 script ITEM_BKFORT_2F_ITEM5
 {
-    finditem(ITEM_POUCH_BLACK)
+    finditem(ITEM_SPIRIT_CHARM)
     end
 }
 
 script ITEM_BKFORT_2F_ITEM6
 {
-    finditem(ITEM_POUCH_BLACK)
+    finditem(ITEM_CHEESE)
     end
 }
 
 script ITEM_BKFORT_2F_ITEM7
 {
-    finditem(ITEM_POUCH_BLACK)
+    finditem(ITEM_PINEAPPLE)
     end
 }
 
 script ITEM_BKFORT_2F_ITEM8
 {
-    finditem(ITEM_POUCH_BLACK)
+    finditem(ITEM_CHOCOLATE_CAKE)
     end
 }

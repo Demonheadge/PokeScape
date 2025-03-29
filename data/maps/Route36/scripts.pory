@@ -1,0 +1,28 @@
+mapscripts Route36_MapScripts {
+   
+}
+
+script ROUTE36_BOAT_NPC {
+    lock
+    faceplayer
+    namebox("CygnetRing")
+    random(6)
+    switch (var(VAR_RESULT)) {
+        case 0: 
+            msgbox(format("Did you come here because you like ducks too?\pIf you teach one GROWTH it'll evolve into something SUPER cool."))
+        case 1: 
+            msgbox(format("Did you come here because you like ducks too?\pIf you use a BODY RUNE on one it'll evolve into something SUPER cool."))
+        case 2: 
+            msgbox(format("Did you come here because you like ducks too?\pIf you level one up underground, it'll start riding a cart.\p{PAUSE 15}Don't ask me where it gets one from though.\pDoes it steal it?"))
+        case 3: 
+            msgbox(format("Did you come here because you like ducks too?\pIf you level one up while also having an EXORAXE in your party, it'll start riding a cart.\p{PAUSE 15}Don't ask me where it gets one from though.\pIs it possessed like the EXORAXE?"))
+        case 4: 
+            msgbox(format("Did you come here because you like ducks too?\pIf you use a LAW RUNE on one, it'll start riding a cart.\p{PAUSE 15}Don't ask me where it gets one from though.\pMust be the magic from the rune!"))
+        case 5: 
+            msgbox(format("Did you come here because you like ducks too?\pBe careful not to wait to evolve your DUCKLING until it really loves you, else it'll turn into a blasted SWAN!\pVicious things!\pThey're not birds, they're demons in disguise!\p{PAUSE 15}Don't believe me?\pTry having a SWAN and an IMP in your party and see what happens...\pDon't say I didn't warn you!!"))
+    }
+    hidenamebox
+    closemessage
+    release
+    end
+}

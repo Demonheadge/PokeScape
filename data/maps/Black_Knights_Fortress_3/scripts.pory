@@ -21,7 +21,7 @@ script BKFORT_3F_NPC_2
     lock
     faceplayer
     namebox ("Black Knight")
-    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    msgbox(format("I can't believe I spend all day down here torturing people...\p{PAUSE 15}THIS IS THE BEST JOB EVER!"))
     closemessage
     hidenamebox
     release
@@ -69,7 +69,7 @@ script BKFORT_3F_NPC_6
     lock
     faceplayer
     namebox ("Goebie")
-    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    msgbox(format("The airut invaded our planet and enslaved our people.\pI came to your world for help, but the people here weren't as friendly as I'd hoped.\pWe aren't strong enough to fight back on our own..."))
     closemessage
     hidenamebox
     release
@@ -126,7 +126,7 @@ script BKFORT_3F_NPC_11
     lock
     faceplayer
     namebox ("Guard")
-    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    msgbox(format("It might not look like much, but this is one of the best assignments you can get in this place.\pMuch better than those suckers who have to stand outside in the freezing cold!"))
     closemessage
     hidenamebox
     release
@@ -138,7 +138,7 @@ script BKFORT_3F_NPC_12
     lock
     faceplayer
     namebox ("Guard")
-    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    msgbox(format("Do you know what the average life span of a Falador guard is?\pThey're constantly attacked for no reason.\pThe White Knights do nothing to intervene and help!\pThat's why I deserted them to join the Black Knights.\pLook how secure this place is!"))
     closemessage
     hidenamebox
     release
@@ -203,9 +203,8 @@ movement MOVEMENT_EXCLAMATIONMARK_JUMP_RIGHT {
 script BKFORT_3F_NPC_15
 {
     lock
-    faceplayer
     namebox ("Guard")
-    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    msgbox(format("Left hand... hut!\pRight hand... hut!\pDraw and parry!\pOrder... hut!\pThis is my longsword!\pThere are many like it, but this one is mine!\pMy longsword is my best friend!\pIt is my life!"))
     closemessage
     hidenamebox
     release
@@ -241,7 +240,7 @@ script BKFORT_3F_NPC_18
     lock
     faceplayer
     namebox ("Guard")
-    msgbox(format("THIS IS A WORK IN PROGRESS.\pTHE TEAM ARE CURRENTLY DEVELOPING IT AND ARE AWARE IT IS UNFINISHED.\pIT IS NOT A BUG, PLEASE DO NOT REPORT IT."))
+    msgbox(format("I am not sure how hitting this dummy and doing practice drills is really going to help when everybody now just fights with monsters.\pHow am I supposed to use a sword to defeat some otherworldly being?\pI just keep quiet and do what I'm told though, the instructor is scary!"))
     closemessage
     hidenamebox
     release
@@ -276,13 +275,13 @@ script BKFORT_3F_NPC_20
 
 script ITEM_BKFORT_3F_ITEM1
 {
-    finditem(ITEM_POUCH_BLACK)
+    finditem(ITEM_PRAYER_POTION)
     end
 }
 
 script ITEM_BKFORT_3F_ITEM2
 {
-    finditem(ITEM_POUCH_BLACK)
+    finditem(ITEM_BRONZEHELMET)
     end
 }
 

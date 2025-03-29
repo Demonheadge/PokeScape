@@ -427,7 +427,7 @@ script ROUTE1_BOAT_1
 	lock
     faceplayer
     namebox("Awenix")
-	msgbox(format("I am a Cupholder"))
+	msgbox(format("I love spending time on the water like this.\pIt helps me escape from life's responsibilities for a moment.\pLike my wife and children.\p{PAUSE 15}Don't tell them you found me here!"))
     hidenamebox
     closemessage
 	release
