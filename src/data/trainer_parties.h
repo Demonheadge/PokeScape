@@ -2847,7 +2847,7 @@ static const struct TrainerMon sParty_BARBARIAN_GYM_TRAINER_2[] = {
     {
     .lvl = 41,
     .species = SPECIES_CATABLEPON,
-    }
+    },
     {
     .lvl = 43,
     .species = SPECIES_WOLF_HATI_HATI,
@@ -3364,7 +3364,7 @@ static const struct TrainerMon sParty_ROUTE33_GOBLIN1[] = {
     {
     .lvl = 40,
     .species = SPECIES_JELLY_ALTERNATE_FORM,
-    }
+    },
     {
     .lvl = 41,
     .species = SPECIES_VULTLING,
@@ -5639,7 +5639,7 @@ static const struct TrainerMon sParty_CRANDOR_MOSS_GIANT_1[] = {
     },
     {
     .lvl = 33,
-    .species = SPECIES_SPORELING,
+    .species = SPECIES_ZYGOMITE,
     }
 };
 
@@ -5762,7 +5762,7 @@ static const struct TrainerMon sParty_ROUTE26_TRAINER_2[] = {
     {
     .lvl = 43,
     .species = SPECIES_ROCK_GOLDEN_FORM,
-    }
+    },
     {
     .lvl = 44,
     .species = SPECIES_ROCK_STRANGE_FORM,

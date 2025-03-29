@@ -377,12 +377,12 @@ BATTLE_LOPENDEBANK_Text_3:
 	.string "I am apart of team PokeScaper.\p"
 	.string "Keep your eyes out as we are\n"
 	.string "everywhere.\p"
-	.string "Now if you will excuse me I am going\n"
-	.string "back to making memes.$"
+	.string "Now if you will excuse me I have got a\n"
+	.string "lot of things to not read.$"
 
 BATTLE_LOPENDEBANK_Text_4:
-	.string "Oh, okay. If you'll excuse me I have\n"
-	.string "memes to make and bans to avoid.$"
+	.string "Oh, okay. If you'll excuse me I have got\n"
+	.string "a lot of things to not read.$"
 
 BATTLE_ATWISTEDSMILE_Text_0:
 	.string "Twisted Smile$"

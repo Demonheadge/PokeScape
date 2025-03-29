@@ -892,7 +892,7 @@ Mithrilman_TZHAAR1_Text_0:
 
 Mithrilman_TZHAAR1_Text_1:
 	.string "Fromst the scorching heats of the\n"
-	.string "dunes to a pleasant vaction I see\l"
+	.string "dunes to a pleasant vacation I see\l"
 	.string "knave.\p"
 	.string "Greetings.\p"
 	.string "Thoust must be here to battle the\n"

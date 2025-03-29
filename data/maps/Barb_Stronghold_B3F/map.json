@@ -24,7 +24,6 @@
       "movement_range_y": 7,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "NULL",
       "script": "BATTLE_BARB_STRONGHOLD_B3F_TRAINER_3",
       "flag": "0"
     },
@@ -33,17 +32,12 @@
       "x": 45,
       "y": 17,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
       "movement_range_x": 3,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "BATTLE_BARB_STRONGHOLD_B3F_TRAINER_4",
+      "script": "BATTLE_BARB_STRONGHOLD_B4F_TRAINER_4",
       "flag": "0"
     },
     {
@@ -54,9 +48,6 @@
       "movement_type": "MOVEMENT_TYPE_ROTATE_CLOCKWISE",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "BATTLE_BARB_STRONGHOLD_B3F_TRAINER_2",
@@ -70,9 +61,6 @@
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 8,
       "movement_range_y": 7,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "BATTLE_BARB_STRONGHOLD_B3F_TRAINER_1",
@@ -86,10 +74,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
       "script": "BATTLE_BARB_STRONGHOLD_B4F_TRAINER_5",
       "flag": "0"
     },
@@ -103,8 +89,6 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
       "script": "EventScript_CutTree",
       "flag": "FLAG_TEMP_5"
     },
@@ -118,8 +102,6 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
       "script": "EventScript_CutTree",
       "flag": "FLAG_TEMP_4"
     },
@@ -133,8 +115,6 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
       "script": "EventScript_CutTree",
       "flag": "FLAG_TEMP_3"
     },
@@ -148,8 +128,6 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
       "script": "EventScript_CutTree",
       "flag": "FLAG_TEMP_2"
     },
@@ -189,8 +167,6 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
       "script": "EventScript_CutTree",
       "flag": "FLAG_TEMP_1"
     }
@@ -208,11 +184,7 @@
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_BARB_STRONGHOLD_B4F",
-<<<<<<< Updated upstream
-      "dest_warp_id": "0"
-=======
       "dest_warp_id": "1"
->>>>>>> Stashed changes
     }
   ],
   "coord_events": [

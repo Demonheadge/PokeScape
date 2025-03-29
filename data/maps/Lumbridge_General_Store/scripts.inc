@@ -191,6 +191,18 @@ GeneralStore_TZHAAR::
 	return
 
 
+GeneralStore_TZHAAR_Human::
+	lock
+	faceplayer
+	namebox GeneralStore_LUMBRIDGE_Text_0
+	msgbox GeneralStore_TZHAAR_Human_Text_0
+	waitmessage
+	call GeneralStoreShopScript
+	msgbox GeneralStore_LUMBRIDGE_Text_2
+	release
+	return
+
+
 SHOP_RUNESTORE_VARROCK::
 	lock
 	faceplayer
@@ -641,6 +653,11 @@ GeneralStore_TZHAAR_Text_1:
 
 GeneralStore_TZHAAR_Text_2:
 	.string "Come again.$"
+
+GeneralStore_TZHAAR_Human_Text_0:
+	.string "It's so hot down here...\p"
+	.string "Welcome to the Tzhaar General Store.\p"
+	.string "How may I help you?$"
 
 SHOP_RUNESTORE_VARROCK_Text_0:
 	.string "Aubury$"

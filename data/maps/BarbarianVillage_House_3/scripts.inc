@@ -17,12 +17,17 @@ NPC_BARBARIANVILLAGE_NPC7::
 	faceplayer
 	namebox NPC_BARBARIANVILLAGE_NPC7_Text_0
 	msgbox NPC_BARBARIANVILLAGE_NPC7_Text_1
+	closemessage
+	hidenamebox
+	msgbox NPC_BARBARIANVILLAGE_NPC7_Text_2
+	closemessage
 	fadescreenswapbuffers FADE_TO_BLACK
 	playfanfare MUS_HEAL
 	waitfanfare
 	special HealPlayerParty
 	fadescreenswapbuffers FADE_FROM_BLACK
-	msgbox NPC_BARBARIANVILLAGE_NPC7_Text_2
+	namebox NPC_BARBARIANVILLAGE_NPC7_Text_0
+	msgbox NPC_BARBARIANVILLAGE_NPC7_Text_3
 	closemessage
 	hidenamebox
 	release
@@ -45,6 +50,10 @@ NPC_BARBARIANVILLAGE_NPC7_Text_1:
 	.string "You look tired, you should take a rest.$"
 
 NPC_BARBARIANVILLAGE_NPC7_Text_2:
+	.string "The barbarian throw you into a bed and\n"
+	.string "you take a rest.$"
+
+NPC_BARBARIANVILLAGE_NPC7_Text_3:
 	.string "That's better, you and your MONSTERS\n"
 	.string "are looking much more refreshed!$"
 
