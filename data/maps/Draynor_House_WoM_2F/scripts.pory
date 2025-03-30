@@ -8,14 +8,14 @@ script WOM_BED_RIGHT
 {
 	lock
 	msgbox(format("It's a fairly ordinary bed, but..."))
-	applymovement (OBJ_EVENT_ID_PLAYER, WOM_BED_RIGHT)
+	applymovement (OBJ_EVENT_ID_PLAYER, movement_WOM_BED_RIGHT)
     waitmovement(0)
 	msgbox(format("Was that a hand!?\p{PAUSE 15}You decide it's best not to try to sleep in this bed."))
 	release
 	end
 }
 
-movement WOM_BED_RIGHT {
+movement movement_WOM_BED_RIGHT {
     emote_exclamation_mark
     jump_special_right
     face_left
@@ -25,14 +25,14 @@ script WOM_BED_BOTTOM
 {
 	lock
 	msgbox(format("It's a fairly ordinary bed, but..."))
-	applymovement (OBJ_EVENT_ID_PLAYER, WOM_BED_BOTTOM)
+	applymovement (OBJ_EVENT_ID_PLAYER, movement_WOM_BED_BOTTOM)
     waitmovement(0)
 	msgbox(format("Was that a hand!?\p{PAUSE 15}You decide it's best not to try to sleep in this bed."))
 	release
 	end
 }
 
-movement WOM_BED_BOTTOM {
+movement movement_WOM_BED_BOTTOM {
     emote_exclamation_mark
     jump_special_down
     face_up

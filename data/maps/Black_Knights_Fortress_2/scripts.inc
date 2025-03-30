@@ -487,7 +487,7 @@ NPC_ZAMOHAWK::
 
 
 ITEM_BKFORT_2F_ITEM1::
-	finditem ITEM_POUCH_BLACK
+	finditem ITEM_MIND_RUNE
 	end
 
 
@@ -497,32 +497,32 @@ ITEM_BKFORT_2F_ITEM2::
 
 
 ITEM_BKFORT_2F_ITEM3::
-	finditem ITEM_POUCH_BLACK
+	finditem ITEM_POTATO
 	end
 
 
 ITEM_BKFORT_2F_ITEM4::
-	finditem ITEM_POUCH_BLACK
+	finditem ITEM_COSMIC_RUNE
 	end
 
 
 ITEM_BKFORT_2F_ITEM5::
-	finditem ITEM_POUCH_BLACK
+	finditem ITEM_SPIRIT_CHARM
 	end
 
 
 ITEM_BKFORT_2F_ITEM6::
-	finditem ITEM_POUCH_BLACK
+	finditem ITEM_CHEESE
 	end
 
 
 ITEM_BKFORT_2F_ITEM7::
-	finditem ITEM_POUCH_BLACK
+	finditem ITEM_PINEAPPLE
 	end
 
 
 ITEM_BKFORT_2F_ITEM8::
-	finditem ITEM_POUCH_BLACK
+	finditem ITEM_CHOCOLATE_CAKE
 	end
 
 

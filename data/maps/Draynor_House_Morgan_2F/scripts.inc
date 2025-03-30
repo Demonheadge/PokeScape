@@ -1,2 +1,8 @@
 Draynor_House_Morgan_2F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Draynor_House_Morgan_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION
 	.byte 0
+
+Draynor_House_Morgan_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION:
+	clearflag FLAG_ITEM_REPEATABLE_ITEM_6
+	return
+

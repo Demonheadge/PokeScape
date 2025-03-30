@@ -61,7 +61,7 @@ BKFORT_3F_NPC_6::
 	lock
 	faceplayer
 	namebox BKFORT_3F_NPC_6_Text_0
-	msgbox BKFORT_3F_NPC_2_Text_0
+	msgbox BKFORT_3F_NPC_6_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -113,7 +113,7 @@ BKFORT_3F_NPC_11::
 	lock
 	faceplayer
 	namebox BKFORT_3F_NPC_11_Text_0
-	msgbox BKFORT_3F_NPC_2_Text_0
+	msgbox BKFORT_3F_NPC_11_Text_1
 	closemessage
 	hidenamebox
 	release
@@ -124,7 +124,7 @@ BKFORT_3F_NPC_12::
 	lock
 	faceplayer
 	namebox BKFORT_3F_NPC_11_Text_0
-	msgbox BKFORT_3F_NPC_2_Text_0
+	msgbox BKFORT_3F_NPC_12_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -186,9 +186,8 @@ MOVEMENT_EXCLAMATIONMARK_JUMP_RIGHT:
 
 BKFORT_3F_NPC_15::
 	lock
-	faceplayer
 	namebox BKFORT_3F_NPC_11_Text_0
-	msgbox BKFORT_3F_NPC_2_Text_0
+	msgbox BKFORT_3F_NPC_15_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -221,7 +220,7 @@ BKFORT_3F_NPC_18::
 	lock
 	faceplayer
 	namebox BKFORT_3F_NPC_11_Text_0
-	msgbox BKFORT_3F_NPC_2_Text_0
+	msgbox BKFORT_3F_NPC_18_Text_0
 	closemessage
 	hidenamebox
 	release
@@ -251,12 +250,12 @@ BKFORT_3F_NPC_20::
 
 
 ITEM_BKFORT_3F_ITEM1::
-	finditem ITEM_POUCH_BLACK
+	finditem ITEM_PRAYER_POTION
 	end
 
 
 ITEM_BKFORT_3F_ITEM2::
-	finditem ITEM_POUCH_BLACK
+	finditem ITEM_BRONZEHELMET
 	end
 
 
@@ -276,11 +275,9 @@ BKFORT_3F_NPC_1_Text_1:
 	.string "tested on someone like this!$"
 
 BKFORT_3F_NPC_2_Text_0:
-	.string "THIS IS A WORK IN PROGRESS.\p"
-	.string "THE TEAM ARE CURRENTLY DEVELOPING IT\n"
-	.string "AND ARE AWARE IT IS UNFINISHED.\p"
-	.string "IT IS NOT A BUG, PLEASE DO NOT REPORT\n"
-	.string "IT.$"
+	.string "I can't believe I spend all day down\n"
+	.string "here torturing people...\p"
+	.string "{PAUSE 15}THIS IS THE BEST JOB EVER!$"
 
 BKFORT_3F_NPC_3_Text_0:
 	.string "Sir Gawain$"
@@ -326,6 +323,15 @@ BKFORT_3F_NPC_5_Text_1:
 BKFORT_3F_NPC_6_Text_0:
 	.string "Goebie$"
 
+BKFORT_3F_NPC_6_Text_1:
+	.string "The airut invaded our planet and\n"
+	.string "enslaved our people.\p"
+	.string "I came to your world for help, but the\n"
+	.string "people here weren't as friendly as I'd\l"
+	.string "hoped.\p"
+	.string "We aren't strong enough to fight back\n"
+	.string "on our own...$"
+
 BKFORT_3F_NPC_7_Text_0:
 	.string "No matter how hard you try, you can't\n"
 	.string "seem to get their attention.\p"
@@ -358,6 +364,25 @@ BKFORT_3F_NPC_10_Text_1:
 BKFORT_3F_NPC_11_Text_0:
 	.string "Guard$"
 
+BKFORT_3F_NPC_11_Text_1:
+	.string "It might not look like much, but this is\n"
+	.string "one of the best assignments you can\l"
+	.string "get in this place.\p"
+	.string "Much better than those suckers who\n"
+	.string "have to stand outside in the freezing\l"
+	.string "cold!$"
+
+BKFORT_3F_NPC_12_Text_0:
+	.string "Do you know what the average life span\n"
+	.string "of a Falador guard is?\p"
+	.string "They're constantly attacked for no\n"
+	.string "reason.\p"
+	.string "The White Knights do nothing to\n"
+	.string "intervene and help!\p"
+	.string "That's why I deserted them to join the\n"
+	.string "Black Knights.\p"
+	.string "Look how secure this place is!$"
+
 BKFORT_3F_NPC_13_Text_0:
 	.string "Blacksmith$"
 
@@ -386,6 +411,17 @@ BKFORT_3F_NPC_14_Text_3:
 BKFORT_3F_NPC_14_Text_4:
 	.string "SIR, YES SIR!$"
 
+BKFORT_3F_NPC_15_Text_0:
+	.string "Left hand... hut!\p"
+	.string "Right hand... hut!\p"
+	.string "Draw and parry!\p"
+	.string "Order... hut!\p"
+	.string "This is my longsword!\p"
+	.string "There are many like it, but this one is\n"
+	.string "mine!\p"
+	.string "My longsword is my best friend!\p"
+	.string "It is my life!$"
+
 BKFORT_3F_NPC_16_Text_0:
 	.string "Boy, when I joined the exchange program\n"
 	.string "between the Khazard Guard and the\l"
@@ -402,6 +438,16 @@ BKFORT_3F_NPC_17_Text_1:
 	.string "Gielinor had ever seen...\p"
 	.string "With the strength of the Kinshra behind\n"
 	.string "me, I swear I will have my revenge.$"
+
+BKFORT_3F_NPC_18_Text_0:
+	.string "I am not sure how hitting this dummy\n"
+	.string "and doing practice drills is really going\l"
+	.string "to help when everybody now just fights\l"
+	.string "with monsters.\p"
+	.string "How am I supposed to use a sword to\n"
+	.string "defeat some otherworldly being?\p"
+	.string "I just keep quiet and do what I'm told\n"
+	.string "though, the instructor is scary!$"
 
 BKFORT_3F_NPC_19_Text_0:
 	.string "Uhhhh, am I halucinating or is that a\n"

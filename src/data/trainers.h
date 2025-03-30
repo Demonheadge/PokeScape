@@ -5922,7 +5922,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_BarbStrongholdB4F_Trainer3),
     },
 
-    [TRAINER_BARB_STRONGHOLD_B3F_TRAINER_4] = //Ironman
+    [TRAINER_BARB_STRONGHOLD_B4F_TRAINER_4] = //Ironman
     {
         .trainerClass = TRAINER_CLASS_IRONMAN,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_NOOB,

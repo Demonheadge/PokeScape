@@ -5234,10 +5234,10 @@
     {
       "id": "LAYOUT_TUTORIAL_ISLAND_LAB_DOWN",
       "name": "Tutorial_Island_Lab_Down_Layout",
-      "width": 20,
+      "width": 22,
       "height": 16,
       "primary_tileset": "gTileset_PokeScapeIndoors",
-      "secondary_tileset": "gTileset_IndoorTowns1",
+      "secondary_tileset": "gTileset_DraynorManor",
       "border_filepath": "data/layouts/Tutorial_Island_Lab_Down/border.bin",
       "blockdata_filepath": "data/layouts/Tutorial_Island_Lab_Down/map.bin"
     },
@@ -6594,8 +6594,8 @@
     {
       "id": "LAYOUT_RIMMINGTON_BANK",
       "name": "Rimmington_Bank_Layout",
-      "width": 8,
-      "height": 8,
+      "width": 12,
+      "height": 10,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_Bank",
       "border_filepath": "data/layouts/Rimmington_Bank/border.bin",

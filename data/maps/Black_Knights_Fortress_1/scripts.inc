@@ -276,17 +276,17 @@ BKFORT_1F_BOOK::
 
 
 ITEM_BKFORT_1F_ITEM1::
-	finditem ITEM_POUCH_BLACK
+	finditem ITEM_PARTY_HAT
 	end
 
 
 ITEM_BKFORT_1F_ITEM2::
-	finditem ITEM_POUCH_BLACK
+	finditem ITEM_STAT_BEER
 	end
 
 
 ITEM_BKFORT_1F_ITEM3::
-	finditem ITEM_POUCH_BLACK
+	finditem ITEM_ONION
 	end
 
 

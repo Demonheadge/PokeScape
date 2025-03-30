@@ -395,7 +395,7 @@ ROUTE1_BOAT_2::
 	lock
 	faceplayer
 	namebox ROUTE1_BOAT_2_Text_0
-	msgbox ROUTE1_BOAT_1_Text_1
+	msgbox ROUTE1_BOAT_2_Text_1
 	hidenamebox
 	closemessage
 	release
@@ -1112,10 +1112,18 @@ ROUTE1_BOAT_1_Text_0:
 	.string "Awenix$"
 
 ROUTE1_BOAT_1_Text_1:
-	.string "I am a Cupholder$"
+	.string "I love spending time on the water like\n"
+	.string "this.\p"
+	.string "It helps me escape from life's\n"
+	.string "responsibilities for a moment.\p"
+	.string "Like my wife and children.\p"
+	.string "{PAUSE 15}Don't tell them you found me here!$"
 
 ROUTE1_BOAT_2_Text_0:
 	.string "Gelo Ball$"
+
+ROUTE1_BOAT_2_Text_1:
+	.string "I am a Cupholder$"
 
 ROUTE1_BOAT_3_Text_0:
 	.string "Trickool$"

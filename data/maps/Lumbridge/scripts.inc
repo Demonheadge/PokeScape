@@ -968,6 +968,79 @@ Lumbridge_GRAVEYARD_SIGN_5::
 	end
 
 
+Lumbridge_River_NPC1::
+	lock
+	faceplayer
+	namebox Lumbridge_River_NPC1_Text_0
+	msgbox Lumbridge_River_NPC1_Text_1
+	hidenamebox
+	release
+	end
+
+
+Lumbridge_River_NPC2::
+	lock
+	faceplayer
+	namebox Lumbridge_River_NPC2_Text_0
+	msgbox Lumbridge_River_NPC2_Text_1
+	hidenamebox
+	release
+	end
+
+
+Lumbridge_River_NPC3::
+	lock
+	faceplayer
+	namebox Lumbridge_River_NPC3_Text_0
+	random 8
+	switch VAR_RESULT
+	case 0, Lumbridge_River_NPC3_3
+	case 1, Lumbridge_River_NPC3_4
+	case 2, Lumbridge_River_NPC3_5
+	case 3, Lumbridge_River_NPC3_6
+	case 4, Lumbridge_River_NPC3_7
+	case 5, Lumbridge_River_NPC3_8
+	case 6, Lumbridge_River_NPC3_9
+	case 7, Lumbridge_River_NPC3_10
+Lumbridge_River_NPC3_1:
+	hidenamebox
+	closemessage
+	release
+	end
+
+Lumbridge_River_NPC3_3:
+	msgbox Lumbridge_River_NPC3_Text_1
+	goto Lumbridge_River_NPC3_1
+
+Lumbridge_River_NPC3_4:
+	msgbox Lumbridge_River_NPC3_Text_2
+	goto Lumbridge_River_NPC3_1
+
+Lumbridge_River_NPC3_5:
+	msgbox Lumbridge_River_NPC3_Text_3
+	goto Lumbridge_River_NPC3_1
+
+Lumbridge_River_NPC3_6:
+	msgbox Lumbridge_River_NPC3_Text_4
+	goto Lumbridge_River_NPC3_1
+
+Lumbridge_River_NPC3_7:
+	msgbox Lumbridge_River_NPC3_Text_5
+	goto Lumbridge_River_NPC3_1
+
+Lumbridge_River_NPC3_8:
+	msgbox Lumbridge_River_NPC3_Text_6
+	goto Lumbridge_River_NPC3_1
+
+Lumbridge_River_NPC3_9:
+	msgbox Lumbridge_River_NPC3_Text_7
+	goto Lumbridge_River_NPC3_1
+
+Lumbridge_River_NPC3_10:
+	msgbox Lumbridge_River_NPC3_Text_8
+	goto Lumbridge_River_NPC3_1
+
+
 CUPHOLDER_NPC_Text_0:
 	.string "I am currently a Cupholder with no\n"
 	.string "dialog.$"
@@ -1155,7 +1228,9 @@ Lumbridge_EVENT_NPC3_Text_2:
 
 NPC_LumbridgeBridge_Text_0:
 	.string "Is it just me or is this really long?\p"
-	.string "Nah I must be imagining it.$"
+	.string "Nah, I must be imagining it.\p"
+	.string "{PAUSE 15}Wait, I'm SURE the river used to be wider\n"
+	.string "than this...$"
 
 Lumbridge_Guard_NORTH_Text_0:
 	.string "Pazel$"
@@ -1425,3 +1500,58 @@ Lumbridge_GRAVEYARD_SIGN_5_Text_0:
 	.string "The restless ghost has been released\n"
 	.string "from the world, and the mausoleum is now\l"
 	.string "closed off to the public.$"
+
+Lumbridge_River_NPC1_Text_0:
+	.string "Sailor$"
+
+Lumbridge_River_NPC1_Text_1:
+	.string "The River Lum used to be the second\n"
+	.string "longest river in Gielinor, second only to\l"
+	.string "the River Dougne.\p"
+	.string "You used to be able to paddle from here\n"
+	.string "all the way up to the Wilderness!\p"
+	.string "It became too dangerous to travel\n"
+	.string "there though, so they had to block the\l"
+	.string "route beyond Edgeville.$"
+
+Lumbridge_River_NPC2_Text_0:
+	.string "b4nana m4n$"
+
+Lumbridge_River_NPC2_Text_1:
+	.string "There's a single, small island just north\n"
+	.string "of here with a solitary oak tree on it.\p"
+	.string "I wonder how it got there.$"
+
+Lumbridge_River_NPC3_Text_0:
+	.string "Finta5tic$"
+
+Lumbridge_River_NPC3_Text_1:
+	.string "This is a good plaice to go fishing.$"
+
+Lumbridge_River_NPC3_Text_2:
+	.string "I'd tell you what I just caught, but I'm\n"
+	.string "too shellfish to share.$"
+
+Lumbridge_River_NPC3_Text_3:
+	.string "If you find any rare fish, could you let\n"
+	.string "minnow?$"
+
+Lumbridge_River_NPC3_Text_4:
+	.string "You’re krilling me with these sea-rious\n"
+	.string "vibes...$"
+
+Lumbridge_River_NPC3_Text_5:
+	.string "Speak up, I'm hard of herring.$"
+
+Lumbridge_River_NPC3_Text_6:
+	.string "Sorry, I can't talk right now.\p"
+	.string "I have a haddock.$"
+
+Lumbridge_River_NPC3_Text_7:
+	.string "Do you like my fish puns?\p"
+	.string "Eh, I guess they cod be betta.$"
+
+Lumbridge_River_NPC3_Text_8:
+	.string "You think you know some better fish\n"
+	.string "puns?\p"
+	.string "I seriously trout it.$"
