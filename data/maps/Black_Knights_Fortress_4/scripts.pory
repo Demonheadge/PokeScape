@@ -251,7 +251,7 @@ script ITEM_BKFORT_4F_ITEM6
 //WIP
 
 script TRIGGER_BLACK_KNIGHT_4F_1 {
-	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 187) {                        //check storymode var, if less than post fight then enable 
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 190) {                        //check storymode var, if less than post fight then enable 
         lockall
         applymovement(11, MOVEMENT_WALK_DOWN)                                  // moves Elite Knight forward one step to player and Sir Owen
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)                                    //check where player is so Sir Owen walks to the correct place
@@ -272,7 +272,7 @@ script TRIGGER_BLACK_KNIGHT_4F_1 {
         call(CAUGHT_BY_BLACK_KNIGHTS_FINAL)
         playbgm(MUS_PS_ENCOUNTER_KNIGHTS, FALSE)
         trainerbattle_no_intro(TRAINER_BLACKKNIGHT_ELITE_2, msgbox(format("…")))
-		setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 190)
+		setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 195)
         releaseall
         end
         }

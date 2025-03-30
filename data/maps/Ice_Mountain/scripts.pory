@@ -2,11 +2,41 @@ const BKGUARD_1_ID = 4
 const BKGUARD_2_ID = 5
 
 mapscripts Ice_Mountain_MapScripts{
-MAP_SCRIPT_ON_TRANSITION {
+	MAP_SCRIPT_ON_TRANSITION {
         setvar(VAR_EVOLUTION_MAP_STATE, 3) //MAP LOCATIONS: 0-NOTHING, 1-LUMBRIDGE, 16-VARROCK, 3-FALADOR, 4-MEMBERS, 5-OCEAN, 6-WILDERNESS, 7-MORYTANIA, 8-CAVES, 9-ABYSS, 10-OFFWORLD, 11-DESERT, 15-KARAMJA
         call(WEATHER_CHANGE_AREA_ICE_MOUNTAIN)
+		call(ICEMOUNTAIN_STATE)
 	}
+	MAP_SCRIPT_ON_LOAD 
+    {
+        call(ICEMOUNTAIN_METATILES)
+    }
+
+	
 }
+
+script ICEMOUNTAIN_STATE {
+	removeobject(10)
+	removeobject(11)
+	setflag(FLAG_TEMP_1F)
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 187) {
+		removeobject(6)
+		removeobject(9)
+		setflag(FLAG_TEMP_1E)
+		addobject(10)
+		addobject(11)
+		clearflag(FLAG_TEMP_1F)
+	}
+	return
+}
+script ICEMOUNTAIN_METATILES {
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) >= 187) {
+		setmetatile(34, 14, METATILE_Ice_Mountain_SNOW_LOGFIRE_OUT, TRUE)  
+	}
+	return
+}
+
+
 
 //NPCs
 
@@ -199,30 +229,35 @@ script SIGN_ICE_MOUNTAIN_DOOR
 script TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY {
 	lockall
 	//check for outfit.
-	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) <= 186) {
-	
-		applymovement (BKGUARD_1_ID,movement_BK_FORT_GUARD)
-		applymovement (BKGUARD_2_ID,movement_BK_FORT_GUARD)
-		applymovement (OBJ_EVENT_ID_FOLLOWER, MOVEMENT_LOCKFACING_JUMP_SPECIAL_DOWN)
-		applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_LOCKFACING_JUMP_SPECIAL_DOWN)
+	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 186) {
+		playse(SE_PIN)
+		applymovement (BKGUARD_1_ID,movement_BK_FORT_GUARD_right)
+		applymovement (BKGUARD_2_ID,movement_BK_FORT_GUARD_left)
+		applymovement (OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACEUP)
+		applymovement (OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
 		waitmovement(0)
 		namebox ("Guard B")
 		msgbox(format("Hey, you are not a guard!"))
 		closemessage
 		hidenamebox
+		applymovement (OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT)
+		waitmovement(0)
 		namebox ("Guard D")
 		msgbox(format("Yeah, neither of you are guards."))
 		closemessage
 		hidenamebox
+		applymovement (OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+		waitmovement(0)
 		namebox ("Guard B")
 		msgbox(format("Sorry, but you've got to at least be a guard to pass through here.\pOtherwise if we let you in we would be in trouble!"))
 		closemessage
 		hidenamebox
+		applymovement (OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT)
+		waitmovement(0)
 		namebox ("Guard D")
 		msgbox(format("Yeah, so don't go off around the corner and dress up as guard now.\pWe would see right through you if you did."))
 		closemessage
 		hidenamebox
-
 		applymovement (OBJ_EVENT_ID_FOLLOWER, MOVEMENT_LOCKFACING_WALK_DOWN)
 		applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN)
 		waitmovement(0)
@@ -231,38 +266,81 @@ script TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY {
 		closemessage
 		hidenamebox
 		setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 185)
-		releaseall
-		end
-		}
-
-	else {
+	}
+	elif (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 187) {
+		applymovement (BKGUARD_1_ID,movement_BK_FORT_GUARD_right)
+		applymovement (BKGUARD_2_ID,movement_BK_FORT_GUARD_left)
+		applymovement (OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+		waitmovement(0)
 		namebox ("Guard B")
-		msgbox(format("Be careful in there!\pThere's an important guest inside."))
+		msgbox(format("Halt!\pYou two look a lot like{PAUSE 15}…{PAUSE 15}…"))
 		closemessage
 		hidenamebox
+		applymovement (OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT)
+		waitmovement(0)
+		namebox ("Guard D")
+		msgbox(format("Mighty fine guards!\pMan I love your blood stained armours!"))
+		closemessage
+		hidenamebox
+		applymovement (OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+		waitmovement(0)
+		namebox ("Guard B")
+		msgbox(format("So cool!\pBy the way, be careful around the fortress today.\pThere's an important guest inside."))
+		closemessage
+		hidenamebox
+		applymovement (OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT)
+		waitmovement(0)
 		namebox ("Guard D")
 		msgbox(format("Security inside has been increased.\pRemember your Black Knight history and you'll be fine, though."))
 		closemessage
 		hidenamebox
-		releaseall
-		end
-		}
+		setvar(VAR_TEMP_0, 1)
+	}
+	else {
+		//check outfit
+		applymovement (BKGUARD_1_ID,movement_BK_FORT_GUARD_right)
+		applymovement (BKGUARD_2_ID,movement_BK_FORT_GUARD_left)
+		applymovement (OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT)
+		waitmovement(0)
+		namebox ("Guard B")
+		msgbox(format("Hello fellow guard!\pYou may pass!"))
+		closemessage
+		hidenamebox
+		applymovement (OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT)
+		waitmovement(0)
+		namebox ("Guard D")
+		msgbox(format("Remember to keep an eye out for those pesky White Knights!"))
+		closemessage
+		hidenamebox
+		setvar(VAR_TEMP_0, 1)
+	}
+	releaseall
+	end
 }
 
 movement MOVEMENT_LOCKFACING_WALK_DOWN {
 	lock_facing_direction
 	walk_down
 	unlock_facing_direction
+	step_end
 }
 
 movement MOVEMENT_LOCKFACING_JUMP_SPECIAL_DOWN {
 	lock_facing_direction
 	jump_special_down
 	unlock_facing_direction
+	step_end
 }
 
-movement movement_BK_FORT_GUARD{
+movement movement_BK_FORT_GUARD_left{
     emote_exclamation_mark
+	face_left
+	step_end
+}
+movement movement_BK_FORT_GUARD_right{
+    emote_exclamation_mark
+	face_right
+	step_end
 }
 
 script TRIGGER_STORYMODE_EVENT_ICE_MOUNTAIN_BKF {
@@ -291,6 +369,9 @@ script TRIGGER_STORYMODE_EVENT_ICE_MOUNTAIN_GUARDS {
 	waitmovement(0)
 	delay(60) //pan camera?
 	facefollower
+	applymovement (OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACEDOWN)
+	applymovement (OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+	waitmovement(0)
 	namebox ("Sir Owen")
 	msgbox(format("Are you thinking what I am?\pLet's go pay our little friends a visit."))
 	closemessage
@@ -316,7 +397,15 @@ script EVENT_ICE_MOUNTAIN_GUARDS {
 	fadescreenswapbuffers(FADE_TO_BLACK)
 	//change outfit
 	//make guards nude
+	removeobject(6)
+	removeobject(9)
+	setflag(FLAG_TEMP_1E)
+	addobject(10)
+	addobject(11)
+	clearflag(FLAG_TEMP_1F)
+
 	setmetatile(34, 14, METATILE_Ice_Mountain_SNOW_LOGFIRE_OUT, TRUE) 
+	special(DrawWholeMapView) 
 	//map refresh
 	fadescreenswapbuffers(FADE_FROM_BLACK)
 	namebox ("Sir Owen")

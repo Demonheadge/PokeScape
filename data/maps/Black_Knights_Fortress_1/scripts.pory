@@ -306,3 +306,37 @@ script ITEM_BKFORT_1F_ITEM3
     finditem(ITEM_ONION)
     end
 }
+
+
+
+script TRIGGER_BKF_SIROWEN_INTRO {
+    lockall
+    if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 187) {
+        checkfollower
+        if (var(VAR_RESULT)) {
+            facefollower
+            namebox("Sir Owen")
+            msgbox(format("So this is the Black Knights Fortress.\p{PLAYER} we should look around and find out what their plan is.\pOh and remember, let's not blow our cover otherwise we'll be in a lot of trouble."))
+            closemessage
+            hidenamebox
+            setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 190)
+        }
+    }
+    setvar(VAR_TEMP_0, 1)
+    releaseall
+    end
+}
+script TRIGGER_BKF_SIROWEN_BEDS {
+    lockall
+    checkfollower
+    if (var(VAR_RESULT)) {
+        facefollower
+        namebox("Sir Owen")
+        msgbox(format("This must be their sleeping quaters.\pWe might as well make use of it ourselves if our monsters are feeling weak."))
+        closemessage
+        hidenamebox
+    }
+    setvar(VAR_TEMP_3, 1)
+    releaseall
+    end
+}

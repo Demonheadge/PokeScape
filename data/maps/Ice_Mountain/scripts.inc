@@ -1,11 +1,47 @@
 Ice_Mountain_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Ice_Mountain_MapScripts_MAP_SCRIPT_ON_TRANSITION
+	map_script MAP_SCRIPT_ON_LOAD, Ice_Mountain_MapScripts_MAP_SCRIPT_ON_LOAD
 	.byte 0
 
 Ice_Mountain_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	setvar VAR_EVOLUTION_MAP_STATE, 3
 	call WEATHER_CHANGE_AREA_ICE_MOUNTAIN
+	call ICEMOUNTAIN_STATE
 	return
+
+Ice_Mountain_MapScripts_MAP_SCRIPT_ON_LOAD:
+	call ICEMOUNTAIN_METATILES
+	return
+
+
+ICEMOUNTAIN_STATE::
+	removeobject 10
+	removeobject 11
+	setflag FLAG_TEMP_1F
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 187
+	goto_if_ge ICEMOUNTAIN_STATE_2
+ICEMOUNTAIN_STATE_1:
+	return
+
+ICEMOUNTAIN_STATE_2:
+	removeobject 6
+	removeobject 9
+	setflag FLAG_TEMP_1E
+	addobject 10
+	addobject 11
+	clearflag FLAG_TEMP_1F
+	goto ICEMOUNTAIN_STATE_1
+
+
+ICEMOUNTAIN_METATILES::
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 187
+	goto_if_ge ICEMOUNTAIN_METATILES_2
+ICEMOUNTAIN_METATILES_1:
+	return
+
+ICEMOUNTAIN_METATILES_2:
+	setmetatile 34, 14, METATILE_Ice_Mountain_SNOW_LOGFIRE_OUT, TRUE
+	goto ICEMOUNTAIN_METATILES_1
 
 
 NPC_ORACLE::
@@ -220,36 +256,53 @@ SIGN_ICE_MOUNTAIN_DOOR::
 TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY::
 	lockall
 	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 186
-	goto_if_le TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_1
+	goto_if_eq TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_2
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 187
+	goto_if_eq TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_3
+	applymovement 4, movement_BK_FORT_GUARD_right
+	applymovement 5, movement_BK_FORT_GUARD_left
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT
+	waitmovement 0
 	namebox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_0
-	msgbox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_8
+	msgbox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_12
 	closemessage
 	hidenamebox
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT
+	waitmovement 0
 	namebox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_2
-	msgbox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_9
+	msgbox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_13
 	closemessage
 	hidenamebox
+	setvar VAR_TEMP_0, 1
+TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_1:
 	releaseall
 	end
 
-TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_1:
-	applymovement 4, movement_BK_FORT_GUARD
-	applymovement 5, movement_BK_FORT_GUARD
-	applymovement OBJ_EVENT_ID_FOLLOWER, MOVEMENT_LOCKFACING_JUMP_SPECIAL_DOWN
-	applymovement OBJ_EVENT_ID_PLAYER, MOVEMENT_LOCKFACING_JUMP_SPECIAL_DOWN
+TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_2:
+	playse SE_PIN
+	applymovement 4, movement_BK_FORT_GUARD_right
+	applymovement 5, movement_BK_FORT_GUARD_left
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACEUP
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT
 	waitmovement 0
 	namebox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_0
 	msgbox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_1
 	closemessage
 	hidenamebox
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT
+	waitmovement 0
 	namebox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_2
 	msgbox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_3
 	closemessage
 	hidenamebox
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT
+	waitmovement 0
 	namebox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_0
 	msgbox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_4
 	closemessage
 	hidenamebox
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT
+	waitmovement 0
 	namebox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_2
 	msgbox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_5
 	closemessage
@@ -262,8 +315,37 @@ TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_1:
 	closemessage
 	hidenamebox
 	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 185
-	releaseall
-	end
+	goto TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_1
+
+TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_3:
+	applymovement 4, movement_BK_FORT_GUARD_right
+	applymovement 5, movement_BK_FORT_GUARD_left
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT
+	waitmovement 0
+	namebox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_0
+	msgbox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_8
+	closemessage
+	hidenamebox
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT
+	waitmovement 0
+	namebox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_2
+	msgbox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_9
+	closemessage
+	hidenamebox
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT
+	waitmovement 0
+	namebox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_0
+	msgbox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_10
+	closemessage
+	hidenamebox
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT
+	waitmovement 0
+	namebox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_2
+	msgbox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_11
+	closemessage
+	hidenamebox
+	setvar VAR_TEMP_0, 1
+	goto TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_1
 
 
 MOVEMENT_LOCKFACING_WALK_DOWN:
@@ -278,8 +360,14 @@ MOVEMENT_LOCKFACING_JUMP_SPECIAL_DOWN:
 	unlock_facing_direction
 	step_end
 
-movement_BK_FORT_GUARD:
+movement_BK_FORT_GUARD_left:
 	emote_exclamation_mark
+	face_left
+	step_end
+
+movement_BK_FORT_GUARD_right:
+	emote_exclamation_mark
+	face_right
 	step_end
 
 TRIGGER_STORYMODE_EVENT_ICE_MOUNTAIN_BKF::
@@ -309,6 +397,9 @@ TRIGGER_STORYMODE_EVENT_ICE_MOUNTAIN_GUARDS::
 	waitmovement 0
 	delay 60
 	facefollower
+	applymovement OBJ_EVENT_ID_FOLLOWER, Movement_InteractFACEDOWN
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP
+	waitmovement 0
 	namebox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_6
 	msgbox TRIGGER_STORYMODE_EVENT_ICE_MOUNTAIN_GUARDS_Text_1
 	closemessage
@@ -333,7 +424,14 @@ EVENT_ICE_MOUNTAIN_GUARDS::
 	closemessage
 	hidenamebox
 	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject 6
+	removeobject 9
+	setflag FLAG_TEMP_1E
+	addobject 10
+	addobject 11
+	clearflag FLAG_TEMP_1F
 	setmetatile 34, 14, METATILE_Ice_Mountain_SNOW_LOGFIRE_OUT, TRUE
+	special DrawWholeMapView
 	fadescreenswapbuffers FADE_FROM_BLACK
 	namebox TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_6
 	msgbox EVENT_ICE_MOUNTAIN_GUARDS_Text_7
@@ -536,13 +634,31 @@ TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_7:
 	.string "think of something.$"
 
 TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_8:
-	.string "Be careful in there!\p"
-	.string "There's an important guest inside.$"
+	.string "Halt!\p"
+	.string "You two look a lot like{PAUSE 15}…{PAUSE 15}…$"
 
 TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_9:
+	.string "Mighty fine guards!\p"
+	.string "Man I love your blood stained armours!$"
+
+TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_10:
+	.string "So cool!\p"
+	.string "By the way, be careful around the\n"
+	.string "fortress today.\p"
+	.string "There's an important guest inside.$"
+
+TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_11:
 	.string "Security inside has been increased.\p"
 	.string "Remember your Black Knight history and\n"
 	.string "you'll be fine, though.$"
+
+TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_12:
+	.string "Hello fellow guard!\p"
+	.string "You may pass!$"
+
+TRIGGER_BLACK_KNIGHTS_FORTRESS_ENTRY_Text_13:
+	.string "Remember to keep an eye out for those\n"
+	.string "pesky White Knights!$"
 
 TRIGGER_STORYMODE_EVENT_ICE_MOUNTAIN_BKF_Text_0:
 	.string "{PLAYER} look!\p"

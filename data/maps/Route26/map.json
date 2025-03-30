@@ -228,22 +228,22 @@
     },
     {
       "type": "weather",
-      "x": 11,
-      "y": 27,
+      "x": 9,
+      "y": 26,
       "elevation": 0,
       "weather": "COORD_EVENT_WEATHER_SUNNY"
     },
     {
       "type": "weather",
-      "x": 11,
+      "x": 9,
       "y": 25,
       "elevation": 0,
       "weather": "COORD_EVENT_WEATHER_SHADE"
     },
     {
       "type": "trigger",
-      "x": 8,
-      "y": 9,
+      "x": 4,
+      "y": 8,
       "elevation": 0,
       "var": "VAR_POKESCAPE_STORYMODE_PROGRESS",
       "var_value": "175",
@@ -256,7 +256,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "CHECK_FOLLOWER_SIROWEN"
+      "script": "TRIGGER_STORYMODE_EVENT_ROUTE26"
     },
     {
       "type": "weather",

@@ -40,57 +40,72 @@ script ROUTE26_STATE {
 }
 
 script TRIGGER_STORYMODE_EVENT_ROUTE26 {
-	lockall
-    applymovement (OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
-    applymovement (13, Movement_InteractFACEDOWN)
-    waitmovement(0)
-	namebox("Sir Owen")
-    msgbox(format("{PLAYER}! Mind lending me a hand?\pThis guy is not playing fair!"), MSGBOX_YESNO)
-    if (!var(VAR_RESULT))
-    {
-        msgbox(format("Call for backup while I hold them off!"))
-        closemessage
-        hidenamebox
-        applymovement (13, Movement_InteractFACEUP)
-        applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN)
-        waitmovement(0)
-        releaseall
-        end
+
+    switch (var(VAR_POKESCAPE_STORYMODE_PROGRESS)){ 
+		case 175: 
+            lockall
+            applymovement (OBJ_EVENT_ID_PLAYER, Movement_InteractFACEUP)
+            applymovement (13, Movement_InteractFACEDOWN)
+            waitmovement(0)
+            namebox("Sir Owen")
+            msgbox(format("{PLAYER}! Mind lending me a hand?\pThis guy is not playing fair!"), MSGBOX_YESNO)
+            if (!var(VAR_RESULT))
+            {
+                msgbox(format("Call for backup while I hold them off!"))
+                closemessage
+                hidenamebox
+                applymovement (13, Movement_InteractFACEUP)
+                applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN)
+                waitmovement(0)
+                releaseall
+                end
+            }
+            msgbox(format("Let us fight him fairly then!"))
+            applymovement (13, MOVEMENT_FACE_UP)
+            setflag(FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES)
+            setflag(FLAG_PARTNER_BATTLE)
+            setvar (VAR_PARTNER_TRAINER, TRAINER_SIR_OWEN_1)
+            setvar (VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_OWEN)
+            trainerbattle_no_intro(TRAINER_ROUTE26_BLACK_KNIGHT, format("Urgh, I could have stopped one of you but not both..."))
+            applymovement (BLACKKNIGHT_ID,movement_BLACKKNIGHT_1)
+            waitmovement (0)
+            setflag(FLAG_TEMP_1F)
+            removeobject(6)
+            //applymovement (13, MOVEMENT_WALK_UP)
+            //applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_UP)
+            applymovement (13, MOVEMENT_FACE_DOWN)
+            waitmovement(0)
+            msgbox(format("Thank you {PLAYER}.\pI think it would be wise for us to continue on foot together in case we encounter any more enemy resistance."))
+            closemessage
+            hidenamebox
+            playfanfare(MUS_OBTAIN_SYMBOL)
+            msgbox(format("Lead the charge!\nSir Owen Sonde is on your side!"))
+            waitfanfare
+            closemessage
+            
+            loadword(0, FOLLOWING_SirOwen)
+            setfollower(13, 0x80)
+            namebox("Sir Owen")
+            msgbox(format("May Saradomin guide us!"))
+            closemessage
+            hidenamebox
+            applymovement (OBJ_EVENT_ID_FOLLOWER, MOVEMENT_WALK_UP)
+            applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_UP)
+            waitmovement(0)
+            setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 180)
+            releaseall
+            end
+        case 180: 
+        case 181: 
+        case 185: 
+        case 186: 
+        case 187: 
+        case 190: 
+            goto(CHECK_FOLLOWER_SIROWEN)
     }
-    msgbox(format("Let us fight him fairly then!"))
-	applymovement (13, MOVEMENT_FACE_UP)
-    setflag(FLAG_TOGGLE_FORCED_WILD_DOUBLE_BATTLES)
-    setflag(FLAG_PARTNER_BATTLE)
-    setvar (VAR_PARTNER_TRAINER, TRAINER_SIR_OWEN_1)
-	setvar (VAR_PARTNER_SPRITE, TRAINER_BACK_PIC_OWEN)
-    trainerbattle_no_intro(TRAINER_ROUTE26_BLACK_KNIGHT, format("Urgh, I could have stopped one of you but not both..."))
-    applymovement (BLACKKNIGHT_ID,movement_BLACKKNIGHT_1)
-	waitmovement (0)
-	setflag(FLAG_TEMP_1F)
-    removeobject(6)
-    //applymovement (13, MOVEMENT_WALK_UP)
-	//applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_UP)
-    //applymovement (13, MOVEMENT_FACE_DOWN)
-    msgbox(format("Thank you {PLAYER}.\pI think it would be wise for us to continue on foot together in case we encounter any more enemy resistance."))
-    closemessage
-    hidenamebox
-	playfanfare(MUS_OBTAIN_SYMBOL)
-	msgbox(format("Lead the charge!\nSir Owen Sonde is on your side!"))
-	waitfanfare
-	closemessage
-	
-    loadword(0, FOLLOWING_SirOwen)
-	setfollower(13, 0x80)
-	namebox("Sir Owen")
-	msgbox(format("May Saradomin guide us!"))
-	closemessage
-	hidenamebox
-	applymovement (OBJ_EVENT_ID_FOLLOWER, MOVEMENT_WALK_UP)
-	applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_UP)
-	waitmovement(0)
-	setvar(VAR_POKESCAPE_STORYMODE_PROGRESS, 180)
-	releaseall
-	end
+    setvar(VAR_TEMP_0, 1)
+    releaseall
+    end
 }
 
 movement movement_BLACKKNIGHT_1

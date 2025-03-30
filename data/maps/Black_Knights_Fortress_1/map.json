@@ -302,29 +302,29 @@
     {
       "type": "trigger",
       "x": 15,
-      "y": 25,
+      "y": 29,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "TRIGGER_BKF_SIROWEN_INTRO"
     },
     {
       "type": "trigger",
       "x": 16,
-      "y": 25,
+      "y": 29,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "TRIGGER_BKF_SIROWEN_INTRO"
     },
     {
       "type": "trigger",
       "x": 17,
-      "y": 25,
+      "y": 29,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "NULL"
+      "script": "TRIGGER_BKF_SIROWEN_INTRO"
     },
     {
       "type": "trigger",
@@ -352,6 +352,24 @@
       "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "TRIGGER_BLACK_KNIGHT_QUIZ_1"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "TRIGGER_BKF_SIROWEN_BEDS"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "TRIGGER_BKF_SIROWEN_BEDS"
     }
   ],
   "bg_events": [

@@ -1228,37 +1228,37 @@ script FOLLOWER_REMOVE {
 
 
 script CHECK_FOLLOWER_SIROWEN {
-	if (var(VAR_POKESCAPE_STORYMODE_PROGRESS) == 180) {
-		checkfollower
-		if (var(VAR_RESULT)) {
-			lockall
-			namebox("Sir Owen")
-			msgbox(format("{PLAYER} our investigation is on Ice Mountain.\pOr do you wish to part ways?"), MSGBOX_YESNO)
-			if (var(VAR_RESULT))
-			{ 
-				msgbox(format("Very well, you take a quick retreat and I will stand guard here."))
-				closemessage
-				hidenamebox
-				call(FOLLOWER_REMOVE)
-				clearflag(FLAG_TEMP_1E)
-				addobject(13)
-				applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN)
-				waitmovement(0)
-			}
-			else {
-				closemessage
-				hidenamebox
-				applymovement (OBJ_EVENT_ID_FOLLOWER, MOVEMENT_WALK_UP)
-				applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_UP)
-				waitmovement(0)
-			}
-			releaseall
+	checkfollower
+	if (var(VAR_RESULT)) {
+		lockall
+		namebox("Sir Owen")
+		msgbox(format("{PLAYER} our investigation is on Ice Mountain.\pOr do you wish to part ways?"), MSGBOX_YESNO)
+		if (var(VAR_RESULT))
+		{ 
+			msgbox(format("Very well, you take a quick retreat and I will stand guard here."))
+			closemessage
+			hidenamebox
+			call(FOLLOWER_REMOVE)
+			clearflag(FLAG_TEMP_1E)
+			addobject(13)
+			applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_DOWN)
+			waitmovement(0)
 		}
 		else {
-			goto(SetFollower_SirOwen)
+			closemessage
+			hidenamebox
+			applymovement (OBJ_EVENT_ID_FOLLOWER, MOVEMENT_WALK_UP)
+			applymovement (OBJ_EVENT_ID_PLAYER, MOVEMENT_WALK_UP)
+			waitmovement(0)
 		}
+		releaseall
 	}
-	end
+	else {
+		applymovement (13, Movement_InteractFACEDOWN)
+		waitmovement(0)
+		goto(SetFollower_SirOwen)
+	}
+	return
 }
 
 
@@ -1306,7 +1306,28 @@ script SetFollower_SirOwen {
 script FOLLOWING_SirOwen {
     namebox("Sir Owen")
     facefollower 
-//It is more common for special dialogue than this common dialogue. 1/5
+
+	switch (var(VAR_POKESCAPE_STORYMODE_PROGRESS)) {
+		case 181:
+			msgbox(format("Is that a Black Knight Fortress?!"))
+			hidenamebox
+			closemessage
+			release
+			end
+		case 186:
+			msgbox(format("We should go say hello to those guards up on the mountain."))
+			hidenamebox
+			closemessage
+			release
+			end
+		case 187:
+			msgbox(format("I cannot believe we just did that…\pI guess we should try to enter the fortress, now that we look the part."))
+			hidenamebox
+			closemessage
+			release
+			end
+	}
+	//It is more common for special dialogue than this common dialogue. 1/5
 	random(5)
 	switch (var(VAR_RESULT)) {
 		case 0:

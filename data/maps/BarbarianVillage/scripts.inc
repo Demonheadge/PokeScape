@@ -68,17 +68,23 @@ BARBARIANVILLAGE_STORYMODE_EVENT_6:
 	setobjectxy 16, 12, 29
 	applymovement 16, MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_3
 	delay 60
-	applymovement 2, Movement_InteractFACELEFT
-	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT
-	waitmovement 16
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
 	compare VAR_TEMP_1, 12
 	goto_if_eq BARBARIANVILLAGE_STORYMODE_EVENT_12
 	compare VAR_TEMP_1, 11
 	goto_if_eq BARBARIANVILLAGE_STORYMODE_EVENT_13
 BARBARIANVILLAGE_STORYMODE_EVENT_11:
+	waitmovement 16
+	waitmovement 0
 	namebox BARBARIANVILLAGE_STORYMODE_EVENT_Text_0
 	msgbox BARBARIANVILLAGE_STORYMODE_EVENT_Text_3
+	hidenamebox
+	closemessage
+	applymovement 2, Movement_InteractFACEUP
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACEDOWN
+	waitmovement 0
+	namebox BARBARIANVILLAGE_STORYMODE_EVENT_Text_0
+	msgbox BARBARIANVILLAGE_STORYMODE_EVENT_Text_4
 	hidenamebox
 	closemessage
 	setvar VAR_TEMP_B, 0
@@ -127,15 +133,45 @@ BARBARIANVILLAGE_STORYMODE_EVENT_8:
 	goto BARBARIANVILLAGE_STORYMODE_EVENT_6
 
 BARBARIANVILLAGE_STORYMODE_EVENT_12:
-	applymovement 2, Movement_InteractFACERIGHT
-	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACELEFT
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_Barbmovement_5
+	applymovement 2, Movement_Barbmovement_4
 	goto BARBARIANVILLAGE_STORYMODE_EVENT_11
 
 BARBARIANVILLAGE_STORYMODE_EVENT_13:
-	applymovement 2, Movement_InteractFACELEFT
-	applymovement OBJ_EVENT_ID_PLAYER, Movement_InteractFACERIGHT
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_Barbmovement_2
+	applymovement 2, Movement_Barbmovement_1
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Movement_Barbmovement_3
 	goto BARBARIANVILLAGE_STORYMODE_EVENT_11
 
+
+Movement_Barbmovement_1:
+	face_left
+	delay_4
+	walk_fast_left
+	walk_fast_down
+	face_left
+	step_end
+
+Movement_Barbmovement_2:
+	lock_facing_direction
+	walk_up
+	unlock_facing_direction
+	face_left
+	step_end
+
+Movement_Barbmovement_3:
+	walk_down
+	step_end
+
+Movement_Barbmovement_4:
+	walk_fast_down
+	face_left
+	step_end
+
+Movement_Barbmovement_5:
+	walk_left
+	step_end
 
 MOVEMENT_BARBARIANVILLAGE_STORYMODE_EVENT_1:
 	face_down
@@ -303,14 +339,21 @@ NPC_BARBARIANVILLAGE_DUNGEONGIRL::
 	lock
 	faceplayer
 	namebox BARBARIANVILLAGE_STORYMODE_EVENT_Text_0
-	goto_if_set FLAG_BADGE06_GET, NPC_BARBARIANVILLAGE_DUNGEONGIRL_2
-	msgbox NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_1
+	goto_if_set FLAG_BADGE04_GET, NPC_BARBARIANVILLAGE_DUNGEONGIRL_2
+	msgbox NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_2
 NPC_BARBARIANVILLAGE_DUNGEONGIRL_1:
+	closemessage
 	hidenamebox
 	release
 	end
 
 NPC_BARBARIANVILLAGE_DUNGEONGIRL_2:
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 165
+	goto_if_eq NPC_BARBARIANVILLAGE_DUNGEONGIRL_5
+	msgbox NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_1
+	goto NPC_BARBARIANVILLAGE_DUNGEONGIRL_1
+
+NPC_BARBARIANVILLAGE_DUNGEONGIRL_5:
 	msgbox NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_0
 	goto NPC_BARBARIANVILLAGE_DUNGEONGIRL_1
 
@@ -497,6 +540,12 @@ BARBARIANVILLAGE_STORYMODE_EVENT_Text_3:
 	.string "Who was that, they weren't allowed in\n"
 	.string "there!$"
 
+BARBARIANVILLAGE_STORYMODE_EVENT_Text_4:
+	.string "Sorry, I know you're itching to give our\n"
+	.string "stronghold a shot, but could you chase\l"
+	.string "that knight and find out what he was\l"
+	.string "doing down here.$"
+
 NPC_BARB_BLOCKADE_1_Text_0:
 	.string "Barbarian$"
 
@@ -536,6 +585,11 @@ NPC_BARB_BLOCKADE_1_Text_7:
 	.string "We are impressed, well done!$"
 
 NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_0:
+	.string "This is not good, somehow an outsider\n"
+	.string "got access to our dungeon.\p"
+	.string "Did you find out where they went?$"
+
+NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_1:
 	.string "You have proved yourself a barbarian in\n"
 	.string "name and spirit!\p"
 	.string "I grant you access to use our\n"
@@ -543,7 +597,7 @@ NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_0:
 	.string "The monsters found within are very\n"
 	.string "strong, so have fun training!$"
 
-NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_1:
+NPC_BARBARIANVILLAGE_DUNGEONGIRL_Text_2:
 	.string "Only once you have proved yourself a\n"
 	.string "barbarian are you allowed to use our\l"
 	.string "dungeon for training.$"

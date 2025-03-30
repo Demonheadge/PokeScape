@@ -290,6 +290,50 @@ ITEM_BKFORT_1F_ITEM3::
 	end
 
 
+TRIGGER_BKF_SIROWEN_INTRO::
+	lockall
+	compare VAR_POKESCAPE_STORYMODE_PROGRESS, 187
+	goto_if_eq TRIGGER_BKF_SIROWEN_INTRO_2
+TRIGGER_BKF_SIROWEN_INTRO_1:
+	setvar VAR_TEMP_0, 1
+	releaseall
+	end
+
+TRIGGER_BKF_SIROWEN_INTRO_2:
+	checkfollower
+	compare VAR_RESULT, 0
+	goto_if_ne TRIGGER_BKF_SIROWEN_INTRO_4
+	goto TRIGGER_BKF_SIROWEN_INTRO_1
+
+TRIGGER_BKF_SIROWEN_INTRO_4:
+	facefollower
+	namebox CAUGHT_BY_BLACK_KNIGHTS_Text_0
+	msgbox TRIGGER_BKF_SIROWEN_INTRO_Text_0
+	closemessage
+	hidenamebox
+	setvar VAR_POKESCAPE_STORYMODE_PROGRESS, 190
+	goto TRIGGER_BKF_SIROWEN_INTRO_1
+
+
+TRIGGER_BKF_SIROWEN_BEDS::
+	lockall
+	checkfollower
+	compare VAR_RESULT, 0
+	goto_if_ne TRIGGER_BKF_SIROWEN_BEDS_2
+TRIGGER_BKF_SIROWEN_BEDS_1:
+	setvar VAR_TEMP_3, 1
+	releaseall
+	end
+
+TRIGGER_BKF_SIROWEN_BEDS_2:
+	facefollower
+	namebox CAUGHT_BY_BLACK_KNIGHTS_Text_0
+	msgbox TRIGGER_BKF_SIROWEN_BEDS_Text_0
+	closemessage
+	hidenamebox
+	goto TRIGGER_BKF_SIROWEN_BEDS_1
+
+
 CAUGHT_BY_BLACK_KNIGHTS_Text_0:
 	.string "Sir Owen$"
 
@@ -451,3 +495,17 @@ BKFORT_1F_BOOK_Text_0:
 	.string "between two youths from feuding\l"
 	.string "families.\p"
 	.string "You're sure it will have a happy ending.$"
+
+TRIGGER_BKF_SIROWEN_INTRO_Text_0:
+	.string "So this is the Black Knights Fortress.\p"
+	.string "{PLAYER} we should look around and\n"
+	.string "find out what their plan is.\p"
+	.string "Oh and remember, let's not blow our\n"
+	.string "cover otherwise we'll be in a lot of\l"
+	.string "trouble.$"
+
+TRIGGER_BKF_SIROWEN_BEDS_Text_0:
+	.string "This must be their sleeping quaters.\p"
+	.string "We might as well make use of it\n"
+	.string "ourselves if our monsters are feeling\l"
+	.string "weak.$"
