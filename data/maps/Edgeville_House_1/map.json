@@ -16,7 +16,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_RUNE_ARMOUR",
-      "x": 5,
+      "x": 3,
       "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",

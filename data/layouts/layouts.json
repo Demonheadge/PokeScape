@@ -7314,7 +7314,7 @@
     {
       "id": "LAYOUT_AL_KHARID_BANK",
       "name": "AlKharid_Bank_Layout",
-      "width": 10,
+      "width": 14,
       "height": 10,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_Bank",
@@ -8164,8 +8164,8 @@
     {
       "id": "LAYOUT_EDGEVILLE_BANK",
       "name": "Edgeville_Bank_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 14,
+      "height": 12,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_Bank",
       "border_filepath": "data/layouts/Edgeville_Bank/border.bin",
@@ -8374,8 +8374,8 @@
     {
       "id": "LAYOUT_DAEMONHEIM_BANK",
       "name": "Daemonheim_Bank_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 10,
+      "height": 12,
       "primary_tileset": "gTileset_PokeScapeIndoors",
       "secondary_tileset": "gTileset_Bank",
       "border_filepath": "data/layouts/Daemonheim_Bank/border.bin",

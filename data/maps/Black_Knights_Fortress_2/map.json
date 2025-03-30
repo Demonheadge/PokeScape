@@ -107,10 +107,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GUARD_FALADOR",
-      "x": 18,
-      "y": 11,
+      "x": 20,
+      "y": 9,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -303,7 +303,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ZAMORAK_HAWK",
       "x": 16,
-      "y": 4,
+      "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -459,7 +459,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_POUCH",
       "x": 19,
-      "y": 9,
+      "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
